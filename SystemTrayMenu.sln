@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemTrayMenu", "SystemTrayMenu.csproj", "{F317AF2E-9704-4A2A-BDAE-B4662ED9483B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F317AF2E-9704-4A2A-BDAE-B4662ED9483B}.Debug|x86.ActiveCfg = Debug|x86
+		{F317AF2E-9704-4A2A-BDAE-B4662ED9483B}.Debug|x86.Build.0 = Debug|x86
+		{F317AF2E-9704-4A2A-BDAE-B4662ED9483B}.Release|x86.ActiveCfg = Release|x86
+		{F317AF2E-9704-4A2A-BDAE-B4662ED9483B}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECA870FE-709A-4EC0-9F28-206977283A13}
+	EndGlobalSection
+EndGlobal

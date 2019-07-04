@@ -1,0 +1,59 @@
+Hello Symantec Team,
+
+I am the owner/ developer of my software TAMAHO SystemTrayMenu  / systemtraymenu.exe
+
+My software is a improved windows toolbar. 
+Please find more informations on my website:
+http://www.hofknecht.eu/systemtraymenu/
+(There i am frequently providing updates during beta phase)
+
+It not contains any other functionalities, no hidden doors.
+My software exactly only makes what described on website.
+
+Current version is 0.9.1.224
+Later versions will be released under same homepage. Links look then like (current version):
+http://hofknecht.eu/systemtraymenu/0.9.1.224/SystemTrayMenu-0.9.1.224-beta.zip
+
+It will probably become Open Source as soon it is good enough ;)
+
+A user reported, that Norton detects systemtraymenu.exe as unsafe and he needs to allow it explicitly.
+
+Here my product clipboard:
+------------------------------
+SystemTrayMenu - An improved Windows Toolbar
+Code from © 2019, TAMAHO, All Rights Reserved. Developer:
+Markus Hofknecht (mailto:Markus@Hofknecht.eu)
+Tanja Kauth (Tanja@Hofknecht.eu)
+
+http://www.hofknecht.eu/systemtraymenu/
+------------------------------
+
+If you have any questions please don't hesitate to contact me.
+
+Best Regards
+
+Markus Hofknecht
+Software Engineer
+
+
+
+Was sent to Norton:
+------------------------------
+CONFIRMATION
+Your submission has been sent Fri Jun 21 21:10:37 UTC 2019. To make another submission, click here.
+
+Sincerely,
+
+Symantec Security Response
+------------------------------
+
+Was sent to AVAST:
+------------------------------
+Thank you! We have received the URL you submitted.
+
+If we need any further information we will contact you. Otherwise, we will reply when the analysis is complete to let you know what action we’ve taken. 
+
+Kind regards,
+The Support Team
+AVAST Software
+------------------------------
