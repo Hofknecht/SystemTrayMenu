@@ -58,11 +58,13 @@
     <ApplicationIcon>Resources\SystemTrayMenu.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Clearcove.Logging">
-      <HintPath>..\CodeProjects\SimpleLogger\SimpleLogger\Clearcove.Logging\bin\Debug\Clearcove.Logging.dll</HintPath>
+    <Reference Include="Clearcove.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\Clearcove.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
-      <HintPath>..\ThirdParty\Windows-API-Code-Pack-1.1-master\source\WindowsAPICodePack\Shell\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,8 +76,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TAFactory.IconPack">
-      <HintPath>..\CodeProjects\IconPack\TAFactory.IconPack.dll</HintPath>
+    <Reference Include="TAFactory.IconPack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\TAFactory.IconPack.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
