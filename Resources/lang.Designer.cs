@@ -178,6 +178,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Folder inaccessible ähnelt.
+        /// </summary>
+        internal static string Folder_inaccessible {
+            get {
+                return ResourceManager.GetString("Folder inaccessible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Deutsch ähnelt.
         /// </summary>
         internal static string German {

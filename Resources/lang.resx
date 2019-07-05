@@ -138,6 +138,27 @@
   <data name="Folder" xml:space="preserve">
     <value>Folder</value>
   </data>
+  <data name="Folder empty" xml:space="preserve">
+    <value>Folder empty</value>
+  </data>
+  <data name="ALT" xml:space="preserve">
+    <value>ALT</value>
+  </data>
+  <data name="CTRL" xml:space="preserve">
+    <value>CTRL</value>
+  </data>
+  <data name="(e.g. F12)" xml:space="preserve">
+    <value>(e.g. F12)</value>
+  </data>
+  <data name="buttonDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="buttonSystemInfo" xml:space="preserve">
+    <value>System Info</value>
+  </data>
+  <data name="Folder inaccessible" xml:space="preserve">
+    <value>Folder inaccessible</value>
+  </data>
   <data name="German" xml:space="preserve">
     <value>Deutsch</value>
   </data>
@@ -156,25 +177,7 @@
   <data name="Restart" xml:space="preserve">
     <value>Restart</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Folder empty</value>
-  </data>
-  <data name="ALT" xml:space="preserve">
-    <value>ALT</value>
-  </data>
-  <data name="CTRL" xml:space="preserve">
-    <value>CTRL</value>
-  </data>
   <data name="Shortcut key" xml:space="preserve">
     <value>Shortcut key</value>
-  </data>
-  <data name="(e.g. F12)" xml:space="preserve">
-    <value>(e.g. F12)</value>
-  </data>
-  <data name="buttonDetails" xml:space="preserve">
-    <value>Details</value>
-  </data>
-  <data name="buttonSystemInfo" xml:space="preserve">
-    <value>System Info</value>
   </data>
 </root>

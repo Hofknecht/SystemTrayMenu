@@ -20,6 +20,7 @@ namespace SystemTrayMenu
             Main,
             Sub,
             Empty,
+            NoAccess,
             MaxReached
         }
 
@@ -69,6 +70,10 @@ namespace SystemTrayMenu
         {
             SetType(Type.Empty);
         }
+        public void SetTypeNoAccess()
+        {
+            SetType(Type.NoAccess);
+        }
 
         public void SetType(Type type)
         {
@@ -82,6 +87,10 @@ namespace SystemTrayMenu
                     break;
                 case Type.Empty:
                     SetTitle(Program.Translate("Folder empty"));
+                    labelTitle.BackColor = MenuDefines.Background;
+                    break;
+                case Type.NoAccess:
+                    SetTitle(Program.Translate("Folder inaccessible"));
                     labelTitle.BackColor = MenuDefines.Background;
                     break;
                 case Type.MaxReached:

@@ -160,7 +160,7 @@ namespace SystemTrayMenu
                     ResetSelectedByKey();
                     menuNotifyIcon.LoadingStop();
                     MenuData menuData = (MenuData)e.Result;
-                    if (menuData.Valid)
+                    if (menuData.Validity == MenuDataValidity.Valid)
                     {
                         menus[0] = CreateMenu(menuData, Path.GetFileName(Config.Path));
                         menus[0].AdjustLocationAndSize(screen);
@@ -397,7 +397,7 @@ namespace SystemTrayMenu
         {
             MenuData menuData = new MenuData();
             menuData.RowDatas = new List<RowData>();
-            menuData.Valid = false;
+            menuData.Validity = MenuDataValidity.Invalid;
             menuData.Level = level;
             if (!worker.CancellationPending)
             {
@@ -441,8 +441,13 @@ namespace SystemTrayMenu
                 }
                 catch (Exception ex)
                 {
-                    log.Info($"path:'{path}'");
-                    log.Error($"{ex.ToString()}");
+                    if ((uint)ex.HResult == 0x80070005) // E_ACCESSDENIED
+                        menuData.Validity = MenuDataValidity.NoAccess;
+                    else
+                    {
+                        log.Info($"path:'{path}'");
+                        log.Error($"{ex.ToString()}");
+                    }
                 }
 
                 foreach (string file in files)
@@ -468,7 +473,8 @@ namespace SystemTrayMenu
 
             if (!worker.CancellationPending)
             {
-                menuData.Valid = true;
+                if (menuData.Validity == MenuDataValidity.Invalid)
+                    menuData.Validity = MenuDataValidity.Valid;
             }
 
             return menuData;
@@ -1064,12 +1070,16 @@ namespace SystemTrayMenu
                 {
                     menuNotifyIcon.LoadingStop();
                     menuNotifyIcon.LoadWait();
-                    if (menuData.Valid)
+                    if (menuData.Validity != MenuDataValidity.Invalid)
                     {
                         menu = CreateMenu(menuData);
                         if (menuData.RowDatas.Count > 0)
                         {
                             menu.SetTypeSub();
+                        }
+                        else if (menuData.Validity == MenuDataValidity.NoAccess)
+                        {
+                            menu.SetTypeNoAccess();
                         }
                         else
                         {

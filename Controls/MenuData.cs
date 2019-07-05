@@ -15,10 +15,17 @@ using TAFactory.IconPack;
 
 namespace SystemTrayMenu.Controls
 {
+    public enum MenuDataValidity
+    {
+        Valid,
+        Invalid,
+        NoAccess
+    }
+
     public struct MenuData
     {
         public List<RowData> RowDatas;
-        public bool Valid;
+        public MenuDataValidity Validity;
         public int Level;
     };
 }
