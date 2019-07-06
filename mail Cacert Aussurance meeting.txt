@@ -1,0 +1,12 @@
+Betreff: Assurance-Treffen
+
+Hallo Jürgen,
+ich bin ganz neu bei cacert.org und möchte meinen Code zertifizieren. 
+Wenn ich das richtig verstanden habe, brauche ich dafür 100 Assurance-Punkte, welche ich durch persönliche Treffen bekomme. 
+Ich bin Software-Entwickler und wohne in Landsberg. Am besten könntest du mir gleich einen Zeitpunkt und Ort vorschlagen. 
+Ich arbeite von Montag bis Freitag, aber durch Gleitzeit  und Home-Office bin ich zeitlich flexibel.
+
+Vielleicht willst du mein Tool gleich ausprobieren: http://hofknecht.eu/systemtraymenu/
+
+Liebe Grüße,
+Markus

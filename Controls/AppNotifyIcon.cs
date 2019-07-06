@@ -67,7 +67,7 @@ namespace SystemTrayMenu
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    HandleClick();
+                    HandleClick?.Invoke();
                 }
             }
 
@@ -76,7 +76,7 @@ namespace SystemTrayMenu
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    HandleClick();
+                    HandleClick?.Invoke();
                 }
             }
         }
