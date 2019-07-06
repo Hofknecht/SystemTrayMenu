@@ -61,7 +61,6 @@ AVAST Software
 
 
 
-
 Answer from semantec
 ------------------------------
 In relation to submission 155802.
@@ -82,3 +81,17 @@ Symantec Security Response
 https://www.symantec.com/security-center
 
 This message (including any attachments) is intended only for the use of the individual or entity to which it is addressed and may contain information that is non-public, proprietary, privileged, confidential, and exempt from disclosure under applicable law or may constitute as attorney work product. If you are not the intended recipient, you are hereby notified that any use, dissemination, distribution, or copying of this communication is strictly prohibited. If you have received this communication in error, notify us immediately by telephone and (i) destroy this message if a facsimile or (ii) delete this message immediately if this is an electronic communication. Thank you.
+
+
+
+
+Answer from Avast
+------------------------------
+Hello Markus,
+
+Thank you for contacting Avast.
+
+The provided file doesn't seem to be detected by Avast. Could you please send us a screenshot of the detection message you're getting? https://support.avast.com/en-ww/article/Create-screenshot
+
+Prokop
+The Avast Support Team
