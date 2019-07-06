@@ -462,7 +462,7 @@ namespace SystemTrayMenu
                     if (menuButtonData.ReadIcon(false,
                         false, ref resolvedLnkPath))
                     {
-                        menuButtonData = ReadMenuButtonData(resolvedLnkPath, true, file);
+                        menuButtonData = ReadMenuButtonData(resolvedLnkPath, true, menuButtonData);
                         menuButtonData.ContainsMenu = true;
                         menuButtonData.ReadIcon(true, true, ref resolvedLnkPath);
                     }
@@ -481,23 +481,22 @@ namespace SystemTrayMenu
         }
 
         RowData ReadMenuButtonData(string fileName,
-            bool isResolvedLnk, string fileUnresolved = null)
+            bool isResolvedLnk, RowData menuButtonData = null)
         {
-            RowData menuButtonData = new RowData();
+            if (menuButtonData == null)
+            {
+                menuButtonData = new RowData();
+            }
             menuButtonData.IsResolvedLnk = isResolvedLnk;
 
             try
             {
                 menuButtonData.FileInfo = new FileInfo(fileName);
                 menuButtonData.TargetFilePath = menuButtonData.FileInfo.FullName;
-                menuButtonData.SetText($"{menuButtonData.FileInfo.Name}");
-                if(string.IsNullOrEmpty(fileUnresolved))
+                if (!isResolvedLnk)
                 {
-                    menuButtonData.TargetFilePathOrig = menuButtonData.TargetFilePath;
-                }
-                else
-                {
-                    menuButtonData.TargetFilePathOrig = fileUnresolved;
+                    menuButtonData.SetText(menuButtonData.FileInfo.Name);
+                    menuButtonData.TargetFilePathOrig = menuButtonData.FileInfo.FullName;
                 }
             }
             catch (Exception ex)

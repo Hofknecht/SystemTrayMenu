@@ -148,7 +148,7 @@ namespace SystemTrayMenu.Controls
                 TargetFilePath = resolvedLnkPath;
             }
 
-            SetText($"{FileInfo.Name.Substring(0, FileInfo.Name.Length - 4)}");
+            SetText(Path.GetFileNameWithoutExtension(TargetFilePathOrig));
 
             return handled;
         }
