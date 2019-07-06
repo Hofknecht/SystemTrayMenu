@@ -163,18 +163,19 @@ namespace SystemTrayMenu.Controls
                 ab.AppDescription = versionInfo.FileDescription;
                 ab.AppVersion = $"Version {versionInfo.FileVersion}";
                 ab.AppCopyright = versionInfo.LegalCopyright;
-                ab.AppMoreInfo = "SystemTrayMenu - An improved Windows Toolbar";
-                ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "Code from © 2019, TAMAHO, All Rights Reserved.";
-                ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "Developer:";
+                ab.AppMoreInfo = versionInfo.LegalCopyright;
                 ab.AppMoreInfo += Environment.NewLine;
                 ab.AppMoreInfo += "Markus Hofknecht (mailto:Markus@Hofknecht.eu)";
                 ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "Tanja Kauth (Tanja@Hofknecht.eu)";
+                ab.AppMoreInfo += "Tanja Kauth (mailto:Tanja@Hofknecht.eu)";
+                ab.AppMoreInfo += Environment.NewLine;
+                ab.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/";
+                ab.AppMoreInfo += Environment.NewLine;
+                ab.AppMoreInfo += "https://github.com/Hofknecht/SystemTrayMenu";
                 ab.AppMoreInfo += Environment.NewLine;
                 ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/" + Environment.NewLine;
+                ab.AppMoreInfo += "GNU GENERAL PUBLIC LICENSE" + Environment.NewLine;
+                ab.AppMoreInfo += "(Version 3, 29 June 2007)" + Environment.NewLine;
                 ab.AppDetailsButton = true;
                 ab.ShowDialog();
             }
