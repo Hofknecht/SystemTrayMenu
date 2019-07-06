@@ -57,3 +57,28 @@ Kind regards,
 The Support Team
 AVAST Software
 ------------------------------
+
+
+
+
+
+Answer from semantec
+------------------------------
+In relation to submission 155802.
+
+Upon further analysis and investigation we have verified your submission and as such this detection will be removed from our products.
+
+The updated detection will be distributed in the next set of virus definitions, available via LiveUpdate or from our website at https://www.symantec.com/security_response/definitions.jsp
+
+Please note that whitelisting can take up to 24 hours to take effect.
+
+Decisions made by Symantec are subject to change if alterations to the Software are made over time or as classification criteria and/or the policy employed by Symantec changes over time to address the evolving landscape.
+
+For more information on best practices to reduce false positives:
+https://www.symantec.com/content/en/us/enterprise/white_papers/b-to_increase_downloads-instill_trust_first_WP.en-us.pdf
+
+Sincerely,
+Symantec Security Response
+https://www.symantec.com/security-center
+
+This message (including any attachments) is intended only for the use of the individual or entity to which it is addressed and may contain information that is non-public, proprietary, privileged, confidential, and exempt from disclosure under applicable law or may constitute as attorney work product. If you are not the intended recipient, you are hereby notified that any use, dissemination, distribution, or copying of this communication is strictly prohibited. If you have received this communication in error, notify us immediately by telephone and (i) destroy this message if a facsimile or (ii) delete this message immediately if this is an electronic communication. Thank you.
