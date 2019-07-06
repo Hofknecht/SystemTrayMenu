@@ -934,14 +934,31 @@ namespace SystemTrayMenu
                     MenusFadeOut();
                     break;
                 default:
-                    if (!string.IsNullOrEmpty(keyInput) &&
-                        (SelectMatched(dgv, iRowKey, keyInput) ||
-                         SelectMatched(dgv, 0, keyInput)))
+                    if (!string.IsNullOrEmpty(keyInput))
                     {
-                        FadeInIfNeeded();
-                        CheckMenuOpenerStop(iMenuBefore, iRowBefore);
-                        CheckMenuOpenerStart(dgv, iRowKey);
-                        toClear = true;
+                        if (SelectMatched(dgv, iRowKey, keyInput) ||
+                            SelectMatched(dgv, 0, keyInput))
+                        {
+                            FadeInIfNeeded();
+                            CheckMenuOpenerStop(iMenuBefore, iRowBefore);
+                            CheckMenuOpenerStart(dgv, iRowKey);
+                            toClear = true;
+                        }
+                        else if (isStillSelected)
+                        {
+                            iRowKey = iRowBefore - 1;
+                            if (SelectMatched(dgv, iRowKey, keyInput) ||
+                                SelectMatched(dgv, 0, keyInput))
+                            {
+                                FadeInIfNeeded();
+                                CheckMenuOpenerStop(iMenuBefore, iRowBefore);
+                                CheckMenuOpenerStart(dgv, iRowKey);
+                            }
+                            else
+                            {
+                                iRowKey = iRowBefore;
+                            }
+                        }
                     }
                     break;
             }
