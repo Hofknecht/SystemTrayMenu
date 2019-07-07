@@ -255,7 +255,7 @@ namespace SystemTrayMenu.Helper
 
         public const int ILD_TRANSPARENT = 0x00000001;
 
-        [DllImport("Shell32.dll")]
+        [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr SHGetFileInfo(
            string pszPath,
            uint dwFileAttributes,
