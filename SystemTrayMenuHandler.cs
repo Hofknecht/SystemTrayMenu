@@ -424,7 +424,7 @@ namespace SystemTrayMenu
                     RowData menuButtonData = ReadMenuButtonData(directory, false);
                     menuButtonData.ContainsMenu = true;
                     string resolvedLnkPath = string.Empty;
-                    menuButtonData.ReadIcon(true, false, ref resolvedLnkPath);
+                    menuButtonData.ReadIcon(true, ref resolvedLnkPath);
                     menuData.RowDatas.Add(menuButtonData);
                 }
             }
@@ -453,18 +453,15 @@ namespace SystemTrayMenu
                 foreach (string file in files)
                 {
                     if (worker != null && worker.CancellationPending)
-                    {
                         break;
-                    }
 
                     RowData menuButtonData = ReadMenuButtonData(file, false);
                     string resolvedLnkPath = string.Empty;
-                    if (menuButtonData.ReadIcon(false,
-                        false, ref resolvedLnkPath))
+                    if (menuButtonData.ReadIcon(false, ref resolvedLnkPath))
                     {
+                        // file is pointing to a directory, so prepare submenu
                         menuButtonData = ReadMenuButtonData(resolvedLnkPath, true, menuButtonData);
                         menuButtonData.ContainsMenu = true;
-                        menuButtonData.ReadIcon(true, true, ref resolvedLnkPath);
                     }
 
                     menuData.RowDatas.Add(menuButtonData);

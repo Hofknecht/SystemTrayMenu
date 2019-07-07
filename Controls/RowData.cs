@@ -36,26 +36,30 @@ namespace SystemTrayMenu.Controls
         public bool IsSelected;
         public bool IsSelectedByKeyboard;
 
-        public bool ReadIcon(bool isDirectory, bool isResolvedLnk, ref string resolvedLnkPath)
+        /// <summary>
+        /// Loads the icon
+        /// </summary>
+        /// <param name="isDirectory">True = directory, false = file</param>
+        /// <param name="resolvedLnkPath">Discovered path when functions returns true</param>
+        /// <returns>True when linking to a different directory, otherwise false</returns>
+        public bool ReadIcon(bool isDirectory, ref string resolvedLnkPath)
         {
             bool isLnkDirectory = false;
 
             Logger log = new Logger(nameof(RowData));
 
-            if (isResolvedLnk)
+            if (string.IsNullOrEmpty(TargetFilePath))
             {
-                if (Icon == null)
-                {
-                    Icon = IconReader.GetFolderIcon(TargetFilePath,
-                        IconReader.FolderType.Open, true);
-                }
+                log.Warn($"ReadIcon called but TargetFilePath not set.");
+                return isLnkDirectory;
             }
-            else if (isDirectory)
+
+            if (isDirectory)
             {
                 Icon = IconReader.GetFolderIcon(TargetFilePath,
                     IconReader.FolderType.Closed, false);
             }
-            else if (!string.IsNullOrEmpty(TargetFilePath))
+            else
             {
                 bool handled = false;
                 string fileExtension = Path.GetExtension(TargetFilePath);
