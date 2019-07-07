@@ -18,8 +18,8 @@ namespace SystemTrayMenu
 
         public static bool LoadOrSetByUser()
         {
-            bool pathOK = Directory.Exists(
-                Properties.Settings.Default.PathDirectory);
+            Properties.Settings.Default.Upgrade(); // configs located at "%localappdata%\<AssemblyCompany>\"
+            bool pathOK = Directory.Exists(Properties.Settings.Default.PathDirectory);
             if (!pathOK)
             {
                 pathOK = SetFolderByUser();
