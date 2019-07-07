@@ -435,8 +435,10 @@ namespace SystemTrayMenu
 
                 try
                 {
-                    files = Directory.GetFiles(path).
-                        Where(p => Path.GetFileName(p) != "desktop.ini").ToArray();
+                    files = Directory.GetFiles(path). Where(p =>
+                                !Path.GetFileName(p).Equals("desktop.ini", StringComparison.OrdinalIgnoreCase) && // Windows folder settings, e.g. Win10 "desktop.ini", Win2003 "Desktop.ini"
+                                !Path.GetFileName(p).Equals("thumbs.db", StringComparison.OrdinalIgnoreCase) // Windows thumbnail cache
+                            ).ToArray();
                     Array.Sort(files, new WindowsExplorerSort());
                 }
                 catch (Exception ex)
