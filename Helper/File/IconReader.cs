@@ -53,6 +53,7 @@ namespace SystemTrayMenu.Helper
         public static Icon GetFileIcon(string filePath, bool linkOverlay,
             IconSize size = IconSize.Small)
         {
+            Icon icon = null;
             Shell32.SHFILEINFO shfi = new Shell32.SHFILEINFO();
             uint flags = Shell32.SHGFI_ICON | Shell32.SHGFI_SYSICONINDEX;
 
@@ -76,31 +77,17 @@ namespace SystemTrayMenu.Helper
                 ref shfi,
                 (uint)System.Runtime.InteropServices.Marshal.SizeOf(shfi),
                 flags);
-
-            Icon icon = null;
-            if (linkOverlay)
+            if (hImageList != IntPtr.Zero) // got valid handle?
             {
-                //MH: Added try catch, FromHandle can fail
+                IntPtr hIcon;
+                if (linkOverlay)
+                    hIcon = shfi.hIcon; // Get icon directly
+                else
+                    hIcon = Shell32.ImageList_GetIcon(hImageList, shfi.iIcon, Shell32.ILD_TRANSPARENT); // Get icon from .ink without overlay
+
                 try
                 {
                     // Copy (clone) the returned icon to a new object, thus allowing us to clean-up properly
-                    icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
-                }
-                catch (Exception ex)
-                {
-                    Logger log = new Logger(nameof(IconReader));
-                    log.Info($"filePath:'{filePath}'");
-                    log.Error($"{ex.ToString()}");
-                }
-            }
-            else
-            {
-                //MH: Added ImageList_GetIcon, to get the correct icon from .ink without overlay
-                IntPtr hIcon = Shell32.ImageList_GetIcon(hImageList, shfi.iIcon, Shell32.ILD_TRANSPARENT);
-
-                //MH: Added try catch, FromHandle can fail
-                try
-                {
                     icon = (Icon)Icon.FromHandle(hIcon).Clone();
                 }
                 catch (Exception ex)
@@ -110,12 +97,10 @@ namespace SystemTrayMenu.Helper
                     log.Error($"{ex.ToString()}");
                 }
 
-                // Additionally Cleanup
-                User32.DestroyIcon(hIcon);
+                // Cleanup
+                if (!linkOverlay) User32.DestroyIcon(hIcon);
+                User32.DestroyIcon(shfi.hIcon);
             }
-
-            // Cleanup
-            User32.DestroyIcon(shfi.hIcon);
             return icon;
         }
 
@@ -123,6 +108,8 @@ namespace SystemTrayMenu.Helper
             FolderType folderType, bool linkOverlay,
             IconSize size = IconSize.Small)
         {
+            Icon icon = null;
+
             // Need to add size check, although errors generated at present!
             //uint flags = Shell32.SHGFI_ICON | Shell32.SHGFI_USEFILEATTRIBUTES;
 
@@ -147,28 +134,30 @@ namespace SystemTrayMenu.Helper
 
             // Get the folder icon
             Shell32.SHFILEINFO shfi = new Shell32.SHFILEINFO();
-            Shell32.SHGetFileInfo(directoryPath,
+            IntPtr Success = Shell32.SHGetFileInfo(directoryPath,
                 Shell32.FILE_ATTRIBUTE_DIRECTORY,
                 ref shfi,
                 (uint)Marshal.SizeOf(shfi),
                 flags);
-
-            //MH: Added try catch, FromHandle can fail
-            Icon icon = null;
-            try
+            if (Success != IntPtr.Zero) // got valid handle?
             {
-                Icon.FromHandle(shfi.hIcon); // Load the icon from an HICON handle
+                try
+                {
+                    Icon.FromHandle(shfi.hIcon); // Load the icon from an HICON handle
 
-                // Now clone the icon, so that it can be successfully stored in an ImageList
-                icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
+                    // Now clone the icon, so that it can be successfully stored in an ImageList
+                    icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
 
-                User32.DestroyIcon(shfi.hIcon);     // Cleanup
-            }
-            catch (Exception ex)
-            {
-                Logger log = new Logger(nameof(IconReader));
-                log.Info($"directoryPath:'{directoryPath}'");
-                log.Error($"{ex.ToString()}");
+                }
+                catch (Exception ex)
+                {
+                    Logger log = new Logger(nameof(IconReader));
+                    log.Info($"directoryPath:'{directoryPath}'");
+                    log.Error($"{ex.ToString()}");
+                }
+                
+                // Cleanup
+                User32.DestroyIcon(shfi.hIcon);
             }
             return icon;
         }
