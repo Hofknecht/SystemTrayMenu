@@ -28,7 +28,7 @@ namespace SystemTrayMenu
         int iMenuKey = 0;
         string keyInput = string.Empty;
 
-        MenuNotifyIcon menuNotifyIcon = new MenuNotifyIcon();
+        MenuNotifyIcon menuNotifyIcon = null;
         WaitFastLeave fastLeave = new WaitFastLeave();
         Menu[] menus = new Menu[MenuDefines.MenusMax];
         bool isMainMenuOpen = false;
@@ -43,6 +43,8 @@ namespace SystemTrayMenu
                 Assembly.GetExecutingAssembly().
                 GetName().Version.ToString() +
                 $" ScalingFactor={Program.ScalingFactor}");
+
+            Config.UpgradeIfNotUpgraded();
 
             if (!string.IsNullOrEmpty(Properties.Settings.Default.HotKey))
             {
@@ -64,9 +66,10 @@ namespace SystemTrayMenu
                     Properties.Settings.Default.HotKey = string.Empty;
                     Properties.Settings.Default.Save();
                     MessageBox.Show(ex.Message);
-                    ApplicationRestart();
                 }
             }
+            menuNotifyIcon = new MenuNotifyIcon();
+
             void hook_KeyPressed(object sender, KeyPressedEventArgs e)
             {
                 SwitchOpenClose();
@@ -211,7 +214,6 @@ namespace SystemTrayMenu
             messageFilter.MouseLeave += fastLeave.Start;
             fastLeave.Leave += FadeHalfOrOutIfNeeded;
 
-            Config.UpgradeIfNotUpgraded();
             if (!Config.LoadOrSetByUser())
             {
                 cancelAppRun = true;

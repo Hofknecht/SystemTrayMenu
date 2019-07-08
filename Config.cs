@@ -1,5 +1,8 @@
-﻿using Microsoft.WindowsAPICodePack.Dialogs;
+﻿using Clearcove.Logging;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 
 namespace SystemTrayMenu
 {
@@ -21,8 +24,14 @@ namespace SystemTrayMenu
             {
                 // configs located at "%localappdata%\<AssemblyCompany>\"
                 Properties.Settings.Default.Upgrade();
+
                 Properties.Settings.Default.IsUpgraded = true;
                 Properties.Settings.Default.Save();
+
+                FileVersionInfo versionInfo = FileVersionInfo.
+                    GetVersionInfo(Assembly.GetEntryAssembly().Location);
+                new Logger(nameof(Config)).Info($"Settings upgraded from " +
+                    $"%localappdata%\\{versionInfo.CompanyName}\\");
             }
         }
 
