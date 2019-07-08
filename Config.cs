@@ -1,5 +1,4 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
-using System;
 using System.IO;
 
 namespace SystemTrayMenu
@@ -16,10 +15,22 @@ namespace SystemTrayMenu
             }
         }
 
+        public static void UpgradeIfNotUpgraded()
+        {
+            if (!Properties.Settings.Default.IsUpgraded)
+            {
+                // configs located at "%localappdata%\<AssemblyCompany>\"
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.IsUpgraded = true;
+                Properties.Settings.Default.Save();
+            }
+        }
+
         public static bool LoadOrSetByUser()
         {
-            Properties.Settings.Default.Upgrade(); // configs located at "%localappdata%\<AssemblyCompany>\"
-            bool pathOK = Directory.Exists(Properties.Settings.Default.PathDirectory);
+            bool pathOK = Directory.Exists(
+                Properties.Settings.Default.PathDirectory);
+
             if (!pathOK)
             {
                 pathOK = SetFolderByUser();

@@ -211,6 +211,7 @@ namespace SystemTrayMenu
             messageFilter.MouseLeave += fastLeave.Start;
             fastLeave.Leave += FadeHalfOrOutIfNeeded;
 
+            Config.UpgradeIfNotUpgraded();
             if (!Config.LoadOrSetByUser())
             {
                 cancelAppRun = true;
