@@ -26,7 +26,7 @@ namespace SystemTrayMenu
         Timer timerKeySearch = new Timer();
         int iRowKey = -1;
         int iMenuKey = 0;
-        string keyInput = string.Empty;
+        string KeySearchString = string.Empty;
 
         MenuNotifyIcon menuNotifyIcon = null;
         WaitFastLeave fastLeave = new WaitFastLeave();
@@ -705,6 +705,11 @@ namespace SystemTrayMenu
             return menu;
         }
 
+        /// <summary>
+        /// While menu is open user presses a key to search for specific entries.
+        /// </summary>
+        /// <param name="sender">not used</param>
+        /// <param name="e">Key data of the pressed key</param>
         private void KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetterOrDigit(e.KeyChar) ||
@@ -714,23 +719,28 @@ namespace SystemTrayMenu
             {
                 string letter = e.KeyChar.ToString();
 
-                if (string.IsNullOrEmpty(keyInput))
+                timerKeySearch.Stop();
+
+                if (string.IsNullOrEmpty(KeySearchString))
                 {
-                    keyInput = letter;
-                    Search(keyInput, true);
+                    // no search string set, start new search
+                    KeySearchString += letter;
+                    SelectByKey(Keys.None, KeySearchString);
                 }
-                else if (keyInput.LastOrDefault().ToString() == letter)
+                else if (KeySearchString.LastOrDefault().ToString() == letter)
                 {
-                    keyInput += letter;
-                    Search(letter, true);
-                    timerKeySearch.Stop();
+                    // previous letter pressed again, jump to next element
+                    KeySearchString += letter;
+                    SelectByKey(Keys.None, letter);
                 }
                 else
                 {
-                    keyInput += letter;
-                    Search(keyInput, false);
-                    timerKeySearch.Stop();
+                    // new character for the search string, narrow down the search
+                    KeySearchString += letter;
+                    SelectByKey(Keys.None, KeySearchString, true);
                 }
+
+                // give user some time to continue with this search
                 timerKeySearch.Start();
                 e.Handled = true;
             }
@@ -738,15 +748,9 @@ namespace SystemTrayMenu
 
         private void TimerKeySearch_Tick(object sender, EventArgs e)
         {
+            // this search has expired, reset search
             timerKeySearch.Stop();
-            //Search(keyInput);
-            keyInput = string.Empty;
-        }
-
-#warning better word than force
-        private void Search(string keyInput, bool force)
-        {
-            SelectByKey(Keys.None, keyInput, force);
+            KeySearchString = string.Empty;
         }
 
         private void CmdKeyProcessed(Keys keys)
@@ -791,8 +795,7 @@ namespace SystemTrayMenu
             return isStillSelected;
         }
 
-        private void SelectByKey(Keys keys, string keyInput = "",
-            bool force = true)
+        private void SelectByKey(Keys keys, string keyInput = "", bool KeepSelection = false)
         {
             int iRowBefore = iRowKey;
             int iMenuBefore = iMenuKey;
@@ -802,17 +805,17 @@ namespace SystemTrayMenu
             DataGridView dgvBefore = null;
             Menu menuFromSelected = null;
             string textselected = string.Empty;
-            bool isStillSelected = IsAnyMenuSelectedByKey(
-                ref dgv, ref menuFromSelected, ref textselected);
+            bool isStillSelected = IsAnyMenuSelectedByKey(ref dgv, ref menuFromSelected, ref textselected);
             if (isStillSelected)
             {
-                dgvBefore = dgv;
-                if (!force &&
-                    textselected.ToLower().StartsWith(keyInput.ToLower()))
+                if (KeepSelection)
                 {
-#warning rewrite function should not return here
-                    return; // is that ok? check twice
+                    // Is current selection is still valid for this search then skip selecting different item
+                    if (textselected.ToLower().StartsWith(keyInput.ToLower()))
+                        return;
                 }
+
+                dgvBefore = dgv;
             }
             else
             {
@@ -965,8 +968,7 @@ namespace SystemTrayMenu
             }
             if (isStillSelected && toClear)
             {
-                ClearIsSelectedByKey(iMenuBefore, 
-                    iRowBefore);
+                ClearIsSelectedByKey(iMenuBefore, iRowBefore);
             }
             
         }
