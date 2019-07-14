@@ -1,4 +1,5 @@
 ﻿using Clearcove.Logging;
+using Shell32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace SystemTrayMenu
     {
         Logger log = new Logger(nameof(SystemTrayMenuHandler));
 
+        IShellDispatch4 iShellDispatch4 = null;
+
         KeyboardHook hook = new KeyboardHook();
         Timer timerKeySearch = new Timer();
         int iRowKey = -1;
@@ -43,6 +46,15 @@ namespace SystemTrayMenu
                 Assembly.GetExecutingAssembly().
                 GetName().Version.ToString() +
                 $" ScalingFactor={Program.ScalingFactor}");
+
+            try
+            {
+                iShellDispatch4 = (IShellDispatch4)Activator.CreateInstance(Type.GetTypeFromProgID("Shell.Application"));
+            }
+            catch (Exception ex)
+            {
+                log.Error("Get Shell COM instance failed" + Environment.NewLine + ex.ToString());
+            }
 
             Config.UpgradeIfNotUpgraded();
 
@@ -398,6 +410,21 @@ namespace SystemTrayMenu
 
         MenuData ReadMenu(BackgroundWorker worker, string path, int level)
         {
+            bool HideHiddenEntries = false;
+            bool HideSystemEntries = false;
+
+            if (null != iShellDispatch4)
+            {
+                // Using SHGetSetSettings would be much better in performance but the results are not accurate.
+                // We have to go for the shell interface in order to receive the correct settings:
+                // https://docs.microsoft.com/en-us/windows/win32/shell/ishelldispatch4-getsetting
+                const int SSF_SHOWALLOBJECTS  = 0x00000001;
+                const int SSF_SHOWSUPERHIDDEN = 0x00040000;
+
+                HideHiddenEntries = !iShellDispatch4.GetSetting(SSF_SHOWALLOBJECTS);
+                HideSystemEntries = !iShellDispatch4.GetSetting(SSF_SHOWSUPERHIDDEN);
+            }
+
             MenuData menuData = new MenuData();
             menuData.RowDatas = new List<RowData>();
             menuData.Validity = MenuDataValidity.Invalid;
@@ -422,6 +449,21 @@ namespace SystemTrayMenu
                     if (worker != null && worker.CancellationPending)
                     {
                         break;
+                    }
+
+                    if (HideHiddenEntries || HideSystemEntries) // filter entries..
+                    {
+                        FileAttributes attributes = File.GetAttributes(directory);
+                        if (HideHiddenEntries) // filter hidden files..
+                        {
+                            if (attributes.HasFlag(FileAttributes.Hidden))
+                                continue;
+                        }
+                        if (HideSystemEntries) // filter system files..
+                        {
+                            if (attributes.HasFlag(FileAttributes.Hidden | FileAttributes.System)) // both must be set to be hidden!
+                                continue;
+                        }
                     }
 
                     RowData menuButtonData = ReadMenuButtonData(directory, false);
@@ -459,6 +501,21 @@ namespace SystemTrayMenu
                 {
                     if (worker != null && worker.CancellationPending)
                         break;
+
+                    if (HideHiddenEntries || HideSystemEntries) // filter entries..
+                    {
+                        FileAttributes attributes = File.GetAttributes(file);
+                        if (HideHiddenEntries) // filter hidden files..
+                        {
+                            if (attributes.HasFlag(FileAttributes.Hidden))
+                                continue;
+                        }
+                        if (HideSystemEntries) // filter system files..
+                        {
+                            if (attributes.HasFlag(FileAttributes.Hidden | FileAttributes.System)) // both must be set to be hidden!
+                                continue;
+                        }
+                    }
 
                     RowData menuButtonData = ReadMenuButtonData(file, false);
                     string resolvedLnkPath = string.Empty;
