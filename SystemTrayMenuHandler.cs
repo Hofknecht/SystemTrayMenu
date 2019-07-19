@@ -780,14 +780,13 @@ namespace SystemTrayMenu
 
                 if (string.IsNullOrEmpty(KeySearchString))
                 {
-                    // no search string set, start new search
+                    // no search string set, start new search with initial letter
                     KeySearchString += letter;
                     SelectByKey(Keys.None, KeySearchString);
                 }
-                else if (KeySearchString.LastOrDefault().ToString() == letter)
+                else if (KeySearchString.Length == 1 && KeySearchString.LastOrDefault().ToString() == letter)
                 {
-                    // previous letter pressed again, jump to next element
-                    KeySearchString += letter;
+                    // initial letter pressed again, jump to next element
                     SelectByKey(Keys.None, letter);
                 }
                 else
