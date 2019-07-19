@@ -34,7 +34,7 @@ namespace SystemTrayMenu
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelTitle = new SystemTrayMenu.LabelNoCopy();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.ColumnIcon = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnText = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,7 +174,7 @@ namespace SystemTrayMenu
         }
 
         #endregion
-        private System.Windows.Forms.Label labelTitle;
+        private SystemTrayMenu.LabelNoCopy labelTitle;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.DataGridViewImageColumn ColumnIcon;
