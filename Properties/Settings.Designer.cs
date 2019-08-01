@@ -61,7 +61,7 @@ namespace SystemTrayMenu.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("F10")]
         public string HotKey {
             get {
                 return ((string)(this["HotKey"]));

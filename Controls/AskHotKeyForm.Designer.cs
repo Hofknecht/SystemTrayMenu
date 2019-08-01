@@ -102,7 +102,7 @@
             this.labelCaption.Name = "labelCaption";
             this.labelCaption.Size = new System.Drawing.Size(115, 13);
             this.labelCaption.TabIndex = 0;
-            this.labelCaption.Text = "Shortcut key (e.g. F12)";
+            this.labelCaption.Text = "Shortcut key (e.g. F10)";
             // 
             // AskHotKeyForm
             // 

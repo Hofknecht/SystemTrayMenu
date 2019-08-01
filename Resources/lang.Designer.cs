@@ -61,11 +61,11 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die (e.g. F12) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die (e.g. F10) ähnelt.
         /// </summary>
-        internal static string _e_g__F12_ {
+        internal static string _e_g__F10_ {
             get {
-                return ResourceManager.GetString("(e.g. F12)", resourceCulture);
+                return ResourceManager.GetString("(e.g. F10)", resourceCulture);
             }
         }
         

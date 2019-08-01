@@ -12,7 +12,7 @@ namespace SystemTrayMenu.Controls
             InitializeComponent();
             this.Text = Program.Translate("Shortcut key");
             this.labelCaption.Text = $"{Program.Translate("Shortcut key")} " +
-                $"{Program.Translate("(e.g. F12)")}";
+                $"{Program.Translate("(e.g. F10)")}";
             this.labelText.Text =
                 Program.Translate("CTRL") + " + " +
                 Program.Translate("ALT") + " + ?";

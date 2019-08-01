@@ -147,8 +147,8 @@
   <data name="English" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="(e.g. F12)" xml:space="preserve">
-    <value>(z.B. F12)</value>
+  <data name="(e.g. F10)" xml:space="preserve">
+    <value>(z.B. F10)</value>
   </data>
   <data name="buttonDetails" xml:space="preserve">
     <value>Details</value>

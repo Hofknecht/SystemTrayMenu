@@ -147,8 +147,8 @@
   <data name="CTRL" xml:space="preserve">
     <value>CTRL</value>
   </data>
-  <data name="(e.g. F12)" xml:space="preserve">
-    <value>(e.g. F12)</value>
+  <data name="(e.g. F10)" xml:space="preserve">
+    <value>(e.g. F10)</value>
   </data>
   <data name="buttonDetails" xml:space="preserve">
     <value>Details</value>
