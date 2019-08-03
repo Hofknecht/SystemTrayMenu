@@ -212,6 +212,13 @@ namespace SystemTrayMenu
                 Process.Start(Program.GetLogFilePath());
             }
 
+            Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
+            void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
+            {
+                log.Info("SystemEvents_DisplaySettingsChanged");
+                ApplicationRestart();
+            }
+
             menuNotifyIcon.Restart += ApplicationRestart;
             void ApplicationRestart()
             {
@@ -437,6 +444,10 @@ namespace SystemTrayMenu
                 {
                     directories = Directory.GetDirectories(path);
                     Array.Sort(directories, new WindowsExplorerSort());
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    log.Info($"UnauthorizedAccessException:'{path}'");
                 }
                 catch (Exception ex)
                 {
