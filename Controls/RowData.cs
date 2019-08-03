@@ -481,6 +481,7 @@ namespace SystemTrayMenu.Controls
             row.Tag = data;
         }
 
+#warning either not public and as inline method or we want probably to move that code somewhere else
         public Icon AddIconOverlay(Icon originalIcon, Icon overlay)
         {
             var target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
