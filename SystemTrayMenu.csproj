@@ -180,6 +180,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\White50Percentage.ico" />
     <None Include="Resources\STM.ico" />
     <None Include="Resources\STM_black.ico" />
     <None Include="Resources\Selected.png" />

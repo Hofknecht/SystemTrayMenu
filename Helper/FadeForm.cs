@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clearcove.Logging;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -160,10 +161,19 @@ namespace SystemTrayMenu
 
         static void ShowInactiveTopmost(Form frm)
         {
-            ShowWindow(frm.Handle, SW_SHOWNOACTIVATE);
-            SetWindowPos(frm.Handle.ToInt32(), HWND_TOPMOST,
-            frm.Left, frm.Top, frm.Width, frm.Height,
-            SWP_NOACTIVATE);
+            try
+            {
+                ShowWindow(frm.Handle, SW_SHOWNOACTIVATE);
+                SetWindowPos(frm.Handle.ToInt32(), HWND_TOPMOST,
+                frm.Left, frm.Top, frm.Width, frm.Height,
+                SWP_NOACTIVATE);
+            }
+            catch (Exception exception)
+            {
+                Logger log = new Logger(nameof(FadeForm));
+                log.Error($"{exception.ToString()}");
+                //MessageBox.Show(exception.ToString());
+            }
         }
     }
 }

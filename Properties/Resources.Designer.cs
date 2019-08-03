@@ -289,5 +289,15 @@ namespace SystemTrayMenu.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Icon ähnlich wie (Symbol).
+        /// </summary>
+        public static System.Drawing.Icon WhiteTransparency {
+            get {
+                object obj = ResourceManager.GetObject("WhiteTransparency", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

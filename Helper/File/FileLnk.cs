@@ -194,8 +194,8 @@ namespace SystemTrayMenu
             bool isDirectory = false;
             if (Directory.Exists(filePath))
             {
-                FileAttributes attr = File.GetAttributes(filePath);
-                if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
+                FileAttributes attributes = File.GetAttributes(filePath);
+                if ((attributes & FileAttributes.Directory) == FileAttributes.Directory)
                 {
                     isDirectory = true;
                 }

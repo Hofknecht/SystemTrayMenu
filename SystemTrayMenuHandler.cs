@@ -451,23 +451,19 @@ namespace SystemTrayMenu
                         break;
                     }
 
-                    if (HideHiddenEntries || HideSystemEntries) // filter entries..
+                    FileAttributes attributes = File.GetAttributes(directory);
+                    bool hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
+                    bool systemEntry = attributes.HasFlag(
+                        FileAttributes.Hidden | FileAttributes.System);
+                    if ((HideHiddenEntries && hiddenEntry) ||
+                        (HideSystemEntries && systemEntry))
                     {
-                        FileAttributes attributes = File.GetAttributes(directory);
-                        if (HideHiddenEntries) // filter hidden files..
-                        {
-                            if (attributes.HasFlag(FileAttributes.Hidden))
-                                continue;
-                        }
-                        if (HideSystemEntries) // filter system files..
-                        {
-                            if (attributes.HasFlag(FileAttributes.Hidden | FileAttributes.System)) // both must be set to be hidden!
-                                continue;
-                        }
+                        continue;
                     }
 
                     RowData menuButtonData = ReadMenuButtonData(directory, false);
                     menuButtonData.ContainsMenu = true;
+                    menuButtonData.HiddenEntry = hiddenEntry;
                     string resolvedLnkPath = string.Empty;
                     menuButtonData.ReadIcon(true, ref resolvedLnkPath);
                     menuData.RowDatas.Add(menuButtonData);
@@ -500,21 +496,18 @@ namespace SystemTrayMenu
                 foreach (string file in files)
                 {
                     if (worker != null && worker.CancellationPending)
-                        break;
-
-                    if (HideHiddenEntries || HideSystemEntries) // filter entries..
                     {
-                        FileAttributes attributes = File.GetAttributes(file);
-                        if (HideHiddenEntries) // filter hidden files..
-                        {
-                            if (attributes.HasFlag(FileAttributes.Hidden))
-                                continue;
-                        }
-                        if (HideSystemEntries) // filter system files..
-                        {
-                            if (attributes.HasFlag(FileAttributes.Hidden | FileAttributes.System)) // both must be set to be hidden!
-                                continue;
-                        }
+                        break;
+                    }
+
+                    FileAttributes attributes = File.GetAttributes(file);
+                    bool hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
+                    bool systemEntry = attributes.HasFlag(
+                        FileAttributes.Hidden | FileAttributes.System);
+                    if ((HideHiddenEntries && hiddenEntry) ||
+                        (HideSystemEntries && systemEntry))
+                    {
+                        continue;
                     }
 
                     RowData menuButtonData = ReadMenuButtonData(file, false);
@@ -524,6 +517,7 @@ namespace SystemTrayMenu
                         // file is pointing to a directory, so prepare submenu
                         menuButtonData = ReadMenuButtonData(resolvedLnkPath, true, menuButtonData);
                         menuButtonData.ContainsMenu = true;
+                        menuButtonData.HiddenEntry = hiddenEntry;
                     }
 
                     menuData.RowDatas.Add(menuButtonData);

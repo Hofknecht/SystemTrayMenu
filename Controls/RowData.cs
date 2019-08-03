@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -256,6 +257,7 @@ namespace SystemTrayMenu.Controls
         bool disposed = false;
         Logger log = new Logger(nameof(RowData));
         internal string TargetFilePathOrig;
+        internal bool HiddenEntry;
 
         public RowData()
         {
@@ -462,13 +464,31 @@ namespace SystemTrayMenu.Controls
             }
             DataGridViewImageCell cellIcon =
                 (DataGridViewImageCell)row.Cells[0];
-            cellIcon.Value = data.Icon;
+
+            if (HiddenEntry)
+            {
+                cellIcon.Value = AddIconOverlay(data.Icon, Properties.Resources.WhiteTransparency);
+            }
+            else
+            {
+                cellIcon.Value = data.Icon;
+            }
 
             DataGridViewTextBoxCell cellName = 
                 (DataGridViewTextBoxCell)row.Cells[1];
             cellName.Value = data.Text;
 
             row.Tag = data;
+        }
+
+        public Icon AddIconOverlay(Icon originalIcon, Icon overlay)
+        {
+            var target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
+            var graphics = Graphics.FromImage(target);
+            graphics.DrawIcon(originalIcon, 0, 0);
+            graphics.DrawIcon(overlay, 0, 0);
+            target.MakeTransparent(target.GetPixel(1,1));
+            return Icon.FromHandle(target.GetHicon());
         }
 
         public void Dispose()
