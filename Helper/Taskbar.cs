@@ -52,7 +52,7 @@ namespace SystemTrayMenu
             get;
             private set;
         }
-        
+
         [DllImport("shell32.dll", SetLastError = true)]
         public static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
 

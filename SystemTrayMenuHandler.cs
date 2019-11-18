@@ -425,7 +425,7 @@ namespace SystemTrayMenu
                 // Using SHGetSetSettings would be much better in performance but the results are not accurate.
                 // We have to go for the shell interface in order to receive the correct settings:
                 // https://docs.microsoft.com/en-us/windows/win32/shell/ishelldispatch4-getsetting
-                const int SSF_SHOWALLOBJECTS  = 0x00000001;
+                const int SSF_SHOWALLOBJECTS = 0x00000001;
                 const int SSF_SHOWSUPERHIDDEN = 0x00040000;
 
                 HideHiddenEntries = !iShellDispatch4.GetSetting(SSF_SHOWALLOBJECTS);
@@ -487,9 +487,9 @@ namespace SystemTrayMenu
 
                 try
                 {
-                    files = Directory.GetFiles(path). Where(p =>
-                                !Path.GetFileName(p).Equals("desktop.ini", StringComparison.OrdinalIgnoreCase) && // Windows folder settings, e.g. Win10 "desktop.ini", Win2003 "Desktop.ini"
-                                !Path.GetFileName(p).Equals("thumbs.db", StringComparison.OrdinalIgnoreCase) // Windows thumbnail cache
+                    files = Directory.GetFiles(path).Where(p =>
+                               !Path.GetFileName(p).Equals("desktop.ini", StringComparison.OrdinalIgnoreCase) && // Windows folder settings, e.g. Win10 "desktop.ini", Win2003 "Desktop.ini"
+                               !Path.GetFileName(p).Equals("thumbs.db", StringComparison.OrdinalIgnoreCase) // Windows thumbnail cache
                             ).ToArray();
                     Array.Sort(files, new WindowsExplorerSort());
                 }
@@ -649,7 +649,7 @@ namespace SystemTrayMenu
         private void CheckMenuOpenerStop(int menuIndex, int rowIndex, DataGridView dgv = null)
         {
             Menu menu = menus[menuIndex];
-            if (menu != null && 
+            if (menu != null &&
                 rowIndex > -1)
             {
                 if (dgv == null)
@@ -698,13 +698,13 @@ namespace SystemTrayMenu
                 RowData rowData = (RowData)row.Tag;
                 if (rowData.IsSelectedByKeyboard)
                 {
-                    row.DefaultCellStyle.SelectionBackColor = 
+                    row.DefaultCellStyle.SelectionBackColor =
                         MenuDefines.KeyBoardSelection;
                     row.Selected = true;
                 }
                 else if (rowData.IsSelected)
                 {
-                    row.DefaultCellStyle.SelectionBackColor = 
+                    row.DefaultCellStyle.SelectionBackColor =
                         MenuDefines.FolderOpen;
                     row.Selected = true;
                 }
@@ -829,7 +829,7 @@ namespace SystemTrayMenu
 
         private bool IsAnyMenuSelectedByKey(
             ref DataGridView dgv,
-            ref Menu menuFromSelected, 
+            ref Menu menuFromSelected,
             ref string textselected)
         {
             Menu menu = menus[iMenuKey];
@@ -933,7 +933,7 @@ namespace SystemTrayMenu
                                 if (SelectMatched(dgv, iRowKey) ||
                                     SelectMatched(dgv, 0))
                                 {
-                                    CheckMenuOpenerStop(iMenuBefore, 
+                                    CheckMenuOpenerStop(iMenuBefore,
                                         iRowBefore, dgvBefore);
                                     CheckMenuOpenerStart(dgv, iRowKey);
                                     toClear = true;
@@ -1031,10 +1031,10 @@ namespace SystemTrayMenu
             {
                 ClearIsSelectedByKey(iMenuBefore, iRowBefore);
             }
-            
+
         }
 
-        private bool SelectMatched(DataGridView dgv, 
+        private bool SelectMatched(DataGridView dgv,
             int indexStart, string keyInput = "")
         {
             bool found = false;
@@ -1049,7 +1049,7 @@ namespace SystemTrayMenu
             return found;
         }
 
-        private bool SelectMatchedReverse(DataGridView dgv, 
+        private bool SelectMatchedReverse(DataGridView dgv,
             int indexStart, string keyInput = "")
         {
             bool found = false;
@@ -1064,7 +1064,7 @@ namespace SystemTrayMenu
             return found;
         }
 
-        private bool Select(DataGridView dgv, int i, 
+        private bool Select(DataGridView dgv, int i,
             string keyInput = "")
         {
             bool found = false;
@@ -1085,14 +1085,14 @@ namespace SystemTrayMenu
                     {
                         dgv.FirstDisplayedScrollingRowIndex = row.Index;
                     }
-                    else if(row.Index >= 
-                        dgv.FirstDisplayedScrollingRowIndex + 
+                    else if (row.Index >=
+                        dgv.FirstDisplayedScrollingRowIndex +
                         dgv.DisplayedRowCount(false))
                     {
                         dgv.FirstDisplayedScrollingRowIndex = row.Index -
                         dgv.DisplayedRowCount(false) + 1;
                     }
-                    
+
                     found = true;
                 }
             }

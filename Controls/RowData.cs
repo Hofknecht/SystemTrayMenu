@@ -306,7 +306,7 @@ namespace SystemTrayMenu.Controls
                 //    FlatAppearance.BorderColor = BackColor;
                 //}
 
-                
+
             }
         }
 
@@ -343,7 +343,7 @@ namespace SystemTrayMenu.Controls
                 waitMenuOpen.Click();
             }
 
-            if (e == null || 
+            if (e == null ||
                 e.Button == MouseButtons.Left &&
                 !ContainsMenu)
             {
@@ -386,7 +386,7 @@ namespace SystemTrayMenu.Controls
                     ShellContextMenu ctxMnu = new ShellContextMenu();
                     Point location = dgv.FindForm().Location;
                     Point point = new Point(
-                        e.X + location.X + dgv.Location.X, 
+                        e.X + location.X + dgv.Location.X,
                         e.Y + location.Y + dgv.Location.Y);
                     if (ContainsMenu)
                     {
@@ -474,7 +474,7 @@ namespace SystemTrayMenu.Controls
                 cellIcon.Value = data.Icon;
             }
 
-            DataGridViewTextBoxCell cellName = 
+            DataGridViewTextBoxCell cellName =
                 (DataGridViewTextBoxCell)row.Cells[1];
             cellName.Value = data.Text;
 
@@ -488,7 +488,7 @@ namespace SystemTrayMenu.Controls
             var graphics = Graphics.FromImage(target);
             graphics.DrawIcon(originalIcon, 0, 0);
             graphics.DrawIcon(overlay, 0, 0);
-            target.MakeTransparent(target.GetPixel(1,1));
+            target.MakeTransparent(target.GetPixel(1, 1));
             return Icon.FromHandle(target.GetHicon());
         }
 

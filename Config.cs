@@ -61,7 +61,7 @@ namespace SystemTrayMenu
                     if (Directory.Exists(dialog.FileName))
                     {
                         pathOK = true;
-                        Properties.Settings.Default.PathDirectory = 
+                        Properties.Settings.Default.PathDirectory =
                             dialog.FileName;
                         Properties.Settings.Default.Save();
                     }

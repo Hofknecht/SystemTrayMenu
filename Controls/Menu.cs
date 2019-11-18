@@ -156,9 +156,9 @@ namespace SystemTrayMenu
         {
             DataGridViewElementStates states = DataGridViewElementStates.None;
             dgv.AutoResizeRows();
-            int height =  (int)(dgv.Rows.GetRowsHeight(states));
-            int heightMax = screen.Bounds.Height - 
-                new Taskbar().Size.Height - 
+            int height = (int)(dgv.Rows.GetRowsHeight(states));
+            int heightMax = screen.Bounds.Height -
+                new Taskbar().Size.Height -
                 labelTitle.Height;
             if (height > heightMax)
             {
@@ -185,8 +185,8 @@ namespace SystemTrayMenu
             this.dgv.Height = height;
 
             AdjustDataGridViewSize();
-            int x = menuPredecessor.Location.X - Width + 
-                (int)Math.Round(Program.ScalingFactor, 0, 
+            int x = menuPredecessor.Location.X - Width +
+                (int)Math.Round(Program.ScalingFactor, 0,
                 MidpointRounding.AwayFromZero);
 
             RowData trigger = (RowData)Tag;

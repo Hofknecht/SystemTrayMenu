@@ -1,5 +1,4 @@
 ﻿using Clearcove.Logging;
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,7 +54,7 @@ namespace SystemTrayMenu
             try
             {
                 bool cancelAppRun = false;
-                using (SystemTrayMenuHandler stm = 
+                using (SystemTrayMenuHandler stm =
                     new SystemTrayMenuHandler(ref cancelAppRun))
                 {
                     if (!cancelAppRun)

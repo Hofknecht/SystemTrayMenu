@@ -36,7 +36,7 @@ namespace SystemTrayMenu.Controls
                 Name = "changeLanguage",
                 Text = Program.Translate("Language")
             };
-            foreach (CultureInfo cultureInfo in 
+            foreach (CultureInfo cultureInfo in
                 GetCultureList(CultureTypes.AllCultures))
             {
                 if (Program.Languages.Contains(cultureInfo.Name))

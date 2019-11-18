@@ -19,7 +19,7 @@ namespace SystemTrayMenu
         public const int MenuRowsHeight = 18;
         public const int LengthMax = 37;
         public const int ButtonTextPaddingLeft = 18;
-        public const int ButtonTextPaddingRight= 12;
+        public const int ButtonTextPaddingRight = 12;
 
         public const int Scrollspeed = 4;
 

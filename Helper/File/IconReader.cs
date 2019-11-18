@@ -155,7 +155,7 @@ namespace SystemTrayMenu.Helper
                     log.Info($"directoryPath:'{directoryPath}'");
                     log.Error($"{ex.ToString()}");
                 }
-                
+
                 // Cleanup
                 User32.DestroyIcon(shfi.hIcon);
             }
