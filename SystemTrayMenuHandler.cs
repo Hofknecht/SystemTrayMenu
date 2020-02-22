@@ -34,10 +34,11 @@ namespace SystemTrayMenu
         MenuNotifyIcon menuNotifyIcon = null;
         WaitFastLeave fastLeave = new WaitFastLeave();
         Menu[] menus = new Menu[MenuDefines.MenusMax];
-        bool isMainMenuOpen = false;
+
+        enum OpenCloseState { Default, Opening, Closing };
+        OpenCloseState openCloseState = OpenCloseState.Default;
 
         BackgroundWorker worker = new BackgroundWorker();
-        bool restartLoading = false;
         Screen screen = null;
 
         public SystemTrayMenuHandler(ref bool cancelAppRun)
@@ -90,6 +91,7 @@ namespace SystemTrayMenu
             timerKeySearch.Interval = MenuDefines.KeySearchInterval;
             timerKeySearch.Tick += TimerKeySearch_Tick;
             menus[0] = new Menu();
+            menus[0].Dispose();
             MessageFilter messageFilter = new MessageFilter();
             Application.AddMessageFilter(messageFilter);
             menuNotifyIcon.Exit += Application.Exit;
@@ -101,53 +103,51 @@ namespace SystemTrayMenu
                 {
                     //Case when Folder Dialog open
                 }
-                else if (isMainMenuOpen && menus[0].Visible)
+                else if (openCloseState == OpenCloseState.Opening ||
+                    menus[0].Visible && openCloseState == OpenCloseState.Default)
                 {
-                    isMainMenuOpen = false;
+                    openCloseState = OpenCloseState.Closing;
                     MenusFadeOut();
                     if (worker.IsBusy)
                     {
                         worker.CancelAsync();
                     }
                 }
-                else if (worker.IsBusy)
+                else if (menus[0].Visible)
                 {
-                    restartLoading = true;
-                    worker.CancelAsync();
+                    openCloseState = OpenCloseState.Default;
+                    ActivateMenu();
                 }
                 else
                 {
-                    isMainMenuOpen = true;
-                    if (menus[0].Visible)
+                    openCloseState = OpenCloseState.Opening;
+                    screen = ScreenMouse.GetScreen();
+                    //bool IsNotifyIconInTaskbar()
+                    //{
+                    //    bool isNotifyIconInTaskbar = false;
+                    //    int height = screen.Bounds.Height -
+                    //        new Taskbar().Size.Height;
+                    //    if (Cursor.Position.Y >= height)
+                    //    {
+                    //        isNotifyIconInTaskbar = true;
+                    //    }
+                    //    return isNotifyIconInTaskbar;
+                    //}
+                    //if (!IsNotifyIconInTaskbar())
+                    //{
+                    //    //DragDropHintForm hintForm = new DragDropHintForm(
+                    //    //    Program.Translate("HintDragDropTitle"),
+                    //    //    Program.Translate("HintDragDropText"),
+                    //    //    Program.Translate("buttonOk"));
+                    //    //hintForm.Show();
+                    //}
+                    while (!menus[0].IsDisposed)
                     {
-                        ActivateMenu();
+                        Application.DoEvents();
                     }
-                    else
-                    {
-                        screen = ScreenMouse.GetScreen();
-                        bool IsNotifyIconInTaskbar()
-                        {
-                            bool isNotifyIconInTaskbar = false;
-                            int height = screen.Bounds.Height -
-                                new Taskbar().Size.Height;
-                            if (Cursor.Position.Y >= height)
-                            {
-                                isNotifyIconInTaskbar = true;
-                            }
-                            return isNotifyIconInTaskbar;
-                        }
-                        if (!IsNotifyIconInTaskbar())
-                        {
-                            //DragDropHintForm hintForm = new DragDropHintForm(
-                            //    Program.Translate("HintDragDropTitle"),
-                            //    Program.Translate("HintDragDropText"),
-                            //    Program.Translate("buttonOk"));
-                            //hintForm.Show();
-                        }
 
-                        menuNotifyIcon.LoadingStart();
-                        worker.RunWorkerAsync();
-                    }
+                    menuNotifyIcon.LoadingStart();
+                    worker.RunWorkerAsync();
                 }
             }
 
@@ -158,7 +158,6 @@ namespace SystemTrayMenu
             {
                 int level = 0;
                 BackgroundWorker worker = (BackgroundWorker)senderDoWork;
-                restartLoading = false;
                 eDoWork.Result = ReadMenu(worker, Config.Path, level);
             }
 
@@ -166,22 +165,15 @@ namespace SystemTrayMenu
             void Worker_RunWorkerCompleted(object sender,
                 RunWorkerCompletedEventArgs e)
             {
-                if (restartLoading)
+                ResetSelectedByKey();
+                menuNotifyIcon.LoadingStop();
+                MenuData menuData = (MenuData)e.Result;
+                if (menuData.Validity == MenuDataValidity.Valid)
                 {
-                    worker.RunWorkerAsync();
-                }
-                else
-                {
-                    ResetSelectedByKey();
-                    menuNotifyIcon.LoadingStop();
-                    MenuData menuData = (MenuData)e.Result;
-                    if (menuData.Validity == MenuDataValidity.Valid)
-                    {
-                        menus[0] = CreateMenu(menuData, Path.GetFileName(Config.Path));
-                        menus[0].AdjustLocationAndSize(screen);
-                        ActivateMenu();
-                        menus[0].AdjustLocationAndSize(screen);
-                    }
+                    menus[0] = CreateMenu(menuData, Path.GetFileName(Config.Path));
+                    menus[0].AdjustLocationAndSize(screen);
+                    ActivateMenu();
+                    menus[0].AdjustLocationAndSize(screen);
                 }
             }
 
@@ -260,7 +252,8 @@ namespace SystemTrayMenu
 
             if (isMouseOnAnyMenu)
             {
-                if (isAnyMenuActive && isMainMenuOpen)
+                if (isAnyMenuActive && 
+                    !(openCloseState == OpenCloseState.Closing))
                 {
                     if (!IsAnyMenuSelectedByKey())
                     {
@@ -308,6 +301,10 @@ namespace SystemTrayMenu
         void DisposeWhenHidden(object sender, EventArgs e)
         {
             Menu menuToDispose = (Menu)sender;
+            if (menuToDispose == menus[0])
+            {
+                openCloseState = OpenCloseState.Default;
+            }
             if (!menuToDispose.Visible)
             {
                 DisposeMenu(menuToDispose);
@@ -995,7 +992,6 @@ namespace SystemTrayMenu
                     iMenuKey = 0;
                     iRowKey = -1;
                     toClear = true;
-                    isMainMenuOpen = false;
                     MenusFadeOut();
                     break;
                 default:
