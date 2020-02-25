@@ -90,6 +90,11 @@ namespace SystemTrayMenu
                 timerFadeHalf.Stop();
                 timerFadeIn.Start();
             }
+            else if (form.IsDisposed)
+            {
+                new Logger(nameof(FadeForm)).Warn(
+                    $"{Environment.StackTrace.ToString()}");
+            }
             else
             {
                 ShowInactiveTopmost(form);
@@ -161,19 +166,10 @@ namespace SystemTrayMenu
 
         static void ShowInactiveTopmost(Form frm)
         {
-            try
-            {
-                ShowWindow(frm.Handle, SW_SHOWNOACTIVATE);
-                SetWindowPos(frm.Handle.ToInt32(), HWND_TOPMOST,
-                frm.Left, frm.Top, frm.Width, frm.Height,
-                SWP_NOACTIVATE);
-            }
-            catch (Exception exception)
-            {
-                Logger log = new Logger(nameof(FadeForm));
-                log.Error($"{exception.ToString()}");
-                //MessageBox.Show(exception.ToString());
-            }
+            ShowWindow(frm.Handle, SW_SHOWNOACTIVATE);
+            SetWindowPos(frm.Handle.ToInt32(), HWND_TOPMOST,
+            frm.Left, frm.Top, frm.Width, frm.Height,
+            SWP_NOACTIVATE);
         }
     }
 }

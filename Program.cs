@@ -36,6 +36,9 @@ namespace SystemTrayMenu
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Logger log = new Logger(nameof(Program));
+            Logger.Start(new FileInfo(GetLogFilePath()));
+
             if (IsAppAlreadyRunning("SystemTrayMenu"))
             {
                 KillOtherSystemTrayMenus();
@@ -49,8 +52,6 @@ namespace SystemTrayMenu
                 SetProcessDPIAware();
             }
 
-            Logger log = new Logger(nameof(Program));
-            Logger.Start(new FileInfo(GetLogFilePath()));
             try
             {
                 bool cancelAppRun = false;
@@ -78,29 +79,21 @@ namespace SystemTrayMenu
             bool killedAProcess = false;
             int ownPID = Process.GetCurrentProcess().Id;
 
-            foreach (Process p in Process.GetProcessesByName("SystemTrayMenu").
-                Where(p => p.Id != ownPID))
+            try
             {
-                try
+                foreach (Process p in
+                    Process.GetProcessesByName("SystemTrayMenu").
+                    Where(p => p.Id != ownPID))
                 {
                     p.Kill();
                     p.WaitForExit();
                     killedAProcess = true;
                 }
-                catch (Win32Exception winException)
-                {
-                    Logger log = new Logger(nameof(Program));
-                    log.Error($"{winException.ToString()}");
-                    MessageBox.Show(winException.ToString());
-                    Application.Exit();
-                }
-                catch (InvalidOperationException invalidException)
-                {
-                    Logger log = new Logger(nameof(Program));
-                    log.Error($"{invalidException.ToString()}");
-                    MessageBox.Show(invalidException.ToString());
-                    Application.Exit();
-                }
+            }
+            catch (Exception exception)
+            {
+                Logger log = new Logger(nameof(Program));
+                log.Warn($"{exception.ToString()}");
             }
 
             return killedAProcess;
