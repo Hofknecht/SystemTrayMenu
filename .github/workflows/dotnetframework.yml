@@ -1,11 +1,11 @@
-name: .NET Core
+name: STM.NetFramework 4.7.2
 
 on: [push]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
