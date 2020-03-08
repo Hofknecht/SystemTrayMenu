@@ -55,8 +55,7 @@ namespace SystemTrayMenu
             try
             {
                 bool cancelAppRun = false;
-                using (SystemTrayMenuHandler stm =
-                    new SystemTrayMenuHandler(ref cancelAppRun))
+                using (new SystemTrayMenu(ref cancelAppRun))
                 {
                     if (!cancelAppRun)
                     {

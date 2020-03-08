@@ -1,7 +1,7 @@
 ﻿using System;
 using Timer = System.Windows.Forms.Timer;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Handler
 {
     class WaitFastLeave : IDisposable
     {

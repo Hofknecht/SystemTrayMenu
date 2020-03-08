@@ -11,6 +11,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using SystemTrayMenu.Handler;
 using SystemTrayMenu.Helper;
 using TAFactory.IconPack;
 

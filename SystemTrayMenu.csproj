@@ -167,8 +167,9 @@
     <Compile Include="Helper\MessageFilter.cs" />
     <Compile Include="Helper\ShellContextMenu.cs" />
     <Compile Include="Helper\File\FileUrl.cs" />
-    <Compile Include="Helper\WaitFastLeave.cs" />
-    <Compile Include="Helper\WaitMenuOpen.cs" />
+    <Compile Include="Handler\WaitFastLeave.cs" />
+    <Compile Include="Handler\WaitMenuOpen.cs" />
+    <Compile Include="Helper\WindowsExplorerSort.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -196,8 +197,8 @@
     <Compile Include="Controls\AppNotifyIcon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helper\ScreenMouse.cs" />
-    <Compile Include="SystemTrayMenuHandler.cs" />
+    <Compile Include="Handler\KeyboardInput.cs" />
+    <Compile Include="SystemTrayMenu.cs" />
     <EmbeddedResource Include="Controls\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +297,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

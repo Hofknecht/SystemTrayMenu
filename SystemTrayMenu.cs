@@ -8,9 +8,9 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using SystemTrayMenu.Controls;
+using SystemTrayMenu.Handler;
 using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu
@@ -19,21 +19,19 @@ namespace SystemTrayMenu
     //MethodBase m = MethodBase.GetCurrentMethod();
     //log.Debug($"Executing {m.ReflectedType.Name}, {m.Name}");
     #endregion
-    class SystemTrayMenuHandler : IDisposable
+    class SystemTrayMenu : IDisposable
     {
-        Logger log = new Logger(nameof(SystemTrayMenuHandler));
+        Logger log = new Logger(nameof(SystemTrayMenu));
 
         IShellDispatch4 iShellDispatch4 = null;
 
-        KeyboardHook hook = new KeyboardHook();
-        Timer timerKeySearch = new Timer();
-        int iRowKey = -1;
-        int iMenuKey = 0;
-        string KeySearchString = string.Empty;
+        MessageFilter messageFilter = new MessageFilter();
+        bool messageFilterAdded = false;
 
         MenuNotifyIcon menuNotifyIcon = null;
         WaitFastLeave fastLeave = new WaitFastLeave();
         Menu[] menus = new Menu[MenuDefines.MenusMax];
+        KeyboardInput keyboardInput;
 
         enum OpenCloseState { Default, Opening, Closing };
         OpenCloseState openCloseState = OpenCloseState.Default;
@@ -41,7 +39,7 @@ namespace SystemTrayMenu
         BackgroundWorker worker = new BackgroundWorker();
         Screen screen = null;
 
-        public SystemTrayMenuHandler(ref bool cancelAppRun)
+        public SystemTrayMenu(ref bool cancelAppRun)
         {
             log.Info("Application Start " +
                 Assembly.GetExecutingAssembly().
@@ -58,42 +56,23 @@ namespace SystemTrayMenu
             }
 
             Config.UpgradeIfNotUpgraded();
-
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.HotKey))
+            keyboardInput = new KeyboardInput(menus);
+            keyboardInput.RegisterHotKey();
+            keyboardInput.HotKeyPressed += SwitchOpenClose;
+            keyboardInput.ClosePressed += MenusFadeOut;
+            keyboardInput.RowSelected += KeyboardInputRowSelected;
+            void KeyboardInputRowSelected(DataGridView dgv, int rowIndex)
             {
-                var cvt = new KeysConverter();
-                var key = (Keys)cvt.ConvertFrom(
-                    Properties.Settings.Default.HotKey);
-                try
-                {
-                    hook.RegisterHotKey(
-                        KeyboardHookModifierKeys.Control |
-                        KeyboardHookModifierKeys.Alt,
-                        key);
-                    hook.KeyPressed += hook_KeyPressed;
-                }
-                catch (Exception ex)
-                {
-                    log.Info($"key:'{key.ToString()}'");
-                    log.Error($"{ex.ToString()}");
-                    Properties.Settings.Default.HotKey = string.Empty;
-                    Properties.Settings.Default.Save();
-                    MessageBox.Show(ex.Message);
-                }
+                FadeInIfNeeded();
+                CheckMenuOpenerStart(dgv, rowIndex);
             }
+            keyboardInput.RowDeselected += CheckMenuOpenerStop;
+            keyboardInput.Cleared += FadeHalfOrOutIfNeeded;
+
             menuNotifyIcon = new MenuNotifyIcon();
 
-            void hook_KeyPressed(object sender, KeyPressedEventArgs e)
-            {
-                SwitchOpenClose();
-            }
-
-            timerKeySearch.Interval = MenuDefines.KeySearchInterval;
-            timerKeySearch.Tick += TimerKeySearch_Tick;
             menus[0] = new Menu();
             menus[0].Dispose();
-            MessageFilter messageFilter = new MessageFilter();
-            Application.AddMessageFilter(messageFilter);
             menuNotifyIcon.Exit += Application.Exit;
 
             menuNotifyIcon.HandleClick += SwitchOpenClose;
@@ -113,15 +92,12 @@ namespace SystemTrayMenu
                         worker.CancelAsync();
                     }
                 }
-                else if (menus[0].Visible)
-                {
-                    openCloseState = OpenCloseState.Default;
-                    ActivateMenu();
-                }
                 else
                 {
-                    openCloseState = OpenCloseState.Opening;
-                    screen = ScreenMouse.GetScreen();
+                    #region NotifyIconIsInteededToBeOutside
+                    // Idea is either to show always outside like dropbox 
+                    // (is nok due to windows rules, maybe only allowed when asking user?)
+                    // (or to give at least a hint that drag drop possible?)
                     //bool IsNotifyIconInTaskbar()
                     //{
                     //    bool isNotifyIconInTaskbar = false;
@@ -141,10 +117,17 @@ namespace SystemTrayMenu
                     //    //    Program.Translate("buttonOk"));
                     //    //hintForm.Show();
                     //}
-                    while (!menus[0].IsDisposed)
+                    #endregion
+
+                    while (menus[0].Visible && 
+                        !menus[0].IsDisposed && 
+                        worker.IsBusy)
                     {
                         Application.DoEvents();
                     }
+
+                    openCloseState = OpenCloseState.Opening;
+                    screen = Screen.PrimaryScreen;
 
                     menuNotifyIcon.LoadingStart();
                     worker.RunWorkerAsync();
@@ -165,7 +148,7 @@ namespace SystemTrayMenu
             void Worker_RunWorkerCompleted(object sender,
                 RunWorkerCompletedEventArgs e)
             {
-                ResetSelectedByKey();
+                keyboardInput.ResetSelectedByKey();
                 menuNotifyIcon.LoadingStop();
                 MenuData menuData = (MenuData)e.Result;
                 if (menuData.Validity == MenuDataValidity.Valid)
@@ -174,6 +157,11 @@ namespace SystemTrayMenu
                     menus[0].AdjustLocationAndSize(screen);
                     ActivateMenu();
                     menus[0].AdjustLocationAndSize(screen);
+                    if (!messageFilterAdded)
+                    {
+                        Application.AddMessageFilter(messageFilter);
+                        messageFilterAdded = true;
+                    }
                 }
             }
 
@@ -230,6 +218,7 @@ namespace SystemTrayMenu
                 cancelAppRun = true;
             }
         }
+
         void FadeInIfNeeded()
         {
             if (menus[0].Visible &&
@@ -250,12 +239,13 @@ namespace SystemTrayMenu
                 !Menus().Any(m => m.IsMouseOn(mousePosition));
             bool isAnyMenuActive = IsAnyMenuActive();
 
-            if (isMouseOnAnyMenu)
+            if (menus[0].Visible &&
+                isMouseOnAnyMenu)
             {
                 if (isAnyMenuActive && 
                     !(openCloseState == OpenCloseState.Closing))
                 {
-                    if (!IsAnyMenuSelectedByKey())
+                    if (!keyboardInput.IsAnyMenuSelectedByKey())
                     {
                         Menus().ToList().ForEach(menu => menu.FadeHalf());
                     }
@@ -267,15 +257,9 @@ namespace SystemTrayMenu
             }
         }
 
-        private void ResetSelectedByKey()
-        {
-            iRowKey = -1;
-            iMenuKey = 0;
-        }
-
         public void Dispose()
         {
-            hook.Dispose();
+            keyboardInput.Dispose();
             menuNotifyIcon.Dispose();
             fastLeave.Dispose();
             DisposeMenu(menus[0]);
@@ -313,7 +297,6 @@ namespace SystemTrayMenu
 
         void AdjustSubMenusLocationAndSize()
         {
-            Screen screen = ScreenMouse.GetScreen();
             int heightMax = screen.Bounds.Height -
                 new Taskbar().Size.Height;
             Menu menuPredecessor = menus[0];
@@ -336,7 +319,7 @@ namespace SystemTrayMenu
                         widthPredecessors -= newWith;
                     }
                 }
-                else if (screen.Bounds.Width <
+                else if (Screen.PrimaryScreen.Bounds.Width <
                     widthPredecessors + menuPredecessor.Width + menu.Width)
                 {
                     directionToRight = true;
@@ -385,24 +368,15 @@ namespace SystemTrayMenu
             IsAnyMenuActive();
         }
 
-        void Activated(object sender, EventArgs e)
-        {
-            Menu triggeredMenu = (Menu)sender;
-            menus[0].SetTitleColorActive();
-        }
-
         bool IsAnyMenuActive()
         {
-            bool isAnyMenuActive;
-            Form activeForm = Form.ActiveForm;
-            //isAnyMenuActive = Menus().Any(m => m.IsActive(activeForm));
-            isAnyMenuActive = activeForm is Menu;
+            bool isAnyMenuActive = Form.ActiveForm is Menu;
             if (!isAnyMenuActive)
             {
                 menus[0].SetTitleColorDeactive();
-                CheckMenuOpenerStop(iMenuKey, iRowKey);
-                ClearIsSelectedByKey(iMenuKey, iRowKey);
-                ResetSelectedByKey();
+                CheckMenuOpenerStop(keyboardInput.iMenuKey, 
+                    keyboardInput.iRowKey);
+                keyboardInput.ClearIsSelectedByKey();
             }
             else
             {
@@ -720,6 +694,12 @@ namespace SystemTrayMenu
 
         void MenusFadeOut()
         {
+            if (messageFilterAdded)
+            {
+                Application.RemoveMessageFilter(messageFilter);
+                messageFilterAdded = false;
+            }
+
             Menus().ToList().ForEach(menu =>
             {
                 if (menu.Level > 0)
@@ -755,361 +735,20 @@ namespace SystemTrayMenu
             dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
             dgv.MouseDown += Dgv_MouseDown;
             dgv.SelectionChanged += Dgv_SelectionChanged;
-            menu.KeyPress += KeyPress;
-            menu.CmdKeyProcessed += CmdKeyProcessed;
-            menu.Activated += Activated;
+            menu.KeyPress += keyboardInput.KeyPress;
+            menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
+            menu.Activated += Activated; 
+            void Activated(object sender, EventArgs e)
+            {
+                menus[0].SetTitleColorActive();
+            }
             menu.Deactivated += fastLeave.Start;
             menu.VisibleChanged += DisposeWhenHidden;
             AddItemsToMenu(menuData.RowDatas, menu);
             return menu;
         }
 
-        /// <summary>
-        /// While menu is open user presses a key to search for specific entries.
-        /// </summary>
-        /// <param name="sender">not used</param>
-        /// <param name="e">Key data of the pressed key</param>
-        private void KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetterOrDigit(e.KeyChar) ||
-                char.IsPunctuation(e.KeyChar) ||
-                char.IsWhiteSpace(e.KeyChar) ||
-                char.IsSeparator(e.KeyChar))
-            {
-                string letter = e.KeyChar.ToString();
 
-                timerKeySearch.Stop();
-
-                if (string.IsNullOrEmpty(KeySearchString))
-                {
-                    // no search string set, start new search with initial letter
-                    KeySearchString += letter;
-                    SelectByKey(Keys.None, KeySearchString);
-                }
-                else if (KeySearchString.Length == 1 && KeySearchString.LastOrDefault().ToString() == letter)
-                {
-                    // initial letter pressed again, jump to next element
-                    SelectByKey(Keys.None, letter);
-                }
-                else
-                {
-                    // new character for the search string, narrow down the search
-                    KeySearchString += letter;
-                    SelectByKey(Keys.None, KeySearchString, true);
-                }
-
-                // give user some time to continue with this search
-                timerKeySearch.Start();
-                e.Handled = true;
-            }
-        }
-
-        private void TimerKeySearch_Tick(object sender, EventArgs e)
-        {
-            // this search has expired, reset search
-            timerKeySearch.Stop();
-            KeySearchString = string.Empty;
-        }
-
-        private void CmdKeyProcessed(Keys keys)
-        {
-            SelectByKey(keys);
-        }
-
-        private bool IsAnyMenuSelectedByKey()
-        {
-            Menu menu = null;
-            DataGridView dgv = null;
-            string textselected = string.Empty;
-            return IsAnyMenuSelectedByKey(ref dgv, ref menu, ref textselected);
-        }
-
-        private bool IsAnyMenuSelectedByKey(
-            ref DataGridView dgv,
-            ref Menu menuFromSelected,
-            ref string textselected)
-        {
-            Menu menu = menus[iMenuKey];
-            bool isStillSelected = false;
-            if (menu != null &&
-                iRowKey > -1)
-            {
-                dgv = menu.GetDataGridView();
-                if (dgv.Rows.Count > iRowKey)
-                {
-                    RowData rowData = (RowData)dgv.
-                        Rows[iRowKey].Tag;
-                    if (rowData.IsSelectedByKeyboard)
-                    {
-                        isStillSelected = true;
-                        menuFromSelected = rowData.SubMenu;
-#warning refactor datagridviewrow get
-                        textselected = dgv.Rows[iRowKey].
-                            Cells[1].Value.ToString();
-                    }
-                }
-            }
-
-            return isStillSelected;
-        }
-
-        private void SelectByKey(Keys keys, string keyInput = "", bool KeepSelection = false)
-        {
-            int iRowBefore = iRowKey;
-            int iMenuBefore = iMenuKey;
-
-            Menu menu = menus[iMenuKey];
-            DataGridView dgv = null;
-            DataGridView dgvBefore = null;
-            Menu menuFromSelected = null;
-            string textselected = string.Empty;
-            bool isStillSelected = IsAnyMenuSelectedByKey(ref dgv, ref menuFromSelected, ref textselected);
-            if (isStillSelected)
-            {
-                if (KeepSelection)
-                {
-                    // Is current selection is still valid for this search then skip selecting different item
-                    if (textselected.ToLower().StartsWith(keyInput.ToLower()))
-                        return;
-                }
-
-                dgvBefore = dgv;
-            }
-            else
-            {
-                ResetSelectedByKey();
-                menu = menus[iMenuKey];
-                dgv = menu.GetDataGridView();
-            }
-
-            bool toClear = false;
-            switch (keys)
-            {
-                case Keys.Enter:
-                    if (iRowKey > -1 &&
-                        dgv.Rows.Count > iRowKey)
-                    {
-                        RowData trigger = (RowData)dgv.Rows[iRowKey].Tag;
-                        trigger.MouseDown(dgv, null);
-                        //trigger.DoubleClick();
-                    }
-                    break;
-                case Keys.Up:
-                    FadeInIfNeeded();
-                    if (SelectMatchedReverse(dgv, iRowKey) ||
-                        SelectMatchedReverse(dgv, dgv.Rows.Count - 1))
-                    {
-                        CheckMenuOpenerStop(iMenuBefore, iRowBefore, dgvBefore);
-                        CheckMenuOpenerStart(dgv, iRowKey);
-                        toClear = true;
-                    }
-                    break;
-                case Keys.Down:
-                    FadeInIfNeeded();
-                    if (SelectMatched(dgv, iRowKey) ||
-                        SelectMatched(dgv, 0))
-                    {
-                        CheckMenuOpenerStop(iMenuBefore, iRowBefore, dgvBefore);
-                        CheckMenuOpenerStart(dgv, iRowKey);
-                        toClear = true;
-                    }
-                    break;
-                case Keys.Left:
-                    FadeInIfNeeded();
-                    int iMenuKeyNext = iMenuKey + 1;
-                    if (isStillSelected)
-                    {
-                        if (menuFromSelected != null &&
-                            menuFromSelected == menus[iMenuKeyNext])
-                        {
-                            dgv = menuFromSelected.GetDataGridView();
-                            if (dgv.Rows.Count > 0)
-                            {
-                                iMenuKey += 1;
-                                iRowKey = -1;
-                                if (SelectMatched(dgv, iRowKey) ||
-                                    SelectMatched(dgv, 0))
-                                {
-                                    CheckMenuOpenerStop(iMenuBefore,
-                                        iRowBefore, dgvBefore);
-                                    CheckMenuOpenerStart(dgv, iRowKey);
-                                    toClear = true;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        iRowKey = -1;
-                        iMenuKey = menus.Where(m => m != null).Count() - 1;
-                        if (menus[iMenuKey] != null)
-                        {
-                            dgv = menus[iMenuKey].GetDataGridView();
-                            if (SelectMatched(dgv, iRowKey) ||
-                                SelectMatched(dgv, 0))
-                            {
-                                CheckMenuOpenerStop(iMenuBefore, iRowBefore, dgvBefore);
-                                CheckMenuOpenerStart(dgv, iRowKey);
-                                toClear = true;
-                            }
-                        }
-                        else
-                        {
-                            log.Info("indexMenuByKey = menus.Where(m => m != null).Count()" +
-                                "=> menus[iMenuKey] == null");
-                        }
-                    }
-                    break;
-                case Keys.Right:
-                    if (iMenuKey > 0)
-                    {
-                        if (menus[iMenuKey - 1] != null)
-                        {
-                            iMenuKey -= 1;
-                            iRowKey = -1;
-                            menu = menus[iMenuKey];
-                            dgv = menu.GetDataGridView();
-                            if (SelectMatched(dgv, dgv.SelectedRows[0].Index) ||
-                                SelectMatched(dgv, 0))
-                            {
-                                CheckMenuOpenerStop(iMenuBefore, iRowBefore, dgvBefore);
-                                CheckMenuOpenerStart(dgv, iRowKey);
-                                toClear = true;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        CheckMenuOpenerStop(iMenuBefore, iRowBefore, dgvBefore);
-                        iMenuKey = 0;
-                        iRowKey = -1;
-                        toClear = true;
-                        FadeHalfOrOutIfNeeded();
-                    }
-                    break;
-                case Keys.Escape:
-                    CheckMenuOpenerStop(iMenuBefore, iRowBefore, dgvBefore);
-                    iMenuKey = 0;
-                    iRowKey = -1;
-                    toClear = true;
-                    MenusFadeOut();
-                    break;
-                default:
-                    if (!string.IsNullOrEmpty(keyInput))
-                    {
-                        if (SelectMatched(dgv, iRowKey, keyInput) ||
-                            SelectMatched(dgv, 0, keyInput))
-                        {
-                            FadeInIfNeeded();
-                            CheckMenuOpenerStop(iMenuBefore, iRowBefore);
-                            CheckMenuOpenerStart(dgv, iRowKey);
-                            toClear = true;
-                        }
-                        else if (isStillSelected)
-                        {
-                            iRowKey = iRowBefore - 1;
-                            if (SelectMatched(dgv, iRowKey, keyInput) ||
-                                SelectMatched(dgv, 0, keyInput))
-                            {
-                                FadeInIfNeeded();
-                                CheckMenuOpenerStop(iMenuBefore, iRowBefore);
-                                CheckMenuOpenerStart(dgv, iRowKey);
-                            }
-                            else
-                            {
-                                iRowKey = iRowBefore;
-                            }
-                        }
-                    }
-                    break;
-            }
-            if (isStillSelected && toClear)
-            {
-                ClearIsSelectedByKey(iMenuBefore, iRowBefore);
-            }
-
-        }
-
-        private bool SelectMatched(DataGridView dgv,
-            int indexStart, string keyInput = "")
-        {
-            bool found = false;
-            for (int i = indexStart; i < dgv.Rows.Count; i++)
-            {
-                if (Select(dgv, i, keyInput))
-                {
-                    found = true;
-                    break;
-                }
-            }
-            return found;
-        }
-
-        private bool SelectMatchedReverse(DataGridView dgv,
-            int indexStart, string keyInput = "")
-        {
-            bool found = false;
-            for (int i = indexStart; i > -1; i--)
-            {
-                if (Select(dgv, i, keyInput))
-                {
-                    found = true;
-                    break;
-                }
-            }
-            return found;
-        }
-
-        private bool Select(DataGridView dgv, int i,
-            string keyInput = "")
-        {
-            bool found = false;
-            if (i > -1 &&
-                i != iRowKey &&
-                dgv.Rows.Count > i)
-            {
-                DataGridViewRow row = dgv.Rows[i];
-                RowData rowData = (RowData)row.Tag;
-                string text = row.Cells[1].Value.ToString();
-                if (text.ToLower().StartsWith(keyInput.ToLower()))
-                {
-                    iRowKey = rowData.RowIndex;
-                    rowData.IsSelectedByKeyboard = true;
-                    row.Selected = false; //event trigger
-                    row.Selected = true; //event trigger
-                    if (row.Index < dgv.FirstDisplayedScrollingRowIndex)
-                    {
-                        dgv.FirstDisplayedScrollingRowIndex = row.Index;
-                    }
-                    else if (row.Index >=
-                        dgv.FirstDisplayedScrollingRowIndex +
-                        dgv.DisplayedRowCount(false))
-                    {
-                        dgv.FirstDisplayedScrollingRowIndex = row.Index -
-                        dgv.DisplayedRowCount(false) + 1;
-                    }
-
-                    found = true;
-                }
-            }
-            return found;
-        }
-
-        private void ClearIsSelectedByKey(int menuIndex, int rowIndex)
-        {
-            Menu menu = menus[menuIndex];
-            if (menu != null && rowIndex > -1)
-            {
-                DataGridView dgv = menu.GetDataGridView();
-                if (dgv.Rows.Count > rowIndex)
-                {
-                    DataGridViewRow row = dgv.Rows[rowIndex];
-                    RowData rowData = (RowData)row.Tag;
-                    rowData.IsSelectedByKeyboard = false;
-                    row.Selected = false; //event trigger
-                }
-            }
-        }
 
         private void AddItemsToMenu(List<RowData> data, Menu menu)
         {
@@ -1169,17 +808,6 @@ namespace SystemTrayMenu
                     menuNotifyIcon.LoadStop();
                 }
             }
-        }
-    }
-
-    class WindowsExplorerSort : IComparer<string>
-    {
-        [DllImport("shlwapi.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
-        static extern int StrCmpLogicalW(String x, String y);
-
-        public int Compare(string x, string y)
-        {
-            return StrCmpLogicalW(x, y);
         }
     }
 }
