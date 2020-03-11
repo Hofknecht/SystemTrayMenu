@@ -360,6 +360,7 @@ namespace SystemTrayMenu
                 }
             }
 
+            DisposeMenu(menus[menuTriggered.Level]);
             menus[menuTriggered.Level] = menuTriggered;
             AdjustSubMenusLocationAndSize();
             menus[menuTriggered.Level].FadeIn();
@@ -787,7 +788,6 @@ namespace SystemTrayMenu
                     menuNotifyIcon.LoadWait();
                     if (menuData.Validity != MenuDataValidity.Invalid)
                     {
-                        DisposeMenu(menu);
                         menu = CreateMenu(menuData);
                         if (menuData.RowDatas.Count > 0)
                         {
