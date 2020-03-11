@@ -91,6 +91,10 @@ namespace SystemTrayMenu
                     {
                         worker.CancelAsync();
                     }
+                    if (!Menus().Any(m => m.Visible))
+                    {
+                        openCloseState = OpenCloseState.Default;
+                    }
                 }
                 else
                 {
@@ -119,13 +123,6 @@ namespace SystemTrayMenu
                     //}
                     #endregion
 
-                    while (menus[0].Visible && 
-                        !menus[0].IsDisposed && 
-                        worker.IsBusy)
-                    {
-                        Application.DoEvents();
-                    }
-
                     openCloseState = OpenCloseState.Opening;
                     screen = Screen.PrimaryScreen;
 
@@ -153,6 +150,7 @@ namespace SystemTrayMenu
                 MenuData menuData = (MenuData)e.Result;
                 if (menuData.Validity == MenuDataValidity.Valid)
                 {
+                    DisposeMenu(menus[0]);
                     menus[0] = CreateMenu(menuData, Path.GetFileName(Config.Path));
                     menus[0].AdjustLocationAndSize(screen);
                     ActivateMenu();
@@ -163,6 +161,8 @@ namespace SystemTrayMenu
                         messageFilterAdded = true;
                     }
                 }
+
+                openCloseState = OpenCloseState.Default;
             }
 
             void ActivateMenu()
@@ -278,20 +278,19 @@ namespace SystemTrayMenu
                 }
                 dgv.ClearSelection();
                 menuToDispose.Dispose();
-                menuToDispose = null;
             }
         }
 
         void DisposeWhenHidden(object sender, EventArgs e)
         {
             Menu menuToDispose = (Menu)sender;
-            if (menuToDispose == menus[0])
-            {
-                openCloseState = OpenCloseState.Default;
-            }
             if (!menuToDispose.Visible)
             {
                 DisposeMenu(menuToDispose);
+            }
+            if (Menus().Any(m => m.IsDisposed))
+            {
+                openCloseState = OpenCloseState.Default;
             }
         }
 
@@ -788,6 +787,7 @@ namespace SystemTrayMenu
                     menuNotifyIcon.LoadWait();
                     if (menuData.Validity != MenuDataValidity.Invalid)
                     {
+                        DisposeMenu(menu);
                         menu = CreateMenu(menuData);
                         if (menuData.RowDatas.Count > 0)
                         {

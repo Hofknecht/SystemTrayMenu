@@ -90,11 +90,6 @@ namespace SystemTrayMenu
                 timerFadeHalf.Stop();
                 timerFadeIn.Start();
             }
-            else if (form.IsDisposed)
-            {
-                new Logger(nameof(FadeForm)).Warn(
-                    $"{Environment.StackTrace.ToString()}");
-            }
             else
             {
                 ShowInactiveTopmost(form);
