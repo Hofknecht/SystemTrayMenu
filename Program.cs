@@ -59,6 +59,13 @@ namespace SystemTrayMenu
                 {
                     if (!cancelAppRun)
                     {
+                        Application.ThreadException += Application_ThreadException;
+                        void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
+                        {
+                            log.Error($"{e.Exception.ToString()}");
+                            Logger.ShutDown();
+                            Application.Exit();
+                        }
                         Application.Run();
                     }
                 }
