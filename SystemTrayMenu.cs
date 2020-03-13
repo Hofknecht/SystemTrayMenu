@@ -37,7 +37,7 @@ namespace SystemTrayMenu
         OpenCloseState openCloseState = OpenCloseState.Default;
 
         BackgroundWorker worker = new BackgroundWorker();
-        Screen screen = null;
+        Screen screen = Screen.PrimaryScreen;
 
         public SystemTrayMenu(ref bool cancelAppRun)
         {
@@ -124,8 +124,6 @@ namespace SystemTrayMenu
                     #endregion
 
                     openCloseState = OpenCloseState.Opening;
-                    screen = Screen.PrimaryScreen;
-
                     menuNotifyIcon.LoadingStart();
                     worker.RunWorkerAsync();
                 }
@@ -318,7 +316,7 @@ namespace SystemTrayMenu
                         widthPredecessors -= newWith;
                     }
                 }
-                else if (Screen.PrimaryScreen.Bounds.Width <
+                else if (screen.Bounds.Width <
                     widthPredecessors + menuPredecessor.Width + menu.Width)
                 {
                     directionToRight = true;

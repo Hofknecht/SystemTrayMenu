@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using SystemTrayMenu.Controls;
+using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu
 {
@@ -53,6 +54,9 @@ namespace SystemTrayMenu
             dgvCellStyle.SelectionBackColor = MenuDefines.FileHover;
             dgvCellStyle.SelectionForeColor = Color.Black;
             this.dgv.DefaultCellStyle = dgvCellStyle;
+
+            VScrollBar scrollBar = dgv.Controls.OfType<VScrollBar>().First();
+            scrollBar.MouseWheel += dgv_MouseWheel;
         }
 
         static void SetDoubleBuffer(Control ctl, bool DoubleBuffered)
@@ -209,7 +213,9 @@ namespace SystemTrayMenu
 
         private void AdjustDataGridViewSize()
         {
-            dgv.AutoResizeColumns();
+            //dgv.AutoResizeColumns(); //AutoResizeColumns slow ~45ms
+            DataGridViewExtensions.FastAutoSizeColumns(dgv);
+
             bool scrollbarShown = false;
             foreach (var scroll in dgv.Controls.OfType<VScrollBar>())
             {
@@ -254,7 +260,7 @@ namespace SystemTrayMenu
                 }
             }
 
-            dgv.PerformLayout();
+            Application.DoEvents();
             MouseWheel.Invoke();
         }
 
