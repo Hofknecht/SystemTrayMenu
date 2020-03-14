@@ -90,6 +90,12 @@ namespace SystemTrayMenu
                 timerFadeHalf.Stop();
                 timerFadeIn.Start();
             }
+#warning #35 [BUG] Rare ObjectDisposedException, todo: fix root cause
+            else if (form.IsDisposed)
+            {
+                new Logger(nameof(FadeForm)).Warn(
+                    $"{Environment.StackTrace.ToString()}");
+            }
             else
             {
                 ShowInactiveTopmost(form);

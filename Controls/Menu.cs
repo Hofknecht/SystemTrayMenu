@@ -265,7 +265,6 @@ namespace SystemTrayMenu
                 }
             }
 
-            Application.DoEvents();
             MouseWheel.Invoke();
         }
 
