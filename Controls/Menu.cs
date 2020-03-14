@@ -43,6 +43,7 @@ namespace SystemTrayMenu
 
         public int Level = 0;
         FadeForm FadeForm = null;
+        bool autoResizeRowsDone  = false;
 
         public Menu()
         {
@@ -180,7 +181,11 @@ namespace SystemTrayMenu
             Menu menuPredecessor)
         {
             DataGridViewElementStates states = DataGridViewElementStates.None;
-            this.dgv.AutoResizeRows();
+            if (!autoResizeRowsDone)
+            {
+                autoResizeRowsDone = true;
+                this.dgv.AutoResizeRows();
+            }
             int height = this.dgv.Rows.GetRowsHeight(states);
             if (height > heightMax)
             {
