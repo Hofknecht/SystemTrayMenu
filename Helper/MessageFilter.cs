@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace SystemTrayMenu
 {
@@ -13,6 +14,8 @@ namespace SystemTrayMenu
         public event EventHandler MouseMove;
         public event EventHandler ScrollBarMouseMove;
 
+        Point cursorPosition = new Point();
+
         public bool PreFilterMessage(ref Message message)
         {
             if (message.Msg == WM_MOUSELEAVE)
@@ -21,7 +24,12 @@ namespace SystemTrayMenu
             }
             else if (message.Msg == WM_MOUSEMOVE)
             {
-                MouseMove?.Invoke();
+                Point newCursorPosition = Cursor.Position;
+                if (!newCursorPosition.Equals(cursorPosition))
+                {
+                    MouseMove?.Invoke();
+                }
+                cursorPosition = newCursorPosition;
             }
             else if (message.Msg == WM_NCMOUSEMOVE)
             {

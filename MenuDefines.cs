@@ -14,7 +14,7 @@ namespace SystemTrayMenu
         // windows explorer highlighted text
         public static Color FolderOpen = Color.FromArgb(229, 243, 255);
         public static Color Background = Color.FromArgb(229, 243, 255);
-        internal static Color KeyBoardSelection = Color.Yellow;
+        internal static Color KeyBoardSelection = Color.FromArgb(204, 232, 255);
         internal static int KeySearchInterval = 1000;
         public const int MenuRowsHeight = 18;
         public const int LengthMax = 37;

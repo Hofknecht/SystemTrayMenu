@@ -24,6 +24,8 @@ namespace SystemTrayMenu.Handler
         public int iMenuKey = 0;
         string KeySearchString = string.Empty;
 
+        public bool InUse = false;
+
         public KeyboardInput(Menu[] menus)
         {
             this.menus = menus;
@@ -361,6 +363,16 @@ namespace SystemTrayMenu.Handler
                 }
             }
             return found;
+        }
+
+        public void Select(DataGridView dgv, int i)
+        {
+            iRowKey = i;
+            iMenuKey = ((Menu)dgv.TopLevelControl).Level;
+            DataGridViewRow row = dgv.Rows[i];
+            RowData rowData = (RowData)row.Tag;
+            rowData.IsSelectedByKeyboard = true;
+            row.Selected = true;
         }
 
         private bool Select(DataGridView dgv, int i,

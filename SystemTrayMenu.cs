@@ -39,6 +39,9 @@ namespace SystemTrayMenu
         BackgroundWorker worker = new BackgroundWorker();
         Screen screen = Screen.PrimaryScreen;
 
+        DataGridView dgvFromLastMouseEvent = null;
+        DataGridViewCellEventArgs cellEventArgsFromLastMouseEvent = null;
+
         public SystemTrayMenu(ref bool cancelAppRun)
         {
             log.Info("Application Start " +
@@ -63,6 +66,7 @@ namespace SystemTrayMenu
             keyboardInput.RowSelected += KeyboardInputRowSelected;
             void KeyboardInputRowSelected(DataGridView dgv, int rowIndex)
             {
+                keyboardInput.InUse = true;
                 FadeInIfNeeded();
                 CheckMenuOpenerStart(dgv, rowIndex);
             }
@@ -206,6 +210,23 @@ namespace SystemTrayMenu
             }
 
             messageFilter.MouseMove += FadeInIfNeeded;
+            messageFilter.MouseMove += MessageFilter_MouseMove;
+            void MessageFilter_MouseMove()
+            {
+                if (keyboardInput.InUse)
+                {
+                    CheckMenuOpenerStop(keyboardInput.iMenuKey,
+                        keyboardInput.iRowKey);
+                    keyboardInput.ClearIsSelectedByKey();
+
+                    keyboardInput.InUse = false;
+                    if (dgvFromLastMouseEvent != null)
+                    {
+                        Dgv_MouseEnter(dgvFromLastMouseEvent, 
+                            cellEventArgsFromLastMouseEvent);
+                    }
+                }
+            }
             messageFilter.ScrollBarMouseMove += FadeInIfNeeded;
 
             messageFilter.MouseLeave += fastLeave.Start;
@@ -570,7 +591,16 @@ namespace SystemTrayMenu
         private void Dgv_MouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
-            CheckMenuOpenerStart(dgv, e.RowIndex);
+            dgvFromLastMouseEvent = dgv;
+            cellEventArgsFromLastMouseEvent = e;
+
+            if (!keyboardInput.InUse)
+            {
+                keyboardInput.ClearIsSelectedByKey();
+                keyboardInput.Select(dgv, e.RowIndex);
+
+                CheckMenuOpenerStart(dgv, e.RowIndex);
+            }
         }
 
         private void CheckMenuOpenerStart(DataGridView dgv, int rowIndex)
@@ -611,8 +641,15 @@ namespace SystemTrayMenu
         private void Dgv_MouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
-            Menu menu = (Menu)dgv.FindForm();
-            CheckMenuOpenerStop(menu.Level, e.RowIndex, dgv);
+
+            if (!keyboardInput.InUse)
+            {
+                Menu menu = (Menu)dgv.FindForm();
+                CheckMenuOpenerStop(menu.Level, e.RowIndex, dgv);
+            }
+
+            dgvFromLastMouseEvent = null;
+            cellEventArgsFromLastMouseEvent = null;
         }
 
         private void CheckMenuOpenerStop(int menuIndex, int rowIndex, DataGridView dgv = null)
