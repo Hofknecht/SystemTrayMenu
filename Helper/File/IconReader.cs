@@ -1,5 +1,6 @@
 ﻿using Clearcove.Logging;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -19,8 +20,7 @@ namespace SystemTrayMenu.Helper
     /// </example>
     public class IconReader
     {
-        static Dictionary<string, Icon> dictIconCache = new Dictionary<string, Icon>();
-        static readonly object lockIconCache = new object();
+        static ConcurrentDictionary<string, Icon> dictIconCache = new ConcurrentDictionary<string, Icon>();
 
         /// <summary>
         /// Options to specify the size of icons to return.
@@ -65,7 +65,7 @@ namespace SystemTrayMenu.Helper
             {
                 bool isExtensionWitSameIcon = true;
                 List<string> extensionsWithDiffIcons = new List<string>
-                { ".exe", ".ink", ".ico", ".url" };
+                { ".exe", ".lnk", ".ico", ".url" };
                 if (extensionsWithDiffIcons.Contains(fileExtension.ToLower()))
                 {
                     isExtensionWitSameIcon = false;
@@ -75,17 +75,10 @@ namespace SystemTrayMenu.Helper
 
             if (IsExtensionWitSameIcon(extension))
             {
-                lock (lockIconCache)
+                icon = dictIconCache.GetOrAdd(extension, GetIcon);
+                Icon GetIcon(string keyExtension)
                 {
-                    if (dictIconCache.ContainsKey(extension))
-                    {
-                        icon = dictIconCache[extension];
-                    }
-                    else
-                    {
-                        icon = GetFileIcon(filePath, linkOverlay, size);
-                        dictIconCache.Add(extension, icon);
-                    }
+                    return GetFileIcon(filePath, linkOverlay, size);
                 }
             }
             else
@@ -95,6 +88,7 @@ namespace SystemTrayMenu.Helper
 
             return icon;
         }
+
         private static Icon GetFileIcon(string filePath, bool linkOverlay,
             IconSize size = IconSize.Small)
         {
