@@ -1,12 +1,15 @@
 ﻿using Clearcove.Logging;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace SystemTrayMenu.Helper
 {
-    // from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
+    // orig from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
     // added ImageList_GetIcon
+    // added IconCache
 
     /// <summary>
     /// Provides static methods to read system icons for both folders and files.
@@ -16,6 +19,8 @@ namespace SystemTrayMenu.Helper
     /// </example>
     public class IconReader
     {
+        public static Dictionary<string, Icon> dictIconCache = new Dictionary<string, Icon>();
+
         /// <summary>
         /// Options to specify the size of icons to return.
         /// </summary>
@@ -50,7 +55,43 @@ namespace SystemTrayMenu.Helper
         /// Returns an icon for a given file - indicated by the name parameter.
         /// </summary>
         /// <returns>System.Drawing.Icon</returns>
-        public static Icon GetFileIcon(string filePath, bool linkOverlay,
+        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay,
+            IconSize size = IconSize.Small)
+        {
+            Icon icon = null;
+            string extension = Path.GetExtension(filePath);
+            bool IsExtensionWitSameIcon(string fileExtension)
+            {
+                bool isExtensionWitSameIcon = true;
+                List<string> extensionsWithDiffIcons = new List<string>
+                { ".exe", ".ink", ".ico", ".url" };
+                if (extensionsWithDiffIcons.Contains(fileExtension.ToLower()))
+                {
+                    isExtensionWitSameIcon = false;
+                }
+                return isExtensionWitSameIcon;
+            }
+
+            if (IsExtensionWitSameIcon(extension))
+            {
+                if (dictIconCache.ContainsKey(extension))
+                {
+                    icon = dictIconCache[extension];
+                }
+                else
+                {
+                    icon = GetFileIcon(filePath, linkOverlay, size);
+                    dictIconCache.Add(extension, icon);
+                }
+            }
+            else
+            {
+                icon = GetFileIcon(filePath, linkOverlay, size);
+            }
+
+            return icon;
+        }
+        private static Icon GetFileIcon(string filePath, bool linkOverlay,
             IconSize size = IconSize.Small)
         {
             Icon icon = null;
@@ -81,9 +122,14 @@ namespace SystemTrayMenu.Helper
             {
                 IntPtr hIcon;
                 if (linkOverlay)
+                {
                     hIcon = shfi.hIcon; // Get icon directly
+                }
                 else
-                    hIcon = Shell32.ImageList_GetIcon(hImageList, shfi.iIcon, Shell32.ILD_TRANSPARENT); // Get icon from .ink without overlay
+                {
+                    // Get icon from .ink without overlay
+                    hIcon = Shell32.ImageList_GetIcon(hImageList, shfi.iIcon, Shell32.ILD_TRANSPARENT);
+                }
 
                 try
                 {
@@ -101,6 +147,7 @@ namespace SystemTrayMenu.Helper
                 if (!linkOverlay) User32.DestroyIcon(hIcon);
                 User32.DestroyIcon(shfi.hIcon);
             }
+
             return icon;
         }
 

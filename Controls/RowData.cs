@@ -84,7 +84,7 @@ namespace SystemTrayMenu.Controls
                 {
                     try
                     {
-                        Icon = IconReader.GetFileIcon(TargetFilePath, false);
+                        Icon = IconReader.GetFileIconWithCache(TargetFilePath, false);
 
                         // other project -> fails sometimes
                         //icon = IconHelper.ExtractIcon(TargetFilePath, 0);
@@ -176,7 +176,7 @@ namespace SystemTrayMenu.Controls
                     }
                     else
                     {
-                        Icon = IconReader.GetFileIcon(browserPath, false);
+                        Icon = IconReader.GetFileIconWithCache(browserPath, false);
                         handled = true;
                     }
                 }

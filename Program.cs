@@ -1,12 +1,12 @@
 ﻿using Clearcove.Logging;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -60,11 +60,9 @@ namespace SystemTrayMenu
                     if (!cancelAppRun)
                     {
                         Application.ThreadException += Application_ThreadException;
-                        void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
+                        void Application_ThreadException(object sender, ThreadExceptionEventArgs threadException)
                         {
-                            log.Error($"{e.Exception.ToString()}");
-                            Logger.ShutDown();
-                            Application.Exit();
+                            AskUserSendErrorAndRestartApp(log, threadException.Exception);
                         }
                         Application.Run();
                     }
@@ -72,12 +70,30 @@ namespace SystemTrayMenu
             }
             catch (Exception ex)
             {
-                log.Error($"{ex.ToString()}");
+                AskUserSendErrorAndRestartApp(log, ex);
             }
             finally
             {
                 Logger.ShutDown();
             }
+        }
+
+        static void AskUserSendErrorAndRestartApp(Logger log, Exception exception)
+        {
+            log.Error($"{exception.ToString()}");
+
+            if (MessageBox.Show("A problem has been encountered and the application needs to restart. " +
+                "Reporting this error will help us make our product better. Press yes to open your standard email app.",
+                "SystemTrayMenu BugSplat", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Process.Start("mailto:" + "markus@hofknecht.eu" +
+                    "?subject=SystemTrayMenu Bug reported" +
+                    "&body=" + exception.ToString());
+            }
+
+            Logger.ShutDown();
+            Process.Start(Assembly.GetExecutingAssembly().
+                ManifestModule.FullyQualifiedName);
         }
 
         static bool KillOtherSystemTrayMenus()
