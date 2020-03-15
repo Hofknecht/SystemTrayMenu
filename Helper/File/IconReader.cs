@@ -19,7 +19,8 @@ namespace SystemTrayMenu.Helper
     /// </example>
     public class IconReader
     {
-        public static Dictionary<string, Icon> dictIconCache = new Dictionary<string, Icon>();
+        static Dictionary<string, Icon> dictIconCache = new Dictionary<string, Icon>();
+        static readonly object lockIconCache = new object();
 
         /// <summary>
         /// Options to specify the size of icons to return.
@@ -74,14 +75,17 @@ namespace SystemTrayMenu.Helper
 
             if (IsExtensionWitSameIcon(extension))
             {
-                if (dictIconCache.ContainsKey(extension))
+                lock (lockIconCache)
                 {
-                    icon = dictIconCache[extension];
-                }
-                else
-                {
-                    icon = GetFileIcon(filePath, linkOverlay, size);
-                    dictIconCache.Add(extension, icon);
+                    if (dictIconCache.ContainsKey(extension))
+                    {
+                        icon = dictIconCache[extension];
+                    }
+                    else
+                    {
+                        icon = GetFileIcon(filePath, linkOverlay, size);
+                        dictIconCache.Add(extension, icon);
+                    }
                 }
             }
             else
