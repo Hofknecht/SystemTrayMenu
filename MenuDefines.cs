@@ -1,9 +1,13 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace SystemTrayMenu
 {
     public static class MenuDefines
     {
+        public static readonly List<string> Languages =
+            new List<string>() { "en", "de" };
+
         // windows explorer background white
         public static Color File = Color.White;
         public static Color Folder = Color.White;

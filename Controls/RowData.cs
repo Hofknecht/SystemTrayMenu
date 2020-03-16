@@ -1,5 +1,4 @@
-﻿using Clearcove.Logging;
-using IWshRuntimeLibrary;
+﻿using IWshRuntimeLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,15 +47,11 @@ namespace SystemTrayMenu.Controls
         {
             bool isLnkDirectory = false;
 
-            Logger log = new Logger(nameof(RowData));
-
             if (string.IsNullOrEmpty(TargetFilePath))
             {
-                log.Warn($"ReadIcon called but TargetFilePath not set.");
-                return isLnkDirectory;
+                Log.Info($"TargetFilePath from {resolvedLnkPath} empty");
             }
-
-            if (isDirectory)
+            else if (isDirectory)
             {
                 Icon = IconReader.GetFolderIcon(TargetFilePath,
                     IconReader.FolderType.Closed, false);
@@ -68,16 +63,16 @@ namespace SystemTrayMenu.Controls
 
                 if (fileExtension == ".lnk")
                 {
-                    handled = SetLnk(log, ref isLnkDirectory,
+                    handled = SetLnk(ref isLnkDirectory,
                         ref resolvedLnkPath);
                 }
                 else if (fileExtension == ".url")
                 {
-                    handled = SetUrl(log);
+                    handled = SetUrl();
                 }
                 else if (fileExtension == ".sln")
                 {
-                    handled = SetSln(log);
+                    handled = SetSln();
                 }
 
                 if (!handled)
@@ -98,8 +93,7 @@ namespace SystemTrayMenu.Controls
                     }
                     catch (Exception ex)
                     {
-                        log.Info($"TargetFilePath:'{TargetFilePath}'");
-                        log.Error($"{ex.ToString()}");
+                        Log.Error($"TargetFilePath:'{TargetFilePath}'", ex);
                     }
                 }
             }
@@ -107,7 +101,7 @@ namespace SystemTrayMenu.Controls
             return isLnkDirectory;
         }
 
-        private bool SetLnk(Logger log, ref bool isLnkDirectory,
+        private bool SetLnk(ref bool isLnkDirectory,
             ref string resolvedLnkPath)
         {
             bool handled = false;
@@ -122,7 +116,8 @@ namespace SystemTrayMenu.Controls
             else if (string.IsNullOrEmpty(resolvedLnkPath))
             {
                 ResolvedFileNotFound = true;
-                log.Info($"Resolve '{TargetFilePath}' not possible => no icon");
+                Log.Info($"Resolve *.Lnk '{TargetFilePath}' empty => no icon");
+#warning [Feature] Resolve network root #48, start here
             }
             else
             {
@@ -145,8 +140,7 @@ namespace SystemTrayMenu.Controls
                         }
                         catch (Exception ex)
                         {
-                            log.Info($"iconLocation:'{iconLocation}'");
-                            log.Error($"{ex.ToString()}");
+                            Log.Error($"iconLocation:'{iconLocation}'", ex);
                         }
                     }
                 }
@@ -159,7 +153,7 @@ namespace SystemTrayMenu.Controls
             return handled;
         }
 
-        private bool SetUrl(Logger log)
+        private bool SetUrl()
         {
             bool handled = false;
             string iconFile = string.Empty;
@@ -172,7 +166,7 @@ namespace SystemTrayMenu.Controls
                     string browserPath = FileUrl.GetDefaultBrowserPath();
                     if (string.IsNullOrEmpty(browserPath))
                     {
-                        log.Info($"No default browser found!");
+                        Log.Info($"No default browser found!");
                     }
                     else
                     {
@@ -187,14 +181,13 @@ namespace SystemTrayMenu.Controls
                 }
                 else
                 {
-                    log.Info($"Resolve '{TargetFilePath}' not possible => no icon");
+                    Log.Info($"Resolve *.URL '{TargetFilePath}' not possible => no icon");
                 }
             }
             catch (Exception ex)
             {
-                log.Info($"TargetFilePath:'{TargetFilePath}', " +
-                    $"iconFile:'{iconFile}'");
-                log.Error($"{ex.ToString()}");
+                Log.Error($"TargetFilePath:'{TargetFilePath}', " +
+                    $"iconFile:'{iconFile}'", ex);
             }
 
             SetText($"{FileInfo.Name.Substring(0, FileInfo.Name.Length - 4)}");
@@ -204,7 +197,7 @@ namespace SystemTrayMenu.Controls
 
         [DllImport("shell32.dll")]
         static extern int FindExecutable(string lpFile, string lpDirectory, [Out] StringBuilder lpResult);
-        private bool SetSln(Logger log)
+        private bool SetSln()
         {
             bool handled = false;
             var executable = new StringBuilder(1024);
@@ -220,9 +213,8 @@ namespace SystemTrayMenu.Controls
             }
             catch (Exception ex)
             {
-                log.Info($"TargetFilePath:'{TargetFilePath}', " +
-                    $"executable:'{executable.ToString()}'");
-                log.Error($"{ex.ToString()}");
+                Log.Error($"TargetFilePath:'{TargetFilePath}', " +
+                    $"executable:'{executable.ToString()}'",ex);
             }
 
             return handled;
@@ -239,7 +231,7 @@ namespace SystemTrayMenu.Controls
         }
 
 
-#warning sort this class and check for duplicated
+#warning CodeBuity&Refactor #49 - sort this class and check for duplicated
 
         public event Action<object, EventArgs> OpenMenu;
 
@@ -253,10 +245,8 @@ namespace SystemTrayMenu.Controls
         //    FontStyle.Regular, GraphicsUnit.Pixel);
 
         WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
-        bool resolvedFileNotFound = false;
 
         bool disposed = false;
-        Logger log = new Logger(nameof(RowData));
         internal string TargetFilePathOrig;
         internal bool HiddenEntry;
 
@@ -322,9 +312,8 @@ namespace SystemTrayMenu.Controls
                 }
                 catch (Exception ex)
                 {
-                    log.Info($"TargetFilePath:'{TargetFilePath}', " +
-                        $"=>DirectoryNotFound?");
-                    log.Error($"{ex.ToString()}");
+                    Log.Error($"TargetFilePath:'{TargetFilePath}', " +
+                        $"=>DirectoryNotFound?", ex);
                     ex = new DirectoryNotFoundException();
                     MessageBox.Show(ex.Message);
                 }
@@ -360,13 +349,8 @@ namespace SystemTrayMenu.Controls
                 }
                 catch (Exception ex)
                 {
-                    log.Info($"TargetFilePath:'{ TargetFilePath}', " +
-                        $"=>FileNotFound?");
-                    log.Error($"{ex.ToString()}");
-                    if (resolvedFileNotFound)
-                    {
-                        ex = new FileNotFoundException();
-                    }
+                    Log.Error($"TargetFilePath:'{ TargetFilePath}', " +
+                        $"=>FileNotFound?", ex);
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -378,7 +362,7 @@ namespace SystemTrayMenu.Controls
             {
                 IsContextMenuOpen = true;
 
-#warning is there any other possiblity to raise selection changed event? dataGridView.ClearSelection(); seems to overwrite selected
+#warning CodeBuity&Refactor #49 is there any other possiblity to raise selection changed event? dataGridView.ClearSelection(); seems to overwrite selected
                 IsSelected = true;
                 dgv.Rows[RowIndex].Selected = true;
 
@@ -482,7 +466,7 @@ namespace SystemTrayMenu.Controls
             row.Tag = data;
         }
 
-#warning either not public and as inline method or we want probably to move that code somewhere else
+#warning CodeBuity&Refactor #49 either not public and as inline method or we want probably to move that code somewhere else
         public Icon AddIconOverlay(Icon originalIcon, Icon overlay)
         {
             var target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);

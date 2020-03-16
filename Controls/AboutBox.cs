@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu.Controls
 {
@@ -23,9 +24,9 @@ namespace SystemTrayMenu.Controls
         public AboutBox()
         {
             InitializeComponent();
-            buttonOk.Text = Program.Translate("buttonOk");
-            buttonDetails.Text = Program.Translate("buttonDetails");
-            buttonSystemInfo.Text = Program.Translate("buttonSystemInfo");
+            buttonOk.Text = Language.Translate("buttonOk");
+            buttonDetails.Text = Language.Translate("buttonDetails");
+            buttonSystemInfo.Text = Language.Translate("buttonSystemInfo");
         }
 
         private bool _IsPainted = false;

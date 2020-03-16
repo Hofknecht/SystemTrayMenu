@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu.Controls
 {
@@ -23,7 +24,7 @@ namespace SystemTrayMenu.Controls
             ContextMenuStrip menu = new ContextMenuStrip();
             menu.BackColor = SystemColors.Control;
             ToolStripMenuItem changeFolder = new ToolStripMenuItem();
-            changeFolder.Text = Program.Translate("Folder");
+            changeFolder.Text = Language.Translate("Folder");
             changeFolder.Click += ChangeFolder_Click;
             void ChangeFolder_Click(object sender, EventArgs e)
             {
@@ -34,15 +35,15 @@ namespace SystemTrayMenu.Controls
             ToolStripMenuItem changeLanguage = new ToolStripMenuItem()
             {
                 Name = "changeLanguage",
-                Text = Program.Translate("Language")
+                Text = Language.Translate("Language")
             };
             foreach (CultureInfo cultureInfo in
                 GetCultureList(CultureTypes.AllCultures))
             {
-                if (Program.Languages.Contains(cultureInfo.Name))
+                if (MenuDefines.Languages.Contains(cultureInfo.Name))
                 {
                     ToolStripItem language = changeLanguage.DropDownItems.
-                        Add(Program.Translate(cultureInfo.EnglishName));
+                        Add(Language.Translate(cultureInfo.EnglishName));
                     language.Click += Language_Click;
                     void Language_Click(object sender, EventArgs e)
                     {
@@ -64,7 +65,7 @@ namespace SystemTrayMenu.Controls
             menu.Items.Add(changeLanguage);
 
             ToolStripMenuItem autostart = new ToolStripMenuItem();
-            autostart.Text = Program.Translate("Autostart");
+            autostart.Text = Language.Translate("Autostart");
             //autostart.Image.HorizontalResolution.wi.c.sc.Select .ImageScaling = ToolStripItemImageScaling.None;
             if (Properties.Settings.Default.IsAutostartActivated)
             {
@@ -106,8 +107,8 @@ namespace SystemTrayMenu.Controls
 
             ToolStripMenuItem hotKey = new ToolStripMenuItem();
             string hotKeyText =
-                $"{Program.Translate("CTRL")} + " +
-                $"{Program.Translate("ALT")} + ";
+                $"{Language.Translate("CTRL")} + " +
+                $"{Language.Translate("ALT")} + ";
 
             hotKey.ImageScaling = ToolStripItemImageScaling.SizeToFit;
             if (string.IsNullOrEmpty(Properties.Settings.Default.HotKey))
@@ -141,7 +142,7 @@ namespace SystemTrayMenu.Controls
             menu.Items.Add(seperator);
 
             ToolStripMenuItem openLog = new ToolStripMenuItem();
-            openLog.Text = Program.Translate("Log File");
+            openLog.Text = Language.Translate("Log File");
             openLog.Click += OpenLog_Click;
             void OpenLog_Click(object sender, EventArgs e)
             {
@@ -152,7 +153,7 @@ namespace SystemTrayMenu.Controls
             menu.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem about = new ToolStripMenuItem();
-            about.Text = Program.Translate("About");
+            about.Text = Language.Translate("About");
             about.Click += About_Click;
             void About_Click(object sender, EventArgs e)
             {
@@ -184,7 +185,7 @@ namespace SystemTrayMenu.Controls
             menu.Items.Add(new ToolStripSeparator());
 
             ToolStripMenuItem restart = new ToolStripMenuItem();
-            restart.Text = Program.Translate("Restart");
+            restart.Text = Language.Translate("Restart");
             restart.Click += Restart_Click;
             void Restart_Click(object sender, EventArgs e)
             {
@@ -193,7 +194,7 @@ namespace SystemTrayMenu.Controls
             menu.Items.Add(restart);
 
             ToolStripMenuItem exit = new ToolStripMenuItem();
-            exit.Text = Program.Translate("Exit");
+            exit.Text = Language.Translate("Exit");
             exit.Click += Exit_Click;
             void Exit_Click(object sender, EventArgs e)
             {
@@ -227,7 +228,7 @@ namespace SystemTrayMenu.Controls
         public static Bitmap ResizeImage(Image image)
         {
             int length = (int)Math.Round(
-                16 * Program.ScalingFactor, 0,
+                16 * Scaling.Factor, 0,
                 MidpointRounding.AwayFromZero);
             return ResizeImage(image, length, length);
         }

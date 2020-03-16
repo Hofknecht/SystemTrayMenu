@@ -1,5 +1,4 @@
-﻿using Clearcove.Logging;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -90,13 +89,8 @@ namespace SystemTrayMenu
                 timerFadeHalf.Stop();
                 timerFadeIn.Start();
             }
-#warning #35 [BUG] Rare ObjectDisposedException, todo: fix root cause
-            else if (form.IsDisposed)
-            {
-                new Logger(nameof(FadeForm)).Warn(
-                    $"{Environment.StackTrace.ToString()}");
-            }
-            else
+            //see #35 [BUG], from late mouse events
+            else if (!form.IsDisposed) 
             {
                 ShowInactiveTopmost(form);
                 timerFadeOut.Stop();

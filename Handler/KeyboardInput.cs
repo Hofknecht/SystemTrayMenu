@@ -1,5 +1,4 @@
-﻿using Clearcove.Logging;
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
 using SystemTrayMenu.Controls;
@@ -15,7 +14,6 @@ namespace SystemTrayMenu.Handler
         public Action<int, int, DataGridView> RowDeselected;
         public event EventHandler Cleared;
 
-        Logger log = new Logger(nameof(KeyboardInput));
         private Menu[] menus;
 
         KeyboardHook hook = new KeyboardHook();
@@ -66,8 +64,7 @@ namespace SystemTrayMenu.Handler
                 }
                 catch (Exception ex)
                 {
-                    log.Info($"key:'{key.ToString()}'");
-                    log.Error($"{ex.ToString()}");
+                    Log.Error($"key:'{key.ToString()}'", ex);
                     Properties.Settings.Default.HotKey = string.Empty;
                     Properties.Settings.Default.Save();
                     MessageBox.Show(ex.Message);
@@ -126,14 +123,6 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal bool IsAnyMenuSelectedByKey()
-        {
-            Menu menu = null;
-            DataGridView dgv = null;
-            string textselected = string.Empty;
-            return IsAnyMenuSelectedByKey(ref dgv, ref menu, ref textselected);
-        }
-
         private bool IsAnyMenuSelectedByKey(
             ref DataGridView dgv,
             ref Menu menuFromSelected,
@@ -153,7 +142,7 @@ namespace SystemTrayMenu.Handler
                     {
                         isStillSelected = true;
                         menuFromSelected = rowData.SubMenu;
-#warning refactor datagridviewrow get
+#warning CodeBuity&Refactor #49 refactor datagridviewrow get
                         textselected = dgv.Rows[iRowKey].
                             Cells[1].Value.ToString();
                     }
@@ -259,11 +248,6 @@ namespace SystemTrayMenu.Handler
                                 RowSelected(dgv, iRowKey);
                                 toClear = true;
                             }
-                        }
-                        else
-                        {
-                            log.Info("indexMenuByKey = menus.Where(m => m != null).Count()" +
-                                "=> menus[iMenuKey] == null");
                         }
                     }
                     break;

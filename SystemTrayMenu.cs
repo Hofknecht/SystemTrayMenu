@@ -7,7 +7,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 using SystemTrayMenu.Controls;
 using SystemTrayMenu.Handler;
@@ -42,12 +41,9 @@ namespace SystemTrayMenu
         DataGridView dgvFromLastMouseEvent = null;
         DataGridViewCellEventArgs cellEventArgsFromLastMouseEvent = null;
 
-        public SystemTrayMenu(ref bool cancelAppRun)
+        public SystemTrayMenu()
         {
-            log.Info("Application Start " +
-                Assembly.GetExecutingAssembly().
-                GetName().Version.ToString() +
-                $" ScalingFactor={Program.ScalingFactor}");
+            Log.ApplicationStart();
 
             try
             {
@@ -120,9 +116,9 @@ namespace SystemTrayMenu
                     //if (!IsNotifyIconInTaskbar())
                     //{
                     //    //DragDropHintForm hintForm = new DragDropHintForm(
-                    //    //    Program.Translate("HintDragDropTitle"),
-                    //    //    Program.Translate("HintDragDropText"),
-                    //    //    Program.Translate("buttonOk"));
+                    //    //    Language.Translate("HintDragDropTitle"),
+                    //    //    Language.Translate("HintDragDropText"),
+                    //    //    Language.Translate("buttonOk"));
                     //    //hintForm.Show();
                     //}
                     #endregion
@@ -179,6 +175,7 @@ namespace SystemTrayMenu
                 WindowToTop.ForceForegroundWindow(menus[0].Handle);
             }
 
+            menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menuNotifyIcon.ChangeFolder += ChangeFolder;
             void ChangeFolder()
             {
@@ -186,12 +183,6 @@ namespace SystemTrayMenu
                 {
                     ApplicationRestart();
                 }
-            }
-
-            menuNotifyIcon.OpenLog += OpenLog;
-            void OpenLog()
-            {
-                Process.Start(Program.GetLogFilePath());
             }
 
             Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
@@ -205,8 +196,7 @@ namespace SystemTrayMenu
             void ApplicationRestart()
             {
                 Dispose();
-                Process.Start(Assembly.GetExecutingAssembly().
-                    ManifestModule.FullyQualifiedName);
+                Program.Restart();
             }
 
             messageFilter.MouseMove += FadeInIfNeeded;
@@ -231,11 +221,6 @@ namespace SystemTrayMenu
 
             messageFilter.MouseLeave += fastLeave.Start;
             fastLeave.Leave += FadeHalfOrOutIfNeeded;
-
-            if (!Config.LoadOrSetByUser())
-            {
-                cancelAppRun = true;
-            }
         }
 
         void FadeInIfNeeded()
@@ -327,7 +312,7 @@ namespace SystemTrayMenu
                 int newWith = (menu.Width - 2 + menuPredecessor.Width);
                 if (directionToRight)
                 {
-#warning is this still correct?
+#warning CodeBuity&Refactor #49 is this still correct?
                     if (widthPredecessors - menu.Width <= -2) // -1*2 padding
                     {
                         directionToRight = false;

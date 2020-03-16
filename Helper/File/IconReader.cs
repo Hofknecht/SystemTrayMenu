@@ -136,9 +136,7 @@ namespace SystemTrayMenu.Helper
                 }
                 catch (Exception ex)
                 {
-                    Logger log = new Logger(nameof(IconReader));
-                    log.Info($"filePath:'{filePath}'");
-                    log.Error($"{ex.ToString()}");
+                    Log.Error($"filePath:'{filePath}'", ex);
                 }
 
                 // Cleanup
@@ -196,9 +194,7 @@ namespace SystemTrayMenu.Helper
                 }
                 catch (Exception ex)
                 {
-                    Logger log = new Logger(nameof(IconReader));
-                    log.Info($"directoryPath:'{directoryPath}'");
-                    log.Error($"{ex.ToString()}");
+                    Log.Error($"directoryPath:'{directoryPath}'", ex);
                 }
 
                 // Cleanup

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu.Controls
 {
@@ -10,14 +11,14 @@ namespace SystemTrayMenu.Controls
         public AskHotKeyForm()
         {
             InitializeComponent();
-            this.Text = Program.Translate("Shortcut key");
-            this.labelCaption.Text = $"{Program.Translate("Shortcut key")} " +
-                $"{Program.Translate("(e.g. F10)")}";
+            this.Text = Language.Translate("Shortcut key");
+            this.labelCaption.Text = $"{Language.Translate("Shortcut key")} " +
+                $"{Language.Translate("(e.g. F10)")}";
             this.labelText.Text =
-                Program.Translate("CTRL") + " + " +
-                Program.Translate("ALT") + " + ?";
+                Language.Translate("CTRL") + " + " +
+                Language.Translate("ALT") + " + ?";
 
-            this.buttonOk.Text = Program.Translate("buttonOk");
+            this.buttonOk.Text = Language.Translate("buttonOk");
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)

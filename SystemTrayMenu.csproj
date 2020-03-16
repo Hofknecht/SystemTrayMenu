@@ -165,7 +165,11 @@
     <Compile Include="Helper\File\FileIni.cs" />
     <Compile Include="Helper\File\FileLnk.cs" />
     <Compile Include="Helper\KeyboardHook.cs" />
+    <Compile Include="Helper\Log.cs" />
+    <Compile Include="Helper\SingleAppInstance.cs" />
     <Compile Include="Helper\MessageFilter.cs" />
+    <Compile Include="Helper\Language.cs" />
+    <Compile Include="Helper\Scaling.cs" />
     <Compile Include="Helper\ShellContextMenu.cs" />
     <Compile Include="Helper\File\FileUrl.cs" />
     <Compile Include="Handler\WaitFastLeave.cs" />

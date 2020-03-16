@@ -91,11 +91,11 @@ namespace SystemTrayMenu
                     }
                     break;
                 case Type.Empty:
-                    SetTitle(Program.Translate("Folder empty"));
+                    SetTitle(Language.Translate("Folder empty"));
                     labelTitle.BackColor = MenuDefines.Background;
                     break;
                 case Type.NoAccess:
-                    SetTitle(Program.Translate("Folder inaccessible"));
+                    SetTitle(Language.Translate("Folder inaccessible"));
                     labelTitle.BackColor = MenuDefines.Background;
                     break;
                 case Type.MaxReached:
@@ -195,7 +195,7 @@ namespace SystemTrayMenu
 
             AdjustDataGridViewSize();
             int x = menuPredecessor.Location.X - Width +
-                (int)Math.Round(Program.ScalingFactor, 0,
+                (int)Math.Round(Scaling.Factor, 0,
                 MidpointRounding.AwayFromZero);
 
             RowData trigger = (RowData)Tag;
