@@ -159,6 +159,7 @@
     <Compile Include="Controls\MenuData.cs" />
     <Compile Include="Controls\RowData.cs" />
     <Compile Include="Controls\AppContextMenu.cs" />
+    <Compile Include="Helper\AppRestart.cs" />
     <Compile Include="Helper\BringWindowToTop.cs" />
     <Compile Include="Helper\DataGridViewExtensions.cs" />
     <Compile Include="Helper\File\IconReader.cs" />

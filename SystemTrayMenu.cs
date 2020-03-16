@@ -1,4 +1,4 @@
-﻿using Clearcove.Logging;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,9 +34,13 @@ namespace SystemTrayMenu
 
         public SystemTrayMenu()
         {
+            AppRestart.BeforeRestarting += Dispose;
+            SystemEvents.DisplaySettingsChanged += AppRestart.ByDisplaySettings;
+            menus[0] = new Menu(Menu.MenuType.DisposedFake);
+
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
-            keyboardInput.HotKeyPressed += SwitchOpenClose;
+            keyboardInput.HotKeyPressed -= SwitchOpenClose;
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowSelected += KeyboardInputRowSelected;
             void KeyboardInputRowSelected(DataGridView dgv, int rowIndex)
@@ -49,11 +53,8 @@ namespace SystemTrayMenu
             keyboardInput.Cleared += FadeHalfOrOutIfNeeded;
 
             menuNotifyIcon = new MenuNotifyIcon();
-
-            menus[0] = new Menu();
-            menus[0].Dispose();
-            menuNotifyIcon.Exit += Application.Exit;
-
+            menuNotifyIcon.Exit += Application.Exit; 
+            menuNotifyIcon.Restart += AppRestart.ByMenuNotifyIcon;
             menuNotifyIcon.HandleClick += SwitchOpenClose;
             void SwitchOpenClose()
             {
@@ -132,11 +133,7 @@ namespace SystemTrayMenu
                     menus[0].AdjustLocationAndSize(screen);
                     ActivateMenu();
                     menus[0].AdjustLocationAndSize(screen);
-                    if (!messageFilterAdded)
-                    {
-                        Application.AddMessageFilter(messageFilter);
-                        messageFilterAdded = true;
-                    }
+                    messageFilter.StartListening();
                 }
 
                 openCloseState = OpenCloseState.Default;
@@ -144,11 +141,7 @@ namespace SystemTrayMenu
 
             void ActivateMenu()
             {
-                Menus().ToList().ForEach(menu =>
-                {
-                    menu.FadeIn();
-                    menu.FadeHalf();
-                });
+                Menus().ToList().ForEach(m =>{m.FadeIn();m.FadeHalf();});
                 menus[0].SetTitleColorActive();
                 menus[0].Activate();
                 WindowToTop.ForceForegroundWindow(menus[0].Handle);
@@ -160,22 +153,8 @@ namespace SystemTrayMenu
             {
                 if (Config.SetFolderByUser())
                 {
-                    ApplicationRestart();
+                    AppRestart.ByConfigChange();
                 }
-            }
-
-            Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
-            void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
-            {
-                Log.Info("SystemEvents_DisplaySettingsChanged");
-                ApplicationRestart();
-            }
-
-            menuNotifyIcon.Restart += ApplicationRestart;
-            void ApplicationRestart()
-            {
-                Dispose();
-                Program.Restart();
             }
 
             messageFilter.MouseMove += FadeInIfNeeded;
@@ -271,7 +250,7 @@ namespace SystemTrayMenu
             {
                 DisposeMenu(menuToDispose);
             }
-            if (Menus().Any(m => m.IsDisposed))
+            if (!Menus().Any(m => m.Visible))
             {
                 openCloseState = OpenCloseState.Default;
             }
@@ -285,7 +264,7 @@ namespace SystemTrayMenu
             int widthPredecessors = -1; // -1 padding
             bool directionToRight = false;
 
-            foreach (Menu menu in Menus().Skip(1))
+            foreach (Menu menu in Menus().Where(m=>m.Level > 0))
             {
                 // -1*2 padding
                 int newWith = (menu.Width - 2 + menuPredecessor.Width);
@@ -661,16 +640,12 @@ namespace SystemTrayMenu
 
         IEnumerable<Menu> Menus()
         {
-            return menus.Where(m => m != null);
+            return menus.Where(m => m != null && !m.IsDisposed);
         }
 
         void MenusFadeOut()
         {
-            if (messageFilterAdded)
-            {
-                Application.RemoveMessageFilter(messageFilter);
-                messageFilterAdded = false;
-            }
+            messageFilter.StopListening();
 
             Menus().ToList().ForEach(menu =>
             {

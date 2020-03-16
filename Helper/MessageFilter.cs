@@ -15,6 +15,7 @@ namespace SystemTrayMenu
         public event EventHandler ScrollBarMouseMove;
 
         Point cursorPosition = new Point();
+        bool messageFilterAdded = false;
 
         public bool PreFilterMessage(ref Message message)
         {
@@ -36,6 +37,24 @@ namespace SystemTrayMenu
                 ScrollBarMouseMove?.Invoke();
             }
             return false;
+        }
+
+        internal void StartListening()
+        {
+            if (!messageFilterAdded)
+            {
+                Application.AddMessageFilter(this);
+                messageFilterAdded = true;
+            }
+        }
+
+        internal void StopListening()
+        {
+            if (messageFilterAdded)
+            {
+                Application.RemoveMessageFilter(this);
+                messageFilterAdded = false;
+            }
         }
     }
 }

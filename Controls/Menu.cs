@@ -45,7 +45,9 @@ namespace SystemTrayMenu
         FadeForm FadeForm = null;
         bool autoResizeRowsDone  = false;
 
-        public Menu()
+        public enum MenuType { Default, DisposedFake };
+
+        public Menu(MenuType menuType = MenuType.Default)
         {
             FadeForm = new FadeForm(this);
             InitializeComponent();
@@ -58,6 +60,11 @@ namespace SystemTrayMenu
 
             VScrollBar scrollBar = dgv.Controls.OfType<VScrollBar>().First();
             scrollBar.MouseWheel += dgv_MouseWheel;
+
+            if (menuType == MenuType.DisposedFake)
+            {
+                Dispose();
+            }
         }
 
         static void SetDoubleBuffer(Control ctl, bool DoubleBuffered)

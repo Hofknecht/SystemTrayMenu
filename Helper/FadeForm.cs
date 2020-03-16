@@ -89,8 +89,7 @@ namespace SystemTrayMenu
                 timerFadeHalf.Stop();
                 timerFadeIn.Start();
             }
-            //see #35 [BUG], from late mouse events
-            else if (!form.IsDisposed) 
+            else
             {
                 ShowInactiveTopmost(form);
                 timerFadeOut.Stop();

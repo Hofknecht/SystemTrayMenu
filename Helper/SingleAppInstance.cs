@@ -1,5 +1,4 @@
-﻿using Clearcove.Logging;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 
@@ -9,8 +8,6 @@ namespace SystemTrayMenu.Helper
     {
         internal static void Initialize()
         {
-            Logger log = new Logger(nameof(SingleAppInstance));
-
             if (IsAnyOtherInstancesofAppAlreadyRunning())
             {
                 KillOtherInstancesOfApp();
@@ -30,9 +27,9 @@ namespace SystemTrayMenu.Helper
                             killedAProcess = true;
                         }
                     }
-                    catch (Exception exception)
+                    catch (Exception ex)
                     {
-                        log.Warn($"{exception.ToString()}");
+                        Log.Error("Run as single instance failed", ex);
                     }
 
                     return killedAProcess;

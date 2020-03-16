@@ -19,11 +19,12 @@ namespace SystemTrayMenu.Helper
             log.Info(message);
         }
 
-        internal static void Warn(string message)
-        {
-            log.Warn($"{message}{Environment.NewLine}" +
-                $"{Environment.StackTrace.ToString()}");
-        }
+        //internal static void Warn(string message)
+        //{
+        //    log.Warn($"{message}{Environment.NewLine}" +
+        //        $"{Environment.StackTrace.ToString()}");
+        //}
+
         internal static void Error(string message, Exception ex)
         {
             log.Error($"{message}{Environment.NewLine}" +
@@ -42,13 +43,18 @@ namespace SystemTrayMenu.Helper
             Process.Start(GetLogFilePath());
         }
 
-        internal static void ApplicationRun()
+        internal static void WriteApplicationRuns()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             log.Info($"Application Start " +
                 assembly.ManifestModule.Name + " | " +
                 assembly.GetName().Version.ToString() + " | " +
                 $"ScalingFactor={Scaling.Factor}");
+        }
+
+        internal static void Close()
+        {
+            Logger.ShutDown();
         }
     }
 }

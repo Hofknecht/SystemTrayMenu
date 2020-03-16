@@ -1,5 +1,4 @@
-﻿using Clearcove.Logging;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Reflection;
 using System.Threading;
@@ -35,7 +34,7 @@ namespace SystemTrayMenu
 
                     using (new SystemTrayMenu())
                     {
-                        Log.ApplicationRun();
+                        Log.WriteApplicationRuns();
                         Application.Run();
                     }
                 }
@@ -46,7 +45,7 @@ namespace SystemTrayMenu
             }
             finally
             {
-                Logger.ShutDown();
+                Log.Close();
             }
             
             void AskUserSendError(Exception ex)
@@ -63,15 +62,8 @@ namespace SystemTrayMenu
                         "&body=" + ex.ToString());
                 }
 
-                Logger.ShutDown();
-                Restart();
+                AppRestart.ByThreadException();
             }
-        }
-
-        internal static void Restart()
-        {
-            Process.Start(Assembly.GetExecutingAssembly().
-                ManifestModule.FullyQualifiedName);
         }
     }
 }
