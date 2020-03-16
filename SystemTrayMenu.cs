@@ -1,5 +1,4 @@
 ﻿using Clearcove.Logging;
-using Shell32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +13,8 @@ using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu
 {
-    #region Enable debug log by putting this code into each function
-    //MethodBase m = MethodBase.GetCurrentMethod();
-    //log.Debug($"Executing {m.ReflectedType.Name}, {m.Name}");
-    #endregion
     class SystemTrayMenu : IDisposable
     {
-        Logger log = new Logger(nameof(SystemTrayMenu));
-
-        IShellDispatch4 iShellDispatch4 = null;
-
         MessageFilter messageFilter = new MessageFilter();
         bool messageFilterAdded = false;
 
@@ -43,18 +34,6 @@ namespace SystemTrayMenu
 
         public SystemTrayMenu()
         {
-            Log.ApplicationStart();
-
-            try
-            {
-                iShellDispatch4 = (IShellDispatch4)Activator.CreateInstance(Type.GetTypeFromProgID("Shell.Application"));
-            }
-            catch (Exception ex)
-            {
-                log.Error("Get Shell COM instance failed" + Environment.NewLine + ex.ToString());
-            }
-
-            Config.UpgradeIfNotUpgraded();
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
             keyboardInput.HotKeyPressed += SwitchOpenClose;
@@ -188,7 +167,7 @@ namespace SystemTrayMenu
             Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
             void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
             {
-                log.Info("SystemEvents_DisplaySettingsChanged");
+                Log.Info("SystemEvents_DisplaySettingsChanged");
                 ApplicationRestart();
             }
 
@@ -392,21 +371,6 @@ namespace SystemTrayMenu
 
         MenuData ReadMenu(BackgroundWorker worker, string path, int level)
         {
-            bool HideHiddenEntries = false;
-            bool HideSystemEntries = false;
-
-            if (null != iShellDispatch4)
-            {
-                // Using SHGetSetSettings would be much better in performance but the results are not accurate.
-                // We have to go for the shell interface in order to receive the correct settings:
-                // https://docs.microsoft.com/en-us/windows/win32/shell/ishelldispatch4-getsetting
-                const int SSF_SHOWALLOBJECTS = 0x00000001;
-                const int SSF_SHOWSUPERHIDDEN = 0x00040000;
-
-                HideHiddenEntries = !iShellDispatch4.GetSetting(SSF_SHOWALLOBJECTS);
-                HideSystemEntries = !iShellDispatch4.GetSetting(SSF_SHOWSUPERHIDDEN);
-            }
-
             MenuData menuData = new MenuData();
             menuData.RowDatas = new List<RowData>();
             menuData.Validity = MenuDataValidity.Invalid;
@@ -422,12 +386,11 @@ namespace SystemTrayMenu
                 }
                 catch (UnauthorizedAccessException)
                 {
-                    log.Info($"UnauthorizedAccessException:'{path}'");
+                    Log.Info($"UnauthorizedAccessException:'{path}'");
                 }
                 catch (Exception ex)
                 {
-                    log.Info($"path:'{path}'");
-                    log.Error($"{ex.ToString()}");
+                    Log.Error($"path:'{path}'", ex);
                 }
 
                 foreach (string directory in directories)
@@ -437,12 +400,8 @@ namespace SystemTrayMenu
                         break;
                     }
 
-                    FileAttributes attributes = File.GetAttributes(directory);
-                    bool hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
-                    bool systemEntry = attributes.HasFlag(
-                        FileAttributes.Hidden | FileAttributes.System);
-                    if ((HideHiddenEntries && hiddenEntry) ||
-                        (HideSystemEntries && systemEntry))
+                    bool hiddenEntry = false;
+                    if (FolderOptions.IsHidden(directory, ref hiddenEntry))
                     {
                         continue;
                     }
@@ -468,15 +427,14 @@ namespace SystemTrayMenu
                             ).ToArray();
                     Array.Sort(files, new WindowsExplorerSort());
                 }
+                catch (UnauthorizedAccessException)
+                {
+                    Log.Info($"UnauthorizedAccessException:'{path}'");
+                    menuData.Validity = MenuDataValidity.NoAccess;
+                }
                 catch (Exception ex)
                 {
-                    if ((uint)ex.HResult == 0x80070005) // E_ACCESSDENIED
-                        menuData.Validity = MenuDataValidity.NoAccess;
-                    else
-                    {
-                        log.Info($"path:'{path}'");
-                        log.Error($"{ex.ToString()}");
-                    }
+                    Log.Error($"path:'{path}'", ex);
                 }
 
                 foreach (string file in files)
@@ -486,12 +444,8 @@ namespace SystemTrayMenu
                         break;
                     }
 
-                    FileAttributes attributes = File.GetAttributes(file);
-                    bool hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
-                    bool systemEntry = attributes.HasFlag(
-                        FileAttributes.Hidden | FileAttributes.System);
-                    if ((HideHiddenEntries && hiddenEntry) ||
-                        (HideSystemEntries && systemEntry))
+                    bool hiddenEntry = false;
+                    if (FolderOptions.IsHidden(file, ref hiddenEntry))
                     {
                         continue;
                     }
@@ -500,7 +454,6 @@ namespace SystemTrayMenu
                     string resolvedLnkPath = string.Empty;
                     if (menuButtonData.ReadIcon(false, ref resolvedLnkPath))
                     {
-                        // file is pointing to a directory, so prepare submenu
                         menuButtonData = ReadMenuButtonData(resolvedLnkPath, true, menuButtonData);
                         menuButtonData.ContainsMenu = true;
                         menuButtonData.HiddenEntry = hiddenEntry;
@@ -540,8 +493,7 @@ namespace SystemTrayMenu
             }
             catch (Exception ex)
             {
-                log.Info($"fileName:'{fileName}'");
-                log.Error($"{ex.ToString()}");
+                Log.Error($"fileName:'{fileName}'", ex);
             }
 
             return menuButtonData;

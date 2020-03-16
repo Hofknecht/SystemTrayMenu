@@ -19,6 +19,7 @@ namespace SystemTrayMenu
                 SingleAppInstance.Initialize();
                 Language.Initialize();
 
+                Config.UpgradeIfNotUpgraded();
                 if (Config.LoadOrSetByUser())
                 {
                     Application.EnableVisualStyles();
@@ -30,9 +31,11 @@ namespace SystemTrayMenu
                     }
 
                     Scaling.Initialize();
+                    FolderOptions.Initialize();
 
                     using (new SystemTrayMenu())
                     {
+                        Log.ApplicationRun();
                         Application.Run();
                     }
                 }

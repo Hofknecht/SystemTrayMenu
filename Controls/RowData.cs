@@ -116,7 +116,7 @@ namespace SystemTrayMenu.Controls
             else if (string.IsNullOrEmpty(resolvedLnkPath))
             {
                 ResolvedFileNotFound = true;
-                Log.Info($"Resolve *.Lnk '{TargetFilePath}' empty => no icon");
+                Log.Info($"Resolve *.LNK '{TargetFilePath}' has no icon");
 #warning [Feature] Resolve network root #48, start here
             }
             else
@@ -181,7 +181,7 @@ namespace SystemTrayMenu.Controls
                 }
                 else
                 {
-                    Log.Info($"Resolve *.URL '{TargetFilePath}' not possible => no icon");
+                    Log.Info($"Resolve *.URL '{TargetFilePath}' has no icon");
                 }
             }
             catch (Exception ex)

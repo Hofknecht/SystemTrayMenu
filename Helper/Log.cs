@@ -42,13 +42,13 @@ namespace SystemTrayMenu.Helper
             Process.Start(GetLogFilePath());
         }
 
-        internal static void ApplicationStart()
+        internal static void ApplicationRun()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             log.Info($"Application Start " +
-                assembly.ManifestModule.FullyQualifiedName + "|" +
-                assembly.GetName().Version.ToString() + "|" +
-                $" ScalingFactor={Scaling.Factor}");
+                assembly.ManifestModule.Name + " | " +
+                assembly.GetName().Version.ToString() + " | " +
+                $"ScalingFactor={Scaling.Factor}");
         }
     }
 }
