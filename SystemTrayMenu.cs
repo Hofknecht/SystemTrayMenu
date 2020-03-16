@@ -264,7 +264,7 @@ namespace SystemTrayMenu
                 if (isAnyMenuActive && 
                     !(openCloseState == OpenCloseState.Closing))
                 {
-                    if (!keyboardInput.IsAnyMenuSelectedByKey())
+                    if (!keyboardInput.InUse)
                     {
                         Menus().ToList().ForEach(menu => menu.FadeHalf());
                     }
