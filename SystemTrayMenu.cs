@@ -15,20 +15,15 @@ namespace SystemTrayMenu
 {
     class SystemTrayMenu : IDisposable
     {
-        MessageFilter messageFilter = new MessageFilter();
-        bool messageFilterAdded = false;
-
-        MenuNotifyIcon menuNotifyIcon = null;
-        WaitFastLeave fastLeave = new WaitFastLeave();
-        Menu[] menus = new Menu[MenuDefines.MenusMax];
-        KeyboardInput keyboardInput;
-
         enum OpenCloseState { Default, Opening, Closing };
         OpenCloseState openCloseState = OpenCloseState.Default;
-
+        MessageFilter messageFilter = new MessageFilter();
+        MenuNotifyIcon menuNotifyIcon = null;
+        Menu[] menus = new Menu[MenuDefines.MenusMax];
         BackgroundWorker worker = new BackgroundWorker();
         Screen screen = Screen.PrimaryScreen;
-
+        WaitFastLeave fastLeave = new WaitFastLeave();
+        KeyboardInput keyboardInput;
         DataGridView dgvFromLastMouseEvent = null;
         DataGridViewCellEventArgs cellEventArgsFromLastMouseEvent = null;
 
@@ -40,7 +35,7 @@ namespace SystemTrayMenu
 
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
-            keyboardInput.HotKeyPressed -= SwitchOpenClose;
+            keyboardInput.HotKeyPressed += SwitchOpenClose;
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowSelected += KeyboardInputRowSelected;
             void KeyboardInputRowSelected(DataGridView dgv, int rowIndex)
@@ -266,12 +261,12 @@ namespace SystemTrayMenu
 
             foreach (Menu menu in Menus().Where(m=>m.Level > 0))
             {
-                // -1*2 padding
-                int newWith = (menu.Width - 2 + menuPredecessor.Width);
+                int newWith = (menu.Width - 
+                    menu.Padding.Horizontal + menuPredecessor.Width);
                 if (directionToRight)
                 {
-#warning CodeBuity&Refactor #49 is this still correct?
-                    if (widthPredecessors - menu.Width <= -2) // -1*2 padding
+                    if (widthPredecessors - menu.Width <= 
+                        -menu.Padding.Horizontal)
                     {
                         directionToRight = false;
                     }
@@ -289,7 +284,7 @@ namespace SystemTrayMenu
 
                 menu.AdjustLocationAndSize(heightMax,
                     widthPredecessors, menuPredecessor);
-                widthPredecessors += menu.Width - 1; // -1 padding
+                widthPredecessors += menu.Width - menu.Padding.Left;
                 menuPredecessor = menu;
             }
         }

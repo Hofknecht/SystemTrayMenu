@@ -142,7 +142,7 @@ namespace SystemTrayMenu.Handler
                     {
                         isStillSelected = true;
                         menuFromSelected = rowData.SubMenu;
-#warning CodeBuity&Refactor #49 refactor datagridviewrow get
+#warning CodeBeauty&Refactor #49 refactor datagridviewrow get
                         textselected = dgv.Rows[iRowKey].
                             Cells[1].Value.ToString();
                     }

@@ -231,7 +231,7 @@ namespace SystemTrayMenu.Controls
         }
 
 
-#warning CodeBuity&Refactor #49 - sort this class and check for duplicated
+#warning CodeBeauty&Refactor #49 - sort this class and check for duplicated
 
         public event Action<object, EventArgs> OpenMenu;
 
@@ -362,7 +362,7 @@ namespace SystemTrayMenu.Controls
             {
                 IsContextMenuOpen = true;
 
-#warning CodeBuity&Refactor #49 is there any other possiblity to raise selection changed event? dataGridView.ClearSelection(); seems to overwrite selected
+#warning CodeBeauty&Refactor #49 is there any other possiblity to raise selection changed event? dataGridView.ClearSelection(); seems to overwrite selected
                 IsSelected = true;
                 dgv.Rows[RowIndex].Selected = true;
 
@@ -466,7 +466,7 @@ namespace SystemTrayMenu.Controls
             row.Tag = data;
         }
 
-#warning CodeBuity&Refactor #49 either not public and as inline method or we want probably to move that code somewhere else
+#warning CodeBeauty&Refactor #49 either not public and as inline method or we want probably to move that code somewhere else
         public Icon AddIconOverlay(Icon originalIcon, Icon overlay)
         {
             var target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
