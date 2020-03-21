@@ -142,7 +142,6 @@ namespace SystemTrayMenu.Handler
                     {
                         isStillSelected = true;
                         menuFromSelected = rowData.SubMenu;
-#warning CodeBeauty&Refactor #49 refactor datagridviewrow get
                         textselected = dgv.Rows[iRowKey].
                             Cells[1].Value.ToString();
                     }
@@ -351,12 +350,18 @@ namespace SystemTrayMenu.Handler
 
         public void Select(DataGridView dgv, int i)
         {
+            int newiMenuKey = ((Menu)dgv.TopLevelControl).Level;
+            if (i != iRowKey || newiMenuKey != iMenuKey)
+            {
+                ClearIsSelectedByKey();
+            }
             iRowKey = i;
-            iMenuKey = ((Menu)dgv.TopLevelControl).Level;
+            iMenuKey = newiMenuKey;
             DataGridViewRow row = dgv.Rows[i];
             RowData rowData = (RowData)row.Tag;
             rowData.IsSelectedByKeyboard = true;
-            row.Selected = true;
+            row.Selected = false; //event trigger
+            row.Selected = true; //event trigger
         }
 
         private bool Select(DataGridView dgv, int i,

@@ -324,9 +324,6 @@ namespace SystemTrayMenu
             if (!isAnyMenuActive)
             {
                 menus[0].SetTitleColorDeactive();
-                CheckMenuOpenerStop(keyboardInput.iMenuKey, 
-                    keyboardInput.iRowKey);
-                keyboardInput.ClearIsSelectedByKey();
             }
             else
             {
@@ -500,9 +497,7 @@ namespace SystemTrayMenu
 
             if (!keyboardInput.InUse)
             {
-                keyboardInput.ClearIsSelectedByKey();
                 keyboardInput.Select(dgv, e.RowIndex);
-
                 CheckMenuOpenerStart(dgv, e.RowIndex);
             }
         }
@@ -609,13 +604,13 @@ namespace SystemTrayMenu
                 if (rowData.IsSelectedByKeyboard)
                 {
                     row.DefaultCellStyle.SelectionBackColor =
-                        MenuDefines.KeyBoardSelection;
+                        MenuDefines.ColorSelectedItem;
                     row.Selected = true;
                 }
                 else if (rowData.IsSelected)
                 {
                     row.DefaultCellStyle.SelectionBackColor =
-                        MenuDefines.FolderOpen;
+                        MenuDefines.ColorOpenFolder;
                     row.Selected = true;
                 }
                 else

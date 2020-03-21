@@ -54,7 +54,7 @@ namespace SystemTrayMenu
             SetDoubleBuffer(dgv, true);
 
             DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle();
-            dgvCellStyle.SelectionBackColor = MenuDefines.FileHover;
+            dgvCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
             dgvCellStyle.SelectionForeColor = Color.Black;
             this.dgv.DefaultCellStyle = dgvCellStyle;
 
@@ -99,15 +99,15 @@ namespace SystemTrayMenu
                     break;
                 case Type.Empty:
                     SetTitle(Language.Translate("Folder empty"));
-                    labelTitle.BackColor = MenuDefines.Background;
+                    labelTitle.BackColor = MenuDefines.ColorTitleWarning;
                     break;
                 case Type.NoAccess:
                     SetTitle(Language.Translate("Folder inaccessible"));
-                    labelTitle.BackColor = MenuDefines.Background;
+                    labelTitle.BackColor = MenuDefines.ColorTitleWarning;
                     break;
                 case Type.MaxReached:
                     SetTitle($"Max {MenuDefines.MenusMax - 1} Menus");
-                    labelTitle.BackColor = MenuDefines.Background;
+                    labelTitle.BackColor = MenuDefines.ColorTitleWarning;
                     break;
                 case Type.Main:
                     break;
@@ -300,12 +300,12 @@ namespace SystemTrayMenu
 
         private void LabelTitle_MouseEnter(object sender, EventArgs e)
         {
-            this.labelTitle.BackColor = MenuDefines.FileHover;
+            this.labelTitle.BackColor = MenuDefines.ColorTitleSelected;
         }
 
         private void LabelTitle_MouseLeave(object sender, EventArgs e)
         {
-            this.labelTitle.BackColor = MenuDefines.Background;
+            this.labelTitle.BackColor = MenuDefines.ColorTitleBackground;
         }
 
         protected override CreateParams CreateParams
