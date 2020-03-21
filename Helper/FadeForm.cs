@@ -10,7 +10,8 @@ namespace SystemTrayMenu
         {
             get
             {
-                return timerFadeIn.Enabled;
+                return timerFadeIn.Enabled ||
+                    timerFadeHalf.Enabled;
             }
         }
 
@@ -67,9 +68,9 @@ namespace SystemTrayMenu
             if (form.Visible &&
                 form.Opacity < MenuDefines.OpacityHalfValue)
             {
-                stopFadeInByHalf = true;
                 timerFadeOut.Stop();
                 timerFadeHalf.Stop();
+                stopFadeInByHalf = true;
                 timerFadeIn.Start();
             }
             else

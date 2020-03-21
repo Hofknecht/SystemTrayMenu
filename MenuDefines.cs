@@ -41,5 +41,7 @@ namespace SystemTrayMenu
         public const double OpacityHalfStep = 0.01;
 
         public const int MenusMax = 50;
+
+        public static int MaxClicksInQueue = 1;
     }
 }

@@ -26,6 +26,7 @@ namespace SystemTrayMenu
         KeyboardInput keyboardInput;
         DataGridView dgvFromLastMouseEvent = null;
         DataGridViewCellEventArgs cellEventArgsFromLastMouseEvent = null;
+        int clicksInQueue = 0;
 
         public SystemTrayMenu()
         {
@@ -71,33 +72,25 @@ namespace SystemTrayMenu
                         openCloseState = OpenCloseState.Default;
                     }
                 }
+                else if (worker.IsBusy)
+                {
+                    if (clicksInQueue < MenuDefines.MaxClicksInQueue)
+                    {
+                        clicksInQueue++;
+                        while (worker.IsBusy)
+                        {
+                            Application.DoEvents();
+                        }
+                        clicksInQueue--;
+                        SwitchOpenClose();
+                    }
+                    else
+                    {
+                        Log.Info("User is clicking too often => throw event away");
+                    }
+                }
                 else
                 {
-                    #region NotifyIconIsInteededToBeOutside
-                    // Idea is either to show always outside like dropbox 
-                    // (is nok due to windows rules, maybe only allowed when asking user?)
-                    // (or to give at least a hint that drag drop possible?)
-                    //bool IsNotifyIconInTaskbar()
-                    //{
-                    //    bool isNotifyIconInTaskbar = false;
-                    //    int height = screen.Bounds.Height -
-                    //        new Taskbar().Size.Height;
-                    //    if (Cursor.Position.Y >= height)
-                    //    {
-                    //        isNotifyIconInTaskbar = true;
-                    //    }
-                    //    return isNotifyIconInTaskbar;
-                    //}
-                    //if (!IsNotifyIconInTaskbar())
-                    //{
-                    //    //DragDropHintForm hintForm = new DragDropHintForm(
-                    //    //    Language.Translate("HintDragDropTitle"),
-                    //    //    Language.Translate("HintDragDropText"),
-                    //    //    Language.Translate("buttonOk"));
-                    //    //hintForm.Show();
-                    //}
-                    #endregion
-
                     openCloseState = OpenCloseState.Opening;
                     menuNotifyIcon.LoadingStart();
                     worker.RunWorkerAsync();
@@ -136,7 +129,7 @@ namespace SystemTrayMenu
 
             void ActivateMenu()
             {
-                Menus().ToList().ForEach(m =>{m.FadeIn();m.FadeHalf();});
+                Menus().ToList().ForEach(m =>m.FadeHalf());
                 menus[0].SetTitleColorActive();
                 menus[0].Activate();
                 WindowToTop.ForceForegroundWindow(menus[0].Handle);
