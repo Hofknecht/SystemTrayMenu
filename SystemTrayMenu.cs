@@ -129,7 +129,7 @@ namespace SystemTrayMenu
 
             void ActivateMenu()
             {
-                Menus().ToList().ForEach(m =>m.FadeHalf());
+                Menus().ToList().ForEach(m => { m.FadeIn(); m.FadeHalf(); });
                 menus[0].SetTitleColorActive();
                 menus[0].Activate();
                 WindowToTop.ForceForegroundWindow(menus[0].Handle);
