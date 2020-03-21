@@ -10,8 +10,7 @@ namespace SystemTrayMenu
         {
             get
             {
-                return timerFadeIn.Enabled ||
-                    timerFadeHalf.Enabled;
+                return timerFadeIn.Enabled;
             }
         }
 
