@@ -2,14 +2,14 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
 
 namespace SystemTrayMenu.Helper
 {
-    // orig from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
-    // added ImageList_GetIcon
-    // added IconCache
+    // from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
+    // added ImageList_GetIcon, IconCache, AddIconOverlay
 
     /// <summary>
     /// Provides static methods to read system icons for both folders and files.
@@ -201,6 +201,16 @@ namespace SystemTrayMenu.Helper
             }
             return icon;
         }
+
+        public static Icon AddIconOverlay(Icon originalIcon, Icon overlay)
+        {
+            var target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
+            var graphics = Graphics.FromImage(target);
+            graphics.DrawIcon(originalIcon, 0, 0);
+            graphics.DrawIcon(overlay, 0, 0);
+            target.MakeTransparent(target.GetPixel(1, 1));
+            return Icon.FromHandle(target.GetHicon());
+        }
     }
 
     /// <summary>
@@ -296,6 +306,8 @@ namespace SystemTrayMenu.Helper
         public const int ILD_TRANSPARENT = 0x00000001;
 
         [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", 
+            "CA1401:P/Invokes should not be visible", Justification = "<Pending>")]
         public static extern IntPtr SHGetFileInfo(
            string pszPath,
            uint dwFileAttributes,
@@ -323,6 +335,8 @@ namespace SystemTrayMenu.Helper
         /// <param name="hIcon">Pointer to icon handle.</param>
         /// <returns>N/A</returns>
         [DllImport("User32.dll")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", 
+            "CA1401:P/Invokes should not be visible", Justification = "<Pending>")]
         public static extern int DestroyIcon(IntPtr hIcon);
     }
 }

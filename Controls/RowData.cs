@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -18,87 +17,44 @@ namespace SystemTrayMenu.Controls
 {
     public class RowData : IDisposable
     {
+        public event Action<object, EventArgs> OpenMenu;
+        public BackgroundWorker Reading = new BackgroundWorker();
         public FileInfo FileInfo;
+        public Menu SubMenu;
         public Icon Icon;
+        public bool IsSelected;
+        public bool IsSelectedByKeyboard;
         public bool ContainsMenu;
         public bool IsContextMenuOpen;
         public bool ResolvedFileNotFound;
+        public bool IsResolvedLnk;
+        public bool IsLoading = false;
+        public bool RestartLoading = false;
+        public bool HiddenEntry;
         public string WorkingDirectory;
         public string Arguments;
-
-        public bool IsResolvedLnk;
         public string TargetFilePath;
+        public string TargetFilePathOrig;
         public string Text;
-
-
-        public Menu SubMenu;
         public int RowIndex;
 
-        public bool IsSelected;
-        public bool IsSelectedByKeyboard;
+        WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
+        Icon icon = null;
+        bool isDisposed = false;
 
-        /// <summary>
-        /// Loads the icon
-        /// </summary>
-        /// <param name="isDirectory">True = directory, false = file</param>
-        /// <param name="resolvedLnkPath">Discovered path when functions returns true</param>
-        /// <returns>True when linking to a different directory, otherwise false</returns>
-        public bool ReadIcon(bool isDirectory, ref string resolvedLnkPath)
+        public RowData()
         {
-            bool isLnkDirectory = false;
+            Reading.WorkerSupportsCancellation = true;
+            waitMenuOpen.DoOpen += WaitMenuOpen_DoOpen;
+        }
 
-            if (string.IsNullOrEmpty(TargetFilePath))
+        public void SetText(string text)
+        {
+            if (text.Length > MenuDefines.LengthMax)
             {
-                Log.Info($"TargetFilePath from {resolvedLnkPath} empty");
+                text = $"{text.Substring(0, MenuDefines.LengthMax)}...";
             }
-            else if (isDirectory)
-            {
-                Icon = IconReader.GetFolderIcon(TargetFilePath,
-                    IconReader.FolderType.Closed, false);
-            }
-            else
-            {
-                bool handled = false;
-                string fileExtension = Path.GetExtension(TargetFilePath);
-
-                if (fileExtension == ".lnk")
-                {
-                    handled = SetLnk(ref isLnkDirectory,
-                        ref resolvedLnkPath);
-                }
-                else if (fileExtension == ".url")
-                {
-                    handled = SetUrl();
-                }
-                else if (fileExtension == ".sln")
-                {
-                    handled = SetSln();
-                }
-
-                if (!handled)
-                {
-                    try
-                    {
-                        Icon = IconReader.GetFileIconWithCache(TargetFilePath, false);
-
-                        // other project -> fails sometimes
-                        //icon = IconHelper.ExtractIcon(TargetFilePath, 0);
-
-                        // standard way -> fails sometimes
-                        //icon = Icon.ExtractAssociatedIcon(filePath);
-
-                        // API Code Pack  -> fails sometimes
-                        //ShellFile shellFile = ShellFile.FromFilePath(filePath);
-                        //Bitmap shellThumb = shellFile.Thumbnail.ExtraLargeBitmap;
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Error($"TargetFilePath:'{TargetFilePath}'", ex);
-                    }
-                }
-            }
-
-            return isLnkDirectory;
+            Text = text;
         }
 
         private bool SetLnk(ref bool isLnkDirectory,
@@ -214,113 +170,101 @@ namespace SystemTrayMenu.Controls
             catch (Exception ex)
             {
                 Log.Error($"TargetFilePath:'{TargetFilePath}', " +
-                    $"executable:'{executable.ToString()}'",ex);
+                    $"executable:'{executable.ToString()}'", ex);
             }
 
             return handled;
         }
 
-        public void SetText(string text)
+
+
+        public void SetData(RowData data, DataGridView dgv)
         {
-            //text = $" {text}";
-            if (text.Length > MenuDefines.LengthMax)
+            data.RowIndex = dgv.Rows.Add();
+            DataGridViewRow row = dgv.Rows[data.RowIndex];
+
+            if (Icon == null)
             {
-                text = $"{text.Substring(0, MenuDefines.LengthMax)}...";
+                Icon = Properties.Resources.SystemTrayMenu;
             }
-            Text = text;
+            DataGridViewImageCell cellIcon =
+                (DataGridViewImageCell)row.Cells[0];
+
+            if (HiddenEntry)
+            {
+                cellIcon.Value = IconReader.AddIconOverlay(data.Icon,
+                    Properties.Resources.WhiteTransparency);
+            }
+            else
+            {
+                cellIcon.Value = data.Icon;
+            }
+
+            DataGridViewTextBoxCell cellName =
+                (DataGridViewTextBoxCell)row.Cells[1];
+            cellName.Value = data.Text;
+
+            row.Tag = data;
         }
 
-
-#warning CodeBeauty&Refactor #49 - sort this class and check for duplicated
-
-        public event Action<object, EventArgs> OpenMenu;
-
-        public bool IsLoading = false;
-        public bool RestartLoading = false;
-        public BackgroundWorker Reading = new BackgroundWorker();
-
-        Icon icon = null;
-        //FontFamily fontFamily = new FontFamily("Segoe UI");
-        //Font font = new Font(new FontFamily("Segoe UI"), 12F,
-        //    FontStyle.Regular, GraphicsUnit.Pixel);
-
-        WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
-
-        bool isDisposed = false;
-        internal string TargetFilePathOrig;
-        internal bool HiddenEntry;
-
-        public RowData()
+        public bool ReadIcon(bool isDirectory, ref string resolvedLnkPath)
         {
-            Reading.WorkerSupportsCancellation = true;
+            bool isLnkDirectory = false;
 
-            Initialize();
-            void Initialize()
+            if (string.IsNullOrEmpty(TargetFilePath))
             {
-                //Margin = new Padding(0, 0, 0, 0);
-                //FlatAppearance.BorderSize = 0;
-                //UseVisualStyleBackColor = true;
-                //FlatStyle = FlatStyle.Flat;
-                //BackColor = MenuDefines.File;
-                //FlatAppearance.BorderColor = MenuDefines.File;
-                //Anchor = (AnchorStyles.Left | AnchorStyles.Right);
-                //AutoSize = true;
-                //AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                //Font = new Font(fontFamily, 7, FontStyle.Regular, GraphicsUnit.Pixel);
-                //ForeColor = Color.Black;
-                waitMenuOpen.DoOpen += WaitMenuOpen_DoOpen;
-
-                //MouseLeave += MenuButton_MouseLeave;
-                //void MenuButton_MouseLeave(object sender, EventArgs e)
-                //{
-                //    if (Tag == null &&
-                //        !isContextMenuOpen &&
-                //        !ContainsMenu)
-                //    {
-                //        BackColor = MenuDefines.File;
-                //    }
-                //}
-
-                //MouseEnter += Menubutton_MouseEnter;
-                //void Menubutton_MouseEnter(object sender, EventArgs e)
-                //{
-                //    if (Tag == null &&
-                //        !ContainsMenu)
-                //    {
-                //        BackColor = MenuDefines.FileHover;
-                //    }
-                //}
-
-                //BackColorChanged += MenuButton_BackColorChanged;
-                //void MenuButton_BackColorChanged(object sender, EventArgs e)
-                //{
-                //    FlatAppearance.BorderColor = BackColor;
-                //}
-
-
+                Log.Info($"TargetFilePath from {resolvedLnkPath} empty");
             }
-        }
-
-        //DoubleClick += MenuButton_DoubleClick;
-        public void DoubleClick()
-        {
-            if (ContainsMenu)
+            else if (isDirectory)
             {
-                try
+                Icon = IconReader.GetFolderIcon(TargetFilePath,
+                    IconReader.FolderType.Closed, false);
+            }
+            else
+            {
+                bool handled = false;
+                string fileExtension = Path.GetExtension(TargetFilePath);
+
+                if (fileExtension == ".lnk")
                 {
-                    Process.Start("explorer.exe", TargetFilePath);
+                    handled = SetLnk(ref isLnkDirectory,
+                        ref resolvedLnkPath);
                 }
-                catch (Exception ex)
+                else if (fileExtension == ".url")
                 {
-                    Log.Error($"TargetFilePath:'{TargetFilePath}', " +
-                        $"=>DirectoryNotFound?", ex);
-                    ex = new DirectoryNotFoundException();
-                    MessageBox.Show(ex.Message);
+                    handled = SetUrl();
+                }
+                else if (fileExtension == ".sln")
+                {
+                    handled = SetSln();
+                }
+
+                if (!handled)
+                {
+                    try
+                    {
+                        Icon = IconReader.GetFileIconWithCache(TargetFilePath, false);
+
+                        // other project -> fails sometimes
+                        //icon = IconHelper.ExtractIcon(TargetFilePath, 0);
+
+                        // standard way -> fails sometimes
+                        //icon = Icon.ExtractAssociatedIcon(filePath);
+
+                        // API Code Pack  -> fails sometimes
+                        //ShellFile shellFile = ShellFile.FromFilePath(filePath);
+                        //Bitmap shellThumb = shellFile.Thumbnail.ExtraLargeBitmap;
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error($"TargetFilePath:'{TargetFilePath}'", ex);
+                    }
                 }
             }
+
+            return isLnkDirectory;
         }
 
-        //MouseDown += MenuButton_MouseDown;
         public void MouseDown(DataGridView dgv, MouseEventArgs e)
         {
             if (ContainsMenu)
@@ -361,8 +305,6 @@ namespace SystemTrayMenu.Controls
                 dgv.Rows.Count > RowIndex)
             {
                 IsContextMenuOpen = true;
-
-#warning CodeBeauty&Refactor #49 is there any other possiblity to raise selection changed event? dataGridView.ClearSelection(); seems to overwrite selected
                 IsSelected = true;
                 dgv.Rows[RowIndex].Selected = true;
 
@@ -401,6 +343,24 @@ namespace SystemTrayMenu.Controls
             }
         }
 
+        public void DoubleClick()
+        {
+            if (ContainsMenu)
+            {
+                try
+                {
+                    Process.Start("explorer.exe", TargetFilePath);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"TargetFilePath:'{TargetFilePath}', " +
+                        $"=>DirectoryNotFound?", ex);
+                    ex = new DirectoryNotFoundException();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
         public void MenuLoaded()
         {
             waitMenuOpen.MenuLoaded();
@@ -436,46 +396,7 @@ namespace SystemTrayMenu.Controls
         {
             IsLoading = false;
             OpenMenu?.Invoke(this, null);
-        }
-
-        public void SetData(RowData data, DataGridView dgv)
-        {
-            data.RowIndex = dgv.Rows.Add();
-            DataGridViewRow row = dgv.Rows[data.RowIndex];
-
-            if (Icon == null)
-            {
-                Icon = Properties.Resources.SystemTrayMenu;
-            }
-            DataGridViewImageCell cellIcon =
-                (DataGridViewImageCell)row.Cells[0];
-
-            if (HiddenEntry)
-            {
-                cellIcon.Value = AddIconOverlay(data.Icon, Properties.Resources.WhiteTransparency);
-            }
-            else
-            {
-                cellIcon.Value = data.Icon;
-            }
-
-            DataGridViewTextBoxCell cellName =
-                (DataGridViewTextBoxCell)row.Cells[1];
-            cellName.Value = data.Text;
-
-            row.Tag = data;
-        }
-
-#warning CodeBeauty&Refactor #49 either not public and as inline method or we want probably to move that code somewhere else
-        public Icon AddIconOverlay(Icon originalIcon, Icon overlay)
-        {
-            var target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
-            var graphics = Graphics.FromImage(target);
-            graphics.DrawIcon(originalIcon, 0, 0);
-            graphics.DrawIcon(overlay, 0, 0);
-            target.MakeTransparent(target.GetPixel(1, 1));
-            return Icon.FromHandle(target.GetHicon());
-        }
+        }   
 
         public void Dispose()
         {
