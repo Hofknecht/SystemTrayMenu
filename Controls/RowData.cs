@@ -195,7 +195,7 @@ namespace SystemTrayMenu.Controls
             return handled;
         }
 
-        [DllImport("shell32.dll")]
+        [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
         static extern int FindExecutable(string lpFile, string lpDirectory, [Out] StringBuilder lpResult);
         private bool SetSln()
         {
@@ -246,7 +246,7 @@ namespace SystemTrayMenu.Controls
 
         WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
 
-        bool disposed = false;
+        bool isDisposed = false;
         internal string TargetFilePathOrig;
         internal bool HiddenEntry;
 
@@ -479,12 +479,18 @@ namespace SystemTrayMenu.Controls
 
         public void Dispose()
         {
-            if (!disposed)
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!isDisposed)
             {
                 icon?.Dispose();
                 waitMenuOpen.Dispose();
             }
-            disposed = true;
+            isDisposed = true;
         }
     }
 }

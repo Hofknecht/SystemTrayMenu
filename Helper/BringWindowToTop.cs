@@ -13,17 +13,17 @@ namespace SystemTrayMenu.Helper
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr GetForegroundWindow();
         [DllImport("user32.dll")]
-        public static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr ProcessId);
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr ProcessId);
         [DllImport("kernel32.dll")]
-        public static extern uint GetCurrentThreadId();
+        private static extern uint GetCurrentThreadId();
         [DllImport("user32.dll")]
-        public static extern bool AttachThreadInput(uint idAttach, uint idAttachTo, bool fAttach);
+        private static extern bool AttachThreadInput(uint idAttach, uint idAttachTo, bool fAttach);
         [DllImport("user32.dll", SetLastError = true)]
-        public static extern bool BringWindowToTop(IntPtr hWnd);
+        private static extern bool BringWindowToTop(IntPtr hWnd);
         //[DllImport("user32.dll", SetLastError = true)]
         //public static extern bool BringWindowToTop(HandleRef hWnd);
         [DllImport("user32.dll")]
-        public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         const int SW_RESTORE = 9;
 
