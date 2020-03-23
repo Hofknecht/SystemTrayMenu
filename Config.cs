@@ -45,29 +45,30 @@ namespace SystemTrayMenu
         {
             bool pathOK = false;
             bool userAborted = false;
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            using (CommonOpenFileDialog dialog = new CommonOpenFileDialog())
             {
-                InitialDirectory = Path,
-                IsFolderPicker = true
-            };
-            do
-            {
-                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                dialog.InitialDirectory = Path;
+                dialog.IsFolderPicker = true;
+
+                do
                 {
-                    if (Directory.Exists(dialog.FileName))
+                    if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
                     {
-                        pathOK = true;
-                        Properties.Settings.Default.PathDirectory =
-                            dialog.FileName;
-                        Properties.Settings.Default.Save();
+                        if (Directory.Exists(dialog.FileName))
+                        {
+                            pathOK = true;
+                            Properties.Settings.Default.PathDirectory =
+                                dialog.FileName;
+                            Properties.Settings.Default.Save();
+                        }
+                    }
+                    else
+                    {
+                        userAborted = true;
                     }
                 }
-                else
-                {
-                    userAborted = true;
-                }
-            }
-            while (!pathOK && !userAborted);
+                while (!pathOK && !userAborted);
+            };
 
             return pathOK;
         }
