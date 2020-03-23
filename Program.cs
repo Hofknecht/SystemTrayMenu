@@ -46,7 +46,7 @@ namespace SystemTrayMenu
             {
                 Log.Close();
             }
-            
+
             void AskUserSendError(Exception ex)
             {
                 Log.Error("Application Crashed", ex);

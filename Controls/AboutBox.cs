@@ -842,7 +842,9 @@ namespace SystemTrayMenu.Controls
         private void TabPanelDetails_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (TabPanelDetails.SelectedTab == TabPageAssemblyDetails)
+            {
                 AssemblyNamesComboBox.Focus();
+            }
         }
 
     }

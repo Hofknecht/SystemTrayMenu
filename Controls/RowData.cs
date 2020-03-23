@@ -397,7 +397,7 @@ namespace SystemTrayMenu.Controls
         {
             IsLoading = false;
             OpenMenu?.Invoke(this, null);
-        }   
+        }
 
         public void Dispose()
         {

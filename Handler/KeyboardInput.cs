@@ -37,7 +37,7 @@ namespace SystemTrayMenu.Handler
                 KeySearchString = string.Empty;
             }
         }
-        
+
         public void Dispose()
         {
             hook.Dispose();
@@ -168,7 +168,9 @@ namespace SystemTrayMenu.Handler
                 {
                     // Is current selection is still valid for this search then skip selecting different item
                     if (textselected.ToLower().StartsWith(keyInput.ToLower()))
+                    {
                         return;
+                    }
                 }
 
                 dgvBefore = dgv;

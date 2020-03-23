@@ -49,7 +49,7 @@ namespace SystemTrayMenu
             keyboardInput.Cleared += FadeHalfOrOutIfNeeded;
 
             menuNotifyIcon = new MenuNotifyIcon();
-            menuNotifyIcon.Exit += Application.Exit; 
+            menuNotifyIcon.Exit += Application.Exit;
             menuNotifyIcon.Restart += AppRestart.ByMenuNotifyIcon;
             menuNotifyIcon.HandleClick += SwitchOpenClose;
             void SwitchOpenClose()
@@ -158,7 +158,7 @@ namespace SystemTrayMenu
                     keyboardInput.InUse = false;
                     if (dgvFromLastMouseEvent != null)
                     {
-                        Dgv_MouseEnter(dgvFromLastMouseEvent, 
+                        Dgv_MouseEnter(dgvFromLastMouseEvent,
                             cellEventArgsFromLastMouseEvent);
                     }
                 }
@@ -192,7 +192,7 @@ namespace SystemTrayMenu
             if (menus[0].Visible &&
                 isMouseOnAnyMenu)
             {
-                if (isAnyMenuActive && 
+                if (isAnyMenuActive &&
                     !(openCloseState == OpenCloseState.Closing))
                 {
                     if (!keyboardInput.InUse)
@@ -252,13 +252,13 @@ namespace SystemTrayMenu
             int widthPredecessors = -1; // -1 padding
             bool directionToRight = false;
 
-            foreach (Menu menu in Menus().Where(m=>m.Level > 0))
+            foreach (Menu menu in Menus().Where(m => m.Level > 0))
             {
-                int newWith = (menu.Width - 
+                int newWith = (menu.Width -
                     menu.Padding.Horizontal + menuPredecessor.Width);
                 if (directionToRight)
                 {
-                    if (widthPredecessors - menu.Width <= 
+                    if (widthPredecessors - menu.Width <=
                         -menu.Padding.Horizontal)
                     {
                         directionToRight = false;
@@ -430,7 +430,9 @@ namespace SystemTrayMenu
             if (!worker.CancellationPending)
             {
                 if (menuData.Validity == MenuDataValidity.Invalid)
+                {
                     menuData.Validity = MenuDataValidity.Valid;
+                }
             }
 
             return menuData;
@@ -667,7 +669,7 @@ namespace SystemTrayMenu
             dgv.SelectionChanged += Dgv_SelectionChanged;
             menu.KeyPress += keyboardInput.KeyPress;
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
-            menu.Activated += Activated; 
+            menu.Activated += Activated;
             void Activated(object sender, EventArgs e)
             {
                 menus[0].SetTitleColorActive();

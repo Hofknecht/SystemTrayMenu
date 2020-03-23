@@ -43,7 +43,7 @@ namespace SystemTrayMenu
 
         public int Level = 0;
         FadeForm FadeForm = null;
-        bool autoResizeRowsDone  = false;
+        bool autoResizeRowsDone = false;
 
         public enum MenuType { Default, DisposedFake };
 
@@ -355,7 +355,11 @@ namespace SystemTrayMenu
             get { return _text; }
             set
             {
-                if (value == null) value = "";
+                if (value == null)
+                {
+                    value = "";
+                }
+
                 if (_text != value)
                 {
                     _text = value;

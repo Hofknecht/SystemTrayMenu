@@ -98,7 +98,10 @@ namespace SystemTrayMenu.Helper
             //MH: Removed, otherwise wrong icon
             // | Shell32.SHGFI_USEFILEATTRIBUTES ;
 
-            if (true == linkOverlay) flags += Shell32.SHGFI_LINKOVERLAY;
+            if (true == linkOverlay)
+            {
+                flags += Shell32.SHGFI_LINKOVERLAY;
+            }
 
             /* Check the size specified for return. */
             if (IconSize.Small == size)
@@ -139,7 +142,11 @@ namespace SystemTrayMenu.Helper
                 }
 
                 // Cleanup
-                if (!linkOverlay) User32.DestroyIcon(hIcon);
+                if (!linkOverlay)
+                {
+                    User32.DestroyIcon(hIcon);
+                }
+
                 User32.DestroyIcon(shfi.hIcon);
             }
 
@@ -158,7 +165,10 @@ namespace SystemTrayMenu.Helper
             //MH: Removed SHGFI_USEFILEATTRIBUTES, otherwise was wrong folder icon
             uint flags = Shell32.SHGFI_ICON; // | Shell32.SHGFI_USEFILEATTRIBUTES;
 
-            if (true == linkOverlay) flags += Shell32.SHGFI_LINKOVERLAY;
+            if (true == linkOverlay)
+            {
+                flags += Shell32.SHGFI_LINKOVERLAY;
+            }
 
             if (FolderType.Open == folderType)
             {
@@ -306,7 +316,7 @@ namespace SystemTrayMenu.Helper
         public const int ILD_TRANSPARENT = 0x00000001;
 
         [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability",
             "CA1401:P/Invokes should not be visible", Justification = "<Pending>")]
         public static extern IntPtr SHGetFileInfo(
            string pszPath,
@@ -335,7 +345,7 @@ namespace SystemTrayMenu.Helper
         /// <param name="hIcon">Pointer to icon handle.</param>
         /// <returns>N/A</returns>
         [DllImport("User32.dll")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability",
             "CA1401:P/Invokes should not be visible", Justification = "<Pending>")]
         public static extern int DestroyIcon(IntPtr hIcon);
     }

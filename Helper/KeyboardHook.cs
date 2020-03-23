@@ -43,7 +43,9 @@ namespace SystemTrayMenu.Helper
 
                     // invoke the event to notify the parent.
                     if (KeyPressed != null)
+                    {
                         KeyPressed(this, new KeyPressedEventArgs(modifier, key));
+                    }
                 }
             }
 
@@ -68,7 +70,9 @@ namespace SystemTrayMenu.Helper
             _window.KeyPressed += delegate (object sender, KeyPressedEventArgs args)
             {
                 if (KeyPressed != null)
+                {
                     KeyPressed(this, args);
+                }
             };
         }
 
@@ -84,7 +88,9 @@ namespace SystemTrayMenu.Helper
 
             // register the hot key.
             if (!RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
+            {
                 throw new InvalidOperationException("Couldn’t register the hot key.");
+            }
         }
 
         /// <summary>

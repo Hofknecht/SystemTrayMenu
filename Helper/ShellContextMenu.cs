@@ -111,7 +111,9 @@ namespace SystemTrayMenu.Helper
                 string info = string.Empty;
 
                 if (ShellHelper.LoWord(m.WParam) == (int)CMD_CUSTOM.ExpandCollapse)
+                {
                     info = "Expands or collapses the current selected item";
+                }
                 else
                 {
                     info = "";/* ContextMenuHelper.GetCommandString(
@@ -134,7 +136,9 @@ namespace SystemTrayMenu.Helper
             {
                 if (_oContextMenu2.HandleMenuMsg(
                     (uint)m.Msg, m.WParam, m.LParam) == S_OK)
+                {
                     return;
+                }
             }
 
             #endregion
@@ -146,7 +150,9 @@ namespace SystemTrayMenu.Helper
             {
                 if (_oContextMenu3.HandleMenuMsg2(
                     (uint)m.Msg, m.WParam, m.LParam, IntPtr.Zero) == S_OK)
+                {
                     return;
+                }
             }
 
             #endregion
@@ -555,13 +561,19 @@ namespace SystemTrayMenu.Helper
                 }
 
                 if (iContextMenuPtr != IntPtr.Zero)
+                {
                     Marshal.Release(iContextMenuPtr);
+                }
 
                 if (iContextMenuPtr2 != IntPtr.Zero)
+                {
                     Marshal.Release(iContextMenuPtr2);
+                }
 
                 if (iContextMenuPtr3 != IntPtr.Zero)
+                {
                     Marshal.Release(iContextMenuPtr3);
+                }
 
                 ReleaseAll();
             }
@@ -1516,7 +1528,9 @@ namespace SystemTrayMenu.Helper
         protected void OnHookInvoked(HookEventArgs e)
         {
             if (HookInvoked != null)
+            {
                 HookInvoked(this, e);
+            }
         }
         // ************************************************************************
 
@@ -1539,7 +1553,9 @@ namespace SystemTrayMenu.Helper
         protected int CoreHookProc(int code, IntPtr wParam, IntPtr lParam)
         {
             if (code < 0)
+            {
                 return CallNextHookEx(m_hhook, code, wParam, lParam);
+            }
 
             // Let clients determine what to do
             HookEventArgs e = new HookEventArgs();
@@ -1617,9 +1633,13 @@ namespace SystemTrayMenu.Helper
         {
             uint param32 = (uint)(ptr.ToInt64() | 0xffffffffL);
             if ((param32 & 0x80000000) == 0x80000000)
+            {
                 return (param32 >> 16);
+            }
             else
+            {
                 return (param32 >> 16) & 0xffff;
+            }
         }
 
         /// <summary>
