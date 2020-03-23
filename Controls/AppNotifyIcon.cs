@@ -17,12 +17,13 @@ namespace SystemTrayMenu
         public event EventHandler Restart;
         public event EventHandler Exit;
 
-        private NotifyIcon notifyIcon = new NotifyIcon();
+        private readonly NotifyIcon notifyIcon = new NotifyIcon();
         private DateTime timeLoadingStart;
         private int threadsLoading = 0;
-        private Timer load = new Timer();
-        private int loadCount = 0, indexLoad = 0;
-        private List<Icon> bitmapsLoading = new List<Icon>() { R.L010, R.L020, R.L030,
+        private readonly Timer load = new Timer();
+        private int loadCount = 0;
+        private readonly int indexLoad = 0;
+        private readonly List<Icon> bitmapsLoading = new List<Icon>() { R.L010, R.L020, R.L030,
             R.L040, R.L050, R.L060, R.L070, R.L080, R.L090, R.L100, R.L110, R.L120,
             R.L130, R.L140, R.L150, R.L160, R.L170, R.L180};
 

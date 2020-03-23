@@ -22,10 +22,10 @@ namespace SystemTrayMenu
             }
         }
 
-        private Timer timerFadeIn = new Timer();
-        private Timer timerFadeOut = new Timer();
-        private Timer timerFadeHalf = new Timer();
-        private Form form = null;
+        private readonly Timer timerFadeIn = new Timer();
+        private readonly Timer timerFadeOut = new Timer();
+        private readonly Timer timerFadeHalf = new Timer();
+        private readonly Form form = null;
         private bool stopFadeInByHalf = false;
 
         public FadeForm(Form form)

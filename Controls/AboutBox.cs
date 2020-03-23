@@ -801,8 +801,8 @@ namespace SystemTrayMenu.Controls
         // </summary>
         private class ListViewItemComparer : System.Collections.IComparer
         {
-            private int _intCol;
-            private bool _IsAscending = true;
+            private readonly int _intCol;
+            private readonly bool _IsAscending = true;
 
             public ListViewItemComparer()
             {

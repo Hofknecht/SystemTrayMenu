@@ -19,7 +19,7 @@ namespace SystemTrayMenu.Helper
     /// </example>
     public class IconReader
     {
-        private static ConcurrentDictionary<string, Icon> dictIconCache = new ConcurrentDictionary<string, Icon>();
+        private static readonly ConcurrentDictionary<string, Icon> dictIconCache = new ConcurrentDictionary<string, Icon>();
 
         /// <summary>
         /// Options to specify the size of icons to return.

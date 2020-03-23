@@ -14,9 +14,9 @@ namespace SystemTrayMenu.Handler
         public Action<int, int, DataGridView> RowDeselected;
         public event EventHandler Cleared;
 
-        private Menu[] menus;
-        private KeyboardHook hook = new KeyboardHook();
-        private Timer timerKeySearch = new Timer();
+        private readonly Menu[] menus;
+        private readonly KeyboardHook hook = new KeyboardHook();
+        private readonly Timer timerKeySearch = new Timer();
         public int iRowKey = -1;
         public int iMenuKey = 0;
         private string KeySearchString = string.Empty;

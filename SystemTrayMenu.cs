@@ -18,13 +18,13 @@ namespace SystemTrayMenu
         private enum OpenCloseState { Default, Opening, Closing };
 
         private OpenCloseState openCloseState = OpenCloseState.Default;
-        private MessageFilter messageFilter = new MessageFilter();
-        private MenuNotifyIcon menuNotifyIcon = null;
-        private Menu[] menus = new Menu[MenuDefines.MenusMax];
-        private BackgroundWorker worker = new BackgroundWorker();
-        private Screen screen = Screen.PrimaryScreen;
-        private WaitFastLeave fastLeave = new WaitFastLeave();
-        private KeyboardInput keyboardInput;
+        private readonly MessageFilter messageFilter = new MessageFilter();
+        private readonly MenuNotifyIcon menuNotifyIcon = null;
+        private readonly Menu[] menus = new Menu[MenuDefines.MenusMax];
+        private readonly BackgroundWorker worker = new BackgroundWorker();
+        private readonly Screen screen = Screen.PrimaryScreen;
+        private readonly WaitFastLeave fastLeave = new WaitFastLeave();
+        private readonly KeyboardInput keyboardInput;
         private DataGridView dgvFromLastMouseEvent = null;
         private DataGridViewCellEventArgs cellEventArgsFromLastMouseEvent = null;
         private int clicksInQueue = 0;

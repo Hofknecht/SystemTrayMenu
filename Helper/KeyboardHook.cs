@@ -18,7 +18,7 @@ namespace SystemTrayMenu.Helper
         /// </summary>
         private class Window : NativeWindow, IDisposable
         {
-            private static int WM_HOTKEY = 0x0312;
+            private static readonly int WM_HOTKEY = 0x0312;
 
             public Window()
             {
@@ -61,7 +61,7 @@ namespace SystemTrayMenu.Helper
             #endregion
         }
 
-        private Window _window = new Window();
+        private readonly Window _window = new Window();
         private int _currentId;
 
         public KeyboardHook()
@@ -120,8 +120,8 @@ namespace SystemTrayMenu.Helper
     /// </summary>
     public class KeyPressedEventArgs : EventArgs
     {
-        private KeyboardHookModifierKeys _modifier;
-        private Keys _key;
+        private readonly KeyboardHookModifierKeys _modifier;
+        private readonly Keys _key;
 
         internal KeyPressedEventArgs(KeyboardHookModifierKeys modifier, Keys key)
         {

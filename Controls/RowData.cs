@@ -37,8 +37,8 @@ namespace SystemTrayMenu.Controls
         public string TargetFilePathOrig;
         public string Text;
         public int RowIndex;
-        private WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
-        private Icon icon = null;
+        private readonly WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
+        private readonly Icon icon = null;
         private bool isDisposed = false;
 
         public RowData()

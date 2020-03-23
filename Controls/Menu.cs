@@ -42,7 +42,7 @@ namespace SystemTrayMenu
         }
 
         public int Level = 0;
-        private FadeForm FadeForm = null;
+        private readonly FadeForm FadeForm = null;
         private bool autoResizeRowsDone = false;
 
         public enum MenuType { Default, DisposedFake };

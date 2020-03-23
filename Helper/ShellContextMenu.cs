@@ -630,8 +630,8 @@ namespace SystemTrayMenu.Helper
         private const int S_OK = 0;
         private const int S_FALSE = 1;
 
-        private static int cbMenuItemInfo = Marshal.SizeOf(typeof(MENUITEMINFO));
-        private static int cbInvokeCommand = Marshal.SizeOf(typeof(CMINVOKECOMMANDINFOEX));
+        private static readonly int cbMenuItemInfo = Marshal.SizeOf(typeof(MENUITEMINFO));
+        private static readonly int cbInvokeCommand = Marshal.SizeOf(typeof(CMINVOKECOMMANDINFOEX));
 
         #endregion
 
@@ -639,11 +639,11 @@ namespace SystemTrayMenu.Helper
 
         // Retrieves the IShellFolder interface for the desktop folder, which is the root of the Shell's namespace.
         [DllImport("shell32.dll")]
-        private static extern Int32 SHGetDesktopFolder(out IntPtr ppshf);
+        private static extern int SHGetDesktopFolder(out IntPtr ppshf);
 
         // Takes a STRRET structure returned by IShellFolder::GetDisplayNameOf, converts it to a string, and places the result in a buffer. 
         [DllImport("shlwapi.dll", EntryPoint = "StrRetToBuf", ExactSpelling = false, CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern Int32 StrRetToBuf(IntPtr pstr, IntPtr pidl, StringBuilder pszBuf, int cchBuf);
+        private static extern int StrRetToBuf(IntPtr pstr, IntPtr pidl, StringBuilder pszBuf, int cchBuf);
 
         // The TrackPopupMenuEx function displays a shortcut menu at the specified location and tracks the selection of items on the shortcut menu. The shortcut menu can appear anywhere on the screen.
         [DllImport("user32.dll", ExactSpelling = true, CharSet = CharSet.Auto)]
@@ -1227,7 +1227,7 @@ namespace SystemTrayMenu.Helper
             // Translates a file object's or folder's display name into an item identifier list.
             // Return value: error code, if any
             [PreserveSig]
-            Int32 ParseDisplayName(
+            int ParseDisplayName(
                 IntPtr hwnd,
                 IntPtr pbc,
                 [MarshalAs(UnmanagedType.LPWStr)]
@@ -1240,7 +1240,7 @@ namespace SystemTrayMenu.Helper
             // identifier enumeration object and returning its IEnumIDList interface.
             // Return value: error code, if any
             [PreserveSig]
-            Int32 EnumObjects(
+            int EnumObjects(
                 IntPtr hwnd,
                 SHCONTF grfFlags,
                 out IntPtr enumIDList);
@@ -1248,7 +1248,7 @@ namespace SystemTrayMenu.Helper
             // Retrieves an IShellFolder object for a subfolder.
             // Return value: error code, if any
             [PreserveSig]
-            Int32 BindToObject(
+            int BindToObject(
                 IntPtr pidl,
                 IntPtr pbc,
                 ref Guid riid,
@@ -1257,7 +1257,7 @@ namespace SystemTrayMenu.Helper
             // Requests a pointer to an object's storage interface. 
             // Return value: error code, if any
             [PreserveSig]
-            Int32 BindToStorage(
+            int BindToStorage(
                 IntPtr pidl,
                 IntPtr pbc,
                 ref Guid riid,
@@ -1274,7 +1274,7 @@ namespace SystemTrayMenu.Helper
             // follow the second (pidl1 > pidl2).  Zero A return value of zero
             // indicates that the two items are the same (pidl1 = pidl2). 
             [PreserveSig]
-            Int32 CompareIDs(
+            int CompareIDs(
                 IntPtr lParam,
                 IntPtr pidl1,
                 IntPtr pidl2);
@@ -1283,7 +1283,7 @@ namespace SystemTrayMenu.Helper
             // with a folder object.
             // Return value: error code, if any
             [PreserveSig]
-            Int32 CreateViewObject(
+            int CreateViewObject(
                 IntPtr hwndOwner,
                 Guid riid,
                 out IntPtr ppv);
@@ -1291,7 +1291,7 @@ namespace SystemTrayMenu.Helper
             // Retrieves the attributes of one or more file objects or subfolders. 
             // Return value: error code, if any
             [PreserveSig]
-            Int32 GetAttributesOf(
+            int GetAttributesOf(
                 uint cidl,
                 [MarshalAs(UnmanagedType.LPArray)]
             IntPtr[] apidl,
@@ -1301,7 +1301,7 @@ namespace SystemTrayMenu.Helper
             // specified file objects or folders.
             // Return value: error code, if any
             [PreserveSig]
-            Int32 GetUIObjectOf(
+            int GetUIObjectOf(
                 IntPtr hwndOwner,
                 uint cidl,
                 [MarshalAs(UnmanagedType.LPArray)]
@@ -1313,7 +1313,7 @@ namespace SystemTrayMenu.Helper
             // Retrieves the display name for the specified file object or subfolder. 
             // Return value: error code, if any
             [PreserveSig()]
-            Int32 GetDisplayNameOf(
+            int GetDisplayNameOf(
                 IntPtr pidl,
                 SHGNO uFlags,
                 IntPtr lpName);
@@ -1322,7 +1322,7 @@ namespace SystemTrayMenu.Helper
             // identifier in the process.
             // Return value: error code, if any
             [PreserveSig]
-            Int32 SetNameOf(
+            int SetNameOf(
                 IntPtr hwnd,
                 IntPtr pidl,
                 [MarshalAs(UnmanagedType.LPWStr)]
@@ -1340,7 +1340,7 @@ namespace SystemTrayMenu.Helper
         {
             // Adds commands to a shortcut menu
             [PreserveSig()]
-            Int32 QueryContextMenu(
+            int QueryContextMenu(
                 IntPtr hmenu,
                 uint iMenu,
                 uint idCmdFirst,
@@ -1349,14 +1349,14 @@ namespace SystemTrayMenu.Helper
 
             // Carries out the command associated with a shortcut menu item
             [PreserveSig()]
-            Int32 InvokeCommand(
+            int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
             // Retrieves information about a shortcut menu command, 
             // including the help string and the language-independent, 
             // or canonical, name for the command
             [PreserveSig()]
-            Int32 GetCommandString(
+            int GetCommandString(
                 uint idcmd,
                 GCS uflags,
                 uint reserved,
@@ -1371,7 +1371,7 @@ namespace SystemTrayMenu.Helper
         {
             // Adds commands to a shortcut menu
             [PreserveSig()]
-            Int32 QueryContextMenu(
+            int QueryContextMenu(
                 IntPtr hmenu,
                 uint iMenu,
                 uint idCmdFirst,
@@ -1380,14 +1380,14 @@ namespace SystemTrayMenu.Helper
 
             // Carries out the command associated with a shortcut menu item
             [PreserveSig()]
-            Int32 InvokeCommand(
+            int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
             // Retrieves information about a shortcut menu command, 
             // including the help string and the language-independent, 
             // or canonical, name for the command
             [PreserveSig()]
-            Int32 GetCommandString(
+            int GetCommandString(
                 uint idcmd,
                 GCS uflags,
                 uint reserved,
@@ -1398,7 +1398,7 @@ namespace SystemTrayMenu.Helper
             // Allows client objects of the IContextMenu interface to 
             // handle messages associated with owner-drawn menu items
             [PreserveSig]
-            Int32 HandleMenuMsg(
+            int HandleMenuMsg(
                 uint uMsg,
                 IntPtr wParam,
                 IntPtr lParam);
@@ -1410,7 +1410,7 @@ namespace SystemTrayMenu.Helper
         {
             // Adds commands to a shortcut menu
             [PreserveSig()]
-            Int32 QueryContextMenu(
+            int QueryContextMenu(
                 IntPtr hmenu,
                 uint iMenu,
                 uint idCmdFirst,
@@ -1419,14 +1419,14 @@ namespace SystemTrayMenu.Helper
 
             // Carries out the command associated with a shortcut menu item
             [PreserveSig()]
-            Int32 InvokeCommand(
+            int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
             // Retrieves information about a shortcut menu command, 
             // including the help string and the language-independent, 
             // or canonical, name for the command
             [PreserveSig()]
-            Int32 GetCommandString(
+            int GetCommandString(
                 uint idcmd,
                 GCS uflags,
                 uint reserved,
@@ -1437,7 +1437,7 @@ namespace SystemTrayMenu.Helper
             // Allows client objects of the IContextMenu interface to 
             // handle messages associated with owner-drawn menu items
             [PreserveSig]
-            Int32 HandleMenuMsg(
+            int HandleMenuMsg(
                 uint uMsg,
                 IntPtr wParam,
                 IntPtr lParam);
@@ -1445,7 +1445,7 @@ namespace SystemTrayMenu.Helper
             // Allows client objects of the IContextMenu3 interface to 
             // handle messages associated with owner-drawn menu items
             [PreserveSig]
-            Int32 HandleMenuMsg2(
+            int HandleMenuMsg2(
                 uint uMsg,
                 IntPtr wParam,
                 IntPtr lParam,

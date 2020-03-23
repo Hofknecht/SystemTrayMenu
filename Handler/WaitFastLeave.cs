@@ -7,7 +7,7 @@ namespace SystemTrayMenu.Handler
     {
         public event EventHandler Leave;
 
-        private Timer timerSecondLeaveCheck = new Timer();
+        private readonly Timer timerSecondLeaveCheck = new Timer();
 
         public WaitFastLeave()
         {

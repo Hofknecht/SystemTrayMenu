@@ -7,7 +7,7 @@ namespace SystemTrayMenu.Handler
     {
         public event EventHandler DoOpen;
 
-        private Timer waitOpen = new Timer();
+        private readonly Timer waitOpen = new Timer();
         private bool waitedDone = false;
         private bool clicked = false;
         private bool menuLoaded = false;
