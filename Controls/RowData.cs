@@ -284,11 +284,15 @@ namespace SystemTrayMenu.Controls
                 try
                 {
                     //https://stackoverflow.com/questions/31627801/
-                    Process p = new Process();
-                    p.StartInfo = new ProcessStartInfo(TargetFilePath);
-                    p.StartInfo.Arguments = Arguments;
-                    p.StartInfo.WorkingDirectory = WorkingDirectory;
-                    p.StartInfo.CreateNoWindow = true;
+                    Process p = new Process
+                    {
+                        StartInfo = new ProcessStartInfo(TargetFilePath)
+                        {
+                            Arguments = Arguments,
+                            WorkingDirectory = WorkingDirectory,
+                            CreateNoWindow = true
+                        }
+                    };
                     p.Start();
                 }
                 catch (Exception ex)

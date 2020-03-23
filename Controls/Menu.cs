@@ -25,21 +25,9 @@ namespace SystemTrayMenu
             MaxReached
         }
 
-        public bool IsFadingIn
-        {
-            get
-            {
-                return FadeForm.IsFadingIn;
-            }
-        }
+        public bool IsFadingIn => FadeForm.IsFadingIn;
 
-        public bool IsFadingOut
-        {
-            get
-            {
-                return FadeForm.IsFadingOut;
-            }
-        }
+        public bool IsFadingOut => FadeForm.IsFadingOut;
 
         public int Level = 0;
         private readonly FadeForm FadeForm = null;
@@ -53,9 +41,11 @@ namespace SystemTrayMenu
             InitializeComponent();
             SetDoubleBuffer(dgv, true);
 
-            DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle();
-            dgvCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
-            dgvCellStyle.SelectionForeColor = Color.Black;
+            DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle
+            {
+                SelectionBackColor = MenuDefines.ColorSelectedItem,
+                SelectionForeColor = Color.Black
+            };
             dgv.DefaultCellStyle = dgvCellStyle;
 
             VScrollBar scrollBar = dgv.Controls.OfType<VScrollBar>().First();
@@ -352,7 +342,7 @@ namespace SystemTrayMenu
         private string _text;
         public override string Text
         {
-            get { return _text; }
+            get => _text;
             set
             {
                 if (value == null)

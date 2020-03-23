@@ -27,20 +27,8 @@ namespace SystemTrayMenu
             get;
             private set;
         }
-        public Point Location
-        {
-            get
-            {
-                return Bounds.Location;
-            }
-        }
-        public Size Size
-        {
-            get
-            {
-                return Bounds.Size;
-            }
-        }
+        public Point Location => Bounds.Location;
+        public Size Size => Bounds.Size;
         //Always returns false under Windows 7
         public bool AlwaysOnTop
         {
@@ -60,9 +48,11 @@ namespace SystemTrayMenu
         {
             IntPtr taskbarHandle = User32.FindWindow(Taskbar.ClassName, null);
 
-            APPBARDATA data = new APPBARDATA();
-            data.cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA));
-            data.hWnd = taskbarHandle;
+            APPBARDATA data = new APPBARDATA
+            {
+                cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA)),
+                hWnd = taskbarHandle
+            };
             IntPtr result = SHAppBarMessage(ABM.GetTaskbarPos, ref data);
             if (result == IntPtr.Zero)
             {

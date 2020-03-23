@@ -336,10 +336,12 @@ namespace SystemTrayMenu
 
         private static MenuData ReadMenu(BackgroundWorker worker, string path, int level)
         {
-            MenuData menuData = new MenuData();
-            menuData.RowDatas = new List<RowData>();
-            menuData.Validity = MenuDataValidity.Invalid;
-            menuData.Level = level;
+            MenuData menuData = new MenuData
+            {
+                RowDatas = new List<RowData>(),
+                Validity = MenuDataValidity.Invalid,
+                Level = level
+            };
             if (!worker.CancellationPending)
             {
                 string[] directories = Array.Empty<string>();

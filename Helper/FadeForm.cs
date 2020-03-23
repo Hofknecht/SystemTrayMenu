@@ -6,21 +6,9 @@ namespace SystemTrayMenu
 {
     public class FadeForm : IDisposable
     {
-        public bool IsFadingIn
-        {
-            get
-            {
-                return timerFadeIn.Enabled;
-            }
-        }
+        public bool IsFadingIn => timerFadeIn.Enabled;
 
-        public bool IsFadingOut
-        {
-            get
-            {
-                return timerFadeOut.Enabled;
-            }
-        }
+        public bool IsFadingOut => timerFadeOut.Enabled;
 
         private readonly Timer timerFadeIn = new Timer();
         private readonly Timer timerFadeOut = new Timer();

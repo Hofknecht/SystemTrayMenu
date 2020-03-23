@@ -165,17 +165,19 @@ namespace SystemTrayMenu.Helper
         #region InvokeCommand
         private void InvokeCommand(IContextMenu oContextMenu, uint nCmd, string strFolder, Point pointInvoke)
         {
-            CMINVOKECOMMANDINFOEX invoke = new CMINVOKECOMMANDINFOEX();
-            invoke.cbSize = cbInvokeCommand;
-            invoke.lpVerb = (IntPtr)(nCmd - CMD_FIRST);
-            invoke.lpDirectory = strFolder;
-            invoke.lpVerbW = (IntPtr)(nCmd - CMD_FIRST);
-            invoke.lpDirectoryW = strFolder;
-            invoke.fMask = CMIC.UNICODE | CMIC.PTINVOKE |
+            CMINVOKECOMMANDINFOEX invoke = new CMINVOKECOMMANDINFOEX
+            {
+                cbSize = cbInvokeCommand,
+                lpVerb = (IntPtr)(nCmd - CMD_FIRST),
+                lpDirectory = strFolder,
+                lpVerbW = (IntPtr)(nCmd - CMD_FIRST),
+                lpDirectoryW = strFolder,
+                fMask = CMIC.UNICODE | CMIC.PTINVOKE |
                 ((Control.ModifierKeys & Keys.Control) != 0 ? CMIC.CONTROL_DOWN : 0) |
-                ((Control.ModifierKeys & Keys.Shift) != 0 ? CMIC.SHIFT_DOWN : 0);
-            invoke.ptInvoke = new POINT(pointInvoke.X, pointInvoke.Y);
-            invoke.nShow = SW.SHOWNORMAL;
+                ((Control.ModifierKeys & Keys.Shift) != 0 ? CMIC.SHIFT_DOWN : 0),
+                ptInvoke = new POINT(pointInvoke.X, pointInvoke.Y),
+                nShow = SW.SHOWNORMAL
+            };
 
             oContextMenu.InvokeCommand(ref invoke);
         }
@@ -1558,10 +1560,12 @@ namespace SystemTrayMenu.Helper
             }
 
             // Let clients determine what to do
-            HookEventArgs e = new HookEventArgs();
-            e.HookCode = code;
-            e.wParam = wParam;
-            e.lParam = lParam;
+            HookEventArgs e = new HookEventArgs
+            {
+                HookCode = code,
+                wParam = wParam,
+                lParam = lParam
+            };
             OnHookInvoked(e);
 
             // Yield to the next hook in the chain

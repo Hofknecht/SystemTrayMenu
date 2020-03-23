@@ -21,10 +21,14 @@ namespace SystemTrayMenu.Controls
 
         public ContextMenuStrip Create()
         {
-            ContextMenuStrip menu = new ContextMenuStrip();
-            menu.BackColor = SystemColors.Control;
-            ToolStripMenuItem changeFolder = new ToolStripMenuItem();
-            changeFolder.Text = Language.Translate("Folder");
+            ContextMenuStrip menu = new ContextMenuStrip
+            {
+                BackColor = SystemColors.Control
+            };
+            ToolStripMenuItem changeFolder = new ToolStripMenuItem
+            {
+                Text = Language.Translate("Folder")
+            };
             changeFolder.Click += ChangeFolder_Click;
             void ChangeFolder_Click(object sender, EventArgs e)
             {
@@ -64,8 +68,10 @@ namespace SystemTrayMenu.Controls
             }
             menu.Items.Add(changeLanguage);
 
-            ToolStripMenuItem autostart = new ToolStripMenuItem();
-            autostart.Text = Language.Translate("Autostart");
+            ToolStripMenuItem autostart = new ToolStripMenuItem
+            {
+                Text = Language.Translate("Autostart")
+            };
             //autostart.Image.HorizontalResolution.wi.c.sc.Select .ImageScaling = ToolStripItemImageScaling.None;
             if (Properties.Settings.Default.IsAutostartActivated)
             {
@@ -137,12 +143,16 @@ namespace SystemTrayMenu.Controls
             }
             menu.Items.Add(hotKey);
 
-            ToolStripSeparator seperator = new ToolStripSeparator();
-            seperator.BackColor = SystemColors.Control;
+            ToolStripSeparator seperator = new ToolStripSeparator
+            {
+                BackColor = SystemColors.Control
+            };
             menu.Items.Add(seperator);
 
-            ToolStripMenuItem openLog = new ToolStripMenuItem();
-            openLog.Text = Language.Translate("Log File");
+            ToolStripMenuItem openLog = new ToolStripMenuItem
+            {
+                Text = Language.Translate("Log File")
+            };
             openLog.Click += OpenLog_Click;
             void OpenLog_Click(object sender, EventArgs e)
             {
@@ -152,19 +162,23 @@ namespace SystemTrayMenu.Controls
 
             menu.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem about = new ToolStripMenuItem();
-            about.Text = Language.Translate("About");
+            ToolStripMenuItem about = new ToolStripMenuItem
+            {
+                Text = Language.Translate("About")
+            };
             about.Click += About_Click;
             void About_Click(object sender, EventArgs e)
             {
                 FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(
                     Assembly.GetEntryAssembly().Location);
-                AboutBox ab = new AboutBox();
-                ab.AppTitle = versionInfo.ProductName;
-                ab.AppDescription = versionInfo.FileDescription;
-                ab.AppVersion = $"Version {versionInfo.FileVersion}";
-                ab.AppCopyright = versionInfo.LegalCopyright;
-                ab.AppMoreInfo = versionInfo.LegalCopyright;
+                AboutBox ab = new AboutBox
+                {
+                    AppTitle = versionInfo.ProductName,
+                    AppDescription = versionInfo.FileDescription,
+                    AppVersion = $"Version {versionInfo.FileVersion}",
+                    AppCopyright = versionInfo.LegalCopyright,
+                    AppMoreInfo = versionInfo.LegalCopyright
+                };
                 ab.AppMoreInfo += Environment.NewLine;
                 ab.AppMoreInfo += "Markus Hofknecht (mailto:Markus@Hofknecht.eu)";
                 ab.AppMoreInfo += Environment.NewLine;
@@ -184,8 +198,10 @@ namespace SystemTrayMenu.Controls
 
             menu.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem restart = new ToolStripMenuItem();
-            restart.Text = Language.Translate("Restart");
+            ToolStripMenuItem restart = new ToolStripMenuItem
+            {
+                Text = Language.Translate("Restart")
+            };
             restart.Click += Restart_Click;
             void Restart_Click(object sender, EventArgs e)
             {
@@ -193,8 +209,10 @@ namespace SystemTrayMenu.Controls
             }
             menu.Items.Add(restart);
 
-            ToolStripMenuItem exit = new ToolStripMenuItem();
-            exit.Text = Language.Translate("Exit");
+            ToolStripMenuItem exit = new ToolStripMenuItem
+            {
+                Text = Language.Translate("Exit")
+            };
             exit.Click += Exit_Click;
             void Exit_Click(object sender, EventArgs e)
             {

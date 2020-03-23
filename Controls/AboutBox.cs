@@ -46,14 +46,8 @@ namespace SystemTrayMenu.Controls
         // </remarks>
         public Assembly AppEntryAssembly
         {
-            get
-            {
-                return _EntryAssembly;
-            }
-            set
-            {
-                _EntryAssembly = value;
-            }
+            get => _EntryAssembly;
+            set => _EntryAssembly = value;
         }
 
         // <summary>
@@ -65,14 +59,8 @@ namespace SystemTrayMenu.Controls
         // </remarks>
         public string AppTitle
         {
-            get
-            {
-                return AppTitleLabel.Text;
-            }
-            set
-            {
-                AppTitleLabel.Text = value;
-            }
+            get => AppTitleLabel.Text;
+            set => AppTitleLabel.Text = value;
         }
 
         // <summary>
@@ -84,10 +72,7 @@ namespace SystemTrayMenu.Controls
         // </remarks>
         public string AppDescription
         {
-            get
-            {
-                return AppDescriptionLabel.Text;
-            }
+            get => AppDescriptionLabel.Text;
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -111,10 +96,7 @@ namespace SystemTrayMenu.Controls
         // </remarks>
         public string AppVersion
         {
-            get
-            {
-                return AppVersionLabel.Text;
-            }
+            get => AppVersionLabel.Text;
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -139,10 +121,7 @@ namespace SystemTrayMenu.Controls
         // </remarks>
         public string AppCopyright
         {
-            get
-            {
-                return AppCopyrightLabel.Text;
-            }
+            get => AppCopyrightLabel.Text;
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -165,14 +144,8 @@ namespace SystemTrayMenu.Controls
         // </remarks>
         public Image AppImage
         {
-            get
-            {
-                return ImagePictureBox.Image;
-            }
-            set
-            {
-                ImagePictureBox.Image = value;
-            }
+            get => ImagePictureBox.Image;
+            set => ImagePictureBox.Image = value;
         }
 
         // <summary>
@@ -186,10 +159,7 @@ namespace SystemTrayMenu.Controls
         // </remarks>
         public string AppMoreInfo
         {
-            get
-            {
-                return MoreRichTextBox.Text;
-            }
+            get => MoreRichTextBox.Text;
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -209,14 +179,8 @@ namespace SystemTrayMenu.Controls
         // </summary>
         public bool AppDetailsButton
         {
-            get
-            {
-                return buttonDetails.Visible;
-            }
-            set
-            {
-                buttonDetails.Visible = value;
-            }
+            get => buttonDetails.Visible;
+            set => buttonDetails.Visible = value;
         }
 
         // <summary>
@@ -474,8 +438,10 @@ namespace SystemTrayMenu.Controls
         {
             if (!string.IsNullOrEmpty(Value))
             {
-                ListViewItem lvi = new ListViewItem();
-                lvi.Text = Key;
+                ListViewItem lvi = new ListViewItem
+                {
+                    Text = Key
+                };
                 lvi.SubItems.Add(Value);
                 lvw.Items.Add(lvi);
             }
@@ -523,9 +489,11 @@ namespace SystemTrayMenu.Controls
 
             string strAssemblyName = a.GetName().Name;
 
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = strAssemblyName;
-            lvi.Tag = strAssemblyName;
+            ListViewItem lvi = new ListViewItem
+            {
+                Text = strAssemblyName,
+                Tag = strAssemblyName
+            };
             if (strAssemblyName == _CallingAssemblyName)
             {
                 lvi.Text += " (calling)";

@@ -10,13 +10,7 @@ namespace SystemTrayMenu
     {
         public const string Language = "en";
 
-        public static string Path
-        {
-            get
-            {
-                return Properties.Settings.Default.PathDirectory;
-            }
-        }
+        public static string Path => Properties.Settings.Default.PathDirectory;
 
         public static void UpgradeIfNotUpgraded()
         {
@@ -51,9 +45,11 @@ namespace SystemTrayMenu
         {
             bool pathOK = false;
             bool userAborted = false;
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.InitialDirectory = Path;
-            dialog.IsFolderPicker = true;
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            {
+                InitialDirectory = Path,
+                IsFolderPicker = true
+            };
             do
             {
                 if (dialog.ShowDialog() == CommonFileDialogResult.Ok)

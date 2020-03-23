@@ -129,15 +129,9 @@ namespace SystemTrayMenu.Helper
             _key = key;
         }
 
-        public KeyboardHookModifierKeys Modifier
-        {
-            get { return _modifier; }
-        }
+        public KeyboardHookModifierKeys Modifier => _modifier;
 
-        public Keys Key
-        {
-            get { return _key; }
-        }
+        public Keys Key => _key;
     }
 
     /// <summary>
