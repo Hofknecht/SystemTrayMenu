@@ -23,7 +23,7 @@ namespace SystemTrayMenu.Helper
             public Window()
             {
                 // create the handle for the window.
-                this.CreateHandle(new CreateParams());
+                CreateHandle(new CreateParams());
             }
 
             /// <summary>
@@ -55,7 +55,7 @@ namespace SystemTrayMenu.Helper
 
             public void Dispose()
             {
-                this.DestroyHandle();
+                DestroyHandle();
             }
 
             #endregion

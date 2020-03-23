@@ -37,7 +37,7 @@ namespace SystemTrayMenu.Helper
         /// <summary>Default constructor</summary>
         public ShellContextMenu()
         {
-            this.CreateHandle(new CreateParams());
+            CreateHandle(new CreateParams());
         }
         #endregion
 
@@ -466,7 +466,7 @@ namespace SystemTrayMenu.Helper
             // Release all resources first.
             ReleaseAll();
             _arrPIDLs = GetPIDLs(files);
-            this.ShowContextMenu(pointScreen);
+            ShowContextMenu(pointScreen);
         }
 
         /// <summary>
@@ -479,7 +479,7 @@ namespace SystemTrayMenu.Helper
             // Release all resources first.
             ReleaseAll();
             _arrPIDLs = GetPIDLs(dirs);
-            this.ShowContextMenu(pointScreen);
+            ShowContextMenu(pointScreen);
         }
 
         /// <summary>
@@ -537,7 +537,7 @@ namespace SystemTrayMenu.Helper
                     TPM.RETURNCMD,
                     pointScreen.X,
                     pointScreen.Y,
-                    this.Handle,
+                    Handle,
                     IntPtr.Zero);
 
                 DestroyMenu(pMenu);
@@ -1539,7 +1539,7 @@ namespace SystemTrayMenu.Helper
         public LocalWindowsHook(HookType hook)
         {
             m_hookType = hook;
-            m_filterFunc = new HookProc(this.CoreHookProc);
+            m_filterFunc = new HookProc(CoreHookProc);
         }
         public LocalWindowsHook(HookType hook, HookProc func)
         {

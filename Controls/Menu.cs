@@ -56,7 +56,7 @@ namespace SystemTrayMenu
             DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle();
             dgvCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
             dgvCellStyle.SelectionForeColor = Color.Black;
-            this.dgv.DefaultCellStyle = dgvCellStyle;
+            dgv.DefaultCellStyle = dgvCellStyle;
 
             VScrollBar scrollBar = dgv.Controls.OfType<VScrollBar>().First();
             scrollBar.MouseWheel += dgv_MouseWheel;
@@ -282,12 +282,12 @@ namespace SystemTrayMenu
 
         public void SetTitleColorDeactive()
         {
-            this.labelTitle.ForeColor = Color.LightGray;
+            labelTitle.ForeColor = Color.LightGray;
         }
 
         public void SetTitleColorActive()
         {
-            this.labelTitle.ForeColor = Color.Black;
+            labelTitle.ForeColor = Color.Black;
         }
 
         private void LabelTitle_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -300,12 +300,12 @@ namespace SystemTrayMenu
 
         private void LabelTitle_MouseEnter(object sender, EventArgs e)
         {
-            this.labelTitle.BackColor = MenuDefines.ColorTitleSelected;
+            labelTitle.BackColor = MenuDefines.ColorTitleSelected;
         }
 
         private void LabelTitle_MouseLeave(object sender, EventArgs e)
         {
-            this.labelTitle.BackColor = MenuDefines.ColorTitleBackground;
+            labelTitle.BackColor = MenuDefines.ColorTitleBackground;
         }
 
         protected override CreateParams CreateParams

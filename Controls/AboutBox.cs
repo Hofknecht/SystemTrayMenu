@@ -720,7 +720,7 @@ namespace SystemTrayMenu.Controls
             FormBorderStyle = FormBorderStyle.Sizable;
             TabPanelDetails.Dock = DockStyle.Fill;
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            this.AutoSize = false;
+            AutoSize = false;
             SizeGripStyle = SizeGripStyle.Show;
             Size = new Size(580, Size.Height);
             MoreRichTextBox.Visible = false;

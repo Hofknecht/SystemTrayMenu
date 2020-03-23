@@ -9,14 +9,14 @@ namespace SystemTrayMenu.Controls
             string buttonOk)
         {
             InitializeComponent();
-            this.Text = hintTitle;
-            this.labelHint.Text = hintText;
+            Text = hintTitle;
+            labelHint.Text = hintText;
             this.buttonOk.Text = buttonOk;
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

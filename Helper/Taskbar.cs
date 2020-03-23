@@ -77,8 +77,8 @@ namespace SystemTrayMenu
                 data.cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA));
                 result = SHAppBarMessage(ABM.GetState, ref data);
                 int state = result.ToInt32();
-                this.AlwaysOnTop = (state & ABS.AlwaysOnTop) == ABS.AlwaysOnTop;
-                this.AutoHide = (state & ABS.Autohide) == ABS.Autohide;
+                AlwaysOnTop = (state & ABS.AlwaysOnTop) == ABS.AlwaysOnTop;
+                AutoHide = (state & ABS.Autohide) == ABS.Autohide;
             }
         }
     }

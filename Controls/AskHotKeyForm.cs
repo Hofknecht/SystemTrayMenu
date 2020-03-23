@@ -11,20 +11,20 @@ namespace SystemTrayMenu.Controls
         public AskHotKeyForm()
         {
             InitializeComponent();
-            this.Text = Language.Translate("Shortcut key");
-            this.labelCaption.Text = $"{Language.Translate("Shortcut key")} " +
+            Text = Language.Translate("Shortcut key");
+            labelCaption.Text = $"{Language.Translate("Shortcut key")} " +
                 $"{Language.Translate("(e.g. F10)")}";
-            this.labelText.Text =
+            labelText.Text =
                 Language.Translate("CTRL") + " + " +
                 Language.Translate("ALT") + " + ?";
 
-            this.buttonOk.Text = Language.Translate("buttonOk");
+            buttonOk.Text = Language.Translate("buttonOk");
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.None;
-            this.Close();
+            DialogResult = DialogResult.None;
+            Close();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keys)
@@ -103,14 +103,14 @@ namespace SystemTrayMenu.Controls
                 case Keys.F23:
                 case Keys.F24:
                     NewHotKey = keys.ToString();
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    DialogResult = DialogResult.OK;
+                    Close();
                     break;
                 case Keys.Back:
                 case Keys.Delete:
                     NewHotKey = string.Empty;
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    DialogResult = DialogResult.OK;
+                    Close();
                     break;
                 default:
                     break;
