@@ -22,7 +22,7 @@ namespace SystemTrayMenu.Helper
                 if (userChoiceKey == null)
                 {
                     //Read default browser path from Win XP registry key
-                    var browserKey = Registry.ClassesRoot.OpenSubKey(@"HTTP\shell\open\command", false);
+                    RegistryKey browserKey = Registry.ClassesRoot.OpenSubKey(@"HTTP\shell\open\command", false);
 
                     //If browser path wasn’t found, try Win Vista (and newer) registry key
                     if (browserKey == null)
@@ -31,7 +31,7 @@ namespace SystemTrayMenu.Helper
                         Registry.CurrentUser.OpenSubKey(
                         urlAssociation, false);
                     }
-                    var path = CleanifyBrowserPath(browserKey.GetValue(null) as string);
+                    string path = CleanifyBrowserPath(browserKey.GetValue(null) as string);
                     browserKey.Close();
                     return path;
                 }
@@ -43,7 +43,7 @@ namespace SystemTrayMenu.Helper
 
                     // now look up the path of the executable
                     string concreteBrowserKey = browserPathKey.Replace("$BROWSER$", progId);
-                    var kp = Registry.ClassesRoot.OpenSubKey(concreteBrowserKey, false);
+                    RegistryKey kp = Registry.ClassesRoot.OpenSubKey(concreteBrowserKey, false);
                     browserPath = CleanifyBrowserPath(kp.GetValue(null) as string);
                     kp.Close();
                 }

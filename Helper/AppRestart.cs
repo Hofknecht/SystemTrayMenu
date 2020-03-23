@@ -21,8 +21,8 @@ namespace SystemTrayMenu.Helper
         [MethodImpl(MethodImplOptions.NoInlining)]
         private static string GetCurrentMethod()
         {
-            var st = new StackTrace();
-            var sf = st.GetFrame(1);
+            StackTrace st = new StackTrace();
+            StackFrame sf = st.GetFrame(1);
 
             return sf.GetMethod().Name;
         }

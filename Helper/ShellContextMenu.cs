@@ -1578,7 +1578,7 @@ namespace SystemTrayMenu.Helper
                 m_filterFunc,
                 IntPtr.Zero,
 #pragma warning disable CS0618 // depricated
-                (int)AppDomain.GetCurrentThreadId());
+                AppDomain.GetCurrentThreadId());
 #pragma warning restore CS0618 // depricated
         }
         // ************************************************************************

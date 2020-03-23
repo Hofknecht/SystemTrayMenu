@@ -168,7 +168,7 @@ namespace SystemTrayMenu
         {
             DataGridViewElementStates states = DataGridViewElementStates.None;
             dgv.AutoResizeRows();
-            int height = (int)(dgv.Rows.GetRowsHeight(states));
+            int height = dgv.Rows.GetRowsHeight(states);
             int heightMax = screen.Bounds.Height -
                 new Taskbar().Size.Height -
                 labelTitle.Height;
@@ -209,7 +209,7 @@ namespace SystemTrayMenu
             DataGridView dgv = menuPredecessor.GetDataGridView();
             if (dgv.Rows.Count > trigger.RowIndex)
             {
-                var cellRectangle = dgv.GetCellDisplayRectangle(
+                Rectangle cellRectangle = dgv.GetCellDisplayRectangle(
                     0, trigger.RowIndex, false);
                 int y = menuPredecessor.Location.Y +
                     menuPredecessor.dgv.Location.Y +
@@ -229,7 +229,7 @@ namespace SystemTrayMenu
             DataGridViewExtensions.FastAutoSizeColumns(dgv);
 
             bool scrollbarShown = false;
-            foreach (var scroll in dgv.Controls.OfType<VScrollBar>())
+            foreach (VScrollBar scroll in dgv.Controls.OfType<VScrollBar>())
             {
                 if (scroll.Visible)
                 {
@@ -312,7 +312,7 @@ namespace SystemTrayMenu
         {
             get
             {
-                var Params = base.CreateParams;
+                CreateParams Params = base.CreateParams;
                 Params.ExStyle |= 0x80;
                 return Params;
             }

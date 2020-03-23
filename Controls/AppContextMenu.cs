@@ -212,7 +212,7 @@ namespace SystemTrayMenu.Controls
         public IEnumerable<CultureInfo> GetCultureList(
             CultureTypes cultureType = CultureTypes.SpecificCultures)
         {
-            var cultureList = CultureInfo.GetCultures(cultureType).ToList();
+            List<CultureInfo> cultureList = CultureInfo.GetCultures(cultureType).ToList();
             cultureList.Sort((p1, p2) => string.Compare(
                 p1.NativeName, p2.NativeName, true));
             return cultureList;
@@ -234,12 +234,12 @@ namespace SystemTrayMenu.Controls
         }
         public static Bitmap ResizeImage(Image image, int width, int height)
         {
-            var destRect = new Rectangle(0, 0, width, height);
-            var destImage = new Bitmap(width, height);
+            Rectangle destRect = new Rectangle(0, 0, width, height);
+            Bitmap destImage = new Bitmap(width, height);
 
             destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
 
-            using (var graphics = Graphics.FromImage(destImage))
+            using (Graphics graphics = Graphics.FromImage(destImage))
             {
                 graphics.CompositingMode = CompositingMode.SourceCopy;
                 graphics.CompositingQuality = CompositingQuality.HighQuality;
@@ -247,7 +247,7 @@ namespace SystemTrayMenu.Controls
                 graphics.SmoothingMode = SmoothingMode.HighQuality;
                 graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-                using (var wrapMode = new ImageAttributes())
+                using (ImageAttributes wrapMode = new ImageAttributes())
                 {
                     wrapMode.SetWrapMode(WrapMode.TileFlipXY);
                     graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);

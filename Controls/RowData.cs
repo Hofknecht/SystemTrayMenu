@@ -77,7 +77,7 @@ namespace SystemTrayMenu.Controls
             else
             {
                 IWshShell shell = new WshShell();
-                var lnk = shell.CreateShortcut(TargetFilePath)
+                IWshShortcut lnk = shell.CreateShortcut(TargetFilePath)
                     as IWshShortcut;
                 Arguments = lnk.Arguments;
                 WorkingDirectory = lnk.WorkingDirectory;
@@ -156,7 +156,7 @@ namespace SystemTrayMenu.Controls
         private bool SetSln()
         {
             bool handled = false;
-            var executable = new StringBuilder(1024);
+            StringBuilder executable = new StringBuilder(1024);
             try
             {
                 _ = FindExecutable(TargetFilePath, string.Empty, executable);

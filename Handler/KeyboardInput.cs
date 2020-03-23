@@ -46,8 +46,8 @@ namespace SystemTrayMenu.Handler
         {
             if (!string.IsNullOrEmpty(Properties.Settings.Default.HotKey))
             {
-                var cvt = new KeysConverter();
-                var key = (Keys)cvt.ConvertFrom(
+                KeysConverter cvt = new KeysConverter();
+                Keys key = (Keys)cvt.ConvertFrom(
                     Properties.Settings.Default.HotKey);
                 try
                 {

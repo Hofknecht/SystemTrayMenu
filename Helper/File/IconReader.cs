@@ -214,8 +214,8 @@ namespace SystemTrayMenu.Helper
 
         public static Icon AddIconOverlay(Icon originalIcon, Icon overlay)
         {
-            var target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
-            var graphics = Graphics.FromImage(target);
+            Bitmap target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
+            Graphics graphics = Graphics.FromImage(target);
             graphics.DrawIcon(originalIcon, 0, 0);
             graphics.DrawIcon(overlay, 0, 0);
             target.MakeTransparent(target.GetPixel(1, 1));

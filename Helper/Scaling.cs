@@ -31,7 +31,7 @@ namespace SystemTrayMenu.Helper
             int LogicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.VERTRES);
             int PhysicalScreenHeight = GetDeviceCaps(desktop, (int)DeviceCap.DESKTOPVERTRES);
 
-            Factor = (float)PhysicalScreenHeight / (float)LogicalScreenHeight; // 1.25 = 125%
+            Factor = PhysicalScreenHeight / (float)LogicalScreenHeight; // 1.25 = 125%
 
         }
 
