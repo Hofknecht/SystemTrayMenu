@@ -6,7 +6,7 @@ using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu.Handler
 {
-    class KeyboardInput : IDisposable
+    internal class KeyboardInput : IDisposable
     {
         public event EventHandler HotKeyPressed;
         public event EventHandler ClosePressed;
@@ -15,12 +15,11 @@ namespace SystemTrayMenu.Handler
         public event EventHandler Cleared;
 
         private Menu[] menus;
-
-        KeyboardHook hook = new KeyboardHook();
-        Timer timerKeySearch = new Timer();
+        private KeyboardHook hook = new KeyboardHook();
+        private Timer timerKeySearch = new Timer();
         public int iRowKey = -1;
         public int iMenuKey = 0;
-        string KeySearchString = string.Empty;
+        private string KeySearchString = string.Empty;
 
         public bool InUse = false;
 

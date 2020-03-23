@@ -8,7 +8,7 @@ namespace SystemTrayMenu.Helper
 {
     internal static class Log
     {
-        static Logger log = new Logger("");
+        private static Logger log = new Logger("");
         internal static void Initialize()
         {
             Logger.Start(new FileInfo(GetLogFilePath()));

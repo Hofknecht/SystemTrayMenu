@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SystemTrayMenu
 {
-    class LnkHelper
+    internal class LnkHelper
     {
         #region Signitures imported from http://pinvoke.net
 
@@ -13,7 +13,7 @@ namespace SystemTrayMenu
         internal static extern int SHGetFolderPath(IntPtr hwndOwner, int nFolder, IntPtr hToken, int dwFlags, StringBuilder lpszPath);
 
         [Flags()]
-        enum SLGP_FLAGS
+        private enum SLGP_FLAGS
         {
             /// <summary>Retrieves the standard short (8.3 format) file name</summary>
             SLGP_SHORTPATH = 0x1,
@@ -24,7 +24,7 @@ namespace SystemTrayMenu
         }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
-        struct WIN32_FIND_DATAW
+        private struct WIN32_FIND_DATAW
         {
             public uint dwFileAttributes;
             public long ftCreationTime;
@@ -41,7 +41,7 @@ namespace SystemTrayMenu
         }
 
         [Flags()]
-        enum SLR_FLAGS
+        private enum SLR_FLAGS
         {
             /// <summary>
             /// Do not display a dialog box if the link cannot be resolved. When SLR_NO_UI is set,
@@ -76,7 +76,7 @@ namespace SystemTrayMenu
 
         /// <summary>The IShellLink interface allows Shell links to be created, modified, and resolved</summary>
         [ComImport(), InterfaceType(ComInterfaceType.InterfaceIsIUnknown), Guid("000214F9-0000-0000-C000-000000000046")]
-        interface IShellLinkW
+        private interface IShellLinkW
         {
             /// <summary>Retrieves the path and file name of a Shell link object</summary>
             void GetPath([Out(), MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile, int cchMaxPath, out WIN32_FIND_DATAW pfd, SLGP_FLAGS fFlags);
@@ -149,8 +149,8 @@ namespace SystemTrayMenu
             void GetCurFile([In, MarshalAs(UnmanagedType.LPWStr)] string ppszFileName);
         }
 
-        const uint STGM_READ = 0;
-        const int MAX_PATH = 260;
+        private const uint STGM_READ = 0;
+        private const int MAX_PATH = 260;
 
         // CLSID_ShellLink from ShlGuid.h 
         [

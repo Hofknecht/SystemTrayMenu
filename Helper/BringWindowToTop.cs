@@ -7,7 +7,7 @@ namespace SystemTrayMenu.Helper
     public class WindowToTop
     {
         [DllImport("user32.dll")]
-        static extern bool IsIconic(IntPtr hWnd);
+        private static extern bool IsIconic(IntPtr hWnd);
 
         //DLL's for ForceForgroundWindow
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
@@ -25,7 +25,7 @@ namespace SystemTrayMenu.Helper
         [DllImport("user32.dll")]
         private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
-        const int SW_RESTORE = 9;
+        private const int SW_RESTORE = 9;
 
         public static void ForceProcessToForeground(string processName)
         {

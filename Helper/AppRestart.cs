@@ -9,7 +9,7 @@ namespace SystemTrayMenu.Helper
     {
         public static event EventHandler BeforeRestarting;
 
-        static void Restart(string reason)
+        private static void Restart(string reason)
         {
             BeforeRestarting?.Invoke();
             Log.Info($"Restart by '{reason}'");
@@ -19,7 +19,7 @@ namespace SystemTrayMenu.Helper
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        static string GetCurrentMethod()
+        private static string GetCurrentMethod()
         {
             var st = new StackTrace();
             var sf = st.GetFrame(1);

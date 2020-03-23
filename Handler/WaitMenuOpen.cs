@@ -3,14 +3,14 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace SystemTrayMenu.Handler
 {
-    class WaitMenuOpen : IDisposable
+    internal class WaitMenuOpen : IDisposable
     {
         public event EventHandler DoOpen;
 
-        Timer waitOpen = new Timer();
-        bool waitedDone = false;
-        bool clicked = false;
-        bool menuLoaded = false;
+        private Timer waitOpen = new Timer();
+        private bool waitedDone = false;
+        private bool clicked = false;
+        private bool menuLoaded = false;
 
         public WaitMenuOpen()
         {

@@ -37,10 +37,9 @@ namespace SystemTrayMenu.Controls
         public string TargetFilePathOrig;
         public string Text;
         public int RowIndex;
-
-        WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
-        Icon icon = null;
-        bool isDisposed = false;
+        private WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
+        private Icon icon = null;
+        private bool isDisposed = false;
 
         public RowData()
         {
@@ -153,7 +152,7 @@ namespace SystemTrayMenu.Controls
         }
 
         [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
-        static extern int FindExecutable(string lpFile, string lpDirectory, [Out] StringBuilder lpResult);
+        private static extern int FindExecutable(string lpFile, string lpDirectory, [Out] StringBuilder lpResult);
         private bool SetSln()
         {
             bool handled = false;

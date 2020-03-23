@@ -7,7 +7,7 @@ namespace SystemTrayMenu.Helper
 {
     public class FileIni
     {
-        Dictionary<string, string> values;
+        private Dictionary<string, string> values;
         public FileIni(string path)
         {
             values = File.ReadLines(path)

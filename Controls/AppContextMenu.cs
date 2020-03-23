@@ -12,7 +12,7 @@ using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu.Controls
 {
-    class AppContextMenu
+    internal class AppContextMenu
     {
         public event EventHandler ClickedChangeFolder;
         public event EventHandler ClickedOpenLog;

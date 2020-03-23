@@ -15,14 +15,16 @@ namespace SystemTrayMenu.Helper
         }
 
         [DllImport("gdi32.dll")]
-        static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
-        enum DeviceCap
+        private static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
+
+        private enum DeviceCap
         {
             VERTRES = 10,
             DESKTOPVERTRES = 117,
             // http://pinvoke.net/default.aspx/gdi32/GetDeviceCaps.html
         }
-        static void CalculateScalingFactor()
+
+        private static void CalculateScalingFactor()
         {
             Graphics g = Graphics.FromHwnd(IntPtr.Zero);
             IntPtr desktop = g.GetHdc();
@@ -34,8 +36,9 @@ namespace SystemTrayMenu.Helper
         }
 
         [DllImport("user32.dll")]
-        static extern bool SetProcessDPIAware();
-        static void SetProcessDPIAwareWhenNecessary()
+        private static extern bool SetProcessDPIAware();
+
+        private static void SetProcessDPIAwareWhenNecessary()
         {
             if (Environment.OSVersion.Version.Major >= 6)
             {

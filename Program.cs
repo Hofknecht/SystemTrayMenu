@@ -6,10 +6,10 @@ using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu
 {
-    static class Program
+    internal static class Program
     {
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             try
             {

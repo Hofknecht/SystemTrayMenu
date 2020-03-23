@@ -3,11 +3,11 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace SystemTrayMenu.Handler
 {
-    class WaitFastLeave : IDisposable
+    internal class WaitFastLeave : IDisposable
     {
         public event EventHandler Leave;
 
-        Timer timerSecondLeaveCheck = new Timer();
+        private Timer timerSecondLeaveCheck = new Timer();
 
         public WaitFastLeave()
         {

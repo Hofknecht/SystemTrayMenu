@@ -42,8 +42,8 @@ namespace SystemTrayMenu
         }
 
         public int Level = 0;
-        FadeForm FadeForm = null;
-        bool autoResizeRowsDone = false;
+        private FadeForm FadeForm = null;
+        private bool autoResizeRowsDone = false;
 
         public enum MenuType { Default, DisposedFake };
 
@@ -67,7 +67,7 @@ namespace SystemTrayMenu
             }
         }
 
-        static void SetDoubleBuffer(Control ctl, bool DoubleBuffered)
+        private static void SetDoubleBuffer(Control ctl, bool DoubleBuffered)
         {
             typeof(Control).InvokeMember("DoubleBuffered",
                 BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,

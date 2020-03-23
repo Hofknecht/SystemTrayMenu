@@ -5,17 +5,17 @@ namespace SystemTrayMenu
 {
     public delegate void EventHandler();
 
-    class MessageFilter : IMessageFilter
+    internal class MessageFilter : IMessageFilter
     {
-        const int WM_MOUSELEAVE = 0x02A3;
-        const int WM_MOUSEMOVE = 0x0200;
-        const int WM_NCMOUSEMOVE = 0x00A0;
+        private const int WM_MOUSELEAVE = 0x02A3;
+        private const int WM_MOUSEMOVE = 0x0200;
+        private const int WM_NCMOUSEMOVE = 0x00A0;
         public event EventHandler MouseLeave;
         public event EventHandler MouseMove;
         public event EventHandler ScrollBarMouseMove;
 
-        Point cursorPosition = new Point();
-        bool messageFilterAdded = false;
+        private Point cursorPosition = new Point();
+        private bool messageFilterAdded = false;
 
         public bool PreFilterMessage(ref Message message)
         {

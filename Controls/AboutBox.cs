@@ -799,7 +799,7 @@ namespace SystemTrayMenu.Controls
         // <summary>
         // things to do when the selected tab is changed
         // </summary>
-        class ListViewItemComparer : System.Collections.IComparer
+        private class ListViewItemComparer : System.Collections.IComparer
         {
             private int _intCol;
             private bool _IsAscending = true;

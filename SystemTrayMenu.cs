@@ -13,20 +13,21 @@ using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu
 {
-    class SystemTrayMenu : IDisposable
+    internal class SystemTrayMenu : IDisposable
     {
-        enum OpenCloseState { Default, Opening, Closing };
-        OpenCloseState openCloseState = OpenCloseState.Default;
-        MessageFilter messageFilter = new MessageFilter();
-        MenuNotifyIcon menuNotifyIcon = null;
-        Menu[] menus = new Menu[MenuDefines.MenusMax];
-        BackgroundWorker worker = new BackgroundWorker();
-        Screen screen = Screen.PrimaryScreen;
-        WaitFastLeave fastLeave = new WaitFastLeave();
-        KeyboardInput keyboardInput;
-        DataGridView dgvFromLastMouseEvent = null;
-        DataGridViewCellEventArgs cellEventArgsFromLastMouseEvent = null;
-        int clicksInQueue = 0;
+        private enum OpenCloseState { Default, Opening, Closing };
+
+        private OpenCloseState openCloseState = OpenCloseState.Default;
+        private MessageFilter messageFilter = new MessageFilter();
+        private MenuNotifyIcon menuNotifyIcon = null;
+        private Menu[] menus = new Menu[MenuDefines.MenusMax];
+        private BackgroundWorker worker = new BackgroundWorker();
+        private Screen screen = Screen.PrimaryScreen;
+        private WaitFastLeave fastLeave = new WaitFastLeave();
+        private KeyboardInput keyboardInput;
+        private DataGridView dgvFromLastMouseEvent = null;
+        private DataGridViewCellEventArgs cellEventArgsFromLastMouseEvent = null;
+        private int clicksInQueue = 0;
 
         public SystemTrayMenu()
         {
@@ -169,7 +170,7 @@ namespace SystemTrayMenu
             fastLeave.Leave += FadeHalfOrOutIfNeeded;
         }
 
-        void FadeInIfNeeded()
+        private void FadeInIfNeeded()
         {
             if (menus[0].Visible &&
                 !menus[0].IsFadingIn &&
@@ -182,7 +183,7 @@ namespace SystemTrayMenu
             }
         }
 
-        void FadeHalfOrOutIfNeeded()
+        private void FadeHalfOrOutIfNeeded()
         {
             Point mousePosition = Control.MousePosition;
             bool isMouseOnAnyMenu =
@@ -215,7 +216,7 @@ namespace SystemTrayMenu
             DisposeMenu(menus[0]);
         }
 
-        void DisposeMenu(Menu menuToDispose)
+        private void DisposeMenu(Menu menuToDispose)
         {
             if (menuToDispose != null)
             {
@@ -231,7 +232,7 @@ namespace SystemTrayMenu
             }
         }
 
-        void DisposeWhenHidden(object sender, EventArgs e)
+        private void DisposeWhenHidden(object sender, EventArgs e)
         {
             Menu menuToDispose = (Menu)sender;
             if (!menuToDispose.Visible)
@@ -244,7 +245,7 @@ namespace SystemTrayMenu
             }
         }
 
-        void AdjustSubMenusLocationAndSize()
+        private void AdjustSubMenusLocationAndSize()
         {
             int heightMax = screen.Bounds.Height -
                 new Taskbar().Size.Height;
@@ -282,7 +283,7 @@ namespace SystemTrayMenu
             }
         }
 
-        void OpenSubMenu(object sender, EventArgs e)
+        private void OpenSubMenu(object sender, EventArgs e)
         {
             RowData trigger = (RowData)sender;
             Menu menuTriggered = trigger.SubMenu;
@@ -318,7 +319,7 @@ namespace SystemTrayMenu
             IsAnyMenuActive();
         }
 
-        bool IsAnyMenuActive()
+        private bool IsAnyMenuActive()
         {
             bool isAnyMenuActive = Form.ActiveForm is Menu;
             if (!isAnyMenuActive)
@@ -623,12 +624,12 @@ namespace SystemTrayMenu
             }
         }
 
-        IEnumerable<Menu> Menus()
+        private IEnumerable<Menu> Menus()
         {
             return menus.Where(m => m != null && !m.IsDisposed);
         }
 
-        void MenusFadeOut()
+        private void MenusFadeOut()
         {
             messageFilter.StopListening();
 
@@ -642,7 +643,7 @@ namespace SystemTrayMenu
             });
         }
 
-        Menu CreateMenu(MenuData menuData, string title = null)
+        private Menu CreateMenu(MenuData menuData, string title = null)
         {
             Menu menu = new Menu();
             if (title != null)

@@ -9,7 +9,7 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace SystemTrayMenu
 {
-    class MenuNotifyIcon : IDisposable
+    internal class MenuNotifyIcon : IDisposable
     {
         public event EventHandler HandleClick;
         public event EventHandler ChangeFolder;
@@ -17,12 +17,12 @@ namespace SystemTrayMenu
         public event EventHandler Restart;
         public event EventHandler Exit;
 
-        NotifyIcon notifyIcon = new NotifyIcon();
+        private NotifyIcon notifyIcon = new NotifyIcon();
         private DateTime timeLoadingStart;
-        int threadsLoading = 0;
-        Timer load = new Timer();
-        int loadCount = 0, indexLoad = 0;
-        List<Icon> bitmapsLoading = new List<Icon>() { R.L010, R.L020, R.L030,
+        private int threadsLoading = 0;
+        private Timer load = new Timer();
+        private int loadCount = 0, indexLoad = 0;
+        private List<Icon> bitmapsLoading = new List<Icon>() { R.L010, R.L020, R.L030,
             R.L040, R.L050, R.L060, R.L070, R.L080, R.L090, R.L100, R.L110, R.L120,
             R.L130, R.L140, R.L150, R.L160, R.L170, R.L180};
 

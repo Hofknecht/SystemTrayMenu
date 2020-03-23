@@ -22,12 +22,11 @@ namespace SystemTrayMenu
             }
         }
 
-        Timer timerFadeIn = new Timer();
-        Timer timerFadeOut = new Timer();
-        Timer timerFadeHalf = new Timer();
-
-        Form form = null;
-        bool stopFadeInByHalf = false;
+        private Timer timerFadeIn = new Timer();
+        private Timer timerFadeOut = new Timer();
+        private Timer timerFadeHalf = new Timer();
+        private Form form = null;
+        private bool stopFadeInByHalf = false;
 
         public FadeForm(Form form)
         {
@@ -146,7 +145,7 @@ namespace SystemTrayMenu
         private const uint SWP_NOACTIVATE = 0x0010;
 
         [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
-        static extern bool SetWindowPos(
+        private static extern bool SetWindowPos(
              int hWnd,             // Window handle
              int hWndInsertAfter,  // Placement-order handle
              int X,                // Horizontal position
@@ -156,9 +155,9 @@ namespace SystemTrayMenu
              uint uFlags);         // Window positioning flags
 
         [DllImport("user32.dll")]
-        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
-        static void ShowInactiveTopmost(Form frm)
+        private static void ShowInactiveTopmost(Form frm)
         {
             ShowWindow(frm.Handle, SW_SHOWNOACTIVATE);
             SetWindowPos(frm.Handle.ToInt32(), HWND_TOPMOST,
