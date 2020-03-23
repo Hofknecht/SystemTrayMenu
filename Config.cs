@@ -6,9 +6,9 @@ using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu
 {
-    public class Config
+    public static class Config
     {
-        public static string Language = "en";
+        public const string Language = "en";
 
         public static string Path
         {

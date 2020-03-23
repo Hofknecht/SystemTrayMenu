@@ -90,7 +90,7 @@ namespace SystemTrayMenu.Controls
             }
             set
             {
-                if (value == "")
+                if (string.IsNullOrEmpty(value))
                 {
                     AppDescriptionLabel.Visible = false;
                 }
@@ -117,7 +117,7 @@ namespace SystemTrayMenu.Controls
             }
             set
             {
-                if (value == "")
+                if (string.IsNullOrEmpty(value))
                 {
                     AppVersionLabel.Visible = false;
                 }
@@ -145,7 +145,7 @@ namespace SystemTrayMenu.Controls
             }
             set
             {
-                if (value == "")
+                if (string.IsNullOrEmpty(value))
                 {
                     AppCopyrightLabel.Visible = false;
                 }
@@ -192,7 +192,7 @@ namespace SystemTrayMenu.Controls
             }
             set
             {
-                if (value == null || value == "")
+                if (string.IsNullOrEmpty(value))
                 {
                     MoreRichTextBox.Visible = false;
                 }
@@ -223,18 +223,19 @@ namespace SystemTrayMenu.Controls
         // exception-safe retrieval of LastWriteTime for this assembly.
         // </summary>
         // <returns>File.GetLastWriteTime, or DateTime.MaxValue if exception was encountered.</returns>
-        private DateTime AssemblyLastWriteTime(Assembly a)
+        private static DateTime AssemblyLastWriteTime(Assembly a)
         {
-            if (a.Location == null || a.Location == "")
-                return DateTime.MaxValue;
-            try
+            DateTime assemblyLastWriteTime = DateTime.MaxValue;
+            if (!string.IsNullOrEmpty(a.Location))
             {
-                return File.GetLastWriteTime(a.Location);
+                try
+                {
+                    assemblyLastWriteTime = File.GetLastWriteTime(a.Location);
+                }
+                catch (Exception) { }
             }
-            catch (Exception)
-            {
-                return DateTime.MaxValue;
-            }
+
+            return assemblyLastWriteTime;
         }
 
         // <summary>
@@ -244,7 +245,7 @@ namespace SystemTrayMenu.Controls
         // <param name="a">Assembly to get build date for</param>
         // <param name="ForceFileDate">Don't attempt to use the build number to calculate the date</param>
         // <returns>DateTime this assembly was last built</returns>
-        private DateTime AssemblyBuildDate(Assembly a, bool ForceFileDate)
+        private static DateTime AssemblyBuildDate(Assembly a, bool ForceFileDate)
         {
             Version AssemblyVersion = a.GetName().Version;
             DateTime dt;
@@ -436,12 +437,12 @@ namespace SystemTrayMenu.Controls
             string strSysInfoPath = "";
 
             strSysInfoPath = RegistryHklmValue(@"SOFTWARE\Microsoft\Shared Tools Location", "MSINFO");
-            if (strSysInfoPath == "")
+            if (string.IsNullOrEmpty(strSysInfoPath))
             {
                 strSysInfoPath = RegistryHklmValue(@"SOFTWARE\Microsoft\Shared Tools\MSINFO", "PATH");
             }
 
-            if (strSysInfoPath == "")
+            if (string.IsNullOrEmpty(strSysInfoPath))
             {
                 MessageBox.Show("System Information is unavailable at this time." +
                     Environment.NewLine +
@@ -471,12 +472,13 @@ namespace SystemTrayMenu.Controls
         // </summary>
         private void Populate(ListView lvw, string Key, string Value)
         {
-            if (Value == "")
-                return;
-            ListViewItem lvi = new ListViewItem();
-            lvi.Text = Key;
-            lvi.SubItems.Add(Value);
-            lvw.Items.Add(lvi);
+            if (!string.IsNullOrEmpty(Value))
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = Key;
+                lvi.SubItems.Add(Value);
+                lvw.Items.Add(lvi);
+            }
         }
 
         // <summary>

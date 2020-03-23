@@ -54,7 +54,7 @@ namespace SystemTrayMenu
             menuNotifyIcon.HandleClick += SwitchOpenClose;
             void SwitchOpenClose()
             {
-                if (Config.Path == string.Empty)
+                if (string.IsNullOrEmpty(Config.Path))
                 {
                     //Case when Folder Dialog open
                 }
@@ -333,7 +333,7 @@ namespace SystemTrayMenu
             return isAnyMenuActive;
         }
 
-        MenuData ReadMenu(BackgroundWorker worker, string path, int level)
+        private static MenuData ReadMenu(BackgroundWorker worker, string path, int level)
         {
             MenuData menuData = new MenuData();
             menuData.RowDatas = new List<RowData>();
@@ -341,7 +341,7 @@ namespace SystemTrayMenu
             menuData.Level = level;
             if (!worker.CancellationPending)
             {
-                string[] directories = new string[] { };
+                string[] directories = Array.Empty<string>();
 
                 try
                 {
@@ -381,7 +381,7 @@ namespace SystemTrayMenu
 
             if (!worker.CancellationPending)
             {
-                string[] files = new string[] { };
+                string[] files = Array.Empty<string>();
 
                 try
                 {
@@ -436,7 +436,7 @@ namespace SystemTrayMenu
             return menuData;
         }
 
-        RowData ReadMenuButtonData(string fileName,
+        private static RowData ReadMenuButtonData(string fileName,
             bool isResolvedLnk, RowData menuButtonData = null)
         {
             if (menuButtonData == null)
@@ -645,7 +645,7 @@ namespace SystemTrayMenu
             Menu menu = new Menu();
             if (title != null)
             {
-                if (title == string.Empty)
+                if (string.IsNullOrEmpty(title))
                 {
                     title = Path.GetPathRoot(Config.Path);
                 }

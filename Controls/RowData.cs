@@ -50,7 +50,7 @@ namespace SystemTrayMenu.Controls
 
         public void SetText(string text)
         {
-            if (text.Length > MenuDefines.LengthMax)
+            if (text != null && text.Length > MenuDefines.LengthMax)
             {
                 text = $"{text.Substring(0, MenuDefines.LengthMax)}...";
             }
@@ -122,7 +122,8 @@ namespace SystemTrayMenu.Controls
                     string browserPath = FileUrl.GetDefaultBrowserPath();
                     if (string.IsNullOrEmpty(browserPath))
                     {
-                        Log.Info($"No default browser found!");
+                        Log.Info($"Resolve *.URL '{TargetFilePath}'" +
+                            $"No default browser found!");
                     }
                     else
                     {
@@ -159,7 +160,7 @@ namespace SystemTrayMenu.Controls
             var executable = new StringBuilder(1024);
             try
             {
-                FindExecutable(TargetFilePath, string.Empty, executable);
+                _ = FindExecutable(TargetFilePath, string.Empty, executable);
                 // icon = IconReader.GetFileIcon(executable, false);
                 // e.g. VS 2019 icon, need another icom in imagelist
                 List<Icon> extractedIcons = IconHelper.ExtractAllIcons(
