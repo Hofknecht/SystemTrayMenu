@@ -13,13 +13,3 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build with MSBuild
       run: msbuild  SystemTrayMenu.sln -p:Configuration=Release
-    - name: Push
-      uses: github-actions-x/commit@v2.3
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        push-branch: 'master'
-        commit-message: 'publish'
-        force-add: 'true'
-        files: bin/
-        name: Markus Hofknecht
-        email: markus@hofknecht.eu
