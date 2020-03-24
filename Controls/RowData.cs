@@ -413,7 +413,7 @@ namespace SystemTrayMenu.Controls
             if (!isDisposed)
             {
                 icon?.Dispose();
-                Icon?.Dispose();
+                //Icon?.Dispose(); is reused
                 waitMenuOpen.Dispose();
                 Reading.Dispose();
             }

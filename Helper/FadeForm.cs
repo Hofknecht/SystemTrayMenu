@@ -39,7 +39,7 @@ namespace SystemTrayMenu
                 timerFadeIn.Dispose();
                 timerFadeOut.Dispose();
                 timerFadeHalf.Dispose();
-                form.Dispose();
+                //form.Dispose(); recursiv
             }
         }
 
