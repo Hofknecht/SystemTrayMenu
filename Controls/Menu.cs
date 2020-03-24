@@ -174,8 +174,7 @@ namespace SystemTrayMenu
             Location = new Point(x, y);
         }
 
-        public void AdjustLocationAndSize(int heightMax, int widthPredecessors,
-            Menu menuPredecessor)
+        public void AdjustLocationAndSize(int heightMax, Menu menuPredecessor)
         {
             DataGridViewElementStates states = DataGridViewElementStates.None;
             if (!autoResizeRowsDone)

@@ -251,7 +251,7 @@ namespace SystemTrayMenu.Controls
         // Description     = AssemblyDescription string
         // Title           = AssemblyTitle string
         // </remarks>
-        private NameValueCollection AssemblyAttribs(Assembly a)
+        private static NameValueCollection AssemblyAttribs(Assembly a)
         {
             string TypeName;
             string Name;
@@ -379,18 +379,17 @@ namespace SystemTrayMenu.Controls
         // <summary>
         // reads an HKLM Windows Registry key value
         // </summary>
-        private string RegistryHklmValue(string KeyName, string SubKeyRef)
+        private static string RegistryHklmValue(string KeyName, string SubKeyRef)
         {
-            RegistryKey rk;
+            string strSysInfoPath = string.Empty;
             try
             {
-                rk = Registry.LocalMachine.OpenSubKey(KeyName);
-                return (string)rk.GetValue(SubKeyRef, "");
+                RegistryKey rk = Registry.LocalMachine.OpenSubKey(KeyName);
+                strSysInfoPath = (string)rk.GetValue(SubKeyRef, string.Empty);
             }
-            catch (Exception)
-            {
-                return "";
-            }
+            catch (Exception) { }
+
+            return strSysInfoPath;
         }
 
         // <summary>
@@ -398,9 +397,7 @@ namespace SystemTrayMenu.Controls
         // </summary>
         private void ShowSysInfo()
         {
-            string strSysInfoPath = "";
-
-            strSysInfoPath = RegistryHklmValue(@"SOFTWARE\Microsoft\Shared Tools Location", "MSINFO");
+            string strSysInfoPath = RegistryHklmValue(@"SOFTWARE\Microsoft\Shared Tools Location", "MSINFO");
             if (string.IsNullOrEmpty(strSysInfoPath))
             {
                 strSysInfoPath = RegistryHklmValue(@"SOFTWARE\Microsoft\Shared Tools\MSINFO", "PATH");
@@ -434,7 +431,7 @@ namespace SystemTrayMenu.Controls
         // <summary>
         // populate a listview with the specified key and value strings
         // </summary>
-        private void Populate(ListView lvw, string Key, string Value)
+        private static void Populate(ListView lvw, string Key, string Value)
         {
             if (!string.IsNullOrEmpty(Value))
             {

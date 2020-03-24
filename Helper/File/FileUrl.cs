@@ -2,7 +2,7 @@
 
 namespace SystemTrayMenu.Helper
 {
-    public class FileUrl
+    public static class FileUrl
     {
         private static string browserPath = string.Empty;
         public static string GetDefaultBrowserPath()

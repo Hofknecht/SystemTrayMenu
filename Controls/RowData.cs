@@ -413,7 +413,9 @@ namespace SystemTrayMenu.Controls
             if (!isDisposed)
             {
                 icon?.Dispose();
+                Icon?.Dispose();
                 waitMenuOpen.Dispose();
+                Reading.Dispose();
             }
             isDisposed = true;
         }

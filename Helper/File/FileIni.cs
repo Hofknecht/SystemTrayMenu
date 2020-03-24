@@ -10,9 +10,11 @@ namespace SystemTrayMenu.Helper
         public FileIni(string path)
         {
             values = File.ReadLines(path)
-            .Where(line => (!string.IsNullOrWhiteSpace(line) && !line.StartsWith("#")))
+            .Where(line => !string.IsNullOrWhiteSpace(line) &&
+            !line.StartsWith("#", System.StringComparison.InvariantCulture))
             .Select(line => line.Split(new char[] { '=' }, 2, 0))
-            .ToDictionary(parts => parts[0].Trim(), parts => parts.Length > 1 ? parts[1].Trim() : null);
+            .ToDictionary(parts => parts[0].Trim(), parts =>
+            parts.Length > 1 ? parts[1].Trim() : null);
         }
         public string Value(string name, string value = null)
         {

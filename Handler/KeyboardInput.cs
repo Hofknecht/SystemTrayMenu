@@ -40,6 +40,7 @@ namespace SystemTrayMenu.Handler
         public void Dispose()
         {
             hook.Dispose();
+            timerKeySearch.Dispose();
         }
 
         internal void RegisterHotKey()

@@ -86,6 +86,7 @@ namespace SystemTrayMenu
         {
             notifyIcon.Icon = null;
             notifyIcon.Dispose();
+            load.Dispose();
         }
 
         public void LoadingStart()

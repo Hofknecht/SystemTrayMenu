@@ -6,7 +6,8 @@ namespace SystemTrayMenu.Controls
 {
     public partial class AskHotKeyForm : Form
     {
-        public string NewHotKey;
+        public string NewHotKey => newHotKey;
+        private string newHotKey = string.Empty;
 
         public AskHotKeyForm()
         {
@@ -102,13 +103,13 @@ namespace SystemTrayMenu.Controls
                 case Keys.F22:
                 case Keys.F23:
                 case Keys.F24:
-                    NewHotKey = keys.ToString();
+                    newHotKey = keys.ToString();
                     DialogResult = DialogResult.OK;
                     Close();
                     break;
                 case Keys.Back:
                 case Keys.Delete:
-                    NewHotKey = string.Empty;
+                    newHotKey = string.Empty;
                     DialogResult = DialogResult.OK;
                     Close();
                     break;

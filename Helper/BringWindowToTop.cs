@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace SystemTrayMenu.Helper
 {
-    public class WindowToTop
+    public static class WindowToTop
     {
         [DllImport("user32.dll")]
         private static extern bool IsIconic(IntPtr hWnd);

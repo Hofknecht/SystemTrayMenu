@@ -227,7 +227,7 @@ namespace SystemTrayMenu.Controls
         /// https://www.codeproject.com/Tips/744914/
         /// Sorted-list-of-available-cultures-in-NET
         /// </summary>
-        public IEnumerable<CultureInfo> GetCultureList(
+        private static IEnumerable<CultureInfo> GetCultureList(
             CultureTypes cultureType = CultureTypes.SpecificCultures)
         {
             List<CultureInfo> cultureList = CultureInfo.GetCultures(cultureType).ToList();

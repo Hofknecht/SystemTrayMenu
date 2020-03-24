@@ -276,8 +276,7 @@ namespace SystemTrayMenu
                     widthPredecessors -= newWith;
                 }
 
-                menu.AdjustLocationAndSize(heightMax,
-                    widthPredecessors, menuPredecessor);
+                menu.AdjustLocationAndSize(heightMax, menuPredecessor);
                 widthPredecessors += menu.Width - menu.Padding.Left;
                 menuPredecessor = menu;
             }

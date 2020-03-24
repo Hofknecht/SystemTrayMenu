@@ -17,7 +17,7 @@ namespace SystemTrayMenu.Helper
     /// <example>
     /// <code>IconReader.GetFileIcon("c:\\general.xls");</code>
     /// </example>
-    public class IconReader
+    public static class IconReader
     {
         private static readonly ConcurrentDictionary<string, Icon> dictIconCache = new ConcurrentDictionary<string, Icon>();
 
@@ -144,10 +144,10 @@ namespace SystemTrayMenu.Helper
                 // Cleanup
                 if (!linkOverlay)
                 {
-                    User32.DestroyIcon(hIcon);
+                    NativeMethods.DestroyIco(hIcon);
                 }
 
-                User32.DestroyIcon(shfi.hIcon);
+                NativeMethods.DestroyIco(shfi.hIcon);
             }
 
             return icon;
@@ -207,7 +207,7 @@ namespace SystemTrayMenu.Helper
                 }
 
                 // Cleanup
-                User32.DestroyIcon(shfi.hIcon);
+                NativeMethods.DestroyIco(shfi.hIcon);
             }
             return icon;
         }
@@ -231,7 +231,7 @@ namespace SystemTrayMenu.Helper
 
     // This code has been left largely untouched from that in the CRC example. The main changes have been moving
     // the icon reading code over to the IconReader type.
-    public class Shell32
+    public static class Shell32
     {
 
         public const int MAX_PATH = 256;
@@ -336,7 +336,7 @@ namespace SystemTrayMenu.Helper
     /// <summary>
     /// Wraps necessary functions imported from User32.dll. Code courtesy of MSDN Cold Rooster Consulting example.
     /// </summary>
-    public class User32
+    public static class NativeMethods
     {
         /// <summary>
         /// Provides access to function required to delete handle. This method is used internally
@@ -345,8 +345,10 @@ namespace SystemTrayMenu.Helper
         /// <param name="hIcon">Pointer to icon handle.</param>
         /// <returns>N/A</returns>
         [DllImport("User32.dll")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability",
-            "CA1401:P/Invokes should not be visible", Justification = "<Pending>")]
-        public static extern int DestroyIcon(IntPtr hIcon);
+        private static extern int DestroyIcon(IntPtr hIcon);
+        public static void DestroyIco(IntPtr hIcon)
+        {
+            _ = DestroyIcon(hIcon);
+        }
     }
 }
