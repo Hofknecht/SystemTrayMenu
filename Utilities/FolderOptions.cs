@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Utilities
 {
     internal static class FolderOptions
     {

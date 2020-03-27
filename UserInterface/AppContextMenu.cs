@@ -8,9 +8,10 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
-using SystemTrayMenu.Helper;
+using SystemTrayMenu.UserInterface;
+using SystemTrayMenu.Utilities;
 
-namespace SystemTrayMenu.Controls
+namespace SystemTrayMenu.Helper
 {
     internal class AppContextMenu
     {

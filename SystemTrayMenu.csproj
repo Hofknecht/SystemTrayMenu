@@ -139,12 +139,12 @@
   <ItemGroup>
     <Compile Include="Config\Config.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="NativeMethods\DestroyMenu.cs" />
-    <Compile Include="NativeMethods\CreatePopupMenu.cs" />
-    <Compile Include="NativeMethods\GetMenuDefaultItem.cs" />
-    <Compile Include="NativeMethods\TrackPopupMenuEx.cs" />
-    <Compile Include="NativeMethods\StrRetToBuf.cs" />
-    <Compile Include="NativeMethods\SHGetDesktopFolder.cs" />
+    <Compile Include="NativeDllImport\DestroyMenu.cs" />
+    <Compile Include="NativeDllImport\CreatePopupMenu.cs" />
+    <Compile Include="NativeDllImport\GetMenuDefaultItem.cs" />
+    <Compile Include="NativeDllImport\TrackPopupMenuEx.cs" />
+    <Compile Include="NativeDllImport\StrRetToBuf.cs" />
+    <Compile Include="NativeDllImport\SHGetDesktopFolder.cs" />
     <Compile Include="UserInterface\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +166,9 @@
     <Compile Include="DataClasses\MenuData.cs" />
     <Compile Include="DataClasses\RowData.cs" />
     <Compile Include="UserInterface\AppContextMenu.cs" />
+    <Compile Include="UserInterface\LabelNoCopy.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\AppRestart.cs" />
     <Compile Include="Utilities\DataGridViewExtensions.cs" />
     <Compile Include="Utilities\File\IconReader.cs" />
@@ -188,20 +191,20 @@
     <Compile Include="Business\WaitFastLeave.cs" />
     <Compile Include="Business\WaitMenuOpen.cs" />
     <Compile Include="Helpers\WindowsExplorerSort.cs" />
-    <Compile Include="NativeMethods\GetIcon.cs" />
-    <Compile Include="NativeMethods\SHGetFolderPath.cs" />
-    <Compile Include="NativeMethods\SHGetFileInfo.cs" />
-    <Compile Include="NativeMethods\SetProcessDPIAware.cs" />
-    <Compile Include="NativeMethods\GetDeviceCaps.cs" />
-    <Compile Include="NativeMethods\RegisterHotKey.cs" />
-    <Compile Include="NativeMethods\ShowWindow.cs" />
-    <Compile Include="NativeMethods\ShowInactiveTopmost.cs" />
-    <Compile Include="NativeMethods\SHAppBarMessage.cs" />
-    <Compile Include="NativeMethods\FindWindow.cs" />
-    <Compile Include="NativeMethods\StrCmpLogicalW.cs" />
-    <Compile Include="NativeMethods\FindExecuteable.cs" />
-    <Compile Include="NativeMethods\BringWindowToTop.cs" />
-    <Compile Include="NativeMethods\DestroyIcon.cs" />
+    <Compile Include="NativeDllImport\GetIcon.cs" />
+    <Compile Include="NativeDllImport\SHGetFolderPath.cs" />
+    <Compile Include="NativeDllImport\SHGetFileInfo.cs" />
+    <Compile Include="NativeDllImport\SetProcessDPIAware.cs" />
+    <Compile Include="NativeDllImport\GetDeviceCaps.cs" />
+    <Compile Include="NativeDllImport\RegisterHotKey.cs" />
+    <Compile Include="NativeDllImport\ShowWindow.cs" />
+    <Compile Include="NativeDllImport\ShowInactiveTopmost.cs" />
+    <Compile Include="NativeDllImport\SHAppBarMessage.cs" />
+    <Compile Include="NativeDllImport\FindWindow.cs" />
+    <Compile Include="NativeDllImport\StrCmpLogicalW.cs" />
+    <Compile Include="NativeDllImport\FindExecuteable.cs" />
+    <Compile Include="NativeDllImport\BringWindowToTop.cs" />
+    <Compile Include="NativeDllImport\DestroyIcon.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

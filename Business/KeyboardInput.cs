@@ -3,6 +3,9 @@ using System.Linq;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Helper;
+using SystemTrayMenu.Utilities;
+using EventHandler = SystemTrayMenu.Helper.EventHandler;
+using Menu = SystemTrayMenu.UserInterface.Menu;
 
 namespace SystemTrayMenu.Handler
 {

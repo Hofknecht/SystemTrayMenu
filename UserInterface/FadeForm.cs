@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace SystemTrayMenu
+namespace SystemTrayMenu.UserInterface
 {
     public class FadeForm : IDisposable
     {
@@ -29,6 +29,7 @@ namespace SystemTrayMenu
         public void Dispose()
         {
             Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -78,7 +79,7 @@ namespace SystemTrayMenu
             }
             else
             {
-                NativeMethods.NativeMethods.User32ShowInactiveTopmost(form);
+                NativeDllImport.NativeMethods.User32ShowInactiveTopmost(form);
                 timerFadeOut.Stop();
                 timerFadeIn.Start();
             }

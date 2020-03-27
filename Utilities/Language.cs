@@ -2,8 +2,9 @@
 using System.Resources;
 using System.Threading;
 using SystemTrayMenu.Properties;
+using SystemTrayMenu.UserInterface;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Utilities
 {
     internal static class Language
     {

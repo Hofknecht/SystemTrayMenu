@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Handler;
 using SystemTrayMenu.Helper;
+using SystemTrayMenu.Helper.Taskbar;
+using SystemTrayMenu.UserInterface;
+using SystemTrayMenu.Utilities;
+using Menu = SystemTrayMenu.UserInterface.Menu;
 
 namespace SystemTrayMenu
 {
@@ -133,7 +137,7 @@ namespace SystemTrayMenu
                 Menus().ToList().ForEach(m => { m.FadeIn(); m.FadeHalf(); });
                 menus[0].SetTitleColorActive();
                 menus[0].Activate();
-                NativeMethods.NativeMethods.ForceForegroundWindow(menus[0].Handle);
+                NativeDllImport.NativeMethods.ForceForegroundWindow(menus[0].Handle);
             }
 
             menuNotifyIcon.OpenLog += Log.OpenLogFile;

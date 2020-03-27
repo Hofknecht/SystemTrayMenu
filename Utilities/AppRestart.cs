@@ -2,8 +2,9 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using EventHandler = SystemTrayMenu.Helper.EventHandler;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Utilities
 {
     internal class AppRestart
     {

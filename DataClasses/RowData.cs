@@ -9,8 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SystemTrayMenu.Handler;
-using SystemTrayMenu.Helper;
+using SystemTrayMenu.Utilities;
 using TAFactory.IconPack;
+using Menu = SystemTrayMenu.UserInterface.Menu;
 
 namespace SystemTrayMenu.DataClasses
 {
@@ -155,7 +156,7 @@ namespace SystemTrayMenu.DataClasses
             StringBuilder executable = new StringBuilder(1024);
             try
             {
-                NativeMethods.NativeMethods.Shell32FindExecutable(TargetFilePath, string.Empty, executable);
+                NativeDllImport.NativeMethods.Shell32FindExecutable(TargetFilePath, string.Empty, executable);
                 // icon = IconReader.GetFileIcon(executable, false);
                 // e.g. VS 2019 icon, need another icom in imagelist
                 List<Icon> extractedIcons = IconHelper.ExtractAllIcons(

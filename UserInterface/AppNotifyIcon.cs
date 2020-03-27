@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using SystemTrayMenu.Controls;
+using SystemTrayMenu.Helper;
+using EventHandler = SystemTrayMenu.Helper.EventHandler;
 using R = SystemTrayMenu.Properties.Resources;
 using Timer = System.Windows.Forms.Timer;
 
-namespace SystemTrayMenu
+namespace SystemTrayMenu.UserInterface
 {
     internal class MenuNotifyIcon : IDisposable
     {

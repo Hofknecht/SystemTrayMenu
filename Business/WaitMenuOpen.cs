@@ -1,4 +1,5 @@
 ﻿using System;
+using EventHandler = SystemTrayMenu.Helper.EventHandler;
 using Timer = System.Windows.Forms.Timer;
 
 namespace SystemTrayMenu.Handler

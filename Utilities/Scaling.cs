@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Utilities
 {
     internal static class Scaling
     {
@@ -21,7 +21,7 @@ namespace SystemTrayMenu.Helper
             {
                 if (Environment.OSVersion.Version.Major >= 6)
                 {
-                    NativeMethods.NativeMethods.User32SetProcessDPIAware();
+                    NativeDllImport.NativeMethods.User32SetProcessDPIAware();
                 }
             }
         }
@@ -30,9 +30,9 @@ namespace SystemTrayMenu.Helper
         {
             Graphics g = Graphics.FromHwnd(IntPtr.Zero);
             IntPtr desktop = g.GetHdc();
-            int LogicalScreenHeight = NativeMethods.NativeMethods.Gdi32GetDeviceCaps(
+            int LogicalScreenHeight = NativeDllImport.NativeMethods.Gdi32GetDeviceCaps(
                 desktop, (int)DeviceCap.VERTRES);
-            int PhysicalScreenHeight = NativeMethods.NativeMethods.Gdi32GetDeviceCaps(
+            int PhysicalScreenHeight = NativeDllImport.NativeMethods.Gdi32GetDeviceCaps(
                 desktop, (int)DeviceCap.DESKTOPVERTRES);
             Factor = PhysicalScreenHeight / (float)LogicalScreenHeight;
         }

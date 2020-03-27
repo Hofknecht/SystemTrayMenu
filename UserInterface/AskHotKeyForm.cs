@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using SystemTrayMenu.Helper;
+using SystemTrayMenu.Utilities;
 
-namespace SystemTrayMenu.Controls
+namespace SystemTrayMenu.UserInterface
 {
     public partial class AskHotKeyForm : Form
     {

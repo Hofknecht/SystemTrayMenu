@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Utilities
 {
     public class FileIni
     {

@@ -6,7 +6,7 @@ namespace SystemTrayMenu.Helper
     {
         public int Compare(string x, string y)
         {
-            return NativeMethods.NativeMethods.ShlwapiStrCmpLogicalW(x, y);
+            return NativeDllImport.NativeMethods.ShlwapiStrCmpLogicalW(x, y);
         }
     }
 }

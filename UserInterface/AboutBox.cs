@@ -6,9 +6,9 @@ using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using SystemTrayMenu.Helper;
+using SystemTrayMenu.Utilities;
 
-namespace SystemTrayMenu.Controls
+namespace SystemTrayMenu.UserInterface
 {
     /// <summary>
     /// Generic, self-contained About Box dialog

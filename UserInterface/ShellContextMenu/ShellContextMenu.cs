@@ -4,8 +4,9 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using SystemTrayMenu.Helper;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Utilities
 {
     /// <summary>
     /// "Stand-alone" shell context menu
@@ -234,7 +235,7 @@ namespace SystemTrayMenu.Helper
             if (null == _oDesktopFolder)
             {
                 // Get desktop IShellFolder
-                int nResult = NativeMethods.NativeMethods.Shell32SHGetDesktopFolder(out pUnkownDesktopFolder);
+                int nResult = NativeDllImport.NativeMethods.Shell32SHGetDesktopFolder(out pUnkownDesktopFolder);
                 if (S_OK != nResult)
                 {
                     throw new ShellContextMenuException("Failed to get the desktop shell folder");
@@ -276,7 +277,7 @@ namespace SystemTrayMenu.Helper
                 Marshal.WriteInt32(pStrRet, 0, 0);
                 nResult = _oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
                 StringBuilder strFolder = new StringBuilder(MAX_PATH);
-                _ = NativeMethods.NativeMethods.ShlwapiStrRetToBuf(pStrRet, pPIDL, strFolder, MAX_PATH);
+                _ = NativeDllImport.NativeMethods.ShlwapiStrRetToBuf(pStrRet, pPIDL, strFolder, MAX_PATH);
                 Marshal.FreeCoTaskMem(pStrRet);
                 pStrRet = IntPtr.Zero;
                 _strParentFolder = strFolder.ToString();
@@ -422,7 +423,7 @@ namespace SystemTrayMenu.Helper
                     return;
                 }
 
-                pMenu = NativeMethods.NativeMethods.User32CreatePopupMenu();
+                pMenu = NativeDllImport.NativeMethods.User32CreatePopupMenu();
 
                 int nResult = _oContextMenu.QueryContextMenu(
                     pMenu,
@@ -432,13 +433,13 @@ namespace SystemTrayMenu.Helper
                     CMF.DEFAULTONLY |
                     ((Control.ModifierKeys & Keys.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
 
-                uint nDefaultCmd = (uint)NativeMethods.NativeMethods.User32GetMenuDefaultItem(pMenu, false, 0);
+                uint nDefaultCmd = (uint)NativeDllImport.NativeMethods.User32GetMenuDefaultItem(pMenu, false, 0);
                 if (nDefaultCmd >= CMD_FIRST)
                 {
                     InvokeCommand(_oContextMenu, nDefaultCmd, arrFI[0].DirectoryName, Control.MousePosition);
                 }
 
-                NativeMethods.NativeMethods.User32DestroyMenu(pMenu);
+                NativeDllImport.NativeMethods.User32DestroyMenu(pMenu);
                 pMenu = IntPtr.Zero;
             }
             catch
@@ -449,7 +450,7 @@ namespace SystemTrayMenu.Helper
             {
                 if (pMenu != IntPtr.Zero)
                 {
-                    NativeMethods.NativeMethods.User32DestroyMenu(pMenu);
+                    NativeDllImport.NativeMethods.User32DestroyMenu(pMenu);
                 }
                 ReleaseAll();
             }
@@ -515,7 +516,7 @@ namespace SystemTrayMenu.Helper
                     return;
                 }
 
-                pMenu = NativeMethods.NativeMethods.User32CreatePopupMenu();
+                pMenu = NativeDllImport.NativeMethods.User32CreatePopupMenu();
 
                 int nResult = _oContextMenu.QueryContextMenu(
                     pMenu,
@@ -534,15 +535,15 @@ namespace SystemTrayMenu.Helper
 
                 //hook.Install();
 
-                uint nSelected = NativeMethods.NativeMethods.User32TrackPopupMenuEx(
+                uint nSelected = NativeDllImport.NativeMethods.User32TrackPopupMenuEx(
                     pMenu,
-                    NativeMethods.NativeMethods.TPM.RETURNCMD,
+                    NativeDllImport.NativeMethods.TPM.RETURNCMD,
                     pointScreen.X,
                     pointScreen.Y,
                     Handle,
                     IntPtr.Zero);
 
-                NativeMethods.NativeMethods.User32DestroyMenu(pMenu);
+                NativeDllImport.NativeMethods.User32DestroyMenu(pMenu);
                 pMenu = IntPtr.Zero;
 
                 if (nSelected != 0)
@@ -559,7 +560,7 @@ namespace SystemTrayMenu.Helper
                 //hook.Uninstall();
                 if (pMenu != IntPtr.Zero)
                 {
-                    NativeMethods.NativeMethods.User32DestroyMenu(pMenu);
+                    NativeDllImport.NativeMethods.User32DestroyMenu(pMenu);
                 }
 
                 if (iContextMenuPtr != IntPtr.Zero)

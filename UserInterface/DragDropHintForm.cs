@@ -1,22 +1,22 @@
-﻿using System;
-using System.Windows.Forms;
+﻿//using System;
+//using System.Windows.Forms;
 
-namespace SystemTrayMenu.Controls
-{
-    public partial class DragDropHintForm : Form
-    {
-        public DragDropHintForm(string hintTitle, string hintText,
-            string buttonOk)
-        {
-            InitializeComponent();
-            Text = hintTitle;
-            labelHint.Text = hintText;
-            this.buttonOk.Text = buttonOk;
-        }
+//namespace SystemTrayMenu.UserInterface
+//{
+//    public partial class DragDropHintForm : Form
+//    {
+//        public DragDropHintForm(string hintTitle, string hintText,
+//            string buttonOk)
+//        {
+//            InitializeComponent();
+//            Text = hintTitle;
+//            labelHint.Text = hintText;
+//            this.buttonOk.Text = buttonOk;
+//        }
 
-        private void ButtonOk_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-    }
-}
+//        private void ButtonOk_Click(object sender, EventArgs e)
+//        {
+//            Close();
+//        }
+//    }
+//}

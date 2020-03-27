@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace SystemTrayMenu.NativeMethods
+namespace SystemTrayMenu.NativeDllImport
 {
     public static partial class NativeMethods
     {

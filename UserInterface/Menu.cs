@@ -4,11 +4,13 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
-using SystemTrayMenu.Helper;
+using SystemTrayMenu.Helper.Taskbar;
+using SystemTrayMenu.Utilities;
+using EventHandler = SystemTrayMenu.Helper.EventHandler;
 
-namespace SystemTrayMenu
+namespace SystemTrayMenu.UserInterface
 {
-    public partial class Menu : Form, IDisposable
+    public partial class Menu : Form
     {
         public new event EventHandler MouseWheel;
         public event EventHandler Deactivated;
@@ -133,11 +135,14 @@ namespace SystemTrayMenu
 
         public void SetTitle(string title)
         {
-            if (title.Length > MenuDefines.LengthMax)
+            if (!string.IsNullOrEmpty(title))
             {
-                title = $"{title.Substring(0, MenuDefines.LengthMax)}...";
+                if (title.Length > MenuDefines.LengthMax)
+                {
+                    title = $"{title.Substring(0, MenuDefines.LengthMax)}...";
+                }
+                labelTitle.Text = title;
             }
-            labelTitle.Text = title;
         }
 
         public void FadeIn()
@@ -157,22 +162,25 @@ namespace SystemTrayMenu
 
         public void AdjustLocationAndSize(Screen screen)
         {
-            DataGridViewElementStates states = DataGridViewElementStates.None;
-            dgv.AutoResizeRows();
-            int height = dgv.Rows.GetRowsHeight(states);
-            int heightMax = screen.Bounds.Height -
-                new Taskbar().Size.Height -
-                labelTitle.Height;
-            if (height > heightMax)
+            if (screen != null)
             {
-                height = heightMax;
-            }
-            dgv.Height = height;
-            AdjustDataGridViewSize();
-            int x = screen.Bounds.Right - Width;
-            int y = heightMax - Height + labelTitle.Height;
+                DataGridViewElementStates states = DataGridViewElementStates.None;
+                dgv.AutoResizeRows();
+                int height = dgv.Rows.GetRowsHeight(states);
+                int heightMax = screen.Bounds.Height -
+                    new Taskbar().Size.Height -
+                    labelTitle.Height;
+                if (height > heightMax)
+                {
+                    height = heightMax;
+                }
+                dgv.Height = height;
+                AdjustDataGridViewSize();
+                int x = screen.Bounds.Right - Width;
+                int y = heightMax - Height + labelTitle.Height;
 
-            Location = new Point(x, y);
+                Location = new Point(x, y);
+            }
         }
 
         public void AdjustLocationAndSize(int heightMax, Menu menuPredecessor)
@@ -324,39 +332,6 @@ namespace SystemTrayMenu
                     break;
             }
             return base.ProcessCmdKey(ref msg, keys);
-        }
-    }
-
-    /// <summary>
-    /// Workaround class for "Clipboard" issue on .Net Windows Forms Label (https://github.com/Hofknecht/SystemTrayMenu/issues/5)
-    /// On Label MouseDoubleClick the framework will copy the title text into the clipboard.
-    /// We avoid this by overriding the Text atrribute and use own _text attribute.
-    /// Text will remain unset and clipboard copy will not take place but it is still possible to get/set Text attribute as usual from outside.
-    /// (see: https://stackoverflow.com/questions/2519587/is-there-any-way-to-disable-the-double-click-to-copy-functionality-of-a-net-l)
-    /// 
-    /// Note: When you have trouble with the Visual Studio Designer not showing the GUI properly, simply build once and reopen the Designer.
-    /// This will place the required files into the Designer's cache and becomes able to show the GUI as usual.
-    /// </summary>
-    public class LabelNoCopy : Label
-    {
-        private string _text;
-        public override string Text
-        {
-            get => _text;
-            set
-            {
-                if (value == null)
-                {
-                    value = "";
-                }
-
-                if (_text != value)
-                {
-                    _text = value;
-                    Refresh();
-                    OnTextChanged(EventArgs.Empty);
-                }
-            }
         }
     }
 }

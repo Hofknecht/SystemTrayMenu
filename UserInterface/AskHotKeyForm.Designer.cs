@@ -1,4 +1,4 @@
-﻿namespace SystemTrayMenu.Controls
+﻿namespace SystemTrayMenu.UserInterface
 {
     partial class AskHotKeyForm
     {

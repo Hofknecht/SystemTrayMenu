@@ -6,7 +6,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Utilities
 {
     // from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
     // added ImageList_GetIcon, IconCache, AddIconOverlay
@@ -70,29 +70,29 @@ namespace SystemTrayMenu.Helper
             IconSize size = IconSize.Small)
         {
             Icon icon = null;
-            NativeMethods.NativeMethods.SHFILEINFO shfi = new NativeMethods.NativeMethods.SHFILEINFO();
-            uint flags = NativeMethods.NativeMethods.ShgfiIcon | NativeMethods.NativeMethods.ShgfiSYSICONINDEX;
+            NativeDllImport.NativeMethods.SHFILEINFO shfi = new NativeDllImport.NativeMethods.SHFILEINFO();
+            uint flags = NativeDllImport.NativeMethods.ShgfiIcon | NativeDllImport.NativeMethods.ShgfiSYSICONINDEX;
 
             //MH: Removed, otherwise wrong icon
             // | Shell32.SHGFI_USEFILEATTRIBUTES ;
 
             if (true == linkOverlay)
             {
-                flags += NativeMethods.NativeMethods.ShgfiLINKOVERLAY;
+                flags += NativeDllImport.NativeMethods.ShgfiLINKOVERLAY;
             }
 
             /* Check the size specified for return. */
             if (IconSize.Small == size)
             {
-                flags += NativeMethods.NativeMethods.ShgfiSMALLICON;
+                flags += NativeDllImport.NativeMethods.ShgfiSMALLICON;
             }
             else
             {
-                flags += NativeMethods.NativeMethods.ShgfiLARGEICON;
+                flags += NativeDllImport.NativeMethods.ShgfiLARGEICON;
             }
 
-            IntPtr hImageList = NativeMethods.NativeMethods.Shell32SHGetFileInfo(filePath,
-                NativeMethods.NativeMethods.FileAttributeNormal,
+            IntPtr hImageList = NativeDllImport.NativeMethods.Shell32SHGetFileInfo(filePath,
+                NativeDllImport.NativeMethods.FileAttributeNormal,
                 ref shfi,
                 (uint)System.Runtime.InteropServices.Marshal.SizeOf(shfi),
                 flags);
@@ -106,7 +106,7 @@ namespace SystemTrayMenu.Helper
                 else
                 {
                     // Get icon from .ink without overlay
-                    hIcon = NativeMethods.NativeMethods.ImageList_GetIcon(hImageList, shfi.iIcon, NativeMethods.NativeMethods.IldTransparent);
+                    hIcon = NativeDllImport.NativeMethods.ImageList_GetIcon(hImageList, shfi.iIcon, NativeDllImport.NativeMethods.IldTransparent);
                 }
 
                 try
@@ -122,10 +122,10 @@ namespace SystemTrayMenu.Helper
                 // Cleanup
                 if (!linkOverlay)
                 {
-                    NativeMethods.NativeMethods.User32DestroyIcon(hIcon);
+                    NativeDllImport.NativeMethods.User32DestroyIcon(hIcon);
                 }
 
-                NativeMethods.NativeMethods.User32DestroyIcon(shfi.hIcon);
+                NativeDllImport.NativeMethods.User32DestroyIcon(shfi.hIcon);
             }
 
             return icon;
@@ -141,31 +141,31 @@ namespace SystemTrayMenu.Helper
             //uint flags = Shell32.SHGFI_ICON | Shell32.SHGFI_USEFILEATTRIBUTES;
 
             //MH: Removed SHGFI_USEFILEATTRIBUTES, otherwise was wrong folder icon
-            uint flags = NativeMethods.NativeMethods.ShgfiIcon; // | Shell32.SHGFI_USEFILEATTRIBUTES;
+            uint flags = NativeDllImport.NativeMethods.ShgfiIcon; // | Shell32.SHGFI_USEFILEATTRIBUTES;
 
             if (true == linkOverlay)
             {
-                flags += NativeMethods.NativeMethods.ShgfiLINKOVERLAY;
+                flags += NativeDllImport.NativeMethods.ShgfiLINKOVERLAY;
             }
 
             if (FolderType.Open == folderType)
             {
-                flags += NativeMethods.NativeMethods.ShgfiOPENICON;
+                flags += NativeDllImport.NativeMethods.ShgfiOPENICON;
             }
 
             if (IconSize.Small == size)
             {
-                flags += NativeMethods.NativeMethods.ShgfiSMALLICON;
+                flags += NativeDllImport.NativeMethods.ShgfiSMALLICON;
             }
             else
             {
-                flags += NativeMethods.NativeMethods.ShgfiLARGEICON;
+                flags += NativeDllImport.NativeMethods.ShgfiLARGEICON;
             }
 
             // Get the folder icon
-            NativeMethods.NativeMethods.SHFILEINFO shfi = new NativeMethods.NativeMethods.SHFILEINFO();
-            IntPtr Success = NativeMethods.NativeMethods.Shell32SHGetFileInfo(directoryPath,
-                NativeMethods.NativeMethods.FileAttributeDirectory,
+            NativeDllImport.NativeMethods.SHFILEINFO shfi = new NativeDllImport.NativeMethods.SHFILEINFO();
+            IntPtr Success = NativeDllImport.NativeMethods.Shell32SHGetFileInfo(directoryPath,
+                NativeDllImport.NativeMethods.FileAttributeDirectory,
                 ref shfi,
                 (uint)Marshal.SizeOf(shfi),
                 flags);
@@ -184,7 +184,7 @@ namespace SystemTrayMenu.Helper
                 }
 
                 // Cleanup
-                NativeMethods.NativeMethods.User32DestroyIcon(shfi.hIcon);
+                NativeDllImport.NativeMethods.User32DestroyIcon(shfi.hIcon);
             }
 
             return icon;

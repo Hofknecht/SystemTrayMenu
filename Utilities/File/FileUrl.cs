@@ -1,6 +1,6 @@
 ﻿using Microsoft.Win32;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Utilities
 {
     public static class FileUrl
     {

@@ -79,7 +79,7 @@ namespace SystemTrayMenu.Helper
             _currentId = _currentId + 1;
 
             // register the hot key.
-            if (!NativeMethods.NativeMethods.User32RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
+            if (!NativeDllImport.NativeMethods.User32RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
             {
                 throw new InvalidOperationException("Couldn’t register the hot key.");
             }
@@ -97,7 +97,7 @@ namespace SystemTrayMenu.Helper
             // unregister all the registered hot keys.
             for (int i = _currentId; i > 0; i--)
             {
-                NativeMethods.NativeMethods.User32UnregisterHotKey(_window.Handle, i);
+                NativeDllImport.NativeMethods.User32UnregisterHotKey(_window.Handle, i);
             }
 
             // dispose the inner native window.

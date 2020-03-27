@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using SystemTrayMenu.Helper;
+using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu
 {
