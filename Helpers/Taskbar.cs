@@ -41,19 +41,16 @@ namespace SystemTrayMenu
             private set;
         }
 
-        [DllImport("shell32.dll", SetLastError = true)]
-        public static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
-
         public Taskbar()
         {
-            IntPtr taskbarHandle = User32.FindWindow(Taskbar.ClassName, null);
+            IntPtr taskbarHandle = NativeMethods.NativeMethods.User32FindWindow(Taskbar.ClassName, null);
 
             APPBARDATA data = new APPBARDATA
             {
                 cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA)),
                 hWnd = taskbarHandle
             };
-            IntPtr result = SHAppBarMessage(ABM.GetTaskbarPos, ref data);
+            IntPtr result = NativeMethods.NativeMethods.Shell32SHAppBarMessage(ABM.GetTaskbarPos, ref data);
             if (result == IntPtr.Zero)
             {
                 //throw new InvalidOperationException();
@@ -65,7 +62,7 @@ namespace SystemTrayMenu
                 Bounds = Rectangle.FromLTRB(data.rc.left, data.rc.top, data.rc.right, data.rc.bottom);
 
                 data.cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA));
-                result = SHAppBarMessage(ABM.GetState, ref data);
+                result = NativeMethods.NativeMethods.Shell32SHAppBarMessage(ABM.GetState, ref data);
                 int state = result.ToInt32();
                 AlwaysOnTop = (state & ABS.AlwaysOnTop) == ABS.AlwaysOnTop;
                 AutoHide = (state & ABS.Autohide) == ABS.Autohide;
@@ -100,12 +97,6 @@ namespace SystemTrayMenu
     {
         public const int Autohide = 0x0000001;
         public const int AlwaysOnTop = 0x0000002;
-    }
-
-    public static class User32
-    {
-        [DllImport("user32.dll", SetLastError = true)]
-        public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
     }
 
     [StructLayout(LayoutKind.Sequential)]

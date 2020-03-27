@@ -163,7 +163,7 @@ namespace SystemTrayMenu.Helper
         #endregion
 
         #region InvokeCommand
-        private void InvokeCommand(IContextMenu oContextMenu, uint nCmd, string strFolder, Point pointInvoke)
+        private static void InvokeCommand(IContextMenu contextMenu, uint nCmd, string strFolder, Point pointInvoke)
         {
             CMINVOKECOMMANDINFOEX invoke = new CMINVOKECOMMANDINFOEX
             {
@@ -179,7 +179,7 @@ namespace SystemTrayMenu.Helper
                 nShow = SW.SHOWNORMAL
             };
 
-            oContextMenu.InvokeCommand(ref invoke);
+            _ = contextMenu.InvokeCommand(ref invoke);
         }
         #endregion
 
@@ -234,7 +234,7 @@ namespace SystemTrayMenu.Helper
             if (null == _oDesktopFolder)
             {
                 // Get desktop IShellFolder
-                int nResult = SHGetDesktopFolder(out pUnkownDesktopFolder);
+                int nResult = NativeMethods.NativeMethods.Shell32SHGetDesktopFolder(out pUnkownDesktopFolder);
                 if (S_OK != nResult)
                 {
                     throw new ShellContextMenuException("Failed to get the desktop shell folder");
@@ -276,7 +276,7 @@ namespace SystemTrayMenu.Helper
                 Marshal.WriteInt32(pStrRet, 0, 0);
                 nResult = _oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
                 StringBuilder strFolder = new StringBuilder(MAX_PATH);
-                StrRetToBuf(pStrRet, pPIDL, strFolder, MAX_PATH);
+                _ = NativeMethods.NativeMethods.ShlwapiStrRetToBuf(pStrRet, pPIDL, strFolder, MAX_PATH);
                 Marshal.FreeCoTaskMem(pStrRet);
                 pStrRet = IntPtr.Zero;
                 _strParentFolder = strFolder.ToString();
@@ -382,7 +382,7 @@ namespace SystemTrayMenu.Helper
         /// Free the PIDLs
         /// </summary>
         /// <param name="arrPIDLs">Array of PIDLs (IntPtr)</param>
-        protected void FreePIDLs(IntPtr[] arrPIDLs)
+        protected static void FreePIDLs(IntPtr[] arrPIDLs)
         {
             if (null != arrPIDLs)
             {
@@ -422,7 +422,7 @@ namespace SystemTrayMenu.Helper
                     return;
                 }
 
-                pMenu = CreatePopupMenu();
+                pMenu = NativeMethods.NativeMethods.User32CreatePopupMenu();
 
                 int nResult = _oContextMenu.QueryContextMenu(
                     pMenu,
@@ -432,13 +432,13 @@ namespace SystemTrayMenu.Helper
                     CMF.DEFAULTONLY |
                     ((Control.ModifierKeys & Keys.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
 
-                uint nDefaultCmd = (uint)GetMenuDefaultItem(pMenu, false, 0);
+                uint nDefaultCmd = (uint)NativeMethods.NativeMethods.User32GetMenuDefaultItem(pMenu, false, 0);
                 if (nDefaultCmd >= CMD_FIRST)
                 {
                     InvokeCommand(_oContextMenu, nDefaultCmd, arrFI[0].DirectoryName, Control.MousePosition);
                 }
 
-                DestroyMenu(pMenu);
+                NativeMethods.NativeMethods.User32DestroyMenu(pMenu);
                 pMenu = IntPtr.Zero;
             }
             catch
@@ -449,7 +449,7 @@ namespace SystemTrayMenu.Helper
             {
                 if (pMenu != IntPtr.Zero)
                 {
-                    DestroyMenu(pMenu);
+                    NativeMethods.NativeMethods.User32DestroyMenu(pMenu);
                 }
                 ReleaseAll();
             }
@@ -515,7 +515,7 @@ namespace SystemTrayMenu.Helper
                     return;
                 }
 
-                pMenu = CreatePopupMenu();
+                pMenu = NativeMethods.NativeMethods.User32CreatePopupMenu();
 
                 int nResult = _oContextMenu.QueryContextMenu(
                     pMenu,
@@ -534,15 +534,15 @@ namespace SystemTrayMenu.Helper
 
                 //hook.Install();
 
-                uint nSelected = TrackPopupMenuEx(
+                uint nSelected = NativeMethods.NativeMethods.User32TrackPopupMenuEx(
                     pMenu,
-                    TPM.RETURNCMD,
+                    NativeMethods.NativeMethods.TPM.RETURNCMD,
                     pointScreen.X,
                     pointScreen.Y,
                     Handle,
                     IntPtr.Zero);
 
-                DestroyMenu(pMenu);
+                NativeMethods.NativeMethods.User32DestroyMenu(pMenu);
                 pMenu = IntPtr.Zero;
 
                 if (nSelected != 0)
@@ -559,7 +559,7 @@ namespace SystemTrayMenu.Helper
                 //hook.Uninstall();
                 if (pMenu != IntPtr.Zero)
                 {
-                    DestroyMenu(pMenu);
+                    NativeMethods.NativeMethods.User32DestroyMenu(pMenu);
                 }
 
                 if (iContextMenuPtr != IntPtr.Zero)
@@ -630,38 +630,9 @@ namespace SystemTrayMenu.Helper
         private const uint CMD_LAST = 30000;
 
         private const int S_OK = 0;
-        private const int S_FALSE = 1;
 
         private static readonly int cbMenuItemInfo = Marshal.SizeOf(typeof(MENUITEMINFO));
         private static readonly int cbInvokeCommand = Marshal.SizeOf(typeof(CMINVOKECOMMANDINFOEX));
-
-        #endregion
-
-        #region DLL Import
-
-        // Retrieves the IShellFolder interface for the desktop folder, which is the root of the Shell's namespace.
-        [DllImport("shell32.dll")]
-        private static extern int SHGetDesktopFolder(out IntPtr ppshf);
-
-        // Takes a STRRET structure returned by IShellFolder::GetDisplayNameOf, converts it to a string, and places the result in a buffer. 
-        [DllImport("shlwapi.dll", EntryPoint = "StrRetToBuf", ExactSpelling = false, CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern int StrRetToBuf(IntPtr pstr, IntPtr pidl, StringBuilder pszBuf, int cchBuf);
-
-        // The TrackPopupMenuEx function displays a shortcut menu at the specified location and tracks the selection of items on the shortcut menu. The shortcut menu can appear anywhere on the screen.
-        [DllImport("user32.dll", ExactSpelling = true, CharSet = CharSet.Auto)]
-        private static extern uint TrackPopupMenuEx(IntPtr hmenu, TPM flags, int x, int y, IntPtr hwnd, IntPtr lptpm);
-
-        // The CreatePopupMenu function creates a drop-down menu, submenu, or shortcut menu. The menu is initially empty. You can insert or append menu items by using the InsertMenuItem function. You can also use the InsertMenu function to insert menu items and the AppendMenu function to append menu items.
-        [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-        private static extern IntPtr CreatePopupMenu();
-
-        // The DestroyMenu function destroys the specified menu and frees any memory that the menu occupies.
-        [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-        private static extern bool DestroyMenu(IntPtr hMenu);
-
-        // Determines the default menu item on the specified menu
-        [DllImport("user32", SetLastError = true, CharSet = CharSet.Auto)]
-        private static extern int GetMenuDefaultItem(IntPtr hMenu, bool fByPos, uint gmdiFlags);
 
         #endregion
 
@@ -872,31 +843,6 @@ namespace SystemTrayMenu.Helper
             VERBW = 4,
             HELPTEXTW = 5,
             VALIDATEW = 6
-        }
-
-        // Specifies how TrackPopupMenuEx positions the shortcut menu horizontally
-        [Flags]
-        private enum TPM : uint
-        {
-            LEFTBUTTON = 0x0000,
-            RIGHTBUTTON = 0x0002,
-            LEFTALIGN = 0x0000,
-            CENTERALIGN = 0x0004,
-            RIGHTALIGN = 0x0008,
-            TOPALIGN = 0x0000,
-            VCENTERALIGN = 0x0010,
-            BOTTOMALIGN = 0x0020,
-            HORIZONTAL = 0x0000,
-            VERTICAL = 0x0040,
-            NONOTIFY = 0x0080,
-            RETURNCMD = 0x0100,
-            RECURSE = 0x0001,
-            HORPOSANIMATION = 0x0400,
-            HORNEGANIMATION = 0x0800,
-            VERPOSANIMATION = 0x1000,
-            VERNEGANIMATION = 0x2000,
-            NOANIMATION = 0x4000,
-            LAYOUTRTL = 0x8000
         }
 
         // The cmd for a custom added menu item
@@ -1455,210 +1401,4 @@ namespace SystemTrayMenu.Helper
         }
         #endregion
     }
-
-    #region ShellContextMenuException
-    public class ShellContextMenuException : Exception
-    {
-        /// <summary>Default contructor</summary>
-        public ShellContextMenuException()
-        {
-        }
-
-        /// <summary>Constructor with message</summary>
-        /// <param name="message">Message</param>
-        public ShellContextMenuException(string message)
-            : base(message)
-        {
-        }
-    }
-    #endregion
-
-    #region Class HookEventArgs
-    public class HookEventArgs : EventArgs
-    {
-        public int HookCode;	// Hook code
-        public IntPtr wParam;	// WPARAM argument
-        public IntPtr lParam;	// LPARAM argument
-    }
-    #endregion
-
-    #region Enum HookType
-    // Hook Types
-    public enum HookType : int
-    {
-        WH_JOURNALRECORD = 0,
-        WH_JOURNALPLAYBACK = 1,
-        WH_KEYBOARD = 2,
-        WH_GETMESSAGE = 3,
-        WH_CALLWNDPROC = 4,
-        WH_CBT = 5,
-        WH_SYSMSGFILTER = 6,
-        WH_MOUSE = 7,
-        WH_HARDWARE = 8,
-        WH_DEBUG = 9,
-        WH_SHELL = 10,
-        WH_FOREGROUNDIDLE = 11,
-        WH_CALLWNDPROCRET = 12,
-        WH_KEYBOARD_LL = 13,
-        WH_MOUSE_LL = 14
-    }
-    #endregion
-
-    #region Class LocalWindowsHook
-    public class LocalWindowsHook
-    {
-        // ************************************************************************
-        // Filter function delegate
-        public delegate int HookProc(int code, IntPtr wParam, IntPtr lParam);
-        // ************************************************************************
-
-        // ************************************************************************
-        // Internal properties
-        protected IntPtr m_hhook = IntPtr.Zero;
-        protected HookProc m_filterFunc = null;
-        protected HookType m_hookType;
-        // ************************************************************************
-
-        // ************************************************************************
-        // Event delegate
-        public delegate void HookEventHandler(object sender, HookEventArgs e);
-        // ************************************************************************
-
-        // ************************************************************************
-        // Event: HookInvoked 
-        public event HookEventHandler HookInvoked;
-        protected void OnHookInvoked(HookEventArgs e)
-        {
-            if (HookInvoked != null)
-            {
-                HookInvoked(this, e);
-            }
-        }
-        // ************************************************************************
-
-        // ************************************************************************
-        // Class constructor(s)
-        public LocalWindowsHook(HookType hook)
-        {
-            m_hookType = hook;
-            m_filterFunc = new HookProc(CoreHookProc);
-        }
-        public LocalWindowsHook(HookType hook, HookProc func)
-        {
-            m_hookType = hook;
-            m_filterFunc = func;
-        }
-        // ************************************************************************
-
-        // ************************************************************************
-        // Default filter function
-        protected int CoreHookProc(int code, IntPtr wParam, IntPtr lParam)
-        {
-            if (code < 0)
-            {
-                return CallNextHookEx(m_hhook, code, wParam, lParam);
-            }
-
-            // Let clients determine what to do
-            HookEventArgs e = new HookEventArgs
-            {
-                HookCode = code,
-                wParam = wParam,
-                lParam = lParam
-            };
-            OnHookInvoked(e);
-
-            // Yield to the next hook in the chain
-            return CallNextHookEx(m_hhook, code, wParam, lParam);
-        }
-        // ************************************************************************
-
-        // ************************************************************************
-        // Install the hook
-        public void Install()
-        {
-            m_hhook = SetWindowsHookEx(
-                m_hookType,
-                m_filterFunc,
-                IntPtr.Zero,
-#pragma warning disable CS0618 // depricated
-                AppDomain.GetCurrentThreadId());
-#pragma warning restore CS0618 // depricated
-        }
-        // ************************************************************************
-
-        // ************************************************************************
-        // Uninstall the hook
-        public void Uninstall()
-        {
-            UnhookWindowsHookEx(m_hhook);
-        }
-        // ************************************************************************
-
-
-        #region Win32 Imports
-        // ************************************************************************
-        // Win32: SetWindowsHookEx()
-        [DllImport("user32.dll")]
-        protected static extern IntPtr SetWindowsHookEx(HookType code,
-            HookProc func,
-            IntPtr hInstance,
-            int threadID);
-        // ************************************************************************
-
-        // ************************************************************************
-        // Win32: UnhookWindowsHookEx()
-        [DllImport("user32.dll")]
-        protected static extern int UnhookWindowsHookEx(IntPtr hhook);
-        // ************************************************************************
-
-        // ************************************************************************
-        // Win32: CallNextHookEx()
-        [DllImport("user32.dll")]
-        protected static extern int CallNextHookEx(IntPtr hhook,
-            int code, IntPtr wParam, IntPtr lParam);
-        // ************************************************************************
-        #endregion
-    }
-    #endregion
-
-    #region ShellHelper
-
-    internal static class ShellHelper
-    {
-        #region Low/High Word
-
-        /// <summary>
-        /// Retrieves the High Word of a WParam of a WindowMessage
-        /// </summary>
-        /// <param name="ptr">The pointer to the WParam</param>
-        /// <returns>The unsigned integer for the High Word</returns>
-        public static uint HiWord(IntPtr ptr)
-        {
-            uint param32 = (uint)(ptr.ToInt64() | 0xffffffffL);
-            if ((param32 & 0x80000000) == 0x80000000)
-            {
-                return (param32 >> 16);
-            }
-            else
-            {
-                return (param32 >> 16) & 0xffff;
-            }
-        }
-
-        /// <summary>
-        /// Retrieves the Low Word of a WParam of a WindowMessage
-        /// </summary>
-        /// <param name="ptr">The pointer to the WParam</param>
-        /// <returns>The unsigned integer for the Low Word</returns>
-        public static uint LoWord(IntPtr ptr)
-        {
-            uint param32 = (uint)(ptr.ToInt64() | 0xffffffffL);
-            return (param32 & 0xffff);
-        }
-
-        #endregion
-    }
-
-    #endregion
 }

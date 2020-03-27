@@ -1,37 +1,30 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.NativeMethods
 {
-    public static class WindowToTop
+    public static partial class NativeMethods
     {
         [DllImport("user32.dll")]
         private static extern bool IsIconic(IntPtr hWnd);
 
-        //DLL's for ForceForgroundWindow
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr GetForegroundWindow();
+
         [DllImport("user32.dll")]
         private static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr ProcessId);
+
         [DllImport("kernel32.dll")]
         private static extern uint GetCurrentThreadId();
+
         [DllImport("user32.dll")]
         private static extern bool AttachThreadInput(uint idAttach, uint idAttachTo, bool fAttach);
+
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool BringWindowToTop(IntPtr hWnd);
-        //[DllImport("user32.dll", SetLastError = true)]
-        //public static extern bool BringWindowToTop(HandleRef hWnd);
-        [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
         private const int SW_RESTORE = 9;
 
-        public static void ForceProcessToForeground(string processName)
-        {
-            Process[] proc = Process.GetProcessesByName(processName);
-            ForceForegroundWindow(proc[0].MainWindowHandle);
-        }
         public static void ForceForegroundWindow(IntPtr hWnd)
         {
             uint foreThread = GetWindowThreadProcessId(GetForegroundWindow(), IntPtr.Zero);

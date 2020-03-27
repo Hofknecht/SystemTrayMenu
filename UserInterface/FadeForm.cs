@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace SystemTrayMenu
@@ -79,7 +78,7 @@ namespace SystemTrayMenu
             }
             else
             {
-                ShowInactiveTopmost(form);
+                NativeMethods.NativeMethods.User32ShowInactiveTopmost(form);
                 timerFadeOut.Stop();
                 timerFadeIn.Start();
             }
@@ -127,31 +126,6 @@ namespace SystemTrayMenu
             {
                 form.Opacity -= MenuDefines.OpacityHalfStep;
             }
-        }
-
-        private const int SW_SHOWNOACTIVATE = 4;
-        private const int HWND_TOPMOST = -1;
-        private const uint SWP_NOACTIVATE = 0x0010;
-
-        [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
-        private static extern bool SetWindowPos(
-             int hWnd,             // Window handle
-             int hWndInsertAfter,  // Placement-order handle
-             int X,                // Horizontal position
-             int Y,                // Vertical position
-             int cx,               // Width
-             int cy,               // Height
-             uint uFlags);         // Window positioning flags
-
-        [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        private static void ShowInactiveTopmost(Form frm)
-        {
-            ShowWindow(frm.Handle, SW_SHOWNOACTIVATE);
-            SetWindowPos(frm.Handle.ToInt32(), HWND_TOPMOST,
-            frm.Left, frm.Top, frm.Width, frm.Height,
-            SWP_NOACTIVATE);
         }
     }
 }

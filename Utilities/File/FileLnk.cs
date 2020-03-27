@@ -7,11 +7,6 @@ namespace SystemTrayMenu
 {
     internal class LnkHelper
     {
-        #region Signitures imported from http://pinvoke.net
-
-        [DllImport("shfolder.dll", CharSet = CharSet.Auto)]
-        internal static extern int SHGetFolderPath(IntPtr hwndOwner, int nFolder, IntPtr hToken, int dwFlags, StringBuilder lpszPath);
-
         [Flags()]
         private enum SLGP_FLAGS
         {
@@ -160,8 +155,6 @@ namespace SystemTrayMenu
         public class ShellLink
         {
         }
-
-        #endregion
 
         public static string ResolveShortcut(string filename)
         {

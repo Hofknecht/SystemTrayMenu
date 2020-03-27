@@ -7,7 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using SystemTrayMenu.Controls;
+using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Handler;
 using SystemTrayMenu.Helper;
 
@@ -133,7 +133,7 @@ namespace SystemTrayMenu
                 Menus().ToList().ForEach(m => { m.FadeIn(); m.FadeHalf(); });
                 menus[0].SetTitleColorActive();
                 menus[0].Activate();
-                WindowToTop.ForceForegroundWindow(menus[0].Handle);
+                NativeMethods.NativeMethods.ForceForegroundWindow(menus[0].Handle);
             }
 
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
@@ -681,8 +681,6 @@ namespace SystemTrayMenu
             AddItemsToMenu(menuData.RowDatas, menu);
             return menu;
         }
-
-
 
         private void AddItemsToMenu(List<RowData> data, Menu menu)
         {

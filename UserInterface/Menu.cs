@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
-using SystemTrayMenu.Controls;
+using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu
@@ -61,7 +61,8 @@ namespace SystemTrayMenu
         {
             typeof(Control).InvokeMember("DoubleBuffered",
                 BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
-                null, ctl, new object[] { DoubleBuffered });
+                null, ctl, new object[] { DoubleBuffered },
+                System.Globalization.CultureInfo.InvariantCulture);
         }
 
         public void SetTypeSub()

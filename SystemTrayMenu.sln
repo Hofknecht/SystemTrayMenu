@@ -5,6 +5,16 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemTrayMenu", "SystemTrayMenu.csproj", "{F317AF2E-9704-4A2A-BDAE-B4662ED9483B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemTrayMenuDocuments", "SystemTrayMenuDocuments", "{FA49BF01-9C05-4750-85DF-319F6ECCE506}"
+	ProjectSection(SolutionItems) = preProject
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE = LICENSE
+		mails Antivirus.txt = mails Antivirus.txt
+		README.md = README.md
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

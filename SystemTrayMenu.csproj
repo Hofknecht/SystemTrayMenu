@@ -137,46 +137,71 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
-    <Compile Include="Controls\AboutBox.cs">
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="NativeMethods\DestroyMenu.cs" />
+    <Compile Include="NativeMethods\CreatePopupMenu.cs" />
+    <Compile Include="NativeMethods\GetMenuDefaultItem.cs" />
+    <Compile Include="NativeMethods\TrackPopupMenuEx.cs" />
+    <Compile Include="NativeMethods\StrRetToBuf.cs" />
+    <Compile Include="NativeMethods\SHGetDesktopFolder.cs" />
+    <Compile Include="UserInterface\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\AboutBox.Designer.cs">
+    <Compile Include="UserInterface\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\AskHotKeyForm.cs">
+    <Compile Include="UserInterface\AskHotKeyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\AskHotKeyForm.Designer.cs">
+    <Compile Include="UserInterface\AskHotKeyForm.Designer.cs">
       <DependentUpon>AskHotKeyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\DragDropHintForm.cs">
+    <Compile Include="UserInterface\DragDropHintForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\DragDropHintForm.Designer.cs">
+    <Compile Include="UserInterface\DragDropHintForm.Designer.cs">
       <DependentUpon>DragDropHintForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\MenuData.cs" />
-    <Compile Include="Controls\RowData.cs" />
-    <Compile Include="Controls\AppContextMenu.cs" />
-    <Compile Include="Helper\AppRestart.cs" />
-    <Compile Include="Helper\BringWindowToTop.cs" />
-    <Compile Include="Helper\DataGridViewExtensions.cs" />
-    <Compile Include="Helper\File\IconReader.cs" />
-    <Compile Include="Helper\File\FileIni.cs" />
-    <Compile Include="Helper\File\FileLnk.cs" />
-    <Compile Include="Helper\FolderOptions.cs" />
-    <Compile Include="Helper\KeyboardHook.cs" />
-    <Compile Include="Helper\Log.cs" />
-    <Compile Include="Helper\SingleAppInstance.cs" />
-    <Compile Include="Helper\MessageFilter.cs" />
-    <Compile Include="Helper\Language.cs" />
-    <Compile Include="Helper\Scaling.cs" />
-    <Compile Include="Helper\ShellContextMenu.cs" />
-    <Compile Include="Helper\File\FileUrl.cs" />
-    <Compile Include="Handler\WaitFastLeave.cs" />
-    <Compile Include="Handler\WaitMenuOpen.cs" />
-    <Compile Include="Helper\WindowsExplorerSort.cs" />
+    <Compile Include="DataClasses\MenuData.cs" />
+    <Compile Include="DataClasses\RowData.cs" />
+    <Compile Include="UserInterface\AppContextMenu.cs" />
+    <Compile Include="Utilities\AppRestart.cs" />
+    <Compile Include="Utilities\DataGridViewExtensions.cs" />
+    <Compile Include="Utilities\File\IconReader.cs" />
+    <Compile Include="Utilities\File\FileIni.cs" />
+    <Compile Include="Utilities\File\FileLnk.cs" />
+    <Compile Include="Utilities\FolderOptions.cs" />
+    <Compile Include="Helpers\KeyboardHook.cs" />
+    <Compile Include="Utilities\Log.cs" />
+    <Compile Include="Utilities\SingleAppInstance.cs" />
+    <Compile Include="Helpers\MessageFilter.cs" />
+    <Compile Include="Utilities\Language.cs" />
+    <Compile Include="Utilities\Scaling.cs" />
+    <Compile Include="UserInterface\ShellContextMenu\HookEventArgs.cs" />
+    <Compile Include="UserInterface\ShellContextMenu\ShellContextMenuException.cs" />
+    <Compile Include="UserInterface\ShellContextMenu\HookType.cs" />
+    <Compile Include="UserInterface\ShellContextMenu\ShellHelper.cs" />
+    <Compile Include="UserInterface\ShellContextMenu\LocalWindowsHook.cs" />
+    <Compile Include="UserInterface\ShellContextMenu\ShellContextMenu.cs" />
+    <Compile Include="Utilities\File\FileUrl.cs" />
+    <Compile Include="Business\WaitFastLeave.cs" />
+    <Compile Include="Business\WaitMenuOpen.cs" />
+    <Compile Include="Helpers\WindowsExplorerSort.cs" />
+    <Compile Include="NativeMethods\GetIcon.cs" />
+    <Compile Include="NativeMethods\SHGetFolderPath.cs" />
+    <Compile Include="NativeMethods\SHGetFileInfo.cs" />
+    <Compile Include="NativeMethods\SetProcessDPIAware.cs" />
+    <Compile Include="NativeMethods\GetDeviceCaps.cs" />
+    <Compile Include="NativeMethods\RegisterHotKey.cs" />
+    <Compile Include="NativeMethods\ShowWindow.cs" />
+    <Compile Include="NativeMethods\ShowInactiveTopmost.cs" />
+    <Compile Include="NativeMethods\SHAppBarMessage.cs" />
+    <Compile Include="NativeMethods\FindWindow.cs" />
+    <Compile Include="NativeMethods\StrCmpLogicalW.cs" />
+    <Compile Include="NativeMethods\FindExecuteable.cs" />
+    <Compile Include="NativeMethods\BringWindowToTop.cs" />
+    <Compile Include="NativeMethods\DestroyIcon.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,30 +217,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lang.resx</DependentUpon>
     </Compile>
-    <Compile Include="MenuDefines.cs" />
-    <Compile Include="Helper\FadeForm.cs" />
-    <Compile Include="Helper\Taskbar.cs" />
-    <Compile Include="Controls\Menu.cs">
+    <Compile Include="Config\MenuDefines.cs" />
+    <Compile Include="UserInterface\FadeForm.cs" />
+    <Compile Include="Helpers\Taskbar.cs" />
+    <Compile Include="UserInterface\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\Menu.Designer.cs">
+    <Compile Include="UserInterface\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\AppNotifyIcon.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="UserInterface\AppNotifyIcon.cs" />
+    <Compile Include="Business\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Handler\KeyboardInput.cs" />
-    <Compile Include="SystemTrayMenu.cs" />
-    <EmbeddedResource Include="Controls\AboutBox.resx">
+    <Compile Include="Business\KeyboardInput.cs" />
+    <Compile Include="Business\SystemTrayMenu.cs" />
+    <EmbeddedResource Include="UserInterface\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AskHotKeyForm.resx">
+    <EmbeddedResource Include="UserInterface\AskHotKeyForm.resx">
       <DependentUpon>AskHotKeyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\DragDropHintForm.resx">
+    <EmbeddedResource Include="UserInterface\DragDropHintForm.resx">
       <DependentUpon>DragDropHintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Menu.resx">
+    <EmbeddedResource Include="UserInterface\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\lang.de-DE.resx">
@@ -337,6 +362,7 @@
       <Version>1.1.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

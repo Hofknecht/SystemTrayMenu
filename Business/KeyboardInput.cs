@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using SystemTrayMenu.Controls;
+using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Helper;
 
 namespace SystemTrayMenu.Handler
