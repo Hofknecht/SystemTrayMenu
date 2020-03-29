@@ -33,6 +33,14 @@ namespace SystemTrayMenu.Utilities
             Closed = 1
         }
 
+        public static void Dispose()
+        {
+            foreach (Icon icon in dictIconCache.Values)
+            {
+                icon.Dispose();
+            }
+        }
+
         public static Icon GetFileIconWithCache(string filePath, bool linkOverlay,
             IconSize size = IconSize.Small)
         {
@@ -41,7 +49,7 @@ namespace SystemTrayMenu.Utilities
 
             if (IsExtensionWitSameIcon(extension))
             {
-                icon = (Icon)dictIconCache.GetOrAdd(extension, GetIcon).Clone();
+                icon = dictIconCache.GetOrAdd(extension, GetIcon);
                 Icon GetIcon(string keyExtension)
                 {
                     return GetFileIcon(filePath, linkOverlay, size);

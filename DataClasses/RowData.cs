@@ -18,11 +18,11 @@ namespace SystemTrayMenu.DataClasses
 {
     internal class RowData : IDisposable
     {
+#warning check if we can put some variables to private instead internal
         internal event Action<object, EventArgs> OpenMenu;
         internal BackgroundWorker Reading = new BackgroundWorker();
         internal FileInfo FileInfo;
         internal Menu SubMenu;
-        internal Icon Icon;
         internal bool IsSelected;
         internal bool IsSelectedByKeyboard;
         internal bool ContainsMenu;
@@ -39,6 +39,8 @@ namespace SystemTrayMenu.DataClasses
         internal string Text;
         internal int RowIndex;
         private readonly WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
+        private Icon Icon = null;
+        private bool diposeIcon = true;
         private bool isDisposed = false;
 
         internal RowData()
@@ -63,7 +65,7 @@ namespace SystemTrayMenu.DataClasses
 
             if (Icon == null)
             {
-                Icon = (Icon)Properties.Resources.SystemTrayMenu.Clone();
+                Icon = (Icon)Properties.Resources.SystemTrayMenu;
             }
             DataGridViewImageCell cellIcon =
                 (DataGridViewImageCell)row.Cells[0];
@@ -122,6 +124,7 @@ namespace SystemTrayMenu.DataClasses
                     try
                     {
                         Icon = IconReader.GetFileIconWithCache(TargetFilePath, false);
+                        diposeIcon = false;
 
                         // other project -> fails sometimes
                         //icon = IconHelper.ExtractIcon(TargetFilePath, 0);
@@ -226,6 +229,7 @@ namespace SystemTrayMenu.DataClasses
                     else
                     {
                         Icon = IconReader.GetFileIconWithCache(browserPath, false);
+                        diposeIcon = false;
                         handled = true;
                     }
                 }
@@ -427,7 +431,10 @@ namespace SystemTrayMenu.DataClasses
             {
                 waitMenuOpen.Dispose();
                 Reading.Dispose();
-                Icon?.Dispose();
+                if (diposeIcon)
+                {
+                    Icon?.Dispose();
+                }
             }
             isDisposed = true;
         }

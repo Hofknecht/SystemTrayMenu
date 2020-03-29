@@ -219,6 +219,7 @@ namespace SystemTrayMenu
             fastLeave.Dispose();
             DisposeMenu(menus[0]);
             dgvFromLastMouseEvent?.Dispose();
+            IconReader.Dispose();
         }
 
         private void DisposeMenu(Menu menuToDispose)
