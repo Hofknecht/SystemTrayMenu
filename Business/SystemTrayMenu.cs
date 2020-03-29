@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,7 +10,6 @@ using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Handler;
 using SystemTrayMenu.Helper;
-using SystemTrayMenu.Helper.Taskbar;
 using SystemTrayMenu.UserInterface;
 using SystemTrayMenu.Utilities;
 using Menu = SystemTrayMenu.UserInterface.Menu;
@@ -220,6 +218,7 @@ namespace SystemTrayMenu
             menuNotifyIcon.Dispose();
             fastLeave.Dispose();
             DisposeMenu(menus[0]);
+            dgvFromLastMouseEvent?.Dispose();
         }
 
         private void DisposeMenu(Menu menuToDispose)
@@ -254,7 +253,7 @@ namespace SystemTrayMenu
         private void AdjustSubMenusLocationAndSize()
         {
             int heightMax = screen.Bounds.Height -
-                new Taskbar().Size.Height;
+                new WindowsTaskbar().Size.Height;
             Menu menuPredecessor = menus[0];
             int widthPredecessors = -1; // -1 padding
             bool directionToRight = false;

@@ -38,21 +38,10 @@ namespace SystemTrayMenu.Utilities
         {
             Icon icon = null;
             string extension = Path.GetExtension(filePath);
-            bool IsExtensionWitSameIcon(string fileExtension)
-            {
-                bool isExtensionWitSameIcon = true;
-                List<string> extensionsWithDiffIcons = new List<string>
-                { ".EXE", ".LNK", ".ICO", ".URL" };
-                if (extensionsWithDiffIcons.Contains(fileExtension.ToUpperInvariant()))
-                {
-                    isExtensionWitSameIcon = false;
-                }
-                return isExtensionWitSameIcon;
-            }
 
             if (IsExtensionWitSameIcon(extension))
             {
-                icon = dictIconCache.GetOrAdd(extension, GetIcon);
+                icon = (Icon)dictIconCache.GetOrAdd(extension, GetIcon).Clone();
                 Icon GetIcon(string keyExtension)
                 {
                     return GetFileIcon(filePath, linkOverlay, size);
@@ -64,6 +53,18 @@ namespace SystemTrayMenu.Utilities
             }
 
             return icon;
+        }
+
+        private static bool IsExtensionWitSameIcon(string fileExtension)
+        {
+            bool isExtensionWitSameIcon = true;
+            List<string> extensionsWithDiffIcons = new List<string>
+                { ".EXE", ".LNK", ".ICO", ".URL" };
+            if (extensionsWithDiffIcons.Contains(fileExtension.ToUpperInvariant()))
+            {
+                isExtensionWitSameIcon = false;
+            }
+            return isExtensionWitSameIcon;
         }
 
         private static Icon GetFileIcon(string filePath, bool linkOverlay,
@@ -94,7 +95,7 @@ namespace SystemTrayMenu.Utilities
             IntPtr hImageList = DllImports.NativeMethods.Shell32SHGetFileInfo(filePath,
                 DllImports.NativeMethods.FileAttributeNormal,
                 ref shfi,
-                (uint)System.Runtime.InteropServices.Marshal.SizeOf(shfi),
+                (uint)Marshal.SizeOf(shfi),
                 flags);
             if (hImageList != IntPtr.Zero) // got valid handle?
             {

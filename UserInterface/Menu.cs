@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
-using SystemTrayMenu.Helper.Taskbar;
+using SystemTrayMenu.Helper;
 using SystemTrayMenu.Utilities;
 using EventHandler = SystemTrayMenu.Helper.EventHandler;
 
@@ -170,7 +170,7 @@ namespace SystemTrayMenu.UserInterface
                 dgv.AutoResizeRows();
                 int height = dgv.Rows.GetRowsHeight(states);
                 int heightMax = screen.Bounds.Height -
-                    new Taskbar().Size.Height -
+                    new WindowsTaskbar().Size.Height -
                     labelTitle.Height;
                 if (height > heightMax)
                 {

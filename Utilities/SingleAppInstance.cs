@@ -30,7 +30,7 @@ namespace SystemTrayMenu.Utilities
                     }
                     catch (Exception ex)
                     {
-                        if (ex is Win32Exception || 
+                        if (ex is Win32Exception ||
                             ex is SystemException)
                         {
                             Log.Error("Run as single instance failed", ex);

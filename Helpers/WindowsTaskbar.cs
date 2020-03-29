@@ -3,7 +3,8 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using static SystemTrayMenu.DllImports.NativeMethods;
 
-namespace SystemTrayMenu.Helper.Taskbar
+//Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager do not have the bounds implemented?
+namespace SystemTrayMenu.Helper
 {
     public enum TaskbarPosition
     {
@@ -14,8 +15,7 @@ namespace SystemTrayMenu.Helper.Taskbar
         Bottom,
     }
 
-    //Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager do not have the bounds implemented?
-    public sealed class Taskbar
+    public sealed class WindowsTaskbar
     {
         private const string ClassName = "Shell_TrayWnd";
 
@@ -43,16 +43,16 @@ namespace SystemTrayMenu.Helper.Taskbar
             private set;
         }
 
-        public Taskbar()
+        public WindowsTaskbar()
         {
-            IntPtr taskbarHandle = DllImports.NativeMethods.User32FindWindow(Taskbar.ClassName, null);
+            IntPtr taskbarHandle = User32FindWindow(ClassName, null);
 
             APPBARDATA data = new APPBARDATA
             {
                 cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA)),
                 hWnd = taskbarHandle
             };
-            IntPtr result = DllImports.NativeMethods.Shell32SHAppBarMessage(ABM.GetTaskbarPos, ref data);
+            IntPtr result = Shell32SHAppBarMessage(ABM.GetTaskbarPos, ref data);
             if (result == IntPtr.Zero)
             {
                 //throw new InvalidOperationException();
@@ -64,7 +64,7 @@ namespace SystemTrayMenu.Helper.Taskbar
                 Bounds = Rectangle.FromLTRB(data.rc.left, data.rc.top, data.rc.right, data.rc.bottom);
 
                 data.cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA));
-                result = DllImports.NativeMethods.Shell32SHAppBarMessage(ABM.GetState, ref data);
+                result = Shell32SHAppBarMessage(ABM.GetState, ref data);
                 int state = result.ToInt32();
                 AlwaysOnTop = (state & ABS.AlwaysOnTop) == ABS.AlwaysOnTop;
                 AutoHide = (state & ABS.Autohide) == ABS.Autohide;

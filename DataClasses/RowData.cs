@@ -63,7 +63,7 @@ namespace SystemTrayMenu.DataClasses
 
             if (Icon == null)
             {
-                Icon = Properties.Resources.SystemTrayMenu;
+                Icon = (Icon)Properties.Resources.SystemTrayMenu.Clone();
             }
             DataGridViewImageCell cellIcon =
                 (DataGridViewImageCell)row.Cells[0];
@@ -425,10 +425,9 @@ namespace SystemTrayMenu.DataClasses
         {
             if (!isDisposed)
             {
-                //icon?.Dispose(); is reused
-                //Icon?.Dispose(); is reused
                 waitMenuOpen.Dispose();
                 Reading.Dispose();
+                Icon?.Dispose();
             }
             isDisposed = true;
         }

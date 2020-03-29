@@ -1,7 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -441,7 +440,7 @@ namespace SystemTrayMenu.UserInterface
         // </summary>
         private void PopulateAppInfo()
         {
-            AppDomain d = System.AppDomain.CurrentDomain;
+            AppDomain d = AppDomain.CurrentDomain;
             Populate(AppInfoListView, "Application Name", d.SetupInformation.ApplicationName);
             Populate(AppInfoListView, "Application Base", d.SetupInformation.ApplicationBase);
             Populate(AppInfoListView, "Cache Path", d.SetupInformation.CachePath);

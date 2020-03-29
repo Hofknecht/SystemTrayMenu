@@ -216,7 +216,7 @@
     </Compile>
     <Compile Include="Config\MenuDefines.cs" />
     <Compile Include="UserInterface\FadeForm.cs" />
-    <Compile Include="Helpers\Taskbar.cs" />
+    <Compile Include="Helpers\WindowsTaskbar.cs" />
     <Compile Include="UserInterface\Menu.cs">
       <SubType>Form</SubType>
     </Compile>

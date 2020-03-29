@@ -80,7 +80,7 @@ namespace SystemTrayMenu.Utilities
                 {
                     //if (!string.IsNullOrEmpty(arguments))
                     //{
-                        Process.Start(fileName, arguments);
+                    Process.Start(fileName, arguments);
                     //}
                     //else
                     //{
