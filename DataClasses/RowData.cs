@@ -18,25 +18,25 @@ namespace SystemTrayMenu.DataClasses
     public class RowData : IDisposable
     {
         public event Action<object, EventArgs> OpenMenu;
-        public BackgroundWorker Reading = new BackgroundWorker();
-        public FileInfo FileInfo;
-        public Menu SubMenu;
-        public Icon Icon;
-        public bool IsSelected;
-        public bool IsSelectedByKeyboard;
-        public bool ContainsMenu;
-        public bool IsContextMenuOpen;
-        public bool ResolvedFileNotFound;
-        public bool IsResolvedLnk;
-        public bool IsLoading = false;
-        public bool RestartLoading = false;
-        public bool HiddenEntry;
-        public string WorkingDirectory;
-        public string Arguments;
-        public string TargetFilePath;
-        public string TargetFilePathOrig;
-        public string Text;
-        public int RowIndex;
+        internal BackgroundWorker Reading = new BackgroundWorker();
+        internal FileInfo FileInfo;
+        internal Menu SubMenu;
+        internal Icon Icon;
+        internal bool IsSelected;
+        internal bool IsSelectedByKeyboard;
+        internal bool ContainsMenu;
+        internal bool IsContextMenuOpen;
+        internal bool ResolvedFileNotFound;
+        internal bool IsResolvedLnk;
+        internal bool IsLoading = false;
+        internal bool RestartLoading = false;
+        internal bool HiddenEntry;
+        internal string WorkingDirectory;
+        internal string Arguments;
+        internal string TargetFilePath;
+        internal string TargetFilePathOrig;
+        internal string Text;
+        internal int RowIndex;
         private readonly WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
         private bool isDisposed = false;
 
@@ -279,16 +279,16 @@ namespace SystemTrayMenu.DataClasses
                 try
                 {
                     //https://stackoverflow.com/questions/31627801/
-                    Process p = new Process
+                    using (Process p = new Process())
                     {
-                        StartInfo = new ProcessStartInfo(TargetFilePath)
+                        p.StartInfo = new ProcessStartInfo(TargetFilePath)
                         {
                             Arguments = Arguments,
                             WorkingDirectory = WorkingDirectory,
                             CreateNoWindow = true
-                        }
+                        };
+                        p.Start();
                     };
-                    p.Start();
                 }
                 catch (Exception ex)
                 {

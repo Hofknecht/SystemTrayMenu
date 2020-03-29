@@ -2,14 +2,14 @@
 
 namespace SystemTrayMenu.DataClasses
 {
-    public enum MenuDataValidity
+    internal enum MenuDataValidity
     {
         Valid,
         Invalid,
         NoAccess
     }
 
-    public struct MenuData
+    internal struct MenuData
     {
         public List<RowData> RowDatas;
         public MenuDataValidity Validity;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
@@ -98,7 +99,7 @@ namespace SystemTrayMenu.Handler
                 char.IsWhiteSpace(e.KeyChar) ||
                 char.IsSeparator(e.KeyChar))
             {
-                string letter = e.KeyChar.ToString();
+                string letter = e.KeyChar.ToString(CultureInfo.InvariantCulture);
 
                 timerKeySearch.Stop();
 
@@ -108,7 +109,7 @@ namespace SystemTrayMenu.Handler
                     KeySearchString += letter;
                     SelectByKey(Keys.None, KeySearchString);
                 }
-                else if (KeySearchString.Length == 1 && KeySearchString.LastOrDefault().ToString() == letter)
+                else if (KeySearchString.Length == 1 && KeySearchString.LastOrDefault().ToString(CultureInfo.InvariantCulture) == letter)
                 {
                     // initial letter pressed again, jump to next element
                     SelectByKey(Keys.None, letter);
@@ -169,8 +170,8 @@ namespace SystemTrayMenu.Handler
             {
                 if (KeepSelection)
                 {
-                    // Is current selection is still valid for this search then skip selecting different item
-                    if (textselected.ToLower().StartsWith(keyInput.ToLower()))
+                    // If current selection is still valid for this search then skip selecting different item
+                    if (textselected.StartsWith(keyInput, true, CultureInfo.InvariantCulture))
                     {
                         return;
                     }
@@ -380,7 +381,7 @@ namespace SystemTrayMenu.Handler
                 DataGridViewRow row = dgv.Rows[i];
                 RowData rowData = (RowData)row.Tag;
                 string text = row.Cells[1].Value.ToString();
-                if (text.ToLower().StartsWith(keyInput.ToLower()))
+                if (text.StartsWith(keyInput, true, CultureInfo.InvariantCulture))
                 {
                     iRowKey = rowData.RowIndex;
                     rowData.IsSelectedByKeyboard = true;

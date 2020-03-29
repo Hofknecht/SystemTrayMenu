@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Specialized;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -220,7 +221,7 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                dt = DateTime.Parse("01/01/2000").AddDays(AssemblyVersion.Build).AddSeconds(AssemblyVersion.Revision * 2);
+                dt = DateTime.Parse("01/01/2000", CultureInfo.InvariantCulture).AddDays(AssemblyVersion.Build).AddSeconds(AssemblyVersion.Revision * 2);
                 if (TimeZone.IsDaylightSavingTime(dt, TimeZone.CurrentTimeZone.GetDaylightChanges(dt.Year)))
                 {
                     dt = dt.AddHours(1);
@@ -267,35 +268,35 @@ namespace SystemTrayMenu.UserInterface
                 switch (TypeName)
                 {
                     case "System.CLSCompliantAttribute":
-                        Value = ((CLSCompliantAttribute)attrib).IsCompliant.ToString(); break;
+                        Value = ((CLSCompliantAttribute)attrib).IsCompliant.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Diagnostics.DebuggableAttribute":
-                        Value = ((System.Diagnostics.DebuggableAttribute)attrib).IsJITTrackingEnabled.ToString(); break;
+                        Value = ((System.Diagnostics.DebuggableAttribute)attrib).IsJITTrackingEnabled.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyCompanyAttribute":
-                        Value = ((AssemblyCompanyAttribute)attrib).Company.ToString(); break;
+                        Value = ((AssemblyCompanyAttribute)attrib).Company.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyConfigurationAttribute":
-                        Value = ((AssemblyConfigurationAttribute)attrib).Configuration.ToString(); break;
+                        Value = ((AssemblyConfigurationAttribute)attrib).Configuration.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyCopyrightAttribute":
-                        Value = ((AssemblyCopyrightAttribute)attrib).Copyright.ToString(); break;
+                        Value = ((AssemblyCopyrightAttribute)attrib).Copyright.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyDefaultAliasAttribute":
-                        Value = ((AssemblyDefaultAliasAttribute)attrib).DefaultAlias.ToString(); break;
+                        Value = ((AssemblyDefaultAliasAttribute)attrib).DefaultAlias.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyDelaySignAttribute":
-                        Value = ((AssemblyDelaySignAttribute)attrib).DelaySign.ToString(); break;
+                        Value = ((AssemblyDelaySignAttribute)attrib).DelaySign.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyDescriptionAttribute":
-                        Value = ((AssemblyDescriptionAttribute)attrib).Description.ToString(); break;
+                        Value = ((AssemblyDescriptionAttribute)attrib).Description.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyInformationalVersionAttribute":
-                        Value = ((AssemblyInformationalVersionAttribute)attrib).InformationalVersion.ToString(); break;
+                        Value = ((AssemblyInformationalVersionAttribute)attrib).InformationalVersion.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyKeyFileAttribute":
-                        Value = ((AssemblyKeyFileAttribute)attrib).KeyFile.ToString(); break;
+                        Value = ((AssemblyKeyFileAttribute)attrib).KeyFile.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyProductAttribute":
-                        Value = ((AssemblyProductAttribute)attrib).Product.ToString(); break;
+                        Value = ((AssemblyProductAttribute)attrib).Product.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyTrademarkAttribute":
-                        Value = ((AssemblyTrademarkAttribute)attrib).Trademark.ToString(); break;
+                        Value = ((AssemblyTrademarkAttribute)attrib).Trademark.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyTitleAttribute":
-                        Value = ((AssemblyTitleAttribute)attrib).Title.ToString(); break;
+                        Value = ((AssemblyTitleAttribute)attrib).Title.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Resources.NeutralResourcesLanguageAttribute":
-                        Value = ((System.Resources.NeutralResourcesLanguageAttribute)attrib).CultureName.ToString(); break;
+                        Value = ((System.Resources.NeutralResourcesLanguageAttribute)attrib).CultureName.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Resources.SatelliteContractVersionAttribute":
-                        Value = ((System.Resources.SatelliteContractVersionAttribute)attrib).Version.ToString(); break;
+                        Value = ((System.Resources.SatelliteContractVersionAttribute)attrib).Version.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Runtime.InteropServices.ComCompatibleVersionAttribute":
                         {
                             System.Runtime.InteropServices.ComCompatibleVersionAttribute x;
@@ -303,9 +304,9 @@ namespace SystemTrayMenu.UserInterface
                             Value = x.MajorVersion + "." + x.MinorVersion + "." + x.RevisionNumber + "." + x.BuildNumber; break;
                         }
                     case "System.Runtime.InteropServices.ComVisibleAttribute":
-                        Value = ((System.Runtime.InteropServices.ComVisibleAttribute)attrib).Value.ToString(); break;
+                        Value = ((System.Runtime.InteropServices.ComVisibleAttribute)attrib).Value.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Runtime.InteropServices.GuidAttribute":
-                        Value = ((System.Runtime.InteropServices.GuidAttribute)attrib).Value.ToString(); break;
+                        Value = ((System.Runtime.InteropServices.GuidAttribute)attrib).Value.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Runtime.InteropServices.TypeLibVersionAttribute":
                         {
                             System.Runtime.InteropServices.TypeLibVersionAttribute x;
@@ -343,7 +344,7 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                nvc.Add("BuildDate", dt.ToString("yyyy-MM-dd hh:mm tt"));
+                nvc.Add("BuildDate", dt.ToString("yyyy-MM-dd hh:mm tt", CultureInfo.InvariantCulture));
             }
             // location
             try
@@ -524,7 +525,7 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                return _EntryAssemblyAttribCollection[strName].ToString();
+                return _EntryAssemblyAttribCollection[strName].ToString(CultureInfo.InvariantCulture);
             }
         }
 
@@ -584,7 +585,7 @@ namespace SystemTrayMenu.UserInterface
             s = s.Replace("%company%", EntryAssemblyAttrib("company"));
             s = s.Replace("%product%", EntryAssemblyAttrib("product"));
             s = s.Replace("%trademark%", EntryAssemblyAttrib("trademark"));
-            s = s.Replace("%year%", DateTime.Now.Year.ToString());
+            s = s.Replace("%year%", DateTime.Now.Year.ToString(CultureInfo.InvariantCulture));
             s = s.Replace("%version%", EntryAssemblyAttrib("version"));
             s = s.Replace("%builddate%", EntryAssemblyAttrib("builddate"));
             return s;
@@ -599,7 +600,7 @@ namespace SystemTrayMenu.UserInterface
 
             // this assembly property is only available in framework versions 1.1+
             Populate(lvw, "Image Runtime Version", a.ImageRuntimeVersion);
-            Populate(lvw, "Loaded from GAC", a.GlobalAssemblyCache.ToString());
+            Populate(lvw, "Loaded from GAC", a.GlobalAssemblyCache.ToString(CultureInfo.InvariantCulture));
 
             NameValueCollection nvc = AssemblyAttribs(a);
             foreach (string strKey in nvc)
@@ -714,7 +715,7 @@ namespace SystemTrayMenu.UserInterface
             string strAssemblyName;
             if (AssemblyInfoListView.SelectedItems.Count > 0)
             {
-                strAssemblyName = Convert.ToString(AssemblyInfoListView.SelectedItems[0].Tag);
+                strAssemblyName = Convert.ToString(AssemblyInfoListView.SelectedItems[0].Tag, CultureInfo.InvariantCulture);
                 AssemblyNamesComboBox.SelectedIndex = AssemblyNamesComboBox.FindStringExact(strAssemblyName);
                 TabPanelDetails.SelectedTab = TabPageAssemblyDetails;
             }
@@ -725,7 +726,7 @@ namespace SystemTrayMenu.UserInterface
         // </summary>
         private void AssemblyNamesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string strAssemblyName = Convert.ToString(AssemblyNamesComboBox.SelectedItem);
+            string strAssemblyName = Convert.ToString(AssemblyNamesComboBox.SelectedItem, CultureInfo.InvariantCulture);
             PopulateAssemblyDetails(MatchAssemblyByName(strAssemblyName), AssemblyDetailsListView);
         }
 
@@ -738,9 +739,9 @@ namespace SystemTrayMenu.UserInterface
 
             if (AssemblyInfoListView.Tag != null)
             {
-                if (Math.Abs(Convert.ToInt32(AssemblyInfoListView.Tag)) == intTargetCol)
+                if (Math.Abs(Convert.ToInt32(AssemblyInfoListView.Tag, CultureInfo.InvariantCulture)) == intTargetCol)
                 {
-                    intTargetCol = -Convert.ToInt32(AssemblyInfoListView.Tag);
+                    intTargetCol = -Convert.ToInt32(AssemblyInfoListView.Tag, CultureInfo.InvariantCulture);
                 }
             }
             AssemblyInfoListView.Tag = intTargetCol;
@@ -790,9 +791,10 @@ namespace SystemTrayMenu.UserInterface
 
             public int Compare(object x, object y)
             {
-                int intResult =
-                    string.Compare(((ListViewItem)x).SubItems[_intCol].Text, ((ListViewItem)y).SubItems[_intCol].Text);
-
+                int intResult = string.Compare(
+                    ((ListViewItem)x).SubItems[_intCol].Text,
+                    ((ListViewItem)y).SubItems[_intCol].Text,
+                    CultureInfo.InvariantCulture, CompareOptions.None);
                 if (_IsAscending)
                 {
                     return intResult;

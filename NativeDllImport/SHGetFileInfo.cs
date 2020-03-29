@@ -16,7 +16,7 @@ namespace SystemTrayMenu.NativeDllImport
            uint uFlags
            );
 
-        public static IntPtr Shell32SHGetFileInfo(
+        internal static IntPtr Shell32SHGetFileInfo(
            string pszPath,
            uint dwFileAttributes,
            ref SHFILEINFO psfi,
@@ -32,7 +32,7 @@ namespace SystemTrayMenu.NativeDllImport
         }
 
         [StructLayout(LayoutKind.Sequential)]
-        public struct SHFILEINFO
+        internal struct SHFILEINFO
         {
             public const int NAMESIZE = 80;
             public IntPtr hIcon;

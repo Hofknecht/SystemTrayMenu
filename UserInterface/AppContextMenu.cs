@@ -233,7 +233,7 @@ namespace SystemTrayMenu.Helper
         {
             List<CultureInfo> cultureList = CultureInfo.GetCultures(cultureType).ToList();
             cultureList.Sort((p1, p2) => string.Compare(
-                p1.NativeName, p2.NativeName, true));
+                p1.NativeName, p2.NativeName, true, CultureInfo.InvariantCulture));
             return cultureList;
         }
 

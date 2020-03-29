@@ -42,8 +42,8 @@ namespace SystemTrayMenu.Utilities
             {
                 bool isExtensionWitSameIcon = true;
                 List<string> extensionsWithDiffIcons = new List<string>
-                { ".exe", ".lnk", ".ico", ".url" };
-                if (extensionsWithDiffIcons.Contains(fileExtension.ToLower()))
+                { ".EXE", ".LNK", ".ICO", ".URL" };
+                if (extensionsWithDiffIcons.Contains(fileExtension.ToUpperInvariant()))
                 {
                     isExtensionWitSameIcon = false;
                 }

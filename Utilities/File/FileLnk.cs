@@ -126,12 +126,13 @@ namespace SystemTrayMenu.Utilities
         public interface IPersistFile : IPersist
         {
             new void GetClassID(out Guid pClassID);
+
             [PreserveSig]
             int IsDirty();
 
             [PreserveSig]
             void Load([In, MarshalAs(UnmanagedType.LPWStr)]
-    string pszFileName, uint dwMode);
+                string pszFileName, uint dwMode);
 
             [PreserveSig]
             void Save([In, MarshalAs(UnmanagedType.LPWStr)] string pszFileName,
@@ -160,8 +161,6 @@ namespace SystemTrayMenu.Utilities
         {
             ShellLink link = new ShellLink();
             ((IPersistFile)link).Load(filename, STGM_READ);
-            // TODO: if I can get hold of the hwnd call resolve first. This handles moved and renamed files.  
-            // ((IShellLinkW)link).Resolve(hwnd, 0) 
             StringBuilder sb = new StringBuilder(MAX_PATH);
             WIN32_FIND_DATAW data = new WIN32_FIND_DATAW();
             ((IShellLinkW)link).GetPath(sb, sb.Capacity, out data, 0);
@@ -199,7 +198,7 @@ namespace SystemTrayMenu.Utilities
 
         public static string ReplaceFirst(string text, string search, string replace)
         {
-            int pos = text.IndexOf(search);
+            int pos = text.IndexOf(search, StringComparison.InvariantCulture);
             if (pos < 0)
             {
                 return text;

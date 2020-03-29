@@ -214,6 +214,7 @@ namespace SystemTrayMenu
 
         public void Dispose()
         {
+            worker.Dispose();
             keyboardInput.Dispose();
             menuNotifyIcon.Dispose();
             fastLeave.Dispose();
@@ -402,6 +403,18 @@ namespace SystemTrayMenu
                     Log.Info($"UnauthorizedAccessException:'{path}'");
                     menuData.Validity = MenuDataValidity.NoAccess;
                 }
+                //catch (PathTooLongException ex)
+                //{
+
+                //}
+                //catch (DirectoryNotFoundException ex)
+                //{
+
+                //}
+                //catch (IOException ex)
+                //{
+
+                //}
                 catch (Exception ex)
                 {
                     Log.Error($"path:'{path}'", ex);

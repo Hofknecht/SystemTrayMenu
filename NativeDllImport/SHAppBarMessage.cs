@@ -8,12 +8,12 @@ namespace SystemTrayMenu.NativeDllImport
         [DllImport("shell32.dll", SetLastError = true)]
         private static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
 
-        public static IntPtr Shell32SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData)
+        internal static IntPtr Shell32SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData)
         {
             return SHAppBarMessage(dwMessage, ref pData);
         }
 
-        public enum ABM : uint
+        internal enum ABM : uint
         {
             New = 0x00000000,
             Remove = 0x00000001,
@@ -28,7 +28,7 @@ namespace SystemTrayMenu.NativeDllImport
             SetState = 0x0000000A,
         }
 
-        public enum ABE : uint
+        internal enum ABE : uint
         {
             Left = 0,
             Top = 1,
@@ -36,14 +36,14 @@ namespace SystemTrayMenu.NativeDllImport
             Bottom = 3
         }
 
-        public static class ABS
+        internal static class ABS
         {
             public const int Autohide = 0x0000001;
             public const int AlwaysOnTop = 0x0000002;
         }
 
         [StructLayout(LayoutKind.Sequential)]
-        public struct APPBARDATA
+        internal struct APPBARDATA
         {
             public uint cbSize;
             public IntPtr hWnd;
@@ -54,7 +54,7 @@ namespace SystemTrayMenu.NativeDllImport
         }
 
         [StructLayout(LayoutKind.Sequential)]
-        public struct RECT
+        internal struct RECT
         {
             public int left;
             public int top;

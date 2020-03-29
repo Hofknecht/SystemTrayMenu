@@ -9,14 +9,14 @@ namespace SystemTrayMenu.NativeDllImport
         [DllImport("user32.dll", ExactSpelling = true, CharSet = CharSet.Auto)]
         private static extern uint TrackPopupMenuEx(IntPtr hmenu, TPM flags, int x, int y, IntPtr hwnd, IntPtr lptpm);
 
-        public static uint User32TrackPopupMenuEx(IntPtr hmenu, TPM flags, int x, int y, IntPtr hwnd, IntPtr lptpm)
+        internal static uint User32TrackPopupMenuEx(IntPtr hmenu, TPM flags, int x, int y, IntPtr hwnd, IntPtr lptpm)
         {
             return TrackPopupMenuEx(hmenu, flags, x, y, hwnd, lptpm);
         }
 
         // Specifies how TrackPopupMenuEx positions the shortcut menu horizontally
         [Flags]
-        public enum TPM : uint
+        internal enum TPM : uint
         {
             LEFTBUTTON = 0x0000,
             RIGHTBUTTON = 0x0002,

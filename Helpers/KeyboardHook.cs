@@ -10,7 +10,7 @@ namespace SystemTrayMenu.Helper
         /// </summary>
         private class Window : NativeWindow, IDisposable
         {
-            private static readonly int WM_HOTKEY = 0x0312;
+            private const int WM_HOTKEY = 0x0312;
 
             public Window()
             {
@@ -73,7 +73,7 @@ namespace SystemTrayMenu.Helper
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
-        public void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
+        internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
         {
             // increment the counter.
             _currentId = _currentId + 1;
@@ -88,7 +88,7 @@ namespace SystemTrayMenu.Helper
         /// <summary>
         /// A hot key has been pressed.
         /// </summary>
-        public event EventHandler<KeyPressedEventArgs> KeyPressed;
+        internal event EventHandler<KeyPressedEventArgs> KeyPressed;
 
         #region IDisposable Members
 
@@ -110,7 +110,7 @@ namespace SystemTrayMenu.Helper
     /// <summary>
     /// Event Args for the event that is fired after the hot key has been pressed.
     /// </summary>
-    public class KeyPressedEventArgs : EventArgs
+    internal class KeyPressedEventArgs : EventArgs
     {
         private readonly KeyboardHookModifierKeys _modifier;
         private readonly Keys _key;
@@ -121,16 +121,16 @@ namespace SystemTrayMenu.Helper
             _key = key;
         }
 
-        public KeyboardHookModifierKeys Modifier => _modifier;
+        internal KeyboardHookModifierKeys Modifier => _modifier;
 
-        public Keys Key => _key;
+        internal Keys Key => _key;
     }
 
     /// <summary>
     /// The enumeration of possible modifiers.
     /// </summary>
     [Flags]
-    public enum KeyboardHookModifierKeys : uint
+    internal enum KeyboardHookModifierKeys : uint
     {
         Alt = 1,
         Control = 2,

@@ -14,6 +14,7 @@ namespace SystemTrayMenu.Helper.Taskbar
         Bottom,
     }
 
+    //Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager do not have the bounds implemented?
     public sealed class Taskbar
     {
         private const string ClassName = "Shell_TrayWnd";

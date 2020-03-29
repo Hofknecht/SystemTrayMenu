@@ -5,33 +5,36 @@ namespace SystemTrayMenu.NativeDllImport
 {
     public static partial class NativeMethods
     {
-        [StructLayout(LayoutKind.Sequential)]
-        public struct SHITEMID
-        {
-            public ushort cb;
-            [MarshalAs(UnmanagedType.LPArray)]
-            public byte[] abID;
-        }
+        //[StructLayout(LayoutKind.Sequential)]
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types", Justification = "<Pending>")]
+        //internal struct SHITEMID
+        //{
+        //    public ushort cb;
+        //    [MarshalAs(UnmanagedType.LPArray)]
+        //    public byte[] abID;
+        //}
 
-        [StructLayout(LayoutKind.Sequential)]
-        public struct ITEMIDLIST
-        {
-            public SHITEMID mkid;
-        }
+        //[StructLayout(LayoutKind.Sequential)]
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types", Justification = "<Pending>")]
+        //internal struct ITEMIDLIST
+        //{
+        //    public SHITEMID mkid;
+        //}
 
-        [StructLayout(LayoutKind.Sequential)]
-        public struct BROWSEINFO
-        {
-            public IntPtr hwndOwner;
-            public IntPtr pidlRoot;
-            public IntPtr pszDisplayName;
-            [MarshalAs(UnmanagedType.LPTStr)]
-            public string lpszTitle;
-            public uint ulFlags;
-            public IntPtr lpfn;
-            public int lParam;
-            public IntPtr iImage;
-        }
+        //[StructLayout(LayoutKind.Sequential)]
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types", Justification = "<Pending>")]
+        //internal struct BROWSEINFO
+        //{
+        //    public IntPtr hwndOwner;
+        //    public IntPtr pidlRoot;
+        //    public IntPtr pszDisplayName;
+        //    [MarshalAs(UnmanagedType.LPTStr)]
+        //    public string lpszTitle;
+        //    public uint ulFlags;
+        //    public IntPtr lpfn;
+        //    public int lParam;
+        //    public IntPtr iImage;
+        //}
 
         // Browsing for directory.
         //public const uint BIF_RETURNONLYFSDIRS = 0x0001;
@@ -78,7 +81,7 @@ namespace SystemTrayMenu.NativeDllImport
           int i,
           int flags);
 
-        public static void Comctl32ImageList_GetIcon(IntPtr hIcon)
+        public static void Comctl32ImageListGetIcon(IntPtr hIcon)
         {
             _ = DestroyIcon(hIcon);
         }

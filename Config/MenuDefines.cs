@@ -7,14 +7,14 @@ namespace SystemTrayMenu
     {
         public static readonly List<string> Languages =
             new List<string>() { "en", "de" };
-        public static Color File = Color.White;
-        public static Color Folder = Color.White;
-        public static Color ColorSelectedItem = AppColors.Blue;
-        public static Color ColorOpenFolder = AppColors.Green;
-        public static Color ColorTitleWarning = AppColors.Red;
-        public static Color ColorTitleSelected = AppColors.Yellow;
-        public static Color ColorTitleBackground = AppColors.YellowSlightly;
-        public static int KeySearchInterval = 1000;
+        public static readonly Color File = Color.White;
+        public static readonly Color Folder = Color.White;
+        public static readonly Color ColorSelectedItem = AppColors.Blue;
+        public static readonly Color ColorOpenFolder = AppColors.Green;
+        public static readonly Color ColorTitleWarning = AppColors.Red;
+        public static readonly Color ColorTitleSelected = AppColors.Yellow;
+        public static readonly Color ColorTitleBackground = AppColors.YellowSlightly;
+        public const int KeySearchInterval = 1000;
         public const int MenuRowsHeight = 18;
         public const int LengthMax = 37;
         public const int Scrollspeed = 4;
@@ -28,17 +28,17 @@ namespace SystemTrayMenu
         public const double OpacityOutStep = 0.05;
         public const double OpacityHalfStep = 0.01;
         public const int MenusMax = 50;
-        public static int MaxClicksInQueue = 1;
+        public const int MaxClicksInQueue = 1;
     }
 
     public static class AppColors
     {
-        public static Color Blue = Color.FromArgb(204, 232, 255);
-        public static Color BlueSelectedInactive = Color.FromArgb(217, 217, 217);
-        public static Color Green = Color.FromArgb(194, 245, 222);
-        public static Color GreenBackgroundInactive = Color.FromArgb(217, 217, 217);
-        public static Color Red = Color.FromArgb(255, 204, 232);
-        public static Color Yellow = Color.LightYellow;
-        public static Color YellowSlightly = Color.Azure;
+        public static readonly Color Blue = Color.FromArgb(204, 232, 255);
+        public static readonly Color BlueSelectedInactive = Color.FromArgb(217, 217, 217);
+        public static readonly Color Green = Color.FromArgb(194, 245, 222);
+        public static readonly Color GreenBackgroundInactive = Color.FromArgb(217, 217, 217);
+        public static readonly Color Red = Color.FromArgb(255, 204, 232);
+        public static readonly Color Yellow = Color.LightYellow;
+        public static readonly Color YellowSlightly = Color.Azure;
     }
 }

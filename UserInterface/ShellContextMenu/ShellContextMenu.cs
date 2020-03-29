@@ -583,37 +583,6 @@ namespace SystemTrayMenu.Utilities
         }
         #endregion
 
-        #region WindowsHookInvoked()
-        /// <summary>
-        /// Handle messages for context menu
-        /// </summary>
-        private void WindowsHookInvoked(object sender, HookEventArgs e)
-        {
-            CWPSTRUCT cwp = (CWPSTRUCT)Marshal.PtrToStructure(e.lParam, typeof(CWPSTRUCT));
-
-            if (_oContextMenu2 != null &&
-                (cwp.message == (int)WM.INITMENUPOPUP ||
-                 cwp.message == (int)WM.MEASUREITEM ||
-                 cwp.message == (int)WM.DRAWITEM))
-            {
-                if (_oContextMenu2.HandleMenuMsg((uint)cwp.message, cwp.wparam, cwp.lparam) == S_OK)
-                {
-                    return;
-                }
-            }
-
-            if (_oContextMenu3 != null && cwp.message == (int)WM.MENUCHAR)
-            {
-                if (_oContextMenu3.HandleMenuMsg2((uint)cwp.message, cwp.wparam, cwp.lparam, IntPtr.Zero) == S_OK)
-                {
-                    return;
-                }
-            }
-
-            return;
-        }
-        #endregion
-
         #region Local variabled
         private IContextMenu _oContextMenu;
         private IContextMenu2 _oContextMenu2;

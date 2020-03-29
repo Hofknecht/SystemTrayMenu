@@ -138,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\Config.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="NativeDllImport\DestroyMenu.cs" />
     <Compile Include="NativeDllImport\CreatePopupMenu.cs" />
     <Compile Include="NativeDllImport\GetMenuDefaultItem.cs" />
@@ -157,9 +156,7 @@
     <Compile Include="UserInterface\AskHotKeyForm.Designer.cs">
       <DependentUpon>AskHotKeyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\DragDropHintForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="UserInterface\DragDropHintForm.cs" />
     <Compile Include="UserInterface\DragDropHintForm.Designer.cs">
       <DependentUpon>DragDropHintForm.cs</DependentUpon>
     </Compile>
@@ -181,11 +178,8 @@
     <Compile Include="Helpers\MessageFilter.cs" />
     <Compile Include="Utilities\Language.cs" />
     <Compile Include="Utilities\Scaling.cs" />
-    <Compile Include="UserInterface\ShellContextMenu\HookEventArgs.cs" />
     <Compile Include="UserInterface\ShellContextMenu\ShellContextMenuException.cs" />
-    <Compile Include="UserInterface\ShellContextMenu\HookType.cs" />
     <Compile Include="UserInterface\ShellContextMenu\ShellHelper.cs" />
-    <Compile Include="UserInterface\ShellContextMenu\LocalWindowsHook.cs" />
     <Compile Include="UserInterface\ShellContextMenu\ShellContextMenu.cs" />
     <Compile Include="Utilities\File\FileUrl.cs" />
     <Compile Include="Business\WaitFastLeave.cs" />
@@ -328,9 +322,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">

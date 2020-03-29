@@ -31,7 +31,8 @@ namespace SystemTrayMenu.UserInterface
 
         public bool IsFadingOut => FadeForm.IsFadingOut;
 
-        public int Level = 0;
+        internal int Level = 0;
+
         private readonly FadeForm FadeForm = null;
         private bool autoResizeRowsDone = false;
 
