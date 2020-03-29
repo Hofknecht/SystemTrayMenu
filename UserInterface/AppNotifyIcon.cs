@@ -34,8 +34,7 @@ namespace SystemTrayMenu.UserInterface
             notifyIcon.Icon = bitmapsLoading.First();
             load.Tick += Load_Tick;
             load.Interval = MenuDefines.IntervalLoad;
-
-            notifyIcon.Text = "SystemTrayMenu";
+            notifyIcon.Text = MenuDefines.NotifyIconText;
             notifyIcon.Visible = true;
             notifyIcon.Icon = R.SystemTrayMenu;
             AppContextMenu contextMenus = new AppContextMenu();

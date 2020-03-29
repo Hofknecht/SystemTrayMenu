@@ -21,7 +21,7 @@ namespace SystemTrayMenu.Utilities
             {
                 if (Environment.OSVersion.Version.Major >= 6)
                 {
-                    NativeDllImport.NativeMethods.User32SetProcessDPIAware();
+                    DllImports.NativeMethods.User32SetProcessDPIAware();
                 }
             }
         }
@@ -30,9 +30,9 @@ namespace SystemTrayMenu.Utilities
         {
             Graphics g = Graphics.FromHwnd(IntPtr.Zero);
             IntPtr desktop = g.GetHdc();
-            int LogicalScreenHeight = NativeDllImport.NativeMethods.Gdi32GetDeviceCaps(
+            int LogicalScreenHeight = DllImports.NativeMethods.Gdi32GetDeviceCaps(
                 desktop, (int)DeviceCap.VERTRES);
-            int PhysicalScreenHeight = NativeDllImport.NativeMethods.Gdi32GetDeviceCaps(
+            int PhysicalScreenHeight = DllImports.NativeMethods.Gdi32GetDeviceCaps(
                 desktop, (int)DeviceCap.DESKTOPVERTRES);
             Factor = PhysicalScreenHeight / (float)LogicalScreenHeight;
         }

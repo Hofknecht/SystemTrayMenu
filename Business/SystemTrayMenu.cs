@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Handler;
@@ -137,7 +138,7 @@ namespace SystemTrayMenu
                 Menus().ToList().ForEach(m => { m.FadeIn(); m.FadeHalf(); });
                 menus[0].SetTitleColorActive();
                 menus[0].Activate();
-                NativeDllImport.NativeMethods.ForceForegroundWindow(menus[0].Handle);
+                DllImports.NativeMethods.ForceForegroundWindow(menus[0].Handle);
             }
 
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
@@ -355,13 +356,14 @@ namespace SystemTrayMenu
                     directories = Directory.GetDirectories(path);
                     Array.Sort(directories, new WindowsExplorerSort());
                 }
-                catch (UnauthorizedAccessException)
+                catch (UnauthorizedAccessException ex)
                 {
-                    Log.Info($"UnauthorizedAccessException:'{path}'");
+                    Log.Warn($"path:'{path}'", ex);
+                    menuData.Validity = MenuDataValidity.NoAccess;
                 }
-                catch (Exception ex)
+                catch (IOException ex)
                 {
-                    Log.Error($"path:'{path}'", ex);
+                    Log.Warn($"path:'{path}'", ex);
                 }
 
                 foreach (string directory in directories)
@@ -392,32 +394,17 @@ namespace SystemTrayMenu
 
                 try
                 {
-                    files = Directory.GetFiles(path).Where(p =>
-                               !Path.GetFileName(p).Equals("desktop.ini", StringComparison.OrdinalIgnoreCase) && // Windows folder settings, e.g. Win10 "desktop.ini", Win2003 "Desktop.ini"
-                               !Path.GetFileName(p).Equals("thumbs.db", StringComparison.OrdinalIgnoreCase) // Windows thumbnail cache
-                            ).ToArray();
+                    files = Directory.GetFiles(path);
                     Array.Sort(files, new WindowsExplorerSort());
                 }
-                catch (UnauthorizedAccessException)
+                catch (UnauthorizedAccessException ex)
                 {
-                    Log.Info($"UnauthorizedAccessException:'{path}'");
+                    Log.Warn($"path:'{path}'", ex);
                     menuData.Validity = MenuDataValidity.NoAccess;
                 }
-                //catch (PathTooLongException ex)
-                //{
-
-                //}
-                //catch (DirectoryNotFoundException ex)
-                //{
-
-                //}
-                //catch (IOException ex)
-                //{
-
-                //}
-                catch (Exception ex)
+                catch (IOException ex)
                 {
-                    Log.Error($"path:'{path}'", ex);
+                    Log.Warn($"path:'{path}'", ex);
                 }
 
                 foreach (string file in files)
@@ -478,7 +465,18 @@ namespace SystemTrayMenu
             }
             catch (Exception ex)
             {
-                Log.Error($"fileName:'{fileName}'", ex);
+                if (ex is SecurityException ||
+                    ex is ArgumentException ||
+                    ex is UnauthorizedAccessException ||
+                    ex is PathTooLongException ||
+                    ex is NotSupportedException)
+                {
+                    Log.Warn($"fileName:'{fileName}'", ex);
+                }
+                else
+                {
+                    throw;
+                }
             }
 
             return menuButtonData;
@@ -675,7 +673,7 @@ namespace SystemTrayMenu
                 menu.UserClickedOpenFolder += OpenFolder;
                 void OpenFolder()
                 {
-                    Process.Start("explorer.exe", Config.Path);
+                    Log.ProcessStart("explorer.exe", Config.Path);
                 }
             }
             menu.Level = menuData.Level;

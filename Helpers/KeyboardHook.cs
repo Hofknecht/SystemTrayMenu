@@ -61,10 +61,7 @@ namespace SystemTrayMenu.Helper
             // register the event of the inner native window.
             _window.KeyPressed += delegate (object sender, KeyPressedEventArgs args)
             {
-                if (KeyPressed != null)
-                {
-                    KeyPressed(this, args);
-                }
+                KeyPressed?.Invoke(this, args);
             };
         }
 
@@ -75,13 +72,13 @@ namespace SystemTrayMenu.Helper
         /// <param name="key">The key itself that is associated with the hot key.</param>
         internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
         {
-            // increment the counter.
             _currentId = _currentId + 1;
 
-            // register the hot key.
-            if (!NativeDllImport.NativeMethods.User32RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
+            if (!DllImports.NativeMethods.User32RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
             {
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                 throw new InvalidOperationException("Couldn’t register the hot key.");
+#pragma warning restore CA1303 //=> Exceptions not translated in logfile => OK
             }
         }
 
@@ -97,7 +94,7 @@ namespace SystemTrayMenu.Helper
             // unregister all the registered hot keys.
             for (int i = _currentId; i > 0; i--)
             {
-                NativeDllImport.NativeMethods.User32UnregisterHotKey(_window.Handle, i);
+                DllImports.NativeMethods.User32UnregisterHotKey(_window.Handle, i);
             }
 
             // dispose the inner native window.

@@ -160,7 +160,9 @@ namespace SystemTrayMenu.Utilities
         public static string ResolveShortcut(string filename)
         {
             ShellLink link = new ShellLink();
+#pragma warning disable CA2010 // Always consume the value returned by methods marked with PreserveSigAttribute
             ((IPersistFile)link).Load(filename, STGM_READ);
+#pragma warning restore CA2010 // => Has no returned value => OK
             StringBuilder sb = new StringBuilder(MAX_PATH);
             WIN32_FIND_DATAW data = new WIN32_FIND_DATAW();
             ((IShellLinkW)link).GetPath(sb, sb.Capacity, out data, 0);

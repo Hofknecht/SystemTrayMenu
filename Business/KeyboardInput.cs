@@ -66,9 +66,9 @@ namespace SystemTrayMenu.Handler
                         HotKeyPressed?.Invoke();
                     }
                 }
-                catch (Exception ex)
+                catch (InvalidOperationException ex)
                 {
-                    Log.Error($"key:'{key.ToString()}'", ex);
+                    Log.Error($"key:'{key}'", ex);
                     Properties.Settings.Default.HotKey = string.Empty;
                     Properties.Settings.Default.Save();
                     MessageBox.Show(ex.Message);

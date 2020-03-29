@@ -13,11 +13,13 @@ namespace SystemTrayMenu.UserInterface
         private readonly Timer timerFadeOut = new Timer();
         private readonly Timer timerFadeHalf = new Timer();
         private readonly Form form = null;
+        private readonly bool disposeForm = false;
         private bool stopFadeInByHalf = false;
 
-        public FadeForm(Form form)
+        public FadeForm(Form form, bool disposeForm = false)
         {
             this.form = form;
+            this.disposeForm = disposeForm;
             timerFadeIn.Interval = MenuDefines.IntervalFade;
             timerFadeOut.Interval = MenuDefines.IntervalFade;
             timerFadeHalf.Interval = MenuDefines.IntervalFade;
@@ -39,7 +41,10 @@ namespace SystemTrayMenu.UserInterface
                 timerFadeIn.Dispose();
                 timerFadeOut.Dispose();
                 timerFadeHalf.Dispose();
-                //form.Dispose(); recursiv
+                if (disposeForm)
+                {
+                    form.Dispose();
+                }
             }
         }
 
@@ -79,7 +84,7 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                NativeDllImport.NativeMethods.User32ShowInactiveTopmost(form);
+                DllImports.NativeMethods.User32ShowInactiveTopmost(form);
                 timerFadeOut.Stop();
                 timerFadeIn.Start();
             }

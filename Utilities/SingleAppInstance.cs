@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 
@@ -29,7 +30,15 @@ namespace SystemTrayMenu.Utilities
                     }
                     catch (Exception ex)
                     {
-                        Log.Error("Run as single instance failed", ex);
+                        if (ex is Win32Exception || 
+                            ex is SystemException)
+                        {
+                            Log.Error("Run as single instance failed", ex);
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
 
                     return killedAProcess;

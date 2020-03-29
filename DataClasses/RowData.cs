@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Windows.Forms;
 using SystemTrayMenu.Handler;
@@ -15,9 +16,9 @@ using Menu = SystemTrayMenu.UserInterface.Menu;
 
 namespace SystemTrayMenu.DataClasses
 {
-    public class RowData : IDisposable
+    internal class RowData : IDisposable
     {
-        public event Action<object, EventArgs> OpenMenu;
+        internal event Action<object, EventArgs> OpenMenu;
         internal BackgroundWorker Reading = new BackgroundWorker();
         internal FileInfo FileInfo;
         internal Menu SubMenu;
@@ -40,140 +41,22 @@ namespace SystemTrayMenu.DataClasses
         private readonly WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
         private bool isDisposed = false;
 
-        public RowData()
+        internal RowData()
         {
             Reading.WorkerSupportsCancellation = true;
             waitMenuOpen.DoOpen += WaitMenuOpen_DoOpen;
         }
 
-        public void SetText(string text)
+        internal void SetText(string text)
         {
-            if (text != null && text.Length > MenuDefines.LengthMax)
+            if (text.Length > MenuDefines.LengthMax)
             {
                 text = $"{text.Substring(0, MenuDefines.LengthMax)}...";
             }
             Text = text;
         }
 
-        private bool SetLnk(ref bool isLnkDirectory,
-            ref string resolvedLnkPath)
-        {
-            bool handled = false;
-            resolvedLnkPath = LnkHelper.ResolveShortcut(TargetFilePath);
-            if (LnkHelper.IsDirectory(resolvedLnkPath))
-            {
-                Icon = IconReader.GetFolderIcon(TargetFilePath,
-                    IconReader.FolderType.Open, true);
-                handled = true;
-                isLnkDirectory = true;
-            }
-            else if (string.IsNullOrEmpty(resolvedLnkPath))
-            {
-                ResolvedFileNotFound = true;
-                Log.Info($"Resolve *.LNK '{TargetFilePath}' has no icon");
-#warning [Feature] Resolve network root #48, start here
-            }
-            else
-            {
-                IWshShell shell = new WshShell();
-                IWshShortcut lnk = shell.CreateShortcut(TargetFilePath)
-                    as IWshShortcut;
-                Arguments = lnk.Arguments;
-                WorkingDirectory = lnk.WorkingDirectory;
-                string iconLocation = lnk.IconLocation;
-                if (iconLocation.Length > 2)
-                {
-                    iconLocation = iconLocation.Substring(0,
-                        iconLocation.Length - 2);
-                    if (System.IO.File.Exists(iconLocation))
-                    {
-                        try
-                        {
-                            Icon = Icon.ExtractAssociatedIcon(iconLocation);
-                            handled = true;
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Error($"iconLocation:'{iconLocation}'", ex);
-                        }
-                    }
-                }
-
-                TargetFilePath = resolvedLnkPath;
-            }
-
-            SetText(Path.GetFileNameWithoutExtension(TargetFilePathOrig));
-
-            return handled;
-        }
-
-        private bool SetUrl()
-        {
-            bool handled = false;
-            string iconFile = string.Empty;
-            try
-            {
-                FileIni file = new FileIni(TargetFilePath);
-                iconFile = file.Value("IconFile", string.Empty);
-                if (string.IsNullOrEmpty(iconFile))
-                {
-                    string browserPath = FileUrl.GetDefaultBrowserPath();
-                    if (string.IsNullOrEmpty(browserPath))
-                    {
-                        Log.Info($"Resolve *.URL '{TargetFilePath}'" +
-                            $"No default browser found!");
-                    }
-                    else
-                    {
-                        Icon = IconReader.GetFileIconWithCache(browserPath, false);
-                        handled = true;
-                    }
-                }
-                else if (System.IO.File.Exists(iconFile))
-                {
-                    Icon = Icon.ExtractAssociatedIcon(iconFile);
-                    handled = true;
-                }
-                else
-                {
-                    Log.Info($"Resolve *.URL '{TargetFilePath}' has no icon");
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"TargetFilePath:'{TargetFilePath}', " +
-                    $"iconFile:'{iconFile}'", ex);
-            }
-
-            SetText($"{FileInfo.Name.Substring(0, FileInfo.Name.Length - 4)}");
-
-            return handled;
-        }
-
-        private bool SetSln()
-        {
-            bool handled = false;
-            StringBuilder executable = new StringBuilder(1024);
-            try
-            {
-                NativeDllImport.NativeMethods.Shell32FindExecutable(TargetFilePath, string.Empty, executable);
-                // icon = IconReader.GetFileIcon(executable, false);
-                // e.g. VS 2019 icon, need another icom in imagelist
-                List<Icon> extractedIcons = IconHelper.ExtractAllIcons(
-                    executable.ToString());
-                Icon = extractedIcons.Last();
-                handled = true;
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"TargetFilePath:'{TargetFilePath}', " +
-                    $"executable:'{executable.ToString()}'", ex);
-            }
-
-            return handled;
-        }
-
-        public void SetData(RowData data, DataGridView dgv)
+        internal void SetData(RowData data, DataGridView dgv)
         {
             data.RowIndex = dgv.Rows.Add();
             DataGridViewRow row = dgv.Rows[data.RowIndex];
@@ -202,7 +85,7 @@ namespace SystemTrayMenu.DataClasses
             row.Tag = data;
         }
 
-        public bool ReadIcon(bool isDirectory, ref string resolvedLnkPath)
+        internal bool ReadIcon(bool isDirectory, ref string resolvedLnkPath)
         {
             bool isLnkDirectory = false;
 
@@ -252,7 +135,18 @@ namespace SystemTrayMenu.DataClasses
                     }
                     catch (Exception ex)
                     {
-                        Log.Error($"TargetFilePath:'{TargetFilePath}'", ex);
+                        if (ex is SecurityException ||
+                            ex is ArgumentException ||
+                            ex is UnauthorizedAccessException ||
+                            ex is PathTooLongException ||
+                            ex is NotSupportedException)
+                        {
+                            Log.Warn($"path:'{TargetFilePath}'", ex);
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
                 }
             }
@@ -260,7 +154,148 @@ namespace SystemTrayMenu.DataClasses
             return isLnkDirectory;
         }
 
-        public void MouseDown(DataGridView dgv, MouseEventArgs e)
+
+        private bool SetLnk(ref bool isLnkDirectory,
+            ref string resolvedLnkPath)
+        {
+            bool handled = false;
+            resolvedLnkPath = LnkHelper.ResolveShortcut(TargetFilePath);
+            if (LnkHelper.IsDirectory(resolvedLnkPath))
+            {
+                Icon = IconReader.GetFolderIcon(TargetFilePath,
+                    IconReader.FolderType.Open, true);
+                handled = true;
+                isLnkDirectory = true;
+            }
+            else if (string.IsNullOrEmpty(resolvedLnkPath))
+            {
+                ResolvedFileNotFound = true;
+                Log.Info($"Resolve *.LNK '{TargetFilePath}' has no icon");
+#warning [Feature] Resolve network root #48, start here
+            }
+            else
+            {
+                IWshShell shell = new WshShell();
+                IWshShortcut lnk = shell.CreateShortcut(TargetFilePath)
+                    as IWshShortcut;
+                Arguments = lnk.Arguments;
+                WorkingDirectory = lnk.WorkingDirectory;
+                string iconLocation = lnk.IconLocation;
+                if (iconLocation.Length > 2)
+                {
+                    iconLocation = iconLocation.Substring(0,
+                        iconLocation.Length - 2);
+                    if (System.IO.File.Exists(iconLocation))
+                    {
+                        try
+                        {
+                            Icon = Icon.ExtractAssociatedIcon(iconLocation);
+                            handled = true;
+                        }
+                        catch (ArgumentException ex)
+                        {
+                            Log.Error($"iconLocation:'{iconLocation}'", ex);
+                        }
+                    }
+                }
+
+                TargetFilePath = resolvedLnkPath;
+            }
+
+            SetText(Path.GetFileNameWithoutExtension(TargetFilePathOrig));
+
+            return handled;
+        }
+
+        private bool SetUrl()
+        {
+            bool handled = false;
+            string iconFile = string.Empty;
+            try
+            {
+                FileIni file = new FileIni(TargetFilePath);
+                iconFile = file.Value("IconFile", string.Empty);
+                if (string.IsNullOrEmpty(iconFile))
+                {
+                    string browserPath = FileUrl.GetDefaultBrowserPath();
+                    if (string.IsNullOrEmpty(browserPath))
+                    {
+                        Log.Info($"Resolve *.URL '{TargetFilePath}'" +
+                            $"No default browser found!");
+                    }
+                    else
+                    {
+                        Icon = IconReader.GetFileIconWithCache(browserPath, false);
+                        handled = true;
+                    }
+                }
+                else if (System.IO.File.Exists(iconFile))
+                {
+                    Icon = Icon.ExtractAssociatedIcon(iconFile);
+                    handled = true;
+                }
+                else
+                {
+                    Log.Info($"Resolve *.URL '{TargetFilePath}' has no icon");
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is SecurityException ||
+                    ex is ArgumentException ||
+                    ex is UnauthorizedAccessException ||
+                    ex is PathTooLongException ||
+                    ex is NotSupportedException)
+                {
+                    Log.Warn($"path:'{TargetFilePath}', " +
+                        $"iconFile:'{iconFile}'", ex);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            SetText($"{FileInfo.Name.Substring(0, FileInfo.Name.Length - 4)}");
+
+            return handled;
+        }
+
+        private bool SetSln()
+        {
+            bool handled = false;
+            StringBuilder executable = new StringBuilder(1024);
+            try
+            {
+                DllImports.NativeMethods.Shell32FindExecutable(TargetFilePath, string.Empty, executable);
+                // icon = IconReader.GetFileIcon(executable, false);
+                // e.g. VS 2019 icon, need another icom in imagelist
+                List<Icon> extractedIcons = IconHelper.ExtractAllIcons(
+                    executable.ToString());
+                Icon = extractedIcons.Last();
+                handled = true;
+            }
+            catch (Exception ex)
+            {
+                if (ex is SecurityException ||
+                    ex is ArgumentException ||
+                    ex is UnauthorizedAccessException ||
+                    ex is PathTooLongException ||
+                    ex is NotSupportedException)
+                {
+                    Log.Warn($"path:'{TargetFilePath}', " +
+                        $"executable:'{executable}'", ex);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return handled;
+        }
+
+        internal void MouseDown(DataGridView dgv, MouseEventArgs e)
         {
             if (ContainsMenu)
             {
@@ -290,10 +325,9 @@ namespace SystemTrayMenu.DataClasses
                         p.Start();
                     };
                 }
-                catch (Exception ex)
+                catch (Win32Exception ex)
                 {
-                    Log.Error($"TargetFilePath:'{ TargetFilePath}', " +
-                        $"=>FileNotFound?", ex);
+                    Log.Warn($"path:'{TargetFilePath}'", ex);
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -301,35 +335,29 @@ namespace SystemTrayMenu.DataClasses
             if (e != null &&
                 e.Button == MouseButtons.Right &&
                 FileInfo != null &&
+                dgv != null &&
                 dgv.Rows.Count > RowIndex)
             {
                 IsContextMenuOpen = true;
                 IsSelected = true;
                 dgv.Rows[RowIndex].Selected = true;
 
-                try
+                ShellContextMenu ctxMnu = new ShellContextMenu();
+                Point location = dgv.FindForm().Location;
+                Point point = new Point(
+                    e.X + location.X + dgv.Location.X,
+                    e.Y + location.Y + dgv.Location.Y);
+                if (ContainsMenu)
                 {
-                    ShellContextMenu ctxMnu = new ShellContextMenu();
-                    Point location = dgv.FindForm().Location;
-                    Point point = new Point(
-                        e.X + location.X + dgv.Location.X,
-                        e.Y + location.Y + dgv.Location.Y);
-                    if (ContainsMenu)
-                    {
-                        DirectoryInfo[] dir = new DirectoryInfo[1];
-                        dir[0] = new DirectoryInfo(TargetFilePathOrig);
-                        ctxMnu.ShowContextMenu(dir, point);
-                    }
-                    else
-                    {
-                        FileInfo[] arrFI = new FileInfo[1];
-                        arrFI[0] = new FileInfo(TargetFilePathOrig);
-                        ctxMnu.ShowContextMenu(arrFI, point);
-                    }
+                    DirectoryInfo[] dir = new DirectoryInfo[1];
+                    dir[0] = new DirectoryInfo(TargetFilePathOrig);
+                    ctxMnu.ShowContextMenu(dir, point);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString() + TargetFilePath);
+                    FileInfo[] arrFI = new FileInfo[1];
+                    arrFI[0] = new FileInfo(TargetFilePathOrig);
+                    ctxMnu.ShowContextMenu(arrFI, point);
                 }
 
                 if (!dgv.IsDisposed)
@@ -342,30 +370,20 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        public void DoubleClick()
+        internal void DoubleClick()
         {
             if (ContainsMenu)
             {
-                try
-                {
-                    Process.Start("explorer.exe", TargetFilePath);
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"TargetFilePath:'{TargetFilePath}', " +
-                        $"=>DirectoryNotFound?", ex);
-                    ex = new DirectoryNotFoundException();
-                    MessageBox.Show(ex.Message);
-                }
+                Log.ProcessStart("explorer.exe", TargetFilePath);
             }
         }
 
-        public void MenuLoaded()
+        internal void MenuLoaded()
         {
             waitMenuOpen.MenuLoaded();
         }
 
-        public void StartMenuOpener()
+        internal void StartMenuOpener()
         {
             if (ContainsMenu)
             {
@@ -382,7 +400,7 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        public void StopLoadMenuAndStartWaitToOpenIt()
+        internal void StopLoadMenuAndStartWaitToOpenIt()
         {
             if (ContainsMenu)
             {

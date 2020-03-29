@@ -38,7 +38,9 @@ namespace SystemTrayMenu
                     }
                 }
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception ex)
+#pragma warning restore CA1031 // => Represents ThreadException during attached to process
             {
                 AskUserSendError(ex);
             }
@@ -56,7 +58,7 @@ namespace SystemTrayMenu
                     "Reporting this error will help us make our product better. Press yes to open your standard email app.",
                     "SystemTrayMenu BugSplat", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    Process.Start("mailto:" + "markus@hofknecht.eu" +
+                    Log.ProcessStart("mailto:" + "markus@hofknecht.eu" +
                         "?subject=SystemTrayMenu Bug reported" +
                         "&body=" + ex.ToString());
                 }

@@ -1,10 +1,12 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Security;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using SystemTrayMenu.Utilities;
@@ -193,11 +195,7 @@ namespace SystemTrayMenu.UserInterface
             DateTime assemblyLastWriteTime = DateTime.MaxValue;
             if (!string.IsNullOrEmpty(a.Location))
             {
-                try
-                {
-                    assemblyLastWriteTime = File.GetLastWriteTime(a.Location);
-                }
-                catch (Exception) { }
+                assemblyLastWriteTime = File.GetLastWriteTime(a.Location);
             }
 
             return assemblyLastWriteTime;
@@ -355,22 +353,15 @@ namespace SystemTrayMenu.UserInterface
             {
                 nvc.Add("Location", "(not supported)");
             }
-            // version
-            try
+
+            string version = "(unknown)";
+            AssemblyName assemblyName = a.GetName();
+            if (assemblyName.Version != null &&
+                (assemblyName.Version.Major != 0 || assemblyName.Version.Minor != 0))
             {
-                if (a.GetName().Version.Major == 0 && a.GetName().Version.Minor == 0)
-                {
-                    nvc.Add("Version", "(unknown)");
-                }
-                else
-                {
-                    nvc.Add("Version", a.GetName().Version.ToString());
-                }
+                version = a.GetName().Version.ToString();
             }
-            catch (Exception)
-            {
-                nvc.Add("Version", "(unknown)");
-            }
+            nvc.Add("Version", version);
 
             nvc.Add("FullName", a.FullName);
 
@@ -388,7 +379,19 @@ namespace SystemTrayMenu.UserInterface
                 RegistryKey rk = Registry.LocalMachine.OpenSubKey(KeyName);
                 strSysInfoPath = (string)rk.GetValue(SubKeyRef, string.Empty);
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                if (ex is SecurityException ||
+                    ex is UnauthorizedAccessException ||
+                    ex is IOException)
+                {
+                    Log.Warn($"KeyName:'{KeyName}' SubKeyRef:'{SubKeyRef}'", ex);
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return strSysInfoPath;
         }
@@ -414,19 +417,7 @@ namespace SystemTrayMenu.UserInterface
                 return;
             }
 
-            try
-            {
-                System.Diagnostics.Process.Start(strSysInfoPath);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("System Information is unavailable at this time." +
-                    Environment.NewLine +
-                    Environment.NewLine +
-                    "(couldn't launch '" + strSysInfoPath + "')",
-                    Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-
+            Log.ProcessStart(strSysInfoPath);
         }
 
         // <summary>
@@ -641,14 +632,9 @@ namespace SystemTrayMenu.UserInterface
 
             _ExecutingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
             _CallingAssemblyName = Assembly.GetCallingAssembly().GetName().Name;
-            try
-            {
-                // for web hosted apps, GetEntryAssembly = nothing
-                _EntryAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
-            }
-            catch (Exception)
-            {
-            }
+
+            // for web hosted apps, GetEntryAssembly = nothing
+            _EntryAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
 
             _MinWindowHeight = AppCopyrightLabel.Top + AppCopyrightLabel.Height + buttonOk.Height + 30;
 
@@ -753,13 +739,7 @@ namespace SystemTrayMenu.UserInterface
         // </summary>
         private void MoreRichTextBox_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            try
-            {
-                System.Diagnostics.Process.Start(e.LinkText);
-            }
-            catch (Exception)
-            {
-            }
+            Log.ProcessStart(e.LinkText);
         }
 
         // <summary>

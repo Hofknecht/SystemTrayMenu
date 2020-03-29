@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 using EventHandler = SystemTrayMenu.Helper.EventHandler;
 
 namespace SystemTrayMenu.Utilities
@@ -17,6 +18,7 @@ namespace SystemTrayMenu.Utilities
             Log.Close();
             Process.Start(Assembly.GetExecutingAssembly().
                 ManifestModule.FullyQualifiedName);
+            Application.Exit();
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]

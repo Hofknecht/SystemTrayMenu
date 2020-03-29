@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using static SystemTrayMenu.NativeDllImport.NativeMethods;
+using static SystemTrayMenu.DllImports.NativeMethods;
 
 namespace SystemTrayMenu.Helper.Taskbar
 {
@@ -45,14 +45,14 @@ namespace SystemTrayMenu.Helper.Taskbar
 
         public Taskbar()
         {
-            IntPtr taskbarHandle = NativeDllImport.NativeMethods.User32FindWindow(Taskbar.ClassName, null);
+            IntPtr taskbarHandle = DllImports.NativeMethods.User32FindWindow(Taskbar.ClassName, null);
 
             APPBARDATA data = new APPBARDATA
             {
                 cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA)),
                 hWnd = taskbarHandle
             };
-            IntPtr result = NativeDllImport.NativeMethods.Shell32SHAppBarMessage(ABM.GetTaskbarPos, ref data);
+            IntPtr result = DllImports.NativeMethods.Shell32SHAppBarMessage(ABM.GetTaskbarPos, ref data);
             if (result == IntPtr.Zero)
             {
                 //throw new InvalidOperationException();
@@ -64,7 +64,7 @@ namespace SystemTrayMenu.Helper.Taskbar
                 Bounds = Rectangle.FromLTRB(data.rc.left, data.rc.top, data.rc.right, data.rc.bottom);
 
                 data.cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA));
-                result = NativeDllImport.NativeMethods.Shell32SHAppBarMessage(ABM.GetState, ref data);
+                result = DllImports.NativeMethods.Shell32SHAppBarMessage(ABM.GetState, ref data);
                 int state = result.ToInt32();
                 AlwaysOnTop = (state & ABS.AlwaysOnTop) == ABS.AlwaysOnTop;
                 AutoHide = (state & ABS.Autohide) == ABS.Autohide;

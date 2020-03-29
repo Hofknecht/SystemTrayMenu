@@ -1,6 +1,8 @@
 ﻿using Shell32;
 using System;
 using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace SystemTrayMenu.Utilities
 {
@@ -30,7 +32,24 @@ namespace SystemTrayMenu.Utilities
             }
             catch (Exception ex)
             {
-                Log.Error("Get Shell COM instance failed", ex);
+                if (ex is ArgumentException ||
+                    ex is NotSupportedException ||
+                    ex is TargetInvocationException ||
+                    ex is MethodAccessException ||
+                    ex is MemberAccessException ||
+                    ex is InvalidComObjectException ||
+                    ex is MissingMethodException ||
+                    ex is COMException ||
+                    ex is TypeLoadException)
+                {
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                    Log.Warn("Get Shell COM instance failed", ex);
+#pragma warning restore CA1303 //=> Exceptions not translated in logfile => OK
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
 

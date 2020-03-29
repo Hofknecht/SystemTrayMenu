@@ -10,15 +10,15 @@ using EventHandler = SystemTrayMenu.Helper.EventHandler;
 
 namespace SystemTrayMenu.UserInterface
 {
-    public partial class Menu : Form
+    internal partial class Menu : Form
     {
-        public new event EventHandler MouseWheel;
-        public event EventHandler Deactivated;
-        public event EventHandler UserClickedOpenFolder;
+        internal new event EventHandler MouseWheel;
+        internal event EventHandler Deactivated;
+        internal event EventHandler UserClickedOpenFolder;
 
-        public event Action<Keys> CmdKeyProcessed;
+        internal event Action<Keys> CmdKeyProcessed;
 
-        public enum Type
+        internal enum Type
         {
             Main,
             Sub,
@@ -27,20 +27,21 @@ namespace SystemTrayMenu.UserInterface
             MaxReached
         }
 
-        public bool IsFadingIn => FadeForm.IsFadingIn;
+        internal bool IsFadingIn => FadeForm.IsFadingIn;
 
-        public bool IsFadingOut => FadeForm.IsFadingOut;
+        internal bool IsFadingOut => FadeForm.IsFadingOut;
 
         internal int Level = 0;
 
         private readonly FadeForm FadeForm = null;
         private bool autoResizeRowsDone = false;
 
-        public enum MenuType { Default, DisposedFake };
+        internal enum MenuType { Default, DisposedFake };
 
-        public Menu(MenuType menuType = MenuType.Default)
+        internal Menu(MenuType menuType = MenuType.Default)
         {
             FadeForm = new FadeForm(this);
+
             InitializeComponent();
             SetDoubleBuffer(dgv, true);
 
@@ -68,20 +69,20 @@ namespace SystemTrayMenu.UserInterface
                 System.Globalization.CultureInfo.InvariantCulture);
         }
 
-        public void SetTypeSub()
+        internal void SetTypeSub()
         {
             SetType(Type.Sub);
         }
-        public void SetTypeEmpty()
+        internal void SetTypeEmpty()
         {
             SetType(Type.Empty);
         }
-        public void SetTypeNoAccess()
+        internal void SetTypeNoAccess()
         {
             SetType(Type.NoAccess);
         }
 
-        public void SetType(Type type)
+        internal void SetType(Type type)
         {
             switch (type)
             {
@@ -110,18 +111,18 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        public bool IsVisible()
+        internal bool IsVisible()
         {
             return Visible;
         }
 
-        public bool IsActive(Form activeForm)
+        internal bool IsActive(Form activeForm)
         {
             bool isActive = (this == activeForm);
             return isActive;
         }
 
-        public bool IsMouseOn(Point mousePosition)
+        internal bool IsMouseOn(Point mousePosition)
         {
             bool isMouseOn = Visible && Opacity >= MenuDefines.OpacityHalfValue
                 && ClientRectangle.Contains(
@@ -129,12 +130,12 @@ namespace SystemTrayMenu.UserInterface
             return isMouseOn;
         }
 
-        public DataGridView GetDataGridView()
+        internal DataGridView GetDataGridView()
         {
             return dgv;
         }
 
-        public void SetTitle(string title)
+        internal void SetTitle(string title)
         {
             if (!string.IsNullOrEmpty(title))
             {
@@ -146,22 +147,22 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        public void FadeIn()
+        internal void FadeIn()
         {
             FadeForm.FadeIn();
         }
 
-        public void FadeHalf()
+        internal void FadeHalf()
         {
             FadeForm.FadeHalf();
         }
 
-        public void FadeOut()
+        internal void FadeOut()
         {
             FadeForm.FadeOut();
         }
 
-        public void AdjustLocationAndSize(Screen screen)
+        internal void AdjustLocationAndSize(Screen screen)
         {
             if (screen != null)
             {
@@ -184,7 +185,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        public void AdjustLocationAndSize(int heightMax, Menu menuPredecessor)
+        internal void AdjustLocationAndSize(int heightMax, Menu menuPredecessor)
         {
             DataGridViewElementStates states = DataGridViewElementStates.None;
             if (!autoResizeRowsDone)
@@ -279,12 +280,12 @@ namespace SystemTrayMenu.UserInterface
             Deactivated?.Invoke();
         }
 
-        public void SetTitleColorDeactive()
+        internal void SetTitleColorDeactive()
         {
             labelTitle.ForeColor = Color.LightGray;
         }
 
-        public void SetTitleColorActive()
+        internal void SetTitleColorActive()
         {
             labelTitle.ForeColor = Color.Black;
         }

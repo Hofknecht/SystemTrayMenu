@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace SystemTrayMenu.Utilities
 {
-    public static class DataGridViewExtensions
+    internal static class DataGridViewExtensions
     {
-        public static void FastAutoSizeColumns(this DataGridView dgv)
+        internal static void FastAutoSizeColumns(this DataGridView dgv)
         {
             System.Collections.Generic.IEnumerable<DataGridViewRow> rows = dgv.Rows
                .Cast<DataGridViewRow>();

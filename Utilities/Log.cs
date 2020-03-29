@@ -1,8 +1,10 @@
 ﻿using Clearcove.Logging;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SystemTrayMenu.Utilities
 {
@@ -19,9 +21,15 @@ namespace SystemTrayMenu.Utilities
             log.Info(message);
         }
 
-        //internal static void Warn(string message)
+        internal static void Warn(string message, Exception ex)
+        {
+            log.Warn($"{message}{Environment.NewLine}" +
+                $"{ex.ToString()}");
+        }
+
+        //internal static void Debug(string message)
         //{
-        //    log.Warn($"{message}{Environment.NewLine}" +
+        //    log.Debug($"{message}{Environment.NewLine}" +
         //        $"{Environment.StackTrace.ToString()}");
         //}
 
@@ -40,7 +48,7 @@ namespace SystemTrayMenu.Utilities
 
         internal static void OpenLogFile()
         {
-            Process.Start(GetLogFilePath());
+            ProcessStart(GetLogFilePath());
         }
 
         internal static void WriteApplicationRuns()
@@ -55,6 +63,44 @@ namespace SystemTrayMenu.Utilities
         internal static void Close()
         {
             Logger.ShutDown();
+        }
+
+        internal static void ProcessStart(string fileName, string arguments = null)
+        {
+            if (!string.IsNullOrEmpty(arguments) &&
+                !Directory.Exists(arguments))
+            {
+                Exception ex = new DirectoryNotFoundException();
+                Warn($"path:'{arguments}'", ex);
+                MessageBox.Show(ex.Message);
+            }
+            else
+            {
+                try
+                {
+                    //if (!string.IsNullOrEmpty(arguments))
+                    //{
+                        Process.Start(fileName, arguments);
+                    //}
+                    //else
+                    //{
+                    //    Process.Start(fileName);
+                    //}
+                }
+                catch (Exception ex)
+                {
+                    if (ex is FileNotFoundException ||
+                        ex is Win32Exception)
+                    {
+                        Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
+                        MessageBox.Show(ex.Message);
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
         }
     }
 }
