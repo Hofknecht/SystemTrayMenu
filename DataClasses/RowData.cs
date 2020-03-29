@@ -278,11 +278,11 @@ namespace SystemTrayMenu.DataClasses
             {
                 try
                 {
-                    //https://stackoverflow.com/questions/31627801/
                     using (Process p = new Process())
                     {
                         p.StartInfo = new ProcessStartInfo(TargetFilePath)
                         {
+                            FileName = TargetFilePathOrig,
                             Arguments = Arguments,
                             WorkingDirectory = WorkingDirectory,
                             CreateNoWindow = true
