@@ -18,8 +18,7 @@ namespace SystemTrayMenu.DataClasses
 {
     internal class RowData : IDisposable
     {
-#warning check if we can put some variables to private instead internal
-        internal event Action<object, EventArgs> OpenMenu;
+        internal event EventHandler<RowData> OpenMenu;
         internal BackgroundWorker Reading = new BackgroundWorker();
         internal FileInfo FileInfo;
         internal Menu SubMenu;
@@ -27,17 +26,16 @@ namespace SystemTrayMenu.DataClasses
         internal bool IsSelectedByKeyboard;
         internal bool ContainsMenu;
         internal bool IsContextMenuOpen;
-        internal bool ResolvedFileNotFound;
         internal bool IsResolvedLnk;
         internal bool IsLoading = false;
         internal bool RestartLoading = false;
         internal bool HiddenEntry;
-        internal string WorkingDirectory;
-        internal string Arguments;
         internal string TargetFilePath;
         internal string TargetFilePathOrig;
-        internal string Text;
         internal int RowIndex;
+        private string WorkingDirectory;
+        private string Arguments;
+        private string Text;
         private readonly WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
         private Icon Icon = null;
         private bool diposeIcon = true;
@@ -65,7 +63,7 @@ namespace SystemTrayMenu.DataClasses
 
             if (Icon == null)
             {
-                Icon = (Icon)Properties.Resources.SystemTrayMenu;
+                Icon = Properties.Resources.SystemTrayMenu;
             }
             DataGridViewImageCell cellIcon =
                 (DataGridViewImageCell)row.Cells[0];
@@ -172,7 +170,6 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (string.IsNullOrEmpty(resolvedLnkPath))
             {
-                ResolvedFileNotFound = true;
                 Log.Info($"Resolve *.LNK '{TargetFilePath}' has no icon");
 #warning [Feature] Resolve network root #48, start here
             }
@@ -416,7 +413,7 @@ namespace SystemTrayMenu.DataClasses
         private void WaitMenuOpen_DoOpen()
         {
             IsLoading = false;
-            OpenMenu?.Invoke(this, null);
+            OpenMenu?.Invoke(this, this);
         }
 
         public void Dispose()

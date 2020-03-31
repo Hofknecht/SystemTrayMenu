@@ -5,18 +5,19 @@ using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Helper;
 using SystemTrayMenu.Utilities;
-using EventHandler = SystemTrayMenu.Helper.EventHandler;
 using Menu = SystemTrayMenu.UserInterface.Menu;
 
 namespace SystemTrayMenu.Handler
 {
     internal class KeyboardInput : IDisposable
     {
-        public event EventHandler HotKeyPressed;
-        public event EventHandler ClosePressed;
-        public Action<DataGridView, int> RowSelected;
-        public Action<int, int, DataGridView> RowDeselected;
-        public event EventHandler Cleared;
+        public event EventHandlerEmpty HotKeyPressed;
+        public event EventHandlerEmpty ClosePressed;
+#warning use event not action
+        public event Action<DataGridView, int> RowSelected;
+#warning use event not action
+        public event Action<int, int, DataGridView> RowDeselected;
+        public event EventHandlerEmpty Cleared;
 
         private readonly Menu[] menus;
         private readonly KeyboardHook hook = new KeyboardHook();

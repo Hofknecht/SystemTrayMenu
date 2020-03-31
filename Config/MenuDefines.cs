@@ -21,14 +21,6 @@ namespace SystemTrayMenu
         internal const int LengthMax = 37;
         internal const int Scrollspeed = 4;
         internal const int WaitMenuOpen = 200;
-        // 60 fps => 1000ms/60fps =~ 16.6ms
-        internal const int IntervalFade = 16;
-        // 60 fps => 1000ms/60fps =~ 16.6ms
-        internal const int IntervalLoad = 16;
-        internal const double OpacityHalfValue = 0.80;
-        internal const double OpacityInStep = 0.20;
-        internal const double OpacityOutStep = 0.05;
-        internal const double OpacityHalfStep = 0.01;
         internal const int MenusMax = 50;
         internal const int MaxClicksInQueue = 1;
     }

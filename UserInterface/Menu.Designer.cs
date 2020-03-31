@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            FadeForm.Dispose();
+            fading.Dispose();
             base.Dispose(disposing);
         }
 
@@ -162,7 +162,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SystemTrayMenu";
             this.TopMost = true;
-            this.Deactivate += new System.EventHandler(this.Menu_Deactivate);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();

@@ -168,6 +168,7 @@
     </Compile>
     <Compile Include="Utilities\AppRestart.cs" />
     <Compile Include="Utilities\DataGridViewExtensions.cs" />
+    <Compile Include="Utilities\EventHandlerEmpty.cs" />
     <Compile Include="Utilities\File\IconReader.cs" />
     <Compile Include="Utilities\File\FileIni.cs" />
     <Compile Include="Utilities\File\FileLnk.cs" />
@@ -215,7 +216,7 @@
       <DependentUpon>lang.resx</DependentUpon>
     </Compile>
     <Compile Include="Config\MenuDefines.cs" />
-    <Compile Include="UserInterface\FadeForm.cs" />
+    <Compile Include="Helpers\Fading.cs" />
     <Compile Include="Helpers\WindowsTaskbar.cs" />
     <Compile Include="UserInterface\Menu.cs">
       <SubType>Form</SubType>

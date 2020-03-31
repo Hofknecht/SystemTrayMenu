@@ -1,12 +1,12 @@
 ﻿using System;
-using EventHandler = SystemTrayMenu.Helper.EventHandler;
+using SystemTrayMenu.Utilities;
 using Timer = System.Windows.Forms.Timer;
 
 namespace SystemTrayMenu.Handler
 {
     internal class WaitMenuOpen : IDisposable
     {
-        public event EventHandler DoOpen;
+        public event EventHandlerEmpty DoOpen;
 
         private readonly Timer waitOpen = new Timer();
         private bool waitedDone = false;

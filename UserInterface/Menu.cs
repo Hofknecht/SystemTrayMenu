@@ -4,21 +4,23 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
+using SystemTrayMenu.DllImports;
 using SystemTrayMenu.Helper;
 using SystemTrayMenu.Utilities;
-using EventHandler = SystemTrayMenu.Helper.EventHandler;
 
 namespace SystemTrayMenu.UserInterface
 {
     internal partial class Menu : Form
     {
-        internal new event EventHandler MouseWheel;
-        internal event EventHandler Deactivated;
-        internal event EventHandler UserClickedOpenFolder;
-
+        internal new event EventHandlerEmpty MouseWheel;
+        internal new event EventHandlerEmpty MouseEnter;
+        internal event EventHandlerEmpty UserClickedOpenFolder;
+#warning use event not action
         internal event Action<Keys> CmdKeyProcessed;
 
-        internal enum Type
+        internal bool IsUsable => Visible && !fading.IsHiding;
+
+        internal enum MenuType
         {
             Main,
             Sub,
@@ -27,20 +29,26 @@ namespace SystemTrayMenu.UserInterface
             MaxReached
         }
 
-        internal bool IsFadingIn => FadeForm.IsFadingIn;
-
-        internal bool IsFadingOut => FadeForm.IsFadingOut;
-
         internal int Level = 0;
 
-        private readonly FadeForm FadeForm = null;
+        private readonly Fading fading = new Fading();
         private bool autoResizeRowsDone = false;
 
-        internal enum MenuType { Default, DisposedFake };
+        internal enum MenuState { Default, DisposedFake };
 
-        internal Menu(MenuType menuType = MenuType.Default)
+        internal Menu(MenuState menuType = MenuState.Default)
         {
-            FadeForm = new FadeForm(this);
+            fading.ChangeOpacity += Fading_ChangeOpacity;
+            void Fading_ChangeOpacity(object sender, double newOpacity)
+            {
+                Opacity = newOpacity;
+            }
+            fading.Show += Fading_Show;
+            void Fading_Show()
+            {
+                NativeMethods.User32ShowInactiveTopmost(this);
+            }
+            fading.Hide += Hide;
 
             InitializeComponent();
             SetDoubleBuffer(dgv, true);
@@ -54,8 +62,15 @@ namespace SystemTrayMenu.UserInterface
 
             VScrollBar scrollBar = dgv.Controls.OfType<VScrollBar>().First();
             scrollBar.MouseWheel += dgv_MouseWheel;
+            scrollBar.MouseEnter += ControlsMouseEnter;
+            dgv.MouseEnter += ControlsMouseEnter;
+            labelTitle.MouseEnter += ControlsMouseEnter;
+            void ControlsMouseEnter(object sender, EventArgs e)
+            {
+                MouseEnter.Invoke();
+            }
 
-            if (menuType == MenuType.DisposedFake)
+            if (menuType == MenuState.DisposedFake)
             {
                 Dispose();
             }
@@ -71,40 +86,40 @@ namespace SystemTrayMenu.UserInterface
 
         internal void SetTypeSub()
         {
-            SetType(Type.Sub);
+            SetType(MenuType.Sub);
         }
         internal void SetTypeEmpty()
         {
-            SetType(Type.Empty);
+            SetType(MenuType.Empty);
         }
         internal void SetTypeNoAccess()
         {
-            SetType(Type.NoAccess);
+            SetType(MenuType.NoAccess);
         }
 
-        internal void SetType(Type type)
+        internal void SetType(MenuType type)
         {
             switch (type)
             {
-                case Type.Sub:
+                case MenuType.Sub:
                     if (!labelTitle.IsDisposed)
                     {
                         labelTitle.Dispose();
                     }
                     break;
-                case Type.Empty:
+                case MenuType.Empty:
                     SetTitle(Language.Translate("Folder empty"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
                     break;
-                case Type.NoAccess:
+                case MenuType.NoAccess:
                     SetTitle(Language.Translate("Folder inaccessible"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
                     break;
-                case Type.MaxReached:
+                case MenuType.MaxReached:
                     SetTitle($"Max {MenuDefines.MenusMax - 1} Menus");
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
                     break;
-                case Type.Main:
+                case MenuType.Main:
                     break;
                 default:
                     break;
@@ -124,8 +139,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool IsMouseOn(Point mousePosition)
         {
-            bool isMouseOn = Visible && Opacity >= MenuDefines.OpacityHalfValue
-                && ClientRectangle.Contains(
+            bool isMouseOn = Visible && ClientRectangle.Contains(
                   PointToClient(mousePosition));
             return isMouseOn;
         }
@@ -133,6 +147,10 @@ namespace SystemTrayMenu.UserInterface
         internal DataGridView GetDataGridView()
         {
             return dgv;
+        }
+        internal Label GetLabel()
+        {
+            return labelTitle;
         }
 
         internal void SetTitle(string title)
@@ -147,19 +165,19 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void FadeIn()
+        internal void ShowWithFade()
         {
-            FadeForm.FadeIn();
+            fading.Fade(Fading.FadingState.Show);
         }
 
-        internal void FadeHalf()
+        internal void ShowTransparent()
         {
-            FadeForm.FadeHalf();
+            fading.Fade(Fading.FadingState.ShowTransparent);
         }
 
-        internal void FadeOut()
+        internal void HideWithFade()
         {
-            FadeForm.FadeOut();
+            fading.Fade(Fading.FadingState.Hide);
         }
 
         internal void AdjustLocationAndSize(Screen screen)
@@ -225,7 +243,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void AdjustDataGridViewSize()
         {
-            //dgv.AutoResizeColumns(); //AutoResizeColumns slow ~45ms
+            //dgv.AutoResizeColumns() was too slow ~45ms
             DataGridViewExtensions.FastAutoSizeColumns(dgv);
 
             bool scrollbarShown = false;
@@ -273,11 +291,6 @@ namespace SystemTrayMenu.UserInterface
             }
 
             MouseWheel.Invoke();
-        }
-
-        private void Menu_Deactivate(object sender, EventArgs e)
-        {
-            Deactivated?.Invoke();
         }
 
         internal void SetTitleColorDeactive()

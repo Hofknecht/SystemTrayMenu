@@ -1,12 +1,12 @@
 ﻿using System;
-using EventHandler = SystemTrayMenu.Helper.EventHandler;
+using SystemTrayMenu.Utilities;
 using Timer = System.Windows.Forms.Timer;
 
 namespace SystemTrayMenu.Handler
 {
     internal class WaitFastLeave : IDisposable
     {
-        public event EventHandler Leave;
+        public event EventHandlerEmpty Leave;
 
         private readonly Timer timerSecondLeaveCheck = new Timer();
 

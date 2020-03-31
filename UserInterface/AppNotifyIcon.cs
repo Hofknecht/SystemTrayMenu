@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using SystemTrayMenu.Helper;
-using EventHandler = SystemTrayMenu.Helper.EventHandler;
+using SystemTrayMenu.Utilities;
 using R = SystemTrayMenu.Properties.Resources;
 using Timer = System.Windows.Forms.Timer;
 
@@ -12,12 +12,13 @@ namespace SystemTrayMenu.UserInterface
 {
     internal class MenuNotifyIcon : IDisposable
     {
-        public event EventHandler HandleClick;
-        public event EventHandler ChangeFolder;
-        public event EventHandler OpenLog;
-        public event EventHandler Restart;
-        public event EventHandler Exit;
+        public event EventHandlerEmpty HandleClick;
+        public event EventHandlerEmpty ChangeFolder;
+        public event EventHandlerEmpty OpenLog;
+        public event EventHandlerEmpty Restart;
+        public event EventHandlerEmpty Exit;
 
+        private const int Interval60FPS = 16; //60fps=>1s/60fps=~16.6ms
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
         private DateTime timeLoadingStart;
         private int threadsLoading = 0;
@@ -33,7 +34,7 @@ namespace SystemTrayMenu.UserInterface
             indexLoad = bitmapsLoading.Count;
             notifyIcon.Icon = bitmapsLoading.First();
             load.Tick += Load_Tick;
-            load.Interval = MenuDefines.IntervalLoad;
+            load.Interval = Interval60FPS;
             notifyIcon.Text = MenuDefines.NotifyIconText;
             notifyIcon.Visible = true;
             notifyIcon.Icon = R.SystemTrayMenu;

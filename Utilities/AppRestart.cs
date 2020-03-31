@@ -3,13 +3,12 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using EventHandler = SystemTrayMenu.Helper.EventHandler;
 
 namespace SystemTrayMenu.Utilities
 {
     internal class AppRestart
     {
-        public static event EventHandler BeforeRestarting;
+        public static event EventHandlerEmpty BeforeRestarting;
 
         private static void Restart(string reason)
         {

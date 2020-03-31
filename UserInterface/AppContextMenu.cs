@@ -15,10 +15,10 @@ namespace SystemTrayMenu.Helper
 {
     internal class AppContextMenu
     {
-        public event EventHandler ClickedChangeFolder;
-        public event EventHandler ClickedOpenLog;
-        public event EventHandler ClickedRestart;
-        public event EventHandler ClickedExit;
+        public event EventHandlerEmpty ClickedChangeFolder;
+        public event EventHandlerEmpty ClickedOpenLog;
+        public event EventHandlerEmpty ClickedRestart;
+        public event EventHandlerEmpty ClickedExit;
 
         public ContextMenuStrip Create()
         {
