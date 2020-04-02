@@ -14,6 +14,7 @@ namespace SystemTrayMenu.UserInterface
     {
         internal new event EventHandlerEmpty MouseWheel;
         internal new event EventHandlerEmpty MouseEnter;
+        internal new event EventHandlerEmpty MouseLeave;
         internal event EventHandlerEmpty UserClickedOpenFolder;
 #warning use event not action
         internal event Action<Keys> CmdKeyProcessed;
@@ -68,6 +69,13 @@ namespace SystemTrayMenu.UserInterface
             void ControlsMouseEnter(object sender, EventArgs e)
             {
                 MouseEnter.Invoke();
+            }
+            scrollBar.MouseLeave += ControlsMouseLeave;
+            dgv.MouseLeave += ControlsMouseLeave;
+            labelTitle.MouseLeave += ControlsMouseLeave;
+            void ControlsMouseLeave(object sender, EventArgs e)
+            {
+                MouseLeave.Invoke();
             }
 
             if (menuType == MenuState.DisposedFake)

@@ -176,14 +176,13 @@
     <Compile Include="Helpers\KeyboardHook.cs" />
     <Compile Include="Utilities\Log.cs" />
     <Compile Include="Utilities\SingleAppInstance.cs" />
-    <Compile Include="Helpers\MessageFilter.cs" />
     <Compile Include="Utilities\Language.cs" />
     <Compile Include="Utilities\Scaling.cs" />
     <Compile Include="UserInterface\ShellContextMenu\ShellContextMenuException.cs" />
     <Compile Include="UserInterface\ShellContextMenu\ShellHelper.cs" />
     <Compile Include="UserInterface\ShellContextMenu\ShellContextMenu.cs" />
     <Compile Include="Utilities\File\FileUrl.cs" />
-    <Compile Include="Business\WaitFastLeave.cs" />
+    <Compile Include="Business\WaitLeave.cs" />
     <Compile Include="Business\WaitMenuOpen.cs" />
     <Compile Include="Helpers\WindowsExplorerSort.cs" />
     <Compile Include="NativeDllImport\GetIcon.cs" />

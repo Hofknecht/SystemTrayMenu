@@ -110,6 +110,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void StartStopTimer(FadingState state)
         {
+#warning if too many threads throw some away? win32 exception if too fast here
             lock (lockTimerEnable)
             {
                 if (state == FadingState.Idle)

@@ -21,15 +21,12 @@ namespace SystemTrayMenu
     {
         private enum OpenCloseState { Default, Opening, Closing };
         private OpenCloseState openCloseState = OpenCloseState.Default;
-        private readonly MessageFilter messageFilter = new MessageFilter();
         private readonly MenuNotifyIcon menuNotifyIcon = null;
         private readonly Menu[] menus = new Menu[MenuDefines.MenusMax];
         private readonly BackgroundWorker worker = new BackgroundWorker();
         private readonly Screen screen = Screen.PrimaryScreen;
-        private readonly WaitFastLeave fastLeave = new WaitFastLeave();
+        private readonly WaitLeave waitLeave = new WaitLeave(MenuDefines.TimeUntilClose);
         private readonly KeyboardInput keyboardInput;
-        private DataGridView dgvFromLastMouseEvent = null;
-        private DataGridViewCellEventArgs cellEventArgsFromLastMouseEvent = null;
         private int clicksInQueue = 0;
 
         public SystemTrayMenu()
@@ -37,11 +34,12 @@ namespace SystemTrayMenu
             AppRestart.BeforeRestarting += Dispose;
             SystemEvents.DisplaySettingsChanged += AppRestart.ByDisplaySettings;
             menus[0] = new Menu(Menu.MenuState.DisposedFake);
-
+            waitLeave.LeaveTriggered += FadeHalfOrOutIfNeeded;
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
             keyboardInput.HotKeyPressed += SwitchOpenClose;
             keyboardInput.ClosePressed += MenusFadeOut;
+            keyboardInput.RowDeselected += CheckMenuOpenerStop;
             keyboardInput.RowSelected += KeyboardInputRowSelected;
             void KeyboardInputRowSelected(DataGridView dgv, int rowIndex)
             {
@@ -49,8 +47,6 @@ namespace SystemTrayMenu
                 FadeInIfNeeded();
                 CheckMenuOpenerStart(dgv, rowIndex);
             }
-            keyboardInput.RowDeselected += CheckMenuOpenerStop;
-            keyboardInput.Cleared += FadeHalfOrOutIfNeeded;
 
             menuNotifyIcon = new MenuNotifyIcon();
             menuNotifyIcon.Exit += Application.Exit;
@@ -133,8 +129,6 @@ namespace SystemTrayMenu
                             NativeMethods.ForceForegroundWindow(menus[0].Handle);
                         }
                     }
-
-                    messageFilter.StartListening();
                 }
 
                 openCloseState = OpenCloseState.Default;
@@ -150,28 +144,7 @@ namespace SystemTrayMenu
                 }
             }
 
-            messageFilter.MouseMove += MessageFilter_MouseMove;
-            void MessageFilter_MouseMove()
-            {
-                if (menus[0].IsUsable &&
-                    keyboardInput.InUse)
-                {
-                    CheckMenuOpenerStop(keyboardInput.iMenuKey,
-                        keyboardInput.iRowKey);
-                    keyboardInput.ClearIsSelectedByKey();
-
-                    keyboardInput.InUse = false;
-                    if (dgvFromLastMouseEvent != null)
-                    {
-                        Dgv_CellMouseEnter(dgvFromLastMouseEvent,
-                            cellEventArgsFromLastMouseEvent);
-                    }
-                }
-            }
-
-            messageFilter.MouseLeave += fastLeave.Start;
-            fastLeave.Leave += FadeHalfOrOutIfNeeded;
-
+#warning todo
             //Workaround to preload cache
             SwitchOpenClose();
             while (worker.IsBusy)
@@ -185,47 +158,13 @@ namespace SystemTrayMenu
             //    Path.GetFileName(Config.Path));
         }
 
-        private void FadeInIfNeeded()
-        {
-            if (menus[0].IsUsable)
-            {
-                if (Menus().Any(m => m.Opacity < 1))
-                {
-                    Menus().ToList().ForEach(menu => menu.ShowWithFade());
-                }
-            }
-        }
-
-        private void FadeHalfOrOutIfNeeded()
-        {
-            bool isMouseOnAnyMenu = !Menus().Any(
-                m => m.IsMouseOn(Control.MousePosition));
-
-            if (menus[0].IsUsable &&
-                isMouseOnAnyMenu)
-            {
-                if (Form.ActiveForm is Menu)
-                {
-                    if (!keyboardInput.InUse)
-                    {
-                        Menus().ToList().ForEach(menu => menu.ShowTransparent());
-                    }
-                }
-                else
-                {
-                    MenusFadeOut();
-                }
-            }
-        }
-
         public void Dispose()
         {
             worker.Dispose();
             keyboardInput.Dispose();
             menuNotifyIcon.Dispose();
-            fastLeave.Dispose();
+            waitLeave.Dispose();
             DisposeMenu(menus[0]);
-            dgvFromLastMouseEvent?.Dispose();
             IconReader.Dispose();
         }
 
@@ -243,93 +182,6 @@ namespace SystemTrayMenu
                 dgv.ClearSelection();
                 menuToDispose.Dispose();
             }
-        }
-
-        private void MenuVisibleChanged(object sender, EventArgs e)
-        {
-            Menu menu = (Menu)sender;
-            if (menu.IsUsable)
-            {
-                AdjustSubMenusLocationAndSize();
-            }
-            if (!menu.Visible)
-            {
-                DisposeMenu(menu);
-            }
-            if (!Menus().Any(m => m.Visible))
-            {
-                openCloseState = OpenCloseState.Default;
-            }
-        }
-
-        private void AdjustSubMenusLocationAndSize()
-        {
-            int heightMax = screen.Bounds.Height -
-                new WindowsTaskbar().Size.Height;
-            Menu menuPredecessor = menus[0];
-            int widthPredecessors = -1; // -1 padding
-            bool directionToRight = false;
-
-            foreach (Menu menu in Menus().Where(m => m.Level > 0))
-            {
-                int newWith = (menu.Width -
-                    menu.Padding.Horizontal + menuPredecessor.Width);
-                if (directionToRight)
-                {
-                    if (widthPredecessors - menu.Width <=
-                        -menu.Padding.Horizontal)
-                    {
-                        directionToRight = false;
-                    }
-                    else
-                    {
-                        widthPredecessors -= newWith;
-                    }
-                }
-                else if (screen.Bounds.Width <
-                    widthPredecessors + menuPredecessor.Width + menu.Width)
-                {
-                    directionToRight = true;
-                    widthPredecessors -= newWith;
-                }
-
-                menu.AdjustLocationAndSize(heightMax, menuPredecessor);
-                widthPredecessors += menu.Width - menu.Padding.Left;
-                menuPredecessor = menu;
-            }
-        }
-
-        private void OpenSubMenu(object sender, RowData trigger)
-        {
-            Menu menuTriggered = trigger.SubMenu;
-            Menu menuFromTrigger = menus[menuTriggered.Level - 1];
-
-            for (int level = menuTriggered.Level;
-                level < MenuDefines.MenusMax; level++)
-            {
-                if (menus[level] != null)
-                {
-                    Menu menuToClose = menus[level];
-                    RowData oldTrigger = (RowData)menuToClose.Tag;
-                    DataGridView dgv = menuFromTrigger.GetDataGridView();
-                    foreach (DataGridViewRow row in dgv.Rows)
-                    {
-                        RowData rowData = (RowData)row.Tag;
-                        rowData.IsSelected = false;
-                    }
-                    trigger.IsSelected = true;
-                    dgv.ClearSelection();
-                    dgv.Rows[trigger.RowIndex].Selected = true;
-                    menuToClose.HideWithFade();
-                    menuToClose.VisibleChanged += MenuVisibleChanged;
-                    menus[level] = null;
-                }
-            }
-
-            DisposeMenu(menus[menuTriggered.Level]);
-            menus[menuTriggered.Level] = menuTriggered;
-            AdjustSubMenusLocationAndSize();
-            menus[menuTriggered.Level].ShowWithFade();
         }
 
         private static MenuData ReadMenu(BackgroundWorker worker, string path, int level)
@@ -475,47 +327,6 @@ namespace SystemTrayMenu
             return rowData;
         }
 
-        private void Dgv_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-            DataGridView.HitTestInfo hitTestInfo;
-            hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (hitTestInfo.RowIndex > -1 &&
-                dgv.Rows.Count > hitTestInfo.RowIndex)
-            {
-                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Tag;
-                trigger.DoubleClick();
-            }
-        }
-
-        private void Dgv_MouseDown(object sender, MouseEventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-            DataGridView.HitTestInfo hitTestInfo;
-            hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (hitTestInfo.RowIndex > -1 &&
-                dgv.Rows.Count > hitTestInfo.RowIndex)
-            {
-                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Tag;
-                trigger.MouseDown(dgv, e);
-            }
-        }
-
-        private void Dgv_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-            dgvFromLastMouseEvent = dgv;
-            cellEventArgsFromLastMouseEvent = e;
-
-            if (menus[0].IsUsable &&
-                !keyboardInput.InUse)
-            {
-                keyboardInput.Select(dgv, e.RowIndex);
-                //FadeInIfNeeded();
-                CheckMenuOpenerStart(dgv, e.RowIndex);
-            }
-        }
-
         private void CheckMenuOpenerStart(DataGridView dgv, int rowIndex)
         {
             if (rowIndex > -1 &&
@@ -548,20 +359,6 @@ namespace SystemTrayMenu
                     }
                 }
             }
-        }
-
-        private void Dgv_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-
-            if (!keyboardInput.InUse)
-            {
-                Menu menu = (Menu)dgv.FindForm();
-                CheckMenuOpenerStop(menu.Level, e.RowIndex, dgv);
-            }
-
-            dgvFromLastMouseEvent = null;
-            cellEventArgsFromLastMouseEvent = null;
         }
 
         private void CheckMenuOpenerStop(int menuIndex, int rowIndex, DataGridView dgv = null)
@@ -608,6 +405,124 @@ namespace SystemTrayMenu
             }
         }
 
+        private Menu CreateMenu(MenuData menuData, string title = null)
+        {
+            Menu menu = new Menu();
+
+            if (title != null)
+            {
+                if (string.IsNullOrEmpty(title))
+                {
+                    title = Path.GetPathRoot(Config.Path);
+                }
+
+                menu.SetTitle(title);
+                menu.UserClickedOpenFolder += OpenFolder;
+                void OpenFolder()
+                {
+                    Log.ProcessStart("explorer.exe", Config.Path);
+                }
+            }
+
+            menu.Level = menuData.Level;
+            menu.MouseWheel += AdjustSubMenusLocationAndSize;
+            menu.MouseLeave += waitLeave.Start;
+            menu.MouseEnter += waitLeave.Stop;
+            DataGridView dgv = menu.GetDataGridView();
+            dgv.CellMouseEnter += Dgv_CellMouseEnter;
+            dgv.CellMouseLeave += Dgv_CellMouseLeave;
+            dgv.MouseDown += Dgv_MouseDown;
+            dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
+            dgv.SelectionChanged += Dgv_SelectionChanged;
+            menu.KeyPress += keyboardInput.KeyPress;
+            menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
+            menu.Deactivate += Deactivate;
+            void Deactivate(object sender, EventArgs e)
+            {
+                if (!(Form.ActiveForm is Menu))
+                {
+                    FadeHalfOrOutIfNeeded();
+                    menus[0].SetTitleColorDeactive();
+                }
+            }
+
+            menu.Activated += Activated;
+            void Activated(object sender, EventArgs e)
+            {
+                if (Form.ActiveForm is Menu)
+                {
+                    FadeInIfNeeded();
+                    menus[0].SetTitleColorActive();
+                }
+            }
+
+            menu.VisibleChanged += MenuVisibleChanged;
+            AddItemsToMenu(menuData.RowDatas, menu);
+            void AddItemsToMenu(List<RowData> data, Menu m)
+            {
+                foreach (RowData rowData in data)
+                {
+                    CreateMenuRow(rowData, m);
+                }
+            }
+
+            return menu;
+        }
+
+        private void Dgv_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (menus[0].IsUsable)
+            {
+                if (keyboardInput.InUse)
+                {
+                    CheckMenuOpenerStop(keyboardInput.iMenuKey,
+                        keyboardInput.iRowKey);
+                    keyboardInput.ClearIsSelectedByKey();
+                    keyboardInput.InUse = false;
+                }
+
+                DataGridView dgv = (DataGridView)sender;
+                keyboardInput.Select(dgv, e.RowIndex);
+                CheckMenuOpenerStart(dgv, e.RowIndex);
+            }
+        }
+
+        private void Dgv_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!keyboardInput.InUse)
+            {
+                DataGridView dgv = (DataGridView)sender;
+                Menu menu = (Menu)dgv.FindForm();
+                CheckMenuOpenerStop(menu.Level, e.RowIndex, dgv);
+            }
+        }
+
+        private void Dgv_MouseDown(object sender, MouseEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            DataGridView.HitTestInfo hitTestInfo;
+            hitTestInfo = dgv.HitTest(e.X, e.Y);
+            if (hitTestInfo.RowIndex > -1 &&
+                dgv.Rows.Count > hitTestInfo.RowIndex)
+            {
+                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Tag;
+                trigger.MouseDown(dgv, e);
+            }
+        }
+
+        private void Dgv_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            DataGridView.HitTestInfo hitTestInfo;
+            hitTestInfo = dgv.HitTest(e.X, e.Y);
+            if (hitTestInfo.RowIndex > -1 &&
+                dgv.Rows.Count > hitTestInfo.RowIndex)
+            {
+                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Tag;
+                trigger.DoubleClick();
+            }
+        }
+
         private void Dgv_SelectionChanged(object sender, EventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
@@ -636,83 +551,6 @@ namespace SystemTrayMenu
                     rowData.IsSelected = false;
                     row.Selected = false;
                 }
-            }
-        }
-
-        private IEnumerable<Menu> Menus()
-        {
-            return menus.Where(m => m != null && !m.IsDisposed);
-        }
-
-        private void MenusFadeOut()
-        {
-            messageFilter.StopListening();
-
-            Menus().ToList().ForEach(menu =>
-            {
-                if (menu.Level > 0)
-                {
-                    menus[menu.Level] = null;
-                }
-                menu.HideWithFade();
-            });
-        }
-
-        private Menu CreateMenu(MenuData menuData, string title = null)
-        {
-            Menu menu = new Menu();
-            if (title != null)
-            {
-                if (string.IsNullOrEmpty(title))
-                {
-                    title = Path.GetPathRoot(Config.Path);
-                }
-
-                menu.SetTitle(title);
-                menu.UserClickedOpenFolder += OpenFolder;
-                void OpenFolder()
-                {
-                    Log.ProcessStart("explorer.exe", Config.Path);
-                }
-            }
-            menu.Level = menuData.Level;
-            menu.MouseWheel += AdjustSubMenusLocationAndSize;
-            menu.MouseEnter += FadeInIfNeeded;
-            DataGridView dgv = menu.GetDataGridView();
-            dgv.CellMouseEnter += Dgv_CellMouseEnter;
-            dgv.CellMouseLeave += Dgv_CellMouseLeave;
-            dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
-            dgv.MouseDown += Dgv_MouseDown;
-            dgv.SelectionChanged += Dgv_SelectionChanged;
-            menu.KeyPress += keyboardInput.KeyPress;
-            menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
-            menu.Deactivate += Deactivate;
-            void Deactivate(object sender, EventArgs e)
-            {
-                if (!(Form.ActiveForm is Menu))
-                {
-                    FadeHalfOrOutIfNeeded();
-                    menus[0].SetTitleColorDeactive();
-                }
-            }
-            menu.Activated += Activated;
-            void Activated(object sender, EventArgs e)
-            {
-                if (Form.ActiveForm is Menu)
-                {
-                    menus[0].SetTitleColorActive();
-                }
-            }
-            menu.VisibleChanged += MenuVisibleChanged;
-            AddItemsToMenu(menuData.RowDatas, menu);
-            return menu;
-        }
-
-        private void AddItemsToMenu(List<RowData> data, Menu menu)
-        {
-            foreach (RowData rowData in data)
-            {
-                CreateMenuRow(rowData, menu);
             }
         }
 
@@ -766,6 +604,157 @@ namespace SystemTrayMenu
                     menuNotifyIcon.LoadStop();
                 }
             }
+        }
+
+        private void OpenSubMenu(object sender, RowData trigger)
+        {
+            Menu menuTriggered = trigger.SubMenu;
+            Menu menuFromTrigger = menus[menuTriggered.Level - 1];
+
+            for (int level = menuTriggered.Level;
+                level < MenuDefines.MenusMax; level++)
+            {
+                if (menus[level] != null)
+                {
+                    Menu menuToClose = menus[level];
+                    RowData oldTrigger = (RowData)menuToClose.Tag;
+                    DataGridView dgv = menuFromTrigger.GetDataGridView();
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        RowData rowData = (RowData)row.Tag;
+                        rowData.IsSelected = false;
+                    }
+                    trigger.IsSelected = true;
+                    dgv.ClearSelection();
+                    dgv.Rows[trigger.RowIndex].Selected = true;
+                    menuToClose.HideWithFade();
+                    menuToClose.VisibleChanged += MenuVisibleChanged;
+                    menus[level] = null;
+                }
+            }
+
+            DisposeMenu(menus[menuTriggered.Level]);
+            menus[menuTriggered.Level] = menuTriggered;
+            AdjustSubMenusLocationAndSize();
+
+#warning wrap into showorshowtransparent or find way without asking active form
+            if (Form.ActiveForm is Menu)
+            {
+                menus[menuTriggered.Level].ShowWithFade();
+            }
+            else
+            {
+                menus[menuTriggered.Level].ShowTransparent();
+            }
+        }
+
+        private void FadeInIfNeeded()
+        {
+            if (menus[0].IsUsable)
+            {
+                if (Form.ActiveForm is Menu)
+                {
+                    Menus().ToList().ForEach(menu => menu.ShowWithFade());
+                }
+                else
+                {
+                    Menus().ToList().ForEach(menu => menu.ShowTransparent());
+                }
+            }
+        }
+
+        private void FadeHalfOrOutIfNeeded()
+        {
+            if (menus[0].IsUsable)
+            {
+                if (!(Form.ActiveForm is Menu))
+                {
+                    Point position = Control.MousePosition;
+                    if (Menus().Any(m => m.IsMouseOn(position)))
+                    {
+                        if (!keyboardInput.InUse)
+                        {
+                            Menus().ToList().ForEach(menu =>
+                            menu.ShowTransparent());
+                        }
+                    }
+                    else
+                    {
+                        MenusFadeOut();
+                    }
+                }
+            }
+        }
+
+        private void MenusFadeOut()
+        {
+            Menus().ToList().ForEach(menu =>
+            {
+                if (menu.Level > 0)
+                {
+                    menus[menu.Level] = null;
+                }
+                menu.HideWithFade();
+            });
+        }
+
+        private void MenuVisibleChanged(object sender, EventArgs e)
+        {
+            Menu menu = (Menu)sender;
+            if (menu.IsUsable)
+            {
+                AdjustSubMenusLocationAndSize();
+            }
+            if (!menu.Visible)
+            {
+                DisposeMenu(menu);
+            }
+            if (!Menus().Any(m => m.Visible))
+            {
+                openCloseState = OpenCloseState.Default;
+            }
+        }
+
+        private void AdjustSubMenusLocationAndSize()
+        {
+            int heightMax = screen.Bounds.Height -
+                new WindowsTaskbar().Size.Height;
+            Menu menuPredecessor = menus[0];
+            int widthPredecessors = -1; // -1 padding
+            bool directionToRight = false;
+
+            foreach (Menu menu in Menus().Where(m => m.Level > 0))
+            {
+                int newWith = (menu.Width -
+                    menu.Padding.Horizontal + menuPredecessor.Width);
+                if (directionToRight)
+                {
+                    if (widthPredecessors - menu.Width <=
+                        -menu.Padding.Horizontal)
+                    {
+                        directionToRight = false;
+                    }
+                    else
+                    {
+                        widthPredecessors -= newWith;
+                    }
+                }
+                else if (screen.Bounds.Width <
+                    widthPredecessors + menuPredecessor.Width + menu.Width)
+                {
+                    directionToRight = true;
+                    widthPredecessors -= newWith;
+                }
+
+                menu.AdjustLocationAndSize(heightMax, menuPredecessor);
+                widthPredecessors += menu.Width - menu.Padding.Left;
+                menuPredecessor = menu;
+            }
+        }
+
+        private IEnumerable<Menu> Menus()
+        {
+            return menus.Where(m => m != null && !m.IsDisposed);
         }
     }
 }
