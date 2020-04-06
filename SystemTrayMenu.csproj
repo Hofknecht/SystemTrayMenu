@@ -156,10 +156,6 @@
     <Compile Include="UserInterface\AskHotKeyForm.Designer.cs">
       <DependentUpon>AskHotKeyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\DragDropHintForm.cs" />
-    <Compile Include="UserInterface\DragDropHintForm.Designer.cs">
-      <DependentUpon>DragDropHintForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\MenuData.cs" />
     <Compile Include="DataClasses\RowData.cs" />
     <Compile Include="UserInterface\AppContextMenu.cs" />
@@ -233,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\AskHotKeyForm.resx">
       <DependentUpon>AskHotKeyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface\DragDropHintForm.resx">
-      <DependentUpon>DragDropHintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

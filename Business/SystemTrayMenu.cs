@@ -497,6 +497,7 @@ namespace SystemTrayMenu
             }
         }
 
+#warning [Feature] Double Click to start item not only one click #66
         private void Dgv_MouseDown(object sender, MouseEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;

@@ -251,6 +251,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void AdjustDataGridViewSize()
         {
+#warning [BUG] Autosizing columns and rows while scrolling #65
             //dgv.AutoResizeColumns() was too slow ~45ms
             DataGridViewExtensions.FastAutoSizeColumns(dgv);
 
