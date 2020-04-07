@@ -35,9 +35,7 @@ namespace SystemTrayMenu.UserInterface
         private readonly Fading fading = new Fading();
         private bool autoResizeRowsDone = false;
 
-        internal enum MenuState { Default, DisposedFake };
-
-        internal Menu(MenuState menuType = MenuState.Default)
+        internal Menu()
         {
             fading.ChangeOpacity += Fading_ChangeOpacity;
             void Fading_ChangeOpacity(object sender, double newOpacity)
@@ -76,11 +74,6 @@ namespace SystemTrayMenu.UserInterface
             void ControlsMouseLeave(object sender, EventArgs e)
             {
                 MouseLeave.Invoke();
-            }
-
-            if (menuType == MenuState.DisposedFake)
-            {
-                Dispose();
             }
         }
 

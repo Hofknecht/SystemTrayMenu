@@ -33,7 +33,6 @@ namespace SystemTrayMenu
         {
             AppRestart.BeforeRestarting += Dispose;
             SystemEvents.DisplaySettingsChanged += AppRestart.ByDisplaySettings;
-            menus[0] = new Menu(Menu.MenuState.DisposedFake);
             waitLeave.LeaveTriggered += FadeHalfOrOutIfNeeded;
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
@@ -144,18 +143,10 @@ namespace SystemTrayMenu
                 }
             }
 
-#warning todo
-            //Workaround to preload cache
-            SwitchOpenClose();
-            while (worker.IsBusy)
-            {
-                Application.DoEvents();
-            }
-            SwitchOpenClose();
-            //or better load without showing?
-            //menus[0] = CreateMenu( //not the same?
-            //    ReadMenu(worker, Config.Path, 0), 
-            //    Path.GetFileName(Config.Path));
+#warning #72, #73 First start slower than others
+            menus[0] = CreateMenu(ReadMenu(worker, Config.Path, 0),
+                Path.GetFileName(Config.Path));
+            DisposeMenu(menus[0]);
         }
 
         public void Dispose()
