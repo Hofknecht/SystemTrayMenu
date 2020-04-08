@@ -111,23 +111,14 @@ namespace SystemTrayMenu
                 MenuData menuData = (MenuData)e.Result;
                 if (menuData.Validity == MenuDataValidity.Valid)
                 {
-                    DisposeMenu(menus[0]); //maybe not necessary
+                    DisposeMenu(menus[0]);
+                    menus[0].Visible = false; // resets activated
                     menus[0] = CreateMenu(menuData, Path.GetFileName(Config.Path));
                     menus[0].AdjustLocationAndSize(screen);
                     Menus().ToList().ForEach(m => { m.ShowWithFade(); });
-                    menus[0].VisibleChanged += WhenVisibleActivate;
-                    menus[0].Visible = false; // resets activated
-                    menus[0].Visible = true;  // resets activated
-                    void WhenVisibleActivate(object senderM, EventArgs eM)
-                    {
-                        if (menus[0].Visible)
-                        {
-                            menus[0].VisibleChanged -= WhenVisibleActivate;
-                            menus[0].Activate();
-                            menus[0].SetTitleColorActive();
-                            NativeMethods.ForceForegroundWindow(menus[0].Handle);
-                        }
-                    }
+                    menus[0].Activate();
+                    menus[0].SetTitleColorActive();
+                    NativeMethods.ForceForegroundWindow(menus[0].Handle);
                 }
 
                 openCloseState = OpenCloseState.Default;
@@ -143,9 +134,9 @@ namespace SystemTrayMenu
                 }
             }
 
-#warning #72, #73 First start slower than others
             menus[0] = CreateMenu(ReadMenu(worker, Config.Path, 0),
                 Path.GetFileName(Config.Path));
+            menus[0].AdjustLocationAndSize(screen);
             DisposeMenu(menus[0]);
         }
 

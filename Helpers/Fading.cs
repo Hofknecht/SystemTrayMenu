@@ -31,75 +31,10 @@ namespace SystemTrayMenu.UserInterface
         internal Fading()
         {
             timer.Interval = Interval60FPS;
-            timer.Tick += FadeStep;
-            void FadeStep(object sender, EventArgs e)
+            timer.Tick += Tick;
+            void Tick(object sender, EventArgs e)
             {
-                switch (state)
-                {
-                    case FadingState.Show:
-                        if (!visible)
-                        {
-                            visible = true;
-                            Show?.Invoke();
-                            opacity = 0;
-                            ChangeOpacity?.Invoke(this, opacity);
-                        }
-                        else if (opacity < ShownMinus)
-                        {
-                            opacity += StepIn;
-                            ChangeOpacity?.Invoke(this, opacity);
-                        }
-                        else if (opacity != Shown)
-                        {
-                            opacity = Shown;
-                            ChangeOpacity?.Invoke(this, Shown);
-                            StartStopTimer(FadingState.Idle);
-                        }
-                        break;
-                    case FadingState.ShowTransparent:
-                        if (!visible)
-                        {
-                            visible = true;
-                            Show?.Invoke();
-                            opacity = 0;
-                            ChangeOpacity?.Invoke(this, opacity);
-                        }
-                        else if (opacity < TransparentMinus)
-                        {
-                            opacity += StepIn;
-                            ChangeOpacity?.Invoke(this, opacity);
-                        }
-                        else if (opacity > TransparentPlus)
-                        {
-                            opacity -= StepOut;
-                            ChangeOpacity?.Invoke(this, opacity);
-                        }
-                        else if (opacity != Transparent)
-                        {
-                            ChangeOpacity?.Invoke(this, Transparent);
-                            StartStopTimer(FadingState.Idle);
-                        }
-                        break;
-                    case FadingState.Hide:
-                        if (opacity > StepOut)
-                        {
-                            opacity -= StepOut;
-                            ChangeOpacity?.Invoke(this, opacity);
-                        }
-                        else if (visible)
-                        {
-                            opacity = 0;
-                            ChangeOpacity?.Invoke(this, opacity);
-                            visible = false;
-                            Hide?.Invoke();
-                            StartStopTimer(FadingState.Idle);
-                        }
-                        break;
-                    case FadingState.Idle:
-                    default:
-                        StartStopTimer(FadingState.Idle);
-                        break;
-                }
+                FadeStep();
             }
         }
 
@@ -111,29 +46,97 @@ namespace SystemTrayMenu.UserInterface
         private void StartStopTimer(FadingState state)
         {
 #warning if too many threads throw some away? win32 exception if too fast here
-            lock (lockTimerEnable)
+            if (state == FadingState.Idle)
             {
-                if (state == FadingState.Idle)
+                this.state = state;
+                timer.Stop();
+            }
+            else
+            {
+                ShowAtLeastTransparentBeforeHideItAgain();
+                void ShowAtLeastTransparentBeforeHideItAgain()
                 {
-                    this.state = state;
-                    timer.Stop();
-                }
-                else
-                {
-                    ShowAtLeastTransparentBeforeHideItAgain();
-                    void ShowAtLeastTransparentBeforeHideItAgain()
+                    if (state == FadingState.Hide)
                     {
-                        if (state == FadingState.Hide)
+                        while (opacity < TransparentMinus)
                         {
-                            while (opacity < TransparentMinus)
-                            {
-                                Application.DoEvents();
-                            }
+                            Application.DoEvents();
                         }
                     }
-                    this.state = state;
-                    timer.Start();
                 }
+                this.state = state;
+                timer.Start();
+                FadeStep();
+            }
+        }
+
+        private void FadeStep()
+        {
+            switch (state)
+            {
+                case FadingState.Show:
+                    if (!visible)
+                    {
+                        visible = true;
+                        Show?.Invoke();
+                        opacity = 0;
+                        ChangeOpacity?.Invoke(this, opacity);
+                    }
+                    else if (opacity < ShownMinus)
+                    {
+                        opacity += StepIn;
+                        ChangeOpacity?.Invoke(this, opacity);
+                    }
+                    else if (opacity != Shown)
+                    {
+                        opacity = Shown;
+                        ChangeOpacity?.Invoke(this, Shown);
+                        StartStopTimer(FadingState.Idle);
+                    }
+                    break;
+                case FadingState.ShowTransparent:
+                    if (!visible)
+                    {
+                        visible = true;
+                        Show?.Invoke();
+                        opacity = 0;
+                        ChangeOpacity?.Invoke(this, opacity);
+                    }
+                    else if (opacity < TransparentMinus)
+                    {
+                        opacity += StepIn;
+                        ChangeOpacity?.Invoke(this, opacity);
+                    }
+                    else if (opacity > TransparentPlus)
+                    {
+                        opacity -= StepOut;
+                        ChangeOpacity?.Invoke(this, opacity);
+                    }
+                    else if (opacity != Transparent)
+                    {
+                        ChangeOpacity?.Invoke(this, Transparent);
+                        StartStopTimer(FadingState.Idle);
+                    }
+                    break;
+                case FadingState.Hide:
+                    if (opacity > StepOut)
+                    {
+                        opacity -= StepOut;
+                        ChangeOpacity?.Invoke(this, opacity);
+                    }
+                    else if (visible)
+                    {
+                        opacity = 0;
+                        ChangeOpacity?.Invoke(this, opacity);
+                        visible = false;
+                        Hide?.Invoke();
+                        StartStopTimer(FadingState.Idle);
+                    }
+                    break;
+                case FadingState.Idle:
+                default:
+                    StartStopTimer(FadingState.Idle);
+                    break;
             }
         }
 
