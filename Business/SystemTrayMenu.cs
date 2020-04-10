@@ -112,9 +112,10 @@ namespace SystemTrayMenu
                 if (menuData.Validity == MenuDataValidity.Valid)
                 {
                     DisposeMenu(menus[0]);
-                    menus[0].Visible = false; // resets activated
                     menus[0] = CreateMenu(menuData, Path.GetFileName(Config.Path));
                     menus[0].AdjustLocationAndSize(screen);
+                    menus[0].Visible = false; // resets activated
+                    menus[0].Visible = true;  // resets activated
                     Menus().ToList().ForEach(m => { m.ShowWithFade(); });
                     menus[0].Activate();
                     menus[0].SetTitleColorActive();

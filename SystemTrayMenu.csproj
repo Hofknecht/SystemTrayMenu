@@ -144,6 +144,11 @@
     <Compile Include="NativeDllImport\TrackPopupMenuEx.cs" />
     <Compile Include="NativeDllImport\StrRetToBuf.cs" />
     <Compile Include="NativeDllImport\SHGetDesktopFolder.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,11 +200,6 @@
     <Compile Include="NativeDllImport\FindExecuteable.cs" />
     <Compile Include="NativeDllImport\BringWindowToTop.cs" />
     <Compile Include="NativeDllImport\DestroyIcon.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Resources\lang.de-DE.Designer.cs">
       <DependentUpon>lang.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
