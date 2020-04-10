@@ -63,7 +63,7 @@ namespace SystemTrayMenu.DataClasses
 
             if (Icon == null)
             {
-                Icon = Properties.Resources.SystemTrayMenu;
+                Icon = Properties.Resources.WhiteTransparency;
             }
             DataGridViewImageCell cellIcon =
                 (DataGridViewImageCell)row.Cells[0];
