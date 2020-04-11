@@ -1,6 +1,7 @@
 # SystemTrayMenu
-SystemTrayMenu - An improved Windows Toolbar
+An improved Windows Toolbar
 
-Project Website
+![2020-04-11 09_52_32-](https://user-images.githubusercontent.com/52528841/79039161-abe42300-7bdf-11ea-9352-4bbe491ee5d1.gif)
+
+
 http://hofknecht.eu/systemtraymenu/
-(version to download on website depricated, you should better build it directly from git, we will improve release process)
