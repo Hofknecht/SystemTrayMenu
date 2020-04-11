@@ -86,11 +86,11 @@
             // 
             // ImagePictureBox
             // 
-            this.ImagePictureBox.BackgroundImage = global::SystemTrayMenu.Properties.Resources.SystemTrayMenu.ToBitmap();
+            this.ImagePictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ImagePictureBox.BackgroundImage")));
             this.ImagePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ImagePictureBox.Location = new System.Drawing.Point(3, 3);
             this.ImagePictureBox.Name = "ImagePictureBox";
-            this.ImagePictureBox.Size = new System.Drawing.Size(39, 36);
+            this.ImagePictureBox.Size = new System.Drawing.Size(36, 36);
             this.ImagePictureBox.TabIndex = 24;
             this.ImagePictureBox.TabStop = false;
             // 
@@ -419,7 +419,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(358, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 42);
             this.tableLayoutPanel2.TabIndex = 29;
             // 
             // tableLayoutPanel3
@@ -430,7 +430,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.AppTitleLabel, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.AppDescriptionLabel, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(47, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(44, 2);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
