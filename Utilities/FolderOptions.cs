@@ -56,7 +56,6 @@ namespace SystemTrayMenu.Utilities
         internal static bool IsHidden(string path, ref bool hiddenEntry)
         {
             bool isDirectoryToHide = false;
-#warning #80
             if (path.Length < 260)
             {
                 FileAttributes attributes = File.GetAttributes(path);

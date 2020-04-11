@@ -18,7 +18,7 @@ namespace SystemTrayMenu.Utilities
             SLGP_RAWPATH = 0x4
         }
 
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct WIN32_FIND_DATAW
         {
             public uint dwFileAttributes;

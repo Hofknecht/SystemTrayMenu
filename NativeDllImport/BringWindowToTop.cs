@@ -8,7 +8,7 @@ namespace SystemTrayMenu.DllImports
         [DllImport("user32.dll")]
         private static extern bool IsIconic(IntPtr hWnd);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         private static extern IntPtr GetForegroundWindow();
 
         [DllImport("user32.dll")]

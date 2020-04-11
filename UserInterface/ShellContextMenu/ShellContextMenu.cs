@@ -656,7 +656,7 @@ namespace SystemTrayMenu.Utilities
         }
 
         // Contains information about a menu item
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct MENUITEMINFO
         {
             public MENUITEMINFO(string text)
@@ -707,7 +707,7 @@ namespace SystemTrayMenu.Utilities
         }
 
         // Defines the x- and y-coordinates of a point
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct POINT
         {
             public POINT(int x, int y)
