@@ -56,15 +56,18 @@ namespace SystemTrayMenu.Utilities
         internal static bool IsHidden(string path, ref bool hiddenEntry)
         {
             bool isDirectoryToHide = false;
-
-            FileAttributes attributes = File.GetAttributes(path);
-            hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
-            bool systemEntry = attributes.HasFlag(
-                FileAttributes.Hidden | FileAttributes.System);
-            if ((hideHiddenEntries && hiddenEntry) ||
-                (hideSystemEntries && systemEntry))
+#warning #80
+            if (path.Length < 260)
             {
-                isDirectoryToHide = true;
+                FileAttributes attributes = File.GetAttributes(path);
+                hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
+                bool systemEntry = attributes.HasFlag(
+                    FileAttributes.Hidden | FileAttributes.System);
+                if ((hideHiddenEntries && hiddenEntry) ||
+                    (hideSystemEntries && systemEntry))
+                {
+                    isDirectoryToHide = true;
+                }
             }
 
             return isDirectoryToHide;

@@ -23,8 +23,7 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Warn(string message, Exception ex)
         {
-            log.Warn($"{message}{Environment.NewLine}" +
-                $"{ex.ToString()}");
+            log.Warn($"{message}{Environment.NewLine}{ex}");
         }
 
         //internal static void Debug(string message)
