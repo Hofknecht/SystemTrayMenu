@@ -33,7 +33,11 @@ namespace SystemTrayMenu
         {
             AppRestart.BeforeRestarting += Dispose;
             SystemEvents.DisplaySettingsChanged += AppRestart.ByDisplaySettings;
-            waitLeave.LeaveTriggered += FadeHalfOrOutIfNeeded;
+            waitLeave.LeaveTriggered += WaitLeave_LeaveTriggered;
+            void WaitLeave_LeaveTriggered()
+            {
+                FadeHalfOrOutIfNeeded();
+            }
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
             keyboardInput.HotKeyPressed += SwitchOpenClose;
