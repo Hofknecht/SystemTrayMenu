@@ -194,7 +194,7 @@ namespace SystemTrayMenu.DataClasses
                         }
                         catch (ArgumentException ex)
                         {
-                            Log.Error($"iconLocation:'{iconLocation}'", ex);
+                            Log.Warn($"iconLocation:'{iconLocation}'", ex);
                         }
                     }
                 }

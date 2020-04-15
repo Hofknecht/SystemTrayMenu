@@ -43,28 +43,16 @@ namespace SystemTrayMenu.UserInterface
             StartStopTimer(state);
         }
 
-        private void StartStopTimer(FadingState state)
+        private void StartStopTimer(FadingState newState)
         {
-#warning if too many threads throw some away? win32 exception if too fast here
-            if (state == FadingState.Idle)
+            if (newState == FadingState.Idle)
             {
-                this.state = state;
+                state = newState;
                 timer.Stop();
             }
             else
             {
-                ShowAtLeastTransparentBeforeHideItAgain();
-                void ShowAtLeastTransparentBeforeHideItAgain()
-                {
-                    if (state == FadingState.Hide)
-                    {
-                        while (opacity < TransparentMinus)
-                        {
-                            Application.DoEvents();
-                        }
-                    }
-                }
-                this.state = state;
+                state = newState;
                 timer.Start();
                 FadeStep();
             }

@@ -10,10 +10,12 @@ namespace SystemTrayMenu.Handler
 
         private readonly Timer timerLeaveCheck = new Timer();
 
+        public bool IsRunning => timerLeaveCheck.Enabled;
+
         public WaitLeave(int timeUntilTriggered)
         {
             timerLeaveCheck.Interval = timeUntilTriggered;
-            timerLeaveCheck.Tick += Leave;
+            timerLeaveCheck.Tick += TimerLeaveCheckTick;
         }
 
         public void Start()
@@ -27,7 +29,7 @@ namespace SystemTrayMenu.Handler
             timerLeaveCheck.Stop();
         }
 
-        private void Leave(object sender, EventArgs e)
+        private void TimerLeaveCheckTick(object sender, EventArgs e)
         {
             timerLeaveCheck.Stop();
             LeaveTriggered.Invoke();

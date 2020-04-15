@@ -67,19 +67,21 @@ namespace SystemTrayMenu.UserInterface
             notifyIcon.MouseClick += NotifyIcon_MouseClick;
             void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
             {
-                if (e.Button == MouseButtons.Left)
-                {
-                    HandleClick.Invoke();
-                }
+                VerifyClick(e);
             }
 
             notifyIcon.MouseDoubleClick += NotifyIcon_MouseDoubleClick;
             void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
             {
-                if (e.Button == MouseButtons.Left)
-                {
-                    HandleClick.Invoke();
-                }
+                VerifyClick(e);
+            }
+        }
+
+        private void VerifyClick(MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                HandleClick.Invoke();
             }
         }
 
@@ -90,8 +92,13 @@ namespace SystemTrayMenu.UserInterface
             load.Dispose();
         }
 
-        public void LoadingStart()
+        public void LoadingStart(bool reset = false)
         {
+            if (reset)
+            {
+                threadsLoading = 0;
+            }
+
             timeLoadingStart = DateTime.Now;
             threadsLoading++;
             load.Start();
@@ -101,14 +108,16 @@ namespace SystemTrayMenu.UserInterface
         {
             threadsLoading--;
         }
-        public void LoadWait()
-        {
-            notifyIcon.Icon = bitmapsLoading[loadCount++ % indexLoad];
-        }
-        public void LoadStop()
-        {
-            notifyIcon.Icon = R.SystemTrayMenu;
-        }
+
+        // Show a static icon when mainthread blocked
+        //public void LoadingStaticWait()
+        //{
+        //    notifyIcon.Icon = bitmapsLoading[loadCount++ % indexLoad];
+        //}
+        //public void LoadingStaticStop()
+        //{
+        //    notifyIcon.Icon = R.SystemTrayMenu;
+        //}
 
         private void Load_Tick(object sender, EventArgs e)
         {

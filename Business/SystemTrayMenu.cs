@@ -8,7 +8,6 @@ using System.Linq;
 using System.Security;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
-using SystemTrayMenu.DllImports;
 using SystemTrayMenu.Handler;
 using SystemTrayMenu.Helper;
 using SystemTrayMenu.UserInterface;
@@ -27,7 +26,8 @@ namespace SystemTrayMenu
         private readonly Screen screen = Screen.PrimaryScreen;
         private readonly WaitLeave waitLeave = new WaitLeave(MenuDefines.TimeUntilClose);
         private readonly KeyboardInput keyboardInput;
-        private int clicksInQueue = 0;
+        private readonly Timer timerStillActiveCheck = new Timer();
+        private DateTime deactivatedTime = DateTime.Now;
 
         public SystemTrayMenu()
         {
@@ -53,9 +53,10 @@ namespace SystemTrayMenu
             menuNotifyIcon.HandleClick += SwitchOpenClose;
             void SwitchOpenClose()
             {
-                if (string.IsNullOrEmpty(Config.Path))
+                if (string.IsNullOrEmpty(Config.Path) ||
+                    (DateTime.Now - deactivatedTime).TotalMilliseconds < 300)
                 {
-                    //Case when Folder Dialog open
+                    //Case when Folder Dialog open or restarts to fast
                 }
                 else if (openCloseState == OpenCloseState.Opening ||
                     menus[0].Visible && openCloseState == OpenCloseState.Default)
@@ -71,27 +72,10 @@ namespace SystemTrayMenu
                         openCloseState = OpenCloseState.Default;
                     }
                 }
-                else if (worker.IsBusy)
-                {
-                    if (clicksInQueue < MenuDefines.MaxClicksInQueue)
-                    {
-                        clicksInQueue++;
-                        while (worker.IsBusy)
-                        {
-                            Application.DoEvents();
-                        }
-                        clicksInQueue--;
-                        SwitchOpenClose();
-                    }
-                    else
-                    {
-                        Log.Info("User is clicking too often => throw event away");
-                    }
-                }
                 else
                 {
                     openCloseState = OpenCloseState.Opening;
-                    menuNotifyIcon.LoadingStart();
+                    menuNotifyIcon.LoadingStart(true);
                     worker.RunWorkerAsync();
                 }
             }
@@ -114,15 +98,8 @@ namespace SystemTrayMenu
                     DisposeMenu(menus[0]);
                     menus[0] = CreateMenu(menuData, Path.GetFileName(Config.Path));
                     menus[0].AdjustLocationAndSize(screen);
-                    menus[0].Visible = false; // resets activated
-                    menus[0].Visible = true;  // resets activated
                     Menus().ToList().ForEach(m => { m.ShowWithFade(); });
-                    menus[0].Activate();
-                    menus[0].SetTitleColorActive();
-                    NativeMethods.ForceForegroundWindow(menus[0].Handle);
                 }
-
-                openCloseState = OpenCloseState.Default;
             }
 
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
@@ -147,6 +124,7 @@ namespace SystemTrayMenu
             keyboardInput.Dispose();
             menuNotifyIcon.Dispose();
             waitLeave.Dispose();
+            timerStillActiveCheck.Dispose();
             DisposeMenu(menus[0]);
             IconReader.Dispose();
         }
@@ -422,20 +400,36 @@ namespace SystemTrayMenu
             menu.Deactivate += Deactivate;
             void Deactivate(object sender, EventArgs e)
             {
-                if (!(Form.ActiveForm is Menu))
+                if (!FadeHalfOrOutIfNeeded())
                 {
-                    FadeHalfOrOutIfNeeded();
-                    menus[0].SetTitleColorDeactive();
+                    deactivatedTime = DateTime.Now;
                 }
             }
 
             menu.Activated += Activated;
             void Activated(object sender, EventArgs e)
             {
-                if (Form.ActiveForm is Menu)
+                if (Form.ActiveForm is Menu &&
+                    menus[0].IsUsable)
                 {
-                    FadeInIfNeeded();
                     menus[0].SetTitleColorActive();
+                    Menus().ToList().ForEach(m => m.ShowWithFade());
+                }
+
+                CheckIfWindowsStartStoleFocusNoDeactivateInRareCase();
+                void CheckIfWindowsStartStoleFocusNoDeactivateInRareCase()
+                {
+                    timerStillActiveCheck.Interval = 1000;
+                    timerStillActiveCheck.Tick += StillActiveTick;
+                    void StillActiveTick(object senderTimer, EventArgs eTimer)
+                    {
+                        if (!waitLeave.IsRunning &&
+                            !FadeHalfOrOutIfNeeded())
+                        {
+                            timerStillActiveCheck.Stop();
+                        }
+                    }
+                    timerStillActiveCheck.Start();
                 }
             }
 
@@ -549,7 +543,6 @@ namespace SystemTrayMenu
             {
                 int level = (int)eDoWork.Argument;
                 BackgroundWorker worker = (BackgroundWorker)senderDoWork;
-                rowData.RestartLoading = false;
                 eDoWork.Result = ReadMenu(worker, rowData.TargetFilePath, level);
             }
 
@@ -560,12 +553,12 @@ namespace SystemTrayMenu
                 MenuData menuData = (MenuData)e.Result;
                 if (rowData.RestartLoading)
                 {
+                    rowData.RestartLoading = false;
                     rowData.Reading.RunWorkerAsync(menuData.Level);
                 }
                 else
                 {
                     menuNotifyIcon.LoadingStop();
-                    menuNotifyIcon.LoadWait();
                     if (menuData.Validity != MenuDataValidity.Invalid)
                     {
                         menu = CreateMenu(menuData);
@@ -585,7 +578,6 @@ namespace SystemTrayMenu
                         rowData.SubMenu = menu;
                         rowData.MenuLoaded();
                     }
-                    menuNotifyIcon.LoadStop();
                 }
             }
         }
@@ -620,46 +612,35 @@ namespace SystemTrayMenu
             DisposeMenu(menus[menuTriggered.Level]);
             menus[menuTriggered.Level] = menuTriggered;
             AdjustSubMenusLocationAndSize();
-
-#warning wrap into showorshowtransparent or find way without asking active form
-            if (Form.ActiveForm is Menu)
-            {
-                menus[menuTriggered.Level].ShowWithFade();
-            }
-            else
-            {
-                menus[menuTriggered.Level].ShowTransparent();
-            }
+            menus[menuTriggered.Level].ShowWithFadeOrTransparent(
+                Form.ActiveForm is Menu);
         }
 
         private void FadeInIfNeeded()
         {
             if (menus[0].IsUsable)
             {
-                if (Form.ActiveForm is Menu)
-                {
-                    Menus().ToList().ForEach(menu => menu.ShowWithFade());
-                }
-                else
-                {
-                    Menus().ToList().ForEach(menu => menu.ShowTransparent());
-                }
+                bool isActive = Form.ActiveForm is Menu;
+                Menus().ToList().ForEach(
+                    menu => menu.ShowWithFadeOrTransparent(isActive));
             }
         }
 
-        private void FadeHalfOrOutIfNeeded()
+        private bool FadeHalfOrOutIfNeeded()
         {
+            bool menuActive = false;
             if (menus[0].IsUsable)
             {
-                if (!(Form.ActiveForm is Menu))
+                menuActive = Form.ActiveForm is Menu;
+                if (!menuActive)
                 {
                     Point position = Control.MousePosition;
                     if (Menus().Any(m => m.IsMouseOn(position)))
                     {
                         if (!keyboardInput.InUse)
                         {
-                            Menus().ToList().ForEach(menu =>
-                            menu.ShowTransparent());
+                            Menus().ToList().ForEach(
+                                menu => menu.ShowTransparent());
                         }
                     }
                     else
@@ -668,10 +649,13 @@ namespace SystemTrayMenu
                     }
                 }
             }
+
+            return menuActive;
         }
 
         private void MenusFadeOut()
         {
+            openCloseState = OpenCloseState.Closing;
             Menus().ToList().ForEach(menu =>
             {
                 if (menu.Level > 0)

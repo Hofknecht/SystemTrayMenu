@@ -22,7 +22,6 @@ namespace SystemTrayMenu
         internal const int Scrollspeed = 4;
         internal const int WaitMenuOpen = 200;
         internal const int MenusMax = 50;
-        internal const int MaxClicksInQueue = 1;
         internal const int TimeUntilClose = 1000;
     }
 

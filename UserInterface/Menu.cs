@@ -16,10 +16,11 @@ namespace SystemTrayMenu.UserInterface
         internal new event EventHandlerEmpty MouseEnter;
         internal new event EventHandlerEmpty MouseLeave;
         internal event EventHandlerEmpty UserClickedOpenFolder;
-#warning use event not action
         internal event Action<Keys> CmdKeyProcessed;
+#warning #68 => use event and not a action here?
 
-        internal bool IsUsable => Visible && !fading.IsHiding;
+        internal bool IsUsable => Visible && !fading.IsHiding &&
+            !IsDisposed && !Disposing;
 
         internal enum MenuType
         {
@@ -45,7 +46,30 @@ namespace SystemTrayMenu.UserInterface
             fading.Show += Fading_Show;
             void Fading_Show()
             {
-                NativeMethods.User32ShowInactiveTopmost(this);
+                if (Level == 0)
+                {
+                    try
+                    {
+                        Visible = true;
+                    }
+                    catch (ObjectDisposedException)
+                    {
+                        Visible = false;
+                        Log.Info($"Could not open menu, menu already closed," +
+                            $" IsDisposed={IsDisposed}");
+                    }
+
+                    if (Visible)
+                    {
+                        Activate();
+                        NativeMethods.ForceForegroundWindow(Handle);
+                        SetTitleColorActive();
+                    }
+                }
+                else
+                {
+                    NativeMethods.User32ShowInactiveTopmost(this);
+                }
             }
             fading.Hide += Hide;
 
@@ -89,10 +113,12 @@ namespace SystemTrayMenu.UserInterface
         {
             SetType(MenuType.Sub);
         }
+
         internal void SetTypeEmpty()
         {
             SetType(MenuType.Empty);
         }
+
         internal void SetTypeNoAccess()
         {
             SetType(MenuType.NoAccess);
@@ -127,17 +153,6 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal bool IsVisible()
-        {
-            return Visible;
-        }
-
-        internal bool IsActive(Form activeForm)
-        {
-            bool isActive = (this == activeForm);
-            return isActive;
-        }
-
         internal bool IsMouseOn(Point mousePosition)
         {
             bool isMouseOn = Visible && ClientRectangle.Contains(
@@ -149,10 +164,6 @@ namespace SystemTrayMenu.UserInterface
         {
             return dgv;
         }
-        internal Label GetLabel()
-        {
-            return labelTitle;
-        }
 
         internal void SetTitle(string title)
         {
@@ -163,6 +174,18 @@ namespace SystemTrayMenu.UserInterface
                     title = $"{title.Substring(0, MenuDefines.LengthMax)}...";
                 }
                 labelTitle.Text = title;
+            }
+        }
+
+        internal void ShowWithFadeOrTransparent(bool formActiveFormIsMenu)
+        {
+            if (formActiveFormIsMenu)
+            {
+                ShowWithFade();
+            }
+            else
+            {
+                ShowTransparent();
             }
         }
 
