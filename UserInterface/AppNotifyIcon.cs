@@ -12,7 +12,7 @@ namespace SystemTrayMenu.UserInterface
 {
     internal class MenuNotifyIcon : IDisposable
     {
-        public event EventHandlerEmpty HandleClick;
+        public event EventHandlerEmpty Click;
         public event EventHandlerEmpty ChangeFolder;
         public event EventHandlerEmpty OpenLog;
         public event EventHandlerEmpty Restart;
@@ -69,7 +69,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 VerifyClick(e);
             }
-
             notifyIcon.MouseDoubleClick += NotifyIcon_MouseDoubleClick;
             void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
             {
@@ -81,7 +80,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                HandleClick.Invoke();
+                Click?.Invoke();
             }
         }
 
@@ -92,7 +91,7 @@ namespace SystemTrayMenu.UserInterface
             load.Dispose();
         }
 
-        public void LoadingStart(bool reset = false)
+        public void LoadingStart(object sender = null, bool reset = false)
         {
             if (reset)
             {

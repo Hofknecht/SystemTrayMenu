@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu.Helper
 {
@@ -68,17 +69,32 @@ namespace SystemTrayMenu.Helper
         /// <summary>
         /// Registers a hot key in the system.
         /// </summary>
+        /// <param name="key">The key itself that is associated with the hot key.</param>
+        internal void RegisterHotKey(Keys key)
+        {
+            uint keyModifiersNone = 0;
+            RegisterHotKey(keyModifiersNone, key);
+        }
+
+        /// <summary>
+        /// Registers a hot key in the system.
+        /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
         internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
         {
+            RegisterHotKey((uint)modifier, key);
+        }
+
+        private void RegisterHotKey(uint modifier, Keys key)
+        {
             _currentId = _currentId + 1;
 
-            if (!DllImports.NativeMethods.User32RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
+            if (!DllImports.NativeMethods.User32RegisterHotKey(
+                _window.Handle, _currentId, modifier, (uint)key))
             {
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-                throw new InvalidOperationException("Couldn’t register the hot key.");
-#pragma warning restore CA1303 //=> Exceptions not translated in logfile => OK
+                throw new InvalidOperationException(
+                    Language.Translate("Could not register the hot key."));
             }
         }
 

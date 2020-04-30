@@ -160,7 +160,7 @@ namespace SystemTrayMenu.DataClasses
             ref string resolvedLnkPath)
         {
             bool handled = false;
-            resolvedLnkPath = LnkHelper.ResolveShortcut(TargetFilePath);
+            resolvedLnkPath = LnkHelper.GetResolvedFileName(TargetFilePath);
             if (LnkHelper.IsDirectory(resolvedLnkPath))
             {
                 Icon = IconReader.GetFolderIcon(TargetFilePath,

@@ -15,7 +15,7 @@ namespace SystemTrayMenu.UserInterface
         private const int Interval60FPS = 16; //60fps=>1s/60fps=~16.6ms
 
         private const double StepIn = 0.20;
-        private const double StepOut = 0.05;
+        private const double StepOut = 0.10;
         private const double Transparent = 0.80;
         private const double TransparentMinus = 0.60; //Transparent - StepIn
         private const double TransparentPlus = 0.85; //Transparent + StepOut

@@ -180,4 +180,7 @@
   <data name="Shortcut key" xml:space="preserve">
     <value>Shortcut key</value>
   </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Couldn’t register the hot key.</value>
+  </data>
 </root>

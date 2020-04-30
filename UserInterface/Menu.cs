@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.DllImports;
@@ -35,6 +36,7 @@ namespace SystemTrayMenu.UserInterface
 
         private readonly Fading fading = new Fading();
         private bool autoResizeRowsDone = false;
+        private bool isShowing = false;
 
         internal Menu()
         {
@@ -50,18 +52,22 @@ namespace SystemTrayMenu.UserInterface
                 {
                     try
                     {
+                        isShowing = true;
                         Visible = true;
+                        isShowing = false;
                     }
                     catch (ObjectDisposedException)
                     {
                         Visible = false;
-                        Log.Info($"Could not open menu, menu already closed," +
+                        isShowing = false;
+                        Log.Info($"Could not open menu, old menu was disposing," +
                             $" IsDisposed={IsDisposed}");
                     }
 
                     if (Visible)
                     {
                         Activate();
+                        NativeMethods.User32ShowInactiveTopmost(this);
                         NativeMethods.ForceForegroundWindow(Handle);
                         SetTitleColorActive();
                     }
@@ -201,7 +207,10 @@ namespace SystemTrayMenu.UserInterface
 
         internal void HideWithFade()
         {
-            fading.Fade(Fading.FadingState.Hide);
+            if(!isShowing)
+            {
+                fading.Fade(Fading.FadingState.Hide);
+            }
         }
 
         internal void AdjustLocationAndSize(Screen screen)
