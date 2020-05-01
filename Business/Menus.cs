@@ -62,7 +62,8 @@ namespace SystemTrayMenu.Business
 
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
-            keyboardInput.HotKeyPressed += SwitchOpenClose;
+            keyboardInput.HotKeyPressed += KeyboardInput_HotKeyPressed;
+            void KeyboardInput_HotKeyPressed() => SwitchOpenClose(false);
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowDeselected += CheckMenuOpenerStop;
             keyboardInput.RowSelected += KeyboardInputRowSelected;
@@ -76,9 +77,9 @@ namespace SystemTrayMenu.Business
             void LeaveTriggered() => FadeHalfOrOutIfNeeded();
         }
 
-        internal void SwitchOpenClose()
+        internal void SwitchOpenClose(bool byClick)
         {
-            if ((DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
+            if (byClick && (DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
             {
                 //By click on notifyicon the menu gets deactivated and closed
             }

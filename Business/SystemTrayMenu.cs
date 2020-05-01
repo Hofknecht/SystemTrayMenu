@@ -20,7 +20,8 @@ namespace SystemTrayMenu
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
             menuNotifyIcon.Exit += Application.Exit;
             menuNotifyIcon.Restart += AppRestart.ByMenuNotifyIcon;
-            menuNotifyIcon.Click += menus.SwitchOpenClose;
+            menuNotifyIcon.Click += MenuNotifyIcon_Click;
+            void MenuNotifyIcon_Click() => menus.SwitchOpenClose(true);
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menuNotifyIcon.ChangeFolder += ChangeFolder;
             void ChangeFolder()
