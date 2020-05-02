@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using SystemTrayMenu.Utilities;
@@ -58,7 +59,8 @@ namespace SystemTrayMenu
                     "SystemTrayMenu BugSplat", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Log.ProcessStart("mailto:" + "markus@hofknecht.eu" +
-                        "?subject=SystemTrayMenu Bug reported" +
+                        "?subject=SystemTrayMenu Bug reported " +
+                        Assembly.GetEntryAssembly().GetName().Version +
                         "&body=" + ex.ToString());
                 }
 

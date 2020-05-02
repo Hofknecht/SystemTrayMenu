@@ -37,7 +37,7 @@ namespace SystemTrayMenu.Utilities
         {
             foreach (Icon icon in dictIconCache.Values)
             {
-                icon.Dispose();
+                icon?.Dispose();
             }
         }
 
