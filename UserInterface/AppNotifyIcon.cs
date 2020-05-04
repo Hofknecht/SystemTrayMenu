@@ -13,7 +13,6 @@ namespace SystemTrayMenu.UserInterface
     internal class MenuNotifyIcon : IDisposable
     {
         public event EventHandlerEmpty Click;
-        public event EventHandlerEmpty ChangeFolder;
         public event EventHandlerEmpty OpenLog;
         public event EventHandlerEmpty Restart;
         public event EventHandlerEmpty Exit;
@@ -39,11 +38,6 @@ namespace SystemTrayMenu.UserInterface
             notifyIcon.Visible = true;
             notifyIcon.Icon = R.SystemTrayMenu;
             AppContextMenu contextMenus = new AppContextMenu();
-            contextMenus.ClickedChangeFolder += ClickedChangeFolder;
-            void ClickedChangeFolder()
-            {
-                ChangeFolder.Invoke();
-            }
 
             contextMenus.ClickedOpenLog += ClickedOpenLog;
             void ClickedOpenLog()

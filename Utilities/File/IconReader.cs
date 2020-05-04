@@ -172,9 +172,16 @@ namespace SystemTrayMenu.Utilities
                 flags);
             if (Success != IntPtr.Zero) // got valid handle?
             {
-                Icon.FromHandle(shfi.hIcon);
-                icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
-                DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
+                try
+                {
+                    Icon.FromHandle(shfi.hIcon);
+                    icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
+                    DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
+                }
+                catch
+                {
+#warning todo
+                }
             }
 
             return icon;

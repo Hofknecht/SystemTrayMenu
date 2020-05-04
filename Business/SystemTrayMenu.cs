@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using SystemTrayMenu.Business;
+using SystemTrayMenu.Helpers.Hotkey;
 using SystemTrayMenu.UserInterface;
 using SystemTrayMenu.Utilities;
 
@@ -23,15 +24,6 @@ namespace SystemTrayMenu
             menuNotifyIcon.Click += MenuNotifyIcon_Click;
             void MenuNotifyIcon_Click() => menus.SwitchOpenClose(true);
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
-            menuNotifyIcon.ChangeFolder += ChangeFolder;
-            void ChangeFolder()
-            {
-                if (Config.SetFolderByUser())
-                {
-                    AppRestart.ByConfigChange();
-                }
-            }
-
             menus.MainPreload();
         }
 

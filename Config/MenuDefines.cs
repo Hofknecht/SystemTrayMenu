@@ -7,8 +7,6 @@ namespace SystemTrayMenu
     internal static class MenuDefines
     {
         internal static string NotifyIconText = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;
-        internal static readonly List<string> Languages =
-            new List<string>() { "en", "de" };
         internal static readonly Color File = Color.White;
         internal static readonly Color Folder = Color.White;
         internal static readonly Color ColorSelectedItem = AppColors.Blue;

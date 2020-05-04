@@ -141,11 +141,11 @@ namespace SystemTrayMenu.UserInterface
                     }
                     break;
                 case MenuType.Empty:
-                    SetTitle(Language.Translate("Folder empty"));
+                    SetTitle(Translator.GetText("Folder empty"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
                     break;
                 case MenuType.NoAccess:
-                    SetTitle(Language.Translate("Folder inaccessible"));
+                    SetTitle(Translator.GetText("Folder inaccessible"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
                     break;
                 case MenuType.MaxReached:

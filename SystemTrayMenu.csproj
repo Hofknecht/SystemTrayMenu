@@ -117,6 +117,8 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\x64\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Clearcove.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -157,11 +159,14 @@
     <Compile Include="UserInterface\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\AskHotKeyForm.cs">
+    <Compile Include="UserInterface\Controls\HotkeyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserInterface\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserInterface\AskHotKeyForm.Designer.cs">
-      <DependentUpon>AskHotKeyForm.cs</DependentUpon>
+    <Compile Include="UserInterface\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\MenuData.cs" />
     <Compile Include="DataClasses\RowData.cs" />
@@ -180,7 +185,7 @@
     <Compile Include="Utilities\Log.cs" />
     <Compile Include="Utilities\Shares.cs" />
     <Compile Include="Utilities\SingleAppInstance.cs" />
-    <Compile Include="Utilities\Language.cs" />
+    <Compile Include="Utilities\Translator.cs" />
     <Compile Include="Utilities\Scaling.cs" />
     <Compile Include="UserInterface\ShellContextMenu\ShellContextMenuException.cs" />
     <Compile Include="UserInterface\ShellContextMenu\ShellHelper.cs" />
@@ -230,8 +235,8 @@
     <EmbeddedResource Include="UserInterface\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface\AskHotKeyForm.resx">
-      <DependentUpon>AskHotKeyForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserInterface\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

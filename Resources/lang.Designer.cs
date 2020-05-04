@@ -61,15 +61,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (e.g. F10).
-        /// </summary>
-        internal static string _e_g__F10_ {
-            get {
-                return ResourceManager.GetString("(e.g. F10)", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string About {
@@ -79,29 +70,20 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Activate autostart.
-        /// </summary>
-        internal static string Activate_autostart {
-            get {
-                return ResourceManager.GetString("Activate autostart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ALT.
-        /// </summary>
-        internal static string ALT {
-            get {
-                return ResourceManager.GetString("ALT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Autostart.
         /// </summary>
         internal static string Autostart {
             get {
                 return ResourceManager.GetString("Autostart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string buttonCancel {
+            get {
+                return ResourceManager.GetString("buttonCancel", resourceCulture);
             }
         }
         
@@ -142,24 +124,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTRL.
-        /// </summary>
-        internal static string CTRL {
-            get {
-                return ResourceManager.GetString("CTRL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to English.
-        /// </summary>
-        internal static string English {
-            get {
-                return ResourceManager.GetString("English", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         internal static string Exit {
@@ -196,6 +160,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        internal static string General {
+            get {
+                return ResourceManager.GetString("General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deutsch.
         /// </summary>
         internal static string German {
@@ -205,20 +178,11 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move the NotifyIcon per DragDrop from the SystemTray into the Taskbar.
+        ///   Looks up a localized string similar to Hotkey.
         /// </summary>
-        internal static string HintDragDropText {
+        internal static string Hotkey {
             get {
-                return ResourceManager.GetString("HintDragDropText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SystemTrayMenu - Hint.
-        /// </summary>
-        internal static string HintDragDropTitle {
-            get {
-                return ResourceManager.GetString("HintDragDropTitle", resourceCulture);
+                return ResourceManager.GetString("Hotkey", resourceCulture);
             }
         }
         
@@ -228,6 +192,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch on startup.
+        /// </summary>
+        internal static string Launch_on_startup {
+            get {
+                return ResourceManager.GetString("Launch on startup", resourceCulture);
             }
         }
         
@@ -250,11 +223,11 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shortcut key.
+        ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string Shortcut_key {
+        internal static string Settings {
             get {
-                return ResourceManager.GetString("Shortcut key", resourceCulture);
+                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
     }

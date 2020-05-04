@@ -120,17 +120,11 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="Activate autostart" xml:space="preserve">
-    <value>Activate autostart</value>
-  </data>
   <data name="buttonOk" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="Autostart" xml:space="preserve">
     <value>Autostart</value>
-  </data>
-  <data name="English" xml:space="preserve">
-    <value>English</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
@@ -140,15 +134,6 @@
   </data>
   <data name="Folder empty" xml:space="preserve">
     <value>Folder empty</value>
-  </data>
-  <data name="ALT" xml:space="preserve">
-    <value>ALT</value>
-  </data>
-  <data name="CTRL" xml:space="preserve">
-    <value>CTRL</value>
-  </data>
-  <data name="(e.g. F10)" xml:space="preserve">
-    <value>(e.g. F10)</value>
   </data>
   <data name="buttonDetails" xml:space="preserve">
     <value>Details</value>
@@ -162,12 +147,6 @@
   <data name="German" xml:space="preserve">
     <value>Deutsch</value>
   </data>
-  <data name="HintDragDropText" xml:space="preserve">
-    <value>Move the NotifyIcon per DragDrop from the SystemTray into the Taskbar</value>
-  </data>
-  <data name="HintDragDropTitle" xml:space="preserve">
-    <value>SystemTrayMenu - Hint</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
   </data>
@@ -177,10 +156,22 @@
   <data name="Restart" xml:space="preserve">
     <value>Restart</value>
   </data>
-  <data name="Shortcut key" xml:space="preserve">
-    <value>Shortcut key</value>
-  </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Couldn’t register the hot key.</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="Launch on startup" xml:space="preserve">
+    <value>Launch on startup</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
   </data>
 </root>

@@ -41,7 +41,7 @@ namespace SystemTrayMenu
             return pathOK;
         }
 
-        public static bool SetFolderByUser()
+        public static bool SetFolderByUser(bool save = true)
         {
             bool pathOK = false;
             bool userAborted = false;
@@ -59,7 +59,10 @@ namespace SystemTrayMenu
                             pathOK = true;
                             Properties.Settings.Default.PathDirectory =
                                 dialog.FileName;
-                            Properties.Settings.Default.Save();
+                            if (save)
+                            {
+                                Properties.Settings.Default.Save();
+                            }
                         }
                     }
                     else

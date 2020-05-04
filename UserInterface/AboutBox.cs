@@ -26,9 +26,9 @@ namespace SystemTrayMenu.UserInterface
         public AboutBox()
         {
             InitializeComponent();
-            buttonOk.Text = Language.Translate("buttonOk");
-            buttonDetails.Text = Language.Translate("buttonDetails");
-            buttonSystemInfo.Text = Language.Translate("buttonSystemInfo");
+            buttonOk.Text = Translator.GetText("buttonOk");
+            buttonDetails.Text = Translator.GetText("buttonDetails");
+            buttonSystemInfo.Text = Translator.GetText("buttonSystemInfo");
         }
 
         private bool _IsPainted = false;

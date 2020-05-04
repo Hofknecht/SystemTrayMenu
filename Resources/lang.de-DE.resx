@@ -120,9 +120,6 @@
   <data name="About" xml:space="preserve">
     <value>Über</value>
   </data>
-  <data name="Activate autostart" xml:space="preserve">
-    <value>Autostart aktivieren</value>
-  </data>
   <data name="buttonOk" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -138,18 +135,6 @@
   <data name="Folder empty" xml:space="preserve">
     <value>Ordner leer</value>
   </data>
-  <data name="ALT" xml:space="preserve">
-    <value>ALT</value>
-  </data>
-  <data name="CTRL" xml:space="preserve">
-    <value>STRG</value>
-  </data>
-  <data name="English" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="(e.g. F10)" xml:space="preserve">
-    <value>(z.B. F10)</value>
-  </data>
   <data name="buttonDetails" xml:space="preserve">
     <value>Details</value>
   </data>
@@ -162,12 +147,6 @@
   <data name="German" xml:space="preserve">
     <value>Deutsch</value>
   </data>
-  <data name="HintDragDropText" xml:space="preserve">
-    <value>Ziehe das Notify-Icon per DragDrop vom SystemTray in die Taskleiste</value>
-  </data>
-  <data name="HintDragDropTitle" xml:space="preserve">
-    <value>SystemTrayMenu - Hinweis</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Sprache</value>
   </data>
@@ -177,10 +156,22 @@
   <data name="Restart" xml:space="preserve">
     <value>Neustart</value>
   </data>
-  <data name="Shortcut key" xml:space="preserve">
-    <value>Tastenkombination</value>
-  </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Der Tastenkürzel konnte nicht registriert werden.</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Tastenkombination</value>
+  </data>
+  <data name="Launch on startup" xml:space="preserve">
+    <value>Mit Windows starten</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Einstellungen</value>
   </data>
 </root>

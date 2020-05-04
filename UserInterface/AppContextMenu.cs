@@ -7,6 +7,8 @@ using System.Drawing.Imaging;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 using SystemTrayMenu.UserInterface;
 using SystemTrayMenu.Utilities;
@@ -15,134 +17,85 @@ namespace SystemTrayMenu.Helper
 {
     internal class AppContextMenu
     {
-        public event EventHandlerEmpty ClickedChangeFolder;
         public event EventHandlerEmpty ClickedOpenLog;
         public event EventHandlerEmpty ClickedRestart;
         public event EventHandlerEmpty ClickedExit;
 
+        // ArrayLists used to enforce the use of proper modifiers.
+        // Shift+A isn't a valid hotkey, for instance, as it would screw up when the user is typing.
+        private readonly IList<int> _needNonShiftModifier = new List<int>();
+        private readonly IList<int> _needNonAltGrModifier = new List<int>();
+
+        /// <summary>
+        /// Populates the ArrayLists specifying disallowed hotkeys
+        /// such as Shift+A, Ctrl+Alt+4 (would produce a dollar sign) etc
+        /// </summary>
+        private void PopulateModifierLists()
+        {
+            // Shift + 0 - 9, A - Z
+            for (Keys k = Keys.D0; k <= Keys.Z; k++)
+            {
+                _needNonShiftModifier.Add((int)k);
+            }
+
+            // Shift + Numpad keys
+            for (Keys k = Keys.NumPad0; k <= Keys.NumPad9; k++)
+            {
+                _needNonShiftModifier.Add((int)k);
+            }
+
+            // Shift + Misc (,;<./ etc)
+            for (Keys k = Keys.Oem1; k <= Keys.OemBackslash; k++)
+            {
+                _needNonShiftModifier.Add((int)k);
+            }
+
+            // Shift + Space, PgUp, PgDn, End, Home
+            for (Keys k = Keys.Space; k <= Keys.Home; k++)
+            {
+                _needNonShiftModifier.Add((int)k);
+            }
+
+            // Misc keys that we can't loop through
+            _needNonShiftModifier.Add((int)Keys.Insert);
+            _needNonShiftModifier.Add((int)Keys.Help);
+            _needNonShiftModifier.Add((int)Keys.Multiply);
+            _needNonShiftModifier.Add((int)Keys.Add);
+            _needNonShiftModifier.Add((int)Keys.Subtract);
+            _needNonShiftModifier.Add((int)Keys.Divide);
+            _needNonShiftModifier.Add((int)Keys.Decimal);
+            _needNonShiftModifier.Add((int)Keys.Return);
+            _needNonShiftModifier.Add((int)Keys.Escape);
+            _needNonShiftModifier.Add((int)Keys.NumLock);
+
+            // Ctrl+Alt + 0 - 9
+            for (Keys k = Keys.D0; k <= Keys.D9; k++)
+            {
+                _needNonAltGrModifier.Add((int)k);
+            }
+        }
         public ContextMenuStrip Create()
         {
             ContextMenuStrip menu = new ContextMenuStrip
             {
                 BackColor = SystemColors.Control
             };
-            ToolStripMenuItem changeFolder = new ToolStripMenuItem
+
+            ToolStripMenuItem settings = new ToolStripMenuItem()
             {
-                Text = Language.Translate("Folder")
+                ImageScaling = ToolStripItemImageScaling.SizeToFit,
+                Text = Translator.GetText("Settings")
             };
-            changeFolder.Click += ChangeFolder_Click;
-            void ChangeFolder_Click(object sender, EventArgs e)
+            settings.Click += Settings_Click;
+            void Settings_Click(object sender, EventArgs e)
             {
-                ClickedChangeFolder.Invoke();
-            }
-            menu.Items.Add(changeFolder);
-
-            ToolStripMenuItem changeLanguage = new ToolStripMenuItem()
-            {
-                Name = "changeLanguage",
-                Text = Language.Translate("Language")
-            };
-            foreach (CultureInfo cultureInfo in
-                GetCultureList(CultureTypes.AllCultures))
-            {
-                if (MenuDefines.Languages.Contains(cultureInfo.Name))
+                SettingsForm settingsForm = new SettingsForm();
+                if (settingsForm.ShowDialog() == DialogResult.OK)
                 {
-                    ToolStripItem language = changeLanguage.DropDownItems.
-                        Add(Language.Translate(cultureInfo.EnglishName));
-                    language.Click += Language_Click;
-                    void Language_Click(object sender, EventArgs e)
-                    {
-                        string twoLetter = cultureInfo.Name.Substring(0, 2);
-                        Properties.Settings.Default.CurrentCultureInfoName =
-                               twoLetter;
-                        Properties.Settings.Default.Save();
-                        ClickedRestart.Invoke();
-                    }
-                    if (cultureInfo.Name == Properties.Settings.Default.
-                        CurrentCultureInfoName)
-                    {
-                        language.Image = Properties.Resources.Selected;
-                        language.ImageScaling = ToolStripItemImageScaling.None;
-                        language.Image = ResizeImage(language.Image);
-                    }
+                    AppRestart.ByConfigChange();
                 }
             }
-            menu.Items.Add(changeLanguage);
-
-            ToolStripMenuItem autostart = new ToolStripMenuItem
-            {
-                Text = Language.Translate("Autostart")
-            };
-            //autostart.Image.HorizontalResolution.wi.c.sc.Select .ImageScaling = ToolStripItemImageScaling.None;
-            if (Properties.Settings.Default.IsAutostartActivated)
-            {
-                autostart.Image = Properties.Resources.Selected;
-            }
-            else
-            {
-                autostart.Image = Properties.Resources.NotSelected;
-            }
-            autostart.ImageScaling = ToolStripItemImageScaling.None;
-            autostart.Image = ResizeImage(autostart.Image);
-            autostart.Click += Autostart_Click;
-            void Autostart_Click(object sender, EventArgs e)
-            {
-                if (Properties.Settings.Default.IsAutostartActivated)
-                {
-                    Microsoft.Win32.RegistryKey key =
-                        Microsoft.Win32.Registry.CurrentUser.OpenSubKey(
-                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",
-                        true);
-                    key.DeleteValue("SystemTrayMenu", false);
-                    Properties.Settings.Default.IsAutostartActivated = false;
-                }
-                else
-                {
-                    Microsoft.Win32.RegistryKey key =
-                        Microsoft.Win32.Registry.CurrentUser.OpenSubKey(
-                            @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",
-                            true);
-                    key.SetValue(
-                        Assembly.GetExecutingAssembly().GetName().Name,
-                        Assembly.GetEntryAssembly().Location);
-                    Properties.Settings.Default.IsAutostartActivated = true;
-                }
-                Properties.Settings.Default.Save();
-                ClickedRestart.Invoke();
-            }
-            menu.Items.Add(autostart);
-
-            ToolStripMenuItem hotKey = new ToolStripMenuItem();
-            string hotKeyText =
-                $"{Language.Translate("CTRL")} + " +
-                $"{Language.Translate("ALT")} + ";
-
-            hotKey.ImageScaling = ToolStripItemImageScaling.SizeToFit;
-            if (string.IsNullOrEmpty(Properties.Settings.Default.HotKey))
-            {
-                hotKey.Image = Properties.Resources.NotSelected;
-                hotKey.Text = hotKeyText + "? ";
-            }
-            else
-            {
-                hotKey.Image = Properties.Resources.Selected;
-                hotKey.Text = hotKeyText +
-                    $"{Properties.Settings.Default.HotKey}";
-            }
-            hotKey.ImageScaling = ToolStripItemImageScaling.None;
-            hotKey.Image = ResizeImage(hotKey.Image);
-            hotKey.Click += HotKey_Click;
-            void HotKey_Click(object sender, EventArgs e)
-            {
-                AskHotKeyForm askHotKey = new AskHotKeyForm();
-                if (askHotKey.ShowDialog() == DialogResult.OK)
-                {
-                    Properties.Settings.Default.HotKey = askHotKey.NewHotKey;
-                    Properties.Settings.Default.Save();
-                    ClickedRestart?.Invoke();
-                }
-            }
-            menu.Items.Add(hotKey);
+            menu.Items.Add(settings);
 
             ToolStripSeparator seperator = new ToolStripSeparator
             {
@@ -152,7 +105,7 @@ namespace SystemTrayMenu.Helper
 
             ToolStripMenuItem openLog = new ToolStripMenuItem
             {
-                Text = Language.Translate("Log File")
+                Text = Translator.GetText("Log File")
             };
             openLog.Click += OpenLog_Click;
             void OpenLog_Click(object sender, EventArgs e)
@@ -165,7 +118,7 @@ namespace SystemTrayMenu.Helper
 
             ToolStripMenuItem about = new ToolStripMenuItem
             {
-                Text = Language.Translate("About")
+                Text = Translator.GetText("About")
             };
             about.Click += About_Click;
             void About_Click(object sender, EventArgs e)
@@ -201,7 +154,7 @@ namespace SystemTrayMenu.Helper
 
             ToolStripMenuItem restart = new ToolStripMenuItem
             {
-                Text = Language.Translate("Restart")
+                Text = Translator.GetText("Restart")
             };
             restart.Click += Restart_Click;
             void Restart_Click(object sender, EventArgs e)
@@ -212,7 +165,7 @@ namespace SystemTrayMenu.Helper
 
             ToolStripMenuItem exit = new ToolStripMenuItem
             {
-                Text = Language.Translate("Exit")
+                Text = Translator.GetText("Exit")
             };
             exit.Click += Exit_Click;
             void Exit_Click(object sender, EventArgs e)
@@ -223,6 +176,199 @@ namespace SystemTrayMenu.Helper
 
             return menu;
         }
+
+#warning verify if we need this
+        private Keys GetModfiersForHotkey(Keys hotkey)
+        {
+            PopulateModifierLists();
+            Keys _modifiers = Keys.None;
+
+            string Text = string.Empty;
+            bool bCalledProgramatically = false;
+
+            // No hotkey set
+            if (hotkey == Keys.None)
+            {
+                Text = "";
+                return Keys.None;
+            }
+
+            // LWin/RWin doesn't work as hotkeys (neither do they work as modifier keys in .NET 2.0)
+            if (hotkey == Keys.LWin || hotkey == Keys.RWin)
+            {
+                Text = "";
+                return Keys.None;
+            }
+
+            // Only validate input if it comes from the user
+            if (bCalledProgramatically == false)
+            {
+                // No modifier or shift only, AND a hotkey that needs another modifier
+                if ((_modifiers == Keys.Shift || _modifiers == Keys.None) && _needNonShiftModifier.Contains((int)hotkey))
+                {
+                    if (_modifiers == Keys.None)
+                    {
+                        // Set Ctrl+Alt as the modifier unless Ctrl+Alt+<key> won't work...
+                        if (_needNonAltGrModifier.Contains((int)hotkey) == false)
+                        {
+                            _modifiers = Keys.Alt | Keys.Control;
+                        }
+                        else
+                        {
+                            // ... in that case, use Shift+Alt instead.
+                            _modifiers = Keys.Alt | Keys.Shift;
+                        }
+                    }
+                    else
+                    {
+                        // User pressed Shift and an invalid key (e.g. a letter or a number),
+                        // that needs another set of modifier keys
+                        hotkey = Keys.None;
+                        Text = "";
+                        return Keys.None;
+                    }
+                }
+                // Check all Ctrl+Alt keys
+                if ((_modifiers == (Keys.Alt | Keys.Control)) && _needNonAltGrModifier.Contains((int)hotkey))
+                {
+                    // Ctrl+Alt+4 etc won't work; reset hotkey and tell the user
+                    hotkey = Keys.None;
+                    Text = "";
+                    return Keys.None;
+                }
+            }
+
+            // I have no idea why this is needed, but it is. Without this code, pressing only Ctrl
+            // will show up as "Control + ControlKey", etc.
+            if (hotkey == Keys.Menu /* Alt */ || hotkey == Keys.ShiftKey || hotkey == Keys.ControlKey)
+            {
+                hotkey = Keys.None;
+            }
+
+            return _modifiers;
+            //Text = HotkeyToLocalizedString(_modifiers, _hotkey);
+        }
+
+        public static string HotkeyToLocalizedString(Keys modifierKeyCode, Keys virtualKeyCode)
+        {
+            return HotkeyModifiersToLocalizedString(modifierKeyCode) + GetKeyName(virtualKeyCode);
+        }
+        public static string HotkeyModifiersToLocalizedString(Keys modifierKeyCode)
+        {
+            StringBuilder hotkeyString = new StringBuilder();
+            if ((modifierKeyCode & Keys.Alt) > 0)
+            {
+                hotkeyString.Append(GetKeyName(Keys.Alt)).Append(" + ");
+            }
+            if ((modifierKeyCode & Keys.Control) > 0)
+            {
+                hotkeyString.Append(GetKeyName(Keys.Control)).Append(" + ");
+            }
+            if ((modifierKeyCode & Keys.Shift) > 0)
+            {
+                hotkeyString.Append(GetKeyName(Keys.Shift)).Append(" + ");
+            }
+            if (modifierKeyCode == Keys.LWin || modifierKeyCode == Keys.RWin)
+            {
+                hotkeyString.Append("Win").Append(" + ");
+            }
+            return hotkeyString.ToString();
+        }
+
+        private enum MapType : uint
+        {
+            MAPVK_VK_TO_VSC = 0, //The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If there is no translation, the function returns 0.
+            MAPVK_VSC_TO_VK = 1, //The uCode parameter is a scan code and is translated into a virtual-key code that does not distinguish between left- and right-hand keys. If there is no translation, the function returns 0.
+            MAPVK_VK_TO_CHAR = 2,     //The uCode parameter is a virtual-key code and is translated into an unshifted character value in the low order word of the return value. Dead keys (diacritics) are indicated by setting the top bit of the return value. If there is no translation, the function returns 0.
+            MAPVK_VSC_TO_VK_EX = 3, //The uCode parameter is a scan code and is translated into a virtual-key code that distinguishes between left- and right-hand keys. If there is no translation, the function returns 0.
+            MAPVK_VK_TO_VSC_EX = 4 //The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If the scan code is an extended scan code, the high byte of the uCode value can contain either 0xe0 or 0xe1 to specify the extended scan code. If there is no translation, the function returns 0.
+        }
+
+        public static string GetKeyName(Keys givenKey)
+        {
+            StringBuilder keyName = new StringBuilder();
+            const uint numpad = 55;
+
+            Keys virtualKey = givenKey;
+            string keyString;
+            // Make VC's to real keys
+            switch (virtualKey)
+            {
+                case Keys.Alt:
+                    virtualKey = Keys.LMenu;
+                    break;
+                case Keys.Control:
+                    virtualKey = Keys.ControlKey;
+                    break;
+                case Keys.Shift:
+                    virtualKey = Keys.LShiftKey;
+                    break;
+                case Keys.Multiply:
+                    GetKeyNameText(numpad << 16, keyName, 100);
+                    keyString = keyName.ToString().Replace("*", "").Trim().ToLower();
+                    if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
+                    {
+                        return "* " + keyString;
+                    }
+                    keyString = keyString.Substring(0, 1).ToUpper() + keyString.Substring(1).ToLower();
+                    return keyString + " *";
+                case Keys.Divide:
+                    GetKeyNameText(numpad << 16, keyName, 100);
+                    keyString = keyName.ToString().Replace("*", "").Trim().ToLower();
+                    if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
+                    {
+                        return "/ " + keyString;
+                    }
+                    keyString = keyString.Substring(0, 1).ToUpper() + keyString.Substring(1).ToLower();
+                    return keyString + " /";
+            }
+            uint scanCode = MapVirtualKey((uint)virtualKey, (uint)MapType.MAPVK_VK_TO_VSC);
+
+            // because MapVirtualKey strips the extended bit for some keys
+            switch (virtualKey)
+            {
+                case Keys.Left:
+                case Keys.Up:
+                case Keys.Right:
+                case Keys.Down: // arrow keys
+                case Keys.Prior:
+                case Keys.Next: // page up and page down
+                case Keys.End:
+                case Keys.Home:
+                case Keys.Insert:
+                case Keys.Delete:
+                case Keys.NumLock:
+                    //Log.Debug("Modifying Extended bit");
+                    scanCode |= 0x100; // set extended bit
+                    break;
+                case Keys.PrintScreen: // PrintScreen
+                    scanCode = 311;
+                    break;
+                case Keys.Pause: // PrintScreen
+                    scanCode = 69;
+                    break;
+            }
+            scanCode |= 0x200;
+            if (GetKeyNameText(scanCode << 16, keyName, 100) != 0)
+            {
+                string visibleName = keyName.ToString();
+                if (visibleName.Length > 1)
+                {
+                    visibleName = visibleName.Substring(0, 1) + visibleName.Substring(1).ToLower();
+                }
+                return visibleName;
+            }
+            else
+            {
+                return givenKey.ToString();
+            }
+        }
+
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern uint MapVirtualKey(uint uCode, uint uMapType);
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        private static extern int GetKeyNameText(uint lParam, [Out] StringBuilder lpString, int nSize);
 
         /// <summary>
         /// https://www.codeproject.com/Tips/744914/

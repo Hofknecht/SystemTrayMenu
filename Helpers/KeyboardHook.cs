@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SystemTrayMenu.UserInterface.Controls;
 using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu.Helper
@@ -76,11 +77,41 @@ namespace SystemTrayMenu.Helper
             RegisterHotKey(keyModifiersNone, key);
         }
 
+        internal void RegisterHotKey(string hotKeyString)
+        {
+            KeyboardHookModifierKeys modifiers = KeyboardHookModifierKeys.None;
+            string modifiersString = Properties.Settings.Default.HotKey;
+            if (!string.IsNullOrEmpty(modifiersString))
+            {
+                if (modifiersString.ToLower().Contains("alt"))
+                {
+                    modifiers |= KeyboardHookModifierKeys.Alt;
+                }
+                if (modifiersString.ToLower().Contains("ctrl"))
+                {
+                    modifiers |= KeyboardHookModifierKeys.Control;
+                }
+                if (modifiersString.ToLower().Contains("shift"))
+                {
+                    modifiers |= KeyboardHookModifierKeys.Shift;
+                }
+                if (modifiersString.ToLower().Contains("win"))
+                {
+                    modifiers |= KeyboardHookModifierKeys.Win;
+                }
+            }
+
+            RegisterHotKey(modifiers,
+                HotkeyControl.HotkeyFromString(
+                    Properties.Settings.Default.HotKey));
+        }
+
         /// <summary>
         /// Registers a hot key in the system.
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
+        //internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
         internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
         {
             RegisterHotKey((uint)modifier, key);
@@ -94,7 +125,7 @@ namespace SystemTrayMenu.Helper
                 _window.Handle, _currentId, modifier, (uint)key))
             {
                 throw new InvalidOperationException(
-                    Language.Translate("Could not register the hot key."));
+                    Translator.GetText("Could not register the hot key."));
             }
         }
 
@@ -145,6 +176,7 @@ namespace SystemTrayMenu.Helper
     [Flags]
     internal enum KeyboardHookModifierKeys : uint
     {
+        None = 0,
         Alt = 1,
         Control = 2,
         Shift = 4,

@@ -15,7 +15,7 @@ namespace SystemTrayMenu
             {
                 Log.Initialize();
                 SingleAppInstance.Initialize();
-                Language.Initialize();
+                Translator.Initialize();
 
                 Config.UpgradeIfNotUpgraded();
                 if (Config.LoadOrSetByUser())
