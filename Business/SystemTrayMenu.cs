@@ -2,7 +2,6 @@
 using System;
 using System.Windows.Forms;
 using SystemTrayMenu.Business;
-using SystemTrayMenu.Helpers.Hotkey;
 using SystemTrayMenu.UserInterface;
 using SystemTrayMenu.Utilities;
 
