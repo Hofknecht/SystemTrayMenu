@@ -118,62 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="L010" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L010.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="L080" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L080.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="L020" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\L020.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="L030" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L030.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L040" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L040.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L050" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L050.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L060" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L060.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="L070" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\L070.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L080" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L080.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L090" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L090.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L100.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L110" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L110.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L120" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L120.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L130" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L130.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L140" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L140.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L150" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L150.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L160" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L160.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L170" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L170.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="L180" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\L180.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SystemTrayMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SystemTrayMenu.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,7 +133,58 @@
   <data name="NotSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="L140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L140.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L160" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L160.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L100.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L060" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L060.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L180" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L180.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="WhiteTransparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\White50Percentage.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L150.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L120.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L170" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L170.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SystemTrayMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SystemTrayMenu.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L090" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L090.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L040" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L040.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L010.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L030" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L030.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L050.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L130.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="L110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\L110.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

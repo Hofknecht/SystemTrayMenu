@@ -25,8 +25,6 @@ namespace SystemTrayMenu.Business
         private readonly Menu[] menus = new Menu[MenuDefines.MenusMax];
         private readonly BackgroundWorker worker = new BackgroundWorker();
 
-
-        private readonly Screen screen = Screen.PrimaryScreen;
         private readonly KeyboardInput keyboardInput;
         private readonly Timer timerStillActiveCheck = new Timer();
         private readonly WaitLeave waitLeave = new WaitLeave(MenuDefines.TimeUntilClose);
@@ -54,8 +52,6 @@ namespace SystemTrayMenu.Business
                 {
                     DisposeMenu(menus[0]);
                     menus[0] = Create(menuData, Path.GetFileName(Config.Path));
-
-                    menus[0].AdjustLocationAndSize(screen);
                     AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
                 }
             }
@@ -242,7 +238,7 @@ namespace SystemTrayMenu.Business
         {
             menus[0] = Create(GetData(worker, Config.Path, 0),
                 Path.GetFileName(Config.Path));
-            menus[0].AdjustLocationAndSize(screen);
+            menus[0].AdjustSizeAndLocation();
             DisposeMenu(menus[0]);
         }
 
@@ -325,15 +321,9 @@ namespace SystemTrayMenu.Business
             }
 
             menu.Level = menuData.Level;
-            menu.MouseWheel += AdjustSubMenusLocationAndSize;
+            menu.MouseWheel += AdjustMenusSizeAndLocation;
             menu.MouseLeave += waitLeave.Start;
             menu.MouseEnter += waitLeave.Stop;
-            DataGridView dgv = menu.GetDataGridView();
-            dgv.CellMouseEnter += Dgv_CellMouseEnter;
-            dgv.CellMouseLeave += Dgv_CellMouseLeave;
-            dgv.MouseDown += Dgv_MouseDown;
-            dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
-            dgv.SelectionChanged += Dgv_SelectionChanged;
             menu.KeyPress += keyboardInput.KeyPress;
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
             menu.Deactivate += Deactivate;
@@ -386,6 +376,13 @@ namespace SystemTrayMenu.Business
                 }
             }
 
+            DataGridView dgv = menu.GetDataGridView();
+            dgv.CellMouseEnter += Dgv_CellMouseEnter;
+            dgv.CellMouseLeave += Dgv_CellMouseLeave;
+            dgv.MouseDown += Dgv_MouseDown;
+            dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
+            dgv.SelectionChanged += Dgv_SelectionChanged;
+
             return menu;
         }
 
@@ -394,7 +391,11 @@ namespace SystemTrayMenu.Business
             Menu menu = (Menu)sender;
             if (menu.IsUsable)
             {
-                AdjustSubMenusLocationAndSize();
+                AdjustMenusSizeAndLocation();
+                if (menu.Level == 0)
+                {
+                    menus[0].AdjustSizeAndLocation();
+                }
             }
             if (!menu.Visible)
             {
@@ -650,7 +651,7 @@ namespace SystemTrayMenu.Business
 
             DisposeMenu(menus[menuTriggered.Level]);
             menus[menuTriggered.Level] = menuTriggered;
-            AdjustSubMenusLocationAndSize();
+            AdjustMenusSizeAndLocation();
             menus[menuTriggered.Level].ShowWithFadeOrTransparent(IsActive());
         }
 
@@ -703,13 +704,13 @@ namespace SystemTrayMenu.Business
             });
         }
 
-        private void AdjustSubMenusLocationAndSize()
+        private void AdjustMenusSizeAndLocation()
         {
-            int heightMax = screen.Bounds.Height -
-                new WindowsTaskbar().Size.Height;
             Menu menuPredecessor = menus[0];
             int widthPredecessors = -1; // -1 padding
             bool directionToRight = false;
+
+            menus[0].AdjustSizeAndLocation();
 
             foreach (Menu menu in AsEnumerable.Where(m => m.Level > 0))
             {
@@ -727,14 +728,14 @@ namespace SystemTrayMenu.Business
                         widthPredecessors -= newWith;
                     }
                 }
-                else if (screen.Bounds.Width <
+                else if (Statics.ScreenWidth <
                     widthPredecessors + menuPredecessor.Width + menu.Width)
                 {
                     directionToRight = true;
                     widthPredecessors -= newWith;
                 }
 
-                menu.AdjustLocationAndSize(heightMax, menuPredecessor);
+                menu.AdjustSizeAndLocation(menuPredecessor);
                 widthPredecessors += menu.Width - menu.Padding.Left;
                 menuPredecessor = menu;
             }

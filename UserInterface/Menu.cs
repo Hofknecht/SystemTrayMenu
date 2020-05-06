@@ -80,6 +80,10 @@ namespace SystemTrayMenu.UserInterface
             fading.Hide += Hide;
 
             InitializeComponent();
+            //pictureBoxSearch.Image = Bitmap.FromHicon(new Icon(
+            //    Properties.Resources.search,new Size(
+            //        pictureBoxSearch.Width,
+            //        pictureBoxSearch.Height)).Handle);
             SetDoubleBuffer(dgv, true);
 
             DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle
@@ -213,88 +217,106 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void AdjustLocationAndSize(Screen screen)
+        internal void AdjustSizeAndLocation(Menu menuPredecessor = null)
         {
-            if (screen != null)
-            {
-                DataGridViewElementStates states = DataGridViewElementStates.None;
-                dgv.AutoResizeRows();
-                int height = dgv.Rows.GetRowsHeight(states);
-                int heightMax = screen.Bounds.Height -
-                    new WindowsTaskbar().Size.Height -
-                    labelTitle.Height;
-                if (height > heightMax)
-                {
-                    height = heightMax;
-                }
-                dgv.Height = height;
-                AdjustDataGridViewSize();
-                int x = screen.Bounds.Right - Width;
-                int y = heightMax - Height + labelTitle.Height;
-
-                Location = new Point(x, y);
-            }
-        }
-
-        internal void AdjustLocationAndSize(int heightMax, Menu menuPredecessor)
-        {
-            DataGridViewElementStates states = DataGridViewElementStates.None;
             if (!autoResizeRowsDone)
             {
                 autoResizeRowsDone = true;
-                this.dgv.AutoResizeRows();
+                dgv.AutoResizeRows();
             }
-            int height = this.dgv.Rows.GetRowsHeight(states);
-            if (height > heightMax)
+
+            int dgvHeightNeeded = dgv.Rows.GetRowsHeight(
+                DataGridViewElementStates.None);
+            int labelTitleHeight = labelTitle.Height;
+            if (labelTitle.IsDisposed)
             {
-                height = heightMax;
+                labelTitleHeight = 0;
             }
-            this.dgv.Height = height;
+            int menuRestNeeded = Height - dgv.Height;
+                //labelTitleHeight + tableLayoutPanelSearch.Height +
+                //(int)Math.Round(5 * Scaling.Factor);
+                //(tableLayoutPanelSearch.Margin.Vertical + 5) * Scaling.Factor);
 
-            AdjustDataGridViewSize();
-            int x = menuPredecessor.Location.X - Width +
-                (int)Math.Round(Scaling.Factor, 0,
-                MidpointRounding.AwayFromZero);
+            int dgvHeightMax = Statics.ScreenHeight - Statics.TaskbarHeight -
+                menuRestNeeded;
 
-            RowData trigger = (RowData)Tag;
-            DataGridView dgv = menuPredecessor.GetDataGridView();
-            if (dgv.Rows.Count > trigger.RowIndex)
+            if (dgvHeightNeeded > dgvHeightMax)
             {
+                dgvHeightNeeded = dgvHeightMax;
+            }
+            dgv.Height = dgvHeightNeeded;
+
+            AdjustDataGridViewWidth();
+
+            int x;
+            if (menuPredecessor == null)
+            {
+                x = Statics.ScreenRight - Width;
+            }
+            else
+            {
+                x = menuPredecessor.Location.X - Width +
+                    (int)Math.Round(Scaling.Factor, 0,
+                    MidpointRounding.AwayFromZero);
+            }
+
+            int y;
+            if (menuPredecessor == null)
+            {
+                y = Statics.ScreenHeight - Statics.TaskbarHeight - Height;
+            } 
+            else
+            {
+                RowData trigger = (RowData)Tag;
+                DataGridView dgv = menuPredecessor.GetDataGridView();
+
                 Rectangle cellRectangle = dgv.GetCellDisplayRectangle(
                     0, trigger.RowIndex, false);
-                int y = menuPredecessor.Location.Y +
+                y = menuPredecessor.Location.Y +
                     menuPredecessor.dgv.Location.Y +
                     cellRectangle.Top;
-                if ((y + Height) > heightMax)
+                if ((y + Height) > dgvHeightMax)
                 {
-                    y = heightMax - Height;
+                    y = dgvHeightMax - Height + menuRestNeeded;
                 }
-
-                Location = new Point(x, y);
             }
+
+            Location = new Point(x, y);
         }
 
-        private void AdjustDataGridViewSize()
+        private void AdjustDataGridViewWidth()
         {
-#warning [BUG] Autosizing columns and rows while scrolling #65
-            //dgv.AutoResizeColumns() was too slow ~45ms
             DataGridViewExtensions.FastAutoSizeColumns(dgv);
-
-            bool scrollbarShown = false;
-            foreach (VScrollBar scroll in dgv.Controls.OfType<VScrollBar>())
-            {
-                if (scroll.Visible)
-                {
-                    scroll.Width = 120;
-                    scrollbarShown = true;
-                }
-            }
             int newWidth = dgv.Columns[0].Width + dgv.Columns[1].Width;
-            if (scrollbarShown)
+            if (IsScrollbarShown())
             {
                 newWidth += SystemInformation.VerticalScrollBarWidth;
             }
             dgv.Width = newWidth;
+
+            //Only scaling correct with Sans Serif for textBoxSearch. Workaround:
+            textBoxSearch.Font = new Font("Segoe UI", 8.25F * Scaling.Factor,
+                FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+
+            //Ancor not working like in the label
+            textBoxSearch.Width = newWidth -
+                pictureBoxSearch.Width -
+                pictureBoxSearch.Margin.Horizontal -
+                textBoxSearch.Margin.Horizontal;
+        }
+
+        private bool IsScrollbarShown()
+        {
+            bool isScrollbarShown = false;
+            foreach (VScrollBar scroll in dgv.Controls.OfType<VScrollBar>())
+            {
+                if (scroll.Visible)
+                {
+                    isScrollbarShown = true;
+                }
+            }
+
+            return isScrollbarShown;
         }
 
         private void dgv_MouseWheel(object sender, MouseEventArgs e)

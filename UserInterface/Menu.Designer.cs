@@ -32,34 +32,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.labelTitle = new global::SystemTrayMenu.UserInterface.LabelNoCopy();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.ColumnIcon = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.pictureBoxSearch = new System.Windows.Forms.PictureBox();
+            this.labelTitle = new SystemTrayMenu.UserInterface.LabelNoCopy();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.tableLayoutPanel.SuspendLayout();
+            this.tableLayoutPanelSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.BackColor = MenuDefines.ColorTitleBackground;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelTitle.Location = new System.Drawing.Point(0, 0);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Padding = new System.Windows.Forms.Padding(3, 0, 0, 1);
-            this.labelTitle.Size = new System.Drawing.Size(361, 14);
-            this.labelTitle.TabIndex = 2;
-            this.labelTitle.Text = "STM";
-            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LabelTitle_MouseDoubleClick);
-            this.labelTitle.MouseEnter += new System.EventHandler(this.LabelTitle_MouseEnter);
-            this.labelTitle.MouseLeave += new System.EventHandler(this.LabelTitle_MouseLeave);
-            this.labelTitle.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
             // 
             // dgv
             // 
@@ -94,7 +79,7 @@
             this.dgv.ShowCellToolTips = false;
             this.dgv.ShowEditingIcon = false;
             this.dgv.ShowRowErrors = false;
-            this.dgv.Size = new System.Drawing.Size(361, 390);
+            this.dgv.Size = new System.Drawing.Size(157, 145);
             this.dgv.TabIndex = 4;
             this.dgv.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
             // 
@@ -135,15 +120,79 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.Controls.Add(this.dgv, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.labelTitle, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.tableLayoutPanelSearch, 0, 2);
             this.tableLayoutPanel.Location = new System.Drawing.Point(1, 1);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 2;
+            this.tableLayoutPanel.RowCount = 3;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.Size = new System.Drawing.Size(361, 404);
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel.Size = new System.Drawing.Size(157, 182);
             this.tableLayoutPanel.TabIndex = 3;
             this.tableLayoutPanel.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
+            // 
+            // tableLayoutPanelSearch
+            // 
+            this.tableLayoutPanelSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelSearch.AutoSize = true;
+            this.tableLayoutPanelSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelSearch.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanelSearch.ColumnCount = 2;
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSearch.Controls.Add(this.textBoxSearch, 1, 0);
+            this.tableLayoutPanelSearch.Controls.Add(this.pictureBoxSearch, 0, 0);
+            this.tableLayoutPanelSearch.Location = new System.Drawing.Point(0, 160);
+            this.tableLayoutPanelSearch.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.tableLayoutPanelSearch.Name = "tableLayoutPanelSearch";
+            this.tableLayoutPanelSearch.RowCount = 1;
+            this.tableLayoutPanelSearch.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSearch.Size = new System.Drawing.Size(157, 22);
+            this.tableLayoutPanelSearch.TabIndex = 5;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxSearch.BackColor = System.Drawing.Color.White;
+            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.textBoxSearch.Location = new System.Drawing.Point(25, 4);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(129, 15);
+            this.textBoxSearch.TabIndex = 0;
+            // 
+            // pictureBoxSearch
+            // 
+            this.pictureBoxSearch.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSearch.BackgroundImage = global::SystemTrayMenu.Properties.Resources.search2;
+            this.pictureBoxSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxSearch.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxSearch.Name = "pictureBoxSearch";
+            this.pictureBoxSearch.Size = new System.Drawing.Size(16, 16);
+            this.pictureBoxSearch.TabIndex = 1;
+            this.pictureBoxSearch.TabStop = false;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.BackColor = System.Drawing.Color.Azure;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.Black;
+            this.labelTitle.Location = new System.Drawing.Point(0, 0);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Padding = new System.Windows.Forms.Padding(3, 0, 0, 1);
+            this.labelTitle.Size = new System.Drawing.Size(157, 14);
+            this.labelTitle.TabIndex = 2;
+            this.labelTitle.Text = "STM";
+            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LabelTitle_MouseDoubleClick);
+            this.labelTitle.MouseEnter += new System.EventHandler(this.LabelTitle_MouseEnter);
+            this.labelTitle.MouseLeave += new System.EventHandler(this.LabelTitle_MouseLeave);
+            this.labelTitle.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
             // 
             // Menu
             // 
@@ -152,7 +201,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(707, 611);
+            this.ClientSize = new System.Drawing.Size(331, 360);
             this.Controls.Add(this.tableLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
@@ -165,16 +214,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
+            this.tableLayoutPanelSearch.ResumeLayout(false);
+            this.tableLayoutPanelSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private global::SystemTrayMenu.UserInterface.LabelNoCopy labelTitle;
+        private SystemTrayMenu.UserInterface.LabelNoCopy labelTitle;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.DataGridViewImageColumn ColumnIcon;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnText;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.PictureBox pictureBoxSearch;
     }
 }

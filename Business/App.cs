@@ -2,18 +2,29 @@
 using System;
 using System.Windows.Forms;
 using SystemTrayMenu.Business;
+using SystemTrayMenu.DataClasses;
+using SystemTrayMenu.Helper;
 using SystemTrayMenu.UserInterface;
 using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu
 {
-    internal class SystemTrayMenu : IDisposable
+    internal class App : IDisposable
     {
         private readonly MenuNotifyIcon menuNotifyIcon = new MenuNotifyIcon();
         private Menus menus = new Menus();
 
-        public SystemTrayMenu()
+        public App()
         {
+            Scaling.Initialize();
+            FolderOptions.Initialize();
+
+            Screen screen = Screen.PrimaryScreen;
+            Statics.ScreenHeight = screen.Bounds.Height;
+            Statics.ScreenWidth = screen.Bounds.Width;
+            Statics.ScreenRight = screen.Bounds.Right;
+            Statics.TaskbarHeight = new WindowsTaskbar().Size.Height;
+
             AppRestart.BeforeRestarting += Dispose;
             SystemEvents.DisplaySettingsChanged += AppRestart.ByDisplaySettings;
             menus.LoadStarted += menuNotifyIcon.LoadingStart;

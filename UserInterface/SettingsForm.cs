@@ -76,8 +76,8 @@ namespace SystemTrayMenu.UserInterface
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             tabControl1.Size = new Size(
-                tableLayoutPanelGeneral.Size.Width + 10,
-                tableLayoutPanelGeneral.Size.Height + 40);
+                tableLayoutPanelGeneral.Size.Width,
+                tableLayoutPanelGeneral.Size.Height);
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)

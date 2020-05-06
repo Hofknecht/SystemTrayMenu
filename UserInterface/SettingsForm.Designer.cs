@@ -37,6 +37,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.labelLanguage = new System.Windows.Forms.Label();
+            this.textBoxHotkey = new SystemTrayMenu.UserInterface.Controls.HotkeyControl();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
             this.labelHotkey = new System.Windows.Forms.Label();
             this.labelAutostart = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.textBoxHotkey = new HotkeyControl();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -74,7 +74,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(401, 246);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(401, 275);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // tabControl1
@@ -83,7 +83,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(395, 211);
+            this.tabControl1.Size = new System.Drawing.Size(395, 240);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPageGeneral
@@ -93,7 +93,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 22);
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(387, 185);
+            this.tabPageGeneral.Size = new System.Drawing.Size(387, 214);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "tabPageGeneral";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
@@ -102,9 +102,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.tableLayoutPanelGeneral.AutoSize = true;
             this.tableLayoutPanelGeneral.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelGeneral.ColumnCount = 2;
+            this.tableLayoutPanelGeneral.ColumnCount = 3;
             this.tableLayoutPanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanelGeneral.Controls.Add(this.comboBoxLanguage, 1, 3);
             this.tableLayoutPanelGeneral.Controls.Add(this.labelLanguage, 0, 3);
             this.tableLayoutPanelGeneral.Controls.Add(this.textBoxHotkey, 1, 2);
@@ -115,12 +116,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral.Controls.Add(this.labelFolder, 0, 0);
             this.tableLayoutPanelGeneral.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelGeneral.Name = "tableLayoutPanelGeneral";
-            this.tableLayoutPanelGeneral.RowCount = 4;
+            this.tableLayoutPanelGeneral.RowCount = 5;
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(301, 102);
+            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(313, 145);
             this.tableLayoutPanelGeneral.TabIndex = 1;
             // 
             // comboBoxLanguage
@@ -128,7 +130,7 @@ namespace SystemTrayMenu.UserInterface
             this.comboBoxLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguage.FormattingEnabled = true;
-            this.comboBoxLanguage.Location = new System.Drawing.Point(92, 81);
+            this.comboBoxLanguage.Location = new System.Drawing.Point(92, 84);
             this.comboBoxLanguage.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
             this.comboBoxLanguage.Name = "comboBoxLanguage";
             this.comboBoxLanguage.Size = new System.Drawing.Size(200, 21);
@@ -138,17 +140,31 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelLanguage.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelLanguage.AutoSize = true;
-            this.labelLanguage.Location = new System.Drawing.Point(3, 81);
+            this.labelLanguage.Location = new System.Drawing.Point(3, 84);
             this.labelLanguage.Name = "labelLanguage";
             this.labelLanguage.Size = new System.Drawing.Size(77, 13);
             this.labelLanguage.TabIndex = 2;
             this.labelLanguage.Text = "labelLanguage";
             // 
+            // textBoxHotkey
+            // 
+            this.textBoxHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxHotkey.Hotkey = System.Windows.Forms.Keys.None;
+            this.textBoxHotkey.HotkeyModifiers = System.Windows.Forms.Keys.None;
+            this.textBoxHotkey.Location = new System.Drawing.Point(92, 57);
+            this.textBoxHotkey.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
+            this.textBoxHotkey.Name = "textBoxHotkey";
+            this.textBoxHotkey.Size = new System.Drawing.Size(200, 20);
+            this.textBoxHotkey.TabIndex = 0;
+            this.textBoxHotkey.Text = "None";
+            this.textBoxHotkey.Enter += new System.EventHandler(this.textBoxHotkey_Enter);
+            this.textBoxHotkey.Leave += new System.EventHandler(this.textBoxHotkey_Leave);
+            // 
             // checkBoxAutostart
             // 
             this.checkBoxAutostart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxAutostart.AutoSize = true;
-            this.checkBoxAutostart.Location = new System.Drawing.Point(92, 30);
+            this.checkBoxAutostart.Location = new System.Drawing.Point(92, 33);
             this.checkBoxAutostart.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
             this.checkBoxAutostart.Name = "checkBoxAutostart";
             this.checkBoxAutostart.Size = new System.Drawing.Size(200, 17);
@@ -160,7 +176,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelHotkey.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelHotkey.AutoSize = true;
-            this.labelHotkey.Location = new System.Drawing.Point(3, 54);
+            this.labelHotkey.Location = new System.Drawing.Point(3, 57);
             this.labelHotkey.Name = "labelHotkey";
             this.labelHotkey.Size = new System.Drawing.Size(63, 13);
             this.labelHotkey.TabIndex = 1;
@@ -170,7 +186,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelAutostart.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelAutostart.AutoSize = true;
-            this.labelAutostart.Location = new System.Drawing.Point(3, 28);
+            this.labelAutostart.Location = new System.Drawing.Point(3, 31);
             this.labelAutostart.Name = "labelAutostart";
             this.labelAutostart.Size = new System.Drawing.Size(71, 13);
             this.labelAutostart.TabIndex = 2;
@@ -178,7 +194,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -192,16 +208,19 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(212, 23);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(218, 26);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // buttonChange
             // 
+            this.buttonChange.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonChange.AutoSize = true;
+            this.buttonChange.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChange.Location = new System.Drawing.Point(176, 3);
+            this.buttonChange.Location = new System.Drawing.Point(180, 3);
             this.buttonChange.Margin = new System.Windows.Forms.Padding(3, 3, 9, 0);
             this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(27, 20);
+            this.buttonChange.Size = new System.Drawing.Size(29, 23);
             this.buttonChange.TabIndex = 6;
             this.buttonChange.Text = "...";
             this.buttonChange.UseVisualStyleBackColor = true;
@@ -212,7 +231,7 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFolder.BackColor = System.Drawing.Color.White;
             this.textBoxFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFolder.Location = new System.Drawing.Point(9, 6);
+            this.textBoxFolder.Location = new System.Drawing.Point(9, 8);
             this.textBoxFolder.Margin = new System.Windows.Forms.Padding(9, 3, 9, 0);
             this.textBoxFolder.Name = "textBoxFolder";
             this.textBoxFolder.ReadOnly = true;
@@ -223,7 +242,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelFolder.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelFolder.AutoSize = true;
-            this.labelFolder.Location = new System.Drawing.Point(3, 5);
+            this.labelFolder.Location = new System.Drawing.Point(3, 6);
             this.labelFolder.Name = "labelFolder";
             this.labelFolder.Size = new System.Drawing.Size(58, 13);
             this.labelFolder.TabIndex = 7;
@@ -307,7 +326,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.Controls.Add(this.buttonOk, 1, 0);
             this.tableLayoutPanelBottom.Controls.Add(this.buttonCancel, 2, 0);
-            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 220);
+            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 249);
             this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
             this.tableLayoutPanelBottom.RowCount = 1;
             this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -337,20 +356,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // textBoxHotkey
-            // 
-            this.textBoxHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxHotkey.Hotkey = System.Windows.Forms.Keys.None;
-            this.textBoxHotkey.HotkeyModifiers = System.Windows.Forms.Keys.None;
-            this.textBoxHotkey.Location = new System.Drawing.Point(92, 54);
-            this.textBoxHotkey.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
-            this.textBoxHotkey.Name = "textBoxHotkey";
-            this.textBoxHotkey.Size = new System.Drawing.Size(200, 20);
-            this.textBoxHotkey.TabIndex = 0;
-            this.textBoxHotkey.Text = "None";
-            this.textBoxHotkey.Enter += new System.EventHandler(this.textBoxHotkey_Enter);
-            this.textBoxHotkey.Leave += new System.EventHandler(this.textBoxHotkey_Leave);
             // 
             // SettingsForm
             // 

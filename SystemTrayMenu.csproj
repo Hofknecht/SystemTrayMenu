@@ -142,6 +142,7 @@
   <ItemGroup>
     <Compile Include="Business\Menus.cs" />
     <Compile Include="Config\Config.cs" />
+    <Compile Include="DataClasses\Statics.cs" />
     <Compile Include="NativeDllImport\DestroyMenu.cs" />
     <Compile Include="NativeDllImport\CreatePopupMenu.cs" />
     <Compile Include="NativeDllImport\GetMenuDefaultItem.cs" />
@@ -231,7 +232,7 @@
     <Compile Include="Business\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Business\KeyboardInput.cs" />
-    <Compile Include="Business\SystemTrayMenu.cs" />
+    <Compile Include="Business\App.cs" />
     <EmbeddedResource Include="UserInterface\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +288,9 @@
     <None Include="Resources\L170.ico" />
     <None Include="Resources\L180.ico" />
     <None Include="Resources\NotSelected.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\search1.ico" />
+    <None Include="Resources\search.ico" />
     <Content Include="Resources\SystemTrayMenu.ico" />
   </ItemGroup>
   <ItemGroup>
