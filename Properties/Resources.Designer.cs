@@ -251,12 +251,12 @@ namespace SystemTrayMenu.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Bitmap search2 {
+        public static System.Drawing.Icon search2 {
             get {
                 object obj = ResourceManager.GetObject("search2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

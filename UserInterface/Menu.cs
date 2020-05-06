@@ -79,10 +79,12 @@ namespace SystemTrayMenu.UserInterface
             fading.Hide += Hide;
 
             InitializeComponent();
-            //pictureBoxSearch.Image = Bitmap.FromHicon(new Icon(
-            //    Properties.Resources.search,new Size(
-            //        pictureBoxSearch.Width,
-            //        pictureBoxSearch.Height)).Handle);
+            pictureBoxSearch.Paint += PictureBoxSearch_Paint;
+            void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
+            {
+                e.Graphics.DrawIcon(Properties.Resources.search2, 
+                    new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
+            }
             SetDoubleBuffer(dgv, true);
 
             DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle
