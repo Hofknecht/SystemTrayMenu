@@ -118,7 +118,17 @@ namespace SystemTrayMenu.Utilities
                     hIcon = DllImports.NativeMethods.ImageList_GetIcon(hImageList, shfi.iIcon, DllImports.NativeMethods.IldTransparent);
                 }
 
-                icon = (Icon)Icon.FromHandle(hIcon).Clone();
+                try
+                {
+                    // Copy (clone) the returned icon to a new object, thus allowing us to clean-up properly
+                    icon = (Icon)Icon.FromHandle(hIcon).Clone();
+                }
+#pragma warning disable CA1031 // Do not catch general exception types
+                catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
+                {
+                    Log.Error($"filePath:'{filePath}'", ex);
+                }
 
                 // Cleanup
                 if (!linkOverlay)
@@ -178,9 +188,11 @@ namespace SystemTrayMenu.Utilities
                     icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
                     DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
                 }
-                catch
+#pragma warning disable CA1031 // Do not catch general exception types
+                catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
                 {
-#warning todo
+                    Log.Error($"directoryPath:'{directoryPath}'", ex);
                 }
             }
 

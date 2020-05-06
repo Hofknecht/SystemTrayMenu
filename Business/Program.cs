@@ -28,6 +28,9 @@ namespace SystemTrayMenu
                         AskUserSendError(t.Exception);
                     }
 
+                    Scaling.Initialize();
+                    FolderOptions.Initialize();
+
                     using (new App())
                     {
                         Log.WriteApplicationRuns();

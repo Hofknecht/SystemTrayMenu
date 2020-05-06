@@ -37,7 +37,6 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.labelLanguage = new System.Windows.Forms.Label();
-            this.textBoxHotkey = new SystemTrayMenu.UserInterface.Controls.HotkeyControl();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
             this.labelHotkey = new System.Windows.Forms.Label();
             this.labelAutostart = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.textBoxHotkey = new SystemTrayMenu.UserInterface.Controls.HotkeyControl();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -145,20 +145,6 @@ namespace SystemTrayMenu.UserInterface
             this.labelLanguage.Size = new System.Drawing.Size(77, 13);
             this.labelLanguage.TabIndex = 2;
             this.labelLanguage.Text = "labelLanguage";
-            // 
-            // textBoxHotkey
-            // 
-            this.textBoxHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxHotkey.Hotkey = System.Windows.Forms.Keys.None;
-            this.textBoxHotkey.HotkeyModifiers = System.Windows.Forms.Keys.None;
-            this.textBoxHotkey.Location = new System.Drawing.Point(92, 57);
-            this.textBoxHotkey.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
-            this.textBoxHotkey.Name = "textBoxHotkey";
-            this.textBoxHotkey.Size = new System.Drawing.Size(200, 20);
-            this.textBoxHotkey.TabIndex = 0;
-            this.textBoxHotkey.Text = "None";
-            this.textBoxHotkey.Enter += new System.EventHandler(this.textBoxHotkey_Enter);
-            this.textBoxHotkey.Leave += new System.EventHandler(this.textBoxHotkey_Leave);
             // 
             // checkBoxAutostart
             // 
@@ -335,9 +321,12 @@ namespace SystemTrayMenu.UserInterface
             // 
             // buttonOk
             // 
+            this.buttonOk.AutoSize = true;
+            this.buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOk.Location = new System.Drawing.Point(236, 0);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.buttonOk.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 2;
@@ -347,15 +336,32 @@ namespace SystemTrayMenu.UserInterface
             // 
             // buttonCancel
             // 
+            this.buttonCancel.AutoSize = true;
+            this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(317, 0);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 3;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // textBoxHotkey
+            // 
+            this.textBoxHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxHotkey.Hotkey = System.Windows.Forms.Keys.None;
+            this.textBoxHotkey.HotkeyModifiers = System.Windows.Forms.Keys.None;
+            this.textBoxHotkey.Location = new System.Drawing.Point(92, 57);
+            this.textBoxHotkey.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
+            this.textBoxHotkey.Name = "textBoxHotkey";
+            this.textBoxHotkey.Size = new System.Drawing.Size(200, 20);
+            this.textBoxHotkey.TabIndex = 0;
+            this.textBoxHotkey.Text = "None";
+            this.textBoxHotkey.Enter += new System.EventHandler(this.textBoxHotkey_Enter);
+            this.textBoxHotkey.Leave += new System.EventHandler(this.textBoxHotkey_Leave);
             // 
             // SettingsForm
             // 
@@ -385,6 +391,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanelBottom.ResumeLayout(false);
+            this.tableLayoutPanelBottom.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

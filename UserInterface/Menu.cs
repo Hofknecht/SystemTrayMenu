@@ -35,7 +35,6 @@ namespace SystemTrayMenu.UserInterface
         internal int Level = 0;
 
         private readonly Fading fading = new Fading();
-        private bool autoResizeRowsDone = false;
         private bool isShowing = false;
 
         internal Menu()
@@ -219,23 +218,11 @@ namespace SystemTrayMenu.UserInterface
 
         internal void AdjustSizeAndLocation(Menu menuPredecessor = null)
         {
-            if (!autoResizeRowsDone)
-            {
-                autoResizeRowsDone = true;
-                dgv.AutoResizeRows();
-            }
+            dgv.AutoResizeRows();
 
             int dgvHeightNeeded = dgv.Rows.GetRowsHeight(
                 DataGridViewElementStates.None);
-            int labelTitleHeight = labelTitle.Height;
-            if (labelTitle.IsDisposed)
-            {
-                labelTitleHeight = 0;
-            }
             int menuRestNeeded = Height - dgv.Height;
-                //labelTitleHeight + tableLayoutPanelSearch.Height +
-                //(int)Math.Round(5 * Scaling.Factor);
-                //(tableLayoutPanelSearch.Margin.Vertical + 5) * Scaling.Factor);
 
             int dgvHeightMax = Statics.ScreenHeight - Statics.TaskbarHeight -
                 menuRestNeeded;
