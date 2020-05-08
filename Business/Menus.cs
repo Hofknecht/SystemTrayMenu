@@ -537,7 +537,7 @@ namespace SystemTrayMenu.Business
                 dgv.Rows.Count > hitTestInfo.RowIndex)
             {
                 RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Tag;
-                trigger.DoubleClick();
+                trigger.DoubleClick(e);
             }
         }
 

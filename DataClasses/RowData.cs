@@ -26,6 +26,7 @@ namespace SystemTrayMenu.DataClasses
         internal bool IsSelectedByKeyboard;
         internal bool ContainsMenu;
         internal bool IsContextMenuOpen;
+        private static DateTime ContextMenuClosed;
         internal bool IsResolvedLnk;
         internal bool IsLoading = false;
         internal bool RestartLoading = false;
@@ -337,11 +338,13 @@ namespace SystemTrayMenu.DataClasses
                 e.Button == MouseButtons.Right &&
                 FileInfo != null &&
                 dgv != null &&
-                dgv.Rows.Count > RowIndex)
+                dgv.Rows.Count > RowIndex &&
+                (DateTime.Now - ContextMenuClosed).TotalMilliseconds > 200)
             {
                 IsContextMenuOpen = true;
-                IsSelected = true;
-                dgv.Rows[RowIndex].Selected = true;
+                Color colorbefore = dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor;
+                dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor =
+                        MenuDefines.ColorSelectedItem;
 
                 ShellContextMenu ctxMnu = new ShellContextMenu();
                 Point location = dgv.FindForm().Location;
@@ -363,17 +366,19 @@ namespace SystemTrayMenu.DataClasses
 
                 if (!dgv.IsDisposed)
                 {
-                    IsSelected = false;
-                    dgv.Rows[RowIndex].Selected = false;
+                    dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor = colorbefore;
                 }
 
                 IsContextMenuOpen = false;
+                ContextMenuClosed = DateTime.Now;
             }
         }
 
-        internal void DoubleClick()
+        internal void DoubleClick(MouseEventArgs e)
         {
-            if (ContainsMenu)
+            if (e == null ||
+                e.Button == MouseButtons.Left &&
+                ContainsMenu)
             {
                 Log.ProcessStart("explorer.exe", TargetFilePath);
             }

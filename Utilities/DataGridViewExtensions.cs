@@ -33,7 +33,7 @@ namespace SystemTrayMenu.Utilities
                 }
                 dgv.Columns[i].Width = (int)(widthMax + 0.5);
 
-                string stringWithWidthLikeIcon = "___";
+                string stringWithWidthLikeIcon = "____";
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
                 float Width0 = gfx.MeasureString(stringWithWidthLikeIcon,
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
