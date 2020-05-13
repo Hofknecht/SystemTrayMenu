@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security;
-using System.Threading;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Handler;
@@ -59,7 +59,11 @@ namespace SystemTrayMenu.Business
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
             keyboardInput.HotKeyPressed += KeyboardInput_HotKeyPressed;
-            void KeyboardInput_HotKeyPressed() => SwitchOpenClose(false);
+            void KeyboardInput_HotKeyPressed()
+            {
+                SwitchOpenClose(false);
+            }
+
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowDeselected += CheckMenuOpenerStop;
             keyboardInput.RowSelected += KeyboardInputRowSelected;
@@ -70,7 +74,10 @@ namespace SystemTrayMenu.Business
             }
 
             waitLeave.LeaveTriggered += LeaveTriggered;
-            void LeaveTriggered() => FadeHalfOrOutIfNeeded();
+            void LeaveTriggered()
+            {
+                FadeHalfOrOutIfNeeded();
+            }
         }
 
         internal void SwitchOpenClose(bool byClick)
@@ -120,7 +127,7 @@ namespace SystemTrayMenu.Business
                 DataGridView dgv = menuToDispose.GetDataGridView();
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
-                    RowData rowData = (RowData)row.Tag;
+                    RowData rowData = (RowData)row.Cells[2].Value;
                     rowData.Dispose();
                     DisposeMenu(rowData.SubMenu);
                 }
@@ -326,6 +333,13 @@ namespace SystemTrayMenu.Business
             menu.MouseEnter += waitLeave.Stop;
             menu.KeyPress += keyboardInput.KeyPress;
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
+            menu.SearchTextChanging += keyboardInput.SearchTextChanging;
+            menu.SearchTextChanged += Menu_SearchTextChanged;
+            void Menu_SearchTextChanged(object sender, EventArgs e)
+            {
+                keyboardInput.SearchTextChanged(sender, e);
+                AdjustMenusSizeAndLocation();
+            }
             menu.Deactivate += Deactivate;
             void Deactivate(object sender, EventArgs e)
             {
@@ -368,14 +382,6 @@ namespace SystemTrayMenu.Business
 
             menu.VisibleChanged += MenuVisibleChanged;
             AddItemsToMenu(menuData.RowDatas, menu);
-            void AddItemsToMenu(List<RowData> data, Menu m)
-            {
-                foreach (RowData rowData in data)
-                {
-                    CreateMenuRow(rowData, m);
-                }
-            }
-
             DataGridView dgv = menu.GetDataGridView();
             dgv.CellMouseEnter += Dgv_CellMouseEnter;
             dgv.CellMouseLeave += Dgv_CellMouseLeave;
@@ -407,6 +413,19 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        private void AddItemsToMenu(List<RowData> data, Menu menu)
+        {
+            DataGridView dgv = menu.GetDataGridView();
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add(dgv.Columns[0].Name, typeof(Icon));
+            dataTable.Columns.Add(dgv.Columns[1].Name, typeof(string));
+            dataTable.Columns.Add("data", typeof(RowData));
+            foreach (RowData rowData in data)
+            {
+                CreateMenuRow(rowData, menu, dataTable);
+            }
+            dgv.DataSource = dataTable;
+        }
 
         private void Dgv_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -431,7 +450,7 @@ namespace SystemTrayMenu.Business
             if (rowIndex > -1 &&
                 dgv.Rows.Count > rowIndex)
             {
-                RowData trigger = (RowData)dgv.Rows[rowIndex].Tag;
+                RowData trigger = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
                 trigger.IsSelected = true;
                 dgv.Rows[rowIndex].Selected = true;
                 Menu menuFromTrigger = (Menu)dgv.FindForm();
@@ -472,7 +491,7 @@ namespace SystemTrayMenu.Business
                 }
                 if (dgv.Rows.Count > rowIndex)
                 {
-                    RowData trigger = (RowData)dgv.Rows[rowIndex].Tag;
+                    RowData trigger = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
                     if (trigger.Reading.IsBusy)
                     {
                         if (!trigger.IsContextMenuOpen)
@@ -523,7 +542,7 @@ namespace SystemTrayMenu.Business
             if (hitTestInfo.RowIndex > -1 &&
                 dgv.Rows.Count > hitTestInfo.RowIndex)
             {
-                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Tag;
+                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
                 trigger.MouseDown(dgv, e);
             }
         }
@@ -536,7 +555,7 @@ namespace SystemTrayMenu.Business
             if (hitTestInfo.RowIndex > -1 &&
                 dgv.Rows.Count > hitTestInfo.RowIndex)
             {
-                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Tag;
+                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
                 trigger.DoubleClick(e);
             }
         }
@@ -546,9 +565,13 @@ namespace SystemTrayMenu.Business
             DataGridView dgv = (DataGridView)sender;
             foreach (DataGridViewRow row in dgv.Rows)
             {
-                RowData rowData = (RowData)row.Tag;
+                RowData rowData = (RowData)row.Cells[2].Value;
 
-                if (!menus[0].IsUsable)
+                if (rowData == null)
+                {
+#warning evalute the case again, should we prevent it somewhere else?
+                }
+                else if (!menus[0].IsUsable)
                 {
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
                 }
@@ -572,9 +595,9 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void CreateMenuRow(RowData rowData, Menu menu)
+        private void CreateMenuRow(RowData rowData, Menu menu, DataTable dataTable)
         {
-            rowData.SetData(rowData, menu.GetDataGridView());
+            rowData.SetData(rowData, dataTable);
             rowData.OpenMenu += OpenSubMenu;
             rowData.Reading.WorkerSupportsCancellation = true;
             rowData.Reading.DoWork += ReadMenu_DoWork;
@@ -637,7 +660,7 @@ namespace SystemTrayMenu.Business
                     DataGridView dgv = menuFromTrigger.GetDataGridView();
                     foreach (DataGridViewRow row in dgv.Rows)
                     {
-                        RowData rowData = (RowData)row.Tag;
+                        RowData rowData = (RowData)row.Cells[2].Value;
                         rowData.IsSelected = false;
                     }
                     trigger.IsSelected = true;

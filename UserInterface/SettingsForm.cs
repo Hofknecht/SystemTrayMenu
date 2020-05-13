@@ -14,7 +14,7 @@ namespace SystemTrayMenu.UserInterface
     public partial class SettingsForm : Form
     {
         public string NewHotKey => newHotKey;
-        private string newHotKey = string.Empty;
+        private readonly string newHotKey = string.Empty;
         private bool _inHotkey = false;
 
         public SettingsForm()
@@ -44,7 +44,7 @@ namespace SystemTrayMenu.UserInterface
             InitializeAutostart();
             void InitializeAutostart()
             {
-                checkBoxAutostart.Checked = 
+                checkBoxAutostart.Checked =
                     Properties.Settings.Default.IsAutostartActivated;
             }
 
@@ -58,13 +58,15 @@ namespace SystemTrayMenu.UserInterface
             InitializeLanguage();
             void InitializeLanguage()
             {
-                var dataSource = new List<Language>();
-                dataSource.Add(new Language() { Name = "English", Value = "en" });
-                dataSource.Add(new Language() { Name = "Deutsch", Value = "de" });
+                List<Language> dataSource = new List<Language>
+                {
+                    new Language() { Name = "English", Value = "en" },
+                    new Language() { Name = "Deutsch", Value = "de" }
+                };
                 comboBoxLanguage.DataSource = dataSource;
                 comboBoxLanguage.DisplayMember = "Name";
                 comboBoxLanguage.ValueMember = "Value";
-                comboBoxLanguage.SelectedValue = 
+                comboBoxLanguage.SelectedValue =
                     Properties.Settings.Default.CurrentCultureInfoName;
                 if (comboBoxLanguage.SelectedValue == null)
                 {
@@ -94,8 +96,8 @@ namespace SystemTrayMenu.UserInterface
         {
             if (checkBoxAutostart.Checked)
             {
-               RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                   @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
                 key.SetValue(Assembly.GetExecutingAssembly().GetName().Name,
                     Assembly.GetEntryAssembly().Location);
                 Properties.Settings.Default.IsAutostartActivated = true;
@@ -111,7 +113,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void SetHotkey()
         {
-            Properties.Settings.Default.HotKey = 
+            Properties.Settings.Default.HotKey =
                 new KeysConverter().ConvertToInvariantString(
                 textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
 
@@ -235,7 +237,7 @@ namespace SystemTrayMenu.UserInterface
                 }
                 return success;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 #warning logging
                 //LOG.Warn(ex);
@@ -261,11 +263,6 @@ namespace SystemTrayMenu.UserInterface
             return RegisterHotkeys(false);
         }
 
-        static void TEST()
-        {
-            MessageBox.Show("TEST");
-        }
-
         /// <summary>
         /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
         /// </summary>
@@ -279,7 +276,7 @@ namespace SystemTrayMenu.UserInterface
             //}
             bool success = true;
             StringBuilder failedKeys = new StringBuilder();
-            if (!RegisterWrapper(failedKeys, TEST, ignoreFailedRegistration))
+            if (!RegisterWrapper(failedKeys, TODO, ignoreFailedRegistration))
             {
                 success = false;
             }
@@ -302,6 +299,11 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
             return success || ignoreFailedRegistration;
+        }
+
+        private static void TODO()
+        {
+#warning TODO
         }
 
         ///// <summary>
@@ -342,9 +344,9 @@ namespace SystemTrayMenu.UserInterface
             bool success = false;
 #warning todo
             //var warningTitle = Language.GetString(LangKey.warning);
-            var warningTitle = "Warning";
+            string warningTitle = "Warning";
             //var message = string.Format(Language.GetString(LangKey.warning_hotkeys), failedKeys, IsOneDriveBlockingHotkey() ? " (OneDrive)" : "");
-            var message = Translator.GetText("Could not register the hot key.");
+            string message = Translator.GetText("Could not register the hot key.");
             //DialogResult dr = MessageBox.Show(Instance, message, warningTitle, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
             DialogResult dr = MessageBox.Show(message, warningTitle, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.Retry)

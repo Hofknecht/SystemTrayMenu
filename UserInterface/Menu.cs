@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using System.Threading;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.DllImports;
-using SystemTrayMenu.Helper;
 using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu.UserInterface
@@ -17,7 +17,9 @@ namespace SystemTrayMenu.UserInterface
         internal new event EventHandlerEmpty MouseEnter;
         internal new event EventHandlerEmpty MouseLeave;
         internal event EventHandlerEmpty UserClickedOpenFolder;
-        internal event Action<Keys> CmdKeyProcessed;
+        internal event EventHandler<Keys> CmdKeyProcessed;
+        internal event EventHandlerEmpty SearchTextChanging;
+        internal event EventHandler SearchTextChanged;
 #warning #68 => use event and not a action here?
 
         internal bool IsUsable => Visible && !fading.IsHiding &&
@@ -66,6 +68,7 @@ namespace SystemTrayMenu.UserInterface
                     if (Visible)
                     {
                         Activate();
+                        textBoxSearch.Focus();
                         NativeMethods.User32ShowInactiveTopmost(this);
                         NativeMethods.ForceForegroundWindow(Handle);
                         SetTitleColorActive();
@@ -74,6 +77,7 @@ namespace SystemTrayMenu.UserInterface
                 else
                 {
                     NativeMethods.User32ShowInactiveTopmost(this);
+                    textBoxSearch.Focus();
                 }
             }
             fading.Hide += Hide;
@@ -82,7 +86,7 @@ namespace SystemTrayMenu.UserInterface
             pictureBoxSearch.Paint += PictureBoxSearch_Paint;
             void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
             {
-                e.Graphics.DrawIcon(Properties.Resources.search2, 
+                e.Graphics.DrawIcon(Properties.Resources.search2,
                     new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
             }
             SetDoubleBuffer(dgv, true);
@@ -112,12 +116,17 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        internal void FocusTextBox()
+        {
+            textBoxSearch.Focus();
+        }
+
         private static void SetDoubleBuffer(Control ctl, bool DoubleBuffered)
         {
             typeof(Control).InvokeMember("DoubleBuffered",
                 BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
                 null, ctl, new object[] { DoubleBuffered },
-                System.Globalization.CultureInfo.InvariantCulture);
+                CultureInfo.InvariantCulture);
         }
 
         internal void SetTypeSub()
@@ -212,7 +221,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal void HideWithFade()
         {
-            if(!isShowing)
+            if (!isShowing)
             {
                 fading.Fade(Fading.FadingState.Hide);
             }
@@ -233,7 +242,12 @@ namespace SystemTrayMenu.UserInterface
             {
                 dgvHeightNeeded = dgvHeightMax;
             }
-            dgv.Height = dgvHeightNeeded;
+
+            DataTable data = (DataTable)dgv.DataSource;
+            if (string.IsNullOrEmpty(data.DefaultView.RowFilter))
+            {
+                dgv.Height = dgvHeightNeeded;
+            }
 
             AdjustDataGridViewWidth();
 
@@ -253,17 +267,21 @@ namespace SystemTrayMenu.UserInterface
             if (menuPredecessor == null)
             {
                 y = Statics.ScreenHeight - Statics.TaskbarHeight - Height;
-            } 
+            }
             else
             {
                 RowData trigger = (RowData)Tag;
                 DataGridView dgv = menuPredecessor.GetDataGridView();
-
-                Rectangle cellRectangle = dgv.GetCellDisplayRectangle(
-                    0, trigger.RowIndex, false);
+                int distanceToDgvTop = 0;
+                if (dgv.Rows.Count > 0)
+                {
+                    Rectangle cellRectangle = dgv.GetCellDisplayRectangle(
+                        0, trigger.RowIndex, false);
+                    distanceToDgvTop = cellRectangle.Top;
+                }
                 y = menuPredecessor.Location.Y +
                     menuPredecessor.dgv.Location.Y +
-                    cellRectangle.Top;
+                    distanceToDgvTop;
                 if ((y + Height) > dgvHeightMax)
                 {
                     y = dgvHeightMax - Height + menuRestNeeded;
@@ -285,7 +303,7 @@ namespace SystemTrayMenu.UserInterface
 
             //Only scaling correct with Sans Serif for textBoxSearch. Workaround:
             textBoxSearch.Font = new Font("Segoe UI", 8.25F * Scaling.Factor,
-                FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                FontStyle.Regular, GraphicsUnit.Point, 0);
 
             //Ancor not working like in the label
             textBoxSearch.Width = newWidth -
@@ -386,12 +404,40 @@ namespace SystemTrayMenu.UserInterface
                 case Keys.Left:
                 case Keys.Right:
                 case Keys.Escape:
-                    CmdKeyProcessed.Invoke(keys);
+                case Keys.Control | Keys.F:
+                case Keys.Tab:
+                case Keys.Tab | Keys.Shift:
+                    CmdKeyProcessed.Invoke(this, keys);
                     return true;
                 default:
                     break;
             }
             return base.ProcessCmdKey(ref msg, keys);
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataTable data = (DataTable)dgv.DataSource;
+            string filterField = dgv.Columns[1].Name;
+            SearchTextChanging.Invoke();
+
+            data.DefaultView.RowFilter = string.Format(CultureInfo.InvariantCulture,
+                "[{0}] LIKE '%{1}%'", filterField, textBoxSearch.Text);
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                RowData rowData = (RowData)row.Cells[2].Value;
+                rowData.RowIndex = row.Index;
+            }
+
+            SearchTextChanged.Invoke(this, null);
+        }
+
+        internal void KeyPressedSearch(string letter)
+        {
+            textBoxSearch.Text += letter;
+            textBoxSearch.SelectionStart = textBoxSearch.Text.Length;
+            textBoxSearch.SelectionLength = 0;
+            textBoxSearch.Focus();
         }
     }
 }

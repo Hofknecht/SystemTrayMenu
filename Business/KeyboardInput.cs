@@ -4,8 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using SystemTrayMenu.DataClasses;
 using SystemTrayMenu.Helper;
-using SystemTrayMenu.UserInterface;
-using SystemTrayMenu.UserInterface.Controls;
 using SystemTrayMenu.Utilities;
 using Menu = SystemTrayMenu.UserInterface.Menu;
 
@@ -16,8 +14,8 @@ namespace SystemTrayMenu.Handler
         public event EventHandlerEmpty HotKeyPressed;
         public event EventHandlerEmpty ClosePressed;
 #warning use event not action
+        public event Action<Keys> KeyPressedSearching;
         public event Action<DataGridView, int> RowSelected;
-#warning use event not action
         public event Action<int, int, DataGridView> RowDeselected;
         public event EventHandlerEmpty Cleared;
 
@@ -79,9 +77,79 @@ namespace SystemTrayMenu.Handler
             iMenuKey = 0;
         }
 
-        internal void CmdKeyProcessed(Keys keys)
+        internal void CmdKeyProcessed(object sender, Keys keys)
         {
-            SelectByKey(keys);
+            switch (keys)
+            {
+                case Keys.Enter:
+                case Keys.Up:
+                case Keys.Down:
+                case Keys.Left:
+                case Keys.Right:
+                case Keys.Escape:
+                    SelectByKey(keys);
+                    break;
+                case Keys.Control | Keys.F:
+                    Menu menu = menus[iMenuKey];
+                    menu.FocusTextBox();
+                    break;
+                case Keys.Tab:
+                    {
+                        Menu currentMenu = (Menu)sender;
+                        int indexOfTheCurrentMenu = 0;
+                        foreach (Menu menuFindIndex in menus.Where(m => m != null))
+                        {
+                            if (currentMenu == menuFindIndex)
+                            {
+                                break;
+                            }
+                            indexOfTheCurrentMenu++;
+                        }
+
+                        int indexMax = menus.Where(m => m != null).Count() - 1;
+                        int indexNew = 0;
+                        if (indexOfTheCurrentMenu > 0)
+                        {
+                            indexNew = indexOfTheCurrentMenu - 1;
+                        }
+                        else
+                        {
+                            indexNew = indexMax;
+                        }
+
+                        menus[indexNew].FocusTextBox();
+                    }
+                    break;
+                case Keys.Tab | Keys.Shift:
+                    {
+                        Menu currentMenu = (Menu)sender;
+                        int indexOfTheCurrentMenu = 0;
+                        foreach (Menu menuFindIndex in menus.Where(m => m != null))
+                        {
+                            if (currentMenu == menuFindIndex)
+                            {
+                                break;
+                            }
+                            indexOfTheCurrentMenu++;
+                        }
+
+                        int indexMax = menus.Where(m => m != null).Count() - 1;
+                        int indexNew = 0;
+                        if (indexOfTheCurrentMenu < indexMax)
+                        {
+                            indexNew = indexOfTheCurrentMenu + 1;
+                        }
+                        else
+                        {
+                            indexNew = 0;
+                        }
+
+                        menus[indexNew].FocusTextBox();
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
@@ -98,29 +166,48 @@ namespace SystemTrayMenu.Handler
             {
                 string letter = e.KeyChar.ToString(CultureInfo.InvariantCulture);
 
-                timerKeySearch.Stop();
+                Menu menu = menus[iMenuKey];
+                menu.KeyPressedSearch(letter);
 
-                if (string.IsNullOrEmpty(KeySearchString))
-                {
-                    // no search string set, start new search with initial letter
-                    KeySearchString += letter;
-                    SelectByKey(Keys.None, KeySearchString);
-                }
-                else if (KeySearchString.Length == 1 && KeySearchString.LastOrDefault().ToString(CultureInfo.InvariantCulture) == letter)
-                {
-                    // initial letter pressed again, jump to next element
-                    SelectByKey(Keys.None, letter);
-                }
-                else
-                {
-                    // new character for the search string, narrow down the search
-                    KeySearchString += letter;
-                    SelectByKey(Keys.None, KeySearchString, true);
-                }
+#warning remove if not more needed
+                // Old Search by letters
+                //timerKeySearch.Stop();
+                //if (string.IsNullOrEmpty(KeySearchString))
+                //{
+                //    // no search string set, start new search with initial letter
+                //    KeySearchString += letter;
+                //    SelectByKey(Keys.None, KeySearchString);
+                //}
+                //else if (KeySearchString.Length == 1 && KeySearchString.LastOrDefault().ToString(CultureInfo.InvariantCulture) == letter)
+                //{
+                //    // initial letter pressed again, jump to next element
+                //    SelectByKey(Keys.None, letter);
+                //}
+                //else
+                //{
+                //    // new character for the search string, narrow down the search
+                //    KeySearchString += letter;
+                //    SelectByKey(Keys.None, KeySearchString, true);
+                //}
+                //// give user some time to continue with this search
+                //timerKeySearch.Start();
 
-                // give user some time to continue with this search
-                timerKeySearch.Start();
                 e.Handled = true;
+            }
+        }
+
+        internal void SearchTextChanging()
+        {
+            ClearIsSelectedByKey();
+        }
+
+        internal void SearchTextChanged(object sender, EventArgs e)
+        {
+            Menu menu = (Menu)sender;
+            DataGridView dgv = menu.GetDataGridView();
+            if (dgv.Rows.Count > 0)
+            {
+                Select(dgv, 0);
             }
         }
 
@@ -138,7 +225,7 @@ namespace SystemTrayMenu.Handler
                 if (dgv.Rows.Count > iRowKey)
                 {
                     RowData rowData = (RowData)dgv.
-                        Rows[iRowKey].Tag;
+                        Rows[iRowKey].Cells[2].Value;
                     if (rowData.IsSelectedByKeyboard)
                     {
                         isStillSelected = true;
@@ -190,9 +277,17 @@ namespace SystemTrayMenu.Handler
                     if (iRowKey > -1 &&
                         dgv.Rows.Count > iRowKey)
                     {
-                        RowData trigger = (RowData)dgv.Rows[iRowKey].Tag;
-                        trigger.MouseDown(dgv, null);
-                        //trigger.DoubleClick();
+                        RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
+                        if (trigger.IsSelected || !trigger.ContainsMenu)
+                        {
+                            trigger.MouseDown(dgv, null);
+                            //trigger.DoubleClick();
+                        }
+                        else
+                        {
+                            RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
+                            SelectRow(dgv, iRowKey);
+                        }
                     }
                     break;
                 case Keys.Up:
@@ -366,7 +461,7 @@ namespace SystemTrayMenu.Handler
             iRowKey = i;
             iMenuKey = newiMenuKey;
             DataGridViewRow row = dgv.Rows[i];
-            RowData rowData = (RowData)row.Tag;
+            RowData rowData = (RowData)row.Cells[2].Value;
             rowData.IsSelectedByKeyboard = true;
             row.Selected = false; //event trigger
             row.Selected = true; //event trigger
@@ -381,7 +476,7 @@ namespace SystemTrayMenu.Handler
                 dgv.Rows.Count > i)
             {
                 DataGridViewRow row = dgv.Rows[i];
-                RowData rowData = (RowData)row.Tag;
+                RowData rowData = (RowData)row.Cells[2].Value;
                 string text = row.Cells[1].Value.ToString();
                 if (text.StartsWith(keyInput, true, CultureInfo.InvariantCulture))
                 {
@@ -421,7 +516,7 @@ namespace SystemTrayMenu.Handler
                 if (dgv.Rows.Count > rowIndex)
                 {
                     DataGridViewRow row = dgv.Rows[rowIndex];
-                    RowData rowData = (RowData)row.Tag;
+                    RowData rowData = (RowData)row.Cells[2].Value;
                     rowData.IsSelectedByKeyboard = false;
                     row.Selected = false; //event trigger
                 }

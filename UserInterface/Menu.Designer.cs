@@ -29,17 +29,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.ColumnIcon = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.labelTitle = new SystemTrayMenu.UserInterface.LabelNoCopy();
             this.tableLayoutPanelSearch = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.pictureBoxSearch = new System.Windows.Forms.PictureBox();
+            this.labelTitle = new SystemTrayMenu.UserInterface.LabelNoCopy();
+            this.ColumnIcon = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.tableLayoutPanel.SuspendLayout();
             this.tableLayoutPanelSearch.SuspendLayout();
@@ -68,8 +68,8 @@
             this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv.RowTemplate.Height = 20;
             this.dgv.RowTemplate.ReadOnly = true;
@@ -82,34 +82,6 @@
             this.dgv.Size = new System.Drawing.Size(157, 145);
             this.dgv.TabIndex = 4;
             this.dgv.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
-            // 
-            // ColumnIcon
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "System.Drawing.Icon";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(3, 2, 6, 2);
-            this.ColumnIcon.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColumnIcon.Frozen = true;
-            this.ColumnIcon.HeaderText = "ColumnIcon";
-            this.ColumnIcon.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnIcon.Name = "ColumnIcon";
-            this.ColumnIcon.ReadOnly = true;
-            this.ColumnIcon.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColumnIcon.Width = 25;
-            // 
-            // ColumnText
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.ColumnText.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColumnText.Frozen = true;
-            this.ColumnText.HeaderText = "ColumnText";
-            this.ColumnText.MaxInputLength = 40;
-            this.ColumnText.Name = "ColumnText";
-            this.ColumnText.ReadOnly = true;
-            this.ColumnText.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColumnText.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ColumnText.Width = 50;
             // 
             // tableLayoutPanel
             // 
@@ -131,26 +103,6 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(157, 182);
             this.tableLayoutPanel.TabIndex = 3;
             this.tableLayoutPanel.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.BackColor = System.Drawing.Color.Azure;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelTitle.Location = new System.Drawing.Point(0, 0);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Padding = new System.Windows.Forms.Padding(3, 0, 0, 1);
-            this.labelTitle.Size = new System.Drawing.Size(157, 14);
-            this.labelTitle.TabIndex = 2;
-            this.labelTitle.Text = "STM";
-            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LabelTitle_MouseDoubleClick);
-            this.labelTitle.MouseEnter += new System.EventHandler(this.LabelTitle_MouseEnter);
-            this.labelTitle.MouseLeave += new System.EventHandler(this.LabelTitle_MouseLeave);
-            this.labelTitle.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
             // 
             // tableLayoutPanelSearch
             // 
@@ -180,8 +132,10 @@
             this.textBoxSearch.Location = new System.Drawing.Point(25, 4);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.ShortcutsEnabled = false;
             this.textBoxSearch.Size = new System.Drawing.Size(129, 15);
             this.textBoxSearch.TabIndex = 0;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // pictureBoxSearch
             // 
@@ -192,6 +146,56 @@
             this.pictureBoxSearch.Size = new System.Drawing.Size(16, 16);
             this.pictureBoxSearch.TabIndex = 1;
             this.pictureBoxSearch.TabStop = false;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.BackColor = System.Drawing.Color.Azure;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.Black;
+            this.labelTitle.Location = new System.Drawing.Point(0, 0);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Padding = new System.Windows.Forms.Padding(3, 0, 0, 1);
+            this.labelTitle.Size = new System.Drawing.Size(157, 14);
+            this.labelTitle.TabIndex = 2;
+            this.labelTitle.Text = "STM";
+            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LabelTitle_MouseDoubleClick);
+            this.labelTitle.MouseEnter += new System.EventHandler(this.LabelTitle_MouseEnter);
+            this.labelTitle.MouseLeave += new System.EventHandler(this.LabelTitle_MouseLeave);
+            this.labelTitle.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
+            // 
+            // ColumnIcon
+            // 
+            this.ColumnIcon.DataPropertyName = "ColumnIcon";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "System.Drawing.Icon";
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3, 2, 6, 2);
+            this.ColumnIcon.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColumnIcon.Frozen = true;
+            this.ColumnIcon.HeaderText = "ColumnIcon";
+            this.ColumnIcon.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnIcon.Name = "ColumnIcon";
+            this.ColumnIcon.ReadOnly = true;
+            this.ColumnIcon.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnIcon.Width = 25;
+            // 
+            // ColumnText
+            // 
+            this.ColumnText.DataPropertyName = "ColumnText";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.ColumnText.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColumnText.Frozen = true;
+            this.ColumnText.HeaderText = "ColumnText";
+            this.ColumnText.MaxInputLength = 40;
+            this.ColumnText.Name = "ColumnText";
+            this.ColumnText.ReadOnly = true;
+            this.ColumnText.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnText.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ColumnText.Width = 50;
             // 
             // Menu
             // 
@@ -225,10 +229,10 @@
         private SystemTrayMenu.UserInterface.LabelNoCopy labelTitle;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.DataGridViewImageColumn ColumnIcon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.PictureBox pictureBoxSearch;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnIcon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnText;
     }
 }

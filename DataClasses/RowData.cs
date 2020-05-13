@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -57,33 +58,28 @@ namespace SystemTrayMenu.DataClasses
             Text = text;
         }
 
-        internal void SetData(RowData data, DataGridView dgv)
+        internal void SetData(RowData data, DataTable dataTable)
         {
-            data.RowIndex = dgv.Rows.Add();
-            DataGridViewRow row = dgv.Rows[data.RowIndex];
+            DataRow row = dataTable.Rows.Add();
+            data.RowIndex = dataTable.Rows.IndexOf(row);
 
             if (Icon == null)
             {
                 Icon = Properties.Resources.WhiteTransparency;
             }
-            DataGridViewImageCell cellIcon =
-                (DataGridViewImageCell)row.Cells[0];
 
             if (HiddenEntry)
             {
-                cellIcon.Value = IconReader.AddIconOverlay(data.Icon,
+                row[0] = IconReader.AddIconOverlay(data.Icon,
                     Properties.Resources.WhiteTransparency);
             }
             else
             {
-                cellIcon.Value = data.Icon;
+                row[0] = data.Icon;
             }
 
-            DataGridViewTextBoxCell cellName =
-                (DataGridViewTextBoxCell)row.Cells[1];
-            cellName.Value = data.Text;
-
-            row.Tag = data;
+            row[1] = data.Text;
+            row[2] = data;
         }
 
         internal bool ReadIcon(bool isDirectory, ref string resolvedLnkPath)

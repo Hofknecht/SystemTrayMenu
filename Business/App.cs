@@ -12,7 +12,7 @@ namespace SystemTrayMenu
     internal class App : IDisposable
     {
         private readonly MenuNotifyIcon menuNotifyIcon = new MenuNotifyIcon();
-        private Menus menus = new Menus();
+        private readonly Menus menus = new Menus();
 
         public App()
         {
@@ -28,7 +28,11 @@ namespace SystemTrayMenu
             menuNotifyIcon.Exit += Application.Exit;
             menuNotifyIcon.Restart += AppRestart.ByMenuNotifyIcon;
             menuNotifyIcon.Click += MenuNotifyIcon_Click;
-            void MenuNotifyIcon_Click() => menus.SwitchOpenClose(true);
+            void MenuNotifyIcon_Click()
+            {
+                menus.SwitchOpenClose(true);
+            }
+
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
         }

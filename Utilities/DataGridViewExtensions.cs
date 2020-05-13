@@ -13,7 +13,7 @@ namespace SystemTrayMenu.Utilities
         /// <param name="dgv"></param>
         internal static void FastAutoSizeColumns(this DataGridView dgv)
         {
-            System.Collections.Generic.IEnumerable<DataGridViewRow> rows = 
+            System.Collections.Generic.IEnumerable<DataGridViewRow> rows =
                 dgv.Rows.Cast<DataGridViewRow>();
             using (Graphics gfx = dgv.CreateGraphics())
             {
