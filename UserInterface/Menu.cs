@@ -273,7 +273,7 @@ namespace SystemTrayMenu.UserInterface
                 RowData trigger = (RowData)Tag;
                 DataGridView dgv = menuPredecessor.GetDataGridView();
                 int distanceToDgvTop = 0;
-                if (dgv.Rows.Count > 0)
+                if (dgv.Rows.Count > trigger.RowIndex)
                 {
                     Rectangle cellRectangle = dgv.GetCellDisplayRectangle(
                         0, trigger.RowIndex, false);
