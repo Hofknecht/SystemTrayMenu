@@ -192,9 +192,12 @@ namespace SystemTrayMenu.UserInterface
         private static DateTime AssemblyLastWriteTime(Assembly a)
         {
             DateTime assemblyLastWriteTime = DateTime.MaxValue;
-            if (!string.IsNullOrEmpty(a.Location))
+            if (!a.IsDynamic) // Location property not available for dynamic assemblies
             {
-                assemblyLastWriteTime = File.GetLastWriteTime(a.Location);
+                if (!string.IsNullOrEmpty(a.Location))
+                {
+                    assemblyLastWriteTime = File.GetLastWriteTime(a.Location);
+                }
             }
 
             return assemblyLastWriteTime;
