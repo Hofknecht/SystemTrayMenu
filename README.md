@@ -1,6 +1,6 @@
 SystemTrayMenu - a free improved Windows Toolbar
 =============================================================
-[![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/systemtraymenu?branchName=develop)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build/latest?definitionId=1&branchName=develop)
+[![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build/latest?definitionId=2&branchName=master)
 
 Welcome to the source repository for SystemTrayMenu
 
