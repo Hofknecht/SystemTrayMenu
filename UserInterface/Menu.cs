@@ -157,14 +157,17 @@ namespace SystemTrayMenu.UserInterface
                 case MenuType.Empty:
                     SetTitle(Translator.GetText("Folder empty"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
+                    this.tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.NoAccess:
                     SetTitle(Translator.GetText("Folder inaccessible"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
+                    this.tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.MaxReached:
                     SetTitle($"Max {MenuDefines.MenusMax - 1} Menus");
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
+                    this.tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.Main:
                     break;
@@ -299,7 +302,16 @@ namespace SystemTrayMenu.UserInterface
             {
                 newWidth += SystemInformation.VerticalScrollBarWidth;
             }
-            dgv.Width = newWidth;
+
+            if (labelTitle.Width > newWidth)
+            {
+                dgv.Width = labelTitle.Width;
+                dgv.Columns[1].Width = labelTitle.Width - dgv.Columns[0].Width;
+            }
+            else
+            {
+                dgv.Width = newWidth;
+            }
 
             //Only scaling correct with Sans Serif for textBoxSearch. Workaround:
             textBoxSearch.Font = new Font("Segoe UI", 8.25F * Scaling.Factor,
