@@ -157,16 +157,22 @@ namespace SystemTrayMenu.UserInterface
                 case MenuType.Empty:
                     SetTitle(Translator.GetText("Folder empty"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
+                    this.pictureBoxSearch.Visible = false;
+                    this.textBoxSearch.Visible = false;
                     this.tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.NoAccess:
                     SetTitle(Translator.GetText("Folder inaccessible"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
+                    this.pictureBoxSearch.Visible = false;
+                    this.textBoxSearch.Visible = false;
                     this.tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.MaxReached:
                     SetTitle($"Max {MenuDefines.MenusMax - 1} Menus");
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
+                    this.pictureBoxSearch.Visible = false;
+                    this.textBoxSearch.Visible = false;
                     this.tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.Main:
