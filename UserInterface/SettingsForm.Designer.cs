@@ -37,6 +37,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.labelLanguage = new System.Windows.Forms.Label();
+            this.textBoxHotkey = new SystemTrayMenu.UserInterface.Controls.HotkeyControl();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
             this.labelHotkey = new System.Windows.Forms.Label();
             this.labelAutostart = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.textBoxHotkey = new SystemTrayMenu.UserInterface.Controls.HotkeyControl();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -84,7 +84,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(395, 240);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPageGeneral
             // 
@@ -123,7 +123,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(313, 145);
-            this.tableLayoutPanelGeneral.TabIndex = 1;
+            this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // comboBoxLanguage
             // 
@@ -134,7 +134,7 @@ namespace SystemTrayMenu.UserInterface
             this.comboBoxLanguage.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
             this.comboBoxLanguage.Name = "comboBoxLanguage";
             this.comboBoxLanguage.Size = new System.Drawing.Size(200, 21);
-            this.comboBoxLanguage.TabIndex = 1;
+            this.comboBoxLanguage.TabIndex = 15;
             // 
             // labelLanguage
             // 
@@ -143,8 +143,23 @@ namespace SystemTrayMenu.UserInterface
             this.labelLanguage.Location = new System.Drawing.Point(3, 84);
             this.labelLanguage.Name = "labelLanguage";
             this.labelLanguage.Size = new System.Drawing.Size(77, 13);
-            this.labelLanguage.TabIndex = 2;
+            this.labelLanguage.TabIndex = 0;
             this.labelLanguage.Text = "labelLanguage";
+            // 
+            // textBoxHotkey
+            // 
+            this.textBoxHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxHotkey.Hotkey = System.Windows.Forms.Keys.None;
+            this.textBoxHotkey.HotkeyModifiers = System.Windows.Forms.Keys.None;
+            this.textBoxHotkey.Location = new System.Drawing.Point(92, 57);
+            this.textBoxHotkey.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
+            this.textBoxHotkey.Name = "textBoxHotkey";
+            this.textBoxHotkey.Size = new System.Drawing.Size(200, 20);
+            this.textBoxHotkey.TabIndex = 99;
+            this.textBoxHotkey.TabStop = false;
+            this.textBoxHotkey.Text = "None";
+            this.textBoxHotkey.Enter += new System.EventHandler(this.textBoxHotkey_Enter);
+            this.textBoxHotkey.Leave += new System.EventHandler(this.textBoxHotkey_Leave);
             // 
             // checkBoxAutostart
             // 
@@ -154,7 +169,7 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxAutostart.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
             this.checkBoxAutostart.Name = "checkBoxAutostart";
             this.checkBoxAutostart.Size = new System.Drawing.Size(200, 17);
-            this.checkBoxAutostart.TabIndex = 0;
+            this.checkBoxAutostart.TabIndex = 10;
             this.checkBoxAutostart.Text = "checkBoxAutostart";
             this.checkBoxAutostart.UseVisualStyleBackColor = true;
             // 
@@ -165,7 +180,7 @@ namespace SystemTrayMenu.UserInterface
             this.labelHotkey.Location = new System.Drawing.Point(3, 57);
             this.labelHotkey.Name = "labelHotkey";
             this.labelHotkey.Size = new System.Drawing.Size(63, 13);
-            this.labelHotkey.TabIndex = 1;
+            this.labelHotkey.TabIndex = 0;
             this.labelHotkey.Text = "labelHotkey";
             // 
             // labelAutostart
@@ -175,7 +190,7 @@ namespace SystemTrayMenu.UserInterface
             this.labelAutostart.Location = new System.Drawing.Point(3, 31);
             this.labelAutostart.Name = "labelAutostart";
             this.labelAutostart.Size = new System.Drawing.Size(71, 13);
-            this.labelAutostart.TabIndex = 2;
+            this.labelAutostart.TabIndex = 0;
             this.labelAutostart.Text = "labelAutostart";
             // 
             // tableLayoutPanel1
@@ -195,7 +210,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(218, 26);
-            this.tableLayoutPanel1.TabIndex = 7;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // buttonChange
             // 
@@ -207,7 +222,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChange.Margin = new System.Windows.Forms.Padding(3, 3, 9, 0);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(29, 23);
-            this.buttonChange.TabIndex = 6;
+            this.buttonChange.TabIndex = 5;
             this.buttonChange.Text = "...";
             this.buttonChange.UseVisualStyleBackColor = true;
             this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
@@ -222,7 +237,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxFolder.Name = "textBoxFolder";
             this.textBoxFolder.ReadOnly = true;
             this.textBoxFolder.Size = new System.Drawing.Size(155, 13);
-            this.textBoxFolder.TabIndex = 5;
+            this.textBoxFolder.TabIndex = 0;
+            this.textBoxFolder.TabStop = false;
             // 
             // labelFolder
             // 
@@ -231,7 +247,7 @@ namespace SystemTrayMenu.UserInterface
             this.labelFolder.Location = new System.Drawing.Point(3, 6);
             this.labelFolder.Name = "labelFolder";
             this.labelFolder.Size = new System.Drawing.Size(58, 13);
-            this.labelFolder.TabIndex = 7;
+            this.labelFolder.TabIndex = 0;
             this.labelFolder.Text = "labelFolder";
             // 
             // tableLayoutPanel5
@@ -251,7 +267,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.Size = new System.Drawing.Size(100, 0);
-            this.tableLayoutPanel5.TabIndex = 8;
+            this.tableLayoutPanel5.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -329,7 +345,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
-            this.buttonOk.TabIndex = 2;
+            this.buttonOk.TabIndex = 5;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.ButtonOk_Click);
@@ -344,24 +360,10 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 3;
+            this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // textBoxHotkey
-            // 
-            this.textBoxHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxHotkey.Hotkey = System.Windows.Forms.Keys.None;
-            this.textBoxHotkey.HotkeyModifiers = System.Windows.Forms.Keys.None;
-            this.textBoxHotkey.Location = new System.Drawing.Point(92, 57);
-            this.textBoxHotkey.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
-            this.textBoxHotkey.Name = "textBoxHotkey";
-            this.textBoxHotkey.Size = new System.Drawing.Size(200, 20);
-            this.textBoxHotkey.TabIndex = 0;
-            this.textBoxHotkey.Text = "None";
-            this.textBoxHotkey.Enter += new System.EventHandler(this.textBoxHotkey_Enter);
-            this.textBoxHotkey.Leave += new System.EventHandler(this.textBoxHotkey_Leave);
             // 
             // SettingsForm
             // 
