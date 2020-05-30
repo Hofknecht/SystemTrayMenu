@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -46,6 +47,20 @@ namespace SystemTrayMenu.Handler
         {
             hook.Dispose();
             timerKeySearch.Dispose();
+        }
+
+        private int GetMenuIndex(in Menu currentMenu)
+        {
+            int index = 0;
+            foreach (Menu menuFindIndex in menus.Where(m => m != null))
+            {
+                if (currentMenu == menuFindIndex)
+                {
+                    break;
+                }
+                index++;
+            }
+            return index;
         }
 
         internal void RegisterHotKey()
@@ -96,16 +111,7 @@ namespace SystemTrayMenu.Handler
                 case Keys.Tab:
                     {
                         Menu currentMenu = (Menu)sender;
-                        int indexOfTheCurrentMenu = 0;
-                        foreach (Menu menuFindIndex in menus.Where(m => m != null))
-                        {
-                            if (currentMenu == menuFindIndex)
-                            {
-                                break;
-                            }
-                            indexOfTheCurrentMenu++;
-                        }
-
+                        int indexOfTheCurrentMenu = GetMenuIndex(currentMenu);
                         int indexMax = menus.Where(m => m != null).Count() - 1;
                         int indexNew = 0;
                         if (indexOfTheCurrentMenu > 0)
@@ -123,16 +129,7 @@ namespace SystemTrayMenu.Handler
                 case Keys.Tab | Keys.Shift:
                     {
                         Menu currentMenu = (Menu)sender;
-                        int indexOfTheCurrentMenu = 0;
-                        foreach (Menu menuFindIndex in menus.Where(m => m != null))
-                        {
-                            if (currentMenu == menuFindIndex)
-                            {
-                                break;
-                            }
-                            indexOfTheCurrentMenu++;
-                        }
-
+                        int indexOfTheCurrentMenu = GetMenuIndex(currentMenu);
                         int indexMax = menus.Where(m => m != null).Count() - 1;
                         int indexNew = 0;
                         if (indexOfTheCurrentMenu < indexMax)
@@ -145,6 +142,20 @@ namespace SystemTrayMenu.Handler
                         }
 
                         menus[indexNew].FocusTextBox();
+                    }
+                    break;
+                case Keys.Apps:
+                    {
+                        DataGridView dgv = menus[iMenuKey].GetDataGridView();
+
+                        if (iRowKey > -1 &&
+                            dgv.Rows.Count > iRowKey)
+                        {
+                            Point pt = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
+                            RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
+                            MouseEventArgs mea = new MouseEventArgs(MouseButtons.Right, 1, pt.X, pt.Y, 0);
+                            trigger.MouseDown(dgv, mea);
+                        }
                     }
                     break;
                 default:

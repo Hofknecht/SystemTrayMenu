@@ -425,6 +425,7 @@ namespace SystemTrayMenu.UserInterface
                 case Keys.Control | Keys.F:
                 case Keys.Tab:
                 case Keys.Tab | Keys.Shift:
+                case Keys.Apps:
                     CmdKeyProcessed.Invoke(this, keys);
                     return true;
                 default:
