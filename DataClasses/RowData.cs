@@ -305,31 +305,6 @@ namespace SystemTrayMenu.DataClasses
                 waitMenuOpen.Click();
             }
 
-            if (e == null ||
-                e.Button == MouseButtons.Left &&
-                !ContainsMenu)
-            {
-                try
-                {
-                    using (Process p = new Process())
-                    {
-                        p.StartInfo = new ProcessStartInfo(TargetFilePath)
-                        {
-                            FileName = TargetFilePathOrig,
-                            Arguments = Arguments,
-                            WorkingDirectory = WorkingDirectory,
-                            CreateNoWindow = true
-                        };
-                        p.Start();
-                    };
-                }
-                catch (Win32Exception ex)
-                {
-                    Log.Warn($"path:'{TargetFilePath}'", ex);
-                    MessageBox.Show(ex.Message);
-                }
-            }
-
             if (e != null &&
                 e.Button == MouseButtons.Right &&
                 FileInfo != null &&
@@ -372,6 +347,31 @@ namespace SystemTrayMenu.DataClasses
 
         internal void DoubleClick(MouseEventArgs e)
         {
+            if (e == null ||
+                e.Button == MouseButtons.Left &&
+                !ContainsMenu)
+            {
+                try
+                {
+                    using (Process p = new Process())
+                    {
+                        p.StartInfo = new ProcessStartInfo(TargetFilePath)
+                        {
+                            FileName = TargetFilePathOrig,
+                            Arguments = Arguments,
+                            WorkingDirectory = WorkingDirectory,
+                            CreateNoWindow = true
+                        };
+                        p.Start();
+                    };
+                }
+                catch (Win32Exception ex)
+                {
+                    Log.Warn($"path:'{TargetFilePath}'", ex);
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
             if (e == null ||
                 e.Button == MouseButtons.Left &&
                 ContainsMenu)
