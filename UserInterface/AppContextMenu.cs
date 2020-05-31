@@ -56,6 +56,17 @@ namespace SystemTrayMenu.Helper
 
             menu.Items.Add(new ToolStripSeparator());
 
+            ToolStripMenuItem helpFAQ = new ToolStripMenuItem
+            {
+                Text = Translator.GetText("HelpFAQ")
+            };
+            helpFAQ.Click += HelpFAQ_Click;
+            void HelpFAQ_Click(object sender, EventArgs e)
+            {
+                Config.ShowHelpFAQ();
+            }
+            menu.Items.Add(helpFAQ);
+
             ToolStripMenuItem about = new ToolStripMenuItem
             {
                 Text = Translator.GetText("About")

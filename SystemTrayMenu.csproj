@@ -288,9 +288,7 @@
     <None Include="Resources\L170.ico" />
     <None Include="Resources\L180.ico" />
     <None Include="Resources\NotSelected.png" />
-    <None Include="Resources\search.png" />
     <None Include="Resources\search1.ico" />
-    <None Include="Resources\search.ico" />
     <Content Include="Resources\SystemTrayMenu.ico" />
   </ItemGroup>
   <ItemGroup>

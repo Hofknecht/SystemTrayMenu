@@ -1,7 +1,9 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Windows.Forms;
 using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu
@@ -36,6 +38,10 @@ namespace SystemTrayMenu
 
             if (!pathOK)
             {
+                string textFirstStart = Translator.GetText("TextFirstStart");
+                MessageBox.Show(textFirstStart, Translator.GetText("SystemTrayMenu"),
+                    MessageBoxButtons.OK);
+                ShowHelpFAQ();
                 pathOK = SetFolderByUser();
             }
             return pathOK;
@@ -74,6 +80,11 @@ namespace SystemTrayMenu
             };
 
             return pathOK;
+        }
+
+        internal static void ShowHelpFAQ()
+        {
+            Process.Start("https://github.com/Hofknecht/SystemTrayMenu#FAQ");
         }
     }
 }

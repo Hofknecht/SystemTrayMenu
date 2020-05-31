@@ -178,6 +178,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help / FAQ.
+        /// </summary>
+        internal static string HelpFAQ {
+            get {
+                return ResourceManager.GetString("HelpFAQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hotkey.
         /// </summary>
         internal static string Hotkey {
@@ -228,6 +237,24 @@ namespace SystemTrayMenu.Resources {
         internal static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SystemTrayMenu.
+        /// </summary>
+        internal static string SystemTrayMenu {
+            get {
+                return ResourceManager.GetString("SystemTrayMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read the FAQ and then choose a root directory for the SystemTrayMenu..
+        /// </summary>
+        internal static string TextFirstStart {
+            get {
+                return ResourceManager.GetString("TextFirstStart", resourceCulture);
             }
         }
     }

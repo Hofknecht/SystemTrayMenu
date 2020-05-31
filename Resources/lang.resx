@@ -174,4 +174,13 @@
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="HelpFAQ" xml:space="preserve">
+    <value>Help / FAQ</value>
+  </data>
+  <data name="SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu</value>
+  </data>
+  <data name="TextFirstStart" xml:space="preserve">
+    <value>Read the FAQ and then choose a root directory for the SystemTrayMenu.</value>
+  </data>
 </root>
