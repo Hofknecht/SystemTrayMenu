@@ -14,6 +14,7 @@ FAQ
 ------------------
 
 **What do I have to do now as first steps?**
+
 SystemTrayMenu is portable so you do not have to install it.
 We would recommend to put the unzipped SystemTrayMenu folder it into a folder like "Portable Tools" in the SystemTrayMenu root directory.
 
@@ -28,15 +29,19 @@ You can also consider to put there all files from your desktop.
 ![group icon out](https://user-images.githubusercontent.com/52528841/83349567-1ab74000-a336-11ea-8676-3db33615a57a.gif)
 
 **How can I change the root directory?**
+
 You can change the root directory in the settings menu, that you can open by right clicking on the SystemTrayMenu icon.
 
 **What does the hotkey do?**
+
 In the settings menu you can choose a hotkey to open and close the SystemTrayMenu.
 
 **Can the SystemTrayMenu launch on windows startup?**
+
 Yes, you can select this option in the settings menu, that you can open by right clicking on the SystemTrayMenu icon.
 
 **What can I do if I have a problem, idea or question?**
+
 If a problem has occured or you have any ideas or questions, you are welcome to contact us.
 Our contact information you can find in the About window, that can be opened by right clicking on the SystemTrayMenu icon. 
 
