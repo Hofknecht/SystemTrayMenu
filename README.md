@@ -66,4 +66,5 @@ When contributing please respect the style used by the codebase and consider the
 *Run FixCop.
 *Increase version in assembly file.
 *Add a commit message like: IssueTitle (#xx), IssueTitle (#xx), version x.x.x.x .
+*Commit either directly to master or when you are not sure with your changes then create a branch https://guides.github.com/activities/hello-world/
 *Update issue and set the status to closed.
