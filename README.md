@@ -7,9 +7,9 @@ SystemTrayMenu is an improved open source toolbar for Windows.
 ![2](https://user-images.githubusercontent.com/52528841/83351459-640e8c00-a344-11ea-8735-164185090dcd.gif)
 ![3](https://user-images.githubusercontent.com/52528841/83351460-6670e600-a344-11ea-80e9-e707cf1a9dc0.gif)
 
-Download the latest official version:
-https://github.com/Hofknecht/SystemTrayMenu/releases/tag/0.10.1.1
-(depricated: http://hofknecht.eu/systemtraymenu/)
+Download the latest official version:  
+https://github.com/Hofknecht/SystemTrayMenu/releases/tag/0.10.1.1  
+(depricated: http://hofknecht.eu/systemtraymenu/)  
   
 
 FAQ
