@@ -1,6 +1,7 @@
 SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
 ------------------
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build/latest?definitionId=2&branchName=master)
+[![All Releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 
 SystemTrayMenu is an improved open source toolbar for Windows.  
 ![1](https://user-images.githubusercontent.com/52528841/83351457-61139b80-a344-11ea-9b20-343ad372bb1b.gif)
@@ -8,8 +9,7 @@ SystemTrayMenu is an improved open source toolbar for Windows.
 ![3](https://user-images.githubusercontent.com/52528841/83351460-6670e600-a344-11ea-80e9-e707cf1a9dc0.gif)
 
 Download the latest official version:  
-https://github.com/Hofknecht/SystemTrayMenu/releases/tag/0.10.1.1  
-(depricated: http://hofknecht.eu/systemtraymenu/)  
+https://github.com/Hofknecht/SystemTrayMenu/releases/latest/download/SystemTrayMenu.zip
   
 
 FAQ
