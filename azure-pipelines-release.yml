@@ -32,9 +32,17 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
 - task: GitHubRelease@1
   inputs:
-    gitHubConnection: bb517b361e33028161909bde9252bf3046cad789
+    gitHubConnection: Hofknecht
     repositoryName: '$(Build.Repository.Name)'
     action: 'create'
     target: '$(Build.SourceVersion)'
@@ -44,4 +52,4 @@ steps:
     changeLogType: 'issueBased'
     changeLogLabels: '[{ "label" : "Release", "displayName" : "Release", "state" : "closed" }]'
     assets: |
-      $(Build.ArtifactStagingDirectory)/*
+      $(Build.ArtifactStagingDirectory)/*.zip
