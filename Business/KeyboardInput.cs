@@ -292,7 +292,8 @@ namespace SystemTrayMenu.Handler
                         if (trigger.IsSelected || !trigger.ContainsMenu)
                         {
                             trigger.MouseDown(dgv, null);
-                            //trigger.DoubleClick();
+                            trigger.DoubleClick(
+                                new MouseEventArgs(MouseButtons.Left, 0, 0, 0, 0));
                         }
                         else
                         {
