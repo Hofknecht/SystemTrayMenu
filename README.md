@@ -1,6 +1,6 @@
 SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
 ------------------
-[![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
+[![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build/latest?definitionId=2&branchName=master)
 [![All Releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 
 SystemTrayMenu is an improved open source toolbar for Windows.  
@@ -58,6 +58,7 @@ Build
 ------------------
 
 Install Visual Studio 2019.  
+Install netcoreapp3.1 [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.300-windows-x64-installer)
 
 Contributing
 ------------------
@@ -70,3 +71,10 @@ When contributing please respect the style used by the codebase and consider the
 *Add a commit message like: IssueTitle (#xx), IssueTitle (#xx), version x.x.x.x .  
 *Commit either directly to master or when you are not sure with your changes then create a branch https://guides.github.com/activities/hello-world/ .  
 *Update issue and set the status to closed.  
+
+Donations
+------------------
+
+Don't hesitate to donate if you appreciate SystemTrayMenu and would like to support our work. 
+[https://www.paypal.com](https://www.paypal.com/myaccount/transfer/homepage/preview) `Tanja.Kauth@gmx.de`
+
