@@ -63,24 +63,33 @@ steps:
 #  inputs:
 #    script: 'rename $(Build.SourcesDirectory)\bin\Release\netcoreapp3.1\win-x86\publish\SystemTrayMenu.exe SystemTrayMenu-x86.exe' 
 
+- task: kherzog.AssemblyInfoReader.assembly-info-reader-build-task.AssembyInfoReader@2
+  displayName: 'Generate variables **\AssemblyInfo.cs '
+
 - task: MSBuild@1
   displayName: 'MSBuild'
   inputs:
     solution: '**/*.sln'
     msbuildArguments: '-p:Configuration=Release'
     
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+#- task: CopyFiles@2
+#  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+#  inputs:
+#    SourceFolder: '$(Build.SourcesDirectory)\bin\Release\netcoreapp3.1'
+##    Contents: **
+##    Contents: |
+##     win-x64\publish\SystemTrayMenu-x64.exe
+##     win-x86\publish\SystemTrayMenu-x86.exe
+#    TargetFolder: '$(build.artifactstagingdirectory)'
+#    flattenFolders: true
+
+- task: ArchiveFiles@2
+  displayName: 'Archive $(Build.ArtifactStagingDirectory)'
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)\bin\Release\netcoreapp3.1'
-#    Contents: **
-#    Contents: |
-#     win-x64\publish\SystemTrayMenu-x64.exe
-#     win-x86\publish\SystemTrayMenu-x86.exe
-    TargetFolder: '$(build.artifactstagingdirectory)'
-    flattenFolders: true
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/SystemTrayMenu-$(AssemblyInfo.AssemblyVersion).zip'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
