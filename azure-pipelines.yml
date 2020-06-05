@@ -73,7 +73,7 @@ steps:
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)\bin\Release\netcoreapp3.1'
-    Contents: **
+#    Contents: **
 #    Contents: |
 #     win-x64\publish\SystemTrayMenu-x64.exe
 #     win-x86\publish\SystemTrayMenu-x86.exe
