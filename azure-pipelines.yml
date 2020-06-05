@@ -90,6 +90,14 @@ steps:
     includeRootFolder: false
     archiveFile: '$(Build.ArtifactStagingDirectory)/SystemTrayMenu-$(AssemblyInfo.AssemblyVersion).zip'
 
+- task: CopyFiles@2
+  displayName: 'Copy AssemblyInfo.cs to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: |
+     AssemblyInfo.cs
+    TargetFolder: '$(build.artifactstagingdirectory)'
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   inputs:
