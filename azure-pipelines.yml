@@ -87,6 +87,7 @@ steps:
   displayName: 'Archive $(Build.ArtifactStagingDirectory)'
   inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)\bin\Release\netcoreapp3.1\'
+    includeRootFolder: false
     archiveFile: '$(Build.ArtifactStagingDirectory)/SystemTrayMenu-$(AssemblyInfo.AssemblyVersion).zip'
 
 - task: PublishBuildArtifacts@1
