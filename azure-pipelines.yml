@@ -93,7 +93,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy AssemblyInfo.cs to: $(build.artifactstagingdirectory)'
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)'
+    SourceFolder: '$(Build.SourcesDirectory)\Properties'
     Contents: |
      AssemblyInfo.cs
     TargetFolder: '$(build.artifactstagingdirectory)'
