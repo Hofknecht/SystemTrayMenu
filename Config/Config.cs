@@ -1,9 +1,10 @@
-﻿using Microsoft.WindowsAPICodePack.Dialogs;
+﻿//using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using SystemTrayMenu.UserInterface.FolderDialog;
 using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu
@@ -51,20 +52,19 @@ namespace SystemTrayMenu
         {
             bool pathOK = false;
             bool userAborted = false;
-            using (CommonOpenFileDialog dialog = new CommonOpenFileDialog())
+            using (FolderDialog dialog = new FolderDialog())
             {
-                dialog.InitialDirectory = Path;
-                dialog.IsFolderPicker = true;
+                dialog.InitialFolder = Path;
 
                 do
                 {
-                    if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                    if (dialog.ShowDialog() == DialogResult.OK)
                     {
-                        if (Directory.Exists(dialog.FileName))
+                        if (Directory.Exists(dialog.Folder))
                         {
                             pathOK = true;
                             Properties.Settings.Default.PathDirectory =
-                                dialog.FileName;
+                                dialog.Folder;
                             if (save)
                             {
                                 Properties.Settings.Default.Save();
@@ -84,7 +84,11 @@ namespace SystemTrayMenu
 
         internal static void ShowHelpFAQ()
         {
-            Process.Start("https://github.com/Hofknecht/SystemTrayMenu#FAQ");
+            string browserPath = FileUrl.GetDefaultBrowserPath();
+            if (string.IsNullOrEmpty(browserPath))
+            {
+                Process.Start(browserPath, "https://github.com/Hofknecht/SystemTrayMenu#FAQ");
+            }
         }
     }
 }
