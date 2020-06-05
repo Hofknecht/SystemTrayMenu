@@ -360,7 +360,8 @@ namespace SystemTrayMenu.DataClasses
                             FileName = TargetFilePathOrig,
                             Arguments = Arguments,
                             WorkingDirectory = WorkingDirectory,
-                            CreateNoWindow = true
+                            CreateNoWindow = true,
+                            UseShellExecute = true
                         };
                         p.Start();
                     };

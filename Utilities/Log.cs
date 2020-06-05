@@ -77,14 +77,15 @@ namespace SystemTrayMenu.Utilities
             {
                 try
                 {
-                    //if (!string.IsNullOrEmpty(arguments))
-                    //{
-                    Process.Start(fileName, arguments);
-                    //}
-                    //else
-                    //{
-                    //    Process.Start(fileName);
-                    //}
+                    using (Process p = new Process())
+                    {
+                        p.StartInfo = new ProcessStartInfo(fileName)
+                        {
+                            Arguments = arguments,
+                            UseShellExecute = true
+                        };
+                        p.Start();
+                    };
                 }
                 catch (Exception ex)
                 {

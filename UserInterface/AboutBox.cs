@@ -330,7 +330,10 @@ namespace SystemTrayMenu.UserInterface
             // codebase
             try
             {
-                nvc.Add("CodeBase", a.CodeBase.Replace("file:///", ""));
+                if (!a.IsDynamic)
+                {
+                    nvc.Add("CodeBase", a.CodeBase.Replace("file:///", ""));
+                }
             }
             catch (NotSupportedException)
             {
@@ -349,7 +352,10 @@ namespace SystemTrayMenu.UserInterface
             // location
             try
             {
-                nvc.Add("Location", a.Location);
+                if (!a.IsDynamic)
+                {
+                    nvc.Add("Location", a.Location);
+                }
             }
             catch (NotSupportedException)
             {
@@ -361,11 +367,17 @@ namespace SystemTrayMenu.UserInterface
             if (assemblyName.Version != null &&
                 (assemblyName.Version.Major != 0 || assemblyName.Version.Minor != 0))
             {
-                version = a.GetName().Version.ToString();
+                if (!a.IsDynamic)
+                {
+                    version = a.GetName().Version.ToString();
+                }
             }
             nvc.Add("Version", version);
 
-            nvc.Add("FullName", a.FullName);
+            if (!a.IsDynamic)
+            {
+                nvc.Add("FullName", a.FullName);
+            }
 
             return nvc;
         }
@@ -444,15 +456,15 @@ namespace SystemTrayMenu.UserInterface
         private void PopulateAppInfo()
         {
             AppDomain d = AppDomain.CurrentDomain;
-            Populate(AppInfoListView, "Application Name", d.SetupInformation.ApplicationName);
+            Populate(AppInfoListView, "Application Name", Assembly.GetEntryAssembly().GetName().Name);
             Populate(AppInfoListView, "Application Base", d.SetupInformation.ApplicationBase);
-            Populate(AppInfoListView, "Cache Path", d.SetupInformation.CachePath);
-            Populate(AppInfoListView, "Configuration File", d.SetupInformation.ConfigurationFile);
-            Populate(AppInfoListView, "Dynamic Base", d.SetupInformation.DynamicBase);
+            //Populate(AppInfoListView, "Cache Path", d.SetupInformation.CachePath);
+            //Populate(AppInfoListView, "Configuration File", d.SetupInformation.ConfigurationFile);
+            //Populate(AppInfoListView, "Dynamic Base", d.SetupInformation.DynamicBase);
             Populate(AppInfoListView, "Friendly Name", d.FriendlyName);
-            Populate(AppInfoListView, "License File", d.SetupInformation.LicenseFile);
-            Populate(AppInfoListView, "private Bin Path", d.SetupInformation.PrivateBinPath);
-            Populate(AppInfoListView, "Shadow Copy Directories", d.SetupInformation.ShadowCopyDirectories);
+            //Populate(AppInfoListView, "License File", d.SetupInformation.LicenseFile);
+            //Populate(AppInfoListView, "private Bin Path", d.SetupInformation.PrivateBinPath);
+            //Populate(AppInfoListView, "Shadow Copy Directories", d.SetupInformation.ShadowCopyDirectories);
             Populate(AppInfoListView, " ", " ");
             Populate(AppInfoListView, "Entry Assembly", _EntryAssemblyName);
             Populate(AppInfoListView, "Executing Assembly", _ExecutingAssemblyName);

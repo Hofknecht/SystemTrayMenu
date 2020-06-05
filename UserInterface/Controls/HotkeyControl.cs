@@ -70,15 +70,15 @@ namespace SystemTrayMenu.UserInterface.Controls
         private readonly IList<int> _needNonShiftModifier = new List<int>();
         private readonly IList<int> _needNonAltGrModifier = new List<int>();
 
-        private readonly ContextMenu _dummy = new ContextMenu();
+        private readonly ContextMenuStrip _dummy = new ContextMenuStrip();
 
         /// <summary>
         /// Used to make sure that there is no right-click menu available
         /// </summary>
-        public override ContextMenu ContextMenu
+        public override ContextMenuStrip ContextMenuStrip
         {
             get => _dummy;
-            set => base.ContextMenu = _dummy;
+            set => base.ContextMenuStrip = _dummy;
         }
 
         /// <summary>
@@ -97,8 +97,8 @@ namespace SystemTrayMenu.UserInterface.Controls
         /// </summary>
         public HotkeyControl()
         {
-            ContextMenu = _dummy; // Disable right-clicking
-            Text = "None";
+            ContextMenuStrip = _dummy; // Disable right-clicking
+            Text = string.Empty;
 
             // Handle events that occurs when keys are pressed
             KeyPress += HotkeyControl_KeyPress;
