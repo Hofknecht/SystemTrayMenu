@@ -1,22 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <TargetFramework>net472</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F317AF2E-9704-4A2A-BDAE-B4662ED9483B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SystemTrayMenu</RootNamespace>
-    <AssemblyName>SystemTrayMenu</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -31,27 +18,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>SystemTrayMenu.Program</StartupObject>
@@ -61,234 +28,99 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x86'">
     <OutputPath>bin\x86\x64\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x64'">
     <OutputPath>bin\x64\x64\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <OutputPath>bin\Debug\</OutputPath>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <OutputPath>bin\Release\</OutputPath>
     <ErrorReport>none</ErrorReport>
-    <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <Prefer32Bit>false</Prefer32Bit>
-    <Optimize>true</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|AnyCPU'">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\x64\</OutputPath>
   </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Clearcove.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ThirdParty\Clearcove.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
     <Reference Include="TAFactory.IconPack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ThirdParty\TAFactory.IconPack.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\Menus.cs" />
-    <Compile Include="Config\Config.cs" />
-    <Compile Include="DataClasses\Statics.cs" />
-    <Compile Include="NativeDllImport\DestroyMenu.cs" />
-    <Compile Include="NativeDllImport\CreatePopupMenu.cs" />
-    <Compile Include="NativeDllImport\GetMenuDefaultItem.cs" />
-    <Compile Include="NativeDllImport\TrackPopupMenuEx.cs" />
-    <Compile Include="NativeDllImport\StrRetToBuf.cs" />
-    <Compile Include="NativeDllImport\SHGetDesktopFolder.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Update="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\AboutBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserInterface\AboutBox.Designer.cs">
+    <Compile Update="UserInterface\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\Controls\HotkeyControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UserInterface\SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserInterface\SettingsForm.Designer.cs">
+    <Compile Update="UserInterface\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\MenuData.cs" />
-    <Compile Include="DataClasses\RowData.cs" />
-    <Compile Include="UserInterface\AppContextMenu.cs" />
-    <Compile Include="UserInterface\LabelNoCopy.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Utilities\AppRestart.cs" />
-    <Compile Include="Utilities\DataGridViewExtensions.cs" />
-    <Compile Include="Utilities\EventHandlerEmpty.cs" />
-    <Compile Include="Utilities\File\IconReader.cs" />
-    <Compile Include="Utilities\File\FileIni.cs" />
-    <Compile Include="Utilities\File\FileLnk.cs" />
-    <Compile Include="Utilities\FolderOptions.cs" />
-    <Compile Include="Helpers\KeyboardHook.cs" />
-    <Compile Include="Utilities\Log.cs" />
-    <Compile Include="Utilities\Shares.cs" />
-    <Compile Include="Utilities\SingleAppInstance.cs" />
-    <Compile Include="Utilities\Translator.cs" />
-    <Compile Include="Utilities\Scaling.cs" />
-    <Compile Include="UserInterface\ShellContextMenu\ShellContextMenuException.cs" />
-    <Compile Include="UserInterface\ShellContextMenu\ShellHelper.cs" />
-    <Compile Include="UserInterface\ShellContextMenu\ShellContextMenu.cs" />
-    <Compile Include="Utilities\File\FileUrl.cs" />
-    <Compile Include="Business\WaitLeave.cs" />
-    <Compile Include="Business\WaitMenuOpen.cs" />
-    <Compile Include="Helpers\WindowsExplorerSort.cs" />
-    <Compile Include="NativeDllImport\GetIcon.cs" />
-    <Compile Include="NativeDllImport\SHGetFolderPath.cs" />
-    <Compile Include="NativeDllImport\SHGetFileInfo.cs" />
-    <Compile Include="NativeDllImport\SetProcessDPIAware.cs" />
-    <Compile Include="NativeDllImport\GetDeviceCaps.cs" />
-    <Compile Include="NativeDllImport\RegisterHotKey.cs" />
-    <Compile Include="NativeDllImport\ShowWindow.cs" />
-    <Compile Include="NativeDllImport\ShowInactiveTopmost.cs" />
-    <Compile Include="NativeDllImport\SHAppBarMessage.cs" />
-    <Compile Include="NativeDllImport\FindWindow.cs" />
-    <Compile Include="NativeDllImport\StrCmpLogicalW.cs" />
-    <Compile Include="NativeDllImport\FindExecuteable.cs" />
-    <Compile Include="NativeDllImport\BringWindowToTop.cs" />
-    <Compile Include="NativeDllImport\DestroyIcon.cs" />
-    <Compile Include="Resources\lang.de-DE.Designer.cs">
+    <Compile Update="Resources\lang.de-DE.Designer.cs">
       <DependentUpon>lang.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\lang.Designer.cs">
+    <Compile Update="Resources\lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>lang.resx</DependentUpon>
     </Compile>
-    <Compile Include="Config\MenuDefines.cs" />
-    <Compile Include="Helpers\Fading.cs" />
-    <Compile Include="Helpers\WindowsTaskbar.cs" />
-    <Compile Include="UserInterface\Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserInterface\Menu.Designer.cs">
+    <Compile Update="UserInterface\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface\AppNotifyIcon.cs" />
-    <Compile Include="Business\Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Business\KeyboardInput.cs" />
-    <Compile Include="Business\App.cs" />
-    <EmbeddedResource Include="UserInterface\AboutBox.resx">
+    <EmbeddedResource Update="UserInterface\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface\SettingsForm.resx">
+    <EmbeddedResource Update="UserInterface\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface\Menu.resx">
+    <EmbeddedResource Update="UserInterface\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\lang.de-DE.resx">
+    <EmbeddedResource Update="Resources\lang.de-DE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.de-DE.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\lang.resx">
+    <EmbeddedResource Update="Resources\lang.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
+    <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
+    <Compile Update="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\White50Percentage.ico" />
-    <None Include="Resources\Selected.png" />
-    <None Include="Resources\L010.ico" />
-    <None Include="Resources\L020.ico" />
-    <None Include="Resources\L030.ico" />
-    <None Include="Resources\L040.ico" />
-    <None Include="Resources\L050.ico" />
-    <None Include="Resources\L060.ico" />
-    <None Include="Resources\L070.ico" />
-    <None Include="Resources\L080.ico" />
-    <None Include="Resources\L090.ico" />
-    <None Include="Resources\L100.ico" />
-    <None Include="Resources\L110.ico" />
-    <None Include="Resources\L120.ico" />
-    <None Include="Resources\L130.ico" />
-    <None Include="Resources\L140.ico" />
-    <None Include="Resources\L150.ico" />
-    <None Include="Resources\L160.ico" />
-    <None Include="Resources\L170.ico" />
-    <None Include="Resources\L180.ico" />
-    <None Include="Resources\NotSelected.png" />
-    <None Include="Resources\search1.ico" />
     <Content Include="Resources\SystemTrayMenu.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -339,6 +171,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.NetCore.Analyzers">
       <Version>2.9.8</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -349,6 +182,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="WindowsAPICodePack-Core">
       <Version>1.1.2</Version>
     </PackageReference>
@@ -356,16 +190,7 @@
       <Version>1.1.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>
+    <PreBuildEvent>taskkill /f /fi "imagename eq SystemTrayMenu"</PreBuildEvent>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
