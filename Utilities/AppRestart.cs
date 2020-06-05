@@ -15,8 +15,16 @@ namespace SystemTrayMenu.Utilities
             BeforeRestarting?.Invoke();
             Log.Info($"Restart by '{reason}'");
             Log.Close();
-            Process.Start(Assembly.GetExecutingAssembly().
-                ManifestModule.FullyQualifiedName);
+
+            using (Process p = new Process())
+            {
+                string fileName = Assembly.GetExecutingAssembly().
+                    ManifestModule.FullyQualifiedName.Replace(
+                    "SystemTrayMenu.dll", "SystemTrayMenu.exe",
+                    StringComparison.OrdinalIgnoreCase);
+                p.StartInfo = new ProcessStartInfo(fileName);
+                p.Start();
+            };
             Application.Exit();
         }
 
