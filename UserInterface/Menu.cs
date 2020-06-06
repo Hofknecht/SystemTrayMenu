@@ -38,6 +38,7 @@ namespace SystemTrayMenu.UserInterface
 
         private readonly Fading fading = new Fading();
         private bool isShowing = false;
+        private bool dgvAutoResizeRowDone = false;
 
         internal Menu()
         {
@@ -238,7 +239,11 @@ namespace SystemTrayMenu.UserInterface
 
         internal void AdjustSizeAndLocation(Menu menuPredecessor = null)
         {
-            dgv.AutoResizeRows();
+            if (!dgvAutoResizeRowDone)
+            {
+                dgv.AutoResizeRows();
+                dgvAutoResizeRowDone = true;
+            }
 
             int dgvHeightNeeded = dgv.Rows.GetRowsHeight(
                 DataGridViewElementStates.None);
@@ -371,7 +376,7 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            MouseWheel.Invoke();
+            MouseWheel?.Invoke();
         }
 
         internal void SetTitleColorDeactive()
