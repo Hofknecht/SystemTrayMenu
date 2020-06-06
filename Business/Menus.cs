@@ -757,7 +757,7 @@ namespace SystemTrayMenu.Business
                     widthPredecessors -= newWith;
                 }
 
-                menu.AdjustSizeAndLocation(menuPredecessor);
+                menu.AdjustSizeAndLocation(menuPredecessor, directionToRight);
                 widthPredecessors += menu.Width - menu.Padding.Left;
                 menuPredecessor = menu;
             }

@@ -237,7 +237,8 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void AdjustSizeAndLocation(Menu menuPredecessor = null)
+        internal void AdjustSizeAndLocation(Menu menuPredecessor = null,
+            bool directionToRight = false)
         {
             if (!dgvAutoResizeRowDone)
             {
@@ -272,9 +273,24 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                x = menuPredecessor.Location.X - Width +
-                    (int)Math.Round(Scaling.Factor, 0,
-                    MidpointRounding.AwayFromZero);
+                if (directionToRight)
+                {
+                    x = menuPredecessor.Location.X + Width -
+                        (int)Math.Round(Scaling.Factor, 0,
+                        MidpointRounding.AwayFromZero);
+                }
+                else
+                {
+                    x = menuPredecessor.Location.X - Width +
+                        (int)Math.Round(Scaling.Factor, 0,
+                        MidpointRounding.AwayFromZero);
+                }
+            }
+
+            if (x < 0)
+            {
+                x += menuPredecessor.Width;
+                x += Width;
             }
 
             int y;
