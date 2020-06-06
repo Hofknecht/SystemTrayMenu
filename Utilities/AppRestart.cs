@@ -18,11 +18,9 @@ namespace SystemTrayMenu.Utilities
 
             using (Process p = new Process())
             {
-                string fileName = Assembly.GetExecutingAssembly().
-                    ManifestModule.FullyQualifiedName.Replace(
-                    "SystemTrayMenu.dll", "SystemTrayMenu.exe",
-                    StringComparison.OrdinalIgnoreCase);
-                p.StartInfo = new ProcessStartInfo(fileName);
+                p.StartInfo = new ProcessStartInfo(
+                    Process.GetCurrentProcess().
+                    MainModule.FileName);
                 p.Start();
             };
             Application.Exit();

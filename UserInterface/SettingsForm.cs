@@ -99,7 +99,7 @@ namespace SystemTrayMenu.UserInterface
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
                 key.SetValue(Assembly.GetExecutingAssembly().GetName().Name,
-                    Assembly.GetEntryAssembly().Location);
+                    System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
                 Properties.Settings.Default.IsAutostartActivated = true;
             }
             else
