@@ -188,6 +188,6 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>taskkill /f /fi "imagename eq SystemTrayMenu"</PreBuildEvent>
+    <PreBuildEvent>taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe</PreBuildEvent>
   </PropertyGroup>
 </Project>
