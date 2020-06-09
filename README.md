@@ -75,6 +75,13 @@ When contributing please respect the style used by the codebase and consider the
 Donations
 ------------------
 
+We would be delighted if you could help us with the following
+* a star on this github project
+* a like on [Facebook](https://www.facebook.com/Systemtraymenu-114069060335483)
+* a review or rating in [Sourceforge](https://sourceforge.net/projects/systemtraymenu/)
+* a post on Reddit (or [help me with my post](https://www.reddit.com/user/Equeslibertatis/comments/gz3uam/systemtraymenu/))
+* your idea's either as issues here in github or directly per mail
+
 Don't hesitate to donate if you appreciate SystemTrayMenu and would like to support our work. 
 [https://www.paypal.com](https://www.paypal.com/myaccount/transfer/homepage/preview) `Tanja.Kauth@gmx.de`
 
