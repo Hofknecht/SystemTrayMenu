@@ -78,7 +78,7 @@ Donations
 We would be delighted if you could help us with the following
 * a star on this github project
 * a like on [Facebook](https://www.facebook.com/Systemtraymenu-114069060335483)
-* a review or rating in [Sourceforge](https://sourceforge.net/projects/systemtraymenu/)
+* a review or rating on [Sourceforge](https://sourceforge.net/projects/systemtraymenu/)
 * a post on Reddit (or [help me with my post](https://www.reddit.com/user/Equeslibertatis/comments/gz3uam/systemtraymenu/))
 * your idea's either as issues here in github or directly per mail
 
