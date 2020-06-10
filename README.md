@@ -2,6 +2,7 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 ------------------
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
 [![All Releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)
+[![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 SystemTrayMenu is an improved open source toolbar for Windows.  
 ![1](https://user-images.githubusercontent.com/52528841/83351457-61139b80-a344-11ea-9b20-343ad372bb1b.gif)
