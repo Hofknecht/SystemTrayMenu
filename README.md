@@ -84,5 +84,5 @@ We would be delighted if you could help us with the following
 * your ideas either as issues here in github or directly per mail
 
 Don't hesitate to donate if you appreciate SystemTrayMenu and would like to support our work.  
-[https://www.paypal.com](https://www.paypal.com/myaccount/transfer/homepage/preview) `Tanja.Kauth@gmx.de`
+* [![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
 
