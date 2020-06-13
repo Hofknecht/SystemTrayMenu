@@ -1,7 +1,8 @@
 SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
 ------------------
-[![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build/latest?definitionId=2&branchName=master)
+[![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
 [![All Releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)
+[![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 SystemTrayMenu is an improved open source toolbar for Windows.  
 ![1](https://user-images.githubusercontent.com/52528841/83351457-61139b80-a344-11ea-9b20-343ad372bb1b.gif)
@@ -80,8 +81,8 @@ We would be delighted if you could help us with the following
 * a like on [Facebook](https://www.facebook.com/Systemtraymenu-114069060335483)
 * a review or rating on [Sourceforge](https://sourceforge.net/projects/systemtraymenu/)
 * a post on Reddit (or [help me with my post](https://www.reddit.com/user/Equeslibertatis/comments/gz3uam/systemtraymenu/))
-* your idea's either as issues here in github or directly per mail
+* your ideas either as issues here in github or directly per mail
 
-Don't hesitate to donate if you appreciate SystemTrayMenu and would like to support our work. 
-[https://www.paypal.com](https://www.paypal.com/myaccount/transfer/homepage/preview) `Tanja.Kauth@gmx.de`
+Don't hesitate to donate if you appreciate SystemTrayMenu and would like to support our work.  
+* [![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
 
