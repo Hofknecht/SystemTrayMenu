@@ -20,7 +20,6 @@ namespace SystemTrayMenu.UserInterface
         internal event EventHandler<Keys> CmdKeyProcessed;
         internal event EventHandlerEmpty SearchTextChanging;
         internal event EventHandler SearchTextChanged;
-#warning #68 => use event and not a action here?
 
         internal bool IsUsable => Visible && !fading.IsHiding &&
             !IsDisposed && !Disposing;
@@ -158,23 +157,23 @@ namespace SystemTrayMenu.UserInterface
                 case MenuType.Empty:
                     SetTitle(Translator.GetText("Folder empty"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
-                    this.pictureBoxSearch.Visible = false;
-                    this.textBoxSearch.Visible = false;
-                    this.tableLayoutPanelSearch.Visible = false;
+                    pictureBoxSearch.Visible = false;
+                    textBoxSearch.Visible = false;
+                    tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.NoAccess:
                     SetTitle(Translator.GetText("Folder inaccessible"));
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
-                    this.pictureBoxSearch.Visible = false;
-                    this.textBoxSearch.Visible = false;
-                    this.tableLayoutPanelSearch.Visible = false;
+                    pictureBoxSearch.Visible = false;
+                    textBoxSearch.Visible = false;
+                    tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.MaxReached:
                     SetTitle($"Max {MenuDefines.MenusMax - 1} Menus");
                     labelTitle.BackColor = MenuDefines.ColorTitleWarning;
-                    this.pictureBoxSearch.Visible = false;
-                    this.textBoxSearch.Visible = false;
-                    this.tableLayoutPanelSearch.Visible = false;
+                    pictureBoxSearch.Visible = false;
+                    textBoxSearch.Visible = false;
+                    tableLayoutPanelSearch.Visible = false;
                     break;
                 case MenuType.Main:
                     break;
@@ -275,13 +274,15 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (directionToRight)
                 {
-                    x = menuPredecessor.Location.X + Width -
+                    x = menuPredecessor.Location.X + 
+                        menuPredecessor.Width -
                         (int)Math.Round(Scaling.Factor, 0,
                         MidpointRounding.AwayFromZero);
                 }
                 else
                 {
-                    x = menuPredecessor.Location.X - Width +
+                    x = menuPredecessor.Location.X - 
+                        Width +
                         (int)Math.Round(Scaling.Factor, 0,
                         MidpointRounding.AwayFromZero);
                 }
@@ -302,17 +303,17 @@ namespace SystemTrayMenu.UserInterface
             {
                 RowData trigger = (RowData)Tag;
                 DataGridView dgv = menuPredecessor.GetDataGridView();
-                int distanceToDgvTop = 0;
+                int distanceFromItemToDgvTop = 0;
                 if (dgv.Rows.Count > trigger.RowIndex)
                 {
                     Rectangle cellRectangle = dgv.GetCellDisplayRectangle(
                         0, trigger.RowIndex, false);
-                    distanceToDgvTop = cellRectangle.Top;
+                    distanceFromItemToDgvTop = cellRectangle.Top;
                 }
                 y = menuPredecessor.Location.Y +
                     menuPredecessor.dgv.Location.Y +
-                    distanceToDgvTop;
-                if ((y + Height) > dgvHeightMax)
+                    distanceFromItemToDgvTop;
+                if ((y + Height - tableLayoutPanelSearch.Height) > dgvHeightMax)
                 {
                     y = dgvHeightMax - Height + menuRestNeeded;
                 }

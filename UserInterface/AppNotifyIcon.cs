@@ -20,7 +20,7 @@ namespace SystemTrayMenu.UserInterface
         private const int Interval60FPS = 16; //60fps=>1s/60fps=~16.6ms
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
         private DateTime timeLoadingStart;
-        private int threadsLoading = 0;
+        private bool threadsLoading = false;
         private readonly Timer load = new Timer();
         private int loadCount = 0;
         private readonly int indexLoad = 0;
@@ -85,36 +85,21 @@ namespace SystemTrayMenu.UserInterface
             load.Dispose();
         }
 
-        public void LoadingStart(object sender = null, bool reset = false)
+        public void LoadingStart()
         {
-            if (reset)
-            {
-                threadsLoading = 0;
-            }
-
             timeLoadingStart = DateTime.Now;
-            threadsLoading++;
+            threadsLoading = true;
             load.Start();
         }
 
         public void LoadingStop()
         {
-            threadsLoading--;
+            threadsLoading = false;
         }
-
-        // Show a static icon when mainthread blocked
-        //public void LoadingStaticWait()
-        //{
-        //    notifyIcon.Icon = bitmapsLoading[loadCount++ % indexLoad];
-        //}
-        //public void LoadingStaticStop()
-        //{
-        //    notifyIcon.Icon = R.SystemTrayMenu;
-        //}
 
         private void Load_Tick(object sender, EventArgs e)
         {
-            if (threadsLoading > 0)
+            if (threadsLoading)
             {
                 if (DateTime.Now - timeLoadingStart > new TimeSpan(0, 0, 0, 0, 500))
                 {

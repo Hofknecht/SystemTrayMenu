@@ -174,6 +174,7 @@
             this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.textBoxSearch.Location = new System.Drawing.Point(25, 4);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
+            this.textBoxSearch.MaxLength = 37;
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.ShortcutsEnabled = false;
             this.textBoxSearch.Size = new System.Drawing.Size(55, 15);

@@ -4,15 +4,17 @@ namespace SystemTrayMenu.DataClasses
 {
     internal enum MenuDataValidity
     {
+        AbortedOrUnknown,
         Valid,
-        Invalid,
+        Empty,
         NoAccess
     }
 
     internal struct MenuData
     {
-        public List<RowData> RowDatas;
-        public MenuDataValidity Validity;
-        public int Level;
+        internal List<RowData> RowDatas;
+        internal MenuDataValidity Validity;
+        internal int Level;
+        internal RowData RowDataParent;
     };
 }

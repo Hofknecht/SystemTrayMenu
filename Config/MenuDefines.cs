@@ -14,11 +14,11 @@ namespace SystemTrayMenu
         internal static readonly Color ColorTitleSelected = AppColors.Yellow;
         internal static readonly Color ColorTitleBackground = AppColors.Azure;
         internal const int KeySearchInterval = 1000;
-        internal const int LengthMax = 37;
         internal const int Scrollspeed = 4;
-        internal const int WaitMenuOpen = 200;
-        internal const int MenusMax = 50;
         internal const int TimeUntilClose = 1000;
+        internal const int MenusMax = 50;
+        internal const int LengthMax = 37;
+        internal static float MaxMenuWidth = 300;
     }
 
     internal static class AppColors

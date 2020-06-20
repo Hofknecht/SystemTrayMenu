@@ -10,7 +10,6 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Windows.Forms;
-using SystemTrayMenu.Handler;
 using SystemTrayMenu.Utilities;
 using TAFactory.IconPack;
 using Menu = SystemTrayMenu.UserInterface.Menu;
@@ -19,18 +18,14 @@ namespace SystemTrayMenu.DataClasses
 {
     internal class RowData : IDisposable
     {
-        internal event EventHandler<RowData> OpenMenu;
-        internal BackgroundWorker Reading = new BackgroundWorker();
         internal FileInfo FileInfo;
         internal Menu SubMenu;
+        internal bool IsMenuOpen;
         internal bool IsSelected;
-        internal bool IsSelectedByKeyboard;
         internal bool ContainsMenu;
         internal bool IsContextMenuOpen;
         private static DateTime ContextMenuClosed;
         internal bool IsResolvedLnk;
-        internal bool IsLoading = false;
-        internal bool RestartLoading = false;
         internal bool HiddenEntry;
         internal string TargetFilePath;
         internal string TargetFilePathOrig;
@@ -38,23 +33,17 @@ namespace SystemTrayMenu.DataClasses
         private string WorkingDirectory;
         private string Arguments;
         private string Text;
-        private readonly WaitMenuOpen waitMenuOpen = new WaitMenuOpen();
         private Icon Icon = null;
         private bool diposeIcon = true;
         private bool isDisposed = false;
+        internal int MenuLevel;
 
         internal RowData()
         {
-            Reading.WorkerSupportsCancellation = true;
-            waitMenuOpen.DoOpen += WaitMenuOpen_DoOpen;
         }
 
         internal void SetText(string text)
         {
-            if (text.Length > MenuDefines.LengthMax)
-            {
-                text = $"{text.Substring(0, MenuDefines.LengthMax)}...";
-            }
             Text = text;
         }
 
@@ -295,16 +284,6 @@ namespace SystemTrayMenu.DataClasses
 
         internal void MouseDown(DataGridView dgv, MouseEventArgs e)
         {
-            if (ContainsMenu)
-            {
-                TriggerMenuOpener(); // Touchscreen
-            }
-
-            if (IsLoading)
-            {
-                waitMenuOpen.Click();
-            }
-
             if (e != null &&
                 e.Button == MouseButtons.Right &&
                 FileInfo != null &&
@@ -381,43 +360,6 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal void MenuLoaded()
-        {
-            waitMenuOpen.MenuLoaded();
-        }
-
-        internal void StartMenuOpener()
-        {
-            if (ContainsMenu)
-            {
-                IsLoading = true;
-                waitMenuOpen.Start();
-            }
-        }
-
-        private void TriggerMenuOpener()
-        {
-            if (ContainsMenu && IsLoading)
-            {
-                waitMenuOpen.Start();
-            }
-        }
-
-        internal void StopLoadMenuAndStartWaitToOpenIt()
-        {
-            if (ContainsMenu)
-            {
-                waitMenuOpen.Stop();
-                //IsLoading = false;
-            }
-        }
-
-        private void WaitMenuOpen_DoOpen()
-        {
-            IsLoading = false;
-            OpenMenu?.Invoke(this, this);
-        }
-
         public void Dispose()
         {
             Dispose(true);
@@ -428,8 +370,6 @@ namespace SystemTrayMenu.DataClasses
         {
             if (!isDisposed)
             {
-                waitMenuOpen.Dispose();
-                Reading.Dispose();
                 if (diposeIcon)
                 {
                     Icon?.Dispose();

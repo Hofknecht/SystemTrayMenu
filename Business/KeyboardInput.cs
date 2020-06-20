@@ -14,10 +14,9 @@ namespace SystemTrayMenu.Handler
     {
         public event EventHandlerEmpty HotKeyPressed;
         public event EventHandlerEmpty ClosePressed;
-#warning use event not action
-        public event Action<Keys> KeyPressedSearching;
         public event Action<DataGridView, int> RowSelected;
         public event Action<int, int, DataGridView> RowDeselected;
+        internal Action<DataGridView, int> EnterPressed;
         public event EventHandlerEmpty Cleared;
 
         private readonly Menu[] menus;
@@ -237,7 +236,7 @@ namespace SystemTrayMenu.Handler
                 {
                     RowData rowData = (RowData)dgv.
                         Rows[iRowKey].Cells[2].Value;
-                    if (rowData.IsSelectedByKeyboard)
+                    if (rowData.IsSelected)
                     {
                         isStillSelected = true;
                         menuFromSelected = rowData.SubMenu;
@@ -289,7 +288,7 @@ namespace SystemTrayMenu.Handler
                         dgv.Rows.Count > iRowKey)
                     {
                         RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
-                        if (trigger.IsSelected || !trigger.ContainsMenu)
+                        if (trigger.IsMenuOpen || !trigger.ContainsMenu)
                         {
                             trigger.MouseDown(dgv, null);
                             trigger.DoubleClick(
@@ -299,6 +298,7 @@ namespace SystemTrayMenu.Handler
                         {
                             RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
                             SelectRow(dgv, iRowKey);
+                            EnterPressed.Invoke(dgv, iRowKey);
                         }
                     }
                     break;
@@ -474,7 +474,7 @@ namespace SystemTrayMenu.Handler
             iMenuKey = newiMenuKey;
             DataGridViewRow row = dgv.Rows[i];
             RowData rowData = (RowData)row.Cells[2].Value;
-            rowData.IsSelectedByKeyboard = true;
+            rowData.IsSelected = true;
             row.Selected = false; //event trigger
             row.Selected = true; //event trigger
         }
@@ -493,7 +493,7 @@ namespace SystemTrayMenu.Handler
                 if (text.StartsWith(keyInput, true, CultureInfo.InvariantCulture))
                 {
                     iRowKey = rowData.RowIndex;
-                    rowData.IsSelectedByKeyboard = true;
+                    rowData.IsSelected = true;
                     row.Selected = false; //event trigger
                     row.Selected = true; //event trigger
                     if (row.Index < dgv.FirstDisplayedScrollingRowIndex)
@@ -529,8 +529,8 @@ namespace SystemTrayMenu.Handler
                 {
                     DataGridViewRow row = dgv.Rows[rowIndex];
                     RowData rowData = (RowData)row.Cells[2].Value;
-                    rowData.IsSelectedByKeyboard = false;
-                    row.Selected = false; //event trigger
+                    rowData.IsSelected = false;
+                    row.Selected = false;
                 }
             }
         }

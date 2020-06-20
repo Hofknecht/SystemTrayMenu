@@ -31,6 +31,10 @@ namespace SystemTrayMenu.Utilities
                         widthMax = checkWidth;
                     }
                 }
+                if (widthMax > MenuDefines.MaxMenuWidth)
+                {
+                    widthMax = MenuDefines.MaxMenuWidth;
+                }
                 dgv.Columns[i].Width = (int)(widthMax + 0.5);
 
                 string stringWithWidthLikeIcon = "____";
