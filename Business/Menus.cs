@@ -668,8 +668,7 @@ namespace SystemTrayMenu.Business
                     menu.Padding.Horizontal + menuPredecessor.Width);
                 if (directionToRight)
                 {
-                    if (widthPredecessors - menu.Width <=
-                        -menu.Padding.Horizontal)
+                    if (widthPredecessors - menus[0].Width - menu.Width < 0)
                     {
                         directionToRight = false;
                     }
@@ -679,7 +678,7 @@ namespace SystemTrayMenu.Business
                     }
                 }
                 else if (Statics.ScreenWidth <
-                    widthPredecessors + menuPredecessor.Width + menu.Width)
+                    widthPredecessors + menus[0].Width + menu.Width)
                 {
                     directionToRight = true;
                     widthPredecessors -= newWith;

@@ -121,7 +121,7 @@ namespace SystemTrayMenu.Handler
                 rowData.MenuLevel = menu.Level;
                 if (!rowData.IsContextMenuOpen &&
                     rowData.ContainsMenu &&
-                    rowData.MenuLevel < MenuDefines.MenusMax)
+                    rowData.MenuLevel + 1 < MenuDefines.MenusMax)
                 {
                     StartLoadMenu.Invoke(rowData);
                 }
