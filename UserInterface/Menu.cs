@@ -44,7 +44,7 @@ namespace SystemTrayMenu.UserInterface
             fading.ChangeOpacity += Fading_ChangeOpacity;
             void Fading_ChangeOpacity(object sender, double newOpacity)
             {
-                if(IsUsable)
+                if(!IsDisposed && !Disposing)
                 {
                     Opacity = newOpacity;
                 }
