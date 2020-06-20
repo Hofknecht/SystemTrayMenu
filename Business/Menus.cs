@@ -469,7 +469,7 @@ namespace SystemTrayMenu.Business
             dgv.CellMouseEnter += Dgv_CellMouseEnter;
             void Dgv_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
             {
-                if (menus[0].IsUsable)
+                if (menus[0].IsUsable && waitToOpenMenu.MouseActive)
                 {
                     if (keyboardInput.InUse)
                     {
