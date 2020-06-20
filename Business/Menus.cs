@@ -194,6 +194,11 @@ namespace SystemTrayMenu.Business
         public void Dispose()
         {
             workerMainMenu.Dispose();
+            foreach (BackgroundWorker worker in workersSubMenu)
+            {
+                worker.Dispose();
+            }
+            waitLeave.Dispose();
             keyboardInput.Dispose();
             timerStillActiveCheck.Dispose();
             IconReader.Dispose();
