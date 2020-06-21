@@ -65,6 +65,8 @@ steps:
   inputs:
     solution: '**/*.sln'
     msbuildArguments: '-p:Configuration=Release -p:Platform="Any CPU"'
+#    msbuildArguments: '-p:Configuration=Release -p:Platform=x64'
+#    msbuildArguments: '-p:Configuration=Release -p:Platform=x86'
     
 #- task: CopyFiles@2
 #  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
@@ -80,7 +82,9 @@ steps:
 - task: ArchiveFiles@2
   displayName: 'Archive $(Build.ArtifactStagingDirectory)'
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)\bin\Any CPU\Release\netcoreapp3.1\'
+    rootFolderOrFile: '$(Build.SourcesDirectory)\bin\AnyCPU\Release\netcoreapp3.1\'
+#   rootFolderOrFile: '$(Build.SourcesDirectory)\bin\x64\Release\netcoreapp3.1\'
+#   rootFolderOrFile: '$(Build.SourcesDirectory)\bin\x86\Release\netcoreapp3.1\'
     includeRootFolder: false
     archiveFile: '$(Build.ArtifactStagingDirectory)/SystemTrayMenu-$(AssemblyInfo.AssemblyVersion).zip'
 
