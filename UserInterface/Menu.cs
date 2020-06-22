@@ -37,7 +37,6 @@ namespace SystemTrayMenu.UserInterface
 
         private readonly Fading fading = new Fading();
         private bool isShowing = false;
-        private bool dgvAutoResizeRowDone = false;
 
         internal Menu()
         {
@@ -242,10 +241,14 @@ namespace SystemTrayMenu.UserInterface
         internal void AdjustSizeAndLocation(Menu menuPredecessor = null,
             bool directionToRight = false)
         {
-            if (!dgvAutoResizeRowDone)
+            CheckForAutoResizeRowDone();
+            void CheckForAutoResizeRowDone()
             {
-                dgv.AutoResizeRows();
-                dgvAutoResizeRowDone = true;
+                if (!(bool)dgv.Tag)
+                {
+                    dgv.AutoResizeRows();
+                    dgv.Tag = true;
+                }
             }
 
             int dgvHeightNeeded = dgv.Rows.GetRowsHeight(
@@ -277,14 +280,14 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (directionToRight)
                 {
-                    x = menuPredecessor.Location.X + 
+                    x = menuPredecessor.Location.X +
                         menuPredecessor.Width -
                         (int)Math.Round(Scaling.Factor, 0,
                         MidpointRounding.AwayFromZero);
                 }
                 else
                 {
-                    x = menuPredecessor.Location.X - 
+                    x = menuPredecessor.Location.X -
                         Width +
                         (int)Math.Round(Scaling.Factor, 0,
                         MidpointRounding.AwayFromZero);

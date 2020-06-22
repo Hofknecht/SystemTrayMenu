@@ -89,12 +89,15 @@ namespace SystemTrayMenu.Handler
 
         internal void EnterOpensInstantly(DataGridView dgv, int rowIndex)
         {
-            timerStartLoad.Stop();
-            StopLoadMenu.Invoke();
-            SetData(dgv, rowIndex);
-            MouseActive = false;
-            checkForMouseActive = false;
-            CallOpenMenuNow();
+            if (dgv.Rows.Count > rowIndex)
+            {
+                timerStartLoad.Stop();
+                StopLoadMenu.Invoke();
+                SetData(dgv, rowIndex);
+                MouseActive = false;
+                checkForMouseActive = false;
+                CallOpenMenuNow();
+            }
         }
 
         internal void MouseMove(object sender, MouseEventArgs e)
