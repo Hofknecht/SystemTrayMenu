@@ -11,15 +11,18 @@ namespace SystemTrayMenu.Handler
     {
         internal event Action<RowData> StartLoadMenu;
         internal event EventHandlerEmpty StopLoadMenu;
+        internal event Action<DataGridView, int> MouseEnterOk;
 
         private readonly Timer timerStartLoad = new Timer();
         private DataGridView dgv = null;
         private int rowIndex = 0;
+        private DataGridView dgvTmp = null;
+        private int rowIndexTmp = 0;
 
         internal bool MouseActive = false;
         private int mouseMoveEvents = 0;
         private DateTime dateTimeLastMouseMoveEvent = DateTime.Now;
-        private bool checkForMouseActive = false;
+        private bool checkForMouseActive = true;
 
         internal WaitToLoadMenu()
         {
@@ -29,11 +32,21 @@ namespace SystemTrayMenu.Handler
 
         internal void MouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            timerStartLoad.Stop();
-            StopLoadMenu.Invoke();
-            SetData((DataGridView)sender, e.RowIndex, MouseActive);
-            checkForMouseActive = true;
-            timerStartLoad.Start();
+            if (MouseActive)
+            {
+                DataGridView dgv = (DataGridView)sender;
+                MouseEnterOk(dgv, e.RowIndex);
+                timerStartLoad.Stop();
+                StopLoadMenu.Invoke();
+                checkForMouseActive = true;
+                SetData(dgv, e.RowIndex);
+                timerStartLoad.Start();
+            }
+            else
+            {
+                this.dgvTmp = (DataGridView)sender;
+                this.rowIndexTmp = e.RowIndex;
+            }
         }
 
         internal void RowSelected(DataGridView dgv, int rowIndex)
@@ -48,9 +61,12 @@ namespace SystemTrayMenu.Handler
 
         internal void MouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            timerStartLoad.Stop();
-            StopLoadMenu.Invoke();
-            ResetData((DataGridView)sender, e.RowIndex);
+            if (MouseActive)
+            {
+                timerStartLoad.Stop();
+                StopLoadMenu.Invoke();
+                ResetData((DataGridView)sender, e.RowIndex);
+            }
         }
 
         internal void RowDeselected(int iMenuBefore, int rowIndex, DataGridView dgv) //iMenuBefore not needed
@@ -88,6 +104,11 @@ namespace SystemTrayMenu.Handler
                 if (mouseMoveEvents > 3)
                 {
                     MouseActive = true;
+                    if (dgvTmp != null && !dgvTmp.IsDisposed)
+                    {
+                        MouseEnter(dgvTmp, new DataGridViewCellEventArgs(
+                            0, rowIndexTmp));
+                    }
                     mouseMoveEvents = 0;
                 }
                 else if (DateTime.Now - dateTimeLastMouseMoveEvent < 
@@ -128,16 +149,14 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        private void SetData(DataGridView dgv, int rowIndex, bool select = true)
+        private void SetData(DataGridView dgv, int rowIndex)
         {
+            dgvTmp = null;
             this.dgv = dgv;
             this.rowIndex = rowIndex;
             RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
-            if (select)
-            {
-                rowData.IsSelected = true;
-                dgv.Rows[rowIndex].Selected = true;
-            }
+            rowData.IsSelected = true;
+            dgv.Rows[rowIndex].Selected = true;
         }
 
         private void ResetData(DataGridView dgv, int rowIndex)
@@ -156,6 +175,8 @@ namespace SystemTrayMenu.Handler
         {
             timerStartLoad.Stop();
             timerStartLoad.Dispose();
+            dgv.Dispose();
+            dgvTmp.Dispose();
         }
     }
 }

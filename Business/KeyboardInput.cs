@@ -217,7 +217,7 @@ namespace SystemTrayMenu.Handler
             DataGridView dgv = menu.GetDataGridView();
             if (dgv.Rows.Count > 0)
             {
-                Select(dgv, 0);
+                Select(dgv, 0, true);
             }
         }
 
@@ -463,7 +463,7 @@ namespace SystemTrayMenu.Handler
             return found;
         }
 
-        public void Select(DataGridView dgv, int i)
+        public void Select(DataGridView dgv, int i, bool refreshview)
         {
             int newiMenuKey = ((Menu)dgv.TopLevelControl).Level;
             if (i != iRowKey || newiMenuKey != iMenuKey)
@@ -475,8 +475,11 @@ namespace SystemTrayMenu.Handler
             DataGridViewRow row = dgv.Rows[i];
             RowData rowData = (RowData)row.Cells[2].Value;
             rowData.IsSelected = true;
-            row.Selected = false; //event trigger
-            row.Selected = true; //event trigger
+            if (refreshview)
+            {
+                row.Selected = false; //event trigger
+                row.Selected = true; //event trigger
+            }
         }
 
         private bool Select(DataGridView dgv, int i,

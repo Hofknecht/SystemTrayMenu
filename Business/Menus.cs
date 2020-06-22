@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clearcove.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,12 +79,13 @@ namespace SystemTrayMenu.Business
                     workerSubMenu.CancelAsync();
                 }
             }
+
             waitToOpenMenu.StartLoadMenu += StartLoadMenu;
             void StartLoadMenu(RowData rowData)
             {
                 if (menus[0].IsUsable &&
-                    menus[rowData.MenuLevel] == null ||
-                    menus[rowData.MenuLevel].Tag as RowData != rowData)
+                    menus[rowData.MenuLevel + 1] == null ||
+                    menus[rowData.MenuLevel + 1].Tag as RowData != rowData)
                 {
                     LoadStarted();
                     BackgroundWorker workerSubMenu = workersSubMenu.
@@ -164,6 +166,7 @@ namespace SystemTrayMenu.Business
 
         internal void SwitchOpenClose(bool byClick)
         {
+            waitToOpenMenu.MouseActive = byClick;
             if (byClick && (DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
             {
                 //By click on notifyicon the menu gets deactivated and closed
@@ -471,10 +474,10 @@ namespace SystemTrayMenu.Business
             }
             DataGridView dgv = menu.GetDataGridView();
             dgv.CellMouseEnter += waitToOpenMenu.MouseEnter;
-            dgv.CellMouseEnter += Dgv_CellMouseEnter;
-            void Dgv_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+            waitToOpenMenu.MouseEnterOk += Dgv_CellMouseEnter;
+            void Dgv_CellMouseEnter(DataGridView dgv, int rowIndex)
             {
-                if (menus[0].IsUsable && waitToOpenMenu.MouseActive)
+                if (menus[0].IsUsable)
                 {
                     if (keyboardInput.InUse)
                     {
@@ -482,7 +485,7 @@ namespace SystemTrayMenu.Business
                         keyboardInput.InUse = false;
                     }
 
-                    keyboardInput.Select(dgv, e.RowIndex);
+                    keyboardInput.Select(dgv, rowIndex, false);
                 }
             }
             dgv.CellMouseLeave += waitToOpenMenu.MouseLeave;
@@ -558,16 +561,16 @@ namespace SystemTrayMenu.Business
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
                     row.Selected = false;
                 }
-                else if (rowData.IsSelected)
-                {
-                    row.DefaultCellStyle.SelectionBackColor =
-                        MenuDefines.ColorSelectedItem;
-                    row.Selected = true;
-                }
                 else if (rowData.IsMenuOpen)
                 {
                     row.DefaultCellStyle.SelectionBackColor =
                         MenuDefines.ColorOpenFolder;
+                    row.Selected = true;
+                }
+                else if (rowData.IsSelected)
+                {
+                    row.DefaultCellStyle.SelectionBackColor =
+                        MenuDefines.ColorSelectedItem;
                     row.Selected = true;
                 }
                 else
