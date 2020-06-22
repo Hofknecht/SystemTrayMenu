@@ -244,7 +244,7 @@ namespace SystemTrayMenu.UserInterface
             CheckForAutoResizeRowDone();
             void CheckForAutoResizeRowDone()
             {
-                if (!(bool)dgv.Tag)
+                if (dgv.Tag == null)
                 {
                     dgv.AutoResizeRows();
                     dgv.Tag = true;
