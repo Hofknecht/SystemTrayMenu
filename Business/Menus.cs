@@ -561,6 +561,12 @@ namespace SystemTrayMenu.Business
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
                     row.Selected = false;
                 }
+                else if (rowData.IsMenuOpen && rowData.IsSelected)
+                {
+                    row.DefaultCellStyle.SelectionBackColor =
+                        MenuDefines.ColorSelectedAndOpen;
+                    row.Selected = true;
+                }
                 else if (rowData.IsMenuOpen)
                 {
                     row.DefaultCellStyle.SelectionBackColor =
