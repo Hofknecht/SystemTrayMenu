@@ -450,7 +450,16 @@ namespace SystemTrayMenu.UserInterface.Controls
                 {
                     hotkey = hotkey.Remove(0, hotkey.LastIndexOf('+') + 1).Trim();
                 }
-                key = (Keys)Enum.Parse(typeof(Keys), hotkey);
+                try
+                {
+                    hotkey = hotkey.Replace("PgDn", "PageDown").
+                        Replace("PgUp", "PageUp");
+                    key = (Keys)Enum.Parse(typeof(Keys), hotkey);
+                }
+                catch (ArgumentException ex)
+                {
+                    Log.Warn($"{hotkey} can not be parsed", ex);
+                }
             }
             return key;
         }
