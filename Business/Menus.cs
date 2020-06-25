@@ -134,6 +134,16 @@ namespace SystemTrayMenu.Business
                 }
             }
 
+            waitToOpenMenu.CloseMenu += CloseMenu;
+            void CloseMenu(int level)
+            {
+                if (menus[level] != null)
+                {
+                    menus[level - 1].FocusTextBox();
+                    HideOldMenu(menus[level]);
+                }
+            }
+            
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
             keyboardInput.HotKeyPressed += KeyboardInput_HotKeyPressed;
@@ -589,6 +599,15 @@ namespace SystemTrayMenu.Business
 
         private void ShowSubMenu(Menu menuToShow)
         {
+            HideOldMenu(menuToShow, true);
+
+            menus[menuToShow.Level] = menuToShow;
+            AdjustMenusSizeAndLocation();
+            menus[menuToShow.Level].ShowWithFadeOrTransparent(IsActive());
+        }
+
+        private void HideOldMenu(Menu menuToShow, bool keepOrSetIsMenuOpen = false)
+        {
             //Clean up menu status IsMenuOpen for previous one
             Menu menuPrevious = menus[menuToShow.Level - 1];
             DataGridView dgvPrevious = menuPrevious.GetDataGridView();
@@ -597,7 +616,7 @@ namespace SystemTrayMenu.Business
                 RowData rowDataToClear = (RowData)row[2];
                 if (rowDataToClear == (RowData)menuToShow.Tag)
                 {
-                    rowDataToClear.IsMenuOpen = true;
+                    rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
                 }
                 else
                 {
@@ -606,6 +625,7 @@ namespace SystemTrayMenu.Business
             }
             RefreshSelection(dgvPrevious);
 
+            //Hide old menu
             foreach (Menu menuToClose in menus.Where(
                 m => m != null && m.Level > menuPrevious.Level))
             {
@@ -613,10 +633,6 @@ namespace SystemTrayMenu.Business
                 menuToClose.HideWithFade();
                 menus[menuToClose.Level] = null;
             }
-
-            menus[menuToShow.Level] = menuToShow;
-            AdjustMenusSizeAndLocation();
-            menus[menuToShow.Level].ShowWithFadeOrTransparent(IsActive());
         }
 
         private void FadeInIfNeeded()

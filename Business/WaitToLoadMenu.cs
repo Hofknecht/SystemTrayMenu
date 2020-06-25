@@ -10,6 +10,7 @@ namespace SystemTrayMenu.Handler
     internal class WaitToLoadMenu : IDisposable
     {
         internal event Action<RowData> StartLoadMenu;
+        internal event Action<int> CloseMenu;
         internal event EventHandlerEmpty StopLoadMenu;
         internal event Action<DataGridView, int> MouseEnterOk;
 
@@ -143,6 +144,15 @@ namespace SystemTrayMenu.Handler
                 RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
                 Menu menu = (Menu)dgv.FindForm();
                 rowData.MenuLevel = menu.Level;
+                if (rowData.ContainsMenu)
+                {
+                    CloseMenu.Invoke(rowData.MenuLevel + 2);
+                }
+                else
+                {
+                    CloseMenu.Invoke(rowData.MenuLevel + 1);
+                }
+
                 if (!rowData.IsContextMenuOpen &&
                     rowData.ContainsMenu &&
                     rowData.MenuLevel + 1 < MenuDefines.MenusMax)
