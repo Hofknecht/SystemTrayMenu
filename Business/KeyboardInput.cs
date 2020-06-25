@@ -77,10 +77,9 @@ namespace SystemTrayMenu.Handler
                 }
                 catch (InvalidOperationException ex)
                 {
-                    //Log.Error($"key:'{key}'", ex);
+                    Log.Warn($"key:'{Properties.Settings.Default.HotKey}'", ex);
                     Properties.Settings.Default.HotKey = string.Empty;
                     Properties.Settings.Default.Save();
-                    MessageBox.Show(ex.Message);
                 }
             }
         }
