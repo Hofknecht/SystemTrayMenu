@@ -61,7 +61,7 @@ namespace SystemTrayMenu.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("F10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Alt+Apps")]
         public string HotKey {
             get {
                 return ((string)(this["HotKey"]));
