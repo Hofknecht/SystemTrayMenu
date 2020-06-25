@@ -563,20 +563,20 @@ namespace SystemTrayMenu.Business
                 }
                 else if (rowData.IsMenuOpen && rowData.IsSelected)
                 {
-                    row.DefaultCellStyle.SelectionBackColor =
-                        MenuDefines.ColorSelectedAndOpen;
+                    row.Cells[0].Style.SelectionBackColor = MenuDefines.ColorOpenFolder;
+                    row.Cells[1].Style.SelectionBackColor = MenuDefines.ColorSelectedItem;
                     row.Selected = true;
                 }
                 else if (rowData.IsMenuOpen)
                 {
-                    row.DefaultCellStyle.SelectionBackColor =
-                        MenuDefines.ColorOpenFolder;
+                    row.Cells[0].Style.SelectionBackColor = MenuDefines.ColorOpenFolder;
+                    row.Cells[1].Style.SelectionBackColor = MenuDefines.ColorOpenFolder;
                     row.Selected = true;
                 }
                 else if (rowData.IsSelected)
                 {
-                    row.DefaultCellStyle.SelectionBackColor =
-                        MenuDefines.ColorSelectedItem;
+                    row.Cells[0].Style.SelectionBackColor = MenuDefines.ColorSelectedItem;
+                    row.Cells[1].Style.SelectionBackColor = MenuDefines.ColorSelectedItem;
                     row.Selected = true;
                 }
                 else
