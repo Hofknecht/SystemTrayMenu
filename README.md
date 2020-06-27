@@ -70,12 +70,20 @@ Contributing
 If you would like to contribute, everyone is welcome to.  
 If you are considering a feature, need guidance, or want to talk about an idea, don't hesitate to create an issue here.  
 When contributing please respect the style used by the codebase and consider the following rules:  
-*Run FixCop.  
-*Increase the version in the assembly file.  
-*Add a commit message like: IssueTitle (#xx), IssueTitle (#xx), version x.x.x.x .  
-*Commit either directly to the master branch or create a new branch if you are not sure with your changes 
+* Run FixCop.  
+* Increase the version in the assembly file.  
+* Add a commit message like: 
+```
+#79, #114, #115, #116, version 0.11.1.9
+[Feature] Take RowHeight from main menu #116
+[Feature] Show icon in taskbar when application is running #115
+[Feature] Add outer frame to selection #114
+[Bug] Screen Changes #79
+```
+
+* Commit either directly to the master branch or create a new branch if you are not sure with your changes 
 https://guides.github.com/activities/hello-world/.  
-*Update the issue and set the status to closed.  
+* Update the issue and set the status to closed.  
 
 Donations
 ------------------
