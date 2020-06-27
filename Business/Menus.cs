@@ -155,6 +155,7 @@ namespace SystemTrayMenu.Business
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowDeselected += waitToOpenMenu.RowDeselected;
             keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
+            keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
 
             timerStillActiveCheck.Interval = 1000;
             timerStillActiveCheck.Tick += StillActiveTick;
@@ -228,6 +229,13 @@ namespace SystemTrayMenu.Business
         {
             if (menuToDispose != null)
             {
+                menuToDispose.MouseWheel -= AdjustMenusSizeAndLocation;
+                menuToDispose.MouseLeave -= waitLeave.Start;
+                menuToDispose.MouseEnter -= waitLeave.Stop;
+                menuToDispose.KeyPress -= keyboardInput.KeyPress;
+                menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
+                menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
+                menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
                 DataGridView dgv = menuToDispose.GetDataGridView();
                 dgv.CellMouseEnter -= waitToOpenMenu.MouseEnter;
                 dgv.CellMouseLeave -= waitToOpenMenu.MouseLeave;
@@ -452,14 +460,8 @@ namespace SystemTrayMenu.Business
             menu.MouseEnter += waitLeave.Stop;
             menu.KeyPress += keyboardInput.KeyPress;
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
-            keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
             menu.SearchTextChanging += keyboardInput.SearchTextChanging;
             menu.SearchTextChanged += Menu_SearchTextChanged;
-            void Menu_SearchTextChanged(object sender, EventArgs e)
-            {
-                keyboardInput.SearchTextChanged(sender, e);
-                AdjustMenusSizeAndLocation();
-            }
             menu.Deactivate += Deactivate;
             void Deactivate(object sender, EventArgs e)
             {
@@ -758,6 +760,12 @@ namespace SystemTrayMenu.Business
                 widthPredecessors += menu.Width - menu.Padding.Left;
                 menuPredecessor = menu;
             }
+        }
+
+        private void Menu_SearchTextChanged(object sender, EventArgs e)
+        {
+            keyboardInput.SearchTextChanged(sender, e);
+            AdjustMenusSizeAndLocation();
         }
     }
 }

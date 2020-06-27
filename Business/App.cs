@@ -51,6 +51,7 @@ namespace SystemTrayMenu
         {
             TaskbarForm taskbarForm = (TaskbarForm)sender;
             taskbarForm.WindowState = FormWindowState.Minimized;
+            taskbarForm.Focus();
             menus.SwitchOpenCloseByTaskbarItem();
         }
 
