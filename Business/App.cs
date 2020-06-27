@@ -13,6 +13,7 @@ namespace SystemTrayMenu
     {
         private readonly MenuNotifyIcon menuNotifyIcon = new MenuNotifyIcon();
         private readonly Menus menus = new Menus();
+        private TaskbarForm taskbarForm = new TaskbarForm();
 
         public App()
         {
@@ -35,10 +36,27 @@ namespace SystemTrayMenu
 
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
+            taskbarForm.Deactivate += TasbkarItemDeactivated;
+            taskbarForm.Activated += TasbkarItemActivated;
+            taskbarForm.Show();
+        }
+
+        internal void TasbkarItemDeactivated(object sender, EventArgs e)
+        {
+            TaskbarForm taskbarForm = (TaskbarForm)sender;
+            taskbarForm.WindowState = FormWindowState.Minimized;
+        }
+
+        internal void TasbkarItemActivated(object sender, EventArgs e)
+        {
+            TaskbarForm taskbarForm = (TaskbarForm)sender;
+            taskbarForm.WindowState = FormWindowState.Minimized;
+            menus.SwitchOpenCloseByTaskbarItem();
         }
 
         public void Dispose()
         {
+            taskbarForm.Dispose();
             menus.Dispose();
             menuNotifyIcon.Dispose();
         }

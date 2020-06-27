@@ -244,19 +244,27 @@ namespace SystemTrayMenu.UserInterface
             CheckForAutoResizeRowDone();
             void CheckForAutoResizeRowDone()
             {
-                //For main menu do AutoResizeRows only when first time 
-                //For sub menu do AutoResizeRows only when second time
-                int counterCheckForAutoResize = 0;
-                if (dgv.Tag != null)
+                if (dgv.Tag == null)
                 {
-                    counterCheckForAutoResize = (int)dgv.Tag;
-                }
-                if ((Level == 0 && counterCheckForAutoResize == 0) ||
-                    (Level > 0 && counterCheckForAutoResize == 1))
-                {
-                    dgv.AutoResizeRows();
-                }
-                dgv.Tag = counterCheckForAutoResize + 1;
+                    if (menuPredecessor == null)
+                    {
+                        dgv.AutoResizeRows();
+                        dgv.Tag = true;
+                    }
+                    else
+                    {
+                        DataGridView dgvPredecessor = menuPredecessor.GetDataGridView();
+                        if (dgvPredecessor.Rows.Count > 0)
+                        {
+                            int rowHeight = dgvPredecessor.Rows[0].Height;
+                            foreach (DataGridViewRow row in dgv.Rows)
+                            {
+                                row.Height = rowHeight;
+                            }
+                            dgv.Tag = true;
+                        }
+                    }
+                }   
             }
 
             int dgvHeightNeeded = dgv.Rows.GetRowsHeight(

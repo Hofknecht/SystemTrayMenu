@@ -143,7 +143,7 @@ namespace SystemTrayMenu.Business
                     HideOldMenu(menus[level]);
                 }
             }
-            
+
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
             keyboardInput.HotKeyPressed += KeyboardInput_HotKeyPressed;
@@ -172,6 +172,12 @@ namespace SystemTrayMenu.Business
             {
                 FadeHalfOrOutIfNeeded();
             }
+        }
+
+        internal void SwitchOpenCloseByTaskbarItem()
+        {
+            SwitchOpenClose(true);
+            timerStillActiveCheck.Start();
         }
 
         internal void SwitchOpenClose(bool byClick)
@@ -223,13 +229,22 @@ namespace SystemTrayMenu.Business
             if (menuToDispose != null)
             {
                 DataGridView dgv = menuToDispose.GetDataGridView();
+                dgv.CellMouseEnter -= waitToOpenMenu.MouseEnter;
+                dgv.CellMouseLeave -= waitToOpenMenu.MouseLeave;
+                dgv.MouseMove -= waitToOpenMenu.MouseMove;
+                dgv.MouseDown -= Dgv_MouseDown;
+                dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
+                dgv.SelectionChanged -= Dgv_SelectionChanged;
+                dgv.RowPostPaint -= Dgv_RowPostPaint;
+                dgv.ClearSelection();
+
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
                     RowData rowData = (RowData)row.Cells[2].Value;
                     rowData.Dispose();
                     DisposeMenu(rowData.SubMenu);
                 }
-                dgv.ClearSelection();
+
                 menuToDispose.Dispose();
             }
         }
@@ -503,6 +518,7 @@ namespace SystemTrayMenu.Business
             dgv.MouseDown += Dgv_MouseDown;
             dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
             dgv.SelectionChanged += Dgv_SelectionChanged;
+            dgv.RowPostPaint += Dgv_RowPostPaint;
 
             return menu;
         }
@@ -562,37 +578,61 @@ namespace SystemTrayMenu.Business
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
 
-                if (rowData == null)
-                {
-#warning evalute the case again, should we prevent it somewhere else?
-                }
-                else if (!menus[0].IsUsable)
+                if (!menus[0].IsUsable)
                 {
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
                     row.Selected = false;
                 }
                 else if (rowData.IsMenuOpen && rowData.IsSelected)
                 {
-                    row.Cells[0].Style.SelectionBackColor = MenuDefines.ColorOpenFolder;
-                    row.Cells[1].Style.SelectionBackColor = MenuDefines.ColorSelectedItem;
                     row.Selected = true;
                 }
                 else if (rowData.IsMenuOpen)
                 {
-                    row.Cells[0].Style.SelectionBackColor = MenuDefines.ColorOpenFolder;
-                    row.Cells[1].Style.SelectionBackColor = MenuDefines.ColorOpenFolder;
                     row.Selected = true;
                 }
                 else if (rowData.IsSelected)
                 {
-                    row.Cells[0].Style.SelectionBackColor = MenuDefines.ColorSelectedItem;
-                    row.Cells[1].Style.SelectionBackColor = MenuDefines.ColorSelectedItem;
+                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
                     row.Selected = true;
                 }
                 else
                 {
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
                     row.Selected = false;
+                }
+            }
+            dgv.Refresh();
+        }
+
+        private void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            DataGridViewRow row = dgv.Rows[e.RowIndex];
+
+            if (row.Selected)
+            {
+                RowData rowData = (RowData)row.Cells[2].Value;
+
+                Rectangle rowBounds = new Rectangle(
+                    0, e.RowBounds.Top,
+                    dgv.Columns[0].Width +
+                    dgv.Columns[1].Width,
+                    e.RowBounds.Height);
+
+                if (rowData.IsMenuOpen && rowData.IsSelected)
+                {
+                    ControlPaint.DrawBorder(e.Graphics, rowBounds,
+                        MenuDefines.ColorSelectedItemBorder,
+                        ButtonBorderStyle.Solid);
+                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
+                }
+                else if (rowData.IsMenuOpen)
+                {
+                    ControlPaint.DrawBorder(e.Graphics, rowBounds,
+                        MenuDefines.ColorOpenFolderBorder,
+                        ButtonBorderStyle.Solid);
+                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorOpenFolder;
                 }
             }
         }
@@ -666,7 +706,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private bool IsActive()
+        private static bool IsActive()
         {
             return Form.ActiveForm is Menu;
         }
