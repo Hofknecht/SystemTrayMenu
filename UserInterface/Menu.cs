@@ -244,25 +244,32 @@ namespace SystemTrayMenu.UserInterface
             CheckForAutoResizeRowDone();
             void CheckForAutoResizeRowDone()
             {
+                double factor = 1;
+                if (NativeMethods.IsTouchEnabled())
+                {
+                    factor = 1.5;
+                }
+
                 if (dgv.Tag == null)
                 {
                     if (menuPredecessor == null)
                     {
                         dgv.AutoResizeRows();
+                        if (factor > 1)
+                        {
+                            dgv.RowTemplate.Height = (int)(dgv.RowTemplate.Height * factor);
+                            foreach (DataGridViewRow row in dgv.Rows)
+                            {
+                                row.Height = dgv.RowTemplate.Height;
+                            }
+                        }
                         dgv.Tag = true;
                     }
                     else
                     {
-                        DataGridView dgvPredecessor = menuPredecessor.GetDataGridView();
-                        if (dgvPredecessor.Rows.Count > 0)
-                        {
-                            int rowHeight = dgvPredecessor.Rows[0].Height;
-                            foreach (DataGridViewRow row in dgv.Rows)
-                            {
-                                row.Height = rowHeight;
-                            }
-                            dgv.Tag = true;
-                        }
+                        dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().
+                            RowTemplate.Height;
+                        dgv.Tag = true;
                     }
                 }   
             }

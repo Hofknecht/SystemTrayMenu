@@ -84,8 +84,8 @@ namespace SystemTrayMenu.Business
             void StartLoadMenu(RowData rowData)
             {
                 if (menus[0].IsUsable &&
-                    menus[rowData.MenuLevel + 1] == null ||
-                    menus[rowData.MenuLevel + 1].Tag as RowData != rowData)
+                    (menus[rowData.MenuLevel + 1] == null ||
+                    menus[rowData.MenuLevel + 1].Tag as RowData != rowData))
                 {
                     LoadStarted();
                     BackgroundWorker workerSubMenu = workersSubMenu.
