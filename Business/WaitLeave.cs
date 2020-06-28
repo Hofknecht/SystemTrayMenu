@@ -32,7 +32,7 @@ namespace SystemTrayMenu.Handler
         private void TimerLeaveCheckTick(object sender, EventArgs e)
         {
             timerLeaveCheck.Stop();
-            LeaveTriggered.Invoke();
+            LeaveTriggered?.Invoke();
         }
 
         public void Dispose()

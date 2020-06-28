@@ -50,7 +50,7 @@ namespace SystemTrayMenu.Helper
             openLog.Click += OpenLog_Click;
             void OpenLog_Click(object sender, EventArgs e)
             {
-                ClickedOpenLog.Invoke();
+                ClickedOpenLog?.Invoke();
             }
             menu.Items.Add(openLog);
 
@@ -110,7 +110,7 @@ namespace SystemTrayMenu.Helper
             restart.Click += Restart_Click;
             void Restart_Click(object sender, EventArgs e)
             {
-                ClickedRestart.Invoke();
+                ClickedRestart?.Invoke();
             }
             menu.Items.Add(restart);
 
@@ -121,7 +121,7 @@ namespace SystemTrayMenu.Helper
             exit.Click += Exit_Click;
             void Exit_Click(object sender, EventArgs e)
             {
-                ClickedExit.Invoke();
+                ClickedExit?.Invoke();
             }
             menu.Items.Add(exit);
 

@@ -42,19 +42,19 @@ namespace SystemTrayMenu.UserInterface
             contextMenus.ClickedOpenLog += ClickedOpenLog;
             void ClickedOpenLog()
             {
-                OpenLog.Invoke();
+                OpenLog?.Invoke();
             }
 
             contextMenus.ClickedRestart += ClickedRestart;
             void ClickedRestart()
             {
-                Restart.Invoke();
+                Restart?.Invoke();
             }
 
             contextMenus.ClickedExit += ClickedExit;
             void ClickedExit()
             {
-                Exit.Invoke();
+                Exit?.Invoke();
             }
 
             notifyIcon.ContextMenuStrip = contextMenus.Create();

@@ -66,7 +66,7 @@ namespace SystemTrayMenu.UserInterface
                     if (!visible)
                     {
                         visible = true;
-                        Show?.Invoke();
+                        Show??.Invoke();
                         opacity = 0;
                         ChangeOpacity?.Invoke(this, opacity);
                     }
@@ -86,7 +86,7 @@ namespace SystemTrayMenu.UserInterface
                     if (!visible)
                     {
                         visible = true;
-                        Show?.Invoke();
+                        Show??.Invoke();
                         opacity = 0;
                         ChangeOpacity?.Invoke(this, opacity);
                     }
@@ -117,7 +117,7 @@ namespace SystemTrayMenu.UserInterface
                         opacity = 0;
                         ChangeOpacity?.Invoke(this, opacity);
                         visible = false;
-                        Hide?.Invoke();
+                        Hide??.Invoke();
                         StartStopTimer(FadingState.Idle);
                     }
                     break;

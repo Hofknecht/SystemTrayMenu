@@ -38,7 +38,7 @@ namespace SystemTrayMenu.Handler
                 DataGridView dgv = (DataGridView)sender;
                 MouseEnterOk(dgv, e.RowIndex);
                 timerStartLoad.Stop();
-                StopLoadMenu.Invoke();
+                StopLoadMenu?.Invoke();
                 checkForMouseActive = true;
                 SetData(dgv, e.RowIndex);
                 timerStartLoad.Start();
@@ -53,7 +53,7 @@ namespace SystemTrayMenu.Handler
         internal void RowSelected(DataGridView dgv, int rowIndex)
         {
             timerStartLoad.Stop();
-            StopLoadMenu.Invoke();
+            StopLoadMenu?.Invoke();
             SetData(dgv, rowIndex);
             MouseActive = false;
             checkForMouseActive = false;
@@ -65,7 +65,7 @@ namespace SystemTrayMenu.Handler
             if (MouseActive)
             {
                 timerStartLoad.Stop();
-                StopLoadMenu.Invoke();
+                StopLoadMenu?.Invoke();
                 ResetData((DataGridView)sender, e.RowIndex);
             }
         }
@@ -73,7 +73,7 @@ namespace SystemTrayMenu.Handler
         internal void RowDeselected(int iMenuBefore, int rowIndex, DataGridView dgv) //iMenuBefore not needed
         {
             timerStartLoad.Stop();
-            StopLoadMenu.Invoke();
+            StopLoadMenu?.Invoke();
             ResetData(dgv, rowIndex);
             MouseActive = false;
         }
@@ -81,7 +81,7 @@ namespace SystemTrayMenu.Handler
         internal void ClickOpensInstantly(DataGridView dgv, int rowIndex)
         {
             timerStartLoad.Stop();
-            StopLoadMenu.Invoke();
+            StopLoadMenu?.Invoke();
             SetData(dgv, rowIndex);
             MouseActive = true;
             checkForMouseActive = false;
@@ -93,7 +93,7 @@ namespace SystemTrayMenu.Handler
             if (dgv.Rows.Count > rowIndex)
             {
                 timerStartLoad.Stop();
-                StopLoadMenu.Invoke();
+                StopLoadMenu?.Invoke();
                 SetData(dgv, rowIndex);
                 MouseActive = false;
                 checkForMouseActive = false;

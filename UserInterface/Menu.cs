@@ -107,14 +107,14 @@ namespace SystemTrayMenu.UserInterface
             labelTitle.MouseEnter += ControlsMouseEnter;
             void ControlsMouseEnter(object sender, EventArgs e)
             {
-                MouseEnter.Invoke();
+                MouseEnter??.Invoke();
             }
             scrollBar.MouseLeave += ControlsMouseLeave;
             dgv.MouseLeave += ControlsMouseLeave;
             labelTitle.MouseLeave += ControlsMouseLeave;
             void ControlsMouseLeave(object sender, EventArgs e)
             {
-                MouseLeave.Invoke();
+                MouseLeave??.Invoke();
             }
         }
 
@@ -422,7 +422,7 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            MouseWheel?.Invoke();
+            MouseWheel??.Invoke();
         }
 
         internal void SetTitleColorDeactive()
@@ -439,7 +439,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                UserClickedOpenFolder?.Invoke();
+                UserClickedOpenFolder??.Invoke();
             }
         }
 
@@ -489,7 +489,7 @@ namespace SystemTrayMenu.UserInterface
         {
             DataTable data = (DataTable)dgv.DataSource;
             string filterField = dgv.Columns[1].Name;
-            SearchTextChanging.Invoke();
+            SearchTextChanging?.Invoke();
 
             data.DefaultView.RowFilter = string.Format(CultureInfo.InvariantCulture,
                 "[{0}] LIKE '%{1}%'", filterField, textBoxSearch.Text);
