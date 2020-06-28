@@ -50,21 +50,32 @@ namespace SystemTrayMenu
 
         private void TaskbarForm_Resize(object sender, EventArgs e)
         {
-            taskbarForm.WindowState = FormWindowState.Normal;
+            SetStateNormal();
         }
 
         internal void TasbkarItemActivated(object sender, EventArgs e)
         {
-            taskbarForm.WindowState = FormWindowState.Normal;
+            SetStateNormal();
             taskbarForm.Activate();
             taskbarForm.Focus();
             menus.SwitchOpenCloseByTaskbarItem();
         }
+
         private void TaskbarForm_Deactivate(object sender, EventArgs e)
         {
-            taskbarForm.WindowState = FormWindowState.Normal;
+            SetStateNormal();
         }
 
+        /// <summary>
+        /// This ensures that next click on taskbaritem works as activate event/click event
+        /// </summary>
+        private void SetStateNormal()
+        {
+            if (Form.ActiveForm == taskbarForm)
+            {
+                taskbarForm.WindowState = FormWindowState.Normal;
+            }
+        }
         public void Dispose()
         {
             taskbarForm.Dispose();
