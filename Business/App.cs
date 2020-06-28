@@ -49,9 +49,9 @@ namespace SystemTrayMenu
 
         private void TaskbarForm_Resize(object sender, EventArgs e)
         {
-            if (taskbarForm.WindowState != FormWindowState.Minimized)
+            if (taskbarForm.WindowState == FormWindowState.Minimized)
             {
-                taskbarForm.WindowState = FormWindowState.Minimized;
+                taskbarForm.WindowState = FormWindowState.Normal;
             }
         }
 
