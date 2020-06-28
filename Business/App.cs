@@ -57,9 +57,10 @@ namespace SystemTrayMenu
 
         internal void TasbkarItemActivated(object sender, EventArgs e)
         {
-            taskbarForm.Activate();
-            taskbarForm.Focus();
-            menus.SwitchOpenCloseByTaskbarItem();
+            if (!(Form.ActiveForm is TaskbarForm))
+            {
+                menus.SwitchOpenCloseByTaskbarItem();
+            }
         }
 
         public void Dispose()
