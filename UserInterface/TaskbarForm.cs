@@ -23,7 +23,7 @@ namespace SystemTrayMenu.UserInterface
             //we could show behind taskbar?
             //screen.Bounds.Bottom- Size.Height);
             //but at the moment we dont want to see this
-            screen.Bounds.Bottom); // - Size.Height);
+            screen.Bounds.Bottom + 80); // - Size.Height);
         }
     }
 }

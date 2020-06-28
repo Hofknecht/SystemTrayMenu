@@ -38,7 +38,13 @@ namespace SystemTrayMenu
             menus.MainPreload();
             taskbarForm.Activated += TasbkarItemActivated;
             taskbarForm.Resize += TaskbarForm_Resize;
+            taskbarForm.FormClosed += TaskbarForm_FormClosed;
             taskbarForm.Show();
+        }
+
+        private void TaskbarForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void TaskbarForm_Resize(object sender, EventArgs e)
