@@ -36,21 +36,22 @@ namespace SystemTrayMenu
 
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
-            taskbarForm.Deactivate += TasbkarItemDeactivated;
             taskbarForm.Activated += TasbkarItemActivated;
+            taskbarForm.Resize += TaskbarForm_Resize;
             taskbarForm.Show();
         }
 
-        internal void TasbkarItemDeactivated(object sender, EventArgs e)
+        private void TaskbarForm_Resize(object sender, EventArgs e)
         {
-            TaskbarForm taskbarForm = (TaskbarForm)sender;
-            taskbarForm.WindowState = FormWindowState.Minimized;
+            if (taskbarForm.WindowState == FormWindowState.Minimized)
+            {
+                taskbarForm.WindowState = FormWindowState.Normal;
+            }
         }
 
         internal void TasbkarItemActivated(object sender, EventArgs e)
         {
-            TaskbarForm taskbarForm = (TaskbarForm)sender;
-            taskbarForm.WindowState = FormWindowState.Minimized;
+            taskbarForm.Activate();
             taskbarForm.Focus();
             menus.SwitchOpenCloseByTaskbarItem();
         }

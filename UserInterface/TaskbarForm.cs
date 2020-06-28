@@ -8,14 +8,22 @@ namespace SystemTrayMenu.UserInterface
         public TaskbarForm()
         {
             InitializeComponent();
-            
-            //Hide the form under the taskbar of primary screen
+            SetLocation();
+        }
+
+        private void TaskbarForm_LocationChanged(object sender, System.EventArgs e)
+        {
+            SetLocation();
+        }
+
+        private void SetLocation()
+        {
             Screen screen = Screen.PrimaryScreen;
-            Location = new Point(screen.Bounds.Right - 155,
-                screen.Bounds.Bottom);
-            //This would be above of taskbar
-            //Location = new Point(screen.Bounds.Right - 155,
-            //    screen.Bounds.Bottom - Height - 65);
+            Location = new Point(screen.Bounds.Right - Size.Width,
+            //we could show behind taskbar?
+            //screen.Bounds.Bottom- Size.Height);
+            //but at the moment we dont want to see this
+            screen.Bounds.Bottom); // - Size.Height);
         }
     }
 }

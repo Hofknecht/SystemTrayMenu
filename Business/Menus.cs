@@ -710,7 +710,8 @@ namespace SystemTrayMenu.Business
 
         private static bool IsActive()
         {
-            return Form.ActiveForm is Menu;
+            return Form.ActiveForm is Menu ||
+                Form.ActiveForm is UserInterface.TaskbarForm;
         }
 
         private void MenusFadeOut()
