@@ -39,6 +39,7 @@ namespace SystemTrayMenu
             taskbarForm.Activated += TasbkarItemActivated;
             taskbarForm.Resize += TaskbarForm_Resize;
             taskbarForm.FormClosed += TaskbarForm_FormClosed;
+            taskbarForm.Deactivate += TaskbarForm_Deactivate;
             DllImports.NativeMethods.User32ShowInactiveTopmost(taskbarForm);
         }
 
@@ -49,15 +50,19 @@ namespace SystemTrayMenu
 
         private void TaskbarForm_Resize(object sender, EventArgs e)
         {
-            if (taskbarForm.WindowState == FormWindowState.Minimized)
-            {
-                taskbarForm.WindowState = FormWindowState.Normal;
-            }
+            taskbarForm.WindowState = FormWindowState.Normal;
         }
 
         internal void TasbkarItemActivated(object sender, EventArgs e)
         {
+            taskbarForm.WindowState = FormWindowState.Normal;
+            taskbarForm.Activate();
+            taskbarForm.Focus();
             menus.SwitchOpenCloseByTaskbarItem();
+        }
+        private void TaskbarForm_Deactivate(object sender, EventArgs e)
+        {
+            taskbarForm.WindowState = FormWindowState.Normal;
         }
 
         public void Dispose()

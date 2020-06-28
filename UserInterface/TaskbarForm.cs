@@ -20,10 +20,7 @@ namespace SystemTrayMenu.UserInterface
         {
             Screen screen = Screen.PrimaryScreen;
             Location = new Point(screen.Bounds.Right - Size.Width,
-            //we could show behind taskbar?
-            //screen.Bounds.Bottom- Size.Height);
-            //but at the moment we dont want to see this
-            screen.Bounds.Bottom + 80); // - Size.Height);
+            screen.Bounds.Bottom + 80); //Hide below taskbar
         }
     }
 }
