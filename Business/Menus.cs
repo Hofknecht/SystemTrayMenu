@@ -580,7 +580,11 @@ namespace SystemTrayMenu.Business
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
 
-                if (!menus[0].IsUsable)
+                if (rowData == null)
+                {
+                    //Case when filtering a previous menu
+                }
+                else if (!menus[0].IsUsable)
                 {
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
                     row.Selected = false;
