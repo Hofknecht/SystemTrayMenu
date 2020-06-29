@@ -23,8 +23,12 @@ namespace SystemTrayMenu.Utilities
                                 Process.GetCurrentProcess().ProcessName).
                             Where(p => p.Id != ownPID))
                         {
-                            p.Kill();
+                            if (!p.CloseMainWindow())
+                            {
+                                p.Kill();
+                            }
                             p.WaitForExit();
+                            p.Close();
                             killedAProcess = true;
                         }
                     }
