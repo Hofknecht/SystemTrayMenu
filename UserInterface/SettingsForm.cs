@@ -197,7 +197,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (HotkeyControl.RegisterHotKey(modifierKeyCode, virtualKeyCode, handler) < 0)
                 {
-#warning logging
                     //LOG.DebugFormat("Failed to register {0} to hotkey: {1}", functionName, hotkeyString);
                     if (failedKeys.Length > 0)
                     {
@@ -206,52 +205,45 @@ namespace SystemTrayMenu.UserInterface
                     failedKeys.Append(hotkeyString);
                     return false;
                 }
-#warning logging
                 //LOG.DebugFormat("Registered {0} to hotkey: {1}", functionName, hotkeyString);
             }
             else
             {
-#warning logging
                 //LOG.InfoFormat("Skipping hotkey registration for {0}, no hotkey set!", functionName);
             }
             return true;
         }
 
-        private static bool RegisterWrapper(StringBuilder failedKeys, HotKeyHandler handler, bool ignoreFailedRegistration)
+        private static bool RegisterWrapper(StringBuilder failedKeys, HotKeyHandler handler)
         {
-#warning todo with Properties.Settings.Default.HotKey
             //IniValue hotkeyValue = _conf.Values[configurationKey];
-            try
-            {
+            //try
+            //{
                 bool success = RegisterHotkey(failedKeys,
                     //hotkeyValue.Value.ToString(), 
                     Properties.Settings.Default.HotKey,
                     handler);
-                if (!success && ignoreFailedRegistration)
-                {
-#warning logging
-                    //LOG.DebugFormat("Ignoring failed hotkey registration for {0}, with value '{1}', resetting to 'None'.", functionName, hotkeyValue);
-#warning todo with Properties.Settings.Default.HotKey
-                    //_conf.Values[configurationKey].Value = Keys.None.ToString();
-                    //_conf.IsDirty = true;
-                }
+                //if (!success && ignoreFailedRegistration)
+                //{
+                //    //LOG.DebugFormat("Ignoring failed hotkey registration for {0}, with value '{1}', resetting to 'None'.", functionName, hotkeyValue);
+                //    //_conf.Values[configurationKey].Value = Keys.None.ToString();
+                //    //_conf.IsDirty = true;
+                //}
                 return success;
-            }
-            catch (Exception)
-            {
-#warning logging
-                //LOG.Warn(ex);
-                //LOG.WarnFormat("Restoring default hotkey for {0}, stored under {1} from '{2}' to '{3}'", functionName, configurationKey, hotkeyValue.Value, hotkeyValue.Attributes.DefaultValue);
+            //}
+            //catch (Exception)
+            //{
+            //    //LOG.Warn(ex);
+            //    //LOG.WarnFormat("Restoring default hotkey for {0}, stored under {1} from '{2}' to '{3}'", functionName, configurationKey, hotkeyValue.Value, hotkeyValue.Attributes.DefaultValue);
 
-                // when getting an exception the key wasn't found: reset the hotkey value
-                //hotkeyValue.UseValueOrDefault(null);
-                //hotkeyValue.ContainingIniSection.IsDirty = true;
-#warning todo set default Properties.Settings.Default.HotKey = 
-                return RegisterHotkey(failedKeys,
-                    //hotkeyValue.Value.ToString(), 
-                    Properties.Settings.Default.HotKey,
-                    handler);
-            }
+            //    // when getting an exception the key wasn't found: reset the hotkey value
+            //    //hotkeyValue.UseValueOrDefault(null);
+            //    //hotkeyValue.ContainingIniSection.IsDirty = true;
+            //    return RegisterHotkey(failedKeys,
+            //        //hotkeyValue.Value.ToString(), 
+            //        Properties.Settings.Default.HotKey,
+            //        handler);
+            //}
         }
 
         /// <summary>
@@ -276,7 +268,7 @@ namespace SystemTrayMenu.UserInterface
             //}
             bool success = true;
             StringBuilder failedKeys = new StringBuilder();
-            if (!RegisterWrapper(failedKeys, TODO, ignoreFailedRegistration))
+            if (!RegisterWrapper(failedKeys, handler))
             {
                 success = false;
             }
@@ -289,8 +281,6 @@ namespace SystemTrayMenu.UserInterface
                 }
                 else
                 {
-#warning todo with Properties.Settings.Default.HotKey
-
                     // if failures have been ignored, the config has probably been updated
                     //if (_conf.IsDirty)
                     //{
@@ -301,9 +291,9 @@ namespace SystemTrayMenu.UserInterface
             return success || ignoreFailedRegistration;
         }
 
-        private static void TODO()
+        private static void handler()
         {
-#warning TODO
+            //todo
         }
 
         ///// <summary>
@@ -342,12 +332,8 @@ namespace SystemTrayMenu.UserInterface
         private static bool HandleFailedHotkeyRegistration(string failedKeys)
         {
             bool success = false;
-#warning todo
-            //var warningTitle = Language.GetString(LangKey.warning);
-            string warningTitle = "Warning";
-            //var message = string.Format(Language.GetString(LangKey.warning_hotkeys), failedKeys, IsOneDriveBlockingHotkey() ? " (OneDrive)" : "");
-            string message = Translator.GetText("Could not register the hot key.");
-            //DialogResult dr = MessageBox.Show(Instance, message, warningTitle, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
+            string warningTitle = Translator.GetText("Warning");
+            string message = Translator.GetText("Could not register the hot key.") + failedKeys;
             DialogResult dr = MessageBox.Show(message, warningTitle, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.Retry)
             {

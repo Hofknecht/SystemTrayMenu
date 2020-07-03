@@ -70,7 +70,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowDeselected(int iMenuBefore, int rowIndex, DataGridView dgv) //iMenuBefore not needed
+        internal void RowDeselected(int rowIndex, DataGridView dgv) //iMenuBefore not needed
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
@@ -115,7 +115,7 @@ namespace SystemTrayMenu.Handler
                     }
                     mouseMoveEvents = 0;
                 }
-                else if (DateTime.Now - dateTimeLastMouseMoveEvent < 
+                else if (DateTime.Now - dateTimeLastMouseMoveEvent <
                     new TimeSpan(0, 0, 0, 0, 200))
                 {
                     mouseMoveEvents++;
@@ -189,8 +189,8 @@ namespace SystemTrayMenu.Handler
         {
             timerStartLoad.Stop();
             timerStartLoad.Dispose();
-            dgv.Dispose();
-            dgvTmp.Dispose();
+            dgv?.Dispose();
+            dgvTmp?.Dispose();
         }
     }
 }

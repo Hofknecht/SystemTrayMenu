@@ -43,7 +43,7 @@ namespace SystemTrayMenu.UserInterface
             fading.ChangeOpacity += Fading_ChangeOpacity;
             void Fading_ChangeOpacity(object sender, double newOpacity)
             {
-                if(!IsDisposed && !Disposing)
+                if (!IsDisposed && !Disposing)
                 {
                     Opacity = newOpacity;
                 }
@@ -238,7 +238,9 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void AdjustSizeAndLocation(Menu menuPredecessor = null,
+        internal void AdjustSizeAndLocation(int screenHeight,
+            int screenRight, int taskbarHeight,
+            Menu menuPredecessor = null,
             bool directionToRight = false)
         {
             CheckForAutoResizeRowDone();
@@ -272,14 +274,14 @@ namespace SystemTrayMenu.UserInterface
                         row.Height = dgv.RowTemplate.Height;
                     }
                     dgv.Tag = true;
-                } 
+                }
             }
 
             int dgvHeightNeeded = dgv.Rows.GetRowsHeight(
                 DataGridViewElementStates.None);
             int menuRestNeeded = Height - dgv.Height;
 
-            int dgvHeightMax = Statics.ScreenHeight - Statics.TaskbarHeight -
+            int dgvHeightMax = screenHeight - taskbarHeight -
                 menuRestNeeded;
 
             if (dgvHeightNeeded > dgvHeightMax)
@@ -298,7 +300,7 @@ namespace SystemTrayMenu.UserInterface
             int x;
             if (menuPredecessor == null)
             {
-                x = Statics.ScreenRight - Width;
+                x = screenRight - Width;
             }
             else
             {
@@ -327,7 +329,7 @@ namespace SystemTrayMenu.UserInterface
             int y;
             if (menuPredecessor == null)
             {
-                y = Statics.ScreenHeight - Statics.TaskbarHeight - Height;
+                y = screenHeight - taskbarHeight - Height;
             }
             else
             {

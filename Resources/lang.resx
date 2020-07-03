@@ -183,4 +183,10 @@
   <data name="TextFirstStart" xml:space="preserve">
     <value>Read the FAQ and then choose a root directory for the SystemTrayMenu.</value>
   </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Select Folder" xml:space="preserve">
+    <value>Select Folder</value>
+  </data>
 </root>

@@ -77,25 +77,25 @@ namespace SystemTrayMenu.Helper
             RegisterHotKey(keyModifiersNone, key);
         }
 
-        internal void RegisterHotKey(string hotKeyString)
+        internal void RegisterHotKey()
         {
             KeyboardHookModifierKeys modifiers = KeyboardHookModifierKeys.None;
             string modifiersString = Properties.Settings.Default.HotKey;
             if (!string.IsNullOrEmpty(modifiersString))
             {
-                if (modifiersString.ToLower().Contains("alt"))
+                if (modifiersString.ToUpperInvariant().Contains("ALT", StringComparison.InvariantCulture))
                 {
                     modifiers |= KeyboardHookModifierKeys.Alt;
                 }
-                if (modifiersString.ToLower().Contains("ctrl"))
+                if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture))
                 {
                     modifiers |= KeyboardHookModifierKeys.Control;
                 }
-                if (modifiersString.ToLower().Contains("shift"))
+                if (modifiersString.ToUpperInvariant().Contains("SHIFT", StringComparison.InvariantCulture))
                 {
                     modifiers |= KeyboardHookModifierKeys.Shift;
                 }
-                if (modifiersString.ToLower().Contains("win"))
+                if (modifiersString.ToUpperInvariant().Contains("WIN", StringComparison.InvariantCulture))
                 {
                     modifiers |= KeyboardHookModifierKeys.Win;
                 }

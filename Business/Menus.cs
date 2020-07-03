@@ -1,5 +1,4 @@
-﻿using Clearcove.Logging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,13 +27,18 @@ namespace SystemTrayMenu.Business
         private readonly List<BackgroundWorker> workersSubMenu = new List<BackgroundWorker>();
 
         private readonly WaitToLoadMenu waitToOpenMenu = new WaitToLoadMenu();
-        private readonly KeyboardInput keyboardInput;
+        private readonly KeyboardInput keyboardInput = null;
         private readonly Timer timerStillActiveCheck = new Timer();
         private readonly WaitLeave waitLeave = new WaitLeave(MenuDefines.TimeUntilClose);
         private DateTime deactivatedTime = DateTime.MinValue;
 
         private IEnumerable<Menu> AsEnumerable => menus.Where(m => m != null && !m.IsDisposed);
         private List<Menu> AsList => AsEnumerable.ToList();
+
+        private readonly int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+        private readonly int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+        private readonly int screenRight = Screen.PrimaryScreen.Bounds.Right;
+        private readonly int taskbarHeight = new WindowsTaskbar().Size.Height;
 
         public Menus()
         {
@@ -218,9 +222,10 @@ namespace SystemTrayMenu.Business
             {
                 worker.Dispose();
             }
-            waitLeave.Dispose();
+            waitToOpenMenu.Dispose();
             keyboardInput.Dispose();
             timerStillActiveCheck.Dispose();
+            waitLeave.Dispose();
             IconReader.Dispose();
             DisposeMenu(menus[0]);
         }
@@ -374,7 +379,8 @@ namespace SystemTrayMenu.Business
         {
             menus[0] = Create(GetData(workerMainMenu, Config.Path, 0),
                 Path.GetFileName(Config.Path));
-            menus[0].AdjustSizeAndLocation();
+            menus[0].AdjustSizeAndLocation(screenHeight,
+                screenRight, taskbarHeight);
             DisposeMenu(menus[0]);
         }
 
@@ -737,7 +743,8 @@ namespace SystemTrayMenu.Business
             int widthPredecessors = -1; // -1 padding
             bool directionToRight = false;
 
-            menus[0].AdjustSizeAndLocation();
+            menus[0].AdjustSizeAndLocation(screenHeight,
+                screenRight, taskbarHeight);
 
             foreach (Menu menu in AsEnumerable.Where(m => m.Level > 0))
             {
@@ -754,14 +761,14 @@ namespace SystemTrayMenu.Business
                         widthPredecessors -= newWith;
                     }
                 }
-                else if (Statics.ScreenWidth <
-                    widthPredecessors + menus[0].Width + menu.Width)
+                else if (screenWidth < widthPredecessors + menus[0].Width + menu.Width)
                 {
                     directionToRight = true;
                     widthPredecessors -= newWith;
                 }
 
-                menu.AdjustSizeAndLocation(menuPredecessor, directionToRight);
+                menu.AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight,
+                    menuPredecessor, directionToRight);
                 widthPredecessors += menu.Width - menu.Padding.Left;
                 menuPredecessor = menu;
             }

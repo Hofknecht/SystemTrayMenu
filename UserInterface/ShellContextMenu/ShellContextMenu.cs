@@ -758,8 +758,8 @@ namespace SystemTrayMenu.Utilities
             FOLDER = 0x20000000,
             GHOSTED = 0x8000,
             HASPROPSHEET = 0x40,
-            HASSTORAGE = 0x400000,
-            HASSUBFOLDER = 0x80000000,
+            //HASSTORAGE = 0x400000,
+            //HASSUBFOLDER = 0x80000000,
             HIDDEN = 0x80000,
             ISSLOW = 0x4000,
             LINK = 0x10000,
@@ -771,7 +771,7 @@ namespace SystemTrayMenu.Utilities
             STORAGE = 8,
             STORAGEANCESTOR = 0x800000,
             STORAGECAPMASK = 0x70c50008,
-            STREAM = 0x400000,
+            //STREAM = 0x400000,
             VALIDATE = 0x1000000
         }
 
@@ -846,10 +846,10 @@ namespace SystemTrayMenu.Utilities
         {
             HIDE = 0,
             SHOWNORMAL = 1,
-            NORMAL = 1,
+            //NORMAL = 1,
             SHOWMINIMIZED = 2,
             SHOWMAXIMIZED = 3,
-            MAXIMIZE = 3,
+            //MAXIMIZE = 3,
             SHOWNOACTIVATE = 4,
             SHOW = 5,
             MINIMIZE = 6,
@@ -934,7 +934,7 @@ namespace SystemTrayMenu.Utilities
             IME_CONTROL = 0x283,
             IME_ENDCOMPOSITION = 0x10E,
             IME_KEYDOWN = 0x290,
-            IME_KEYLAST = 0x10F,
+            //IME_KEYLAST = 0x10F,
             IME_KEYUP = 0x291,
             IME_NOTIFY = 0x282,
             IME_REQUEST = 0x288,
@@ -947,7 +947,7 @@ namespace SystemTrayMenu.Utilities
             INPUTLANGCHANGE = 0x51,
             INPUTLANGCHANGEREQUEST = 0x50,
             KEYDOWN = 0x100,
-            KEYFIRST = 0x100,
+            //KEYFIRST = 0x100,
             KEYLAST = 0x108,
             KEYUP = 0x101,
             KILLFOCUS = 0x8,
@@ -983,8 +983,8 @@ namespace SystemTrayMenu.Utilities
             MOUSEHOVER = 0x2A1,
             MOUSELAST = 0x20A,
             MOUSELEAVE = 0x2A3,
-            MOUSEMOVE = 0x200,
-            MOUSEWHEEL = 0x20A,
+            //MOUSEMOVE = 0x200,
+            //MOUSEWHEEL = 0x20A,
             MOVE = 0x3,
             MOVING = 0x216,
             NCACTIVATE = 0x86,
@@ -1070,7 +1070,7 @@ namespace SystemTrayMenu.Utilities
             VSCROLLCLIPBOARD = 0x30A,
             WINDOWPOSCHANGED = 0x47,
             WINDOWPOSCHANGING = 0x46,
-            WININICHANGE = 0x1A,
+            //WININICHANGE = 0x1A,
             SH_NOTIFY = 0x0401
         }
 
@@ -1079,7 +1079,7 @@ namespace SystemTrayMenu.Utilities
         private enum MFT : uint
         {
             GRAYED = 0x00000003,
-            DISABLED = 0x00000003,
+            //DISABLED = 0x00000003,
             CHECKED = 0x00000008,
             SEPARATOR = 0x00000800,
             RADIOCHECK = 0x00000200,
@@ -1098,12 +1098,12 @@ namespace SystemTrayMenu.Utilities
         private enum MFS : uint
         {
             GRAYED = 0x00000003,
-            DISABLED = 0x00000003,
+            //DISABLED = 0x00000003,
             CHECKED = 0x00000008,
             HILITE = 0x00000080,
             ENABLED = 0x00000000,
-            UNCHECKED = 0x00000000,
-            UNHILITE = 0x00000000,
+            //UNCHECKED = 0x00000000,
+            //UNHILITE = 0x00000000,
             DEFAULT = 0x00001000
         }
 

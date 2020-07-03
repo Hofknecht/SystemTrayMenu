@@ -421,19 +421,19 @@ namespace SystemTrayMenu.UserInterface.Controls
             Keys modifiers = Keys.None;
             if (!string.IsNullOrEmpty(modifiersString))
             {
-                if (modifiersString.ToLower().Contains("alt"))
+                if (modifiersString.ToUpperInvariant().Contains("ALT", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Alt;
                 }
-                if (modifiersString.ToLower().Contains("ctrl"))
+                if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Control;
                 }
-                if (modifiersString.ToLower().Contains("shift"))
+                if (modifiersString.ToUpperInvariant().Contains("SHIFT", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Shift;
                 }
-                if (modifiersString.ToLower().Contains("win"))
+                if (modifiersString.ToUpperInvariant().Contains("WIN", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.LWin;
                 }
@@ -452,8 +452,9 @@ namespace SystemTrayMenu.UserInterface.Controls
                 }
                 try
                 {
-                    hotkey = hotkey.Replace("PgDn", "PageDown").
-                        Replace("PgUp", "PageUp");
+                    hotkey = hotkey.
+                        Replace("PgDn", "PageDown", StringComparison.InvariantCulture).
+                        Replace("PgUp", "PageUp", StringComparison.InvariantCulture);
                     key = (Keys)Enum.Parse(typeof(Keys), hotkey);
                 }
                 catch (ArgumentException ex)

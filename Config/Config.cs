@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using SystemTrayMenu.UserInterface.FolderDialog;
+using SystemTrayMenu.UserInterface.Dialogs;
 using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu

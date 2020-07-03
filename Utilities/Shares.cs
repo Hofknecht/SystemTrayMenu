@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
+using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
-#warning put each class in extra file
 
 namespace SystemTrayMenu.Utilities
 {
@@ -421,12 +421,12 @@ namespace SystemTrayMenu.Utilities
                         if (1 == level)
                         {
                             SHARE_INFO_1 si = (SHARE_INFO_1)Marshal.PtrToStructure(pItem, t);
-                            shares.Add(si.NetName, string.Empty, si.ShareType, si.Remark);
+                            shares?.Add(si.NetName, string.Empty, si.ShareType, si.Remark);
                         }
                         else
                         {
                             SHARE_INFO_2 si = (SHARE_INFO_2)Marshal.PtrToStructure(pItem, t);
-                            shares.Add(si.NetName, si.Path, si.ShareType, si.Remark);
+                            shares?.Add(si.NetName, si.Path, si.ShareType, si.Remark);
                         }
                     }
                 }
@@ -482,12 +482,12 @@ namespace SystemTrayMenu.Utilities
                         if (1 == level)
                         {
                             SHARE_INFO_1_9x si = (SHARE_INFO_1_9x)Marshal.PtrToStructure(pItem, t);
-                            shares.Add(si.NetName, string.Empty, si.ShareType, si.Remark);
+                            shares?.Add(si.NetName, string.Empty, si.ShareType, si.Remark);
                         }
                         else
                         {
                             SHARE_INFO_50 si = (SHARE_INFO_50)Marshal.PtrToStructure(pItem, t);
-                            shares.Add(si.NetName, si.Path, si.ShareType, si.Remark);
+                            shares?.Add(si.NetName, si.Path, si.ShareType, si.Remark);
                         }
                     }
                 }
@@ -512,7 +512,7 @@ namespace SystemTrayMenu.Utilities
         {
             if (null != server && 0 != server.Length && !IsW2KUp)
             {
-                server = server.ToUpper();
+                server = server.ToUpperInvariant();
 
                 // On NT4, 9x and Me, server has to start with "\\"
                 if (!('\\' == server[0] && '\\' == server[1]))
@@ -550,7 +550,7 @@ namespace SystemTrayMenu.Utilities
                 return false;
             }
 
-            char drive = char.ToUpper(fileName[0]);
+            char drive = char.ToUpper(fileName[0], CultureInfo.InvariantCulture);
             if ('A' > drive || drive > 'Z')
             {
                 return false;
@@ -655,7 +655,7 @@ namespace SystemTrayMenu.Utilities
                     return fileName;
 
                 default:
-                    Console.WriteLine("Unknown return value: {0}", nRet);
+                    //Console.WriteLine("Unknown return value: {0}", nRet);
                     return string.Empty;
             }
         }

@@ -23,7 +23,6 @@ namespace SystemTrayMenu.UserInterface
         private const double ShownMinus = 0.80; //Shown - StepIn
 
         private readonly Timer timer = new Timer();
-        private static readonly object lockTimerEnable = new object();
         private FadingState state = FadingState.Idle;
         private double opacity = 0.00;
         private bool visible = false;

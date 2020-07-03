@@ -3,8 +3,9 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SystemTrayMenu.Utilities;
 
-namespace SystemTrayMenu.UserInterface.FolderDialog
+namespace SystemTrayMenu.UserInterface.Dialogs
 {
     public class FolderDialog : IFolderDialog, IDisposable
     {
@@ -71,7 +72,7 @@ namespace SystemTrayMenu.UserInterface.FolderDialog
                 }
             }
 
-            if (frm.Show(owner.Handle) == NativeMethods.S_OK)
+            if (owner != null && frm.Show(owner.Handle) == NativeMethods.S_OK)
             {
                 if (frm.GetResult(out NativeMethods.IShellItem shellItem) == NativeMethods.S_OK)
                 {
@@ -106,7 +107,7 @@ namespace SystemTrayMenu.UserInterface.FolderDialog
                 frm.FileName = "any";
                 if (InitialFolder != null) { frm.InitialDirectory = InitialFolder; }
                 frm.OverwritePrompt = false;
-                frm.Title = "Select Folder";
+                frm.Title = Translator.GetText("Select Folder");
                 frm.ValidateNames = false;
                 if (frm.ShowDialog(owner) == DialogResult.OK)
                 {

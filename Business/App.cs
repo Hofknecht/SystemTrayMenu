@@ -17,11 +17,6 @@ namespace SystemTrayMenu
 
         public App()
         {
-            Screen screen = Screen.PrimaryScreen;
-            Statics.ScreenHeight = screen.Bounds.Height;
-            Statics.ScreenWidth = screen.Bounds.Width;
-            Statics.ScreenRight = screen.Bounds.Right;
-            Statics.TaskbarHeight = new WindowsTaskbar().Size.Height;
             AppRestart.BeforeRestarting += Dispose;
             SystemEvents.DisplaySettingsChanged += AppRestart.ByDisplaySettings;
             menus.LoadStarted += menuNotifyIcon.LoadingStart;

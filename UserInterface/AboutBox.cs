@@ -332,7 +332,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (!a.IsDynamic)
                 {
-                    nvc.Add("CodeBase", a.CodeBase.Replace("file:///", ""));
+                    nvc.Add("CodeBase", a.CodeBase.Replace("file:///", "", StringComparison.InvariantCulture));
                 }
             }
             catch (NotSupportedException)
@@ -584,22 +584,22 @@ namespace SystemTrayMenu.UserInterface
         // </summary>
         private string ReplaceTokens(string s)
         {
-            s = s.Replace("%title%", EntryAssemblyAttrib("title"));
-            s = s.Replace("%copyright%", EntryAssemblyAttrib("copyright"));
-            s = s.Replace("%description%", EntryAssemblyAttrib("description"));
-            s = s.Replace("%company%", EntryAssemblyAttrib("company"));
-            s = s.Replace("%product%", EntryAssemblyAttrib("product"));
-            s = s.Replace("%trademark%", EntryAssemblyAttrib("trademark"));
-            s = s.Replace("%year%", DateTime.Now.Year.ToString(CultureInfo.InvariantCulture));
-            s = s.Replace("%version%", EntryAssemblyAttrib("version"));
-            s = s.Replace("%builddate%", EntryAssemblyAttrib("builddate"));
+            s = s.Replace("%title%", EntryAssemblyAttrib("title"), StringComparison.InvariantCulture);
+            s = s.Replace("%copyright%", EntryAssemblyAttrib("copyright"), StringComparison.InvariantCulture);
+            s = s.Replace("%description%", EntryAssemblyAttrib("description"), StringComparison.InvariantCulture);
+            s = s.Replace("%company%", EntryAssemblyAttrib("company"), StringComparison.InvariantCulture);
+            s = s.Replace("%product%", EntryAssemblyAttrib("product"), StringComparison.InvariantCulture);
+            s = s.Replace("%trademark%", EntryAssemblyAttrib("trademark"), StringComparison.InvariantCulture);
+            s = s.Replace("%year%", DateTime.Now.Year.ToString(CultureInfo.InvariantCulture), StringComparison.InvariantCulture);
+            s = s.Replace("%version%", EntryAssemblyAttrib("version"), StringComparison.InvariantCulture);
+            s = s.Replace("%builddate%", EntryAssemblyAttrib("builddate"), StringComparison.InvariantCulture);
             return s;
         }
 
         // <summary>
         // populate details for a single assembly
         // </summary>
-        private void PopulateAssemblyDetails(Assembly a, ListView lvw)
+        private static void PopulateAssemblyDetails(Assembly a, ListView lvw)
         {
             lvw.Items.Clear();
 
@@ -617,7 +617,7 @@ namespace SystemTrayMenu.UserInterface
         // <summary>
         // matches assembly by Assembly.GetName.Name; returns nothing if no match
         // </summary>
-        private Assembly MatchAssemblyByName(string AssemblyName)
+        private static Assembly MatchAssemblyByName(string AssemblyName)
         {
             foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
             {

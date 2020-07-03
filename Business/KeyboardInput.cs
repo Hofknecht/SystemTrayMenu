@@ -12,40 +12,28 @@ namespace SystemTrayMenu.Handler
 {
     internal class KeyboardInput : IDisposable
     {
-        public event EventHandlerEmpty HotKeyPressed;
-        public event EventHandlerEmpty ClosePressed;
-        public event Action<DataGridView, int> RowSelected;
-        public event Action<int, int, DataGridView> RowDeselected;
+        internal event EventHandlerEmpty HotKeyPressed;
+        internal event EventHandlerEmpty ClosePressed;
+        internal event Action<DataGridView, int> RowSelected;
+        internal event Action<int, DataGridView> RowDeselected;
         internal Action<DataGridView, int> EnterPressed;
-        public event EventHandlerEmpty Cleared;
+        internal event EventHandlerEmpty Cleared;
+
+        internal bool InUse = false;
+        internal int iRowKey = -1;
+        internal int iMenuKey = 0;
 
         private readonly Menu[] menus;
         private readonly KeyboardHook hook = new KeyboardHook();
-        private readonly Timer timerKeySearch = new Timer();
-        public int iRowKey = -1;
-        public int iMenuKey = 0;
-        private string KeySearchString = string.Empty;
-
-        public bool InUse = false;
 
         public KeyboardInput(Menu[] menus)
         {
             this.menus = menus;
-
-            timerKeySearch.Interval = MenuDefines.KeySearchInterval;
-            timerKeySearch.Tick += TimerKeySearch_Tick;
-            void TimerKeySearch_Tick(object sender, EventArgs e)
-            {
-                // this search has expired, reset search
-                timerKeySearch.Stop();
-                KeySearchString = string.Empty;
-            }
         }
 
         public void Dispose()
         {
             hook.Dispose();
-            timerKeySearch.Dispose();
         }
 
         private int GetMenuIndex(in Menu currentMenu)
@@ -68,7 +56,7 @@ namespace SystemTrayMenu.Handler
             {
                 try
                 {
-                    hook.RegisterHotKey(Properties.Settings.Default.HotKey);
+                    hook.RegisterHotKey();
                     hook.KeyPressed += hook_KeyPressed;
                     void hook_KeyPressed(object sender, KeyPressedEventArgs e)
                     {
@@ -178,29 +166,6 @@ namespace SystemTrayMenu.Handler
                 Menu menu = menus[iMenuKey];
                 menu.KeyPressedSearch(letter);
 
-#warning remove if not more needed
-                // Old Search by letters
-                //timerKeySearch.Stop();
-                //if (string.IsNullOrEmpty(KeySearchString))
-                //{
-                //    // no search string set, start new search with initial letter
-                //    KeySearchString += letter;
-                //    SelectByKey(Keys.None, KeySearchString);
-                //}
-                //else if (KeySearchString.Length == 1 && KeySearchString.LastOrDefault().ToString(CultureInfo.InvariantCulture) == letter)
-                //{
-                //    // initial letter pressed again, jump to next element
-                //    SelectByKey(Keys.None, letter);
-                //}
-                //else
-                //{
-                //    // new character for the search string, narrow down the search
-                //    KeySearchString += letter;
-                //    SelectByKey(Keys.None, KeySearchString, true);
-                //}
-                //// give user some time to continue with this search
-                //timerKeySearch.Start();
-
                 e.Handled = true;
             }
         }
@@ -295,7 +260,7 @@ namespace SystemTrayMenu.Handler
                         }
                         else
                         {
-                            RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
+                            RowDeselected(iRowBefore, dgvBefore);
                             SelectRow(dgv, iRowKey);
                             EnterPressed.Invoke(dgv, iRowKey);
                         }
@@ -305,7 +270,7 @@ namespace SystemTrayMenu.Handler
                     if (SelectMatchedReverse(dgv, iRowKey) ||
                         SelectMatchedReverse(dgv, dgv.Rows.Count - 1))
                     {
-                        RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
+                        RowDeselected(iRowBefore, dgvBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
@@ -314,7 +279,7 @@ namespace SystemTrayMenu.Handler
                     if (SelectMatched(dgv, iRowKey) ||
                         SelectMatched(dgv, 0))
                     {
-                        RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
+                        RowDeselected(iRowBefore, dgvBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
@@ -334,8 +299,7 @@ namespace SystemTrayMenu.Handler
                                 if (SelectMatched(dgv, iRowKey) ||
                                     SelectMatched(dgv, 0))
                                 {
-                                    RowDeselected(iMenuBefore,
-                                        iRowBefore, dgvBefore);
+                                    RowDeselected(iRowBefore, dgvBefore);
                                     SelectRow(dgv, iRowKey);
                                     toClear = true;
                                 }
@@ -352,7 +316,7 @@ namespace SystemTrayMenu.Handler
                             if (SelectMatched(dgv, iRowKey) ||
                                 SelectMatched(dgv, 0))
                             {
-                                RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
+                                RowDeselected(iRowBefore, dgvBefore);
                                 SelectRow(dgv, iRowKey);
                                 toClear = true;
                             }
@@ -371,7 +335,7 @@ namespace SystemTrayMenu.Handler
                             if (SelectMatched(dgv, dgv.SelectedRows[0].Index) ||
                                 SelectMatched(dgv, 0))
                             {
-                                RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
+                                RowDeselected(iRowBefore, dgvBefore);
                                 SelectRow(dgv, iRowKey);
                                 toClear = true;
                             }
@@ -379,7 +343,7 @@ namespace SystemTrayMenu.Handler
                     }
                     else
                     {
-                        RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
+                        RowDeselected(iRowBefore, dgvBefore);
                         iMenuKey = 0;
                         iRowKey = -1;
                         toClear = true;
@@ -387,7 +351,7 @@ namespace SystemTrayMenu.Handler
                     }
                     break;
                 case Keys.Escape:
-                    RowDeselected(iMenuBefore, iRowBefore, dgvBefore);
+                    RowDeselected(iRowBefore, dgvBefore);
                     iMenuKey = 0;
                     iRowKey = -1;
                     toClear = true;
@@ -399,7 +363,7 @@ namespace SystemTrayMenu.Handler
                         if (SelectMatched(dgv, iRowKey, keyInput) ||
                             SelectMatched(dgv, 0, keyInput))
                         {
-                            RowDeselected(iMenuBefore, iRowBefore, null);
+                            RowDeselected(iRowBefore, null);
                             SelectRow(dgv, iRowKey);
                             toClear = true;
                         }
@@ -409,7 +373,7 @@ namespace SystemTrayMenu.Handler
                             if (SelectMatched(dgv, iRowKey, keyInput) ||
                                 SelectMatched(dgv, 0, keyInput))
                             {
-                                RowDeselected(iMenuBefore, iRowBefore, null);
+                                RowDeselected(iRowBefore, null);
                                 SelectRow(dgv, iRowKey);
                             }
                             else

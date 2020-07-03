@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SystemTrayMenu.UserInterface.FolderDialog
+namespace SystemTrayMenu.UserInterface.Dialogs
 {
     public interface IFolderDialog
     {
