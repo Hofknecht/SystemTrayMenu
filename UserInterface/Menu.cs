@@ -250,28 +250,29 @@ namespace SystemTrayMenu.UserInterface
                     factor = 1.5;
                 }
 
-                if (dgv.Tag == null)
+                if (menuPredecessor == null)
                 {
-                    if (menuPredecessor == null)
+                    if (dgv.Tag == null && dgv.Rows.Count > 0)
                     {
                         dgv.AutoResizeRows();
-                        if (factor > 1)
+                        dgv.RowTemplate.Height = (int)(dgv.Rows[0].Height * factor);
+                        foreach (DataGridViewRow row in dgv.Rows)
                         {
-                            dgv.RowTemplate.Height = (int)(dgv.RowTemplate.Height * factor);
-                            foreach (DataGridViewRow row in dgv.Rows)
-                            {
-                                row.Height = dgv.RowTemplate.Height;
-                            }
+                            row.Height = dgv.RowTemplate.Height;
                         }
                         dgv.Tag = true;
                     }
-                    else
+                }
+                else
+                {
+                    dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().
+                        RowTemplate.Height;
+                    foreach (DataGridViewRow row in dgv.Rows)
                     {
-                        dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().
-                            RowTemplate.Height;
-                        dgv.Tag = true;
+                        row.Height = dgv.RowTemplate.Height;
                     }
-                }   
+                    dgv.Tag = true;
+                } 
             }
 
             int dgvHeightNeeded = dgv.Rows.GetRowsHeight(
