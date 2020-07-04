@@ -227,6 +227,7 @@
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>taskkill /fi "pid gt 0" /im SystemTrayMenu.exe
-taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe</PreBuildEvent>
+taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe
+EXIT 0</PreBuildEvent>
   </PropertyGroup>
 </Project>
