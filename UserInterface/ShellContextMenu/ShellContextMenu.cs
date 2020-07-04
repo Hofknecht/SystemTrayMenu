@@ -347,7 +347,7 @@ namespace SystemTrayMenu.Utilities
         /// <returns>Array of PIDLs</returns>
         protected IntPtr[] GetPIDLs(DirectoryInfo[] arrFI)
         {
-            if (null == arrFI || 0 == arrFI.Length)
+            if (null == arrFI || 0 == arrFI.Length || arrFI[0].Parent == null)
             {
                 return null;
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -276,7 +277,42 @@ namespace SystemTrayMenu.Business
 
                 try
                 {
-                    directories = Directory.GetDirectories(path);
+                    if (LnkHelper.IsNetworkRoot(path))
+                    {
+                        directories = GetDirectoriesInNetworkLocation(path);
+                        static string[] GetDirectoriesInNetworkLocation(string networkLocationRootPath)
+                        {
+                            Process cmd = new Process();
+                            cmd.StartInfo.FileName = "cmd.exe";
+                            cmd.StartInfo.RedirectStandardInput = true;
+                            cmd.StartInfo.RedirectStandardOutput = true;
+                            cmd.StartInfo.CreateNoWindow = true;
+                            cmd.StartInfo.UseShellExecute = false;
+                            cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                            cmd.Start();
+                            cmd.StandardInput.WriteLine($"net view {networkLocationRootPath}");
+                            cmd.StandardInput.Flush();
+                            cmd.StandardInput.Close();
+
+                            string output = cmd.StandardOutput.ReadToEnd();
+
+                            cmd.WaitForExit();
+                            cmd.Close();
+
+                            output = output.Substring(output.LastIndexOf('-') + 2);
+                            output = output.Substring(0, output.IndexOf("The command completed successfully.", StringComparison.InvariantCulture));
+
+                            return
+                                output
+                                    .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
+                                    .Select(x => System.IO.Path.Combine(networkLocationRootPath, x.Substring(0, x.IndexOf(' '))))
+                                    .ToArray();
+                        }
+                    }
+                    else
+                    {
+                        directories = Directory.GetDirectories(path);
+                    }
                     Array.Sort(directories, new WindowsExplorerSort());
                 }
                 catch (UnauthorizedAccessException ex)
@@ -318,7 +354,14 @@ namespace SystemTrayMenu.Business
 
                 try
                 {
-                    files = Directory.GetFiles(path);
+                    if (LnkHelper.IsNetworkRoot(path))
+                    {
+                        //UNC root can not have files
+                    }
+                    else
+                    {
+                        files = Directory.GetFiles(path);
+                    }
                     Array.Sort(files, new WindowsExplorerSort());
                 }
                 catch (UnauthorizedAccessException ex)
@@ -417,7 +460,16 @@ namespace SystemTrayMenu.Business
                 rowData.TargetFilePath = rowData.FileInfo.FullName;
                 if (!isResolvedLnk)
                 {
-                    rowData.SetText(rowData.FileInfo.Name);
+                    if (string.IsNullOrEmpty(rowData.FileInfo.Name))
+                    {
+                        string path = rowData.FileInfo.FullName;
+                        int directoryNameBegin = path.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1;
+                        rowData.SetText(path.Substring(directoryNameBegin));
+                    }
+                    else
+                    {
+                        rowData.SetText(rowData.FileInfo.Name);
+                    }
                     rowData.TargetFilePathOrig = rowData.FileInfo.FullName;
                 }
             }

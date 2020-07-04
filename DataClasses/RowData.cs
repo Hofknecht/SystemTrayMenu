@@ -154,10 +154,13 @@ namespace SystemTrayMenu.DataClasses
                 handled = true;
                 isLnkDirectory = true;
             }
+            else if (LnkHelper.IsNetworkRoot(resolvedLnkPath))
+            {
+                isLnkDirectory = true;
+            }
             else if (string.IsNullOrEmpty(resolvedLnkPath))
             {
                 Log.Info($"Resolve *.LNK '{TargetFilePath}' has no icon");
-#warning [Feature] Resolve network root #48, start here
             }
             else
             {
