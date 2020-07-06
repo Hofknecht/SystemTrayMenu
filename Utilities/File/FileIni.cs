@@ -7,9 +7,11 @@ namespace SystemTrayMenu.Utilities
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+
     public class FileIni
     {
         private readonly Dictionary<string, string> values;
+
         public FileIni(string path)
         {
             values = File.ReadLines(path)

@@ -7,19 +7,18 @@ namespace SystemTrayMenu.Handler
     using System;
     using SystemTrayMenu.Utilities;
     using Timer = System.Windows.Forms.Timer;
+
     internal class WaitLeave : IDisposable
     {
-        public event EventHandlerEmpty LeaveTriggered;
-
         private readonly Timer timerLeaveCheck = new Timer();
-
-        public bool IsRunning => timerLeaveCheck.Enabled;
 
         public WaitLeave(int timeUntilTriggered)
         {
             timerLeaveCheck.Interval = timeUntilTriggered;
             timerLeaveCheck.Tick += TimerLeaveCheckTick;
         }
+
+        public event EventHandlerEmpty LeaveTriggered;
 
         public void Start()
         {

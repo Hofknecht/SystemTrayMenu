@@ -5,10 +5,14 @@
 namespace SystemTrayMenu
 {
     using System.Drawing;
-    using System.Reflection;
+
     internal static class MenuDefines
     {
-        internal static string NotifyIconText = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;
+        internal const int Scrollspeed = 4;
+        internal const int TimeUntilClose = 1000;
+        internal const int MenusMax = 50;
+        internal const int LengthMax = 37;
+        internal const float MaxMenuWidth = 300;
         internal static readonly Color File = Color.White;
         internal static readonly Color Folder = Color.White;
         internal static readonly Color ColorSelectedItem = AppColors.Blue;
@@ -18,11 +22,6 @@ namespace SystemTrayMenu
         internal static readonly Color ColorTitleWarning = AppColors.Red;
         internal static readonly Color ColorTitleSelected = AppColors.Yellow;
         internal static readonly Color ColorTitleBackground = AppColors.Azure;
-        internal const int Scrollspeed = 4;
-        internal const int TimeUntilClose = 1000;
-        internal const int MenusMax = 50;
-        internal const int LengthMax = 37;
-        internal static float MaxMenuWidth = 300;
     }
 
     internal static class AppColors

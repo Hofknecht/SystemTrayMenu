@@ -35,11 +35,13 @@ namespace SystemTrayMenu.DllImports
             Bottom = 3,
         }
 
-        internal static class ABS
+        internal static IntPtr Shell32SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData)
         {
-            public const int Autohide = 0x0000001;
-            public const int AlwaysOnTop = 0x0000002;
+            return SHAppBarMessage(dwMessage, ref pData);
         }
+
+        [DllImport("shell32.dll", SetLastError = true)]
+        private static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
 
         [StructLayout(LayoutKind.Sequential)]
         internal struct APPBARDATA
@@ -61,12 +63,10 @@ namespace SystemTrayMenu.DllImports
             public int bottom;
         }
 
-        internal static IntPtr Shell32SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData)
+        internal static class ABS
         {
-            return SHAppBarMessage(dwMessage, ref pData);
+            public const int Autohide = 0x0000001;
+            public const int AlwaysOnTop = 0x0000002;
         }
-
-        [DllImport("shell32.dll", SetLastError = true)]
-        private static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
     }
 }

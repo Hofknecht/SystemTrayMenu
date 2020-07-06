@@ -9,6 +9,7 @@ namespace SystemTrayMenu.Utilities
     public static class FileUrl
     {
         private static string browserPath = string.Empty;
+
         public static string GetDefaultBrowserPath()
         {
             string urlAssociation = @"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http";
@@ -19,16 +20,16 @@ namespace SystemTrayMenu.Utilities
 
             if (string.IsNullOrEmpty(browserPath))
             {
-                //Read default browser path from userChoiceLKey
+                // Read default browser path from userChoiceLKey
                 userChoiceKey = Registry.CurrentUser.OpenSubKey(urlAssociation + @"\UserChoice", false);
 
-                //If user choice was not found, try machine default
+                // If user choice was not found, try machine default
                 if (userChoiceKey == null)
                 {
-                    //Read default browser path from Win XP registry key
+                    // Read default browser path from Win XP registry key
                     RegistryKey browserKey = Registry.ClassesRoot.OpenSubKey(@"HTTP\shell\open\command", false);
 
-                    //If browser path wasn’t found, try Win Vista (and newer) registry key
+                    // If browser path wasn’t found, try Win Vista (and newer) registry key
                     if (browserKey == null)
                     {
                         browserKey =

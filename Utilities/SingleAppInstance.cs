@@ -8,6 +8,7 @@ namespace SystemTrayMenu.Utilities
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Linq;
+
     internal static class SingleAppInstance
     {
         internal static void Initialize()

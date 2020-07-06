@@ -8,6 +8,7 @@ namespace SystemTrayMenu.Utilities
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
     using System.Windows.Forms;
+
     internal class AppRestart
     {
         public static event EventHandlerEmpty BeforeRestarting;

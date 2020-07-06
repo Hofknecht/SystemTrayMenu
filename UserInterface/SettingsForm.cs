@@ -1,5 +1,5 @@
-﻿// <copyright file="SettingsForm.cs" company="TAMAHO">
-// Copyright (c) TAMAHO. All rights reserved.
+﻿// <copyright file="SettingsForm.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
 namespace SystemTrayMenu.UserInterface
@@ -18,8 +18,9 @@ namespace SystemTrayMenu.UserInterface
     public partial class SettingsForm : Form
     {
         public string NewHotKey => newHotKey;
+
         private readonly string newHotKey = string.Empty;
-        private bool _inHotkey = false;
+        private bool inHotkey = false;
 
         public SettingsForm()
         {
@@ -56,7 +57,6 @@ namespace SystemTrayMenu.UserInterface
             void InitializeHotkey()
             {
                 textBoxHotkey.SetHotkey(Properties.Settings.Default.HotKey);
-                //textBoxHotkey.Text = Properties.Settings.Default.HotKey;
             }
 
             InitializeLanguage();
@@ -102,7 +102,8 @@ namespace SystemTrayMenu.UserInterface
             {
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(
                     @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.SetValue(Assembly.GetExecutingAssembly().GetName().Name,
+                key.SetValue(
+                    Assembly.GetExecutingAssembly().GetName().Name,
                     System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
                 Properties.Settings.Default.IsAutostartActivated = true;
             }
@@ -120,12 +121,6 @@ namespace SystemTrayMenu.UserInterface
             Properties.Settings.Default.HotKey =
                 new KeysConverter().ConvertToInvariantString(
                 textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-
-
-            //Keys keys1 = HotkeyControl.Hotkey;
-            //   Hotkey
-            //   Keys keys = HotkeyControl.ModifierKeys;
-            //Keys keys2 = HotkeyControl.HotkeyToString(keys, keys);
         }
 
         private void SetLanguage()
@@ -150,7 +145,7 @@ namespace SystemTrayMenu.UserInterface
         private void TextBoxHotkeyEnter(object sender, EventArgs e)
         {
             HotkeyControl.UnregisterHotkeys();
-            _inHotkey = true;
+            inHotkey = true;
         }
 
         private void TextBoxHotkey_Leave(object sender, EventArgs e)
@@ -159,8 +154,7 @@ namespace SystemTrayMenu.UserInterface
                 new KeysConverter().ConvertToInvariantString(
                 textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             RegisterHotkeys();
-            //MainForm.RegisterHotkeys();
-            _inHotkey = false;
+            inHotkey = false;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -168,7 +162,7 @@ namespace SystemTrayMenu.UserInterface
             switch (keyData)
             {
                 case Keys.Escape:
-                    if (!_inHotkey)
+                    if (!inHotkey)
                     {
                         DialogResult = DialogResult.Cancel;
                     }
@@ -186,13 +180,12 @@ namespace SystemTrayMenu.UserInterface
         }
 
         /// <summary>
-        /// Helper method to cleanly register a hotkey
+        /// Helper method to cleanly register a hotkey.
         /// </summary>
-        /// <param name="failedKeys"></param>
-        /// <param name="functionName"></param>
-        /// <param name="hotkeyString"></param>
-        /// <param name="handler"></param>
-        /// <returns></returns>
+        /// <param name="failedKeys">failedKeys.</param>
+        /// <param name="hotkeyString">hotkeyString.</param>
+        /// <param name="handler">handler.</param>
+        /// <returns>bool success.</returns>
         private static bool RegisterHotkey(StringBuilder failedKeys, string hotkeyString, HotKeyHandler handler)
         {
             Keys modifierKeyCode = HotkeyControl.HotkeyModifiersFromString(hotkeyString);
@@ -216,34 +209,11 @@ namespace SystemTrayMenu.UserInterface
 
         private static bool RegisterWrapper(StringBuilder failedKeys, HotKeyHandler handler)
         {
-            //IniValue hotkeyValue = _conf.Values[configurationKey];
-            //try
-            //{
-            bool success = RegisterHotkey(failedKeys,
-                //hotkeyValue.Value.ToString(),
+            bool success = RegisterHotkey(
+                failedKeys,
                 Properties.Settings.Default.HotKey,
                 handler);
-            //if (!success && ignoreFailedRegistration)
-            //{
-            //    //LOG.DebugFormat("Ignoring failed hotkey registration for {0}, with value '{1}', resetting to 'None'.", functionName, hotkeyValue);
-            //    //_conf.Values[configurationKey].Value = Keys.None.ToString();
-            //    //_conf.IsDirty = true;
-            //}
             return success;
-            //}
-            //catch (Exception)
-            //{
-            //    //LOG.Warn(ex);
-            //    //LOG.WarnFormat("Restoring default hotkey for {0}, stored under {1} from '{2}' to '{3}'", functionName, configurationKey, hotkeyValue.Value, hotkeyValue.Attributes.DefaultValue);
-
-            //    // when getting an exception the key wasn't found: reset the hotkey value
-            //    //hotkeyValue.UseValueOrDefault(null);
-            //    //hotkeyValue.ContainingIniSection.IsDirty = true;
-            //    return RegisterHotkey(failedKeys,
-            //        //hotkeyValue.Value.ToString(),
-            //        Properties.Settings.Default.HotKey,
-            //        handler);
-            //}
         }
 
         /// <summary>
@@ -258,14 +228,14 @@ namespace SystemTrayMenu.UserInterface
         /// <summary>
         /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
         /// </summary>
-        /// <param name="ignoreFailedRegistration">if true, a failed hotkey registration will not be reported to the user - the hotkey will simply not be registered</param>
+        /// <param name="ignoreFailedRegistration">if true, a failed hotkey registration will not be reported to the user - the hotkey will simply not be registered.</param>
         /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
         private static bool RegisterHotkeys(bool ignoreFailedRegistration)
         {
-            //if (_instance == null)
-            //{
+            // if (_instance == null)
+            // {
             //    return false;
-            //}
+            // }
             bool success = true;
             StringBuilder failedKeys = new StringBuilder();
             if (!RegisterWrapper(failedKeys, Handler))
@@ -292,8 +262,8 @@ namespace SystemTrayMenu.UserInterface
         ///// Check if OneDrive is blocking hotkeys
         ///// </summary>
         ///// <returns>true if onedrive has hotkeys turned on</returns>
-        //private static bool IsOneDriveBlockingHotkey()
-        //{
+        // private static bool IsOneDriveBlockingHotkey()
+        // {
         //    if (!Environment.OSVersion.IsWindows10())
         //    {
         //        return false;
@@ -311,16 +281,16 @@ namespace SystemTrayMenu.UserInterface
         //    }
         //    var screenshotSetting = File.ReadAllLines(oneDriveSettingsFile).Skip(1).Take(1).First();
         //    return "2".Equals(screenshotSetting);
-        //}
+        // }
 
         /// <summary>
         /// Displays a dialog for the user to choose how to handle hotkey registration failures:
         /// retry (allowing to shut down the conflicting application before),
         /// ignore (not registering the conflicting hotkey and resetting the respective config to "None", i.e. not trying to register it again on next startup)
-        /// abort (do nothing about it)
+        /// abort (do nothing about it).
         /// </summary>
-        /// <param name="failedKeys">comma separated list of the hotkeys that could not be registered, for display in dialog text</param>
-        /// <returns></returns>
+        /// <param name="failedKeys">comma separated list of the hotkeys that could not be registered, for display in dialog text.</param>
+        /// <returns>bool success.</returns>
         private static bool HandleFailedHotkeyRegistration(string failedKeys)
         {
             bool success = false;
@@ -329,13 +299,13 @@ namespace SystemTrayMenu.UserInterface
             DialogResult dr = MessageBox.Show(message, warningTitle, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.Retry)
             {
-                //LOG.DebugFormat("Re-trying to register hotkeys");
+                // LOG.DebugFormat("Re-trying to register hotkeys");
                 HotkeyControl.UnregisterHotkeys();
                 success = RegisterHotkeys(false);
             }
             else if (dr == DialogResult.Ignore)
             {
-                //LOG.DebugFormat("Ignoring failed hotkey registration");
+                // LOG.DebugFormat("Ignoring failed hotkey registration");
                 HotkeyControl.UnregisterHotkeys();
                 success = RegisterHotkeys(true);
             }
@@ -347,6 +317,7 @@ namespace SystemTrayMenu.UserInterface
     public class Language
     {
         public string Name { get; set; }
+
         public string Value { get; set; }
     }
 }

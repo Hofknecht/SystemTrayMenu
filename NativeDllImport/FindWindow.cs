@@ -12,7 +12,6 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:Elements should be documented", Justification = "<Pending>")]
         public static IntPtr User32FindWindow(string lpClassName, string lpWindowName)
         {
             return FindWindow(lpClassName, lpWindowName);

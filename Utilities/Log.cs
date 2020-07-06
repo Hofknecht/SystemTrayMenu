@@ -11,9 +11,11 @@ namespace SystemTrayMenu.Utilities
     using System.IO;
     using System.Reflection;
     using System.Windows.Forms;
+
     internal static class Log
     {
-        private static readonly Logger log = new Logger(string.Empty);
+        private static readonly Logger LogValue = new Logger(string.Empty);
+
         internal static void Initialize()
         {
             Logger.Start(new FileInfo(GetLogFilePath()));
@@ -21,25 +23,25 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Info(string message)
         {
-            log.Info(message);
+            LogValue.Info(message);
         }
 
         internal static void Warn(string message, Exception ex)
         {
-            log.Warn($"{message}{Environment.NewLine}{ex}");
+            LogValue.Warn($"{message}{Environment.NewLine}{ex}");
         }
 
         internal static void Error(string message, Exception ex)
         {
-            log.Error($"{message}{Environment.NewLine}" +
+            LogValue.Error($"{message}{Environment.NewLine}" +
                 $"{ex}");
         }
 
         internal static string GetLogFilePath()
         {
-            return Path.Combine(Path.GetDirectoryName(
-               Assembly.GetExecutingAssembly().Location),
-                   $"log-{Environment.MachineName}.txt");
+            return Path.Combine(
+                Path.GetDirectoryName(
+               Assembly.GetExecutingAssembly().Location), $"log-{Environment.MachineName}.txt");
         }
 
         internal static void OpenLogFile()
@@ -50,7 +52,7 @@ namespace SystemTrayMenu.Utilities
         internal static void WriteApplicationRuns()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            log.Info($"Application Start " +
+            LogValue.Info($"Application Start " +
                 assembly.ManifestModule.Name + " | " +
                 assembly.GetName().Version.ToString() + " | " +
                 $"ScalingFactor={Scaling.Factor}");
@@ -80,7 +82,7 @@ namespace SystemTrayMenu.Utilities
                         {
                             Arguments = arguments,
                             UseShellExecute = true,
-                        }
+                        },
                     };
                     p.Start();
                 }

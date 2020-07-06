@@ -1,4 +1,8 @@
-﻿using System.Reflection;
+﻿// <copyright file="AssemblyInfo.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 
@@ -35,5 +39,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.11.4.2")]
-[assembly: AssemblyFileVersion("0.11.4.2")]
+[assembly: AssemblyVersion("0.11.4.3")]
+[assembly: AssemblyFileVersion("0.11.4.3")]

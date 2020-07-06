@@ -13,10 +13,6 @@ namespace SystemTrayMenu.Handler
 
     internal class WaitToLoadMenu : IDisposable
     {
-        internal event Action<RowData> StartLoadMenu;
-        internal event Action<int> CloseMenu;
-        internal event EventHandlerEmpty StopLoadMenu;
-        internal event Action<DataGridView, int> MouseEnterOk;
         internal bool MouseActive = false;
 
         private readonly Timer timerStartLoad = new Timer();
@@ -34,6 +30,14 @@ namespace SystemTrayMenu.Handler
             timerStartLoad.Interval = 200;
             timerStartLoad.Tick += WaitStartLoad_Tick;
         }
+
+        internal event Action<RowData> StartLoadMenu;
+
+        internal event Action<int> CloseMenu;
+
+        internal event EventHandlerEmpty StopLoadMenu;
+
+        internal event Action<DataGridView, int> MouseEnterOk;
 
         internal void MouseEnter(object sender, DataGridViewCellEventArgs e)
         {

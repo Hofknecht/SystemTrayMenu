@@ -16,24 +16,30 @@ namespace SystemTrayMenu.Handler
 
     internal class KeyboardInput : IDisposable
     {
-        internal event EventHandlerEmpty HotKeyPressed;
-        internal event EventHandlerEmpty ClosePressed;
-        internal event Action<DataGridView, int> RowSelected;
-        internal event Action<int, DataGridView> RowDeselected;
-        internal Action<DataGridView, int> EnterPressed;
-        internal event EventHandlerEmpty Cleared;
-
         internal bool InUse = false;
-        internal int iRowKey = -1;
-        internal int iMenuKey = 0;
 
         private readonly Menu[] menus;
         private readonly KeyboardHook hook = new KeyboardHook();
+
+        private int iRowKey = -1;
+        private int iMenuKey = 0;
 
         public KeyboardInput(Menu[] menus)
         {
             this.menus = menus;
         }
+
+        internal event EventHandlerEmpty HotKeyPressed;
+
+        internal event EventHandlerEmpty ClosePressed;
+
+        internal event Action<DataGridView, int> RowSelected;
+
+        internal event Action<int, DataGridView> RowDeselected;
+
+        internal event Action<DataGridView, int> EnterPressed;
+
+        internal event EventHandlerEmpty Cleared;
 
         public void Dispose()
         {
@@ -47,8 +53,8 @@ namespace SystemTrayMenu.Handler
                 try
                 {
                     hook.RegisterHotKey();
-                    hook.KeyPressed += hook_KeyPressed;
-                    void hook_KeyPressed(object sender, KeyPressedEventArgs e)
+                    hook.KeyPressed += Hook_KeyPressed;
+                    void Hook_KeyPressed(object sender, KeyPressedEventArgs e)
                     {
                         HotKeyPressed?.Invoke();
                     }
@@ -161,8 +167,8 @@ namespace SystemTrayMenu.Handler
         /// <summary>
         /// While menu is open user presses a key to search for specific entries.
         /// </summary>
-        /// <param name="sender">not used</param>
-        /// <param name="e">Key data of the pressed key</param>
+        /// <param name="sender">not used.</param>
+        /// <param name="e">Key data of the pressed key.</param>
         internal void KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetterOrDigit(e.KeyChar) ||
@@ -227,7 +233,7 @@ namespace SystemTrayMenu.Handler
             return isStillSelected;
         }
 
-        private void SelectByKey(Keys keys, string keyInput = "", bool KeepSelection = false)
+        private void SelectByKey(Keys keys, string keyInput = "", bool keepSelection = false)
         {
             int iRowBefore = iRowKey;
             int iMenuBefore = iMenuKey;
@@ -240,7 +246,7 @@ namespace SystemTrayMenu.Handler
             bool isStillSelected = IsAnyMenuSelectedByKey(ref dgv, ref menuFromSelected, ref textselected);
             if (isStillSelected)
             {
-                if (KeepSelection)
+                if (keepSelection)
                 {
                     // If current selection is still valid for this search then skip selecting different item
                     if (textselected.StartsWith(keyInput, true, CultureInfo.InvariantCulture))

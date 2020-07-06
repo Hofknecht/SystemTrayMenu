@@ -1,4 +1,8 @@
-﻿namespace SystemTrayMenu.Utilities
+﻿// <copyright file="FileLnk.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SystemTrayMenu.Utilities
 {
     using Shell32;
     using System;
@@ -29,7 +33,6 @@
 
             return resolvedFilename;
         }
-
 
         private static string GetShortcutFileNamePath(object shortcutFilename)
         {

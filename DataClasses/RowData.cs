@@ -34,11 +34,11 @@ namespace SystemTrayMenu.DataClasses
         internal string TargetFilePathOrig;
         internal int RowIndex;
         internal int MenuLevel;
-        private static DateTime ContextMenuClosed;
-        private string WorkingDirectory;
-        private string Arguments;
-        private string Text;
-        private Icon Icon = null;
+        private static DateTime contextMenuClosed;
+        private string workingDirectory;
+        private string arguments;
+        private string text;
+        private Icon icon = null;
         private bool diposeIcon = true;
         private bool isDisposed = false;
 
@@ -48,7 +48,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal void SetText(string text)
         {
-            Text = text;
+            this.text = text;
         }
 
         internal void SetData(RowData data, DataTable dataTable)
@@ -56,22 +56,23 @@ namespace SystemTrayMenu.DataClasses
             DataRow row = dataTable.Rows.Add();
             data.RowIndex = dataTable.Rows.IndexOf(row);
 
-            if (Icon == null)
+            if (icon == null)
             {
-                Icon = Properties.Resources.WhiteTransparency;
+                icon = Properties.Resources.WhiteTransparency;
             }
 
             if (HiddenEntry)
             {
-                row[0] = IconReader.AddIconOverlay(data.Icon,
+                row[0] = IconReader.AddIconOverlay(
+                    data.icon,
                     Properties.Resources.WhiteTransparency);
             }
             else
             {
-                row[0] = data.Icon;
+                row[0] = data.icon;
             }
 
-            row[1] = data.Text;
+            row[1] = data.text;
             row[2] = data;
         }
 
@@ -85,7 +86,7 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (isDirectory)
             {
-                Icon = IconReader.GetFolderIcon(
+                icon = IconReader.GetFolderIcon(
                     TargetFilePath,
                     IconReader.FolderType.Closed,
                     false);
@@ -97,7 +98,8 @@ namespace SystemTrayMenu.DataClasses
 
                 if (fileExtension == ".lnk")
                 {
-                    handled = SetLnk(ref isLnkDirectory,
+                    handled = SetLnk(
+                        ref isLnkDirectory,
                         ref resolvedLnkPath);
                 }
                 else if (fileExtension == ".url")
@@ -113,7 +115,7 @@ namespace SystemTrayMenu.DataClasses
                 {
                     try
                     {
-                        Icon = IconReader.GetFileIconWithCache(TargetFilePath, false);
+                        icon = IconReader.GetFileIconWithCache(TargetFilePath, false);
                         diposeIcon = false;
 
                         // other project -> fails sometimes
@@ -154,7 +156,7 @@ namespace SystemTrayMenu.DataClasses
                 FileInfo != null &&
                 dgv != null &&
                 dgv.Rows.Count > RowIndex &&
-                (DateTime.Now - ContextMenuClosed).TotalMilliseconds > 200)
+                (DateTime.Now - contextMenuClosed).TotalMilliseconds > 200)
             {
                 IsContextMenuOpen = true;
                 Color colorbefore = dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor;
@@ -185,15 +187,14 @@ namespace SystemTrayMenu.DataClasses
                 }
 
                 IsContextMenuOpen = false;
-                ContextMenuClosed = DateTime.Now;
+                contextMenuClosed = DateTime.Now;
             }
         }
 
         internal void DoubleClick(MouseEventArgs e)
         {
-            if (e == null ||
-                e.Button == MouseButtons.Left &&
-                !ContainsMenu)
+            if (!ContainsMenu &&
+                (e == null || e.Button == MouseButtons.Left))
             {
                 try
                 {
@@ -202,11 +203,11 @@ namespace SystemTrayMenu.DataClasses
                         StartInfo = new ProcessStartInfo(TargetFilePath)
                         {
                             FileName = TargetFilePathOrig,
-                            Arguments = Arguments,
-                            WorkingDirectory = WorkingDirectory,
+                            Arguments = arguments,
+                            WorkingDirectory = workingDirectory,
                             CreateNoWindow = true,
                             UseShellExecute = true,
-                        }
+                        },
                     };
                     p.Start();
                 }
@@ -217,9 +218,8 @@ namespace SystemTrayMenu.DataClasses
                 }
             }
 
-            if (e == null ||
-                e.Button == MouseButtons.Left &&
-                ContainsMenu)
+            if (ContainsMenu &&
+                (e == null || e.Button == MouseButtons.Left))
             {
                 Log.ProcessStart("explorer.exe", TargetFilePath);
             }
@@ -237,21 +237,22 @@ namespace SystemTrayMenu.DataClasses
             {
                 if (diposeIcon)
                 {
-                    Icon?.Dispose();
+                    icon?.Dispose();
                 }
             }
 
             isDisposed = true;
         }
 
-        private bool SetLnk(ref bool isLnkDirectory,
+        private bool SetLnk(
+            ref bool isLnkDirectory,
             ref string resolvedLnkPath)
         {
             bool handled = false;
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
             if (FileLnk.IsDirectory(resolvedLnkPath))
             {
-                Icon = IconReader.GetFolderIcon(TargetFilePath, IconReader.FolderType.Open, true);
+                icon = IconReader.GetFolderIcon(TargetFilePath, IconReader.FolderType.Open, true);
                 handled = true;
                 isLnkDirectory = true;
             }
@@ -268,8 +269,8 @@ namespace SystemTrayMenu.DataClasses
                 IWshShell shell = new WshShell();
                 IWshShortcut lnk = shell.CreateShortcut(TargetFilePath)
                     as IWshShortcut;
-                Arguments = lnk.Arguments;
-                WorkingDirectory = lnk.WorkingDirectory;
+                arguments = lnk.Arguments;
+                workingDirectory = lnk.WorkingDirectory;
                 string iconLocation = lnk.IconLocation;
                 if (iconLocation.Length > 2)
                 {
@@ -278,7 +279,7 @@ namespace SystemTrayMenu.DataClasses
                     {
                         try
                         {
-                            Icon = Icon.ExtractAssociatedIcon(iconLocation);
+                            icon = Icon.ExtractAssociatedIcon(iconLocation);
                             handled = true;
                         }
                         catch (ArgumentException ex)
@@ -314,14 +315,14 @@ namespace SystemTrayMenu.DataClasses
                     }
                     else
                     {
-                        Icon = IconReader.GetFileIconWithCache(browserPath, false);
+                        icon = IconReader.GetFileIconWithCache(browserPath, false);
                         diposeIcon = false;
                         handled = true;
                     }
                 }
                 else if (System.IO.File.Exists(iconFile))
                 {
-                    Icon = Icon.ExtractAssociatedIcon(iconFile);
+                    icon = Icon.ExtractAssociatedIcon(iconFile);
                     handled = true;
                 }
                 else
@@ -337,7 +338,8 @@ namespace SystemTrayMenu.DataClasses
                     ex is PathTooLongException ||
                     ex is NotSupportedException)
                 {
-                    Log.Warn($"path:'{TargetFilePath}', " +
+                    Log.Warn(
+                        $"path:'{TargetFilePath}', " +
                         $"iconFile:'{iconFile}'", ex);
                 }
                 else
@@ -358,11 +360,12 @@ namespace SystemTrayMenu.DataClasses
             try
             {
                 DllImports.NativeMethods.Shell32FindExecutable(TargetFilePath, string.Empty, executable);
+
                 // icon = IconReader.GetFileIcon(executable, false);
                 // e.g. VS 2019 icon, need another icom in imagelist
                 List<Icon> extractedIcons = IconHelper.ExtractAllIcons(
                     executable.ToString());
-                Icon = extractedIcons.Last();
+                icon = extractedIcons.Last();
                 handled = true;
             }
             catch (Exception ex)
@@ -373,7 +376,8 @@ namespace SystemTrayMenu.DataClasses
                     ex is PathTooLongException ||
                     ex is NotSupportedException)
                 {
-                    Log.Warn($"path:'{TargetFilePath}', " +
+                    Log.Warn(
+                        $"path:'{TargetFilePath}', " +
                         $"executable:'{executable}'", ex);
                 }
                 else

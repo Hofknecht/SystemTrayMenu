@@ -1,4 +1,7 @@
-﻿
+﻿// <copyright file="Menus.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 namespace SystemTrayMenu.Business
 {
     using System;
@@ -20,27 +23,21 @@ namespace SystemTrayMenu.Business
 
     internal class Menus : IDisposable
     {
-        internal event EventHandlerEmpty LoadStarted;
-        internal event EventHandlerEmpty LoadStopped;
-        private enum OpenCloseState { Default, Opening, Closing };
-        private OpenCloseState openCloseState = OpenCloseState.Default;
         private readonly Menu[] menus = new Menu[MenuDefines.MenusMax];
         private readonly BackgroundWorker workerMainMenu = new BackgroundWorker();
         private readonly List<BackgroundWorker> workersSubMenu = new List<BackgroundWorker>();
+
+        private readonly int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+        private readonly int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+        private readonly int screenRight = Screen.PrimaryScreen.Bounds.Right;
+        private readonly int taskbarHeight = new WindowsTaskbar().Size.Height;
 
         private readonly WaitToLoadMenu waitToOpenMenu = new WaitToLoadMenu();
         private readonly KeyboardInput keyboardInput = null;
         private readonly Timer timerStillActiveCheck = new Timer();
         private readonly WaitLeave waitLeave = new WaitLeave(MenuDefines.TimeUntilClose);
         private DateTime deactivatedTime = DateTime.MinValue;
-
-        private IEnumerable<Menu> AsEnumerable => menus.Where(m => m != null && !m.IsDisposed);
-        private List<Menu> AsList => AsEnumerable.ToList();
-
-        private readonly int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-        private readonly int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-        private readonly int screenRight = Screen.PrimaryScreen.Bounds.Right;
-        private readonly int taskbarHeight = new WindowsTaskbar().Size.Height;
+        private OpenCloseState openCloseState = OpenCloseState.Default;
 
         public Menus()
         {
@@ -107,11 +104,10 @@ namespace SystemTrayMenu.Business
                         workersSubMenu.Add(workerSubMenu);
                     }
 
-                    workerSubMenu.RunWorkerAsync(rowData); ;
+                    workerSubMenu.RunWorkerAsync(rowData);
                 }
 
-                void LoadSubMenuCompleted(object senderCompleted,
-                        RunWorkerCompletedEventArgs e)
+                void LoadSubMenuCompleted(object senderCompleted, RunWorkerCompletedEventArgs e)
                 {
                     LoadStopped();
                     MenuData menuData = (MenuData)e.Result;
@@ -183,6 +179,21 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        internal event EventHandlerEmpty LoadStarted;
+
+        internal event EventHandlerEmpty LoadStopped;
+
+        private enum OpenCloseState
+        {
+            Default,
+            Opening,
+            Closing,
+        }
+
+        private IEnumerable<Menu> AsEnumerable => menus.Where(m => m != null && !m.IsDisposed);
+
+        private List<Menu> AsList => AsEnumerable.ToList();
+
         internal void SwitchOpenCloseByTaskbarItem()
         {
             SwitchOpenClose(true);
@@ -201,7 +212,7 @@ namespace SystemTrayMenu.Business
                 // Case when Folder Dialog open
             }
             else if (openCloseState == OpenCloseState.Opening ||
-                menus[0].Visible && openCloseState == OpenCloseState.Default)
+                (menus[0].Visible && openCloseState == OpenCloseState.Default))
             {
                 openCloseState = OpenCloseState.Closing;
                 MenusFadeOut();
@@ -310,8 +321,9 @@ namespace SystemTrayMenu.Business
                             return
                                 output
                                     .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
-                                    .Select(x => Path.Combine(networkLocationRootPath,
-                                    x.Substring(0, x.IndexOf(' ', StringComparison.InvariantCulture))))
+                                    .Select(x => Path.Combine(
+                                        networkLocationRootPath,
+                                        x.Substring(0, x.IndexOf(' ', StringComparison.InvariantCulture))))
                                     .ToArray();
                         }
                     }
@@ -496,7 +508,6 @@ namespace SystemTrayMenu.Business
 
             return rowData;
         }
-
 
         private Menu Create(MenuData menuData, string title = null)
         {

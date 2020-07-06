@@ -13,23 +13,23 @@ namespace SystemTrayMenu.UserInterface
     using SystemTrayMenu.Utilities;
     using R = SystemTrayMenu.Properties.Resources;
     using Timer = System.Windows.Forms.Timer;
+
     internal class AppNotifyIcon : IDisposable
     {
-        public event EventHandlerEmpty Click;
-        public event EventHandlerEmpty OpenLog;
-        public event EventHandlerEmpty Restart;
-        public event EventHandlerEmpty Exit;
-
         private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
+        private readonly Timer load = new Timer();
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
+        private readonly int indexLoad = 0;
+        private readonly List<Icon> bitmapsLoading = new List<Icon>()
+        {
+            R.L010, R.L020, R.L030,
+            R.L040, R.L050, R.L060, R.L070, R.L080, R.L090, R.L100, R.L110, R.L120,
+            R.L130, R.L140, R.L150, R.L160, R.L170, R.L180,
+        };
+
         private DateTime timeLoadingStart;
         private bool threadsLoading = false;
-        private readonly Timer load = new Timer();
         private int loadCount = 0;
-        private readonly int indexLoad = 0;
-        private readonly List<Icon> bitmapsLoading = new List<Icon>() { R.L010, R.L020, R.L030,
-            R.L040, R.L050, R.L060, R.L070, R.L080, R.L090, R.L100, R.L110, R.L120,
-            R.L130, R.L140, R.L150, R.L160, R.L170, R.L180, };
 
         public AppNotifyIcon()
         {
@@ -37,7 +37,7 @@ namespace SystemTrayMenu.UserInterface
             notifyIcon.Icon = bitmapsLoading.First();
             load.Tick += Load_Tick;
             load.Interval = Interval60FPS;
-            notifyIcon.Text = MenuDefines.NotifyIconText;
+            notifyIcon.Text = Translator.GetText("SystemTrayMenu");
             notifyIcon.Visible = true;
             notifyIcon.Icon = R.SystemTrayMenu;
             AppContextMenu contextMenus = new AppContextMenu();
@@ -73,6 +73,14 @@ namespace SystemTrayMenu.UserInterface
                 VerifyClick(e);
             }
         }
+
+        public event EventHandlerEmpty Click;
+
+        public event EventHandlerEmpty OpenLog;
+
+        public event EventHandlerEmpty Restart;
+
+        public event EventHandlerEmpty Exit;
 
         private void VerifyClick(MouseEventArgs e)
         {

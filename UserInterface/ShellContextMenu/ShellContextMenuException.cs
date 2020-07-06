@@ -6,6 +6,7 @@ namespace SystemTrayMenu.Helper
 {
     using System;
     using System.Runtime.Serialization;
+
     [Serializable]
     public class ShellContextMenuException : Exception
     {
@@ -27,12 +28,10 @@ namespace SystemTrayMenu.Helper
         }
 
         protected ShellContextMenuException(
-            SerializationInfo info,
-           StreamingContext context)
+            SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
             // Implement type-specific serialization constructor logic.
         }
     }
-
 }

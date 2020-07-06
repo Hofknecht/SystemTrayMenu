@@ -1,4 +1,8 @@
-﻿namespace SystemTrayMenu.Utilities
+﻿// <copyright file="ShellContextMenu.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SystemTrayMenu.Utilities
 {
     using System;
     using System.Drawing;
@@ -25,15 +29,37 @@
     /// Andreas Johansson
     /// afjohansson@hotmail.com
     /// http://afjohansson.spaces.live.com
+    /// .
     /// </summary>
     /// <example>
     ///    ShellContextMenu scm = new ShellContextMenu();
     ///    FileInfo[] files = new FileInfo[1];
     ///    files[0] = new FileInfo(@"c:\windows\notepad.exe");
-    ///    scm.ShowContextMenu(this.Handle, files, Cursor.Position);
+    ///    scm.ShowContextMenu(this.Handle, files, Cursor.Position);.
     /// </example>
     public class ShellContextMenu : NativeWindow
     {
+        private const int MaxPath = 260;
+        private const uint CmdFirst = 1;
+        private const uint CmdLast = 30000;
+        private const int ResultOK = 0;
+
+        private static readonly int CbMenuItemInfo = Marshal.SizeOf(typeof(MENUITEMINFO));
+        private static readonly int CbInvokeCommand = Marshal.SizeOf(typeof(CMINVOKECOMMANDINFOEX));
+
+        private static Guid iidIShellFolder = new Guid("{000214E6-0000-0000-C000-000000000046}");
+        private static Guid iidIContextMenu = new Guid("{000214e4-0000-0000-c000-000000000046}");
+        private static Guid iidIContextMenu2 = new Guid("{000214f4-0000-0000-c000-000000000046}");
+        private static Guid iidIContextMenu3 = new Guid("{bcfce0a0-ec17-11d0-8d10-00a0c90f2719}");
+
+        private IContextMenu oContextMenu;
+        private IContextMenu2 oContextMenu2;
+        private IContextMenu3 oContextMenu3;
+        private IShellFolder oDesktopFolder;
+        private IShellFolder oParentFolder;
+        private IntPtr[] arrPIDLs;
+        private string strParentFolder;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ShellContextMenu"/> class.
         /// </summary>
@@ -50,23 +76,23 @@
             ReleaseAll();
         }
 
-        /// <summary>Gets the interfaces to the context menu</summary>
-        /// <param name="oParentFolder">Parent folder</param>
-        /// <param name="arrPIDLs">PIDLs</param>
-        /// <returns>true if it got the interfaces, otherwise false</returns>
+        /// <summary>Gets the interfaces to the context menu.</summary>
+        /// <param name="oParentFolder">Parent folder.</param>
+        /// <param name="arrPIDLs">PIDLs.</param>
+        /// <returns>true if it got the interfaces, otherwise false.</returns>
         private bool GetContextMenuInterfaces(IShellFolder oParentFolder, IntPtr[] arrPIDLs, out IntPtr ctxMenuPtr)
         {
             int nResult = oParentFolder.GetUIObjectOf(
                 IntPtr.Zero,
                 (uint)arrPIDLs.Length,
                 arrPIDLs,
-                ref IID_IContextMenu,
+                ref iidIContextMenu,
                 IntPtr.Zero,
                 out ctxMenuPtr);
 
-            if (S_OK == nResult)
+            if (nResult == ResultOK)
             {
-                _oContextMenu = (IContextMenu)Marshal.GetTypedObjectForIUnknown(ctxMenuPtr, typeof(IContextMenu));
+                oContextMenu = (IContextMenu)Marshal.GetTypedObjectForIUnknown(ctxMenuPtr, typeof(IContextMenu));
 
                 /*IntPtr pUnknownContextMenu2 = IntPtr.Zero;
                 if (S_OK == Marshal.QueryInterface(pUnknownContextMenu, ref IID_IContextMenu2, out pUnknownContextMenu2))
@@ -84,7 +110,7 @@
             else
             {
                 ctxMenuPtr = IntPtr.Zero;
-                _oContextMenu = null;
+                oContextMenu = null;
                 return false;
             }
         }
@@ -94,34 +120,33 @@
         /// by calling HandleMenuMsg and HandleMenuMsg2. It will also call the OnContextMenuMouseHover
         /// method of Browser when hovering over a ContextMenu item.
         /// </summary>
-        /// <param name="m">the Message of the Browser's WndProc</param>
-        /// <returns>true if the message has been handled, false otherwise</returns>
+        /// <param name="m">the Message of the Browser's WndProc.</param>
         protected override void WndProc(ref Message m)
         {
-            if (_oContextMenu != null &&
+            if (oContextMenu != null &&
                 m.Msg == (int)WM.MENUSELECT &&
                 ((int)ShellHelper.HiWord(m.WParam) & (int)MFT.SEPARATOR) == 0 &&
                 ((int)ShellHelper.HiWord(m.WParam) & (int)MFT.POPUP) == 0)
             {
             }
 
-            if (_oContextMenu2 != null &&
+            if (oContextMenu2 != null &&
                 (m.Msg == (int)WM.INITMENUPOPUP ||
                  m.Msg == (int)WM.MEASUREITEM ||
                  m.Msg == (int)WM.DRAWITEM))
             {
-                if (_oContextMenu2.HandleMenuMsg(
-                    (uint)m.Msg, m.WParam, m.LParam) == S_OK)
+                if (oContextMenu2.HandleMenuMsg(
+                    (uint)m.Msg, m.WParam, m.LParam) == ResultOK)
                 {
                     return;
                 }
             }
 
-            if (_oContextMenu3 != null &&
+            if (oContextMenu3 != null &&
                 m.Msg == (int)WM.MENUCHAR)
             {
-                if (_oContextMenu3.HandleMenuMsg2(
-                    (uint)m.Msg, m.WParam, m.LParam, IntPtr.Zero) == S_OK)
+                if (oContextMenu3.HandleMenuMsg2(
+                    (uint)m.Msg, m.WParam, m.LParam, IntPtr.Zero) == ResultOK)
                 {
                     return;
                 }
@@ -134,16 +159,16 @@
         {
             CMINVOKECOMMANDINFOEX invoke = new CMINVOKECOMMANDINFOEX
             {
-                cbSize = cbInvokeCommand,
-                lpVerb = (IntPtr)(nCmd - CMD_FIRST),
-                lpDirectory = strFolder,
-                lpVerbW = (IntPtr)(nCmd - CMD_FIRST),
-                lpDirectoryW = strFolder,
-                fMask = CMIC.UNICODE | CMIC.PTINVOKE |
+                CbSize = CbInvokeCommand,
+                LpVerb = (IntPtr)(nCmd - CmdFirst),
+                LpDirectory = strFolder,
+                LpVerbW = (IntPtr)(nCmd - CmdFirst),
+                LpDirectoryW = strFolder,
+                FMask = CMIC.UNICODE | CMIC.PTINVOKE |
                 ((Control.ModifierKeys & Keys.Control) != 0 ? CMIC.CONTROL_DOWN : 0) |
                 ((Control.ModifierKeys & Keys.Shift) != 0 ? CMIC.SHIFT_DOWN : 0),
-                ptInvoke = new POINT(pointInvoke.X, pointInvoke.Y),
-                nShow = SW.SHOWNORMAL,
+                PtInvoke = new POINT(pointInvoke.X, pointInvoke.Y),
+                NShow = SW.SHOWNORMAL,
             };
 
             _ = contextMenu.InvokeCommand(ref invoke);
@@ -154,77 +179,77 @@
         /// </summary>
         private void ReleaseAll()
         {
-            if (_oContextMenu != null)
+            if (oContextMenu != null)
             {
-                Marshal.ReleaseComObject(_oContextMenu);
-                _oContextMenu = null;
+                Marshal.ReleaseComObject(oContextMenu);
+                oContextMenu = null;
             }
 
-            if (_oContextMenu2 != null)
+            if (oContextMenu2 != null)
             {
-                Marshal.ReleaseComObject(_oContextMenu2);
-                _oContextMenu2 = null;
+                Marshal.ReleaseComObject(oContextMenu2);
+                oContextMenu2 = null;
             }
 
-            if (_oContextMenu3 != null)
+            if (oContextMenu3 != null)
             {
-                Marshal.ReleaseComObject(_oContextMenu3);
-                _oContextMenu3 = null;
+                Marshal.ReleaseComObject(oContextMenu3);
+                oContextMenu3 = null;
             }
 
-            if (_oDesktopFolder != null)
+            if (oDesktopFolder != null)
             {
-                Marshal.ReleaseComObject(_oDesktopFolder);
-                _oDesktopFolder = null;
+                Marshal.ReleaseComObject(oDesktopFolder);
+                oDesktopFolder = null;
             }
 
-            if (_oParentFolder != null)
+            if (oParentFolder != null)
             {
-                Marshal.ReleaseComObject(_oParentFolder);
-                _oParentFolder = null;
+                Marshal.ReleaseComObject(oParentFolder);
+                oParentFolder = null;
             }
 
-            if (_arrPIDLs != null)
+            if (arrPIDLs != null)
             {
-                FreePIDLs(_arrPIDLs);
-                _arrPIDLs = null;
+                FreePIDLs(arrPIDLs);
+                arrPIDLs = null;
             }
         }
 
         /// <summary>
-        /// Gets the desktop folder
+        /// Gets the desktop folder.
         /// </summary>
-        /// <returns>IShellFolder for desktop folder</returns>
+        /// <returns>IShellFolder for desktop folder.</returns>
         private IShellFolder GetDesktopFolder()
         {
-            if (null == _oDesktopFolder)
+            if (oDesktopFolder == null)
             {
                 // Get desktop IShellFolder
                 int nResult = DllImports.NativeMethods.Shell32SHGetDesktopFolder(out IntPtr pUnkownDesktopFolder);
-                if (S_OK != nResult)
+                if (nResult != ResultOK)
                 {
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
                     throw new ShellContextMenuException("Failed to get the desktop shell folder");
 #pragma warning restore CA1303 //=> Exceptions not translated in logfile => OK
                 }
 
-                _oDesktopFolder = (IShellFolder)Marshal.GetTypedObjectForIUnknown(pUnkownDesktopFolder, typeof(IShellFolder));
+                oDesktopFolder = (IShellFolder)Marshal.GetTypedObjectForIUnknown(pUnkownDesktopFolder, typeof(IShellFolder));
             }
 
-            return _oDesktopFolder;
+            return oDesktopFolder;
         }
 
         /// <summary>
-        /// Gets the parent folder
+        /// Gets the parent folder.
         /// </summary>
-        /// <param name="folderName">Folder path</param>
-        /// <returns>IShellFolder for the folder (relative from the desktop)</returns>
+        /// <param name="folderName">Folder path.</param>
+        /// <returns>IShellFolder for the folder (relative from the desktop).</returns>
         private IShellFolder GetParentFolder(string folderName)
         {
-            if (null == _oParentFolder)
+            if (oParentFolder == null)
             {
                 IShellFolder oDesktopFolder = GetDesktopFolder();
-                if (null == oDesktopFolder)
+                if (oDesktopFolder == null)
                 {
                     return null;
                 }
@@ -233,48 +258,49 @@
                 uint pchEaten = 0;
                 SFGAO pdwAttributes = 0;
                 int nResult = oDesktopFolder.ParseDisplayName(IntPtr.Zero, IntPtr.Zero, folderName, ref pchEaten, out IntPtr pPIDL, ref pdwAttributes);
-                if (S_OK != nResult)
+                if (nResult != ResultOK)
                 {
                     return null;
                 }
 
-                IntPtr pStrRet = Marshal.AllocCoTaskMem(MAX_PATH * 2 + 4);
+                IntPtr pStrRet = Marshal.AllocCoTaskMem((MaxPath * 2) + 4);
                 Marshal.WriteInt32(pStrRet, 0, 0);
-                _ = _oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
-                StringBuilder strFolder = new StringBuilder(MAX_PATH);
-                _ = DllImports.NativeMethods.ShlwapiStrRetToBuf(pStrRet, pPIDL, strFolder, MAX_PATH);
+                _ = this.oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
+                StringBuilder strFolder = new StringBuilder(MaxPath);
+                _ = DllImports.NativeMethods.ShlwapiStrRetToBuf(pStrRet, pPIDL, strFolder, MaxPath);
                 Marshal.FreeCoTaskMem(pStrRet);
-                _strParentFolder = strFolder.ToString();
+                strParentFolder = strFolder.ToString();
 
                 // Get the IShellFolder for folder
-                nResult = oDesktopFolder.BindToObject(pPIDL, IntPtr.Zero, ref IID_IShellFolder, out IntPtr pUnknownParentFolder);
+                nResult = oDesktopFolder.BindToObject(pPIDL, IntPtr.Zero, ref iidIShellFolder, out IntPtr pUnknownParentFolder);
+
                 // Free the PIDL first
                 Marshal.FreeCoTaskMem(pPIDL);
-                if (S_OK != nResult)
+                if (nResult != ResultOK)
                 {
                     return null;
                 }
 
-                _oParentFolder = (IShellFolder)Marshal.GetTypedObjectForIUnknown(pUnknownParentFolder, typeof(IShellFolder));
+                oParentFolder = (IShellFolder)Marshal.GetTypedObjectForIUnknown(pUnknownParentFolder, typeof(IShellFolder));
             }
 
-            return _oParentFolder;
+            return oParentFolder;
         }
 
         /// <summary>
-        /// Get the PIDLs
+        /// Get the PIDLs.
         /// </summary>
-        /// <param name="arrFI">Array of FileInfo</param>
-        /// <returns>Array of PIDLs</returns>
+        /// <param name="arrFI">Array of FileInfo.</param>
+        /// <returns>Array of PIDLs.</returns>
         protected IntPtr[] GetPIDLs(FileInfo[] arrFI)
         {
-            if (null == arrFI || 0 == arrFI.Length)
+            if (arrFI == null || arrFI.Length == 0)
             {
                 return null;
             }
 
             IShellFolder oParentFolder = GetParentFolder(arrFI[0].DirectoryName);
-            if (null == oParentFolder)
+            if (oParentFolder == null)
             {
                 return null;
             }
@@ -288,7 +314,7 @@
                 SFGAO pdwAttributes = 0;
                 IntPtr pPIDL = IntPtr.Zero;
                 int nResult = oParentFolder.ParseDisplayName(IntPtr.Zero, IntPtr.Zero, fi.Name, ref pchEaten, out pPIDL, ref pdwAttributes);
-                if (S_OK != nResult)
+                if (nResult != ResultOK)
                 {
                     FreePIDLs(arrPIDLs);
                     return null;
@@ -302,19 +328,19 @@
         }
 
         /// <summary>
-        /// Get the PIDLs
+        /// Get the PIDLs.
         /// </summary>
-        /// <param name="arrFI">Array of DirectoryInfo</param>
-        /// <returns>Array of PIDLs</returns>
+        /// <param name="arrFI">Array of DirectoryInfo.</param>
+        /// <returns>Array of PIDLs.</returns>
         protected IntPtr[] GetPIDLs(DirectoryInfo[] arrFI)
         {
-            if (null == arrFI || 0 == arrFI.Length || arrFI[0].Parent == null)
+            if (arrFI == null || arrFI.Length == 0 || arrFI[0].Parent == null)
             {
                 return null;
             }
 
             IShellFolder oParentFolder = GetParentFolder(arrFI[0].Parent.FullName);
-            if (null == oParentFolder)
+            if (oParentFolder == null)
             {
                 return null;
             }
@@ -328,7 +354,7 @@
                 SFGAO pdwAttributes = 0;
                 IntPtr pPIDL = IntPtr.Zero;
                 int nResult = oParentFolder.ParseDisplayName(IntPtr.Zero, IntPtr.Zero, fi.Name, ref pchEaten, out pPIDL, ref pdwAttributes);
-                if (S_OK != nResult)
+                if (nResult != ResultOK)
                 {
                     FreePIDLs(arrPIDLs);
                     return null;
@@ -342,9 +368,9 @@
         }
 
         /// <summary>
-        /// Free the PIDLs
+        /// Free the PIDLs.
         /// </summary>
-        /// <param name="arrPIDLs">Array of PIDLs (IntPtr)</param>
+        /// <param name="arrPIDLs">Array of PIDLs (IntPtr).</param>
         protected static void FreePIDLs(IntPtr[] arrPIDLs)
         {
             if (arrPIDLs != null)
@@ -361,54 +387,51 @@
         }
 
         /// <summary>
-        /// Shows the context menu
+        /// Shows the context menu.
         /// </summary>
-        /// <param name="files">FileInfos (should all be in same directory)</param>
-        /// <param name="pointScreen">Where to show the menu</param>
+        /// <param name="files">FileInfos (should all be in same directory).</param>
+        /// <param name="pointScreen">Where to show the menu.</param>
         public void ShowContextMenu(FileInfo[] files, Point pointScreen)
         {
             // Release all resources first.
             ReleaseAll();
-            _arrPIDLs = GetPIDLs(files);
+            arrPIDLs = GetPIDLs(files);
             ShowContextMenu(pointScreen);
         }
 
         /// <summary>
-        /// Shows the context menu
+        /// Shows the context menu.
         /// </summary>
-        /// <param name="dirs">DirectoryInfos (should all be in same directory)</param>
-        /// <param name="pointScreen">Where to show the menu</param>
+        /// <param name="dirs">DirectoryInfos (should all be in same directory).</param>
+        /// <param name="pointScreen">Where to show the menu.</param>
         public void ShowContextMenu(DirectoryInfo[] dirs, Point pointScreen)
         {
             // Release all resources first.
             ReleaseAll();
-            _arrPIDLs = GetPIDLs(dirs);
+            arrPIDLs = GetPIDLs(dirs);
             ShowContextMenu(pointScreen);
         }
 
         /// <summary>
-        /// Shows the context menu
+        /// Shows the context menu.
         /// </summary>
-        /// <param name="arrFI">FileInfos (should all be in same directory)</param>
-        /// <param name="pointScreen">Where to show the menu</param>
+        /// <param name="pointScreen">Where to show the menu.</param>
         public void ShowContextMenu(Point pointScreen)
         {
             IntPtr pMenu = IntPtr.Zero,
                 iContextMenuPtr = IntPtr.Zero,
                 iContextMenuPtr2 = IntPtr.Zero,
                 iContextMenuPtr3 = IntPtr.Zero;
-            //LocalWindowsHook hook = new LocalWindowsHook(HookType.WH_CALLWNDPROC);
-            //hook.HookInvoked += new LocalWindowsHook.HookEventHandler(WindowsHookInvoked);
 
             try
             {
-                if (_arrPIDLs == null)
+                if (arrPIDLs == null)
                 {
                     ReleaseAll();
                     return;
                 }
 
-                if (!GetContextMenuInterfaces(_oParentFolder, _arrPIDLs, out iContextMenuPtr))
+                if (!GetContextMenuInterfaces(oParentFolder, arrPIDLs, out iContextMenuPtr))
                 {
                     ReleaseAll();
                     return;
@@ -416,18 +439,18 @@
 
                 pMenu = DllImports.NativeMethods.User32CreatePopupMenu();
 
-                int nResult = _oContextMenu.QueryContextMenu(
+                int nResult = oContextMenu.QueryContextMenu(
                     pMenu,
                     0,
-                    CMD_FIRST,
-                    CMD_LAST,
+                    CmdFirst,
+                    CmdLast,
                     CMF.EXPLORE | CMF.NORMAL | ((Control.ModifierKeys & Keys.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
 
-                Marshal.QueryInterface(iContextMenuPtr, ref IID_IContextMenu2, out iContextMenuPtr2);
-                Marshal.QueryInterface(iContextMenuPtr, ref IID_IContextMenu3, out iContextMenuPtr3);
+                Marshal.QueryInterface(iContextMenuPtr, ref iidIContextMenu2, out iContextMenuPtr2);
+                Marshal.QueryInterface(iContextMenuPtr, ref iidIContextMenu3, out iContextMenuPtr3);
 
-                _oContextMenu2 = (IContextMenu2)Marshal.GetTypedObjectForIUnknown(iContextMenuPtr2, typeof(IContextMenu2));
-                _oContextMenu3 = (IContextMenu3)Marshal.GetTypedObjectForIUnknown(iContextMenuPtr3, typeof(IContextMenu3));
+                oContextMenu2 = (IContextMenu2)Marshal.GetTypedObjectForIUnknown(iContextMenuPtr2, typeof(IContextMenu2));
+                oContextMenu3 = (IContextMenu3)Marshal.GetTypedObjectForIUnknown(iContextMenuPtr3, typeof(IContextMenu3));
 
                 uint nSelected = DllImports.NativeMethods.User32TrackPopupMenuEx(
                     pMenu,
@@ -442,7 +465,7 @@
 
                 if (nSelected != 0)
                 {
-                    InvokeCommand(_oContextMenu, nSelected, _strParentFolder, pointScreen);
+                    InvokeCommand(oContextMenu, nSelected, strParentFolder, pointScreen);
                 }
             }
             catch
@@ -475,71 +498,63 @@
             }
         }
 
-        private IContextMenu _oContextMenu;
-        private IContextMenu2 _oContextMenu2;
-        private IContextMenu3 _oContextMenu3;
-        private IShellFolder _oDesktopFolder;
-        private IShellFolder _oParentFolder;
-        private IntPtr[] _arrPIDLs;
-        private string _strParentFolder;
-
-        private const int MAX_PATH = 260;
-        private const uint CMD_FIRST = 1;
-        private const uint CMD_LAST = 30000;
-
-        private const int S_OK = 0;
-
-        private static readonly int cbMenuItemInfo = Marshal.SizeOf(typeof(MENUITEMINFO));
-        private static readonly int cbInvokeCommand = Marshal.SizeOf(typeof(CMINVOKECOMMANDINFOEX));
-
-        private static Guid IID_IShellFolder = new Guid("{000214E6-0000-0000-C000-000000000046}");
-        private static Guid IID_IContextMenu = new Guid("{000214e4-0000-0000-c000-000000000046}");
-        private static Guid IID_IContextMenu2 = new Guid("{000214f4-0000-0000-c000-000000000046}");
-        private static Guid IID_IContextMenu3 = new Guid("{bcfce0a0-ec17-11d0-8d10-00a0c90f2719}");
-
         [StructLayout(LayoutKind.Sequential)]
         private struct CWPSTRUCT
         {
-            public IntPtr lparam;
-            public IntPtr wparam;
-            public int message;
-            public IntPtr hwnd;
+            public IntPtr Lparam;
+            public IntPtr Wparam;
+            public int Message;
+            public IntPtr Hwnd;
         }
 
         // Contains extended information about a shortcut menu command
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct CMINVOKECOMMANDINFOEX
         {
-            public int cbSize;
-            public CMIC fMask;
-            public IntPtr hwnd;
-            public IntPtr lpVerb;
+            public int CbSize;
+            public CMIC FMask;
+            public IntPtr Hwnd;
+            public IntPtr LpVerb;
             [MarshalAs(UnmanagedType.LPStr)]
-            public string lpParameters;
+            public string LpParameters;
             [MarshalAs(UnmanagedType.LPStr)]
-            public string lpDirectory;
-            public SW nShow;
-            public int dwHotKey;
-            public IntPtr hIcon;
+            public string LpDirectory;
+            public SW NShow;
+            public int DwHotKey;
+            public IntPtr HIcon;
             [MarshalAs(UnmanagedType.LPStr)]
-            public string lpTitle;
-            public IntPtr lpVerbW;
+            public string LpTitle;
+            public IntPtr LpVerbW;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string lpParametersW;
+            public string LpParametersW;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string lpDirectoryW;
+            public string LpDirectoryW;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string lpTitleW;
-            public POINT ptInvoke;
+            public string LpTitleW;
+            public POINT PtInvoke;
         }
 
         // Contains information about a menu item
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct MENUITEMINFO
         {
+            private readonly int cbSize;
+            private readonly MIIM fMask;
+            private readonly MFT fType;
+            private readonly MFS fState;
+            private readonly uint wID;
+            private readonly IntPtr hSubMenu;
+            private readonly IntPtr hbmpChecked;
+            private readonly IntPtr hbmpUnchecked;
+            private readonly IntPtr dwItemData;
+            [MarshalAs(UnmanagedType.LPTStr)]
+            private readonly string dwTypeData;
+            private readonly int cch;
+            private readonly IntPtr hbmpItem;
+
             public MENUITEMINFO(string text)
             {
-                cbSize = cbMenuItemInfo;
+                cbSize = CbMenuItemInfo;
                 dwTypeData = text;
                 cch = text.Length;
                 fMask = 0;
@@ -552,50 +567,6 @@
                 dwItemData = IntPtr.Zero;
                 hbmpItem = IntPtr.Zero;
             }
-
-            public int cbSize;
-            public MIIM fMask;
-            public MFT fType;
-            public MFS fState;
-            public uint wID;
-            public IntPtr hSubMenu;
-            public IntPtr hbmpChecked;
-            public IntPtr hbmpUnchecked;
-            public IntPtr dwItemData;
-            [MarshalAs(UnmanagedType.LPTStr)]
-            public string dwTypeData;
-            public int cch;
-            public IntPtr hbmpItem;
-        }
-
-        // A generalized global memory handle used for data transfer operations by the
-        // IAdviseSink, IDataObject, and IOleCache interfaces
-        [StructLayout(LayoutKind.Sequential)]
-        private struct STGMEDIUM
-        {
-            public TYMED tymed;
-            public IntPtr hBitmap;
-            public IntPtr hMetaFilePict;
-            public IntPtr hEnhMetaFile;
-            public IntPtr hGlobal;
-            public IntPtr lpszFileName;
-            public IntPtr pstm;
-            public IntPtr pstg;
-            public IntPtr pUnkForRelease;
-        }
-
-        // Defines the x- and y-coordinates of a point
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-        private struct POINT
-        {
-            public POINT(int x, int y)
-            {
-                this.x = x;
-                this.y = y;
-            }
-
-            public int x;
-            public int y;
         }
 
         // Defines the values used with the IShellFolder::GetDisplayNameOf and IShellFolder::SetNameOf
@@ -691,7 +662,7 @@
         // The cmd for a custom added menu item
         private enum CMD_CUSTOM
         {
-            ExpandCollapse = (int)CMD_LAST + 1,
+            ExpandCollapse = (int)CmdLast + 1,
         }
 
         // Flags used with the CMINVOKECOMMANDINFOEX structure
@@ -814,8 +785,7 @@
             INITMENUPOPUP = 0x117,
             INPUTLANGCHANGE = 0x51,
             INPUTLANGCHANGEREQUEST = 0x50,
-            KEYDOWN = 0x100,
-            //KEYFIRST = 0x100,
+            KEYDOWN = 0x100, // KEYFIRST = 0x100,
             KEYLAST = 0x108,
             KEYUP = 0x101,
             KILLFOCUS = 0x8,
@@ -847,12 +817,10 @@
             MENURBUTTONUP = 0x122,
             MENUSELECT = 0x11F,
             MOUSEACTIVATE = 0x21,
-            MOUSEFIRST = 0x200,
+            MOUSEFIRST = 0x200, // MOUSEMOVE = 0x200,
             MOUSEHOVER = 0x2A1,
-            MOUSELAST = 0x20A,
+            MOUSELAST = 0x20A, // MOUSEWHEEL = 0x20A,
             MOUSELEAVE = 0x2A3,
-            //MOUSEMOVE = 0x200,
-            //MOUSEWHEEL = 0x20A,
             MOVE = 0x3,
             MOVING = 0x216,
             NCACTIVATE = 0x86,
@@ -909,7 +877,7 @@
             SETMARGINS = 0xD3,
             SETREDRAW = 0xB,
             SETTEXT = 0xC,
-            SETTINGCHANGE = 0x1A,
+            SETTINGCHANGE = 0x1A, // WININICHANGE = 0x1A,
             SHOWWINDOW = 0x18,
             SIZE = 0x5,
             SIZECLIPBOARD = 0x30B,
@@ -938,7 +906,6 @@
             VSCROLLCLIPBOARD = 0x30A,
             WINDOWPOSCHANGED = 0x47,
             WINDOWPOSCHANGING = 0x46,
-            //WININICHANGE = 0x1A,
             SH_NOTIFY = 0x0401,
         }
 
@@ -946,8 +913,7 @@
         [Flags]
         private enum MFT : uint
         {
-            GRAYED = 0x00000003,
-            //DISABLED = 0x00000003,
+            GRAYED = 0x00000003, // DISABLED = 0x00000003,
             CHECKED = 0x00000008,
             SEPARATOR = 0x00000800,
             RADIOCHECK = 0x00000200,
@@ -965,13 +931,10 @@
         [Flags]
         private enum MFS : uint
         {
-            GRAYED = 0x00000003,
-            //DISABLED = 0x00000003,
+            GRAYED = 0x00000003, // DISABLED = 0x00000003,
             CHECKED = 0x00000008,
             HILITE = 0x00000080,
-            ENABLED = 0x00000000,
-            //UNCHECKED = 0x00000000,
-            //UNHILITE = 0x00000000,
+            ENABLED = 0x00000000, // UNCHECKED = 0x00000000, // UNHILITE = 0x00000000,
             DEFAULT = 0x00001000,
         }
 
@@ -1004,6 +967,36 @@
             NULL = 0,
         }
 
+        // A generalized global memory handle used for data transfer operations by the
+        // IAdviseSink, IDataObject, and IOleCache interfaces
+        [StructLayout(LayoutKind.Sequential)]
+        private struct STGMEDIUM
+        {
+            public TYMED Tymed;
+            public IntPtr HBitmap;
+            public IntPtr HMetaFilePict;
+            public IntPtr HEnhMetaFile;
+            public IntPtr HGlobal;
+            public IntPtr LpszFileName;
+            public IntPtr Pstm;
+            public IntPtr Pstg;
+            public IntPtr PUnkForRelease;
+        }
+
+        // Defines the x- and y-coordinates of a point
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        private struct POINT
+        {
+            public POINT(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+
+            public int X;
+            public int Y;
+        }
+
         [ComImport]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         [Guid("000214E6-0000-0000-C000-000000000046")]
@@ -1015,8 +1008,7 @@
             int ParseDisplayName(
                 IntPtr hwnd,
                 IntPtr pbc,
-                [MarshalAs(UnmanagedType.LPWStr)]
-            string pszDisplayName,
+                [MarshalAs(UnmanagedType.LPWStr)] string pszDisplayName,
                 ref uint pchEaten,
                 out IntPtr ppidl,
                 ref SFGAO pdwAttributes);
@@ -1078,8 +1070,7 @@
             [PreserveSig]
             int GetAttributesOf(
                 uint cidl,
-                [MarshalAs(UnmanagedType.LPArray)]
-            IntPtr[] apidl,
+                [MarshalAs(UnmanagedType.LPArray)] IntPtr[] apidl,
                 ref SFGAO rgfInOut);
 
             // Retrieves an OLE interface that can be used to carry out actions on the
@@ -1089,15 +1080,14 @@
             int GetUIObjectOf(
                 IntPtr hwndOwner,
                 uint cidl,
-                [MarshalAs(UnmanagedType.LPArray)]
-            IntPtr[] apidl,
+                [MarshalAs(UnmanagedType.LPArray)] IntPtr[] apidl,
                 ref Guid riid,
                 IntPtr rgfReserved,
                 out IntPtr ppv);
 
             // Retrieves the display name for the specified file object or subfolder.
             // Return value: error code, if any
-            [PreserveSig()]
+            [PreserveSig]
             int GetDisplayNameOf(
                 IntPtr pidl,
                 SHGNO uFlags,
@@ -1110,19 +1100,18 @@
             int SetNameOf(
                 IntPtr hwnd,
                 IntPtr pidl,
-                [MarshalAs(UnmanagedType.LPWStr)]
-            string pszName,
+                [MarshalAs(UnmanagedType.LPWStr)] string pszName,
                 SHGNO uFlags,
                 out IntPtr ppidlOut);
         }
 
-        [ComImport()]
+        [ComImport]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         [GuidAttribute("000214e4-0000-0000-c000-000000000046")]
         private interface IContextMenu
         {
             // Adds commands to a shortcut menu
-            [PreserveSig()]
+            [PreserveSig]
             int QueryContextMenu(
                 IntPtr hmenu,
                 uint iMenu,
@@ -1131,29 +1120,29 @@
                 CMF uFlags);
 
             // Carries out the command associated with a shortcut menu item
-            [PreserveSig()]
+            [PreserveSig]
             int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
             // Retrieves information about a shortcut menu command,
             // including the help string and the language-independent,
             // or canonical, name for the command
-            [PreserveSig()]
+            [PreserveSig]
             int GetCommandString(
                 uint idcmd,
                 GCS uflags,
                 uint reserved,
-                [MarshalAs(UnmanagedType.LPArray)]
-            byte[] commandstring,
+                [MarshalAs(UnmanagedType.LPArray)] byte[] commandstring,
                 int cch);
         }
 
-        [ComImport, Guid("000214f4-0000-0000-c000-000000000046")]
+        [ComImport]
+        [Guid("000214f4-0000-0000-c000-000000000046")]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         private interface IContextMenu2
         {
             // Adds commands to a shortcut menu
-            [PreserveSig()]
+            [PreserveSig]
             int QueryContextMenu(
                 IntPtr hmenu,
                 uint iMenu,
@@ -1162,20 +1151,19 @@
                 CMF uFlags);
 
             // Carries out the command associated with a shortcut menu item
-            [PreserveSig()]
+            [PreserveSig]
             int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
             // Retrieves information about a shortcut menu command,
             // including the help string and the language-independent,
             // or canonical, name for the command
-            [PreserveSig()]
+            [PreserveSig]
             int GetCommandString(
                 uint idcmd,
                 GCS uflags,
                 uint reserved,
-                [MarshalAs(UnmanagedType.LPWStr)]
-            StringBuilder commandstring,
+                [MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandstring,
                 int cch);
 
             // Allows client objects of the IContextMenu interface to
@@ -1187,12 +1175,13 @@
                 IntPtr lParam);
         }
 
-        [ComImport, Guid("bcfce0a0-ec17-11d0-8d10-00a0c90f2719")]
+        [ComImport]
+        [Guid("bcfce0a0-ec17-11d0-8d10-00a0c90f2719")]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         private interface IContextMenu3
         {
             // Adds commands to a shortcut menu
-            [PreserveSig()]
+            [PreserveSig]
             int QueryContextMenu(
                 IntPtr hmenu,
                 uint iMenu,
@@ -1201,20 +1190,19 @@
                 CMF uFlags);
 
             // Carries out the command associated with a shortcut menu item
-            [PreserveSig()]
+            [PreserveSig]
             int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
             // Retrieves information about a shortcut menu command,
             // including the help string and the language-independent,
             // or canonical, name for the command
-            [PreserveSig()]
+            [PreserveSig]
             int GetCommandString(
                 uint idcmd,
                 GCS uflags,
                 uint reserved,
-                [MarshalAs(UnmanagedType.LPWStr)]
-            StringBuilder commandstring,
+                [MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandstring,
                 int cch);
 
             // Allows client objects of the IContextMenu interface to

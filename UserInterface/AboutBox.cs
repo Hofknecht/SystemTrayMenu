@@ -1,4 +1,8 @@
-﻿namespace SystemTrayMenu.UserInterface
+﻿// <copyright file="AboutBox.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SystemTrayMenu.UserInterface
 {
     using Microsoft.Win32;
     using System;
@@ -13,16 +17,24 @@
     using SystemTrayMenu.Utilities;
 
     /// <summary>
-    /// Generic, self-contained About Box dialog
+    /// Generic, self-contained About Box dialog.
     /// </summary>
     /// <remarks>
     /// Jeff Atwood
     /// http://www.codinghorror.com
     /// converted to C# by Scott Ferguson
     /// http://www.forestmoon.com
+    /// .
     /// </remarks>
     public partial class AboutBox : Form
     {
+        private bool isPainted = false;
+        private string entryAssemblyName;
+        private string callingAssemblyName;
+        private string executingAssemblyName;
+        private Assembly entryAssembly;
+        private NameValueCollection entryAssemblyAttribCollection;
+
         public AboutBox()
         {
             InitializeComponent();
@@ -30,13 +42,6 @@
             buttonDetails.Text = Translator.GetText("buttonDetails");
             buttonSystemInfo.Text = Translator.GetText("buttonSystemInfo");
         }
-
-        private bool _IsPainted = false;
-        private string _EntryAssemblyName;
-        private string _CallingAssemblyName;
-        private string _ExecutingAssemblyName;
-        private Assembly _EntryAssembly;
-        private NameValueCollection _EntryAssemblyAttribCollection;
 
         // <summary>
         // returns the entry assembly for the current application domain
@@ -47,8 +52,8 @@
         // </remarks>
         public Assembly AppEntryAssembly
         {
-            get => _EntryAssembly;
-            set => _EntryAssembly = value;
+            get => entryAssembly;
+            set => entryAssembly = value;
         }
 
         // <summary>
@@ -184,6 +189,14 @@
             set => buttonDetails.Visible = value;
         }
 
+        private void TabPanelDetails_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TabPanelDetails.SelectedTab == TabPageAssemblyDetails)
+            {
+                AssemblyNamesComboBox.Focus();
+            }
+        }
+
         // <summary>
         // exception-safe retrieval of LastWriteTime for this assembly.
         // </summary>
@@ -191,7 +204,9 @@
         private static DateTime AssemblyLastWriteTime(Assembly a)
         {
             DateTime assemblyLastWriteTime = DateTime.MaxValue;
-            if (!a.IsDynamic) // Location property not available for dynamic assemblies
+
+            // Location property not available for dynamic assemblies
+            if (!a.IsDynamic)
             {
                 if (!string.IsNullOrEmpty(a.Location))
                 {
@@ -209,18 +224,18 @@
         // <param name="a">Assembly to get build date for</param>
         // <param name="ForceFileDate">Don't attempt to use the build number to calculate the date</param>
         // <returns>DateTime this assembly was last built</returns>
-        private static DateTime AssemblyBuildDate(Assembly a, bool ForceFileDate)
+        private static DateTime AssemblyBuildDate(Assembly a, bool forceFileDate)
         {
-            Version AssemblyVersion = a.GetName().Version;
+            Version assemblyVersion = a.GetName().Version;
             DateTime dt;
 
-            if (ForceFileDate)
+            if (forceFileDate)
             {
                 dt = AssemblyLastWriteTime(a);
             }
             else
             {
-                dt = DateTime.Parse("01/01/2000", CultureInfo.InvariantCulture).AddDays(AssemblyVersion.Build).AddSeconds(AssemblyVersion.Revision * 2);
+                dt = DateTime.Parse("01/01/2000", CultureInfo.InvariantCulture).AddDays(assemblyVersion.Build).AddSeconds(assemblyVersion.Revision * 2);
 #pragma warning disable CS0618
                 if (TimeZone.IsDaylightSavingTime(dt, TimeZone.CurrentTimeZone.GetDaylightChanges(dt.Year)))
 #pragma warning restore CS0618
@@ -228,7 +243,7 @@
                     dt = dt.AddHours(1);
                 }
 
-                if (dt > DateTime.Now || AssemblyVersion.Build < 730 || AssemblyVersion.Revision == 0)
+                if (dt > DateTime.Now || assemblyVersion.Build < 730 || assemblyVersion.Revision == 0)
                 {
                     dt = AssemblyLastWriteTime(a);
                 }
@@ -303,7 +318,8 @@
                         {
                             System.Runtime.InteropServices.ComCompatibleVersionAttribute x;
                             x = (System.Runtime.InteropServices.ComCompatibleVersionAttribute)attrib;
-                            value = x.MajorVersion + "." + x.MinorVersion + "." + x.RevisionNumber + "." + x.BuildNumber; break;
+                            value = x.MajorVersion + "." + x.MinorVersion + "." + x.RevisionNumber + "." + x.BuildNumber;
+                            break;
                         }
 
                     case "System.Runtime.InteropServices.ComVisibleAttribute":
@@ -314,7 +330,8 @@
                         {
                             System.Runtime.InteropServices.TypeLibVersionAttribute x;
                             x = (System.Runtime.InteropServices.TypeLibVersionAttribute)attrib;
-                            value = x.MajorVersion + "." + x.MinorVersion; break;
+                            value = x.MajorVersion + "." + x.MinorVersion;
+                            break;
                         }
 
                     case "System.Security.AllowPartiallyTrustedCallersAttribute":
@@ -396,13 +413,13 @@
         // <summary>
         // reads an HKLM Windows Registry key value
         // </summary>
-        private static string RegistryHklmValue(string KeyName, string SubKeyRef)
+        private static string RegistryHklmValue(string keyName, string subKeyRef)
         {
             string strSysInfoPath = string.Empty;
             try
             {
-                RegistryKey rk = Registry.LocalMachine.OpenSubKey(KeyName);
-                strSysInfoPath = (string)rk.GetValue(SubKeyRef, string.Empty);
+                RegistryKey rk = Registry.LocalMachine.OpenSubKey(keyName);
+                strSysInfoPath = (string)rk.GetValue(subKeyRef, string.Empty);
             }
             catch (Exception ex)
             {
@@ -410,7 +427,7 @@
                     ex is UnauthorizedAccessException ||
                     ex is IOException)
                 {
-                    Log.Warn($"KeyName:'{KeyName}' SubKeyRef:'{SubKeyRef}'", ex);
+                    Log.Warn($"KeyName:'{keyName}' SubKeyRef:'{subKeyRef}'", ex);
                 }
                 else
                 {
@@ -450,15 +467,15 @@
         // <summary>
         // populate a listview with the specified key and value strings
         // </summary>
-        private static void Populate(ListView lvw, string Key, string Value)
+        private static void Populate(ListView lvw, string key, string value)
         {
-            if (!string.IsNullOrEmpty(Value))
+            if (!string.IsNullOrEmpty(value))
             {
                 ListViewItem lvi = new ListViewItem
                 {
-                    Text = Key,
+                    Text = key,
                 };
-                lvi.SubItems.Add(Value);
+                lvi.SubItems.Add(value);
                 lvw.Items.Add(lvi);
             }
         }
@@ -473,9 +490,9 @@
             Populate(AppInfoListView, "Application Base", d.SetupInformation.ApplicationBase);
             Populate(AppInfoListView, "Friendly Name", d.FriendlyName);
             Populate(AppInfoListView, " ", " ");
-            Populate(AppInfoListView, "Entry Assembly", _EntryAssemblyName);
-            Populate(AppInfoListView, "Executing Assembly", _ExecutingAssemblyName);
-            Populate(AppInfoListView, "Calling Assembly", _CallingAssemblyName);
+            Populate(AppInfoListView, "Entry Assembly", entryAssemblyName);
+            Populate(AppInfoListView, "Executing Assembly", executingAssemblyName);
+            Populate(AppInfoListView, "Calling Assembly", callingAssemblyName);
         }
 
         // <summary>
@@ -488,7 +505,7 @@
                 PopulateAssemblySummary(a);
             }
 
-            AssemblyNamesComboBox.SelectedIndex = AssemblyNamesComboBox.FindStringExact(_EntryAssemblyName);
+            AssemblyNamesComboBox.SelectedIndex = AssemblyNamesComboBox.FindStringExact(entryAssemblyName);
         }
 
         // <summary>
@@ -505,17 +522,17 @@
                 Text = strAssemblyName,
                 Tag = strAssemblyName,
             };
-            if (strAssemblyName == _CallingAssemblyName)
+            if (strAssemblyName == callingAssemblyName)
             {
                 lvi.Text += " (calling)";
             }
 
-            if (strAssemblyName == _ExecutingAssemblyName)
+            if (strAssemblyName == executingAssemblyName)
             {
                 lvi.Text += " (executing)";
             }
 
-            if (strAssemblyName == _EntryAssemblyName)
+            if (strAssemblyName == entryAssemblyName)
             {
                 lvi.Text += " (entry)";
             }
@@ -532,13 +549,13 @@
         // </summary>
         private string EntryAssemblyAttrib(string strName)
         {
-            if (_EntryAssemblyAttribCollection[strName] == null)
+            if (entryAssemblyAttribCollection[strName] == null)
             {
                 return "<Assembly: Assembly" + strName + "(\"\")>";
             }
             else
             {
-                return _EntryAssemblyAttribCollection[strName].ToString(CultureInfo.InvariantCulture);
+                return entryAssemblyAttribCollection[strName].ToString(CultureInfo.InvariantCulture);
             }
         }
 
@@ -548,7 +565,7 @@
         private void PopulateLabels()
         {
             // get entry assembly attribs
-            _EntryAssemblyAttribCollection = AssemblyAttribs(_EntryAssembly);
+            entryAssemblyAttribCollection = AssemblyAttribs(entryAssembly);
 
             // set icon from parent, if present
             if (Owner != null)
@@ -624,11 +641,11 @@
         // <summary>
         // matches assembly by Assembly.GetName.Name; returns nothing if no match
         // </summary>
-        private static Assembly MatchAssemblyByName(string AssemblyName)
+        private static Assembly MatchAssemblyByName(string assemblyName)
         {
             foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
             {
-                if (a.GetName().Name == AssemblyName)
+                if (a.GetName().Name == assemblyName)
                 {
                     return a;
                 }
@@ -643,21 +660,21 @@
         private void AboutBox_Load(object sender, EventArgs e)
         {
             // if the user didn't provide an assembly, try to guess which one is the entry assembly
-            if (_EntryAssembly == null)
+            if (entryAssembly == null)
             {
-                _EntryAssembly = Assembly.GetEntryAssembly();
+                entryAssembly = Assembly.GetEntryAssembly();
             }
 
-            if (_EntryAssembly == null)
+            if (entryAssembly == null)
             {
-                _EntryAssembly = Assembly.GetExecutingAssembly();
+                entryAssembly = Assembly.GetExecutingAssembly();
             }
 
-            _ExecutingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-            _CallingAssemblyName = Assembly.GetCallingAssembly().GetName().Name;
+            executingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+            callingAssemblyName = Assembly.GetCallingAssembly().GetName().Name;
 
             // for web hosted apps, GetEntryAssembly = nothing
-            _EntryAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
+            entryAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
 
             TabPanelDetails.Visible = false;
             if (!MoreRichTextBox.Visible)
@@ -671,9 +688,9 @@
         // </summary>
         private void AboutBox_Paint(object sender, PaintEventArgs e)
         {
-            if (!_IsPainted)
+            if (!isPainted)
             {
-                _IsPainted = true;
+                isPainted = true;
                 Application.DoEvents();
                 Cursor.Current = Cursors.WaitCursor;
                 PopulateLabels();
@@ -769,37 +786,37 @@
         // </summary>
         private class ListViewItemComparer : System.Collections.IComparer
         {
-            private readonly int _intCol;
-            private readonly bool _IsAscending = true;
+            private readonly int intCol;
+            private readonly bool isAscending = true;
 
             public ListViewItemComparer()
             {
-                _intCol = 0;
-                _IsAscending = true;
+                intCol = 0;
+                isAscending = true;
             }
 
             public ListViewItemComparer(int column, bool ascending)
             {
                 if (column < 0)
                 {
-                    _IsAscending = false;
+                    isAscending = false;
                 }
                 else
                 {
-                    _IsAscending = ascending;
+                    isAscending = ascending;
                 }
 
-                _intCol = Math.Abs(column) - 1;
+                intCol = Math.Abs(column) - 1;
             }
 
             public int Compare(object x, object y)
             {
                 int intResult = string.Compare(
-                    ((ListViewItem)x).SubItems[_intCol].Text,
-                    ((ListViewItem)y).SubItems[_intCol].Text,
+                    ((ListViewItem)x).SubItems[intCol].Text,
+                    ((ListViewItem)y).SubItems[intCol].Text,
                     CultureInfo.InvariantCulture,
                     CompareOptions.None);
-                if (_IsAscending)
+                if (isAscending)
                 {
                     return intResult;
                 }
@@ -809,14 +826,5 @@
                 }
             }
         }
-
-        private void TabPanelDetails_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (TabPanelDetails.SelectedTab == TabPageAssemblyDetails)
-            {
-                AssemblyNamesComboBox.Focus();
-            }
-        }
-
     }
 }

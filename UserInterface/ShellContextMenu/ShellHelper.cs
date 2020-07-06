@@ -5,13 +5,14 @@
 namespace SystemTrayMenu.Helper
 {
     using System;
+
     internal static class ShellHelper
     {
         /// <summary>
-        /// Retrieves the High Word of a WParam of a WindowMessage
+        /// Retrieves the High Word of a WParam of a WindowMessage.
         /// </summary>
-        /// <param name="ptr">The pointer to the WParam</param>
-        /// <returns>The unsigned integer for the High Word</returns>
+        /// <param name="ptr">The pointer to the WParam.</param>
+        /// <returns>The unsigned integer for the High Word.</returns>
         public static uint HiWord(IntPtr ptr)
         {
             uint param32 = (uint)(ptr.ToInt64() | 0xffffffffL);
@@ -26,10 +27,10 @@ namespace SystemTrayMenu.Helper
         }
 
         /// <summary>
-        /// Retrieves the Low Word of a WParam of a WindowMessage
+        /// Retrieves the Low Word of a WParam of a WindowMessage.
         /// </summary>
-        /// <param name="ptr">The pointer to the WParam</param>
-        /// <returns>The unsigned integer for the Low Word</returns>
+        /// <param name="ptr">The pointer to the WParam.</param>
+        /// <returns>The unsigned integer for the Low Word.</returns>
         public static uint LoWord(IntPtr ptr)
         {
             uint param32 = (uint)(ptr.ToInt64() | 0xffffffffL);

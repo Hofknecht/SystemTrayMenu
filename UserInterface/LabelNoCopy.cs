@@ -6,6 +6,7 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Windows.Forms;
+
     /// <summary>
     /// Workaround class for "Clipboard" issue on .Net Windows Forms Label (https://github.com/Hofknecht/SystemTrayMenu/issues/5)
     /// On Label MouseDoubleClick the framework will copy the title text into the clipboard.
@@ -18,10 +19,11 @@ namespace SystemTrayMenu.UserInterface
     /// </summary>
     public class LabelNoCopy : Label
     {
-        private string _text;
+        private string text;
+
         public override string Text
         {
-            get => _text;
+            get => text;
             set
             {
                 if (value == null)
@@ -29,9 +31,9 @@ namespace SystemTrayMenu.UserInterface
                     value = string.Empty;
                 }
 
-                if (_text != value)
+                if (text != value)
                 {
-                    _text = value;
+                    text = value;
                     Refresh();
                     OnTextChanged(EventArgs.Empty);
                 }

@@ -12,9 +12,9 @@ namespace SystemTrayMenu.Utilities
     internal static class DataGridViewExtensions
     {
         /// <summary>
-        /// dgv.AutoResizeColumns() was too slow ~45ms
+        /// dgv.AutoResizeColumns() was too slow ~45ms.
         /// </summary>
-        /// <param name="dgv"></param>
+        /// <param name="dgv">datagridview.</param>
         internal static void FastAutoSizeColumns(this DataGridView dgv)
         {
             System.Collections.Generic.IEnumerable<DataGridViewRow> rows =
@@ -27,8 +27,8 @@ namespace SystemTrayMenu.Utilities
             {
                 float checkWidth = gfx.MeasureString(
                     row.Cells[i].Value.ToString() + "_",
-                    dgv.RowTemplate.DefaultCellStyle.Font
-                    ).Width * Scaling.Factor;
+                    dgv.RowTemplate.DefaultCellStyle.Font)
+                    .Width * Scaling.Factor;
                 if (checkWidth > widthMax)
                 {
                     widthMax = checkWidth;
@@ -47,7 +47,7 @@ namespace SystemTrayMenu.Utilities
             float width0 = gfx.MeasureString(
                 stringWithWidthLikeIcon,
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
-                    dgv.RowTemplate.DefaultCellStyle.Font).Width * Scaling.Factor;
+                dgv.RowTemplate.DefaultCellStyle.Font).Width * Scaling.Factor;
             dgv.Columns[0].Width = (int)width0;
         }
     }

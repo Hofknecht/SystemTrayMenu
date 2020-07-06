@@ -23,8 +23,9 @@ namespace SystemTrayMenu.Utilities
     /// </example>
     public static class IconReader
     {
-        private static readonly ConcurrentDictionary<string, Icon> dictIconCache = new ConcurrentDictionary<string, Icon>();
-        private static readonly object readIcon = new object();
+        private static readonly ConcurrentDictionary<string, Icon> DictIconCache = new ConcurrentDictionary<string, Icon>();
+        private static readonly object ReadIcon = new object();
+
         public enum IconSize
         {
             Large = 0, // 32x32 pixels
@@ -39,7 +40,7 @@ namespace SystemTrayMenu.Utilities
 
         public static void Dispose()
         {
-            foreach (Icon icon in dictIconCache.Values)
+            foreach (Icon icon in DictIconCache.Values)
             {
                 icon?.Dispose();
             }
@@ -49,11 +50,11 @@ namespace SystemTrayMenu.Utilities
         {
             Icon icon = null;
             string extension = Path.GetExtension(filePath);
-            lock (readIcon)
+            lock (ReadIcon)
             {
                 if (IsExtensionWitSameIcon(extension))
                 {
-                    icon = dictIconCache.GetOrAdd(extension, GetIcon);
+                    icon = DictIconCache.GetOrAdd(extension, GetIcon);
                     Icon GetIcon(string keyExtension)
                     {
                         return GetFileIcon(filePath, linkOverlay, size);
@@ -84,7 +85,7 @@ namespace SystemTrayMenu.Utilities
         private static Icon GetFileIcon(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
         {
             Icon icon = null;
-            DllImports.NativeMethods.SHFILEINFO shfi = new DllImports.NativeMethods.SHFILEINFO();
+            DllImports.NativeMethods.SHFILEINFO shfi = default;
             uint flags = DllImports.NativeMethods.ShgfiIcon | DllImports.NativeMethods.ShgfiSYSICONINDEX;
 
             if (linkOverlay)
@@ -102,12 +103,13 @@ namespace SystemTrayMenu.Utilities
                 flags += DllImports.NativeMethods.ShgfiLARGEICON;
             }
 
-            IntPtr hImageList = DllImports.NativeMethods.Shell32SHGetFileInfo(filePath,
+            IntPtr hImageList = DllImports.NativeMethods.Shell32SHGetFileInfo(
+                filePath,
                 DllImports.NativeMethods.FileAttributeNormal,
                 ref shfi,
                 (uint)Marshal.SizeOf(shfi),
                 flags);
-            if (hImageList != IntPtr.Zero) // got valid handle?
+            if (hImageList != IntPtr.Zero)
             {
                 IntPtr hIcon;
                 if (linkOverlay)
@@ -178,13 +180,14 @@ namespace SystemTrayMenu.Utilities
             }
 
             // Get the folder icon
-            DllImports.NativeMethods.SHFILEINFO shfi = new DllImports.NativeMethods.SHFILEINFO();
-            IntPtr Success = DllImports.NativeMethods.Shell32SHGetFileInfo(directoryPath,
+            DllImports.NativeMethods.SHFILEINFO shfi = default;
+            IntPtr success = DllImports.NativeMethods.Shell32SHGetFileInfo(
+                directoryPath,
                 DllImports.NativeMethods.FileAttributeDirectory,
                 ref shfi,
                 (uint)Marshal.SizeOf(shfi),
                 flags);
-            if (Success != IntPtr.Zero) // got valid handle?
+            if (success != IntPtr.Zero)
             {
                 try
                 {

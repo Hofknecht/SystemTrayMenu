@@ -10,16 +10,6 @@ namespace SystemTrayMenu.UserInterface
 
     public class Fading : IDisposable
     {
-        internal event EventHandlerEmpty Hide;
-
-        internal event EventHandlerEmpty Show;
-
-        internal event EventHandler<double> ChangeOpacity;
-
-        internal enum FadingState { Idle, Show, ShowTransparent, Hide }
-
-        internal bool IsHiding => state == FadingState.Hide;
-
         private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
 
         private const double StepIn = 0.20;
@@ -44,6 +34,22 @@ namespace SystemTrayMenu.UserInterface
                 FadeStep();
             }
         }
+
+        internal event EventHandlerEmpty Hide;
+
+        internal event EventHandlerEmpty Show;
+
+        internal event EventHandler<double> ChangeOpacity;
+
+        internal enum FadingState
+        {
+            Idle,
+            Show,
+            ShowTransparent,
+            Hide,
+        }
+
+        internal bool IsHiding => state == FadingState.Hide;
 
         internal void Fade(FadingState state)
         {

@@ -6,6 +6,7 @@ namespace SystemTrayMenu.UserInterface
 {
     using System.Drawing;
     using System.Windows.Forms;
+
     public partial class TaskbarForm : Form
     {
         public TaskbarForm()
@@ -22,8 +23,9 @@ namespace SystemTrayMenu.UserInterface
         private void SetLocation()
         {
             Screen screen = Screen.PrimaryScreen;
-            Location = new Point(screen.Bounds.Right - Size.Width,
-            screen.Bounds.Bottom + 80); //Hide below taskbar
+            Location = new Point(
+                screen.Bounds.Right - Size.Width,
+                screen.Bounds.Bottom + 80); // Hide below taskbar
         }
     }
 }

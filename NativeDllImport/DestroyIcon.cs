@@ -6,6 +6,7 @@ namespace SystemTrayMenu.DllImports
 {
     using System;
     using System.Runtime.InteropServices;
+
     /// <summary>
     /// wraps the methodcalls to native windows dll's.
     /// </summary>

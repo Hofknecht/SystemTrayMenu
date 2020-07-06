@@ -14,19 +14,6 @@ namespace SystemTrayMenu.DllImports
     {
         private const int maxPath = 256;
 
-        [StructLayout(LayoutKind.Sequential)]
-        internal struct SHFILEINFO
-        {
-            public const int NAMESIZE = 80;
-            public IntPtr hIcon;
-            public int iIcon;
-            public uint dwAttributes;
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = maxPath)]
-            public string szDisplayName;
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = NAMESIZE)]
-            public string szTypeName;
-        }
-
         internal static IntPtr Shell32SHGetFileInfo(
            string pszPath,
            uint dwFileAttributes,
@@ -49,5 +36,18 @@ namespace SystemTrayMenu.DllImports
            ref SHFILEINFO psfi,
            uint cbFileInfo,
            uint uFlags);
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct SHFILEINFO
+        {
+            public const int NAMESIZE = 80;
+            public IntPtr hIcon;
+            public int iIcon;
+            public uint dwAttributes;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = maxPath)]
+            public string szDisplayName;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = NAMESIZE)]
+            public string szTypeName;
+        }
     }
 }

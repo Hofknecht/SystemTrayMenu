@@ -6,6 +6,7 @@ namespace SystemTrayMenu.Utilities
 {
     using System;
     using System.Drawing;
+
     internal static class Scaling
     {
         internal static float Factor = 1;
@@ -33,11 +34,11 @@ namespace SystemTrayMenu.Utilities
         {
             Graphics g = Graphics.FromHwnd(IntPtr.Zero);
             IntPtr desktop = g.GetHdc();
-            int LogicalScreenHeight = DllImports.NativeMethods.Gdi32GetDeviceCaps(
+            int logicalScreenHeight = DllImports.NativeMethods.Gdi32GetDeviceCaps(
                 desktop, (int)DeviceCap.VERTRES);
-            int PhysicalScreenHeight = DllImports.NativeMethods.Gdi32GetDeviceCaps(
+            int physicalScreenHeight = DllImports.NativeMethods.Gdi32GetDeviceCaps(
                 desktop, (int)DeviceCap.DESKTOPVERTRES);
-            Factor = PhysicalScreenHeight / (float)LogicalScreenHeight;
+            Factor = physicalScreenHeight / (float)logicalScreenHeight;
         }
     }
 }

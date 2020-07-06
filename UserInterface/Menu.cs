@@ -1,4 +1,8 @@
-﻿namespace SystemTrayMenu.UserInterface
+﻿// <copyright file="Menu.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Data;
@@ -13,28 +17,7 @@
 
     internal partial class Menu : Form
     {
-        internal new event EventHandlerEmpty MouseWheel;
-        internal new event EventHandlerEmpty MouseEnter;
-        internal new event EventHandlerEmpty MouseLeave;
-        internal event EventHandlerEmpty UserClickedOpenFolder;
-        internal event EventHandler<Keys> CmdKeyProcessed;
-        internal event EventHandlerEmpty SearchTextChanging;
-        internal event EventHandler SearchTextChanged;
-
-        internal bool IsUsable => Visible && !fading.IsHiding &&
-            !IsDisposed && !Disposing;
-
-        internal enum MenuType
-        {
-            Main,
-            Sub,
-            Empty,
-            NoAccess,
-            MaxReached,
-        }
-
         internal int Level = 0;
-
         private readonly Fading fading = new Fading();
         private bool isShowing = false;
 
@@ -92,7 +75,8 @@
             pictureBoxSearch.Paint += PictureBoxSearch_Paint;
             void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
             {
-                e.Graphics.DrawIcon(Properties.Resources.search2,
+                e.Graphics.DrawIcon(
+                    Properties.Resources.search2,
                     new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
             }
 
@@ -124,18 +108,45 @@
             }
         }
 
+        internal new event EventHandlerEmpty MouseWheel;
+
+        internal new event EventHandlerEmpty MouseEnter;
+
+        internal new event EventHandlerEmpty MouseLeave;
+
+        internal event EventHandlerEmpty UserClickedOpenFolder;
+
+        internal event EventHandler<Keys> CmdKeyProcessed;
+
+        internal event EventHandlerEmpty SearchTextChanging;
+
+        internal event EventHandler SearchTextChanged;
+
+        internal enum MenuType
+        {
+            Main,
+            Sub,
+            Empty,
+            NoAccess,
+            MaxReached,
+        }
+
+        internal bool IsUsable => Visible && !fading.IsHiding &&
+            !IsDisposed && !Disposing;
+
         internal void FocusTextBox()
         {
             textBoxSearch.Focus();
         }
 
-        private static void SetDoubleBuffer(Control ctl, bool DoubleBuffered)
+        private static void SetDoubleBuffer(Control ctl, bool doubleBuffered)
         {
-            typeof(Control).InvokeMember("DoubleBuffered",
+            typeof(Control).InvokeMember(
+                "DoubleBuffered",
                 BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
                 null,
                 ctl,
-                new object[] { DoubleBuffered },
+                new object[] { doubleBuffered },
                 CultureInfo.InvariantCulture);
         }
 
@@ -445,11 +456,6 @@
             MouseWheel?.Invoke();
         }
 
-        internal void SetTitleColorDeactive()
-        {
-            labelTitle.ForeColor = Color.LightGray;
-        }
-
         internal void SetTitleColorActive()
         {
             labelTitle.ForeColor = Color.Black;
@@ -477,9 +483,9 @@
         {
             get
             {
-                CreateParams Params = base.CreateParams;
-                Params.ExStyle |= 0x80;
-                return Params;
+                CreateParams createparams = base.CreateParams;
+                createparams.ExStyle |= 0x80;
+                return createparams;
             }
         }
 

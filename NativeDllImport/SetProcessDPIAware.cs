@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.DllImports
 {
     using System.Runtime.InteropServices;
+
     /// <summary>
     /// wraps the methodcalls to native windows dll's.
     /// </summary>
@@ -12,6 +13,7 @@ namespace SystemTrayMenu.DllImports
     {
         [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
+
         public static void User32SetProcessDPIAware()
         {
             _ = SetProcessDPIAware();

@@ -9,6 +9,7 @@ namespace SystemTrayMenu.Utilities
     using System.IO;
     using System.Reflection;
     using System.Runtime.InteropServices;
+
     internal static class FolderOptions
     {
         private static bool hideHiddenEntries = false;

@@ -11,10 +11,13 @@ namespace SystemTrayMenu.Helper
     using System.Windows.Forms;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
+
     internal class AppContextMenu
     {
         public event EventHandlerEmpty ClickedOpenLog;
+
         public event EventHandlerEmpty ClickedRestart;
+
         public event EventHandlerEmpty ClickedExit;
 
         public ContextMenuStrip Create()
