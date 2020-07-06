@@ -1,16 +1,19 @@
-﻿using Clearcove.Logging;
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Windows.Forms;
+﻿// <copyright file="Log.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Utilities
 {
+    using Clearcove.Logging;
+    using System;
+    using System.ComponentModel;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Reflection;
+    using System.Windows.Forms;
     internal static class Log
     {
-        private static readonly Logger log = new Logger("");
+        private static readonly Logger log = new Logger(string.Empty);
         internal static void Initialize()
         {
             Logger.Start(new FileInfo(GetLogFilePath()));
@@ -26,16 +29,10 @@ namespace SystemTrayMenu.Utilities
             log.Warn($"{message}{Environment.NewLine}{ex}");
         }
 
-        //internal static void Debug(string message)
-        //{
-        //    log.Debug($"{message}{Environment.NewLine}" +
-        //        $"{Environment.StackTrace.ToString()}");
-        //}
-
         internal static void Error(string message, Exception ex)
         {
             log.Error($"{message}{Environment.NewLine}" +
-                $"{ex.ToString()}");
+                $"{ex}");
         }
 
         internal static string GetLogFilePath()
@@ -77,15 +74,15 @@ namespace SystemTrayMenu.Utilities
             {
                 try
                 {
-                    using (Process p = new Process())
+                    using Process p = new Process
                     {
-                        p.StartInfo = new ProcessStartInfo(fileName)
+                        StartInfo = new ProcessStartInfo(fileName)
                         {
                             Arguments = arguments,
-                            UseShellExecute = true
-                        };
-                        p.Start();
+                            UseShellExecute = true,
+                        }
                     };
+                    p.Start();
                 }
                 catch (Exception ex)
                 {

@@ -1,10 +1,13 @@
-﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
+﻿// <copyright file="SingleAppInstance.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Utilities
 {
+    using System;
+    using System.ComponentModel;
+    using System.Diagnostics;
+    using System.Linq;
     internal static class SingleAppInstance
     {
         internal static void Initialize()
@@ -27,6 +30,7 @@ namespace SystemTrayMenu.Utilities
                             {
                                 p.Kill();
                             }
+
                             p.WaitForExit();
                             p.Close();
                             killedAProcess = true;
@@ -48,9 +52,9 @@ namespace SystemTrayMenu.Utilities
                     return killedAProcess;
                 }
             }
-            bool IsAnyOtherInstancesofAppAlreadyRunning()
+
+            static bool IsAnyOtherInstancesofAppAlreadyRunning()
             {
-                //string pid = Process.Id.ToString();
                 foreach (Process p in Process.GetProcessesByName(
                     Process.GetCurrentProcess().ProcessName).
                     Where(s => s.Id != Process.GetCurrentProcess().Id))

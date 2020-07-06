@@ -1,26 +1,34 @@
-﻿using System;
-using System.Windows.Forms;
-using SystemTrayMenu.Utilities;
+﻿// <copyright file="Fading.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.UserInterface
 {
+    using System;
+    using System.Windows.Forms;
+    using SystemTrayMenu.Utilities;
+
     public class Fading : IDisposable
     {
         internal event EventHandlerEmpty Hide;
+
         internal event EventHandlerEmpty Show;
+
         internal event EventHandler<double> ChangeOpacity;
-        internal enum FadingState { Idle, Show, ShowTransparent, Hide };
+
+        internal enum FadingState { Idle, Show, ShowTransparent, Hide }
+
         internal bool IsHiding => state == FadingState.Hide;
 
-        private const int Interval60FPS = 16; //60fps=>1s/60fps=~16.6ms
+        private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
 
         private const double StepIn = 0.20;
         private const double StepOut = 0.10;
         private const double Transparent = 0.80;
-        private const double TransparentMinus = 0.60; //Transparent - StepIn
-        private const double TransparentPlus = 0.85; //Transparent + StepOut
+        private const double TransparentMinus = 0.60; // Transparent - StepIn
+        private const double TransparentPlus = 0.85; // Transparent + StepOut
         private const double Shown = 1.00;
-        private const double ShownMinus = 0.80; //Shown - StepIn
+        private const double ShownMinus = 0.80; // Shown - StepIn
 
         private readonly Timer timer = new Timer();
         private FadingState state = FadingState.Idle;
@@ -80,6 +88,7 @@ namespace SystemTrayMenu.UserInterface
                         ChangeOpacity?.Invoke(this, Shown);
                         StartStopTimer(FadingState.Idle);
                     }
+
                     break;
                 case FadingState.ShowTransparent:
                     if (!visible)
@@ -104,6 +113,7 @@ namespace SystemTrayMenu.UserInterface
                         ChangeOpacity?.Invoke(this, Transparent);
                         StartStopTimer(FadingState.Idle);
                     }
+
                     break;
                 case FadingState.Hide:
                     if (opacity > StepOut)
@@ -119,6 +129,7 @@ namespace SystemTrayMenu.UserInterface
                         Hide?.Invoke();
                         StartStopTimer(FadingState.Idle);
                     }
+
                     break;
                 case FadingState.Idle:
                 default:

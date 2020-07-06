@@ -1,13 +1,17 @@
-﻿using System.Collections.Generic;
+﻿// <copyright file="MenuData.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.DataClasses
 {
+    using System.Collections.Generic;
+
     internal enum MenuDataValidity
     {
         AbortedOrUnknown,
         Valid,
         Empty,
-        NoAccess
+        NoAccess,
     }
 
     internal struct MenuData
@@ -16,5 +20,5 @@ namespace SystemTrayMenu.DataClasses
         internal MenuDataValidity Validity;
         internal int Level;
         internal RowData RowDataParent;
-    };
+    }
 }

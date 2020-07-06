@@ -1,21 +1,25 @@
-﻿using IWshRuntimeLibrary;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Windows.Forms;
-using SystemTrayMenu.Utilities;
-using TAFactory.IconPack;
-using Menu = SystemTrayMenu.UserInterface.Menu;
+﻿// <copyright file="RowData.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.DataClasses
 {
+    using IWshRuntimeLibrary;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Diagnostics;
+    using System.Drawing;
+    using System.IO;
+    using System.Linq;
+    using System.Security;
+    using System.Text;
+    using System.Windows.Forms;
+    using SystemTrayMenu.Utilities;
+    using TAFactory.IconPack;
+    using Menu = SystemTrayMenu.UserInterface.Menu;
+
     internal class RowData : IDisposable
     {
         internal FileInfo FileInfo;
@@ -24,19 +28,19 @@ namespace SystemTrayMenu.DataClasses
         internal bool IsSelected;
         internal bool ContainsMenu;
         internal bool IsContextMenuOpen;
-        private static DateTime ContextMenuClosed;
         internal bool IsResolvedLnk;
         internal bool HiddenEntry;
         internal string TargetFilePath;
         internal string TargetFilePathOrig;
         internal int RowIndex;
+        internal int MenuLevel;
+        private static DateTime ContextMenuClosed;
         private string WorkingDirectory;
         private string Arguments;
         private string Text;
         private Icon Icon = null;
         private bool diposeIcon = true;
         private bool isDisposed = false;
-        internal int MenuLevel;
 
         internal RowData()
         {
@@ -81,8 +85,10 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (isDirectory)
             {
-                Icon = IconReader.GetFolderIcon(TargetFilePath,
-                    IconReader.FolderType.Closed, false);
+                Icon = IconReader.GetFolderIcon(
+                    TargetFilePath,
+                    IconReader.FolderType.Closed,
+                    false);
             }
             else
             {
@@ -111,14 +117,14 @@ namespace SystemTrayMenu.DataClasses
                         diposeIcon = false;
 
                         // other project -> fails sometimes
-                        //icon = IconHelper.ExtractIcon(TargetFilePath, 0);
+                        // icon = IconHelper.ExtractIcon(TargetFilePath, 0);
 
                         // standard way -> fails sometimes
-                        //icon = Icon.ExtractAssociatedIcon(filePath);
+                        // icon = Icon.ExtractAssociatedIcon(filePath);
 
                         // API Code Pack  -> fails sometimes
-                        //ShellFile shellFile = ShellFile.FromFilePath(filePath);
-                        //Bitmap shellThumb = shellFile.Thumbnail.ExtraLargeBitmap;
+                        // ShellFile shellFile = ShellFile.FromFilePath(filePath);
+                        // Bitmap shellThumb = shellFile.Thumbnail.ExtraLargeBitmap;
                     }
                     catch (Exception ex)
                     {
@@ -141,20 +147,115 @@ namespace SystemTrayMenu.DataClasses
             return isLnkDirectory;
         }
 
+        internal void MouseDown(DataGridView dgv, MouseEventArgs e)
+        {
+            if (e != null &&
+                e.Button == MouseButtons.Right &&
+                FileInfo != null &&
+                dgv != null &&
+                dgv.Rows.Count > RowIndex &&
+                (DateTime.Now - ContextMenuClosed).TotalMilliseconds > 200)
+            {
+                IsContextMenuOpen = true;
+                Color colorbefore = dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor;
+                dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor =
+                        MenuDefines.ColorSelectedItem;
+
+                ShellContextMenu ctxMnu = new ShellContextMenu();
+                Point location = dgv.FindForm().Location;
+                Point point = new Point(
+                    e.X + location.X + dgv.Location.X,
+                    e.Y + location.Y + dgv.Location.Y);
+                if (ContainsMenu)
+                {
+                    DirectoryInfo[] dir = new DirectoryInfo[1];
+                    dir[0] = new DirectoryInfo(TargetFilePathOrig);
+                    ctxMnu.ShowContextMenu(dir, point);
+                }
+                else
+                {
+                    FileInfo[] arrFI = new FileInfo[1];
+                    arrFI[0] = new FileInfo(TargetFilePathOrig);
+                    ctxMnu.ShowContextMenu(arrFI, point);
+                }
+
+                if (!dgv.IsDisposed)
+                {
+                    dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor = colorbefore;
+                }
+
+                IsContextMenuOpen = false;
+                ContextMenuClosed = DateTime.Now;
+            }
+        }
+
+        internal void DoubleClick(MouseEventArgs e)
+        {
+            if (e == null ||
+                e.Button == MouseButtons.Left &&
+                !ContainsMenu)
+            {
+                try
+                {
+                    using Process p = new Process
+                    {
+                        StartInfo = new ProcessStartInfo(TargetFilePath)
+                        {
+                            FileName = TargetFilePathOrig,
+                            Arguments = Arguments,
+                            WorkingDirectory = WorkingDirectory,
+                            CreateNoWindow = true,
+                            UseShellExecute = true,
+                        }
+                    };
+                    p.Start();
+                }
+                catch (Win32Exception ex)
+                {
+                    Log.Warn($"path:'{TargetFilePath}'", ex);
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            if (e == null ||
+                e.Button == MouseButtons.Left &&
+                ContainsMenu)
+            {
+                Log.ProcessStart("explorer.exe", TargetFilePath);
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!isDisposed)
+            {
+                if (diposeIcon)
+                {
+                    Icon?.Dispose();
+                }
+            }
+
+            isDisposed = true;
+        }
 
         private bool SetLnk(ref bool isLnkDirectory,
             ref string resolvedLnkPath)
         {
             bool handled = false;
-            resolvedLnkPath = LnkHelper.GetResolvedFileName(TargetFilePath);
-            if (LnkHelper.IsDirectory(resolvedLnkPath))
+            resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
+            if (FileLnk.IsDirectory(resolvedLnkPath))
             {
-                Icon = IconReader.GetFolderIcon(TargetFilePath,
-                    IconReader.FolderType.Open, true);
+                Icon = IconReader.GetFolderIcon(TargetFilePath, IconReader.FolderType.Open, true);
                 handled = true;
                 isLnkDirectory = true;
             }
-            else if (LnkHelper.IsNetworkRoot(resolvedLnkPath))
+            else if (FileLnk.IsNetworkRoot(resolvedLnkPath))
             {
                 isLnkDirectory = true;
             }
@@ -282,102 +383,6 @@ namespace SystemTrayMenu.DataClasses
             }
 
             return handled;
-        }
-
-        internal void MouseDown(DataGridView dgv, MouseEventArgs e)
-        {
-            if (e != null &&
-                e.Button == MouseButtons.Right &&
-                FileInfo != null &&
-                dgv != null &&
-                dgv.Rows.Count > RowIndex &&
-                (DateTime.Now - ContextMenuClosed).TotalMilliseconds > 200)
-            {
-                IsContextMenuOpen = true;
-                Color colorbefore = dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor;
-                dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor =
-                        MenuDefines.ColorSelectedItem;
-
-                ShellContextMenu ctxMnu = new ShellContextMenu();
-                Point location = dgv.FindForm().Location;
-                Point point = new Point(
-                    e.X + location.X + dgv.Location.X,
-                    e.Y + location.Y + dgv.Location.Y);
-                if (ContainsMenu)
-                {
-                    DirectoryInfo[] dir = new DirectoryInfo[1];
-                    dir[0] = new DirectoryInfo(TargetFilePathOrig);
-                    ctxMnu.ShowContextMenu(dir, point);
-                }
-                else
-                {
-                    FileInfo[] arrFI = new FileInfo[1];
-                    arrFI[0] = new FileInfo(TargetFilePathOrig);
-                    ctxMnu.ShowContextMenu(arrFI, point);
-                }
-
-                if (!dgv.IsDisposed)
-                {
-                    dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor = colorbefore;
-                }
-
-                IsContextMenuOpen = false;
-                ContextMenuClosed = DateTime.Now;
-            }
-        }
-
-        internal void DoubleClick(MouseEventArgs e)
-        {
-            if (e == null ||
-                e.Button == MouseButtons.Left &&
-                !ContainsMenu)
-            {
-                try
-                {
-                    using (Process p = new Process())
-                    {
-                        p.StartInfo = new ProcessStartInfo(TargetFilePath)
-                        {
-                            FileName = TargetFilePathOrig,
-                            Arguments = Arguments,
-                            WorkingDirectory = WorkingDirectory,
-                            CreateNoWindow = true,
-                            UseShellExecute = true
-                        };
-                        p.Start();
-                    };
-                }
-                catch (Win32Exception ex)
-                {
-                    Log.Warn($"path:'{TargetFilePath}'", ex);
-                    MessageBox.Show(ex.Message);
-                }
-            }
-
-            if (e == null ||
-                e.Button == MouseButtons.Left &&
-                ContainsMenu)
-            {
-                Log.ProcessStart("explorer.exe", TargetFilePath);
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!isDisposed)
-            {
-                if (diposeIcon)
-                {
-                    Icon?.Dispose();
-                }
-            }
-            isDisposed = true;
         }
     }
 }

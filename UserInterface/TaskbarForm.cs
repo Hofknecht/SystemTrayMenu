@@ -1,8 +1,11 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿// <copyright file="TaskbarForm.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.UserInterface
 {
+    using System.Drawing;
+    using System.Windows.Forms;
     public partial class TaskbarForm : Form
     {
         public TaskbarForm()

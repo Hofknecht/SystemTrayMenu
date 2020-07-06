@@ -1,27 +1,27 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows.Forms;
-using SystemTrayMenu.Helper;
-
-namespace SystemTrayMenu.Utilities
+﻿namespace SystemTrayMenu.Utilities
 {
+    using System;
+    using System.Drawing;
+    using System.IO;
+    using System.Runtime.InteropServices;
+    using System.Text;
+    using System.Windows.Forms;
+    using SystemTrayMenu.Helper;
+
     /// <summary>
     /// "Stand-alone" shell context menu
-    /// 
+    ///
     /// It isn't really debugged but is mostly working.
     /// Create an instance and call ShowContextMenu with a list of FileInfo for the files.
     /// Limitation is that it only handles files in the same directory but it can be fixed
     /// by changing the way files are translated into PIDLs.
-    /// 
+    ///
     /// Based on FileBrowser in C# from CodeProject
     /// http://www.codeproject.com/useritems/FileBrowser.asp
-    /// 
+    ///
     /// Hooking class taken from MSDN Magazine Cutting Edge column
     /// http://msdn.microsoft.com/msdnmag/issues/02/10/CuttingEdge/
-    /// 
+    ///
     /// Andreas Johansson
     /// afjohansson@hotmail.com
     /// http://afjohansson.spaces.live.com
@@ -34,23 +34,22 @@ namespace SystemTrayMenu.Utilities
     /// </example>
     public class ShellContextMenu : NativeWindow
     {
-        #region Constructor
-        /// <summary>Default constructor</summary>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShellContextMenu"/> class.
+        /// </summary>
         public ShellContextMenu()
         {
             CreateHandle(new CreateParams());
         }
-        #endregion
 
-        #region Destructor
-        /// <summary>Ensure all resources get released</summary>
+        /// <summary>
+        /// Finalizes an instance of the <see cref="ShellContextMenu"/> class.
+        /// </summary>
         ~ShellContextMenu()
         {
             ReleaseAll();
         }
-        #endregion
 
-        #region GetContextMenuInterfaces()
         /// <summary>Gets the interfaces to the context menu</summary>
         /// <param name="oParentFolder">Parent folder</param>
         /// <param name="arrPIDLs">PIDLs</param>
@@ -89,46 +88,22 @@ namespace SystemTrayMenu.Utilities
                 return false;
             }
         }
-        #endregion
-
-        #region Override
 
         /// <summary>
-        /// This method receives WindowMessages. It will make the "Open With" and "Send To" work 
-        /// by calling HandleMenuMsg and HandleMenuMsg2. It will also call the OnContextMenuMouseHover 
+        /// This method receives WindowMessages. It will make the "Open With" and "Send To" work
+        /// by calling HandleMenuMsg and HandleMenuMsg2. It will also call the OnContextMenuMouseHover
         /// method of Browser when hovering over a ContextMenu item.
         /// </summary>
         /// <param name="m">the Message of the Browser's WndProc</param>
         /// <returns>true if the message has been handled, false otherwise</returns>
         protected override void WndProc(ref Message m)
         {
-            #region IContextMenu
-
             if (_oContextMenu != null &&
                 m.Msg == (int)WM.MENUSELECT &&
                 ((int)ShellHelper.HiWord(m.WParam) & (int)MFT.SEPARATOR) == 0 &&
                 ((int)ShellHelper.HiWord(m.WParam) & (int)MFT.POPUP) == 0)
             {
-                //string info = string.Empty;
-
-                //if (ShellHelper.LoWord(m.WParam) == (int)CMD_CUSTOM.ExpandCollapse)
-                //{
-                //    info = "Expands or collapses the current selected item";
-                //}
-                //else
-                //{
-                //    info = "";/* ContextMenuHelper.GetCommandString(
-                //         _oContextMenu,
-                //         ShellHelper.LoWord(m.WParam) - CMD_FIRST,
-                //         false);*/
-                //}
-
-                //br.OnContextMenuMouseHover(new ContextMenuMouseHoverEventArgs(info.ToString()));
             }
-
-            #endregion
-
-            #region IContextMenu2
 
             if (_oContextMenu2 != null &&
                 (m.Msg == (int)WM.INITMENUPOPUP ||
@@ -142,10 +117,6 @@ namespace SystemTrayMenu.Utilities
                 }
             }
 
-            #endregion
-
-            #region IContextMenu3
-
             if (_oContextMenu3 != null &&
                 m.Msg == (int)WM.MENUCHAR)
             {
@@ -156,14 +127,9 @@ namespace SystemTrayMenu.Utilities
                 }
             }
 
-            #endregion
-
             base.WndProc(ref m);
         }
 
-        #endregion
-
-        #region InvokeCommand
         private static void InvokeCommand(IContextMenu contextMenu, uint nCmd, string strFolder, Point pointInvoke)
         {
             CMINVOKECOMMANDINFOEX invoke = new CMINVOKECOMMANDINFOEX
@@ -177,53 +143,54 @@ namespace SystemTrayMenu.Utilities
                 ((Control.ModifierKeys & Keys.Control) != 0 ? CMIC.CONTROL_DOWN : 0) |
                 ((Control.ModifierKeys & Keys.Shift) != 0 ? CMIC.SHIFT_DOWN : 0),
                 ptInvoke = new POINT(pointInvoke.X, pointInvoke.Y),
-                nShow = SW.SHOWNORMAL
+                nShow = SW.SHOWNORMAL,
             };
 
             _ = contextMenu.InvokeCommand(ref invoke);
         }
-        #endregion
 
-        #region ReleaseAll()
         /// <summary>
-        /// Release all allocated interfaces, PIDLs 
+        /// Release all allocated interfaces, PIDLs.
         /// </summary>
         private void ReleaseAll()
         {
-            if (null != _oContextMenu)
+            if (_oContextMenu != null)
             {
                 Marshal.ReleaseComObject(_oContextMenu);
                 _oContextMenu = null;
             }
-            if (null != _oContextMenu2)
+
+            if (_oContextMenu2 != null)
             {
                 Marshal.ReleaseComObject(_oContextMenu2);
                 _oContextMenu2 = null;
             }
-            if (null != _oContextMenu3)
+
+            if (_oContextMenu3 != null)
             {
                 Marshal.ReleaseComObject(_oContextMenu3);
                 _oContextMenu3 = null;
             }
-            if (null != _oDesktopFolder)
+
+            if (_oDesktopFolder != null)
             {
                 Marshal.ReleaseComObject(_oDesktopFolder);
                 _oDesktopFolder = null;
             }
-            if (null != _oParentFolder)
+
+            if (_oParentFolder != null)
             {
                 Marshal.ReleaseComObject(_oParentFolder);
                 _oParentFolder = null;
             }
-            if (null != _arrPIDLs)
+
+            if (_arrPIDLs != null)
             {
                 FreePIDLs(_arrPIDLs);
                 _arrPIDLs = null;
             }
         }
-        #endregion
 
-        #region GetDesktopFolder()
         /// <summary>
         /// Gets the desktop folder
         /// </summary>
@@ -240,14 +207,13 @@ namespace SystemTrayMenu.Utilities
                     throw new ShellContextMenuException("Failed to get the desktop shell folder");
 #pragma warning restore CA1303 //=> Exceptions not translated in logfile => OK
                 }
+
                 _oDesktopFolder = (IShellFolder)Marshal.GetTypedObjectForIUnknown(pUnkownDesktopFolder, typeof(IShellFolder));
             }
 
             return _oDesktopFolder;
         }
-        #endregion
 
-        #region GetParentFolder()
         /// <summary>
         /// Gets the parent folder
         /// </summary>
@@ -288,14 +254,13 @@ namespace SystemTrayMenu.Utilities
                 {
                     return null;
                 }
+
                 _oParentFolder = (IShellFolder)Marshal.GetTypedObjectForIUnknown(pUnknownParentFolder, typeof(IShellFolder));
             }
 
             return _oParentFolder;
         }
-        #endregion
 
-        #region GetPIDLs()
         /// <summary>
         /// Get the PIDLs
         /// </summary>
@@ -328,6 +293,7 @@ namespace SystemTrayMenu.Utilities
                     FreePIDLs(arrPIDLs);
                     return null;
                 }
+
                 arrPIDLs[n] = pPIDL;
                 n++;
             }
@@ -367,22 +333,21 @@ namespace SystemTrayMenu.Utilities
                     FreePIDLs(arrPIDLs);
                     return null;
                 }
+
                 arrPIDLs[n] = pPIDL;
                 n++;
             }
 
             return arrPIDLs;
         }
-        #endregion
 
-        #region FreePIDLs()
         /// <summary>
         /// Free the PIDLs
         /// </summary>
         /// <param name="arrPIDLs">Array of PIDLs (IntPtr)</param>
         protected static void FreePIDLs(IntPtr[] arrPIDLs)
         {
-            if (null != arrPIDLs)
+            if (arrPIDLs != null)
             {
                 for (int n = 0; n < arrPIDLs.Length; n++)
                 {
@@ -394,9 +359,6 @@ namespace SystemTrayMenu.Utilities
                 }
             }
         }
-        #endregion
-
-        #region ShowContextMenu()
 
         /// <summary>
         /// Shows the context menu
@@ -440,16 +402,13 @@ namespace SystemTrayMenu.Utilities
 
             try
             {
-                //Application.AddMessageFilter(this);
-
-                //_arrPIDLs = GetPIDLs(arrFI);
-                if (null == _arrPIDLs)
+                if (_arrPIDLs == null)
                 {
                     ReleaseAll();
                     return;
                 }
 
-                if (false == GetContextMenuInterfaces(_oParentFolder, _arrPIDLs, out iContextMenuPtr))
+                if (!GetContextMenuInterfaces(_oParentFolder, _arrPIDLs, out iContextMenuPtr))
                 {
                     ReleaseAll();
                     return;
@@ -462,17 +421,13 @@ namespace SystemTrayMenu.Utilities
                     0,
                     CMD_FIRST,
                     CMD_LAST,
-                    CMF.EXPLORE |
-                    CMF.NORMAL |
-                    ((Control.ModifierKeys & Keys.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
+                    CMF.EXPLORE | CMF.NORMAL | ((Control.ModifierKeys & Keys.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
 
                 Marshal.QueryInterface(iContextMenuPtr, ref IID_IContextMenu2, out iContextMenuPtr2);
                 Marshal.QueryInterface(iContextMenuPtr, ref IID_IContextMenu3, out iContextMenuPtr3);
 
                 _oContextMenu2 = (IContextMenu2)Marshal.GetTypedObjectForIUnknown(iContextMenuPtr2, typeof(IContextMenu2));
                 _oContextMenu3 = (IContextMenu3)Marshal.GetTypedObjectForIUnknown(iContextMenuPtr3, typeof(IContextMenu3));
-
-                //hook.Install();
 
                 uint nSelected = DllImports.NativeMethods.User32TrackPopupMenuEx(
                     pMenu,
@@ -496,7 +451,6 @@ namespace SystemTrayMenu.Utilities
             }
             finally
             {
-                //hook.Uninstall();
                 if (pMenu != IntPtr.Zero)
                 {
                     DllImports.NativeMethods.User32DestroyMenu(pMenu);
@@ -520,9 +474,7 @@ namespace SystemTrayMenu.Utilities
                 ReleaseAll();
             }
         }
-        #endregion
 
-        #region Local variabled
         private IContextMenu _oContextMenu;
         private IContextMenu2 _oContextMenu2;
         private IContextMenu3 _oContextMenu3;
@@ -530,9 +482,6 @@ namespace SystemTrayMenu.Utilities
         private IShellFolder _oParentFolder;
         private IntPtr[] _arrPIDLs;
         private string _strParentFolder;
-        #endregion
-
-        #region Variables and Constants
 
         private const int MAX_PATH = 260;
         private const uint CMD_FIRST = 1;
@@ -543,18 +492,10 @@ namespace SystemTrayMenu.Utilities
         private static readonly int cbMenuItemInfo = Marshal.SizeOf(typeof(MENUITEMINFO));
         private static readonly int cbInvokeCommand = Marshal.SizeOf(typeof(CMINVOKECOMMANDINFOEX));
 
-        #endregion
-
-        #region Shell GUIDs
-
         private static Guid IID_IShellFolder = new Guid("{000214E6-0000-0000-C000-000000000046}");
         private static Guid IID_IContextMenu = new Guid("{000214e4-0000-0000-c000-000000000046}");
         private static Guid IID_IContextMenu2 = new Guid("{000214f4-0000-0000-c000-000000000046}");
         private static Guid IID_IContextMenu3 = new Guid("{bcfce0a0-ec17-11d0-8d10-00a0c90f2719}");
-
-        #endregion
-
-        #region Structs
 
         [StructLayout(LayoutKind.Sequential)]
         private struct CWPSTRUCT
@@ -627,7 +568,7 @@ namespace SystemTrayMenu.Utilities
             public IntPtr hbmpItem;
         }
 
-        // A generalized global memory handle used for data transfer operations by the 
+        // A generalized global memory handle used for data transfer operations by the
         // IAdviseSink, IDataObject, and IOleCache interfaces
         [StructLayout(LayoutKind.Sequential)]
         private struct STGMEDIUM
@@ -657,11 +598,7 @@ namespace SystemTrayMenu.Utilities
             public int y;
         }
 
-        #endregion
-
-        #region Enums
-
-        // Defines the values used with the IShellFolder::GetDisplayNameOf and IShellFolder::SetNameOf 
+        // Defines the values used with the IShellFolder::GetDisplayNameOf and IShellFolder::SetNameOf
         // methods to specify the type of file or folder names used by those methods
         [Flags]
         private enum SHGNO
@@ -670,7 +607,7 @@ namespace SystemTrayMenu.Utilities
             INFOLDER = 0x0001,
             FOREDITING = 0x1000,
             FORADDRESSBAR = 0x4000,
-            FORPARSING = 0x8000
+            FORPARSING = 0x8000,
         }
 
         // The attributes that the caller is requesting, when calling IShellFolder::GetAttributesOf
@@ -681,12 +618,12 @@ namespace SystemTrayMenu.Utilities
             CANCOPY = 1,
             CANDELETE = 0x20,
             CANLINK = 4,
-            CANMONIKER = 0x400000,
+            CANMONIKER = 0x400000, // HASSTORAGE = 0x400000, //STREAM = 0x400000,
             CANMOVE = 2,
             CANRENAME = 0x10,
             CAPABILITYMASK = 0x177,
             COMPRESSED = 0x4000000,
-            CONTENTSMASK = 0x80000000,
+            CONTENTSMASK = 0x80000000, // HASSUBFOLDER = 0x80000000,
             DISPLAYATTRMASK = 0xfc000,
             DROPTARGET = 0x100,
             ENCRYPTED = 0x2000,
@@ -695,8 +632,6 @@ namespace SystemTrayMenu.Utilities
             FOLDER = 0x20000000,
             GHOSTED = 0x8000,
             HASPROPSHEET = 0x40,
-            //HASSTORAGE = 0x400000,
-            //HASSUBFOLDER = 0x80000000,
             HIDDEN = 0x80000,
             ISSLOW = 0x4000,
             LINK = 0x10000,
@@ -708,11 +643,10 @@ namespace SystemTrayMenu.Utilities
             STORAGE = 8,
             STORAGEANCESTOR = 0x800000,
             STORAGECAPMASK = 0x70c50008,
-            //STREAM = 0x400000,
-            VALIDATE = 0x1000000
+            VALIDATE = 0x1000000,
         }
 
-        // Determines the type of items included in an enumeration. 
+        // Determines the type of items included in an enumeration.
         // These values are used with the IShellFolder::EnumObjects method
         [Flags]
         private enum SHCONTF
@@ -739,7 +673,7 @@ namespace SystemTrayMenu.Utilities
             NODEFAULT = 0x00000020,
             INCLUDESTATIC = 0x00000040,
             EXTENDEDVERBS = 0x00000100,
-            RESERVED = 0xffff0000
+            RESERVED = 0xffff0000,
         }
 
         // Flags specifying the information to return when calling IContextMenu::GetCommandString
@@ -751,13 +685,13 @@ namespace SystemTrayMenu.Utilities
             VALIDATEA = 2,
             VERBW = 4,
             HELPTEXTW = 5,
-            VALIDATEW = 6
+            VALIDATEW = 6,
         }
 
         // The cmd for a custom added menu item
         private enum CMD_CUSTOM
         {
-            ExpandCollapse = (int)CMD_LAST + 1
+            ExpandCollapse = (int)CMD_LAST + 1,
         }
 
         // Flags used with the CMINVOKECOMMANDINFOEX structure
@@ -774,7 +708,7 @@ namespace SystemTrayMenu.Utilities
             SHIFT_DOWN = 0x10000000,
             CONTROL_DOWN = 0x40000000,
             FLAG_LOG_USAGE = 0x04000000,
-            PTINVOKE = 0x20000000
+            PTINVOKE = 0x20000000,
         }
 
         // Specifies how the window is to be shown
@@ -782,11 +716,9 @@ namespace SystemTrayMenu.Utilities
         private enum SW
         {
             HIDE = 0,
-            SHOWNORMAL = 1,
-            //NORMAL = 1,
+            SHOWNORMAL = 1, // NORMAL = 1,
             SHOWMINIMIZED = 2,
-            SHOWMAXIMIZED = 3,
-            //MAXIMIZE = 3,
+            SHOWMAXIMIZED = 3, // MAXIMIZE = 3,
             SHOWNOACTIVATE = 4,
             SHOW = 5,
             MINIMIZE = 6,
@@ -866,12 +798,11 @@ namespace SystemTrayMenu.Utilities
             HSCROLLCLIPBOARD = 0x30E,
             ICONERASEBKGND = 0x27,
             IME_CHAR = 0x286,
-            IME_COMPOSITION = 0x10F,
+            IME_COMPOSITION = 0x10F, // IME_KEYLAST = 0x10F,
             IME_COMPOSITIONFULL = 0x284,
             IME_CONTROL = 0x283,
             IME_ENDCOMPOSITION = 0x10E,
             IME_KEYDOWN = 0x290,
-            //IME_KEYLAST = 0x10F,
             IME_KEYUP = 0x291,
             IME_NOTIFY = 0x282,
             IME_REQUEST = 0x288,
@@ -1008,7 +939,7 @@ namespace SystemTrayMenu.Utilities
             WINDOWPOSCHANGED = 0x47,
             WINDOWPOSCHANGING = 0x46,
             //WININICHANGE = 0x1A,
-            SH_NOTIFY = 0x0401
+            SH_NOTIFY = 0x0401,
         }
 
         // Specifies the content of the new menu item
@@ -1027,7 +958,7 @@ namespace SystemTrayMenu.Utilities
             RIGHTORDER = 0x00002000,
             BYCOMMAND = 0x00000000,
             BYPOSITION = 0x00000400,
-            POPUP = 0x00000010
+            POPUP = 0x00000010,
         }
 
         // Specifies the state of the new menu item
@@ -1041,7 +972,7 @@ namespace SystemTrayMenu.Utilities
             ENABLED = 0x00000000,
             //UNCHECKED = 0x00000000,
             //UNHILITE = 0x00000000,
-            DEFAULT = 0x00001000
+            DEFAULT = 0x00001000,
         }
 
         // Specifies the content of the new menu item
@@ -1056,7 +987,7 @@ namespace SystemTrayMenu.Utilities
             STATE = 0x01,
             STRING = 0x40,
             SUBMENU = 0x04,
-            TYPE = 0x10
+            TYPE = 0x10,
         }
 
         // Indicates the type of storage medium being used in a data transfer
@@ -1070,12 +1001,9 @@ namespace SystemTrayMenu.Utilities
             ISTORAGE = 8,
             ISTREAM = 4,
             MFPICT = 0x20,
-            NULL = 0
+            NULL = 0,
         }
 
-        #endregion
-
-        #region IShellFolder
         [ComImport]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         [Guid("000214E6-0000-0000-C000-000000000046")]
@@ -1111,7 +1039,7 @@ namespace SystemTrayMenu.Utilities
                 ref Guid riid,
                 out IntPtr ppv);
 
-            // Requests a pointer to an object's storage interface. 
+            // Requests a pointer to an object's storage interface.
             // Return value: error code, if any
             [PreserveSig]
             int BindToStorage(
@@ -1125,11 +1053,11 @@ namespace SystemTrayMenu.Utilities
             // CODE field of the HRESULT contains one of the following values (the code
             // can be retrived using the helper function GetHResultCode): Negative A
             // negative return value indicates that the first item should precede
-            // the second (pidl1 < pidl2). 
+            // the second (pidl1 < pidl2).
 
             // Positive A positive return value indicates that the first item should
             // follow the second (pidl1 > pidl2).  Zero A return value of zero
-            // indicates that the two items are the same (pidl1 = pidl2). 
+            // indicates that the two items are the same (pidl1 = pidl2).
             [PreserveSig]
             int CompareIDs(
                 IntPtr lParam,
@@ -1145,7 +1073,7 @@ namespace SystemTrayMenu.Utilities
                 Guid riid,
                 out IntPtr ppv);
 
-            // Retrieves the attributes of one or more file objects or subfolders. 
+            // Retrieves the attributes of one or more file objects or subfolders.
             // Return value: error code, if any
             [PreserveSig]
             int GetAttributesOf(
@@ -1167,7 +1095,7 @@ namespace SystemTrayMenu.Utilities
                 IntPtr rgfReserved,
                 out IntPtr ppv);
 
-            // Retrieves the display name for the specified file object or subfolder. 
+            // Retrieves the display name for the specified file object or subfolder.
             // Return value: error code, if any
             [PreserveSig()]
             int GetDisplayNameOf(
@@ -1187,9 +1115,7 @@ namespace SystemTrayMenu.Utilities
                 SHGNO uFlags,
                 out IntPtr ppidlOut);
         }
-        #endregion
 
-        #region IContextMenu
         [ComImport()]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         [GuidAttribute("000214e4-0000-0000-c000-000000000046")]
@@ -1209,8 +1135,8 @@ namespace SystemTrayMenu.Utilities
             int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
-            // Retrieves information about a shortcut menu command, 
-            // including the help string and the language-independent, 
+            // Retrieves information about a shortcut menu command,
+            // including the help string and the language-independent,
             // or canonical, name for the command
             [PreserveSig()]
             int GetCommandString(
@@ -1240,8 +1166,8 @@ namespace SystemTrayMenu.Utilities
             int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
-            // Retrieves information about a shortcut menu command, 
-            // including the help string and the language-independent, 
+            // Retrieves information about a shortcut menu command,
+            // including the help string and the language-independent,
             // or canonical, name for the command
             [PreserveSig()]
             int GetCommandString(
@@ -1252,7 +1178,7 @@ namespace SystemTrayMenu.Utilities
             StringBuilder commandstring,
                 int cch);
 
-            // Allows client objects of the IContextMenu interface to 
+            // Allows client objects of the IContextMenu interface to
             // handle messages associated with owner-drawn menu items
             [PreserveSig]
             int HandleMenuMsg(
@@ -1279,8 +1205,8 @@ namespace SystemTrayMenu.Utilities
             int InvokeCommand(
                 ref CMINVOKECOMMANDINFOEX info);
 
-            // Retrieves information about a shortcut menu command, 
-            // including the help string and the language-independent, 
+            // Retrieves information about a shortcut menu command,
+            // including the help string and the language-independent,
             // or canonical, name for the command
             [PreserveSig()]
             int GetCommandString(
@@ -1291,7 +1217,7 @@ namespace SystemTrayMenu.Utilities
             StringBuilder commandstring,
                 int cch);
 
-            // Allows client objects of the IContextMenu interface to 
+            // Allows client objects of the IContextMenu interface to
             // handle messages associated with owner-drawn menu items
             [PreserveSig]
             int HandleMenuMsg(
@@ -1299,7 +1225,7 @@ namespace SystemTrayMenu.Utilities
                 IntPtr wParam,
                 IntPtr lParam);
 
-            // Allows client objects of the IContextMenu3 interface to 
+            // Allows client objects of the IContextMenu3 interface to
             // handle messages associated with owner-drawn menu items
             [PreserveSig]
             int HandleMenuMsg2(
@@ -1308,6 +1234,5 @@ namespace SystemTrayMenu.Utilities
                 IntPtr lParam,
                 IntPtr plResult);
         }
-        #endregion
     }
 }

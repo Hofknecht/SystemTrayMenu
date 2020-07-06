@@ -1,23 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using SystemTrayMenu.Helper;
-using SystemTrayMenu.Utilities;
-using R = SystemTrayMenu.Properties.Resources;
-using Timer = System.Windows.Forms.Timer;
+﻿// <copyright file="AppNotifyIcon.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.UserInterface
 {
-    internal class MenuNotifyIcon : IDisposable
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Linq;
+    using System.Windows.Forms;
+    using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Utilities;
+    using R = SystemTrayMenu.Properties.Resources;
+    using Timer = System.Windows.Forms.Timer;
+    internal class AppNotifyIcon : IDisposable
     {
         public event EventHandlerEmpty Click;
         public event EventHandlerEmpty OpenLog;
         public event EventHandlerEmpty Restart;
         public event EventHandlerEmpty Exit;
 
-        private const int Interval60FPS = 16; //60fps=>1s/60fps=~16.6ms
+        private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
         private DateTime timeLoadingStart;
         private bool threadsLoading = false;
@@ -26,9 +29,9 @@ namespace SystemTrayMenu.UserInterface
         private readonly int indexLoad = 0;
         private readonly List<Icon> bitmapsLoading = new List<Icon>() { R.L010, R.L020, R.L030,
             R.L040, R.L050, R.L060, R.L070, R.L080, R.L090, R.L100, R.L110, R.L120,
-            R.L130, R.L140, R.L150, R.L160, R.L170, R.L180};
+            R.L130, R.L140, R.L150, R.L160, R.L170, R.L180, };
 
-        public MenuNotifyIcon()
+        public AppNotifyIcon()
         {
             indexLoad = bitmapsLoading.Count;
             notifyIcon.Icon = bitmapsLoading.First();
@@ -63,6 +66,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 VerifyClick(e);
             }
+
             notifyIcon.MouseDoubleClick += NotifyIcon_MouseDoubleClick;
             void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
             {

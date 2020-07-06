@@ -1,11 +1,11 @@
-﻿using Shell32;
-using System;
-using System.IO;
-using System.Threading;
-
-namespace SystemTrayMenu.Utilities
+﻿namespace SystemTrayMenu.Utilities
 {
-    internal class LnkHelper
+    using Shell32;
+    using System;
+    using System.IO;
+    using System.Threading;
+
+    internal class FileLnk
     {
         public static string GetResolvedFileName(string shortcutFilename)
         {
@@ -21,6 +21,7 @@ namespace SystemTrayMenu.Utilities
                 {
                     resolvedFilename = GetShortcutFileNamePath(shortcutFilename);
                 }
+
                 staThread.SetApartmentState(ApartmentState.STA);
                 staThread.Start(shortcutFilename);
                 staThread.Join();

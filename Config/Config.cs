@@ -1,12 +1,16 @@
-﻿using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Windows.Forms;
-using SystemTrayMenu.UserInterface.Dialogs;
-using SystemTrayMenu.Utilities;
+﻿// <copyright file="Config.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu
 {
+    using System.Diagnostics;
+    using System.IO;
+    using System.Reflection;
+    using System.Windows.Forms;
+    using SystemTrayMenu.UserInterface.Dialogs;
+    using SystemTrayMenu.Utilities;
+
     public static class Config
     {
         public const string Language = "en";
@@ -38,11 +42,14 @@ namespace SystemTrayMenu
             if (!pathOK)
             {
                 string textFirstStart = Translator.GetText("TextFirstStart");
-                MessageBox.Show(textFirstStart, Translator.GetText("SystemTrayMenu"),
+                MessageBox.Show(
+                    textFirstStart,
+                    Translator.GetText("SystemTrayMenu"),
                     MessageBoxButtons.OK);
                 ShowHelpFAQ();
                 pathOK = SetFolderByUser();
             }
+
             return pathOK;
         }
 
@@ -75,7 +82,7 @@ namespace SystemTrayMenu
                     }
                 }
                 while (!pathOK && !userAborted);
-            };
+            }
 
             return pathOK;
         }

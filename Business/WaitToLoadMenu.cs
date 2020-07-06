@@ -1,18 +1,23 @@
-﻿using System;
-using System.Windows.Forms;
-using SystemTrayMenu.DataClasses;
-using SystemTrayMenu.UserInterface;
-using SystemTrayMenu.Utilities;
-using Timer = System.Windows.Forms.Timer;
+﻿// <copyright file="WaitToLoadMenu.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Handler
 {
+    using System;
+    using System.Windows.Forms;
+    using SystemTrayMenu.DataClasses;
+    using SystemTrayMenu.UserInterface;
+    using SystemTrayMenu.Utilities;
+    using Timer = System.Windows.Forms.Timer;
+
     internal class WaitToLoadMenu : IDisposable
     {
         internal event Action<RowData> StartLoadMenu;
         internal event Action<int> CloseMenu;
         internal event EventHandlerEmpty StopLoadMenu;
         internal event Action<DataGridView, int> MouseEnterOk;
+        internal bool MouseActive = false;
 
         private readonly Timer timerStartLoad = new Timer();
         private DataGridView dgv = null;
@@ -20,7 +25,6 @@ namespace SystemTrayMenu.Handler
         private DataGridView dgvTmp = null;
         private int rowIndexTmp = 0;
 
-        internal bool MouseActive = false;
         private int mouseMoveEvents = 0;
         private DateTime dateTimeLastMouseMoveEvent = DateTime.Now;
         private bool checkForMouseActive = true;
@@ -70,7 +74,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowDeselected(int rowIndex, DataGridView dgv) //iMenuBefore not needed
+        internal void RowDeselected(int rowIndex, DataGridView dgv)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
@@ -113,6 +117,7 @@ namespace SystemTrayMenu.Handler
                         MouseEnter(dgvTmp, new DataGridViewCellEventArgs(
                             0, rowIndexTmp));
                     }
+
                     mouseMoveEvents = 0;
                 }
                 else if (DateTime.Now - dateTimeLastMouseMoveEvent <

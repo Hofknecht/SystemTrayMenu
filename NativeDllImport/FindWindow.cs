@@ -1,16 +1,24 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿// <copyright file="FindWindow.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.DllImports
 {
+    using System;
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// wraps the methodcalls to native windows dll's.
+    /// </summary>
     public static partial class NativeMethods
     {
-        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:Elements should be documented", Justification = "<Pending>")]
         public static IntPtr User32FindWindow(string lpClassName, string lpWindowName)
         {
             return FindWindow(lpClassName, lpWindowName);
         }
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
     }
 }

@@ -1,10 +1,14 @@
-﻿using System.Globalization;
-using System.Resources;
-using SystemTrayMenu.Properties;
-using SystemTrayMenu.UserInterface;
+﻿// <copyright file="Translator.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Utilities
 {
+    using System.Globalization;
+    using System.Resources;
+    using SystemTrayMenu.Properties;
+    using SystemTrayMenu.UserInterface;
+
     internal static class Translator
     {
         internal static CultureInfo Culture;

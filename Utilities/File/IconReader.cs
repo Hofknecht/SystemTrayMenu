@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Runtime.InteropServices;
+﻿// <copyright file="IconReader.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Utilities
 {
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Drawing.Imaging;
+    using System.IO;
+    using System.Runtime.InteropServices;
+
     // from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
     // added ImageList_GetIcon, IconCache, AddIconOverlay
 
@@ -23,14 +27,14 @@ namespace SystemTrayMenu.Utilities
         private static readonly object readIcon = new object();
         public enum IconSize
         {
-            Large = 0, //32x32 pixels
-            Small = 1 //16x16 pixels
+            Large = 0, // 32x32 pixels
+            Small = 1, // 16x16 pixels
         }
 
         public enum FolderType
         {
             Open = 0,
-            Closed = 1
+            Closed = 1,
         }
 
         public static void Dispose()
@@ -41,8 +45,7 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay,
-            IconSize size = IconSize.Small)
+        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
         {
             Icon icon = null;
             string extension = Path.GetExtension(filePath);
@@ -74,26 +77,23 @@ namespace SystemTrayMenu.Utilities
             {
                 isExtensionWitSameIcon = false;
             }
+
             return isExtensionWitSameIcon;
         }
 
-        private static Icon GetFileIcon(string filePath, bool linkOverlay,
-            IconSize size = IconSize.Small)
+        private static Icon GetFileIcon(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
         {
             Icon icon = null;
             DllImports.NativeMethods.SHFILEINFO shfi = new DllImports.NativeMethods.SHFILEINFO();
             uint flags = DllImports.NativeMethods.ShgfiIcon | DllImports.NativeMethods.ShgfiSYSICONINDEX;
 
-            //MH: Removed, otherwise wrong icon
-            // | Shell32.SHGFI_USEFILEATTRIBUTES ;
-
-            if (true == linkOverlay)
+            if (linkOverlay)
             {
                 flags += DllImports.NativeMethods.ShgfiLINKOVERLAY;
             }
 
             /* Check the size specified for return. */
-            if (IconSize.Small == size)
+            if (size == IconSize.Small)
             {
                 flags += DllImports.NativeMethods.ShgfiSMALLICON;
             }
@@ -144,29 +144,31 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        public static Icon GetFolderIcon(string directoryPath,
-            FolderType folderType, bool linkOverlay,
+        public static Icon GetFolderIcon(
+            string directoryPath,
+            FolderType folderType,
+            bool linkOverlay,
             IconSize size = IconSize.Small)
         {
             Icon icon = null;
 
             // Need to add size check, although errors generated at present!
-            //uint flags = Shell32.SHGFI_ICON | Shell32.SHGFI_USEFILEATTRIBUTES;
+            // uint flags = Shell32.SHGFI_ICON | Shell32.SHGFI_USEFILEATTRIBUTES;
 
-            //MH: Removed SHGFI_USEFILEATTRIBUTES, otherwise was wrong folder icon
+            // MH: Removed SHGFI_USEFILEATTRIBUTES, otherwise was wrong folder icon
             uint flags = DllImports.NativeMethods.ShgfiIcon; // | Shell32.SHGFI_USEFILEATTRIBUTES;
 
-            if (true == linkOverlay)
+            if (linkOverlay)
             {
                 flags += DllImports.NativeMethods.ShgfiLINKOVERLAY;
             }
 
-            if (FolderType.Open == folderType)
+            if (folderType == FolderType.Open)
             {
                 flags += DllImports.NativeMethods.ShgfiOPENICON;
             }
 
-            if (IconSize.Small == size)
+            if (size == IconSize.Small)
             {
                 flags += DllImports.NativeMethods.ShgfiSMALLICON;
             }
@@ -207,7 +209,8 @@ namespace SystemTrayMenu.Utilities
             if (originalIcon != null)
             {
                 using Bitmap target = new Bitmap(
-                    originalIcon.Width, originalIcon.Height,
+                    originalIcon.Width,
+                    originalIcon.Height,
                     PixelFormat.Format32bppArgb);
                 Graphics graphics = Graphics.FromImage(target);
                 graphics.DrawIcon(originalIcon, 0, 0);

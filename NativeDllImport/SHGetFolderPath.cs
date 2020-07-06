@@ -1,9 +1,16 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿// <copyright file="SHGetFolderPath.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.DllImports
 {
+    using System;
+    using System.Runtime.InteropServices;
+    using System.Text;
+
+    /// <summary>
+    /// wraps the methodcalls to native windows dll's.
+    /// </summary>
     public static partial class NativeMethods
     {
         [DllImport("shfolder.dll", CharSet = CharSet.Unicode)]

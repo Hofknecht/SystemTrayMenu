@@ -1,16 +1,20 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Reflection;
-using System.Text;
-using System.Windows.Forms;
-using SystemTrayMenu.UserInterface.Controls;
-using SystemTrayMenu.Utilities;
-using static SystemTrayMenu.UserInterface.Controls.HotkeyControl;
+﻿// <copyright file="SettingsForm.cs" company="TAMAHO">
+// Copyright (c) TAMAHO. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.UserInterface
 {
+    using Microsoft.Win32;
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Reflection;
+    using System.Text;
+    using System.Windows.Forms;
+    using SystemTrayMenu.UserInterface.Controls;
+    using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.UserInterface.Controls.HotkeyControl;
+
     public partial class SettingsForm : Form
     {
         public string NewHotKey => newHotKey;
@@ -61,7 +65,7 @@ namespace SystemTrayMenu.UserInterface
                 List<Language> dataSource = new List<Language>
                 {
                     new Language() { Name = "English", Value = "en" },
-                    new Language() { Name = "Deutsch", Value = "de" }
+                    new Language() { Name = "Deutsch", Value = "de" },
                 };
                 comboBoxLanguage.DataSource = dataSource;
                 comboBoxLanguage.DisplayMember = "Name";
@@ -172,14 +176,14 @@ namespace SystemTrayMenu.UserInterface
                     {
                         return base.ProcessCmdKey(ref msg, keyData);
                     }
+
                     break;
                 default:
                     return base.ProcessCmdKey(ref msg, keyData);
             }
+
             return true;
         }
-
-        #region hotkeys
 
         /// <summary>
         /// Helper method to cleanly register a hotkey
@@ -197,20 +201,16 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (HotkeyControl.RegisterHotKey(modifierKeyCode, virtualKeyCode, handler) < 0)
                 {
-                    //LOG.DebugFormat("Failed to register {0} to hotkey: {1}", functionName, hotkeyString);
                     if (failedKeys.Length > 0)
                     {
                         failedKeys.Append(", ");
                     }
+
                     failedKeys.Append(hotkeyString);
                     return false;
                 }
-                //LOG.DebugFormat("Registered {0} to hotkey: {1}", functionName, hotkeyString);
             }
-            else
-            {
-                //LOG.InfoFormat("Skipping hotkey registration for {0}, no hotkey set!", functionName);
-            }
+
             return true;
         }
 
@@ -220,7 +220,7 @@ namespace SystemTrayMenu.UserInterface
             //try
             //{
             bool success = RegisterHotkey(failedKeys,
-                //hotkeyValue.Value.ToString(), 
+                //hotkeyValue.Value.ToString(),
                 Properties.Settings.Default.HotKey,
                 handler);
             //if (!success && ignoreFailedRegistration)
@@ -240,7 +240,7 @@ namespace SystemTrayMenu.UserInterface
             //    //hotkeyValue.UseValueOrDefault(null);
             //    //hotkeyValue.ContainingIniSection.IsDirty = true;
             //    return RegisterHotkey(failedKeys,
-            //        //hotkeyValue.Value.ToString(), 
+            //        //hotkeyValue.Value.ToString(),
             //        Properties.Settings.Default.HotKey,
             //        handler);
             //}
@@ -279,15 +279,8 @@ namespace SystemTrayMenu.UserInterface
                 {
                     success = HandleFailedHotkeyRegistration(failedKeys.ToString());
                 }
-                else
-                {
-                    // if failures have been ignored, the config has probably been updated
-                    //if (_conf.IsDirty)
-                    //{
-                    //    IniConfig.Save();
-                    //}
-                }
             }
+
             return success || ignoreFailedRegistration;
         }
 
@@ -321,7 +314,7 @@ namespace SystemTrayMenu.UserInterface
         //}
 
         /// <summary>
-        /// Displays a dialog for the user to choose how to handle hotkey registration failures: 
+        /// Displays a dialog for the user to choose how to handle hotkey registration failures:
         /// retry (allowing to shut down the conflicting application before),
         /// ignore (not registering the conflicting hotkey and resetting the respective config to "None", i.e. not trying to register it again on next startup)
         /// abort (do nothing about it)
@@ -346,9 +339,9 @@ namespace SystemTrayMenu.UserInterface
                 HotkeyControl.UnregisterHotkeys();
                 success = RegisterHotkeys(true);
             }
+
             return success;
         }
-        #endregion
     }
 
     public class Language

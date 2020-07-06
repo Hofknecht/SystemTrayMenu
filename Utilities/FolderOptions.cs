@@ -1,11 +1,14 @@
-﻿using Shell32;
-using System;
-using System.IO;
-using System.Reflection;
-using System.Runtime.InteropServices;
+﻿// <copyright file="FolderOptions.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Utilities
 {
+    using Shell32;
+    using System;
+    using System.IO;
+    using System.Reflection;
+    using System.Runtime.InteropServices;
     internal static class FolderOptions
     {
         private static bool hideHiddenEntries = false;

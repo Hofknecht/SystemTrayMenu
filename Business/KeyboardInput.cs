@@ -1,15 +1,19 @@
-﻿using System;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Windows.Forms;
-using SystemTrayMenu.DataClasses;
-using SystemTrayMenu.Helper;
-using SystemTrayMenu.Utilities;
-using Menu = SystemTrayMenu.UserInterface.Menu;
+﻿// <copyright file="KeyboardInput.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Handler
 {
+    using System;
+    using System.Drawing;
+    using System.Globalization;
+    using System.Linq;
+    using System.Windows.Forms;
+    using SystemTrayMenu.DataClasses;
+    using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Utilities;
+    using Menu = SystemTrayMenu.UserInterface.Menu;
+
     internal class KeyboardInput : IDisposable
     {
         internal event EventHandlerEmpty HotKeyPressed;
@@ -34,20 +38,6 @@ namespace SystemTrayMenu.Handler
         public void Dispose()
         {
             hook.Dispose();
-        }
-
-        private int GetMenuIndex(in Menu currentMenu)
-        {
-            int index = 0;
-            foreach (Menu menuFindIndex in menus.Where(m => m != null))
-            {
-                if (currentMenu == menuFindIndex)
-                {
-                    break;
-                }
-                index++;
-            }
-            return index;
         }
 
         internal void RegisterHotKey()
@@ -111,6 +101,7 @@ namespace SystemTrayMenu.Handler
 
                         menus[indexNew].FocusTextBox();
                     }
+
                     break;
                 case Keys.Tab | Keys.Shift:
                     {
@@ -129,6 +120,7 @@ namespace SystemTrayMenu.Handler
 
                         menus[indexNew].FocusTextBox();
                     }
+
                     break;
                 case Keys.Apps:
                     {
@@ -143,9 +135,26 @@ namespace SystemTrayMenu.Handler
                             trigger.MouseDown(dgv, mea);
                         }
                     }
+
                     break;
                 default:
                     break;
+            }
+
+            int GetMenuIndex(in Menu currentMenu)
+            {
+                int index = 0;
+                foreach (Menu menuFindIndex in menus.Where(m => m != null))
+                {
+                    if (currentMenu == menuFindIndex)
+                    {
+                        break;
+                    }
+
+                    index++;
+                }
+
+                return index;
             }
         }
 
@@ -183,6 +192,11 @@ namespace SystemTrayMenu.Handler
             {
                 Select(dgv, 0, true);
             }
+        }
+
+        internal void ClearIsSelectedByKey()
+        {
+            ClearIsSelectedByKey(iMenuKey, iRowKey);
         }
 
         private bool IsAnyMenuSelectedByKey(
@@ -265,6 +279,7 @@ namespace SystemTrayMenu.Handler
                             EnterPressed.Invoke(dgv, iRowKey);
                         }
                     }
+
                     break;
                 case Keys.Up:
                     if (SelectMatchedReverse(dgv, iRowKey) ||
@@ -274,6 +289,7 @@ namespace SystemTrayMenu.Handler
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
+
                     break;
                 case Keys.Down:
                     if (SelectMatched(dgv, iRowKey) ||
@@ -283,6 +299,7 @@ namespace SystemTrayMenu.Handler
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
+
                     break;
                 case Keys.Left:
                     int iMenuKeyNext = iMenuKey + 1;
@@ -322,6 +339,7 @@ namespace SystemTrayMenu.Handler
                             }
                         }
                     }
+
                     break;
                 case Keys.Right:
                     if (iMenuKey > 0)
@@ -349,6 +367,7 @@ namespace SystemTrayMenu.Handler
                         toClear = true;
                         Cleared?.Invoke();
                     }
+
                     break;
                 case Keys.Escape:
                     RowDeselected(iRowBefore, dgvBefore);
@@ -382,8 +401,10 @@ namespace SystemTrayMenu.Handler
                             }
                         }
                     }
+
                     break;
             }
+
             if (isStillSelected && toClear)
             {
                 ClearIsSelectedByKey(iMenuBefore, iRowBefore);
@@ -396,8 +417,7 @@ namespace SystemTrayMenu.Handler
             RowSelected(dgv, iRowKey);
         }
 
-        private bool SelectMatched(DataGridView dgv,
-            int indexStart, string keyInput = "")
+        private bool SelectMatched(DataGridView dgv, int indexStart, string keyInput = "")
         {
             bool found = false;
             for (int i = indexStart; i < dgv.Rows.Count; i++)
@@ -408,11 +428,11 @@ namespace SystemTrayMenu.Handler
                     break;
                 }
             }
+
             return found;
         }
 
-        private bool SelectMatchedReverse(DataGridView dgv,
-            int indexStart, string keyInput = "")
+        private bool SelectMatchedReverse(DataGridView dgv, int indexStart, string keyInput = "")
         {
             bool found = false;
             for (int i = indexStart; i > -1; i--)
@@ -423,6 +443,7 @@ namespace SystemTrayMenu.Handler
                     break;
                 }
             }
+
             return found;
         }
 
@@ -433,6 +454,7 @@ namespace SystemTrayMenu.Handler
             {
                 ClearIsSelectedByKey();
             }
+
             iRowKey = i;
             iMenuKey = newiMenuKey;
             DataGridViewRow row = dgv.Rows[i];
@@ -440,13 +462,12 @@ namespace SystemTrayMenu.Handler
             rowData.IsSelected = true;
             if (refreshview)
             {
-                row.Selected = false; //event trigger
-                row.Selected = true; //event trigger
+                row.Selected = false;
+                row.Selected = true;
             }
         }
 
-        private bool Select(DataGridView dgv, int i,
-            string keyInput = "")
+        private bool Select(DataGridView dgv, int i, string keyInput = "")
         {
             bool found = false;
             if (i > -1 &&
@@ -460,8 +481,8 @@ namespace SystemTrayMenu.Handler
                 {
                     iRowKey = rowData.RowIndex;
                     rowData.IsSelected = true;
-                    row.Selected = false; //event trigger
-                    row.Selected = true; //event trigger
+                    row.Selected = false;
+                    row.Selected = true;
                     if (row.Index < dgv.FirstDisplayedScrollingRowIndex)
                     {
                         dgv.FirstDisplayedScrollingRowIndex = row.Index;
@@ -477,12 +498,8 @@ namespace SystemTrayMenu.Handler
                     found = true;
                 }
             }
-            return found;
-        }
 
-        internal void ClearIsSelectedByKey()
-        {
-            ClearIsSelectedByKey(iMenuKey, iRowKey);
+            return found;
         }
 
         private void ClearIsSelectedByKey(int menuIndex, int rowIndex)

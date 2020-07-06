@@ -1,16 +1,16 @@
-﻿using System;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Windows.Forms;
-using SystemTrayMenu.DataClasses;
-using SystemTrayMenu.DllImports;
-using SystemTrayMenu.Utilities;
-
-namespace SystemTrayMenu.UserInterface
+﻿namespace SystemTrayMenu.UserInterface
 {
+    using System;
+    using System.Data;
+    using System.Drawing;
+    using System.Globalization;
+    using System.Linq;
+    using System.Reflection;
+    using System.Windows.Forms;
+    using SystemTrayMenu.DataClasses;
+    using SystemTrayMenu.DllImports;
+    using SystemTrayMenu.Utilities;
+
     internal partial class Menu : Form
     {
         internal new event EventHandlerEmpty MouseWheel;
@@ -30,7 +30,7 @@ namespace SystemTrayMenu.UserInterface
             Sub,
             Empty,
             NoAccess,
-            MaxReached
+            MaxReached,
         }
 
         internal int Level = 0;
@@ -48,6 +48,7 @@ namespace SystemTrayMenu.UserInterface
                     Opacity = newOpacity;
                 }
             }
+
             fading.Show += Fading_Show;
             void Fading_Show()
             {
@@ -84,6 +85,7 @@ namespace SystemTrayMenu.UserInterface
                     textBoxSearch.Focus();
                 }
             }
+
             fading.Hide += Hide;
 
             InitializeComponent();
@@ -93,12 +95,13 @@ namespace SystemTrayMenu.UserInterface
                 e.Graphics.DrawIcon(Properties.Resources.search2,
                     new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
             }
+
             SetDoubleBuffer(dgv, true);
 
             DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle
             {
                 SelectionBackColor = MenuDefines.ColorSelectedItem,
-                SelectionForeColor = Color.Black
+                SelectionForeColor = Color.Black,
             };
             dgv.DefaultCellStyle = dgvCellStyle;
 
@@ -111,6 +114,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 MouseEnter?.Invoke();
             }
+
             scrollBar.MouseLeave += ControlsMouseLeave;
             dgv.MouseLeave += ControlsMouseLeave;
             labelTitle.MouseLeave += ControlsMouseLeave;
@@ -129,7 +133,9 @@ namespace SystemTrayMenu.UserInterface
         {
             typeof(Control).InvokeMember("DoubleBuffered",
                 BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
-                null, ctl, new object[] { DoubleBuffered },
+                null,
+                ctl,
+                new object[] { DoubleBuffered },
                 CultureInfo.InvariantCulture);
         }
 
@@ -157,6 +163,7 @@ namespace SystemTrayMenu.UserInterface
                     {
                         labelTitle.Dispose();
                     }
+
                     break;
                 case MenuType.Empty:
                     SetTitle(Translator.GetText("Folder empty"));
@@ -206,6 +213,7 @@ namespace SystemTrayMenu.UserInterface
                 {
                     title = $"{title.Substring(0, MenuDefines.LengthMax)}...";
                 }
+
                 labelTitle.Text = title;
             }
         }
@@ -240,8 +248,10 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void AdjustSizeAndLocation(int screenHeight,
-            int screenRight, int taskbarHeight,
+        internal void AdjustSizeAndLocation(
+            int screenHeight,
+            int screenRight,
+            int taskbarHeight,
             Menu menuPredecessor = null,
             bool directionToRight = false)
         {
@@ -264,6 +274,7 @@ namespace SystemTrayMenu.UserInterface
                         {
                             row.Height = dgv.RowTemplate.Height;
                         }
+
                         dgv.Tag = true;
                     }
                 }
@@ -275,6 +286,7 @@ namespace SystemTrayMenu.UserInterface
                     {
                         row.Height = dgv.RowTemplate.Height;
                     }
+
                     dgv.Tag = true;
                 }
             }
@@ -310,15 +322,13 @@ namespace SystemTrayMenu.UserInterface
                 {
                     x = menuPredecessor.Location.X +
                         menuPredecessor.Width -
-                        (int)Math.Round(Scaling.Factor, 0,
-                        MidpointRounding.AwayFromZero);
+                        (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
                 }
                 else
                 {
                     x = menuPredecessor.Location.X -
                         Width +
-                        (int)Math.Round(Scaling.Factor, 0,
-                        MidpointRounding.AwayFromZero);
+                        (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
                 }
             }
 
@@ -344,6 +354,7 @@ namespace SystemTrayMenu.UserInterface
                         0, trigger.RowIndex, false);
                     distanceFromItemToDgvTop = cellRectangle.Top;
                 }
+
                 y = menuPredecessor.Location.Y +
                     menuPredecessor.dgv.Location.Y +
                     distanceFromItemToDgvTop;
@@ -375,11 +386,15 @@ namespace SystemTrayMenu.UserInterface
                 dgv.Width = newWidth;
             }
 
-            //Only scaling correct with Sans Serif for textBoxSearch. Workaround:
-            textBoxSearch.Font = new Font("Segoe UI", 8.25F * Scaling.Factor,
-                FontStyle.Regular, GraphicsUnit.Point, 0);
+            // Only scaling correct with Sans Serif for textBoxSearch. Workaround:
+            textBoxSearch.Font = new Font(
+                "Segoe UI",
+                8.25F * Scaling.Factor,
+                FontStyle.Regular,
+                GraphicsUnit.Point,
+                0);
 
-            //Ancor not working like in the label
+            // Ancor not working like in the label
             textBoxSearch.Width = newWidth -
                 pictureBoxSearch.Width -
                 pictureBoxSearch.Margin.Horizontal -
@@ -487,6 +502,7 @@ namespace SystemTrayMenu.UserInterface
                 default:
                     break;
             }
+
             return base.ProcessCmdKey(ref msg, keys);
         }
 
@@ -496,8 +512,11 @@ namespace SystemTrayMenu.UserInterface
             string filterField = dgv.Columns[1].Name;
             SearchTextChanging?.Invoke();
 
-            data.DefaultView.RowFilter = string.Format(CultureInfo.InvariantCulture,
-                "[{0}] LIKE '%{1}%'", filterField, textBoxSearch.Text);
+            data.DefaultView.RowFilter = string.Format(
+                CultureInfo.InvariantCulture,
+                "[{0}] LIKE '%{1}%'",
+                filterField,
+                textBoxSearch.Text);
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 RowData rowData = (RowData)row.Cells[2].Value;

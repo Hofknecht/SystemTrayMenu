@@ -1,8 +1,11 @@
-﻿using System;
-using System.Drawing;
+﻿// <copyright file="Scaling.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Utilities
 {
+    using System;
+    using System.Drawing;
     internal static class Scaling
     {
         internal static float Factor = 1;
@@ -17,7 +20,7 @@ namespace SystemTrayMenu.Utilities
         {
             CalculateScalingFactor();
             SetProcessDPIAwareWhenNecessary();
-            void SetProcessDPIAwareWhenNecessary()
+            static void SetProcessDPIAwareWhenNecessary()
             {
                 if (Environment.OSVersion.Version.Major >= 6)
                 {

@@ -1,35 +1,18 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿// <copyright file="SHGetFileInfo.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.DllImports
 {
+    using System;
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// wraps the methodcalls to native windows dll's.
+    /// </summary>
     public static partial class NativeMethods
     {
         private const int maxPath = 256;
-
-        [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
-        private static extern IntPtr SHGetFileInfo(
-           string pszPath,
-           uint dwFileAttributes,
-           ref SHFILEINFO psfi,
-           uint cbFileInfo,
-           uint uFlags
-           );
-
-        internal static IntPtr Shell32SHGetFileInfo(
-           string pszPath,
-           uint dwFileAttributes,
-           ref SHFILEINFO psfi,
-           uint cbFileInfo,
-           uint uFlags
-           )
-        {
-            return SHGetFileInfo(pszPath,
-                dwFileAttributes,
-                ref psfi,
-                cbFileInfo,
-                uFlags);
-        }
 
         [StructLayout(LayoutKind.Sequential)]
         internal struct SHFILEINFO
@@ -43,7 +26,28 @@ namespace SystemTrayMenu.DllImports
             [MarshalAs(UnmanagedType.ByValTStr, SizeConst = NAMESIZE)]
             public string szTypeName;
         }
+
+        internal static IntPtr Shell32SHGetFileInfo(
+           string pszPath,
+           uint dwFileAttributes,
+           ref SHFILEINFO psfi,
+           uint cbFileInfo,
+           uint uFlags)
+        {
+            return SHGetFileInfo(
+                pszPath,
+                dwFileAttributes,
+                ref psfi,
+                cbFileInfo,
+                uFlags);
+        }
+
+        [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr SHGetFileInfo(
+           string pszPath,
+           uint dwFileAttributes,
+           ref SHFILEINFO psfi,
+           uint cbFileInfo,
+           uint uFlags);
     }
 }
-
-

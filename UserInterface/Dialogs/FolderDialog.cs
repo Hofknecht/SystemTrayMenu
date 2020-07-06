@@ -1,12 +1,16 @@
-﻿using System;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using SystemTrayMenu.Utilities;
+﻿// <copyright file="FolderDialog.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.UserInterface.Dialogs
 {
+    using System;
+    using System.IO;
+    using System.Runtime.CompilerServices;
+    using System.Runtime.InteropServices;
+    using System.Windows.Forms;
+    using SystemTrayMenu.Utilities;
+
     public class FolderDialog : IFolderDialog, IDisposable
     {
         private bool isDisposed;
@@ -17,7 +21,7 @@ namespace SystemTrayMenu.UserInterface.Dialogs
         public string InitialFolder { get; set; }
 
         /// <summary>
-        /// Gets/sets directory in which dialog will be open 
+        /// Gets/sets directory in which dialog will be open
         /// if there is no recent directory available.
         /// </summary>
         public string DefaultFolder { get; set; }
@@ -30,6 +34,7 @@ namespace SystemTrayMenu.UserInterface.Dialogs
         {
             return ShowDialog(owner: new WindowWrapper(IntPtr.Zero));
         }
+
         public DialogResult ShowDialog(IWin32Window owner)
         {
             if (Environment.OSVersion.Version.Major >= 6)
@@ -41,9 +46,10 @@ namespace SystemTrayMenu.UserInterface.Dialogs
                 return ShowLegacyDialog(owner);
             }
         }
+
         public DialogResult ShowVistaDialog(IWin32Window owner)
         {
-            NativeMethods.IFileDialog frm = (NativeMethods.IFileDialog)(new NativeMethods.FileOpenDialogRCW());
+            NativeMethods.IFileDialog frm = (NativeMethods.IFileDialog)new NativeMethods.FileOpenDialogRCW();
             frm.GetOptions(out uint options);
             options |= NativeMethods.FOS_PICKFOLDERS |
                        NativeMethods.FOS_FORCEFILESYSTEM |
@@ -53,19 +59,24 @@ namespace SystemTrayMenu.UserInterface.Dialogs
             frm.SetOptions(options);
             if (InitialFolder != null)
             {
-                Guid riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); //IShellItem
-                if (NativeMethods.SHCreateItemFromParsingName
-                   (InitialFolder, IntPtr.Zero, ref riid,
+                Guid riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); // IShellItem
+                if (NativeMethods.SHCreateItemFromParsingName(
+                    InitialFolder,
+                    IntPtr.Zero,
+                    ref riid,
                     out NativeMethods.IShellItem directoryShellItem) == NativeMethods.S_OK)
                 {
                     frm.SetFolder(directoryShellItem);
                 }
             }
+
             if (DefaultFolder != null)
             {
-                Guid riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); //IShellItem
-                if (NativeMethods.SHCreateItemFromParsingName
-                   (DefaultFolder, IntPtr.Zero, ref riid,
+                Guid riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); // IShellItem
+                if (NativeMethods.SHCreateItemFromParsingName(
+                    DefaultFolder,
+                    IntPtr.Zero,
+                    ref riid,
                     out NativeMethods.IShellItem directoryShellItem) == NativeMethods.S_OK)
                 {
                     frm.SetDefaultFolder(directoryShellItem);
@@ -94,8 +105,10 @@ namespace SystemTrayMenu.UserInterface.Dialogs
                     }
                 }
             }
+
             return DialogResult.Cancel;
         }
+
         public DialogResult ShowLegacyDialog(IWin32Window owner)
         {
             using SaveFileDialog frm = new SaveFileDialog
@@ -104,7 +117,7 @@ namespace SystemTrayMenu.UserInterface.Dialogs
                 CheckPathExists = true,
                 CreatePrompt = false,
                 Filter = "|" + Guid.Empty.ToString(),
-                FileName = "any"
+                FileName = "any",
             };
             if (InitialFolder != null) { frm.InitialDirectory = InitialFolder; }
             frm.OverwritePrompt = false;
@@ -131,15 +144,16 @@ namespace SystemTrayMenu.UserInterface.Dialogs
         {
             if (!isDisposed)
             {
-                //just to have possibility of Using statement.
             }
+
             isDisposed = true;
         }
     }
+
     public class WindowWrapper : System.Windows.Forms.IWin32Window
     {
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="WindowWrapper"/> class.
         /// </summary>
         /// <param name="handle">Handle to wrap</param>
         public WindowWrapper(IntPtr handle)
@@ -151,13 +165,11 @@ namespace SystemTrayMenu.UserInterface.Dialogs
         /// Original ptr
         /// </summary>
         public IntPtr Handle => _hwnd;
-
         private readonly IntPtr _hwnd;
     }
+
     internal static class NativeMethods
     {
-        #region Constants
-
         public const uint FOS_PICKFOLDERS = 0x00000020;
         public const uint FOS_FORCEFILESYSTEM = 0x00000040;
         public const uint FOS_NOVALIDATE = 0x00000100;
@@ -167,10 +179,6 @@ namespace SystemTrayMenu.UserInterface.Dialogs
         public const uint S_OK = 0x0000;
 
         public const uint SIGDN_FILESYSPATH = 0x80058000;
-
-        #endregion
-
-        #region COM
 
         [ComImport, ClassInterface(ClassInterfaceType.None),
         TypeLibType(TypeLibTypeFlags.FCanCreate),
@@ -184,7 +192,7 @@ namespace SystemTrayMenu.UserInterface.Dialogs
             [MethodImpl(MethodImplOptions.InternalCall,
              MethodCodeType = MethodCodeType.Runtime)]
             [PreserveSig()]
-            uint Show([In, Optional] IntPtr hwndOwner); //IModalWindow 
+            uint Show([In, Optional] IntPtr hwndOwner);
 
             [MethodImpl(MethodImplOptions.InternalCall,
              MethodCodeType = MethodCodeType.Runtime)]
@@ -290,32 +298,30 @@ namespace SystemTrayMenu.UserInterface.Dialogs
         {
             [MethodImpl(MethodImplOptions.InternalCall,
                         MethodCodeType = MethodCodeType.Runtime)]
-            uint BindToHandler([In] IntPtr pbc, [In] ref Guid rbhid,
-            [In] ref Guid riid, [Out, MarshalAs(UnmanagedType.Interface)] out IntPtr ppvOut);
+            uint BindToHandler(
+                [In] IntPtr pbc,
+                [In] ref Guid rbhid,
+                [In] ref Guid riid,
+                [Out, MarshalAs(UnmanagedType.Interface)] out IntPtr ppvOut);
 
-            [MethodImpl(MethodImplOptions.InternalCall,
-                        MethodCodeType = MethodCodeType.Runtime)]
+            [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
             uint GetParent([MarshalAs(UnmanagedType.Interface)] out IShellItem ppsi);
 
-            [MethodImpl(MethodImplOptions.InternalCall,
-                        MethodCodeType = MethodCodeType.Runtime)]
+            [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
             uint GetDisplayName([In] uint sigdnName, out IntPtr ppszName);
 
-            [MethodImpl(MethodImplOptions.InternalCall,
-                        MethodCodeType = MethodCodeType.Runtime)]
+            [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
             uint GetAttributes([In] uint sfgaoMask, out uint psfgaoAttribs);
 
-            [MethodImpl(MethodImplOptions.InternalCall,
-                        MethodCodeType = MethodCodeType.Runtime)]
-            uint Compare([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi,
-                         [In] uint hint, out int piOrder);
+            [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
+            uint Compare([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi, [In] uint hint, out int piOrder);
         }
 
-        #endregion
-
         [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        internal static extern int SHCreateItemFromParsingName
-         ([MarshalAs(UnmanagedType.LPWStr)] string pszPath, IntPtr pbc,
-         ref Guid riid, [MarshalAs(UnmanagedType.Interface)] out IShellItem ppv);
+        internal static extern int SHCreateItemFromParsingName(
+            [MarshalAs(UnmanagedType.LPWStr)] string pszPath,
+            IntPtr pbc,
+            ref Guid riid,
+            [MarshalAs(UnmanagedType.Interface)] out IShellItem ppv);
     }
 }

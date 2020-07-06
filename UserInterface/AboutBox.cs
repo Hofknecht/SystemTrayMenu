@@ -1,17 +1,17 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Specialized;
-using System.Drawing;
-using System.Globalization;
-using System.IO;
-using System.Reflection;
-using System.Security;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using SystemTrayMenu.Utilities;
-
-namespace SystemTrayMenu.UserInterface
+﻿namespace SystemTrayMenu.UserInterface
 {
+    using Microsoft.Win32;
+    using System;
+    using System.Collections.Specialized;
+    using System.Drawing;
+    using System.Globalization;
+    using System.IO;
+    using System.Reflection;
+    using System.Security;
+    using System.Text.RegularExpressions;
+    using System.Windows.Forms;
+    using SystemTrayMenu.Utilities;
+
     /// <summary>
     /// Generic, self-contained About Box dialog
     /// </summary>
@@ -42,7 +42,7 @@ namespace SystemTrayMenu.UserInterface
         // returns the entry assembly for the current application domain
         // </summary>
         // <remarks>
-        // This is usually read-only, but in some weird cases (Smart Client apps) 
+        // This is usually read-only, but in some weird cases (Smart Client apps)
         // you won't have an entry assembly, so you may want to set this manually.
         // </remarks>
         public Assembly AppEntryAssembly
@@ -55,7 +55,7 @@ namespace SystemTrayMenu.UserInterface
         // single line of text to show in the application title section of the about box dialog
         // </summary>
         // <remarks>
-        // defaults to "%title%" 
+        // defaults to "%title%"
         // %title% = Assembly: AssemblyTitle
         // </remarks>
         public string AppTitle
@@ -203,7 +203,7 @@ namespace SystemTrayMenu.UserInterface
         }
 
         // <summary>
-        // returns DateTime this Assembly was last built. Will attempt to calculate from build number, if possible. 
+        // returns DateTime this Assembly was last built. Will attempt to calculate from build number, if possible.
         // If not, the actual LastWriteTime on the assembly file will be returned.
         // </summary>
         // <param name="a">Assembly to get build date for</param>
@@ -227,6 +227,7 @@ namespace SystemTrayMenu.UserInterface
                 {
                     dt = dt.AddHours(1);
                 }
+
                 if (dt > DateTime.Now || AssemblyVersion.Build < 730 || AssemblyVersion.Revision == 0)
                 {
                     dt = AssemblyLastWriteTime(a);
@@ -255,75 +256,77 @@ namespace SystemTrayMenu.UserInterface
         // </remarks>
         private static NameValueCollection AssemblyAttribs(Assembly a)
         {
-            string TypeName;
-            string Name;
-            string Value;
+            string typeName;
+            string name;
+            string value;
             NameValueCollection nvc = new NameValueCollection();
             Regex r = new Regex(@"(\.Assembly|\.)(?<Name>[^.]*)Attribute$", RegexOptions.IgnoreCase);
 
             foreach (object attrib in a.GetCustomAttributes(false))
             {
-                TypeName = attrib.GetType().ToString();
-                Name = r.Match(TypeName).Groups["Name"].ToString();
-                Value = "";
-                switch (TypeName)
+                typeName = attrib.GetType().ToString();
+                name = r.Match(typeName).Groups["Name"].ToString();
+                value = string.Empty;
+                switch (typeName)
                 {
                     case "System.CLSCompliantAttribute":
-                        Value = ((CLSCompliantAttribute)attrib).IsCompliant.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((CLSCompliantAttribute)attrib).IsCompliant.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Diagnostics.DebuggableAttribute":
-                        Value = ((System.Diagnostics.DebuggableAttribute)attrib).IsJITTrackingEnabled.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((System.Diagnostics.DebuggableAttribute)attrib).IsJITTrackingEnabled.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyCompanyAttribute":
-                        Value = ((AssemblyCompanyAttribute)attrib).Company.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyCompanyAttribute)attrib).Company.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyConfigurationAttribute":
-                        Value = ((AssemblyConfigurationAttribute)attrib).Configuration.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyConfigurationAttribute)attrib).Configuration.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyCopyrightAttribute":
-                        Value = ((AssemblyCopyrightAttribute)attrib).Copyright.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyCopyrightAttribute)attrib).Copyright.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyDefaultAliasAttribute":
-                        Value = ((AssemblyDefaultAliasAttribute)attrib).DefaultAlias.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyDefaultAliasAttribute)attrib).DefaultAlias.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyDelaySignAttribute":
-                        Value = ((AssemblyDelaySignAttribute)attrib).DelaySign.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyDelaySignAttribute)attrib).DelaySign.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyDescriptionAttribute":
-                        Value = ((AssemblyDescriptionAttribute)attrib).Description.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyDescriptionAttribute)attrib).Description.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyInformationalVersionAttribute":
-                        Value = ((AssemblyInformationalVersionAttribute)attrib).InformationalVersion.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyInformationalVersionAttribute)attrib).InformationalVersion.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyKeyFileAttribute":
-                        Value = ((AssemblyKeyFileAttribute)attrib).KeyFile.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyKeyFileAttribute)attrib).KeyFile.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyProductAttribute":
-                        Value = ((AssemblyProductAttribute)attrib).Product.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyProductAttribute)attrib).Product.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyTrademarkAttribute":
-                        Value = ((AssemblyTrademarkAttribute)attrib).Trademark.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyTrademarkAttribute)attrib).Trademark.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Reflection.AssemblyTitleAttribute":
-                        Value = ((AssemblyTitleAttribute)attrib).Title.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((AssemblyTitleAttribute)attrib).Title.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Resources.NeutralResourcesLanguageAttribute":
-                        Value = ((System.Resources.NeutralResourcesLanguageAttribute)attrib).CultureName.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((System.Resources.NeutralResourcesLanguageAttribute)attrib).CultureName.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Resources.SatelliteContractVersionAttribute":
-                        Value = ((System.Resources.SatelliteContractVersionAttribute)attrib).Version.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((System.Resources.SatelliteContractVersionAttribute)attrib).Version.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Runtime.InteropServices.ComCompatibleVersionAttribute":
                         {
                             System.Runtime.InteropServices.ComCompatibleVersionAttribute x;
-                            x = ((System.Runtime.InteropServices.ComCompatibleVersionAttribute)attrib);
-                            Value = x.MajorVersion + "." + x.MinorVersion + "." + x.RevisionNumber + "." + x.BuildNumber; break;
+                            x = (System.Runtime.InteropServices.ComCompatibleVersionAttribute)attrib;
+                            value = x.MajorVersion + "." + x.MinorVersion + "." + x.RevisionNumber + "." + x.BuildNumber; break;
                         }
+
                     case "System.Runtime.InteropServices.ComVisibleAttribute":
-                        Value = ((System.Runtime.InteropServices.ComVisibleAttribute)attrib).Value.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((System.Runtime.InteropServices.ComVisibleAttribute)attrib).Value.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Runtime.InteropServices.GuidAttribute":
-                        Value = ((System.Runtime.InteropServices.GuidAttribute)attrib).Value.ToString(CultureInfo.InvariantCulture); break;
+                        value = ((System.Runtime.InteropServices.GuidAttribute)attrib).Value.ToString(CultureInfo.InvariantCulture); break;
                     case "System.Runtime.InteropServices.TypeLibVersionAttribute":
                         {
                             System.Runtime.InteropServices.TypeLibVersionAttribute x;
-                            x = ((System.Runtime.InteropServices.TypeLibVersionAttribute)attrib);
-                            Value = x.MajorVersion + "." + x.MinorVersion; break;
+                            x = (System.Runtime.InteropServices.TypeLibVersionAttribute)attrib;
+                            value = x.MajorVersion + "." + x.MinorVersion; break;
                         }
+
                     case "System.Security.AllowPartiallyTrustedCallersAttribute":
-                        Value = "(Present)"; break;
+                        value = "(Present)"; break;
                     default:
                         // debug.writeline("** unknown assembly attribute '" + TypeName + "'")
-                        Value = TypeName; break;
+                        value = typeName; break;
                 }
 
-                if (nvc[Name] == null)
+                if (nvc[name] == null)
                 {
-                    nvc.Add(Name, Value);
+                    nvc.Add(name, value);
                 }
             }
 
@@ -333,7 +336,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (!a.IsDynamic)
                 {
-                    nvc.Add("CodeBase", a.CodeBase.Replace("file:///", "", StringComparison.InvariantCulture));
+                    nvc.Add("CodeBase", a.CodeBase.Replace("file:///", string.Empty, StringComparison.InvariantCulture));
                 }
             }
 #pragma warning disable CA1031 // Do not catch general exception types
@@ -342,6 +345,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 nvc.Add("CodeBase", "(not supported)");
             }
+
             // build date
             DateTime dt = AssemblyBuildDate(a, false);
             if (dt == DateTime.MaxValue)
@@ -352,6 +356,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 nvc.Add("BuildDate", dt.ToString("yyyy-MM-dd hh:mm tt", CultureInfo.InvariantCulture));
             }
+
             // location
             try
             {
@@ -377,6 +382,7 @@ namespace SystemTrayMenu.UserInterface
                     version = a.GetName().Version.ToString();
                 }
             }
+
             nvc.Add("Version", version);
 
             if (!a.IsDynamic)
@@ -428,11 +434,13 @@ namespace SystemTrayMenu.UserInterface
 
             if (string.IsNullOrEmpty(strSysInfoPath))
             {
-                MessageBox.Show("System Information is unavailable at this time." +
-                    Environment.NewLine +
-                    Environment.NewLine +
+                MessageBox.Show(
+                    "System Information is unavailable at this time." +
+                    Environment.NewLine + Environment.NewLine +
                     "(couldn't find path for Microsoft System Information Tool in the registry.)",
-                    Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Text,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
@@ -448,7 +456,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 ListViewItem lvi = new ListViewItem
                 {
-                    Text = Key
+                    Text = Key,
                 };
                 lvi.SubItems.Add(Value);
                 lvw.Items.Add(lvi);
@@ -463,13 +471,7 @@ namespace SystemTrayMenu.UserInterface
             AppDomain d = AppDomain.CurrentDomain;
             Populate(AppInfoListView, "Application Name", Assembly.GetEntryAssembly().GetName().Name);
             Populate(AppInfoListView, "Application Base", d.SetupInformation.ApplicationBase);
-            //Populate(AppInfoListView, "Cache Path", d.SetupInformation.CachePath);
-            //Populate(AppInfoListView, "Configuration File", d.SetupInformation.ConfigurationFile);
-            //Populate(AppInfoListView, "Dynamic Base", d.SetupInformation.DynamicBase);
             Populate(AppInfoListView, "Friendly Name", d.FriendlyName);
-            //Populate(AppInfoListView, "License File", d.SetupInformation.LicenseFile);
-            //Populate(AppInfoListView, "private Bin Path", d.SetupInformation.PrivateBinPath);
-            //Populate(AppInfoListView, "Shadow Copy Directories", d.SetupInformation.ShadowCopyDirectories);
             Populate(AppInfoListView, " ", " ");
             Populate(AppInfoListView, "Entry Assembly", _EntryAssemblyName);
             Populate(AppInfoListView, "Executing Assembly", _ExecutingAssemblyName);
@@ -485,6 +487,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 PopulateAssemblySummary(a);
             }
+
             AssemblyNamesComboBox.SelectedIndex = AssemblyNamesComboBox.FindStringExact(_EntryAssemblyName);
         }
 
@@ -500,26 +503,26 @@ namespace SystemTrayMenu.UserInterface
             ListViewItem lvi = new ListViewItem
             {
                 Text = strAssemblyName,
-                Tag = strAssemblyName
+                Tag = strAssemblyName,
             };
             if (strAssemblyName == _CallingAssemblyName)
             {
                 lvi.Text += " (calling)";
             }
+
             if (strAssemblyName == _ExecutingAssemblyName)
             {
                 lvi.Text += " (executing)";
             }
+
             if (strAssemblyName == _EntryAssemblyName)
             {
                 lvi.Text += " (entry)";
             }
+
             lvi.SubItems.Add(nvc["version"]);
             lvi.SubItems.Add(nvc["builddate"]);
             lvi.SubItems.Add(nvc["codebase"]);
-            //lvi.SubItems.Add(AssemblyVersion(a))
-            //lvi.SubItems.Add(AssemblyBuildDatestring(a, true))
-            //lvi.SubItems.Add(AssemblyCodeBase(a))
             AssemblyInfoListView.Items.Add(lvi);
             AssemblyNamesComboBox.Items.Add(strAssemblyName);
         }
@@ -548,17 +551,12 @@ namespace SystemTrayMenu.UserInterface
             _EntryAssemblyAttribCollection = AssemblyAttribs(_EntryAssembly);
 
             // set icon from parent, if present
-            if (Owner == null)
-            {
-                //ImagePictureBox.Visible = false;
-                //AppTitleLabel.Left = AppCopyrightLabel.Left;
-                //AppDescriptionLabel.Left = AppCopyrightLabel.Left;
-            }
-            else
+            if (Owner != null)
             {
                 Icon = Owner.Icon;
                 ImagePictureBox.Image = Icon.ToBitmap();
             }
+
             // replace all labels and window title
             Text = ReplaceTokens(Text);
             AppTitleLabel.Text = ReplaceTokens(AppTitleLabel.Text);
@@ -566,18 +564,22 @@ namespace SystemTrayMenu.UserInterface
             {
                 AppDescriptionLabel.Text = ReplaceTokens(AppDescriptionLabel.Text);
             }
+
             if (AppCopyrightLabel.Visible)
             {
                 AppCopyrightLabel.Text = ReplaceTokens(AppCopyrightLabel.Text);
             }
+
             if (AppVersionLabel.Visible)
             {
                 AppVersionLabel.Text = ReplaceTokens(AppVersionLabel.Text);
             }
+
             if (AppDateLabel.Visible)
             {
                 AppDateLabel.Text = ReplaceTokens(AppDateLabel.Text);
             }
+
             if (MoreRichTextBox.Visible)
             {
                 MoreRichTextBox.Text = ReplaceTokens(MoreRichTextBox.Text);
@@ -631,6 +633,7 @@ namespace SystemTrayMenu.UserInterface
                     return a;
                 }
             }
+
             return null;
         }
 
@@ -644,6 +647,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 _EntryAssembly = Assembly.GetEntryAssembly();
             }
+
             if (_EntryAssembly == null)
             {
                 _EntryAssembly = Assembly.GetExecutingAssembly();
@@ -654,8 +658,6 @@ namespace SystemTrayMenu.UserInterface
 
             // for web hosted apps, GetEntryAssembly = nothing
             _EntryAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
-
-            //_MinWindowHeight = AppCopyrightLabel.Top + AppCopyrightLabel.Height + buttonOk.Height + 30;
 
             TabPanelDetails.Visible = false;
             if (!MoreRichTextBox.Visible)
@@ -749,6 +751,7 @@ namespace SystemTrayMenu.UserInterface
                     intTargetCol = -Convert.ToInt32(AssemblyInfoListView.Tag, CultureInfo.InvariantCulture);
                 }
             }
+
             AssemblyInfoListView.Tag = intTargetCol;
             AssemblyInfoListView.ListViewItemSorter = new ListViewItemComparer(intTargetCol, true);
         }
@@ -785,6 +788,7 @@ namespace SystemTrayMenu.UserInterface
                 {
                     _IsAscending = ascending;
                 }
+
                 _intCol = Math.Abs(column) - 1;
             }
 
@@ -793,7 +797,8 @@ namespace SystemTrayMenu.UserInterface
                 int intResult = string.Compare(
                     ((ListViewItem)x).SubItems[_intCol].Text,
                     ((ListViewItem)y).SubItems[_intCol].Text,
-                    CultureInfo.InvariantCulture, CompareOptions.None);
+                    CultureInfo.InvariantCulture,
+                    CompareOptions.None);
                 if (_IsAscending)
                 {
                     return intResult;

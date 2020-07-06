@@ -1,18 +1,17 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿// <copyright file="SHAppBarMessage.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.DllImports
 {
+    using System;
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// wraps the methodcalls to native windows dll's.
+    /// </summary>
     public static partial class NativeMethods
     {
-        [DllImport("shell32.dll", SetLastError = true)]
-        private static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
-
-        internal static IntPtr Shell32SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData)
-        {
-            return SHAppBarMessage(dwMessage, ref pData);
-        }
-
         internal enum ABM : uint
         {
             New = 0x00000000,
@@ -33,7 +32,7 @@ namespace SystemTrayMenu.DllImports
             Left = 0,
             Top = 1,
             Right = 2,
-            Bottom = 3
+            Bottom = 3,
         }
 
         internal static class ABS
@@ -61,5 +60,13 @@ namespace SystemTrayMenu.DllImports
             public int right;
             public int bottom;
         }
+
+        internal static IntPtr Shell32SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData)
+        {
+            return SHAppBarMessage(dwMessage, ref pData);
+        }
+
+        [DllImport("shell32.dll", SetLastError = true)]
+        private static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
     }
 }

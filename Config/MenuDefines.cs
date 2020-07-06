@@ -1,8 +1,11 @@
-﻿using System.Drawing;
-using System.Reflection;
+﻿// <copyright file="MenuDefines.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu
 {
+    using System.Drawing;
+    using System.Reflection;
     internal static class MenuDefines
     {
         internal static string NotifyIconText = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;

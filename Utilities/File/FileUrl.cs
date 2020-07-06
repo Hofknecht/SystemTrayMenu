@@ -1,7 +1,11 @@
-﻿using Microsoft.Win32;
+﻿// <copyright file="FileUrl.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Utilities
 {
+    using Microsoft.Win32;
+
     public static class FileUrl
     {
         private static string browserPath = string.Empty;
@@ -10,7 +14,7 @@ namespace SystemTrayMenu.Utilities
             string urlAssociation = @"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http";
             string browserPathKey = @"$BROWSER$\shell\open\command";
 
-            RegistryKey userChoiceKey = null;
+            RegistryKey userChoiceKey;
             string browserPath = FileUrl.browserPath;
 
             if (string.IsNullOrEmpty(browserPath))
@@ -31,6 +35,7 @@ namespace SystemTrayMenu.Utilities
                         Registry.CurrentUser.OpenSubKey(
                         urlAssociation, false);
                     }
+
                     string path = CleanifyBrowserPath(browserKey.GetValue(null) as string);
                     browserKey.Close();
                     return path;
@@ -38,7 +43,7 @@ namespace SystemTrayMenu.Utilities
                 else
                 {
                     // user defined browser choice was found
-                    string progId = (userChoiceKey.GetValue("ProgId").ToString());
+                    string progId = userChoiceKey.GetValue("ProgId").ToString();
                     userChoiceKey.Close();
 
                     // now look up the path of the executable

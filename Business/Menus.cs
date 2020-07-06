@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Security;
-using System.Windows.Forms;
-using SystemTrayMenu.DataClasses;
-using SystemTrayMenu.Handler;
-using SystemTrayMenu.Helper;
-using SystemTrayMenu.Utilities;
-using Menu = SystemTrayMenu.UserInterface.Menu;
-using Timer = System.Windows.Forms.Timer;
-
+﻿
 namespace SystemTrayMenu.Business
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Diagnostics;
+    using System.Drawing;
+    using System.IO;
+    using System.Linq;
+    using System.Security;
+    using System.Windows.Forms;
+    using SystemTrayMenu.DataClasses;
+    using SystemTrayMenu.Handler;
+    using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Utilities;
+    using Menu = SystemTrayMenu.UserInterface.Menu;
+    using Timer = System.Windows.Forms.Timer;
+
     internal class Menus : IDisposable
     {
         internal event EventHandlerEmpty LoadStarted;
@@ -99,12 +100,13 @@ namespace SystemTrayMenu.Business
                     {
                         workerSubMenu = new BackgroundWorker
                         {
-                            WorkerSupportsCancellation = true
+                            WorkerSupportsCancellation = true,
                         };
                         workerSubMenu.DoWork += LoadMenu;
                         workerSubMenu.RunWorkerCompleted += LoadSubMenuCompleted;
                         workersSubMenu.Add(workerSubMenu);
                     }
+
                     workerSubMenu.RunWorkerAsync(rowData); ;
                 }
 
@@ -129,6 +131,7 @@ namespace SystemTrayMenu.Business
                                 menu.SetTypeNoAccess();
                                 break;
                         }
+
                         menu.Tag = menuData.RowDataParent;
                         menuData.RowDataParent.SubMenu = menu;
                         if (menus[0].IsUsable)
@@ -191,11 +194,11 @@ namespace SystemTrayMenu.Business
             waitToOpenMenu.MouseActive = byClick;
             if (byClick && (DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
             {
-                //By click on notifyicon the menu gets deactivated and closed
+                // By click on notifyicon the menu gets deactivated and closed
             }
             else if (string.IsNullOrEmpty(Config.Path))
             {
-                //Case when Folder Dialog open
+                // Case when Folder Dialog open
             }
             else if (openCloseState == OpenCloseState.Opening ||
                 menus[0].Visible && openCloseState == OpenCloseState.Default)
@@ -213,6 +216,7 @@ namespace SystemTrayMenu.Business
                 openCloseState = OpenCloseState.Opening;
                 StartWorker();
             }
+
             deactivatedTime = DateTime.MinValue;
         }
 
@@ -223,6 +227,7 @@ namespace SystemTrayMenu.Business
             {
                 worker.Dispose();
             }
+
             waitToOpenMenu.Dispose();
             keyboardInput.Dispose();
             timerStillActiveCheck.Dispose();
@@ -269,7 +274,7 @@ namespace SystemTrayMenu.Business
             {
                 RowDatas = new List<RowData>(),
                 Validity = MenuDataValidity.AbortedOrUnknown,
-                Level = level
+                Level = level,
             };
             if (!worker.CancellationPending)
             {
@@ -277,7 +282,7 @@ namespace SystemTrayMenu.Business
 
                 try
                 {
-                    if (LnkHelper.IsNetworkRoot(path))
+                    if (FileLnk.IsNetworkRoot(path))
                     {
                         directories = GetDirectoriesInNetworkLocation(path);
                         static string[] GetDirectoriesInNetworkLocation(string networkLocationRootPath)
@@ -314,6 +319,7 @@ namespace SystemTrayMenu.Business
                     {
                         directories = Directory.GetDirectories(path);
                     }
+
                     Array.Sort(directories, new WindowsExplorerSort());
                 }
                 catch (UnauthorizedAccessException ex)
@@ -355,14 +361,11 @@ namespace SystemTrayMenu.Business
 
                 try
                 {
-                    if (LnkHelper.IsNetworkRoot(path))
-                    {
-                        //UNC root can not have files
-                    }
-                    else
+                    if (!FileLnk.IsNetworkRoot(path))
                     {
                         files = Directory.GetFiles(path);
                     }
+
                     Array.Sort(files, new WindowsExplorerSort());
                 }
                 catch (UnauthorizedAccessException ex)
@@ -421,10 +424,10 @@ namespace SystemTrayMenu.Business
 
         internal void MainPreload()
         {
-            menus[0] = Create(GetData(workerMainMenu, Config.Path, 0),
+            menus[0] = Create(
+                GetData(workerMainMenu, Config.Path, 0),
                 Path.GetFileName(Config.Path));
-            menus[0].AdjustSizeAndLocation(screenHeight,
-                screenRight, taskbarHeight);
+            menus[0].AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight);
             DisposeMenu(menus[0]);
         }
 
@@ -446,13 +449,13 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private static RowData ReadRowData(string fileName,
-            bool isResolvedLnk, RowData rowData = null)
+        private static RowData ReadRowData(string fileName, bool isResolvedLnk, RowData rowData = null)
         {
             if (rowData == null)
             {
                 rowData = new RowData();
             }
+
             rowData.IsResolvedLnk = isResolvedLnk;
 
             try
@@ -471,6 +474,7 @@ namespace SystemTrayMenu.Business
                     {
                         rowData.SetText(rowData.FileInfo.Name);
                     }
+
                     rowData.TargetFilePathOrig = rowData.FileInfo.FullName;
                 }
             }
@@ -556,8 +560,10 @@ namespace SystemTrayMenu.Business
                 {
                     rowData.SetData(rowData, dataTable);
                 }
+
                 dgv.DataSource = dataTable;
             }
+
             DataGridView dgv = menu.GetDataGridView();
             dgv.CellMouseEnter += waitToOpenMenu.MouseEnter;
             waitToOpenMenu.MouseEnterOk += Dgv_CellMouseEnter;
@@ -574,6 +580,7 @@ namespace SystemTrayMenu.Business
                     keyboardInput.Select(dgv, rowIndex, false);
                 }
             }
+
             dgv.CellMouseLeave += waitToOpenMenu.MouseLeave;
             dgv.MouseMove += waitToOpenMenu.MouseMove;
             dgv.MouseDown += Dgv_MouseDown;
@@ -591,10 +598,12 @@ namespace SystemTrayMenu.Business
             {
                 AdjustMenusSizeAndLocation();
             }
+
             if (!menu.Visible)
             {
                 DisposeMenu(menu);
             }
+
             if (!AsEnumerable.Any(m => m.Visible))
             {
                 openCloseState = OpenCloseState.Default;
@@ -641,7 +650,7 @@ namespace SystemTrayMenu.Business
 
                 if (rowData == null)
                 {
-                    //Case when filtering a previous menu
+                    // Case when filtering a previous menu
                 }
                 else if (!menus[0].IsUsable)
                 {
@@ -667,6 +676,7 @@ namespace SystemTrayMenu.Business
                     row.Selected = false;
                 }
             }
+
             dgv.Refresh();
         }
 
@@ -679,24 +689,17 @@ namespace SystemTrayMenu.Business
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
 
-                Rectangle rowBounds = new Rectangle(
-                    0, e.RowBounds.Top,
-                    dgv.Columns[0].Width +
-                    dgv.Columns[1].Width,
-                    e.RowBounds.Height);
+                int width = dgv.Columns[0].Width + dgv.Columns[1].Width;
+                Rectangle rowBounds = new Rectangle(0, e.RowBounds.Top, width, e.RowBounds.Height);
 
                 if (rowData.IsMenuOpen && rowData.IsSelected)
                 {
-                    ControlPaint.DrawBorder(e.Graphics, rowBounds,
-                        MenuDefines.ColorSelectedItemBorder,
-                        ButtonBorderStyle.Solid);
+                    ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
                     row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
                 }
                 else if (rowData.IsMenuOpen)
                 {
-                    ControlPaint.DrawBorder(e.Graphics, rowBounds,
-                        MenuDefines.ColorOpenFolderBorder,
-                        ButtonBorderStyle.Solid);
+                    ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorOpenFolderBorder, ButtonBorderStyle.Solid);
                     row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorOpenFolder;
                 }
             }
@@ -713,7 +716,7 @@ namespace SystemTrayMenu.Business
 
         private void HideOldMenu(Menu menuToShow, bool keepOrSetIsMenuOpen = false)
         {
-            //Clean up menu status IsMenuOpen for previous one
+            // Clean up menu status IsMenuOpen for previous one
             Menu menuPrevious = menus[menuToShow.Level - 1];
             DataGridView dgvPrevious = menuPrevious.GetDataGridView();
             foreach (DataRow row in ((DataTable)dgvPrevious.DataSource).Rows)
@@ -728,9 +731,10 @@ namespace SystemTrayMenu.Business
                     rowDataToClear.IsMenuOpen = false;
                 }
             }
+
             RefreshSelection(dgvPrevious);
 
-            //Hide old menu
+            // Hide old menu
             foreach (Menu menuToClose in menus.Where(
                 m => m != null && m.Level > menuPrevious.Level))
             {
@@ -740,11 +744,11 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        internal void FadeHalfOrOutIfNeeded()
+        private void FadeHalfOrOutIfNeeded()
         {
             if (menus[0].IsUsable)
             {
-                if (!(IsActive()))
+                if (!IsActive())
                 {
                     Point position = Control.MousePosition;
                     if (AsList.Any(m => m.IsMouseOn(position)))
@@ -777,6 +781,7 @@ namespace SystemTrayMenu.Business
                 {
                     menus[menu.Level] = null;
                 }
+
                 menu.HideWithFade();
             });
         }
@@ -787,13 +792,11 @@ namespace SystemTrayMenu.Business
             int widthPredecessors = -1; // -1 padding
             bool directionToRight = false;
 
-            menus[0].AdjustSizeAndLocation(screenHeight,
-                screenRight, taskbarHeight);
+            menus[0].AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight);
 
             foreach (Menu menu in AsEnumerable.Where(m => m.Level > 0))
             {
-                int newWith = (menu.Width -
-                    menu.Padding.Horizontal + menuPredecessor.Width);
+                int newWith = menu.Width - menu.Padding.Horizontal + menuPredecessor.Width;
                 if (directionToRight)
                 {
                     if (widthPredecessors - menus[0].Width - menu.Width < 0)
@@ -811,8 +814,7 @@ namespace SystemTrayMenu.Business
                     widthPredecessors -= newWith;
                 }
 
-                menu.AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight,
-                    menuPredecessor, directionToRight);
+                menu.AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight, menuPredecessor, directionToRight);
                 widthPredecessors += menu.Width - menu.Padding.Left;
                 menuPredecessor = menu;
             }

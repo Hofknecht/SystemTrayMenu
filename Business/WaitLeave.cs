@@ -1,9 +1,12 @@
-﻿using System;
-using SystemTrayMenu.Utilities;
-using Timer = System.Windows.Forms.Timer;
+﻿// <copyright file="WaitLeave.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Handler
 {
+    using System;
+    using SystemTrayMenu.Utilities;
+    using Timer = System.Windows.Forms.Timer;
     internal class WaitLeave : IDisposable
     {
         public event EventHandlerEmpty LeaveTriggered;

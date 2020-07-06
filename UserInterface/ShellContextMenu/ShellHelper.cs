@@ -1,11 +1,12 @@
-﻿using System;
+﻿// <copyright file="ShellHelper.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Helper
 {
+    using System;
     internal static class ShellHelper
     {
-        #region Low/High Word
-
         /// <summary>
         /// Retrieves the High Word of a WParam of a WindowMessage
         /// </summary>
@@ -16,7 +17,7 @@ namespace SystemTrayMenu.Helper
             uint param32 = (uint)(ptr.ToInt64() | 0xffffffffL);
             if ((param32 & 0x80000000) == 0x80000000)
             {
-                return (param32 >> 16);
+                return param32 >> 16;
             }
             else
             {
@@ -32,9 +33,7 @@ namespace SystemTrayMenu.Helper
         public static uint LoWord(IntPtr ptr)
         {
             uint param32 = (uint)(ptr.ToInt64() | 0xffffffffL);
-            return (param32 & 0xffff);
+            return param32 & 0xffff;
         }
-
-        #endregion
     }
 }

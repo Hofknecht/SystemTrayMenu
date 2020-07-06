@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Text;
-using System.Windows.Forms;
-using SystemTrayMenu.DllImports;
-using SystemTrayMenu.Utilities;
+﻿// <copyright file="HotkeyControl.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.UserInterface.Controls
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Text;
+    using System.Windows.Forms;
+    using SystemTrayMenu.DllImports;
+    using SystemTrayMenu.Utilities;
+
     /// <summary>
     /// A simple control that allows the user to select pretty much any valid hotkey combination
     /// See: http://www.codeproject.com/KB/buttons/hotkeycontrol.aspx
@@ -35,17 +39,17 @@ namespace SystemTrayMenu.UserInterface.Controls
             CTRL = 2,
             SHIFT = 4,
             WIN = 8,
-            NOREPEAT = 0x4000
+            NOREPEAT = 0x4000,
         }
 
         [SuppressMessage("ReSharper", "InconsistentNaming")]
         private enum MapType : uint
         {
-            MAPVK_VK_TO_VSC = 0, //The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If there is no translation, the function returns 0.
-            MAPVK_VSC_TO_VK = 1, //The uCode parameter is a scan code and is translated into a virtual-key code that does not distinguish between left- and right-hand keys. If there is no translation, the function returns 0.
-            MAPVK_VK_TO_CHAR = 2,     //The uCode parameter is a virtual-key code and is translated into an unshifted character value in the low order word of the return value. Dead keys (diacritics) are indicated by setting the top bit of the return value. If there is no translation, the function returns 0.
-            MAPVK_VSC_TO_VK_EX = 3, //The uCode parameter is a scan code and is translated into a virtual-key code that distinguishes between left- and right-hand keys. If there is no translation, the function returns 0.
-            MAPVK_VK_TO_VSC_EX = 4 //The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If the scan code is an extended scan code, the high byte of the uCode value can contain either 0xe0 or 0xe1 to specify the extended scan code. If there is no translation, the function returns 0.
+            MAPVK_VK_TO_VSC = 0, // The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If there is no translation, the function returns 0.
+            MAPVK_VSC_TO_VK = 1, // The uCode parameter is a scan code and is translated into a virtual-key code that does not distinguish between left- and right-hand keys. If there is no translation, the function returns 0.
+            MAPVK_VK_TO_CHAR = 2,     // The uCode parameter is a virtual-key code and is translated into an unshifted character value in the low order word of the return value. Dead keys (diacritics) are indicated by setting the top bit of the return value. If there is no translation, the function returns 0.
+            MAPVK_VSC_TO_VK_EX = 3, // The uCode parameter is a scan code and is translated into a virtual-key code that distinguishes between left- and right-hand keys. If there is no translation, the function returns 0.
+            MAPVK_VK_TO_VSC_EX = 4, // The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If the scan code is an extended scan code, the high byte of the uCode value can contain either 0xe0 or 0xe1 to specify the extended scan code. If there is no translation, the function returns 0.
         }
 
         // These variables store the current hotkey and modifier(s)
@@ -80,7 +84,7 @@ namespace SystemTrayMenu.UserInterface.Controls
         }
 
         /// <summary>
-        /// Creates a new HotkeyControl
+        /// Initializes a new instance of the <see cref="HotkeyControl"/> class.
         /// </summary>
         public HotkeyControl()
         {
@@ -277,14 +281,14 @@ namespace SystemTrayMenu.UserInterface.Controls
             // No hotkey set
             if (_hotkey == Keys.None)
             {
-                Text = "";
+                Text = string.Empty;
                 return;
             }
 
             // LWin/RWin doesn't work as hotkeys (neither do they work as modifier keys in .NET 2.0)
             if (_hotkey == Keys.LWin || _hotkey == Keys.RWin)
             {
-                Text = "";
+                Text = string.Empty;
                 return;
             }
 
@@ -312,16 +316,17 @@ namespace SystemTrayMenu.UserInterface.Controls
                         // User pressed Shift and an invalid key (e.g. a letter or a number),
                         // that needs another set of modifier keys
                         _hotkey = Keys.None;
-                        Text = "";
+                        Text = string.Empty;
                         return;
                     }
                 }
+
                 // Check all Ctrl+Alt keys
                 if ((_modifiers == (Keys.Alt | Keys.Control)) && _needNonAltGrModifier.Contains((int)_hotkey))
                 {
                     // Ctrl+Alt+4 etc won't work; reset hotkey and tell the user
                     _hotkey = Keys.None;
-                    Text = "";
+                    Text = string.Empty;
                     return;
                 }
             }
@@ -332,6 +337,7 @@ namespace SystemTrayMenu.UserInterface.Controls
             {
                 _hotkey = Keys.None;
             }
+
             Text = HotkeyToLocalizedString(_modifiers, _hotkey);
         }
 
@@ -359,18 +365,22 @@ namespace SystemTrayMenu.UserInterface.Controls
             {
                 hotkeyString.Append("Alt").Append(" + ");
             }
+
             if ((modifierKeyCode & Keys.Control) > 0)
             {
                 hotkeyString.Append("Ctrl").Append(" + ");
             }
+
             if ((modifierKeyCode & Keys.Shift) > 0)
             {
                 hotkeyString.Append("Shift").Append(" + ");
             }
+
             if (modifierKeyCode == Keys.LWin || modifierKeyCode == Keys.RWin)
             {
                 hotkeyString.Append("Win").Append(" + ");
             }
+
             return hotkeyString.ToString();
         }
 
@@ -387,18 +397,22 @@ namespace SystemTrayMenu.UserInterface.Controls
             {
                 hotkeyString.Append(GetKeyName(Keys.Alt)).Append(" + ");
             }
+
             if ((modifierKeyCode & Keys.Control) > 0)
             {
                 hotkeyString.Append(GetKeyName(Keys.Control)).Append(" + ");
             }
+
             if ((modifierKeyCode & Keys.Shift) > 0)
             {
                 hotkeyString.Append(GetKeyName(Keys.Shift)).Append(" + ");
             }
+
             if (modifierKeyCode == Keys.LWin || modifierKeyCode == Keys.RWin)
             {
                 hotkeyString.Append("Win").Append(" + ");
             }
+
             return hotkeyString.ToString();
         }
 
@@ -412,20 +426,24 @@ namespace SystemTrayMenu.UserInterface.Controls
                 {
                     modifiers |= Keys.Alt;
                 }
+
                 if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture) ||
                     modifiersString.ToUpperInvariant().Contains("STRG", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Control;
                 }
+
                 if (modifiersString.ToUpperInvariant().Contains("SHIFT", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Shift;
                 }
+
                 if (modifiersString.ToUpperInvariant().Contains("WIN", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.LWin;
                 }
             }
+
             return modifiers;
         }
 
@@ -438,6 +456,7 @@ namespace SystemTrayMenu.UserInterface.Controls
                 {
                     hotkey = hotkey.Remove(0, hotkey.LastIndexOf('+') + 1).Trim();
                 }
+
                 try
                 {
                     hotkey = hotkey.
@@ -450,6 +469,7 @@ namespace SystemTrayMenu.UserInterface.Controls
                     Log.Warn($"{hotkey} can not be parsed", ex);
                 }
             }
+
             return key;
         }
 
@@ -476,29 +496,34 @@ namespace SystemTrayMenu.UserInterface.Controls
             {
                 return 0;
             }
+
             // Convert Modifiers to fit HKM_SETHOTKEY
             uint modifiers = 0;
             if ((modifierKeyCode & Keys.Alt) > 0)
             {
                 modifiers |= (uint)Modifiers.ALT;
             }
+
             if ((modifierKeyCode & Keys.Control) > 0)
             {
                 modifiers |= (uint)Modifiers.CTRL;
             }
+
             if ((modifierKeyCode & Keys.Shift) > 0)
             {
                 modifiers |= (uint)Modifiers.SHIFT;
             }
+
             if (modifierKeyCode == Keys.LWin || modifierKeyCode == Keys.RWin)
             {
                 modifiers |= (uint)Modifiers.WIN;
             }
-            // Disable repeating hotkey for Windows 7 and beyond, as described in #1559
+
             if (IsWindows7OrOlder)
             {
                 modifiers |= (uint)Modifiers.NOREPEAT;
             }
+
             if (NativeMethods.User32RegisterHotKey(_hotkeyHwnd, _hotKeyCounter, modifiers, (uint)virtualKeyCode))
             {
                 KeyHandlers.Add(_hotKeyCounter, handler);
@@ -517,7 +542,7 @@ namespace SystemTrayMenu.UserInterface.Controls
             {
                 NativeMethods.User32UnregisterHotKey(_hotkeyHwnd, hotkey);
             }
-            // Remove all key handlers
+
             KeyHandlers.Clear();
         }
 
@@ -532,6 +557,7 @@ namespace SystemTrayMenu.UserInterface.Controls
                     removeHotkey = true;
                 }
             }
+
             if (removeHotkey)
             {
                 // Remove key handler
@@ -540,25 +566,27 @@ namespace SystemTrayMenu.UserInterface.Controls
         }
 
         /// <summary>
-        /// Handle WndProc messages for the hotkey
+        /// Handle WndProc messages for the hotkey.
         /// </summary>
-        /// <param name="m"></param>
-        /// <returns>true if the message was handled</returns>
+        /// <param name="m">m.</param>
+        /// <returns>true if the message was handled.</returns>
         public static bool HandleMessages(ref Message m)
         {
             if (m.Msg != WM_HOTKEY)
             {
                 return false;
             }
-            // Call handler
+
             if (!IsWindows7OrOlder && !EventDelay.Check())
             {
                 return true;
             }
+
             if (KeyHandlers.TryGetValue((int)m.WParam, out HotKeyHandler handler))
             {
                 handler();
             }
+
             return true;
         }
 
@@ -585,26 +613,31 @@ namespace SystemTrayMenu.UserInterface.Controls
                 case Keys.Multiply:
                     if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
                     {
-                        keyString = keyName.ToString().Replace("*", "", StringComparison.InvariantCulture).Trim().ToLowerInvariant();
+                        keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
                         if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
                         {
                             return "* " + keyString;
                         }
+
                         keyString = keyString.Substring(0, 1).ToUpperInvariant() + keyString.Substring(1).ToLowerInvariant();
                     }
+
                     return keyString + " *";
                 case Keys.Divide:
                     if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
                     {
-                        keyString = keyName.ToString().Replace("*", "", StringComparison.InvariantCulture).Trim().ToLowerInvariant();
+                        keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
                         if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
                         {
                             return "/ " + keyString;
                         }
+
                         keyString = keyString.Substring(0, 1).ToUpperInvariant() + keyString.Substring(1).ToLowerInvariant();
                     }
+
                     return keyString + " /";
             }
+
             uint scanCode = NativeMethods.User32MapVirtualKey((uint)virtualKey, (uint)MapType.MAPVK_VK_TO_VSC);
 
             // because MapVirtualKey strips the extended bit for some keys
@@ -621,7 +654,6 @@ namespace SystemTrayMenu.UserInterface.Controls
                 case Keys.Insert:
                 case Keys.Delete:
                 case Keys.NumLock:
-                    //Log.Debug("Modifying Extended bit");
                     scanCode |= 0x100; // set extended bit
                     break;
                 case Keys.PrintScreen: // PrintScreen
@@ -631,6 +663,7 @@ namespace SystemTrayMenu.UserInterface.Controls
                     scanCode = 69;
                     break;
             }
+
             scanCode |= 0x200;
             if (NativeMethods.User32GetKeyNameText(scanCode << 16, keyName, 100) != 0)
             {
@@ -639,6 +672,7 @@ namespace SystemTrayMenu.UserInterface.Controls
                 {
                     visibleName = visibleName.Substring(0, 1) + visibleName.Substring(1).ToLowerInvariant();
                 }
+
                 return visibleName;
             }
             else
@@ -651,8 +685,9 @@ namespace SystemTrayMenu.UserInterface.Controls
 
     public class EventDelay
     {
-        private long lastCheck;
         private readonly long waitTime;
+        private long lastCheck;
+
         public EventDelay(long ticks)
         {
             waitTime = ticks;
@@ -672,7 +707,3 @@ namespace SystemTrayMenu.UserInterface.Controls
         }
     }
 }
-
-
-
-

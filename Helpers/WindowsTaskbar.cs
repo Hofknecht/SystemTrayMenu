@@ -1,11 +1,13 @@
-﻿using System;
-using System.Drawing;
-using System.Runtime.InteropServices;
-using static SystemTrayMenu.DllImports.NativeMethods;
+﻿// <copyright file="WindowsTaskbar.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-//Microsoft.WindowsAPICodePack.Taskbar.TaskbarManager do not have the bounds implemented?
 namespace SystemTrayMenu.Helper
 {
+    using System;
+    using System.Drawing;
+    using System.Runtime.InteropServices;
+    using static SystemTrayMenu.DllImports.NativeMethods;
     public enum TaskbarPosition
     {
         Unknown = -1,
@@ -24,19 +26,23 @@ namespace SystemTrayMenu.Helper
             get;
             private set;
         }
+
         public TaskbarPosition Position
         {
             get;
             private set;
         }
+
         public Point Location => Bounds.Location;
+
         public Size Size => Bounds.Size;
-        //Always returns false under Windows 7
+
         public bool AlwaysOnTop
         {
             get;
             private set;
         }
+
         public bool AutoHide
         {
             get;
@@ -50,12 +56,11 @@ namespace SystemTrayMenu.Helper
             APPBARDATA data = new APPBARDATA
             {
                 cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA)),
-                hWnd = taskbarHandle
+                hWnd = taskbarHandle,
             };
             IntPtr result = Shell32SHAppBarMessage(ABM.GetTaskbarPos, ref data);
             if (result == IntPtr.Zero)
             {
-                //throw new InvalidOperationException();
                 Bounds = new Rectangle(20, 20, 20, 20);
             }
             else

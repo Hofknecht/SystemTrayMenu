@@ -1,10 +1,13 @@
-﻿using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
+﻿// <copyright file="AppRestart.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Utilities
 {
+    using System;
+    using System.Diagnostics;
+    using System.Runtime.CompilerServices;
+    using System.Windows.Forms;
     internal class AppRestart
     {
         public static event EventHandlerEmpty BeforeRestarting;
@@ -21,7 +24,8 @@ namespace SystemTrayMenu.Utilities
                     Process.GetCurrentProcess().
                     MainModule.FileName);
                 p.Start();
-            };
+            }
+
             Application.Exit();
         }
 

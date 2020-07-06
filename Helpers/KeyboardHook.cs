@@ -1,10 +1,14 @@
-﻿using System;
-using System.Windows.Forms;
-using SystemTrayMenu.UserInterface.Controls;
-using SystemTrayMenu.Utilities;
+﻿// <copyright file="KeyboardHook.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace SystemTrayMenu.Helper
 {
+    using System;
+    using System.Windows.Forms;
+    using SystemTrayMenu.UserInterface.Controls;
+    using SystemTrayMenu.Utilities;
+
     public sealed class KeyboardHook : IDisposable
     {
         /// <summary>
@@ -23,7 +27,7 @@ namespace SystemTrayMenu.Helper
             /// <summary>
             /// Overridden to get the notifications.
             /// </summary>
-            /// <param name="m"></param>
+            /// <param name="m">m.</param>
             protected override void WndProc(ref Message m)
             {
                 base.WndProc(ref m);
@@ -42,14 +46,10 @@ namespace SystemTrayMenu.Helper
 
             public event EventHandler<KeyPressedEventArgs> KeyPressed;
 
-            #region IDisposable Members
-
             public void Dispose()
             {
                 DestroyHandle();
             }
-
-            #endregion
         }
 
         private readonly Window _window = new Window();
@@ -84,15 +84,18 @@ namespace SystemTrayMenu.Helper
                 {
                     modifiers |= KeyboardHookModifierKeys.Alt;
                 }
+
                 if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture) ||
                     modifiersString.ToUpperInvariant().Contains("STRG", StringComparison.InvariantCulture))
                 {
                     modifiers |= KeyboardHookModifierKeys.Control;
                 }
+
                 if (modifiersString.ToUpperInvariant().Contains("SHIFT", StringComparison.InvariantCulture))
                 {
                     modifiers |= KeyboardHookModifierKeys.Shift;
                 }
+
                 if (modifiersString.ToUpperInvariant().Contains("WIN", StringComparison.InvariantCulture))
                 {
                     modifiers |= KeyboardHookModifierKeys.Win;
@@ -109,7 +112,6 @@ namespace SystemTrayMenu.Helper
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
-        //internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
         internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
         {
             RegisterHotKey((uint)modifier, key);
@@ -132,8 +134,6 @@ namespace SystemTrayMenu.Helper
         /// </summary>
         internal event EventHandler<KeyPressedEventArgs> KeyPressed;
 
-        #region IDisposable Members
-
         public void Dispose()
         {
             // unregister all the registered hot keys.
@@ -145,8 +145,6 @@ namespace SystemTrayMenu.Helper
             // dispose the inner native window.
             _window.Dispose();
         }
-
-        #endregion
     }
 
     /// <summary>
@@ -178,6 +176,6 @@ namespace SystemTrayMenu.Helper
         Alt = 1,
         Control = 2,
         Shift = 4,
-        Win = 8
+        Win = 8,
     }
 }
