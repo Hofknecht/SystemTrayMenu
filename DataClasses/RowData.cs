@@ -172,8 +172,7 @@ namespace SystemTrayMenu.DataClasses
                 string iconLocation = lnk.IconLocation;
                 if (iconLocation.Length > 2)
                 {
-                    iconLocation = iconLocation.Substring(0,
-                        iconLocation.Length - 2);
+                    iconLocation = iconLocation[0..^2];
                     if (System.IO.File.Exists(iconLocation))
                     {
                         try
@@ -246,7 +245,7 @@ namespace SystemTrayMenu.DataClasses
                 }
             }
 
-            SetText($"{FileInfo.Name.Substring(0, FileInfo.Name.Length - 4)}");
+            SetText($"{FileInfo.Name[0..^4]}");
 
             return handled;
         }

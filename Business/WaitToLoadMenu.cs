@@ -45,8 +45,8 @@ namespace SystemTrayMenu.Handler
             }
             else
             {
-                this.dgvTmp = (DataGridView)sender;
-                this.rowIndexTmp = e.RowIndex;
+                dgvTmp = (DataGridView)sender;
+                rowIndexTmp = e.RowIndex;
             }
         }
 

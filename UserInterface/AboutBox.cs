@@ -37,7 +37,6 @@ namespace SystemTrayMenu.UserInterface
         private string _ExecutingAssemblyName;
         private Assembly _EntryAssembly;
         private NameValueCollection _EntryAssemblyAttribCollection;
-        private int _MinWindowHeight;
 
         // <summary>
         // returns the entry assembly for the current application domain
@@ -222,7 +221,9 @@ namespace SystemTrayMenu.UserInterface
             else
             {
                 dt = DateTime.Parse("01/01/2000", CultureInfo.InvariantCulture).AddDays(AssemblyVersion.Build).AddSeconds(AssemblyVersion.Revision * 2);
+#pragma warning disable CS0618
                 if (TimeZone.IsDaylightSavingTime(dt, TimeZone.CurrentTimeZone.GetDaylightChanges(dt.Year)))
+#pragma warning restore CS0618
                 {
                     dt = dt.AddHours(1);
                 }
@@ -335,7 +336,9 @@ namespace SystemTrayMenu.UserInterface
                     nvc.Add("CodeBase", a.CodeBase.Replace("file:///", "", StringComparison.InvariantCulture));
                 }
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (NotSupportedException)
+#pragma warning restore CA1031 // Do not catch general exception types
             {
                 nvc.Add("CodeBase", "(not supported)");
             }
@@ -357,7 +360,9 @@ namespace SystemTrayMenu.UserInterface
                     nvc.Add("Location", a.Location);
                 }
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (NotSupportedException)
+#pragma warning restore CA1031 // Do not catch general exception types
             {
                 nvc.Add("Location", "(not supported)");
             }
@@ -650,12 +655,12 @@ namespace SystemTrayMenu.UserInterface
             // for web hosted apps, GetEntryAssembly = nothing
             _EntryAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
 
-            _MinWindowHeight = AppCopyrightLabel.Top + AppCopyrightLabel.Height + buttonOk.Height + 30;
+            //_MinWindowHeight = AppCopyrightLabel.Top + AppCopyrightLabel.Height + buttonOk.Height + 30;
 
             TabPanelDetails.Visible = false;
             if (!MoreRichTextBox.Visible)
             {
-                Height = Height - MoreRichTextBox.Height;
+                Height -= MoreRichTextBox.Height;
             }
         }
 

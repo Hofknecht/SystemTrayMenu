@@ -59,7 +59,9 @@ namespace SystemTrayMenu.UserInterface
                         Visible = true;
                         isShowing = false;
                     }
+#pragma warning disable CA1031 // Do not catch general exception types
                     catch (ObjectDisposedException)
+#pragma warning restore CA1031 // Do not catch general exception types
                     {
                         Visible = false;
                         isShowing = false;
@@ -101,7 +103,7 @@ namespace SystemTrayMenu.UserInterface
             dgv.DefaultCellStyle = dgvCellStyle;
 
             VScrollBar scrollBar = dgv.Controls.OfType<VScrollBar>().First();
-            scrollBar.MouseWheel += dgv_MouseWheel;
+            scrollBar.MouseWheel += DgvMouseWheel;
             scrollBar.MouseEnter += ControlsMouseEnter;
             dgv.MouseEnter += ControlsMouseEnter;
             labelTitle.MouseEnter += ControlsMouseEnter;
@@ -398,7 +400,7 @@ namespace SystemTrayMenu.UserInterface
             return isScrollbarShown;
         }
 
-        private void dgv_MouseWheel(object sender, MouseEventArgs e)
+        private void DgvMouseWheel(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
             int scrollspeed = MenuDefines.Scrollspeed;
@@ -488,7 +490,7 @@ namespace SystemTrayMenu.UserInterface
             return base.ProcessCmdKey(ref msg, keys);
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
         {
             DataTable data = (DataTable)dgv.DataSource;
             string filterField = dgv.Columns[1].Name;

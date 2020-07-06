@@ -23,7 +23,7 @@ namespace SystemTrayMenu
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.ThreadException += ThreadException;
-                    void ThreadException(object s, ThreadExceptionEventArgs t)
+                    static void ThreadException(object s, ThreadExceptionEventArgs t)
                     {
                         AskUserSendError(t.Exception);
                     }
@@ -49,11 +49,10 @@ namespace SystemTrayMenu
                 Log.Close();
             }
 
-            void AskUserSendError(Exception ex)
+            static void AskUserSendError(Exception ex)
             {
                 Log.Error("Application Crashed", ex);
 
-#warning [Feature] When Error ask user to send us #47, todo own dialog, lines here too long
                 if (MessageBox.Show("A problem has been encountered and the application needs to restart. " +
                     "Reporting this error will help us make our product better. Press yes to open your standard email app.",
                     "SystemTrayMenu BugSplat", MessageBoxButtons.YesNo) == DialogResult.Yes)

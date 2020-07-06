@@ -65,7 +65,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.Size = new System.Drawing.Size(83, 182);
             this.tableLayoutPanel.TabIndex = 3;
-            this.tableLayoutPanel.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
+            this.tableLayoutPanel.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
             // 
             // labelTitle
             // 
@@ -86,7 +86,7 @@
             this.labelTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LabelTitle_MouseDoubleClick);
             this.labelTitle.MouseEnter += new System.EventHandler(this.LabelTitle_MouseEnter);
             this.labelTitle.MouseLeave += new System.EventHandler(this.LabelTitle_MouseLeave);
-            this.labelTitle.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
+            this.labelTitle.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
             // 
             // ColumnText
             // 
@@ -154,7 +154,7 @@
             this.dgv.ShowRowErrors = false;
             this.dgv.Size = new System.Drawing.Size(83, 145);
             this.dgv.TabIndex = 4;
-            this.dgv.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseWheel);
+            this.dgv.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
             // 
             // pictureBoxSearch
             // 
@@ -179,7 +179,7 @@
             this.textBoxSearch.ShortcutsEnabled = false;
             this.textBoxSearch.Size = new System.Drawing.Size(55, 15);
             this.textBoxSearch.TabIndex = 0;
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
             // tableLayoutPanelSearch
             // 

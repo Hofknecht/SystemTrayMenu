@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using SystemTrayMenu.DllImports;
 using SystemTrayMenu.Utilities;
 
 namespace SystemTrayMenu.UserInterface.Controls
@@ -28,14 +28,14 @@ namespace SystemTrayMenu.UserInterface.Controls
         private static IntPtr _hotkeyHwnd;
 
         [SuppressMessage("ReSharper", "InconsistentNaming")]
-        public enum Modifiers : uint
+        private enum Modifiers
         {
             NONE = 0,
             ALT = 1,
             CTRL = 2,
             SHIFT = 4,
             WIN = 8,
-            NO_REPEAT = 0x4000
+            NOREPEAT = 0x4000
         }
 
         [SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -47,19 +47,6 @@ namespace SystemTrayMenu.UserInterface.Controls
             MAPVK_VSC_TO_VK_EX = 3, //The uCode parameter is a scan code and is translated into a virtual-key code that distinguishes between left- and right-hand keys. If there is no translation, the function returns 0.
             MAPVK_VK_TO_VSC_EX = 4 //The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If the scan code is an extended scan code, the high byte of the uCode value can contain either 0xe0 or 0xe1 to specify the extended scan code. If there is no translation, the function returns 0.
         }
-
-        [DllImport("user32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint virtualKeyCode);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        private static extern uint MapVirtualKey(uint uCode, uint uMapType);
-        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        private static extern int GetKeyNameText(uint lParam, [Out] StringBuilder lpString, int nSize);
 
         // These variables store the current hotkey and modifier(s)
         private Keys _hotkey = Keys.None;
@@ -425,7 +412,8 @@ namespace SystemTrayMenu.UserInterface.Controls
                 {
                     modifiers |= Keys.Alt;
                 }
-                if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture))
+                if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture) ||
+                    modifiersString.ToUpperInvariant().Contains("STRG", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Control;
                 }
@@ -486,7 +474,6 @@ namespace SystemTrayMenu.UserInterface.Controls
         {
             if (virtualKeyCode == Keys.None)
             {
-                Log.Info("Trying to register a Keys.none hotkey, ignoring");
                 return 0;
             }
             // Convert Modifiers to fit HKM_SETHOTKEY
@@ -510,9 +497,9 @@ namespace SystemTrayMenu.UserInterface.Controls
             // Disable repeating hotkey for Windows 7 and beyond, as described in #1559
             if (IsWindows7OrOlder)
             {
-                modifiers |= (uint)Modifiers.NO_REPEAT;
+                modifiers |= (uint)Modifiers.NOREPEAT;
             }
-            if (RegisterHotKey(_hotkeyHwnd, _hotKeyCounter, modifiers, (uint)virtualKeyCode))
+            if (NativeMethods.User32RegisterHotKey(_hotkeyHwnd, _hotKeyCounter, modifiers, (uint)virtualKeyCode))
             {
                 KeyHandlers.Add(_hotKeyCounter, handler);
                 return _hotKeyCounter++;
@@ -528,7 +515,7 @@ namespace SystemTrayMenu.UserInterface.Controls
         {
             foreach (int hotkey in KeyHandlers.Keys)
             {
-                UnregisterHotKey(_hotkeyHwnd, hotkey);
+                NativeMethods.User32UnregisterHotKey(_hotkeyHwnd, hotkey);
             }
             // Remove all key handlers
             KeyHandlers.Clear();
@@ -541,7 +528,7 @@ namespace SystemTrayMenu.UserInterface.Controls
             {
                 if (availableHotkey == hotkey)
                 {
-                    UnregisterHotKey(_hotkeyHwnd, hotkey);
+                    NativeMethods.User32UnregisterHotKey(_hotkeyHwnd, hotkey);
                     removeHotkey = true;
                 }
             }
@@ -575,13 +562,14 @@ namespace SystemTrayMenu.UserInterface.Controls
             return true;
         }
 
+#pragma warning disable CA1308
         public static string GetKeyName(Keys givenKey)
         {
             StringBuilder keyName = new StringBuilder();
             const uint numpad = 55;
 
             Keys virtualKey = givenKey;
-            string keyString;
+            string keyString = string.Empty;
             // Make VC's to real keys
             switch (virtualKey)
             {
@@ -595,25 +583,29 @@ namespace SystemTrayMenu.UserInterface.Controls
                     virtualKey = Keys.LShiftKey;
                     break;
                 case Keys.Multiply:
-                    GetKeyNameText(numpad << 16, keyName, 100);
-                    keyString = keyName.ToString().Replace("*", "").Trim().ToLower();
-                    if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
+                    if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
                     {
-                        return "* " + keyString;
+                        keyString = keyName.ToString().Replace("*", "", StringComparison.InvariantCulture).Trim().ToLowerInvariant();
+                        if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
+                        {
+                            return "* " + keyString;
+                        }
+                        keyString = keyString.Substring(0, 1).ToUpperInvariant() + keyString.Substring(1).ToLowerInvariant();
                     }
-                    keyString = keyString.Substring(0, 1).ToUpper() + keyString.Substring(1).ToLower();
                     return keyString + " *";
                 case Keys.Divide:
-                    GetKeyNameText(numpad << 16, keyName, 100);
-                    keyString = keyName.ToString().Replace("*", "").Trim().ToLower();
-                    if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
+                    if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
                     {
-                        return "/ " + keyString;
+                        keyString = keyName.ToString().Replace("*", "", StringComparison.InvariantCulture).Trim().ToLowerInvariant();
+                        if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
+                        {
+                            return "/ " + keyString;
+                        }
+                        keyString = keyString.Substring(0, 1).ToUpperInvariant() + keyString.Substring(1).ToLowerInvariant();
                     }
-                    keyString = keyString.Substring(0, 1).ToUpper() + keyString.Substring(1).ToLower();
                     return keyString + " /";
             }
-            uint scanCode = MapVirtualKey((uint)virtualKey, (uint)MapType.MAPVK_VK_TO_VSC);
+            uint scanCode = NativeMethods.User32MapVirtualKey((uint)virtualKey, (uint)MapType.MAPVK_VK_TO_VSC);
 
             // because MapVirtualKey strips the extended bit for some keys
             switch (virtualKey)
@@ -640,12 +632,12 @@ namespace SystemTrayMenu.UserInterface.Controls
                     break;
             }
             scanCode |= 0x200;
-            if (GetKeyNameText(scanCode << 16, keyName, 100) != 0)
+            if (NativeMethods.User32GetKeyNameText(scanCode << 16, keyName, 100) != 0)
             {
                 string visibleName = keyName.ToString();
                 if (visibleName.Length > 1)
                 {
-                    visibleName = visibleName.Substring(0, 1) + visibleName.Substring(1).ToLower();
+                    visibleName = visibleName.Substring(0, 1) + visibleName.Substring(1).ToLowerInvariant();
                 }
                 return visibleName;
             }
@@ -655,6 +647,7 @@ namespace SystemTrayMenu.UserInterface.Controls
             }
         }
     }
+#pragma warning restore CA1308
 
     public class EventDelay
     {
@@ -667,7 +660,9 @@ namespace SystemTrayMenu.UserInterface.Controls
 
         public bool Check()
         {
+#pragma warning disable CA2002
             lock (this)
+#pragma warning restore CA2002
             {
                 long now = DateTime.Now.Ticks;
                 bool isPassed = now - lastCheck > waitTime;

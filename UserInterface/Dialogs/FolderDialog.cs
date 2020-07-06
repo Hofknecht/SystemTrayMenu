@@ -98,26 +98,26 @@ namespace SystemTrayMenu.UserInterface.Dialogs
         }
         public DialogResult ShowLegacyDialog(IWin32Window owner)
         {
-            using (SaveFileDialog frm = new SaveFileDialog())
+            using SaveFileDialog frm = new SaveFileDialog
             {
-                frm.CheckFileExists = false;
-                frm.CheckPathExists = true;
-                frm.CreatePrompt = false;
-                frm.Filter = "|" + Guid.Empty.ToString();
-                frm.FileName = "any";
-                if (InitialFolder != null) { frm.InitialDirectory = InitialFolder; }
-                frm.OverwritePrompt = false;
-                frm.Title = Translator.GetText("Select Folder");
-                frm.ValidateNames = false;
-                if (frm.ShowDialog(owner) == DialogResult.OK)
-                {
-                    Folder = Path.GetDirectoryName(frm.FileName);
-                    return DialogResult.OK;
-                }
-                else
-                {
-                    return DialogResult.Cancel;
-                }
+                CheckFileExists = false,
+                CheckPathExists = true,
+                CreatePrompt = false,
+                Filter = "|" + Guid.Empty.ToString(),
+                FileName = "any"
+            };
+            if (InitialFolder != null) { frm.InitialDirectory = InitialFolder; }
+            frm.OverwritePrompt = false;
+            frm.Title = Translator.GetText("Select Folder");
+            frm.ValidateNames = false;
+            if (frm.ShowDialog(owner) == DialogResult.OK)
+            {
+                Folder = Path.GetDirectoryName(frm.FileName);
+                return DialogResult.OK;
+            }
+            else
+            {
+                return DialogResult.Cancel;
             }
         }
 

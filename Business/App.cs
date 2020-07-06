@@ -2,8 +2,6 @@
 using System;
 using System.Windows.Forms;
 using SystemTrayMenu.Business;
-using SystemTrayMenu.DataClasses;
-using SystemTrayMenu.Helper;
 using SystemTrayMenu.UserInterface;
 using SystemTrayMenu.Utilities;
 
@@ -13,7 +11,7 @@ namespace SystemTrayMenu
     {
         private readonly MenuNotifyIcon menuNotifyIcon = new MenuNotifyIcon();
         private readonly Menus menus = new Menus();
-        private TaskbarForm taskbarForm = new TaskbarForm();
+        private readonly TaskbarForm taskbarForm = new TaskbarForm();
 
         public App()
         {

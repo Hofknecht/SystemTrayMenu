@@ -109,19 +109,19 @@ namespace SystemTrayMenu.Utilities
                 ((int)ShellHelper.HiWord(m.WParam) & (int)MFT.SEPARATOR) == 0 &&
                 ((int)ShellHelper.HiWord(m.WParam) & (int)MFT.POPUP) == 0)
             {
-                string info = string.Empty;
+                //string info = string.Empty;
 
-                if (ShellHelper.LoWord(m.WParam) == (int)CMD_CUSTOM.ExpandCollapse)
-                {
-                    info = "Expands or collapses the current selected item";
-                }
-                else
-                {
-                    info = "";/* ContextMenuHelper.GetCommandString(
-                         _oContextMenu,
-                         ShellHelper.LoWord(m.WParam) - CMD_FIRST,
-                         false);*/
-                }
+                //if (ShellHelper.LoWord(m.WParam) == (int)CMD_CUSTOM.ExpandCollapse)
+                //{
+                //    info = "Expands or collapses the current selected item";
+                //}
+                //else
+                //{
+                //    info = "";/* ContextMenuHelper.GetCommandString(
+                //         _oContextMenu,
+                //         ShellHelper.LoWord(m.WParam) - CMD_FIRST,
+                //         false);*/
+                //}
 
                 //br.OnContextMenuMouseHover(new ContextMenuMouseHoverEventArgs(info.ToString()));
             }
@@ -230,12 +230,10 @@ namespace SystemTrayMenu.Utilities
         /// <returns>IShellFolder for desktop folder</returns>
         private IShellFolder GetDesktopFolder()
         {
-            IntPtr pUnkownDesktopFolder = IntPtr.Zero;
-
             if (null == _oDesktopFolder)
             {
                 // Get desktop IShellFolder
-                int nResult = DllImports.NativeMethods.Shell32SHGetDesktopFolder(out pUnkownDesktopFolder);
+                int nResult = DllImports.NativeMethods.Shell32SHGetDesktopFolder(out IntPtr pUnkownDesktopFolder);
                 if (S_OK != nResult)
                 {
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
@@ -266,10 +264,9 @@ namespace SystemTrayMenu.Utilities
                 }
 
                 // Get the PIDL for the folder file is in
-                IntPtr pPIDL = IntPtr.Zero;
                 uint pchEaten = 0;
                 SFGAO pdwAttributes = 0;
-                int nResult = oDesktopFolder.ParseDisplayName(IntPtr.Zero, IntPtr.Zero, folderName, ref pchEaten, out pPIDL, ref pdwAttributes);
+                int nResult = oDesktopFolder.ParseDisplayName(IntPtr.Zero, IntPtr.Zero, folderName, ref pchEaten, out IntPtr pPIDL, ref pdwAttributes);
                 if (S_OK != nResult)
                 {
                     return null;
@@ -277,16 +274,14 @@ namespace SystemTrayMenu.Utilities
 
                 IntPtr pStrRet = Marshal.AllocCoTaskMem(MAX_PATH * 2 + 4);
                 Marshal.WriteInt32(pStrRet, 0, 0);
-                nResult = _oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
+                _ = _oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
                 StringBuilder strFolder = new StringBuilder(MAX_PATH);
                 _ = DllImports.NativeMethods.ShlwapiStrRetToBuf(pStrRet, pPIDL, strFolder, MAX_PATH);
                 Marshal.FreeCoTaskMem(pStrRet);
-                pStrRet = IntPtr.Zero;
                 _strParentFolder = strFolder.ToString();
 
                 // Get the IShellFolder for folder
-                IntPtr pUnknownParentFolder = IntPtr.Zero;
-                nResult = oDesktopFolder.BindToObject(pPIDL, IntPtr.Zero, ref IID_IShellFolder, out pUnknownParentFolder);
+                nResult = oDesktopFolder.BindToObject(pPIDL, IntPtr.Zero, ref IID_IShellFolder, out IntPtr pUnknownParentFolder);
                 // Free the PIDL first
                 Marshal.FreeCoTaskMem(pPIDL);
                 if (S_OK != nResult)
@@ -397,64 +392,6 @@ namespace SystemTrayMenu.Utilities
                         arrPIDLs[n] = IntPtr.Zero;
                     }
                 }
-            }
-        }
-        #endregion
-
-        #region InvokeContextMenuDefault
-        private void InvokeContextMenuDefault(FileInfo[] arrFI)
-        {
-            // Release all resources first.
-            ReleaseAll();
-
-            IntPtr pMenu = IntPtr.Zero,
-                iContextMenuPtr = IntPtr.Zero;
-
-            try
-            {
-                _arrPIDLs = GetPIDLs(arrFI);
-                if (null == _arrPIDLs)
-                {
-                    ReleaseAll();
-                    return;
-                }
-
-                if (false == GetContextMenuInterfaces(_oParentFolder, _arrPIDLs, out iContextMenuPtr))
-                {
-                    ReleaseAll();
-                    return;
-                }
-
-                pMenu = DllImports.NativeMethods.User32CreatePopupMenu();
-
-                int nResult = _oContextMenu.QueryContextMenu(
-                    pMenu,
-                    0,
-                    CMD_FIRST,
-                    CMD_LAST,
-                    CMF.DEFAULTONLY |
-                    ((Control.ModifierKeys & Keys.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
-
-                uint nDefaultCmd = (uint)DllImports.NativeMethods.User32GetMenuDefaultItem(pMenu, false, 0);
-                if (nDefaultCmd >= CMD_FIRST)
-                {
-                    InvokeCommand(_oContextMenu, nDefaultCmd, arrFI[0].DirectoryName, Control.MousePosition);
-                }
-
-                DllImports.NativeMethods.User32DestroyMenu(pMenu);
-                pMenu = IntPtr.Zero;
-            }
-            catch
-            {
-                throw;
-            }
-            finally
-            {
-                if (pMenu != IntPtr.Zero)
-                {
-                    DllImports.NativeMethods.User32DestroyMenu(pMenu);
-                }
-                ReleaseAll();
             }
         }
         #endregion

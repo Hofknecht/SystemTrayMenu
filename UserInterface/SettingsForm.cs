@@ -130,26 +130,26 @@ namespace SystemTrayMenu.UserInterface
                 comboBoxLanguage.SelectedValue.ToString();
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void ButtonCancel_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Reload();
             DialogResult = DialogResult.Cancel;
             Close();
         }
 
-        private void buttonChange_Click(object sender, EventArgs e)
+        private void ButtonChange_Click(object sender, EventArgs e)
         {
             Config.SetFolderByUser(false);
             textBoxFolder.Text = Config.Path;
         }
 
-        private void textBoxHotkey_Enter(object sender, EventArgs e)
+        private void TextBoxHotkeyEnter(object sender, EventArgs e)
         {
             HotkeyControl.UnregisterHotkeys();
             _inHotkey = true;
         }
 
-        private void textBoxHotkey_Leave(object sender, EventArgs e)
+        private void TextBoxHotkey_Leave(object sender, EventArgs e)
         {
             Properties.Settings.Default.HotKey =
                 new KeysConverter().ConvertToInvariantString(
@@ -219,17 +219,17 @@ namespace SystemTrayMenu.UserInterface
             //IniValue hotkeyValue = _conf.Values[configurationKey];
             //try
             //{
-                bool success = RegisterHotkey(failedKeys,
-                    //hotkeyValue.Value.ToString(), 
-                    Properties.Settings.Default.HotKey,
-                    handler);
-                //if (!success && ignoreFailedRegistration)
-                //{
-                //    //LOG.DebugFormat("Ignoring failed hotkey registration for {0}, with value '{1}', resetting to 'None'.", functionName, hotkeyValue);
-                //    //_conf.Values[configurationKey].Value = Keys.None.ToString();
-                //    //_conf.IsDirty = true;
-                //}
-                return success;
+            bool success = RegisterHotkey(failedKeys,
+                //hotkeyValue.Value.ToString(), 
+                Properties.Settings.Default.HotKey,
+                handler);
+            //if (!success && ignoreFailedRegistration)
+            //{
+            //    //LOG.DebugFormat("Ignoring failed hotkey registration for {0}, with value '{1}', resetting to 'None'.", functionName, hotkeyValue);
+            //    //_conf.Values[configurationKey].Value = Keys.None.ToString();
+            //    //_conf.IsDirty = true;
+            //}
+            return success;
             //}
             //catch (Exception)
             //{
@@ -268,7 +268,7 @@ namespace SystemTrayMenu.UserInterface
             //}
             bool success = true;
             StringBuilder failedKeys = new StringBuilder();
-            if (!RegisterWrapper(failedKeys, handler))
+            if (!RegisterWrapper(failedKeys, Handler))
             {
                 success = false;
             }
@@ -291,9 +291,8 @@ namespace SystemTrayMenu.UserInterface
             return success || ignoreFailedRegistration;
         }
 
-        private static void handler()
+        private static void Handler()
         {
-            //todo
         }
 
         ///// <summary>

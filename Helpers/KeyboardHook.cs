@@ -36,10 +36,7 @@ namespace SystemTrayMenu.Helper
                     KeyboardHookModifierKeys modifier = (KeyboardHookModifierKeys)((int)m.LParam & 0xFFFF);
 
                     // invoke the event to notify the parent.
-                    if (KeyPressed != null)
-                    {
-                        KeyPressed(this, new KeyPressedEventArgs(modifier, key));
-                    }
+                    KeyPressed?.Invoke(this, new KeyPressedEventArgs(modifier, key));
                 }
             }
 
@@ -87,7 +84,8 @@ namespace SystemTrayMenu.Helper
                 {
                     modifiers |= KeyboardHookModifierKeys.Alt;
                 }
-                if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture))
+                if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture) ||
+                    modifiersString.ToUpperInvariant().Contains("STRG", StringComparison.InvariantCulture))
                 {
                     modifiers |= KeyboardHookModifierKeys.Control;
                 }
@@ -119,7 +117,7 @@ namespace SystemTrayMenu.Helper
 
         private void RegisterHotKey(uint modifier, Keys key)
         {
-            _currentId = _currentId + 1;
+            _currentId += 1;
 
             if (!DllImports.NativeMethods.User32RegisterHotKey(
                 _window.Handle, _currentId, modifier, (uint)key))

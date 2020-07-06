@@ -158,8 +158,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxHotkey.TabIndex = 99;
             this.textBoxHotkey.TabStop = false;
             this.textBoxHotkey.Text = "None";
-            this.textBoxHotkey.Enter += new System.EventHandler(this.textBoxHotkey_Enter);
-            this.textBoxHotkey.Leave += new System.EventHandler(this.textBoxHotkey_Leave);
+            this.textBoxHotkey.Enter += new System.EventHandler(this.TextBoxHotkeyEnter);
+            this.textBoxHotkey.Leave += new System.EventHandler(this.TextBoxHotkey_Leave);
             // 
             // checkBoxAutostart
             // 
@@ -225,7 +225,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChange.TabIndex = 5;
             this.buttonChange.Text = "...";
             this.buttonChange.UseVisualStyleBackColor = true;
-            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
+            this.buttonChange.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
             // textBoxFolder
             // 
@@ -363,7 +363,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // SettingsForm
             // 

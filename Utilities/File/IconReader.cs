@@ -20,7 +20,7 @@ namespace SystemTrayMenu.Utilities
     public static class IconReader
     {
         private static readonly ConcurrentDictionary<string, Icon> dictIconCache = new ConcurrentDictionary<string, Icon>();
-        private static readonly Object readIcon = new Object();
+        private static readonly object readIcon = new object();
         public enum IconSize
         {
             Large = 0, //32x32 pixels
@@ -206,16 +206,14 @@ namespace SystemTrayMenu.Utilities
             Icon icon = null;
             if (originalIcon != null)
             {
-                using (Bitmap target = new Bitmap(
+                using Bitmap target = new Bitmap(
                     originalIcon.Width, originalIcon.Height,
-                    PixelFormat.Format32bppArgb))
-                {
-                    Graphics graphics = Graphics.FromImage(target);
-                    graphics.DrawIcon(originalIcon, 0, 0);
-                    graphics.DrawIcon(overlay, 0, 0);
-                    target.MakeTransparent(target.GetPixel(1, 1));
-                    icon = Icon.FromHandle(target.GetHicon());
-                }
+                    PixelFormat.Format32bppArgb);
+                Graphics graphics = Graphics.FromImage(target);
+                graphics.DrawIcon(originalIcon, 0, 0);
+                graphics.DrawIcon(overlay, 0, 0);
+                target.MakeTransparent(target.GetPixel(1, 1));
+                icon = Icon.FromHandle(target.GetHicon());
             }
 
             return icon;

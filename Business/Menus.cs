@@ -45,7 +45,7 @@ namespace SystemTrayMenu.Business
         {
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;
-            void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
+            static void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
             {
                 string path = Config.Path;
                 int level = 0;
@@ -305,7 +305,8 @@ namespace SystemTrayMenu.Business
                             return
                                 output
                                     .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
-                                    .Select(x => System.IO.Path.Combine(networkLocationRootPath, x.Substring(0, x.IndexOf(' '))))
+                                    .Select(x => Path.Combine(networkLocationRootPath,
+                                    x.Substring(0, x.IndexOf(' ', StringComparison.InvariantCulture))))
                                     .ToArray();
                         }
                     }
@@ -506,7 +507,7 @@ namespace SystemTrayMenu.Business
 
                 menu.SetTitle(title);
                 menu.UserClickedOpenFolder += OpenFolder;
-                void OpenFolder()
+                static void OpenFolder()
                 {
                     Log.ProcessStart("explorer.exe", Config.Path);
                 }
@@ -544,7 +545,7 @@ namespace SystemTrayMenu.Business
 
             menu.VisibleChanged += MenuVisibleChanged;
             AddItemsToMenu(menuData.RowDatas, menu);
-            void AddItemsToMenu(List<RowData> data, Menu menu)
+            static void AddItemsToMenu(List<RowData> data, Menu menu)
             {
                 DataGridView dgv = menu.GetDataGridView();
                 DataTable dataTable = new DataTable();
@@ -736,15 +737,6 @@ namespace SystemTrayMenu.Business
                 menuToClose.VisibleChanged += MenuVisibleChanged;
                 menuToClose.HideWithFade();
                 menus[menuToClose.Level] = null;
-            }
-        }
-
-        private void FadeInIfNeeded()
-        {
-            if (menus[0].IsUsable)
-            {
-                bool active = IsActive();
-                AsList.ForEach(menu => menu.ShowWithFadeOrTransparent(active));
             }
         }
 
