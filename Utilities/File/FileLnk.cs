@@ -4,10 +4,10 @@
 
 namespace SystemTrayMenu.Utilities
 {
-    using Shell32;
     using System;
     using System.IO;
     using System.Threading;
+    using Shell32;
 
     internal class FileLnk
     {
@@ -32,6 +32,28 @@ namespace SystemTrayMenu.Utilities
             }
 
             return resolvedFilename;
+        }
+
+        public static bool IsDirectory(string filePath)
+        {
+            bool isDirectory = false;
+            if (Directory.Exists(filePath))
+            {
+                FileAttributes attributes = File.GetAttributes(filePath);
+                if ((attributes & FileAttributes.Directory) == FileAttributes.Directory)
+                {
+                    isDirectory = true;
+                }
+            }
+
+            return isDirectory;
+        }
+
+        public static bool IsNetworkRoot(string path)
+        {
+            return !System.IO.File.Exists(path) &&
+                path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
+                !path.Substring(2).Contains(@"\", StringComparison.InvariantCulture);
         }
 
         private static string GetShortcutFileNamePath(object shortcutFilename)
@@ -64,28 +86,6 @@ namespace SystemTrayMenu.Utilities
             }
 
             return resolvedFilename;
-        }
-
-        public static bool IsDirectory(string filePath)
-        {
-            bool isDirectory = false;
-            if (Directory.Exists(filePath))
-            {
-                FileAttributes attributes = File.GetAttributes(filePath);
-                if ((attributes & FileAttributes.Directory) == FileAttributes.Directory)
-                {
-                    isDirectory = true;
-                }
-            }
-
-            return isDirectory;
-        }
-
-        public static bool IsNetworkRoot(string path)
-        {
-            return !System.IO.File.Exists(path) &&
-                path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
-                !path.Substring(2).Contains(@"\", StringComparison.InvariantCulture);
         }
     }
 }

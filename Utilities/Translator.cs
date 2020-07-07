@@ -34,11 +34,4 @@ namespace SystemTrayMenu.Utilities
             return rm.GetString(id, culture);
         }
     }
-
-    public class Language
-    {
-        public string Name { get; set; }
-
-        public string Value { get; set; }
-    }
 }

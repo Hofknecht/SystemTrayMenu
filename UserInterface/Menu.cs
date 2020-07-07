@@ -17,7 +17,6 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu : Form
     {
-        internal int Level = 0;
         private readonly Fading fading = new Fading();
         private bool isShowing = false;
 
@@ -131,23 +130,24 @@ namespace SystemTrayMenu.UserInterface
             MaxReached,
         }
 
+        internal int Level { get; set; } = 0;
+
         internal bool IsUsable => Visible && !fading.IsHiding &&
             !IsDisposed && !Disposing;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createparams = base.CreateParams;
+                createparams.ExStyle |= 0x80;
+                return createparams;
+            }
+        }
 
         internal void FocusTextBox()
         {
             textBoxSearch.Focus();
-        }
-
-        private static void SetDoubleBuffer(Control ctl, bool doubleBuffered)
-        {
-            typeof(Control).InvokeMember(
-                "DoubleBuffered",
-                BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
-                null,
-                ctl,
-                new object[] { doubleBuffered },
-                CultureInfo.InvariantCulture);
         }
 
         internal void SetTypeSub()
@@ -378,6 +378,53 @@ namespace SystemTrayMenu.UserInterface
             Location = new Point(x, y);
         }
 
+        internal void SetTitleColorActive()
+        {
+            labelTitle.ForeColor = Color.Black;
+        }
+
+        internal void KeyPressedSearch(string letter)
+        {
+            textBoxSearch.Text += letter;
+            textBoxSearch.SelectionStart = textBoxSearch.Text.Length;
+            textBoxSearch.SelectionLength = 0;
+            textBoxSearch.Focus();
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keys)
+        {
+            switch (keys)
+            {
+                case Keys.Enter:
+                case Keys.Up:
+                case Keys.Down:
+                case Keys.Left:
+                case Keys.Right:
+                case Keys.Escape:
+                case Keys.Control | Keys.F:
+                case Keys.Tab:
+                case Keys.Tab | Keys.Shift:
+                case Keys.Apps:
+                    CmdKeyProcessed.Invoke(this, keys);
+                    return true;
+                default:
+                    break;
+            }
+
+            return base.ProcessCmdKey(ref msg, keys);
+        }
+
+        private static void SetDoubleBuffer(Control ctl, bool doubleBuffered)
+        {
+            typeof(Control).InvokeMember(
+                "DoubleBuffered",
+                BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+                null,
+                ctl,
+                new object[] { doubleBuffered },
+                CultureInfo.InvariantCulture);
+        }
+
         private void AdjustDataGridViewWidth()
         {
             DataGridViewExtensions.FastAutoSizeColumns(dgv);
@@ -456,11 +503,6 @@ namespace SystemTrayMenu.UserInterface
             MouseWheel?.Invoke();
         }
 
-        internal void SetTitleColorActive()
-        {
-            labelTitle.ForeColor = Color.Black;
-        }
-
         private void LabelTitle_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -477,39 +519,6 @@ namespace SystemTrayMenu.UserInterface
         private void LabelTitle_MouseLeave(object sender, EventArgs e)
         {
             labelTitle.BackColor = MenuDefines.ColorTitleBackground;
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams createparams = base.CreateParams;
-                createparams.ExStyle |= 0x80;
-                return createparams;
-            }
-        }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keys)
-        {
-            switch (keys)
-            {
-                case Keys.Enter:
-                case Keys.Up:
-                case Keys.Down:
-                case Keys.Left:
-                case Keys.Right:
-                case Keys.Escape:
-                case Keys.Control | Keys.F:
-                case Keys.Tab:
-                case Keys.Tab | Keys.Shift:
-                case Keys.Apps:
-                    CmdKeyProcessed.Invoke(this, keys);
-                    return true;
-                default:
-                    break;
-            }
-
-            return base.ProcessCmdKey(ref msg, keys);
         }
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
@@ -530,14 +539,6 @@ namespace SystemTrayMenu.UserInterface
             }
 
             SearchTextChanged.Invoke(this, null);
-        }
-
-        internal void KeyPressedSearch(string letter)
-        {
-            textBoxSearch.Text += letter;
-            textBoxSearch.SelectionStart = textBoxSearch.Text.Length;
-            textBoxSearch.SelectionLength = 0;
-            textBoxSearch.Focus();
         }
     }
 }

@@ -4,7 +4,6 @@
 
 namespace SystemTrayMenu.DataClasses
 {
-    using IWshRuntimeLibrary;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -16,24 +15,13 @@ namespace SystemTrayMenu.DataClasses
     using System.Security;
     using System.Text;
     using System.Windows.Forms;
+    using IWshRuntimeLibrary;
     using SystemTrayMenu.Utilities;
     using TAFactory.IconPack;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class RowData : IDisposable
     {
-        internal FileInfo FileInfo;
-        internal Menu SubMenu;
-        internal bool IsMenuOpen;
-        internal bool IsSelected;
-        internal bool ContainsMenu;
-        internal bool IsContextMenuOpen;
-        internal bool IsResolvedLnk;
-        internal bool HiddenEntry;
-        internal string TargetFilePath;
-        internal string TargetFilePathOrig;
-        internal int RowIndex;
-        internal int MenuLevel;
         private static DateTime contextMenuClosed;
         private string workingDirectory;
         private string arguments;
@@ -44,6 +32,36 @@ namespace SystemTrayMenu.DataClasses
 
         internal RowData()
         {
+        }
+
+        internal FileInfo FileInfo { get; set; }
+
+        internal Menu SubMenu { get; set; }
+
+        internal bool IsMenuOpen { get; set; }
+
+        internal bool IsSelected { get; set; }
+
+        internal bool ContainsMenu { get; set; }
+
+        internal bool IsContextMenuOpen { get; set; }
+
+        internal bool IsResolvedLnk { get; set; }
+
+        internal bool HiddenEntry { get; set; }
+
+        internal string TargetFilePath { get; set; }
+
+        internal string TargetFilePathOrig { get; set; }
+
+        internal int RowIndex { get; set; }
+
+        internal int MenuLevel { get; set; }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         internal void SetText(string text)
@@ -223,12 +241,6 @@ namespace SystemTrayMenu.DataClasses
             {
                 Log.ProcessStart("explorer.exe", TargetFilePath);
             }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)

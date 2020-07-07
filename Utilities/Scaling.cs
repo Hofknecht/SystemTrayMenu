@@ -9,13 +9,13 @@ namespace SystemTrayMenu.Utilities
 
     internal static class Scaling
     {
-        internal static float Factor = 1;
-
         private enum DeviceCap
         {
             VERTRES = 10,
             DESKTOPVERTRES = 117,
         }
+
+        public static float Factor { get; private set; } = 1;
 
         internal static void Initialize()
         {

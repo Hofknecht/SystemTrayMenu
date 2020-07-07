@@ -4,21 +4,19 @@
 
 namespace SystemTrayMenu.UserInterface
 {
-    using Microsoft.Win32;
     using System;
     using System.Collections.Generic;
     using System.Drawing;
     using System.Reflection;
     using System.Text;
     using System.Windows.Forms;
-    using SystemTrayMenu.UserInterface.Controls;
+    using Microsoft.Win32;
+    using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.UserInterface.Controls.HotkeyControl;
+    using static SystemTrayMenu.UserInterface.HotkeyTextboxControl.HotkeyControl;
 
     public partial class SettingsForm : Form
     {
-        public string NewHotKey => newHotKey;
-
         private readonly string newHotKey = string.Empty;
         private bool inHotkey = false;
 
@@ -79,82 +77,15 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void SettingsForm_Load(object sender, EventArgs e)
-        {
-            tabControl1.Size = new Size(
-                tableLayoutPanelGeneral.Size.Width,
-                tableLayoutPanelGeneral.Size.Height);
-        }
+        public string NewHotKey => newHotKey;
 
-        private void ButtonOk_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
+        /// </summary>
+        /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
+        public static bool RegisterHotkeys()
         {
-            SetAutostart();
-            SetHotkey();
-            SetLanguage();
-            Properties.Settings.Default.Save();
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void SetAutostart()
-        {
-            if (checkBoxAutostart.Checked)
-            {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.SetValue(
-                    Assembly.GetExecutingAssembly().GetName().Name,
-                    System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-                Properties.Settings.Default.IsAutostartActivated = true;
-            }
-            else
-            {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.DeleteValue("SystemTrayMenu", false);
-                Properties.Settings.Default.IsAutostartActivated = false;
-            }
-        }
-
-        private void SetHotkey()
-        {
-            Properties.Settings.Default.HotKey =
-                new KeysConverter().ConvertToInvariantString(
-                textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-        }
-
-        private void SetLanguage()
-        {
-            Properties.Settings.Default.CurrentCultureInfoName =
-                comboBoxLanguage.SelectedValue.ToString();
-        }
-
-        private void ButtonCancel_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.Reload();
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
-
-        private void ButtonChange_Click(object sender, EventArgs e)
-        {
-            Config.SetFolderByUser(false);
-            textBoxFolder.Text = Config.Path;
-        }
-
-        private void TextBoxHotkeyEnter(object sender, EventArgs e)
-        {
-            HotkeyControl.UnregisterHotkeys();
-            inHotkey = true;
-        }
-
-        private void TextBoxHotkey_Leave(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.HotKey =
-                new KeysConverter().ConvertToInvariantString(
-                textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-            RegisterHotkeys();
-            inHotkey = false;
+            return RegisterHotkeys(false);
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -214,15 +145,6 @@ namespace SystemTrayMenu.UserInterface
                 Properties.Settings.Default.HotKey,
                 handler);
             return success;
-        }
-
-        /// <summary>
-        /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
-        /// </summary>
-        /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
-        public static bool RegisterHotkeys()
-        {
-            return RegisterHotkeys(false);
         }
 
         /// <summary>
@@ -312,12 +234,83 @@ namespace SystemTrayMenu.UserInterface
 
             return success;
         }
-    }
 
-    public class Language
-    {
-        public string Name { get; set; }
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            tabControl1.Size = new Size(
+                tableLayoutPanelGeneral.Size.Width,
+                tableLayoutPanelGeneral.Size.Height);
+        }
 
-        public string Value { get; set; }
+        private void ButtonOk_Click(object sender, EventArgs e)
+        {
+            SetAutostart();
+            SetHotkey();
+            SetLanguage();
+            Properties.Settings.Default.Save();
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void SetAutostart()
+        {
+            if (checkBoxAutostart.Checked)
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                key.SetValue(
+                    Assembly.GetExecutingAssembly().GetName().Name,
+                    System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+                Properties.Settings.Default.IsAutostartActivated = true;
+            }
+            else
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                key.DeleteValue("SystemTrayMenu", false);
+                Properties.Settings.Default.IsAutostartActivated = false;
+            }
+        }
+
+        private void SetHotkey()
+        {
+            Properties.Settings.Default.HotKey =
+                new KeysConverter().ConvertToInvariantString(
+                textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
+        }
+
+        private void SetLanguage()
+        {
+            Properties.Settings.Default.CurrentCultureInfoName =
+                comboBoxLanguage.SelectedValue.ToString();
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Reload();
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void ButtonChange_Click(object sender, EventArgs e)
+        {
+            Config.SetFolderByUser(false);
+            textBoxFolder.Text = Config.Path;
+        }
+
+        private void TextBoxHotkeyEnter(object sender, EventArgs e)
+        {
+            HotkeyControl.UnregisterHotkeys();
+            inHotkey = true;
+        }
+
+        private void TextBoxHotkey_Leave(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.HotKey =
+                new KeysConverter().ConvertToInvariantString(
+                textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
+            RegisterHotkeys();
+            inHotkey = false;
+        }
     }
 }

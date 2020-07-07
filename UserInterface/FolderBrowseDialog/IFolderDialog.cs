@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.UserInterface.Dialogs
+namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 {
     using System.Windows.Forms;
 

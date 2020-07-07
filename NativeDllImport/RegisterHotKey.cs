@@ -13,20 +13,6 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
-        [DllImport("user32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint virtualKeyCode);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        private static extern uint MapVirtualKey(uint uCode, uint uMapType);
-
-        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        private static extern int GetKeyNameText(uint lParam, [Out] StringBuilder lpString, int nSize);
-
         public static bool User32RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk)
         {
             return RegisterHotKey(hWnd, id, fsModifiers, vk);
@@ -46,5 +32,19 @@ namespace SystemTrayMenu.DllImports
         {
             return GetKeyNameText(lParam, lpString, nSize);
         }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint virtualKeyCode);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern uint MapVirtualKey(uint uCode, uint uMapType);
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        private static extern int GetKeyNameText(uint lParam, [Out] StringBuilder lpString, int nSize);
     }
 }

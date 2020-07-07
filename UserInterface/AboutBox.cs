@@ -4,7 +4,6 @@
 
 namespace SystemTrayMenu.UserInterface
 {
-    using Microsoft.Win32;
     using System;
     using System.Collections.Specialized;
     using System.Drawing;
@@ -14,6 +13,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Security;
     using System.Text.RegularExpressions;
     using System.Windows.Forms;
+    using Microsoft.Win32;
     using SystemTrayMenu.Utilities;
 
     /// <summary>
@@ -187,14 +187,6 @@ namespace SystemTrayMenu.UserInterface
         {
             get => buttonDetails.Visible;
             set => buttonDetails.Visible = value;
-        }
-
-        private void TabPanelDetails_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (TabPanelDetails.SelectedTab == TabPageAssemblyDetails)
-            {
-                AssemblyNamesComboBox.Focus();
-            }
         }
 
         // <summary>
@@ -439,6 +431,64 @@ namespace SystemTrayMenu.UserInterface
         }
 
         // <summary>
+        // populate a listview with the specified key and value strings
+        // </summary>
+        private static void Populate(ListView lvw, string key, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                ListViewItem lvi = new ListViewItem
+                {
+                    Text = key,
+                };
+                lvi.SubItems.Add(value);
+                lvw.Items.Add(lvi);
+            }
+        }
+
+        // <summary>
+        // populate details for a single assembly
+        // </summary>
+        private static void PopulateAssemblyDetails(Assembly a, ListView lvw)
+        {
+            lvw.Items.Clear();
+
+            // this assembly property is only available in framework versions 1.1+
+            Populate(lvw, "Image Runtime Version", a.ImageRuntimeVersion);
+            Populate(lvw, "Loaded from GAC", a.GlobalAssemblyCache.ToString(CultureInfo.InvariantCulture));
+
+            NameValueCollection nvc = AssemblyAttribs(a);
+            foreach (string strKey in nvc)
+            {
+                Populate(lvw, strKey, nvc[strKey]);
+            }
+        }
+
+        // <summary>
+        // matches assembly by Assembly.GetName.Name; returns nothing if no match
+        // </summary>
+        private static Assembly MatchAssemblyByName(string assemblyName)
+        {
+            foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                if (a.GetName().Name == assemblyName)
+                {
+                    return a;
+                }
+            }
+
+            return null;
+        }
+
+        private void TabPanelDetails_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TabPanelDetails.SelectedTab == TabPageAssemblyDetails)
+            {
+                AssemblyNamesComboBox.Focus();
+            }
+        }
+
+        // <summary>
         // launch the MSInfo "system information" application (works on XP, 2003, and Vista)
         // </summary>
         private void ShowSysInfo()
@@ -462,22 +512,6 @@ namespace SystemTrayMenu.UserInterface
             }
 
             Log.ProcessStart(strSysInfoPath);
-        }
-
-        // <summary>
-        // populate a listview with the specified key and value strings
-        // </summary>
-        private static void Populate(ListView lvw, string key, string value)
-        {
-            if (!string.IsNullOrEmpty(value))
-            {
-                ListViewItem lvi = new ListViewItem
-                {
-                    Text = key,
-                };
-                lvi.SubItems.Add(value);
-                lvw.Items.Add(lvi);
-            }
         }
 
         // <summary>
@@ -618,40 +652,6 @@ namespace SystemTrayMenu.UserInterface
             s = s.Replace("%version%", EntryAssemblyAttrib("version"), StringComparison.InvariantCulture);
             s = s.Replace("%builddate%", EntryAssemblyAttrib("builddate"), StringComparison.InvariantCulture);
             return s;
-        }
-
-        // <summary>
-        // populate details for a single assembly
-        // </summary>
-        private static void PopulateAssemblyDetails(Assembly a, ListView lvw)
-        {
-            lvw.Items.Clear();
-
-            // this assembly property is only available in framework versions 1.1+
-            Populate(lvw, "Image Runtime Version", a.ImageRuntimeVersion);
-            Populate(lvw, "Loaded from GAC", a.GlobalAssemblyCache.ToString(CultureInfo.InvariantCulture));
-
-            NameValueCollection nvc = AssemblyAttribs(a);
-            foreach (string strKey in nvc)
-            {
-                Populate(lvw, strKey, nvc[strKey]);
-            }
-        }
-
-        // <summary>
-        // matches assembly by Assembly.GetName.Name; returns nothing if no match
-        // </summary>
-        private static Assembly MatchAssemblyByName(string assemblyName)
-        {
-            foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                if (a.GetName().Name == assemblyName)
-                {
-                    return a;
-                }
-            }
-
-            return null;
         }
 
         // <summary>

@@ -194,43 +194,6 @@ namespace SystemTrayMenu.Business
 
         private List<Menu> AsList => AsEnumerable.ToList();
 
-        internal void SwitchOpenCloseByTaskbarItem()
-        {
-            SwitchOpenClose(true);
-            timerStillActiveCheck.Start();
-        }
-
-        internal void SwitchOpenClose(bool byClick)
-        {
-            waitToOpenMenu.MouseActive = byClick;
-            if (byClick && (DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
-            {
-                // By click on notifyicon the menu gets deactivated and closed
-            }
-            else if (string.IsNullOrEmpty(Config.Path))
-            {
-                // Case when Folder Dialog open
-            }
-            else if (openCloseState == OpenCloseState.Opening ||
-                (menus[0].Visible && openCloseState == OpenCloseState.Default))
-            {
-                openCloseState = OpenCloseState.Closing;
-                MenusFadeOut();
-                StopWorker();
-                if (!AsEnumerable.Any(m => m.Visible))
-                {
-                    openCloseState = OpenCloseState.Default;
-                }
-            }
-            else
-            {
-                openCloseState = OpenCloseState.Opening;
-                StartWorker();
-            }
-
-            deactivatedTime = DateTime.MinValue;
-        }
-
         public void Dispose()
         {
             workerMainMenu.Dispose();
@@ -245,38 +208,6 @@ namespace SystemTrayMenu.Business
             waitLeave.Dispose();
             IconReader.Dispose();
             DisposeMenu(menus[0]);
-        }
-
-        internal void DisposeMenu(Menu menuToDispose)
-        {
-            if (menuToDispose != null)
-            {
-                menuToDispose.MouseWheel -= AdjustMenusSizeAndLocation;
-                menuToDispose.MouseLeave -= waitLeave.Start;
-                menuToDispose.MouseEnter -= waitLeave.Stop;
-                menuToDispose.KeyPress -= keyboardInput.KeyPress;
-                menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
-                menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
-                menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
-                DataGridView dgv = menuToDispose.GetDataGridView();
-                dgv.CellMouseEnter -= waitToOpenMenu.MouseEnter;
-                dgv.CellMouseLeave -= waitToOpenMenu.MouseLeave;
-                dgv.MouseMove -= waitToOpenMenu.MouseMove;
-                dgv.MouseDown -= Dgv_MouseDown;
-                dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
-                dgv.SelectionChanged -= Dgv_SelectionChanged;
-                dgv.RowPostPaint -= Dgv_RowPostPaint;
-                dgv.ClearSelection();
-
-                foreach (DataGridViewRow row in dgv.Rows)
-                {
-                    RowData rowData = (RowData)row.Cells[2].Value;
-                    rowData.Dispose();
-                    DisposeMenu(rowData.SubMenu);
-                }
-
-                menuToDispose.Dispose();
-            }
         }
 
         internal static MenuData GetData(BackgroundWorker worker, string path, int level)
@@ -434,6 +365,75 @@ namespace SystemTrayMenu.Business
             return menuData;
         }
 
+        internal void SwitchOpenCloseByTaskbarItem()
+        {
+            SwitchOpenClose(true);
+            timerStillActiveCheck.Start();
+        }
+
+        internal void SwitchOpenClose(bool byClick)
+        {
+            waitToOpenMenu.MouseActive = byClick;
+            if (byClick && (DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
+            {
+                // By click on notifyicon the menu gets deactivated and closed
+            }
+            else if (string.IsNullOrEmpty(Config.Path))
+            {
+                // Case when Folder Dialog open
+            }
+            else if (openCloseState == OpenCloseState.Opening ||
+                (menus[0].Visible && openCloseState == OpenCloseState.Default))
+            {
+                openCloseState = OpenCloseState.Closing;
+                MenusFadeOut();
+                StopWorker();
+                if (!AsEnumerable.Any(m => m.Visible))
+                {
+                    openCloseState = OpenCloseState.Default;
+                }
+            }
+            else
+            {
+                openCloseState = OpenCloseState.Opening;
+                StartWorker();
+            }
+
+            deactivatedTime = DateTime.MinValue;
+        }
+
+        internal void DisposeMenu(Menu menuToDispose)
+        {
+            if (menuToDispose != null)
+            {
+                menuToDispose.MouseWheel -= AdjustMenusSizeAndLocation;
+                menuToDispose.MouseLeave -= waitLeave.Start;
+                menuToDispose.MouseEnter -= waitLeave.Stop;
+                menuToDispose.KeyPress -= keyboardInput.KeyPress;
+                menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
+                menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
+                menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
+                DataGridView dgv = menuToDispose.GetDataGridView();
+                dgv.CellMouseEnter -= waitToOpenMenu.MouseEnter;
+                dgv.CellMouseLeave -= waitToOpenMenu.MouseLeave;
+                dgv.MouseMove -= waitToOpenMenu.MouseMove;
+                dgv.MouseDown -= Dgv_MouseDown;
+                dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
+                dgv.SelectionChanged -= Dgv_SelectionChanged;
+                dgv.RowPostPaint -= Dgv_RowPostPaint;
+                dgv.ClearSelection();
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    RowData rowData = (RowData)row.Cells[2].Value;
+                    rowData.Dispose();
+                    DisposeMenu(rowData.SubMenu);
+                }
+
+                menuToDispose.Dispose();
+            }
+        }
+
         internal void MainPreload()
         {
             menus[0] = Create(
@@ -507,6 +507,12 @@ namespace SystemTrayMenu.Business
             }
 
             return rowData;
+        }
+
+        private static bool IsActive()
+        {
+            return Form.ActiveForm is Menu ||
+                Form.ActiveForm is UserInterface.TaskbarForm;
         }
 
         private Menu Create(MenuData menuData, string title = null)
@@ -775,12 +781,6 @@ namespace SystemTrayMenu.Business
                     }
                 }
             }
-        }
-
-        private static bool IsActive()
-        {
-            return Form.ActiveForm is Menu ||
-                Form.ActiveForm is UserInterface.TaskbarForm;
         }
 
         private void MenusFadeOut()

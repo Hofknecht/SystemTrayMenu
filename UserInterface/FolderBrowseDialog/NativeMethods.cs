@@ -1,179 +1,12 @@
-﻿// <copyright file="FolderDialog.cs" company="PlaceholderCompany">
+﻿// <copyright file="NativeMethods.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.UserInterface.Dialogs
+namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 {
     using System;
-    using System.IO;
     using System.Runtime.CompilerServices;
     using System.Runtime.InteropServices;
-    using System.Windows.Forms;
-    using SystemTrayMenu.Utilities;
-
-    public class FolderDialog : IFolderDialog, IDisposable
-    {
-        private bool isDisposed;
-
-        /// <summary>
-        /// Gets or sets /sets folder in which dialog will be open.
-        /// </summary>
-        public string InitialFolder { get; set; }
-
-        /// <summary>
-        /// Gets or sets /sets directory in which dialog will be open
-        /// if there is no recent directory available.
-        /// </summary>
-        public string DefaultFolder { get; set; }
-
-        /// <summary>
-        /// Gets or sets selected folder.
-        /// </summary>
-        public string Folder { get; set; }
-
-        public DialogResult ShowDialog()
-        {
-            return ShowDialog(owner: new WindowWrapper(IntPtr.Zero));
-        }
-
-        public DialogResult ShowDialog(IWin32Window owner)
-        {
-            if (Environment.OSVersion.Version.Major >= 6)
-            {
-                return ShowVistaDialog(owner);
-            }
-            else
-            {
-                return ShowLegacyDialog(owner);
-            }
-        }
-
-        public DialogResult ShowVistaDialog(IWin32Window owner)
-        {
-            NativeMethods.IFileDialog frm = (NativeMethods.IFileDialog)new NativeMethods.FileOpenDialogRCW();
-            frm.GetOptions(out uint options);
-            options |= NativeMethods.FOS_PICKFOLDERS |
-                       NativeMethods.FOS_FORCEFILESYSTEM |
-                       NativeMethods.FOS_NOVALIDATE |
-                       NativeMethods.FOS_NOTESTFILECREATE |
-                       NativeMethods.FOS_DONTADDTORECENT;
-            frm.SetOptions(options);
-            if (InitialFolder != null)
-            {
-                Guid riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); // IShellItem
-                if (NativeMethods.SHCreateItemFromParsingName(
-                    InitialFolder,
-                    IntPtr.Zero,
-                    ref riid,
-                    out NativeMethods.IShellItem directoryShellItem) == NativeMethods.S_OK)
-                {
-                    frm.SetFolder(directoryShellItem);
-                }
-            }
-
-            if (DefaultFolder != null)
-            {
-                Guid riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); // IShellItem
-                if (NativeMethods.SHCreateItemFromParsingName(
-                    DefaultFolder,
-                    IntPtr.Zero,
-                    ref riid,
-                    out NativeMethods.IShellItem directoryShellItem) == NativeMethods.S_OK)
-                {
-                    frm.SetDefaultFolder(directoryShellItem);
-                }
-            }
-
-            if (owner != null && frm.Show(owner.Handle) == NativeMethods.S_OK)
-            {
-                if (frm.GetResult(out NativeMethods.IShellItem shellItem) == NativeMethods.S_OK)
-                {
-                    if (shellItem.GetDisplayName(
-                        NativeMethods.SIGDN_FILESYSPATH,
-                        out IntPtr pszString) == NativeMethods.S_OK)
-                    {
-                        if (pszString != IntPtr.Zero)
-                        {
-                            try
-                            {
-                                Folder = Marshal.PtrToStringAuto(pszString);
-                                return DialogResult.OK;
-                            }
-                            finally
-                            {
-                                Marshal.FreeCoTaskMem(pszString);
-                            }
-                        }
-                    }
-                }
-            }
-
-            return DialogResult.Cancel;
-        }
-
-        public DialogResult ShowLegacyDialog(IWin32Window owner)
-        {
-            using SaveFileDialog frm = new SaveFileDialog
-            {
-                CheckFileExists = false,
-                CheckPathExists = true,
-                CreatePrompt = false,
-                Filter = "|" + Guid.Empty.ToString(),
-                FileName = "any",
-            };
-            if (InitialFolder != null)
-            {
-                frm.InitialDirectory = InitialFolder;
-            }
-
-            frm.OverwritePrompt = false;
-            frm.Title = Translator.GetText("Select Folder");
-            frm.ValidateNames = false;
-            if (frm.ShowDialog(owner) == DialogResult.OK)
-            {
-                Folder = Path.GetDirectoryName(frm.FileName);
-                return DialogResult.OK;
-            }
-            else
-            {
-                return DialogResult.Cancel;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!isDisposed)
-            {
-            }
-
-            isDisposed = true;
-        }
-    }
-
-    public class WindowWrapper : System.Windows.Forms.IWin32Window
-    {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WindowWrapper"/> class.
-        /// </summary>
-        /// <param name="handle">Handle to wrap.</param>
-        public WindowWrapper(IntPtr handle)
-        {
-            hwnd = handle;
-        }
-
-        /// <summary>
-        /// Gets original ptr.
-        /// </summary>
-        public IntPtr Handle => hwnd;
-
-        private readonly IntPtr hwnd;
-    }
 
     internal static class NativeMethods
     {
@@ -186,14 +19,6 @@ namespace SystemTrayMenu.UserInterface.Dialogs
         public const uint S_OK = 0x0000;
 
         public const uint SIGDN_FILESYSPATH = 0x80058000;
-
-        [ComImport]
-        [ClassInterface(ClassInterfaceType.None)]
-        [TypeLibType(TypeLibTypeFlags.FCanCreate)]
-        [Guid("DC1C5A9C-E88A-4DDE-A5A1-60F82A20AEF7")]
-        internal class FileOpenDialogRCW
-        {
-        }
 
         [ComImport]
         [Guid("42F85136-DB7E-439C-85F1-E4075D135FC8")]
@@ -308,5 +133,13 @@ namespace SystemTrayMenu.UserInterface.Dialogs
             IntPtr pbc,
             ref Guid riid,
             [MarshalAs(UnmanagedType.Interface)] out IShellItem ppv);
+
+        [ComImport]
+        [ClassInterface(ClassInterfaceType.None)]
+        [TypeLibType(TypeLibTypeFlags.FCanCreate)]
+        [Guid("DC1C5A9C-E88A-4DDE-A5A1-60F82A20AEF7")]
+        internal class FileOpenDialogRCW
+        {
+        }
     }
 }

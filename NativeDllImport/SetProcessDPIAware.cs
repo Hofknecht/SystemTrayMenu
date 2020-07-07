@@ -11,12 +11,12 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
-        [DllImport("user32.dll")]
-        private static extern bool SetProcessDPIAware();
-
         public static void User32SetProcessDPIAware()
         {
             _ = SetProcessDPIAware();
         }
+
+        [DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }

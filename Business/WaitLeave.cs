@@ -20,26 +20,26 @@ namespace SystemTrayMenu.Handler
 
         public event EventHandlerEmpty LeaveTriggered;
 
-        public void Start()
+        public void Dispose()
+        {
+            timerLeaveCheck.Dispose();
+        }
+
+        internal void Start()
         {
             timerLeaveCheck.Stop();
             timerLeaveCheck.Start();
         }
 
-        public void Stop()
+        internal void Stop()
         {
             timerLeaveCheck.Stop();
         }
 
-        private void TimerLeaveCheckTick(object sender, EventArgs e)
+        internal void TimerLeaveCheckTick(object sender, EventArgs e)
         {
             timerLeaveCheck.Stop();
             LeaveTriggered?.Invoke();
-        }
-
-        public void Dispose()
-        {
-            timerLeaveCheck.Dispose();
         }
     }
 }

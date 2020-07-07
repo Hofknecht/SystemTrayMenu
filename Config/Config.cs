@@ -8,7 +8,7 @@ namespace SystemTrayMenu
     using System.IO;
     using System.Reflection;
     using System.Windows.Forms;
-    using SystemTrayMenu.UserInterface.Dialogs;
+    using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
 
     public static class Config

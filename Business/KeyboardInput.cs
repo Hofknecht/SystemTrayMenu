@@ -16,8 +16,6 @@ namespace SystemTrayMenu.Handler
 
     internal class KeyboardInput : IDisposable
     {
-        internal bool InUse = false;
-
         private readonly Menu[] menus;
         private readonly KeyboardHook hook = new KeyboardHook();
 
@@ -40,6 +38,8 @@ namespace SystemTrayMenu.Handler
         internal event Action<DataGridView, int> EnterPressed;
 
         internal event EventHandlerEmpty Cleared;
+
+        internal bool InUse { get; set; } = false;
 
         public void Dispose()
         {
@@ -203,6 +203,26 @@ namespace SystemTrayMenu.Handler
         internal void ClearIsSelectedByKey()
         {
             ClearIsSelectedByKey(iMenuKey, iRowKey);
+        }
+
+        internal void Select(DataGridView dgv, int i, bool refreshview)
+        {
+            int newiMenuKey = ((Menu)dgv.TopLevelControl).Level;
+            if (i != iRowKey || newiMenuKey != iMenuKey)
+            {
+                ClearIsSelectedByKey();
+            }
+
+            iRowKey = i;
+            iMenuKey = newiMenuKey;
+            DataGridViewRow row = dgv.Rows[i];
+            RowData rowData = (RowData)row.Cells[2].Value;
+            rowData.IsSelected = true;
+            if (refreshview)
+            {
+                row.Selected = false;
+                row.Selected = true;
+            }
         }
 
         private bool IsAnyMenuSelectedByKey(
@@ -451,26 +471,6 @@ namespace SystemTrayMenu.Handler
             }
 
             return found;
-        }
-
-        public void Select(DataGridView dgv, int i, bool refreshview)
-        {
-            int newiMenuKey = ((Menu)dgv.TopLevelControl).Level;
-            if (i != iRowKey || newiMenuKey != iMenuKey)
-            {
-                ClearIsSelectedByKey();
-            }
-
-            iRowKey = i;
-            iMenuKey = newiMenuKey;
-            DataGridViewRow row = dgv.Rows[i];
-            RowData rowData = (RowData)row.Cells[2].Value;
-            rowData.IsSelected = true;
-            if (refreshview)
-            {
-                row.Selected = false;
-                row.Selected = true;
-            }
         }
 
         private bool Select(DataGridView dgv, int i, string keyInput = "")

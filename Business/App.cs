@@ -1,12 +1,11 @@
 ﻿// <copyright file="App.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
-
 namespace SystemTrayMenu
 {
-    using Microsoft.Win32;
     using System;
     using System.Windows.Forms;
+    using Microsoft.Win32;
     using SystemTrayMenu.Business;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
@@ -61,6 +60,13 @@ namespace SystemTrayMenu
             DllImports.NativeMethods.User32ShowInactiveTopmost(taskbarForm);
         }
 
+        public void Dispose()
+        {
+            taskbarForm.Dispose();
+            menus.Dispose();
+            menuNotifyIcon.Dispose();
+        }
+
         private void TaskbarForm_Deactivate(object sender, EventArgs e)
         {
             SetStateNormal();
@@ -75,13 +81,6 @@ namespace SystemTrayMenu
             {
                 taskbarForm.WindowState = FormWindowState.Normal;
             }
-        }
-
-        public void Dispose()
-        {
-            taskbarForm.Dispose();
-            menus.Dispose();
-            menuNotifyIcon.Dispose();
         }
     }
 }

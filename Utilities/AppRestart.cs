@@ -13,6 +13,26 @@ namespace SystemTrayMenu.Utilities
     {
         public static event EventHandlerEmpty BeforeRestarting;
 
+        internal static void ByThreadException()
+        {
+            Restart(GetCurrentMethod());
+        }
+
+        internal static void ByMenuNotifyIcon()
+        {
+            Restart(GetCurrentMethod());
+        }
+
+        internal static void ByDisplaySettings(object sender, EventArgs e)
+        {
+            Restart(GetCurrentMethod());
+        }
+
+        internal static void ByConfigChange()
+        {
+            Restart(GetCurrentMethod());
+        }
+
         private static void Restart(string reason)
         {
             BeforeRestarting?.Invoke();
@@ -37,26 +57,6 @@ namespace SystemTrayMenu.Utilities
             StackFrame sf = st.GetFrame(1);
 
             return sf.GetMethod().Name;
-        }
-
-        internal static void ByThreadException()
-        {
-            Restart(GetCurrentMethod());
-        }
-
-        internal static void ByMenuNotifyIcon()
-        {
-            Restart(GetCurrentMethod());
-        }
-
-        internal static void ByDisplaySettings(object sender, EventArgs e)
-        {
-            Restart(GetCurrentMethod());
-        }
-
-        internal static void ByConfigChange()
-        {
-            Restart(GetCurrentMethod());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using SystemTrayMenu.UserInterface.Controls;
+﻿using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
 
 namespace SystemTrayMenu.UserInterface
 {
@@ -37,7 +37,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.labelLanguage = new System.Windows.Forms.Label();
-            this.textBoxHotkey = new SystemTrayMenu.UserInterface.Controls.HotkeyControl();
+            this.textBoxHotkey = new SystemTrayMenu.UserInterface.HotkeyTextboxControl.HotkeyControl();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
             this.labelHotkey = new System.Windows.Forms.Label();
             this.labelAutostart = new System.Windows.Forms.Label();

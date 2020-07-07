@@ -51,9 +51,23 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool IsHiding => state == FadingState.Hide;
 
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
         internal void Fade(FadingState state)
         {
             StartStopTimer(state);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                timer.Dispose();
+            }
         }
 
         private void StartStopTimer(FadingState newState)
@@ -141,20 +155,6 @@ namespace SystemTrayMenu.UserInterface
                 default:
                     StartStopTimer(FadingState.Idle);
                     break;
-            }
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                timer.Dispose();
             }
         }
     }

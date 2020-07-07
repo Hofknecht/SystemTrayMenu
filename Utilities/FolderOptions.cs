@@ -4,11 +4,11 @@
 
 namespace SystemTrayMenu.Utilities
 {
-    using Shell32;
     using System;
     using System.IO;
     using System.Reflection;
     using System.Runtime.InteropServices;
+    using Shell32;
 
     internal static class FolderOptions
     {

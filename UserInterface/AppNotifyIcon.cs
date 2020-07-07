@@ -82,14 +82,6 @@ namespace SystemTrayMenu.UserInterface
 
         public event EventHandlerEmpty Exit;
 
-        private void VerifyClick(MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Click?.Invoke();
-            }
-        }
-
         public void Dispose()
         {
             notifyIcon.Icon = null;
@@ -107,6 +99,14 @@ namespace SystemTrayMenu.UserInterface
         public void LoadingStop()
         {
             threadsLoading = false;
+        }
+
+        private void VerifyClick(MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Click?.Invoke();
+            }
         }
 
         private void Load_Tick(object sender, EventArgs e)

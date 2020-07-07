@@ -69,83 +69,6 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        private static bool IsExtensionWitSameIcon(string fileExtension)
-        {
-            bool isExtensionWitSameIcon = true;
-            List<string> extensionsWithDiffIcons = new List<string>
-                { string.Empty, ".EXE", ".LNK", ".ICO", ".URL" };
-            if (extensionsWithDiffIcons.Contains(fileExtension.ToUpperInvariant()))
-            {
-                isExtensionWitSameIcon = false;
-            }
-
-            return isExtensionWitSameIcon;
-        }
-
-        private static Icon GetFileIcon(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
-        {
-            Icon icon = null;
-            DllImports.NativeMethods.SHFILEINFO shfi = default;
-            uint flags = DllImports.NativeMethods.ShgfiIcon | DllImports.NativeMethods.ShgfiSYSICONINDEX;
-
-            if (linkOverlay)
-            {
-                flags += DllImports.NativeMethods.ShgfiLINKOVERLAY;
-            }
-
-            /* Check the size specified for return. */
-            if (size == IconSize.Small)
-            {
-                flags += DllImports.NativeMethods.ShgfiSMALLICON;
-            }
-            else
-            {
-                flags += DllImports.NativeMethods.ShgfiLARGEICON;
-            }
-
-            IntPtr hImageList = DllImports.NativeMethods.Shell32SHGetFileInfo(
-                filePath,
-                DllImports.NativeMethods.FileAttributeNormal,
-                ref shfi,
-                (uint)Marshal.SizeOf(shfi),
-                flags);
-            if (hImageList != IntPtr.Zero)
-            {
-                IntPtr hIcon;
-                if (linkOverlay)
-                {
-                    hIcon = shfi.hIcon; // Get icon directly
-                }
-                else
-                {
-                    // Get icon from .ink without overlay
-                    hIcon = DllImports.NativeMethods.ImageList_GetIcon(hImageList, shfi.iIcon, DllImports.NativeMethods.IldTransparent);
-                }
-
-                try
-                {
-                    // Copy (clone) the returned icon to a new object, thus allowing us to clean-up properly
-                    icon = (Icon)Icon.FromHandle(hIcon).Clone();
-                }
-#pragma warning disable CA1031 // Do not catch general exception types
-                catch (Exception ex)
-#pragma warning restore CA1031 // Do not catch general exception types
-                {
-                    Log.Error($"filePath:'{filePath}'", ex);
-                }
-
-                // Cleanup
-                if (!linkOverlay)
-                {
-                    DllImports.NativeMethods.User32DestroyIcon(hIcon);
-                }
-
-                DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
-            }
-
-            return icon;
-        }
-
         public static Icon GetFolderIcon(
             string directoryPath,
             FolderType folderType,
@@ -220,6 +143,83 @@ namespace SystemTrayMenu.Utilities
                 graphics.DrawIcon(overlay, 0, 0);
                 target.MakeTransparent(target.GetPixel(1, 1));
                 icon = Icon.FromHandle(target.GetHicon());
+            }
+
+            return icon;
+        }
+
+        private static bool IsExtensionWitSameIcon(string fileExtension)
+        {
+            bool isExtensionWitSameIcon = true;
+            List<string> extensionsWithDiffIcons = new List<string>
+                { string.Empty, ".EXE", ".LNK", ".ICO", ".URL" };
+            if (extensionsWithDiffIcons.Contains(fileExtension.ToUpperInvariant()))
+            {
+                isExtensionWitSameIcon = false;
+            }
+
+            return isExtensionWitSameIcon;
+        }
+
+        private static Icon GetFileIcon(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
+        {
+            Icon icon = null;
+            DllImports.NativeMethods.SHFILEINFO shfi = default;
+            uint flags = DllImports.NativeMethods.ShgfiIcon | DllImports.NativeMethods.ShgfiSYSICONINDEX;
+
+            if (linkOverlay)
+            {
+                flags += DllImports.NativeMethods.ShgfiLINKOVERLAY;
+            }
+
+            /* Check the size specified for return. */
+            if (size == IconSize.Small)
+            {
+                flags += DllImports.NativeMethods.ShgfiSMALLICON;
+            }
+            else
+            {
+                flags += DllImports.NativeMethods.ShgfiLARGEICON;
+            }
+
+            IntPtr hImageList = DllImports.NativeMethods.Shell32SHGetFileInfo(
+                filePath,
+                DllImports.NativeMethods.FileAttributeNormal,
+                ref shfi,
+                (uint)Marshal.SizeOf(shfi),
+                flags);
+            if (hImageList != IntPtr.Zero)
+            {
+                IntPtr hIcon;
+                if (linkOverlay)
+                {
+                    hIcon = shfi.hIcon; // Get icon directly
+                }
+                else
+                {
+                    // Get icon from .ink without overlay
+                    hIcon = DllImports.NativeMethods.ImageList_GetIcon(hImageList, shfi.iIcon, DllImports.NativeMethods.IldTransparent);
+                }
+
+                try
+                {
+                    // Copy (clone) the returned icon to a new object, thus allowing us to clean-up properly
+                    icon = (Icon)Icon.FromHandle(hIcon).Clone();
+                }
+#pragma warning disable CA1031 // Do not catch general exception types
+                catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
+                {
+                    Log.Error($"filePath:'{filePath}'", ex);
+                }
+
+                // Cleanup
+                if (!linkOverlay)
+                {
+                    DllImports.NativeMethods.User32DestroyIcon(hIcon);
+                }
+
+                DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
             }
 
             return icon;

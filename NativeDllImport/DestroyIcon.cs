@@ -12,12 +12,12 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
-        [DllImport("User32.dll")]
-        private static extern int DestroyIcon(IntPtr hIcon);
-
         public static void User32DestroyIcon(IntPtr hIcon)
         {
             _ = DestroyIcon(hIcon);
         }
+
+        [DllImport("User32.dll")]
+        private static extern int DestroyIcon(IntPtr hIcon);
     }
 }

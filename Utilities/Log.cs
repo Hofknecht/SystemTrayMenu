@@ -4,13 +4,13 @@
 
 namespace SystemTrayMenu.Utilities
 {
-    using Clearcove.Logging;
     using System;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.IO;
     using System.Reflection;
     using System.Windows.Forms;
+    using Clearcove.Logging;
 
     internal static class Log
     {

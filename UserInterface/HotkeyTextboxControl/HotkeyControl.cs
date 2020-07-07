@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.UserInterface.Controls
+namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
 {
     using System;
     using System.Collections.Generic;
@@ -55,24 +55,6 @@ namespace SystemTrayMenu.UserInterface.Controls
             PopulateModifierLists();
         }
 
-        /// <summary>
-        /// Gets or sets used to make sure that there is no right-click menu available.
-        /// </summary>
-        public override ContextMenuStrip ContextMenuStrip
-        {
-            get => dummy;
-            set => base.ContextMenuStrip = dummy;
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether forces the control to be non-multiline.
-        /// </summary>
-        public override bool Multiline
-        {
-            get => base.Multiline;
-            set => base.Multiline = false;
-        }
-
         // Delegates for hooking up events.
         public delegate void HotKeyHandler();
 
@@ -96,143 +78,21 @@ namespace SystemTrayMenu.UserInterface.Controls
         }
 
         /// <summary>
-        /// Populates the ArrayLists specifying disallowed hotkeys
-        /// such as Shift+A, Ctrl+Alt+4 (would produce a dollar sign) etc.
+        /// Gets or sets used to make sure that there is no right-click menu available.
         /// </summary>
-        private void PopulateModifierLists()
+        public override ContextMenuStrip ContextMenuStrip
         {
-            // Shift + 0 - 9, A - Z
-            for (Keys k = Keys.D0; k <= Keys.Z; k++)
-            {
-                needNonShiftModifier.Add((int)k);
-            }
-
-            // Shift + Numpad keys
-            for (Keys k = Keys.NumPad0; k <= Keys.NumPad9; k++)
-            {
-                needNonShiftModifier.Add((int)k);
-            }
-
-            // Shift + Misc (,;<./ etc)
-            for (Keys k = Keys.Oem1; k <= Keys.OemBackslash; k++)
-            {
-                needNonShiftModifier.Add((int)k);
-            }
-
-            // Shift + Space, PgUp, PgDn, End, Home
-            for (Keys k = Keys.Space; k <= Keys.Home; k++)
-            {
-                needNonShiftModifier.Add((int)k);
-            }
-
-            // Misc keys that we can't loop through
-            needNonShiftModifier.Add((int)Keys.Insert);
-            needNonShiftModifier.Add((int)Keys.Help);
-            needNonShiftModifier.Add((int)Keys.Multiply);
-            needNonShiftModifier.Add((int)Keys.Add);
-            needNonShiftModifier.Add((int)Keys.Subtract);
-            needNonShiftModifier.Add((int)Keys.Divide);
-            needNonShiftModifier.Add((int)Keys.Decimal);
-            needNonShiftModifier.Add((int)Keys.Return);
-            needNonShiftModifier.Add((int)Keys.Escape);
-            needNonShiftModifier.Add((int)Keys.NumLock);
-
-            // Ctrl+Alt + 0 - 9
-            for (Keys k = Keys.D0; k <= Keys.D9; k++)
-            {
-                needNonAltGrModifier.Add((int)k);
-            }
+            get => dummy;
+            set => base.ContextMenuStrip = dummy;
         }
 
         /// <summary>
-        /// Resets this hotkey control to None.
+        /// Gets or sets a value indicating whether forces the control to be non-multiline.
         /// </summary>
-        public new void Clear()
+        public override bool Multiline
         {
-            Hotkey = Keys.None;
-            HotkeyModifiers = Keys.None;
-        }
-
-        /// <summary>
-        /// Fires when a key is pushed down. Here, we'll want to update the text in the box
-        /// to notify the user what combination is currently pressed.
-        /// </summary>
-        private void HotkeyControl_KeyDown(object sender, KeyEventArgs e)
-        {
-            // Clear the current hotkey
-            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
-            {
-                ResetHotkey();
-            }
-            else
-            {
-                modifiers = e.Modifiers;
-                hotkey = e.KeyCode;
-                Redraw();
-            }
-        }
-
-        /// <summary>
-        /// Fires when all keys are released. If the current hotkey isn't valid, reset it.
-        /// Otherwise, do nothing and keep the text and hotkey as it was.
-        /// </summary>
-        private void HotkeyControl_KeyUp(object sender, KeyEventArgs e)
-        {
-            // Somehow the PrintScreen only comes as a keyup, therefore we handle it here.
-            if (e.KeyCode == Keys.PrintScreen)
-            {
-                modifiers = e.Modifiers;
-                hotkey = e.KeyCode;
-                Redraw();
-            }
-
-            if (hotkey == Keys.None && ModifierKeys == Keys.None)
-            {
-                ResetHotkey();
-            }
-        }
-
-        /// <summary>
-        /// Prevents the letter/whatever entered to show up in the TextBox
-        /// Without this, a "A" key press would appear as "aControl, Alt + A".
-        /// </summary>
-        private void HotkeyControl_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
-        /// <summary>
-        /// Handles some misc keys, such as Ctrl+Delete and Shift+Insert.
-        /// </summary>
-        /// <param name="msg">msg.</param>
-        /// <param name="keyData">keyData.</param>
-        /// <returns>bool if handled.</returns>
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.Delete || keyData == (Keys.Control | Keys.Delete))
-            {
-                ResetHotkey();
-                return true;
-            }
-
-            // Paste
-            if (keyData == (Keys.Shift | Keys.Insert))
-            {
-                return true; // Don't allow
-            }
-
-            // Allow the rest
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
-
-        /// <summary>
-        /// Clears the current hotkey and resets the TextBox.
-        /// </summary>
-        public void ResetHotkey()
-        {
-            hotkey = Keys.None;
-            modifiers = Keys.None;
-            Redraw();
+            get => base.Multiline;
+            set => base.Multiline = false;
         }
 
         /// <summary>
@@ -249,17 +109,6 @@ namespace SystemTrayMenu.UserInterface.Controls
         }
 
         /// <summary>
-        /// Used to get/set the hotkey (e.g. Keys.A).
-        /// </summary>
-        /// <param name="hotkey">hotkey.</param>
-        public void SetHotkey(string hotkey)
-        {
-            this.hotkey = HotkeyFromString(hotkey);
-            modifiers = HotkeyModifiersFromString(hotkey);
-            Redraw(true);
-        }
-
-        /// <summary>
         /// Gets or sets used to get/set the modifier keys (e.g. Keys.Alt | Keys.Control).
         /// </summary>
         public Keys HotkeyModifiers
@@ -270,80 +119,6 @@ namespace SystemTrayMenu.UserInterface.Controls
                 modifiers = value;
                 Redraw(true);
             }
-        }
-
-        /// <summary>
-        /// Redraws the TextBox when necessary.
-        /// </summary>
-        /// <param name="bCalledProgramatically">Specifies whether this function was called by the Hotkey/HotkeyModifiers properties or by the user.</param>
-        private void Redraw(bool bCalledProgramatically = false)
-        {
-            // No hotkey set
-            if (hotkey == Keys.None)
-            {
-                Text = string.Empty;
-                return;
-            }
-
-            // LWin/RWin doesn't work as hotkeys (neither do they work as modifier keys in .NET 2.0)
-            if (hotkey == Keys.LWin || hotkey == Keys.RWin)
-            {
-                Text = string.Empty;
-                return;
-            }
-
-            // Only validate input if it comes from the user
-            if (bCalledProgramatically == false)
-            {
-                // No modifier or shift only, AND a hotkey that needs another modifier
-                if ((modifiers == Keys.Shift || modifiers == Keys.None) && needNonShiftModifier.Contains((int)hotkey))
-                {
-                    if (modifiers == Keys.None)
-                    {
-                        // Set Ctrl+Alt as the modifier unless Ctrl+Alt+<key> won't work...
-                        if (needNonAltGrModifier.Contains((int)hotkey) == false)
-                        {
-                            modifiers = Keys.Alt | Keys.Control;
-                        }
-                        else
-                        {
-                            // ... in that case, use Shift+Alt instead.
-                            modifiers = Keys.Alt | Keys.Shift;
-                        }
-                    }
-                    else
-                    {
-                        // User pressed Shift and an invalid key (e.g. a letter or a number),
-                        // that needs another set of modifier keys
-                        hotkey = Keys.None;
-                        Text = string.Empty;
-                        return;
-                    }
-                }
-
-                // Check all Ctrl+Alt keys
-                if ((modifiers == (Keys.Alt | Keys.Control)) && needNonAltGrModifier.Contains((int)hotkey))
-                {
-                    // Ctrl+Alt+4 etc won't work; reset hotkey and tell the user
-                    hotkey = Keys.None;
-                    Text = string.Empty;
-                    return;
-                }
-            }
-
-            // I have no idea why this is needed, but it is. Without this code, pressing only Ctrl
-            // will show up as "Control + ControlKey", etc.
-            if (hotkey == Keys.Menu /* Alt */ || hotkey == Keys.ShiftKey || hotkey == Keys.ControlKey)
-            {
-                hotkey = Keys.None;
-            }
-
-            Text = HotkeyToLocalizedString(modifiers, hotkey);
-        }
-
-        public override string ToString()
-        {
-            return HotkeyToString(HotkeyModifiers, Hotkey);
         }
 
         public static string GetLocalizedHotkeyStringFromString(string hotkeyString)
@@ -679,30 +454,230 @@ namespace SystemTrayMenu.UserInterface.Controls
                 return givenKey.ToString();
             }
         }
-    }
-#pragma warning restore CA1308
 
-    public class EventDelay
-    {
-        private readonly long waitTime;
-        private long lastCheck;
-
-        public EventDelay(long ticks)
+        /// <summary>
+        /// Resets this hotkey control to None.
+        /// </summary>
+        public new void Clear()
         {
-            waitTime = ticks;
+            Hotkey = Keys.None;
+            HotkeyModifiers = Keys.None;
         }
 
-        public bool Check()
+        /// <summary>
+        /// Clears the current hotkey and resets the TextBox.
+        /// </summary>
+        public void ResetHotkey()
         {
-#pragma warning disable CA2002
-            lock (this)
-#pragma warning restore CA2002
+            hotkey = Keys.None;
+            modifiers = Keys.None;
+            Redraw();
+        }
+
+        /// <summary>
+        /// Used to get/set the hotkey (e.g. Keys.A).
+        /// </summary>
+        /// <param name="hotkey">hotkey.</param>
+        public void SetHotkey(string hotkey)
+        {
+            this.hotkey = HotkeyFromString(hotkey);
+            modifiers = HotkeyModifiersFromString(hotkey);
+            Redraw(true);
+        }
+
+        public override string ToString()
+        {
+            return HotkeyToString(HotkeyModifiers, Hotkey);
+        }
+
+        /// <summary>
+        /// Handles some misc keys, such as Ctrl+Delete and Shift+Insert.
+        /// </summary>
+        /// <param name="msg">msg.</param>
+        /// <param name="keyData">keyData.</param>
+        /// <returns>bool if handled.</returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Delete || keyData == (Keys.Control | Keys.Delete))
             {
-                long now = DateTime.Now.Ticks;
-                bool isPassed = now - lastCheck > waitTime;
-                lastCheck = now;
-                return isPassed;
+                ResetHotkey();
+                return true;
             }
+
+            // Paste
+            if (keyData == (Keys.Shift | Keys.Insert))
+            {
+                return true; // Don't allow
+            }
+
+            // Allow the rest
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        /// <summary>
+        /// Redraws the TextBox when necessary.
+        /// </summary>
+        /// <param name="bCalledProgramatically">Specifies whether this function was called by the Hotkey/HotkeyModifiers properties or by the user.</param>
+        private void Redraw(bool bCalledProgramatically = false)
+        {
+            // No hotkey set
+            if (hotkey == Keys.None)
+            {
+                Text = string.Empty;
+                return;
+            }
+
+            // LWin/RWin doesn't work as hotkeys (neither do they work as modifier keys in .NET 2.0)
+            if (hotkey == Keys.LWin || hotkey == Keys.RWin)
+            {
+                Text = string.Empty;
+                return;
+            }
+
+            // Only validate input if it comes from the user
+            if (bCalledProgramatically == false)
+            {
+                // No modifier or shift only, AND a hotkey that needs another modifier
+                if ((modifiers == Keys.Shift || modifiers == Keys.None) && needNonShiftModifier.Contains((int)hotkey))
+                {
+                    if (modifiers == Keys.None)
+                    {
+                        // Set Ctrl+Alt as the modifier unless Ctrl+Alt+<key> won't work...
+                        if (needNonAltGrModifier.Contains((int)hotkey) == false)
+                        {
+                            modifiers = Keys.Alt | Keys.Control;
+                        }
+                        else
+                        {
+                            // ... in that case, use Shift+Alt instead.
+                            modifiers = Keys.Alt | Keys.Shift;
+                        }
+                    }
+                    else
+                    {
+                        // User pressed Shift and an invalid key (e.g. a letter or a number),
+                        // that needs another set of modifier keys
+                        hotkey = Keys.None;
+                        Text = string.Empty;
+                        return;
+                    }
+                }
+
+                // Check all Ctrl+Alt keys
+                if ((modifiers == (Keys.Alt | Keys.Control)) && needNonAltGrModifier.Contains((int)hotkey))
+                {
+                    // Ctrl+Alt+4 etc won't work; reset hotkey and tell the user
+                    hotkey = Keys.None;
+                    Text = string.Empty;
+                    return;
+                }
+            }
+
+            // I have no idea why this is needed, but it is. Without this code, pressing only Ctrl
+            // will show up as "Control + ControlKey", etc.
+            if (hotkey == Keys.Menu /* Alt */ || hotkey == Keys.ShiftKey || hotkey == Keys.ControlKey)
+            {
+                hotkey = Keys.None;
+            }
+
+            Text = HotkeyToLocalizedString(modifiers, hotkey);
+        }
+
+        /// <summary>
+        /// Populates the ArrayLists specifying disallowed hotkeys
+        /// such as Shift+A, Ctrl+Alt+4 (would produce a dollar sign) etc.
+        /// </summary>
+        private void PopulateModifierLists()
+        {
+            // Shift + 0 - 9, A - Z
+            for (Keys k = Keys.D0; k <= Keys.Z; k++)
+            {
+                needNonShiftModifier.Add((int)k);
+            }
+
+            // Shift + Numpad keys
+            for (Keys k = Keys.NumPad0; k <= Keys.NumPad9; k++)
+            {
+                needNonShiftModifier.Add((int)k);
+            }
+
+            // Shift + Misc (,;<./ etc)
+            for (Keys k = Keys.Oem1; k <= Keys.OemBackslash; k++)
+            {
+                needNonShiftModifier.Add((int)k);
+            }
+
+            // Shift + Space, PgUp, PgDn, End, Home
+            for (Keys k = Keys.Space; k <= Keys.Home; k++)
+            {
+                needNonShiftModifier.Add((int)k);
+            }
+
+            // Misc keys that we can't loop through
+            needNonShiftModifier.Add((int)Keys.Insert);
+            needNonShiftModifier.Add((int)Keys.Help);
+            needNonShiftModifier.Add((int)Keys.Multiply);
+            needNonShiftModifier.Add((int)Keys.Add);
+            needNonShiftModifier.Add((int)Keys.Subtract);
+            needNonShiftModifier.Add((int)Keys.Divide);
+            needNonShiftModifier.Add((int)Keys.Decimal);
+            needNonShiftModifier.Add((int)Keys.Return);
+            needNonShiftModifier.Add((int)Keys.Escape);
+            needNonShiftModifier.Add((int)Keys.NumLock);
+
+            // Ctrl+Alt + 0 - 9
+            for (Keys k = Keys.D0; k <= Keys.D9; k++)
+            {
+                needNonAltGrModifier.Add((int)k);
+            }
+        }
+
+        /// <summary>
+        /// Fires when a key is pushed down. Here, we'll want to update the text in the box
+        /// to notify the user what combination is currently pressed.
+        /// </summary>
+        private void HotkeyControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Clear the current hotkey
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                ResetHotkey();
+            }
+            else
+            {
+                modifiers = e.Modifiers;
+                hotkey = e.KeyCode;
+                Redraw();
+            }
+        }
+
+        /// <summary>
+        /// Fires when all keys are released. If the current hotkey isn't valid, reset it.
+        /// Otherwise, do nothing and keep the text and hotkey as it was.
+        /// </summary>
+        private void HotkeyControl_KeyUp(object sender, KeyEventArgs e)
+        {
+            // Somehow the PrintScreen only comes as a keyup, therefore we handle it here.
+            if (e.KeyCode == Keys.PrintScreen)
+            {
+                modifiers = e.Modifiers;
+                hotkey = e.KeyCode;
+                Redraw();
+            }
+
+            if (hotkey == Keys.None && ModifierKeys == Keys.None)
+            {
+                ResetHotkey();
+            }
+        }
+
+        /// <summary>
+        /// Prevents the letter/whatever entered to show up in the TextBox
+        /// Without this, a "A" key press would appear as "aControl, Alt + A".
+        /// </summary>
+        private void HotkeyControl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
