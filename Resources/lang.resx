@@ -190,7 +190,7 @@
     <value>Select Folder</value>
   </data>
   <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Your root folder for the SystemTrayMenu is empty! Put some files, folders or shortcuts into the folder or change the root folder.</value>
+    <value>Your root folder for the SystemTrayMenu does not exist or is empty! Put some files, folders or shortcuts into the folder or change the root folder.</value>
   </data>
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder.</value>

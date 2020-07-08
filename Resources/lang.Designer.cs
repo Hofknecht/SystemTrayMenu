@@ -223,7 +223,7 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your root folder for the SystemTrayMenu is empty! Put some files, folders or shortcuts into the folder or change the root folder..
+        ///   Looks up a localized string similar to Your root folder for the SystemTrayMenu does not exist or is empty! Put some files, folders or shortcuts into the folder or change the root folder..
         /// </summary>
         internal static string MessageRootFolderEmpty {
             get {
