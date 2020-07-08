@@ -223,6 +223,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your root folder for the SystemTrayMenu is empty! Put some files, folders or shortcuts into the folder or change the root folder..
+        /// </summary>
+        internal static string MessageRootFolderEmpty {
+            get {
+                return ResourceManager.GetString("MessageRootFolderEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder..
+        /// </summary>
+        internal static string MessageRootFolderNoAccess {
+            get {
+                return ResourceManager.GetString("MessageRootFolderNoAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restart.
         /// </summary>
         internal static string Restart {

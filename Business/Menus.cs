@@ -38,6 +38,8 @@ namespace SystemTrayMenu.Business
         private readonly WaitLeave waitLeave = new WaitLeave(MenuDefines.TimeUntilClose);
         private DateTime deactivatedTime = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
+        private RowData loadingRowData = null;
+        private bool showingMessageBox = false;
 
         public Menus()
         {
@@ -65,11 +67,40 @@ namespace SystemTrayMenu.Business
                 keyboardInput.ResetSelectedByKey();
                 LoadStopped();
                 MenuData menuData = (MenuData)e.Result;
-                if (menuData.Validity == MenuDataValidity.Valid)
+                switch (menuData.Validity)
                 {
-                    DisposeMenu(menus[menuData.Level]);
-                    menus[0] = Create(menuData, Path.GetFileName(Config.Path));
-                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                    case MenuDataValidity.Valid:
+                        DisposeMenu(menus[menuData.Level]);
+                        menus[0] = Create(menuData, Path.GetFileName(Config.Path));
+                        AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                        break;
+                    case MenuDataValidity.Empty:
+                        if (!showingMessageBox)
+                        {
+                            showingMessageBox = true;
+                            MessageBox.Show(Translator.GetText(
+                                "MessageRootFolderEmpty"));
+                            OpenFolder();
+                            showingMessageBox = false;
+                        }
+
+                        break;
+                    case MenuDataValidity.NoAccess:
+                        if (!showingMessageBox)
+                        {
+                            showingMessageBox = true;
+                            MessageBox.Show(Translator.GetText(
+                            "MessageRootFolderNoAccess"));
+                            OpenFolder();
+                            showingMessageBox = false;
+                        }
+
+                        break;
+                    case MenuDataValidity.AbortedOrUnknown:
+                        Log.Info("MenuDataValidity.AbortedOrUnknown");
+                        break;
+                    default:
+                        break;
                 }
             }
 
@@ -87,9 +118,11 @@ namespace SystemTrayMenu.Business
             void StartLoadMenu(RowData rowData)
             {
                 if (menus[0].IsUsable &&
+                    loadingRowData != rowData &&
                     (menus[rowData.MenuLevel + 1] == null ||
                     menus[rowData.MenuLevel + 1].Tag as RowData != rowData))
                 {
+                    loadingRowData = rowData;
                     LoadStarted();
                     BackgroundWorker workerSubMenu = workersSubMenu.
                         Where(w => !w.IsBusy).FirstOrDefault();
@@ -135,6 +168,8 @@ namespace SystemTrayMenu.Business
                             ShowSubMenu(menu);
                         }
                     }
+
+                    loadingRowData = null;
                 }
             }
 
@@ -229,33 +264,48 @@ namespace SystemTrayMenu.Business
                         directories = GetDirectoriesInNetworkLocation(path);
                         static string[] GetDirectoriesInNetworkLocation(string networkLocationRootPath)
                         {
-                            Process cmd = new Process();
-                            cmd.StartInfo.FileName = "cmd.exe";
-                            cmd.StartInfo.RedirectStandardInput = true;
-                            cmd.StartInfo.RedirectStandardOutput = true;
-                            cmd.StartInfo.CreateNoWindow = true;
-                            cmd.StartInfo.UseShellExecute = false;
-                            cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                            cmd.Start();
-                            cmd.StandardInput.WriteLine($"net view {networkLocationRootPath}");
-                            cmd.StandardInput.Flush();
-                            cmd.StandardInput.Close();
+                            List<string> directories = new List<string>();
+                            try
+                            {
+                                Process cmd = new Process();
+                                cmd.StartInfo.FileName = "cmd.exe";
+                                cmd.StartInfo.RedirectStandardInput = true;
+                                cmd.StartInfo.RedirectStandardOutput = true;
+                                cmd.StartInfo.CreateNoWindow = true;
+                                cmd.StartInfo.UseShellExecute = false;
+                                cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                                cmd.Start();
+                                cmd.StandardInput.WriteLine($"net view {networkLocationRootPath}");
+                                cmd.StandardInput.Flush();
+                                cmd.StandardInput.Close();
 
-                            string output = cmd.StandardOutput.ReadToEnd();
+                                string output = cmd.StandardOutput.ReadToEnd();
 
-                            cmd.WaitForExit();
-                            cmd.Close();
+                                cmd.WaitForExit();
+                                cmd.Close();
 
-                            output = output.Substring(output.LastIndexOf('-') + 2);
-                            output = output.Substring(0, output.IndexOf("The command completed successfully.", StringComparison.InvariantCulture));
+                                output = output.Substring(output.LastIndexOf('-') + 2);
+                                output = output.Substring(0, output.IndexOf("The command completed successfully.", StringComparison.InvariantCulture));
 
-                            return
-                                output
-                                    .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
-                                    .Select(x => Path.Combine(
-                                        networkLocationRootPath,
-                                        x.Substring(0, x.IndexOf(' ', StringComparison.InvariantCulture))))
-                                    .ToArray();
+                                foreach (string line in output
+                                        .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
+                                {
+                                    int indexOfSecondColumnTypeDisk = line.IndexOf("Disk", StringComparison.InvariantCulture);
+                                    if (indexOfSecondColumnTypeDisk > 0)
+                                    {
+                                        string directory = Path.Combine(
+                                               networkLocationRootPath,
+                                               line.Substring(0, indexOfSecondColumnTypeDisk));
+                                        directories.Add(directory);
+                                    }
+                                }
+                            }
+                            catch (ArgumentOutOfRangeException ex)
+                            {
+                                Log.Warn($"Could not resolve network root folder: {networkLocationRootPath}", ex);
+                            }
+
+                            return directories.ToArray();
                         }
                     }
                     else
@@ -515,6 +565,11 @@ namespace SystemTrayMenu.Business
                 Form.ActiveForm is UserInterface.TaskbarForm;
         }
 
+        private static void OpenFolder()
+        {
+            Log.ProcessStart("explorer.exe", Config.Path);
+        }
+
         private Menu Create(MenuData menuData, string title = null)
         {
             Menu menu = new Menu();
@@ -528,10 +583,6 @@ namespace SystemTrayMenu.Business
 
                 menu.SetTitle(title);
                 menu.UserClickedOpenFolder += OpenFolder;
-                static void OpenFolder()
-                {
-                    Log.ProcessStart("explorer.exe", Config.Path);
-                }
             }
 
             menu.Level = menuData.Level;
@@ -674,7 +725,7 @@ namespace SystemTrayMenu.Business
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
                     row.Selected = false;
                 }
-                else if (rowData.IsMenuOpen && rowData.IsSelected)
+                else if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
                 {
                     row.Selected = true;
                 }
@@ -709,7 +760,7 @@ namespace SystemTrayMenu.Business
                 int width = dgv.Columns[0].Width + dgv.Columns[1].Width;
                 Rectangle rowBounds = new Rectangle(0, e.RowBounds.Top, width, e.RowBounds.Height);
 
-                if (rowData.IsMenuOpen && rowData.IsSelected)
+                if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
                 {
                     ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
                     row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;

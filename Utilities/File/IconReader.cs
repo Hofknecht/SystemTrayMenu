@@ -24,8 +24,8 @@ namespace SystemTrayMenu.Utilities
     public static class IconReader
     {
         private static readonly ConcurrentDictionary<string, Icon> DictIconCache = new ConcurrentDictionary<string, Icon>();
-        private static readonly object ReadIcon = new object();
 
+        // private static readonly object ReadIcon = new object();
         public enum IconSize
         {
             Large = 0, // 32x32 pixels
@@ -50,22 +50,23 @@ namespace SystemTrayMenu.Utilities
         {
             Icon icon = null;
             string extension = Path.GetExtension(filePath);
-            lock (ReadIcon)
+
+            // lock (ReadIcon)
+            // {
+            if (IsExtensionWitSameIcon(extension))
             {
-                if (IsExtensionWitSameIcon(extension))
+                icon = DictIconCache.GetOrAdd(extension, GetIcon);
+                Icon GetIcon(string keyExtension)
                 {
-                    icon = DictIconCache.GetOrAdd(extension, GetIcon);
-                    Icon GetIcon(string keyExtension)
-                    {
-                        return GetFileIcon(filePath, linkOverlay, size);
-                    }
-                }
-                else
-                {
-                    icon = GetFileIcon(filePath, linkOverlay, size);
+                    return GetFileIcon(filePath, linkOverlay, size);
                 }
             }
+            else
+            {
+                icon = GetFileIcon(filePath, linkOverlay, size);
+            }
 
+            // }
             return icon;
         }
 

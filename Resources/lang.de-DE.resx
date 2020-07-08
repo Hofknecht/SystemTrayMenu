@@ -189,4 +189,10 @@
   <data name="Select Folder" xml:space="preserve">
     <value>Select Folder</value>
   </data>
+  <data name="MessageRootFolderEmpty" xml:space="preserve">
+    <value>Dein Hauptordner für die SystemTrayMenu ist leer! Pack ein paar Dateien, Ordner oder Verknüpfungen in den Hauptordner oder ändere den Hauptordner.</value>
+  </data>
+  <data name="MessageRootFolderNoAccess" xml:space="preserve">
+    <value>Du hast keine Rechte für den Hauptordner. Gewähre die Rechte oder ändere den Hauptordner.</value>
+  </data>
 </root>

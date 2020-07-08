@@ -177,9 +177,6 @@ namespace SystemTrayMenu.DataClasses
                 (DateTime.Now - contextMenuClosed).TotalMilliseconds > 200)
             {
                 IsContextMenuOpen = true;
-                Color colorbefore = dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor;
-                dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor =
-                        MenuDefines.ColorSelectedItem;
 
                 ShellContextMenu ctxMnu = new ShellContextMenu();
                 Point location = dgv.FindForm().Location;
@@ -197,11 +194,6 @@ namespace SystemTrayMenu.DataClasses
                     FileInfo[] arrFI = new FileInfo[1];
                     arrFI[0] = new FileInfo(TargetFilePathOrig);
                     ctxMnu.ShowContextMenu(arrFI, point);
-                }
-
-                if (!dgv.IsDisposed)
-                {
-                    dgv.Rows[RowIndex].DefaultCellStyle.SelectionBackColor = colorbefore;
                 }
 
                 IsContextMenuOpen = false;

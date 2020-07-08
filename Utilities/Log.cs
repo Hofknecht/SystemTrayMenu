@@ -65,39 +65,29 @@ namespace SystemTrayMenu.Utilities
 
         internal static void ProcessStart(string fileName, string arguments = null)
         {
-            if (!string.IsNullOrEmpty(arguments) &&
-                !Directory.Exists(arguments))
+            try
             {
-                Exception ex = new DirectoryNotFoundException();
-                Warn($"path:'{arguments}'", ex);
-                MessageBox.Show(ex.Message);
+                using Process p = new Process
+                {
+                    StartInfo = new ProcessStartInfo(fileName)
+                    {
+                        Arguments = arguments,
+                        UseShellExecute = true,
+                    },
+                };
+                p.Start();
             }
-            else
+            catch (Exception ex)
             {
-                try
+                if (ex is FileNotFoundException ||
+                    ex is Win32Exception)
                 {
-                    using Process p = new Process
-                    {
-                        StartInfo = new ProcessStartInfo(fileName)
-                        {
-                            Arguments = arguments,
-                            UseShellExecute = true,
-                        },
-                    };
-                    p.Start();
+                    Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
+                    MessageBox.Show(ex.Message);
                 }
-                catch (Exception ex)
+                else
                 {
-                    if (ex is FileNotFoundException ||
-                        ex is Win32Exception)
-                    {
-                        Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
-                        MessageBox.Show(ex.Message);
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
             }
         }
