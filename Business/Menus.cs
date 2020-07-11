@@ -112,6 +112,8 @@ namespace SystemTrayMenu.Business
                 {
                     workerSubMenu.CancelAsync();
                 }
+
+                LoadStopped();
             }
 
             waitToOpenMenu.StartLoadMenu += StartLoadMenu;
@@ -243,6 +245,7 @@ namespace SystemTrayMenu.Business
             waitLeave.Dispose();
             IconReader.Dispose();
             DisposeMenu(menus[0]);
+            loadingRowData?.Dispose();
         }
 
         internal static MenuData GetData(BackgroundWorker worker, string path, int level)

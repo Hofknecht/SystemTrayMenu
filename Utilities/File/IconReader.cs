@@ -111,7 +111,8 @@ namespace SystemTrayMenu.Utilities
                 ref shfi,
                 (uint)Marshal.SizeOf(shfi),
                 flags);
-            if (success != IntPtr.Zero)
+            if (success != IntPtr.Zero &&
+                shfi.hIcon != IntPtr.Zero)
             {
                 try
                 {
