@@ -192,7 +192,7 @@ namespace SystemTrayMenu.Handler
 
         private void ResetData(DataGridView dgv, int rowIndex)
         {
-            if (dgv != null)
+            if (dgv != null && dgv.Rows.Count > rowIndex)
             {
                 RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
                 rowData.IsSelected = false;

@@ -32,6 +32,7 @@ namespace SystemTrayMenu.Business
         private readonly int screenRight = Screen.PrimaryScreen.Bounds.Right;
         private readonly int taskbarHeight = new WindowsTaskbar().Size.Height;
 
+        private readonly DgvMouseRow dgvMouseRow = new DgvMouseRow();
         private readonly WaitToLoadMenu waitToOpenMenu = new WaitToLoadMenu();
         private readonly KeyboardInput keyboardInput = null;
         private readonly Timer timerStillActiveCheck = new Timer();
@@ -185,6 +186,24 @@ namespace SystemTrayMenu.Business
                 }
             }
 
+            waitToOpenMenu.MouseEnterOk += MouseEnterOk;
+            void MouseEnterOk(DataGridView dgv, int rowIndex)
+            {
+                if (menus[0].IsUsable)
+                {
+                    if (keyboardInput.InUse)
+                    {
+                        keyboardInput.ClearIsSelectedByKey();
+                        keyboardInput.InUse = false;
+                    }
+
+                    keyboardInput.Select(dgv, rowIndex, false);
+                }
+            }
+
+            dgvMouseRow.RowMouseEnter += waitToOpenMenu.MouseEnter;
+            dgvMouseRow.RowMouseLeave += waitToOpenMenu.MouseLeave;
+
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
             keyboardInput.HotKeyPressed += KeyboardInput_HotKeyPressed;
@@ -246,6 +265,7 @@ namespace SystemTrayMenu.Business
             IconReader.Dispose();
             DisposeMenu(menus[0]);
             loadingRowData?.Dispose();
+            dgvMouseRow.Dispose();
         }
 
         internal static MenuData GetData(BackgroundWorker worker, string path, int level)
@@ -467,8 +487,9 @@ namespace SystemTrayMenu.Business
                 menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
                 menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
                 DataGridView dgv = menuToDispose.GetDataGridView();
-                dgv.CellMouseEnter -= waitToOpenMenu.MouseEnter;
-                dgv.CellMouseLeave -= waitToOpenMenu.MouseLeave;
+                dgv.CellMouseEnter -= dgvMouseRow.CellMouseEnter;
+                dgv.CellMouseLeave -= dgvMouseRow.CellMouseLeave;
+                dgv.MouseLeave -= dgvMouseRow.MouseLeave;
                 dgv.MouseMove -= waitToOpenMenu.MouseMove;
                 dgv.MouseDown -= Dgv_MouseDown;
                 dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
@@ -636,23 +657,9 @@ namespace SystemTrayMenu.Business
             }
 
             DataGridView dgv = menu.GetDataGridView();
-            dgv.CellMouseEnter += waitToOpenMenu.MouseEnter;
-            waitToOpenMenu.MouseEnterOk += Dgv_CellMouseEnter;
-            void Dgv_CellMouseEnter(DataGridView dgv, int rowIndex)
-            {
-                if (menus[0].IsUsable)
-                {
-                    if (keyboardInput.InUse)
-                    {
-                        keyboardInput.ClearIsSelectedByKey();
-                        keyboardInput.InUse = false;
-                    }
-
-                    keyboardInput.Select(dgv, rowIndex, false);
-                }
-            }
-
-            dgv.CellMouseLeave += waitToOpenMenu.MouseLeave;
+            dgv.CellMouseEnter += dgvMouseRow.CellMouseEnter;
+            dgv.CellMouseLeave += dgvMouseRow.CellMouseLeave;
+            dgv.MouseLeave += dgvMouseRow.MouseLeave;
             dgv.MouseMove += waitToOpenMenu.MouseMove;
             dgv.MouseDown += Dgv_MouseDown;
             dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
