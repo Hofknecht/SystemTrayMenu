@@ -81,7 +81,11 @@ namespace SystemTrayMenu.Helper
 
         private void TriggerRowMouseLeave()
         {
-            RowMouseLeave?.Invoke(dgv, eventArgs);
+            if (dgv != null)
+            {
+                RowMouseLeave?.Invoke(dgv, eventArgs);
+            }
+
             dgv = null;
             eventArgs = null;
         }
