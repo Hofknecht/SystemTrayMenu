@@ -63,8 +63,13 @@ namespace SystemTrayMenu.Utilities
             Logger.ShutDown();
         }
 
-        internal static void ProcessStart(string fileName, string arguments = null)
+        internal static void ProcessStart(string fileName, string arguments = null, bool doubleQuoteArg = false)
         {
+            if (doubleQuoteArg && arguments != null)
+            {
+                arguments = "\"" + arguments + "\"";
+            }
+
             try
             {
                 using Process p = new Process
