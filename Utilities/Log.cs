@@ -40,8 +40,10 @@ namespace SystemTrayMenu.Utilities
         internal static string GetLogFilePath()
         {
             return Path.Combine(
-                Path.GetDirectoryName(
-               Assembly.GetExecutingAssembly().Location), $"log-{Environment.MachineName}.txt");
+                Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                $"SystemTrayMenu"),
+                $"log-{Environment.MachineName}.txt");
         }
 
         internal static void OpenLogFile()

@@ -76,6 +76,7 @@ namespace SystemTrayMenu.Helper
             if (disposing)
             {
                 timerRaiseRowMouseLeave.Dispose();
+                dgv?.Dispose();
             }
         }
 
