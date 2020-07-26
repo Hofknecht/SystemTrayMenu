@@ -11,6 +11,7 @@ namespace SystemTrayMenu.Utilities
     using System.Drawing.Imaging;
     using System.IO;
     using System.Runtime.InteropServices;
+    using System.Threading.Tasks;
 
     // from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
     // added ImageList_GetIcon, IconCache, AddIconOverlay
@@ -58,15 +59,36 @@ namespace SystemTrayMenu.Utilities
                 icon = DictIconCache.GetOrAdd(extension, GetIcon);
                 Icon GetIcon(string keyExtension)
                 {
-                    return GetFileIcon(filePath, linkOverlay, size);
+                    return GetFileIconSTA(filePath, linkOverlay, size);
                 }
             }
             else
             {
-                icon = GetFileIcon(filePath, linkOverlay, size);
+                icon = GetFileIconSTA(filePath, linkOverlay, size);
             }
 
             // }
+            return icon;
+        }
+
+
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "todo")]
+        public static Icon GetFolderIconSTA(
+            string directoryPath,
+            FolderType folderType,
+            bool linkOverlay,
+            IconSize size = IconSize.Small)
+        {
+            Icon icon = null;
+
+            Task<Icon> task = Task.Factory.StartNew(() => GetFolderIcon(
+                directoryPath,
+                folderType,
+                linkOverlay,
+                size));
+            icon = task.Result;
+
             return icon;
         }
 
@@ -116,7 +138,6 @@ namespace SystemTrayMenu.Utilities
             {
                 try
                 {
-                    Icon.FromHandle(shfi.hIcon);
                     icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
                     DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
                 }
@@ -161,6 +182,17 @@ namespace SystemTrayMenu.Utilities
             }
 
             return isExtensionWitSameIcon;
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "todo")]
+        private static Icon GetFileIconSTA(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
+        {
+            Icon icon = null;
+
+            Task<Icon> task = Task.Factory.StartNew(() => GetFileIcon(filePath, linkOverlay, size));
+            icon = task.Result;
+
+            return icon;
         }
 
         private static Icon GetFileIcon(string filePath, bool linkOverlay, IconSize size = IconSize.Small)

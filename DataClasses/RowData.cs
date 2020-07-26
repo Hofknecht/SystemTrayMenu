@@ -104,7 +104,7 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (isDirectory)
             {
-                icon = IconReader.GetFolderIcon(
+                icon = IconReader.GetFolderIconSTA(
                     TargetFilePath,
                     IconReader.FolderType.Closed,
                     false);
@@ -256,7 +256,7 @@ namespace SystemTrayMenu.DataClasses
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
             if (FileLnk.IsDirectory(resolvedLnkPath))
             {
-                icon = IconReader.GetFolderIcon(TargetFilePath, IconReader.FolderType.Open, true);
+                icon = IconReader.GetFolderIconSTA(TargetFilePath, IconReader.FolderType.Open, true);
                 handled = true;
                 isLnkDirectory = true;
             }

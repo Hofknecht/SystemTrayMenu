@@ -160,6 +160,14 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Resources\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\SystemTrayMenu.ico" />
@@ -206,9 +214,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Packaging\AppPackages\" />
+  </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>taskkill /fi "pid gt 0" /im SystemTrayMenu.exe
 taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe
 EXIT 0</PreBuildEvent>
+    <RepositoryUrl>https://github.com/Hofknecht/SystemTrayMenu</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>hofknecht.eu/systemtraymenu/</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryType></RepositoryType>
+    <PackageTags>SystemTrayMenu</PackageTags>
   </PropertyGroup>
 </Project>
