@@ -6,6 +6,7 @@ namespace SystemTrayMenu.Utilities
 {
     using System;
     using System.IO;
+    using System.Runtime.InteropServices;
     using System.Threading;
     using Shell32;
 
@@ -79,9 +80,17 @@ namespace SystemTrayMenu.Utilities
                         resolvedFilename = link.Path;
                     }
                 }
-                catch (UnauthorizedAccessException ex)
+                catch (Exception ex)
                 {
-                    Log.Warn($"shortcutFilename:'{shortcutFilename}'", ex);
+                    if (ex is COMException ||
+                        ex is UnauthorizedAccessException)
+                    {
+                        Log.Warn($"shortcutFilename:'{shortcutFilename}'", ex);
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
             }
 
