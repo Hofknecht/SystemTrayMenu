@@ -96,12 +96,15 @@ namespace SystemTrayMenu.Handler
 
         internal void ClickOpensInstantly(DataGridView dgv, int rowIndex)
         {
-            timerStartLoad.Stop();
-            StopLoadMenu?.Invoke();
-            SetData(dgv, rowIndex);
-            MouseActive = true;
-            checkForMouseActive = false;
-            CallOpenMenuNow();
+            if (dgv.Rows.Count > rowIndex)
+            {
+                timerStartLoad.Stop();
+                StopLoadMenu?.Invoke();
+                SetData(dgv, rowIndex);
+                MouseActive = true;
+                checkForMouseActive = false;
+                CallOpenMenuNow();
+            }
         }
 
         internal void EnterOpensInstantly(DataGridView dgv, int rowIndex)
