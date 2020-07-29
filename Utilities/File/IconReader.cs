@@ -71,8 +71,6 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "todo")]
         public static Icon GetFolderIconSTA(
             string directoryPath,
