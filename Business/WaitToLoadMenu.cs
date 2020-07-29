@@ -99,7 +99,6 @@ namespace SystemTrayMenu.Handler
             if (dgv.Rows.Count > rowIndex)
             {
                 timerStartLoad.Stop();
-                StopLoadMenu?.Invoke();
                 SetData(dgv, rowIndex);
                 MouseActive = true;
                 checkForMouseActive = false;
