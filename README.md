@@ -4,14 +4,14 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 [![All Releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-SystemTrayMenu is an improved open source toolbar for Windows.
+Browse and open your files easily
 
 ![1](https://user-images.githubusercontent.com/52528841/83351457-61139b80-a344-11ea-9b20-343ad372bb1b.gif)
 ![2](https://user-images.githubusercontent.com/52528841/83351459-640e8c00-a344-11ea-8735-164185090dcd.gif)
 ![3](https://user-images.githubusercontent.com/52528841/83351460-6670e600-a344-11ea-80e9-e707cf1a9dc0.gif)
 
 Download the latest official version:  
-https://github.com/Hofknecht/SystemTrayMenu/releases/latest/download/SystemTrayMenu.zip
+https://github.com/Hofknecht/SystemTrayMenu/releases
   
 
 FAQ
