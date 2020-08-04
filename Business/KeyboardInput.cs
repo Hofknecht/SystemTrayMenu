@@ -215,13 +215,17 @@ namespace SystemTrayMenu.Handler
 
             iRowKey = i;
             iMenuKey = newiMenuKey;
-            DataGridViewRow row = dgv.Rows[i];
-            RowData rowData = (RowData)row.Cells[2].Value;
-            rowData.IsSelected = true;
-            if (refreshview)
+
+            if (dgv.Rows.Count > i)
             {
-                row.Selected = false;
-                row.Selected = true;
+                DataGridViewRow row = dgv.Rows[i];
+                RowData rowData = (RowData)row.Cells[2].Value;
+                rowData.IsSelected = true;
+                if (refreshview)
+                {
+                    row.Selected = false;
+                    row.Selected = true;
+                }
             }
         }
 

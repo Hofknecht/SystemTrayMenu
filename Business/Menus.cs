@@ -456,7 +456,7 @@ namespace SystemTrayMenu.Business
                 // Case when Folder Dialog open
             }
             else if (openCloseState == OpenCloseState.Opening ||
-                (menus[0].Visible && openCloseState == OpenCloseState.Default))
+                (menus[0] != null && menus[0].Visible && openCloseState == OpenCloseState.Default))
             {
                 openCloseState = OpenCloseState.Closing;
                 MenusFadeOut();
