@@ -195,4 +195,13 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>Du hast keine Rechte für den Hauptordner. Gewähre die Rechte oder ändere den Hauptordner.</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Experte</value>
+  </data>
+  <data name="Hide Taskbar Icon" xml:space="preserve">
+    <value>Taskbar Icon verstecken</value>
+  </data>
+  <data name="Single click to start item" xml:space="preserve">
+    <value>Einzelner Klick, um Item zu starten</value>
+  </data>
 </root>

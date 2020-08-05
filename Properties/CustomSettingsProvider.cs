@@ -51,7 +51,7 @@ namespace SystemTrayMenu.Properties
         /// Gets the setting key this is returning must set before the settings are used.
         /// e.g. <c>Properties.Settings.Default.SettingsKey = @"C:\temp\user.config";</c>.
         /// </summary>
-        private string UserConfigPath
+        private static string UserConfigPath
         {
             get
             {

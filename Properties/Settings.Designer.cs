@@ -87,5 +87,29 @@ namespace SystemTrayMenu.Properties {
                 this["IsUpgraded"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HideTaskbarForm {
+            get {
+                return ((bool)(this["HideTaskbarForm"]));
+            }
+            set {
+                this["HideTaskbarForm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenItemWithOneClick {
+            get {
+                return ((bool)(this["OpenItemWithOneClick"]));
+            }
+            set {
+                this["OpenItemWithOneClick"] = value;
+            }
+        }
     }
 }

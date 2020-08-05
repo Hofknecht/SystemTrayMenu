@@ -17,7 +17,7 @@ namespace SystemTrayMenu
     {
         private readonly AppNotifyIcon menuNotifyIcon = new AppNotifyIcon();
         private readonly Menus menus = new Menus();
-        private readonly TaskbarForm taskbarForm = new TaskbarForm();
+        private readonly TaskbarForm taskbarForm = null;
 
         public App()
         {
@@ -35,26 +35,30 @@ namespace SystemTrayMenu
 
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
-            taskbarForm.Activated += TasbkarItemActivated;
-            void TasbkarItemActivated(object sender, EventArgs e)
+            if (!Properties.Settings.Default.HideTaskbarForm)
             {
-                SetStateNormal();
-                taskbarForm.Activate();
-                taskbarForm.Focus();
-                menus.SwitchOpenCloseByTaskbarItem();
-            }
+                taskbarForm = new TaskbarForm();
+                taskbarForm.Activated += TasbkarItemActivated;
+                void TasbkarItemActivated(object sender, EventArgs e)
+                {
+                    SetStateNormal();
+                    taskbarForm.Activate();
+                    taskbarForm.Focus();
+                    menus.SwitchOpenCloseByTaskbarItem();
+                }
 
-            taskbarForm.Resize += TaskbarForm_Resize;
-            taskbarForm.FormClosed += TaskbarForm_FormClosed;
-            static void TaskbarForm_FormClosed(object sender, FormClosedEventArgs e)
-            {
-                Application.Exit();
-            }
+                taskbarForm.Resize += TaskbarForm_Resize;
+                taskbarForm.FormClosed += TaskbarForm_FormClosed;
+                static void TaskbarForm_FormClosed(object sender, FormClosedEventArgs e)
+                {
+                    Application.Exit();
+                }
 
-            taskbarForm.Deactivate += TaskbarForm_Deactivate;
-            void TaskbarForm_Resize(object sender, EventArgs e)
-            {
-                SetStateNormal();
+                taskbarForm.Deactivate += TaskbarForm_Deactivate;
+                void TaskbarForm_Resize(object sender, EventArgs e)
+                {
+                    SetStateNormal();
+                }
             }
 
             DllImports.NativeMethods.User32ShowInactiveTopmost(taskbarForm);
@@ -62,7 +66,7 @@ namespace SystemTrayMenu
 
         public void Dispose()
         {
-            taskbarForm.Dispose();
+            taskbarForm?.Dispose();
             menus.Dispose();
             menuNotifyIcon.Dispose();
         }

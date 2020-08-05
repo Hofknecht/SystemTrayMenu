@@ -195,4 +195,13 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder.</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Expert</value>
+  </data>
+  <data name="Hide Taskbar Icon" xml:space="preserve">
+    <value>Hide Taskbar Icon</value>
+  </data>
+  <data name="Single click to start item" xml:space="preserve">
+    <value>Single click to start item</value>
+  </data>
 </root>

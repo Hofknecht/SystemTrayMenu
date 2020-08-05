@@ -29,11 +29,16 @@ namespace SystemTrayMenu.UserInterface
             {
                 Text = Translator.GetText("Settings");
                 tabPageGeneral.Text = Translator.GetText("General");
+                tabPageExpert.Text = Translator.GetText("Expert");
                 labelFolder.Text = Translator.GetText("Folder");
                 labelAutostart.Text = Translator.GetText("Autostart");
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
                 labelHotkey.Text = Translator.GetText("Hotkey");
                 labelLanguage.Text = Translator.GetText("Language");
+                labelHideTaskbarForm.Text = string.Empty;
+                checkBoxHideTaskbarForm.Text = Translator.GetText("Hide Taskbar Icon");
+                labelOpenItemWithOneClick.Text = string.Empty;
+                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
                 buttonOk.Text = Translator.GetText("buttonOk");
                 buttonCancel.Text = Translator.GetText("buttonCancel");
             }
@@ -74,6 +79,20 @@ namespace SystemTrayMenu.UserInterface
                 {
                     comboBoxLanguage.SelectedValue = "en";
                 }
+            }
+
+            InitializeHideTaskbarForm();
+            void InitializeHideTaskbarForm()
+            {
+                checkBoxHideTaskbarForm.Checked =
+                    Properties.Settings.Default.HideTaskbarForm;
+            }
+
+            InitializeOpenItemWithOneClick();
+            void InitializeOpenItemWithOneClick()
+            {
+                checkBoxOpenItemWithOneClick.Checked =
+                    Properties.Settings.Default.OpenItemWithOneClick;
             }
         }
 
@@ -237,7 +256,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            tabControl1.Size = new Size(
+            tabControlExpert.Size = new Size(
                 tableLayoutPanelGeneral.Size.Width,
                 tableLayoutPanelGeneral.Size.Height);
         }
@@ -247,6 +266,7 @@ namespace SystemTrayMenu.UserInterface
             SetAutostart();
             SetHotkey();
             SetLanguage();
+            SetExpertOptions();
             Properties.Settings.Default.Save();
             DialogResult = DialogResult.OK;
             Close();
@@ -283,6 +303,12 @@ namespace SystemTrayMenu.UserInterface
         {
             Properties.Settings.Default.CurrentCultureInfoName =
                 comboBoxLanguage.SelectedValue.ToString();
+        }
+
+        private void SetExpertOptions()
+        {
+            Properties.Settings.Default.HideTaskbarForm = checkBoxHideTaskbarForm.Checked;
+            Properties.Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

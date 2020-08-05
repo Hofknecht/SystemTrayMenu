@@ -133,6 +133,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expert.
+        /// </summary>
+        internal static string Expert {
+            get {
+                return ResourceManager.GetString("Expert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder.
         /// </summary>
         internal static string Folder {
@@ -183,6 +192,15 @@ namespace SystemTrayMenu.Resources {
         internal static string HelpFAQ {
             get {
                 return ResourceManager.GetString("HelpFAQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide Taskbar Icon.
+        /// </summary>
+        internal static string Hide_Taskbar_Icon {
+            get {
+                return ResourceManager.GetString("Hide Taskbar Icon", resourceCulture);
             }
         }
         
@@ -264,6 +282,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Single click to start item.
+        /// </summary>
+        internal static string Single_click_to_start_item {
+            get {
+                return ResourceManager.GetString("Single click to start item", resourceCulture);
             }
         }
         

@@ -32,7 +32,7 @@ namespace SystemTrayMenu.UserInterface
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlExpert = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
@@ -52,13 +52,21 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.tabPageExpert = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelHideTaskbarForm = new System.Windows.Forms.Label();
+            this.labelOpenItemWithOneClick = new System.Windows.Forms.Label();
+            this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
+            this.checkBoxHideTaskbarForm = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabControlExpert.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
             this.tableLayoutPanelGeneral.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanelBottom.SuspendLayout();
+            this.tabPageExpert.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -67,7 +75,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelMain.ColumnCount = 1;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Controls.Add(this.tabControl1, 0, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.tabControlExpert, 0, 0);
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelBottom, 0, 1);
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
@@ -79,12 +87,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPageGeneral);
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(395, 240);
-            this.tabControl1.TabIndex = 0;
+            this.tabControlExpert.Controls.Add(this.tabPageGeneral);
+            this.tabControlExpert.Controls.Add(this.tabPageExpert);
+            this.tabControlExpert.Location = new System.Drawing.Point(3, 3);
+            this.tabControlExpert.Name = "tabControl1";
+            this.tabControlExpert.SelectedIndex = 0;
+            this.tabControlExpert.Size = new System.Drawing.Size(395, 240);
+            this.tabControlExpert.TabIndex = 0;
             // 
             // tabPageGeneral
             // 
@@ -122,6 +131,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(313, 145);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
@@ -365,6 +376,85 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // tabPageExpert
+            // 
+            this.tabPageExpert.Controls.Add(this.tableLayoutPanel6);
+            this.tabPageExpert.Location = new System.Drawing.Point(4, 22);
+            this.tabPageExpert.Name = "tabPageExpert";
+            this.tabPageExpert.Size = new System.Drawing.Size(387, 214);
+            this.tabPageExpert.TabIndex = 1;
+            this.tabPageExpert.Text = "tabPageExpert";
+            this.tabPageExpert.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.AutoSize = true;
+            this.tableLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel6.Controls.Add(this.labelHideTaskbarForm, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.labelOpenItemWithOneClick, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.checkBoxOpenItemWithOneClick, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.checkBoxHideTaskbarForm, 1, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(361, 88);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // labelShowTaskbarForm
+            // 
+            this.labelHideTaskbarForm.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelHideTaskbarForm.AutoSize = true;
+            this.labelHideTaskbarForm.Location = new System.Drawing.Point(3, 5);
+            this.labelHideTaskbarForm.Name = "labelShowTaskbarForm";
+            this.labelHideTaskbarForm.Size = new System.Drawing.Size(118, 13);
+            this.labelHideTaskbarForm.TabIndex = 104;
+            this.labelHideTaskbarForm.Text = "labelShowTaskbarForm";
+            // 
+            // labelOpenItemWithOneClick
+            // 
+            this.labelOpenItemWithOneClick.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelOpenItemWithOneClick.AutoSize = true;
+            this.labelOpenItemWithOneClick.Location = new System.Drawing.Point(3, 29);
+            this.labelOpenItemWithOneClick.Name = "labelOpenItemWithOneClick";
+            this.labelOpenItemWithOneClick.Size = new System.Drawing.Size(140, 13);
+            this.labelOpenItemWithOneClick.TabIndex = 105;
+            this.labelOpenItemWithOneClick.Text = "labelOpenItemWithOneClick";
+            // 
+            // checkBoxOpenItemWithOneClick
+            // 
+            this.checkBoxOpenItemWithOneClick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxOpenItemWithOneClick.AutoSize = true;
+            this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(155, 31);
+            this.checkBoxOpenItemWithOneClick.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
+            this.checkBoxOpenItemWithOneClick.Name = "checkBoxOpenItemWithOneClick";
+            this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(185, 17);
+            this.checkBoxOpenItemWithOneClick.TabIndex = 106;
+            this.checkBoxOpenItemWithOneClick.Text = "checkBoxOpenItemWithOneClick";
+            this.checkBoxOpenItemWithOneClick.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowTaskbarForm
+            // 
+            this.checkBoxHideTaskbarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxHideTaskbarForm.AutoSize = true;
+            this.checkBoxHideTaskbarForm.Location = new System.Drawing.Point(155, 7);
+            this.checkBoxHideTaskbarForm.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
+            this.checkBoxHideTaskbarForm.Name = "checkBoxShowTaskbarForm";
+            this.checkBoxHideTaskbarForm.Size = new System.Drawing.Size(185, 17);
+            this.checkBoxHideTaskbarForm.TabIndex = 107;
+            this.checkBoxHideTaskbarForm.Text = "checkBoxShowTaskbarForm";
+            this.checkBoxHideTaskbarForm.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -383,7 +473,7 @@ namespace SystemTrayMenu.UserInterface
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlExpert.ResumeLayout(false);
             this.tabPageGeneral.ResumeLayout(false);
             this.tabPageGeneral.PerformLayout();
             this.tableLayoutPanelGeneral.ResumeLayout(false);
@@ -394,6 +484,10 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanelBottom.ResumeLayout(false);
             this.tableLayoutPanelBottom.PerformLayout();
+            this.tabPageExpert.ResumeLayout(false);
+            this.tabPageExpert.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,7 +498,7 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBottom;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlExpert;
         private System.Windows.Forms.TabPage tabPageGeneral;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ComboBox comboBoxLanguage;
@@ -423,5 +517,11 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.Label labelAutostart;
         private System.Windows.Forms.Label labelHotkey;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGeneral;
+        private System.Windows.Forms.TabPage tabPageExpert;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label labelHideTaskbarForm;
+        private System.Windows.Forms.Label labelOpenItemWithOneClick;
+        private System.Windows.Forms.CheckBox checkBoxOpenItemWithOneClick;
+        private System.Windows.Forms.CheckBox checkBoxHideTaskbarForm;
     }
 }
