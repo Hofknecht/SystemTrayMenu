@@ -176,10 +176,10 @@
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.textBoxSearch.MaxLength = 37;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.ShortcutsEnabled = false;
             this.textBoxSearch.Size = new System.Drawing.Size(55, 15);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
+            this.textBoxSearch.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
             // 
             // tableLayoutPanelSearch
             // 
