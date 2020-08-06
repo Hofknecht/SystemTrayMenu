@@ -216,7 +216,7 @@ namespace SystemTrayMenu.DataClasses
             if (ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
             {
-                Log.ProcessStart("explorer.exe", TargetFilePath, true);
+                Log.ProcessStart(TargetFilePath, null, true);
             }
         }
 

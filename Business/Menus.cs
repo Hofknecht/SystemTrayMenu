@@ -591,7 +591,7 @@ namespace SystemTrayMenu.Business
 
         private static void OpenFolder()
         {
-            Log.ProcessStart("explorer.exe", Config.Path, true);
+            Log.ProcessStart(Config.Path, null, true);
         }
 
         private Menu Create(MenuData menuData, string title = null)
