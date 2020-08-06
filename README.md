@@ -51,6 +51,9 @@ Yes, you can select this option in the settings menu, that you can open by right
 If a problem has occured or you have any ideas or questions, you are welcome to contact us.  
 Our contact information you can find in the About window, that can be opened by right clicking on the SystemTrayMenu icon.   
 
+**Find more FAQ topics here:**
+[SystemTrayMenu FAQ](https://github.com/Hofknecht/SystemTrayMenu/issues?q=is%3Aissue+is%3Aclosed+label%3AFAQ)
+
 
 Security
 ------------------
