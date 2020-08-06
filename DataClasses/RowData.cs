@@ -199,9 +199,41 @@ namespace SystemTrayMenu.DataClasses
                 IsContextMenuOpen = false;
                 contextMenuClosed = DateTime.Now;
             }
+
+            if (Properties.Settings.Default.OpenItemWithOneClick)
+            {
+                OpenItem(e);
+            }
         }
 
         internal void DoubleClick(MouseEventArgs e)
+        {
+            if (!Properties.Settings.Default.OpenItemWithOneClick)
+            {
+                OpenItem(e);
+            }
+
+            if (ContainsMenu &&
+                (e == null || e.Button == MouseButtons.Left))
+            {
+                Log.ProcessStart("explorer.exe", TargetFilePath, true);
+            }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!isDisposed)
+            {
+                if (diposeIcon)
+                {
+                    icon?.Dispose();
+                }
+            }
+
+            isDisposed = true;
+        }
+
+        private void OpenItem(MouseEventArgs e)
         {
             if (!ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
@@ -227,25 +259,6 @@ namespace SystemTrayMenu.DataClasses
                     MessageBox.Show(ex.Message);
                 }
             }
-
-            if (ContainsMenu &&
-                (e == null || e.Button == MouseButtons.Left))
-            {
-                Log.ProcessStart("explorer.exe", TargetFilePath, true);
-            }
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!isDisposed)
-            {
-                if (diposeIcon)
-                {
-                    icon?.Dispose();
-                }
-            }
-
-            isDisposed = true;
         }
 
         private bool SetLnk(
