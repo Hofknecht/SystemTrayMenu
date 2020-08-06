@@ -286,7 +286,7 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Single click to start item.
+        ///   Looks up a localized string similar to Single-click to open an item.
         /// </summary>
         internal static string Single_click_to_start_item {
             get {

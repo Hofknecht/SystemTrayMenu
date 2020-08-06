@@ -202,6 +202,6 @@
     <value>Hide Taskbar Icon</value>
   </data>
   <data name="Single click to start item" xml:space="preserve">
-    <value>Single click to start item</value>
+    <value>Single-click to open an item</value>
   </data>
 </root>
