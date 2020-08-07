@@ -204,4 +204,7 @@
   <data name="Single click to start item" xml:space="preserve">
     <value>Single-click to open an item</value>
   </data>
+  <data name="Dark Mode always active" xml:space="preserve">
+    <value>Dark Mode always active</value>
+  </data>
 </root>

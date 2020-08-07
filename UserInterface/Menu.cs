@@ -11,6 +11,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Linq;
     using System.Reflection;
     using System.Windows.Forms;
+    using Microsoft.Win32;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Utilities;
@@ -58,7 +59,6 @@ namespace SystemTrayMenu.UserInterface
                         textBoxSearch.Focus();
                         NativeMethods.User32ShowInactiveTopmost(this);
                         NativeMethods.ForceForegroundWindow(Handle);
-                        SetTitleColorActive();
                     }
                 }
                 else
@@ -81,10 +81,29 @@ namespace SystemTrayMenu.UserInterface
 
             SetDoubleBuffer(dgv, true);
 
+            Color foreColor = Color.Black;
+            Color backColor = Color.White;
+            if (Config.IsDarkMode())
+            {
+                foreColor = Color.White;
+                labelTitle.ForeColor = foreColor;
+                labelTitle.BackColor = AppColors.DarkModeBackColor1;
+
+                backColor = AppColors.DarkModeBackColor2;
+                tableLayoutPanel.BackColor = backColor;
+                dgv.BackgroundColor = backColor;
+
+                textBoxSearch.ForeColor = foreColor;
+                textBoxSearch.BackColor = AppColors.DarkModeBackColor3;
+                pictureBoxSearch.BackColor = AppColors.DarkModeBackColor3;
+                tableLayoutPanelSearch.BackColor = AppColors.DarkModeBackColor3;
+            }
+
             DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle
             {
-                SelectionBackColor = MenuDefines.ColorSelectedItem,
-                SelectionForeColor = Color.Black,
+                SelectionForeColor = foreColor,
+                ForeColor = foreColor,
+                BackColor = backColor,
             };
             dgv.DefaultCellStyle = dgvCellStyle;
 
@@ -376,11 +395,6 @@ namespace SystemTrayMenu.UserInterface
             }
 
             Location = new Point(x, y);
-        }
-
-        internal void SetTitleColorActive()
-        {
-            labelTitle.ForeColor = Color.Black;
         }
 
         internal void KeyPressedSearch(string letter)

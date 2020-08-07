@@ -124,6 +124,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dark Mode always active.
+        /// </summary>
+        internal static string Dark_Mode_always_active {
+            get {
+                return ResourceManager.GetString("Dark Mode always active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         internal static string Exit {

@@ -8,12 +8,16 @@ namespace SystemTrayMenu
     using System.IO;
     using System.Reflection;
     using System.Windows.Forms;
+    using Microsoft.Win32;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
 
     public static class Config
     {
         public const string Language = "en";
+
+        private static bool readDarkModeDone = false;
+        private static bool isDarkModeFromFirstCall = false;
 
         public static string Path => Properties.Settings.Default.PathDirectory;
 
@@ -94,6 +98,38 @@ namespace SystemTrayMenu
             {
                 Process.Start(browserPath, "https://github.com/Hofknecht/SystemTrayMenu#FAQ");
             }
+        }
+
+        internal static bool IsDarkMode()
+        {
+            bool isDarkMode = false;
+            if (readDarkModeDone)
+            {
+                isDarkMode = isDarkModeFromFirstCall;
+            }
+            else
+            {
+                if (Properties.Settings.Default.IsDarkModeAlwaysOn || IsDarkModeActive())
+                {
+                    isDarkModeFromFirstCall = true;
+                    isDarkMode = true;
+                }
+
+                readDarkModeDone = true;
+            }
+
+            return isDarkMode;
+        }
+
+        /// <summary>
+        /// Read the OS setting whether dark mode is enabled.
+        /// </summary>
+        /// <returns>true = Dark mode; false = Light mode.</returns>
+        private static bool IsDarkModeActive()
+        {
+            // Check: AppsUseLightTheme (REG_DWORD)
+            // 0 = Dark mode, 1 = Light mode
+            return Registry.GetValue("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", 1).ToString() == "0";
         }
     }
 }

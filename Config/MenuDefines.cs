@@ -15,12 +15,110 @@ namespace SystemTrayMenu
         internal const float MaxMenuWidth = 300;
         internal static readonly Color File = Color.White;
         internal static readonly Color Folder = Color.White;
-        internal static readonly Color ColorSelectedItem = AppColors.Blue;
-        internal static readonly Color ColorSelectedItemBorder = AppColors.BlueBorder;
-        internal static readonly Color ColorOpenFolder = AppColors.Green;
-        internal static readonly Color ColorOpenFolderBorder = AppColors.GreenBorder;
-        internal static readonly Color ColorTitleWarning = AppColors.Red;
-        internal static readonly Color ColorTitleSelected = AppColors.Yellow;
-        internal static readonly Color ColorTitleBackground = AppColors.Azure;
+
+        public static Color ColorSelectedItem
+        {
+            get
+            {
+                if (Config.IsDarkMode())
+                {
+                    return AppColors.DarkModeBlue;
+                }
+                else
+                {
+                    return AppColors.Blue;
+                }
+            }
+        }
+
+        public static Color ColorSelectedItemBorder
+        {
+            get
+            {
+                if (Config.IsDarkMode())
+                {
+                    return AppColors.DarkModeBlueBorder;
+                }
+                else
+                {
+                    return AppColors.BlueBorder;
+                }
+            }
+        }
+
+        public static Color ColorOpenFolder
+        {
+            get
+            {
+                if (Config.IsDarkMode())
+                {
+                    return AppColors.DarkModeGreen;
+                }
+                else
+                {
+                    return AppColors.Green;
+                }
+            }
+        }
+
+        public static Color ColorOpenFolderBorder
+        {
+            get
+            {
+                if (Config.IsDarkMode())
+                {
+                    return AppColors.DarkModeGreenBorder;
+                }
+                else
+                {
+                    return AppColors.GreenBorder;
+                }
+            }
+        }
+
+        public static Color ColorTitleWarning
+        {
+            get
+            {
+                if (Config.IsDarkMode())
+                {
+                    return AppColors.DarkModeRed;
+                }
+                else
+                {
+                    return AppColors.Red;
+                }
+            }
+        }
+
+        public static Color ColorTitleSelected
+        {
+            get
+            {
+                if (Config.IsDarkMode())
+                {
+                    return AppColors.DarkModeBlue;
+                }
+                else
+                {
+                    return AppColors.Blue;
+                }
+            }
+        }
+
+        public static Color ColorTitleBackground
+        {
+            get
+            {
+                if (Config.IsDarkMode())
+                {
+                    return AppColors.DarkModeAzure;
+                }
+                else
+                {
+                    return AppColors.Azure;
+                }
+            }
+        }
     }
 }

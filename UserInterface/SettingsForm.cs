@@ -35,10 +35,9 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
                 labelHotkey.Text = Translator.GetText("Hotkey");
                 labelLanguage.Text = Translator.GetText("Language");
-                labelHideTaskbarForm.Text = string.Empty;
                 checkBoxHideTaskbarForm.Text = Translator.GetText("Hide Taskbar Icon");
-                labelOpenItemWithOneClick.Text = string.Empty;
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
+                checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
                 buttonOk.Text = Translator.GetText("buttonOk");
                 buttonCancel.Text = Translator.GetText("buttonCancel");
             }
@@ -81,19 +80,9 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            InitializeHideTaskbarForm();
-            void InitializeHideTaskbarForm()
-            {
-                checkBoxHideTaskbarForm.Checked =
-                    Properties.Settings.Default.HideTaskbarForm;
-            }
-
-            InitializeOpenItemWithOneClick();
-            void InitializeOpenItemWithOneClick()
-            {
-                checkBoxOpenItemWithOneClick.Checked =
-                    Properties.Settings.Default.OpenItemWithOneClick;
-            }
+            checkBoxHideTaskbarForm.Checked = Properties.Settings.Default.HideTaskbarForm;
+            checkBoxOpenItemWithOneClick.Checked = Properties.Settings.Default.OpenItemWithOneClick;
+            checkBoxDarkModeAlwaysOn.Checked = Properties.Settings.Default.IsDarkModeAlwaysOn;
         }
 
         public string NewHotKey => newHotKey;
@@ -309,6 +298,7 @@ namespace SystemTrayMenu.UserInterface
         {
             Properties.Settings.Default.HideTaskbarForm = checkBoxHideTaskbarForm.Checked;
             Properties.Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
+            Properties.Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

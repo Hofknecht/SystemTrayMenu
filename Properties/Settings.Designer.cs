@@ -111,5 +111,17 @@ namespace SystemTrayMenu.Properties {
                 this["OpenItemWithOneClick"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsDarkModeAlwaysOn {
+            get {
+                return ((bool)(this["IsDarkModeAlwaysOn"]));
+            }
+            set {
+                this["IsDarkModeAlwaysOn"] = value;
+            }
+        }
     }
 }

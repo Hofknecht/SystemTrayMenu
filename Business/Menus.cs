@@ -633,7 +633,6 @@ namespace SystemTrayMenu.Business
                 if (IsActive() &&
                     menus[0].IsUsable)
                 {
-                    menus[0].SetTitleColorActive();
                     AsList.ForEach(m => m.ShowWithFade());
                     timerStillActiveCheck.Start();
                 }
