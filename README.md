@@ -3,14 +3,14 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
 [![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases)
-* GitHub
-[![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)
-* CHIP
-[![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1000-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)
-* Microsoft Store
-[![Downloads Microsoft Store](https://img.shields.io/badge/downloads-%3E400-green)](	https://www.microsoft.com/store/apps/9N24F8ZBJMT1)
-* SourceForge
-[![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download)
+
+[![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases) GitHub
+
+[![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1000-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html) CHIP
+
+[![Downloads Microsoft Store](https://img.shields.io/badge/downloads-%3E400-green)](	https://www.microsoft.com/store/apps/9N24F8ZBJMT1) Microsoft Store
+
+[![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download) SourceForge
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
 
