@@ -79,11 +79,7 @@ When contributing please respect the style used by the codebase and consider the
 * Increase the version in the assembly file.  
 * Add a commit message like: 
 ```
-#79, #114, #115, #116, version 0.11.1.9
-[Feature] Take RowHeight from main menu #116
-[Feature] Show icon in taskbar when application is running #115
-[Feature] Add outer frame to selection #114
-[Bug] Screen Changes #79
+[Feature] Show icon in taskbar when application is running (#115), version 0.11.1.9
 ```
 
 * Commit either directly to the master branch or create a new branch if you are not sure with your changes 
