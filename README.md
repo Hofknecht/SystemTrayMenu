@@ -1,8 +1,10 @@
 SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
 ------------------
+
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
+[![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 [![All Releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)
-[![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+<!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
 Browse and open your files easily
 
