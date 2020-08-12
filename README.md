@@ -6,11 +6,12 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 
 [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases) GitHub
 
-[![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1000-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html) CHIP
+[![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download) SourceForge
 
 [![Downloads Microsoft Store](https://img.shields.io/badge/downloads-%3E400-green)](	https://www.microsoft.com/store/apps/9N24F8ZBJMT1) Microsoft Store
 
-[![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download) SourceForge
+[![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1000-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html) CHIP
+
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
 
