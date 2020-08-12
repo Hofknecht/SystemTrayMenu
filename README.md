@@ -15,9 +15,11 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
  |
 [![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)
 [![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1k-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)
+ |
+[![computerbild](https://user-images.githubusercontent.com/52528841/89651200-d9a65380-d8c3-11ea-9dab-e5563eb7c4f6.png)](https://www.computerbild.de/download/SystemTrayMenu-26748523.html)
+[![Downloads computerbild](https://img.shields.io/badge/downloads-%3E40-green)](https://www.computerbild.de/download/SystemTrayMenu-26748523.html)
 
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
-
 
 **Browse and open your files easily**
 
