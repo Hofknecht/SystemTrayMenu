@@ -21,6 +21,10 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 
 **Browse and open your files easily**
 
+SystemTrayMenu is a free, open-source start menu alternative for Microsoft Windows. It offers a clear, personalized menu in the system tray. Files, links and folders are organized in several levels as drop-down menus.
+
+We are using C# and .Net Core 3.1
+
 ![1](https://user-images.githubusercontent.com/52528841/83351457-61139b80-a344-11ea-9b20-343ad372bb1b.gif)
 ![2](https://user-images.githubusercontent.com/52528841/83351459-640e8c00-a344-11ea-8735-164185090dcd.gif)
 ![3](https://user-images.githubusercontent.com/52528841/83351460-6670e600-a344-11ea-80e9-e707cf1a9dc0.gif)
