@@ -25,9 +25,8 @@ SystemTrayMenu is a free, open-source start menu alternative for Microsoft Windo
 
 We are using C# and .Net Core 3.1
 
-![1](https://user-images.githubusercontent.com/52528841/83351457-61139b80-a344-11ea-9b20-343ad372bb1b.gif)
-![2](https://user-images.githubusercontent.com/52528841/83351459-640e8c00-a344-11ea-8735-164185090dcd.gif)
-![3](https://user-images.githubusercontent.com/52528841/83351460-6670e600-a344-11ea-80e9-e707cf1a9dc0.gif)
+![20200812_125923](https://user-images.githubusercontent.com/52528841/90009201-ee0c9680-dc9d-11ea-9b8a-b34108152f9b.gif)
+![20200812_130823](https://user-images.githubusercontent.com/52528841/90009212-f1078700-dc9d-11ea-943a-d5fde4d6f2dc.gif)
 
 Download the latest official version:  
 https://github.com/Hofknecht/SystemTrayMenu/releases
