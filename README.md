@@ -14,7 +14,7 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 [![Downloads Microsoft Store](https://img.shields.io/badge/downloads-%3E400-green)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1)
  |
 [![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)
-[![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1000-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)
+[![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1k-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)
 
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
