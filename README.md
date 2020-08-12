@@ -4,13 +4,17 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
 [![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 
-[![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases) GitHub
-
-[![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download) SourceForge
-
-[![Downloads Microsoft Store](https://img.shields.io/badge/downloads-%3E400-green)](	https://www.microsoft.com/store/apps/9N24F8ZBJMT1) Microsoft Store
-
-[![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1000-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html) CHIP
+[![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases)
+[![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)
+ |
+[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://sourceforge.net/projects/systemtraymenu/files/latest/download)
+[![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download)
+ |
+[![WindowsStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1)
+[![Downloads Microsoft Store](https://img.shields.io/badge/downloads-%3E400-green)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1)
+ |
+[![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)
+[![Downloads CHIP](https://img.shields.io/badge/downloads-%3E1000-green)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)
 
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
