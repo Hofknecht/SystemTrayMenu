@@ -104,6 +104,11 @@ When contributing please respect the style used by the codebase and consider the
 https://guides.github.com/activities/hello-world/.  
 * Update the issue and set the status to closed.  
 
+Contributors
+------------------
+
+Special thanks to our productive contibutors [Tanja Kauth](https://github.com/Tanjalibertatis) and [Peter Kirmeier](https://github.com/topeterk)!
+
 Donations
 ------------------
 
