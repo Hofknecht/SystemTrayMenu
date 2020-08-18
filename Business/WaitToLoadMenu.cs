@@ -52,12 +52,15 @@ namespace SystemTrayMenu.Handler
             if (MouseActive)
             {
                 DataGridView dgv = (DataGridView)sender;
-                MouseEnterOk(dgv, e.RowIndex);
-                timerStartLoad.Stop();
-                StopLoadMenu?.Invoke();
-                checkForMouseActive = true;
-                SetData(dgv, e.RowIndex);
-                timerStartLoad.Start();
+                if (dgv.Rows.Count > e.RowIndex)
+                {
+                    MouseEnterOk(dgv, e.RowIndex);
+                    timerStartLoad.Stop();
+                    StopLoadMenu?.Invoke();
+                    checkForMouseActive = true;
+                    SetData(dgv, e.RowIndex);
+                    timerStartLoad.Start();
+                }
             }
             else
             {
@@ -68,12 +71,15 @@ namespace SystemTrayMenu.Handler
 
         internal void RowSelected(DataGridView dgv, int rowIndex)
         {
-            timerStartLoad.Stop();
-            StopLoadMenu?.Invoke();
-            SetData(dgv, rowIndex);
-            MouseActive = false;
-            checkForMouseActive = false;
-            timerStartLoad.Start();
+            if (dgv.Rows.Count > rowIndex)
+            {
+                timerStartLoad.Stop();
+                StopLoadMenu?.Invoke();
+                SetData(dgv, rowIndex);
+                MouseActive = false;
+                checkForMouseActive = false;
+                timerStartLoad.Start();
+            }
         }
 
         internal void MouseLeave(object sender, DataGridViewCellEventArgs e)
