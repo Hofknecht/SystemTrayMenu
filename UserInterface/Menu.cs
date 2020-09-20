@@ -287,6 +287,12 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        /// <summary>
+        /// Update the position and size of the menu.
+        /// </summary>
+        /// <param name="bounds">Screen coordinates where the menu is allowed to be drawn in.</param>
+        /// <param name="menuPredecessor">Predecessor menu (when available).</param>
+        /// <param name="startLocation">Defines where the first menu is drawn (when no predecessor is set).</param>
         internal void AdjustSizeAndLocation(
             Rectangle bounds,
             Menu menuPredecessor,
@@ -298,57 +304,8 @@ namespace SystemTrayMenu.UserInterface
                 startLocation = StartLocation.Predecessor;
             }
 
-            // Update the height to fit in all rows
-            CheckForAutoResizeRowDone();
-            void CheckForAutoResizeRowDone()
-            {
-                double factor = 1;
-                if (NativeMethods.IsTouchEnabled())
-                {
-                    factor = 1.5;
-                }
-
-                if (menuPredecessor == null)
-                {
-                    if (dgv.Tag == null && dgv.Rows.Count > 0)
-                    {
-                        // Find row size based on content and apply factor
-                        dgv.AutoResizeRows();
-                        dgv.RowTemplate.Height = (int)(dgv.Rows[0].Height * factor);
-                        dgv.Tag = true;
-                    }
-                }
-                else
-                {
-                    // Take over the height from predecessor menu
-                    dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().RowTemplate.Height;
-                    dgv.Tag = true;
-                }
-
-                // Patch size of each row
-                foreach (DataGridViewRow row in dgv.Rows)
-                {
-                    row.Height = dgv.RowTemplate.Height;
-                }
-            }
-
-            int menuRestNeeded = Height - dgv.Height; // Height of menu except all the rows
-            int dgvHeightMax = bounds.Height - menuRestNeeded;
-
-            DataTable data = (DataTable)dgv.DataSource;
-            if (string.IsNullOrEmpty(data.DefaultView.RowFilter))
-            {
-                int dgvHeight = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None); // Height of all rows
-                if (dgvHeight > dgvHeightMax)
-                {
-                    // Make all rows fit into the screen
-                    dgvHeight = dgvHeightMax;
-                }
-
-                dgv.Height = dgvHeight;
-            }
-
-            // Update the width to fit in all entries
+            // Update the height and width
+            AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
             AdjustDataGridViewWidth();
 
             // Calculate X position
@@ -474,6 +431,52 @@ namespace SystemTrayMenu.UserInterface
                 ctl,
                 new object[] { doubleBuffered },
                 CultureInfo.InvariantCulture);
+        }
+
+        private void AdjustDataGridViewHeight(Menu menuPredecessor, int screenHeightMax)
+        {
+            double factor = 1;
+            if (NativeMethods.IsTouchEnabled())
+            {
+                factor = 1.5;
+            }
+
+            if (menuPredecessor == null)
+            {
+                if (dgv.Tag == null && dgv.Rows.Count > 0)
+                {
+                    // Find row size based on content and apply factor
+                    dgv.AutoResizeRows();
+                    dgv.RowTemplate.Height = (int)(dgv.Rows[0].Height * factor);
+                    dgv.Tag = true;
+                }
+            }
+            else
+            {
+                // Take over the height from predecessor menu
+                dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().RowTemplate.Height;
+                dgv.Tag = true;
+            }
+
+            // Patch size of each row
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                row.Height = dgv.RowTemplate.Height;
+            }
+
+            DataTable data = (DataTable)dgv.DataSource;
+            if (string.IsNullOrEmpty(data.DefaultView.RowFilter))
+            {
+                int dgvHeight = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None); // Height of all rows
+                int dgvHeightMax = screenHeightMax - (Height - dgv.Height); // except dgv
+                if (dgvHeight > dgvHeightMax)
+                {
+                    // Make all rows fit into the screen
+                    dgvHeight = dgvHeightMax;
+                }
+
+                dgv.Height = dgvHeight;
+            }
         }
 
         private void AdjustDataGridViewWidth()
