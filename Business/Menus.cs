@@ -859,34 +859,46 @@ namespace SystemTrayMenu.Business
 
         private void AdjustMenusSizeAndLocation()
         {
-            Menu menuPredecessor = menus[0];
+            Menu menuPredecessor = null;
             int widthPredecessors = -1; // -1 padding
             bool directionToRight = false;
+            List<Menu> list = AsList;
+            Menu menu;
 
-            menus[0].AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight);
-
-            foreach (Menu menu in AsEnumerable.Where(m => m.Level > 0))
+            for (int i = 0; i < list.Count; i++)
             {
-                int newWith = menu.Width - menu.Padding.Horizontal + menuPredecessor.Width;
-                if (directionToRight)
+                menu = list[i];
+
+                // skip calculation based on the predecessor for the very first menu
+                if (menuPredecessor != null)
                 {
-                    if (widthPredecessors - menus[0].Width - menu.Width < 0)
+                    int newWidth = menu.Width - menu.Padding.Horizontal + menuPredecessor.Width;
+                    if (directionToRight)
                     {
-                        directionToRight = false;
+                        if (widthPredecessors - menus[0].Width - menu.Width < 0)
+                        {
+                            directionToRight = false;
+                        }
+                        else
+                        {
+                            widthPredecessors -= newWidth;
+                        }
                     }
-                    else
+                    else if (screenWidth < widthPredecessors + menus[0].Width + menu.Width)
                     {
-                        widthPredecessors -= newWith;
+                        directionToRight = true;
+                        widthPredecessors -= newWidth;
                     }
-                }
-                else if (screenWidth < widthPredecessors + menus[0].Width + menu.Width)
-                {
-                    directionToRight = true;
-                    widthPredecessors -= newWith;
+
+                    widthPredecessors += menu.Width - menu.Padding.Left;
                 }
 
-                menu.AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight, menuPredecessor, directionToRight);
-                widthPredecessors += menu.Width - menu.Padding.Left;
+                // only last one has to be updated as all previous one were already updated in the past
+                if (list.Count - 1 == i)
+                {
+                    menu.AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight, menuPredecessor, directionToRight);
+                }
+
                 menuPredecessor = menu;
             }
         }
