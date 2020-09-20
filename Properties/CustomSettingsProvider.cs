@@ -155,6 +155,24 @@ namespace SystemTrayMenu.Properties
         }
 
         /// <summary>
+        /// Creates an empty user.config file...looks like the one MS creates.
+        /// This could be overkill a simple key/value pairing would probably do.
+        /// </summary>
+        private static void CreateEmptyConfig()
+        {
+            var doc = new XDocument();
+            var declaration = new XDeclaration("1.0", "utf-8", "true");
+            var config = new XElement(Config);
+            var userSettings = new XElement(UserSettings);
+            var group = new XElement(typeof(Properties.Settings).FullName);
+            userSettings.Add(group);
+            config.Add(userSettings);
+            doc.Add(config);
+            doc.Declaration = declaration;
+            doc.Save(UserConfigPath);
+        }
+
+        /// <summary>
         /// Loads the values of the file into memory.
         /// </summary>
         private void LoadValuesFromFile()
@@ -183,24 +201,6 @@ namespace SystemTrayMenu.Properties
                 };
                 SettingsDictionary.Add(element.Attribute(NameOf).Value, newSetting);
             }
-        }
-
-        /// <summary>
-        /// Creates an empty user.config file...looks like the one MS creates.
-        /// This could be overkill a simple key/value pairing would probably do.
-        /// </summary>
-        private void CreateEmptyConfig()
-        {
-            var doc = new XDocument();
-            var declaration = new XDeclaration("1.0", "utf-8", "true");
-            var config = new XElement(Config);
-            var userSettings = new XElement(UserSettings);
-            var group = new XElement(typeof(Properties.Settings).FullName);
-            userSettings.Add(group);
-            config.Add(userSettings);
-            doc.Add(config);
-            doc.Declaration = declaration;
-            doc.Save(UserConfigPath);
         }
 
         /// <summary>
