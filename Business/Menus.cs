@@ -862,6 +862,7 @@ namespace SystemTrayMenu.Business
             bool directionToRight;
             Menu menu;
             Rectangle screenBounds = Screen.PrimaryScreen.Bounds;
+            Menu.StartLocation startLocation;
 
             // Only apply taskbar position change when no menu is currently open
             if (list.Count == 1)
@@ -875,22 +876,27 @@ namespace SystemTrayMenu.Business
                 case TaskbarPosition.Left:
                     screenBounds.X += taskbar.Size.Width;
                     screenBounds.Width -= taskbar.Size.Width;
+                    startLocation = Menu.StartLocation.BottomLeft;
+                    directionToRight = true;
                     break;
                 case TaskbarPosition.Right:
                     screenBounds.Width -= taskbar.Size.Width;
+                    startLocation = Menu.StartLocation.BottomRight;
+                    directionToRight = false;
                     break;
                 case TaskbarPosition.Top:
                     screenBounds.Y += taskbar.Size.Height;
                     screenBounds.Height -= taskbar.Size.Height;
+                    startLocation = Menu.StartLocation.TopRight;
+                    directionToRight = false;
                     break;
                 case TaskbarPosition.Bottom:
                 default:
                     screenBounds.Height -= taskbar.Size.Height;
+                    startLocation = Menu.StartLocation.BottomRight;
+                    directionToRight = false;
                     break;
             }
-
-            // For all taskbars at Bottom/Right/Top, go left
-            directionToRight = taskbarPosition == TaskbarPosition.Left ? true : false;
 
             for (int i = 0; i < list.Count; i++)
             {
@@ -923,7 +929,7 @@ namespace SystemTrayMenu.Business
                 // Only last one has to be updated as all previous one were already updated in the past
                 if (list.Count - 1 == i)
                 {
-                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, directionToRight);
+                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, directionToRight, startLocation);
                 }
 
                 if (i == 0)

@@ -149,6 +149,14 @@ namespace SystemTrayMenu.UserInterface
             MaxReached,
         }
 
+        internal enum StartLocation
+        {
+            Predecessor,
+            BottomLeft,
+            BottomRight,
+            TopRight,
+        }
+
         internal int Level { get; set; } = 0;
 
         internal bool IsUsable => Visible && !fading.IsHiding &&
@@ -281,8 +289,21 @@ namespace SystemTrayMenu.UserInterface
         internal void AdjustSizeAndLocation(
             Rectangle bounds,
             Menu menuPredecessor,
-            bool directionToRight)
+            bool directionToRight,
+            StartLocation startLocation)
         {
+            if (menuPredecessor != null)
+            {
+                // Sanity check: Use location from predecessor
+                startLocation = StartLocation.Predecessor;
+            }
+            else if (startLocation == StartLocation.Predecessor)
+            {
+                // Sanity check: Use specific start location on bad start location combination
+                startLocation = StartLocation.BottomRight;
+            }
+
+            // Update the height to fit in all rows
             CheckForAutoResizeRowDone();
             void CheckForAutoResizeRowDone()
             {
@@ -296,99 +317,115 @@ namespace SystemTrayMenu.UserInterface
                 {
                     if (dgv.Tag == null && dgv.Rows.Count > 0)
                     {
+                        // Find row size based on content and apply factor
                         dgv.AutoResizeRows();
                         dgv.RowTemplate.Height = (int)(dgv.Rows[0].Height * factor);
-                        foreach (DataGridViewRow row in dgv.Rows)
-                        {
-                            row.Height = dgv.RowTemplate.Height;
-                        }
-
                         dgv.Tag = true;
                     }
                 }
                 else
                 {
+                    // Take over the height from predecessor menu
                     dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().RowTemplate.Height;
-                    foreach (DataGridViewRow row in dgv.Rows)
-                    {
-                        row.Height = dgv.RowTemplate.Height;
-                    }
-
                     dgv.Tag = true;
+                }
+
+                // Patch size of each row
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    row.Height = dgv.RowTemplate.Height;
                 }
             }
 
-            int dgvHeightNeeded = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
-            int menuRestNeeded = Height - dgv.Height;
-
+            int menuRestNeeded = Height - dgv.Height; // Height of menu except all the rows
             int dgvHeightMax = bounds.Height - menuRestNeeded;
-
-            if (dgvHeightNeeded > dgvHeightMax)
-            {
-                dgvHeightNeeded = dgvHeightMax;
-            }
 
             DataTable data = (DataTable)dgv.DataSource;
             if (string.IsNullOrEmpty(data.DefaultView.RowFilter))
             {
-                dgv.Height = dgvHeightNeeded;
+                int dgvHeight = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None); // Height of all rows
+                if (dgvHeight > dgvHeightMax)
+                {
+                    // Make all rows fit into the screen
+                    dgvHeight = dgvHeightMax;
+                }
+
+                dgv.Height = dgvHeight;
             }
 
+            // Update the width to fit in all entries
             AdjustDataGridViewWidth();
 
+            // Calculate X position
             int x;
-            if (menuPredecessor == null)
+            switch (startLocation)
             {
-                x = bounds.Width - Width;
-            }
-            else
-            {
-                if (directionToRight)
-                {
-                    x = menuPredecessor.Location.X +
-                        menuPredecessor.Width -
-                        (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
-                }
-                else
-                {
-                    x = menuPredecessor.Location.X -
-                        Width +
-                        (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
-                }
+                case StartLocation.Predecessor:
+                    if (directionToRight)
+                    {
+                        x = menuPredecessor.Location.X +
+                            menuPredecessor.Width -
+                            (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
+                    }
+                    else
+                    {
+                        x = menuPredecessor.Location.X -
+                            Width +
+                            (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
+                    }
+
+                    // Sanity check: change direction when out of bounds
+                    if (x < bounds.X)
+                    {
+                        x += menuPredecessor.Width;
+                        x += Width;
+                    }
+
+                    break;
+                case StartLocation.BottomLeft:
+                    x = bounds.X;
+                    break;
+                case StartLocation.TopRight:
+                case StartLocation.BottomRight:
+                default:
+                    x = bounds.Width - Width;
+                    break;
             }
 
-            if (x < 0)
-            {
-                x += menuPredecessor.Width;
-                x += Width;
-            }
-
+            // Calculate Y position
             int y;
-            if (menuPredecessor == null)
+            switch (startLocation)
             {
-                y = bounds.Height - Height;
-            }
-            else
-            {
-                RowData trigger = (RowData)Tag;
-                DataGridView dgv = menuPredecessor.GetDataGridView();
-                int distanceFromItemToDgvTop = 0;
-                if (dgv.Rows.Count > trigger.RowIndex)
-                {
-                    Rectangle cellRectangle = dgv.GetCellDisplayRectangle(
-                        0, trigger.RowIndex, false);
-                    distanceFromItemToDgvTop = cellRectangle.Top;
-                }
+                case StartLocation.Predecessor:
+                    RowData trigger = (RowData)Tag;
+                    DataGridView dgv = menuPredecessor.GetDataGridView();
+                    int distanceFromItemToDgvTop = 0;
+                    if (dgv.Rows.Count > trigger.RowIndex)
+                    {
+                        Rectangle cellRectangle = dgv.GetCellDisplayRectangle(0, trigger.RowIndex, false);
+                        distanceFromItemToDgvTop = cellRectangle.Top;
+                    }
 
-                y = menuPredecessor.Location.Y +
-                    menuPredecessor.dgv.Location.Y +
-                    distanceFromItemToDgvTop;
-                if ((y + Height - tableLayoutPanelSearch.Height) > dgvHeightMax)
-                {
-                    y = dgvHeightMax - Height + menuRestNeeded;
-                }
+                    y = menuPredecessor.Location.Y +
+                        menuPredecessor.dgv.Location.Y +
+                        distanceFromItemToDgvTop;
+                    if ((y + Height - tableLayoutPanelSearch.Height) > dgvHeightMax)
+                    {
+                        y = dgvHeightMax - Height + menuRestNeeded;
+                    }
+
+                    break;
+                case StartLocation.TopRight:
+                    y = bounds.Y;
+                    break;
+                case StartLocation.BottomLeft:
+                case StartLocation.BottomRight:
+                default:
+                    y = bounds.Height - Height;
+                    break;
             }
 
+            // Update position
             Location = new Point(x, y);
         }
 
