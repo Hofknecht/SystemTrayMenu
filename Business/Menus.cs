@@ -27,11 +27,6 @@ namespace SystemTrayMenu.Business
         private readonly BackgroundWorker workerMainMenu = new BackgroundWorker();
         private readonly List<BackgroundWorker> workersSubMenu = new List<BackgroundWorker>();
 
-        private readonly int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-        private readonly int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-        private readonly int screenRight = Screen.PrimaryScreen.Bounds.Right;
-        private readonly int taskbarHeight = new WindowsTaskbar().Size.Height;
-
         private readonly DgvMouseRow dgvMouseRow = new DgvMouseRow();
         private readonly WaitToLoadMenu waitToOpenMenu = new WaitToLoadMenu();
         private readonly KeyboardInput keyboardInput = null;
@@ -41,6 +36,7 @@ namespace SystemTrayMenu.Business
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private RowData loadingRowData = null;
         private bool showingMessageBox = false;
+        private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
 
         public Menus()
         {
@@ -513,7 +509,7 @@ namespace SystemTrayMenu.Business
             menus[0] = Create(
                 GetData(workerMainMenu, Config.Path, 0),
                 Path.GetFileName(Config.Path));
-            menus[0].AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight);
+            AdjustMenusSizeAndLocation();
             DisposeMenu(menus[0]);
         }
 
@@ -859,23 +855,54 @@ namespace SystemTrayMenu.Business
 
         private void AdjustMenusSizeAndLocation()
         {
+            WindowsTaskbar taskbar = new WindowsTaskbar();
             Menu menuPredecessor = null;
             int widthPredecessors = -1; // -1 padding
-            bool directionToRight = false;
             List<Menu> list = AsList;
+            bool directionToRight;
             Menu menu;
+            Rectangle screenBounds = Screen.PrimaryScreen.Bounds;
+
+            // Only apply taskbar position change when no menu is currently open
+            if (list.Count == 1)
+            {
+                taskbarPosition = taskbar.Position;
+            }
+
+            // Shrink the usable space depending on taskbar location
+            switch (taskbarPosition)
+            {
+                case TaskbarPosition.Left:
+                    screenBounds.X += taskbar.Size.Width;
+                    screenBounds.Width -= taskbar.Size.Width;
+                    break;
+                case TaskbarPosition.Right:
+                    screenBounds.Width -= taskbar.Size.Width;
+                    break;
+                case TaskbarPosition.Top:
+                    screenBounds.Y += taskbar.Size.Height;
+                    screenBounds.Height -= taskbar.Size.Height;
+                    break;
+                case TaskbarPosition.Bottom:
+                default:
+                    screenBounds.Height -= taskbar.Size.Height;
+                    break;
+            }
+
+            // For all taskbars at Bottom/Right/Top, go left
+            directionToRight = taskbarPosition == TaskbarPosition.Left ? true : false;
 
             for (int i = 0; i < list.Count; i++)
             {
                 menu = list[i];
 
-                // skip calculation based on the predecessor for the very first menu
+                // Skip calculation based on the predecessor for the very first menu
                 if (menuPredecessor != null)
                 {
                     int newWidth = menu.Width - menu.Padding.Horizontal + menuPredecessor.Width;
                     if (directionToRight)
                     {
-                        if (widthPredecessors - menus[0].Width - menu.Width < 0)
+                        if (widthPredecessors - menu.Width < 0)
                         {
                             directionToRight = false;
                         }
@@ -884,7 +911,7 @@ namespace SystemTrayMenu.Business
                             widthPredecessors -= newWidth;
                         }
                     }
-                    else if (screenWidth < widthPredecessors + menus[0].Width + menu.Width)
+                    else if (screenBounds.Width < widthPredecessors + menu.Width)
                     {
                         directionToRight = true;
                         widthPredecessors -= newWidth;
@@ -893,10 +920,16 @@ namespace SystemTrayMenu.Business
                     widthPredecessors += menu.Width - menu.Padding.Left;
                 }
 
-                // only last one has to be updated as all previous one were already updated in the past
+                // Only last one has to be updated as all previous one were already updated in the past
                 if (list.Count - 1 == i)
                 {
-                    menu.AdjustSizeAndLocation(screenHeight, screenRight, taskbarHeight, menuPredecessor, directionToRight);
+                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, directionToRight);
+                }
+
+                if (i == 0)
+                {
+                    // Remember width of the initial menu as we don't want to overlap with it
+                    screenBounds.Width -= menu.Width - menu.Padding.Horizontal;
                 }
 
                 menuPredecessor = menu;

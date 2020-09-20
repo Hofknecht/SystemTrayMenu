@@ -279,11 +279,9 @@ namespace SystemTrayMenu.UserInterface
         }
 
         internal void AdjustSizeAndLocation(
-            int screenHeight,
-            int screenRight,
-            int taskbarHeight,
-            Menu menuPredecessor = null,
-            bool directionToRight = false)
+            Rectangle bounds,
+            Menu menuPredecessor,
+            bool directionToRight)
         {
             CheckForAutoResizeRowDone();
             void CheckForAutoResizeRowDone()
@@ -310,8 +308,7 @@ namespace SystemTrayMenu.UserInterface
                 }
                 else
                 {
-                    dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().
-                        RowTemplate.Height;
+                    dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().RowTemplate.Height;
                     foreach (DataGridViewRow row in dgv.Rows)
                     {
                         row.Height = dgv.RowTemplate.Height;
@@ -321,12 +318,10 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            int dgvHeightNeeded = dgv.Rows.GetRowsHeight(
-                DataGridViewElementStates.None);
+            int dgvHeightNeeded = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
             int menuRestNeeded = Height - dgv.Height;
 
-            int dgvHeightMax = screenHeight - taskbarHeight -
-                menuRestNeeded;
+            int dgvHeightMax = bounds.Height - menuRestNeeded;
 
             if (dgvHeightNeeded > dgvHeightMax)
             {
@@ -344,7 +339,7 @@ namespace SystemTrayMenu.UserInterface
             int x;
             if (menuPredecessor == null)
             {
-                x = screenRight - Width;
+                x = bounds.Width - Width;
             }
             else
             {
@@ -371,7 +366,7 @@ namespace SystemTrayMenu.UserInterface
             int y;
             if (menuPredecessor == null)
             {
-                y = screenHeight - taskbarHeight - Height;
+                y = bounds.Height - Height;
             }
             else
             {
