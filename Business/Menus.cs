@@ -857,9 +857,7 @@ namespace SystemTrayMenu.Business
         {
             WindowsTaskbar taskbar = new WindowsTaskbar();
             Menu menuPredecessor = null;
-            int widthPredecessors = -1; // -1 padding
             List<Menu> list = AsList;
-            bool directionToRight;
             Menu menu;
             Rectangle screenBounds = Screen.PrimaryScreen.Bounds;
             Menu.StartLocation startLocation;
@@ -877,24 +875,20 @@ namespace SystemTrayMenu.Business
                     screenBounds.X += taskbar.Size.Width;
                     screenBounds.Width -= taskbar.Size.Width;
                     startLocation = Menu.StartLocation.BottomLeft;
-                    directionToRight = true;
                     break;
                 case TaskbarPosition.Right:
                     screenBounds.Width -= taskbar.Size.Width;
                     startLocation = Menu.StartLocation.BottomRight;
-                    directionToRight = false;
                     break;
                 case TaskbarPosition.Top:
                     screenBounds.Y += taskbar.Size.Height;
                     screenBounds.Height -= taskbar.Size.Height;
                     startLocation = Menu.StartLocation.TopRight;
-                    directionToRight = false;
                     break;
                 case TaskbarPosition.Bottom:
                 default:
                     screenBounds.Height -= taskbar.Size.Height;
                     startLocation = Menu.StartLocation.BottomRight;
-                    directionToRight = false;
                     break;
             }
 
@@ -902,40 +896,23 @@ namespace SystemTrayMenu.Business
             {
                 menu = list[i];
 
-                // Skip calculation based on the predecessor for the very first menu
-                if (menuPredecessor != null)
-                {
-                    int newWidth = menu.Width - menu.Padding.Horizontal + menuPredecessor.Width;
-                    if (directionToRight)
-                    {
-                        if (widthPredecessors - menu.Width < 0)
-                        {
-                            directionToRight = false;
-                        }
-                        else
-                        {
-                            widthPredecessors -= newWidth;
-                        }
-                    }
-                    else if (screenBounds.Width < widthPredecessors + menu.Width)
-                    {
-                        directionToRight = true;
-                        widthPredecessors -= newWidth;
-                    }
-
-                    widthPredecessors += menu.Width - menu.Padding.Left;
-                }
-
                 // Only last one has to be updated as all previous one were already updated in the past
                 if (list.Count - 1 == i)
                 {
-                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, directionToRight, startLocation);
+                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation);
                 }
 
                 if (i == 0)
                 {
+                    const int overlapTolerance = 4;
+
                     // Remember width of the initial menu as we don't want to overlap with it
-                    screenBounds.Width -= menu.Width - menu.Padding.Horizontal;
+                    if (taskbarPosition == TaskbarPosition.Left)
+                    {
+                        screenBounds.X += menu.Width - overlapTolerance;
+                    }
+
+                    screenBounds.Width -= menu.Width - overlapTolerance;
                 }
 
                 menuPredecessor = menu;

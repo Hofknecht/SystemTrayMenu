@@ -20,6 +20,7 @@ namespace SystemTrayMenu.UserInterface
     {
         private readonly Fading fading = new Fading();
         private bool isShowing = false;
+        private bool directionToRight = false;
 
         internal Menu()
         {
@@ -289,18 +290,12 @@ namespace SystemTrayMenu.UserInterface
         internal void AdjustSizeAndLocation(
             Rectangle bounds,
             Menu menuPredecessor,
-            bool directionToRight,
             StartLocation startLocation)
         {
             if (menuPredecessor != null)
             {
-                // Sanity check: Use location from predecessor
+                // Ignore start as we use predecessor
                 startLocation = StartLocation.Predecessor;
-            }
-            else if (startLocation == StartLocation.Predecessor)
-            {
-                // Sanity check: Use specific start location on bad start location combination
-                startLocation = StartLocation.BottomRight;
             }
 
             // Update the height to fit in all rows
@@ -361,34 +356,41 @@ namespace SystemTrayMenu.UserInterface
             switch (startLocation)
             {
                 case StartLocation.Predecessor:
+                    int scaling = (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
+                    directionToRight = menuPredecessor.directionToRight; // try keeping same direction
                     if (directionToRight)
                     {
-                        x = menuPredecessor.Location.X +
-                            menuPredecessor.Width -
-                            (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
+                        x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
+
+                        // Change direction when out of bounds
+                        if (bounds.X + bounds.Width <= x + Width - scaling)
+                        {
+                            x = menuPredecessor.Location.X - Width + scaling;
+                            directionToRight = !directionToRight;
+                        }
                     }
                     else
                     {
-                        x = menuPredecessor.Location.X -
-                            Width +
-                            (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
-                    }
+                        x = menuPredecessor.Location.X - Width + scaling;
 
-                    // Sanity check: change direction when out of bounds
-                    if (x < bounds.X)
-                    {
-                        x += menuPredecessor.Width;
-                        x += Width;
+                        // Change direction when out of bounds
+                        if (x < bounds.X)
+                        {
+                            x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
+                            directionToRight = !directionToRight;
+                        }
                     }
 
                     break;
                 case StartLocation.BottomLeft:
                     x = bounds.X;
+                    directionToRight = true;
                     break;
                 case StartLocation.TopRight:
                 case StartLocation.BottomRight:
                 default:
                     x = bounds.Width - Width;
+                    directionToRight = false;
                     break;
             }
 
@@ -400,18 +402,21 @@ namespace SystemTrayMenu.UserInterface
                     RowData trigger = (RowData)Tag;
                     DataGridView dgv = menuPredecessor.GetDataGridView();
                     int distanceFromItemToDgvTop = 0;
+
+                    // Get offset of selected row from predecessor
                     if (dgv.Rows.Count > trigger.RowIndex)
                     {
                         Rectangle cellRectangle = dgv.GetCellDisplayRectangle(0, trigger.RowIndex, false);
                         distanceFromItemToDgvTop = cellRectangle.Top;
                     }
 
-                    y = menuPredecessor.Location.Y +
-                        menuPredecessor.dgv.Location.Y +
-                        distanceFromItemToDgvTop;
-                    if ((y + Height - tableLayoutPanelSearch.Height) > dgvHeightMax)
+                    // Set position on same height as the selected row from predecessor
+                    y = menuPredecessor.Location.Y + menuPredecessor.dgv.Location.Y + distanceFromItemToDgvTop;
+
+                    // Move vertically when out of bounds
+                    if (bounds.Height < y + Height)
                     {
-                        y = dgvHeightMax - Height + menuRestNeeded;
+                        y = bounds.Y + bounds.Height - Height;
                     }
 
                     break;
