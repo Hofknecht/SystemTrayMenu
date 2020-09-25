@@ -94,14 +94,14 @@ namespace SystemTrayMenu.Helper
                     AppMoreInfo = versionInfo.LegalCopyright,
                 };
                 ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "Markus Hofknecht (mailto:Markus@Hofknecht.eu)";
-                ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "Tanja Kauth (mailto:Tanja@Hofknecht.eu)";
-                ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/";
-                ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "https://github.com/Hofknecht/SystemTrayMenu";
-                ab.AppMoreInfo += Environment.NewLine;
+                ab.AppMoreInfo += "Markus Hofknecht (mailto:Markus@Hofknecht.eu)" + Environment.NewLine;
+                ab.AppMoreInfo += "Tanja Kauth (mailto:Tanja@Hofknecht.eu)" + Environment.NewLine;
+
+                // Thanks for letting me being part of this project and that I am allowed to be listed here :-)
+                ab.AppMoreInfo += "Peter Kirmeier (mai" + "lto:top" + "ete" + "rk@f" + "reen" + "et." + "de)" + Environment.NewLine;
+
+                ab.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/" + Environment.NewLine;
+                ab.AppMoreInfo += "https://github.com/Hofknecht/SystemTrayMenu" + Environment.NewLine;
                 ab.AppMoreInfo += Environment.NewLine;
                 ab.AppMoreInfo += "GNU GENERAL PUBLIC LICENSE" + Environment.NewLine;
                 ab.AppMoreInfo += "(Version 3, 29 June 2007)" + Environment.NewLine;
