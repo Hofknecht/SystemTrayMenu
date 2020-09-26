@@ -28,8 +28,8 @@ namespace SystemTrayMenu.Utilities
         {
             if (!infos.Contains(message))
             {
-                LogValue.Info(message);
                 infos.Add(message);
+                LogValue.Info(message);
             }
         }
 
@@ -38,8 +38,8 @@ namespace SystemTrayMenu.Utilities
             string warning = $"{message} {ex.ToString().Replace(Environment.NewLine, " ", StringComparison.InvariantCulture)}";
             if (!warnings.Contains(warning))
             {
-                LogValue.Warn(warning);
                 warnings.Add(warning);
+                LogValue.Warn(warning);
             }
         }
 
