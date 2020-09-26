@@ -315,11 +315,8 @@ namespace SystemTrayMenu.Business
                                         string directory = Path.Combine(
                                                       networkLocationRootPath,
                                                       line.Substring(0, indexOfFirstSpace));
-                                        if (Directory.Exists(directory))
-                                        {
-                                            directories.Add(directory);
-                                            resolvedSomething = true;
-                                        }
+                                        directories.Add(directory);
+                                        resolvedSomething = true;
                                     }
                                 }
                             }
