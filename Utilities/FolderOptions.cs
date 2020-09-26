@@ -62,15 +62,26 @@ namespace SystemTrayMenu.Utilities
             bool isDirectoryToHide = false;
             if (path.Length < 260)
             {
-                FileAttributes attributes = File.GetAttributes(path);
-                hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
-                bool systemEntry = attributes.HasFlag(
-                    FileAttributes.Hidden | FileAttributes.System);
-                if ((hideHiddenEntries && hiddenEntry) ||
-                    (hideSystemEntries && systemEntry))
+                try
                 {
-                    isDirectoryToHide = true;
+                    FileAttributes attributes = File.GetAttributes(path);
+                    hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
+                    bool systemEntry = attributes.HasFlag(
+                        FileAttributes.Hidden | FileAttributes.System);
+                    if ((hideHiddenEntries && hiddenEntry) ||
+                        (hideSystemEntries && systemEntry))
+                    {
+                        isDirectoryToHide = true;
+                    }
                 }
+                catch (UnauthorizedAccessException ex)
+                {
+                    Log.Warn($"path:'{path}'", ex);
+                }
+            }
+            else
+            {
+                Log.Info($"path too long (>=260):'{path}'");
             }
 
             return isDirectoryToHide;

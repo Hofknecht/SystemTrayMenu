@@ -284,44 +284,49 @@ namespace SystemTrayMenu.Business
                         static string[] GetDirectoriesInNetworkLocation(string networkLocationRootPath)
                         {
                             List<string> directories = new List<string>();
-                            try
+                            Process cmd = new Process();
+                            cmd.StartInfo.FileName = "cmd.exe";
+                            cmd.StartInfo.RedirectStandardInput = true;
+                            cmd.StartInfo.RedirectStandardOutput = true;
+                            cmd.StartInfo.CreateNoWindow = true;
+                            cmd.StartInfo.UseShellExecute = false;
+                            cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                            cmd.Start();
+                            cmd.StandardInput.WriteLine($"net view {networkLocationRootPath}");
+                            cmd.StandardInput.Flush();
+                            cmd.StandardInput.Close();
+
+                            string output = cmd.StandardOutput.ReadToEnd();
+
+                            cmd.WaitForExit();
+                            cmd.Close();
+
+                            bool resolvedSomething = false;
+
+                            List<string> lines = output
+                                .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                            if (lines.Count > 8)
                             {
-                                Process cmd = new Process();
-                                cmd.StartInfo.FileName = "cmd.exe";
-                                cmd.StartInfo.RedirectStandardInput = true;
-                                cmd.StartInfo.RedirectStandardOutput = true;
-                                cmd.StartInfo.CreateNoWindow = true;
-                                cmd.StartInfo.UseShellExecute = false;
-                                cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                                cmd.Start();
-                                cmd.StandardInput.WriteLine($"net view {networkLocationRootPath}");
-                                cmd.StandardInput.Flush();
-                                cmd.StandardInput.Close();
-
-                                string output = cmd.StandardOutput.ReadToEnd();
-
-                                cmd.WaitForExit();
-                                cmd.Close();
-
-                                output = output.Substring(output.LastIndexOf('-') + 2);
-                                output = output.Substring(0, output.IndexOf("The command completed successfully.", StringComparison.InvariantCulture));
-
-                                foreach (string line in output
-                                        .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
+                                foreach (string line in lines.Skip(6).SkipLast(2))
                                 {
-                                    int indexOfSecondColumnTypeDisk = line.IndexOf("Disk", StringComparison.InvariantCulture);
-                                    if (indexOfSecondColumnTypeDisk > 0)
+                                    int indexOfFirstSpace = line.IndexOf(" ", StringComparison.InvariantCulture);
+                                    if (indexOfFirstSpace > 0)
                                     {
                                         string directory = Path.Combine(
-                                               networkLocationRootPath,
-                                               line.Substring(0, indexOfSecondColumnTypeDisk));
-                                        directories.Add(directory);
+                                                      networkLocationRootPath,
+                                                      line.Substring(0, indexOfFirstSpace));
+                                        if (Directory.Exists(directory))
+                                        {
+                                            directories.Add(directory);
+                                            resolvedSomething = true;
+                                        }
                                     }
                                 }
                             }
-                            catch (ArgumentOutOfRangeException ex)
+
+                            if (!resolvedSomething)
                             {
-                                Log.Warn($"Could not resolve network root folder: {networkLocationRootPath}", ex);
+                                Log.Info($"Could not resolve network root folder: {networkLocationRootPath} , output:{output}");
                             }
 
                             return directories.ToArray();

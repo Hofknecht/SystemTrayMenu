@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.IO;
@@ -15,6 +16,8 @@ namespace SystemTrayMenu.Utilities
     internal static class Log
     {
         private static readonly Logger LogValue = new Logger(string.Empty);
+        private static List<string> warnings = new List<string>();
+        private static List<string> infos = new List<string>();
 
         internal static void Initialize()
         {
@@ -23,12 +26,21 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Info(string message)
         {
-            LogValue.Info(message);
+            if (!infos.Contains(message))
+            {
+                LogValue.Info(message);
+                infos.Add(message);
+            }
         }
 
         internal static void Warn(string message, Exception ex)
         {
-            LogValue.Warn($"{message}{Environment.NewLine}{ex}");
+            string warning = $"{message} {ex.ToString().Replace(Environment.NewLine, " ", StringComparison.InvariantCulture)}";
+            if (!warnings.Contains(warning))
+            {
+                LogValue.Warn(warning);
+                warnings.Add(warning);
+            }
         }
 
         internal static void Error(string message, Exception ex)
