@@ -371,7 +371,7 @@ namespace SystemTrayMenu.UserInterface
                     y = menuPredecessor.Location.Y + menuPredecessor.dgv.Location.Y + distanceFromItemToDgvTop;
 
                     // Move vertically when out of bounds
-                    if (bounds.Height < y + Height)
+                    if (bounds.Y + bounds.Height < y + Height)
                     {
                         y = bounds.Y + bounds.Height - Height;
                     }
