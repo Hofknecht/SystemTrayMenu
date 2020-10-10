@@ -37,7 +37,7 @@ namespace SystemTrayMenu.DllImports
            uint cbFileInfo,
            uint uFlags);
 
-        [StructLayout(LayoutKind.Sequential)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         internal struct SHFILEINFO
         {
             public const int NAMESIZE = 80;
