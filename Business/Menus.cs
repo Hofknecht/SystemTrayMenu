@@ -37,6 +37,7 @@ namespace SystemTrayMenu.Business
         private RowData loadingRowData = null;
         private bool showingMessageBox = false;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
+        private bool searchTextChanging = false;
 
         public Menus()
         {
@@ -484,25 +485,28 @@ namespace SystemTrayMenu.Business
                 menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
                 menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
                 menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
-                DataGridView dgv = menuToDispose.GetDataGridView();
-                dgv.CellMouseEnter -= dgvMouseRow.CellMouseEnter;
-                dgv.CellMouseLeave -= dgvMouseRow.CellMouseLeave;
-                dgv.MouseLeave -= dgvMouseRow.MouseLeave;
-                dgv.MouseMove -= waitToOpenMenu.MouseMove;
-                dgv.MouseDown -= Dgv_MouseDown;
-                dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
-                dgv.SelectionChanged -= Dgv_SelectionChanged;
-                dgv.RowPostPaint -= Dgv_RowPostPaint;
-                dgv.ClearSelection();
-
-                foreach (DataGridViewRow row in dgv.Rows)
+                DataGridView dgv = menuToDispose?.GetDataGridView();
+                if (dgv != null)
                 {
-                    RowData rowData = (RowData)row.Cells[2].Value;
-                    rowData.Dispose();
-                    DisposeMenu(rowData.SubMenu);
+                    dgv.CellMouseEnter -= dgvMouseRow.CellMouseEnter;
+                    dgv.CellMouseLeave -= dgvMouseRow.CellMouseLeave;
+                    dgv.MouseLeave -= dgvMouseRow.MouseLeave;
+                    dgv.MouseMove -= waitToOpenMenu.MouseMove;
+                    dgv.MouseDown -= Dgv_MouseDown;
+                    dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
+                    dgv.SelectionChanged -= Dgv_SelectionChanged;
+                    dgv.RowPostPaint -= Dgv_RowPostPaint;
+                    dgv.ClearSelection();
+
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        RowData rowData = (RowData)row.Cells[2].Value;
+                        rowData?.Dispose();
+                        DisposeMenu(rowData.SubMenu);
+                    }
                 }
 
-                menuToDispose.Dispose();
+                menuToDispose?.Dispose();
             }
         }
 
@@ -613,7 +617,7 @@ namespace SystemTrayMenu.Business
             menu.MouseEnter += waitLeave.Stop;
             menu.KeyPress += keyboardInput.KeyPress;
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
-            menu.SearchTextChanging += keyboardInput.SearchTextChanging;
+            menu.SearchTextChanging += Menu_SearchTextChanging;
             menu.SearchTextChanged += Menu_SearchTextChanged;
             menu.Deactivate += Deactivate;
             void Deactivate(object sender, EventArgs e)
@@ -719,6 +723,7 @@ namespace SystemTrayMenu.Business
 
         private void RefreshSelection(DataGridView dgv)
         {
+            dgv.SelectionChanged -= Dgv_SelectionChanged;
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
@@ -752,7 +757,12 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            dgv.Refresh();
+            dgv.SelectionChanged += Dgv_SelectionChanged;
+
+            if (!searchTextChanging)
+            {
+                dgv.Refresh();
+            }
         }
 
         private void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -921,10 +931,17 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        private void Menu_SearchTextChanging()
+        {
+            searchTextChanging = true;
+            keyboardInput.SearchTextChanging();
+        }
+
         private void Menu_SearchTextChanged(object sender, EventArgs e)
         {
             keyboardInput.SearchTextChanged(sender, e);
             AdjustMenusSizeAndLocation();
+            searchTextChanging = false;
         }
     }
 }
