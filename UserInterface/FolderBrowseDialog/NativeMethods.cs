@@ -127,7 +127,8 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             uint Compare([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi, [In] uint hint, out int piOrder);
         }
 
-        [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         internal static extern int SHCreateItemFromParsingName(
             [MarshalAs(UnmanagedType.LPWStr)] string pszPath,
             IntPtr pbc,

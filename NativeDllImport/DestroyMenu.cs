@@ -19,6 +19,7 @@ namespace SystemTrayMenu.DllImports
 
         // The DestroyMenu function destroys the specified menu and frees any memory that the menu occupies.
         [DllImport("user32", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern bool DestroyMenu(IntPtr hMenu);
     }
 }

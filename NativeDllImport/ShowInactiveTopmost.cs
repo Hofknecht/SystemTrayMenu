@@ -32,7 +32,8 @@ namespace SystemTrayMenu.DllImports
             }
         }
 
-        [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
+        [DllImport("user32.dll", EntryPoint = "SetWindowPos", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern bool SetWindowPos(
              int hWnd,             // Window handle
              int hWndInsertAfter,  // Placement-order handle

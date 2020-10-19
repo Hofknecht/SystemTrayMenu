@@ -17,7 +17,8 @@ namespace SystemTrayMenu.DllImports
             _ = DestroyIcon(hIcon);
         }
 
-        [DllImport("User32.dll")]
+        [DllImport("User32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern int DestroyIcon(IntPtr hIcon);
     }
 }

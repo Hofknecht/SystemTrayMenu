@@ -18,7 +18,8 @@ namespace SystemTrayMenu.DllImports
             return SHGetFolderPath(hwndOwner, nFolder, hToken, dwFlags, lpszPath);
         }
 
-        [DllImport("shfolder.dll", CharSet = CharSet.Unicode)]
+        [DllImport("shfolder.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern int SHGetFolderPath(IntPtr hwndOwner, int nFolder, IntPtr hToken, int dwFlags, StringBuilder lpszPath);
     }
 }

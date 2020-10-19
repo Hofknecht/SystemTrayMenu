@@ -1122,7 +1122,7 @@ namespace SystemTrayMenu.Utilities
             return oParentFolder;
         }
 
-        [StructLayout(LayoutKind.Sequential)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct CWPSTRUCT
         {
             public IntPtr Lparam;
@@ -1133,6 +1133,7 @@ namespace SystemTrayMenu.Utilities
 
         // Contains extended information about a shortcut menu command
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+
         private struct CMINVOKECOMMANDINFOEX
         {
             public int CbSize;
@@ -1160,6 +1161,7 @@ namespace SystemTrayMenu.Utilities
 
         // Contains information about a menu item
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+
         private struct MENUITEMINFO
         {
             private readonly int cbSize;
@@ -1195,7 +1197,7 @@ namespace SystemTrayMenu.Utilities
 
         // A generalized global memory handle used for data transfer operations by the
         // IAdviseSink, IDataObject, and IOleCache interfaces
-        [StructLayout(LayoutKind.Sequential)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct STGMEDIUM
         {
             public TYMED Tymed;
@@ -1211,6 +1213,7 @@ namespace SystemTrayMenu.Utilities
 
         // Defines the x- and y-coordinates of a point
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+
         private struct POINT
         {
             public int X;

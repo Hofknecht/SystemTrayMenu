@@ -40,10 +40,11 @@ namespace SystemTrayMenu.DllImports
             return SHAppBarMessage(dwMessage, ref pData);
         }
 
-        [DllImport("shell32.dll", SetLastError = true)]
+        [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
 
-        [StructLayout(LayoutKind.Sequential)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         internal struct APPBARDATA
         {
             public uint cbSize;
@@ -54,7 +55,7 @@ namespace SystemTrayMenu.DllImports
             public int lParam;
         }
 
-        [StructLayout(LayoutKind.Sequential)]
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         internal struct RECT
         {
             public int left;

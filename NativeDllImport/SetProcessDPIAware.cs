@@ -16,7 +16,8 @@ namespace SystemTrayMenu.DllImports
             _ = SetProcessDPIAware();
         }
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern bool SetProcessDPIAware();
     }
 }

@@ -33,18 +33,22 @@ namespace SystemTrayMenu.DllImports
             return GetKeyNameText(lParam, lpString, nSize);
         }
 
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         [return: MarshalAs(UnmanagedType.Bool)]
+
         private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint virtualKeyCode);
 
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         [return: MarshalAs(UnmanagedType.Bool)]
+
         private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern uint MapVirtualKey(uint uCode, uint uMapType);
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern int GetKeyNameText(uint lParam, [Out] StringBuilder lpString, int nSize);
     }
 }

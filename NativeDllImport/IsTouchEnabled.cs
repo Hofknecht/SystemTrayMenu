@@ -19,7 +19,8 @@ namespace SystemTrayMenu.DllImports
             return maxTouches > 0;
         }
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern int GetSystemMetrics(int nIndex);
     }
 }

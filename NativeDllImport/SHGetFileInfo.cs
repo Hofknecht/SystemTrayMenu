@@ -29,7 +29,8 @@ namespace SystemTrayMenu.DllImports
                 uFlags);
         }
 
-        [DllImport("Shell32.dll", CharSet = CharSet.Unicode)]
+        [DllImport("Shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern IntPtr SHGetFileInfo(
            string pszPath,
            uint dwFileAttributes,
@@ -38,6 +39,7 @@ namespace SystemTrayMenu.DllImports
            uint uFlags);
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+
         internal struct SHFILEINFO
         {
             public const int NAMESIZE = 80;

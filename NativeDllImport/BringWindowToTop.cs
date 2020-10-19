@@ -41,22 +41,28 @@ namespace SystemTrayMenu.DllImports
             }
         }
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern bool IsIconic(IntPtr hWnd);
 
-        [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern IntPtr GetForegroundWindow();
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr ProcessId);
 
-        [DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern uint GetCurrentThreadId();
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern bool AttachThreadInput(uint idAttach, uint idAttachTo, bool fAttach);
 
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern bool BringWindowToTop(IntPtr hWnd);
     }
 }

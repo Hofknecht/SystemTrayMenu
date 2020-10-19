@@ -12,7 +12,8 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
-        [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+                [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
+                private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
     }
 }

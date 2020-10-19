@@ -17,7 +17,8 @@ namespace SystemTrayMenu.DllImports
             _ = FindExecutable(lpFile, lpDirectory, lpResult);
         }
 
-        [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
+        [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern int FindExecutable(string lpFile, string lpDirectory, [Out] StringBuilder lpResult);
     }
 }

@@ -16,7 +16,8 @@ namespace SystemTrayMenu.DllImports
             return StrCmpLogicalW(x, y);
         }
 
-        [DllImport("shlwapi.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
+        [DllImport("shlwapi.dll", ExactSpelling = true, SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern int StrCmpLogicalW(string x, string y);
     }
 }

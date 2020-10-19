@@ -17,7 +17,8 @@ namespace SystemTrayMenu.DllImports
             return GetDeviceCaps(hdc, nIndex);
         }
 
-        [DllImport("gdi32.dll")]
+        [DllImport("gdi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+
         private static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
     }
 }
