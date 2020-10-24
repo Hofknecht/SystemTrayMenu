@@ -20,14 +20,6 @@ namespace SystemTrayMenu.Utilities
         internal static void Initialize()
         {
             CalculateScalingFactor();
-            SetProcessDPIAwareWhenNecessary();
-            static void SetProcessDPIAwareWhenNecessary()
-            {
-                if (Environment.OSVersion.Version.Major >= 6)
-                {
-                    DllImports.NativeMethods.User32SetProcessDPIAware();
-                }
-            }
         }
 
         private static void CalculateScalingFactor()
