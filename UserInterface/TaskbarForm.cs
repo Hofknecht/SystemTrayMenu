@@ -20,12 +20,15 @@ namespace SystemTrayMenu.UserInterface
             SetLocation();
         }
 
+        /// <summary>
+        /// Hide below taskbar.
+        /// </summary>
         private void SetLocation()
         {
             Screen screen = Screen.PrimaryScreen;
             Location = new Point(
                 screen.Bounds.Right - Size.Width,
-                screen.Bounds.Bottom + 80); // Hide below taskbar
+                screen.Bounds.Bottom + 80);
         }
     }
 }

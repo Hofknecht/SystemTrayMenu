@@ -40,8 +40,7 @@ namespace SystemTrayMenu
 
         public static bool LoadOrSetByUser()
         {
-            bool pathOK = Directory.Exists(
-                Properties.Settings.Default.PathDirectory);
+            bool pathOK = Directory.Exists(Path);
 
             if (!pathOK)
             {
