@@ -310,12 +310,12 @@ namespace SystemTrayMenu.Business
                             {
                                 foreach (string line in lines.Skip(6).SkipLast(2))
                                 {
-                                    int indexOfFirstSpace = line.TrimEnd().LastIndexOf(" ", StringComparison.InvariantCulture);
+                                    int indexOfFirstSpace = line.IndexOf("  ", StringComparison.InvariantCulture);
                                     if (indexOfFirstSpace > 0)
                                     {
                                         string directory = Path.Combine(
                                             networkLocationRootPath,
-                                            line.Substring(0, indexOfFirstSpace)).TrimEnd();
+                                            line.Substring(0, indexOfFirstSpace));
 
                                         directories.Add(directory);
                                         resolvedSomething = true;

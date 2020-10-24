@@ -16,8 +16,8 @@ namespace SystemTrayMenu.Utilities
     internal static class Log
     {
         private static readonly Logger LogValue = new Logger(string.Empty);
-        private static List<string> warnings = new List<string>();
-        private static List<string> infos = new List<string>();
+        private static readonly List<string> Warnings = new List<string>();
+        private static readonly List<string> Infos = new List<string>();
 
         internal static void Initialize()
         {
@@ -26,9 +26,9 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Info(string message)
         {
-            if (!infos.Contains(message))
+            if (!Infos.Contains(message))
             {
-                infos.Add(message);
+                Infos.Add(message);
                 LogValue.Info(message);
             }
         }
@@ -36,9 +36,9 @@ namespace SystemTrayMenu.Utilities
         internal static void Warn(string message, Exception ex)
         {
             string warning = $"{message} {ex.ToString().Replace(Environment.NewLine, " ", StringComparison.InvariantCulture)}";
-            if (!warnings.Contains(warning))
+            if (!Warnings.Contains(warning))
             {
-                warnings.Add(warning);
+                Warnings.Add(warning);
                 LogValue.Warn(warning);
             }
         }
