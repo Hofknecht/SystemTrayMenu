@@ -11,7 +11,6 @@ namespace SystemTrayMenu.UserInterface
     using System.Linq;
     using System.Reflection;
     using System.Windows.Forms;
-    using Microsoft.Win32;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Utilities;

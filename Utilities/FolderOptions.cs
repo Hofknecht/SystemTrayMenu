@@ -74,9 +74,17 @@ namespace SystemTrayMenu.Utilities
                         isDirectoryToHide = true;
                     }
                 }
-                catch (UnauthorizedAccessException ex)
+                catch (Exception ex)
                 {
-                    Log.Warn($"path:'{path}'", ex);
+                    if (ex is UnauthorizedAccessException ||
+                        ex is IOException)
+                    {
+                        Log.Warn($"path:'{path}'", ex);
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
             }
             else

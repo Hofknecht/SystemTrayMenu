@@ -36,10 +36,7 @@ namespace SystemTrayMenu.Properties
         /// </summary>
         public override string ApplicationName
         {
-            get
-            {
-                return System.Reflection.Assembly.GetExecutingAssembly().ManifestModule.Name;
-            }
+            get => System.Reflection.Assembly.GetExecutingAssembly().ManifestModule.Name;
 
             set
             {
@@ -51,17 +48,11 @@ namespace SystemTrayMenu.Properties
         /// Gets the setting key this is returning must set before the settings are used.
         /// e.g. <c>Properties.Settings.Default.SettingsKey = @"C:\temp\user.config";</c>.
         /// </summary>
-        private static string UserConfigPath
-        {
-            get
-            {
-                return Path.Combine(
+        private static string UserConfigPath => Path.Combine(
                 Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 $"SystemTrayMenu"),
                 $"user-{Environment.MachineName}.config");
-            }
-        }
 
         /// <summary>
         /// Gets or sets in memory storage of the settings values.
@@ -99,11 +90,13 @@ namespace SystemTrayMenu.Properties
             // itterate thought the properties we get from the designer, checking to see if the setting is in the dictionary
             foreach (SettingsProperty setting in collection)
             {
-                SettingsPropertyValue value = new SettingsPropertyValue(setting);
-                value.IsDirty = false;
+                SettingsPropertyValue value = new SettingsPropertyValue(setting)
+                {
+                    IsDirty = false,
+                };
 
                 // need the type of the value for the strong typing
-                var t = Type.GetType(setting.PropertyType.FullName);
+                Type t = Type.GetType(setting.PropertyType.FullName);
 
                 if (SettingsDictionary.ContainsKey(setting.Name))
                 {
@@ -133,7 +126,7 @@ namespace SystemTrayMenu.Properties
             // grab the values from the collection parameter and update the values in our dictionary.
             foreach (SettingsPropertyValue value in collection)
             {
-                var setting = new SettingStruct()
+                SettingStruct setting = new SettingStruct()
                 {
                     Value = value.PropertyValue == null ? string.Empty : value.PropertyValue.ToString(),
                     Name = value.Name,
@@ -160,11 +153,11 @@ namespace SystemTrayMenu.Properties
         /// </summary>
         private static void CreateEmptyConfig()
         {
-            var doc = new XDocument();
-            var declaration = new XDeclaration("1.0", "utf-8", "true");
-            var config = new XElement(Config);
-            var userSettings = new XElement(UserSettings);
-            var group = new XElement(typeof(Properties.Settings).FullName);
+            XDocument doc = new XDocument();
+            XDeclaration declaration = new XDeclaration("1.0", "utf-8", "true");
+            XElement config = new XElement(Config);
+            XElement userSettings = new XElement(UserSettings);
+            XElement group = new XElement(typeof(Properties.Settings).FullName);
             userSettings.Add(group);
             config.Add(userSettings);
             doc.Add(config);
@@ -184,16 +177,16 @@ namespace SystemTrayMenu.Properties
             }
 
             // load the xml
-            var configXml = XDocument.Load(UserConfigPath);
+            XDocument configXml = XDocument.Load(UserConfigPath);
 
             // get all of the <setting name="..." serializeAs="..."> elements.
-            var settingElements = configXml.Element(Config).Element(UserSettings).Element(typeof(Properties.Settings).FullName).Elements(Setting);
+            IEnumerable<XElement> settingElements = configXml.Element(Config).Element(UserSettings).Element(typeof(Properties.Settings).FullName).Elements(Setting);
 
             // iterate through, adding them to the dictionary, (checking for nulls, xml no likey nulls)
             // using "String" as default serializeAs...just in case, no real good reason.
-            foreach (var element in settingElements)
+            foreach (XElement element in settingElements)
             {
-                var newSetting = new SettingStruct()
+                SettingStruct newSetting = new SettingStruct()
                 {
                     Name = element.Attribute(NameOf) == null ? string.Empty : element.Attribute(NameOf).Value,
                     SerializeAs = element.Attribute(SerializeAs) == null ? "String" : element.Attribute(SerializeAs).Value,
@@ -209,19 +202,19 @@ namespace SystemTrayMenu.Properties
         private void SaveValuesToFile()
         {
             // load the current xml from the file.
-            var import = XDocument.Load(UserConfigPath);
+            XDocument import = XDocument.Load(UserConfigPath);
 
             // get the settings group (e.g. <Company.Project.Desktop.Settings>)
-            var settingsSection = import.Element(Config).Element(UserSettings).Element(typeof(Properties.Settings).FullName);
+            XElement settingsSection = import.Element(Config).Element(UserSettings).Element(typeof(Properties.Settings).FullName);
 
             // iterate though the dictionary, either updating the value or adding the new setting.
-            foreach (var entry in SettingsDictionary)
+            foreach (KeyValuePair<string, SettingStruct> entry in SettingsDictionary)
             {
-                var setting = settingsSection.Elements().FirstOrDefault(e => e.Attribute(NameOf).Value == entry.Key);
+                XElement setting = settingsSection.Elements().FirstOrDefault(e => e.Attribute(NameOf).Value == entry.Key);
                 if (setting == null)
                 {
                     // this can happen if a new setting is added via the .settings designer.
-                    var newSetting = new XElement(Setting);
+                    XElement newSetting = new XElement(Setting);
                     newSetting.Add(new XAttribute(NameOf, entry.Value.Name));
                     newSetting.Add(new XAttribute(SerializeAs, entry.Value.SerializeAs));
                     newSetting.Value = entry.Value.Value ?? string.Empty;
