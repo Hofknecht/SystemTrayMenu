@@ -227,5 +227,6 @@ EXIT 0</PreBuildEvent>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryType></RepositoryType>
     <PackageTags>SystemTrayMenu</PackageTags>
+    <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
   </PropertyGroup>
 </Project>
