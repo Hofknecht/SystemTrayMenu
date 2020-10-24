@@ -198,9 +198,6 @@
   <data name="Expert" xml:space="preserve">
     <value>Expert</value>
   </data>
-  <data name="Hide Taskbar Icon" xml:space="preserve">
-    <value>Hide Taskbar Icon</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Single-click to open an item</value>
   </data>

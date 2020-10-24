@@ -17,7 +17,6 @@ namespace SystemTrayMenu
     {
         private readonly AppNotifyIcon menuNotifyIcon = new AppNotifyIcon();
         private readonly Menus menus = new Menus();
-        private readonly TaskbarForm taskbarForm = null;
 
         public App()
         {
@@ -35,56 +34,13 @@ namespace SystemTrayMenu
 
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
-            if (!Properties.Settings.Default.HideTaskbarForm)
-            {
-                taskbarForm = new TaskbarForm();
-                taskbarForm.Activated += TasbkarItemActivated;
-                void TasbkarItemActivated(object sender, EventArgs e)
-                {
-                    SetStateNormal();
-                    taskbarForm.Activate();
-                    taskbarForm.Focus();
-                    menus.SwitchOpenCloseByTaskbarItem();
-                }
-
-                taskbarForm.Resize += TaskbarForm_Resize;
-                taskbarForm.FormClosed += TaskbarForm_FormClosed;
-                static void TaskbarForm_FormClosed(object sender, FormClosedEventArgs e)
-                {
-                    Application.Exit();
-                }
-
-                taskbarForm.Deactivate += TaskbarForm_Deactivate;
-                void TaskbarForm_Resize(object sender, EventArgs e)
-                {
-                    SetStateNormal();
-                }
-            }
-
-            DllImports.NativeMethods.User32ShowInactiveTopmost(taskbarForm);
         }
 
         public void Dispose()
         {
-            taskbarForm?.Dispose();
+            SystemEvents.DisplaySettingsChanged -= AppRestart.ByDisplaySettings;
             menus.Dispose();
             menuNotifyIcon.Dispose();
-        }
-
-        private void TaskbarForm_Deactivate(object sender, EventArgs e)
-        {
-            SetStateNormal();
-        }
-
-        /// <summary>
-        /// This ensures that next click on taskbaritem works as activate event/click event.
-        /// </summary>
-        private void SetStateNormal()
-        {
-            if (Form.ActiveForm == taskbarForm)
-            {
-                taskbarForm.WindowState = FormWindowState.Normal;
-            }
         }
     }
 }

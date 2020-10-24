@@ -35,7 +35,6 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
                 labelHotkey.Text = Translator.GetText("Hotkey");
                 labelLanguage.Text = Translator.GetText("Language");
-                checkBoxHideTaskbarForm.Text = Translator.GetText("Hide Taskbar Icon");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
                 buttonOk.Text = Translator.GetText("buttonOk");
@@ -80,7 +79,6 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            checkBoxHideTaskbarForm.Checked = Properties.Settings.Default.HideTaskbarForm;
             checkBoxOpenItemWithOneClick.Checked = Properties.Settings.Default.OpenItemWithOneClick;
             checkBoxDarkModeAlwaysOn.Checked = Properties.Settings.Default.IsDarkModeAlwaysOn;
         }
@@ -296,7 +294,6 @@ namespace SystemTrayMenu.UserInterface
 
         private void SetExpertOptions()
         {
-            Properties.Settings.Default.HideTaskbarForm = checkBoxHideTaskbarForm.Checked;
             Properties.Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Properties.Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
         }

@@ -438,12 +438,6 @@ namespace SystemTrayMenu.Business
             return menuData;
         }
 
-        internal void SwitchOpenCloseByTaskbarItem()
-        {
-            SwitchOpenClose(true);
-            timerStillActiveCheck.Start();
-        }
-
         internal void SwitchOpenClose(bool byClick)
         {
             waitToOpenMenu.MouseActive = byClick;
@@ -588,8 +582,7 @@ namespace SystemTrayMenu.Business
 
         private static bool IsActive()
         {
-            return Form.ActiveForm is Menu ||
-                Form.ActiveForm is UserInterface.TaskbarForm;
+            return Form.ActiveForm is Menu;
         }
 
         private static void OpenFolder()

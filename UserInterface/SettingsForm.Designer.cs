@@ -55,7 +55,6 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageExpert = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelExpert = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
-            this.checkBoxHideTaskbarForm = new System.Windows.Forms.CheckBox();
             this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControlExpert.SuspendLayout();
@@ -345,13 +344,11 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelExpert.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelExpert.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelExpert.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanelExpert.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 2);
-            this.tableLayoutPanelExpert.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 1);
-            this.tableLayoutPanelExpert.Controls.Add(this.checkBoxHideTaskbarForm, 0, 0);
+            this.tableLayoutPanelExpert.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 0);
+            this.tableLayoutPanelExpert.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 1);
             this.tableLayoutPanelExpert.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelExpert.Name = "tableLayoutPanelExpert";
-            this.tableLayoutPanelExpert.RowCount = 4;
-            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelExpert.RowCount = 3;
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
@@ -369,18 +366,6 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxOpenItemWithOneClick.TabIndex = 106;
             this.checkBoxOpenItemWithOneClick.Text = "checkBoxOpenItemWithOneClick";
             this.checkBoxOpenItemWithOneClick.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxHideTaskbarForm
-            // 
-            this.checkBoxHideTaskbarForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxHideTaskbarForm.AutoSize = true;
-            this.checkBoxHideTaskbarForm.Location = new System.Drawing.Point(9, 7);
-            this.checkBoxHideTaskbarForm.Margin = new System.Windows.Forms.Padding(9, 7, 9, 0);
-            this.checkBoxHideTaskbarForm.Name = "checkBoxHideTaskbarForm";
-            this.checkBoxHideTaskbarForm.Size = new System.Drawing.Size(185, 17);
-            this.checkBoxHideTaskbarForm.TabIndex = 107;
-            this.checkBoxHideTaskbarForm.Text = "checkBoxShowTaskbarForm";
-            this.checkBoxHideTaskbarForm.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelBottom
             // 
@@ -507,7 +492,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TabPage tabPageExpert;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelExpert;
         private System.Windows.Forms.CheckBox checkBoxOpenItemWithOneClick;
-        private System.Windows.Forms.CheckBox checkBoxHideTaskbarForm;
         private System.Windows.Forms.CheckBox checkBoxDarkModeAlwaysOn;
     }
 }

@@ -92,19 +92,6 @@ namespace SystemTrayMenu.Properties {
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool HideTaskbarForm {
-            get {
-                return ((bool)(this["HideTaskbarForm"]));
-            }
-            set {
-                this["HideTaskbarForm"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool OpenItemWithOneClick {
             get {
                 return ((bool)(this["OpenItemWithOneClick"]));

@@ -205,15 +205,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide Taskbar Icon.
-        /// </summary>
-        internal static string Hide_Taskbar_Icon {
-            get {
-                return ResourceManager.GetString("Hide Taskbar Icon", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Hotkey.
         /// </summary>
         internal static string Hotkey {
