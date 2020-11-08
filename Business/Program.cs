@@ -12,6 +12,8 @@ namespace SystemTrayMenu
 
     internal static class Program
     {
+        private static bool isStartup = true;
+
         [STAThread]
         private static void Main()
         {
@@ -37,6 +39,7 @@ namespace SystemTrayMenu
 
                     using (new App())
                     {
+                        isStartup = false;
                         Log.WriteApplicationRuns();
                         Application.Run();
                     }
@@ -70,7 +73,10 @@ namespace SystemTrayMenu
                         "&body=" + ex.ToString());
                 }
 
-                AppRestart.ByThreadException();
+                if (!isStartup)
+                {
+                    AppRestart.ByThreadException();
+                }
             }
         }
     }
