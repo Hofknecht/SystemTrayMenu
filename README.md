@@ -107,7 +107,7 @@ https://guides.github.com/activities/hello-world/.
 Contributors
 ------------------
 
-Special thanks to our productive contibutors [Tanja Kauth](https://github.com/Tanjalibertatis) and [Peter Kirmeier](https://github.com/topeterk)!
+Special thanks to our productive contibutors [Tanja Kauth](https://github.com/Tanjalibertatis), [Peter Kirmeier](https://github.com/topeterk), [Pascal Aloy](mailto:paloy@wanadoo.fr)!
 
 Donations
 ------------------

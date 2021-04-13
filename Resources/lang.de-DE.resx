@@ -144,9 +144,6 @@
   <data name="Folder inaccessible" xml:space="preserve">
     <value>Ordner unzugänglich</value>
   </data>
-  <data name="German" xml:space="preserve">
-    <value>Deutsch</value>
-  </data>
   <data name="Language" xml:space="preserve">
     <value>Sprache</value>
   </data>

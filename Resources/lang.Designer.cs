@@ -187,15 +187,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deutsch.
-        /// </summary>
-        internal static string German {
-            get {
-                return ResourceManager.GetString("German", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Help / FAQ.
         /// </summary>
         internal static string HelpFAQ {

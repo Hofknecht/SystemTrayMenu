@@ -95,10 +95,12 @@ namespace SystemTrayMenu.Helper
                 };
                 ab.AppMoreInfo += Environment.NewLine;
                 ab.AppMoreInfo += "Markus Hofknecht (mailto:Markus@Hofknecht.eu)" + Environment.NewLine;
-                ab.AppMoreInfo += "Tanja Kauth (mailto:Tanja@Hofknecht.eu)" + Environment.NewLine;
+                ab.AppMoreInfo += "Tanja Hofknecht (mailto:Tanja@Hofknecht.eu)" + Environment.NewLine;
 
                 // Thanks for letting me being part of this project and that I am allowed to be listed here :-)
                 ab.AppMoreInfo += "Peter Kirmeier (mai" + "lto:top" + "ete" + "rk@f" + "reen" + "et." + "de)" + Environment.NewLine;
+
+                ab.AppMoreInfo += "Pascal Aloy (mailto:paloy@wanadoo.fr)" + Environment.NewLine; // #145
 
                 ab.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/" + Environment.NewLine;
                 ab.AppMoreInfo += "https://github.com/Hofknecht/SystemTrayMenu" + Environment.NewLine;
