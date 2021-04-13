@@ -127,8 +127,20 @@ namespace SystemTrayMenu
         private static bool IsDarkModeActive()
         {
             // Check: AppsUseLightTheme (REG_DWORD)
+            bool isDarkModeActive = false;
+            object registryValueAppsUseLightTheme = Registry.GetValue(
+                "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+                "AppsUseLightTheme",
+                1);
+
             // 0 = Dark mode, 1 = Light mode
-            return Registry.GetValue("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", 1).ToString() == "0";
+            if (registryValueAppsUseLightTheme != null && 
+                registryValueAppsUseLightTheme.ToString() == "0")
+            {
+                isDarkModeActive = true;
+            }
+
+            return isDarkModeActive;
         }
     }
 }
