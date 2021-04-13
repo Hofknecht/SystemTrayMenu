@@ -11,6 +11,6 @@ jobs:
     - name: Nuget Restore
       run: nuget restore SystemTrayMenu.sln
     - name: Setup MSBuild.exe
-      uses: warrenbuckley/Setup-MSBuild@v1
+      uses: microsoft/setup-msbuild@v1
     - name: Build with MSBuild
       run: msbuild SystemTrayMenu.sln -p:Configuration=Release
