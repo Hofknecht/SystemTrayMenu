@@ -134,7 +134,7 @@ namespace SystemTrayMenu
                 1);
 
             // 0 = Dark mode, 1 = Light mode
-            if (registryValueAppsUseLightTheme != null && 
+            if (registryValueAppsUseLightTheme != null &&
                 registryValueAppsUseLightTheme.ToString() == "0")
             {
                 isDarkModeActive = true;

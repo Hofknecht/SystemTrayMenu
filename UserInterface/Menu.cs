@@ -580,13 +580,36 @@ namespace SystemTrayMenu.UserInterface
             string filterField = dgv.Columns[1].Name;
             SearchTextChanging?.Invoke();
 
-            data.DefaultView.RowFilter = string.Format(
-                CultureInfo.InvariantCulture,
-                "[{0}] LIKE '%{1}%'",
-                filterField,
-                textBoxSearch.Text);
+            string searchString = textBoxSearch.Text.Trim();
+            string like = string.Empty;
+            string[] splittedParts = searchString.Split(" ");
+            if (splittedParts.Length > 1)
+            {
+                foreach (string splittedPart in splittedParts)
+                {
+                    string and = string.Empty;
+                    if (!string.IsNullOrEmpty(like))
+                    {
+                        and = $" AND [{filterField}]";
+                    }
 
-            if (string.IsNullOrEmpty(textBoxSearch.Text))
+                    like += $"{and} LIKE '%{splittedPart}%'";
+                }
+            }
+            else
+            {
+                like = $"LIKE '%{searchString}%'";
+            }
+
+            try
+            {
+                data.DefaultView.RowFilter = $"[{filterField}] {like}";
+            }
+            catch (EvaluateException)
+            {
+            }
+
+            if (string.IsNullOrEmpty(searchString))
             {
                 data.DefaultView.Sort = string.Empty;
             }
@@ -597,7 +620,7 @@ namespace SystemTrayMenu.UserInterface
                 foreach (DataRow row in data.Rows)
                 {
                     if (row[1].ToString().StartsWith(
-                        textBoxSearch.Text,
+                        searchString,
                         StringComparison.InvariantCultureIgnoreCase))
                     {
                         row[columnSortIndex] = 0;
