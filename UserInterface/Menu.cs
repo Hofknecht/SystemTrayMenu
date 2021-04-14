@@ -585,10 +585,30 @@ namespace SystemTrayMenu.UserInterface
                 "[{0}] LIKE '%{1}%'",
                 filterField,
                 textBoxSearch.Text);
-            foreach (DataGridViewRow row in dgv.Rows)
+
+            if (string.IsNullOrEmpty(textBoxSearch.Text))
             {
-                RowData rowData = (RowData)row.Cells[2].Value;
-                rowData.RowIndex = row.Index;
+                data.DefaultView.Sort = string.Empty;
+            }
+            else
+            {
+                string columnSortIndex = "SortIndex";
+
+                foreach (DataRow row in data.Rows)
+                {
+                    if (row[1].ToString().StartsWith(
+                        textBoxSearch.Text,
+                        StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        row[columnSortIndex] = 0;
+                    }
+                    else
+                    {
+                        row[columnSortIndex] = 1;
+                    }
+                }
+
+                data.DefaultView.Sort = columnSortIndex;
             }
 
             SearchTextChanged.Invoke(this, null);

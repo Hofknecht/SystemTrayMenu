@@ -643,6 +643,7 @@ namespace SystemTrayMenu.Business
                 dataTable.Columns.Add(dgv.Columns[0].Name, typeof(Icon));
                 dataTable.Columns.Add(dgv.Columns[1].Name, typeof(string));
                 dataTable.Columns.Add("data", typeof(RowData));
+                dataTable.Columns.Add("SortIndex");
                 foreach (RowData rowData in data)
                 {
                     rowData.SetData(rowData, dataTable);
