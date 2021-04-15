@@ -68,6 +68,7 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "English", Value = "en" },
                     new Language() { Name = "Deutsch", Value = "de" },
                     new Language() { Name = "Français", Value = "fr" },
+                    new Language() { Name = "Español", Value = "es" },
                 };
                 comboBoxLanguage.DataSource = dataSource;
                 comboBoxLanguage.DisplayMember = "Name";
