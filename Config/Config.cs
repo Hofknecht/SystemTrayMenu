@@ -4,6 +4,7 @@
 
 namespace SystemTrayMenu
 {
+    using System;
     using System.Diagnostics;
     using System.IO;
     using System.Reflection;
@@ -25,16 +26,33 @@ namespace SystemTrayMenu
         {
             if (!Properties.Settings.Default.IsUpgraded)
             {
-                // configs located at "%localappdata%\<AssemblyCompany>\"
                 Properties.Settings.Default.Upgrade();
-
                 Properties.Settings.Default.IsUpgraded = true;
                 Properties.Settings.Default.Save();
 
                 FileVersionInfo versionInfo = FileVersionInfo.
                     GetVersionInfo(Assembly.GetEntryAssembly().Location);
-                Log.Info($"Settings upgraded from " +
-                    $"%localappdata%\\{versionInfo.CompanyName}\\");
+                string upgradedFromPath = $"%localappdata%\\{versionInfo.CompanyName}\\";
+                try
+                {
+                    upgradedFromPath = System.IO.Path.GetFullPath(upgradedFromPath);
+                }
+                catch (Exception ex)
+                {
+                    if (ex is ArgumentException ||
+                        ex is System.Security.SecurityException ||
+                        ex is NotSupportedException ||
+                        ex is PathTooLongException)
+                    {
+                        Log.Warn($"Resolve path {upgradedFromPath} failed", ex);
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                Log.Info($"Settings upgraded from {upgradedFromPath}");
             }
         }
 

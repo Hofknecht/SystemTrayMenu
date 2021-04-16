@@ -188,31 +188,6 @@ namespace SystemTrayMenu.UserInterface
         {
         }
 
-        ///// <summary>
-        ///// Check if OneDrive is blocking hotkeys
-        ///// </summary>
-        ///// <returns>true if onedrive has hotkeys turned on</returns>
-        // private static bool IsOneDriveBlockingHotkey()
-        // {
-        //    if (!Environment.OSVersion.IsWindows10())
-        //    {
-        //        return false;
-        //    }
-        //    var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        //    var oneDriveSettingsPath = Path.Combine(localAppData, @"Microsoft\OneDrive\settings\Personal");
-        //    if (!Directory.Exists(oneDriveSettingsPath))
-        //    {
-        //        return false;
-        //    }
-        //    var oneDriveSettingsFile = Directory.GetFiles(oneDriveSettingsPath, "*_screenshot.dat").FirstOrDefault();
-        //    if (!File.Exists(oneDriveSettingsFile))
-        //    {
-        //        return false;
-        //    }
-        //    var screenshotSetting = File.ReadAllLines(oneDriveSettingsFile).Skip(1).Take(1).First();
-        //    return "2".Equals(screenshotSetting);
-        // }
-
         /// <summary>
         /// Displays a dialog for the user to choose how to handle hotkey registration failures:
         /// retry (allowing to shut down the conflicting application before),
