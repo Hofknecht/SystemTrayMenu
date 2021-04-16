@@ -641,6 +641,12 @@ namespace SystemTrayMenu.UserInterface
                 data.DefaultView.Sort = columnSortIndex;
             }
 
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                RowData rowData = (RowData)row.Cells[2].Value;
+                rowData.RowIndex = row.Index;
+            }
+
             SearchTextChanged.Invoke(this, null);
         }
     }
