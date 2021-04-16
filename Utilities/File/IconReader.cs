@@ -52,8 +52,6 @@ namespace SystemTrayMenu.Utilities
             Icon icon = null;
             string extension = Path.GetExtension(filePath);
 
-            // lock (ReadIcon)
-            // {
             if (IsExtensionWitSameIcon(extension))
             {
                 icon = DictIconCache.GetOrAdd(extension, GetIcon);
@@ -67,7 +65,6 @@ namespace SystemTrayMenu.Utilities
                 icon = GetFileIconSTA(filePath, linkOverlay, size);
             }
 
-            // }
             return icon;
         }
 

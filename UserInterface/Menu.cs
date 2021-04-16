@@ -605,8 +605,17 @@ namespace SystemTrayMenu.UserInterface
             {
                 data.DefaultView.RowFilter = $"[{filterField}] {like}";
             }
-            catch (EvaluateException)
+            catch (Exception ex)
             {
+                if (ex is EvaluateException ||
+                    ex is SyntaxErrorException)
+                {
+                    Log.Warn($"searchString \"{searchString}\" is a invalid", ex);
+                }
+                else
+                {
+                    throw;
+                }
             }
 
             if (string.IsNullOrEmpty(searchString))
