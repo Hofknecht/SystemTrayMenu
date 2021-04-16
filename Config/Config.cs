@@ -15,10 +15,12 @@ namespace SystemTrayMenu
 
     public static class Config
     {
-        public const string Language = "en";
-
         private static bool readDarkModeDone = false;
-        private static bool isDarkModeFromFirstCall = false;
+        private static bool isDarkMode = false;
+        private static bool readHideFileExtdone = false;
+        private static bool isHideFileExtension = false;
+
+        public static bool IsHideFileExtdone => IsHideFileExtension();
 
         public static string Path => Properties.Settings.Default.PathDirectory;
 
@@ -117,18 +119,21 @@ namespace SystemTrayMenu
             }
         }
 
+        /// <summary>
+        /// Read the OS setting whether dark mode is enabled.
+        /// </summary>
+        /// <returns>true = Dark mode; false = Light mode.</returns>
         internal static bool IsDarkMode()
         {
-            bool isDarkMode = false;
-            if (readDarkModeDone)
+            if (!readDarkModeDone)
             {
-                isDarkMode = isDarkModeFromFirstCall;
-            }
-            else
-            {
-                if (Properties.Settings.Default.IsDarkModeAlwaysOn || IsDarkModeActive())
+                // 0 = Dark mode, 1 = Light mode
+                if (Properties.Settings.Default.IsDarkModeAlwaysOn ||
+                    IsRegistryValueThisValue(
+                    @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize",
+                    "AppsUseLightTheme",
+                    "0"))
                 {
-                    isDarkModeFromFirstCall = true;
                     isDarkMode = true;
                 }
 
@@ -139,26 +144,59 @@ namespace SystemTrayMenu
         }
 
         /// <summary>
-        /// Read the OS setting whether dark mode is enabled.
+        /// Read the OS setting whether HideFileExt enabled.
         /// </summary>
         /// <returns>true = Dark mode; false = Light mode.</returns>
-        private static bool IsDarkModeActive()
+        internal static bool IsHideFileExtension()
         {
-            // Check: AppsUseLightTheme (REG_DWORD)
-            bool isDarkModeActive = false;
-            object registryValueAppsUseLightTheme = Registry.GetValue(
-                "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-                "AppsUseLightTheme",
-                1);
-
-            // 0 = Dark mode, 1 = Light mode
-            if (registryValueAppsUseLightTheme != null &&
-                registryValueAppsUseLightTheme.ToString() == "0")
+            if (!readHideFileExtdone)
             {
-                isDarkModeActive = true;
+                // 0 = To show extensions, 1 = To hide extensions
+                if (IsRegistryValueThisValue(
+                    @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced",
+                    "HideFileExt",
+                    "1"))
+                {
+                    isHideFileExtension = true;
+                }
+
+                readHideFileExtdone = true;
             }
 
-            return isDarkModeActive;
+            return isHideFileExtension;
+        }
+
+        private static bool IsRegistryValueThisValue(string keyName, string valueName, string value)
+        {
+            bool isRegistryValueThisValue = false;
+
+            try
+            {
+                object registryHideFileExt = Registry.GetValue(keyName, valueName, 1);
+
+                if (registryHideFileExt == null)
+                {
+                    Log.Info($"Could not read registry keyName:{keyName} valueName:{valueName}");
+                }
+                else if (registryHideFileExt.ToString() == value)
+                {
+                    isRegistryValueThisValue = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is System.Security.SecurityException ||
+                    ex is IOException)
+                {
+                    Log.Warn($"Could not read registry keyName:{keyName} valueName:{valueName}", ex);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return isRegistryValueThisValue;
         }
     }
 }

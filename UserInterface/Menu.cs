@@ -43,9 +43,7 @@ namespace SystemTrayMenu.UserInterface
                         Visible = true;
                         isShowing = false;
                     }
-#pragma warning disable CA1031 // Do not catch general exception types
                     catch (ObjectDisposedException)
-#pragma warning restore CA1031 // Do not catch general exception types
                     {
                         Visible = false;
                         isShowing = false;
