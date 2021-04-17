@@ -19,7 +19,7 @@ namespace SystemTrayMenu.DllImports
 
         // Determines the default menu item on the specified menu
         [DllImport("user32", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern int GetMenuDefaultItem(IntPtr hMenu, bool fByPos, uint gmdiFlags);
     }
 }

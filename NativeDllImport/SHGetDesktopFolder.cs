@@ -19,7 +19,7 @@ namespace SystemTrayMenu.DllImports
 
         // Retrieves the IShellFolder interface for the desktop folder, which is the root of the Shell's namespace.
         [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern int SHGetDesktopFolder(out IntPtr ppshf);
     }
 }

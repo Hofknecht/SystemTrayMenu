@@ -13,7 +13,7 @@ namespace SystemTrayMenu.DllImports
     public static partial class NativeMethods
     {
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
     }
 }

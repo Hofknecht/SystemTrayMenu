@@ -128,7 +128,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
         }
 
         [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         internal static extern int SHCreateItemFromParsingName(
             [MarshalAs(UnmanagedType.LPWStr)] string pszPath,
             IntPtr pbc,

@@ -18,8 +18,8 @@ namespace SystemTrayMenu.UserInterface
     internal partial class Menu : Form
     {
         private readonly Fading fading = new Fading();
-        private bool isShowing = false;
-        private bool directionToRight = false;
+        private bool isShowing;
+        private bool directionToRight;
 
         internal Menu()
         {
@@ -155,7 +155,7 @@ namespace SystemTrayMenu.UserInterface
             TopRight,
         }
 
-        internal int Level { get; set; } = 0;
+        internal int Level { get; set; }
 
         internal bool IsUsable => Visible && !fading.IsHiding &&
             !IsDisposed && !Disposing;

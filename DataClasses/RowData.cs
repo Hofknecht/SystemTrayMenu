@@ -26,9 +26,9 @@ namespace SystemTrayMenu.DataClasses
         private string workingDirectory;
         private string arguments;
         private string text;
-        private Icon icon = null;
+        private Icon icon;
         private bool diposeIcon = true;
-        private bool isDisposed = false;
+        private bool isDisposed;
 
         internal RowData()
         {
@@ -366,7 +366,8 @@ namespace SystemTrayMenu.DataClasses
                 {
                     Log.Warn(
                         $"path:'{TargetFilePath}', " +
-                        $"iconFile:'{iconFile}'", ex);
+                        $"iconFile:'{iconFile}'",
+                        ex);
                 }
                 else
                 {
@@ -404,7 +405,8 @@ namespace SystemTrayMenu.DataClasses
                 {
                     Log.Warn(
                         $"path:'{TargetFilePath}', " +
-                        $"executable:'{executable}'", ex);
+                        $"executable:'{executable}'",
+                        ex);
                 }
                 else
                 {

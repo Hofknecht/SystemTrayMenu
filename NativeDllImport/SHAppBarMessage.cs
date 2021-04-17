@@ -41,7 +41,7 @@ namespace SystemTrayMenu.DllImports
         }
 
         [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]

@@ -30,7 +30,7 @@ namespace SystemTrayMenu.DllImports
         }
 
         [DllImport("Shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern IntPtr SHGetFileInfo(
            string pszPath,
            uint dwFileAttributes,

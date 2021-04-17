@@ -14,12 +14,12 @@ namespace SystemTrayMenu.Handler
     internal class WaitToLoadMenu : IDisposable
     {
         private readonly Timer timerStartLoad = new Timer();
-        private DataGridView dgv = null;
-        private int rowIndex = 0;
-        private DataGridView dgvTmp = null;
-        private int rowIndexTmp = 0;
+        private DataGridView dgv;
+        private int rowIndex;
+        private DataGridView dgvTmp;
+        private int rowIndexTmp;
 
-        private int mouseMoveEvents = 0;
+        private int mouseMoveEvents;
         private DateTime dateTimeLastMouseMoveEvent = DateTime.Now;
         private bool checkForMouseActive = true;
 
@@ -37,7 +37,7 @@ namespace SystemTrayMenu.Handler
 
         internal event Action<DataGridView, int> MouseEnterOk;
 
-        internal bool MouseActive { get; set; } = false;
+        internal bool MouseActive { get; set; }
 
         public void Dispose()
         {

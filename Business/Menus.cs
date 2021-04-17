@@ -29,15 +29,15 @@ namespace SystemTrayMenu.Business
 
         private readonly DgvMouseRow dgvMouseRow = new DgvMouseRow();
         private readonly WaitToLoadMenu waitToOpenMenu = new WaitToLoadMenu();
-        private readonly KeyboardInput keyboardInput = null;
+        private readonly KeyboardInput keyboardInput;
         private readonly Timer timerStillActiveCheck = new Timer();
         private readonly WaitLeave waitLeave = new WaitLeave(MenuDefines.TimeUntilClose);
         private DateTime deactivatedTime = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
-        private RowData loadingRowData = null;
-        private bool showingMessageBox = false;
+        private RowData loadingRowData;
+        private bool showingMessageBox;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
-        private bool searchTextChanging = false;
+        private bool searchTextChanging;
 
         public Menus()
         {
@@ -480,7 +480,7 @@ namespace SystemTrayMenu.Business
                 menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
                 menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
                 menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
-                DataGridView dgv = menuToDispose?.GetDataGridView();
+                DataGridView dgv = menuToDispose.GetDataGridView();
                 if (dgv != null)
                 {
                     dgv.CellMouseEnter -= dgvMouseRow.CellMouseEnter;
@@ -501,7 +501,7 @@ namespace SystemTrayMenu.Business
                     }
                 }
 
-                menuToDispose?.Dispose();
+                menuToDispose.Dispose();
             }
         }
 

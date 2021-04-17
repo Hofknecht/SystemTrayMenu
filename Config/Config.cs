@@ -15,10 +15,10 @@ namespace SystemTrayMenu
 
     public static class Config
     {
-        private static bool readDarkModeDone = false;
-        private static bool isDarkMode = false;
-        private static bool readHideFileExtdone = false;
-        private static bool isHideFileExtension = false;
+        private static bool readDarkModeDone;
+        private static bool isDarkMode;
+        private static bool readHideFileExtdone;
+        private static bool isHideFileExtension;
 
         public static bool IsHideFileExtdone => IsHideFileExtension();
 

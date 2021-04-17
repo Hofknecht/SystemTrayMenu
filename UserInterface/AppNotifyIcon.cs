@@ -19,7 +19,7 @@ namespace SystemTrayMenu.UserInterface
         private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
         private readonly Timer load = new Timer();
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
-        private readonly int indexLoad = 0;
+        private readonly int indexLoad;
         private readonly List<Icon> bitmapsLoading = new List<Icon>()
         {
             R.L010, R.L020, R.L030,
@@ -28,8 +28,8 @@ namespace SystemTrayMenu.UserInterface
         };
 
         private DateTime timeLoadingStart;
-        private bool threadsLoading = false;
-        private int loadCount = 0;
+        private bool threadsLoading;
+        private int loadCount;
 
         public AppNotifyIcon()
         {

@@ -22,8 +22,8 @@ namespace SystemTrayMenu.UserInterface
 
         private readonly Timer timer = new Timer();
         private FadingState state = FadingState.Idle;
-        private double opacity = 0.00;
-        private bool visible = false;
+        private double opacity;
+        private bool visible;
 
         internal Fading()
         {

@@ -18,7 +18,7 @@ namespace SystemTrayMenu.DllImports
         }
 
         [DllImport("User32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern int DestroyIcon(IntPtr hIcon);
     }
 }

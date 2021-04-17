@@ -20,7 +20,7 @@ namespace SystemTrayMenu.DllImports
 
         // Takes a STRRET structure returned by IShellFolder::GetDisplayNameOf, converts it to a string, and places the result in a buffer.
         [DllImport("shlwapi.dll", EntryPoint = "StrRetToBuf", ExactSpelling = false, SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern int StrRetToBuf(IntPtr pstr, IntPtr pidl, StringBuilder pszBuf, int cchBuf);
     }
 }

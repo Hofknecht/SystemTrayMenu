@@ -18,7 +18,7 @@ namespace SystemTrayMenu.UserInterface
     public partial class SettingsForm : Form
     {
         private readonly string newHotKey = string.Empty;
-        private bool inHotkey = false;
+        private bool inHotkey;
 
         public SettingsForm()
         {

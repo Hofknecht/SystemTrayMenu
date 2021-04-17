@@ -12,9 +12,9 @@ namespace SystemTrayMenu.Utilities
 
     internal static class FolderOptions
     {
-        private static bool hideHiddenEntries = false;
-        private static bool hideSystemEntries = false;
-        private static IShellDispatch4 iShellDispatch4 = null;
+        private static bool hideHiddenEntries;
+        private static bool hideSystemEntries;
+        private static IShellDispatch4 iShellDispatch4;
 
         internal static void Initialize()
         {

@@ -18,7 +18,7 @@ namespace SystemTrayMenu.DllImports
         }
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
     }
 }

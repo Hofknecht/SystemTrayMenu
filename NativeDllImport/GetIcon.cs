@@ -41,7 +41,7 @@ namespace SystemTrayMenu.DllImports
         /// <param name="flags">flags.</param>
         /// <returns>IntPtr.</returns>
         [DllImport("comctl32", SetLastError = true, CharSet = CharSet.Unicode)]
-
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         internal static extern IntPtr ImageList_GetIcon(
           IntPtr himl,
           int i,

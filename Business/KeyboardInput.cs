@@ -20,7 +20,7 @@ namespace SystemTrayMenu.Handler
         private readonly KeyboardHook hook = new KeyboardHook();
 
         private int iRowKey = -1;
-        private int iMenuKey = 0;
+        private int iMenuKey;
 
         public KeyboardInput(Menu[] menus)
         {
@@ -39,7 +39,7 @@ namespace SystemTrayMenu.Handler
 
         internal event EventHandlerEmpty Cleared;
 
-        internal bool InUse { get; set; } = false;
+        internal bool InUse { get; set; }
 
         public void Dispose()
         {

@@ -26,9 +26,9 @@ namespace SystemTrayMenu.UserInterface
     /// http://www.forestmoon.com
     /// .
     /// </remarks>
-    public partial class AboutBox : Form
+    internal partial class AboutBox : Form
     {
-        private bool isPainted = false;
+        private bool isPainted;
         private string entryAssemblyName;
         private string callingAssemblyName;
         private string executingAssemblyName;
@@ -814,8 +814,7 @@ namespace SystemTrayMenu.UserInterface
                 int intResult = string.Compare(
                     ((ListViewItem)x).SubItems[intCol].Text,
                     ((ListViewItem)y).SubItems[intCol].Text,
-                    CultureInfo.InvariantCulture,
-                    CompareOptions.None);
+                    StringComparison.Ordinal);
                 if (isAscending)
                 {
                     return intResult;
