@@ -6,7 +6,7 @@ namespace SystemTrayMenu.DllImports
 {
     using System.Runtime.InteropServices;
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public struct SIZE
     {
         public int Cx;
@@ -14,8 +14,8 @@ namespace SystemTrayMenu.DllImports
 
         public SIZE(int cx, int cy)
         {
-            this.Cx = cx;
-            this.Cy = cy;
+            Cx = cx;
+            Cy = cy;
         }
     }
 }

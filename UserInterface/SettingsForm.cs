@@ -11,7 +11,6 @@ namespace SystemTrayMenu.UserInterface
     using System.Text;
     using System.Windows.Forms;
     using Microsoft.Win32;
-    using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.UserInterface.HotkeyTextboxControl.HotkeyControl;
 

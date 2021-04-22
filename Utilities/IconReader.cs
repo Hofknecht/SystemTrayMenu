@@ -4,16 +4,12 @@
 
 namespace SystemTrayMenu.Utilities
 {
-    using System;
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Drawing;
     using System.Drawing.Imaging;
     using System.IO;
-    using System.Runtime.InteropServices;
     using System.Threading.Tasks;
-    using SystemTrayMenu.DllImports;
-    using TAFactory.IconPack;
 
     // from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
     // added ImageList_GetIcon, IconCache, AddIconOverlay

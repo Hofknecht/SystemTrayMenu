@@ -17,7 +17,7 @@ namespace SystemTrayMenu.DllImports
             return DeleteObject(hObject);
         }
 
-        [DllImport("gdi32.dll")]
+        [DllImport("gdi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         private static extern bool DeleteObject(IntPtr hObject);
     }
 }
