@@ -65,7 +65,7 @@ namespace SystemTrayMenu.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Alt+Apps")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+LWin")]
         public string HotKey {
             get {
                 return ((string)(this["HotKey"]));

@@ -388,7 +388,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                     if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
                     {
                         keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
-                        if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
+                        if (keyString.Contains("("))
                         {
                             return "* " + keyString;
                         }
@@ -401,7 +401,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                     if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
                     {
                         keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
-                        if (keyString.IndexOf("(", StringComparison.Ordinal) >= 0)
+                        if (keyString.Contains("("))
                         {
                             return "/ " + keyString;
                         }
@@ -522,13 +522,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
         {
             // No hotkey set
             if (hotkey == Keys.None)
-            {
-                Text = string.Empty;
-                return;
-            }
-
-            // LWin/RWin doesn't work as hotkeys (neither do they work as modifier keys in .NET 2.0)
-            if (hotkey == Keys.LWin || hotkey == Keys.RWin)
             {
                 Text = string.Empty;
                 return;

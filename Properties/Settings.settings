@@ -12,12 +12,9 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="HotKey" Provider="CustomSettingsProvider" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Ctrl+Alt+Apps</Value>
+      <Value Profile="(Default)">Ctrl+LWin</Value>
     </Setting>
     <Setting Name="IsUpgraded" Provider="CustomSettingsProvider" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="HideTaskbarForm" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="OpenItemWithOneClick" Type="System.Boolean" Scope="User">
