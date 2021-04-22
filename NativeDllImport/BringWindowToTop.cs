@@ -51,7 +51,7 @@ namespace SystemTrayMenu.DllImports
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
-        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr ProcessId);
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr processId);
 
         [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]

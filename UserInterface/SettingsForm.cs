@@ -127,11 +127,11 @@ namespace SystemTrayMenu.UserInterface
         /// <returns>bool success.</returns>
         private static bool RegisterHotkey(StringBuilder failedKeys, string hotkeyString, HotKeyHandler handler)
         {
-            Keys modifierKeyCode = HotkeyControl.HotkeyModifiersFromString(hotkeyString);
-            Keys virtualKeyCode = HotkeyControl.HotkeyFromString(hotkeyString);
+            Keys modifierKeyCode = HotkeyModifiersFromString(hotkeyString);
+            Keys virtualKeyCode = HotkeyFromString(hotkeyString);
             if (!Keys.None.Equals(virtualKeyCode))
             {
-                if (HotkeyControl.RegisterHotKey(modifierKeyCode, virtualKeyCode, handler) < 0)
+                if (RegisterHotKey(modifierKeyCode, virtualKeyCode, handler) < 0)
                 {
                     if (failedKeys.Length > 0)
                     {
@@ -205,13 +205,13 @@ namespace SystemTrayMenu.UserInterface
             if (dr == DialogResult.Retry)
             {
                 // LOG.DebugFormat("Re-trying to register hotkeys");
-                HotkeyControl.UnregisterHotkeys();
+                UnregisterHotkeys();
                 success = RegisterHotkeys(false);
             }
             else if (dr == DialogResult.Ignore)
             {
                 // LOG.DebugFormat("Ignoring failed hotkey registration");
-                HotkeyControl.UnregisterHotkeys();
+                UnregisterHotkeys();
                 success = RegisterHotkeys(true);
             }
 
@@ -290,7 +290,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void TextBoxHotkeyEnter(object sender, EventArgs e)
         {
-            HotkeyControl.UnregisterHotkeys();
+            UnregisterHotkeys();
             inHotkey = true;
         }
 

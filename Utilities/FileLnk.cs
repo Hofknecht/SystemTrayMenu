@@ -52,7 +52,7 @@ namespace SystemTrayMenu.Utilities
 
         public static bool IsNetworkRoot(string path)
         {
-            return !System.IO.File.Exists(path) &&
+            return !File.Exists(path) &&
                 path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
                 !path.Substring(2).Contains(@"\", StringComparison.InvariantCulture);
         }

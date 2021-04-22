@@ -113,10 +113,7 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (isDirectory)
             {
-                icon = IconReader.GetFolderIconSTA(
-                    TargetFilePath,
-                    IconReader.FolderType.Closed,
-                    false);
+                icon = IconReader.GetFolderIconSTA(TargetFilePath);
             }
             else
             {
@@ -142,18 +139,8 @@ namespace SystemTrayMenu.DataClasses
                 {
                     try
                     {
-                        icon = IconReader.GetFileIconWithCache(TargetFilePath, false);
+                        icon = IconReader.GetFileIconWithCache(TargetFilePath);
                         diposeIcon = false;
-
-                        // other project -> fails sometimes
-                        // icon = IconHelper.ExtractIcon(TargetFilePath, 0);
-
-                        // standard way -> fails sometimes
-                        // icon = Icon.ExtractAssociatedIcon(filePath);
-
-                        // API Code Pack  -> fails sometimes
-                        // ShellFile shellFile = ShellFile.FromFilePath(filePath);
-                        // Bitmap shellThumb = shellFile.Thumbnail.ExtraLargeBitmap;
                     }
                     catch (Exception ex)
                     {
@@ -278,7 +265,7 @@ namespace SystemTrayMenu.DataClasses
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
             if (FileLnk.IsDirectory(resolvedLnkPath))
             {
-                icon = IconReader.GetFolderIconSTA(TargetFilePath, IconReader.FolderType.Open, true);
+                icon = IconReader.GetFolderIconSTA(TargetFilePath);
                 handled = true;
                 isLnkDirectory = true;
             }
@@ -341,7 +328,7 @@ namespace SystemTrayMenu.DataClasses
                     }
                     else
                     {
-                        icon = IconReader.GetFileIconWithCache(browserPath, false);
+                        icon = IconReader.GetFileIconWithCache(browserPath);
                         diposeIcon = false;
                         handled = true;
                     }
