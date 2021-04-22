@@ -24,19 +24,6 @@ namespace SystemTrayMenu.Utilities
     {
         private static readonly ConcurrentDictionary<string, Icon> DictIconCache = new ConcurrentDictionary<string, Icon>();
 
-        // private static readonly object ReadIcon = new object();
-        public enum IconSize
-        {
-            Large = 0, // 32x32 pixels
-            Small = 1, // 16x16 pixels
-        }
-
-        public enum FolderType
-        {
-            Open = 0,
-            Closed = 1,
-        }
-
         public static void Dispose()
         {
             foreach (Icon icon in DictIconCache.Values)
