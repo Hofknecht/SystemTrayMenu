@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Utilities
 {
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
 
     public class FileIni
@@ -13,7 +14,7 @@ namespace SystemTrayMenu.Utilities
 
         public FileIni(string path)
         {
-            values = System.IO.File.ReadLines(path)
+            values = File.ReadLines(path)
             .Where(line => !string.IsNullOrWhiteSpace(line) &&
             !line.StartsWith("#", System.StringComparison.InvariantCulture))
             .Select(line => line.Split(new char[] { '=' }, 2, 0))
