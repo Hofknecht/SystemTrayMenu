@@ -132,6 +132,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+	<Compile Update="Resources\lang.it-IT.Designer.cs">
+      <DependentUpon>lang.it-IT.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Resources\lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +165,10 @@
     <EmbeddedResource Update="Resources\lang.es-ES.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.es-ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+	<EmbeddedResource Update="Resources\lang.it-IT.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.it-IT.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\lang.resx">
       <Generator>ResXFileCodeGenerator</Generator>

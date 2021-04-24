@@ -181,10 +181,10 @@
     <value>Lese das FAQ und wähle anschließend ein root Verzeichniss für die SystemTrayMenu.</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Warnung</value>
   </data>
   <data name="Select Folder" xml:space="preserve">
-    <value>Select Folder</value>
+    <value>Ordner auswählen</value>
   </data>
   <data name="MessageRootFolderEmpty" xml:space="preserve">
     <value>Dein Hauptordner für die SystemTrayMenu existiert nicht oder ist leer! Pack ein paar Dateien, Ordner oder Verknüpfungen in den Hauptordner oder ändere den Hauptordner.</value>
