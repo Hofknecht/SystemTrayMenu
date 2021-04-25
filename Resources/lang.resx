@@ -196,9 +196,51 @@
     <value>Expert</value>
   </data>
   <data name="Single click to start item" xml:space="preserve">
-    <value>Single-click to open an item</value>
+    <value>Single click to open an item</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Dark Mode always active</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="Appear at mouse location" xml:space="preserve">
+    <value>Appear at mouse location</value>
+  </data>
+  <data name="Change Folder" xml:space="preserve">
+    <value>Change Folder</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Click</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Customize</value>
+  </data>
+  <data name="Dark Mode" xml:space="preserve">
+    <value>Dark Mode</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>If the focus is lost and if the mouse is still on the menu</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Milliseconds until a menu opens when the mouse is on it</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Milliseconds until the menu closes if in this case the mouse then leaves the menu</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Pixels maximum menu width</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Size and location</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Stays open</value>
+  </data>
+  <data name="Time to open" xml:space="preserve">
+    <value>Time to open</value>
   </data>
 </root>

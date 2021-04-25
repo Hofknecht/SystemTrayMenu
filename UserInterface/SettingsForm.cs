@@ -23,18 +23,51 @@ namespace SystemTrayMenu.UserInterface
         {
             InitializeComponent();
 
+            // Initialize and replace here here, because designer always removes it
+            InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder();
+            void InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder()
+            {
+                textBoxHotkey = new HotkeyTextboxControl.HotkeyControl();
+                textBoxHotkey.Hotkey = Keys.None;
+                textBoxHotkey.HotkeyModifiers = Keys.None;
+                textBoxHotkey.Name = "textBoxHotkey";
+                textBoxHotkey.Size = new Size(200, 20);
+                textBoxHotkey.Text = "None";
+                textBoxHotkey.Enter += new EventHandler(this.TextBoxHotkeyEnter);
+                textBoxHotkey.Leave += new EventHandler(this.TextBoxHotkey_Leave);
+                tableLayoutPanelHotkey.Controls.Remove(textBoxHotkeyPlaceholder);
+                tableLayoutPanelHotkey.Controls.Add(textBoxHotkey, 0, 0);
+            }
+
+            // designer always resets it to 1
+            this.tabControl.SelectedIndex = 0;
+
             Translate();
             void Translate()
             {
                 Text = Translator.GetText("Settings");
                 tabPageGeneral.Text = Translator.GetText("General");
-                tabPageExpert.Text = Translator.GetText("Expert");
-                labelFolder.Text = Translator.GetText("Folder");
-                labelAutostart.Text = Translator.GetText("Autostart");
+                tabPageAdvanced.Text = Translator.GetText("Advanced");
+                tabPageCustomize.Text = Translator.GetText("Customize");
+                groupBoxFolder.Text = Translator.GetText("Folder");
+                buttonChangeFolder.Text = Translator.GetText("Change Folder");
+                groupBoxAutostart.Text = Translator.GetText("Autostart");
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
-                labelHotkey.Text = Translator.GetText("Hotkey");
-                labelLanguage.Text = Translator.GetText("Language");
+                groupBoxHotkey.Text = Translator.GetText("Hotkey");
+                buttonHotkeyDefault.Text = Translator.GetText("Default");
+                groupBoxLanguage.Text = Translator.GetText("Language");
+                groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
+                groupBoxSizeAndLocation.Text = Translator.GetText("Size and location");
+                checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
+                labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
+                groupBoxStaysOpen.Text = Translator.GetText("Stays open");
+                checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
+                labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if in this case the mouse then leaves the menu");
+                groupBoxOpenSubmenus.Text = Translator.GetText("Time to open");
+                labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
+                buttonAdvancedDefault.Text = Translator.GetText("Default");
+                groupBoxDarkMode.Text = Translator.GetText("Dark Mode");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
                 buttonOk.Text = Translator.GetText("buttonOk");
                 buttonCancel.Text = Translator.GetText("buttonCancel");
@@ -82,6 +115,12 @@ namespace SystemTrayMenu.UserInterface
             }
 
             checkBoxOpenItemWithOneClick.Checked = Properties.Settings.Default.OpenItemWithOneClick;
+            checkBoxAppearAtMouseLocation.Checked = Properties.Settings.Default.AppearAtMouseLocation;
+            textBoxMenuWidth.Text = Properties.Settings.Default.MaximumMenuWidth.ToString();
+            checkBoxStayOpenWhenFocusLost.Checked = Properties.Settings.Default.StaysOpenWhenFocusLost;
+            textBoxTimeUntilCloses.Text = Properties.Settings.Default.TimeUntilCloses.ToString();
+            textBoxTimeUntilOpens.Text = Properties.Settings.Default.TimeUntilOpens.ToString();
+
             checkBoxDarkModeAlwaysOn.Checked = Properties.Settings.Default.IsDarkModeAlwaysOn;
         }
 
@@ -220,59 +259,76 @@ namespace SystemTrayMenu.UserInterface
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            tabControlExpert.Size = new Size(
-                tableLayoutPanelGeneral.Size.Width,
-                tableLayoutPanelGeneral.Size.Height);
+            //tabControl.Size = new Size(
+            //    tabControl.Size.Width,
+            //    //tableLayoutPanelAdvanced.Size.Height);
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
         {
-            SetAutostart();
-            SetHotkey();
-            SetLanguage();
-            SetExpertOptions();
+            SaveAutostart();
+            void SaveAutostart()
+            {
+                if (checkBoxAutostart.Checked)
+                {
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                    key.SetValue(
+                        Assembly.GetExecutingAssembly().GetName().Name,
+                        System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+                    Properties.Settings.Default.IsAutostartActivated = true;
+                }
+                else
+                {
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                    key.DeleteValue("SystemTrayMenu", false);
+                    Properties.Settings.Default.IsAutostartActivated = false;
+                }
+            }
+
+            SaveHotkey();
+            void SaveHotkey()
+            {
+                Properties.Settings.Default.HotKey =
+                    new KeysConverter().ConvertToInvariantString(
+                    textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
+            }
+
+            SaveLanguage();
+            void SaveLanguage()
+            {
+                Properties.Settings.Default.CurrentCultureInfoName =
+                    comboBoxLanguage.SelectedValue.ToString();
+            }
+
+            Properties.Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
+            Properties.Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
+            Properties.Settings.Default.MaximumMenuWidth = int.Parse(textBoxMenuWidth.Text);
+            Properties.Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
+            Properties.Settings.Default.TimeUntilCloses = int.Parse(textBoxTimeUntilCloses.Text);
+            Properties.Settings.Default.TimeUntilOpens = int.Parse(textBoxTimeUntilOpens.Text);
+
+            Properties.Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+
             Properties.Settings.Default.Save();
             DialogResult = DialogResult.OK;
             Close();
         }
 
-        private void SetAutostart()
+        private void ButtonHotkeyDefault_Click(object sender, EventArgs e)
         {
-            if (checkBoxAutostart.Checked)
-            {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.SetValue(
-                    Assembly.GetExecutingAssembly().GetName().Name,
-                    System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-                Properties.Settings.Default.IsAutostartActivated = true;
-            }
-            else
-            {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                    @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.DeleteValue("SystemTrayMenu", false);
-                Properties.Settings.Default.IsAutostartActivated = false;
-            }
+            textBoxHotkey.SetHotkey("Ctrl+LWin");
         }
 
-        private void SetHotkey()
+        private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.HotKey =
-                new KeysConverter().ConvertToInvariantString(
-                textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-        }
-
-        private void SetLanguage()
-        {
-            Properties.Settings.Default.CurrentCultureInfoName =
-                comboBoxLanguage.SelectedValue.ToString();
-        }
-
-        private void SetExpertOptions()
-        {
-            Properties.Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
-            Properties.Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+            checkBoxOpenItemWithOneClick.Checked = true;
+            checkBoxAppearAtMouseLocation.Checked = false;
+            textBoxMenuWidth.Text = "300";
+            checkBoxStayOpenWhenFocusLost.Checked = true;
+            textBoxTimeUntilCloses.Text = "1000";
+            textBoxTimeUntilOpens.Text = "400";
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

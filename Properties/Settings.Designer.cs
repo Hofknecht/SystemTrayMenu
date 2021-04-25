@@ -8,109 +8,214 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SystemTrayMenu.Properties {
-    
-    
+namespace SystemTrayMenu.Properties
+{
+
+
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
-        public static Settings Default {
-            get {
+
+        public static Settings Default
+        {
+            get
+            {
                 return defaultInstance;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string CurrentCultureInfoName {
-            get {
+        public string CurrentCultureInfoName
+        {
+            get
+            {
                 return ((string)(this["CurrentCultureInfoName"]));
             }
-            set {
+            set
+            {
                 this["CurrentCultureInfoName"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string PathDirectory {
-            get {
+        public string PathDirectory
+        {
+            get
+            {
                 return ((string)(this["PathDirectory"]));
             }
-            set {
+            set
+            {
                 this["PathDirectory"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsAutostartActivated {
-            get {
+        public bool IsAutostartActivated
+        {
+            get
+            {
                 return ((bool)(this["IsAutostartActivated"]));
             }
-            set {
+            set
+            {
                 this["IsAutostartActivated"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+LWin")]
-        public string HotKey {
-            get {
+        public string HotKey
+        {
+            get
+            {
                 return ((string)(this["HotKey"]));
             }
-            set {
+            set
+            {
                 this["HotKey"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsUpgraded {
-            get {
+        public bool IsUpgraded
+        {
+            get
+            {
                 return ((bool)(this["IsUpgraded"]));
             }
-            set {
+            set
+            {
                 this["IsUpgraded"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool OpenItemWithOneClick {
-            get {
+        public bool OpenItemWithOneClick
+        {
+            get
+            {
                 return ((bool)(this["OpenItemWithOneClick"]));
             }
-            set {
+            set
+            {
                 this["OpenItemWithOneClick"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsDarkModeAlwaysOn {
-            get {
+        public bool IsDarkModeAlwaysOn
+        {
+            get
+            {
                 return ((bool)(this["IsDarkModeAlwaysOn"]));
             }
-            set {
+            set
+            {
                 this["IsDarkModeAlwaysOn"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AppearAtMouseLocation
+        {
+            get
+            {
+                return ((bool)(this["AppearAtMouseLocation"]));
+            }
+            set
+            {
+                this["AppearAtMouseLocation"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public int MaximumMenuWidth
+        {
+            get
+            {
+                return ((int)(this["MaximumMenuWidth"]));
+            }
+            set
+            {
+                this["MaximumMenuWidth"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool StaysOpenWhenFocusLost
+        {
+            get
+            {
+                return ((bool)(this["StaysOpenWhenFocusLost"]));
+            }
+            set
+            {
+                this["StaysOpenWhenFocusLost"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int TimeUntilCloses
+        {
+            get
+            {
+                return ((int)(this["TimeUntilCloses"]));
+            }
+            set
+            {
+                this["TimeUntilCloses"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        public int TimeUntilOpens
+        {
+            get
+            {
+                return ((int)(this["TimeUntilOpens"]));
+            }
+            set
+            {
+                this["TimeUntilOpens"] = value;
             }
         }
     }

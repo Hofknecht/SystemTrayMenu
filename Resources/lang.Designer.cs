@@ -70,6 +70,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        internal static string Advanced {
+            get {
+                return ResourceManager.GetString("Advanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appear at mouse location.
+        /// </summary>
+        internal static string Appear_at_mouse_location {
+            get {
+                return ResourceManager.GetString("Appear at mouse location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Autostart.
         /// </summary>
         internal static string Autostart {
@@ -115,6 +133,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Folder.
+        /// </summary>
+        internal static string Change_Folder {
+            get {
+                return ResourceManager.GetString("Change Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click.
+        /// </summary>
+        internal static string Click {
+            get {
+                return ResourceManager.GetString("Click", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Couldn’t register the hot key..
         /// </summary>
         internal static string Could_not_register_the_hot_key_ {
@@ -124,11 +160,38 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customize.
+        /// </summary>
+        internal static string Customize {
+            get {
+                return ResourceManager.GetString("Customize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark Mode.
+        /// </summary>
+        internal static string Dark_Mode {
+            get {
+                return ResourceManager.GetString("Dark Mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark Mode always active.
         /// </summary>
         internal static string Dark_Mode_always_active {
             get {
                 return ResourceManager.GetString("Dark Mode always active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string Default {
+            get {
+                return ResourceManager.GetString("Default", resourceCulture);
             }
         }
         
@@ -205,6 +268,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If the focus is lost and if the mouse is still on the menu.
+        /// </summary>
+        internal static string If_the_focus_is_lost_and_if_the_mouse_is_still_on_the_menu {
+            get {
+                return ResourceManager.GetString("If the focus is lost and if the mouse is still on the menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         internal static string Language {
@@ -250,6 +322,34 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Milliseconds until a menu opens when the mouse is on it.
+        /// </summary>
+        internal static string Milliseconds_until_a_menu_opens_when_the_mouse_is_on_it {
+            get {
+                return ResourceManager.GetString("Milliseconds until a menu opens when the mouse is on it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Milliseconds until the menu closes if in this case the mouse then leaves the menu.
+        /// </summary>
+        internal static string Milliseconds_until_the_menu_closes_if_in_this_case_the_mouse_then_leaves_the_menu {
+            get {
+                return ResourceManager.GetString("Milliseconds until the menu closes if in this case the mouse then leaves the menu" +
+                        "", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pixels maximum menu width.
+        /// </summary>
+        internal static string Pixels_maximum_menu_width {
+            get {
+                return ResourceManager.GetString("Pixels maximum menu width", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restart.
         /// </summary>
         internal static string Restart {
@@ -277,11 +377,29 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Single-click to open an item.
+        ///   Looks up a localized string similar to Single click to open an item.
         /// </summary>
         internal static string Single_click_to_start_item {
             get {
                 return ResourceManager.GetString("Single click to start item", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size and location.
+        /// </summary>
+        internal static string Size_and_location {
+            get {
+                return ResourceManager.GetString("Size and location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stays open.
+        /// </summary>
+        internal static string Stays_open {
+            get {
+                return ResourceManager.GetString("Stays open", resourceCulture);
             }
         }
         
@@ -300,6 +418,15 @@ namespace SystemTrayMenu.Resources {
         internal static string TextFirstStart {
             get {
                 return ResourceManager.GetString("TextFirstStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time to open.
+        /// </summary>
+        internal static string Time_to_open {
+            get {
+                return ResourceManager.GetString("Time to open", resourceCulture);
             }
         }
         
