@@ -25,7 +25,7 @@ namespace SystemTrayMenu.Handler
 
         internal WaitToLoadMenu()
         {
-            timerStartLoad.Interval = 200;
+            timerStartLoad.Interval = Properties.Settings.Default.TimeUntilOpens;
             timerStartLoad.Tick += WaitStartLoad_Tick;
         }
 

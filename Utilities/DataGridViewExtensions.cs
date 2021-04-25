@@ -35,9 +35,9 @@ namespace SystemTrayMenu.Utilities
                 }
             }
 
-            if (widthMax > MenuDefines.MaxMenuWidth)
+            if (widthMax > Properties.Settings.Default.MaximumMenuWidth)
             {
-                widthMax = MenuDefines.MaxMenuWidth;
+                widthMax = Properties.Settings.Default.MaximumMenuWidth;
             }
 
             dgv.Columns[i].Width = (int)(widthMax + 0.5);

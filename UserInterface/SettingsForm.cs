@@ -27,12 +27,14 @@ namespace SystemTrayMenu.UserInterface
             InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder();
             void InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder()
             {
-                textBoxHotkey = new HotkeyTextboxControl.HotkeyControl();
-                textBoxHotkey.Hotkey = Keys.None;
-                textBoxHotkey.HotkeyModifiers = Keys.None;
-                textBoxHotkey.Name = "textBoxHotkey";
-                textBoxHotkey.Size = new Size(200, 20);
-                textBoxHotkey.Text = "None";
+                textBoxHotkey = new HotkeyTextboxControl.HotkeyControl
+                {
+                    Hotkey = Keys.None,
+                    HotkeyModifiers = Keys.None,
+                    Name = "textBoxHotkey",
+                    Size = new Size(200, 20),
+                    Text = "None",
+                };
                 textBoxHotkey.Enter += new EventHandler(this.TextBoxHotkeyEnter);
                 textBoxHotkey.Leave += new EventHandler(this.TextBoxHotkey_Leave);
                 tableLayoutPanelHotkey.Controls.Remove(textBoxHotkeyPlaceholder);
@@ -116,10 +118,23 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxOpenItemWithOneClick.Checked = Properties.Settings.Default.OpenItemWithOneClick;
             checkBoxAppearAtMouseLocation.Checked = Properties.Settings.Default.AppearAtMouseLocation;
-            textBoxMenuWidth.Text = Properties.Settings.Default.MaximumMenuWidth.ToString();
+
+            numericUpDownMenuWidth.Minimum = 50;
+            numericUpDownMenuWidth.Maximum = 500;
+            numericUpDownMenuWidth.Increment = 10;
+            numericUpDownMenuWidth.Value = Properties.Settings.Default.MaximumMenuWidth;
+
             checkBoxStayOpenWhenFocusLost.Checked = Properties.Settings.Default.StaysOpenWhenFocusLost;
-            textBoxTimeUntilCloses.Text = Properties.Settings.Default.TimeUntilCloses.ToString();
-            textBoxTimeUntilOpens.Text = Properties.Settings.Default.TimeUntilOpens.ToString();
+
+            numericUpDownTimeUntilClose.Minimum = 200;
+            numericUpDownTimeUntilClose.Maximum = 5000;
+            numericUpDownTimeUntilClose.Increment = 100;
+            numericUpDownTimeUntilClose.Value = Properties.Settings.Default.TimeUntilCloses;
+
+            numericUpDownTimeUntilOpens.Minimum = 20;
+            numericUpDownTimeUntilOpens.Maximum = 1000;
+            numericUpDownTimeUntilOpens.Increment = 10;
+            numericUpDownTimeUntilOpens.Value = Properties.Settings.Default.TimeUntilOpens;
 
             checkBoxDarkModeAlwaysOn.Checked = Properties.Settings.Default.IsDarkModeAlwaysOn;
         }
@@ -257,13 +272,6 @@ namespace SystemTrayMenu.UserInterface
             return success;
         }
 
-        private void SettingsForm_Load(object sender, EventArgs e)
-        {
-            //tabControl.Size = new Size(
-            //    tabControl.Size.Width,
-            //    //tableLayoutPanelAdvanced.Size.Height);
-        }
-
         private void ButtonOk_Click(object sender, EventArgs e)
         {
             SaveAutostart();
@@ -304,10 +312,10 @@ namespace SystemTrayMenu.UserInterface
 
             Properties.Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Properties.Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
-            Properties.Settings.Default.MaximumMenuWidth = int.Parse(textBoxMenuWidth.Text);
+            Properties.Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
             Properties.Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
-            Properties.Settings.Default.TimeUntilCloses = int.Parse(textBoxTimeUntilCloses.Text);
-            Properties.Settings.Default.TimeUntilOpens = int.Parse(textBoxTimeUntilOpens.Text);
+            Properties.Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
+            Properties.Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
 
             Properties.Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
 
@@ -325,10 +333,10 @@ namespace SystemTrayMenu.UserInterface
         {
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxAppearAtMouseLocation.Checked = false;
-            textBoxMenuWidth.Text = "300";
+            numericUpDownMenuWidth.Value = 300;
             checkBoxStayOpenWhenFocusLost.Checked = true;
-            textBoxTimeUntilCloses.Text = "1000";
-            textBoxTimeUntilOpens.Text = "400";
+            numericUpDownTimeUntilClose.Value = 1000;
+            numericUpDownTimeUntilOpens.Value = 200;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

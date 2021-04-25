@@ -31,7 +31,7 @@ namespace SystemTrayMenu.Business
         private readonly WaitToLoadMenu waitToOpenMenu = new WaitToLoadMenu();
         private readonly KeyboardInput keyboardInput;
         private readonly Timer timerStillActiveCheck = new Timer();
-        private readonly WaitLeave waitLeave = new WaitLeave(MenuDefines.TimeUntilClose);
+        private readonly WaitLeave waitLeave = new WaitLeave(Properties.Settings.Default.TimeUntilCloses);
         private DateTime deactivatedTime = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private RowData loadingRowData;

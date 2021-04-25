@@ -62,17 +62,17 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxAppearAtMouseLocation = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMaxMenuWidth = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxMenuWidth = new System.Windows.Forms.TextBox();
+            this.numericUpDownMenuWidth = new System.Windows.Forms.NumericUpDown();
             this.labelMaxMenuWidth = new System.Windows.Forms.Label();
             this.groupBoxStaysOpen = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelStaysOpen = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxStayOpenWhenFocusLost = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelTimeUntilCloses = new System.Windows.Forms.TableLayoutPanel();
             this.labelTimeUntilCloses = new System.Windows.Forms.Label();
-            this.textBoxTimeUntilCloses = new System.Windows.Forms.TextBox();
+            this.numericUpDownTimeUntilClose = new System.Windows.Forms.NumericUpDown();
             this.groupBoxOpenSubmenus = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelTimeUntilOpen = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxTimeUntilOpens = new System.Windows.Forms.TextBox();
+            this.numericUpDownTimeUntilOpens = new System.Windows.Forms.NumericUpDown();
             this.labelTimeUntilOpen = new System.Windows.Forms.Label();
             this.buttonAdvancedDefault = new System.Windows.Forms.Button();
             this.tabPageCustomize = new System.Windows.Forms.TabPage();
@@ -104,11 +104,14 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSizeAndLocation.SuspendLayout();
             this.tableLayoutPanelSizeAndLocation.SuspendLayout();
             this.tableLayoutPanelMaxMenuWidth.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuWidth)).BeginInit();
             this.groupBoxStaysOpen.SuspendLayout();
             this.tableLayoutPanelStaysOpen.SuspendLayout();
             this.tableLayoutPanelTimeUntilCloses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilClose)).BeginInit();
             this.groupBoxOpenSubmenus.SuspendLayout();
             this.tableLayoutPanelTimeUntilOpen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilOpens)).BeginInit();
             this.tabPageCustomize.SuspendLayout();
             this.tableLayoutPanelCustomize.SuspendLayout();
             this.groupBoxDarkMode.SuspendLayout();
@@ -188,7 +191,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl.Controls.Add(this.tabPageCustomize);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
+            this.tabControl.SelectedIndex = 1;
             this.tabControl.Size = new System.Drawing.Size(470, 380);
             this.tabControl.TabIndex = 0;
             // 
@@ -542,6 +545,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.checkBoxAppearAtMouseLocation.AutoSize = true;
             this.checkBoxAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxAppearAtMouseLocation.Enabled = false;
             this.checkBoxAppearAtMouseLocation.Location = new System.Drawing.Point(3, 3);
             this.checkBoxAppearAtMouseLocation.Name = "checkBoxAppearAtMouseLocation";
             this.checkBoxAppearAtMouseLocation.Size = new System.Drawing.Size(438, 19);
@@ -557,7 +561,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMaxMenuWidth.ColumnCount = 2;
             this.tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.textBoxMenuWidth, 0, 0);
+            this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.numericUpDownMenuWidth, 0, 0);
             this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.labelMaxMenuWidth, 1, 0);
             this.tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 25);
             this.tableLayoutPanelMaxMenuWidth.Margin = new System.Windows.Forms.Padding(0);
@@ -567,18 +571,18 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMaxMenuWidth.Size = new System.Drawing.Size(444, 29);
             this.tableLayoutPanelMaxMenuWidth.TabIndex = 0;
             // 
-            // textBoxMenuWidth
+            // numericUpDownMenuWidth
             // 
-            this.textBoxMenuWidth.Location = new System.Drawing.Point(3, 3);
-            this.textBoxMenuWidth.Name = "textBoxMenuWidth";
-            this.textBoxMenuWidth.Size = new System.Drawing.Size(40, 23);
-            this.textBoxMenuWidth.TabIndex = 0;
+            this.numericUpDownMenuWidth.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownMenuWidth.Name = "numericUpDownMenuWidth";
+            this.numericUpDownMenuWidth.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownMenuWidth.TabIndex = 1;
             // 
             // labelMaxMenuWidth
             // 
             this.labelMaxMenuWidth.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelMaxMenuWidth.AutoSize = true;
-            this.labelMaxMenuWidth.Location = new System.Drawing.Point(49, 7);
+            this.labelMaxMenuWidth.Location = new System.Drawing.Point(64, 7);
             this.labelMaxMenuWidth.MaximumSize = new System.Drawing.Size(380, 0);
             this.labelMaxMenuWidth.Name = "labelMaxMenuWidth";
             this.labelMaxMenuWidth.Size = new System.Drawing.Size(118, 15);
@@ -620,7 +624,10 @@ namespace SystemTrayMenu.UserInterface
             // checkBoxStayOpenWhenFocusLost
             // 
             this.checkBoxStayOpenWhenFocusLost.AutoSize = true;
+            this.checkBoxStayOpenWhenFocusLost.Checked = true;
+            this.checkBoxStayOpenWhenFocusLost.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxStayOpenWhenFocusLost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxStayOpenWhenFocusLost.Enabled = false;
             this.checkBoxStayOpenWhenFocusLost.Location = new System.Drawing.Point(3, 3);
             this.checkBoxStayOpenWhenFocusLost.Name = "checkBoxStayOpenWhenFocusLost";
             this.checkBoxStayOpenWhenFocusLost.Size = new System.Drawing.Size(438, 19);
@@ -637,7 +644,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilCloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelTimeUntilCloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.labelTimeUntilCloses, 1, 0);
-            this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.textBoxTimeUntilCloses, 0, 0);
+            this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.numericUpDownTimeUntilClose, 0, 0);
             this.tableLayoutPanelTimeUntilCloses.Location = new System.Drawing.Point(0, 25);
             this.tableLayoutPanelTimeUntilCloses.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelTimeUntilCloses.Name = "tableLayoutPanelTimeUntilCloses";
@@ -650,20 +657,19 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelTimeUntilCloses.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelTimeUntilCloses.AutoSize = true;
-            this.labelTimeUntilCloses.Location = new System.Drawing.Point(49, 7);
+            this.labelTimeUntilCloses.Location = new System.Drawing.Point(64, 7);
             this.labelTimeUntilCloses.MaximumSize = new System.Drawing.Size(380, 0);
             this.labelTimeUntilCloses.Name = "labelTimeUntilCloses";
             this.labelTimeUntilCloses.Size = new System.Drawing.Size(117, 15);
             this.labelTimeUntilCloses.TabIndex = 0;
             this.labelTimeUntilCloses.Text = "labelTimeUntilCloses";
             // 
-            // textBoxTimeUntilCloses
+            // numericUpDownTimeUntilClose
             // 
-            this.textBoxTimeUntilCloses.Location = new System.Drawing.Point(3, 3);
-            this.textBoxTimeUntilCloses.MaxLength = 5;
-            this.textBoxTimeUntilCloses.Name = "textBoxTimeUntilCloses";
-            this.textBoxTimeUntilCloses.Size = new System.Drawing.Size(40, 23);
-            this.textBoxTimeUntilCloses.TabIndex = 0;
+            this.numericUpDownTimeUntilClose.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownTimeUntilClose.Name = "numericUpDownTimeUntilClose";
+            this.numericUpDownTimeUntilClose.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownTimeUntilClose.TabIndex = 1;
             // 
             // groupBoxOpenSubmenus
             // 
@@ -687,7 +693,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilOpen.ColumnCount = 2;
             this.tableLayoutPanelTimeUntilOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelTimeUntilOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTimeUntilOpen.Controls.Add(this.textBoxTimeUntilOpens, 0, 0);
+            this.tableLayoutPanelTimeUntilOpen.Controls.Add(this.numericUpDownTimeUntilOpens, 0, 0);
             this.tableLayoutPanelTimeUntilOpen.Controls.Add(this.labelTimeUntilOpen, 1, 0);
             this.tableLayoutPanelTimeUntilOpen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelTimeUntilOpen.Location = new System.Drawing.Point(3, 19);
@@ -697,18 +703,18 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilOpen.Size = new System.Drawing.Size(444, 29);
             this.tableLayoutPanelTimeUntilOpen.TabIndex = 0;
             // 
-            // textBoxTimeUntilOpens
+            // numericUpDownTimeUntilOpens
             // 
-            this.textBoxTimeUntilOpens.Location = new System.Drawing.Point(3, 3);
-            this.textBoxTimeUntilOpens.Name = "textBoxTimeUntilOpens";
-            this.textBoxTimeUntilOpens.Size = new System.Drawing.Size(40, 23);
-            this.textBoxTimeUntilOpens.TabIndex = 0;
+            this.numericUpDownTimeUntilOpens.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownTimeUntilOpens.Name = "numericUpDownTimeUntilOpens";
+            this.numericUpDownTimeUntilOpens.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownTimeUntilOpens.TabIndex = 2;
             // 
             // labelTimeUntilOpen
             // 
             this.labelTimeUntilOpen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelTimeUntilOpen.AutoSize = true;
-            this.labelTimeUntilOpen.Location = new System.Drawing.Point(49, 7);
+            this.labelTimeUntilOpen.Location = new System.Drawing.Point(64, 7);
             this.labelTimeUntilOpen.MaximumSize = new System.Drawing.Size(380, 0);
             this.labelTimeUntilOpen.Name = "labelTimeUntilOpen";
             this.labelTimeUntilOpen.Size = new System.Drawing.Size(112, 15);
@@ -893,16 +899,19 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation.PerformLayout();
             this.tableLayoutPanelMaxMenuWidth.ResumeLayout(false);
             this.tableLayoutPanelMaxMenuWidth.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuWidth)).EndInit();
             this.groupBoxStaysOpen.ResumeLayout(false);
             this.groupBoxStaysOpen.PerformLayout();
             this.tableLayoutPanelStaysOpen.ResumeLayout(false);
             this.tableLayoutPanelStaysOpen.PerformLayout();
             this.tableLayoutPanelTimeUntilCloses.ResumeLayout(false);
             this.tableLayoutPanelTimeUntilCloses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilClose)).EndInit();
             this.groupBoxOpenSubmenus.ResumeLayout(false);
             this.groupBoxOpenSubmenus.PerformLayout();
             this.tableLayoutPanelTimeUntilOpen.ResumeLayout(false);
             this.tableLayoutPanelTimeUntilOpen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilOpens)).EndInit();
             this.tabPageCustomize.ResumeLayout(false);
             this.tabPageCustomize.PerformLayout();
             this.tableLayoutPanelCustomize.ResumeLayout(false);
@@ -940,9 +949,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TabPage tabPageAdvanced;
         private System.Windows.Forms.Label labelMaxMenuWidth;
         private System.Windows.Forms.Label labelTimeUntilOpen;
-        private System.Windows.Forms.TextBox textBoxTimeUntilCloses;
-        private System.Windows.Forms.TextBox textBoxMenuWidth;
-        private System.Windows.Forms.TextBox textBoxTimeUntilOpens;
         private System.Windows.Forms.CheckBox checkBoxStayOpenWhenFocusLost;
         private System.Windows.Forms.GroupBox groupBoxFolder;
         private System.Windows.Forms.GroupBox groupBoxAutostart;
@@ -976,5 +982,8 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGeneral;
         private System.Windows.Forms.TextBox textBoxHotkeyPlaceholder;
         private System.Windows.Forms.Button buttonAdvancedDefault;
+        private System.Windows.Forms.NumericUpDown numericUpDownTimeUntilClose;
+        private System.Windows.Forms.NumericUpDown numericUpDownMenuWidth;
+        private System.Windows.Forms.NumericUpDown numericUpDownTimeUntilOpens;
     }
 }
