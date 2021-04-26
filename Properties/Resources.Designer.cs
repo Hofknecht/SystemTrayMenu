@@ -263,9 +263,9 @@ namespace SystemTrayMenu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon WhiteTransparency {
+        public static System.Drawing.Icon White50Percentage {
             get {
-                object obj = ResourceManager.GetObject("WhiteTransparency", resourceCulture);
+                object obj = ResourceManager.GetObject("White50Percentage", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

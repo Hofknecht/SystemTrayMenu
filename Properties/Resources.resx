@@ -142,7 +142,7 @@
   <data name="L180" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadingIcon\L180.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WhiteTransparency" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="White50Percentage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\White50Percentage.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="L150" type="System.Resources.ResXFileRef, System.Windows.Forms">

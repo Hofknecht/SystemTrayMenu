@@ -22,7 +22,7 @@ namespace SystemTrayMenu.DataClasses
 
     internal class RowData : IDisposable
     {
-        private static readonly Icon White50PercentageIcon = Properties.Resources.WhiteTransparency;
+        private static readonly Icon White50PercentageIcon = Properties.Resources.White50Percentage;
         private static DateTime contextMenuClosed;
         private string workingDirectory;
         private string arguments;
