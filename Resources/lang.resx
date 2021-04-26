@@ -240,7 +240,7 @@
   <data name="Stays open" xml:space="preserve">
     <value>Stays open</value>
   </data>
-  <data name="Time to open" xml:space="preserve">
-    <value>Time to open</value>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Time until a menu opens</value>
   </data>
 </root>

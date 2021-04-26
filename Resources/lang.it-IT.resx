@@ -163,7 +163,7 @@
     <value>Generale</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>Tasto di scelta rapida</value>
   </data>
   <data name="Launch on startup" xml:space="preserve">
     <value>Lancia all'avvio</value>
@@ -200,5 +200,47 @@
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Modalità oscura sempre attiva</value>
+  </data>
+<data name="Advanced" xml:space="preserve">
+    <value>Avanzate</value>
+  </data>
+  <data name="Appear at mouse location" xml:space="preserve">
+    <value>Appaiono nella posizione del mouse</value>
+  </data>
+  <data name="Change Folder" xml:space="preserve">
+    <value>Cambia cartella</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Clic</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Personalizzare</value>
+  </data>
+  <data name="Dark Mode" xml:space="preserve">
+    <value>Modalità scura</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Predefinito</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Se lo stato attivo viene perso e se il mouse è ancora nel menu</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Millisecondi fino all'apertura di un menu quando il mouse è posizionato su di esso</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisecondi fino alla chiusura del menu, se in questo caso il mouse esce dal menu</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Larghezza massima del menu in pixel</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Dimensioni e posizione</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Rimane aperto</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Tempo fino all'apertura di un menu</value>
   </data>
 </root>

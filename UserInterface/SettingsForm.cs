@@ -66,7 +66,7 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
                 checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
                 labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if in this case the mouse then leaves the menu");
-                groupBoxOpenSubmenus.Text = Translator.GetText("Time to open");
+                groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
                 labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
                 groupBoxDarkMode.Text = Translator.GetText("Dark Mode");

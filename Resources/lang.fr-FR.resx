@@ -148,7 +148,7 @@
     <value>Langue</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>fichier log</value>
+    <value>Fichier log</value>
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Redémarrer</value>
@@ -200,5 +200,47 @@
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Mode sombre toujours actif</value>
+  </data>
+<data name="Advanced" xml:space="preserve">
+    <value>Avancée</value>
+  </data>
+  <data name="Appear at mouse location" xml:space="preserve">
+    <value>Apparaître à l'emplacement de la souris</value>
+  </data>
+  <data name="Change Folder" xml:space="preserve">
+    <value>Changer de dossier</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Clic</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Personnaliser</value>
+  </data>
+  <data name="Dark Mode" xml:space="preserve">
+    <value>Mode sombre</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Défaut</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Si le focus est perdu et si la souris est toujours dans le menu</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Millisecondes jusqu'à ce qu'un menu s'ouvre lorsque la souris est dessus</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisecondes jusqu'à ce que le menu se ferme si dans ce cas la souris quitte alors le menu</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Largeur maximale du menu en pixels</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Taille et emplacement</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Reste ouvert</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Temps jusqu'à ce qu'un menu s'ouvre</value>
   </data>
 </root>

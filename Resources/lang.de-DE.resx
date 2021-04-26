@@ -201,4 +201,46 @@
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Dark Mode immer aktiv</value>
   </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
+  <data name="Appear at mouse location" xml:space="preserve">
+    <value>Erscheint an der Mausposition</value>
+  </data>
+  <data name="Change Folder" xml:space="preserve">
+    <value>Ordner ändern</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Klick</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Anpassen</value>
+  </data>
+  <data name="Dark Mode" xml:space="preserve">
+    <value>Dark Mode</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Wenn der Fokus verloren geht und sich die Maus noch auf dem Menü befindet</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Millisekunden bis ein Menü geöffnet wird, wenn die Maus darauf ist</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisekunden bis das Menü geschlossen wird, wenn in diesem Fall die Maus das Menü verlässt</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Pixel maximale Menübreite</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Größe und Lage</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Bleibt offen</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Zeit bis zum Öffnen eines Menüs</value>
+  </data>
 </root>
