@@ -22,6 +22,7 @@ namespace SystemTrayMenu.DataClasses
 
     internal class RowData : IDisposable
     {
+        private static readonly Icon White50PercentageIcon = Properties.Resources.WhiteTransparency;
         private static DateTime contextMenuClosed;
         private string workingDirectory;
         private string arguments;
@@ -76,14 +77,14 @@ namespace SystemTrayMenu.DataClasses
 
             if (icon == null)
             {
-                icon = Properties.Resources.WhiteTransparency;
+                icon = White50PercentageIcon;
             }
 
             if (HiddenEntry)
             {
                 row[0] = IconReader.AddIconOverlay(
                     data.icon,
-                    Properties.Resources.WhiteTransparency);
+                    White50PercentageIcon);
             }
             else
             {
