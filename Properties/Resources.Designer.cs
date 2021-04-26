@@ -241,32 +241,12 @@ namespace SystemTrayMenu.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap NotSelected {
-            get {
-                object obj = ResourceManager.GetObject("NotSelected", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon search2 {
+        public static System.Drawing.Icon search {
             get {
-                object obj = ResourceManager.GetObject("search2", resourceCulture);
+                object obj = ResourceManager.GetObject("search", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Selected {
-            get {
-                object obj = ResourceManager.GetObject("Selected", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

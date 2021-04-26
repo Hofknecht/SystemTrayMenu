@@ -336,7 +336,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuWidth.Value = 300;
             checkBoxStayOpenWhenFocusLost.Checked = true;
             numericUpDownTimeUntilClose.Value = 1000;
-            numericUpDownTimeUntilOpens.Value = 200;
+            numericUpDownTimeUntilOpens.Value = 100;
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

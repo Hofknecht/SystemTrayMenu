@@ -73,7 +73,7 @@ namespace SystemTrayMenu.UserInterface
             void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
             {
                 e.Graphics.DrawIcon(
-                    Properties.Resources.search2,
+                    Properties.Resources.search,
                     new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
             }
 
