@@ -26,14 +26,12 @@ FAQ
 ------------------
 
 **What do I have to do now as first steps?**  
-  
-SystemTrayMenu is portable so you do not have to install it.  
-We would recommend to put the unzipped SystemTrayMenu folder into a folder like "Portable Tools" in the SystemTrayMenu root directory.  
+
+SystemTrayMenu is portable, so it does not need to be installed. After downloading e.g. SystemTrayMenu-1.0.17.24.zip, **unzip the folder**, then **start SystemTrayMenu.exe**.
+If you prefer an installation there is the possibility to install SystemTrayMenu via the Windows Store.
   
 1. Step: After starting the application the first time you have to **choose the root directory**.  
-C:\Cloudfolder e.g. Seafile, NextCloud or Dropbox\your folder with links e.g. Tools or SystemTrayMenu  
-e.g. C:\Seafile\Tools  
-In this directory you should put shortcuts of folders and files (App, Game, Script, URL, Network),  
+In this directory you should put shortcuts, files and folders (App, Game, Script, URL, Network),  
 which you are often using and especially when you can not find them over the windows start menu search.  
 You can also consider to put there all files from your desktop.  
 
