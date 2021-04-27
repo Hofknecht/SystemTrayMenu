@@ -17,6 +17,7 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu : Form
     {
+        private static readonly Icon Search = Properties.Resources.search;
         private readonly Fading fading = new Fading();
         private bool isShowing;
         private bool directionToRight;
@@ -73,7 +74,7 @@ namespace SystemTrayMenu.UserInterface
             void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
             {
                 e.Graphics.DrawIcon(
-                    Properties.Resources.search,
+                    Search,
                     new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
             }
 
