@@ -545,7 +545,6 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.checkBoxAppearAtMouseLocation.AutoSize = true;
             this.checkBoxAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxAppearAtMouseLocation.Enabled = false;
             this.checkBoxAppearAtMouseLocation.Location = new System.Drawing.Point(3, 3);
             this.checkBoxAppearAtMouseLocation.Name = "checkBoxAppearAtMouseLocation";
             this.checkBoxAppearAtMouseLocation.Size = new System.Drawing.Size(438, 19);

@@ -862,20 +862,26 @@ namespace SystemTrayMenu.Business
 
         private void AdjustMenusSizeAndLocation()
         {
-            WindowsTaskbar taskbar = new WindowsTaskbar();
-            Menu menuPredecessor = null;
-            List<Menu> list = AsList;
-            Menu menu;
-            Rectangle screenBounds = Screen.PrimaryScreen.Bounds;
-            Menu.StartLocation startLocation;
+            Rectangle screenBounds;
+            if (Properties.Settings.Default.AppearAtMouseLocation)
+            {
+                screenBounds = Screen.FromPoint(Cursor.Position).Bounds;
+            }
+            else
+            {
+                screenBounds = Screen.PrimaryScreen.Bounds;
+            }
 
             // Only apply taskbar position change when no menu is currently open
+            List<Menu> list = AsList;
+            WindowsTaskbar taskbar = new WindowsTaskbar();
             if (list.Count == 1)
             {
                 taskbarPosition = taskbar.Position;
             }
 
             // Shrink the usable space depending on taskbar location
+            Menu.StartLocation startLocation;
             switch (taskbarPosition)
             {
                 case TaskbarPosition.Left:
@@ -899,6 +905,8 @@ namespace SystemTrayMenu.Business
                     break;
             }
 
+            Menu menu;
+            Menu menuPredecessor = null;
             for (int i = 0; i < list.Count; i++)
             {
                 menu = list[i];

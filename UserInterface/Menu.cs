@@ -301,6 +301,15 @@ namespace SystemTrayMenu.UserInterface
                 // Ignore start as we use predecessor
                 startLocation = StartLocation.Predecessor;
             }
+            else if (Properties.Settings.Default.AppearAtMouseLocation)
+            {
+                // Use this menu as predecessor and set location of Mouse
+                menuPredecessor = this;
+                Tag = new RowData();
+                Location = new Point(Cursor.Position.X, Cursor.Position.Y - labelTitle.Height);
+                directionToRight = true;
+                startLocation = StartLocation.Predecessor;
+            }
 
             // Update the height and width
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
@@ -347,6 +356,13 @@ namespace SystemTrayMenu.UserInterface
                     x = bounds.Width - Width;
                     directionToRight = false;
                     break;
+            }
+
+            // X position for click, remove width of this menu as it is used as predecessor
+            if (menuPredecessor == this && directionToRight)
+            {
+                x -= Width;
+                directionToRight = false;
             }
 
             // Calculate Y position
