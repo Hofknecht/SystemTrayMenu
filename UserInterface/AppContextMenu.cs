@@ -102,6 +102,7 @@ namespace SystemTrayMenu.Helper
 
                 ab.AppMoreInfo += "French by Pascal Aloy (mailto:paloy@wanadoo.fr)" + Environment.NewLine; // #145
                 ab.AppMoreInfo += "Dutch by HansieNL (https://github.com/HansieNL)" + Environment.NewLine; // #162
+                ab.AppMoreInfo += "Portuguese (Brazil) by igorruckert (https://github.com/igorruckert)" + Environment.NewLine; // #163
 
                 ab.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/" + Environment.NewLine;
                 ab.AppMoreInfo += "https://github.com/Hofknecht/SystemTrayMenu" + Environment.NewLine;
