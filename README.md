@@ -100,6 +100,7 @@ Special thanks to our productive contibutors!
 Thanks for translations!
 * French by [Pascal Aloy](mailto:paloy@wanadoo.fr)
 * Dutch by [HansieNL](https://github.com/HansieNL)
+* Portuguese (Brazil) by [Igor Rückert](https://github.com/igorruckert)
 
 Donations
 ------------------
