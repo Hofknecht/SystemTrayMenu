@@ -146,7 +146,10 @@ namespace SystemTrayMenu.DataClasses
                 {
                     try
                     {
-                        icon = IconReader.GetFileIconWithCache(TargetFilePath, showOverlay, out bool toDispose);
+                        icon = IconReader.GetFileIconWithCache(
+                            TargetFilePath,
+                            showOverlay,
+                            out bool toDispose);
                         diposeIcon = toDispose;
                     }
                     catch (Exception ex)
@@ -170,8 +173,10 @@ namespace SystemTrayMenu.DataClasses
             return isLnkDirectory;
         }
 
-        internal void MouseDown(DataGridView dgv, MouseEventArgs e)
+        internal void MouseDown(DataGridView dgv, MouseEventArgs e, out bool toCloseByDoubleClick)
         {
+            toCloseByDoubleClick = false;
+
             if (e != null &&
                 e.Button == MouseButtons.Right &&
                 FileInfo != null &&
@@ -205,21 +210,26 @@ namespace SystemTrayMenu.DataClasses
 
             if (Properties.Settings.Default.OpenItemWithOneClick)
             {
-                OpenItem(e);
+                OpenItem(e, ref toCloseByDoubleClick);
             }
         }
 
-        internal void DoubleClick(MouseEventArgs e)
+        internal void DoubleClick(MouseEventArgs e, out bool toCloseByDoubleClick)
         {
+            toCloseByDoubleClick = false;
             if (!Properties.Settings.Default.OpenItemWithOneClick)
             {
-                OpenItem(e);
+                OpenItem(e, ref toCloseByDoubleClick);
             }
 
             if (ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
             {
                 Log.ProcessStart(TargetFilePath, null, true);
+                if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
+                {
+                    toCloseByDoubleClick = true;
+                }
             }
         }
 
@@ -236,7 +246,7 @@ namespace SystemTrayMenu.DataClasses
             isDisposed = true;
         }
 
-        private void OpenItem(MouseEventArgs e)
+        private void OpenItem(MouseEventArgs e, ref bool toCloseByOpenItem)
         {
             if (!ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
@@ -255,6 +265,11 @@ namespace SystemTrayMenu.DataClasses
                         },
                     };
                     p.Start();
+
+                    if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
+                    {
+                        toCloseByOpenItem = true;
+                    }
                 }
                 catch (Win32Exception ex)
                 {

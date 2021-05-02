@@ -268,6 +268,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If an item was clicked.
+        /// </summary>
+        internal static string If_an_item_was_clicked {
+            get {
+                return ResourceManager.GetString("If an item was clicked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to If the focus is lost and if the mouse is still on the menu.
         /// </summary>
         internal static string If_the_focus_is_lost_and_if_the_mouse_is_still_on_the_menu {
@@ -422,11 +431,11 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time to open.
+        ///   Looks up a localized string similar to Time until a menu opens.
         /// </summary>
-        internal static string Time_to_open {
+        internal static string Time_until_a_menu_opens {
             get {
-                return ResourceManager.GetString("Time to open", resourceCulture);
+                return ResourceManager.GetString("Time until a menu opens", resourceCulture);
             }
         }
         

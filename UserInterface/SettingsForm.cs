@@ -64,6 +64,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
+                checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
                 checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
                 labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if in this case the mouse then leaves the menu");
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
@@ -126,6 +127,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuWidth.Increment = 10;
             numericUpDownMenuWidth.Value = Properties.Settings.Default.MaximumMenuWidth;
 
+            checkBoxStayOpenWhenItemClicked.Checked = Properties.Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Properties.Settings.Default.StaysOpenWhenFocusLost;
 
             numericUpDownTimeUntilClose.Minimum = 200;
@@ -315,6 +317,7 @@ namespace SystemTrayMenu.UserInterface
             Properties.Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Properties.Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
             Properties.Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
+            Properties.Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
             Properties.Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Properties.Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
             Properties.Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
@@ -336,6 +339,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxAppearAtMouseLocation.Checked = false;
             numericUpDownMenuWidth.Value = 300;
+            checkBoxStayOpenWhenItemClicked.Checked = true;
             checkBoxStayOpenWhenFocusLost.Checked = true;
             numericUpDownTimeUntilClose.Value = 1000;
             numericUpDownTimeUntilOpens.Value = 100;

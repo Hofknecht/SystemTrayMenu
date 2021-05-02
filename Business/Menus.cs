@@ -693,8 +693,12 @@ namespace SystemTrayMenu.Business
                 dgv.Rows.Count > hitTestInfo.RowIndex)
             {
                 RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
-                rowData.MouseDown(dgv, e);
+                rowData.MouseDown(dgv, e, out bool toCloseByClick);
                 waitToOpenMenu.ClickOpensInstantly(dgv, hitTestInfo.RowIndex);
+                if (toCloseByClick)
+                {
+                    MenusFadeOut();
+                }
             }
         }
 
@@ -707,7 +711,11 @@ namespace SystemTrayMenu.Business
                 dgv.Rows.Count > hitTestInfo.RowIndex)
             {
                 RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
-                trigger.DoubleClick(e);
+                trigger.DoubleClick(e, out bool toCloseByDoubleClick);
+                if (toCloseByDoubleClick)
+                {
+                    MenusFadeOut();
+                }
             }
         }
 

@@ -175,6 +175,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool StaysOpenWhenItemClicked
+        {
+            get
+            {
+                return ((bool)(this["StaysOpenWhenItemClicked"]));
+            }
+            set
+            {
+                this["StaysOpenWhenItemClicked"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
         public bool StaysOpenWhenFocusLost
         {
             get

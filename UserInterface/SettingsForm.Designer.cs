@@ -66,6 +66,7 @@ namespace SystemTrayMenu.UserInterface
             this.labelMaxMenuWidth = new System.Windows.Forms.Label();
             this.groupBoxStaysOpen = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelStaysOpen = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxStayOpenWhenItemClicked = new System.Windows.Forms.CheckBox();
             this.checkBoxStayOpenWhenFocusLost = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelTimeUntilCloses = new System.Windows.Forms.TableLayoutPanel();
             this.labelTimeUntilCloses = new System.Windows.Forms.Label();
@@ -133,7 +134,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(476, 417);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(476, 437);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // tableLayoutPanelBottom
@@ -147,7 +148,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.Controls.Add(this.buttonOk, 1, 0);
             this.tableLayoutPanelBottom.Controls.Add(this.buttonCancel, 2, 0);
-            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 389);
+            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 409);
             this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
             this.tableLayoutPanelBottom.RowCount = 1;
             this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -192,7 +193,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 1;
-            this.tabControl.Size = new System.Drawing.Size(470, 380);
+            this.tabControl.Size = new System.Drawing.Size(470, 400);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageGeneral
@@ -201,7 +202,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 24);
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(462, 352);
+            this.tabPageGeneral.Size = new System.Drawing.Size(462, 372);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "tabPageGeneral";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
@@ -224,7 +225,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(456, 346);
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(456, 366);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // groupBoxFolder
@@ -441,7 +442,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
             this.tabPageAdvanced.Name = "tabPageAdvanced";
             this.tabPageAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdvanced.Size = new System.Drawing.Size(462, 352);
+            this.tabPageAdvanced.Size = new System.Drawing.Size(462, 372);
             this.tabPageAdvanced.TabIndex = 0;
             this.tabPageAdvanced.Text = "tabPageAdvanced";
             this.tabPageAdvanced.UseVisualStyleBackColor = true;
@@ -466,7 +467,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(456, 346);
+            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(456, 366);
             this.tableLayoutPanelAdvanced.TabIndex = 0;
             // 
             // groupBoxClick
@@ -598,7 +599,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxStaysOpen.MinimumSize = new System.Drawing.Size(450, 0);
             this.groupBoxStaysOpen.Name = "groupBoxStaysOpen";
             this.groupBoxStaysOpen.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxStaysOpen.Size = new System.Drawing.Size(450, 79);
+            this.groupBoxStaysOpen.Size = new System.Drawing.Size(450, 104);
             this.groupBoxStaysOpen.TabIndex = 0;
             this.groupBoxStaysOpen.TabStop = false;
             this.groupBoxStaysOpen.Text = "groupBoxStaysOpen";
@@ -609,29 +610,42 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelStaysOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelStaysOpen.ColumnCount = 1;
             this.tableLayoutPanelStaysOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelStaysOpen.Controls.Add(this.checkBoxStayOpenWhenFocusLost, 0, 0);
-            this.tableLayoutPanelStaysOpen.Controls.Add(this.tableLayoutPanelTimeUntilCloses, 0, 1);
+            this.tableLayoutPanelStaysOpen.Controls.Add(this.checkBoxStayOpenWhenItemClicked, 0, 0);
+            this.tableLayoutPanelStaysOpen.Controls.Add(this.checkBoxStayOpenWhenFocusLost, 0, 1);
+            this.tableLayoutPanelStaysOpen.Controls.Add(this.tableLayoutPanelTimeUntilCloses, 0, 2);
             this.tableLayoutPanelStaysOpen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelStaysOpen.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelStaysOpen.Name = "tableLayoutPanelStaysOpen";
-            this.tableLayoutPanelStaysOpen.RowCount = 2;
+            this.tableLayoutPanelStaysOpen.RowCount = 3;
             this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelStaysOpen.Size = new System.Drawing.Size(444, 54);
+            this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelStaysOpen.Size = new System.Drawing.Size(444, 79);
             this.tableLayoutPanelStaysOpen.TabIndex = 0;
+            // 
+            // checkBoxStayOpenWhenItemClicked
+            // 
+            this.checkBoxStayOpenWhenItemClicked.AutoSize = true;
+            this.checkBoxStayOpenWhenItemClicked.Checked = true;
+            this.checkBoxStayOpenWhenItemClicked.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxStayOpenWhenItemClicked.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxStayOpenWhenItemClicked.Name = "checkBoxStayOpenWhenItemClicked";
+            this.checkBoxStayOpenWhenItemClicked.Size = new System.Drawing.Size(222, 19);
+            this.checkBoxStayOpenWhenItemClicked.TabIndex = 0;
+            this.checkBoxStayOpenWhenItemClicked.Text = "checkBoxStayOpenWhenItemClicked";
+            this.checkBoxStayOpenWhenItemClicked.UseVisualStyleBackColor = true;
             // 
             // checkBoxStayOpenWhenFocusLost
             // 
             this.checkBoxStayOpenWhenFocusLost.AutoSize = true;
             this.checkBoxStayOpenWhenFocusLost.Checked = true;
             this.checkBoxStayOpenWhenFocusLost.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxStayOpenWhenFocusLost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxStayOpenWhenFocusLost.Enabled = false;
-            this.checkBoxStayOpenWhenFocusLost.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxStayOpenWhenFocusLost.Location = new System.Drawing.Point(3, 28);
             this.checkBoxStayOpenWhenFocusLost.Name = "checkBoxStayOpenWhenFocusLost";
-            this.checkBoxStayOpenWhenFocusLost.Size = new System.Drawing.Size(438, 19);
+            this.checkBoxStayOpenWhenFocusLost.Size = new System.Drawing.Size(212, 19);
             this.checkBoxStayOpenWhenFocusLost.TabIndex = 0;
-            this.checkBoxStayOpenWhenFocusLost.Text = "checkBoxStayOpen";
+            this.checkBoxStayOpenWhenFocusLost.Text = "checkBoxStayOpenWhenFocusLost";
             this.checkBoxStayOpenWhenFocusLost.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelTimeUntilCloses
@@ -644,7 +658,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilCloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.labelTimeUntilCloses, 1, 0);
             this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.numericUpDownTimeUntilClose, 0, 0);
-            this.tableLayoutPanelTimeUntilCloses.Location = new System.Drawing.Point(0, 25);
+            this.tableLayoutPanelTimeUntilCloses.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanelTimeUntilCloses.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelTimeUntilCloses.Name = "tableLayoutPanelTimeUntilCloses";
             this.tableLayoutPanelTimeUntilCloses.RowCount = 1;
@@ -675,7 +689,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxOpenSubmenus.AutoSize = true;
             this.groupBoxOpenSubmenus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxOpenSubmenus.Controls.Add(this.tableLayoutPanelTimeUntilOpen);
-            this.groupBoxOpenSubmenus.Location = new System.Drawing.Point(3, 226);
+            this.groupBoxOpenSubmenus.Location = new System.Drawing.Point(3, 251);
             this.groupBoxOpenSubmenus.MaximumSize = new System.Drawing.Size(450, 0);
             this.groupBoxOpenSubmenus.MinimumSize = new System.Drawing.Size(450, 0);
             this.groupBoxOpenSubmenus.Name = "groupBoxOpenSubmenus";
@@ -724,7 +738,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 292);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 317);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -740,7 +754,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageCustomize.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomize.Name = "tabPageCustomize";
             this.tabPageCustomize.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCustomize.Size = new System.Drawing.Size(462, 352);
+            this.tabPageCustomize.Size = new System.Drawing.Size(462, 372);
             this.tabPageCustomize.TabIndex = 0;
             this.tabPageCustomize.Text = "tabPageCustomize";
             this.tabPageCustomize.UseVisualStyleBackColor = true;
@@ -759,7 +773,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize.RowCount = 2;
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(456, 346);
+            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(456, 366);
             this.tableLayoutPanelCustomize.TabIndex = 0;
             // 
             // groupBoxDarkMode
@@ -984,5 +998,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.NumericUpDown numericUpDownTimeUntilClose;
         private System.Windows.Forms.NumericUpDown numericUpDownMenuWidth;
         private System.Windows.Forms.NumericUpDown numericUpDownTimeUntilOpens;
+        private System.Windows.Forms.CheckBox checkBoxStayOpenWhenItemClicked;
     }
 }
