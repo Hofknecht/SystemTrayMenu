@@ -100,13 +100,15 @@ namespace SystemTrayMenu.UserInterface
             {
                 List<Language> dataSource = new List<Language>
                 {
-                    new Language() { Name = "English", Value = "en" },
+                    new Language() { Name = "čeština", Value = "cs" },
                     new Language() { Name = "Deutsch", Value = "de" },
-                    new Language() { Name = "Français", Value = "fr" },
+                    new Language() { Name = "English", Value = "en" },
                     new Language() { Name = "Español", Value = "es" },
+                    new Language() { Name = "Français", Value = "fr" },
                     new Language() { Name = "Italiano", Value = "it" },
                     new Language() { Name = "Nederlands", Value = "nl" },
-					new Language() { Name = "Português (Brasil)", Value = "pt-BR" },
+                    new Language() { Name = "Português (Brasil)", Value = "pt-BR" },
+                    // new Language() { Name = "русский", Value = "ru" },
                 };
                 comboBoxLanguage.DataSource = dataSource;
                 comboBoxLanguage.DisplayMember = "Name";

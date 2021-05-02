@@ -243,4 +243,7 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Zeit bis zum Öffnen eines Menüs</value>
   </data>
+  <data name="If an item was clicked" xml:space="preserve">
+    <value>Wenn ein Element angeklickt wurde</value>
+  </data>
 </root>

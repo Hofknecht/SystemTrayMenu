@@ -118,132 +118,132 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Over</value>
+    <value>O</value>
   </data>
   <data name="buttonOk" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+    <value>Automatické spuštění</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Afsluiten</value>
+    <value>Výstup</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Map</value>
+    <value>Složka</value>
   </data>
   <data name="Folder empty" xml:space="preserve">
-    <value>Map leeg</value>
+    <value>Složka prázdná</value>
   </data>
   <data name="buttonDetails" xml:space="preserve">
-    <value>Details</value>
+    <value>Detaily</value>
   </data>
   <data name="buttonSystemInfo" xml:space="preserve">
-    <value>Systeem Info</value>
+    <value>Systémová informace</value>
   </data>
   <data name="Folder inaccessible" xml:space="preserve">
-    <value>Map ontoegankelijk</value>
+    <value>Složka nepřístupná</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Taal</value>
+    <value>Jazyk</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Logbestand</value>
+    <value>Log soubor</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Herstart</value>
+    <value>Restartujte</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Kon de sneltoets niet registreren.</value>
+    <value>Klávesovou zkratku se nepodařilo zaregistrovat.</value>
   </data>
   <data name="buttonCancel" xml:space="preserve">
-    <value>Annuleren</value>
+    <value>zrušení</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>Algemeen</value>
+    <value>Všeobecné</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Sneltoets</value>
+    <value>Horká klávesa</value>
   </data>
   <data name="Launch on startup" xml:space="preserve">
-    <value>Start op bij opstarten</value>
+    <value>Spustit při spuštění</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Instellingen</value>
+    <value>Nastavení</value>
   </data>
   <data name="HelpFAQ" xml:space="preserve">
-    <value>Help / FAQ</value>
+    <value>Nápověda / FAQ</value>
   </data>
   <data name="SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu</value>
   </data>
   <data name="TextFirstStart" xml:space="preserve">
-    <value>Lees de FAQ en kies dan een hoofdmap voor het SystemTrayMenu.</value>
+    <value>Přečtěte si časté dotazy a poté vyberte kořenový adresář pro SystemTrayMenu.</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Waarschuwing</value>
+    <value>Varování</value>
   </data>
   <data name="Select Folder" xml:space="preserve">
-    <value>Selecteer Map</value>
+    <value>Vybrat složku</value>
   </data>
   <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Uw hoofdmap voor het SystemTrayMenu bestaat niet of is leeg! Plaats enkele bestanden, mappen of snelkoppelingen in de map of verander de hoofdmap.</value>
+    <value>Vaše kořenová složka pro SystemTrayMenu neexistuje nebo je prázdná! Vložte nějaké soubory, složky nebo zástupce do složky nebo změňte kořenovou složku.</value>
   </data>
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>U heeft geen toegang tot de hoofdmap voor het SystemTrayMenu. Verleen toegang tot de map of wijzig de hoofdmap.</value>
+    <value>Nemáte přístup do kořenové složky pro SystemTrayMenu. Udělte přístup ke složce nebo změňte kořenovou složku.</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>Expert</value>
   </data>
   <data name="Single click to start item" xml:space="preserve">
-    <value>Enkele klik om het item te starten</value>
+    <value>Jedním kliknutím otevřete položku</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
-    <value>Donkere Modus altijd actief</value>
+    <value>Tmavý režim je vždy aktivní</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Geavanceerd</value>
+    <value>Pokročilý</value>
   </data>
   <data name="Appear at mouse location" xml:space="preserve">
-    <value>Verschijnt op de muis locatie</value>
+    <value>Objevte se na místě myši</value>
   </data>
   <data name="Change Folder" xml:space="preserve">
-    <value>Verander Map</value>
+    <value>Změnit složku</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Klik</value>
+    <value>Klepněte na</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Aanpassen</value>
+    <value>Přizpůsobit</value>
   </data>
   <data name="Dark Mode" xml:space="preserve">
-    <value>Donkere Modus</value>
+    <value>Temný režim</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Standaard</value>
+    <value>Výchozí</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Als de focus weg is en als de muis nog steeds op het menu staat</value>
+    <value>Pokud dojde ke ztrátě fokusu a pokud je myš stále v nabídce</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milliseconden tot een menu wordt geopend wanneer de muis erop staat</value>
+    <value>Milisekundy, dokud se neotevře nabídka, když je na ní myš</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconden tot het menu sluit indien de muis het menu verlaat</value>
+    <value>Milisekundy, dokud se nabídka nezavře, pokud v tomto případě myš poté nabídku opustí</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximale menubreedte</value>
+    <value>Pixely maximální šířka nabídky</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Afmeting en locatie</value>
+    <value>Velikost a umístění</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Blijft open</value>
+    <value>Pobyty otevřené</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Tijd totdat een menu opent</value>
+    <value>Čas do otevření nabídky</value>
   </data>
   <data name="If an item was clicked" xml:space="preserve">
-    <value>Als er op een item is geklikt</value>
+    <value>Pokud bylo na položku kliknuto</value>
   </data>
 </root>
