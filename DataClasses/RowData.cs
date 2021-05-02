@@ -225,7 +225,7 @@ namespace SystemTrayMenu.DataClasses
             if (ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
             {
-                Log.ProcessStart(TargetFilePath, null, true);
+                Log.ProcessStart(TargetFilePath);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
                 {
                     toCloseByDoubleClick = true;
@@ -251,30 +251,10 @@ namespace SystemTrayMenu.DataClasses
             if (!ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
             {
-                try
+                Log.ProcessStart(TargetFilePathOrig, arguments, true, workingDirectory, true);
+                if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
                 {
-                    using Process p = new Process
-                    {
-                        StartInfo = new ProcessStartInfo(TargetFilePath)
-                        {
-                            FileName = TargetFilePathOrig,
-                            Arguments = arguments,
-                            WorkingDirectory = workingDirectory,
-                            CreateNoWindow = true,
-                            UseShellExecute = true,
-                        },
-                    };
-                    p.Start();
-
-                    if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
-                    {
-                        toCloseByOpenItem = true;
-                    }
-                }
-                catch (Win32Exception ex)
-                {
-                    Log.Warn($"path:'{TargetFilePath}'", ex);
-                    MessageBox.Show(ex.Message);
+                    toCloseByOpenItem = true;
                 }
             }
         }
@@ -352,13 +332,7 @@ namespace SystemTrayMenu.DataClasses
                 iconFile = file.Value("IconFile", string.Empty);
                 if (string.IsNullOrEmpty(iconFile))
                 {
-                    string browserPath = FileUrl.GetDefaultBrowserPath();
-                    if (string.IsNullOrEmpty(browserPath))
-                    {
-                        Log.Info($"Resolve *.URL '{TargetFilePath}'" +
-                            $"No default browser found!");
-                    }
-                    else
+                    if (FileUrl.GetDefaultBrowserPath(out string browserPath))
                     {
                         icon = IconReader.GetFileIconWithCache(browserPath, true, out bool toDispose);
                         diposeIcon = toDispose;

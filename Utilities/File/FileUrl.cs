@@ -10,13 +10,14 @@ namespace SystemTrayMenu.Utilities
     {
         private static string browserPath = string.Empty;
 
-        public static string GetDefaultBrowserPath()
+        public static bool GetDefaultBrowserPath(out string browserPath)
         {
+            bool valid = true;
             string urlAssociation = @"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http";
             string browserPathKey = @"$BROWSER$\shell\open\command";
 
             RegistryKey userChoiceKey;
-            string browserPath = FileUrl.browserPath;
+            browserPath = FileUrl.browserPath;
 
             if (string.IsNullOrEmpty(browserPath))
             {
@@ -39,7 +40,7 @@ namespace SystemTrayMenu.Utilities
 
                     string path = CleanifyBrowserPath(browserKey.GetValue(null) as string);
                     browserKey.Close();
-                    return path;
+                    browserPath = path;
                 }
                 else
                 {
@@ -57,7 +58,13 @@ namespace SystemTrayMenu.Utilities
                 FileUrl.browserPath = browserPath;
             }
 
-            return browserPath;
+            if (string.IsNullOrEmpty(browserPath))
+            {
+                valid = false;
+                Log.Info($"No default browser found!");
+            }
+
+            return valid;
         }
 
         private static string CleanifyBrowserPath(string p)

@@ -587,7 +587,7 @@ namespace SystemTrayMenu.Business
 
         private static void OpenFolder()
         {
-            Log.ProcessStart(Config.Path, null, true);
+            Log.ProcessStart(Config.Path);
         }
 
         private Menu Create(MenuData menuData, string title = null)

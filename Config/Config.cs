@@ -112,8 +112,7 @@ namespace SystemTrayMenu
 
         internal static void ShowHelpFAQ()
         {
-            string browserPath = FileUrl.GetDefaultBrowserPath();
-            if (!string.IsNullOrEmpty(browserPath))
+            if (FileUrl.GetDefaultBrowserPath(out string browserPath))
             {
                 Process.Start(browserPath, "https://github.com/Hofknecht/SystemTrayMenu#FAQ");
             }

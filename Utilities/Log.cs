@@ -77,9 +77,14 @@ namespace SystemTrayMenu.Utilities
             Logger.ShutDown();
         }
 
-        internal static void ProcessStart(string fileName, string arguments = null, bool doubleQuoteArg = false)
+        internal static void ProcessStart(
+            string fileName,
+            string arguments = "",
+            bool doubleQuoteArg = false,
+            string workingDirectory = "",
+            bool createNoWindow = false)
         {
-            if (doubleQuoteArg && arguments != null)
+            if (doubleQuoteArg && !string.IsNullOrEmpty(arguments))
             {
                 arguments = "\"" + arguments + "\"";
             }
@@ -90,7 +95,10 @@ namespace SystemTrayMenu.Utilities
                 {
                     StartInfo = new ProcessStartInfo(fileName)
                     {
+                        FileName = fileName,
                         Arguments = arguments,
+                        WorkingDirectory = workingDirectory,
+                        CreateNoWindow = createNoWindow,
                         UseShellExecute = true,
                     },
                 };
