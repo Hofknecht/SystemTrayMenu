@@ -47,22 +47,26 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
+        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, out bool toDispose)
         {
             Icon icon = null;
             string extension = Path.GetExtension(filePath);
+            IconSize size = IconSize.Small;
 
             if (IsExtensionWitSameIcon(extension))
             {
-                icon = DictIconCache.GetOrAdd(extension, GetIcon);
+                icon = DictIconCache.GetOrAdd(extension + linkOverlay, GetIcon);
                 Icon GetIcon(string keyExtension)
                 {
                     return GetFileIconSTA(filePath, linkOverlay, size);
                 }
+
+                toDispose = false;
             }
             else
             {
                 icon = GetFileIconSTA(filePath, linkOverlay, size);
+                toDispose = true;
             }
 
             return icon;

@@ -6,6 +6,7 @@ namespace SystemTrayMenu.Utilities
 {
     using System;
     using System.IO;
+    using System.Net.NetworkInformation;
     using System.Runtime.InteropServices;
     using System.Threading;
     using Shell32;
@@ -95,6 +96,38 @@ namespace SystemTrayMenu.Utilities
             }
 
             return resolvedFilename;
+        }
+
+        public static bool IsNetworkPath(string path)
+        {
+            return path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
+                !path.StartsWith(@"\\?\", StringComparison.InvariantCulture);
+        }
+
+        public static bool PingHost(string nameOrAddress)
+        {
+            bool pingable = false;
+            Ping pinger = null;
+
+            try
+            {
+                pinger = new Ping();
+                PingReply reply = pinger.Send(nameOrAddress);
+                pingable = reply.Status == IPStatus.Success;
+            }
+            catch (PingException ex)
+            {
+                Log.Warn($"Ping {nameOrAddress} failed", ex);
+            }
+            finally
+            {
+                if (pinger != null)
+                {
+                    pinger.Dispose();
+                }
+            }
+
+            return pingable;
         }
     }
 }

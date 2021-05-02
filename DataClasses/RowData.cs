@@ -122,6 +122,7 @@ namespace SystemTrayMenu.DataClasses
             else
             {
                 bool handled = false;
+                bool showOverlay = false;
                 string fileExtension = Path.GetExtension(TargetFilePath);
 
                 if (fileExtension == ".lnk")
@@ -129,10 +130,12 @@ namespace SystemTrayMenu.DataClasses
                     handled = SetLnk(
                         ref isLnkDirectory,
                         ref resolvedLnkPath);
+                    showOverlay = true;
                 }
                 else if (fileExtension == ".url")
                 {
                     handled = SetUrl();
+                    showOverlay = true;
                 }
                 else if (fileExtension == ".sln")
                 {
@@ -143,20 +146,8 @@ namespace SystemTrayMenu.DataClasses
                 {
                     try
                     {
-                        icon = IconReader.GetFileIconWithCache(TargetFilePath, false);
-                        diposeIcon = false;
-
-                        // other project -> fails sometimes
-                        // icon = IconHelper.ExtractIcon(TargetFilePath, 0);
-
-                        // standard way -> fails sometimes
-                        // icon = Icon.ExtractAssociatedIcon(filePath);
-
-                        // API Code Pack  -> fails sometimes
-                        // ShellFile shellFile = ShellFile.FromFilePath(filePath);
-                        // Bitmap shellThumb = shellFile.Thumbnail.ExtraLargeBitmap;
-
-                        // IShellItemImageFactory GetImage works, but missing link overlay there #149
+                        icon = IconReader.GetFileIconWithCache(TargetFilePath, showOverlay, out bool toDispose);
+                        diposeIcon = toDispose;
                     }
                     catch (Exception ex)
                     {
@@ -279,6 +270,15 @@ namespace SystemTrayMenu.DataClasses
         {
             bool handled = false;
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
+            //if (FileLnk.IsNetworkPath(resolvedLnkPath))
+            //{
+            //    string nameOrAdress = resolvedLnkPath.Split(@"\\")[1].Split(@"\").First();
+            //    if (!FileLnk.PingHost(nameOrAdress))
+            //    {
+            //        return handled;
+            //    }
+            //}
+
             if (FileLnk.IsDirectory(resolvedLnkPath))
             {
                 icon = IconReader.GetFolderIconSTA(TargetFilePath, IconReader.FolderType.Open, true);
@@ -308,7 +308,8 @@ namespace SystemTrayMenu.DataClasses
                     {
                         try
                         {
-                            icon = Icon.ExtractAssociatedIcon(iconLocation);
+                            icon = IconReader.GetFileIconWithCache(iconLocation, true, out bool toDispose);
+                            diposeIcon = toDispose;
                             handled = true;
                         }
                         catch (ArgumentException ex)
@@ -344,14 +345,15 @@ namespace SystemTrayMenu.DataClasses
                     }
                     else
                     {
-                        icon = IconReader.GetFileIconWithCache(browserPath, false);
-                        diposeIcon = false;
+                        icon = IconReader.GetFileIconWithCache(browserPath, true, out bool toDispose);
+                        diposeIcon = toDispose;
                         handled = true;
                     }
                 }
                 else if (System.IO.File.Exists(iconFile))
                 {
-                    icon = Icon.ExtractAssociatedIcon(iconFile);
+                    icon = IconReader.GetFileIconWithCache(iconFile, true, out bool toDispose);
+                    diposeIcon = toDispose;
                     handled = true;
                 }
                 else
