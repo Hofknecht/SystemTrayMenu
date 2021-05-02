@@ -270,14 +270,14 @@ namespace SystemTrayMenu.DataClasses
         {
             bool handled = false;
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
-            //if (FileLnk.IsNetworkPath(resolvedLnkPath))
-            //{
-            //    string nameOrAdress = resolvedLnkPath.Split(@"\\")[1].Split(@"\").First();
-            //    if (!FileLnk.PingHost(nameOrAdress))
-            //    {
-            //        return handled;
-            //    }
-            //}
+            if (FileLnk.IsNetworkPath(resolvedLnkPath))
+            {
+                string nameOrAdress = resolvedLnkPath.Split(@"\\")[1].Split(@"\").First();
+                if (!FileLnk.PingHost(nameOrAdress))
+                {
+                    return handled;
+                }
+            }
 
             if (FileLnk.IsDirectory(resolvedLnkPath))
             {
