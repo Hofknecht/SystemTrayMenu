@@ -640,13 +640,13 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxStayOpenWhenFocusLost.AutoSize = true;
             this.checkBoxStayOpenWhenFocusLost.Checked = true;
             this.checkBoxStayOpenWhenFocusLost.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxStayOpenWhenFocusLost.Enabled = false;
             this.checkBoxStayOpenWhenFocusLost.Location = new System.Drawing.Point(3, 28);
             this.checkBoxStayOpenWhenFocusLost.Name = "checkBoxStayOpenWhenFocusLost";
             this.checkBoxStayOpenWhenFocusLost.Size = new System.Drawing.Size(212, 19);
             this.checkBoxStayOpenWhenFocusLost.TabIndex = 0;
             this.checkBoxStayOpenWhenFocusLost.Text = "checkBoxStayOpenWhenFocusLost";
             this.checkBoxStayOpenWhenFocusLost.UseVisualStyleBackColor = true;
+            this.checkBoxStayOpenWhenFocusLost.CheckedChanged += new System.EventHandler(this.CheckBoxStayOpenWhenFocusLost_CheckedChanged);
             // 
             // tableLayoutPanelTimeUntilCloses
             // 

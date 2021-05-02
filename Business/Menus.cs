@@ -839,7 +839,8 @@ namespace SystemTrayMenu.Business
                 if (!IsActive())
                 {
                     Point position = Control.MousePosition;
-                    if (AsList.Any(m => m.IsMouseOn(position)))
+                    if (Properties.Settings.Default.StaysOpenWhenFocusLost &&
+                        AsList.Any(m => m.IsMouseOn(position)))
                     {
                         if (!keyboardInput.InUse)
                         {

@@ -108,6 +108,7 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "Italiano", Value = "it" },
                     new Language() { Name = "Nederlands", Value = "nl" },
                     new Language() { Name = "Português (Brasil)", Value = "pt-BR" },
+
                     // new Language() { Name = "русский", Value = "ru" },
                 };
                 comboBoxLanguage.DataSource = dataSource;
@@ -373,6 +374,11 @@ namespace SystemTrayMenu.UserInterface
                 textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             RegisterHotkeys();
             inHotkey = false;
+        }
+
+        private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)
+        {
+            numericUpDownTimeUntilClose.Enabled = checkBoxStayOpenWhenFocusLost.Checked;
         }
     }
 }
