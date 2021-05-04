@@ -97,6 +97,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Background.
+        /// </summary>
+        internal static string Background {
+            get {
+                return ResourceManager.GetString("Background", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string buttonCancel {
@@ -133,11 +142,11 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Folder.
+        ///   Looks up a localized string similar to Change folder.
         /// </summary>
-        internal static string Change_Folder {
+        internal static string Change_folder {
             get {
-                return ResourceManager.GetString("Change Folder", resourceCulture);
+                return ResourceManager.GetString("Change folder", resourceCulture);
             }
         }
         
@@ -147,6 +156,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Click {
             get {
                 return ResourceManager.GetString("Click", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colors Light Mode and Dark Mode.
+        /// </summary>
+        internal static string Colors_Light_Mode_and_Dark_Mode {
+            get {
+                return ResourceManager.GetString("Colors Light Mode and Dark Mode", resourceCulture);
             }
         }
         
@@ -192,6 +210,24 @@ namespace SystemTrayMenu.Resources {
         internal static string Default {
             get {
                 return ResourceManager.GetString("Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default Dark Mode.
+        /// </summary>
+        internal static string Default_Dark_Mode {
+            get {
+                return ResourceManager.GetString("Default Dark Mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default Light Mode.
+        /// </summary>
+        internal static string Default_Light_Mode {
+            get {
+                return ResourceManager.GetString("Default Light Mode", resourceCulture);
             }
         }
         
@@ -304,15 +340,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light Mode.
-        /// </summary>
-        internal static string Light_Mode {
-            get {
-                return ResourceManager.GetString("Light Mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Log File.
         /// </summary>
         internal static string Log_File {
@@ -359,6 +386,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open folder.
+        /// </summary>
+        internal static string Open_folder {
+            get {
+                return ResourceManager.GetString("Open folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open folder border.
+        /// </summary>
+        internal static string Open_folder_border {
+            get {
+                return ResourceManager.GetString("Open folder border", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pixels maximum menu width.
         /// </summary>
         internal static string Pixels_maximum_menu_width {
@@ -377,11 +422,38 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search field.
+        /// </summary>
+        internal static string Search_field {
+            get {
+                return ResourceManager.GetString("Search field", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Folder.
         /// </summary>
         internal static string Select_Folder {
             get {
                 return ResourceManager.GetString("Select Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected item.
+        /// </summary>
+        internal static string Selected_item {
+            get {
+                return ResourceManager.GetString("Selected item", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected item border.
+        /// </summary>
+        internal static string Selected_item_border {
+            get {
+                return ResourceManager.GetString("Selected item border", resourceCulture);
             }
         }
         
@@ -445,6 +517,24 @@ namespace SystemTrayMenu.Resources {
         internal static string Time_until_a_menu_opens {
             get {
                 return ResourceManager.GetString("Time until a menu opens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To change a color paste a HTML Color Code or double click into a field..
+        /// </summary>
+        internal static string To_change_a_color_paste_a_HTML_Color_Code_or_double_click_into_a_field_ {
+            get {
+                return ResourceManager.GetString("To change a color paste a HTML Color Code or double click into a field.", resourceCulture);
             }
         }
         

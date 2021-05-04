@@ -54,7 +54,7 @@ namespace SystemTrayMenu.UserInterface
                 tabPageAdvanced.Text = Translator.GetText("Advanced");
                 tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxFolder.Text = Translator.GetText("Folder");
-                buttonChangeFolder.Text = Translator.GetText("Change Folder");
+                buttonChangeFolder.Text = Translator.GetText("Change folder");
                 groupBoxAutostart.Text = Translator.GetText("Autostart");
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
@@ -72,11 +72,21 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
                 labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
-                groupBoxColors.Text = Translator.GetText("Light Mode");
+                groupBoxColors.Text = Translator.GetText("Colors Light Mode and Dark Mode");
                 buttonDefaultColors.Text = Translator.GetText("Default");
                 groupBoxDarkMode.Text = Translator.GetText("Dark Mode");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
-                buttonDefaultColors.Text = Translator.GetText("Default");
+                labelPasteHtmlColorCodeOrDoubleClickIntoField.Text = Translator.GetText("To change a color paste a HTML Color Code or double click into a field.");
+                labelTitle.Text = Translator.GetText("Title");
+                labelBackground.Text = Translator.GetText("Background");
+                labelSearchField.Text = Translator.GetText("Search field");
+                labelOpenFolder.Text = Translator.GetText("Open folder");
+                labelOpenFolderBorder.Text = Translator.GetText("Open folder border");
+                labelSelectedItem.Text = Translator.GetText("Selected item");
+                labelSelectedItemBorder.Text = Translator.GetText("Selected item border");
+                labelWarning.Text = Translator.GetText("Warning");
+                buttonDefaultColors.Text = Translator.GetText("Default Light Mode");
+                buttonDefaultColorsDark.Text = Translator.GetText("Default Dark Mode");
                 buttonOk.Text = Translator.GetText("buttonOk");
                 buttonCancel.Text = Translator.GetText("buttonCancel");
             }
@@ -149,22 +159,22 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilOpens.Value = Settings.Default.TimeUntilOpens;
 
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
-            textBoxColorSelected.Text = Settings.Default.ColorSelected;
-            textBoxColorDarkModeSeleceted.Text = Settings.Default.ColorDarkModeSeleceted;
-            textBoxColorSelectedBorder.Text = Settings.Default.ColorSelectedBorder;
-            textBoxColorDarkModeSelectedBorder.Text = Settings.Default.ColorDarkModeSelectedBorder;
-            textBoxColorOpenMenu.Text = Settings.Default.ColorOpenMenu;
-            textBoxColorDarkModeOpenMenu.Text = Settings.Default.ColorDarkModeOpenMenu;
-            textBoxColorOpenMenuBorder.Text = Settings.Default.ColorOpenMenuBorder;
-            textBoxColorDarkModeModeOpenMenuBorder.Text = Settings.Default.ColorDarkModeModeOpenMenuBorder;
+            textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
+            textBoxColorDarkModeSelecetedItem.Text = Settings.Default.ColorDarkModeSelecetedItem;
+            textBoxColorSelectedItemBorder.Text = Settings.Default.ColorSelectedItemBorder;
+            textBoxColorDarkModeSelectedItemBorder.Text = Settings.Default.ColorDarkModeSelectedItemBorder;
+            textBoxColorOpenFolder.Text = Settings.Default.ColorOpenFolder;
+            textBoxColorDarkModeOpenFolder.Text = Settings.Default.ColorDarkModeOpenFolder;
+            textBoxColorOpenFolderBorder.Text = Settings.Default.ColorOpenFolderBorder;
+            textBoxColorDarkModeOpenFolderBorder.Text = Settings.Default.ColorDarkModeOpenFolderBorder;
             textBoxColorWarning.Text = Settings.Default.ColorWarning;
             textBoxColorDarkModeWarning.Text = Settings.Default.ColorDarkModeWarning;
             textBoxColorTitle.Text = Settings.Default.ColorTitle;
             textBoxColorDarkModeTitle.Text = Settings.Default.ColorDarkModeTitle;
-            textBoxColorMain.Text = Settings.Default.ColorMain;
-            textBoxColorDarkModeMain.Text = Settings.Default.ColorDarkModeMain;
-            textBoxColorSearch.Text = Settings.Default.ColorSearch;
-            textBoxColorDarkModeSearch.Text = Settings.Default.ColorDarkModeSearch;
+            textBoxColorBackground.Text = Settings.Default.ColorBackground;
+            textBoxColorDarkModeBackground.Text = Settings.Default.ColorDarkModeBackground;
+            textBoxColorSearchField.Text = Settings.Default.ColorSearchField;
+            textBoxColorDarkModeSearchField.Text = Settings.Default.ColorDarkModeSearchField;
         }
 
         public string NewHotKey => newHotKey;
@@ -294,6 +304,13 @@ namespace SystemTrayMenu.UserInterface
             return success;
         }
 
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            tabControl.Size = new Size(
+                tabControl.Size.Width,
+                tableLayoutPanelCustomize.Size.Height + 50);
+        }
+
         private void ButtonOk_Click(object sender, EventArgs e)
         {
             SaveAutostart();
@@ -340,22 +357,22 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
             Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
-            Settings.Default.ColorSelected = textBoxColorSelected.Text;
-            Settings.Default.ColorDarkModeSeleceted = textBoxColorDarkModeSeleceted.Text;
-            Settings.Default.ColorSelectedBorder = textBoxColorSelectedBorder.Text;
-            Settings.Default.ColorDarkModeSelectedBorder = textBoxColorDarkModeSelectedBorder.Text;
-            Settings.Default.ColorOpenMenu = textBoxColorOpenMenu.Text;
-            Settings.Default.ColorDarkModeOpenMenu = textBoxColorDarkModeOpenMenu.Text;
-            Settings.Default.ColorOpenMenuBorder = textBoxColorOpenMenuBorder.Text;
-            Settings.Default.ColorDarkModeModeOpenMenuBorder = textBoxColorDarkModeModeOpenMenuBorder.Text;
+            Settings.Default.ColorSelectedItem = textBoxColorSelectedItem.Text;
+            Settings.Default.ColorDarkModeSelecetedItem = textBoxColorDarkModeSelecetedItem.Text;
+            Settings.Default.ColorSelectedItemBorder = textBoxColorSelectedItemBorder.Text;
+            Settings.Default.ColorDarkModeSelectedItemBorder = textBoxColorDarkModeSelectedItemBorder.Text;
+            Settings.Default.ColorOpenFolder = textBoxColorOpenFolder.Text;
+            Settings.Default.ColorDarkModeOpenFolder = textBoxColorDarkModeOpenFolder.Text;
+            Settings.Default.ColorOpenFolderBorder = textBoxColorOpenFolderBorder.Text;
+            Settings.Default.ColorDarkModeOpenFolderBorder = textBoxColorDarkModeOpenFolderBorder.Text;
             Settings.Default.ColorWarning = textBoxColorWarning.Text;
             Settings.Default.ColorDarkModeWarning = textBoxColorDarkModeWarning.Text;
             Settings.Default.ColorTitle = textBoxColorTitle.Text;
             Settings.Default.ColorDarkModeTitle = textBoxColorDarkModeTitle.Text;
-            Settings.Default.ColorMain = textBoxColorMain.Text;
-            Settings.Default.ColorDarkModeMain = textBoxColorDarkModeMain.Text;
-            Settings.Default.ColorSearch = textBoxColorSearch.Text;
-            Settings.Default.ColorDarkModeSearch = textBoxColorDarkModeSearch.Text;
+            Settings.Default.ColorBackground = textBoxColorBackground.Text;
+            Settings.Default.ColorDarkModeBackground = textBoxColorDarkModeBackground.Text;
+            Settings.Default.ColorSearchField = textBoxColorSearchField.Text;
+            Settings.Default.ColorDarkModeSearchField = textBoxColorDarkModeSearchField.Text;
             Settings.Default.Save();
             DialogResult = DialogResult.OK;
             Close();
@@ -442,24 +459,24 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonDefaultColors_Click(object sender, EventArgs e)
         {
             textBoxColorTitle.Text = "#f0ffff";
-            textBoxColorOpenMenu.Text = "#C2F5DE";
-            textBoxColorOpenMenuBorder.Text = "#99FFA5";
-            textBoxColorMain.Text = "#ffffff";
-            textBoxColorSearch.Text = "#ffffff";
-            textBoxColorSelected.Text = "#CCE8FF";
-            textBoxColorSelectedBorder.Text = "#99D1FF";
+            textBoxColorOpenFolder.Text = "#C2F5DE";
+            textBoxColorOpenFolderBorder.Text = "#99FFA5";
+            textBoxColorBackground.Text = "#ffffff";
+            textBoxColorSearchField.Text = "#ffffff";
+            textBoxColorSelectedItem.Text = "#CCE8FF";
+            textBoxColorSelectedItemBorder.Text = "#99D1FF";
             textBoxColorWarning.Text = "#FFCCE8";
         }
 
         private void ButtonDefaultColorsDark_Click(object sender, EventArgs e)
         {
             textBoxColorDarkModeTitle.Text = "#2B2B2B";
-            textBoxColorDarkModeOpenMenu.Text = "#14412A";
-            textBoxColorDarkModeModeOpenMenuBorder.Text = "#144B55";
-            textBoxColorDarkModeMain.Text = "#202020";
-            textBoxColorDarkModeSearch.Text = "#191919";
-            textBoxColorDarkModeSeleceted.Text = "#333333";
-            textBoxColorDarkModeSelectedBorder.Text = "#141D4B";
+            textBoxColorDarkModeOpenFolder.Text = "#14412A";
+            textBoxColorDarkModeOpenFolderBorder.Text = "#144B55";
+            textBoxColorDarkModeBackground.Text = "#202020";
+            textBoxColorDarkModeSearchField.Text = "#191919";
+            textBoxColorDarkModeSelecetedItem.Text = "#333333";
+            textBoxColorDarkModeSelectedItemBorder.Text = "#141D4B";
             textBoxColorDarkModeWarning.Text = "#4B1834";
         }
     }

@@ -210,22 +210,22 @@ namespace SystemTrayMenu
         {
             ColorConverter c = new ColorConverter();
             Settings s = Settings.Default;
-            s.ColorSelected = SetColor(c, ref AppColors.Selected, Color.FromArgb(204, 232, 255), s.ColorSelected);
-            s.ColorDarkModeSeleceted = SetColor(c, ref AppColors.DarkModeSeleceted, Color.FromArgb(51, 51, 51), s.ColorDarkModeSeleceted);
-            s.ColorSelectedBorder = SetColor(c, ref AppColors.SelectedBorder, Color.FromArgb(153, 209, 255), s.ColorSelectedBorder);
-            s.ColorDarkModeSelectedBorder = SetColor(c, ref AppColors.DarkModeSelectedBorder, Color.FromArgb(20, 29, 75), s.ColorDarkModeSelectedBorder);
-            s.ColorOpenMenu = SetColor(c, ref AppColors.OpenMenu, Color.FromArgb(194, 245, 222), s.ColorOpenMenu);
-            s.ColorDarkModeOpenMenu = SetColor(c, ref AppColors.DarkModeOpenMenu, Color.FromArgb(20, 65, 42), s.ColorDarkModeOpenMenu);
-            s.ColorOpenMenuBorder = SetColor(c, ref AppColors.OpenMenuBorder, Color.FromArgb(153, 255, 165), s.ColorOpenMenuBorder);
-            s.ColorDarkModeModeOpenMenuBorder = SetColor(c, ref AppColors.DarkModeOpenMenuBorder, Color.FromArgb(20, 75, 85), s.ColorDarkModeModeOpenMenuBorder);
+            s.ColorSelectedItem = SetColor(c, ref AppColors.SelectedItem, Color.FromArgb(204, 232, 255), s.ColorSelectedItem);
+            s.ColorDarkModeSelecetedItem = SetColor(c, ref AppColors.DarkModeSelecetedItem, Color.FromArgb(51, 51, 51), s.ColorDarkModeSelecetedItem);
+            s.ColorSelectedItemBorder = SetColor(c, ref AppColors.SelectedItemBorder, Color.FromArgb(153, 209, 255), s.ColorSelectedItemBorder);
+            s.ColorDarkModeSelectedItemBorder = SetColor(c, ref AppColors.DarkModeSelectedItemBorder, Color.FromArgb(20, 29, 75), s.ColorDarkModeSelectedItemBorder);
+            s.ColorOpenFolder = SetColor(c, ref AppColors.OpenFolder, Color.FromArgb(194, 245, 222), s.ColorOpenFolder);
+            s.ColorDarkModeOpenFolder = SetColor(c, ref AppColors.DarkModeOpenFolder, Color.FromArgb(20, 65, 42), s.ColorDarkModeOpenFolder);
+            s.ColorOpenFolderBorder = SetColor(c, ref AppColors.OpenFolderBorder, Color.FromArgb(153, 255, 165), s.ColorOpenFolderBorder);
+            s.ColorDarkModeOpenFolderBorder = SetColor(c, ref AppColors.DarkModeOpenFolderBorder, Color.FromArgb(20, 75, 85), s.ColorDarkModeOpenFolderBorder);
             s.ColorWarning = SetColor(c, ref AppColors.Warning, Color.FromArgb(255, 204, 232), s.ColorWarning);
             s.ColorDarkModeWarning = SetColor(c, ref AppColors.DarkModeWarning, Color.FromArgb(75, 24, 52), s.ColorDarkModeWarning);
             s.ColorTitle = SetColor(c, ref AppColors.Title, Color.Azure, s.ColorTitle);
             s.ColorDarkModeTitle = SetColor(c, ref AppColors.DarkModeTitle, Color.FromArgb(43, 43, 43), s.ColorDarkModeTitle);
-            s.ColorSearch = SetColor(c, ref AppColors.Search, Color.FromArgb(255, 255, 255), s.ColorSearch);
-            s.ColorDarkModeSearch = SetColor(c, ref AppColors.DarkModeSearch, Color.FromArgb(25, 25, 25), s.ColorDarkModeSearch);
-            s.ColorMain = SetColor(c, ref AppColors.Main, Color.FromArgb(255, 255, 255), s.ColorMain);
-            s.ColorDarkModeMain = SetColor(c, ref AppColors.DarkModeMain, Color.FromArgb(32, 32, 32), s.ColorDarkModeMain);
+            s.ColorSearchField = SetColor(c, ref AppColors.SearchField, Color.FromArgb(255, 255, 255), s.ColorSearchField);
+            s.ColorDarkModeSearchField = SetColor(c, ref AppColors.DarkModeSearchField, Color.FromArgb(25, 25, 25), s.ColorDarkModeSearchField);
+            s.ColorBackground = SetColor(c, ref AppColors.Background, Color.FromArgb(255, 255, 255), s.ColorBackground);
+            s.ColorDarkModeBackground = SetColor(c, ref AppColors.DarkModeBackground, Color.FromArgb(32, 32, 32), s.ColorDarkModeBackground);
             s.Save();
         }
 

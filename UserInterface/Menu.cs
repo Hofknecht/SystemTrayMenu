@@ -82,16 +82,16 @@ namespace SystemTrayMenu.UserInterface
 
             Color foreColor = Color.Black;
             Color titleBackColor = AppColors.Title;
-            Color backColor = AppColors.Main;
-            Color backColorSearch = AppColors.Search;
+            Color backColor = AppColors.Background;
+            Color backColorSearch = AppColors.SearchField;
             if (Config.IsDarkMode())
             {
                 foreColor = Color.White;
                 labelTitle.ForeColor = foreColor;
                 textBoxSearch.ForeColor = foreColor;
                 titleBackColor = AppColors.DarkModeTitle;
-                backColor = AppColors.DarkModeMain;
-                backColorSearch = AppColors.DarkModeSearch;
+                backColor = AppColors.DarkModeBackground;
+                backColorSearch = AppColors.DarkModeSearchField;
             }
 
             labelTitle.BackColor = titleBackColor;

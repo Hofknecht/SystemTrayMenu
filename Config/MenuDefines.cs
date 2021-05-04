@@ -20,11 +20,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeSeleceted;
+                    return AppColors.DarkModeSelecetedItem;
                 }
                 else
                 {
-                    return AppColors.Selected;
+                    return AppColors.SelectedItem;
                 }
             }
         }
@@ -35,11 +35,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeSelectedBorder;
+                    return AppColors.DarkModeSelectedItemBorder;
                 }
                 else
                 {
-                    return AppColors.SelectedBorder;
+                    return AppColors.SelectedItemBorder;
                 }
             }
         }
@@ -50,11 +50,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeOpenMenu;
+                    return AppColors.DarkModeOpenFolder;
                 }
                 else
                 {
-                    return AppColors.OpenMenu;
+                    return AppColors.OpenFolder;
                 }
             }
         }
@@ -65,11 +65,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeOpenMenuBorder;
+                    return AppColors.DarkModeOpenFolderBorder;
                 }
                 else
                 {
-                    return AppColors.OpenMenuBorder;
+                    return AppColors.OpenFolderBorder;
                 }
             }
         }
@@ -95,11 +95,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeSeleceted;
+                    return AppColors.DarkModeSelecetedItem;
                 }
                 else
                 {
-                    return AppColors.Selected;
+                    return AppColors.SelectedItem;
                 }
             }
         }
