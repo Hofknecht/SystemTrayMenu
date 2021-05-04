@@ -234,5 +234,261 @@ namespace SystemTrayMenu.Properties
                 this["TimeUntilOpens"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#CCE8FF")]
+        public string ColorBlue
+        {
+            get
+            {
+                return ((string)(this["ColorBlue"]));
+            }
+            set
+            {
+                this["ColorBlue"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#333333")]
+        public string ColorDarkModeBlue
+        {
+            get
+            {
+                return ((string)(this["ColorDarkModeBlue"]));
+            }
+            set
+            {
+                this["ColorDarkModeBlue"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#99D1FF")]
+        public string ColorBlueBorder
+        {
+            get
+            {
+                return ((string)(this["ColorBlueBorder"]));
+            }
+            set
+            {
+                this["ColorBlueBorder"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#141D4B")]
+        public string ColorDarkModeBlueBorder
+        {
+            get
+            {
+                return ((string)(this["ColorDarkModeBlueBorder"]));
+            }
+            set
+            {
+                this["ColorDarkModeBlueBorder"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#C2F5DE")]
+        public string ColorGreen
+        {
+            get
+            {
+                return ((string)(this["ColorGreen"]));
+            }
+            set
+            {
+                this["ColorGreen"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#14412A")]
+        public string ColorDarkModeGreen
+        {
+            get
+            {
+                return ((string)(this["ColorDarkModeGreen"]));
+            }
+            set
+            {
+                this["ColorDarkModeGreen"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#99FFA5")]
+        public string ColorGreenBorder
+        {
+            get
+            {
+                return ((string)(this["ColorGreenBorder"]));
+            }
+            set
+            {
+                this["ColorGreenBorder"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#144B55")]
+        public string ColorDarkModeGreenBorder
+        {
+            get
+            {
+                return ((string)(this["ColorDarkModeGreenBorder"]));
+            }
+            set
+            {
+                this["ColorDarkModeGreenBorder"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FFCCE8")]
+        public string ColorRed
+        {
+            get
+            {
+                return ((string)(this["ColorRed"]));
+            }
+            set
+            {
+                this["ColorRed"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#4B1834")]
+        public string ColorDarkModeRed
+        {
+            get
+            {
+                return ((string)(this["ColorDarkModeRed"]));
+            }
+            set
+            {
+                this["ColorDarkModeRed"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#f0ffff")]
+        public string ColorAzure
+        {
+            get
+            {
+                return ((string)(this["ColorAzure"]));
+            }
+            set
+            {
+                this["ColorAzure"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#2B2B2B")]
+        public string ColorDarkModeAzure
+        {
+            get
+            {
+                return ((string)(this["ColorDarkModeAzure"]));
+            }
+            set
+            {
+                this["ColorDarkModeAzure"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#ffffff")]
+        public string ColorSearch
+        {
+            get
+            {
+                return ((string)(this["ColorSearch"]));
+            }
+            set
+            {
+                this["ColorSearch"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#191919")]
+        public string ColorDarkModeSearch
+    {
+            get
+            {
+                return ((string)(this["ColorDarkModeSearch"]));
+            }
+            set
+            {
+                this["ColorDarkModeSearch"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#ffffff")]
+        public string ColorMain
+    {
+            get
+            {
+                return ((string)(this["ColorMain"]));
+            }
+            set
+            {
+                this["ColorMain"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#202020")]
+        public string ColorDarkModeMain
+    {
+            get
+            {
+                return ((string)(this["ColorDarkModeMain"]));
+            }
+            set
+            {
+                this["ColorDarkModeMain"] = value;
+            }
+        }
     }
 }

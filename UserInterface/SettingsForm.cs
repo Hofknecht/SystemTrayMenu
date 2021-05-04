@@ -11,6 +11,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Text;
     using System.Windows.Forms;
     using Microsoft.Win32;
+    using SystemTrayMenu.Properties;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.UserInterface.HotkeyTextboxControl.HotkeyControl;
 
@@ -18,6 +19,7 @@ namespace SystemTrayMenu.UserInterface
     {
         private readonly string newHotKey = string.Empty;
         private bool inHotkey;
+        private ColorConverter colorConverter = new ColorConverter();
 
         public SettingsForm()
         {
@@ -86,13 +88,13 @@ namespace SystemTrayMenu.UserInterface
             void InitializeAutostart()
             {
                 checkBoxAutostart.Checked =
-                    Properties.Settings.Default.IsAutostartActivated;
+                    Settings.Default.IsAutostartActivated;
             }
 
             InitializeHotkey();
             void InitializeHotkey()
             {
-                textBoxHotkey.SetHotkey(Properties.Settings.Default.HotKey);
+                textBoxHotkey.SetHotkey(Settings.Default.HotKey);
             }
 
             InitializeLanguage();
@@ -115,35 +117,51 @@ namespace SystemTrayMenu.UserInterface
                 comboBoxLanguage.DisplayMember = "Name";
                 comboBoxLanguage.ValueMember = "Value";
                 comboBoxLanguage.SelectedValue =
-                    Properties.Settings.Default.CurrentCultureInfoName;
+                    Settings.Default.CurrentCultureInfoName;
                 if (comboBoxLanguage.SelectedValue == null)
                 {
                     comboBoxLanguage.SelectedValue = "en";
                 }
             }
 
-            checkBoxOpenItemWithOneClick.Checked = Properties.Settings.Default.OpenItemWithOneClick;
-            checkBoxAppearAtMouseLocation.Checked = Properties.Settings.Default.AppearAtMouseLocation;
+            checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
+            checkBoxAppearAtMouseLocation.Checked = Settings.Default.AppearAtMouseLocation;
 
             numericUpDownMenuWidth.Minimum = 50;
             numericUpDownMenuWidth.Maximum = 500;
             numericUpDownMenuWidth.Increment = 10;
-            numericUpDownMenuWidth.Value = Properties.Settings.Default.MaximumMenuWidth;
+            numericUpDownMenuWidth.Value = Settings.Default.MaximumMenuWidth;
 
-            checkBoxStayOpenWhenItemClicked.Checked = Properties.Settings.Default.StaysOpenWhenItemClicked;
-            checkBoxStayOpenWhenFocusLost.Checked = Properties.Settings.Default.StaysOpenWhenFocusLost;
+            checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
+            checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
 
             numericUpDownTimeUntilClose.Minimum = 200;
             numericUpDownTimeUntilClose.Maximum = 5000;
             numericUpDownTimeUntilClose.Increment = 100;
-            numericUpDownTimeUntilClose.Value = Properties.Settings.Default.TimeUntilCloses;
+            numericUpDownTimeUntilClose.Value = Settings.Default.TimeUntilCloses;
 
             numericUpDownTimeUntilOpens.Minimum = 20;
             numericUpDownTimeUntilOpens.Maximum = 1000;
             numericUpDownTimeUntilOpens.Increment = 10;
-            numericUpDownTimeUntilOpens.Value = Properties.Settings.Default.TimeUntilOpens;
+            numericUpDownTimeUntilOpens.Value = Settings.Default.TimeUntilOpens;
 
-            checkBoxDarkModeAlwaysOn.Checked = Properties.Settings.Default.IsDarkModeAlwaysOn;
+            checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
+            textBoxColors4.Text = Settings.Default.ColorBlue;
+            textBoxColorsDark4.Text = Settings.Default.ColorDarkModeBlue;
+            textBoxColors4b.Text = Settings.Default.ColorBlueBorder;
+            textBoxColorsDark4b.Text = Settings.Default.ColorDarkModeBlueBorder;
+            textBoxColors2.Text = Settings.Default.ColorGreen;
+            textBoxColorsDark2.Text = Settings.Default.ColorDarkModeGreen;
+            textBoxColors2b.Text = Settings.Default.ColorGreenBorder;
+            textBoxColorsDark2b.Text = Settings.Default.ColorDarkModeGreenBorder;
+            textBoxColors5.Text = Settings.Default.ColorRed;
+            textBoxColorsDark5.Text = Settings.Default.ColorDarkModeRed;
+            textBoxColors1.Text = Settings.Default.ColorAzure;
+            textBoxColorsDark1.Text = Settings.Default.ColorDarkModeAzure;
+            textBoxColors3.Text = Settings.Default.ColorMain;
+            textBoxColorsDark3.Text = Settings.Default.ColorDarkModeMain;
+            textBoxColors3.Text = Settings.Default.ColorSearch;
+            textBoxColorsDark3b.Text = Settings.Default.ColorDarkModeSearch;
         }
 
         public string NewHotKey => newHotKey;
@@ -211,7 +229,7 @@ namespace SystemTrayMenu.UserInterface
         {
             bool success = RegisterHotkey(
                 failedKeys,
-                Properties.Settings.Default.HotKey,
+                Settings.Default.HotKey,
                 handler);
             return success;
         }
@@ -291,21 +309,21 @@ namespace SystemTrayMenu.UserInterface
                     key.SetValue(
                         Assembly.GetExecutingAssembly().GetName().Name,
                         System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-                    Properties.Settings.Default.IsAutostartActivated = true;
+                    Settings.Default.IsAutostartActivated = true;
                 }
                 else
                 {
                     RegistryKey key = Registry.CurrentUser.OpenSubKey(
                         @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
                     key.DeleteValue("SystemTrayMenu", false);
-                    Properties.Settings.Default.IsAutostartActivated = false;
+                    Settings.Default.IsAutostartActivated = false;
                 }
             }
 
             SaveHotkey();
             void SaveHotkey()
             {
-                Properties.Settings.Default.HotKey =
+                Settings.Default.HotKey =
                     new KeysConverter().ConvertToInvariantString(
                     textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             }
@@ -313,21 +331,37 @@ namespace SystemTrayMenu.UserInterface
             SaveLanguage();
             void SaveLanguage()
             {
-                Properties.Settings.Default.CurrentCultureInfoName =
+                Settings.Default.CurrentCultureInfoName =
                     comboBoxLanguage.SelectedValue.ToString();
             }
 
-            Properties.Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
-            Properties.Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
-            Properties.Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
-            Properties.Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
-            Properties.Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
-            Properties.Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
-            Properties.Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
+            Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
+            Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
+            Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
+            Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
+            Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
+            Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
+            Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
 
-            Properties.Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+            Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+            Settings.Default.ColorBlue = textBoxColors4.Text;
+            Settings.Default.ColorDarkModeBlue = textBoxColorsDark4.Text;
+            Settings.Default.ColorBlueBorder = textBoxColors4b.Text;
+            Settings.Default.ColorDarkModeBlueBorder = textBoxColorsDark4b.Text;
+            Settings.Default.ColorGreen = textBoxColors2.Text;
+            Settings.Default.ColorDarkModeGreen = textBoxColorsDark2.Text;
+            Settings.Default.ColorGreenBorder = textBoxColors2b.Text;
+            Settings.Default.ColorDarkModeGreenBorder = textBoxColorsDark2b.Text;
+            Settings.Default.ColorRed = textBoxColors5.Text;
+            Settings.Default.ColorDarkModeRed = textBoxColorsDark5.Text;
+            Settings.Default.ColorAzure = textBoxColors1.Text;
+            Settings.Default.ColorDarkModeAzure = textBoxColorsDark1.Text;
+            Settings.Default.ColorMain = textBoxColors3.Text;
+            Settings.Default.ColorDarkModeMain = textBoxColorsDark3.Text;
+            Settings.Default.ColorSearch = textBoxColors3b.Text;
+            Settings.Default.ColorDarkModeSearch = textBoxColorsDark3b.Text;
 
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -350,7 +384,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Reload();
+            Settings.Default.Reload();
             DialogResult = DialogResult.Cancel;
             Close();
         }
@@ -369,7 +403,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void TextBoxHotkey_Leave(object sender, EventArgs e)
         {
-            Properties.Settings.Default.HotKey =
+            Settings.Default.HotKey =
                 new KeysConverter().ConvertToInvariantString(
                 textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             RegisterHotkeys();
@@ -379,6 +413,65 @@ namespace SystemTrayMenu.UserInterface
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)
         {
             numericUpDownTimeUntilClose.Enabled = checkBoxStayOpenWhenFocusLost.Checked;
+        }
+
+        private void TextBoxColorsChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            textBox.Text = textBox.Text.Trim();
+            if (textBox.Text.Length == 7)
+            {
+                try
+                {
+                    Color color = (Color)colorConverter.ConvertFromString(textBox.Text);
+                    textBox.BackColor = color;
+                }
+                catch
+                {
+                    textBox.Text = "#ffffff";
+                    textBox.BackColor = Color.White;
+                }
+            }
+            else
+            {
+                textBox.BackColor = Color.White;
+            }
+        }
+
+        private void TextBoxColorsDoubleClick(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            colorDialog1.Color = textBox.BackColor;
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox.Text = ColorTranslator.ToHtml(colorDialog1.Color);
+                textBox.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void ButtonDefaultColors_Click(object sender, EventArgs e)
+        {
+            textBoxColors1.Text = "#f0ffff";
+            textBoxColors2.Text = "#C2F5DE";
+            textBoxColors2b.Text = "#99FFA5";
+            textBoxColors3.Text = "#ffffff";
+            textBoxColors3b.Text = "#ffffff";
+            textBoxColors4.Text = "#CCE8FF";
+            textBoxColors4b.Text = "#99D1FF";
+            textBoxColors5.Text = "#FFCCE8";
+        }
+
+        private void ButtonDefaultColorsDark_Click(object sender, EventArgs e)
+        {
+            textBoxColorsDark1.Text = "#2B2B2B";
+            textBoxColorsDark2.Text = "#14412A";
+            textBoxColorsDark2b.Text = "#144B55";
+            textBoxColorsDark3.Text = "#202020";
+            textBoxColorsDark3b.Text = "#191919";
+            textBoxColorsDark4.Text = "#333333";
+            textBoxColorsDark4b.Text = "#141D4B";
+            textBoxColorsDark5.Text = "#4B1834";
         }
     }
 }

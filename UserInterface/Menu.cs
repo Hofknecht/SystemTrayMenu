@@ -81,22 +81,25 @@ namespace SystemTrayMenu.UserInterface
             SetDoubleBuffer(dgv, true);
 
             Color foreColor = Color.Black;
-            Color backColor = Color.White;
+            Color titleBackColor = AppColors.Azure;
+            Color backColor = AppColors.Main;
+            Color backColorSearch = AppColors.Search;
             if (Config.IsDarkMode())
             {
                 foreColor = Color.White;
                 labelTitle.ForeColor = foreColor;
-                labelTitle.BackColor = AppColors.DarkModeBackColor1;
-
-                backColor = AppColors.DarkModeBackColor2;
-                tableLayoutPanel.BackColor = backColor;
-                dgv.BackgroundColor = backColor;
-
                 textBoxSearch.ForeColor = foreColor;
-                textBoxSearch.BackColor = AppColors.DarkModeBackColor3;
-                pictureBoxSearch.BackColor = AppColors.DarkModeBackColor3;
-                tableLayoutPanelSearch.BackColor = AppColors.DarkModeBackColor3;
+                titleBackColor = AppColors.DarkModeAzure;
+                backColor = AppColors.DarkModeMain;
+                backColorSearch = AppColors.DarkModeSearch;
             }
+
+            labelTitle.BackColor = titleBackColor;
+            tableLayoutPanel.BackColor = backColor;
+            dgv.BackgroundColor = backColor;
+            textBoxSearch.BackColor = backColorSearch;
+            pictureBoxSearch.BackColor = backColorSearch;
+            tableLayoutPanelSearch.BackColor = backColorSearch;
 
             DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle
             {

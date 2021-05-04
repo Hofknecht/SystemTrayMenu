@@ -78,12 +78,40 @@ namespace SystemTrayMenu.UserInterface
             this.buttonAdvancedDefault = new System.Windows.Forms.Button();
             this.tabPageCustomize = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelCustomize = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxDarkMode = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
             this.groupBoxColors = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelColors = new System.Windows.Forms.TableLayoutPanel();
-            this.labelColorsComingSoon = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonDefaultColors = new System.Windows.Forms.Button();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColors4 = new System.Windows.Forms.TextBox();
+            this.textBoxColors4b = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColors2 = new System.Windows.Forms.TextBox();
+            this.textBoxColors2b = new System.Windows.Forms.TextBox();
+            this.textBoxColors3b = new System.Windows.Forms.TextBox();
+            this.textBoxColors5 = new System.Windows.Forms.TextBox();
+            this.textBoxColors3 = new System.Windows.Forms.TextBox();
+            this.textBoxColors1 = new System.Windows.Forms.TextBox();
+            this.groupBoxDarkMode = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorsDark5 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorsDark4 = new System.Windows.Forms.TextBox();
+            this.textBoxColorsDark4b = new System.Windows.Forms.TextBox();
+            this.buttonDefaultColorsDark = new System.Windows.Forms.Button();
+            this.textBoxColorsDark3 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorsDark2 = new System.Windows.Forms.TextBox();
+            this.textBoxColorsDark2b = new System.Windows.Forms.TextBox();
+            this.textBoxColorsDark3b = new System.Windows.Forms.TextBox();
+            this.textBoxColorsDark1 = new System.Windows.Forms.TextBox();
+            this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelBottom.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -115,10 +143,16 @@ namespace SystemTrayMenu.UserInterface
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilOpens)).BeginInit();
             this.tabPageCustomize.SuspendLayout();
             this.tableLayoutPanelCustomize.SuspendLayout();
-            this.groupBoxDarkMode.SuspendLayout();
-            this.tableLayoutPanelDarkMode.SuspendLayout();
             this.groupBoxColors.SuspendLayout();
             this.tableLayoutPanelColors.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.groupBoxDarkMode.SuspendLayout();
+            this.tableLayoutPanelDarkMode.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -134,7 +168,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(476, 437);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(476, 467);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // tableLayoutPanelBottom
@@ -148,7 +182,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.Controls.Add(this.buttonOk, 1, 0);
             this.tableLayoutPanelBottom.Controls.Add(this.buttonCancel, 2, 0);
-            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 409);
+            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 439);
             this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
             this.tableLayoutPanelBottom.RowCount = 1;
             this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -192,8 +226,8 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl.Controls.Add(this.tabPageCustomize);
             this.tabControl.Location = new System.Drawing.Point(3, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 1;
-            this.tabControl.Size = new System.Drawing.Size(470, 400);
+            this.tabControl.SelectedIndex = 2;
+            this.tabControl.Size = new System.Drawing.Size(470, 430);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageGeneral
@@ -202,7 +236,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 24);
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(462, 372);
+            this.tabPageGeneral.Size = new System.Drawing.Size(462, 402);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "tabPageGeneral";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
@@ -225,7 +259,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(456, 366);
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(456, 396);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // groupBoxFolder
@@ -442,7 +476,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
             this.tabPageAdvanced.Name = "tabPageAdvanced";
             this.tabPageAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdvanced.Size = new System.Drawing.Size(462, 372);
+            this.tabPageAdvanced.Size = new System.Drawing.Size(462, 402);
             this.tabPageAdvanced.TabIndex = 0;
             this.tabPageAdvanced.Text = "tabPageAdvanced";
             this.tabPageAdvanced.UseVisualStyleBackColor = true;
@@ -467,7 +501,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(456, 366);
+            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(456, 396);
             this.tableLayoutPanelAdvanced.TabIndex = 0;
             // 
             // groupBoxClick
@@ -754,7 +788,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageCustomize.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomize.Name = "tabPageCustomize";
             this.tabPageCustomize.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCustomize.Size = new System.Drawing.Size(462, 372);
+            this.tabPageCustomize.Size = new System.Drawing.Size(462, 402);
             this.tabPageCustomize.TabIndex = 0;
             this.tabPageCustomize.Text = "tabPageCustomize";
             this.tabPageCustomize.UseVisualStyleBackColor = true;
@@ -765,27 +799,225 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelCustomize.ColumnCount = 1;
             this.tableLayoutPanelCustomize.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxDarkMode, 0, 0);
-            this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxColors, 0, 1);
+            this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxColors, 0, 0);
+            this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxDarkMode, 0, 1);
             this.tableLayoutPanelCustomize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelCustomize.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelCustomize.Name = "tableLayoutPanelCustomize";
             this.tableLayoutPanelCustomize.RowCount = 2;
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(456, 366);
+            this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(456, 396);
             this.tableLayoutPanelCustomize.TabIndex = 0;
+            // 
+            // groupBoxColors
+            // 
+            this.groupBoxColors.AutoSize = true;
+            this.groupBoxColors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxColors.Controls.Add(this.tableLayoutPanelColors);
+            this.groupBoxColors.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxColors.MaximumSize = new System.Drawing.Size(450, 0);
+            this.groupBoxColors.MinimumSize = new System.Drawing.Size(450, 0);
+            this.groupBoxColors.Name = "groupBoxColors";
+            this.groupBoxColors.Size = new System.Drawing.Size(450, 180);
+            this.groupBoxColors.TabIndex = 0;
+            this.groupBoxColors.TabStop = false;
+            this.groupBoxColors.Text = "groupBoxColors";
+            // 
+            // tableLayoutPanelColors
+            // 
+            this.tableLayoutPanelColors.AutoSize = true;
+            this.tableLayoutPanelColors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelColors.ColumnCount = 1;
+            this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
+            this.tableLayoutPanelColors.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanelColors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelColors.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelColors.Name = "tableLayoutPanelColors";
+            this.tableLayoutPanelColors.RowCount = 1;
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 158F));
+            this.tableLayoutPanelColors.Size = new System.Drawing.Size(444, 158);
+            this.tableLayoutPanelColors.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.31818F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.95454F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.buttonDefaultColors, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxColors3b, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxColors5, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxColors3, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxColors1, 2, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.76423F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.20325F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // buttonDefaultColors
+            // 
+            this.buttonDefaultColors.Location = new System.Drawing.Point(3, 107);
+            this.buttonDefaultColors.MinimumSize = new System.Drawing.Size(75, 25);
+            this.buttonDefaultColors.Name = "buttonDefaultColors";
+            this.buttonDefaultColors.Size = new System.Drawing.Size(75, 25);
+            this.buttonDefaultColors.TabIndex = 3;
+            this.buttonDefaultColors.Text = "Default";
+            this.buttonDefaultColors.UseVisualStyleBackColor = true;
+            this.buttonDefaultColors.Click += new System.EventHandler(this.ButtonDefaultColors_Click);
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.AutoSize = true;
+            this.tableLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel7.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel7.Controls.Add(this.textBoxColors4, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.textBoxColors4b, 1, 0);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(151, 40);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(137, 29);
+            this.tableLayoutPanel7.TabIndex = 3;
+            // 
+            // textBoxColors4
+            // 
+            this.textBoxColors4.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColors4.MaxLength = 12;
+            this.textBoxColors4.Name = "textBoxColors4";
+            this.textBoxColors4.Size = new System.Drawing.Size(65, 23);
+            this.textBoxColors4.TabIndex = 2;
+            this.textBoxColors4.Text = "#ffffff";
+            this.textBoxColors4.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColors4.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColors4b
+            // 
+            this.textBoxColors4b.Location = new System.Drawing.Point(74, 3);
+            this.textBoxColors4b.MaxLength = 12;
+            this.textBoxColors4b.Name = "textBoxColors4b";
+            this.textBoxColors4b.Size = new System.Drawing.Size(60, 23);
+            this.textBoxColors4b.TabIndex = 2;
+            this.textBoxColors4b.Text = "#ffffff";
+            this.textBoxColors4b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColors4b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.AutoSize = true;
+            this.tableLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.Controls.Add(this.textBoxColors2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.textBoxColors2b, 1, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(296, 40);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(137, 29);
+            this.tableLayoutPanel6.TabIndex = 3;
+            // 
+            // textBoxColors2
+            // 
+            this.textBoxColors2.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColors2.MaxLength = 12;
+            this.textBoxColors2.Name = "textBoxColors2";
+            this.textBoxColors2.Size = new System.Drawing.Size(65, 23);
+            this.textBoxColors2.TabIndex = 2;
+            this.textBoxColors2.Text = "#ffffff";
+            this.textBoxColors2.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColors2.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColors2b
+            // 
+            this.textBoxColors2b.Location = new System.Drawing.Point(74, 3);
+            this.textBoxColors2b.Name = "textBoxColors2b";
+            this.textBoxColors2b.Size = new System.Drawing.Size(60, 23);
+            this.textBoxColors2b.TabIndex = 2;
+            this.textBoxColors2b.Text = "#ffffff";
+            this.textBoxColors2b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColors2b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColors3b
+            // 
+            this.textBoxColors3b.Location = new System.Drawing.Point(329, 109);
+            this.textBoxColors3b.Margin = new System.Windows.Forms.Padding(33, 5, 3, 3);
+            this.textBoxColors3b.MaxLength = 12;
+            this.textBoxColors3b.Name = "textBoxColors3b";
+            this.textBoxColors3b.Size = new System.Drawing.Size(100, 23);
+            this.textBoxColors3b.TabIndex = 2;
+            this.textBoxColors3b.Text = "#ffffff";
+            this.textBoxColors3b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColors3b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColors5
+            // 
+            this.textBoxColors5.Location = new System.Drawing.Point(7, 43);
+            this.textBoxColors5.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
+            this.textBoxColors5.MaxLength = 12;
+            this.textBoxColors5.Name = "textBoxColors5";
+            this.textBoxColors5.Size = new System.Drawing.Size(137, 23);
+            this.textBoxColors5.TabIndex = 2;
+            this.textBoxColors5.Text = "#ffffff";
+            this.textBoxColors5.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColors5.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColors3
+            // 
+            this.textBoxColors3.Location = new System.Drawing.Point(299, 75);
+            this.textBoxColors3.MaxLength = 12;
+            this.textBoxColors3.Name = "textBoxColors3";
+            this.textBoxColors3.Size = new System.Drawing.Size(132, 23);
+            this.textBoxColors3.TabIndex = 2;
+            this.textBoxColors3.Text = "#ffffff";
+            this.textBoxColors3.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColors3.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColors1
+            // 
+            this.textBoxColors1.Location = new System.Drawing.Point(299, 15);
+            this.textBoxColors1.MaxLength = 12;
+            this.textBoxColors1.Name = "textBoxColors1";
+            this.textBoxColors1.Size = new System.Drawing.Size(84, 23);
+            this.textBoxColors1.TabIndex = 2;
+            this.textBoxColors1.Text = "#ffffff";
+            this.textBoxColors1.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColors1.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
             // 
             // groupBoxDarkMode
             // 
             this.groupBoxDarkMode.AutoSize = true;
             this.groupBoxDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxDarkMode.Controls.Add(this.tableLayoutPanelDarkMode);
-            this.groupBoxDarkMode.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxDarkMode.Location = new System.Drawing.Point(3, 189);
             this.groupBoxDarkMode.MaximumSize = new System.Drawing.Size(450, 0);
             this.groupBoxDarkMode.MinimumSize = new System.Drawing.Size(450, 0);
             this.groupBoxDarkMode.Name = "groupBoxDarkMode";
-            this.groupBoxDarkMode.Size = new System.Drawing.Size(450, 47);
+            this.groupBoxDarkMode.Size = new System.Drawing.Size(450, 205);
             this.groupBoxDarkMode.TabIndex = 0;
             this.groupBoxDarkMode.TabStop = false;
             this.groupBoxDarkMode.Text = "groupBoxDarkMode";
@@ -796,14 +1028,199 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelDarkMode.ColumnCount = 1;
             this.tableLayoutPanelDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
+            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanel10, 0, 1);
             this.tableLayoutPanelDarkMode.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 0);
             this.tableLayoutPanelDarkMode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelDarkMode.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelDarkMode.Name = "tableLayoutPanelDarkMode";
-            this.tableLayoutPanelDarkMode.RowCount = 1;
+            this.tableLayoutPanelDarkMode.RowCount = 2;
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.Size = new System.Drawing.Size(444, 25);
+            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelDarkMode.Size = new System.Drawing.Size(444, 183);
             this.tableLayoutPanelDarkMode.TabIndex = 0;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel10.BackgroundImage")));
+            this.tableLayoutPanel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tableLayoutPanel10.ColumnCount = 3;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.31818F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.95454F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Controls.Add(this.textBoxColorsDark5, 0, 2);
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel8, 1, 2);
+            this.tableLayoutPanel10.Controls.Add(this.buttonDefaultColorsDark, 0, 4);
+            this.tableLayoutPanel10.Controls.Add(this.textBoxColorsDark3, 2, 3);
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel9, 2, 2);
+            this.tableLayoutPanel10.Controls.Add(this.textBoxColorsDark3b, 2, 4);
+            this.tableLayoutPanel10.Controls.Add(this.textBoxColorsDark1, 2, 1);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 28);
+            this.tableLayoutPanel10.MaximumSize = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanel10.MinimumSize = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 6;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.76423F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.20325F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // textBoxColorsDark5
+            // 
+            this.textBoxColorsDark5.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorsDark5.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorsDark5.Location = new System.Drawing.Point(7, 43);
+            this.textBoxColorsDark5.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
+            this.textBoxColorsDark5.MaxLength = 12;
+            this.textBoxColorsDark5.Name = "textBoxColorsDark5";
+            this.textBoxColorsDark5.Size = new System.Drawing.Size(137, 23);
+            this.textBoxColorsDark5.TabIndex = 2;
+            this.textBoxColorsDark5.Text = "#ffffff";
+            this.textBoxColorsDark5.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorsDark5.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.AutoSize = true;
+            this.tableLayoutPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.Controls.Add(this.textBoxColorsDark4, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.textBoxColorsDark4b, 1, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(151, 40);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(137, 29);
+            this.tableLayoutPanel8.TabIndex = 3;
+            // 
+            // textBoxColorsDark4
+            // 
+            this.textBoxColorsDark4.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorsDark4.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorsDark4.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColorsDark4.MaxLength = 12;
+            this.textBoxColorsDark4.Name = "textBoxColorsDark4";
+            this.textBoxColorsDark4.Size = new System.Drawing.Size(65, 23);
+            this.textBoxColorsDark4.TabIndex = 2;
+            this.textBoxColorsDark4.Text = "#ffffff";
+            this.textBoxColorsDark4.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorsDark4.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorsDark4b
+            // 
+            this.textBoxColorsDark4b.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorsDark4b.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorsDark4b.Location = new System.Drawing.Point(74, 3);
+            this.textBoxColorsDark4b.MaxLength = 12;
+            this.textBoxColorsDark4b.Name = "textBoxColorsDark4b";
+            this.textBoxColorsDark4b.Size = new System.Drawing.Size(60, 23);
+            this.textBoxColorsDark4b.TabIndex = 2;
+            this.textBoxColorsDark4b.Text = "#ffffff";
+            this.textBoxColorsDark4b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorsDark4b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // buttonDefaultColorsDark
+            // 
+            this.buttonDefaultColorsDark.Location = new System.Drawing.Point(3, 107);
+            this.buttonDefaultColorsDark.MinimumSize = new System.Drawing.Size(75, 25);
+            this.buttonDefaultColorsDark.Name = "buttonDefaultColorsDark";
+            this.buttonDefaultColorsDark.Size = new System.Drawing.Size(75, 25);
+            this.buttonDefaultColorsDark.TabIndex = 3;
+            this.buttonDefaultColorsDark.Text = "Default";
+            this.buttonDefaultColorsDark.UseVisualStyleBackColor = true;
+            this.buttonDefaultColorsDark.Click += new System.EventHandler(this.ButtonDefaultColorsDark_Click);
+            // 
+            // textBoxColorsDark3
+            // 
+            this.textBoxColorsDark3.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorsDark3.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorsDark3.Location = new System.Drawing.Point(299, 75);
+            this.textBoxColorsDark3.MaxLength = 12;
+            this.textBoxColorsDark3.Name = "textBoxColorsDark3";
+            this.textBoxColorsDark3.Size = new System.Drawing.Size(132, 23);
+            this.textBoxColorsDark3.TabIndex = 2;
+            this.textBoxColorsDark3.Text = "#ffffff";
+            this.textBoxColorsDark3.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorsDark3.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.AutoSize = true;
+            this.tableLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel9.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.Controls.Add(this.textBoxColorsDark2, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.textBoxColorsDark2b, 1, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(296, 40);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(137, 29);
+            this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // textBoxColorsDark2
+            // 
+            this.textBoxColorsDark2.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorsDark2.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorsDark2.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColorsDark2.MaxLength = 12;
+            this.textBoxColorsDark2.Name = "textBoxColorsDark2";
+            this.textBoxColorsDark2.Size = new System.Drawing.Size(65, 23);
+            this.textBoxColorsDark2.TabIndex = 2;
+            this.textBoxColorsDark2.Text = "#ffffff";
+            this.textBoxColorsDark2.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorsDark2.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorsDark2b
+            // 
+            this.textBoxColorsDark2b.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorsDark2b.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorsDark2b.Location = new System.Drawing.Point(74, 3);
+            this.textBoxColorsDark2b.Name = "textBoxColorsDark2b";
+            this.textBoxColorsDark2b.Size = new System.Drawing.Size(60, 23);
+            this.textBoxColorsDark2b.TabIndex = 2;
+            this.textBoxColorsDark2b.Text = "#ffffff";
+            this.textBoxColorsDark2b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorsDark2b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorsDark3b
+            // 
+            this.textBoxColorsDark3b.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorsDark3b.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorsDark3b.Location = new System.Drawing.Point(329, 109);
+            this.textBoxColorsDark3b.Margin = new System.Windows.Forms.Padding(33, 5, 3, 3);
+            this.textBoxColorsDark3b.MaxLength = 12;
+            this.textBoxColorsDark3b.Name = "textBoxColorsDark3b";
+            this.textBoxColorsDark3b.Size = new System.Drawing.Size(100, 23);
+            this.textBoxColorsDark3b.TabIndex = 2;
+            this.textBoxColorsDark3b.Text = "#ffffff";
+            this.textBoxColorsDark3b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorsDark3b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorsDark1
+            // 
+            this.textBoxColorsDark1.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorsDark1.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorsDark1.Location = new System.Drawing.Point(299, 15);
+            this.textBoxColorsDark1.MaxLength = 12;
+            this.textBoxColorsDark1.Name = "textBoxColorsDark1";
+            this.textBoxColorsDark1.Size = new System.Drawing.Size(84, 23);
+            this.textBoxColorsDark1.TabIndex = 2;
+            this.textBoxColorsDark1.Text = "#ffffff";
+            this.textBoxColorsDark1.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorsDark1.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
             // 
             // checkBoxDarkModeAlwaysOn
             // 
@@ -816,46 +1233,40 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxDarkModeAlwaysOn.Text = "checkBoxDarkModeAlwaysOn";
             this.checkBoxDarkModeAlwaysOn.UseVisualStyleBackColor = true;
             // 
-            // groupBoxColors
+            // textBox1
             // 
-            this.groupBoxColors.AutoSize = true;
-            this.groupBoxColors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxColors.Controls.Add(this.tableLayoutPanelColors);
-            this.groupBoxColors.Location = new System.Drawing.Point(3, 56);
-            this.groupBoxColors.MaximumSize = new System.Drawing.Size(450, 0);
-            this.groupBoxColors.MinimumSize = new System.Drawing.Size(450, 0);
-            this.groupBoxColors.Name = "groupBoxColors";
-            this.groupBoxColors.Size = new System.Drawing.Size(450, 37);
-            this.groupBoxColors.TabIndex = 0;
-            this.groupBoxColors.TabStop = false;
-            this.groupBoxColors.Text = "groupBoxColors";
-            this.groupBoxColors.Visible = false;
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.MaxLength = 12;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(65, 23);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "#ffffff";
             // 
-            // tableLayoutPanelColors
+            // textBox2
             // 
-            this.tableLayoutPanelColors.AutoSize = true;
-            this.tableLayoutPanelColors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelColors.ColumnCount = 1;
-            this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelColors.Controls.Add(this.labelColorsComingSoon, 0, 0);
-            this.tableLayoutPanelColors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelColors.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelColors.Name = "tableLayoutPanelColors";
-            this.tableLayoutPanelColors.RowCount = 1;
-            this.tableLayoutPanelColors.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColors.Size = new System.Drawing.Size(444, 15);
-            this.tableLayoutPanelColors.TabIndex = 0;
+            this.textBox2.Location = new System.Drawing.Point(74, 3);
+            this.textBox2.MaxLength = 12;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(60, 23);
+            this.textBox2.TabIndex = 2;
+            this.textBox2.Text = "#ffffff";
             // 
-            // labelColorsComingSoon
+            // textBox3
             // 
-            this.labelColorsComingSoon.AutoSize = true;
-            this.labelColorsComingSoon.Location = new System.Drawing.Point(3, 0);
-            this.labelColorsComingSoon.MaximumSize = new System.Drawing.Size(400, 0);
-            this.labelColorsComingSoon.MinimumSize = new System.Drawing.Size(400, 0);
-            this.labelColorsComingSoon.Name = "labelColorsComingSoon";
-            this.labelColorsComingSoon.Size = new System.Drawing.Size(400, 15);
-            this.labelColorsComingSoon.TabIndex = 0;
-            this.labelColorsComingSoon.Text = "coming soon ...";
+            this.textBox3.Location = new System.Drawing.Point(3, 3);
+            this.textBox3.MaxLength = 12;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(65, 23);
+            this.textBox3.TabIndex = 2;
+            this.textBox3.Text = "#ffffff";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(74, 3);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(60, 23);
+            this.textBox4.TabIndex = 2;
+            this.textBox4.Text = "#ffffff";
             // 
             // SettingsForm
             // 
@@ -863,7 +1274,7 @@ namespace SystemTrayMenu.UserInterface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1429, 726);
+            this.ClientSize = new System.Drawing.Size(1429, 520);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -929,14 +1340,25 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageCustomize.PerformLayout();
             this.tableLayoutPanelCustomize.ResumeLayout(false);
             this.tableLayoutPanelCustomize.PerformLayout();
+            this.groupBoxColors.ResumeLayout(false);
+            this.groupBoxColors.PerformLayout();
+            this.tableLayoutPanelColors.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.groupBoxDarkMode.ResumeLayout(false);
             this.groupBoxDarkMode.PerformLayout();
             this.tableLayoutPanelDarkMode.ResumeLayout(false);
             this.tableLayoutPanelDarkMode.PerformLayout();
-            this.groupBoxColors.ResumeLayout(false);
-            this.groupBoxColors.PerformLayout();
-            this.tableLayoutPanelColors.ResumeLayout(false);
-            this.tableLayoutPanelColors.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -976,7 +1398,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.GroupBox groupBoxColors;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelClick;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelColors;
-        private System.Windows.Forms.Label labelColorsComingSoon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCustomize;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelStaysOpen;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTimeUntilCloses;
@@ -999,5 +1420,34 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.NumericUpDown numericUpDownMenuWidth;
         private System.Windows.Forms.NumericUpDown numericUpDownTimeUntilOpens;
         private System.Windows.Forms.CheckBox checkBoxStayOpenWhenItemClicked;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button buttonDefaultColorsDark;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox textBoxColors2;
+        private System.Windows.Forms.TextBox textBoxColors5;
+        private System.Windows.Forms.TextBox textBoxColors3;
+        private System.Windows.Forms.TextBox textBoxColors1;
+        private System.Windows.Forms.TextBox textBoxColors4;
+        private System.Windows.Forms.TextBox textBoxColors2b;
+        private System.Windows.Forms.TextBox textBoxColorsDark5;
+        private System.Windows.Forms.TextBox textBoxColorsDark3;
+        private System.Windows.Forms.TextBox textBoxColorsDark1;
+        private System.Windows.Forms.TextBox textBoxColorsDark4;
+        private System.Windows.Forms.TextBox textBoxColorsDark2;
+        private System.Windows.Forms.TextBox textBoxColorsDark2b;
+        private System.Windows.Forms.TextBox textBoxColors4b;
+        private System.Windows.Forms.TextBox textBoxColorsDark4b;
+        private System.Windows.Forms.TextBox textBoxColorsDark3b;
+        private System.Windows.Forms.Button buttonDefaultColors;
+        private System.Windows.Forms.TextBox textBoxColors3b;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
     }
 }

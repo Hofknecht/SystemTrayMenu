@@ -22,8 +22,7 @@ namespace SystemTrayMenu
                 Log.Initialize();
                 SingleAppInstance.Initialize();
                 Translator.Initialize();
-
-                Config.UpgradeIfNotUpgraded();
+                Config.Initialize();
                 if (Config.LoadOrSetByUser())
                 {
                     Application.EnableVisualStyles();
