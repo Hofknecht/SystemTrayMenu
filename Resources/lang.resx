@@ -246,4 +246,7 @@
   <data name="If an item was clicked" xml:space="preserve">
     <value>If an item was clicked</value>
   </data>
+  <data name="Light Mode" xml:space="preserve">
+    <value>Light Mode</value>
+  </data>
 </root>

@@ -239,15 +239,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#CCE8FF")]
-        public string ColorBlue
+        public string ColorSelected
         {
             get
             {
-                return ((string)(this["ColorBlue"]));
+                return ((string)(this["ColorSelected"]));
             }
             set
             {
-                this["ColorBlue"] = value;
+                this["ColorSelected"] = value;
             }
         }
 
@@ -255,15 +255,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#333333")]
-        public string ColorDarkModeBlue
+        public string ColorDarkModeSeleceted
         {
             get
             {
-                return ((string)(this["ColorDarkModeBlue"]));
+                return ((string)(this["ColorDarkModeSeleceted"]));
             }
             set
             {
-                this["ColorDarkModeBlue"] = value;
+                this["ColorDarkModeSeleceted"] = value;
             }
         }
 
@@ -271,15 +271,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#99D1FF")]
-        public string ColorBlueBorder
+        public string ColorSelectedBorder
         {
             get
             {
-                return ((string)(this["ColorBlueBorder"]));
+                return ((string)(this["ColorSelectedBorder"]));
             }
             set
             {
-                this["ColorBlueBorder"] = value;
+                this["ColorSelectedBorder"] = value;
             }
         }
 
@@ -287,15 +287,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#141D4B")]
-        public string ColorDarkModeBlueBorder
+        public string ColorDarkModeSelectedBorder
         {
             get
             {
-                return ((string)(this["ColorDarkModeBlueBorder"]));
+                return ((string)(this["ColorDarkModeSelectedBorder"]));
             }
             set
             {
-                this["ColorDarkModeBlueBorder"] = value;
+                this["ColorDarkModeSelectedBorder"] = value;
             }
         }
 
@@ -303,15 +303,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#C2F5DE")]
-        public string ColorGreen
+        public string ColorOpenMenu
         {
             get
             {
-                return ((string)(this["ColorGreen"]));
+                return ((string)(this["ColorOpenMenu"]));
             }
             set
             {
-                this["ColorGreen"] = value;
+                this["ColorOpenMenu"] = value;
             }
         }
 
@@ -319,15 +319,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#14412A")]
-        public string ColorDarkModeGreen
+        public string ColorDarkModeOpenMenu
         {
             get
             {
-                return ((string)(this["ColorDarkModeGreen"]));
+                return ((string)(this["ColorDarkModeOpenMenu"]));
             }
             set
             {
-                this["ColorDarkModeGreen"] = value;
+                this["ColorDarkModeOpenMenu"] = value;
             }
         }
 
@@ -335,15 +335,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#99FFA5")]
-        public string ColorGreenBorder
+        public string ColorOpenMenuBorder
         {
             get
             {
-                return ((string)(this["ColorGreenBorder"]));
+                return ((string)(this["ColorOpenMenuBorder"]));
             }
             set
             {
-                this["ColorGreenBorder"] = value;
+                this["ColorOpenMenuBorder"] = value;
             }
         }
 
@@ -351,15 +351,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#144B55")]
-        public string ColorDarkModeGreenBorder
+        public string ColorDarkModeModeOpenMenuBorder
         {
             get
             {
-                return ((string)(this["ColorDarkModeGreenBorder"]));
+                return ((string)(this["ColorDarkModeModeOpenMenuBorder"]));
             }
             set
             {
-                this["ColorDarkModeGreenBorder"] = value;
+                this["ColorDarkModeModeOpenMenuBorder"] = value;
             }
         }
 
@@ -367,15 +367,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#FFCCE8")]
-        public string ColorRed
+        public string ColorWarning
         {
             get
             {
-                return ((string)(this["ColorRed"]));
+                return ((string)(this["ColorWarning"]));
             }
             set
             {
-                this["ColorRed"] = value;
+                this["ColorWarning"] = value;
             }
         }
 
@@ -383,15 +383,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#4B1834")]
-        public string ColorDarkModeRed
+        public string ColorDarkModeWarning
         {
             get
             {
-                return ((string)(this["ColorDarkModeRed"]));
+                return ((string)(this["ColorDarkModeWarning"]));
             }
             set
             {
-                this["ColorDarkModeRed"] = value;
+                this["ColorDarkModeWarning"] = value;
             }
         }
 
@@ -399,15 +399,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#f0ffff")]
-        public string ColorAzure
+        public string ColorTitle
         {
             get
             {
-                return ((string)(this["ColorAzure"]));
+                return ((string)(this["ColorTitle"]));
             }
             set
             {
-                this["ColorAzure"] = value;
+                this["ColorTitle"] = value;
             }
         }
 
@@ -415,15 +415,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#2B2B2B")]
-        public string ColorDarkModeAzure
+        public string ColorDarkModeTitle
         {
             get
             {
-                return ((string)(this["ColorDarkModeAzure"]));
+                return ((string)(this["ColorDarkModeTitle"]));
             }
             set
             {
-                this["ColorDarkModeAzure"] = value;
+                this["ColorDarkModeTitle"] = value;
             }
         }
 

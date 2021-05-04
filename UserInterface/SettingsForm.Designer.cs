@@ -80,38 +80,34 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxColors = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelColors = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelMenuMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorTitle = new System.Windows.Forms.TextBox();
+            this.textBoxColorWarning = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelMenuSelectedMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorSelected = new System.Windows.Forms.TextBox();
+            this.textBoxColorSelectedBorder = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelMenuOpenMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorOpenMenu = new System.Windows.Forms.TextBox();
+            this.textBoxColorOpenMenuBorder = new System.Windows.Forms.TextBox();
+            this.textBoxColorMain = new System.Windows.Forms.TextBox();
+            this.textBoxColorSearch = new System.Windows.Forms.TextBox();
             this.buttonDefaultColors = new System.Windows.Forms.Button();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxColors4 = new System.Windows.Forms.TextBox();
-            this.textBoxColors4b = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxColors2 = new System.Windows.Forms.TextBox();
-            this.textBoxColors2b = new System.Windows.Forms.TextBox();
-            this.textBoxColors3b = new System.Windows.Forms.TextBox();
-            this.textBoxColors5 = new System.Windows.Forms.TextBox();
-            this.textBoxColors3 = new System.Windows.Forms.TextBox();
-            this.textBoxColors1 = new System.Windows.Forms.TextBox();
             this.groupBoxDarkMode = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxColorsDark5 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxColorsDark4 = new System.Windows.Forms.TextBox();
-            this.textBoxColorsDark4b = new System.Windows.Forms.TextBox();
-            this.buttonDefaultColorsDark = new System.Windows.Forms.Button();
-            this.textBoxColorsDark3 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxColorsDark2 = new System.Windows.Forms.TextBox();
-            this.textBoxColorsDark2b = new System.Windows.Forms.TextBox();
-            this.textBoxColorsDark3b = new System.Windows.Forms.TextBox();
-            this.textBoxColorsDark1 = new System.Windows.Forms.TextBox();
             this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelMenuDarkMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorDarkModeTitle = new System.Windows.Forms.TextBox();
+            this.textBoxColorDarkModeWarning = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelMenuDarkSelectedMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorDarkModeSeleceted = new System.Windows.Forms.TextBox();
+            this.textBoxColorDarkModeSelectedBorder = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelMenuDarkOpenMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxColorDarkModeOpenMenu = new System.Windows.Forms.TextBox();
+            this.textBoxColorDarkModeModeOpenMenuBorder = new System.Windows.Forms.TextBox();
+            this.textBoxColorDarkModeMain = new System.Windows.Forms.TextBox();
+            this.textBoxColorDarkModeSearch = new System.Windows.Forms.TextBox();
+            this.buttonDefaultColorsDark = new System.Windows.Forms.Button();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tableLayoutPanelBottom.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -145,14 +141,14 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize.SuspendLayout();
             this.groupBoxColors.SuspendLayout();
             this.tableLayoutPanelColors.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanelMenuMenu.SuspendLayout();
+            this.tableLayoutPanelMenuSelectedMenu.SuspendLayout();
+            this.tableLayoutPanelMenuOpenMenu.SuspendLayout();
             this.groupBoxDarkMode.SuspendLayout();
             this.tableLayoutPanelDarkMode.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanelMenuDarkMenu.SuspendLayout();
+            this.tableLayoutPanelMenuDarkSelectedMenu.SuspendLayout();
+            this.tableLayoutPanelMenuDarkOpenMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -831,7 +827,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelColors.ColumnCount = 1;
             this.tableLayoutPanelColors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
-            this.tableLayoutPanelColors.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanelColors.Controls.Add(this.tableLayoutPanelMenuMenu, 0, 0);
             this.tableLayoutPanelColors.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelColors.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelColors.Name = "tableLayoutPanelColors";
@@ -841,35 +837,161 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColors.Size = new System.Drawing.Size(444, 158);
             this.tableLayoutPanelColors.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelMenuMenu
             // 
-            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
-            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.31818F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.95454F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.buttonDefaultColors, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxColors3b, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxColors5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxColors3, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxColors1, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(440, 152);
-            this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(440, 152);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.76423F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.20325F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(440, 152);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanelMenuMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanelMenuMenu.BackgroundImage")));
+            this.tableLayoutPanelMenuMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tableLayoutPanelMenuMenu.ColumnCount = 3;
+            this.tableLayoutPanelMenuMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.31818F));
+            this.tableLayoutPanelMenuMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.95454F));
+            this.tableLayoutPanelMenuMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
+            this.tableLayoutPanelMenuMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelMenuMenu.Controls.Add(this.textBoxColorTitle, 2, 1);
+            this.tableLayoutPanelMenuMenu.Controls.Add(this.textBoxColorWarning, 0, 2);
+            this.tableLayoutPanelMenuMenu.Controls.Add(this.tableLayoutPanelMenuSelectedMenu, 1, 2);
+            this.tableLayoutPanelMenuMenu.Controls.Add(this.tableLayoutPanelMenuOpenMenu, 2, 2);
+            this.tableLayoutPanelMenuMenu.Controls.Add(this.textBoxColorMain, 2, 3);
+            this.tableLayoutPanelMenuMenu.Controls.Add(this.textBoxColorSearch, 2, 4);
+            this.tableLayoutPanelMenuMenu.Controls.Add(this.buttonDefaultColors, 0, 4);
+            this.tableLayoutPanelMenuMenu.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelMenuMenu.MaximumSize = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanelMenuMenu.MinimumSize = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanelMenuMenu.Name = "tableLayoutPanelMenuMenu";
+            this.tableLayoutPanelMenuMenu.RowCount = 6;
+            this.tableLayoutPanelMenuMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanelMenuMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.76423F));
+            this.tableLayoutPanelMenuMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
+            this.tableLayoutPanelMenuMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
+            this.tableLayoutPanelMenuMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.20325F));
+            this.tableLayoutPanelMenuMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanelMenuMenu.Size = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanelMenuMenu.TabIndex = 1;
+            // 
+            // textBoxColorTitle
+            // 
+            this.textBoxColorTitle.Location = new System.Drawing.Point(299, 15);
+            this.textBoxColorTitle.MaxLength = 12;
+            this.textBoxColorTitle.Name = "textBoxColorTitle";
+            this.textBoxColorTitle.Size = new System.Drawing.Size(84, 23);
+            this.textBoxColorTitle.TabIndex = 2;
+            this.textBoxColorTitle.Text = "#ffffff";
+            this.textBoxColorTitle.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorTitle.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorWarning
+            // 
+            this.textBoxColorWarning.Location = new System.Drawing.Point(7, 43);
+            this.textBoxColorWarning.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
+            this.textBoxColorWarning.MaxLength = 12;
+            this.textBoxColorWarning.Name = "textBoxColorWarning";
+            this.textBoxColorWarning.Size = new System.Drawing.Size(137, 23);
+            this.textBoxColorWarning.TabIndex = 2;
+            this.textBoxColorWarning.Text = "#ffffff";
+            this.textBoxColorWarning.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorWarning.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // tableLayoutPanelMenuSelectedMenu
+            // 
+            this.tableLayoutPanelMenuSelectedMenu.AutoSize = true;
+            this.tableLayoutPanelMenuSelectedMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelMenuSelectedMenu.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanelMenuSelectedMenu.ColumnCount = 2;
+            this.tableLayoutPanelMenuSelectedMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMenuSelectedMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMenuSelectedMenu.Controls.Add(this.textBoxColorSelected, 0, 0);
+            this.tableLayoutPanelMenuSelectedMenu.Controls.Add(this.textBoxColorSelectedBorder, 1, 0);
+            this.tableLayoutPanelMenuSelectedMenu.Location = new System.Drawing.Point(151, 40);
+            this.tableLayoutPanelMenuSelectedMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelMenuSelectedMenu.Name = "tableLayoutPanelMenuSelectedMenu";
+            this.tableLayoutPanelMenuSelectedMenu.RowCount = 1;
+            this.tableLayoutPanelMenuSelectedMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMenuSelectedMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanelMenuSelectedMenu.Size = new System.Drawing.Size(137, 29);
+            this.tableLayoutPanelMenuSelectedMenu.TabIndex = 3;
+            // 
+            // textBoxColorSelected
+            // 
+            this.textBoxColorSelected.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColorSelected.MaxLength = 12;
+            this.textBoxColorSelected.Name = "textBoxColorSelected";
+            this.textBoxColorSelected.Size = new System.Drawing.Size(65, 23);
+            this.textBoxColorSelected.TabIndex = 2;
+            this.textBoxColorSelected.Text = "#ffffff";
+            this.textBoxColorSelected.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSelected.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorSelectedBorder
+            // 
+            this.textBoxColorSelectedBorder.Location = new System.Drawing.Point(74, 3);
+            this.textBoxColorSelectedBorder.MaxLength = 12;
+            this.textBoxColorSelectedBorder.Name = "textBoxColorSelectedBorder";
+            this.textBoxColorSelectedBorder.Size = new System.Drawing.Size(60, 23);
+            this.textBoxColorSelectedBorder.TabIndex = 2;
+            this.textBoxColorSelectedBorder.Text = "#ffffff";
+            this.textBoxColorSelectedBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSelectedBorder.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // tableLayoutPanelMenuOpenMenu
+            // 
+            this.tableLayoutPanelMenuOpenMenu.AutoSize = true;
+            this.tableLayoutPanelMenuOpenMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelMenuOpenMenu.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanelMenuOpenMenu.ColumnCount = 2;
+            this.tableLayoutPanelMenuOpenMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMenuOpenMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMenuOpenMenu.Controls.Add(this.textBoxColorOpenMenu, 0, 0);
+            this.tableLayoutPanelMenuOpenMenu.Controls.Add(this.textBoxColorOpenMenuBorder, 1, 0);
+            this.tableLayoutPanelMenuOpenMenu.Location = new System.Drawing.Point(296, 40);
+            this.tableLayoutPanelMenuOpenMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelMenuOpenMenu.Name = "tableLayoutPanelMenuOpenMenu";
+            this.tableLayoutPanelMenuOpenMenu.RowCount = 1;
+            this.tableLayoutPanelMenuOpenMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMenuOpenMenu.Size = new System.Drawing.Size(137, 29);
+            this.tableLayoutPanelMenuOpenMenu.TabIndex = 3;
+            // 
+            // textBoxColorOpenMenu
+            // 
+            this.textBoxColorOpenMenu.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColorOpenMenu.MaxLength = 12;
+            this.textBoxColorOpenMenu.Name = "textBoxColorOpenMenu";
+            this.textBoxColorOpenMenu.Size = new System.Drawing.Size(65, 23);
+            this.textBoxColorOpenMenu.TabIndex = 2;
+            this.textBoxColorOpenMenu.Text = "#ffffff";
+            this.textBoxColorOpenMenu.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorOpenMenu.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorOpenMenuBorder
+            // 
+            this.textBoxColorOpenMenuBorder.Location = new System.Drawing.Point(74, 3);
+            this.textBoxColorOpenMenuBorder.Name = "textBoxColorOpenMenuBorder";
+            this.textBoxColorOpenMenuBorder.Size = new System.Drawing.Size(60, 23);
+            this.textBoxColorOpenMenuBorder.TabIndex = 2;
+            this.textBoxColorOpenMenuBorder.Text = "#ffffff";
+            this.textBoxColorOpenMenuBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorOpenMenuBorder.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorMain
+            // 
+            this.textBoxColorMain.Location = new System.Drawing.Point(299, 75);
+            this.textBoxColorMain.MaxLength = 12;
+            this.textBoxColorMain.Name = "textBoxColorMain";
+            this.textBoxColorMain.Size = new System.Drawing.Size(132, 23);
+            this.textBoxColorMain.TabIndex = 2;
+            this.textBoxColorMain.Text = "#ffffff";
+            this.textBoxColorMain.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorMain.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorSearch
+            // 
+            this.textBoxColorSearch.Location = new System.Drawing.Point(329, 109);
+            this.textBoxColorSearch.Margin = new System.Windows.Forms.Padding(33, 5, 3, 3);
+            this.textBoxColorSearch.MaxLength = 12;
+            this.textBoxColorSearch.Name = "textBoxColorSearch";
+            this.textBoxColorSearch.Size = new System.Drawing.Size(100, 23);
+            this.textBoxColorSearch.TabIndex = 2;
+            this.textBoxColorSearch.Text = "#ffffff";
+            this.textBoxColorSearch.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSearch.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
             // 
             // buttonDefaultColors
             // 
@@ -881,132 +1003,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonDefaultColors.Text = "Default";
             this.buttonDefaultColors.UseVisualStyleBackColor = true;
             this.buttonDefaultColors.Click += new System.EventHandler(this.ButtonDefaultColors_Click);
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.AutoSize = true;
-            this.tableLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel7.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel7.Controls.Add(this.textBoxColors4, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.textBoxColors4b, 1, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(151, 40);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(137, 29);
-            this.tableLayoutPanel7.TabIndex = 3;
-            // 
-            // textBoxColors4
-            // 
-            this.textBoxColors4.Location = new System.Drawing.Point(3, 3);
-            this.textBoxColors4.MaxLength = 12;
-            this.textBoxColors4.Name = "textBoxColors4";
-            this.textBoxColors4.Size = new System.Drawing.Size(65, 23);
-            this.textBoxColors4.TabIndex = 2;
-            this.textBoxColors4.Text = "#ffffff";
-            this.textBoxColors4.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColors4.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColors4b
-            // 
-            this.textBoxColors4b.Location = new System.Drawing.Point(74, 3);
-            this.textBoxColors4b.MaxLength = 12;
-            this.textBoxColors4b.Name = "textBoxColors4b";
-            this.textBoxColors4b.Size = new System.Drawing.Size(60, 23);
-            this.textBoxColors4b.TabIndex = 2;
-            this.textBoxColors4b.Text = "#ffffff";
-            this.textBoxColors4b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColors4b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.AutoSize = true;
-            this.tableLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.Controls.Add(this.textBoxColors2, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.textBoxColors2b, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(296, 40);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(137, 29);
-            this.tableLayoutPanel6.TabIndex = 3;
-            // 
-            // textBoxColors2
-            // 
-            this.textBoxColors2.Location = new System.Drawing.Point(3, 3);
-            this.textBoxColors2.MaxLength = 12;
-            this.textBoxColors2.Name = "textBoxColors2";
-            this.textBoxColors2.Size = new System.Drawing.Size(65, 23);
-            this.textBoxColors2.TabIndex = 2;
-            this.textBoxColors2.Text = "#ffffff";
-            this.textBoxColors2.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColors2.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColors2b
-            // 
-            this.textBoxColors2b.Location = new System.Drawing.Point(74, 3);
-            this.textBoxColors2b.Name = "textBoxColors2b";
-            this.textBoxColors2b.Size = new System.Drawing.Size(60, 23);
-            this.textBoxColors2b.TabIndex = 2;
-            this.textBoxColors2b.Text = "#ffffff";
-            this.textBoxColors2b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColors2b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColors3b
-            // 
-            this.textBoxColors3b.Location = new System.Drawing.Point(329, 109);
-            this.textBoxColors3b.Margin = new System.Windows.Forms.Padding(33, 5, 3, 3);
-            this.textBoxColors3b.MaxLength = 12;
-            this.textBoxColors3b.Name = "textBoxColors3b";
-            this.textBoxColors3b.Size = new System.Drawing.Size(100, 23);
-            this.textBoxColors3b.TabIndex = 2;
-            this.textBoxColors3b.Text = "#ffffff";
-            this.textBoxColors3b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColors3b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColors5
-            // 
-            this.textBoxColors5.Location = new System.Drawing.Point(7, 43);
-            this.textBoxColors5.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
-            this.textBoxColors5.MaxLength = 12;
-            this.textBoxColors5.Name = "textBoxColors5";
-            this.textBoxColors5.Size = new System.Drawing.Size(137, 23);
-            this.textBoxColors5.TabIndex = 2;
-            this.textBoxColors5.Text = "#ffffff";
-            this.textBoxColors5.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColors5.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColors3
-            // 
-            this.textBoxColors3.Location = new System.Drawing.Point(299, 75);
-            this.textBoxColors3.MaxLength = 12;
-            this.textBoxColors3.Name = "textBoxColors3";
-            this.textBoxColors3.Size = new System.Drawing.Size(132, 23);
-            this.textBoxColors3.TabIndex = 2;
-            this.textBoxColors3.Text = "#ffffff";
-            this.textBoxColors3.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColors3.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColors1
-            // 
-            this.textBoxColors1.Location = new System.Drawing.Point(299, 15);
-            this.textBoxColors1.MaxLength = 12;
-            this.textBoxColors1.Name = "textBoxColors1";
-            this.textBoxColors1.Size = new System.Drawing.Size(84, 23);
-            this.textBoxColors1.TabIndex = 2;
-            this.textBoxColors1.Text = "#ffffff";
-            this.textBoxColors1.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColors1.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
             // 
             // groupBoxDarkMode
             // 
@@ -1028,8 +1024,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelDarkMode.ColumnCount = 1;
             this.tableLayoutPanelDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanel10, 0, 1);
             this.tableLayoutPanelDarkMode.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 0);
+            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelMenuDarkMenu, 0, 1);
             this.tableLayoutPanelDarkMode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelDarkMode.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelDarkMode.Name = "tableLayoutPanelDarkMode";
@@ -1039,188 +1035,6 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelDarkMode.Size = new System.Drawing.Size(444, 183);
             this.tableLayoutPanelDarkMode.TabIndex = 0;
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel10.BackgroundImage")));
-            this.tableLayoutPanel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tableLayoutPanel10.ColumnCount = 3;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.31818F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.95454F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Controls.Add(this.textBoxColorsDark5, 0, 2);
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel8, 1, 2);
-            this.tableLayoutPanel10.Controls.Add(this.buttonDefaultColorsDark, 0, 4);
-            this.tableLayoutPanel10.Controls.Add(this.textBoxColorsDark3, 2, 3);
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel9, 2, 2);
-            this.tableLayoutPanel10.Controls.Add(this.textBoxColorsDark3b, 2, 4);
-            this.tableLayoutPanel10.Controls.Add(this.textBoxColorsDark1, 2, 1);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 28);
-            this.tableLayoutPanel10.MaximumSize = new System.Drawing.Size(440, 152);
-            this.tableLayoutPanel10.MinimumSize = new System.Drawing.Size(440, 152);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 6;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.76423F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.20325F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(440, 152);
-            this.tableLayoutPanel10.TabIndex = 1;
-            // 
-            // textBoxColorsDark5
-            // 
-            this.textBoxColorsDark5.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxColorsDark5.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxColorsDark5.Location = new System.Drawing.Point(7, 43);
-            this.textBoxColorsDark5.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
-            this.textBoxColorsDark5.MaxLength = 12;
-            this.textBoxColorsDark5.Name = "textBoxColorsDark5";
-            this.textBoxColorsDark5.Size = new System.Drawing.Size(137, 23);
-            this.textBoxColorsDark5.TabIndex = 2;
-            this.textBoxColorsDark5.Text = "#ffffff";
-            this.textBoxColorsDark5.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorsDark5.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.AutoSize = true;
-            this.tableLayoutPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel8.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.Controls.Add(this.textBoxColorsDark4, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBoxColorsDark4b, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(151, 40);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(137, 29);
-            this.tableLayoutPanel8.TabIndex = 3;
-            // 
-            // textBoxColorsDark4
-            // 
-            this.textBoxColorsDark4.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxColorsDark4.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxColorsDark4.Location = new System.Drawing.Point(3, 3);
-            this.textBoxColorsDark4.MaxLength = 12;
-            this.textBoxColorsDark4.Name = "textBoxColorsDark4";
-            this.textBoxColorsDark4.Size = new System.Drawing.Size(65, 23);
-            this.textBoxColorsDark4.TabIndex = 2;
-            this.textBoxColorsDark4.Text = "#ffffff";
-            this.textBoxColorsDark4.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorsDark4.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColorsDark4b
-            // 
-            this.textBoxColorsDark4b.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxColorsDark4b.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxColorsDark4b.Location = new System.Drawing.Point(74, 3);
-            this.textBoxColorsDark4b.MaxLength = 12;
-            this.textBoxColorsDark4b.Name = "textBoxColorsDark4b";
-            this.textBoxColorsDark4b.Size = new System.Drawing.Size(60, 23);
-            this.textBoxColorsDark4b.TabIndex = 2;
-            this.textBoxColorsDark4b.Text = "#ffffff";
-            this.textBoxColorsDark4b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorsDark4b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // buttonDefaultColorsDark
-            // 
-            this.buttonDefaultColorsDark.Location = new System.Drawing.Point(3, 107);
-            this.buttonDefaultColorsDark.MinimumSize = new System.Drawing.Size(75, 25);
-            this.buttonDefaultColorsDark.Name = "buttonDefaultColorsDark";
-            this.buttonDefaultColorsDark.Size = new System.Drawing.Size(75, 25);
-            this.buttonDefaultColorsDark.TabIndex = 3;
-            this.buttonDefaultColorsDark.Text = "Default";
-            this.buttonDefaultColorsDark.UseVisualStyleBackColor = true;
-            this.buttonDefaultColorsDark.Click += new System.EventHandler(this.ButtonDefaultColorsDark_Click);
-            // 
-            // textBoxColorsDark3
-            // 
-            this.textBoxColorsDark3.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxColorsDark3.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxColorsDark3.Location = new System.Drawing.Point(299, 75);
-            this.textBoxColorsDark3.MaxLength = 12;
-            this.textBoxColorsDark3.Name = "textBoxColorsDark3";
-            this.textBoxColorsDark3.Size = new System.Drawing.Size(132, 23);
-            this.textBoxColorsDark3.TabIndex = 2;
-            this.textBoxColorsDark3.Text = "#ffffff";
-            this.textBoxColorsDark3.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorsDark3.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.AutoSize = true;
-            this.tableLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel9.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.Controls.Add(this.textBoxColorsDark2, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.textBoxColorsDark2b, 1, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(296, 40);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 1;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(137, 29);
-            this.tableLayoutPanel9.TabIndex = 3;
-            // 
-            // textBoxColorsDark2
-            // 
-            this.textBoxColorsDark2.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxColorsDark2.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxColorsDark2.Location = new System.Drawing.Point(3, 3);
-            this.textBoxColorsDark2.MaxLength = 12;
-            this.textBoxColorsDark2.Name = "textBoxColorsDark2";
-            this.textBoxColorsDark2.Size = new System.Drawing.Size(65, 23);
-            this.textBoxColorsDark2.TabIndex = 2;
-            this.textBoxColorsDark2.Text = "#ffffff";
-            this.textBoxColorsDark2.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorsDark2.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColorsDark2b
-            // 
-            this.textBoxColorsDark2b.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxColorsDark2b.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxColorsDark2b.Location = new System.Drawing.Point(74, 3);
-            this.textBoxColorsDark2b.Name = "textBoxColorsDark2b";
-            this.textBoxColorsDark2b.Size = new System.Drawing.Size(60, 23);
-            this.textBoxColorsDark2b.TabIndex = 2;
-            this.textBoxColorsDark2b.Text = "#ffffff";
-            this.textBoxColorsDark2b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorsDark2b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColorsDark3b
-            // 
-            this.textBoxColorsDark3b.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxColorsDark3b.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxColorsDark3b.Location = new System.Drawing.Point(329, 109);
-            this.textBoxColorsDark3b.Margin = new System.Windows.Forms.Padding(33, 5, 3, 3);
-            this.textBoxColorsDark3b.MaxLength = 12;
-            this.textBoxColorsDark3b.Name = "textBoxColorsDark3b";
-            this.textBoxColorsDark3b.Size = new System.Drawing.Size(100, 23);
-            this.textBoxColorsDark3b.TabIndex = 2;
-            this.textBoxColorsDark3b.Text = "#ffffff";
-            this.textBoxColorsDark3b.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorsDark3b.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
-            // 
-            // textBoxColorsDark1
-            // 
-            this.textBoxColorsDark1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxColorsDark1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBoxColorsDark1.Location = new System.Drawing.Point(299, 15);
-            this.textBoxColorsDark1.MaxLength = 12;
-            this.textBoxColorsDark1.Name = "textBoxColorsDark1";
-            this.textBoxColorsDark1.Size = new System.Drawing.Size(84, 23);
-            this.textBoxColorsDark1.TabIndex = 2;
-            this.textBoxColorsDark1.Text = "#ffffff";
-            this.textBoxColorsDark1.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorsDark1.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
             // 
             // checkBoxDarkModeAlwaysOn
             // 
@@ -1233,40 +1047,187 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxDarkModeAlwaysOn.Text = "checkBoxDarkModeAlwaysOn";
             this.checkBoxDarkModeAlwaysOn.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tableLayoutPanelMenuDarkMenu
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.MaxLength = 12;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 23);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "#ffffff";
+            this.tableLayoutPanelMenuDarkMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanelMenuDarkMenu.BackgroundImage")));
+            this.tableLayoutPanelMenuDarkMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tableLayoutPanelMenuDarkMenu.ColumnCount = 3;
+            this.tableLayoutPanelMenuDarkMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.31818F));
+            this.tableLayoutPanelMenuDarkMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.95454F));
+            this.tableLayoutPanelMenuDarkMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
+            this.tableLayoutPanelMenuDarkMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelMenuDarkMenu.Controls.Add(this.textBoxColorDarkModeTitle, 2, 1);
+            this.tableLayoutPanelMenuDarkMenu.Controls.Add(this.textBoxColorDarkModeWarning, 0, 2);
+            this.tableLayoutPanelMenuDarkMenu.Controls.Add(this.tableLayoutPanelMenuDarkSelectedMenu, 1, 2);
+            this.tableLayoutPanelMenuDarkMenu.Controls.Add(this.tableLayoutPanelMenuDarkOpenMenu, 2, 2);
+            this.tableLayoutPanelMenuDarkMenu.Controls.Add(this.textBoxColorDarkModeMain, 2, 3);
+            this.tableLayoutPanelMenuDarkMenu.Controls.Add(this.textBoxColorDarkModeSearch, 2, 4);
+            this.tableLayoutPanelMenuDarkMenu.Controls.Add(this.buttonDefaultColorsDark, 0, 4);
+            this.tableLayoutPanelMenuDarkMenu.Location = new System.Drawing.Point(3, 28);
+            this.tableLayoutPanelMenuDarkMenu.MaximumSize = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanelMenuDarkMenu.MinimumSize = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanelMenuDarkMenu.Name = "tableLayoutPanelMenuDarkMenu";
+            this.tableLayoutPanelMenuDarkMenu.RowCount = 6;
+            this.tableLayoutPanelMenuDarkMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanelMenuDarkMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.76423F));
+            this.tableLayoutPanelMenuDarkMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
+            this.tableLayoutPanelMenuDarkMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.01626F));
+            this.tableLayoutPanelMenuDarkMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.20325F));
+            this.tableLayoutPanelMenuDarkMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanelMenuDarkMenu.Size = new System.Drawing.Size(440, 152);
+            this.tableLayoutPanelMenuDarkMenu.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxColorDarkModeTitle
             // 
-            this.textBox2.Location = new System.Drawing.Point(74, 3);
-            this.textBox2.MaxLength = 12;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(60, 23);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "#ffffff";
+            this.textBoxColorDarkModeTitle.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorDarkModeTitle.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorDarkModeTitle.Location = new System.Drawing.Point(299, 15);
+            this.textBoxColorDarkModeTitle.MaxLength = 12;
+            this.textBoxColorDarkModeTitle.Name = "textBoxColorDarkModeTitle";
+            this.textBoxColorDarkModeTitle.Size = new System.Drawing.Size(84, 23);
+            this.textBoxColorDarkModeTitle.TabIndex = 2;
+            this.textBoxColorDarkModeTitle.Text = "#ffffff";
+            this.textBoxColorDarkModeTitle.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorDarkModeTitle.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
             // 
-            // textBox3
+            // textBoxColorDarkModeWarning
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 3);
-            this.textBox3.MaxLength = 12;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(65, 23);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "#ffffff";
+            this.textBoxColorDarkModeWarning.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorDarkModeWarning.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorDarkModeWarning.Location = new System.Drawing.Point(7, 43);
+            this.textBoxColorDarkModeWarning.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
+            this.textBoxColorDarkModeWarning.MaxLength = 12;
+            this.textBoxColorDarkModeWarning.Name = "textBoxColorDarkModeWarning";
+            this.textBoxColorDarkModeWarning.Size = new System.Drawing.Size(137, 23);
+            this.textBoxColorDarkModeWarning.TabIndex = 2;
+            this.textBoxColorDarkModeWarning.Text = "#ffffff";
+            this.textBoxColorDarkModeWarning.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorDarkModeWarning.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
             // 
-            // textBox4
+            // tableLayoutPanelMenuDarkSelectedMenu
             // 
-            this.textBox4.Location = new System.Drawing.Point(74, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(60, 23);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.Text = "#ffffff";
+            this.tableLayoutPanelMenuDarkSelectedMenu.AutoSize = true;
+            this.tableLayoutPanelMenuDarkSelectedMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelMenuDarkSelectedMenu.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanelMenuDarkSelectedMenu.ColumnCount = 2;
+            this.tableLayoutPanelMenuDarkSelectedMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMenuDarkSelectedMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMenuDarkSelectedMenu.Controls.Add(this.textBoxColorDarkModeSeleceted, 0, 0);
+            this.tableLayoutPanelMenuDarkSelectedMenu.Controls.Add(this.textBoxColorDarkModeSelectedBorder, 1, 0);
+            this.tableLayoutPanelMenuDarkSelectedMenu.Location = new System.Drawing.Point(151, 40);
+            this.tableLayoutPanelMenuDarkSelectedMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelMenuDarkSelectedMenu.Name = "tableLayoutPanelMenuDarkSelectedMenu";
+            this.tableLayoutPanelMenuDarkSelectedMenu.RowCount = 1;
+            this.tableLayoutPanelMenuDarkSelectedMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMenuDarkSelectedMenu.Size = new System.Drawing.Size(137, 29);
+            this.tableLayoutPanelMenuDarkSelectedMenu.TabIndex = 3;
+            // 
+            // textBoxColorDarkModeSeleceted
+            // 
+            this.textBoxColorDarkModeSeleceted.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorDarkModeSeleceted.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorDarkModeSeleceted.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColorDarkModeSeleceted.MaxLength = 12;
+            this.textBoxColorDarkModeSeleceted.Name = "textBoxColorDarkModeSeleceted";
+            this.textBoxColorDarkModeSeleceted.Size = new System.Drawing.Size(65, 23);
+            this.textBoxColorDarkModeSeleceted.TabIndex = 2;
+            this.textBoxColorDarkModeSeleceted.Text = "#ffffff";
+            this.textBoxColorDarkModeSeleceted.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorDarkModeSeleceted.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorDarkModeSelectedBorder
+            // 
+            this.textBoxColorDarkModeSelectedBorder.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorDarkModeSelectedBorder.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorDarkModeSelectedBorder.Location = new System.Drawing.Point(74, 3);
+            this.textBoxColorDarkModeSelectedBorder.MaxLength = 12;
+            this.textBoxColorDarkModeSelectedBorder.Name = "textBoxColorDarkModeSelectedBorder";
+            this.textBoxColorDarkModeSelectedBorder.Size = new System.Drawing.Size(60, 23);
+            this.textBoxColorDarkModeSelectedBorder.TabIndex = 2;
+            this.textBoxColorDarkModeSelectedBorder.Text = "#ffffff";
+            this.textBoxColorDarkModeSelectedBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorDarkModeSelectedBorder.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // tableLayoutPanelMenuDarkOpenMenu
+            // 
+            this.tableLayoutPanelMenuDarkOpenMenu.AutoSize = true;
+            this.tableLayoutPanelMenuDarkOpenMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelMenuDarkOpenMenu.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanelMenuDarkOpenMenu.ColumnCount = 2;
+            this.tableLayoutPanelMenuDarkOpenMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMenuDarkOpenMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelMenuDarkOpenMenu.Controls.Add(this.textBoxColorDarkModeOpenMenu, 0, 0);
+            this.tableLayoutPanelMenuDarkOpenMenu.Controls.Add(this.textBoxColorDarkModeModeOpenMenuBorder, 1, 0);
+            this.tableLayoutPanelMenuDarkOpenMenu.Location = new System.Drawing.Point(296, 40);
+            this.tableLayoutPanelMenuDarkOpenMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelMenuDarkOpenMenu.Name = "tableLayoutPanelMenuDarkOpenMenu";
+            this.tableLayoutPanelMenuDarkOpenMenu.RowCount = 1;
+            this.tableLayoutPanelMenuDarkOpenMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMenuDarkOpenMenu.Size = new System.Drawing.Size(137, 29);
+            this.tableLayoutPanelMenuDarkOpenMenu.TabIndex = 3;
+            // 
+            // textBoxColorDarkModeOpenMenu
+            // 
+            this.textBoxColorDarkModeOpenMenu.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorDarkModeOpenMenu.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorDarkModeOpenMenu.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColorDarkModeOpenMenu.MaxLength = 12;
+            this.textBoxColorDarkModeOpenMenu.Name = "textBoxColorDarkModeOpenMenu";
+            this.textBoxColorDarkModeOpenMenu.Size = new System.Drawing.Size(65, 23);
+            this.textBoxColorDarkModeOpenMenu.TabIndex = 2;
+            this.textBoxColorDarkModeOpenMenu.Text = "#ffffff";
+            this.textBoxColorDarkModeOpenMenu.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorDarkModeOpenMenu.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorDarkModeModeOpenMenuBorder
+            // 
+            this.textBoxColorDarkModeModeOpenMenuBorder.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorDarkModeModeOpenMenuBorder.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorDarkModeModeOpenMenuBorder.Location = new System.Drawing.Point(74, 3);
+            this.textBoxColorDarkModeModeOpenMenuBorder.Name = "textBoxColorDarkModeModeOpenMenuBorder";
+            this.textBoxColorDarkModeModeOpenMenuBorder.Size = new System.Drawing.Size(60, 23);
+            this.textBoxColorDarkModeModeOpenMenuBorder.TabIndex = 2;
+            this.textBoxColorDarkModeModeOpenMenuBorder.Text = "#ffffff";
+            this.textBoxColorDarkModeModeOpenMenuBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorDarkModeModeOpenMenuBorder.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorDarkModeMain
+            // 
+            this.textBoxColorDarkModeMain.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorDarkModeMain.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorDarkModeMain.Location = new System.Drawing.Point(299, 75);
+            this.textBoxColorDarkModeMain.MaxLength = 12;
+            this.textBoxColorDarkModeMain.Name = "textBoxColorDarkModeMain";
+            this.textBoxColorDarkModeMain.Size = new System.Drawing.Size(132, 23);
+            this.textBoxColorDarkModeMain.TabIndex = 2;
+            this.textBoxColorDarkModeMain.Text = "#ffffff";
+            this.textBoxColorDarkModeMain.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorDarkModeMain.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // textBoxColorDarkModeSearch
+            // 
+            this.textBoxColorDarkModeSearch.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColorDarkModeSearch.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBoxColorDarkModeSearch.Location = new System.Drawing.Point(329, 109);
+            this.textBoxColorDarkModeSearch.Margin = new System.Windows.Forms.Padding(33, 5, 3, 3);
+            this.textBoxColorDarkModeSearch.MaxLength = 12;
+            this.textBoxColorDarkModeSearch.Name = "textBoxColorDarkModeSearch";
+            this.textBoxColorDarkModeSearch.Size = new System.Drawing.Size(100, 23);
+            this.textBoxColorDarkModeSearch.TabIndex = 2;
+            this.textBoxColorDarkModeSearch.Text = "#ffffff";
+            this.textBoxColorDarkModeSearch.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorDarkModeSearch.DoubleClick += new System.EventHandler(this.TextBoxColorsDoubleClick);
+            // 
+            // buttonDefaultColorsDark
+            // 
+            this.buttonDefaultColorsDark.Location = new System.Drawing.Point(3, 107);
+            this.buttonDefaultColorsDark.MinimumSize = new System.Drawing.Size(75, 25);
+            this.buttonDefaultColorsDark.Name = "buttonDefaultColorsDark";
+            this.buttonDefaultColorsDark.Size = new System.Drawing.Size(75, 25);
+            this.buttonDefaultColorsDark.TabIndex = 3;
+            this.buttonDefaultColorsDark.Text = "Default";
+            this.buttonDefaultColorsDark.UseVisualStyleBackColor = true;
+            this.buttonDefaultColorsDark.Click += new System.EventHandler(this.ButtonDefaultColorsDark_Click);
             // 
             // SettingsForm
             // 
@@ -1343,22 +1304,22 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxColors.ResumeLayout(false);
             this.groupBoxColors.PerformLayout();
             this.tableLayoutPanelColors.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanelMenuMenu.ResumeLayout(false);
+            this.tableLayoutPanelMenuMenu.PerformLayout();
+            this.tableLayoutPanelMenuSelectedMenu.ResumeLayout(false);
+            this.tableLayoutPanelMenuSelectedMenu.PerformLayout();
+            this.tableLayoutPanelMenuOpenMenu.ResumeLayout(false);
+            this.tableLayoutPanelMenuOpenMenu.PerformLayout();
             this.groupBoxDarkMode.ResumeLayout(false);
             this.groupBoxDarkMode.PerformLayout();
             this.tableLayoutPanelDarkMode.ResumeLayout(false);
             this.tableLayoutPanelDarkMode.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanelMenuDarkMenu.ResumeLayout(false);
+            this.tableLayoutPanelMenuDarkMenu.PerformLayout();
+            this.tableLayoutPanelMenuDarkSelectedMenu.ResumeLayout(false);
+            this.tableLayoutPanelMenuDarkSelectedMenu.PerformLayout();
+            this.tableLayoutPanelMenuDarkOpenMenu.ResumeLayout(false);
+            this.tableLayoutPanelMenuDarkOpenMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1420,34 +1381,30 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.NumericUpDown numericUpDownMenuWidth;
         private System.Windows.Forms.NumericUpDown numericUpDownTimeUntilOpens;
         private System.Windows.Forms.CheckBox checkBoxStayOpenWhenItemClicked;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.Button buttonDefaultColorsDark;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBoxColors2;
-        private System.Windows.Forms.TextBox textBoxColors5;
-        private System.Windows.Forms.TextBox textBoxColors3;
-        private System.Windows.Forms.TextBox textBoxColors1;
-        private System.Windows.Forms.TextBox textBoxColors4;
-        private System.Windows.Forms.TextBox textBoxColors2b;
-        private System.Windows.Forms.TextBox textBoxColorsDark5;
-        private System.Windows.Forms.TextBox textBoxColorsDark3;
-        private System.Windows.Forms.TextBox textBoxColorsDark1;
-        private System.Windows.Forms.TextBox textBoxColorsDark4;
-        private System.Windows.Forms.TextBox textBoxColorsDark2;
-        private System.Windows.Forms.TextBox textBoxColorsDark2b;
-        private System.Windows.Forms.TextBox textBoxColors4b;
-        private System.Windows.Forms.TextBox textBoxColorsDark4b;
-        private System.Windows.Forms.TextBox textBoxColorsDark3b;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenuMenu;
+        private System.Windows.Forms.TextBox textBoxColorOpenMenu;
+        private System.Windows.Forms.TextBox textBoxColorWarning;
+        private System.Windows.Forms.TextBox textBoxColorMain;
+        private System.Windows.Forms.TextBox textBoxColorTitle;
+        private System.Windows.Forms.TextBox textBoxColorSelected;
+        private System.Windows.Forms.TextBox textBoxColorOpenMenuBorder;
+        private System.Windows.Forms.TextBox textBoxColorDarkModeWarning;
+        private System.Windows.Forms.TextBox textBoxColorDarkModeMain;
+        private System.Windows.Forms.TextBox textBoxColorDarkModeTitle;
+        private System.Windows.Forms.TextBox textBoxColorDarkModeSeleceted;
+        private System.Windows.Forms.TextBox textBoxColorDarkModeOpenMenu;
+        private System.Windows.Forms.TextBox textBoxColorDarkModeModeOpenMenuBorder;
+        private System.Windows.Forms.TextBox textBoxColorSelectedBorder;
+        private System.Windows.Forms.TextBox textBoxColorDarkModeSelectedBorder;
+        private System.Windows.Forms.TextBox textBoxColorDarkModeSearch;
         private System.Windows.Forms.Button buttonDefaultColors;
-        private System.Windows.Forms.TextBox textBoxColors3b;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.TextBox textBoxColorSearch;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenuSelectedMenu;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenuOpenMenu;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenuDarkSelectedMenu;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenuDarkOpenMenu;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenuDarkMenu;
     }
 }

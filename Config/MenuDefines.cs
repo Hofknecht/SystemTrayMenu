@@ -20,11 +20,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeBlue;
+                    return AppColors.DarkModeSeleceted;
                 }
                 else
                 {
-                    return AppColors.Blue;
+                    return AppColors.Selected;
                 }
             }
         }
@@ -35,11 +35,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeBlueBorder;
+                    return AppColors.DarkModeSelectedBorder;
                 }
                 else
                 {
-                    return AppColors.BlueBorder;
+                    return AppColors.SelectedBorder;
                 }
             }
         }
@@ -50,11 +50,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeGreen;
+                    return AppColors.DarkModeOpenMenu;
                 }
                 else
                 {
-                    return AppColors.Green;
+                    return AppColors.OpenMenu;
                 }
             }
         }
@@ -65,11 +65,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeGreenBorder;
+                    return AppColors.DarkModeOpenMenuBorder;
                 }
                 else
                 {
-                    return AppColors.GreenBorder;
+                    return AppColors.OpenMenuBorder;
                 }
             }
         }
@@ -80,11 +80,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeRed;
+                    return AppColors.DarkModeWarning;
                 }
                 else
                 {
-                    return AppColors.Red;
+                    return AppColors.Warning;
                 }
             }
         }
@@ -95,11 +95,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeBlue;
+                    return AppColors.DarkModeSeleceted;
                 }
                 else
                 {
-                    return AppColors.Blue;
+                    return AppColors.Selected;
                 }
             }
         }
@@ -110,11 +110,11 @@ namespace SystemTrayMenu
             {
                 if (Config.IsDarkMode())
                 {
-                    return AppColors.DarkModeAzure;
+                    return AppColors.DarkModeTitle;
                 }
                 else
                 {
-                    return AppColors.Azure;
+                    return AppColors.Title;
                 }
             }
         }

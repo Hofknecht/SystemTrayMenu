@@ -304,6 +304,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Light Mode.
+        /// </summary>
+        internal static string Light_Mode {
+            get {
+                return ResourceManager.GetString("Light Mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log File.
         /// </summary>
         internal static string Log_File {

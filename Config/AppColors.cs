@@ -8,18 +8,18 @@ namespace SystemTrayMenu
 
     internal static class AppColors
     {
-        internal static Color Blue;
-        internal static Color DarkModeBlue;
-        internal static Color BlueBorder;
-        internal static Color DarkModeBlueBorder;
-        internal static Color Green;
-        internal static Color DarkModeGreen;
-        internal static Color GreenBorder;
-        internal static Color DarkModeGreenBorder;
-        internal static Color Red;
-        internal static Color DarkModeRed;
-        internal static Color Azure;
-        internal static Color DarkModeAzure;
+        internal static Color Selected;
+        internal static Color DarkModeSeleceted;
+        internal static Color SelectedBorder;
+        internal static Color DarkModeSelectedBorder;
+        internal static Color OpenMenu;
+        internal static Color DarkModeOpenMenu;
+        internal static Color OpenMenuBorder;
+        internal static Color DarkModeOpenMenuBorder;
+        internal static Color Warning;
+        internal static Color DarkModeWarning;
+        internal static Color Title;
+        internal static Color DarkModeTitle;
 
         internal static Color Main;
         internal static Color DarkModeMain;

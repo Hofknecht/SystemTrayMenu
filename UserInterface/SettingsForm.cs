@@ -72,8 +72,11 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
                 labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
+                groupBoxColors.Text = Translator.GetText("Light Mode");
+                buttonDefaultColors.Text = Translator.GetText("Default");
                 groupBoxDarkMode.Text = Translator.GetText("Dark Mode");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
+                buttonDefaultColors.Text = Translator.GetText("Default");
                 buttonOk.Text = Translator.GetText("buttonOk");
                 buttonCancel.Text = Translator.GetText("buttonCancel");
             }
@@ -146,22 +149,22 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilOpens.Value = Settings.Default.TimeUntilOpens;
 
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
-            textBoxColors4.Text = Settings.Default.ColorBlue;
-            textBoxColorsDark4.Text = Settings.Default.ColorDarkModeBlue;
-            textBoxColors4b.Text = Settings.Default.ColorBlueBorder;
-            textBoxColorsDark4b.Text = Settings.Default.ColorDarkModeBlueBorder;
-            textBoxColors2.Text = Settings.Default.ColorGreen;
-            textBoxColorsDark2.Text = Settings.Default.ColorDarkModeGreen;
-            textBoxColors2b.Text = Settings.Default.ColorGreenBorder;
-            textBoxColorsDark2b.Text = Settings.Default.ColorDarkModeGreenBorder;
-            textBoxColors5.Text = Settings.Default.ColorRed;
-            textBoxColorsDark5.Text = Settings.Default.ColorDarkModeRed;
-            textBoxColors1.Text = Settings.Default.ColorAzure;
-            textBoxColorsDark1.Text = Settings.Default.ColorDarkModeAzure;
-            textBoxColors3.Text = Settings.Default.ColorMain;
-            textBoxColorsDark3.Text = Settings.Default.ColorDarkModeMain;
-            textBoxColors3.Text = Settings.Default.ColorSearch;
-            textBoxColorsDark3b.Text = Settings.Default.ColorDarkModeSearch;
+            textBoxColorSelected.Text = Settings.Default.ColorSelected;
+            textBoxColorDarkModeSeleceted.Text = Settings.Default.ColorDarkModeSeleceted;
+            textBoxColorSelectedBorder.Text = Settings.Default.ColorSelectedBorder;
+            textBoxColorDarkModeSelectedBorder.Text = Settings.Default.ColorDarkModeSelectedBorder;
+            textBoxColorOpenMenu.Text = Settings.Default.ColorOpenMenu;
+            textBoxColorDarkModeOpenMenu.Text = Settings.Default.ColorDarkModeOpenMenu;
+            textBoxColorOpenMenuBorder.Text = Settings.Default.ColorOpenMenuBorder;
+            textBoxColorDarkModeModeOpenMenuBorder.Text = Settings.Default.ColorDarkModeModeOpenMenuBorder;
+            textBoxColorWarning.Text = Settings.Default.ColorWarning;
+            textBoxColorDarkModeWarning.Text = Settings.Default.ColorDarkModeWarning;
+            textBoxColorTitle.Text = Settings.Default.ColorTitle;
+            textBoxColorDarkModeTitle.Text = Settings.Default.ColorDarkModeTitle;
+            textBoxColorMain.Text = Settings.Default.ColorMain;
+            textBoxColorDarkModeMain.Text = Settings.Default.ColorDarkModeMain;
+            textBoxColorSearch.Text = Settings.Default.ColorSearch;
+            textBoxColorDarkModeSearch.Text = Settings.Default.ColorDarkModeSearch;
         }
 
         public string NewHotKey => newHotKey;
@@ -241,10 +244,6 @@ namespace SystemTrayMenu.UserInterface
         /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
         private static bool RegisterHotkeys(bool ignoreFailedRegistration)
         {
-            // if (_instance == null)
-            // {
-            //    return false;
-            // }
             bool success = true;
             StringBuilder failedKeys = new StringBuilder();
             if (!RegisterWrapper(failedKeys, Handler))
@@ -283,13 +282,11 @@ namespace SystemTrayMenu.UserInterface
             DialogResult dr = MessageBox.Show(message, warningTitle, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.Retry)
             {
-                // LOG.DebugFormat("Re-trying to register hotkeys");
                 UnregisterHotkeys();
                 success = RegisterHotkeys(false);
             }
             else if (dr == DialogResult.Ignore)
             {
-                // LOG.DebugFormat("Ignoring failed hotkey registration");
                 UnregisterHotkeys();
                 success = RegisterHotkeys(true);
             }
@@ -342,25 +339,23 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
             Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
-
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
-            Settings.Default.ColorBlue = textBoxColors4.Text;
-            Settings.Default.ColorDarkModeBlue = textBoxColorsDark4.Text;
-            Settings.Default.ColorBlueBorder = textBoxColors4b.Text;
-            Settings.Default.ColorDarkModeBlueBorder = textBoxColorsDark4b.Text;
-            Settings.Default.ColorGreen = textBoxColors2.Text;
-            Settings.Default.ColorDarkModeGreen = textBoxColorsDark2.Text;
-            Settings.Default.ColorGreenBorder = textBoxColors2b.Text;
-            Settings.Default.ColorDarkModeGreenBorder = textBoxColorsDark2b.Text;
-            Settings.Default.ColorRed = textBoxColors5.Text;
-            Settings.Default.ColorDarkModeRed = textBoxColorsDark5.Text;
-            Settings.Default.ColorAzure = textBoxColors1.Text;
-            Settings.Default.ColorDarkModeAzure = textBoxColorsDark1.Text;
-            Settings.Default.ColorMain = textBoxColors3.Text;
-            Settings.Default.ColorDarkModeMain = textBoxColorsDark3.Text;
-            Settings.Default.ColorSearch = textBoxColors3b.Text;
-            Settings.Default.ColorDarkModeSearch = textBoxColorsDark3b.Text;
-
+            Settings.Default.ColorSelected = textBoxColorSelected.Text;
+            Settings.Default.ColorDarkModeSeleceted = textBoxColorDarkModeSeleceted.Text;
+            Settings.Default.ColorSelectedBorder = textBoxColorSelectedBorder.Text;
+            Settings.Default.ColorDarkModeSelectedBorder = textBoxColorDarkModeSelectedBorder.Text;
+            Settings.Default.ColorOpenMenu = textBoxColorOpenMenu.Text;
+            Settings.Default.ColorDarkModeOpenMenu = textBoxColorDarkModeOpenMenu.Text;
+            Settings.Default.ColorOpenMenuBorder = textBoxColorOpenMenuBorder.Text;
+            Settings.Default.ColorDarkModeModeOpenMenuBorder = textBoxColorDarkModeModeOpenMenuBorder.Text;
+            Settings.Default.ColorWarning = textBoxColorWarning.Text;
+            Settings.Default.ColorDarkModeWarning = textBoxColorDarkModeWarning.Text;
+            Settings.Default.ColorTitle = textBoxColorTitle.Text;
+            Settings.Default.ColorDarkModeTitle = textBoxColorDarkModeTitle.Text;
+            Settings.Default.ColorMain = textBoxColorMain.Text;
+            Settings.Default.ColorDarkModeMain = textBoxColorDarkModeMain.Text;
+            Settings.Default.ColorSearch = textBoxColorSearch.Text;
+            Settings.Default.ColorDarkModeSearch = textBoxColorDarkModeSearch.Text;
             Settings.Default.Save();
             DialogResult = DialogResult.OK;
             Close();
@@ -420,21 +415,15 @@ namespace SystemTrayMenu.UserInterface
             TextBox textBox = (TextBox)sender;
 
             textBox.Text = textBox.Text.Trim();
-            if (textBox.Text.Length == 7)
+
+            try
             {
-                try
-                {
-                    Color color = (Color)colorConverter.ConvertFromString(textBox.Text);
-                    textBox.BackColor = color;
-                }
-                catch
-                {
-                    textBox.Text = "#ffffff";
-                    textBox.BackColor = Color.White;
-                }
+                Color color = (Color)colorConverter.ConvertFromString(textBox.Text);
+                textBox.BackColor = color;
             }
-            else
+            catch
             {
+                textBox.Text = "#ffffff";
                 textBox.BackColor = Color.White;
             }
         }
@@ -442,36 +431,36 @@ namespace SystemTrayMenu.UserInterface
         private void TextBoxColorsDoubleClick(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
-            colorDialog1.Color = textBox.BackColor;
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            colorDialog.Color = textBox.BackColor;
+            if (colorDialog.ShowDialog() == DialogResult.OK)
             {
-                textBox.Text = ColorTranslator.ToHtml(colorDialog1.Color);
-                textBox.BackColor = colorDialog1.Color;
+                textBox.Text = ColorTranslator.ToHtml(colorDialog.Color);
+                textBox.BackColor = colorDialog.Color;
             }
         }
 
         private void ButtonDefaultColors_Click(object sender, EventArgs e)
         {
-            textBoxColors1.Text = "#f0ffff";
-            textBoxColors2.Text = "#C2F5DE";
-            textBoxColors2b.Text = "#99FFA5";
-            textBoxColors3.Text = "#ffffff";
-            textBoxColors3b.Text = "#ffffff";
-            textBoxColors4.Text = "#CCE8FF";
-            textBoxColors4b.Text = "#99D1FF";
-            textBoxColors5.Text = "#FFCCE8";
+            textBoxColorTitle.Text = "#f0ffff";
+            textBoxColorOpenMenu.Text = "#C2F5DE";
+            textBoxColorOpenMenuBorder.Text = "#99FFA5";
+            textBoxColorMain.Text = "#ffffff";
+            textBoxColorSearch.Text = "#ffffff";
+            textBoxColorSelected.Text = "#CCE8FF";
+            textBoxColorSelectedBorder.Text = "#99D1FF";
+            textBoxColorWarning.Text = "#FFCCE8";
         }
 
         private void ButtonDefaultColorsDark_Click(object sender, EventArgs e)
         {
-            textBoxColorsDark1.Text = "#2B2B2B";
-            textBoxColorsDark2.Text = "#14412A";
-            textBoxColorsDark2b.Text = "#144B55";
-            textBoxColorsDark3.Text = "#202020";
-            textBoxColorsDark3b.Text = "#191919";
-            textBoxColorsDark4.Text = "#333333";
-            textBoxColorsDark4b.Text = "#141D4B";
-            textBoxColorsDark5.Text = "#4B1834";
+            textBoxColorDarkModeTitle.Text = "#2B2B2B";
+            textBoxColorDarkModeOpenMenu.Text = "#14412A";
+            textBoxColorDarkModeModeOpenMenuBorder.Text = "#144B55";
+            textBoxColorDarkModeMain.Text = "#202020";
+            textBoxColorDarkModeSearch.Text = "#191919";
+            textBoxColorDarkModeSeleceted.Text = "#333333";
+            textBoxColorDarkModeSelectedBorder.Text = "#141D4B";
+            textBoxColorDarkModeWarning.Text = "#4B1834";
         }
     }
 }

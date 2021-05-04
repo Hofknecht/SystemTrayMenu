@@ -81,7 +81,7 @@ namespace SystemTrayMenu.UserInterface
             SetDoubleBuffer(dgv, true);
 
             Color foreColor = Color.Black;
-            Color titleBackColor = AppColors.Azure;
+            Color titleBackColor = AppColors.Title;
             Color backColor = AppColors.Main;
             Color backColorSearch = AppColors.Search;
             if (Config.IsDarkMode())
@@ -89,7 +89,7 @@ namespace SystemTrayMenu.UserInterface
                 foreColor = Color.White;
                 labelTitle.ForeColor = foreColor;
                 textBoxSearch.ForeColor = foreColor;
-                titleBackColor = AppColors.DarkModeAzure;
+                titleBackColor = AppColors.DarkModeTitle;
                 backColor = AppColors.DarkModeMain;
                 backColorSearch = AppColors.DarkModeSearch;
             }

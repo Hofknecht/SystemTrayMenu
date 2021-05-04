@@ -58,7 +58,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
-  <data name="tableLayoutPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tableLayoutPanelMenuMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgQAAACgCAIAAAD8cuMQAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAd
         hQAAHYUB8Bsy7AAAAAd0SU1FB+UFBAo7A2XzA+IAABoPSURBVHhe7Z3pb1RXmofRZBqpJaSWWuqv/aVb
@@ -176,7 +176,7 @@
         rkJggg==
 </value>
   </data>
-  <data name="tableLayoutPanel10.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tableLayoutPanelMenuDarkMenu.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgQAAACgCAIAAAD8cuMQAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAd
         hQAAHYUB8Bsy7AAAAAd0SU1FB+UFBA0QCxgXYDwAABDlSURBVHhe7d1NiFRnFsbxaAImmA+mM504FUWb

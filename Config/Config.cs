@@ -210,23 +210,22 @@ namespace SystemTrayMenu
         {
             ColorConverter c = new ColorConverter();
             Settings s = Settings.Default;
-            s.ColorBlue = SetColor(c, ref AppColors.Blue, Color.FromArgb(204, 232, 255), s.ColorBlue);
-            s.ColorDarkModeBlue = SetColor(c, ref AppColors.DarkModeBlue, Color.FromArgb(51, 51, 51), s.ColorDarkModeBlue);
-            s.ColorBlueBorder = SetColor(c, ref AppColors.BlueBorder, Color.FromArgb(153, 209, 255), s.ColorBlueBorder);
-            s.ColorDarkModeBlueBorder = SetColor(c, ref AppColors.DarkModeBlueBorder, Color.FromArgb(20, 29, 75), s.ColorDarkModeBlueBorder);
-            s.ColorGreen = SetColor(c, ref AppColors.Green, Color.FromArgb(194, 245, 222), s.ColorGreen);
-            s.ColorDarkModeGreen = SetColor(c, ref AppColors.DarkModeGreen, Color.FromArgb(20, 65, 42), s.ColorDarkModeGreen);
-            s.ColorGreenBorder = SetColor(c, ref AppColors.GreenBorder, Color.FromArgb(153, 255, 165), s.ColorGreenBorder);
-            s.ColorDarkModeGreenBorder = SetColor(c, ref AppColors.DarkModeGreenBorder, Color.FromArgb(20, 75, 85), s.ColorDarkModeGreenBorder);
-            s.ColorRed = SetColor(c, ref AppColors.Red, Color.FromArgb(255, 204, 232), s.ColorRed);
-            s.ColorDarkModeRed = SetColor(c, ref AppColors.DarkModeRed, Color.FromArgb(75, 24, 52), s.ColorDarkModeRed);
-            s.ColorAzure = SetColor(c, ref AppColors.Azure, Color.Azure, s.ColorAzure);
-            s.ColorDarkModeAzure = SetColor(c, ref AppColors.DarkModeAzure, Color.FromArgb(43, 43, 43), s.ColorDarkModeAzure);
+            s.ColorSelected = SetColor(c, ref AppColors.Selected, Color.FromArgb(204, 232, 255), s.ColorSelected);
+            s.ColorDarkModeSeleceted = SetColor(c, ref AppColors.DarkModeSeleceted, Color.FromArgb(51, 51, 51), s.ColorDarkModeSeleceted);
+            s.ColorSelectedBorder = SetColor(c, ref AppColors.SelectedBorder, Color.FromArgb(153, 209, 255), s.ColorSelectedBorder);
+            s.ColorDarkModeSelectedBorder = SetColor(c, ref AppColors.DarkModeSelectedBorder, Color.FromArgb(20, 29, 75), s.ColorDarkModeSelectedBorder);
+            s.ColorOpenMenu = SetColor(c, ref AppColors.OpenMenu, Color.FromArgb(194, 245, 222), s.ColorOpenMenu);
+            s.ColorDarkModeOpenMenu = SetColor(c, ref AppColors.DarkModeOpenMenu, Color.FromArgb(20, 65, 42), s.ColorDarkModeOpenMenu);
+            s.ColorOpenMenuBorder = SetColor(c, ref AppColors.OpenMenuBorder, Color.FromArgb(153, 255, 165), s.ColorOpenMenuBorder);
+            s.ColorDarkModeModeOpenMenuBorder = SetColor(c, ref AppColors.DarkModeOpenMenuBorder, Color.FromArgb(20, 75, 85), s.ColorDarkModeModeOpenMenuBorder);
+            s.ColorWarning = SetColor(c, ref AppColors.Warning, Color.FromArgb(255, 204, 232), s.ColorWarning);
+            s.ColorDarkModeWarning = SetColor(c, ref AppColors.DarkModeWarning, Color.FromArgb(75, 24, 52), s.ColorDarkModeWarning);
+            s.ColorTitle = SetColor(c, ref AppColors.Title, Color.Azure, s.ColorTitle);
+            s.ColorDarkModeTitle = SetColor(c, ref AppColors.DarkModeTitle, Color.FromArgb(43, 43, 43), s.ColorDarkModeTitle);
             s.ColorSearch = SetColor(c, ref AppColors.Search, Color.FromArgb(255, 255, 255), s.ColorSearch);
             s.ColorDarkModeSearch = SetColor(c, ref AppColors.DarkModeSearch, Color.FromArgb(25, 25, 25), s.ColorDarkModeSearch);
             s.ColorMain = SetColor(c, ref AppColors.Main, Color.FromArgb(255, 255, 255), s.ColorMain);
             s.ColorDarkModeMain = SetColor(c, ref AppColors.DarkModeMain, Color.FromArgb(32, 32, 32), s.ColorDarkModeMain);
-
             s.Save();
         }
 
