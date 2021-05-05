@@ -207,7 +207,7 @@
   <data name="Appear at mouse location" xml:space="preserve">
     <value>Appaiono nella posizione del mouse</value>
   </data>
-  <data name="Change Folder" xml:space="preserve">
+  <data name="Change folder" xml:space="preserve">
     <value>Cambia cartella</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -217,7 +217,7 @@
     <value>Personalizzare</value>
   </data>
   <data name="Dark Mode" xml:space="preserve">
-    <value>Modalità scura</value>
+    <value>Modalità Scura</value>
   </data>
   <data name="Default" xml:space="preserve">
     <value>Predefinito</value>
@@ -245,5 +245,38 @@
   </data>
   <data name="If an item was clicked" xml:space="preserve">
     <value>Se è stato fatto clic su un elemento</value>
+  </data>
+  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
+    <value>Colori Modalità Luce e Modalità Scura</value>
+  </data>
+  <data name="Default Dark Mode" xml:space="preserve">
+    <value>Modalità Scura predefinita</value>
+  </data>
+  <data name="Default Light Mode" xml:space="preserve">
+    <value>Modalità Luce predefinita</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Sfondo</value>
+  </data>
+  <data name="Open folder" xml:space="preserve">
+    <value>Cartella aperta</value>
+  </data>
+  <data name="Open folder border" xml:space="preserve">
+    <value>Bordo della cartella aperta</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Campo di ricerca</value>
+  </data>
+  <data name="Selected item" xml:space="preserve">
+    <value>Elemento selezionato</value>
+  </data>
+  <data name="Selected item border" xml:space="preserve">
+    <value>Bordo elemento selezionato</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titolo</value>
+  </data>
+  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
+    <value>Per cambiare un colore, incolla un codice colore HTML o fai doppio clic in un campo.</value>
   </data>
 </root>

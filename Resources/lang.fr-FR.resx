@@ -207,7 +207,7 @@
   <data name="Appear at mouse location" xml:space="preserve">
     <value>Apparaître à l'emplacement de la souris</value>
   </data>
-  <data name="Change Folder" xml:space="preserve">
+  <data name="Change folder" xml:space="preserve">
     <value>Changer de dossier</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -245,5 +245,38 @@
   </data>
   <data name="If an item was clicked" xml:space="preserve">
     <value>Si un élément a été cliqué</value>
+  </data>
+  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
+    <value>Couleurs Mode Clair et Mode Sombre</value>
+  </data>
+  <data name="Default Dark Mode" xml:space="preserve">
+    <value>Mode Sombre par défaut</value>
+  </data>
+  <data name="Default Light Mode" xml:space="preserve">
+    <value>Mode Clair par défaut</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Arrière-plan</value>
+  </data>
+  <data name="Open folder" xml:space="preserve">
+    <value>Dossier ouvert</value>
+  </data>
+  <data name="Open folder border" xml:space="preserve">
+    <value>La bordure du dossier ouvert</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Champ de recherche</value>
+  </data>
+  <data name="Selected item" xml:space="preserve">
+    <value>Élément sélectionné</value>
+  </data>
+  <data name="Selected item border" xml:space="preserve">
+    <value>Bordure de l'élément sélectionné</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
+    <value>Pour changer une couleur, collez un code de couleur HTML ou double-cliquez dans un champ.</value>
   </data>
 </root>

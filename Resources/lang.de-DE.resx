@@ -207,7 +207,7 @@
   <data name="Appear at mouse location" xml:space="preserve">
     <value>Erscheint an der Mausposition</value>
   </data>
-  <data name="Change Folder" xml:space="preserve">
+  <data name="Change folder" xml:space="preserve">
     <value>Ordner ändern</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -245,5 +245,38 @@
   </data>
   <data name="If an item was clicked" xml:space="preserve">
     <value>Wenn ein Element angeklickt wurde</value>
+  </data>
+  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
+    <value>Farben Light Mode und Dark Mode</value>
+  </data>
+  <data name="Default Dark Mode" xml:space="preserve">
+    <value>Standard Dark Mode</value>
+  </data>
+  <data name="Default Light Mode" xml:space="preserve">
+    <value>Standard Light Mode</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Hintergrund</value>
+  </data>
+  <data name="Open folder" xml:space="preserve">
+    <value>Offener Ordner</value>
+  </data>
+  <data name="Open folder border" xml:space="preserve">
+    <value>Umrandung des offenen Ordners</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Suchfeld</value>
+  </data>
+  <data name="Selected item" xml:space="preserve">
+    <value>Ausgewähltes Element</value>
+  </data>
+  <data name="Selected item border" xml:space="preserve">
+    <value>Umrandung des ausgewählten Elements</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
+    <value>Um eine Farbe zu ändern, fügen Sie einen HTML-Farbcode ein oder doppelklicken Sie in ein Feld.</value>
   </data>
 </root>

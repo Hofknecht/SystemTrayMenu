@@ -207,7 +207,7 @@
   <data name="Appear at mouse location" xml:space="preserve">
     <value>Objevte se na místě myši</value>
   </data>
-  <data name="Change Folder" xml:space="preserve">
+  <data name="Change folder" xml:space="preserve">
     <value>Změnit složku</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -245,5 +245,38 @@
   </data>
   <data name="If an item was clicked" xml:space="preserve">
     <value>Pokud bylo na položku kliknuto</value>
+  </data>
+  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
+    <value>Barvy Světlý a Tmavý režim</value>
+  </data>
+  <data name="Default Dark Mode" xml:space="preserve">
+    <value>Výchozí tmavý režim</value>
+  </data>
+  <data name="Default Light Mode" xml:space="preserve">
+    <value>Výchozí světelný režim</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Pozadí</value>
+  </data>
+  <data name="Open folder" xml:space="preserve">
+    <value>Otevřená složka</value>
+  </data>
+  <data name="Open folder border" xml:space="preserve">
+    <value>Otevřete ohraničení složky</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Vyhledávací pole</value>
+  </data>
+  <data name="Selected item" xml:space="preserve">
+    <value>Vybraná položka</value>
+  </data>
+  <data name="Selected item border" xml:space="preserve">
+    <value>Ohraničení vybrané položky</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titul</value>
+  </data>
+  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
+    <value>Chcete-li změnit barvu, vložte barevný kód HTML nebo poklepejte do pole.</value>
   </data>
 </root>
