@@ -5,6 +5,7 @@
 namespace SystemTrayMenu
 {
     using System;
+    using System.Configuration;
     using System.Diagnostics;
     using System.Drawing;
     using System.IO;
@@ -174,35 +175,14 @@ namespace SystemTrayMenu
 
         private static void UpgradeIfNotUpgraded()
         {
+            var path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             if (!Settings.Default.IsUpgraded)
             {
                 Settings.Default.Upgrade();
                 Settings.Default.IsUpgraded = true;
                 Settings.Default.Save();
-
-                FileVersionInfo versionInfo = FileVersionInfo.
-                    GetVersionInfo(Assembly.GetEntryAssembly().Location);
-                string upgradedFromPath = $"%localappdata%\\{versionInfo.CompanyName}\\";
-                try
-                {
-                    upgradedFromPath = System.IO.Path.GetFullPath(upgradedFromPath);
-                }
-                catch (Exception ex)
-                {
-                    if (ex is ArgumentException ||
-                        ex is System.Security.SecurityException ||
-                        ex is NotSupportedException ||
-                        ex is PathTooLongException)
-                    {
-                        Log.Warn($"Resolve path {upgradedFromPath} failed", ex);
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-
-                Log.Info($"Settings upgraded from {upgradedFromPath}");
+                Log.Info($"Settings upgraded from {CustomSettingsProvider.UserConfigPath}");
             }
         }
 

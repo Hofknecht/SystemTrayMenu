@@ -151,6 +151,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change to relative folder.
+        /// </summary>
+        internal static string Change_to_relative_folder {
+            get {
+                return ResourceManager.GetString("Change to relative folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click.
         /// </summary>
         internal static string Click {
@@ -386,6 +395,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open assembly location.
+        /// </summary>
+        internal static string Open_assembly_location {
+            get {
+                return ResourceManager.GetString("Open assembly location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open folder.
         /// </summary>
         internal static string Open_folder {
@@ -494,6 +512,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Store config at assembly location.
+        /// </summary>
+        internal static string Store_config_at_assembly_location {
+            get {
+                return ResourceManager.GetString("Store config at assembly location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SystemTrayMenu.
         /// </summary>
         internal static string SystemTrayMenu {
@@ -535,6 +562,15 @@ namespace SystemTrayMenu.Resources {
         internal static string To_change_a_color_paste_a_HTML_Color_Code_or_double_click_into_a_field_ {
             get {
                 return ResourceManager.GetString("To change a color paste a HTML Color Code or double click into a field.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to USB.
+        /// </summary>
+        internal static string USB {
+            get {
+                return ResourceManager.GetString("USB", resourceCulture);
             }
         }
         

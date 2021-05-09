@@ -7,6 +7,7 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.IO;
     using System.Reflection;
     using System.Text;
     using System.Windows.Forms;
@@ -55,6 +56,10 @@ namespace SystemTrayMenu.UserInterface
                 tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxFolder.Text = Translator.GetText("Folder");
                 buttonChangeFolder.Text = Translator.GetText("Change folder");
+                groupBoxUSB.Text = Translator.GetText("USB");
+                buttonChangeRelativeFolder.Text = Translator.GetText("Change to relative folder");
+                checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at assembly location");
+                buttonOpenAssemblyLocation.Text = Translator.GetText("Open assembly location");
                 groupBoxAutostart.Text = Translator.GetText("Autostart");
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
@@ -136,6 +141,8 @@ namespace SystemTrayMenu.UserInterface
                     comboBoxLanguage.SelectedValue = "en";
                 }
             }
+
+            checkBoxStoreConfigAtAssemblyLocation.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
 
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
             checkBoxAppearAtMouseLocation.Checked = Settings.Default.AppearAtMouseLocation;
@@ -373,7 +380,18 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.ColorDarkModeBackground = textBoxColorDarkModeBackground.Text;
             Settings.Default.ColorSearchField = textBoxColorSearchField.Text;
             Settings.Default.ColorDarkModeSearchField = textBoxColorDarkModeSearchField.Text;
-            Settings.Default.Save();
+
+            if (checkBoxStoreConfigAtAssemblyLocation.Checked)
+            {
+                CustomSettingsProvider.ActivateConfigPathAssembly();
+                Settings.Default.Save();
+            }
+            else
+            {
+                Settings.Default.Save();
+                CustomSettingsProvider.DeactivateConfigPathAssembly();
+            }
+
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -405,6 +423,20 @@ namespace SystemTrayMenu.UserInterface
         {
             Config.SetFolderByUser(false);
             textBoxFolder.Text = Config.Path;
+        }
+
+        private void ButtonChangeRelativeFolder_Click(object sender, EventArgs e)
+        {
+            Config.SetFolderByUser(false);
+            Settings.Default.PathDirectory = Path.GetRelativePath(
+                Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
+                Config.Path);
+            textBoxFolder.Text = Config.Path;
+        }
+
+        private void ButtonOpenAssemblyLocation_Click(object sender, EventArgs e)
+        {
+            Log.ProcessStart(Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName);
         }
 
         private void TextBoxHotkeyEnter(object sender, EventArgs e)

@@ -10,7 +10,9 @@ namespace SystemTrayMenu.Properties
     using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Xml.Linq;
+    using SystemTrayMenu.Utilities;
 
     internal class CustomSettingsProvider : SettingsProvider
     {
@@ -48,16 +50,38 @@ namespace SystemTrayMenu.Properties
         /// Gets the setting key this is returning must set before the settings are used.
         /// e.g. <c>Properties.Settings.Default.SettingsKey = @"C:\temp\user.config";</c>.
         /// </summary>
-        private static string UserConfigPath => Path.Combine(
+        public static string UserConfigPath => Path.Combine(
                 Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 $"SystemTrayMenu"),
                 $"user-{Environment.MachineName}.config");
 
+        private static string ConfigPathAssembly => Path.Combine(
+                Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
+                $"user.config");
+
         /// <summary>
         /// Gets or sets in memory storage of the settings values.
         /// </summary>
         private Dictionary<string, SettingStruct> SettingsDictionary { get; set; }
+
+        public static bool IsActivatedConfigPathAssembly()
+        {
+            return IsConfigPathAssembly();
+        }
+
+        public static void ActivateConfigPathAssembly()
+        {
+            CreateEmptyConfigIfNotExists(ConfigPathAssembly);
+        }
+
+        public static void DeactivateConfigPathAssembly()
+        {
+            if (IsConfigPathAssembly())
+            {
+                File.Delete(ConfigPathAssembly);
+            }
+        }
 
         /// <summary>
         /// Override.
@@ -151,18 +175,44 @@ namespace SystemTrayMenu.Properties
         /// Creates an empty user.config file...looks like the one MS creates.
         /// This could be overkill a simple key/value pairing would probably do.
         /// </summary>
-        private static void CreateEmptyConfig()
+        private static void CreateEmptyConfigIfNotExists(string path)
         {
-            XDocument doc = new XDocument();
-            XDeclaration declaration = new XDeclaration("1.0", "utf-8", "true");
-            XElement config = new XElement(Config);
-            XElement userSettings = new XElement(UserSettings);
-            XElement group = new XElement(typeof(Properties.Settings).FullName);
-            userSettings.Add(group);
-            config.Add(userSettings);
-            doc.Add(config);
-            doc.Declaration = declaration;
-            doc.Save(UserConfigPath);
+            if (!File.Exists(path))
+            {
+                // if the config file is not where it's supposed to be create a new one.
+                XDocument doc = new XDocument();
+                XDeclaration declaration = new XDeclaration("1.0", "utf-8", "true");
+                XElement config = new XElement(Config);
+                XElement userSettings = new XElement(UserSettings);
+                XElement group = new XElement(typeof(Properties.Settings).FullName);
+                userSettings.Add(group);
+                config.Add(userSettings);
+                doc.Add(config);
+                doc.Declaration = declaration;
+                try
+                {
+                    doc.Save(path);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"Failed to store config at assembly location {path}", ex);
+                }
+            }
+        }
+
+        private static bool IsConfigPathAssembly()
+        {
+            bool isconfigPathAssembly = false;
+            try
+            {
+                isconfigPathAssembly = File.Exists(ConfigPathAssembly);
+            }
+            catch (Exception ex)
+            {
+                Log.Warn("IsConfigPathAssembly failed", ex);
+            }
+
+            return isconfigPathAssembly;
         }
 
         /// <summary>
@@ -170,14 +220,18 @@ namespace SystemTrayMenu.Properties
         /// </summary>
         private void LoadValuesFromFile()
         {
-            if (!File.Exists(UserConfigPath))
-            {
-                // if the config file is not where it's supposed to be create a new one.
-                CreateEmptyConfig();
-            }
+            CreateEmptyConfigIfNotExists(UserConfigPath);
 
             // load the xml
-            XDocument configXml = XDocument.Load(UserConfigPath);
+            XDocument configXml;
+            if (IsConfigPathAssembly())
+            {
+                configXml = XDocument.Load(ConfigPathAssembly);
+            }
+            else
+            {
+                configXml = XDocument.Load(UserConfigPath);
+            }
 
             // get all of the <setting name="..." serializeAs="..."> elements.
             IEnumerable<XElement> settingElements = configXml.Element(Config).Element(UserSettings).Element(typeof(Properties.Settings).FullName).Elements(Setting);
@@ -202,7 +256,15 @@ namespace SystemTrayMenu.Properties
         private void SaveValuesToFile()
         {
             // load the current xml from the file.
-            XDocument import = XDocument.Load(UserConfigPath);
+            XDocument import;
+            if (IsConfigPathAssembly())
+            {
+                import = XDocument.Load(ConfigPathAssembly);
+            }
+            else
+            {
+                import = XDocument.Load(UserConfigPath);
+            }
 
             // get the settings group (e.g. <Company.Project.Desktop.Settings>)
             XElement settingsSection = import.Element(Config).Element(UserSettings).Element(typeof(Properties.Settings).FullName);
@@ -225,6 +287,11 @@ namespace SystemTrayMenu.Properties
                     // update the value if it exists.
                     setting.Value = entry.Value.Value ?? string.Empty;
                 }
+            }
+
+            if (IsConfigPathAssembly())
+            {
+                import.Save(ConfigPathAssembly);
             }
 
             import.Save(UserConfigPath);
