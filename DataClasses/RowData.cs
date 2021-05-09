@@ -303,8 +303,7 @@ namespace SystemTrayMenu.DataClasses
                     {
                         try
                         {
-                            icon = IconReader.GetFileIconWithCache(iconLocation, true, out bool toDispose);
-                            diposeIcon = toDispose;
+                            icon = Icon.ExtractAssociatedIcon(iconLocation);
                             handled = true;
                         }
                         catch (ArgumentException ex)
@@ -341,8 +340,7 @@ namespace SystemTrayMenu.DataClasses
                 }
                 else if (System.IO.File.Exists(iconFile))
                 {
-                    icon = IconReader.GetFileIconWithCache(iconFile, true, out bool toDispose);
-                    diposeIcon = toDispose;
+                    icon = Icon.ExtractAssociatedIcon(iconFile);
                     handled = true;
                 }
                 else
