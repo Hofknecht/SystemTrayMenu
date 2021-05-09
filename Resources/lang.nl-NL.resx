@@ -279,4 +279,16 @@
   <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
     <value>Om een kleur te wijzigen, plakt u een HTML-kleurcode of dubbelklikt u in een veld.</value>
   </data>
+  <data name="Change to relative folder" xml:space="preserve">
+    <value>Verander naar de relatieve map</value>
+  </data>
+  <data name="Store config at assembly location" xml:space="preserve">
+    <value>Bewaar de configuratie op de assemblagelocatie</value>
+  </data>
+  <data name="USB" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Open assembly location" xml:space="preserve">
+    <value>Open de montageplaats</value>
+  </data>
 </root>

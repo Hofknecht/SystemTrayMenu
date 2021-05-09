@@ -279,4 +279,16 @@
   <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
     <value>Chcete-li změnit barvu, vložte barevný kód HTML nebo poklepejte do pole.</value>
   </data>
+  <data name="Change to relative folder" xml:space="preserve">
+    <value>Změnit na relativní složku</value>
+  </data>
+  <data name="Store config at assembly location" xml:space="preserve">
+    <value>Uložte konfiguraci na místo montáže</value>
+  </data>
+  <data name="USB" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Open assembly location" xml:space="preserve">
+    <value>Otevřete umístění sestavy</value>
+  </data>
 </root>

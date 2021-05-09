@@ -279,4 +279,16 @@
   <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
     <value>Para cambiar un color, pegue un código de color HTML o haga doble clic en un campo.</value>
   </data>
+  <data name="Change to relative folder" xml:space="preserve">
+    <value>Cambiar a carpeta relativa</value>
+  </data>
+  <data name="Store config at assembly location" xml:space="preserve">
+    <value>Almacenar la configuración en el lugar de montaje</value>
+  </data>
+  <data name="USB" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Open assembly location" xml:space="preserve">
+    <value>Abrir el lugar de montaje</value>
+  </data>
 </root>
