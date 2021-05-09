@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
     using System.Windows.Forms;
@@ -44,7 +45,14 @@ namespace SystemTrayMenu.Utilities
                 p.StartInfo = new ProcessStartInfo(
                     Process.GetCurrentProcess().
                     MainModule.FileName);
-                p.Start();
+                try
+                {
+                    p.Start();
+                }
+                catch (Win32Exception ex)
+                {
+                    Log.Warn("Restart failed", ex);
+                }
             }
 
             Application.Exit();
