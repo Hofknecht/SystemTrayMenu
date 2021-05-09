@@ -34,19 +34,6 @@ namespace SystemTrayMenu.Properties
         }
 
         /// <summary>
-        /// Gets or sets override.
-        /// </summary>
-        public override string ApplicationName
-        {
-            get => System.Reflection.Assembly.GetExecutingAssembly().ManifestModule.Name;
-
-            set
-            {
-                // do nothing
-            }
-        }
-
-        /// <summary>
         /// Gets the setting key this is returning must set before the settings are used.
         /// e.g. <c>Properties.Settings.Default.SettingsKey = @"C:\temp\user.config";</c>.
         /// </summary>
@@ -55,6 +42,19 @@ namespace SystemTrayMenu.Properties
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 $"SystemTrayMenu"),
                 $"user-{Environment.MachineName}.config");
+
+        /// <summary>
+        /// Gets or sets override.
+        /// </summary>
+        public override string ApplicationName
+        {
+            get => Assembly.GetExecutingAssembly().ManifestModule.Name;
+
+            set
+            {
+                // do nothing
+            }
+        }
 
         private static string ConfigPathAssembly => Path.Combine(
                 Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,

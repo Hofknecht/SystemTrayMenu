@@ -188,48 +188,129 @@ namespace SystemTrayMenu
 
         private static void InitializeColors()
         {
-            ColorConverter c = new ColorConverter();
-            Settings s = Settings.Default;
-            s.ColorSelectedItem = SetColor(c, ref AppColors.SelectedItem, Color.FromArgb(204, 232, 255), s.ColorSelectedItem);
-            s.ColorDarkModeSelecetedItem = SetColor(c, ref AppColors.DarkModeSelecetedItem, Color.FromArgb(51, 51, 51), s.ColorDarkModeSelecetedItem);
-            s.ColorSelectedItemBorder = SetColor(c, ref AppColors.SelectedItemBorder, Color.FromArgb(153, 209, 255), s.ColorSelectedItemBorder);
-            s.ColorDarkModeSelectedItemBorder = SetColor(c, ref AppColors.DarkModeSelectedItemBorder, Color.FromArgb(20, 29, 75), s.ColorDarkModeSelectedItemBorder);
-            s.ColorOpenFolder = SetColor(c, ref AppColors.OpenFolder, Color.FromArgb(194, 245, 222), s.ColorOpenFolder);
-            s.ColorDarkModeOpenFolder = SetColor(c, ref AppColors.DarkModeOpenFolder, Color.FromArgb(20, 65, 42), s.ColorDarkModeOpenFolder);
-            s.ColorOpenFolderBorder = SetColor(c, ref AppColors.OpenFolderBorder, Color.FromArgb(153, 255, 165), s.ColorOpenFolderBorder);
-            s.ColorDarkModeOpenFolderBorder = SetColor(c, ref AppColors.DarkModeOpenFolderBorder, Color.FromArgb(20, 75, 85), s.ColorDarkModeOpenFolderBorder);
-            s.ColorWarning = SetColor(c, ref AppColors.Warning, Color.FromArgb(255, 204, 232), s.ColorWarning);
-            s.ColorDarkModeWarning = SetColor(c, ref AppColors.DarkModeWarning, Color.FromArgb(75, 24, 52), s.ColorDarkModeWarning);
-            s.ColorTitle = SetColor(c, ref AppColors.Title, Color.Azure, s.ColorTitle);
-            s.ColorDarkModeTitle = SetColor(c, ref AppColors.DarkModeTitle, Color.FromArgb(43, 43, 43), s.ColorDarkModeTitle);
-            s.ColorSearchField = SetColor(c, ref AppColors.SearchField, Color.FromArgb(255, 255, 255), s.ColorSearchField);
-            s.ColorDarkModeSearchField = SetColor(c, ref AppColors.DarkModeSearchField, Color.FromArgb(25, 25, 25), s.ColorDarkModeSearchField);
-            s.ColorBackground = SetColor(c, ref AppColors.Background, Color.FromArgb(255, 255, 255), s.ColorBackground);
-            s.ColorDarkModeBackground = SetColor(c, ref AppColors.DarkModeBackground, Color.FromArgb(32, 32, 32), s.ColorDarkModeBackground);
-            s.Save();
+            ColorConverter converter = new ColorConverter();
+            ColorAndCode colorAndCode = default;
+            bool changed = false;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSelectedItem;
+            colorAndCode.Color = Color.FromArgb(204, 232, 255);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSelectedItem = colorAndCode.HtmlColorCode;
+            AppColors.SelectedItem = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeSelecetedItem;
+            colorAndCode.Color = Color.FromArgb(51, 51, 51);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeSelecetedItem = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeSelecetedItem = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSelectedItemBorder;
+            colorAndCode.Color = Color.FromArgb(153, 209, 255);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSelectedItemBorder = colorAndCode.HtmlColorCode;
+            AppColors.SelectedItemBorder = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeSelectedItemBorder;
+            colorAndCode.Color = Color.FromArgb(20, 29, 75);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeSelectedItemBorder = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeSelectedItemBorder = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorOpenFolder;
+            colorAndCode.Color = Color.FromArgb(194, 245, 222);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorOpenFolder = colorAndCode.HtmlColorCode;
+            AppColors.OpenFolder = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeOpenFolder;
+            colorAndCode.Color = Color.FromArgb(20, 65, 42);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeOpenFolder = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeOpenFolder = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorOpenFolderBorder;
+            colorAndCode.Color = Color.FromArgb(153, 255, 165);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorOpenFolderBorder = colorAndCode.HtmlColorCode;
+            AppColors.OpenFolderBorder = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeOpenFolderBorder;
+            colorAndCode.Color = Color.FromArgb(20, 75, 85);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeOpenFolderBorder = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeOpenFolderBorder = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorWarning;
+            colorAndCode.Color = Color.FromArgb(255, 204, 232);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorWarning = colorAndCode.HtmlColorCode;
+            AppColors.Warning = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeWarning;
+            colorAndCode.Color = Color.FromArgb(75, 24, 52);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeWarning = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeWarning = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorTitle;
+            colorAndCode.Color = Color.Azure;
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorTitle = colorAndCode.HtmlColorCode;
+            AppColors.Title = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeTitle;
+            colorAndCode.Color = Color.FromArgb(43, 43, 43);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeTitle = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeTitle = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSearchField;
+            colorAndCode.Color = Color.FromArgb(255, 255, 255);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSearchField = colorAndCode.HtmlColorCode;
+            AppColors.SearchField = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeSearchField;
+            colorAndCode.Color = Color.FromArgb(25, 25, 25);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeSearchField = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeSearchField = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorBackground;
+            colorAndCode.Color = Color.FromArgb(255, 255, 255);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorBackground = colorAndCode.HtmlColorCode;
+            AppColors.Background = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeBackground;
+            colorAndCode.Color = Color.FromArgb(32, 32, 32);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeBackground = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeBackground = colorAndCode.Color;
+
+            if (changed)
+            {
+                Settings.Default.Save();
+            }
         }
 
-        private static string SetColor(
+        private static ColorAndCode ProcessColorAndCode(
             ColorConverter colorConverter,
-            ref Color appColor,
-            Color colorDefault,
-            string colorHtmlCode)
+            ColorAndCode colorAndCode,
+            ref bool changedHtmlColorCode)
         {
-            string colorHtmlCodeCorrected = colorHtmlCode;
-
             try
             {
-                appColor = (Color)colorConverter.ConvertFromString(colorHtmlCode);
+                colorAndCode.Color = (Color)colorConverter.ConvertFromString(colorAndCode.HtmlColorCode);
             }
             catch (ArgumentException ex)
             {
-                Log.Warn($"colorHtmlCode {colorHtmlCode}", ex);
-                appColor = colorDefault;
-                colorHtmlCodeCorrected = ColorTranslator.ToHtml(colorDefault);
-                Settings.Default.Save();
+                Log.Warn($"HtmlColorCode {colorAndCode.HtmlColorCode}", ex);
+                colorAndCode.HtmlColorCode = ColorTranslator.ToHtml(colorAndCode.Color);
+                changedHtmlColorCode = true;
             }
 
-            return colorHtmlCodeCorrected;
+            return colorAndCode;
         }
     }
 }
