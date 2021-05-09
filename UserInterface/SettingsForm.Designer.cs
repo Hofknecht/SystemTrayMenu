@@ -30,7 +30,6 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOk = new System.Windows.Forms.Button();
@@ -1365,7 +1364,6 @@ namespace SystemTrayMenu.UserInterface
             this.ClientSize = new System.Drawing.Size(1115, 520);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SettingsForm";

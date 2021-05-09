@@ -18,6 +18,7 @@ namespace SystemTrayMenu.UserInterface
 
     public partial class SettingsForm : Form
     {
+        private static readonly Icon SystemTrayMenu = Resources.SystemTrayMenu;
         private readonly string newHotKey = string.Empty;
         private bool inHotkey;
         private ColorConverter colorConverter = new ColorConverter();
@@ -25,6 +26,7 @@ namespace SystemTrayMenu.UserInterface
         public SettingsForm()
         {
             InitializeComponent();
+            Icon = SystemTrayMenu;
 
             // Initialize and replace here here, because designer always removes it
             InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder();
