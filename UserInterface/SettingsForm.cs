@@ -427,7 +427,6 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonChangeRelativeFolder_Click(object sender, EventArgs e)
         {
-            Config.SetFolderByUser(false);
             Settings.Default.PathDirectory = Path.GetRelativePath(
                 Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
                 Config.Path);
