@@ -99,6 +99,7 @@ namespace SystemTrayMenu.UserInterface
 
         public void LoadingStop()
         {
+            Cursor.Current = Cursors.Default;
             threadsLoading = false;
         }
 
@@ -116,6 +117,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (DateTime.Now - timeLoadingStart > new TimeSpan(0, 0, 0, 0, 500))
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     notifyIcon.Icon = bitmapsLoading[loadCount++ % indexLoad];
                 }
             }

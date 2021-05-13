@@ -804,31 +804,34 @@ namespace SystemTrayMenu.Business
 
         private void HideOldMenu(Menu menuToShow, bool keepOrSetIsMenuOpen = false)
         {
-            // Clean up menu status IsMenuOpen for previous one
             Menu menuPrevious = menus[menuToShow.Level - 1];
-            DataGridView dgvPrevious = menuPrevious.GetDataGridView();
-            foreach (DataRow row in ((DataTable)dgvPrevious.DataSource).Rows)
+            if (menuPrevious != null)
             {
-                RowData rowDataToClear = (RowData)row[2];
-                if (rowDataToClear == (RowData)menuToShow.Tag)
+                // Clean up menu status IsMenuOpen for previous one
+                DataGridView dgvPrevious = menuPrevious.GetDataGridView();
+                foreach (DataRow row in ((DataTable)dgvPrevious.DataSource).Rows)
                 {
-                    rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
+                    RowData rowDataToClear = (RowData)row[2];
+                    if (rowDataToClear == (RowData)menuToShow.Tag)
+                    {
+                        rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
+                    }
+                    else
+                    {
+                        rowDataToClear.IsMenuOpen = false;
+                    }
                 }
-                else
+
+                RefreshSelection(dgvPrevious);
+
+                // Hide old menu
+                foreach (Menu menuToClose in menus.Where(
+                    m => m != null && m.Level > menuPrevious.Level))
                 {
-                    rowDataToClear.IsMenuOpen = false;
+                    menuToClose.VisibleChanged += MenuVisibleChanged;
+                    menuToClose.HideWithFade();
+                    menus[menuToClose.Level] = null;
                 }
-            }
-
-            RefreshSelection(dgvPrevious);
-
-            // Hide old menu
-            foreach (Menu menuToClose in menus.Where(
-                m => m != null && m.Level > menuPrevious.Level))
-            {
-                menuToClose.VisibleChanged += MenuVisibleChanged;
-                menuToClose.HideWithFade();
-                menus[menuToClose.Level] = null;
             }
         }
 

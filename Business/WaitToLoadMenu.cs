@@ -173,10 +173,8 @@ namespace SystemTrayMenu.Handler
                 {
                     CloseMenu.Invoke(rowData.MenuLevel + 2);
                 }
-                else
-                {
-                    CloseMenu.Invoke(rowData.MenuLevel + 1);
-                }
+
+                CloseMenu.Invoke(rowData.MenuLevel + 1);
 
                 if (!rowData.IsContextMenuOpen &&
                     rowData.ContainsMenu &&
