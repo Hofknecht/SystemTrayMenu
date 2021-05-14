@@ -348,9 +348,7 @@ namespace SystemTrayMenu.UserInterface
                     nvc.Add("CodeBase", a.CodeBase.Replace("file:///", string.Empty, StringComparison.InvariantCulture));
                 }
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (NotSupportedException)
-#pragma warning restore CA1031 // Do not catch general exception types
             {
                 nvc.Add("CodeBase", "(not supported)");
             }
@@ -374,9 +372,7 @@ namespace SystemTrayMenu.UserInterface
                     nvc.Add("Location", a.Location);
                 }
             }
-#pragma warning disable CA1031 // Do not catch general exception types
             catch (NotSupportedException)
-#pragma warning restore CA1031 // Do not catch general exception types
             {
                 nvc.Add("Location", "(not supported)");
             }

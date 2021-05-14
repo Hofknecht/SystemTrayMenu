@@ -181,7 +181,7 @@ namespace SystemTrayMenu.Business
                     HideOldMenu(menus[level]);
                 }
 
-                if (menus[level] != null)
+                if (menus[level - 1] != null)
                 {
                     menus[level - 1].FocusTextBox();
                 }

@@ -79,7 +79,14 @@ namespace SystemTrayMenu.Properties
         {
             if (IsConfigPathAssembly())
             {
-                File.Delete(ConfigPathAssembly);
+                try
+                {
+                    File.Delete(ConfigPathAssembly);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"Could not delete {ConfigPathAssembly}", ex);
+                }
             }
         }
 

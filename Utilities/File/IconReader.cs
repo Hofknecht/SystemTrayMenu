@@ -140,9 +140,7 @@ namespace SystemTrayMenu.Utilities
                     icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
                     DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
                 }
-#pragma warning disable CA1031 // Do not catch general exception types
                 catch (Exception ex)
-#pragma warning restore CA1031 // Do not catch general exception types
                 {
                     Log.Error($"directoryPath:'{directoryPath}'", ex);
                 }
@@ -239,9 +237,7 @@ namespace SystemTrayMenu.Utilities
                     // Copy (clone) the returned icon to a new object, thus allowing us to clean-up properly
                     icon = (Icon)Icon.FromHandle(hIcon).Clone();
                 }
-#pragma warning disable CA1031 // Do not catch general exception types
                 catch (Exception ex)
-#pragma warning restore CA1031 // Do not catch general exception types
                 {
                     Log.Error($"filePath:'{filePath}'", ex);
                 }
