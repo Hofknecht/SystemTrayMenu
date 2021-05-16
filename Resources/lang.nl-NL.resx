@@ -258,11 +258,11 @@
   <data name="Background" xml:space="preserve">
     <value>Achtergrond</value>
   </data>
-  <data name="Open folder" xml:space="preserve">
-    <value>Open map</value>
+  <data name="Opened folder" xml:space="preserve">
+    <value>Geopende map</value>
   </data>
-  <data name="Open folder border" xml:space="preserve">
-    <value>Open map rand</value>
+  <data name="Border of opened folder" xml:space="preserve">
+    <value>Rand van geopende map</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Zoekveld</value>
@@ -270,8 +270,8 @@
   <data name="Selected item" xml:space="preserve">
     <value>Geselecteerd item</value>
   </data>
-  <data name="Selected item border" xml:space="preserve">
-    <value>Geselecteerd item rand</value>
+  <data name="Border of selected item" xml:space="preserve">
+    <value>Rand van geselecteerd item</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Titel</value>
@@ -282,13 +282,13 @@
   <data name="Change to relative folder" xml:space="preserve">
     <value>Verander naar de relatieve map</value>
   </data>
-  <data name="Store config at assembly location" xml:space="preserve">
+  <data name="Store config at the assembly location" xml:space="preserve">
     <value>Bewaar de configuratie op de assemblagelocatie</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open assembly location" xml:space="preserve">
+  <data name="Open the assembly location" xml:space="preserve">
     <value>Open de montageplaats</value>
   </data>
 </root>

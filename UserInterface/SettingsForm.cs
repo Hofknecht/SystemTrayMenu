@@ -60,8 +60,8 @@ namespace SystemTrayMenu.UserInterface
                 buttonChangeFolder.Text = Translator.GetText("Change folder");
                 groupBoxUSB.Text = Translator.GetText("USB");
                 buttonChangeRelativeFolder.Text = Translator.GetText("Change to relative folder");
-                checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at assembly location");
-                buttonOpenAssemblyLocation.Text = Translator.GetText("Open assembly location");
+                checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at the assembly location");
+                buttonOpenAssemblyLocation.Text = Translator.GetText("Open the assembly location");
                 groupBoxAutostart.Text = Translator.GetText("Autostart");
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
@@ -87,10 +87,10 @@ namespace SystemTrayMenu.UserInterface
                 labelTitle.Text = Translator.GetText("Title");
                 labelBackground.Text = Translator.GetText("Background");
                 labelSearchField.Text = Translator.GetText("Search field");
-                labelOpenFolder.Text = Translator.GetText("Open folder");
-                labelOpenFolderBorder.Text = Translator.GetText("Open folder border");
+                labelOpenFolder.Text = Translator.GetText("Opened folder");
+                labelOpenFolderBorder.Text = Translator.GetText("Border of opened folder");
                 labelSelectedItem.Text = Translator.GetText("Selected item");
-                labelSelectedItemBorder.Text = Translator.GetText("Selected item border");
+                labelSelectedItemBorder.Text = Translator.GetText("Border of selected item");
                 labelWarning.Text = Translator.GetText("Warning");
                 buttonDefaultColors.Text = Translator.GetText("Default Light Mode");
                 buttonDefaultColorsDark.Text = Translator.GetText("Default Dark Mode");

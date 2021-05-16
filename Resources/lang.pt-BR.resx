@@ -258,10 +258,10 @@
   <data name="Background" xml:space="preserve">
     <value>Fundo</value>
   </data>
-  <data name="Open folder" xml:space="preserve">
+  <data name="Opened folder" xml:space="preserve">
     <value>Pasta aberta</value>
   </data>
-  <data name="Open folder border" xml:space="preserve">
+  <data name="Border of opened folder" xml:space="preserve">
     <value>Borda da pasta aberta</value>
   </data>
   <data name="Search field" xml:space="preserve">
@@ -270,7 +270,7 @@
   <data name="Selected item" xml:space="preserve">
     <value>Item selecionado</value>
   </data>
-  <data name="Selected item border" xml:space="preserve">
+  <data name="Border of selected item" xml:space="preserve">
     <value>Borda do item selecionado</value>
   </data>
   <data name="Title" xml:space="preserve">
@@ -282,13 +282,13 @@
   <data name="Change to relative folder" xml:space="preserve">
     <value>Mudar para a pasta relativa</value>
   </data>
-  <data name="Store config at assembly location" xml:space="preserve">
+  <data name="Store config at the assembly location" xml:space="preserve">
     <value>Armazene a configuração no local de montagem</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open assembly location" xml:space="preserve">
-    <value>Abrir o local de montagem</value>
+  <data name="Open the assembly location" xml:space="preserve">
+    <value>Abra o local de montagem</value>
   </data>
 </root>

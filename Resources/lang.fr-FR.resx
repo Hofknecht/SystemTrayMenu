@@ -258,11 +258,11 @@
   <data name="Background" xml:space="preserve">
     <value>Arrière-plan</value>
   </data>
-  <data name="Open folder" xml:space="preserve">
+  <data name="Opened folder" xml:space="preserve">
     <value>Dossier ouvert</value>
   </data>
-  <data name="Open folder border" xml:space="preserve">
-    <value>La bordure du dossier ouvert</value>
+  <data name="Border of opened folder" xml:space="preserve">
+    <value>Bordure du dossier ouvert</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Champ de recherche</value>
@@ -270,7 +270,7 @@
   <data name="Selected item" xml:space="preserve">
     <value>Élément sélectionné</value>
   </data>
-  <data name="Selected item border" xml:space="preserve">
+  <data name="Border of selected item" xml:space="preserve">
     <value>Bordure de l'élément sélectionné</value>
   </data>
   <data name="Title" xml:space="preserve">
@@ -282,13 +282,13 @@
   <data name="Change to relative folder" xml:space="preserve">
     <value>Passer au dossier relatif</value>
   </data>
-  <data name="Store config at assembly location" xml:space="preserve">
+  <data name="Store config at the assembly location" xml:space="preserve">
     <value>Stocker la configuration à l'emplacement de l'assemblage</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open assembly location" xml:space="preserve">
-    <value>Ouvrir l'emplacement de l'assemblage</value>
+  <data name="Open the assembly location" xml:space="preserve">
+    <value>Ouvrez l'emplacement de l'assemblage</value>
   </data>
 </root>

@@ -258,11 +258,11 @@
   <data name="Background" xml:space="preserve">
     <value>Pozadí</value>
   </data>
-  <data name="Open folder" xml:space="preserve">
+  <data name="Opened folder" xml:space="preserve">
     <value>Otevřená složka</value>
   </data>
-  <data name="Open folder border" xml:space="preserve">
-    <value>Otevřete ohraničení složky</value>
+  <data name="Border of opened folder" xml:space="preserve">
+    <value>Okraj otevřené složky</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Vyhledávací pole</value>
@@ -270,8 +270,8 @@
   <data name="Selected item" xml:space="preserve">
     <value>Vybraná položka</value>
   </data>
-  <data name="Selected item border" xml:space="preserve">
-    <value>Ohraničení vybrané položky</value>
+  <data name="Border of selected item" xml:space="preserve">
+    <value>Okraj vybrané položky</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Titul</value>
@@ -282,13 +282,13 @@
   <data name="Change to relative folder" xml:space="preserve">
     <value>Změnit na relativní složku</value>
   </data>
-  <data name="Store config at assembly location" xml:space="preserve">
+  <data name="Store config at the assembly location" xml:space="preserve">
     <value>Uložte konfiguraci na místo montáže</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open assembly location" xml:space="preserve">
+  <data name="Open the assembly location" xml:space="preserve">
     <value>Otevřete umístění sestavy</value>
   </data>
 </root>
