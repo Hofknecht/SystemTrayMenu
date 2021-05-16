@@ -399,7 +399,7 @@ namespace SystemTrayMenu.Resources {
         /// </summary>
         internal static string Open_assembly_location {
             get {
-                return ResourceManager.GetString("Open assembly location", resourceCulture);
+                return ResourceManager.GetString("Open the assembly location", resourceCulture);
             }
         }
         
@@ -408,7 +408,7 @@ namespace SystemTrayMenu.Resources {
         /// </summary>
         internal static string Open_folder {
             get {
-                return ResourceManager.GetString("Open folder", resourceCulture);
+                return ResourceManager.GetString("Opened folder", resourceCulture);
             }
         }
         
@@ -417,7 +417,7 @@ namespace SystemTrayMenu.Resources {
         /// </summary>
         internal static string Open_folder_border {
             get {
-                return ResourceManager.GetString("Open folder border", resourceCulture);
+                return ResourceManager.GetString("Border of opened folder", resourceCulture);
             }
         }
         
@@ -471,7 +471,7 @@ namespace SystemTrayMenu.Resources {
         /// </summary>
         internal static string Selected_item_border {
             get {
-                return ResourceManager.GetString("Selected item border", resourceCulture);
+                return ResourceManager.GetString("Border of selected item", resourceCulture);
             }
         }
         
@@ -516,7 +516,7 @@ namespace SystemTrayMenu.Resources {
         /// </summary>
         internal static string Store_config_at_assembly_location {
             get {
-                return ResourceManager.GetString("Store config at assembly location", resourceCulture);
+                return ResourceManager.GetString("Store config at the assembly location", resourceCulture);
             }
         }
         
