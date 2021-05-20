@@ -107,7 +107,8 @@ namespace SystemTrayMenu.Utilities
             catch (Exception ex)
             {
                 if (ex is FileNotFoundException ||
-                    ex is Win32Exception)
+                    ex is Win32Exception ||
+                    ex is InvalidOperationException)
                 {
                     Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
                     MessageBox.Show(ex.Message);

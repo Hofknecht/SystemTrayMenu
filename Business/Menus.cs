@@ -283,7 +283,11 @@ namespace SystemTrayMenu.Business
 
                 try
                 {
-                    if (FileLnk.IsNetworkRoot(path))
+                    if (string.IsNullOrEmpty(path))
+                    {
+                        Log.Info($"path is null or empty");
+                    }
+                    else if (FileLnk.IsNetworkRoot(path))
                     {
                         directories = GetDirectoriesInNetworkLocation(path);
                         static string[] GetDirectoriesInNetworkLocation(string networkLocationRootPath)
@@ -352,12 +356,15 @@ namespace SystemTrayMenu.Business
                     Log.Warn($"path:'{path}'", ex);
                 }
 
-                foreach (string directory in directories)
+                foreach (string directoryWithIllegalCharacters in directories)
                 {
                     if (worker != null && worker.CancellationPending)
                     {
                         break;
                     }
+
+                    // https://github.com/Hofknecht/SystemTrayMenu/issues/171
+                    string directory = directoryWithIllegalCharacters.Replace("\x00", string.Empty);
 
                     bool hiddenEntry = false;
                     if (FolderOptions.IsHidden(directory, ref hiddenEntry))
@@ -381,7 +388,11 @@ namespace SystemTrayMenu.Business
 
                 try
                 {
-                    if (!FileLnk.IsNetworkRoot(path))
+                    if (string.IsNullOrEmpty(path))
+                    {
+                        Log.Info($"path is null or empty");
+                    }
+                    else if (!FileLnk.IsNetworkRoot(path))
                     {
                         files = Directory.GetFiles(path);
                     }
