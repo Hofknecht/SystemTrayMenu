@@ -409,12 +409,15 @@ namespace SystemTrayMenu.Business
                     Log.Warn($"path:'{path}'", ex);
                 }
 
-                foreach (string file in files)
+                foreach (string fileWithIllegalCharacters in files)
                 {
                     if (worker != null && worker.CancellationPending)
                     {
                         break;
                     }
+
+                    // https://github.com/Hofknecht/SystemTrayMenu/issues/171
+                    string file = fileWithIllegalCharacters.Replace("\x00", string.Empty);
 
                     bool hiddenEntry = false;
                     if (FolderOptions.IsHidden(file, ref hiddenEntry))
