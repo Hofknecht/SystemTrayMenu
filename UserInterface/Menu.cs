@@ -36,34 +36,34 @@ namespace SystemTrayMenu.UserInterface
             fading.Show += Fading_Show;
             void Fading_Show()
             {
-                if (Level == 0)
+                try
                 {
-                    try
-                    {
-                        isShowing = true;
-                        Visible = true;
-                        isShowing = false;
-                    }
-                    catch (ObjectDisposedException)
-                    {
-                        Visible = false;
-                        isShowing = false;
-                        Log.Info($"Could not open menu, old menu was disposing," +
-                            $" IsDisposed={IsDisposed}");
-                    }
+                    isShowing = true;
+                    Visible = true;
+                    isShowing = false;
+                }
+                catch (ObjectDisposedException)
+                {
+                    Visible = false;
+                    isShowing = false;
+                    Log.Info($"Could not open menu, old menu was disposing," +
+                        $" IsDisposed={IsDisposed}");
+                }
 
-                    if (Visible)
+                if (Visible)
+                {
+                    if (Level == 0)
                     {
                         Activate();
                         textBoxSearch.Focus();
                         NativeMethods.User32ShowInactiveTopmost(this);
                         NativeMethods.ForceForegroundWindow(Handle);
                     }
-                }
-                else
-                {
-                    NativeMethods.User32ShowInactiveTopmost(this);
-                    textBoxSearch.Focus();
+                    else
+                    {
+                        NativeMethods.User32ShowInactiveTopmost(this);
+                        textBoxSearch.Focus();
+                    }
                 }
             }
 
