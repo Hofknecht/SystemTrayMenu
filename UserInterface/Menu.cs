@@ -299,6 +299,10 @@ namespace SystemTrayMenu.UserInterface
             Menu menuPredecessor,
             StartLocation startLocation)
         {
+            // Update the height and width
+            AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
+            AdjustDataGridViewWidth();
+
             if (menuPredecessor != null)
             {
                 // Ignore start as we use predecessor
@@ -313,10 +317,6 @@ namespace SystemTrayMenu.UserInterface
                 directionToRight = true;
                 startLocation = StartLocation.Predecessor;
             }
-
-            // Update the height and width
-            AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
-            AdjustDataGridViewWidth();
 
             // Calculate X position
             int x;
