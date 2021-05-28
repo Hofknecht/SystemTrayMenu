@@ -10,7 +10,7 @@ namespace SystemTrayMenu.UserInterface
 
     public class Fading : IDisposable
     {
-        private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
+        private const int Interval60FPS = 10; // 100fps=>1s/100fps=~10ms
 
         private const double StepIn = 0.20;
         private const double StepOut = 0.10;
