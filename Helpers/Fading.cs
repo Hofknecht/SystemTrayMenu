@@ -10,7 +10,7 @@ namespace SystemTrayMenu.UserInterface
 
     public class Fading : IDisposable
     {
-        private const int Interval60FPS = 10; // 100fps=>1s/100fps=~10ms
+        private const int Interval100FPS = 10; // 100fps=>1s/100fps=~10ms
 
         private const double StepIn = 0.20;
         private const double StepOut = 0.10;
@@ -27,7 +27,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal Fading()
         {
-            timer.Interval = Interval60FPS;
+            timer.Interval = Interval100FPS;
             timer.Tick += Tick;
             void Tick(object sender, EventArgs e)
             {
