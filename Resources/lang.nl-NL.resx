@@ -196,7 +196,7 @@
     <value>Expert</value>
   </data>
   <data name="Single click to start item" xml:space="preserve">
-    <value>Enkele klik om het item te starten</value>
+    <value>Enkele klik om een item te openen in plaats van dubbelklikken</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Donkere Modus altijd actief</value>

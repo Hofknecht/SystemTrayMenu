@@ -196,7 +196,7 @@
     <value>Expert</value>
   </data>
   <data name="Single click to start item" xml:space="preserve">
-    <value>Jedním kliknutím otevřete položku</value>
+    <value>Jediným kliknutím otevřete položku namísto dvojitého kliknutí</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Tmavý režim je vždy aktivní</value>

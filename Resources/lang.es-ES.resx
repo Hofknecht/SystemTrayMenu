@@ -196,7 +196,7 @@
     <value>Experta</value>
   </data>
   <data name="Single click to start item" xml:space="preserve">
-    <value>Un solo clic para iniciar el artículo</value>
+    <value>Un solo clic para abrir un elemento en lugar de hacer doble clic</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Modo oscuro siempre activa</value>

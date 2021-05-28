@@ -196,7 +196,7 @@
     <value>Esperto</value>
   </data>
   <data name="Single click to start item" xml:space="preserve">
-    <value>Fare clic una volta per aprire un elemento</value>
+    <value>Clic singolo per aprire un elemento invece del doppio clic</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Modalità oscura sempre attiva</value>
