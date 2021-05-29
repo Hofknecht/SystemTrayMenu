@@ -149,6 +149,7 @@ namespace SystemTrayMenu.DataClasses
                         icon = IconReader.GetFileIconWithCache(
                             TargetFilePath,
                             showOverlay,
+                            false,
                             out bool toDispose);
                         diposeIcon = toDispose;
                     }
@@ -333,7 +334,7 @@ namespace SystemTrayMenu.DataClasses
                 {
                     if (FileUrl.GetDefaultBrowserPath(out string browserPath))
                     {
-                        icon = IconReader.GetFileIconWithCache(browserPath, true, out bool toDispose);
+                        icon = IconReader.GetFileIconWithCache(browserPath, true, true, out bool toDispose);
                         diposeIcon = toDispose;
                         handled = true;
                     }

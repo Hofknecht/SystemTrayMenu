@@ -47,11 +47,16 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, out bool toDispose)
+        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, bool isBrowser, out bool toDispose)
         {
             Icon icon = null;
             string extension = Path.GetExtension(filePath);
             IconSize size = IconSize.Small;
+
+            if (isBrowser)
+            {
+                extension = "DefaultBrowserPath";
+            }
 
             if (IsExtensionWitSameIcon(extension))
             {
