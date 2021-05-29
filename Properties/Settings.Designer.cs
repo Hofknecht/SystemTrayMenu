@@ -174,6 +174,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("600")]
+        public int MaximumMenuHeight
+        {
+            get
+            {
+                return ((int)(this["MaximumMenuHeight"]));
+            }
+            set
+            {
+                this["MaximumMenuHeight"] = value;
+            }
+        }
+
+       [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("true")]
         public bool StaysOpenWhenItemClicked
         {

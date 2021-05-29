@@ -106,6 +106,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Border of opened folder.
+        /// </summary>
+        internal static string Border_of_opened_folder {
+            get {
+                return ResourceManager.GetString("Border of opened folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border of selected item.
+        /// </summary>
+        internal static string Border_of_selected_item {
+            get {
+                return ResourceManager.GetString("Border of selected item", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string buttonCancel {
@@ -395,29 +413,29 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open assembly location.
+        ///   Looks up a localized string similar to Open the assembly location.
         /// </summary>
-        internal static string Open_assembly_location {
+        internal static string Open_the_assembly_location {
             get {
                 return ResourceManager.GetString("Open the assembly location", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open folder.
+        ///   Looks up a localized string similar to Opened folder.
         /// </summary>
-        internal static string Open_folder {
+        internal static string Opened_folder {
             get {
                 return ResourceManager.GetString("Opened folder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open folder border.
+        ///   Looks up a localized string similar to Pixels maximum menu height.
         /// </summary>
-        internal static string Open_folder_border {
+        internal static string Pixels_maximum_menu_height {
             get {
-                return ResourceManager.GetString("Border of opened folder", resourceCulture);
+                return ResourceManager.GetString("Pixels maximum menu height", resourceCulture);
             }
         }
         
@@ -467,15 +485,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Selected item border.
-        /// </summary>
-        internal static string Selected_item_border {
-            get {
-                return ResourceManager.GetString("Border of selected item", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string Settings {
@@ -485,7 +494,7 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Single click to open an item.
+        ///   Looks up a localized string similar to Single click to open an item instead of double click.
         /// </summary>
         internal static string Single_click_to_start_item {
             get {
@@ -512,9 +521,9 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Store config at assembly location.
+        ///   Looks up a localized string similar to Store config at the assembly location.
         /// </summary>
-        internal static string Store_config_at_assembly_location {
+        internal static string Store_config_at_the_assembly_location {
             get {
                 return ResourceManager.GetString("Store config at the assembly location", resourceCulture);
             }

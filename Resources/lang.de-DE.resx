@@ -291,4 +291,7 @@
   <data name="Open the assembly location" xml:space="preserve">
     <value>Assembly-Speicherort öffnen</value>
   </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Pixel maximale Menühöhe</value>
+  </data>
 </root>

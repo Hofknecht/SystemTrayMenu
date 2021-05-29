@@ -201,7 +201,7 @@
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Modalità oscura sempre attiva</value>
   </data>
-<data name="Advanced" xml:space="preserve">
+  <data name="Advanced" xml:space="preserve">
     <value>Avanzate</value>
   </data>
   <data name="Appear at mouse location" xml:space="preserve">
@@ -290,5 +290,8 @@
   </data>
   <data name="Open the assembly location" xml:space="preserve">
     <value>Aprire la posizione dell'assieme</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Altezza massima del menu in pixel</value>
   </data>
 </root>

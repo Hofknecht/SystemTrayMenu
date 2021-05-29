@@ -291,4 +291,7 @@
   <data name="Open the assembly location" xml:space="preserve">
     <value>Otevřete umístění sestavy</value>
   </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Pixely maximální výška nabídky</value>
+  </data>
 </root>
