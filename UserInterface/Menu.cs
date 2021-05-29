@@ -571,6 +571,8 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
+            dgv.Invalidate();
+
             MouseWheel?.Invoke();
         }
 
