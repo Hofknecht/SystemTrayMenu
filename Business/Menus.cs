@@ -668,6 +668,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 dgv.DataSource = dataTable;
+                dgv.Columns["data"].Visible = false;
             }
 
             DataGridView dgv = menu.GetDataGridView();
