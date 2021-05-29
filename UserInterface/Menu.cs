@@ -486,6 +486,12 @@ namespace SystemTrayMenu.UserInterface
             {
                 int dgvHeight = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None); // Height of all rows
                 int dgvHeightMax = screenHeightMax - (Height - dgv.Height); // except dgv
+
+                if (dgvHeightMax > Properties.Settings.Default.MaximumMenuHeight)
+                {
+                    dgvHeightMax = Properties.Settings.Default.MaximumMenuHeight;
+                }
+
                 if (dgvHeight > dgvHeightMax)
                 {
                     // Make all rows fit into the screen
