@@ -131,6 +131,7 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "Italiano", Value = "it" },
                     new Language() { Name = "Nederlands", Value = "nl" },
                     new Language() { Name = "Português (Brasil)", Value = "pt-BR" },
+                    new Language() { Name = "中文(简体)", Value = "zh-CN" },
 
                     // new Language() { Name = "русский", Value = "ru" },
                 };
