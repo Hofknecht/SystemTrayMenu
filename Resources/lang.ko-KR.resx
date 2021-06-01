@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>약</value>
+  </data>
+  <data name="buttonOk" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>자동 시작</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>출구</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>폴더</value>
+  </data>
+  <data name="Folder empty" xml:space="preserve">
+    <value>빈 폴더</value>
+  </data>
+  <data name="buttonDetails" xml:space="preserve">
+    <value>세부</value>
+  </data>
+  <data name="buttonSystemInfo" xml:space="preserve">
+    <value>시스템 정보</value>
+  </data>
+  <data name="Folder inaccessible" xml:space="preserve">
+    <value>폴더에 액세스 할 수 없음</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>로그 파일</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>재시작</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>단축키를 등록 할 수 없습니다.</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>단축키</value>
+  </data>
+  <data name="Launch on startup" xml:space="preserve">
+    <value>시작시 시작</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="HelpFAQ" xml:space="preserve">
+    <value>도움말 / FAQ</value>
+  </data>
+  <data name="SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu</value>
+  </data>
+  <data name="TextFirstStart" xml:space="preserve">
+    <value>FAQ를 읽고 SystemTrayMenu의 루트 디렉토리를 선택하십시오.</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>경고</value>
+  </data>
+  <data name="Select Folder" xml:space="preserve">
+    <value>폴더 선택</value>
+  </data>
+  <data name="MessageRootFolderEmpty" xml:space="preserve">
+    <value>SystemTrayMenu의 루트 폴더가 없거나 비어 있습니다! 일부 파일, 폴더 또는 바로 가기를 폴더에 넣거나 루트 폴더를 변경하십시오.</value>
+  </data>
+  <data name="MessageRootFolderNoAccess" xml:space="preserve">
+    <value>SystemTrayMenu의 루트 폴더에 액세스 할 수 없습니다. 폴더에 대한 액세스 권한을 부여하거나 루트 폴더를 변경하십시오.</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>전문가</value>
+  </data>
+  <data name="Single click to start item" xml:space="preserve">
+    <value>두 번 클릭하는 대신 한 번 클릭하여 항목을 엽니 다.</value>
+  </data>
+  <data name="Dark Mode always active" xml:space="preserve">
+    <value>항상 다크 모드 활성화</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>많은</value>
+  </data>
+  <data name="Appear at mouse location" xml:space="preserve">
+    <value>마우스 위치에 표시</value>
+  </data>
+  <data name="Change folder" xml:space="preserve">
+    <value>폴더 변경</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>딸깍 하는 소리</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>커스터마이즈</value>
+  </data>
+  <data name="Dark Mode" xml:space="preserve">
+    <value>다크 모드</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>기본</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>포커스가 사라지고 마우스가 여전히 메뉴에있는 경우</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>마우스가 위에있을 때 메뉴가 열릴 때까지 밀리 초</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>이 경우 마우스가 메뉴에서 나가면 메뉴가 닫힐 때까지 밀리 초</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>최대 메뉴 너비 픽셀</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>크기와 위치</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>열린 상태로 유지</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>메뉴가 열릴 때까지의 시간</value>
+  </data>
+  <data name="If an item was clicked" xml:space="preserve">
+    <value>항목을 클릭 한 경우</value>
+  </data>
+  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
+    <value>색상 라이트 모드 및 다크 모드</value>
+  </data>
+  <data name="Default Dark Mode" xml:space="preserve">
+    <value>기본 다크 모드</value>
+  </data>
+  <data name="Default Light Mode" xml:space="preserve">
+    <value>기본 조명 모드</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>배경</value>
+  </data>
+  <data name="Opened folder" xml:space="preserve">
+    <value>열린 폴더</value>
+  </data>
+  <data name="Border of opened folder" xml:space="preserve">
+    <value>열린 폴더 테두리</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>검색 필드</value>
+  </data>
+  <data name="Selected item" xml:space="preserve">
+    <value>선택한 항목</value>
+  </data>
+  <data name="Border of selected item" xml:space="preserve">
+    <value>선택한 항목의 테두리</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>표제</value>
+  </data>
+  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
+    <value>색상을 변경하려면 HTML 색상 코드를 붙여 넣거나 필드를 두 번 클릭합니다.</value>
+  </data>
+  <data name="Change to relative folder" xml:space="preserve">
+    <value>상대 폴더로 변경</value>
+  </data>
+  <data name="Store config at the assembly location" xml:space="preserve">
+    <value>어셈블리 위치에 구성 저장</value>
+  </data>
+  <data name="USB" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Open the assembly location" xml:space="preserve">
+    <value>조립 위치 열기</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>픽셀 최대 메뉴 높이</value>
+  </data>
+</root>
