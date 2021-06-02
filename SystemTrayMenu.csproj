@@ -167,6 +167,16 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+	<Compile Update="Resources\lang.ru-RU.Designer.cs">
+      <DependentUpon>lang.ru-RU.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+	<Compile Update="Resources\lang.vi-VN.Designer.cs">
+      <DependentUpon>lang.vi-VN.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Resources\lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
