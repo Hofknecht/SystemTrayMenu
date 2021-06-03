@@ -223,6 +223,7 @@
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenu.Size = new System.Drawing.Size(70, 76);
             this.tableLayoutPanelMenu.TabIndex = 4;
+            this.tableLayoutPanelMenu.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
             // 
             // customScrollbar
             // 

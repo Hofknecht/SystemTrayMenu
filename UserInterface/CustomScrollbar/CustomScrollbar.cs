@@ -294,38 +294,36 @@ namespace SystemTrayMenu.UserInterface
             Color colorSlider;
             Color colorSliderHover;
             Color colorSliderDragging;
-            Color colorScrollbarBorder;
+            Color colorBackground;
             if (Config.IsDarkMode())
             {
                 colorArrows = Color.FromArgb(103, 103, 103);
-#warning consider as arrowHover, normally colorArrows not changes only background
                 colorArrowsHover = Color.FromArgb(55, 55, 55);
                 colorSlider = Color.FromArgb(77, 77, 77);
                 colorSliderHover = Color.FromArgb(122, 122, 122);
                 colorSliderDragging = Color.FromArgb(166, 166, 166);
-#warning  remove border ? replace with background
-                colorScrollbarBorder = Color.FromArgb(23, 23, 23);
+                colorBackground = Color.FromArgb(23, 23, 23);
             }
             else
             {
-                colorArrows = Color.FromArgb(100, 100, 100);
+                colorArrows = Color.FromArgb(96, 96, 96);
                 colorArrowsHover = Color.FromArgb(0, 0, 0);
                 colorSlider = Color.FromArgb(205, 205, 205);
                 colorSliderHover = Color.FromArgb(166, 166, 166);
                 colorSliderDragging = Color.FromArgb(96, 96, 96);
-                colorScrollbarBorder = Color.FromArgb(255, 255, 255);
+                colorBackground = Color.FromArgb(240, 240, 240);
             }
 
             if (!paintEnabled)
             {
                 e.Graphics.FillRectangle(
-                    new SolidBrush(colorScrollbarBorder),
+                    new SolidBrush(colorBackground),
                     new Rectangle(0, 0, Width, Height));
                 return;
             }
 
             // Draw background
-            Brush brushScrollbarBorder = new SolidBrush(colorScrollbarBorder);
+            Brush brushScrollbarBorder = new SolidBrush(colorBackground);
             e.Graphics.FillRectangle(brushScrollbarBorder, new Rectangle(0, 0, Width, Height));
 
             // Draw arrowUp

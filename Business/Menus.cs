@@ -688,6 +688,13 @@ namespace SystemTrayMenu.Business
             dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
             dgv.SelectionChanged += Dgv_SelectionChanged;
             dgv.RowPostPaint += Dgv_RowPostPaint;
+            dgv.DataError += Dgv_DataError;
+            void Dgv_DataError(object sender, DataGridViewDataErrorEventArgs e)
+            {
+                // WARN Dgv_DataError occured System.ObjectDisposedException: Cannot access a disposed object. Object name: 'Icon'
+                // => Rare times occured (e.g. when focused an close other application => closed and activated at same time)
+                Log.Warn("Dgv_DataError occured", e.Exception);
+            }
 
             return menu;
         }
