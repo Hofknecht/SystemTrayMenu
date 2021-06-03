@@ -95,23 +95,37 @@ namespace SystemTrayMenu.UserInterface
             }
 
             labelTitle.BackColor = titleBackColor;
-            tableLayoutPanel.BackColor = backColor;
+            tableLayoutPanelDgvAndScrollbar.BackColor = backColor;
             dgv.BackgroundColor = backColor;
             textBoxSearch.BackColor = backColorSearch;
             pictureBoxSearch.BackColor = backColorSearch;
             tableLayoutPanelSearch.BackColor = backColorSearch;
-
-            DataGridViewCellStyle dgvCellStyle = new DataGridViewCellStyle
+            dgv.DefaultCellStyle = new DataGridViewCellStyle
             {
                 SelectionForeColor = foreColor,
                 ForeColor = foreColor,
                 BackColor = backColor,
             };
-            dgv.DefaultCellStyle = dgvCellStyle;
 
-            VScrollBar scrollBar = dgv.Controls.OfType<VScrollBar>().First();
-            scrollBar.MouseWheel += DgvMouseWheel;
-            scrollBar.MouseEnter += ControlsMouseEnter;
+            customScrollbar.GotFocus += CustomScrollbar_GotFocus;
+            void CustomScrollbar_GotFocus(object sender, EventArgs e)
+            {
+                textBoxSearch.Focus();
+            }
+
+            customScrollbar.Margin = new Padding(0);
+            customScrollbar.Scroll += CustomScrollbar_Scroll;
+            void CustomScrollbar_Scroll(object sender, EventArgs e)
+            {
+                decimal firstIndex = customScrollbar.Value * dgv.Rows.Count / (decimal)customScrollbar.Maximum;
+                int firstIndexRounded = (int)Math.Round(firstIndex, 0, MidpointRounding.AwayFromZero);
+                if (firstIndexRounded > -1 && firstIndexRounded < dgv.RowCount)
+                {
+                    dgv.FirstDisplayedScrollingRowIndex = firstIndexRounded;
+                }
+            }
+
+            customScrollbar.MouseEnter += ControlsMouseEnter;
             dgv.MouseEnter += ControlsMouseEnter;
             labelTitle.MouseEnter += ControlsMouseEnter;
             void ControlsMouseEnter(object sender, EventArgs e)
@@ -119,7 +133,7 @@ namespace SystemTrayMenu.UserInterface
                 MouseEnter?.Invoke();
             }
 
-            scrollBar.MouseLeave += ControlsMouseLeave;
+            customScrollbar.MouseLeave += ControlsMouseLeave;
             dgv.MouseLeave += ControlsMouseLeave;
             labelTitle.MouseLeave += ControlsMouseLeave;
             void ControlsMouseLeave(object sender, EventArgs e)
@@ -416,6 +430,14 @@ namespace SystemTrayMenu.UserInterface
             textBoxSearch.Focus();
         }
 
+        internal void AdjustScrollbar()
+        {
+            customScrollbar.Value = (int)Math.Round(
+                dgv.FirstDisplayedScrollingRowIndex * (decimal)customScrollbar.Maximum / dgv.Rows.Count,
+                0,
+                MidpointRounding.AwayFromZero);
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keys)
         {
             switch (keys)
@@ -482,43 +504,66 @@ namespace SystemTrayMenu.UserInterface
             }
 
             DataTable data = (DataTable)dgv.DataSource;
+            int dgvHeightNew = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None); // Height of all rows
+            int dgvHeightMax = screenHeightMax - (Height - dgv.Height); // except dgv
+
+            if (dgvHeightMax > Properties.Settings.Default.MaximumMenuHeight)
+            {
+                dgvHeightMax = Properties.Settings.Default.MaximumMenuHeight;
+            }
+
+            if (dgvHeightNew > dgvHeightMax)
+            {
+                // Make all rows fit into the screen
+                customScrollbar.PaintEnable();
+                if (customScrollbar.Maximum != dgvHeightNew)
+                {
+                    customScrollbar.Reset();
+                    customScrollbar.Height = dgvHeightMax;
+                    customScrollbar.Minimum = 0;
+                    customScrollbar.Maximum = dgvHeightNew;
+                    customScrollbar.LargeChange = (customScrollbar.Maximum / (float)customScrollbar.Height) + dgvHeightMax;
+                    customScrollbar.SmallChange = dgv.RowTemplate.Height;
+                }
+
+                dgvHeightNew = dgvHeightMax;
+            }
+            else
+            {
+                customScrollbar.PaintDisable();
+            }
+
             if (string.IsNullOrEmpty(data.DefaultView.RowFilter))
             {
-                int dgvHeight = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None); // Height of all rows
-                int dgvHeightMax = screenHeightMax - (Height - dgv.Height); // except dgv
-
-                if (dgvHeightMax > Properties.Settings.Default.MaximumMenuHeight)
-                {
-                    dgvHeightMax = Properties.Settings.Default.MaximumMenuHeight;
-                }
-
-                if (dgvHeight > dgvHeightMax)
-                {
-                    // Make all rows fit into the screen
-                    dgvHeight = dgvHeightMax;
-                }
-
-                dgv.Height = dgvHeight;
+                dgv.Height = dgvHeightNew;
             }
         }
 
         private void AdjustDataGridViewWidth()
         {
             DataGridViewExtensions.FastAutoSizeColumns(dgv);
-            int newWidth = dgv.Columns[0].Width + dgv.Columns[1].Width;
-            if (IsScrollbarShown())
+
+            if (dgv.Columns[1].Width < 60)
             {
-                newWidth += SystemInformation.VerticalScrollBarWidth;
+                dgv.Columns[1].Width = 60;
             }
 
-            if (labelTitle.Width > newWidth)
+            int widthIcon = dgv.Columns[0].Width;
+            int widthText = dgv.Columns[1].Width;
+            int widthScrollbar = 0;
+            if (customScrollbar.Enabled)
             {
-                dgv.Width = labelTitle.Width;
-                dgv.Columns[1].Width = labelTitle.Width - dgv.Columns[0].Width;
+                widthScrollbar = customScrollbar.Width;
+            }
+
+            if (labelTitle.Width > (widthIcon + widthText + widthScrollbar))
+            {
+                dgv.Width = labelTitle.Width - widthScrollbar;
+                dgv.Columns[1].Width = labelTitle.Width - widthIcon - widthScrollbar;
             }
             else
             {
-                dgv.Width = newWidth;
+                dgv.Width = widthIcon + widthText;
             }
 
             // Only scaling correct with Sans Serif for textBoxSearch. Workaround:
@@ -528,57 +573,12 @@ namespace SystemTrayMenu.UserInterface
                 FontStyle.Regular,
                 GraphicsUnit.Point,
                 0);
-
-            // Ancor not working like in the label
-            textBoxSearch.Width = newWidth -
-                pictureBoxSearch.Width -
-                pictureBoxSearch.Margin.Horizontal -
-                textBoxSearch.Margin.Horizontal;
-        }
-
-        private bool IsScrollbarShown()
-        {
-            bool isScrollbarShown = false;
-            foreach (VScrollBar scroll in dgv.Controls.OfType<VScrollBar>())
-            {
-                if (scroll.Visible)
-                {
-                    isScrollbarShown = true;
-                }
-            }
-
-            return isScrollbarShown;
         }
 
         private void DgvMouseWheel(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
-            int scrollspeed = MenuDefines.Scrollspeed;
-            if (e.Delta < 0)
-            {
-                if (dgv.FirstDisplayedScrollingRowIndex < dgv.Rows.Count - scrollspeed)
-                {
-                    dgv.FirstDisplayedScrollingRowIndex += scrollspeed;
-                }
-                else
-                {
-                    dgv.FirstDisplayedScrollingRowIndex = dgv.Rows.Count - 1;
-                }
-            }
-            else
-            {
-                if (dgv.FirstDisplayedScrollingRowIndex > 0 + scrollspeed)
-                {
-                    dgv.FirstDisplayedScrollingRowIndex -= scrollspeed;
-                }
-                else
-                {
-                    dgv.FirstDisplayedScrollingRowIndex = 0;
-                }
-            }
-
-            dgv.Invalidate();
-
+            customScrollbar.CustomScrollbar_MouseWheel(sender, e);
             MouseWheel?.Invoke();
         }
 
@@ -602,6 +602,8 @@ namespace SystemTrayMenu.UserInterface
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
         {
+            customScrollbar.Value = 0;
+
             DataTable data = (DataTable)dgv.DataSource;
             string filterField = dgv.Columns[1].Name;
             SearchTextChanging?.Invoke();

@@ -10,7 +10,7 @@ namespace SystemTrayMenu
     {
         internal const int MenusMax = 50;
         internal const int LengthMax = 37;
-        internal const int Scrollspeed = 4;
+        internal const int Scrollspeed = 3;
 
         public static Color ColorSelectedItem
         {

@@ -160,7 +160,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuWidth.Increment = 10;
             numericUpDownMenuWidth.Value = Settings.Default.MaximumMenuWidth;
 
-            numericUpDownMenuHeight.Minimum = 100;
+            numericUpDownMenuHeight.Minimum = 200;
             numericUpDownMenuHeight.Maximum = 4000;
             numericUpDownMenuHeight.Increment = 10;
             numericUpDownMenuHeight.Value = Settings.Default.MaximumMenuHeight;

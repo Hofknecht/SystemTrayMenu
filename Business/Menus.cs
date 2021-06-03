@@ -215,8 +215,15 @@ namespace SystemTrayMenu.Business
 
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowDeselected += waitToOpenMenu.RowDeselected;
-            keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
+            keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
+            keyboardInput.RowSelected += AdjustScrollbarToDisplayedRow;
+            void AdjustScrollbarToDisplayedRow(DataGridView dgv, int index)
+            {
+#warning to improve arguments, do not use .Parent.Parent.Parent
+                Menu menu = dgv.Parent.Parent.Parent as Menu;
+                menu.AdjustScrollbar();
+            }
 
             timerStillActiveCheck.Interval = 1000;
             timerStillActiveCheck.Tick += StillActiveTick;
@@ -669,6 +676,7 @@ namespace SystemTrayMenu.Business
 
                 dgv.DataSource = dataTable;
                 dgv.Columns["data"].Visible = false;
+                dgv.Columns["SortIndex"].Visible = false;
             }
 
             DataGridView dgv = menu.GetDataGridView();
@@ -783,7 +791,7 @@ namespace SystemTrayMenu.Business
 
             if (!searchTextChanging)
             {
-                dgv.Refresh();
+                dgv.Invalidate();
             }
         }
 
@@ -944,6 +952,11 @@ namespace SystemTrayMenu.Business
 
                 // Only last one has to be updated as all previous one were already updated in the past
                 if (list.Count - 1 == i)
+                {
+                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation);
+                }
+#warning workaround added also as else, because need adjust scrollbar after search
+                else
                 {
                     menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation);
                 }

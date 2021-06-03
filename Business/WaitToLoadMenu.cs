@@ -201,10 +201,13 @@ namespace SystemTrayMenu.Handler
             if (dgv != null && dgv.Rows.Count > rowIndex)
             {
                 RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
-                rowData.IsSelected = false;
-                dgv.Rows[rowIndex].Selected = false;
-                this.dgv = null;
-                this.rowIndex = 0;
+                if (rowData != null)
+                {
+                    rowData.IsSelected = false;
+                    dgv.Rows[rowIndex].Selected = false;
+                    this.dgv = null;
+                    this.rowIndex = 0;
+                }
             }
         }
     }

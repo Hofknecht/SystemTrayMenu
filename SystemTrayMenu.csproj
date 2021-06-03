@@ -114,6 +114,7 @@
     <Compile Update="UserInterface\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Update="UserInterface\CustomScrollbar\CustomScrollbar.cs" />
     <Compile Update="UserInterface\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
