@@ -15,7 +15,6 @@ namespace SystemTrayMenu.UserInterface
     public class CustomScrollbar : UserControl
     {
         private readonly Timer timerMouseStillClicked = new Timer();
-        private readonly int controlWidth = 15;
 
         private float moLargeChange = 10;
         private float moSmallChange = 1;
@@ -44,8 +43,6 @@ namespace SystemTrayMenu.UserInterface
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.DoubleBuffer, true);
 
-            Width = controlWidth;
-            MinimumSize = new Size(controlWidth, Width + Width + GetScrollbarHeight());
             int GetScrollbarHeight()
             {
                 int nTrackHeight = Height - (Width + Width);
@@ -213,7 +210,7 @@ namespace SystemTrayMenu.UserInterface
                 base.AutoSize = value;
                 if (base.AutoSize)
                 {
-                    Width = controlWidth;
+                    Width = Width;
                 }
             }
         }
@@ -432,7 +429,7 @@ namespace SystemTrayMenu.UserInterface
             int nTop = (int)moSliderTop;
             nTop += Width;
             Point ptPoint = PointToClient(Cursor.Position);
-            Rectangle thumbrect = new Rectangle(new Point(0, nTop), new Size(controlWidth + 1, nScrollbarHeight));
+            Rectangle thumbrect = new Rectangle(new Point(0, nTop), new Size(Width + 1, nScrollbarHeight));
             if (thumbrect.Contains(ptPoint))
             {
                 timerMouseStillClicked.Stop();
@@ -501,8 +498,8 @@ namespace SystemTrayMenu.UserInterface
             int nTop = (int)moSliderTop;
             nTop += Width;
 
-            Rectangle thumbrect = new Rectangle(new Point(0, nTop), new Size(controlWidth + 1, nScrollbarHeight));
-            Rectangle trackRectangle = new Rectangle(new Point(0, Width), new Size(controlWidth + 1, nTrackHeight));
+            Rectangle thumbrect = new Rectangle(new Point(0, nTop), new Size(Width + 1, nScrollbarHeight));
+            Rectangle trackRectangle = new Rectangle(new Point(0, Width), new Size(Width + 1, nTrackHeight));
             if (thumbrect.Contains(ptPoint))
             {
                 nClickPoint = ptPoint.Y - nTop;
@@ -526,7 +523,7 @@ namespace SystemTrayMenu.UserInterface
                 timerMouseStillClicked.Start();
             }
 
-            Rectangle uparrowrect = new Rectangle(new Point(0, 0), new Size(controlWidth + 1, Width));
+            Rectangle uparrowrect = new Rectangle(new Point(0, 0), new Size(Width + 1, Width));
             if (uparrowrect.Contains(ptPoint))
             {
                 MoveUp(SmallChange);
@@ -536,7 +533,7 @@ namespace SystemTrayMenu.UserInterface
                 timerMouseStillClicked.Start();
             }
 
-            Rectangle downarrowrect = new Rectangle(new Point(0, Width + nTrackHeight), new Size(controlWidth + 1, Width));
+            Rectangle downarrowrect = new Rectangle(new Point(0, Width + nTrackHeight), new Size(Width + 1, Width));
             if (downarrowrect.Contains(ptPoint))
             {
                 MoveDown(SmallChange);
@@ -698,8 +695,8 @@ namespace SystemTrayMenu.UserInterface
             int nTop = (int)moSliderTop;
             nTop += Width;
 
-            Rectangle scrollbarbrect = new Rectangle(new Point(0, nTop), new Size(controlWidth + 1, nSliderHeight));
-            Rectangle trackRectangle = new Rectangle(new Point(0, Width), new Size(controlWidth + 1, nTrackHeight));
+            Rectangle scrollbarbrect = new Rectangle(new Point(0, nTop), new Size(Width + 1, nSliderHeight));
+            Rectangle trackRectangle = new Rectangle(new Point(0, Width), new Size(Width + 1, nTrackHeight));
             if (scrollbarbrect.Contains(ptPoint))
             {
                 if (e.Button != MouseButtons.Left)
@@ -725,7 +722,7 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            Rectangle uparrowrect = new Rectangle(new Point(0, 0), new Size(controlWidth + 1, Width));
+            Rectangle uparrowrect = new Rectangle(new Point(0, 0), new Size(Width + 1, Width));
             if (uparrowrect.Contains(ptPoint))
             {
                 arrowUpHovered = true;
@@ -733,7 +730,7 @@ namespace SystemTrayMenu.UserInterface
                 arrowDownHovered = false;
             }
 
-            Rectangle downarrowrect = new Rectangle(new Point(0, Width + nTrackHeight), new Size(controlWidth + 1, Width));
+            Rectangle downarrowrect = new Rectangle(new Point(0, Width + nTrackHeight), new Size(Width + 1, Width));
             if (downarrowrect.Contains(ptPoint))
             {
                 arrowUpHovered = false;
