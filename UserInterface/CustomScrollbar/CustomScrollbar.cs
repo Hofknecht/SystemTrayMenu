@@ -15,7 +15,6 @@ namespace SystemTrayMenu.UserInterface
     public class CustomScrollbar : UserControl
     {
         private readonly Timer timerMouseStillClicked = new Timer();
-        private readonly int arrowHeight = 18;
         private readonly int controlWidth = 15;
 
         private float moLargeChange = 10;
@@ -46,24 +45,24 @@ namespace SystemTrayMenu.UserInterface
             SetStyle(ControlStyles.DoubleBuffer, true);
 
             Width = controlWidth;
-            MinimumSize = new Size(controlWidth, arrowHeight + arrowHeight + GetScrollbarHeight());
+            MinimumSize = new Size(controlWidth, Width + Width + GetScrollbarHeight());
             int GetScrollbarHeight()
             {
-                int nTrackHeight = Height - (arrowHeight + arrowHeight);
-                float fThumbHeight = (float)LargeChange / Maximum * nTrackHeight;
-                int nThumbHeight = (int)fThumbHeight;
+                int nTrackHeight = Height - (Width + Width);
+                float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
+                int nSliderHeight = (int)fSliderHeight;
 
-                if (nThumbHeight > nTrackHeight)
+                if (nSliderHeight > nTrackHeight)
                 {
-                    nThumbHeight = nTrackHeight;
+                    nSliderHeight = nTrackHeight;
                 }
 
-                if (nThumbHeight < 56)
+                if (nSliderHeight < 56)
                 {
-                    nThumbHeight = 56;
+                    nSliderHeight = 56;
                 }
 
-                return nThumbHeight;
+                return nSliderHeight;
             }
 
             timerMouseStillClicked.Interval = 30;
@@ -165,22 +164,22 @@ namespace SystemTrayMenu.UserInterface
             set
             {
                 moValue = value;
-                int nTrackHeight = Height - (arrowHeight + arrowHeight);
-                float fThumbHeight = (float)LargeChange / Maximum * nTrackHeight;
-                int nThumbHeight = (int)fThumbHeight;
-                if (nThumbHeight > nTrackHeight)
+                int nTrackHeight = Height - (Width + Width);
+                float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
+                int nSliderHeight = (int)fSliderHeight;
+                if (nSliderHeight > nTrackHeight)
                 {
-                    nThumbHeight = nTrackHeight;
-                    fThumbHeight = nTrackHeight;
+                    nSliderHeight = nTrackHeight;
+                    fSliderHeight = nTrackHeight;
                 }
 
-                if (nThumbHeight < 56)
+                if (nSliderHeight < 56)
                 {
-                    nThumbHeight = 56;
-                    fThumbHeight = 56;
+                    nSliderHeight = 56;
+                    fSliderHeight = 56;
                 }
 
-                int nPixelRange = nTrackHeight - nThumbHeight;
+                int nPixelRange = nTrackHeight - nSliderHeight;
                 int nRealRange = Maximum - Minimum - (int)LargeChange;
                 float fPerc = 0.0f;
                 if (nRealRange != 0)
@@ -285,8 +284,6 @@ namespace SystemTrayMenu.UserInterface
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            int heightArrow = 18;
-
             e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
 
             Color colorArrows;
@@ -353,25 +350,23 @@ namespace SystemTrayMenu.UserInterface
                      };
             e.Graphics.DrawPolygon(penArrowUp, curvePoints);
 
-            // draw thumb
-            int nTrackHeight = Height - (heightArrow * 2);
-            float fThumbHeight = (float)LargeChange / Maximum * nTrackHeight;
-            int nThumbHeight = (int)fThumbHeight;
+            // draw slider
+            int nTrackHeight = Height - (Width * 2);
+            float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
+            int nSliderHeight = (int)fSliderHeight;
 
-            if (nThumbHeight > nTrackHeight)
+            if (nSliderHeight > nTrackHeight)
             {
-                nThumbHeight = nTrackHeight;
-                fThumbHeight = nTrackHeight;
+                nSliderHeight = nTrackHeight;
             }
 
-            if (nThumbHeight < 56)
+            if (nSliderHeight < 56)
             {
-                nThumbHeight = 56;
-                fThumbHeight = 56;
+                nSliderHeight = 56;
             }
 
             int nTop = (int)moSliderTop;
-            nTop += arrowHeight;
+            nTop += this.Width;
 
             SolidBrush solidBrushSlider;
             if (moSliderDragging)
@@ -387,7 +382,7 @@ namespace SystemTrayMenu.UserInterface
                 solidBrushSlider = new SolidBrush(colorSlider);
             }
 
-            Rectangle rectangleSlider = new Rectangle(1, nTop, Width - 2, nThumbHeight);
+            Rectangle rectangleSlider = new Rectangle(1, nTop + 1, Width - 2, nSliderHeight - 1);
             e.Graphics.FillRectangle(solidBrushSlider, rectangleSlider);
 
             // Draw arrowDown
@@ -420,9 +415,9 @@ namespace SystemTrayMenu.UserInterface
         {
             timerMouseStillClickedCounter++;
 
-            int nTrackHeight = Height - (arrowHeight + arrowHeight);
-            float fThumbHeight = (float)LargeChange / Maximum * nTrackHeight;
-            int nScrollbarHeight = (int)fThumbHeight;
+            int nTrackHeight = Height - (Width + Width);
+            float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
+            int nScrollbarHeight = (int)fSliderHeight;
 
             if (nScrollbarHeight > nTrackHeight)
             {
@@ -435,7 +430,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             int nTop = (int)moSliderTop;
-            nTop += arrowHeight;
+            nTop += Width;
             Point ptPoint = PointToClient(Cursor.Position);
             Rectangle thumbrect = new Rectangle(new Point(0, nTop), new Size(controlWidth + 1, nScrollbarHeight));
             if (thumbrect.Contains(ptPoint))
@@ -489,9 +484,9 @@ namespace SystemTrayMenu.UserInterface
         private void CustomScrollbar_MouseDown(object sender, MouseEventArgs e)
         {
             Point ptPoint = PointToClient(Cursor.Position);
-            int nTrackHeight = Height - (arrowHeight + arrowHeight);
-            float fThumbHeight = (float)LargeChange / Maximum * nTrackHeight;
-            int nScrollbarHeight = (int)fThumbHeight;
+            int nTrackHeight = Height - (Width + Width);
+            float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
+            int nScrollbarHeight = (int)fSliderHeight;
 
             if (nScrollbarHeight > nTrackHeight)
             {
@@ -504,10 +499,10 @@ namespace SystemTrayMenu.UserInterface
             }
 
             int nTop = (int)moSliderTop;
-            nTop += arrowHeight;
+            nTop += Width;
 
             Rectangle thumbrect = new Rectangle(new Point(0, nTop), new Size(controlWidth + 1, nScrollbarHeight));
-            Rectangle trackRectangle = new Rectangle(new Point(0, arrowHeight), new Size(controlWidth + 1, nTrackHeight));
+            Rectangle trackRectangle = new Rectangle(new Point(0, Width), new Size(controlWidth + 1, nTrackHeight));
             if (thumbrect.Contains(ptPoint))
             {
                 nClickPoint = ptPoint.Y - nTop;
@@ -531,7 +526,7 @@ namespace SystemTrayMenu.UserInterface
                 timerMouseStillClicked.Start();
             }
 
-            Rectangle uparrowrect = new Rectangle(new Point(0, 0), new Size(controlWidth + 1, arrowHeight));
+            Rectangle uparrowrect = new Rectangle(new Point(0, 0), new Size(controlWidth + 1, Width));
             if (uparrowrect.Contains(ptPoint))
             {
                 MoveUp(SmallChange);
@@ -541,7 +536,7 @@ namespace SystemTrayMenu.UserInterface
                 timerMouseStillClicked.Start();
             }
 
-            Rectangle downarrowrect = new Rectangle(new Point(0, arrowHeight + nTrackHeight), new Size(controlWidth + 1, arrowHeight));
+            Rectangle downarrowrect = new Rectangle(new Point(0, Width + nTrackHeight), new Size(controlWidth + 1, Width));
             if (downarrowrect.Contains(ptPoint))
             {
                 MoveDown(SmallChange);
@@ -554,24 +549,24 @@ namespace SystemTrayMenu.UserInterface
 
         private void MoveDown(float change)
         {
-            int nTrackHeight = Height - (arrowHeight + arrowHeight);
-            float fThumbHeight = (float)LargeChange / Maximum * nTrackHeight;
-            int nThumbHeight = (int)fThumbHeight;
+            int nTrackHeight = Height - (Width + Width);
+            float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
+            int nSliderHeight = (int)fSliderHeight;
 
-            if (nThumbHeight > nTrackHeight)
+            if (nSliderHeight > nTrackHeight)
             {
-                nThumbHeight = nTrackHeight;
-                fThumbHeight = nTrackHeight;
+                nSliderHeight = nTrackHeight;
+                fSliderHeight = nTrackHeight;
             }
 
-            if (nThumbHeight < 56)
+            if (nSliderHeight < 56)
             {
-                nThumbHeight = 56;
-                fThumbHeight = 56;
+                nSliderHeight = 56;
+                fSliderHeight = 56;
             }
 
             int nRealRange = Maximum - Minimum - (int)LargeChange;
-            int nPixelRange = nTrackHeight - nThumbHeight;
+            int nPixelRange = nTrackHeight - nSliderHeight;
             if (nRealRange > 0)
             {
                 if (nPixelRange > 0)
@@ -607,7 +602,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void MoveUp(float change)
         {
-            int nTrackHeight = Height - (arrowHeight + arrowHeight);
+            int nTrackHeight = Height - (Width + Width);
             float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
             int nSliderHeight = (int)fSliderHeight;
 
@@ -674,7 +669,7 @@ namespace SystemTrayMenu.UserInterface
 
             if (moSliderDragging)
             {
-                MoveThumb(e.Y);
+                MoveSlider(e.Y);
             }
 
             if (Value != lastValue)
@@ -686,7 +681,7 @@ namespace SystemTrayMenu.UserInterface
 
             // Remember hovered control
             Point ptPoint = PointToClient(Cursor.Position);
-            int nTrackHeight = Height - (arrowHeight + arrowHeight);
+            int nTrackHeight = Height - (Width + Width);
             float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
             int nSliderHeight = (int)fSliderHeight;
 
@@ -701,10 +696,10 @@ namespace SystemTrayMenu.UserInterface
             }
 
             int nTop = (int)moSliderTop;
-            nTop += arrowHeight;
+            nTop += Width;
 
             Rectangle scrollbarbrect = new Rectangle(new Point(0, nTop), new Size(controlWidth + 1, nSliderHeight));
-            Rectangle trackRectangle = new Rectangle(new Point(0, arrowHeight), new Size(controlWidth + 1, nTrackHeight));
+            Rectangle trackRectangle = new Rectangle(new Point(0, Width), new Size(controlWidth + 1, nTrackHeight));
             if (scrollbarbrect.Contains(ptPoint))
             {
                 if (e.Button != MouseButtons.Left)
@@ -730,7 +725,7 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            Rectangle uparrowrect = new Rectangle(new Point(0, 0), new Size(controlWidth + 1, arrowHeight));
+            Rectangle uparrowrect = new Rectangle(new Point(0, 0), new Size(controlWidth + 1, Width));
             if (uparrowrect.Contains(ptPoint))
             {
                 arrowUpHovered = true;
@@ -738,7 +733,7 @@ namespace SystemTrayMenu.UserInterface
                 arrowDownHovered = false;
             }
 
-            Rectangle downarrowrect = new Rectangle(new Point(0, arrowHeight + nTrackHeight), new Size(controlWidth + 1, arrowHeight));
+            Rectangle downarrowrect = new Rectangle(new Point(0, Width + nTrackHeight), new Size(controlWidth + 1, Width));
             if (downarrowrect.Contains(ptPoint))
             {
                 arrowUpHovered = false;
@@ -749,10 +744,10 @@ namespace SystemTrayMenu.UserInterface
             Invalidate();
         }
 
-        private void MoveThumb(int y)
+        private void MoveSlider(int y)
         {
             int nRealRange = Maximum - Minimum;
-            int nTrackHeight = Height - (arrowHeight + arrowHeight);
+            int nTrackHeight = Height - (Width + Width);
             float fSliderHeight = (float)LargeChange / Maximum * nTrackHeight;
             int nSliderHeight = (int)fSliderHeight;
 
@@ -773,19 +768,19 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (nPixelRange > 0)
                 {
-                    int nNewThumbTop = y - (arrowHeight + nSpot);
+                    int nNewSliderTop = y - (Width + nSpot);
 
-                    if (nNewThumbTop < 0)
+                    if (nNewSliderTop < 0)
                     {
-                        moSliderTop = nNewThumbTop = 0;
+                        moSliderTop = nNewSliderTop = 0;
                     }
-                    else if (nNewThumbTop > nPixelRange)
+                    else if (nNewSliderTop > nPixelRange)
                     {
-                        moSliderTop = nNewThumbTop = nPixelRange;
+                        moSliderTop = nNewSliderTop = nPixelRange;
                     }
                     else
                     {
-                        moSliderTop = y - (arrowHeight + nSpot);
+                        moSliderTop = y - (Width + nSpot);
                     }
 
                     // figure out value
