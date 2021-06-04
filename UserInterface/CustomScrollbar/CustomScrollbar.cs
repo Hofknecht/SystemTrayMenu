@@ -28,6 +28,7 @@ namespace SystemTrayMenu.UserInterface
         private bool arrowUpHovered = false;
         private bool sliderHovered = false;
         private bool arrowDownHovered = false;
+        private bool trackHovered = false;
         private bool mouseStillClickedMoveUp = false;
         private bool mouseStillClickedMoveLarge = false;
         private int timerMouseStillClickedCounter = 0;
@@ -196,6 +197,7 @@ namespace SystemTrayMenu.UserInterface
             arrowUpHovered = false;
             sliderHovered = false;
             arrowDownHovered = false;
+            trackHovered = false;
             mouseStillClickedMoveUp = false;
             mouseStillClickedMoveLarge = false;
             timerMouseStillClickedCounter = 0;
@@ -245,8 +247,11 @@ namespace SystemTrayMenu.UserInterface
             e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
 
             Color colorArrows;
-            Color colorArrowsHoverBackground;
-            Color colorArrowsHover;
+            Color colorArrowHoverBackground;
+            Color colorArrowHover;
+            Color colorArrowClicked;
+            Color colorArrowClickedBackground;
+            Color colorSliderArrowsAndTrackHover;
             Color colorSlider;
             Color colorSliderHover;
             Color colorSliderDragging;
@@ -254,8 +259,11 @@ namespace SystemTrayMenu.UserInterface
             if (Config.IsDarkMode())
             {
                 colorArrows = Color.FromArgb(103, 103, 103);
-                colorArrowsHoverBackground = Color.FromArgb(55, 55, 55);
-                colorArrowsHover = Color.FromArgb(103, 103, 103);
+                colorArrowHoverBackground = Color.FromArgb(55, 55, 55);
+                colorArrowHover = Color.FromArgb(103, 103, 103);
+                colorArrowClicked = Color.FromArgb(23, 23, 23);
+                colorArrowClickedBackground = Color.FromArgb(166, 166, 166);
+                colorSliderArrowsAndTrackHover = Color.FromArgb(77, 77, 77);
                 colorSlider = Color.FromArgb(77, 77, 77);
                 colorSliderHover = Color.FromArgb(122, 122, 122);
                 colorSliderDragging = Color.FromArgb(166, 166, 166);
@@ -264,8 +272,11 @@ namespace SystemTrayMenu.UserInterface
             else
             {
                 colorArrows = Color.FromArgb(96, 96, 96);
-                colorArrowsHoverBackground = Color.FromArgb(218, 218, 218);
-                colorArrowsHover = Color.FromArgb(0, 0, 0);
+                colorArrowHoverBackground = Color.FromArgb(218, 218, 218);
+                colorArrowHover = Color.FromArgb(0, 0, 0);
+                colorArrowClicked = Color.FromArgb(255, 255, 255);
+                colorArrowClickedBackground = Color.FromArgb(96, 96, 96);
+                colorSliderArrowsAndTrackHover = Color.FromArgb(192, 192, 192);
                 colorSlider = Color.FromArgb(205, 205, 205);
                 colorSliderHover = Color.FromArgb(166, 166, 166);
                 colorSliderDragging = Color.FromArgb(96, 96, 96);
@@ -291,10 +302,16 @@ namespace SystemTrayMenu.UserInterface
             // Draw arrowUp
             SolidBrush solidBrushArrowUp;
             Pen penArrowUp;
-            if (arrowUpHovered)
+            if (timerMouseStillClicked.Enabled &&
+                !mouseStillClickedMoveLarge && mouseStillClickedMoveUp)
             {
-                solidBrushArrowUp = new SolidBrush(colorArrowsHoverBackground);
-                penArrowUp = new Pen(colorArrowsHover, 2.5F);
+                solidBrushArrowUp = new SolidBrush(colorArrowClickedBackground);
+                penArrowUp = new Pen(colorArrowClicked, 2.5F);
+            }
+            else if (arrowUpHovered)
+            {
+                solidBrushArrowUp = new SolidBrush(colorArrowHoverBackground);
+                penArrowUp = new Pen(colorArrowHover, 2.5F);
             }
             else
             {
@@ -332,7 +349,14 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                solidBrushSlider = new SolidBrush(colorSlider);
+                if (arrowUpHovered || arrowDownHovered || trackHovered)
+                {
+                    solidBrushSlider = new SolidBrush(colorSliderArrowsAndTrackHover);
+                }
+                else
+                {
+                    solidBrushSlider = new SolidBrush(colorSlider);
+                }
             }
 
             Rectangle rectangleSlider = new Rectangle(1, top, Width - 2, sliderHeight);
@@ -341,10 +365,17 @@ namespace SystemTrayMenu.UserInterface
             // Draw arrowDown
             SolidBrush solidBrushArrowDown;
             Pen penArrowDown;
+            if (timerMouseStillClicked.Enabled &&
+                !mouseStillClickedMoveLarge && !mouseStillClickedMoveUp)
+            {
+                solidBrushArrowDown = new SolidBrush(colorArrowClickedBackground);
+                penArrowDown = new Pen(colorArrowClicked, 2.5F);
+            }
+            else
             if (arrowDownHovered)
             {
-                solidBrushArrowDown = new SolidBrush(colorArrowsHoverBackground);
-                penArrowDown = new Pen(colorArrowsHover, 2.5F);
+                solidBrushArrowDown = new SolidBrush(colorArrowHoverBackground);
+                penArrowDown = new Pen(colorArrowHover, 2.5F);
             }
             else
             {
@@ -422,6 +453,7 @@ namespace SystemTrayMenu.UserInterface
             arrowUpHovered = false;
             sliderHovered = false;
             arrowDownHovered = false;
+            trackHovered = false;
             Refresh();
         }
 
@@ -588,22 +620,15 @@ namespace SystemTrayMenu.UserInterface
                     arrowUpHovered = false;
                     sliderHovered = true;
                     arrowDownHovered = false;
+                    trackHovered = false;
                 }
             }
             else if (trackRectangle.Contains(pointCursor))
             {
-                if (e.Y < sliderRectangle.Y)
-                {
-                    arrowUpHovered = false;
-                    sliderHovered = false;
-                    arrowDownHovered = false;
-                }
-                else
-                {
-                    arrowUpHovered = false;
-                    sliderHovered = false;
-                    arrowDownHovered = false;
-                }
+                arrowUpHovered = false;
+                sliderHovered = false;
+                arrowDownHovered = false;
+                trackHovered = true;
             }
 
             Rectangle upArrowRectangle = GetUpArrowRectangle();
@@ -614,6 +639,7 @@ namespace SystemTrayMenu.UserInterface
                     arrowUpHovered = true;
                     sliderHovered = false;
                     arrowDownHovered = false;
+                    trackHovered = false;
                 }
             }
 
@@ -625,6 +651,7 @@ namespace SystemTrayMenu.UserInterface
                     arrowUpHovered = false;
                     sliderHovered = false;
                     arrowDownHovered = true;
+                    trackHovered = false;
                 }
             }
 
