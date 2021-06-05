@@ -143,7 +143,7 @@ namespace SystemTrayMenu.UserInterface
                 int trackHeight = GetTrackHeight();
                 int sliderHeight = GetSliderHeight(trackHeight);
                 int pixelRange = trackHeight - sliderHeight;
-                int realRange = Maximum - Minimum - (int)LargeChange;
+                int realRange = GetRealRange();
                 float percentage = 0.0f;
                 if (realRange != 0)
                 {
@@ -300,26 +300,30 @@ namespace SystemTrayMenu.UserInterface
             e.Graphics.FillRectangle(brushScrollbarBorder, new Rectangle(0, 0, Width, Height));
 
             // Draw arrowUp
+            SolidBrush solidBrushArrowUpBackground;
             SolidBrush solidBrushArrowUp;
             Pen penArrowUp;
             if (timerMouseStillClicked.Enabled &&
                 !mouseStillClickedMoveLarge && mouseStillClickedMoveUp)
             {
-                solidBrushArrowUp = new SolidBrush(colorArrowClickedBackground);
+                solidBrushArrowUpBackground = new SolidBrush(colorArrowClickedBackground);
+                solidBrushArrowUp = new SolidBrush(colorArrowClicked);
                 penArrowUp = new Pen(colorArrowClicked, 2.5F);
             }
             else if (arrowUpHovered)
             {
-                solidBrushArrowUp = new SolidBrush(colorArrowHoverBackground);
+                solidBrushArrowUpBackground = new SolidBrush(colorArrowHoverBackground);
+                solidBrushArrowUp = new SolidBrush(colorArrowHover);
                 penArrowUp = new Pen(colorArrowHover, 2.5F);
             }
             else
             {
-                solidBrushArrowUp = new SolidBrush(colorBackground);
+                solidBrushArrowUpBackground = new SolidBrush(colorBackground);
+                solidBrushArrowUp = new SolidBrush(colorArrows);
                 penArrowUp = new Pen(colorArrows, 2.5F);
             }
 
-            e.Graphics.FillRectangle(solidBrushArrowUp, GetUpArrowRectangleWithoutBorder());
+            e.Graphics.FillRectangle(solidBrushArrowUpBackground, GetUpArrowRectangleWithoutBorder());
 
             int widthDevidedBy2 = Width / 2;
             int widthDevidedBy6 = Width / 6;
@@ -335,6 +339,8 @@ namespace SystemTrayMenu.UserInterface
                  pointArrowUp3,
                  pointArrowUp4,
                      };
+
+            e.Graphics.FillPolygon(solidBrushArrowUp, curvePoints);
             e.Graphics.DrawPolygon(penArrowUp, curvePoints);
 
             // draw slider
@@ -363,27 +369,31 @@ namespace SystemTrayMenu.UserInterface
             e.Graphics.FillRectangle(solidBrushSlider, rectangleSlider);
 
             // Draw arrowDown
+            SolidBrush solidBrushArrowDownBackground;
             SolidBrush solidBrushArrowDown;
             Pen penArrowDown;
             if (timerMouseStillClicked.Enabled &&
                 !mouseStillClickedMoveLarge && !mouseStillClickedMoveUp)
             {
-                solidBrushArrowDown = new SolidBrush(colorArrowClickedBackground);
+                solidBrushArrowDownBackground = new SolidBrush(colorArrowClickedBackground);
+                solidBrushArrowDown = new SolidBrush(colorArrowClicked);
                 penArrowDown = new Pen(colorArrowClicked, 2.5F);
             }
             else
             if (arrowDownHovered)
             {
-                solidBrushArrowDown = new SolidBrush(colorArrowHoverBackground);
+                solidBrushArrowDownBackground = new SolidBrush(colorArrowHoverBackground);
+                solidBrushArrowDown = new SolidBrush(colorArrowHover);
                 penArrowDown = new Pen(colorArrowHover, 2.5F);
             }
             else
             {
-                solidBrushArrowDown = new SolidBrush(colorBackground);
+                solidBrushArrowDownBackground = new SolidBrush(colorBackground);
+                solidBrushArrowDown = new SolidBrush(colorArrows);
                 penArrowDown = new Pen(colorArrows, 2.5F);
             }
 
-            e.Graphics.FillRectangle(solidBrushArrowDown, GetDownArrowRectangleWithoutBorder(trackHeight));
+            e.Graphics.FillRectangle(solidBrushArrowDownBackground, GetDownArrowRectangleWithoutBorder(trackHeight));
 
             PointF pointArrowDown1 = new PointF(widthDevidedBy2 - widthDevidedBy6, Height - widthDevidedBy2PluswidthDevidedBy8);
             PointF pointArrowDown2 = new PointF(widthDevidedBy2 + widthDevidedBy6, Height - widthDevidedBy2PluswidthDevidedBy8);
@@ -397,6 +407,7 @@ namespace SystemTrayMenu.UserInterface
                  pointArrowDown4,
                      };
 
+            e.Graphics.FillPolygon(solidBrushArrowDown, curvePointsArrowDown);
             e.Graphics.DrawPolygon(penArrowDown, curvePointsArrowDown);
         }
 
@@ -514,13 +525,13 @@ namespace SystemTrayMenu.UserInterface
         {
             int trackHeight = GetTrackHeight();
             int sliderHeight = GetSliderHeight(trackHeight);
-            int realRange = Maximum - Minimum - (int)LargeChange;
+            int realRange = GetRealRange();
             int pixelRange = trackHeight - sliderHeight;
             if (realRange > 0)
             {
                 if (pixelRange > 0)
                 {
-                    float changeForOneItem = (change * pixelRange) / (Maximum - LargeChange);
+                    float changeForOneItem = GetChangeForOneItem(change, pixelRange);
 
                     if ((sliderTop + changeForOneItem) > pixelRange)
                     {
@@ -549,13 +560,13 @@ namespace SystemTrayMenu.UserInterface
         {
             int trackHeight = GetTrackHeight();
             int sliderHeight = GetSliderHeight(trackHeight);
-            int realRange = Maximum - Minimum - (int)LargeChange;
+            int realRange = GetRealRange();
             int pixelRange = trackHeight - sliderHeight;
             if (realRange > 0)
             {
                 if (pixelRange > 0)
                 {
-                    float changeForOneItem = (change * pixelRange) / (Maximum - LargeChange);
+                    float changeForOneItem = GetChangeForOneItem(change, pixelRange);
 
                     if ((sliderTop - changeForOneItem) < 0)
                     {
@@ -726,6 +737,16 @@ namespace SystemTrayMenu.UserInterface
         private Rectangle GetTrackRectangle(int trackHeight)
         {
             return new Rectangle(new Point(0, Width), new Size(Width + 1, trackHeight));
+        }
+
+        private int GetRealRange()
+        {
+            return Maximum - Minimum - (int)LargeChange;
+        }
+
+        private float GetChangeForOneItem(float change, int pixelRange)
+        {
+            return (change * pixelRange) / (Maximum - LargeChange);
         }
 
         private int GetTrackHeight()

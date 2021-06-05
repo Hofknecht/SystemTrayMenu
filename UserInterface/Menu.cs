@@ -522,7 +522,7 @@ namespace SystemTrayMenu.UserInterface
                     customScrollbar.Height = dgvHeightMax;
                     customScrollbar.Minimum = 0;
                     customScrollbar.Maximum = dgvHeightNew;
-                    customScrollbar.LargeChange = (customScrollbar.Maximum / (float)customScrollbar.Height) + dgvHeightMax;
+                    customScrollbar.LargeChange = dgvHeightMax;
                     customScrollbar.SmallChange = dgv.RowTemplate.Height;
                 }
 
