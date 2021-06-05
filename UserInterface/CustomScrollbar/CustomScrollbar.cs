@@ -246,47 +246,47 @@ namespace SystemTrayMenu.UserInterface
         {
             e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
 
-            Color colorArrows;
+            Color colorArrow;
             Color colorArrowHoverBackground;
             Color colorArrowHover;
-            Color colorArrowClicked;
-            Color colorArrowClickedBackground;
+            Color colorArrowClick;
+            Color colorArrowClickBackground;
             Color colorSliderArrowsAndTrackHover;
             Color colorSlider;
             Color colorSliderHover;
             Color colorSliderDragging;
-            Color colorBackground;
+            Color colorScrollbarBackground;
             if (Config.IsDarkMode())
             {
-                colorArrows = Color.FromArgb(103, 103, 103);
-                colorArrowHoverBackground = Color.FromArgb(55, 55, 55);
-                colorArrowHover = Color.FromArgb(103, 103, 103);
-                colorArrowClicked = Color.FromArgb(23, 23, 23);
-                colorArrowClickedBackground = Color.FromArgb(166, 166, 166);
-                colorSliderArrowsAndTrackHover = Color.FromArgb(77, 77, 77);
-                colorSlider = Color.FromArgb(77, 77, 77);
-                colorSliderHover = Color.FromArgb(122, 122, 122);
-                colorSliderDragging = Color.FromArgb(166, 166, 166);
-                colorBackground = Color.FromArgb(23, 23, 23);
+                colorArrow = AppColors.ArrowDarkMode;
+                colorArrowHoverBackground = AppColors.ArrowHoverBackgroundDarkMode;
+                colorArrowHover = AppColors.ArrowHoverDarkMode;
+                colorArrowClick = AppColors.ArrowClickDarkMode;
+                colorArrowClickBackground = AppColors.ArrowClickBackgroundDarkMode;
+                colorSliderArrowsAndTrackHover = AppColors.SliderArrowsAndTrackHoverDarkMode;
+                colorSlider = AppColors.SliderDarkMode;
+                colorSliderHover = AppColors.SliderHoverDarkMode;
+                colorSliderDragging = AppColors.SliderDraggingDarkMode;
+                colorScrollbarBackground = AppColors.ScrollbarBackgroundDarkMode;
             }
             else
             {
-                colorArrows = Color.FromArgb(96, 96, 96);
-                colorArrowHoverBackground = Color.FromArgb(218, 218, 218);
-                colorArrowHover = Color.FromArgb(0, 0, 0);
-                colorArrowClicked = Color.FromArgb(255, 255, 255);
-                colorArrowClickedBackground = Color.FromArgb(96, 96, 96);
-                colorSliderArrowsAndTrackHover = Color.FromArgb(192, 192, 192);
-                colorSlider = Color.FromArgb(205, 205, 205);
-                colorSliderHover = Color.FromArgb(166, 166, 166);
-                colorSliderDragging = Color.FromArgb(96, 96, 96);
-                colorBackground = Color.FromArgb(240, 240, 240);
+                colorArrow = AppColors.Arrow;
+                colorArrowHoverBackground = AppColors.ArrowHoverBackground;
+                colorArrowHover = AppColors.ArrowHover;
+                colorArrowClick = AppColors.ArrowClick;
+                colorArrowClickBackground = AppColors.ArrowClickBackground;
+                colorSliderArrowsAndTrackHover = AppColors.SliderArrowsAndTrackHover;
+                colorSlider = AppColors.Slider;
+                colorSliderHover = AppColors.SliderHover;
+                colorSliderDragging = AppColors.SliderDragging;
+                colorScrollbarBackground = AppColors.ScrollbarBackground;
             }
 
             if (!paintEnabled)
             {
                 e.Graphics.FillRectangle(
-                    new SolidBrush(colorBackground),
+                    new SolidBrush(colorScrollbarBackground),
                     new Rectangle(0, 0, Width, Height));
                 return;
             }
@@ -296,7 +296,7 @@ namespace SystemTrayMenu.UserInterface
             int top = (int)sliderTop + Width;
 
             // Draw background
-            Brush brushScrollbarBorder = new SolidBrush(colorBackground);
+            Brush brushScrollbarBorder = new SolidBrush(colorScrollbarBackground);
             e.Graphics.FillRectangle(brushScrollbarBorder, new Rectangle(0, 0, Width, Height));
 
             // Draw arrowUp
@@ -306,9 +306,9 @@ namespace SystemTrayMenu.UserInterface
             if (timerMouseStillClicked.Enabled &&
                 !mouseStillClickedMoveLarge && mouseStillClickedMoveUp)
             {
-                solidBrushArrowUpBackground = new SolidBrush(colorArrowClickedBackground);
-                solidBrushArrowUp = new SolidBrush(colorArrowClicked);
-                penArrowUp = new Pen(colorArrowClicked, 2.5F);
+                solidBrushArrowUpBackground = new SolidBrush(colorArrowClickBackground);
+                solidBrushArrowUp = new SolidBrush(colorArrowClick);
+                penArrowUp = new Pen(colorArrowClick, 2.5F);
             }
             else if (arrowUpHovered)
             {
@@ -318,9 +318,9 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                solidBrushArrowUpBackground = new SolidBrush(colorBackground);
-                solidBrushArrowUp = new SolidBrush(colorArrows);
-                penArrowUp = new Pen(colorArrows, 2.5F);
+                solidBrushArrowUpBackground = new SolidBrush(colorScrollbarBackground);
+                solidBrushArrowUp = new SolidBrush(colorArrow);
+                penArrowUp = new Pen(colorArrow, 2.5F);
             }
 
             e.Graphics.FillRectangle(solidBrushArrowUpBackground, GetUpArrowRectangleWithoutBorder());
@@ -375,9 +375,9 @@ namespace SystemTrayMenu.UserInterface
             if (timerMouseStillClicked.Enabled &&
                 !mouseStillClickedMoveLarge && !mouseStillClickedMoveUp)
             {
-                solidBrushArrowDownBackground = new SolidBrush(colorArrowClickedBackground);
-                solidBrushArrowDown = new SolidBrush(colorArrowClicked);
-                penArrowDown = new Pen(colorArrowClicked, 2.5F);
+                solidBrushArrowDownBackground = new SolidBrush(colorArrowClickBackground);
+                solidBrushArrowDown = new SolidBrush(colorArrowClick);
+                penArrowDown = new Pen(colorArrowClick, 2.5F);
             }
             else
             if (arrowDownHovered)
@@ -388,9 +388,9 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                solidBrushArrowDownBackground = new SolidBrush(colorBackground);
-                solidBrushArrowDown = new SolidBrush(colorArrows);
-                penArrowDown = new Pen(colorArrows, 2.5F);
+                solidBrushArrowDownBackground = new SolidBrush(colorScrollbarBackground);
+                solidBrushArrowDown = new SolidBrush(colorArrow);
+                penArrowDown = new Pen(colorArrow, 2.5F);
             }
 
             e.Graphics.FillRectangle(solidBrushArrowDownBackground, GetDownArrowRectangleWithoutBorder(trackHeight));

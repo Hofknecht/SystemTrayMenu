@@ -8,36 +8,76 @@ namespace SystemTrayMenu
 
     internal static class AppColors
     {
-        internal static Color SelectedItem { get; set; }
+        public static Color Arrow { get; internal set; }
 
-        internal static Color DarkModeSelecetedItem { get; set; }
+        public static Color ArrowHoverBackground { get; internal set; }
 
-        internal static Color SelectedItemBorder { get; set; }
+        public static Color ArrowHover { get; internal set; }
 
-        internal static Color DarkModeSelectedItemBorder { get; set; }
+        public static Color ArrowClick { get; internal set; }
 
-        internal static Color OpenFolder { get; set; }
+        public static Color ArrowClickBackground { get; internal set; }
 
-        internal static Color DarkModeOpenFolder { get; set; }
+        public static Color SliderArrowsAndTrackHover { get; internal set; }
 
-        internal static Color OpenFolderBorder { get; set; }
+        public static Color Slider { get; internal set; }
 
-        internal static Color DarkModeOpenFolderBorder { get; set; }
+        public static Color SliderHover { get; internal set; }
 
-        internal static Color Warning { get; set; }
+        public static Color SliderDragging { get; internal set; }
 
-        internal static Color DarkModeWarning { get; set; }
+        public static Color ScrollbarBackground { get; internal set; }
 
-        internal static Color Title { get; set; }
+        public static Color ArrowDarkMode { get; internal set; }
 
-        internal static Color DarkModeTitle { get; set; }
+        public static Color ArrowHoverBackgroundDarkMode { get; internal set; }
 
-        internal static Color Background { get; set; }
+        public static Color ArrowHoverDarkMode { get; internal set; }
 
-        internal static Color DarkModeBackground { get; set; }
+        public static Color ArrowClickDarkMode { get; internal set; }
 
-        internal static Color SearchField { get; set; }
+        public static Color ArrowClickBackgroundDarkMode { get; internal set; }
 
-        internal static Color DarkModeSearchField { get; set; }
+        public static Color SliderArrowsAndTrackHoverDarkMode { get; internal set; }
+
+        public static Color SliderDarkMode { get; internal set; }
+
+        public static Color SliderHoverDarkMode { get; internal set; }
+
+        public static Color SliderDraggingDarkMode { get; internal set; }
+
+        public static Color ScrollbarBackgroundDarkMode { get; internal set; }
+
+        public static Color SelectedItem { get; set; }
+
+        public static Color DarkModeSelecetedItem { get; set; }
+
+        public static Color SelectedItemBorder { get; set; }
+
+        public static Color DarkModeSelectedItemBorder { get; set; }
+
+        public static Color OpenFolder { get; set; }
+
+        public static Color DarkModeOpenFolder { get; set; }
+
+        public static Color OpenFolderBorder { get; set; }
+
+        public static Color DarkModeOpenFolderBorder { get; set; }
+
+        public static Color Warning { get; set; }
+
+        public static Color DarkModeWarning { get; set; }
+
+        public static Color Title { get; set; }
+
+        public static Color DarkModeTitle { get; set; }
+
+        public static Color Background { get; set; }
+
+        public static Color DarkModeBackground { get; set; }
+
+        public static Color SearchField { get; set; }
+
+        public static Color DarkModeSearchField { get; set; }
     }
 }

@@ -294,4 +294,43 @@
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Pixels maximum menu height</value>
   </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Arrow</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Arrow when clicking</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>Arrow while mouse hovers</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Background of arrow when clicking</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>Background of arrow while mouse hovers</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>Colors Dark Mode</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>Colors Light Mode</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Scrollbar</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Slider while dragging</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>Slider while mouse hovers 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>Slider while mouse hovers 2</value>
+  </data>
 </root>

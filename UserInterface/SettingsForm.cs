@@ -49,6 +49,49 @@ namespace SystemTrayMenu.UserInterface
             // designer always resets it to 1
             this.tabControl.SelectedIndex = 0;
 
+            CombineControls(textBoxColorTitle, pictureBoxTitle);
+            CombineControls(textBoxColorBackground, pictureBoxBackground);
+            CombineControls(textBoxColorSearchField, pictureBoxSearchField);
+            CombineControls(textBoxColorOpenFolder, pictureBoxOpenFolder);
+            CombineControls(textBoxColorOpenFolderBorder, pictureBoxOpenFolderBorder);
+            CombineControls(textBoxColorSelectedItem, pictureBoxSelectedItem);
+            CombineControls(textBoxColorSelectedItemBorder, pictureBoxSelectedItemBorder);
+            CombineControls(textBoxColorWarning, pictureBoxWarning);
+            CombineControls(textBoxColorScrollbarBackground, pictureBoxScrollbarBackground);
+            CombineControls(textBoxColorSlider, pictureBoxSlider);
+            CombineControls(textBoxColorSliderDragging, pictureBoxSliderDragging);
+            CombineControls(textBoxColorSliderHover, pictureBoxSliderHover);
+            CombineControls(textBoxColorSliderArrowsAndTrackHover, pictureBoxSliderArrowsAndTrackHover);
+            CombineControls(textBoxColorArrow, pictureBoxArrow);
+            CombineControls(textBoxColorArrowClick, pictureBoxArrowClick);
+            CombineControls(textBoxColorArrowClickBackground, pictureBoxArrowClickBackground);
+            CombineControls(textBoxColorArrowHover, pictureBoxArrowHover);
+            CombineControls(textBoxColorArrowHoverBackground, pictureBoxArrowHoverBackground);
+
+            CombineControls(textBoxColorTitleDarkMode, pictureBoxTitleDarkMode);
+            CombineControls(textBoxColorBackgroundDarkMode, pictureBoxBackgroundDarkMode);
+            CombineControls(textBoxColorSearchFieldDarkMode, pictureBoxSearchFieldDarkMode);
+            CombineControls(textBoxColorOpenFolderDarkMode, pictureBoxOpenFolderDarkMode);
+            CombineControls(textBoxColorOpenFolderBorderDarkMode, pictureBoxOpenFolderBorderDarkMode);
+            CombineControls(textBoxColorSelecetedItemDarkMode, pictureColorBoxSelectedItemDarkMode);
+            CombineControls(textBoxColorSelectedItemBorderDarkMode, pictureBoxSelectedItemBorderDarkMode);
+            CombineControls(textBoxColorWarningDarkMode, pictureBoxWarningDarkMode);
+            CombineControls(textBoxColorScrollbarBackgroundDarkMode, pictureBoxScrollbarBackgroundDarkMode);
+            CombineControls(textBoxColorSliderDarkMode, pictureBoxSliderDarkMode);
+            CombineControls(textBoxColorSliderDraggingDarkMode, pictureBoxSliderDraggingDarkMode);
+            CombineControls(textBoxColorSliderHoverDarkMode, pictureBoxSliderHoverDarkMode);
+            CombineControls(textBoxColorSliderArrowsAndTrackHoverDarkMode, pictureBoxSliderArrowsAndTrackHoverDarkMode);
+            CombineControls(textBoxColorArrowDarkMode, pictureBoxArrowDarkMode);
+            CombineControls(textBoxColorArrowClickDarkMode, pictureBoxArrowClickDarkMode);
+            CombineControls(textBoxColorArrowClickBackgroundDarkMode, pictureBoxArrowClickBackgroundDarkMode);
+            CombineControls(textBoxColorArrowHoverDarkMode, pictureBoxArrowHoverDarkMode);
+            CombineControls(textBoxColorArrowHoverBackgroundDarkMode, pictureBoxArrowHoverBackgroundDarkMode);
+            void CombineControls(Control textBoxColor, Control pictureBox)
+            {
+                textBoxColor.Tag = pictureBox;
+                pictureBox.Tag = textBoxColor;
+            }
+
             Translate();
             void Translate()
             {
@@ -80,21 +123,52 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
                 labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
-                groupBoxColors.Text = Translator.GetText("Colors Light Mode and Dark Mode");
-                buttonDefaultColors.Text = Translator.GetText("Default");
-                groupBoxDarkMode.Text = Translator.GetText("Dark Mode");
+                groupBoxColorsLightMode.Text = Translator.GetText("Colors Light Mode");
+                groupBoxColorsDarkMode.Text = Translator.GetText("Colors Dark Mode");
+                labelMenuLightMode.Text = Translator.GetText("Menu");
+                labelMenuDarkMode.Text = Translator.GetText("Menu");
+                labelScrollbarLightMode.Text = Translator.GetText("Scrollbar");
+                labelScrollbarDarkMode.Text = Translator.GetText("Scrollbar");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
-                labelPasteHtmlColorCodeOrDoubleClickIntoField.Text = Translator.GetText("To change a color paste a HTML Color Code or double click into a field.");
                 labelTitle.Text = Translator.GetText("Title");
+                labelTitleDarkMode.Text = Translator.GetText("Title");
                 labelBackground.Text = Translator.GetText("Background");
+                labelBackgroundDarkMode.Text = Translator.GetText("Background");
                 labelSearchField.Text = Translator.GetText("Search field");
+                labelSearchFieldDarkMode.Text = Translator.GetText("Search field");
                 labelOpenFolder.Text = Translator.GetText("Opened folder");
+                labelOpenFolderDarkMode.Text = Translator.GetText("Opened folder");
                 labelOpenFolderBorder.Text = Translator.GetText("Border of opened folder");
+                labelOpenFolderBorderDarkMode.Text = Translator.GetText("Border of opened folder");
                 labelSelectedItem.Text = Translator.GetText("Selected item");
+                labelSelectedItemDarkMode.Text = Translator.GetText("Selected item");
                 labelSelectedItemBorder.Text = Translator.GetText("Border of selected item");
+                labelSelectedItemBorderDarkMode.Text = Translator.GetText("Border of selected item");
                 labelWarning.Text = Translator.GetText("Warning");
-                buttonDefaultColors.Text = Translator.GetText("Default Light Mode");
-                buttonDefaultColorsDark.Text = Translator.GetText("Default Dark Mode");
+                labelWarningDarkMode.Text = Translator.GetText("Warning");
+                labelScrollbarBackground.Text = Translator.GetText("Background");
+                labelColorDarkModeScrollbarBackground.Text = Translator.GetText("Background");
+                labelSlider.Text = Translator.GetText("Slider");
+                labelColorDarkModeSlider.Text = Translator.GetText("Slider");
+                labelSliderDragging.Text = Translator.GetText("Slider while dragging");
+                labelColorDarkModeSliderDragging.Text = Translator.GetText("Slider while dragging");
+                labelSliderHover.Text = Translator.GetText("Slider while mouse hovers 1");
+                labelColorDarkModeSliderHover.Text = Translator.GetText("Slider while mouse hovers 1");
+                labelSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers 2");
+                labelColorDarkModeSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers 2");
+                labelArrow.Text = Translator.GetText("Arrow");
+                labelColorDarkModeArrow.Text = Translator.GetText("Arrow");
+                labelArrowClick.Text = Translator.GetText("Arrow when clicking");
+                labelColorDarkModeArrowClick.Text = Translator.GetText("Arrow when clicking");
+                labelArrowClickBackground.Text = Translator.GetText("Background of arrow when clicking");
+                labelColorDarkModeArrowClickBackground.Text = Translator.GetText("Background of arrow when clicking");
+                labelArrowHover.Text = Translator.GetText("Arrow while mouse hovers");
+                labelColorDarkModeArrowHover.Text = Translator.GetText("Arrow while mouse hovers");
+                labelArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers");
+                labelColorDarkModeArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers");
+
+                buttonColorsDefault.Text = Translator.GetText("Default");
+                buttonColorsDefaultDarkMode.Text = Translator.GetText("Default");
                 buttonOk.Text = Translator.GetText("buttonOk");
                 buttonCancel.Text = Translator.GetText("buttonCancel");
             }
@@ -180,21 +254,42 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
-            textBoxColorDarkModeSelecetedItem.Text = Settings.Default.ColorDarkModeSelecetedItem;
+            textBoxColorSelecetedItemDarkMode.Text = Settings.Default.ColorDarkModeSelecetedItem;
             textBoxColorSelectedItemBorder.Text = Settings.Default.ColorSelectedItemBorder;
-            textBoxColorDarkModeSelectedItemBorder.Text = Settings.Default.ColorDarkModeSelectedItemBorder;
+            textBoxColorSelectedItemBorderDarkMode.Text = Settings.Default.ColorDarkModeSelectedItemBorder;
             textBoxColorOpenFolder.Text = Settings.Default.ColorOpenFolder;
-            textBoxColorDarkModeOpenFolder.Text = Settings.Default.ColorDarkModeOpenFolder;
+            textBoxColorOpenFolderDarkMode.Text = Settings.Default.ColorDarkModeOpenFolder;
             textBoxColorOpenFolderBorder.Text = Settings.Default.ColorOpenFolderBorder;
-            textBoxColorDarkModeOpenFolderBorder.Text = Settings.Default.ColorDarkModeOpenFolderBorder;
+            textBoxColorOpenFolderBorderDarkMode.Text = Settings.Default.ColorDarkModeOpenFolderBorder;
             textBoxColorWarning.Text = Settings.Default.ColorWarning;
-            textBoxColorDarkModeWarning.Text = Settings.Default.ColorDarkModeWarning;
+            textBoxColorWarningDarkMode.Text = Settings.Default.ColorDarkModeWarning;
             textBoxColorTitle.Text = Settings.Default.ColorTitle;
-            textBoxColorDarkModeTitle.Text = Settings.Default.ColorDarkModeTitle;
+            textBoxColorTitleDarkMode.Text = Settings.Default.ColorDarkModeTitle;
             textBoxColorBackground.Text = Settings.Default.ColorBackground;
-            textBoxColorDarkModeBackground.Text = Settings.Default.ColorDarkModeBackground;
+            textBoxColorBackgroundDarkMode.Text = Settings.Default.ColorDarkModeBackground;
             textBoxColorSearchField.Text = Settings.Default.ColorSearchField;
-            textBoxColorDarkModeSearchField.Text = Settings.Default.ColorDarkModeSearchField;
+            textBoxColorSearchFieldDarkMode.Text = Settings.Default.ColorDarkModeSearchField;
+
+            textBoxColorScrollbarBackground.Text = Settings.Default.ColorScrollbarBackground;
+            textBoxColorSlider.Text = Settings.Default.ColorSlider;
+            textBoxColorSliderDragging.Text = Settings.Default.ColorSliderDragging;
+            textBoxColorSliderHover.Text = Settings.Default.ColorSliderHover;
+            textBoxColorSliderArrowsAndTrackHover.Text = Settings.Default.ColorSliderArrowsAndTrackHover;
+            textBoxColorArrow.Text = Settings.Default.ColorArrow;
+            textBoxColorArrowClick.Text = Settings.Default.ColorArrowClick;
+            textBoxColorArrowClickBackground.Text = Settings.Default.ColorArrowClickBackground;
+            textBoxColorArrowHover.Text = Settings.Default.ColorArrowHover;
+            textBoxColorArrowHoverBackground.Text = Settings.Default.ColorArrowHoverBackground;
+            textBoxColorScrollbarBackgroundDarkMode.Text = Settings.Default.ColorScrollbarBackgroundDarkMode;
+            textBoxColorSliderDarkMode.Text = Settings.Default.ColorSliderDarkMode;
+            textBoxColorSliderDraggingDarkMode.Text = Settings.Default.ColorSliderDraggingDarkMode;
+            textBoxColorSliderHoverDarkMode.Text = Settings.Default.ColorSliderHoverDarkMode;
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.Text = Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode;
+            textBoxColorArrowDarkMode.Text = Settings.Default.ColorArrowDarkMode;
+            textBoxColorArrowClickDarkMode.Text = Settings.Default.ColorArrowClickDarkMode;
+            textBoxColorArrowClickBackgroundDarkMode.Text = Settings.Default.ColorArrowClickBackgroundDarkMode;
+            textBoxColorArrowHoverDarkMode.Text = Settings.Default.ColorArrowHoverDarkMode;
+            textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
         }
 
         public string NewHotKey => newHotKey;
@@ -328,7 +423,7 @@ namespace SystemTrayMenu.UserInterface
         {
             tabControl.Size = new Size(
                 tabControl.Size.Width,
-                tableLayoutPanelCustomize.Size.Height + 50);
+                tableLayoutPanelAdvanced.Size.Height + 50);
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
@@ -377,23 +472,8 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
             Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
+
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
-            Settings.Default.ColorSelectedItem = textBoxColorSelectedItem.Text;
-            Settings.Default.ColorDarkModeSelecetedItem = textBoxColorDarkModeSelecetedItem.Text;
-            Settings.Default.ColorSelectedItemBorder = textBoxColorSelectedItemBorder.Text;
-            Settings.Default.ColorDarkModeSelectedItemBorder = textBoxColorDarkModeSelectedItemBorder.Text;
-            Settings.Default.ColorOpenFolder = textBoxColorOpenFolder.Text;
-            Settings.Default.ColorDarkModeOpenFolder = textBoxColorDarkModeOpenFolder.Text;
-            Settings.Default.ColorOpenFolderBorder = textBoxColorOpenFolderBorder.Text;
-            Settings.Default.ColorDarkModeOpenFolderBorder = textBoxColorDarkModeOpenFolderBorder.Text;
-            Settings.Default.ColorWarning = textBoxColorWarning.Text;
-            Settings.Default.ColorDarkModeWarning = textBoxColorDarkModeWarning.Text;
-            Settings.Default.ColorTitle = textBoxColorTitle.Text;
-            Settings.Default.ColorDarkModeTitle = textBoxColorDarkModeTitle.Text;
-            Settings.Default.ColorBackground = textBoxColorBackground.Text;
-            Settings.Default.ColorDarkModeBackground = textBoxColorDarkModeBackground.Text;
-            Settings.Default.ColorSearchField = textBoxColorSearchField.Text;
-            Settings.Default.ColorDarkModeSearchField = textBoxColorDarkModeSearchField.Text;
 
             if (checkBoxStoreConfigAtAssemblyLocation.Checked)
             {
@@ -476,29 +556,84 @@ namespace SystemTrayMenu.UserInterface
         private void TextBoxColorsChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
+            PictureBox pictureBox = (PictureBox)textBox.Tag;
+            pictureBox.BackColor = GetConvertFromStringOrDefault(textBox.Text.Trim());
 
-            textBox.Text = textBox.Text.Trim();
+            SaveColorsTemporarily();
+        }
 
+        private Color GetConvertFromStringOrDefault(string text)
+        {
             try
             {
-                Color color = (Color)colorConverter.ConvertFromString(textBox.Text);
-                textBox.BackColor = color;
+                return (Color)colorConverter.ConvertFromString(text);
             }
             catch
             {
-                textBox.Text = "#ffffff";
-                textBox.BackColor = Color.White;
+                return Color.White;
             }
         }
 
-        private void TextBoxColorsDoubleClick(object sender, EventArgs e)
+        private void SaveColorsTemporarily()
         {
-            TextBox textBox = (TextBox)sender;
-            colorDialog.Color = textBox.BackColor;
+            if (Visible)
+            {
+                Settings.Default.ColorSelectedItem = textBoxColorSelectedItem.Text;
+                Settings.Default.ColorDarkModeSelecetedItem = textBoxColorSelecetedItemDarkMode.Text;
+                Settings.Default.ColorSelectedItemBorder = textBoxColorSelectedItemBorder.Text;
+                Settings.Default.ColorDarkModeSelectedItemBorder = textBoxColorSelectedItemBorderDarkMode.Text;
+                Settings.Default.ColorOpenFolder = textBoxColorOpenFolder.Text;
+                Settings.Default.ColorDarkModeOpenFolder = textBoxColorOpenFolderDarkMode.Text;
+                Settings.Default.ColorOpenFolderBorder = textBoxColorOpenFolderBorder.Text;
+                Settings.Default.ColorDarkModeOpenFolderBorder = textBoxColorOpenFolderBorderDarkMode.Text;
+                Settings.Default.ColorWarning = textBoxColorWarning.Text;
+                Settings.Default.ColorDarkModeWarning = textBoxColorWarningDarkMode.Text;
+                Settings.Default.ColorTitle = textBoxColorTitle.Text;
+                Settings.Default.ColorDarkModeTitle = textBoxColorTitleDarkMode.Text;
+                Settings.Default.ColorBackground = textBoxColorBackground.Text;
+                Settings.Default.ColorDarkModeBackground = textBoxColorBackgroundDarkMode.Text;
+                Settings.Default.ColorSearchField = textBoxColorSearchField.Text;
+                Settings.Default.ColorDarkModeSearchField = textBoxColorSearchFieldDarkMode.Text;
+                Settings.Default.ColorScrollbarBackground = textBoxColorScrollbarBackground.Text;
+                Settings.Default.ColorSlider = textBoxColorSlider.Text;
+                Settings.Default.ColorSliderDragging = textBoxColorSliderDragging.Text;
+                Settings.Default.ColorSliderHover = textBoxColorSliderHover.Text;
+                Settings.Default.ColorSliderArrowsAndTrackHover = textBoxColorSliderArrowsAndTrackHover.Text;
+                Settings.Default.ColorArrow = textBoxColorArrow.Text;
+                Settings.Default.ColorArrowClick = textBoxColorArrowClick.Text;
+                Settings.Default.ColorArrowClickBackground = textBoxColorArrowClickBackground.Text;
+                Settings.Default.ColorArrowHover = textBoxColorArrowHover.Text;
+                Settings.Default.ColorArrowHoverBackground = textBoxColorArrowHoverBackground.Text;
+                Settings.Default.ColorScrollbarBackgroundDarkMode = textBoxColorScrollbarBackgroundDarkMode.Text;
+                Settings.Default.ColorSliderDarkMode = textBoxColorSliderDarkMode.Text;
+                Settings.Default.ColorSliderDraggingDarkMode = textBoxColorSliderDraggingDarkMode.Text;
+                Settings.Default.ColorSliderHoverDarkMode = textBoxColorSliderHoverDarkMode.Text;
+                Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode = textBoxColorSliderArrowsAndTrackHoverDarkMode.Text;
+                Settings.Default.ColorArrowDarkMode = textBoxColorArrowDarkMode.Text;
+                Settings.Default.ColorArrowClickDarkMode = textBoxColorArrowClickDarkMode.Text;
+                Settings.Default.ColorArrowClickBackgroundDarkMode = textBoxColorArrowClickBackgroundDarkMode.Text;
+                Settings.Default.ColorArrowHoverDarkMode = textBoxColorArrowHoverDarkMode.Text;
+                Settings.Default.ColorArrowHoverBackgroundDarkMode = textBoxColorArrowHoverBackgroundDarkMode.Text;
+
+                Config.InitializeColors(false);
+            }
+        }
+
+        private void CheckBoxDarkModeAlwaysOnCheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+            Config.ResetReadDarkModeDone();
+        }
+
+        private void PictureBoxClick(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            TextBox textBox = (TextBox)pictureBox.Tag;
+            colorDialog.Color = pictureBox.BackColor;
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
                 textBox.Text = ColorTranslator.ToHtml(colorDialog.Color);
-                textBox.BackColor = colorDialog.Color;
+                pictureBox.BackColor = colorDialog.Color;
             }
         }
 
@@ -512,18 +647,38 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorSelectedItem.Text = "#CCE8FF";
             textBoxColorSelectedItemBorder.Text = "#99D1FF";
             textBoxColorWarning.Text = "#FFCCE8";
+            textBoxColorArrow.Text = "#606060";
+            textBoxColorArrowHoverBackground.Text = "#dadada";
+            textBoxColorArrowHover.Text = "#000000";
+            textBoxColorArrowClick.Text = "#ffffff";
+            textBoxColorArrowClickBackground.Text = "#606060";
+            textBoxColorSliderArrowsAndTrackHover.Text = "#c0c0c0";
+            textBoxColorSlider.Text = "#cdcdcd";
+            textBoxColorSliderHover.Text = "#a6a6a6";
+            textBoxColorSliderDragging.Text = "#606060";
+            textBoxColorScrollbarBackground.Text = "#f0f0f0";
         }
 
         private void ButtonDefaultColorsDark_Click(object sender, EventArgs e)
         {
-            textBoxColorDarkModeTitle.Text = "#2B2B2B";
-            textBoxColorDarkModeOpenFolder.Text = "#14412A";
-            textBoxColorDarkModeOpenFolderBorder.Text = "#144B55";
-            textBoxColorDarkModeBackground.Text = "#202020";
-            textBoxColorDarkModeSearchField.Text = "#191919";
-            textBoxColorDarkModeSelecetedItem.Text = "#333333";
-            textBoxColorDarkModeSelectedItemBorder.Text = "#141D4B";
-            textBoxColorDarkModeWarning.Text = "#4B1834";
+            textBoxColorTitleDarkMode.Text = "#2B2B2B";
+            textBoxColorOpenFolderDarkMode.Text = "#14412A";
+            textBoxColorOpenFolderBorderDarkMode.Text = "#144B55";
+            textBoxColorBackgroundDarkMode.Text = "#202020";
+            textBoxColorSearchFieldDarkMode.Text = "#191919";
+            textBoxColorSelecetedItemDarkMode.Text = "#333333";
+            textBoxColorSelectedItemBorderDarkMode.Text = "#141D4B";
+            textBoxColorWarningDarkMode.Text = "#4B1834";
+            textBoxColorArrowDarkMode.Text = "#676767";
+            textBoxColorArrowHoverBackgroundDarkMode.Text = "#373737";
+            textBoxColorArrowHoverDarkMode.Text = "#676767";
+            textBoxColorArrowClickDarkMode.Text = "#171717";
+            textBoxColorArrowClickBackgroundDarkMode.Text = "#a6a6a6";
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.Text = "#4d4d4d";
+            textBoxColorSliderDarkMode.Text = "#4d4d4d";
+            textBoxColorSliderHoverDarkMode.Text = "#7a7a7a";
+            textBoxColorSliderDraggingDarkMode.Text = "#a6a6a6";
+            textBoxColorScrollbarBackgroundDarkMode.Text = "#171717";
         }
     }
 }

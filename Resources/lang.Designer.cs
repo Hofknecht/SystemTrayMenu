@@ -88,6 +88,33 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arrow.
+        /// </summary>
+        internal static string Arrow {
+            get {
+                return ResourceManager.GetString("Arrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arrow when clicking.
+        /// </summary>
+        internal static string Arrow_when_clicking {
+            get {
+                return ResourceManager.GetString("Arrow when clicking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arrow while mouse hovers.
+        /// </summary>
+        internal static string Arrow_while_mouse_hovers {
+            get {
+                return ResourceManager.GetString("Arrow while mouse hovers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Autostart.
         /// </summary>
         internal static string Autostart {
@@ -102,6 +129,24 @@ namespace SystemTrayMenu.Resources {
         internal static string Background {
             get {
                 return ResourceManager.GetString("Background", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background of arrow when clicking.
+        /// </summary>
+        internal static string Background_of_arrow_when_clicking {
+            get {
+                return ResourceManager.GetString("Background of arrow when clicking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background of arrow while mouse hovers.
+        /// </summary>
+        internal static string Background_of_arrow_while_mouse_hovers {
+            get {
+                return ResourceManager.GetString("Background of arrow while mouse hovers", resourceCulture);
             }
         }
         
@@ -183,6 +228,24 @@ namespace SystemTrayMenu.Resources {
         internal static string Click {
             get {
                 return ResourceManager.GetString("Click", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colors Dark Mode.
+        /// </summary>
+        internal static string Colors_Dark_Mode {
+            get {
+                return ResourceManager.GetString("Colors Dark Mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colors Light Mode.
+        /// </summary>
+        internal static string Colors_Light_Mode {
+            get {
+                return ResourceManager.GetString("Colors Light Mode", resourceCulture);
             }
         }
         
@@ -376,6 +439,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Menu.
+        /// </summary>
+        internal static string Menu {
+            get {
+                return ResourceManager.GetString("Menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your root folder for the SystemTrayMenu does not exist or is empty! Put some files, folders or shortcuts into the folder or change the root folder..
         /// </summary>
         internal static string MessageRootFolderEmpty {
@@ -458,6 +530,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scrollbar.
+        /// </summary>
+        internal static string Scrollbar {
+            get {
+                return ResourceManager.GetString("Scrollbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search field.
         /// </summary>
         internal static string Search_field {
@@ -508,6 +589,42 @@ namespace SystemTrayMenu.Resources {
         internal static string Size_and_location {
             get {
                 return ResourceManager.GetString("Size and location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slider.
+        /// </summary>
+        internal static string Slider {
+            get {
+                return ResourceManager.GetString("Slider", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slider while dragging.
+        /// </summary>
+        internal static string Slider_while_dragging {
+            get {
+                return ResourceManager.GetString("Slider while dragging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slider while mouse hovers 1.
+        /// </summary>
+        internal static string Slider_while_mouse_hovers_1 {
+            get {
+                return ResourceManager.GetString("Slider while mouse hovers 1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slider while mouse hovers 2.
+        /// </summary>
+        internal static string Slider_while_mouse_hovers_2 {
+            get {
+                return ResourceManager.GetString("Slider while mouse hovers 2", resourceCulture);
             }
         }
         

@@ -187,7 +187,7 @@ namespace SystemTrayMenu.Properties
             }
         }
 
-       [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("true")]
@@ -464,7 +464,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#191919")]
         public string ColorDarkModeSearchField
-    {
+        {
             get
             {
                 return ((string)(this["ColorDarkModeSearchField"]));
@@ -480,7 +480,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#ffffff")]
         public string ColorBackground
-    {
+        {
             get
             {
                 return ((string)(this["ColorBackground"]));
@@ -496,7 +496,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#202020")]
         public string ColorDarkModeBackground
-    {
+        {
             get
             {
                 return ((string)(this["ColorDarkModeBackground"]));
@@ -504,6 +504,326 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["ColorDarkModeBackground"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#606060")]
+        public string ColorArrow
+        {
+            get
+            {
+                return ((string)(this["ColorArrow"]));
+            }
+            set
+            {
+                this["ColorArrow"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#dadada")]
+        public string ColorArrowHoverBackground
+        {
+            get
+            {
+                return ((string)(this["ColorArrowHoverBackground"]));
+            }
+            set
+            {
+                this["ColorArrowHoverBackground"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#000000")]
+        public string ColorArrowHover
+        {
+            get
+            {
+                return ((string)(this["ColorArrowHover"]));
+            }
+            set
+            {
+                this["ColorArrowHover"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#ffffff")]
+        public string ColorArrowClick
+        {
+            get
+            {
+                return ((string)(this["ColorArrowClick"]));
+            }
+            set
+            {
+                this["ColorArrowClick"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#606060")]
+        public string ColorArrowClickBackground
+        {
+            get
+            {
+                return ((string)(this["ColorArrowClickBackground"]));
+            }
+            set
+            {
+                this["ColorArrowClickBackground"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#c0c0c0")]
+        public string ColorSliderArrowsAndTrackHover
+        {
+            get
+            {
+                return ((string)(this["ColorSliderArrowsAndTrackHover"]));
+            }
+            set
+            {
+                this["ColorSliderArrowsAndTrackHover"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#cdcdcd")]
+        public string ColorSlider
+        {
+            get
+            {
+                return ((string)(this["ColorSlider"]));
+            }
+            set
+            {
+                this["ColorSlider"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#a6a6a6")]
+        public string ColorSliderHover
+        {
+            get
+            {
+                return ((string)(this["ColorSliderHover"]));
+            }
+            set
+            {
+                this["ColorSliderHover"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#606060")]
+        public string ColorSliderDragging
+        {
+            get
+            {
+                return ((string)(this["ColorSliderDragging"]));
+            }
+            set
+            {
+                this["ColorSliderDragging"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#f0f0f0")]
+        public string ColorScrollbarBackground
+        {
+            get
+            {
+                return ((string)(this["ColorScrollbarBackground"]));
+            }
+            set
+            {
+                this["ColorScrollbarBackground"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#676767")]
+        public string ColorArrowDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorArrowDarkMode"]));
+            }
+            set
+            {
+                this["ColorArrowDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#373737")]
+        public string ColorArrowHoverBackgroundDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorArrowHoverBackgroundDarkMode"]));
+            }
+            set
+            {
+                this["ColorArrowHoverBackgroundDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#676767")]
+        public string ColorArrowHoverDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorArrowHoverDarkMode"]));
+            }
+            set
+            {
+                this["ColorArrowHoverDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#171717")]
+        public string ColorArrowClickDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorArrowClickDarkMode"]));
+            }
+            set
+            {
+                this["ColorArrowClickDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#a6a6a6")]
+        public string ColorArrowClickBackgroundDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorArrowClickBackgroundDarkMode"]));
+            }
+            set
+            {
+                this["ColorArrowClickBackgroundDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#4d4d4d")]
+        public string ColorSliderArrowsAndTrackHoverDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorSliderArrowsAndTrackHoverDarkMode"]));
+            }
+            set
+            {
+                this["ColorSliderArrowsAndTrackHoverDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#4d4d4d")]
+        public string ColorSliderDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorSliderDarkMode"]));
+            }
+            set
+            {
+                this["ColorSliderDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#7a7a7a")]
+        public string ColorSliderHoverDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorSliderHoverDarkMode"]));
+            }
+            set
+            {
+                this["ColorSliderHoverDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#a6a6a6")]
+        public string ColorSliderDraggingDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorSliderDraggingDarkMode"]));
+            }
+            set
+            {
+                this["ColorSliderDraggingDarkMode"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#171717")]
+        public string ColorScrollbarBackgroundDarkMode
+        {
+            get
+            {
+                return ((string)(this["ColorScrollbarBackgroundDarkMode"]));
+            }
+            set
+            {
+                this["ColorScrollbarBackgroundDarkMode"] = value;
             }
         }
     }

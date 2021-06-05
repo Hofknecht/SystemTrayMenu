@@ -117,6 +117,12 @@ namespace SystemTrayMenu
             return isDarkMode;
         }
 
+        internal static void ResetReadDarkModeDone()
+        {
+            isDarkMode = false;
+            readDarkModeDone = false;
+        }
+
         /// <summary>
         /// Read the OS setting whether HideFileExt enabled.
         /// </summary>
@@ -140,53 +146,7 @@ namespace SystemTrayMenu
             return isHideFileExtension;
         }
 
-        private static bool IsRegistryValueThisValue(string keyName, string valueName, string value)
-        {
-            bool isRegistryValueThisValue = false;
-
-            try
-            {
-                object registryHideFileExt = Registry.GetValue(keyName, valueName, 1);
-
-                if (registryHideFileExt == null)
-                {
-                    Log.Info($"Could not read registry keyName:{keyName} valueName:{valueName}");
-                }
-                else if (registryHideFileExt.ToString() == value)
-                {
-                    isRegistryValueThisValue = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                if (ex is System.Security.SecurityException ||
-                    ex is IOException)
-                {
-                    Log.Warn($"Could not read registry keyName:{keyName} valueName:{valueName}", ex);
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return isRegistryValueThisValue;
-        }
-
-        private static void UpgradeIfNotUpgraded()
-        {
-            var path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
-            path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            if (!Settings.Default.IsUpgraded)
-            {
-                Settings.Default.Upgrade();
-                Settings.Default.IsUpgraded = true;
-                Settings.Default.Save();
-                Log.Info($"Settings upgraded from {CustomSettingsProvider.UserConfigPath}");
-            }
-        }
-
-        private static void InitializeColors()
+        internal static void InitializeColors(bool save = true)
         {
             ColorConverter converter = new ColorConverter();
             ColorAndCode colorAndCode = default;
@@ -288,9 +248,175 @@ namespace SystemTrayMenu
             Settings.Default.ColorDarkModeBackground = colorAndCode.HtmlColorCode;
             AppColors.DarkModeBackground = colorAndCode.Color;
 
-            if (changed)
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrow;
+            colorAndCode.Color = Color.FromArgb(96, 96, 96);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrow = colorAndCode.HtmlColorCode;
+            AppColors.Arrow = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowHoverBackground;
+            colorAndCode.Color = Color.FromArgb(218, 218, 218);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowHoverBackground = colorAndCode.HtmlColorCode;
+            AppColors.ArrowHoverBackground = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowHover;
+            colorAndCode.Color = Color.FromArgb(0, 0, 0);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowHover = colorAndCode.HtmlColorCode;
+            AppColors.ArrowHover = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowClick;
+            colorAndCode.Color = Color.FromArgb(255, 255, 255);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowClick = colorAndCode.HtmlColorCode;
+            AppColors.ArrowClick = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowClickBackground;
+            colorAndCode.Color = Color.FromArgb(96, 96, 96);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowClickBackground = colorAndCode.HtmlColorCode;
+            AppColors.ArrowClickBackground = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderArrowsAndTrackHover;
+            colorAndCode.Color = Color.FromArgb(192, 192, 192);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSliderArrowsAndTrackHover = colorAndCode.HtmlColorCode;
+            AppColors.SliderArrowsAndTrackHover = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSlider;
+            colorAndCode.Color = Color.FromArgb(205, 205, 205);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSlider = colorAndCode.HtmlColorCode;
+            AppColors.Slider = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderHover;
+            colorAndCode.Color = Color.FromArgb(166, 166, 166);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSliderHover = colorAndCode.HtmlColorCode;
+            AppColors.SliderHover = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderDragging;
+            colorAndCode.Color = Color.FromArgb(96, 96, 96);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSliderDragging = colorAndCode.HtmlColorCode;
+            AppColors.SliderDragging = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorScrollbarBackground;
+            colorAndCode.Color = Color.FromArgb(240, 240, 240);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorScrollbarBackground = colorAndCode.HtmlColorCode;
+            AppColors.ScrollbarBackground = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowDarkMode;
+            colorAndCode.Color = Color.FromArgb(103, 103, 103);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.ArrowDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowHoverBackgroundDarkMode;
+            colorAndCode.Color = Color.FromArgb(55, 55, 55);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowHoverBackgroundDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.ArrowHoverBackgroundDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowHoverDarkMode;
+            colorAndCode.Color = Color.FromArgb(103, 103, 103);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowHoverDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.ArrowHoverDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowClickDarkMode;
+            colorAndCode.Color = Color.FromArgb(23, 23, 23);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowClickDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.ArrowClickDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorArrowClickBackgroundDarkMode;
+            colorAndCode.Color = Color.FromArgb(166, 166, 166);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorArrowClickBackgroundDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.ArrowClickBackgroundDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode;
+            colorAndCode.Color = Color.FromArgb(77, 77, 77);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.SliderArrowsAndTrackHoverDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderDarkMode;
+            colorAndCode.Color = Color.FromArgb(77, 77, 77);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSliderDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.SliderDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderHoverDarkMode;
+            colorAndCode.Color = Color.FromArgb(122, 122, 122);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSliderHoverDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.SliderHoverDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderDraggingDarkMode;
+            colorAndCode.Color = Color.FromArgb(166, 166, 166);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorSliderDraggingDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.SliderDraggingDarkMode = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorScrollbarBackgroundDarkMode;
+            colorAndCode.Color = Color.FromArgb(23, 23, 23);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorScrollbarBackgroundDarkMode = colorAndCode.HtmlColorCode;
+            AppColors.ScrollbarBackgroundDarkMode = colorAndCode.Color;
+
+            if (save && changed)
             {
                 Settings.Default.Save();
+            }
+        }
+
+        private static bool IsRegistryValueThisValue(string keyName, string valueName, string value)
+        {
+            bool isRegistryValueThisValue = false;
+
+            try
+            {
+                object registryHideFileExt = Registry.GetValue(keyName, valueName, 1);
+
+                if (registryHideFileExt == null)
+                {
+                    Log.Info($"Could not read registry keyName:{keyName} valueName:{valueName}");
+                }
+                else if (registryHideFileExt.ToString() == value)
+                {
+                    isRegistryValueThisValue = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is System.Security.SecurityException ||
+                    ex is IOException)
+                {
+                    Log.Warn($"Could not read registry keyName:{keyName} valueName:{valueName}", ex);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return isRegistryValueThisValue;
+        }
+
+        private static void UpgradeIfNotUpgraded()
+        {
+            var path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            if (!Settings.Default.IsUpgraded)
+            {
+                Settings.Default.Upgrade();
+                Settings.Default.IsUpgraded = true;
+                Settings.Default.Save();
+                Log.Info($"Settings upgraded from {CustomSettingsProvider.UserConfigPath}");
             }
         }
 
