@@ -318,4 +318,7 @@
   <data name="Slider while mouse hovers 2" xml:space="preserve">
     <value>Schuifregelaar terwijl muis zweeft 2</value>
   </data>
+  <data name="Use icon from folder" xml:space="preserve">
+    <value>Pictogram uit map gebruiken</value>
+  </data>
 </root>

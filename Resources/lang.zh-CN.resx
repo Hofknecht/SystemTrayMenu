@@ -318,4 +318,7 @@
   <data name="Slider while mouse hovers 2" xml:space="preserve">
     <value>鼠标悬停时的滑块 2</value>
   </data>
+  <data name="Use icon from folder" xml:space="preserve">
+    <value>使用文件夹中的图标</value>
+  </data>
 </root>

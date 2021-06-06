@@ -318,4 +318,7 @@
   <data name="Slider while mouse hovers 2" xml:space="preserve">
     <value>Ползунок при наведении курсора мыши 2</value>
   </data>
+  <data name="Use icon from folder" xml:space="preserve">
+    <value>Использовать значок из папки</value>
+  </data>
 </root>

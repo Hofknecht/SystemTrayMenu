@@ -318,4 +318,7 @@
   <data name="Slider while mouse hovers 2" xml:space="preserve">
     <value>マウスホバー時のスライダー 2</value>
   </data>
+  <data name="Use icon from folder" xml:space="preserve">
+    <value>フォルダのアイコンを使用</value>
+  </data>
 </root>

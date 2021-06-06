@@ -318,4 +318,7 @@
   <data name="Slider while mouse hovers 2" xml:space="preserve">
     <value>Posuvník, zatímco se myš pohybuje 2</value>
   </data>
+  <data name="Use icon from folder" xml:space="preserve">
+    <value>Použijte ikonu ze složky</value>
+  </data>
 </root>
