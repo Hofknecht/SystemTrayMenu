@@ -23,11 +23,17 @@ steps:
     packageType: sdk
     version: 3.1.102
 
-- task: NuGetCommand@2
-  displayName: NuGet restore
+#- task: NuGetCommand@2
+#  displayName: NuGet restore
+#  inputs:
+#    restoreSolution: '$(solution)'
+#    feedsToUse: config
+
+- task: DotNetCoreCLI@2
   inputs:
-    restoreSolution: '$(solution)'
-    feedsToUse: config
+    command: 'restore'
+    projects: '$(solution)'
+    feedsToUse: 'select'
 
 #- task: DotNetCoreCLI@2
 #  displayName: Publish single-exe x64
