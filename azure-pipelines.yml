@@ -16,9 +16,6 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
-  inputs:
-    versionSpec: 
-    checkLatest: true
 
 - task: UseDotNet@2
   displayName: 'Use .NET Core sdk 3.1.2'
@@ -26,19 +23,11 @@ steps:
     packageType: sdk
     version: 3.1.102
 
-
-#- task: NuGetCommand@2
-#  displayName: NuGet restore
-#  inputs:
-#    restoreSolution: '$(solution)'
-#    feedsToUse: config
-## => not more working, removed, trying via MSBuild restoreNugetPackages
 - task: NuGetCommand@2
   displayName: NuGet restore
   inputs:
-    command: 'restore'
     restoreSolution: '$(solution)'
-    feedsToUse: 'select'
+    feedsToUse: config
 
 #- task: DotNetCoreCLI@2
 #  displayName: Publish single-exe x64
