@@ -421,9 +421,20 @@ namespace SystemTrayMenu.UserInterface
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
+            AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
+
             tabControl.Size = new Size(
                 tabControl.Size.Width,
                 tableLayoutPanelAdvanced.Size.Height + 50);
+        }
+
+        private void AdjustControlMultilineIfNecessary(Control control)
+        {
+            if (control.Width > control.Parent.Width)
+            {
+                control.MaximumSize = new Size(control.Parent.Width, 0);
+                control.MinimumSize = new Size(0, control.Height * 2);
+            }
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)

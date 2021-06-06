@@ -31,9 +31,6 @@ namespace SystemTrayMenu.UserInterface
         private void InitializeComponent()
         {
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonOk = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
@@ -241,11 +238,11 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxWarningDarkMode = new System.Windows.Forms.PictureBox();
             this.labelWarningDarkMode = new System.Windows.Forms.Label();
             this.textBoxColorWarningDarkMode = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonOk = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
-            this.tableLayoutPanelBottom.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
             this.tableLayoutPanelGeneral.SuspendLayout();
@@ -356,6 +353,7 @@ namespace SystemTrayMenu.UserInterface
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitleDarkMode)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWarningDarkMode)).BeginInit();
+            this.tableLayoutPanelBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -364,8 +362,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelMain.ColumnCount = 1;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelBottom, 0, 1);
             this.tableLayoutPanelMain.Controls.Add(this.tabControl, 0, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelBottom, 0, 1);
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 2;
@@ -373,54 +371,6 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(434, 478);
             this.tableLayoutPanelMain.TabIndex = 0;
-            // 
-            // tableLayoutPanelBottom
-            // 
-            this.tableLayoutPanelBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelBottom.AutoSize = true;
-            this.tableLayoutPanelBottom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelBottom.ColumnCount = 3;
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBottom.Controls.Add(this.buttonOk, 1, 0);
-            this.tableLayoutPanelBottom.Controls.Add(this.buttonCancel, 2, 0);
-            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 450);
-            this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
-            this.tableLayoutPanelBottom.RowCount = 1;
-            this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(428, 25);
-            this.tableLayoutPanelBottom.TabIndex = 0;
-            // 
-            // buttonOk
-            // 
-            this.buttonOk.AutoSize = true;
-            this.buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(267, 0);
-            this.buttonOk.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.buttonOk.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 25);
-            this.buttonOk.TabIndex = 1;
-            this.buttonOk.Text = "OK";
-            this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.ButtonOk_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.AutoSize = true;
-            this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(348, 0);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
-            this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 25);
-            this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // tabControl
             // 
@@ -1261,6 +1211,7 @@ namespace SystemTrayMenu.UserInterface
             this.labelArrowHoverBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelArrowHoverBackground.AutoSize = true;
             this.labelArrowHoverBackground.Location = new System.Drawing.Point(95, 4);
+            this.labelArrowHoverBackground.MaximumSize = new System.Drawing.Size(280, 0);
             this.labelArrowHoverBackground.Name = "labelArrowHoverBackground";
             this.labelArrowHoverBackground.Size = new System.Drawing.Size(160, 15);
             this.labelArrowHoverBackground.TabIndex = 0;
@@ -2294,6 +2245,7 @@ namespace SystemTrayMenu.UserInterface
             this.labelColorDarkModeArrowHoverBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeArrowHoverBackground.AutoSize = true;
             this.labelColorDarkModeArrowHoverBackground.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeArrowHoverBackground.MaximumSize = new System.Drawing.Size(280, 0);
             this.labelColorDarkModeArrowHoverBackground.Name = "labelColorDarkModeArrowHoverBackground";
             this.labelColorDarkModeArrowHoverBackground.Size = new System.Drawing.Size(244, 15);
             this.labelColorDarkModeArrowHoverBackground.TabIndex = 0;
@@ -3195,27 +3147,53 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorWarningDarkMode.Text = "#ffffff";
             this.textBoxColorWarningDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
             // 
-            // checkBox1
+            // tableLayoutPanelBottom
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(3, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(438, 19);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.tableLayoutPanelBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelBottom.AutoSize = true;
+            this.tableLayoutPanelBottom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelBottom.ColumnCount = 3;
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelBottom.Controls.Add(this.buttonOk, 1, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.buttonCancel, 2, 0);
+            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 450);
+            this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
+            this.tableLayoutPanelBottom.RowCount = 1;
+            this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(428, 25);
+            this.tableLayoutPanelBottom.TabIndex = 0;
             // 
-            // checkBox2
+            // buttonOk
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox2.Location = new System.Drawing.Point(3, 3);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(438, 19);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.buttonOk.AutoSize = true;
+            this.buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonOk.Location = new System.Drawing.Point(267, 0);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.buttonOk.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(75, 25);
+            this.buttonOk.TabIndex = 1;
+            this.buttonOk.Text = "OK";
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.ButtonOk_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.AutoSize = true;
+            this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Location = new System.Drawing.Point(348, 0);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
+            this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 25);
+            this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // SettingsForm
             // 
@@ -3234,8 +3212,6 @@ namespace SystemTrayMenu.UserInterface
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();
-            this.tableLayoutPanelBottom.ResumeLayout(false);
-            this.tableLayoutPanelBottom.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPageGeneral.ResumeLayout(false);
             this.tabPageGeneral.PerformLayout();
@@ -3414,6 +3390,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWarningDarkMode)).EndInit();
+            this.tableLayoutPanelBottom.ResumeLayout(false);
+            this.tableLayoutPanelBottom.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3510,8 +3488,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.NumericUpDown numericUpDownMenuHeight;
         private System.Windows.Forms.Label labelMaxMenuHeight;
         private System.Windows.Forms.Button buttonColorsDefault;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.PictureBox pictureBoxTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label labelMenuLightMode;
