@@ -242,6 +242,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -428,7 +429,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxFolder.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxFolder.Name = "groupBoxFolder";
             this.groupBoxFolder.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxFolder.Size = new System.Drawing.Size(400, 81);
+            this.groupBoxFolder.Size = new System.Drawing.Size(400, 106);
             this.groupBoxFolder.TabIndex = 0;
             this.groupBoxFolder.TabStop = false;
             this.groupBoxFolder.Text = "groupBoxFolder";
@@ -441,13 +442,15 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelFolder.Controls.Add(this.textBoxFolder, 0, 0);
             this.tableLayoutPanelFolder.Controls.Add(this.tableLayoutPanelChangeFolder, 0, 1);
+            this.tableLayoutPanelFolder.Controls.Add(this.checkBoxUseIconFromRootFolder, 0, 2);
             this.tableLayoutPanelFolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelFolder.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanelFolder.Name = "tableLayoutPanelFolder";
-            this.tableLayoutPanelFolder.RowCount = 2;
+            this.tableLayoutPanelFolder.RowCount = 3;
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(394, 53);
+            this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(394, 78);
             this.tableLayoutPanelFolder.TabIndex = 0;
             // 
             // textBoxFolder
@@ -501,7 +504,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxUSB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxUSB.Controls.Add(this.tableLayoutPanelUSB);
             this.groupBoxUSB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxUSB.Location = new System.Drawing.Point(3, 90);
+            this.groupBoxUSB.Location = new System.Drawing.Point(3, 115);
             this.groupBoxUSB.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxUSB.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxUSB.Name = "groupBoxUSB";
@@ -589,7 +592,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxAutostart.AutoSize = true;
             this.groupBoxAutostart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxAutostart.Controls.Add(this.tableLayoutPanelAutostart);
-            this.groupBoxAutostart.Location = new System.Drawing.Point(3, 180);
+            this.groupBoxAutostart.Location = new System.Drawing.Point(3, 205);
             this.groupBoxAutostart.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxAutostart.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxAutostart.Name = "groupBoxAutostart";
@@ -630,7 +633,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHotkey.AutoSize = true;
             this.groupBoxHotkey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHotkey.Controls.Add(this.tableLayoutPanelHotkey);
-            this.groupBoxHotkey.Location = new System.Drawing.Point(3, 239);
+            this.groupBoxHotkey.Location = new System.Drawing.Point(3, 264);
             this.groupBoxHotkey.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxHotkey.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxHotkey.Name = "groupBoxHotkey";
@@ -683,7 +686,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxLanguage.AutoSize = true;
             this.groupBoxLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxLanguage.Controls.Add(this.tableLayoutPanelLanguage);
-            this.groupBoxLanguage.Location = new System.Drawing.Point(3, 304);
+            this.groupBoxLanguage.Location = new System.Drawing.Point(3, 329);
             this.groupBoxLanguage.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxLanguage.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxLanguage.Name = "groupBoxLanguage";
@@ -3195,6 +3198,16 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // checkBoxUseIconFromRootFolder
+            // 
+            this.checkBoxUseIconFromRootFolder.AutoSize = true;
+            this.checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(3, 56);
+            this.checkBoxUseIconFromRootFolder.Name = "checkBoxUseIconFromRootFolder";
+            this.checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(205, 19);
+            this.checkBoxUseIconFromRootFolder.TabIndex = 1;
+            this.checkBoxUseIconFromRootFolder.Text = "checkBoxUseIconFromRootFolder";
+            this.checkBoxUseIconFromRootFolder.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -3614,5 +3627,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.Label labelColorDarkModeSlider;
         private System.Windows.Forms.Button C;
         private System.Windows.Forms.Button buttonColorsDefaultDarkMode;
+        private System.Windows.Forms.CheckBox checkBoxUseIconFromRootFolder;
     }
 }

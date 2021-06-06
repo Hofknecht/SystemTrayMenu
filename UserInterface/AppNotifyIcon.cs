@@ -17,7 +17,7 @@ namespace SystemTrayMenu.UserInterface
     internal class AppNotifyIcon : IDisposable
     {
         private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
-        private static readonly Icon SystemTrayMenu = R.SystemTrayMenu;
+        private static Icon SystemTrayMenu = R.SystemTrayMenu;
         private readonly Timer load = new Timer();
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
         private readonly int indexLoad;
@@ -40,6 +40,15 @@ namespace SystemTrayMenu.UserInterface
             load.Interval = Interval60FPS;
             notifyIcon.Text = Translator.GetText("SystemTrayMenu");
             notifyIcon.Visible = true;
+
+            if (Properties.Settings.Default.UseIconFromRootFolder)
+            {
+                SystemTrayMenu = IconReader.GetFolderIconSTA(
+                    Config.Path,
+                    IconReader.FolderType.Closed,
+                    false);
+            }
+
             notifyIcon.Icon = SystemTrayMenu;
             AppContextMenu contextMenus = new AppContextMenu();
 

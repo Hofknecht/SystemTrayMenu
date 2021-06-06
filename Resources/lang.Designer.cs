@@ -250,15 +250,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Colors Light Mode and Dark Mode.
-        /// </summary>
-        internal static string Colors_Light_Mode_and_Dark_Mode {
-            get {
-                return ResourceManager.GetString("Colors Light Mode and Dark Mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Couldn’t register the hot key..
         /// </summary>
         internal static string Could_not_register_the_hot_key_ {
@@ -277,15 +268,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark Mode.
-        /// </summary>
-        internal static string Dark_Mode {
-            get {
-                return ResourceManager.GetString("Dark Mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Dark Mode always active.
         /// </summary>
         internal static string Dark_Mode_always_active {
@@ -300,24 +282,6 @@ namespace SystemTrayMenu.Resources {
         internal static string Default {
             get {
                 return ResourceManager.GetString("Default", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Default Dark Mode.
-        /// </summary>
-        internal static string Default_Dark_Mode {
-            get {
-                return ResourceManager.GetString("Default Dark Mode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Default Light Mode.
-        /// </summary>
-        internal static string Default_Light_Mode {
-            get {
-                return ResourceManager.GetString("Default Light Mode", resourceCulture);
             }
         }
         
@@ -683,20 +647,20 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To change a color paste a HTML Color Code or double click into a field..
-        /// </summary>
-        internal static string To_change_a_color_paste_a_HTML_Color_Code_or_double_click_into_a_field_ {
-            get {
-                return ResourceManager.GetString("To change a color paste a HTML Color Code or double click into a field.", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to USB.
         /// </summary>
         internal static string USB {
             get {
                 return ResourceManager.GetString("USB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use icon from folder.
+        /// </summary>
+        internal static string Use_icon_from_folder {
+            get {
+                return ResourceManager.GetString("Use icon from folder", resourceCulture);
             }
         }
         

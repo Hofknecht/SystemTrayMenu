@@ -101,6 +101,7 @@ namespace SystemTrayMenu.UserInterface
                 tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxFolder.Text = Translator.GetText("Folder");
                 buttonChangeFolder.Text = Translator.GetText("Change folder");
+                checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from folder");
                 groupBoxUSB.Text = Translator.GetText("USB");
                 buttonChangeRelativeFolder.Text = Translator.GetText("Change to relative folder");
                 checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at the assembly location");
@@ -177,6 +178,8 @@ namespace SystemTrayMenu.UserInterface
             void InitializeFolder()
             {
                 textBoxFolder.Text = Config.Path;
+                checkBoxUseIconFromRootFolder.Checked =
+                    Settings.Default.UseIconFromRootFolder;
             }
 
             InitializeAutostart();
@@ -439,6 +442,9 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonOk_Click(object sender, EventArgs e)
         {
+            Settings.Default.UseIconFromRootFolder =
+                checkBoxUseIconFromRootFolder.Checked;
+
             SaveAutostart();
             void SaveAutostart()
             {
