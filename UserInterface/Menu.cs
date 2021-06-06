@@ -94,6 +94,11 @@ namespace SystemTrayMenu.UserInterface
                 backColorSearch = AppColors.DarkModeSearchField;
             }
 
+            if (backColor.R == 0)
+            {
+                backColor = Color.White;
+            }
+
             labelTitle.BackColor = titleBackColor;
             tableLayoutPanelDgvAndScrollbar.BackColor = backColor;
             dgv.BackgroundColor = backColor;
