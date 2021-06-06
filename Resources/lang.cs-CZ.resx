@@ -216,9 +216,6 @@
   <data name="Customize" xml:space="preserve">
     <value>Přizpůsobit</value>
   </data>
-  <data name="Dark Mode" xml:space="preserve">
-    <value>Temný režim</value>
-  </data>
   <data name="Default" xml:space="preserve">
     <value>Výchozí</value>
   </data>
@@ -246,15 +243,6 @@
   <data name="If an item was clicked" xml:space="preserve">
     <value>Pokud bylo na položku kliknuto</value>
   </data>
-  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
-    <value>Barvy Světlý a Tmavý režim</value>
-  </data>
-  <data name="Default Dark Mode" xml:space="preserve">
-    <value>Výchozí tmavý režim</value>
-  </data>
-  <data name="Default Light Mode" xml:space="preserve">
-    <value>Výchozí světelný režim</value>
-  </data>
   <data name="Background" xml:space="preserve">
     <value>Pozadí</value>
   </data>
@@ -276,9 +264,6 @@
   <data name="Title" xml:space="preserve">
     <value>Titul</value>
   </data>
-  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
-    <value>Chcete-li změnit barvu, vložte barevný kód HTML nebo poklepejte do pole.</value>
-  </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>Změnit na relativní složku</value>
   </data>
@@ -293,5 +278,44 @@
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Pixely maximální výška nabídky</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Šipka</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Šipka při kliknutí</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>Šipka, zatímco se myš pohybuje</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Pozadí šipky při kliknutí</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>Pozadí šipky, zatímco se myš pohybuje</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>Barvy Tmavý režim</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>Barevný režim světla</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Jídelní lístek</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Posuvník</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Posuvník</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Posuvník při tažení</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>Posuvník, zatímco se myš pohybuje 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>Posuvník, zatímco se myš pohybuje 2</value>
   </data>
 </root>

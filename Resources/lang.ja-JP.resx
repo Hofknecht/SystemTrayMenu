@@ -216,9 +216,6 @@
   <data name="Customize" xml:space="preserve">
     <value>カスタマイズ</value>
   </data>
-  <data name="Dark Mode" xml:space="preserve">
-    <value>ダークモード</value>
-  </data>
   <data name="Default" xml:space="preserve">
     <value>デフォルト</value>
   </data>
@@ -246,15 +243,6 @@
   <data name="If an item was clicked" xml:space="preserve">
     <value>アイテムがクリックされた場合</value>
   </data>
-  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
-    <value>カラー ライトモードとダークモード</value>
-  </data>
-  <data name="Default Dark Mode" xml:space="preserve">
-    <value>デフォルトのダークモード</value>
-  </data>
-  <data name="Default Light Mode" xml:space="preserve">
-    <value>デフォルトの照明モード</value>
-  </data>
   <data name="Background" xml:space="preserve">
     <value>バックグラウンド</value>
   </data>
@@ -276,9 +264,6 @@
   <data name="Title" xml:space="preserve">
     <value>題名</value>
   </data>
-  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
-    <value>色を変更するには、HTML カラー コードを貼り付けるか、フィールドをダブルクリックします。</value>
-  </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>相対フォルダに変更</value>
   </data>
@@ -293,5 +278,44 @@
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>ピクセルの最大メニュー高さ</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>矢印</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>クリック時の矢印</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>マウスホバー中の矢印</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>クリック時の矢印の背景</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>マウスホバー時の矢印の背景</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>カラーダークモード</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>カラーライトモード</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>メニュー</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>スクロール・バー</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>スライダー</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>ドラッグ中のスライダー</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>マウスホバー時のスライダー 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>マウスホバー時のスライダー 2</value>
   </data>
 </root>

@@ -216,9 +216,6 @@
   <data name="Customize" xml:space="preserve">
     <value>Aanpassen</value>
   </data>
-  <data name="Dark Mode" xml:space="preserve">
-    <value>Donkere Modus</value>
-  </data>
   <data name="Default" xml:space="preserve">
     <value>Standaard</value>
   </data>
@@ -246,15 +243,6 @@
   <data name="If an item was clicked" xml:space="preserve">
     <value>Als er op een item is geklikt</value>
   </data>
-  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
-    <value>Kleuren Donkere Modus en Lichte Modus</value>
-  </data>
-  <data name="Default Dark Mode" xml:space="preserve">
-    <value>Standaard Donkere Modus</value>
-  </data>
-  <data name="Default Light Mode" xml:space="preserve">
-    <value>Standaard Lichte Modus</value>
-  </data>
   <data name="Background" xml:space="preserve">
     <value>Achtergrond</value>
   </data>
@@ -276,9 +264,6 @@
   <data name="Title" xml:space="preserve">
     <value>Titel</value>
   </data>
-  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
-    <value>Om een kleur te wijzigen, plakt u een HTML-kleurcode of dubbelklikt u in een veld.</value>
-  </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>Verander naar de relatieve map</value>
   </data>
@@ -293,5 +278,44 @@
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Pixels maximale menuhoogte</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Pijl</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Pijl bij klikken</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>Pijl terwijl muis zweeft</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Achtergrond van pijl bij klikken</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>Achtergrond van pijl terwijl muis zweeft</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>Kleuren Donkere modus</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>Kleuren Lichtmodus</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Schuifbalk</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Schuifregelaar</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Schuifregelaar tijdens het slepen</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>Schuifregelaar terwijl muis zweeft 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>Schuifregelaar terwijl muis zweeft 2</value>
   </data>
 </root>

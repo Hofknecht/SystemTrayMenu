@@ -216,9 +216,6 @@
   <data name="Customize" xml:space="preserve">
     <value>커스터마이즈</value>
   </data>
-  <data name="Dark Mode" xml:space="preserve">
-    <value>다크 모드</value>
-  </data>
   <data name="Default" xml:space="preserve">
     <value>기본</value>
   </data>
@@ -246,15 +243,6 @@
   <data name="If an item was clicked" xml:space="preserve">
     <value>항목을 클릭 한 경우</value>
   </data>
-  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
-    <value>색상 라이트 모드 및 다크 모드</value>
-  </data>
-  <data name="Default Dark Mode" xml:space="preserve">
-    <value>기본 다크 모드</value>
-  </data>
-  <data name="Default Light Mode" xml:space="preserve">
-    <value>기본 조명 모드</value>
-  </data>
   <data name="Background" xml:space="preserve">
     <value>배경</value>
   </data>
@@ -276,9 +264,6 @@
   <data name="Title" xml:space="preserve">
     <value>표제</value>
   </data>
-  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
-    <value>색상을 변경하려면 HTML 색상 코드를 붙여 넣거나 필드를 두 번 클릭합니다.</value>
-  </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>상대 폴더로 변경</value>
   </data>
@@ -293,5 +278,44 @@
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>픽셀 최대 메뉴 높이</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>화살</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>클릭시 화살표</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>마우스를 가져가는 동안 화살표</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>클릭시 화살표 배경</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>마우스를 가져가는 동안 화살표의 배경</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>색상 다크 모드</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>색상 라이트 모드</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>메뉴</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>스크롤 바</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>슬라이더</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>드래그하는 동안 슬라이더</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>마우스를 올리는 동안 슬라이더 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>마우스를 올리는 동안 슬라이더 2</value>
   </data>
 </root>

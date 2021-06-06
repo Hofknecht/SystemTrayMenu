@@ -216,9 +216,6 @@
   <data name="Customize" xml:space="preserve">
     <value>Personalizar</value>
   </data>
-  <data name="Dark Mode" xml:space="preserve">
-    <value>Modo oscuro</value>
-  </data>
   <data name="Default" xml:space="preserve">
     <value>Defecto</value>
   </data>
@@ -246,15 +243,6 @@
   <data name="If an item was clicked" xml:space="preserve">
     <value>Si se hizo clic en un elemento</value>
   </data>
-  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
-    <value>Colores Modo Claro y Modo Oscuro</value>
-  </data>
-  <data name="Default Dark Mode" xml:space="preserve">
-    <value>Modo Oscuro predeterminado</value>
-  </data>
-  <data name="Default Light Mode" xml:space="preserve">
-    <value>Modo Claro predeterminado</value>
-  </data>
   <data name="Background" xml:space="preserve">
     <value>Fondo</value>
   </data>
@@ -276,9 +264,6 @@
   <data name="Title" xml:space="preserve">
     <value>Título</value>
   </data>
-  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
-    <value>Para cambiar un color, pegue un código de color HTML o haga doble clic en un campo.</value>
-  </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>Cambiar a carpeta relativa</value>
   </data>
@@ -293,5 +278,44 @@
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Altura máximo de menú de píxeles</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Flecha</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Flecha al hacer clic</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>Flecha mientras el mouse se desplaza</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Fondo de flecha al hacer clic</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>Fondo de flecha mientras se desplaza el mouse</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>Colores Modo oscuro</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>Colores Modo Claro</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menú</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Barra de desplazamiento</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Deslizador</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Control deslizante mientras se arrastra</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>Control deslizante mientras el mouse se desplaza 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>Control deslizante mientras el mouse se desplaza 2</value>
   </data>
 </root>

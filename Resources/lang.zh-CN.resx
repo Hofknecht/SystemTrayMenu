@@ -216,9 +216,6 @@
   <data name="Customize" xml:space="preserve">
     <value>定制</value>
   </data>
-  <data name="Dark Mode" xml:space="preserve">
-    <value>黑暗模式</value>
-  </data>
   <data name="Default" xml:space="preserve">
     <value>默认</value>
   </data>
@@ -246,15 +243,6 @@
   <data name="If an item was clicked" xml:space="preserve">
     <value>如果一个项目被点击</value>
   </data>
-  <data name="Colors Light Mode and Dark Mode" xml:space="preserve">
-    <value>颜色亮模式和暗模式</value>
-  </data>
-  <data name="Default Dark Mode" xml:space="preserve">
-    <value>默认暗模式</value>
-  </data>
-  <data name="Default Light Mode" xml:space="preserve">
-    <value>默认灯光模式</value>
-  </data>
   <data name="Background" xml:space="preserve">
     <value>背景</value>
   </data>
@@ -276,9 +264,6 @@
   <data name="Title" xml:space="preserve">
     <value>标题</value>
   </data>
-  <data name="To change a color paste a HTML Color Code or double click into a field." xml:space="preserve">
-    <value>要更改颜色，请粘贴 HTML 颜色代码或双击字段。</value>
-  </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>切换到相对文件夹</value>
   </data>
@@ -293,5 +278,44 @@
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>像素最大菜单高度</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>箭</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>单击时箭头</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>鼠标悬停时的箭头</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>单击时箭头的背景</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>鼠标悬停时的箭头背景</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>颜色暗模式</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>颜色灯光模式</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>菜单</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>滚动条</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>滑块</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>拖动时的滑块</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>鼠标悬停时的滑块 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>鼠标悬停时的滑块 2</value>
   </data>
 </root>
