@@ -23,11 +23,13 @@ steps:
     packageType: sdk
     version: 3.1.102
 
-- task: NuGetCommand@2
-  displayName: NuGet restore
-  inputs:
-    restoreSolution: '$(solution)'
-    feedsToUse: config
+
+#- task: NuGetCommand@2
+#  displayName: NuGet restore
+#  inputs:
+#    restoreSolution: '$(solution)'
+#    feedsToUse: config
+## => not more working, removed, trying via MSBuild restoreNugetPackages
 
 #- task: DotNetCoreCLI@2
 #  displayName: Publish single-exe x64
@@ -64,6 +66,7 @@ steps:
   displayName: 'MSBuild'
   inputs:
     solution: '**/*.sln'
+    restoreNugetPackages: true
     msbuildArguments: '-p:Configuration=Release -p:Platform="Any CPU"'
 #    msbuildArguments: '-p:Configuration=Release -p:Platform=x64'
 #    msbuildArguments: '-p:Configuration=Release -p:Platform=x86'
