@@ -191,7 +191,7 @@ namespace SystemTrayMenu.Properties
                 XDeclaration declaration = new XDeclaration("1.0", "utf-8", "true");
                 XElement config = new XElement(Config);
                 XElement userSettings = new XElement(UserSettings);
-                XElement group = new XElement(typeof(Properties.Settings).FullName);
+                XElement group = new XElement(typeof(Settings).FullName);
                 userSettings.Add(group);
                 config.Add(userSettings);
                 doc.Add(config);
@@ -241,7 +241,7 @@ namespace SystemTrayMenu.Properties
             }
 
             // get all of the <setting name="..." serializeAs="..."> elements.
-            IEnumerable<XElement> settingElements = configXml.Element(Config).Element(UserSettings).Element(typeof(Properties.Settings).FullName).Elements(Setting);
+            IEnumerable<XElement> settingElements = configXml.Element(Config).Element(UserSettings).Element(typeof(Settings).FullName).Elements(Setting);
 
             // iterate through, adding them to the dictionary, (checking for nulls, xml no likey nulls)
             // using "String" as default serializeAs...just in case, no real good reason.
@@ -274,7 +274,7 @@ namespace SystemTrayMenu.Properties
             }
 
             // get the settings group (e.g. <Company.Project.Desktop.Settings>)
-            XElement settingsSection = import.Element(Config).Element(UserSettings).Element(typeof(Properties.Settings).FullName);
+            XElement settingsSection = import.Element(Config).Element(UserSettings).Element(typeof(Settings).FullName);
 
             // iterate though the dictionary, either updating the value or adding the new setting.
             foreach (KeyValuePair<string, SettingStruct> entry in SettingsDictionary)

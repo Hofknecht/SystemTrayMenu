@@ -18,7 +18,7 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
-    using Menu = SystemTrayMenu.UserInterface.Menu;
+    using Menu = UserInterface.Menu;
     using Timer = System.Windows.Forms.Timer;
 
     internal class Menus : IDisposable

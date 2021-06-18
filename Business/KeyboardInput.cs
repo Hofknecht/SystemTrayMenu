@@ -12,7 +12,7 @@ namespace SystemTrayMenu.Handler
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
-    using Menu = SystemTrayMenu.UserInterface.Menu;
+    using Menu = UserInterface.Menu;
 
     internal class KeyboardInput : IDisposable
     {

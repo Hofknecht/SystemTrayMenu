@@ -746,7 +746,7 @@ namespace SystemTrayMenu.UserInterface
 
         private float GetChangeForOneItem(float change, int pixelRange)
         {
-            return (change * pixelRange) / (Maximum - LargeChange);
+            return change * pixelRange / (Maximum - LargeChange);
         }
 
         private int GetTrackHeight()

@@ -39,6 +39,7 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxFolder = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelChangeFolder = new System.Windows.Forms.TableLayoutPanel();
             this.buttonChangeFolder = new System.Windows.Forms.Button();
+            this.checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
             this.groupBoxUSB = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelUSB = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelRelativeFolderOpenAssembly = new System.Windows.Forms.TableLayoutPanel();
@@ -242,7 +243,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -497,6 +497,16 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChangeFolder.Text = "Change Folder";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
             this.buttonChangeFolder.Click += new System.EventHandler(this.ButtonChange_Click);
+            // 
+            // checkBoxUseIconFromRootFolder
+            // 
+            this.checkBoxUseIconFromRootFolder.AutoSize = true;
+            this.checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(3, 56);
+            this.checkBoxUseIconFromRootFolder.Name = "checkBoxUseIconFromRootFolder";
+            this.checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(205, 19);
+            this.checkBoxUseIconFromRootFolder.TabIndex = 1;
+            this.checkBoxUseIconFromRootFolder.Text = "checkBoxUseIconFromRootFolder";
+            this.checkBoxUseIconFromRootFolder.UseVisualStyleBackColor = true;
             // 
             // groupBoxUSB
             // 
@@ -3197,16 +3207,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
-            // 
-            // checkBoxUseIconFromRootFolder
-            // 
-            this.checkBoxUseIconFromRootFolder.AutoSize = true;
-            this.checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(3, 56);
-            this.checkBoxUseIconFromRootFolder.Name = "checkBoxUseIconFromRootFolder";
-            this.checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(205, 19);
-            this.checkBoxUseIconFromRootFolder.TabIndex = 1;
-            this.checkBoxUseIconFromRootFolder.Text = "checkBoxUseIconFromRootFolder";
-            this.checkBoxUseIconFromRootFolder.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 

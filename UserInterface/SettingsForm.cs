@@ -40,14 +40,14 @@ namespace SystemTrayMenu.UserInterface
                     Size = new Size(200, 20),
                     Text = "None",
                 };
-                textBoxHotkey.Enter += new EventHandler(this.TextBoxHotkeyEnter);
-                textBoxHotkey.Leave += new EventHandler(this.TextBoxHotkey_Leave);
+                textBoxHotkey.Enter += new EventHandler(TextBoxHotkeyEnter);
+                textBoxHotkey.Leave += new EventHandler(TextBoxHotkey_Leave);
                 tableLayoutPanelHotkey.Controls.Remove(textBoxHotkeyPlaceholder);
                 tableLayoutPanelHotkey.Controls.Add(textBoxHotkey, 0, 0);
             }
 
             // designer always resets it to 1
-            this.tabControl.SelectedIndex = 0;
+            tabControl.SelectedIndex = 0;
 
             CombineControls(textBoxColorTitle, pictureBoxTitle);
             CombineControls(textBoxColorBackground, pictureBoxBackground);
