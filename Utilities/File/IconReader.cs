@@ -52,6 +52,10 @@ namespace SystemTrayMenu.Utilities
             Icon icon = null;
             string extension = Path.GetExtension(filePath);
             IconSize size = IconSize.Small;
+            if (Scaling.Factor > 1)
+            {
+                size = IconSize.Large;
+            }
 
             if (IsExtensionWitSameIcon(extension))
             {

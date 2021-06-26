@@ -19,7 +19,16 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Initialize()
         {
-            CalculateScalingFactor();
+#warning [Feature(s)] High resolution compatibility #188
+            Factor = 1f; // todo put factor to options
+
+            // Not more necesssary, i think since upgrade to .net core
+            // CalculateScalingFactor();
+        }
+
+        internal static int Scale(int width)
+        {
+            return (int)Math.Round(width * Factor, 0, MidpointRounding.AwayFromZero);
         }
 
         private static void CalculateScalingFactor()

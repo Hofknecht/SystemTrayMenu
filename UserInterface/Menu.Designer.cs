@@ -49,9 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuAlwaysOpen)).BeginInit();
             this.SuspendLayout();
-            // Controls like the scrollbar are removed when open the designer
-            // When adding after InitializeComponent(), then e.g. scrollbar on high dpi not more working
-            InitializeComponentControlsTheDesignerRemoves();
             // 
             // tableLayoutPanelDgvAndScrollbar
             // 
@@ -220,6 +217,11 @@
             this.pictureBoxMenuAlwaysOpen.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
             this.pictureBoxMenuAlwaysOpen.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
             this.pictureBoxMenuAlwaysOpen.Resize += new System.EventHandler(this.PictureBox_Resize);
+            //
+            // Controls like the scrollbar are removed when open the designer
+            // When adding after InitializeComponent(), then e.g. scrollbar on high dpi not more working
+            //
+            InitializeComponentControlsTheDesignerRemoves();
             // 
             // Menu
             // 

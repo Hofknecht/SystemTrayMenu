@@ -28,7 +28,7 @@ namespace SystemTrayMenu.Utilities
                 float checkWidth = gfx.MeasureString(
                     row.Cells[i].Value.ToString() + "_",
                     dgv.RowTemplate.DefaultCellStyle.Font)
-                    .Width * Scaling.Factor;
+                    .Width;
                 if (checkWidth > widthMax)
                 {
                     widthMax = checkWidth;
@@ -47,7 +47,7 @@ namespace SystemTrayMenu.Utilities
             float width0 = gfx.MeasureString(
                 stringWithWidthLikeIcon,
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
-                dgv.RowTemplate.DefaultCellStyle.Font).Width * Scaling.Factor;
+                dgv.RowTemplate.DefaultCellStyle.Font).Width;
             dgv.Columns[0].Width = (int)width0;
         }
     }

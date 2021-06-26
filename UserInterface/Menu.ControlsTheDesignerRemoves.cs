@@ -3,6 +3,7 @@
     using System;
     using System.Drawing;
     using System.Windows.Forms;
+    using SystemTrayMenu.Utilities;
 
     internal partial class Menu
     {
@@ -31,7 +32,7 @@
             labelTitle.AutoEllipsis = true;
             labelTitle.AutoSize = true;
             labelTitle.Dock = DockStyle.Fill;
-            labelTitle.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            labelTitle.Font = new Font("Segoe UI", 8.25F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             labelTitle.ForeColor = Color.Black;
             labelTitle.Location = new Point(0, 0);
             labelTitle.Margin = new Padding(0);
@@ -76,10 +77,10 @@
                 ColumnText,
             });
 
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
             dgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
 
-            dgv.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+            dgv.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 9F * Scaling.Factor, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
             dgv.RowTemplate.Height = 20;
             dgv.RowTemplate.ReadOnly = true;
 
@@ -90,7 +91,19 @@
             // customScrollbar
             customScrollbar.Location = new Point(0, 0);
             customScrollbar.Name = "customScrollbar";
-            customScrollbar.Size = new Size(15, 40);
+            customScrollbar.Size = new Size(Scaling.Scale(15), 40);
+
+            pictureBoxMenuAlwaysOpen.Size = new Size(
+                Scaling.Scale(pictureBoxMenuAlwaysOpen.Width),
+                Scaling.Scale(pictureBoxMenuAlwaysOpen.Height));
+
+            pictureBoxOpenFolder.Size = new Size(
+                Scaling.Scale(pictureBoxOpenFolder.Width),
+                Scaling.Scale(pictureBoxOpenFolder.Height));
+
+            pictureBoxSearch.Size = new Size(
+                Scaling.Scale(pictureBoxSearch.Width),
+                Scaling.Scale(pictureBoxSearch.Height));
 
             // tableLayoutPanelDgvAndScrollbar.ResumeLayout(false);
             // ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
