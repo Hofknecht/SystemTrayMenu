@@ -220,8 +220,7 @@ namespace SystemTrayMenu.Business
             keyboardInput.RowSelected += AdjustScrollbarToDisplayedRow;
             void AdjustScrollbarToDisplayedRow(DataGridView dgv, int index)
             {
-#warning to improve arguments, do not use .Parent.Parent.Parent
-                Menu menu = dgv.Parent.Parent.Parent as Menu;
+                Menu menu = (Menu)dgv.FindForm();
                 menu.AdjustScrollbar();
             }
 
@@ -466,7 +465,9 @@ namespace SystemTrayMenu.Business
         internal void SwitchOpenClose(bool byClick)
         {
             waitToOpenMenu.MouseActive = byClick;
-            if (byClick && (DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
+            if (byClick &&
+                !Config.AlwaysOpenByPin &&
+                (DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
             {
                 // By click on notifyicon the menu gets deactivated and closed
             }
@@ -610,9 +611,15 @@ namespace SystemTrayMenu.Business
             return Form.ActiveForm is Menu;
         }
 
-        private static void OpenFolder()
+        private static void OpenFolder(string pathToFolder = "")
         {
-            Log.ProcessStart(Config.Path);
+            string path = pathToFolder;
+            if (string.IsNullOrEmpty(path))
+            {
+                path = Config.Path;
+            }
+
+            Log.ProcessStart(path);
         }
 
         private Menu Create(MenuData menuData, string title = null)
@@ -627,7 +634,20 @@ namespace SystemTrayMenu.Business
                 }
 
                 menu.SetTitle(title);
-                menu.UserClickedOpenFolder += OpenFolder;
+                menu.UserClickedOpenFolder += OpenMainFolder;
+                void OpenMainFolder()
+                {
+                    OpenFolder();
+                }
+            }
+            else
+            {
+                menu.SetTitle(Path.GetFileName(menuData.RowDataParent.TargetFilePath));
+                menu.UserClickedOpenFolder += OpenSubFolder;
+                void OpenSubFolder()
+                {
+                    OpenFolder(menuData.RowDataParent.TargetFilePath);
+                }
             }
 
             menu.Level = menuData.Level;
@@ -884,6 +904,10 @@ namespace SystemTrayMenu.Business
                             AsList.ForEach(menu => menu.ShowTransparent());
                         }
                     }
+                    else if (Config.AlwaysOpenByPin)
+                    {
+                        AsList.ForEach(menu => menu.ShowTransparent());
+                    }
                     else
                     {
                         MenusFadeOut();
@@ -904,6 +928,8 @@ namespace SystemTrayMenu.Business
 
                 menu.HideWithFade();
             });
+
+            Config.AlwaysOpenByPin = false;
         }
 
         private void AdjustMenusSizeAndLocation()

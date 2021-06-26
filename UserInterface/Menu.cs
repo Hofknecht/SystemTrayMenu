@@ -8,11 +8,13 @@ namespace SystemTrayMenu.UserInterface
     using System.Data;
     using System.Drawing;
     using System.Globalization;
-    using System.Linq;
+    using System.IO;
     using System.Reflection;
     using System.Windows.Forms;
+    using Svg;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
 
     internal partial class Menu : Form
@@ -70,13 +72,6 @@ namespace SystemTrayMenu.UserInterface
             fading.Hide += Hide;
 
             InitializeComponent();
-            pictureBoxSearch.Paint += PictureBoxSearch_Paint;
-            void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
-            {
-                e.Graphics.DrawIcon(
-                    Search,
-                    new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
-            }
 
             SetDoubleBuffer(dgv, true);
 
@@ -84,6 +79,7 @@ namespace SystemTrayMenu.UserInterface
             Color titleBackColor = AppColors.Title;
             Color backColor = AppColors.Background;
             Color backColorSearch = AppColors.SearchField;
+
             if (Config.IsDarkMode())
             {
                 foreColor = Color.White;
@@ -99,7 +95,7 @@ namespace SystemTrayMenu.UserInterface
                 backColor = Color.White;
             }
 
-            labelTitle.BackColor = titleBackColor;
+            tableLayoutPanelTitle.BackColor = titleBackColor;
             tableLayoutPanelDgvAndScrollbar.BackColor = backColor;
             dgv.BackgroundColor = backColor;
             textBoxSearch.BackColor = backColorSearch;
@@ -123,7 +119,7 @@ namespace SystemTrayMenu.UserInterface
             void CustomScrollbar_Scroll(object sender, EventArgs e)
             {
                 decimal firstIndex = customScrollbar.Value * dgv.Rows.Count / (decimal)customScrollbar.Maximum;
-                int firstIndexRounded = (int)Math.Round(firstIndex, 0, MidpointRounding.AwayFromZero);
+                int firstIndexRounded = (int)Math.Ceiling(firstIndex);
                 if (firstIndexRounded > -1 && firstIndexRounded < dgv.RowCount)
                 {
                     dgv.FirstDisplayedScrollingRowIndex = firstIndexRounded;
@@ -145,6 +141,10 @@ namespace SystemTrayMenu.UserInterface
             {
                 MouseLeave?.Invoke();
             }
+
+            AllowDrop = true;
+            DragEnter += DragDropHelper.DragEnter;
+            DragDrop += DragDropHelper.DragDrop;
         }
 
         internal new event EventHandlerEmpty MouseWheel;
@@ -215,14 +215,14 @@ namespace SystemTrayMenu.UserInterface
 
         internal void SetType(MenuType type)
         {
+            if (type != MenuType.Main)
+            {
+                pictureBoxMenuAlwaysOpen.Visible = false;
+            }
+
             switch (type)
             {
                 case MenuType.Sub:
-                    if (!labelTitle.IsDisposed)
-                    {
-                        labelTitle.Dispose();
-                    }
-
                     break;
                 case MenuType.Empty:
                     SetTitle(Translator.GetText("Folder empty"));
@@ -406,6 +406,12 @@ namespace SystemTrayMenu.UserInterface
                     // Set position on same height as the selected row from predecessor
                     y = menuPredecessor.Location.Y + menuPredecessor.dgv.Location.Y + distanceFromItemToDgvTop;
 
+                    // when FolderEmpty or NoAccess the title should appear in same height as selected row
+                    if (GetDataGridView().RowCount == 0)
+                    {
+                        y += tableLayoutPanelTitle.Height;
+                    }
+
                     // Move vertically when out of bounds
                     if (bounds.Y + bounds.Height < y + Height)
                     {
@@ -561,10 +567,10 @@ namespace SystemTrayMenu.UserInterface
                 widthScrollbar = customScrollbar.Width;
             }
 
-            if (labelTitle.Width > (widthIcon + widthText + widthScrollbar))
+            if (tableLayoutPanelTitle.Width > (widthIcon + widthText + widthScrollbar))
             {
-                dgv.Width = labelTitle.Width - widthScrollbar;
-                dgv.Columns[1].Width = labelTitle.Width - widthIcon - widthScrollbar;
+                dgv.Width = tableLayoutPanelTitle.Width - widthScrollbar;
+                dgv.Columns[1].Width = tableLayoutPanelTitle.Width - widthIcon - widthScrollbar;
             }
             else
             {
@@ -585,24 +591,6 @@ namespace SystemTrayMenu.UserInterface
             ((HandledMouseEventArgs)e).Handled = true;
             customScrollbar.CustomScrollbar_MouseWheel(sender, e);
             MouseWheel?.Invoke();
-        }
-
-        private void LabelTitle_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                UserClickedOpenFolder?.Invoke();
-            }
-        }
-
-        private void LabelTitle_MouseEnter(object sender, EventArgs e)
-        {
-            labelTitle.BackColor = MenuDefines.ColorTitleSelected;
-        }
-
-        private void LabelTitle_MouseLeave(object sender, EventArgs e)
-        {
-            labelTitle.BackColor = MenuDefines.ColorTitleBackground;
         }
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
@@ -683,6 +671,79 @@ namespace SystemTrayMenu.UserInterface
             }
 
             SearchTextChanged.Invoke(this, null);
+        }
+
+        private void PictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            pictureBox.BackColor = MenuDefines.ColorSelectedItem;
+            pictureBox.Tag = true;
+        }
+
+        private void PictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            pictureBox.BackColor = Color.Transparent;
+            pictureBox.Tag = false;
+        }
+
+        private void PictureBox_Resize(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            pictureBox.Invalidate();
+        }
+
+        private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawIcon(Search, new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
+        }
+
+        private void PictureBoxMenuAlwaysOpen_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+
+            if (Config.AlwaysOpenByPin)
+            {
+                e.Graphics.DrawImage(Config.BitmapPinActive, new Rectangle(Point.Empty, pictureBox.ClientSize));
+            }
+            else
+            {
+                e.Graphics.DrawImage(Config.BitmapPin, new Rectangle(Point.Empty, pictureBox.ClientSize));
+            }
+
+            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
+            {
+                Rectangle rowBounds = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
+                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
+            }
+        }
+
+        private void PictureBoxMenuOpenFolder_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+
+            e.Graphics.DrawImage(Config.BitmapOpenFolder, new Rectangle(Point.Empty, pictureBox.ClientSize));
+
+            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
+            {
+                Rectangle rowBounds = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
+                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
+            }
+        }
+
+        private void PictureBoxMenuAlwaysOpen_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            Config.AlwaysOpenByPin = !Config.AlwaysOpenByPin;
+            pictureBox.Invalidate();
+        }
+
+        private void PictureBoxOpenFolder_Click(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                UserClickedOpenFolder?.Invoke();
+            }
         }
     }
 }

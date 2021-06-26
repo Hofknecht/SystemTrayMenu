@@ -20,18 +20,17 @@
 
             tableLayoutPanelDgvAndScrollbar.Controls.Add(customScrollbar, 1, 0);
 
-            //tableLayoutPanelDgvAndScrollbar.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
-            //tableLayoutPanelSearch.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)pictureBoxSearch).BeginInit();
-            //tableLayoutPanelMenu.SuspendLayout();
-            //SuspendLayout();
+            // tableLayoutPanelDgvAndScrollbar.SuspendLayout();
+            // ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
+            // tableLayoutPanelSearch.SuspendLayout();
+            // ((System.ComponentModel.ISupportInitialize)pictureBoxSearch).BeginInit();
+            // tableLayoutPanelMenu.SuspendLayout();
+            // SuspendLayout();
 
             // labelTitle
             labelTitle.AutoEllipsis = true;
             labelTitle.AutoSize = true;
             labelTitle.Dock = DockStyle.Fill;
-            labelTitle.BackColor = Color.Azure;
             labelTitle.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
             labelTitle.ForeColor = Color.Black;
             labelTitle.Location = new Point(0, 0);
@@ -41,9 +40,6 @@
             labelTitle.Size = new Size(70, 14);
             labelTitle.Text = "STM";
             labelTitle.TextAlign = ContentAlignment.MiddleCenter;
-            labelTitle.MouseDoubleClick += new MouseEventHandler(LabelTitle_MouseDoubleClick);
-            labelTitle.MouseEnter += new EventHandler(LabelTitle_MouseEnter);
-            labelTitle.MouseLeave += new EventHandler(LabelTitle_MouseLeave);
             labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);
 
             // ColumnIcon
@@ -90,23 +86,22 @@
             textBoxSearch.ContextMenuStrip = new ContextMenuStrip();
 
             tableLayoutPanelTitle.Controls.Add(labelTitle, 1, 0);
-            //tableLayoutPanelMenu.Controls.Add(labelTitle, 0, 0);
 
             // customScrollbar
             customScrollbar.Location = new Point(0, 0);
             customScrollbar.Name = "customScrollbar";
             customScrollbar.Size = new Size(15, 40);
 
-            //tableLayoutPanelDgvAndScrollbar.ResumeLayout(false);
-            //((System.ComponentModel.ISupportInitialize)dgv).EndInit();
-            //tableLayoutPanelSearch.ResumeLayout(false);
-            //tableLayoutPanelSearch.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)pictureBoxSearch).EndInit();
-            //tableLayoutPanelMenu.ResumeLayout(false);
-            //tableLayoutPanelMenu.PerformLayout();
-            //customScrollbar.PerformLayout();
-            //ResumeLayout(false);
-            //PerformLayout();
+            // tableLayoutPanelDgvAndScrollbar.ResumeLayout(false);
+            // ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
+            // tableLayoutPanelSearch.ResumeLayout(false);
+            // tableLayoutPanelSearch.PerformLayout();
+            // ((System.ComponentModel.ISupportInitialize)pictureBoxSearch).EndInit();
+            // tableLayoutPanelMenu.ResumeLayout(false);
+            // tableLayoutPanelMenu.PerformLayout();
+            // customScrollbar.PerformLayout();
+            // ResumeLayout(false);
+            // PerformLayout();
         }
     }
 }

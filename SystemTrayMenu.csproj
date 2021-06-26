@@ -281,6 +281,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Svg" Version="3.2.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Packaging\AppPackages\" />

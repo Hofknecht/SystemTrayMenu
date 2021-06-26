@@ -62,7 +62,9 @@ namespace SystemTrayMenu.DataClasses
         public void Dispose()
         {
             Dispose(true);
+#if DEBUG
             GC.SuppressFinalize(this);
+#endif
         }
 
         internal void SetText(string text)

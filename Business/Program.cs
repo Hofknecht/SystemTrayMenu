@@ -43,6 +43,8 @@ namespace SystemTrayMenu
                         Application.Run();
                     }
                 }
+
+                Config.Dispose();
             }
             catch (Exception ex)
             {

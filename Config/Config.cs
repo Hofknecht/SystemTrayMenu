@@ -9,15 +9,19 @@ namespace SystemTrayMenu
     using System.Diagnostics;
     using System.Drawing;
     using System.IO;
-    using System.Reflection;
     using System.Windows.Forms;
     using Microsoft.Win32;
+    using Svg;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
 
     public static class Config
     {
+        internal static readonly Bitmap BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular);
+        internal static readonly Bitmap BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular);
+        internal static readonly Bitmap BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled);
+
         private static bool readDarkModeDone;
         private static bool isDarkMode;
         private static bool readHideFileExtdone;
@@ -27,10 +31,19 @@ namespace SystemTrayMenu
 
         public static string Path => Settings.Default.PathDirectory;
 
+        public static bool AlwaysOpenByPin { get; internal set; }
+
         public static void Initialize()
         {
             UpgradeIfNotUpgraded();
             InitializeColors();
+        }
+
+        public static void Dispose()
+        {
+            BitmapOpenFolder.Dispose();
+            BitmapPin.Dispose();
+            BitmapPinActive.Dispose();
         }
 
         public static bool LoadOrSetByUser()
@@ -371,6 +384,15 @@ namespace SystemTrayMenu
             if (save && changed)
             {
                 Settings.Default.Save();
+            }
+        }
+
+        private static Bitmap ReadSvg(byte[] byteArray)
+        {
+            using (var stream = new MemoryStream(byteArray))
+            {
+                var svgDocument = SvgDocument.Open<SvgDocument>(stream);
+                return svgDocument.Draw();
             }
         }
 
