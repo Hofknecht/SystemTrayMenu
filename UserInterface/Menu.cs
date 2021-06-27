@@ -85,13 +85,14 @@ namespace SystemTrayMenu.UserInterface
                 foreColor = Color.White;
                 labelTitle.ForeColor = foreColor;
                 textBoxSearch.ForeColor = foreColor;
-                ColorConverter colorConverter = new ColorConverter();
-                labelFoldersCount.ForeColor = (Color)colorConverter.ConvertFromString("#585858");
-                labelFilesCount.ForeColor = (Color)colorConverter.ConvertFromString("#585858");
                 titleBackColor = AppColors.DarkModeTitle;
                 backColor = AppColors.DarkModeBackground;
                 backColorSearch = AppColors.DarkModeSearchField;
             }
+
+            ColorConverter colorConverter = new ColorConverter();
+            labelFoldersCount.ForeColor = (Color)colorConverter.ConvertFromString("#585858");
+            labelFilesCount.ForeColor = (Color)colorConverter.ConvertFromString("#585858");
 
             if (backColor.R == 0)
             {
@@ -417,8 +418,8 @@ namespace SystemTrayMenu.UserInterface
                     // Set position on same height as the selected row from predecessor
                     y = menuPredecessor.Location.Y + menuPredecessor.dgv.Location.Y + distanceFromItemToDgvTop;
 
-                    // when FolderEmpty or NoAccess the title should appear in same height as selected row
-                    if (GetDataGridView().RowCount == 0)
+                    // when warning the title should appear in same height as selected row
+                    if (!tableLayoutPanelSearch.Visible)
                     {
                         y += tableLayoutPanelTitle.Height;
                     }
@@ -458,6 +459,12 @@ namespace SystemTrayMenu.UserInterface
                 dgv.FirstDisplayedScrollingRowIndex * (decimal)customScrollbar.Maximum / dgv.Rows.Count,
                 0,
                 MidpointRounding.AwayFromZero);
+        }
+
+        internal void SetCounts(int foldersCount, int filesCount)
+        {
+            labelFoldersCount.Text = foldersCount.ToString();
+            labelFilesCount.Text = filesCount.ToString();
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keys)
@@ -784,12 +791,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 UserClickedOpenFolder?.Invoke();
             }
-        }
-
-        internal void SetCounts(int foldersCount, int filesCount)
-        {
-            labelFoldersCount.Text = foldersCount.ToString();
-            labelFilesCount.Text = filesCount.ToString();
         }
     }
 }
