@@ -11,13 +11,13 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Forms;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
-    using R = Properties.Resources;
+    using R = SystemTrayMenu.Properties.Resources;
     using Timer = System.Windows.Forms.Timer;
 
     internal class AppNotifyIcon : IDisposable
     {
         private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
-        private static Icon SystemTrayMenu = R.SystemTrayMenu;
+        private static Icon systemTrayMenu = R.SystemTrayMenu;
         private readonly Timer load = new Timer();
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
         private readonly int indexLoad;
@@ -43,13 +43,13 @@ namespace SystemTrayMenu.UserInterface
 
             if (Properties.Settings.Default.UseIconFromRootFolder)
             {
-                SystemTrayMenu = IconReader.GetFolderIconSTA(
+                systemTrayMenu = IconReader.GetFolderIconSTA(
                     Config.Path,
                     IconReader.FolderType.Closed,
                     false);
             }
 
-            notifyIcon.Icon = SystemTrayMenu;
+            notifyIcon.Icon = systemTrayMenu;
             AppContextMenu contextMenus = new AppContextMenu();
 
             contextMenus.ClickedOpenLog += ClickedOpenLog;
@@ -132,7 +132,7 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                notifyIcon.Icon = SystemTrayMenu;
+                notifyIcon.Icon = systemTrayMenu;
                 load.Stop();
             }
         }

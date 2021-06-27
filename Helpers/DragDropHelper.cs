@@ -1,4 +1,8 @@
-﻿namespace SystemTrayMenu.Helpers
+﻿// <copyright file="DragDropHelper.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SystemTrayMenu.Helpers
 {
     using System;
     using System.IO;
@@ -69,30 +73,6 @@
             File.Delete(pathIconPng);
 
             var title = url;
-
-            // e.g. not working for https://web.skype.com/
-            // var webGet = new HtmlWeb();
-            // var document = webGet.Load(url);
-            // var matchingElements = document.DocumentNode.Descendants()
-            //              .Where(x => x.Name.Equals("title", StringComparison.InvariantCultureIgnoreCase));
-            // if (matchingElements != null && matchingElements.Count() > 0)
-            // {
-            //    var titleNode = matchingElements.Last();
-            //    if (titleNode != null)
-            //    {
-            //        title = titleNode.InnerText;
-            //    }
-            // }
-
-            // e.g. not working for https://web.skype.com/
-            ////var titleNode = document.DocumentNode.SelectNodes("title").Last(); //.SelectSingleNode("html/head/title");
-
-            // e.g. not working for https://web.skype.com/
-            ////WebClient client = new WebClient();
-            // client.Headers.Add("user-agent", "Mozilla/5.0");
-            // string source = client.DownloadString(url);
-            // title = Regex.Match(source, @"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>",
-            //    RegexOptions.IgnoreCase).Groups["Title"].Value;
 
             title = title.Replace("/", " ").
                 Replace("https", string.Empty).

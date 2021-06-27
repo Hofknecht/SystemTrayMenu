@@ -19,11 +19,7 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Initialize()
         {
-#warning [Feature(s)] High resolution compatibility #188
-            Factor = 1f; // todo put factor to options
-
-            // Not more necesssary, i think since upgrade to .net core
-            // CalculateScalingFactor();
+            Factor = Properties.Settings.Default.SizeInPercentage / 100f;
         }
 
         internal static int Scale(int width)
@@ -31,6 +27,10 @@ namespace SystemTrayMenu.Utilities
             return (int)Math.Round(width * Factor, 0, MidpointRounding.AwayFromZero);
         }
 
+        /// <summary>
+        /// https://stackoverflow.com/questions/5977445/how-to-get-windows-display-settings
+        /// Since .net core 3.1 not more necessary / always returns 1.
+        /// </summary>
         private static void CalculateScalingFactor()
         {
             Graphics g = Graphics.FromHwnd(IntPtr.Zero);

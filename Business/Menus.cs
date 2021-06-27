@@ -18,7 +18,7 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
-    using Menu = UserInterface.Menu;
+    using Menu = SystemTrayMenu.UserInterface.Menu;
     using Timer = System.Windows.Forms.Timer;
 
     internal class Menus : IDisposable
@@ -988,9 +988,9 @@ namespace SystemTrayMenu.Business
                 {
                     menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation);
                 }
-#warning workaround added also as else, because need adjust scrollbar after search
                 else
                 {
+                    // workaround added also as else, because need adjust scrollbar after search
                     menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation);
                 }
 

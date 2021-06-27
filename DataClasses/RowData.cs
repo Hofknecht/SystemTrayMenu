@@ -18,7 +18,7 @@ namespace SystemTrayMenu.DataClasses
     using IWshRuntimeLibrary;
     using SystemTrayMenu.Utilities;
     using TAFactory.IconPack;
-    using Menu = UserInterface.Menu;
+    using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class RowData : IDisposable
     {

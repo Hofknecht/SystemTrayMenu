@@ -114,9 +114,10 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
                 groupBoxSizeAndLocation.Text = Translator.GetText("Size and location");
-                checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
+                labelSize.Text = $"% {Translator.GetText("Size")}";
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
+                checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
                 checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
@@ -230,7 +231,11 @@ namespace SystemTrayMenu.UserInterface
             checkBoxStoreConfigAtAssemblyLocation.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
 
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
-            checkBoxAppearAtMouseLocation.Checked = Settings.Default.AppearAtMouseLocation;
+
+            numericUpDownSizeInPercentage.Minimum = 100;
+            numericUpDownSizeInPercentage.Maximum = 200;
+            numericUpDownSizeInPercentage.Increment = 25;
+            numericUpDownSizeInPercentage.Value = Settings.Default.SizeInPercentage;
 
             numericUpDownMenuWidth.Minimum = 50;
             numericUpDownMenuWidth.Maximum = 1000;
@@ -241,6 +246,8 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuHeight.Maximum = 4000;
             numericUpDownMenuHeight.Increment = 10;
             numericUpDownMenuHeight.Value = Settings.Default.MaximumMenuHeight;
+
+            checkBoxAppearAtMouseLocation.Checked = Settings.Default.AppearAtMouseLocation;
 
             checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
@@ -483,6 +490,7 @@ namespace SystemTrayMenu.UserInterface
 
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
+            Settings.Default.SizeInPercentage = (int)numericUpDownSizeInPercentage.Value;
             Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
             Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
@@ -516,6 +524,7 @@ namespace SystemTrayMenu.UserInterface
         {
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxAppearAtMouseLocation.Checked = false;
+            numericUpDownSizeInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 300;
             numericUpDownMenuHeight.Value = 600;
             checkBoxStayOpenWhenItemClicked.Checked = true;
@@ -696,6 +705,22 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorSliderHoverDarkMode.Text = "#7a7a7a";
             textBoxColorSliderDraggingDarkMode.Text = "#a6a6a6";
             textBoxColorScrollbarBackgroundDarkMode.Text = "#171717";
+        }
+
+        private void StopPlayingDingSoundEnterKeyPressed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = e.SuppressKeyPress = true;
+            }
+        }
+
+        private void StopPlayingDingSoundEnterKeyPressed_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = e.SuppressKeyPress = true;
+            }
         }
     }
 }

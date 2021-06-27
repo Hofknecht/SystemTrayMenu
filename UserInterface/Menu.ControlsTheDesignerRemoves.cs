@@ -1,4 +1,8 @@
-﻿namespace SystemTrayMenu.UserInterface
+﻿// <copyright file="Menu.ControlsTheDesignerRemoves.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Drawing;

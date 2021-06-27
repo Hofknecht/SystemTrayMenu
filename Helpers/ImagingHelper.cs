@@ -1,4 +1,8 @@
-﻿namespace SystemTrayMenu.Helpers
+﻿// <copyright file="ImagingHelper.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SystemTrayMenu.Helpers
 {
     using System.Drawing;
     using System.Drawing.Imaging;
@@ -32,6 +36,7 @@
                 {
                     width = height = size;
                 }
+
                 Bitmap newBitmap = new Bitmap(inputBitmap, new Size(width, height));
                 if (newBitmap != null)
                 {
@@ -88,8 +93,10 @@
                         }
                     }
                 }
+
                 return false;
             }
+
             return false;
         }
 

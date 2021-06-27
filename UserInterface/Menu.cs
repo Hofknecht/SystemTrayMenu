@@ -695,7 +695,8 @@ namespace SystemTrayMenu.UserInterface
 
         private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawIcon(Search, new Rectangle(0, 0, pictureBoxSearch.Width, pictureBoxSearch.Height));
+            PictureBox pictureBox = (PictureBox)sender;
+            e.Graphics.DrawImage(Config.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
         }
 
         private void PictureBoxMenuAlwaysOpen_Paint(object sender, PaintEventArgs e)

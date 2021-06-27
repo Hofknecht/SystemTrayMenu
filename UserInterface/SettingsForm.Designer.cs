@@ -63,13 +63,16 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
             this.groupBoxSizeAndLocation = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelSizeAndLocation = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.numericUpDownSizeInPercentage = new System.Windows.Forms.NumericUpDown();
+            this.labelSize = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDownMenuHeight = new System.Windows.Forms.NumericUpDown();
             this.labelMaxMenuHeight = new System.Windows.Forms.Label();
-            this.checkBoxAppearAtMouseLocation = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMaxMenuWidth = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDownMenuWidth = new System.Windows.Forms.NumericUpDown();
             this.labelMaxMenuWidth = new System.Windows.Forms.Label();
+            this.checkBoxAppearAtMouseLocation = new System.Windows.Forms.CheckBox();
             this.groupBoxStaysOpen = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelStaysOpen = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxStayOpenWhenItemClicked = new System.Windows.Forms.CheckBox();
@@ -265,6 +268,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClick.SuspendLayout();
             this.groupBoxSizeAndLocation.SuspendLayout();
             this.tableLayoutPanelSizeAndLocation.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeInPercentage)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuHeight)).BeginInit();
             this.tableLayoutPanelMaxMenuWidth.SuspendLayout();
@@ -381,7 +386,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl.Location = new System.Drawing.Point(6, 3);
             this.tabControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 2;
+            this.tabControl.SelectedIndex = 1;
             this.tabControl.Size = new System.Drawing.Size(422, 441);
             this.tabControl.TabIndex = 0;
             // 
@@ -815,7 +820,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSizeAndLocation.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxSizeAndLocation.Name = "groupBoxSizeAndLocation";
             this.groupBoxSizeAndLocation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxSizeAndLocation.Size = new System.Drawing.Size(400, 108);
+            this.groupBoxSizeAndLocation.Size = new System.Drawing.Size(400, 137);
             this.groupBoxSizeAndLocation.TabIndex = 0;
             this.groupBoxSizeAndLocation.TabStop = false;
             this.groupBoxSizeAndLocation.Text = "groupBoxSizeAndLocation";
@@ -826,18 +831,58 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelSizeAndLocation.ColumnCount = 1;
             this.tableLayoutPanelSizeAndLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.tableLayoutPanel1, 0, 2);
-            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.checkBoxAppearAtMouseLocation, 0, 0);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.tableLayoutPanelMaxMenuWidth, 0, 1);
+            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.checkBoxAppearAtMouseLocation, 0, 3);
             this.tableLayoutPanelSizeAndLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelSizeAndLocation.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelSizeAndLocation.Name = "tableLayoutPanelSizeAndLocation";
-            this.tableLayoutPanelSizeAndLocation.RowCount = 3;
+            this.tableLayoutPanelSizeAndLocation.RowCount = 4;
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(394, 83);
+            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(394, 112);
             this.tableLayoutPanelSizeAndLocation.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.numericUpDownSizeInPercentage, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelSize, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // numericUpDownSizeInPercentage
+            // 
+            this.numericUpDownSizeInPercentage.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownSizeInPercentage.Name = "numericUpDownSizeInPercentage";
+            this.numericUpDownSizeInPercentage.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownSizeInPercentage.TabIndex = 1;
+            this.numericUpDownSizeInPercentage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.numericUpDownSizeInPercentage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
+            // 
+            // labelSize
+            // 
+            this.labelSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelSize.AutoSize = true;
+            this.labelSize.Location = new System.Drawing.Point(64, 7);
+            this.labelSize.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelSize.Name = "labelSize";
+            this.labelSize.Size = new System.Drawing.Size(121, 15);
+            this.labelSize.TabIndex = 0;
+            this.labelSize.Text = "labelSizeInPercentage";
             // 
             // tableLayoutPanel1
             // 
@@ -849,7 +894,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.numericUpDownMenuHeight, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelMaxMenuHeight, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 54);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 58);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -863,6 +908,8 @@ namespace SystemTrayMenu.UserInterface
             this.numericUpDownMenuHeight.Name = "numericUpDownMenuHeight";
             this.numericUpDownMenuHeight.Size = new System.Drawing.Size(55, 23);
             this.numericUpDownMenuHeight.TabIndex = 1;
+            this.numericUpDownMenuHeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.numericUpDownMenuHeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelMaxMenuHeight
             // 
@@ -875,17 +922,6 @@ namespace SystemTrayMenu.UserInterface
             this.labelMaxMenuHeight.TabIndex = 0;
             this.labelMaxMenuHeight.Text = "labelMaxMenuHeight";
             // 
-            // checkBoxAppearAtMouseLocation
-            // 
-            this.checkBoxAppearAtMouseLocation.AutoSize = true;
-            this.checkBoxAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxAppearAtMouseLocation.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxAppearAtMouseLocation.Name = "checkBoxAppearAtMouseLocation";
-            this.checkBoxAppearAtMouseLocation.Size = new System.Drawing.Size(388, 19);
-            this.checkBoxAppearAtMouseLocation.TabIndex = 0;
-            this.checkBoxAppearAtMouseLocation.Text = "checkBoxAppearAtMouseLocation";
-            this.checkBoxAppearAtMouseLocation.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanelMaxMenuWidth
             // 
             this.tableLayoutPanelMaxMenuWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -896,7 +932,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.numericUpDownMenuWidth, 0, 0);
             this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.labelMaxMenuWidth, 1, 0);
-            this.tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 25);
+            this.tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 29);
             this.tableLayoutPanelMaxMenuWidth.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelMaxMenuWidth.Name = "tableLayoutPanelMaxMenuWidth";
             this.tableLayoutPanelMaxMenuWidth.RowCount = 1;
@@ -910,6 +946,8 @@ namespace SystemTrayMenu.UserInterface
             this.numericUpDownMenuWidth.Name = "numericUpDownMenuWidth";
             this.numericUpDownMenuWidth.Size = new System.Drawing.Size(55, 23);
             this.numericUpDownMenuWidth.TabIndex = 1;
+            this.numericUpDownMenuWidth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.numericUpDownMenuWidth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelMaxMenuWidth
             // 
@@ -922,12 +960,23 @@ namespace SystemTrayMenu.UserInterface
             this.labelMaxMenuWidth.TabIndex = 0;
             this.labelMaxMenuWidth.Text = "labelMaxMenuWidth";
             // 
+            // checkBoxAppearAtMouseLocation
+            // 
+            this.checkBoxAppearAtMouseLocation.AutoSize = true;
+            this.checkBoxAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxAppearAtMouseLocation.Location = new System.Drawing.Point(3, 90);
+            this.checkBoxAppearAtMouseLocation.Name = "checkBoxAppearAtMouseLocation";
+            this.checkBoxAppearAtMouseLocation.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxAppearAtMouseLocation.TabIndex = 0;
+            this.checkBoxAppearAtMouseLocation.Text = "checkBoxAppearAtMouseLocation";
+            this.checkBoxAppearAtMouseLocation.UseVisualStyleBackColor = true;
+            // 
             // groupBoxStaysOpen
             // 
             this.groupBoxStaysOpen.AutoSize = true;
             this.groupBoxStaysOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxStaysOpen.Controls.Add(this.tableLayoutPanelStaysOpen);
-            this.groupBoxStaysOpen.Location = new System.Drawing.Point(3, 170);
+            this.groupBoxStaysOpen.Location = new System.Drawing.Point(3, 199);
             this.groupBoxStaysOpen.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxStaysOpen.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxStaysOpen.Name = "groupBoxStaysOpen";
@@ -1016,13 +1065,15 @@ namespace SystemTrayMenu.UserInterface
             this.numericUpDownTimeUntilClose.Name = "numericUpDownTimeUntilClose";
             this.numericUpDownTimeUntilClose.Size = new System.Drawing.Size(55, 23);
             this.numericUpDownTimeUntilClose.TabIndex = 1;
+            this.numericUpDownTimeUntilClose.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.numericUpDownTimeUntilClose.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // groupBoxOpenSubmenus
             // 
             this.groupBoxOpenSubmenus.AutoSize = true;
             this.groupBoxOpenSubmenus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxOpenSubmenus.Controls.Add(this.tableLayoutPanelTimeUntilOpen);
-            this.groupBoxOpenSubmenus.Location = new System.Drawing.Point(3, 280);
+            this.groupBoxOpenSubmenus.Location = new System.Drawing.Point(3, 309);
             this.groupBoxOpenSubmenus.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxOpenSubmenus.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxOpenSubmenus.Name = "groupBoxOpenSubmenus";
@@ -1055,6 +1106,8 @@ namespace SystemTrayMenu.UserInterface
             this.numericUpDownTimeUntilOpens.Name = "numericUpDownTimeUntilOpens";
             this.numericUpDownTimeUntilOpens.Size = new System.Drawing.Size(55, 23);
             this.numericUpDownTimeUntilOpens.TabIndex = 2;
+            this.numericUpDownTimeUntilOpens.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.numericUpDownTimeUntilOpens.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelTimeUntilOpen
             // 
@@ -1071,7 +1124,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 346);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 375);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -1227,6 +1280,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorTitle.TabIndex = 2;
             this.textBoxColorTitle.Text = "#ffffff";
             this.textBoxColorTitle.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelTitle
             // 
@@ -1278,6 +1333,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorBackground.TabIndex = 2;
             this.textBoxColorBackground.Text = "#ffffff";
             this.textBoxColorBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorBackground.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelBackground
             // 
@@ -1329,6 +1386,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSearchField.TabIndex = 2;
             this.textBoxColorSearchField.Text = "#ffffff";
             this.textBoxColorSearchField.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSearchField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSearchField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelSearchField
             // 
@@ -1380,6 +1439,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorOpenFolder.TabIndex = 2;
             this.textBoxColorOpenFolder.Text = "#ffffff";
             this.textBoxColorOpenFolder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorOpenFolder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorOpenFolder.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelOpenFolder
             // 
@@ -1430,6 +1491,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorOpenFolderBorder.TabIndex = 2;
             this.textBoxColorOpenFolderBorder.Text = "#ffffff";
             this.textBoxColorOpenFolderBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorOpenFolderBorder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorOpenFolderBorder.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelOpenFolderBorder
             // 
@@ -1481,6 +1544,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSelectedItem.TabIndex = 2;
             this.textBoxColorSelectedItem.Text = "#ffffff";
             this.textBoxColorSelectedItem.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSelectedItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSelectedItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelSelectedItem
             // 
@@ -1532,6 +1597,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSelectedItemBorder.TabIndex = 2;
             this.textBoxColorSelectedItemBorder.Text = "#ffffff";
             this.textBoxColorSelectedItemBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSelectedItemBorder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSelectedItemBorder.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelSelectedItemBorder
             // 
@@ -1581,6 +1648,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorWarning.TabIndex = 2;
             this.textBoxColorWarning.Text = "#ffffff";
             this.textBoxColorWarning.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorWarning.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorWarning.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // pictureBoxWarning
             // 
@@ -1643,6 +1712,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorScrollbarBackground.TabIndex = 2;
             this.textBoxColorScrollbarBackground.Text = "#ffffff";
             this.textBoxColorScrollbarBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorScrollbarBackground.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorScrollbarBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelScrollbarBackground
             // 
@@ -1694,6 +1765,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSlider.TabIndex = 2;
             this.textBoxColorSlider.Text = "#ffffff";
             this.textBoxColorSlider.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSlider.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSlider.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelSlider
             // 
@@ -1746,6 +1819,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSliderDragging.TabIndex = 2;
             this.textBoxColorSliderDragging.Text = "#ffffff";
             this.textBoxColorSliderDragging.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSliderDragging.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSliderDragging.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelSliderDragging
             // 
@@ -1797,6 +1872,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSliderHover.TabIndex = 2;
             this.textBoxColorSliderHover.Text = "#ffffff";
             this.textBoxColorSliderHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSliderHover.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSliderHover.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelSliderHover
             // 
@@ -1848,6 +1925,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSliderArrowsAndTrackHover.TabIndex = 2;
             this.textBoxColorSliderArrowsAndTrackHover.Text = "#ffffff";
             this.textBoxColorSliderArrowsAndTrackHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSliderArrowsAndTrackHover.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSliderArrowsAndTrackHover.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelSliderArrowsAndTrackHover
             // 
@@ -1899,6 +1978,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrow.TabIndex = 2;
             this.textBoxColorArrow.Text = "#ffffff";
             this.textBoxColorArrow.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrow.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelArrow
             // 
@@ -1950,6 +2031,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowClick.TabIndex = 2;
             this.textBoxColorArrowClick.Text = "#ffffff";
             this.textBoxColorArrowClick.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowClick.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowClick.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelArrowClick
             // 
@@ -2001,6 +2084,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowClickBackground.TabIndex = 2;
             this.textBoxColorArrowClickBackground.Text = "#ffffff";
             this.textBoxColorArrowClickBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowClickBackground.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowClickBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelArrowClickBackground
             // 
@@ -2052,6 +2137,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowHover.TabIndex = 2;
             this.textBoxColorArrowHover.Text = "#ffffff";
             this.textBoxColorArrowHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowHover.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowHover.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelArrowHover
             // 
@@ -2103,6 +2190,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowHoverBackground.TabIndex = 2;
             this.textBoxColorArrowHoverBackground.Text = "#ffffff";
             this.textBoxColorArrowHoverBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowHoverBackground.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowHoverBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelArrowHoverBackground
             // 
@@ -2270,6 +2359,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorTitleDarkMode.TabIndex = 2;
             this.textBoxColorTitleDarkMode.Text = "#ffffff";
             this.textBoxColorTitleDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorTitleDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorTitleDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // tableLayoutPanelBackgroundDarkMode
             // 
@@ -2321,6 +2412,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorBackgroundDarkMode.TabIndex = 2;
             this.textBoxColorBackgroundDarkMode.Text = "#ffffff";
             this.textBoxColorBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorBackgroundDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorBackgroundDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // tableLayoutPanelSearchFieldDarkMode
             // 
@@ -2372,6 +2465,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSearchFieldDarkMode.TabIndex = 2;
             this.textBoxColorSearchFieldDarkMode.Text = "#ffffff";
             this.textBoxColorSearchFieldDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSearchFieldDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSearchFieldDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // tableLayoutPanelOpenFolderDarkMode
             // 
@@ -2423,6 +2518,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorOpenFolderDarkMode.TabIndex = 2;
             this.textBoxColorOpenFolderDarkMode.Text = "#ffffff";
             this.textBoxColorOpenFolderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorOpenFolderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorOpenFolderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // tableLayoutPanelOpenFolderBorderDarkMode
             // 
@@ -2473,6 +2570,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorOpenFolderBorderDarkMode.TabIndex = 2;
             this.textBoxColorOpenFolderBorderDarkMode.Text = "#ffffff";
             this.textBoxColorOpenFolderBorderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorOpenFolderBorderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorOpenFolderBorderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // tableLayoutPanelSelectedItemDarkMode
             // 
@@ -2524,6 +2623,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSelecetedItemDarkMode.TabIndex = 2;
             this.textBoxColorSelecetedItemDarkMode.Text = "#ffffff";
             this.textBoxColorSelecetedItemDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSelecetedItemDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSelecetedItemDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // tableLayoutPanelSelectedItemBorderDarkMode
             // 
@@ -2575,6 +2676,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSelectedItemBorderDarkMode.TabIndex = 2;
             this.textBoxColorSelectedItemBorderDarkMode.Text = "#ffffff";
             this.textBoxColorSelectedItemBorderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSelectedItemBorderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSelectedItemBorderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // tableLayoutPanelWarningDarkMode
             // 
@@ -2626,6 +2729,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorWarningDarkMode.TabIndex = 2;
             this.textBoxColorWarningDarkMode.Text = "#ffffff";
             this.textBoxColorWarningDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorWarningDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorWarningDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelScrollbarDarkMode
             // 
@@ -2676,6 +2781,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorScrollbarBackgroundDarkMode.TabIndex = 2;
             this.textBoxColorScrollbarBackgroundDarkMode.Text = "#ffffff";
             this.textBoxColorScrollbarBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorScrollbarBackgroundDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorScrollbarBackgroundDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeScrollbarBackground
             // 
@@ -2727,6 +2834,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSliderDarkMode.TabIndex = 2;
             this.textBoxColorSliderDarkMode.Text = "#ffffff";
             this.textBoxColorSliderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSliderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSliderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeSlider
             // 
@@ -2778,6 +2887,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSliderDraggingDarkMode.TabIndex = 2;
             this.textBoxColorSliderDraggingDarkMode.Text = "#ffffff";
             this.textBoxColorSliderDraggingDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSliderDraggingDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSliderDraggingDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeSliderDragging
             // 
@@ -2829,6 +2940,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSliderHoverDarkMode.TabIndex = 2;
             this.textBoxColorSliderHoverDarkMode.Text = "#ffffff";
             this.textBoxColorSliderHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSliderHoverDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSliderHoverDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeSliderHover
             // 
@@ -2880,6 +2993,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.TabIndex = 2;
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Text = "#ffffff";
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeSliderArrowsAndTrackHover
             // 
@@ -2931,6 +3046,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowDarkMode.TabIndex = 2;
             this.textBoxColorArrowDarkMode.Text = "#ffffff";
             this.textBoxColorArrowDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeArrow
             // 
@@ -2982,6 +3099,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowClickDarkMode.TabIndex = 2;
             this.textBoxColorArrowClickDarkMode.Text = "#ffffff";
             this.textBoxColorArrowClickDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowClickDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowClickDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeArrowClick
             // 
@@ -3033,6 +3152,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowClickBackgroundDarkMode.TabIndex = 2;
             this.textBoxColorArrowClickBackgroundDarkMode.Text = "#ffffff";
             this.textBoxColorArrowClickBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowClickBackgroundDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowClickBackgroundDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeArrowClickBackground
             // 
@@ -3084,6 +3205,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowHoverDarkMode.TabIndex = 2;
             this.textBoxColorArrowHoverDarkMode.Text = "#ffffff";
             this.textBoxColorArrowHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowHoverDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowHoverDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeArrowHover
             // 
@@ -3135,6 +3258,8 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorArrowHoverBackgroundDarkMode.TabIndex = 2;
             this.textBoxColorArrowHoverBackgroundDarkMode.Text = "#ffffff";
             this.textBoxColorArrowHoverBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
+            this.textBoxColorArrowHoverBackgroundDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.textBoxColorArrowHoverBackgroundDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelColorDarkModeArrowHoverBackground
             // 
@@ -3265,6 +3390,9 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSizeAndLocation.PerformLayout();
             this.tableLayoutPanelSizeAndLocation.ResumeLayout(false);
             this.tableLayoutPanelSizeAndLocation.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeInPercentage)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuHeight)).EndInit();
@@ -3625,8 +3753,10 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.PictureBox pictureBoxSliderDarkMode;
         private System.Windows.Forms.TextBox textBoxColorSliderDarkMode;
         private System.Windows.Forms.Label labelColorDarkModeSlider;
-        private System.Windows.Forms.Button C;
         private System.Windows.Forms.Button buttonColorsDefaultDarkMode;
         private System.Windows.Forms.CheckBox checkBoxUseIconFromRootFolder;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.NumericUpDown numericUpDownSizeInPercentage;
+        private System.Windows.Forms.Label labelSize;
     }
 }

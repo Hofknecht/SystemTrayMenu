@@ -142,16 +142,16 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AppearAtMouseLocation
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int SizeInPercentage
         {
             get
             {
-                return ((bool)(this["AppearAtMouseLocation"]));
+                return ((int)(this["SizeInPercentage"]));
             }
             set
             {
-                this["AppearAtMouseLocation"] = value;
+                this["SizeInPercentage"] = value;
             }
         }
 
@@ -184,6 +184,22 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["MaximumMenuHeight"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AppearAtMouseLocation
+        {
+            get
+            {
+                return ((bool)(this["AppearAtMouseLocation"]));
+            }
+            set
+            {
+                this["AppearAtMouseLocation"] = value;
             }
         }
 
