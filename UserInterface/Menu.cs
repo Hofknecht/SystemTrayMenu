@@ -329,7 +329,13 @@ namespace SystemTrayMenu.UserInterface
             }
             else if (Properties.Settings.Default.AppearAtMouseLocation)
             {
-                // Use this menu as predecessor and set location of Mouse
+                // Do not adjust location again because Cursor.Postion changed
+                if (Tag != null)
+                {
+                    return;
+                }
+
+                // Use this menu as predecessor and overwrite location with Cursor.Postion
                 menuPredecessor = this;
                 Tag = new RowData();
                 Location = new Point(Cursor.Position.X, Cursor.Position.Y - labelTitle.Height);

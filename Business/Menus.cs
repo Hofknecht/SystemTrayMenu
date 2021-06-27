@@ -934,15 +934,7 @@ namespace SystemTrayMenu.Business
 
         private void AdjustMenusSizeAndLocation()
         {
-            Rectangle screenBounds;
-            if (Properties.Settings.Default.AppearAtMouseLocation)
-            {
-                screenBounds = Screen.FromPoint(Cursor.Position).Bounds;
-            }
-            else
-            {
-                screenBounds = Screen.PrimaryScreen.Bounds;
-            }
+            Rectangle screenBounds = Screen.PrimaryScreen.Bounds;
 
             // Only apply taskbar position change when no menu is currently open
             List<Menu> list = AsList;
