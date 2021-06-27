@@ -321,4 +321,7 @@
   <data name="Use icon from folder" xml:space="preserve">
     <value>Pictogram uit map gebruiken</value>
   </data>
+  <data name="Size" xml:space="preserve">
+    <value>Grootte</value>
+  </data>
 </root>

@@ -1281,7 +1281,7 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxColorTitle.Text = "#ffffff";
             this.textBoxColorTitle.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
             this.textBoxColorTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
+            this.textBoxColorTitle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
             // labelTitle
             // 

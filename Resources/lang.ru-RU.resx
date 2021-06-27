@@ -321,4 +321,7 @@
   <data name="Use icon from folder" xml:space="preserve">
     <value>Использовать значок из папки</value>
   </data>
+  <data name="Size" xml:space="preserve">
+    <value>Размер</value>
+  </data>
 </root>

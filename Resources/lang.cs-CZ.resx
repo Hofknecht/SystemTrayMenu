@@ -321,4 +321,7 @@
   <data name="Use icon from folder" xml:space="preserve">
     <value>Použijte ikonu ze složky</value>
   </data>
+  <data name="Size" xml:space="preserve">
+    <value>Velikost</value>
+  </data>
 </root>

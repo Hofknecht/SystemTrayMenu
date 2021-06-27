@@ -321,4 +321,7 @@
   <data name="Use icon from folder" xml:space="preserve">
     <value>Usa l'icona dalla cartella</value>
   </data>
+  <data name="Size" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
 </root>

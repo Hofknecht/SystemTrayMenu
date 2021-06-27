@@ -321,4 +321,7 @@
   <data name="Use icon from folder" xml:space="preserve">
     <value>폴더의 아이콘 사용</value>
   </data>
+  <data name="Size" xml:space="preserve">
+    <value>크기</value>
+  </data>
 </root>

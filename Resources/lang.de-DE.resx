@@ -321,4 +321,7 @@
   <data name="Use icon from folder" xml:space="preserve">
     <value>Icon des Ordners verwenden</value>
   </data>
+  <data name="Size" xml:space="preserve">
+    <value>Größe</value>
+  </data>
 </root>
