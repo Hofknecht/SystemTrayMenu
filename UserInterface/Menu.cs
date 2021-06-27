@@ -85,6 +85,9 @@ namespace SystemTrayMenu.UserInterface
                 foreColor = Color.White;
                 labelTitle.ForeColor = foreColor;
                 textBoxSearch.ForeColor = foreColor;
+                ColorConverter colorConverter = new ColorConverter();
+                labelFoldersCount.ForeColor = (Color)colorConverter.ConvertFromString("#585858");
+                labelFilesCount.ForeColor = (Color)colorConverter.ConvertFromString("#585858");
                 titleBackColor = AppColors.DarkModeTitle;
                 backColor = AppColors.DarkModeBackground;
                 backColorSearch = AppColors.DarkModeSearchField;
@@ -100,6 +103,8 @@ namespace SystemTrayMenu.UserInterface
             dgv.BackgroundColor = backColor;
             textBoxSearch.BackColor = backColorSearch;
             pictureBoxSearch.BackColor = backColorSearch;
+            pictureBoxFoldersCount.BackColor = backColorSearch;
+            pictureBoxFilesCount.BackColor = backColorSearch;
             tableLayoutPanelSearch.BackColor = backColorSearch;
             dgv.DefaultCellStyle = new DataGridViewCellStyle
             {
@@ -607,7 +612,9 @@ namespace SystemTrayMenu.UserInterface
             string filterField = dgv.Columns[1].Name;
             SearchTextChanging?.Invoke();
 
-            string searchString = textBoxSearch.Text.Trim();
+            string searchString = textBoxSearch.Text.Trim()
+                .Replace("%", " ")
+                .Replace("*", " ");
             string like = string.Empty;
             string[] splittedParts = searchString.Split(" ");
             if (splittedParts.Length > 1)
@@ -670,11 +677,25 @@ namespace SystemTrayMenu.UserInterface
                 data.DefaultView.Sort = columnSortIndex;
             }
 
+            int foldersCount = 0;
+            int filesCount = 0;
+
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
                 rowData.RowIndex = row.Index;
+
+                if (rowData.ContainsMenu)
+                {
+                    foldersCount++;
+                }
+                else
+                {
+                    filesCount++;
+                }
             }
+
+            SetCounts(foldersCount, filesCount);
 
             SearchTextChanged.Invoke(this, null);
         }
@@ -703,6 +724,18 @@ namespace SystemTrayMenu.UserInterface
         {
             PictureBox pictureBox = (PictureBox)sender;
             e.Graphics.DrawImage(Config.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
+        }
+
+        private void PictureBoxFoldersCount_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            e.Graphics.DrawImage(Config.BitmapFoldersCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
+        }
+
+        private void PictureBoxFilesCount_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            e.Graphics.DrawImage(Config.BitmapFilesCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
         }
 
         private void PictureBoxMenuAlwaysOpen_Paint(object sender, PaintEventArgs e)
@@ -751,6 +784,12 @@ namespace SystemTrayMenu.UserInterface
             {
                 UserClickedOpenFolder?.Invoke();
             }
+        }
+
+        internal void SetCounts(int foldersCount, int filesCount)
+        {
+            labelFoldersCount.Text = foldersCount.ToString();
+            labelFilesCount.Text = filesCount.ToString();
         }
     }
 }

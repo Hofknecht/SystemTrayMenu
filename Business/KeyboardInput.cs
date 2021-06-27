@@ -190,9 +190,8 @@ namespace SystemTrayMenu.Handler
             ClearIsSelectedByKey();
         }
 
-        internal void SearchTextChanged(object sender, EventArgs e)
+        internal void SearchTextChanged(Menu menu)
         {
-            Menu menu = (Menu)sender;
             DataGridView dgv = menu.GetDataGridView();
             if (dgv.Rows.Count > 0)
             {

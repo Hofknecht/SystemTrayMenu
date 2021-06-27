@@ -109,6 +109,17 @@ namespace SystemTrayMenu.UserInterface
                 Scaling.Scale(pictureBoxSearch.Width),
                 Scaling.Scale(pictureBoxSearch.Height));
 
+            pictureBoxFoldersCount.Size = new Size(
+                Scaling.Scale(pictureBoxFoldersCount.Width),
+                Scaling.Scale(pictureBoxFoldersCount.Height));
+
+            pictureBoxFilesCount.Size = new Size(
+                Scaling.Scale(pictureBoxFilesCount.Width),
+                Scaling.Scale(pictureBoxFilesCount.Height));
+
+            labelFoldersCount.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            labelFilesCount.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+
             // tableLayoutPanelDgvAndScrollbar.ResumeLayout(false);
             // ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
             // tableLayoutPanelSearch.ResumeLayout(false);

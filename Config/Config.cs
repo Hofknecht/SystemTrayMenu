@@ -18,10 +18,12 @@ namespace SystemTrayMenu
 
     public static class Config
     {
-        internal static readonly Bitmap BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular);
+        internal static readonly Bitmap BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular);
         internal static readonly Bitmap BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular);
         internal static readonly Bitmap BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled);
         internal static readonly Bitmap BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular);
+        internal static readonly Bitmap BitmapFoldersCount = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular);
+        internal static readonly Bitmap BitmapFilesCount = ReadSvg(Properties.Resources.ic_fluent_document_48_regular);
 
         private static bool readDarkModeDone;
         private static bool isDarkMode;

@@ -63,9 +63,29 @@ namespace SystemTrayMenu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] ic_fluent_document_48_regular {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_document_48_regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] ic_fluent_folder_48_regular {
             get {
                 object obj = ResourceManager.GetObject("ic_fluent_folder_48_regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] ic_fluent_folder_arrow_right_48_regular {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_folder_arrow_right_48_regular", resourceCulture);
                 return ((byte[])(obj));
             }
         }

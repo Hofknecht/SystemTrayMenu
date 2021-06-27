@@ -626,28 +626,23 @@ namespace SystemTrayMenu.Business
         {
             Menu menu = new Menu();
 
-            if (title != null)
+            string path = Config.Path;
+            if (title == null)
             {
-                if (string.IsNullOrEmpty(title))
-                {
-                    title = Path.GetPathRoot(Config.Path);
-                }
-
-                menu.SetTitle(title);
-                menu.UserClickedOpenFolder += OpenMainFolder;
-                void OpenMainFolder()
-                {
-                    OpenFolder();
-                }
+                title = Path.GetFileName(menuData.RowDataParent.TargetFilePath);
+                path = menuData.RowDataParent.TargetFilePath;
             }
-            else
+
+            if (string.IsNullOrEmpty(title))
             {
-                menu.SetTitle(Path.GetFileName(menuData.RowDataParent.TargetFilePath));
-                menu.UserClickedOpenFolder += OpenSubFolder;
-                void OpenSubFolder()
-                {
-                    OpenFolder(menuData.RowDataParent.TargetFilePath);
-                }
+                title = Path.GetPathRoot(path);
+            }
+
+            menu.SetTitle(title);
+            menu.UserClickedOpenFolder += OpenFolderInExplorer;
+            void OpenFolderInExplorer()
+            {
+                OpenFolder(path);
             }
 
             menu.Level = menuData.Level;
@@ -680,9 +675,11 @@ namespace SystemTrayMenu.Business
             }
 
             menu.VisibleChanged += MenuVisibleChanged;
-            AddItemsToMenu(menuData.RowDatas, menu);
-            static void AddItemsToMenu(List<RowData> data, Menu menu)
+            AddItemsToMenu(menuData.RowDatas, menu, out int foldersCount, out int filesCount);
+            static void AddItemsToMenu(List<RowData> data, Menu menu, out int foldersCount, out int filesCount)
             {
+                foldersCount = 0;
+                filesCount = 0;
                 DataGridView dgv = menu.GetDataGridView();
                 DataTable dataTable = new DataTable();
                 dataTable.Columns.Add(dgv.Columns[0].Name, typeof(Icon));
@@ -691,6 +688,15 @@ namespace SystemTrayMenu.Business
                 dataTable.Columns.Add("SortIndex");
                 foreach (RowData rowData in data)
                 {
+                    if (rowData.ContainsMenu)
+                    {
+                        foldersCount++;
+                    }
+                    else
+                    {
+                        filesCount++;
+                    }
+
                     rowData.SetData(rowData, dataTable);
                 }
 
@@ -715,6 +721,8 @@ namespace SystemTrayMenu.Business
                 // => Rare times occured (e.g. when focused an close other application => closed and activated at same time)
                 Log.Warn("Dgv_DataError occured", e.Exception);
             }
+
+            menu.SetCounts(foldersCount, filesCount);
 
             return menu;
         }
@@ -1011,9 +1019,17 @@ namespace SystemTrayMenu.Business
 
         private void Menu_SearchTextChanged(object sender, EventArgs e)
         {
-            keyboardInput.SearchTextChanged(sender, e);
+            Menu menu = (Menu)sender;
+            keyboardInput.SearchTextChanged(menu);
             AdjustMenusSizeAndLocation();
             searchTextChanging = false;
+
+            // if any open menu close
+            Menu menuToClose = menus[menu.Level + 1];
+            if (menuToClose != null)
+            {
+                HideOldMenu(menuToClose);
+            }
         }
     }
 }
