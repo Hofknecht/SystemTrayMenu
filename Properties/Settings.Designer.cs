@@ -526,6 +526,38 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#000000")]
+        public string ColorBackgroundBorder
+        {
+            get
+            {
+                return ((string)(this["ColorBackgroundBorder"]));
+            }
+            set
+            {
+                this["ColorBackgroundBorder"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#000000")]
+        public string ColorDarkModeBackgroundBorder
+        {
+            get
+            {
+                return ((string)(this["ColorDarkModeBackgroundBorder"]));
+            }
+            set
+            {
+                this["ColorDarkModeBackgroundBorder"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#606060")]
         public string ColorArrow
         {

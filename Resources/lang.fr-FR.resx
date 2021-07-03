@@ -324,4 +324,7 @@
   <data name="Size" xml:space="preserve">
     <value>Taille</value>
   </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Bordure de menu</value>
+  </data>
 </root>

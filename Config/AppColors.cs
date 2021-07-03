@@ -76,6 +76,10 @@ namespace SystemTrayMenu
 
         public static Color DarkModeBackground { get; set; }
 
+        public static Color BackgroundBorder { get; set; }
+
+        public static Color DarkModeBackgroundBorder { get; set; }
+
         public static Color SearchField { get; set; }
 
         public static Color DarkModeSearchField { get; set; }

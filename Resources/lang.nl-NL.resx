@@ -324,4 +324,7 @@
   <data name="Size" xml:space="preserve">
     <value>Grootte</value>
   </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Rand van menu</value>
+  </data>
 </root>

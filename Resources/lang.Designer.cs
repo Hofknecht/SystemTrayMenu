@@ -151,6 +151,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Border of menu.
+        /// </summary>
+        internal static string Border_of_menu {
+            get {
+                return ResourceManager.GetString("Border of menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Border of opened folder.
         /// </summary>
         internal static string Border_of_opened_folder {

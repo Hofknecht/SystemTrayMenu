@@ -324,4 +324,7 @@
   <data name="Size" xml:space="preserve">
     <value>Velikost</value>
   </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Hranice nabídky</value>
+  </data>
 </root>

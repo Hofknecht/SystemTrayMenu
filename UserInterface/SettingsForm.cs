@@ -51,6 +51,7 @@ namespace SystemTrayMenu.UserInterface
 
             CombineControls(textBoxColorTitle, pictureBoxTitle);
             CombineControls(textBoxColorBackground, pictureBoxBackground);
+            CombineControls(textBoxColorBackgroundBorder, pictureBoxBackgroundBorder);
             CombineControls(textBoxColorSearchField, pictureBoxSearchField);
             CombineControls(textBoxColorOpenFolder, pictureBoxOpenFolder);
             CombineControls(textBoxColorOpenFolderBorder, pictureBoxOpenFolderBorder);
@@ -70,6 +71,7 @@ namespace SystemTrayMenu.UserInterface
 
             CombineControls(textBoxColorTitleDarkMode, pictureBoxTitleDarkMode);
             CombineControls(textBoxColorBackgroundDarkMode, pictureBoxBackgroundDarkMode);
+            CombineControls(textBoxColorBackgroundBorderDarkMode, pictureBoxBackgroundBorderDarkMode);
             CombineControls(textBoxColorSearchFieldDarkMode, pictureBoxSearchFieldDarkMode);
             CombineControls(textBoxColorOpenFolderDarkMode, pictureBoxOpenFolderDarkMode);
             CombineControls(textBoxColorOpenFolderBorderDarkMode, pictureBoxOpenFolderBorderDarkMode);
@@ -136,6 +138,8 @@ namespace SystemTrayMenu.UserInterface
                 labelTitleDarkMode.Text = Translator.GetText("Title");
                 labelBackground.Text = Translator.GetText("Background");
                 labelBackgroundDarkMode.Text = Translator.GetText("Background");
+                labelBackgroundBorder.Text = Translator.GetText("Border of menu");
+                labelBackgroundBorderDarkMode.Text = Translator.GetText("Border of menu");
                 labelSearchField.Text = Translator.GetText("Search field");
                 labelSearchFieldDarkMode.Text = Translator.GetText("Search field");
                 labelOpenFolder.Text = Translator.GetText("Opened folder");
@@ -277,6 +281,8 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorTitleDarkMode.Text = Settings.Default.ColorDarkModeTitle;
             textBoxColorBackground.Text = Settings.Default.ColorBackground;
             textBoxColorBackgroundDarkMode.Text = Settings.Default.ColorDarkModeBackground;
+            textBoxColorBackgroundBorder.Text = Settings.Default.ColorBackgroundBorder;
+            textBoxColorBackgroundBorderDarkMode.Text = Settings.Default.ColorDarkModeBackgroundBorder;
             textBoxColorSearchField.Text = Settings.Default.ColorSearchField;
             textBoxColorSearchFieldDarkMode.Text = Settings.Default.ColorDarkModeSearchField;
 
@@ -618,6 +624,8 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.ColorDarkModeTitle = textBoxColorTitleDarkMode.Text;
                 Settings.Default.ColorBackground = textBoxColorBackground.Text;
                 Settings.Default.ColorDarkModeBackground = textBoxColorBackgroundDarkMode.Text;
+                Settings.Default.ColorBackgroundBorder = textBoxColorBackgroundBorder.Text;
+                Settings.Default.ColorDarkModeBackgroundBorder = textBoxColorBackgroundBorderDarkMode.Text;
                 Settings.Default.ColorSearchField = textBoxColorSearchField.Text;
                 Settings.Default.ColorDarkModeSearchField = textBoxColorSearchFieldDarkMode.Text;
                 Settings.Default.ColorScrollbarBackground = textBoxColorScrollbarBackground.Text;
@@ -669,6 +677,7 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorOpenFolder.Text = "#C2F5DE";
             textBoxColorOpenFolderBorder.Text = "#99FFA5";
             textBoxColorBackground.Text = "#ffffff";
+            textBoxColorBackgroundBorder.Text = "#000000";
             textBoxColorSearchField.Text = "#ffffff";
             textBoxColorSelectedItem.Text = "#CCE8FF";
             textBoxColorSelectedItemBorder.Text = "#99D1FF";
@@ -691,6 +700,7 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorOpenFolderDarkMode.Text = "#14412A";
             textBoxColorOpenFolderBorderDarkMode.Text = "#144B55";
             textBoxColorBackgroundDarkMode.Text = "#202020";
+            textBoxColorBackgroundBorderDarkMode.Text = "#000000";
             textBoxColorSearchFieldDarkMode.Text = "#191919";
             textBoxColorSelecetedItemDarkMode.Text = "#333333";
             textBoxColorSelectedItemBorderDarkMode.Text = "#141D4B";

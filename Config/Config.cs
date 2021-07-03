@@ -264,6 +264,18 @@ namespace SystemTrayMenu
             Settings.Default.ColorDarkModeBackground = colorAndCode.HtmlColorCode;
             AppColors.DarkModeBackground = colorAndCode.Color;
 
+            colorAndCode.HtmlColorCode = Settings.Default.ColorBackgroundBorder;
+            colorAndCode.Color = Color.FromArgb(0, 0, 0);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorBackgroundBorder = colorAndCode.HtmlColorCode;
+            AppColors.BackgroundBorder = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeBackgroundBorder;
+            colorAndCode.Color = Color.FromArgb(0, 0, 0);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeBackgroundBorder = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeBackgroundBorder = colorAndCode.Color;
+
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrow;
             colorAndCode.Color = Color.FromArgb(96, 96, 96);
             colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);

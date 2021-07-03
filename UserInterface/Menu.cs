@@ -79,6 +79,7 @@ namespace SystemTrayMenu.UserInterface
             Color titleBackColor = AppColors.Title;
             Color backColor = AppColors.Background;
             Color backColorSearch = AppColors.SearchField;
+            Color backgroundBorder = AppColors.BackgroundBorder;
 
             if (Config.IsDarkMode())
             {
@@ -88,6 +89,7 @@ namespace SystemTrayMenu.UserInterface
                 titleBackColor = AppColors.DarkModeTitle;
                 backColor = AppColors.DarkModeBackground;
                 backColorSearch = AppColors.DarkModeSearchField;
+                backgroundBorder = AppColors.DarkModeBackgroundBorder;
             }
 
             ColorConverter colorConverter = new ColorConverter();
@@ -99,6 +101,7 @@ namespace SystemTrayMenu.UserInterface
                 backColor = Color.White;
             }
 
+            BackColor = backgroundBorder;
             tableLayoutPanelTitle.BackColor = titleBackColor;
             tableLayoutPanelDgvAndScrollbar.BackColor = backColor;
             dgv.BackgroundColor = backColor;
