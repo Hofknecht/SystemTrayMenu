@@ -327,4 +327,7 @@
   <data name="Border of menu" xml:space="preserve">
     <value>Hranice nabídky</value>
   </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Ikone</value>
+  </data>
 </root>

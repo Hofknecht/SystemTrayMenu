@@ -890,5 +890,37 @@ namespace SystemTrayMenu.Properties
                 this["UseIconFromRootFolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#95a0a6")]
+        public string ColorIcons
+        {
+            get
+            {
+                return ((string)(this["ColorIcons"]));
+            }
+            set
+            {
+                this["ColorIcons"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#95a0a6")]
+        public string ColorDarkModeIcons
+        {
+            get
+            {
+                return ((string)(this["ColorDarkModeIcons"]));
+            }
+            set
+            {
+                this["ColorDarkModeIcons"] = value;
+            }
+        }
     }
 }

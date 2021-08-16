@@ -9,6 +9,7 @@ namespace SystemTrayMenu
     using System.Diagnostics;
     using System.Drawing;
     using System.IO;
+    using System.Text;
     using System.Windows.Forms;
     using Microsoft.Win32;
     using Svg;
@@ -18,13 +19,6 @@ namespace SystemTrayMenu
 
     public static class Config
     {
-        internal static readonly Bitmap BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular);
-        internal static readonly Bitmap BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular);
-        internal static readonly Bitmap BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled);
-        internal static readonly Bitmap BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular);
-        internal static readonly Bitmap BitmapFoldersCount = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular);
-        internal static readonly Bitmap BitmapFilesCount = ReadSvg(Properties.Resources.ic_fluent_document_48_regular);
-
         private static bool readDarkModeDone;
         private static bool isDarkMode;
         private static bool readHideFileExtdone;
@@ -44,9 +38,12 @@ namespace SystemTrayMenu
 
         public static void Dispose()
         {
-            BitmapOpenFolder.Dispose();
-            BitmapPin.Dispose();
-            BitmapPinActive.Dispose();
+            AppColors.BitmapOpenFolder.Dispose();
+            AppColors.BitmapPin.Dispose();
+            AppColors.BitmapPinActive.Dispose();
+            AppColors.BitmapSearch.Dispose();
+            AppColors.BitmapFoldersCount.Dispose();
+            AppColors.BitmapFilesCount.Dispose();
         }
 
         public static bool LoadOrSetByUser()
@@ -240,6 +237,35 @@ namespace SystemTrayMenu
             Settings.Default.ColorDarkModeTitle = colorAndCode.HtmlColorCode;
             AppColors.DarkModeTitle = colorAndCode.Color;
 
+            colorAndCode.HtmlColorCode = Settings.Default.ColorIcons;
+            colorAndCode.Color = Color.FromArgb(149, 160, 166);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorIcons = colorAndCode.HtmlColorCode;
+            AppColors.Icons = colorAndCode.Color;
+
+            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeIcons;
+            colorAndCode.Color = Color.FromArgb(149, 160, 166);
+            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
+            Settings.Default.ColorDarkModeIcons = colorAndCode.HtmlColorCode;
+            AppColors.DarkModeIcons = colorAndCode.Color;
+
+            string htmlColorCodeIcons;
+            if (IsDarkMode())
+            {
+                htmlColorCodeIcons = Settings.Default.ColorDarkModeIcons;
+            }
+            else
+            {
+                htmlColorCodeIcons = Settings.Default.ColorIcons;
+            }
+
+            AppColors.BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
+            AppColors.BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapFoldersCount = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapFilesCount = ReadSvg(Properties.Resources.ic_fluent_document_48_regular, htmlColorCodeIcons);
+
             colorAndCode.HtmlColorCode = Settings.Default.ColorSearchField;
             colorAndCode.Color = Color.FromArgb(255, 255, 255);
             colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
@@ -402,11 +428,16 @@ namespace SystemTrayMenu
             }
         }
 
-        private static Bitmap ReadSvg(byte[] byteArray)
+        private static Bitmap ReadSvg(byte[] byteArray, string htmlColorCode)
         {
+            string str = Encoding.UTF8.GetString(byteArray);
+            str = str.Replace("#585858", htmlColorCode);
+            byteArray = Encoding.UTF8.GetBytes(str);
+
             using (var stream = new MemoryStream(byteArray))
             {
                 var svgDocument = SvgDocument.Open<SvgDocument>(stream);
+                svgDocument.Color = new SvgColourServer(Color.Black);
                 return svgDocument.Draw();
             }
         }

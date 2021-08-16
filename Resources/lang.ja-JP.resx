@@ -327,4 +327,7 @@
   <data name="Border of menu" xml:space="preserve">
     <value>メニューの境界</value>
   </data>
+  <data name="Icons" xml:space="preserve">
+    <value>アイコン</value>
+  </data>
 </root>

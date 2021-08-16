@@ -93,8 +93,8 @@ namespace SystemTrayMenu.UserInterface
             }
 
             ColorConverter colorConverter = new ColorConverter();
-            labelFoldersCount.ForeColor = (Color)colorConverter.ConvertFromString("#585858");
-            labelFilesCount.ForeColor = (Color)colorConverter.ConvertFromString("#585858");
+            labelFoldersCount.ForeColor = MenuDefines.ColorIcons;
+            labelFilesCount.ForeColor = MenuDefines.ColorIcons;
 
             if (backColor.R == 0)
             {
@@ -733,19 +733,19 @@ namespace SystemTrayMenu.UserInterface
         private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(Config.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
+            e.Graphics.DrawImage(AppColors.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
         }
 
         private void PictureBoxFoldersCount_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(Config.BitmapFoldersCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
+            e.Graphics.DrawImage(AppColors.BitmapFoldersCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
         }
 
         private void PictureBoxFilesCount_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(Config.BitmapFilesCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
+            e.Graphics.DrawImage(AppColors.BitmapFilesCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
         }
 
         private void PictureBoxMenuAlwaysOpen_Paint(object sender, PaintEventArgs e)
@@ -754,11 +754,11 @@ namespace SystemTrayMenu.UserInterface
 
             if (Config.AlwaysOpenByPin)
             {
-                e.Graphics.DrawImage(Config.BitmapPinActive, new Rectangle(Point.Empty, pictureBox.ClientSize));
+                e.Graphics.DrawImage(AppColors.BitmapPinActive, new Rectangle(Point.Empty, pictureBox.ClientSize));
             }
             else
             {
-                e.Graphics.DrawImage(Config.BitmapPin, new Rectangle(Point.Empty, pictureBox.ClientSize));
+                e.Graphics.DrawImage(AppColors.BitmapPin, new Rectangle(Point.Empty, pictureBox.ClientSize));
             }
 
             if (pictureBox.Tag != null && (bool)pictureBox.Tag)
@@ -772,7 +772,7 @@ namespace SystemTrayMenu.UserInterface
         {
             PictureBox pictureBox = (PictureBox)sender;
 
-            e.Graphics.DrawImage(Config.BitmapOpenFolder, new Rectangle(Point.Empty, pictureBox.ClientSize));
+            e.Graphics.DrawImage(AppColors.BitmapOpenFolder, new Rectangle(Point.Empty, pictureBox.ClientSize));
 
             if (pictureBox.Tag != null && (bool)pictureBox.Tag)
             {

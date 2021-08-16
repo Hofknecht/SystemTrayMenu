@@ -50,6 +50,7 @@ namespace SystemTrayMenu.UserInterface
             tabControl.SelectedIndex = 0;
 
             CombineControls(textBoxColorTitle, pictureBoxTitle);
+            CombineControls(textBoxColorIcons, pictureBoxIcons);
             CombineControls(textBoxColorBackground, pictureBoxBackground);
             CombineControls(textBoxColorBackgroundBorder, pictureBoxBackgroundBorder);
             CombineControls(textBoxColorSearchField, pictureBoxSearchField);
@@ -70,6 +71,7 @@ namespace SystemTrayMenu.UserInterface
             CombineControls(textBoxColorArrowHoverBackground, pictureBoxArrowHoverBackground);
 
             CombineControls(textBoxColorTitleDarkMode, pictureBoxTitleDarkMode);
+            CombineControls(textBoxColorIconsDarkMode, pictureBoxIconsDarkMode);
             CombineControls(textBoxColorBackgroundDarkMode, pictureBoxBackgroundDarkMode);
             CombineControls(textBoxColorBackgroundBorderDarkMode, pictureBoxBackgroundBorderDarkMode);
             CombineControls(textBoxColorSearchFieldDarkMode, pictureBoxSearchFieldDarkMode);
@@ -136,6 +138,8 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
                 labelTitle.Text = Translator.GetText("Title");
                 labelTitleDarkMode.Text = Translator.GetText("Title");
+                labelIcons.Text = Translator.GetText("Icons");
+                labelIconsDarkMode.Text = Translator.GetText("Icons");
                 labelBackground.Text = Translator.GetText("Background");
                 labelBackgroundDarkMode.Text = Translator.GetText("Background");
                 labelBackgroundBorder.Text = Translator.GetText("Border of menu");
@@ -279,6 +283,8 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorWarningDarkMode.Text = Settings.Default.ColorDarkModeWarning;
             textBoxColorTitle.Text = Settings.Default.ColorTitle;
             textBoxColorTitleDarkMode.Text = Settings.Default.ColorDarkModeTitle;
+            textBoxColorIcons.Text = Settings.Default.ColorIcons;
+            textBoxColorIconsDarkMode.Text = Settings.Default.ColorDarkModeIcons;
             textBoxColorBackground.Text = Settings.Default.ColorBackground;
             textBoxColorBackgroundDarkMode.Text = Settings.Default.ColorDarkModeBackground;
             textBoxColorBackgroundBorder.Text = Settings.Default.ColorBackgroundBorder;
@@ -622,6 +628,8 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.ColorDarkModeWarning = textBoxColorWarningDarkMode.Text;
                 Settings.Default.ColorTitle = textBoxColorTitle.Text;
                 Settings.Default.ColorDarkModeTitle = textBoxColorTitleDarkMode.Text;
+                Settings.Default.ColorIcons = textBoxColorIcons.Text;
+                Settings.Default.ColorDarkModeIcons = textBoxColorIconsDarkMode.Text;
                 Settings.Default.ColorBackground = textBoxColorBackground.Text;
                 Settings.Default.ColorDarkModeBackground = textBoxColorBackgroundDarkMode.Text;
                 Settings.Default.ColorBackgroundBorder = textBoxColorBackgroundBorder.Text;
@@ -657,6 +665,7 @@ namespace SystemTrayMenu.UserInterface
         {
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
             Config.ResetReadDarkModeDone();
+            SaveColorsTemporarily();
         }
 
         private void PictureBoxClick(object sender, EventArgs e)
@@ -674,6 +683,7 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonDefaultColors_Click(object sender, EventArgs e)
         {
             textBoxColorTitle.Text = "#f0ffff";
+            textBoxColorIcons.Text = "#95a0a6";
             textBoxColorOpenFolder.Text = "#C2F5DE";
             textBoxColorOpenFolderBorder.Text = "#99FFA5";
             textBoxColorBackground.Text = "#ffffff";
@@ -697,6 +707,7 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonDefaultColorsDark_Click(object sender, EventArgs e)
         {
             textBoxColorTitleDarkMode.Text = "#2B2B2B";
+            textBoxColorIconsDarkMode.Text = "#95a0a6";
             textBoxColorOpenFolderDarkMode.Text = "#14412A";
             textBoxColorOpenFolderBorderDarkMode.Text = "#144B55";
             textBoxColorBackgroundDarkMode.Text = "#202020";

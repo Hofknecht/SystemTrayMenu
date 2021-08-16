@@ -83,5 +83,21 @@ namespace SystemTrayMenu
         public static Color SearchField { get; set; }
 
         public static Color DarkModeSearchField { get; set; }
+
+        public static Bitmap BitmapOpenFolder { get; set; }
+
+        public static Bitmap BitmapPin { get; set; }
+
+        public static Bitmap BitmapPinActive { get; set; }
+
+        public static Bitmap BitmapSearch { get; set; }
+
+        public static Bitmap BitmapFoldersCount { get; set; }
+
+        public static Bitmap BitmapFilesCount { get; set; }
+
+        public static Color Icons { get; set; }
+
+        public static Color DarkModeIcons { get; set; }
     }
 }

@@ -327,4 +327,7 @@
   <data name="Border of menu" xml:space="preserve">
     <value>Rand van menu</value>
   </data>
+  <data name="Icons" xml:space="preserve">
+    <value>pictogrammen</value>
+  </data>
 </root>

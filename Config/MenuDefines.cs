@@ -116,5 +116,20 @@ namespace SystemTrayMenu
                 }
             }
         }
+
+        public static Color ColorIcons
+        {
+            get
+            {
+                if (Config.IsDarkMode())
+                {
+                    return AppColors.DarkModeIcons;
+                }
+                else
+                {
+                    return AppColors.Icons;
+                }
+            }
+        }
     }
 }

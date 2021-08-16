@@ -327,4 +327,7 @@
   <data name="Border of menu" xml:space="preserve">
     <value>Bordo del menu</value>
   </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Icone</value>
+  </data>
 </root>
