@@ -20,6 +20,11 @@ We are using C# and .Net Core 3.1
 Download the latest official version:  
 https://github.com/Hofknecht/SystemTrayMenu/releases
   
+Blogs
+------------------
+* https://www.deskmodder.de/blog/2020/07/18/systemtraymenu-nun-auch-als-windows-10-app-neben-der-portablen-version/
+* https://www.trishtech.com/2020/07/systemtraymenu-is-simple-and-lightweight-start-menu-alternative/
+* http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/
 
 FAQ
 ------------------
@@ -113,3 +118,7 @@ We would be delighted if you could help us with the following:
 Don't hesitate to donate if you appreciate SystemTrayMenu and would like to support our work.  
 [![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
 
+Sponsors - Thank you!
+------------------
+
+* Ralf K.
