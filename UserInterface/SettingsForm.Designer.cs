@@ -89,7 +89,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxColorsLightMode = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelColorsAndDefault = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelIcons = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxIcons = new System.Windows.Forms.PictureBox();
             this.textBoxColorIcons = new System.Windows.Forms.TextBox();
             this.labelIcons = new System.Windows.Forms.Label();
@@ -301,7 +301,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize.SuspendLayout();
             this.groupBoxColorsLightMode.SuspendLayout();
             this.tableLayoutPanelColorsAndDefault.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanelIcons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcons)).BeginInit();
             this.tableLayoutPanelBackgroundBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgroundBorder)).BeginInit();
@@ -410,7 +410,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl.Location = new System.Drawing.Point(6, 3);
             this.tabControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 1;
+            this.tabControl.SelectedIndex = 2;
             this.tabControl.Size = new System.Drawing.Size(422, 441);
             this.tabControl.TabIndex = 0;
             // 
@@ -1206,7 +1206,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColorsAndDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelColorsAndDefault.ColumnCount = 1;
             this.tableLayoutPanelColorsAndDefault.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanel4, 0, 2);
+            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelIcons, 0, 2);
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelBackgroundBorder, 0, 4);
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.labelMenuLightMode, 0, 0);
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelTitle, 0, 1);
@@ -1259,27 +1259,28 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColorsAndDefault.Size = new System.Drawing.Size(379, 641);
             this.tableLayoutPanelColorsAndDefault.TabIndex = 0;
             // 
-            // tableLayoutPanel4
+            // tableLayoutPanelIcons
             // 
-            this.tableLayoutPanel4.AutoSize = true;
-            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBoxIcons, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBoxColorIcons, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.labelIcons, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 47);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(158, 23);
-            this.tableLayoutPanel4.TabIndex = 2;
+            this.tableLayoutPanelIcons.AutoSize = true;
+            this.tableLayoutPanelIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelIcons.ColumnCount = 3;
+            this.tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelIcons.Controls.Add(this.pictureBoxIcons, 0, 0);
+            this.tableLayoutPanelIcons.Controls.Add(this.textBoxColorIcons, 1, 0);
+            this.tableLayoutPanelIcons.Controls.Add(this.labelIcons, 2, 0);
+            this.tableLayoutPanelIcons.Location = new System.Drawing.Point(3, 47);
+            this.tableLayoutPanelIcons.Name = "tableLayoutPanelIcons";
+            this.tableLayoutPanelIcons.RowCount = 1;
+            this.tableLayoutPanelIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelIcons.Size = new System.Drawing.Size(158, 23);
+            this.tableLayoutPanelIcons.TabIndex = 2;
             // 
             // pictureBoxIcons
             // 
             this.pictureBoxIcons.BackColor = System.Drawing.Color.White;
+            this.pictureBoxIcons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxIcons.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxIcons.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxIcons.Margin = new System.Windows.Forms.Padding(0);
@@ -1334,6 +1335,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxBackgroundBorder
             // 
             this.pictureBoxBackgroundBorder.BackColor = System.Drawing.Color.White;
+            this.pictureBoxBackgroundBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxBackgroundBorder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxBackgroundBorder.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackgroundBorder.Margin = new System.Windows.Forms.Padding(0);
@@ -1396,6 +1398,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxTitle
             // 
             this.pictureBoxTitle.BackColor = System.Drawing.Color.White;
+            this.pictureBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxTitle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxTitle.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTitle.Margin = new System.Windows.Forms.Padding(0);
@@ -1450,6 +1453,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxBackground
             // 
             this.pictureBoxBackground.BackColor = System.Drawing.Color.White;
+            this.pictureBoxBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxBackground.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackground.Margin = new System.Windows.Forms.Padding(0);
@@ -1516,6 +1520,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowHoverBackground
             // 
             this.pictureBoxArrowHoverBackground.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowHoverBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowHoverBackground.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowHoverBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowHoverBackground.Margin = new System.Windows.Forms.Padding(0);
@@ -1570,6 +1575,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowHover
             // 
             this.pictureBoxArrowHover.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowHover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowHover.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowHover.Margin = new System.Windows.Forms.Padding(0);
@@ -1623,6 +1629,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowClickBackground
             // 
             this.pictureBoxArrowClickBackground.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowClickBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowClickBackground.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowClickBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowClickBackground.Margin = new System.Windows.Forms.Padding(0);
@@ -1676,6 +1683,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowClick
             // 
             this.pictureBoxArrowClick.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowClick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowClick.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowClick.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowClick.Margin = new System.Windows.Forms.Padding(0);
@@ -1729,6 +1737,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrow
             // 
             this.pictureBoxArrow.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrow.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
@@ -1782,6 +1791,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSliderArrowsAndTrackHover
             // 
             this.pictureBoxSliderArrowsAndTrackHover.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSliderArrowsAndTrackHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSliderArrowsAndTrackHover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSliderArrowsAndTrackHover.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(0);
@@ -1835,6 +1845,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSliderHover
             // 
             this.pictureBoxSliderHover.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSliderHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSliderHover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSliderHover.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderHover.Margin = new System.Windows.Forms.Padding(0);
@@ -1889,6 +1900,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSliderDragging
             // 
             this.pictureBoxSliderDragging.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSliderDragging.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSliderDragging.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSliderDragging.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderDragging.Margin = new System.Windows.Forms.Padding(0);
@@ -1942,6 +1954,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSlider
             // 
             this.pictureBoxSlider.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSlider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSlider.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSlider.Margin = new System.Windows.Forms.Padding(0);
@@ -1995,6 +2008,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxScrollbarBackground
             // 
             this.pictureBoxScrollbarBackground.BackColor = System.Drawing.Color.White;
+            this.pictureBoxScrollbarBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxScrollbarBackground.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxScrollbarBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxScrollbarBackground.Margin = new System.Windows.Forms.Padding(0);
@@ -2080,6 +2094,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxWarning
             // 
             this.pictureBoxWarning.BackColor = System.Drawing.Color.White;
+            this.pictureBoxWarning.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxWarning.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxWarning.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxWarning.Margin = new System.Windows.Forms.Padding(0);
@@ -2110,6 +2125,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSelectedItemBorder
             // 
             this.pictureBoxSelectedItemBorder.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSelectedItemBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSelectedItemBorder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSelectedItemBorder.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSelectedItemBorder.Margin = new System.Windows.Forms.Padding(0);
@@ -2163,6 +2179,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSelectedItem
             // 
             this.pictureBoxSelectedItem.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSelectedItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSelectedItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSelectedItem.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSelectedItem.Margin = new System.Windows.Forms.Padding(0);
@@ -2216,6 +2233,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxOpenFolderBorder
             // 
             this.pictureBoxOpenFolderBorder.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOpenFolderBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxOpenFolderBorder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxOpenFolderBorder.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxOpenFolderBorder.Margin = new System.Windows.Forms.Padding(0);
@@ -2268,6 +2286,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxOpenFolder
             // 
             this.pictureBoxOpenFolder.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOpenFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxOpenFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxOpenFolder.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(0);
@@ -2321,6 +2340,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSearchField
             // 
             this.pictureBoxSearchField.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSearchField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSearchField.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSearchField.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSearchField.Margin = new System.Windows.Forms.Padding(0);
@@ -2449,6 +2469,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxIconsDarkMode
             // 
             this.pictureBoxIconsDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxIconsDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxIconsDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxIconsDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxIconsDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2502,6 +2523,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxBackgroundBorderDarkMode
             // 
             this.pictureBoxBackgroundBorderDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxBackgroundBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxBackgroundBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxBackgroundBorderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackgroundBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2576,6 +2598,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSearchFieldDarkMode
             // 
             this.pictureBoxSearchFieldDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSearchFieldDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSearchFieldDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSearchFieldDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2629,6 +2652,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxOpenFolderDarkMode
             // 
             this.pictureBoxOpenFolderDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOpenFolderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxOpenFolderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxOpenFolderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2682,6 +2706,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxOpenFolderBorderDarkMode
             // 
             this.pictureBoxOpenFolderBorderDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxOpenFolderBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxOpenFolderBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxOpenFolderBorderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2734,6 +2759,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureColorBoxSelectedItemDarkMode
             // 
             this.pictureColorBoxSelectedItemDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureColorBoxSelectedItemDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureColorBoxSelectedItemDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureColorBoxSelectedItemDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureColorBoxSelectedItemDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2787,6 +2813,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSelectedItemBorderDarkMode
             // 
             this.pictureBoxSelectedItemBorderDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSelectedItemBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSelectedItemBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSelectedItemBorderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2840,6 +2867,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxWarningDarkMode
             // 
             this.pictureBoxWarningDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxWarningDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxWarningDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxWarningDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxWarningDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2902,6 +2930,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxScrollbarBackgroundDarkMode
             // 
             this.pictureBoxScrollbarBackgroundDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxScrollbarBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxScrollbarBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxScrollbarBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -2955,6 +2984,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSliderDarkMode
             // 
             this.pictureBoxSliderDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSliderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSliderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSliderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3008,6 +3038,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSliderDraggingDarkMode
             // 
             this.pictureBoxSliderDraggingDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSliderDraggingDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSliderDraggingDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSliderDraggingDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderDraggingDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3061,6 +3092,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSliderHoverDarkMode
             // 
             this.pictureBoxSliderHoverDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSliderHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSliderHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSliderHoverDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3114,6 +3146,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxSliderArrowsAndTrackHoverDarkMode
             // 
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3167,6 +3200,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowDarkMode
             // 
             this.pictureBoxArrowDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3220,6 +3254,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowClickDarkMode
             // 
             this.pictureBoxArrowClickDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowClickDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowClickDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowClickDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowClickDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3273,6 +3308,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowClickBackgroundDarkMode
             // 
             this.pictureBoxArrowClickBackgroundDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowClickBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowClickBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowClickBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3326,6 +3362,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowHoverDarkMode
             // 
             this.pictureBoxArrowHoverDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowHoverDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3379,6 +3416,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxArrowHoverBackgroundDarkMode
             // 
             this.pictureBoxArrowHoverBackgroundDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxArrowHoverBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxArrowHoverBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowHoverBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3446,6 +3484,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxTitleDarkMode
             // 
             this.pictureBoxTitleDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxTitleDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxTitleDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxTitleDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTitleDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3499,6 +3538,7 @@ namespace SystemTrayMenu.UserInterface
             // pictureBoxBackgroundDarkMode
             // 
             this.pictureBoxBackgroundDarkMode.BackColor = System.Drawing.Color.White;
+            this.pictureBoxBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
@@ -3665,8 +3705,8 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxColorsLightMode.PerformLayout();
             this.tableLayoutPanelColorsAndDefault.ResumeLayout(false);
             this.tableLayoutPanelColorsAndDefault.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanelIcons.ResumeLayout(false);
+            this.tableLayoutPanelIcons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcons)).EndInit();
             this.tableLayoutPanelBackgroundBorder.ResumeLayout(false);
             this.tableLayoutPanelBackgroundBorder.PerformLayout();
@@ -4024,7 +4064,7 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.PictureBox pictureBoxBackgroundBorderDarkMode;
         private System.Windows.Forms.Label labelBackgroundBorderDarkMode;
         private System.Windows.Forms.TextBox textBoxColorBackgroundBorderDarkMode;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelIcons;
         private System.Windows.Forms.PictureBox pictureBoxIcons;
         private System.Windows.Forms.TextBox textBoxColorIcons;
         private System.Windows.Forms.Label labelIcons;
