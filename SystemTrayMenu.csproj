@@ -1,28 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
     <UseWindowsForms>true</UseWindowsForms>
     <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
-    <OutputType>WinExe</OutputType>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>true</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Platforms>x64;x86;AnyCPU</Platforms>
     <Configurations>Debug;Release;ReleasePackage</Configurations>
+    <RootNamespace>SystemTrayMenu</RootNamespace>
+    <AssemblyName>SystemTrayMenu</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>SystemTrayMenu.Program</StartupObject>
@@ -133,47 +121,47 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.it-IT.Designer.cs">
+    <Compile Update="Resources\lang.it-IT.Designer.cs">
       <DependentUpon>lang.it-IT.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.nl-NL.Designer.cs">
+    <Compile Update="Resources\lang.nl-NL.Designer.cs">
       <DependentUpon>lang.nl-NL.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.pt-BR.Designer.cs">
+    <Compile Update="Resources\lang.pt-BR.Designer.cs">
       <DependentUpon>lang.pt-BR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.cs-CZ.Designer.cs">
+    <Compile Update="Resources\lang.cs-CZ.Designer.cs">
       <DependentUpon>lang.cs-CZ.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.zh-CN.Designer.cs">
+    <Compile Update="Resources\lang.zh-CN.Designer.cs">
       <DependentUpon>lang.zh-CN.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.ja-JP.Designer.cs">
+    <Compile Update="Resources\lang.ja-JP.Designer.cs">
       <DependentUpon>lang.ja-JP.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.ko-KR.Designer.cs">
+    <Compile Update="Resources\lang.ko-KR.Designer.cs">
       <DependentUpon>lang.ko-KR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.ru-RU.Designer.cs">
+    <Compile Update="Resources\lang.ru-RU.Designer.cs">
       <DependentUpon>lang.ru-RU.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.vi-VN.Designer.cs">
+    <Compile Update="Resources\lang.vi-VN.Designer.cs">
       <DependentUpon>lang.vi-VN.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -207,19 +195,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.es-ES.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\lang.it-IT.resx">
+    <EmbeddedResource Update="Resources\lang.it-IT.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.it-IT.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\lang.nl-NL.resx">
+    <EmbeddedResource Update="Resources\lang.nl-NL.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.nl-NL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\lang.pt-BR.resx">
+    <EmbeddedResource Update="Resources\lang.pt-BR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.pt-BR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\lang.cs-CZ.resx">
+    <EmbeddedResource Update="Resources\lang.cs-CZ.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.cs-CZ.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -259,18 +247,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
