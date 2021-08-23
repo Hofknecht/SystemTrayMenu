@@ -12,7 +12,7 @@ namespace SystemTrayMenu
     using System.Text;
     using System.Windows.Forms;
     using Microsoft.Win32;
-    using Svg;
+    using SkiaSharp;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
@@ -259,12 +259,12 @@ namespace SystemTrayMenu
                 htmlColorCodeIcons = Settings.Default.ColorIcons;
             }
 
-            AppColors.BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
-            AppColors.BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapFoldersCount = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapFilesCount = ReadSvg(Properties.Resources.ic_fluent_document_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons, 20);
+            AppColors.BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons, 20);
+            AppColors.BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons, 20);
+            AppColors.BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons, 20);
+            AppColors.BitmapFoldersCount = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular, htmlColorCodeIcons, 18);
+            AppColors.BitmapFilesCount = ReadSvg(Properties.Resources.ic_fluent_document_48_regular, htmlColorCodeIcons, 18);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSearchField;
             colorAndCode.Color = Color.FromArgb(255, 255, 255);
@@ -428,17 +428,36 @@ namespace SystemTrayMenu
             }
         }
 
-        private static Bitmap ReadSvg(byte[] byteArray, string htmlColorCode)
+        private static Bitmap ReadSvg(byte[] byteArray, string htmlColorCode, int size = 18)
         {
+            int factorToMakeSharper = 2;
+            size = (int)(size * factorToMakeSharper * Scaling.Factor);
             string str = Encoding.UTF8.GetString(byteArray);
             str = str.Replace("#585858", htmlColorCode);
             byteArray = Encoding.UTF8.GetBytes(str);
 
             using (var stream = new MemoryStream(byteArray))
             {
-                var svgDocument = SvgDocument.Open<SvgDocument>(stream);
-                svgDocument.Color = new SvgColourServer(Color.Black);
-                return svgDocument.Draw();
+                var bitmap = new SKBitmap(size, size);
+                var canvas = new SKCanvas(bitmap);
+                canvas.Clear(SKColors.Transparent);
+
+                // load the SVG
+                var svg = new SkiaSharp.Extended.Svg.SKSvg(new SKSize(size, size));
+                svg.Load(stream);
+
+                // draw the SVG to the bitmap
+                canvas.DrawPicture(svg.Picture);
+                SKImage sKImage = SKImage.FromBitmap(bitmap);
+
+                SKData skData = sKImage.Encode(SKEncodedImageFormat.Png, 100);
+
+                using (var ms = new MemoryStream())
+                {
+                    skData.SaveTo(ms);
+                    ms.Position = 0;
+                    return new Bitmap(ms);
+                }
             }
         }
 

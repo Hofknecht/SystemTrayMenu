@@ -11,7 +11,6 @@ namespace SystemTrayMenu.UserInterface
     using System.IO;
     using System.Reflection;
     using System.Windows.Forms;
-    using Svg;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Helpers;
