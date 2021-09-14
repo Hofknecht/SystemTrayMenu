@@ -24,6 +24,7 @@ Blogs and reviews
 ------------------
 * https://www.deskmodder.de/blog/2020/07/18/systemtraymenu-nun-auch-als-windows-10-app-neben-der-portablen-version/
 * https://www.trishtech.com/2020/07/systemtraymenu-is-simple-and-lightweight-start-menu-alternative/
+* https://wikitechnews.net/ge/erstellen-sie-ein-benutzerdefiniertes-startmenu-auf-das-sie-mit-systemtraymenu-mit-einer-verknupfung-zugreifen-konnen/
 * http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/
 * https://reviewsapp.org/systemtraymenu-better-organization-of-windows
 
