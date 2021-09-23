@@ -17,6 +17,9 @@
             {
                 components.Dispose();
             }
+
+            timerUpdateIcons.Stop();
+            timerUpdateIcons.Dispose();
             fading.Dispose();
             customScrollbar.Dispose();
             base.Dispose(disposing);
@@ -30,6 +33,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanelDgvAndScrollbar = new System.Windows.Forms.TableLayoutPanel();
             this.dgv = new System.Windows.Forms.DataGridView();
@@ -44,6 +48,7 @@
             this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxOpenFolder = new System.Windows.Forms.PictureBox();
             this.pictureBoxMenuAlwaysOpen = new System.Windows.Forms.PictureBox();
+            this.timerUpdateIcons = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanelDgvAndScrollbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.tableLayoutPanelSearch.SuspendLayout();
@@ -288,6 +293,11 @@
             //
             InitializeComponentControlsTheDesignerRemoves();
             // 
+            // timerUpdateIcons
+            // 
+            this.timerUpdateIcons.Interval = 300;
+            this.timerUpdateIcons.Tick += new System.EventHandler(this.TimerUpdateIcons_Tick);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -340,5 +350,6 @@
         private System.Windows.Forms.PictureBox pictureBoxFilesCount;
         private System.Windows.Forms.PictureBox pictureBoxFoldersCount;
         private System.Windows.Forms.Label labelFoldersCount;
+        private System.Windows.Forms.Timer timerUpdateIcons;
     }
 }

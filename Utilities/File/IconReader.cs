@@ -11,6 +11,7 @@ namespace SystemTrayMenu.Utilities
     using System.Drawing.Imaging;
     using System.IO;
     using System.Runtime.InteropServices;
+    using System.Threading;
     using System.Threading.Tasks;
 
     // from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
@@ -47,9 +48,10 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay)
+        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, bool updateIconInBackground, out bool loading)
         {
             Icon icon = null;
+            loading = false;
             string extension = Path.GetExtension(filePath);
             IconSize size = IconSize.Small;
             if (Scaling.Factor > 1)
@@ -63,7 +65,20 @@ namespace SystemTrayMenu.Utilities
             }
             else
             {
-                icon = DictIconCache.GetOrAdd(filePath, GetIcon);
+                if (!DictIconCache.TryGetValue(filePath, out icon))
+                {
+                    icon = Properties.Resources.Loading;
+                    loading = true;
+
+                    if (updateIconInBackground)
+                    {
+                        new Thread(UpdateIconInBackground).Start();
+                        void UpdateIconInBackground()
+                        {
+                            DictIconCache.GetOrAdd(filePath, GetIcon);
+                        }
+                    }
+                }
             }
 
             Icon GetIcon(string keyExtension)

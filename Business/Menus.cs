@@ -538,6 +538,11 @@ namespace SystemTrayMenu.Business
                 Path.GetFileName(Config.Path));
             AdjustMenusSizeAndLocation();
             DisposeMenu(menus[0]);
+
+            if (FileUrl.GetDefaultBrowserPath(out string browserPath))
+            {
+                IconReader.GetFileIconWithCache(browserPath, true, true, out bool loading);
+            }
         }
 
         internal void StartWorker()

@@ -43,6 +43,7 @@ namespace SystemTrayMenu.UserInterface
                     isShowing = true;
                     Visible = true;
                     isShowing = false;
+                    timerUpdateIcons.Start();
                 }
                 catch (ObjectDisposedException)
                 {
@@ -702,6 +703,13 @@ namespace SystemTrayMenu.UserInterface
                 else
                 {
                     filesCount++;
+
+                    if (rowData.IconLoading)
+                    {
+                        string resolvedLnkPath = string.Empty;
+                        rowData.ReadIcon(rowData.ContainsMenu, ref resolvedLnkPath);
+                        row.Cells[0].Value = rowData.Icon;
+                    }
                 }
             }
 
@@ -793,6 +801,30 @@ namespace SystemTrayMenu.UserInterface
             if (e.Button == MouseButtons.Left)
             {
                 UserClickedOpenFolder?.Invoke();
+            }
+        }
+
+        private void TimerUpdateIcons_Tick(object sender, EventArgs e)
+        {
+            int iconsToUpdate = 0;
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                RowData rowData = (RowData)row.Cells[2].Value;
+                rowData.RowIndex = row.Index;
+
+                if (rowData.IconLoading)
+                {
+                    iconsToUpdate++;
+                    string resolvedLnkPath = string.Empty;
+                    rowData.ReadIcon(rowData.ContainsMenu, ref resolvedLnkPath);
+                    row.Cells[0].Value = rowData.Icon;
+                }
+            }
+
+            if (iconsToUpdate < 1)
+            {
+                timerUpdateIcons.Stop();
             }
         }
     }

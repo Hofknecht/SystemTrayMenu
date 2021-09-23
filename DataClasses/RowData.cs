@@ -23,6 +23,7 @@ namespace SystemTrayMenu.DataClasses
     internal class RowData : IDisposable
     {
         private static readonly Icon White50PercentageIcon = Properties.Resources.White50Percentage;
+        private static readonly Icon NotFoundIcon = Properties.Resources.NotFound;
         private static DateTime contextMenuClosed;
         private string workingDirectory;
         private string arguments;
@@ -59,6 +60,10 @@ namespace SystemTrayMenu.DataClasses
 
         internal int MenuLevel { get; set; }
 
+        internal Icon Icon => icon;
+
+        internal bool IconLoading { get; set; }
+
         public void Dispose()
         {
             Dispose(true);
@@ -79,7 +84,7 @@ namespace SystemTrayMenu.DataClasses
 
             if (icon == null)
             {
-                icon = White50PercentageIcon;
+                icon = NotFoundIcon;
             }
 
             if (HiddenEntry)
@@ -150,7 +155,10 @@ namespace SystemTrayMenu.DataClasses
                     {
                         icon = IconReader.GetFileIconWithCache(
                             TargetFilePath,
-                            showOverlay);
+                            showOverlay,
+                            true,
+                            out bool loading);
+                        IconLoading = loading;
                         diposeIcon = false;
                     }
                     catch (Exception ex)
@@ -334,7 +342,8 @@ namespace SystemTrayMenu.DataClasses
                 {
                     if (FileUrl.GetDefaultBrowserPath(out string browserPath))
                     {
-                        icon = IconReader.GetFileIconWithCache(browserPath, true);
+                        icon = IconReader.GetFileIconWithCache(browserPath, true, true, out bool loading);
+                        IconLoading = loading;
                         diposeIcon = false;
                         handled = true;
                     }
