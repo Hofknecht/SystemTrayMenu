@@ -330,4 +330,10 @@
   <data name="Icons" xml:space="preserve">
     <value>Icons</value>
   </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Set by context menu </value>
+  </data>
+  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
+    <value>Set as SystemTrayMenu folder</value>
+  </data>
 </root>

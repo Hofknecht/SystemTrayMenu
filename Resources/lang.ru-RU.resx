@@ -330,4 +330,10 @@
   <data name="Icons" xml:space="preserve">
     <value>Иконки</value>
   </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Устанавливается в контекстном меню</value>
+  </data>
+  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
+    <value>Установить как папку SystemTrayMenu</value>
+  </data>
 </root>

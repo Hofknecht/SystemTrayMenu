@@ -330,4 +330,10 @@
   <data name="Icons" xml:space="preserve">
     <value>图标</value>
   </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>通过上下文菜单设置</value>
+  </data>
+  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
+    <value>设置为 SystemTrayMenu 文件夹</value>
+  </data>
 </root>

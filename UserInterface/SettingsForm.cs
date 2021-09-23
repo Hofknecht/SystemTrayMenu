@@ -18,6 +18,9 @@ namespace SystemTrayMenu.UserInterface
 
     public partial class SettingsForm : Form
     {
+        private const string MenuName = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder";
+        private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
+
         private static readonly Icon SystemTrayMenu = Resources.SystemTrayMenu;
         private readonly string newHotKey = string.Empty;
         private bool inHotkey;
@@ -106,6 +109,8 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxFolder.Text = Translator.GetText("Folder");
                 buttonChangeFolder.Text = Translator.GetText("Change folder");
                 checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from folder");
+                checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text =
+                    Translator.GetText("Set by context menu ");
                 groupBoxUSB.Text = Translator.GetText("USB");
                 buttonChangeRelativeFolder.Text = Translator.GetText("Change to relative folder");
                 checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at the assembly location");
@@ -189,6 +194,8 @@ namespace SystemTrayMenu.UserInterface
                 textBoxFolder.Text = Config.Path;
                 checkBoxUseIconFromRootFolder.Checked =
                     Settings.Default.UseIconFromRootFolder;
+                checkBoxPossibilityToSelectFolderByWindowsContextMenu.Checked =
+                    Settings.Default.PossibilityToSelectFolderByWindowsContextMenu;
             }
 
             InitializeAutostart();
@@ -447,7 +454,7 @@ namespace SystemTrayMenu.UserInterface
 
             tabControl.Size = new Size(
                 tabControl.Size.Width,
-                tableLayoutPanelAdvanced.Size.Height + 50);
+                tableLayoutPanelGeneral.Size.Height + 50);
         }
 
         private void AdjustControlMultilineIfNecessary(Control control)
@@ -498,6 +505,20 @@ namespace SystemTrayMenu.UserInterface
             {
                 Settings.Default.CurrentCultureInfoName =
                     comboBoxLanguage.SelectedValue.ToString();
+                Translator.Initialize();
+            }
+
+            PossibilityToSelectFolderByWindowsContextMenu();
+            void PossibilityToSelectFolderByWindowsContextMenu()
+            {
+                if (checkBoxPossibilityToSelectFolderByWindowsContextMenu.Checked)
+                {
+                    AddPossibilityToSelectFolderByWindowsContextMenu();
+                }
+                else
+                {
+                    RemovePossibilityToSelectFolderByWindowsContextMenu();
+                }
             }
 
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
@@ -525,6 +546,74 @@ namespace SystemTrayMenu.UserInterface
 
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void AddPossibilityToSelectFolderByWindowsContextMenu()
+        {
+            RegistryKey registryKeyContextMenu = null;
+            RegistryKey registryKeyContextMenuCommand = null;
+
+            try
+            {
+                registryKeyContextMenu = Registry.CurrentUser.CreateSubKey(MenuName);
+                string binLocation = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+                if (registryKeyContextMenu != null)
+                {
+                    registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as SystemTrayMenu folder"));
+                    registryKeyContextMenu.SetValue("Icon", binLocation);
+                }
+
+                registryKeyContextMenuCommand = Registry.CurrentUser.CreateSubKey(Command);
+
+                if (registryKeyContextMenuCommand != null)
+                {
+                    registryKeyContextMenuCommand.SetValue(string.Empty, binLocation + " " + "\"" + "%1");
+                }
+
+                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = true;
+            }
+            catch (Exception ex)
+            {
+                Log.Warn("SavePossibilityToSelectFolderByWindowsContextMenu failed", ex);
+            }
+            finally
+            {
+                if (registryKeyContextMenu != null)
+                {
+                    registryKeyContextMenu.Close();
+                }
+
+                if (registryKeyContextMenuCommand != null)
+                {
+                    registryKeyContextMenuCommand.Close();
+                }
+            }
+        }
+
+        private void RemovePossibilityToSelectFolderByWindowsContextMenu()
+        {
+            try
+            {
+                RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(Command);
+                if (registryKey != null)
+                {
+                    registryKey.Close();
+                    Registry.CurrentUser.DeleteSubKey(Command);
+                }
+
+                registryKey = Registry.CurrentUser.OpenSubKey(MenuName);
+                if (registryKey != null)
+                {
+                    registryKey.Close();
+                    Registry.CurrentUser.DeleteSubKey(MenuName);
+                }
+
+                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = false;
+            }
+            catch (Exception ex)
+            {
+                Log.Warn("DeletePossibilityToSelectFolderByWindowsContextMenu failed", ex);
+            }
         }
 
         private void ButtonHotkeyDefault_Click(object sender, EventArgs e)

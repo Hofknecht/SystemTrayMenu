@@ -330,4 +330,10 @@
   <data name="Icons" xml:space="preserve">
     <value>Ikone</value>
   </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Nastavljeno v kontekstnem meniju</value>
+  </data>
+  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
+    <value>Nastavit jako složku SystemTrayMenu</value>
+  </data>
 </root>

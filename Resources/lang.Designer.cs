@@ -548,6 +548,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set as SystemTrayMenu folder.
+        /// </summary>
+        internal static string Set_as_SystemTrayMenu_folder {
+            get {
+                return ResourceManager.GetString("Set as SystemTrayMenu folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set by context menu .
+        /// </summary>
+        internal static string Set_by_context_menu_ {
+            get {
+                return ResourceManager.GetString("Set by context menu ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string Settings {

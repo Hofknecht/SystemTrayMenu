@@ -78,6 +78,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PossibilityToSelectFolderByWindowsContextMenu
+        {
+            get
+            {
+                return ((bool)(this["PossibilityToSelectFolderByWindowsContextMenu"]));
+            }
+            set
+            {
+                this["PossibilityToSelectFolderByWindowsContextMenu"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+LWin")]
         public string HotKey
         {

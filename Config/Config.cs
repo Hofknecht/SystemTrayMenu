@@ -46,6 +46,17 @@ namespace SystemTrayMenu
             AppColors.BitmapFilesCount.Dispose();
         }
 
+        internal static void SetFolderByWindowsContextMenu(string[] args)
+        {
+            if (args != null && args.Length > 0)
+            {
+                string path = args[0];
+                Log.Info($"SetFolderByWindowsContextMenu() path: {path}");
+                Settings.Default.PathDirectory = path;
+                Settings.Default.Save();
+            }
+        }
+
         public static bool LoadOrSetByUser()
         {
             bool pathOK = Directory.Exists(Path);

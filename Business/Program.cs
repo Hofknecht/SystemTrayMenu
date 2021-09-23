@@ -15,7 +15,7 @@ namespace SystemTrayMenu
         private static bool isStartup = true;
 
         [STAThread]
-        private static void Main()
+        private static void Main(string[] args)
         {
             try
             {
@@ -23,6 +23,7 @@ namespace SystemTrayMenu
                 SingleAppInstance.Initialize();
                 Translator.Initialize();
                 Config.Initialize();
+                Config.SetFolderByWindowsContextMenu(args);
                 if (Config.LoadOrSetByUser())
                 {
                     Application.EnableVisualStyles();

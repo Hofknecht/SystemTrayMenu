@@ -36,6 +36,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxFolder = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelFolder = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu = new System.Windows.Forms.CheckBox();
             this.textBoxFolder = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelChangeFolder = new System.Windows.Forms.TableLayoutPanel();
             this.buttonChangeFolder = new System.Windows.Forms.Button();
@@ -458,7 +459,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxFolder.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxFolder.Name = "groupBoxFolder";
             this.groupBoxFolder.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxFolder.Size = new System.Drawing.Size(400, 106);
+            this.groupBoxFolder.Size = new System.Drawing.Size(400, 131);
             this.groupBoxFolder.TabIndex = 0;
             this.groupBoxFolder.TabStop = false;
             this.groupBoxFolder.Text = "groupBoxFolder";
@@ -469,18 +470,30 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelFolder.ColumnCount = 1;
             this.tableLayoutPanelFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelFolder.Controls.Add(this.checkBoxPossibilityToSelectFolderByWindowsContextMenu, 0, 3);
             this.tableLayoutPanelFolder.Controls.Add(this.textBoxFolder, 0, 0);
             this.tableLayoutPanelFolder.Controls.Add(this.tableLayoutPanelChangeFolder, 0, 1);
             this.tableLayoutPanelFolder.Controls.Add(this.checkBoxUseIconFromRootFolder, 0, 2);
             this.tableLayoutPanelFolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelFolder.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanelFolder.Name = "tableLayoutPanelFolder";
-            this.tableLayoutPanelFolder.RowCount = 3;
+            this.tableLayoutPanelFolder.RowCount = 4;
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(394, 78);
+            this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(394, 103);
             this.tableLayoutPanelFolder.TabIndex = 0;
+            // 
+            // checkBoxPossibilityToSelectFolderByWindowsContextMenu
+            // 
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.AutoSize = true;
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Location = new System.Drawing.Point(3, 81);
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Name = "checkBoxPossibilityToSelectFolderByWindowsContextMenu";
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Size = new System.Drawing.Size(290, 19);
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.TabIndex = 2;
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text = "PossibilityToSelectFolderByWindowsContextMenu";
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.UseVisualStyleBackColor = true;
             // 
             // textBoxFolder
             // 
@@ -543,7 +556,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxUSB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxUSB.Controls.Add(this.tableLayoutPanelUSB);
             this.groupBoxUSB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxUSB.Location = new System.Drawing.Point(3, 115);
+            this.groupBoxUSB.Location = new System.Drawing.Point(3, 140);
             this.groupBoxUSB.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxUSB.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxUSB.Name = "groupBoxUSB";
@@ -631,7 +644,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxAutostart.AutoSize = true;
             this.groupBoxAutostart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxAutostart.Controls.Add(this.tableLayoutPanelAutostart);
-            this.groupBoxAutostart.Location = new System.Drawing.Point(3, 205);
+            this.groupBoxAutostart.Location = new System.Drawing.Point(3, 230);
             this.groupBoxAutostart.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxAutostart.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxAutostart.Name = "groupBoxAutostart";
@@ -672,7 +685,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHotkey.AutoSize = true;
             this.groupBoxHotkey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHotkey.Controls.Add(this.tableLayoutPanelHotkey);
-            this.groupBoxHotkey.Location = new System.Drawing.Point(3, 264);
+            this.groupBoxHotkey.Location = new System.Drawing.Point(3, 289);
             this.groupBoxHotkey.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxHotkey.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxHotkey.Name = "groupBoxHotkey";
@@ -725,7 +738,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxLanguage.AutoSize = true;
             this.groupBoxLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxLanguage.Controls.Add(this.tableLayoutPanelLanguage);
-            this.groupBoxLanguage.Location = new System.Drawing.Point(3, 329);
+            this.groupBoxLanguage.Location = new System.Drawing.Point(3, 354);
             this.groupBoxLanguage.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxLanguage.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxLanguage.Name = "groupBoxLanguage";
@@ -4072,5 +4085,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.PictureBox pictureBoxIconsDarkMode;
         private System.Windows.Forms.Label labelIconsDarkMode;
         private System.Windows.Forms.TextBox textBoxColorIconsDarkMode;
+        private System.Windows.Forms.CheckBox checkBoxPossibilityToSelectFolderByWindowsContextMenu;
     }
 }
