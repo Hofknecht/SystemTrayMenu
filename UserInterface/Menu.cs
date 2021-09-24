@@ -703,13 +703,6 @@ namespace SystemTrayMenu.UserInterface
                 else
                 {
                     filesCount++;
-
-                    if (rowData.IconLoading)
-                    {
-                        string resolvedLnkPath = string.Empty;
-                        rowData.ReadIcon(rowData.ContainsMenu, ref resolvedLnkPath);
-                        row.Cells[0].Value = rowData.Icon;
-                    }
                 }
             }
 
@@ -816,9 +809,7 @@ namespace SystemTrayMenu.UserInterface
                 if (rowData.IconLoading)
                 {
                     iconsToUpdate++;
-                    string resolvedLnkPath = string.Empty;
-                    rowData.ReadIcon(rowData.ContainsMenu, ref resolvedLnkPath);
-                    row.Cells[0].Value = rowData.Icon;
+                    row.Cells[0].Value = rowData.ReadLoadedIcon();
                 }
             }
 

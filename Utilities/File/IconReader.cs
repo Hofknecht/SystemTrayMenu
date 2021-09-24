@@ -26,6 +26,7 @@ namespace SystemTrayMenu.Utilities
     public static class IconReader
     {
         private static readonly ConcurrentDictionary<string, Icon> DictIconCache = new ConcurrentDictionary<string, Icon>();
+        private static readonly Icon LoadingIcon = Properties.Resources.Loading;
 
         // private static readonly object ReadIcon = new object();
         public enum IconSize
@@ -67,7 +68,7 @@ namespace SystemTrayMenu.Utilities
             {
                 if (!DictIconCache.TryGetValue(filePath, out icon))
                 {
-                    icon = Properties.Resources.Loading;
+                    icon = LoadingIcon;
                     loading = true;
 
                     if (updateIconInBackground)

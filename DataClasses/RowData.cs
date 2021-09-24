@@ -60,8 +60,6 @@ namespace SystemTrayMenu.DataClasses
 
         internal int MenuLevel { get; set; }
 
-        internal Icon Icon => icon;
-
         internal bool IconLoading { get; set; }
 
         public void Dispose()
@@ -81,11 +79,6 @@ namespace SystemTrayMenu.DataClasses
         {
             DataRow row = dataTable.Rows.Add();
             data.RowIndex = dataTable.Rows.IndexOf(row);
-
-            if (icon == null)
-            {
-                icon = NotFoundIcon;
-            }
 
             if (HiddenEntry)
             {
@@ -179,6 +172,11 @@ namespace SystemTrayMenu.DataClasses
                 }
             }
 
+            if (icon == null)
+            {
+                icon = NotFoundIcon;
+            }
+
             return isLnkDirectory;
         }
 
@@ -240,6 +238,36 @@ namespace SystemTrayMenu.DataClasses
                     toCloseByDoubleClick = true;
                 }
             }
+        }
+
+        internal Icon ReadLoadedIcon()
+        {
+            bool showOverlay = false;
+            string fileExtension = Path.GetExtension(TargetFilePath);
+            if (fileExtension == ".lnk" || fileExtension == ".url")
+            {
+                showOverlay = true;
+            }
+
+            string path = TargetFilePath;
+            if (ContainsMenu)
+            {
+                path = TargetFilePathOrig;
+            }
+
+            icon = IconReader.GetFileIconWithCache(
+                    path,
+                    showOverlay,
+                    false,
+                    out bool loading);
+            IconLoading = loading;
+
+            if (!loading && icon == null)
+            {
+                icon = NotFoundIcon;
+            }
+
+            return icon;
         }
 
         protected virtual void Dispose(bool disposing)
