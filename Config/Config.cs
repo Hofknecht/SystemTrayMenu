@@ -46,7 +46,7 @@ namespace SystemTrayMenu
             AppColors.BitmapFilesCount.Dispose();
         }
 
-        internal static void SetFolderByWindowsContextMenu(string[] args)
+        public static void SetFolderByWindowsContextMenu(string[] args)
         {
             if (args != null && args.Length > 0)
             {
@@ -59,7 +59,8 @@ namespace SystemTrayMenu
 
         public static bool LoadOrSetByUser()
         {
-            bool pathOK = Directory.Exists(Path);
+            bool pathOK = FileLnk.IsNetworkPath(Path) ||
+                (Directory.Exists(Path) && Directory.GetFiles(Path).Length > 0);
 
             if (!pathOK)
             {
@@ -87,7 +88,9 @@ namespace SystemTrayMenu
                 {
                     if (dialog.ShowDialog() == DialogResult.OK)
                     {
-                        if (Directory.Exists(dialog.Folder))
+                        if (FileLnk.IsNetworkPath(Path) ||
+                            (Directory.Exists(dialog.Folder) &&
+                            Directory.GetFiles(Path).Length > 0))
                         {
                             pathOK = true;
                             Settings.Default.PathDirectory =
