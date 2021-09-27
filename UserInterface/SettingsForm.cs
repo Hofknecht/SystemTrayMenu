@@ -567,7 +567,7 @@ namespace SystemTrayMenu.UserInterface
 
                 if (registryKeyContextMenuCommand != null)
                 {
-                    registryKeyContextMenuCommand.SetValue(string.Empty, binLocation + " " + "\"" + "%1");
+                    registryKeyContextMenuCommand.SetValue(string.Empty, binLocation + " \"%1\"");
                 }
 
                 Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = true;
