@@ -59,8 +59,7 @@ namespace SystemTrayMenu
 
         public static bool LoadOrSetByUser()
         {
-            bool pathOK = FileLnk.IsNetworkPath(Path) ||
-                (Directory.Exists(Path) && Directory.GetFiles(Path).Length > 0);
+            bool pathOK = IsPathOK(Path);
 
             if (!pathOK)
             {
@@ -88,9 +87,7 @@ namespace SystemTrayMenu
                 {
                     if (dialog.ShowDialog() == DialogResult.OK)
                     {
-                        if (FileLnk.IsNetworkPath(Path) ||
-                            (Directory.Exists(dialog.Folder) &&
-                            Directory.GetFiles(Path).Length > 0))
+                        if (IsPathOK(dialog.Folder))
                         {
                             pathOK = true;
                             Settings.Default.PathDirectory =
@@ -110,6 +107,30 @@ namespace SystemTrayMenu
             }
 
             return pathOK;
+        }
+
+        private static bool IsPathOK(string path)
+        {
+            bool isPathOK = false;
+
+            bool folderContainsFiles = false;
+            try
+            {
+                folderContainsFiles = Directory.GetFiles(path).Length > 0;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Log.Warn($"path:'{path}'", ex);
+            }
+            catch (IOException ex)
+            {
+                Log.Warn($"path:'{path}'", ex);
+            }
+
+            isPathOK = FileLnk.IsNetworkPath(path) ||
+                (Directory.Exists(path) && folderContainsFiles);
+
+            return isPathOK;
         }
 
         internal static void ShowHelpFAQ()
