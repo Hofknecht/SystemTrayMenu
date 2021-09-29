@@ -411,16 +411,7 @@ namespace SystemTrayMenu.UserInterface
             }
             catch (Exception ex)
             {
-                if (ex is SecurityException ||
-                    ex is UnauthorizedAccessException ||
-                    ex is IOException)
-                {
-                    Log.Warn($"KeyName:'{keyName}' SubKeyRef:'{subKeyRef}'", ex);
-                }
-                else
-                {
-                    throw;
-                }
+                Log.Warn($"KeyName:'{keyName}' SubKeyRef:'{subKeyRef}'", ex);
             }
 
             return strSysInfoPath;

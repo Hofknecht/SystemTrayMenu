@@ -76,16 +76,7 @@ namespace SystemTrayMenu.Utilities
                 }
                 catch (Exception ex)
                 {
-                    if (ex is UnauthorizedAccessException ||
-                        ex is IOException ||
-                        ex is ArgumentException)
-                    {
-                        Log.Warn($"path:'{path}'", ex);
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    Log.Warn($"path:'{path}'", ex);
                 }
             }
             else

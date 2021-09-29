@@ -357,7 +357,7 @@ namespace SystemTrayMenu.Business
                     Log.Warn($"path:'{path}'", ex);
                     menuData.Validity = MenuDataValidity.NoAccess;
                 }
-                catch (IOException ex)
+                catch (Exception ex)
                 {
                     Log.Warn($"path:'{path}'", ex);
                 }
@@ -410,7 +410,7 @@ namespace SystemTrayMenu.Business
                     Log.Warn($"path:'{path}'", ex);
                     menuData.Validity = MenuDataValidity.NoAccess;
                 }
-                catch (IOException ex)
+                catch (Exception ex)
                 {
                     Log.Warn($"path:'{path}'", ex);
                 }
@@ -594,18 +594,7 @@ namespace SystemTrayMenu.Business
             }
             catch (Exception ex)
             {
-                if (ex is SecurityException ||
-                    ex is ArgumentException ||
-                    ex is UnauthorizedAccessException ||
-                    ex is PathTooLongException ||
-                    ex is NotSupportedException)
-                {
-                    Log.Warn($"fileName:'{fileName}'", ex);
-                }
-                else
-                {
-                    throw;
-                }
+                Log.Warn($"fileName:'{fileName}'", ex);
             }
 
             return rowData;

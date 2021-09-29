@@ -156,18 +156,7 @@ namespace SystemTrayMenu.DataClasses
                     }
                     catch (Exception ex)
                     {
-                        if (ex is SecurityException ||
-                            ex is ArgumentException ||
-                            ex is UnauthorizedAccessException ||
-                            ex is PathTooLongException ||
-                            ex is NotSupportedException)
-                        {
-                            Log.Warn($"path:'{TargetFilePath}'", ex);
-                        }
-                        else
-                        {
-                            throw;
-                        }
+                        Log.Warn($"path:'{TargetFilePath}'", ex);
                     }
                 }
             }
@@ -388,21 +377,10 @@ namespace SystemTrayMenu.DataClasses
             }
             catch (Exception ex)
             {
-                if (ex is SecurityException ||
-                    ex is ArgumentException ||
-                    ex is UnauthorizedAccessException ||
-                    ex is PathTooLongException ||
-                    ex is NotSupportedException)
-                {
-                    Log.Warn(
-                        $"path:'{TargetFilePath}', " +
-                        $"iconFile:'{iconFile}'",
-                        ex);
-                }
-                else
-                {
-                    throw;
-                }
+                Log.Warn(
+                    $"path:'{TargetFilePath}', " +
+                    $"iconFile:'{iconFile}'",
+                    ex);
             }
 
             SetText($"{FileInfo.Name[0..^4]}");
@@ -427,21 +405,10 @@ namespace SystemTrayMenu.DataClasses
             }
             catch (Exception ex)
             {
-                if (ex is SecurityException ||
-                    ex is ArgumentException ||
-                    ex is UnauthorizedAccessException ||
-                    ex is PathTooLongException ||
-                    ex is NotSupportedException)
-                {
-                    Log.Warn(
-                        $"path:'{TargetFilePath}', " +
-                        $"executable:'{executable}'",
-                        ex);
-                }
-                else
-                {
-                    throw;
-                }
+                Log.Warn(
+                    $"path:'{TargetFilePath}', " +
+                    $"executable:'{executable}'",
+                    ex);
             }
 
             return handled;

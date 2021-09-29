@@ -115,15 +115,7 @@ namespace SystemTrayMenu.Utilities
                 }
                 catch (Exception ex)
                 {
-                    if (ex is COMException ||
-                        ex is UnauthorizedAccessException)
-                    {
-                        Log.Warn($"shortcutFilename:'{shortcutFilename}'", ex);
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    Log.Warn($"shortcutFilename:'{shortcutFilename}'", ex);
                 }
             }
 

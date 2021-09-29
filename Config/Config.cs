@@ -118,11 +118,7 @@ namespace SystemTrayMenu
             {
                 folderContainsFiles = Directory.GetFiles(path).Length > 0;
             }
-            catch (UnauthorizedAccessException ex)
-            {
-                Log.Warn($"path:'{path}'", ex);
-            }
-            catch (IOException ex)
+            catch (Exception ex)
             {
                 Log.Warn($"path:'{path}'", ex);
             }
