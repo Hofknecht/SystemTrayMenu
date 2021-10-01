@@ -233,28 +233,56 @@ namespace SystemTrayMenu.Properties
             XDocument configXml;
             if (IsConfigPathAssembly())
             {
-                configXml = XDocument.Load(ConfigPathAssembly);
+                configXml = LoadOrGetNew(ConfigPathAssembly);
             }
             else
             {
-                configXml = XDocument.Load(UserConfigPath);
+                configXml = LoadOrGetNew(UserConfigPath);
             }
 
-            // get all of the <setting name="..." serializeAs="..."> elements.
-            IEnumerable<XElement> settingElements = configXml.Element(Config).Element(UserSettings).Element(typeof(Settings).FullName).Elements(Setting);
-
-            // iterate through, adding them to the dictionary, (checking for nulls, xml no likey nulls)
-            // using "String" as default serializeAs...just in case, no real good reason.
-            foreach (XElement element in settingElements)
+            if (configXml != null)
             {
-                SettingStruct newSetting = new SettingStruct()
+                // get all of the <setting name="..." serializeAs="..."> elements.
+                IEnumerable<XElement> settingElements = configXml.Element(Config).Element(UserSettings).Element(typeof(Settings).FullName).Elements(Setting);
+
+                // iterate through, adding them to the dictionary, (checking for nulls, xml no likey nulls)
+                // using "String" as default serializeAs...just in case, no real good reason.
+                foreach (XElement element in settingElements)
                 {
-                    Name = element.Attribute(NameOf) == null ? string.Empty : element.Attribute(NameOf).Value,
-                    SerializeAs = element.Attribute(SerializeAs) == null ? "String" : element.Attribute(SerializeAs).Value,
-                    Value = element.Value ?? string.Empty,
-                };
-                SettingsDictionary.Add(element.Attribute(NameOf).Value, newSetting);
+                    SettingStruct newSetting = new SettingStruct()
+                    {
+                        Name = element.Attribute(NameOf) == null ? string.Empty : element.Attribute(NameOf).Value,
+                        SerializeAs = element.Attribute(SerializeAs) == null ? "String" : element.Attribute(SerializeAs).Value,
+                        Value = element.Value ?? string.Empty,
+                    };
+                    SettingsDictionary.Add(element.Attribute(NameOf).Value, newSetting);
+                }
             }
+        }
+
+        private XDocument LoadOrGetNew(string path)
+        {
+            XDocument xDocument = null;
+            try
+            {
+                xDocument = XDocument.Load(path);
+            }
+            catch (Exception exceptionWarning)
+            {
+                Log.Warn($"Could not load {path}", exceptionWarning);
+                try
+                {
+                    File.Delete(path);
+                    CreateEmptyConfigIfNotExists(path);
+                    xDocument = XDocument.Load(path);
+                }
+                catch (Exception exceptionError)
+                {
+                    Log.Error($"Could not delete and create {path}", exceptionError);
+                }
+            }
+
+            return xDocument;
         }
 
         /// <summary>
@@ -263,45 +291,48 @@ namespace SystemTrayMenu.Properties
         private void SaveValuesToFile()
         {
             // load the current xml from the file.
-            XDocument import;
+            XDocument configXml;
             if (IsConfigPathAssembly())
             {
-                import = XDocument.Load(ConfigPathAssembly);
+                configXml = LoadOrGetNew(ConfigPathAssembly);
             }
             else
             {
-                import = XDocument.Load(UserConfigPath);
+                configXml = LoadOrGetNew(UserConfigPath);
             }
 
-            // get the settings group (e.g. <Company.Project.Desktop.Settings>)
-            XElement settingsSection = import.Element(Config).Element(UserSettings).Element(typeof(Settings).FullName);
-
-            // iterate though the dictionary, either updating the value or adding the new setting.
-            foreach (KeyValuePair<string, SettingStruct> entry in SettingsDictionary)
+            if (configXml != null)
             {
-                XElement setting = settingsSection.Elements().FirstOrDefault(e => e.Attribute(NameOf).Value == entry.Key);
-                if (setting == null)
-                {
-                    // this can happen if a new setting is added via the .settings designer.
-                    XElement newSetting = new XElement(Setting);
-                    newSetting.Add(new XAttribute(NameOf, entry.Value.Name));
-                    newSetting.Add(new XAttribute(SerializeAs, entry.Value.SerializeAs));
-                    newSetting.Value = entry.Value.Value ?? string.Empty;
-                    settingsSection.Add(newSetting);
-                }
-                else
-                {
-                    // update the value if it exists.
-                    setting.Value = entry.Value.Value ?? string.Empty;
-                }
-            }
+                // get the settings group (e.g. <Company.Project.Desktop.Settings>)
+                XElement settingsSection = configXml.Element(Config).Element(UserSettings).Element(typeof(Settings).FullName);
 
-            if (IsConfigPathAssembly())
-            {
-                import.Save(ConfigPathAssembly);
-            }
+                // iterate though the dictionary, either updating the value or adding the new setting.
+                foreach (KeyValuePair<string, SettingStruct> entry in SettingsDictionary)
+                {
+                    XElement setting = settingsSection.Elements().FirstOrDefault(e => e.Attribute(NameOf).Value == entry.Key);
+                    if (setting == null)
+                    {
+                        // this can happen if a new setting is added via the .settings designer.
+                        XElement newSetting = new XElement(Setting);
+                        newSetting.Add(new XAttribute(NameOf, entry.Value.Name));
+                        newSetting.Add(new XAttribute(SerializeAs, entry.Value.SerializeAs));
+                        newSetting.Value = entry.Value.Value ?? string.Empty;
+                        settingsSection.Add(newSetting);
+                    }
+                    else
+                    {
+                        // update the value if it exists.
+                        setting.Value = entry.Value.Value ?? string.Empty;
+                    }
+                }
 
-            import.Save(UserConfigPath);
+                if (IsConfigPathAssembly())
+                {
+                    configXml.Save(ConfigPathAssembly);
+                }
+
+                configXml.Save(UserConfigPath);
+            }
         }
 
         /// <summary>
