@@ -277,7 +277,7 @@ namespace SystemTrayMenu.DataClasses
             if (!ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
             {
-                Log.ProcessStart(TargetFilePathOrig, arguments, true, workingDirectory, true);
+                Log.ProcessStart(TargetFilePathOrig, arguments, false, workingDirectory, true);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
                 {
                     toCloseByOpenItem = true;
