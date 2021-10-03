@@ -336,4 +336,7 @@
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
     <value>Instellen als SystemTrayMenu-map</value>
   </data>
+  <data name="loading" xml:space="preserve">
+    <value>bezig met laden</value>
+  </data>
 </root>

@@ -7,6 +7,7 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Data;
     using System.Drawing;
+    using System.Drawing.Drawing2D;
     using System.Globalization;
     using System.IO;
     using System.Reflection;
@@ -19,10 +20,12 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu : Form
     {
+        private static readonly Icon LoadingIcon = Properties.Resources.Loading;
         private static readonly Icon Search = Properties.Resources.search;
         private readonly Fading fading = new Fading();
         private bool isShowing;
         private bool directionToRight;
+        private int rotationAngle;
 
         internal Menu()
         {
@@ -178,6 +181,7 @@ namespace SystemTrayMenu.UserInterface
             Empty,
             NoAccess,
             MaxReached,
+            Loading,
         }
 
         internal enum StartLocation
@@ -223,6 +227,11 @@ namespace SystemTrayMenu.UserInterface
             SetType(MenuType.NoAccess);
         }
 
+        internal void SetTypeLoading()
+        {
+            SetType(MenuType.Loading);
+        }
+
         internal void SetType(MenuType type)
         {
             if (type != MenuType.Main)
@@ -232,6 +241,8 @@ namespace SystemTrayMenu.UserInterface
 
             switch (type)
             {
+                case MenuType.Main:
+                    break;
                 case MenuType.Sub:
                     break;
                 case MenuType.Empty:
@@ -255,7 +266,18 @@ namespace SystemTrayMenu.UserInterface
                     textBoxSearch.Visible = false;
                     tableLayoutPanelSearch.Visible = false;
                     break;
-                case MenuType.Main:
+                case MenuType.Loading:
+                    SetTitle(Translator.GetText("loading"));
+                    pictureBoxSearch.Visible = false;
+                    textBoxSearch.Visible = false;
+                    tableLayoutPanelSearch.Visible = false;
+                    pictureBoxOpenFolder.Visible = false;
+                    pictureBoxMenuAlwaysOpen.Paint -= PictureBoxMenuAlwaysOpen_Paint;
+                    pictureBoxMenuAlwaysOpen.Paint += LoadingMenu_Paint;
+                    timerUpdateIcons.Tick -= TimerUpdateIcons_Tick;
+                    timerUpdateIcons.Tick += TimerUpdateLoadingMenu_Tick;
+                    timerUpdateIcons.Interval = 15;
+                    pictureBoxMenuAlwaysOpen.Visible = true;
                     break;
                 default:
                     break;
@@ -767,6 +789,50 @@ namespace SystemTrayMenu.UserInterface
                 Rectangle rowBounds = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
                 ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
             }
+        }
+
+        private void TimerUpdateLoadingMenu_Tick(object sender, EventArgs e)
+        {
+            pictureBoxMenuAlwaysOpen.Invalidate();
+        }
+
+        private void LoadingMenu_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            rotationAngle = rotationAngle + 5;
+            e.Graphics.DrawImage(
+                RotateImage(LoadingIcon.ToBitmap(), rotationAngle),
+                new Rectangle(Point.Empty, new Size(pictureBox.ClientSize.Width - 2, pictureBox.ClientSize.Height - 2)));
+        }
+
+        private Image RotateImage(Image img, float rotationAngle)
+        {
+            // create an empty Bitmap image
+            Bitmap bmp = new Bitmap(img.Width, img.Height);
+
+            // turn the Bitmap into a Graphics object
+            Graphics gfx = Graphics.FromImage(bmp);
+
+            // now we set the rotation point to the center of our image
+            gfx.TranslateTransform(0.5f + ((float)bmp.Width / 2), 0.5f + ((float)bmp.Height / 2));
+
+            // now rotate the image
+            gfx.RotateTransform(rotationAngle);
+
+            gfx.TranslateTransform(0.5f - ((float)bmp.Width / 2), 0.5f - ((float)bmp.Height / 2));
+
+            // set the InterpolationMode to HighQualityBicubic so to ensure a high
+            // quality image once it is transformed to the specified size
+            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            // now draw our new image onto the graphics object
+            gfx.DrawImage(img, new Point(0, 0));
+
+            // dispose of our Graphics object
+            gfx.Dispose();
+
+            // return the image
+            return bmp;
         }
 
         private void PictureBoxMenuOpenFolder_Paint(object sender, PaintEventArgs e)

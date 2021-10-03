@@ -336,4 +336,7 @@
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
     <value>设置为 SystemTrayMenu 文件夹</value>
   </data>
+  <data name="loading" xml:space="preserve">
+    <value>加载</value>
+  </data>
 </root>

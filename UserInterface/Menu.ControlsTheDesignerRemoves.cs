@@ -11,6 +11,8 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu
     {
+        public bool IsLoadingMenu { get; internal set; }
+
         private void InitializeComponentControlsTheDesignerRemoves()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();

@@ -336,4 +336,7 @@
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
     <value>Establecer como carpeta SystemTrayMenu</value>
   </data>
+  <data name="loading" xml:space="preserve">
+    <value>cargando</value>
+  </data>
 </root>

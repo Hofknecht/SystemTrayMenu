@@ -123,7 +123,27 @@ namespace SystemTrayMenu.Business
                     menus[rowData.MenuLevel + 1].Tag as RowData != rowData))
                 {
                     loadingRowData = rowData;
-                    LoadStarted();
+
+                    CreateAndShowLoadingMenu(rowData);
+                    void CreateAndShowLoadingMenu(RowData rowData)
+                    {
+                        MenuData menuDataLoading = new MenuData
+                        {
+                            RowDatas = new List<RowData>(),
+                            Validity = MenuDataValidity.Valid,
+                            Level = rowData.MenuLevel + 1,
+                        };
+
+                        Menu menuLoading = Create(menuDataLoading, Path.GetFileName(Config.Path));
+                        menuLoading.IsLoadingMenu = true;
+                        AdjustMenusSizeAndLocation();
+                        menus[rowData.MenuLevel + 1] = menuLoading;
+                        menuLoading.Tag = menuDataLoading.RowDataParent = rowData;
+                        menuDataLoading.RowDataParent.SubMenu = menuLoading;
+                        menuLoading.SetTypeLoading();
+                        ShowSubMenu(menuLoading);
+                    }
+
                     BackgroundWorker workerSubMenu = workersSubMenu.
                         Where(w => !w.IsBusy).FirstOrDefault();
                     if (workerSubMenu == null)
@@ -142,10 +162,23 @@ namespace SystemTrayMenu.Business
 
                 void LoadSubMenuCompleted(object senderCompleted, RunWorkerCompletedEventArgs e)
                 {
-                    LoadStopped();
                     MenuData menuData = (MenuData)e.Result;
-                    if (menus[0].IsUsable &&
-                        menuData.Validity != MenuDataValidity.AbortedOrUnknown)
+                    if (menuData.Validity == MenuDataValidity.AbortedOrUnknown)
+                    {
+                        CloseLoadingMenu();
+                        void CloseLoadingMenu()
+                        {
+                            if (loadingRowData != null)
+                            {
+                                Menu menuLoading = menus[loadingRowData.MenuLevel + 1];
+                                if (menuLoading != null && menuLoading.IsLoadingMenu)
+                                {
+                                    CloseMenu(loadingRowData.MenuLevel + 1);
+                                }
+                            }
+                        }
+                    }
+                    else if (menus[0].IsUsable)
                     {
                         Menu menu = Create(menuData);
                         switch (menuData.Validity)

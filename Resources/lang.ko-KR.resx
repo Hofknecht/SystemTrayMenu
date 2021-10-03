@@ -336,4 +336,7 @@
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
     <value>SystemTrayMenu 폴더로 설정</value>
   </data>
+  <data name="loading" xml:space="preserve">
+    <value>로딩</value>
+  </data>
 </root>
