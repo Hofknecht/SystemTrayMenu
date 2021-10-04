@@ -79,6 +79,8 @@ namespace SystemTrayMenu.Business
                             MessageBox.Show(Translator.GetText(
                                 "MessageRootFolderEmpty"));
                             OpenFolder();
+                            Config.SetFolderByUser();
+                            openCloseState = OpenCloseState.Default;
                             showingMessageBox = false;
                         }
 
@@ -88,8 +90,10 @@ namespace SystemTrayMenu.Business
                         {
                             showingMessageBox = true;
                             MessageBox.Show(Translator.GetText(
-                            "MessageRootFolderNoAccess"));
+                                "MessageRootFolderNoAccess"));
                             OpenFolder();
+                            Config.SetFolderByUser();
+                            openCloseState = OpenCloseState.Default;
                             showingMessageBox = false;
                         }
 
@@ -123,6 +127,12 @@ namespace SystemTrayMenu.Business
                     menus[rowData.MenuLevel + 1].Tag as RowData != rowData))
                 {
                     loadingRowData = rowData;
+
+                    Menu menuLoading = menus[rowData.MenuLevel + 1];
+                    if (menuLoading != null && menuLoading.IsLoadingMenu)
+                    {
+                        CloseMenu(rowData.MenuLevel + 1);
+                    }
 
                     CreateAndShowLoadingMenu(rowData);
                     void CreateAndShowLoadingMenu(RowData rowData)
@@ -163,22 +173,15 @@ namespace SystemTrayMenu.Business
                 void LoadSubMenuCompleted(object senderCompleted, RunWorkerCompletedEventArgs e)
                 {
                     MenuData menuData = (MenuData)e.Result;
-                    if (menuData.Validity == MenuDataValidity.AbortedOrUnknown)
+
+                    Menu menuLoading = menus[menuData.Level];
+                    if (menuLoading != null && menuLoading.IsLoadingMenu)
                     {
-                        CloseLoadingMenu();
-                        void CloseLoadingMenu()
-                        {
-                            if (loadingRowData != null)
-                            {
-                                Menu menuLoading = menus[loadingRowData.MenuLevel + 1];
-                                if (menuLoading != null && menuLoading.IsLoadingMenu)
-                                {
-                                    CloseMenu(loadingRowData.MenuLevel + 1);
-                                }
-                            }
-                        }
+                        CloseMenu(menuData.Level);
                     }
-                    else if (menus[0].IsUsable)
+
+                    if (menuData.Validity != MenuDataValidity.AbortedOrUnknown &&
+                        menus[0].IsUsable)
                     {
                         Menu menu = Create(menuData);
                         switch (menuData.Validity)

@@ -24,25 +24,23 @@ namespace SystemTrayMenu
                 Translator.Initialize();
                 Config.Initialize();
                 Config.SetFolderByWindowsContextMenu(args);
-                if (Config.LoadOrSetByUser())
+                Config.LoadOrSetByUser();
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.ThreadException += ThreadException;
+                static void ThreadException(object s, ThreadExceptionEventArgs t)
                 {
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.ThreadException += ThreadException;
-                    static void ThreadException(object s, ThreadExceptionEventArgs t)
-                    {
-                        AskUserSendError(t.Exception);
-                    }
+                    AskUserSendError(t.Exception);
+                }
 
-                    Scaling.Initialize();
-                    FolderOptions.Initialize();
+                Scaling.Initialize();
+                FolderOptions.Initialize();
 
-                    using (new App())
-                    {
-                        isStartup = false;
-                        Log.WriteApplicationRuns();
-                        Application.Run();
-                    }
+                using (new App())
+                {
+                    isStartup = false;
+                    Log.WriteApplicationRuns();
+                    Application.Run();
                 }
 
                 Config.Dispose();

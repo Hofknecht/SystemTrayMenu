@@ -57,11 +57,9 @@ namespace SystemTrayMenu
             }
         }
 
-        public static bool LoadOrSetByUser()
+        public static void LoadOrSetByUser()
         {
-            bool pathOK = IsPathOK(Path);
-
-            if (!pathOK)
+            if (string.IsNullOrEmpty(Path))
             {
                 string textFirstStart = Translator.GetText("TextFirstStart");
                 MessageBox.Show(
@@ -69,64 +67,25 @@ namespace SystemTrayMenu
                     Translator.GetText("SystemTrayMenu"),
                     MessageBoxButtons.OK);
                 ShowHelpFAQ();
-                pathOK = SetFolderByUser();
+                SetFolderByUser();
             }
-
-            return pathOK;
         }
 
-        public static bool SetFolderByUser(bool save = true)
+        public static void SetFolderByUser(bool save = true)
         {
-            bool pathOK = false;
-            bool userAborted = false;
             using (FolderDialog dialog = new FolderDialog())
             {
                 dialog.InitialFolder = Path;
 
-                do
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (dialog.ShowDialog() == DialogResult.OK)
+                    Settings.Default.PathDirectory = dialog.Folder;
+                    if (save)
                     {
-                        if (IsPathOK(dialog.Folder))
-                        {
-                            pathOK = true;
-                            Settings.Default.PathDirectory =
-                                dialog.Folder;
-                            if (save)
-                            {
-                                Settings.Default.Save();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        userAborted = true;
+                        Settings.Default.Save();
                     }
                 }
-                while (!pathOK && !userAborted);
             }
-
-            return pathOK;
-        }
-
-        private static bool IsPathOK(string path)
-        {
-            bool isPathOK = false;
-
-            bool folderContainsFiles = false;
-            try
-            {
-                folderContainsFiles = Directory.GetFiles(path).Length > 0;
-            }
-            catch (Exception ex)
-            {
-                Log.Warn($"path:'{path}'", ex);
-            }
-
-            isPathOK = FileLnk.IsNetworkPath(path) ||
-                (Directory.Exists(path) && folderContainsFiles);
-
-            return isPathOK;
         }
 
         internal static void ShowHelpFAQ()
