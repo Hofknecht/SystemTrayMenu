@@ -212,12 +212,12 @@ namespace SystemTrayMenu.Business
             waitToOpenMenu.CloseMenu += CloseMenu;
             void CloseMenu(int level)
             {
-                if (menus[level] != null)
+                if (level < menus.Count() && menus[level] != null)
                 {
                     HideOldMenu(menus[level]);
                 }
 
-                if (menus[level - 1] != null)
+                if (level - 1 < menus.Count() && menus[level - 1] != null)
                 {
                     menus[level - 1].FocusTextBox();
                 }
@@ -1055,10 +1055,13 @@ namespace SystemTrayMenu.Business
             searchTextChanging = false;
 
             // if any open menu close
-            Menu menuToClose = menus[menu.Level + 1];
-            if (menuToClose != null)
+            if (menu.Level + 1 < menus.Count())
             {
-                HideOldMenu(menuToClose);
+                Menu menuToClose = menus[menu.Level + 1];
+                if (menuToClose != null)
+                {
+                    HideOldMenu(menuToClose);
+                }
             }
         }
     }

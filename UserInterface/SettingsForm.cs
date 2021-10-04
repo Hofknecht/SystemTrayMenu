@@ -250,6 +250,31 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownSizeInPercentage.Minimum = 100;
             numericUpDownSizeInPercentage.Maximum = 200;
             numericUpDownSizeInPercentage.Increment = 25;
+            numericUpDownSizeInPercentage.MouseWheel += NumericUpDownSizeInPercentage_MouseWheel;
+            void NumericUpDownSizeInPercentage_MouseWheel(object sender, MouseEventArgs e)
+            {
+                decimal newValue = numericUpDownSizeInPercentage.Value;
+                if (e.Delta > 0)
+                {
+                    newValue = newValue + numericUpDownSizeInPercentage.Increment;
+                    if (newValue > numericUpDownSizeInPercentage.Maximum)
+                    {
+                        newValue = (int)numericUpDownSizeInPercentage.Maximum;
+                    }
+                }
+                else
+                {
+                    newValue = newValue - numericUpDownSizeInPercentage.Increment;
+                    if (newValue < numericUpDownSizeInPercentage.Minimum)
+                    {
+                        newValue = (int)numericUpDownSizeInPercentage.Minimum;
+                    }
+                }
+
+                numericUpDownSizeInPercentage.Value = newValue;
+                ((HandledMouseEventArgs)e).Handled = true;
+            }
+
             numericUpDownSizeInPercentage.Value = Settings.Default.SizeInPercentage;
 
             numericUpDownMenuWidth.Minimum = 50;

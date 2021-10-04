@@ -259,13 +259,6 @@ namespace SystemTrayMenu.UserInterface
                     textBoxSearch.Visible = false;
                     tableLayoutPanelSearch.Visible = false;
                     break;
-                case MenuType.MaxReached:
-                    SetTitle($"Max {MenuDefines.MenusMax - 1} Menus");
-                    labelTitle.BackColor = MenuDefines.ColorTitleWarning;
-                    pictureBoxSearch.Visible = false;
-                    textBoxSearch.Visible = false;
-                    tableLayoutPanelSearch.Visible = false;
-                    break;
                 case MenuType.Loading:
                     SetTitle(Translator.GetText("loading"));
                     pictureBoxSearch.Visible = false;
