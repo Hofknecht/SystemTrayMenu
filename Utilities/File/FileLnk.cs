@@ -36,6 +36,7 @@ namespace SystemTrayMenu.Utilities
             return resolvedFilename;
         }
 
+#if false // FileLnk.IsDirectory was very slow if it was a network path, PingHost was still slow if not exists therefore we used IsNetworkPath
         public static bool IsDirectory(string filePath)
         {
             bool isDirectory = false;
@@ -51,17 +52,17 @@ namespace SystemTrayMenu.Utilities
             return isDirectory;
         }
 
-        public static bool IsNetworkRoot(string path)
-        {
-            return !File.Exists(path) &&
-                path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
-                !path.Substring(2).Contains(@"\", StringComparison.InvariantCulture);
-        }
-
         public static bool IsNetworkPath(string path)
         {
             return path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
                 !path.StartsWith(@"\\?\", StringComparison.InvariantCulture);
+        }
+#endif
+
+        public static bool IsNetworkRoot(string path)
+        {
+            return path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
+                !path.Substring(2).Contains(@"\", StringComparison.InvariantCulture);
         }
 
         public static bool PingHost(string nameOrAddress)

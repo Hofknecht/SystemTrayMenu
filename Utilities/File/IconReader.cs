@@ -60,24 +60,23 @@ namespace SystemTrayMenu.Utilities
                 size = IconSize.Large;
             }
 
-            if (IsExtensionWitSameIcon(extension))
+            string key = filePath;
+            if (IsExtensionWithSameIcon(extension))
             {
-                icon = DictIconCache.GetOrAdd(extension + linkOverlay, GetIcon);
+                key = extension + linkOverlay;
             }
-            else
-            {
-                if (!DictIconCache.TryGetValue(filePath, out icon))
-                {
-                    icon = LoadingIcon;
-                    loading = true;
 
-                    if (updateIconInBackground)
+            if (!DictIconCache.TryGetValue(key, out icon))
+            {
+                icon = LoadingIcon;
+                loading = true;
+
+                if (updateIconInBackground)
+                {
+                    new Thread(UpdateIconInBackground).Start();
+                    void UpdateIconInBackground()
                     {
-                        new Thread(UpdateIconInBackground).Start();
-                        void UpdateIconInBackground()
-                        {
-                            DictIconCache.GetOrAdd(filePath, GetIcon);
-                        }
+                        DictIconCache.GetOrAdd(key, GetIcon);
                     }
                 }
             }
@@ -186,17 +185,17 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        private static bool IsExtensionWitSameIcon(string fileExtension)
+        private static bool IsExtensionWithSameIcon(string fileExtension)
         {
-            bool isExtensionWitSameIcon = true;
+            bool isExtensionWithSameIcon = true;
             List<string> extensionsWithDiffIcons = new List<string>
                 { string.Empty, ".EXE", ".LNK", ".ICO", ".URL" };
             if (extensionsWithDiffIcons.Contains(fileExtension.ToUpperInvariant()))
             {
-                isExtensionWitSameIcon = false;
+                isExtensionWithSameIcon = false;
             }
 
-            return isExtensionWitSameIcon;
+            return isExtensionWithSameIcon;
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "todo")]

@@ -291,6 +291,8 @@ namespace SystemTrayMenu.DataClasses
         {
             bool handled = false;
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
+
+#if false // FileLnk.IsDirectory was very slow if it was a network path, PingHost was still slow if not exists therefore we used IsNetworkPath
             if (FileLnk.IsNetworkPath(resolvedLnkPath))
             {
                 string nameOrAdress = resolvedLnkPath.Split(@"\\")[1].Split(@"\").First();
@@ -301,6 +303,8 @@ namespace SystemTrayMenu.DataClasses
             }
 
             if (FileLnk.IsDirectory(resolvedLnkPath))
+#endif
+            if (string.IsNullOrEmpty(Path.GetExtension(resolvedLnkPath)))
             {
                 icon = IconReader.GetFolderIconSTA(TargetFilePath, IconReader.FolderType.Open, true);
                 handled = true;
@@ -314,6 +318,7 @@ namespace SystemTrayMenu.DataClasses
             {
                 Log.Info($"Resolve *.LNK '{TargetFilePath}' has no icon");
             }
+#if false //icons were incorrect, performance increase when removing
             else
             {
                 IWshShell shell = new WshShell();
@@ -341,6 +346,7 @@ namespace SystemTrayMenu.DataClasses
 
                 TargetFilePath = resolvedLnkPath;
             }
+#endif
 
             SetText(Path.GetFileNameWithoutExtension(TargetFilePathOrig));
 
