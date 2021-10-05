@@ -339,4 +339,10 @@
   <data name="loading" xml:space="preserve">
     <value>Carregando</value>
   </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>Problema com o atalho</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>O item ao qual este atalho se refere foi alterado ou movido, portanto, este atalho não funcionará mais corretamente.</value>
+  </data>
 </root>

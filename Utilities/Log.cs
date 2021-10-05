@@ -10,6 +10,7 @@ namespace SystemTrayMenu.Utilities
     using System.Diagnostics;
     using System.IO;
     using System.Reflection;
+    using System.Threading;
     using System.Windows.Forms;
     using Clearcove.Logging;
 
@@ -106,16 +107,18 @@ namespace SystemTrayMenu.Utilities
             }
             catch (Exception ex)
             {
-                if (ex is FileNotFoundException ||
-                    ex is Win32Exception ||
-                    ex is InvalidOperationException)
+                Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
+                if (ex.Message == "The system cannot find the file specified.")
                 {
-                    Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
-                    MessageBox.Show(ex.Message);
-                }
-                else
-                {
-                    throw;
+                    new Thread(ShowProblemWithShortcut).Start();
+                    void ShowProblemWithShortcut()
+                    {
+                        _ = MessageBox.Show(
+                            Translator.GetText("The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly."),
+                            Translator.GetText("Problem with Shortcut"),
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
                 }
             }
         }

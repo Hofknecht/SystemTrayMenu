@@ -339,4 +339,10 @@
   <data name="loading" xml:space="preserve">
     <value>Đang tải</value>
   </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>Sự cố với phím tắt</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
+  </data>
 </root>

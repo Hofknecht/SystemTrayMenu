@@ -339,4 +339,10 @@
   <data name="loading" xml:space="preserve">
     <value>Caricamento in corso</value>
   </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>Problema con scorciatoia</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>L'elemento a cui si riferisce questa scorciatoia è stato modificato o spostato, quindi questa scorciatoia non funzionerà più correttamente.</value>
+  </data>
 </root>

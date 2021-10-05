@@ -339,4 +339,10 @@
   <data name="loading" xml:space="preserve">
     <value>Wird geladen</value>
   </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>Problem mit Shortcut</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Das Element, auf das sich diese Verknüpfung bezieht, wurde geändert oder verschoben, sodass diese Verknüpfung nicht mehr ordnungsgemäß funktioniert.</value>
+  </data>
 </root>

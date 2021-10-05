@@ -512,6 +512,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Problem with Shortcut.
+        /// </summary>
+        internal static string Problem_with_Shortcut {
+            get {
+                return ResourceManager.GetString("Problem with Shortcut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restart.
         /// </summary>
         internal static string Restart {
@@ -679,6 +688,16 @@ namespace SystemTrayMenu.Resources {
         internal static string TextFirstStart {
             get {
                 return ResourceManager.GetString("TextFirstStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly..
+        /// </summary>
+        internal static string The_item_that_this_shortcut_refers_to_has_been_changed_or_moved__so_this_shortcut_will_no_longer_work_properly_ {
+            get {
+                return ResourceManager.GetString("The item that this shortcut refers to has been changed or moved, so this shortcut" +
+                        " will no longer work properly.", resourceCulture);
             }
         }
         

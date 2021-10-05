@@ -339,4 +339,10 @@
   <data name="loading" xml:space="preserve">
     <value>загрузка</value>
   </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>Проблема с ярлыком</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Элемент, на который ссылается этот ярлык, был изменен или перемещен, поэтому этот ярлык больше не будет работать должным образом.</value>
+  </data>
 </root>

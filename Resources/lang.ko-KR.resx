@@ -339,4 +339,10 @@
   <data name="loading" xml:space="preserve">
     <value>로딩</value>
   </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>바로 가기 문제</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>이 바로 가기가 참조하는 항목이 변경되거나 이동되었으므로 이 바로 가기가 더 이상 제대로 작동하지 않습니다.</value>
+  </data>
 </root>
