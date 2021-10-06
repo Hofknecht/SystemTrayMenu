@@ -128,12 +128,6 @@ namespace SystemTrayMenu.Business
                 {
                     loadingRowData = rowData;
 
-                    Menu menuLoading = menus[rowData.MenuLevel + 1];
-                    if (menuLoading != null && menuLoading.IsLoadingMenu)
-                    {
-                        CloseMenu(rowData.MenuLevel + 1);
-                    }
-
                     CreateAndShowLoadingMenu(rowData);
                     void CreateAndShowLoadingMenu(RowData rowData)
                     {
@@ -177,7 +171,8 @@ namespace SystemTrayMenu.Business
                     Menu menuLoading = menus[menuData.Level];
                     if (menuLoading != null && menuLoading.IsLoadingMenu)
                     {
-                        CloseMenu(menuData.Level);
+                        menuLoading.HideWithFade();
+                        menus[menuLoading.Level] = null;
                     }
 
                     if (menuData.Validity != MenuDataValidity.AbortedOrUnknown &&
@@ -773,6 +768,12 @@ namespace SystemTrayMenu.Business
             if (!AsEnumerable.Any(m => m.Visible))
             {
                 openCloseState = OpenCloseState.Default;
+
+                if (IconReader.ClearIfCacheTooBig())
+                {
+                    GC.Collect();
+                    MainPreload();
+                }
             }
         }
 
@@ -920,7 +921,6 @@ namespace SystemTrayMenu.Business
                 foreach (Menu menuToClose in menus.Where(
                     m => m != null && m.Level > menuPrevious.Level))
                 {
-                    menuToClose.VisibleChanged += MenuVisibleChanged;
                     menuToClose.HideWithFade();
                     menus[menuToClose.Level] = null;
                 }

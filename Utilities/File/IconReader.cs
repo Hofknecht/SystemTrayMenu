@@ -49,6 +49,19 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
+        internal static bool ClearIfCacheTooBig()
+        {
+            bool cleared = false;
+            if (DictIconCache.Count > 200)
+            {
+                Dispose();
+                DictIconCache.Clear();
+                cleared = true;
+            }
+
+            return cleared;
+        }
+
         public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, bool updateIconInBackground, out bool loading)
         {
             Icon icon = null;
