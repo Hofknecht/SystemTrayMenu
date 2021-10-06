@@ -476,6 +476,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open Folder.
+        /// </summary>
+        internal static string Open_Folder {
+            get {
+                return ResourceManager.GetString("Open Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open the assembly location.
         /// </summary>
         internal static string Open_the_assembly_location {

@@ -345,4 +345,7 @@
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Элемент, на который ссылается этот ярлык, был изменен или перемещен, поэтому этот ярлык больше не будет работать должным образом.</value>
   </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
 </root>

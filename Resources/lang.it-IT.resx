@@ -345,4 +345,7 @@
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>L'elemento a cui si riferisce questa scorciatoia è stato modificato o spostato, quindi questa scorciatoia non funzionerà più correttamente.</value>
   </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>Aprire cartella</value>
+  </data>
 </root>
