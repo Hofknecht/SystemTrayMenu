@@ -6,6 +6,7 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Drawing;
     using System.IO;
     using System.Reflection;
@@ -108,9 +109,9 @@ namespace SystemTrayMenu.UserInterface
                 tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxFolder.Text = Translator.GetText("Folder");
                 buttonChangeFolder.Text = Translator.GetText("Change folder");
+                buttonOpenFolder.Text = Translator.GetText("Open Folder");
                 checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from folder");
-                checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text =
-                    Translator.GetText("Set by context menu ");
+                checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
                 groupBoxUSB.Text = Translator.GetText("USB");
                 buttonChangeRelativeFolder.Text = Translator.GetText("Change to relative folder");
                 checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at the assembly location");
@@ -672,6 +673,11 @@ namespace SystemTrayMenu.UserInterface
             textBoxFolder.Text = Config.Path;
         }
 
+        private void ButtonOpenFolder_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", Config.Path);
+        }
+
         private void ButtonChangeRelativeFolder_Click(object sender, EventArgs e)
         {
             Settings.Default.PathDirectory = Path.GetRelativePath(
@@ -857,5 +863,6 @@ namespace SystemTrayMenu.UserInterface
                 e.Handled = e.SuppressKeyPress = true;
             }
         }
+
     }
 }

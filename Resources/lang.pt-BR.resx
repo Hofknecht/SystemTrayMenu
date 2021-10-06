@@ -345,4 +345,7 @@
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>O item ao qual este atalho se refere foi alterado ou movido, portanto, este atalho não funcionará mais corretamente.</value>
   </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>Abra Pasta</value>
+  </data>
 </root>

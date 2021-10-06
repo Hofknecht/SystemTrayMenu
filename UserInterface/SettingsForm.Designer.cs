@@ -40,6 +40,7 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxFolder = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelChangeFolder = new System.Windows.Forms.TableLayoutPanel();
             this.buttonChangeFolder = new System.Windows.Forms.Button();
+            this.buttonOpenFolder = new System.Windows.Forms.Button();
             this.checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
             this.groupBoxUSB = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelUSB = new System.Windows.Forms.TableLayoutPanel();
@@ -395,12 +396,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.Controls.Add(this.tabControl, 0, 0);
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelBottom, 0, 1);
-            this.tableLayoutPanelMain.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelMain.Location = new System.Drawing.Point(7, 7);
+            this.tableLayoutPanelMain.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(434, 478);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(978, 1160);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // tabControl
@@ -408,20 +410,22 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl.Controls.Add(this.tabPageGeneral);
             this.tabControl.Controls.Add(this.tabPageAdvanced);
             this.tabControl.Controls.Add(this.tabPageCustomize);
-            this.tabControl.Location = new System.Drawing.Point(6, 3);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.tabControl.Location = new System.Drawing.Point(14, 7);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(14, 7, 14, 7);
             this.tabControl.Name = "tabControl";
+            this.tabControl.Padding = new System.Drawing.Point(10, 10);
             this.tabControl.SelectedIndex = 2;
-            this.tabControl.Size = new System.Drawing.Size(422, 441);
+            this.tabControl.Size = new System.Drawing.Size(950, 1080);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageGeneral
             // 
             this.tabPageGeneral.Controls.Add(this.tableLayoutPanelGeneral);
-            this.tabPageGeneral.Location = new System.Drawing.Point(4, 24);
+            this.tabPageGeneral.Location = new System.Drawing.Point(10, 65);
+            this.tabPageGeneral.Margin = new System.Windows.Forms.Padding(7);
             this.tabPageGeneral.Name = "tabPageGeneral";
-            this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(414, 413);
+            this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(7);
+            this.tabPageGeneral.Size = new System.Drawing.Size(930, 1005);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "tabPageGeneral";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
@@ -438,7 +442,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxHotkey, 0, 3);
             this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxLanguage, 0, 4);
             this.tableLayoutPanelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelGeneral.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelGeneral.Location = new System.Drawing.Point(7, 7);
+            this.tableLayoutPanelGeneral.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelGeneral.Name = "tableLayoutPanelGeneral";
             this.tableLayoutPanelGeneral.RowCount = 5;
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -446,7 +451,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(408, 407);
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(916, 991);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // groupBoxFolder
@@ -454,12 +459,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxFolder.AutoSize = true;
             this.groupBoxFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxFolder.Controls.Add(this.tableLayoutPanelFolder);
-            this.groupBoxFolder.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxFolder.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxFolder.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxFolder.Location = new System.Drawing.Point(7, 7);
+            this.groupBoxFolder.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxFolder.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxFolder.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxFolder.Name = "groupBoxFolder";
-            this.groupBoxFolder.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxFolder.Size = new System.Drawing.Size(400, 131);
+            this.groupBoxFolder.Padding = new System.Windows.Forms.Padding(7, 14, 7, 14);
+            this.groupBoxFolder.Size = new System.Drawing.Size(900, 290);
             this.groupBoxFolder.TabIndex = 0;
             this.groupBoxFolder.TabStop = false;
             this.groupBoxFolder.Text = "groupBoxFolder";
@@ -475,22 +481,24 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolder.Controls.Add(this.tableLayoutPanelChangeFolder, 0, 1);
             this.tableLayoutPanelFolder.Controls.Add(this.checkBoxUseIconFromRootFolder, 0, 2);
             this.tableLayoutPanelFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFolder.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelFolder.Location = new System.Drawing.Point(7, 50);
+            this.tableLayoutPanelFolder.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelFolder.Name = "tableLayoutPanelFolder";
             this.tableLayoutPanelFolder.RowCount = 4;
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(394, 103);
+            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(886, 226);
             this.tableLayoutPanelFolder.TabIndex = 0;
             // 
             // checkBoxPossibilityToSelectFolderByWindowsContextMenu
             // 
             this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.AutoSize = true;
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Location = new System.Drawing.Point(3, 81);
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Location = new System.Drawing.Point(7, 178);
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Name = "checkBoxPossibilityToSelectFolderByWindowsContextMenu";
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Size = new System.Drawing.Size(290, 19);
+            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Size = new System.Drawing.Size(637, 41);
             this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.TabIndex = 2;
             this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text = "PossibilityToSelectFolderByWindowsContextMenu";
             this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.UseVisualStyleBackColor = true;
@@ -500,11 +508,11 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFolder.BackColor = System.Drawing.Color.White;
             this.textBoxFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFolder.Location = new System.Drawing.Point(6, 3);
-            this.textBoxFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.textBoxFolder.Location = new System.Drawing.Point(14, 7);
+            this.textBoxFolder.Margin = new System.Windows.Forms.Padding(14, 7, 14, 7);
             this.textBoxFolder.Name = "textBoxFolder";
             this.textBoxFolder.ReadOnly = true;
-            this.textBoxFolder.Size = new System.Drawing.Size(382, 16);
+            this.textBoxFolder.Size = new System.Drawing.Size(1420, 36);
             this.textBoxFolder.TabIndex = 0;
             this.textBoxFolder.TabStop = false;
             // 
@@ -517,12 +525,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelChangeFolder.Controls.Add(this.buttonChangeFolder, 0, 0);
-            this.tableLayoutPanelChangeFolder.Location = new System.Drawing.Point(0, 22);
+            this.tableLayoutPanelChangeFolder.Controls.Add(this.buttonOpenFolder, 1, 0);
+            this.tableLayoutPanelChangeFolder.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanelChangeFolder.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelChangeFolder.Name = "tableLayoutPanelChangeFolder";
             this.tableLayoutPanelChangeFolder.RowCount = 1;
             this.tableLayoutPanelChangeFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelChangeFolder.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelChangeFolder.Size = new System.Drawing.Size(1448, 66);
             this.tableLayoutPanelChangeFolder.TabIndex = 0;
             // 
             // buttonChangeFolder
@@ -530,22 +539,34 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChangeFolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.buttonChangeFolder.AutoSize = true;
             this.buttonChangeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonChangeFolder.Location = new System.Drawing.Point(2, 3);
-            this.buttonChangeFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.buttonChangeFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonChangeFolder.Location = new System.Drawing.Point(4, 7);
+            this.buttonChangeFolder.Margin = new System.Windows.Forms.Padding(4, 7, 7, 7);
+            this.buttonChangeFolder.MinimumSize = new System.Drawing.Size(169, 52);
             this.buttonChangeFolder.Name = "buttonChangeFolder";
-            this.buttonChangeFolder.Size = new System.Drawing.Size(94, 25);
+            this.buttonChangeFolder.Size = new System.Drawing.Size(200, 52);
             this.buttonChangeFolder.TabIndex = 0;
             this.buttonChangeFolder.Text = "Change Folder";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
             this.buttonChangeFolder.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
+            // buttonOpenFolder
+            // 
+            this.buttonOpenFolder.Location = new System.Drawing.Point(218, 7);
+            this.buttonOpenFolder.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonOpenFolder.Name = "buttonOpenFolder";
+            this.buttonOpenFolder.Size = new System.Drawing.Size(200, 52);
+            this.buttonOpenFolder.TabIndex = 1;
+            this.buttonOpenFolder.Text = "Open Folder";
+            this.buttonOpenFolder.UseVisualStyleBackColor = true;
+            this.buttonOpenFolder.Click += new System.EventHandler(this.ButtonOpenFolder_Click);
+            // 
             // checkBoxUseIconFromRootFolder
             // 
             this.checkBoxUseIconFromRootFolder.AutoSize = true;
-            this.checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(3, 56);
+            this.checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(7, 123);
+            this.checkBoxUseIconFromRootFolder.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxUseIconFromRootFolder.Name = "checkBoxUseIconFromRootFolder";
-            this.checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(205, 19);
+            this.checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(444, 41);
             this.checkBoxUseIconFromRootFolder.TabIndex = 1;
             this.checkBoxUseIconFromRootFolder.Text = "checkBoxUseIconFromRootFolder";
             this.checkBoxUseIconFromRootFolder.UseVisualStyleBackColor = true;
@@ -556,12 +577,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxUSB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxUSB.Controls.Add(this.tableLayoutPanelUSB);
             this.groupBoxUSB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxUSB.Location = new System.Drawing.Point(3, 140);
-            this.groupBoxUSB.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxUSB.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxUSB.Location = new System.Drawing.Point(7, 311);
+            this.groupBoxUSB.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxUSB.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxUSB.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxUSB.Name = "groupBoxUSB";
-            this.groupBoxUSB.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxUSB.Size = new System.Drawing.Size(400, 84);
+            this.groupBoxUSB.Padding = new System.Windows.Forms.Padding(7, 14, 7, 14);
+            this.groupBoxUSB.Size = new System.Drawing.Size(900, 185);
             this.groupBoxUSB.TabIndex = 2;
             this.groupBoxUSB.TabStop = false;
             this.groupBoxUSB.Text = "groupBoxUSB";
@@ -575,12 +597,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelUSB.Controls.Add(this.tableLayoutPanelRelativeFolderOpenAssembly, 0, 0);
             this.tableLayoutPanelUSB.Controls.Add(this.checkBoxStoreConfigAtAssemblyLocation, 0, 1);
             this.tableLayoutPanelUSB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelUSB.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelUSB.Location = new System.Drawing.Point(7, 50);
+            this.tableLayoutPanelUSB.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelUSB.Name = "tableLayoutPanelUSB";
             this.tableLayoutPanelUSB.RowCount = 2;
             this.tableLayoutPanelUSB.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelUSB.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelUSB.Size = new System.Drawing.Size(394, 56);
+            this.tableLayoutPanelUSB.Size = new System.Drawing.Size(886, 121);
             this.tableLayoutPanelUSB.TabIndex = 3;
             // 
             // tableLayoutPanelRelativeFolderOpenAssembly
@@ -599,18 +622,18 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelRelativeFolderOpenAssembly.Name = "tableLayoutPanelRelativeFolderOpenAssembly";
             this.tableLayoutPanelRelativeFolderOpenAssembly.RowCount = 1;
             this.tableLayoutPanelRelativeFolderOpenAssembly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelRelativeFolderOpenAssembly.Size = new System.Drawing.Size(886, 66);
             this.tableLayoutPanelRelativeFolderOpenAssembly.TabIndex = 1;
             // 
             // buttonChangeRelativeFolder
             // 
             this.buttonChangeRelativeFolder.AutoSize = true;
             this.buttonChangeRelativeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonChangeRelativeFolder.Location = new System.Drawing.Point(2, 3);
-            this.buttonChangeRelativeFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.buttonChangeRelativeFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonChangeRelativeFolder.Location = new System.Drawing.Point(4, 7);
+            this.buttonChangeRelativeFolder.Margin = new System.Windows.Forms.Padding(4, 7, 7, 7);
+            this.buttonChangeRelativeFolder.MinimumSize = new System.Drawing.Size(169, 52);
             this.buttonChangeRelativeFolder.Name = "buttonChangeRelativeFolder";
-            this.buttonChangeRelativeFolder.Size = new System.Drawing.Size(132, 25);
+            this.buttonChangeRelativeFolder.Size = new System.Drawing.Size(286, 52);
             this.buttonChangeRelativeFolder.TabIndex = 0;
             this.buttonChangeRelativeFolder.Text = "ChangeRelativeFolder";
             this.buttonChangeRelativeFolder.UseVisualStyleBackColor = true;
@@ -620,10 +643,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonOpenAssemblyLocation.AutoSize = true;
             this.buttonOpenAssemblyLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOpenAssemblyLocation.Location = new System.Drawing.Point(212, 3);
-            this.buttonOpenAssemblyLocation.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonOpenAssemblyLocation.Location = new System.Drawing.Point(493, 7);
+            this.buttonOpenAssemblyLocation.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonOpenAssemblyLocation.MinimumSize = new System.Drawing.Size(169, 52);
             this.buttonOpenAssemblyLocation.Name = "buttonOpenAssemblyLocation";
-            this.buttonOpenAssemblyLocation.Size = new System.Drawing.Size(179, 25);
+            this.buttonOpenAssemblyLocation.Size = new System.Drawing.Size(386, 52);
             this.buttonOpenAssemblyLocation.TabIndex = 2;
             this.buttonOpenAssemblyLocation.Text = "buttonOpenAssemblyLocation";
             this.buttonOpenAssemblyLocation.UseVisualStyleBackColor = true;
@@ -632,9 +656,10 @@ namespace SystemTrayMenu.UserInterface
             // checkBoxStoreConfigAtAssemblyLocation
             // 
             this.checkBoxStoreConfigAtAssemblyLocation.AutoSize = true;
-            this.checkBoxStoreConfigAtAssemblyLocation.Location = new System.Drawing.Point(3, 34);
+            this.checkBoxStoreConfigAtAssemblyLocation.Location = new System.Drawing.Point(7, 73);
+            this.checkBoxStoreConfigAtAssemblyLocation.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxStoreConfigAtAssemblyLocation.Name = "checkBoxStoreConfigAtAssemblyLocation";
-            this.checkBoxStoreConfigAtAssemblyLocation.Size = new System.Drawing.Size(249, 19);
+            this.checkBoxStoreConfigAtAssemblyLocation.Size = new System.Drawing.Size(538, 41);
             this.checkBoxStoreConfigAtAssemblyLocation.TabIndex = 1;
             this.checkBoxStoreConfigAtAssemblyLocation.Text = "checkBoxStoreConfigAtAssemblyLocation";
             this.checkBoxStoreConfigAtAssemblyLocation.UseVisualStyleBackColor = true;
@@ -644,12 +669,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxAutostart.AutoSize = true;
             this.groupBoxAutostart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxAutostart.Controls.Add(this.tableLayoutPanelAutostart);
-            this.groupBoxAutostart.Location = new System.Drawing.Point(3, 230);
-            this.groupBoxAutostart.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxAutostart.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxAutostart.Location = new System.Drawing.Point(7, 510);
+            this.groupBoxAutostart.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxAutostart.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxAutostart.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxAutostart.Name = "groupBoxAutostart";
-            this.groupBoxAutostart.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxAutostart.Size = new System.Drawing.Size(400, 53);
+            this.groupBoxAutostart.Padding = new System.Windows.Forms.Padding(7, 14, 7, 14);
+            this.groupBoxAutostart.Size = new System.Drawing.Size(900, 119);
             this.groupBoxAutostart.TabIndex = 0;
             this.groupBoxAutostart.TabStop = false;
             this.groupBoxAutostart.Text = "groupBoxAutostart";
@@ -662,20 +688,22 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelAutostart.Controls.Add(this.checkBoxAutostart, 0, 0);
             this.tableLayoutPanelAutostart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAutostart.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelAutostart.Location = new System.Drawing.Point(7, 50);
+            this.tableLayoutPanelAutostart.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelAutostart.Name = "tableLayoutPanelAutostart";
             this.tableLayoutPanelAutostart.RowCount = 1;
             this.tableLayoutPanelAutostart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAutostart.Size = new System.Drawing.Size(394, 25);
+            this.tableLayoutPanelAutostart.Size = new System.Drawing.Size(886, 55);
             this.tableLayoutPanelAutostart.TabIndex = 0;
             // 
             // checkBoxAutostart
             // 
             this.checkBoxAutostart.AutoSize = true;
             this.checkBoxAutostart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxAutostart.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxAutostart.Location = new System.Drawing.Point(7, 7);
+            this.checkBoxAutostart.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxAutostart.Name = "checkBoxAutostart";
-            this.checkBoxAutostart.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxAutostart.Size = new System.Drawing.Size(872, 41);
             this.checkBoxAutostart.TabIndex = 0;
             this.checkBoxAutostart.Text = "checkBoxAutostart";
             this.checkBoxAutostart.UseVisualStyleBackColor = true;
@@ -685,12 +713,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHotkey.AutoSize = true;
             this.groupBoxHotkey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHotkey.Controls.Add(this.tableLayoutPanelHotkey);
-            this.groupBoxHotkey.Location = new System.Drawing.Point(3, 289);
-            this.groupBoxHotkey.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxHotkey.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxHotkey.Location = new System.Drawing.Point(7, 643);
+            this.groupBoxHotkey.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxHotkey.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxHotkey.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxHotkey.Name = "groupBoxHotkey";
-            this.groupBoxHotkey.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxHotkey.Size = new System.Drawing.Size(400, 59);
+            this.groupBoxHotkey.Padding = new System.Windows.Forms.Padding(7, 14, 7, 14);
+            this.groupBoxHotkey.Size = new System.Drawing.Size(900, 130);
             this.groupBoxHotkey.TabIndex = 0;
             this.groupBoxHotkey.TabStop = false;
             this.groupBoxHotkey.Text = "groupBoxHotkey";
@@ -706,28 +735,31 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelHotkey.Controls.Add(this.textBoxHotkeyPlaceholder, 1, 0);
             this.tableLayoutPanelHotkey.Controls.Add(this.buttonHotkeyDefault, 2, 0);
             this.tableLayoutPanelHotkey.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelHotkey.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelHotkey.Location = new System.Drawing.Point(7, 50);
+            this.tableLayoutPanelHotkey.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelHotkey.Name = "tableLayoutPanelHotkey";
             this.tableLayoutPanelHotkey.RowCount = 1;
             this.tableLayoutPanelHotkey.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelHotkey.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelHotkey.Size = new System.Drawing.Size(886, 66);
             this.tableLayoutPanelHotkey.TabIndex = 0;
             // 
             // textBoxHotkeyPlaceholder
             // 
-            this.textBoxHotkeyPlaceholder.Location = new System.Drawing.Point(3, 3);
+            this.textBoxHotkeyPlaceholder.Location = new System.Drawing.Point(7, 7);
+            this.textBoxHotkeyPlaceholder.Margin = new System.Windows.Forms.Padding(7);
             this.textBoxHotkeyPlaceholder.Name = "textBoxHotkeyPlaceholder";
-            this.textBoxHotkeyPlaceholder.Size = new System.Drawing.Size(200, 23);
+            this.textBoxHotkeyPlaceholder.Size = new System.Drawing.Size(231, 43);
             this.textBoxHotkeyPlaceholder.TabIndex = 0;
             // 
             // buttonHotkeyDefault
             // 
             this.buttonHotkeyDefault.AutoSize = true;
             this.buttonHotkeyDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonHotkeyDefault.Location = new System.Drawing.Point(262, 3);
-            this.buttonHotkeyDefault.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonHotkeyDefault.Location = new System.Drawing.Point(602, 7);
+            this.buttonHotkeyDefault.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonHotkeyDefault.MinimumSize = new System.Drawing.Size(169, 52);
             this.buttonHotkeyDefault.Name = "buttonHotkeyDefault";
-            this.buttonHotkeyDefault.Size = new System.Drawing.Size(129, 25);
+            this.buttonHotkeyDefault.Size = new System.Drawing.Size(277, 52);
             this.buttonHotkeyDefault.TabIndex = 0;
             this.buttonHotkeyDefault.Text = "buttonHotkeyDefault";
             this.buttonHotkeyDefault.UseVisualStyleBackColor = true;
@@ -738,12 +770,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxLanguage.AutoSize = true;
             this.groupBoxLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxLanguage.Controls.Add(this.tableLayoutPanelLanguage);
-            this.groupBoxLanguage.Location = new System.Drawing.Point(3, 354);
-            this.groupBoxLanguage.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxLanguage.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxLanguage.Location = new System.Drawing.Point(7, 787);
+            this.groupBoxLanguage.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxLanguage.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxLanguage.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxLanguage.Name = "groupBoxLanguage";
-            this.groupBoxLanguage.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxLanguage.Size = new System.Drawing.Size(400, 57);
+            this.groupBoxLanguage.Padding = new System.Windows.Forms.Padding(7, 14, 7, 14);
+            this.groupBoxLanguage.Size = new System.Drawing.Size(900, 123);
             this.groupBoxLanguage.TabIndex = 0;
             this.groupBoxLanguage.TabStop = false;
             this.groupBoxLanguage.Text = "groupBoxLanguage";
@@ -757,29 +790,32 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelLanguage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelLanguage.Controls.Add(this.comboBoxLanguage, 0, 0);
             this.tableLayoutPanelLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelLanguage.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelLanguage.Location = new System.Drawing.Point(7, 50);
+            this.tableLayoutPanelLanguage.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelLanguage.Name = "tableLayoutPanelLanguage";
             this.tableLayoutPanelLanguage.RowCount = 1;
             this.tableLayoutPanelLanguage.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelLanguage.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelLanguage.Size = new System.Drawing.Size(886, 59);
             this.tableLayoutPanelLanguage.TabIndex = 0;
             // 
             // comboBoxLanguage
             // 
             this.comboBoxLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguage.FormattingEnabled = true;
-            this.comboBoxLanguage.Location = new System.Drawing.Point(3, 3);
+            this.comboBoxLanguage.Location = new System.Drawing.Point(7, 7);
+            this.comboBoxLanguage.Margin = new System.Windows.Forms.Padding(7);
             this.comboBoxLanguage.Name = "comboBoxLanguage";
-            this.comboBoxLanguage.Size = new System.Drawing.Size(200, 23);
+            this.comboBoxLanguage.Size = new System.Drawing.Size(445, 45);
             this.comboBoxLanguage.TabIndex = 0;
             // 
             // tabPageAdvanced
             // 
             this.tabPageAdvanced.Controls.Add(this.tableLayoutPanelAdvanced);
-            this.tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
+            this.tabPageAdvanced.Location = new System.Drawing.Point(10, 65);
+            this.tabPageAdvanced.Margin = new System.Windows.Forms.Padding(7);
             this.tabPageAdvanced.Name = "tabPageAdvanced";
-            this.tabPageAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdvanced.Size = new System.Drawing.Size(414, 413);
+            this.tabPageAdvanced.Padding = new System.Windows.Forms.Padding(7);
+            this.tabPageAdvanced.Size = new System.Drawing.Size(930, 1015);
             this.tabPageAdvanced.TabIndex = 0;
             this.tabPageAdvanced.Text = "tabPageAdvanced";
             this.tabPageAdvanced.UseVisualStyleBackColor = true;
@@ -796,7 +832,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxOpenSubmenus, 0, 3);
             this.tableLayoutPanelAdvanced.Controls.Add(this.buttonAdvancedDefault, 0, 4);
             this.tableLayoutPanelAdvanced.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAdvanced.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelAdvanced.Location = new System.Drawing.Point(7, 7);
+            this.tableLayoutPanelAdvanced.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelAdvanced.Name = "tableLayoutPanelAdvanced";
             this.tableLayoutPanelAdvanced.RowCount = 5;
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -804,7 +841,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(408, 407);
+            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(916, 1001);
             this.tableLayoutPanelAdvanced.TabIndex = 0;
             // 
             // groupBoxClick
@@ -812,11 +849,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxClick.AutoSize = true;
             this.groupBoxClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxClick.Controls.Add(this.tableLayoutPanelClick);
-            this.groupBoxClick.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxClick.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxClick.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxClick.Location = new System.Drawing.Point(7, 7);
+            this.groupBoxClick.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxClick.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxClick.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxClick.Name = "groupBoxClick";
-            this.groupBoxClick.Size = new System.Drawing.Size(400, 47);
+            this.groupBoxClick.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBoxClick.Size = new System.Drawing.Size(900, 105);
             this.groupBoxClick.TabIndex = 0;
             this.groupBoxClick.TabStop = false;
             this.groupBoxClick.Text = "groupBoxClick";
@@ -829,20 +868,22 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 0);
             this.tableLayoutPanelClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelClick.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelClick.Location = new System.Drawing.Point(7, 43);
+            this.tableLayoutPanelClick.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelClick.Name = "tableLayoutPanelClick";
             this.tableLayoutPanelClick.RowCount = 1;
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelClick.Size = new System.Drawing.Size(394, 25);
+            this.tableLayoutPanelClick.Size = new System.Drawing.Size(886, 55);
             this.tableLayoutPanelClick.TabIndex = 0;
             // 
             // checkBoxOpenItemWithOneClick
             // 
             this.checkBoxOpenItemWithOneClick.AutoSize = true;
             this.checkBoxOpenItemWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(7, 7);
+            this.checkBoxOpenItemWithOneClick.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxOpenItemWithOneClick.Name = "checkBoxOpenItemWithOneClick";
-            this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(872, 41);
             this.checkBoxOpenItemWithOneClick.TabIndex = 0;
             this.checkBoxOpenItemWithOneClick.Text = "checkBoxOpenItemWithOneClick";
             this.checkBoxOpenItemWithOneClick.UseVisualStyleBackColor = true;
@@ -852,12 +893,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSizeAndLocation.AutoSize = true;
             this.groupBoxSizeAndLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxSizeAndLocation.Controls.Add(this.tableLayoutPanelSizeAndLocation);
-            this.groupBoxSizeAndLocation.Location = new System.Drawing.Point(3, 56);
-            this.groupBoxSizeAndLocation.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxSizeAndLocation.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxSizeAndLocation.Location = new System.Drawing.Point(7, 126);
+            this.groupBoxSizeAndLocation.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxSizeAndLocation.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxSizeAndLocation.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxSizeAndLocation.Name = "groupBoxSizeAndLocation";
-            this.groupBoxSizeAndLocation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxSizeAndLocation.Size = new System.Drawing.Size(400, 137);
+            this.groupBoxSizeAndLocation.Padding = new System.Windows.Forms.Padding(7, 7, 7, 14);
+            this.groupBoxSizeAndLocation.Size = new System.Drawing.Size(900, 283);
             this.groupBoxSizeAndLocation.TabIndex = 0;
             this.groupBoxSizeAndLocation.TabStop = false;
             this.groupBoxSizeAndLocation.Text = "groupBoxSizeAndLocation";
@@ -873,14 +915,15 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.tableLayoutPanelMaxMenuWidth, 0, 1);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.checkBoxAppearAtMouseLocation, 0, 3);
             this.tableLayoutPanelSizeAndLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelSizeAndLocation.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelSizeAndLocation.Location = new System.Drawing.Point(7, 43);
+            this.tableLayoutPanelSizeAndLocation.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSizeAndLocation.Name = "tableLayoutPanelSizeAndLocation";
             this.tableLayoutPanelSizeAndLocation.RowCount = 4;
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(394, 112);
+            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(886, 226);
             this.tableLayoutPanelSizeAndLocation.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -898,14 +941,15 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(886, 57);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // numericUpDownSizeInPercentage
             // 
-            this.numericUpDownSizeInPercentage.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownSizeInPercentage.Location = new System.Drawing.Point(7, 7);
+            this.numericUpDownSizeInPercentage.Margin = new System.Windows.Forms.Padding(7);
             this.numericUpDownSizeInPercentage.Name = "numericUpDownSizeInPercentage";
-            this.numericUpDownSizeInPercentage.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownSizeInPercentage.Size = new System.Drawing.Size(124, 43);
             this.numericUpDownSizeInPercentage.TabIndex = 1;
             this.numericUpDownSizeInPercentage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
             this.numericUpDownSizeInPercentage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
@@ -914,10 +958,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSize.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSize.AutoSize = true;
-            this.labelSize.Location = new System.Drawing.Point(64, 7);
-            this.labelSize.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelSize.Location = new System.Drawing.Point(145, 10);
+            this.labelSize.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelSize.MaximumSize = new System.Drawing.Size(742, 0);
             this.labelSize.Name = "labelSize";
-            this.labelSize.Size = new System.Drawing.Size(121, 15);
+            this.labelSize.Size = new System.Drawing.Size(275, 37);
             this.labelSize.TabIndex = 0;
             this.labelSize.Text = "labelSizeInPercentage";
             // 
@@ -931,19 +976,20 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.numericUpDownMenuHeight, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelMaxMenuHeight, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 58);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 114);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(886, 57);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // numericUpDownMenuHeight
             // 
-            this.numericUpDownMenuHeight.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownMenuHeight.Location = new System.Drawing.Point(7, 7);
+            this.numericUpDownMenuHeight.Margin = new System.Windows.Forms.Padding(7);
             this.numericUpDownMenuHeight.Name = "numericUpDownMenuHeight";
-            this.numericUpDownMenuHeight.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownMenuHeight.Size = new System.Drawing.Size(124, 43);
             this.numericUpDownMenuHeight.TabIndex = 1;
             this.numericUpDownMenuHeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
             this.numericUpDownMenuHeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
@@ -952,10 +998,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelMaxMenuHeight.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelMaxMenuHeight.AutoSize = true;
-            this.labelMaxMenuHeight.Location = new System.Drawing.Point(64, 7);
-            this.labelMaxMenuHeight.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelMaxMenuHeight.Location = new System.Drawing.Point(145, 10);
+            this.labelMaxMenuHeight.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelMaxMenuHeight.MaximumSize = new System.Drawing.Size(742, 0);
             this.labelMaxMenuHeight.Name = "labelMaxMenuHeight";
-            this.labelMaxMenuHeight.Size = new System.Drawing.Size(122, 15);
+            this.labelMaxMenuHeight.Size = new System.Drawing.Size(273, 37);
             this.labelMaxMenuHeight.TabIndex = 0;
             this.labelMaxMenuHeight.Text = "labelMaxMenuHeight";
             // 
@@ -969,19 +1016,20 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.numericUpDownMenuWidth, 0, 0);
             this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.labelMaxMenuWidth, 1, 0);
-            this.tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 29);
+            this.tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 57);
             this.tableLayoutPanelMaxMenuWidth.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelMaxMenuWidth.Name = "tableLayoutPanelMaxMenuWidth";
             this.tableLayoutPanelMaxMenuWidth.RowCount = 1;
             this.tableLayoutPanelMaxMenuWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMaxMenuWidth.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelMaxMenuWidth.Size = new System.Drawing.Size(886, 57);
             this.tableLayoutPanelMaxMenuWidth.TabIndex = 0;
             // 
             // numericUpDownMenuWidth
             // 
-            this.numericUpDownMenuWidth.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownMenuWidth.Location = new System.Drawing.Point(7, 7);
+            this.numericUpDownMenuWidth.Margin = new System.Windows.Forms.Padding(7);
             this.numericUpDownMenuWidth.Name = "numericUpDownMenuWidth";
-            this.numericUpDownMenuWidth.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownMenuWidth.Size = new System.Drawing.Size(124, 43);
             this.numericUpDownMenuWidth.TabIndex = 1;
             this.numericUpDownMenuWidth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
             this.numericUpDownMenuWidth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
@@ -990,10 +1038,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelMaxMenuWidth.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelMaxMenuWidth.AutoSize = true;
-            this.labelMaxMenuWidth.Location = new System.Drawing.Point(64, 7);
-            this.labelMaxMenuWidth.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelMaxMenuWidth.Location = new System.Drawing.Point(145, 10);
+            this.labelMaxMenuWidth.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelMaxMenuWidth.MaximumSize = new System.Drawing.Size(742, 0);
             this.labelMaxMenuWidth.Name = "labelMaxMenuWidth";
-            this.labelMaxMenuWidth.Size = new System.Drawing.Size(118, 15);
+            this.labelMaxMenuWidth.Size = new System.Drawing.Size(265, 37);
             this.labelMaxMenuWidth.TabIndex = 0;
             this.labelMaxMenuWidth.Text = "labelMaxMenuWidth";
             // 
@@ -1001,9 +1050,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.checkBoxAppearAtMouseLocation.AutoSize = true;
             this.checkBoxAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxAppearAtMouseLocation.Location = new System.Drawing.Point(3, 90);
+            this.checkBoxAppearAtMouseLocation.Location = new System.Drawing.Point(7, 178);
+            this.checkBoxAppearAtMouseLocation.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxAppearAtMouseLocation.Name = "checkBoxAppearAtMouseLocation";
-            this.checkBoxAppearAtMouseLocation.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxAppearAtMouseLocation.Size = new System.Drawing.Size(872, 41);
             this.checkBoxAppearAtMouseLocation.TabIndex = 0;
             this.checkBoxAppearAtMouseLocation.Text = "checkBoxAppearAtMouseLocation";
             this.checkBoxAppearAtMouseLocation.UseVisualStyleBackColor = true;
@@ -1013,12 +1063,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxStaysOpen.AutoSize = true;
             this.groupBoxStaysOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxStaysOpen.Controls.Add(this.tableLayoutPanelStaysOpen);
-            this.groupBoxStaysOpen.Location = new System.Drawing.Point(3, 199);
-            this.groupBoxStaysOpen.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxStaysOpen.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxStaysOpen.Location = new System.Drawing.Point(7, 423);
+            this.groupBoxStaysOpen.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxStaysOpen.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxStaysOpen.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxStaysOpen.Name = "groupBoxStaysOpen";
-            this.groupBoxStaysOpen.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxStaysOpen.Size = new System.Drawing.Size(400, 104);
+            this.groupBoxStaysOpen.Padding = new System.Windows.Forms.Padding(7, 7, 7, 14);
+            this.groupBoxStaysOpen.Size = new System.Drawing.Size(900, 224);
             this.groupBoxStaysOpen.TabIndex = 0;
             this.groupBoxStaysOpen.TabStop = false;
             this.groupBoxStaysOpen.Text = "groupBoxStaysOpen";
@@ -1033,13 +1084,14 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelStaysOpen.Controls.Add(this.checkBoxStayOpenWhenFocusLost, 0, 1);
             this.tableLayoutPanelStaysOpen.Controls.Add(this.tableLayoutPanelTimeUntilCloses, 0, 2);
             this.tableLayoutPanelStaysOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelStaysOpen.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelStaysOpen.Location = new System.Drawing.Point(7, 43);
+            this.tableLayoutPanelStaysOpen.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelStaysOpen.Name = "tableLayoutPanelStaysOpen";
             this.tableLayoutPanelStaysOpen.RowCount = 3;
             this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelStaysOpen.Size = new System.Drawing.Size(394, 79);
+            this.tableLayoutPanelStaysOpen.Size = new System.Drawing.Size(886, 167);
             this.tableLayoutPanelStaysOpen.TabIndex = 0;
             // 
             // checkBoxStayOpenWhenItemClicked
@@ -1047,9 +1099,10 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxStayOpenWhenItemClicked.AutoSize = true;
             this.checkBoxStayOpenWhenItemClicked.Checked = true;
             this.checkBoxStayOpenWhenItemClicked.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxStayOpenWhenItemClicked.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxStayOpenWhenItemClicked.Location = new System.Drawing.Point(7, 7);
+            this.checkBoxStayOpenWhenItemClicked.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxStayOpenWhenItemClicked.Name = "checkBoxStayOpenWhenItemClicked";
-            this.checkBoxStayOpenWhenItemClicked.Size = new System.Drawing.Size(222, 19);
+            this.checkBoxStayOpenWhenItemClicked.Size = new System.Drawing.Size(480, 41);
             this.checkBoxStayOpenWhenItemClicked.TabIndex = 0;
             this.checkBoxStayOpenWhenItemClicked.Text = "checkBoxStayOpenWhenItemClicked";
             this.checkBoxStayOpenWhenItemClicked.UseVisualStyleBackColor = true;
@@ -1059,9 +1112,10 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxStayOpenWhenFocusLost.AutoSize = true;
             this.checkBoxStayOpenWhenFocusLost.Checked = true;
             this.checkBoxStayOpenWhenFocusLost.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxStayOpenWhenFocusLost.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxStayOpenWhenFocusLost.Location = new System.Drawing.Point(7, 62);
+            this.checkBoxStayOpenWhenFocusLost.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxStayOpenWhenFocusLost.Name = "checkBoxStayOpenWhenFocusLost";
-            this.checkBoxStayOpenWhenFocusLost.Size = new System.Drawing.Size(212, 19);
+            this.checkBoxStayOpenWhenFocusLost.Size = new System.Drawing.Size(457, 41);
             this.checkBoxStayOpenWhenFocusLost.TabIndex = 0;
             this.checkBoxStayOpenWhenFocusLost.Text = "checkBoxStayOpenWhenFocusLost";
             this.checkBoxStayOpenWhenFocusLost.UseVisualStyleBackColor = true;
@@ -1077,30 +1131,32 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilCloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.labelTimeUntilCloses, 1, 0);
             this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.numericUpDownTimeUntilClose, 0, 0);
-            this.tableLayoutPanelTimeUntilCloses.Location = new System.Drawing.Point(0, 50);
+            this.tableLayoutPanelTimeUntilCloses.Location = new System.Drawing.Point(0, 110);
             this.tableLayoutPanelTimeUntilCloses.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelTimeUntilCloses.Name = "tableLayoutPanelTimeUntilCloses";
             this.tableLayoutPanelTimeUntilCloses.RowCount = 1;
             this.tableLayoutPanelTimeUntilCloses.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTimeUntilCloses.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelTimeUntilCloses.Size = new System.Drawing.Size(886, 57);
             this.tableLayoutPanelTimeUntilCloses.TabIndex = 0;
             // 
             // labelTimeUntilCloses
             // 
             this.labelTimeUntilCloses.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelTimeUntilCloses.AutoSize = true;
-            this.labelTimeUntilCloses.Location = new System.Drawing.Point(64, 7);
-            this.labelTimeUntilCloses.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelTimeUntilCloses.Location = new System.Drawing.Point(145, 10);
+            this.labelTimeUntilCloses.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelTimeUntilCloses.MaximumSize = new System.Drawing.Size(742, 0);
             this.labelTimeUntilCloses.Name = "labelTimeUntilCloses";
-            this.labelTimeUntilCloses.Size = new System.Drawing.Size(117, 15);
+            this.labelTimeUntilCloses.Size = new System.Drawing.Size(266, 37);
             this.labelTimeUntilCloses.TabIndex = 0;
             this.labelTimeUntilCloses.Text = "labelTimeUntilCloses";
             // 
             // numericUpDownTimeUntilClose
             // 
-            this.numericUpDownTimeUntilClose.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownTimeUntilClose.Location = new System.Drawing.Point(7, 7);
+            this.numericUpDownTimeUntilClose.Margin = new System.Windows.Forms.Padding(7);
             this.numericUpDownTimeUntilClose.Name = "numericUpDownTimeUntilClose";
-            this.numericUpDownTimeUntilClose.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownTimeUntilClose.Size = new System.Drawing.Size(124, 43);
             this.numericUpDownTimeUntilClose.TabIndex = 1;
             this.numericUpDownTimeUntilClose.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
             this.numericUpDownTimeUntilClose.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
@@ -1110,12 +1166,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxOpenSubmenus.AutoSize = true;
             this.groupBoxOpenSubmenus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxOpenSubmenus.Controls.Add(this.tableLayoutPanelTimeUntilOpen);
-            this.groupBoxOpenSubmenus.Location = new System.Drawing.Point(3, 309);
-            this.groupBoxOpenSubmenus.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxOpenSubmenus.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxOpenSubmenus.Location = new System.Drawing.Point(7, 661);
+            this.groupBoxOpenSubmenus.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxOpenSubmenus.MaximumSize = new System.Drawing.Size(900, 0);
+            this.groupBoxOpenSubmenus.MinimumSize = new System.Drawing.Size(900, 0);
             this.groupBoxOpenSubmenus.Name = "groupBoxOpenSubmenus";
-            this.groupBoxOpenSubmenus.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxOpenSubmenus.Size = new System.Drawing.Size(400, 54);
+            this.groupBoxOpenSubmenus.Padding = new System.Windows.Forms.Padding(7, 7, 7, 14);
+            this.groupBoxOpenSubmenus.Size = new System.Drawing.Size(900, 114);
             this.groupBoxOpenSubmenus.TabIndex = 0;
             this.groupBoxOpenSubmenus.TabStop = false;
             this.groupBoxOpenSubmenus.Text = "groupBoxOpenSubmenus";
@@ -1130,18 +1187,20 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilOpen.Controls.Add(this.numericUpDownTimeUntilOpens, 0, 0);
             this.tableLayoutPanelTimeUntilOpen.Controls.Add(this.labelTimeUntilOpen, 1, 0);
             this.tableLayoutPanelTimeUntilOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelTimeUntilOpen.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelTimeUntilOpen.Location = new System.Drawing.Point(7, 43);
+            this.tableLayoutPanelTimeUntilOpen.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelTimeUntilOpen.Name = "tableLayoutPanelTimeUntilOpen";
             this.tableLayoutPanelTimeUntilOpen.RowCount = 1;
             this.tableLayoutPanelTimeUntilOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTimeUntilOpen.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelTimeUntilOpen.Size = new System.Drawing.Size(886, 57);
             this.tableLayoutPanelTimeUntilOpen.TabIndex = 0;
             // 
             // numericUpDownTimeUntilOpens
             // 
-            this.numericUpDownTimeUntilOpens.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownTimeUntilOpens.Location = new System.Drawing.Point(7, 7);
+            this.numericUpDownTimeUntilOpens.Margin = new System.Windows.Forms.Padding(7);
             this.numericUpDownTimeUntilOpens.Name = "numericUpDownTimeUntilOpens";
-            this.numericUpDownTimeUntilOpens.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownTimeUntilOpens.Size = new System.Drawing.Size(124, 43);
             this.numericUpDownTimeUntilOpens.TabIndex = 2;
             this.numericUpDownTimeUntilOpens.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
             this.numericUpDownTimeUntilOpens.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
@@ -1150,10 +1209,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelTimeUntilOpen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelTimeUntilOpen.AutoSize = true;
-            this.labelTimeUntilOpen.Location = new System.Drawing.Point(64, 7);
-            this.labelTimeUntilOpen.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelTimeUntilOpen.Location = new System.Drawing.Point(145, 10);
+            this.labelTimeUntilOpen.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelTimeUntilOpen.MaximumSize = new System.Drawing.Size(742, 0);
             this.labelTimeUntilOpen.Name = "labelTimeUntilOpen";
-            this.labelTimeUntilOpen.Size = new System.Drawing.Size(112, 15);
+            this.labelTimeUntilOpen.Size = new System.Drawing.Size(255, 37);
             this.labelTimeUntilOpen.TabIndex = 0;
             this.labelTimeUntilOpen.Text = "labelTimeUntilOpen";
             // 
@@ -1161,11 +1221,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 375);
-            this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
-            this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(20, 802);
+            this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(20, 20, 7, 20);
+            this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(169, 56);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
-            this.buttonAdvancedDefault.Size = new System.Drawing.Size(144, 25);
+            this.buttonAdvancedDefault.Size = new System.Drawing.Size(310, 56);
             this.buttonAdvancedDefault.TabIndex = 0;
             this.buttonAdvancedDefault.Text = "buttonAdvancedDefault";
             this.buttonAdvancedDefault.UseVisualStyleBackColor = true;
@@ -1175,10 +1235,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.tabPageCustomize.AutoScroll = true;
             this.tabPageCustomize.Controls.Add(this.tableLayoutPanelCustomize);
-            this.tabPageCustomize.Location = new System.Drawing.Point(4, 24);
+            this.tabPageCustomize.Location = new System.Drawing.Point(10, 65);
+            this.tabPageCustomize.Margin = new System.Windows.Forms.Padding(7);
             this.tabPageCustomize.Name = "tabPageCustomize";
-            this.tabPageCustomize.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCustomize.Size = new System.Drawing.Size(414, 413);
+            this.tabPageCustomize.Padding = new System.Windows.Forms.Padding(7);
+            this.tabPageCustomize.Size = new System.Drawing.Size(930, 1015);
             this.tabPageCustomize.TabIndex = 0;
             this.tabPageCustomize.Text = "tabPageCustomize";
             this.tabPageCustomize.UseVisualStyleBackColor = true;
@@ -1191,12 +1252,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxColorsLightMode, 0, 0);
             this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxColorsDarkMode, 0, 1);
-            this.tableLayoutPanelCustomize.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelCustomize.Location = new System.Drawing.Point(7, 7);
+            this.tableLayoutPanelCustomize.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelCustomize.Name = "tableLayoutPanelCustomize";
             this.tableLayoutPanelCustomize.RowCount = 2;
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(391, 1363);
+            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(880, 2983);
             this.tableLayoutPanelCustomize.TabIndex = 0;
             // 
             // groupBoxColorsLightMode
@@ -1204,11 +1266,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxColorsLightMode.AutoSize = true;
             this.groupBoxColorsLightMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxColorsLightMode.Controls.Add(this.tableLayoutPanelColorsAndDefault);
-            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxColorsLightMode.MaximumSize = new System.Drawing.Size(385, 0);
-            this.groupBoxColorsLightMode.MinimumSize = new System.Drawing.Size(385, 0);
+            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(7, 7);
+            this.groupBoxColorsLightMode.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxColorsLightMode.MaximumSize = new System.Drawing.Size(866, 0);
+            this.groupBoxColorsLightMode.MinimumSize = new System.Drawing.Size(866, 0);
             this.groupBoxColorsLightMode.Name = "groupBoxColorsLightMode";
-            this.groupBoxColorsLightMode.Size = new System.Drawing.Size(385, 663);
+            this.groupBoxColorsLightMode.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBoxColorsLightMode.Size = new System.Drawing.Size(866, 1450);
             this.groupBoxColorsLightMode.TabIndex = 0;
             this.groupBoxColorsLightMode.TabStop = false;
             this.groupBoxColorsLightMode.Text = "groupBoxColorsLightMode";
@@ -1218,7 +1282,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColorsAndDefault.AutoSize = true;
             this.tableLayoutPanelColorsAndDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelColorsAndDefault.ColumnCount = 1;
-            this.tableLayoutPanelColorsAndDefault.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
+            this.tableLayoutPanelColorsAndDefault.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 999F));
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelIcons, 0, 2);
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelBackgroundBorder, 0, 4);
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.labelMenuLightMode, 0, 0);
@@ -1243,7 +1307,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelOpenFolder, 0, 6);
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelSearchField, 0, 5);
             this.tableLayoutPanelColorsAndDefault.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelColorsAndDefault.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelColorsAndDefault.Location = new System.Drawing.Point(7, 43);
+            this.tableLayoutPanelColorsAndDefault.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelColorsAndDefault.Name = "tableLayoutPanelColorsAndDefault";
             this.tableLayoutPanelColorsAndDefault.RowCount = 23;
             this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1269,7 +1334,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.Size = new System.Drawing.Size(379, 641);
+            this.tableLayoutPanelColorsAndDefault.Size = new System.Drawing.Size(852, 1400);
             this.tableLayoutPanelColorsAndDefault.TabIndex = 0;
             // 
             // tableLayoutPanelIcons
@@ -1283,11 +1348,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelIcons.Controls.Add(this.pictureBoxIcons, 0, 0);
             this.tableLayoutPanelIcons.Controls.Add(this.textBoxColorIcons, 1, 0);
             this.tableLayoutPanelIcons.Controls.Add(this.labelIcons, 2, 0);
-            this.tableLayoutPanelIcons.Location = new System.Drawing.Point(3, 47);
+            this.tableLayoutPanelIcons.Location = new System.Drawing.Point(7, 107);
+            this.tableLayoutPanelIcons.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelIcons.Name = "tableLayoutPanelIcons";
             this.tableLayoutPanelIcons.RowCount = 1;
             this.tableLayoutPanelIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelIcons.Size = new System.Drawing.Size(158, 23);
+            this.tableLayoutPanelIcons.Size = new System.Drawing.Size(349, 49);
             this.tableLayoutPanelIcons.TabIndex = 2;
             // 
             // pictureBoxIcons
@@ -1298,18 +1364,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxIcons.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxIcons.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxIcons.Name = "pictureBoxIcons";
-            this.pictureBoxIcons.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxIcons.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxIcons.TabIndex = 1;
             this.pictureBoxIcons.TabStop = false;
             this.pictureBoxIcons.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorIcons
             // 
-            this.textBoxColorIcons.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorIcons.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorIcons.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorIcons.MaxLength = 12;
             this.textBoxColorIcons.Name = "textBoxColorIcons";
-            this.textBoxColorIcons.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorIcons.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorIcons.TabIndex = 2;
             this.textBoxColorIcons.Text = "#ffffff";
             this.textBoxColorIcons.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1320,9 +1386,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelIcons.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelIcons.AutoSize = true;
-            this.labelIcons.Location = new System.Drawing.Point(95, 4);
+            this.labelIcons.Location = new System.Drawing.Point(206, 6);
+            this.labelIcons.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelIcons.Name = "labelIcons";
-            this.labelIcons.Size = new System.Drawing.Size(60, 15);
+            this.labelIcons.Size = new System.Drawing.Size(136, 37);
             this.labelIcons.TabIndex = 0;
             this.labelIcons.Text = "labelIcons";
             // 
@@ -1337,12 +1404,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBackgroundBorder.Controls.Add(this.pictureBoxBackgroundBorder, 0, 0);
             this.tableLayoutPanelBackgroundBorder.Controls.Add(this.textBoxColorBackgroundBorder, 1, 0);
             this.tableLayoutPanelBackgroundBorder.Controls.Add(this.labelBackgroundBorder, 2, 0);
-            this.tableLayoutPanelBackgroundBorder.Location = new System.Drawing.Point(3, 105);
+            this.tableLayoutPanelBackgroundBorder.Location = new System.Drawing.Point(7, 233);
+            this.tableLayoutPanelBackgroundBorder.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelBackgroundBorder.Name = "tableLayoutPanelBackgroundBorder";
             this.tableLayoutPanelBackgroundBorder.RowCount = 1;
             this.tableLayoutPanelBackgroundBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBackgroundBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanelBackgroundBorder.Size = new System.Drawing.Size(229, 23);
+            this.tableLayoutPanelBackgroundBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanelBackgroundBorder.Size = new System.Drawing.Size(508, 49);
             this.tableLayoutPanelBackgroundBorder.TabIndex = 2;
             // 
             // pictureBoxBackgroundBorder
@@ -1353,18 +1421,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxBackgroundBorder.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackgroundBorder.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxBackgroundBorder.Name = "pictureBoxBackgroundBorder";
-            this.pictureBoxBackgroundBorder.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxBackgroundBorder.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxBackgroundBorder.TabIndex = 1;
             this.pictureBoxBackgroundBorder.TabStop = false;
             this.pictureBoxBackgroundBorder.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorBackgroundBorder
             // 
-            this.textBoxColorBackgroundBorder.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorBackgroundBorder.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorBackgroundBorder.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorBackgroundBorder.MaxLength = 12;
             this.textBoxColorBackgroundBorder.Name = "textBoxColorBackgroundBorder";
-            this.textBoxColorBackgroundBorder.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorBackgroundBorder.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorBackgroundBorder.TabIndex = 2;
             this.textBoxColorBackgroundBorder.Text = "#ffffff";
             this.textBoxColorBackgroundBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1375,18 +1443,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelBackgroundBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelBackgroundBorder.AutoSize = true;
-            this.labelBackgroundBorder.Location = new System.Drawing.Point(95, 4);
+            this.labelBackgroundBorder.Location = new System.Drawing.Point(206, 6);
+            this.labelBackgroundBorder.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelBackgroundBorder.Name = "labelBackgroundBorder";
-            this.labelBackgroundBorder.Size = new System.Drawing.Size(131, 15);
+            this.labelBackgroundBorder.Size = new System.Drawing.Size(295, 37);
             this.labelBackgroundBorder.TabIndex = 0;
             this.labelBackgroundBorder.Text = "labelBackgroundBorder";
             // 
             // labelMenuLightMode
             // 
             this.labelMenuLightMode.AutoSize = true;
-            this.labelMenuLightMode.Location = new System.Drawing.Point(3, 0);
+            this.labelMenuLightMode.Location = new System.Drawing.Point(7, 0);
+            this.labelMenuLightMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelMenuLightMode.Name = "labelMenuLightMode";
-            this.labelMenuLightMode.Size = new System.Drawing.Size(121, 15);
+            this.labelMenuLightMode.Size = new System.Drawing.Size(273, 37);
             this.labelMenuLightMode.TabIndex = 3;
             this.labelMenuLightMode.Text = "labelMenuLightMode";
             // 
@@ -1401,11 +1471,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTitle.Controls.Add(this.pictureBoxTitle, 0, 0);
             this.tableLayoutPanelTitle.Controls.Add(this.textBoxColorTitle, 1, 0);
             this.tableLayoutPanelTitle.Controls.Add(this.labelTitle, 2, 0);
-            this.tableLayoutPanelTitle.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanelTitle.Location = new System.Drawing.Point(7, 44);
+            this.tableLayoutPanelTitle.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelTitle.Name = "tableLayoutPanelTitle";
             this.tableLayoutPanelTitle.RowCount = 1;
             this.tableLayoutPanelTitle.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTitle.Size = new System.Drawing.Size(152, 23);
+            this.tableLayoutPanelTitle.Size = new System.Drawing.Size(339, 49);
             this.tableLayoutPanelTitle.TabIndex = 2;
             // 
             // pictureBoxTitle
@@ -1416,18 +1487,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxTitle.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTitle.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxTitle.Name = "pictureBoxTitle";
-            this.pictureBoxTitle.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxTitle.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxTitle.TabIndex = 1;
             this.pictureBoxTitle.TabStop = false;
             this.pictureBoxTitle.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorTitle
             // 
-            this.textBoxColorTitle.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorTitle.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorTitle.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorTitle.MaxLength = 12;
             this.textBoxColorTitle.Name = "textBoxColorTitle";
-            this.textBoxColorTitle.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorTitle.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorTitle.TabIndex = 2;
             this.textBoxColorTitle.Text = "#ffffff";
             this.textBoxColorTitle.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1438,9 +1509,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(95, 4);
+            this.labelTitle.Location = new System.Drawing.Point(206, 6);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(54, 15);
+            this.labelTitle.Size = new System.Drawing.Size(126, 37);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "labelTitle";
             // 
@@ -1455,12 +1527,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBackground.Controls.Add(this.pictureBoxBackground, 0, 0);
             this.tableLayoutPanelBackground.Controls.Add(this.textBoxColorBackground, 1, 0);
             this.tableLayoutPanelBackground.Controls.Add(this.labelBackground, 2, 0);
-            this.tableLayoutPanelBackground.Location = new System.Drawing.Point(3, 76);
+            this.tableLayoutPanelBackground.Location = new System.Drawing.Point(7, 170);
+            this.tableLayoutPanelBackground.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelBackground.Name = "tableLayoutPanelBackground";
             this.tableLayoutPanelBackground.RowCount = 1;
             this.tableLayoutPanelBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanelBackground.Size = new System.Drawing.Size(194, 23);
+            this.tableLayoutPanelBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanelBackground.Size = new System.Drawing.Size(429, 49);
             this.tableLayoutPanelBackground.TabIndex = 2;
             // 
             // pictureBoxBackground
@@ -1471,18 +1544,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackground.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxBackground.Name = "pictureBoxBackground";
-            this.pictureBoxBackground.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxBackground.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxBackground.TabIndex = 1;
             this.pictureBoxBackground.TabStop = false;
             this.pictureBoxBackground.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorBackground
             // 
-            this.textBoxColorBackground.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorBackground.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorBackground.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorBackground.MaxLength = 12;
             this.textBoxColorBackground.Name = "textBoxColorBackground";
-            this.textBoxColorBackground.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorBackground.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorBackground.TabIndex = 2;
             this.textBoxColorBackground.Text = "#ffffff";
             this.textBoxColorBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1493,9 +1566,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelBackground.AutoSize = true;
-            this.labelBackground.Location = new System.Drawing.Point(95, 4);
+            this.labelBackground.Location = new System.Drawing.Point(206, 6);
+            this.labelBackground.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelBackground.Name = "labelBackground";
-            this.labelBackground.Size = new System.Drawing.Size(96, 15);
+            this.labelBackground.Size = new System.Drawing.Size(216, 37);
             this.labelBackground.TabIndex = 0;
             this.labelBackground.Text = "labelBackground";
             // 
@@ -1503,10 +1577,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonColorsDefault.AutoSize = true;
             this.buttonColorsDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonColorsDefault.Location = new System.Drawing.Point(3, 613);
-            this.buttonColorsDefault.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonColorsDefault.Location = new System.Drawing.Point(7, 1341);
+            this.buttonColorsDefault.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonColorsDefault.MinimumSize = new System.Drawing.Size(169, 52);
             this.buttonColorsDefault.Name = "buttonColorsDefault";
-            this.buttonColorsDefault.Size = new System.Drawing.Size(125, 25);
+            this.buttonColorsDefault.Size = new System.Drawing.Size(269, 52);
             this.buttonColorsDefault.TabIndex = 2;
             this.buttonColorsDefault.Text = "buttonColorsDefault";
             this.buttonColorsDefault.UseVisualStyleBackColor = true;
@@ -1523,11 +1598,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowHoverBackground.Controls.Add(this.pictureBoxArrowHoverBackground, 0, 0);
             this.tableLayoutPanelArrowHoverBackground.Controls.Add(this.textBoxColorArrowHoverBackground, 1, 0);
             this.tableLayoutPanelArrowHoverBackground.Controls.Add(this.labelArrowHoverBackground, 2, 0);
-            this.tableLayoutPanelArrowHoverBackground.Location = new System.Drawing.Point(3, 584);
+            this.tableLayoutPanelArrowHoverBackground.Location = new System.Drawing.Point(7, 1278);
+            this.tableLayoutPanelArrowHoverBackground.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowHoverBackground.Name = "tableLayoutPanelArrowHoverBackground";
             this.tableLayoutPanelArrowHoverBackground.RowCount = 1;
             this.tableLayoutPanelArrowHoverBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowHoverBackground.Size = new System.Drawing.Size(258, 23);
+            this.tableLayoutPanelArrowHoverBackground.Size = new System.Drawing.Size(571, 49);
             this.tableLayoutPanelArrowHoverBackground.TabIndex = 2;
             // 
             // pictureBoxArrowHoverBackground
@@ -1538,18 +1614,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowHoverBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowHoverBackground.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowHoverBackground.Name = "pictureBoxArrowHoverBackground";
-            this.pictureBoxArrowHoverBackground.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowHoverBackground.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowHoverBackground.TabIndex = 1;
             this.pictureBoxArrowHoverBackground.TabStop = false;
             this.pictureBoxArrowHoverBackground.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowHoverBackground
             // 
-            this.textBoxColorArrowHoverBackground.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowHoverBackground.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowHoverBackground.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowHoverBackground.MaxLength = 12;
             this.textBoxColorArrowHoverBackground.Name = "textBoxColorArrowHoverBackground";
-            this.textBoxColorArrowHoverBackground.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowHoverBackground.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowHoverBackground.TabIndex = 2;
             this.textBoxColorArrowHoverBackground.Text = "#ffffff";
             this.textBoxColorArrowHoverBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1560,10 +1636,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelArrowHoverBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelArrowHoverBackground.AutoSize = true;
-            this.labelArrowHoverBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelArrowHoverBackground.MaximumSize = new System.Drawing.Size(280, 0);
+            this.labelArrowHoverBackground.Location = new System.Drawing.Point(206, 6);
+            this.labelArrowHoverBackground.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelArrowHoverBackground.MaximumSize = new System.Drawing.Size(630, 0);
             this.labelArrowHoverBackground.Name = "labelArrowHoverBackground";
-            this.labelArrowHoverBackground.Size = new System.Drawing.Size(160, 15);
+            this.labelArrowHoverBackground.Size = new System.Drawing.Size(358, 37);
             this.labelArrowHoverBackground.TabIndex = 0;
             this.labelArrowHoverBackground.Text = "labelArrowHoverBackground";
             // 
@@ -1578,11 +1655,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowHover.Controls.Add(this.pictureBoxArrowHover, 0, 0);
             this.tableLayoutPanelArrowHover.Controls.Add(this.textBoxColorArrowHover, 1, 0);
             this.tableLayoutPanelArrowHover.Controls.Add(this.labelArrowHover, 2, 0);
-            this.tableLayoutPanelArrowHover.Location = new System.Drawing.Point(3, 555);
+            this.tableLayoutPanelArrowHover.Location = new System.Drawing.Point(7, 1215);
+            this.tableLayoutPanelArrowHover.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowHover.Name = "tableLayoutPanelArrowHover";
             this.tableLayoutPanelArrowHover.RowCount = 1;
             this.tableLayoutPanelArrowHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowHover.Size = new System.Drawing.Size(194, 23);
+            this.tableLayoutPanelArrowHover.Size = new System.Drawing.Size(430, 49);
             this.tableLayoutPanelArrowHover.TabIndex = 2;
             // 
             // pictureBoxArrowHover
@@ -1593,18 +1671,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowHover.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowHover.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowHover.Name = "pictureBoxArrowHover";
-            this.pictureBoxArrowHover.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowHover.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowHover.TabIndex = 1;
             this.pictureBoxArrowHover.TabStop = false;
             this.pictureBoxArrowHover.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowHover
             // 
-            this.textBoxColorArrowHover.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowHover.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowHover.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowHover.MaxLength = 12;
             this.textBoxColorArrowHover.Name = "textBoxColorArrowHover";
-            this.textBoxColorArrowHover.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowHover.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowHover.TabIndex = 2;
             this.textBoxColorArrowHover.Text = "#ffffff";
             this.textBoxColorArrowHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1615,9 +1693,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelArrowHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelArrowHover.AutoSize = true;
-            this.labelArrowHover.Location = new System.Drawing.Point(95, 4);
+            this.labelArrowHover.Location = new System.Drawing.Point(206, 6);
+            this.labelArrowHover.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelArrowHover.Name = "labelArrowHover";
-            this.labelArrowHover.Size = new System.Drawing.Size(96, 15);
+            this.labelArrowHover.Size = new System.Drawing.Size(217, 37);
             this.labelArrowHover.TabIndex = 0;
             this.labelArrowHover.Text = "labelArrowHover";
             // 
@@ -1632,11 +1711,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowClickBackground.Controls.Add(this.pictureBoxArrowClickBackground, 0, 0);
             this.tableLayoutPanelArrowClickBackground.Controls.Add(this.textBoxColorArrowClickBackground, 1, 0);
             this.tableLayoutPanelArrowClickBackground.Controls.Add(this.labelArrowClickBackground, 2, 0);
-            this.tableLayoutPanelArrowClickBackground.Location = new System.Drawing.Point(3, 526);
+            this.tableLayoutPanelArrowClickBackground.Location = new System.Drawing.Point(7, 1152);
+            this.tableLayoutPanelArrowClickBackground.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowClickBackground.Name = "tableLayoutPanelArrowClickBackground";
             this.tableLayoutPanelArrowClickBackground.RowCount = 1;
             this.tableLayoutPanelArrowClickBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowClickBackground.Size = new System.Drawing.Size(252, 23);
+            this.tableLayoutPanelArrowClickBackground.Size = new System.Drawing.Size(556, 49);
             this.tableLayoutPanelArrowClickBackground.TabIndex = 2;
             // 
             // pictureBoxArrowClickBackground
@@ -1647,18 +1727,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowClickBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowClickBackground.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowClickBackground.Name = "pictureBoxArrowClickBackground";
-            this.pictureBoxArrowClickBackground.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowClickBackground.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowClickBackground.TabIndex = 1;
             this.pictureBoxArrowClickBackground.TabStop = false;
             this.pictureBoxArrowClickBackground.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowClickBackground
             // 
-            this.textBoxColorArrowClickBackground.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowClickBackground.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowClickBackground.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowClickBackground.MaxLength = 12;
             this.textBoxColorArrowClickBackground.Name = "textBoxColorArrowClickBackground";
-            this.textBoxColorArrowClickBackground.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowClickBackground.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowClickBackground.TabIndex = 2;
             this.textBoxColorArrowClickBackground.Text = "#ffffff";
             this.textBoxColorArrowClickBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1669,9 +1749,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelArrowClickBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelArrowClickBackground.AutoSize = true;
-            this.labelArrowClickBackground.Location = new System.Drawing.Point(95, 4);
+            this.labelArrowClickBackground.Location = new System.Drawing.Point(206, 6);
+            this.labelArrowClickBackground.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelArrowClickBackground.Name = "labelArrowClickBackground";
-            this.labelArrowClickBackground.Size = new System.Drawing.Size(154, 15);
+            this.labelArrowClickBackground.Size = new System.Drawing.Size(343, 37);
             this.labelArrowClickBackground.TabIndex = 0;
             this.labelArrowClickBackground.Text = "labelArrowClickBackground";
             // 
@@ -1686,11 +1767,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowClick.Controls.Add(this.pictureBoxArrowClick, 0, 0);
             this.tableLayoutPanelArrowClick.Controls.Add(this.textBoxColorArrowClick, 1, 0);
             this.tableLayoutPanelArrowClick.Controls.Add(this.labelArrowClick, 2, 0);
-            this.tableLayoutPanelArrowClick.Location = new System.Drawing.Point(3, 497);
+            this.tableLayoutPanelArrowClick.Location = new System.Drawing.Point(7, 1089);
+            this.tableLayoutPanelArrowClick.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowClick.Name = "tableLayoutPanelArrowClick";
             this.tableLayoutPanelArrowClick.RowCount = 1;
             this.tableLayoutPanelArrowClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowClick.Size = new System.Drawing.Size(188, 23);
+            this.tableLayoutPanelArrowClick.Size = new System.Drawing.Size(415, 49);
             this.tableLayoutPanelArrowClick.TabIndex = 2;
             // 
             // pictureBoxArrowClick
@@ -1701,18 +1783,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowClick.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowClick.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowClick.Name = "pictureBoxArrowClick";
-            this.pictureBoxArrowClick.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowClick.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowClick.TabIndex = 1;
             this.pictureBoxArrowClick.TabStop = false;
             this.pictureBoxArrowClick.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowClick
             // 
-            this.textBoxColorArrowClick.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowClick.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowClick.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowClick.MaxLength = 12;
             this.textBoxColorArrowClick.Name = "textBoxColorArrowClick";
-            this.textBoxColorArrowClick.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowClick.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowClick.TabIndex = 2;
             this.textBoxColorArrowClick.Text = "#ffffff";
             this.textBoxColorArrowClick.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1723,9 +1805,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelArrowClick.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelArrowClick.AutoSize = true;
-            this.labelArrowClick.Location = new System.Drawing.Point(95, 4);
+            this.labelArrowClick.Location = new System.Drawing.Point(206, 6);
+            this.labelArrowClick.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelArrowClick.Name = "labelArrowClick";
-            this.labelArrowClick.Size = new System.Drawing.Size(90, 15);
+            this.labelArrowClick.Size = new System.Drawing.Size(202, 37);
             this.labelArrowClick.TabIndex = 0;
             this.labelArrowClick.Text = "labelArrowClick";
             // 
@@ -1740,11 +1823,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrow.Controls.Add(this.pictureBoxArrow, 0, 0);
             this.tableLayoutPanelArrow.Controls.Add(this.textBoxColorArrow, 1, 0);
             this.tableLayoutPanelArrow.Controls.Add(this.labelArrow, 2, 0);
-            this.tableLayoutPanelArrow.Location = new System.Drawing.Point(3, 468);
+            this.tableLayoutPanelArrow.Location = new System.Drawing.Point(7, 1026);
+            this.tableLayoutPanelArrow.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrow.Name = "tableLayoutPanelArrow";
             this.tableLayoutPanelArrow.RowCount = 1;
             this.tableLayoutPanelArrow.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrow.Size = new System.Drawing.Size(162, 23);
+            this.tableLayoutPanelArrow.Size = new System.Drawing.Size(359, 49);
             this.tableLayoutPanelArrow.TabIndex = 2;
             // 
             // pictureBoxArrow
@@ -1755,18 +1839,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrow.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrow.Name = "pictureBoxArrow";
-            this.pictureBoxArrow.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrow.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrow.TabIndex = 1;
             this.pictureBoxArrow.TabStop = false;
             this.pictureBoxArrow.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrow
             // 
-            this.textBoxColorArrow.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrow.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrow.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrow.MaxLength = 12;
             this.textBoxColorArrow.Name = "textBoxColorArrow";
-            this.textBoxColorArrow.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrow.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrow.TabIndex = 2;
             this.textBoxColorArrow.Text = "#ffffff";
             this.textBoxColorArrow.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1777,9 +1861,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelArrow.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelArrow.AutoSize = true;
-            this.labelArrow.Location = new System.Drawing.Point(95, 4);
+            this.labelArrow.Location = new System.Drawing.Point(206, 6);
+            this.labelArrow.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelArrow.Name = "labelArrow";
-            this.labelArrow.Size = new System.Drawing.Size(64, 15);
+            this.labelArrow.Size = new System.Drawing.Size(146, 37);
             this.labelArrow.TabIndex = 0;
             this.labelArrow.Text = "labelArrow";
             // 
@@ -1794,11 +1879,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(this.pictureBoxSliderArrowsAndTrackHover, 0, 0);
             this.tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(this.textBoxColorSliderArrowsAndTrackHover, 1, 0);
             this.tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(this.labelSliderArrowsAndTrackHover, 2, 0);
-            this.tableLayoutPanelSliderArrowsAndTrackHover.Location = new System.Drawing.Point(3, 439);
+            this.tableLayoutPanelSliderArrowsAndTrackHover.Location = new System.Drawing.Point(7, 963);
+            this.tableLayoutPanelSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSliderArrowsAndTrackHover.Name = "tableLayoutPanelSliderArrowsAndTrackHover";
             this.tableLayoutPanelSliderArrowsAndTrackHover.RowCount = 1;
             this.tableLayoutPanelSliderArrowsAndTrackHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderArrowsAndTrackHover.Size = new System.Drawing.Size(277, 23);
+            this.tableLayoutPanelSliderArrowsAndTrackHover.Size = new System.Drawing.Size(616, 49);
             this.tableLayoutPanelSliderArrowsAndTrackHover.TabIndex = 2;
             // 
             // pictureBoxSliderArrowsAndTrackHover
@@ -1809,18 +1895,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSliderArrowsAndTrackHover.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSliderArrowsAndTrackHover.Name = "pictureBoxSliderArrowsAndTrackHover";
-            this.pictureBoxSliderArrowsAndTrackHover.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSliderArrowsAndTrackHover.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSliderArrowsAndTrackHover.TabIndex = 1;
             this.pictureBoxSliderArrowsAndTrackHover.TabStop = false;
             this.pictureBoxSliderArrowsAndTrackHover.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSliderArrowsAndTrackHover
             // 
-            this.textBoxColorSliderArrowsAndTrackHover.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSliderArrowsAndTrackHover.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSliderArrowsAndTrackHover.MaxLength = 12;
             this.textBoxColorSliderArrowsAndTrackHover.Name = "textBoxColorSliderArrowsAndTrackHover";
-            this.textBoxColorSliderArrowsAndTrackHover.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSliderArrowsAndTrackHover.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSliderArrowsAndTrackHover.TabIndex = 2;
             this.textBoxColorSliderArrowsAndTrackHover.Text = "#ffffff";
             this.textBoxColorSliderArrowsAndTrackHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1831,9 +1917,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSliderArrowsAndTrackHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSliderArrowsAndTrackHover.AutoSize = true;
-            this.labelSliderArrowsAndTrackHover.Location = new System.Drawing.Point(95, 4);
+            this.labelSliderArrowsAndTrackHover.Location = new System.Drawing.Point(206, 6);
+            this.labelSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSliderArrowsAndTrackHover.Name = "labelSliderArrowsAndTrackHover";
-            this.labelSliderArrowsAndTrackHover.Size = new System.Drawing.Size(179, 15);
+            this.labelSliderArrowsAndTrackHover.Size = new System.Drawing.Size(403, 37);
             this.labelSliderArrowsAndTrackHover.TabIndex = 0;
             this.labelSliderArrowsAndTrackHover.Text = "labelSliderArrowsAndTrackHover";
             // 
@@ -1848,11 +1935,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSliderHover.Controls.Add(this.pictureBoxSliderHover, 0, 0);
             this.tableLayoutPanelSliderHover.Controls.Add(this.textBoxColorSliderHover, 1, 0);
             this.tableLayoutPanelSliderHover.Controls.Add(this.labelSliderHover, 2, 0);
-            this.tableLayoutPanelSliderHover.Location = new System.Drawing.Point(3, 410);
+            this.tableLayoutPanelSliderHover.Location = new System.Drawing.Point(7, 900);
+            this.tableLayoutPanelSliderHover.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSliderHover.Name = "tableLayoutPanelSliderHover";
             this.tableLayoutPanelSliderHover.RowCount = 1;
             this.tableLayoutPanelSliderHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderHover.Size = new System.Drawing.Size(191, 23);
+            this.tableLayoutPanelSliderHover.Size = new System.Drawing.Size(426, 49);
             this.tableLayoutPanelSliderHover.TabIndex = 2;
             // 
             // pictureBoxSliderHover
@@ -1863,18 +1951,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSliderHover.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderHover.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSliderHover.Name = "pictureBoxSliderHover";
-            this.pictureBoxSliderHover.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSliderHover.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSliderHover.TabIndex = 1;
             this.pictureBoxSliderHover.TabStop = false;
             this.pictureBoxSliderHover.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSliderHover
             // 
-            this.textBoxColorSliderHover.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSliderHover.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSliderHover.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSliderHover.MaxLength = 12;
             this.textBoxColorSliderHover.Name = "textBoxColorSliderHover";
-            this.textBoxColorSliderHover.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSliderHover.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSliderHover.TabIndex = 2;
             this.textBoxColorSliderHover.Text = "#ffffff";
             this.textBoxColorSliderHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1885,9 +1973,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSliderHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSliderHover.AutoSize = true;
-            this.labelSliderHover.Location = new System.Drawing.Point(95, 4);
+            this.labelSliderHover.Location = new System.Drawing.Point(206, 6);
+            this.labelSliderHover.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSliderHover.Name = "labelSliderHover";
-            this.labelSliderHover.Size = new System.Drawing.Size(93, 15);
+            this.labelSliderHover.Size = new System.Drawing.Size(213, 37);
             this.labelSliderHover.TabIndex = 0;
             this.labelSliderHover.Text = "labelSliderHover";
             // 
@@ -1902,12 +1991,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSliderDragging.Controls.Add(this.pictureBoxSliderDragging, 0, 0);
             this.tableLayoutPanelSliderDragging.Controls.Add(this.textBoxColorSliderDragging, 1, 0);
             this.tableLayoutPanelSliderDragging.Controls.Add(this.labelSliderDragging, 2, 0);
-            this.tableLayoutPanelSliderDragging.Location = new System.Drawing.Point(3, 381);
+            this.tableLayoutPanelSliderDragging.Location = new System.Drawing.Point(7, 837);
+            this.tableLayoutPanelSliderDragging.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSliderDragging.Name = "tableLayoutPanelSliderDragging";
             this.tableLayoutPanelSliderDragging.RowCount = 1;
             this.tableLayoutPanelSliderDragging.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderDragging.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanelSliderDragging.Size = new System.Drawing.Size(208, 23);
+            this.tableLayoutPanelSliderDragging.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanelSliderDragging.Size = new System.Drawing.Size(467, 49);
             this.tableLayoutPanelSliderDragging.TabIndex = 2;
             // 
             // pictureBoxSliderDragging
@@ -1918,18 +2008,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSliderDragging.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderDragging.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSliderDragging.Name = "pictureBoxSliderDragging";
-            this.pictureBoxSliderDragging.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSliderDragging.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSliderDragging.TabIndex = 1;
             this.pictureBoxSliderDragging.TabStop = false;
             this.pictureBoxSliderDragging.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSliderDragging
             // 
-            this.textBoxColorSliderDragging.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSliderDragging.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSliderDragging.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSliderDragging.MaxLength = 12;
             this.textBoxColorSliderDragging.Name = "textBoxColorSliderDragging";
-            this.textBoxColorSliderDragging.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSliderDragging.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSliderDragging.TabIndex = 2;
             this.textBoxColorSliderDragging.Text = "#ffffff";
             this.textBoxColorSliderDragging.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1940,9 +2030,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSliderDragging.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSliderDragging.AutoSize = true;
-            this.labelSliderDragging.Location = new System.Drawing.Point(95, 4);
+            this.labelSliderDragging.Location = new System.Drawing.Point(206, 6);
+            this.labelSliderDragging.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSliderDragging.Name = "labelSliderDragging";
-            this.labelSliderDragging.Size = new System.Drawing.Size(110, 15);
+            this.labelSliderDragging.Size = new System.Drawing.Size(254, 37);
             this.labelSliderDragging.TabIndex = 0;
             this.labelSliderDragging.Text = "labelSliderDragging";
             // 
@@ -1957,11 +2048,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSlider.Controls.Add(this.pictureBoxSlider, 0, 0);
             this.tableLayoutPanelSlider.Controls.Add(this.textBoxColorSlider, 1, 0);
             this.tableLayoutPanelSlider.Controls.Add(this.labelSlider, 2, 0);
-            this.tableLayoutPanelSlider.Location = new System.Drawing.Point(3, 352);
+            this.tableLayoutPanelSlider.Location = new System.Drawing.Point(7, 774);
+            this.tableLayoutPanelSlider.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSlider.Name = "tableLayoutPanelSlider";
             this.tableLayoutPanelSlider.RowCount = 1;
             this.tableLayoutPanelSlider.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSlider.Size = new System.Drawing.Size(159, 23);
+            this.tableLayoutPanelSlider.Size = new System.Drawing.Size(355, 49);
             this.tableLayoutPanelSlider.TabIndex = 2;
             // 
             // pictureBoxSlider
@@ -1972,18 +2064,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSlider.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSlider.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSlider.Name = "pictureBoxSlider";
-            this.pictureBoxSlider.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSlider.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSlider.TabIndex = 1;
             this.pictureBoxSlider.TabStop = false;
             this.pictureBoxSlider.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSlider
             // 
-            this.textBoxColorSlider.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSlider.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSlider.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSlider.MaxLength = 12;
             this.textBoxColorSlider.Name = "textBoxColorSlider";
-            this.textBoxColorSlider.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSlider.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSlider.TabIndex = 2;
             this.textBoxColorSlider.Text = "#ffffff";
             this.textBoxColorSlider.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -1994,9 +2086,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSlider.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSlider.AutoSize = true;
-            this.labelSlider.Location = new System.Drawing.Point(95, 4);
+            this.labelSlider.Location = new System.Drawing.Point(206, 6);
+            this.labelSlider.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSlider.Name = "labelSlider";
-            this.labelSlider.Size = new System.Drawing.Size(61, 15);
+            this.labelSlider.Size = new System.Drawing.Size(142, 37);
             this.labelSlider.TabIndex = 0;
             this.labelSlider.Text = "labelSlider";
             // 
@@ -2011,11 +2104,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelScrollbarBackground.Controls.Add(this.pictureBoxScrollbarBackground, 0, 0);
             this.tableLayoutPanelScrollbarBackground.Controls.Add(this.textBoxColorScrollbarBackground, 1, 0);
             this.tableLayoutPanelScrollbarBackground.Controls.Add(this.labelScrollbarBackground, 2, 0);
-            this.tableLayoutPanelScrollbarBackground.Location = new System.Drawing.Point(3, 323);
+            this.tableLayoutPanelScrollbarBackground.Location = new System.Drawing.Point(7, 711);
+            this.tableLayoutPanelScrollbarBackground.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelScrollbarBackground.Name = "tableLayoutPanelScrollbarBackground";
             this.tableLayoutPanelScrollbarBackground.RowCount = 1;
             this.tableLayoutPanelScrollbarBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelScrollbarBackground.Size = new System.Drawing.Size(240, 23);
+            this.tableLayoutPanelScrollbarBackground.Size = new System.Drawing.Size(533, 49);
             this.tableLayoutPanelScrollbarBackground.TabIndex = 2;
             // 
             // pictureBoxScrollbarBackground
@@ -2026,18 +2120,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxScrollbarBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxScrollbarBackground.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxScrollbarBackground.Name = "pictureBoxScrollbarBackground";
-            this.pictureBoxScrollbarBackground.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxScrollbarBackground.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxScrollbarBackground.TabIndex = 1;
             this.pictureBoxScrollbarBackground.TabStop = false;
             this.pictureBoxScrollbarBackground.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorScrollbarBackground
             // 
-            this.textBoxColorScrollbarBackground.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorScrollbarBackground.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorScrollbarBackground.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorScrollbarBackground.MaxLength = 12;
             this.textBoxColorScrollbarBackground.Name = "textBoxColorScrollbarBackground";
-            this.textBoxColorScrollbarBackground.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorScrollbarBackground.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorScrollbarBackground.TabIndex = 2;
             this.textBoxColorScrollbarBackground.Text = "#ffffff";
             this.textBoxColorScrollbarBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2048,18 +2142,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelScrollbarBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelScrollbarBackground.AutoSize = true;
-            this.labelScrollbarBackground.Location = new System.Drawing.Point(95, 4);
+            this.labelScrollbarBackground.Location = new System.Drawing.Point(206, 6);
+            this.labelScrollbarBackground.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelScrollbarBackground.Name = "labelScrollbarBackground";
-            this.labelScrollbarBackground.Size = new System.Drawing.Size(142, 15);
+            this.labelScrollbarBackground.Size = new System.Drawing.Size(320, 37);
             this.labelScrollbarBackground.TabIndex = 0;
             this.labelScrollbarBackground.Text = "labelScrollbarBackground";
             // 
             // labelScrollbarLightMode
             // 
             this.labelScrollbarLightMode.AutoSize = true;
-            this.labelScrollbarLightMode.Location = new System.Drawing.Point(3, 305);
+            this.labelScrollbarLightMode.Location = new System.Drawing.Point(7, 667);
+            this.labelScrollbarLightMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelScrollbarLightMode.Name = "labelScrollbarLightMode";
-            this.labelScrollbarLightMode.Size = new System.Drawing.Size(136, 15);
+            this.labelScrollbarLightMode.Size = new System.Drawing.Size(309, 37);
             this.labelScrollbarLightMode.TabIndex = 3;
             this.labelScrollbarLightMode.Text = "labelScrollbarLightMode";
             // 
@@ -2074,30 +2170,32 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelWarning.Controls.Add(this.labelWarning, 2, 0);
             this.tableLayoutPanelWarning.Controls.Add(this.textBoxColorWarning, 1, 0);
             this.tableLayoutPanelWarning.Controls.Add(this.pictureBoxWarning, 0, 0);
-            this.tableLayoutPanelWarning.Location = new System.Drawing.Point(3, 279);
+            this.tableLayoutPanelWarning.Location = new System.Drawing.Point(7, 611);
+            this.tableLayoutPanelWarning.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelWarning.Name = "tableLayoutPanelWarning";
             this.tableLayoutPanelWarning.RowCount = 1;
             this.tableLayoutPanelWarning.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelWarning.Size = new System.Drawing.Size(175, 23);
+            this.tableLayoutPanelWarning.Size = new System.Drawing.Size(388, 49);
             this.tableLayoutPanelWarning.TabIndex = 2;
             // 
             // labelWarning
             // 
             this.labelWarning.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelWarning.AutoSize = true;
-            this.labelWarning.Location = new System.Drawing.Point(95, 4);
+            this.labelWarning.Location = new System.Drawing.Point(206, 6);
+            this.labelWarning.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelWarning.Name = "labelWarning";
-            this.labelWarning.Size = new System.Drawing.Size(77, 15);
+            this.labelWarning.Size = new System.Drawing.Size(175, 37);
             this.labelWarning.TabIndex = 0;
             this.labelWarning.Text = "labelWarning";
             // 
             // textBoxColorWarning
             // 
-            this.textBoxColorWarning.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorWarning.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorWarning.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorWarning.MaxLength = 12;
             this.textBoxColorWarning.Name = "textBoxColorWarning";
-            this.textBoxColorWarning.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorWarning.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorWarning.TabIndex = 2;
             this.textBoxColorWarning.Text = "#ffffff";
             this.textBoxColorWarning.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2112,7 +2210,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxWarning.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxWarning.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxWarning.Name = "pictureBoxWarning";
-            this.pictureBoxWarning.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxWarning.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxWarning.TabIndex = 1;
             this.pictureBoxWarning.TabStop = false;
             this.pictureBoxWarning.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2128,11 +2226,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSelectedItemBorder.Controls.Add(this.pictureBoxSelectedItemBorder, 0, 0);
             this.tableLayoutPanelSelectedItemBorder.Controls.Add(this.textBoxColorSelectedItemBorder, 1, 0);
             this.tableLayoutPanelSelectedItemBorder.Controls.Add(this.labelSelectedItemBorder, 2, 0);
-            this.tableLayoutPanelSelectedItemBorder.Location = new System.Drawing.Point(3, 250);
+            this.tableLayoutPanelSelectedItemBorder.Location = new System.Drawing.Point(7, 548);
+            this.tableLayoutPanelSelectedItemBorder.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSelectedItemBorder.Name = "tableLayoutPanelSelectedItemBorder";
             this.tableLayoutPanelSelectedItemBorder.RowCount = 1;
             this.tableLayoutPanelSelectedItemBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSelectedItemBorder.Size = new System.Drawing.Size(233, 23);
+            this.tableLayoutPanelSelectedItemBorder.Size = new System.Drawing.Size(520, 49);
             this.tableLayoutPanelSelectedItemBorder.TabIndex = 2;
             // 
             // pictureBoxSelectedItemBorder
@@ -2143,18 +2242,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSelectedItemBorder.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSelectedItemBorder.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSelectedItemBorder.Name = "pictureBoxSelectedItemBorder";
-            this.pictureBoxSelectedItemBorder.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSelectedItemBorder.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSelectedItemBorder.TabIndex = 1;
             this.pictureBoxSelectedItemBorder.TabStop = false;
             this.pictureBoxSelectedItemBorder.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSelectedItemBorder
             // 
-            this.textBoxColorSelectedItemBorder.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSelectedItemBorder.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSelectedItemBorder.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSelectedItemBorder.MaxLength = 12;
             this.textBoxColorSelectedItemBorder.Name = "textBoxColorSelectedItemBorder";
-            this.textBoxColorSelectedItemBorder.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSelectedItemBorder.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSelectedItemBorder.TabIndex = 2;
             this.textBoxColorSelectedItemBorder.Text = "#ffffff";
             this.textBoxColorSelectedItemBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2165,9 +2264,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSelectedItemBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSelectedItemBorder.AutoSize = true;
-            this.labelSelectedItemBorder.Location = new System.Drawing.Point(95, 4);
+            this.labelSelectedItemBorder.Location = new System.Drawing.Point(206, 6);
+            this.labelSelectedItemBorder.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSelectedItemBorder.Name = "labelSelectedItemBorder";
-            this.labelSelectedItemBorder.Size = new System.Drawing.Size(135, 15);
+            this.labelSelectedItemBorder.Size = new System.Drawing.Size(307, 37);
             this.labelSelectedItemBorder.TabIndex = 0;
             this.labelSelectedItemBorder.Text = "labelSelectedItemBorder";
             // 
@@ -2182,11 +2282,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSelectedItem.Controls.Add(this.pictureBoxSelectedItem, 0, 0);
             this.tableLayoutPanelSelectedItem.Controls.Add(this.textBoxColorSelectedItem, 1, 0);
             this.tableLayoutPanelSelectedItem.Controls.Add(this.labelSelectedItem, 2, 0);
-            this.tableLayoutPanelSelectedItem.Location = new System.Drawing.Point(3, 221);
+            this.tableLayoutPanelSelectedItem.Location = new System.Drawing.Point(7, 485);
+            this.tableLayoutPanelSelectedItem.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSelectedItem.Name = "tableLayoutPanelSelectedItem";
             this.tableLayoutPanelSelectedItem.RowCount = 1;
             this.tableLayoutPanelSelectedItem.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSelectedItem.Size = new System.Drawing.Size(198, 23);
+            this.tableLayoutPanelSelectedItem.Size = new System.Drawing.Size(441, 49);
             this.tableLayoutPanelSelectedItem.TabIndex = 2;
             // 
             // pictureBoxSelectedItem
@@ -2197,18 +2298,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSelectedItem.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSelectedItem.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSelectedItem.Name = "pictureBoxSelectedItem";
-            this.pictureBoxSelectedItem.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSelectedItem.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSelectedItem.TabIndex = 1;
             this.pictureBoxSelectedItem.TabStop = false;
             this.pictureBoxSelectedItem.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSelectedItem
             // 
-            this.textBoxColorSelectedItem.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSelectedItem.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSelectedItem.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSelectedItem.MaxLength = 12;
             this.textBoxColorSelectedItem.Name = "textBoxColorSelectedItem";
-            this.textBoxColorSelectedItem.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSelectedItem.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSelectedItem.TabIndex = 2;
             this.textBoxColorSelectedItem.Text = "#ffffff";
             this.textBoxColorSelectedItem.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2219,9 +2320,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSelectedItem.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSelectedItem.AutoSize = true;
-            this.labelSelectedItem.Location = new System.Drawing.Point(95, 4);
+            this.labelSelectedItem.Location = new System.Drawing.Point(206, 6);
+            this.labelSelectedItem.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSelectedItem.Name = "labelSelectedItem";
-            this.labelSelectedItem.Size = new System.Drawing.Size(100, 15);
+            this.labelSelectedItem.Size = new System.Drawing.Size(228, 37);
             this.labelSelectedItem.TabIndex = 0;
             this.labelSelectedItem.Text = "labelSelectedItem";
             // 
@@ -2236,11 +2338,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelOpenFolderBorder.Controls.Add(this.pictureBoxOpenFolderBorder, 0, 0);
             this.tableLayoutPanelOpenFolderBorder.Controls.Add(this.textBoxColorOpenFolderBorder, 1, 0);
             this.tableLayoutPanelOpenFolderBorder.Controls.Add(this.labelOpenFolderBorder, 2, 0);
-            this.tableLayoutPanelOpenFolderBorder.Location = new System.Drawing.Point(3, 192);
+            this.tableLayoutPanelOpenFolderBorder.Location = new System.Drawing.Point(7, 422);
+            this.tableLayoutPanelOpenFolderBorder.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelOpenFolderBorder.Name = "tableLayoutPanelOpenFolderBorder";
             this.tableLayoutPanelOpenFolderBorder.RowCount = 1;
             this.tableLayoutPanelOpenFolderBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelOpenFolderBorder.Size = new System.Drawing.Size(227, 23);
+            this.tableLayoutPanelOpenFolderBorder.Size = new System.Drawing.Size(507, 49);
             this.tableLayoutPanelOpenFolderBorder.TabIndex = 2;
             // 
             // pictureBoxOpenFolderBorder
@@ -2251,17 +2354,17 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxOpenFolderBorder.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxOpenFolderBorder.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxOpenFolderBorder.Name = "pictureBoxOpenFolderBorder";
-            this.pictureBoxOpenFolderBorder.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxOpenFolderBorder.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxOpenFolderBorder.TabIndex = 1;
             this.pictureBoxOpenFolderBorder.TabStop = false;
             this.pictureBoxOpenFolderBorder.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorOpenFolderBorder
             // 
-            this.textBoxColorOpenFolderBorder.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorOpenFolderBorder.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorOpenFolderBorder.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorOpenFolderBorder.Name = "textBoxColorOpenFolderBorder";
-            this.textBoxColorOpenFolderBorder.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorOpenFolderBorder.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorOpenFolderBorder.TabIndex = 2;
             this.textBoxColorOpenFolderBorder.Text = "#ffffff";
             this.textBoxColorOpenFolderBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2272,9 +2375,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelOpenFolderBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelOpenFolderBorder.AutoSize = true;
-            this.labelOpenFolderBorder.Location = new System.Drawing.Point(95, 4);
+            this.labelOpenFolderBorder.Location = new System.Drawing.Point(206, 6);
+            this.labelOpenFolderBorder.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelOpenFolderBorder.Name = "labelOpenFolderBorder";
-            this.labelOpenFolderBorder.Size = new System.Drawing.Size(129, 15);
+            this.labelOpenFolderBorder.Size = new System.Drawing.Size(294, 37);
             this.labelOpenFolderBorder.TabIndex = 0;
             this.labelOpenFolderBorder.Text = "labelOpenFolderBorder";
             // 
@@ -2289,11 +2393,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelOpenFolder.Controls.Add(this.pictureBoxOpenFolder, 0, 0);
             this.tableLayoutPanelOpenFolder.Controls.Add(this.textBoxColorOpenFolder, 1, 0);
             this.tableLayoutPanelOpenFolder.Controls.Add(this.labelOpenFolder, 2, 0);
-            this.tableLayoutPanelOpenFolder.Location = new System.Drawing.Point(3, 163);
+            this.tableLayoutPanelOpenFolder.Location = new System.Drawing.Point(7, 359);
+            this.tableLayoutPanelOpenFolder.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelOpenFolder.Name = "tableLayoutPanelOpenFolder";
             this.tableLayoutPanelOpenFolder.RowCount = 1;
             this.tableLayoutPanelOpenFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelOpenFolder.Size = new System.Drawing.Size(192, 23);
+            this.tableLayoutPanelOpenFolder.Size = new System.Drawing.Size(428, 49);
             this.tableLayoutPanelOpenFolder.TabIndex = 2;
             // 
             // pictureBoxOpenFolder
@@ -2304,18 +2409,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxOpenFolder.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxOpenFolder.Name = "pictureBoxOpenFolder";
-            this.pictureBoxOpenFolder.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxOpenFolder.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxOpenFolder.TabIndex = 1;
             this.pictureBoxOpenFolder.TabStop = false;
             this.pictureBoxOpenFolder.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorOpenFolder
             // 
-            this.textBoxColorOpenFolder.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorOpenFolder.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorOpenFolder.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorOpenFolder.MaxLength = 12;
             this.textBoxColorOpenFolder.Name = "textBoxColorOpenFolder";
-            this.textBoxColorOpenFolder.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorOpenFolder.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorOpenFolder.TabIndex = 2;
             this.textBoxColorOpenFolder.Text = "#ffffff";
             this.textBoxColorOpenFolder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2326,9 +2431,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelOpenFolder.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelOpenFolder.AutoSize = true;
-            this.labelOpenFolder.Location = new System.Drawing.Point(95, 4);
+            this.labelOpenFolder.Location = new System.Drawing.Point(206, 6);
+            this.labelOpenFolder.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelOpenFolder.Name = "labelOpenFolder";
-            this.labelOpenFolder.Size = new System.Drawing.Size(94, 15);
+            this.labelOpenFolder.Size = new System.Drawing.Size(215, 37);
             this.labelOpenFolder.TabIndex = 0;
             this.labelOpenFolder.Text = "labelOpenFolder";
             // 
@@ -2343,11 +2449,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSearchField.Controls.Add(this.pictureBoxSearchField, 0, 0);
             this.tableLayoutPanelSearchField.Controls.Add(this.textBoxColorSearchField, 1, 0);
             this.tableLayoutPanelSearchField.Controls.Add(this.labelSearchField, 2, 0);
-            this.tableLayoutPanelSearchField.Location = new System.Drawing.Point(3, 134);
+            this.tableLayoutPanelSearchField.Location = new System.Drawing.Point(7, 296);
+            this.tableLayoutPanelSearchField.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSearchField.Name = "tableLayoutPanelSearchField";
             this.tableLayoutPanelSearchField.RowCount = 1;
             this.tableLayoutPanelSearchField.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearchField.Size = new System.Drawing.Size(190, 23);
+            this.tableLayoutPanelSearchField.Size = new System.Drawing.Size(423, 49);
             this.tableLayoutPanelSearchField.TabIndex = 2;
             // 
             // pictureBoxSearchField
@@ -2358,18 +2465,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSearchField.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSearchField.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSearchField.Name = "pictureBoxSearchField";
-            this.pictureBoxSearchField.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSearchField.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSearchField.TabIndex = 1;
             this.pictureBoxSearchField.TabStop = false;
             this.pictureBoxSearchField.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSearchField
             // 
-            this.textBoxColorSearchField.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSearchField.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSearchField.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSearchField.MaxLength = 12;
             this.textBoxColorSearchField.Name = "textBoxColorSearchField";
-            this.textBoxColorSearchField.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSearchField.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSearchField.TabIndex = 2;
             this.textBoxColorSearchField.Text = "#ffffff";
             this.textBoxColorSearchField.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2380,9 +2487,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSearchField.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSearchField.AutoSize = true;
-            this.labelSearchField.Location = new System.Drawing.Point(95, 4);
+            this.labelSearchField.Location = new System.Drawing.Point(206, 6);
+            this.labelSearchField.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSearchField.Name = "labelSearchField";
-            this.labelSearchField.Size = new System.Drawing.Size(92, 15);
+            this.labelSearchField.Size = new System.Drawing.Size(210, 37);
             this.labelSearchField.TabIndex = 0;
             this.labelSearchField.Text = "labelSearchField";
             // 
@@ -2391,11 +2499,13 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxColorsDarkMode.AutoSize = true;
             this.groupBoxColorsDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxColorsDarkMode.Controls.Add(this.tableLayoutPanelDarkMode);
-            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 672);
-            this.groupBoxColorsDarkMode.MaximumSize = new System.Drawing.Size(385, 0);
-            this.groupBoxColorsDarkMode.MinimumSize = new System.Drawing.Size(385, 0);
+            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(7, 1471);
+            this.groupBoxColorsDarkMode.Margin = new System.Windows.Forms.Padding(7);
+            this.groupBoxColorsDarkMode.MaximumSize = new System.Drawing.Size(866, 0);
+            this.groupBoxColorsDarkMode.MinimumSize = new System.Drawing.Size(866, 0);
             this.groupBoxColorsDarkMode.Name = "groupBoxColorsDarkMode";
-            this.groupBoxColorsDarkMode.Size = new System.Drawing.Size(385, 688);
+            this.groupBoxColorsDarkMode.Padding = new System.Windows.Forms.Padding(7);
+            this.groupBoxColorsDarkMode.Size = new System.Drawing.Size(866, 1505);
             this.groupBoxColorsDarkMode.TabIndex = 0;
             this.groupBoxColorsDarkMode.TabStop = false;
             this.groupBoxColorsDarkMode.Text = "groupBoxColorsDarkMode";
@@ -2405,7 +2515,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelDarkMode.AutoSize = true;
             this.tableLayoutPanelDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelDarkMode.ColumnCount = 1;
-            this.tableLayoutPanelDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
+            this.tableLayoutPanelDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 999F));
             this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanel5, 0, 3);
             this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanel3, 0, 5);
             this.tableLayoutPanelDarkMode.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 0);
@@ -2431,7 +2541,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelTitleDarkMode, 0, 2);
             this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelBackgroundDarkMode, 0, 4);
             this.tableLayoutPanelDarkMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelDarkMode.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelDarkMode.Location = new System.Drawing.Point(7, 43);
+            this.tableLayoutPanelDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelDarkMode.Name = "tableLayoutPanelDarkMode";
             this.tableLayoutPanelDarkMode.RowCount = 24;
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -2458,7 +2569,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.Size = new System.Drawing.Size(379, 666);
+            this.tableLayoutPanelDarkMode.Size = new System.Drawing.Size(852, 1455);
             this.tableLayoutPanelDarkMode.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -2472,11 +2583,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel5.Controls.Add(this.pictureBoxIconsDarkMode, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.labelIconsDarkMode, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.textBoxColorIconsDarkMode, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 72);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(7, 162);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(213, 23);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(474, 49);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // pictureBoxIconsDarkMode
@@ -2487,7 +2599,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxIconsDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxIconsDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxIconsDarkMode.Name = "pictureBoxIconsDarkMode";
-            this.pictureBoxIconsDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxIconsDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxIconsDarkMode.TabIndex = 1;
             this.pictureBoxIconsDarkMode.TabStop = false;
             this.pictureBoxIconsDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2496,19 +2608,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelIconsDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelIconsDarkMode.AutoSize = true;
-            this.labelIconsDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelIconsDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelIconsDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelIconsDarkMode.Name = "labelIconsDarkMode";
-            this.labelIconsDarkMode.Size = new System.Drawing.Size(115, 15);
+            this.labelIconsDarkMode.Size = new System.Drawing.Size(261, 37);
             this.labelIconsDarkMode.TabIndex = 0;
             this.labelIconsDarkMode.Text = "labelIconsDarkMode";
             // 
             // textBoxColorIconsDarkMode
             // 
-            this.textBoxColorIconsDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorIconsDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorIconsDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorIconsDarkMode.MaxLength = 12;
             this.textBoxColorIconsDarkMode.Name = "textBoxColorIconsDarkMode";
-            this.textBoxColorIconsDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorIconsDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorIconsDarkMode.TabIndex = 2;
             this.textBoxColorIconsDarkMode.Text = "#ffffff";
             this.textBoxColorIconsDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2526,11 +2639,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel3.Controls.Add(this.pictureBoxBackgroundBorderDarkMode, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelBackgroundBorderDarkMode, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBoxColorBackgroundBorderDarkMode, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 130);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(7, 288);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(284, 23);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(633, 49);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // pictureBoxBackgroundBorderDarkMode
@@ -2541,7 +2655,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxBackgroundBorderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackgroundBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxBackgroundBorderDarkMode.Name = "pictureBoxBackgroundBorderDarkMode";
-            this.pictureBoxBackgroundBorderDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxBackgroundBorderDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxBackgroundBorderDarkMode.TabIndex = 1;
             this.pictureBoxBackgroundBorderDarkMode.TabStop = false;
             this.pictureBoxBackgroundBorderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2550,19 +2664,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelBackgroundBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelBackgroundBorderDarkMode.AutoSize = true;
-            this.labelBackgroundBorderDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelBackgroundBorderDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelBackgroundBorderDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelBackgroundBorderDarkMode.Name = "labelBackgroundBorderDarkMode";
-            this.labelBackgroundBorderDarkMode.Size = new System.Drawing.Size(186, 15);
+            this.labelBackgroundBorderDarkMode.Size = new System.Drawing.Size(420, 37);
             this.labelBackgroundBorderDarkMode.TabIndex = 0;
             this.labelBackgroundBorderDarkMode.Text = "labelBackgroundDarkModeBorder";
             // 
             // textBoxColorBackgroundBorderDarkMode
             // 
-            this.textBoxColorBackgroundBorderDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorBackgroundBorderDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorBackgroundBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorBackgroundBorderDarkMode.MaxLength = 12;
             this.textBoxColorBackgroundBorderDarkMode.Name = "textBoxColorBackgroundBorderDarkMode";
-            this.textBoxColorBackgroundBorderDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorBackgroundBorderDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorBackgroundBorderDarkMode.TabIndex = 2;
             this.textBoxColorBackgroundBorderDarkMode.Text = "#ffffff";
             this.textBoxColorBackgroundBorderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2573,9 +2688,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.checkBoxDarkModeAlwaysOn.AutoSize = true;
             this.checkBoxDarkModeAlwaysOn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxDarkModeAlwaysOn.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxDarkModeAlwaysOn.Location = new System.Drawing.Point(7, 7);
+            this.checkBoxDarkModeAlwaysOn.Margin = new System.Windows.Forms.Padding(7);
             this.checkBoxDarkModeAlwaysOn.Name = "checkBoxDarkModeAlwaysOn";
-            this.checkBoxDarkModeAlwaysOn.Size = new System.Drawing.Size(438, 19);
+            this.checkBoxDarkModeAlwaysOn.Size = new System.Drawing.Size(985, 41);
             this.checkBoxDarkModeAlwaysOn.TabIndex = 0;
             this.checkBoxDarkModeAlwaysOn.Text = "checkBoxDarkModeAlwaysOn";
             this.checkBoxDarkModeAlwaysOn.UseVisualStyleBackColor = true;
@@ -2584,9 +2700,10 @@ namespace SystemTrayMenu.UserInterface
             // labelMenuDarkMode
             // 
             this.labelMenuDarkMode.AutoSize = true;
-            this.labelMenuDarkMode.Location = new System.Drawing.Point(3, 25);
+            this.labelMenuDarkMode.Location = new System.Drawing.Point(7, 55);
+            this.labelMenuDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelMenuDarkMode.Name = "labelMenuDarkMode";
-            this.labelMenuDarkMode.Size = new System.Drawing.Size(118, 15);
+            this.labelMenuDarkMode.Size = new System.Drawing.Size(268, 37);
             this.labelMenuDarkMode.TabIndex = 3;
             this.labelMenuDarkMode.Text = "labelMenuDarkMode";
             // 
@@ -2601,11 +2718,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSearchFieldDarkMode.Controls.Add(this.pictureBoxSearchFieldDarkMode, 0, 0);
             this.tableLayoutPanelSearchFieldDarkMode.Controls.Add(this.labelSearchFieldDarkMode, 2, 0);
             this.tableLayoutPanelSearchFieldDarkMode.Controls.Add(this.textBoxColorSearchFieldDarkMode, 1, 0);
-            this.tableLayoutPanelSearchFieldDarkMode.Location = new System.Drawing.Point(3, 159);
+            this.tableLayoutPanelSearchFieldDarkMode.Location = new System.Drawing.Point(7, 351);
+            this.tableLayoutPanelSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSearchFieldDarkMode.Name = "tableLayoutPanelSearchFieldDarkMode";
             this.tableLayoutPanelSearchFieldDarkMode.RowCount = 1;
             this.tableLayoutPanelSearchFieldDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearchFieldDarkMode.Size = new System.Drawing.Size(245, 23);
+            this.tableLayoutPanelSearchFieldDarkMode.Size = new System.Drawing.Size(548, 49);
             this.tableLayoutPanelSearchFieldDarkMode.TabIndex = 2;
             // 
             // pictureBoxSearchFieldDarkMode
@@ -2616,7 +2734,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSearchFieldDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSearchFieldDarkMode.Name = "pictureBoxSearchFieldDarkMode";
-            this.pictureBoxSearchFieldDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSearchFieldDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSearchFieldDarkMode.TabIndex = 1;
             this.pictureBoxSearchFieldDarkMode.TabStop = false;
             this.pictureBoxSearchFieldDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2625,19 +2743,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSearchFieldDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSearchFieldDarkMode.AutoSize = true;
-            this.labelSearchFieldDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelSearchFieldDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSearchFieldDarkMode.Name = "labelSearchFieldDarkMode";
-            this.labelSearchFieldDarkMode.Size = new System.Drawing.Size(147, 15);
+            this.labelSearchFieldDarkMode.Size = new System.Drawing.Size(335, 37);
             this.labelSearchFieldDarkMode.TabIndex = 0;
             this.labelSearchFieldDarkMode.Text = "labelSearchFieldDarkMode";
             // 
             // textBoxColorSearchFieldDarkMode
             // 
-            this.textBoxColorSearchFieldDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSearchFieldDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSearchFieldDarkMode.MaxLength = 12;
             this.textBoxColorSearchFieldDarkMode.Name = "textBoxColorSearchFieldDarkMode";
-            this.textBoxColorSearchFieldDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSearchFieldDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSearchFieldDarkMode.TabIndex = 2;
             this.textBoxColorSearchFieldDarkMode.Text = "#ffffff";
             this.textBoxColorSearchFieldDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2655,11 +2774,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelOpenFolderDarkMode.Controls.Add(this.pictureBoxOpenFolderDarkMode, 0, 0);
             this.tableLayoutPanelOpenFolderDarkMode.Controls.Add(this.labelOpenFolderDarkMode, 2, 0);
             this.tableLayoutPanelOpenFolderDarkMode.Controls.Add(this.textBoxColorOpenFolderDarkMode, 1, 0);
-            this.tableLayoutPanelOpenFolderDarkMode.Location = new System.Drawing.Point(3, 188);
+            this.tableLayoutPanelOpenFolderDarkMode.Location = new System.Drawing.Point(7, 414);
+            this.tableLayoutPanelOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelOpenFolderDarkMode.Name = "tableLayoutPanelOpenFolderDarkMode";
             this.tableLayoutPanelOpenFolderDarkMode.RowCount = 1;
             this.tableLayoutPanelOpenFolderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelOpenFolderDarkMode.Size = new System.Drawing.Size(247, 23);
+            this.tableLayoutPanelOpenFolderDarkMode.Size = new System.Drawing.Size(553, 49);
             this.tableLayoutPanelOpenFolderDarkMode.TabIndex = 2;
             // 
             // pictureBoxOpenFolderDarkMode
@@ -2670,7 +2790,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxOpenFolderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxOpenFolderDarkMode.Name = "pictureBoxOpenFolderDarkMode";
-            this.pictureBoxOpenFolderDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxOpenFolderDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxOpenFolderDarkMode.TabIndex = 1;
             this.pictureBoxOpenFolderDarkMode.TabStop = false;
             this.pictureBoxOpenFolderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2679,19 +2799,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelOpenFolderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelOpenFolderDarkMode.AutoSize = true;
-            this.labelOpenFolderDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelOpenFolderDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelOpenFolderDarkMode.Name = "labelOpenFolderDarkMode";
-            this.labelOpenFolderDarkMode.Size = new System.Drawing.Size(149, 15);
+            this.labelOpenFolderDarkMode.Size = new System.Drawing.Size(340, 37);
             this.labelOpenFolderDarkMode.TabIndex = 0;
             this.labelOpenFolderDarkMode.Text = "labelOpenFolderDarkMode";
             // 
             // textBoxColorOpenFolderDarkMode
             // 
-            this.textBoxColorOpenFolderDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorOpenFolderDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorOpenFolderDarkMode.MaxLength = 12;
             this.textBoxColorOpenFolderDarkMode.Name = "textBoxColorOpenFolderDarkMode";
-            this.textBoxColorOpenFolderDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorOpenFolderDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorOpenFolderDarkMode.TabIndex = 2;
             this.textBoxColorOpenFolderDarkMode.Text = "#ffffff";
             this.textBoxColorOpenFolderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2709,11 +2830,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(this.pictureBoxOpenFolderBorderDarkMode, 0, 0);
             this.tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(this.labelOpenFolderBorderDarkMode, 2, 0);
             this.tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(this.textBoxColorOpenFolderBorderDarkMode, 1, 0);
-            this.tableLayoutPanelOpenFolderBorderDarkMode.Location = new System.Drawing.Point(3, 217);
+            this.tableLayoutPanelOpenFolderBorderDarkMode.Location = new System.Drawing.Point(7, 477);
+            this.tableLayoutPanelOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelOpenFolderBorderDarkMode.Name = "tableLayoutPanelOpenFolderBorderDarkMode";
             this.tableLayoutPanelOpenFolderBorderDarkMode.RowCount = 1;
             this.tableLayoutPanelOpenFolderBorderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelOpenFolderBorderDarkMode.Size = new System.Drawing.Size(282, 23);
+            this.tableLayoutPanelOpenFolderBorderDarkMode.Size = new System.Drawing.Size(632, 49);
             this.tableLayoutPanelOpenFolderBorderDarkMode.TabIndex = 2;
             // 
             // pictureBoxOpenFolderBorderDarkMode
@@ -2724,7 +2846,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxOpenFolderBorderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxOpenFolderBorderDarkMode.Name = "pictureBoxOpenFolderBorderDarkMode";
-            this.pictureBoxOpenFolderBorderDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxOpenFolderBorderDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxOpenFolderBorderDarkMode.TabIndex = 1;
             this.pictureBoxOpenFolderBorderDarkMode.TabStop = false;
             this.pictureBoxOpenFolderBorderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2733,18 +2855,19 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelOpenFolderBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelOpenFolderBorderDarkMode.AutoSize = true;
-            this.labelOpenFolderBorderDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelOpenFolderBorderDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelOpenFolderBorderDarkMode.Name = "labelOpenFolderBorderDarkMode";
-            this.labelOpenFolderBorderDarkMode.Size = new System.Drawing.Size(184, 15);
+            this.labelOpenFolderBorderDarkMode.Size = new System.Drawing.Size(419, 37);
             this.labelOpenFolderBorderDarkMode.TabIndex = 0;
             this.labelOpenFolderBorderDarkMode.Text = "labelOpenFolderBorderDarkMode";
             // 
             // textBoxColorOpenFolderBorderDarkMode
             // 
-            this.textBoxColorOpenFolderBorderDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorOpenFolderBorderDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorOpenFolderBorderDarkMode.Name = "textBoxColorOpenFolderBorderDarkMode";
-            this.textBoxColorOpenFolderBorderDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorOpenFolderBorderDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorOpenFolderBorderDarkMode.TabIndex = 2;
             this.textBoxColorOpenFolderBorderDarkMode.Text = "#ffffff";
             this.textBoxColorOpenFolderBorderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2762,11 +2885,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSelectedItemDarkMode.Controls.Add(this.pictureColorBoxSelectedItemDarkMode, 0, 0);
             this.tableLayoutPanelSelectedItemDarkMode.Controls.Add(this.labelSelectedItemDarkMode, 2, 0);
             this.tableLayoutPanelSelectedItemDarkMode.Controls.Add(this.textBoxColorSelecetedItemDarkMode, 1, 0);
-            this.tableLayoutPanelSelectedItemDarkMode.Location = new System.Drawing.Point(3, 246);
+            this.tableLayoutPanelSelectedItemDarkMode.Location = new System.Drawing.Point(7, 540);
+            this.tableLayoutPanelSelectedItemDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSelectedItemDarkMode.Name = "tableLayoutPanelSelectedItemDarkMode";
             this.tableLayoutPanelSelectedItemDarkMode.RowCount = 1;
             this.tableLayoutPanelSelectedItemDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSelectedItemDarkMode.Size = new System.Drawing.Size(253, 23);
+            this.tableLayoutPanelSelectedItemDarkMode.Size = new System.Drawing.Size(566, 49);
             this.tableLayoutPanelSelectedItemDarkMode.TabIndex = 2;
             // 
             // pictureColorBoxSelectedItemDarkMode
@@ -2777,7 +2901,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureColorBoxSelectedItemDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureColorBoxSelectedItemDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureColorBoxSelectedItemDarkMode.Name = "pictureColorBoxSelectedItemDarkMode";
-            this.pictureColorBoxSelectedItemDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureColorBoxSelectedItemDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureColorBoxSelectedItemDarkMode.TabIndex = 1;
             this.pictureColorBoxSelectedItemDarkMode.TabStop = false;
             this.pictureColorBoxSelectedItemDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2786,19 +2910,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSelectedItemDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSelectedItemDarkMode.AutoSize = true;
-            this.labelSelectedItemDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelSelectedItemDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelSelectedItemDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSelectedItemDarkMode.Name = "labelSelectedItemDarkMode";
-            this.labelSelectedItemDarkMode.Size = new System.Drawing.Size(155, 15);
+            this.labelSelectedItemDarkMode.Size = new System.Drawing.Size(353, 37);
             this.labelSelectedItemDarkMode.TabIndex = 0;
             this.labelSelectedItemDarkMode.Text = "labelSelectedItemDarkMode";
             // 
             // textBoxColorSelecetedItemDarkMode
             // 
-            this.textBoxColorSelecetedItemDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSelecetedItemDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSelecetedItemDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSelecetedItemDarkMode.MaxLength = 12;
             this.textBoxColorSelecetedItemDarkMode.Name = "textBoxColorSelecetedItemDarkMode";
-            this.textBoxColorSelecetedItemDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSelecetedItemDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSelecetedItemDarkMode.TabIndex = 2;
             this.textBoxColorSelecetedItemDarkMode.Text = "#ffffff";
             this.textBoxColorSelecetedItemDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2816,11 +2941,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(this.pictureBoxSelectedItemBorderDarkMode, 0, 0);
             this.tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(this.labelSelectedItemBorderDarkMode, 2, 0);
             this.tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(this.textBoxColorSelectedItemBorderDarkMode, 1, 0);
-            this.tableLayoutPanelSelectedItemBorderDarkMode.Location = new System.Drawing.Point(3, 275);
+            this.tableLayoutPanelSelectedItemBorderDarkMode.Location = new System.Drawing.Point(7, 603);
+            this.tableLayoutPanelSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSelectedItemBorderDarkMode.Name = "tableLayoutPanelSelectedItemBorderDarkMode";
             this.tableLayoutPanelSelectedItemBorderDarkMode.RowCount = 1;
             this.tableLayoutPanelSelectedItemBorderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSelectedItemBorderDarkMode.Size = new System.Drawing.Size(288, 23);
+            this.tableLayoutPanelSelectedItemBorderDarkMode.Size = new System.Drawing.Size(645, 49);
             this.tableLayoutPanelSelectedItemBorderDarkMode.TabIndex = 2;
             // 
             // pictureBoxSelectedItemBorderDarkMode
@@ -2831,7 +2957,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSelectedItemBorderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSelectedItemBorderDarkMode.Name = "pictureBoxSelectedItemBorderDarkMode";
-            this.pictureBoxSelectedItemBorderDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSelectedItemBorderDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSelectedItemBorderDarkMode.TabIndex = 1;
             this.pictureBoxSelectedItemBorderDarkMode.TabStop = false;
             this.pictureBoxSelectedItemBorderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2840,19 +2966,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelSelectedItemBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSelectedItemBorderDarkMode.AutoSize = true;
-            this.labelSelectedItemBorderDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelSelectedItemBorderDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelSelectedItemBorderDarkMode.Name = "labelSelectedItemBorderDarkMode";
-            this.labelSelectedItemBorderDarkMode.Size = new System.Drawing.Size(190, 15);
+            this.labelSelectedItemBorderDarkMode.Size = new System.Drawing.Size(432, 37);
             this.labelSelectedItemBorderDarkMode.TabIndex = 0;
             this.labelSelectedItemBorderDarkMode.Text = "labelSelectedItemBorderDarkMode";
             // 
             // textBoxColorSelectedItemBorderDarkMode
             // 
-            this.textBoxColorSelectedItemBorderDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSelectedItemBorderDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSelectedItemBorderDarkMode.MaxLength = 12;
             this.textBoxColorSelectedItemBorderDarkMode.Name = "textBoxColorSelectedItemBorderDarkMode";
-            this.textBoxColorSelectedItemBorderDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSelectedItemBorderDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSelectedItemBorderDarkMode.TabIndex = 2;
             this.textBoxColorSelectedItemBorderDarkMode.Text = "#ffffff";
             this.textBoxColorSelectedItemBorderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2870,11 +2997,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelWarningDarkMode.Controls.Add(this.pictureBoxWarningDarkMode, 0, 0);
             this.tableLayoutPanelWarningDarkMode.Controls.Add(this.labelWarningDarkMode, 2, 0);
             this.tableLayoutPanelWarningDarkMode.Controls.Add(this.textBoxColorWarningDarkMode, 1, 0);
-            this.tableLayoutPanelWarningDarkMode.Location = new System.Drawing.Point(3, 304);
+            this.tableLayoutPanelWarningDarkMode.Location = new System.Drawing.Point(7, 666);
+            this.tableLayoutPanelWarningDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelWarningDarkMode.Name = "tableLayoutPanelWarningDarkMode";
             this.tableLayoutPanelWarningDarkMode.RowCount = 1;
             this.tableLayoutPanelWarningDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelWarningDarkMode.Size = new System.Drawing.Size(230, 23);
+            this.tableLayoutPanelWarningDarkMode.Size = new System.Drawing.Size(513, 49);
             this.tableLayoutPanelWarningDarkMode.TabIndex = 2;
             // 
             // pictureBoxWarningDarkMode
@@ -2885,7 +3013,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxWarningDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxWarningDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxWarningDarkMode.Name = "pictureBoxWarningDarkMode";
-            this.pictureBoxWarningDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxWarningDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxWarningDarkMode.TabIndex = 1;
             this.pictureBoxWarningDarkMode.TabStop = false;
             this.pictureBoxWarningDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -2894,19 +3022,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelWarningDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelWarningDarkMode.AutoSize = true;
-            this.labelWarningDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelWarningDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelWarningDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelWarningDarkMode.Name = "labelWarningDarkMode";
-            this.labelWarningDarkMode.Size = new System.Drawing.Size(132, 15);
+            this.labelWarningDarkMode.Size = new System.Drawing.Size(300, 37);
             this.labelWarningDarkMode.TabIndex = 0;
             this.labelWarningDarkMode.Text = "labelWarningDarkMode";
             // 
             // textBoxColorWarningDarkMode
             // 
-            this.textBoxColorWarningDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorWarningDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorWarningDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorWarningDarkMode.MaxLength = 12;
             this.textBoxColorWarningDarkMode.Name = "textBoxColorWarningDarkMode";
-            this.textBoxColorWarningDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorWarningDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorWarningDarkMode.TabIndex = 2;
             this.textBoxColorWarningDarkMode.Text = "#ffffff";
             this.textBoxColorWarningDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2916,9 +3045,10 @@ namespace SystemTrayMenu.UserInterface
             // labelScrollbarDarkMode
             // 
             this.labelScrollbarDarkMode.AutoSize = true;
-            this.labelScrollbarDarkMode.Location = new System.Drawing.Point(3, 330);
+            this.labelScrollbarDarkMode.Location = new System.Drawing.Point(7, 722);
+            this.labelScrollbarDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelScrollbarDarkMode.Name = "labelScrollbarDarkMode";
-            this.labelScrollbarDarkMode.Size = new System.Drawing.Size(133, 15);
+            this.labelScrollbarDarkMode.Size = new System.Drawing.Size(304, 37);
             this.labelScrollbarDarkMode.TabIndex = 3;
             this.labelScrollbarDarkMode.Text = "labelScrollbarDarkMode";
             // 
@@ -2933,11 +3063,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(this.pictureBoxScrollbarBackgroundDarkMode, 0, 0);
             this.tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(this.textBoxColorScrollbarBackgroundDarkMode, 1, 0);
             this.tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(this.labelColorDarkModeScrollbarBackground, 2, 0);
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(3, 348);
+            this.tableLayoutPanelScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(7, 766);
+            this.tableLayoutPanelScrollbarBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelScrollbarBackgroundDarkMode.Name = "tableLayoutPanelScrollbarBackgroundDarkMode";
             this.tableLayoutPanelScrollbarBackgroundDarkMode.RowCount = 1;
             this.tableLayoutPanelScrollbarBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(324, 23);
+            this.tableLayoutPanelScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(723, 49);
             this.tableLayoutPanelScrollbarBackgroundDarkMode.TabIndex = 2;
             // 
             // pictureBoxScrollbarBackgroundDarkMode
@@ -2948,18 +3079,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxScrollbarBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxScrollbarBackgroundDarkMode.Name = "pictureBoxScrollbarBackgroundDarkMode";
-            this.pictureBoxScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxScrollbarBackgroundDarkMode.TabIndex = 1;
             this.pictureBoxScrollbarBackgroundDarkMode.TabStop = false;
             this.pictureBoxScrollbarBackgroundDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorScrollbarBackgroundDarkMode
             // 
-            this.textBoxColorScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorScrollbarBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorScrollbarBackgroundDarkMode.MaxLength = 12;
             this.textBoxColorScrollbarBackgroundDarkMode.Name = "textBoxColorScrollbarBackgroundDarkMode";
-            this.textBoxColorScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorScrollbarBackgroundDarkMode.TabIndex = 2;
             this.textBoxColorScrollbarBackgroundDarkMode.Text = "#ffffff";
             this.textBoxColorScrollbarBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -2970,9 +3101,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeScrollbarBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeScrollbarBackground.AutoSize = true;
-            this.labelColorDarkModeScrollbarBackground.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeScrollbarBackground.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeScrollbarBackground.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeScrollbarBackground.Name = "labelColorDarkModeScrollbarBackground";
-            this.labelColorDarkModeScrollbarBackground.Size = new System.Drawing.Size(226, 15);
+            this.labelColorDarkModeScrollbarBackground.Size = new System.Drawing.Size(510, 37);
             this.labelColorDarkModeScrollbarBackground.TabIndex = 0;
             this.labelColorDarkModeScrollbarBackground.Text = "labelColorDarkModeScrollbarBackground";
             // 
@@ -2987,11 +3119,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSliderDarkMode.Controls.Add(this.pictureBoxSliderDarkMode, 0, 0);
             this.tableLayoutPanelSliderDarkMode.Controls.Add(this.textBoxColorSliderDarkMode, 1, 0);
             this.tableLayoutPanelSliderDarkMode.Controls.Add(this.labelColorDarkModeSlider, 2, 0);
-            this.tableLayoutPanelSliderDarkMode.Location = new System.Drawing.Point(3, 377);
+            this.tableLayoutPanelSliderDarkMode.Location = new System.Drawing.Point(7, 829);
+            this.tableLayoutPanelSliderDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSliderDarkMode.Name = "tableLayoutPanelSliderDarkMode";
             this.tableLayoutPanelSliderDarkMode.RowCount = 1;
             this.tableLayoutPanelSliderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderDarkMode.Size = new System.Drawing.Size(243, 23);
+            this.tableLayoutPanelSliderDarkMode.Size = new System.Drawing.Size(545, 49);
             this.tableLayoutPanelSliderDarkMode.TabIndex = 2;
             // 
             // pictureBoxSliderDarkMode
@@ -3002,18 +3135,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSliderDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSliderDarkMode.Name = "pictureBoxSliderDarkMode";
-            this.pictureBoxSliderDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSliderDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSliderDarkMode.TabIndex = 1;
             this.pictureBoxSliderDarkMode.TabStop = false;
             this.pictureBoxSliderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSliderDarkMode
             // 
-            this.textBoxColorSliderDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSliderDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSliderDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSliderDarkMode.MaxLength = 12;
             this.textBoxColorSliderDarkMode.Name = "textBoxColorSliderDarkMode";
-            this.textBoxColorSliderDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSliderDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSliderDarkMode.TabIndex = 2;
             this.textBoxColorSliderDarkMode.Text = "#ffffff";
             this.textBoxColorSliderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3024,9 +3157,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeSlider.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeSlider.AutoSize = true;
-            this.labelColorDarkModeSlider.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeSlider.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeSlider.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeSlider.Name = "labelColorDarkModeSlider";
-            this.labelColorDarkModeSlider.Size = new System.Drawing.Size(145, 15);
+            this.labelColorDarkModeSlider.Size = new System.Drawing.Size(332, 37);
             this.labelColorDarkModeSlider.TabIndex = 0;
             this.labelColorDarkModeSlider.Text = "labelColorDarkModeSlider";
             // 
@@ -3041,11 +3175,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSliderDraggingDarkMode.Controls.Add(this.pictureBoxSliderDraggingDarkMode, 0, 0);
             this.tableLayoutPanelSliderDraggingDarkMode.Controls.Add(this.textBoxColorSliderDraggingDarkMode, 1, 0);
             this.tableLayoutPanelSliderDraggingDarkMode.Controls.Add(this.labelColorDarkModeSliderDragging, 2, 0);
-            this.tableLayoutPanelSliderDraggingDarkMode.Location = new System.Drawing.Point(3, 406);
+            this.tableLayoutPanelSliderDraggingDarkMode.Location = new System.Drawing.Point(7, 892);
+            this.tableLayoutPanelSliderDraggingDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSliderDraggingDarkMode.Name = "tableLayoutPanelSliderDraggingDarkMode";
             this.tableLayoutPanelSliderDraggingDarkMode.RowCount = 1;
             this.tableLayoutPanelSliderDraggingDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderDraggingDarkMode.Size = new System.Drawing.Size(292, 23);
+            this.tableLayoutPanelSliderDraggingDarkMode.Size = new System.Drawing.Size(657, 49);
             this.tableLayoutPanelSliderDraggingDarkMode.TabIndex = 2;
             // 
             // pictureBoxSliderDraggingDarkMode
@@ -3056,18 +3191,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSliderDraggingDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderDraggingDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSliderDraggingDarkMode.Name = "pictureBoxSliderDraggingDarkMode";
-            this.pictureBoxSliderDraggingDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSliderDraggingDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSliderDraggingDarkMode.TabIndex = 1;
             this.pictureBoxSliderDraggingDarkMode.TabStop = false;
             this.pictureBoxSliderDraggingDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSliderDraggingDarkMode
             // 
-            this.textBoxColorSliderDraggingDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSliderDraggingDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSliderDraggingDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSliderDraggingDarkMode.MaxLength = 12;
             this.textBoxColorSliderDraggingDarkMode.Name = "textBoxColorSliderDraggingDarkMode";
-            this.textBoxColorSliderDraggingDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSliderDraggingDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSliderDraggingDarkMode.TabIndex = 2;
             this.textBoxColorSliderDraggingDarkMode.Text = "#ffffff";
             this.textBoxColorSliderDraggingDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3078,9 +3213,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeSliderDragging.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeSliderDragging.AutoSize = true;
-            this.labelColorDarkModeSliderDragging.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeSliderDragging.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeSliderDragging.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeSliderDragging.Name = "labelColorDarkModeSliderDragging";
-            this.labelColorDarkModeSliderDragging.Size = new System.Drawing.Size(194, 15);
+            this.labelColorDarkModeSliderDragging.Size = new System.Drawing.Size(444, 37);
             this.labelColorDarkModeSliderDragging.TabIndex = 0;
             this.labelColorDarkModeSliderDragging.Text = "labelColorDarkModeSliderDragging";
             // 
@@ -3095,11 +3231,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSliderHoverDarkMode.Controls.Add(this.pictureBoxSliderHoverDarkMode, 0, 0);
             this.tableLayoutPanelSliderHoverDarkMode.Controls.Add(this.textBoxColorSliderHoverDarkMode, 1, 0);
             this.tableLayoutPanelSliderHoverDarkMode.Controls.Add(this.labelColorDarkModeSliderHover, 2, 0);
-            this.tableLayoutPanelSliderHoverDarkMode.Location = new System.Drawing.Point(3, 435);
+            this.tableLayoutPanelSliderHoverDarkMode.Location = new System.Drawing.Point(7, 955);
+            this.tableLayoutPanelSliderHoverDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSliderHoverDarkMode.Name = "tableLayoutPanelSliderHoverDarkMode";
             this.tableLayoutPanelSliderHoverDarkMode.RowCount = 1;
             this.tableLayoutPanelSliderHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderHoverDarkMode.Size = new System.Drawing.Size(275, 23);
+            this.tableLayoutPanelSliderHoverDarkMode.Size = new System.Drawing.Size(616, 49);
             this.tableLayoutPanelSliderHoverDarkMode.TabIndex = 2;
             // 
             // pictureBoxSliderHoverDarkMode
@@ -3110,18 +3247,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSliderHoverDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSliderHoverDarkMode.Name = "pictureBoxSliderHoverDarkMode";
-            this.pictureBoxSliderHoverDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSliderHoverDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSliderHoverDarkMode.TabIndex = 1;
             this.pictureBoxSliderHoverDarkMode.TabStop = false;
             this.pictureBoxSliderHoverDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSliderHoverDarkMode
             // 
-            this.textBoxColorSliderHoverDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSliderHoverDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSliderHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSliderHoverDarkMode.MaxLength = 12;
             this.textBoxColorSliderHoverDarkMode.Name = "textBoxColorSliderHoverDarkMode";
-            this.textBoxColorSliderHoverDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSliderHoverDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSliderHoverDarkMode.TabIndex = 2;
             this.textBoxColorSliderHoverDarkMode.Text = "#ffffff";
             this.textBoxColorSliderHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3132,9 +3269,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeSliderHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeSliderHover.AutoSize = true;
-            this.labelColorDarkModeSliderHover.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeSliderHover.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeSliderHover.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeSliderHover.Name = "labelColorDarkModeSliderHover";
-            this.labelColorDarkModeSliderHover.Size = new System.Drawing.Size(177, 15);
+            this.labelColorDarkModeSliderHover.Size = new System.Drawing.Size(403, 37);
             this.labelColorDarkModeSliderHover.TabIndex = 0;
             this.labelColorDarkModeSliderHover.Text = "labelColorDarkModeSliderHover";
             // 
@@ -3149,11 +3287,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(this.pictureBoxSliderArrowsAndTrackHoverDarkMode, 0, 0);
             this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(this.textBoxColorSliderArrowsAndTrackHoverDarkMode, 1, 0);
             this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(this.labelColorDarkModeSliderArrowsAndTrackHover, 2, 0);
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(3, 464);
+            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(7, 1018);
+            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Name = "tableLayoutPanelSliderArrowsAndTrackHoverDarkMode";
             this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.RowCount = 1;
             this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(361, 23);
+            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(806, 49);
             this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.TabIndex = 2;
             // 
             // pictureBoxSliderArrowsAndTrackHoverDarkMode
@@ -3164,18 +3303,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Name = "pictureBoxSliderArrowsAndTrackHoverDarkMode";
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.TabIndex = 1;
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.TabStop = false;
             this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorSliderArrowsAndTrackHoverDarkMode
             // 
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.MaxLength = 12;
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Name = "textBoxColorSliderArrowsAndTrackHoverDarkMode";
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.TabIndex = 2;
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Text = "#ffffff";
             this.textBoxColorSliderArrowsAndTrackHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3186,9 +3325,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeSliderArrowsAndTrackHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeSliderArrowsAndTrackHover.AutoSize = true;
-            this.labelColorDarkModeSliderArrowsAndTrackHover.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeSliderArrowsAndTrackHover.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeSliderArrowsAndTrackHover.Name = "labelColorDarkModeSliderArrowsAndTrackHover";
-            this.labelColorDarkModeSliderArrowsAndTrackHover.Size = new System.Drawing.Size(263, 15);
+            this.labelColorDarkModeSliderArrowsAndTrackHover.Size = new System.Drawing.Size(593, 37);
             this.labelColorDarkModeSliderArrowsAndTrackHover.TabIndex = 0;
             this.labelColorDarkModeSliderArrowsAndTrackHover.Text = "labelColorDarkModeSliderArrowsAndTrackHover";
             // 
@@ -3203,11 +3343,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowDarkMode.Controls.Add(this.pictureBoxArrowDarkMode, 0, 0);
             this.tableLayoutPanelArrowDarkMode.Controls.Add(this.textBoxColorArrowDarkMode, 1, 0);
             this.tableLayoutPanelArrowDarkMode.Controls.Add(this.labelColorDarkModeArrow, 2, 0);
-            this.tableLayoutPanelArrowDarkMode.Location = new System.Drawing.Point(3, 493);
+            this.tableLayoutPanelArrowDarkMode.Location = new System.Drawing.Point(7, 1081);
+            this.tableLayoutPanelArrowDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowDarkMode.Name = "tableLayoutPanelArrowDarkMode";
             this.tableLayoutPanelArrowDarkMode.RowCount = 1;
             this.tableLayoutPanelArrowDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowDarkMode.Size = new System.Drawing.Size(246, 23);
+            this.tableLayoutPanelArrowDarkMode.Size = new System.Drawing.Size(549, 49);
             this.tableLayoutPanelArrowDarkMode.TabIndex = 2;
             // 
             // pictureBoxArrowDarkMode
@@ -3218,18 +3359,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowDarkMode.Name = "pictureBoxArrowDarkMode";
-            this.pictureBoxArrowDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowDarkMode.TabIndex = 1;
             this.pictureBoxArrowDarkMode.TabStop = false;
             this.pictureBoxArrowDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowDarkMode
             // 
-            this.textBoxColorArrowDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowDarkMode.MaxLength = 12;
             this.textBoxColorArrowDarkMode.Name = "textBoxColorArrowDarkMode";
-            this.textBoxColorArrowDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowDarkMode.TabIndex = 2;
             this.textBoxColorArrowDarkMode.Text = "#ffffff";
             this.textBoxColorArrowDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3240,9 +3381,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeArrow.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeArrow.AutoSize = true;
-            this.labelColorDarkModeArrow.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeArrow.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeArrow.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeArrow.Name = "labelColorDarkModeArrow";
-            this.labelColorDarkModeArrow.Size = new System.Drawing.Size(148, 15);
+            this.labelColorDarkModeArrow.Size = new System.Drawing.Size(336, 37);
             this.labelColorDarkModeArrow.TabIndex = 0;
             this.labelColorDarkModeArrow.Text = "labelColorDarkModeArrow";
             // 
@@ -3257,11 +3399,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowClickDarkMode.Controls.Add(this.pictureBoxArrowClickDarkMode, 0, 0);
             this.tableLayoutPanelArrowClickDarkMode.Controls.Add(this.textBoxColorArrowClickDarkMode, 1, 0);
             this.tableLayoutPanelArrowClickDarkMode.Controls.Add(this.labelColorDarkModeArrowClick, 2, 0);
-            this.tableLayoutPanelArrowClickDarkMode.Location = new System.Drawing.Point(3, 522);
+            this.tableLayoutPanelArrowClickDarkMode.Location = new System.Drawing.Point(7, 1144);
+            this.tableLayoutPanelArrowClickDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowClickDarkMode.Name = "tableLayoutPanelArrowClickDarkMode";
             this.tableLayoutPanelArrowClickDarkMode.RowCount = 1;
             this.tableLayoutPanelArrowClickDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowClickDarkMode.Size = new System.Drawing.Size(272, 23);
+            this.tableLayoutPanelArrowClickDarkMode.Size = new System.Drawing.Size(605, 49);
             this.tableLayoutPanelArrowClickDarkMode.TabIndex = 2;
             // 
             // pictureBoxArrowClickDarkMode
@@ -3272,18 +3415,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowClickDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowClickDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowClickDarkMode.Name = "pictureBoxArrowClickDarkMode";
-            this.pictureBoxArrowClickDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowClickDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowClickDarkMode.TabIndex = 1;
             this.pictureBoxArrowClickDarkMode.TabStop = false;
             this.pictureBoxArrowClickDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowClickDarkMode
             // 
-            this.textBoxColorArrowClickDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowClickDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowClickDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowClickDarkMode.MaxLength = 12;
             this.textBoxColorArrowClickDarkMode.Name = "textBoxColorArrowClickDarkMode";
-            this.textBoxColorArrowClickDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowClickDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowClickDarkMode.TabIndex = 2;
             this.textBoxColorArrowClickDarkMode.Text = "#ffffff";
             this.textBoxColorArrowClickDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3294,9 +3437,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeArrowClick.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeArrowClick.AutoSize = true;
-            this.labelColorDarkModeArrowClick.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeArrowClick.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeArrowClick.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeArrowClick.Name = "labelColorDarkModeArrowClick";
-            this.labelColorDarkModeArrowClick.Size = new System.Drawing.Size(174, 15);
+            this.labelColorDarkModeArrowClick.Size = new System.Drawing.Size(392, 37);
             this.labelColorDarkModeArrowClick.TabIndex = 0;
             this.labelColorDarkModeArrowClick.Text = "labelColorDarkModeArrowClick";
             // 
@@ -3311,11 +3455,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(this.pictureBoxArrowClickBackgroundDarkMode, 0, 0);
             this.tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(this.textBoxColorArrowClickBackgroundDarkMode, 1, 0);
             this.tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(this.labelColorDarkModeArrowClickBackground, 2, 0);
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(3, 551);
+            this.tableLayoutPanelArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(7, 1207);
+            this.tableLayoutPanelArrowClickBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowClickBackgroundDarkMode.Name = "tableLayoutPanelArrowClickBackgroundDarkMode";
             this.tableLayoutPanelArrowClickBackgroundDarkMode.RowCount = 1;
             this.tableLayoutPanelArrowClickBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(336, 23);
+            this.tableLayoutPanelArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(746, 49);
             this.tableLayoutPanelArrowClickBackgroundDarkMode.TabIndex = 2;
             // 
             // pictureBoxArrowClickBackgroundDarkMode
@@ -3326,18 +3471,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowClickBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowClickBackgroundDarkMode.Name = "pictureBoxArrowClickBackgroundDarkMode";
-            this.pictureBoxArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowClickBackgroundDarkMode.TabIndex = 1;
             this.pictureBoxArrowClickBackgroundDarkMode.TabStop = false;
             this.pictureBoxArrowClickBackgroundDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowClickBackgroundDarkMode
             // 
-            this.textBoxColorArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowClickBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowClickBackgroundDarkMode.MaxLength = 12;
             this.textBoxColorArrowClickBackgroundDarkMode.Name = "textBoxColorArrowClickBackgroundDarkMode";
-            this.textBoxColorArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowClickBackgroundDarkMode.TabIndex = 2;
             this.textBoxColorArrowClickBackgroundDarkMode.Text = "#ffffff";
             this.textBoxColorArrowClickBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3348,9 +3493,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeArrowClickBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeArrowClickBackground.AutoSize = true;
-            this.labelColorDarkModeArrowClickBackground.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeArrowClickBackground.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeArrowClickBackground.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeArrowClickBackground.Name = "labelColorDarkModeArrowClickBackground";
-            this.labelColorDarkModeArrowClickBackground.Size = new System.Drawing.Size(238, 15);
+            this.labelColorDarkModeArrowClickBackground.Size = new System.Drawing.Size(533, 37);
             this.labelColorDarkModeArrowClickBackground.TabIndex = 0;
             this.labelColorDarkModeArrowClickBackground.Text = "labelColorDarkModeArrowClickBackground";
             // 
@@ -3365,11 +3511,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowHoverDarkMode.Controls.Add(this.pictureBoxArrowHoverDarkMode, 0, 0);
             this.tableLayoutPanelArrowHoverDarkMode.Controls.Add(this.textBoxColorArrowHoverDarkMode, 1, 0);
             this.tableLayoutPanelArrowHoverDarkMode.Controls.Add(this.labelColorDarkModeArrowHover, 2, 0);
-            this.tableLayoutPanelArrowHoverDarkMode.Location = new System.Drawing.Point(3, 580);
+            this.tableLayoutPanelArrowHoverDarkMode.Location = new System.Drawing.Point(7, 1270);
+            this.tableLayoutPanelArrowHoverDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowHoverDarkMode.Name = "tableLayoutPanelArrowHoverDarkMode";
             this.tableLayoutPanelArrowHoverDarkMode.RowCount = 1;
             this.tableLayoutPanelArrowHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowHoverDarkMode.Size = new System.Drawing.Size(278, 23);
+            this.tableLayoutPanelArrowHoverDarkMode.Size = new System.Drawing.Size(620, 49);
             this.tableLayoutPanelArrowHoverDarkMode.TabIndex = 2;
             // 
             // pictureBoxArrowHoverDarkMode
@@ -3380,18 +3527,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowHoverDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowHoverDarkMode.Name = "pictureBoxArrowHoverDarkMode";
-            this.pictureBoxArrowHoverDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowHoverDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowHoverDarkMode.TabIndex = 1;
             this.pictureBoxArrowHoverDarkMode.TabStop = false;
             this.pictureBoxArrowHoverDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowHoverDarkMode
             // 
-            this.textBoxColorArrowHoverDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowHoverDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowHoverDarkMode.MaxLength = 12;
             this.textBoxColorArrowHoverDarkMode.Name = "textBoxColorArrowHoverDarkMode";
-            this.textBoxColorArrowHoverDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowHoverDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowHoverDarkMode.TabIndex = 2;
             this.textBoxColorArrowHoverDarkMode.Text = "#ffffff";
             this.textBoxColorArrowHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3402,9 +3549,10 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeArrowHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeArrowHover.AutoSize = true;
-            this.labelColorDarkModeArrowHover.Location = new System.Drawing.Point(95, 4);
+            this.labelColorDarkModeArrowHover.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeArrowHover.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelColorDarkModeArrowHover.Name = "labelColorDarkModeArrowHover";
-            this.labelColorDarkModeArrowHover.Size = new System.Drawing.Size(180, 15);
+            this.labelColorDarkModeArrowHover.Size = new System.Drawing.Size(407, 37);
             this.labelColorDarkModeArrowHover.TabIndex = 0;
             this.labelColorDarkModeArrowHover.Text = "labelColorDarkModeArrowHover";
             // 
@@ -3419,11 +3567,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(this.pictureBoxArrowHoverBackgroundDarkMode, 0, 0);
             this.tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(this.textBoxColorArrowHoverBackgroundDarkMode, 1, 0);
             this.tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(this.labelColorDarkModeArrowHoverBackground, 2, 0);
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(3, 609);
+            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(7, 1333);
+            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelArrowHoverBackgroundDarkMode.Name = "tableLayoutPanelArrowHoverBackgroundDarkMode";
             this.tableLayoutPanelArrowHoverBackgroundDarkMode.RowCount = 1;
             this.tableLayoutPanelArrowHoverBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(342, 23);
+            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(761, 49);
             this.tableLayoutPanelArrowHoverBackgroundDarkMode.TabIndex = 2;
             // 
             // pictureBoxArrowHoverBackgroundDarkMode
@@ -3434,18 +3583,18 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxArrowHoverBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxArrowHoverBackgroundDarkMode.Name = "pictureBoxArrowHoverBackgroundDarkMode";
-            this.pictureBoxArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxArrowHoverBackgroundDarkMode.TabIndex = 1;
             this.pictureBoxArrowHoverBackgroundDarkMode.TabStop = false;
             this.pictureBoxArrowHoverBackgroundDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // textBoxColorArrowHoverBackgroundDarkMode
             // 
-            this.textBoxColorArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorArrowHoverBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorArrowHoverBackgroundDarkMode.MaxLength = 12;
             this.textBoxColorArrowHoverBackgroundDarkMode.Name = "textBoxColorArrowHoverBackgroundDarkMode";
-            this.textBoxColorArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorArrowHoverBackgroundDarkMode.TabIndex = 2;
             this.textBoxColorArrowHoverBackgroundDarkMode.Text = "#ffffff";
             this.textBoxColorArrowHoverBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3456,10 +3605,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelColorDarkModeArrowHoverBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelColorDarkModeArrowHoverBackground.AutoSize = true;
-            this.labelColorDarkModeArrowHoverBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeArrowHoverBackground.MaximumSize = new System.Drawing.Size(280, 0);
+            this.labelColorDarkModeArrowHoverBackground.Location = new System.Drawing.Point(206, 6);
+            this.labelColorDarkModeArrowHoverBackground.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.labelColorDarkModeArrowHoverBackground.MaximumSize = new System.Drawing.Size(630, 0);
             this.labelColorDarkModeArrowHoverBackground.Name = "labelColorDarkModeArrowHoverBackground";
-            this.labelColorDarkModeArrowHoverBackground.Size = new System.Drawing.Size(244, 15);
+            this.labelColorDarkModeArrowHoverBackground.Size = new System.Drawing.Size(548, 37);
             this.labelColorDarkModeArrowHoverBackground.TabIndex = 0;
             this.labelColorDarkModeArrowHoverBackground.Text = "labelColorDarkModeArrowHoverBackground";
             // 
@@ -3467,10 +3617,11 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonColorsDefaultDarkMode.AutoSize = true;
             this.buttonColorsDefaultDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonColorsDefaultDarkMode.Location = new System.Drawing.Point(3, 638);
-            this.buttonColorsDefaultDarkMode.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonColorsDefaultDarkMode.Location = new System.Drawing.Point(7, 1396);
+            this.buttonColorsDefaultDarkMode.Margin = new System.Windows.Forms.Padding(7);
+            this.buttonColorsDefaultDarkMode.MinimumSize = new System.Drawing.Size(169, 52);
             this.buttonColorsDefaultDarkMode.Name = "buttonColorsDefaultDarkMode";
-            this.buttonColorsDefaultDarkMode.Size = new System.Drawing.Size(180, 25);
+            this.buttonColorsDefaultDarkMode.Size = new System.Drawing.Size(394, 52);
             this.buttonColorsDefaultDarkMode.TabIndex = 2;
             this.buttonColorsDefaultDarkMode.Text = "buttonColorsDarkModeDefault";
             this.buttonColorsDefaultDarkMode.UseVisualStyleBackColor = true;
@@ -3487,11 +3638,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTitleDarkMode.Controls.Add(this.pictureBoxTitleDarkMode, 0, 0);
             this.tableLayoutPanelTitleDarkMode.Controls.Add(this.labelTitleDarkMode, 2, 0);
             this.tableLayoutPanelTitleDarkMode.Controls.Add(this.textBoxColorTitleDarkMode, 1, 0);
-            this.tableLayoutPanelTitleDarkMode.Location = new System.Drawing.Point(3, 43);
+            this.tableLayoutPanelTitleDarkMode.Location = new System.Drawing.Point(7, 99);
+            this.tableLayoutPanelTitleDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelTitleDarkMode.Name = "tableLayoutPanelTitleDarkMode";
             this.tableLayoutPanelTitleDarkMode.RowCount = 1;
             this.tableLayoutPanelTitleDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTitleDarkMode.Size = new System.Drawing.Size(207, 23);
+            this.tableLayoutPanelTitleDarkMode.Size = new System.Drawing.Size(464, 49);
             this.tableLayoutPanelTitleDarkMode.TabIndex = 2;
             // 
             // pictureBoxTitleDarkMode
@@ -3502,7 +3654,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxTitleDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTitleDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxTitleDarkMode.Name = "pictureBoxTitleDarkMode";
-            this.pictureBoxTitleDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxTitleDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxTitleDarkMode.TabIndex = 1;
             this.pictureBoxTitleDarkMode.TabStop = false;
             this.pictureBoxTitleDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -3511,19 +3663,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelTitleDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelTitleDarkMode.AutoSize = true;
-            this.labelTitleDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelTitleDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelTitleDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelTitleDarkMode.Name = "labelTitleDarkMode";
-            this.labelTitleDarkMode.Size = new System.Drawing.Size(109, 15);
+            this.labelTitleDarkMode.Size = new System.Drawing.Size(251, 37);
             this.labelTitleDarkMode.TabIndex = 0;
             this.labelTitleDarkMode.Text = "labelTitleDarkMode";
             // 
             // textBoxColorTitleDarkMode
             // 
-            this.textBoxColorTitleDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorTitleDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorTitleDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorTitleDarkMode.MaxLength = 12;
             this.textBoxColorTitleDarkMode.Name = "textBoxColorTitleDarkMode";
-            this.textBoxColorTitleDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorTitleDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorTitleDarkMode.TabIndex = 2;
             this.textBoxColorTitleDarkMode.Text = "#ffffff";
             this.textBoxColorTitleDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3541,11 +3694,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBackgroundDarkMode.Controls.Add(this.pictureBoxBackgroundDarkMode, 0, 0);
             this.tableLayoutPanelBackgroundDarkMode.Controls.Add(this.labelBackgroundDarkMode, 2, 0);
             this.tableLayoutPanelBackgroundDarkMode.Controls.Add(this.textBoxColorBackgroundDarkMode, 1, 0);
-            this.tableLayoutPanelBackgroundDarkMode.Location = new System.Drawing.Point(3, 101);
+            this.tableLayoutPanelBackgroundDarkMode.Location = new System.Drawing.Point(7, 225);
+            this.tableLayoutPanelBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelBackgroundDarkMode.Name = "tableLayoutPanelBackgroundDarkMode";
             this.tableLayoutPanelBackgroundDarkMode.RowCount = 1;
             this.tableLayoutPanelBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBackgroundDarkMode.Size = new System.Drawing.Size(249, 23);
+            this.tableLayoutPanelBackgroundDarkMode.Size = new System.Drawing.Size(554, 49);
             this.tableLayoutPanelBackgroundDarkMode.TabIndex = 2;
             // 
             // pictureBoxBackgroundDarkMode
@@ -3556,7 +3710,7 @@ namespace SystemTrayMenu.UserInterface
             this.pictureBoxBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxBackgroundDarkMode.Name = "pictureBoxBackgroundDarkMode";
-            this.pictureBoxBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
+            this.pictureBoxBackgroundDarkMode.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxBackgroundDarkMode.TabIndex = 1;
             this.pictureBoxBackgroundDarkMode.TabStop = false;
             this.pictureBoxBackgroundDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
@@ -3565,19 +3719,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.labelBackgroundDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelBackgroundDarkMode.AutoSize = true;
-            this.labelBackgroundDarkMode.Location = new System.Drawing.Point(95, 4);
+            this.labelBackgroundDarkMode.Location = new System.Drawing.Point(206, 6);
+            this.labelBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.labelBackgroundDarkMode.Name = "labelBackgroundDarkMode";
-            this.labelBackgroundDarkMode.Size = new System.Drawing.Size(151, 15);
+            this.labelBackgroundDarkMode.Size = new System.Drawing.Size(341, 37);
             this.labelBackgroundDarkMode.TabIndex = 0;
             this.labelBackgroundDarkMode.Text = "labelBackgroundDarkMode";
             // 
             // textBoxColorBackgroundDarkMode
             // 
-            this.textBoxColorBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
+            this.textBoxColorBackgroundDarkMode.Location = new System.Drawing.Point(49, 0);
             this.textBoxColorBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxColorBackgroundDarkMode.MaxLength = 12;
             this.textBoxColorBackgroundDarkMode.Name = "textBoxColorBackgroundDarkMode";
-            this.textBoxColorBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
+            this.textBoxColorBackgroundDarkMode.Size = new System.Drawing.Size(150, 43);
             this.textBoxColorBackgroundDarkMode.TabIndex = 2;
             this.textBoxColorBackgroundDarkMode.Text = "#ffffff";
             this.textBoxColorBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
@@ -3595,11 +3750,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.Controls.Add(this.buttonOk, 1, 0);
             this.tableLayoutPanelBottom.Controls.Add(this.buttonCancel, 2, 0);
-            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 450);
+            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(7, 1101);
+            this.tableLayoutPanelBottom.Margin = new System.Windows.Forms.Padding(7);
             this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
             this.tableLayoutPanelBottom.RowCount = 1;
             this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(428, 25);
+            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(964, 52);
             this.tableLayoutPanelBottom.TabIndex = 0;
             // 
             // buttonOk
@@ -3607,11 +3763,11 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk.AutoSize = true;
             this.buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(267, 0);
-            this.buttonOk.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.buttonOk.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonOk.Location = new System.Drawing.Point(601, 0);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.buttonOk.MinimumSize = new System.Drawing.Size(169, 52);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 25);
+            this.buttonOk.Size = new System.Drawing.Size(169, 52);
             this.buttonOk.TabIndex = 1;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
@@ -3622,11 +3778,11 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.AutoSize = true;
             this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(348, 0);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
-            this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Location = new System.Drawing.Point(784, 0);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(7, 0, 11, 0);
+            this.buttonCancel.MinimumSize = new System.Drawing.Size(169, 52);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 25);
+            this.buttonCancel.Size = new System.Drawing.Size(169, 52);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -3634,13 +3790,14 @@ namespace SystemTrayMenu.UserInterface
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(216F, 216F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1484, 1061);
+            this.ClientSize = new System.Drawing.Size(3339, 2383);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SettingsForm";
@@ -3858,7 +4015,7 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TabPage tabPageGeneral;
         private System.Windows.Forms.ComboBox comboBoxLanguage;
         //private System.Windows.Forms.TextBox textBoxHotkey;
-        private HotkeyControl textBoxHotkey; 
+        private HotkeyControl textBoxHotkey;
         private System.Windows.Forms.TextBox textBoxFolder;
         private System.Windows.Forms.CheckBox checkBoxAutostart;
         private System.Windows.Forms.Button buttonChangeFolder;
@@ -4086,5 +4243,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.Label labelIconsDarkMode;
         private System.Windows.Forms.TextBox textBoxColorIconsDarkMode;
         private System.Windows.Forms.CheckBox checkBoxPossibilityToSelectFolderByWindowsContextMenu;
+        private System.Windows.Forms.Button buttonOpenFolder;
     }
 }

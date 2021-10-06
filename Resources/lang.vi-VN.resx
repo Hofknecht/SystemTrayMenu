@@ -345,4 +345,7 @@
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
   </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>Mở thư mục</value>
+  </data>
 </root>
