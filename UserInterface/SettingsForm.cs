@@ -675,7 +675,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonOpenFolder_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", Config.Path);
+            Log.ProcessStart("explorer.exe", Config.Path, true);
         }
 
         private void ButtonChangeRelativeFolder_Click(object sender, EventArgs e)
@@ -863,6 +863,5 @@ namespace SystemTrayMenu.UserInterface
                 e.Handled = e.SuppressKeyPress = true;
             }
         }
-
     }
 }
