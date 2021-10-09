@@ -38,9 +38,12 @@ namespace SystemTrayMenu.Utilities
                         urlAssociation, false);
                     }
 
-                    string path = CleanifyBrowserPath(browserKey.GetValue(null) as string);
-                    browserKey.Close();
-                    browserPath = path;
+                    if (browserKey != null)
+                    {
+                        string path = CleanifyBrowserPath(browserKey.GetValue(null) as string);
+                        browserKey.Close();
+                        browserPath = path;
+                    }
                 }
                 else
                 {
@@ -50,9 +53,12 @@ namespace SystemTrayMenu.Utilities
 
                     // now look up the path of the executable
                     string concreteBrowserKey = browserPathKey.Replace("$BROWSER$", progId, System.StringComparison.InvariantCulture);
-                    RegistryKey kp = Registry.ClassesRoot.OpenSubKey(concreteBrowserKey, false);
-                    browserPath = CleanifyBrowserPath(kp.GetValue(null) as string);
-                    kp.Close();
+                    RegistryKey registryKey = Registry.ClassesRoot.OpenSubKey(concreteBrowserKey, false);
+                    if (registryKey != null)
+                    {
+                        browserPath = CleanifyBrowserPath(registryKey.GetValue(null) as string);
+                        registryKey.Close();
+                    }
                 }
 
                 FileUrl.browserPath = browserPath;
