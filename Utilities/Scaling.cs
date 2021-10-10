@@ -5,7 +5,6 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Drawing;
 
     internal static class Scaling
     {
@@ -25,21 +24,6 @@ namespace SystemTrayMenu.Utilities
         internal static int Scale(int width)
         {
             return (int)Math.Round(width * Factor, 0, MidpointRounding.AwayFromZero);
-        }
-
-        /// <summary>
-        /// https://stackoverflow.com/questions/5977445/how-to-get-windows-display-settings
-        /// Since .net core 3.1 not more necessary / always returns 1.
-        /// </summary>
-        private static void CalculateScalingFactor()
-        {
-            Graphics g = Graphics.FromHwnd(IntPtr.Zero);
-            IntPtr desktop = g.GetHdc();
-            int logicalScreenHeight = DllImports.NativeMethods.Gdi32GetDeviceCaps(
-                desktop, (int)DeviceCap.VERTRES);
-            int physicalScreenHeight = DllImports.NativeMethods.Gdi32GetDeviceCaps(
-                desktop, (int)DeviceCap.DESKTOPVERTRES);
-            Factor = physicalScreenHeight / (float)logicalScreenHeight;
         }
     }
 }

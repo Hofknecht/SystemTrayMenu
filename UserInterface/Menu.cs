@@ -7,12 +7,9 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Data;
     using System.Drawing;
-    using System.Drawing.Drawing2D;
     using System.Globalization;
-    using System.IO;
     using System.Reflection;
     using System.Windows.Forms;
-    using Svg;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Helpers;
@@ -794,38 +791,8 @@ namespace SystemTrayMenu.UserInterface
             PictureBox pictureBox = (PictureBox)sender;
             rotationAngle = rotationAngle + 5;
             e.Graphics.DrawImage(
-                RotateImage(LoadingIcon.ToBitmap(), rotationAngle),
+                ImagingHelper.RotateImage(LoadingIcon.ToBitmap(), rotationAngle),
                 new Rectangle(Point.Empty, new Size(pictureBox.ClientSize.Width - 2, pictureBox.ClientSize.Height - 2)));
-        }
-
-        private Image RotateImage(Image img, float rotationAngle)
-        {
-            // create an empty Bitmap image
-            Bitmap bmp = new Bitmap(img.Width, img.Height);
-
-            // turn the Bitmap into a Graphics object
-            Graphics gfx = Graphics.FromImage(bmp);
-
-            // now we set the rotation point to the center of our image
-            gfx.TranslateTransform(0.5f + ((float)bmp.Width / 2), 0.5f + ((float)bmp.Height / 2));
-
-            // now rotate the image
-            gfx.RotateTransform(rotationAngle);
-
-            gfx.TranslateTransform(0.5f - ((float)bmp.Width / 2), 0.5f - ((float)bmp.Height / 2));
-
-            // set the InterpolationMode to HighQualityBicubic so to ensure a high
-            // quality image once it is transformed to the specified size
-            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
-
-            // now draw our new image onto the graphics object
-            gfx.DrawImage(img, new Point(0, 0));
-
-            // dispose of our Graphics object
-            gfx.Dispose();
-
-            // return the image
-            return bmp;
         }
 
         private void PictureBoxMenuOpenFolder_Paint(object sender, PaintEventArgs e)

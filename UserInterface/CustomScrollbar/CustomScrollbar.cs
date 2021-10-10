@@ -6,10 +6,8 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
     using System.Drawing;
     using System.Windows.Forms;
-    using System.Windows.Forms.Design;
 
     [Designer(typeof(ScrollbarControlDesigner))]
     public class CustomScrollbar : UserControl
@@ -56,10 +54,7 @@ namespace SystemTrayMenu.UserInterface
         [Description("LargeChange")]
         public float LargeChange
         {
-            get
-            {
-                return largeChange;
-            }
+            get => largeChange;
 
             set
             {
@@ -75,10 +70,7 @@ namespace SystemTrayMenu.UserInterface
         [Description("SmallChange")]
         public float SmallChange
         {
-            get
-            {
-                return smallChange;
-            }
+            get => smallChange;
 
             set
             {
@@ -94,10 +86,7 @@ namespace SystemTrayMenu.UserInterface
         [Description("Minimum")]
         public int Minimum
         {
-            get
-            {
-                return minimum;
-            }
+            get => minimum;
 
             set
             {
@@ -113,10 +102,7 @@ namespace SystemTrayMenu.UserInterface
         [Description("Maximum")]
         public int Maximum
         {
-            get
-            {
-                return maximum;
-            }
+            get => maximum;
 
             set
             {
@@ -132,10 +118,7 @@ namespace SystemTrayMenu.UserInterface
         [Description("Value")]
         public int Value
         {
-            get
-            {
-                return value;
-            }
+            get => value;
 
             set
             {
@@ -156,25 +139,13 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        public int Delta
-        {
-            get
-            {
-                return Value - lastValue;
-            }
-        }
+        public int Delta => Value - lastValue;
 
         public override bool AutoSize
         {
-            get
-            {
-                return base.AutoSize;
-            }
+            get => base.AutoSize;
 
-            set
-            {
-                base.AutoSize = value;
-            }
+            set => base.AutoSize = value;
         }
 
         public void CustomScrollbar_MouseWheel(object sender, MouseEventArgs e)

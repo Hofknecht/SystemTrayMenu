@@ -49,7 +49,7 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        internal static bool ClearIfCacheTooBig()
+        public static bool ClearIfCacheTooBig()
         {
             bool cleared = false;
             if (DictIconCache.Count > 200)
@@ -64,7 +64,6 @@ namespace SystemTrayMenu.Utilities
 
         public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, bool updateIconInBackground, out bool loading)
         {
-            Icon icon = null;
             loading = false;
             string extension = Path.GetExtension(filePath);
             IconSize size = IconSize.Small;
@@ -79,7 +78,7 @@ namespace SystemTrayMenu.Utilities
                 key = extension + linkOverlay;
             }
 
-            if (!DictIconCache.TryGetValue(key, out icon))
+            if (!DictIconCache.TryGetValue(key, out Icon icon))
             {
                 icon = LoadingIcon;
                 loading = true;

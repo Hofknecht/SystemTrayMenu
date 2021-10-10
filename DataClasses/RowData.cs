@@ -6,13 +6,10 @@ namespace SystemTrayMenu.DataClasses
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.Data;
-    using System.Diagnostics;
     using System.Drawing;
     using System.IO;
     using System.Linq;
-    using System.Security;
     using System.Text;
     using System.Windows.Forms;
     using IWshRuntimeLibrary;
@@ -292,18 +289,6 @@ namespace SystemTrayMenu.DataClasses
             bool handled = false;
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
 
-#if false // FileLnk.IsDirectory was very slow if it was a network path, PingHost was still slow if not exists therefore we used IsNetworkPath
-            if (FileLnk.IsNetworkPath(resolvedLnkPath))
-            {
-                string nameOrAdress = resolvedLnkPath.Split(@"\\")[1].Split(@"\").First();
-                if (!FileLnk.PingHost(nameOrAdress))
-                {
-                    return handled;
-                }
-            }
-
-            if (FileLnk.IsDirectory(resolvedLnkPath))
-#endif
             if (string.IsNullOrEmpty(Path.GetExtension(resolvedLnkPath)))
             {
                 icon = IconReader.GetFolderIconSTA(TargetFilePath, IconReader.FolderType.Open, true);
@@ -318,7 +303,6 @@ namespace SystemTrayMenu.DataClasses
             {
                 Log.Info($"Resolve *.LNK '{TargetFilePath}' has no icon");
             }
-#if false //icons were incorrect, performance increase when removing
             else
             {
                 IWshShell shell = new WshShell();
@@ -326,27 +310,8 @@ namespace SystemTrayMenu.DataClasses
                     as IWshShortcut;
                 arguments = lnk.Arguments;
                 workingDirectory = lnk.WorkingDirectory;
-                string iconLocation = lnk.IconLocation;
-                if (iconLocation.Length > 2)
-                {
-                    iconLocation = iconLocation[0..^2];
-                    if (System.IO.File.Exists(iconLocation))
-                    {
-                        try
-                        {
-                            icon = Icon.ExtractAssociatedIcon(iconLocation);
-                            handled = true;
-                        }
-                        catch (ArgumentException ex)
-                        {
-                            Log.Warn($"iconLocation:'{iconLocation}'", ex);
-                        }
-                    }
-                }
-
                 TargetFilePath = resolvedLnkPath;
             }
-#endif
 
             SetText(Path.GetFileNameWithoutExtension(TargetFilePathOrig));
 

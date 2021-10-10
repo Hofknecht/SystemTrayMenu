@@ -424,9 +424,9 @@ namespace SystemTrayMenu
             str = str.Replace("#585858", htmlColorCode);
             byteArray = Encoding.UTF8.GetBytes(str);
 
-            using (var stream = new MemoryStream(byteArray))
+            using (MemoryStream stream = new MemoryStream(byteArray))
             {
-                var svgDocument = SvgDocument.Open<SvgDocument>(stream);
+                SvgDocument svgDocument = SvgDocument.Open<SvgDocument>(stream);
                 svgDocument.Color = new SvgColourServer(Color.Black);
                 return svgDocument.Draw();
             }
@@ -467,7 +467,7 @@ namespace SystemTrayMenu
 
         private static void UpgradeIfNotUpgraded()
         {
-            var path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
+            string path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
             path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             if (!Settings.Default.IsUpgraded)
             {

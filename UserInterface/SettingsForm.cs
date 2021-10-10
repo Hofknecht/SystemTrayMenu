@@ -6,7 +6,6 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Drawing;
     using System.IO;
     using System.Reflection;
@@ -24,8 +23,8 @@ namespace SystemTrayMenu.UserInterface
 
         private static readonly Icon SystemTrayMenu = Resources.SystemTrayMenu;
         private readonly string newHotKey = string.Empty;
+        private readonly ColorConverter colorConverter = new ColorConverter();
         private bool inHotkey;
-        private ColorConverter colorConverter = new ColorConverter();
 
         public SettingsForm()
         {

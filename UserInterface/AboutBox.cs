@@ -10,7 +10,6 @@ namespace SystemTrayMenu.UserInterface
     using System.Globalization;
     using System.IO;
     using System.Reflection;
-    using System.Security;
     using System.Text.RegularExpressions;
     using System.Windows.Forms;
     using Microsoft.Win32;

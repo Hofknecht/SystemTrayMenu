@@ -5,39 +5,27 @@
 namespace SystemTrayMenu.UserInterface
 {
     using System;
-    using System.Collections.Generic;
     using System.Drawing;
-    using System.Linq;
     using System.Windows.Forms;
     using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
-    using R = SystemTrayMenu.Properties.Resources;
     using Timer = System.Windows.Forms.Timer;
 
     internal class AppNotifyIcon : IDisposable
     {
-        private const int Interval60FPS = 16; // 60fps=>1s/60fps=~16.6ms
-        private static Icon systemTrayMenu = R.SystemTrayMenu;
+        private static readonly Icon LoadingIcon = Properties.Resources.Loading;
+        private static Icon systemTrayMenu = Properties.Resources.SystemTrayMenu;
         private readonly Timer load = new Timer();
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
-        private readonly int indexLoad;
-        private readonly List<Icon> bitmapsLoading = new List<Icon>()
-        {
-            R.L010, R.L020, R.L030,
-            R.L040, R.L050, R.L060, R.L070, R.L080, R.L090, R.L100, R.L110, R.L120,
-            R.L130, R.L140, R.L150, R.L160, R.L170, R.L180,
-        };
-
-        private DateTime timeLoadingStart;
         private bool threadsLoading;
-        private int loadCount;
+        private int rotationAngle;
 
         public AppNotifyIcon()
         {
-            indexLoad = bitmapsLoading.Count;
-            notifyIcon.Icon = bitmapsLoading.First();
+            notifyIcon.Icon = LoadingIcon;
             load.Tick += Load_Tick;
-            load.Interval = Interval60FPS;
+            load.Interval = 15;
             notifyIcon.Text = Translator.GetText("SystemTrayMenu");
             notifyIcon.Visible = true;
 
@@ -101,7 +89,6 @@ namespace SystemTrayMenu.UserInterface
 
         public void LoadingStart()
         {
-            timeLoadingStart = DateTime.Now;
             threadsLoading = true;
             load.Start();
         }
@@ -124,15 +111,26 @@ namespace SystemTrayMenu.UserInterface
         {
             if (threadsLoading)
             {
-                if (DateTime.Now - timeLoadingStart > new TimeSpan(0, 0, 0, 0, 500))
+                rotationAngle = rotationAngle + 5;
+                using (Bitmap bitmapLoading = new Bitmap(ImagingHelper.RotateImage(LoadingIcon.ToBitmap(), rotationAngle)))
                 {
-                    notifyIcon.Icon = bitmapsLoading[loadCount++ % indexLoad];
+                    DisposeIconIfNotDefaultIcon();
+                    notifyIcon.Icon = Icon.FromHandle(bitmapLoading.GetHicon());
                 }
             }
             else
             {
+                DisposeIconIfNotDefaultIcon();
                 notifyIcon.Icon = systemTrayMenu;
                 load.Stop();
+            }
+
+            void DisposeIconIfNotDefaultIcon()
+            {
+                if (notifyIcon.Icon.GetHashCode() != systemTrayMenu.GetHashCode())
+                {
+                    notifyIcon.Icon?.Dispose();
+                }
             }
         }
     }

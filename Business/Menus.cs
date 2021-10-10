@@ -12,7 +12,6 @@ namespace SystemTrayMenu.Business
     using System.Drawing;
     using System.IO;
     using System.Linq;
-    using System.Security;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Handler;

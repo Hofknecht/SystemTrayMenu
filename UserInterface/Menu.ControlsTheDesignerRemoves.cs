@@ -4,7 +4,6 @@
 
 namespace SystemTrayMenu.UserInterface
 {
-    using System;
     using System.Drawing;
     using System.Windows.Forms;
     using SystemTrayMenu.Utilities;
@@ -38,7 +37,7 @@ namespace SystemTrayMenu.UserInterface
             labelTitle.AutoEllipsis = true;
             labelTitle.AutoSize = true;
             labelTitle.Dock = DockStyle.Fill;
-            labelTitle.Font = new Font("Segoe UI", 8.25F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            labelTitle.Font = new Font("Segoe UI", 8.25F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTitle.ForeColor = Color.Black;
             labelTitle.Location = new Point(0, 0);
             labelTitle.Margin = new Padding(0);
@@ -83,10 +82,10 @@ namespace SystemTrayMenu.UserInterface
                 ColumnText,
             });
 
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Regular, GraphicsUnit.Pixel, (byte)0);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Regular, GraphicsUnit.Pixel, 0);
             dgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
 
-            dgv.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 9F * Scaling.Factor, FontStyle.Regular, GraphicsUnit.Point, (byte)0);
+            dgv.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 9F * Scaling.Factor, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgv.RowTemplate.Height = 20;
             dgv.RowTemplate.ReadOnly = true;
 
@@ -119,8 +118,8 @@ namespace SystemTrayMenu.UserInterface
                 Scaling.Scale(pictureBoxFilesCount.Width),
                 Scaling.Scale(pictureBoxFilesCount.Height));
 
-            labelFoldersCount.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
-            labelFilesCount.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, (byte)0);
+            labelFoldersCount.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelFilesCount.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, 0);
 
             // tableLayoutPanelDgvAndScrollbar.ResumeLayout(false);
             // ((System.ComponentModel.ISupportInitialize)dgv).EndInit();

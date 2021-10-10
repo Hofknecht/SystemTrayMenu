@@ -7,7 +7,6 @@ namespace SystemTrayMenu.Utilities
     using System;
     using System.IO;
     using System.Net.NetworkInformation;
-    using System.Runtime.InteropServices;
     using System.Threading;
     using Shell32;
 
@@ -35,29 +34,6 @@ namespace SystemTrayMenu.Utilities
 
             return resolvedFilename;
         }
-
-#if false // FileLnk.IsDirectory was very slow if it was a network path, PingHost was still slow if not exists therefore we used IsNetworkPath
-        public static bool IsDirectory(string filePath)
-        {
-            bool isDirectory = false;
-            if (Directory.Exists(filePath))
-            {
-                FileAttributes attributes = File.GetAttributes(filePath);
-                if ((attributes & FileAttributes.Directory) == FileAttributes.Directory)
-                {
-                    isDirectory = true;
-                }
-            }
-
-            return isDirectory;
-        }
-
-        public static bool IsNetworkPath(string path)
-        {
-            return path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
-                !path.StartsWith(@"\\?\", StringComparison.InvariantCulture);
-        }
-#endif
 
         public static bool IsNetworkRoot(string path)
         {

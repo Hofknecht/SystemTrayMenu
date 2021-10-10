@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Helpers
 {
     using System.Drawing;
+    using System.Drawing.Drawing2D;
     using System.Drawing.Imaging;
     using System.IO;
 
@@ -81,7 +82,7 @@ namespace SystemTrayMenu.Helpers
                             iconWriter.Write((int)memoryStream.Length);
 
                             // 12-15 offset of image data
-                            iconWriter.Write((int)(6 + 16));
+                            iconWriter.Write(6 + 16);
 
                             // write image data
                             // png data must contain the whole png data file
@@ -115,6 +116,36 @@ namespace SystemTrayMenu.Helpers
             {
                 return ConvertToIcon(inputStream, outputStream, size, preserveAspectRatio);
             }
+        }
+
+        public static Image RotateImage(Image img, float rotationAngle)
+        {
+            // create an empty Bitmap image
+            Bitmap bmp = new Bitmap(img.Width, img.Height);
+
+            // turn the Bitmap into a Graphics object
+            Graphics gfx = Graphics.FromImage(bmp);
+
+            // now we set the rotation point to the center of our image
+            gfx.TranslateTransform(0.5f + ((float)bmp.Width / 2), 0.5f + ((float)bmp.Height / 2));
+
+            // now rotate the image
+            gfx.RotateTransform(rotationAngle);
+
+            gfx.TranslateTransform(0.5f - ((float)bmp.Width / 2), 0.5f - ((float)bmp.Height / 2));
+
+            // set the InterpolationMode to HighQualityBicubic so to ensure a high
+            // quality image once it is transformed to the specified size
+            gfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            // now draw our new image onto the graphics object
+            gfx.DrawImage(img, new Point(0, 0));
+
+            // dispose of our Graphics object
+            gfx.Dispose();
+
+            // return the image
+            return bmp;
         }
     }
 }

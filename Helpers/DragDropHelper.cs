@@ -55,7 +55,7 @@ namespace SystemTrayMenu.Helpers
         private static void CreateShortcut(string url, string pathToStoreFile)
         {
             string pathToStoreIcons = Path.Combine(pathToStoreFile, "ico");
-            var client = new WebClient();
+            WebClient client = new WebClient();
             if (!Directory.Exists(pathToStoreIcons))
             {
                 Directory.CreateDirectory(pathToStoreIcons);
@@ -72,7 +72,7 @@ namespace SystemTrayMenu.Helpers
             ImagingHelper.ConvertToIcon(pathIconPng, pathIcon, 32);
             File.Delete(pathIconPng);
 
-            var title = url;
+            string title = url;
 
             title = title.Replace("/", " ").
                 Replace("https", string.Empty).
