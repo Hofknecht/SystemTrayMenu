@@ -4,7 +4,25 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
 [![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 
-[![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://sourceforge.net/projects/systemtraymenu/files/latest/download) [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download)&nbsp;[![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1) [![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html) [![computerbild](https://user-images.githubusercontent.com/52528841/121583122-2735a480-ca30-11eb-82a4-b4f6054e4d8f.png)](https://www.computerbild.de/download/SystemTrayMenu-26748523.html) [![netzwelt](https://user-images.githubusercontent.com/52528841/121585548-015dcf00-ca33-11eb-8436-b1f5231d5c2d.png)](https://www.netzwelt.de/download/25705-systemtraymenu.html) [![softpedia](https://user-images.githubusercontent.com/52528841/121581852-a033fc80-ca2e-11eb-8aee-4a8cd3043bd1.png)](https://www.softpedia.com/get/System/Launchers-Shutdown-Tools/SystemTrayMenu.shtml) [![softonic](https://user-images.githubusercontent.com/52528841/121586781-5a7a3280-ca34-11eb-8a03-618b4661f859.png)](https://systemtraymenu.en.softonic.com/)  [![heise](https://user-images.githubusercontent.com/52528841/125174840-53c41400-e1c8-11eb-8992-2de3e078c7b2.png)](https://www.heise.de/download/product/systemtraymenu) [![majorgeeks](https://user-images.githubusercontent.com/52528841/116281616-2d2a3b80-a78a-11eb-948c-bde9a8ccb1ed.png)](https://www.majorgeeks.com/files/details/systemtraymenu.html) [![downloaddrivers](https://user-images.githubusercontent.com/52528841/116524789-0f6aec80-a8d8-11eb-9037-06b2c101fa72.png)](https://www.downloaddrivers.info/download-systemtraymenu-1-0-17-43/) [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)[![rjno1](https://user-images.githubusercontent.com/52528841/121582195-04ef5700-ca2f-11eb-9c22-cf8239c6e99b.png)](https://www.rjno1.com/systemtraymenu/) [![geekotg](https://user-images.githubusercontent.com/52528841/121582114-eb4e0f80-ca2e-11eb-814d-fbe3a864676b.png)](http://www.geekotg.com/pc/48484.html) [![softaro](https://user-images.githubusercontent.com/52528841/121581997-c9548d00-ca2e-11eb-9145-fab017925475.png)](https://softaro.net/systemtraymenu/) [![rsload](https://user-images.githubusercontent.com/52528841/121584316-a1b2f400-ca31-11eb-8a90-242b9ba80dc4.png)](https://rsload.net/soft/desktop/35219-systemtraymenu.html) [![mirsofta](https://user-images.githubusercontent.com/52528841/121584682-0706e500-ca32-11eb-8629-4599579a1620.png)](https://mirsofta.ru/index.php?id=1623024195)
+<!-- 1.0.21 -->
+[![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://sourceforge.net/projects/systemtraymenu/files/latest/download) [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download)&nbsp;[![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1) 
+[![majorgeeks](https://user-images.githubusercontent.com/52528841/116281616-2d2a3b80-a78a-11eb-948c-bde9a8ccb1ed.png)](https://www.majorgeeks.com/files/details/systemtraymenu.html) <!-- 1.0.20 -->
+[![computerbild](https://user-images.githubusercontent.com/52528841/121583122-2735a480-ca30-11eb-82a4-b4f6054e4d8f.png)](https://www.computerbild.de/download/SystemTrayMenu-26748523.html) 
+[![softpedia](https://user-images.githubusercontent.com/52528841/121581852-a033fc80-ca2e-11eb-8aee-4a8cd3043bd1.png)](https://www.softpedia.com/get/System/Launchers-Shutdown-Tools/SystemTrayMenu.shtml) 
+[![rjno1](https://user-images.githubusercontent.com/52528841/121582195-04ef5700-ca2f-11eb-9c22-cf8239c6e99b.png)](https://www.rjno1.com/systemtraymenu/) 
+[![bytesin](https://user-images.githubusercontent.com/52528841/136706178-0bd2e812-f087-40f4-8c30-301ba645f10d.png)](https://www.bytesin.com/software/SystemTrayMenu/)
+[![softaro](https://user-images.githubusercontent.com/52528841/121581997-c9548d00-ca2e-11eb-9145-fab017925475.png)](https://softaro.net/systemtraymenu/)
+[![freeware-base](https://user-images.githubusercontent.com/52528841/136707080-a64c8eeb-d563-44e6-aee3-1fb2921221e0.png)](https://www.freeware-base.de/freeware-zeige-details-31811-SystemTrayMenu.html) <!-- 1.0.19 -->
+[![heise](https://user-images.githubusercontent.com/52528841/125174840-53c41400-e1c8-11eb-8992-2de3e078c7b2.png)](https://www.heise.de/download/product/systemtraymenu) 
+[![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html) 
+[![rsload](https://user-images.githubusercontent.com/52528841/121584316-a1b2f400-ca31-11eb-8a90-242b9ba80dc4.png)](https://rsload.net/soft/desktop/35219-systemtraymenu.html) <!-- 1.0.17 -->
+[![softonic](https://user-images.githubusercontent.com/52528841/121586781-5a7a3280-ca34-11eb-8a03-618b4661f859.png)](https://systemtraymenu.en.softonic.com/) 
+[![mirsofta](https://user-images.githubusercontent.com/52528841/121584682-0706e500-ca32-11eb-8629-4599579a1620.png)](https://mirsofta.ru/index.php?id=1623024195)
+[![downloaddrivers](https://user-images.githubusercontent.com/52528841/116524789-0f6aec80-a8d8-11eb-9037-06b2c101fa72.png)](https://www.downloaddrivers.info/download-systemtraymenu-1-0-17-43/) 
+[![netzwelt](https://user-images.githubusercontent.com/52528841/121585548-015dcf00-ca33-11eb-8436-b1f5231d5c2d.png)](https://www.netzwelt.de/download/25705-systemtraymenu.html) 
+[![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
+
+
 
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
@@ -103,10 +121,10 @@ Special thanks to our productive contibutors!
 * [Tanja Hofknecht](https://github.com/Tanjalibertatis)
 * [Peter Kirmeier](https://github.com/topeterk)
 
-Thanks for translations!
-* French by [Pascal Aloy](mailto:paloy@wanadoo.fr)
-* Dutch by [HansieNL](https://github.com/HansieNL)
-* Portuguese (Brazil) by [igorruckert](https://github.com/igorruckert)
+Thanks for contributing!
+
+#145 [Pascal Aloy](mailto:paloy@wanadoo.fr), #162 [HansieNL](https://github.com/HansieNL), #163 [igorruckert](https://github.com/igorruckert), #205 [kristofzerbe](https://github.com/kristofzerbe)
+
 
 Donations
 ------------------
