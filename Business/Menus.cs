@@ -206,12 +206,12 @@ namespace SystemTrayMenu.Business
             waitToOpenMenu.CloseMenu += CloseMenu;
             void CloseMenu(int level)
             {
-                if (level < menus.Count() && menus[level] != null)
+                if (level < menus.Length && menus[level] != null)
                 {
                     HideOldMenu(menus[level]);
                 }
 
-                if (level - 1 < menus.Count() && menus[level - 1] != null)
+                if (level - 1 < menus.Length && menus[level - 1] != null)
                 {
                     menus[level - 1].FocusTextBox();
                 }
@@ -571,7 +571,7 @@ namespace SystemTrayMenu.Business
 
             if (FileUrl.GetDefaultBrowserPath(out string browserPath))
             {
-                IconReader.GetFileIconWithCache(browserPath, true, true, out bool loading);
+                IconReader.GetFileIconWithCache(browserPath, true, true, out _);
             }
         }
 
@@ -612,7 +612,7 @@ namespace SystemTrayMenu.Business
                     {
                         string path = rowData.FileInfo.FullName;
                         int directoryNameBegin = path.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1;
-                        rowData.SetText(path.Substring(directoryNameBegin));
+                        rowData.SetText(path[directoryNameBegin..]);
                     }
                     else
                     {
@@ -1054,7 +1054,7 @@ namespace SystemTrayMenu.Business
             searchTextChanging = false;
 
             // if any open menu close
-            if (menu.Level + 1 < menus.Count())
+            if (menu.Level + 1 < menus.Length)
             {
                 Menu menuToClose = menus[menu.Level + 1];
                 if (menuToClose != null)

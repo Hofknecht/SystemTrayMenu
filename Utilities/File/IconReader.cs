@@ -101,7 +101,6 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "todo")]
         public static Icon GetFolderIconSTA(
             string directoryPath,
             FolderType folderType,
@@ -210,7 +209,6 @@ namespace SystemTrayMenu.Utilities
             return isExtensionWithSameIcon;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "todo")]
         private static Icon GetFileIconSTA(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
         {
             Icon icon = null;

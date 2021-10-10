@@ -73,17 +73,15 @@ namespace SystemTrayMenu
 
         public static void SetFolderByUser(bool save = true)
         {
-            using (FolderDialog dialog = new FolderDialog())
-            {
-                dialog.InitialFolder = Path;
+            using FolderDialog dialog = new FolderDialog();
+            dialog.InitialFolder = Path;
 
-                if (dialog.ShowDialog() == DialogResult.OK)
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Settings.Default.PathDirectory = dialog.Folder;
+                if (save)
                 {
-                    Settings.Default.PathDirectory = dialog.Folder;
-                    if (save)
-                    {
-                        Settings.Default.Save();
-                    }
+                    Settings.Default.Save();
                 }
             }
         }
@@ -424,12 +422,10 @@ namespace SystemTrayMenu
             str = str.Replace("#585858", htmlColorCode);
             byteArray = Encoding.UTF8.GetBytes(str);
 
-            using (MemoryStream stream = new MemoryStream(byteArray))
-            {
-                SvgDocument svgDocument = SvgDocument.Open<SvgDocument>(stream);
-                svgDocument.Color = new SvgColourServer(Color.Black);
-                return svgDocument.Draw();
-            }
+            using MemoryStream stream = new MemoryStream(byteArray);
+            SvgDocument svgDocument = SvgDocument.Open<SvgDocument>(stream);
+            svgDocument.Color = new SvgColourServer(Color.Black);
+            return svgDocument.Draw();
         }
 
         private static bool IsRegistryValueThisValue(string keyName, string valueName, string value)

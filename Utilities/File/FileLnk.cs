@@ -38,7 +38,7 @@ namespace SystemTrayMenu.Utilities
         public static bool IsNetworkRoot(string path)
         {
             return path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
-                !path.Substring(2).Contains(@"\", StringComparison.InvariantCulture);
+                !path[2..].Contains(@"\", StringComparison.InvariantCulture);
         }
 
         public static bool PingHost(string nameOrAddress)

@@ -256,7 +256,7 @@ namespace SystemTrayMenu.UserInterface
                 decimal newValue = numericUpDownSizeInPercentage.Value;
                 if (e.Delta > 0)
                 {
-                    newValue = newValue + numericUpDownSizeInPercentage.Increment;
+                    newValue += numericUpDownSizeInPercentage.Increment;
                     if (newValue > numericUpDownSizeInPercentage.Maximum)
                     {
                         newValue = (int)numericUpDownSizeInPercentage.Maximum;
@@ -264,7 +264,7 @@ namespace SystemTrayMenu.UserInterface
                 }
                 else
                 {
-                    newValue = newValue - numericUpDownSizeInPercentage.Increment;
+                    newValue -= numericUpDownSizeInPercentage.Increment;
                     if (newValue < numericUpDownSizeInPercentage.Minimum)
                     {
                         newValue = (int)numericUpDownSizeInPercentage.Minimum;
@@ -473,6 +473,83 @@ namespace SystemTrayMenu.UserInterface
             return success;
         }
 
+        private static void AdjustControlMultilineIfNecessary(Control control)
+        {
+            if (control.Width > control.Parent.Width)
+            {
+                control.MaximumSize = new Size(control.Parent.Width, 0);
+                control.MinimumSize = new Size(0, control.Height * 2);
+            }
+        }
+
+        private static void AddPossibilityToSelectFolderByWindowsContextMenu()
+        {
+            RegistryKey registryKeyContextMenu = null;
+            RegistryKey registryKeyContextMenuCommand = null;
+
+            try
+            {
+                registryKeyContextMenu = Registry.CurrentUser.CreateSubKey(MenuName);
+                string binLocation = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+                if (registryKeyContextMenu != null)
+                {
+                    registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as SystemTrayMenu folder"));
+                    registryKeyContextMenu.SetValue("Icon", binLocation);
+                }
+
+                registryKeyContextMenuCommand = Registry.CurrentUser.CreateSubKey(Command);
+
+                if (registryKeyContextMenuCommand != null)
+                {
+                    registryKeyContextMenuCommand.SetValue(string.Empty, binLocation + " \"%1\"");
+                }
+
+                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = true;
+            }
+            catch (Exception ex)
+            {
+                Log.Warn("SavePossibilityToSelectFolderByWindowsContextMenu failed", ex);
+            }
+            finally
+            {
+                if (registryKeyContextMenu != null)
+                {
+                    registryKeyContextMenu.Close();
+                }
+
+                if (registryKeyContextMenuCommand != null)
+                {
+                    registryKeyContextMenuCommand.Close();
+                }
+            }
+        }
+
+        private static void RemovePossibilityToSelectFolderByWindowsContextMenu()
+        {
+            try
+            {
+                RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(Command);
+                if (registryKey != null)
+                {
+                    registryKey.Close();
+                    Registry.CurrentUser.DeleteSubKey(Command);
+                }
+
+                registryKey = Registry.CurrentUser.OpenSubKey(MenuName);
+                if (registryKey != null)
+                {
+                    registryKey.Close();
+                    Registry.CurrentUser.DeleteSubKey(MenuName);
+                }
+
+                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = false;
+            }
+            catch (Exception ex)
+            {
+                Log.Warn("DeletePossibilityToSelectFolderByWindowsContextMenu failed", ex);
+            }
+        }
+
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
@@ -480,15 +557,6 @@ namespace SystemTrayMenu.UserInterface
             tabControl.Size = new Size(
                 tabControl.Size.Width,
                 tableLayoutPanelGeneral.Size.Height + 50);
-        }
-
-        private void AdjustControlMultilineIfNecessary(Control control)
-        {
-            if (control.Width > control.Parent.Width)
-            {
-                control.MaximumSize = new Size(control.Parent.Width, 0);
-                control.MinimumSize = new Size(0, control.Height * 2);
-            }
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
@@ -571,74 +639,6 @@ namespace SystemTrayMenu.UserInterface
 
             DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private void AddPossibilityToSelectFolderByWindowsContextMenu()
-        {
-            RegistryKey registryKeyContextMenu = null;
-            RegistryKey registryKeyContextMenuCommand = null;
-
-            try
-            {
-                registryKeyContextMenu = Registry.CurrentUser.CreateSubKey(MenuName);
-                string binLocation = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
-                if (registryKeyContextMenu != null)
-                {
-                    registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as SystemTrayMenu folder"));
-                    registryKeyContextMenu.SetValue("Icon", binLocation);
-                }
-
-                registryKeyContextMenuCommand = Registry.CurrentUser.CreateSubKey(Command);
-
-                if (registryKeyContextMenuCommand != null)
-                {
-                    registryKeyContextMenuCommand.SetValue(string.Empty, binLocation + " \"%1\"");
-                }
-
-                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = true;
-            }
-            catch (Exception ex)
-            {
-                Log.Warn("SavePossibilityToSelectFolderByWindowsContextMenu failed", ex);
-            }
-            finally
-            {
-                if (registryKeyContextMenu != null)
-                {
-                    registryKeyContextMenu.Close();
-                }
-
-                if (registryKeyContextMenuCommand != null)
-                {
-                    registryKeyContextMenuCommand.Close();
-                }
-            }
-        }
-
-        private void RemovePossibilityToSelectFolderByWindowsContextMenu()
-        {
-            try
-            {
-                RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(Command);
-                if (registryKey != null)
-                {
-                    registryKey.Close();
-                    Registry.CurrentUser.DeleteSubKey(Command);
-                }
-
-                registryKey = Registry.CurrentUser.OpenSubKey(MenuName);
-                if (registryKey != null)
-                {
-                    registryKey.Close();
-                    Registry.CurrentUser.DeleteSubKey(MenuName);
-                }
-
-                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = false;
-            }
-            catch (Exception ex)
-            {
-                Log.Warn("DeletePossibilityToSelectFolderByWindowsContextMenu failed", ex);
-            }
         }
 
         private void ButtonHotkeyDefault_Click(object sender, EventArgs e)

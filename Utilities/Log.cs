@@ -110,7 +110,7 @@ namespace SystemTrayMenu.Utilities
                 if (ex.Message == "The system cannot find the file specified.")
                 {
                     new Thread(ShowProblemWithShortcut).Start();
-                    void ShowProblemWithShortcut()
+                    static void ShowProblemWithShortcut()
                     {
                         _ = MessageBox.Show(
                             Translator.GetText("The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly."),

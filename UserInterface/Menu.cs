@@ -18,7 +18,6 @@ namespace SystemTrayMenu.UserInterface
     internal partial class Menu : Form
     {
         private static readonly Icon LoadingIcon = Properties.Resources.Loading;
-        private static readonly Icon Search = Properties.Resources.search;
         private readonly Fading fading = new Fading();
         private bool isShowing;
         private bool directionToRight;
@@ -789,7 +788,7 @@ namespace SystemTrayMenu.UserInterface
         private void LoadingMenu_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
-            rotationAngle = rotationAngle + 5;
+            rotationAngle += 5;
             e.Graphics.DrawImage(
                 ImagingHelper.RotateImage(LoadingIcon.ToBitmap(), rotationAngle),
                 new Rectangle(Point.Empty, new Size(pictureBox.ClientSize.Width - 2, pictureBox.ClientSize.Height - 2)));

@@ -144,7 +144,7 @@ namespace SystemTrayMenu.DataClasses
                     try
                     {
                         icon = IconReader.GetFileIconWithCache(
-                            TargetFilePath,
+                            TargetFilePathOrig,
                             showOverlay,
                             true,
                             out bool loading);
@@ -153,7 +153,7 @@ namespace SystemTrayMenu.DataClasses
                     }
                     catch (Exception ex)
                     {
-                        Log.Warn($"path:'{TargetFilePath}'", ex);
+                        Log.Warn($"path:'{TargetFilePathOrig}'", ex);
                     }
                 }
             }
@@ -235,14 +235,8 @@ namespace SystemTrayMenu.DataClasses
                 showOverlay = true;
             }
 
-            string path = TargetFilePath;
-            if (ContainsMenu)
-            {
-                path = TargetFilePathOrig;
-            }
-
             icon = IconReader.GetFileIconWithCache(
-                    path,
+                    TargetFilePathOrig,
                     showOverlay,
                     false,
                     out bool loading);

@@ -111,12 +111,10 @@ namespace SystemTrayMenu.UserInterface
         {
             if (threadsLoading)
             {
-                rotationAngle = rotationAngle + 5;
-                using (Bitmap bitmapLoading = new Bitmap(ImagingHelper.RotateImage(LoadingIcon.ToBitmap(), rotationAngle)))
-                {
-                    DisposeIconIfNotDefaultIcon();
-                    notifyIcon.Icon = Icon.FromHandle(bitmapLoading.GetHicon());
-                }
+                rotationAngle += 5;
+                using Bitmap bitmapLoading = new Bitmap(ImagingHelper.RotateImage(LoadingIcon.ToBitmap(), rotationAngle));
+                DisposeIconIfNotDefaultIcon();
+                notifyIcon.Icon = Icon.FromHandle(bitmapLoading.GetHicon());
             }
             else
             {

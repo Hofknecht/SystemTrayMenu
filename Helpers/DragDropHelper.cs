@@ -96,16 +96,14 @@ namespace SystemTrayMenu.Helpers
                 return value;
             }
 
-            using (StreamWriter writer = new StreamWriter(pathToStoreFile + "\\" + title.Trim() + ".url"))
-            {
-                writer.WriteLine("[InternetShortcut]");
-                writer.WriteLine($"URL={url.TrimEnd('\0')}");
-                writer.WriteLine("IconIndex=0");
-                writer.WriteLine($"HotKey=0");
-                writer.WriteLine($"IDList=");
-                writer.WriteLine($"IconFile={pathIcon}");
-                writer.Flush();
-            }
+            using StreamWriter writer = new StreamWriter(pathToStoreFile + "\\" + title.Trim() + ".url");
+            writer.WriteLine("[InternetShortcut]");
+            writer.WriteLine($"URL={url.TrimEnd('\0')}");
+            writer.WriteLine("IconIndex=0");
+            writer.WriteLine($"HotKey=0");
+            writer.WriteLine($"IDList=");
+            writer.WriteLine($"IconFile={pathIcon}");
+            writer.Flush();
         }
     }
 }
