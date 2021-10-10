@@ -12,7 +12,9 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 [![rjno1](https://user-images.githubusercontent.com/52528841/121582195-04ef5700-ca2f-11eb-9c22-cf8239c6e99b.png)](https://www.rjno1.com/systemtraymenu/) 
 [![bytesin](https://user-images.githubusercontent.com/52528841/136706178-0bd2e812-f087-40f4-8c30-301ba645f10d.png)](https://www.bytesin.com/software/SystemTrayMenu/)
 [![softaro](https://user-images.githubusercontent.com/52528841/121581997-c9548d00-ca2e-11eb-9145-fab017925475.png)](https://softaro.net/systemtraymenu/)
-[![freeware-base](https://user-images.githubusercontent.com/52528841/136707080-a64c8eeb-d563-44e6-aee3-1fb2921221e0.png)](https://www.freeware-base.de/freeware-zeige-details-31811-SystemTrayMenu.html) <!-- 1.0.19 -->
+[![freeware-base](https://user-images.githubusercontent.com/52528841/136707080-a64c8eeb-d563-44e6-aee3-1fb2921221e0.png)](https://www.freeware-base.de/freeware-zeige-details-31811-SystemTrayMenu.html)
+[![aiiguide](https://user-images.githubusercontent.com/52528841/136708010-1f7a7d04-0b0b-4fe8-b70c-83bd48733d9c.png)](https://aiiguide.com/download-systemtraymenu.html)
+[![taiwebs](https://user-images.githubusercontent.com/52528841/136708061-6384d536-88a7-4c5d-a13a-a1b0cff00e68.png)](https://de.taiwebs.com/windows/download-systemtraymenu-6812.html)<!-- 1.0.19 -->
 [![heise](https://user-images.githubusercontent.com/52528841/125174840-53c41400-e1c8-11eb-8992-2de3e078c7b2.png)](https://www.heise.de/download/product/systemtraymenu) 
 [![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html) 
 [![rsload](https://user-images.githubusercontent.com/52528841/121584316-a1b2f400-ca31-11eb-8a90-242b9ba80dc4.png)](https://rsload.net/soft/desktop/35219-systemtraymenu.html) <!-- 1.0.17 -->
@@ -45,6 +47,7 @@ Blogs and reviews
 * https://www.ghacks.net/2021/04/10/create-a-custom-start-menu-that-you-can-access-with-a-hotkey-using-systemtraymenu/
 * http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/
 * https://reviewsapp.org/systemtraymenu-better-organization-of-windows
+* https://teamos-hkrg.com/threads/systemtraymenu-1-0-20-0.162800/
 
 FAQ
 ------------------
