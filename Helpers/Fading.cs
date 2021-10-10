@@ -83,7 +83,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 state = newState;
                 timer.Start();
-                FadeStep();
             }
         }
 
