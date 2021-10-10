@@ -129,7 +129,7 @@ namespace SystemTrayMenu.Handler
         {
             if (!MouseActive)
             {
-                if (mouseMoveEvents > 3)
+                if (mouseMoveEvents > 6)
                 {
                     MouseActive = true;
                     if (dgvTmp != null && !dgvTmp.IsDisposed)
