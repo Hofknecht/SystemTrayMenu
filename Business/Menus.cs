@@ -33,7 +33,6 @@ namespace SystemTrayMenu.Business
         private readonly WaitLeave waitLeave = new WaitLeave(Properties.Settings.Default.TimeUntilCloses);
         private DateTime deactivatedTime = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
-        private RowData loadingRowData;
         private bool showingMessageBox;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
         private bool searchTextChanging;
@@ -121,12 +120,9 @@ namespace SystemTrayMenu.Business
             void StartLoadMenu(RowData rowData)
             {
                 if (menus[0].IsUsable &&
-                    loadingRowData != rowData &&
                     (menus[rowData.MenuLevel + 1] == null ||
                     menus[rowData.MenuLevel + 1].Tag as RowData != rowData))
                 {
-                    loadingRowData = rowData;
-
                     CreateAndShowLoadingMenu(rowData);
                     void CreateAndShowLoadingMenu(RowData rowData)
                     {
@@ -198,8 +194,6 @@ namespace SystemTrayMenu.Business
                             ShowSubMenu(menu);
                         }
                     }
-
-                    loadingRowData = null;
                 }
             }
 
@@ -301,7 +295,6 @@ namespace SystemTrayMenu.Business
             waitLeave.Dispose();
             IconReader.Dispose();
             DisposeMenu(menus[0]);
-            loadingRowData?.Dispose();
             dgvMouseRow.Dispose();
         }
 
