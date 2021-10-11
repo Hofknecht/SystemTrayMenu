@@ -40,6 +40,7 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxFolder = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelChangeFolder = new System.Windows.Forms.TableLayoutPanel();
             this.buttonChangeFolder = new System.Windows.Forms.Button();
+            this.buttonOpenFolder = new System.Windows.Forms.Button();
             this.checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
             this.groupBoxUSB = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelUSB = new System.Windows.Forms.TableLayoutPanel();
@@ -263,7 +264,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.buttonOpenFolder = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -498,20 +498,20 @@ namespace SystemTrayMenu.UserInterface
             // 
             // textBoxFolder
             // 
-            this.textBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFolder.BackColor = System.Drawing.Color.White;
             this.textBoxFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxFolder.Location = new System.Drawing.Point(6, 3);
             this.textBoxFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.textBoxFolder.MaximumSize = new System.Drawing.Size(380, 0);
             this.textBoxFolder.Name = "textBoxFolder";
             this.textBoxFolder.ReadOnly = true;
-            this.textBoxFolder.Size = new System.Drawing.Size(382, 16);
+            this.textBoxFolder.Size = new System.Drawing.Size(380, 16);
             this.textBoxFolder.TabIndex = 0;
             this.textBoxFolder.TabStop = false;
             // 
             // tableLayoutPanelChangeFolder
             // 
-            this.tableLayoutPanelChangeFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelChangeFolder.AutoSize = true;
             this.tableLayoutPanelChangeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelChangeFolder.ColumnCount = 3;
@@ -520,6 +520,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelChangeFolder.Controls.Add(this.buttonChangeFolder, 0, 0);
             this.tableLayoutPanelChangeFolder.Controls.Add(this.buttonOpenFolder, 2, 0);
+            this.tableLayoutPanelChangeFolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelChangeFolder.Location = new System.Drawing.Point(0, 22);
             this.tableLayoutPanelChangeFolder.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelChangeFolder.Name = "tableLayoutPanelChangeFolder";
@@ -542,6 +543,19 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChangeFolder.Text = "Change Folder";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
             this.buttonChangeFolder.Click += new System.EventHandler(this.ButtonChange_Click);
+            // 
+            // buttonOpenFolder
+            // 
+            this.buttonOpenFolder.AutoSize = true;
+            this.buttonOpenFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonOpenFolder.Location = new System.Drawing.Point(276, 3);
+            this.buttonOpenFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonOpenFolder.Name = "buttonOpenFolder";
+            this.buttonOpenFolder.Size = new System.Drawing.Size(115, 25);
+            this.buttonOpenFolder.TabIndex = 3;
+            this.buttonOpenFolder.Text = "buttonOpenFolder";
+            this.buttonOpenFolder.UseVisualStyleBackColor = true;
+            this.buttonOpenFolder.Click += new System.EventHandler(this.ButtonOpenFolder_Click);
             // 
             // checkBoxUseIconFromRootFolder
             // 
@@ -3634,19 +3648,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
-            // 
-            // buttonOpenFolder
-            // 
-            this.buttonOpenFolder.AutoSize = true;
-            this.buttonOpenFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOpenFolder.Location = new System.Drawing.Point(276, 3);
-            this.buttonOpenFolder.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonOpenFolder.Name = "buttonOpenFolder";
-            this.buttonOpenFolder.Size = new System.Drawing.Size(115, 25);
-            this.buttonOpenFolder.TabIndex = 3;
-            this.buttonOpenFolder.Text = "buttonOpenFolder";
-            this.buttonOpenFolder.UseVisualStyleBackColor = true;
-            this.buttonOpenFolder.Click += new System.EventHandler(this.ButtonOpenFolder_Click);
             // 
             // SettingsForm
             // 
