@@ -556,7 +556,7 @@ namespace SystemTrayMenu.UserInterface
 
             tabControl.Size = new Size(
                 tabControl.Size.Width,
-                tableLayoutPanelGeneral.Size.Height + 50);
+                tableLayoutPanelAdvanced.Size.Height + (int)(50 * Scaling.Factor));
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
