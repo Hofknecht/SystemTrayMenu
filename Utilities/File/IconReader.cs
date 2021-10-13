@@ -430,7 +430,7 @@ namespace SystemTrayMenu.Utilities
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"filePath:'{filePath}'", ex);
+                    Log.Warn($"filePath:'{filePath}'", ex);
                 }
 
                 // Cleanup
