@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
+  <data name="buttonOk" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>Otomatik başlatma</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="Folder empty" xml:space="preserve">
+    <value>Klasör boş</value>
+  </data>
+  <data name="buttonDetails" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="buttonSystemInfo" xml:space="preserve">
+    <value>Sistem Bilgisi</value>
+  </data>
+  <data name="Folder inaccessible" xml:space="preserve">
+    <value>Klasöre erişilemiyor</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Log Dosyası</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Tekrar başlat</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Kısayol tuşu atanamadı.</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Genel</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Kısayol tuşu</value>
+  </data>
+  <data name="Launch on startup" xml:space="preserve">
+    <value>Başlangıçta çalıştır</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="HelpFAQ" xml:space="preserve">
+    <value>Yardım / SSS</value>
+  </data>
+  <data name="SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu</value>
+  </data>
+  <data name="TextFirstStart" xml:space="preserve">
+    <value>SSS bölümünü okuyun ve ardından SystemTrayMenu için bir kök dizin seçin.</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Uyarı</value>
+  </data>
+  <data name="Select Folder" xml:space="preserve">
+    <value>Klasör Seç</value>
+  </data>
+  <data name="MessageRootFolderEmpty" xml:space="preserve">
+    <value>SystemTrayMenu için ana klasörünüz mevcut değil veya boş! Ana klasöre birkaç dosya, klasör veya kısayol koyun veya ana klasörü değiştirin.</value>
+  </data>
+  <data name="MessageRootFolderNoAccess" xml:space="preserve">
+    <value>SystemTrayMenu için ana klasöre erişiminiz yok. Klasöre erişim izni verin veya ana klasörü değiştirin.</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Uzman</value>
+  </data>
+  <data name="Single click to start item" xml:space="preserve">
+    <value>Bir öğeyi açmak için çift tıklama yerine tek tıklama</value>
+  </data>
+  <data name="Dark Mode always active" xml:space="preserve">
+    <value>Karanlık Mod her zaman etkin</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Gelişmiş</value>
+  </data>
+  <data name="Appear at mouse location" xml:space="preserve">
+    <value>Fare konumunda görün</value>
+  </data>
+  <data name="Change folder" xml:space="preserve">
+    <value>Klasörü değiştir</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Tıklama</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Özelleştir</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Odak kaybolursa ve fare hala menüdeyse</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Fare üzerindeyken bir menü açılana kadar milisaniye</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Fare menüden ayrılırsa menü kapanana kadar milisaniye</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Piksel maksimum menü genişliği</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Boyut ve konum</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Açık kalır</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Bir menü açılana kadar geçen süre</value>
+  </data>
+  <data name="If an item was clicked" xml:space="preserve">
+    <value>Bir öğe tıklandığında</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Arka plan</value>
+  </data>
+  <data name="Opened folder" xml:space="preserve">
+    <value>Açılan klasör</value>
+  </data>
+  <data name="Border of opened folder" xml:space="preserve">
+    <value>Açılan klasörün kenarlığı</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Arama alanı</value>
+  </data>
+  <data name="Selected item" xml:space="preserve">
+    <value>Seçilen öğe</value>
+  </data>
+  <data name="Border of selected item" xml:space="preserve">
+    <value>Seçili öğenin kenarlığı</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Başlık</value>
+  </data>
+  <data name="Change to relative folder" xml:space="preserve">
+    <value>Göreli klasöre geç</value>
+  </data>
+  <data name="Store config at the assembly location" xml:space="preserve">
+    <value>Yapılandırmayı uygulama konumunda sakla</value>
+  </data>
+  <data name="USB" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Open the assembly location" xml:space="preserve">
+    <value>Uygulama konumunu aç</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Piksel maksimum menü yüksekliği</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Tıklandığında ok</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>Fare üzerindeyken ok</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Tıklandığında okun arka planı</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>Fare üzerindeyken okun arka planı</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>Renkler Karanlık Mod</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>Renkler Açık Mod</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Kaydırma çubuğu</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Kaydırıcı</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Sürüklerken kaydırıcı</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>Fare 1 üzerindeyken kaydırıcı</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>Fare 2 üzerindeyken kaydırıcı</value>
+  </data>
+  <data name="Use icon from folder" xml:space="preserve">
+    <value>Klasörün simgesini kullan</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Boy</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Menü kenarlığı</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Simgeler</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Sağ tık menüsüne göre ayarla</value>
+  </data>
+  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
+    <value>SystemTrayMenu klasörü olarak ayarla</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>yükleniyor</value>
+  </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>Kısayol ile ilgili sorun</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Bu kısayolun atıfta bulunduğu öğe değiştirildi veya taşındı, bu nedenle bu kısayol artık düzgün çalışmayacak.</value>
+  </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>Klasörü Aç</value>
+  </data>
+</root>

@@ -224,13 +224,12 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "Italiano", Value = "it" },
                     new Language() { Name = "Nederlands", Value = "nl" },
                     new Language() { Name = "Português (Brasil)", Value = "pt-BR" },
+                    new Language() { Name = "Turkish ", Value = "tr" },
                     new Language() { Name = "中文(简体)", Value = "zh-CN" },
                     new Language() { Name = "日本語", Value = "ja" },
                     new Language() { Name = "한국어", Value = "ko" },
                     new Language() { Name = "русский", Value = "ru" },
                     new Language() { Name = "Tiếng Việt", Value = "vi" },
-
-                    // new Language() { Name = "русский", Value = "ru" },
                 };
                 comboBoxLanguage.DataSource = dataSource;
                 comboBoxLanguage.DisplayMember = "Name";
