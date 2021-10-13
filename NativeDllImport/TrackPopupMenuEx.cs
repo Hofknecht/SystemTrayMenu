@@ -18,7 +18,6 @@ namespace SystemTrayMenu.DllImports
         [Flags]
         internal enum TPM : uint
         {
-#pragma warning disable SA1602 // Enumeration items should be documented
             LEFTBUTTON = 0x0000, // LEFTALIGN = 0x0000, // TOPALIGN = 0x0000, // HORIZONTAL = 0x0000,
             RIGHTBUTTON = 0x0002,
             CENTERALIGN = 0x0004,
@@ -35,7 +34,6 @@ namespace SystemTrayMenu.DllImports
             VERNEGANIMATION = 0x2000,
             NOANIMATION = 0x4000,
             LAYOUTRTL = 0x8000,
-#pragma warning restore SA1602 // Enumeration items should be documented
         }
 
         /// <summary>

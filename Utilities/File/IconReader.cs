@@ -10,9 +10,11 @@ namespace SystemTrayMenu.Utilities
     using System.Drawing;
     using System.Drawing.Imaging;
     using System.IO;
+    using System.Linq;
     using System.Runtime.InteropServices;
+    using System.Text;
     using System.Threading;
-    using System.Threading.Tasks;
+    using TAFactory.IconPack;
 
     // from https://www.codeproject.com/Articles/2532/Obtaining-and-managing-file-and-folder-icons-using
     // added ImageList_GetIcon, IconCache, AddIconOverlay
@@ -62,7 +64,81 @@ namespace SystemTrayMenu.Utilities
             return cleared;
         }
 
-        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, bool updateIconInBackground, out bool loading)
+        public static Icon GetExtractAllIconsLastWithCache(string filePath, bool updateIconInBackground, out bool loading)
+        {
+            bool linkOverlay = false;
+            loading = false;
+            string key = filePath;
+
+            string extension = Path.GetExtension(filePath);
+
+            if (IsExtensionWithSameIcon(extension))
+            {
+                key = extension + linkOverlay;
+            }
+
+            ClearBadIcons();
+
+            if (!DictIconCache.TryGetValue(key, out Icon icon))
+            {
+                icon = LoadingIcon;
+                loading = true;
+
+                if (updateIconInBackground)
+                {
+                    new Thread(UpdateIconInBackground).Start();
+                    void UpdateIconInBackground()
+                    {
+                        DictIconCache.GetOrAdd(key, GetExtractAllIconsLast);
+                    }
+                }
+            }
+
+            Icon GetExtractAllIconsLast(string keyExtension)
+            {
+                return GetExtractAllIconsLastSTA(filePath);
+            }
+
+            return icon;
+        }
+
+        public static Icon GetExtractAllIconsLastSTA(string filePath)
+        {
+            Icon icon = null;
+
+            if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
+            {
+                icon = GetExtractAllIconsLast(filePath);
+            }
+            else
+            {
+                Thread staThread = new Thread(new ParameterizedThreadStart(StaThreadMethod));
+                void StaThreadMethod(object obj)
+                {
+                    icon = GetExtractAllIconsLast(filePath);
+                }
+
+                staThread.SetApartmentState(ApartmentState.STA);
+                staThread.Start(icon);
+                staThread.Join();
+            }
+
+            static Icon GetExtractAllIconsLast(string filePath)
+            {
+                StringBuilder executable = new StringBuilder(1024);
+                DllImports.NativeMethods.Shell32FindExecutable(filePath, string.Empty, executable);
+
+                // icon = IconReader.GetFileIcon(executable, false);
+                // e.g. VS 2019 icon, need another icom in imagelist
+                List<Icon> extractedIcons = IconHelper.ExtractAllIcons(
+                    executable.ToString());
+                return extractedIcons.Last();
+            }
+
+            return icon;
+        }
+
+        public static Icon GetFileIconWithCache(string filePath, bool linkOverlay, bool updateIconInBackground, out bool loading, string keyPath = "")
         {
             loading = false;
             string extension = Path.GetExtension(filePath);
@@ -73,10 +149,17 @@ namespace SystemTrayMenu.Utilities
             }
 
             string key = filePath;
+            if (!string.IsNullOrEmpty(keyPath))
+            {
+                key = keyPath;
+            }
+
             if (IsExtensionWithSameIcon(extension))
             {
                 key = extension + linkOverlay;
             }
+
+            ClearBadIcons();
 
             if (!DictIconCache.TryGetValue(key, out Icon icon))
             {
@@ -101,6 +184,48 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
+        public static Icon GetFolderIconWithCache(string path, FolderType folderType, bool linkOverlay, bool updateIconInBackground, out bool loading)
+        {
+            loading = false;
+            IconSize size = IconSize.Small;
+
+            // with this we get another folder icon than windows explorer
+            // if (Scaling.Factor > 1)
+            // {
+            //    size = IconSize.Large;
+            // }
+            string key = path;
+
+            // Maybe we can reduce object when checking if a standard folder
+            // if (IsStandardFolderIcon(key))
+            // {
+            //    key = "folder" + linkOverlay;
+            // }
+            ClearBadIcons();
+
+            if (!DictIconCache.TryGetValue(key, out Icon icon))
+            {
+                icon = LoadingIcon;
+                loading = true;
+
+                if (updateIconInBackground)
+                {
+                    new Thread(UpdateIconInBackground).Start();
+                    void UpdateIconInBackground()
+                    {
+                        DictIconCache.GetOrAdd(key, GetFolder);
+                    }
+                }
+            }
+
+            Icon GetFolder(string keyExtension)
+            {
+                return GetFolderIconSTA(path, folderType, linkOverlay, size);
+            }
+
+            return icon;
+        }
+
         public static Icon GetFolderIconSTA(
             string directoryPath,
             FolderType folderType,
@@ -108,13 +233,30 @@ namespace SystemTrayMenu.Utilities
             IconSize size = IconSize.Small)
         {
             Icon icon = null;
+            if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
+            {
+                icon = GetFolderIcon(
+                    directoryPath,
+                    folderType,
+                    linkOverlay,
+                    size);
+            }
+            else
+            {
+                Thread staThread = new Thread(new ParameterizedThreadStart(StaThreadMethod));
+                void StaThreadMethod(object obj)
+                {
+                    icon = GetFolderIcon(
+                        directoryPath,
+                        folderType,
+                        linkOverlay,
+                        size);
+                }
 
-            Task<Icon> task = Task.Factory.StartNew(() => GetFolderIcon(
-                directoryPath,
-                folderType,
-                linkOverlay,
-                size));
-            icon = task.Result;
+                staThread.SetApartmentState(ApartmentState.STA);
+                staThread.Start(icon);
+                staThread.Join();
+            }
 
             return icon;
         }
@@ -182,18 +324,26 @@ namespace SystemTrayMenu.Utilities
             Icon icon = null;
             if (originalIcon != null)
             {
-                using Bitmap target = new Bitmap(
-                    originalIcon.Width,
-                    originalIcon.Height,
-                    PixelFormat.Format32bppArgb);
-                Graphics graphics = Graphics.FromImage(target);
+                using Bitmap target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
+                using Graphics graphics = Graphics.FromImage(target);
                 graphics.DrawIcon(originalIcon, 0, 0);
                 graphics.DrawIcon(overlay, 0, 0);
                 target.MakeTransparent(target.GetPixel(1, 1));
-                icon = Icon.FromHandle(target.GetHicon());
+                IntPtr hIcon = target.GetHicon();
+                icon = (Icon)Icon.FromHandle(hIcon).Clone();
+                DllImports.NativeMethods.User32DestroyIcon(hIcon);
             }
 
             return icon;
+        }
+
+        private static void ClearBadIcons()
+        {
+            IEnumerable<string> badKeysList = DictIconCache.Where(x => x.Value == null).Select(x => x.Key);
+            foreach (string badKey in badKeysList)
+            {
+                DictIconCache.Remove(badKey, out _);
+            }
         }
 
         private static bool IsExtensionWithSameIcon(string fileExtension)
@@ -213,8 +363,22 @@ namespace SystemTrayMenu.Utilities
         {
             Icon icon = null;
 
-            Task<Icon> task = Task.Factory.StartNew(() => GetFileIcon(filePath, linkOverlay, size));
-            icon = task.Result;
+            if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
+            {
+                icon = GetFileIcon(filePath, linkOverlay, size);
+            }
+            else
+            {
+                Thread staThread = new Thread(new ParameterizedThreadStart(StaThreadMethod));
+                void StaThreadMethod(object obj)
+                {
+                    icon = GetFileIcon(filePath, linkOverlay, size);
+                }
+
+                staThread.SetApartmentState(ApartmentState.STA);
+                staThread.Start(icon);
+                staThread.Join();
+            }
 
             return icon;
         }

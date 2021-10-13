@@ -545,7 +545,6 @@ namespace SystemTrayMenu.Business
                     foreach (DataGridViewRow row in dgv.Rows)
                     {
                         RowData rowData = (RowData)row.Cells[2].Value;
-                        rowData?.Dispose();
                         DisposeMenu(rowData.SubMenu);
                     }
                 }
@@ -759,13 +758,13 @@ namespace SystemTrayMenu.Business
 
             if (!AsEnumerable.Any(m => m.Visible))
             {
-                openCloseState = OpenCloseState.Default;
-
                 if (IconReader.ClearIfCacheTooBig())
                 {
                     GC.Collect();
                     MainPreload();
                 }
+
+                openCloseState = OpenCloseState.Default;
             }
         }
 

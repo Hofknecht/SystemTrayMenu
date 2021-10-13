@@ -295,7 +295,7 @@
             // 
             // timerUpdateIcons
             // 
-            this.timerUpdateIcons.Interval = 300;
+            this.timerUpdateIcons.Interval = 100;
             this.timerUpdateIcons.Tick += new System.EventHandler(this.TimerUpdateIcons_Tick);
             // 
             // Menu

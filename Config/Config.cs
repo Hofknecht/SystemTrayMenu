@@ -463,8 +463,8 @@ namespace SystemTrayMenu
 
         private static void UpgradeIfNotUpgraded()
         {
-            string path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
-            path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            // string path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
+            // path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             if (!Settings.Default.IsUpgraded)
             {
                 Settings.Default.Upgrade();

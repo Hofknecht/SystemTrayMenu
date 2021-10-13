@@ -17,7 +17,7 @@ namespace SystemTrayMenu.DataClasses
     using TAFactory.IconPack;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
-    internal class RowData : IDisposable
+    internal class RowData
     {
         private static readonly Icon White50PercentageIcon = Properties.Resources.White50Percentage;
         private static readonly Icon NotFoundIcon = Properties.Resources.NotFound;
@@ -26,8 +26,6 @@ namespace SystemTrayMenu.DataClasses
         private string arguments;
         private string text;
         private Icon icon;
-        private bool diposeIcon = true;
-        private bool isDisposed;
 
         internal RowData()
         {
@@ -59,13 +57,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IconLoading { get; set; }
 
-        public void Dispose()
-        {
-            Dispose(true);
-#if DEBUG
-            GC.SuppressFinalize(this);
-#endif
-        }
+        internal string FilePathIcon { get; set; }
 
         internal void SetText(string text)
         {
@@ -79,9 +71,7 @@ namespace SystemTrayMenu.DataClasses
 
             if (HiddenEntry)
             {
-                row[0] = IconReader.AddIconOverlay(
-                    data.icon,
-                    White50PercentageIcon);
+                row[0] = IconReader.AddIconOverlay(data.icon, White50PercentageIcon);
             }
             else
             {
@@ -111,10 +101,8 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (isDirectory)
             {
-                icon = IconReader.GetFolderIconSTA(
-                    TargetFilePath,
-                    IconReader.FolderType.Closed,
-                    false);
+                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Closed, false, true, out bool loading);
+                IconLoading = loading;
             }
             else
             {
@@ -138,18 +126,18 @@ namespace SystemTrayMenu.DataClasses
                 {
                     handled = SetSln();
                 }
+                else if (fileExtension == ".appref-ms")
+                {
+                    showOverlay = true;
+                }
 
                 if (!handled)
                 {
                     try
                     {
-                        icon = IconReader.GetFileIconWithCache(
-                            TargetFilePathOrig,
-                            showOverlay,
-                            true,
-                            out bool loading);
+                        FilePathIcon = TargetFilePathOrig;
+                        icon = IconReader.GetFileIconWithCache(FilePathIcon, showOverlay, true, out bool loading);
                         IconLoading = loading;
-                        diposeIcon = false;
                     }
                     catch (Exception ex)
                     {
@@ -215,8 +203,7 @@ namespace SystemTrayMenu.DataClasses
                 OpenItem(e, ref toCloseByDoubleClick);
             }
 
-            if (ContainsMenu &&
-                (e == null || e.Button == MouseButtons.Left))
+            if (ContainsMenu && (e == null || e.Button == MouseButtons.Left))
             {
                 Log.ProcessStart(TargetFilePath);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
@@ -228,39 +215,36 @@ namespace SystemTrayMenu.DataClasses
 
         internal Icon ReadLoadedIcon()
         {
-            bool showOverlay = false;
-            string fileExtension = Path.GetExtension(TargetFilePath);
-            if (fileExtension == ".lnk" || fileExtension == ".url")
+            if (ContainsMenu)
             {
-                showOverlay = true;
+                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Closed, false, false, out bool loading);
+                IconLoading = loading;
+            }
+            else
+            {
+                bool showOverlay = false;
+                string fileExtension = Path.GetExtension(TargetFilePath);
+                if (fileExtension == ".lnk" || fileExtension == ".url" || fileExtension == ".appref-ms")
+                {
+                    showOverlay = true;
+                }
+
+                string filePath = FilePathIcon;
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    filePath = TargetFilePathOrig;
+                }
+
+                icon = IconReader.GetFileIconWithCache(filePath, showOverlay, false, out bool loading);
+                IconLoading = loading;
             }
 
-            icon = IconReader.GetFileIconWithCache(
-                    TargetFilePathOrig,
-                    showOverlay,
-                    false,
-                    out bool loading);
-            IconLoading = loading;
-
-            if (!loading && icon == null)
+            if (!IconLoading && icon == null)
             {
                 icon = NotFoundIcon;
             }
 
             return icon;
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!isDisposed)
-            {
-                if (diposeIcon)
-                {
-                    icon?.Dispose();
-                }
-            }
-
-            isDisposed = true;
         }
 
         private void OpenItem(MouseEventArgs e, ref bool toCloseByOpenItem)
@@ -285,7 +269,8 @@ namespace SystemTrayMenu.DataClasses
 
             if (string.IsNullOrEmpty(Path.GetExtension(resolvedLnkPath)))
             {
-                icon = IconReader.GetFolderIconSTA(TargetFilePath, IconReader.FolderType.Open, true);
+                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Open, true, true, out bool loading);
+                IconLoading = loading;
                 handled = true;
                 isLnkDirectory = true;
             }
@@ -300,8 +285,7 @@ namespace SystemTrayMenu.DataClasses
             else
             {
                 IWshShell shell = new WshShell();
-                IWshShortcut lnk = shell.CreateShortcut(TargetFilePath)
-                    as IWshShortcut;
+                IWshShortcut lnk = shell.CreateShortcut(TargetFilePath) as IWshShortcut;
                 arguments = lnk.Arguments;
                 workingDirectory = lnk.WorkingDirectory;
                 TargetFilePath = resolvedLnkPath;
@@ -324,15 +308,17 @@ namespace SystemTrayMenu.DataClasses
                 {
                     if (FileUrl.GetDefaultBrowserPath(out string browserPath))
                     {
-                        icon = IconReader.GetFileIconWithCache(browserPath, true, true, out bool loading);
+                        FilePathIcon = browserPath;
+                        icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, out bool loading);
                         IconLoading = loading;
-                        diposeIcon = false;
                         handled = true;
                     }
                 }
                 else if (System.IO.File.Exists(iconFile))
                 {
-                    icon = Icon.ExtractAssociatedIcon(iconFile);
+                    FilePathIcon = iconFile;
+                    icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, out bool loading);
+                    IconLoading = loading;
                     handled = true;
                 }
                 else
@@ -342,10 +328,7 @@ namespace SystemTrayMenu.DataClasses
             }
             catch (Exception ex)
             {
-                Log.Warn(
-                    $"path:'{TargetFilePath}', " +
-                    $"iconFile:'{iconFile}'",
-                    ex);
+                Log.Warn($"path:'{TargetFilePath}', iconFile:'{iconFile}'", ex);
             }
 
             SetText($"{FileInfo.Name[0..^4]}");
@@ -356,24 +339,15 @@ namespace SystemTrayMenu.DataClasses
         private bool SetSln()
         {
             bool handled = false;
-            StringBuilder executable = new StringBuilder(1024);
             try
             {
-                DllImports.NativeMethods.Shell32FindExecutable(TargetFilePath, string.Empty, executable);
-
-                // icon = IconReader.GetFileIcon(executable, false);
-                // e.g. VS 2019 icon, need another icom in imagelist
-                List<Icon> extractedIcons = IconHelper.ExtractAllIcons(
-                    executable.ToString());
-                icon = extractedIcons.Last();
+                icon = IconReader.GetExtractAllIconsLastWithCache(TargetFilePathOrig, true, out bool loading);
+                IconLoading = loading;
                 handled = true;
             }
             catch (Exception ex)
             {
-                Log.Warn(
-                    $"path:'{TargetFilePath}', " +
-                    $"executable:'{executable}'",
-                    ex);
+                Log.Warn($"path:'{TargetFilePath}'", ex);
             }
 
             return handled;

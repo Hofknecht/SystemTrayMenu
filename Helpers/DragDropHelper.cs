@@ -85,7 +85,7 @@ namespace SystemTrayMenu.Helpers
             }
 
             title = Truncate(title, 128); // max 255
-            string Truncate(string value, int maxLength)
+            static string Truncate(string value, int maxLength)
             {
                 if (!string.IsNullOrEmpty(value) &&
                     value.Length > maxLength)

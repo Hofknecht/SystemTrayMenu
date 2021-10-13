@@ -1063,9 +1063,7 @@ namespace SystemTrayMenu.Utilities
                 int nResult = DllImports.NativeMethods.Shell32SHGetDesktopFolder(out IntPtr pUnkownDesktopFolder);
                 if (nResult != ResultOK)
                 {
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
                     throw new ShellContextMenuException("Failed to get the desktop shell folder");
-#pragma warning restore CA1303 //=> Exceptions not translated in logfile => OK
                 }
 
                 oDesktopFolder = (IShellFolder)Marshal.GetTypedObjectForIUnknown(pUnkownDesktopFolder, typeof(IShellFolder));

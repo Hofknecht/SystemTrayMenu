@@ -31,9 +31,7 @@ namespace SystemTrayMenu.Helper
         public void Dispose()
         {
             Dispose(true);
-#if DEBUG
             GC.SuppressFinalize(this);
-#endif
         }
 
         internal void CellMouseEnter(object sender, DataGridViewCellEventArgs newEventArgs)

@@ -54,9 +54,7 @@ namespace SystemTrayMenu.UserInterface
         public void Dispose()
         {
             Dispose(true);
-#if DEBUG
             GC.SuppressFinalize(this);
-#endif
         }
 
         internal void Fade(FadingState state)
