@@ -5,16 +5,12 @@
 namespace SystemTrayMenu.DataClasses
 {
     using System;
-    using System.Collections.Generic;
     using System.Data;
     using System.Drawing;
     using System.IO;
-    using System.Linq;
-    using System.Text;
     using System.Windows.Forms;
     using IWshRuntimeLibrary;
     using SystemTrayMenu.Utilities;
-    using TAFactory.IconPack;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class RowData

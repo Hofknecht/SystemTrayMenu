@@ -555,9 +555,11 @@ namespace SystemTrayMenu.Business
 
         internal void MainPreload()
         {
+            IconReader.SingleThread = true;
             menus[0] = Create(
                 GetData(workerMainMenu, Config.Path, 0),
                 Path.GetFileName(Config.Path));
+            IconReader.SingleThread = false;
             AdjustMenusSizeAndLocation();
             DisposeMenu(menus[0]);
 

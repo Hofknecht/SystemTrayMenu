@@ -17,10 +17,10 @@ namespace SystemTrayMenu.Helpers
         public static void DragEnter(object sender, DragEventArgs e)
         {
             object data = e.Data.GetData("UniformResourceLocator");
-            MemoryStream ms = data as MemoryStream;
-            if (ms != null)
+
+            if (data is MemoryStream memoryStream)
             {
-                byte[] bytes = ms.ToArray();
+                byte[] bytes = memoryStream.ToArray();
                 Encoding encod = Encoding.ASCII;
                 string url = encod.GetString(bytes);
                 if (!string.IsNullOrEmpty(url))
