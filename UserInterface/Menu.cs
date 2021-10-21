@@ -701,6 +701,7 @@ namespace SystemTrayMenu.UserInterface
 
             int foldersCount = 0;
             int filesCount = 0;
+            bool anyIconNotUpdated = false;
 
             foreach (DataGridViewRow row in dgv.Rows)
             {
@@ -715,11 +716,21 @@ namespace SystemTrayMenu.UserInterface
                 {
                     filesCount++;
                 }
+
+                if (rowData.IconLoading)
+                {
+                    anyIconNotUpdated = true;
+                }
             }
 
             SetCounts(foldersCount, filesCount);
 
             SearchTextChanged.Invoke(this, null);
+
+            if (anyIconNotUpdated)
+            {
+                timerUpdateIcons.Start();
+            }
         }
 
         private void PictureBox_MouseEnter(object sender, EventArgs e)
