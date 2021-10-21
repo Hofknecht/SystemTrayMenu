@@ -286,11 +286,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22000.194" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Svg" Version="3.2.3" />
+    <PackageReference Include="Svg" Version="3.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Packaging\AppPackages\" />
