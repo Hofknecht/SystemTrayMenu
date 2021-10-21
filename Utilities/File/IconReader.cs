@@ -25,7 +25,6 @@ namespace SystemTrayMenu.Utilities
         private static readonly ConcurrentDictionary<string, Icon> DictIconCache = new ConcurrentDictionary<string, Icon>();
         private static readonly Icon LoadingIcon = Properties.Resources.Loading;
 
-        // private static readonly object ReadIcon = new object();
         public enum IconSize
         {
             Large = 0, // 32x32 pixels
@@ -38,6 +37,7 @@ namespace SystemTrayMenu.Utilities
             Closed = 1,
         }
 
+        // see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
         public static bool SingleThread { get; set; }
 
         public static void Dispose()
@@ -73,6 +73,8 @@ namespace SystemTrayMenu.Utilities
             {
                 key = extension + linkOverlay;
             }
+
+            ClearBadIcons();
 
             if (!DictIconCache.TryGetValue(key, out Icon icon))
             {
@@ -154,6 +156,8 @@ namespace SystemTrayMenu.Utilities
                 key = extension + linkOverlay;
             }
 
+            ClearBadIcons();
+
             if (!DictIconCache.TryGetValue(key, out Icon icon))
             {
                 icon = LoadingIcon;
@@ -209,6 +213,8 @@ namespace SystemTrayMenu.Utilities
             IconSize size = IconSize.Small;
 
             string key = path;
+
+            ClearBadIcons();
 
             if (!DictIconCache.TryGetValue(key, out Icon icon))
             {
@@ -349,6 +355,21 @@ namespace SystemTrayMenu.Utilities
             }
 
             return icon;
+        }
+
+        /// <summary>
+        /// Clear icons which are null.
+        /// see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
+        /// This only happens with the MainPreload method. SingleThread had only partially solved it before.
+        /// It is unclear exactly where the problem comes from, because it never seems to be null later.
+        /// </summary>
+        private static void ClearBadIcons()
+        {
+            IEnumerable<string> badKeysList = DictIconCache.Where(x => x.Value == null).Select(x => x.Key);
+            foreach (string badKey in badKeysList)
+            {
+                DictIconCache.Remove(badKey, out _);
+            }
         }
 
         private static bool IsExtensionWithSameIcon(string fileExtension)
