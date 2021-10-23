@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>У вас нет доступа к корневой папке для SystemTrayMenu. Разрешите доступ к папке или измените корневую папку.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>Эксперт</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Один щелчок, чтобы открыть элемент, вместо двойного щелчка</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Открыть папку</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Активирован</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Деактивировано</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>Диспетчер задач</value>
   </data>
 </root>

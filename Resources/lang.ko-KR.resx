@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>SystemTrayMenu의 루트 폴더에 액세스 할 수 없습니다. 폴더에 대한 액세스 권한을 부여하거나 루트 폴더를 변경하십시오.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>전문가</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>두 번 클릭하는 대신 한 번 클릭하여 항목을 엽니 다.</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>폴더 열기</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>활성화됨</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>비활성화됨</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>작업 관리자</value>
   </data>
 </root>

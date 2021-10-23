@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>Bạn không có quyền truy cập vào thư mục gốc cho SystemTrayMenu. Cấp quyền truy cập vào thư mục hoặc thay đổi thư mục gốc.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>Chuyên gia</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Nhấp một lần để mở một mục thay vì nhấp đúp</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Mở thư mục</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Đã kích hoạt</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Đã hủy kích hoạt</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>Quản lý công việc</value>
   </data>
 </root>

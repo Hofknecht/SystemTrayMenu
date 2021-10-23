@@ -50,7 +50,9 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxStoreConfigAtAssemblyLocation = new System.Windows.Forms.CheckBox();
             this.groupBoxAutostart = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelAutostart = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonAddTaskManagerStartupTask = new System.Windows.Forms.Button();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
+            this.labelStartupTaskStatus = new System.Windows.Forms.Label();
             this.groupBoxHotkey = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelHotkey = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxHotkeyPlaceholder = new System.Windows.Forms.TextBox();
@@ -264,7 +266,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.buttonAddTaskManagerStartupTask = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -682,6 +683,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelAutostart.Controls.Add(this.buttonAddTaskManagerStartupTask, 0, 0);
             this.tableLayoutPanelAutostart.Controls.Add(this.checkBoxAutostart, 0, 0);
+            this.tableLayoutPanelAutostart.Controls.Add(this.labelStartupTaskStatus, 2, 0);
             this.tableLayoutPanelAutostart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelAutostart.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanelAutostart.Name = "tableLayoutPanelAutostart";
@@ -689,6 +691,19 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAutostart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelAutostart.Size = new System.Drawing.Size(394, 31);
             this.tableLayoutPanelAutostart.TabIndex = 0;
+            // 
+            // buttonAddTaskManagerStartupTask
+            // 
+            this.buttonAddTaskManagerStartupTask.AutoSize = true;
+            this.buttonAddTaskManagerStartupTask.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAddTaskManagerStartupTask.Location = new System.Drawing.Point(135, 3);
+            this.buttonAddTaskManagerStartupTask.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonAddTaskManagerStartupTask.Name = "buttonAddTaskManagerStartupTask";
+            this.buttonAddTaskManagerStartupTask.Size = new System.Drawing.Size(204, 25);
+            this.buttonAddTaskManagerStartupTask.TabIndex = 1;
+            this.buttonAddTaskManagerStartupTask.Text = "buttonAddTaskManagerStartupTask";
+            this.buttonAddTaskManagerStartupTask.UseVisualStyleBackColor = true;
+            this.buttonAddTaskManagerStartupTask.Click += new System.EventHandler(this.ButtonAddTaskManagerStartupTask_Click);
             // 
             // checkBoxAutostart
             // 
@@ -700,6 +715,16 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxAutostart.TabIndex = 0;
             this.checkBoxAutostart.Text = "checkBoxAutostart";
             this.checkBoxAutostart.UseVisualStyleBackColor = true;
+            // 
+            // labelStartupTaskStatus
+            // 
+            this.labelStartupTaskStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelStartupTaskStatus.AutoSize = true;
+            this.labelStartupTaskStatus.Location = new System.Drawing.Point(345, 0);
+            this.labelStartupTaskStatus.Name = "labelStartupTaskStatus";
+            this.labelStartupTaskStatus.Size = new System.Drawing.Size(46, 31);
+            this.labelStartupTaskStatus.TabIndex = 2;
+            this.labelStartupTaskStatus.Text = "labelStartupTaskStatus";
             // 
             // groupBoxHotkey
             // 
@@ -3653,19 +3678,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
-            // buttonAddTaskManagerStartupTask
-            // 
-            this.buttonAddTaskManagerStartupTask.AutoSize = true;
-            this.buttonAddTaskManagerStartupTask.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAddTaskManagerStartupTask.Location = new System.Drawing.Point(135, 3);
-            this.buttonAddTaskManagerStartupTask.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonAddTaskManagerStartupTask.Name = "buttonAddTaskManagerStartupTask";
-            this.buttonAddTaskManagerStartupTask.Size = new System.Drawing.Size(204, 25);
-            this.buttonAddTaskManagerStartupTask.TabIndex = 1;
-            this.buttonAddTaskManagerStartupTask.Text = "buttonAddTaskManagerStartupTask";
-            this.buttonAddTaskManagerStartupTask.UseVisualStyleBackColor = true;
-            this.buttonAddTaskManagerStartupTask.Click += new System.EventHandler(this.ButtonAddTaskManagerStartupTask_Click);
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4122,5 +4134,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.CheckBox checkBoxPossibilityToSelectFolderByWindowsContextMenu;
         private System.Windows.Forms.Button buttonOpenFolder;
         private System.Windows.Forms.Button buttonAddTaskManagerStartupTask;
+        private System.Windows.Forms.Label labelStartupTaskStatus;
     }
 }

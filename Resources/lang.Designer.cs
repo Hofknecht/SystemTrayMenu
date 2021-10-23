@@ -70,6 +70,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activated.
+        /// </summary>
+        internal static string Activated {
+            get {
+                return ResourceManager.GetString("Activated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced.
         /// </summary>
         internal static string Advanced {
@@ -286,6 +295,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deactivated.
+        /// </summary>
+        internal static string Deactivated {
+            get {
+                return ResourceManager.GetString("Deactivated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default.
         /// </summary>
         internal static string Default {
@@ -300,15 +318,6 @@ namespace SystemTrayMenu.Resources {
         internal static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Expert.
-        /// </summary>
-        internal static string Expert {
-            get {
-                return ResourceManager.GetString("Expert", resourceCulture);
             }
         }
         
@@ -688,6 +697,15 @@ namespace SystemTrayMenu.Resources {
         internal static string SystemTrayMenu {
             get {
                 return ResourceManager.GetString("SystemTrayMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task Manger.
+        /// </summary>
+        internal static string Task_Manger {
+            get {
+                return ResourceManager.GetString("Task Manger", resourceCulture);
             }
         }
         

@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>Nemáte přístup do kořenové složky pro SystemTrayMenu. Udělte přístup ke složce nebo změňte kořenovou složku.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Jediným kliknutím otevřete položku namísto dvojitého kliknutí</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Otevřete složku</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktivováno</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Deaktivováno</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>Správce úloh</value>
   </data>
 </root>

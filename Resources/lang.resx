@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Single click to open an item instead of double click</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Open Folder</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>Task Manger</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Deactivated</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Activated</value>
   </data>
 </root>

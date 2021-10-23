@@ -118,6 +118,11 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at the assembly location");
                 buttonOpenAssemblyLocation.Text = Translator.GetText("Open the assembly location");
                 groupBoxAutostart.Text = Translator.GetText("Autostart");
+                if (IsStartupTask())
+                {
+                    groupBoxAutostart.Text += $" ({Translator.GetText("Task Manger")})";
+                }
+
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
                 buttonAddTaskManagerStartupTask.Text = Translator.GetText("Launch on startup");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
@@ -204,17 +209,15 @@ namespace SystemTrayMenu.UserInterface
             InitializeAutostart();
             void InitializeAutostart()
             {
-                bool useStartupTask = false;
-#if RELEASEPACKAGE
-                useStartupTask = true;
-#endif
-                if (useStartupTask)
+                if (IsStartupTask())
                 {
                     checkBoxAutostart.Visible = false;
+                    labelStartupTaskStatus.Text = string.Empty;
                 }
                 else
                 {
                     buttonAddTaskManagerStartupTask.Visible = false;
+                    labelStartupTaskStatus.Visible = false;
                     checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
                 }
             }
@@ -575,9 +578,12 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonOk_Click(object sender, EventArgs e)
         {
             Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.Checked;
-#if !RELEASEPACKAGE
-            SaveAutostartRegistryEntry();
-#endif
+
+            if (!IsStartupTask())
+            {
+                SaveAutostartRegistryEntry();
+            }
+
             SaveHotkey();
             void SaveHotkey()
             {
@@ -657,7 +663,7 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonAddTaskManagerStartupTask_Click(object sender, EventArgs e)
         {
             _ = AddStartUpAsync();
-            static async Task AddStartUpAsync()
+            async Task AddStartUpAsync()
             {
                 // Pass the task ID you specified in the appxmanifest file
                 StartupTask startupTask = await StartupTask.GetAsync("MyStartupId");
@@ -666,21 +672,41 @@ namespace SystemTrayMenu.UserInterface
                 switch (startupTask.State)
                 {
                     case StartupTaskState.Enabled:
+                    case StartupTaskState.EnabledByPolicy:
+                        UpdateLabelStartupStatus(startupTask.State);
                         break;
                     case StartupTaskState.Disabled:
                         // Task is disabled but can be enabled.
                         StartupTaskState newState = await startupTask.RequestEnableAsync();
+                        UpdateLabelStartupStatus(newState);
                         break;
                     case StartupTaskState.DisabledByUser:
-                        Log.Info($"Please enable autostart via Task Manager.");
+                        UpdateLabelStartupStatus(startupTask.State);
                         break;
                     case StartupTaskState.DisabledByPolicy:
-                        Log.Info($"Autostart disabled by policy. Please add autostart manually, see issue #131");
+                        UpdateLabelStartupStatus(startupTask.State);
                         break;
-                    case StartupTaskState.EnabledByPolicy:
                     default:
                         break;
                 }
+            }
+        }
+
+        private void UpdateLabelStartupStatus(StartupTaskState newState)
+        {
+            switch (newState)
+            {
+                case StartupTaskState.Disabled:
+                case StartupTaskState.DisabledByUser:
+                case StartupTaskState.DisabledByPolicy:
+                    labelStartupTaskStatus.Text = Translator.GetText("Deactivated");
+                    break;
+                case StartupTaskState.Enabled:
+                case StartupTaskState.EnabledByPolicy:
+                    labelStartupTaskStatus.Text = Translator.GetText("Activated");
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -904,6 +930,15 @@ namespace SystemTrayMenu.UserInterface
             {
                 e.Handled = e.SuppressKeyPress = true;
             }
+        }
+
+        private bool IsStartupTask()
+        {
+            bool useStartupTask = false;
+#if RELEASEPACKAGE
+            useStartupTask = true;
+#endif
+            return useStartupTask;
         }
     }
 }

@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>SystemTrayMenu のルート フォルダーにアクセスできません。 フォルダーへのアクセスを許可するか、ルート フォルダーを変更します。</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>エキスパート</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>ダブルクリックではなく、シングルクリックでアイテムを開きます</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>開いたフォルダ</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>有効化</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>非アクティブ化</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>タスクマネージャー</value>
   </data>
 </root>

@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>Você não possui acesso à pasta raiz para o SystemTrayMenu. Conceda acesso à pasta ou mude a pasta raiz.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Clique uma vez para abrir um item em vez de clicar duas vezes</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Abra Pasta</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Ativado</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Desativado</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>Gerenciador de tarefas</value>
   </data>
 </root>

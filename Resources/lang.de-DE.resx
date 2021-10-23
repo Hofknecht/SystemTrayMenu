@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>Du hast keine Rechte für den Hauptordner. Gewähre die Rechte oder ändere den Hauptordner.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>Experte</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Öffnen durch einfachen Klick anstelle eines Doppelklicks</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Ordner öffnen</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktiviert</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Deaktiviert</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>Taskmanager</value>
   </data>
 </root>

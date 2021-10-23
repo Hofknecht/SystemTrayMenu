@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>Vous n'avez pas accès au répertoire des raccourcis. Donnez les droits ou changez de répertoire.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Un simple clic pour ouvrir un élément au lieu d'un double clic</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Ouvrez de dossier</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Activé</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Désactivé</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>Gestionnaire des tâches</value>
   </data>
 </root>

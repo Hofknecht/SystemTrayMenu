@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>U heeft geen toegang tot de hoofdmap voor het SystemTrayMenu. Verleen toegang tot de map of wijzig de hoofdmap.</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>Enkele klik om een item te openen in plaats van dubbelklikken</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Open Map</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Geactiveerd</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Gedeactiveerd</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>Taakbeheer</value>
   </data>
 </root>

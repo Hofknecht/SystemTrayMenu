@@ -192,9 +192,6 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>您无权访问 SystemTrayMenu 的根文件夹。 授予对该文件夹的访问权限或更改根文件夹。</value>
   </data>
-  <data name="Expert" xml:space="preserve">
-    <value>专家</value>
-  </data>
   <data name="Single click to start item" xml:space="preserve">
     <value>单击以打开项目而不是双击</value>
   </data>
@@ -347,5 +344,14 @@
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>打开文件夹</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>活性</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>停用</value>
+  </data>
+  <data name="Task Manger" xml:space="preserve">
+    <value>任务管理器</value>
   </data>
 </root>
