@@ -337,7 +337,7 @@
     <value>加载</value>
   </data>
   <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem with Shortcut</value>
+    <value>快捷方式问题</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>此快捷方式所指的项目已被更改或移动，因此此快捷方式将不再正常工作。</value>

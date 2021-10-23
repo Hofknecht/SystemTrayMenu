@@ -39,6 +39,7 @@ namespace SystemTrayMenu.UserInterface
             buttonOk.Text = Translator.GetText("buttonOk");
             buttonDetails.Text = Translator.GetText("buttonDetails");
             buttonSystemInfo.Text = Translator.GetText("buttonSystemInfo");
+            Text = Translator.GetText("About");
         }
 
         // <summary>
