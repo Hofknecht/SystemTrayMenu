@@ -6,22 +6,23 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 {
     using System;
 
+    /// <summary>
+    /// WindowWrapper.
+    /// </summary>
     public class WindowWrapper : System.Windows.Forms.IWin32Window
     {
-        private readonly IntPtr hwnd;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowWrapper"/> class.
         /// </summary>
         /// <param name="handle">Handle to wrap.</param>
         public WindowWrapper(IntPtr handle)
         {
-            hwnd = handle;
+            Handle = handle;
         }
 
         /// <summary>
         /// Gets original ptr.
         /// </summary>
-        public IntPtr Handle => hwnd;
+        public IntPtr Handle { get; }
     }
 }

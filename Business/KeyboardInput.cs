@@ -41,6 +41,7 @@ namespace SystemTrayMenu.Handler
 
         internal bool InUse { get; set; }
 
+        /// <inheritdoc/>
         public void Dispose()
         {
             hook.Dispose();

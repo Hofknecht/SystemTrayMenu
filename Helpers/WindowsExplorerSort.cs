@@ -8,6 +8,7 @@ namespace SystemTrayMenu.Helper
 
     internal class WindowsExplorerSort : IComparer<string>
     {
+        /// <inheritdoc/>
         public int Compare(string x, string y)
         {
             return DllImports.NativeMethods.ShlwapiStrCmpLogicalW(x, y);

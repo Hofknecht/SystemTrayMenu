@@ -51,6 +51,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool IsHiding => state == FadingState.Hide;
 
+        /// <inheritdoc/>
         public void Dispose()
         {
             Dispose(true);

@@ -39,6 +39,7 @@ namespace SystemTrayMenu.Handler
 
         internal bool MouseActive { get; set; }
 
+        /// <inheritdoc/>
         public void Dispose()
         {
             timerStartLoad.Stop();

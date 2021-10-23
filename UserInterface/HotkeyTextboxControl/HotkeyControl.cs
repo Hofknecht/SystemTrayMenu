@@ -485,6 +485,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             Redraw(true);
         }
 
+        /// <inheritdoc/>
         public override string ToString()
         {
             return HotkeyToString(HotkeyModifiers, Hotkey);

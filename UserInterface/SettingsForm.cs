@@ -18,16 +18,21 @@ namespace SystemTrayMenu.UserInterface
     using Windows.ApplicationModel;
     using static SystemTrayMenu.UserInterface.HotkeyTextboxControl.HotkeyControl;
 
+    /// <summary>
+    /// SettingsForm.
+    /// </summary>
     public partial class SettingsForm : Form
     {
         private const string MenuName = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder";
         private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
 
         private static readonly Icon SystemTrayMenu = Resources.SystemTrayMenu;
-        private readonly string newHotKey = string.Empty;
         private readonly ColorConverter colorConverter = new ColorConverter();
         private bool inHotkey;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SettingsForm"/> class.
+        /// </summary>
         public SettingsForm()
         {
             InitializeComponent();
@@ -362,7 +367,10 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
         }
 
-        public string NewHotKey => newHotKey;
+        /// <summary>
+        /// Gets NewHotKey.
+        /// </summary>
+        public string NewHotKey { get; } = string.Empty;
 
         /// <summary>
         /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
@@ -373,6 +381,7 @@ namespace SystemTrayMenu.UserInterface
             return RegisterHotkeys(false);
         }
 
+        /// <inheritdoc/>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -564,6 +573,15 @@ namespace SystemTrayMenu.UserInterface
             {
                 Log.Warn("DeletePossibilityToSelectFolderByWindowsContextMenu failed", ex);
             }
+        }
+
+        private static bool IsStartupTask()
+        {
+            bool useStartupTask = false;
+#if RELEASEPACKAGE
+            useStartupTask = true;
+#endif
+            return useStartupTask;
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
@@ -930,15 +948,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 e.Handled = e.SuppressKeyPress = true;
             }
-        }
-
-        private bool IsStartupTask()
-        {
-            bool useStartupTask = false;
-#if RELEASEPACKAGE
-            useStartupTask = true;
-#endif
-            return useStartupTask;
         }
     }
 }

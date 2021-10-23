@@ -193,6 +193,7 @@ namespace SystemTrayMenu.UserInterface
         internal bool IsUsable => Visible && !fading.IsHiding &&
             !IsDisposed && !Disposing;
 
+        /// <inheritdoc/>
         protected override CreateParams CreateParams
         {
             get
@@ -482,6 +483,7 @@ namespace SystemTrayMenu.UserInterface
             labelFilesCount.Text = filesCount.ToString();
         }
 
+        /// <inheritdoc/>
         protected override bool ProcessCmdKey(ref Message msg, Keys keys)
         {
             switch (keys)

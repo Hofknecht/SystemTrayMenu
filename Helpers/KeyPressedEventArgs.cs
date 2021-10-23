@@ -12,16 +12,15 @@ namespace SystemTrayMenu.Helper
     /// </summary>
     internal class KeyPressedEventArgs : EventArgs
     {
-        private readonly KeyboardHookModifierKeys modifier;
         private readonly Keys key;
 
         internal KeyPressedEventArgs(KeyboardHookModifierKeys modifier, Keys key)
         {
-            this.modifier = modifier;
+            this.Modifier = modifier;
             this.key = key;
         }
 
-        internal KeyboardHookModifierKeys Modifier => modifier;
+        internal KeyboardHookModifierKeys Modifier { get; }
 
         internal Keys Key => key;
     }

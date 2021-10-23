@@ -31,7 +31,6 @@ namespace SystemTrayMenu.UserInterface
         private string entryAssemblyName;
         private string callingAssemblyName;
         private string executingAssemblyName;
-        private Assembly entryAssembly;
         private NameValueCollection entryAssemblyAttribCollection;
 
         public AboutBox()
@@ -49,11 +48,7 @@ namespace SystemTrayMenu.UserInterface
         // This is usually read-only, but in some weird cases (Smart Client apps)
         // you won't have an entry assembly, so you may want to set this manually.
         // </remarks>
-        public Assembly AppEntryAssembly
-        {
-            get => entryAssembly;
-            set => entryAssembly = value;
-        }
+        public Assembly AppEntryAssembly { get; set; }
 
         // <summary>
         // single line of text to show in the application title section of the about box dialog
@@ -585,7 +580,7 @@ namespace SystemTrayMenu.UserInterface
         private void PopulateLabels()
         {
             // get entry assembly attribs
-            entryAssemblyAttribCollection = AssemblyAttribs(entryAssembly);
+            entryAssemblyAttribCollection = AssemblyAttribs(AppEntryAssembly);
 
             // set icon from parent, if present
             if (Owner != null)
@@ -646,14 +641,14 @@ namespace SystemTrayMenu.UserInterface
         private void AboutBox_Load(object sender, EventArgs e)
         {
             // if the user didn't provide an assembly, try to guess which one is the entry assembly
-            if (entryAssembly == null)
+            if (AppEntryAssembly == null)
             {
-                entryAssembly = Assembly.GetEntryAssembly();
+                AppEntryAssembly = Assembly.GetEntryAssembly();
             }
 
-            if (entryAssembly == null)
+            if (AppEntryAssembly == null)
             {
-                entryAssembly = Assembly.GetExecutingAssembly();
+                AppEntryAssembly = Assembly.GetExecutingAssembly();
             }
 
             executingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
