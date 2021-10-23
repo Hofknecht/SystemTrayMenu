@@ -119,6 +119,7 @@ namespace SystemTrayMenu.UserInterface
                 buttonOpenAssemblyLocation.Text = Translator.GetText("Open the assembly location");
                 groupBoxAutostart.Text = Translator.GetText("Autostart");
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
+                buttonAddTaskManagerStartupTask.Text = Translator.GetText("Launch on startup");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
                 buttonHotkeyDefault.Text = Translator.GetText("Default");
                 groupBoxLanguage.Text = Translator.GetText("Language");
@@ -203,14 +204,19 @@ namespace SystemTrayMenu.UserInterface
             InitializeAutostart();
             void InitializeAutostart()
             {
-                checkBoxAutostart.Checked =
-                    Settings.Default.IsAutostartActivated;
+                bool useStartupTask = false;
 #if RELEASEPACKAGE
-                if (Settings.Default.IsAutostartActivated)
-                {
-                    checkBoxAutostart.Enabled = false;
-                }
+                useStartupTask = true;
 #endif
+                if (useStartupTask)
+                {
+                    checkBoxAutostart.Visible = false;
+                }
+                else
+                {
+                    buttonAddTaskManagerStartupTask.Visible = false;
+                    checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
+                }
             }
 
             InitializeHotkey();
@@ -568,84 +574,21 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonOk_Click(object sender, EventArgs e)
         {
-            Settings.Default.UseIconFromRootFolder =
-                checkBoxUseIconFromRootFolder.Checked;
-
-            _ = SaveAutostartAsync().Wait(8000);
-            async Task SaveAutostartAsync()
-            {
-                bool useStartupTask = false;
-#if RELEASEPACKAGE
-                useStartupTask = true;
+            Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.Checked;
+#if !RELEASEPACKAGE
+            SaveAutostartRegistryEntry();
 #endif
-                if (checkBoxAutostart.Checked)
-                {
-                    if (useStartupTask)
-                    {
-                        // Pass the task ID you specified in the appxmanifest file
-                        StartupTask startupTask = await StartupTask.GetAsync("MyStartupId");
-                        Log.Info($"Autostart {startupTask.State}.");
-
-                        switch (startupTask.State)
-                        {
-                            case StartupTaskState.Enabled:
-                                break;
-                            case StartupTaskState.Disabled:
-                                // Task is disabled but can be enabled.
-                                StartupTaskState newState = await startupTask.RequestEnableAsync();
-                                break;
-                            case StartupTaskState.DisabledByUser:
-                                Log.Info($"Please enable autostart via Task Manager.");
-                                break;
-                            case StartupTaskState.DisabledByPolicy:
-                                Log.Info($"Autostart disabled by policy. Please add autostart manually, see issue #131");
-                                break;
-                            case StartupTaskState.EnabledByPolicy:
-                            default:
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                                @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                        key.SetValue(
-                            Assembly.GetExecutingAssembly().GetName().Name,
-                            System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-                    }
-
-                    Settings.Default.IsAutostartActivated = true;
-                }
-                else
-                {
-                    if (useStartupTask)
-                    {
-                        // when added by StartupTask, then only possible to disable autostart via Task Manager.
-                    }
-                    else
-                    {
-                        RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                        key.DeleteValue("SystemTrayMenu", false);
-                    }
-
-                    Settings.Default.IsAutostartActivated = false;
-                }
-            }
-
             SaveHotkey();
             void SaveHotkey()
             {
-                Settings.Default.HotKey =
-                    new KeysConverter().ConvertToInvariantString(
+                Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(
                     textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             }
 
             SaveLanguage();
             void SaveLanguage()
             {
-                Settings.Default.CurrentCultureInfoName =
-                    comboBoxLanguage.SelectedValue.ToString();
+                Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
                 Translator.Initialize();
             }
 
@@ -687,6 +630,58 @@ namespace SystemTrayMenu.UserInterface
 
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void SaveAutostartRegistryEntry()
+        {
+            if (checkBoxAutostart.Checked)
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                key.SetValue(
+                    Assembly.GetExecutingAssembly().GetName().Name,
+                    System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+
+                Settings.Default.IsAutostartActivated = true;
+            }
+            else
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                key.DeleteValue("SystemTrayMenu", false);
+
+                Settings.Default.IsAutostartActivated = false;
+            }
+        }
+
+        private void ButtonAddTaskManagerStartupTask_Click(object sender, EventArgs e)
+        {
+            _ = AddStartUpAsync();
+            static async Task AddStartUpAsync()
+            {
+                // Pass the task ID you specified in the appxmanifest file
+                StartupTask startupTask = await StartupTask.GetAsync("MyStartupId");
+                Log.Info($"Autostart {startupTask.State}.");
+
+                switch (startupTask.State)
+                {
+                    case StartupTaskState.Enabled:
+                        break;
+                    case StartupTaskState.Disabled:
+                        // Task is disabled but can be enabled.
+                        StartupTaskState newState = await startupTask.RequestEnableAsync();
+                        break;
+                    case StartupTaskState.DisabledByUser:
+                        Log.Info($"Please enable autostart via Task Manager.");
+                        break;
+                    case StartupTaskState.DisabledByPolicy:
+                        Log.Info($"Autostart disabled by policy. Please add autostart manually, see issue #131");
+                        break;
+                    case StartupTaskState.EnabledByPolicy:
+                    default:
+                        break;
+                }
+            }
         }
 
         private void ButtonHotkeyDefault_Click(object sender, EventArgs e)
