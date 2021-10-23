@@ -20,7 +20,6 @@ namespace SystemTrayMenu.Handler
 
         public event EventHandlerEmpty LeaveTriggered;
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             timerLeaveCheck.Dispose();

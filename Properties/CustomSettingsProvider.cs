@@ -222,6 +222,31 @@ namespace SystemTrayMenu.Properties
             return isconfigPathAssembly;
         }
 
+        private static XDocument LoadOrGetNew(string path)
+        {
+            XDocument xDocument = null;
+            try
+            {
+                xDocument = XDocument.Load(path);
+            }
+            catch (Exception exceptionWarning)
+            {
+                Log.Warn($"Could not load {path}", exceptionWarning);
+                try
+                {
+                    File.Delete(path);
+                    CreateEmptyConfigIfNotExists(path);
+                    xDocument = XDocument.Load(path);
+                }
+                catch (Exception exceptionError)
+                {
+                    Log.Error($"Could not delete and create {path}", exceptionError);
+                }
+            }
+
+            return xDocument;
+        }
+
         /// <summary>
         /// Loads the values of the file into memory.
         /// </summary>
@@ -258,31 +283,6 @@ namespace SystemTrayMenu.Properties
                     SettingsDictionary.Add(element.Attribute(NameOf).Value, newSetting);
                 }
             }
-        }
-
-        private XDocument LoadOrGetNew(string path)
-        {
-            XDocument xDocument = null;
-            try
-            {
-                xDocument = XDocument.Load(path);
-            }
-            catch (Exception exceptionWarning)
-            {
-                Log.Warn($"Could not load {path}", exceptionWarning);
-                try
-                {
-                    File.Delete(path);
-                    CreateEmptyConfigIfNotExists(path);
-                    xDocument = XDocument.Load(path);
-                }
-                catch (Exception exceptionError)
-                {
-                    Log.Error($"Could not delete and create {path}", exceptionError);
-                }
-            }
-
-            return xDocument;
         }
 
         /// <summary>

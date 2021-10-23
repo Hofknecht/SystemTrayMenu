@@ -41,7 +41,6 @@ namespace SystemTrayMenu.Helper
         /// </summary>
         internal event EventHandler<KeyPressedEventArgs> KeyPressed;
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             // unregister all the registered hot keys.

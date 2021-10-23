@@ -6,9 +6,6 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 {
     using System;
 
-    /// <summary>
-    /// WindowWrapper.
-    /// </summary>
     public class WindowWrapper : System.Windows.Forms.IWin32Window
     {
         /// <summary>

@@ -80,7 +80,6 @@ namespace SystemTrayMenu.UserInterface
 
         public event EventHandlerEmpty Exit;
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             notifyIcon.Icon = null;

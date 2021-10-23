@@ -30,13 +30,11 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
         /// </summary>
         public string Folder { get; set; }
 
-        /// <inheritdoc/>
         public DialogResult ShowDialog()
         {
             return ShowDialog(owner: new WindowWrapper(IntPtr.Zero));
         }
 
-        /// <inheritdoc/>
         public DialogResult ShowDialog(IWin32Window owner)
         {
             if (Environment.OSVersion.Version.Major >= 6)
@@ -49,7 +47,6 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             }
         }
 
-        /// <inheritdoc/>
         public DialogResult ShowVistaDialog(IWin32Window owner)
         {
             NativeMethods.IFileDialog frm = (NativeMethods.IFileDialog)new NativeMethods.FileOpenDialogRCW();
@@ -113,7 +110,6 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             return DialogResult.Cancel;
         }
 
-        /// <inheritdoc/>
         public DialogResult ShowLegacyDialog(IWin32Window owner)
         {
             using SaveFileDialog frm = new SaveFileDialog
@@ -143,7 +139,6 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             }
         }
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             Dispose(true);

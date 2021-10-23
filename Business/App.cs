@@ -18,9 +18,6 @@ namespace SystemTrayMenu
         private readonly AppNotifyIcon menuNotifyIcon = new AppNotifyIcon();
         private readonly Menus menus = new Menus();
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="App"/> class.
-        /// </summary>
         public App()
         {
             AppRestart.BeforeRestarting += Dispose;
@@ -39,7 +36,6 @@ namespace SystemTrayMenu
             menus.MainPreload();
         }
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             SystemEvents.DisplaySettingsChanged -= AppRestart.ByDisplaySettings;

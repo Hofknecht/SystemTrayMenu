@@ -21,7 +21,6 @@ namespace SystemTrayMenu.UserInterface
     {
         private string text;
 
-        /// <inheritdoc/>
         public override string Text
         {
             get => text;

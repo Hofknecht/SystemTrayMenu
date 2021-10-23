@@ -18,9 +18,6 @@ namespace SystemTrayMenu.UserInterface
     using Windows.ApplicationModel;
     using static SystemTrayMenu.UserInterface.HotkeyTextboxControl.HotkeyControl;
 
-    /// <summary>
-    /// SettingsForm.
-    /// </summary>
     public partial class SettingsForm : Form
     {
         private const string MenuName = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder";
@@ -30,9 +27,6 @@ namespace SystemTrayMenu.UserInterface
         private readonly ColorConverter colorConverter = new ColorConverter();
         private bool inHotkey;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SettingsForm"/> class.
-        /// </summary>
         public SettingsForm()
         {
             InitializeComponent();
@@ -381,7 +375,6 @@ namespace SystemTrayMenu.UserInterface
             return RegisterHotkeys(false);
         }
 
-        /// <inheritdoc/>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)

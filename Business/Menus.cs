@@ -281,7 +281,6 @@ namespace SystemTrayMenu.Business
 
         private List<Menu> AsList => AsEnumerable.ToList();
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             workerMainMenu.Dispose();

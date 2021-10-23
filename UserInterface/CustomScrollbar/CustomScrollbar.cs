@@ -141,7 +141,6 @@ namespace SystemTrayMenu.UserInterface
 
         public int Delta => Value - lastValue;
 
-        /// <inheritdoc/>
         public override bool AutoSize
         {
             get => base.AutoSize;
@@ -208,14 +207,12 @@ namespace SystemTrayMenu.UserInterface
             Invalidate();
         }
 
-        /// <inheritdoc/>
         protected override void Dispose(bool disposing)
         {
             timerMouseStillClicked.Dispose();
             base.Dispose(disposing);
         }
 
-        /// <inheritdoc/>
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;

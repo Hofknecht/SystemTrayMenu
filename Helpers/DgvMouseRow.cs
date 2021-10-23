@@ -28,7 +28,6 @@ namespace SystemTrayMenu.Helper
 
         internal event Action<object, DataGridViewCellEventArgs> RowMouseLeave;
 
-        /// <inheritdoc/>
         public void Dispose()
         {
             Dispose(true);

@@ -9,7 +9,6 @@ namespace SystemTrayMenu.UserInterface
 
     internal class ScrollbarControlDesigner : ControlDesigner
     {
-        /// <inheritdoc/>
         public override SelectionRules SelectionRules
         {
             get

@@ -13,9 +13,6 @@ namespace SystemTrayMenu.DataClasses
     using SystemTrayMenu.Utilities;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
-    /// <summary>
-    /// Contains data of row.
-    /// </summary>
     internal class RowData
     {
         private static readonly Icon White50PercentageIcon = Properties.Resources.White50Percentage;
@@ -26,97 +23,43 @@ namespace SystemTrayMenu.DataClasses
         private string text;
         private Icon icon;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RowData"/> class.
-        /// </summary>
         internal RowData()
         {
         }
 
-        /// <summary>
-        /// Gets or sets fileInfo.
-        /// </summary>
         internal FileInfo FileInfo { get; set; }
 
-        /// <summary>
-        /// Gets or sets SubMenu.
-        /// </summary>
         internal Menu SubMenu { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether IsMenuOpen.
-        /// </summary>
         internal bool IsMenuOpen { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether IsSelected.
-        /// </summary>
         internal bool IsSelected { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether ContainsMenu.
-        /// </summary>
         internal bool ContainsMenu { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether IsContextMenuOpen.
-        /// </summary>
         internal bool IsContextMenuOpen { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether IsResolvedLnk.
-        /// </summary>
         internal bool IsResolvedLnk { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether is a HiddenEntry.
-        /// </summary>
         internal bool HiddenEntry { get; set; }
 
-        /// <summary>
-        /// Gets or sets TargetFilePath.
-        /// </summary>
         internal string TargetFilePath { get; set; }
 
-        /// <summary>
-        /// Gets or sets TargetFilePathOrig.
-        /// </summary>
         internal string TargetFilePathOrig { get; set; }
 
-        /// <summary>
-        /// Gets or sets RowIndex.
-        /// </summary>
         internal int RowIndex { get; set; }
 
-        /// <summary>
-        /// Gets or sets MenuLevel.
-        /// </summary>
         internal int MenuLevel { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether IconLoading.
-        /// </summary>
         internal bool IconLoading { get; set; }
 
-        /// <summary>
-        /// Gets or sets FilePathIcon.
-        /// </summary>
         internal string FilePathIcon { get; set; }
 
-        /// <summary>
-        /// Set text of row.
-        /// </summary>
-        /// <param name="text">text of row.</param>
         internal void SetText(string text)
         {
             this.text = text;
         }
 
-        /// <summary>
-        /// SetData.
-        /// </summary>
-        /// <param name="data">data.</param>
-        /// <param name="dataTable">dataTable.</param>
         internal void SetData(RowData data, DataTable dataTable)
         {
             DataRow row = dataTable.Rows.Add();
@@ -144,12 +87,6 @@ namespace SystemTrayMenu.DataClasses
             row[2] = data;
         }
 
-        /// <summary>
-        /// ReadIcon.
-        /// </summary>
-        /// <param name="isDirectory">isDirectory.</param>
-        /// <param name="resolvedLnkPath">resolvedLnkPath.</param>
-        /// <returns>isLnkDirectory.</returns>
         internal bool ReadIcon(bool isDirectory, ref string resolvedLnkPath)
         {
             bool isLnkDirectory = false;
@@ -213,12 +150,6 @@ namespace SystemTrayMenu.DataClasses
             return isLnkDirectory;
         }
 
-        /// <summary>
-        /// MouseDown.
-        /// </summary>
-        /// <param name="dgv">dgv.</param>
-        /// <param name="e">e.</param>
-        /// <param name="toCloseByDoubleClick">toCloseByDoubleClick.</param>
         internal void MouseDown(DataGridView dgv, MouseEventArgs e, out bool toCloseByDoubleClick)
         {
             toCloseByDoubleClick = false;
@@ -260,11 +191,6 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        /// <summary>
-        /// DoubleClick.
-        /// </summary>
-        /// <param name="e">e.</param>
-        /// <param name="toCloseByDoubleClick">toCloseByDoubleClick.</param>
         internal void DoubleClick(MouseEventArgs e, out bool toCloseByDoubleClick)
         {
             toCloseByDoubleClick = false;
@@ -283,10 +209,6 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        /// <summary>
-        /// ReadLoadedIcon.
-        /// </summary>
-        /// <returns>Icon.</returns>
         internal Icon ReadLoadedIcon()
         {
             if (ContainsMenu)
