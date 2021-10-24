@@ -9,7 +9,6 @@ namespace SystemTrayMenu.DataClasses
     using System.Drawing;
     using System.IO;
     using System.Windows.Forms;
-    using IWshRuntimeLibrary;
     using SystemTrayMenu.Utilities;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
@@ -18,8 +17,6 @@ namespace SystemTrayMenu.DataClasses
         private static readonly Icon White50PercentageIcon = Properties.Resources.White50Percentage;
         private static readonly Icon NotFoundIcon = Properties.Resources.NotFound;
         private static DateTime contextMenuClosed;
-        private string workingDirectory;
-        private string arguments;
         private string text;
         private Icon icon;
 
@@ -248,7 +245,7 @@ namespace SystemTrayMenu.DataClasses
             if (!ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
             {
-                Log.ProcessStart(TargetFilePathOrig, arguments, false, workingDirectory, true);
+                Log.ProcessStart(TargetFilePathOrig, string.Empty, false, string.Empty, true);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
                 {
                     toCloseByOpenItem = true;
@@ -280,10 +277,6 @@ namespace SystemTrayMenu.DataClasses
             }
             else
             {
-                IWshShell shell = new WshShell();
-                IWshShortcut lnk = shell.CreateShortcut(TargetFilePath) as IWshShortcut;
-                arguments = lnk.Arguments;
-                workingDirectory = lnk.WorkingDirectory;
                 TargetFilePath = resolvedLnkPath;
             }
 

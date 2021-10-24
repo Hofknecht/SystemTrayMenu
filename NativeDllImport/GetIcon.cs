@@ -12,7 +12,6 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
-#pragma warning disable SA1600 // Elements should be documented
         public const uint ShgfiIcon = 0x000000100;     // get icon
         public const uint ShgfiSYSICONINDEX = 0x000004000;     // get system icon index
         public const uint ShgfiLINKOVERLAY = 0x000008000;     // put a link overlay on icon
@@ -22,16 +21,6 @@ namespace SystemTrayMenu.DllImports
         public const uint FileAttributeDirectory = 0x00000010;
         public const uint FileAttributeNormal = 0x00000080;
         public const int IldTransparent = 0x00000001;
-#pragma warning restore SA1600 // Elements should be documented
-
-        /// <summary>
-        /// comctl32 ImageList_GetIcon(IntPtr hIcon).
-        /// </summary>
-        /// <param name="hIcon">hIcon.</param>
-        public static void Comctl32ImageListGetIcon(IntPtr hIcon)
-        {
-            _ = DestroyIcon(hIcon);
-        }
 
         /// <summary>
         /// comctl32 ImageList_GetIcon(IntPtr himl, int i, int flags).
