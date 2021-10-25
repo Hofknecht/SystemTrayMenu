@@ -231,12 +231,7 @@ namespace SystemTrayMenu.Business
 
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
-            keyboardInput.HotKeyPressed += KeyboardInput_HotKeyPressed;
-            void KeyboardInput_HotKeyPressed()
-            {
-                SwitchOpenClose(false);
-            }
-
+            keyboardInput.HotKeyPressed += () => SwitchOpenClose(false);
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowDeselected += waitToOpenMenu.RowDeselected;
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
@@ -259,11 +254,7 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            waitLeave.LeaveTriggered += LeaveTriggered;
-            void LeaveTriggered()
-            {
-                FadeHalfOrOutIfNeeded();
-            }
+            waitLeave.LeaveTriggered += FadeHalfOrOutIfNeeded;
         }
 
         internal event EventHandlerEmpty LoadStarted;
@@ -485,6 +476,11 @@ namespace SystemTrayMenu.Business
             return menuData;
         }
 
+        internal bool IsOpenCloseStateOpening()
+        {
+            return openCloseState == OpenCloseState.Opening;
+        }
+
         internal void SwitchOpenClose(bool byClick)
         {
             waitToOpenMenu.MouseActive = byClick;
@@ -657,12 +653,7 @@ namespace SystemTrayMenu.Business
             }
 
             menu.SetTitle(title);
-            menu.UserClickedOpenFolder += OpenFolderInExplorer;
-            void OpenFolderInExplorer()
-            {
-                OpenFolder(path);
-            }
-
+            menu.UserClickedOpenFolder += () => OpenFolder(path);
             menu.Level = menuData.Level;
             menu.MouseWheel += AdjustMenusSizeAndLocation;
             menu.MouseLeave += waitLeave.Start;

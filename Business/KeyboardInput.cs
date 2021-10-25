@@ -53,11 +53,7 @@ namespace SystemTrayMenu.Handler
                 try
                 {
                     hook.RegisterHotKey();
-                    hook.KeyPressed += Hook_KeyPressed;
-                    void Hook_KeyPressed(object sender, KeyPressedEventArgs e)
-                    {
-                        HotKeyPressed?.Invoke();
-                    }
+                    hook.KeyPressed += (s, e) => HotKeyPressed?.Invoke();
                 }
                 catch (InvalidOperationException ex)
                 {

@@ -24,7 +24,7 @@ namespace SystemTrayMenu.Utilities
             Restart(GetCurrentMethod());
         }
 
-        internal static void ByDisplaySettings(object sender, EventArgs e)
+        internal static void ByDisplaySettings()
         {
             Restart(GetCurrentMethod());
         }

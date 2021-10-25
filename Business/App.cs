@@ -21,26 +21,29 @@ namespace SystemTrayMenu
         public App()
         {
             AppRestart.BeforeRestarting += Dispose;
-            SystemEvents.DisplaySettingsChanged += AppRestart.ByDisplaySettings;
+            SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
             menus.LoadStarted += menuNotifyIcon.LoadingStart;
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
             menuNotifyIcon.Exit += Application.Exit;
             menuNotifyIcon.Restart += AppRestart.ByMenuNotifyIcon;
-            menuNotifyIcon.Click += MenuNotifyIcon_Click;
-            void MenuNotifyIcon_Click()
-            {
-                menus.SwitchOpenClose(true);
-            }
-
+            menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
         }
 
         public void Dispose()
         {
-            SystemEvents.DisplaySettingsChanged -= AppRestart.ByDisplaySettings;
+            SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
             menus.Dispose();
             menuNotifyIcon.Dispose();
+        }
+
+        private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
+        {
+            if (!menus.IsOpenCloseStateOpening())
+            {
+                AppRestart.ByDisplaySettings();
+            }
         }
     }
 }
