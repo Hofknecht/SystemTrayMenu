@@ -304,6 +304,9 @@ namespace SystemTrayMenu.Handler
                             {
                                 ClosePressed?.Invoke();
                             }
+
+                            // Raise Dgv_RowPostPaint to show ProcessStarted
+                            dgv.InvalidateRow(iRowKey);
                         }
                         else
                         {

@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.UserInterface
+namespace SystemTrayMenu.Helper
 {
     using System;
     using System.Windows.Forms;

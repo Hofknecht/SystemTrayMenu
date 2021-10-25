@@ -29,6 +29,7 @@ namespace SystemTrayMenu.Business
         private readonly DgvMouseRow dgvMouseRow = new DgvMouseRow();
         private readonly WaitToLoadMenu waitToOpenMenu = new WaitToLoadMenu();
         private readonly KeyboardInput keyboardInput;
+        private readonly Timer timerShowProcessStartedAsLoadingIcon = new Timer();
         private readonly Timer timerStillActiveCheck = new Timer();
         private readonly WaitLeave waitLeave = new WaitLeave(Properties.Settings.Default.TimeUntilCloses);
         private DateTime deactivatedTime = DateTime.MinValue;
@@ -243,6 +244,7 @@ namespace SystemTrayMenu.Business
                 menu.AdjustScrollbar();
             }
 
+            timerShowProcessStartedAsLoadingIcon.Interval = 250;
             timerStillActiveCheck.Interval = 1000;
             timerStillActiveCheck.Tick += StillActiveTick;
             void StillActiveTick(object senderTimer, EventArgs eTimer)
@@ -282,6 +284,7 @@ namespace SystemTrayMenu.Business
 
             waitToOpenMenu.Dispose();
             keyboardInput.Dispose();
+            timerShowProcessStartedAsLoadingIcon.Dispose();
             timerStillActiveCheck.Dispose();
             waitLeave.Dispose();
             IconReader.Dispose();
@@ -866,6 +869,21 @@ namespace SystemTrayMenu.Business
                 {
                     ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorOpenFolderBorder, ButtonBorderStyle.Solid);
                     row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorOpenFolder;
+                }
+
+                if (rowData.ProcessStarted)
+                {
+                    rowData.ProcessStarted = false;
+                    row.Cells[0].Value = Resources.StaticResources.LoadingIcon;
+                    timerShowProcessStartedAsLoadingIcon.Tick += Tick;
+                    void Tick(object sender, EventArgs e)
+                    {
+                        row.Cells[0].Value = rowData.ReadLoadedIcon();
+                        timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
+                        timerShowProcessStartedAsLoadingIcon.Stop();
+                    }
+
+                    timerShowProcessStartedAsLoadingIcon.Start();
                 }
             }
         }

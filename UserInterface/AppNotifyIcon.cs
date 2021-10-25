@@ -8,13 +8,11 @@ namespace SystemTrayMenu.UserInterface
     using System.Drawing;
     using System.Windows.Forms;
     using SystemTrayMenu.Helper;
-    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
     using Timer = System.Windows.Forms.Timer;
 
     internal class AppNotifyIcon : IDisposable
     {
-        private static readonly Icon LoadingIcon = Properties.Resources.Loading;
         private static Icon systemTrayMenu = Properties.Resources.SystemTrayMenu;
         private readonly Timer load = new Timer();
         private readonly NotifyIcon notifyIcon = new NotifyIcon();
@@ -23,7 +21,7 @@ namespace SystemTrayMenu.UserInterface
 
         public AppNotifyIcon()
         {
-            notifyIcon.Icon = LoadingIcon;
+            notifyIcon.Icon = Resources.StaticResources.LoadingIcon;
             load.Tick += Load_Tick;
             load.Interval = 15;
             notifyIcon.Text = Translator.GetText("SystemTrayMenu");
@@ -112,7 +110,7 @@ namespace SystemTrayMenu.UserInterface
             if (threadsLoading)
             {
                 rotationAngle += 5;
-                using Bitmap bitmapLoading = LoadingIcon.ToBitmap();
+                using Bitmap bitmapLoading = Resources.StaticResources.LoadingIcon.ToBitmap();
                 using Bitmap bitmapLoadingRotated = new Bitmap(ImagingHelper.RotateImage(bitmapLoading, rotationAngle));
                 DisposeIconIfNotDefaultIcon();
                 IntPtr hIcon = bitmapLoadingRotated.GetHicon();

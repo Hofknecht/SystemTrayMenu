@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.Helpers
+namespace SystemTrayMenu.Helper
 {
     using System.Drawing;
     using System.Drawing.Drawing2D;

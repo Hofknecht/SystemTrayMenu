@@ -12,12 +12,11 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
-    using SystemTrayMenu.Helpers;
+    using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
 
     internal partial class Menu : Form
     {
-        private static readonly Icon LoadingIcon = Properties.Resources.Loading;
         private readonly Fading fading = new Fading();
         private bool isShowing;
         private bool directionToRight;
@@ -801,7 +800,7 @@ namespace SystemTrayMenu.UserInterface
             PictureBox pictureBox = (PictureBox)sender;
             rotationAngle += 5;
             e.Graphics.DrawImage(
-                ImagingHelper.RotateImage(LoadingIcon.ToBitmap(), rotationAngle),
+                ImagingHelper.RotateImage(Resources.StaticResources.LoadingIcon.ToBitmap(), rotationAngle),
                 new Rectangle(Point.Empty, new Size(pictureBox.ClientSize.Width - 2, pictureBox.ClientSize.Height - 2)));
         }
 

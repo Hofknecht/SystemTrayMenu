@@ -52,6 +52,8 @@ namespace SystemTrayMenu.DataClasses
 
         internal string FilePathIcon { get; set; }
 
+        internal bool ProcessStarted { get; set; }
+
         internal void SetText(string text)
         {
             this.text = text;
@@ -245,6 +247,7 @@ namespace SystemTrayMenu.DataClasses
             if (!ContainsMenu &&
                 (e == null || e.Button == MouseButtons.Left))
             {
+                ProcessStarted = true;
                 Log.ProcessStart(TargetFilePathOrig, string.Empty, false, string.Empty, true);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
                 {

@@ -23,7 +23,6 @@ namespace SystemTrayMenu.Utilities
     public static class IconReader
     {
         private static readonly ConcurrentDictionary<string, Icon> DictIconCache = new ConcurrentDictionary<string, Icon>();
-        private static readonly Icon LoadingIcon = Properties.Resources.Loading;
 
         public enum IconSize
         {
@@ -78,7 +77,7 @@ namespace SystemTrayMenu.Utilities
 
             if (!DictIconCache.TryGetValue(key, out Icon icon))
             {
-                icon = LoadingIcon;
+                icon = Resources.StaticResources.LoadingIcon;
                 loading = true;
 
                 if (updateIconInBackground)
@@ -160,7 +159,7 @@ namespace SystemTrayMenu.Utilities
 
             if (!DictIconCache.TryGetValue(key, out Icon icon))
             {
-                icon = LoadingIcon;
+                icon = Resources.StaticResources.LoadingIcon;
                 loading = true;
 
                 if (updateIconInBackground)
@@ -218,7 +217,7 @@ namespace SystemTrayMenu.Utilities
 
             if (!DictIconCache.TryGetValue(key, out Icon icon))
             {
-                icon = LoadingIcon;
+                icon = Resources.StaticResources.LoadingIcon;
                 loading = true;
 
                 if (updateIconInBackground)
