@@ -106,6 +106,7 @@ namespace SystemTrayMenu.UserInterface
                 Text = Translator.GetText("Settings");
                 tabPageGeneral.Text = Translator.GetText("General");
                 tabPageAdvanced.Text = Translator.GetText("Advanced");
+                tabPageExpert.Text = Translator.GetText("Expert");
                 tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxFolder.Text = Translator.GetText("Folder");
                 buttonChangeFolder.Text = Translator.GetText("Change folder");
@@ -134,13 +135,16 @@ namespace SystemTrayMenu.UserInterface
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
                 checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
+                buttonAdvancedDefault.Text = Translator.GetText("Default");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
                 checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
                 labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if in this case the mouse then leaves the menu");
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
                 labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
-                buttonAdvancedDefault.Text = Translator.GetText("Default");
+                checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = Translator.GetText("If the focus is lost and the Enter key was pressed");
+                labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if in this case the menu is not reactivated");
+                buttonExpertDefault.Text = Translator.GetText("Default");
                 groupBoxColorsLightMode.Text = Translator.GetText("Colors Light Mode");
                 groupBoxColorsDarkMode.Text = Translator.GetText("Colors Dark Mode");
                 labelMenuLightMode.Text = Translator.GetText("Menu");
@@ -316,6 +320,13 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilOpens.Maximum = 1000;
             numericUpDownTimeUntilOpens.Increment = 10;
             numericUpDownTimeUntilOpens.Value = Settings.Default.TimeUntilOpens;
+
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed;
+
+            numericUpDownTimeUntilClosesAfterEnterPressed.Minimum = 20;
+            numericUpDownTimeUntilClosesAfterEnterPressed.Maximum = 1000;
+            numericUpDownTimeUntilClosesAfterEnterPressed.Increment = 10;
+            numericUpDownTimeUntilClosesAfterEnterPressed.Value = Settings.Default.TimeUntilClosesAfterEnterPressed;
 
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
@@ -583,7 +594,7 @@ namespace SystemTrayMenu.UserInterface
 
             tabControl.Size = new Size(
                 tabControl.Size.Width,
-                tableLayoutPanelAdvanced.Size.Height + (int)(50 * Scaling.Factor));
+                tableLayoutPanelGeneral.Size.Height + (int)(50 * Scaling.Factor));
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
@@ -631,6 +642,8 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
             Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
+            Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed = checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked;
+            Settings.Default.TimeUntilClosesAfterEnterPressed = (int)numericUpDownTimeUntilClosesAfterEnterPressed.Value;
 
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
 
@@ -726,26 +739,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxHotkey.SetHotkey("Ctrl+LWin");
         }
 
-        private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
-        {
-            checkBoxOpenItemWithOneClick.Checked = true;
-            checkBoxAppearAtMouseLocation.Checked = false;
-            numericUpDownSizeInPercentage.Value = 100;
-            numericUpDownMenuWidth.Value = 300;
-            numericUpDownMenuHeight.Value = 600;
-            checkBoxStayOpenWhenItemClicked.Checked = true;
-            checkBoxStayOpenWhenFocusLost.Checked = true;
-            numericUpDownTimeUntilClose.Value = 1000;
-            numericUpDownTimeUntilOpens.Value = 100;
-        }
-
-        private void ButtonCancel_Click(object sender, EventArgs e)
-        {
-            Settings.Default.Reload();
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
-
         private void ButtonChange_Click(object sender, EventArgs e)
         {
             Config.SetFolderByUser(false);
@@ -785,9 +778,33 @@ namespace SystemTrayMenu.UserInterface
             inHotkey = false;
         }
 
+        private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
+        {
+            checkBoxOpenItemWithOneClick.Checked = true;
+            checkBoxAppearAtMouseLocation.Checked = false;
+            numericUpDownSizeInPercentage.Value = 100;
+            numericUpDownMenuWidth.Value = 300;
+            numericUpDownMenuHeight.Value = 600;
+        }
+
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)
         {
             numericUpDownTimeUntilClose.Enabled = checkBoxStayOpenWhenFocusLost.Checked;
+        }
+
+        private void CheckBoxStayOpenWhenFocusLostAfterEnterPressed_CheckedChanged(object sender, EventArgs e)
+        {
+            numericUpDownTimeUntilClosesAfterEnterPressed.Enabled = checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked;
+        }
+
+        private void ButtonExpertDefault_Click(object sender, EventArgs e)
+        {
+            checkBoxStayOpenWhenItemClicked.Checked = true;
+            checkBoxStayOpenWhenFocusLost.Checked = true;
+            numericUpDownTimeUntilClose.Value = 1000;
+            numericUpDownTimeUntilOpens.Value = 100;
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = true;
+            numericUpDownTimeUntilClosesAfterEnterPressed.Value = 200;
         }
 
         private void TextBoxColorsChanged(object sender, EventArgs e)
@@ -941,6 +958,13 @@ namespace SystemTrayMenu.UserInterface
             {
                 e.Handled = e.SuppressKeyPress = true;
             }
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            Settings.Default.Reload();
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

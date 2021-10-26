@@ -354,4 +354,13 @@
   <data name="Task Manger" xml:space="preserve">
     <value>작업 관리자</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>전문가</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>초점을 잃고 Enter 키를 누른 경우</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>이 경우 메뉴가 다시 활성화되지 않으면 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+  </data>
 </root>

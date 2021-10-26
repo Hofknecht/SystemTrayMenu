@@ -354,4 +354,13 @@
   <data name="Task Manger" xml:space="preserve">
     <value>Görev Yöneticisi</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Uzman</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Odak kaybolursa ve Enter tuşuna basıldıysa</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Bu durumda menü yeniden etkinleştirilmezse menü kapanana kadar milisaniye</value>
+  </data>
 </root>

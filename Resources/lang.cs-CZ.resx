@@ -354,4 +354,13 @@
   <data name="Task Manger" xml:space="preserve">
     <value>Správce úloh</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Expert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Pokud dojde ke ztrátě fokusu a byla stisknuta klávesa Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundy, než se nabídka zavře, pokud v tomto případě není nabídka znovu aktivována</value>
+  </data>
 </root>

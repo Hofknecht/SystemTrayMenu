@@ -286,6 +286,38 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool StaysOpenWhenFocusLostAfterEnterPressed
+        {
+            get
+            {
+                return ((bool)(this["StaysOpenWhenFocusLostAfterEnterPressed"]));
+            }
+            set
+            {
+                this["StaysOpenWhenFocusLostAfterEnterPressed"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int TimeUntilClosesAfterEnterPressed
+        {
+            get
+            {
+                return ((int)(this["TimeUntilClosesAfterEnterPressed"]));
+            }
+            set
+            {
+                this["TimeUntilClosesAfterEnterPressed"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#CCE8FF")]
         public string ColorSelectedItem
         {

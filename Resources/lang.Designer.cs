@@ -322,6 +322,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expert.
+        /// </summary>
+        internal static string Expert {
+            get {
+                return ResourceManager.GetString("Expert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder.
         /// </summary>
         internal static string Folder {
@@ -403,6 +412,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If the focus is lost and the Enter key was pressed.
+        /// </summary>
+        internal static string If_the_focus_is_lost_and_the_Enter_key_was_pressed {
+            get {
+                return ResourceManager.GetString("If the focus is lost and the Enter key was pressed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         internal static string Language {
@@ -471,6 +489,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Milliseconds_until_a_menu_opens_when_the_mouse_is_on_it {
             get {
                 return ResourceManager.GetString("Milliseconds until a menu opens when the mouse is on it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Milliseconds until the menu closes if in this case the menu is not reactivated.
+        /// </summary>
+        internal static string Milliseconds_until_the_menu_closes_if_in_this_case_the_menu_is_not_reactivated {
+            get {
+                return ResourceManager.GetString("Milliseconds until the menu closes if in this case the menu is not reactivated", resourceCulture);
             }
         }
         

@@ -244,10 +244,10 @@ namespace SystemTrayMenu.Business
                 menu.AdjustScrollbar();
             }
 
-            timerShowProcessStartedAsLoadingIcon.Interval = 250;
+            timerShowProcessStartedAsLoadingIcon.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed;
             timerStillActiveCheck.Interval = 1000;
-            timerStillActiveCheck.Tick += StillActiveTick;
-            void StillActiveTick(object senderTimer, EventArgs eTimer)
+            timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
+            void StillActiveTick()
             {
                 if (!IsActive())
                 {
@@ -668,20 +668,24 @@ namespace SystemTrayMenu.Business
             menu.Deactivate += Deactivate;
             void Deactivate(object sender, EventArgs e)
             {
-                FadeHalfOrOutIfNeeded();
-                if (!IsActive())
+                if (!Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
+                    !timerStillActiveCheck.Enabled)
                 {
-                    deactivatedTime = DateTime.Now;
+                    FadeHalfOrOutIfNeeded();
+                    if (!IsActive())
+                    {
+                        deactivatedTime = DateTime.Now;
+                    }
                 }
             }
 
-            menu.Activated += Activated;
-            void Activated(object sender, EventArgs e)
+            menu.Activated += (sender, e) => Activated();
+            void Activated()
             {
-                if (IsActive() &&
-                    menus[0].IsUsable)
+                if (IsActive() && menus[0].IsUsable)
                 {
                     AsList.ForEach(m => m.ShowWithFade());
+                    timerStillActiveCheck.Stop();
                     timerStillActiveCheck.Start();
                 }
             }
@@ -881,9 +885,18 @@ namespace SystemTrayMenu.Business
                         row.Cells[0].Value = rowData.ReadLoadedIcon();
                         timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
                         timerShowProcessStartedAsLoadingIcon.Stop();
+
+                        if (Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed)
+                        {
+                            timerStillActiveCheck.Stop();
+                            FadeHalfOrOutIfNeeded();
+                        }
                     }
 
+                    timerShowProcessStartedAsLoadingIcon.Stop();
                     timerShowProcessStartedAsLoadingIcon.Start();
+                    timerStillActiveCheck.Stop();
+                    timerStillActiveCheck.Start();
                 }
             }
         }

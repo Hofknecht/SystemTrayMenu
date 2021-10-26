@@ -354,4 +354,13 @@
   <data name="Task Manger" xml:space="preserve">
     <value>Quản lý công việc</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Thạo</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Nếu mất tiêu điểm và nhấn phím Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Mili giây cho đến khi menu đóng lại nếu trong trường hợp này, menu chưa được kích hoạt lại</value>
+  </data>
 </root>

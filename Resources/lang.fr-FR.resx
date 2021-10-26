@@ -354,4 +354,13 @@
   <data name="Task Manger" xml:space="preserve">
     <value>Gestionnaire des tâches</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Expert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Si le focus est perdu et que la touche Entrée a été enfoncée</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas le menu n'est pas réactivé</value>
+  </data>
 </root>

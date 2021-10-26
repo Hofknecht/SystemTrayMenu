@@ -354,4 +354,13 @@
   <data name="Activated" xml:space="preserve">
     <value>Activated</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Expert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>If the focus is lost and the Enter key was pressed</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milliseconds until the menu closes if in this case the menu is not reactivated</value>
+  </data>
 </root>

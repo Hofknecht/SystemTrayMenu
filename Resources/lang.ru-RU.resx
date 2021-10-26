@@ -354,4 +354,13 @@
   <data name="Task Manger" xml:space="preserve">
     <value>Диспетчер задач</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Эксперт</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Если фокус потерян и была нажата клавиша Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Миллисекунды до закрытия меню, если в этом случае меню не активируется повторно.</value>
+  </data>
 </root>

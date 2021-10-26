@@ -354,4 +354,13 @@
   <data name="Task Manger" xml:space="preserve">
     <value>任务管理器</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>专家</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>如果失去焦点并且按下了 Enter 键</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>如果在这种情况下菜单未重新激活，则菜单关闭前的毫秒数</value>
+  </data>
 </root>

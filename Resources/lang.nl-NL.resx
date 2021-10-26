@@ -354,4 +354,13 @@
   <data name="Task Manger" xml:space="preserve">
     <value>Taakbeheer</value>
   </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Deskundige</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Als de focus verloren is gegaan en de Enter-toets is ingedrukt</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milliseconden totdat het menu wordt gesloten als het menu in dit geval niet opnieuw wordt geactiveerd</value>
+  </data>
 </root>
