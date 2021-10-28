@@ -801,7 +801,7 @@ namespace SystemTrayMenu.UserInterface
         {
             checkBoxStayOpenWhenItemClicked.Checked = true;
             checkBoxStayOpenWhenFocusLost.Checked = true;
-            numericUpDownTimeUntilClose.Value = 1000;
+            numericUpDownTimeUntilClose.Value = 500;
             numericUpDownTimeUntilOpens.Value = 100;
             checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = true;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = 200;

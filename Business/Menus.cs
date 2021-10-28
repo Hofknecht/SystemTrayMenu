@@ -37,6 +37,7 @@ namespace SystemTrayMenu.Business
         private bool showingMessageBox;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
         private bool searchTextChanging;
+        private bool waitingForReactivate;
 
         public Menus()
         {
@@ -245,15 +246,16 @@ namespace SystemTrayMenu.Business
             }
 
             timerShowProcessStartedAsLoadingIcon.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed;
-            timerStillActiveCheck.Interval = 1000;
+            timerStillActiveCheck.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed + 20;
             timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
             void StillActiveTick()
             {
                 if (!IsActive())
                 {
                     FadeHalfOrOutIfNeeded();
-                    timerStillActiveCheck.Stop();
                 }
+
+                timerStillActiveCheck.Stop();
             }
 
             waitLeave.LeaveTriggered += FadeHalfOrOutIfNeeded;
@@ -481,7 +483,9 @@ namespace SystemTrayMenu.Business
 
         internal bool IsOpenCloseStateOpening()
         {
-            return openCloseState == OpenCloseState.Opening;
+            Log.Info(openCloseState.ToString());
+            return openCloseState == OpenCloseState.Opening ||
+                (openCloseState == OpenCloseState.Default && menus[0] != null && menus[0].Visible);
         }
 
         internal void SwitchOpenClose(bool byClick)
@@ -669,7 +673,7 @@ namespace SystemTrayMenu.Business
             void Deactivate(object sender, EventArgs e)
             {
                 if (!Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
-                    !timerStillActiveCheck.Enabled)
+                    !waitingForReactivate)
                 {
                     FadeHalfOrOutIfNeeded();
                     if (!IsActive())
@@ -877,20 +881,16 @@ namespace SystemTrayMenu.Business
 
                 if (rowData.ProcessStarted)
                 {
+                    waitingForReactivate = true;
                     rowData.ProcessStarted = false;
                     row.Cells[0].Value = Resources.StaticResources.LoadingIcon;
                     timerShowProcessStartedAsLoadingIcon.Tick += Tick;
                     void Tick(object sender, EventArgs e)
                     {
-                        row.Cells[0].Value = rowData.ReadLoadedIcon();
                         timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
                         timerShowProcessStartedAsLoadingIcon.Stop();
-
-                        if (Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed)
-                        {
-                            timerStillActiveCheck.Stop();
-                            FadeHalfOrOutIfNeeded();
-                        }
+                        row.Cells[0].Value = rowData.ReadLoadedIcon();
+                        waitingForReactivate = false;
                     }
 
                     timerShowProcessStartedAsLoadingIcon.Stop();

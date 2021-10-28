@@ -137,6 +137,15 @@ namespace SystemTrayMenu.UserInterface
             customScrollbar.MouseEnter += ControlsMouseEnter;
             dgv.MouseEnter += ControlsMouseEnter;
             labelTitle.MouseEnter += ControlsMouseEnter;
+            textBoxSearch.MouseEnter += ControlsMouseEnter;
+            pictureBoxMenuAlwaysOpen.MouseEnter += ControlsMouseEnter;
+            pictureBoxOpenFolder.MouseEnter += ControlsMouseEnter;
+            pictureBoxSearch.MouseEnter += ControlsMouseEnter;
+            pictureBoxFilesCount.MouseEnter += ControlsMouseEnter;
+            pictureBoxFoldersCount.MouseEnter += ControlsMouseEnter;
+            labelFilesCount.MouseEnter += ControlsMouseEnter;
+            labelFoldersCount.MouseEnter += ControlsMouseEnter;
+
             void ControlsMouseEnter(object sender, EventArgs e)
             {
                 MouseEnter?.Invoke();
@@ -145,6 +154,14 @@ namespace SystemTrayMenu.UserInterface
             customScrollbar.MouseLeave += ControlsMouseLeave;
             dgv.MouseLeave += ControlsMouseLeave;
             labelTitle.MouseLeave += ControlsMouseLeave;
+            textBoxSearch.MouseLeave += ControlsMouseLeave;
+            pictureBoxMenuAlwaysOpen.MouseLeave += ControlsMouseLeave;
+            pictureBoxOpenFolder.MouseLeave += ControlsMouseLeave;
+            pictureBoxSearch.MouseLeave += ControlsMouseLeave;
+            pictureBoxFilesCount.MouseLeave += ControlsMouseLeave;
+            pictureBoxFoldersCount.MouseLeave += ControlsMouseLeave;
+            labelFilesCount.MouseLeave += ControlsMouseLeave;
+            labelFoldersCount.MouseLeave += ControlsMouseLeave;
             void ControlsMouseLeave(object sender, EventArgs e)
             {
                 MouseLeave?.Invoke();
