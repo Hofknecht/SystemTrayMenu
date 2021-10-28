@@ -170,6 +170,7 @@ namespace SystemTrayMenu.UserInterface
             AllowDrop = true;
             DragEnter += DragDropHelper.DragEnter;
             DragDrop += DragDropHelper.DragDrop;
+            textBoxSearch.GotFocus += (sender, e) => textBoxSearch.SelectAll();
         }
 
         internal new event EventHandlerEmpty MouseWheel;
