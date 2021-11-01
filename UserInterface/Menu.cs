@@ -56,6 +56,7 @@ namespace SystemTrayMenu.UserInterface
                     if (Level == 0)
                     {
                         Activate();
+                        textBoxSearch.SelectAll();
                         textBoxSearch.Focus();
                         NativeMethods.User32ShowInactiveTopmost(this);
                         NativeMethods.ForceForegroundWindow(Handle);
@@ -63,6 +64,7 @@ namespace SystemTrayMenu.UserInterface
                     else
                     {
                         NativeMethods.User32ShowInactiveTopmost(this);
+                        textBoxSearch.SelectAll();
                         textBoxSearch.Focus();
                     }
                 }
@@ -116,11 +118,8 @@ namespace SystemTrayMenu.UserInterface
                 BackColor = backColor,
             };
 
-            customScrollbar.GotFocus += CustomScrollbar_GotFocus;
-            void CustomScrollbar_GotFocus(object sender, EventArgs e)
-            {
-                textBoxSearch.Focus();
-            }
+            dgv.GotFocus += (sender, e) => FocusTextBox();
+            customScrollbar.GotFocus += (sender, e) => FocusTextBox();
 
             customScrollbar.Margin = new Padding(0);
             customScrollbar.Scroll += CustomScrollbar_Scroll;
@@ -170,7 +169,6 @@ namespace SystemTrayMenu.UserInterface
             AllowDrop = true;
             DragEnter += DragDropHelper.DragEnter;
             DragDrop += DragDropHelper.DragDrop;
-            textBoxSearch.GotFocus += (sender, e) => textBoxSearch.SelectAll();
         }
 
         internal new event EventHandlerEmpty MouseWheel;
@@ -222,6 +220,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal void FocusTextBox()
         {
+            textBoxSearch.SelectAll();
             textBoxSearch.Focus();
         }
 

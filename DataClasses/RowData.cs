@@ -256,9 +256,7 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        private bool SetLnk(
-            ref bool isLnkDirectory,
-            ref string resolvedLnkPath)
+        private bool SetLnk(ref bool isLnkDirectory, ref string resolvedLnkPath)
         {
             bool handled = false;
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
@@ -306,7 +304,7 @@ namespace SystemTrayMenu.DataClasses
                         handled = true;
                     }
                 }
-                else if (System.IO.File.Exists(iconFile))
+                else if (File.Exists(iconFile))
                 {
                     FilePathIcon = iconFile;
                     icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, out bool loading);
