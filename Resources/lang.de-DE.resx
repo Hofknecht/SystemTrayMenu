@@ -366,4 +366,7 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>In Taskleiste anzeigen</value>
   </data>
+  <data name="Appear at the bottom left" xml:space="preserve">
+    <value>Erscheine unten links</value>
+  </data>
 </root>

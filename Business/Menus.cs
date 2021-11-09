@@ -1041,6 +1041,11 @@ namespace SystemTrayMenu.Business
                     break;
             }
 
+            if (Properties.Settings.Default.AppearAtTheBottomLeft)
+            {
+                startLocation = Menu.StartLocation.BottomLeft;
+            }
+
             Menu menu;
             Menu menuPredecessor = null;
             for (int i = 0; i < list.Count; i++)

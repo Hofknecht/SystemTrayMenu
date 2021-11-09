@@ -366,4 +366,7 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostra nella barra delle applicazioni</value>
   </data>
+  <data name="Appear at the bottom left" xml:space="preserve">
+    <value>Appari in basso a sinistra</value>
+  </data>
 </root>

@@ -366,4 +366,7 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>작업 표시줄에 표시</value>
   </data>
+  <data name="Appear at the bottom left" xml:space="preserve">
+    <value>왼쪽 하단에 나타남</value>
+  </data>
 </root>

@@ -97,6 +97,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Appear at the bottom left.
+        /// </summary>
+        internal static string Appear_at_the_bottom_left {
+            get {
+                return ResourceManager.GetString("Appear at the bottom left", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arrow.
         /// </summary>
         internal static string Arrow {

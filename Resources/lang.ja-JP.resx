@@ -366,4 +366,7 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>タスクバーに表示</value>
   </data>
+  <data name="Appear at the bottom left" xml:space="preserve">
+    <value>左下に表示されます</value>
+  </data>
 </root>

@@ -274,6 +274,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.checkBoxAppearAtTheBottomLeft = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -914,7 +915,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSizeAndLocation.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxSizeAndLocation.Name = "groupBoxSizeAndLocation";
             this.groupBoxSizeAndLocation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxSizeAndLocation.Size = new System.Drawing.Size(400, 162);
+            this.groupBoxSizeAndLocation.Size = new System.Drawing.Size(400, 187);
             this.groupBoxSizeAndLocation.TabIndex = 0;
             this.groupBoxSizeAndLocation.TabStop = false;
             this.groupBoxSizeAndLocation.Text = "groupBoxSizeAndLocation";
@@ -925,6 +926,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelSizeAndLocation.ColumnCount = 1;
             this.tableLayoutPanelSizeAndLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.checkBoxAppearAtTheBottomLeft, 0, 5);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.checkBoxShowInTaskbar, 0, 4);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.tableLayoutPanel1, 0, 2);
@@ -933,13 +935,14 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelSizeAndLocation.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelSizeAndLocation.Name = "tableLayoutPanelSizeAndLocation";
-            this.tableLayoutPanelSizeAndLocation.RowCount = 5;
+            this.tableLayoutPanelSizeAndLocation.RowCount = 6;
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(394, 137);
+            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(394, 162);
             this.tableLayoutPanelSizeAndLocation.TabIndex = 0;
             // 
             // checkBoxShowInTaskbar
@@ -1082,7 +1085,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 230);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 255);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -3799,6 +3802,17 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // checkBoxAppearAtTheBottomLeft
+            // 
+            this.checkBoxAppearAtTheBottomLeft.AutoSize = true;
+            this.checkBoxAppearAtTheBottomLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxAppearAtTheBottomLeft.Location = new System.Drawing.Point(3, 140);
+            this.checkBoxAppearAtTheBottomLeft.Name = "checkBoxAppearAtTheBottomLeft";
+            this.checkBoxAppearAtTheBottomLeft.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxAppearAtTheBottomLeft.TabIndex = 2;
+            this.checkBoxAppearAtTheBottomLeft.Text = "checkBoxAppearAtTheBottomLeft";
+            this.checkBoxAppearAtTheBottomLeft.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4271,5 +4285,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.NumericUpDown numericUpDownTimeUntilClosesAfterEnterPressed;
         private System.Windows.Forms.CheckBox checkBoxStayOpenWhenFocusLostAfterEnterPressed;
         private System.Windows.Forms.CheckBox checkBoxShowInTaskbar;
+        private System.Windows.Forms.CheckBox checkBoxAppearAtTheBottomLeft;
     }
 }
