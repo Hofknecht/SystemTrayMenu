@@ -363,4 +363,7 @@
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>如果在这种情况下菜单未重新激活，则菜单关闭前的毫秒数</value>
   </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>在任务栏中显示</value>
+  </data>
 </root>

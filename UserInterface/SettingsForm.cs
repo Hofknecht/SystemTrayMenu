@@ -135,6 +135,7 @@ namespace SystemTrayMenu.UserInterface
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
                 checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
+                checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
@@ -307,6 +308,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuHeight.Value = Settings.Default.MaximumMenuHeight;
 
             checkBoxAppearAtMouseLocation.Checked = Settings.Default.AppearAtMouseLocation;
+            checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
 
             checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
@@ -638,6 +640,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.SizeInPercentage = (int)numericUpDownSizeInPercentage.Value;
             Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
             Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
+            Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
@@ -785,6 +788,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownSizeInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 300;
             numericUpDownMenuHeight.Value = 600;
+            checkBoxShowInTaskbar.Checked = false;
         }
 
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)

@@ -363,4 +363,7 @@
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas le menu n'est pas réactivé</value>
   </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Afficher dans la barre des tâches</value>
+  </data>
 </root>

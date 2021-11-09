@@ -638,6 +638,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show in Taskbar.
+        /// </summary>
+        internal static string Show_in_Taskbar {
+            get {
+                return ResourceManager.GetString("Show in Taskbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Single click to open an item instead of double click.
         /// </summary>
         internal static string Single_click_to_start_item {

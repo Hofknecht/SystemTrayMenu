@@ -363,4 +363,7 @@
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Bu durumda menü yeniden etkinleştirilmezse menü kapanana kadar milisaniye</value>
   </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Görev Çubuğunda Göster</value>
+  </data>
 </root>

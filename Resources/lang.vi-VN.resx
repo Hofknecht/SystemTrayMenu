@@ -363,4 +363,7 @@
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Mili giây cho đến khi menu đóng lại nếu trong trường hợp này, menu chưa được kích hoạt lại</value>
   </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Hiển thị trên Thanh tác vụ</value>
+  </data>
 </root>

@@ -483,6 +483,12 @@ namespace SystemTrayMenu.Business
             return menuData;
         }
 
+        internal void SwitchOpenCloseByTaskbarItem()
+        {
+            SwitchOpenClose(true);
+            timerStillActiveCheck.Start();
+        }
+
         internal bool IsOpenCloseStateOpening()
         {
             return openCloseState == OpenCloseState.Opening || (DateTime.Now - dateTimeDisplaySettingsChanged).TotalMilliseconds < 500;
@@ -636,7 +642,8 @@ namespace SystemTrayMenu.Business
 
         private static bool IsActive()
         {
-            return Form.ActiveForm is Menu;
+            return Form.ActiveForm is Menu ||
+                Form.ActiveForm is UserInterface.TaskbarForm;
         }
 
         private static void OpenFolder(string pathToFolder = "")
