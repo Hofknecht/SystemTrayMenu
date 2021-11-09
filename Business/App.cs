@@ -40,7 +40,11 @@ namespace SystemTrayMenu
 
         private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
         {
-            if (!menus.IsOpenCloseStateOpening())
+            if (menus.IsShortlyAfterOpening())
+            {
+                Log.Info("Ignored DisplaySettingsChanged, because IsShortlyAfterOpening == true");
+            }
+            else
             {
                 AppRestart.ByDisplaySettings();
             }

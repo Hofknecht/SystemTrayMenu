@@ -33,6 +33,8 @@ namespace SystemTrayMenu.Business
         private readonly Timer timerStillActiveCheck = new Timer();
         private readonly WaitLeave waitLeave = new WaitLeave(Properties.Settings.Default.TimeUntilCloses);
         private DateTime deactivatedTime = DateTime.MinValue;
+        private DateTime dateTimeLastOpening = DateTime.MinValue;
+        private DateTime dateTimeDisplaySettingsChanged = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private bool showingMessageBox;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
@@ -80,7 +82,6 @@ namespace SystemTrayMenu.Business
                                 "MessageRootFolderEmpty"));
                             OpenFolder();
                             Config.SetFolderByUser();
-                            openCloseState = OpenCloseState.Default;
                             showingMessageBox = false;
                         }
 
@@ -93,7 +94,6 @@ namespace SystemTrayMenu.Business
                                 "MessageRootFolderNoAccess"));
                             OpenFolder();
                             Config.SetFolderByUser();
-                            openCloseState = OpenCloseState.Default;
                             showingMessageBox = false;
                         }
 
@@ -104,6 +104,8 @@ namespace SystemTrayMenu.Business
                     default:
                         break;
                 }
+
+                openCloseState = OpenCloseState.Default;
             }
 
             waitToOpenMenu.StopLoadMenu += WaitToOpenMenu_StopLoadMenu;
@@ -483,9 +485,13 @@ namespace SystemTrayMenu.Business
 
         internal bool IsOpenCloseStateOpening()
         {
-            Log.Info(openCloseState.ToString());
-            return openCloseState == OpenCloseState.Opening ||
-                (openCloseState == OpenCloseState.Default && menus[0] != null && menus[0].Visible);
+            return openCloseState == OpenCloseState.Opening || (DateTime.Now - dateTimeDisplaySettingsChanged).TotalMilliseconds < 500;
+        }
+
+        internal bool IsShortlyAfterOpening()
+        {
+            dateTimeDisplaySettingsChanged = DateTime.Now;
+            return (DateTime.Now - dateTimeLastOpening).TotalMilliseconds < 2000;
         }
 
         internal void SwitchOpenClose(bool byClick)
@@ -519,6 +525,7 @@ namespace SystemTrayMenu.Business
             }
 
             deactivatedTime = DateTime.MinValue;
+            dateTimeLastOpening = DateTime.Now;
         }
 
         internal void DisposeMenu(Menu menuToDispose)
@@ -672,9 +679,14 @@ namespace SystemTrayMenu.Business
             menu.Deactivate += Deactivate;
             void Deactivate(object sender, EventArgs e)
             {
-                if (!Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
+                if (IsOpenCloseStateOpening())
+                {
+                    Log.Info("Ignored Deactivate, because openCloseState == OpenCloseState.Opening");
+                }
+                else if (!Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
                     !waitingForReactivate)
                 {
+                    Log.Info($"Deactivate {openCloseState}");
                     FadeHalfOrOutIfNeeded();
                     if (!IsActive())
                     {
