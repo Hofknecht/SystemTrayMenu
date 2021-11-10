@@ -62,6 +62,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\ProgramData\\Microsoft\\Windows\\Start Menu recursiv:True onlyFiles:True|")]
+        public string PathsAddToMainMenu
+        {
+            get
+            {
+                return ((string)(this["PathsAddToMainMenu"]));
+            }
+            set
+            {
+                this["PathsAddToMainMenu"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool IsAutostartActivated
         {
@@ -174,6 +190,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CacheMainMenu
+        {
+            get
+            {
+                return ((bool)(this["CacheMainMenu"]));
+            }
+            set
+            {
+                this["CacheMainMenu"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool IsDarkModeAlwaysOn
         {
@@ -184,6 +216,22 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["IsDarkModeAlwaysOn"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int ClearCacheIfMoreThanThisNumberOfItems
+        {
+            get
+            {
+                return ((int)(this["ClearCacheIfMoreThanThisNumberOfItems"]));
+            }
+            set
+            {
+                this["ClearCacheIfMoreThanThisNumberOfItems"] = value;
             }
         }
 

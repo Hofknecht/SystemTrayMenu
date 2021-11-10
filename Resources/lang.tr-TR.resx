@@ -369,4 +369,31 @@
   <data name="Appear at the bottom left" xml:space="preserve">
     <value>Sol altta görün</value>
   </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>Klasörü eklemek</value>
+  </data>
+  <data name="Add folders to main menu" xml:space="preserve">
+    <value>Ana menüye klasörler ekleyin</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>Klasör yolları</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>klasörler</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Özyinelemeli</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>Klasörü kaldır</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>Önbellek ana menüsü</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Bu sayıda öğeden fazlaysa önbelleği temizle</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Yalnızca Dosyalar</value>
+  </data>
 </root>

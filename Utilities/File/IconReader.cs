@@ -50,7 +50,7 @@ namespace SystemTrayMenu.Utilities
         public static bool ClearIfCacheTooBig()
         {
             bool cleared = false;
-            if (DictIconCache.Count > 200)
+            if (DictIconCache.Count > Properties.Settings.Default.ClearCacheIfMoreThanThisNumberOfItems)
             {
                 Dispose();
                 DictIconCache.Clear();

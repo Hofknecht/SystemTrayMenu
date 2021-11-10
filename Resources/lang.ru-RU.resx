@@ -369,4 +369,31 @@
   <data name="Appear at the bottom left" xml:space="preserve">
     <value>Появляются внизу слева</value>
   </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>Добавить папку</value>
+  </data>
+  <data name="Add folders to main menu" xml:space="preserve">
+    <value>Добавить папки в главное меню</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>Пути к папкам</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>Папки</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Рекурсивный</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>Удалить папку</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>Главное меню кеширования</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Очистить кеш, если количество элементов превышает указанное</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Только файлы</value>
+  </data>
 </root>

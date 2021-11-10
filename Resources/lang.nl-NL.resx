@@ -369,4 +369,31 @@
   <data name="Appear at the bottom left" xml:space="preserve">
     <value>Verschijnen linksonder</value>
   </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>Map toevoegen</value>
+  </data>
+  <data name="Add folders to main menu" xml:space="preserve">
+    <value>Mappen toevoegen aan hoofdmenu</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>Mappaden</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>Mappen</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Recursief</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>Map verwijderen</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>Hoofdmenu cache</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Cache wissen bij meer dan dit aantal items</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Alleen bestanden</value>
+  </data>
 </root>

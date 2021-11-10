@@ -75,16 +75,38 @@ namespace SystemTrayMenu.Handler
             switch (keys)
             {
                 case Keys.Enter:
+                    SelectByKey(keys);
+                    menus[iMenuKey].FocusTextBox();
+                    break;
+                case Keys.Left:
+                    if (Properties.Settings.Default.AppearAtTheBottomLeft)
+                    {
+                        SelectByKey(Keys.Right);
+                    }
+                    else
+                    {
+                        SelectByKey(keys);
+                    }
+
+                    break;
+                case Keys.Right:
+                    if (Properties.Settings.Default.AppearAtTheBottomLeft)
+                    {
+                        SelectByKey(Keys.Left);
+                    }
+                    else
+                    {
+                        SelectByKey(keys);
+                    }
+
+                    break;
                 case Keys.Up:
                 case Keys.Down:
-                case Keys.Left:
-                case Keys.Right:
                 case Keys.Escape:
                     SelectByKey(keys);
                     break;
                 case Keys.Control | Keys.F:
-                    Menu menu = menus[iMenuKey];
-                    menu.FocusTextBox();
+                    menus[iMenuKey].FocusTextBox();
                     break;
                 case Keys.Tab:
                     {
@@ -215,7 +237,11 @@ namespace SystemTrayMenu.Handler
             {
                 DataGridViewRow row = dgv.Rows[i];
                 RowData rowData = (RowData)row.Cells[2].Value;
-                rowData.IsSelected = true;
+                if (rowData != null)
+                {
+                    rowData.IsSelected = true;
+                }
+
                 if (refreshview)
                 {
                     row.Selected = false;

@@ -79,6 +79,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add folder.
+        /// </summary>
+        internal static string Add_folder {
+            get {
+                return ResourceManager.GetString("Add folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add folders to main menu.
+        /// </summary>
+        internal static string Add_folders_to_main_menu {
+            get {
+                return ResourceManager.GetString("Add folders to main menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced.
         /// </summary>
         internal static string Advanced {
@@ -232,6 +250,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cache main menu.
+        /// </summary>
+        internal static string Cache_main_menu {
+            get {
+                return ResourceManager.GetString("Cache main menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change folder.
         /// </summary>
         internal static string Change_folder {
@@ -246,6 +273,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Change_to_relative_folder {
             get {
                 return ResourceManager.GetString("Change to relative folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear cache if more than this number of items.
+        /// </summary>
+        internal static string Clear_cache_if_more_than_this_number_of_items {
+            get {
+                return ResourceManager.GetString("Clear cache if more than this number of items", resourceCulture);
             }
         }
         
@@ -363,6 +399,24 @@ namespace SystemTrayMenu.Resources {
         internal static string Folder_inaccessible {
             get {
                 return ResourceManager.GetString("Folder inaccessible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder paths.
+        /// </summary>
+        internal static string Folder_paths {
+            get {
+                return ResourceManager.GetString("Folder paths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folders.
+        /// </summary>
+        internal static string Folders {
+            get {
+                return ResourceManager.GetString("Folders", resourceCulture);
             }
         }
         
@@ -521,6 +575,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Only Files.
+        /// </summary>
+        internal static string Only_Files {
+            get {
+                return ResourceManager.GetString("Only Files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open Folder.
         /// </summary>
         internal static string Open_Folder {
@@ -571,6 +634,24 @@ namespace SystemTrayMenu.Resources {
         internal static string Problem_with_Shortcut {
             get {
                 return ResourceManager.GetString("Problem with Shortcut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recursive.
+        /// </summary>
+        internal static string Recursive {
+            get {
+                return ResourceManager.GetString("Recursive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove folder.
+        /// </summary>
+        internal static string Remove_folder {
+            get {
+                return ResourceManager.GetString("Remove folder", resourceCulture);
             }
         }
         

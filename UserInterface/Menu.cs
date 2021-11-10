@@ -218,6 +218,11 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        internal void ResetSearchText()
+        {
+            textBoxSearch.Text = string.Empty;
+        }
+
         internal void FocusTextBox()
         {
             textBoxSearch.SelectAll();

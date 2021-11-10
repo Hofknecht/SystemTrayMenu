@@ -369,4 +369,31 @@
   <data name="Appear at the bottom left" xml:space="preserve">
     <value>Zobrazí se vlevo dole</value>
   </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>Přidat složku</value>
+  </data>
+  <data name="Add folders to main menu" xml:space="preserve">
+    <value>Přidejte složky do hlavní nabídky</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>Cesty složek</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>Složky</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekurzivní</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>Odebrat složku</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>Hlavní nabídka mezipaměti</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Pokud je více než tento počet položek, vymažte mezipaměť</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Pouze soubory</value>
+  </data>
 </root>

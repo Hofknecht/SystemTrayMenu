@@ -89,6 +89,7 @@ namespace SystemTrayMenu.UserInterface
         {
             threadsLoading = true;
             load.Start();
+            Load_Tick(load, null);
         }
 
         public void LoadingStop()
@@ -123,13 +124,13 @@ namespace SystemTrayMenu.UserInterface
                 notifyIcon.Icon = systemTrayMenu;
                 load.Stop();
             }
+        }
 
-            void DisposeIconIfNotDefaultIcon()
+        private void DisposeIconIfNotDefaultIcon()
+        {
+            if (notifyIcon.Icon.GetHashCode() != systemTrayMenu.GetHashCode())
             {
-                if (notifyIcon.Icon.GetHashCode() != systemTrayMenu.GetHashCode())
-                {
-                    notifyIcon.Icon?.Dispose();
-                }
+                notifyIcon.Icon?.Dispose();
             }
         }
     }

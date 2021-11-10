@@ -369,4 +369,31 @@
   <data name="Appear at the bottom left" xml:space="preserve">
     <value>Apparaît en bas à gauche</value>
   </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>Ajouter le dossier</value>
+  </data>
+  <data name="Add folders to main menu" xml:space="preserve">
+    <value>Ajouter des dossiers au menu principal</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>Chemins de dossier</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>Dossiers</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Récursif</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>Supprimer le dossier</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>Menu principal du cache</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Vider le cache si plus que ce nombre d'éléments</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Fichiers uniquement</value>
+  </data>
 </root>

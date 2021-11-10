@@ -261,7 +261,11 @@ namespace SystemTrayMenu.DataClasses
             bool handled = false;
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
 
-            if (string.IsNullOrEmpty(Path.GetExtension(resolvedLnkPath)))
+            if (string.IsNullOrEmpty(resolvedLnkPath))
+            {
+                // do nothing
+            }
+            else if (string.IsNullOrEmpty(Path.GetExtension(resolvedLnkPath)))
             {
                 icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Open, true, true, out bool loading);
                 IconLoading = loading;

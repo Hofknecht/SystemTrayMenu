@@ -14,6 +14,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Forms;
     using Microsoft.Win32;
     using SystemTrayMenu.Properties;
+    using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
     using Windows.ApplicationModel;
     using static SystemTrayMenu.UserInterface.HotkeyTextboxControl.HotkeyControl;
@@ -128,7 +129,17 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
                 buttonHotkeyDefault.Text = Translator.GetText("Default");
                 groupBoxLanguage.Text = Translator.GetText("Language");
+                tabControlFolders.Text = Translator.GetText("Folders");
+                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add folders to main menu");
+                buttonAddFolderToRootFolder.Text = Translator.GetText("Add folder");
+                buttonRemoveFolder.Text = Translator.GetText("Remove folder");
+                ColumnFolder.HeaderText = Translator.GetText("Folder paths");
+                ColumnRecursiveLevel.HeaderText = Translator.GetText("Recursive");
+                ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
+                buttonDefaultFolders.Text = Translator.GetText("Default");
                 groupBoxClick.Text = Translator.GetText("Click");
+                checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
+                labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
                 groupBoxSizeAndLocation.Text = Translator.GetText("Size and location");
                 labelSize.Text = $"% {Translator.GetText("Size")}";
@@ -265,6 +276,29 @@ namespace SystemTrayMenu.UserInterface
             }
 
             checkBoxStoreConfigAtAssemblyLocation.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
+
+            try
+            {
+                foreach (string pathAndRecursivString in Properties.Settings.Default.PathsAddToMainMenu.Split(@"|"))
+                {
+                    if (string.IsNullOrEmpty(pathAndRecursivString))
+                    {
+                        continue;
+                    }
+
+                    string pathAddToMainMenu = pathAndRecursivString.Split("recursiv:")[0].Trim();
+                    bool recursive = pathAndRecursivString.Split("recursiv:")[1].StartsWith("True");
+                    bool onlyFiles = pathAndRecursivString.Split("onlyFiles:")[1].StartsWith("True");
+                    dataGridViewFolders.Rows.Add(pathAddToMainMenu, recursive, onlyFiles);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Warn("PathsAddToMainMenu", ex);
+            }
+
+            checkBoxCacheMainMenu.Checked = Settings.Default.CacheMainMenu;
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
 
@@ -599,6 +633,8 @@ namespace SystemTrayMenu.UserInterface
             tabControl.Size = new Size(
                 tabControl.Size.Width,
                 tableLayoutPanelGeneral.Size.Height + (int)(50 * Scaling.Factor));
+
+            dataGridViewFolders.ClearSelection();
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
@@ -636,6 +672,22 @@ namespace SystemTrayMenu.UserInterface
                     RemovePossibilityToSelectFolderByWindowsContextMenu();
                 }
             }
+
+            SaveFolders();
+            void SaveFolders()
+            {
+                Settings.Default.PathsAddToMainMenu = string.Empty;
+                foreach (DataGridViewRow row in dataGridViewFolders.Rows)
+                {
+                    string pathAddToMainMenu = row.Cells[0].Value.ToString();
+                    bool recursiv = (bool)row.Cells[1].Value;
+                    bool onlyFiles = (bool)row.Cells[2].Value;
+                    Settings.Default.PathsAddToMainMenu += $"{pathAddToMainMenu} recursiv:{recursiv} onlyFiles:{onlyFiles}|";
+                }
+            }
+
+            Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
+            Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
 
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
@@ -973,6 +1025,64 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.Reload();
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void ButtonClearFolders_Click(object sender, EventArgs e)
+        {
+            dataGridViewFolders.Rows.Clear();
+            string folderPathCommonStartMenu = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu);
+            dataGridViewFolders.Rows.Add(folderPathCommonStartMenu, true, true);
+            dataGridViewFolders.ClearSelection();
+
+            checkBoxCacheMainMenu.Checked = true;
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 1000;
+        }
+
+        private void ButtonRemoveFolder_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = dataGridViewFolders.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
+            {
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+                    dataGridViewFolders.Rows.RemoveAt(dataGridViewFolders.SelectedRows[0].Index);
+                }
+            }
+
+            dataGridViewFolders.ClearSelection();
+        }
+
+        private void DataGridViewFolders_SelectionChanged(object sender, EventArgs e)
+        {
+            buttonRemoveFolder.Enabled = dataGridViewFolders.SelectedRows.Count > 0;
+        }
+
+        private void ButtonAddFolderToRootFolder_Click(object sender, EventArgs e)
+        {
+            using FolderDialog dialog = new FolderDialog();
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                dataGridViewFolders.Rows.Add(dialog.Folder, false);
+            }
+
+            dataGridViewFolders.ClearSelection();
+        }
+
+        private void DataGridViewFolders_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridViewFolders.HitTest(e.X, e.Y).RowIndex < 0)
+            {
+                dataGridViewFolders.ClearSelection();
+            }
+        }
+
+        private void DataGridViewFolders_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                dataGridViewFolders.CancelEdit();
+            }
         }
     }
 }

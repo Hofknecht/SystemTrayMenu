@@ -45,64 +45,74 @@ namespace SystemTrayMenu.Business
         {
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;
-            static void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
-            {
-                string path = Config.Path;
-                int level = 0;
-                RowData rowData = eDoWork.Argument as RowData;
-                if (rowData != null)
-                {
-                    path = rowData.TargetFilePath;
-                    level = rowData.MenuLevel + 1;
-                }
-
-                MenuData menuData = GetData((BackgroundWorker)senderDoWork, path, level);
-                menuData.RowDataParent = rowData;
-                eDoWork.Result = menuData;
-            }
 
             workerMainMenu.RunWorkerCompleted += LoadMainMenuCompleted;
             void LoadMainMenuCompleted(object sender, RunWorkerCompletedEventArgs e)
             {
                 keyboardInput.ResetSelectedByKey();
                 LoadStopped();
-                MenuData menuData = (MenuData)e.Result;
-                switch (menuData.Validity)
+
+                if (e.Result == null)
                 {
-                    case MenuDataValidity.Valid:
-                        DisposeMenu(menus[menuData.Level]);
-                        menus[0] = Create(menuData, Path.GetFileName(Config.Path));
-                        AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                        break;
-                    case MenuDataValidity.Empty:
-                        if (!showingMessageBox)
-                        {
-                            showingMessageBox = true;
-                            MessageBox.Show(Translator.GetText(
-                                "MessageRootFolderEmpty"));
-                            OpenFolder();
-                            Config.SetFolderByUser();
-                            showingMessageBox = false;
-                        }
+                    // Clean up menu status IsMenuOpen for previous one
+                    DataGridView dgvMainMenu = menus[0].GetDataGridView();
+                    foreach (DataRow row in ((DataTable)dgvMainMenu.DataSource).Rows)
+                    {
+                        RowData rowDataToClear = (RowData)row[2];
+                        rowDataToClear.IsMenuOpen = false;
+                        rowDataToClear.IsSelected = false;
+                        rowDataToClear.IsContextMenuOpen = false;
+                    }
 
-                        break;
-                    case MenuDataValidity.NoAccess:
-                        if (!showingMessageBox)
-                        {
-                            showingMessageBox = true;
-                            MessageBox.Show(Translator.GetText(
-                                "MessageRootFolderNoAccess"));
-                            OpenFolder();
-                            Config.SetFolderByUser();
-                            showingMessageBox = false;
-                        }
+                    RefreshSelection(dgvMainMenu);
 
-                        break;
-                    case MenuDataValidity.AbortedOrUnknown:
-                        Log.Info("MenuDataValidity.AbortedOrUnknown");
-                        break;
-                    default:
-                        break;
+                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                    menus[0].ResetSearchText();
+                }
+                else
+                {
+                    MenuData menuData = (MenuData)e.Result;
+                    switch (menuData.Validity)
+                    {
+                        case MenuDataValidity.Valid:
+                            if (!Properties.Settings.Default.CacheMainMenu)
+                            {
+                                DisposeMenu(menus[menuData.Level]);
+                                menus[0] = Create(menuData, Path.GetFileName(Config.Path));
+                            }
+
+                            AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                            break;
+                        case MenuDataValidity.Empty:
+                            if (!showingMessageBox)
+                            {
+                                showingMessageBox = true;
+                                MessageBox.Show(Translator.GetText(
+                                    "MessageRootFolderEmpty"));
+                                OpenFolder();
+                                Config.SetFolderByUser();
+                                showingMessageBox = false;
+                            }
+
+                            break;
+                        case MenuDataValidity.NoAccess:
+                            if (!showingMessageBox)
+                            {
+                                showingMessageBox = true;
+                                MessageBox.Show(Translator.GetText(
+                                    "MessageRootFolderNoAccess"));
+                                OpenFolder();
+                                Config.SetFolderByUser();
+                                showingMessageBox = false;
+                            }
+
+                            break;
+                        case MenuDataValidity.AbortedOrUnknown:
+                            Log.Info("MenuDataValidity.AbortedOrUnknown");
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
                 openCloseState = OpenCloseState.Default;
@@ -304,6 +314,14 @@ namespace SystemTrayMenu.Business
                 Validity = MenuDataValidity.AbortedOrUnknown,
                 Level = level,
             };
+
+            string[] directoriesToAddToMainMenu = Array.Empty<string>();
+            string[] filesToAddToMainMenu = Array.Empty<string>();
+            if (level == 0)
+            {
+                AddFoldersToMainMenu(ref directoriesToAddToMainMenu, ref filesToAddToMainMenu);
+            }
+
             if (!worker.CancellationPending)
             {
                 string[] directories = Array.Empty<string>();
@@ -369,6 +387,7 @@ namespace SystemTrayMenu.Business
                     else
                     {
                         directories = Directory.GetDirectories(path);
+                        directories = directories.Concat(directoriesToAddToMainMenu).ToArray();
                     }
 
                     Array.Sort(directories, new WindowsExplorerSort());
@@ -422,6 +441,7 @@ namespace SystemTrayMenu.Business
                     else if (!FileLnk.IsNetworkRoot(path))
                     {
                         files = Directory.GetFiles(path);
+                        files = files.Concat(filesToAddToMainMenu).ToArray();
                     }
 
                     Array.Sort(files, new WindowsExplorerSort());
@@ -572,12 +592,22 @@ namespace SystemTrayMenu.Business
         internal void MainPreload()
         {
             IconReader.SingleThread = true;
+            LoadStarted();
             menus[0] = Create(
                 GetData(workerMainMenu, Config.Path, 0),
                 Path.GetFileName(Config.Path));
             IconReader.SingleThread = false;
             AdjustMenusSizeAndLocation();
-            DisposeMenu(menus[0]);
+            if (Properties.Settings.Default.CacheMainMenu)
+            {
+                workerMainMenu.DoWork -= LoadMenu;
+            }
+            else
+            {
+                DisposeMenu(menus[0]);
+            }
+
+            LoadStopped();
 
             if (FileUrl.GetDefaultBrowserPath(out string browserPath))
             {
@@ -600,6 +630,93 @@ namespace SystemTrayMenu.Business
             if (workerMainMenu.IsBusy)
             {
                 workerMainMenu.CancelAsync();
+            }
+        }
+
+        private static void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
+        {
+            string path = Config.Path;
+            int level = 0;
+            RowData rowData = eDoWork.Argument as RowData;
+            if (rowData != null)
+            {
+                path = rowData.TargetFilePath;
+                level = rowData.MenuLevel + 1;
+            }
+
+            MenuData menuData = GetData((BackgroundWorker)senderDoWork, path, level);
+            menuData.RowDataParent = rowData;
+            eDoWork.Result = menuData;
+        }
+
+        private static void AddFoldersToMainMenu(ref string[] directoriesToAddToMainMenu, ref string[] filesToAddToMainMenu)
+        {
+            string pathAddToMainMenu = string.Empty;
+            bool recursive = false;
+            try
+            {
+                foreach (string pathAndRecursivString in Properties.Settings.Default.PathsAddToMainMenu.Split(@"|"))
+                {
+                    if (string.IsNullOrEmpty(pathAndRecursivString))
+                    {
+                        continue;
+                    }
+
+                    pathAddToMainMenu = pathAndRecursivString.Split("recursiv:")[0].Trim();
+                    recursive = pathAndRecursivString.Split("recursiv:")[1].StartsWith("True");
+                    bool onlyFiles = pathAndRecursivString.Split("onlyFiles:")[1].StartsWith("True");
+
+                    string[] directoriesToConcat = Array.Empty<string>();
+                    string[] filesToAddToConcat = Array.Empty<string>();
+                    if (recursive)
+                    {
+                        GetDirectoriesAndFilesRecursive(ref directoriesToConcat, ref filesToAddToConcat, pathAddToMainMenu);
+                    }
+                    else
+                    {
+                        directoriesToConcat = Directory.GetDirectories(pathAddToMainMenu);
+                        filesToAddToConcat = Directory.GetFiles(pathAddToMainMenu);
+                    }
+
+                    if (!onlyFiles)
+                    {
+                        directoriesToAddToMainMenu = directoriesToAddToMainMenu.Concat(directoriesToConcat).ToArray();
+                    }
+
+                    filesToAddToMainMenu = filesToAddToMainMenu.Concat(filesToAddToConcat).ToArray();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"path:'{pathAddToMainMenu}' recursiv:{recursive}", ex);
+            }
+        }
+
+        private static void GetDirectoriesAndFilesRecursive(ref string[] directoriesToConcat, ref string[] filesToAddToConcat, string pathAddToMainMenu)
+        {
+            try
+            {
+                string[] directories = Directory.GetDirectories(pathAddToMainMenu);
+
+                try
+                {
+                    filesToAddToConcat = filesToAddToConcat.Concat(Directory.GetFiles(pathAddToMainMenu)).ToArray();
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"GetDirectoriesAndFilesRecursive path:'{pathAddToMainMenu}'", ex);
+                }
+
+                foreach (string directory in directories)
+                {
+                    GetDirectoriesAndFilesRecursive(ref directoriesToConcat, ref filesToAddToConcat, directory);
+                }
+
+                directoriesToConcat = directoriesToConcat.Concat(directories).ToArray();
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"GetDirectoriesAndFilesRecursive path:'{pathAddToMainMenu}'", ex);
             }
         }
 
@@ -774,7 +891,7 @@ namespace SystemTrayMenu.Business
                 AdjustMenusSizeAndLocation();
             }
 
-            if (!menu.Visible)
+            if (!menu.Visible && menu.Level != 0)
             {
                 DisposeMenu(menu);
             }

@@ -369,4 +369,31 @@
   <data name="Appear at the bottom left" xml:space="preserve">
     <value>왼쪽 하단에 나타남</value>
   </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>폴더 추가</value>
+  </data>
+  <data name="Add folders to main menu" xml:space="preserve">
+    <value>기본 메뉴에 폴더 추가</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>폴더 경로</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>폴더</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>재귀</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>폴더 제거</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>캐시 메인 메뉴</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>이 항목 수보다 많은 경우 캐시 지우기</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>파일만</value>
+  </data>
 </root>

@@ -369,4 +369,31 @@
   <data name="Appear at the bottom left" xml:space="preserve">
     <value>出现在左下角</value>
   </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>新增文件夹</value>
+  </data>
+  <data name="Add folders to main menu" xml:space="preserve">
+    <value>将文件夹添加到主菜单</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>文件夹路径</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>文件夹</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>递归</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>删除文件夹</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>缓存主菜单</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>如果超过此数量的项目，则清除缓存</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>只有文件</value>
+  </data>
 </root>
