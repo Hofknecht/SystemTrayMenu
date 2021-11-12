@@ -85,25 +85,32 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 
             if (owner != null && frm.Show(owner.Handle) == NativeMethods.S_OK)
             {
-                if (frm.GetResult(out NativeMethods.IShellItem shellItem) == NativeMethods.S_OK)
+                try
                 {
-                    if (shellItem.GetDisplayName(
-                        NativeMethods.SIGDN_FILESYSPATH,
-                        out IntPtr pszString) == NativeMethods.S_OK)
+                    if (frm.GetResult(out NativeMethods.IShellItem shellItem) == NativeMethods.S_OK)
                     {
-                        if (pszString != IntPtr.Zero)
+                        if (shellItem.GetDisplayName(
+                            NativeMethods.SIGDN_FILESYSPATH,
+                            out IntPtr pszString) == NativeMethods.S_OK)
                         {
-                            try
+                            if (pszString != IntPtr.Zero)
                             {
-                                Folder = Marshal.PtrToStringAuto(pszString);
-                                return DialogResult.OK;
-                            }
-                            finally
-                            {
-                                Marshal.FreeCoTaskMem(pszString);
+                                try
+                                {
+                                    Folder = Marshal.PtrToStringAuto(pszString);
+                                    return DialogResult.OK;
+                                }
+                                finally
+                                {
+                                    Marshal.FreeCoTaskMem(pszString);
+                                }
                             }
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn("Folder Dialog failed", ex);
                 }
             }
 
