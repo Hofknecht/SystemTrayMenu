@@ -396,4 +396,7 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Clear cache if more than this number of items</value>
   </data>
+  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+    <value>Add sample 'Start Menu' folder</value>
+  </data>
 </root>

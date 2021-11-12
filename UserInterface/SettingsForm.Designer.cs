@@ -68,6 +68,8 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxCacheMainMenu = new System.Windows.Forms.CheckBox();
             this.groupBoxFoldersInRootFolder = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonAddSampleStartMenuFolder = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonAddFolderToRootFolder = new System.Windows.Forms.Button();
             this.buttonRemoveFolder = new System.Windows.Forms.Button();
@@ -313,6 +315,7 @@ namespace SystemTrayMenu.UserInterface
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClearCacheIfMoreThanThisNumberOfItems)).BeginInit();
             this.groupBoxFoldersInRootFolder.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFolders)).BeginInit();
             this.tabPageAdvanced.SuspendLayout();
@@ -900,7 +903,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel8.Controls.Add(this.numericUpDownClearCacheIfMoreThanThisNumberOfItems, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.labelClearCacheIfMoreThanThisNumberOfItems, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 344);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 315);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -944,7 +947,7 @@ namespace SystemTrayMenu.UserInterface
             // checkBoxCacheMainMenu
             // 
             this.checkBoxCacheMainMenu.AutoSize = true;
-            this.checkBoxCacheMainMenu.Location = new System.Drawing.Point(3, 322);
+            this.checkBoxCacheMainMenu.Location = new System.Drawing.Point(3, 293);
             this.checkBoxCacheMainMenu.Name = "checkBoxCacheMainMenu";
             this.checkBoxCacheMainMenu.Size = new System.Drawing.Size(168, 19);
             this.checkBoxCacheMainMenu.TabIndex = 2;
@@ -960,7 +963,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxFoldersInRootFolder.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxFoldersInRootFolder.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxFoldersInRootFolder.Name = "groupBoxFoldersInRootFolder";
-            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(400, 313);
+            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(400, 284);
             this.groupBoxFoldersInRootFolder.TabIndex = 0;
             this.groupBoxFoldersInRootFolder.TabStop = false;
             this.groupBoxFoldersInRootFolder.Text = "groupBox1";
@@ -971,17 +974,51 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 3);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.dataGridViewFolders, 0, 2);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 3;
+            this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 260F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(394, 291);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(394, 262);
             this.tableLayoutPanel7.TabIndex = 0;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.AutoSize = true;
+            this.tableLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel9.Controls.Add(this.buttonAddSampleStartMenuFolder, 0, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 231);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // buttonAddSampleStartMenuFolder
+            // 
+            this.buttonAddSampleStartMenuFolder.AutoSize = true;
+            this.buttonAddSampleStartMenuFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAddSampleStartMenuFolder.Location = new System.Drawing.Point(2, 3);
+            this.buttonAddSampleStartMenuFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            this.buttonAddSampleStartMenuFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonAddSampleStartMenuFolder.Name = "buttonAddSampleStartMenuFolder";
+            this.buttonAddSampleStartMenuFolder.Size = new System.Drawing.Size(202, 25);
+            this.buttonAddSampleStartMenuFolder.TabIndex = 0;
+            this.buttonAddSampleStartMenuFolder.Text = "buttonAddSampleStartMenuFolder";
+            this.buttonAddSampleStartMenuFolder.UseVisualStyleBackColor = true;
+            this.buttonAddSampleStartMenuFolder.Click += new System.EventHandler(this.ButtonAddSampleStartMenuFolder_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -1047,9 +1084,12 @@ namespace SystemTrayMenu.UserInterface
             this.dataGridViewFolders.RowHeadersVisible = false;
             this.dataGridViewFolders.RowTemplate.Height = 25;
             this.dataGridViewFolders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewFolders.Size = new System.Drawing.Size(388, 254);
+            this.dataGridViewFolders.Size = new System.Drawing.Size(388, 194);
             this.dataGridViewFolders.TabIndex = 1;
             this.dataGridViewFolders.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DataGridViewFolders_CellValidating);
+            this.dataGridViewFolders.CurrentCellDirtyStateChanged += new System.EventHandler(this.DataGridViewFolders_CurrentCellDirtyStateChanged);
+            this.dataGridViewFolders.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridViewFolders_RowsAdded);
+            this.dataGridViewFolders.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridViewFolders_RowsRemoved);
             this.dataGridViewFolders.SelectionChanged += new System.EventHandler(this.DataGridViewFolders_SelectionChanged);
             this.dataGridViewFolders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DataGridViewFolders_MouseClick);
             // 
@@ -1081,7 +1121,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonDefaultFolders.AutoSize = true;
             this.buttonDefaultFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonDefaultFolders.Location = new System.Drawing.Point(9, 382);
+            this.buttonDefaultFolders.Location = new System.Drawing.Point(9, 353);
             this.buttonDefaultFolders.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonDefaultFolders.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonDefaultFolders.Name = "buttonDefaultFolders";
@@ -4127,6 +4167,8 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxFoldersInRootFolder.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFolders)).EndInit();
@@ -4574,5 +4616,7 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.NumericUpDown numericUpDownClearCacheIfMoreThanThisNumberOfItems;
         private System.Windows.Forms.Label labelClearCacheIfMoreThanThisNumberOfItems;
         private System.Windows.Forms.CheckBox checkBoxCacheMainMenu;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Button buttonAddSampleStartMenuFolder;
     }
 }

@@ -396,4 +396,7 @@
   <data name="Only Files" xml:space="preserve">
     <value>Chỉ tệp</value>
   </data>
+  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+    <value>Thêm thư mục 'Start Menu' mẫu</value>
+  </data>
 </root>

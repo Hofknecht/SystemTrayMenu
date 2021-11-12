@@ -396,4 +396,7 @@
   <data name="Only Files" xml:space="preserve">
     <value>Nur Dateien</value>
   </data>
+  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+    <value>Beispielordner 'Startmenü' hinzufügen</value>
+  </data>
 </root>

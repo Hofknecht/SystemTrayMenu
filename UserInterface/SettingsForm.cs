@@ -136,6 +136,7 @@ namespace SystemTrayMenu.UserInterface
                 ColumnFolder.HeaderText = Translator.GetText("Folder paths");
                 ColumnRecursiveLevel.HeaderText = Translator.GetText("Recursive");
                 ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
+                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' folder");
                 buttonDefaultFolders.Text = Translator.GetText("Default");
                 groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
@@ -836,6 +837,104 @@ namespace SystemTrayMenu.UserInterface
             inHotkey = false;
         }
 
+        private void ButtonAddSampleStartMenuFolder_Click(object sender, EventArgs e)
+        {
+            dataGridViewFolders.Rows.Clear();
+            string folderPathCommonStartMenu = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu);
+            dataGridViewFolders.Rows.Add(folderPathCommonStartMenu, true, true);
+            dataGridViewFolders.ClearSelection();
+        }
+
+        private void ButtonClearFolders_Click(object sender, EventArgs e)
+        {
+            dataGridViewFolders.Rows.Clear();
+            checkBoxCacheMainMenu.Checked = true;
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 1000;
+        }
+
+        private void ButtonAddFolderToRootFolder_Click(object sender, EventArgs e)
+        {
+            using FolderDialog dialog = new FolderDialog();
+            dialog.InitialFolder = Config.Path;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                dataGridViewFolders.Rows.Add(dialog.Folder, false, true);
+            }
+
+            dataGridViewFolders.ClearSelection();
+        }
+
+        private void ButtonRemoveFolder_Click(object sender, EventArgs e)
+        {
+            int selectedRowCount = dataGridViewFolders.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
+            {
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+                    dataGridViewFolders.Rows.RemoveAt(dataGridViewFolders.SelectedRows[0].Index);
+                }
+            }
+
+            dataGridViewFolders.ClearSelection();
+        }
+
+        private void DataGridViewFolders_SelectionChanged(object sender, EventArgs e)
+        {
+            buttonRemoveFolder.Enabled = dataGridViewFolders.SelectedRows.Count > 0;
+        }
+
+        private void DataGridViewFolders_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridViewFolders.HitTest(e.X, e.Y).RowIndex < 0)
+            {
+                dataGridViewFolders.ClearSelection();
+            }
+        }
+
+        private void DataGridViewFolders_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                dataGridViewFolders.CancelEdit();
+            }
+        }
+
+        private void DataGridViewFolders_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            EnableButtonAddStartMenu();
+        }
+
+        private void DataGridViewFolders_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            EnableButtonAddStartMenu();
+        }
+
+        private void DataGridViewFolders_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            EnableButtonAddStartMenu();
+        }
+
+        private void EnableButtonAddStartMenu()
+        {
+            bool doesStartMenuFolderExist = false;
+            foreach (DataGridViewRow row in dataGridViewFolders.Rows)
+            {
+                string folderPathCommonStartMenu = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu);
+                string pathAddToMainMenu = row.Cells[0].Value.ToString();
+                bool recursiv = (bool)row.Cells[1].EditedFormattedValue;
+                bool onlyFiles = (bool)row.Cells[2].EditedFormattedValue;
+                if (folderPathCommonStartMenu == pathAddToMainMenu &&
+                    recursiv == true &&
+                    onlyFiles == true)
+                {
+                    doesStartMenuFolderExist = true;
+                }
+            }
+
+            buttonAddSampleStartMenuFolder.Enabled = !doesStartMenuFolderExist;
+        }
+
         private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
         {
             checkBoxOpenItemWithOneClick.Checked = true;
@@ -1025,64 +1124,6 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.Reload();
             DialogResult = DialogResult.Cancel;
             Close();
-        }
-
-        private void ButtonClearFolders_Click(object sender, EventArgs e)
-        {
-            dataGridViewFolders.Rows.Clear();
-            string folderPathCommonStartMenu = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu);
-            dataGridViewFolders.Rows.Add(folderPathCommonStartMenu, true, true);
-            dataGridViewFolders.ClearSelection();
-
-            checkBoxCacheMainMenu.Checked = true;
-            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 1000;
-        }
-
-        private void ButtonRemoveFolder_Click(object sender, EventArgs e)
-        {
-            int selectedRowCount = dataGridViewFolders.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0)
-            {
-                for (int i = 0; i < selectedRowCount; i++)
-                {
-                    dataGridViewFolders.Rows.RemoveAt(dataGridViewFolders.SelectedRows[0].Index);
-                }
-            }
-
-            dataGridViewFolders.ClearSelection();
-        }
-
-        private void DataGridViewFolders_SelectionChanged(object sender, EventArgs e)
-        {
-            buttonRemoveFolder.Enabled = dataGridViewFolders.SelectedRows.Count > 0;
-        }
-
-        private void ButtonAddFolderToRootFolder_Click(object sender, EventArgs e)
-        {
-            using FolderDialog dialog = new FolderDialog();
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                dataGridViewFolders.Rows.Add(dialog.Folder, false);
-            }
-
-            dataGridViewFolders.ClearSelection();
-        }
-
-        private void DataGridViewFolders_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (dataGridViewFolders.HitTest(e.X, e.Y).RowIndex < 0)
-            {
-                dataGridViewFolders.ClearSelection();
-            }
-        }
-
-        private void DataGridViewFolders_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                dataGridViewFolders.CancelEdit();
-            }
         }
     }
 }

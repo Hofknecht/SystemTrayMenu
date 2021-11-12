@@ -396,4 +396,7 @@
   <data name="Only Files" xml:space="preserve">
     <value>Solo archivos</value>
   </data>
+  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+    <value>Agregar carpeta de muestra 'Menú Inicio'</value>
+  </data>
 </root>

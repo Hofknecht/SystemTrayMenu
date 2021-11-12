@@ -97,6 +97,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add sample &apos;Start Menu&apos; folder.
+        /// </summary>
+        internal static string Add_sample__Start_Menu__folder {
+            get {
+                return ResourceManager.GetString("Add sample \'Start Menu\' folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced.
         /// </summary>
         internal static string Advanced {

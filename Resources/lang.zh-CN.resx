@@ -396,4 +396,7 @@
   <data name="Only Files" xml:space="preserve">
     <value>只有文件</value>
   </data>
+  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+    <value>添加示例“开始菜单”文件夹</value>
+  </data>
 </root>
