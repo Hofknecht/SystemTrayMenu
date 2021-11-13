@@ -92,7 +92,15 @@ namespace SystemTrayMenu.Business
                             {
                                 DisposeMenu(menus[menuData.Level]);
                                 menus[0] = Create(menuData, Path.GetFileName(Config.Path));
-                                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+
+                                if (IconReader.MainPreload)
+                                {
+                                    IconReader.MainPreload = false;
+                                }
+                                else
+                                {
+                                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                                }
                             }
 
                             break;
@@ -608,7 +616,7 @@ namespace SystemTrayMenu.Business
 
             if (FileUrl.GetDefaultBrowserPath(out string browserPath))
             {
-                IconReader.GetFileIconWithCache(browserPath, true, true, out _);
+                IconReader.GetFileIconWithCache(browserPath, true, true, true, out _);
             }
 
             timerShowProcessStartedAsLoadingIcon.Tick += Tick;
@@ -820,7 +828,6 @@ namespace SystemTrayMenu.Business
                 else if (!Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
                     !waitingForReactivate)
                 {
-                    Log.Info($"Deactivate {openCloseState}");
                     FadeHalfOrOutIfNeeded();
                     if (!IsActive())
                     {

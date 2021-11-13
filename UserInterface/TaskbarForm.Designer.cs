@@ -44,7 +44,7 @@
             this.MaximizeBox = false;
             this.Name = "TaskbarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "STM";
+            this.Text = "SystemTrayMenu";
             this.LocationChanged += new System.EventHandler(this.TaskbarForm_LocationChanged);
             this.ResumeLayout(false);
 

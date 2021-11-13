@@ -44,7 +44,7 @@ namespace SystemTrayMenu.UserInterface
             labelTitle.Name = "labelTitle";
             labelTitle.Padding = new Padding(3, 0, 0, 1);
             labelTitle.Size = new Size(70, 14);
-            labelTitle.Text = "STM";
+            labelTitle.Text = "SystemTrayMenu";
             labelTitle.TextAlign = ContentAlignment.MiddleCenter;
             labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);
 

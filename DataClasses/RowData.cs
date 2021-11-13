@@ -96,7 +96,7 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (isDirectory)
             {
-                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Closed, false, true, out bool loading);
+                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Closed, false, true, MenuLevel == 0, out bool loading);
                 IconLoading = loading;
             }
             else
@@ -131,7 +131,7 @@ namespace SystemTrayMenu.DataClasses
                     try
                     {
                         FilePathIcon = TargetFilePathOrig;
-                        icon = IconReader.GetFileIconWithCache(FilePathIcon, showOverlay, true, out bool loading);
+                        icon = IconReader.GetFileIconWithCache(FilePathIcon, showOverlay, true, MenuLevel == 0, out bool loading);
                         IconLoading = loading;
                     }
                     catch (Exception ex)
@@ -212,7 +212,7 @@ namespace SystemTrayMenu.DataClasses
         {
             if (ContainsMenu)
             {
-                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Closed, false, false, out bool loading);
+                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Closed, false, false, MenuLevel == 0, out bool loading);
                 IconLoading = loading;
             }
             else
@@ -230,7 +230,7 @@ namespace SystemTrayMenu.DataClasses
                     filePath = TargetFilePathOrig;
                 }
 
-                icon = IconReader.GetFileIconWithCache(filePath, showOverlay, false, out bool loading);
+                icon = IconReader.GetFileIconWithCache(filePath, showOverlay, false, MenuLevel == 0, out bool loading);
                 IconLoading = loading;
             }
 
@@ -267,7 +267,7 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (string.IsNullOrEmpty(Path.GetExtension(resolvedLnkPath)))
             {
-                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Open, true, true, out bool loading);
+                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Open, true, true, MenuLevel == 0, out bool loading);
                 IconLoading = loading;
                 handled = true;
                 isLnkDirectory = true;
@@ -303,7 +303,7 @@ namespace SystemTrayMenu.DataClasses
                     if (FileUrl.GetDefaultBrowserPath(out string browserPath))
                     {
                         FilePathIcon = browserPath;
-                        icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, out bool loading);
+                        icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, MenuLevel == 0, out bool loading);
                         IconLoading = loading;
                         handled = true;
                     }
@@ -311,7 +311,7 @@ namespace SystemTrayMenu.DataClasses
                 else if (File.Exists(iconFile))
                 {
                     FilePathIcon = iconFile;
-                    icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, out bool loading);
+                    icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, MenuLevel == 0, out bool loading);
                     IconLoading = loading;
                     handled = true;
                 }
@@ -335,7 +335,7 @@ namespace SystemTrayMenu.DataClasses
             bool handled = false;
             try
             {
-                icon = IconReader.GetExtractAllIconsLastWithCache(TargetFilePathOrig, true, out bool loading);
+                icon = IconReader.GetExtractAllIconsLastWithCache(TargetFilePathOrig, true, MenuLevel == 0, out bool loading);
                 IconLoading = loading;
                 handled = true;
             }
