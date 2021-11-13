@@ -399,4 +399,7 @@
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
     <value>Add sample 'Start Menu' folder</value>
   </data>
+  <data name="Row height in percentage" xml:space="preserve">
+    <value>Row height in percentage</value>
+  </data>
 </root>

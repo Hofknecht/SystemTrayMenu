@@ -674,6 +674,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Row height in percentage.
+        /// </summary>
+        internal static string Row_height_in_percentage {
+            get {
+                return ResourceManager.GetString("Row height in percentage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scrollbar.
         /// </summary>
         internal static string Scrollbar {

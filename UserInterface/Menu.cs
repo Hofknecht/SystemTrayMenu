@@ -539,10 +539,10 @@ namespace SystemTrayMenu.UserInterface
 
         private void AdjustDataGridViewHeight(Menu menuPredecessor, int screenHeightMax)
         {
-            double factor = 1;
+            double factor = Properties.Settings.Default.RowHeighteInPercentage / 100f;
             if (NativeMethods.IsTouchEnabled())
             {
-                factor = 1.5;
+                factor = Properties.Settings.Default.RowHeighteInPercentageTouch / 100f;
             }
 
             if (menuPredecessor == null)

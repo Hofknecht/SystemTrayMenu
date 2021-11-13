@@ -144,7 +144,8 @@ namespace SystemTrayMenu.UserInterface
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
                 groupBoxSizeAndLocation.Text = Translator.GetText("Size and location");
-                labelSize.Text = $"% {Translator.GetText("Size")}";
+                labelSizeInPercentage.Text = $"% {Translator.GetText("Size")}";
+                labelRowHeightInPercentage.Text = $"% {Translator.GetText("Row height in percentage")}";
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
                 checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
@@ -307,32 +308,46 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownSizeInPercentage.Minimum = 100;
             numericUpDownSizeInPercentage.Maximum = 200;
             numericUpDownSizeInPercentage.Increment = 25;
-            numericUpDownSizeInPercentage.MouseWheel += NumericUpDownSizeInPercentage_MouseWheel;
-            void NumericUpDownSizeInPercentage_MouseWheel(object sender, MouseEventArgs e)
+            numericUpDownSizeInPercentage.MouseWheel += NumericUpDown_MouseWheel;
+            void NumericUpDown_MouseWheel(object sender, MouseEventArgs e)
             {
-                decimal newValue = numericUpDownSizeInPercentage.Value;
+                NumericUpDown numericUpDown = (NumericUpDown)sender;
+                decimal newValue = numericUpDown.Value;
                 if (e.Delta > 0)
                 {
-                    newValue += numericUpDownSizeInPercentage.Increment;
-                    if (newValue > numericUpDownSizeInPercentage.Maximum)
+                    newValue += numericUpDown.Increment;
+                    if (newValue > numericUpDown.Maximum)
                     {
-                        newValue = (int)numericUpDownSizeInPercentage.Maximum;
+                        newValue = (int)numericUpDown.Maximum;
                     }
                 }
                 else
                 {
-                    newValue -= numericUpDownSizeInPercentage.Increment;
-                    if (newValue < numericUpDownSizeInPercentage.Minimum)
+                    newValue -= numericUpDown.Increment;
+                    if (newValue < numericUpDown.Minimum)
                     {
-                        newValue = (int)numericUpDownSizeInPercentage.Minimum;
+                        newValue = (int)numericUpDown.Minimum;
                     }
                 }
 
-                numericUpDownSizeInPercentage.Value = newValue;
+                numericUpDown.Value = newValue;
                 ((HandledMouseEventArgs)e).Handled = true;
             }
 
             numericUpDownSizeInPercentage.Value = Settings.Default.SizeInPercentage;
+
+            numericUpDownRowHeighteInPercentage.Minimum = 50;
+            numericUpDownRowHeighteInPercentage.Maximum = 200;
+            numericUpDownRowHeighteInPercentage.Increment = 25;
+            numericUpDownRowHeighteInPercentage.MouseWheel += NumericUpDown_MouseWheel;
+            if (DllImports.NativeMethods.IsTouchEnabled())
+            {
+                numericUpDownRowHeighteInPercentage.Value = Settings.Default.RowHeighteInPercentageTouch;
+            }
+            else
+            {
+                numericUpDownRowHeighteInPercentage.Value = Settings.Default.RowHeighteInPercentage;
+            }
 
             numericUpDownMenuWidth.Minimum = 50;
             numericUpDownMenuWidth.Maximum = 1000;
@@ -694,6 +709,15 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
             Settings.Default.SizeInPercentage = (int)numericUpDownSizeInPercentage.Value;
+            if (DllImports.NativeMethods.IsTouchEnabled())
+            {
+                Settings.Default.RowHeighteInPercentageTouch = (int)numericUpDownRowHeighteInPercentage.Value;
+            }
+            else
+            {
+                Settings.Default.RowHeighteInPercentage = (int)numericUpDownRowHeighteInPercentage.Value;
+            }
+
             Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
             Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
             Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
@@ -941,6 +965,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxAppearAtMouseLocation.Checked = false;
             numericUpDownSizeInPercentage.Value = 100;
+            numericUpDownRowHeighteInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 300;
             numericUpDownMenuHeight.Value = 600;
             checkBoxShowInTaskbar.Checked = false;
