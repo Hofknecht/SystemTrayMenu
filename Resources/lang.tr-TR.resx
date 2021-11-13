@@ -399,4 +399,10 @@
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
     <value>Örnek 'Başlat Menüsü' klasörü ekleyin</value>
   </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Yuvarlak köşeler</value>
+  </data>
+  <data name="Row height in percentage" xml:space="preserve">
+    <value>Yüzde olarak satır yüksekliği</value>
+  </data>
 </root>

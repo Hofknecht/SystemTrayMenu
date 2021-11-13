@@ -42,7 +42,6 @@ namespace SystemTrayMenu.Utilities
 
         public static void Dispose(bool includingMainMenu = true)
         {
-
             if (includingMainMenu)
             {
                 foreach (Icon icon in DictIconCacheMainMenu.Values)

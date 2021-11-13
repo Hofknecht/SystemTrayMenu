@@ -24,7 +24,7 @@ namespace SystemTrayMenu.Helper
         /// <returns>Wether or not the icon was succesfully generated.</returns>
         public static bool ConvertToIcon(Stream input, Stream output, int size = 16, bool preserveAspectRatio = false)
         {
-            Bitmap inputBitmap = (Bitmap)Bitmap.FromStream(input);
+            Bitmap inputBitmap = (Bitmap)Image.FromStream(input);
             if (inputBitmap != null)
             {
                 int width, height;

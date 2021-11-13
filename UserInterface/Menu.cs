@@ -479,6 +479,11 @@ namespace SystemTrayMenu.UserInterface
 
             // Update position
             Location = new Point(x, y);
+
+            if (Properties.Settings.Default.RoundCorners)
+            {
+                Region = Region.FromHrgn(NativeMethods.CreateRoundCorners(Width, Height + 1, 15, 15));
+            }
         }
 
         internal void KeyPressedSearch(string letter)

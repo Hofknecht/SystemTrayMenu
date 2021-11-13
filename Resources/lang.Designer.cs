@@ -674,6 +674,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Round corners.
+        /// </summary>
+        internal static string Round_corners {
+            get {
+                return ResourceManager.GetString("Round corners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Row height in percentage.
         /// </summary>
         internal static string Row_height_in_percentage {

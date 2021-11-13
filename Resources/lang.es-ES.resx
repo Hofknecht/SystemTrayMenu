@@ -399,4 +399,10 @@
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
     <value>Agregar carpeta de muestra 'Menú Inicio'</value>
   </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Esquinas redondas</value>
+  </data>
+  <data name="Row height in percentage" xml:space="preserve">
+    <value>Altura de fila en porcentaje</value>
+  </data>
 </root>

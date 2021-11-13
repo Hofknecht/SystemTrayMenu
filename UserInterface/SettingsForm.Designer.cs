@@ -85,6 +85,7 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
             this.groupBoxSizeAndLocation = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelSizeAndLocation = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxRoundCorners = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDownRowHeighteInPercentage = new System.Windows.Forms.NumericUpDown();
             this.labelRowHeightInPercentage = new System.Windows.Forms.Label();
@@ -1225,7 +1226,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSizeAndLocation.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxSizeAndLocation.Name = "groupBoxSizeAndLocation";
             this.groupBoxSizeAndLocation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxSizeAndLocation.Size = new System.Drawing.Size(400, 216);
+            this.groupBoxSizeAndLocation.Size = new System.Drawing.Size(400, 241);
             this.groupBoxSizeAndLocation.TabIndex = 0;
             this.groupBoxSizeAndLocation.TabStop = false;
             this.groupBoxSizeAndLocation.Text = "groupBoxSizeAndLocation";
@@ -1236,6 +1237,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelSizeAndLocation.ColumnCount = 1;
             this.tableLayoutPanelSizeAndLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.checkBoxRoundCorners, 0, 7);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.tableLayoutPanel11, 0, 1);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanelSizeAndLocation.Controls.Add(this.checkBoxAppearAtTheBottomLeft, 0, 6);
@@ -1246,7 +1248,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelSizeAndLocation.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelSizeAndLocation.Name = "tableLayoutPanelSizeAndLocation";
-            this.tableLayoutPanelSizeAndLocation.RowCount = 7;
+            this.tableLayoutPanelSizeAndLocation.RowCount = 8;
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1254,8 +1256,20 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(394, 191);
+            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(394, 216);
             this.tableLayoutPanelSizeAndLocation.TabIndex = 0;
+            // 
+            // checkBoxRoundCorners
+            // 
+            this.checkBoxRoundCorners.AutoSize = true;
+            this.checkBoxRoundCorners.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxRoundCorners.Location = new System.Drawing.Point(3, 194);
+            this.checkBoxRoundCorners.Name = "checkBoxRoundCorners";
+            this.checkBoxRoundCorners.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxRoundCorners.TabIndex = 4;
+            this.checkBoxRoundCorners.Text = "checkBoxRoundCorners";
+            this.checkBoxRoundCorners.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel11
             // 
@@ -1444,7 +1458,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 284);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 309);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -4714,5 +4728,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBoxRoundCorners;
     }
 }

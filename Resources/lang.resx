@@ -402,4 +402,7 @@
   <data name="Row height in percentage" xml:space="preserve">
     <value>Row height in percentage</value>
   </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Round corners</value>
+  </data>
 </root>

@@ -151,6 +151,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
                 checkBoxAppearAtTheBottomLeft.Text = Translator.GetText("Appear at the bottom left");
+                checkBoxRoundCorners.Text = Translator.GetText("Round corners");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
@@ -362,6 +363,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxAppearAtMouseLocation.Checked = Settings.Default.AppearAtMouseLocation;
             checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
             checkBoxAppearAtTheBottomLeft.Checked = Settings.Default.AppearAtTheBottomLeft;
+            checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
 
             checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
@@ -722,6 +724,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
             Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
             Settings.Default.AppearAtTheBottomLeft = checkBoxAppearAtTheBottomLeft.Checked;
+            Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
@@ -970,6 +973,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuHeight.Value = 600;
             checkBoxShowInTaskbar.Checked = false;
             checkBoxAppearAtTheBottomLeft.Checked = false;
+            checkBoxRoundCorners.Checked = true;
         }
 
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)
