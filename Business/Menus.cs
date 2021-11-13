@@ -75,13 +75,26 @@ namespace SystemTrayMenu.Business
                     switch (menuData.Validity)
                     {
                         case MenuDataValidity.Valid:
-                            if (!Properties.Settings.Default.CacheMainMenu)
+                            if (Properties.Settings.Default.CacheMainMenu)
+                            {
+                                if (IconReader.MainPreload)
+                                {
+                                    workerMainMenu.DoWork -= LoadMenu;
+                                    menus[0] = Create(menuData, Path.GetFileName(Config.Path));
+                                    IconReader.MainPreload = false;
+                                }
+                                else
+                                {
+                                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                                }
+                            }
+                            else
                             {
                                 DisposeMenu(menus[menuData.Level]);
                                 menus[0] = Create(menuData, Path.GetFileName(Config.Path));
+                                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
                             }
 
-                            AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
                             break;
                         case MenuDataValidity.Empty:
                             if (!showingMessageBox)
@@ -591,27 +604,24 @@ namespace SystemTrayMenu.Business
 
         internal void MainPreload()
         {
-            IconReader.SingleThread = true;
-            LoadStarted();
-            menus[0] = Create(
-                GetData(workerMainMenu, Config.Path, 0),
-                Path.GetFileName(Config.Path));
-            IconReader.SingleThread = false;
-            AdjustMenusSizeAndLocation();
-            if (Properties.Settings.Default.CacheMainMenu)
-            {
-                workerMainMenu.DoWork -= LoadMenu;
-            }
-            else
-            {
-                DisposeMenu(menus[0]);
-            }
-
-            LoadStopped();
+            IconReader.MainPreload = true;
 
             if (FileUrl.GetDefaultBrowserPath(out string browserPath))
             {
                 IconReader.GetFileIconWithCache(browserPath, true, true, out _);
+            }
+
+            timerShowProcessStartedAsLoadingIcon.Tick += Tick;
+            timerShowProcessStartedAsLoadingIcon.Start();
+            void Tick(object sender, EventArgs e)
+            {
+                timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
+                SwitchOpenClose(false);
+            }
+
+            if (!Properties.Settings.Default.CacheMainMenu)
+            {
+                DisposeMenu(menus[0]);
             }
         }
 
@@ -1080,7 +1090,7 @@ namespace SystemTrayMenu.Business
 
         private void FadeHalfOrOutIfNeeded()
         {
-            if (menus[0].IsUsable)
+            if (menus[0] != null && menus[0].IsUsable)
             {
                 if (!IsActive())
                 {

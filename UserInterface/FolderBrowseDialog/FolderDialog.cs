@@ -149,9 +149,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
         public void Dispose()
         {
             Dispose(true);
-#if DEBUG
             GC.SuppressFinalize(this);
-#endif
         }
 
         protected virtual void Dispose(bool disposing)

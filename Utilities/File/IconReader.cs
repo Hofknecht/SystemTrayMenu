@@ -37,7 +37,7 @@ namespace SystemTrayMenu.Utilities
         }
 
         // see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
-        public static bool SingleThread { get; set; }
+        public static bool MainPreload { get; set; }
 
         public static void Dispose()
         {
@@ -222,7 +222,7 @@ namespace SystemTrayMenu.Utilities
 
                 if (updateIconInBackground)
                 {
-                    if (SingleThread)
+                    if (MainPreload)
                     {
                         DictIconCache.GetOrAdd(key, GetFolder);
                     }

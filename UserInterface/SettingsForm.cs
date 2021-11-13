@@ -280,7 +280,7 @@ namespace SystemTrayMenu.UserInterface
 
             try
             {
-                foreach (string pathAndRecursivString in Properties.Settings.Default.PathsAddToMainMenu.Split(@"|"))
+                foreach (string pathAndRecursivString in Settings.Default.PathsAddToMainMenu.Split(@"|"))
                 {
                     if (string.IsNullOrEmpty(pathAndRecursivString))
                     {
