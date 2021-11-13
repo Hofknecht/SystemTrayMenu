@@ -482,7 +482,7 @@ namespace SystemTrayMenu.UserInterface
 
             if (Properties.Settings.Default.RoundCorners)
             {
-                Region = Region.FromHrgn(NativeMethods.CreateRoundCorners(Width, Height + 1, 15, 15));
+                Region = Region.FromHrgn(NativeMethods.CreateRoundCorners(Width + 1, Height + 1, 15, 15));
             }
         }
 
