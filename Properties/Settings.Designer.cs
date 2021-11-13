@@ -222,7 +222,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
         public int ClearCacheIfMoreThanThisNumberOfItems
         {
             get

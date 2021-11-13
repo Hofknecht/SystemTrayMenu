@@ -45,6 +45,7 @@ namespace SystemTrayMenu.UserInterface
                     Size = new Size(200, 20),
                     Text = "None",
                 };
+                textBoxHotkey.TabStop = false;
                 textBoxHotkey.Enter += new EventHandler(TextBoxHotkeyEnter);
                 textBoxHotkey.Leave += new EventHandler(TextBoxHotkey_Leave);
                 tableLayoutPanelHotkey.Controls.Remove(textBoxHotkeyPlaceholder);
@@ -849,7 +850,7 @@ namespace SystemTrayMenu.UserInterface
         {
             dataGridViewFolders.Rows.Clear();
             checkBoxCacheMainMenu.Checked = true;
-            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 1000;
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
         }
 
         private void ButtonAddFolderToRootFolder_Click(object sender, EventArgs e)
