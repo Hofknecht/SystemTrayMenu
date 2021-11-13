@@ -122,7 +122,7 @@ Special thanks to our productive contibutors!
 
 Thanks for contributing!
 
-#145 [Pascal Aloy](mailto:paloy@wanadoo.fr), #162 [HansieNL](https://github.com/HansieNL), #163 [igorruckert](https://github.com/igorruckert), #205 [kristofzerbe](https://github.com/kristofzerbe), #220 [Yavuz E.](mailto:yavuzelektronik@gmail.com)
+#145 [Pascal Aloy](mailto:paloy@wanadoo.fr), #162 [HansieNL](https://github.com/HansieNL), #163 [igorruckert](https://github.com/igorruckert), #205 [kristofzerbe](https://github.com/kristofzerbe), #220 [Yavuz E.](mailto:yavuzelektronik@gmail.com), #229 #230 [Peter O.](pohle@htp-tel.de)
 
 
 Donations
