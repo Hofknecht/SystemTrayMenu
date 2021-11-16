@@ -89,7 +89,7 @@ steps:
 
 - task: ArchiveFiles@2
   displayName: 'Archive $(Build.ArtifactStagingDirectory)'
-  inputs:net6.0-windows10.0.22000.0
+  inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)\bin\AnyCPU\Release\net6.0-windows10.0.22000.0\'
 #   rootFolderOrFile: '$(Build.SourcesDirectory)\bin\AnyCPU\Release\netcoreapp3.1\'
 #   rootFolderOrFile: '$(Build.SourcesDirectory)\bin\x64\Release\netcoreapp3.1\'
