@@ -28,7 +28,7 @@ SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMe
 
 SystemTrayMenu is a free, open-source start menu alternative for Microsoft Windows. It offers a clear, personalized menu in the system tray. Files, links and folders are organized in several levels as drop-down menus.
 
-We are using C# and .Net Core 3.1
+We are using C# and .Net Core 3.1 (.NET 6 in next version)
 
 ![20200812_125923](https://user-images.githubusercontent.com/52528841/90009201-ee0c9680-dc9d-11ea-9b8a-b34108152f9b.gif)
 ![20200812_130823](https://user-images.githubusercontent.com/52528841/90009212-f1078700-dc9d-11ea-943a-d5fde4d6f2dc.gif)
@@ -93,8 +93,8 @@ Some antiviruses might flag this program as malicious, but it is not! The source
 Build
 ------------------
 
-Install Visual Studio 2019.  
-Install .NET Core 3.1 SDK [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.300-windows-x64-installer).
+Install Visual Studio 2022.  
+Install .NET 6 SDK [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet/6.0).
 
 Contributing
 ------------------
