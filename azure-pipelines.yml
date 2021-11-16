@@ -7,7 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-2019'
+  vmImage: 'Windows-latest'
+#  vmImage: 'Windows-2019'
 
 variables:
   solution: '**/*.sln'
@@ -18,10 +19,11 @@ steps:
 - task: NuGetToolInstaller@1
 
 - task: UseDotNet@2
-  displayName: 'Use .NET Core sdk 3.1.2'
+  displayName: 'Use .NET Core sdk'
   inputs:
     packageType: sdk
-    version: 3.1.102
+    version: 6.0.x
+#    version: 3.1.102
 
 #- task: NuGetCommand@2
 #  displayName: NuGet restore
