@@ -20,7 +20,7 @@ namespace SystemTrayMenu.Helper
         private const double Shown = 1.00;
         private const double ShownMinus = 0.80; // Shown - StepIn
 
-        private readonly Timer timer = new Timer();
+        private readonly Timer timer = new();
         private FadingState state = FadingState.Idle;
         private double opacity;
         private bool visible;

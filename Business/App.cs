@@ -15,8 +15,8 @@ namespace SystemTrayMenu
     /// </summary>
     internal class App : IDisposable
     {
-        private readonly AppNotifyIcon menuNotifyIcon = new AppNotifyIcon();
-        private readonly Menus menus = new Menus();
+        private readonly AppNotifyIcon menuNotifyIcon = new();
+        private readonly Menus menus = new();
         private readonly TaskbarForm taskbarForm = null;
 
         public App()

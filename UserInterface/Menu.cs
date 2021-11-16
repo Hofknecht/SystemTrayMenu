@@ -17,7 +17,7 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu : Form
     {
-        private readonly Fading fading = new Fading();
+        private readonly Fading fading = new();
         private bool isShowing;
         private bool directionToRight;
         private int rotationAngle;
@@ -93,7 +93,7 @@ namespace SystemTrayMenu.UserInterface
                 backgroundBorder = AppColors.DarkModeBackgroundBorder;
             }
 
-            ColorConverter colorConverter = new ColorConverter();
+            ColorConverter colorConverter = new();
             labelFoldersCount.ForeColor = MenuDefines.ColorIcons;
             labelFilesCount.ForeColor = MenuDefines.ColorIcons;
 
@@ -813,7 +813,7 @@ namespace SystemTrayMenu.UserInterface
 
             if (pictureBox.Tag != null && (bool)pictureBox.Tag)
             {
-                Rectangle rowBounds = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
+                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
                 ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
             }
         }
@@ -840,7 +840,7 @@ namespace SystemTrayMenu.UserInterface
 
             if (pictureBox.Tag != null && (bool)pictureBox.Tag)
             {
-                Rectangle rowBounds = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
+                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
                 ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
             }
         }

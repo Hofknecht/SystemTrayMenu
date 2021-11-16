@@ -7,6 +7,7 @@ namespace SystemTrayMenu.Helper
     using System;
     using System.IO;
     using System.Net;
+    using System.Net.Http;
     using System.Text;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
@@ -55,55 +56,58 @@ namespace SystemTrayMenu.Helper
         private static void CreateShortcut(string url, string pathToStoreFile)
         {
             string pathToStoreIcons = Path.Combine(pathToStoreFile, "ico");
-            WebClient client = new WebClient();
-            if (!Directory.Exists(pathToStoreIcons))
+
+            using (WebClient client = new())
             {
-                Directory.CreateDirectory(pathToStoreIcons);
-            }
-
-            Uri uri = new Uri(url);
-            string hostname = uri.Host.ToString();
-
-            string pathIconPng = Path.Combine(pathToStoreIcons, $"{hostname}.png");
-            client.DownloadFile(
-                @"http://www.google.com/s2/favicons?sz=32&domain=" + url,
-                pathIconPng);
-            string pathIcon = Path.Combine(pathToStoreIcons, $"{hostname}.ico");
-            ImagingHelper.ConvertToIcon(pathIconPng, pathIcon, 32);
-            File.Delete(pathIconPng);
-
-            string title = url;
-
-            title = title.Replace("/", " ").
-                Replace("https", string.Empty).
-                Replace("http", string.Empty);
-
-            string invalid = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
-            foreach (char c in invalid)
-            {
-                title = title.Replace(c.ToString(), string.Empty);
-            }
-
-            title = Truncate(title, 128); // max 255
-            static string Truncate(string value, int maxLength)
-            {
-                if (!string.IsNullOrEmpty(value) &&
-                    value.Length > maxLength)
+                if (!Directory.Exists(pathToStoreIcons))
                 {
-                    value = value.Substring(0, maxLength);
+                    Directory.CreateDirectory(pathToStoreIcons);
                 }
 
-                return value;
-            }
+                Uri uri = new(url);
+                string hostname = uri.Host.ToString();
 
-            using StreamWriter writer = new StreamWriter(pathToStoreFile + "\\" + title.Trim() + ".url");
-            writer.WriteLine("[InternetShortcut]");
-            writer.WriteLine($"URL={url.TrimEnd('\0')}");
-            writer.WriteLine("IconIndex=0");
-            writer.WriteLine($"HotKey=0");
-            writer.WriteLine($"IDList=");
-            writer.WriteLine($"IconFile={pathIcon}");
-            writer.Flush();
+                string pathIconPng = Path.Combine(pathToStoreIcons, $"{hostname}.png");
+                client.DownloadFile(
+                    @"http://www.google.com/s2/favicons?sz=32&domain=" + url,
+                    pathIconPng);
+                string pathIcon = Path.Combine(pathToStoreIcons, $"{hostname}.ico");
+                ImagingHelper.ConvertToIcon(pathIconPng, pathIcon, 32);
+                File.Delete(pathIconPng);
+
+                string title = url;
+
+                title = title.Replace("/", " ").
+                    Replace("https", string.Empty).
+                    Replace("http", string.Empty);
+
+                string invalid = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+                foreach (char c in invalid)
+                {
+                    title = title.Replace(c.ToString(), string.Empty);
+                }
+
+                title = Truncate(title, 128); // max 255
+                static string Truncate(string value, int maxLength)
+                {
+                    if (!string.IsNullOrEmpty(value) &&
+                        value.Length > maxLength)
+                    {
+                        value = value.Substring(0, maxLength);
+                    }
+
+                    return value;
+                }
+
+                using StreamWriter writer = new(pathToStoreFile + "\\" + title.Trim() + ".url");
+                writer.WriteLine("[InternetShortcut]");
+                writer.WriteLine($"URL={url.TrimEnd('\0')}");
+                writer.WriteLine("IconIndex=0");
+                writer.WriteLine($"HotKey=0");
+                writer.WriteLine($"IDList=");
+                writer.WriteLine($"IconFile={pathIcon}");
+                writer.Flush();
+            }
         }
     }
 }

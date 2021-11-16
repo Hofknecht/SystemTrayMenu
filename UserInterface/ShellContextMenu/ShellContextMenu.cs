@@ -47,10 +47,10 @@ namespace SystemTrayMenu.Utilities
         private static readonly int CbMenuItemInfo = Marshal.SizeOf(typeof(MENUITEMINFO));
         private static readonly int CbInvokeCommand = Marshal.SizeOf(typeof(CMINVOKECOMMANDINFOEX));
 
-        private static Guid iidIShellFolder = new Guid("{000214E6-0000-0000-C000-000000000046}");
-        private static Guid iidIContextMenu = new Guid("{000214e4-0000-0000-c000-000000000046}");
-        private static Guid iidIContextMenu2 = new Guid("{000214f4-0000-0000-c000-000000000046}");
-        private static Guid iidIContextMenu3 = new Guid("{bcfce0a0-ec17-11d0-8d10-00a0c90f2719}");
+        private static Guid iidIShellFolder = new("{000214E6-0000-0000-C000-000000000046}");
+        private static Guid iidIContextMenu = new("{000214e4-0000-0000-c000-000000000046}");
+        private static Guid iidIContextMenu2 = new("{000214f4-0000-0000-c000-000000000046}");
+        private static Guid iidIContextMenu3 = new("{bcfce0a0-ec17-11d0-8d10-00a0c90f2719}");
 
         private IContextMenu oContextMenu;
         private IContextMenu2 oContextMenu2;
@@ -953,7 +953,7 @@ namespace SystemTrayMenu.Utilities
 
         private static void InvokeCommand(IContextMenu contextMenu, uint nCmd, string strFolder, Point pointInvoke)
         {
-            CMINVOKECOMMANDINFOEX invoke = new CMINVOKECOMMANDINFOEX
+            CMINVOKECOMMANDINFOEX invoke = new()
             {
                 CbSize = CbInvokeCommand,
                 LpVerb = (IntPtr)(nCmd - CmdFirst),
@@ -1099,7 +1099,7 @@ namespace SystemTrayMenu.Utilities
                 IntPtr pStrRet = Marshal.AllocCoTaskMem((MaxPath * 2) + 4);
                 Marshal.WriteInt32(pStrRet, 0, 0);
                 _ = this.oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
-                StringBuilder strFolder = new StringBuilder(MaxPath);
+                StringBuilder strFolder = new(MaxPath);
                 _ = DllImports.NativeMethods.ShlwapiStrRetToBuf(pStrRet, pPIDL, strFolder, MaxPath);
                 Marshal.FreeCoTaskMem(pStrRet);
                 strParentFolder = strFolder.ToString();

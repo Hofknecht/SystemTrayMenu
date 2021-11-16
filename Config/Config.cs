@@ -72,7 +72,7 @@ namespace SystemTrayMenu
 
         public static void SetFolderByUser(bool save = true)
         {
-            using FolderDialog dialog = new FolderDialog();
+            using FolderDialog dialog = new();
             dialog.InitialFolder = Path;
 
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -148,7 +148,7 @@ namespace SystemTrayMenu
 
         internal static void InitializeColors(bool save = true)
         {
-            ColorConverter converter = new ColorConverter();
+            ColorConverter converter = new();
             ColorAndCode colorAndCode = default;
             bool changed = false;
 
@@ -421,7 +421,7 @@ namespace SystemTrayMenu
             str = str.Replace("#585858", htmlColorCode);
             byteArray = Encoding.UTF8.GetBytes(str);
 
-            using MemoryStream stream = new MemoryStream(byteArray);
+            using MemoryStream stream = new(byteArray);
             SvgDocument svgDocument = SvgDocument.Open<SvgDocument>(stream);
             svgDocument.Color = new SvgColourServer(Color.Black);
             return svgDocument.Draw();

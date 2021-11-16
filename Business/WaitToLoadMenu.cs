@@ -13,7 +13,7 @@ namespace SystemTrayMenu.Handler
 
     internal class WaitToLoadMenu : IDisposable
     {
-        private readonly Timer timerStartLoad = new Timer();
+        private readonly Timer timerStartLoad = new();
         private DataGridView dgv;
         private int rowIndex;
         private DataGridView dgvTmp;

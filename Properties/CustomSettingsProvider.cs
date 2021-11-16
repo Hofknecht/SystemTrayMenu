@@ -116,12 +116,12 @@ namespace SystemTrayMenu.Properties
             }
 
             // collection that will be returned.
-            SettingsPropertyValueCollection values = new SettingsPropertyValueCollection();
+            SettingsPropertyValueCollection values = new();
 
             // itterate thought the properties we get from the designer, checking to see if the setting is in the dictionary
             foreach (SettingsProperty setting in collection)
             {
-                SettingsPropertyValue value = new SettingsPropertyValue(setting)
+                SettingsPropertyValue value = new(setting)
                 {
                     IsDirty = false,
                 };
@@ -157,7 +157,7 @@ namespace SystemTrayMenu.Properties
             // grab the values from the collection parameter and update the values in our dictionary.
             foreach (SettingsPropertyValue value in collection)
             {
-                SettingStruct setting = new SettingStruct()
+                SettingStruct setting = new()
                 {
                     Value = value.PropertyValue == null ? string.Empty : value.PropertyValue.ToString(),
                     Name = value.Name,
@@ -187,11 +187,11 @@ namespace SystemTrayMenu.Properties
             if (!File.Exists(path))
             {
                 // if the config file is not where it's supposed to be create a new one.
-                XDocument doc = new XDocument();
-                XDeclaration declaration = new XDeclaration("1.0", "utf-8", "true");
-                XElement config = new XElement(Config);
-                XElement userSettings = new XElement(UserSettings);
-                XElement group = new XElement(typeof(Settings).FullName);
+                XDocument doc = new();
+                XDeclaration declaration = new("1.0", "utf-8", "true");
+                XElement config = new(Config);
+                XElement userSettings = new(UserSettings);
+                XElement group = new(typeof(Settings).FullName);
                 userSettings.Add(group);
                 config.Add(userSettings);
                 doc.Add(config);
@@ -274,7 +274,7 @@ namespace SystemTrayMenu.Properties
                 // using "String" as default serializeAs...just in case, no real good reason.
                 foreach (XElement element in settingElements)
                 {
-                    SettingStruct newSetting = new SettingStruct()
+                    SettingStruct newSetting = new()
                     {
                         Name = element.Attribute(NameOf) == null ? string.Empty : element.Attribute(NameOf).Value,
                         SerializeAs = element.Attribute(SerializeAs) == null ? "String" : element.Attribute(SerializeAs).Value,
@@ -313,7 +313,7 @@ namespace SystemTrayMenu.Properties
                     if (setting == null)
                     {
                         // this can happen if a new setting is added via the .settings designer.
-                        XElement newSetting = new XElement(Setting);
+                        XElement newSetting = new(Setting);
                         newSetting.Add(new XAttribute(NameOf, entry.Value.Name));
                         newSetting.Add(new XAttribute(SerializeAs, entry.Value.SerializeAs));
                         newSetting.Value = entry.Value.Value ?? string.Empty;

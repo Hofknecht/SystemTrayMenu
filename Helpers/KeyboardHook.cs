@@ -24,7 +24,7 @@ namespace SystemTrayMenu.Helper
 
     public sealed class KeyboardHook : IDisposable
     {
-        private readonly Window window = new Window();
+        private readonly Window window = new();
         private int currentId;
 
         public KeyboardHook()

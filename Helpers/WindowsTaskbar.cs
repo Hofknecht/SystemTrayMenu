@@ -26,7 +26,7 @@ namespace SystemTrayMenu.Helper
         {
             IntPtr taskbarHandle = User32FindWindow(ClassName, null);
 
-            APPBARDATA data = new APPBARDATA
+            APPBARDATA data = new()
             {
                 cbSize = (uint)Marshal.SizeOf(typeof(APPBARDATA)),
                 hWnd = taskbarHandle,

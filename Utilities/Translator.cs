@@ -28,7 +28,7 @@ namespace SystemTrayMenu.Utilities
 
         internal static string GetText(string id)
         {
-            ResourceManager rm = new ResourceManager(
+            ResourceManager rm = new(
                 "SystemTrayMenu.Resources.lang",
                 typeof(Menu).Assembly);
             return rm.GetString(id, culture);

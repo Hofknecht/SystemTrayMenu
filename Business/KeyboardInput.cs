@@ -17,7 +17,7 @@ namespace SystemTrayMenu.Handler
     internal class KeyboardInput : IDisposable
     {
         private readonly Menu[] menus;
-        private readonly KeyboardHook hook = new KeyboardHook();
+        private readonly KeyboardHook hook = new();
 
         private int iRowKey = -1;
         private int iMenuKey;
@@ -155,7 +155,7 @@ namespace SystemTrayMenu.Handler
                         {
                             Point pt = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
                             RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
-                            MouseEventArgs mea = new MouseEventArgs(MouseButtons.Right, 1, pt.X, pt.Y, 0);
+                            MouseEventArgs mea = new(MouseButtons.Right, 1, pt.X, pt.Y, 0);
                             trigger.MouseDown(dgv, mea, out bool toCloseByDoubleClick);
                         }
                     }

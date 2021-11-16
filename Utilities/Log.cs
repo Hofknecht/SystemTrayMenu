@@ -15,9 +15,9 @@ namespace SystemTrayMenu.Utilities
 
     internal static class Log
     {
-        private static readonly Logger LogValue = new Logger(string.Empty);
-        private static readonly List<string> Warnings = new List<string>();
-        private static readonly List<string> Infos = new List<string>();
+        private static readonly Logger LogValue = new(string.Empty);
+        private static readonly List<string> Warnings = new();
+        private static readonly List<string> Infos = new();
 
         internal static void Initialize()
         {
@@ -91,7 +91,7 @@ namespace SystemTrayMenu.Utilities
 
             try
             {
-                using Process p = new Process
+                using Process p = new()
                 {
                     StartInfo = new ProcessStartInfo(fileName)
                     {

@@ -59,7 +59,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             frm.SetOptions(options);
             if (InitialFolder != null)
             {
-                Guid riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); // IShellItem
+                Guid riid = new("43826D1E-E718-42EE-BC55-A1E261C37BFE"); // IShellItem
                 if (NativeMethods.SHCreateItemFromParsingName(
                     InitialFolder,
                     IntPtr.Zero,
@@ -72,7 +72,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 
             if (DefaultFolder != null)
             {
-                Guid riid = new Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE"); // IShellItem
+                Guid riid = new("43826D1E-E718-42EE-BC55-A1E261C37BFE"); // IShellItem
                 if (NativeMethods.SHCreateItemFromParsingName(
                     DefaultFolder,
                     IntPtr.Zero,
@@ -119,7 +119,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 
         public DialogResult ShowLegacyDialog(IWin32Window owner)
         {
-            using SaveFileDialog frm = new SaveFileDialog
+            using SaveFileDialog frm = new()
             {
                 CheckFileExists = false,
                 CheckPathExists = true,

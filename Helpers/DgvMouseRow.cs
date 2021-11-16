@@ -9,7 +9,7 @@ namespace SystemTrayMenu.Helper
 
     public class DgvMouseRow : IDisposable
     {
-        private readonly Timer timerRaiseRowMouseLeave = new Timer();
+        private readonly Timer timerRaiseRowMouseLeave = new();
         private DataGridView dgv;
         private DataGridViewCellEventArgs eventArgs;
 

@@ -20,7 +20,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
     {
         private const uint WmHotkey = 0x312;
 
-        private static readonly EventDelay EventDelay = new EventDelay(TimeSpan.FromMilliseconds(600).Ticks);
+        private static readonly EventDelay EventDelay = new(TimeSpan.FromMilliseconds(600).Ticks);
         private static readonly bool IsWindows7OrOlder = Environment.OSVersion.Version.Major >= 6 && Environment.OSVersion.Version.Minor >= 1;
 
         // Holds the list of hotkeys
@@ -33,7 +33,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
         private readonly IList<int> needNonShiftModifier = new List<int>();
         private readonly IList<int> needNonAltGrModifier = new List<int>();
 
-        private readonly ContextMenuStrip dummy = new ContextMenuStrip();
+        private readonly ContextMenuStrip dummy = new();
 
         // These variables store the current hotkey and modifier(s)
         private Keys hotkey = Keys.None;
@@ -135,7 +135,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
 
         public static string HotkeyModifiersToString(Keys modifierKeyCode)
         {
-            StringBuilder hotkeyString = new StringBuilder();
+            StringBuilder hotkeyString = new();
             if ((modifierKeyCode & Keys.Alt) > 0)
             {
                 hotkeyString.Append("Alt").Append(" + ");
@@ -166,7 +166,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
 
         public static string HotkeyModifiersToLocalizedString(Keys modifierKeyCode)
         {
-            StringBuilder hotkeyString = new StringBuilder();
+            StringBuilder hotkeyString = new();
             if ((modifierKeyCode & Keys.Alt) > 0)
             {
                 hotkeyString.Append(GetKeyName(Keys.Alt)).Append(" + ");
@@ -366,7 +366,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
 #pragma warning disable CA1308
         public static string GetKeyName(Keys givenKey)
         {
-            StringBuilder keyName = new StringBuilder();
+            StringBuilder keyName = new();
             const uint numpad = 55;
 
             Keys virtualKey = givenKey;

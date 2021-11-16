@@ -261,8 +261,8 @@ namespace SystemTrayMenu.UserInterface
             string typeName;
             string name;
             string value;
-            NameValueCollection nvc = new NameValueCollection();
-            Regex r = new Regex(@"(\.Assembly|\.)(?<Name>[^.]*)Attribute$", RegexOptions.IgnoreCase);
+            NameValueCollection nvc = new();
+            Regex r = new(@"(\.Assembly|\.)(?<Name>[^.]*)Attribute$", RegexOptions.IgnoreCase);
 
             foreach (object attrib in a.GetCustomAttributes(false))
             {
@@ -340,7 +340,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (!a.IsDynamic)
                 {
-                    nvc.Add("CodeBase", a.CodeBase.Replace("file:///", string.Empty, StringComparison.InvariantCulture));
+                    nvc.Add("CodeBase", a.Location.Replace("file:///", string.Empty, StringComparison.InvariantCulture));
                 }
             }
             catch (NotSupportedException)
@@ -419,7 +419,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (!string.IsNullOrEmpty(value))
             {
-                ListViewItem lvi = new ListViewItem
+                ListViewItem lvi = new()
                 {
                     Text = key,
                 };
@@ -435,9 +435,7 @@ namespace SystemTrayMenu.UserInterface
         {
             lvw.Items.Clear();
 
-            // this assembly property is only available in framework versions 1.1+
             Populate(lvw, "Image Runtime Version", a.ImageRuntimeVersion);
-            Populate(lvw, "Loaded from GAC", a.GlobalAssemblyCache.ToString(CultureInfo.InvariantCulture));
 
             NameValueCollection nvc = AssemblyAttribs(a);
             foreach (string strKey in nvc)
@@ -533,7 +531,7 @@ namespace SystemTrayMenu.UserInterface
 
             string strAssemblyName = a.GetName().Name;
 
-            ListViewItem lvi = new ListViewItem
+            ListViewItem lvi = new()
             {
                 Text = strAssemblyName,
                 Tag = strAssemblyName,

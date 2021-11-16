@@ -25,7 +25,7 @@ namespace SystemTrayMenu.UserInterface
         private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
 
         private static readonly Icon SystemTrayMenu = Resources.SystemTrayMenu;
-        private readonly ColorConverter colorConverter = new ColorConverter();
+        private readonly ColorConverter colorConverter = new();
         private bool inHotkey;
 
         public SettingsForm()
@@ -251,7 +251,7 @@ namespace SystemTrayMenu.UserInterface
             InitializeLanguage();
             void InitializeLanguage()
             {
-                List<Language> dataSource = new List<Language>
+                List<Language> dataSource = new()
                 {
                     new Language() { Name = "čeština", Value = "cs" },
                     new Language() { Name = "Deutsch", Value = "de" },
@@ -510,7 +510,7 @@ namespace SystemTrayMenu.UserInterface
         private static bool RegisterHotkeys(bool ignoreFailedRegistration)
         {
             bool success = true;
-            StringBuilder failedKeys = new StringBuilder();
+            StringBuilder failedKeys = new();
             if (!RegisterWrapper(failedKeys, Handler))
             {
                 success = false;
@@ -882,7 +882,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonAddFolderToRootFolder_Click(object sender, EventArgs e)
         {
-            using FolderDialog dialog = new FolderDialog();
+            using FolderDialog dialog = new();
             dialog.InitialFolder = Config.Path;
 
             if (dialog.ShowDialog() == DialogResult.OK)

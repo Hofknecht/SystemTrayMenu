@@ -23,15 +23,15 @@ namespace SystemTrayMenu.Business
     internal class Menus : IDisposable
     {
         private readonly Menu[] menus = new Menu[MenuDefines.MenusMax];
-        private readonly BackgroundWorker workerMainMenu = new BackgroundWorker();
-        private readonly List<BackgroundWorker> workersSubMenu = new List<BackgroundWorker>();
+        private readonly BackgroundWorker workerMainMenu = new();
+        private readonly List<BackgroundWorker> workersSubMenu = new();
 
-        private readonly DgvMouseRow dgvMouseRow = new DgvMouseRow();
-        private readonly WaitToLoadMenu waitToOpenMenu = new WaitToLoadMenu();
+        private readonly DgvMouseRow dgvMouseRow = new();
+        private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
-        private readonly Timer timerShowProcessStartedAsLoadingIcon = new Timer();
-        private readonly Timer timerStillActiveCheck = new Timer();
-        private readonly WaitLeave waitLeave = new WaitLeave(Properties.Settings.Default.TimeUntilCloses);
+        private readonly Timer timerShowProcessStartedAsLoadingIcon = new();
+        private readonly Timer timerStillActiveCheck = new();
+        private readonly WaitLeave waitLeave = new(Properties.Settings.Default.TimeUntilCloses);
         private DateTime deactivatedTime = DateTime.MinValue;
         private DateTime dateTimeLastOpening = DateTime.MinValue;
         private DateTime dateTimeDisplaySettingsChanged = DateTime.MinValue;
@@ -161,7 +161,7 @@ namespace SystemTrayMenu.Business
                     CreateAndShowLoadingMenu(rowData);
                     void CreateAndShowLoadingMenu(RowData rowData)
                     {
-                        MenuData menuDataLoading = new MenuData
+                        MenuData menuDataLoading = new()
                         {
                             RowDatas = new List<RowData>(),
                             Validity = MenuDataValidity.Valid,
@@ -329,7 +329,7 @@ namespace SystemTrayMenu.Business
 
         internal static MenuData GetData(BackgroundWorker worker, string path, int level)
         {
-            MenuData menuData = new MenuData
+            MenuData menuData = new()
             {
                 RowDatas = new List<RowData>(),
                 Validity = MenuDataValidity.AbortedOrUnknown,
@@ -358,8 +358,8 @@ namespace SystemTrayMenu.Business
                         directories = GetDirectoriesInNetworkLocation(path);
                         static string[] GetDirectoriesInNetworkLocation(string networkLocationRootPath)
                         {
-                            List<string> directories = new List<string>();
-                            Process cmd = new Process();
+                            List<string> directories = new();
+                            Process cmd = new();
                             cmd.StartInfo.FileName = "cmd.exe";
                             cmd.StartInfo.RedirectStandardInput = true;
                             cmd.StartInfo.RedirectStandardOutput = true;
@@ -794,7 +794,7 @@ namespace SystemTrayMenu.Business
 
         private Menu Create(MenuData menuData, string title = null)
         {
-            Menu menu = new Menu();
+            Menu menu = new();
 
             string path = Config.Path;
             if (title == null)
@@ -854,7 +854,7 @@ namespace SystemTrayMenu.Business
                 foldersCount = 0;
                 filesCount = 0;
                 DataGridView dgv = menu.GetDataGridView();
-                DataTable dataTable = new DataTable();
+                DataTable dataTable = new();
                 dataTable.Columns.Add(dgv.Columns[0].Name, typeof(Icon));
                 dataTable.Columns.Add(dgv.Columns[1].Name, typeof(string));
                 dataTable.Columns.Add("data", typeof(RowData));
@@ -1019,7 +1019,7 @@ namespace SystemTrayMenu.Business
                 RowData rowData = (RowData)row.Cells[2].Value;
 
                 int width = dgv.Columns[0].Width + dgv.Columns[1].Width;
-                Rectangle rowBounds = new Rectangle(0, e.RowBounds.Top, width, e.RowBounds.Height);
+                Rectangle rowBounds = new(0, e.RowBounds.Top, width, e.RowBounds.Height);
 
                 if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
                 {
@@ -1152,7 +1152,7 @@ namespace SystemTrayMenu.Business
 
             // Only apply taskbar position change when no menu is currently open
             List<Menu> list = AsList;
-            WindowsTaskbar taskbar = new WindowsTaskbar();
+            WindowsTaskbar taskbar = new();
             if (list.Count == 1)
             {
                 taskbarPosition = taskbar.Position;

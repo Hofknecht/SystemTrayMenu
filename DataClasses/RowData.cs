@@ -162,9 +162,9 @@ namespace SystemTrayMenu.DataClasses
             {
                 IsContextMenuOpen = true;
 
-                ShellContextMenu ctxMnu = new ShellContextMenu();
+                ShellContextMenu ctxMnu = new();
                 Point location = dgv.FindForm().Location;
-                Point point = new Point(
+                Point point = new(
                     e.X + location.X + dgv.Location.X,
                     e.Y + location.Y + dgv.Location.Y);
                 if (ContainsMenu)
@@ -296,7 +296,7 @@ namespace SystemTrayMenu.DataClasses
             string iconFile = string.Empty;
             try
             {
-                FileIni file = new FileIni(TargetFilePath);
+                FileIni file = new(TargetFilePath);
                 iconFile = file.Value("IconFile", string.Empty);
                 if (string.IsNullOrEmpty(iconFile))
                 {

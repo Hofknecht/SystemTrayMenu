@@ -22,12 +22,12 @@ namespace SystemTrayMenu.Helper
 
         public ContextMenuStrip Create()
         {
-            ContextMenuStrip menu = new ContextMenuStrip
+            ContextMenuStrip menu = new()
             {
                 BackColor = SystemColors.Control,
             };
 
-            ToolStripMenuItem settings = new ToolStripMenuItem()
+            ToolStripMenuItem settings = new()
             {
                 ImageScaling = ToolStripItemImageScaling.SizeToFit,
                 Text = Translator.GetText("Settings"),
@@ -35,7 +35,7 @@ namespace SystemTrayMenu.Helper
             settings.Click += Settings_Click;
             static void Settings_Click(object sender, EventArgs e)
             {
-                SettingsForm settingsForm = new SettingsForm();
+                SettingsForm settingsForm = new();
                 if (settingsForm.ShowDialog() == DialogResult.OK)
                 {
                     AppRestart.ByConfigChange();
@@ -44,13 +44,13 @@ namespace SystemTrayMenu.Helper
 
             menu.Items.Add(settings);
 
-            ToolStripSeparator seperator = new ToolStripSeparator
+            ToolStripSeparator seperator = new()
             {
                 BackColor = SystemColors.Control,
             };
             menu.Items.Add(seperator);
 
-            ToolStripMenuItem openLog = new ToolStripMenuItem
+            ToolStripMenuItem openLog = new()
             {
                 Text = Translator.GetText("Log File"),
             };
@@ -64,7 +64,7 @@ namespace SystemTrayMenu.Helper
 
             menu.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem helpFAQ = new ToolStripMenuItem
+            ToolStripMenuItem helpFAQ = new()
             {
                 Text = Translator.GetText("HelpFAQ"),
             };
@@ -76,7 +76,7 @@ namespace SystemTrayMenu.Helper
 
             menu.Items.Add(helpFAQ);
 
-            ToolStripMenuItem about = new ToolStripMenuItem
+            ToolStripMenuItem about = new()
             {
                 Text = Translator.GetText("About"),
             };
@@ -85,7 +85,7 @@ namespace SystemTrayMenu.Helper
             {
                 FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(
                     Assembly.GetEntryAssembly().Location);
-                AboutBox ab = new AboutBox
+                AboutBox ab = new()
                 {
                     AppTitle = versionInfo.ProductName,
                     AppDescription = versionInfo.FileDescription,
@@ -117,7 +117,7 @@ namespace SystemTrayMenu.Helper
 
             menu.Items.Add(new ToolStripSeparator());
 
-            ToolStripMenuItem restart = new ToolStripMenuItem
+            ToolStripMenuItem restart = new()
             {
                 Text = Translator.GetText("Restart"),
             };
@@ -129,7 +129,7 @@ namespace SystemTrayMenu.Helper
 
             menu.Items.Add(restart);
 
-            ToolStripMenuItem exit = new ToolStripMenuItem
+            ToolStripMenuItem exit = new()
             {
                 Text = Translator.GetText("Exit"),
             };

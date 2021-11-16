@@ -14,8 +14,8 @@ namespace SystemTrayMenu.UserInterface
     internal class AppNotifyIcon : IDisposable
     {
         private static Icon systemTrayMenu = Properties.Resources.SystemTrayMenu;
-        private readonly Timer load = new Timer();
-        private readonly NotifyIcon notifyIcon = new NotifyIcon();
+        private readonly Timer load = new();
+        private readonly NotifyIcon notifyIcon = new();
         private bool threadsLoading;
         private int rotationAngle;
 
@@ -36,7 +36,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             notifyIcon.Icon = systemTrayMenu;
-            AppContextMenu contextMenus = new AppContextMenu();
+            AppContextMenu contextMenus = new();
 
             contextMenus.ClickedOpenLog += ClickedOpenLog;
             void ClickedOpenLog()
@@ -111,7 +111,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 rotationAngle += 5;
                 using Bitmap bitmapLoading = Resources.StaticResources.LoadingIcon.ToBitmap();
-                using Bitmap bitmapLoadingRotated = new Bitmap(ImagingHelper.RotateImage(bitmapLoading, rotationAngle));
+                using Bitmap bitmapLoadingRotated = new(ImagingHelper.RotateImage(bitmapLoading, rotationAngle));
                 DisposeIconIfNotDefaultIcon();
                 IntPtr hIcon = bitmapLoadingRotated.GetHicon();
                 notifyIcon.Icon = (Icon)Icon.FromHandle(hIcon).Clone();

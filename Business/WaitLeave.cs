@@ -10,7 +10,7 @@ namespace SystemTrayMenu.Handler
 
     internal class WaitLeave : IDisposable
     {
-        private readonly Timer timerLeaveCheck = new Timer();
+        private readonly Timer timerLeaveCheck = new();
 
         public WaitLeave(int timeUntilTriggered)
         {

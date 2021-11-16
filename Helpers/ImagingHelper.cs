@@ -38,14 +38,14 @@ namespace SystemTrayMenu.Helper
                     width = height = size;
                 }
 
-                Bitmap newBitmap = new Bitmap(inputBitmap, new Size(width, height));
+                Bitmap newBitmap = new(inputBitmap, new Size(width, height));
                 if (newBitmap != null)
                 {
                     // save the resized png into a memory stream for future use
-                    using MemoryStream memoryStream = new MemoryStream();
+                    using MemoryStream memoryStream = new();
                     newBitmap.Save(memoryStream, ImageFormat.Png);
 
-                    BinaryWriter iconWriter = new BinaryWriter(output);
+                    BinaryWriter iconWriter = new(output);
                     if (output != null && iconWriter != null)
                     {
                         // 0-1 reserved, 0
@@ -109,15 +109,15 @@ namespace SystemTrayMenu.Helper
         /// <returns>Wether or not the icon was succesfully generated.</returns>
         public static bool ConvertToIcon(string inputPath, string outputPath, int size = 16, bool preserveAspectRatio = false)
         {
-            using FileStream inputStream = new FileStream(inputPath, FileMode.Open);
-            using FileStream outputStream = new FileStream(outputPath, FileMode.OpenOrCreate);
+            using FileStream inputStream = new(inputPath, FileMode.Open);
+            using FileStream outputStream = new(outputPath, FileMode.OpenOrCreate);
             return ConvertToIcon(inputStream, outputStream, size, preserveAspectRatio);
         }
 
         public static Image RotateImage(Image img, float rotationAngle)
         {
             // create an empty Bitmap image
-            Bitmap bmp = new Bitmap(img.Width, img.Height);
+            Bitmap bmp = new(img.Width, img.Height);
 
             // turn the Bitmap into a Graphics object
             Graphics gfx = Graphics.FromImage(bmp);

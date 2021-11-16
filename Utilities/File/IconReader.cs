@@ -22,8 +22,8 @@ namespace SystemTrayMenu.Utilities
     /// </summary>
     public static class IconReader
     {
-        private static readonly ConcurrentDictionary<string, Icon> DictIconCacheMainMenu = new ConcurrentDictionary<string, Icon>();
-        private static readonly ConcurrentDictionary<string, Icon> DictIconCacheSubMenus = new ConcurrentDictionary<string, Icon>();
+        private static readonly ConcurrentDictionary<string, Icon> DictIconCacheMainMenu = new();
+        private static readonly ConcurrentDictionary<string, Icon> DictIconCacheSubMenus = new();
 
         public enum IconSize
         {
@@ -117,7 +117,7 @@ namespace SystemTrayMenu.Utilities
                 }
                 else
                 {
-                    Thread staThread = new Thread(new ParameterizedThreadStart(StaThreadMethod));
+                    Thread staThread = new(new ParameterizedThreadStart(StaThreadMethod));
                     void StaThreadMethod(object obj)
                     {
                         icon = GetExtractAllIconsLast(filePath);
@@ -130,7 +130,7 @@ namespace SystemTrayMenu.Utilities
 
                 static Icon GetExtractAllIconsLast(string filePath)
                 {
-                    StringBuilder executable = new StringBuilder(1024);
+                    StringBuilder executable = new(1024);
                     DllImports.NativeMethods.Shell32FindExecutable(filePath, string.Empty, executable);
 
                     // icon = IconReader.GetFileIcon(executable, false);
@@ -204,7 +204,7 @@ namespace SystemTrayMenu.Utilities
                 }
                 else
                 {
-                    Thread staThread = new Thread(new ParameterizedThreadStart(StaThreadMethod));
+                    Thread staThread = new(new ParameterizedThreadStart(StaThreadMethod));
                     void StaThreadMethod(object obj)
                     {
                         icon = GetFileIcon(filePath, linkOverlay, size);
@@ -284,7 +284,7 @@ namespace SystemTrayMenu.Utilities
             }
             else
             {
-                Thread staThread = new Thread(new ParameterizedThreadStart(StaThreadMethod));
+                Thread staThread = new(new ParameterizedThreadStart(StaThreadMethod));
                 void StaThreadMethod(object obj)
                 {
                     icon = GetFolderIcon(
@@ -365,7 +365,7 @@ namespace SystemTrayMenu.Utilities
             Icon icon = null;
             if (originalIcon != null)
             {
-                using Bitmap target = new Bitmap(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
+                using Bitmap target = new(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
                 using Graphics graphics = Graphics.FromImage(target);
                 graphics.DrawIcon(originalIcon, 0, 0);
                 graphics.DrawIcon(overlay, 0, 0);
@@ -393,8 +393,7 @@ namespace SystemTrayMenu.Utilities
         private static bool IsExtensionWithSameIcon(string fileExtension)
         {
             bool isExtensionWithSameIcon = true;
-            List<string> extensionsWithDiffIcons = new List<string>
-                { string.Empty, ".EXE", ".LNK", ".ICO", ".URL" };
+            List<string> extensionsWithDiffIcons = new() { string.Empty, ".EXE", ".LNK", ".ICO", ".URL" };
             if (extensionsWithDiffIcons.Contains(fileExtension.ToUpperInvariant()))
             {
                 isExtensionWithSameIcon = false;

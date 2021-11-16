@@ -12,7 +12,7 @@ namespace SystemTrayMenu.UserInterface
     [Designer(typeof(ScrollbarControlDesigner))]
     public class CustomScrollbar : UserControl
     {
-        private readonly Timer timerMouseStillClicked = new Timer();
+        private readonly Timer timerMouseStillClicked = new();
         private float largeChange = 10;
         private float smallChange = 1;
         private int minimum = 0;
@@ -299,9 +299,9 @@ namespace SystemTrayMenu.UserInterface
             int widthDevidedBy2 = Width / 2;
             int widthDevidedBy6 = Width / 6;
             int widthDevidedBy2PluswidthDevidedBy8 = widthDevidedBy2 + (Width / 8);
-            PointF pointArrowUp1 = new PointF(widthDevidedBy2 - widthDevidedBy6, widthDevidedBy2PluswidthDevidedBy8);
-            PointF pointArrowUp2 = new PointF(widthDevidedBy2 + widthDevidedBy6, widthDevidedBy2PluswidthDevidedBy8);
-            PointF pointArrowUp3 = new PointF(widthDevidedBy2, widthDevidedBy2PluswidthDevidedBy8 - widthDevidedBy6);
+            PointF pointArrowUp1 = new(widthDevidedBy2 - widthDevidedBy6, widthDevidedBy2PluswidthDevidedBy8);
+            PointF pointArrowUp2 = new(widthDevidedBy2 + widthDevidedBy6, widthDevidedBy2PluswidthDevidedBy8);
+            PointF pointArrowUp3 = new(widthDevidedBy2, widthDevidedBy2PluswidthDevidedBy8 - widthDevidedBy6);
             PointF pointArrowUp4 = pointArrowUp1;
             PointF[] curvePoints =
                      {
@@ -336,7 +336,7 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            Rectangle rectangleSlider = new Rectangle(1, top, Width - 2, sliderHeight);
+            Rectangle rectangleSlider = new(1, top, Width - 2, sliderHeight);
             e.Graphics.FillRectangle(solidBrushSlider, rectangleSlider);
 
             // Draw arrowDown
@@ -366,9 +366,9 @@ namespace SystemTrayMenu.UserInterface
 
             e.Graphics.FillRectangle(solidBrushArrowDownBackground, GetDownArrowRectangleWithoutBorder(trackHeight));
 
-            PointF pointArrowDown1 = new PointF(widthDevidedBy2 - widthDevidedBy6, Height - widthDevidedBy2PluswidthDevidedBy8);
-            PointF pointArrowDown2 = new PointF(widthDevidedBy2 + widthDevidedBy6, Height - widthDevidedBy2PluswidthDevidedBy8);
-            PointF pointArrowDown3 = new PointF(widthDevidedBy2, Height - widthDevidedBy2PluswidthDevidedBy8 + widthDevidedBy6);
+            PointF pointArrowDown1 = new(widthDevidedBy2 - widthDevidedBy6, Height - widthDevidedBy2PluswidthDevidedBy8);
+            PointF pointArrowDown2 = new(widthDevidedBy2 + widthDevidedBy6, Height - widthDevidedBy2PluswidthDevidedBy8);
+            PointF pointArrowDown3 = new(widthDevidedBy2, Height - widthDevidedBy2PluswidthDevidedBy8 + widthDevidedBy6);
             PointF pointArrowDown4 = pointArrowDown1;
             PointF[] curvePointsArrowDown =
                      {

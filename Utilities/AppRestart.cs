@@ -40,7 +40,7 @@ namespace SystemTrayMenu.Utilities
             Log.Info($"Restart by '{reason}'");
             Log.Close();
 
-            using (Process p = new Process())
+            using (Process p = new())
             {
                 p.StartInfo = new ProcessStartInfo(
                     Process.GetCurrentProcess().
@@ -61,7 +61,7 @@ namespace SystemTrayMenu.Utilities
         [MethodImpl(MethodImplOptions.NoInlining)]
         private static string GetCurrentMethod()
         {
-            StackTrace st = new StackTrace();
+            StackTrace st = new();
             StackFrame sf = st.GetFrame(1);
 
             return sf.GetMethod().Name;

@@ -14,9 +14,9 @@ namespace SystemTrayMenu.UserInterface
 
         private void InitializeComponentControlsTheDesignerRemoves()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new();
 
             labelTitle = new LabelNoCopy();
             ColumnText = new DataGridViewTextBoxColumn();
