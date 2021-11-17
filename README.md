@@ -19,6 +19,7 @@
 [![mirsofta](https://user-images.githubusercontent.com/52528841/121584682-0706e500-ca32-11eb-8629-4599579a1620.png)](https://mirsofta.ru/index.php?id=1623024195)
 [![downloaddrivers](https://user-images.githubusercontent.com/52528841/116524789-0f6aec80-a8d8-11eb-9037-06b2c101fa72.png)](https://www.downloaddrivers.info/download-systemtraymenu-1-0-17-43/) 
 [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
+[![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)
 
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
@@ -44,6 +45,9 @@ Blogs and reviews
 * http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/
 * https://reviewsapp.org/systemtraymenu-better-organization-of-windows
 * https://teamos-hkrg.com/threads/systemtraymenu-1-0-20-0.162800/
+* https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/
+* video coming soon 27.11.2021  15:30   https://www.youtube.com/user/DyRexLP/videos 
+
 
 FAQ
 ------------------
