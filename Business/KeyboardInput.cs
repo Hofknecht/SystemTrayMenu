@@ -76,7 +76,7 @@ namespace SystemTrayMenu.Handler
             {
                 case Keys.Enter:
                     SelectByKey(keys);
-                    menus[iMenuKey].FocusTextBox();
+                    menus[iMenuKey]?.FocusTextBox();
                     break;
                 case Keys.Left:
                     if (Properties.Settings.Default.AppearAtTheBottomLeft)
@@ -106,7 +106,7 @@ namespace SystemTrayMenu.Handler
                     SelectByKey(keys);
                     break;
                 case Keys.Control | Keys.F:
-                    menus[iMenuKey].FocusTextBox();
+                    menus[iMenuKey]?.FocusTextBox();
                     break;
                 case Keys.Tab:
                     {
@@ -123,7 +123,7 @@ namespace SystemTrayMenu.Handler
                             indexNew = indexMax;
                         }
 
-                        menus[indexNew].FocusTextBox();
+                        menus[indexNew]?.FocusTextBox();
                     }
 
                     break;
@@ -142,13 +142,13 @@ namespace SystemTrayMenu.Handler
                             indexNew = 0;
                         }
 
-                        menus[indexNew].FocusTextBox();
+                        menus[indexNew]?.FocusTextBox();
                     }
 
                     break;
                 case Keys.Apps:
                     {
-                        DataGridView dgv = menus[iMenuKey].GetDataGridView();
+                        DataGridView dgv = menus[iMenuKey]?.GetDataGridView();
 
                         if (iRowKey > -1 &&
                             dgv.Rows.Count > iRowKey)
@@ -331,8 +331,15 @@ namespace SystemTrayMenu.Handler
                                 ClosePressed?.Invoke();
                             }
 
-                            // Raise Dgv_RowPostPaint to show ProcessStarted
-                            dgv.InvalidateRow(iRowKey);
+                            try
+                            {
+                                // Raise Dgv_RowPostPaint to show ProcessStarted
+                                dgv.InvalidateRow(iRowKey);
+                            }
+                            catch (ArgumentOutOfRangeException ex)
+                            {
+                                Log.Warn("InvalidateRow failed", ex);
+                            }
                         }
                         else
                         {

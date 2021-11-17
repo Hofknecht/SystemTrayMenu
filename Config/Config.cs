@@ -48,7 +48,7 @@ namespace SystemTrayMenu
             AppColors.BitmapFilesCount.Dispose();
         }
 
-        internal static Icon GetAppIcon()
+        public static Icon GetAppIcon()
         {
             if (Settings.Default.UseIconFromRootFolder)
             {
