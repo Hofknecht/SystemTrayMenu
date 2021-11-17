@@ -12,6 +12,7 @@ namespace SystemTrayMenu.UserInterface
         public TaskbarForm()
         {
             InitializeComponent();
+            Icon = Config.GetAppIcon();
             SetLocation();
         }
 

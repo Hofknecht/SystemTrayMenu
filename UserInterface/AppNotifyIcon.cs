@@ -13,7 +13,6 @@ namespace SystemTrayMenu.UserInterface
 
     internal class AppNotifyIcon : IDisposable
     {
-        private static Icon systemTrayMenu = Properties.Resources.SystemTrayMenu;
         private readonly Timer load = new();
         private readonly NotifyIcon notifyIcon = new();
         private bool threadsLoading;
@@ -26,16 +25,8 @@ namespace SystemTrayMenu.UserInterface
             load.Interval = 15;
             notifyIcon.Text = Translator.GetText("SystemTrayMenu");
             notifyIcon.Visible = true;
+            notifyIcon.Icon = Config.GetAppIcon();
 
-            if (Properties.Settings.Default.UseIconFromRootFolder)
-            {
-                systemTrayMenu = IconReader.GetFolderIconSTA(
-                    Config.Path,
-                    IconReader.FolderType.Closed,
-                    false);
-            }
-
-            notifyIcon.Icon = systemTrayMenu;
             AppContextMenu contextMenus = new();
 
             contextMenus.ClickedOpenLog += ClickedOpenLog;
@@ -112,24 +103,14 @@ namespace SystemTrayMenu.UserInterface
                 rotationAngle += 5;
                 using Bitmap bitmapLoading = Resources.StaticResources.LoadingIcon.ToBitmap();
                 using Bitmap bitmapLoadingRotated = new(ImagingHelper.RotateImage(bitmapLoading, rotationAngle));
-                DisposeIconIfNotDefaultIcon();
                 IntPtr hIcon = bitmapLoadingRotated.GetHicon();
                 notifyIcon.Icon = (Icon)Icon.FromHandle(hIcon).Clone();
                 DllImports.NativeMethods.User32DestroyIcon(hIcon);
             }
             else
             {
-                DisposeIconIfNotDefaultIcon();
-                notifyIcon.Icon = systemTrayMenu;
+                notifyIcon.Icon = Config.GetAppIcon();
                 load.Stop();
-            }
-
-            void DisposeIconIfNotDefaultIcon()
-            {
-                if (notifyIcon.Icon.GetHashCode() != systemTrayMenu.GetHashCode())
-                {
-                    notifyIcon.Icon?.Dispose();
-                }
             }
         }
     }

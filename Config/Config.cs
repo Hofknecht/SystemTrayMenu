@@ -18,6 +18,9 @@ namespace SystemTrayMenu
 
     public static class Config
     {
+        private static readonly Icon SystemTrayMenu = Properties.Resources.SystemTrayMenu;
+        private static readonly Icon IconFromRootFolder = IconReader.GetFolderIconSTA(Path, IconReader.FolderType.Closed, false);
+
         private static bool readDarkModeDone;
         private static bool isDarkMode;
         private static bool readHideFileExtdone;
@@ -43,6 +46,18 @@ namespace SystemTrayMenu
             AppColors.BitmapSearch.Dispose();
             AppColors.BitmapFoldersCount.Dispose();
             AppColors.BitmapFilesCount.Dispose();
+        }
+
+        internal static Icon GetAppIcon()
+        {
+            if (Settings.Default.UseIconFromRootFolder)
+            {
+                return IconFromRootFolder;
+            }
+            else
+            {
+                return SystemTrayMenu;
+            }
         }
 
         public static void SetFolderByWindowsContextMenu(string[] args)
