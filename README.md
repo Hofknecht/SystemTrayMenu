@@ -82,7 +82,7 @@ Yes, you can select this option in the settings menu, that you can open by right
 **What can I do if I have a problem, idea or question?**
 
 If a problem has occured or you have any ideas or questions, you are welcome to contact us.  
-Our contact information you can find in the About window, that can be opened by right clicking on the SystemTrayMenu icon.   
+Create an issue or write us an email [Markus Hofknecht](Markus@Hofknecht.de)
 
 **Find more FAQ topics here:**
 [SystemTrayMenu FAQ](https://github.com/Hofknecht/SystemTrayMenu/issues?q=is%3Aissue+is%3Aclosed+label%3AFAQ)
@@ -124,10 +124,16 @@ Special thanks to our productive contibutors!
 * [Tanja Hofknecht](https://github.com/Tanjalibertatis)
 * [Peter Kirmeier](https://github.com/topeterk)
 
-Thanks for contributing!
+Thanks for ideas, reporting issues and contributing!
 
-#145 [Pascal Aloy](mailto:paloy@wanadoo.fr), #162 [HansieNL](https://github.com/HansieNL), #163 [igorruckert](https://github.com/igorruckert), #205 [kristofzerbe](https://github.com/kristofzerbe), #220 [Yavuz E.](mailto:yavuzelektronik@gmail.com), #229 #230 [Peter O.](pohle@htp-tel.de)
-
+#240 [Patrick](https://www.youtube.com/user/DyRexLP),
+#229 #230 #239 [Peter O.](pohle@htp-tel.de),
+#211 [blacksparrow15](https://github.com/blacksparrow15),
+#145 [Pascal Aloy](mailto:paloy@wanadoo.fr), 
+#162 [HansieNL](https://github.com/HansieNL), 
+#163 [igorruckert](https://github.com/igorruckert), 
+#205 [kristofzerbe](https://github.com/kristofzerbe), 
+#220 [Yavuz E.](mailto:yavuzelektronik@gmail.com), 
 
 Donations
 ------------------
