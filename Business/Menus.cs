@@ -443,7 +443,7 @@ namespace SystemTrayMenu.Business
                     rowData.ContainsMenu = true;
                     rowData.HiddenEntry = hiddenEntry;
                     string resolvedLnkPath = string.Empty;
-                    rowData.ReadIcon(true, ref resolvedLnkPath);
+                    rowData.ReadIcon(true, ref resolvedLnkPath, level);
                     rowData.MenuLevel = level;
                     menuData.RowDatas.Add(rowData);
                 }
@@ -495,7 +495,7 @@ namespace SystemTrayMenu.Business
 
                     RowData rowData = ReadRowData(file, false);
                     string resolvedLnkPath = string.Empty;
-                    if (rowData.ReadIcon(false, ref resolvedLnkPath))
+                    if (rowData.ReadIcon(false, ref resolvedLnkPath, level))
                     {
                         rowData = ReadRowData(resolvedLnkPath, true, rowData);
                         rowData.ContainsMenu = true;
@@ -918,7 +918,11 @@ namespace SystemTrayMenu.Business
                 if (IconReader.ClearIfCacheTooBig())
                 {
                     GC.Collect();
-                    MainPreload();
+
+                    if (!Properties.Settings.Default.CacheMainMenu)
+                    {
+                        MainPreload();
+                    }
                 }
 
                 openCloseState = OpenCloseState.Default;

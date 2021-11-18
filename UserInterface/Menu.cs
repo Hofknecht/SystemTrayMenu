@@ -482,8 +482,15 @@ namespace SystemTrayMenu.UserInterface
 
             if (Properties.Settings.Default.RoundCorners)
             {
-                Region = Region.FromHrgn(NativeMethods.CreateRoundCorners(Width + 1, Height + 1, 15, 15));
-                tableLayoutPanelMenu.Region = Region.FromHrgn(NativeMethods.CreateRoundCorners(Width - 1, Height - 1, 15, 15));
+                if (NativeMethods.GetRegionRoundCorners(Width + 1, Height + 1, 15, 15, out Region regionOutline))
+                {
+                    Region = regionOutline;
+                }
+
+                if (NativeMethods.GetRegionRoundCorners(Width - 1, Height - 1, 15, 15, out Region region))
+                {
+                    tableLayoutPanelMenu.Region = region;
+                }
             }
         }
 

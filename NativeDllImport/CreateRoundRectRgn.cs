@@ -12,9 +12,20 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
-        public static IntPtr CreateRoundCorners(int width, int height, int widthEllipse, int heightEllipse)
+        public static bool GetRegionRoundCorners(int width, int height, int widthEllipse, int heightEllipse, out System.Drawing.Region region)
         {
-            return CreateRoundRectRgn(0, 0, width, height, widthEllipse, heightEllipse);
+            bool success = false;
+            region = null;
+
+            IntPtr handle = CreateRoundRectRgn(0, 0, width, height, widthEllipse, heightEllipse);
+            if (handle != IntPtr.Zero)
+            {
+                region = System.Drawing.Region.FromHrgn(handle);
+                DeleteObject(handle);
+                success = true;
+            }
+
+            return success;
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn", SetLastError = true, CharSet = CharSet.Unicode)]
