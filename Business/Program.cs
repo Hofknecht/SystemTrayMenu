@@ -6,7 +6,6 @@ namespace SystemTrayMenu
 {
     using System;
     using System.Reflection;
-    using System.Threading;
     using System.Windows.Forms;
     using SystemTrayMenu.Utilities;
 
