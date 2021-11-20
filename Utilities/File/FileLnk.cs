@@ -83,7 +83,12 @@ namespace SystemTrayMenu.Utilities
                     ShellLinkObject link = (ShellLinkObject)folderItem.GetLink;
                     if (string.IsNullOrEmpty(link.Path))
                     {
-                        resolvedFilename = link.Target.Path;
+                        // https://github.com/Hofknecht/SystemTrayMenu/issues/242
+                        // do not set CLSID key (GUID) shortcuts as resolvedFilename
+                        if (!link.Target.Path.Contains("::{"))
+                        {
+                            resolvedFilename = link.Target.Path;
+                        }
                     }
                     else
                     {
