@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>약</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>최대 메뉴 너비 픽셀</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>크기와 위치</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>열린 상태로 유지</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>작업 표시줄에 표시</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>왼쪽 하단에 나타남</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>폴더 추가</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>행 높이(%)</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>모습</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>왼쪽 하단</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>오른쪽 하단</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>주 메뉴가 나타납니다.</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>마우스 위치(작업 표시줄 아이콘 위)</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>메뉴가 열릴 때마다 위치 업데이트</value>
   </data>
 </root>

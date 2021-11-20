@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>Über</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixel maximale Menübreite</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>Größe und Lage</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Bleibt offen</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>In Taskleiste anzeigen</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>Erscheine unten links</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>Ordner hinzufügen</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>Zeilenhöhe in Prozent</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Aussehen</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Unten links</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Unten rechts</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>Hauptmenü erscheint bei</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Mausposition (über dem Taskleistensymbol)</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>Aktualisieren Sie die Position jedes Mal, wenn das Menü geöffnet wird</value>
   </data>
 </root>

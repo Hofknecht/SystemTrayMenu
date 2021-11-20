@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>Di</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Larghezza massima del menu in pixel</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>Dimensioni e posizione</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Rimane aperto</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostra nella barra delle applicazioni</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>Appari in basso a sinistra</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>Aggiungi cartella</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>Altezza riga in percentuale</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Aspetto esteriore</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>In basso a sinistra</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>In basso a destra</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>Il menu principale viene visualizzato in</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Posizione del mouse (sopra l'icona della barra delle applicazioni)</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>Aggiorna la posizione ogni volta che si apre il menu</value>
   </data>
 </root>

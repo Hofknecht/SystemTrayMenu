@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>O</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixely maximální šířka nabídky</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>Velikost a umístění</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Pobyty otevřené</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Zobrazit na hlavním panelu</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>Zobrazí se vlevo dole</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>Přidat složku</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>Výška řádku v procentech</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Vzhled</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Vlevo dole</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Vpravo dole</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>Hlavní nabídka se zobrazí na</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Umístění myši (nad ikonou na hlavním panelu)</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>Aktualizujte pozici při každém otevření nabídky</value>
   </data>
 </root>

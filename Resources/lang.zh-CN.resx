@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>关于</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>像素最大菜单宽度</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>大小和位置</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>保持开放</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>在任务栏中显示</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>出现在左下角</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>新增文件夹</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>行高百分比</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>外貌</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>左下方</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>右下角</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>主菜单出现在</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>鼠标位置（任务栏图标上方）</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>每次打开菜单时更新位置</value>
   </data>
 </root>

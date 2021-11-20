@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>Over</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixels maximale menubreedte</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>Afmeting en locatie</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Blijft open</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Weergeven in taakbalk</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>Verschijnen linksonder</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>Map toevoegen</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>Rijhoogte in procenten</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Verschijning</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Linksonder</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Rechts onder</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>Hoofdmenu verschijnt op</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Muislocatie (boven taakbalkpictogram)</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>Update de positie elke keer dat het menu wordt geopend</value>
   </data>
 </root>

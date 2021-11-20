@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>Trong khoảng</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Chiều rộng menu tối đa của pixel</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>Kích thước và vị trí</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Tiếp tục mở</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Hiển thị trên Thanh tác vụ</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>Xuất hiện ở dưới cùng bên trái</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>Thêm thư mục</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>Chiều cao hàng tính bằng phần trăm</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Ngoại hình</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Dưới cùng bên trái</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Góc phải ở phía dưới</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>Ngoại hình</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Vị trí chuột (phía trên biểu tượng Thanh tác vụ)</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>Cập nhật vị trí mỗi khi menu mở ra</value>
   </data>
 </root>

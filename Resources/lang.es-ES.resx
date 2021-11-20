@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>Acerca de</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Ancho máximo de menú de píxeles</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>Tamaño y ubicación</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Permanece abierto</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostrar en la barra de tareas</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>Aparecen en la parte inferior izquierda</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>Agregar carpeta</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>Altura de fila en porcentaje</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Apariencia</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Abajo a la izquierda</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Abajo a la derecha</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>El menú principal aparece en</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Ubicación del mouse (encima del icono de la barra de tareas)</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>Actualizar la posición cada vez que se abre el menú</value>
   </data>
 </root>

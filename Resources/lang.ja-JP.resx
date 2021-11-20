@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>約</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>ピクセルの最大メニュー幅</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>サイズと場所</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>開いたまま</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>タスクバーに表示</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>左下に表示されます</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>フォルダーを追加</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Row height in percentage" xml:space="preserve">
     <value>行の高さ（パーセンテージ）</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>外観</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>左下の</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>右下</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>メインメニューはに表示されます</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>マウスの位置（タスクバーアイコンの上）</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>メニューが開くたびに位置を更新します</value>
   </data>
 </root>
