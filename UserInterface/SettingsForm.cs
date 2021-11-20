@@ -139,19 +139,21 @@ namespace SystemTrayMenu.UserInterface
                 ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
                 buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' folder");
                 buttonDefaultFolders.Text = Translator.GetText("Default");
-                groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
+                groupBoxClick.Text = Translator.GetText("Click");
+                checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
-                groupBoxSizeAndLocation.Text = Translator.GetText("Size and location");
+                groupBoxSize.Text = Translator.GetText("Size");
                 labelSizeInPercentage.Text = $"% {Translator.GetText("Size")}";
                 labelRowHeightInPercentage.Text = $"% {Translator.GetText("Row height in percentage")}";
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
-                checkBoxAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
-                checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
-                checkBoxAppearAtTheBottomLeft.Text = Translator.GetText("Appear at the bottom left");
-                checkBoxRoundCorners.Text = Translator.GetText("Round corners");
+                groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears at");
+                radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
+                radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
+                radioButtonAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
+                checkBoxRefreshLocationEachTime.Text = Translator.GetText("Update the position every time the menu opens");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
@@ -162,13 +164,15 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = Translator.GetText("If the focus is lost and the Enter key was pressed");
                 labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if in this case the menu is not reactivated");
                 buttonExpertDefault.Text = Translator.GetText("Default");
+                groupBoxAppearance.Text = Translator.GetText("Appearance");
+                checkBoxRoundCorners.Text = Translator.GetText("Round corners");
+                checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
                 groupBoxColorsLightMode.Text = Translator.GetText("Colors Light Mode");
                 groupBoxColorsDarkMode.Text = Translator.GetText("Colors Dark Mode");
                 labelMenuLightMode.Text = Translator.GetText("Menu");
                 labelMenuDarkMode.Text = Translator.GetText("Menu");
                 labelScrollbarLightMode.Text = Translator.GetText("Scrollbar");
                 labelScrollbarDarkMode.Text = Translator.GetText("Scrollbar");
-                checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
                 labelTitle.Text = Translator.GetText("Title");
                 labelTitleDarkMode.Text = Translator.GetText("Title");
                 labelIcons.Text = Translator.GetText("Icons");
@@ -304,6 +308,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxCacheMainMenu.Checked = Settings.Default.CacheMainMenu;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
+            checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
 
             numericUpDownSizeInPercentage.Minimum = 100;
@@ -360,10 +365,18 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuHeight.Increment = 10;
             numericUpDownMenuHeight.Value = Settings.Default.MaximumMenuHeight;
 
-            checkBoxAppearAtMouseLocation.Checked = Settings.Default.AppearAtMouseLocation;
-            checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
-            checkBoxAppearAtTheBottomLeft.Checked = Settings.Default.AppearAtTheBottomLeft;
-            checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
+            if (Settings.Default.AppearAtMouseLocation)
+            {
+                radioButtonAppearAtMouseLocation.Checked = true;
+            }
+            else if (Settings.Default.AppearAtTheBottomLeft)
+            {
+                radioButtonAppearAtTheBottomLeft.Checked = true;
+            }
+            else
+            {
+                radioButtonAppearAtTheBottomRight.Checked = true;
+            }
 
             checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
@@ -385,7 +398,9 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilClosesAfterEnterPressed.Increment = 10;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = Settings.Default.TimeUntilClosesAfterEnterPressed;
 
+            checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
+
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
             textBoxColorSelecetedItemDarkMode.Text = Settings.Default.ColorDarkModeSelecetedItem;
             textBoxColorSelectedItemBorder.Text = Settings.Default.ColorSelectedItemBorder;
@@ -708,8 +723,9 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
             Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
 
+            Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
-            Settings.Default.AppearAtMouseLocation = checkBoxAppearAtMouseLocation.Checked;
+
             Settings.Default.SizeInPercentage = (int)numericUpDownSizeInPercentage.Value;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
@@ -722,9 +738,24 @@ namespace SystemTrayMenu.UserInterface
 
             Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
             Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
-            Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
-            Settings.Default.AppearAtTheBottomLeft = checkBoxAppearAtTheBottomLeft.Checked;
-            Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
+
+
+            if (radioButtonAppearAtMouseLocation.Checked)
+            {
+                Settings.Default.AppearAtMouseLocation = true;
+                Settings.Default.AppearAtTheBottomLeft = false;
+            }
+            else if (radioButtonAppearAtTheBottomLeft.Checked)
+            {
+                Settings.Default.AppearAtMouseLocation = false;
+                Settings.Default.AppearAtTheBottomLeft = true;
+            }
+            else
+            {
+                Settings.Default.AppearAtMouseLocation = false;
+                Settings.Default.AppearAtTheBottomLeft = false;
+            }
+
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
@@ -732,6 +763,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed = checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked;
             Settings.Default.TimeUntilClosesAfterEnterPressed = (int)numericUpDownTimeUntilClosesAfterEnterPressed.Value;
 
+            Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
 
             if (checkBoxStoreConfigAtAssemblyLocation.Checked)
@@ -966,13 +998,13 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
         {
             checkBoxOpenItemWithOneClick.Checked = true;
-            checkBoxAppearAtMouseLocation.Checked = false;
+            radioButtonAppearAtMouseLocation.Checked = false;
             numericUpDownSizeInPercentage.Value = 100;
             numericUpDownRowHeighteInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 300;
             numericUpDownMenuHeight.Value = 600;
             checkBoxShowInTaskbar.Checked = false;
-            checkBoxAppearAtTheBottomLeft.Checked = false;
+            radioButtonAppearAtTheBottomLeft.Checked = false;
             checkBoxRoundCorners.Checked = true;
         }
 
