@@ -66,6 +66,11 @@ namespace SystemTrayMenu.Business
 
                     RefreshSelection(dgvMainMenu);
 
+                    if (Properties.Settings.Default.RefreshLocationEachTime)
+                    {
+                        menus[0].Tag = null;
+                    }
+
                     AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
                     menus[0].ResetSearchText();
                 }

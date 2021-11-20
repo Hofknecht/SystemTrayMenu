@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>About</value>
@@ -227,9 +227,6 @@
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixels maximum menu width</value>
-  </data>
-  <data name="Size and location" xml:space="preserve">
-    <value>Size and location</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Stays open</value>
@@ -366,9 +363,6 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Show in Taskbar</value>
   </data>
-  <data name="Appear at the bottom left" xml:space="preserve">
-    <value>Appear at the bottom left</value>
-  </data>
   <data name="Add folder" xml:space="preserve">
     <value>Add folder</value>
   </data>
@@ -404,5 +398,23 @@
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Round corners</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Bottom left</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Bottom right</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>Main menu appears at</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Mouse location (Above Taskbar icon)</value>
+  </data>
+  <data name="Update the position every time the menu opens" xml:space="preserve">
+    <value>Update the position every time the menu opens</value>
   </data>
 </root>

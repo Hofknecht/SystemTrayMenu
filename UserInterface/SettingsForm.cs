@@ -378,6 +378,8 @@ namespace SystemTrayMenu.UserInterface
                 radioButtonAppearAtTheBottomRight.Checked = true;
             }
 
+            checkBoxRefreshLocationEachTime.Checked = Settings.Default.RefreshLocationEachTime;
+
             checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
 
@@ -739,7 +741,6 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
             Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
 
-
             if (radioButtonAppearAtMouseLocation.Checked)
             {
                 Settings.Default.AppearAtMouseLocation = true;
@@ -755,6 +756,8 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.AppearAtMouseLocation = false;
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
+
+            Settings.Default.RefreshLocationEachTime = checkBoxRefreshLocationEachTime.Checked;
 
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;

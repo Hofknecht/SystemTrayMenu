@@ -124,11 +124,11 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Appear at the bottom left ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Appearance ähnelt.
         /// </summary>
-        internal static string Appear_at_the_bottom_left {
+        internal static string Appearance {
             get {
-                return ResourceManager.GetString("Appear at the bottom left", resourceCulture);
+                return ResourceManager.GetString("Appearance", resourceCulture);
             }
         }
         
@@ -219,6 +219,24 @@ namespace SystemTrayMenu.Resources {
         internal static string Border_of_selected_item {
             get {
                 return ResourceManager.GetString("Border of selected item", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Bottom left ähnelt.
+        /// </summary>
+        internal static string Bottom_left {
+            get {
+                return ResourceManager.GetString("Bottom left", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Bottom right ähnelt.
+        /// </summary>
+        internal static string Bottom_right {
+            get {
+                return ResourceManager.GetString("Bottom right", resourceCulture);
             }
         }
         
@@ -529,6 +547,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Main menu appears at ähnelt.
+        /// </summary>
+        internal static string Main_menu_appears_at {
+            get {
+                return ResourceManager.GetString("Main menu appears at", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Menu ähnelt.
         /// </summary>
         internal static string Menu {
@@ -580,6 +607,15 @@ namespace SystemTrayMenu.Resources {
             get {
                 return ResourceManager.GetString("Milliseconds until the menu closes if in this case the mouse then leaves the menu" +
                         "", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Mouse location (Above Taskbar icon) ähnelt.
+        /// </summary>
+        internal static string Mouse_location__Above_Taskbar_icon_ {
+            get {
+                return ResourceManager.GetString("Mouse location (Above Taskbar icon)", resourceCulture);
             }
         }
         
@@ -782,15 +818,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Size and location ähnelt.
-        /// </summary>
-        internal static string Size_and_location {
-            get {
-                return ResourceManager.GetString("Size and location", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Slider ähnelt.
         /// </summary>
         internal static string Slider {
@@ -896,6 +923,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Update the position every time the menu opens ähnelt.
+        /// </summary>
+        internal static string Update_the_position_every_time_the_menu_opens {
+            get {
+                return ResourceManager.GetString("Update the position every time the menu opens", resourceCulture);
             }
         }
         
