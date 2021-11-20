@@ -1007,8 +1007,10 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuWidth.Value = 300;
             numericUpDownMenuHeight.Value = 600;
             checkBoxShowInTaskbar.Checked = false;
+            radioButtonAppearAtTheBottomRight.Checked = true;
             radioButtonAppearAtTheBottomLeft.Checked = false;
-            checkBoxRoundCorners.Checked = true;
+            radioButtonAppearAtMouseLocation.Checked = false;
+            checkBoxRefreshLocationEachTime.Checked = false;
         }
 
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)
