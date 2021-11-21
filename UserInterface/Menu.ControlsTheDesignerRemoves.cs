@@ -98,13 +98,21 @@ namespace SystemTrayMenu.UserInterface
             customScrollbar.Name = "customScrollbar";
             customScrollbar.Size = new Size(Scaling.Scale(15), 40);
 
+            pictureBoxOpenFolder.Size = new Size(
+                Scaling.Scale(pictureBoxOpenFolder.Width),
+                Scaling.Scale(pictureBoxOpenFolder.Height));
+
             pictureBoxMenuAlwaysOpen.Size = new Size(
                 Scaling.Scale(pictureBoxMenuAlwaysOpen.Width),
                 Scaling.Scale(pictureBoxMenuAlwaysOpen.Height));
 
-            pictureBoxOpenFolder.Size = new Size(
-                Scaling.Scale(pictureBoxOpenFolder.Width),
-                Scaling.Scale(pictureBoxOpenFolder.Height));
+            pictureBoxSettings.Size = new Size(
+                Scaling.Scale(pictureBoxSettings.Width),
+                Scaling.Scale(pictureBoxSettings.Height));
+
+            pictureBoxRestart.Size = new Size(
+                Scaling.Scale(pictureBoxRestart.Width),
+                Scaling.Scale(pictureBoxRestart.Height));
 
             pictureBoxSearch.Size = new Size(
                 Scaling.Scale(pictureBoxSearch.Width),

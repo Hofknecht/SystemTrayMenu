@@ -19,7 +19,7 @@ namespace SystemTrayMenu.Utilities
             Restart(GetCurrentMethod());
         }
 
-        internal static void ByMenuNotifyIcon()
+        internal static void ByAppContextMenu()
         {
             Restart(GetCurrentMethod());
         }
@@ -30,6 +30,11 @@ namespace SystemTrayMenu.Utilities
         }
 
         internal static void ByConfigChange()
+        {
+            Restart(GetCurrentMethod());
+        }
+
+        internal static void ByMenuButton()
         {
             Restart(GetCurrentMethod());
         }

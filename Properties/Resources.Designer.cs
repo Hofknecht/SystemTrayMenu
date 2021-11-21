@@ -63,6 +63,16 @@ namespace SystemTrayMenu.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
+        public static byte[] ic_fluent_arrow_sync_24_regular {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_arrow_sync_24_regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
         public static byte[] ic_fluent_document_48_regular {
             get {
                 object obj = ResourceManager.GetObject("ic_fluent_document_48_regular", resourceCulture);
@@ -116,6 +126,16 @@ namespace SystemTrayMenu.Properties {
         public static byte[] ic_fluent_search_48_regular {
             get {
                 object obj = ResourceManager.GetObject("ic_fluent_search_48_regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        public static byte[] ic_fluent_settings_28_regular {
+            get {
+                object obj = ResourceManager.GetObject("ic_fluent_settings_28_regular", resourceCulture);
                 return ((byte[])(obj));
             }
         }

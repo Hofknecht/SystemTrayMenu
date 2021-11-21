@@ -43,6 +43,8 @@ namespace SystemTrayMenu
             AppColors.BitmapOpenFolder.Dispose();
             AppColors.BitmapPin.Dispose();
             AppColors.BitmapPinActive.Dispose();
+            AppColors.BitmapSettings.Dispose();
+            AppColors.BitmapRestart.Dispose();
             AppColors.BitmapSearch.Dispose();
             AppColors.BitmapFoldersCount.Dispose();
             AppColors.BitmapFilesCount.Dispose();
@@ -263,6 +265,8 @@ namespace SystemTrayMenu
 
             AppColors.BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons);
             AppColors.BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapSettings = ReadSvg(Properties.Resources.ic_fluent_settings_28_regular, htmlColorCodeIcons);
+            AppColors.BitmapRestart = ReadSvg(Properties.Resources.ic_fluent_arrow_sync_24_regular, htmlColorCodeIcons);
             AppColors.BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
             AppColors.BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
             AppColors.BitmapFoldersCount = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular, htmlColorCodeIcons);

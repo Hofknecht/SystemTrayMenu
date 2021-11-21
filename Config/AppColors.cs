@@ -88,6 +88,10 @@ namespace SystemTrayMenu
 
         public static Bitmap BitmapPin { get; set; }
 
+        public static Bitmap BitmapSettings { get; set; }
+
+        public static Bitmap BitmapRestart { get; set; }
+
         public static Bitmap BitmapPinActive { get; set; }
 
         public static Bitmap BitmapSearch { get; set; }

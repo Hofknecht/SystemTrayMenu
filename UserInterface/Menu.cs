@@ -137,8 +137,10 @@ namespace SystemTrayMenu.UserInterface
             dgv.MouseEnter += ControlsMouseEnter;
             labelTitle.MouseEnter += ControlsMouseEnter;
             textBoxSearch.MouseEnter += ControlsMouseEnter;
-            pictureBoxMenuAlwaysOpen.MouseEnter += ControlsMouseEnter;
             pictureBoxOpenFolder.MouseEnter += ControlsMouseEnter;
+            pictureBoxMenuAlwaysOpen.MouseEnter += ControlsMouseEnter;
+            pictureBoxSettings.MouseEnter += ControlsMouseEnter;
+            pictureBoxRestart.MouseEnter += ControlsMouseEnter;
             pictureBoxSearch.MouseEnter += ControlsMouseEnter;
             pictureBoxFilesCount.MouseEnter += ControlsMouseEnter;
             pictureBoxFoldersCount.MouseEnter += ControlsMouseEnter;
@@ -156,6 +158,8 @@ namespace SystemTrayMenu.UserInterface
             textBoxSearch.MouseLeave += ControlsMouseLeave;
             pictureBoxMenuAlwaysOpen.MouseLeave += ControlsMouseLeave;
             pictureBoxOpenFolder.MouseLeave += ControlsMouseLeave;
+            pictureBoxSettings.MouseLeave += ControlsMouseLeave;
+            pictureBoxRestart.MouseLeave += ControlsMouseLeave;
             pictureBoxSearch.MouseLeave += ControlsMouseLeave;
             pictureBoxFilesCount.MouseLeave += ControlsMouseLeave;
             pictureBoxFoldersCount.MouseLeave += ControlsMouseLeave;
@@ -178,6 +182,8 @@ namespace SystemTrayMenu.UserInterface
         internal new event EventHandlerEmpty MouseLeave;
 
         internal event EventHandlerEmpty UserClickedOpenFolder;
+
+        internal event EventHandlerEmpty UserClickedRestart;
 
         internal event EventHandler<Keys> CmdKeyProcessed;
 
@@ -254,6 +260,8 @@ namespace SystemTrayMenu.UserInterface
             if (type != MenuType.Main)
             {
                 pictureBoxMenuAlwaysOpen.Visible = false;
+                pictureBoxSettings.Visible = false;
+                pictureBoxRestart.Visible = false;
             }
 
             switch (type)
@@ -285,9 +293,8 @@ namespace SystemTrayMenu.UserInterface
                     pictureBoxMenuAlwaysOpen.Paint -= PictureBoxMenuAlwaysOpen_Paint;
                     pictureBoxMenuAlwaysOpen.Paint += LoadingMenu_Paint;
                     timerUpdateIcons.Tick -= TimerUpdateIcons_Tick;
-                    timerUpdateIcons.Tick += TimerUpdateLoadingMenu_Tick;
+                    timerUpdateIcons.Tick += (sender, e) => pictureBoxMenuAlwaysOpen.Invalidate();
                     timerUpdateIcons.Interval = 15;
-                    pictureBoxMenuAlwaysOpen.Visible = true;
                     break;
                 default:
                     break;
@@ -787,22 +794,25 @@ namespace SystemTrayMenu.UserInterface
             pictureBox.Invalidate();
         }
 
-        private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
+        private void PictureBoxOpenFolder_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(AppColors.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
+
+            e.Graphics.DrawImage(AppColors.BitmapOpenFolder, new Rectangle(Point.Empty, pictureBox.ClientSize));
+
+            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
+            {
+                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
+                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
+            }
         }
 
-        private void PictureBoxFoldersCount_Paint(object sender, PaintEventArgs e)
+        private void PictureBoxOpenFolder_Click(object sender, MouseEventArgs e)
         {
-            PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(AppColors.BitmapFoldersCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
-        }
-
-        private void PictureBoxFilesCount_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(AppColors.BitmapFilesCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
+            if (e.Button == MouseButtons.Left)
+            {
+                UserClickedOpenFolder?.Invoke();
+            }
         }
 
         private void PictureBoxMenuAlwaysOpen_Paint(object sender, PaintEventArgs e)
@@ -825,9 +835,85 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void TimerUpdateLoadingMenu_Tick(object sender, EventArgs e)
+        private void PictureBoxMenuAlwaysOpen_Click(object sender, EventArgs e)
         {
-            pictureBoxMenuAlwaysOpen.Invalidate();
+            PictureBox pictureBox = (PictureBox)sender;
+            Config.AlwaysOpenByPin = !Config.AlwaysOpenByPin;
+            pictureBox.Invalidate();
+        }
+
+        private void PictureBoxSettings_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+
+            e.Graphics.DrawImage(AppColors.BitmapSettings, new Rectangle(Point.Empty, pictureBox.ClientSize));
+
+            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
+            {
+                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
+                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
+            }
+        }
+
+        private void PictureBoxSettings_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                SettingsForm settingsForm = new();
+                if (settingsForm.ShowDialog() == DialogResult.OK)
+                {
+                    AppRestart.ByConfigChange();
+                }
+            }
+        }
+
+        private void PictureBoxRestart_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+
+            e.Graphics.DrawImage(AppColors.BitmapRestart, new Rectangle(Point.Empty, pictureBox.ClientSize));
+
+            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
+            {
+                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
+                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
+            }
+        }
+
+        private void PictureBoxRestart_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                AppRestart.ByMenuButton();
+            }
+        }
+
+        private void PictureBoxRestart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBoxSettings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            e.Graphics.DrawImage(AppColors.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
+        }
+
+        private void PictureBoxFoldersCount_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            e.Graphics.DrawImage(AppColors.BitmapFoldersCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
+        }
+
+        private void PictureBoxFilesCount_Paint(object sender, PaintEventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            e.Graphics.DrawImage(AppColors.BitmapFilesCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
         }
 
         private void LoadingMenu_Paint(object sender, PaintEventArgs e)
@@ -837,34 +923,6 @@ namespace SystemTrayMenu.UserInterface
             e.Graphics.DrawImage(
                 ImagingHelper.RotateImage(Resources.StaticResources.LoadingIcon.ToBitmap(), rotationAngle),
                 new Rectangle(Point.Empty, new Size(pictureBox.ClientSize.Width - 2, pictureBox.ClientSize.Height - 2)));
-        }
-
-        private void PictureBoxMenuOpenFolder_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-
-            e.Graphics.DrawImage(AppColors.BitmapOpenFolder, new Rectangle(Point.Empty, pictureBox.ClientSize));
-
-            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
-            {
-                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
-                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
-            }
-        }
-
-        private void PictureBoxMenuAlwaysOpen_Click(object sender, EventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            Config.AlwaysOpenByPin = !Config.AlwaysOpenByPin;
-            pictureBox.Invalidate();
-        }
-
-        private void PictureBoxOpenFolder_Click(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                UserClickedOpenFolder?.Invoke();
-            }
         }
 
         private void TimerUpdateIcons_Tick(object sender, EventArgs e)

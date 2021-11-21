@@ -16,10 +16,6 @@ namespace SystemTrayMenu.Helper
     {
         public event EventHandlerEmpty ClickedOpenLog;
 
-        public event EventHandlerEmpty ClickedRestart;
-
-        public event EventHandlerEmpty ClickedExit;
-
         public ContextMenuStrip Create()
         {
             ContextMenuStrip menu = new()
@@ -124,7 +120,7 @@ namespace SystemTrayMenu.Helper
             restart.Click += Restart_Click;
             void Restart_Click(object sender, EventArgs e)
             {
-                ClickedRestart?.Invoke();
+                AppRestart.ByAppContextMenu();
             }
 
             menu.Items.Add(restart);
@@ -136,7 +132,7 @@ namespace SystemTrayMenu.Helper
             exit.Click += Exit_Click;
             void Exit_Click(object sender, EventArgs e)
             {
-                ClickedExit?.Invoke();
+                Application.Exit();
             }
 
             menu.Items.Add(exit);

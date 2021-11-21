@@ -25,8 +25,6 @@ namespace SystemTrayMenu
             SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
             menus.LoadStarted += menuNotifyIcon.LoadingStart;
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
-            menuNotifyIcon.Exit += Application.Exit;
-            menuNotifyIcon.Restart += AppRestart.ByMenuNotifyIcon;
             menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();

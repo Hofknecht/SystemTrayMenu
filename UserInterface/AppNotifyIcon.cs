@@ -35,18 +35,6 @@ namespace SystemTrayMenu.UserInterface
                 OpenLog?.Invoke();
             }
 
-            contextMenus.ClickedRestart += ClickedRestart;
-            void ClickedRestart()
-            {
-                Restart?.Invoke();
-            }
-
-            contextMenus.ClickedExit += ClickedExit;
-            void ClickedExit()
-            {
-                Exit?.Invoke();
-            }
-
             notifyIcon.ContextMenuStrip = contextMenus.Create();
             notifyIcon.MouseClick += NotifyIcon_MouseClick;
             void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
@@ -64,10 +52,6 @@ namespace SystemTrayMenu.UserInterface
         public event EventHandlerEmpty Click;
 
         public event EventHandlerEmpty OpenLog;
-
-        public event EventHandlerEmpty Restart;
-
-        public event EventHandlerEmpty Exit;
 
         public void Dispose()
         {
