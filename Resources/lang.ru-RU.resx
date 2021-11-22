@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>О</value>
+    <value>О программе</value>
   </data>
   <data name="buttonOk" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Автоматический старт</value>
+    <value>Автозагрузка</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Выход</value>
@@ -148,10 +148,10 @@
     <value>Язык</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Журнальный файл</value>
+    <value>Лог-файл</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Запустить снова</value>
+    <value>Перезапустить</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Не удалось зарегистрировать горячую клавишу.</value>
@@ -160,13 +160,13 @@
     <value>Отмена</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>Общий</value>
+    <value>Общие</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
     <value>Горячая клавиша</value>
   </data>
   <data name="Launch on startup" xml:space="preserve">
-    <value>Запустить стартап</value>
+    <value>Запускать вместе с системой</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Настройки</value>
@@ -196,22 +196,22 @@
     <value>Один щелчок, чтобы открыть элемент, вместо двойного щелчка</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
-    <value>Темный режим всегда активен</value>
+    <value>Всегда использовать темную тему</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Передовой</value>
+    <value>Вид и поведение</value>
   </data>
   <data name="Appear at mouse location" xml:space="preserve">
-    <value>Появляется в месте нахождения мыши</value>
+    <value>Показывать в месте нахождения мыши</value>
   </data>
   <data name="Change folder" xml:space="preserve">
-    <value>Смена папки</value>
+    <value>Изменить папку</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Нажмите</value>
+    <value>Щелчок</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Настроить</value>
+    <value>Темы</value>
   </data>
   <data name="Default" xml:space="preserve">
     <value>По умолчанию</value>
@@ -220,7 +220,7 @@
     <value>Если фокус потерян и указатель мыши все еще находится в меню</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Миллисекунды до открытия меню при наведении на него мыши.</value>
+    <value>Миллисекунды до открытия меню при наведении на него мыши</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>Миллисекунды до закрытия меню, если в этом случае мышь покидает меню</value>
@@ -229,7 +229,7 @@
     <value>Максимальная ширина меню в пикселях</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Остается открытым</value>
+    <value>Оставлять открытым</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Время до открытия меню</value>
@@ -262,19 +262,19 @@
     <value>Перейти в относительную папку</value>
   </data>
   <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Сохраните конфигурацию в месте сборки</value>
+    <value>Сохранить конфигурацию в папке с программой</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
   <data name="Open the assembly location" xml:space="preserve">
-    <value>Откройте место сборки</value>
+    <value>Открыть папку с программой</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Максимальная высота меню в пикселях</value>
   </data>
   <data name="Arrow" xml:space="preserve">
-    <value>Стрела</value>
+    <value>Стрелка</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Стрелка при нажатии</value>
@@ -289,10 +289,10 @@
     <value>Фон стрелки при наведении курсора мыши</value>
   </data>
   <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Цвета Темный режим</value>
+    <value>Темная тема</value>
   </data>
   <data name="Colors Light Mode" xml:space="preserve">
-    <value>Цвета Световой режим</value>
+    <value>Светлая тема</value>
   </data>
   <data name="Menu" xml:space="preserve">
     <value>Меню</value>
@@ -325,7 +325,7 @@
     <value>Иконки</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Устанавливается в контекстном меню</value>
+    <value>Устанавливается в контекстном меню </value>
   </data>
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
     <value>Установить как папку SystemTrayMenu</value>
@@ -352,16 +352,16 @@
     <value>Диспетчер задач</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>Эксперт</value>
+    <value>Расширенные</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Если фокус потерян и была нажата клавиша Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Миллисекунды до закрытия меню, если в этом случае меню не активируется повторно.</value>
+    <value>Миллисекунды до закрытия меню, если в этом случае меню не активируется повторно</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Показать на панели задач</value>
+    <value>Показывать в панели задач</value>
   </data>
   <data name="Add folder" xml:space="preserve">
     <value>Добавить папку</value>
@@ -370,34 +370,34 @@
     <value>Добавить папки в главное меню</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
-    <value>Пути к папкам</value>
+    <value>Путь к папке</value>
   </data>
   <data name="Folders" xml:space="preserve">
     <value>Папки</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>Рекурсивный</value>
+    <value>Включить подпапки</value>
   </data>
   <data name="Remove folder" xml:space="preserve">
     <value>Удалить папку</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Главное меню кеширования</value>
+    <value>Кэш главного меню</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Очистить кеш, если количество элементов превышает указанное</value>
+    <value>Очистить кэш, если количество элементов превышает указанное</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Только файлы</value>
   </data>
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Добавить образец папки "Меню Пуск"</value>
+    <value>Добавить папки из "Меню Пуск"</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Закругленные углы</value>
   </data>
   <data name="Row height in percentage" xml:space="preserve">
-    <value>Высота строки в процентах</value>
+    <value>Высота строки</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Появление</value>
