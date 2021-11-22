@@ -257,13 +257,13 @@ namespace SystemTrayMenu.DataClasses
         private bool SetLnk(int level, ref bool isLnkDirectory, ref string resolvedLnkPath)
         {
             bool handled = false;
-            resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath);
+            resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath, out bool isFolder);
 
             if (string.IsNullOrEmpty(resolvedLnkPath))
             {
                 // do nothing
             }
-            else if (string.IsNullOrEmpty(Path.GetExtension(resolvedLnkPath)))
+            else if (isFolder)
             {
                 icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Open, true, true, level == 0, out bool loading);
                 IconLoading = loading;

@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Net.NetworkInformation;
     using System.Threading;
@@ -12,19 +13,20 @@ namespace SystemTrayMenu.Utilities
 
     internal class FileLnk
     {
-        public static string GetResolvedFileName(string shortcutFilename)
+        public static string GetResolvedFileName(string shortcutFilename, out bool isFolder)
         {
+            bool isFolderByShell = false;
             string resolvedFilename = string.Empty;
             if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
             {
-                resolvedFilename = GetShortcutFileNamePath(shortcutFilename);
+                resolvedFilename = GetShortcutFileNamePath(shortcutFilename, out isFolderByShell);
             }
             else
             {
                 Thread staThread = new(new ParameterizedThreadStart(StaThreadMethod));
                 void StaThreadMethod(object obj)
                 {
-                    resolvedFilename = GetShortcutFileNamePath(shortcutFilename);
+                    resolvedFilename = GetShortcutFileNamePath(shortcutFilename, out isFolderByShell);
                 }
 
                 staThread.SetApartmentState(ApartmentState.STA);
@@ -32,6 +34,7 @@ namespace SystemTrayMenu.Utilities
                 staThread.Join();
             }
 
+            isFolder = isFolderByShell;
             return resolvedFilename;
         }
 
@@ -67,9 +70,10 @@ namespace SystemTrayMenu.Utilities
             return pingable;
         }
 
-        private static string GetShortcutFileNamePath(object shortcutFilename)
+        private static string GetShortcutFileNamePath(object shortcutFilename, out bool isFolder)
         {
             string resolvedFilename = string.Empty;
+            isFolder = false;
             string pathOnly = Path.GetDirectoryName((string)shortcutFilename);
             string filenameOnly = Path.GetFileName((string)shortcutFilename);
 
@@ -81,6 +85,7 @@ namespace SystemTrayMenu.Utilities
                 try
                 {
                     ShellLinkObject link = (ShellLinkObject)folderItem.GetLink;
+                    isFolder = link.Target.IsFolder;
                     if (string.IsNullOrEmpty(link.Path))
                     {
                         // https://github.com/Hofknecht/SystemTrayMenu/issues/242
