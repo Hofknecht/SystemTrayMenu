@@ -126,6 +126,8 @@ Special thanks to our productive contibutors!
 
 Thanks for ideas, reporting issues and contributing!
 
+#235 #242 243 Tom, 
+#246 [MACE4GITHUB](https://github.com/MACE4GITHUB),
 #240 [Patrick](https://www.youtube.com/user/DyRexLP),
 #229 #230 #239 [Peter O.](pohle@htp-tel.de),
 #211 [blacksparrow15](https://github.com/blacksparrow15),
@@ -133,7 +135,7 @@ Thanks for ideas, reporting issues and contributing!
 #162 [HansieNL](https://github.com/HansieNL), 
 #163 [igorruckert](https://github.com/igorruckert), 
 #205 [kristofzerbe](https://github.com/kristofzerbe), 
-#220 [Yavuz E.](mailto:yavuzelektronik@gmail.com), 
+#220 [Yavuz E.](mailto:yavuzelektronik@gmail.com)
 
 Donations
 ------------------
