@@ -144,8 +144,10 @@ Thanks for ideas, reporting issues and contributing!
 #229 #230 #239 [Peter O.](pohle@htp-tel.de),
 #231 [Ryonez](https://www.youtube.com/user/Ryonez), 
 #235 #242 243 Tom, 
+#237 Torsten S.,
 #240 [Patrick](https://www.youtube.com/user/DyRexLP),
-#246 [MACE4GITHUB](https://github.com/MACE4GITHUB),
+#244 Gunter D.
+#246 [MACE4GITHUB](https://github.com/MACE4GITHUB), and many more ... (please give us a hint if we missed someone)
 
 Donations
 ------------------
