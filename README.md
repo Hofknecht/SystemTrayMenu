@@ -126,16 +126,26 @@ Special thanks to our productive contibutors!
 
 Thanks for ideas, reporting issues and contributing!
 
-#235 #242 243 Tom, 
-#246 [MACE4GITHUB](https://github.com/MACE4GITHUB),
-#240 [Patrick](https://www.youtube.com/user/DyRexLP),
-#229 #230 #239 [Peter O.](pohle@htp-tel.de),
-#211 [blacksparrow15](https://github.com/blacksparrow15),
+#123 [Mordecai00](https://github.com/Mordecai00), 
+#125 [Holgermh](https://github.com/Holgermh), 
+#135 #153 #154 #164 [jakkaas](https://github.com/jakkaas), 
 #145 [Pascal Aloy](mailto:paloy@wanadoo.fr), 
+#153 #158 #160 [blackcrack](https://github.com/blackcrack), 
 #162 [HansieNL](https://github.com/HansieNL), 
 #163 [igorruckert](https://github.com/igorruckert), 
+#171 [kehoen](https://github.com/kehoen), 
+#186 [Dtrieb](https://github.com/Dtrieb), 
+#188 #189 #191 #195 [iJahangard](https://github.com/iJahangard),
+#195 #197 #238 [the-phuctran](https://github.com/the-phuctran),
 #205 [kristofzerbe](https://github.com/kristofzerbe), 
-#220 [Yavuz E.](mailto:yavuzelektronik@gmail.com)
+#209 [jonaskohl](https://github.com/jonaskohl), 
+#211 [blacksparrow15](https://github.com/blacksparrow15),
+#220 [Yavuz E.](mailto:yavuzelektronik@gmail.com),
+#229 #230 #239 [Peter O.](pohle@htp-tel.de),
+#231 [Ryonez](https://www.youtube.com/user/Ryonez), 
+#235 #242 243 Tom, 
+#240 [Patrick](https://www.youtube.com/user/DyRexLP),
+#246 [MACE4GITHUB](https://github.com/MACE4GITHUB),
 
 Donations
 ------------------
@@ -153,3 +163,4 @@ Sponsors - Thank you!
 ------------------
 
 * Ralf K.
+* Maximilian H.
