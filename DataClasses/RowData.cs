@@ -147,7 +147,7 @@ namespace SystemTrayMenu.DataClasses
             return isLnkDirectory;
         }
 
-        internal void MouseDown(DataGridView dgv, MouseEventArgs e, out bool toCloseByDoubleClick)
+        internal void MouseClick(DataGridView dgv, MouseEventArgs e, out bool toCloseByDoubleClick)
         {
             toCloseByDoubleClick = false;
 

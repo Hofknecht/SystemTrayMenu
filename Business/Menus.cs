@@ -40,6 +40,7 @@ namespace SystemTrayMenu.Business
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
         private bool searchTextChanging;
         private bool waitingForReactivate;
+        private int rowIndexLastMouseDown = -1;
 
         public Menus()
         {
@@ -268,6 +269,7 @@ namespace SystemTrayMenu.Business
 
             dgvMouseRow.RowMouseEnter += waitToOpenMenu.MouseEnter;
             dgvMouseRow.RowMouseLeave += waitToOpenMenu.MouseLeave;
+            dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave;
 
             keyboardInput = new KeyboardInput(menus);
             keyboardInput.RegisterHotKey();
@@ -599,6 +601,8 @@ namespace SystemTrayMenu.Business
                     dgv.MouseLeave -= dgvMouseRow.MouseLeave;
                     dgv.MouseMove -= waitToOpenMenu.MouseMove;
                     dgv.MouseDown -= Dgv_MouseDown;
+                    dgv.MouseUp -= Dgv_MouseUp;
+                    dgv.MouseClick -= Dgv_MouseClick;
                     dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
                     dgv.SelectionChanged -= Dgv_SelectionChanged;
                     dgv.RowPostPaint -= Dgv_RowPostPaint;
@@ -889,6 +893,8 @@ namespace SystemTrayMenu.Business
             dgv.MouseLeave += dgvMouseRow.MouseLeave;
             dgv.MouseMove += waitToOpenMenu.MouseMove;
             dgv.MouseDown += Dgv_MouseDown;
+            dgv.MouseUp += Dgv_MouseUp;
+            dgv.MouseClick += Dgv_MouseClick;
             dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
             dgv.SelectionChanged += Dgv_SelectionChanged;
             dgv.RowPostPaint += Dgv_RowPostPaint;
@@ -939,17 +945,56 @@ namespace SystemTrayMenu.Business
             DataGridView dgv = (DataGridView)sender;
             DataGridView.HitTestInfo hitTestInfo;
             hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (hitTestInfo.RowIndex > -1 &&
-                dgv.Rows.Count > hitTestInfo.RowIndex)
+
+            if (e.Button == MouseButtons.Left)
+            {
+                rowIndexLastMouseDown = hitTestInfo.RowIndex;
+            }
+        }
+
+        private void Dgv_MouseUp(object sender, MouseEventArgs e)
+        {
+            rowIndexLastMouseDown = -1;
+        }
+
+        private void Dgv_RowMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+
+            if (e.RowIndex == rowIndexLastMouseDown &&
+                e.RowIndex > -1 &&
+                e.RowIndex < dgv.Rows.Count)
+            {
+                rowIndexLastMouseDown = -1;
+                RowData rowData = (RowData)dgv.Rows[e.RowIndex].Cells[2].Value;
+                string[] files = new string[] { rowData.TargetFilePathOrig };
+
+                // Update position raises move event which prevent DoDragDrop blocking UI when mouse not moved
+                Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y);
+
+                dgv.DoDragDrop(new DataObject(DataFormats.FileDrop, files), DragDropEffects.Copy);
+            }
+        }
+
+        private void Dgv_MouseClick(object sender, MouseEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            DataGridView.HitTestInfo hitTestInfo;
+            hitTestInfo = dgv.HitTest(e.X, e.Y);
+            if (hitTestInfo.RowIndex == rowIndexLastMouseDown &&
+                hitTestInfo.RowIndex > -1 &&
+                hitTestInfo.RowIndex < dgv.Rows.Count)
             {
                 RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
-                rowData.MouseDown(dgv, e, out bool toCloseByClick);
+                rowData.MouseClick(dgv, e, out bool toCloseByClick);
                 waitToOpenMenu.ClickOpensInstantly(dgv, hitTestInfo.RowIndex);
                 if (toCloseByClick)
                 {
                     MenusFadeOut();
                 }
             }
+
+            rowIndexLastMouseDown = -1;
         }
 
         private void Dgv_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -967,6 +1012,8 @@ namespace SystemTrayMenu.Business
                     MenusFadeOut();
                 }
             }
+
+            rowIndexLastMouseDown = -1;
         }
 
         private void Dgv_SelectionChanged(object sender, EventArgs e)
