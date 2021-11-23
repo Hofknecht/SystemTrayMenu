@@ -147,10 +147,8 @@ namespace SystemTrayMenu.DataClasses
             return isLnkDirectory;
         }
 
-        internal void MouseClick(DataGridView dgv, MouseEventArgs e, out bool toCloseByDoubleClick)
+        internal void MouseDown(DataGridView dgv, MouseEventArgs e)
         {
-            toCloseByDoubleClick = false;
-
             if (e != null &&
                 e.Button == MouseButtons.Right &&
                 FileInfo != null &&
@@ -181,7 +179,11 @@ namespace SystemTrayMenu.DataClasses
                 IsContextMenuOpen = false;
                 contextMenuClosed = DateTime.Now;
             }
+        }
 
+        internal void MouseClick(MouseEventArgs e, out bool toCloseByDoubleClick)
+        {
+            toCloseByDoubleClick = false;
             if (Properties.Settings.Default.OpenItemWithOneClick)
             {
                 OpenItem(e, ref toCloseByDoubleClick);

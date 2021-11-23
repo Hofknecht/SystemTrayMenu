@@ -953,6 +953,12 @@ namespace SystemTrayMenu.Business
             DataGridView dgv = (DataGridView)sender;
             DataGridView.HitTestInfo hitTestInfo;
             hitTestInfo = dgv.HitTest(e.X, e.Y);
+            if (hitTestInfo.RowIndex > -1 &&
+                hitTestInfo.RowIndex < dgv.Rows.Count)
+            {
+                RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
+                rowData.MouseDown(dgv, e);
+            }
 
             if (e.Button == MouseButtons.Left)
             {
@@ -994,7 +1000,7 @@ namespace SystemTrayMenu.Business
                 hitTestInfo.RowIndex < dgv.Rows.Count)
             {
                 RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
-                rowData.MouseClick(dgv, e, out bool toCloseByClick);
+                rowData.MouseClick(e, out bool toCloseByClick);
                 waitToOpenMenu.ClickOpensInstantly(dgv, hitTestInfo.RowIndex);
                 if (toCloseByClick)
                 {

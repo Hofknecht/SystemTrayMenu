@@ -153,10 +153,10 @@ namespace SystemTrayMenu.Handler
                         if (iRowKey > -1 &&
                             dgv.Rows.Count > iRowKey)
                         {
-                            Point pt = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
+                            Point point = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
                             RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
-                            MouseEventArgs mea = new(MouseButtons.Right, 1, pt.X, pt.Y, 0);
-                            trigger.MouseClick(dgv, mea, out bool toCloseByDoubleClick);
+                            MouseEventArgs mouseEventArgs = new(MouseButtons.Right, 1, point.X, point.Y, 0);
+                            trigger.MouseDown(dgv, mouseEventArgs);
                         }
                     }
 
@@ -319,10 +319,7 @@ namespace SystemTrayMenu.Handler
                         RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
                         if (trigger.IsMenuOpen || !trigger.ContainsMenu)
                         {
-                            trigger.MouseClick(
-                                dgv,
-                                null,
-                                out bool toCloseByMouseClick);
+                            trigger.MouseClick(null, out bool toCloseByMouseClick);
                             trigger.DoubleClick(
                                 new MouseEventArgs(MouseButtons.Left, 0, 0, 0, 0),
                                 out bool toCloseByDoubleClick);
