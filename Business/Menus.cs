@@ -548,8 +548,14 @@ namespace SystemTrayMenu.Business
             return (DateTime.Now - dateTimeLastOpening).TotalMilliseconds < 2000;
         }
 
-        internal void SwitchOpenClose(bool byClick)
+        internal void SwitchOpenClose(bool byClick, bool isMainPreload = false)
         {
+            // Ignore open close events during main preload #248
+            if (IconReader.MainPreload && !isMainPreload)
+            {
+                return;
+            }
+
             waitToOpenMenu.MouseActive = byClick;
             if (byClick &&
                 !Config.AlwaysOpenByPin &&
@@ -629,11 +635,13 @@ namespace SystemTrayMenu.Business
             }
 
             timerShowProcessStartedAsLoadingIcon.Tick += Tick;
+            timerShowProcessStartedAsLoadingIcon.Interval = 50;
             timerShowProcessStartedAsLoadingIcon.Start();
             void Tick(object sender, EventArgs e)
             {
                 timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
-                SwitchOpenClose(false);
+                timerShowProcessStartedAsLoadingIcon.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed;
+                SwitchOpenClose(false, true);
             }
 
             if (!Properties.Settings.Default.CacheMainMenu)

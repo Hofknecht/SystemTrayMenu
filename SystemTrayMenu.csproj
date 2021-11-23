@@ -309,7 +309,7 @@
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>taskkill /fi "pid gt 0" /im SystemTrayMenu.exe
-taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe
+REM taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe
 EXIT 0</PreBuildEvent>
     <RepositoryUrl>https://github.com/Hofknecht/SystemTrayMenu</RepositoryUrl>
     <PackageIcon>icon.png</PackageIcon>

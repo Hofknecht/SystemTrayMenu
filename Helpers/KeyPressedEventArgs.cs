@@ -16,7 +16,7 @@ namespace SystemTrayMenu.Helper
 
         internal KeyPressedEventArgs(KeyboardHookModifierKeys modifier, Keys key)
         {
-            this.Modifier = modifier;
+            Modifier = modifier;
             this.key = key;
         }
 
