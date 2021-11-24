@@ -366,6 +366,54 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseCustomLocation
+        {
+            get
+            {
+                return ((bool)(this["UseCustomLocation"]));
+            }
+            set
+            {
+                this["UseCustomLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CustomLocationX
+        {
+            get
+            {
+                return ((int)(this["CustomLocationX"]));
+            }
+            set
+            {
+                this["CustomLocationX"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CustomLocationY
+        {
+            get
+            {
+                return ((int)(this["CustomLocationY"]));
+            }
+            set
+            {
+                this["CustomLocationY"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("true")]
         public bool StaysOpenWhenItemClicked
         {

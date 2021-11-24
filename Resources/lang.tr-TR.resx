@@ -201,8 +201,8 @@
   <data name="Advanced" xml:space="preserve">
     <value>Gelişmiş</value>
   </data>
-  <data name="Appear at mouse location" xml:space="preserve">
-    <value>Fare konumunda görün</value>
+  <data name="Mouse location" xml:space="preserve">
+    <value>Fare konumu</value>
   </data>
   <data name="Change folder" xml:space="preserve">
     <value>Klasörü değiştir</value>
@@ -416,5 +416,8 @@
   </data>
   <data name="Update the position every time the menu opens" xml:space="preserve">
     <value>Menü her açıldığında konumu güncelleyin</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Özel (uygun yere sürükleyin)</value>
   </data>
 </root>

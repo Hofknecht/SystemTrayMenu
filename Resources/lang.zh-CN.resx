@@ -201,8 +201,8 @@
   <data name="Advanced" xml:space="preserve">
     <value>先进的</value>
   </data>
-  <data name="Appear at mouse location" xml:space="preserve">
-    <value>出现在鼠标位置</value>
+  <data name="Mouse location" xml:space="preserve">
+    <value>鼠标位置</value>
   </data>
   <data name="Change folder" xml:space="preserve">
     <value>更改文件夹</value>
@@ -416,5 +416,8 @@
   </data>
   <data name="Update the position every time the menu opens" xml:space="preserve">
     <value>每次打开菜单时更新位置</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>自定义（拖动到合适的地方）</value>
   </data>
 </root>

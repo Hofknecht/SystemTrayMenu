@@ -201,8 +201,8 @@
   <data name="Advanced" xml:space="preserve">
     <value>Nâng cao</value>
   </data>
-  <data name="Appear at mouse location" xml:space="preserve">
-    <value>Xuất hiện tại vị trí chuột</value>
+  <data name="Mouse location" xml:space="preserve">
+    <value>Vị trí chuột</value>
   </data>
   <data name="Change folder" xml:space="preserve">
     <value>Thay đổi thư mục</value>
@@ -416,5 +416,8 @@
   </data>
   <data name="Update the position every time the menu opens" xml:space="preserve">
     <value>Cập nhật vị trí mỗi khi menu mở ra</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Tùy chỉnh (kéo nó đến vị trí thích hợp)</value>
   </data>
 </root>

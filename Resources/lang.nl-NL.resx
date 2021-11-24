@@ -201,8 +201,8 @@
   <data name="Advanced" xml:space="preserve">
     <value>Geavanceerd</value>
   </data>
-  <data name="Appear at mouse location" xml:space="preserve">
-    <value>Verschijnt op de muis locatie</value>
+  <data name="Mouse location" xml:space="preserve">
+    <value>Muis locatie</value>
   </data>
   <data name="Change folder" xml:space="preserve">
     <value>Verander Map</value>
@@ -416,5 +416,8 @@
   </data>
   <data name="Update the position every time the menu opens" xml:space="preserve">
     <value>Update de positie elke keer dat het menu wordt geopend</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Aangepast (sleep het naar de juiste plaats)</value>
   </data>
 </root>

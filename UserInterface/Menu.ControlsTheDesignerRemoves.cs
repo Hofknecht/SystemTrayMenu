@@ -47,6 +47,9 @@ namespace SystemTrayMenu.UserInterface
             labelTitle.Text = "SystemTrayMenu";
             labelTitle.TextAlign = ContentAlignment.MiddleCenter;
             labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);
+            labelTitle.MouseDown += Menu_MouseDown;
+            labelTitle.MouseUp += Menu_MouseUp;
+            labelTitle.MouseMove += Menu_MouseMove;
 
             // ColumnIcon
             ColumnIcon.DataPropertyName = "ColumnIcon";

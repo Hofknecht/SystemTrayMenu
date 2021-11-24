@@ -152,7 +152,8 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears at");
                 radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
-                radioButtonAppearAtMouseLocation.Text = Translator.GetText("Appear at mouse location");
+                radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate place)");
+                radioButtonAppearAtMouseLocation.Text = Translator.GetText("Mouse location");
                 checkBoxRefreshLocationEachTime.Text = Translator.GetText("Update the position every time the menu opens");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
@@ -365,7 +366,11 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownMenuHeight.Increment = 10;
             numericUpDownMenuHeight.Value = Settings.Default.MaximumMenuHeight;
 
-            if (Settings.Default.AppearAtMouseLocation)
+            if (Settings.Default.UseCustomLocation)
+            {
+                radioButtonUseCustomLocation.Checked = true;
+            }
+            else if (Settings.Default.AppearAtMouseLocation)
             {
                 radioButtonAppearAtMouseLocation.Checked = true;
             }
@@ -741,18 +746,27 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
             Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
 
-            if (radioButtonAppearAtMouseLocation.Checked)
+            if (radioButtonUseCustomLocation.Checked)
             {
+                Settings.Default.UseCustomLocation = true;
+                Settings.Default.AppearAtMouseLocation = false;
+                Settings.Default.AppearAtTheBottomLeft = false;
+            }
+            else if (radioButtonAppearAtMouseLocation.Checked)
+            {
+                Settings.Default.UseCustomLocation = false;
                 Settings.Default.AppearAtMouseLocation = true;
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
             else if (radioButtonAppearAtTheBottomLeft.Checked)
             {
+                Settings.Default.UseCustomLocation = false;
                 Settings.Default.AppearAtMouseLocation = false;
                 Settings.Default.AppearAtTheBottomLeft = true;
             }
             else
             {
+                Settings.Default.UseCustomLocation = false;
                 Settings.Default.AppearAtMouseLocation = false;
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
@@ -1009,6 +1023,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxShowInTaskbar.Checked = false;
             radioButtonAppearAtTheBottomRight.Checked = true;
             radioButtonAppearAtTheBottomLeft.Checked = false;
+            radioButtonUseCustomLocation.Checked = false;
             radioButtonAppearAtMouseLocation.Checked = false;
             checkBoxRefreshLocationEachTime.Checked = false;
         }

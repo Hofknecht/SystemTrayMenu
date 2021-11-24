@@ -101,9 +101,10 @@ namespace SystemTrayMenu.UserInterface
             this.buttonAdvancedDefault = new System.Windows.Forms.Button();
             this.groupBoxMenuAppearAt = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelMenuAppearAt = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButtonUseCustomLocation = new System.Windows.Forms.RadioButton();
             this.radioButtonAppearAtTheBottomLeft = new System.Windows.Forms.RadioButton();
-            this.checkBoxRefreshLocationEachTime = new System.Windows.Forms.CheckBox();
             this.radioButtonAppearAtTheBottomRight = new System.Windows.Forms.RadioButton();
+            this.checkBoxRefreshLocationEachTime = new System.Windows.Forms.CheckBox();
             this.radioButtonAppearAtMouseLocation = new System.Windows.Forms.RadioButton();
             this.tabPageExpert = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelExpert = new System.Windows.Forms.TableLayoutPanel();
@@ -1427,7 +1428,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 362);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 387);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -1447,7 +1448,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxMenuAppearAt.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxMenuAppearAt.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxMenuAppearAt.Name = "groupBoxMenuAppearAt";
-            this.groupBoxMenuAppearAt.Size = new System.Drawing.Size(400, 122);
+            this.groupBoxMenuAppearAt.Size = new System.Drawing.Size(400, 147);
             this.groupBoxMenuAppearAt.TabIndex = 1;
             this.groupBoxMenuAppearAt.TabStop = false;
             this.groupBoxMenuAppearAt.Text = "groupBoxMenuAppearAt";
@@ -1458,20 +1459,34 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelMenuAppearAt.ColumnCount = 1;
             this.tableLayoutPanelMenuAppearAt.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonUseCustomLocation, 0, 2);
             this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonAppearAtTheBottomLeft, 0, 1);
-            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.checkBoxRefreshLocationEachTime, 0, 3);
             this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonAppearAtTheBottomRight, 0, 0);
-            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonAppearAtMouseLocation, 0, 2);
+            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.checkBoxRefreshLocationEachTime, 0, 4);
+            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonAppearAtMouseLocation, 0, 3);
             this.tableLayoutPanelMenuAppearAt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMenuAppearAt.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelMenuAppearAt.Name = "tableLayoutPanelMenuAppearAt";
-            this.tableLayoutPanelMenuAppearAt.RowCount = 4;
+            this.tableLayoutPanelMenuAppearAt.RowCount = 5;
             this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenuAppearAt.Size = new System.Drawing.Size(394, 100);
+            this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMenuAppearAt.Size = new System.Drawing.Size(394, 125);
             this.tableLayoutPanelMenuAppearAt.TabIndex = 1;
+            // 
+            // radioButtonUseCustomLocation
+            // 
+            this.radioButtonUseCustomLocation.AutoSize = true;
+            this.radioButtonUseCustomLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButtonUseCustomLocation.Location = new System.Drawing.Point(3, 53);
+            this.radioButtonUseCustomLocation.Name = "radioButtonUseCustomLocation";
+            this.radioButtonUseCustomLocation.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonUseCustomLocation.TabIndex = 2;
+            this.radioButtonUseCustomLocation.TabStop = true;
+            this.radioButtonUseCustomLocation.Text = "radioButtonUseCustomLocation";
+            this.radioButtonUseCustomLocation.UseVisualStyleBackColor = true;
             // 
             // radioButtonAppearAtTheBottomLeft
             // 
@@ -1485,17 +1500,6 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonAppearAtTheBottomLeft.Text = "radioButtonradioButtonAppearAtTheBottomLeft";
             this.radioButtonAppearAtTheBottomLeft.UseVisualStyleBackColor = true;
             // 
-            // checkBoxRefreshLocationEachTime
-            // 
-            this.checkBoxRefreshLocationEachTime.AutoSize = true;
-            this.checkBoxRefreshLocationEachTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxRefreshLocationEachTime.Location = new System.Drawing.Point(3, 78);
-            this.checkBoxRefreshLocationEachTime.Name = "checkBoxRefreshLocationEachTime";
-            this.checkBoxRefreshLocationEachTime.Size = new System.Drawing.Size(388, 19);
-            this.checkBoxRefreshLocationEachTime.TabIndex = 0;
-            this.checkBoxRefreshLocationEachTime.Text = "checkBoxRefreshLocationEachTime";
-            this.checkBoxRefreshLocationEachTime.UseVisualStyleBackColor = true;
-            // 
             // radioButtonAppearAtTheBottomRight
             // 
             this.radioButtonAppearAtTheBottomRight.AutoSize = true;
@@ -1508,11 +1512,22 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonAppearAtTheBottomRight.Text = "radioButtonAppearAtTheBottomRight";
             this.radioButtonAppearAtTheBottomRight.UseVisualStyleBackColor = true;
             // 
+            // checkBoxRefreshLocationEachTime
+            // 
+            this.checkBoxRefreshLocationEachTime.AutoSize = true;
+            this.checkBoxRefreshLocationEachTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxRefreshLocationEachTime.Location = new System.Drawing.Point(3, 103);
+            this.checkBoxRefreshLocationEachTime.Name = "checkBoxRefreshLocationEachTime";
+            this.checkBoxRefreshLocationEachTime.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxRefreshLocationEachTime.TabIndex = 0;
+            this.checkBoxRefreshLocationEachTime.Text = "checkBoxRefreshLocationEachTime";
+            this.checkBoxRefreshLocationEachTime.UseVisualStyleBackColor = true;
+            // 
             // radioButtonAppearAtMouseLocation
             // 
             this.radioButtonAppearAtMouseLocation.AutoSize = true;
             this.radioButtonAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonAppearAtMouseLocation.Location = new System.Drawing.Point(3, 53);
+            this.radioButtonAppearAtMouseLocation.Location = new System.Drawing.Point(3, 78);
             this.radioButtonAppearAtMouseLocation.Name = "radioButtonAppearAtMouseLocation";
             this.radioButtonAppearAtMouseLocation.Size = new System.Drawing.Size(388, 19);
             this.radioButtonAppearAtMouseLocation.TabIndex = 3;
@@ -4798,5 +4813,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.CheckBox checkBoxRefreshLocationEachTime;
         private System.Windows.Forms.RadioButton radioButtonAppearAtTheBottomRight;
         private System.Windows.Forms.RadioButton radioButtonAppearAtMouseLocation;
+        private System.Windows.Forms.RadioButton radioButtonUseCustomLocation;
     }
 }

@@ -201,8 +201,8 @@
   <data name="Advanced" xml:space="preserve">
     <value>많은</value>
   </data>
-  <data name="Appear at mouse location" xml:space="preserve">
-    <value>마우스 위치에 표시</value>
+  <data name="Mouse location" xml:space="preserve">
+    <value>마우스 위치</value>
   </data>
   <data name="Change folder" xml:space="preserve">
     <value>폴더 변경</value>
@@ -416,5 +416,8 @@
   </data>
   <data name="Update the position every time the menu opens" xml:space="preserve">
     <value>메뉴가 열릴 때마다 위치 업데이트</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>사용자 지정(적절한 위치로 드래그)</value>
   </data>
 </root>

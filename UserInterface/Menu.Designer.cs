@@ -262,6 +262,9 @@
             this.tableLayoutPanelTitle.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelTitle.Size = new System.Drawing.Size(129, 22);
             this.tableLayoutPanelTitle.TabIndex = 5;
+            this.tableLayoutPanelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseDown);
+            this.tableLayoutPanelTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseMove);
+            this.tableLayoutPanelTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseUp);
             // 
             // pictureBoxOpenFolder
             // 

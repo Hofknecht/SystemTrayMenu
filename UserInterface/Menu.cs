@@ -21,6 +21,8 @@ namespace SystemTrayMenu.UserInterface
         private bool isShowing;
         private bool directionToRight;
         private int rotationAngle;
+        private bool mouseDown;
+        private Point lastLocation;
 
         internal Menu()
         {
@@ -190,6 +192,8 @@ namespace SystemTrayMenu.UserInterface
         internal event EventHandlerEmpty SearchTextChanging;
 
         internal event EventHandler SearchTextChanged;
+
+        internal event EventHandlerEmpty UserDragsMenu;
 
         internal enum MenuType
         {
@@ -371,9 +375,30 @@ namespace SystemTrayMenu.UserInterface
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
             AdjustDataGridViewWidth();
 
+            bool useCustomLocation = Properties.Settings.Default.UseCustomLocation || lastLocation.X > 0;
+
             if (menuPredecessor != null)
             {
                 // Ignore start as we use predecessor
+                startLocation = StartLocation.Predecessor;
+            }
+            else if (useCustomLocation &&
+                Properties.Settings.Default.CustomLocationX > 0 &&
+                Properties.Settings.Default.CustomLocationY > 0)
+            {
+                // Do not adjust location again because Cursor.Postion changed
+                if (Tag != null)
+                {
+                    return;
+                }
+
+                // Use this menu as predecessor and overwrite location with CustomLocation
+                menuPredecessor = this;
+                Tag = new RowData();
+                Location = new Point(
+                    Properties.Settings.Default.CustomLocationX,
+                    Properties.Settings.Default.CustomLocationY);
+                directionToRight = true;
                 startLocation = StartLocation.Predecessor;
             }
             else if (Properties.Settings.Default.AppearAtMouseLocation)
@@ -945,6 +970,33 @@ namespace SystemTrayMenu.UserInterface
             {
                 timerUpdateIcons.Stop();
             }
+        }
+
+        private void Menu_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+            UserDragsMenu.Invoke();
+        }
+
+        private void Menu_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                Location = new Point(
+                    Location.X - lastLocation.X + e.X,
+                    Location.Y - lastLocation.Y + e.Y);
+
+                Properties.Settings.Default.CustomLocationX = Location.X;
+                Properties.Settings.Default.CustomLocationY = Location.Y;
+
+                Update();
+            }
+        }
+
+        private void Menu_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }

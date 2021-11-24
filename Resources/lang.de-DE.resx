@@ -201,8 +201,8 @@
   <data name="Advanced" xml:space="preserve">
     <value>Erweitert</value>
   </data>
-  <data name="Appear at mouse location" xml:space="preserve">
-    <value>Erscheint an der Mausposition</value>
+  <data name="Mouse location" xml:space="preserve">
+    <value>Mausposition</value>
   </data>
   <data name="Change folder" xml:space="preserve">
     <value>Ordner ändern</value>
@@ -416,5 +416,8 @@
   </data>
   <data name="Update the position every time the menu opens" xml:space="preserve">
     <value>Aktualisieren Sie die Position jedes Mal, wenn das Menü geöffnet wird</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Benutzerdefiniert (an die entsprechende Stelle ziehen)</value>
   </data>
 </root>

@@ -835,6 +835,15 @@ namespace SystemTrayMenu.Business
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
             menu.SearchTextChanging += Menu_SearchTextChanging;
             menu.SearchTextChanged += Menu_SearchTextChanged;
+            menu.UserDragsMenu += Menu_UserDragsMenu;
+            void Menu_UserDragsMenu()
+            {
+                if (menus[1] != null)
+                {
+                    HideOldMenu(menus[1]);
+                }
+            }
+
             menu.Deactivate += Deactivate;
             void Deactivate(object sender, EventArgs e)
             {
