@@ -41,6 +41,7 @@ namespace SystemTrayMenu.Business
         private bool searchTextChanging;
         private bool waitingForReactivate;
         private int rowIndexLastMouseDown = -1;
+        private bool showMenuAfterMainPreload;
 
         public Menus()
         {
@@ -88,6 +89,11 @@ namespace SystemTrayMenu.Business
                                     workerMainMenu.DoWork -= LoadMenu;
                                     menus[0] = Create(menuData, Path.GetFileName(Config.Path));
                                     IconReader.MainPreload = false;
+
+                                    if (showMenuAfterMainPreload)
+                                    {
+                                        AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                                    }
                                 }
                                 else
                                 {
@@ -102,6 +108,11 @@ namespace SystemTrayMenu.Business
                                 if (IconReader.MainPreload)
                                 {
                                     IconReader.MainPreload = false;
+
+                                    if (showMenuAfterMainPreload)
+                                    {
+                                        AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                                    }
                                 }
                                 else
                                 {
@@ -553,6 +564,7 @@ namespace SystemTrayMenu.Business
             // Ignore open close events during main preload #248
             if (IconReader.MainPreload && !isMainPreload)
             {
+                showMenuAfterMainPreload = true;
                 return;
             }
 
