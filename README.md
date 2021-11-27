@@ -33,6 +33,7 @@ We are using C# and .NET 6 (.Net Core 3.1 in versions lower than 1.1.0.0)
 
 ![20200812_125923](https://user-images.githubusercontent.com/52528841/90009201-ee0c9680-dc9d-11ea-9b8a-b34108152f9b.gif)
 ![20200812_130823](https://user-images.githubusercontent.com/52528841/90009212-f1078700-dc9d-11ea-943a-d5fde4d6f2dc.gif)
+[![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://img.youtube.com/vi/xsi4Uv3-ZLg/0.jpg)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
 
 Download the latest official version:  
 https://github.com/Hofknecht/SystemTrayMenu/releases
@@ -46,7 +47,6 @@ Blogs and reviews
 * https://reviewsapp.org/systemtraymenu-better-organization-of-windows
 * https://teamos-hkrg.com/threads/systemtraymenu-1-0-20-0.162800/
 * https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/
-* video coming soon 27.11.2021  15:30   https://www.youtube.com/user/DyRexLP/videos 
 
 
 FAQ
@@ -145,7 +145,7 @@ Thanks for ideas, reporting issues and contributing!
 #231 [Ryonez](https://www.youtube.com/user/Ryonez), 
 #235 #242 243 #247 Tom, 
 #237 Torsten S.,
-#240 [Patrick](https://www.youtube.com/user/DyRexLP),
+#240 [video](https://www.youtube.com/watch?v=xsi4Uv3-ZLg) [Patrick](https://www.youtube.com/user/DyRexLP),
 #244 Gunter D.
 #246 [MACE4GITHUB](https://github.com/MACE4GITHUB), and many more ... (please give us a hint if we missed someone)
 
