@@ -112,7 +112,7 @@ namespace SystemTrayMenu.DataClasses
                 }
                 else if (fileExtension == ".url")
                 {
-                    handled = SetUrl(level);
+                    SetText($"{FileInfo.Name[0..^4]}");
                     showOverlay = true;
                 }
                 else if (fileExtension == ".sln")
@@ -286,46 +286,6 @@ namespace SystemTrayMenu.DataClasses
             }
 
             SetText(Path.GetFileNameWithoutExtension(TargetFilePathOrig));
-
-            return handled;
-        }
-
-        private bool SetUrl(int level)
-        {
-            bool handled = false;
-            string iconFile = string.Empty;
-            try
-            {
-                FileIni file = new(TargetFilePath);
-                iconFile = file.Value("IconFile", string.Empty);
-                if (string.IsNullOrEmpty(iconFile))
-                {
-                    if (FileUrl.GetDefaultBrowserPath(out string browserPath))
-                    {
-                        FilePathIcon = browserPath;
-                        icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, level == 0, out bool loading);
-                        IconLoading = loading;
-                        handled = true;
-                    }
-                }
-                else if (File.Exists(iconFile))
-                {
-                    FilePathIcon = iconFile;
-                    icon = IconReader.GetFileIconWithCache(FilePathIcon, true, true, level == 0, out bool loading);
-                    IconLoading = loading;
-                    handled = true;
-                }
-                else
-                {
-                    Log.Info($"Resolve *.URL '{TargetFilePath}' has no icon");
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Warn($"path:'{TargetFilePath}', iconFile:'{iconFile}'", ex);
-            }
-
-            SetText($"{FileInfo.Name[0..^4]}");
 
             return handled;
         }

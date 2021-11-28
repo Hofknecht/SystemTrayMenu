@@ -642,13 +642,8 @@ namespace SystemTrayMenu.Business
         {
             IconReader.MainPreload = true;
 
-            if (FileUrl.GetDefaultBrowserPath(out string browserPath))
-            {
-                IconReader.GetFileIconWithCache(browserPath, true, true, true, out _);
-            }
-
             timerShowProcessStartedAsLoadingIcon.Tick += Tick;
-            timerShowProcessStartedAsLoadingIcon.Interval = 50;
+            timerShowProcessStartedAsLoadingIcon.Interval = 5;
             timerShowProcessStartedAsLoadingIcon.Start();
             void Tick(object sender, EventArgs e)
             {
