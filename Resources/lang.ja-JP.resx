@@ -120,7 +120,7 @@
   <data name="About" xml:space="preserve">
     <value>約</value>
   </data>
-  <data name="buttonOk" xml:space="preserve">
+  <data name="OK" xml:space="preserve">
     <value>わかった</value>
   </data>
   <data name="Autostart" xml:space="preserve">
@@ -135,10 +135,10 @@
   <data name="Folder empty" xml:space="preserve">
     <value>フォルダが空</value>
   </data>
-  <data name="buttonDetails" xml:space="preserve">
+  <data name="Details" xml:space="preserve">
     <value>詳細</value>
   </data>
-  <data name="buttonSystemInfo" xml:space="preserve">
+  <data name="System Info" xml:space="preserve">
     <value>システム情報</value>
   </data>
   <data name="Folder inaccessible" xml:space="preserve">
@@ -348,7 +348,7 @@
   <data name="Deactivated" xml:space="preserve">
     <value>非アクティブ化</value>
   </data>
-  <data name="Task Manger" xml:space="preserve">
+  <data name="Task Manager" xml:space="preserve">
     <value>タスクマネージャー</value>
   </data>
   <data name="Expert" xml:space="preserve">

@@ -122,7 +122,7 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxAutostart.Text = Translator.GetText("Autostart");
                 if (IsStartupTask())
                 {
-                    groupBoxAutostart.Text += $" ({Translator.GetText("Task Manger")})";
+                    groupBoxAutostart.Text += $" ({Translator.GetText("Task Manager")})";
                 }
 
                 checkBoxAutostart.Text = Translator.GetText("Launch on startup");
@@ -216,7 +216,7 @@ namespace SystemTrayMenu.UserInterface
 
                 buttonColorsDefault.Text = Translator.GetText("Default");
                 buttonColorsDefaultDarkMode.Text = Translator.GetText("Default");
-                buttonOk.Text = Translator.GetText("buttonOk");
+                buttonOk.Text = Translator.GetText("OK");
                 buttonCancel.Text = Translator.GetText("buttonCancel");
             }
 
@@ -271,6 +271,7 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "한국어", Value = "ko" },
                     new Language() { Name = "русский", Value = "ru" },
                     new Language() { Name = "Tiếng Việt", Value = "vi" },
+                    new Language() { Name = "فارسی", Value = "fa" },
                 };
                 comboBoxLanguage.DataSource = dataSource;
                 comboBoxLanguage.DisplayMember = "Name";

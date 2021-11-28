@@ -185,8 +185,6 @@ namespace SystemTrayMenu.UserInterface
 
         internal event EventHandlerEmpty UserClickedOpenFolder;
 
-        internal event EventHandlerEmpty UserClickedRestart;
-
         internal event EventHandler<Keys> CmdKeyProcessed;
 
         internal event EventHandlerEmpty SearchTextChanging;
@@ -911,16 +909,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 AppRestart.ByMenuButton();
             }
-        }
-
-        private void PictureBoxRestart_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBoxSettings_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)

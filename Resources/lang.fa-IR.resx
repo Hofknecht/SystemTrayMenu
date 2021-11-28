@@ -118,303 +118,303 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Trong khoảng</value>
+    <value>در باره</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>đồng ý</value>
+    <value>خوب</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Tự động bắt đầu</value>
+    <value>شروع خودکار</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Lối ra</value>
+    <value>خروج</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Thư mục</value>
+    <value>پوشه</value>
   </data>
   <data name="Folder empty" xml:space="preserve">
-    <value>Thư mục trống</value>
+    <value>پوشه خالی</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Chi tiết</value>
+    <value>جزئیات</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Thông tin hệ thống</value>
+    <value>اطلاعات سیستم</value>
   </data>
   <data name="Folder inaccessible" xml:space="preserve">
-    <value>Thư mục không thể truy cập được</value>
+    <value>پوشه غیر قابل دسترسی</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Ngôn ngữ</value>
+    <value>زبان</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Tệp nhật ký</value>
+    <value>ورود به سیستم فایل</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Khởi động lại</value>
+    <value>راه اندازی مجدد</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Không thể đăng ký phím nóng.</value>
+    <value>کلید داغ ثبت نشد.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Huỷ bỏ</value>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغو کنید</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>Chung</value>
+    <value>عمومی</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Phím nóng</value>
+    <value>کلید فوری</value>
   </data>
   <data name="Launch on startup" xml:space="preserve">
-    <value>Khởi chạy khi khởi động</value>
+    <value>راه اندازی در راه اندازی</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Cài đặt</value>
+    <value>تنظیمات</value>
   </data>
   <data name="HelpFAQ" xml:space="preserve">
-    <value>Trợ giúp / Câu hỏi thường gặp</value>
+    <value>راهنما / سوالات متداول</value>
   </data>
   <data name="SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu</value>
   </data>
   <data name="TextFirstStart" xml:space="preserve">
-    <value>Đọc Câu hỏi thường gặp và sau đó chọn một thư mục gốc cho SystemTrayMenu.</value>
+    <value>سوالات متداول را بخوانید و سپس یک دایرکتوری ریشه برای SystemTrayMenu انتخاب کنید.</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Cảnh báo</value>
+    <value>هشدار</value>
   </data>
   <data name="Select Folder" xml:space="preserve">
-    <value>Chọn thư mục</value>
+    <value>پوشه را انتخاب کنید</value>
   </data>
   <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Thư mục gốc của bạn cho SystemTrayMenu không tồn tại hoặc trống! Đặt một số tệp, thư mục hoặc phím tắt vào thư mục hoặc thay đổi thư mục gốc.</value>
+    <value>پوشه ریشه شما برای SystemTrayMenu وجود ندارد یا خالی است! چند فایل، پوشه یا میانبر را در پوشه قرار دهید یا پوشه root را تغییر دهید.</value>
   </data>
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Bạn không có quyền truy cập vào thư mục gốc cho SystemTrayMenu. Cấp quyền truy cập vào thư mục hoặc thay đổi thư mục gốc.</value>
+    <value>شما به پوشه ریشه SystemTrayMenu دسترسی ندارید. به پوشه دسترسی بدهید یا پوشه root را تغییر دهید.</value>
   </data>
   <data name="Single click to start item" xml:space="preserve">
-    <value>Nhấp một lần để mở một mục thay vì nhấp đúp</value>
+    <value>برای شروع مورد، تنها کلیک کنید</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
-    <value>Chế độ tối luôn hoạt động</value>
+    <value>حالت تاریک همیشه فعال است</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Nâng cao</value>
+    <value>پیشرفته</value>
   </data>
   <data name="Mouse location" xml:space="preserve">
-    <value>Vị trí chuột</value>
+    <value>مکان موس</value>
   </data>
   <data name="Change folder" xml:space="preserve">
-    <value>Thay đổi thư mục</value>
+    <value>پوشه را تغییر دهید</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Nhấp chuột</value>
+    <value>کلیک</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Tùy chỉnh</value>
+    <value>شخصی سازی</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Mặc định</value>
+    <value>پیش فرض</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Nếu tiêu điểm bị mất và nếu chuột vẫn ở trên menu</value>
+    <value>اگر فوکوس از بین رفته باشد و اگر ماوس همچنان در منو است</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Mili giây cho đến khi menu mở ra khi chuột ở trên đó</value>
+    <value>چند میلی ثانیه تا زمانی که یک منو باز شود وقتی ماوس روی آن است</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Mili giây cho đến khi menu đóng lại nếu trong trường hợp này là chuột rời khỏi menu</value>
+    <value>میلی ثانیه تا بسته شدن منو، اگر در این حالت ماوس از منو خارج شود</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Chiều rộng menu tối đa của pixel</value>
+    <value>حداکثر عرض منو پیکسل</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Tiếp tục mở</value>
+    <value>باز می ماند</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Thời gian cho đến khi menu mở ra</value>
+    <value>زمان تا باز شدن یک منو</value>
   </data>
   <data name="If an item was clicked" xml:space="preserve">
-    <value>Nếu một mục đã được nhấp vào</value>
+    <value>اگر روی موردی کلیک شد</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Lý lịch</value>
+    <value>زمینه</value>
   </data>
   <data name="Opened folder" xml:space="preserve">
-    <value>Đã mở thư mục</value>
+    <value>پوشه باز شد</value>
   </data>
   <data name="Border of opened folder" xml:space="preserve">
-    <value>Đường viền của thư mục đã mở</value>
+    <value>حاشیه پوشه باز شده</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>Lĩnh vực tìm kiếm</value>
+    <value>فیلد جستجو</value>
   </data>
   <data name="Selected item" xml:space="preserve">
-    <value>Chọn mục</value>
+    <value>مورد انتخاب شده</value>
   </data>
   <data name="Border of selected item" xml:space="preserve">
-    <value>Đường viền của mục đã chọn</value>
+    <value>حاشیه مورد انتخاب شده</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Tiêu đề</value>
+    <value>عنوان</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
-    <value>Thay đổi thành thư mục tương đối</value>
+    <value>به پوشه نسبی تغییر دهید</value>
   </data>
   <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Lưu trữ cấu hình tại vị trí lắp ráp</value>
+    <value>تنظیمات را در محل مونتاژ ذخیره کنید</value>
   </data>
   <data name="USB" xml:space="preserve">
-    <value>USB</value>
+    <value>یو اس بی</value>
   </data>
   <data name="Open the assembly location" xml:space="preserve">
-    <value>Mở vị trí lắp ráp</value>
+    <value>محل مونتاژ را باز کنید</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Chiều cao menu tối đa của pixel</value>
+    <value>حداکثر ارتفاع منو پیکسل</value>
   </data>
   <data name="Arrow" xml:space="preserve">
-    <value>Mũi tên</value>
+    <value>فلش</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Mũi tên khi nhấp vào</value>
+    <value>فلش هنگام کلیک کردن</value>
   </data>
   <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Mũi tên khi di chuột</value>
+    <value>فلش در حالی که ماوس شناور است</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Nền của mũi tên khi nhấp vào</value>
+    <value>پس زمینه فلش هنگام کلیک کردن</value>
   </data>
   <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Hình nền của mũi tên khi di chuột</value>
+    <value>پس زمینه فلش در حالی که ماوس شناور است</value>
   </data>
   <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Màu sắc Chế độ tối</value>
+    <value>حالت تاریک رنگ</value>
   </data>
   <data name="Colors Light Mode" xml:space="preserve">
-    <value>Màu sắc Chế độ ánh sáng</value>
+    <value>حالت نور رنگ ها</value>
   </data>
   <data name="Menu" xml:space="preserve">
-    <value>Thực đơn</value>
+    <value>منو</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
-    <value>Thanh cuộn</value>
+    <value>نوارچرخ</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>Thanh trượt</value>
+    <value>لغزنده</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Thanh trượt trong khi kéo</value>
+    <value>هنگام کشیدن، لغزنده کنید</value>
   </data>
   <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Trượt khi di chuột 1</value>
+    <value>لغزان در حالی که ماوس شناور است 1</value>
   </data>
   <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Trượt khi di chuột 2</value>
+    <value>لغزان در حالی که ماوس شناور است 2</value>
   </data>
   <data name="Use icon from folder" xml:space="preserve">
-    <value>Sử dụng biểu tượng từ thư mục</value>
+    <value>از نماد پوشه استفاده کنید</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>Kích thước</value>
+    <value>اندازه</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Đường viền của menu</value>
+    <value>مرز منو</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>Biểu tượng</value>
+    <value>نمادها</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Đặt theo menu ngữ cảnh</value>
+    <value>تنظیم بر اساس منوی زمینه</value>
   </data>
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Đặt làm thư mục SystemTrayMenu</value>
+    <value>به عنوان پوشه SystemTrayMenu تنظیم کنید</value>
   </data>
   <data name="loading" xml:space="preserve">
-    <value>Đang tải</value>
+    <value>بارگذاری</value>
   </data>
   <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Sự cố với phím tắt</value>
+    <value>مشکل در میانبر</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
+    <value>موردی که این میانبر به آن اشاره دارد تغییر یا جابجا شده است، بنابراین این میانبر دیگر به درستی کار نخواهد کرد.</value>
   </data>
   <data name="Open Folder" xml:space="preserve">
-    <value>Mở thư mục</value>
+    <value>پوشه را باز کنید</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>Đã kích hoạt</value>
+    <value>فعال شد</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>Đã hủy kích hoạt</value>
+    <value>غیرفعال شد</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>Quản lý công việc</value>
+    <value>Task Manager</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>Thạo</value>
+    <value>کارشناس</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Nếu mất tiêu điểm và nhấn phím Enter</value>
+    <value>اگر فوکوس از دست رفت و کلید Enter فشار داده شد</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Mili giây cho đến khi menu đóng lại nếu trong trường hợp này, menu chưa được kích hoạt lại</value>
+    <value>میلی ثانیه تا بسته شدن منو اگر در این حالت منو دوباره فعال نشود</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Hiển thị trên Thanh tác vụ</value>
+    <value>نمایش در نوار وظیفه</value>
   </data>
   <data name="Add folder" xml:space="preserve">
-    <value>Thêm thư mục</value>
+    <value>اضافه کردن پوشه</value>
   </data>
   <data name="Add folders to main menu" xml:space="preserve">
-    <value>Thêm thư mục vào menu chính</value>
+    <value>پوشه ها را به منوی اصلی اضافه کنید</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
-    <value>Đường dẫn thư mục</value>
+    <value>مسیرهای پوشه</value>
   </data>
   <data name="Folders" xml:space="preserve">
-    <value>Thư mục</value>
+    <value>پوشه ها</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>Đệ quy</value>
+    <value>بازگشتی</value>
   </data>
   <data name="Remove folder" xml:space="preserve">
-    <value>Xóa thư mục</value>
+    <value>پوشه را حذف کنید</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Menu chính của bộ nhớ đệm</value>
+    <value>منوی اصلی کش</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Xóa bộ nhớ cache nếu nhiều hơn số lượng mục này</value>
+    <value>اگر تعداد موارد بیش از این تعداد باشد، حافظه پنهان را پاک کنید</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Chỉ tệp</value>
+    <value>فقط فایل ه</value>
   </data>
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Thêm thư mục 'Start Menu' mẫu</value>
+    <value>پوشه "Start Menu" نمونه را اضافه کنید</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Góc tròn</value>
+    <value>گوشه های گرد</value>
   </data>
   <data name="Row height in percentage" xml:space="preserve">
-    <value>Chiều cao hàng tính bằng phần trăm</value>
+    <value>ارتفاع ردیف بر حسب درصد</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>Ngoại hình</value>
+    <value>ظاهر</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>Dưới cùng bên trái</value>
+    <value>پایین سمت چپ</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>Góc phải ở phía dưới</value>
+    <value>سمت راست پایین</value>
   </data>
   <data name="Main menu appears at" xml:space="preserve">
-    <value>Ngoại hình</value>
+    <value>منوی اصلی ظاهر می شود</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Vị trí chuột (phía trên biểu tượng Thanh tác vụ)</value>
+    <value>مکان ماوس (بالای نماد نوار وظیفه)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Tùy chỉnh (kéo nó đến vị trí thích hợp)</value>
+    <value>سفارشی (آن را به مکان مناسب بکشید)</value>
   </data>
 </root>

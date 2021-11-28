@@ -120,7 +120,7 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="buttonOk" xml:space="preserve">
+  <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="Autostart" xml:space="preserve">
@@ -135,10 +135,10 @@
   <data name="Folder empty" xml:space="preserve">
     <value>Folder empty</value>
   </data>
-  <data name="buttonDetails" xml:space="preserve">
+  <data name="Details" xml:space="preserve">
     <value>Details</value>
   </data>
-  <data name="buttonSystemInfo" xml:space="preserve">
+  <data name="System Info" xml:space="preserve">
     <value>System Info</value>
   </data>
   <data name="Folder inaccessible" xml:space="preserve">
@@ -342,8 +342,8 @@
   <data name="Open Folder" xml:space="preserve">
     <value>Open Folder</value>
   </data>
-  <data name="Task Manger" xml:space="preserve">
-    <value>Task Manger</value>
+  <data name="Task Manager" xml:space="preserve">
+    <value>"Task Manager"</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Deactivated</value>

@@ -114,6 +114,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Update="Resources\lang - Copy.cs-CZ.Designer.cs">
+      <DependentUpon>lang.cs-CZ.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="UserInterface\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
@@ -194,6 +199,11 @@
     <Compile Update="UserInterface\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Update="Resources\lang.fa-IR.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>lang - Copy.cs-CZ.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\lang.tr-TR.resx">
       <LastGenOutput>lang.tr-TR.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>

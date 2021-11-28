@@ -36,9 +36,9 @@ namespace SystemTrayMenu.UserInterface
         public AboutBox()
         {
             InitializeComponent();
-            buttonOk.Text = Translator.GetText("buttonOk");
-            buttonDetails.Text = Translator.GetText("buttonDetails");
-            buttonSystemInfo.Text = Translator.GetText("buttonSystemInfo");
+            buttonOk.Text = Translator.GetText("OK");
+            buttonDetails.Text = Translator.GetText("Details");
+            buttonSystemInfo.Text = Translator.GetText("System Info");
             Text = Translator.GetText("About");
         }
 

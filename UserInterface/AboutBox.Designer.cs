@@ -78,7 +78,7 @@
             this.buttonDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonDetails.Location = new System.Drawing.Point(85, 3);
             this.buttonDetails.MinimumSize = new System.Drawing.Size(76, 23);
-            this.buttonDetails.Name = "buttonDetails";
+            this.buttonDetails.Name = "Details";
             this.buttonDetails.Size = new System.Drawing.Size(76, 23);
             this.buttonDetails.TabIndex = 25;
             this.buttonDetails.Text = "Details";
@@ -113,7 +113,7 @@
             this.buttonSystemInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonSystemInfo.Location = new System.Drawing.Point(3, 3);
             this.buttonSystemInfo.MinimumSize = new System.Drawing.Size(76, 23);
-            this.buttonSystemInfo.Name = "buttonSystemInfo";
+            this.buttonSystemInfo.Name = "System Info";
             this.buttonSystemInfo.Size = new System.Drawing.Size(76, 23);
             this.buttonSystemInfo.TabIndex = 22;
             this.buttonSystemInfo.Text = "System Info";
@@ -187,7 +187,7 @@
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonOk.Location = new System.Drawing.Point(167, 3);
             this.buttonOk.MinimumSize = new System.Drawing.Size(76, 23);
-            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Name = "OK";
             this.buttonOk.Size = new System.Drawing.Size(76, 23);
             this.buttonOk.TabIndex = 16;
             this.buttonOk.Text = "OK";

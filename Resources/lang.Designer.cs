@@ -241,33 +241,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Details.
-        /// </summary>
-        internal static string buttonDetails {
-            get {
-                return ResourceManager.GetString("buttonDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to OK.
-        /// </summary>
-        internal static string buttonOk {
-            get {
-                return ResourceManager.GetString("buttonOk", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to System Info.
-        /// </summary>
-        internal static string buttonSystemInfo {
-            get {
-                return ResourceManager.GetString("buttonSystemInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cache main menu.
         /// </summary>
         internal static string Cache_main_menu {
@@ -381,6 +354,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Default {
             get {
                 return ResourceManager.GetString("Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        internal static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
             }
         }
         
@@ -625,6 +607,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Mouse_location__Above_Taskbar_icon_ {
             get {
                 return ResourceManager.GetString("Mouse location (Above Taskbar icon)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
             }
         }
         
@@ -881,6 +872,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System Info.
+        /// </summary>
+        internal static string System_Info {
+            get {
+                return ResourceManager.GetString("System Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SystemTrayMenu.
         /// </summary>
         internal static string SystemTrayMenu {
@@ -890,11 +890,11 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Task Manger.
+        ///   Looks up a localized string similar to &quot;Task Manager&quot;.
         /// </summary>
-        internal static string Task_Manger {
+        internal static string Task_Manager {
             get {
-                return ResourceManager.GetString("Task Manger", resourceCulture);
+                return ResourceManager.GetString("Task Manager", resourceCulture);
             }
         }
         
