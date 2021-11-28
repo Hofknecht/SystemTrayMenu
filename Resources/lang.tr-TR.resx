@@ -414,9 +414,6 @@
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Fare konumu (Görev Çubuğu simgesinin üstünde)</value>
   </data>
-  <data name="Update the position every time the menu opens" xml:space="preserve">
-    <value>Menü her açıldığında konumu güncelleyin</value>
-  </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Özel (uygun yere sürükleyin)</value>
   </data>

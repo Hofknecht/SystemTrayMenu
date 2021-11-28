@@ -414,9 +414,6 @@
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>마우스 위치(작업 표시줄 아이콘 위)</value>
   </data>
-  <data name="Update the position every time the menu opens" xml:space="preserve">
-    <value>메뉴가 열릴 때마다 위치 업데이트</value>
-  </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>사용자 지정(적절한 위치로 드래그)</value>
   </data>

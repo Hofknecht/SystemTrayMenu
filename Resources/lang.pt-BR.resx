@@ -414,9 +414,6 @@
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Localização do mouse (ícone da barra de tarefas acima)</value>
   </data>
-  <data name="Update the position every time the menu opens" xml:space="preserve">
-    <value>Atualize a posição sempre que o menu for aberto</value>
-  </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Personalizado (arraste-o para o local apropriado)</value>
   </data>

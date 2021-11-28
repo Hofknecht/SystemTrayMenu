@@ -414,9 +414,6 @@
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Umístění myši (nad ikonou na hlavním panelu)</value>
   </data>
-  <data name="Update the position every time the menu opens" xml:space="preserve">
-    <value>Aktualizujte pozici při každém otevření nabídky</value>
-  </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Vlastní (přetáhněte jej na příslušné místo)</value>
   </data>

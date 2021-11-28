@@ -154,7 +154,6 @@ namespace SystemTrayMenu.UserInterface
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
                 radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate place)");
                 radioButtonAppearAtMouseLocation.Text = Translator.GetText("Mouse location");
-                checkBoxRefreshLocationEachTime.Text = Translator.GetText("Update the position every time the menu opens");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
@@ -382,8 +381,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 radioButtonAppearAtTheBottomRight.Checked = true;
             }
-
-            checkBoxRefreshLocationEachTime.Checked = Settings.Default.RefreshLocationEachTime;
 
             checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
@@ -771,8 +768,6 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
 
-            Settings.Default.RefreshLocationEachTime = checkBoxRefreshLocationEachTime.Checked;
-
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
@@ -1025,7 +1020,6 @@ namespace SystemTrayMenu.UserInterface
             radioButtonAppearAtTheBottomLeft.Checked = false;
             radioButtonUseCustomLocation.Checked = false;
             radioButtonAppearAtMouseLocation.Checked = false;
-            checkBoxRefreshLocationEachTime.Checked = false;
         }
 
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)

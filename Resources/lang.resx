@@ -414,9 +414,6 @@
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Mouse location (Above Taskbar icon)</value>
   </data>
-  <data name="Update the position every time the menu opens" xml:space="preserve">
-    <value>Update the position every time the menu opens</value>
-  </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Custom (drag it to the appropriate place)</value>
   </data>

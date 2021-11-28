@@ -68,7 +68,8 @@ namespace SystemTrayMenu.Business
 
                     RefreshSelection(dgvMainMenu);
 
-                    if (Properties.Settings.Default.RefreshLocationEachTime)
+                    if (Properties.Settings.Default.CacheMainMenu &&
+                        Properties.Settings.Default.AppearAtMouseLocation)
                     {
                         menus[0].Tag = null;
                     }
