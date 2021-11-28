@@ -35,14 +35,21 @@ namespace SystemTrayMenu.Helper
         {
             Menu menu = (Menu)sender;
             string path;
-            if (menu == null)
+            if (menu != null)
             {
-                path = Config.Path;
+                RowData rowData = (RowData)menu.Tag;
+                if (rowData != null)
+                {
+                    path = rowData.TargetFilePath;
+                }
+                else
+                {
+                    path = Config.Path;
+                }
             }
             else
             {
-                RowData rowData = (RowData)menu.Tag;
-                path = rowData.TargetFilePath;
+                path = Config.Path;
             }
 
             object data = e.Data.GetData("UniformResourceLocator");
