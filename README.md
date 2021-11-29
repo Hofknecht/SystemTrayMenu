@@ -155,6 +155,7 @@ Donations
 
 We would be delighted if you could help us with the following:
 * star on this github project
+* share or like [video](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
 * join or like us on [reddit](https://www.reddit.com/r/SystemTrayMenu/) and/or [Facebook](https://www.facebook.com/Systemtraymenu-114069060335483)
 * review or rating on [Sourceforge](https://sourceforge.net/projects/systemtraymenu/) or somewhere else
 * your ideas either as issues here in github or directly per mail
