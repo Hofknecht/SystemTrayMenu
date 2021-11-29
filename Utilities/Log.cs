@@ -6,6 +6,7 @@ namespace SystemTrayMenu.Utilities
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Diagnostics;
     using System.IO;
     using System.Reflection;
@@ -104,10 +105,11 @@ namespace SystemTrayMenu.Utilities
                 };
                 p.Start();
             }
-            catch (Exception ex)
+            catch (Win32Exception ex)
             {
                 Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
-                if (ex.Message == "The system cannot find the file specified.")
+
+                if (ex.NativeErrorCode == 2 || ex.NativeErrorCode == 1223)
                 {
                     new Thread(ShowProblemWithShortcut).Start();
                     static void ShowProblemWithShortcut()
@@ -119,6 +121,10 @@ namespace SystemTrayMenu.Utilities
                             MessageBoxIcon.Warning);
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
             }
         }
     }
