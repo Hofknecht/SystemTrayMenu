@@ -69,10 +69,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|x64'">
     <ErrorReport>none</ErrorReport>
@@ -87,6 +89,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|x86'">
     <ErrorReport>none</ErrorReport>
