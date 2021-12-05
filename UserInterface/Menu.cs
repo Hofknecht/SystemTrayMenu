@@ -7,8 +7,11 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Data;
     using System.Drawing;
+    using System.Drawing.Drawing2D;
+    using System.Drawing.Imaging;
     using System.Globalization;
     using System.Reflection;
+    using System.Runtime.InteropServices;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
@@ -17,12 +20,15 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu : Form
     {
+        private const int CornerRadius = 8;
         private readonly Fading fading = new();
         private bool isShowing;
         private bool directionToRight;
         private int rotationAngle;
         private bool mouseDown;
         private Point lastLocation;
+        private double opacity;
+        private Timer drawTimer = new();
 
         internal Menu()
         {
@@ -31,7 +37,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (!IsDisposed && !Disposing)
                 {
-                    Opacity = newOpacity;
+                    opacity = newOpacity;
                 }
             }
 
@@ -222,8 +228,25 @@ namespace SystemTrayMenu.UserInterface
             {
                 CreateParams createparams = base.CreateParams;
                 createparams.ExStyle |= 0x80;
+                if (!DesignMode)
+                {
+                    createparams.ExStyle |= 0x00080000;
+                }
+
                 return createparams;
             }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            if (!DesignMode)
+            {
+                drawTimer.Interval = 1000 / 60;
+                drawTimer.Tick += DrawForm;
+                drawTimer.Start();
+            }
+
+            base.OnLoad(e);
         }
 
         internal void ResetSearchText()
@@ -567,6 +590,57 @@ namespace SystemTrayMenu.UserInterface
             }
 
             return base.ProcessCmdKey(ref msg, keys);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            if (DesignMode)
+            {
+                Graphics graphics = e.Graphics;
+
+                Rectangle gradientRectangle = new(0, 0, this.Width - 1, this.Height - 1);
+
+                Brush b = new LinearGradientBrush(gradientRectangle, AppColors.DarkModeBackground, AppColors.DarkModeBackground, 0.0f);
+
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+
+                RoundedRectangle.FillRoundedRectangle(graphics, b, gradientRectangle, CornerRadius);
+            }
+
+            base.OnPaint(e);
+        }
+
+        private void DrawForm(object pSender, EventArgs pE)
+        {
+            using (Bitmap backImage = new(this.Width, this.Height))
+            {
+                using (Graphics graphics = Graphics.FromImage(backImage))
+                {
+                    Rectangle gradientRectangle = new(0, 0, this.Width - 1, this.Height - 1);
+                    using (Brush b = new LinearGradientBrush(gradientRectangle, AppColors.DarkModeBackground, AppColors.DarkModeBackground, 0.0f))
+                    {
+                        graphics.SmoothingMode = SmoothingMode.HighQuality;
+
+                        RoundedRectangle.FillRoundedRectangle(graphics, b, gradientRectangle, CornerRadius);
+
+                        foreach (Control ctrl in this.Controls)
+                        {
+                            using (Bitmap bmp = new(ctrl.Width, ctrl.Height))
+                            {
+                                Rectangle rect = new(0, 0, ctrl.Width, ctrl.Height);
+                                ctrl.DrawToBitmap(bmp, rect);
+                                graphics.DrawImage(bmp, ctrl.Location);
+                            }
+                        }
+
+                        try
+                        {
+                            PerPixelAlphaBlend.SetBitmap(backImage, Left, Top, Handle, opacity);
+                        }
+                        catch { }; //todo disposed exception
+                    }
+                }
+            }
         }
 
         private static void SetDoubleBuffer(Control ctl, bool doubleBuffered)

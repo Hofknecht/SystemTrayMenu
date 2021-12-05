@@ -18,6 +18,8 @@
                 components.Dispose();
             }
 
+            drawTimer.Tick += DrawForm;
+            drawTimer.Dispose();
             timerUpdateIcons.Stop();
             timerUpdateIcons.Dispose();
             fading.Dispose();
@@ -229,7 +231,7 @@
             this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelTitle, 0, 0);
             this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelSearch, 0, 2);
             this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelDgvAndScrollbar, 0, 1);
-            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(1, 1);
+            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
             this.tableLayoutPanelMenu.RowCount = 3;
@@ -351,8 +353,7 @@
             this.Controls.Add(this.tableLayoutPanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
-            this.Opacity = 0.01D;
-            this.Padding = new System.Windows.Forms.Padding(1);
+            this.Padding = new System.Windows.Forms.Padding(4);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SystemTrayMenu";
