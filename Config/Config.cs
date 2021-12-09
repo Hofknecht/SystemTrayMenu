@@ -46,8 +46,6 @@ namespace SystemTrayMenu
             AppColors.BitmapSettings.Dispose();
             AppColors.BitmapRestart.Dispose();
             AppColors.BitmapSearch.Dispose();
-            AppColors.BitmapFoldersCount.Dispose();
-            AppColors.BitmapFilesCount.Dispose();
         }
 
         public static Icon GetAppIcon()
@@ -242,8 +240,6 @@ namespace SystemTrayMenu
             AppColors.BitmapRestart = ReadSvg(Properties.Resources.ic_fluent_arrow_sync_24_regular, htmlColorCodeIcons);
             AppColors.BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
             AppColors.BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapFoldersCount = ReadSvg(Properties.Resources.ic_fluent_folder_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapFilesCount = ReadSvg(Properties.Resources.ic_fluent_document_48_regular, htmlColorCodeIcons);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSearchField;
             colorAndCode.Color = Color.FromArgb(255, 255, 255);

@@ -180,9 +180,6 @@
   <data name="TextFirstStart" xml:space="preserve">
     <value>よくある質問を読み、SystemTrayMenu のルート ディレクトリを選択します。</value>
   </data>
-  <data name="Warning" xml:space="preserve">
-    <value>警告</value>
-  </data>
   <data name="Select Folder" xml:space="preserve">
     <value>フォルダーを選択</value>
   </data>
@@ -254,9 +251,6 @@
   </data>
   <data name="Border of selected item" xml:space="preserve">
     <value>選択したアイテムの境界</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>題名</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>相対フォルダに変更</value>
@@ -416,5 +410,11 @@
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>カスタム（適切な場所にドラッグ）</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>エレメント</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>要素</value>
   </data>
 </root>

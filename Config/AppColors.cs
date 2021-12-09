@@ -88,10 +88,6 @@ namespace SystemTrayMenu
 
         public static Bitmap BitmapSearch { get; set; }
 
-        public static Bitmap BitmapFoldersCount { get; set; }
-
-        public static Bitmap BitmapFilesCount { get; set; }
-
         public static Color Icons { get; set; }
 
         public static Color DarkModeIcons { get; set; }

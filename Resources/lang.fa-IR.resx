@@ -180,9 +180,6 @@
   <data name="TextFirstStart" xml:space="preserve">
     <value>سوالات متداول را بخوانید و سپس یک دایرکتوری ریشه برای SystemTrayMenu انتخاب کنید.</value>
   </data>
-  <data name="Warning" xml:space="preserve">
-    <value>هشدار</value>
-  </data>
   <data name="Select Folder" xml:space="preserve">
     <value>پوشه را انتخاب کنید</value>
   </data>
@@ -254,9 +251,6 @@
   </data>
   <data name="Border of selected item" xml:space="preserve">
     <value>حاشیه مورد انتخاب شده</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>عنوان</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>به پوشه نسبی تغییر دهید</value>
@@ -416,5 +410,11 @@
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>سفارشی (آن را به مکان مناسب بکشید)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>عنصر</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>عناصر</value>
   </data>
 </root>

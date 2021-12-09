@@ -180,9 +180,6 @@
   <data name="TextFirstStart" xml:space="preserve">
     <value>Leia as Perguntas Frequentes e então escolha uma pasta raiz para o SystemTrayMenu.</value>
   </data>
-  <data name="Warning" xml:space="preserve">
-    <value>Aviso</value>
-  </data>
   <data name="Select Folder" xml:space="preserve">
     <value>Selecionar Pasta</value>
   </data>
@@ -254,9 +251,6 @@
   </data>
   <data name="Border of selected item" xml:space="preserve">
     <value>Borda do item selecionado</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Título</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>Mudar para a pasta relativa</value>
@@ -416,5 +410,11 @@
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Personalizado (arraste-o para o local apropriado)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>elemento</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementos</value>
   </data>
 </root>

@@ -367,6 +367,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to item.
+        /// </summary>
+        internal static string element {
+            get {
+                return ResourceManager.GetString("element", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to items.
+        /// </summary>
+        internal static string elements {
+            get {
+                return ResourceManager.GetString("elements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         internal static string Exit {
@@ -489,24 +507,6 @@ namespace SystemTrayMenu.Resources {
         internal static string If_the_focus_is_lost_and_the_Enter_key_was_pressed {
             get {
                 return ResourceManager.GetString("If the focus is lost and the Enter key was pressed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Item.
-        /// </summary>
-        internal static string Item {
-            get {
-                return ResourceManager.GetString("Item", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Items.
-        /// </summary>
-        internal static string Items {
-            get {
-                return ResourceManager.GetString("Items", resourceCulture);
             }
         }
         
@@ -945,15 +945,6 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Title.
-        /// </summary>
-        internal static string Title {
-            get {
-                return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to USB.
         /// </summary>
         internal static string USB {
@@ -968,15 +959,6 @@ namespace SystemTrayMenu.Resources {
         internal static string Use_icon_from_folder {
             get {
                 return ResourceManager.GetString("Use icon from folder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Warning.
-        /// </summary>
-        internal static string Warning {
-            get {
-                return ResourceManager.GetString("Warning", resourceCulture);
             }
         }
     }

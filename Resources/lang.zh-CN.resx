@@ -180,9 +180,6 @@
   <data name="TextFirstStart" xml:space="preserve">
     <value>阅读常见问题，然后为 SystemTrayMenu 选择一个根目录。</value>
   </data>
-  <data name="Warning" xml:space="preserve">
-    <value>警告</value>
-  </data>
   <data name="Select Folder" xml:space="preserve">
     <value>选择文件夹</value>
   </data>
@@ -254,9 +251,6 @@
   </data>
   <data name="Border of selected item" xml:space="preserve">
     <value>所选项目的边框</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>标题</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>切换到相对文件夹</value>
@@ -416,5 +410,11 @@
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>自定义（拖动到合适的地方）</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>元素</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>元素</value>
   </data>
 </root>

@@ -180,9 +180,6 @@
   <data name="TextFirstStart" xml:space="preserve">
     <value>Leggere le domande frequenti e quindi scegliere una directory principale per SystemTrayMenu.</value>
   </data>
-  <data name="Warning" xml:space="preserve">
-    <value>Avvertimento</value>
-  </data>
   <data name="Select Folder" xml:space="preserve">
     <value>Seleziona cartella</value>
   </data>
@@ -254,9 +251,6 @@
   </data>
   <data name="Border of selected item" xml:space="preserve">
     <value>Bordo dell'elemento selezionato</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Titolo</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>Passa alla cartella relativa</value>
@@ -416,5 +410,11 @@
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Personalizzato (trascinalo nella posizione appropriata)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>elemento</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementi</value>
   </data>
 </root>

@@ -557,11 +557,11 @@ namespace SystemTrayMenu.UserInterface
             labelFilesCount.Text = filesAndFoldersCount.ToString();
             if (filesAndFoldersCount == 1)
             {
-                labelItems.Text = Translator.GetText("Item");
+                labelItems.Text = Translator.GetText("element");
             }
             else
             {
-                labelItems.Text = Translator.GetText("Items");
+                labelItems.Text = Translator.GetText("elements");
             }
         }
 
@@ -934,18 +934,6 @@ namespace SystemTrayMenu.UserInterface
         {
             PictureBox pictureBox = (PictureBox)sender;
             e.Graphics.DrawImage(AppColors.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
-        }
-
-        private void PictureBoxFoldersCount_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(AppColors.BitmapFoldersCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
-        }
-
-        private void PictureBoxFilesCount_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(AppColors.BitmapFilesCount, new Rectangle(Point.Empty, pictureBox.ClientSize));
         }
 
         private void LoadingMenu_Paint(object sender, PaintEventArgs e)

@@ -180,9 +180,6 @@
   <data name="TextFirstStart" xml:space="preserve">
     <value>FAQ를 읽고 SystemTrayMenu의 루트 디렉토리를 선택하십시오.</value>
   </data>
-  <data name="Warning" xml:space="preserve">
-    <value>경고</value>
-  </data>
   <data name="Select Folder" xml:space="preserve">
     <value>폴더 선택</value>
   </data>
@@ -254,9 +251,6 @@
   </data>
   <data name="Border of selected item" xml:space="preserve">
     <value>선택한 항목의 테두리</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>표제</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>상대 폴더로 변경</value>
@@ -416,5 +410,11 @@
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>사용자 지정(적절한 위치로 드래그)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>요소</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>집단</value>
   </data>
 </root>

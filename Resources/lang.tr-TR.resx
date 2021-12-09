@@ -180,9 +180,6 @@
   <data name="TextFirstStart" xml:space="preserve">
     <value>SSS bölümünü okuyun ve ardından SystemTrayMenu için bir kök dizin seçin.</value>
   </data>
-  <data name="Warning" xml:space="preserve">
-    <value>Uyarı</value>
-  </data>
   <data name="Select Folder" xml:space="preserve">
     <value>Klasör Seç</value>
   </data>
@@ -254,9 +251,6 @@
   </data>
   <data name="Border of selected item" xml:space="preserve">
     <value>Seçili öğenin kenarlığı</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Başlık</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
     <value>Göreli klasöre geç</value>
@@ -416,5 +410,11 @@
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Özel (uygun yere sürükleyin)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>eleman</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementler</value>
   </data>
 </root>
