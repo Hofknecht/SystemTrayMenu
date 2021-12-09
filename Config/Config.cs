@@ -214,30 +214,6 @@ namespace SystemTrayMenu
             Settings.Default.ColorDarkModeOpenFolderBorder = colorAndCode.HtmlColorCode;
             AppColors.DarkModeOpenFolderBorder = colorAndCode.Color;
 
-            colorAndCode.HtmlColorCode = Settings.Default.ColorWarning;
-            colorAndCode.Color = Color.FromArgb(255, 204, 232);
-            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
-            Settings.Default.ColorWarning = colorAndCode.HtmlColorCode;
-            AppColors.Warning = colorAndCode.Color;
-
-            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeWarning;
-            colorAndCode.Color = Color.FromArgb(75, 24, 52);
-            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
-            Settings.Default.ColorDarkModeWarning = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeWarning = colorAndCode.Color;
-
-            colorAndCode.HtmlColorCode = Settings.Default.ColorTitle;
-            colorAndCode.Color = Color.Azure;
-            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
-            Settings.Default.ColorTitle = colorAndCode.HtmlColorCode;
-            AppColors.Title = colorAndCode.Color;
-
-            colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeTitle;
-            colorAndCode.Color = Color.FromArgb(43, 43, 43);
-            colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
-            Settings.Default.ColorDarkModeTitle = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeTitle = colorAndCode.Color;
-
             colorAndCode.HtmlColorCode = Settings.Default.ColorIcons;
             colorAndCode.Color = Color.FromArgb(149, 160, 166);
             colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);

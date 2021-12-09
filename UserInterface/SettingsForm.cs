@@ -55,7 +55,6 @@ namespace SystemTrayMenu.UserInterface
             // designer always resets it to 1
             tabControl.SelectedIndex = 0;
 
-            CombineControls(textBoxColorTitle, pictureBoxTitle);
             CombineControls(textBoxColorIcons, pictureBoxIcons);
             CombineControls(textBoxColorBackground, pictureBoxBackground);
             CombineControls(textBoxColorBackgroundBorder, pictureBoxBackgroundBorder);
@@ -64,7 +63,6 @@ namespace SystemTrayMenu.UserInterface
             CombineControls(textBoxColorOpenFolderBorder, pictureBoxOpenFolderBorder);
             CombineControls(textBoxColorSelectedItem, pictureBoxSelectedItem);
             CombineControls(textBoxColorSelectedItemBorder, pictureBoxSelectedItemBorder);
-            CombineControls(textBoxColorWarning, pictureBoxWarning);
             CombineControls(textBoxColorScrollbarBackground, pictureBoxScrollbarBackground);
             CombineControls(textBoxColorSlider, pictureBoxSlider);
             CombineControls(textBoxColorSliderDragging, pictureBoxSliderDragging);
@@ -76,7 +74,6 @@ namespace SystemTrayMenu.UserInterface
             CombineControls(textBoxColorArrowHover, pictureBoxArrowHover);
             CombineControls(textBoxColorArrowHoverBackground, pictureBoxArrowHoverBackground);
 
-            CombineControls(textBoxColorTitleDarkMode, pictureBoxTitleDarkMode);
             CombineControls(textBoxColorIconsDarkMode, pictureBoxIconsDarkMode);
             CombineControls(textBoxColorBackgroundDarkMode, pictureBoxBackgroundDarkMode);
             CombineControls(textBoxColorBackgroundBorderDarkMode, pictureBoxBackgroundBorderDarkMode);
@@ -85,7 +82,6 @@ namespace SystemTrayMenu.UserInterface
             CombineControls(textBoxColorOpenFolderBorderDarkMode, pictureBoxOpenFolderBorderDarkMode);
             CombineControls(textBoxColorSelecetedItemDarkMode, pictureColorBoxSelectedItemDarkMode);
             CombineControls(textBoxColorSelectedItemBorderDarkMode, pictureBoxSelectedItemBorderDarkMode);
-            CombineControls(textBoxColorWarningDarkMode, pictureBoxWarningDarkMode);
             CombineControls(textBoxColorScrollbarBackgroundDarkMode, pictureBoxScrollbarBackgroundDarkMode);
             CombineControls(textBoxColorSliderDarkMode, pictureBoxSliderDarkMode);
             CombineControls(textBoxColorSliderDraggingDarkMode, pictureBoxSliderDraggingDarkMode);
@@ -173,8 +169,6 @@ namespace SystemTrayMenu.UserInterface
                 labelMenuDarkMode.Text = Translator.GetText("Menu");
                 labelScrollbarLightMode.Text = Translator.GetText("Scrollbar");
                 labelScrollbarDarkMode.Text = Translator.GetText("Scrollbar");
-                labelTitle.Text = Translator.GetText("Title");
-                labelTitleDarkMode.Text = Translator.GetText("Title");
                 labelIcons.Text = Translator.GetText("Icons");
                 labelIconsDarkMode.Text = Translator.GetText("Icons");
                 labelBackground.Text = Translator.GetText("Background");
@@ -191,8 +185,6 @@ namespace SystemTrayMenu.UserInterface
                 labelSelectedItemDarkMode.Text = Translator.GetText("Selected item");
                 labelSelectedItemBorder.Text = Translator.GetText("Border of selected item");
                 labelSelectedItemBorderDarkMode.Text = Translator.GetText("Border of selected item");
-                labelWarning.Text = Translator.GetText("Warning");
-                labelWarningDarkMode.Text = Translator.GetText("Warning");
                 labelScrollbarBackground.Text = Translator.GetText("Background");
                 labelColorDarkModeScrollbarBackground.Text = Translator.GetText("Background");
                 labelSlider.Text = Translator.GetText("Slider");
@@ -414,10 +406,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorOpenFolderDarkMode.Text = Settings.Default.ColorDarkModeOpenFolder;
             textBoxColorOpenFolderBorder.Text = Settings.Default.ColorOpenFolderBorder;
             textBoxColorOpenFolderBorderDarkMode.Text = Settings.Default.ColorDarkModeOpenFolderBorder;
-            textBoxColorWarning.Text = Settings.Default.ColorWarning;
-            textBoxColorWarningDarkMode.Text = Settings.Default.ColorDarkModeWarning;
-            textBoxColorTitle.Text = Settings.Default.ColorTitle;
-            textBoxColorTitleDarkMode.Text = Settings.Default.ColorDarkModeTitle;
             textBoxColorIcons.Text = Settings.Default.ColorIcons;
             textBoxColorIconsDarkMode.Text = Settings.Default.ColorDarkModeIcons;
             textBoxColorBackground.Text = Settings.Default.ColorBackground;
@@ -1076,10 +1064,6 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.ColorDarkModeOpenFolder = textBoxColorOpenFolderDarkMode.Text;
                 Settings.Default.ColorOpenFolderBorder = textBoxColorOpenFolderBorder.Text;
                 Settings.Default.ColorDarkModeOpenFolderBorder = textBoxColorOpenFolderBorderDarkMode.Text;
-                Settings.Default.ColorWarning = textBoxColorWarning.Text;
-                Settings.Default.ColorDarkModeWarning = textBoxColorWarningDarkMode.Text;
-                Settings.Default.ColorTitle = textBoxColorTitle.Text;
-                Settings.Default.ColorDarkModeTitle = textBoxColorTitleDarkMode.Text;
                 Settings.Default.ColorIcons = textBoxColorIcons.Text;
                 Settings.Default.ColorDarkModeIcons = textBoxColorIconsDarkMode.Text;
                 Settings.Default.ColorBackground = textBoxColorBackground.Text;
@@ -1134,7 +1118,6 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonDefaultColors_Click(object sender, EventArgs e)
         {
-            textBoxColorTitle.Text = "#f0ffff";
             textBoxColorIcons.Text = "#95a0a6";
             textBoxColorOpenFolder.Text = "#C2F5DE";
             textBoxColorOpenFolderBorder.Text = "#99FFA5";
@@ -1143,7 +1126,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorSearchField.Text = "#ffffff";
             textBoxColorSelectedItem.Text = "#CCE8FF";
             textBoxColorSelectedItemBorder.Text = "#99D1FF";
-            textBoxColorWarning.Text = "#FFCCE8";
             textBoxColorArrow.Text = "#606060";
             textBoxColorArrowHoverBackground.Text = "#dadada";
             textBoxColorArrowHover.Text = "#000000";
@@ -1158,7 +1140,6 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonDefaultColorsDark_Click(object sender, EventArgs e)
         {
-            textBoxColorTitleDarkMode.Text = "#2B2B2B";
             textBoxColorIconsDarkMode.Text = "#95a0a6";
             textBoxColorOpenFolderDarkMode.Text = "#14412A";
             textBoxColorOpenFolderBorderDarkMode.Text = "#144B55";
@@ -1167,7 +1148,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorSearchFieldDarkMode.Text = "#191919";
             textBoxColorSelecetedItemDarkMode.Text = "#333333";
             textBoxColorSelectedItemBorderDarkMode.Text = "#141D4B";
-            textBoxColorWarningDarkMode.Text = "#4B1834";
             textBoxColorArrowDarkMode.Text = "#676767";
             textBoxColorArrowHoverBackgroundDarkMode.Text = "#373737";
             textBoxColorArrowHoverDarkMode.Text = "#676767";

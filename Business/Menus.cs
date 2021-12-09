@@ -186,7 +186,7 @@ namespace SystemTrayMenu.Business
                             Level = rowData.MenuLevel + 1,
                         };
 
-                        Menu menuLoading = Create(menuDataLoading, Path.GetFileName(Config.Path));
+                        Menu menuLoading = Create(menuDataLoading, Path.GetFileName(rowData.TargetFilePathOrig));
                         menuLoading.IsLoadingMenu = true;
                         AdjustMenusSizeAndLocation();
                         menus[rowData.MenuLevel + 1] = menuLoading;
@@ -217,8 +217,10 @@ namespace SystemTrayMenu.Business
                     MenuData menuData = (MenuData)e.Result;
 
                     Menu menuLoading = menus[menuData.Level];
+                    string userSearchText = string.Empty;
                     if (menuLoading != null && menuLoading.IsLoadingMenu)
                     {
+                        userSearchText = menuLoading.GetSearchText();
                         menuLoading.HideWithFade();
                         menus[menuLoading.Level] = null;
                     }
@@ -245,6 +247,10 @@ namespace SystemTrayMenu.Business
                         if (menus[0].IsUsable)
                         {
                             ShowSubMenu(menu);
+                            if (!string.IsNullOrEmpty(userSearchText))
+                            {
+                                menu.SetSearchText(userSearchText);
+                            }
                         }
                     }
                 }
@@ -1232,6 +1238,12 @@ namespace SystemTrayMenu.Business
             {
                 screenBounds = Screen.FromPoint(Cursor.Position).Bounds;
             }
+            else if (Properties.Settings.Default.UseCustomLocation)
+            {
+                screenBounds = Screen.FromPoint(new Point(
+                    Properties.Settings.Default.CustomLocationX,
+                    Properties.Settings.Default.CustomLocationY)).Bounds;
+            }
             else
             {
                 screenBounds = Screen.PrimaryScreen.Bounds;
@@ -1292,7 +1304,10 @@ namespace SystemTrayMenu.Business
                     menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation);
                 }
 
-                if (i == 0)
+                if (!Properties.Settings.Default.AppearAtTheBottomLeft &&
+                    !Properties.Settings.Default.AppearAtMouseLocation &&
+                    !Properties.Settings.Default.UseCustomLocation &&
+                    i == 0)
                 {
                     const int overlapTolerance = 4;
 

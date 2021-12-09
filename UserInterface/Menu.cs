@@ -7,11 +7,8 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Data;
     using System.Drawing;
-    using System.Drawing.Drawing2D;
-    using System.Drawing.Imaging;
     using System.Globalization;
     using System.Reflection;
-    using System.Runtime.InteropServices;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
@@ -20,15 +17,13 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu : Form
     {
-        private const int CornerRadius = 8;
+        private const int CornerRadius = 20;
         private readonly Fading fading = new();
         private bool isShowing;
         private bool directionToRight;
         private int rotationAngle;
         private bool mouseDown;
         private Point lastLocation;
-        private double opacity;
-        private Timer drawTimer = new();
 
         internal Menu()
         {
@@ -37,7 +32,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (!IsDisposed && !Disposing)
                 {
-                    opacity = newOpacity;
+                    Opacity = newOpacity;
                 }
             }
 
@@ -85,7 +80,6 @@ namespace SystemTrayMenu.UserInterface
             SetDoubleBuffer(dgv, true);
 
             Color foreColor = Color.Black;
-            Color titleBackColor = AppColors.Title;
             Color backColor = AppColors.Background;
             Color backColorSearch = AppColors.SearchField;
             Color backgroundBorder = AppColors.BackgroundBorder;
@@ -95,14 +89,13 @@ namespace SystemTrayMenu.UserInterface
                 foreColor = Color.White;
                 labelTitle.ForeColor = foreColor;
                 textBoxSearch.ForeColor = foreColor;
-                titleBackColor = AppColors.DarkModeTitle;
                 backColor = AppColors.DarkModeBackground;
                 backColorSearch = AppColors.DarkModeSearchField;
                 backgroundBorder = AppColors.DarkModeBackgroundBorder;
             }
 
             ColorConverter colorConverter = new();
-            labelFoldersCount.ForeColor = MenuDefines.ColorIcons;
+            labelItems.ForeColor = MenuDefines.ColorIcons;
             labelFilesCount.ForeColor = MenuDefines.ColorIcons;
 
             if (backColor.R == 0)
@@ -111,13 +104,14 @@ namespace SystemTrayMenu.UserInterface
             }
 
             BackColor = backgroundBorder;
-            tableLayoutPanelTitle.BackColor = titleBackColor;
+            labelTitle.BackColor = backColor;
             tableLayoutPanelDgvAndScrollbar.BackColor = backColor;
+            tableLayoutPanelBottom.BackColor = backColor;
+            tableLayoutPanelMenu.BackColor = backColor;
             dgv.BackgroundColor = backColor;
             textBoxSearch.BackColor = backColorSearch;
+            panelLine.BackColor = AppColors.Icons;
             pictureBoxSearch.BackColor = backColorSearch;
-            pictureBoxFoldersCount.BackColor = backColorSearch;
-            pictureBoxFilesCount.BackColor = backColorSearch;
             tableLayoutPanelSearch.BackColor = backColorSearch;
             dgv.DefaultCellStyle = new DataGridViewCellStyle
             {
@@ -150,11 +144,11 @@ namespace SystemTrayMenu.UserInterface
             pictureBoxSettings.MouseEnter += ControlsMouseEnter;
             pictureBoxRestart.MouseEnter += ControlsMouseEnter;
             pictureBoxSearch.MouseEnter += ControlsMouseEnter;
-            pictureBoxFilesCount.MouseEnter += ControlsMouseEnter;
-            pictureBoxFoldersCount.MouseEnter += ControlsMouseEnter;
+            tableLayoutPanelMenu.MouseEnter += ControlsMouseEnter;
+            tableLayoutPanelDgvAndScrollbar.MouseEnter += ControlsMouseEnter;
+            tableLayoutPanelBottom.MouseEnter += ControlsMouseEnter;
             labelFilesCount.MouseEnter += ControlsMouseEnter;
-            labelFoldersCount.MouseEnter += ControlsMouseEnter;
-
+            labelItems.MouseEnter += ControlsMouseEnter;
             void ControlsMouseEnter(object sender, EventArgs e)
             {
                 MouseEnter?.Invoke();
@@ -169,10 +163,11 @@ namespace SystemTrayMenu.UserInterface
             pictureBoxSettings.MouseLeave += ControlsMouseLeave;
             pictureBoxRestart.MouseLeave += ControlsMouseLeave;
             pictureBoxSearch.MouseLeave += ControlsMouseLeave;
-            pictureBoxFilesCount.MouseLeave += ControlsMouseLeave;
-            pictureBoxFoldersCount.MouseLeave += ControlsMouseLeave;
+            tableLayoutPanelMenu.MouseLeave += ControlsMouseLeave;
+            tableLayoutPanelDgvAndScrollbar.MouseLeave += ControlsMouseLeave;
+            tableLayoutPanelBottom.MouseLeave += ControlsMouseLeave;
             labelFilesCount.MouseLeave += ControlsMouseLeave;
-            labelFoldersCount.MouseLeave += ControlsMouseLeave;
+            labelItems.MouseLeave += ControlsMouseLeave;
             void ControlsMouseLeave(object sender, EventArgs e)
             {
                 MouseLeave?.Invoke();
@@ -219,34 +214,18 @@ namespace SystemTrayMenu.UserInterface
 
         internal int Level { get; set; }
 
-        internal bool IsUsable => Visible && !fading.IsHiding &&
-            !IsDisposed && !Disposing;
+        internal bool IsUsable => Visible && !fading.IsHiding && !IsDisposed && !Disposing;
 
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams createparams = base.CreateParams;
-                createparams.ExStyle |= 0x80;
-                if (!DesignMode)
-                {
-                    createparams.ExStyle |= 0x00080000;
-                }
+                createparams.ExStyle |= 0x80; // do not show when user presses alt + tab
+                createparams.ClassStyle |= 0x00020000; // CS_DROPSHADOW
 
                 return createparams;
             }
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            if (!DesignMode)
-            {
-                drawTimer.Interval = 1000 / 60;
-                drawTimer.Tick += DrawForm;
-                drawTimer.Start();
-            }
-
-            base.OnLoad(e);
         }
 
         internal void ResetSearchText()
@@ -284,7 +263,6 @@ namespace SystemTrayMenu.UserInterface
         {
             if (type != MenuType.Main)
             {
-                pictureBoxMenuAlwaysOpen.Visible = false;
                 pictureBoxSettings.Visible = false;
                 pictureBoxRestart.Visible = false;
             }
@@ -294,26 +272,32 @@ namespace SystemTrayMenu.UserInterface
                 case MenuType.Main:
                     break;
                 case MenuType.Sub:
+                    pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
                 case MenuType.Empty:
-                    SetTitle(Translator.GetText("Folder empty"));
-                    labelTitle.BackColor = MenuDefines.ColorTitleWarning;
-                    pictureBoxSearch.Visible = false;
-                    textBoxSearch.Visible = false;
-                    tableLayoutPanelSearch.Visible = false;
+                    pictureBoxSearch.Visible = true;
+                    textBoxSearch.Visible = true;
+                    tableLayoutPanelSearch.Visible = true;
+                    labelFilesCount.Visible = false;
+                    labelItems.Text = Translator.GetText("Folder empty");
+                    pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
                 case MenuType.NoAccess:
-                    SetTitle(Translator.GetText("Folder inaccessible"));
-                    labelTitle.BackColor = MenuDefines.ColorTitleWarning;
-                    pictureBoxSearch.Visible = false;
-                    textBoxSearch.Visible = false;
-                    tableLayoutPanelSearch.Visible = false;
+                    pictureBoxSearch.Visible = true;
+                    textBoxSearch.Visible = true;
+                    tableLayoutPanelSearch.Visible = true;
+                    labelFilesCount.Visible = false;
+                    labelItems.Text = Translator.GetText("Folder inaccessible");
+                    pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
                 case MenuType.Loading:
-                    SetTitle(Translator.GetText("loading"));
-                    pictureBoxSearch.Visible = false;
-                    textBoxSearch.Visible = false;
-                    tableLayoutPanelSearch.Visible = false;
+                    pictureBoxSearch.Visible = true;
+                    textBoxSearch.Visible = true;
+                    tableLayoutPanelSearch.Visible = true;
+                    labelFilesCount.Visible = false;
+                    labelItems.Text = Translator.GetText("loading");
+                    pictureBoxMenuAlwaysOpen.Visible = true;
+                    textBoxSearch.TextChanged -= TextBoxSearch_TextChanged;
                     pictureBoxOpenFolder.Visible = false;
                     pictureBoxMenuAlwaysOpen.Paint -= PictureBoxMenuAlwaysOpen_Paint;
                     pictureBoxMenuAlwaysOpen.Paint += LoadingMenu_Paint;
@@ -324,6 +308,16 @@ namespace SystemTrayMenu.UserInterface
                 default:
                     break;
             }
+        }
+
+        internal string GetSearchText()
+        {
+            return textBoxSearch.Text;
+        }
+
+        internal void SetSearchText(string userSearchText)
+        {
+            textBoxSearch.Text = userSearchText;
         }
 
         internal bool IsMouseOn(Point mousePosition)
@@ -403,9 +397,7 @@ namespace SystemTrayMenu.UserInterface
                 // Ignore start as we use predecessor
                 startLocation = StartLocation.Predecessor;
             }
-            else if (useCustomLocation &&
-                Properties.Settings.Default.CustomLocationX > 0 &&
-                Properties.Settings.Default.CustomLocationY > 0)
+            else if (useCustomLocation)
             {
                 // Do not adjust location again because Cursor.Postion changed
                 if (Tag != null)
@@ -485,7 +477,6 @@ namespace SystemTrayMenu.UserInterface
             if (menuPredecessor == this && directionToRight)
             {
                 x -= Width;
-                directionToRight = false;
             }
 
             // Calculate Y position
@@ -510,7 +501,9 @@ namespace SystemTrayMenu.UserInterface
                     // when warning the title should appear in same height as selected row
                     if (!tableLayoutPanelSearch.Visible)
                     {
-                        y += tableLayoutPanelTitle.Height;
+                        TableLayoutPanelCellPosition pos = tableLayoutPanelMenu.GetCellPosition(labelTitle);
+                        int height = tableLayoutPanelMenu.GetRowHeights()[pos.Row];
+                        y += height;
                     }
 
                     // Move vertically when out of bounds
@@ -535,14 +528,9 @@ namespace SystemTrayMenu.UserInterface
 
             if (Properties.Settings.Default.RoundCorners)
             {
-                if (NativeMethods.GetRegionRoundCorners(Width + 1, Height + 1, 15, 15, out Region regionOutline))
+                if (NativeMethods.GetRegionRoundCorners(Width + 2, Height + 2, CornerRadius, CornerRadius, out Region regionOutline))
                 {
                     Region = regionOutline;
-                }
-
-                if (NativeMethods.GetRegionRoundCorners(Width - 1, Height - 1, 15, 15, out Region region))
-                {
-                    tableLayoutPanelMenu.Region = region;
                 }
             }
         }
@@ -565,8 +553,16 @@ namespace SystemTrayMenu.UserInterface
 
         internal void SetCounts(int foldersCount, int filesCount)
         {
-            labelFoldersCount.Text = foldersCount.ToString();
-            labelFilesCount.Text = filesCount.ToString();
+            int filesAndFoldersCount = foldersCount + filesCount;
+            labelFilesCount.Text = filesAndFoldersCount.ToString();
+            if (filesAndFoldersCount == 1)
+            {
+                labelItems.Text = Translator.GetText("Item");
+            }
+            else
+            {
+                labelItems.Text = Translator.GetText("Items");
+            }
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keys)
@@ -590,57 +586,6 @@ namespace SystemTrayMenu.UserInterface
             }
 
             return base.ProcessCmdKey(ref msg, keys);
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            if (DesignMode)
-            {
-                Graphics graphics = e.Graphics;
-
-                Rectangle gradientRectangle = new(0, 0, this.Width - 1, this.Height - 1);
-
-                Brush b = new LinearGradientBrush(gradientRectangle, AppColors.DarkModeBackground, AppColors.DarkModeBackground, 0.0f);
-
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
-
-                RoundedRectangle.FillRoundedRectangle(graphics, b, gradientRectangle, CornerRadius);
-            }
-
-            base.OnPaint(e);
-        }
-
-        private void DrawForm(object pSender, EventArgs pE)
-        {
-            using (Bitmap backImage = new(this.Width, this.Height))
-            {
-                using (Graphics graphics = Graphics.FromImage(backImage))
-                {
-                    Rectangle gradientRectangle = new(0, 0, this.Width - 1, this.Height - 1);
-                    using (Brush b = new LinearGradientBrush(gradientRectangle, AppColors.DarkModeBackground, AppColors.DarkModeBackground, 0.0f))
-                    {
-                        graphics.SmoothingMode = SmoothingMode.HighQuality;
-
-                        RoundedRectangle.FillRoundedRectangle(graphics, b, gradientRectangle, CornerRadius);
-
-                        foreach (Control ctrl in this.Controls)
-                        {
-                            using (Bitmap bmp = new(ctrl.Width, ctrl.Height))
-                            {
-                                Rectangle rect = new(0, 0, ctrl.Width, ctrl.Height);
-                                ctrl.DrawToBitmap(bmp, rect);
-                                graphics.DrawImage(bmp, ctrl.Location);
-                            }
-                        }
-
-                        try
-                        {
-                            PerPixelAlphaBlend.SetBitmap(backImage, Left, Top, Handle, opacity);
-                        }
-                        catch { }; //todo disposed exception
-                    }
-                }
-            }
         }
 
         private static void SetDoubleBuffer(Control ctl, bool doubleBuffered)
@@ -738,10 +683,10 @@ namespace SystemTrayMenu.UserInterface
                 widthScrollbar = customScrollbar.Width;
             }
 
-            if (tableLayoutPanelTitle.Width > (widthIcon + widthText + widthScrollbar))
+            if (tableLayoutPanelBottom.Width > (widthIcon + widthText + widthScrollbar))
             {
-                dgv.Width = tableLayoutPanelTitle.Width - widthScrollbar;
-                dgv.Columns[1].Width = tableLayoutPanelTitle.Width - widthIcon - widthScrollbar;
+                dgv.Width = tableLayoutPanelBottom.Width - widthScrollbar;
+                dgv.Columns[1].Width = tableLayoutPanelBottom.Width - widthIcon - widthScrollbar;
             }
             else
             {
@@ -1036,9 +981,12 @@ namespace SystemTrayMenu.UserInterface
 
         private void Menu_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseDown = true;
-            lastLocation = e.Location;
-            UserDragsMenu.Invoke();
+            if (Level == 0)
+            {
+                mouseDown = true;
+                lastLocation = e.Location;
+                UserDragsMenu.Invoke();
+            }
         }
 
         private void Menu_MouseMove(object sender, MouseEventArgs e)

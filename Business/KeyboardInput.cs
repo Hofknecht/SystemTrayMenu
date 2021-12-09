@@ -368,70 +368,26 @@ namespace SystemTrayMenu.Handler
 
                     break;
                 case Keys.Left:
-                    int iMenuKeyNext = iMenuKey + 1;
-                    if (isStillSelected)
+                    bool nextMenuLocationIsLeft = menus[iMenuKey + 1] != null && menus[iMenuKey + 1].Location.X < menus[iMenuKey].Location.X;
+                    if (nextMenuLocationIsLeft)
                     {
-                        if (menuFromSelected != null &&
-                            menuFromSelected == menus[iMenuKeyNext])
-                        {
-                            dgv = menuFromSelected.GetDataGridView();
-                            if (dgv.Rows.Count > 0)
-                            {
-                                iMenuKey += 1;
-                                iRowKey = -1;
-                                if (SelectMatched(dgv, iRowKey) ||
-                                    SelectMatched(dgv, 0))
-                                {
-                                    RowDeselected(iRowBefore, dgvBefore);
-                                    SelectRow(dgv, iRowKey);
-                                    toClear = true;
-                                }
-                            }
-                        }
+                        SelectNextMenu(iRowBefore, ref dgv, dgvBefore, menuFromSelected, isStillSelected, ref toClear);
                     }
                     else
                     {
-                        iRowKey = -1;
-                        iMenuKey = menus.Where(m => m != null).Count() - 1;
-                        if (menus[iMenuKey] != null)
-                        {
-                            dgv = menus[iMenuKey].GetDataGridView();
-                            if (SelectMatched(dgv, iRowKey) ||
-                                SelectMatched(dgv, 0))
-                            {
-                                RowDeselected(iRowBefore, dgvBefore);
-                                SelectRow(dgv, iRowKey);
-                                toClear = true;
-                            }
-                        }
+                        SelectPreviousMenu(iRowBefore, ref menu, ref dgv, dgvBefore, ref toClear);
                     }
 
                     break;
                 case Keys.Right:
-                    if (iMenuKey > 0)
+                    bool nextMenuLocationIsRight = menus[iMenuKey + 1] != null && menus[iMenuKey + 1].Location.X > menus[iMenuKey].Location.X;
+                    if (nextMenuLocationIsRight)
                     {
-                        if (menus[iMenuKey - 1] != null)
-                        {
-                            iMenuKey -= 1;
-                            iRowKey = -1;
-                            menu = menus[iMenuKey];
-                            dgv = menu.GetDataGridView();
-                            if (SelectMatched(dgv, dgv.SelectedRows[0].Index) ||
-                                SelectMatched(dgv, 0))
-                            {
-                                RowDeselected(iRowBefore, dgvBefore);
-                                SelectRow(dgv, iRowKey);
-                                toClear = true;
-                            }
-                        }
+                        SelectNextMenu(iRowBefore, ref dgv, dgvBefore, menuFromSelected, isStillSelected, ref toClear);
                     }
                     else
                     {
-                        RowDeselected(iRowBefore, dgvBefore);
-                        iMenuKey = 0;
-                        iRowKey = -1;
-                        toClear = true;
-                        Cleared?.Invoke();
+                        SelectPreviousMenu(iRowBefore, ref menu, ref dgv, dgvBefore, ref toClear);
                     }
 
                     break;
@@ -474,6 +430,76 @@ namespace SystemTrayMenu.Handler
             if (isStillSelected && toClear)
             {
                 ClearIsSelectedByKey(iMenuBefore, iRowBefore);
+            }
+        }
+
+        private void SelectPreviousMenu(int iRowBefore, ref Menu menu, ref DataGridView dgv, DataGridView dgvBefore, ref bool toClear)
+        {
+            if (iMenuKey > 0)
+            {
+                if (menus[iMenuKey - 1] != null)
+                {
+                    iMenuKey -= 1;
+                    iRowKey = -1;
+                    menu = menus[iMenuKey];
+                    dgv = menu.GetDataGridView();
+                    if (SelectMatched(dgv, dgv.SelectedRows[0].Index) ||
+                        SelectMatched(dgv, 0))
+                    {
+                        RowDeselected(iRowBefore, dgvBefore);
+                        SelectRow(dgv, iRowKey);
+                        toClear = true;
+                    }
+                }
+            }
+            else
+            {
+                RowDeselected(iRowBefore, dgvBefore);
+                iMenuKey = 0;
+                iRowKey = -1;
+                toClear = true;
+                Cleared?.Invoke();
+            }
+        }
+
+        private void SelectNextMenu(int iRowBefore, ref DataGridView dgv, DataGridView dgvBefore, Menu menuFromSelected, bool isStillSelected, ref bool toClear)
+        {
+            int iMenuKeyNext = iMenuKey + 1;
+            if (isStillSelected)
+            {
+                if (menuFromSelected != null &&
+                    menuFromSelected == menus[iMenuKeyNext])
+                {
+                    dgv = menuFromSelected.GetDataGridView();
+                    if (dgv.Rows.Count > 0)
+                    {
+                        iMenuKey += 1;
+                        iRowKey = -1;
+                        if (SelectMatched(dgv, iRowKey) ||
+                            SelectMatched(dgv, 0))
+                        {
+                            RowDeselected(iRowBefore, dgvBefore);
+                            SelectRow(dgv, iRowKey);
+                            toClear = true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                iRowKey = -1;
+                iMenuKey = menus.Where(m => m != null).Count() - 1;
+                if (menus[iMenuKey] != null)
+                {
+                    dgv = menus[iMenuKey].GetDataGridView();
+                    if (SelectMatched(dgv, iRowKey) ||
+                        SelectMatched(dgv, 0))
+                    {
+                        RowDeselected(iRowBefore, dgvBefore);
+                        SelectRow(dgv, iRowKey);
+                        toClear = true;
+                    }
+                }
             }
         }
 

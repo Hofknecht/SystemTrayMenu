@@ -417,4 +417,10 @@
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Custom (drag it to the appropriate place)</value>
   </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
 </root>

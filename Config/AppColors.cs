@@ -64,14 +64,6 @@ namespace SystemTrayMenu
 
         public static Color DarkModeOpenFolderBorder { get; set; }
 
-        public static Color Warning { get; set; }
-
-        public static Color DarkModeWarning { get; set; }
-
-        public static Color Title { get; set; }
-
-        public static Color DarkModeTitle { get; set; }
-
         public static Color Background { get; set; }
 
         public static Color DarkModeBackground { get; set; }

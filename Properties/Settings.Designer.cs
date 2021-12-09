@@ -366,7 +366,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("600")]
         public int CustomLocationX
         {
             get
@@ -382,7 +382,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("600")]
         public int CustomLocationY
         {
             get
@@ -616,70 +616,6 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["ColorDarkModeOpenFolderBorder"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("#FFCCE8")]
-        public string ColorWarning
-        {
-            get
-            {
-                return ((string)(this["ColorWarning"]));
-            }
-            set
-            {
-                this["ColorWarning"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("#4B1834")]
-        public string ColorDarkModeWarning
-        {
-            get
-            {
-                return ((string)(this["ColorDarkModeWarning"]));
-            }
-            set
-            {
-                this["ColorDarkModeWarning"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("#f0ffff")]
-        public string ColorTitle
-        {
-            get
-            {
-                return ((string)(this["ColorTitle"]));
-            }
-            set
-            {
-                this["ColorTitle"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("#2B2B2B")]
-        public string ColorDarkModeTitle
-        {
-            get
-            {
-                return ((string)(this["ColorDarkModeTitle"]));
-            }
-            set
-            {
-                this["ColorDarkModeTitle"] = value;
             }
         }
 

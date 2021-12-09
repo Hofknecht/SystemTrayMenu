@@ -72,51 +72,6 @@ namespace SystemTrayMenu
             }
         }
 
-        public static Color ColorTitleWarning
-        {
-            get
-            {
-                if (Config.IsDarkMode())
-                {
-                    return AppColors.DarkModeWarning;
-                }
-                else
-                {
-                    return AppColors.Warning;
-                }
-            }
-        }
-
-        public static Color ColorTitleSelected
-        {
-            get
-            {
-                if (Config.IsDarkMode())
-                {
-                    return AppColors.DarkModeSelecetedItem;
-                }
-                else
-                {
-                    return AppColors.SelectedItem;
-                }
-            }
-        }
-
-        public static Color ColorTitleBackground
-        {
-            get
-            {
-                if (Config.IsDarkMode())
-                {
-                    return AppColors.DarkModeTitle;
-                }
-                else
-                {
-                    return AppColors.Title;
-                }
-            }
-        }
-
         public static Color ColorIcons
         {
             get

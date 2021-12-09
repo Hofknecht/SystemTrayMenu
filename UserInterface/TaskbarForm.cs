@@ -13,6 +13,8 @@ namespace SystemTrayMenu.UserInterface
         {
             InitializeComponent();
             Icon = Config.GetAppIcon();
+            MaximumSize = new Size(10, 1);
+            Opacity = 0.01f;
             SetLocation();
         }
 

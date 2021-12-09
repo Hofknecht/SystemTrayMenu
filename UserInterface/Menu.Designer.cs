@@ -18,8 +18,6 @@
                 components.Dispose();
             }
 
-            drawTimer.Tick += DrawForm;
-            drawTimer.Dispose();
             timerUpdateIcons.Stop();
             timerUpdateIcons.Dispose();
             fading.Dispose();
@@ -40,31 +38,28 @@
             this.tableLayoutPanelDgvAndScrollbar = new System.Windows.Forms.TableLayoutPanel();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanelSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.labelFilesCount = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.pictureBoxSearch = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFilesCount = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFoldersCount = new System.Windows.Forms.PictureBox();
-            this.labelFoldersCount = new System.Windows.Forms.Label();
+            this.labelFilesCount = new System.Windows.Forms.Label();
+            this.labelItems = new System.Windows.Forms.Label();
             this.tableLayoutPanelMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxOpenFolder = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMenuAlwaysOpen = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
+            this.panelLine = new System.Windows.Forms.Panel();
+            this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBoxRestart = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMenuAlwaysOpen = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOpenFolder = new System.Windows.Forms.PictureBox();
             this.timerUpdateIcons = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanelDgvAndScrollbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.tableLayoutPanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFilesCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoldersCount)).BeginInit();
             this.tableLayoutPanelMenu.SuspendLayout();
-            this.tableLayoutPanelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuAlwaysOpen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
+            this.tableLayoutPanelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuAlwaysOpen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolder)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanelDgvAndScrollbar
@@ -76,7 +71,7 @@
             this.tableLayoutPanelDgvAndScrollbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelDgvAndScrollbar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelDgvAndScrollbar.Controls.Add(this.dgv, 0, 0);
-            this.tableLayoutPanelDgvAndScrollbar.Location = new System.Drawing.Point(0, 22);
+            this.tableLayoutPanelDgvAndScrollbar.Location = new System.Drawing.Point(3, 25);
             this.tableLayoutPanelDgvAndScrollbar.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelDgvAndScrollbar.Name = "tableLayoutPanelDgvAndScrollbar";
             this.tableLayoutPanelDgvAndScrollbar.RowCount = 1;
@@ -123,38 +118,23 @@
             this.tableLayoutPanelSearch.AutoSize = true;
             this.tableLayoutPanelSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelSearch.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanelSearch.ColumnCount = 6;
+            this.tableLayoutPanelSearch.ColumnCount = 2;
             this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearch.Controls.Add(this.labelFilesCount, 5, 0);
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelSearch.Controls.Add(this.textBoxSearch, 1, 0);
             this.tableLayoutPanelSearch.Controls.Add(this.pictureBoxSearch, 0, 0);
-            this.tableLayoutPanelSearch.Controls.Add(this.pictureBoxFilesCount, 4, 0);
-            this.tableLayoutPanelSearch.Controls.Add(this.pictureBoxFoldersCount, 2, 0);
-            this.tableLayoutPanelSearch.Controls.Add(this.labelFoldersCount, 3, 0);
-            this.tableLayoutPanelSearch.Location = new System.Drawing.Point(0, 63);
-            this.tableLayoutPanelSearch.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.tableLayoutPanelSearch.Location = new System.Drawing.Point(3, 0);
+            this.tableLayoutPanelSearch.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelSearch.Name = "tableLayoutPanelSearch";
             this.tableLayoutPanelSearch.RowCount = 1;
             this.tableLayoutPanelSearch.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearch.Size = new System.Drawing.Size(129, 22);
+            this.tableLayoutPanelSearch.Size = new System.Drawing.Size(218, 22);
             this.tableLayoutPanelSearch.TabIndex = 5;
             this.tableLayoutPanelSearch.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
-            // 
-            // labelFilesCount
-            // 
-            this.labelFilesCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelFilesCount.AutoSize = true;
-            this.labelFilesCount.Location = new System.Drawing.Point(104, 3);
-            this.labelFilesCount.Margin = new System.Windows.Forms.Padding(0);
-            this.labelFilesCount.Name = "labelFilesCount";
-            this.labelFilesCount.Size = new System.Drawing.Size(25, 15);
-            this.labelFilesCount.TabIndex = 2;
-            this.labelFilesCount.Text = "999";
             // 
             // textBoxSearch
             // 
@@ -166,7 +146,7 @@
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.textBoxSearch.MaxLength = 37;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(15, 15);
+            this.textBoxSearch.Size = new System.Drawing.Size(190, 15);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
@@ -183,44 +163,30 @@
             this.pictureBoxSearch.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxSearch_Paint);
             this.pictureBoxSearch.Resize += new System.EventHandler(this.PictureBox_Resize);
             // 
-            // pictureBoxFilesCount
+            // labelFilesCount
             // 
-            this.pictureBoxFilesCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBoxFilesCount.BackColor = System.Drawing.Color.White;
-            this.pictureBoxFilesCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxFilesCount.Location = new System.Drawing.Point(86, 2);
-            this.pictureBoxFilesCount.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxFilesCount.Name = "pictureBoxFilesCount";
-            this.pictureBoxFilesCount.Size = new System.Drawing.Size(18, 18);
-            this.pictureBoxFilesCount.TabIndex = 1;
-            this.pictureBoxFilesCount.TabStop = false;
-            this.pictureBoxFilesCount.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxFilesCount_Paint);
-            this.pictureBoxFilesCount.Resize += new System.EventHandler(this.PictureBox_Resize);
+            this.labelFilesCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelFilesCount.AutoSize = true;
+            this.labelFilesCount.BackColor = System.Drawing.Color.Transparent;
+            this.labelFilesCount.ForeColor = System.Drawing.Color.White;
+            this.labelFilesCount.Location = new System.Drawing.Point(10, 3);
+            this.labelFilesCount.Margin = new System.Windows.Forms.Padding(0);
+            this.labelFilesCount.Name = "labelFilesCount";
+            this.labelFilesCount.Size = new System.Drawing.Size(25, 15);
+            this.labelFilesCount.TabIndex = 2;
+            this.labelFilesCount.Text = "999";
             // 
-            // pictureBoxFoldersCount
+            // labelItems
             // 
-            this.pictureBoxFoldersCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBoxFoldersCount.BackColor = System.Drawing.Color.White;
-            this.pictureBoxFoldersCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxFoldersCount.Location = new System.Drawing.Point(43, 2);
-            this.pictureBoxFoldersCount.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxFoldersCount.Name = "pictureBoxFoldersCount";
-            this.pictureBoxFoldersCount.Size = new System.Drawing.Size(18, 18);
-            this.pictureBoxFoldersCount.TabIndex = 1;
-            this.pictureBoxFoldersCount.TabStop = false;
-            this.pictureBoxFoldersCount.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxFoldersCount_Paint);
-            this.pictureBoxFoldersCount.Resize += new System.EventHandler(this.PictureBox_Resize);
-            // 
-            // labelFoldersCount
-            // 
-            this.labelFoldersCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelFoldersCount.AutoSize = true;
-            this.labelFoldersCount.Location = new System.Drawing.Point(61, 3);
-            this.labelFoldersCount.Margin = new System.Windows.Forms.Padding(0);
-            this.labelFoldersCount.Name = "labelFoldersCount";
-            this.labelFoldersCount.Size = new System.Drawing.Size(25, 15);
-            this.labelFoldersCount.TabIndex = 2;
-            this.labelFoldersCount.Text = "999";
+            this.labelItems.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelItems.AutoSize = true;
+            this.labelItems.ForeColor = System.Drawing.Color.White;
+            this.labelItems.Location = new System.Drawing.Point(35, 3);
+            this.labelItems.Margin = new System.Windows.Forms.Padding(0);
+            this.labelItems.Name = "labelItems";
+            this.labelItems.Size = new System.Drawing.Size(61, 15);
+            this.labelItems.TabIndex = 2;
+            this.labelItems.Text = "labelItems";
             // 
             // tableLayoutPanelMenu
             // 
@@ -228,84 +194,87 @@
             this.tableLayoutPanelMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelMenu.ColumnCount = 1;
             this.tableLayoutPanelMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelTitle, 0, 0);
-            this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelSearch, 0, 2);
-            this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelDgvAndScrollbar, 0, 1);
-            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelSearch, 0, 1);
+            this.tableLayoutPanelMenu.Controls.Add(this.panelLine, 0, 2);
+            this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelBottom, 0, 6);
+            this.tableLayoutPanelMenu.Controls.Add(this.tableLayoutPanelDgvAndScrollbar, 0, 4);
+            this.tableLayoutPanelMenu.Location = new System.Drawing.Point(1, 1);
             this.tableLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
-            this.tableLayoutPanelMenu.RowCount = 3;
+            this.tableLayoutPanelMenu.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.tableLayoutPanelMenu.RowCount = 7;
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(129, 85);
+            this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
+            this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(224, 89);
             this.tableLayoutPanelMenu.TabIndex = 4;
             this.tableLayoutPanelMenu.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
             // 
-            // tableLayoutPanelTitle
+            // panelLine
             // 
-            this.tableLayoutPanelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelTitle.AutoSize = true;
-            this.tableLayoutPanelTitle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelTitle.ColumnCount = 5;
-            this.tableLayoutPanelTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTitle.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTitle.Controls.Add(this.pictureBoxOpenFolder, 0, 0);
-            this.tableLayoutPanelTitle.Controls.Add(this.pictureBoxMenuAlwaysOpen, 2, 0);
-            this.tableLayoutPanelTitle.Controls.Add(this.pictureBoxSettings, 3, 0);
-            this.tableLayoutPanelTitle.Controls.Add(this.pictureBoxRestart, 4, 0);
-            this.tableLayoutPanelTitle.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelTitle.Name = "tableLayoutPanelTitle";
-            this.tableLayoutPanelTitle.RowCount = 1;
-            this.tableLayoutPanelTitle.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTitle.Size = new System.Drawing.Size(129, 22);
-            this.tableLayoutPanelTitle.TabIndex = 5;
-            this.tableLayoutPanelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseDown);
-            this.tableLayoutPanelTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseMove);
-            this.tableLayoutPanelTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Menu_MouseUp);
+            this.panelLine.BackColor = System.Drawing.Color.Silver;
+            this.panelLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLine.Location = new System.Drawing.Point(3, 22);
+            this.panelLine.Margin = new System.Windows.Forms.Padding(0);
+            this.panelLine.Name = "panelLine";
+            this.panelLine.Size = new System.Drawing.Size(218, 1);
+            this.panelLine.TabIndex = 6;
             // 
-            // pictureBoxOpenFolder
+            // tableLayoutPanelBottom
             // 
-            this.pictureBoxOpenFolder.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxOpenFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxOpenFolder.Location = new System.Drawing.Point(1, 1);
-            this.pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBoxOpenFolder.Name = "pictureBoxOpenFolder";
-            this.pictureBoxOpenFolder.Size = new System.Drawing.Size(20, 20);
-            this.pictureBoxOpenFolder.TabIndex = 1;
-            this.pictureBoxOpenFolder.TabStop = false;
-            this.pictureBoxOpenFolder.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxOpenFolder_Paint);
-            this.pictureBoxOpenFolder.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOpenFolder_Click);
-            this.pictureBoxOpenFolder.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
-            this.pictureBoxOpenFolder.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
-            this.pictureBoxOpenFolder.Resize += new System.EventHandler(this.PictureBox_Resize);
+            this.tableLayoutPanelBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelBottom.AutoSize = true;
+            this.tableLayoutPanelBottom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelBottom.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanelBottom.ColumnCount = 9;
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxRestart, 7, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxSettings, 6, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxMenuAlwaysOpen, 5, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxOpenFolder, 4, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.labelFilesCount, 1, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.labelItems, 2, 0);
+            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 67);
+            this.tableLayoutPanelBottom.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
+            this.tableLayoutPanelBottom.RowCount = 1;
+            this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(218, 22);
+            this.tableLayoutPanelBottom.TabIndex = 5;
             // 
-            // pictureBoxMenuAlwaysOpen
+            // pictureBoxRestart
             // 
-            this.pictureBoxMenuAlwaysOpen.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxMenuAlwaysOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxMenuAlwaysOpen.Location = new System.Drawing.Point(64, 1);
-            this.pictureBoxMenuAlwaysOpen.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBoxMenuAlwaysOpen.Name = "pictureBoxMenuAlwaysOpen";
-            this.pictureBoxMenuAlwaysOpen.Size = new System.Drawing.Size(20, 20);
-            this.pictureBoxMenuAlwaysOpen.TabIndex = 1;
-            this.pictureBoxMenuAlwaysOpen.TabStop = false;
-            this.pictureBoxMenuAlwaysOpen.Click += new System.EventHandler(this.PictureBoxMenuAlwaysOpen_Click);
-            this.pictureBoxMenuAlwaysOpen.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxMenuAlwaysOpen_Paint);
-            this.pictureBoxMenuAlwaysOpen.DoubleClick += new System.EventHandler(this.PictureBoxMenuAlwaysOpen_Click);
-            this.pictureBoxMenuAlwaysOpen.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
-            this.pictureBoxMenuAlwaysOpen.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
-            this.pictureBoxMenuAlwaysOpen.Resize += new System.EventHandler(this.PictureBox_Resize);
+            this.pictureBoxRestart.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxRestart.Location = new System.Drawing.Point(187, 1);
+            this.pictureBoxRestart.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBoxRestart.Name = "pictureBoxRestart";
+            this.pictureBoxRestart.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxRestart.TabIndex = 3;
+            this.pictureBoxRestart.TabStop = false;
+            this.pictureBoxRestart.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxRestart_Paint);
+            this.pictureBoxRestart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxRestart_MouseClick);
+            this.pictureBoxRestart.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.pictureBoxRestart.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
+            this.pictureBoxRestart.Resize += new System.EventHandler(this.PictureBox_Resize);
             // 
             // pictureBoxSettings
             // 
             this.pictureBoxSettings.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxSettings.Location = new System.Drawing.Point(86, 1);
+            this.pictureBoxSettings.Location = new System.Drawing.Point(165, 1);
             this.pictureBoxSettings.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBoxSettings.Name = "pictureBoxSettings";
             this.pictureBoxSettings.Size = new System.Drawing.Size(20, 20);
@@ -317,21 +286,39 @@
             this.pictureBoxSettings.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
             this.pictureBoxSettings.Resize += new System.EventHandler(this.PictureBox_Resize);
             // 
-            // pictureBoxRestart
+            // pictureBoxMenuAlwaysOpen
             // 
-            this.pictureBoxRestart.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxRestart.Location = new System.Drawing.Point(108, 1);
-            this.pictureBoxRestart.Margin = new System.Windows.Forms.Padding(1);
-            this.pictureBoxRestart.Name = "pictureBoxRestart";
-            this.pictureBoxRestart.Size = new System.Drawing.Size(20, 20);
-            this.pictureBoxRestart.TabIndex = 3;
-            this.pictureBoxRestart.TabStop = false;
-            this.pictureBoxRestart.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxRestart_Paint);
-            this.pictureBoxRestart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxRestart_MouseClick);
-            this.pictureBoxRestart.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
-            this.pictureBoxRestart.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
-            this.pictureBoxRestart.Resize += new System.EventHandler(this.PictureBox_Resize);
+            this.pictureBoxMenuAlwaysOpen.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMenuAlwaysOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxMenuAlwaysOpen.Location = new System.Drawing.Point(143, 1);
+            this.pictureBoxMenuAlwaysOpen.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBoxMenuAlwaysOpen.Name = "pictureBoxMenuAlwaysOpen";
+            this.pictureBoxMenuAlwaysOpen.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxMenuAlwaysOpen.TabIndex = 1;
+            this.pictureBoxMenuAlwaysOpen.TabStop = false;
+            this.pictureBoxMenuAlwaysOpen.Click += new System.EventHandler(this.PictureBoxMenuAlwaysOpen_Click);
+            this.pictureBoxMenuAlwaysOpen.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxMenuAlwaysOpen_Paint);
+            this.pictureBoxMenuAlwaysOpen.DoubleClick += new System.EventHandler(this.PictureBoxMenuAlwaysOpen_Click);
+            this.pictureBoxMenuAlwaysOpen.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.pictureBoxMenuAlwaysOpen.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
+            this.pictureBoxMenuAlwaysOpen.Resize += new System.EventHandler(this.PictureBox_Resize);
+
+            // 
+            // pictureBoxOpenFolder
+            // 
+            this.pictureBoxOpenFolder.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxOpenFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxOpenFolder.Location = new System.Drawing.Point(121, 1);
+            this.pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBoxOpenFolder.Name = "pictureBoxOpenFolder";
+            this.pictureBoxOpenFolder.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxOpenFolder.TabIndex = 1;
+            this.pictureBoxOpenFolder.TabStop = false;
+            this.pictureBoxOpenFolder.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxOpenFolder_Paint);
+            this.pictureBoxOpenFolder.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOpenFolder_Click);
+            this.pictureBoxOpenFolder.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.pictureBoxOpenFolder.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
+            this.pictureBoxOpenFolder.Resize += new System.EventHandler(this.PictureBox_Resize);
             //
             // Controls like the scrollbar are removed when open the designer
             // When adding after InitializeComponent(), then e.g. scrollbar on high dpi not more working
@@ -353,7 +340,8 @@
             this.Controls.Add(this.tableLayoutPanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
-            this.Padding = new System.Windows.Forms.Padding(4);
+            this.Opacity = 0.01D;
+            this.Padding = new System.Windows.Forms.Padding(1);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SystemTrayMenu";
@@ -363,15 +351,14 @@
             this.tableLayoutPanelSearch.ResumeLayout(false);
             this.tableLayoutPanelSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFilesCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoldersCount)).EndInit();
             this.tableLayoutPanelMenu.ResumeLayout(false);
             this.tableLayoutPanelMenu.PerformLayout();
-            this.tableLayoutPanelTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuAlwaysOpen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
+            this.tableLayoutPanelBottom.ResumeLayout(false);
+            this.tableLayoutPanelBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuAlwaysOpen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,15 +375,14 @@
         private System.Windows.Forms.PictureBox pictureBoxSearch;
         private UserInterface.CustomScrollbar customScrollbar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenu;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTitle;
         private System.Windows.Forms.PictureBox pictureBoxOpenFolder;
         private System.Windows.Forms.PictureBox pictureBoxMenuAlwaysOpen;
         private System.Windows.Forms.Label labelFilesCount;
-        private System.Windows.Forms.PictureBox pictureBoxFilesCount;
-        private System.Windows.Forms.PictureBox pictureBoxFoldersCount;
-        private System.Windows.Forms.Label labelFoldersCount;
+        private System.Windows.Forms.Label labelItems;
         private System.Windows.Forms.Timer timerUpdateIcons;
         private System.Windows.Forms.PictureBox pictureBoxSettings;
         private System.Windows.Forms.PictureBox pictureBoxRestart;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBottom;
+        private System.Windows.Forms.Panel panelLine;
     }
 }
