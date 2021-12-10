@@ -135,6 +135,7 @@ namespace SystemTrayMenu.UserInterface
                 ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
                 buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' folder");
                 buttonDefaultFolders.Text = Translator.GetText("Default");
+                checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate shortcuts to drives");
                 checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 groupBoxClick.Text = Translator.GetText("Click");
@@ -298,6 +299,7 @@ namespace SystemTrayMenu.UserInterface
                 Log.Warn("PathsAddToMainMenu", ex);
             }
 
+            checkBoxGenerateShortcutsToDrives.Checked = Settings.Default.GenerateShortcutsToDrives;
             checkBoxCacheMainMenu.Checked = Settings.Default.CacheMainMenu;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
@@ -713,6 +715,7 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
+            Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.Checked;
             Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
             Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
 
@@ -909,6 +912,7 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonClearFolders_Click(object sender, EventArgs e)
         {
             dataGridViewFolders.Rows.Clear();
+            checkBoxGenerateShortcutsToDrives.Checked = false;
             checkBoxCacheMainMenu.Checked = true;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
         }

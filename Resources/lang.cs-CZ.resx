@@ -417,4 +417,7 @@
   <data name="elements" xml:space="preserve">
     <value>elementy</value>
   </data>
+  <data name="Generate shortcuts to drives" xml:space="preserve">
+    <value>Vygenerujte zástupce jednotek</value>
+  </data>
 </root>

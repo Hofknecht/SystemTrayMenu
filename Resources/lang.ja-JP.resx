@@ -417,4 +417,7 @@
   <data name="elements" xml:space="preserve">
     <value>要素</value>
   </data>
+  <data name="Generate shortcuts to drives" xml:space="preserve">
+    <value>ドライブへのショートカットを生成する</value>
+  </data>
 </root>

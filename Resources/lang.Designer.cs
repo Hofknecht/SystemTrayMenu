@@ -457,6 +457,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate shortcuts to drives.
+        /// </summary>
+        internal static string Generate_shortcuts_to_drives {
+            get {
+                return ResourceManager.GetString("Generate shortcuts to drives", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help / FAQ.
         /// </summary>
         internal static string HelpFAQ {

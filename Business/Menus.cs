@@ -693,6 +693,11 @@ namespace SystemTrayMenu.Business
                 level = rowData.MenuLevel + 1;
             }
 
+            if (Properties.Settings.Default.GenerateShortcutsToDrives)
+            {
+                GenerateDriveShortcuts.Start();
+            }
+
             MenuData menuData = GetData((BackgroundWorker)senderDoWork, path, level);
             menuData.RowDataParent = rowData;
             eDoWork.Result = menuData;

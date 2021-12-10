@@ -417,4 +417,7 @@
   <data name="elements" xml:space="preserve">
     <value>các yếu tố</value>
   </data>
+  <data name="Generate shortcuts to drives" xml:space="preserve">
+    <value>Tạo lối tắt cho ổ đĩa</value>
+  </data>
 </root>

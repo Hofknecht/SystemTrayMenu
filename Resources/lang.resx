@@ -417,4 +417,7 @@
   <data name="elements" xml:space="preserve">
     <value>items</value>
   </data>
+  <data name="Generate shortcuts to drives" xml:space="preserve">
+    <value>Generate shortcuts to drives</value>
+  </data>
 </root>

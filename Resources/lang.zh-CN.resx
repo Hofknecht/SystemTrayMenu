@@ -417,4 +417,7 @@
   <data name="elements" xml:space="preserve">
     <value>元素</value>
   </data>
+  <data name="Generate shortcuts to drives" xml:space="preserve">
+    <value>生成驱动器的快捷方式</value>
+  </data>
 </root>

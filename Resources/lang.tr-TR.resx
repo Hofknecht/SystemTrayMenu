@@ -417,4 +417,7 @@
   <data name="elements" xml:space="preserve">
     <value>elementler</value>
   </data>
+  <data name="Generate shortcuts to drives" xml:space="preserve">
+    <value>Sürücüler için kısayollar oluşturun</value>
+  </data>
 </root>
