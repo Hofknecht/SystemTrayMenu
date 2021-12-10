@@ -122,7 +122,6 @@ namespace SystemTrayMenu.UserInterface
                 Scaling.Scale(pictureBoxSearch.Height));
 
             labelItems.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelFilesCount.Font = new Font("Segoe UI", 7F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, 0);
 
             // tableLayoutPanelDgvAndScrollbar.ResumeLayout(false);
             // ((System.ComponentModel.ISupportInitialize)dgv).EndInit();

@@ -96,7 +96,6 @@ namespace SystemTrayMenu.UserInterface
 
             ColorConverter colorConverter = new();
             labelItems.ForeColor = MenuDefines.ColorIcons;
-            labelFilesCount.ForeColor = MenuDefines.ColorIcons;
 
             if (backColor.R == 0)
             {
@@ -147,7 +146,6 @@ namespace SystemTrayMenu.UserInterface
             tableLayoutPanelMenu.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelDgvAndScrollbar.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelBottom.MouseEnter += ControlsMouseEnter;
-            labelFilesCount.MouseEnter += ControlsMouseEnter;
             labelItems.MouseEnter += ControlsMouseEnter;
             void ControlsMouseEnter(object sender, EventArgs e)
             {
@@ -166,7 +164,6 @@ namespace SystemTrayMenu.UserInterface
             tableLayoutPanelMenu.MouseLeave += ControlsMouseLeave;
             tableLayoutPanelDgvAndScrollbar.MouseLeave += ControlsMouseLeave;
             tableLayoutPanelBottom.MouseLeave += ControlsMouseLeave;
-            labelFilesCount.MouseLeave += ControlsMouseLeave;
             labelItems.MouseLeave += ControlsMouseLeave;
             void ControlsMouseLeave(object sender, EventArgs e)
             {
@@ -278,7 +275,6 @@ namespace SystemTrayMenu.UserInterface
                     pictureBoxSearch.Visible = true;
                     textBoxSearch.Visible = true;
                     tableLayoutPanelSearch.Visible = true;
-                    labelFilesCount.Visible = false;
                     labelItems.Text = Translator.GetText("Folder empty");
                     pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
@@ -286,7 +282,6 @@ namespace SystemTrayMenu.UserInterface
                     pictureBoxSearch.Visible = true;
                     textBoxSearch.Visible = true;
                     tableLayoutPanelSearch.Visible = true;
-                    labelFilesCount.Visible = false;
                     labelItems.Text = Translator.GetText("Folder inaccessible");
                     pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
@@ -294,7 +289,6 @@ namespace SystemTrayMenu.UserInterface
                     pictureBoxSearch.Visible = true;
                     textBoxSearch.Visible = true;
                     tableLayoutPanelSearch.Visible = true;
-                    labelFilesCount.Visible = false;
                     labelItems.Text = Translator.GetText("loading");
                     pictureBoxMenuAlwaysOpen.Visible = true;
                     textBoxSearch.TextChanged -= TextBoxSearch_TextChanged;
@@ -528,9 +522,14 @@ namespace SystemTrayMenu.UserInterface
 
             if (Properties.Settings.Default.RoundCorners)
             {
-                if (NativeMethods.GetRegionRoundCorners(Width + 2, Height + 2, CornerRadius, CornerRadius, out Region regionOutline))
+                if (NativeMethods.GetRegionRoundCorners(Width + 1, Height + 1, CornerRadius, CornerRadius, out Region regionOutline))
                 {
                     Region = regionOutline;
+                }
+
+                if (NativeMethods.GetRegionRoundCorners(Width - 1, Height - 1, CornerRadius, CornerRadius, out Region region))
+                {
+                    tableLayoutPanelMenu.Region = region;
                 }
             }
         }
@@ -554,15 +553,8 @@ namespace SystemTrayMenu.UserInterface
         internal void SetCounts(int foldersCount, int filesCount)
         {
             int filesAndFoldersCount = foldersCount + filesCount;
-            labelFilesCount.Text = filesAndFoldersCount.ToString();
-            if (filesAndFoldersCount == 1)
-            {
-                labelItems.Text = Translator.GetText("element");
-            }
-            else
-            {
-                labelItems.Text = Translator.GetText("elements");
-            }
+            string elements = filesAndFoldersCount == 1 ? "element" : "elements";
+            labelItems.Text = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keys)

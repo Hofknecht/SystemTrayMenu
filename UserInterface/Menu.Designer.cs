@@ -40,7 +40,6 @@
             this.tableLayoutPanelSearch = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.pictureBoxSearch = new System.Windows.Forms.PictureBox();
-            this.labelFilesCount = new System.Windows.Forms.Label();
             this.labelItems = new System.Windows.Forms.Label();
             this.tableLayoutPanelMenu = new System.Windows.Forms.TableLayoutPanel();
             this.panelLine = new System.Windows.Forms.Panel();
@@ -163,30 +162,17 @@
             this.pictureBoxSearch.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxSearch_Paint);
             this.pictureBoxSearch.Resize += new System.EventHandler(this.PictureBox_Resize);
             // 
-            // labelFilesCount
-            // 
-            this.labelFilesCount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelFilesCount.AutoSize = true;
-            this.labelFilesCount.BackColor = System.Drawing.Color.Transparent;
-            this.labelFilesCount.ForeColor = System.Drawing.Color.White;
-            this.labelFilesCount.Location = new System.Drawing.Point(10, 3);
-            this.labelFilesCount.Margin = new System.Windows.Forms.Padding(0);
-            this.labelFilesCount.Name = "labelFilesCount";
-            this.labelFilesCount.Size = new System.Drawing.Size(25, 15);
-            this.labelFilesCount.TabIndex = 2;
-            this.labelFilesCount.Text = "999";
-            // 
             // labelItems
             // 
             this.labelItems.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelItems.AutoSize = true;
             this.labelItems.ForeColor = System.Drawing.Color.White;
-            this.labelItems.Location = new System.Drawing.Point(35, 3);
+            this.labelItems.Location = new System.Drawing.Point(10, 3);
             this.labelItems.Margin = new System.Windows.Forms.Padding(0);
             this.labelItems.Name = "labelItems";
-            this.labelItems.Size = new System.Drawing.Size(61, 15);
+            this.labelItems.Size = new System.Drawing.Size(45, 15);
             this.labelItems.TabIndex = 2;
-            this.labelItems.Text = "labelItems";
+            this.labelItems.Text = "0 items";
             // 
             // tableLayoutPanelMenu
             // 
@@ -230,9 +216,8 @@
             this.tableLayoutPanelBottom.AutoSize = true;
             this.tableLayoutPanelBottom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelBottom.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanelBottom.ColumnCount = 9;
+            this.tableLayoutPanelBottom.ColumnCount = 8;
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -240,12 +225,12 @@
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxRestart, 7, 0);
-            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxSettings, 6, 0);
-            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxMenuAlwaysOpen, 5, 0);
-            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxOpenFolder, 4, 0);
-            this.tableLayoutPanelBottom.Controls.Add(this.labelFilesCount, 1, 0);
-            this.tableLayoutPanelBottom.Controls.Add(this.labelItems, 2, 0);
+            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxRestart, 6, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxSettings, 5, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxMenuAlwaysOpen, 4, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.pictureBoxOpenFolder, 3, 0);
+            this.tableLayoutPanelBottom.Controls.Add(this.labelItems, 1, 0);
             this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 67);
             this.tableLayoutPanelBottom.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
@@ -302,7 +287,6 @@
             this.pictureBoxMenuAlwaysOpen.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
             this.pictureBoxMenuAlwaysOpen.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
             this.pictureBoxMenuAlwaysOpen.Resize += new System.EventHandler(this.PictureBox_Resize);
-
             // 
             // pictureBoxOpenFolder
             // 
@@ -377,7 +361,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMenu;
         private System.Windows.Forms.PictureBox pictureBoxOpenFolder;
         private System.Windows.Forms.PictureBox pictureBoxMenuAlwaysOpen;
-        private System.Windows.Forms.Label labelFilesCount;
         private System.Windows.Forms.Label labelItems;
         private System.Windows.Forms.Timer timerUpdateIcons;
         private System.Windows.Forms.PictureBox pictureBoxSettings;
