@@ -147,8 +147,12 @@ Thanks for ideas, reporting issues and contributing!
 #235 #242 243 #247 Tom, 
 #237 Torsten S.,
 #240 [video](https://www.youtube.com/watch?v=xsi4Uv3-ZLg) [Patrick](https://www.youtube.com/user/DyRexLP),
-#244 Gunter D.
-#246 [MACE4GITHUB](https://github.com/MACE4GITHUB), and many more ... (please give us a hint if we missed someone)
+#244 Gunter D.,
+#246 [MACE4GITHUB](https://github.com/MACE4GITHUB),
+#259 [vanjac](https://github.com/vanjac),
+#262 [terencemcdonnell](https://github.com/terencemcdonnell),
+
+
 
 Donations
 ------------------
