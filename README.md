@@ -31,9 +31,8 @@ SystemTrayMenu is a free, open-source start menu alternative for Microsoft Windo
 
 We are using C# and .NET 6.
 
-![20200812_125923](https://user-images.githubusercontent.com/52528841/90009201-ee0c9680-dc9d-11ea-9b8a-b34108152f9b.gif)
-![20200812_130823](https://user-images.githubusercontent.com/52528841/90009212-f1078700-dc9d-11ea-943a-d5fde4d6f2dc.gif)
-[![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://img.youtube.com/vi/xsi4Uv3-ZLg/0.jpg)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
+![20211211_170852](https://user-images.githubusercontent.com/52528841/145683690-5b25bc43-a497-4cf0-9c16-947a2d2dcd77.gif)
+[![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://user-images.githubusercontent.com/52528841/145683817-46fb790d-6fe0-4bc8-8944-24e8600029f9.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
 
 Download the latest official version:  
 https://github.com/Hofknecht/SystemTrayMenu/releases
