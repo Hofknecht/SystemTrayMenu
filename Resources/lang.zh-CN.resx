@@ -420,4 +420,7 @@
   <data name="Generate shortcuts to drives" xml:space="preserve">
     <value>生成驱动器的快捷方式</value>
   </data>
+  <data name="Cache" xml:space="preserve">
+    <value>缓存</value>
+  </data>
 </root>

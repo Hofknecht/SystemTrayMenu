@@ -420,4 +420,7 @@
   <data name="Generate shortcuts to drives" xml:space="preserve">
     <value>ایجاد میانبر برای درایوها</value>
   </data>
+  <data name="Cache" xml:space="preserve">
+    <value>حافظه پنهان</value>
+  </data>
 </root>

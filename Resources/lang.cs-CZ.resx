@@ -420,4 +420,7 @@
   <data name="Generate shortcuts to drives" xml:space="preserve">
     <value>Vygenerujte zástupce jednotek</value>
   </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Mezipaměti</value>
+  </data>
 </root>

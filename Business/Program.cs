@@ -26,7 +26,7 @@ namespace SystemTrayMenu
                 Config.LoadOrSetByUser();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.ThreadException += (s, t) => AskUserSendError(t.Exception);
+                Application.ThreadException += (sender, e) => AskUserSendError(e.Exception);
                 Scaling.Initialize();
                 FolderOptions.Initialize();
 

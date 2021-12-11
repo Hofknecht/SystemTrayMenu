@@ -332,7 +332,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (title.Length > MenuDefines.LengthMax)
                 {
-                    title = $"{title.Substring(0, MenuDefines.LengthMax)}...";
+                    title = $"{title[..MenuDefines.LengthMax]}...";
                 }
 
                 labelTitle.Text = title;

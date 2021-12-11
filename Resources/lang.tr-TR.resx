@@ -420,4 +420,7 @@
   <data name="Generate shortcuts to drives" xml:space="preserve">
     <value>Sürücüler için kısayollar oluşturun</value>
   </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Önbellek</value>
+  </data>
 </root>

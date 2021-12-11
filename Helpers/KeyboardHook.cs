@@ -30,10 +30,7 @@ namespace SystemTrayMenu.Helper
         public KeyboardHook()
         {
             // register the event of the inner native window.
-            window.KeyPressed += (sender, args) =>
-            {
-                KeyPressed?.Invoke(this, args);
-            };
+            window.KeyPressed += (sender, e) => KeyPressed?.Invoke(this, e);
         }
 
         /// <summary>

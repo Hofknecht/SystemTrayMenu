@@ -420,4 +420,7 @@
   <data name="Generate shortcuts to drives" xml:space="preserve">
     <value>Genera collegamenti alle unità</value>
   </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Cache</value>
+  </data>
 </root>

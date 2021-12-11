@@ -414,7 +414,7 @@ namespace SystemTrayMenu.Business
                                     {
                                         string directory = Path.Combine(
                                             networkLocationRootPath,
-                                            line.Substring(0, indexOfFirstSpace));
+                                            line[..indexOfFirstSpace]);
 
                                         directories.Add(directory);
                                         resolvedSomething = true;

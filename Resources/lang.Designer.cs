@@ -241,6 +241,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cache.
+        /// </summary>
+        internal static string Cache {
+            get {
+                return ResourceManager.GetString("Cache", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cache main menu.
         /// </summary>
         internal static string Cache_main_menu {

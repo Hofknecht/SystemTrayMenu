@@ -420,4 +420,7 @@
   <data name="Generate shortcuts to drives" xml:space="preserve">
     <value>드라이브에 대한 바로 가기 생성</value>
   </data>
+  <data name="Cache" xml:space="preserve">
+    <value>은닉처</value>
+  </data>
 </root>

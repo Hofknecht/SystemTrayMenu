@@ -28,11 +28,7 @@ namespace SystemTrayMenu.Helper
         internal Fading()
         {
             timer.Interval = Interval100FPS;
-            timer.Tick += Tick;
-            void Tick(object sender, EventArgs e)
-            {
-                FadeStep();
-            }
+            timer.Tick += (sender, e) => FadeStep();
         }
 
         internal event EventHandlerEmpty Hide;

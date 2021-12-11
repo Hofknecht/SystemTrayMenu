@@ -136,8 +136,6 @@ namespace SystemTrayMenu.UserInterface
                 buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' folder");
                 buttonDefaultFolders.Text = Translator.GetText("Default");
                 checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate shortcuts to drives");
-                checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
-                labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
@@ -160,6 +158,9 @@ namespace SystemTrayMenu.UserInterface
                 labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
                 checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = Translator.GetText("If the focus is lost and the Enter key was pressed");
                 labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if in this case the menu is not reactivated");
+                groupBoxCache.Text = Translator.GetText("Cache");
+                checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
+                labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 buttonExpertDefault.Text = Translator.GetText("Default");
                 groupBoxAppearance.Text = Translator.GetText("Appearance");
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
@@ -300,8 +301,6 @@ namespace SystemTrayMenu.UserInterface
             }
 
             checkBoxGenerateShortcutsToDrives.Checked = Settings.Default.GenerateShortcutsToDrives;
-            checkBoxCacheMainMenu.Checked = Settings.Default.CacheMainMenu;
-            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
             checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
@@ -382,7 +381,7 @@ namespace SystemTrayMenu.UserInterface
 
             numericUpDownTimeUntilClose.Minimum = 200;
             numericUpDownTimeUntilClose.Maximum = 5000;
-            numericUpDownTimeUntilClose.Increment = 100;
+            numericUpDownTimeUntilClose.Increment = 10;
             numericUpDownTimeUntilClose.Value = Settings.Default.TimeUntilCloses;
 
             numericUpDownTimeUntilOpens.Minimum = 20;
@@ -396,6 +395,9 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilClosesAfterEnterPressed.Maximum = 1000;
             numericUpDownTimeUntilClosesAfterEnterPressed.Increment = 10;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = Settings.Default.TimeUntilClosesAfterEnterPressed;
+
+            checkBoxCacheMainMenu.Checked = Settings.Default.CacheMainMenu;
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
             checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
@@ -913,8 +915,6 @@ namespace SystemTrayMenu.UserInterface
         {
             dataGridViewFolders.Rows.Clear();
             checkBoxGenerateShortcutsToDrives.Checked = false;
-            checkBoxCacheMainMenu.Checked = true;
-            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
         }
 
         private void ButtonAddFolderToRootFolder_Click(object sender, EventArgs e)
@@ -1004,13 +1004,13 @@ namespace SystemTrayMenu.UserInterface
         {
             checkBoxOpenItemWithOneClick.Checked = true;
             radioButtonAppearAtMouseLocation.Checked = false;
-            numericUpDownSizeInPercentage.Value = 100;
+            numericUpDownSizeInPercentage.Value = 125;
             numericUpDownRowHeighteInPercentage.Value = 100;
-            numericUpDownMenuWidth.Value = 300;
+            numericUpDownMenuWidth.Value = 400;
             numericUpDownMenuHeight.Value = 600;
-            checkBoxShowInTaskbar.Checked = false;
+            checkBoxShowInTaskbar.Checked = true;
             radioButtonAppearAtTheBottomRight.Checked = true;
-            radioButtonAppearAtTheBottomLeft.Checked = false;
+            radioButtonAppearAtTheBottomLeft.Checked = true;
             radioButtonUseCustomLocation.Checked = false;
             radioButtonAppearAtMouseLocation.Checked = false;
         }
@@ -1029,10 +1029,12 @@ namespace SystemTrayMenu.UserInterface
         {
             checkBoxStayOpenWhenItemClicked.Checked = true;
             checkBoxStayOpenWhenFocusLost.Checked = true;
-            numericUpDownTimeUntilClose.Value = 500;
+            numericUpDownTimeUntilClose.Value = 400;
             numericUpDownTimeUntilOpens.Value = 100;
             checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = true;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = 200;
+            checkBoxCacheMainMenu.Checked = true;
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
         }
 
         private void TextBoxColorsChanged(object sender, EventArgs e)

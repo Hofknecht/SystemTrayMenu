@@ -420,4 +420,7 @@
   <data name="Generate shortcuts to drives" xml:space="preserve">
     <value>Создавайте ярлыки для дисков</value>
   </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Кеш</value>
+  </data>
 </root>
