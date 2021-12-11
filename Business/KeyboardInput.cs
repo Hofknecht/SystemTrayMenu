@@ -79,26 +79,10 @@ namespace SystemTrayMenu.Handler
                     menus[iMenuKey]?.FocusTextBox();
                     break;
                 case Keys.Left:
-                    if (Properties.Settings.Default.AppearAtTheBottomLeft)
-                    {
-                        SelectByKey(Keys.Right);
-                    }
-                    else
-                    {
-                        SelectByKey(keys);
-                    }
-
+                    SelectByKey(keys);
                     break;
                 case Keys.Right:
-                    if (Properties.Settings.Default.AppearAtTheBottomLeft)
-                    {
-                        SelectByKey(Keys.Left);
-                    }
-                    else
-                    {
-                        SelectByKey(keys);
-                    }
-
+                    SelectByKey(keys);
                     break;
                 case Keys.Up:
                 case Keys.Down:
