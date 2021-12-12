@@ -145,7 +145,7 @@ Thanks for ideas, reporting issues and contributing!
 #220 [Yavuz E.](mailto:yavuzelektronik@gmail.com),
 #229 #230 #239 [Peter O.](pohle@htp-tel.de),
 #231 [Ryonez](https://www.youtube.com/user/Ryonez), 
-#235 #242 243 #247 Tom, 
+#235 #242 243 #247, #271 Tom, 
 #237 Torsten S.,
 #240 [video](https://www.youtube.com/watch?v=xsi4Uv3-ZLg) [Patrick](https://www.youtube.com/user/DyRexLP),
 #244 Gunter D.,
