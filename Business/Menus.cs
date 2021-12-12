@@ -371,6 +371,7 @@ namespace SystemTrayMenu.Business
             if (!worker.CancellationPending)
             {
                 string[] directories = Array.Empty<string>();
+                bool isSharedDirectory = false;
 
                 try
                 {
@@ -380,6 +381,7 @@ namespace SystemTrayMenu.Business
                     }
                     else if (FileLnk.IsNetworkRoot(path))
                     {
+                        isSharedDirectory = true;
                         directories = GetDirectoriesInNetworkLocation(path);
                         static string[] GetDirectoriesInNetworkLocation(string networkLocationRootPath)
                         {
@@ -459,7 +461,8 @@ namespace SystemTrayMenu.Business
                     string directory = directoryWithIllegalCharacters.Replace("\x00", string.Empty);
 
                     bool hiddenEntry = false;
-                    if (FolderOptions.IsHidden(directory, ref hiddenEntry))
+                    if (!isSharedDirectory &&
+                        FolderOptions.IsHidden(directory, ref hiddenEntry))
                     {
                         continue;
                     }
