@@ -1,5 +1,5 @@
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
-[![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://sourceforge.net/projects/systemtraymenu/files/latest/download) [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://sourceforge.net/projects/systemtraymenu/files/latest/download)&nbsp;
+[![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;
 
 [![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1) 
 [![majorgeeks](https://user-images.githubusercontent.com/52528841/116281616-2d2a3b80-a78a-11eb-948c-bde9a8ccb1ed.png)](https://www.majorgeeks.com/files/details/systemtraymenu.html) 
@@ -32,6 +32,7 @@ SystemTrayMenu is a free, open-source start menu alternative for Microsoft Windo
 We are using C# and .NET 6.
 
 ![20211211_170852](https://user-images.githubusercontent.com/52528841/145683690-5b25bc43-a497-4cf0-9c16-947a2d2dcd77.gif)
+
 [![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://user-images.githubusercontent.com/52528841/145684486-44e98d8f-c2ba-42fa-837d-91a6a397549a.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
 
 Download the latest official version:  
