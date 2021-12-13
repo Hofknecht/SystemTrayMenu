@@ -47,7 +47,7 @@ Blogs and reviews
 * https://reviewsapp.org/systemtraymenu-better-organization-of-windows
 * https://teamos-hkrg.com/threads/systemtraymenu-1-0-20-0.162800/
 * https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/
-
+* https://www.thewindowsclub.com/systemtraymenu-for-windows
 
 FAQ
 ------------------
