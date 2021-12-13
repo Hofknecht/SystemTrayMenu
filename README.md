@@ -1,3 +1,7 @@
+
+Amazon Partner Link: https://amzn.to/3DOjTBa [(*)](https://github.com/Hofknecht/SystemTrayMenu#donations)
+
+
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
 [![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;
 
@@ -157,6 +161,7 @@ Thanks for ideas, reporting issues and contributing!
 
 Donations
 ------------------
+https://amzn.to/3DOjTBa (As an Amazon partner, I earn from qualified sales.)
 
 We would be delighted if you could help us with the following:
 * star on this github project
