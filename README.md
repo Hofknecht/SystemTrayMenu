@@ -157,7 +157,7 @@ Thanks for ideas, reporting issues and contributing!
 
 Donations
 ------------------
-Use our Amazon Partner Link: https://amzn.to/3DOjTBa (As an Amazon partner, I earn from qualified sales.)
+Use our Amazon Partner Link: https://amzn.to/3DOjTBa (As an Amazon partner, we earn from qualified sales.)
 
 We would be delighted if you could help us with the following:
 * star on this github project
