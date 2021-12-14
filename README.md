@@ -153,6 +153,7 @@ Thanks for ideas, reporting issues and contributing!
 #246 [MACE4GITHUB](https://github.com/MACE4GITHUB),
 #259 [vanjac](https://github.com/vanjac),
 #262 [terencemcdonnell](https://github.com/terencemcdonnell),
+#272 Peter M.,
 
 
 
