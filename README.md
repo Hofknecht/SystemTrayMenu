@@ -45,10 +45,12 @@ Blogs and reviews
 * https://www.ghacks.net/2021/04/10/create-a-custom-start-menu-that-you-can-access-with-a-hotkey-using-systemtraymenu/
 * http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/
 * https://reviewsapp.org/systemtraymenu-better-organization-of-windows
+* https://www.white-windows.ru/systemtraymenu-podobie-menyu-pusk-no-bolee-prostoe-i-rabotayushhee-iz-sistemnogo-treya/
 * https://teamos-hkrg.com/threads/systemtraymenu-1-0-20-0.162800/
 * https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/
 * https://www.thewindowsclub.com/systemtraymenu-for-windows
 * https://br.atsit.in/id/?p=100192
+* https://www.nesabamedia.com/systemtraymenu-alternatif-start-menu-untuk-windows/
 
 FAQ
 ------------------
