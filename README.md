@@ -158,6 +158,7 @@ Thanks for ideas, reporting issues and contributing!
 #262 [terencemcdonnell](https://github.com/terencemcdonnell),
 #272 Peter M.,
 #273 #274 [ParasiteDelta](https://github.com/ParasiteDelta),
+#277 Jan S.,
 
 
 Donations
