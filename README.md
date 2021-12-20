@@ -50,7 +50,10 @@ Blogs and reviews
 * https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/
 * https://www.thewindowsclub.com/systemtraymenu-for-windows
 * https://br.atsit.in/id/?p=100192
+* https://www.netties.be/v20/toon_artikel.php?id=34684&cat=Software&zoekdatum=2021-12-13
+* http://www.hackdos.com/62.html
 * https://www.nesabamedia.com/systemtraymenu-alternatif-start-menu-untuk-windows/
+* https://tweaks.com/news/3548904/systemtraymenu-is-a-free-start-menu-alternative-for-windows-1110/
 
 FAQ
 ------------------
