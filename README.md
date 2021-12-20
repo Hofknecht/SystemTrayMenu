@@ -178,6 +178,6 @@ Don't hesitate to donate if you appreciate SystemTrayMenu and would like to supp
 
 Sponsors - Thank you!
 ------------------
-
 * Ralf K.
 * Maximilian H.
+* [donaldaken](https://github.com/donaldaken)
