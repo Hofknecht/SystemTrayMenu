@@ -647,6 +647,14 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        internal void ReAdjustSizeAndLocation()
+        {
+            if (menus[0].IsUsable)
+            {
+                menus[0].Tag = null;
+            }
+        }
+
         internal void MainPreload()
         {
             IconReader.MainPreload = true;
@@ -1242,6 +1250,7 @@ namespace SystemTrayMenu.Business
         private void AdjustMenusSizeAndLocation()
         {
             Rectangle screenBounds;
+            bool isCustomLocationOutsideOfScreen = false;
             if (Properties.Settings.Default.AppearAtMouseLocation)
             {
                 screenBounds = Screen.FromPoint(Cursor.Position).Bounds;
@@ -1251,6 +1260,9 @@ namespace SystemTrayMenu.Business
                 screenBounds = Screen.FromPoint(new Point(
                     Properties.Settings.Default.CustomLocationX,
                     Properties.Settings.Default.CustomLocationY)).Bounds;
+
+                isCustomLocationOutsideOfScreen = !screenBounds.Contains(
+                    new Point(Properties.Settings.Default.CustomLocationX, Properties.Settings.Default.CustomLocationY));
             }
             else
             {
@@ -1290,7 +1302,8 @@ namespace SystemTrayMenu.Business
                     break;
             }
 
-            if (Properties.Settings.Default.AppearAtTheBottomLeft)
+            if (Properties.Settings.Default.AppearAtTheBottomLeft ||
+                isCustomLocationOutsideOfScreen)
             {
                 startLocation = Menu.StartLocation.BottomLeft;
             }
@@ -1304,12 +1317,12 @@ namespace SystemTrayMenu.Business
                 // Only last one has to be updated as all previous one were already updated in the past
                 if (list.Count - 1 == i)
                 {
-                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation);
+                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation, isCustomLocationOutsideOfScreen);
                 }
                 else
                 {
                     // workaround added also as else, because need adjust scrollbar after search
-                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation);
+                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation, isCustomLocationOutsideOfScreen);
                 }
 
                 if (!Properties.Settings.Default.AppearAtTheBottomLeft &&

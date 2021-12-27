@@ -375,23 +375,26 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="bounds">Screen coordinates where the menu is allowed to be drawn in.</param>
         /// <param name="menuPredecessor">Predecessor menu (when available).</param>
         /// <param name="startLocation">Defines where the first menu is drawn (when no predecessor is set).</param>
+        /// <param name="isCustomLocationOutsideOfScreen">isCustomLocationOutsideOfScreen.</param>
         internal void AdjustSizeAndLocation(
             Rectangle bounds,
             Menu menuPredecessor,
-            StartLocation startLocation)
+            StartLocation startLocation,
+            bool isCustomLocationOutsideOfScreen)
         {
             // Update the height and width
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
             AdjustDataGridViewWidth();
 
             bool useCustomLocation = Properties.Settings.Default.UseCustomLocation || lastLocation.X > 0;
+            bool changeDirectionWhenOutOfBounds = true;
 
             if (menuPredecessor != null)
             {
                 // Ignore start as we use predecessor
                 startLocation = StartLocation.Predecessor;
             }
-            else if (useCustomLocation)
+            else if (useCustomLocation && !isCustomLocationOutsideOfScreen)
             {
                 // Do not adjust location again because Cursor.Postion changed
                 if (Tag != null)
@@ -407,6 +410,7 @@ namespace SystemTrayMenu.UserInterface
                     Properties.Settings.Default.CustomLocationY);
                 directionToRight = true;
                 startLocation = StartLocation.Predecessor;
+                changeDirectionWhenOutOfBounds = false;
             }
             else if (Properties.Settings.Default.AppearAtMouseLocation)
             {
@@ -422,6 +426,7 @@ namespace SystemTrayMenu.UserInterface
                 Location = new Point(Cursor.Position.X, Cursor.Position.Y - labelTitle.Height);
                 directionToRight = true;
                 startLocation = StartLocation.Predecessor;
+                changeDirectionWhenOutOfBounds = false;
             }
 
             // Calculate X position
@@ -435,8 +440,8 @@ namespace SystemTrayMenu.UserInterface
                     {
                         x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
 
-                        // Change direction when out of bounds
-                        if (bounds.X + bounds.Width <= x + Width - scaling)
+                        if (changeDirectionWhenOutOfBounds &&
+                            bounds.X + bounds.Width <= x + Width - scaling)
                         {
                             x = menuPredecessor.Location.X - Width + scaling;
                             directionToRight = !directionToRight;
@@ -446,8 +451,8 @@ namespace SystemTrayMenu.UserInterface
                     {
                         x = menuPredecessor.Location.X - Width + scaling;
 
-                        // Change direction when out of bounds
-                        if (x < bounds.X)
+                        if (changeDirectionWhenOutOfBounds &&
+                            x < bounds.X)
                         {
                             x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
                             directionToRight = !directionToRight;

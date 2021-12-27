@@ -76,6 +76,8 @@ namespace SystemTrayMenu
             {
                 AppRestart.ByDisplaySettings();
             }
+
+            menus.ReAdjustSizeAndLocation();
         }
 
         private void TaskbarForm_Deactivate(object sender, EventArgs e)
