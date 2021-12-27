@@ -162,6 +162,7 @@ Thanks for ideas, reporting issues and contributing!
 #269 [petersnows25](https://github.com/petersnows25),
 #272 Peter M.,
 #273 #274 [ParasiteDelta](https://github.com/ParasiteDelta),
+#275 #276 #278 [donaldaken](https://github.com/donaldaken),
 #277 Jan S.,
 
 
