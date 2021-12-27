@@ -28,15 +28,8 @@ namespace SystemTrayMenu.Helper
                 ImageScaling = ToolStripItemImageScaling.SizeToFit,
                 Text = Translator.GetText("Settings"),
             };
-            settings.Click += Settings_Click;
-            static void Settings_Click(object sender, EventArgs e)
-            {
-                SettingsForm settingsForm = new();
-                if (settingsForm.ShowDialog() == DialogResult.OK)
-                {
-                    AppRestart.ByConfigChange();
-                }
-            }
+
+            settings.Click += (sender, e) => SettingsForm.ShowSingleInstance();
 
             menu.Items.Add(settings);
 

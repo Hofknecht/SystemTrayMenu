@@ -25,6 +25,7 @@ namespace SystemTrayMenu.UserInterface
         private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
 
         private static readonly Icon SystemTrayMenu = Resources.SystemTrayMenu;
+        private static SettingsForm settingsForm;
         private readonly ColorConverter colorConverter = new();
         private bool inHotkey;
 
@@ -439,6 +440,31 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowClickBackgroundDarkMode.Text = Settings.Default.ColorArrowClickBackgroundDarkMode;
             textBoxColorArrowHoverDarkMode.Text = Settings.Default.ColorArrowHoverDarkMode;
             textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
+        }
+
+        internal static void ShowSingleInstance()
+        {
+            if (IsOpen())
+            {
+                settingsForm.Activate();
+            }
+            else
+            {
+                using (settingsForm = new())
+                {
+                    if (settingsForm.ShowDialog() == DialogResult.OK)
+                    {
+                        AppRestart.ByConfigChange();
+                    }
+                }
+
+                settingsForm = null;
+            }
+        }
+
+        internal static bool IsOpen()
+        {
+            return settingsForm != null;
         }
 
         /// <summary>

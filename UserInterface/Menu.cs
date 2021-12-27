@@ -893,11 +893,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                SettingsForm settingsForm = new();
-                if (settingsForm.ShowDialog() == DialogResult.OK)
-                {
-                    AppRestart.ByConfigChange();
-                }
+                SettingsForm.ShowSingleInstance();
             }
         }
 
@@ -987,6 +983,13 @@ namespace SystemTrayMenu.UserInterface
         private void Menu_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+            if (Properties.Settings.Default.UseCustomLocation)
+            {
+                if (!SettingsForm.IsOpen())
+                {
+                    Properties.Settings.Default.Save();
+                }
+            }
         }
     }
 }
