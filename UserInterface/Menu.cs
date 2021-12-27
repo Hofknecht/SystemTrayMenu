@@ -893,7 +893,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                SettingsForm.ShowSingleInstance();
+                SettingsForm.ShowSingleInstance(this);
             }
         }
 

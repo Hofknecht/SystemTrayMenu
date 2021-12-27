@@ -1497,7 +1497,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxCache.TabStop = false;
             this.groupBoxCache.Text = "groupBoxCache";
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelCache
             // 
             this.tableLayoutPanelCache.AutoSize = true;
             this.tableLayoutPanelCache.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -1507,7 +1507,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCache.Controls.Add(this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems, 0, 1);
             this.tableLayoutPanelCache.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelCache.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelCache.Name = "tableLayoutPanel1";
+            this.tableLayoutPanelCache.Name = "tableLayoutPanelCache";
             this.tableLayoutPanelCache.RowCount = 2;
             this.tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -4086,6 +4086,7 @@ namespace SystemTrayMenu.UserInterface
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsForm_FormClosed);
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();

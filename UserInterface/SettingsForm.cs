@@ -442,31 +442,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
         }
 
-        internal static void ShowSingleInstance()
-        {
-            if (IsOpen())
-            {
-                settingsForm.Activate();
-            }
-            else
-            {
-                using (settingsForm = new())
-                {
-                    if (settingsForm.ShowDialog() == DialogResult.OK)
-                    {
-                        AppRestart.ByConfigChange();
-                    }
-                }
-
-                settingsForm = null;
-            }
-        }
-
-        internal static bool IsOpen()
-        {
-            return settingsForm != null;
-        }
-
         /// <summary>
         /// Gets NewHotKey.
         /// </summary>
@@ -479,6 +454,31 @@ namespace SystemTrayMenu.UserInterface
         public static bool RegisterHotkeys()
         {
             return RegisterHotkeys(false);
+        }
+
+        public static void ShowSingleInstance(IWin32Window owner = null)
+        {
+            if (IsOpen())
+            {
+                settingsForm.Activate();
+            }
+            else
+            {
+                settingsForm = new();
+                if (owner == null)
+                {
+                    settingsForm.ShowDialog();
+                }
+                else
+                {
+                    settingsForm.Show(owner);
+                }
+            }
+        }
+
+        public static bool IsOpen()
+        {
+            return settingsForm != null;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -614,7 +614,7 @@ namespace SystemTrayMenu.UserInterface
             try
             {
                 registryKeyContextMenu = Registry.CurrentUser.CreateSubKey(MenuName);
-                string binLocation = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+                string binLocation = Environment.ProcessPath;
                 if (registryKeyContextMenu != null)
                 {
                     registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as SystemTrayMenu folder"));
@@ -810,6 +810,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             DialogResult = DialogResult.OK;
+            AppRestart.ByConfigChange();
             Close();
         }
 
@@ -821,7 +822,7 @@ namespace SystemTrayMenu.UserInterface
                         @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
                 key.SetValue(
                     Assembly.GetExecutingAssembly().GetName().Name,
-                    System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+                    Environment.ProcessPath);
 
                 Settings.Default.IsAutostartActivated = true;
             }
@@ -1213,6 +1214,12 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.Reload();
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            settingsForm.Dispose();
+            settingsForm = null;
         }
     }
 }
