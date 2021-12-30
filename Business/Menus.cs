@@ -40,11 +40,11 @@ namespace SystemTrayMenu.Business
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
         private bool searchTextChanging;
         private bool waitingForReactivate;
-        private int rowIndexLastMouseDown = -1;
+        private int lastMouseDownRowIndex = -1;
         private bool showMenuAfterMainPreload;
-        private bool isDragging;
-        private bool isDraggingAndScrolled;
-        private int startDragRowHandle = -1;
+        private int dragSwipeScrollingStartRowIndex = -1;
+        private bool isDraggingSwipeScrolling;
+        private bool isDragSwipeScrolled;
 
         public Menus()
         {
@@ -996,15 +996,15 @@ namespace SystemTrayMenu.Business
 
         private void Dgv_MouseMove(object sender, MouseEventArgs e)
         {
-            if (isDragging)
+            if (isDraggingSwipeScrolling)
             {
                 DataGridView dgv = (DataGridView)sender;
                 int newRow = GetRowUnderCursor(dgv, e.Location);
                 if (newRow > -1)
                 {
-                    int delta = startDragRowHandle - newRow;
+                    int delta = dragSwipeScrollingStartRowIndex - newRow;
                     DoScroll(dgv, delta * 2);
-                    startDragRowHandle += delta;
+                    dragSwipeScrollingStartRowIndex += delta;
                 }
             }
         }
@@ -1021,7 +1021,7 @@ namespace SystemTrayMenu.Business
                 int newFirstDisplayedScrollingRowIndex = dgv.FirstDisplayedScrollingRowIndex + delta;
                 if (newFirstDisplayedScrollingRowIndex > -1 && newFirstDisplayedScrollingRowIndex < dgv.RowCount)
                 {
-                    isDraggingAndScrolled = true;
+                    isDragSwipeScrolled = true;
                     dgv.FirstDisplayedScrollingRowIndex = newFirstDisplayedScrollingRowIndex;
                     Menu menu = (Menu)dgv.FindForm();
                     menu.AdjustScrollbar();
@@ -1043,11 +1043,15 @@ namespace SystemTrayMenu.Business
 
             if (e.Button == MouseButtons.Left)
             {
-                rowIndexLastMouseDown = hitTestInfo.RowIndex;
+                lastMouseDownRowIndex = hitTestInfo.RowIndex;
             }
 
-            isDragging = true;
-            startDragRowHandle = GetRowUnderCursor(dgv, e.Location);
+            Menu menu = (Menu)((DataGridView)sender).FindForm();
+            if (menu.ScrollbarVisible)
+            {
+                isDraggingSwipeScrolling = true;
+                dragSwipeScrollingStartRowIndex = GetRowUnderCursor(dgv, e.Location);
+            }
         }
 
         private int GetRowUnderCursor(DataGridView dgv, Point location)
@@ -1058,9 +1062,9 @@ namespace SystemTrayMenu.Business
 
         private void Dgv_MouseUp(object sender, MouseEventArgs e)
         {
-            rowIndexLastMouseDown = -1;
-            isDragging = false;
-            isDraggingAndScrolled = false;
+            lastMouseDownRowIndex = -1;
+            isDraggingSwipeScrolling = false;
+            isDragSwipeScrolled = false;
 
             // In case during mouse down move mouse out of dgv (it has own scrollbehavior) which we need to refresh
             Menu menu = (Menu)((DataGridView)sender).FindForm();
@@ -1069,20 +1073,20 @@ namespace SystemTrayMenu.Business
 
         private void Dgv_MouseLeave(object sender, EventArgs e)
         {
-            isDragging = false;
-            isDraggingAndScrolled = false;
+            isDraggingSwipeScrolling = false;
+            isDragSwipeScrolled = false;
         }
 
         private void Dgv_RowMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
 
-            if (!isDraggingAndScrolled &&
-                e.RowIndex == rowIndexLastMouseDown &&
+            if (!isDragSwipeScrolled &&
+                e.RowIndex == lastMouseDownRowIndex &&
                 e.RowIndex > -1 &&
                 e.RowIndex < dgv.Rows.Count)
             {
-                rowIndexLastMouseDown = -1;
+                lastMouseDownRowIndex = -1;
                 RowData rowData = (RowData)dgv.Rows[e.RowIndex].Cells[2].Value;
                 string[] files = new string[] { rowData.TargetFilePathOrig };
 
@@ -1098,8 +1102,8 @@ namespace SystemTrayMenu.Business
             DataGridView dgv = (DataGridView)sender;
             DataGridView.HitTestInfo hitTestInfo;
             hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (!isDragging &&
-                hitTestInfo.RowIndex == rowIndexLastMouseDown &&
+            if (!isDraggingSwipeScrolling &&
+                hitTestInfo.RowIndex == lastMouseDownRowIndex &&
                 hitTestInfo.RowIndex > -1 &&
                 hitTestInfo.RowIndex < dgv.Rows.Count)
             {
@@ -1112,7 +1116,7 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            rowIndexLastMouseDown = -1;
+            lastMouseDownRowIndex = -1;
         }
 
         private void Dgv_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -1131,7 +1135,7 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            rowIndexLastMouseDown = -1;
+            lastMouseDownRowIndex = -1;
         }
 
         private void Dgv_SelectionChanged(object sender, EventArgs e)

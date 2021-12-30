@@ -225,6 +225,8 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        public bool ScrollbarVisible { get; private set; }
+
         internal void ResetSearchText()
         {
             textBoxSearch.Text = string.Empty;
@@ -651,10 +653,12 @@ namespace SystemTrayMenu.UserInterface
                 }
 
                 dgvHeightNew = dgvHeightMax;
+                ScrollbarVisible = true;
             }
             else
             {
                 customScrollbar.PaintDisable();
+                ScrollbarVisible = false;
             }
 
             if (string.IsNullOrEmpty(data.DefaultView.RowFilter))
