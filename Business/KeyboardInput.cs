@@ -297,8 +297,7 @@ namespace SystemTrayMenu.Handler
             switch (keys)
             {
                 case Keys.Enter:
-                    if (iRowKey > -1 &&
-                        dgv.Rows.Count > iRowKey)
+                    if (iRowKey > -1 && dgv.Rows.Count > iRowKey)
                     {
                         RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
                         if (trigger.IsMenuOpen || !trigger.ContainsMenu)
@@ -312,14 +311,10 @@ namespace SystemTrayMenu.Handler
                                 ClosePressed?.Invoke();
                             }
 
-                            try
+                            if (iRowKey > -1 && dgv.Rows.Count > iRowKey)
                             {
                                 // Raise Dgv_RowPostPaint to show ProcessStarted
                                 dgv.InvalidateRow(iRowKey);
-                            }
-                            catch (ArgumentOutOfRangeException ex)
-                            {
-                                Log.Warn("InvalidateRow failed", ex);
                             }
                         }
                         else

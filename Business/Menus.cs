@@ -42,6 +42,9 @@ namespace SystemTrayMenu.Business
         private bool waitingForReactivate;
         private int rowIndexLastMouseDown = -1;
         private bool showMenuAfterMainPreload;
+        private bool isDragging;
+        private bool isDraggingAndScrolled;
+        private int startDragRowHandle = -1;
 
         public Menus()
         {
@@ -627,7 +630,9 @@ namespace SystemTrayMenu.Business
                     dgv.CellMouseEnter -= dgvMouseRow.CellMouseEnter;
                     dgv.CellMouseLeave -= dgvMouseRow.CellMouseLeave;
                     dgv.MouseLeave -= dgvMouseRow.MouseLeave;
+                    dgv.MouseLeave -= Dgv_MouseLeave;
                     dgv.MouseMove -= waitToOpenMenu.MouseMove;
+                    dgv.MouseMove -= Dgv_MouseMove;
                     dgv.MouseDown -= Dgv_MouseDown;
                     dgv.MouseUp -= Dgv_MouseUp;
                     dgv.MouseClick -= Dgv_MouseClick;
@@ -938,7 +943,9 @@ namespace SystemTrayMenu.Business
             dgv.CellMouseEnter += dgvMouseRow.CellMouseEnter;
             dgv.CellMouseLeave += dgvMouseRow.CellMouseLeave;
             dgv.MouseLeave += dgvMouseRow.MouseLeave;
+            dgv.MouseLeave += Dgv_MouseLeave;
             dgv.MouseMove += waitToOpenMenu.MouseMove;
+            dgv.MouseMove += Dgv_MouseMove;
             dgv.MouseDown += Dgv_MouseDown;
             dgv.MouseUp += Dgv_MouseUp;
             dgv.MouseClick += Dgv_MouseClick;
@@ -987,6 +994,41 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        private void Dgv_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                DataGridView dgv = (DataGridView)sender;
+                int newRow = GetRowUnderCursor(dgv, e.Location);
+                if (newRow > -1)
+                {
+                    int delta = startDragRowHandle - newRow;
+                    DoScroll(dgv, delta * 2);
+                    startDragRowHandle += delta;
+                }
+            }
+        }
+
+        private void DoScroll(DataGridView dgv, int delta)
+        {
+            if (delta != 0)
+            {
+                if (delta < 0 && dgv.FirstDisplayedScrollingRowIndex == 0)
+                {
+                    delta = 0;
+                }
+
+                int newFirstDisplayedScrollingRowIndex = dgv.FirstDisplayedScrollingRowIndex + delta;
+                if (newFirstDisplayedScrollingRowIndex > -1 && newFirstDisplayedScrollingRowIndex < dgv.RowCount)
+                {
+                    isDraggingAndScrolled = true;
+                    dgv.FirstDisplayedScrollingRowIndex = newFirstDisplayedScrollingRowIndex;
+                    Menu menu = (Menu)dgv.FindForm();
+                    menu.AdjustScrollbar();
+                }
+            }
+        }
+
         private void Dgv_MouseDown(object sender, MouseEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
@@ -1003,18 +1045,40 @@ namespace SystemTrayMenu.Business
             {
                 rowIndexLastMouseDown = hitTestInfo.RowIndex;
             }
+
+            isDragging = true;
+            startDragRowHandle = GetRowUnderCursor(dgv, e.Location);
+        }
+
+        private int GetRowUnderCursor(DataGridView dgv, Point location)
+        {
+            DataGridView.HitTestInfo myHitTest = dgv.HitTest(location.X, location.Y);
+            return myHitTest.RowIndex;
         }
 
         private void Dgv_MouseUp(object sender, MouseEventArgs e)
         {
             rowIndexLastMouseDown = -1;
+            isDragging = false;
+            isDraggingAndScrolled = false;
+
+            // In case during mouse down move mouse out of dgv (it has own scrollbehavior) which we need to refresh
+            Menu menu = (Menu)((DataGridView)sender).FindForm();
+            menu.AdjustScrollbar();
+        }
+
+        private void Dgv_MouseLeave(object sender, EventArgs e)
+        {
+            isDragging = false;
+            isDraggingAndScrolled = false;
         }
 
         private void Dgv_RowMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
 
-            if (e.RowIndex == rowIndexLastMouseDown &&
+            if (!isDraggingAndScrolled &&
+                e.RowIndex == rowIndexLastMouseDown &&
                 e.RowIndex > -1 &&
                 e.RowIndex < dgv.Rows.Count)
             {
@@ -1034,7 +1098,8 @@ namespace SystemTrayMenu.Business
             DataGridView dgv = (DataGridView)sender;
             DataGridView.HitTestInfo hitTestInfo;
             hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (hitTestInfo.RowIndex == rowIndexLastMouseDown &&
+            if (!isDragging &&
+                hitTestInfo.RowIndex == rowIndexLastMouseDown &&
                 hitTestInfo.RowIndex > -1 &&
                 hitTestInfo.RowIndex < dgv.Rows.Count)
             {
