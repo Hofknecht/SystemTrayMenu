@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
     using System.Windows.Forms;
@@ -31,19 +32,44 @@ namespace SystemTrayMenu.Utilities
 
                         try
                         {
-                            VirtualKeyCode virtualKeyCodeModifiers = (VirtualKeyCode)Enum.Parse(
-                                typeof(VirtualKeyCode), modifiers.ToString().ToUpperInvariant());
-                            VirtualKeyCode virtualKeyCodeHotkey = (VirtualKeyCode)Enum.Parse(
-                                typeof(VirtualKeyCode), hotkey.ToString().ToUpperInvariant());
+                            List<VirtualKeyCode> virtualKeyCodesModifiers = new List<VirtualKeyCode>();
+                            foreach (string key in modifiers.ToString().ToUpperInvariant().Split(", "))
+                            {
+                                VirtualKeyCode virtualKeyCode = VirtualKeyCode.LWIN;
+                                switch (key)
+                                {
+                                    case "ALT":
+                                        virtualKeyCode = VirtualKeyCode.MENU;
+                                        break;
+                                    default:
+                                        virtualKeyCode = (VirtualKeyCode)Enum.Parse(
+                                        typeof(VirtualKeyCode), key.ToUpperInvariant());
+                                        break;
+                                }
 
-                            new InputSimulator().Keyboard.ModifiedKeyStroke(virtualKeyCodeModifiers, virtualKeyCodeHotkey);
+                                virtualKeyCodesModifiers.Add(virtualKeyCode);
+                            }
+
+                            VirtualKeyCode virtualKeyCodeHotkey = 0;
+                            object virtualKeyCodeHotkeyObject;
+                            if (!Enum.TryParse(typeof(VirtualKeyCode), hotkey.ToString().ToUpperInvariant(), out virtualKeyCodeHotkeyObject))
+                            {
+                                Enum.TryParse(typeof(VirtualKeyCode), $"VK_{hotkey.ToString().ToUpperInvariant()}", out virtualKeyCodeHotkeyObject);
+                            }
+
+                            if (virtualKeyCodeHotkeyObject != null)
+                            {
+                                virtualKeyCodeHotkey = (VirtualKeyCode)virtualKeyCodeHotkeyObject;
+                            }
+
+                            new InputSimulator().Keyboard.ModifiedKeyStroke(virtualKeyCodesModifiers, virtualKeyCodeHotkey);
                             success = false;
 
                             // how to solve with several modifier keys?
                         }
                         catch (Exception ex)
                         {
-                            Log.Warn("Send hoktey to other instance failed", ex);
+                            Log.Warn($"Send hoktey {Properties.Settings.Default.HotKey} to other instance failed", ex);
                             killOtherInstances = true;
                         }
                     }
