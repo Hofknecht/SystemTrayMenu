@@ -35,6 +35,11 @@ namespace SystemTrayMenu.Utilities
                             List<VirtualKeyCode> virtualKeyCodesModifiers = new List<VirtualKeyCode>();
                             foreach (string key in modifiers.ToString().ToUpperInvariant().Split(", "))
                             {
+                                if (key == "NONE")
+                                {
+                                    continue;
+                                }
+
                                 VirtualKeyCode virtualKeyCode = VirtualKeyCode.LWIN;
                                 switch (key)
                                 {
@@ -51,21 +56,14 @@ namespace SystemTrayMenu.Utilities
                             }
 
                             VirtualKeyCode virtualKeyCodeHotkey = 0;
-                            object virtualKeyCodeHotkeyObject;
-                            if (!Enum.TryParse(typeof(VirtualKeyCode), hotkey.ToString().ToUpperInvariant(), out virtualKeyCodeHotkeyObject))
+                            if (Enum.IsDefined(typeof(VirtualKeyCode), (int)hotkey))
                             {
-                                Enum.TryParse(typeof(VirtualKeyCode), $"VK_{hotkey.ToString().ToUpperInvariant()}", out virtualKeyCodeHotkeyObject);
-                            }
-
-                            if (virtualKeyCodeHotkeyObject != null)
-                            {
-                                virtualKeyCodeHotkey = (VirtualKeyCode)virtualKeyCodeHotkeyObject;
+                                virtualKeyCodeHotkey = (VirtualKeyCode)(int)hotkey;
                             }
 
                             new InputSimulator().Keyboard.ModifiedKeyStroke(virtualKeyCodesModifiers, virtualKeyCodeHotkey);
-                            success = false;
 
-                            // how to solve with several modifier keys?
+                            success = false;
                         }
                         catch (Exception ex)
                         {
