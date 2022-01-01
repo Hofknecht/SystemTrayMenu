@@ -18,23 +18,37 @@ namespace SystemTrayMenu
         {
             try
             {
+                bool killOtherInstances = false;
+                if (args != null && args.Length > 0)
+                {
+                    if (args[0] == "-r")
+                    {
+                        args = null;
+                    }
+
+                    killOtherInstances = true;
+                }
+
                 Log.Initialize();
-                SingleAppInstance.Initialize();
                 Translator.Initialize();
-                Config.Initialize();
                 Config.SetFolderByWindowsContextMenu(args);
                 Config.LoadOrSetByUser();
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.ThreadException += (sender, e) => AskUserSendError(e.Exception);
-                Scaling.Initialize();
-                FolderOptions.Initialize();
+                Config.Initialize();
 
-                using (new App())
+                if (SingleAppInstance.Initialize(killOtherInstances))
                 {
-                    isStartup = false;
-                    Log.WriteApplicationRuns();
-                    Application.Run();
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.ThreadException += (sender, e) => AskUserSendError(e.Exception);
+                    Scaling.Initialize();
+                    FolderOptions.Initialize();
+
+                    using (new App())
+                    {
+                        isStartup = false;
+                        Log.WriteApplicationRuns();
+                        Application.Run();
+                    }
                 }
 
                 Config.Dispose();

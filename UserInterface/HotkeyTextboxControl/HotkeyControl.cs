@@ -195,23 +195,23 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             Keys modifiers = Keys.None;
             if (!string.IsNullOrEmpty(modifiersString))
             {
-                if (modifiersString.ToUpperInvariant().Contains("ALT", StringComparison.InvariantCulture))
+                if (modifiersString.ToUpperInvariant().Contains("ALT+", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Alt;
                 }
 
-                if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture) ||
-                    modifiersString.ToUpperInvariant().Contains("STRG", StringComparison.InvariantCulture))
+                if (modifiersString.ToUpperInvariant().Contains("CTRL+", StringComparison.InvariantCulture) ||
+                    modifiersString.ToUpperInvariant().Contains("STRG+", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Control;
                 }
 
-                if (modifiersString.ToUpperInvariant().Contains("SHIFT", StringComparison.InvariantCulture))
+                if (modifiersString.ToUpperInvariant().Contains("SHIFT+", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.Shift;
                 }
 
-                if (modifiersString.ToUpperInvariant().Contains("WIN", StringComparison.InvariantCulture))
+                if (modifiersString.ToUpperInvariant().Contains("WIN+", StringComparison.InvariantCulture))
                 {
                     modifiers |= Keys.LWin;
                 }

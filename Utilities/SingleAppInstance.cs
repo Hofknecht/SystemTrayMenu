@@ -5,27 +5,52 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.ComponentModel;
     using System.Diagnostics;
     using System.Linq;
+    using System.Windows.Forms;
+    using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
+    using WindowsInput;
+    using WindowsInput.Native;
 
     internal static class SingleAppInstance
     {
-        internal static void Initialize()
+        internal static bool Initialize(bool killOtherInstances)
         {
-            if (IsAnyOtherInstancesofAppAlreadyRunning())
-            {
-                KillOtherInstancesOfApp();
-                bool KillOtherInstancesOfApp()
-                {
-                    bool killedAProcess = false;
-                    int ownPID = Process.GetCurrentProcess().Id;
+            bool success = true;
 
-                    try
+            try
+            {
+                foreach (Process p in Process.GetProcessesByName(
+                       Process.GetCurrentProcess().ProcessName).
+                       Where(s => s.Id != Process.GetCurrentProcess().Id))
+                {
+                    if (!killOtherInstances)
                     {
-                        foreach (Process p in Process.GetProcessesByName(
-                                Process.GetCurrentProcess().ProcessName).
-                            Where(p => p.Id != ownPID))
+                        Keys modifiers = HotkeyControl.HotkeyModifiersFromString(Properties.Settings.Default.HotKey);
+                        Keys hotkey = HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey);
+
+                        try
+                        {
+                            VirtualKeyCode virtualKeyCodeModifiers = (VirtualKeyCode)Enum.Parse(
+                                typeof(VirtualKeyCode), modifiers.ToString().ToUpperInvariant());
+                            VirtualKeyCode virtualKeyCodeHotkey = (VirtualKeyCode)Enum.Parse(
+                                typeof(VirtualKeyCode), hotkey.ToString().ToUpperInvariant());
+
+                            new InputSimulator().Keyboard.ModifiedKeyStroke(virtualKeyCodeModifiers, virtualKeyCodeHotkey);
+                            success = false;
+
+                            // how to solve with several modifier keys?
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Warn("Send hoktey to other instance failed", ex);
+                            killOtherInstances = true;
+                        }
+                    }
+
+                    if (killOtherInstances)
+                    {
+                        try
                         {
                             if (!p.CloseMainWindow())
                             {
@@ -34,37 +59,21 @@ namespace SystemTrayMenu.Utilities
 
                             p.WaitForExit();
                             p.Close();
-                            killedAProcess = true;
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        if (ex is Win32Exception ||
-                            ex is SystemException)
+                        catch (Exception ex)
                         {
                             Log.Error("Run as single instance failed", ex);
-                        }
-                        else
-                        {
-                            throw;
+                            success = false;
                         }
                     }
-
-                    return killedAProcess;
                 }
             }
-
-            static bool IsAnyOtherInstancesofAppAlreadyRunning()
+            catch (Exception ex)
             {
-                foreach (Process p in Process.GetProcessesByName(
-                    Process.GetCurrentProcess().ProcessName).
-                    Where(s => s.Id != Process.GetCurrentProcess().Id))
-                {
-                    return true;
-                }
-
-                return false;
+                Log.Error("Run as single instance failed", ex);
             }
+
+            return success;
         }
     }
 }
