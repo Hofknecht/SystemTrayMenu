@@ -470,8 +470,7 @@ namespace SystemTrayMenu.Business
                         continue;
                     }
 
-                    RowData rowData = ReadRowData(directory, false);
-                    rowData.ContainsMenu = true;
+                    RowData rowData = ReadRowData(directory, false, true);
                     rowData.HiddenEntry = hiddenEntry;
                     string resolvedLnkPath = string.Empty;
                     rowData.ReadIcon(true, ref resolvedLnkPath, level);
@@ -524,12 +523,11 @@ namespace SystemTrayMenu.Business
                         continue;
                     }
 
-                    RowData rowData = ReadRowData(file, false);
+                    RowData rowData = ReadRowData(file, false, false);
                     string resolvedLnkPath = string.Empty;
                     if (rowData.ReadIcon(false, ref resolvedLnkPath, level))
                     {
-                        rowData = ReadRowData(resolvedLnkPath, true, rowData);
-                        rowData.ContainsMenu = true;
+                        rowData = ReadRowData(resolvedLnkPath, true, true, rowData);
                         rowData.HiddenEntry = hiddenEntry;
                     }
 
@@ -790,13 +788,14 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private static RowData ReadRowData(string fileName, bool isResolvedLnk, RowData rowData = null)
+        private static RowData ReadRowData(string fileName, bool isResolvedLnk, bool containsMenu, RowData rowData = null)
         {
             if (rowData == null)
             {
                 rowData = new RowData();
             }
 
+            rowData.ContainsMenu = containsMenu;
             rowData.IsResolvedLnk = isResolvedLnk;
 
             try
@@ -810,6 +809,10 @@ namespace SystemTrayMenu.Business
                         string path = rowData.FileInfo.FullName;
                         int directoryNameBegin = path.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1;
                         rowData.SetText(path[directoryNameBegin..]);
+                    }
+                    else if (!rowData.ContainsMenu && Config.IsHideFileExtension())
+                    {
+                        rowData.SetText(Path.GetFileNameWithoutExtension(rowData.FileInfo.Name));
                     }
                     else
                     {

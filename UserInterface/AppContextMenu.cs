@@ -89,15 +89,19 @@ namespace SystemTrayMenu.Helper
                 // Thanks for letting me being part of this project and that I am allowed to be listed here :-)
                 ab.AppMoreInfo += "Peter Kirmeier (mai" + "lto:top" + "ete" + "rk@f" + "reen" + "et." + "de)" + Environment.NewLine;
 
-                ab.AppMoreInfo += "French by Pascal Aloy (mailto:paloy@wanadoo.fr)" + Environment.NewLine; // #145
-                ab.AppMoreInfo += "Dutch by HansieNL (https://github.com/HansieNL)" + Environment.NewLine; // #162
-                ab.AppMoreInfo += "Portuguese (Brazil) by igorruckert (https://github.com/igorruckert)" + Environment.NewLine; // #163
-
                 ab.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/" + Environment.NewLine;
                 ab.AppMoreInfo += "https://github.com/Hofknecht/SystemTrayMenu" + Environment.NewLine;
                 ab.AppMoreInfo += Environment.NewLine;
                 ab.AppMoreInfo += "GNU GENERAL PUBLIC LICENSE" + Environment.NewLine;
                 ab.AppMoreInfo += "(Version 3, 29 June 2007)" + Environment.NewLine;
+
+                ab.AppMoreInfo += "Thanks for ideas, reporting issues and contributing!" + Environment.NewLine;
+                ab.AppMoreInfo += "#123 Mordecai00, #125 Holgermh, #135 #153 #154 #164 jakkaas, #145 Pascal Aloy, #153 #158 #160 blackcrack,";
+                ab.AppMoreInfo += "#162 HansieNL, #163 igorruckert, #171 kehoen, #186 Dtrieb, #188 #189 #191 #195 iJahangard, #195 #197 #238 the-phuctran, ";
+                ab.AppMoreInfo += "#205 kristofzerbe, #209 jonaskohl, #211 blacksparrow15, #220 Yavuz E., #229 #230 #239 Peter O., #231 Ryonez, ";
+                ab.AppMoreInfo += "#235 #242 243 #247, #271 Tom, #237 Torsten S., #240 video Patrick, #244 Gunter D., #246 MACE4GITHUB, #259 vanjac, ";
+                ab.AppMoreInfo += "#262 terencemcdonnell, #269 petersnows25, #272 Peter M., #273 #274 ParasiteDelta, #275 #276 #278 donaldaken, ";
+                ab.AppMoreInfo += "#277 Jan S., #282 akuznets," + Environment.NewLine;
                 ab.AppDetailsButton = true;
                 ab.ShowDialog();
             }

@@ -73,16 +73,7 @@ namespace SystemTrayMenu.DataClasses
                 row[0] = data.icon;
             }
 
-            if (!ContainsMenu &&
-                Config.IsHideFileExtension())
-            {
-                row[1] = Path.GetFileNameWithoutExtension(data.text);
-            }
-            else
-            {
-                row[1] = data.text;
-            }
-
+            row[1] = data.text;
             row[2] = data;
         }
 

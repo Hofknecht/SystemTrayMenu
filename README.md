@@ -89,7 +89,7 @@ Yes, you can select this option in the settings menu, that you can open by right
 **What can I do if I have a problem, idea or question?**
 
 If a problem has occured or you have any ideas or questions, you are welcome to contact us.  
-Create an issue or write us an email [Markus Hofknecht](Markus@Hofknecht.de)
+[Create an issue](https://github.com/Hofknecht/SystemTrayMenu/issues/new/choose) or write us an email [Markus Hofknecht](Markus@Hofknecht.de)
 
 **Find more FAQ topics here:**
 [SystemTrayMenu FAQ](https://github.com/Hofknecht/SystemTrayMenu/issues?q=is%3Aissue+is%3Aclosed+label%3AFAQ)
@@ -164,6 +164,7 @@ Thanks for ideas, reporting issues and contributing!
 #273 #274 [ParasiteDelta](https://github.com/ParasiteDelta),
 #275 #276 #278 [donaldaken](https://github.com/donaldaken),
 #277 Jan S.,
+#282 [akuznets](https://github.com/akuznets),
 
 
 Donations
