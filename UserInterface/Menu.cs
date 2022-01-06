@@ -718,9 +718,26 @@ namespace SystemTrayMenu.UserInterface
             string filterField = dgv.Columns[1].Name;
             SearchTextChanging?.Invoke();
 
+            // Expression reference: https://docs.microsoft.com/en-us/dotnet/api/system.data.datacolumn.expression?view=net-6.0
+
+            // Instead implementing in-string wildcards, simply split into multiple search patters
             string searchString = textBoxSearch.Text.Trim()
                 .Replace("%", " ")
                 .Replace("*", " ");
+
+            // Replace special characters
+            string tmp = new string(searchString);
+            searchString = string.Empty;
+            foreach (char ch in tmp)
+            {
+                switch(ch)
+                {
+                    case '[': searchString += "[[]"; break;
+                    case ']': searchString += "[]]"; break;
+                    default: searchString += ch; break;
+                }
+            }
+
             string like = string.Empty;
             string[] splittedParts = searchString.Split(" ");
             if (splittedParts.Length > 1)
