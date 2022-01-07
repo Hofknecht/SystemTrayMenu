@@ -18,15 +18,12 @@ namespace SystemTrayMenu
         {
             try
             {
-                bool killOtherInstances = false;
-                if (args != null && args.Length > 0)
+                bool killOtherInstances = true;
+                if (args != null && args.Length > 0 &&
+                    (args[0] == "-h" || args[0] == "-hotkey"))
                 {
-                    if (args[0] == "-r")
-                    {
-                        args = null;
-                    }
-
-                    killOtherInstances = true;
+                    args = null;
+                    killOtherInstances = false;
                 }
 
                 Log.Initialize();

@@ -47,9 +47,9 @@ namespace SystemTrayMenu.Utilities
 
             using (Process p = new())
             {
-                p.StartInfo = new ProcessStartInfo(
-                    Process.GetCurrentProcess().MainModule.FileName,
-                    "-r");
+                string fileName = Process.GetCurrentProcess().MainModule.FileName;
+                p.StartInfo = new ProcessStartInfo(fileName);
+
                 try
                 {
                     p.Start();
