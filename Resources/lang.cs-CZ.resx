@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>Mezipaměti</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>Vždy zobrazovat skryté soubory, složky nebo jednotky</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>Skryté soubory a složky</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>Nikdy nezobrazujte skryté soubory, složky nebo jednotky</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Velikost a umístění</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Použijte nastavení operačního systému</value>
+  </data>
 </root>

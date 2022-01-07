@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>Always Show hidden files, folders or drives</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>Hidden files and folders</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>Never show hidden files, folders or drives</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Size and location</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Use operating system settings</value>
+  </data>
 </root>

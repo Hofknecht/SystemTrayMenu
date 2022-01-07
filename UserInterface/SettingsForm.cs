@@ -104,9 +104,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 Text = Translator.GetText("Settings");
                 tabPageGeneral.Text = Translator.GetText("General");
-                tabPageAdvanced.Text = Translator.GetText("Advanced");
-                tabPageExpert.Text = Translator.GetText("Expert");
-                tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxFolder.Text = Translator.GetText("Folder");
                 buttonChangeFolder.Text = Translator.GetText("Change folder");
                 buttonOpenFolder.Text = Translator.GetText("Open Folder");
@@ -127,19 +124,8 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
                 buttonHotkeyDefault.Text = Translator.GetText("Default");
                 groupBoxLanguage.Text = Translator.GetText("Language");
-                tabControlFolders.Text = Translator.GetText("Folders");
-                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add folders to main menu");
-                buttonAddFolderToRootFolder.Text = Translator.GetText("Add folder");
-                buttonRemoveFolder.Text = Translator.GetText("Remove folder");
-                ColumnFolder.HeaderText = Translator.GetText("Folder paths");
-                ColumnRecursiveLevel.HeaderText = Translator.GetText("Recursive");
-                ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
-                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' folder");
-                buttonDefaultFolders.Text = Translator.GetText("Default");
-                checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate shortcuts to drives");
-                groupBoxClick.Text = Translator.GetText("Click");
-                checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
-                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
+
+                tabPageSizeAndLocation.Text = Translator.GetText("Size and location");
                 groupBoxSize.Text = Translator.GetText("Size");
                 labelSizeInPercentage.Text = $"% {Translator.GetText("Size")}";
                 labelRowHeightInPercentage.Text = $"% {Translator.GetText("Row height in percentage")}";
@@ -150,7 +136,30 @@ namespace SystemTrayMenu.UserInterface
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
                 radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate place)");
                 radioButtonAppearAtMouseLocation.Text = Translator.GetText("Mouse location");
+                buttonSizeAndLocationDefault.Text = Translator.GetText("Default");
+
+                tabPageAdvanced.Text = Translator.GetText("Advanced");
+                groupBoxClick.Text = Translator.GetText("Click");
+                checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
+                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
+                groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and folders");
+                radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
+                radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, folders or drives");
+                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always Show hidden files, folders or drives");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
+
+                tabPageFolders.Text = Translator.GetText("Folders");
+                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add folders to main menu");
+                buttonAddFolderToRootFolder.Text = Translator.GetText("Add folder");
+                buttonRemoveFolder.Text = Translator.GetText("Remove folder");
+                ColumnFolder.HeaderText = Translator.GetText("Folder paths");
+                ColumnRecursiveLevel.HeaderText = Translator.GetText("Recursive");
+                ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
+                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' folder");
+                buttonDefaultFolders.Text = Translator.GetText("Default");
+                checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate shortcuts to drives");
+
+                tabPageExpert.Text = Translator.GetText("Expert");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
                 checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
@@ -163,6 +172,8 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 buttonExpertDefault.Text = Translator.GetText("Default");
+
+                tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxAppearance.Text = Translator.GetText("Appearance");
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
@@ -281,31 +292,6 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxStoreConfigAtAssemblyLocation.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
 
-            try
-            {
-                foreach (string pathAndRecursivString in Settings.Default.PathsAddToMainMenu.Split(@"|"))
-                {
-                    if (string.IsNullOrEmpty(pathAndRecursivString))
-                    {
-                        continue;
-                    }
-
-                    string pathAddToMainMenu = pathAndRecursivString.Split("recursiv:")[0].Trim();
-                    bool recursive = pathAndRecursivString.Split("recursiv:")[1].StartsWith("True");
-                    bool onlyFiles = pathAndRecursivString.Split("onlyFiles:")[1].StartsWith("True");
-                    dataGridViewFolders.Rows.Add(pathAddToMainMenu, recursive, onlyFiles);
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Warn("PathsAddToMainMenu", ex);
-            }
-
-            checkBoxGenerateShortcutsToDrives.Checked = Settings.Default.GenerateShortcutsToDrives;
-
-            checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
-            checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
-
             numericUpDownSizeInPercentage.Minimum = 100;
             numericUpDownSizeInPercentage.Maximum = 200;
             numericUpDownSizeInPercentage.Increment = 25;
@@ -376,6 +362,35 @@ namespace SystemTrayMenu.UserInterface
             {
                 radioButtonAppearAtTheBottomRight.Checked = true;
             }
+
+            checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
+            checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
+
+            radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
+            radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
+            radioButtonAlwaysShowHiddenFiles.Checked = Settings.Default.AlwaysShowHiddenFiles;
+
+            try
+            {
+                foreach (string pathAndRecursivString in Settings.Default.PathsAddToMainMenu.Split(@"|"))
+                {
+                    if (string.IsNullOrEmpty(pathAndRecursivString))
+                    {
+                        continue;
+                    }
+
+                    string pathAddToMainMenu = pathAndRecursivString.Split("recursiv:")[0].Trim();
+                    bool recursive = pathAndRecursivString.Split("recursiv:")[1].StartsWith("True");
+                    bool onlyFiles = pathAndRecursivString.Split("onlyFiles:")[1].StartsWith("True");
+                    dataGridViewFolders.Rows.Add(pathAddToMainMenu, recursive, onlyFiles);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Warn("PathsAddToMainMenu", ex);
+            }
+
+            checkBoxGenerateShortcutsToDrives.Checked = Settings.Default.GenerateShortcutsToDrives;
 
             checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
@@ -730,26 +745,6 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            SaveFolders();
-            void SaveFolders()
-            {
-                Settings.Default.PathsAddToMainMenu = string.Empty;
-                foreach (DataGridViewRow row in dataGridViewFolders.Rows)
-                {
-                    string pathAddToMainMenu = row.Cells[0].Value.ToString();
-                    bool recursiv = (bool)row.Cells[1].Value;
-                    bool onlyFiles = (bool)row.Cells[2].Value;
-                    Settings.Default.PathsAddToMainMenu += $"{pathAddToMainMenu} recursiv:{recursiv} onlyFiles:{onlyFiles}|";
-                }
-            }
-
-            Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.Checked;
-            Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
-            Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
-
-            Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
-            Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
-
             Settings.Default.SizeInPercentage = (int)numericUpDownSizeInPercentage.Value;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
@@ -786,6 +781,28 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.UseCustomLocation = false;
                 Settings.Default.AppearAtMouseLocation = false;
                 Settings.Default.AppearAtTheBottomLeft = false;
+            }
+
+            Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
+            Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
+            Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
+            Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
+            Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;
+
+            SaveFolders();
+            Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.Checked;
+            Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
+            Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
+            void SaveFolders()
+            {
+                Settings.Default.PathsAddToMainMenu = string.Empty;
+                foreach (DataGridViewRow row in dataGridViewFolders.Rows)
+                {
+                    string pathAddToMainMenu = row.Cells[0].Value.ToString();
+                    bool recursiv = (bool)row.Cells[1].Value;
+                    bool onlyFiles = (bool)row.Cells[2].Value;
+                    Settings.Default.PathsAddToMainMenu += $"{pathAddToMainMenu} recursiv:{recursiv} onlyFiles:{onlyFiles}|";
+                }
             }
 
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
@@ -1027,19 +1044,27 @@ namespace SystemTrayMenu.UserInterface
             buttonAddSampleStartMenuFolder.Enabled = !doesStartMenuFolderExist;
         }
 
-        private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
+        private void ButtonSizeAndLocationDefault_Click(object sender, EventArgs e)
         {
-            checkBoxOpenItemWithOneClick.Checked = true;
-            radioButtonAppearAtMouseLocation.Checked = false;
             numericUpDownSizeInPercentage.Value = 125;
             numericUpDownRowHeighteInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 400;
             numericUpDownMenuHeight.Value = 600;
-            checkBoxShowInTaskbar.Checked = true;
-            radioButtonAppearAtTheBottomRight.Checked = true;
+
+            radioButtonAppearAtTheBottomRight.Checked = false;
             radioButtonAppearAtTheBottomLeft.Checked = true;
             radioButtonUseCustomLocation.Checked = false;
             radioButtonAppearAtMouseLocation.Checked = false;
+        }
+
+        private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
+        {
+            checkBoxShowInTaskbar.Checked = true;
+            checkBoxOpenItemWithOneClick.Checked = false;
+
+            radioButtonSystemSettingsShowHiddenFiles.Checked = true;
+            radioButtonNeverShowHiddenFiles.Checked = false;
+            radioButtonAlwaysShowHiddenFiles.Checked = false;
         }
 
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)

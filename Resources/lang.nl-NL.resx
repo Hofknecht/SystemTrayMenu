@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>Altijd verborgen bestanden, mappen of stations weergeven</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>Verborgen bestanden en mappen</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>Nooit verborgen bestanden, mappen of stations weergeven</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Grootte en locatie</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Instellingen van het besturingssysteem gebruiken</value>
+  </data>
 </root>

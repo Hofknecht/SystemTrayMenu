@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>Önbellek</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>Gizli dosyaları, klasörleri veya sürücüleri her zaman göster</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>Gizli dosya ve klasörler</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>Gizli dosyaları, klasörleri veya sürücüleri asla gösterme</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Boyut ve konum</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>İşletim sistemi ayarlarını kullan</value>
+  </data>
 </root>

@@ -230,6 +230,11 @@ namespace SystemTrayMenu.DataClasses
                 icon = NotFoundIcon;
             }
 
+            if (HiddenEntry)
+            {
+                icon = IconReader.AddIconOverlay(icon, White50PercentageIcon);
+            }
+
             return icon;
         }
 

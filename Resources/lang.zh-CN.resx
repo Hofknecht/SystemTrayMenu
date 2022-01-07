@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>缓存</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>始终显示隐藏的文件、文件夹或驱动器</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>隐藏的文件和文件夹</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>从不显示隐藏的文件、文件夹或驱动器</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>大小和位置</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>使用操作系统设置</value>
+  </data>
 </root>

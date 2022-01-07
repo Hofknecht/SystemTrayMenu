@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>キャッシュ</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>隠しファイル、フォルダ、またはドライブを常に表示する</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>隠しファイルと隠しフォルダー</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>隠しファイル、フォルダ、またはドライブを表示しないでください</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>サイズと場所</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>オペレーティングシステムの設定を使用する</value>
+  </data>
 </root>

@@ -126,6 +126,7 @@ namespace SystemTrayMenu.Business
 
                             break;
                         case MenuDataValidity.Empty:
+                            IconReader.MainPreload = false;
                             if (!showingMessageBox)
                             {
                                 showingMessageBox = true;
@@ -138,6 +139,7 @@ namespace SystemTrayMenu.Business
 
                             break;
                         case MenuDataValidity.NoAccess:
+                            IconReader.MainPreload = false;
                             if (!showingMessageBox)
                             {
                                 showingMessageBox = true;

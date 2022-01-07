@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>Кеш</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>Всегда показывать скрытые файлы, папки или диски</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>Скрытые файлы и папки</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>Никогда не показывать скрытые файлы, папки или диски</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Размер и расположение</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Использовать настройки операционной системы</value>
+  </data>
 </root>

@@ -115,6 +115,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always Show hidden files, folders or drives.
+        /// </summary>
+        internal static string Always_Show_hidden_files__folders_or_drives {
+            get {
+                return ResourceManager.GetString("Always Show hidden files, folders or drives", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Appearance.
         /// </summary>
         internal static string Appearance {
@@ -484,6 +493,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hidden files and folders.
+        /// </summary>
+        internal static string Hidden_files_and_folders {
+            get {
+                return ResourceManager.GetString("Hidden files and folders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hotkey.
         /// </summary>
         internal static string Hotkey {
@@ -643,6 +661,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Mouse_location__Above_Taskbar_icon_ {
             get {
                 return ResourceManager.GetString("Mouse location (Above Taskbar icon)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Never show hidden files, folders or drives.
+        /// </summary>
+        internal static string Never_show_hidden_files__folders_or_drives {
+            get {
+                return ResourceManager.GetString("Never show hidden files, folders or drives", resourceCulture);
             }
         }
         
@@ -854,6 +881,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Size and location.
+        /// </summary>
+        internal static string Size_and_location {
+            get {
+                return ResourceManager.GetString("Size and location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Slider.
         /// </summary>
         internal static string Slider {
@@ -977,6 +1013,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Use_icon_from_folder {
             get {
                 return ResourceManager.GetString("Use icon from folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use operating system settings.
+        /// </summary>
+        internal static string Use_operating_system_settings {
+            get {
+                return ResourceManager.GetString("Use operating system settings", resourceCulture);
             }
         }
     }

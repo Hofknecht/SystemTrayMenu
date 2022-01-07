@@ -159,6 +159,54 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SystemSettingsShowHiddenFiles
+        {
+            get
+            {
+                return ((bool)(this["SystemSettingsShowHiddenFiles"]));
+            }
+            set
+            {
+                this["SystemSettingsShowHiddenFiles"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AlwaysShowHiddenFiles
+        {
+            get
+            {
+                return ((bool)(this["AlwaysShowHiddenFiles"]));
+            }
+            set
+            {
+                this["AlwaysShowHiddenFiles"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NeverShowHiddenFiles
+        {
+            get
+            {
+                return ((bool)(this["NeverShowHiddenFiles"]));
+            }
+            set
+            {
+                this["NeverShowHiddenFiles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool AppearAtTheBottomLeft
         {
             get

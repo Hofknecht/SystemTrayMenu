@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>حافظه پنهان</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>همیشه فایل‌ها، پوشه‌ها یا درایوهای مخفی نمایش داده شود</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>فایل ها و پوشه های مخفی</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>هرگز فایل ها، پوشه ها یا درایوهای مخفی را نشان ندهید</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>اندازه و مکان</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>از تنظیمات سیستم عامل استفاده کنید</value>
+  </data>
 </root>

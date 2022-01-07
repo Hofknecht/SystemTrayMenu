@@ -68,8 +68,15 @@ namespace SystemTrayMenu.Utilities
                     hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
                     bool systemEntry = attributes.HasFlag(
                         FileAttributes.Hidden | FileAttributes.System);
-                    if ((hideHiddenEntries && hiddenEntry) ||
-                        (hideSystemEntries && systemEntry))
+                    if (Properties.Settings.Default.SystemSettingsShowHiddenFiles)
+                    {
+                        if ((hideHiddenEntries && hiddenEntry) ||
+                           (hideSystemEntries && systemEntry))
+                        {
+                            isDirectoryToHide = true;
+                        }
+                    }
+                    else if (hiddenEntry && Properties.Settings.Default.NeverShowHiddenFiles)
                     {
                         isDirectoryToHide = true;
                     }

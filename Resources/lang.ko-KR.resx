@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>은닉처</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>항상 숨김 파일, 폴더 또는 드라이브 표시</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>숨겨진 파일 및 폴더</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>숨김 파일, 폴더 또는 드라이브를 표시하지 않음</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>크기 및 위치</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>운영 체제 설정 사용</value>
+  </data>
 </root>

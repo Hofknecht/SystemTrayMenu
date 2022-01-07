@@ -423,4 +423,19 @@
   <data name="Cache" xml:space="preserve">
     <value>Bộ nhớ đệm</value>
   </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>Luôn hiển thị các tệp, thư mục hoặc ổ đĩa ẩn</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>Các tập tin và thư mục ẩn</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>Không bao giờ hiển thị các tệp, thư mục hoặc ổ đĩa ẩn</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Kích thước và vị trí</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Sử dụng cài đặt hệ điều hành</value>
+  </data>
 </root>
