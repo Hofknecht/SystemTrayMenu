@@ -368,7 +368,7 @@ namespace SystemTrayMenu.Utilities
                 using Bitmap target = new(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
                 using Graphics graphics = Graphics.FromImage(target);
                 graphics.DrawIcon(originalIcon, 0, 0);
-                graphics.DrawIcon(overlay, 0, 0);
+                graphics.DrawIcon(overlay, new(0, 0, originalIcon.Width + 2, originalIcon.Height + 2));
                 target.MakeTransparent(target.GetPixel(1, 1));
                 IntPtr hIcon = target.GetHicon();
                 icon = (Icon)Icon.FromHandle(hIcon).Clone();
