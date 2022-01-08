@@ -960,7 +960,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonClearFolders_Click(object sender, EventArgs e)
         {
-            checkBoxShowOnlyAsSearchResult.Checked = true;
+            checkBoxShowOnlyAsSearchResult.Checked = false;
             dataGridViewFolders.Rows.Clear();
             checkBoxGenerateShortcutsToDrives.Checked = false;
         }
