@@ -1136,7 +1136,7 @@ namespace SystemTrayMenu.Business
             DataGridView dgv = (DataGridView)sender;
             DataGridView.HitTestInfo hitTestInfo;
             hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (!isDraggingSwipeScrolling &&
+            if (!isDragSwipeScrolled &&
                 hitTestInfo.RowIndex == lastMouseDownRowIndex &&
                 hitTestInfo.RowIndex > -1 &&
                 hitTestInfo.RowIndex < dgv.Rows.Count)
