@@ -238,7 +238,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
         public bool ShowOnlyAsSearchResult
         {
             get
