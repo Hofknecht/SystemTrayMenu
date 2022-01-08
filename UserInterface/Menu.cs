@@ -213,6 +213,8 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool IsUsable => Visible && !fading.IsHiding && !IsDisposed && !Disposing;
 
+        internal bool ScrollbarVisible { get; private set; }
+
         protected override CreateParams CreateParams
         {
             get
@@ -224,8 +226,6 @@ namespace SystemTrayMenu.UserInterface
                 return createparams;
             }
         }
-
-        public bool ScrollbarVisible { get; private set; }
 
         internal void ResetSearchText()
         {
