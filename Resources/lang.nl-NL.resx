@@ -360,8 +360,8 @@
   <data name="Add folder" xml:space="preserve">
     <value>Map toevoegen</value>
   </data>
-  <data name="Add folders to main menu" xml:space="preserve">
-    <value>Mappen toevoegen aan hoofdmenu</value>
+  <data name="Add content of folders to main menu" xml:space="preserve">
+    <value>Inhoud van mappen toevoegen aan hoofdmenu</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
     <value>Mappaden</value>
@@ -437,5 +437,8 @@
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Instellingen van het besturingssysteem gebruiken</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Alleen weergeven als zoekresultaat</value>
   </data>
 </root>

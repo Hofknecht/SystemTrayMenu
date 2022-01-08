@@ -360,8 +360,8 @@
   <data name="Add folder" xml:space="preserve">
     <value>Aggiungi cartella</value>
   </data>
-  <data name="Add folders to main menu" xml:space="preserve">
-    <value>Aggiungi cartelle al menu principale</value>
+  <data name="Add content of folders to main menu" xml:space="preserve">
+    <value>Aggiungi il contenuto delle cartelle al menu principale</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
     <value>Percorsi delle cartelle</value>
@@ -437,5 +437,8 @@
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Usa le impostazioni del sistema operativo</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Mostra solo come risultato della ricerca</value>
   </data>
 </root>

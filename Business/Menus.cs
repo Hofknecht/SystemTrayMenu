@@ -527,6 +527,11 @@ namespace SystemTrayMenu.Business
 
                     RowData rowData = ReadRowData(file, false, false);
                     rowData.HiddenEntry = hiddenEntry;
+                    if (Properties.Settings.Default.ShowOnlyAsSearchResult)
+                    {
+                        rowData.ShowOnlyWhenSearch = filesToAddToMainMenu.Contains(fileWithIllegalCharacters);
+                    }
+
                     string resolvedLnkPath = string.Empty;
                     if (rowData.ReadIcon(false, ref resolvedLnkPath, level))
                     {
@@ -928,13 +933,16 @@ namespace SystemTrayMenu.Business
                 dataTable.Columns.Add("SortIndex");
                 foreach (RowData rowData in data)
                 {
-                    if (rowData.ContainsMenu)
+                    if (!rowData.ShowOnlyWhenSearch)
                     {
-                        foldersCount++;
-                    }
-                    else
-                    {
-                        filesCount++;
+                        if (rowData.ContainsMenu)
+                        {
+                            foldersCount++;
+                        }
+                        else
+                        {
+                            filesCount++;
+                        }
                     }
 
                     rowData.SetData(rowData, dataTable);
@@ -943,6 +951,20 @@ namespace SystemTrayMenu.Business
                 dgv.DataSource = dataTable;
                 dgv.Columns["data"].Visible = false;
                 dgv.Columns["SortIndex"].Visible = false;
+
+                string columnSortIndex = "SortIndex";
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    RowData rowData = (RowData)row[2];
+                    if (rowData.ShowOnlyWhenSearch)
+                    {
+                        row[columnSortIndex] = 99;
+                    }
+                    else
+                    {
+                        row[columnSortIndex] = 0;
+                    }
+                }
             }
 
             DataGridView dgv = menu.GetDataGridView();
@@ -977,6 +999,12 @@ namespace SystemTrayMenu.Business
             if (menu.IsUsable)
             {
                 AdjustMenusSizeAndLocation();
+
+                if (menu.Level == 0)
+                {
+                    DataGridView dgv = menu.GetDataGridView();
+                    ((DataTable)dgv.DataSource).DefaultView.RowFilter = "[SortIndex] LIKE '%0%'";
+                }
             }
 
             if (!menu.Visible && menu.Level != 0)

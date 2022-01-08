@@ -360,8 +360,8 @@
   <data name="Add folder" xml:space="preserve">
     <value>Adicionar pasta</value>
   </data>
-  <data name="Add folders to main menu" xml:space="preserve">
-    <value>Adicionar pastas ao menu principal</value>
+  <data name="Add content of folders to main menu" xml:space="preserve">
+    <value>Adicionar conteúdo de pastas ao menu principal</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
     <value>Caminhos de pasta</value>
@@ -437,5 +437,8 @@
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Use as configurações do sistema operacional</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Mostrar apenas como resultado da pesquisa</value>
   </data>
 </root>

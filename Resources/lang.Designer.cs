@@ -79,20 +79,20 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add content of folders to main menu.
+        /// </summary>
+        internal static string Add_content_of_folders_to_main_menu {
+            get {
+                return ResourceManager.GetString("Add content of folders to main menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add folder.
         /// </summary>
         internal static string Add_folder {
             get {
                 return ResourceManager.GetString("Add folder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add folders to main menu.
-        /// </summary>
-        internal static string Add_folders_to_main_menu {
-            get {
-                return ResourceManager.GetString("Add folders to main menu", resourceCulture);
             }
         }
         
@@ -859,6 +859,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Show_in_Taskbar {
             get {
                 return ResourceManager.GetString("Show in Taskbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show only as search result.
+        /// </summary>
+        internal static string Show_only_as_search_result {
+            get {
+                return ResourceManager.GetString("Show only as search result", resourceCulture);
             }
         }
         

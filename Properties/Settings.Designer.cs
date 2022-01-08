@@ -234,6 +234,22 @@ namespace SystemTrayMenu.Properties
                 this["OpenItemWithOneClick"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool ShowOnlyAsSearchResult
+        {
+            get
+            {
+                return ((bool)(this["ShowOnlyAsSearchResult"]));
+            }
+            set
+            {
+                this["ShowOnlyAsSearchResult"] = value;
+            }
+        }
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]

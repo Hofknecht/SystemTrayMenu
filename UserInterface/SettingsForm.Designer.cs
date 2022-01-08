@@ -98,7 +98,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageFolders = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelFoldersInRootFolder = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxFoldersInRootFolder = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelFolderToRootFoldersList7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelFolderToRootFoldersList = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelFolderToRootFolder = new System.Windows.Forms.TableLayoutPanel();
             this.buttonAddFolderToRootFolder = new System.Windows.Forms.Button();
             this.buttonRemoveFolder = new System.Windows.Forms.Button();
@@ -298,6 +298,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.checkBoxShowOnlyAsSearchResult = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -337,7 +338,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageFolders.SuspendLayout();
             this.tableLayoutPanelFoldersInRootFolder.SuspendLayout();
             this.groupBoxFoldersInRootFolder.SuspendLayout();
-            this.tableLayoutPanelFolderToRootFoldersList7.SuspendLayout();
+            this.tableLayoutPanelFolderToRootFoldersList.SuspendLayout();
             this.tableLayoutPanelFolderToRootFolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFolders)).BeginInit();
             this.tableLayoutPanelAddSampleStartMenuFolder.SuspendLayout();
@@ -1387,37 +1388,39 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.groupBoxFoldersInRootFolder.AutoSize = true;
             this.groupBoxFoldersInRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxFoldersInRootFolder.Controls.Add(this.tableLayoutPanelFolderToRootFoldersList7);
+            this.groupBoxFoldersInRootFolder.Controls.Add(this.tableLayoutPanelFolderToRootFoldersList);
             this.groupBoxFoldersInRootFolder.Location = new System.Drawing.Point(3, 3);
             this.groupBoxFoldersInRootFolder.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxFoldersInRootFolder.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxFoldersInRootFolder.Name = "groupBoxFoldersInRootFolder";
-            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(400, 299);
+            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(400, 324);
             this.groupBoxFoldersInRootFolder.TabIndex = 0;
             this.groupBoxFoldersInRootFolder.TabStop = false;
-            this.groupBoxFoldersInRootFolder.Text = "groupBox1";
+            this.groupBoxFoldersInRootFolder.Text = "groupBoxFoldersInRootFolder";
             // 
-            // tableLayoutPanelFolderToRootFoldersList7
+            // tableLayoutPanelFolderToRootFoldersList
             // 
-            this.tableLayoutPanelFolderToRootFoldersList7.AutoSize = true;
-            this.tableLayoutPanelFolderToRootFoldersList7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelFolderToRootFoldersList7.ColumnCount = 1;
-            this.tableLayoutPanelFolderToRootFoldersList7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFolderToRootFoldersList7.Controls.Add(this.tableLayoutPanelFolderToRootFolder, 0, 1);
-            this.tableLayoutPanelFolderToRootFoldersList7.Controls.Add(this.dataGridViewFolders, 0, 2);
-            this.tableLayoutPanelFolderToRootFoldersList7.Controls.Add(this.tableLayoutPanelAddSampleStartMenuFolder, 0, 3);
-            this.tableLayoutPanelFolderToRootFoldersList7.Controls.Add(this.checkBoxGenerateShortcutsToDrives, 0, 4);
-            this.tableLayoutPanelFolderToRootFoldersList7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFolderToRootFoldersList7.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelFolderToRootFoldersList7.Name = "tableLayoutPanelFolderToRootFoldersList7";
-            this.tableLayoutPanelFolderToRootFoldersList7.RowCount = 5;
-            this.tableLayoutPanelFolderToRootFoldersList7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
-            this.tableLayoutPanelFolderToRootFoldersList7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList7.Size = new System.Drawing.Size(394, 277);
-            this.tableLayoutPanelFolderToRootFoldersList7.TabIndex = 0;
+            this.tableLayoutPanelFolderToRootFoldersList.AutoSize = true;
+            this.tableLayoutPanelFolderToRootFoldersList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelFolderToRootFoldersList.ColumnCount = 1;
+            this.tableLayoutPanelFolderToRootFoldersList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.tableLayoutPanelFolderToRootFolder, 0, 2);
+            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.dataGridViewFolders, 0, 3);
+            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.tableLayoutPanelAddSampleStartMenuFolder, 0, 4);
+            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.checkBoxGenerateShortcutsToDrives, 0, 5);
+            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.checkBoxShowOnlyAsSearchResult, 0, 0);
+            this.tableLayoutPanelFolderToRootFoldersList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelFolderToRootFoldersList.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelFolderToRootFoldersList.Name = "tableLayoutPanelFolderToRootFoldersList";
+            this.tableLayoutPanelFolderToRootFoldersList.RowCount = 6;
+            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelFolderToRootFoldersList.Size = new System.Drawing.Size(394, 302);
+            this.tableLayoutPanelFolderToRootFoldersList.TabIndex = 0;
             // 
             // tableLayoutPanelFolderToRootFolder
             // 
@@ -1430,7 +1433,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolderToRootFolder.Controls.Add(this.buttonAddFolderToRootFolder, 0, 0);
             this.tableLayoutPanelFolderToRootFolder.Controls.Add(this.buttonRemoveFolder, 2, 0);
             this.tableLayoutPanelFolderToRootFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFolderToRootFolder.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelFolderToRootFolder.Location = new System.Drawing.Point(0, 25);
             this.tableLayoutPanelFolderToRootFolder.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelFolderToRootFolder.Name = "tableLayoutPanelFolderToRootFolder";
             this.tableLayoutPanelFolderToRootFolder.RowCount = 1;
@@ -1478,7 +1481,7 @@ namespace SystemTrayMenu.UserInterface
             this.ColumnRecursiveLevel,
             this.ColumnOnlyFiles});
             this.dataGridViewFolders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewFolders.Location = new System.Drawing.Point(3, 34);
+            this.dataGridViewFolders.Location = new System.Drawing.Point(3, 59);
             this.dataGridViewFolders.Name = "dataGridViewFolders";
             this.dataGridViewFolders.RowHeadersVisible = false;
             this.dataGridViewFolders.RowTemplate.Height = 25;
@@ -1527,7 +1530,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAddSampleStartMenuFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelAddSampleStartMenuFolder.Controls.Add(this.buttonAddSampleStartMenuFolder, 0, 0);
             this.tableLayoutPanelAddSampleStartMenuFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAddSampleStartMenuFolder.Location = new System.Drawing.Point(0, 221);
+            this.tableLayoutPanelAddSampleStartMenuFolder.Location = new System.Drawing.Point(0, 246);
             this.tableLayoutPanelAddSampleStartMenuFolder.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelAddSampleStartMenuFolder.Name = "tableLayoutPanelAddSampleStartMenuFolder";
             this.tableLayoutPanelAddSampleStartMenuFolder.RowCount = 1;
@@ -1552,7 +1555,7 @@ namespace SystemTrayMenu.UserInterface
             // checkBoxGenerateShortcutsToDrives
             // 
             this.checkBoxGenerateShortcutsToDrives.AutoSize = true;
-            this.checkBoxGenerateShortcutsToDrives.Location = new System.Drawing.Point(3, 255);
+            this.checkBoxGenerateShortcutsToDrives.Location = new System.Drawing.Point(3, 280);
             this.checkBoxGenerateShortcutsToDrives.Name = "checkBoxGenerateShortcutsToDrives";
             this.checkBoxGenerateShortcutsToDrives.Size = new System.Drawing.Size(218, 19);
             this.checkBoxGenerateShortcutsToDrives.TabIndex = 7;
@@ -1563,7 +1566,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonDefaultFolders.AutoSize = true;
             this.buttonDefaultFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonDefaultFolders.Location = new System.Drawing.Point(9, 314);
+            this.buttonDefaultFolders.Location = new System.Drawing.Point(9, 339);
             this.buttonDefaultFolders.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonDefaultFolders.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonDefaultFolders.Name = "buttonDefaultFolders";
@@ -4195,6 +4198,16 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // checkBoxShowOnlyAsSearchResult
+            // 
+            this.checkBoxShowOnlyAsSearchResult.AutoSize = true;
+            this.checkBoxShowOnlyAsSearchResult.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxShowOnlyAsSearchResult.Name = "checkBoxShowOnlyAsSearchResult";
+            this.checkBoxShowOnlyAsSearchResult.Size = new System.Drawing.Size(211, 19);
+            this.checkBoxShowOnlyAsSearchResult.TabIndex = 8;
+            this.checkBoxShowOnlyAsSearchResult.Text = "checkBoxShowOnlyAsSearchResult";
+            this.checkBoxShowOnlyAsSearchResult.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4283,8 +4296,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFoldersInRootFolder.PerformLayout();
             this.groupBoxFoldersInRootFolder.ResumeLayout(false);
             this.groupBoxFoldersInRootFolder.PerformLayout();
-            this.tableLayoutPanelFolderToRootFoldersList7.ResumeLayout(false);
-            this.tableLayoutPanelFolderToRootFoldersList7.PerformLayout();
+            this.tableLayoutPanelFolderToRootFoldersList.ResumeLayout(false);
+            this.tableLayoutPanelFolderToRootFoldersList.PerformLayout();
             this.tableLayoutPanelFolderToRootFolder.ResumeLayout(false);
             this.tableLayoutPanelFolderToRootFolder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFolders)).EndInit();
@@ -4681,7 +4694,7 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TabPage tabPageFolders;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFoldersInRootFolder;
         private System.Windows.Forms.GroupBox groupBoxFoldersInRootFolder;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFolderToRootFoldersList7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFolderToRootFoldersList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFolderToRootFolder;
         private System.Windows.Forms.Button buttonAddFolderToRootFolder;
         private System.Windows.Forms.Button buttonRemoveFolder;
@@ -4719,5 +4732,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.RadioButton radioButtonSystemSettingsShowHiddenFiles;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button buttonSizeAndLocationDefault;
+        private System.Windows.Forms.CheckBox checkBoxShowOnlyAsSearchResult;
     }
 }

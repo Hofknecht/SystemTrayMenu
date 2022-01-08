@@ -360,8 +360,8 @@
   <data name="Add folder" xml:space="preserve">
     <value>フォルダーを追加</value>
   </data>
-  <data name="Add folders to main menu" xml:space="preserve">
-    <value>メインメニューにフォルダを追加する</value>
+  <data name="Add content of folders to main menu" xml:space="preserve">
+    <value>メインメニューにフォルダのコンテンツを追加する</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
     <value>フォルダパス</value>
@@ -437,5 +437,8 @@
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>オペレーティングシステムの設定を使用する</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>検索結果としてのみ表示</value>
   </data>
 </root>

@@ -149,7 +149,8 @@ namespace SystemTrayMenu.UserInterface
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
 
                 tabPageFolders.Text = Translator.GetText("Folders");
-                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add folders to main menu");
+                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add content of folders to main menu");
+                checkBoxShowOnlyAsSearchResult.Text = Translator.GetText("Show only as search result");
                 buttonAddFolderToRootFolder.Text = Translator.GetText("Add folder");
                 buttonRemoveFolder.Text = Translator.GetText("Remove folder");
                 ColumnFolder.HeaderText = Translator.GetText("Folder paths");
@@ -370,6 +371,7 @@ namespace SystemTrayMenu.UserInterface
             radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
             radioButtonAlwaysShowHiddenFiles.Checked = Settings.Default.AlwaysShowHiddenFiles;
 
+            checkBoxShowOnlyAsSearchResult.Checked = Settings.Default.ShowOnlyAsSearchResult;
             try
             {
                 foreach (string pathAndRecursivString in Settings.Default.PathsAddToMainMenu.Split(@"|"))
@@ -789,6 +791,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
             Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;
 
+            Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.Checked;
             SaveFolders();
             Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.Checked;
             Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
@@ -957,6 +960,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonClearFolders_Click(object sender, EventArgs e)
         {
+            checkBoxShowOnlyAsSearchResult.Checked = true;
             dataGridViewFolders.Rows.Clear();
             checkBoxGenerateShortcutsToDrives.Checked = false;
         }

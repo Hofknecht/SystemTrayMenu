@@ -360,8 +360,8 @@
   <data name="Add folder" xml:space="preserve">
     <value>Thêm thư mục</value>
   </data>
-  <data name="Add folders to main menu" xml:space="preserve">
-    <value>Thêm thư mục vào menu chính</value>
+  <data name="Add content of folders to main menu" xml:space="preserve">
+    <value>Thêm nội dung của các thư mục vào menu chính</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
     <value>Đường dẫn thư mục</value>
@@ -437,5 +437,8 @@
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Sử dụng cài đặt hệ điều hành</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Chỉ hiển thị dưới dạng kết quả tìm kiếm</value>
   </data>
 </root>

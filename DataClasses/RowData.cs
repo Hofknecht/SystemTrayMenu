@@ -40,6 +40,8 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool HiddenEntry { get; set; }
 
+        internal bool ShowOnlyWhenSearch { get; set; }
+
         internal string TargetFilePath { get; set; }
 
         internal string TargetFilePathOrig { get; set; }

@@ -360,8 +360,8 @@
   <data name="Add folder" xml:space="preserve">
     <value>اضافه کردن پوشه</value>
   </data>
-  <data name="Add folders to main menu" xml:space="preserve">
-    <value>پوشه ها را به منوی اصلی اضافه کنید</value>
+  <data name="Add content of folders to main menu" xml:space="preserve">
+    <value>محتوای پوشه ها را به منوی اصلی اضافه کنید</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
     <value>مسیرهای پوشه</value>
@@ -437,5 +437,8 @@
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>از تنظیمات سیستم عامل استفاده کنید</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>فقط به عنوان نتیجه جستجو نمایش داده شود</value>
   </data>
 </root>

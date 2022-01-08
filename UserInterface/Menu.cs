@@ -760,7 +760,15 @@ namespace SystemTrayMenu.UserInterface
 
             try
             {
-                data.DefaultView.RowFilter = $"[{filterField}] {like}";
+                if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
+                    string.IsNullOrEmpty(searchString))
+                {
+                    data.DefaultView.RowFilter = "[SortIndex] LIKE '%0%'";
+                }
+                else
+                {
+                    data.DefaultView.RowFilter = $"[{filterField}] {like}";
+                }
             }
             catch (Exception ex)
             {
@@ -775,14 +783,35 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
+            string columnSortIndex = "SortIndex";
+
             if (string.IsNullOrEmpty(searchString))
             {
-                data.DefaultView.Sort = string.Empty;
+                if (Properties.Settings.Default.ShowOnlyAsSearchResult)
+                {
+                    foreach (DataRow row in data.Rows)
+                    {
+                        RowData rowData = (RowData)row[2];
+                        if (rowData.ShowOnlyWhenSearch)
+                        {
+                            row[columnSortIndex] = 99;
+                        }
+                        else
+                        {
+                            row[columnSortIndex] = 0;
+                        }
+                    }
+
+                    data.DefaultView.Sort = string.Empty;
+                    data.AcceptChanges();
+                }
+                else
+                {
+                    data.DefaultView.Sort = string.Empty;
+                }
             }
             else
             {
-                string columnSortIndex = "SortIndex";
-
                 foreach (DataRow row in data.Rows)
                 {
                     if (row[1].ToString().StartsWith(
@@ -807,20 +836,24 @@ namespace SystemTrayMenu.UserInterface
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
-                rowData.RowIndex = row.Index;
 
-                if (rowData.ContainsMenu)
+                if (!string.IsNullOrEmpty(searchString) || !rowData.ShowOnlyWhenSearch)
                 {
-                    foldersCount++;
-                }
-                else
-                {
-                    filesCount++;
-                }
+                    rowData.RowIndex = row.Index;
 
-                if (rowData.IconLoading)
-                {
-                    anyIconNotUpdated = true;
+                    if (rowData.ContainsMenu)
+                    {
+                        foldersCount++;
+                    }
+                    else
+                    {
+                        filesCount++;
+                    }
+
+                    if (rowData.IconLoading)
+                    {
+                        anyIconNotUpdated = true;
+                    }
                 }
             }
 
