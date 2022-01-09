@@ -1081,7 +1081,7 @@ namespace SystemTrayMenu.Business
             }
 
             Menu menu = (Menu)((DataGridView)sender).FindForm();
-            if (menu.ScrollbarVisible)
+            if (menu != null && menu.ScrollbarVisible)
             {
                 isDraggingSwipeScrolling = true;
                 dragSwipeScrollingStartRowIndex = GetRowUnderCursor(dgv, e.Location);
