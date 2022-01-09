@@ -952,7 +952,14 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                SettingsForm.ShowSingleInstance(this);
+                if (Properties.Settings.Default.CacheMainMenu)
+                {
+                    SettingsForm.ShowSingleInstance(this);
+                }
+                else
+                {
+                    SettingsForm.ShowSingleInstance(null);
+                }
             }
         }
 
