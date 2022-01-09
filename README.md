@@ -165,8 +165,9 @@ Thanks for ideas, reporting issues and contributing!
 #275 #276 #278 [donaldaken](https://github.com/donaldaken),
 #277 Jan S.,
 #282 [akuznets](https://github.com/akuznets),
-#283 #284 [RuSieg](https://github.com/RuSieg),
+#283 #284 #289 [RuSieg](https://github.com/RuSieg),
 #285 #286 [dao-net](https://github.com/dao-net),
+#288 William P.,
 
 
 Donations
