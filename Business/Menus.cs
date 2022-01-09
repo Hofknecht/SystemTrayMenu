@@ -1004,6 +1004,7 @@ namespace SystemTrayMenu.Business
                 {
                     DataGridView dgv = menu.GetDataGridView();
                     ((DataTable)dgv.DataSource).DefaultView.RowFilter = "[SortIndex] LIKE '%0%'";
+                    AdjustMenusSizeAndLocation();
                 }
             }
 
