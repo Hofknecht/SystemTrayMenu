@@ -1038,14 +1038,17 @@ namespace SystemTrayMenu.Business
                 if (newRow > -1)
                 {
                     int delta = dragSwipeScrollingStartRowIndex - newRow;
-                    DoScroll(dgv, delta * 2);
-                    dragSwipeScrollingStartRowIndex += delta;
+                    if (DoScroll(dgv, ref delta))
+                    {
+                        dragSwipeScrollingStartRowIndex += delta;
+                    }
                 }
             }
         }
 
-        private void DoScroll(DataGridView dgv, int delta)
+        private bool DoScroll(DataGridView dgv, ref int delta)
         {
+            bool scrolled = false;
             if (delta != 0)
             {
                 if (delta < 0 && dgv.FirstDisplayedScrollingRowIndex == 0)
@@ -1053,15 +1056,24 @@ namespace SystemTrayMenu.Business
                     delta = 0;
                 }
 
-                int newFirstDisplayedScrollingRowIndex = dgv.FirstDisplayedScrollingRowIndex + delta;
+                int newFirstDisplayedScrollingRowIndex = dgv.FirstDisplayedScrollingRowIndex + (delta * 2);
+
+                if (newFirstDisplayedScrollingRowIndex < 0 || newFirstDisplayedScrollingRowIndex >= dgv.RowCount)
+                {
+                    newFirstDisplayedScrollingRowIndex = dgv.FirstDisplayedScrollingRowIndex + delta;
+                }
+
                 if (newFirstDisplayedScrollingRowIndex > -1 && newFirstDisplayedScrollingRowIndex < dgv.RowCount)
                 {
                     isDragSwipeScrolled = true;
                     dgv.FirstDisplayedScrollingRowIndex = newFirstDisplayedScrollingRowIndex;
                     Menu menu = (Menu)dgv.FindForm();
                     menu.AdjustScrollbar();
+                    scrolled = dgv.FirstDisplayedScrollingRowIndex == newFirstDisplayedScrollingRowIndex;
                 }
             }
+
+            return scrolled;
         }
 
         private void Dgv_MouseDown(object sender, MouseEventArgs e)
