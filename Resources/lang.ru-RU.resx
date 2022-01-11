@@ -196,16 +196,16 @@
     <value>Всегда использовать темную тему</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Вид и поведение</value>
+    <value>Поведение</value>
   </data>
   <data name="Mouse location" xml:space="preserve">
-    <value>Положение мыши</value>
+    <value>Рядом с мышью</value>
   </data>
   <data name="Change folder" xml:space="preserve">
     <value>Изменить папку</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Щелчок</value>
+    <value>Иконка</value>
   </data>
   <data name="Customize" xml:space="preserve">
     <value>Темы</value>
@@ -307,7 +307,7 @@
     <value>Ползунок при наведении курсора мыши 2</value>
   </data>
   <data name="Use icon from folder" xml:space="preserve">
-    <value>Использовать значок из папки</value>
+    <value>Использовать иконку из папки</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Размер</value>
@@ -394,22 +394,22 @@
     <value>Высота строки</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>Появление</value>
+    <value>Внешний вид</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>Нижняя левая</value>
+    <value>Внизу слева</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
     <value>Внизу справа</value>
   </data>
   <data name="Main menu appears at" xml:space="preserve">
-    <value>Главное меню появляется на</value>
+    <value>Расположение меню</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Расположение мыши (над значком на панели задач)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Пользовательский (перетащите в соответствующее место)</value>
+    <value>Настраиваемое (перетащите в соответствующее место)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>элемент</value>
@@ -418,22 +418,22 @@
     <value>элементы</value>
   </data>
   <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Создавайте ярлыки для дисков</value>
+    <value>Создать ярлыки для дисков</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>Кеш</value>
+    <value>Кэш</value>
   </data>
   <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Всегда показывать скрытые файлы, папки или диски</value>
+    <value>Показывать скрытые файлы, папки и диски</value>
   </data>
   <data name="Hidden files and folders" xml:space="preserve">
     <value>Скрытые файлы и папки</value>
   </data>
   <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Никогда не показывать скрытые файлы, папки или диски</value>
+    <value>Не показывать скрытые файлы, папки и диски</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Размер и расположение</value>
+    <value>Позиционирование</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Использовать настройки операционной системы</value>
