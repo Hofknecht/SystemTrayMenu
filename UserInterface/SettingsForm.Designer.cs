@@ -92,6 +92,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonSystemSettingsShowHiddenFiles = new System.Windows.Forms.RadioButton();
             this.groupBoxClick = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelClick = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxOpenDirectoryWithOneClick = new System.Windows.Forms.CheckBox();
             this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
             this.checkBoxShowInTaskbar = new System.Windows.Forms.CheckBox();
             this.buttonAdvancedDefault = new System.Windows.Forms.Button();
@@ -109,6 +110,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAddSampleStartMenuFolder = new System.Windows.Forms.TableLayoutPanel();
             this.buttonAddSampleStartMenuFolder = new System.Windows.Forms.Button();
             this.checkBoxGenerateShortcutsToDrives = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowOnlyAsSearchResult = new System.Windows.Forms.CheckBox();
             this.buttonDefaultFolders = new System.Windows.Forms.Button();
             this.tabPageExpert = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelExpert = new System.Windows.Forms.TableLayoutPanel();
@@ -298,7 +300,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.checkBoxShowOnlyAsSearchResult = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -1224,7 +1225,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHiddenFilesAndFolders.AutoSize = true;
             this.groupBoxHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHiddenFilesAndFolders.Controls.Add(this.tableLayoutPanel1);
-            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 81);
+            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 106);
             this.groupBoxHiddenFilesAndFolders.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxHiddenFilesAndFolders.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxHiddenFilesAndFolders.Name = "groupBoxHiddenFilesAndFolders";
@@ -1297,7 +1298,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxClick.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxClick.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxClick.Name = "groupBoxClick";
-            this.groupBoxClick.Size = new System.Drawing.Size(400, 72);
+            this.groupBoxClick.Size = new System.Drawing.Size(400, 97);
             this.groupBoxClick.TabIndex = 0;
             this.groupBoxClick.TabStop = false;
             this.groupBoxClick.Text = "groupBoxClick";
@@ -1308,16 +1309,29 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelClick.ColumnCount = 1;
             this.tableLayoutPanelClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenDirectoryWithOneClick, 0, 2);
             this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 1);
             this.tableLayoutPanelClick.Controls.Add(this.checkBoxShowInTaskbar, 0, 0);
             this.tableLayoutPanelClick.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelClick.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelClick.Name = "tableLayoutPanelClick";
-            this.tableLayoutPanelClick.RowCount = 2;
+            this.tableLayoutPanelClick.RowCount = 3;
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.Size = new System.Drawing.Size(394, 50);
+            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelClick.Size = new System.Drawing.Size(394, 75);
             this.tableLayoutPanelClick.TabIndex = 0;
+            // 
+            // checkBoxOpenDirectoryWithOneClick
+            // 
+            this.checkBoxOpenDirectoryWithOneClick.AutoSize = true;
+            this.checkBoxOpenDirectoryWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxOpenDirectoryWithOneClick.Location = new System.Drawing.Point(3, 53);
+            this.checkBoxOpenDirectoryWithOneClick.Name = "checkBoxOpenDirectoryWithOneClick";
+            this.checkBoxOpenDirectoryWithOneClick.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxOpenDirectoryWithOneClick.TabIndex = 2;
+            this.checkBoxOpenDirectoryWithOneClick.Text = "checkBoxOpenDirectoryWithOneClick";
+            this.checkBoxOpenDirectoryWithOneClick.UseVisualStyleBackColor = true;
             // 
             // checkBoxOpenItemWithOneClick
             // 
@@ -1345,7 +1359,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 190);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 215);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -1561,6 +1575,16 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxGenerateShortcutsToDrives.TabIndex = 7;
             this.checkBoxGenerateShortcutsToDrives.Text = "checkBoxGenerateShortcutsToDrives";
             this.checkBoxGenerateShortcutsToDrives.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowOnlyAsSearchResult
+            // 
+            this.checkBoxShowOnlyAsSearchResult.AutoSize = true;
+            this.checkBoxShowOnlyAsSearchResult.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxShowOnlyAsSearchResult.Name = "checkBoxShowOnlyAsSearchResult";
+            this.checkBoxShowOnlyAsSearchResult.Size = new System.Drawing.Size(211, 19);
+            this.checkBoxShowOnlyAsSearchResult.TabIndex = 8;
+            this.checkBoxShowOnlyAsSearchResult.Text = "checkBoxShowOnlyAsSearchResult";
+            this.checkBoxShowOnlyAsSearchResult.UseVisualStyleBackColor = true;
             // 
             // buttonDefaultFolders
             // 
@@ -4198,16 +4222,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
-            // checkBoxShowOnlyAsSearchResult
-            // 
-            this.checkBoxShowOnlyAsSearchResult.AutoSize = true;
-            this.checkBoxShowOnlyAsSearchResult.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxShowOnlyAsSearchResult.Name = "checkBoxShowOnlyAsSearchResult";
-            this.checkBoxShowOnlyAsSearchResult.Size = new System.Drawing.Size(211, 19);
-            this.checkBoxShowOnlyAsSearchResult.TabIndex = 8;
-            this.checkBoxShowOnlyAsSearchResult.Text = "checkBoxShowOnlyAsSearchResult";
-            this.checkBoxShowOnlyAsSearchResult.UseVisualStyleBackColor = true;
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4733,5 +4747,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button buttonSizeAndLocationDefault;
         private System.Windows.Forms.CheckBox checkBoxShowOnlyAsSearchResult;
+        private System.Windows.Forms.CheckBox checkBoxOpenDirectoryWithOneClick;
     }
 }

@@ -189,7 +189,7 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>Du hast keine Rechte für den Hauptordner. Gewähre die Rechte oder ändere den Hauptordner.</value>
   </data>
-  <data name="Single click to start item" xml:space="preserve">
+  <data name="Single click to open an item instead of double click" xml:space="preserve">
     <value>Öffnen durch einfachen Klick anstelle eines Doppelklicks</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -440,5 +440,8 @@
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>Nur als Suchergebnis anzeigen</value>
+  </data>
+  <data name="Single click to open a directory instead of double click" xml:space="preserve">
+    <value>Einfacher Klick zum Öffnen eines Verzeichnisses statt Doppelklick</value>
   </data>
 </root>

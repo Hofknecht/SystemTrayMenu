@@ -181,6 +181,16 @@ namespace SystemTrayMenu.DataClasses
             {
                 OpenItem(e, ref toCloseByDoubleClick);
             }
+
+            if (Properties.Settings.Default.OpenDirectoryWithOneClick &&
+                ContainsMenu && (e == null || e.Button == MouseButtons.Left))
+            {
+                Log.ProcessStart(TargetFilePath);
+                if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
+                {
+                    toCloseByDoubleClick = true;
+                }
+            }
         }
 
         internal void DoubleClick(MouseEventArgs e, out bool toCloseByDoubleClick)
@@ -191,7 +201,8 @@ namespace SystemTrayMenu.DataClasses
                 OpenItem(e, ref toCloseByDoubleClick);
             }
 
-            if (ContainsMenu && (e == null || e.Button == MouseButtons.Left))
+            if (!Properties.Settings.Default.OpenDirectoryWithOneClick &&
+                ContainsMenu && (e == null || e.Button == MouseButtons.Left))
             {
                 Log.ProcessStart(TargetFilePath);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)

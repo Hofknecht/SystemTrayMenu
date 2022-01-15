@@ -189,7 +189,7 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>No tiene acceso a la carpeta raíz del SystemTrayMenu. Otorgue acceso a la carpeta o cambie la carpeta raíz.</value>
   </data>
-  <data name="Single click to start item" xml:space="preserve">
+  <data name="Single click to open an item instead of double click" xml:space="preserve">
     <value>Un solo clic para abrir un elemento en lugar de hacer doble clic</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -440,5 +440,8 @@
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>Mostrar solo como resultado de búsqueda</value>
+  </data>
+  <data name="Single click to open a directory instead of double click" xml:space="preserve">
+    <value>Haga un solo clic para abrir un directorio en lugar de hacer doble clic</value>
   </data>
 </root>

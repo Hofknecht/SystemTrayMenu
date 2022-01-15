@@ -141,7 +141,8 @@ namespace SystemTrayMenu.UserInterface
                 tabPageAdvanced.Text = Translator.GetText("Advanced");
                 groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
-                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to start item");
+                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an item instead of double click");
+                checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory instead of double click");
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and folders");
                 radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
                 radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, folders or drives");
@@ -366,6 +367,7 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
+            checkBoxOpenDirectoryWithOneClick.Checked = Settings.Default.OpenDirectoryWithOneClick;
 
             radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
             radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
@@ -787,6 +789,7 @@ namespace SystemTrayMenu.UserInterface
 
             Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
+            Settings.Default.OpenDirectoryWithOneClick = checkBoxOpenDirectoryWithOneClick.Checked;
             Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
             Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
             Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;
@@ -1065,6 +1068,7 @@ namespace SystemTrayMenu.UserInterface
         {
             checkBoxShowInTaskbar.Checked = true;
             checkBoxOpenItemWithOneClick.Checked = false;
+            checkBoxOpenDirectoryWithOneClick.Checked = true;
 
             radioButtonSystemSettingsShowHiddenFiles.Checked = true;
             radioButtonNeverShowHiddenFiles.Checked = false;

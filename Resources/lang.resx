@@ -189,7 +189,7 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder.</value>
   </data>
-  <data name="Single click to start item" xml:space="preserve">
+  <data name="Single click to open an item instead of double click" xml:space="preserve">
     <value>Single click to open an item instead of double click</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -440,5 +440,8 @@
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>Show only as search result</value>
+  </data>
+  <data name="Single click to open a directory instead of double click" xml:space="preserve">
+    <value>Single click to open a directory instead of double click</value>
   </data>
 </root>

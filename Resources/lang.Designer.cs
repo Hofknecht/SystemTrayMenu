@@ -872,11 +872,20 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Single click to open a directory instead of double click.
+        /// </summary>
+        internal static string Single_click_to_open_a_directory_instead_of_double_click {
+            get {
+                return ResourceManager.GetString("Single click to open a directory instead of double click", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Single click to open an item instead of double click.
         /// </summary>
-        internal static string Single_click_to_start_item {
+        internal static string Single_click_to_open_an_item_instead_of_double_click {
             get {
-                return ResourceManager.GetString("Single click to start item", resourceCulture);
+                return ResourceManager.GetString("Single click to open an item instead of double click", resourceCulture);
             }
         }
         

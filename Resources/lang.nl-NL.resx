@@ -189,7 +189,7 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>U heeft geen toegang tot de hoofdmap voor het SystemTrayMenu. Verleen toegang tot de map of wijzig de hoofdmap.</value>
   </data>
-  <data name="Single click to start item" xml:space="preserve">
+  <data name="Single click to open an item instead of double click" xml:space="preserve">
     <value>Enkele klik om een item te openen in plaats van dubbelklikken</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -440,5 +440,8 @@
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>Alleen weergeven als zoekresultaat</value>
+  </data>
+  <data name="Single click to open a directory instead of double click" xml:space="preserve">
+    <value>Enkele klik om een map te openen in plaats van dubbelklikken</value>
   </data>
 </root>

@@ -189,7 +189,7 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>SystemTrayMenu의 루트 폴더에 액세스 할 수 없습니다. 폴더에 대한 액세스 권한을 부여하거나 루트 폴더를 변경하십시오.</value>
   </data>
-  <data name="Single click to start item" xml:space="preserve">
+  <data name="Single click to open an item instead of double click" xml:space="preserve">
     <value>두 번 클릭하는 대신 한 번 클릭하여 항목을 엽니 다.</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -440,5 +440,8 @@
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>검색 결과로만 표시</value>
+  </data>
+  <data name="Single click to open a directory instead of double click" xml:space="preserve">
+    <value>더블 클릭이 아닌 한 번의 클릭으로 디렉토리 열기</value>
   </data>
 </root>

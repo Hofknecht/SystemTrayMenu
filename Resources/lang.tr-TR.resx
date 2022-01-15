@@ -189,7 +189,7 @@
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
     <value>SystemTrayMenu için ana klasöre erişiminiz yok. Klasöre erişim izni verin veya ana klasörü değiştirin.</value>
   </data>
-  <data name="Single click to start item" xml:space="preserve">
+  <data name="Single click to open an item instead of double click" xml:space="preserve">
     <value>Bir öğeyi açmak için çift tıklama yerine tek tıklama</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -440,5 +440,8 @@
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>Yalnızca arama sonucu olarak göster</value>
+  </data>
+  <data name="Single click to open a directory instead of double click" xml:space="preserve">
+    <value>Çift tıklama yerine bir dizini açmak için tek tıklama</value>
   </data>
 </root>
