@@ -444,4 +444,16 @@
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
     <value>Jediným kliknutím otevřete adresář namísto dvojitého kliknutí</value>
   </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Vedle předchozího</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Offset podle pixelů</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Překrývající se</value>
+  </data>
+  <data name="Sub menu appears at" xml:space="preserve">
+    <value>Podnabídka se zobrazí na</value>
+  </data>
 </root>

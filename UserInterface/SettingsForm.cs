@@ -136,6 +136,10 @@ namespace SystemTrayMenu.UserInterface
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
                 radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate place)");
                 radioButtonAppearAtMouseLocation.Text = Translator.GetText("Mouse location");
+                groupBoxSubMenuAppearAt.Text = Translator.GetText("Sub menu appears at");
+                radioButtonNextToPreviousMenu.Text = Translator.GetText("Next to the previous one");
+                radioButtonOverlapping.Text = Translator.GetText("Overlapping");
+                labelOverlappingByPixelsOffset.Text = Translator.GetText("Offset by pixels");
                 buttonSizeAndLocationDefault.Text = Translator.GetText("Default");
 
                 tabPageAdvanced.Text = Translator.GetText("Advanced");
@@ -363,6 +367,18 @@ namespace SystemTrayMenu.UserInterface
             else
             {
                 radioButtonAppearAtTheBottomRight.Checked = true;
+            }
+
+            numericUpDownOverlappingOffsetPixels.Value = Settings.Default.OverlappingOffsetPixels;
+            if (Settings.Default.AppearNextToPreviousMenu)
+            {
+                radioButtonNextToPreviousMenu.Checked = true;
+                numericUpDownOverlappingOffsetPixels.Enabled = false;
+            }
+            else
+            {
+                radioButtonOverlapping.Checked = true;
+                numericUpDownOverlappingOffsetPixels.Enabled = true;
             }
 
             checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
@@ -787,6 +803,16 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
 
+            Settings.Default.OverlappingOffsetPixels = (int)numericUpDownOverlappingOffsetPixels.Value;
+            if (radioButtonNextToPreviousMenu.Checked)
+            {
+                Settings.Default.AppearNextToPreviousMenu = true;
+            }
+            else
+            {
+                Settings.Default.AppearNextToPreviousMenu = false;
+            }
+
             Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Settings.Default.OpenDirectoryWithOneClick = checkBoxOpenDirectoryWithOneClick.Checked;
@@ -1062,6 +1088,9 @@ namespace SystemTrayMenu.UserInterface
             radioButtonAppearAtTheBottomLeft.Checked = true;
             radioButtonUseCustomLocation.Checked = false;
             radioButtonAppearAtMouseLocation.Checked = false;
+
+            radioButtonNextToPreviousMenu.Checked = true;
+            numericUpDownOverlappingOffsetPixels.Value = 150;
         }
 
         private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
@@ -1253,6 +1282,22 @@ namespace SystemTrayMenu.UserInterface
         {
             settingsForm.Dispose();
             settingsForm = null;
+        }
+
+        private void RadioButtonNextToPreviousMenu_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButtonOverlapping.CheckedChanged -= RadioButtonOverlapping_CheckedChanged;
+            radioButtonOverlapping.Checked = false;
+            radioButtonOverlapping.CheckedChanged += RadioButtonOverlapping_CheckedChanged;
+            numericUpDownOverlappingOffsetPixels.Enabled = false;
+        }
+
+        private void RadioButtonOverlapping_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButtonNextToPreviousMenu.CheckedChanged -= RadioButtonNextToPreviousMenu_CheckedChanged;
+            radioButtonNextToPreviousMenu.Checked = false;
+            radioButtonNextToPreviousMenu.CheckedChanged += RadioButtonNextToPreviousMenu_CheckedChanged;
+            numericUpDownOverlappingOffsetPixels.Enabled = true;
         }
     }
 }

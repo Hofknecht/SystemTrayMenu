@@ -674,6 +674,24 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next to the previous one.
+        /// </summary>
+        internal static string Next_to_the_previous_one {
+            get {
+                return ResourceManager.GetString("Next to the previous one", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Offset by pixels.
+        /// </summary>
+        internal static string Offset_by_pixels {
+            get {
+                return ResourceManager.GetString("Offset by pixels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string OK {
@@ -715,6 +733,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Opened_folder {
             get {
                 return ResourceManager.GetString("Opened folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overlapping.
+        /// </summary>
+        internal static string Overlapping {
+            get {
+                return ResourceManager.GetString("Overlapping", resourceCulture);
             }
         }
         
@@ -958,6 +985,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Store_config_at_the_assembly_location {
             get {
                 return ResourceManager.GetString("Store config at the assembly location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sub menu appears at.
+        /// </summary>
+        internal static string Sub_menu_appears_at {
+            get {
+                return ResourceManager.GetString("Sub menu appears at", resourceCulture);
             }
         }
         

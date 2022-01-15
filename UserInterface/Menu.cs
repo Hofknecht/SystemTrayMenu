@@ -480,6 +480,20 @@ namespace SystemTrayMenu.UserInterface
                 x -= Width;
             }
 
+            if (Level != 0 &&
+                !Properties.Settings.Default.AppearNextToPreviousMenu &&
+                menuPredecessor.Width > Properties.Settings.Default.OverlappingOffsetPixels)
+            {
+                if (directionToRight)
+                {
+                    x = x - menuPredecessor.Width + Properties.Settings.Default.OverlappingOffsetPixels;
+                }
+                else
+                {
+                    x = x + menuPredecessor.Width - Properties.Settings.Default.OverlappingOffsetPixels;
+                }
+            }
+
             // Calculate Y position
             int y;
             switch (startLocation)

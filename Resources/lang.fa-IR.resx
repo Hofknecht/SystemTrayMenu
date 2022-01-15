@@ -444,4 +444,16 @@
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
     <value>یک کلیک برای باز کردن یک دایرکتوری به جای دوبار کلیک کردن</value>
   </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>کنار قبلی</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>افست با پیکسل</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>با هم تداخل دارند</value>
+  </data>
+  <data name="Sub menu appears at" xml:space="preserve">
+    <value>منوی فرعی در نشان داده می شود</value>
+  </data>
 </root>

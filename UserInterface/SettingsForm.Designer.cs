@@ -62,6 +62,13 @@ namespace SystemTrayMenu.UserInterface
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.tabPageSizeAndLocation = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBoxSubMenuAppearAt = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.numericUpDownOverlappingOffsetPixels = new System.Windows.Forms.NumericUpDown();
+            this.labelOverlappingByPixelsOffset = new System.Windows.Forms.Label();
+            this.radioButtonOverlapping = new System.Windows.Forms.RadioButton();
+            this.radioButtonNextToPreviousMenu = new System.Windows.Forms.RadioButton();
             this.buttonSizeAndLocationDefault = new System.Windows.Forms.Button();
             this.groupBoxMenuAppearAt = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelMenuAppearAt = new System.Windows.Forms.TableLayoutPanel();
@@ -318,6 +325,10 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelLanguage.SuspendLayout();
             this.tabPageSizeAndLocation.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.groupBoxSubMenuAppearAt.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverlappingOffsetPixels)).BeginInit();
             this.groupBoxMenuAppearAt.SuspendLayout();
             this.tableLayoutPanelMenuAppearAt.SuspendLayout();
             this.groupBoxSize.SuspendLayout();
@@ -891,24 +902,131 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.buttonSizeAndLocationDefault, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.groupBoxSubMenuAppearAt, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.buttonSizeAndLocationDefault, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.groupBoxMenuAppearAt, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.groupBoxSize, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 407);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
+            // groupBoxSubMenuAppearAt
+            // 
+            this.groupBoxSubMenuAppearAt.AutoSize = true;
+            this.groupBoxSubMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxSubMenuAppearAt.Controls.Add(this.tableLayoutPanel3);
+            this.groupBoxSubMenuAppearAt.Location = new System.Drawing.Point(3, 278);
+            this.groupBoxSubMenuAppearAt.MaximumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxSubMenuAppearAt.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxSubMenuAppearAt.Name = "groupBoxSubMenuAppearAt";
+            this.groupBoxSubMenuAppearAt.Size = new System.Drawing.Size(400, 76);
+            this.groupBoxSubMenuAppearAt.TabIndex = 2;
+            this.groupBoxSubMenuAppearAt.TabStop = false;
+            this.groupBoxSubMenuAppearAt.Text = "groupBoxSubMenuAppearAt";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.AutoSize = true;
+            this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.radioButtonNextToPreviousMenu, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(394, 54);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.AutoSize = true;
+            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.numericUpDownOverlappingOffsetPixels, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.labelOverlappingByPixelsOffset, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.radioButtonOverlapping, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 25);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanel4.TabIndex = 3;
+            // 
+            // numericUpDownOverlappingOffsetPixels
+            // 
+            this.numericUpDownOverlappingOffsetPixels.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownOverlappingOffsetPixels.Location = new System.Drawing.Point(162, 3);
+            this.numericUpDownOverlappingOffsetPixels.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericUpDownOverlappingOffsetPixels.Name = "numericUpDownOverlappingOffsetPixels";
+            this.numericUpDownOverlappingOffsetPixels.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownOverlappingOffsetPixels.TabIndex = 2;
+            // 
+            // labelOverlappingByPixelsOffset
+            // 
+            this.labelOverlappingByPixelsOffset.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelOverlappingByPixelsOffset.AutoSize = true;
+            this.labelOverlappingByPixelsOffset.Location = new System.Drawing.Point(223, 7);
+            this.labelOverlappingByPixelsOffset.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelOverlappingByPixelsOffset.Name = "labelOverlappingByPixelsOffset";
+            this.labelOverlappingByPixelsOffset.Size = new System.Drawing.Size(64, 15);
+            this.labelOverlappingByPixelsOffset.TabIndex = 3;
+            this.labelOverlappingByPixelsOffset.Text = "labelOffset";
+            // 
+            // radioButtonOverlapping
+            // 
+            this.radioButtonOverlapping.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radioButtonOverlapping.AutoSize = true;
+            this.radioButtonOverlapping.Location = new System.Drawing.Point(3, 5);
+            this.radioButtonOverlapping.Name = "radioButtonOverlapping";
+            this.radioButtonOverlapping.Size = new System.Drawing.Size(153, 19);
+            this.radioButtonOverlapping.TabIndex = 1;
+            this.radioButtonOverlapping.TabStop = true;
+            this.radioButtonOverlapping.Text = "radioButtonOverlapping";
+            this.radioButtonOverlapping.UseVisualStyleBackColor = true;
+            this.radioButtonOverlapping.CheckedChanged += new System.EventHandler(this.RadioButtonOverlapping_CheckedChanged);
+            // 
+            // radioButtonNextToPreviousMenu
+            // 
+            this.radioButtonNextToPreviousMenu.AutoSize = true;
+            this.radioButtonNextToPreviousMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButtonNextToPreviousMenu.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonNextToPreviousMenu.Name = "radioButtonNextToPreviousMenu";
+            this.radioButtonNextToPreviousMenu.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonNextToPreviousMenu.TabIndex = 2;
+            this.radioButtonNextToPreviousMenu.TabStop = true;
+            this.radioButtonNextToPreviousMenu.Text = "radioButtonNextToPreviousMenu";
+            this.radioButtonNextToPreviousMenu.UseVisualStyleBackColor = true;
+            this.radioButtonNextToPreviousMenu.CheckedChanged += new System.EventHandler(this.RadioButtonNextToPreviousMenu_CheckedChanged);
+            // 
             // buttonSizeAndLocationDefault
             // 
             this.buttonSizeAndLocationDefault.AutoSize = true;
             this.buttonSizeAndLocationDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSizeAndLocationDefault.Location = new System.Drawing.Point(9, 284);
+            this.buttonSizeAndLocationDefault.Location = new System.Drawing.Point(9, 366);
             this.buttonSizeAndLocationDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonSizeAndLocationDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonSizeAndLocationDefault.Name = "buttonSizeAndLocationDefault";
@@ -4272,6 +4390,13 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageSizeAndLocation.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.groupBoxSubMenuAppearAt.ResumeLayout(false);
+            this.groupBoxSubMenuAppearAt.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverlappingOffsetPixels)).EndInit();
             this.groupBoxMenuAppearAt.ResumeLayout(false);
             this.groupBoxMenuAppearAt.PerformLayout();
             this.tableLayoutPanelMenuAppearAt.ResumeLayout(false);
@@ -4748,5 +4873,12 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.Button buttonSizeAndLocationDefault;
         private System.Windows.Forms.CheckBox checkBoxShowOnlyAsSearchResult;
         private System.Windows.Forms.CheckBox checkBoxOpenDirectoryWithOneClick;
+        private System.Windows.Forms.GroupBox groupBoxSubMenuAppearAt;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label labelOverlappingByPixelsOffset;
+        private System.Windows.Forms.RadioButton radioButtonOverlapping;
+        private System.Windows.Forms.RadioButton radioButtonNextToPreviousMenu;
+        private System.Windows.Forms.NumericUpDown numericUpDownOverlappingOffsetPixels;
     }
 }
