@@ -98,21 +98,21 @@ namespace SystemTrayMenu.DataClasses
                 bool showOverlay = false;
                 string fileExtension = Path.GetExtension(TargetFilePath);
 
-                if (fileExtension == ".lnk")
+                if (fileExtension.Equals(".lnk", StringComparison.InvariantCultureIgnoreCase))
                 {
                     handled = SetLnk(level, ref isLnkDirectory, ref resolvedLnkPath);
                     showOverlay = true;
                 }
-                else if (fileExtension == ".url")
+                else if (fileExtension.Equals(".url", StringComparison.InvariantCultureIgnoreCase))
                 {
                     SetText($"{FileInfo.Name[0..^4]}");
                     showOverlay = true;
                 }
-                else if (fileExtension == ".sln")
+                else if (fileExtension.Equals(".sln", StringComparison.InvariantCultureIgnoreCase))
                 {
                     handled = SetSln(level);
                 }
-                else if (fileExtension == ".appref-ms")
+                else if (fileExtension.Equals(".appref-ms", StringComparison.InvariantCultureIgnoreCase))
                 {
                     showOverlay = true;
                 }
@@ -261,7 +261,7 @@ namespace SystemTrayMenu.DataClasses
 
             if (string.IsNullOrEmpty(resolvedLnkPath))
             {
-                // do nothing
+                //Log.Info($"Could not resolve *.LNK '{TargetFilePath}'");
             }
             else if (isFolder)
             {
@@ -273,10 +273,6 @@ namespace SystemTrayMenu.DataClasses
             else if (FileLnk.IsNetworkRoot(resolvedLnkPath))
             {
                 isLnkDirectory = true;
-            }
-            else if (string.IsNullOrEmpty(resolvedLnkPath))
-            {
-                Log.Info($"Resolve *.LNK '{TargetFilePath}' has no icon");
             }
             else
             {
