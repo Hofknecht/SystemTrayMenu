@@ -367,15 +367,15 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("125")]
-        public int SizeInPercentage
+        public int SizeInPercent
         {
             get
             {
-                return ((int)(this["SizeInPercentage"]));
+                return ((int)(this["SizeInPercent"]));
             }
             set
             {
-                this["SizeInPercentage"] = value;
+                this["SizeInPercent"] = value;
             }
         }
 
@@ -408,6 +408,22 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["RowHeighteInPercentage"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int IconSizeInPercent
+        {
+            get
+            {
+                return ((int)(this["IconSizeInPercent"]));
+            }
+            set
+            {
+                this["IconSizeInPercent"] = value;
             }
         }
 

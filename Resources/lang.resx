@@ -387,8 +387,8 @@
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
     <value>Add sample 'Start Menu' folder</value>
   </data>
-  <data name="Row height in percentage" xml:space="preserve">
-    <value>Row height in percentage</value>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Row height in percent</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Round corners</value>
@@ -455,5 +455,8 @@
   </data>
   <data name="Sub menu appears at" xml:space="preserve">
     <value>Sub menu appears at</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Size of the icons in percent</value>
   </data>
 </root>

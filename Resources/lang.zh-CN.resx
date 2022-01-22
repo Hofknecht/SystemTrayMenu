@@ -390,7 +390,7 @@
   <data name="Round corners" xml:space="preserve">
     <value>圆角</value>
   </data>
-  <data name="Row height in percentage" xml:space="preserve">
+  <data name="Row height in percent" xml:space="preserve">
     <value>行高百分比</value>
   </data>
   <data name="Appearance" xml:space="preserve">
@@ -455,5 +455,8 @@
   </data>
   <data name="Sub menu appears at" xml:space="preserve">
     <value>子菜单出现在</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>图标的大小百分比</value>
   </data>
 </root>

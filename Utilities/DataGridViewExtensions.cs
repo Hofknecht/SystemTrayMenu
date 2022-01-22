@@ -48,7 +48,9 @@ namespace SystemTrayMenu.Utilities
                 stringWithWidthLikeIcon,
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
                 dgv.RowTemplate.DefaultCellStyle.Font).Width;
-            dgv.Columns[0].Width = (int)width0;
+
+            double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
+            dgv.Columns[0].Width = (int)(width0 * factorIconSizeInPercent);
         }
     }
 }

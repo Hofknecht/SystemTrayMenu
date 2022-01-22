@@ -168,6 +168,8 @@ Thanks for ideas, reporting issues and contributing!
 #283 #284 #289 [RuSieg](https://github.com/RuSieg),
 #285 #286 [dao-net](https://github.com/dao-net),
 #288 William P.,
+#294 #295 #296 Stefan Mahrer,
+#297 [chip33](https://github.com/chip33),
 
 
 Donations
@@ -186,6 +188,8 @@ Don't hesitate to donate if you appreciate SystemTrayMenu and would like to supp
 
 Sponsors - Thank you!
 ------------------
+* Stefan Mahrer
 * Ralf K.
-* Maximilian H.
 * [donaldaken](https://github.com/donaldaken)
+* [Traditional_Tap3954](https://www.reddit.com/user/Traditional_Tap3954/)
+* Maximilian H.

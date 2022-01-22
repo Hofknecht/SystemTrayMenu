@@ -81,9 +81,9 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelRowHeighteInPercentage = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDownRowHeighteInPercentage = new System.Windows.Forms.NumericUpDown();
             this.labelRowHeightInPercentage = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSizeInPercentage = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownSizeInPercentage = new System.Windows.Forms.NumericUpDown();
-            this.labelSizeInPercentage = new System.Windows.Forms.Label();
+            this.tableLayoutPanelSizeInPercent = new System.Windows.Forms.TableLayoutPanel();
+            this.numericUpDownSizeInPercent = new System.Windows.Forms.NumericUpDown();
+            this.labelSizeInPercent = new System.Windows.Forms.Label();
             this.tableLayoutPanelMenuHeight = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDownMenuHeight = new System.Windows.Forms.NumericUpDown();
             this.labelMaxMenuHeight = new System.Windows.Forms.Label();
@@ -307,6 +307,9 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.tableLayoutPanelIconSizeInPercent = new System.Windows.Forms.TableLayoutPanel();
+            this.numericUpDownIconSizeInPercent = new System.Windows.Forms.NumericUpDown();
+            this.labelIconSizeInPercent = new System.Windows.Forms.Label();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -335,8 +338,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSize.SuspendLayout();
             this.tableLayoutPanelRowHeighteInPercentage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRowHeighteInPercentage)).BeginInit();
-            this.tableLayoutPanelSizeInPercentage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeInPercentage)).BeginInit();
+            this.tableLayoutPanelSizeInPercent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeInPercent)).BeginInit();
             this.tableLayoutPanelMenuHeight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuHeight)).BeginInit();
             this.tableLayoutPanelMaxMenuWidth.SuspendLayout();
@@ -450,6 +453,8 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxAppearance.SuspendLayout();
             this.tableLayoutPanelAppearance.SuspendLayout();
             this.tableLayoutPanelBottom.SuspendLayout();
+            this.tableLayoutPanelIconSizeInPercent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconSizeInPercent)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -922,7 +927,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSubMenuAppearAt.AutoSize = true;
             this.groupBoxSubMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxSubMenuAppearAt.Controls.Add(this.tableLayoutPanel3);
-            this.groupBoxSubMenuAppearAt.Location = new System.Drawing.Point(3, 278);
+            this.groupBoxSubMenuAppearAt.Location = new System.Drawing.Point(3, 307);
             this.groupBoxSubMenuAppearAt.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxSubMenuAppearAt.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxSubMenuAppearAt.Name = "groupBoxSubMenuAppearAt";
@@ -1026,7 +1031,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonSizeAndLocationDefault.AutoSize = true;
             this.buttonSizeAndLocationDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSizeAndLocationDefault.Location = new System.Drawing.Point(9, 366);
+            this.buttonSizeAndLocationDefault.Location = new System.Drawing.Point(9, 395);
             this.buttonSizeAndLocationDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonSizeAndLocationDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonSizeAndLocationDefault.Name = "buttonSizeAndLocationDefault";
@@ -1041,7 +1046,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxMenuAppearAt.AutoSize = true;
             this.groupBoxMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxMenuAppearAt.Controls.Add(this.tableLayoutPanelMenuAppearAt);
-            this.groupBoxMenuAppearAt.Location = new System.Drawing.Point(3, 150);
+            this.groupBoxMenuAppearAt.Location = new System.Drawing.Point(3, 179);
             this.groupBoxMenuAppearAt.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxMenuAppearAt.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxMenuAppearAt.Name = "groupBoxMenuAppearAt";
@@ -1129,7 +1134,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSize.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxSize.Name = "groupBoxSize";
             this.groupBoxSize.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxSize.Size = new System.Drawing.Size(400, 141);
+            this.groupBoxSize.Size = new System.Drawing.Size(400, 170);
             this.groupBoxSize.TabIndex = 0;
             this.groupBoxSize.TabStop = false;
             this.groupBoxSize.Text = "groupBoxSize";
@@ -1140,22 +1145,21 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelSize.ColumnCount = 1;
             this.tableLayoutPanelSize.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelRowHeighteInPercentage, 0, 1);
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelSizeInPercentage, 0, 0);
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelMenuHeight, 0, 3);
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelMaxMenuWidth, 0, 2);
+            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelIconSizeInPercent, 0, 1);
+            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelRowHeighteInPercentage, 0, 2);
+            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelSizeInPercent, 0, 0);
+            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelMenuHeight, 0, 4);
+            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelMaxMenuWidth, 0, 3);
             this.tableLayoutPanelSize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelSize.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelSize.Name = "tableLayoutPanelSize";
-            this.tableLayoutPanelSize.RowCount = 4;
+            this.tableLayoutPanelSize.RowCount = 5;
             this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelSize.Size = new System.Drawing.Size(394, 116);
+            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSize.Size = new System.Drawing.Size(394, 145);
             this.tableLayoutPanelSize.TabIndex = 0;
             // 
             // tableLayoutPanelRowHeighteInPercentage
@@ -1168,7 +1172,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelRowHeighteInPercentage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelRowHeighteInPercentage.Controls.Add(this.numericUpDownRowHeighteInPercentage, 0, 0);
             this.tableLayoutPanelRowHeighteInPercentage.Controls.Add(this.labelRowHeightInPercentage, 1, 0);
-            this.tableLayoutPanelRowHeighteInPercentage.Location = new System.Drawing.Point(0, 29);
+            this.tableLayoutPanelRowHeighteInPercentage.Location = new System.Drawing.Point(0, 58);
             this.tableLayoutPanelRowHeighteInPercentage.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelRowHeighteInPercentage.Name = "tableLayoutPanelRowHeighteInPercentage";
             this.tableLayoutPanelRowHeighteInPercentage.RowCount = 1;
@@ -1194,43 +1198,43 @@ namespace SystemTrayMenu.UserInterface
             this.labelRowHeightInPercentage.TabIndex = 0;
             this.labelRowHeightInPercentage.Text = "labelRowHeighteInPercentage";
             // 
-            // tableLayoutPanelSizeInPercentage
+            // tableLayoutPanelSizeInPercent
             // 
-            this.tableLayoutPanelSizeInPercentage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelSizeInPercentage.AutoSize = true;
-            this.tableLayoutPanelSizeInPercentage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSizeInPercentage.ColumnCount = 2;
-            this.tableLayoutPanelSizeInPercentage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSizeInPercentage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSizeInPercentage.Controls.Add(this.numericUpDownSizeInPercentage, 0, 0);
-            this.tableLayoutPanelSizeInPercentage.Controls.Add(this.labelSizeInPercentage, 1, 0);
-            this.tableLayoutPanelSizeInPercentage.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelSizeInPercentage.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelSizeInPercentage.Name = "tableLayoutPanelSizeInPercentage";
-            this.tableLayoutPanelSizeInPercentage.RowCount = 1;
-            this.tableLayoutPanelSizeInPercentage.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeInPercentage.Size = new System.Drawing.Size(394, 29);
-            this.tableLayoutPanelSizeInPercentage.TabIndex = 0;
+            this.tableLayoutPanelSizeInPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelSizeInPercent.AutoSize = true;
+            this.tableLayoutPanelSizeInPercent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelSizeInPercent.ColumnCount = 2;
+            this.tableLayoutPanelSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSizeInPercent.Controls.Add(this.numericUpDownSizeInPercent, 0, 0);
+            this.tableLayoutPanelSizeInPercent.Controls.Add(this.labelSizeInPercent, 1, 0);
+            this.tableLayoutPanelSizeInPercent.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelSizeInPercent.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelSizeInPercent.Name = "tableLayoutPanelSizeInPercent";
+            this.tableLayoutPanelSizeInPercent.RowCount = 1;
+            this.tableLayoutPanelSizeInPercent.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSizeInPercent.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelSizeInPercent.TabIndex = 0;
             // 
-            // numericUpDownSizeInPercentage
+            // numericUpDownSizeInPercent
             // 
-            this.numericUpDownSizeInPercentage.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownSizeInPercentage.Name = "numericUpDownSizeInPercentage";
-            this.numericUpDownSizeInPercentage.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownSizeInPercentage.TabIndex = 1;
-            this.numericUpDownSizeInPercentage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.numericUpDownSizeInPercentage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
+            this.numericUpDownSizeInPercent.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownSizeInPercent.Name = "numericUpDownSizeInPercent";
+            this.numericUpDownSizeInPercent.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownSizeInPercent.TabIndex = 1;
+            this.numericUpDownSizeInPercent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
+            this.numericUpDownSizeInPercent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
             // 
-            // labelSizeInPercentage
+            // labelSizeInPercent
             // 
-            this.labelSizeInPercentage.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSizeInPercentage.AutoSize = true;
-            this.labelSizeInPercentage.Location = new System.Drawing.Point(64, 7);
-            this.labelSizeInPercentage.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelSizeInPercentage.Name = "labelSizeInPercentage";
-            this.labelSizeInPercentage.Size = new System.Drawing.Size(121, 15);
-            this.labelSizeInPercentage.TabIndex = 0;
-            this.labelSizeInPercentage.Text = "labelSizeInPercentage";
+            this.labelSizeInPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelSizeInPercent.AutoSize = true;
+            this.labelSizeInPercent.Location = new System.Drawing.Point(64, 7);
+            this.labelSizeInPercent.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelSizeInPercent.Name = "labelSizeInPercent";
+            this.labelSizeInPercent.Size = new System.Drawing.Size(121, 15);
+            this.labelSizeInPercent.TabIndex = 0;
+            this.labelSizeInPercent.Text = "labelSizeInPercent";
             // 
             // tableLayoutPanelMenuHeight
             // 
@@ -1242,7 +1246,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMenuHeight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelMenuHeight.Controls.Add(this.numericUpDownMenuHeight, 0, 0);
             this.tableLayoutPanelMenuHeight.Controls.Add(this.labelMaxMenuHeight, 1, 0);
-            this.tableLayoutPanelMenuHeight.Location = new System.Drawing.Point(0, 87);
+            this.tableLayoutPanelMenuHeight.Location = new System.Drawing.Point(0, 116);
             this.tableLayoutPanelMenuHeight.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelMenuHeight.Name = "tableLayoutPanelMenuHeight";
             this.tableLayoutPanelMenuHeight.RowCount = 1;
@@ -1280,7 +1284,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.numericUpDownMenuWidth, 0, 0);
             this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.labelMaxMenuWidth, 1, 0);
-            this.tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 58);
+            this.tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 87);
             this.tableLayoutPanelMaxMenuWidth.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelMaxMenuWidth.Name = "tableLayoutPanelMaxMenuWidth";
             this.tableLayoutPanelMaxMenuWidth.RowCount = 1;
@@ -4340,6 +4344,42 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanelIconSizeInPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelIconSizeInPercent.AutoSize = true;
+            this.tableLayoutPanelIconSizeInPercent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelIconSizeInPercent.ColumnCount = 2;
+            this.tableLayoutPanelIconSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelIconSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelIconSizeInPercent.Controls.Add(this.numericUpDownIconSizeInPercent, 0, 0);
+            this.tableLayoutPanelIconSizeInPercent.Controls.Add(this.labelIconSizeInPercent, 1, 0);
+            this.tableLayoutPanelIconSizeInPercent.Location = new System.Drawing.Point(0, 29);
+            this.tableLayoutPanelIconSizeInPercent.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelIconSizeInPercent.Name = "tableLayoutPanel6";
+            this.tableLayoutPanelIconSizeInPercent.RowCount = 1;
+            this.tableLayoutPanelIconSizeInPercent.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelIconSizeInPercent.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelIconSizeInPercent.TabIndex = 1;
+            // 
+            // numericUpDownIconSizeInPercent
+            // 
+            this.numericUpDownIconSizeInPercent.Location = new System.Drawing.Point(3, 3);
+            this.numericUpDownIconSizeInPercent.Name = "numericUpDownIconSizeInPercent";
+            this.numericUpDownIconSizeInPercent.Size = new System.Drawing.Size(55, 23);
+            this.numericUpDownIconSizeInPercent.TabIndex = 1;
+            // 
+            // labelIconSizeInPercent
+            // 
+            this.labelIconSizeInPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelIconSizeInPercent.AutoSize = true;
+            this.labelIconSizeInPercent.Location = new System.Drawing.Point(64, 7);
+            this.labelIconSizeInPercent.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelIconSizeInPercent.Name = "labelIconSizeInPercent";
+            this.labelIconSizeInPercent.Size = new System.Drawing.Size(144, 15);
+            this.labelIconSizeInPercent.TabIndex = 0;
+            this.labelIconSizeInPercent.Text = "labelIconSizeInPercent";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4408,9 +4448,9 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelRowHeighteInPercentage.ResumeLayout(false);
             this.tableLayoutPanelRowHeighteInPercentage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRowHeighteInPercentage)).EndInit();
-            this.tableLayoutPanelSizeInPercentage.ResumeLayout(false);
-            this.tableLayoutPanelSizeInPercentage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeInPercentage)).EndInit();
+            this.tableLayoutPanelSizeInPercent.ResumeLayout(false);
+            this.tableLayoutPanelSizeInPercent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeInPercent)).EndInit();
             this.tableLayoutPanelMenuHeight.ResumeLayout(false);
             this.tableLayoutPanelMenuHeight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuHeight)).EndInit();
@@ -4594,6 +4634,9 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAppearance.PerformLayout();
             this.tableLayoutPanelBottom.ResumeLayout(false);
             this.tableLayoutPanelBottom.PerformLayout();
+            this.tableLayoutPanelIconSizeInPercent.ResumeLayout(false);
+            this.tableLayoutPanelIconSizeInPercent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconSizeInPercent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4799,9 +4842,9 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.Label labelColorDarkModeSlider;
         private System.Windows.Forms.Button buttonColorsDefaultDarkMode;
         private System.Windows.Forms.CheckBox checkBoxUseIconFromRootFolder;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSizeInPercentage;
-        private System.Windows.Forms.NumericUpDown numericUpDownSizeInPercentage;
-        private System.Windows.Forms.Label labelSizeInPercentage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSizeInPercent;
+        private System.Windows.Forms.NumericUpDown numericUpDownSizeInPercent;
+        private System.Windows.Forms.Label labelSizeInPercent;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelBackgroundBorder;
         private System.Windows.Forms.PictureBox pictureBoxBackgroundBorder;
         private System.Windows.Forms.TextBox textBoxColorBackgroundBorder;
@@ -4880,5 +4923,8 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.RadioButton radioButtonOverlapping;
         private System.Windows.Forms.RadioButton radioButtonNextToPreviousMenu;
         private System.Windows.Forms.NumericUpDown numericUpDownOverlappingOffsetPixels;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelIconSizeInPercent;
+        private System.Windows.Forms.NumericUpDown numericUpDownIconSizeInPercent;
+        private System.Windows.Forms.Label labelIconSizeInPercent;
     }
 }

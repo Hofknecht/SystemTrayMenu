@@ -272,7 +272,7 @@ namespace SystemTrayMenu.DataClasses
 
             if (string.IsNullOrEmpty(resolvedLnkPath))
             {
-                //Log.Info($"Could not resolve *.LNK '{TargetFilePath}'");
+                // Log.Info($"Could not resolve *.LNK '{TargetFilePath}'");
             }
             else if (isFolder)
             {

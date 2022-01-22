@@ -127,8 +127,9 @@ namespace SystemTrayMenu.UserInterface
 
                 tabPageSizeAndLocation.Text = Translator.GetText("Size and location");
                 groupBoxSize.Text = Translator.GetText("Size");
-                labelSizeInPercentage.Text = $"% {Translator.GetText("Size")}";
-                labelRowHeightInPercentage.Text = $"% {Translator.GetText("Row height in percentage")}";
+                labelSizeInPercent.Text = $"% {Translator.GetText("Size")}";
+                labelIconSizeInPercent.Text = Translator.GetText("Size of the icons in percent");
+                labelRowHeightInPercentage.Text = Translator.GetText("Row height in percent");
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
                 groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears at");
@@ -298,10 +299,10 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxStoreConfigAtAssemblyLocation.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
 
-            numericUpDownSizeInPercentage.Minimum = 100;
-            numericUpDownSizeInPercentage.Maximum = 200;
-            numericUpDownSizeInPercentage.Increment = 25;
-            numericUpDownSizeInPercentage.MouseWheel += NumericUpDown_MouseWheel;
+            numericUpDownSizeInPercent.Minimum = 100;
+            numericUpDownSizeInPercent.Maximum = 200;
+            numericUpDownSizeInPercent.Increment = 25;
+            numericUpDownSizeInPercent.MouseWheel += NumericUpDown_MouseWheel;
             void NumericUpDown_MouseWheel(object sender, MouseEventArgs e)
             {
                 NumericUpDown numericUpDown = (NumericUpDown)sender;
@@ -327,7 +328,13 @@ namespace SystemTrayMenu.UserInterface
                 ((HandledMouseEventArgs)e).Handled = true;
             }
 
-            numericUpDownSizeInPercentage.Value = Settings.Default.SizeInPercentage;
+            numericUpDownSizeInPercent.Value = Settings.Default.SizeInPercent;
+
+            numericUpDownIconSizeInPercent.Minimum = 50;
+            numericUpDownIconSizeInPercent.Maximum = 200;
+            numericUpDownIconSizeInPercent.Increment = 5;
+            numericUpDownIconSizeInPercent.MouseWheel += NumericUpDown_MouseWheel;
+            numericUpDownIconSizeInPercent.Value = Settings.Default.IconSizeInPercent;
 
             numericUpDownRowHeighteInPercentage.Minimum = 50;
             numericUpDownRowHeighteInPercentage.Maximum = 200;
@@ -765,7 +772,8 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            Settings.Default.SizeInPercentage = (int)numericUpDownSizeInPercentage.Value;
+            Settings.Default.SizeInPercent = (int)numericUpDownSizeInPercent.Value;
+            Settings.Default.IconSizeInPercent = (int)numericUpDownIconSizeInPercent.Value;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
                 Settings.Default.RowHeighteInPercentageTouch = (int)numericUpDownRowHeighteInPercentage.Value;
@@ -1079,7 +1087,8 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonSizeAndLocationDefault_Click(object sender, EventArgs e)
         {
-            numericUpDownSizeInPercentage.Value = 125;
+            numericUpDownSizeInPercent.Value = 125;
+            numericUpDownIconSizeInPercent.Value = 100;
             numericUpDownRowHeighteInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 400;
             numericUpDownMenuHeight.Value = 600;

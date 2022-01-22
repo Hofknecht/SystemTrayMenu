@@ -18,7 +18,7 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Initialize()
         {
-            Factor = Properties.Settings.Default.SizeInPercentage / 100f;
+            Factor = Properties.Settings.Default.SizeInPercent / 100f;
         }
 
         internal static int Scale(int width)

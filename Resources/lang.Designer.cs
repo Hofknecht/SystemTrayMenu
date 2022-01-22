@@ -809,11 +809,11 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Row height in percentage.
+        ///   Looks up a localized string similar to Row height in percent.
         /// </summary>
-        internal static string Row_height_in_percentage {
+        internal static string Row_height_in_percent {
             get {
-                return ResourceManager.GetString("Row height in percentage", resourceCulture);
+                return ResourceManager.GetString("Row height in percent", resourceCulture);
             }
         }
         
@@ -931,6 +931,15 @@ namespace SystemTrayMenu.Resources {
         internal static string Size_and_location {
             get {
                 return ResourceManager.GetString("Size and location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size of the icons in percent.
+        /// </summary>
+        internal static string Size_of_the_icons_in_percent {
+            get {
+                return ResourceManager.GetString("Size of the icons in percent", resourceCulture);
             }
         }
         

@@ -101,7 +101,9 @@ namespace SystemTrayMenu.Helper
                 ab.AppMoreInfo += "#205 kristofzerbe, #209 jonaskohl, #211 blacksparrow15, #220 Yavuz E., #229 #230 #239 Peter O., #231 Ryonez, ";
                 ab.AppMoreInfo += "#235 #242 243 #247, #271 Tom, #237 Torsten S., #240 video Patrick, #244 Gunter D., #246 MACE4GITHUB, #259 vanjac, ";
                 ab.AppMoreInfo += "#262 terencemcdonnell, #269 petersnows25, #272 Peter M., #273 #274 ParasiteDelta, #275 #276 #278 donaldaken, ";
-                ab.AppMoreInfo += "#277 Jan S., #282 akuznets, #283 #284 #289 RuSieg, #285 #286 dao-net, #288 William P.," + Environment.NewLine;
+                ab.AppMoreInfo += "#277 Jan S., #282 akuznets, #283 #284 #289 RuSieg, #285 #286 dao-net, #288 William P., #294 #295 #296 Stefan Mahrer, ";
+                ab.AppMoreInfo += "#297 chip33, " + Environment.NewLine;
+
                 ab.AppDetailsButton = true;
                 ab.ShowDialog();
             }

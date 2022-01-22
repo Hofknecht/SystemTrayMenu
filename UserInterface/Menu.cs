@@ -620,6 +620,13 @@ namespace SystemTrayMenu.UserInterface
                 factor = Properties.Settings.Default.RowHeighteInPercentageTouch / 100f;
             }
 
+            double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
+
+            if (factor < factorIconSizeInPercent)
+            {
+                factor = factorIconSizeInPercent;
+            }
+
             if (menuPredecessor == null)
             {
                 if (dgv.Tag == null && dgv.Rows.Count > 0)
