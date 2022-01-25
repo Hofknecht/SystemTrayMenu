@@ -774,13 +774,15 @@ namespace SystemTrayMenu.Utilities
                     Handle,
                     IntPtr.Zero);
 
-                DllImports.NativeMethods.User32DestroyMenu(pMenu);
-                pMenu = IntPtr.Zero;
-
+                // First invoke menu item, then destroy menu
+                // (otherwise: Right click on items to choose "Send to" doesn't work #225)
                 if (nSelected != 0)
                 {
                     InvokeCommand(oContextMenu, nSelected, strParentFolder, pointScreen);
                 }
+
+                DllImports.NativeMethods.User32DestroyMenu(pMenu);
+                pMenu = IntPtr.Zero;
             }
             catch
             {

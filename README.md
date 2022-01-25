@@ -145,7 +145,7 @@ Thanks for ideas, reporting issues and contributing!
 #171 [kehoen](https://github.com/kehoen), 
 #186 [Dtrieb](https://github.com/Dtrieb), 
 #188 #189 #191 #195 [iJahangard](https://github.com/iJahangard),
-#195 #197 #238 [the-phuctran](https://github.com/the-phuctran),
+#195 #197 #225 #238 [the-phuctran](https://github.com/the-phuctran),
 #205 [kristofzerbe](https://github.com/kristofzerbe), 
 #209 [jonaskohl](https://github.com/jonaskohl), 
 #211 [blacksparrow15](https://github.com/blacksparrow15),
@@ -169,7 +169,7 @@ Thanks for ideas, reporting issues and contributing!
 #285 #286 [dao-net](https://github.com/dao-net),
 #288 William P.,
 #294 #295 #296 Stefan Mahrer,
-#297 [chip33](https://github.com/chip33),
+#225 #297 [chip33](https://github.com/chip33),
 
 
 Donations
