@@ -1105,7 +1105,7 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
         {
             checkBoxShowInTaskbar.Checked = true;
-            checkBoxOpenItemWithOneClick.Checked = false;
+            checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxOpenDirectoryWithOneClick.Checked = true;
 
             radioButtonSystemSettingsShowHiddenFiles.Checked = true;
