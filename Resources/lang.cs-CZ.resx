@@ -459,4 +459,7 @@
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Velikost ikon v procentech</value>
   </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Podpora SystemTrayMenu</value>
+  </data>
 </root>

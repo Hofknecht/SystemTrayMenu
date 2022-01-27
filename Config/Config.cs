@@ -105,6 +105,11 @@ namespace SystemTrayMenu
             Log.ProcessStart("https://github.com/Hofknecht/SystemTrayMenu#FAQ");
         }
 
+        internal static void ShowSupportSystemTrayMenu()
+        {
+            Log.ProcessStart("https://github.com/Hofknecht/SystemTrayMenu#donations");
+        }
+
         /// <summary>
         /// Read the OS setting whether dark mode is enabled.
         /// </summary>

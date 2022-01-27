@@ -65,6 +65,18 @@ namespace SystemTrayMenu.Helper
 
             menu.Items.Add(helpFAQ);
 
+            ToolStripMenuItem supportSystemTrayMenu = new()
+            {
+                Text = Translator.GetText("Support SystemTrayMenu"),
+            };
+            supportSystemTrayMenu.Click += SupportSystemTrayMenu_Click;
+            static void SupportSystemTrayMenu_Click(object sender, EventArgs e)
+            {
+                Config.ShowSupportSystemTrayMenu();
+            }
+
+            menu.Items.Add(supportSystemTrayMenu);
+
             ToolStripMenuItem about = new()
             {
                 Text = Translator.GetText("About"),
@@ -74,7 +86,7 @@ namespace SystemTrayMenu.Helper
             {
                 FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(
                     Assembly.GetEntryAssembly().Location);
-                AboutBox ab = new()
+                AboutBox aboutBox = new()
                 {
                     AppTitle = versionInfo.ProductName,
                     AppDescription = versionInfo.FileDescription,
@@ -82,30 +94,39 @@ namespace SystemTrayMenu.Helper
                     AppCopyright = versionInfo.LegalCopyright,
                     AppMoreInfo = versionInfo.LegalCopyright,
                 };
-                ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "Markus Hofknecht (mailto:Markus@Hofknecht.eu)" + Environment.NewLine;
-                ab.AppMoreInfo += "Tanja Hofknecht (mailto:Tanja@Hofknecht.eu)" + Environment.NewLine;
+                aboutBox.AppMoreInfo += Environment.NewLine;
+                aboutBox.AppMoreInfo += "Markus Hofknecht (mailto:Markus@Hofknecht.eu)" + Environment.NewLine;
+                aboutBox.AppMoreInfo += "Tanja Hofknecht (mailto:Tanja@Hofknecht.eu)" + Environment.NewLine;
 
                 // Thanks for letting me being part of this project and that I am allowed to be listed here :-)
-                ab.AppMoreInfo += "Peter Kirmeier (mai" + "lto:top" + "ete" + "rk@f" + "reen" + "et." + "de)" + Environment.NewLine;
+                aboutBox.AppMoreInfo += "Peter Kirmeier (mai" + "lto:top" + "ete" + "rk@f" + "reen" + "et." + "de)" + Environment.NewLine;
 
-                ab.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/" + Environment.NewLine;
-                ab.AppMoreInfo += "https://github.com/Hofknecht/SystemTrayMenu" + Environment.NewLine;
-                ab.AppMoreInfo += Environment.NewLine;
-                ab.AppMoreInfo += "GNU GENERAL PUBLIC LICENSE" + Environment.NewLine;
-                ab.AppMoreInfo += "(Version 3, 29 June 2007)" + Environment.NewLine;
+                aboutBox.AppMoreInfo += "http://www.hofknecht.eu/systemtraymenu/" + Environment.NewLine;
+                aboutBox.AppMoreInfo += "https://github.com/Hofknecht/SystemTrayMenu" + Environment.NewLine;
+                aboutBox.AppMoreInfo += Environment.NewLine;
+                aboutBox.AppMoreInfo += "GNU GENERAL PUBLIC LICENSE" + Environment.NewLine;
+                aboutBox.AppMoreInfo += "(Version 3, 29 June 2007)" + Environment.NewLine;
 
-                ab.AppMoreInfo += "Thanks for ideas, reporting issues and contributing!" + Environment.NewLine;
-                ab.AppMoreInfo += "#123 Mordecai00, #125 Holgermh, #135 #153 #154 #164 jakkaas, #145 Pascal Aloy, #153 #158 #160 blackcrack,";
-                ab.AppMoreInfo += "#162 HansieNL, #163 igorruckert, #171 kehoen, #186 Dtrieb, #188 #189 #191 #195 iJahangard, #195 #197 #225 #238 the-phuctran, ";
-                ab.AppMoreInfo += "#205 kristofzerbe, #209 jonaskohl, #211 blacksparrow15, #220 Yavuz E., #229 #230 #239 Peter O., #231 Ryonez, ";
-                ab.AppMoreInfo += "#235 #242 243 #247, #271 Tom, #237 Torsten S., #240 video Patrick, #244 Gunter D., #246 MACE4GITHUB, #259 vanjac, ";
-                ab.AppMoreInfo += "#262 terencemcdonnell, #269 petersnows25, #272 Peter M., #273 #274 ParasiteDelta, #275 #276 #278 donaldaken, ";
-                ab.AppMoreInfo += "#277 Jan S., #282 akuznets, #283 #284 #289 RuSieg, #285 #286 dao-net, #288 William P., #294 #295 #296 Stefan Mahrer, ";
-                ab.AppMoreInfo += "#225 #297 chip33, " + Environment.NewLine;
-
-                ab.AppDetailsButton = true;
-                ab.ShowDialog();
+                aboutBox.AppMoreInfo += "Thanks for ideas, reporting issues and contributing!" + Environment.NewLine;
+                aboutBox.AppMoreInfo += "#123 Mordecai00, #125 Holgermh, #135 #153 #154 #164 jakkaas, #145 Pascal Aloy, #153 #158 #160 blackcrack,";
+                aboutBox.AppMoreInfo += "#162 HansieNL, #163 igorruckert, #171 kehoen, #186 Dtrieb, #188 #189 #191 #195 iJahangard, #195 #197 #225 #238 the-phuctran, ";
+                aboutBox.AppMoreInfo += "#205 kristofzerbe, #209 jonaskohl, #211 blacksparrow15, #220 Yavuz E., #229 #230 #239 Peter O., #231 Ryonez, ";
+                aboutBox.AppMoreInfo += "#235 #242 243 #247, #271 Tom, #237 Torsten S., #240 video Patrick, #244 Gunter D., #246 MACE4GITHUB, #259 vanjac, ";
+                aboutBox.AppMoreInfo += "#262 terencemcdonnell, #269 petersnows25, #272 Peter M., #273 #274 ParasiteDelta, #275 #276 #278 donaldaken, ";
+                aboutBox.AppMoreInfo += "#277 Jan S., #282 akuznets, #283 #284 #289 RuSieg, #285 #286 dao-net, #288 William P., #294 #295 #296 Stefan Mahrer, ";
+                aboutBox.AppMoreInfo += "#225 #297 #299 chip33, #298 phanirithvij" + Environment.NewLine;
+                aboutBox.AppMoreInfo += @"
+Sponsors - Thank you!
+------------------
+* Stefan Mahrer
+* Ralf K.
+* donaldaken
+* Marc S.
+* Traditional_Tap3954
+* Maximilian H.
+";
+                aboutBox.AppDetailsButton = true;
+                aboutBox.ShowDialog();
             }
 
             menu.Items.Add(about);

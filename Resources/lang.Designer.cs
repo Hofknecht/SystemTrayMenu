@@ -1007,6 +1007,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Support SystemTrayMenu.
+        /// </summary>
+        internal static string Support_SystemTrayMenu {
+            get {
+                return ResourceManager.GetString("Support SystemTrayMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to System Info.
         /// </summary>
         internal static string System_Info {

@@ -459,4 +459,7 @@
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Tamaño de los iconos en porcentaje</value>
   </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Apoyo SystemTrayMenu</value>
+  </data>
 </root>

@@ -459,4 +459,7 @@
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>图标的大小百分比</value>
   </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>支持 SystemTrayMenu</value>
+  </data>
 </root>

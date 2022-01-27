@@ -459,4 +459,7 @@
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Grootte van de pictogrammen in procent</value>
   </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Ondersteuning SystemTrayMenu</value>
+  </data>
 </root>

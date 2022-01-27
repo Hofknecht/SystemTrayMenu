@@ -459,4 +459,7 @@
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Simgelerin yüzde olarak boyutu</value>
   </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Destek SystemTrayMenu</value>
+  </data>
 </root>

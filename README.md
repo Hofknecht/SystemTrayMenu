@@ -169,8 +169,8 @@ Thanks for ideas, reporting issues and contributing!
 #285 #286 [dao-net](https://github.com/dao-net),
 #288 William P.,
 #294 #295 #296 Stefan Mahrer,
-#225 #297 [chip33](https://github.com/chip33),
-
+#225 #297 #299 [chip33](https://github.com/chip33),
+#298 [phanirithvij](https://github.com/phanirithvij),
 
 Donations
 ------------------
@@ -191,5 +191,6 @@ Sponsors - Thank you!
 * Stefan Mahrer
 * Ralf K.
 * [donaldaken](https://github.com/donaldaken)
+* Marc S.
 * [Traditional_Tap3954](https://www.reddit.com/user/Traditional_Tap3954/)
 * Maximilian H.
