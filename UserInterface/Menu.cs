@@ -808,28 +808,22 @@ namespace SystemTrayMenu.UserInterface
 
             if (string.IsNullOrEmpty(searchString))
             {
-                if (Properties.Settings.Default.ShowOnlyAsSearchResult)
+                foreach (DataRow row in data.Rows)
                 {
-                    foreach (DataRow row in data.Rows)
+                    RowData rowData = (RowData)row[2];
+                    if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
+                        rowData.ShowOnlyWhenSearch)
                     {
-                        RowData rowData = (RowData)row[2];
-                        if (rowData.ShowOnlyWhenSearch)
-                        {
-                            row[columnSortIndex] = 99;
-                        }
-                        else
-                        {
-                            row[columnSortIndex] = 0;
-                        }
+                        row[columnSortIndex] = 99;
                     }
+                    else
+                    {
+                        row[columnSortIndex] = 0;
+                    }
+                }
 
-                    data.DefaultView.Sort = string.Empty;
-                    data.AcceptChanges();
-                }
-                else
-                {
-                    data.DefaultView.Sort = string.Empty;
-                }
+                data.DefaultView.Sort = string.Empty;
+                data.AcceptChanges();
             }
             else
             {
