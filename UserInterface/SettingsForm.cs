@@ -1104,7 +1104,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
         {
-            checkBoxShowInTaskbar.Checked = true;
+            checkBoxShowInTaskbar.Checked = false;
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxOpenDirectoryWithOneClick.Checked = true;
 
