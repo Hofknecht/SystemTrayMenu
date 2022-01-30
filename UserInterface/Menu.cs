@@ -779,10 +779,12 @@ namespace SystemTrayMenu.UserInterface
                 like = $"LIKE '%{searchString}%'";
             }
 
+            bool isSearchStringEmpty = string.IsNullOrEmpty(searchString);
+
             try
             {
                 if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
-                    string.IsNullOrEmpty(searchString))
+                    isSearchStringEmpty)
                 {
                     data.DefaultView.RowFilter = "[SortIndex] LIKE '%0%'";
                 }
@@ -805,8 +807,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             string columnSortIndex = "SortIndex";
-
-            if (string.IsNullOrEmpty(searchString))
+            if (isSearchStringEmpty)
             {
                 foreach (DataRow row in data.Rows)
                 {
@@ -852,7 +853,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
 
-                if (!string.IsNullOrEmpty(searchString) || !rowData.ShowOnlyWhenSearch)
+                if (!isSearchStringEmpty || !rowData.ShowOnlyWhenSearch)
                 {
                     rowData.RowIndex = row.Index;
 
@@ -879,6 +880,11 @@ namespace SystemTrayMenu.UserInterface
             if (anyIconNotUpdated)
             {
                 timerUpdateIcons.Start();
+            }
+
+            if (isSearchStringEmpty)
+            {
+                dgv.FirstDisplayedScrollingRowIndex = 0;
             }
         }
 
