@@ -19,8 +19,8 @@ namespace SystemTrayMenu
             try
             {
                 bool killOtherInstances = true;
-                if (args != null && args.Length > 0 &&
-                    (args[0] == "-h" || args[0] == "-hotkey"))
+                bool isArgumentSetToRestart = args != null && args.Length > 0 && args[0] == "-r";
+                if (!isArgumentSetToRestart)
                 {
                     args = null;
                     killOtherInstances = false;

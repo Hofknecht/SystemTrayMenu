@@ -62,7 +62,7 @@ namespace SystemTrayMenu
 
         public static void SetFolderByWindowsContextMenu(string[] args)
         {
-            if (args != null && args.Length > 0)
+            if (args != null && args.Length > 0 && args[0] != "-r")
             {
                 string path = args[0];
                 Log.Info($"SetFolderByWindowsContextMenu() path: {path}");
