@@ -30,7 +30,15 @@ namespace SystemTrayMenu.Utilities
             foreach (char driveName in driveNamesToRemove)
             {
                 string possibleShortcut = GetLinkPathFromDriveName(driveName.ToString());
-                System.IO.File.Delete(possibleShortcut);
+
+                try
+                {
+                    System.IO.File.Delete(possibleShortcut);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"Could not delete shortcut at path:'{possibleShortcut}'", ex);
+                }
             }
         }
 
