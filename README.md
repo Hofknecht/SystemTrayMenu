@@ -72,10 +72,15 @@ You can also consider to put there all files from your desktop.
 2. Step: **Move the SystemTrayMenu icon** by drag and drop from the system tray **into the taskbar** below.  
 ![group icon out](https://user-images.githubusercontent.com/52528841/83349567-1ab74000-a336-11ea-8676-3db33615a57a.gif)
 
-3. Step: Open the optionsmenu to see the taskbar item. Right click on it to pin it on taskbar or there is also a option 'Show in Taskbar'
+3. Step: Open the optionsmenu to see the taskbar item. 'Right click' -> 'Pin to taskbar' or set 'Show in Taskbar'  
 ![2022-01-30 16_08_15-](https://user-images.githubusercontent.com/52528841/151705358-7e48d394-7055-479e-ba5c-e46f13959b3b.png)
 
-Now it is ready to start - just **click on the icon** in the taskbar to open the SystemTrayMenu. 
+4. 'Shift' + 'Right click' on the taskbar item. Select 'Properties'. 
+Add argument ' -r' if you want the behavior to be that it always restarts
+![2022-02-02 23_47_51-Window](https://user-images.githubusercontent.com/52528841/152250651-35b63f6a-c982-4ee7-8935-b4ff930526fe.png)
+
+
+Now it is ready to start - just **click on the icon** in the system tray or the taskbar or press the hotkey to open the SystemTrayMenu. 
 
 **How can I change the root directory?**
 
