@@ -165,7 +165,7 @@ Thanks for ideas, reporting issues and contributing!
 #240 [video](https://www.youtube.com/watch?v=xsi4Uv3-ZLg) [Patrick](https://www.youtube.com/user/DyRexLP),
 #244 Gunter D.,
 #246 [MACE4GITHUB](https://github.com/MACE4GITHUB),
-#259 [vanjac](https://github.com/vanjac),
+#259 #310 [vanjac](https://github.com/vanjac),
 #262 [terencemcdonnell](https://github.com/terencemcdonnell),
 #269 [petersnows25](https://github.com/petersnows25),
 #272 Peter M.,

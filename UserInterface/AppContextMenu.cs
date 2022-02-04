@@ -111,7 +111,7 @@ namespace SystemTrayMenu.Helper
                 aboutBox.AppMoreInfo += "#123 Mordecai00, #125 Holgermh, #135 #153 #154 #164 jakkaas, #145 Pascal Aloy, #153 #158 #160 blackcrack,";
                 aboutBox.AppMoreInfo += "#162 HansieNL, #163 igorruckert, #171 kehoen, #186 Dtrieb, #188 #189 #191 #195 iJahangard, #195 #197 #225 #238 the-phuctran, ";
                 aboutBox.AppMoreInfo += "#205 kristofzerbe, #209 jonaskohl, #211 blacksparrow15, #220 Yavuz E., #229 #230 #239 Peter O., #231 Ryonez, ";
-                aboutBox.AppMoreInfo += "#235 #242 243 #247, #271 Tom, #237 Torsten S., #240 video Patrick, #244 Gunter D., #246 MACE4GITHUB, #259 vanjac, ";
+                aboutBox.AppMoreInfo += "#235 #242 243 #247, #271 Tom, #237 Torsten S., #240 video Patrick, #244 Gunter D., #246 MACE4GITHUB, #259 #310 vanjac, ";
                 aboutBox.AppMoreInfo += "#262 terencemcdonnell, #269 petersnows25, #272 Peter M., #273 #274 ParasiteDelta, #275 #276 #278 donaldaken, ";
                 aboutBox.AppMoreInfo += "#277 Jan S., #282 akuznets, #283 #284 #289 RuSieg, #285 #286 dao-net, #288 William P., #294 #295 #296 Stefan Mahrer, ";
                 aboutBox.AppMoreInfo += "#225 #297 #299 chip33, #298 phanirithvij" + Environment.NewLine;
