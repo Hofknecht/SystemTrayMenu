@@ -583,6 +583,8 @@ namespace SystemTrayMenu.UserInterface
             switch (keys)
             {
                 case Keys.Enter:
+                case Keys.Home:
+                case Keys.End:
                 case Keys.Up:
                 case Keys.Down:
                 case Keys.Left:

@@ -84,6 +84,8 @@ namespace SystemTrayMenu.Handler
                 case Keys.Right:
                     SelectByKey(keys);
                     break;
+                case Keys.Home:
+                case Keys.End:
                 case Keys.Up:
                 case Keys.Down:
                 case Keys.Escape:
@@ -339,6 +341,24 @@ namespace SystemTrayMenu.Handler
                 case Keys.Down:
                     if (SelectMatched(dgv, iRowKey) ||
                         SelectMatched(dgv, 0))
+                    {
+                        RowDeselected(iRowBefore, dgvBefore);
+                        SelectRow(dgv, iRowKey);
+                        toClear = true;
+                    }
+
+                    break;
+                case Keys.Home:
+                    if (SelectMatched(dgv, 0))
+                    {
+                        RowDeselected(iRowBefore, dgvBefore);
+                        SelectRow(dgv, iRowKey);
+                        toClear = true;
+                    }
+
+                    break;
+                case Keys.End:
+                    if (SelectMatchedReverse(dgv, dgv.Rows.Count - 1))
                     {
                         RowDeselected(iRowBefore, dgvBefore);
                         SelectRow(dgv, iRowKey);
