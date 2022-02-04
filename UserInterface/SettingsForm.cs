@@ -183,7 +183,9 @@ namespace SystemTrayMenu.UserInterface
                 tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxAppearance.Text = Translator.GetText("Appearance");
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
+                checkBoxUseFading.Text = Translator.GetText("Fading");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
+                buttonAppearanceDefault.Text = Translator.GetText("Default");
                 groupBoxColorsLightMode.Text = Translator.GetText("Colors Light Mode");
                 groupBoxColorsDarkMode.Text = Translator.GetText("Colors Dark Mode");
                 labelMenuLightMode.Text = Translator.GetText("Menu");
@@ -443,6 +445,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
             checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
+            checkBoxUseFading.Checked = Settings.Default.UseFading;
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
 
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
@@ -853,6 +856,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.TimeUntilClosesAfterEnterPressed = (int)numericUpDownTimeUntilClosesAfterEnterPressed.Value;
 
             Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
+            Settings.Default.UseFading = checkBoxUseFading.Checked;
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
 
             if (checkBoxStoreConfigAtAssemblyLocation.Checked)
@@ -1218,6 +1222,13 @@ namespace SystemTrayMenu.UserInterface
                 textBox.Text = ColorTranslator.ToHtml(colorDialog.Color);
                 pictureBox.BackColor = colorDialog.Color;
             }
+        }
+
+        private void ButtonAppearanceDefault_Click(object sender, EventArgs e)
+        {
+            checkBoxRoundCorners.Checked = true;
+            checkBoxUseFading.Checked = true;
+            checkBoxDarkModeAlwaysOn.Checked = true;
         }
 
         private void ButtonDefaultColors_Click(object sender, EventArgs e)

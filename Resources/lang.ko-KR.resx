@@ -462,4 +462,7 @@
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>지원 SystemTrayMenu</value>
   </data>
+  <data name="Fading" xml:space="preserve">
+    <value>페이딩</value>
+  </data>
 </root>

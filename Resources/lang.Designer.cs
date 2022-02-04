@@ -421,6 +421,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fading.
+        /// </summary>
+        internal static string Fading {
+            get {
+                return ResourceManager.GetString("Fading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder.
         /// </summary>
         internal static string Folder {

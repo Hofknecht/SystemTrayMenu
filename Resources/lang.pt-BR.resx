@@ -462,4 +462,7 @@
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suporte SystemTrayMenu</value>
   </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Desbotando</value>
+  </data>
 </root>
