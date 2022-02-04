@@ -222,11 +222,13 @@ namespace SystemTrayMenu.Business
 
                     Menu menuLoading = menus[menuData.Level];
                     string userSearchText = string.Empty;
+                    bool closedLoadingMenu = false;
                     if (menuLoading != null && menuLoading.IsLoadingMenu)
                     {
-                        userSearchText = menuLoading.GetSearchText();
                         menuLoading.HideWithFade();
+                        userSearchText = menuLoading.GetSearchText();
                         menus[menuLoading.Level] = null;
+                        closedLoadingMenu = true;
                     }
 
                     if (menuData.Validity != MenuDataValidity.AbortedOrUnknown &&
@@ -250,12 +252,19 @@ namespace SystemTrayMenu.Business
                         menuData.RowDataParent.SubMenu = menu;
                         if (menus[0].IsUsable)
                         {
-                            ShowSubMenu(menu);
                             if (!string.IsNullOrEmpty(userSearchText))
                             {
                                 menu.SetSearchText(userSearchText);
                             }
+
+                            ShowSubMenu(menu);
                         }
+                    }
+                    else if (closedLoadingMenu && menus[0].IsUsable)
+                    {
+                        menuData.RowDataParent.IsSelected = false;
+                        menuData.RowDataParent.IsMenuOpen = false;
+                        RefreshSelection(menus[menuLoading.Level - 1].GetDataGridView());
                     }
                 }
             }
