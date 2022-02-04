@@ -34,7 +34,6 @@ namespace SystemTrayMenu.Business
         private readonly WaitLeave waitLeave = new(Properties.Settings.Default.TimeUntilCloses);
         private DateTime deactivatedTime = DateTime.MinValue;
         private DateTime dateTimeLastOpening = DateTime.MinValue;
-        private DateTime dateTimeDisplaySettingsChanged = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private bool showingMessageBox;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
@@ -569,13 +568,7 @@ namespace SystemTrayMenu.Business
 
         internal bool IsOpenCloseStateOpening()
         {
-            return openCloseState == OpenCloseState.Opening || (DateTime.Now - dateTimeDisplaySettingsChanged).TotalMilliseconds < 500;
-        }
-
-        internal bool IsShortlyAfterOpening()
-        {
-            dateTimeDisplaySettingsChanged = DateTime.Now;
-            return (DateTime.Now - dateTimeLastOpening).TotalMilliseconds < 2000;
+            return openCloseState == OpenCloseState.Opening;
         }
 
         internal void SwitchOpenClose(bool byClick, bool isMainPreload = false)

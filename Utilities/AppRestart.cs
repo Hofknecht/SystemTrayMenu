@@ -24,11 +24,6 @@ namespace SystemTrayMenu.Utilities
             Restart(GetCurrentMethod());
         }
 
-        internal static void ByDisplaySettings()
-        {
-            Restart(GetCurrentMethod());
-        }
-
         internal static void ByConfigChange()
         {
             Restart(GetCurrentMethod());
