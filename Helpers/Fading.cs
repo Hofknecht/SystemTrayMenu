@@ -92,7 +92,8 @@ namespace SystemTrayMenu.Helper
                         opacity = 0;
                         ChangeOpacity?.Invoke(this, opacity);
                     }
-                    else if (opacity < ShownMinus)
+                    else if (Properties.Settings.Default.UseFading &&
+                        opacity < ShownMinus)
                     {
                         opacity += StepIn;
                         ChangeOpacity?.Invoke(this, opacity);
@@ -113,12 +114,14 @@ namespace SystemTrayMenu.Helper
                         opacity = 0;
                         ChangeOpacity?.Invoke(this, opacity);
                     }
-                    else if (opacity < TransparentMinus)
+                    else if (Properties.Settings.Default.UseFading &&
+                        opacity < TransparentMinus)
                     {
                         opacity += StepIn;
                         ChangeOpacity?.Invoke(this, opacity);
                     }
-                    else if (opacity > TransparentPlus)
+                    else if (Properties.Settings.Default.UseFading &&
+                        opacity > TransparentPlus)
                     {
                         opacity -= StepOut;
                         ChangeOpacity?.Invoke(this, opacity);
@@ -131,7 +134,8 @@ namespace SystemTrayMenu.Helper
 
                     break;
                 case FadingState.Hide:
-                    if (opacity > StepOut)
+                    if (Properties.Settings.Default.UseFading &&
+                        opacity > StepOut)
                     {
                         opacity -= StepOut;
                         ChangeOpacity?.Invoke(this, opacity);

@@ -121,7 +121,7 @@ Sponsors - Thank you!
 * Stefan Mahrer
 * Ralf K.
 * donaldaken
-* Marc S.
+* Marc Speer
 * Traditional_Tap3954
 * Maximilian H.
 ";

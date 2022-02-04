@@ -199,6 +199,6 @@ Sponsors - Thank you!
 * Stefan Mahrer
 * Ralf K.
 * [donaldaken](https://github.com/donaldaken)
-* Marc S.
+* Marc Speer
 * [Traditional_Tap3954](https://www.reddit.com/user/Traditional_Tap3954/)
 * Maximilian H.
