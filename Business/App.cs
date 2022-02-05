@@ -22,7 +22,7 @@ namespace SystemTrayMenu
         public App()
         {
             AppRestart.BeforeRestarting += Dispose;
-            SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
+            SystemEvents.DisplaySettingsChanged += (s, e) => SystemEvents_DisplaySettingsChanged();
             menus.LoadStarted += menuNotifyIcon.LoadingStart;
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
             menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
@@ -32,6 +32,9 @@ namespace SystemTrayMenu
             if (Properties.Settings.Default.ShowInTaskbar)
             {
                 taskbarForm = new TaskbarForm();
+                taskbarForm.FormClosed += (s, e) => Application.Exit();
+                taskbarForm.Deactivate += (s, e) => SetStateNormal();
+                taskbarForm.Resize += (s, e) => SetStateNormal();
                 taskbarForm.Activated += TasbkarItemActivated;
                 void TasbkarItemActivated(object sender, EventArgs e)
                 {
@@ -39,19 +42,6 @@ namespace SystemTrayMenu
                     taskbarForm.Activate();
                     taskbarForm.Focus();
                     menus.SwitchOpenCloseByTaskbarItem();
-                }
-
-                taskbarForm.Resize += TaskbarForm_Resize;
-                taskbarForm.FormClosed += TaskbarForm_FormClosed;
-                static void TaskbarForm_FormClosed(object sender, FormClosedEventArgs e)
-                {
-                    Application.Exit();
-                }
-
-                taskbarForm.Deactivate += TaskbarForm_Deactivate;
-                void TaskbarForm_Resize(object sender, EventArgs e)
-                {
-                    SetStateNormal();
                 }
             }
 
@@ -61,19 +51,14 @@ namespace SystemTrayMenu
         public void Dispose()
         {
             taskbarForm?.Dispose();
-            SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
+            SystemEvents.DisplaySettingsChanged -= (s, e) => SystemEvents_DisplaySettingsChanged();
             menus.Dispose();
             menuNotifyIcon.Dispose();
         }
 
-        private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
+        private void SystemEvents_DisplaySettingsChanged()
         {
             menus.ReAdjustSizeAndLocation();
-        }
-
-        private void TaskbarForm_Deactivate(object sender, EventArgs e)
-        {
-            SetStateNormal();
         }
 
         /// <summary>
