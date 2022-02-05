@@ -74,18 +74,14 @@ namespace SystemTrayMenu.Helper
             string pathIconPng = Path.Combine(pathToStoreIcons, $"{hostname}.png");
 
             string urlGoogleIconDownload = @"http://www.google.com/s2/favicons?sz=32&domain=" + url;
-            HttpClient client = new HttpClient();
+            HttpClient client = new();
             using (HttpResponseMessage response = client.GetAsync(urlGoogleIconDownload).Result)
             {
-                using (HttpContent content = response.Content)
-                {
-                    Stream stream = content.ReadAsStreamAsync().Result;
-                    using (var fileStream = File.Create(pathIconPng))
-                    {
-                        stream.Seek(0, SeekOrigin.Begin);
-                        stream.CopyTo(fileStream);
-                    }
-                }
+                using HttpContent content = response.Content;
+                Stream stream = content.ReadAsStreamAsync().Result;
+                using var fileStream = File.Create(pathIconPng);
+                stream.Seek(0, SeekOrigin.Begin);
+                stream.CopyTo(fileStream);
             }
 
             string pathIcon = Path.Combine(pathToStoreIcons, $"{hostname}.ico");

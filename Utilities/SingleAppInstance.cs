@@ -32,7 +32,7 @@ namespace SystemTrayMenu.Utilities
 
                         try
                         {
-                            List<VirtualKeyCode> virtualKeyCodesModifiers = new List<VirtualKeyCode>();
+                            List<VirtualKeyCode> virtualKeyCodesModifiers = new();
                             foreach (string key in modifiers.ToString().ToUpperInvariant().Split(", "))
                             {
                                 if (key == "NONE")

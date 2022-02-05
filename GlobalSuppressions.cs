@@ -13,4 +13,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1000:Keywords should be spaced correctly", Justification = "new() should not be replaced by new() ")]
 [assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1101:Prefix local calls with this", Justification = "Standard codecleanup removes the this")]
 
-[assembly: SuppressMessage("Interoperability", "CA1416:Check platform compatibility", Justification = "<todo>")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Check platform compatibility", Justification = "this is a long way to get platform compatibility")]

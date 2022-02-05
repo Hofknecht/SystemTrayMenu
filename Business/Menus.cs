@@ -859,6 +859,12 @@ namespace SystemTrayMenu.Business
             Log.ProcessStart(path);
         }
 
+        private static int GetRowUnderCursor(DataGridView dgv, Point location)
+        {
+            DataGridView.HitTestInfo myHitTest = dgv.HitTest(location.X, location.Y);
+            return myHitTest.RowIndex;
+        }
+
         private Menu Create(MenuData menuData, string title = null)
         {
             Menu menu = new();
@@ -1104,12 +1110,6 @@ namespace SystemTrayMenu.Business
                 isDraggingSwipeScrolling = true;
                 dragSwipeScrollingStartRowIndex = GetRowUnderCursor(dgv, e.Location);
             }
-        }
-
-        private int GetRowUnderCursor(DataGridView dgv, Point location)
-        {
-            DataGridView.HitTestInfo myHitTest = dgv.HitTest(location.X, location.Y);
-            return myHitTest.RowIndex;
         }
 
         private void Dgv_MouseUp(object sender, MouseEventArgs e)

@@ -33,14 +33,17 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <OutputPath>bin\x64\Debug\</OutputPath>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>bin\AnyCPU\Debug\</OutputPath>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <OutputPath>bin\x86\Debug\</OutputPath>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -70,31 +73,37 @@
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>True</Optimize>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>True</Optimize>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|x64'">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>True</Optimize>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|AnyCPU'">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>True</Optimize>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>True</Optimize>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|x86'">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>True</Optimize>
+    <NoWarn>1701;1702;WFAC010</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Clearcove.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -307,7 +316,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Svg" Version="3.3.0" />
+    <PackageReference Include="Svg" Version="3.4.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Packaging\AppPackages\" />
@@ -320,6 +329,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>taskkill /fi "pid gt 0" /im SystemTrayMenu.exe
@@ -331,7 +344,10 @@ EXIT 0</PreBuildEvent>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryType></RepositoryType>
     <PackageTags>SystemTrayMenu</PackageTags>
-    <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
     <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
   </PropertyGroup>
 </Project>

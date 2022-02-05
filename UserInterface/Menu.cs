@@ -749,16 +749,16 @@ namespace SystemTrayMenu.UserInterface
                 .Replace("*", " ");
 
             // Replace special characters
-            string tmp = new string(searchString);
+            string tmp = new(searchString);
             searchString = string.Empty;
             foreach (char ch in tmp)
             {
-                switch(ch)
+                searchString += ch switch
                 {
-                    case '[': searchString += "[[]"; break;
-                    case ']': searchString += "[]]"; break;
-                    default: searchString += ch; break;
-                }
+                    '[' => "[[]",
+                    ']' => "[]]",
+                    _ => ch,
+                };
             }
 
             string like = string.Empty;

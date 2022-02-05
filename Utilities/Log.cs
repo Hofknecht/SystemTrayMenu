@@ -24,7 +24,7 @@ namespace SystemTrayMenu.Utilities
         internal static void Initialize()
         {
             string fileNamePath = GetLogFilePath();
-            FileInfo fileInfo = new FileInfo(fileNamePath);
+            FileInfo fileInfo = new(fileNamePath);
             if (fileInfo.Length > 2000000)
             {
                 string fileNamePathLast = GetLogFilePath(LogfileLastExtension);
