@@ -197,6 +197,7 @@ Don't hesitate to donate if you appreciate SystemTrayMenu and would like to supp
 Sponsors - Thank you!
 ------------------
 * Stefan Mahrer
+* [RuSieg](https://github.com/RuSieg)
 * Ralf K.
 * [donaldaken](https://github.com/donaldaken)
 * Marc Speer
