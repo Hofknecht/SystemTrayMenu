@@ -179,6 +179,7 @@ Thanks for ideas, reporting issues and contributing!
 #294 #295 #296 Stefan Mahrer,
 #225 #297 #299 [chip33](https://github.com/chip33),
 #298 [phanirithvij](https://github.com/phanirithvij),
+#306 [wini2](https://github.com/wini2),
 
 Donations
 ------------------
