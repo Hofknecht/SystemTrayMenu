@@ -63,8 +63,6 @@ namespace SystemTrayMenu.Helper
         private static void CreateShortcut(string url, string pathToStoreFile)
         {
             string pathToStoreIcons = Path.Combine(pathToStoreFile, "ico");
-
-            using WebClient client = new();
             if (!Directory.Exists(pathToStoreIcons))
             {
                 Directory.CreateDirectory(pathToStoreIcons);
@@ -74,9 +72,22 @@ namespace SystemTrayMenu.Helper
             string hostname = uri.Host.ToString();
 
             string pathIconPng = Path.Combine(pathToStoreIcons, $"{hostname}.png");
-            client.DownloadFile(
-                @"http://www.google.com/s2/favicons?sz=32&domain=" + url,
-                pathIconPng);
+
+            string urlGoogleIconDownload = @"http://www.google.com/s2/favicons?sz=32&domain=" + url;
+            HttpClient client = new HttpClient();
+            using (HttpResponseMessage response = client.GetAsync(urlGoogleIconDownload).Result)
+            {
+                using (HttpContent content = response.Content)
+                {
+                    Stream stream = content.ReadAsStreamAsync().Result;
+                    using (var fileStream = File.Create(pathIconPng))
+                    {
+                        stream.Seek(0, SeekOrigin.Begin);
+                        stream.CopyTo(fileStream);
+                    }
+                }
+            }
+
             string pathIcon = Path.Combine(pathToStoreIcons, $"{hostname}.ico");
             ImagingHelper.ConvertToIcon(pathIconPng, pathIcon, 32);
             File.Delete(pathIconPng);
