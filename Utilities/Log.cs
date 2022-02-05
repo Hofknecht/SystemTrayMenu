@@ -16,13 +16,31 @@ namespace SystemTrayMenu.Utilities
 
     internal static class Log
     {
+        private const string LogfileLastExtension = "_last";
         private static readonly Logger LogValue = new(string.Empty);
         private static readonly List<string> Warnings = new();
         private static readonly List<string> Infos = new();
 
         internal static void Initialize()
         {
-            Logger.Start(new FileInfo(GetLogFilePath()));
+            string fileNamePath = GetLogFilePath();
+            FileInfo fileInfo = new FileInfo(fileNamePath);
+            if (fileInfo.Length > 2000000)
+            {
+                string fileNamePathLast = GetLogFilePath(LogfileLastExtension);
+
+                try
+                {
+                    File.Delete(fileNamePathLast);
+                    File.Move(fileNamePath, fileNamePathLast);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"Can not clear logfile:'{fileNamePathLast}'", ex);
+                }
+            }
+
+            Logger.Start(fileInfo);
         }
 
         internal static void Info(string message)
@@ -50,18 +68,24 @@ namespace SystemTrayMenu.Utilities
                 $"{ex}");
         }
 
-        internal static string GetLogFilePath()
+        internal static string GetLogFilePath(string backup = "")
         {
             return Path.Combine(
                 Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 $"SystemTrayMenu"),
-                $"log-{Environment.MachineName}.txt");
+                $"log-{Environment.MachineName}{backup}.txt");
         }
 
         internal static void OpenLogFile()
         {
             ProcessStart(GetLogFilePath());
+
+            string lastLogfile = GetLogFilePath(LogfileLastExtension);
+            if (File.Exists(lastLogfile))
+            {
+                ProcessStart(lastLogfile);
+            }
         }
 
         internal static void WriteApplicationRuns()
