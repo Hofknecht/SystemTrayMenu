@@ -304,14 +304,14 @@ namespace SystemTrayMenu.UserInterface
             this.labelSearchField = new System.Windows.Forms.Label();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelAppearance = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxRoundCorners = new System.Windows.Forms.CheckBox();
+            this.buttonAppearanceDefault = new System.Windows.Forms.Button();
+            this.checkBoxUseFading = new System.Windows.Forms.CheckBox();
             this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
+            this.checkBoxRoundCorners = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.checkBoxUseFading = new System.Windows.Forms.CheckBox();
-            this.buttonAppearanceDefault = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -4315,16 +4315,29 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAppearance.Size = new System.Drawing.Size(379, 106);
             this.tableLayoutPanelAppearance.TabIndex = 1;
             // 
-            // checkBoxRoundCorners
+            // buttonAppearanceDefault
             // 
-            this.checkBoxRoundCorners.AutoSize = true;
-            this.checkBoxRoundCorners.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxRoundCorners.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxRoundCorners.Name = "checkBoxRoundCorners";
-            this.checkBoxRoundCorners.Size = new System.Drawing.Size(373, 19);
-            this.checkBoxRoundCorners.TabIndex = 4;
-            this.checkBoxRoundCorners.Text = "checkBoxRoundCorners";
-            this.checkBoxRoundCorners.UseVisualStyleBackColor = true;
+            this.buttonAppearanceDefault.AutoSize = true;
+            this.buttonAppearanceDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 78);
+            this.buttonAppearanceDefault.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonAppearanceDefault.Name = "buttonAppearanceDefault";
+            this.buttonAppearanceDefault.Size = new System.Drawing.Size(154, 25);
+            this.buttonAppearanceDefault.TabIndex = 3;
+            this.buttonAppearanceDefault.Text = "buttonAppearanceDefault";
+            this.buttonAppearanceDefault.UseVisualStyleBackColor = true;
+            this.buttonAppearanceDefault.Click += new System.EventHandler(this.ButtonAppearanceDefault_Click);
+            // 
+            // checkBoxUseFading
+            // 
+            this.checkBoxUseFading.AutoSize = true;
+            this.checkBoxUseFading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxUseFading.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxUseFading.Name = "checkBoxUseFading";
+            this.checkBoxUseFading.Size = new System.Drawing.Size(373, 19);
+            this.checkBoxUseFading.TabIndex = 5;
+            this.checkBoxUseFading.Text = "checkBoxUseFading";
+            this.checkBoxUseFading.UseVisualStyleBackColor = true;
             // 
             // checkBoxDarkModeAlwaysOn
             // 
@@ -4337,6 +4350,17 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxDarkModeAlwaysOn.Text = "checkBoxDarkModeAlwaysOn";
             this.checkBoxDarkModeAlwaysOn.UseVisualStyleBackColor = true;
             this.checkBoxDarkModeAlwaysOn.CheckedChanged += new System.EventHandler(this.CheckBoxDarkModeAlwaysOnCheckedChanged);
+            // 
+            // checkBoxRoundCorners
+            // 
+            this.checkBoxRoundCorners.AutoSize = true;
+            this.checkBoxRoundCorners.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxRoundCorners.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxRoundCorners.Name = "checkBoxRoundCorners";
+            this.checkBoxRoundCorners.Size = new System.Drawing.Size(373, 19);
+            this.checkBoxRoundCorners.TabIndex = 4;
+            this.checkBoxRoundCorners.Text = "checkBoxRoundCorners";
+            this.checkBoxRoundCorners.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelBottom
             // 
@@ -4385,30 +4409,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
-            // 
-            // checkBoxUseFading
-            // 
-            this.checkBoxUseFading.AutoSize = true;
-            this.checkBoxUseFading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxUseFading.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxUseFading.Name = "checkBoxUseFading";
-            this.checkBoxUseFading.Size = new System.Drawing.Size(373, 19);
-            this.checkBoxUseFading.TabIndex = 5;
-            this.checkBoxUseFading.Text = "checkBoxUseFading";
-            this.checkBoxUseFading.UseVisualStyleBackColor = true;
-            // 
-            // buttonAppearanceDefault
-            // 
-            this.buttonAppearanceDefault.AutoSize = true;
-            this.buttonAppearanceDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 78);
-            this.buttonAppearanceDefault.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonAppearanceDefault.Name = "buttonAppearanceDefault";
-            this.buttonAppearanceDefault.Size = new System.Drawing.Size(154, 25);
-            this.buttonAppearanceDefault.TabIndex = 3;
-            this.buttonAppearanceDefault.Text = "buttonAppearanceDefault";
-            this.buttonAppearanceDefault.UseVisualStyleBackColor = true;
-            this.buttonAppearanceDefault.Click += new System.EventHandler(this.ButtonAppearanceDefault_Click);
             // 
             // SettingsForm
             // 

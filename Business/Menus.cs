@@ -64,6 +64,7 @@ namespace SystemTrayMenu.Business
                     {
                         RowData rowDataToClear = (RowData)row[2];
                         rowDataToClear.IsMenuOpen = false;
+                        rowDataToClear.IsClicking = false;
                         rowDataToClear.IsSelected = false;
                         rowDataToClear.IsContextMenuOpen = false;
                     }
@@ -262,8 +263,9 @@ namespace SystemTrayMenu.Business
                     }
                     else if (closedLoadingMenu && menus[0].IsUsable)
                     {
-                        menuData.RowDataParent.IsSelected = false;
                         menuData.RowDataParent.IsMenuOpen = false;
+                        menuData.RowDataParent.IsClicking = false;
+                        menuData.RowDataParent.IsSelected = false;
                         RefreshSelection(menus[menuLoading.Level - 1].GetDataGridView());
                     }
                 }
@@ -1088,6 +1090,7 @@ namespace SystemTrayMenu.Business
             {
                 RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
                 rowData.MouseDown(dgv, e);
+                dgv.InvalidateRow(hitTestInfo.RowIndex);
             }
 
             if (e.Button == MouseButtons.Left)
@@ -1178,6 +1181,7 @@ namespace SystemTrayMenu.Business
             {
                 RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
                 trigger.DoubleClick(e, out bool toCloseByDoubleClick);
+                dgv.InvalidateRow(hitTestInfo.RowIndex);
                 if (toCloseByDoubleClick)
                 {
                     MenusFadeOut();
@@ -1207,6 +1211,11 @@ namespace SystemTrayMenu.Business
                 {
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
                     row.Selected = false;
+                }
+                else if (rowData.IsClicking)
+                {
+                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorIcons;
+                    row.Selected = true;
                 }
                 else if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
                 {
@@ -1248,7 +1257,12 @@ namespace SystemTrayMenu.Business
                 int width = dgv.Columns[0].Width + dgv.Columns[1].Width;
                 Rectangle rowBounds = new(0, e.RowBounds.Top, width, e.RowBounds.Height);
 
-                if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
+                if (rowData.IsClicking)
+                {
+                    ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorIcons, ButtonBorderStyle.Solid);
+                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
+                }
+                else if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
                 {
                     ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
                     row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;

@@ -585,6 +585,7 @@ namespace SystemTrayMenu.Handler
                     RowData rowData = (RowData)row.Cells[2].Value;
                     rowData.IsSelected = false;
                     row.Selected = false;
+                    rowData.IsClicking = false;
                 }
             }
         }

@@ -30,6 +30,8 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IsMenuOpen { get; set; }
 
+        internal bool IsClicking { get; set; }
+
         internal bool IsSelected { get; set; }
 
         internal bool ContainsMenu { get; set; }
@@ -142,6 +144,11 @@ namespace SystemTrayMenu.DataClasses
 
         internal void MouseDown(DataGridView dgv, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Left)
+            {
+                IsClicking = true;
+            }
+
             if (e != null &&
                 e.Button == MouseButtons.Right &&
                 FileInfo != null &&
@@ -176,6 +183,8 @@ namespace SystemTrayMenu.DataClasses
 
         internal void MouseClick(MouseEventArgs e, out bool toCloseByDoubleClick)
         {
+            IsClicking = false;
+
             toCloseByDoubleClick = false;
             if (Properties.Settings.Default.OpenItemWithOneClick)
             {
@@ -195,6 +204,8 @@ namespace SystemTrayMenu.DataClasses
 
         internal void DoubleClick(MouseEventArgs e, out bool toCloseByDoubleClick)
         {
+            IsClicking = false;
+
             toCloseByDoubleClick = false;
             if (!Properties.Settings.Default.OpenItemWithOneClick)
             {

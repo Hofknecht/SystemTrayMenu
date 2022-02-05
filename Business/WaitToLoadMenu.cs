@@ -204,6 +204,7 @@ namespace SystemTrayMenu.Handler
                 if (rowData != null)
                 {
                     rowData.IsSelected = false;
+                    rowData.IsClicking = false;
                     dgv.Rows[rowIndex].Selected = false;
                     this.dgv = null;
                     this.rowIndex = 0;
