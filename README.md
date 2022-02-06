@@ -70,38 +70,46 @@ which you are often using and especially when you can not find them over the win
 You can also consider to put there all files from your desktop.  
 
 2. Step: **Move the SystemTrayMenu icon** by drag and drop from the system tray **into the taskbar** below.  
+
 ![group icon out](https://user-images.githubusercontent.com/52528841/83349567-1ab74000-a336-11ea-8676-3db33615a57a.gif)
 
-3. Step: Open the optionsmenu to see the taskbar item. 'Right click' -> 'Pin to taskbar' or set 'Show in Taskbar'  
+3. Step: 'Right click' on taskbar item -> 'Pin to taskbar'
+ 
 ![2022-01-30 16_08_15-](https://user-images.githubusercontent.com/52528841/151705358-7e48d394-7055-479e-ba5c-e46f13959b3b.png)
-
-4. 'Shift' + 'Right click' on the taskbar item. Select 'Properties'. 
-Add argument ' -r' if you want the behavior to be that it always restarts
-![2022-02-02 23_47_51-Window](https://user-images.githubusercontent.com/52528841/152250651-35b63f6a-c982-4ee7-8935-b4ff930526fe.png)
 
 
 Now it is ready to start - just **click on the icon** in the system tray or the taskbar or press the hotkey to open the SystemTrayMenu. 
+
+---
 
 **How can I change the root directory?**
 
 You can change the root directory in the settings menu, that you can open by right clicking on the SystemTrayMenu icon.  
 
+---
+
 **What does the hotkey do?**
 
 In the settings menu you can choose a hotkey to open and close the SystemTrayMenu.  
+
+---
 
 **Can the SystemTrayMenu launch on windows startup?**
 
 Yes, you can select this option in the settings menu, that you can open by right clicking on the SystemTrayMenu icon.  
 
-**How can i add 'Shutdown' or 'Restart'?**
+---
+
+**How can I add Windows 'Shutdown' or Windows 'Restart'?**
 
 Create a file 'Shutdown.bat' : `Shutdown.exe -s -t 00`. Create a file 'Restart.bat'. `Shutdown.exe -r -t 00`.
-Make shortcuts of the files and maybe set also a icon to the shortcut. Rename the link to e.g. 'xx Shutdown'. Either put it directly into the root folder or include the files via option 'Folders'. There you could also hide the scripts by default and only show it when search e.g. 'xx'. Then you can shutdown your pc with: hotkey + xx + Enter
+Make shortcuts of the files and maybe also set an icon to the shortcut. Rename the link to e.g. 'xx Shutdown'. Either put it directly into the root folder or include the files via option 'Folders'. There you could also hide the scripts by default and only show it when searching e.g. 'xx'. Then you can shutdown your PC with: hotkey + xx + Enter
 
 ![2022-02-06 11_09_12-Window](https://user-images.githubusercontent.com/52528841/152676102-30eccd6a-2ae6-4964-9631-c06497f491e7.png)
 
-**How can i switch sound between 'Speaker' and 'Headset'?**
+---
+
+**How can I switch sound between 'Speaker' and 'Headset'?**
 
 Download NirCmd, put nircmd.exe to your preferred location.
 Create a file 'Speaker - Audio.bat':
@@ -116,6 +124,8 @@ Then you can switch between speaker and headset with: hotkey + headset + Enter
 
 ![2022-02-06 11_16_30-Window](https://user-images.githubusercontent.com/52528841/152676337-349666dd-da7d-4b1e-ae02-e297935fd5b7.png)
 
+---
+
 **How can I move the 'Recycle Bin' from the Desktop into the STM?**
 
 Create a shortcut of 'Recycle Bin' and put it into STM. Then hide it from Dekstop:
@@ -124,6 +134,23 @@ Then you can e.g. empty your 'Recycle Bin' with: hotkey + recycle + Keys.App (to
 
 ![2022-02-06 12_37_51-Window](https://user-images.githubusercontent.com/52528841/152679061-ae7c30c5-92c5-4b4c-abb3-5316aabf9c6a.png)
 
+---
+
+**Which options are there to control the behavior via taskbar item?**
+
+By default, the 'Show in Taskbar' option is true,
+
+![2022-02-06 15_35_02-Window](https://user-images.githubusercontent.com/52528841/152685888-1b746858-dd45-41ab-a082-da7710298c74.png)
+
+which means there is shown an active form in the taskbar which can be used to open and close the menu via activate and deactivate event, e.g. also via Alt + Tab
+
+You can switch off the option. If the shortcut is then pressed via the taskbar item, we need longer to show the menu (because we have to start an extra process which tells the first to open).
+You can also use the argument -r to set the behavior of the menu to always be restarted when you click on the taskbar item:
+'Shift' + 'Right click' on the taskbar item. Select 'Properties'. Add argument ' -r':
+
+![2022-02-02 23_47_51-Window](https://user-images.githubusercontent.com/52528841/152250651-35b63f6a-c982-4ee7-8935-b4ff930526fe.png)
+
+---
 
 **What can I do if I have a problem, idea or question?**
 
