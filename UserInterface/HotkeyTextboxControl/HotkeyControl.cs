@@ -388,7 +388,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                     if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
                     {
                         keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
-                        if (keyString.Contains("("))
+                        if (keyString.Contains('('))
                         {
                             return "* " + keyString;
                         }
@@ -401,7 +401,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                     if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
                     {
                         keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
-                        if (keyString.Contains("("))
+                        if (keyString.Contains('('))
                         {
                             return "/ " + keyString;
                         }

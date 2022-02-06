@@ -41,7 +41,7 @@ namespace SystemTrayMenu.Utilities
         public static bool IsNetworkRoot(string path)
         {
             return path.StartsWith(@"\\", StringComparison.InvariantCulture) &&
-                !path[2..].Contains(@"\", StringComparison.InvariantCulture);
+                !path[2..].Contains('\\', StringComparison.InvariantCulture);
         }
 
         private static string GetShortcutFileNamePath(object shortcutFilename, out bool isFolder)
