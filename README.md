@@ -116,6 +116,15 @@ Then you can switch between speaker and headset with: hotkey + headset + Enter
 
 ![2022-02-06 11_16_30-Window](https://user-images.githubusercontent.com/52528841/152676337-349666dd-da7d-4b1e-ae02-e297935fd5b7.png)
 
+**How can I move the 'Recycle Bin' from the Desktop into the STM?**
+
+Create a shortcut of 'Recycle Bin' and put it into STM. Then hide it from Dekstop:
+To find the option, right-click on the desktop, choose “Personalize,” and then click “Desktop Icon Settings” in the left sidebar. Uncheck the “Recycle Bin” box and click “OK” to save your changes.
+Then you can e.g. empty your 'Recycle Bin' with: hotkey + recycle + Keys.App (to open context menu) + b (context menu shortcut for 'Empty Recycle Bin') + Enter
+
+![2022-02-06 12_37_51-Window](https://user-images.githubusercontent.com/52528841/152679061-ae7c30c5-92c5-4b4c-abb3-5316aabf9c6a.png)
+
+
 **What can I do if I have a problem, idea or question?**
 
 If a problem has occured or you have any ideas or questions, you are welcome to contact us.  
