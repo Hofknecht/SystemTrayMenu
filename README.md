@@ -94,6 +94,28 @@ In the settings menu you can choose a hotkey to open and close the SystemTrayMen
 
 Yes, you can select this option in the settings menu, that you can open by right clicking on the SystemTrayMenu icon.  
 
+**How can i add 'Shutdown' or 'Restart'?**
+
+Create a file 'Shutdown.bat' : `Shutdown.exe -s -t 00`. Create a file 'Restart.bat'. `Shutdown.exe -r -t 00`.
+Make shortcuts of the files and maybe set also a icon to the shortcut. Rename the link to e.g. 'xx Shutdown'. Either put it directly into the root folder or include the files via option 'Folders'. There you could also hide the scripts by default and only show it when search e.g. 'xx'. Then you can shutdown your pc with: hotkey + xx + Enter
+
+![2022-02-06 11_09_12-Window](https://user-images.githubusercontent.com/52528841/152676102-30eccd6a-2ae6-4964-9631-c06497f491e7.png)
+
+**How can i switch sound between 'Speaker' and 'Headset'?**
+
+Download NirCmd, put nircmd.exe to your preferred location.
+Create a file 'Speaker - Audio.bat':
+
+`"D:\<preffered location>\nircmd\nircmd.exe" setdefaultsounddevice "VSX-521" 1`
+
+Create a file 'Headset - Audio.bat':
+
+`"D:\<preffered location>\nircmd\nircmd.exe" setdefaultsounddevice "Speakers" 1`.
+
+Then you can switch between speaker and headset with: hotkey + headset + Enter
+
+![2022-02-06 11_16_30-Window](https://user-images.githubusercontent.com/52528841/152676337-349666dd-da7d-4b1e-ae02-e297935fd5b7.png)
+
 **What can I do if I have a problem, idea or question?**
 
 If a problem has occured or you have any ideas or questions, you are welcome to contact us.  
