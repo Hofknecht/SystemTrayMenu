@@ -44,32 +44,6 @@ namespace SystemTrayMenu.Utilities
                 !path[2..].Contains(@"\", StringComparison.InvariantCulture);
         }
 
-        public static bool PingHost(string nameOrAddress)
-        {
-            bool pingable = false;
-            Ping pinger = null;
-
-            try
-            {
-                pinger = new Ping();
-                PingReply reply = pinger.Send(nameOrAddress);
-                pingable = reply.Status == IPStatus.Success;
-            }
-            catch (PingException ex)
-            {
-                Log.Warn($"Ping {nameOrAddress} failed", ex);
-            }
-            finally
-            {
-                if (pinger != null)
-                {
-                    pinger.Dispose();
-                }
-            }
-
-            return pingable;
-        }
-
         private static string GetShortcutFileNamePath(object shortcutFilename, out bool isFolder)
         {
             string resolvedFilename = string.Empty;
