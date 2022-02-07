@@ -58,11 +58,11 @@ Blogs and reviews
 FAQ
 ------------------
 
-**What do I have to do now as first steps?**  
+**What do I have to do as first steps?**  
 
-SystemTrayMenu is portable, so it does not need to be installed. After downloading e.g. SystemTrayMenu-1.0.17.24.zip, **unzip the folder**, then **start SystemTrayMenu.exe**. If you prefer an installation there is the possibility to install SystemTrayMenu via the Windows Store. 
+SystemTrayMenu is portable, so it does not need to be installed. After downloading e.g. SystemTrayMenu-1.2.6.0.zip, **unzip the folder**, then **start SystemTrayMenu.exe**. If you prefer an installation there is the possibility to install SystemTrayMenu via the [Microsoft Store](https://www.microsoft.com/store/apps/9N24F8ZBJMT1). 
 
-If not already installed, then install .Net 6 [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet/6.0) (e.g. dotnet-sdk-6.0.100-win-x64.exe). 
+If not already installed, download and install .Net 6 [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet/6.0) (e.g. dotnet-sdk-6.0.100-win-x64.exe). 
   
 1. Step: After starting the application the first time you have to **choose the root directory**.  
 In this directory you should put shortcuts, files and folders (App, Game, Script, URL, Network),  
@@ -73,18 +73,18 @@ You can also consider to put there all files from your desktop.
 
 ![group icon out](https://user-images.githubusercontent.com/52528841/83349567-1ab74000-a336-11ea-8676-3db33615a57a.gif)
 
-3. Step: 'Right click' on taskbar item -> 'Pin to taskbar'
+3. Step: 'Right click' on taskbar item -> '**Pin to taskbar**'
  
 ![2022-01-30 16_08_15-](https://user-images.githubusercontent.com/52528841/151705358-7e48d394-7055-479e-ba5c-e46f13959b3b.png)
 
 
-Now it is ready to start - just **click on the icon** in the system tray or the taskbar or press the hotkey to open the SystemTrayMenu. 
+Now it is ready to start - just **click on the icon** in the system tray or the taskbar or press the hotkey (Ctrl + LWin) to open the SystemTrayMenu. 
 
 ---
 
 **How can I change the root directory?**
 
-You can change the root directory in the settings menu, that you can open by right clicking on the SystemTrayMenu icon.  
+You can change the root directory in the settings menu, which can be opened by right clicking on the icon in the system tray.  
 
 ---
 
@@ -96,7 +96,7 @@ In the settings menu you can choose a hotkey to open and close the SystemTrayMen
 
 **Can the SystemTrayMenu launch on windows startup?**
 
-Yes, you can select this option in the settings menu, that you can open by right clicking on the SystemTrayMenu icon.  
+Yes, you can select this option in the settings menu, which can be opened by right clicking on the icon in the systen tray.  
 
 ---
 
@@ -112,12 +112,11 @@ Make shortcuts of the files and maybe also set an icon to the shortcut. Rename t
 **How can I switch sound between 'Speaker' and 'Headset'?**
 
 Download NirCmd, put nircmd.exe to your preferred location.
+<br>
 Create a file 'Speaker - Audio.bat':
-
 `"D:\<preffered location>\nircmd\nircmd.exe" setdefaultsounddevice "VSX-521" 1`
-
+<br>
 Create a file 'Headset - Audio.bat':
-
 `"D:\<preffered location>\nircmd\nircmd.exe" setdefaultsounddevice "Speakers" 1`.
 
 Then you can switch between speaker and headset with: hotkey + headset + Enter
@@ -128,7 +127,7 @@ Then you can switch between speaker and headset with: hotkey + headset + Enter
 
 **How can I move the 'Recycle Bin' from the Desktop into the STM?**
 
-Create a shortcut of 'Recycle Bin' and put it into STM. Then hide it from Dekstop:
+Create a shortcut of 'Recycle Bin' and put it into STM. Then hide it from desktop:
 To find the option, right-click on the desktop, choose “Personalize,” and then click “Desktop Icon Settings” in the left sidebar. Uncheck the “Recycle Bin” box and click “OK” to save your changes.
 Then you can e.g. empty your 'Recycle Bin' with: hotkey + recycle + Keys.App (to open context menu) + b (context menu shortcut for 'Empty Recycle Bin') + Enter
 
@@ -138,13 +137,12 @@ Then you can e.g. empty your 'Recycle Bin' with: hotkey + recycle + Keys.App (to
 
 **Which options are there to control the behavior via taskbar item?**
 
-By default, the 'Show in Taskbar' option is true,
+By default, the 'Show in Taskbar' option is activated, which means there is shown an active form in the taskbar which can be used to open and close the menu via activate and deactivate event, e.g. also via Alt + Tab.
 
 ![2022-02-06 15_35_02-Window](https://user-images.githubusercontent.com/52528841/152685888-1b746858-dd45-41ab-a082-da7710298c74.png)
 
-which means there is shown an active form in the taskbar which can be used to open and close the menu via activate and deactivate event, e.g. also via Alt + Tab
 
-You can switch off the option. If the shortcut is then pressed via the taskbar item, we need longer to show the menu (because we have to start an extra process which tells the first to open).
+You can switch off the option. If the shortcut is pressed then via the taskbar item, we need more time to show the menu (because we have to start an extra process which tells the first to open).
 You can also use the argument -r to set the behavior of the menu to always be restarted when you click on the taskbar item:
 'Shift' + 'Right click' on the taskbar item. Select 'Properties'. Add argument ' -r':
 
@@ -155,7 +153,7 @@ You can also use the argument -r to set the behavior of the menu to always be re
 **What can I do if I have a problem, idea or question?**
 
 If a problem has occured or you have any ideas or questions, you are welcome to contact us.  
-[Create an issue](https://github.com/Hofknecht/SystemTrayMenu/issues/new/choose) or write us an email [Markus Hofknecht](Markus@Hofknecht.de)
+[Create an issue](https://github.com/Hofknecht/SystemTrayMenu/issues/new/choose) or [write us an email](mailto:Markus@Hofknecht.eu)
 
 **Find more FAQ topics here:**
 [SystemTrayMenu FAQ](https://github.com/Hofknecht/SystemTrayMenu/issues?q=is%3Aissue+is%3Aclosed+label%3AFAQ)
@@ -177,12 +175,12 @@ Install .NET 6 SDK [https://dotnet.microsoft.com](https://dotnet.microsoft.com/d
 Contributing
 ------------------
 
-If you would like to contribute, everyone is welcome to.  
-If you are considering a feature, need guidance, or want to talk about an idea, don't hesitate to create an issue here.  
+If you would like to contribute, you are very welcome.  
+If you are considering a feature, need guidance, or want to talk about an idea, don't hesitate to create an issue or a discussion here.  
 When contributing please respect the style used by the codebase and consider the following rules:  
-* Run FixCop.  
+* Fix warnings shown by code analyzers.
 * Increase the version in the assembly file.  
-* Add a commit message like: 
+* Add a commit message like:
 ```
 [Feature] Show icon in taskbar when application is running (#115), version 0.11.1.9
 ```
@@ -235,7 +233,7 @@ Thanks for ideas, reporting issues and contributing!
 #285 #286 [dao-net](https://github.com/dao-net),
 #288 William P.,
 #294 #295 #296 Stefan Mahrer,
-#225 #297 #299 #317 [chip33](https://github.com/chip33),
+#225 #297 #299 #317 #321 [chip33](https://github.com/chip33),
 #298 [phanirithvij](https://github.com/phanirithvij),
 #306 [wini2](https://github.com/wini2),
 
@@ -248,7 +246,7 @@ We would be delighted if you could help us with the following:
 * share or like [youtube video](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
 * join or like us on [reddit](https://www.reddit.com/r/SystemTrayMenu/) and/or [Facebook](https://www.facebook.com/Systemtraymenu-114069060335483)
 * review or rating on [Sourceforge](https://sourceforge.net/projects/systemtraymenu/) or somewhere else
-* your ideas either as issues here in github or directly per mail
+* your ideas either as issues here on GitHub or directly per email
 
 Don't hesitate to donate if you appreciate SystemTrayMenu and would like to support our work.  
 [![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
