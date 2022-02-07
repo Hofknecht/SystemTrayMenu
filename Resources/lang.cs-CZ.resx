@@ -465,4 +465,7 @@
   <data name="Fading" xml:space="preserve">
     <value>Blednutí</value>
   </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Odeslat klávesovou zkratku do jiné instance</value>
+  </data>
 </root>

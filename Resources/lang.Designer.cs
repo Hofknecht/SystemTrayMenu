@@ -863,6 +863,15 @@ namespace SystemTrayMenu.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send hotkey to other instance.
+        /// </summary>
+        internal static string Send_hotkey_to_other_instance {
+            get {
+                return ResourceManager.GetString("Send hotkey to other instance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set as SystemTrayMenu folder.
         /// </summary>
         internal static string Set_as_SystemTrayMenu_folder {

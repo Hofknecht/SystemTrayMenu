@@ -102,6 +102,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonSystemSettingsShowHiddenFiles = new System.Windows.Forms.RadioButton();
             this.groupBoxClick = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelClick = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxSendHotkeyInsteadKillOtherInstances = new System.Windows.Forms.CheckBox();
             this.checkBoxOpenDirectoryWithOneClick = new System.Windows.Forms.CheckBox();
             this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
             this.checkBoxShowInTaskbar = new System.Windows.Forms.CheckBox();
@@ -1385,7 +1386,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHiddenFilesAndFolders.AutoSize = true;
             this.groupBoxHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHiddenFilesAndFolders.Controls.Add(this.tableLayoutPanel1);
-            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 106);
+            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 131);
             this.groupBoxHiddenFilesAndFolders.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxHiddenFilesAndFolders.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxHiddenFilesAndFolders.Name = "groupBoxHiddenFilesAndFolders";
@@ -1458,7 +1459,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxClick.MaximumSize = new System.Drawing.Size(400, 0);
             this.groupBoxClick.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxClick.Name = "groupBoxClick";
-            this.groupBoxClick.Size = new System.Drawing.Size(400, 97);
+            this.groupBoxClick.Size = new System.Drawing.Size(400, 122);
             this.groupBoxClick.TabIndex = 0;
             this.groupBoxClick.TabStop = false;
             this.groupBoxClick.Text = "groupBoxClick";
@@ -1469,24 +1470,38 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelClick.ColumnCount = 1;
             this.tableLayoutPanelClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenDirectoryWithOneClick, 0, 2);
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 1);
+            this.tableLayoutPanelClick.Controls.Add(this.checkBoxSendHotkeyInsteadKillOtherInstances, 0, 1);
+            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenDirectoryWithOneClick, 0, 3);
+            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 2);
             this.tableLayoutPanelClick.Controls.Add(this.checkBoxShowInTaskbar, 0, 0);
             this.tableLayoutPanelClick.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelClick.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelClick.Name = "tableLayoutPanelClick";
-            this.tableLayoutPanelClick.RowCount = 3;
+            this.tableLayoutPanelClick.RowCount = 4;
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.Size = new System.Drawing.Size(394, 75);
+            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelClick.Size = new System.Drawing.Size(394, 100);
             this.tableLayoutPanelClick.TabIndex = 0;
+            // 
+            // checkBoxSendHotkeyInsteadKillOtherInstances
+            // 
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.AutoSize = true;
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.MaximumSize = new System.Drawing.Size(330, 0);
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Name = "checkBoxSendHotkeyInsteadKillOtherInstances";
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Size = new System.Drawing.Size(330, 19);
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.TabIndex = 3;
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Text = "checkBoxSendHotkeyInsteadKillOtherInstances";
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.UseVisualStyleBackColor = true;
             // 
             // checkBoxOpenDirectoryWithOneClick
             // 
             this.checkBoxOpenDirectoryWithOneClick.AutoSize = true;
             this.checkBoxOpenDirectoryWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxOpenDirectoryWithOneClick.Location = new System.Drawing.Point(3, 53);
+            this.checkBoxOpenDirectoryWithOneClick.Location = new System.Drawing.Point(3, 78);
             this.checkBoxOpenDirectoryWithOneClick.Name = "checkBoxOpenDirectoryWithOneClick";
             this.checkBoxOpenDirectoryWithOneClick.Size = new System.Drawing.Size(388, 19);
             this.checkBoxOpenDirectoryWithOneClick.TabIndex = 2;
@@ -1497,7 +1512,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.checkBoxOpenItemWithOneClick.AutoSize = true;
             this.checkBoxOpenItemWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(3, 53);
             this.checkBoxOpenItemWithOneClick.Name = "checkBoxOpenItemWithOneClick";
             this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(388, 19);
             this.checkBoxOpenItemWithOneClick.TabIndex = 0;
@@ -1519,7 +1534,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 215);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 240);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -4958,5 +4973,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.Label labelIconSizeInPercent;
         private System.Windows.Forms.CheckBox checkBoxUseFading;
         private System.Windows.Forms.Button buttonAppearanceDefault;
+        private System.Windows.Forms.CheckBox checkBoxSendHotkeyInsteadKillOtherInstances;
     }
 }

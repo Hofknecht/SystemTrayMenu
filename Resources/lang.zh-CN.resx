@@ -465,4 +465,7 @@
   <data name="Fading" xml:space="preserve">
     <value>衰退</value>
   </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>向其他實例發送熱鍵</value>
+  </data>
 </root>

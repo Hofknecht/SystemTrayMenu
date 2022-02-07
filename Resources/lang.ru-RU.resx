@@ -465,4 +465,7 @@
   <data name="Fading" xml:space="preserve">
     <value>исчезновение</value>
   </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Отправить горячую клавишу в другой экземпляр</value>
+  </data>
 </root>

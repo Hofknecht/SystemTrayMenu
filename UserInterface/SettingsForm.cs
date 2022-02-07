@@ -146,6 +146,7 @@ namespace SystemTrayMenu.UserInterface
                 tabPageAdvanced.Text = Translator.GetText("Advanced");
                 groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
+                checkBoxSendHotkeyInsteadKillOtherInstances.Text = Translator.GetText("Send hotkey to other instance");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an item instead of double click");
                 checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory instead of double click");
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and folders");
@@ -391,6 +392,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
+            checkBoxSendHotkeyInsteadKillOtherInstances.Checked = Settings.Default.SendHotkeyInsteadKillOtherInstances;
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
             checkBoxOpenDirectoryWithOneClick.Checked = Settings.Default.OpenDirectoryWithOneClick;
 
@@ -825,6 +827,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
+            Settings.Default.SendHotkeyInsteadKillOtherInstances = checkBoxSendHotkeyInsteadKillOtherInstances.Checked;
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Settings.Default.OpenDirectoryWithOneClick = checkBoxOpenDirectoryWithOneClick.Checked;
             Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
@@ -1109,6 +1112,7 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
         {
             checkBoxShowInTaskbar.Checked = true;
+            checkBoxSendHotkeyInsteadKillOtherInstances.Checked = false;
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxOpenDirectoryWithOneClick.Checked = true;
 

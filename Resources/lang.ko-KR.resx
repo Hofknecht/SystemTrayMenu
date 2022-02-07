@@ -465,4 +465,7 @@
   <data name="Fading" xml:space="preserve">
     <value>페이딩</value>
   </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>다른 인스턴스로 단축키 보내기</value>
+  </data>
 </root>

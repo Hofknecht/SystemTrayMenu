@@ -465,4 +465,7 @@
   <data name="Fading" xml:space="preserve">
     <value>محو شدن</value>
   </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>کلید میانبر را به نمونه دیگر ارسال کنید</value>
+  </data>
 </root>

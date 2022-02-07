@@ -18,21 +18,13 @@ namespace SystemTrayMenu
         {
             try
             {
-                bool killOtherInstances = true;
-                bool isArgumentSetToRestart = args != null && args.Length > 0 && args[0] == "-r";
-                if (!isArgumentSetToRestart)
-                {
-                    args = null;
-                    killOtherInstances = false;
-                }
-
                 Log.Initialize();
                 Translator.Initialize();
                 Config.SetFolderByWindowsContextMenu(args);
                 Config.LoadOrSetByUser();
                 Config.Initialize();
 
-                if (SingleAppInstance.Initialize(killOtherInstances))
+                if (SingleAppInstance.Initialize())
                 {
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);

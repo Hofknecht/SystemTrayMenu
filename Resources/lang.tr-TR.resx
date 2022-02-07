@@ -465,4 +465,7 @@
   <data name="Fading" xml:space="preserve">
     <value>Solma</value>
   </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Başka bir örneğe kısayol tuşu gönder</value>
+  </data>
 </root>

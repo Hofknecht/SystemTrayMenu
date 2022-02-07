@@ -15,7 +15,7 @@ namespace SystemTrayMenu.Utilities
 
     internal static class SingleAppInstance
     {
-        internal static bool Initialize(bool killOtherInstances)
+        internal static bool Initialize()
         {
             bool success = true;
 
@@ -23,9 +23,9 @@ namespace SystemTrayMenu.Utilities
             {
                 foreach (Process p in Process.GetProcessesByName(
                        Process.GetCurrentProcess().ProcessName).
-                       Where(s => s.Id != Process.GetCurrentProcess().Id))
+                       Where(s => s.Id != Environment.ProcessId))
                 {
-                    if (!killOtherInstances)
+                    if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                     {
                         Keys modifiers = HotkeyControl.HotkeyModifiersFromString(Properties.Settings.Default.HotKey);
                         Keys hotkey = HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey);
@@ -41,17 +41,12 @@ namespace SystemTrayMenu.Utilities
                                 }
 
                                 VirtualKeyCode virtualKeyCode = VirtualKeyCode.LWIN;
-                                switch (key)
+                                virtualKeyCode = key switch
                                 {
-                                    case "ALT":
-                                        virtualKeyCode = VirtualKeyCode.MENU;
-                                        break;
-                                    default:
-                                        virtualKeyCode = (VirtualKeyCode)Enum.Parse(
-                                        typeof(VirtualKeyCode), key.ToUpperInvariant());
-                                        break;
-                                }
-
+                                    "ALT" => VirtualKeyCode.MENU,
+                                    _ => (VirtualKeyCode)Enum.Parse(
+                                                 typeof(VirtualKeyCode), key.ToUpperInvariant()),
+                                };
                                 virtualKeyCodesModifiers.Add(virtualKeyCode);
                             }
 
@@ -68,11 +63,10 @@ namespace SystemTrayMenu.Utilities
                         catch (Exception ex)
                         {
                             Log.Warn($"Send hoktey {Properties.Settings.Default.HotKey} to other instance failed", ex);
-                            killOtherInstances = true;
                         }
                     }
 
-                    if (killOtherInstances)
+                    if (!Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                     {
                         try
                         {

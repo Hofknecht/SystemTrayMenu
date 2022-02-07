@@ -465,4 +465,7 @@
   <data name="Fading" xml:space="preserve">
     <value>Fading</value>
   </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Send hotkey to other instance</value>
+  </data>
 </root>

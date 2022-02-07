@@ -465,4 +465,7 @@
   <data name="Fading" xml:space="preserve">
     <value>Mờ dần</value>
   </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Gửi phím nóng đến phiên bản khác</value>
+  </data>
 </root>
