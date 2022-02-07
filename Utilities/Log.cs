@@ -25,7 +25,7 @@ namespace SystemTrayMenu.Utilities
         {
             string fileNamePath = GetLogFilePath();
             FileInfo fileInfo = new(fileNamePath);
-            if (fileInfo.Length > 2000000)
+            if (fileInfo.Exists && fileInfo.Length > 2000000)
             {
                 string fileNamePathLast = GetLogFilePath(LogfileLastExtension);
 

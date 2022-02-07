@@ -10,7 +10,7 @@
   <Identity
     Name="49543SystemTrayMenu.SystemTrayMenu"
     Publisher="CN=5884501C-92ED-45DE-9508-9D987C314243"
-    Version="1.2.4.0" />
+    Version="1.2.5.0" />
 
   <Properties>
     <DisplayName>SystemTrayMenu</DisplayName>
