@@ -1096,7 +1096,7 @@ namespace SystemTrayMenu.Business
             {
                 RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
                 rowData.MouseDown(dgv, e);
-                dgv.InvalidateRow(hitTestInfo.RowIndex);
+                InvalidateRowIfIndexInRange(dgv, hitTestInfo.RowIndex);
             }
 
             if (e.Button == MouseButtons.Left)
@@ -1181,7 +1181,7 @@ namespace SystemTrayMenu.Business
             {
                 RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
                 trigger.DoubleClick(e, out bool toCloseByDoubleClick);
-                dgv.InvalidateRow(hitTestInfo.RowIndex);
+                InvalidateRowIfIndexInRange(dgv, hitTestInfo.RowIndex);
                 if (toCloseByDoubleClick)
                 {
                     MenusFadeOut();
@@ -1189,6 +1189,14 @@ namespace SystemTrayMenu.Business
             }
 
             lastMouseDownRowIndex = -1;
+        }
+
+        private void InvalidateRowIfIndexInRange(DataGridView dgv, int rowIndex)
+        {
+            if (rowIndex > -1 && rowIndex < dgv.Rows.Count)
+            {
+                dgv.InvalidateRow(rowIndex);
+            }
         }
 
         private void Dgv_SelectionChanged(object sender, EventArgs e)
