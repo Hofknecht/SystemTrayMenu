@@ -43,6 +43,10 @@ namespace SystemTrayMenu.Properties
                 $"SystemTrayMenu"),
                 $"user-{Environment.MachineName}.config");
 
+        public static string ConfigPathAssembly => Path.Combine(
+                Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
+                $"user.config");
+
         /// <summary>
         /// Gets or sets override.
         /// </summary>
@@ -55,10 +59,6 @@ namespace SystemTrayMenu.Properties
                 // do nothing
             }
         }
-
-        private static string ConfigPathAssembly => Path.Combine(
-                Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
-                $"user.config");
 
         /// <summary>
         /// Gets or sets in memory storage of the settings values.

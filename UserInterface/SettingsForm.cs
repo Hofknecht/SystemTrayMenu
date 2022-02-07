@@ -865,12 +865,24 @@ namespace SystemTrayMenu.UserInterface
             if (checkBoxStoreConfigAtAssemblyLocation.Checked)
             {
                 CustomSettingsProvider.ActivateConfigPathAssembly();
-                Settings.Default.Save();
+                TrySettingsDefaultSave();
             }
             else
             {
-                Settings.Default.Save();
+                TrySettingsDefaultSave();
                 CustomSettingsProvider.DeactivateConfigPathAssembly();
+            }
+
+            static void TrySettingsDefaultSave()
+            {
+                try
+                {
+                    Settings.Default.Save();
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"Failed to store config at assembly location {CustomSettingsProvider.ConfigPathAssembly}", ex);
+                }
             }
 
             DialogResult = DialogResult.OK;
