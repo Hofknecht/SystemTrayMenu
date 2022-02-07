@@ -14,6 +14,7 @@ namespace SystemTrayMenu.UserInterface
             InitializeComponent();
             Icon = Config.GetAppIcon();
             MaximumSize = new Size(10, 1);
+
             // Opacity = 0.01f;
             // (otherwise: Task View causes Explorer restart when SystemTrayMenu is open #299)
             SetLocation();

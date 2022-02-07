@@ -865,6 +865,14 @@ namespace SystemTrayMenu.Business
             return myHitTest.RowIndex;
         }
 
+        private static void InvalidateRowIfIndexInRange(DataGridView dgv, int rowIndex)
+        {
+            if (rowIndex > -1 && rowIndex < dgv.Rows.Count)
+            {
+                dgv.InvalidateRow(rowIndex);
+            }
+        }
+
         private Menu Create(MenuData menuData, string title = null)
         {
             Menu menu = new();
@@ -1189,14 +1197,6 @@ namespace SystemTrayMenu.Business
             }
 
             lastMouseDownRowIndex = -1;
-        }
-
-        private void InvalidateRowIfIndexInRange(DataGridView dgv, int rowIndex)
-        {
-            if (rowIndex > -1 && rowIndex < dgv.Rows.Count)
-            {
-                dgv.InvalidateRow(rowIndex);
-            }
         }
 
         private void Dgv_SelectionChanged(object sender, EventArgs e)
