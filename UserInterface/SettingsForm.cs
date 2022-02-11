@@ -353,7 +353,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             numericUpDownMenuWidth.Minimum = 50;
-            numericUpDownMenuWidth.Maximum = 1000;
+            numericUpDownMenuWidth.Maximum = 8000;
             numericUpDownMenuWidth.Increment = 10;
             numericUpDownMenuWidth.Value = Settings.Default.MaximumMenuWidth;
 

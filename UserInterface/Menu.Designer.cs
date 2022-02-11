@@ -119,11 +119,7 @@
             this.tableLayoutPanelSearch.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanelSearch.ColumnCount = 2;
             this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelSearch.Controls.Add(this.textBoxSearch, 1, 0);
             this.tableLayoutPanelSearch.Controls.Add(this.pictureBoxSearch, 0, 0);
             this.tableLayoutPanelSearch.Location = new System.Drawing.Point(3, 0);
@@ -131,7 +127,7 @@
             this.tableLayoutPanelSearch.Name = "tableLayoutPanelSearch";
             this.tableLayoutPanelSearch.RowCount = 1;
             this.tableLayoutPanelSearch.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearch.Size = new System.Drawing.Size(218, 22);
+            this.tableLayoutPanelSearch.Size = new System.Drawing.Size(153, 22);
             this.tableLayoutPanelSearch.TabIndex = 5;
             this.tableLayoutPanelSearch.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
             // 
@@ -145,7 +141,7 @@
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 2);
             this.textBoxSearch.MaxLength = 37;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(190, 15);
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 15);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
@@ -196,18 +192,20 @@
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2F));
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(224, 89);
+            this.tableLayoutPanelMenu.Size = new System.Drawing.Size(159, 89);
             this.tableLayoutPanelMenu.TabIndex = 4;
             this.tableLayoutPanelMenu.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
             // 
             // panelLine
             // 
+            this.panelLine.AutoSize = true;
+            this.panelLine.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelLine.BackColor = System.Drawing.Color.Silver;
             this.panelLine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLine.Location = new System.Drawing.Point(3, 22);
             this.panelLine.Margin = new System.Windows.Forms.Padding(0);
             this.panelLine.Name = "panelLine";
-            this.panelLine.Size = new System.Drawing.Size(218, 1);
+            this.panelLine.Size = new System.Drawing.Size(153, 1);
             this.panelLine.TabIndex = 6;
             // 
             // tableLayoutPanelBottom
@@ -236,14 +234,14 @@
             this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
             this.tableLayoutPanelBottom.RowCount = 1;
             this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(218, 22);
+            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(153, 22);
             this.tableLayoutPanelBottom.TabIndex = 5;
             // 
             // pictureBoxRestart
             // 
             this.pictureBoxRestart.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxRestart.Location = new System.Drawing.Point(187, 1);
+            this.pictureBoxRestart.Location = new System.Drawing.Point(122, 1);
             this.pictureBoxRestart.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBoxRestart.Name = "pictureBoxRestart";
             this.pictureBoxRestart.Size = new System.Drawing.Size(20, 20);
@@ -259,7 +257,7 @@
             // 
             this.pictureBoxSettings.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxSettings.Location = new System.Drawing.Point(165, 1);
+            this.pictureBoxSettings.Location = new System.Drawing.Point(100, 1);
             this.pictureBoxSettings.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBoxSettings.Name = "pictureBoxSettings";
             this.pictureBoxSettings.Size = new System.Drawing.Size(20, 20);
@@ -275,7 +273,7 @@
             // 
             this.pictureBoxMenuAlwaysOpen.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMenuAlwaysOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxMenuAlwaysOpen.Location = new System.Drawing.Point(143, 1);
+            this.pictureBoxMenuAlwaysOpen.Location = new System.Drawing.Point(78, 1);
             this.pictureBoxMenuAlwaysOpen.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBoxMenuAlwaysOpen.Name = "pictureBoxMenuAlwaysOpen";
             this.pictureBoxMenuAlwaysOpen.Size = new System.Drawing.Size(20, 20);
@@ -292,7 +290,7 @@
             // 
             this.pictureBoxOpenFolder.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxOpenFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxOpenFolder.Location = new System.Drawing.Point(121, 1);
+            this.pictureBoxOpenFolder.Location = new System.Drawing.Point(56, 1);
             this.pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBoxOpenFolder.Name = "pictureBoxOpenFolder";
             this.pictureBoxOpenFolder.Size = new System.Drawing.Size(20, 20);

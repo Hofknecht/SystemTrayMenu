@@ -26,7 +26,7 @@ namespace SystemTrayMenu.Utilities
             foreach (DataGridViewRow row in rows)
             {
                 float checkWidth = gfx.MeasureString(
-                    row.Cells[i].Value.ToString() + "__",
+                    row.Cells[i].Value.ToString() + "___",
                     dgv.RowTemplate.DefaultCellStyle.Font)
                     .Width;
                 if (checkWidth > widthMax)
