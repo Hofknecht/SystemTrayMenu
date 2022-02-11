@@ -717,6 +717,8 @@ namespace SystemTrayMenu.UserInterface
                 dgv.Width = widthIcon + widthText;
             }
 
+            tableLayoutPanelSearch.MinimumSize = new Size(dgv.Width + widthScrollbar, 0);
+
             // Only scaling correct with Sans Serif for textBoxSearch. Workaround:
             textBoxSearch.Font = new Font(
                 "Segoe UI",

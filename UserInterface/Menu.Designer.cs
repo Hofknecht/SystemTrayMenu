@@ -113,7 +113,7 @@
             // 
             // tableLayoutPanelSearch
             // 
-            this.tableLayoutPanelSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tableLayoutPanelSearch.AutoSize = true;
             this.tableLayoutPanelSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelSearch.BackColor = System.Drawing.Color.White;
@@ -127,7 +127,7 @@
             this.tableLayoutPanelSearch.Name = "tableLayoutPanelSearch";
             this.tableLayoutPanelSearch.RowCount = 1;
             this.tableLayoutPanelSearch.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearch.Size = new System.Drawing.Size(153, 22);
+            this.tableLayoutPanelSearch.Size = new System.Drawing.Size(128, 22);
             this.tableLayoutPanelSearch.TabIndex = 5;
             this.tableLayoutPanelSearch.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
             // 
