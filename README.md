@@ -20,6 +20,7 @@
 [![downloaddrivers](https://user-images.githubusercontent.com/52528841/116524789-0f6aec80-a8d8-11eb-9037-06b2c101fa72.png)](https://www.downloaddrivers.info/download-systemtraymenu-1-0-17-43/) 
 [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
 [![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)
+[![chocolatey](https://user-images.githubusercontent.com/62262740/153710320-672c8d30-a1cb-469f-ba7f-3b9dcd8de0e3.png)](https://community.chocolatey.org/packages/systemtraymenu)
 
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
@@ -37,23 +38,6 @@ We are using C# and .NET 6.
 
 Download the latest official version:  
 https://github.com/Hofknecht/SystemTrayMenu/releases
-  
-Blogs and reviews
-------------------
-* https://www.deskmodder.de/blog/2020/07/18/systemtraymenu-nun-auch-als-windows-10-app-neben-der-portablen-version/
-* https://www.trishtech.com/2020/07/systemtraymenu-is-simple-and-lightweight-start-menu-alternative/
-* https://www.ghacks.net/2021/04/10/create-a-custom-start-menu-that-you-can-access-with-a-hotkey-using-systemtraymenu/
-* http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/
-* https://reviewsapp.org/systemtraymenu-better-organization-of-windows
-* https://www.white-windows.ru/systemtraymenu-podobie-menyu-pusk-no-bolee-prostoe-i-rabotayushhee-iz-sistemnogo-treya/
-* https://teamos-hkrg.com/threads/systemtraymenu-1-0-20-0.162800/
-* https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/
-* https://www.thewindowsclub.com/systemtraymenu-for-windows
-* https://br.atsit.in/id/?p=100192
-* https://www.netties.be/v20/toon_artikel.php?id=34684&cat=Software&zoekdatum=2021-12-13
-* http://www.hackdos.com/62.html
-* https://www.nesabamedia.com/systemtraymenu-alternatif-start-menu-untuk-windows/
-* https://tweaks.com/news/3548904/systemtraymenu-is-a-free-start-menu-alternative-for-windows-1110/
 
 FAQ
 ------------------
@@ -150,13 +134,35 @@ You can also use the argument -r to set the behavior of the menu to always be re
 
 ---
 
-**What can I do if I have a problem, idea or question?**
+What can I do if I have a problem, idea or question?
+------------------
 
-If a problem has occured or you have any ideas or questions, you are welcome to contact us.  
-[Create an issue](https://github.com/Hofknecht/SystemTrayMenu/issues/new/choose) or [write us an email](mailto:Markus@Hofknecht.eu)
+If a problem has occured or you have ideas or questions, you are welcome to contact us:
+* [Create an issue](https://github.com/Hofknecht/SystemTrayMenu/issues/new/choose)
+* [Suggest your idea](https://github.com/Hofknecht/SystemTrayMenu/discussions/categories/ideas)
+* [Start a discussion](https://github.com/Hofknecht/SystemTrayMenu/discussions/new)
+* [Write us an email](mailto:Markus@Hofknecht.eu)
 
 **Find more FAQ topics here:**
 [SystemTrayMenu FAQ](https://github.com/Hofknecht/SystemTrayMenu/issues?q=is%3Aissue+is%3Aclosed+label%3AFAQ)
+
+  
+Blogs and reviews
+------------------
+* https://www.deskmodder.de/blog/2020/07/18/systemtraymenu-nun-auch-als-windows-10-app-neben-der-portablen-version/
+* https://www.trishtech.com/2020/07/systemtraymenu-is-simple-and-lightweight-start-menu-alternative/
+* https://www.ghacks.net/2021/04/10/create-a-custom-start-menu-that-you-can-access-with-a-hotkey-using-systemtraymenu/
+* http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/
+* https://reviewsapp.org/systemtraymenu-better-organization-of-windows
+* https://www.white-windows.ru/systemtraymenu-podobie-menyu-pusk-no-bolee-prostoe-i-rabotayushhee-iz-sistemnogo-treya/
+* https://teamos-hkrg.com/threads/systemtraymenu-1-0-20-0.162800/
+* https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/
+* https://www.thewindowsclub.com/systemtraymenu-for-windows
+* https://br.atsit.in/id/?p=100192
+* https://www.netties.be/v20/toon_artikel.php?id=34684&cat=Software&zoekdatum=2021-12-13
+* http://www.hackdos.com/62.html
+* https://www.nesabamedia.com/systemtraymenu-alternatif-start-menu-untuk-windows/
+* https://tweaks.com/news/3548904/systemtraymenu-is-a-free-start-menu-alternative-for-windows-1110/
 
 
 Security
@@ -239,20 +245,18 @@ Thanks for ideas, reporting issues and contributing!
 
 Donations
 ------------------
-Use our Amazon Partner Link: https://amzn.to/3DOjTBa (As an Amazon partner, we earn from qualified sales.)
 
-We would be delighted if you could help us with the following:
-* star on this github project
-* share or like [youtube video](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
-* join or like us on [reddit](https://www.reddit.com/r/SystemTrayMenu/) and/or [Facebook](https://www.facebook.com/Systemtraymenu-114069060335483)
-* review or rating on [Sourceforge](https://sourceforge.net/projects/systemtraymenu/) or somewhere else
-* your ideas either as issues here on GitHub or directly per email
+* Help us to improve SystemTrayMenu via [Feedback](https://github.com/Hofknecht/SystemTrayMenu/edit/master/README.md#what-can-i-do-if-i-have-a-problem-idea-or-question) or [Show and tell](https://github.com/Hofknecht/SystemTrayMenu/discussions/categories/show-and-tell) how you use it
+* Give the SystemTrayMenu GitHub project a [star](https://github.com/Hofknecht/SystemTrayMenu/stargazers), [press watch](https://github.com/Hofknecht/SystemTrayMenu/watchers) and [fork it](https://github.com/Hofknecht/SystemTrayMenu/network/members)
+* Share, like, rate, comment SystemTrayMenu in [MicrosoftStore](https://www.microsoft.com/store/apps/9N24F8ZBJMT1) and [other sources listed above](https://github.com/Hofknecht/SystemTrayMenu/edit/master/README.md#systemtraymenu) e.g.  [Sourceforge](https://sourceforge.net/projects/systemtraymenu/), join us on [reddit](https://www.reddit.com/r/SystemTrayMenu/) and/or [Facebook](https://www.facebook.com/Systemtraymenu-114069060335483), watch the [youtube video](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
+* Don't hesitate to donate via PayPal if you appreciate SystemTrayMenu and would like to support our work:  
+[![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-200px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
+* Become a [sponsor via GitHub](https://github.com/sponsors/Hofknecht)
+* We are trying to apply for the amazon affiliate program with an amazon link, in the future we might get ~1.5% per purchase, for you the price stays the same. All you have to do is doing your purchases via the link. As an Amazon partner, we earn from qualified sales. This only works with certain products and we can e.g. create these category links (please tell us if you need other special categories): <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=6151ac8258f44adda610cc05e57967a2&camp=1638&creative=6742&node=340843031">Computers &amp; Accessories</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=ca8480de9bc1ef726d5a1280f593ac9f&camp=1638&creative=6742&node=562066">Electronics &amp; Photography</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=7ff79addfbdbfcaae04818d279a7e973&camp=1638&creative=6742&node=301927">Software</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=100c22e7db187d7cce9ae20f8a4e024a&camp=1638&creative=6742&node=300992">Video Games</a>
 
-Don't hesitate to donate if you appreciate SystemTrayMenu and would like to support our work.  
-[![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
-
-Sponsors - Thank you!
+PayPal/GitHub Sponsors - Thank you!
 ------------------
+(Sponsors are listed here in the ReadMe and in the application about menu)
 * Stefan Mahrer
 * [RuSieg](https://github.com/RuSieg)
 * Ralf K.
