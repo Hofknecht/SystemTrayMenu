@@ -1,7 +1,19 @@
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
-[![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;
+[![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;
 
-[![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1) 
+SystemTrayMenu <img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
+------------------
+**Browse and open your files easily**
+
+SystemTrayMenu is an open-source 'Desktop Toolbar' or 'Start Menu' alternative for Microsoft Windows (Win10 and Win11). It offers a clear, personalized menu which can be opened via keyboard or mouse. Files, links and folders are organized in several levels as drop-down menus.
+
+We are using C# and .NET 6.
+
+Download the latest official version: https://github.com/Hofknecht/SystemTrayMenu/releases
+
+[![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases) 
+[![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1)
+[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://sourceforge.net/projects/systemtraymenu/)
 [![majorgeeks](https://user-images.githubusercontent.com/52528841/116281616-2d2a3b80-a78a-11eb-948c-bde9a8ccb1ed.png)](https://www.majorgeeks.com/files/details/systemtraymenu.html) 
 [![computerbild](https://user-images.githubusercontent.com/52528841/121583122-2735a480-ca30-11eb-82a4-b4f6054e4d8f.png)](https://www.computerbild.de/download/SystemTrayMenu-26748523.html) 
 [![heise](https://user-images.githubusercontent.com/52528841/125174840-53c41400-e1c8-11eb-8992-2de3e078c7b2.png)](https://www.heise.de/download/product/systemtraymenu) 
@@ -24,20 +36,12 @@
 
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
-SystemTrayMenu<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
-------------------
-**Browse and open your files easily**
-
-SystemTrayMenu is a free, open-source start menu alternative for Microsoft Windows. It offers a clear, personalized menu in the system tray. Files, links and folders are organized in several levels as drop-down menus.
-
-We are using C# and .NET 6.
+<!---comment in to see sourceforce download counter [![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;--->
 
 ![20211211_170852](https://user-images.githubusercontent.com/52528841/145683690-5b25bc43-a497-4cf0-9c16-947a2d2dcd77.gif)
 
 [![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://user-images.githubusercontent.com/52528841/145684486-44e98d8f-c2ba-42fa-837d-91a6a397549a.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
 
-Download the latest official version:  
-https://github.com/Hofknecht/SystemTrayMenu/releases
 
 FAQ
 ------------------
