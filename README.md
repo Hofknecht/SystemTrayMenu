@@ -1,42 +1,43 @@
+[![Download Framework](https://img.shields.io/badge/Download%20the%20correct%20official%20framework%20here-darkred)](https://dotnet.microsoft.com/download/dotnet/6.0)
+[![Downloads Releases](https://img.shields.io/badge/Download%20the%20latest%20official%20version%20here-darkred)](https://github.com/Hofknecht/SystemTrayMenu/releases)
+[![Release](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases)
+[![Plattform](https://img.shields.io/badge/plattform-Windows%2010/11-darkturquoise)](https://dotnet.microsoft.com/download/dotnet/6.0)
+[![Language](https://img.shields.io/badge/language-C%23-darkturquoise)](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new)
+[![Framework](https://img.shields.io/badge/framework-.NET%206-darkturquoise)](https://dotnet.microsoft.com/download/dotnet/6.0)
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
-[![Build Version](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads GitHub](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;
+[![GitHub all releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total?label=GitHub%20downloads)](https://github.com/Hofknecht/SystemTrayMenu/releases)
+[![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg?label=Sourceforge)](https://sourceforge.net/projects/systemtraymenu/)&nbsp;
+[![Downloads Chocolatey](https://img.shields.io/chocolatey/dt/SystemTrayMenu?label=Chocolatey)](https://community.chocolatey.org/packages/systemtraymenu)&nbsp;
+<!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
-SystemTrayMenu <img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
-------------------
-**Browse and open your files easily**
-
-SystemTrayMenu is an open-source 'Desktop Toolbar' or 'Start Menu' alternative for Microsoft Windows (Win10 and Win11). It offers a clear, personalized menu which can be opened via keyboard or mouse. Files, links and folders are organized in several levels as drop-down menus.
-
-We are using C# and .NET 6.
-
-Download the latest official version: https://github.com/Hofknecht/SystemTrayMenu/releases
-
-[![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases) 
-[![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1)
-[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://sourceforge.net/projects/systemtraymenu/)
+[![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;
+[![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1)&nbsp;
+[![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://sourceforge.net/projects/systemtraymenu/)&nbsp;
 [![majorgeeks](https://user-images.githubusercontent.com/52528841/116281616-2d2a3b80-a78a-11eb-948c-bde9a8ccb1ed.png)](https://www.majorgeeks.com/files/details/systemtraymenu.html) 
 [![computerbild](https://user-images.githubusercontent.com/52528841/121583122-2735a480-ca30-11eb-82a4-b4f6054e4d8f.png)](https://www.computerbild.de/download/SystemTrayMenu-26748523.html) 
 [![heise](https://user-images.githubusercontent.com/52528841/125174840-53c41400-e1c8-11eb-8992-2de3e078c7b2.png)](https://www.heise.de/download/product/systemtraymenu) 
-[![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html) 
+[![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)&nbsp;
 [![softpedia](https://user-images.githubusercontent.com/52528841/121581852-a033fc80-ca2e-11eb-8aee-4a8cd3043bd1.png)](https://www.softpedia.com/get/System/Launchers-Shutdown-Tools/SystemTrayMenu.shtml) 
 [![freeware-base](https://user-images.githubusercontent.com/52528841/136707080-a64c8eeb-d563-44e6-aee3-1fb2921221e0.png)](https://www.freeware-base.de/freeware-zeige-details-31811-SystemTrayMenu.html)
 [![netzwelt](https://user-images.githubusercontent.com/52528841/121585548-015dcf00-ca33-11eb-8436-b1f5231d5c2d.png)](https://www.netzwelt.de/download/25705-systemtraymenu.html) 
 [![aiiguide](https://user-images.githubusercontent.com/52528841/136708010-1f7a7d04-0b0b-4fe8-b70c-83bd48733d9c.png)](https://aiiguide.com/download-systemtraymenu.html)
 [![taiwebs](https://user-images.githubusercontent.com/52528841/136708061-6384d536-88a7-4c5d-a13a-a1b0cff00e68.png)](https://de.taiwebs.com/windows/download-systemtraymenu-6812.html)
-[![rjno1](https://user-images.githubusercontent.com/52528841/121582195-04ef5700-ca2f-11eb-9c22-cf8239c6e99b.png)](https://www.rjno1.com/systemtraymenu/) 
-[![softaro](https://user-images.githubusercontent.com/52528841/121581997-c9548d00-ca2e-11eb-9145-fab017925475.png)](https://softaro.net/systemtraymenu/)
-[![bytesin](https://user-images.githubusercontent.com/52528841/136706178-0bd2e812-f087-40f4-8c30-301ba645f10d.png)](https://www.bytesin.com/software/SystemTrayMenu/)
-[![rsload](https://user-images.githubusercontent.com/52528841/121584316-a1b2f400-ca31-11eb-8a90-242b9ba80dc4.png)](https://rsload.net/soft/desktop/35219-systemtraymenu.html) 
+[![rjno1](https://user-images.githubusercontent.com/52528841/121582195-04ef5700-ca2f-11eb-9c22-cf8239c6e99b.png)](https://www.rjno1.com/systemtraymenu/)&nbsp;
+[![softaro](https://user-images.githubusercontent.com/52528841/121581997-c9548d00-ca2e-11eb-9145-fab017925475.png)](https://softaro.net/systemtraymenu/)&nbsp;
+[![bytesin](https://user-images.githubusercontent.com/52528841/136706178-0bd2e812-f087-40f4-8c30-301ba645f10d.png)](https://www.bytesin.com/software/SystemTrayMenu/)&nbsp;
+[![rsload](https://user-images.githubusercontent.com/52528841/121584316-a1b2f400-ca31-11eb-8a90-242b9ba80dc4.png)](https://rsload.net/soft/desktop/35219-systemtraymenu.html)&nbsp;
 [![softonic](https://user-images.githubusercontent.com/52528841/121586781-5a7a3280-ca34-11eb-8a03-618b4661f859.png)](https://systemtraymenu.en.softonic.com/) 
 [![mirsofta](https://user-images.githubusercontent.com/52528841/121584682-0706e500-ca32-11eb-8629-4599579a1620.png)](https://mirsofta.ru/index.php?id=1623024195)
 [![downloaddrivers](https://user-images.githubusercontent.com/52528841/116524789-0f6aec80-a8d8-11eb-9037-06b2c101fa72.png)](https://www.downloaddrivers.info/download-systemtraymenu-1-0-17-43/) 
 [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
-[![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)
-[![chocolatey](https://user-images.githubusercontent.com/62262740/153710320-672c8d30-a1cb-469f-ba7f-3b9dcd8de0e3.png)](https://community.chocolatey.org/packages/systemtraymenu)
+[![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)&nbsp;
+[![chocolatey](https://user-images.githubusercontent.com/52528841/153746103-47e7edd7-1bc3-4c29-b712-bab052b473eb.png)](https://community.chocolatey.org/packages/systemtraymenu)
 
-<!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
+SystemTrayMenu <img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
+------------------
+**Browse and open your files easily**
 
-<!---comment in to see sourceforce download counter [![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://github.com/Hofknecht/SystemTrayMenu/releases) [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;--->
+SystemTrayMenu is an open-source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be opened via keyboard or mouse. Files, links and folders are organized in several levels as drop-down menus.
 
 ![20211211_170852](https://user-images.githubusercontent.com/52528841/145683690-5b25bc43-a497-4cf0-9c16-947a2d2dcd77.gif)
 
