@@ -886,7 +886,7 @@ namespace SystemTrayMenu.UserInterface
                 timerUpdateIcons.Start();
             }
 
-            if (isSearchStringEmpty)
+            if (isSearchStringEmpty && dgv.Rows.Count > 0)
             {
                 dgv.FirstDisplayedScrollingRowIndex = 0;
             }
