@@ -1,3 +1,4 @@
+
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 <!--
 [![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://user-images.githubusercontent.com/52528841/145684486-44e98d8f-c2ba-42fa-837d-91a6a397549a.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
@@ -35,6 +36,7 @@
 [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
 [![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)&nbsp;
 [![chocolatey](https://user-images.githubusercontent.com/52528841/153746103-47e7edd7-1bc3-4c29-b712-bab052b473eb.png)](https://community.chocolatey.org/packages/systemtraymenu)
+[![scoop](https://user-images.githubusercontent.com/52528841/153939000-a8fd62b7-068b-48c3-8ad2-a09b1552f3a8.png)](https://github.com/Hofknecht/SystemTrayMenu/issues/325)
 
 [![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu)](https://twitter.com/intent/tweet?text=Get%20this%20Cool%20App%3A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0ADownload%20latest%20version%20of%20SystemTrayMenu%20here%3Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%2Freleases)
 [![Twitter](https://img.shields.io/twitter/follow/markushofknecht?style=social)](https://twitter.com/MarkusHofknecht)
@@ -264,7 +266,7 @@ Donations
 * Help us to improve SystemTrayMenu via [Feedback](https://github.com/Hofknecht/SystemTrayMenu/edit/master/README.md#what-can-i-do-if-i-have-a-problem-idea-or-question) or [Show and tell](https://github.com/Hofknecht/SystemTrayMenu/discussions/categories/show-and-tell) how you use it
 * Don't hesitate to donate via PayPal if you appreciate SystemTrayMenu and would like to support our work:  
 [![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-200px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
-* Become a [sponsor via GitHub](https://github.com/sponsors/Hofknecht)
+* Become a &nbsp;[![Downloads Releases](https://img.shields.io/badge/-GitHub%20Sponsor-fafbfc?logo=GitHub%20Sponsors)](https://github.com/sponsors/Hofknecht)
 * Like, rate, share, comment, watch, tweet, join SystemTrayMenu (see list in the top of readme)
 * We are trying to apply for the amazon affiliate program with an amazon link, in the future we might get ~1.5% per purchase, for you the price stays the same. All you have to do is doing your purchases via the link. As an Amazon partner, we earn from qualified sales. This only works with certain products and we can e.g. create these category links (please tell us if you need other special categories):  
 <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=6151ac8258f44adda610cc05e57967a2&camp=1638&creative=6742&node=340843031">Computers &amp; Accessories</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=ca8480de9bc1ef726d5a1280f593ac9f&camp=1638&creative=6742&node=562066">Electronics &amp; Photography</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=7ff79addfbdbfcaae04818d279a7e973&camp=1638&creative=6742&node=301927">Software</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=100c22e7db187d7cce9ae20f8a4e024a&camp=1638&creative=6742&node=300992">Video Games</a>
