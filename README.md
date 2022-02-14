@@ -13,8 +13,13 @@
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
 [![GitHub all releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total?label=GitHub%20downloads)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg?label=Sourceforge)](https://sourceforge.net/projects/systemtraymenu/)&nbsp;
-[![Downloads Chocolatey](https://img.shields.io/chocolatey/dt/SystemTrayMenu?label=Chocolatey)](https://community.chocolatey.org/packages/systemtraymenu)&nbsp;
-
+[![Downloads Chocolatey](https://img.shields.io/chocolatey/dt/SystemTrayMenu?label=Chocolatey)](https://community.chocolatey.org/packages/systemtraymenu)  
+[![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu)](https://twitter.com/intent/tweet?text=Get%20this%20Cool%20App%3A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0ADownload%20latest%20version%20of%20SystemTrayMenu%20here%3Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%2Freleases)
+[![Twitter](https://img.shields.io/twitter/follow/markushofknecht?style=social)](https://twitter.com/MarkusHofknecht)
+[![Reddit](https://img.shields.io/reddit/subreddit-subscribers/systemtraymenu?style=social)](https://www.reddit.com/r/SystemTrayMenu/)
+[![Youtube](https://img.shields.io/youtube/views/xsi4Uv3-ZLg?style=social)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
+[![Facebook](https://img.shields.io/badge/Share-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu)
+[![Facebook](https://img.shields.io/badge/Like-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/Systemtraymenu-114069060335483)  
 [![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;
 [![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1)&nbsp;
 [![SourceForge](https://user-images.githubusercontent.com/52528841/89990756-1aff8000-dc83-11ea-828a-a70a4d567399.png)](https://sourceforge.net/projects/systemtraymenu/)&nbsp;
@@ -37,14 +42,6 @@
 [![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)&nbsp;
 [![chocolatey](https://user-images.githubusercontent.com/52528841/153746103-47e7edd7-1bc3-4c29-b712-bab052b473eb.png)](https://community.chocolatey.org/packages/systemtraymenu)
 [![scoop](https://user-images.githubusercontent.com/52528841/153939000-a8fd62b7-068b-48c3-8ad2-a09b1552f3a8.png)](https://github.com/Hofknecht/SystemTrayMenu/issues/325)
-
-[![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu)](https://twitter.com/intent/tweet?text=Get%20this%20Cool%20App%3A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0ADownload%20latest%20version%20of%20SystemTrayMenu%20here%3Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%2Freleases)
-[![Twitter](https://img.shields.io/twitter/follow/markushofknecht?style=social)](https://twitter.com/MarkusHofknecht)
-[![Reddit](https://img.shields.io/reddit/subreddit-subscribers/systemtraymenu?style=social)](https://www.reddit.com/r/SystemTrayMenu/)
-[![Youtube](https://img.shields.io/youtube/views/xsi4Uv3-ZLg?style=social)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
-[![Facebook](https://img.shields.io/badge/Share-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu)
-[![Facebook](https://img.shields.io/badge/Like-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/Systemtraymenu-114069060335483)
-
 
 SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
 ------------------
