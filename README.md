@@ -1,19 +1,18 @@
+<!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
+<!--
+[![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://user-images.githubusercontent.com/52528841/145684486-44e98d8f-c2ba-42fa-837d-91a6a397549a.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
+-->
 
-
-
-
-
-[![Download Framework](https://img.shields.io/badge/Download%20the%20correct%20official%20framework%20here-darkred)](https://dotnet.microsoft.com/download/dotnet/6.0)
 [![Downloads Releases](https://img.shields.io/badge/Download%20the%20latest%20official%20version%20here-darkred)](https://github.com/Hofknecht/SystemTrayMenu/releases)
-[![Release](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases)
+[![Release](https://img.shields.io/github/v/release/hofknecht/systemtraymenu)](https://github.com/Hofknecht/SystemTrayMenu/releases) 
+[![Download Framework](https://img.shields.io/badge/Download%20the%20correct%20official%20framework%20here-darkred)](https://dotnet.microsoft.com/download/dotnet/6.0)
+[![Framework](https://img.shields.io/badge/framework-.NET%206-darkturquoise)](https://dotnet.microsoft.com/download/dotnet/6.0)  
 [![Plattform](https://img.shields.io/badge/plattform-Windows%2010/11-darkturquoise)](https://dotnet.microsoft.com/download/dotnet/6.0)
 [![Language](https://img.shields.io/badge/language-C%23-darkturquoise)](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new)
-[![Framework](https://img.shields.io/badge/framework-.NET%206-darkturquoise)](https://dotnet.microsoft.com/download/dotnet/6.0)
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)
 [![GitHub all releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total?label=GitHub%20downloads)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg?label=Sourceforge)](https://sourceforge.net/projects/systemtraymenu/)&nbsp;
 [![Downloads Chocolatey](https://img.shields.io/chocolatey/dt/SystemTrayMenu?label=Chocolatey)](https://community.chocolatey.org/packages/systemtraymenu)&nbsp;
-<!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
 
 [![GitHub](https://github.com/favicon.ico)](https://github.com/Hofknecht/SystemTrayMenu/releases)&nbsp;
 [![MicrosoftStore](https://user-images.githubusercontent.com/52528841/88452959-371db780-ce63-11ea-9076-11920156456a.png)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1)&nbsp;
@@ -25,8 +24,7 @@
 [![softpedia](https://user-images.githubusercontent.com/52528841/121581852-a033fc80-ca2e-11eb-8aee-4a8cd3043bd1.png)](https://www.softpedia.com/get/System/Launchers-Shutdown-Tools/SystemTrayMenu.shtml) 
 [![freeware-base](https://user-images.githubusercontent.com/52528841/136707080-a64c8eeb-d563-44e6-aee3-1fb2921221e0.png)](https://www.freeware-base.de/freeware-zeige-details-31811-SystemTrayMenu.html)
 [![netzwelt](https://user-images.githubusercontent.com/52528841/121585548-015dcf00-ca33-11eb-8436-b1f5231d5c2d.png)](https://www.netzwelt.de/download/25705-systemtraymenu.html) 
-[![aiiguide](https://user-images.githubusercontent.com/52528841/136708010-1f7a7d04-0b0b-4fe8-b70c-83bd48733d9c.png)](https://aiiguide.com/download-systemtraymenu.html)
-[![taiwebs](https://user-images.githubusercontent.com/52528841/136708061-6384d536-88a7-4c5d-a13a-a1b0cff00e68.png)](https://de.taiwebs.com/windows/download-systemtraymenu-6812.html)
+[![aiiguide](https://user-images.githubusercontent.com/52528841/136708010-1f7a7d04-0b0b-4fe8-b70c-83bd48733d9c.png)](https://aiiguide.com/download-systemtraymenu.html)[![taiwebs](https://user-images.githubusercontent.com/52528841/136708061-6384d536-88a7-4c5d-a13a-a1b0cff00e68.png)](https://de.taiwebs.com/windows/download-systemtraymenu-6812.html)
 [![rjno1](https://user-images.githubusercontent.com/52528841/121582195-04ef5700-ca2f-11eb-9c22-cf8239c6e99b.png)](https://www.rjno1.com/systemtraymenu/)&nbsp;
 [![softaro](https://user-images.githubusercontent.com/52528841/121581997-c9548d00-ca2e-11eb-9145-fab017925475.png)](https://softaro.net/systemtraymenu/)&nbsp;
 [![bytesin](https://user-images.githubusercontent.com/52528841/136706178-0bd2e812-f087-40f4-8c30-301ba645f10d.png)](https://www.bytesin.com/software/SystemTrayMenu/)&nbsp;
@@ -38,6 +36,14 @@
 [![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)&nbsp;
 [![chocolatey](https://user-images.githubusercontent.com/52528841/153746103-47e7edd7-1bc3-4c29-b712-bab052b473eb.png)](https://community.chocolatey.org/packages/systemtraymenu)
 
+[![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu)](https://twitter.com/intent/tweet?text=Get%20this%20Cool%20App%3A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0ADownload%20latest%20version%20of%20SystemTrayMenu%20here%3Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%2Freleases)
+[![Twitter](https://img.shields.io/twitter/follow/markushofknecht?style=social)](https://twitter.com/MarkusHofknecht)
+[![Reddit](https://img.shields.io/reddit/subreddit-subscribers/systemtraymenu?style=social)](https://www.reddit.com/r/SystemTrayMenu/)
+[![Youtube](https://img.shields.io/youtube/views/xsi4Uv3-ZLg?style=social)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
+[![Facebook](https://img.shields.io/badge/Share-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu)
+[![Facebook](https://img.shields.io/badge/Like-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/Systemtraymenu-114069060335483)
+
+
 SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">  
 ------------------
 **Browse and open your files easily**
@@ -45,8 +51,6 @@ SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/System
 SystemTrayMenu is an open-source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be opened via keyboard or mouse. Files, links and folders are organized in several levels as drop-down menus.
 
 ![20211211_170852](https://user-images.githubusercontent.com/52528841/145683690-5b25bc43-a497-4cf0-9c16-947a2d2dcd77.gif)
-
-[![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://user-images.githubusercontent.com/52528841/145684486-44e98d8f-c2ba-42fa-837d-91a6a397549a.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
 
 
 FAQ
@@ -261,8 +265,7 @@ Donations
 * Don't hesitate to donate via PayPal if you appreciate SystemTrayMenu and would like to support our work:  
 [![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-200px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
 * Become a [sponsor via GitHub](https://github.com/sponsors/Hofknecht)
-* Share, like, rate, comment SystemTrayMenu in, see list in the top e.g. [![MicrosoftStore](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/store/apps/9N24F8ZBJMT1) [![youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
-* join us [![reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/SystemTrayMenu/) [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/Systemtraymenu-114069060335483)
+* Like, rate, share, comment, watch, tweet, join SystemTrayMenu (see list in the top of readme)
 * We are trying to apply for the amazon affiliate program with an amazon link, in the future we might get ~1.5% per purchase, for you the price stays the same. All you have to do is doing your purchases via the link. As an Amazon partner, we earn from qualified sales. This only works with certain products and we can e.g. create these category links (please tell us if you need other special categories):  
 <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=6151ac8258f44adda610cc05e57967a2&camp=1638&creative=6742&node=340843031">Computers &amp; Accessories</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=ca8480de9bc1ef726d5a1280f593ac9f&camp=1638&creative=6742&node=562066">Electronics &amp; Photography</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=7ff79addfbdbfcaae04818d279a7e973&camp=1638&creative=6742&node=301927">Software</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=100c22e7db187d7cce9ae20f8a4e024a&camp=1638&creative=6742&node=300992">Video Games</a>
 
