@@ -138,72 +138,72 @@
     <Compile Update="UserInterface\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Update="Resources\lang.de-DE.Designer.cs">
+    <Compile Update="Resources\Languages\lang.de-DE.Designer.cs">
       <DependentUpon>lang.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Resources\lang.fr-FR.Designer.cs">
+    <Compile Update="Resources\Languages\lang.fr-FR.Designer.cs">
       <DependentUpon>lang.fr-FR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Update="Resources\lang.es-ES.Designer.cs">
+    <Compile Update="Resources\Languages\lang.es-ES.Designer.cs">
       <DependentUpon>lang.es-ES.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.it-IT.Designer.cs">
+	<Compile Update="Resources\Languages\lang.it-IT.Designer.cs">
       <DependentUpon>lang.it-IT.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.nl-NL.Designer.cs">
+	<Compile Update="Resources\Languages\lang.nl-NL.Designer.cs">
       <DependentUpon>lang.nl-NL.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.pt-BR.Designer.cs">
+	<Compile Update="Resources\Languages\lang.pt-BR.Designer.cs">
       <DependentUpon>lang.pt-BR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.cs-CZ.Designer.cs">
+	<Compile Update="Resources\Languages\lang.cs-CZ.Designer.cs">
       <DependentUpon>lang.cs-CZ.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.zh-CN.Designer.cs">
+	<Compile Update="Resources\Languages\lang.zh-CN.Designer.cs">
       <DependentUpon>lang.zh-CN.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.ja-JP.Designer.cs">
+	<Compile Update="Resources\Languages\lang.ja-JP.Designer.cs">
       <DependentUpon>lang.ja-JP.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.ko-KR.Designer.cs">
+	<Compile Update="Resources\Languages\lang.ko-KR.Designer.cs">
       <DependentUpon>lang.ko-KR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.ru-RU.Designer.cs">
+	<Compile Update="Resources\Languages\lang.ru-RU.Designer.cs">
       <DependentUpon>lang.ru-RU.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\lang.vi-VN.Designer.cs">
+	<Compile Update="Resources\Languages\lang.vi-VN.Designer.cs">
       <DependentUpon>lang.vi-VN.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Resources\lang.tr-TR.Designer.cs">
+    <Compile Update="Resources\Languages\lang.tr-TR.Designer.cs">
       <DependentUpon>lang.tr-TR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Resources\lang.Designer.cs">
+    <Compile Update="Resources\Languages\lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>lang.resx</DependentUpon>
@@ -211,12 +211,12 @@
     <Compile Update="UserInterface\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Update="Resources\lang.fa-IR.resx">
+    <EmbeddedResource Update="Resources\Languages\lang.fa-IR.resx">
       <SubType>Designer</SubType>
       <LastGenOutput>lang - Copy.cs-CZ.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\lang.tr-TR.resx">
+    <EmbeddedResource Update="Resources\Languages\lang.tr-TR.resx">
       <LastGenOutput>lang.tr-TR.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
@@ -229,35 +229,35 @@
     <EmbeddedResource Update="UserInterface\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\lang.de-DE.resx">
+    <EmbeddedResource Update="Resources\Languages\lang.de-DE.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.de-DE.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\lang.fr-FR.resx">
+    <EmbeddedResource Update="Resources\Languages\lang.fr-FR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.fr-FR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\lang.es-ES.resx">
+    <EmbeddedResource Update="Resources\Languages\lang.es-ES.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.es-ES.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\lang.it-IT.resx">
+	<EmbeddedResource Update="Resources\Languages\lang.it-IT.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.it-IT.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\lang.nl-NL.resx">
+	<EmbeddedResource Update="Resources\Languages\lang.nl-NL.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.nl-NL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\lang.pt-BR.resx">
+	<EmbeddedResource Update="Resources\Languages\lang.pt-BR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.pt-BR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\lang.cs-CZ.resx">
+	<EmbeddedResource Update="Resources\Languages\lang.cs-CZ.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.cs-CZ.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\lang.resx">
+    <EmbeddedResource Update="Resources\Languages\lang.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -349,12 +349,7 @@ EXIT 0</PreBuildEvent>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
   </PropertyGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if not exist &quot;$(ProjectDir)$(OutDir)\Languages&quot; mkdir &quot;$(ProjectDir)$(OutDir)\Languages&quot;&#xD;&#xA;&#xD;&#xA;cd $(ProjectDir)$(OutDir)&#xD;&#xA;&#xD;&#xA;xcopy /y /i /q &quot;cs-CZ&quot; &quot;Languages\cs-CZ&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;cs-CZ&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;de-DE&quot; &quot;Languages\de-DE&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;de-DE&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;es-ES&quot; &quot;Languages\es-ES&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;es-ES&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;fa-IR&quot; &quot;Languages\fa-IR&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;fa-IR&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;fr-FR&quot; &quot;Languages\fr-FR&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;fr-FR&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;it-IT&quot; &quot;Languages\it-IT&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;it-IT&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;ja-JP&quot; &quot;Languages\ja-JP&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;ja-JP&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;ko-KR&quot; &quot;Languages\ko-KR&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;ko-KR&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;nl-NL&quot; &quot;Languages\nl-NL&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;nl-NL&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;pt-BR&quot; &quot;Languages\pt-BR&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;pt-BR&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;ru-RU&quot; &quot;Languages\ru-RU&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;ru-RU&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;tr-TR&quot; &quot;Languages\tr-TR&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;tr-TR&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;vi-VN&quot; &quot;Languages\vi-VN&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;vi-VN&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;zh-CN&quot; &quot;Languages\zh-CN&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;zh-CN&quot; &gt;nul&#xD;&#xA;xcopy /y /i /q &quot;ref&quot; &quot;Languages\ref&quot; &gt;nul&#xD;&#xA;rd /s /q &quot;ref&quot; &gt;nul" />
-  </Target>
   <ItemGroup>
-    <FrameworkReference
-    Update="Microsoft.WindowsDesktop.App;Microsoft.WindowsDesktop.App.WPF;Microsoft.WindowsDesktop.App.WindowsForms"
-    TargetingPackVersion="6.0.0" />
+    <FrameworkReference Update="Microsoft.WindowsDesktop.App;Microsoft.WindowsDesktop.App.WPF;Microsoft.WindowsDesktop.App.WindowsForms" TargetingPackVersion="6.0.0" />
   </ItemGroup>
 </Project>
