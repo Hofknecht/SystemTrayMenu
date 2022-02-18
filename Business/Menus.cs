@@ -266,7 +266,11 @@ namespace SystemTrayMenu.Business
                         menuData.RowDataParent.IsMenuOpen = false;
                         menuData.RowDataParent.IsClicking = false;
                         menuData.RowDataParent.IsSelected = false;
-                        RefreshSelection(menus[menuLoading.Level - 1].GetDataGridView());
+                        Menu menuPrevious = menus[menuData.Level - 1];
+                        if (menuPrevious != null)
+                        {
+                            RefreshSelection(menuPrevious.GetDataGridView());
+                        }
                     }
                 }
             }
