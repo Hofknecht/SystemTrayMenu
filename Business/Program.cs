@@ -55,12 +55,16 @@ namespace SystemTrayMenu
             {
                 Log.Error("Application Crashed", ex);
 
-                if (MessageBox.Show(
+                DialogResult dialogResult = MessageBox.Show(
                     "A problem has been encountered and the application needs to restart. " +
                     "Reporting this error will help us make our product better. " +
-                    "Press yes to open your standard email app.",
-                    "SystemTrayMenu BugSplat",
-                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    "Press 'Yes' to open your standard email app (emailto: Markus@Hofknecht.eu). " + Environment.NewLine +
+                    @"You can also create a issue manually here https://github.com/Hofknecht/SystemTrayMenu/issues" + Environment.NewLine +
+                    "Press 'Cancel' to quit SystemTrayMenu.",
+                    "SystemTrayMenu Crashed",
+                    MessageBoxButtons.YesNoCancel);
+
+                if (dialogResult == DialogResult.Yes)
                 {
                     Log.ProcessStart("mailto:" + "markus@hofknecht.eu" +
                         "?subject=SystemTrayMenu Bug reported " +
@@ -68,7 +72,7 @@ namespace SystemTrayMenu
                         "&body=" + ex.ToString());
                 }
 
-                if (!isStartup)
+                if (!isStartup && dialogResult != DialogResult.Cancel)
                 {
                     AppRestart.ByThreadException();
                 }
