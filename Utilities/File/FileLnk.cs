@@ -72,6 +72,11 @@ namespace SystemTrayMenu.Utilities
                         resolvedFilename = link.Path;
                     }
                 }
+                catch (UnauthorizedAccessException)
+                {
+                    // https://stackoverflow.com/questions/2934420/why-do-i-get-e-accessdenied-when-reading-public-shortcuts-through-shell32
+                    // e.g. Administrative Tools\Component Services.lnk which can not be resolved, do not spam the logfile in this case
+                }
                 catch (Exception ex)
                 {
                     Log.Warn($"shortcutFilename:'{shortcutFilename}'", ex);
