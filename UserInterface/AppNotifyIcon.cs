@@ -84,12 +84,15 @@ namespace SystemTrayMenu.UserInterface
         {
             if (threadsLoading)
             {
-                rotationAngle += 5;
-                using Bitmap bitmapLoading = Resources.StaticResources.LoadingIcon.ToBitmap();
-                using Bitmap bitmapLoadingRotated = new(ImagingHelper.RotateImage(bitmapLoading, rotationAngle));
-                IntPtr hIcon = bitmapLoadingRotated.GetHicon();
-                notifyIcon.Icon = (Icon)Icon.FromHandle(hIcon).Clone();
-                DllImports.NativeMethods.User32DestroyIcon(hIcon);
+                notifyIcon.Icon = Resources.StaticResources.LoadingIcon;
+
+                // see #361, rotating icon caused rare GDI+ exception at GetHicon
+                // rotationAngle += 5;
+                // using Bitmap bitmapLoading = Resources.StaticResources.LoadingIcon.ToBitmap();
+                // using Bitmap bitmapLoadingRotated = new(ImagingHelper.RotateImage(bitmapLoading, rotationAngle));
+                // IntPtr hIcon = bitmapLoadingRotated.GetHicon();
+                // notifyIcon.Icon = (Icon)Icon.FromHandle(hIcon).Clone();
+                // DllImports.NativeMethods.User32DestroyIcon(hIcon);
             }
             else
             {
