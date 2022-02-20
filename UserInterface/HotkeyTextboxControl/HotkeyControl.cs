@@ -363,7 +363,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             return true;
         }
 
-#pragma warning disable CA1308
         public static string GetKeyName(Keys givenKey)
         {
             StringBuilder keyName = new();

@@ -5,7 +5,6 @@
 namespace SystemTrayMenu.UserInterface
 {
     using System;
-    using System.Drawing;
     using System.Windows.Forms;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
@@ -16,7 +15,6 @@ namespace SystemTrayMenu.UserInterface
         private readonly Timer load = new();
         private readonly NotifyIcon notifyIcon = new();
         private bool threadsLoading;
-        private int rotationAngle;
 
         public AppNotifyIcon()
         {

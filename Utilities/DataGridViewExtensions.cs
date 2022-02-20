@@ -41,12 +41,9 @@ namespace SystemTrayMenu.Utilities
             }
 
             dgv.Columns[i].Width = (int)(widthMax + 0.5);
-
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
             string stringWithWidthLikeIcon = "____";
             float width0 = gfx.MeasureString(
                 stringWithWidthLikeIcon,
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
                 dgv.RowTemplate.DefaultCellStyle.Font).Width;
 
             double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;

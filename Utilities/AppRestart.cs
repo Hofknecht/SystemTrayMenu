@@ -4,7 +4,6 @@
 
 namespace SystemTrayMenu.Utilities
 {
-    using System;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
@@ -42,7 +41,7 @@ namespace SystemTrayMenu.Utilities
 
             using (Process p = new())
             {
-                string fileName = Process.GetCurrentProcess().MainModule.FileName;
+                string fileName = System.Environment.ProcessPath;
                 p.StartInfo = new ProcessStartInfo(fileName);
 
                 try

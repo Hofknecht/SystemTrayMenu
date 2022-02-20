@@ -46,9 +46,7 @@ namespace SystemTrayMenu.Utilities
                     ex is COMException ||
                     ex is TypeLoadException)
                 {
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
                     Log.Warn("Get Shell COM instance failed", ex);
-#pragma warning restore CA1303 //=> Exceptions not translated in logfile => OK
                 }
                 else
                 {

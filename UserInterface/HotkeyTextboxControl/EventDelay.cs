@@ -6,8 +6,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
 {
     using System;
 
-#pragma warning restore CA1308
-
     public class EventDelay
     {
         private readonly long waitTime;

@@ -5,9 +5,7 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Net.NetworkInformation;
     using System.Threading;
     using Shell32;
 
