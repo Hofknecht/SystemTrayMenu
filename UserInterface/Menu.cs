@@ -182,6 +182,8 @@ namespace SystemTrayMenu.UserInterface
 
         internal event EventHandler<Keys> CmdKeyProcessed;
 
+        internal event EventHandler<KeyPressEventArgs> KeyPressCheck;
+
         internal event EventHandlerEmpty SearchTextChanging;
 
         internal event EventHandler SearchTextChanged;
@@ -745,6 +747,11 @@ namespace SystemTrayMenu.UserInterface
             ((HandledMouseEventArgs)e).Handled = true;
             customScrollbar.CustomScrollbar_MouseWheel(sender, e);
             MouseWheel?.Invoke();
+        }
+
+        private void TextBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            KeyPressCheck?.Invoke(sender, e);
         }
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)

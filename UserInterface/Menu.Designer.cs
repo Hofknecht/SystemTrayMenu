@@ -144,6 +144,7 @@
             this.textBoxSearch.Size = new System.Drawing.Size(100, 15);
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
+            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxSearch_KeyPress);
             // 
             // pictureBoxSearch
             // 

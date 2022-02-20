@@ -633,6 +633,7 @@ namespace SystemTrayMenu.Business
                 menuToDispose.KeyPress -= keyboardInput.KeyPress;
                 menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
                 menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
+                menuToDispose.KeyPressCheck -= Menu_KeyPressCheck;
                 menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
                 DataGridView dgv = menuToDispose.GetDataGridView();
                 if (dgv != null)
@@ -897,6 +898,7 @@ namespace SystemTrayMenu.Business
             menu.MouseEnter += waitLeave.Stop;
             menu.KeyPress += keyboardInput.KeyPress;
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
+            menu.KeyPressCheck += Menu_KeyPressCheck;
             menu.SearchTextChanging += Menu_SearchTextChanging;
             menu.SearchTextChanged += Menu_SearchTextChanged;
             menu.UserDragsMenu += Menu_UserDragsMenu;
@@ -1482,6 +1484,14 @@ namespace SystemTrayMenu.Business
                 }
 
                 menuPredecessor = menu;
+            }
+        }
+
+        private void Menu_KeyPressCheck(object sender, KeyPressEventArgs e)
+        {
+            if (isDraggingSwipeScrolling)
+            {
+                e.Handled = true;
             }
         }
 
