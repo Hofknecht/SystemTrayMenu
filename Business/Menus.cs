@@ -253,12 +253,8 @@ namespace SystemTrayMenu.Business
                         menuData.RowDataParent.SubMenu = menu;
                         if (menus[0].IsUsable)
                         {
-                            if (!string.IsNullOrEmpty(userSearchText))
-                            {
-                                menu.SetSearchText(userSearchText);
-                            }
-
                             ShowSubMenu(menu);
+                            menu.SetSearchText(userSearchText);
                         }
                     }
                     else if (closedLoadingMenu && menus[0].IsUsable)

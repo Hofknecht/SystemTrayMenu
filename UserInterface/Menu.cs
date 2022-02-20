@@ -24,6 +24,7 @@ namespace SystemTrayMenu.UserInterface
         private int rotationAngle;
         private bool mouseDown;
         private Point lastLocation;
+        private bool isSetSearchText;
 
         internal Menu()
         {
@@ -59,16 +60,12 @@ namespace SystemTrayMenu.UserInterface
                     if (Level == 0)
                     {
                         Activate();
-                        textBoxSearch.SelectAll();
-                        textBoxSearch.Focus();
                         NativeMethods.User32ShowInactiveTopmost(this);
                         NativeMethods.ForceForegroundWindow(Handle);
                     }
                     else
                     {
                         NativeMethods.User32ShowInactiveTopmost(this);
-                        textBoxSearch.SelectAll();
-                        textBoxSearch.Focus();
                     }
                 }
             }
@@ -234,8 +231,19 @@ namespace SystemTrayMenu.UserInterface
 
         internal void FocusTextBox()
         {
-            textBoxSearch.SelectAll();
-            textBoxSearch.Focus();
+            if (isSetSearchText)
+            {
+                isSetSearchText = false;
+                textBoxSearch.SelectAll();
+                textBoxSearch.Focus();
+                textBoxSearch.SelectionStart = textBoxSearch.Text.Length;
+                textBoxSearch.SelectionLength = 0;
+            }
+            else
+            {
+                textBoxSearch.SelectAll();
+                textBoxSearch.Focus();
+            }
         }
 
         internal void SetTypeSub()
@@ -313,7 +321,11 @@ namespace SystemTrayMenu.UserInterface
 
         internal void SetSearchText(string userSearchText)
         {
-            textBoxSearch.Text = userSearchText;
+            if (!string.IsNullOrEmpty(userSearchText))
+            {
+                textBoxSearch.Text = userSearchText + "*";
+                isSetSearchText = true;
+            }
         }
 
         internal bool IsMouseOn(Point mousePosition)
