@@ -98,10 +98,10 @@ namespace SystemTrayMenu.Helper
                         opacity += StepIn;
                         ChangeOpacity?.Invoke(this, opacity);
                     }
-                    else if (opacity != Shown)
+                    else
                     {
                         opacity = Shown;
-                        ChangeOpacity?.Invoke(this, Shown);
+                        ChangeOpacity?.Invoke(this, opacity);
                         StartStopTimer(FadingState.Idle);
                     }
 
@@ -126,9 +126,10 @@ namespace SystemTrayMenu.Helper
                         opacity -= StepOut;
                         ChangeOpacity?.Invoke(this, opacity);
                     }
-                    else if (opacity != Transparent)
+                    else
                     {
-                        ChangeOpacity?.Invoke(this, Transparent);
+                        opacity = Transparent;
+                        ChangeOpacity?.Invoke(this, opacity);
                         StartStopTimer(FadingState.Idle);
                     }
 
@@ -146,6 +147,10 @@ namespace SystemTrayMenu.Helper
                         ChangeOpacity?.Invoke(this, opacity);
                         visible = false;
                         Hide?.Invoke();
+                        StartStopTimer(FadingState.Idle);
+                    }
+                    else
+                    {
                         StartStopTimer(FadingState.Idle);
                     }
 
