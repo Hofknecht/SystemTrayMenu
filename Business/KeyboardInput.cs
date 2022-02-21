@@ -168,27 +168,6 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        /// <summary>
-        /// While menu is open user presses a key to search for specific entries.
-        /// </summary>
-        /// <param name="sender">not used.</param>
-        /// <param name="e">Key data of the pressed key.</param>
-        internal void KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetterOrDigit(e.KeyChar) ||
-                char.IsPunctuation(e.KeyChar) ||
-                char.IsWhiteSpace(e.KeyChar) ||
-                char.IsSeparator(e.KeyChar))
-            {
-                string letter = e.KeyChar.ToString(CultureInfo.InvariantCulture);
-
-                Menu menu = menus[iMenuKey];
-                menu.KeyPressedSearch(letter);
-
-                e.Handled = true;
-            }
-        }
-
         internal void SearchTextChanging()
         {
             ClearIsSelectedByKey();
@@ -582,10 +561,13 @@ namespace SystemTrayMenu.Handler
                 if (dgv.Rows.Count > rowIndex)
                 {
                     DataGridViewRow row = dgv.Rows[rowIndex];
-                    RowData rowData = (RowData)row.Cells[2].Value;
-                    rowData.IsSelected = false;
                     row.Selected = false;
-                    rowData.IsClicking = false;
+                    RowData rowData = (RowData)row.Cells[2].Value;
+                    if (rowData != null)
+                    {
+                        rowData.IsSelected = false;
+                        rowData.IsClicking = false;
+                    }
                 }
             }
         }

@@ -569,20 +569,15 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void KeyPressedSearch(string letter)
-        {
-            textBoxSearch.Text += letter;
-            textBoxSearch.SelectionStart = textBoxSearch.Text.Length;
-            textBoxSearch.SelectionLength = 0;
-            textBoxSearch.Focus();
-        }
-
         internal void AdjustScrollbar()
         {
-            customScrollbar.Value = (int)Math.Round(
-                dgv.FirstDisplayedScrollingRowIndex * (decimal)customScrollbar.Maximum / dgv.Rows.Count,
-                0,
-                MidpointRounding.AwayFromZero);
+            if (dgv.Rows.Count > 0)
+            {
+                customScrollbar.Value = (int)Math.Round(
+                    dgv.FirstDisplayedScrollingRowIndex * (decimal)customScrollbar.Maximum / dgv.Rows.Count,
+                    0,
+                    MidpointRounding.AwayFromZero);
+            }
         }
 
         internal void SetCounts(int foldersCount, int filesCount)

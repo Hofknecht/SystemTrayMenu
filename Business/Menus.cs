@@ -630,7 +630,6 @@ namespace SystemTrayMenu.Business
                 menuToDispose.MouseWheel -= AdjustMenusSizeAndLocation;
                 menuToDispose.MouseLeave -= waitLeave.Start;
                 menuToDispose.MouseEnter -= waitLeave.Stop;
-                menuToDispose.KeyPress -= keyboardInput.KeyPress;
                 menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
                 menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
                 menuToDispose.KeyPressCheck -= Menu_KeyPressCheck;
@@ -896,7 +895,6 @@ namespace SystemTrayMenu.Business
             menu.MouseWheel += AdjustMenusSizeAndLocation;
             menu.MouseLeave += waitLeave.Start;
             menu.MouseEnter += waitLeave.Stop;
-            menu.KeyPress += keyboardInput.KeyPress;
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
             menu.KeyPressCheck += Menu_KeyPressCheck;
             menu.SearchTextChanging += Menu_SearchTextChanging;

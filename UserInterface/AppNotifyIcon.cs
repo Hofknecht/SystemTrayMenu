@@ -12,18 +12,13 @@ namespace SystemTrayMenu.UserInterface
 
     internal class AppNotifyIcon : IDisposable
     {
-        private readonly Timer load = new();
         private readonly NotifyIcon notifyIcon = new();
-        private bool threadsLoading;
 
         public AppNotifyIcon()
         {
-            notifyIcon.Icon = Resources.StaticResources.LoadingIcon;
-            load.Tick += Load_Tick;
-            load.Interval = 15;
             notifyIcon.Text = Translator.GetText("SystemTrayMenu");
-            notifyIcon.Visible = true;
             notifyIcon.Icon = Config.GetAppIcon();
+            notifyIcon.Visible = true;
 
             AppContextMenu contextMenus = new();
 
@@ -55,19 +50,16 @@ namespace SystemTrayMenu.UserInterface
         {
             notifyIcon.Icon = null;
             notifyIcon.Dispose();
-            load.Dispose();
         }
 
         public void LoadingStart()
         {
-            threadsLoading = true;
-            load.Start();
+            notifyIcon.Icon = Resources.StaticResources.LoadingIcon;
         }
 
         public void LoadingStop()
         {
-            Cursor.Current = Cursors.Default;
-            threadsLoading = false;
+            notifyIcon.Icon = Config.GetAppIcon();
         }
 
         private void VerifyClick(MouseEventArgs e)
@@ -75,27 +67,6 @@ namespace SystemTrayMenu.UserInterface
             if (e.Button == MouseButtons.Left)
             {
                 Click?.Invoke();
-            }
-        }
-
-        private void Load_Tick(object sender, EventArgs e)
-        {
-            if (threadsLoading)
-            {
-                notifyIcon.Icon = Resources.StaticResources.LoadingIcon;
-
-                // see #361, rotating icon caused rare GDI+ exception at GetHicon
-                // rotationAngle += 5;
-                // using Bitmap bitmapLoading = Resources.StaticResources.LoadingIcon.ToBitmap();
-                // using Bitmap bitmapLoadingRotated = new(ImagingHelper.RotateImage(bitmapLoading, rotationAngle));
-                // IntPtr hIcon = bitmapLoadingRotated.GetHicon();
-                // notifyIcon.Icon = (Icon)Icon.FromHandle(hIcon).Clone();
-                // DllImports.NativeMethods.User32DestroyIcon(hIcon);
-            }
-            else
-            {
-                notifyIcon.Icon = Config.GetAppIcon();
-                load.Stop();
             }
         }
     }
