@@ -250,7 +250,7 @@ Thanks for ideas, reporting issues and contributing!
 #285 #286 [dao-net](https://github.com/dao-net),
 #288 William P.,
 #294 #295 #296 Stefan Mahrer,
-#225 #297 #299 #317 #321 [chip33](https://github.com/chip33),
+#225 #297 #299 #317 #321 #324 #330 [chip33](https://github.com/chip33),
 #298 [phanirithvij](https://github.com/phanirithvij),
 #306 [wini2](https://github.com/wini2),
 

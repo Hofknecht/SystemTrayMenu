@@ -59,7 +59,7 @@ namespace SystemTrayMenu
                     "A problem has been encountered and the application needs to restart. " +
                     "Reporting this error will help us make our product better. " +
                     "Press 'Yes' to open your standard email app (emailto: Markus@Hofknecht.eu). " + Environment.NewLine +
-                    @"You can also create a issue manually here https://github.com/Hofknecht/SystemTrayMenu/issues" + Environment.NewLine +
+                    @"You can also create an issue manually here https://github.com/Hofknecht/SystemTrayMenu/issues" + Environment.NewLine +
                     "Press 'Cancel' to quit SystemTrayMenu.",
                     "SystemTrayMenu Crashed",
                     MessageBoxButtons.YesNoCancel);

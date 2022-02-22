@@ -460,7 +460,21 @@ namespace SystemTrayMenu.UserInterface
                             bounds.X + bounds.Width <= x + Width - scaling)
                         {
                             x = menuPredecessor.Location.X - Width + scaling;
-                            directionToRight = !directionToRight;
+                            if (x < bounds.X &&
+                                menuPredecessor.Location.X + menuPredecessor.Width < bounds.X + bounds.Width &&
+                                bounds.X + (bounds.Width / 2) > menuPredecessor.Location.X + (Width / 2))
+                            {
+                                x = bounds.X + bounds.Width - Width + scaling;
+                            }
+                            else
+                            {
+                                if (x < bounds.X)
+                                {
+                                    x = bounds.X;
+                                }
+
+                                directionToRight = !directionToRight;
+                            }
                         }
                     }
                     else
@@ -471,7 +485,21 @@ namespace SystemTrayMenu.UserInterface
                             x < bounds.X)
                         {
                             x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
-                            directionToRight = !directionToRight;
+                            if (x + Width > bounds.X + bounds.Width &&
+                                menuPredecessor.Location.X > bounds.X &&
+                                bounds.X + (bounds.Width / 2) < menuPredecessor.Location.X + (Width / 2))
+                            {
+                                x = bounds.X;
+                            }
+                            else
+                            {
+                                if (x + Width > bounds.X + bounds.Width)
+                                {
+                                    x = bounds.X + bounds.Width - Width + scaling;
+                                }
+
+                                directionToRight = !directionToRight;
+                            }
                         }
                     }
 
