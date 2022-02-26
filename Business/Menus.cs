@@ -35,7 +35,6 @@ namespace SystemTrayMenu.Business
         private DateTime deactivatedTime = DateTime.MinValue;
         private DateTime dateTimeLastOpening = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
-        private bool showingMessageBox;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
         private bool searchTextChanging;
         private bool waitingForReactivate;
@@ -126,30 +125,16 @@ namespace SystemTrayMenu.Business
 
                             break;
                         case MenuDataValidity.Empty:
-                            IconReader.MainPreload = false;
-                            if (!showingMessageBox)
-                            {
-                                showingMessageBox = true;
-                                MessageBox.Show(Translator.GetText(
-                                    "MessageRootFolderEmpty"));
-                                OpenFolder();
-                                Config.SetFolderByUser();
-                                showingMessageBox = false;
-                            }
-
+                            MessageBox.Show(Translator.GetText("MessageRootFolderEmpty"));
+                            OpenFolder();
+                            Config.SetFolderByUser();
+                            AppRestart.ByConfigChange();
                             break;
                         case MenuDataValidity.NoAccess:
-                            IconReader.MainPreload = false;
-                            if (!showingMessageBox)
-                            {
-                                showingMessageBox = true;
-                                MessageBox.Show(Translator.GetText(
-                                    "MessageRootFolderNoAccess"));
-                                OpenFolder();
-                                Config.SetFolderByUser();
-                                showingMessageBox = false;
-                            }
-
+                            MessageBox.Show(Translator.GetText("MessageRootFolderNoAccess"));
+                            OpenFolder();
+                            Config.SetFolderByUser();
+                            AppRestart.ByConfigChange();
                             break;
                         case MenuDataValidity.AbortedOrUnknown:
                             Log.Info("MenuDataValidity.AbortedOrUnknown");
