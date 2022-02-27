@@ -16,6 +16,7 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
+    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
     using Menu = SystemTrayMenu.UserInterface.Menu;
     using Timer = System.Windows.Forms.Timer;
@@ -827,12 +828,6 @@ namespace SystemTrayMenu.Business
             return rowData;
         }
 
-        private static bool IsActive()
-        {
-            return Form.ActiveForm is Menu ||
-                Form.ActiveForm is UserInterface.TaskbarForm;
-        }
-
         private static void OpenFolder(string pathToFolder = "")
         {
             string path = pathToFolder;
@@ -856,6 +851,36 @@ namespace SystemTrayMenu.Business
             {
                 dgv.InvalidateRow(rowIndex);
             }
+        }
+
+        private bool IsActive()
+        {
+            bool IsShellContextMenuOpen()
+            {
+                bool isShellContextMenuOpen = false;
+                foreach (Menu menu in menus.Where(m => m != null))
+                {
+                    DataGridView dgv = menu.GetDataGridView();
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        RowData rowData = (RowData)row.Cells[2].Value;
+                        if (rowData != null && rowData.IsContextMenuOpen)
+                        {
+                            isShellContextMenuOpen = true;
+                            break;
+                        }
+                    }
+
+                    if (isShellContextMenuOpen)
+                    {
+                        break;
+                    }
+                }
+
+                return isShellContextMenuOpen;
+            }
+
+            return Form.ActiveForm is Menu or TaskbarForm || IsShellContextMenuOpen();
         }
 
         private Menu Create(MenuData menuData, string title = null)
