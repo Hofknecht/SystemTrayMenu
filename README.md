@@ -17,7 +17,9 @@ SystemTrayMenu is an open-source 'Desktop Toolbar' or 'Start Menu' alternative. 
 
 Demo
 ------------------
-![20211211_170852](https://user-images.githubusercontent.com/52528841/145683690-5b25bc43-a497-4cf0-9c16-947a2d2dcd77.gif)
+![20220311_182732](https://user-images.githubusercontent.com/52528841/157921316-97e65504-19d3-41c3-a2ae-4e3e77861845.gif)
+![20220311_183519](https://user-images.githubusercontent.com/52528841/157921349-b5f06d43-0d28-43cc-b9a1-bef8f87207c0.gif)
+
 
 Sources
 ------------------
@@ -83,12 +85,12 @@ You can also consider to put there all files from your desktop.
 
 2. Step: **Move the SystemTrayMenu icon** by drag and drop from the system tray **into the taskbar** below.  
 
-![group icon out](https://user-images.githubusercontent.com/52528841/83349567-1ab74000-a336-11ea-8676-3db33615a57a.gif)
+![group systemtray](https://user-images.githubusercontent.com/52528841/157921582-ac6350c0-4c6d-4a02-9bd2-224a264e4329.gif)
+
 
 3. Step: 'Right click' on taskbar item -> '**Pin to taskbar**'
  
-![2022-01-30 16_08_15-](https://user-images.githubusercontent.com/52528841/151705358-7e48d394-7055-479e-ba5c-e46f13959b3b.png)
-
+![pin to taskbar](https://user-images.githubusercontent.com/52528841/157921722-123a7694-e3f4-4cce-951a-94ddb3d4b60f.png)
 
 Now it is ready to start - just **click on the icon** in the system tray or the taskbar or press the hotkey (Ctrl + LWin) to open the SystemTrayMenu. 
 
