@@ -17,8 +17,8 @@ SystemTrayMenu is an open-source 'Desktop Toolbar' or 'Start Menu' alternative. 
 
 Demo
 ------------------
-![20220311_182732](https://user-images.githubusercontent.com/52528841/157921316-97e65504-19d3-41c3-a2ae-4e3e77861845.gif)
-![20220311_183519](https://user-images.githubusercontent.com/52528841/157921349-b5f06d43-0d28-43cc-b9a1-bef8f87207c0.gif)
+![20220311_182732 (2)](https://user-images.githubusercontent.com/52528841/157929743-2ba4d11b-e0b1-4ab1-8eee-a2a7ff631adf.gif)
+![20220311_183519 (1)](https://user-images.githubusercontent.com/52528841/157929241-1906b180-3839-425a-bc71-5486a1d54156.gif)
 
 
 Sources
