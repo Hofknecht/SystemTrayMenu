@@ -6,22 +6,20 @@
 
 [![Release](https://img.shields.io/github/v/release/hofknecht/systemtraymenu?label=Download%20release%20(click%20here))](https://github.com/Hofknecht/SystemTrayMenu/releases) 
 [![Framework](https://img.shields.io/badge/framework-.NET%206%20(Win%2010/11)-darkturquoise?label=Download%20framework%20(click%20here))](https://dotnet.microsoft.com/download/dotnet/6.0) 
-[![Tweet](https://img.shields.io/badge/Tweet-blue&logo=twitter?&labelColor=white&logo=twitter&color=white)](https://twitter.com/intent/tweet?text=Get%20this%20Cool%20App%3A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0ADownload%20latest%20version%20of%20SystemTrayMenu%20here%3Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%2Freleases)
+[![Tweet](https://img.shields.io/badge/Tweet-blue&logo=twitter?&labelColor=white&logo=twitter&color=white)](https://twitter.com/intent/tweet?text=SystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0A)
 [![Facebook](https://img.shields.io/badge/Share-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu)
 
-SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="24" height="24">
+SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="32" height="32" align="left">
 ------------------
 **Browse and open your files easily**
 
 SystemTrayMenu is an open-source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be opened via keyboard or mouse. Files, links and folders are organized in several levels as drop-down menus.
 
+Demo
+------------------
 ![20211211_170852](https://user-images.githubusercontent.com/52528841/145683690-5b25bc43-a497-4cf0-9c16-947a2d2dcd77.gif)
 
-------------------
-[![2022-02-15 00_04_52-Window](https://user-images.githubusercontent.com/52528841/153961695-be5f50ab-9ce5-423e-871a-cf1062023d31.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)  
-[![Youtube](https://img.shields.io/youtube/views/xsi4Uv3-ZLg?style=social)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
-
-Downloads / Sources
+Sources
 ------------------
 
 [![GitHub all releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total?label=GitHub)](https://github.com/Hofknecht/SystemTrayMenu/releases)
@@ -38,8 +36,7 @@ Downloads / Sources
 [![CHIP](https://user-images.githubusercontent.com/52528841/88452975-5583b300-ce63-11ea-8256-6e69a2bb3e2d.png)](https://www.chip.de/downloads/SystemTrayMenu_182854219.html)&nbsp;
 [![softpedia](https://user-images.githubusercontent.com/52528841/121581852-a033fc80-ca2e-11eb-8aee-4a8cd3043bd1.png)](https://www.softpedia.com/get/System/Launchers-Shutdown-Tools/SystemTrayMenu.shtml) 
 [![freeware-base](https://user-images.githubusercontent.com/52528841/136707080-a64c8eeb-d563-44e6-aee3-1fb2921221e0.png)](https://www.freeware-base.de/freeware-zeige-details-31811-SystemTrayMenu.html)
-[![netzwelt](https://user-images.githubusercontent.com/52528841/121585548-015dcf00-ca33-11eb-8436-b1f5231d5c2d.png)](https://www.netzwelt.de/download/25705-systemtraymenu.html)   
-[![aiiguide](https://user-images.githubusercontent.com/52528841/136708010-1f7a7d04-0b0b-4fe8-b70c-83bd48733d9c.png)](https://aiiguide.com/download-systemtraymenu.html)[![taiwebs](https://user-images.githubusercontent.com/52528841/136708061-6384d536-88a7-4c5d-a13a-a1b0cff00e68.png)](https://de.taiwebs.com/windows/download-systemtraymenu-6812.html)
+[![netzwelt](https://user-images.githubusercontent.com/52528841/121585548-015dcf00-ca33-11eb-8436-b1f5231d5c2d.png)](https://www.netzwelt.de/download/25705-systemtraymenu.html)  [![aiiguide](https://user-images.githubusercontent.com/52528841/136708010-1f7a7d04-0b0b-4fe8-b70c-83bd48733d9c.png)](https://aiiguide.com/download-systemtraymenu.html)[![taiwebs](https://user-images.githubusercontent.com/52528841/136708061-6384d536-88a7-4c5d-a13a-a1b0cff00e68.png)](https://de.taiwebs.com/windows/download-systemtraymenu-6812.html)
 [![rjno1](https://user-images.githubusercontent.com/52528841/121582195-04ef5700-ca2f-11eb-9c22-cf8239c6e99b.png)](https://www.rjno1.com/systemtraymenu/)&nbsp;
 [![softaro](https://user-images.githubusercontent.com/52528841/121581997-c9548d00-ca2e-11eb-9145-fab017925475.png)](https://softaro.net/systemtraymenu/)&nbsp;
 [![bytesin](https://user-images.githubusercontent.com/52528841/136706178-0bd2e812-f087-40f4-8c30-301ba645f10d.png)](https://www.bytesin.com/software/SystemTrayMenu/)&nbsp;
@@ -49,6 +46,26 @@ Downloads / Sources
 [![downloaddrivers](https://user-images.githubusercontent.com/52528841/116524789-0f6aec80-a8d8-11eb-9037-06b2c101fa72.png)](https://www.downloaddrivers.info/download-systemtraymenu-1-2-4-0/) 
 [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
 [![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)&nbsp;
+
+Reviews
+------------------
+[![2022-02-15 00_04_52-Window](https://user-images.githubusercontent.com/52528841/153961695-be5f50ab-9ce5-423e-871a-cf1062023d31.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)  
+[![Youtube](https://img.shields.io/youtube/views/xsi4Uv3-ZLg?style=social)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
+
+[deskmodder.de 2020/07/18](https://www.deskmodder.de/blog/2020/07/18/systemtraymenu-nun-auch-als-windows-10-app-neben-der-portablen-version/) |
+[deskmodder.de 2021/11/14](https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/) |
+[trishtech.com](https://www.trishtech.com/2020/07/systemtraymenu-is-simple-and-lightweight-start-menu-alternative/) |
+[ghacks.net](https://www.ghacks.net/2021/04/10/create-a-custom-start-menu-that-you-can-access-with-a-hotkey-using-systemtraymenu/) |
+[shrayas.com](http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/) |
+[reviewsapp.org](https://reviewsapp.org/systemtraymenu-better-organization-of-windows) |
+[white-windows.ru](https://www.white-windows.ru/systemtraymenu-podobie-menyu-pusk-no-bolee-prostoe-i-rabotayushhee-iz-sistemnogo-treya/) |
+[thewindowsclub.com](https://www.thewindowsclub.com/systemtraymenu-for-windows) |
+[br.atsit.in](https://br.atsit.in/id/?p=100192) |
+[nesabamedia.com](https://www.nesabamedia.com/systemtraymenu-alternatif-start-menu-untuk-windows/) |
+[soluciones.link](https://soluciones.link/windows/systemtraymenu-es-una-alternativa-gratuita-del-menu-de-inicio-para-windows-11-10/) |
+[de.moyens.net](https://de.moyens.net/windows/systemtraymenu-ist-eine-kostenlose-startmenue-alternative-fuer-windows-11-10/)
+
+
 
 FAQ
 ------------------
@@ -137,11 +154,12 @@ By default, the 'Show in Taskbar' option is activated, which means there is show
 ![2022-02-06 15_35_02-Window](https://user-images.githubusercontent.com/52528841/152685888-1b746858-dd45-41ab-a082-da7710298c74.png)
 
 
-You can switch off the option. If the shortcut is pressed then via the taskbar item, we need more time to show the menu (because we have to start an extra process which tells the first to open).
-You can also use the argument -r to set the behavior of the menu to always be restarted when you click on the taskbar item:
-'Shift' + 'Right click' on the taskbar item. Select 'Properties'. Add argument ' -r':
+When you switch off the option, there is no active form in the taskbar. When you start the application, then other instances will be killed and a new one started.
+This behavior can be changed via
 
-![2022-02-02 23_47_51-Window](https://user-images.githubusercontent.com/52528841/152250651-35b63f6a-c982-4ee7-8935-b4ff930526fe.png)
+![2022-03-11 13_02_28-Window](https://user-images.githubusercontent.com/52528841/157863638-663c4792-1c4c-4468-a731-acd79a23906e.png)
+
+If the shortcut is pressed then via the taskbar item, we need more time to show the menu (because we have to start an extra process which tells the first to open).
 
 ---
 
@@ -156,25 +174,6 @@ If a problem has occured or you have ideas or questions, you are welcome to cont
 
 **Find more FAQ topics here:**
 [SystemTrayMenu FAQ](https://github.com/Hofknecht/SystemTrayMenu/issues?q=is%3Aissue+is%3Aclosed+label%3AFAQ)
-
-  
-Blogs and reviews
-------------------
-* https://www.deskmodder.de/blog/2020/07/18/systemtraymenu-nun-auch-als-windows-10-app-neben-der-portablen-version/
-* https://www.trishtech.com/2020/07/systemtraymenu-is-simple-and-lightweight-start-menu-alternative/
-* https://www.ghacks.net/2021/04/10/create-a-custom-start-menu-that-you-can-access-with-a-hotkey-using-systemtraymenu/
-* http://www.shrayas.com/posts/quick-access-everything-with-systemtraymenu/
-* https://reviewsapp.org/systemtraymenu-better-organization-of-windows
-* https://www.white-windows.ru/systemtraymenu-podobie-menyu-pusk-no-bolee-prostoe-i-rabotayushhee-iz-sistemnogo-treya/
-* https://teamos-hkrg.com/threads/systemtraymenu-1-0-20-0.162800/
-* https://www.deskmodder.de/blog/2021/11/14/systemtraymenu-als-ersatz-fuer-die-symbolleiste-unter-windows-11/
-* https://www.thewindowsclub.com/systemtraymenu-for-windows
-* https://br.atsit.in/id/?p=100192
-* https://www.netties.be/v20/toon_artikel.php?id=34684&cat=Software&zoekdatum=2021-12-13
-* http://www.hackdos.com/62.html
-* https://www.nesabamedia.com/systemtraymenu-alternatif-start-menu-untuk-windows/
-* https://tweaks.com/news/3548904/systemtraymenu-is-a-free-start-menu-alternative-for-windows-1110/
-
 
 Security
 ------------------
