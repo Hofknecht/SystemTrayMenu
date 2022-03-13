@@ -13,13 +13,28 @@ SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/System
 ------------------
 **Browse and open your files easily**
 
-SystemTrayMenu is an open-source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be opened via keyboard or mouse. Files, links and folders are organized in several levels as drop-down menus.
+SystemTrayMenu is an open source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be controlled via keyboard, mouse or touchscreen. Files, links and folders are organized in several levels as dropdown menus. Folder shortcuts and network path shortcuts are resolved so that their entire content is displayed like a folder. The search function allows you to define hotkey sequences to find and open items.
 
 Demo
 ------------------
+Bottom left placement, dark color mode, round corners, controlled via keyboard like the 'Start Menu'. In addition, two applications are started immediately one after the other without the menu closing in between. If a script steals the focus for a short time, the menu stays open.
 ![20220311_182732 (2)](https://user-images.githubusercontent.com/52528841/157929743-2ba4d11b-e0b1-4ab1-8eee-a2a7ff631adf.gif)
+
+Bottom right placement, light color mode, no round corners, controlled via mouse like the 'Desktop Toolbar'. We display a comfortable scrollbar where you can scroll also via mouse wheel. The menu stays open even if you start several applications that steal the focus. In this case the menu appears transparent and if you then leave the menu, it closes automatically. 
 ![20220311_183519 (1)](https://user-images.githubusercontent.com/52528841/157929241-1906b180-3839-425a-bc71-5486a1d54156.gif)
 
+Keyboard shortcuts
+------------------
+
+| Shortcut                                              | Function                              |
+|-------------------------------------------------------|---------------------------------------|
+| <kbd>Ctrl</kbd>+<kbd>Win</kbd>                        | Open SytemTrayMenu (Shortcut can be configured) |
+| <kbd>&#8593;</kbd>/<kbd>&#8595;</kbd>                 | Navigate items within a menu          |
+| <kbd>&#8592;</kbd>/<kbd>&#8594;</kbd>                 | Navigate through menus             |
+| <kbd>Return</kbd>                                     | Open selected item                    |
+| <kbd>Apps</kbd>                                       | Open Explorer Context Menu            |
+| <kbd>Tab</kbd>                                        | Switch to next/previous menu (also via <kbd>Shift</kbd>+<kbd>Tab</kbd>) |
+| <kbd>Esc</kbd>                                        | Close SytemTrayMenu                   |
 
 Sources
 ------------------
