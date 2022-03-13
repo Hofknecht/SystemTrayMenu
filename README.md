@@ -13,14 +13,22 @@ SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/System
 ------------------
 **Browse and open your files easily**
 
-SystemTrayMenu is an open source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be controlled via keyboard, mouse or touchscreen. Files, links and folders are organized in several levels as dropdown menus. Folder shortcuts and network path shortcuts are resolved so that their entire content is displayed like a folder. The search function allows you to define hotkey sequences to find and open items.
+SystemTrayMenu is an open source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be controlled via keyboard, mouse or touchscreen. Files, links and folders are organized in several levels as dropdown menus. Various options like appearance, hotkey, autostart and behavior can be adjusted.
 
-Demo
-------------------
-Bottom left placement, dark color mode, round corners, controlled via keyboard like the 'Start Menu'. In addition, two applications are started immediately one after the other without the menu closing in between. If a script steals the focus for a short time, the menu stays open.
+ * Shortcuts to folders or to network paths are resolved. Their content is displayed like a folder.
+ * The search function allows you to define hotkey sequences to find and open items. 
+ * The menu stays open, if starting several applications and mouse still on the menu or if a script steals the focus for a short time.
+ * Menu appears transparent in case it has no focus and closes automatically when you leave the menu.
+ * A scrollbar appears when there are too many items, which can also be controlled via mouse wheel.
+ * Supports drag and drop to open an item with an application or to copy it to the desktop.
+ * There is a possiblity to create URL shortcuts including the browser icon via drag and drop the URL from the browser into the menu.
+
+**Controlled via keyboard and like the 'Start Menu' - Demo**
+
 ![20220311_182732 (2)](https://user-images.githubusercontent.com/52528841/157929743-2ba4d11b-e0b1-4ab1-8eee-a2a7ff631adf.gif)
 
-Bottom right placement, light color mode, no round corners, controlled via mouse like the 'Desktop Toolbar'. We display a comfortable scrollbar where you can scroll also via mouse wheel. The menu stays open even if you start several applications that steal the focus. In this case the menu appears transparent and if you then leave the menu, it closes automatically. 
+**Controlled via mouse and like the 'Desktop Toolbar' - Demo**
+
 ![20220311_183519 (1)](https://user-images.githubusercontent.com/52528841/157929241-1906b180-3839-425a-bc71-5486a1d54156.gif)
 
 Keyboard shortcuts
