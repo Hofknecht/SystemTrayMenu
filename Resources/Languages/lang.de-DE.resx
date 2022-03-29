@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>Über</value>
@@ -467,5 +467,14 @@
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Hotkey an andere Instanz senden</value>
+  </data>
+  <data name="By date" xml:space="preserve">
+    <value>Nach Datum</value>
+  </data>
+  <data name="By name" xml:space="preserve">
+    <value>Nach Name</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Sortierung</value>
   </data>
 </root>

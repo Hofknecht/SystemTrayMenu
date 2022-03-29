@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
     <value>약</value>
@@ -467,5 +467,14 @@
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>다른 인스턴스로 단축키 보내기</value>
+  </data>
+  <data name="By date" xml:space="preserve">
+    <value>날짜별</value>
+  </data>
+  <data name="By name" xml:space="preserve">
+    <value>이름으로</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>정렬</value>
   </data>
 </root>

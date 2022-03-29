@@ -153,6 +153,9 @@ namespace SystemTrayMenu.UserInterface
                 radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
                 radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, folders or drives");
                 radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always Show hidden files, folders or drives");
+                groupBoxSorting.Text = Translator.GetText("Sorting");
+                radioButtonSortByName.Text = Translator.GetText("By name");
+                radioButtonSortByDate.Text = Translator.GetText("By date");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
 
                 tabPageFolders.Text = Translator.GetText("Folders");
@@ -399,6 +402,8 @@ namespace SystemTrayMenu.UserInterface
             radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
             radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
             radioButtonAlwaysShowHiddenFiles.Checked = Settings.Default.AlwaysShowHiddenFiles;
+            radioButtonSortByName.Checked = !Settings.Default.SortFolderAndFilesByDate;
+            radioButtonSortByDate.Checked = Settings.Default.SortFolderAndFilesByDate;
 
             checkBoxShowOnlyAsSearchResult.Checked = Settings.Default.ShowOnlyAsSearchResult;
             try
@@ -833,6 +838,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
             Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
             Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;
+            Settings.Default.SortFolderAndFilesByDate = radioButtonSortByDate.Checked;
 
             Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.Checked;
             SaveFolders();
@@ -1131,6 +1137,9 @@ namespace SystemTrayMenu.UserInterface
             radioButtonSystemSettingsShowHiddenFiles.Checked = true;
             radioButtonNeverShowHiddenFiles.Checked = false;
             radioButtonAlwaysShowHiddenFiles.Checked = false;
+
+            radioButtonSortByName.Checked = true;
+            radioButtonSortByDate.Checked = false;
         }
 
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)

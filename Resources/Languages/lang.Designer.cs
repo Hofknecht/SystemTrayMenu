@@ -250,6 +250,24 @@ namespace SystemTrayMenu.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to By date.
+        /// </summary>
+        internal static string By_date {
+            get {
+                return ResourceManager.GetString("By date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By name.
+        /// </summary>
+        internal static string By_name {
+            get {
+                return ResourceManager.GetString("By name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cache.
         /// </summary>
         internal static string Cache {
@@ -994,6 +1012,15 @@ namespace SystemTrayMenu.Resources.Languages {
         internal static string Slider_while_mouse_hovers_2 {
             get {
                 return ResourceManager.GetString("Slider while mouse hovers 2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorting.
+        /// </summary>
+        internal static string Sorting {
+            get {
+                return ResourceManager.GetString("Sorting", resourceCulture);
             }
         }
         
