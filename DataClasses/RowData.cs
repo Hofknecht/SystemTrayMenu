@@ -268,7 +268,8 @@ namespace SystemTrayMenu.DataClasses
                 (e == null || e.Button == MouseButtons.Left))
             {
                 ProcessStarted = true;
-                Log.ProcessStart(TargetFilePathOrig, string.Empty, false, string.Empty, true);
+                string workingDirectory = Path.GetDirectoryName(TargetFilePath);
+                Log.ProcessStart(TargetFilePathOrig, string.Empty, false, workingDirectory, true);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
                 {
                     toCloseByOpenItem = true;
