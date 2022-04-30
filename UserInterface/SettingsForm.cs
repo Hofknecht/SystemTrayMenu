@@ -986,10 +986,13 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonChangeRelativeFolder_Click(object sender, EventArgs e)
         {
-            Settings.Default.PathDirectory = Path.GetRelativePath(
-                Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
-                Config.Path);
-            textBoxFolder.Text = Config.Path;
+            if (!string.IsNullOrEmpty(Config.Path))
+            {
+                Settings.Default.PathDirectory = Path.GetRelativePath(
+                    Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
+                    Config.Path);
+                textBoxFolder.Text = Config.Path;
+            }
         }
 
         private void ButtonOpenAssemblyLocation_Click(object sender, EventArgs e)
