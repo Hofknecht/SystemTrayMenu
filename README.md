@@ -277,6 +277,7 @@ Thanks for ideas, reporting issues and contributing!
 #225 #297 #299 #317 #321 #324 #330 [chip33](https://github.com/chip33),
 #298 [phanirithvij](https://github.com/phanirithvij),
 #306 [wini2](https://github.com/wini2),
+#370 [dna5589](https://github.com/dna5589),
 #372 [not-nef](https://github.com/not-nef),
 #376 Michelle H.,
 #377 [SoenkeHob](https://github.com/SoenkeHob),
