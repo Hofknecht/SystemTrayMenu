@@ -340,6 +340,15 @@ namespace SystemTrayMenu.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy row item via drag drop.
+        /// </summary>
+        internal static string Copy_row_item_via_drag_drop {
+            get {
+                return ResourceManager.GetString("Copy row item via drag drop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Couldn’t register the hot key..
         /// </summary>
         internal static string Could_not_register_the_hot_key_ {
@@ -399,6 +408,15 @@ namespace SystemTrayMenu.Resources.Languages {
         internal static string Details {
             get {
                 return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drag.
+        /// </summary>
+        internal static string Drag {
+            get {
+                return ResourceManager.GetString("Drag", resourceCulture);
             }
         }
         
@@ -841,6 +859,15 @@ namespace SystemTrayMenu.Resources.Languages {
         internal static string Row_height_in_percent {
             get {
                 return ResourceManager.GetString("Row height in percent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scroll via swipe.
+        /// </summary>
+        internal static string Scroll_via_swipe {
+            get {
+                return ResourceManager.GetString("Scroll via swipe", resourceCulture);
             }
         }
         

@@ -34,7 +34,6 @@ namespace SystemTrayMenu.Business
         private readonly Timer timerStillActiveCheck = new();
         private readonly WaitLeave waitLeave = new(Properties.Settings.Default.TimeUntilCloses);
         private DateTime deactivatedTime = DateTime.MinValue;
-        private DateTime dateTimeLastOpening = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
         private bool searchTextChanging;
@@ -606,7 +605,6 @@ namespace SystemTrayMenu.Business
             }
 
             deactivatedTime = DateTime.MinValue;
-            dateTimeLastOpening = DateTime.Now;
         }
 
         internal void DisposeMenu(Menu menuToDispose)
@@ -1125,7 +1123,13 @@ namespace SystemTrayMenu.Business
             Menu menu = (Menu)((DataGridView)sender).FindForm();
             if (menu != null && menu.ScrollbarVisible)
             {
-                isDraggingSwipeScrolling = true;
+                bool isTouchEnabled = DllImports.NativeMethods.IsTouchEnabled();
+                if ((isTouchEnabled && Properties.Settings.Default.SwipeScrollingEnabledTouch) ||
+                    (!isTouchEnabled && Properties.Settings.Default.SwipeScrollingEnabled))
+                {
+                    isDraggingSwipeScrolling = true;
+                }
+
                 dragSwipeScrollingStartRowIndex = GetRowUnderCursor(dgv, e.Location);
             }
         }

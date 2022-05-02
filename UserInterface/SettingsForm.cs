@@ -149,6 +149,9 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxSendHotkeyInsteadKillOtherInstances.Text = Translator.GetText("Send hotkey to other instance");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an item instead of double click");
                 checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory instead of double click");
+                groupBoxDrag.Text = Translator.GetText("Drag");
+                checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag drop");
+                checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and folders");
                 radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
                 radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, folders or drives");
@@ -398,6 +401,17 @@ namespace SystemTrayMenu.UserInterface
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = Settings.Default.SendHotkeyInsteadKillOtherInstances;
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
             checkBoxOpenDirectoryWithOneClick.Checked = Settings.Default.OpenDirectoryWithOneClick;
+
+            if (DllImports.NativeMethods.IsTouchEnabled())
+            {
+                checkBoxDragDropItems.Checked = Settings.Default.DragDropItemsEnabledTouch;
+                checkBoxSwipeScrolling.Checked = Settings.Default.SwipeScrollingEnabledTouch;
+            }
+            else
+            {
+                checkBoxDragDropItems.Checked = Settings.Default.DragDropItemsEnabled;
+                checkBoxSwipeScrolling.Checked = Settings.Default.SwipeScrollingEnabled;
+            }
 
             radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
             radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
@@ -835,6 +849,18 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.SendHotkeyInsteadKillOtherInstances = checkBoxSendHotkeyInsteadKillOtherInstances.Checked;
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Settings.Default.OpenDirectoryWithOneClick = checkBoxOpenDirectoryWithOneClick.Checked;
+
+            if (DllImports.NativeMethods.IsTouchEnabled())
+            {
+                Settings.Default.DragDropItemsEnabledTouch = checkBoxDragDropItems.Checked;
+                Settings.Default.SwipeScrollingEnabledTouch = checkBoxSwipeScrolling.Checked;
+            }
+            else
+            {
+                Settings.Default.DragDropItemsEnabled = checkBoxDragDropItems.Checked;
+                Settings.Default.SwipeScrollingEnabled = checkBoxSwipeScrolling.Checked;
+            }
+
             Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
             Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
             Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;

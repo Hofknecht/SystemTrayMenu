@@ -477,4 +477,13 @@
   <data name="Sorting" xml:space="preserve">
     <value>Řazení</value>
   </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Zkopírujte položku řádku pomocí přetažení</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Táhnout</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Posouvání přejetím</value>
+  </data>
 </root>

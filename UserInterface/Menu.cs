@@ -167,9 +167,14 @@ namespace SystemTrayMenu.UserInterface
                 MouseLeave?.Invoke();
             }
 
-            AllowDrop = true;
-            DragEnter += DragDropHelper.DragEnter;
-            DragDrop += DragDropHelper.DragDrop;
+            bool isTouchEnabled = NativeMethods.IsTouchEnabled();
+            if ((isTouchEnabled && Properties.Settings.Default.DragDropItemsEnabledTouch) ||
+                (!isTouchEnabled && Properties.Settings.Default.DragDropItemsEnabled))
+            {
+                AllowDrop = true;
+                DragEnter += DragDropHelper.DragEnter;
+                DragDrop += DragDropHelper.DragDrop;
+            }
         }
 
         internal new event EventHandlerEmpty MouseWheel;

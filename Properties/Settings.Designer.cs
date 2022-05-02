@@ -303,6 +303,70 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DragDropItemsEnabledTouch
+        {
+            get
+            {
+                return ((bool)(this["DragDropItemsEnabledTouch"]));
+            }
+            set
+            {
+                this["DragDropItemsEnabledTouch"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SwipeScrollingEnabledTouch
+        {
+            get
+            {
+                return ((bool)(this["SwipeScrollingEnabledTouch"]));
+            }
+            set
+            {
+                this["SwipeScrollingEnabledTouch"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DragDropItemsEnabled
+        {
+            get
+            {
+                return ((bool)(this["DragDropItemsEnabled"]));
+            }
+            set
+            {
+                this["DragDropItemsEnabled"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SwipeScrollingEnabled
+        {
+            get
+            {
+                return ((bool)(this["SwipeScrollingEnabled"]));
+            }
+            set
+            {
+                this["SwipeScrollingEnabled"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool SortFolderAndFilesByDate
         {
             get

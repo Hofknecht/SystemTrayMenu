@@ -477,4 +477,13 @@
   <data name="Sorting" xml:space="preserve">
     <value>Ordinamento</value>
   </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Copia l'elemento della riga tramite trascinamento</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Lagna</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Scorri tramite swipe</value>
+  </data>
 </root>

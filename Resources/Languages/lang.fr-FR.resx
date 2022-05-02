@@ -477,4 +477,13 @@
   <data name="Sorting" xml:space="preserve">
     <value>Tri</value>
   </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Copier l'élément de ligne par glisser-déposer</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Glisser</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Faire défiler par balayage</value>
+  </data>
 </root>

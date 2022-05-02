@@ -477,4 +477,13 @@
   <data name="Sorting" xml:space="preserve">
     <value>정렬</value>
   </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>드래그 드롭을 통해 행 항목 복사</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>견인</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>스와이프로 스크롤</value>
+  </data>
 </root>
