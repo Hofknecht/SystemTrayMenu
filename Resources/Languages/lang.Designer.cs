@@ -466,6 +466,15 @@ namespace SystemTrayMenu.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filter menu by file type e.g.: *.exe|*.dll.
+        /// </summary>
+        internal static string Filter_menu_by_file_type_e_g_____exe___dll {
+            get {
+                return ResourceManager.GetString("Filter menu by file type e.g.: *.exe|*.dll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder.
         /// </summary>
         internal static string Folder {

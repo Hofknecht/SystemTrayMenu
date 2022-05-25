@@ -29,6 +29,8 @@ namespace SystemTrayMenu
 
         public static string Path => Settings.Default.PathDirectory;
 
+        public static string SearchPattern => Settings.Default.SearchPattern;
+
         public static bool AlwaysOpenByPin { get; internal set; }
 
         public static void Initialize()

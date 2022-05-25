@@ -1338,5 +1338,21 @@ namespace SystemTrayMenu.Properties
                 this["ColorDarkModeIcons"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SearchPattern
+        {
+            get
+            {
+                return ((string)(this["SearchPattern"]));
+            }
+            set
+            {
+                this["SearchPattern"] = value;
+            }
+        }
     }
 }

@@ -488,7 +488,7 @@ namespace SystemTrayMenu.Business
                     }
                     else if (!FileLnk.IsNetworkRoot(path))
                     {
-                        files = Directory.GetFiles(path);
+                        files = DirectoryBySearchPattern.GetFiles(path, Config.SearchPattern);
                         files = files.Concat(filesToAddToMainMenu).ToArray();
                     }
 
@@ -739,7 +739,7 @@ namespace SystemTrayMenu.Business
                     else
                     {
                         directoriesToConcat = Directory.GetDirectories(pathAddToMainMenu);
-                        filesToAddToConcat = Directory.GetFiles(pathAddToMainMenu);
+                        filesToAddToConcat = DirectoryBySearchPattern.GetFiles(pathAddToMainMenu, Config.SearchPattern);
                     }
 
                     if (!onlyFiles)
@@ -764,7 +764,7 @@ namespace SystemTrayMenu.Business
 
                 try
                 {
-                    filesToAddToConcat = filesToAddToConcat.Concat(Directory.GetFiles(pathAddToMainMenu)).ToArray();
+                    filesToAddToConcat = filesToAddToConcat.Concat(DirectoryBySearchPattern.GetFiles(pathAddToMainMenu, Config.SearchPattern)).ToArray();
                 }
                 catch (Exception ex)
                 {

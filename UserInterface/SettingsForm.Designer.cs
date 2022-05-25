@@ -133,6 +133,9 @@ namespace SystemTrayMenu.UserInterface
             this.buttonDefaultFolders = new System.Windows.Forms.Button();
             this.tabPageExpert = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelExpert = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBoxSearchPattern = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelSearchPattern = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxSearchPattern = new System.Windows.Forms.TextBox();
             this.groupBoxCache = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelCache = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxCacheMainMenu = new System.Windows.Forms.CheckBox();
@@ -376,6 +379,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAddSampleStartMenuFolder.SuspendLayout();
             this.tabPageExpert.SuspendLayout();
             this.tableLayoutPanelExpert.SuspendLayout();
+            this.groupBoxSearchPattern.SuspendLayout();
+            this.tableLayoutPanelSearchPattern.SuspendLayout();
             this.groupBoxCache.SuspendLayout();
             this.tableLayoutPanelCache.SuspendLayout();
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.SuspendLayout();
@@ -1916,20 +1921,60 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelExpert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelExpert.ColumnCount = 1;
             this.tableLayoutPanelExpert.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelExpert.Controls.Add(this.groupBoxSearchPattern, 0, 3);
             this.tableLayoutPanelExpert.Controls.Add(this.groupBoxCache, 0, 2);
             this.tableLayoutPanelExpert.Controls.Add(this.groupBoxStaysOpen, 0, 1);
             this.tableLayoutPanelExpert.Controls.Add(this.groupBoxOpenSubmenus, 0, 0);
-            this.tableLayoutPanelExpert.Controls.Add(this.buttonExpertDefault, 0, 3);
+            this.tableLayoutPanelExpert.Controls.Add(this.buttonExpertDefault, 0, 4);
             this.tableLayoutPanelExpert.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelExpert.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelExpert.Name = "tableLayoutPanelExpert";
-            this.tableLayoutPanelExpert.RowCount = 4;
+            this.tableLayoutPanelExpert.RowCount = 5;
+            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelExpert.Size = new System.Drawing.Size(408, 407);
             this.tableLayoutPanelExpert.TabIndex = 1;
+            // 
+            // groupBoxSearchPattern
+            // 
+            this.groupBoxSearchPattern.AutoSize = true;
+            this.groupBoxSearchPattern.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxSearchPattern.Controls.Add(this.tableLayoutPanelSearchPattern);
+            this.groupBoxSearchPattern.Location = new System.Drawing.Point(3, 312);
+            this.groupBoxSearchPattern.MaximumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxSearchPattern.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxSearchPattern.Name = "groupBoxSearchPattern";
+            this.groupBoxSearchPattern.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            this.groupBoxSearchPattern.Size = new System.Drawing.Size(400, 54);
+            this.groupBoxSearchPattern.TabIndex = 2;
+            this.groupBoxSearchPattern.TabStop = false;
+            this.groupBoxSearchPattern.Text = "groupBoxSearchPattern";
+            // 
+            // tableLayoutPanelSearchPattern
+            // 
+            this.tableLayoutPanelSearchPattern.AutoSize = true;
+            this.tableLayoutPanelSearchPattern.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelSearchPattern.ColumnCount = 1;
+            this.tableLayoutPanelSearchPattern.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSearchPattern.Controls.Add(this.textBoxSearchPattern, 0, 0);
+            this.tableLayoutPanelSearchPattern.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSearchPattern.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelSearchPattern.Name = "tableLayoutPanelSearchPattern";
+            this.tableLayoutPanelSearchPattern.RowCount = 1;
+            this.tableLayoutPanelSearchPattern.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSearchPattern.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelSearchPattern.TabIndex = 0;
+            // 
+            // textBoxSearchPattern
+            // 
+            this.textBoxSearchPattern.Location = new System.Drawing.Point(3, 3);
+            this.textBoxSearchPattern.Name = "textBoxSearchPattern";
+            this.textBoxSearchPattern.Size = new System.Drawing.Size(350, 23);
+            this.textBoxSearchPattern.TabIndex = 1;
+            this.textBoxSearchPattern.TabStop = false;
             // 
             // groupBoxCache
             // 
@@ -2230,7 +2275,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonExpertDefault.AutoSize = true;
             this.buttonExpertDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonExpertDefault.Location = new System.Drawing.Point(9, 318);
+            this.buttonExpertDefault.Location = new System.Drawing.Point(9, 378);
             this.buttonExpertDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonExpertDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonExpertDefault.Name = "buttonExpertDefault";
@@ -4666,6 +4711,10 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageExpert.PerformLayout();
             this.tableLayoutPanelExpert.ResumeLayout(false);
             this.tableLayoutPanelExpert.PerformLayout();
+            this.groupBoxSearchPattern.ResumeLayout(false);
+            this.groupBoxSearchPattern.PerformLayout();
+            this.tableLayoutPanelSearchPattern.ResumeLayout(false);
+            this.tableLayoutPanelSearchPattern.PerformLayout();
             this.groupBoxCache.ResumeLayout(false);
             this.groupBoxCache.PerformLayout();
             this.tableLayoutPanelCache.ResumeLayout(false);
@@ -5114,5 +5163,8 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.CheckBox checkBoxSwipeScrolling;
         private System.Windows.Forms.CheckBox checkBoxDragDropItems;
+        private System.Windows.Forms.GroupBox groupBoxSearchPattern;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSearchPattern;
+        private System.Windows.Forms.TextBox textBoxSearchPattern;
     }
 }

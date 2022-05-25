@@ -486,4 +486,7 @@
   <data name="Scroll via swipe" xml:space="preserve">
     <value>스와이프로 스크롤</value>
   </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>파일 유형별 필터 메뉴 예: *.exe|*.dll</value>
+  </data>
 </root>

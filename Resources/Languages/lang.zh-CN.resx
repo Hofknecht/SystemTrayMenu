@@ -486,4 +486,7 @@
   <data name="Scroll via swipe" xml:space="preserve">
     <value>通过滑动滚动</value>
   </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>按文件类型过滤菜单，例如：*.exe|*.dll</value>
+  </data>
 </root>

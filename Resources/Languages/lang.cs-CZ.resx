@@ -486,4 +486,7 @@
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Posouvání přejetím</value>
   </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Filtrovat nabídku podle typu souboru, např.: *.exe|*.dll</value>
+  </data>
 </root>

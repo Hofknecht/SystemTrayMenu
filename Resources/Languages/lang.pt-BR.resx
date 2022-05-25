@@ -486,4 +486,7 @@
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Rolar através de furto</value>
   </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Filtrar menu por tipo de arquivo, por exemplo: *.exe|*.dll</value>
+  </data>
 </root>

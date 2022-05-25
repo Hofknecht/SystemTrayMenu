@@ -185,6 +185,7 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxCache.Text = Translator.GetText("Cache");
                 checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
+                groupBoxSearchPattern.Text = Translator.GetText("Filter menu by file type e.g.: *.exe|*.dll");
                 buttonExpertDefault.Text = Translator.GetText("Default");
 
                 tabPageCustomize.Text = Translator.GetText("Customize");
@@ -464,6 +465,8 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxCacheMainMenu.Checked = Settings.Default.CacheMainMenu;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
+
+            textBoxSearchPattern.Text = Settings.Default.SearchPattern;
 
             checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
             checkBoxUseFading.Checked = Settings.Default.UseFading;
@@ -867,21 +870,17 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.SortFolderAndFilesByDate = radioButtonSortByDate.Checked;
 
             Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.Checked;
-            SaveFolders();
-            Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.Checked;
-            Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
-            Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
-            void SaveFolders()
+
+            Settings.Default.PathsAddToMainMenu = string.Empty;
+            foreach (DataGridViewRow row in dataGridViewFolders.Rows)
             {
-                Settings.Default.PathsAddToMainMenu = string.Empty;
-                foreach (DataGridViewRow row in dataGridViewFolders.Rows)
-                {
-                    string pathAddToMainMenu = row.Cells[0].Value.ToString();
-                    bool recursiv = (bool)row.Cells[1].Value;
-                    bool onlyFiles = (bool)row.Cells[2].Value;
-                    Settings.Default.PathsAddToMainMenu += $"{pathAddToMainMenu} recursiv:{recursiv} onlyFiles:{onlyFiles}|";
-                }
+                string pathAddToMainMenu = row.Cells[0].Value.ToString();
+                bool recursiv = (bool)row.Cells[1].Value;
+                bool onlyFiles = (bool)row.Cells[2].Value;
+                Settings.Default.PathsAddToMainMenu += $"{pathAddToMainMenu} recursiv:{recursiv} onlyFiles:{onlyFiles}|";
             }
+
+            Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.Checked;
 
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
@@ -889,6 +888,9 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
             Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed = checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked;
             Settings.Default.TimeUntilClosesAfterEnterPressed = (int)numericUpDownTimeUntilClosesAfterEnterPressed.Value;
+            Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
+            Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
+            Settings.Default.SearchPattern = textBoxSearchPattern.Text;
 
             Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
             Settings.Default.UseFading = checkBoxUseFading.Checked;
@@ -1191,6 +1193,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = 200;
             checkBoxCacheMainMenu.Checked = true;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
+            textBoxSearchPattern.Text = string.Empty;
         }
 
         private void TextBoxColorsChanged(object sender, EventArgs e)

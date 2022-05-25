@@ -90,6 +90,7 @@ Reviews
 [soluciones.link](https://soluciones.link/windows/systemtraymenu-es-una-alternativa-gratuita-del-menu-de-inicio-para-windows-11-10/) |
 [de.moyens.net](https://de.moyens.net/windows/systemtraymenu-ist-eine-kostenlose-startmenue-alternative-fuer-windows-11-10/) |
 [windowsreport.com](https://windowsreport.com/windows-11-free-start-menu-replacement/) |
+[onmsft.com](https://www.onmsft.com/how-to/how-to-edit-windows-11-start-menu-layout) |
 [starchart.cc](https://starchart.cc/hofknecht/systemtraymenu.svg)
 
 FAQ
@@ -281,6 +282,7 @@ Thanks for ideas, reporting issues and contributing!
 #372 [not-nef](https://github.com/not-nef),
 #376 Michelle H.,
 #377 [SoenkeHob](https://github.com/SoenkeHob),
+#384 [boydfields](https://github.com/boydfields)
 
 Donations
 ------------------
@@ -329,5 +331,6 @@ PayPal/GitHub Sponsors - Thank you!
 * Ralf K.
 * [donaldaken](https://github.com/donaldaken)
 * Marc Speer
+* [boydfields](https://github.com/boydfields)
 * [Traditional_Tap3954](https://www.reddit.com/user/Traditional_Tap3954/)
 * Maximilian H.

@@ -486,4 +486,7 @@
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Cuộn qua vuốt</value>
   </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Trình đơn lọc theo loại tệp, ví dụ: * .exe | * .dll</value>
+  </data>
 </root>
