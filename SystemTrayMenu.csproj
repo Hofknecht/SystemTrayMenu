@@ -178,6 +178,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+  <Compile Update="Resources\Languages\lang.zh-TW.Designer.cs">
+      <DependentUpon>lang.zh-TW.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
 	<Compile Update="Resources\Languages\lang.ja-JP.Designer.cs">
       <DependentUpon>lang.ja-JP.resx</DependentUpon>
       <DesignTime>True</DesignTime>
