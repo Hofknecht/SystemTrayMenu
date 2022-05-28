@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>開機時啟動</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>離開</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>資料夾</value>
+  </data>
+  <data name="Folder empty" xml:space="preserve">
+    <value>資料夾為空</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>詳細資料</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>系統資訊</value>
+  </data>
+  <data name="Folder inaccessible" xml:space="preserve">
+    <value>資料夾無法存取</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>日誌檔案</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>重新啟動</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>無法註冊快捷鍵。</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>快捷鍵</value>
+  </data>
+  <data name="Launch on startup" xml:space="preserve">
+    <value>跟隨 Windows 啟動</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="HelpFAQ" xml:space="preserve">
+    <value>說明與常見問題</value>
+  </data>
+  <data name="SystemTrayMenu" xml:space="preserve">
+    <value>工作列角落選單</value>
+  </data>
+  <data name="TextFirstStart" xml:space="preserve">
+    <value>請參閱常見問題，然後指定一個目錄作為工作列角落選單的起始位置。</value>
+  </data>
+  <data name="Select Folder" xml:space="preserve">
+    <value>選取資料夾</value>
+  </data>
+  <data name="MessageRootFolderEmpty" xml:space="preserve">
+    <value>您指定的工作列角落選單資料夾不存在或為空！請將一些檔案、資料夾或捷徑放進此位置，或者變更選取的資料夾。</value>
+  </data>
+  <data name="MessageRootFolderNoAccess" xml:space="preserve">
+    <value>您沒有權限可以存取工作列角落選單的資料夾。請授予對該資料夾的存取權，或者或者變更選取的資料夾。</value>
+  </data>
+  <data name="Single click to open an item instead of double click" xml:space="preserve">
+    <value>按一下項目以開啟項目</value>
+  </data>
+  <data name="Dark Mode always active" xml:space="preserve">
+    <value>一律使用深色模式</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>進階</value>
+  </data>
+  <data name="Mouse location" xml:space="preserve">
+    <value>滑鼠指標位置</value>
+  </data>
+  <data name="Change folder" xml:space="preserve">
+    <value>變更資料夾</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>點選</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>自訂</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>預設</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>如果失去焦點且滑鼠指標仍在選單上</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>當滑鼠指標在圖示上時，開啟選單的延遲時間(毫秒)</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>當滑鼠指標已離開選單，選單關閉的延遲時間(毫秒)</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>選單最大寬度(像素)</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>保持開啟</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>選單開啟延遲</value>
+  </data>
+  <data name="If an item was clicked" xml:space="preserve">
+    <value>如果一個項目被點選</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="Opened folder" xml:space="preserve">
+    <value>開啟的資料夾</value>
+  </data>
+  <data name="Border of opened folder" xml:space="preserve">
+    <value>開啟的資料夾外框</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>搜尋列</value>
+  </data>
+  <data name="Selected item" xml:space="preserve">
+    <value>選取的項目</value>
+  </data>
+  <data name="Border of selected item" xml:space="preserve">
+    <value>選取的項目外框</value>
+  </data>
+  <data name="Change to relative folder" xml:space="preserve">
+    <value>切換到對應資料夾</value>
+  </data>
+  <data name="Store config at the assembly location" xml:space="preserve">
+    <value>將設定檔儲存在程式所在位置</value>
+  </data>
+  <data name="USB" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Open the assembly location" xml:space="preserve">
+    <value>開啟程式所在位置</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>選單最大高度(像素)</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>箭頭</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>點選時箭頭</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>滑鼠游標懸停時箭頭</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>點選時箭頭的背景</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>滑鼠游標懸停時箭頭背景</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>深色模式色彩</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>淺色模式色彩</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>選單</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>捲軸</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>滑動方塊</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>拖曳時的滑動方塊</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>滑鼠游標懸停時的滑動方塊 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>滑鼠游標懸停時的滑動方塊 2</value>
+  </data>
+  <data name="Use icon from folder" xml:space="preserve">
+    <value>使用資料夾的圖示</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>選單外框</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>圖示</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>從右鍵選單設定</value>
+  </data>
+  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
+    <value>設定為工作列角落選單起始資料夾</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>正在載入</value>
+  </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>捷徑發生問題</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>這個捷徑指向的原始項目已經變更或移至別處，所以這個捷徑將無法再正常執行。</value>
+  </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>開啟資料夾</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>已啟用</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>已停用</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>工作管理員</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>專家</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>如果已失去焦點並已按下 Enter 鍵</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>若選單沒有重新點選，關閉選單前的延遲時間(毫秒)</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>在工作列中顯示</value>
+  </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>新增資料夾</value>
+  </data>
+  <data name="Add content of folders to main menu" xml:space="preserve">
+    <value>將資料夾內容新增到主選單</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>資料夾路徑</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>資料夾</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>遞迴</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>刪除資料夾</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>主選單快取</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>如果超過此數量則清除快取</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>只有檔案</value>
+  </data>
+  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+    <value>新增「開始」選單資料夾</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>圓角外框</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>列高百分比</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>外觀</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>左下角</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>右下角</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>主選單顯示位置</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>滑鼠指標位置(工作列角落圖示上方)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>自訂(拖曳到適合的位置)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>元素</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>元素</value>
+  </data>
+  <data name="Generate shortcuts to drives" xml:space="preserve">
+    <value>建立磁碟機的捷徑</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>快取</value>
+  </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>一律顯示隱藏的檔案、資料夾及磁碟機</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>隱藏的檔案和資料夾</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>不顯示隱藏的檔案、資料夾及磁碟機</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>位置和大小</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>使用作業系統設定</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>僅顯示為搜尋結果</value>
+  </data>
+  <data name="Single click to open a directory instead of double click" xml:space="preserve">
+    <value>按一下以開啟資料夾</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>在上一個項目的旁邊</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>像素</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>重疊</value>
+  </data>
+  <data name="Sub menu appears at" xml:space="preserve">
+    <value>子選單顯示在</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>圖示大小百分比</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>贊助工作列角落選單</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>淡入淡出</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>向其他處理程序發送快捷鍵</value>
+  </data>
+  <data name="By date" xml:space="preserve">
+    <value>依日期</value>
+  </data>
+  <data name="By name" xml:space="preserve">
+    <value>依名稱</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>排序方式</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>拖曳以複製項目</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>拖曳</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>透過滑動來捲動捲軸</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>依檔案類型來過濾選單，例如：*.exe|*.dll</value>
+  </data>
+</root>
