@@ -105,7 +105,7 @@ namespace SystemTrayMenu.UserInterface
                 Text = Translator.GetText("Settings");
                 tabPageGeneral.Text = Translator.GetText("General");
                 groupBoxFolder.Text = Translator.GetText("Directory");
-                buttonChangeFolder.Text = Translator.GetText("Change the directory");
+                buttonChangeFolder.Text = Translator.GetText("Changing directory");
                 buttonOpenFolder.Text = Translator.GetText("Open directory");
                 checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from directory");
                 checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
@@ -132,12 +132,12 @@ namespace SystemTrayMenu.UserInterface
                 labelRowHeightInPercentage.Text = Translator.GetText("Row height in percent");
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
-                groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears at");
+                groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears");
                 radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
                 radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate place)");
-                radioButtonAppearAtMouseLocation.Text = Translator.GetText("Mouse location");
-                groupBoxSubMenuAppearAt.Text = Translator.GetText("Sub menu appears at");
+                radioButtonAppearAtMouseLocation.Text = Translator.GetText("At mouse location");
+                groupBoxSubMenuAppearAt.Text = Translator.GetText("Sub menu appears");
                 radioButtonNextToPreviousMenu.Text = Translator.GetText("Next to the previous one");
                 radioButtonOverlapping.Text = Translator.GetText("Overlapping");
                 labelOverlappingByPixelsOffset.Text = Translator.GetText("Offset by pixels");
@@ -169,7 +169,7 @@ namespace SystemTrayMenu.UserInterface
                 ColumnFolder.HeaderText = Translator.GetText("Directory paths");
                 ColumnRecursiveLevel.HeaderText = Translator.GetText("Recursive");
                 ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
-                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' directory");
+                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample directory 'Start Menu'");
                 buttonDefaultFolders.Text = Translator.GetText("Default");
                 checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate drive shortcuts on startup");
 
@@ -192,10 +192,10 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxAppearance.Text = Translator.GetText("Appearance");
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
                 checkBoxUseFading.Text = Translator.GetText("Fading");
-                checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
+                checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Color scheme dark always active");
                 buttonAppearanceDefault.Text = Translator.GetText("Default");
-                groupBoxColorsLightMode.Text = Translator.GetText("Colors 'Light Mode'");
-                groupBoxColorsDarkMode.Text = Translator.GetText("Colors 'Dark Mode'");
+                groupBoxColorsLightMode.Text = Translator.GetText("Color scheme bright");
+                groupBoxColorsDarkMode.Text = Translator.GetText("Color scheme dark");
                 labelMenuLightMode.Text = Translator.GetText("App menu");
                 labelMenuDarkMode.Text = Translator.GetText("App menu");
                 labelScrollbarLightMode.Text = Translator.GetText("Scrollbar");

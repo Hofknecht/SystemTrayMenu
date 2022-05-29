@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ចុចមួយដងដើម្បីបើកធាតុមួយជំនួសឱ្យការចុចពីរដង</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>របៀបងងឹតតែងតែសកម្ម</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>ពណ៌ចម្រុះងងឹតតែងតែសកម្ម</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>កម្រិតខ្ពស់</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>ទីតាំងកណ្តុរ</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>នៅទីតាំងកណ្តុរ</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>ផ្លាស់ប្តូរថតឯកសារ</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>ការផ្លាស់ប្តូរថត</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>ចុច</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>ផ្ទៃខាងក្រោយនៃព្រួញ ខណៈពេលដែលកណ្ដុរដាក់ពីលើវា។</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>ពណ៌ 'របៀបងងឹត'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>ពណ៌ចម្រុះ</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>ពណ៌ 'របៀបពន្លឺ'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>ពណ៌ចម្រុះភ្លឺ</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>ម៉ឺនុយកម្មវិធី</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>សម្អាតឃ្លាំងសម្ងាត់ប្រសិនបើមានច្រើនជាងចំនួនធាតុនេះ។</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>បន្ថែមគំរូ 'ម៉ឺនុយចាប់ផ្តើម' ថត</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>បន្ថែមថតគំរូ 'ម៉ឺនុយចាប់ផ្តើម'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>កម្ពស់ជួរដេកគិតជាភាគរយ</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>នៅ​ខាង​ស្ដាំ​ផ្នែក​ខាង​ក្រោម</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>ម៉ឺនុយមេលេចឡើងនៅ</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>ម៉ឺនុយមេលេចឡើង</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>ទីតាំងកណ្ដុរ (រូបតំណាងរបារភារកិច្ចខាងលើ)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>ការត្រួតស៊ីគ្នា។</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>ម៉ឺនុយរងលេចឡើងនៅ</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>ម៉ឺនុយរងលេចឡើង</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>ទំហំរូបតំណាងគិតជាភាគរយ</value>
@@ -475,7 +475,7 @@
     <value>ការតម្រៀប</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ចម្លងធាតុជួរដេកតាមរយៈការអូសទម្លាក់</value>
+    <value>ចម្លង​ធាតុ​ជួរ​ដេក​តាម​រយៈ​ការ​អូស​ទម្លាក់</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>អូស</value>

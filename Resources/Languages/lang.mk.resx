@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Еден клик за отворање на елемент наместо двоен клик</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Темниот режим е секогаш активен</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Шема на бои темно секогаш активна</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Напредно</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Локација на глувчето</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>На локација на глувчето</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Променете го директориумот</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Се менува директориумот</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Кликнете</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Заднина на стрелката додека глувчето лебди над неа</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Бои „темен режим“</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Шема на бои темна</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Бои „Светлосен режим“</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Шема на бои светла</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Мени за апликации</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Исчистете го кешот ако повеќе од овој број на ставки</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Додадете примерок од директориумот „Start Menu“.</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Додадете примерок директориум „Старт мени“</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Висина на редот во проценти</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Долу десно</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Главното мени се појавува на</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Се појавува главното мени</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Локација на глувчето (над иконата на лентата со задачи)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Преклопување</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Подменито се појавува на</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Се појавува подмени</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Големината на иконите во проценти</value>
@@ -463,7 +463,7 @@
     <value>Избледување</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Испрати копче на друга инстанца</value>
+    <value>Испратете копче на друга инстанца</value>
   </data>
   <data name="Sort by date" xml:space="preserve">
     <value>Подреди по датум</value>

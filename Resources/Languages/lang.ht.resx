@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Yon sèl klike sou yo louvri yon eleman olye pou yo klike sou doub</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Mòd nwa toujou aktif</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Konplo koulè nwa toujou aktif</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avanse</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Kote sourit la</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Nan kote sourit la</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Chanje anyè a</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Chanje anyè</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klike sou</value>
@@ -268,7 +268,7 @@
     <value>Flèch</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Flèch lè w klike</value>
+    <value>Flèch lè w klike sou</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Flèch pandan y ap sourit la sou li</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Jan nou koumanse nan flèch pandan y ap sourit la sou li</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Koulè 'Mòd nwa'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Konplo koulè nwa</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Koulè 'Limyè Mode'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Konplo koulè klere</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Meni aplikasyon an</value>
@@ -310,7 +310,7 @@
     <value>Gwosè</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Fwontyè meni an</value>
+    <value>Fwontyè nan meni an</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Ikon</value>
@@ -349,7 +349,7 @@
     <value>Si konsantre a pèdi epi yo te peze kle antre a</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisecond jiskaske meni an fèmen si nan ka sa a meni an pa reaktive</value>
+    <value>Milisgond jiskaske meni an fèmen si nan ka sa a meni an pa reaktive</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Montre nan Taskbar</value>
@@ -381,7 +381,7 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Efase kachèt si plis pase kantite atik sa a</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Ajoute echantiyon anyè 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Anba dwat</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Meni prensipal parèt nan</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Meni prensipal la parèt</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Kote sourit (anwo ikòn ba travay la)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Sipèpoze</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Sou-meni parèt nan</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Sou-meni parèt</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Gwosè ikon yo an pousan</value>

@@ -189,16 +189,16 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Nhấp một lần để mở một phần tử thay vì nhấp đúp</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Chế độ tối luôn hoạt động</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Phối màu tối luôn hoạt động</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Nâng cao</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Vị trí chuột</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Tại vị trí chuột</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
+  <data name="Changing directory" xml:space="preserve">
     <value>Thay đổi thư mục</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Hình nền của mũi tên khi di chuột qua nó</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Màu sắc 'Chế độ tối'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Phối màu tối</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Màu sắc 'Chế độ ánh sáng'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Bảng màu sáng</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Menu ứng dụng</value>
@@ -292,7 +292,7 @@
     <value>Thanh cuộn</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>Thanh trượt</value>
+    <value>Con trượt</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
     <value>Thanh trượt trong khi kéo</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Xóa bộ nhớ cache nếu nhiều hơn số lượng mục này</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Thêm thư mục 'Start Menu' mẫu</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Thêm thư mục mẫu 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Chiều cao hàng tính bằng phần trăm</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Góc phải ở phía dưới</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Menu chính xuất hiện tại</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Menu chính xuất hiện</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Vị trí chuột (phía trên biểu tượng Thanh tác vụ)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Qua nối chồng</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Menu phụ xuất hiện tại</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Menu phụ xuất hiện</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Kích thước của các biểu tượng tính bằng phần trăm</value>
@@ -475,7 +475,7 @@
     <value>Sắp xếp</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Sao chép mục hàng thông qua kéo thả</value>
+    <value>Sao chép mục hàng bằng cách kéo thả</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Lôi kéo</value>

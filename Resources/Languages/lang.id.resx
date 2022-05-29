@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Klik satu kali untuk membuka elemen alih-alih klik dua kali</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Mode Gelap selalu aktif</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Skema warna gelap selalu aktif</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Canggih</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Lokasi tikus</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Di lokasi tikus</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Ubah direktori</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Mengubah direktori</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klik</value>
@@ -241,7 +241,7 @@
     <value>Batas direktori yang dibuka</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>Bidang pencarian</value>
+    <value>bidang pencarian</value>
   </data>
   <data name="Selected element" xml:space="preserve">
     <value>Elemen yang dipilih</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Latar belakang panah saat mouse melayang di atasnya</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Warna 'Mode Gelap'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Skema warna gelap</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Warna 'Mode Cahaya'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Skema warna cerah</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>menu aplikasi</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Hapus cache jika lebih dari jumlah item ini</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Tambahkan contoh direktori 'Start Menu'</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Tambahkan direktori contoh 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Tinggi baris dalam persen</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Kanan bawah</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Menu utama muncul di</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Menu utama muncul</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Lokasi mouse (Di atas ikon Taskbar)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Tumpang tindih</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Sub menu muncul di</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Submenu muncul</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Ukuran ikon dalam persen</value>

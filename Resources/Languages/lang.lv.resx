@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Veiciet vienu klikšķi, lai atvērtu elementu, nevis veiciet dubultklikšķi</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Tumšais režīms vienmēr ir aktīvs</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Krāsu shēma tumša vienmēr aktīva</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Papildu</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Peles atrašanās vieta</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Peles atrašanās vietā</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Mainiet direktoriju</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Mainot direktoriju</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klikšķis</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Bultas fons, kamēr pele atrodas virs tās</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Krāsas 'Dark Mode'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Krāsu shēma tumša</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Krāsas 'Gaišais režīms'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Krāsu shēma gaiša</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Lietotņu izvēlne</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Notīriet kešatmiņu, ja vienumu skaits pārsniedz šo</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Pievienojiet paraugu "Sākt izvēlnes" direktorijai</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Pievienot parauga direktoriju "Start Menu"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Rindas augstums procentos</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Apakšā pa labi</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Galvenā izvēlne tiek parādīta plkst</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Parādās galvenā izvēlne</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Peles atrašanās vieta (virs uzdevumjoslas ikonas)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Pārklāšanās</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Apakšizvēlne tiek parādīta plkst</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Tiek parādīta apakšizvēlne</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Ikonu lielums procentos</value>

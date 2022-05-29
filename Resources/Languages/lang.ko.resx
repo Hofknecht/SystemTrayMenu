@@ -189,16 +189,16 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>더블 클릭 대신 요소를 열려면 한 번 클릭</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>다크 모드는 항상 활성화</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>색 구성표 어두운 항상 활성</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>고급의</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>마우스 위치</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>마우스 위치에서</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
+  <data name="Changing directory" xml:space="preserve">
     <value>디렉토리 변경</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -217,7 +217,7 @@
     <value>마우스가 메뉴에 있을 때 메뉴가 열릴 때까지의 밀리초</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>이 경우 마우스가 메뉴를 떠날 때까지 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+    <value>이 경우 마우스가 메뉴를 떠나면 메뉴가 닫힐 때까지의 밀리초</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>픽셀 최대 메뉴 너비</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>마우스가 화살표 위에 있는 동안 화살표의 배경</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>색상 '다크 모드'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>색 구성표 어두운</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>색상 '라이트 모드'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>밝은 색 구성표</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>앱 메뉴</value>
@@ -310,7 +310,7 @@
     <value>크기</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>메뉴의 테두리</value>
+    <value>메뉴 테두리</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>아이콘</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>이 항목 수보다 많은 경우 캐시 지우기</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>샘플 '시작 메뉴' 디렉토리 추가</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>샘플 디렉토리 '시작 메뉴' 추가</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>행 높이(%)</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>오른쪽 하단</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>주 메뉴가 나타납니다.</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>메인 메뉴가 나타납니다</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>마우스 위치(작업 표시줄 아이콘 위)</value>
@@ -450,14 +450,14 @@
   <data name="Overlapping" xml:space="preserve">
     <value>겹침</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
+  <data name="Sub menu appears" xml:space="preserve">
     <value>하위 메뉴가 나타납니다.</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
-    <value>아이콘 크기(퍼센트)</value>
+    <value>아이콘 크기(%)</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>지원 시스템 트레이 메뉴</value>
+    <value>지원 시스템TrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>페이딩</value>

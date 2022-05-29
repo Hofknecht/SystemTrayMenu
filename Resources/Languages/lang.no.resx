@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Enkeltklikk for å åpne et element i stedet for dobbeltklikk</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Mørk modus er alltid aktiv</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Fargeskjema mørkt alltid aktivt</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avansert</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Musens plassering</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>På museplassering</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Endre katalogen</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Bytter katalog</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klikk</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Bakgrunn av pil mens musen svever over den</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Farger 'Mørk modus'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Mørkt fargevalg</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Farger "Lysmodus"</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Lys fargevalg</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Appmeny</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Tøm hurtigbufferen hvis flere enn dette antallet elementer</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Legg til eksempel 'Start Menu'-katalog</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Legg til eksempelkatalog "Startmeny"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Radhøyde i prosent</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Nede til høyre</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Hovedmeny vises kl</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Hovedmenyen vises</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Museplassering (over oppgavelinjeikonet)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Overlappende</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Undermeny vises på</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Undermenyen vises</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Størrelsen på ikonene i prosent</value>

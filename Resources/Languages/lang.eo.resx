@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Unuopa klako por malfermi elementon anstataŭ duobla klako</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Malhela Reĝimo ĉiam aktiva</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Kolorskemo malhela ĉiam aktiva</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Altnivela</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Musloko</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Ĉe musloko</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Ŝanĝu la dosierujon</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Ŝanĝante dosierujon</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klaku</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Fono de sago dum muso ŝvebas super ĝi</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Koloroj 'Malhela Reĝimo'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Kolorskemo malhela</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Koloroj 'Luma Reĝimo'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Kolorskemo hela</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Aplika menuo</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Forigi kaŝmemoron se pli ol ĉi tiu nombro da eroj</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Aldonu specimenan dosierujon 'Komenuo'</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Aldonu ekzemplan dosierujon 'Komenuo'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Vico alteco en procentoj</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Malsupre dekstre</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Ĉefa menuo aperas ĉe</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Ĉefa menuo aperas</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Musloko (Supre Taskobreto-ikono)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Interkovrado</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Submenuo aperas ĉe</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Submenuo aperas</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Grandeco de la ikonoj en procentoj</value>

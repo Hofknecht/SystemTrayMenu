@@ -189,16 +189,16 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Single click to open an element instead of double click</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Dark Mode always active</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Color scheme dark always active</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Advanced</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Mouse location</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>At mouse location</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
+  <data name="Changing directory" xml:space="preserve">
     <value>Change the directory</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -279,14 +279,14 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Background of arrow while mouse hovers over it</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Colors 'Dark Mode'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Color scheme dark</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Colors 'Light Mode'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Color scheme bright</value>
   </data>
   <data name="App menu" xml:space="preserve">
-    <value>Menu</value>
+    <value>App menu</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Scrollbar</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Clear cache if more than this number of items</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Add sample 'Start Menu' directory</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Add sample directory 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Row height in percent</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Bottom right</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Main menu appears at</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Main menu appears</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Mouse location (Above Taskbar icon)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Overlapping</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Sub menu appears at</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Sub menu appears</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Size of the icons in percent</value>

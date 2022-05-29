@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>డబుల్ క్లిక్‌కు బదులుగా ఎలిమెంట్‌ను తెరవడానికి సింగిల్ క్లిక్ చేయండి</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>డార్క్ మోడ్ ఎల్లప్పుడూ యాక్టివ్‌గా ఉంటుంది</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>ముదురు రంగు పథకం ఎల్లప్పుడూ చురుకుగా ఉంటుంది</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>ఆధునిక</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>మౌస్ స్థానం</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>మౌస్ స్థానంలో</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>డైరెక్టరీని మార్చండి</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>డైరెక్టరీని మారుస్తోంది</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>క్లిక్ చేయండి</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>మౌస్ దానిపై కదులుతున్నప్పుడు బాణం యొక్క నేపథ్యం</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>రంగులు 'డార్క్ మోడ్'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>రంగు పథకం చీకటి</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>రంగులు 'లైట్ మోడ్'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>ప్రకాశవంతమైన రంగు పథకం</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>యాప్ మెను</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ఐటెమ్‌ల కంటే ఎక్కువ ఉంటే కాష్‌ని క్లియర్ చేయండి</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>నమూనా 'ప్రారంభ మెనూ' డైరెక్టరీని జోడించండి</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>నమూనా డైరెక్టరీని జోడించండి 'ప్రారంభ మెనూ'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>శాతంలో అడ్డు వరుస ఎత్తు</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>దిగువ కుడి</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>ప్రధాన మెనూ ఇక్కడ కనిపిస్తుంది</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>ప్రధాన మెనూ కనిపిస్తుంది</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>మౌస్ స్థానం (టాస్క్‌బార్ చిహ్నం పైన)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>సబ్ మెనూ ఇక్కడ కనిపిస్తుంది</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>ఉప మెను కనిపిస్తుంది</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>శాతంలో చిహ్నాల పరిమాణం</value>

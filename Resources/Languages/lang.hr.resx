@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Jedan klik za otvaranje elementa umjesto dvostrukog klika</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Tamni način rada je uvijek aktivan</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Shema boja tamna uvijek aktivna</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Napredna</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Položaj miša</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Na mjestu miša</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Promijenite imenik</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Promjena imenika</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klik</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Pozadina strelice dok miš lebdi iznad nje</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Boje 'Tamni način'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Shema boja tamna</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Boje 'Light Mode'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Shema boja svijetla</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Izbornik aplikacije</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Izbrišite predmemoriju ako je više od ovog broja stavki</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Dodajte primjer imenika "Izbornik Start".</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Dodaj uzorak direktorija "Izbornik Start"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Visina reda u postocima</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Dolje desno</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Glavni izbornik se pojavljuje na</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Pojavljuje se glavni izbornik</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Lokacija miša (iznad ikone na traci zadataka)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Preklapanje</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Podizbornik se pojavljuje na</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Pojavljuje se podizbornik</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Veličina ikona u postocima</value>

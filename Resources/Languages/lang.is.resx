@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Einn smellur til að opna þátt í stað þess að tvísmella</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Dark Mode alltaf virkur</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Litasamsetning dökk alltaf virk</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Ítarlegri</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Staðsetning músar</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Á músarstað</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Breyttu skránni</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Skipt um skrá</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Smellur</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Bakgrunnur ör á meðan músin sveimar yfir henni</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Litir 'Dark Mode'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Litasamsetning dökk</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Litir 'Light Mode'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Litasamsetning björt</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>App valmynd</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Bættu við sýnishorni 'Start Menu' möppu</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Bæta við sýnishornsmöppu 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Róðurhæð í prósentum</value>
@@ -399,11 +399,11 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Neðst til hægri</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Aðalvalmynd birtist kl</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Aðalvalmynd birtist</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Staðsetning músar (fyrir ofan verkstiku táknið)</value>
+    <value>Staðsetning músar (fyrir ofan verkefnastikuna)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Sérsniðið (dragaðu það á viðeigandi stað)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Skarast</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Undirvalmynd birtist kl</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Undirvalmynd birtist</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Stærð táknanna í prósentum</value>

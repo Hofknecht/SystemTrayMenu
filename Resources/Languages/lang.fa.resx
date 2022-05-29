@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>یک کلیک برای باز کردن یک عنصر به جای دوبار کلیک کردن</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>حالت تاریک همیشه فعال است</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>طرح رنگ تیره همیشه فعال است</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>پیشرفته</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>مکان موس</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>در محل ماوس</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>دایرکتوری را تغییر دهید</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>تغییر دایرکتوری</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>کلیک</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>پس‌زمینه فلش در حالی که ماوس روی آن شناور است</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>رنگ ها "حالت تاریک"</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>طرح رنگ تیره</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>رنگ‌ها "حالت نور"</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>طرح رنگ روشن</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>منوی برنامه</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>اگر بیشتر از این تعداد مورد باشد، حافظه پنهان را پاک کنید</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>دایرکتوری "Start Menu" نمونه را اضافه کنید</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>اضافه کردن دایرکتوری نمونه 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>ارتفاع ردیف بر حسب درصد</value>
@@ -399,7 +399,7 @@
   <data name="Bottom right" xml:space="preserve">
     <value>سمت راست پایین</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
+  <data name="Main menu appears" xml:space="preserve">
     <value>منوی اصلی ظاهر می شود</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>با هم تداخل دارند</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>منوی فرعی در نشان داده می شود</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>منوی فرعی ظاهر می شود</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>اندازه آیکون ها بر حسب درصد</value>

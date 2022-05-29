@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Bofya mara moja ili kufungua kipengele badala ya kubofya mara mbili</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Hali ya Giza inatumika kila wakati</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Mpangilio wa rangi giza unafanya kazi kila wakati</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Advanced</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Mahali pa panya</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Katika eneo la panya</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Badilisha saraka</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Kubadilisha saraka</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Bofya</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Usuli wa mshale huku kipanya ikielea juu yake</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Rangi 'Njia ya Giza'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Mpango wa rangi giza</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Rangi 'Njia ya Mwanga'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Mpango wa rangi mkali</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Menyu ya programu</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Futa akiba ikiwa ni zaidi ya idadi hii ya vipengee</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Ongeza sampuli ya saraka ya 'Menyu ya Anza'</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Ongeza sampuli ya saraka 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Urefu wa safu kwa asilimia</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Chini kulia</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Menyu kuu inaonekana kwenye</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Menyu kuu inaonekana</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Mahali pa panya (Ikoni ya Juu ya Upau wa Task)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Kupishana</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Menyu ndogo inaonekana kwenye</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Menyu ndogo inaonekana</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Ukubwa wa ikoni kwa asilimia</value>

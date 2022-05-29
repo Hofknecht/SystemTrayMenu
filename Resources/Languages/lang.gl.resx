@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Fai clic só para abrir un elemento en lugar de facer dobre clic</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Modo escuro sempre activo</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Esquema de cores escuro sempre activo</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avanzado</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Localización do rato</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Na localización do rato</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Cambia o directorio</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Cambiando directorio</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Fai clic</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Fondo da frecha mentres o rato pasa sobre ela</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Cores "Modo escuro"</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Esquema de cores escuro</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Cores "Modo de luz"</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Esquema de cores brillante</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Menú da aplicación</value>
@@ -316,7 +316,7 @@
     <value>Iconas</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Establecido por menú contextual</value>
+    <value>Establecer mediante menú contextual</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Establecer como directorio</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Borrar a caché se é superior a este número de elementos</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Engade o directorio de mostra "Menú Inicio".</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Engadir o directorio de mostra "Menú Inicio"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Altura da fila en porcentaxe</value>
@@ -391,7 +391,7 @@
     <value>Cantos redondeados</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>Aparición</value>
+    <value>Aparencia</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
     <value>Abaixo á esquerda</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Abaixo dereita</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>O menú principal aparece en</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Aparece o menú principal</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Ubicación do rato (enriba da icona da barra de tarefas)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Superposición</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>O submenú aparece en</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Aparece o submenú</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Tamaño das iconas en porcentaxe</value>

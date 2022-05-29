@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ڈبل کلک کے بجائے ایک عنصر کو کھولنے کے لیے سنگل کلک کریں۔</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>ڈارک موڈ ہمیشہ فعال رہتا ہے۔</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>رنگ سکیم سیاہ ہمیشہ فعال</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>اعلی درجے کی</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>ماؤس کا مقام</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>ماؤس کے مقام پر</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>ڈائرکٹری کو تبدیل کریں۔</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>ڈائرکٹری کو تبدیل کرنا</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>کلک کریں۔</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>تیر کا پس منظر جب کہ ماؤس اس پر منڈلاتا ہے۔</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>رنگ 'ڈارک موڈ'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>رنگ سکیم سیاہ</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>رنگ 'لائٹ موڈ'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>رنگ سکیم روشن</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>ایپ مینو</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>اگر آئٹمز کی اس تعداد سے زیادہ ہوں تو کیشے کو صاف کریں۔</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>'اسٹارٹ مینو' ڈائرکٹری کا نمونہ شامل کریں۔</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>نمونہ ڈائرکٹری 'اسٹارٹ مینو' شامل کریں</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>قطار کی اونچائی فیصد میں</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>نیچے دائیں طرف</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>مین مینو پر ظاہر ہوتا ہے۔</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>مین مینو ظاہر ہوتا ہے۔</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>ماؤس کا مقام (ٹاسک بار آئیکن کے اوپر)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>اوور لیپنگ</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>ذیلی مینو پر ظاہر ہوتا ہے۔</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>ذیلی مینو ظاہر ہوتا ہے۔</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>شبیہیں کا سائز فیصد میں</value>
@@ -481,7 +481,7 @@
     <value>گھسیٹیں۔</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>سوائپ کے ذریعے سکرول کریں۔</value>
+    <value>سوائپ کے ذریعے اسکرول کریں۔</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>فائل کی قسم کے لحاظ سے مینو کو فلٹر کریں جیسے: *.exe|*.dll</value>

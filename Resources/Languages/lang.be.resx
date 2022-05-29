@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Адкрыйце элемент адным пстрычкай, а не падвойным</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Цёмны рэжым заўсёды актыўны</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Колеравая гама цёмная заўсёды актыўная</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Пашыраны</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Размяшчэнне мышы</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>У месцы размяшчэння мышы</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Змяніць каталог</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Змена каталога</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Націсніце</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Фон стрэлкі пры навядзенні на яе курсора мышы</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Колеры «Цёмны рэжым»</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Колеравая гама цёмная</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Колеры "Светлы рэжым"</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Яркая каляровая гама</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Меню прыкладання</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Ачысціце кэш, калі больш за гэта колькасць элементаў</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Дадаць узор каталога «Меню Пуск».</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Дадаць узор каталога "Меню Пуск"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Вышыня радка ў працэнтах</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Справа ўнізе</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Галоўнае меню з'яўляецца на</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>З'явіцца галоўнае меню</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Размяшчэнне мышы (над значком на панэлі задач)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Перакрыцце</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Падменю з'яўляецца на</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>З'явіцца падменю</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Памер значкоў у працэнтах</value>

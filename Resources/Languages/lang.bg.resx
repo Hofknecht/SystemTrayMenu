@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Едно щракване, за да отворите елемент вместо двойно щракване</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Тъмният режим винаги е активен</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Цветовата схема тъмно винаги е активна</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Разширено</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Местоположение на мишката</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>На мястото на мишката</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Променете директорията</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Промяна на директория</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Щракнете върху</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Фон на стрелка, докато мишката се задържа над нея</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Цветове „Тъмен режим“</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Цветова схема тъмна</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Цветове „Светлинен режим“</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Цветова схема ярка</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Меню на приложението</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Изчистете кеша, ако повече от този брой елементи</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Добавете примерна директория "Старт меню".</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Добавете примерна директория „Меню Старт“</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Височина на реда в проценти</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Долу вдясно</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Главното меню се появява на</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Появява се главното меню</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Местоположение на мишката (над иконата на лентата на задачите)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Припокриване</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Подменюто се появява на</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Появява се подменю</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Размер на иконите в проценти</value>

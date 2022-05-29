@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Cliceáil amháin chun eilimint a oscailt in ionad cliceáil faoi dhó</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Mód Dorcha i gcónaí gníomhach</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Scéim dathanna dorcha gníomhach i gcónaí</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Casta</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Suíomh luch</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Ag suíomh luch</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Athraigh an t-eolaire</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Eolaire a athrú</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Cliceáil</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Cúlra na saigheada agus an luch ag foluain os a chionn</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Dathanna 'Mód Dorcha'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Scéim dathanna dorcha</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Dathanna 'Mód Solais'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Scéim dathanna geal</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Roghchlár app</value>
@@ -381,7 +381,7 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Glan an taisce má tá níos mó ná an líon seo míreanna agat</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Cuir eolaire samplach 'Roghchlár Tosaigh' leis</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Bun ar dheis</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Tá an príomh-roghchlár le feiceáil ag</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Tá an príomh-roghchlár le feiceáil</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Suíomh luiche (Os cionn íocón an Tascbharra)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Forluí</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Tá fo-roghchlár le feiceáil ag</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Feictear fo-roghchlár</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Méid na ndeilbhín ina gcéad</value>

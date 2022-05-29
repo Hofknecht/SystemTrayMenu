@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ຄລິກດຽວເພື່ອເປີດອົງປະກອບໃດໜຶ່ງແທນການຄລິກສອງເທື່ອ</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>ໂໝດມືດເປີດຢູ່ສະເໝີ</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>ຮູບແບບສີມືດມີການເຄື່ອນໄຫວສະເໝີ</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>ຂັ້ນສູງ</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>ທີ່ຢູ່ຂອງຫນູ</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>ທີ່​ຕັ້ງ​ຂອງ​ຫນູ​</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>ປ່ຽນແປງໄດເລກະທໍລີ</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>ການປ່ຽນແປງໄດເລກະທໍລີ</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>ກົດ</value>
@@ -274,16 +274,16 @@
     <value>ລູກສອນໃນຂະນະທີ່ຫນູເລື່ອນຂ້າມມັນ</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>ພື້ນຫລັງຂອງລູກສອນເມື່ອຄລິກ</value>
+    <value>ພື້ນຫຼັງຂອງລູກສອນເມື່ອຄລິກ</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>ພື້ນຫຼັງຂອງລູກສອນໃນຂະນະທີ່ຫນູເລື່ອນຢູ່ເທິງມັນ</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>ສີ 'ໂໝດມືດ'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>ຮູບແບບສີເຂັ້ມ</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>ສີ 'ໂໝດແສງ'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>ໂຄງການສີສົດໃສ</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>ເມນູແອັບ</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ລ້າງແຄດຖ້າມີຫຼາຍກວ່າຈໍານວນລາຍການນີ້</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>ເພີ່ມຕົວຢ່າງ 'Start Menu' directory</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>ເພີ່ມລາຍການຕົວຢ່າງ 'ເມນູເລີ່ມຕົ້ນ'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>ຄວາມສູງແຖວເປັນເປີເຊັນ</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>ລຸ່ມຂວາ</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>ເມນູຫຼັກປາກົດຢູ່</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>ເມນູຫຼັກປະກົດຂຶ້ນ</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>ທີ່ຢູ່ຂອງເມົ້າ (ໄອຄອນແຖບໜ້າວຽກຂ້າງເທິງ)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>ທັບຊ້ອນກັນ</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>ເມນູຍ່ອຍປາກົດຢູ່</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>ເມນູຍ່ອຍປາກົດ</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>ຂະໜາດຂອງໄອຄອນເປັນເປີເຊັນ</value>

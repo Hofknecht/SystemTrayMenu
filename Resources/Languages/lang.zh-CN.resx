@@ -189,16 +189,16 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>单击以打开元素而不是双击</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>黑暗模式始终处于活动状态</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>配色方案暗始终处于活动状态</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>先进的</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>鼠标位置</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>在鼠标位置</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
+  <data name="Changing directory" xml:space="preserve">
     <value>更改目录</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>鼠标悬停在箭头上时的箭头背景</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>颜色“黑暗模式”</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>配色方案暗</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>颜色“灯光模式”</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>配色方案明亮</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>应用程序菜单</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>如果超过此数量的项目，则清除缓存</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>添加示例“开始菜单”目录</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>添加示例目录“开始菜单”</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>行高百分比</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>右下角</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>主菜单出现在</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>出现主菜单</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>鼠标位置（任务栏图标上方）</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>重叠</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>子菜单出现在</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>出现子菜单</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>图标的大小百分比</value>

@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Bir öğeyi açmak için çift tıklama yerine tek tıklama</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Karanlık Mod her zaman etkin</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Renk düzeni koyu her zaman etkin</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Gelişmiş</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>fare konumu</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Fare konumunda</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>dizini değiştir</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>dizini değiştirme</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Tıklamak</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Fare üzerinde gezinirken okun arka planı</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Renkler 'Karanlık Mod'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Renk düzeni koyu</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Renkler 'Işık Modu'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Renk şeması parlak</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Uygulama menüsü</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Bu sayıda öğeden fazlaysa önbelleği temizle</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Örnek 'Başlat Menüsü' dizini ekle</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>'Başlat Menüsü' örnek dizini ekle</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Yüzde olarak satır yüksekliği</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Sağ alt</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Ana menü şurada görünür:</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Ana menü belirir</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Fare konumu (Görev Çubuğu simgesinin üstünde)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>örtüşen</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Alt menü şurada görünür:</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Alt menü belirir</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Simgelerin yüzde olarak boyutu</value>

@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Isang pag-click upang magbukas ng isang elemento sa halip na mag-double click</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Palaging aktibo ang Dark Mode</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Madilim ang kulay na laging aktibo</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Advanced</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Lokasyon ng mouse</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Sa lokasyon ng mouse</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Baguhin ang direktoryo</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Pagbabago ng direktoryo</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>I-click</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Background ng arrow habang naka-hover ang mouse sa ibabaw nito</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Mga Kulay na 'Dark Mode'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Madilim ang scheme ng kulay</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Mga Kulay na 'Light Mode'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Maliwanag ang scheme ng kulay</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Menu ng app</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>I-clear ang cache kung higit pa sa bilang na ito ng mga item</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Magdagdag ng sample na 'Start Menu' na direktoryo</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Magdagdag ng sample na direktoryo na 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Taas ng hilera sa porsyento</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>kanang ibaba</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Ang pangunahing menu ay lilitaw sa</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Lumilitaw ang pangunahing menu</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Lokasyon ng mouse (sa itaas ng icon ng Taskbar)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Nagsasapawan</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Lumilitaw ang sub menu sa</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Lumilitaw ang sub menu</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Sukat ng mga icon sa porsyento</value>

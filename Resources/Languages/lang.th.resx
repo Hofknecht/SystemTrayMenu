@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>คลิกเพียงครั้งเดียวเพื่อเปิดองค์ประกอบแทนการดับเบิลคลิก</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>โหมดมืดทำงานตลอดเวลา</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>โทนสีเข้ม ใช้งานตลอดเวลา</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>ขั้นสูง</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>ตำแหน่งเมาส์</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>ที่ตำแหน่งเมาส์</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>เปลี่ยนไดเร็กทอรี</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>กำลังเปลี่ยนไดเรกทอรี</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>คลิก</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>พื้นหลังของลูกศรขณะวางเมาส์เหนือมัน</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>สี 'โหมดมืด'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>โทนสีเข้ม</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>สี 'โหมดแสง'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>โทนสีสดใส</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>เมนูแอพ</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ล้างแคชหากมีรายการมากกว่าจำนวนนี้</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>เพิ่มไดเรกทอรี 'เมนูเริ่ม' ตัวอย่าง</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>เพิ่มไดเรกทอรีตัวอย่าง 'เมนูเริ่ม'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>ความสูงของแถวเป็นเปอร์เซ็นต์</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>ล่างขวา</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>เมนูหลักปรากฏที่</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>เมนูหลักปรากฏขึ้น</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>ตำแหน่งเมาส์ (เหนือไอคอนแถบงาน)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>ทับซ้อนกัน</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>เมนูย่อยปรากฏที่</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>เมนูย่อยปรากฏขึ้น</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>ขนาดของไอคอนเป็นเปอร์เซ็นต์</value>

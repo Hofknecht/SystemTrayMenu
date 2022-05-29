@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Enkele klik om een ​​element te openen in plaats van dubbelklikken</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Donkere modus altijd actief</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Kleurenschema donker altijd actief</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Geavanceerd</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Muis locatie</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Op muislocatie</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Verander de map</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Directory wijzigen</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klik</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Achtergrond van pijl terwijl muis erover zweeft</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Kleuren 'Donkere modus'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Kleurenschema donker</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Kleuren 'Lichtmodus'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Kleurenschema helder</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>App-menu</value>
@@ -381,7 +381,7 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Cache wissen bij meer dan dit aantal items</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Voeg voorbeeldmap 'Start Menu' toe</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Rechts onder</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Hoofdmenu verschijnt op</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Hoofdmenu verschijnt</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Muislocatie (boven taakbalkpictogram)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Overlappend</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Submenu verschijnt bij</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Submenu verschijnt</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Grootte van de pictogrammen in procent</value>

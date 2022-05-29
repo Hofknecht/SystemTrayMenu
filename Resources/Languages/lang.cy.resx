@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Cliciwch sengl i agor elfen yn lle clic dwbl</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Modd Tywyll bob amser yn weithredol</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Cynllun lliw tywyll bob amser yn weithredol</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Uwch</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Lleoliad llygoden</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Yn lleoliad y llygoden</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Newid y cyfeiriadur</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Newid cyfeiriadur</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Cliciwch</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Cefndir y saeth tra bod y llygoden yn hofran drosto</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Lliwiau 'Modd Tywyll'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Cynllun lliw tywyll</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Lliwiau 'Modd Ysgafn'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Cynllun lliw llachar</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Dewislen ap</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Clirio'r storfa os yw'n fwy na'r nifer hwn o eitemau</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Ychwanegu cyfeiriadur 'Dewislen Dechrau' sampl</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Ychwanegu cyfeiriadur sampl 'Dewislen Cychwyn'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Uchder rhes yn y cant</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Dde gwaelod</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Mae'r brif ddewislen yn ymddangos yn</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Mae'r brif ddewislen yn ymddangos</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Lleoliad y llygoden (Uwchben eicon y Bar Tasg)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Gorgyffwrdd</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Mae is-ddewislen yn ymddangos yn</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Mae is-ddewislen yn ymddangos</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Maint yr eiconau yn y cant</value>

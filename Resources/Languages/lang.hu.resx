@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Egyetlen kattintással nyithat meg egy elemet dupla kattintás helyett</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>A sötét mód mindig aktív</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Színséma sötét mindig aktív</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Fejlett</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Az egér helye</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Az egér helyén</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Változtassa meg a könyvtárat</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Címtár módosítása</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Kattintson</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Nyíl háttere, miközben az egér lebeg felette</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Színek "Sötét mód"</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Színséma sötét</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Színek "Light Mode"</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Világos színséma</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Alkalmazás menü</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Törölje a gyorsítótárat, ha több mint ez az elemszám</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Adja hozzá a „Start menü” mintakönyvtárat</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Példakönyvtár hozzáadása "Start menü"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Sormagasság százalékban</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Jobb alsó</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>A főmenü itt jelenik meg</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Megjelenik a főmenü</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Az egér helye (a tálcán lévő ikon felett)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Átfedés</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Az almenü itt jelenik meg</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Megjelenik az almenü</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Az ikonok mérete százalékban</value>

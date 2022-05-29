@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ডাবল ক্লিকের পরিবর্তে একটি উপাদান খুলতে একক ক্লিক করুন</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>ডার্ক মোড সবসময় সক্রিয়</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>রঙের স্কিম অন্ধকার সবসময় সক্রিয়</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>উন্নত</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>মাউসের অবস্থান</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>মাউস অবস্থানে</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>ডিরেক্টরি পরিবর্তন করুন</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>ডিরেক্টরি পরিবর্তন</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>ক্লিক</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>তীরের পটভূমি যখন এটির উপর মাউস ঘোরে</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>রং 'ডার্ক মোড'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>রঙের স্কিম অন্ধকার</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>রং 'হালকা মোড'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>রঙের স্কিম উজ্জ্বল</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>অ্যাপ মেনু</value>
@@ -316,7 +316,7 @@
     <value>আইকন</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>প্রসঙ্গ মেনু দ্বারা সেট</value>
+    <value>প্রসঙ্গ মেনু দ্বারা সেট করুন</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ডিরেক্টরি হিসাবে সেট করুন</value>
@@ -379,10 +379,10 @@
     <value>ক্যাশে প্রধান মেনু</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>এই সংখ্যার বেশি আইটেম হলে ক্যাশে সাফ করুন</value>
+    <value>এই সংখ্যার বেশি আইটেম থাকলে ক্যাশে সাফ করুন</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>নমুনা 'স্টার্ট মেনু' ডিরেক্টরি যোগ করুন</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>শতাংশে সারির উচ্চতা</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>নিচের ডানে</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>প্রধান মেনু প্রদর্শিত হয়</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>প্রধান মেনু প্রদর্শিত হবে</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>মাউসের অবস্থান (টাস্কবার আইকনের উপরে)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>ওভারল্যাপিং</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>সাব মেনু প্রদর্শিত হয়</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>সাব মেনু প্রদর্শিত হবে</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>শতাংশে আইকনগুলির আকার</value>

@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Einfacher Klick zum Öffnen eines Elements statt Doppelklick</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Dunkelmodus immer aktiv</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Farbschema dunkel immer aktiv</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Fortschrittlich</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Mausposition</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>An der Mausposition</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Ändern Sie das Verzeichnis</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Verzeichnis wechseln</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klicken</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Hintergrund des Pfeils, während die Maus darüber schwebt</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Farben 'Dunkelmodus'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Farbschema dunkel</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Farben 'Lichtmodus'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Farbschema hell</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>App-Menü</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Cache löschen, wenn mehr als diese Anzahl von Elementen vorhanden ist</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Beispielverzeichnis „Startmenü“ hinzufügen</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Beispielverzeichnis 'Startmenü' hinzufügen</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Zeilenhöhe in Prozent</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Unten rechts</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Hauptmenü erscheint bei</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Hauptmenü erscheint</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Mausposition (über dem Taskleistensymbol)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Überlappend</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Untermenü erscheint bei</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Untermenü erscheint</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Größe der Icons in Prozent</value>

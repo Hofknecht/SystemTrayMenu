@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>En klik, da odprete element namesto dvojnega</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Temni način je vedno aktiven</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Barvna shema temna vedno aktivna</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Napredno</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Lokacija miške</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Na lokaciji miške</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Spremenite imenik</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Spreminjanje imenika</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Kliknite</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Ozadje puščice, medtem ko miška lebdi nad njo</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Barve "Temni način"</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Barvna shema temna</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Barve 'Light Mode'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Barvna shema svetla</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Meni aplikacije</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Počisti predpomnilnik, če je več kot to število elementov</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Dodajte vzorčni imenik »Start Menu«.</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Dodaj vzorčni imenik 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Višina vrstice v odstotkih</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Spodaj desno</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Glavni meni se prikaže na</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Prikaže se glavni meni</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Lokacija miške (nad ikono opravilne vrstice)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Prekrivanje</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Podmeni se prikaže na</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Prikaže se podmeni</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Velikost ikon v odstotkih</value>

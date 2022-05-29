@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Jediným kliknutím otevřete prvek namísto dvojitého kliknutí</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Tmavý režim je vždy aktivní</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Barevné schéma tmavé vždy aktivní</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Pokročilý</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>Umístění myši</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>V místě myši</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Změňte adresář</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Změna adresáře</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klikněte</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Pozadí šipky, když na ni najedete myší</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Barvy 'Tmavý režim'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Barevné provedení tmavé</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Barvy "Světlý režim"</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Barevné provedení světlé</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Nabídka aplikací</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Pokud je více než tento počet položek, vymažte mezipaměť</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>Přidejte ukázkový adresář 'Start Menu'</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Přidat ukázkový adresář 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Výška řádku v procentech</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Vpravo dole</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>Hlavní nabídka se zobrazí na</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Zobrazí se hlavní nabídka</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Umístění myši (nad ikonou na hlavním panelu)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>Překrývající se</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>Podnabídka se zobrazí na</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Zobrazí se podnabídka</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Velikost ikon v procentech</value>

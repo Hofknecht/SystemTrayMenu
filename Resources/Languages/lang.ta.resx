@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>இருமுறை கிளிக் செய்வதற்குப் பதிலாக ஒரு உறுப்பைத் திறக்க ஒற்றை கிளிக் செய்யவும்</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>டார்க் மோடு எப்போதும் செயலில் இருக்கும்</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>இருண்ட வண்ணத் திட்டம் எப்போதும் சுறுசுறுப்பாக இருக்கும்</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>மேம்படுத்தபட்ட</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>சுட்டி இடம்</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>சுட்டி இடத்தில்</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>கோப்பகத்தை மாற்றவும்</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>கோப்பகத்தை மாற்றுகிறது</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>கிளிக் செய்யவும்</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>சுட்டி அதன் மேல் வட்டமிடும்போது அம்புக்குறியின் பின்னணி</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>நிறங்கள் 'டார்க் மோட்'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>இருண்ட வண்ணத் திட்டம்</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>நிறங்கள் 'லைட் மோட்'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>பிரகாசமான வண்ணத் திட்டம்</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>பயன்பாட்டு மெனு</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>இந்த உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>மாதிரி 'தொடக்க மெனு' கோப்பகத்தைச் சேர்க்கவும்</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>வரிசை உயரம் சதவீதத்தில்</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>கீழ் வலது</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>முதன்மை மெனுவில் தோன்றும்</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>முதன்மை மெனு தோன்றும்</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>சுட்டி இடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>ஒன்றுடன் ஒன்று</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>துணை மெனுவில் தோன்றும்</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>துணை மெனு தோன்றும்</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>ஐகான்களின் அளவு சதவீதத்தில்</value>

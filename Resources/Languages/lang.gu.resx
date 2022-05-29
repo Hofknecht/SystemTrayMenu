@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ડબલ ક્લિકને બદલે એલિમેન્ટ ખોલવા માટે સિંગલ ક્લિક કરો</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>ડાર્ક મોડ હંમેશા સક્રિય</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>રંગ યોજના શ્યામ હંમેશા સક્રિય</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>અદ્યતન</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>માઉસ સ્થાન</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>માઉસ સ્થાન પર</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>ડિરેક્ટરી બદલો</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>ડિરેક્ટરી બદલવી</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>ક્લિક કરો</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>તીરની પૃષ્ઠભૂમિ જ્યારે માઉસ તેના પર ફરે છે</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>રંગો 'ડાર્ક મોડ'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>રંગ યોજના શ્યામ</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>રંગો 'લાઇટ મોડ'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>રંગ યોજના તેજસ્વી</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>એપ્લિકેશન મેનૂ</value>
@@ -328,7 +328,7 @@
     <value>શોર્ટકટ લિંક સાથે સમસ્યા</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કાર્ય કરશે નહીં.</value>
+    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલવામાં આવી છે અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કાર્ય કરશે નહીં.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ડિરેક્ટરી ખોલો</value>
@@ -381,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>આઇટમ્સની આ સંખ્યા કરતાં વધુ હોય તો કેશ સાફ કરો</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
-    <value>નમૂના 'સ્ટાર્ટ મેનૂ' ડિરેક્ટરી ઉમેરો</value>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>સેમ્પલ ડિરેક્ટરી 'સ્ટાર્ટ મેનૂ' ઉમેરો</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>ટકામાં પંક્તિની ઊંચાઈ</value>
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>નીચે જમણું</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>પર મુખ્ય મેનુ દેખાય છે</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>મુખ્ય મેનુ દેખાય છે</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>માઉસ સ્થાન (ટાસ્કબાર આયકન ઉપર)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>ઓવરલેપિંગ</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>સબ મેનુ પર દેખાય છે</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>સબ મેનુ દેખાય છે</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>ટકામાં ચિહ્નોનું કદ</value>

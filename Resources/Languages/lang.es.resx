@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso directo</value>
+    <value>tecla de acceso rápido</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -189,17 +189,17 @@
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Un solo clic para abrir un elemento en lugar de doble clic</value>
   </data>
-  <data name="Dark Mode always active" xml:space="preserve">
-    <value>Modo oscuro siempre activo</value>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Esquema de color oscuro siempre activo</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avanzado</value>
   </data>
-  <data name="Mouse location" xml:space="preserve">
-    <value>ubicación del ratón</value>
+  <data name="At mouse location" xml:space="preserve">
+    <value>En la ubicación del ratón</value>
   </data>
-  <data name="Change the directory" xml:space="preserve">
-    <value>Cambiar el directorio</value>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Cambio de directorio</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Hacer clic</value>
@@ -279,11 +279,11 @@
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Fondo de flecha mientras el mouse pasa sobre ella</value>
   </data>
-  <data name="Colors 'Dark Mode'" xml:space="preserve">
-    <value>Colores 'Modo oscuro'</value>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Esquema de color oscuro</value>
   </data>
-  <data name="Colors 'Light Mode'" xml:space="preserve">
-    <value>Colores 'Modo de luz'</value>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>esquema de color brillante</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>menú de la aplicación</value>
@@ -381,7 +381,7 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Borrar caché si hay más de este número de elementos</value>
   </data>
-  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Agregue el directorio de muestra 'Menú de inicio'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
@@ -399,8 +399,8 @@
   <data name="Bottom right" xml:space="preserve">
     <value>Abajo a la derecha</value>
   </data>
-  <data name="Main menu appears at" xml:space="preserve">
-    <value>El menú principal aparece en</value>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Aparece el menú principal</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>Ubicación del ratón (sobre el icono de la barra de tareas)</value>
@@ -450,8 +450,8 @@
   <data name="Overlapping" xml:space="preserve">
     <value>superposición</value>
   </data>
-  <data name="Sub menu appears at" xml:space="preserve">
-    <value>El submenú aparece en</value>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Aparece el submenú</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Tamaño de los iconos en porcentaje</value>

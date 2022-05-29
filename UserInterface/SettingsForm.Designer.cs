@@ -608,7 +608,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChangeFolder.Name = "buttonChangeFolder";
             this.buttonChangeFolder.Size = new System.Drawing.Size(94, 25);
             this.buttonChangeFolder.TabIndex = 0;
-            this.buttonChangeFolder.Text = "Change the directory";
+            this.buttonChangeFolder.Text = "Changing directory";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
             this.buttonChangeFolder.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
