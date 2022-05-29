@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Rreth</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Rreth SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Ne rregull</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Fillim Automatik</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Dilni</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Dilni nga aplikacioni</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Dosja</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Drejtoria</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Dosja bosh</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Drejtoria bosh</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Detajet</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Informacioni i Sistemit</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Dosja është e paarritshme</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Drejtoria e paarritshme</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Gjuhe</value>
@@ -154,10 +154,10 @@
     <value>Rifillo, fillo përsëri</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Nuk mund të regjistrohej çelësi kryesor.</value>
+    <value>Nuk mund të regjistrohej çelësi i nxehtësisë.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Anulo</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Aborti</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Gjeneral</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hotkey</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Nisni në fillim</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Filloni me Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Cilësimet</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Ndihmë / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Pyetjet e bëra më shpesh</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Lexoni FAQ dhe më pas zgjidhni një direktori rrënjësore për SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Zgjidhni Dosjen</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Zgjidhni direktorinë</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Dosja juaj rrënjësore për SystemTrayMenu nuk ekziston ose është bosh! Vendosni disa skedarë, dosje ose shkurtore në dosje ose ndryshoni dosjen rrënjë.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Drejtoria juaj kryesore për aplikacionin nuk ekziston ose është bosh! Ndryshoni direktorinë rrënjë ose vendosni disa skedarë, drejtori ose shkurtore në direktorinë rrënjë.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Ju nuk keni akses në dosjen rrënjë për SystemTrayMenu. Jepni akses në dosje ose ndryshoni dosjen rrënjë.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nuk keni akses në direktorinë rrënjë të aplikacionit. Jepni akses në drejtori ose ndryshoni direktorinë rrënjë.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Një klikim i vetëm për të hapur një artikull në vend të klikimit të dyfishtë</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Një klikim i vetëm për të hapur një element në vend të klikimit të dyfishtë</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Modaliteti i errët është gjithmonë aktiv</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Vendndodhja e miut</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Ndrysho dosjen</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Ndrysho drejtorinë</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klikoni</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Sfondi</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Dosja e hapur</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Drejtoria e hapur</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Kufiri i dosjes së hapur</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Kufiri i drejtorisë së hapur</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Fusha e kërkimit</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Artikulli i zgjedhur</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Elementi i zgjedhur</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Kufiri i artikullit të zgjedhur</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Kufiri i elementit të zgjedhur</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Ndrysho në dosjen relative</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Konvertoni në drejtorinë përkatëse</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Ruani konfigurimin në vendin e montimit</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Ruani konfigurimin në dosjen e aplikacionit</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Hapni vendin e montimit</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Hap direktorinë e aplikacionit</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Lartësia maksimale e pikselëve të menusë</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Shigjeta kur klikoni</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Shigjeta ndërsa miu rri pezull</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Shigjeta ndërsa miu rri pezull mbi të</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Sfondi i shigjetës kur klikoni</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Sfondi i shigjetës ndërsa miu rri pezull</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Sfondi i shigjetës ndërsa miu rri pezull mbi të</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Modaliteti i errët i ngjyrave</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Ngjyrat "Modaliteti i errët"</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Modaliteti i dritës së ngjyrave</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Ngjyrat "Modaliteti i dritës"</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Menyja e aplikacionit</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Shiriti i lëvizjes</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Rrëshqitës gjatë zvarritjes</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Rrëshqiteni ndërsa miu qëndron pezull 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Rrëshqiteni ndërsa miu rri pezull mbi të 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Rrëshqisni ndërsa miu qëndron pezull 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Rrëshqiteni ndërsa miu rri pezull mbi të 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Përdorni ikonën nga dosja</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Përdorni ikonën nga drejtoria</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Madhësia</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Vendoset sipas menysë së kontekstit</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Cakto si dosje SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Cakto si drejtori</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>ngarkim</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem me Shortcut</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problem me lidhjen e shkurtoreve</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Artikulli të cilit i referohet kjo shkurtore është ndryshuar ose zhvendosur, kështu që kjo shkurtore nuk do të funksionojë më siç duhet.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Hap dosjen</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Hap drejtorinë</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Menaxher detyrë"</value>
+    <value>Menaxher detyrë</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Çaktivizohet</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Shfaq në Taskbar</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Shto dosje</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Shto direktori</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Shtoni përmbajtjen e dosjeve në menunë kryesore</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Shtoni përmbajtjen e drejtorisë në direktorinë rrënjë</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Shtigjet e dosjeve</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Shtigjet e drejtorisë</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Dosjet</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Drejtoritë</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rekursive</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Hiq dosjen</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Hiq drejtorinë</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Vetëm Skedarët</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Pastro cache-në nëse ka më shumë se ky numër artikujsh</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Shto dosjen e mostrës 'Start Menu'</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Shto mostrën e drejtorisë 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Lartësia e rreshtit në përqindje</value>
@@ -412,25 +409,25 @@
     <value>Me porosi (zvarriteni në vendin e duhur)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>artikull</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>artikujt</value>
+    <value>elementet</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Gjeneroni shkurtore për disqet</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Gjeneroni shkurtore të diskut gjatë nisjes</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Shfaq gjithmonë skedarë, dosje ose disqe të fshehura</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Shfaq gjithmonë skedarë, drejtori ose disqe të fshehura</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Skedarët dhe dosjet e fshehura</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Skedarët dhe drejtoritë e fshehura</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Asnjëherë mos shfaq skedarë, dosje ose disqe të fshehura</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Asnjëherë mos shfaq skedarë, drejtori ose disqe të fshehura</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Madhësia dhe vendndodhja</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Dërgo çelësin e nxehtë në një shembull tjetër</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Sipas datës</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Rendit sipas datës</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Me emër</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Rendit sipas emrit</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Renditja</value>

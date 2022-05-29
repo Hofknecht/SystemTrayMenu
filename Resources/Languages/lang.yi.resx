@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>וועגן</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>וועגן SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>אקעי</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>אַוטאָסטאַרט</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>אַרויסגאַנג</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>אַרויסגאַנג אַפּ</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>טעקע</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Directory</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>טעקע ליידיק</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Directory ליידיק</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>דעטאַילס</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>סיסטעם אינפֿאָרמאַציע</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>טעקע ינאַקסעסאַבאַל</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Directory ינאַקסעסאַבאַל</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>שפּראַך</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>קען נישט רעגיסטרירן די הייס שליסל.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>באָטל מאַכן</value>
+  <data name="Abort" xml:space="preserve">
+    <value>אַבאָרט</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>אַלגעמיינע</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>האָטקיי</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>קאַטער אויף סטאַרטאַפּ</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>אָנהייבן מיט Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>סעטטינגס</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>הילף / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>אָפט געשטעלטע פֿראגן</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>לייענען די FAQ און דעמאָלט קלייַבן אַ וואָרצל וועגווייַזער פֿאַר די SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>אויסקלייַבן טעקע</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>אויסקלייַבן וועגווייַזער</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>דיין וואָרצל טעקע פֿאַר די SystemTrayMenu איז נישט עקסיסטירט אָדער איז ליידיק! שטעלן עטלעכע טעקעס, פאָלדערס אָדער שאָרטקאַץ אין דער טעקע אָדער טוישן די וואָרצל טעקע.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>דיין וואָרצל וועגווייַזער פֿאַר די אַפּ טוט נישט עקסיסטירן אָדער איז ליידיק! טוישן די וואָרצל וועגווייַזער אָדער שטעלן עטלעכע טעקעס, דיירעקטעריז אָדער דורכוועג אין דער וואָרצל וועגווייַזער.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>איר האָבן קיין אַקסעס צו דער וואָרצל טעקע פֿאַר די SystemTrayMenu. געבן אַקסעס צו דער טעקע אָדער טוישן די וואָרצל טעקע.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>איר האָט קיין אַקסעס צו דער וואָרצל וועגווייַזער פון די אַפּ. געבן אַקסעס צו דער וועגווייַזער אָדער טוישן די וואָרצל וועגווייַזער.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>איין גיט צו עפענען אַ נומער אַנשטאָט פון טאָפּל גיט</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>איין גיט צו עפענען אַן עלעמענט אַנשטאָט פון טאָפּל גיט</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>דאַרק מאָדע שטענדיק אַקטיוו</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>מויז אָרט</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>טוישן טעקע</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>טוישן די וועגווייַזער</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>דריקט</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>הינטערגרונט</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>געעפנט טעקע</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>געעפנט וועגווייַזער</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>גרענעץ פון געעפנט טעקע</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>גרענעץ פון געעפנט וועגווייַזער</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>זוכן פעלד</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>אויסגעקליבן נומער</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>אויסגעקליבן עלעמענט</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>גרענעץ פון אויסגעקליבן נומער</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>גרענעץ פון אויסגעקליבן עלעמענט</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>טוישן צו קאָרעוו טעקע</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>גער צו קאָרעוו וועגווייַזער</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>סטאָר קאָנפיג אין די פֿאַרזאַמלונג אָרט</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>היט קאַנפיגיעריישאַן צו די אַפּלאַקיישאַן טעקע</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>יו עס בי</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>עפענען די פֿאַרזאַמלונג אָרט</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>עפענען אַפּלאַקיישאַן וועגווייַזער</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>פּיקסעלס מאַקסימום מעניו הייך</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>פייַל ווען קליקינג</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>פייַל בשעת מויז כאַווערז</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>פייַל בשעת מויז כאַווערז איבער אים</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>הינטערגרונט פון פייַל ווען קליקינג</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>הינטערגרונט פון פייַל בשעת מויז כאַווערז</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>הינטערגרונט פון פייַל בשעת מויז כאַווערז איבער אים</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>קאָלאָורס דאַרק מאָדע</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>קאָלאָרס 'דאַרק מאָדע'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>קאָליר ליכט מאָדע</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>פֿאַרבן 'ליכט מאָדע'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>מעניו</value>
+  <data name="App menu" xml:space="preserve">
+    <value>אַפּ מעניו</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>סקראָלבאַר</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>סליידער בשעת דראַגינג</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>סליידער בשעת די מויז כאַווז 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>סליידער בשעת די מויז כאַווז איבער אים 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>סליידער בשעת די מויז כאַווז 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>סליידער בשעת די מויז כאַווז איבער עס 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>ניצן ייקאַן פון טעקע</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>ניצן ייקאַן פון וועגווייַזער</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>גרייס</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>שטעלן דורך קאָנטעקסט מעניו</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>שטעלן ווי SystemTrayMenu טעקע</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>שטעלן ווי וועגווייַזער</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>loading</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>פּראָבלעם מיט דורכוועג</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>פּראָבלעם מיט דורכוועג לינק</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>דער נומער וואָס דער דורכוועג רעפערס צו איז טשיינדזשד אָדער אריבערגעפארן, אַזוי דער דורכוועג וועט נישט אַרבעטן רעכט.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>עפֿן טעקע</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>עפענען וועגווייַזער</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"טאַסק מאַנאַגער"</value>
+    <value>טאַסק מאַנאַגער</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>דיאַקטיווייטיד</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ווייַזן אין טאַסקבאַר</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>לייג טעקע</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>לייג וועגווייַזער</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>לייג אינהאַלט פון פאָלדערס צו די הויפּט מעניו</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>לייג אינהאַלט פון וועגווייַזער צו וואָרצל וועגווייַזער</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>טעקע פּאַטס</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Directory פּאַטס</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>פאָלדערס</value>
+  <data name="Directories" xml:space="preserve">
+    <value>דירעקטעריז</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>רעקורסיווע</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>אַראָפּנעמען טעקע</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>אַראָפּנעמען וועגווייַזער</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>בלויז פילעס</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ויסמעקן קאַש אויב מער ווי די נומער פון זאכן</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>לייג אַ מוסטער 'אָנהייב מעניו' ​​טעקע</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>לייג אַ מוסטער 'אָנהייב מעניו' ​​וועגווייַזער</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>רודערן הייך אין פּראָצענט</value>
@@ -412,25 +409,25 @@
     <value>מנהג (שלעפּן עס צו די צונעמען אָרט)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>נומער</value>
+    <value>עלעמענט</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>זאכן</value>
+    <value>עלעמענטן</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>דזשענערייט דורכוועג צו דרייווז</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>דזשענערייט פאָר שאָרטקאַץ אויף סטאַרטאַפּ</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>קאַש</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>שטענדיק ווייַזן פאַרבאָרגן טעקעס, פאָלדערס אָדער דרייווז</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>שטענדיק ווייַזן פאַרבאָרגן טעקעס, דירעקטעריז אָדער דרייווז</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>פאַרבאָרגן טעקעס און פאָלדערס</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>פאַרבאָרגן טעקעס און דירעקטעריז</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>קיינמאָל ווייַזן פאַרבאָרגן טעקעס, פאָלדערס אָדער דרייווז</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>קיינמאָל ווייַזן פאַרבאָרגן טעקעס, דירעקטעריז אָדער דרייווז</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>גרייס און אָרט</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>שיקן האָטקיי צו אנדערע בייַשפּיל</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>לויט דאַטע</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>סאָרט דורך דאַטע</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>דורך נאָמען</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>סאָרט דורך נאָמען</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>סאָרטינג</value>

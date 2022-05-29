@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Sobre</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Sobre SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Começo automático</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Saída</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Sair do aplicativo</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Pasta</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Diretório</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Pasta vazia</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Diretório vazio</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Detalhes</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Informação do sistema</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Pasta inacessível</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Diretório inacessível</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Linguagem</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Não foi possível registrar a tecla de atalho.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Abortar</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Em geral</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Tecla de atalho</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Iniciar na inicialização</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Comece com o Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Definições</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Ajuda / Perguntas frequentes</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>perguntas frequentes</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Leia as perguntas frequentes e escolha um diretório raiz para o SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Selecione a pasta</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Selecionar diretório</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Sua pasta raiz do SystemTrayMenu não existe ou está vazia! Coloque alguns arquivos, pastas ou atalhos na pasta ou altere a pasta raiz.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Seu diretório raiz do aplicativo não existe ou está vazio! Altere o diretório raiz ou coloque alguns arquivos, diretórios ou atalhos no diretório raiz.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Você não tem acesso à pasta raiz do SystemTrayMenu. Conceda acesso à pasta ou altere a pasta raiz.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Você não tem acesso ao diretório raiz do aplicativo. Conceda acesso ao diretório ou altere o diretório raiz.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Clique uma vez para abrir um item em vez de clicar duas vezes</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Clique uma vez para abrir um elemento em vez de clicar duas vezes</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Modo escuro sempre ativo</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Localização do mouse</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Mudar pasta</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Alterar o diretório</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Clique</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Fundo</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Pasta aberta</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Diretório aberto</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Borda da pasta aberta</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Borda do diretório aberto</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Campo de pesquisa</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Item selecionado</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Elemento selecionado</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Borda do item selecionado</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Borda do elemento selecionado</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Mudar para a pasta relativa</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Converter para diretório relativo</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Armazenar a configuração no local de montagem</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Salvar configuração na pasta do aplicativo</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Abra o local de montagem</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Abra o diretório do aplicativo</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Altura máxima do menu de pixels</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Seta ao clicar</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Seta enquanto o mouse passa</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Seta enquanto o mouse passa sobre ela</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Fundo da seta ao clicar</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Plano de fundo da seta enquanto o mouse passa</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Plano de fundo da seta enquanto o mouse passa sobre ela</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Cores Modo Escuro</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Cores 'Modo Escuro'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Modo de luz de cores</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Cores 'Modo de luz'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Cardápio</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu do aplicativo</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Barra de rolagem</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Controle deslizante ao arrastar</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Controle deslizante enquanto o mouse passa 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Controle deslizante enquanto o mouse passa sobre ele 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Controle deslizante enquanto o mouse passa 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Controle deslizante enquanto o mouse passa sobre ele 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Use o ícone da pasta</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Use o ícone do diretório</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Tamanho</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Definido pelo menu de contexto</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Definir como pasta SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Definir como diretório</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>carregando</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problema com o atalho</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problema com link de atalho</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>O item ao qual este atalho se refere foi alterado ou movido, portanto, este atalho não funcionará mais corretamente.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Pasta aberta</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Diretório aberto</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Gerenciador de tarefas"</value>
+    <value>Gerenciador de tarefas</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Desativado</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostrar na barra de tarefas</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Adicionar pasta</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Adicionar diretório</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Adicionar conteúdo de pastas ao menu principal</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Adicionar conteúdo do diretório ao diretório raiz</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Caminhos de pasta</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Caminhos de diretório</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Pastas</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Diretórios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Recursivo</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Remover pasta</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Remover diretório</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Somente arquivos</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Limpe o cache se mais do que esse número de itens</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Adicionar amostra de pasta 'Menu Iniciar'</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Adicionar amostra de diretório 'Menu Iniciar'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Altura da linha em porcentagem</value>
@@ -412,25 +409,25 @@
     <value>Personalizado (arraste-o para o local apropriado)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>item</value>
+    <value>elemento</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>Itens</value>
+    <value>elementos</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Gerar atalhos para unidades</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Gerar atalhos de unidade na inicialização</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Sempre mostrar arquivos, pastas ou unidades ocultas</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Sempre mostrar arquivos, diretórios ou unidades ocultas</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Arquivos e pastas ocultos</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Arquivos e diretórios ocultos</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Nunca mostre arquivos, pastas ou unidades ocultas</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Nunca mostre arquivos, diretórios ou unidades ocultas</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Tamanho e localização</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Enviar tecla de atalho para outra instância</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Por data</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Classificar por data</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Por nome</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Classificar por nome</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Ordenação</value>

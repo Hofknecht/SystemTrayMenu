@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Tentang</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Mengenai SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>okey</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Autostart</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Keluar</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Keluar dari apl</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>folder</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Direktori</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Folder kosong</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Direktori kosong</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Butiran</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Maklumat Sistem</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folder tidak boleh diakses</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Direktori tidak boleh diakses</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Bahasa</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Tidak dapat mendaftarkan kunci panas.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Batal</value>
+  <data name="Abort" xml:space="preserve">
+    <value>batalkan</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Umum</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hotkey</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Pelancaran pada permulaan</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Mulakan dengan Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>tetapan</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Bantuan / Soalan Lazim</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Soalan Lazim</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Baca Soalan Lazim dan kemudian pilih direktori akar untuk SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Pilih Folder</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Pilih direktori</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Folder akar anda untuk SystemTrayMenu tidak wujud atau kosong! Letakkan beberapa fail, folder atau pintasan ke dalam folder atau tukar folder akar.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Direktori akar anda untuk apl tidak wujud atau kosong! Tukar direktori akar atau letakkan beberapa fail, direktori atau pintasan ke dalam direktori akar.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Anda tidak mempunyai akses kepada folder akar untuk SystemTrayMenu. Berikan akses kepada folder atau tukar folder akar.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Anda tidak mempunyai akses kepada direktori akar apl. Berikan akses kepada direktori atau tukar direktori akar.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Klik sekali untuk membuka item dan bukannya klik dua kali</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Klik sekali untuk membuka elemen dan bukannya klik dua kali</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Mod Gelap sentiasa aktif</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Lokasi tetikus</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Tukar folder</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Tukar direktori</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>klik</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Latar belakang</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Folder dibuka</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Direktori dibuka</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Sempadan folder yang dibuka</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Sempadan direktori yang dibuka</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Medan carian</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Item terpilih</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Elemen yang dipilih</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Sempadan item yang dipilih</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Sempadan elemen yang dipilih</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Tukar kepada folder relatif</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Tukar kepada direktori relatif</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Simpan konfigurasi di lokasi pemasangan</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Simpan konfigurasi ke folder aplikasi</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Buka lokasi perhimpunan</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Buka direktori aplikasi</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Ketinggian menu maksimum piksel</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Anak panah apabila mengklik</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Anak panah semasa tetikus melayang</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Anak panah semasa tetikus melayang di atasnya</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Latar belakang anak panah apabila mengklik</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Latar belakang anak panah semasa tetikus melayang</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Latar belakang anak panah semasa tetikus melayang di atasnya</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Warna Mod Gelap</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Warna 'Mod Gelap'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Mod Cahaya Warna</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Warna 'Mod Cahaya'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu apl</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Bar skrol</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Peluncur sambil menyeret</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Peluncur semasa tetikus melayang 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Peluncur sambil tetikus melayang di atasnya 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Peluncur semasa tetikus melayang 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Peluncur sambil tetikus melayang di atasnya 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Gunakan ikon dari folder</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Gunakan ikon daripada direktori</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Saiz</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Tetapkan mengikut menu konteks</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Tetapkan sebagai folder SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Tetapkan sebagai direktori</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>memuatkan</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Masalah dengan Pintasan</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Masalah dengan pautan pintasan</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Item yang dirujuk oleh pintasan ini telah ditukar atau dialihkan, jadi pintasan ini tidak akan berfungsi dengan betul lagi.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Buka fail</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Buka direktori</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Pengurus Tugas"</value>
+    <value>Pengurus Tugas</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>dinyahaktifkan</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Tunjukkan dalam Bar Tugas</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Tambah folder</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Tambah direktori</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Tambah kandungan folder ke menu utama</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Tambah kandungan direktori ke direktori akar</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Laluan folder</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Laluan direktori</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Folder</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Direktori</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>rekursif</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Alih keluar folder</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Alih keluar direktori</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Hanya Fail</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Kosongkan cache jika lebih daripada bilangan item ini</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Tambahkan contoh folder 'Menu Mula'</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Tambah sampel direktori 'Menu Mula'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Ketinggian baris dalam peratus</value>
@@ -412,25 +409,25 @@
     <value>Tersuai (seret ke tempat yang sesuai)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>item</value>
+    <value>unsur</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>barang</value>
+    <value>elemen</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Hasilkan pintasan ke pemacu</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Hasilkan pintasan pemacu semasa permulaan</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Sentiasa Tunjukkan fail, folder atau pemacu tersembunyi</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Sentiasa Tunjukkan fail tersembunyi, direktori atau pemacu</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Fail dan folder tersembunyi</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Fail dan direktori tersembunyi</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Jangan sekali-kali tunjukkan fail, folder atau pemacu tersembunyi</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Jangan sekali-kali tunjukkan fail, direktori atau pemacu tersembunyi</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Saiz dan lokasi</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Hantar hotkey ke contoh lain</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Mengikut tarikh</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Isih mengikut tarikh</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Dengan nama</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Isih mengikut nama</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Menyusun</value>

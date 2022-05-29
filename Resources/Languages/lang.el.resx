@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Σχετικά με</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Σχετικά με το SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Εντάξει</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Αυτόματη εκκίνηση</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Εξοδος</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Έξοδος από την εφαρμογή</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Ντοσιέ</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Ευρετήριο</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Ο φάκελος είναι κενός</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Ο κατάλογος είναι κενός</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Λεπτομέριες</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Πληροφορίες συστήματος</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Ο φάκελος δεν είναι προσβάσιμος</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Ο κατάλογος δεν είναι προσβάσιμος</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Γλώσσα</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Δεν ήταν δυνατή η εγγραφή του πλήκτρου συντόμευσης.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Ματαίωση</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Κάνω αποβολή</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Γενικός</value>
@@ -165,31 +165,28 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Πλήκτρο συντόμευσης</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Εκκίνηση κατά την εκκίνηση</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Ξεκινήστε με τα Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Ρυθμίσεις</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Βοήθεια / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Συχνές Ερωτήσεις</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Διαβάστε τις Συχνές ερωτήσεις και, στη συνέχεια, επιλέξτε έναν ριζικό κατάλογο για το SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Επιλέξτε φάκελο</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Επιλέξτε κατάλογο</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Ο ριζικός φάκελος για το SystemTrayMenu δεν υπάρχει ή είναι κενός! Τοποθετήστε ορισμένα αρχεία, φακέλους ή συντομεύσεις στο φάκελο ή αλλάξτε τον ριζικό φάκελο.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Ο ριζικός σας κατάλογος για την εφαρμογή δεν υπάρχει ή είναι κενός! Αλλάξτε τον ριζικό κατάλογο ή τοποθετήστε ορισμένα αρχεία, καταλόγους ή συντομεύσεις στον ριζικό κατάλογο.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Δεν έχετε πρόσβαση στον ριζικό φάκελο για το SystemTrayMenu. Παραχωρήστε πρόσβαση στο φάκελο ή αλλάξτε τον ριζικό φάκελο.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Δεν έχετε πρόσβαση στον ριζικό κατάλογο της εφαρμογής. Παραχωρήστε πρόσβαση στον κατάλογο ή αλλάξτε τον ριζικό κατάλογο.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Ένα μόνο κλικ για να ανοίξετε ένα στοιχείο αντί για διπλό κλικ</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Τοποθεσία ποντικιού</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Αλλαγή φακέλου</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Αλλάξτε τον κατάλογο</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Κάντε κλικ</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Ιστορικό</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Ανοιγμένος φάκελος</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Άνοιξε τον κατάλογο</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Περίγραμμα ανοιχτού φακέλου</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Περίγραμμα ανοιχτού καταλόγου</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Πεδίο αναζήτησης</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>Επιλεγμένο στοιχείο</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
+  <data name="Border of selected element" xml:space="preserve">
     <value>Περίγραμμα επιλεγμένου στοιχείου</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Αλλαγή σε σχετικό φάκελο</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Μετατροπή σε σχετικό κατάλογο</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Αποθηκεύστε τις ρυθμίσεις στη θέση συναρμολόγησης</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Αποθηκεύστε τη διαμόρφωση στο φάκελο της εφαρμογής</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Ανοίξτε τη θέση συναρμολόγησης</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Ανοίξτε τον κατάλογο εφαρμογών</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Μέγιστο ύψος μενού εικονοστοιχείων</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Βέλος όταν κάνετε κλικ</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Βέλος ενώ το ποντίκι αιωρείται</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Βέλος ενώ το ποντίκι αιωρείται πάνω του</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Φόντο βέλους όταν κάνετε κλικ</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Φόντο βέλους ενώ το ποντίκι αιωρείται</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Φόντο του βέλους ενώ το ποντίκι αιωρείται πάνω του</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Χρώματα Dark Mode</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Χρώματα «Σκούρα λειτουργία»</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Λειτουργία φωτός χρωμάτων</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Χρώματα «Λειτουργία φωτός»</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Μενού</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Μενού εφαρμογών</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Γραμμή κύλισης</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Ρυθμίστε κατά τη μεταφορά</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Ρυθμίστε ενώ το ποντίκι αιωρείται 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Σύρετε ενώ το ποντίκι αιωρείται πάνω του 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Ρυθμίστε ενώ το ποντίκι αιωρείται 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Σύρετε ενώ το ποντίκι αιωρείται πάνω του 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Χρησιμοποιήστε το εικονίδιο από το φάκελο</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Χρησιμοποιήστε το εικονίδιο από τον κατάλογο</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Μέγεθος</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Ορισμός βάσει μενού περιβάλλοντος</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Ορισμός ως φάκελος SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Ορισμός ως κατάλογος</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>φόρτωση</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Πρόβλημα με τη συντόμευση</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Πρόβλημα με τον σύνδεσμο συντόμευσης</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Το στοιχείο στο οποίο αναφέρεται αυτή η συντόμευση έχει αλλάξει ή μετακινηθεί, επομένως αυτή η συντόμευση δεν θα λειτουργεί πλέον σωστά.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Ανοιχτός φάκελος</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Άνοιγμα καταλόγου</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Διαχειριστής εργασιών"</value>
+    <value>Διαχειριστής εργασιών</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Απενεργοποιήθηκε</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Εμφάνιση στη γραμμή εργασιών</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Προσθήκη φακέλου</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Προσθήκη καταλόγου</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Προσθήκη περιεχομένου φακέλων στο κύριο μενού</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Προσθέστε περιεχόμενο του καταλόγου στον ριζικό κατάλογο</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Διαδρομές φακέλων</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Διαδρομές καταλόγου</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Φάκελοι</value>
+  <data name="Directories" xml:space="preserve">
+    <value>καταλόγους</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Αναδρομικό</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Κατάργηση φακέλου</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Κατάργηση καταλόγου</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Μόνο Αρχεία</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Εκκαθάριση της προσωρινής μνήμης εάν υπάρχουν περισσότερα από αυτόν τον αριθμό στοιχείων</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Προσθήκη δείγματος φακέλου «Μενού Έναρξης».</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Προσθέστε δείγμα καταλόγου "Μενού Έναρξης".</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Ύψος σειράς σε ποσοστό</value>
@@ -412,25 +409,25 @@
     <value>Προσαρμοσμένο (σύρετέ το στο κατάλληλο μέρος)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>είδος</value>
+    <value>στοιχείο</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>είδη</value>
+    <value>στοιχεία</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Δημιουργήστε συντομεύσεις σε μονάδες δίσκου</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Δημιουργήστε συντομεύσεις μονάδας δίσκου κατά την εκκίνηση</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Κρύπτη</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Εμφάνιση πάντα κρυφών αρχείων, φακέλων ή μονάδων δίσκου</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Εμφάνιση πάντα κρυφών αρχείων, καταλόγων ή μονάδων δίσκου</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Κρυφά αρχεία και φακέλους</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Κρυφά αρχεία και κατάλογοι</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Μην εμφανίζετε ποτέ κρυφά αρχεία, φακέλους ή μονάδες δίσκου</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Μην εμφανίζετε ποτέ κρυφά αρχεία, καταλόγους ή μονάδες δίσκου</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Μέγεθος και τοποθεσία</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Στείλτε το πλήκτρο πρόσβασης σε άλλη παρουσία</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Κατά ημερομηνία</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Ταξινόμηση κατά ημερομηνία</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Από όνομα</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Ταξινόμηση κατά όνομα</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Ταξινόμηση</value>

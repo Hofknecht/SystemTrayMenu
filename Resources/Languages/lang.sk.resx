@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>O</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>O SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Automatický štart</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>VÝCHOD</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Ukončite aplikáciu</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Priečinok</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Adresár</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Priečinok je prázdny</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Adresár je prázdny</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Podrobnosti</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Informácie o systéme</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Priečinok je neprístupný</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Adresár je nedostupný</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Jazyk</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Nepodarilo sa zaregistrovať klávesovú skratku.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Zrušiť</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Prerušiť</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>generál</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Klávesová skratka</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Spustite pri štarte</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Začnite so systémom Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>nastavenie</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Pomocník / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>často kladené otázky</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Prečítajte si FAQ a potom vyberte koreňový adresár pre SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Vyberte položku Priečinok</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Vyberte adresár</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Váš koreňový priečinok pre SystemTrayMenu neexistuje alebo je prázdny! Vložte niektoré súbory, priečinky alebo odkazy do priečinka alebo zmeňte koreňový priečinok.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Váš koreňový adresár pre aplikáciu neexistuje alebo je prázdny! Zmeňte koreňový adresár alebo vložte niektoré súbory, adresáre alebo skratky do koreňového adresára.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Nemáte prístup ku koreňovému priečinku SystemTrayMenu. Udeľte prístup k priečinku alebo zmeňte koreňový priečinok.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nemáte prístup do koreňového adresára aplikácie. Udeľte prístup k adresáru alebo zmeňte koreňový adresár.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Jediným kliknutím otvoríte položku namiesto dvojitého kliknutia</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Jediným kliknutím otvoríte prvok namiesto dvojitého kliknutia</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Tmavý režim je vždy aktívny</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Umiestnenie myši</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Zmeniť priečinok</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Zmeňte adresár</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Kliknite</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Pozadie</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Otvorený priečinok</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Otvorený adresár</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Orámovanie otvoreného priečinka</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Hranica otvoreného adresára</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Vyhľadávacie pole</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Vybraná položka</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Vybraný prvok</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Orámovanie vybranej položky</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Orámovanie vybraného prvku</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Zmeňte na relatívny priečinok</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Previesť do relatívneho adresára</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Uložte konfiguráciu na mieste montáže</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Uložte konfiguráciu do priečinka aplikácie</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Otvorte miesto montáže</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Otvorte adresár aplikácie</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Maximálna výška ponuky v pixeloch</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Šípka pri kliknutí</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Šípka počas pohybu myši</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Šípka, zatiaľ čo myš nad ním prejde</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Pozadie šípky pri kliknutí</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Pozadie šípky, keď sa myš pohybuje</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Pozadie šípky, zatiaľ čo na ňu prejdete myšou</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Tmavý režim farieb</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Farby „Tmavý režim“</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Svetelný režim farieb</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Farby „Svetlý režim“</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Ponuka</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Ponuka aplikácií</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Posuvník</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Počas ťahania posúvajte</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Posúvajte sa počas pohybu myši 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Posuňte posúvač, kým nad ním umiestnite kurzor myši 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Posúvajte sa počas pohybu myši 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Posuňte posúvač, kým nad ním umiestnite kurzor myši 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Použite ikonu z priečinka</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Použite ikonu z adresára</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Veľkosť</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Nastavuje sa pomocou kontextového menu</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Nastaviť ako priečinok SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Nastaviť ako adresár</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>načítava</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problém so skratkou</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problém s odkazom na skratku</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Položka, na ktorú odkazuje táto skratka, bola zmenená alebo presunutá, takže táto skratka už nebude správne fungovať.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Otvorte zložku</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Otvorte adresár</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Správca úloh"</value>
+    <value>Správca úloh</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Deaktivované</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Zobraziť na paneli úloh</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Pridať priečinok</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Pridať adresár</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Pridajte obsah priečinkov do hlavnej ponuky</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Pridajte obsah adresára do koreňového adresára</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Cesty priečinkov</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Adresárové cesty</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Priečinky</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Adresáre</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rekurzívne</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Odstrániť priečinok</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Odstrániť adresár</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Iba súbory</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Ak je viac ako tento počet položiek, vymažte vyrovnávaciu pamäť</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Pridajte vzorový priečinok „Ponuka Štart“.</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Pridajte vzorový adresár „Ponuka Štart“.</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Výška riadku v percentách</value>
@@ -412,25 +409,25 @@
     <value>Vlastné (pretiahnite ho na príslušné miesto)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>položka</value>
+    <value>prvok</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>položky</value>
+    <value>prvkov</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Vytvorte skratky k jednotkám</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Generovať skratky disku pri spustení</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Vždy zobrazovať skryté súbory, priečinky alebo jednotky</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Vždy zobrazovať skryté súbory, adresáre alebo jednotky</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Skryté súbory a priečinky</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Skryté súbory a adresáre</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Nikdy nezobrazujte skryté súbory, priečinky alebo jednotky</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Nikdy nezobrazujte skryté súbory, adresáre alebo jednotky</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Veľkosť a umiestnenie</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Odoslať klávesovú skratku do inej inštancie</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Podľa dátumu</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Zoradiť podľa dátumu</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Podľa názvu</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Zoradiť podľa názvu</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Triedenie</value>

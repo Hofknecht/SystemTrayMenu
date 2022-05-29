@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Về</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Giới thiệu về SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>ĐƯỢC RỒI</value>
@@ -126,13 +126,13 @@
   <data name="Autostart" xml:space="preserve">
     <value>Tự động bắt đầu</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Lối ra</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Thoát ứng dụng</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Thư mục</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Danh mục</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
+  <data name="Directory empty" xml:space="preserve">
     <value>Thư mục trống</value>
   </data>
   <data name="Details" xml:space="preserve">
@@ -141,7 +141,7 @@
   <data name="System Info" xml:space="preserve">
     <value>Thông tin hệ thống</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
+  <data name="Directory inaccessible" xml:space="preserve">
     <value>Thư mục không thể truy cập được</value>
   </data>
   <data name="Language" xml:space="preserve">
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Không thể đăng ký phím nóng.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Hủy bỏ</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Huỷ bỏ</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Chung</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Phím nóng</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Khởi chạy khi khởi động</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Bắt đầu với Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Cài đặt</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Trợ giúp / Câu hỏi thường gặp</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Các câu hỏi thường gặp</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Đọc Câu hỏi thường gặp và sau đó chọn một thư mục gốc cho SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
+  <data name="Select directory" xml:space="preserve">
     <value>Chọn thư mục</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Thư mục gốc của bạn cho SystemTrayMenu không tồn tại hoặc trống! Đặt một số tệp, thư mục hoặc phím tắt vào thư mục hoặc thay đổi thư mục gốc.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Thư mục gốc của bạn cho ứng dụng không tồn tại hoặc trống! Thay đổi thư mục gốc hoặc đặt một số tệp, thư mục hoặc phím tắt vào thư mục gốc.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Bạn không có quyền truy cập vào thư mục gốc cho SystemTrayMenu. Cấp quyền truy cập vào thư mục hoặc thay đổi thư mục gốc.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Bạn không có quyền truy cập vào thư mục gốc của ứng dụng. Cấp quyền truy cập vào thư mục hoặc thay đổi thư mục gốc.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Nhấp một lần để mở một mục thay vì nhấp đúp</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Nhấp một lần để mở một phần tử thay vì nhấp đúp</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Chế độ tối luôn hoạt động</value>
@@ -201,7 +198,7 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Vị trí chuột</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
+  <data name="Change the directory" xml:space="preserve">
     <value>Thay đổi thư mục</value>
   </data>
   <data name="Click" xml:space="preserve">
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Tiểu sử</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Đã mở thư mục</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Thư mục đã mở</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
+  <data name="Border of opened directory" xml:space="preserve">
     <value>Đường viền của thư mục đã mở</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Lĩnh vực tìm kiếm</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Chọn mục</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Phần tử đã chọn</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Đường viền của mục đã chọn</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Đường viền của phần tử đã chọn</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Thay đổi thành thư mục tương đối</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Chuyển đổi sang thư mục tương đối</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Lưu trữ cấu hình tại vị trí lắp ráp</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Lưu cấu hình vào thư mục ứng dụng</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Mở vị trí lắp ráp</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Mở thư mục ứng dụng</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Chiều cao menu tối đa của pixel</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Mũi tên khi nhấp vào</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Mũi tên khi di chuột</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Mũi tên trong khi di chuột qua nó</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Nền của mũi tên khi nhấp vào</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Hình nền của mũi tên khi di chuột</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Hình nền của mũi tên khi di chuột qua nó</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Màu sắc Chế độ tối</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Màu sắc 'Chế độ tối'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Màu sắc Chế độ ánh sáng</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Màu sắc 'Chế độ ánh sáng'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Thực đơn</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu ứng dụng</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Thanh cuộn</value>
@@ -300,13 +297,13 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Thanh trượt trong khi kéo</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Trượt khi di chuột 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Trượt trong khi di chuột qua nó 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Trượt khi di chuột 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Thanh trượt trong khi di chuột qua nó 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
+  <data name="Use icon from directory" xml:space="preserve">
     <value>Sử dụng biểu tượng từ thư mục</value>
   </data>
   <data name="Size" xml:space="preserve">
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Đặt theo menu ngữ cảnh</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Đặt làm thư mục SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Đặt làm thư mục</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Đang tải</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Sự cố với phím tắt</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Sự cố với liên kết lối tắt</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
+  <data name="Open directory" xml:space="preserve">
     <value>Mở thư mục</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Quản lý công việc"</value>
+    <value>Quản lý công việc</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Đã hủy kích hoạt</value>
@@ -357,22 +354,22 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Hiển thị trên Thanh tác vụ</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
+  <data name="Add directory" xml:space="preserve">
     <value>Thêm thư mục</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Thêm nội dung của các thư mục vào menu chính</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Thêm nội dung của thư mục vào thư mục gốc</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
+  <data name="Directory paths" xml:space="preserve">
     <value>Đường dẫn thư mục</value>
   </data>
-  <data name="Folders" xml:space="preserve">
+  <data name="Directories" xml:space="preserve">
     <value>Thư mục</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Đệ quy</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
+  <data name="Remove directory" xml:space="preserve">
     <value>Xóa thư mục</value>
   </data>
   <data name="Only Files" xml:space="preserve">
@@ -384,7 +381,7 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Xóa bộ nhớ cache nếu nhiều hơn số lượng mục này</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
     <value>Thêm thư mục 'Start Menu' mẫu</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
@@ -412,24 +409,24 @@
     <value>Tùy chỉnh (kéo nó đến vị trí thích hợp)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>mục</value>
+    <value>yếu tố</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>mặt hàng</value>
+    <value>các yếu tố</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Tạo phím tắt cho ổ đĩa</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Tạo phím tắt cho ổ đĩa khi khởi động</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Bộ nhớ đệm</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
     <value>Luôn hiển thị các tệp, thư mục hoặc ổ đĩa ẩn</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Các tập tin và thư mục ẩn</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Tệp và thư mục ẩn</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
     <value>Không bao giờ hiển thị các tệp, thư mục hoặc ổ đĩa ẩn</value>
   </data>
   <data name="Size and location" xml:space="preserve">
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Gửi phím nóng đến phiên bản khác</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Theo ngày</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Lọc theo ngày</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Bằng tên</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Sắp xếp theo tên</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sắp xếp</value>

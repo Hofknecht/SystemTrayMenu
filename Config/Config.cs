@@ -76,10 +76,10 @@ namespace SystemTrayMenu
         {
             if (string.IsNullOrEmpty(Path))
             {
-                string textFirstStart = Translator.GetText("TextFirstStart");
+                string textFirstStart = Translator.GetText("Read the FAQ and then choose a root directory for the SystemTrayMenu.");
                 MessageBox.Show(
                     textFirstStart,
-                    Translator.GetText("SystemTrayMenu"),
+                    "SystemTrayMenu",
                     MessageBoxButtons.OK);
                 ShowHelpFAQ();
                 SetFolderByUser();

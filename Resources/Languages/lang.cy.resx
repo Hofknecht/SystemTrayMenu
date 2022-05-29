@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Ynghylch</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Ynglŷn â SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>iawn</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Cychwyn yn awtomatig</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Ymadael</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Gadael ap</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Ffolder</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Cyfeiriadur</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Ffolder yn wag</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Cyfeiriadur yn wag</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Manylion</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Gwybodaeth System</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Ffolder anhygyrch</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Cyfeiriadur yn anhygyrch</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Iaith</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Methu â chofrestru'r allwedd boeth.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Canslo</value>
+  <data name="Abort" xml:space="preserve">
+    <value>erthylu</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Cyffredinol</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hotkey</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Lansio wrth gychwyn</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Dechreuwch gyda Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Gosodiadau</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Help / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Cwestiynau Cyffredin</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>DewislenTraySystem</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Darllenwch y Cwestiynau Cyffredin ac yna dewiswch gyfeiriadur gwraidd ar gyfer y SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Dewiswch Ffolder</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Dewiswch gyfeiriadur</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Nid yw eich ffolder gwraidd ar gyfer y SystemTrayMenu yn bodoli neu mae'n wag! Rhowch rai ffeiliau, ffolderi neu lwybrau byr yn y ffolder neu newidiwch y ffolder gwraidd.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Nid yw eich cyfeiriadur gwraidd ar gyfer yr app yn bodoli neu mae'n wag! Newidiwch y cyfeiriadur gwraidd neu rhowch rai ffeiliau, cyfeirlyfrau neu lwybrau byr yn y cyfeiriadur gwraidd.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Nid oes gennych fynediad i'r ffolder gwraidd ar gyfer y SystemTrayMenu. Caniatáu mynediad i'r ffolder neu newid y ffolder gwraidd.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nid oes gennych unrhyw fynediad i gyfeiriadur gwraidd yr app. Caniatáu mynediad i'r cyfeiriadur neu newid y cyfeiriadur gwraidd.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Cliciwch sengl i agor eitem yn lle clic dwbl</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Cliciwch sengl i agor elfen yn lle clic dwbl</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Modd Tywyll bob amser yn weithredol</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Lleoliad llygoden</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Newid ffolder</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Newid y cyfeiriadur</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Cliciwch</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Cefndir</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Ffolder wedi'i hagor</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Cyfeiriadur wedi'i agor</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Ffin y ffolder a agorwyd</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Ffin y cyfeiriadur a agorwyd</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Maes chwilio</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Eitem a ddewiswyd</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Elfen wedi'i dewis</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Ffin yr eitem a ddewiswyd</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Ffin yr elfen ddethol</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Newid i ffolder cymharol</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Trosi i gyfeiriadur cymharol</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Storio ffurfweddu yn lleoliad y cynulliad</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Cadw ffurfweddiad i'r ffolder cais</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Agorwch leoliad y cynulliad</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Agor cyfeiriadur cais</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Uchafswm uchder dewislen picsel</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Saeth wrth glicio</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Saeth tra bod y llygoden yn hofran</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Saeth tra bod llygoden yn hofran drosti</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Cefndir y saeth wrth glicio</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Cefndir y saeth tra bod y llygoden yn hofran</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Cefndir y saeth tra bod y llygoden yn hofran drosto</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Lliwiau Modd Tywyll</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Lliwiau 'Modd Tywyll'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Lliwiau Modd Golau</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Lliwiau 'Modd Ysgafn'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Bwydlen</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Dewislen ap</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Bar sgrolio</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Llithrydd wrth lusgo</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Llithrydd tra bod y llygoden yn hofran 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Llithrydd tra bod llygoden yn hofran drosto 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Llithrydd tra bod y llygoden yn hofran 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Llithrydd tra bod llygoden yn hofran drosto 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Defnyddiwch eicon o'r ffolder</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Defnyddiwch eicon o'r cyfeiriadur</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Maint</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Wedi'i osod gan ddewislen cyd-destun</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Gosod fel ffolder SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Gosod fel cyfeiriadur</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>llwytho</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem gyda Llwybr Byr</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problem gyda dolen llwybr byr</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Mae'r eitem y mae'r llwybr byr hwn yn cyfeirio ato wedi'i newid neu ei symud, felly ni fydd y llwybr byr hwn yn gweithio'n iawn mwyach.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Ffolder agored</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Agor cyfeiriadur</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Rheolwr Tasg"</value>
+    <value>Rheolwr Tasg</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Wedi'i ddadactifadu</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Dangoswch yn y Bar Tasg</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Ychwanegu ffolder</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Ychwanegu cyfeiriadur</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Ychwanegu cynnwys ffolderi i'r brif ddewislen</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Ychwanegu cynnwys y cyfeiriadur i'r cyfeiriadur gwraidd</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Llwybrau ffolder</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Llwybrau cyfeiriadur</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Ffolderi</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Cyfeirlyfrau</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Recursive</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Dileu ffolder</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Dileu cyfeiriadur</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Ffeiliau yn unig</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Clirio'r storfa os yw'n fwy na'r nifer hwn o eitemau</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Ychwanegu sampl 'Dewislen Ddewislen' ffolder</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Ychwanegu cyfeiriadur 'Dewislen Dechrau' sampl</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Uchder rhes yn y cant</value>
@@ -412,25 +409,25 @@
     <value>Custom (llusgwch ef i'r man priodol)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>eitem</value>
+    <value>elfen</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>eitemau</value>
+    <value>elfennau</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Cynhyrchu llwybrau byr i yriannau</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Cynhyrchu llwybrau byr gyriant wrth gychwyn</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Dangoswch ffeiliau, ffolderi neu yriannau cudd bob amser</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Dangoswch ffeiliau, cyfeiriaduron neu yriannau cudd bob amser</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Ffeiliau a ffolderi cudd</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Ffeiliau a chyfeiriaduron cudd</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Peidiwch byth â dangos ffeiliau, ffolderi na gyriannau cudd</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Peidiwch byth â dangos ffeiliau, cyfeiriaduron na gyriannau cudd</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Maint a lleoliad</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Anfon hotkey i achos arall</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Erbyn dyddiad</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Trefnu yn ôl dyddiad</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Wrth enw</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Trefnu yn ôl enw</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Didoli</value>

@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Over</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Over SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Oké</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Automatische start</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Uitgang</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>App afsluiten</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Map</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Directory</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Map leeg</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Directory leeg</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Systeeminformatie</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Map ontoegankelijk</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Directory ontoegankelijk</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Taal</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Kan de sneltoets niet registreren.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Annuleren</value>
+  <data name="Abort" xml:space="preserve">
+    <value>afbreken</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Algemeen</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Sneltoets</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Start bij opstarten</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Begin met ramen</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Instellingen</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Hulp / Veelgestelde vragen</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Veel Gestelde Vragen</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SysteemvakMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Lees de veelgestelde vragen en kies vervolgens een hoofdmap voor het SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
+  <data name="Select directory" xml:space="preserve">
     <value>Selecteer map</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Uw hoofdmap voor het SystemTrayMenu bestaat niet of is leeg! Plaats enkele bestanden, mappen of snelkoppelingen in de map of wijzig de hoofdmap.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Uw hoofdmap voor de app bestaat niet of is leeg! Wijzig de hoofdmap of plaats enkele bestanden, mappen of snelkoppelingen in de hoofdmap.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>U hebt geen toegang tot de hoofdmap voor het SystemTrayMenu. Verleen toegang tot de map of wijzig de hoofdmap.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>U heeft geen toegang tot de hoofdmap van de app. Verleen toegang tot de map of wijzig de hoofdmap.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Enkele klik om een ​​item te openen in plaats van dubbelklikken</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Enkele klik om een ​​element te openen in plaats van dubbelklikken</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Donkere modus altijd actief</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Muis locatie</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Verander map</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Verander de map</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klik</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Achtergrond</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
+  <data name="Opened directory" xml:space="preserve">
     <value>Geopende map</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
+  <data name="Border of opened directory" xml:space="preserve">
     <value>Rand van geopende map</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Zoekveld</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Geselecteerd item</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Geselecteerd element</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Rand van geselecteerd item</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Rand van geselecteerd element</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Wijzig naar relatieve map</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Converteren naar relatieve map</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Bewaar config op de montagelocatie</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Configuratie opslaan in de applicatiemap</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Open de montagelocatie</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Applicatiemap openen</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Pixels maximale menuhoogte</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Pijl bij klikken</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Pijl terwijl muis zweeft</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Pijl terwijl de muis erover zweeft</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Achtergrond van pijl bij klikken</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Achtergrond van pijl terwijl muis zweeft</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Achtergrond van pijl terwijl muis erover zweeft</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Kleuren Donkere modus</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Kleuren 'Donkere modus'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Kleuren Lichtmodus</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Kleuren 'Lichtmodus'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+  <data name="App menu" xml:space="preserve">
+    <value>App-menu</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Schuifbalk</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Schuifregelaar tijdens het slepen</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Schuifregelaar terwijl muis zweeft 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Schuifregelaar terwijl de muis erover zweeft 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Schuifregelaar terwijl muis zweeft 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Schuif terwijl de muis erover zweeft 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Gebruik icoon uit map</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Gebruik pictogram uit map</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Maat</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Instellen via contextmenu</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Instellen als SystemTrayMenu-map</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Instellen als map</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>bezig met laden</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
+  <data name="Problem with shortcut link" xml:space="preserve">
     <value>Probleem met snelkoppeling</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Het item waar deze snelkoppeling naar verwijst is gewijzigd of verplaatst, waardoor deze snelkoppeling niet meer goed werkt.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Open folder</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Map openen</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Taakbeheer"</value>
+    <value>Taakbeheer</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>gedeactiveerd</value>
@@ -357,22 +354,22 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Weergeven in taakbalk</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Map toevoegen</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Directory toevoegen</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Inhoud van mappen toevoegen aan hoofdmenu</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Inhoud van map toevoegen aan hoofdmap</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
+  <data name="Directory paths" xml:space="preserve">
     <value>Mappaden</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>mappen</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Directory's</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursief</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
+  <data name="Remove directory" xml:space="preserve">
     <value>Map verwijderen</value>
   </data>
   <data name="Only Files" xml:space="preserve">
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Cache wissen bij meer dan dit aantal items</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Voorbeeldmap 'Start Menu' toevoegen</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Voeg voorbeeldmap 'Start Menu' toe</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Rijhoogte in procenten</value>
@@ -412,25 +409,25 @@
     <value>Aangepast (sleep het naar de juiste plaats)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>item</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>artikelen</value>
+    <value>elementen</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Genereer snelkoppelingen naar stations</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Snelkoppelingen genereren bij opstarten</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
     <value>Altijd verborgen bestanden, mappen of stations weergeven</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
+  <data name="Hidden files and directories" xml:space="preserve">
     <value>Verborgen bestanden en mappen</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Nooit verborgen bestanden, mappen of stations weergeven</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Toon nooit verborgen bestanden, mappen of stations</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Grootte en locatie</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Sneltoets naar andere instantie verzenden</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Op datum</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Sorteren op datum</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Bij naam</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Sorteren op naam</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sorteren</value>

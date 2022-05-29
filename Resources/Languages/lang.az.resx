@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Haqqında</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu haqqında</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>tamam</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Avtomatik başlama</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Çıx</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Proqramdan çıxın</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Qovluq</value>
+  <data name="Directory" xml:space="preserve">
+    <value>kataloq</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Qovluq boşdur</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Kataloq boş</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Təfərrüatlar</value>
@@ -141,11 +141,11 @@
   <data name="System Info" xml:space="preserve">
     <value>Sistem Məlumatı</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Qovluq əlçatmaz</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Kataloq əlçatmaz</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Dil</value>
+    <value>dil</value>
   </data>
   <data name="Log File" xml:space="preserve">
     <value>Günlük Faylı</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>İsti düyməni qeydiyyatdan keçirmək mümkün olmadı.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Ləğv et</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Abort</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>General</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Qaynar düymə</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Başlanğıcda işə salın</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Windows ilə başlayın</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Parametrlər</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Kömək / Tez-tez verilən suallar</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Tez-tez soruşulan suallar</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenyu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Tez-tez verilən sualları oxuyun və sonra SystemTrayMenu üçün kök kataloqu seçin.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Qovluq seçin</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Kataloq seçin</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>SystemTrayMenu üçün kök qovluğunuz mövcud deyil və ya boşdur! Qovluğa bəzi faylları, qovluqları və ya qısa yolları qoyun və ya kök qovluğu dəyişdirin.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök kataloqunu dəyişdirin və ya bəzi faylları, qovluqları və ya qısa yolları kök qovluğuna qoyun.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Sizin SystemTrayMenu üçün kök qovluğa girişiniz yoxdur. Qovluğa giriş icazəsi verin və ya kök qovluğu dəyişdirin.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Proqramın kök kataloquna girişiniz yoxdur. Kataloqa giriş icazəsi verin və ya kök kataloqunu dəyişdirin.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Bir elementi açmaq üçün cüt klik əvəzinə bir kliklə</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>İki klik əvəzinə elementi açmaq üçün bir kliklə</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Qaranlıq rejim həmişə aktivdir</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Siçan yeri</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Qovluğu dəyişdirin</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Kataloqu dəyişdirin</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>klikləyin</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Fon</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Açılan qovluq</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Açılan kataloq</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Açılan qovluğun sərhədi</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Açılan kataloqun sərhədi</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Axtarış sahəsi</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>Seçilmiş element</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
+  <data name="Border of selected element" xml:space="preserve">
     <value>Seçilmiş elementin sərhədi</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Nisbi qovluğa dəyişin</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Nisbi qovluğa çevirin</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Konfiqurasiyanı montaj yerində saxlayın</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Konfiqurasiyanı proqram qovluğunda saxlayın</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Montaj yerini açın</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Proqram qovluğunu açın</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Piksel maksimum menyu hündürlüyü</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Kliklədikdə ox</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Siçan hərəkət edərkən ox</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Siçan onun üzərində hərəkət edərkən ox</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Kliklədikdə oxun fonu</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Siçan hərəkət edərkən oxun fonu</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Siçan onun üzərində hərəkət edərkən oxun fonu</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Rənglər Qaranlıq Rejimi</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Rənglər "Qaranlıq rejim"</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Rənglər İşıq rejimi</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Rənglər "İşıq rejimi"</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menyu</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Proqram menyusu</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Sürüşdürmə zolağı</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Sürükləyərkən sürüşdürün</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Siçan hərəkət edərkən sürüşdürün 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Siçan hərəkət edərkən sürüşdürün 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Qovluqdakı ikonadan istifadə edin</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Kataloqdan ikonadan istifadə edin</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Ölçü</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Kontekst menyusu ilə təyin edin</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>SystemTrayMenu qovluğu olaraq təyin edin</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Kataloq olaraq təyin edin</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>yüklənir</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Qısayolla bağlı problem</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Qısayol keçidində problem</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Bu qısayolun istinad etdiyi element dəyişdirilib və ya köçürülüb, ona görə də bu qısayol artıq düzgün işləməyəcək.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Qovluğu açın</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Açıq kataloq</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Tapşırıq meneceri"</value>
+    <value>Tapşırıq meneceri</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Deaktiv edilib</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Tapşırıq çubuğunda göstərin</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Qovluq əlavə edin</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Kataloq əlavə edin</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Əsas menyuya qovluqların məzmununu əlavə edin</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Kök qovluğuna qovluğun məzmunu əlavə edin</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Qovluq yolları</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Kataloq yolları</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Qovluqlar</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Kataloqlar</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rekursiv</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Qovluğu silin</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Kataloqu silin</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Yalnız Fayllar</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Nümunə 'Başlat Menyu' qovluğunu əlavə edin</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Nümunə 'Başlat Menyu' kataloqunu əlavə edin</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Sətir hündürlüyü faizlə</value>
@@ -412,25 +409,25 @@
     <value>Fərdi (uyğun yerə sürükləyin)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>maddə</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>maddələr</value>
+    <value>elementləri</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Sürücülər üçün qısa yollar yaradın</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Başlanğıcda sürücü qısa yolları yaradın</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Gizli yer</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
     <value>Həmişə gizli faylları, qovluqları və ya sürücüləri göstərin</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Gizli fayl və qovluqlar</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Gizli fayllar və qovluqlar</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Heç vaxt gizli faylları, qovluqları və ya sürücüləri göstərməyin</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Heç vaxt gizli faylları, kataloqları və ya sürücüləri göstərməyin</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ölçü və yer</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>İsti düyməni digər nümunəyə göndərin</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Tarixə görə</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Tarixə görə çeşidləyin</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Adı ilə</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Ada görə çeşidləyin</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Çeşidləmə</value>

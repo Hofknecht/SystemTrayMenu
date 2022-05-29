@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Dwar</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Dwar SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>kollox sew</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Autostart</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Ħruġ</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Ħruġ app</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Direttorju</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Folder vojt</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Direttorju vojt</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Dettalji</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Informazzjoni tas-Sistema</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folder mhux aċċessibbli</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Direttorju inaċċessibbli</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Lingwa</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Ma setgħetx tirreġistra l-hot key.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Ikkanċella</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Aborta</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Ġenerali</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hotkey</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Tnedija mal-istartjar</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Ibda bil-Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Għajnuna / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Mistoqsijiet Frekwenti</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Aqra l-FAQ u mbagħad agħżel direttorju tal-għeruq għas-SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Agħżel Folder</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Agħżel direttorju</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Il-folder tal-għeruq tiegħek għas-SystemTrayMenu ma jeżistix jew huwa vojt! Poġġi xi fajls, folders jew shortcuts fil-folder jew ibdel il-fowlder tal-għeruq.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Id-direttorju tal-għeruq tiegħek għall-app ma jeżistix jew huwa vojt! Ibdel id-direttorju tal-għeruq jew poġġi xi fajls, direttorji jew shortcuts fid-direttorju tal-għeruq.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>M'għandekx aċċess għall-folder tal-għeruq għas-SystemTrayMenu. Agħti aċċess għall-folder jew ibdel il-folder tal-għeruq.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>M'għandekx aċċess għad-direttorju tal-għeruq tal-app. Agħti aċċess għad-direttorju jew ibdel id-direttorju tal-għeruq.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Ikklikkja waħda biex tiftaħ oġġett minflok ikklikkja darbtejn</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Ikklikkja waħda biex tiftaħ element minflok ikklikkja darbtejn</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Dark Mode dejjem attiv</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Post tal-ġurdien</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Bidla folder</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Ibdel id-direttorju</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Ikklikkja</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Sfond</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Fowlder miftuħ</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Direttorju miftuħ</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Bord tal-folder miftuħ</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Fruntieri tad-direttorju miftuħ</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Fittex qasam</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Oġġett magħżul</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Element magħżul</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Bordur tal-oġġett magħżul</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Bordur tal-element magħżul</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Bidla għal folder relattiv</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Ikkonverti għal direttorju relattiv</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Aħżen il-konfigurazzjoni fil-post tal-assemblaġġ</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Issejvja l-konfigurazzjoni fil-folder tal-applikazzjoni</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Iftaħ il-post tal-assemblaġġ</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Iftaħ id-direttorju tal-applikazzjoni</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Pixels għoli massimu menu</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Vleġġa meta tikklikkja</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Vleġġa waqt li l-maws jovers</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Vleġġa waqt li l-maws jgħaddi fuqha</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Sfond tal-vleġġa meta tikklikkja</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Sfond ta 'vleġġa waqt li l-maws jonqos</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Sfond tal-vleġġa waqt li l-maws jgħaddi fuqha</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Kuluri Mod Skur</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Kuluri 'Dark Mode'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Kuluri Modalità Dawl</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Kuluri 'Modalità Dawl'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu tal-app</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Scrollbar</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Slider waqt li jkaxkru</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Slajder waqt li l-maws jonqos 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Slider waqt li l-maws jgħaddi fuqu 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Slider waqt li l-maws jerfa' 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Slider waqt li l-maws jgħaddi fuqu 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Uża l-ikona mill-folder</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Uża l-ikona mid-direttorju</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Daqs</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Issettja mill-menu tal-kuntest</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Issettja bħala folder SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Issettja bħala direttorju</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>tagħbija</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problema bi Shortcut</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problema bil-link tas-shortcut</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>L-oġġett li jirreferi għalih din is-shortcut ġie mibdul jew imċaqlaq, għalhekk din is-shortcut ma tibqax taħdem sew.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Iftaħ Folder</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Direttorju miftuħ</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Task Manager"</value>
+    <value>Task Manager</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Diżattivat</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Uri fit-Taskbar</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Żid folder</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Żid direttorju</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Żid il-kontenut tal-folders fil-menu prinċipali</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Żid il-kontenut tad-direttorju mad-direttorju tal-għeruq</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Folder mogħdijiet</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Mogħdijiet tad-direttorju</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Folders</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Direttorji</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rikursiv</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Neħħi folder</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Neħħi direttorju</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Fajls biss</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Ċar il-cache jekk aktar minn dan in-numru ta' oġġetti</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Żid il-folder tal-kampjun 'Start Menu'</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Żid kampjun tad-direttorju 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Għoli tar-ringiela fil-mija</value>
@@ -412,25 +409,25 @@
     <value>Custom (draggha fil-post xieraq)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>oġġett</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>oġġetti</value>
+    <value>elementi</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Iġġenera shortcuts għal drives</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Iġġenera shortcuts tas-sewqan fuq l-istartjar</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Dejjem Uri fajls, folders jew drives moħbija</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Dejjem Uri fajls, direttorji jew drives moħbija</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Fajls u folders moħbija</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Fajls u direttorji moħbija</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Qatt turi fajls moħbija, folders jew drives</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Qatt turi fajls moħbija, direttorji jew drives</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Daqs u post</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Ibgħat hotkey lil eżempju ieħor</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Sad-data</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Issortja skond id-data</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Bl-isem</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Issortja skond l-isem</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Issortjar</value>

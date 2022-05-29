@@ -125,13 +125,13 @@ namespace SystemTrayMenu.Business
 
                             break;
                         case MenuDataValidity.Empty:
-                            MessageBox.Show(Translator.GetText("MessageRootFolderEmpty"));
+                            MessageBox.Show(Translator.GetText("Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory."));
                             OpenFolder();
                             Config.SetFolderByUser();
                             AppRestart.ByConfigChange();
                             break;
                         case MenuDataValidity.NoAccess:
-                            MessageBox.Show(Translator.GetText("MessageRootFolderNoAccess"));
+                            MessageBox.Show(Translator.GetText("You have no access to the root directory of the app. Grant access to the directory or change the root directory."));
                             OpenFolder();
                             Config.SetFolderByUser();
                             AppRestart.ByConfigChange();

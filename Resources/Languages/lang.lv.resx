@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Par</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Par SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>labi</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Autostart</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Izeja</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Iziet no lietotnes</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Mape</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Direktorija</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Mape tukša</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Direktorija tukša</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Sīkāka informācija</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Sistēmas informācija</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Mape nav pieejama</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Direktorija nav pieejama</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Valoda</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Nevarēja reģistrēt karsto taustiņu.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Atcelt</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Pārtraukt</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Ģenerālis</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hotkey</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Palaist startēšanas laikā</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Sāciet ar Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Iestatījumi</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Palīdzība / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>bieži uzdotie jautājumi</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Izlasiet FAQ un pēc tam izvēlieties SystemTrayMenu saknes direktoriju.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Izvēlieties mapi</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Izvēlieties direktoriju</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Jūsu SystemTrayMenu saknes mape neeksistē vai ir tukša! Ievietojiet dažus failus, mapes vai saīsnes mapē vai mainiet saknes mapi.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Jūsu lietotnes saknes direktorijs neeksistē vai ir tukšs! Mainiet saknes direktoriju vai ievietojiet dažus failus, direktorijus vai saīsnes saknes direktorijā.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Jums nav piekļuves SystemTrayMenu saknes mapei. Piešķiriet piekļuvi mapei vai mainiet saknes mapi.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Jums nav piekļuves lietotnes saknes direktorijam. Piešķiriet piekļuvi direktorijam vai mainiet saknes direktoriju.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Veiciet vienu klikšķi, lai atvērtu vienumu, nevis veiciet dubultklikšķi</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Veiciet vienu klikšķi, lai atvērtu elementu, nevis veiciet dubultklikšķi</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Tumšais režīms vienmēr ir aktīvs</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Peles atrašanās vieta</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Mainīt mapi</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Mainiet direktoriju</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klikšķis</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Fons</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Atvērta mape</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Atvērts direktorijs</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Atvērtās mapes apmale</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Atvērtā direktorija robeža</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Meklēšanas lauks</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Atlasīta prece</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Atlasīts elements</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Atlasītā vienuma apmale</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Atlasītā elementa apmale</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Mainiet uz relatīvo mapi</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Konvertēt uz relatīvo direktoriju</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Saglabājiet konfigurāciju montāžas vietā</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Saglabājiet konfigurāciju lietojumprogrammas mapē</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Atveriet montāžas vietu</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Atveriet lietojumprogrammu direktoriju</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Maksimālais izvēlnes augstums pikseļos</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Bultiņa, noklikšķinot</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Bultiņa, kamēr pele atrodas</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Bultiņa, kamēr pele atrodas virs tās</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Noklikšķinot, bultiņas fons</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Bultas fons, kamēr pele atrodas</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Bultas fons, kamēr pele atrodas virs tās</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Krāsas Tumšs režīms</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Krāsas 'Dark Mode'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Krāsas Gaismas režīms</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Krāsas 'Gaišais režīms'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Izvēlne</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Lietotņu izvēlne</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Ritjosla</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Slīdni velkot</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Slīdnis, kamēr pele atrodas 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Slīdni, kamēr pele atrodas virs tā 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Slīdnis, kamēr pele atrodas 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Pavelciet slīdni, kamēr pele atrodas virs tā 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Izmantojiet ikonu no mapes</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Izmantojiet ikonu no direktorija</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Izmērs</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Iestata konteksta izvēlnē</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Iestatīt kā SystemTrayMenu mapi</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Iestatīt kā direktoriju</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>iekraušana</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problēma ar saīsni</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problēma ar saīsnes saiti</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Vienums, uz kuru attiecas šī saīsne, ir mainīts vai pārvietots, tāpēc šī saīsne vairs nedarbosies pareizi.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Atvērt mapi</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Atvērt direktoriju</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Uzdevumu pārvaldnieks"</value>
+    <value>Uzdevumu pārvaldnieks</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Deaktivizēts</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Rādīt uzdevumjoslā</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Pievienot mapi</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Pievienot direktoriju</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Pievienojiet mapju saturu galvenajai izvēlnei</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Pievienojiet direktorijas saturu saknes direktorijam</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Mapju ceļi</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Direktoriju ceļi</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Mapes</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Katalogi</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rekursīvs</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Noņemt mapi</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Noņemt direktoriju</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Tikai faili</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Notīriet kešatmiņu, ja vienumu skaits pārsniedz šo</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Pievienojiet mapes Sākt paraugu</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Pievienojiet paraugu "Sākt izvēlnes" direktorijai</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Rindas augstums procentos</value>
@@ -412,25 +409,25 @@
     <value>Pielāgots (velciet to uz atbilstošo vietu)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>lieta</value>
+    <value>elements</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>preces</value>
+    <value>elementi</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Ģenerējiet īsceļus uz diskiem</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Startējot, ģenerējiet diska saīsnes</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Kešatmiņa</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Vienmēr rādīt slēptos failus, mapes vai diskus</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Vienmēr rādīt slēptos failus, direktorijus vai diskus</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Slēptie faili un mapes</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Slēptie faili un direktoriji</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Nekad nerādiet slēptos failus, mapes vai diskus</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Nekad nerādiet slēptos failus, direktorijus vai diskus</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Izmērs un atrašanās vieta</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Sūtīt karsto taustiņu uz citu gadījumu</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Pēc datuma</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Kārtot pēc datuma</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Pēc vārda</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Kārtot pēc nosaukuma</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Šķirošana</value>

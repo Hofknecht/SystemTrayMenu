@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Um</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Um SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Allt í lagi</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Sjálfvirk ræsing</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Hætta</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Hætta app</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Mappa</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Skrá</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Mappa tóm</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Skráin tóm</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Upplýsingar</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Kerfisupplýsingar</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Mappa óaðgengileg</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Skráin óaðgengileg</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Tungumál</value>
@@ -154,10 +154,10 @@
     <value>Endurræsa</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Ekki tókst að skrá flýtilykilinn.</value>
+    <value>Gat ekki skráð flýtilykilinn.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Hætta við</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Hætta</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Almennt</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hraðlykill</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Ræst við ræsingu</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Byrjaðu með Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Stillingar</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Hjálp / Algengar spurningar</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Algengar spurningar</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Lestu FAQ og veldu síðan rótarskrá fyrir SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Veldu Mappa</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Veldu möppu</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Rótarmöppan þín fyrir SystemTrayMenu er ekki til eða er tóm! Settu nokkrar skrár, möppur eða flýtileiðir í möppuna eða breyttu rótarmöppunni.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Rótarskráin þín fyrir appið er ekki til eða er tóm! Breyttu rótarskránni eða settu nokkrar skrár, möppur eða flýtileiðir í rótarskrána.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Þú hefur engan aðgang að rótarmöppunni fyrir SystemTrayMenu. Veittu aðgang að möppunni eða breyttu rótarmöppunni.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Þú hefur engan aðgang að rótarskrá appsins. Veittu aðgang að skránni eða breyttu rótarskránni.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Einfaldur smellur til að opna hlut í stað þess að tvísmella</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Einn smellur til að opna þátt í stað þess að tvísmella</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Dark Mode alltaf virkur</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Staðsetning músar</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Skiptu um möppu</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Breyttu skránni</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Smellur</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Bakgrunnur</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Opnuð mappa</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Opnuð möppu</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Rammi á opinni möppu</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Rammi opnaðrar skráar</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Leitarreitur</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Valið atriði</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Valinn þáttur</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Rammi valins atriðis</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Rammi valins þáttar</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Breyta í ættingja möppu</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Umbreyta í hlutfallslega skrá</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Geymdu stillingar á samsetningarstaðnum</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Vistaðu stillingar í forritamöppunni</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Opnaðu samsetningarstaðinn</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Opnaðu forritaskrá</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Pixel hámarkshæð valmyndar</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Ör þegar smellt er</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Ör á meðan músin sveimar</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Ör á meðan músin sveimar yfir hana</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Bakgrunnur ör þegar smellt er</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Bakgrunnur ör á meðan músin sveimar</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Bakgrunnur ör á meðan músin sveimar yfir henni</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Litir Dark Mode</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Litir 'Dark Mode'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Litir Ljóshamur</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Litir 'Light Mode'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Matseðill</value>
+  <data name="App menu" xml:space="preserve">
+    <value>App valmynd</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Skrunastiku</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Renna á meðan þú dregur</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Renna á meðan músin sveimar 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Renndu á meðan músin sveimar yfir hana 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Renna á meðan músin sveimar 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Renndu á meðan músin sveimar yfir hana 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Notaðu tákn úr möppu</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Notaðu táknið úr skránni</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Stærð</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Stillt af samhengisvalmynd</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Stilltu sem SystemTrayMenu möppu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Stilla sem skrá</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>hleðsla</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Vandamál með flýtileið</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Vandamál með tengil á flýtileið</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Atriðið sem þessi flýtileið vísar til hefur verið breytt eða færð, þannig að þessi flýtileið mun ekki lengur virka rétt.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
+  <data name="Open directory" xml:space="preserve">
     <value>Opna möppu</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Verkefnastjóri"</value>
+    <value>Verkefnastjóri</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Óvirkt</value>
@@ -357,22 +354,22 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Sýna á verkefnastikunni</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
+  <data name="Add directory" xml:space="preserve">
     <value>Bæta við möppu</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Bættu efni möppu við aðalvalmyndina</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Bættu efni möppu við rótarskrá</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Möppustígar</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Skráarslóðir</value>
   </data>
-  <data name="Folders" xml:space="preserve">
+  <data name="Directories" xml:space="preserve">
     <value>Möppur</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Endurkvæmt</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
+  <data name="Remove directory" xml:space="preserve">
     <value>Fjarlægðu möppu</value>
   </data>
   <data name="Only Files" xml:space="preserve">
@@ -384,7 +381,7 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
     <value>Bættu við sýnishorni 'Start Menu' möppu</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
@@ -412,24 +409,24 @@
     <value>Sérsniðið (dragaðu það á viðeigandi stað)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>atriði</value>
+    <value>þáttur</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>hlutir</value>
+    <value>þættir</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Búðu til flýtileiðir að diskum</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Búðu til flýtileiðir fyrir drif við ræsingu</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Skyndiminni</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
     <value>Sýna alltaf faldar skrár, möppur eða drif</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
+  <data name="Hidden files and directories" xml:space="preserve">
     <value>Faldar skrár og möppur</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
     <value>Sýndu aldrei faldar skrár, möppur eða drif</value>
   </data>
   <data name="Size and location" xml:space="preserve">
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Sendu flýtilykla í annað tilvik</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Eftir dagsetningu</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Raða eftir dagsetningu</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Að nafni</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Raða eftir nafni</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Flokkun</value>

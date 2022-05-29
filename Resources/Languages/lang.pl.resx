@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>O</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Informacje o menu zasobnika systemowego</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Automatyczny start</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Wyjście</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Zamknij aplikację</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Teczka</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Informator</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>pusty folder</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Katalog pusty</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Detale</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Informacja o systemie</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folder niedostępny</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Katalog niedostępny</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Język</value>
@@ -154,9 +154,9 @@
     <value>Uruchom ponownie</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Nie udało się zarejestrować klawisza skrótu.</value>
+    <value>Nie można zarejestrować klawisza skrótu.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
+  <data name="Abort" xml:space="preserve">
     <value>Anulować</value>
   </data>
   <data name="General" xml:space="preserve">
@@ -165,31 +165,28 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Klawisz skrótu</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Uruchom przy starcie</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Uruchom z Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Ustawienia</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Pomoc / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Często Zadawane Pytania</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>Menu zasobnika systemowego</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Przeczytaj FAQ, a następnie wybierz katalog główny dla SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
+  <data name="Select directory" xml:space="preserve">
     <value>Wybierz katalog</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Twój folder główny dla SystemTrayMenu nie istnieje lub jest pusty! Umieść niektóre pliki, foldery lub skróty w folderze lub zmień folder główny.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Twój katalog główny aplikacji nie istnieje lub jest pusty! Zmień katalog główny lub umieść pliki, katalogi lub skróty w katalogu głównym.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Nie masz dostępu do folderu głównego dla SystemTrayMenu. Przyznaj dostęp do folderu lub zmień folder główny.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nie masz dostępu do katalogu głównego aplikacji. Przyznaj dostęp do katalogu lub zmień katalog główny.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Pojedyncze kliknięcie, aby otworzyć element zamiast podwójnego kliknięcia</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Lokalizacja myszy</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Zmień folder</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Zmień katalog</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Kliknij</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Tło</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Otwarty folder</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Otwarty katalog</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Obramowanie otwartego folderu</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Obramowanie otwartego katalogu</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Pole wyszukiwania</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Wybrany przedmiot</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Wybrany element</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
+  <data name="Border of selected element" xml:space="preserve">
     <value>Obramowanie wybranego elementu</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Zmień na folder względny</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Konwertuj na katalog względny</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Przechowuj konfigurację w miejscu montażu</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Zapisz konfigurację w folderze aplikacji</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Otwórz miejsce montażu</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Otwórz katalog aplikacji</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Maksymalna wysokość menu w pikselach</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Strzałka po kliknięciu</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Strzałka, gdy mysz się porusza</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Strzałka, gdy mysz nad nią najedzie</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Tło strzałki po kliknięciu</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Tło strzałki podczas najechania myszką</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Tło strzałki po najechaniu na nią myszą</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Kolory Tryb ciemny</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Kolory „Tryb ciemny”</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Kolory Tryb światła</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Kolory „Tryb światła”</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu aplikacji</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Pasek przewijania</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Suwak podczas przeciągania</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Suwak, gdy mysz porusza się 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Suwak, gdy kursor myszy nad nim znajduje się 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Suwak, gdy mysz porusza się 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Suwak, gdy kursor myszy nad nim znajduje się 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Użyj ikony z folderu</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Użyj ikony z katalogu</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Rozmiar</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Ustaw przez menu kontekstowe</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Ustaw jako folder SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Ustaw jako katalog</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Ładowanie</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem ze skrótem</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problem z łączem skrótu</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Element, do którego odnosi się ten skrót, został zmieniony lub przeniesiony, więc ten skrót nie będzie już działał poprawnie.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Otwórz folder</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Otwarty katalog</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Menadżer zadań"</value>
+    <value>Menadżer zadań</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Dezaktywowany</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Pokaż na pasku zadań</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Dodaj folder</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Dodaj katalog</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Dodaj zawartość folderów do menu głównego</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Dodaj zawartość katalogu do katalogu głównego</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Ścieżki folderów</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Ścieżki katalogów</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Lornetka składana</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Katalogi</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rekursywny</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Usuń folder</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Usuń katalog</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Tylko pliki</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Wyczyść pamięć podręczną, jeśli jest więcej niż ta liczba elementów</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Dodaj przykładowy folder „Menu Start”</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Dodaj przykładowy katalog „Menu Start”</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Wysokość wiersza w procentach</value>
@@ -412,25 +409,25 @@
     <value>Niestandardowy (przeciągnij go w odpowiednie miejsce)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>przedmiot</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>przedmiotów</value>
+    <value>elementy</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Generuj skróty do dysków</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Generuj skróty do dysku podczas uruchamiania</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Pamięć podręczna</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Zawsze pokazuj ukryte pliki, foldery lub dyski</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Zawsze pokazuj ukryte pliki, katalogi lub dyski</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Ukryte pliki i foldery</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Ukryte pliki i katalogi</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Nigdy nie pokazuj ukrytych plików, folderów ani dysków</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Nigdy nie pokazuj ukrytych plików, katalogów ani dysków</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Rozmiar i lokalizacja</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Wyślij skrót do innej instancji</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Według daty</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Sortowanie według daty</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Wg nazwy</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Sortuj według nazwy</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sortowanie</value>

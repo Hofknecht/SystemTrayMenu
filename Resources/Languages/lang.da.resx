@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Om</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Om SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Okay</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Automatisk start</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Afslut</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Afslut app</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Vejviser</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Mappe tom</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Katalog tom</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>detaljer</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>System info</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Mappe utilgængelig</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Directory utilgængelig</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Sprog</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Genvejstasten kunne ikke registreres.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Afbestille</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Abort</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Generel</value>
@@ -165,31 +165,28 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Genvejstast</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Start ved opstart</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Start med Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Indstillinger</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Hjælp / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Ofte stillede spørgsmål</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Læs FAQ og vælg derefter en rodmappe til SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Vælg Mappe</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Vælg bibliotek</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Din rodmappe til SystemTrayMenu eksisterer ikke eller er tom! Læg nogle filer, mapper eller genveje i mappen, eller skift rodmappen.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Din rodmappe til appen eksisterer ikke eller er tom! Skift rodmappen eller indsæt nogle filer, mapper eller genveje i rodmappen.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Du har ingen adgang til rodmappen til SystemTrayMenu. Giv adgang til mappen eller skift rodmappen.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Du har ingen adgang til rodmappen på appen. Giv adgang til biblioteket eller skift rodmappen.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Enkeltklik for at åbne et element i stedet for at dobbeltklikke</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Musens placering</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Skift mappe</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Skift bibliotek</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klik</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Baggrund</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Åbnet mappe</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Åbnet bibliotek</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Kant af åbnet mappe</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Kant af åbnet bibliotek</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Søgefelt</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Valgt vare</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Valgt element</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Kant af valgt vare</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Kant af valgt element</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Skift til relativ mappe</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Konverter til relativ mappe</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Gem konfiguration på monteringsstedet</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Gem konfigurationen i applikationsmappen</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Åbn monteringsstedet</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Åbn applikationsmappe</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Pixels maksimale menuhøjde</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Pil, når du klikker</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Pil mens musen svæver</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Pil, mens musen svæver over den</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Baggrund af pil, når du klikker</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Baggrund af pil, mens musen svæver</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Baggrund af pil, mens musen svæver over den</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Farver mørk tilstand</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Farver 'Mørk tilstand'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Farver Lystilstand</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Farver 'Lystilstand'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+  <data name="App menu" xml:space="preserve">
+    <value>App menu</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Rullebar</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Skyder mens du trækker</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Skyder mens musen svæver 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Skyder mens musen svæver over den 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Skyder mens musen svæver 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Skyder mens musen svæver over den 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Brug ikon fra mappe</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Brug ikon fra bibliotek</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Størrelse</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Indstillet af kontekstmenuen</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Indstil som SystemTrayMenu-mappe</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Indstil som bibliotek</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Indlæser</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem med genvej</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problem med genvejslink</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Elementet, som denne genvej henviser til, er blevet ændret eller flyttet, så denne genvej vil ikke længere fungere korrekt.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
+  <data name="Open directory" xml:space="preserve">
     <value>Åbn mappe</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Jobliste"</value>
+    <value>Jobliste</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Deaktiveret</value>
@@ -357,22 +354,22 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Vis i proceslinjen</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Tilføj mappe</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Tilføj bibliotek</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Tilføj indhold af mapper til hovedmenuen</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Tilføj indhold af mappe til rodbibliotek</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Mappestier</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Directory stier</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Mapper</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Vejviser</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rekursiv</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
+  <data name="Remove directory" xml:space="preserve">
     <value>Fjern mappe</value>
   </data>
   <data name="Only Files" xml:space="preserve">
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Ryd cache, hvis der er flere end dette antal elementer</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Tilføj prøve 'Start Menu' mappe</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Tilføj et eksempel på 'Start Menu' bibliotek</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Rækkehøjde i procent</value>
@@ -412,24 +409,24 @@
     <value>Brugerdefineret (træk det til det rigtige sted)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>vare</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>genstande</value>
+    <value>elementer</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Generer genveje til drev</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Generer drevgenveje ved opstart</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
     <value>Vis altid skjulte filer, mapper eller drev</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
+  <data name="Hidden files and directories" xml:space="preserve">
     <value>Skjulte filer og mapper</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
     <value>Vis aldrig skjulte filer, mapper eller drev</value>
   </data>
   <data name="Size and location" xml:space="preserve">
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Send genvejstasten til en anden instans</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Efter dato</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Sorter efter dato</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Ved navn</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Sorter efter navn</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sortering</value>

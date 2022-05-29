@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>შესახებ</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu-ს შესახებ</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>კარგი</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Ავტომატური დაწყება</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>გასვლა</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>აპიდან გასვლა</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>საქაღალდე</value>
+  <data name="Directory" xml:space="preserve">
+    <value>დირექტორია</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>საქაღალდე ცარიელია</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>დირექტორია ცარიელი</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>დეტალები</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>სისტემის ინფორმაცია</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>საქაღალდე მიუწვდომელია</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>დირექტორია მიუწვდომელია</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Ენა</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>ცხელი კლავიშის რეგისტრაცია ვერ მოხერხდა.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>გაუქმება</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Გაუქმება</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>გენერალი</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hotkey</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>გაშვება გაშვებისას</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>დაიწყეთ Windows-ით</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>პარამეტრები</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>დახმარება / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>ხშირად დასმული შეკითხვები</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>წაიკითხეთ FAQ და შემდეგ აირჩიეთ root დირექტორია SystemTrayMenu-სთვის.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>აირჩიეთ საქაღალდე</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>აირჩიეთ დირექტორია</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>თქვენი root საქაღალდე SystemTrayMenu-სთვის არ არსებობს ან ცარიელია! განათავსეთ რამდენიმე ფაილი, საქაღალდე ან მალსახმობები საქაღალდეში ან შეცვალეთ root საქაღალდე.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>აპლიკაციის თქვენი root დირექტორია არ არსებობს ან ცარიელია! შეცვალეთ root დირექტორია ან განათავსეთ რამდენიმე ფაილი, დირექტორია ან მალსახმობები root დირექტორიაში.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>თქვენ არ გაქვთ წვდომა SystemTrayMenu-ს root საქაღალდეზე. მიანიჭეთ წვდომა საქაღალდეზე ან შეცვალეთ root საქაღალდე.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>თქვენ არ გაქვთ წვდომა აპის root დირექტორიაზე. მიეცით წვდომა დირექტორიაზე ან შეცვალეთ root დირექტორია.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>ერთჯერადი დაწკაპუნებით ელემენტის გასახსნელად ორმაგი დაწკაპუნების ნაცვლად</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>ერთი დაწკაპუნებით ელემენტის გასახსნელად ორმაგი დაწკაპუნების ნაცვლად</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>მუქი რეჟიმი ყოველთვის აქტიურია</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>მაუსის ადგილმდებარეობა</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>საქაღალდის შეცვლა</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>შეცვალეთ დირექტორია</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>დააწკაპუნეთ</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>ფონი</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>გახსნილი საქაღალდე</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>გახსნილი დირექტორია</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>გახსნილი საქაღალდის საზღვარი</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>გახსნილი დირექტორიას საზღვარი</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>საძიებო ველი</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>არჩეული ელემენტი</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>არჩეული ელემენტის კონტური</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>შერჩეული ელემენტის საზღვარი</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>შეცვალეთ შედარებით საქაღალდეში</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>კონვერტაცია შედარებით დირექტორიაში</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>შეინახეთ კონფიგურაცია შეკრების ადგილას</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>შეინახეთ კონფიგურაცია აპლიკაციის საქაღალდეში</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>გახსენით შეკრების ადგილი</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>გახსენით განაცხადის დირექტორია</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>პიქსელების მენიუს მაქსიმალური სიმაღლე</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>ისარი დაწკაპუნებისას</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>ისარი, როცა მაუსი მოძრაობს</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>ისარი, როცა მაუსი დევს მასზე</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>ისრის ფონი დაწკაპუნებისას</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>ისრის ფონი, როდესაც მაუსი მოძრაობს</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>ისრის ფონი, როდესაც მაუსი დევს მასზე</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>ფერები მუქი რეჟიმი</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>ფერები "მუქი რეჟიმი"</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>ფერების სინათლის რეჟიმი</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>ფერები "განათების რეჟიმი"</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>მენიუ</value>
+  <data name="App menu" xml:space="preserve">
+    <value>აპლიკაციის მენიუ</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>გადახვევის პანელი</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>გადაადგილებისას სლაიდერი</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>სლაიდერი სანამ მაუსი მოძრაობს 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>სლაიდერი, სანამ მაუსი დევს მასზე 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>სლაიდერი სანამ მაუსი მოძრაობს 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>სლაიდერი, სანამ მაუსი ეშვება მასზე 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>გამოიყენეთ ხატი საქაღალდედან</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>გამოიყენეთ ხატულა დირექტორიადან</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>ზომა</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>კონტექსტური მენიუს დაყენება</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>დააყენეთ SystemTrayMenu საქაღალდედ</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>დააყენეთ დირექტორიად</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>ჩატვირთვა</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>პრობლემა Shortcut-თან დაკავშირებით</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>პრობლემა მალსახმობის ბმულზე</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>ელემენტი, რომელსაც ეს მალსახმობი ეხება, შეიცვალა ან გადატანილია, ამიტომ ეს მალსახმობი აღარ იმუშავებს გამართულად.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>გახსენით საქაღალდე</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>გახსენით დირექტორია</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Პროცესების ადმინისტრატორი"</value>
+    <value>Პროცესების ადმინისტრატორი</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>გამორთულია</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>დავალების პანელში ჩვენება</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Დაამატე ფოლდერი</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>დირექტორიას დამატება</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>დაამატეთ საქაღალდეების შინაარსი მთავარ მენიუში</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>დაამატეთ დირექტორიას შინაარსი root დირექტორიაში</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>საქაღალდის ბილიკები</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>დირექტორია ბილიკები</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>საქაღალდეები</value>
+  <data name="Directories" xml:space="preserve">
+    <value>დირექტორიები</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Რეკურსიული</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>საქაღალდის წაშლა</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>დირექტორიას წაშლა</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>მხოლოდ ფაილები</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ქეშის გასუფთავება, თუ ამ რაოდენობაზე მეტია</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>დაამატეთ საქაღალდის "დაწყების მენიუ" ნიმუში</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>დაამატეთ სანიმუშო დირექტორია "დაწყების მენიუ".</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>მწკრივის სიმაღლე პროცენტებში</value>
@@ -412,25 +409,25 @@
     <value>მორგებული (გადაათრიეთ შესაბამის ადგილას)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>ნივთი</value>
+    <value>ელემენტი</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>ნივთები</value>
+    <value>ელემენტები</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>დისკების მალსახმობების გენერირება</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>დისკის მალსახმობების გენერირება გაშვებისას</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>ქეში</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>ყოველთვის აჩვენე ფარული ფაილები, საქაღალდეები ან დისკები</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>ყოველთვის აჩვენე ფარული ფაილები, დირექტორიები ან დისკები</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>დამალული ფაილები და საქაღალდეები</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>დამალული ფაილები და დირექტორიები</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>არასოდეს აჩვენოთ ფარული ფაილები, საქაღალდეები ან დისკები</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>არასოდეს აჩვენოთ ფარული ფაილები, დირექტორიები ან დისკები</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>ზომა და ადგილმდებარეობა</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>ცხელი კლავიშის გაგზავნა სხვა ინსტანციაზე</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>თარიღის მიხედვით</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>დალაგება თარიღის მიხედვით</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Სახელით</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>დალაგება სახელის მიხედვით</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>დახარისხება</value>

@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Despre</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Despre SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>O.K</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Pornire automată</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Ieșire</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Ieșiți din aplicație</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Pliant</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Director</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Folder gol</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Director gol</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Detalii</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Informatie de sistem</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folder inaccesibil</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Director inaccesibil</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Limba</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Nu s-a putut înregistra tasta rapidă.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Anulare</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Avorta</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>General</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Tasta rapidă</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Lansare la pornire</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Începeți cu Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Setări</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Ajutor / Întrebări frecvente</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>întrebări frecvente</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Citiți întrebările frecvente și apoi alegeți un director rădăcină pentru SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Selectați Folder</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Selectați directorul</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Dosarul dvs. rădăcină pentru SystemTrayMenu nu există sau este gol! Puneți unele fișiere, foldere sau comenzi rapide în folder sau schimbați folderul rădăcină.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Directorul dvs. rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Nu aveți acces la folderul rădăcină pentru SystemTrayMenu. Acordați acces la folder sau schimbați folderul rădăcină.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Un singur clic pentru a deschide un articol în loc să faceți dublu clic</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Un singur clic pentru a deschide un element în loc de dublu clic</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Modul întunecat întotdeauna activ</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Locația mouse-ului</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Schimbați folderul</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Schimbați directorul</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Clic</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>fundal</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Dosar deschis</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Director deschis</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Chenarul folderului deschis</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Chenarul directorului deschis</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Câmp de căutare</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>Elementul selectat</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Chenarul articolului selectat</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Chenarul elementului selectat</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Schimbați în folderul relativ</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Convertiți în directorul relativ</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Stocați configurația la locul de asamblare</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Salvați configurația în folderul aplicației</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Deschideți locația de asamblare</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Deschideți directorul aplicației</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Înălțimea maximă în pixeli a meniului</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Săgeată când dați clic</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Săgeată în timp ce mouse-ul plutește</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Săgeată în timp ce mouse-ul trece peste ea</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Fundalul săgeții când faceți clic</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Fundalul săgeții în timp ce mouse-ul trece</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Fundalul săgeții în timp ce mouse-ul trece peste ea</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Culori Modul întunecat</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Culori „Mod întunecat”</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Mod de lumină Culori</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Culori „Modul de lumină”</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Meniul</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Meniul aplicației</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Bara de defilare</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Glisor în timp ce trageți</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Glisor în timp ce mouse-ul trece 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Glisați în timp ce mouse-ul trece peste el 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Glisor în timp ce mouse-ul trece 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Glisați în timp ce mouse-ul trece peste el 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Utilizați pictograma din folder</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Utilizați pictograma din director</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>mărimea</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Setați prin meniul contextual</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Setați ca folder SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Setați ca director</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Se încarcă</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problemă cu comanda rapidă</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problemă cu legătura rapidă</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Elementul la care se referă această comandă rapidă a fost modificat sau mutat, astfel încât această comandă rapidă nu va mai funcționa corect.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Deschide Folder</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Deschide directorul</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Gestionar de sarcini"</value>
+    <value>Gestionar de sarcini</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Dezactivat</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Afișați în bara de activități</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Adaugă folder</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Adăugați directorul</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Adăugați conținutul folderelor în meniul principal</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Adăugați conținutul directorului în directorul rădăcină</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Căile folderelor</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Căile de director</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Foldere</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Directoare</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Recursiv</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Eliminați folderul</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Eliminați directorul</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Doar Fișiere</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Goliți memoria cache dacă este mai mare de acest număr de articole</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Adăugați dosarul „Meniu Start”.</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Adăugați exemplu de director „Meniu Start”.</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Înălțimea rândului în procente</value>
@@ -412,25 +409,25 @@
     <value>Personalizat (trageți-l în locul potrivit)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>articol</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>articole</value>
+    <value>elemente</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Generați comenzi rapide către unități</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Generați comenzi rapide pentru unitate la pornire</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Afișați întotdeauna fișierele, folderele sau unitățile ascunse</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Afișați întotdeauna fișierele, directoarele sau unitățile ascunse</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Fișiere și foldere ascunse</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Fișiere și directoare ascunse</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Nu afișa niciodată fișiere, foldere sau unități ascunse</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Nu afișa niciodată fișiere, directoare sau unități ascunse</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Dimensiunea si locatia</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Trimiteți tasta rapidă către altă instanță</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>După dată</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Sortati dupa data</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Dupa nume</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Sorteaza dupa nume</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Triere</value>

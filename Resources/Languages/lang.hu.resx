@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Ról ről</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>A SystemTrayMenu-ról</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>rendben</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Automatikus indítás</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Kijárat</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Lépjen ki az alkalmazásból</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Mappa</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Könyvtár</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>A mappa üres</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>A könyvtár üres</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Részletek</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Rendszer információ</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>A mappa nem elérhető</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>A címtár nem elérhető</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Nyelv</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Nem sikerült regisztrálni a gyorsbillentyűt.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Megszünteti</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Elvetél</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Tábornok</value>
@@ -165,31 +165,28 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Gyorsbillentyű</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Indítás indításkor</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Kezdje a Windows rendszerrel</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Beállítások</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Segítség / GYIK</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Gyakran Ismételt Kérdések</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Olvassa el a GYIK-et, majd válasszon gyökérkönyvtárat a SystemTrayMenu számára.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Mappa kiválasztása</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Válassza ki a könyvtárat</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>A SystemTrayMenu gyökérmappája nem létezik vagy üres! Helyezzen el néhány fájlt, mappát vagy parancsikont a mappába, vagy módosítsa a gyökérmappát.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Az alkalmazás gyökérkönyvtára nem létezik, vagy üres! Módosítsa a gyökérkönyvtárat, vagy helyezzen el néhány fájlt, könyvtárat vagy parancsikont a gyökérkönyvtárba.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Nincs hozzáférése a SystemTrayMenu gyökérmappájához. Adjon hozzáférést a mappához, vagy módosítsa a gyökérmappát.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nincs hozzáférése az alkalmazás gyökérkönyvtárához. Adjon hozzáférést a könyvtárhoz, vagy módosítsa a gyökérkönyvtárat.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Egyetlen kattintással nyithat meg egy elemet dupla kattintás helyett</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Az egér helye</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Mappa módosítása</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Változtassa meg a könyvtárat</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Kattintson</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Háttér</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Megnyitott mappa</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Megnyitott könyvtár</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>A megnyitott mappa szegélye</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>A megnyitott könyvtár szegélye</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Keresés mező</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>Kiválasztott elem</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
+  <data name="Border of selected element" xml:space="preserve">
     <value>A kiválasztott elem szegélye</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Váltás relatív mappára</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Konvertálás relatív könyvtárba</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Tárolja a konfigurációt az összeállítás helyén</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Mentse el a konfigurációt az alkalmazás mappájába</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Nyissa meg az összeszerelési helyet</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Nyissa meg az alkalmazáskönyvtárat</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Pixel maximális menümagasság</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Nyíl kattintáskor</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Nyíl, miközben az egér lebeg</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Nyíl, miközben az egér lebeg felette</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Nyíl háttere kattintáskor</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Nyíl háttere, miközben az egér lebeg</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Nyíl háttere, miközben az egér lebeg felette</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Színek Sötét mód</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Színek "Sötét mód"</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Színek Világos mód</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Színek "Light Mode"</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menü</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Alkalmazás menü</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Görgetősáv</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Csúszka húzás közben</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Csúszka, miközben az egér lebeg 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Csúsztassa, miközben az egeret fölé viszi 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Csúszka, miközben az egér lebeg 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Csúsztassa, miközben az egeret fölé viszi 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Használja a mappából származó ikont</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Használja a könyvtár ikonját</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Méret</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Helyi menü beállítása</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Beállítás SystemTrayMenu mappaként</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Beállítás könyvtárként</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Betöltés</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Probléma a parancsikonnal</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Probléma a hivatkozással</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Az elem, amelyre ez a parancsikon hivatkozik, megváltozott vagy át lett helyezve, ezért ez a parancsikon többé nem fog megfelelően működni.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Nyitott mappa</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Nyissa meg a könyvtárat</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Feladatkezelő"</value>
+    <value>Feladatkezelő</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Deaktiválva</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Megjelenítés a tálcán</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Mappa hozzáadása</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Könyvtár hozzáadása</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Mappák tartalmának hozzáadása a főmenühöz</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Adja hozzá a könyvtár tartalmát a gyökérkönyvtárhoz</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Mappa útvonalak</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Címtár útvonalak</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Mappák</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Könyvtárak</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rekurzív</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Mappa eltávolítása</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Könyvtár eltávolítása</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Csak fájlok</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Törölje a gyorsítótárat, ha több mint ez az elemszám</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Adja hozzá a „Start menü” minta mappát</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Adja hozzá a „Start menü” mintakönyvtárat</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Sormagasság százalékban</value>
@@ -412,25 +409,25 @@
     <value>Egyéni (húzza a megfelelő helyre)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>tétel</value>
+    <value>elem</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>tételeket</value>
+    <value>elemeket</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Parancsikonokat generál a meghajtókhoz</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Meghajtó parancsikonok létrehozása indításkor</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Gyorsítótár</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Mindig mutasson rejtett fájlokat, mappákat vagy meghajtókat</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Mindig mutasson rejtett fájlokat, könyvtárakat vagy meghajtókat</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Rejtett fájlok és mappák</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Rejtett fájlok és könyvtárak</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Soha ne mutasson rejtett fájlokat, mappákat vagy meghajtókat</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Soha ne mutasson rejtett fájlokat, könyvtárakat vagy meghajtókat</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Méret és hely</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Gyorsbillentyű küldése másik példánynak</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Dátum szerint</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Rendezés dátum szerint</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Név szerint</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Név szerinti rendezés</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Válogató</value>

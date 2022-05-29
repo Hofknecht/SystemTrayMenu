@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Umbes</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Teave SystemTrayMenu kohta</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Okei</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Autostart</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Välju</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Välju rakendusest</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Kaust</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Kataloog</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Kaust tühi</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Kataloog tühi</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Üksikasjad</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Süsteemi teave</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Kaustale ligipääsmatu</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Kataloog pole juurdepääsetav</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Keel</value>
@@ -154,10 +154,10 @@
     <value>Taaskäivita</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Kiirklahvi ei saanud registreerida.</value>
+    <value>Kiirklahvi ei õnnestunud registreerida.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Tühista</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Katkesta</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Kindral</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Kiirklahv</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Käivitage käivitamisel</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Alustage Windowsiga</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Seaded</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Abi / KKK</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Korduma kippuvad küsimused</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Lugege KKK-d ja seejärel valige SystemTrayMenu juurkataloog.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Valige kaust</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Valige kataloog</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Teie SystemTrayMenu juurkausta pole olemas või see on tühi! Sisestage mõned failid, kaustad või otseteed kausta või muutke juurkausta.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Teie rakenduse juurkataloogi pole olemas või see on tühi! Muutke juurkataloogi või sisestage mõned failid, kataloogid või otseteed juurkataloogi.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Teil pole juurdepääsu SystemTrayMenu juurkaustale. Andke juurdepääs kaustale või muutke juurkausta.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Teil pole juurdepääsu rakenduse juurkataloogile. Andke juurdepääs kataloogile või muutke juurkataloogi.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Üksuse avamiseks topeltklõpsu asemel tehke üks klõps</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Topeltklõpsu asemel elemendi avamiseks tehke üks klõps</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Tume režiim on alati aktiivne</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Hiire asukoht</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Muuda kausta</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Muuda kataloogi</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Klõpsake</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Taust</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Avatud kaust</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Avatud kataloog</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Avatud kausta ääris</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Avatud kataloogi piir</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Otsinguväli</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Valitud üksus</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Valitud element</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Valitud üksuse ääris</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Valitud elemendi ääris</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Muutke suhteliseks kaustaks</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Teisenda suhteliseks kataloogiks</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Salvestage konfiguratsioon kokkupanekukohas</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Salvestage konfiguratsioon rakenduste kausta</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Avage monteerimiskoht</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Avage rakenduste kataloog</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Menüü maksimaalne kõrgus pikslites</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Nool klõpsamisel</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Nool hiire hõljumise ajal</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Nool, kui hiir hõljub selle kohal</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Noole taust klõpsamisel</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Noole taust hiire hõljumise ajal</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Noole taust, kui hiir hõljub selle kohal</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Värvid Tume režiim</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Värvid 'tume režiim'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Värvid Valgusrežiim</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Värvid 'Light Mode'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menüü</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Rakenduse menüü</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Kerimisriba</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Liugur lohistamise ajal</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Liugur, kui hiir hõljub 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Liugur, kui hiir liigub selle kohal 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Liugur, kui hiir hõljub 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Liugur, kui hiir hõljub selle kohal 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Kasutage kausta ikooni</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Kasutage kataloogi ikooni</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Suurus</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Määratakse kontekstimenüüga</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Määra SystemTrayMenu kaustaks</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Määra kataloogiks</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>laadimine</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Probleem otseteega</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Probleem otsetee lingiga</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Üksust, millele see otsetee viitab, on muudetud või teisaldatud, mistõttu see otsetee enam korralikult ei tööta.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Ava kaust</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Ava kataloog</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Task Manager"</value>
+    <value>Tegumihaldur</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Deaktiveeritud</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Kuva tegumiribal</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Lisa kaust</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Lisa kataloog</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Lisage peamenüüsse kaustade sisu</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Lisage juurkataloogi kataloogi sisu</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Kaustateed</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Kataloogiteed</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Kaustad</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Kataloogid</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Korduv</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Eemalda kaust</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Eemalda kataloog</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Ainult failid</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Tühjendage vahemälu, kui üksusi on rohkem kui see arv</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Lisage näidiskaust "Startmenüü".</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Lisage kataloogi "Start" näidis</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Rea kõrgus protsentides</value>
@@ -412,25 +409,25 @@
     <value>Kohandatud (lohistage see sobivasse kohta)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>üksus</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>esemed</value>
+    <value>elemendid</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Loo draividele otseteid</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Loo käivitamisel draivi otseteed</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Vahemälu</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Kuva alati peidetud failid, kaustad või draivid</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Kuva alati peidetud failid, kataloogid või draivid</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Peidetud failid ja kaustad</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Peidetud failid ja kataloogid</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Ärge kunagi näidake peidetud faile, kaustu ega draive</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Ärge kunagi kuvage peidetud faile, katalooge ega draive</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Suurus ja asukoht</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Saada kiirklahv teisele eksemplarile</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Kuupäeva järgi</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Sorteeri kuupäeva järgi</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Nimepidi</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Sorteeri nime järgi</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sorteerimine</value>

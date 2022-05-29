@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>O</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>O SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>v redu</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Samodejni zagon</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Izhod</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Zapri aplikacijo</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>mapa</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Imenik</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Mapa je prazna</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Imenik je prazen</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Podrobnosti</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Informacije o sistemu</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Mapa nedostopna</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Imenik nedostopen</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Jezik</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Vroče tipke ni bilo mogoče registrirati.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Prekliči</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Prekini</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>General</value>
@@ -165,31 +165,28 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hotkey</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Zaženite ob zagonu</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Začnite z operacijskim sistemom Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Nastavitve</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Pomoč / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Pogosto zastavljena vprašanja</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Preberite pogosta vprašanja in nato izberite korenski imenik za SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Izberite Mapa</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Izberite imenik</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Vaša korenska mapa za SystemTrayMenu ne obstaja ali je prazna! V mapo vstavite nekaj datotek, map ali bližnjic ali spremenite korensko mapo.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Vaš korenski imenik za aplikacijo ne obstaja ali pa je prazen! Spremenite korenski imenik ali v korenski imenik vstavite nekaj datotek, imenikov ali bližnjic.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Nimate dostopa do korenske mape za SystemTrayMenu. Dovolite dostop do mape ali spremenite korensko mapo.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nimate dostopa do korenskega imenika aplikacije. Dovolite dostop do imenika ali spremenite korenski imenik.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>En klik, da odprete element namesto dvojnega</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Lokacija miške</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Spremeni mapo</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Spremenite imenik</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Kliknite</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Ozadje</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Odprta mapa</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Odprt imenik</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Obroba odprte mape</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Obroba odprtega imenika</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Polje za iskanje</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>Izbrani element</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
+  <data name="Border of selected element" xml:space="preserve">
     <value>Obroba izbranega elementa</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Spremenite v relativno mapo</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Pretvori v relativni imenik</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Konfiguracijo shranite na mestu montaže</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Shranite konfiguracijo v mapo aplikacije</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Odprite mesto montaže</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Odprite imenik aplikacij</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Največja višina menija v slikovnih pikah</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Puščica ob kliku</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Puščica med lebdenjem miške</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Puščica, medtem ko miška lebdi nad njo</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Ozadje puščice ob kliku</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Ozadje puščice med lebdenjem miške</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Ozadje puščice, medtem ko miška lebdi nad njo</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Barve Temni način</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Barve "Temni način"</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Barve Svetlobni način</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Barve 'Light Mode'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>meni</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Meni aplikacije</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Drsni trak</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Drsnik med vlečenjem</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Drsnik med premikanjem miške 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Drsnik, medtem ko miška lebdi nad njim 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Drsnik med lebdenjem miške 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Drsnik, medtem ko miška lebdi nad njim 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Uporabi ikono iz mape</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Uporabi ikono iz imenika</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Velikost</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Nastavi s kontekstnim menijem</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Nastavite kot mapo SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Nastavi kot imenik</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>nalaganje</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Težava z bližnjico</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Težava s povezavo bližnjic</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Element, na katerega se nanaša ta bližnjica, je bil spremenjen ali premaknjen, zato ta bližnjica ne bo več delovala pravilno.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Odpri mapo</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Odpri imenik</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Upravitelj opravil"</value>
+    <value>Upravitelj opravil</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Deaktivirano</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Pokaži v opravilni vrstici</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Dodaj mapo</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Dodaj imenik</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Dodajte vsebino map v glavni meni</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Dodajte vsebino imenika v korenski imenik</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Poti map</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Poti imenika</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>mape</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Imeniki</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Rekurzivno</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Odstrani mapo</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Odstrani imenik</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Samo datoteke</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Počisti predpomnilnik, če je več kot to število elementov</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Dodajte vzorčno mapo »Meni Start«.</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Dodajte vzorčni imenik »Start Menu«.</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Višina vrstice v odstotkih</value>
@@ -412,25 +409,25 @@
     <value>Po meri (povlecite ga na ustrezno mesto)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>predmet</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>predmetov</value>
+    <value>elementov</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Ustvari bližnjice do pogonov</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Ustvari bližnjice do pogona ob zagonu</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>predpomnilnik</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Vedno prikaži skrite datoteke, mape ali pogone</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Vedno prikaži skrite datoteke, imenike ali pogone</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Skrite datoteke in mape</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Skrite datoteke in imeniki</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Nikoli ne prikaži skritih datotek, map ali pogonov</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Nikoli ne prikaži skritih datotek, imenikov ali pogonov</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Velikost in lokacija</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Pošlji bližnjico drugemu primerku</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Po datumu</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Razvrsti po datumu</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Po imenu</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Razvrsti po imenu</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Razvrščanje</value>

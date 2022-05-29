@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Про</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Про SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>в порядку</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Авто старт</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Вихід</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Вийти з програми</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>папка</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Довідник</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Папка порожня</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Каталог пустий</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Деталі</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Інформація про систему</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Папка недоступна</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Каталог недоступний</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Мову</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Не вдалося зареєструвати гарячу клавішу.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Скасувати</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Перервати</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Генеральний</value>
@@ -165,31 +165,28 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Гаряча клавіша</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Запуск при запуску</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Почніть з Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Налаштування</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Довідка / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Питання що часто задаються</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Прочитайте поширені запитання, а потім виберіть кореневий каталог для SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Виберіть Папка</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Виберіть каталог</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Ваша коренева папка для SystemTrayMenu не існує або порожня! Помістіть деякі файли, папки або ярлики в папку або змініть кореневу папку.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Ваш кореневий каталог для програми не існує або порожній! Змініть кореневий каталог або помістіть деякі файли, каталоги або ярлики в кореневий каталог.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>У вас немає доступу до кореневої папки для SystemTrayMenu. Надайте доступ до папки або змініть кореневу папку.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>У вас немає доступу до кореневого каталогу програми. Надайте доступ до каталогу або змініть кореневий каталог.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Один клацніть, щоб відкрити елемент замість подвійного клацання</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Розташування миші</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Змінити папку</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Змініть каталог</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Натисніть</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Фон</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Відкрита папка</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Відкритий каталог</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Межа відкритої папки</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Межа відкритого каталогу</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Поле пошуку</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>Вибраний елемент</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Межа вибраного елемента</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Межа виділеного елемента</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Змінити на відносну папку</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Перетворити у відносний каталог</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Зберігайте конфігурацію в місці збірки</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Збережіть конфігурацію в папці програми</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Відкрийте місце складання</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Відкрийте каталог програм</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Максимальна висота меню в пікселях</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Стрілка при натисканні</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Стрілка під час наведення миші</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Стрілка під час наведення миші на неї</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Фон стрілки при натисканні</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Фон стрілки під час наведення миші</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Фон зі стрілкою під час наведення миші на неї</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Кольори Темний режим</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Кольори «Темний режим»</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Кольори Світлий режим</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Кольори «Світлий режим»</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Меню</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Меню програми</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Смуга прокрутки</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Повзунок під час перетягування</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Повзунок під час наведення миші 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Повзунок під час наведення миші на нього 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Повзунок під час наведення миші 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Повзунок під час наведення миші на нього 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Використовуйте піктограму з папки</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Використовуйте піктограму з каталогу</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Розмір</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Встановлюється за допомогою контекстного меню</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Встановити як папку SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Встановити як каталог</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>завантаження</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Проблема з ярликом</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Проблема з посиланням на ярлик</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Елемент, на який посилається цей ярлик, був змінений або переміщений, тому цей ярлик більше не працюватиме належним чином.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Відкрити папку</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Відкрити каталог</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>«Диспетчер завдань»</value>
+    <value>Диспетчер завдань</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Вимкнено</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Показати на панелі завдань</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Додати папку</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Додати каталог</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Додати вміст папок до головного меню</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Додати вміст каталогу до кореневого каталогу</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Шляхи до папок</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Шляхи до каталогу</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Папки</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Довідники</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Рекурсивний</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Видалити папку</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Видалити каталог</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Тільки файли</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Очистити кеш, якщо кількість елементів більше цієї</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Додайте зразок папки "Меню "Пуск".</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Додайте зразок каталогу "Меню "Пуск".</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Висота рядка у відсотках</value>
@@ -412,25 +409,25 @@
     <value>Спеціальний (перетягніть його у потрібне місце)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>пункт</value>
+    <value>елемент</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>предметів</value>
+    <value>елементів</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Створення ярликів для дисків</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Створення ярликів диска під час запуску</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Кеш</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Завжди показувати приховані файли, папки або диски</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Завжди показувати приховані файли, каталоги або диски</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Приховані файли та папки</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Приховані файли та каталоги</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Ніколи не показуйте приховані файли, папки чи диски</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Ніколи не показуйте приховані файли, каталоги чи диски</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Розмір і розташування</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Надіслати гарячу клавішу в інший екземпляр</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>За датою</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Сортувати за датою</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>По імені</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Сортувати за назвою</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортування</value>

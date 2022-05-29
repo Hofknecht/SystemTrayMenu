@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Sobre</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Sobre SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>D'acord</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Inici automàtic</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Sortida</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Surt de l'aplicació</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Carpeta</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Directori</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Carpeta buida</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Directori buit</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Detalls</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Informació del sistema</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Carpeta inaccessible</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Directori inaccessible</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Llenguatge</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>No s'ha pogut registrar la tecla d'accés ràpid.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Cancel · lar</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Avortar</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>General</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Tecla ràpida</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Llançament a l'inici</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Comença amb Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Configuració</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Ajuda / PMF</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Preguntes freqüents</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Llegiu les PMF i, a continuació, trieu un directori arrel per al SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Seleccioneu Carpeta</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Seleccioneu el directori</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>La vostra carpeta arrel per al SystemTrayMenu no existeix o està buida! Col·loqueu alguns fitxers, carpetes o dreceres a la carpeta o canvieu la carpeta arrel.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>El vostre directori arrel de l'aplicació no existeix o està buit! Canvieu el directori arrel o poseu alguns fitxers, directoris o dreceres al directori arrel.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>No teniu accés a la carpeta arrel del SystemTrayMenu. Concedeix accés a la carpeta o canvia la carpeta arrel.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>No teniu accés al directori arrel de l'aplicació. Concedeix accés al directori o canvia el directori arrel.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Feu clic per obrir un element en lloc de fer doble clic</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Un sol clic per obrir un element en lloc de fer doble clic</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Mode fosc sempre actiu</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Ubicació del ratolí</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Canvia carpeta</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Canvia el directori</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Feu clic</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Fons</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Carpeta oberta</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Directori obert</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Vora de la carpeta oberta</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Vora del directori obert</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Camp de cerca</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>Element seleccionat</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
+  <data name="Border of selected element" xml:space="preserve">
     <value>Vora de l'element seleccionat</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Canvia a la carpeta relativa</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Converteix al directori relatiu</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Emmagatzema la configuració al lloc de muntatge</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Desa la configuració a la carpeta de l'aplicació</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Obriu el lloc de muntatge</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Obriu el directori d'aplicacions</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Alçada màxima del menú en píxels</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Fletxa en fer clic</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Fletxa mentre el ratolí passa</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Fletxa mentre el ratolí passa per sobre</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Fons de la fletxa en fer clic</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Fons de la fletxa mentre el ratolí passa</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Fons de la fletxa mentre el ratolí passa per sobre</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Colors Mode fosc</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Colors "Mode fosc"</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Mode de llum de colors</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Colors "Mode de llum"</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menú</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Menú de l'aplicació</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Barra de desplaçament</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Control lliscant mentre arrossegueu</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Control lliscant mentre el ratolí passa amb el ratolí 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Control lliscant mentre el ratolí passa per sobre 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Control lliscant mentre el ratolí passa amb el ratolí 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Control lliscant mentre el ratolí passa per sobre 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Utilitza la icona de la carpeta</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Utilitza la icona del directori</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Mida</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Definit pel menú contextual</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Estableix com a carpeta SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Estableix com a directori</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>carregant</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problema amb la drecera</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problema amb l'enllaç de drecera</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>L'element al qual fa referència aquesta drecera s'ha canviat o mogut, de manera que aquesta drecera deixarà de funcionar correctament.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Carpeta oberta</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Directori obert</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Cap de tasques"</value>
+    <value>Cap de tasques</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Desactivat</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostra a la barra de tasques</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Afegir carpeta</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Afegeix un directori</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Afegiu contingut de carpetes al menú principal</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Afegiu contingut del directori al directori arrel</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Camins de carpetes</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Rutes de directori</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Carpetes</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Directoris</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Recursiu</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Elimina la carpeta</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Elimina el directori</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Només arxius</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Esborra la memòria cau si hi ha més d'aquest nombre d'elements</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Afegiu una mostra de la carpeta "Menú Inici".</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Afegiu el directori d'exemple "Menú Inici".</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Alçada de fila en percentatge</value>
@@ -412,25 +409,25 @@
     <value>Personalitzat (arrossegar-lo al lloc adequat)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>article</value>
+    <value>element</value>
   </data>
   <data name="elements" xml:space="preserve">
     <value>elements</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Genera dreceres a les unitats</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Genereu dreceres de la unitat a l'inici</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Memòria cau</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Mostra sempre fitxers, carpetes o unitats ocults</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Mostra sempre fitxers, directoris o unitats ocults</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Fitxers i carpetes ocults</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Fitxers i directoris ocults</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>No mostris mai fitxers, carpetes o unitats ocults</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>No mostris mai fitxers, directoris o unitats ocults</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Mida i ubicació</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Envia la tecla d'accés ràpid a una altra instància</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Per data</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Ordena per data</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Per nom</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Ordena per nom</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Classificació</value>

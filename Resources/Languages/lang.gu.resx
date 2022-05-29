@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>વિશે</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu વિશે</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>બરાબર</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>ઑટોસ્ટાર્ટ</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>બહાર નીકળો</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>એપ્લિકેશનમાંથી બહાર નીકળો</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>ફોલ્ડર</value>
+  <data name="Directory" xml:space="preserve">
+    <value>ડિરેક્ટરી</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>ફોલ્ડર ખાલી છે</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>ડિરેક્ટરી ખાલી છે</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>વિગતો</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>સિસ્ટમ માહિતી</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>ફોલ્ડર અપ્રાપ્ય</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>ડિરેક્ટરી અપ્રાપ્ય</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>ભાષા</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>હોટ કી રજીસ્ટર કરી શકાઈ નથી.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>રદ કરો</value>
+  <data name="Abort" xml:space="preserve">
+    <value>ગર્ભપાત</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>જનરલ</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>હોટકી</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>સ્ટાર્ટઅપ પર લોંચ કરો</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>વિન્ડોઝ સાથે પ્રારંભ કરો</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>સેટિંગ્સ</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>મદદ / FAQ</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>વારંવાર પૂછાતા પ્રશ્નો</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>સિસ્ટમટ્રેમેનુ</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>FAQ વાંચો અને પછી SystemTrayMenu માટે રૂટ ડિરેક્ટરી પસંદ કરો.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>ફોલ્ડર પસંદ કરો</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>ડિરેક્ટરી પસંદ કરો</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>SystemTrayMenu માટે તમારું રૂટ ફોલ્ડર અસ્તિત્વમાં નથી અથવા ખાલી છે! ફોલ્ડરમાં કેટલીક ફાઇલો, ફોલ્ડર્સ અથવા શોર્ટકટ મૂકો અથવા રૂટ ફોલ્ડર બદલો.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>એપ્લિકેશન માટેની તમારી રૂટ ડિરેક્ટરી અસ્તિત્વમાં નથી અથવા ખાલી છે! રૂટ ડિરેક્ટરી બદલો અથવા રૂટ ડિરેક્ટરીમાં કેટલીક ફાઇલો, ડિરેક્ટરીઓ અથવા શોર્ટકટ્સ મૂકો.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>તમારી પાસે SystemTrayMenu માટે રૂટ ફોલ્ડરની કોઈ ઍક્સેસ નથી. ફોલ્ડરને ઍક્સેસ આપો અથવા રૂટ ફોલ્ડર બદલો.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં એક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>આઇટમ ખોલવા માટે ડબલ ક્લિકને બદલે સિંગલ ક્લિક કરો</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>ડબલ ક્લિકને બદલે એલિમેન્ટ ખોલવા માટે સિંગલ ક્લિક કરો</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>ડાર્ક મોડ હંમેશા સક્રિય</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>માઉસ સ્થાન</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>ફોલ્ડર બદલો</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>ડિરેક્ટરી બદલો</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>ક્લિક કરો</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>પૃષ્ઠભૂમિ</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>ફોલ્ડર ખોલ્યું</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>ડિરેક્ટરી ખોલી</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>ખોલેલા ફોલ્ડરની કિનારી</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>ખોલેલી ડિરેક્ટરીની સરહદ</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>શોધ ક્ષેત્ર</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>પસંદ કરેલી આઇટમ</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>પસંદ કરેલ તત્વ</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>પસંદ કરેલી આઇટમની કિનારી</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>પસંદ કરેલ ઘટકની સરહદ</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>સંબંધિત ફોલ્ડરમાં બદલો</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>સંબંધિત ડિરેક્ટરીમાં કન્વર્ટ કરો</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>એસેમ્બલી સ્થાન પર રૂપરેખા સ્ટોર કરો</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>એપ્લિકેશન ફોલ્ડરમાં ગોઠવણી સાચવો</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>યુએસબી</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>એસેમ્બલી સ્થાન ખોલો</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>એપ્લિકેશન ડિરેક્ટરી ખોલો</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>પિક્સેલ્સ મેનુની મહત્તમ ઊંચાઈ</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>ક્લિક કરતી વખતે એરો</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>તીર જ્યારે માઉસ ફરે છે</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>તીર જ્યારે માઉસ તેના પર ફરે છે</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>ક્લિક કરતી વખતે તીરની પૃષ્ઠભૂમિ</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>માઉસ ફરતી વખતે તીરની પૃષ્ઠભૂમિ</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>તીરની પૃષ્ઠભૂમિ જ્યારે માઉસ તેના પર ફરે છે</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>રંગો ડાર્ક મોડ</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>રંગો 'ડાર્ક મોડ'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>કલર્સ લાઇટ મોડ</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>રંગો 'લાઇટ મોડ'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>મેનુ</value>
+  <data name="App menu" xml:space="preserve">
+    <value>એપ્લિકેશન મેનૂ</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>સ્ક્રોલબાર</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>ખેંચતી વખતે સ્લાઇડર</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>માઉસ ફરતું હોય ત્યારે સ્લાઇડર 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>સ્લાઇડર જ્યારે માઉસ 2 ફરે છે</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>ફોલ્ડરમાંથી આયકનનો ઉપયોગ કરો</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>ડિરેક્ટરીમાંથી આયકનનો ઉપયોગ કરો</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>કદ</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>સંદર્ભ મેનૂ દ્વારા સેટ કરો</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>SystemTrayMenu ફોલ્ડર તરીકે સેટ કરો</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>ડિરેક્ટરી તરીકે સેટ કરો</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>લોડિંગ</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>શોર્ટકટ સાથે સમસ્યા</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>શોર્ટકટ લિંક સાથે સમસ્યા</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કાર્ય કરશે નહીં.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>ખુલ્લું ફોલ્ડર</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>ડિરેક્ટરી ખોલો</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"કાર્ય વ્યવસ્થાપક"</value>
+    <value>કાર્ય વ્યવસ્થાપક</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>નિષ્ક્રિય</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ટાસ્કબારમાં બતાવો</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>ફોલ્ડર ઉમેરો</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>ડિરેક્ટરી ઉમેરો</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>મુખ્ય મેનૂમાં ફોલ્ડર્સની સામગ્રી ઉમેરો</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>રુટ ડિરેક્ટરીમાં ડિરેક્ટરીની સામગ્રી ઉમેરો</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>ફોલ્ડર પાથ</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>ડિરેક્ટરી પાથ</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>ફોલ્ડર્સ</value>
+  <data name="Directories" xml:space="preserve">
+    <value>ડિરેક્ટરીઓ</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>પુનરાવર્તિત</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>ફોલ્ડર દૂર કરો</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>ડિરેક્ટરી દૂર કરો</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>ફક્ત ફાઇલો</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>આઇટમ્સની આ સંખ્યા કરતાં વધુ હોય તો કેશ સાફ કરો</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>નમૂના 'સ્ટાર્ટ મેનૂ' ફોલ્ડર ઉમેરો</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>નમૂના 'સ્ટાર્ટ મેનૂ' ડિરેક્ટરી ઉમેરો</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>ટકામાં પંક્તિની ઊંચાઈ</value>
@@ -412,25 +409,25 @@
     <value>કસ્ટમ (તેને યોગ્ય જગ્યાએ ખેંચો)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>વસ્તુ</value>
+    <value>તત્વ</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>વસ્તુઓ</value>
+    <value>તત્વો</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>ડ્રાઇવ માટે શોર્ટકટ્સ જનરેટ કરો</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>સ્ટાર્ટઅપ પર ડ્રાઇવ શોર્ટકટ્સ જનરેટ કરો</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>કેશ</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>હંમેશા છુપાયેલ ફાઇલો, ફોલ્ડર્સ અથવા ડ્રાઇવ્સ બતાવો</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>હંમેશા છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ બતાવો</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>છુપાયેલ ફાઇલો અને ફોલ્ડર્સ</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>છુપાયેલ ફાઇલો અને ડિરેક્ટરીઓ</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>છુપાયેલ ફાઇલો, ફોલ્ડર્સ અથવા ડ્રાઇવ્સ ક્યારેય બતાવશો નહીં</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ ક્યારેય બતાવશો નહીં</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>કદ અને સ્થાન</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>અન્ય ઉદાહરણ પર હોટકી મોકલો</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>તારીખ દ્વારા</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>તારીખ દ્વારા સૉર્ટ કરો</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>નામથી</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>નામ પ્રમાણે સૉર્ટ કરો</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>વર્ગીકરણ</value>

@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Faoi</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Maidir le SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>ceart go leor</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Uath-thosú</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>An slí amach</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Scoir an app</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Fillteán</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Eolaire</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Fillteán folamh</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Eolaire folamh</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Sonraí</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Eolas faoin gCóras</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Fillteán dorochtana</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Eolaire dorochtana</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Teanga</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Níorbh fhéidir an eochair te a chlárú.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Cealaigh</value>
+  <data name="Abort" xml:space="preserve">
+    <value>ginmhilleadh</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Ginearálta</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Eochair te</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Seoladh ar tosaithe</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Tosaigh le Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Socruithe</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Cabhair / Ceisteanna Coitianta</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Ceisteanna Coitianta</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>Menu SystemTray</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Léigh na Ceisteanna Coitianta agus ansin roghnaigh eolaire fréimhe don SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Roghnaigh Fillteán</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Roghnaigh eolaire</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Níl d'fhillteán fréimhe don SystemTrayMenu ann nó tá sé folamh! Cuir roinnt comhaid, fillteáin nó aicearraí isteach san fhillteán nó athraigh an fillteán fréimhe.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Níl do fhréamh-eolaire don aip ann nó tá sé folamh! Athraigh an eolaire fréimhe nó cuir roinnt comhad, eolairí nó aicearraí isteach sa fhréamh-eolaire.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Níl aon rochtain agat ar an bhfréamhfhillteán don SystemTrayMenu. Deonaigh rochtain ar an bhfillteán nó athraigh an fillteán fréimhe.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Níl aon rochtain agat ar fhréamh-eolaire na haipe. Deonaigh rochtain ar an eolaire nó athraigh an t-eolaire fréamhacha.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Cliceáil amháin chun mír a oscailt in ionad cliceáil faoi dhó</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Cliceáil amháin chun eilimint a oscailt in ionad cliceáil faoi dhó</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Mód Dorcha i gcónaí gníomhach</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Suíomh luch</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Athraigh fillteán</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Athraigh an t-eolaire</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Cliceáil</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Cúlra</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Fillteán oscailte</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Comhadlann oscailte</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Teorainn an fhillteáin oscailte</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Teorainn an eolaire oscail</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Réimse cuardaigh</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Mír roghnaithe</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Gné roghnaithe</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Teorainn na míre roghnaithe</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Teorainn na heiliminte roghnaithe</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Athrú go fillteán coibhneasta</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Tiontaigh go eolaire coibhneasta</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Stóráil config ag an suíomh tionóil</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Sábháil cumraíocht san fhillteán feidhmchláir</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Oscail an suíomh tionóil</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Oscail eolaire feidhmchlár</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Uasairde roghchláir picteilíní</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Arrow nuair a chliceáil</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Saighead agus hovers luch</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Saighead agus luch hovers níos mó ná é</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Cúlra na saigheada nuair a chliceálann tú</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Cúlra na saigheada agus an luch ag foluain</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Cúlra na saigheada agus an luch ag foluain os a chionn</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Dathanna Mód Dorcha</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Dathanna 'Mód Dorcha'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Dathanna Mód Solas</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Dathanna 'Mód Solais'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Roghchlár</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Roghchlár app</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Scrollbharra</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Sleamhnán agus tú ag tarraingt</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Sleamhnán agus an luch ar foluain 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Sleamhnán agus an luch ag foluain thairis air 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Sleamhnán agus an luch ar foluain 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Sleamhnán agus an luch ag foluain os a chionn 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Úsáid deilbhín ón bhfillteán</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Úsáid deilbhín ón eolaire</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Méid</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Socraithe ag roghchlár comhthéacs</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Socraigh mar fhillteán SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Socraigh mar eolaire</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>ag lódáil</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Fadhb le hAicearra</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Fadhb le nasc aicearra</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Athraíodh nó aistríodh an mhír dá dtagraíonn an t-aicearra seo, mar sin ní oibreoidh an t-aicearra seo i gceart a thuilleadh.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Fillteán Oscailte</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Oscail eolaire</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Bainisteoir Tasc"</value>
+    <value>Bainisteoir Tasc</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Díghníomhaithe</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Taispeáin sa Tascbharra</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Cuir fillteán leis</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Cuir eolaire leis</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Cuir ábhar na bhfillteán leis an bpríomh-roghchlár</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Cuir ábhar an eolaire leis an bhfréamheolaire</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Cosáin fillteáin</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Cosáin eolaire</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Fillteáin</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Comhadlanna</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Athchúrsach</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Bain fillteán</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Bain eolaire</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Comhaid amháin</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Glan an taisce má tá níos mó ná an líon seo míreanna agat</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Cuir fillteán samplach 'Start Menu' leis</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Cuir eolaire samplach 'Roghchlár Tosaigh' leis</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Airde ró i faoin gcéad</value>
@@ -412,25 +409,25 @@
     <value>Saincheaptha (tarraing chuig an áit chuí é)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>mír</value>
+    <value>eilimint</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>míreanna</value>
+    <value>eilimintí</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Gin aicearraí chuig tiomántáin</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Gin aicearraí tiomána ar am tosaithe</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Taisce</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Taispeáin comhaid fholaithe, fillteáin nó thiomáineann i gcónaí</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Taispeáin comhaid fholaithe, eolairí nó tiomántáin i gcónaí</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Comhaid agus fillteáin i bhfolach</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Comhaid agus eolairí ceilte</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Ná taispeáin comhaid fholaithe, fillteáin nó tiomántáin choíche</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Ná taispeáin comhaid fholaithe, eolairí nó tiomántáin choíche</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Méid agus suíomh</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Seol hotkey chuig cás eile</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>De réir dáta</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Sórtáil de réir dáta</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>De réir ainm</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Sórtáil de réir ainm</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sórtáil</value>

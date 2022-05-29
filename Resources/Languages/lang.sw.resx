@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Kuhusu</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Kuhusu SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>sawa</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Anzisha kiotomatiki</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Utgång</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Ondoka kwenye programu</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Folda</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Orodha</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Folda tupu</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Orodha tupu</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Maelezo</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Maelezo ya Mfumo</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folda haipatikani</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Saraka haipatikani</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Lugha</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Haikuweza kusajili ufunguo wa moto.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Ghairi</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Toa mimba</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Mkuu</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Hotkey</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Anzisha wakati wa kuanza</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Anza na Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Mipangilio</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Msaada / Maswali Yanayoulizwa Mara kwa Mara</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>maswali yanayoulizwa mara kwa mara</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Soma Maswali Yanayoulizwa Mara kwa Mara na kisha uchague saraka ya mizizi kwa SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Chagua Folda</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Chagua saraka</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Folda yako ya mizizi ya SystemTrayMenu haipo au haina kitu! Weka faili, folda au njia za mkato kwenye folda au ubadilishe folda ya mizizi.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Saraka yako ya mizizi ya programu haipo au ni tupu! Badilisha saraka ya mizizi au weka faili, saraka au njia za mkato kwenye saraka ya mizizi.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Huna ufikiaji wa folda ya mizizi ya SystemTrayMenu. Ruhusu ufikiaji wa folda au ubadilishe folda ya mizizi.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Huna ufikiaji wa saraka ya mizizi ya programu. Ruhusu ufikiaji wa saraka au ubadilishe saraka ya mizizi.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Bofya mara moja ili kufungua kipengee badala ya kubofya mara mbili</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Bofya mara moja ili kufungua kipengele badala ya kubofya mara mbili</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Hali ya Giza inatumika kila wakati</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Mahali pa panya</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Badilisha folda</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Badilisha saraka</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Bofya</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Usuli</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Folda iliyofunguliwa</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Saraka iliyofunguliwa</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Mpaka wa folda iliyofunguliwa</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Mpaka wa saraka iliyofunguliwa</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Tafuta sehemu</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Kipengee kilichochaguliwa</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Kipengele kilichochaguliwa</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Mpaka wa kipengee kilichochaguliwa</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Mpaka wa kipengele kilichochaguliwa</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Badilisha hadi folda ya jamaa</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Badilisha kuwa saraka ya jamaa</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Hifadhi usanidi kwenye eneo la kusanyiko</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Hifadhi usanidi kwenye folda ya programu</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Fungua eneo la kusanyiko</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Fungua saraka ya programu</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Saizi ya juu zaidi ya urefu wa menyu</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Kishale unapobofya</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Mshale huku panya ikielea</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Mshale huku panya ikielea juu yake</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Usuli wa mshale unapobofya</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Usuli wa mshale wakati kipanya kinaelea</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Usuli wa mshale huku kipanya ikielea juu yake</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Rangi ya Hali ya Giza</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Rangi 'Njia ya Giza'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Modi ya Mwanga wa Rangi</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Rangi 'Njia ya Mwanga'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menyu</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Menyu ya programu</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Upau wa kusogeza</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Slaidi huku ukiburuta</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Kitelezi wakati panya inaelea 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Kitelezi wakati panya inaelea juu yake 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Kitelezi wakati kipanya kinaelea 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Kitelezi wakati panya inaelea juu yake 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Tumia ikoni kutoka kwa folda</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Tumia ikoni kutoka kwa saraka</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Ukubwa</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Weka kwa menyu ya muktadha</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Weka kama folda ya SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Weka kama saraka</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>kupakia</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Tatizo na Njia ya mkato</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Tatizo na kiungo cha njia ya mkato</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Kipengee ambacho njia hii ya mkato inarejelea kimebadilishwa au kuhamishwa, kwa hivyo njia hii ya mkato haitafanya kazi tena ipasavyo.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Fungua Folda</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Fungua saraka</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Meneja wa Kazi"</value>
+    <value>Meneja wa Kazi</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Imezimwa</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Onyesha kwenye Taskbar</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Ongeza folda</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Ongeza saraka</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Ongeza yaliyomo kwenye folda kwenye menyu kuu</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Ongeza yaliyomo kwenye saraka kwenye saraka ya mizizi</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Njia za folda</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Njia za saraka</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Folda</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Saraka</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Inajirudia</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Ondoa folda</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Ondoa saraka</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Faili Pekee</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Futa akiba ikiwa ni zaidi ya idadi hii ya vipengee</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Ongeza sampuli ya folda ya 'Menyu ya Anza'</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Ongeza sampuli ya saraka ya 'Menyu ya Anza'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Urefu wa safu kwa asilimia</value>
@@ -412,25 +409,25 @@
     <value>Maalum (iburute hadi mahali panapofaa)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>kipengee</value>
+    <value>kipengele</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>vitu</value>
+    <value>vipengele</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Tengeneza njia za mkato kwa viendeshi</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Tengeneza njia za mkato za gari unapowasha</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Akiba</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Onyesha faili zilizofichwa, folda au viendeshi</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Onyesha faili, saraka au hifadhi zilizofichwa kila wakati</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Faili na folda zilizofichwa</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Faili zilizofichwa na saraka</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Usionyeshe kamwe faili, folda au hifadhi zilizofichwa</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Usionyeshe kamwe faili, saraka au hifadhi zilizofichwa</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ukubwa na eneo</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Tuma hotkey kwa mfano mwingine</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>Kwa tarehe</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Panga kwa tarehe</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Kwa jina</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Panga kwa jina</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Inapanga</value>

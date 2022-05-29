@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>О томе</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>О СистемТраиМену-у</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>У реду</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Аутостарт</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Изађи</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Изађи из апликације</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Фолдер</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Именик</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Фасцикла је празна</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Именик је празан</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Детаљи</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Информације о систему</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Фасцикла недоступна</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Именик недоступан</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Језик</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Није могуће регистровати интервентни тастер.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Поништити, отказати</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Прекид</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Генерал</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Хоткеи</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Лансирање на старту</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Почните са Виндовс-ом</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Подешавања</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Помоћ / ФАК</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Често постављана питања</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>СистемТраиМену</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Прочитајте често постављана питања, а затим изаберите основни директоријум за СистемТраиМену.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Изабери фасциклу</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Изаберите директоријум</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Ваша основна фасцикла за СистемТраиМену не постоји или је празна! Ставите неке датотеке, фасцикле или пречице у фасциклу или промените основну фасциклу.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Ваш основни директоријум за апликацију не постоји или је празан! Промените основни директоријум или ставите неке датотеке, директоријуме или пречице у основни директоријум.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>Немате приступ основној фасцикли за СистемТраиМену. Одобрите приступ фасцикли или промените основни фолдер.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Немате приступ основном директоријуму апликације. Одобрите приступ директоријуму или промените основни директоријум.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Један клик да отворите ставку уместо двоструког клика</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>Један клик за отварање елемента уместо двоструког клика</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>Тамни режим је увек активан</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Локација миша</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Промените фасциклу</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Промените директоријум</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Кликните</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Позадина</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Отворена фасцикла</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Отворен директориј</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Ивица отворене фасцикле</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Граница отвореног директоријума</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Поље за претрагу</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>Изабрана ставка</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>Изабрани елемент</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>Ивица изабране ставке</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Ивица изабраног елемента</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Промените у релативну фасциклу</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Конвертујте у релативни директоријум</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Чувајте конфигурацију на локацији за склапање</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Сачувајте конфигурацију у фолдеру апликације</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>УСБ</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Отворите локацију за монтажу</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Отворите директоријум апликације</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Максимална висина менија пиксела</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Стрелица при клику</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Стрелица док миш лебди</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Стрелица док миш лебди изнад ње</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Позадина стрелице при клику</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Позадина стрелице док миш лебди</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Позадина стрелице док миш лебди изнад ње</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Боје Тамни режим</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Боје 'Тамни режим'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Боје Лигхт Моде</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Боје 'Лигхт Моде'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Мени</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Мени апликације</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Трака за померање</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Клизач током превлачења</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Клизач док миш лебди 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Клизач док миш лебди изнад њега 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Клизач док миш лебди 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Клизач док миш лебди изнад њега 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Користите икону из фолдера</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Користите икону из директоријума</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Величина</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Подешава се помоћу контекстног менија</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Поставите као фолдер СистемТраиМену</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Постави као директоријум</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>лоадинг</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Проблем са пречицом</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Проблем са везом за пречицу</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Ставка на коју се ова пречица односи је промењена или премештена, тако да ова пречица више неће радити исправно.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Отвори фолдер</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Отворите директоријум</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Менаџер задатака"</value>
+    <value>Таск Манагер</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Деактивирано</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Прикажи на траци задатака</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Додај фолдер</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Додај именик</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Додајте садржај фолдера у главни мени</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Додајте садржај директоријума у ​​основни директоријум</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Путања фолдера</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Путања до директоријума</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Фасцикле</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Именици</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Рекурзивно</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Уклони фасциклу</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Уклони директоријум</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Само датотеке</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Обришите кеш ако је више од овог броја ставки</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Додајте пример фолдера „Старт мени“.</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Додајте пример директоријума „Старт мени“.</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Висина реда у процентима</value>
@@ -412,25 +409,25 @@
     <value>Прилагођено (превуците га на одговарајуће место)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>предмет</value>
+    <value>елемент</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>ставке</value>
+    <value>елемената</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Генеришите пречице до дискова</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Генеришите пречице за диск при покретању</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Цацхе</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Увек прикажи скривене датотеке, фасцикле или диск јединице</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Увек прикажи скривене датотеке, директоријуме или диск јединице</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Скривене датотеке и фасцикле</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Скривене датотеке и директоријуми</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Никада не приказујте скривене датотеке, фасцикле или диск јединице</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Никада не приказујте скривене датотеке, директоријуме или диск јединице</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Величина и локација</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Пошаљи интервентни тастер на другу инстанцу</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>По датуму</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Сортирај по датуму</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>Поименце</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Сортирај по имену</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортирање</value>

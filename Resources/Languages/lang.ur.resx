@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>کے بارے میں</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu کے بارے میں</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>ٹھیک ہے</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>خود بخود شروع</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>باہر نکلیں</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>ایپ سے باہر نکلیں۔</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>فولڈر</value>
+  <data name="Directory" xml:space="preserve">
+    <value>ڈائرکٹری</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>فولڈر خالی ہے۔</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>ڈائرکٹری خالی ہے۔</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>تفصیلات</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>سسٹم کی معلومات</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>فولڈر ناقابل رسائی</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>ڈائرکٹری ناقابل رسائی</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>زبان</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>ہاٹ کی کو رجسٹر نہیں کیا جا سکا۔</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>منسوخ کریں۔</value>
+  <data name="Abort" xml:space="preserve">
+    <value>اسقاط</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>جنرل</value>
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>ہاٹکی</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>اسٹارٹ اپ پر لانچ کریں۔</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>ونڈوز کے ساتھ شروع کریں۔</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>ترتیبات</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>مدد / اکثر پوچھے گئے سوالات</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>اکثر پوچھے گئے سوالات</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>سسٹم ٹری مینو</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>اکثر پوچھے گئے سوالات پڑھیں اور پھر SystemTrayMenu کے لیے روٹ ڈائرکٹری کا انتخاب کریں۔</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>فولڈر منتخب کریں۔</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>ڈائریکٹری منتخب کریں۔</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>SystemTrayMenu کے لیے آپ کا روٹ فولڈر موجود نہیں ہے یا خالی ہے! فولڈر میں کچھ فائلیں، فولڈرز یا شارٹ کٹس ڈالیں یا روٹ فولڈر کو تبدیل کریں۔</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>ایپ کے لیے آپ کی روٹ ڈائرکٹری موجود نہیں ہے یا خالی ہے! روٹ ڈائرکٹری کو تبدیل کریں یا روٹ ڈائرکٹری میں کچھ فائلیں، ڈائریکٹریز یا شارٹ کٹ ڈالیں۔</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>آپ کو SystemTrayMenu کے لیے روٹ فولڈر تک رسائی نہیں ہے۔ فولڈر تک رسائی فراہم کریں یا روٹ فولڈر کو تبدیل کریں۔</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>آپ کو ایپ کی روٹ ڈائرکٹری تک رسائی نہیں ہے۔ ڈائریکٹری تک رسائی فراہم کریں یا روٹ ڈائرکٹری کو تبدیل کریں۔</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>ڈبل کلک کے بجائے کسی آئٹم کو کھولنے کے لیے سنگل کلک کریں۔</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>ڈبل کلک کے بجائے ایک عنصر کو کھولنے کے لیے سنگل کلک کریں۔</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>ڈارک موڈ ہمیشہ فعال رہتا ہے۔</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>ماؤس کا مقام</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>فولڈر تبدیل کریں۔</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>ڈائرکٹری کو تبدیل کریں۔</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>کلک کریں۔</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>پس منظر</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>فولڈر کھولا۔</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>ڈائرکٹری کھولی۔</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>کھلے ہوئے فولڈر کا بارڈر</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>کھلی ڈائریکٹری کا بارڈر</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>تلاش کا میدان</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>منتخب کردہ آئٹم</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>منتخب کردہ عنصر</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>منتخب آئٹم کا بارڈر</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>منتخب کردہ عنصر کا بارڈر</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>متعلقہ فولڈر میں تبدیل کریں۔</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>رشتہ دار ڈائریکٹری میں تبدیل کریں۔</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>اسمبلی کے مقام پر ترتیب کو اسٹور کریں۔</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>ایپلیکیشن فولڈر میں کنفیگریشن کو محفوظ کریں۔</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>یو ایس بی</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>اسمبلی کا مقام کھولیں۔</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>ایپلیکیشن ڈائرکٹری کھولیں۔</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>پکسلز مینو کی زیادہ سے زیادہ اونچائی</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>کلک کرتے وقت تیر</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>تیر جب ماؤس منڈلاتا ہے۔</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>تیر جب کہ ماؤس اس پر منڈلاتا ہے۔</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>کلک کرتے وقت تیر کا پس منظر</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>تیر کا پس منظر جب ماؤس منڈلاتا ہے۔</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>تیر کا پس منظر جب کہ ماؤس اس پر منڈلاتا ہے۔</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>رنگین ڈارک موڈ</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>رنگ 'ڈارک موڈ'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>کلر لائٹ موڈ</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>رنگ 'لائٹ موڈ'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>مینو</value>
+  <data name="App menu" xml:space="preserve">
+    <value>ایپ مینو</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>اسکرول بار</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>گھسیٹتے وقت سلائیڈر</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>ماؤس منڈلاتے وقت سلائیڈر 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>سلائیڈر جب اس پر ماؤس منڈلاتا ہے 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>ماؤس منڈلاتے وقت سلائیڈر 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>سلائیڈر جب اس پر ماؤس منڈلاتا ہے 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>فولڈر سے آئیکن استعمال کریں۔</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>ڈائرکٹری سے آئیکن استعمال کریں۔</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>سائز</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>سیاق و سباق کے مینو سے سیٹ کریں۔</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>SystemTrayMenu فولڈر کے بطور سیٹ کریں۔</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>ڈائرکٹری کے طور پر سیٹ کریں۔</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>لوڈ ہو رہا ہے</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>شارٹ کٹ کا مسئلہ</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>شارٹ کٹ لنک کے ساتھ مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>فولڈر کھولیں۔</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>ڈائرکٹری کھولیں۔</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"ٹاسک مینیجر"</value>
+    <value>ٹاسک مینیجر</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>غیر فعال</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ٹاسک بار میں دکھائیں۔</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>فولڈر بناؤ</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>ڈائریکٹری شامل کریں۔</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>مین مینو میں فولڈرز کا مواد شامل کریں۔</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>ڈائرکٹری کے مواد کو روٹ ڈائرکٹری میں شامل کریں۔</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>فولڈر کے راستے</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>ڈائریکٹری کے راستے</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>فولڈرز</value>
+  <data name="Directories" xml:space="preserve">
+    <value>ڈائریکٹریز</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>تکراری</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>فولڈر کو ہٹا دیں۔</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>ڈائریکٹری کو ہٹا دیں۔</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>صرف فائلیں۔</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>اگر آئٹمز کی اس تعداد سے زیادہ ہوں تو کیشے کو صاف کریں۔</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>نمونہ 'اسٹارٹ مینو' فولڈر شامل کریں۔</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>'اسٹارٹ مینو' ڈائرکٹری کا نمونہ شامل کریں۔</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>قطار کی اونچائی فیصد میں</value>
@@ -412,25 +409,25 @@
     <value>حسب ضرورت (اسے مناسب جگہ پر گھسیٹیں)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>آئٹم</value>
+    <value>عنصر</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>اشیاء</value>
+    <value>عناصر</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>ڈرائیوز کے شارٹ کٹس بنائیں</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹ بنائیں</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>ہمیشہ چھپی ہوئی فائلیں، فولڈرز یا ڈرائیوز دکھائیں۔</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>ہمیشہ چھپی ہوئی فائلیں، ڈائریکٹریز یا ڈرائیوز دکھائیں۔</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>پوشیدہ فائلیں اور فولڈرز</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>پوشیدہ فائلیں اور ڈائریکٹریز</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>چھپی ہوئی فائلیں، فولڈرز یا ڈرائیوز کبھی نہ دکھائیں۔</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>چھپی ہوئی فائلیں، ڈائریکٹریز یا ڈرائیوز کبھی نہ دکھائیں۔</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>سائز اور مقام</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>ہاٹکی کو دوسری مثال میں بھیجیں۔</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>تاریخ کے لحاظ سے</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>تاریخ کے لحاظ سے ترتیب دیں۔</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>نام کے ساتھ</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>نام سے ترتیب دیں۔</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>چھانٹنا</value>

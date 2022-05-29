@@ -104,23 +104,23 @@ namespace SystemTrayMenu.UserInterface
             {
                 Text = Translator.GetText("Settings");
                 tabPageGeneral.Text = Translator.GetText("General");
-                groupBoxFolder.Text = Translator.GetText("Folder");
-                buttonChangeFolder.Text = Translator.GetText("Change folder");
-                buttonOpenFolder.Text = Translator.GetText("Open Folder");
-                checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from folder");
+                groupBoxFolder.Text = Translator.GetText("Directory");
+                buttonChangeFolder.Text = Translator.GetText("Change the directory");
+                buttonOpenFolder.Text = Translator.GetText("Open directory");
+                checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from directory");
                 checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
                 groupBoxUSB.Text = Translator.GetText("USB");
-                buttonChangeRelativeFolder.Text = Translator.GetText("Change to relative folder");
-                checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at the assembly location");
-                buttonOpenAssemblyLocation.Text = Translator.GetText("Open the assembly location");
+                buttonChangeRelativeFolder.Text = Translator.GetText("Convert to relative directory");
+                checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Save configuration to the application folder");
+                buttonOpenAssemblyLocation.Text = Translator.GetText("Open application directory");
                 groupBoxAutostart.Text = Translator.GetText("Autostart");
                 if (IsStartupTask())
                 {
                     groupBoxAutostart.Text += $" ({Translator.GetText("Task Manager")})";
                 }
 
-                checkBoxAutostart.Text = Translator.GetText("Launch on startup");
-                buttonAddTaskManagerStartupTask.Text = Translator.GetText("Launch on startup");
+                checkBoxAutostart.Text = Translator.GetText("Start with Windows");
+                buttonAddTaskManagerStartupTask.Text = Translator.GetText("Start with Windows");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
                 buttonHotkeyDefault.Text = Translator.GetText("Default");
                 groupBoxLanguage.Text = Translator.GetText("Language");
@@ -147,35 +147,35 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
                 checkBoxSendHotkeyInsteadKillOtherInstances.Text = Translator.GetText("Send hotkey to other instance");
-                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an item instead of double click");
+                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element instead of double click");
                 checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory instead of double click");
                 groupBoxDrag.Text = Translator.GetText("Drag");
                 checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
-                groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and folders");
+                groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");
                 radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
-                radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, folders or drives");
-                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always Show hidden files, folders or drives");
+                radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, directories or drives");
+                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always Show hidden files, directories or drives");
                 groupBoxSorting.Text = Translator.GetText("Sorting");
-                radioButtonSortByName.Text = Translator.GetText("By name");
-                radioButtonSortByDate.Text = Translator.GetText("By date");
+                radioButtonSortByName.Text = Translator.GetText("Sort by name");
+                radioButtonSortByDate.Text = Translator.GetText("Sort by date");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
 
-                tabPageFolders.Text = Translator.GetText("Folders");
-                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add content of folders to main menu");
+                tabPageFolders.Text = Translator.GetText("Directories");
+                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add content of directory to root directory");
                 checkBoxShowOnlyAsSearchResult.Text = Translator.GetText("Show only as search result");
-                buttonAddFolderToRootFolder.Text = Translator.GetText("Add folder");
-                buttonRemoveFolder.Text = Translator.GetText("Remove folder");
-                ColumnFolder.HeaderText = Translator.GetText("Folder paths");
+                buttonAddFolderToRootFolder.Text = Translator.GetText("Add directory");
+                buttonRemoveFolder.Text = Translator.GetText("Remove directory");
+                ColumnFolder.HeaderText = Translator.GetText("Directory paths");
                 ColumnRecursiveLevel.HeaderText = Translator.GetText("Recursive");
                 ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
-                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' folder");
+                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' directory");
                 buttonDefaultFolders.Text = Translator.GetText("Default");
-                checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate shortcuts to drives");
+                checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate drive shortcuts on startup");
 
                 tabPageExpert.Text = Translator.GetText("Expert");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
-                checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
+                checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an element was clicked");
                 checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
                 labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if in this case the mouse then leaves the menu");
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
@@ -194,10 +194,10 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxUseFading.Text = Translator.GetText("Fading");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
                 buttonAppearanceDefault.Text = Translator.GetText("Default");
-                groupBoxColorsLightMode.Text = Translator.GetText("Colors Light Mode");
-                groupBoxColorsDarkMode.Text = Translator.GetText("Colors Dark Mode");
-                labelMenuLightMode.Text = Translator.GetText("Menu");
-                labelMenuDarkMode.Text = Translator.GetText("Menu");
+                groupBoxColorsLightMode.Text = Translator.GetText("Colors 'Light Mode'");
+                groupBoxColorsDarkMode.Text = Translator.GetText("Colors 'Dark Mode'");
+                labelMenuLightMode.Text = Translator.GetText("App menu");
+                labelMenuDarkMode.Text = Translator.GetText("App menu");
                 labelScrollbarLightMode.Text = Translator.GetText("Scrollbar");
                 labelScrollbarDarkMode.Text = Translator.GetText("Scrollbar");
                 labelIcons.Text = Translator.GetText("Icons");
@@ -208,39 +208,39 @@ namespace SystemTrayMenu.UserInterface
                 labelBackgroundBorderDarkMode.Text = Translator.GetText("Border of menu");
                 labelSearchField.Text = Translator.GetText("Search field");
                 labelSearchFieldDarkMode.Text = Translator.GetText("Search field");
-                labelOpenFolder.Text = Translator.GetText("Opened folder");
-                labelOpenFolderDarkMode.Text = Translator.GetText("Opened folder");
-                labelOpenFolderBorder.Text = Translator.GetText("Border of opened folder");
-                labelOpenFolderBorderDarkMode.Text = Translator.GetText("Border of opened folder");
-                labelSelectedItem.Text = Translator.GetText("Selected item");
-                labelSelectedItemDarkMode.Text = Translator.GetText("Selected item");
-                labelSelectedItemBorder.Text = Translator.GetText("Border of selected item");
-                labelSelectedItemBorderDarkMode.Text = Translator.GetText("Border of selected item");
+                labelOpenFolder.Text = Translator.GetText("Opened directory");
+                labelOpenFolderDarkMode.Text = Translator.GetText("Opened directory");
+                labelOpenFolderBorder.Text = Translator.GetText("Border of opened directory");
+                labelOpenFolderBorderDarkMode.Text = Translator.GetText("Border of opened directory");
+                labelSelectedItem.Text = Translator.GetText("Selected element");
+                labelSelectedItemDarkMode.Text = Translator.GetText("Selected element");
+                labelSelectedItemBorder.Text = Translator.GetText("Border of selected element");
+                labelSelectedItemBorderDarkMode.Text = Translator.GetText("Border of selected element");
                 labelScrollbarBackground.Text = Translator.GetText("Background");
                 labelColorDarkModeScrollbarBackground.Text = Translator.GetText("Background");
                 labelSlider.Text = Translator.GetText("Slider");
                 labelColorDarkModeSlider.Text = Translator.GetText("Slider");
                 labelSliderDragging.Text = Translator.GetText("Slider while dragging");
                 labelColorDarkModeSliderDragging.Text = Translator.GetText("Slider while dragging");
-                labelSliderHover.Text = Translator.GetText("Slider while mouse hovers 1");
-                labelColorDarkModeSliderHover.Text = Translator.GetText("Slider while mouse hovers 1");
-                labelSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers 2");
-                labelColorDarkModeSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers 2");
+                labelSliderHover.Text = Translator.GetText("Slider while mouse hovers over it 1");
+                labelColorDarkModeSliderHover.Text = Translator.GetText("Slider while mouse hovers over it 1");
+                labelSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers over it 2");
+                labelColorDarkModeSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers over it 2");
                 labelArrow.Text = Translator.GetText("Arrow");
                 labelColorDarkModeArrow.Text = Translator.GetText("Arrow");
                 labelArrowClick.Text = Translator.GetText("Arrow when clicking");
                 labelColorDarkModeArrowClick.Text = Translator.GetText("Arrow when clicking");
                 labelArrowClickBackground.Text = Translator.GetText("Background of arrow when clicking");
                 labelColorDarkModeArrowClickBackground.Text = Translator.GetText("Background of arrow when clicking");
-                labelArrowHover.Text = Translator.GetText("Arrow while mouse hovers");
-                labelColorDarkModeArrowHover.Text = Translator.GetText("Arrow while mouse hovers");
-                labelArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers");
-                labelColorDarkModeArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers");
+                labelArrowHover.Text = Translator.GetText("Arrow while mouse hovers over it");
+                labelColorDarkModeArrowHover.Text = Translator.GetText("Arrow while mouse hovers over it");
+                labelArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers over it");
+                labelColorDarkModeArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers over it");
 
                 buttonColorsDefault.Text = Translator.GetText("Default");
                 buttonColorsDefaultDarkMode.Text = Translator.GetText("Default");
                 buttonOk.Text = Translator.GetText("OK");
-                buttonCancel.Text = Translator.GetText("buttonCancel");
+                buttonCancel.Text = Translator.GetText("Abort");
             }
 
             InitializeFolder();
@@ -737,7 +737,7 @@ namespace SystemTrayMenu.UserInterface
                 string binLocation = Environment.ProcessPath;
                 if (registryKeyContextMenu != null)
                 {
-                    registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as SystemTrayMenu folder"));
+                    registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as directory"));
                     registryKeyContextMenu.SetValue("Icon", binLocation);
                 }
 

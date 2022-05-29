@@ -55,7 +55,7 @@ namespace SystemTrayMenu.Helper
 
             ToolStripMenuItem helpFAQ = new()
             {
-                Text = Translator.GetText("HelpFAQ"),
+                Text = Translator.GetText("Frequently Asked Questions"),
             };
             helpFAQ.Click += HelpFAQ_Click;
             static void HelpFAQ_Click(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace SystemTrayMenu.Helper
 
             ToolStripMenuItem about = new()
             {
-                Text = Translator.GetText("About"),
+                Text = Translator.GetText("About SystemTrayMenu"),
             };
             about.Click += About_Click;
             static void About_Click(object sender, EventArgs e)
@@ -150,7 +150,7 @@ Sponsors - Thank you!
 
             ToolStripMenuItem exit = new()
             {
-                Text = Translator.GetText("Exit"),
+                Text = Translator.GetText("Exit app"),
             };
             exit.Click += Exit_Click;
             void Exit_Click(object sender, EventArgs e)

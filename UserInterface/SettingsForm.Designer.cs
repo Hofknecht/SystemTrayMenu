@@ -608,7 +608,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChangeFolder.Name = "buttonChangeFolder";
             this.buttonChangeFolder.Size = new System.Drawing.Size(94, 25);
             this.buttonChangeFolder.TabIndex = 0;
-            this.buttonChangeFolder.Text = "Change Folder";
+            this.buttonChangeFolder.Text = "Change the directory";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
             this.buttonChangeFolder.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
@@ -4587,10 +4587,10 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.Location = new System.Drawing.Point(348, 0);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Name = "Abort";
             this.buttonCancel.Size = new System.Drawing.Size(75, 25);
             this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "Abort";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 

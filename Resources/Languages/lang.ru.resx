@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>О</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>О SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>ХОРОШО</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>Автоматический старт</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Выход</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>Выйти из приложения</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Папка</value>
+  <data name="Directory" xml:space="preserve">
+    <value>Каталог</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>Папка пуста</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Каталог пустой</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Подробности</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>Системная информация</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>Папка недоступна</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Каталог недоступен</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Язык</value>
@@ -156,8 +156,8 @@
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Не удалось зарегистрировать горячую клавишу.</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
-    <value>Отмена</value>
+  <data name="Abort" xml:space="preserve">
+    <value>Прервать</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Общий</value>
@@ -165,31 +165,28 @@
   <data name="Hotkey" xml:space="preserve">
     <value>Горячая клавиша</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>Запустить стартап</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Начните с Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Настройки</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>Помощь/Часто задаваемые вопросы</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Часто задаваемые вопросы</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>Прочтите FAQ, а затем выберите корневой каталог для SystemTrayMenu.</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>Выберите папку</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>Выберите каталог</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Ваша корневая папка для SystemTrayMenu не существует или пуста! Поместите некоторые файлы, папки или ярлыки в папку или измените корневую папку.</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Ваш корневой каталог для приложения не существует или пуст! Измените корневой каталог или поместите некоторые файлы, каталоги или ярлыки в корневой каталог.</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>У вас нет доступа к корневой папке SystemTrayMenu. Предоставьте доступ к папке или измените корневую папку.</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>У вас нет доступа к корневому каталогу приложения. Предоставьте доступ к каталогу или измените корневой каталог.</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Один щелчок, чтобы открыть элемент вместо двойного щелчка</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>Местоположение мыши</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>Смена папки</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>Изменить каталог</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Нажмите</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>Фон</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>Открытая папка</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Открытый каталог</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>Граница открытой папки</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Граница открытого каталога</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Поле поиска</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
+  <data name="Selected element" xml:space="preserve">
     <value>Выбранный элемент</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
+  <data name="Border of selected element" xml:space="preserve">
     <value>Граница выбранного элемента</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>Изменить на относительную папку</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>Преобразовать в относительный каталог</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Хранить конфигурацию в месте сборки</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>Сохраните конфигурацию в папку приложения</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>Откройте место сборки</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Откройте каталог приложений</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Максимальная высота меню в пикселях</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Стрелка при нажатии</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Стрелка при наведении мыши</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Стрелка при наведении на нее мышки</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Фон стрелки при нажатии</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Фон стрелки при наведении мыши</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Фон стрелки при наведении на него курсора мыши</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Цвета Темный режим</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>Цвета «Темный режим»</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>Цвета Светлый режим</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>Цвета «Светлый режим»</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Меню</value>
+  <data name="App menu" xml:space="preserve">
+    <value>Меню приложения</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Полоса прокрутки</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>Ползунок во время перетаскивания</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Ползунок при наведении мыши 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Ползунок при наведении на него курсора 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Ползунок при наведении мыши 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Ползунок при наведении на него курсора 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>Использовать значок из папки</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Использовать значок из каталога</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Размер</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>Установить через контекстное меню</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Установить как папку SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Установить как каталог</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>загрузка</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Проблема с ярлыком</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Проблема с быстрой ссылкой</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Элемент, к которому относится этот ярлык, был изменен или перемещен, поэтому этот ярлык больше не будет работать должным образом.</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>Открыть папку</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>Открыть каталог</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"Диспетчер задач"</value>
+    <value>Диспетчер задач</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>Деактивировано</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Показать на панели задач</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>Добавить папку</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>Добавить каталог</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Добавить содержимое папок в главное меню</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Добавить содержимое каталога в корневой каталог</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>Пути к папкам</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Пути к каталогам</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Папки</value>
+  <data name="Directories" xml:space="preserve">
+    <value>Каталоги</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Рекурсивный</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>Удалить папку</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Удалить каталог</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Только файлы</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Очистить кеш, если элементов больше указанного</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Добавить образец папки «Меню Пуск»</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>Добавить образец каталога «Меню Пуск»</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Высота строки в процентах</value>
@@ -412,25 +409,25 @@
     <value>Пользовательский (перетащите его в нужное место)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>вещь</value>
+    <value>элемент</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>Предметы</value>
+    <value>элементы</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Создание ярлыков для дисков</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Создавать ярлыки дисков при запуске</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Кэш</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Всегда показывать скрытые файлы, папки или диски</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>Всегда показывать скрытые файлы, каталоги или диски</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>Скрытые файлы и папки</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Скрытые файлы и каталоги</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Никогда не показывать скрытые файлы, папки или диски</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>Никогда не показывать скрытые файлы, каталоги или диски</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Размер и расположение</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Отправить горячую клавишу в другой экземпляр</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>По дате</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>Сортировать по дате</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>По имени</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>Сортировать по имени</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортировка</value>

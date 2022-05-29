@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>เกี่ยวกับ</value>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>เกี่ยวกับ SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>ตกลง</value>
@@ -126,14 +126,14 @@
   <data name="Autostart" xml:space="preserve">
     <value>ออโต้สตาร์ท</value>
   </data>
-  <data name="Exit" xml:space="preserve">
-    <value>ทางออก</value>
+  <data name="Exit app" xml:space="preserve">
+    <value>ออกจากแอพ</value>
   </data>
-  <data name="Folder" xml:space="preserve">
-    <value>โฟลเดอร์</value>
+  <data name="Directory" xml:space="preserve">
+    <value>ไดเรกทอรี</value>
   </data>
-  <data name="Folder empty" xml:space="preserve">
-    <value>โฟลเดอร์ว่างเปล่า</value>
+  <data name="Directory empty" xml:space="preserve">
+    <value>ไดเรกทอรีว่างเปล่า</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>รายละเอียด</value>
@@ -141,8 +141,8 @@
   <data name="System Info" xml:space="preserve">
     <value>ข้อมูลระบบ</value>
   </data>
-  <data name="Folder inaccessible" xml:space="preserve">
-    <value>เข้าถึงโฟลเดอร์ไม่ได้</value>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>ไม่สามารถเข้าถึงไดเรกทอรี</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>ภาษา</value>
@@ -154,9 +154,9 @@
     <value>เริ่มต้นใหม่</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>ไม่สามารถลงทะเบียนฮ็อตคีย์ได้</value>
+    <value>ไม่สามารถลงทะเบียนคีย์ลัด</value>
   </data>
-  <data name="buttonCancel" xml:space="preserve">
+  <data name="Abort" xml:space="preserve">
     <value>ยกเลิก</value>
   </data>
   <data name="General" xml:space="preserve">
@@ -165,32 +165,29 @@
   <data name="Hotkey" xml:space="preserve">
     <value>ปุ่มลัด</value>
   </data>
-  <data name="Launch on startup" xml:space="preserve">
-    <value>เปิดตัวเมื่อเริ่มต้น</value>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>เริ่มด้วย Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>การตั้งค่า</value>
   </data>
-  <data name="HelpFAQ" xml:space="preserve">
-    <value>ช่วยเหลือ / คำถามที่พบบ่อย</value>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>คำถามที่พบบ่อย</value>
   </data>
-  <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
-  </data>
-  <data name="TextFirstStart" xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>อ่านคำถามที่พบบ่อย จากนั้นเลือกไดเรกทอรีรากสำหรับ SystemTrayMenu</value>
   </data>
-  <data name="Select Folder" xml:space="preserve">
-    <value>เลือกโฟลเดอร์</value>
+  <data name="Select directory" xml:space="preserve">
+    <value>เลือกไดเรกทอรี</value>
   </data>
-  <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>โฟลเดอร์รูทของคุณสำหรับ SystemTrayMenu ไม่มีอยู่หรือว่างเปล่า! ใส่ไฟล์ โฟลเดอร์ หรือทางลัดลงในโฟลเดอร์หรือเปลี่ยนโฟลเดอร์รูท</value>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>ไดเรกทอรีรากของคุณสำหรับแอปไม่มีอยู่หรือว่างเปล่า! เปลี่ยนไดเร็กทอรี root หรือใส่ไฟล์ ไดเร็กทอรี หรือช็อตคัตบางไฟล์ลงในไดเร็กทอรีรูท</value>
   </data>
-  <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>คุณไม่มีสิทธิ์เข้าถึงโฟลเดอร์รูทสำหรับ SystemTrayMenu ให้สิทธิ์เข้าถึงโฟลเดอร์หรือเปลี่ยนโฟลเดอร์รูท</value>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>คุณไม่มีสิทธิ์เข้าถึงไดเรกทอรีรากของแอป ให้สิทธิ์เข้าถึงไดเร็กทอรีหรือเปลี่ยนไดเร็กทอรีราก</value>
   </data>
-  <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>คลิกเพียงครั้งเดียวเพื่อเปิดรายการแทนการดับเบิลคลิก</value>
+  <data name="Single click to open an element instead of double click" xml:space="preserve">
+    <value>คลิกเพียงครั้งเดียวเพื่อเปิดองค์ประกอบแทนการดับเบิลคลิก</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
     <value>โหมดมืดทำงานตลอดเวลา</value>
@@ -201,8 +198,8 @@
   <data name="Mouse location" xml:space="preserve">
     <value>ตำแหน่งเมาส์</value>
   </data>
-  <data name="Change folder" xml:space="preserve">
-    <value>เปลี่ยนโฟลเดอร์</value>
+  <data name="Change the directory" xml:space="preserve">
+    <value>เปลี่ยนไดเร็กทอรี</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>คลิก</value>
@@ -237,32 +234,32 @@
   <data name="Background" xml:space="preserve">
     <value>พื้นหลัง</value>
   </data>
-  <data name="Opened folder" xml:space="preserve">
-    <value>โฟลเดอร์ที่เปิดอยู่</value>
+  <data name="Opened directory" xml:space="preserve">
+    <value>เปิดไดเรกทอรี</value>
   </data>
-  <data name="Border of opened folder" xml:space="preserve">
-    <value>ขอบของโฟลเดอร์ที่เปิดอยู่</value>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>เส้นขอบของไดเร็กทอรีที่เปิดอยู่</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>ช่องค้นหา</value>
   </data>
-  <data name="Selected item" xml:space="preserve">
-    <value>รายการที่เลือก</value>
+  <data name="Selected element" xml:space="preserve">
+    <value>องค์ประกอบที่เลือก</value>
   </data>
-  <data name="Border of selected item" xml:space="preserve">
-    <value>ขอบของรายการที่เลือก</value>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>เส้นขอบขององค์ประกอบที่เลือก</value>
   </data>
-  <data name="Change to relative folder" xml:space="preserve">
-    <value>เปลี่ยนเป็นโฟลเดอร์สัมพันธ์</value>
+  <data name="Convert to relative directory" xml:space="preserve">
+    <value>แปลงเป็นไดเร็กทอรีสัมพันธ์</value>
   </data>
-  <data name="Store config at the assembly location" xml:space="preserve">
-    <value>จัดเก็บการกำหนดค่าที่ตำแหน่งการประกอบ</value>
+  <data name="Save configuration to the application folder" xml:space="preserve">
+    <value>บันทึกการกำหนดค่าลงในโฟลเดอร์แอปพลิเคชัน</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>ยูเอสบี</value>
   </data>
-  <data name="Open the assembly location" xml:space="preserve">
-    <value>เปิดสถานที่ประกอบ</value>
+  <data name="Open application directory" xml:space="preserve">
+    <value>เปิดไดเรกทอรีแอปพลิเคชัน</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>ความสูงของเมนูพิกเซลสูงสุด</value>
@@ -273,23 +270,23 @@
   <data name="Arrow when clicking" xml:space="preserve">
     <value>ลูกศรเมื่อคลิก</value>
   </data>
-  <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>ลูกศรขณะเลื่อนเมาส์</value>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>ลูกศรขณะวางเมาส์ไว้เหนือมัน</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>พื้นหลังของลูกศรเมื่อคลิก</value>
   </data>
-  <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>พื้นหลังของลูกศรขณะวางเมาส์</value>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>พื้นหลังของลูกศรขณะวางเมาส์เหนือมัน</value>
   </data>
-  <data name="Colors Dark Mode" xml:space="preserve">
-    <value>โหมดสีเข้ม</value>
+  <data name="Colors 'Dark Mode'" xml:space="preserve">
+    <value>สี 'โหมดมืด'</value>
   </data>
-  <data name="Colors Light Mode" xml:space="preserve">
-    <value>โหมดแสงสี</value>
+  <data name="Colors 'Light Mode'" xml:space="preserve">
+    <value>สี 'โหมดแสง'</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>เมนู</value>
+  <data name="App menu" xml:space="preserve">
+    <value>เมนูแอพ</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>แถบเลื่อน</value>
@@ -300,14 +297,14 @@
   <data name="Slider while dragging" xml:space="preserve">
     <value>ตัวเลื่อนขณะลาก</value>
   </data>
-  <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>ตัวเลื่อนขณะวางเมาส์เหนือ 1</value>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>ตัวเลื่อนขณะวางเมาส์เหนือมัน 1</value>
   </data>
-  <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>ตัวเลื่อนขณะวางเมาส์ไว้ 2</value>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>ตัวเลื่อนขณะวางเมาส์เหนือมัน 2</value>
   </data>
-  <data name="Use icon from folder" xml:space="preserve">
-    <value>ใช้ไอคอนจากโฟลเดอร์</value>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>ใช้ไอคอนจากไดเรกทอรี</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>ขนาด</value>
@@ -321,23 +318,23 @@
   <data name="Set by context menu " xml:space="preserve">
     <value>กำหนดโดยเมนูบริบท</value>
   </data>
-  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>ตั้งเป็นโฟลเดอร์ SystemTrayMenu</value>
+  <data name="Set as directory" xml:space="preserve">
+    <value>ตั้งเป็นไดเร็กทอรี</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>กำลังโหลด</value>
   </data>
-  <data name="Problem with Shortcut" xml:space="preserve">
-    <value>ปัญหาเกี่ยวกับทางลัด</value>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>ปัญหาเกี่ยวกับลิงก์ทางลัด</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>รายการที่ทางลัดนี้อ้างถึงมีการเปลี่ยนแปลงหรือย้าย ดังนั้นคำสั่งลัดนี้จะทำงานไม่ถูกต้องอีกต่อไป</value>
   </data>
-  <data name="Open Folder" xml:space="preserve">
-    <value>เปิดโฟลเดอร์</value>
+  <data name="Open directory" xml:space="preserve">
+    <value>เปิดไดเรกทอรี</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>"ผู้จัดการงาน"</value>
+    <value>ผู้จัดการงาน</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>ปิดการใช้งาน</value>
@@ -357,23 +354,23 @@
   <data name="Show in Taskbar" xml:space="preserve">
     <value>แสดงในแถบงาน</value>
   </data>
-  <data name="Add folder" xml:space="preserve">
-    <value>เพิ่มแฟ้มข้อมูล</value>
+  <data name="Add directory" xml:space="preserve">
+    <value>เพิ่มไดเรกทอรี</value>
   </data>
-  <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>เพิ่มเนื้อหาของโฟลเดอร์ไปที่เมนูหลัก</value>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>เพิ่มเนื้อหาของไดเร็กทอรีไปยังรูทไดเร็กทอรี</value>
   </data>
-  <data name="Folder paths" xml:space="preserve">
-    <value>เส้นทางโฟลเดอร์</value>
+  <data name="Directory paths" xml:space="preserve">
+    <value>เส้นทางไดเรกทอรี</value>
   </data>
-  <data name="Folders" xml:space="preserve">
-    <value>โฟลเดอร์</value>
+  <data name="Directories" xml:space="preserve">
+    <value>ไดเรกทอรี</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>เรียกซ้ำ</value>
   </data>
-  <data name="Remove folder" xml:space="preserve">
-    <value>ลบโฟลเดอร์</value>
+  <data name="Remove directory" xml:space="preserve">
+    <value>ลบไดเร็กทอรี</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>เฉพาะไฟล์</value>
@@ -384,8 +381,8 @@
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ล้างแคชหากมีรายการมากกว่าจำนวนนี้</value>
   </data>
-  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>เพิ่มตัวอย่างโฟลเดอร์ 'เมนูเริ่ม'</value>
+  <data name="Add sample 'Start Menu' directory" xml:space="preserve">
+    <value>เพิ่มไดเรกทอรี 'เมนูเริ่ม' ตัวอย่าง</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>ความสูงของแถวเป็นเปอร์เซ็นต์</value>
@@ -412,25 +409,25 @@
     <value>กำหนดเอง (ลากไปยังตำแหน่งที่เหมาะสม)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>สิ่งของ</value>
+    <value>ธาตุ</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>รายการ</value>
+    <value>องค์ประกอบ</value>
   </data>
-  <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>สร้างทางลัดไปยังไดรฟ์</value>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>สร้างทางลัดของไดรฟ์เมื่อเริ่มต้น</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>แคช</value>
   </data>
-  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>แสดงไฟล์ โฟลเดอร์ หรือไดรฟ์ที่ซ่อนอยู่เสมอ</value>
+  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+    <value>แสดงไฟล์ ไดเร็กทอรี หรือไดรฟ์ที่ซ่อนอยู่เสมอ</value>
   </data>
-  <data name="Hidden files and folders" xml:space="preserve">
-    <value>ไฟล์และโฟลเดอร์ที่ซ่อนอยู่</value>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>ไฟล์และไดเรกทอรีที่ซ่อนอยู่</value>
   </data>
-  <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>ไม่แสดงไฟล์ โฟลเดอร์ หรือไดรฟ์ที่ซ่อนอยู่</value>
+  <data name="Never show hidden files, directories or drives" xml:space="preserve">
+    <value>ไม่ต้องแสดงไฟล์ ไดเร็กทอรี หรือไดรฟ์ที่ซ่อนอยู่</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>ขนาดและที่ตั้ง</value>
@@ -468,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>ส่งฮ็อตคีย์ไปยังอินสแตนซ์อื่น</value>
   </data>
-  <data name="By date" xml:space="preserve">
-    <value>ตามวันที่</value>
+  <data name="Sort by date" xml:space="preserve">
+    <value>เรียงตามวันที่</value>
   </data>
-  <data name="By name" xml:space="preserve">
-    <value>โดยชื่อ</value>
+  <data name="Sort by name" xml:space="preserve">
+    <value>เรียงตามชื่อ</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>การเรียงลำดับ</value>
