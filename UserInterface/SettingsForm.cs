@@ -295,6 +295,7 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "русский", Value = "ru" },
                     new Language() { Name = "Tiếng Việt", Value = "vi" },
                     new Language() { Name = "فارسی", Value = "fa" },
+                    new Language() { Name = "中文(正體)", Value = "zh-TW" },
                 };
                 comboBoxLanguage.DataSource = dataSource;
                 comboBoxLanguage.DisplayMember = "Name";
