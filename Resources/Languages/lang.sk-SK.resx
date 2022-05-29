@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>Automatický štart</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>VÝCHOD</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Priečinok</value>
+  </data>
+  <data name="Folder empty" xml:space="preserve">
+    <value>Priečinok je prázdny</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Podrobnosti</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Informácie o systéme</value>
+  </data>
+  <data name="Folder inaccessible" xml:space="preserve">
+    <value>Priečinok je neprístupný</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Jazyk</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Súbor denníka</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Reštart</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Nepodarilo sa zaregistrovať klávesovú skratku.</value>
+  </data>
+  <data name="buttonCancel" xml:space="preserve">
+    <value>Zrušiť</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>generál</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Klávesová skratka</value>
+  </data>
+  <data name="Launch on startup" xml:space="preserve">
+    <value>Spustite pri štarte</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>nastavenie</value>
+  </data>
+  <data name="HelpFAQ" xml:space="preserve">
+    <value>Pomocník / FAQ</value>
+  </data>
+  <data name="SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu</value>
+  </data>
+  <data name="TextFirstStart" xml:space="preserve">
+    <value>Prečítajte si FAQ a potom vyberte koreňový adresár pre SystemTrayMenu.</value>
+  </data>
+  <data name="Select Folder" xml:space="preserve">
+    <value>Vyberte položku Priečinok</value>
+  </data>
+  <data name="MessageRootFolderEmpty" xml:space="preserve">
+    <value>Váš koreňový priečinok pre SystemTrayMenu neexistuje alebo je prázdny! Vložte niektoré súbory, priečinky alebo odkazy do priečinka alebo zmeňte koreňový priečinok.</value>
+  </data>
+  <data name="MessageRootFolderNoAccess" xml:space="preserve">
+    <value>Nemáte prístup ku koreňovému priečinku SystemTrayMenu. Udeľte prístup k priečinku alebo zmeňte koreňový priečinok.</value>
+  </data>
+  <data name="Single click to open an item instead of double click" xml:space="preserve">
+    <value>Jediným kliknutím otvoríte položku namiesto dvojitého kliknutia</value>
+  </data>
+  <data name="Dark Mode always active" xml:space="preserve">
+    <value>Tmavý režim je vždy aktívny</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Pokročilé</value>
+  </data>
+  <data name="Mouse location" xml:space="preserve">
+    <value>Umiestnenie myši</value>
+  </data>
+  <data name="Change folder" xml:space="preserve">
+    <value>Zmeniť priečinok</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Kliknite</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Prispôsobiť</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Predvolené</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Ak sa stratí zameranie a ak je myš stále v ponuke</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Milisekúnd, kým sa otvorí ponuka, keď je na nej myš</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekundy, kým sa ponuka zatvorí, ak v tomto prípade myš opustí ponuku</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Maximálna šírka ponuky pixelov</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Zostane otvorený</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Čas, kým sa otvorí ponuka</value>
+  </data>
+  <data name="If an item was clicked" xml:space="preserve">
+    <value>Ak sa kliklo na položku</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Pozadie</value>
+  </data>
+  <data name="Opened folder" xml:space="preserve">
+    <value>Otvorený priečinok</value>
+  </data>
+  <data name="Border of opened folder" xml:space="preserve">
+    <value>Orámovanie otvoreného priečinka</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Vyhľadávacie pole</value>
+  </data>
+  <data name="Selected item" xml:space="preserve">
+    <value>Vybraná položka</value>
+  </data>
+  <data name="Border of selected item" xml:space="preserve">
+    <value>Orámovanie vybranej položky</value>
+  </data>
+  <data name="Change to relative folder" xml:space="preserve">
+    <value>Zmeňte na relatívny priečinok</value>
+  </data>
+  <data name="Store config at the assembly location" xml:space="preserve">
+    <value>Uložte konfiguráciu na mieste montáže</value>
+  </data>
+  <data name="USB" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="Open the assembly location" xml:space="preserve">
+    <value>Otvorte miesto montáže</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Maximálna výška ponuky v pixeloch</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Šípka</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Šípka pri kliknutí</value>
+  </data>
+  <data name="Arrow while mouse hovers" xml:space="preserve">
+    <value>Šípka počas pohybu myši</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Pozadie šípky pri kliknutí</value>
+  </data>
+  <data name="Background of arrow while mouse hovers" xml:space="preserve">
+    <value>Pozadie šípky, keď sa myš pohybuje</value>
+  </data>
+  <data name="Colors Dark Mode" xml:space="preserve">
+    <value>Tmavý režim farieb</value>
+  </data>
+  <data name="Colors Light Mode" xml:space="preserve">
+    <value>Svetelný režim farieb</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Ponuka</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Posuvník</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Posúvač</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Počas ťahania posúvajte</value>
+  </data>
+  <data name="Slider while mouse hovers 1" xml:space="preserve">
+    <value>Posúvajte sa počas pohybu myši 1</value>
+  </data>
+  <data name="Slider while mouse hovers 2" xml:space="preserve">
+    <value>Posúvajte sa počas pohybu myši 2</value>
+  </data>
+  <data name="Use icon from folder" xml:space="preserve">
+    <value>Použite ikonu z priečinka</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Veľkosť</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Hranica menu</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>ikony</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Nastavuje sa pomocou kontextového menu</value>
+  </data>
+  <data name="Set as SystemTrayMenu folder" xml:space="preserve">
+    <value>Nastaviť ako priečinok SystemTrayMenu</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>načítava</value>
+  </data>
+  <data name="Problem with Shortcut" xml:space="preserve">
+    <value>Problém so skratkou</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Položka, na ktorú odkazuje táto skratka, bola zmenená alebo presunutá, takže táto skratka už nebude správne fungovať.</value>
+  </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>Otvorte zložku</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>"Správca úloh"</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Deaktivované</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktivované</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Expert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Ak dôjde k strate zamerania a stlačeniu klávesu Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundy, kým sa ponuka nezatvorí, ak sa v tomto prípade ponuka znova neaktivuje</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Zobraziť na paneli úloh</value>
+  </data>
+  <data name="Add folder" xml:space="preserve">
+    <value>Pridať priečinok</value>
+  </data>
+  <data name="Add content of folders to main menu" xml:space="preserve">
+    <value>Pridajte obsah priečinkov do hlavnej ponuky</value>
+  </data>
+  <data name="Folder paths" xml:space="preserve">
+    <value>Cesty priečinkov</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>Priečinky</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekurzívne</value>
+  </data>
+  <data name="Remove folder" xml:space="preserve">
+    <value>Odstrániť priečinok</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Iba súbory</value>
+  </data>
+  <data name="Cache main menu" xml:space="preserve">
+    <value>Hlavná ponuka vyrovnávacej pamäte</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Ak je viac ako tento počet položiek, vymažte vyrovnávaciu pamäť</value>
+  </data>
+  <data name="Add sample 'Start Menu' folder" xml:space="preserve">
+    <value>Pridajte vzorový priečinok „Ponuka Štart“.</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Výška riadku v percentách</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Zaoblené rohy</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Vzhľad</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Dole vľavo</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Vpravo dole</value>
+  </data>
+  <data name="Main menu appears at" xml:space="preserve">
+    <value>Hlavná ponuka sa zobrazí na</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Poloha myši (nad ikonou na paneli úloh)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Vlastné (pretiahnite ho na príslušné miesto)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>položka</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>položky</value>
+  </data>
+  <data name="Generate shortcuts to drives" xml:space="preserve">
+    <value>Vytvorte skratky k jednotkám</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Cache</value>
+  </data>
+  <data name="Always Show hidden files, folders or drives" xml:space="preserve">
+    <value>Vždy zobrazovať skryté súbory, priečinky alebo jednotky</value>
+  </data>
+  <data name="Hidden files and folders" xml:space="preserve">
+    <value>Skryté súbory a priečinky</value>
+  </data>
+  <data name="Never show hidden files, folders or drives" xml:space="preserve">
+    <value>Nikdy nezobrazujte skryté súbory, priečinky alebo jednotky</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Veľkosť a umiestnenie</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Použite nastavenia operačného systému</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Zobraziť iba ako výsledok vyhľadávania</value>
+  </data>
+  <data name="Single click to open a directory instead of double click" xml:space="preserve">
+    <value>Jediným kliknutím otvoríte adresár namiesto dvojitého kliknutia</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Vedľa predchádzajúcej</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Offset podľa pixelov</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Prekrývanie</value>
+  </data>
+  <data name="Sub menu appears at" xml:space="preserve">
+    <value>Podponuka sa zobrazí na</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Veľkosť ikon v percentách</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Podpora SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Blednutiu</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Odoslať klávesovú skratku do inej inštancie</value>
+  </data>
+  <data name="By date" xml:space="preserve">
+    <value>Podľa dátumu</value>
+  </data>
+  <data name="By name" xml:space="preserve">
+    <value>Podľa názvu</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Triedenie</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Skopírujte položku riadka pomocou presunutia</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Potiahnite</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Posúvajte sa potiahnutím prstom</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Filtrovať menu podľa typu súboru, napr.: *.exe|*.dll</value>
+  </data>
+</root>

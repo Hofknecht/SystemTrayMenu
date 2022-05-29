@@ -12,7 +12,7 @@ namespace SystemTrayMenu.Utilities
         public static string[] GetFiles(string path, string searchPatternCombined)
         {
             string[] searchPatterns = searchPatternCombined.Split('|');
-            List<string> files = new List<string>();
+            List<string> files = new();
             foreach (string searchPattern in searchPatterns)
             {
                 files.AddRange(System.IO.Directory.GetFiles(path, searchPattern));

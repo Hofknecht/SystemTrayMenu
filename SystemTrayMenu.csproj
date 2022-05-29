@@ -138,13 +138,13 @@
     <Compile Update="UserInterface\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Languages\lang.cs-CZ.Designer.cs">
+      <DependentUpon>lang.cs-CZ.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Resources\Languages\lang.de-DE.Designer.cs">
       <DependentUpon>lang.de-DE.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Update="Resources\Languages\lang.fr-FR.Designer.cs">
-      <DependentUpon>lang.fr-FR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -153,53 +153,53 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\Languages\lang.it-IT.Designer.cs">
+    <Compile Update="Resources\Languages\lang.fa-IR.Designer.cs">
+      <DependentUpon>lang.fa-IR.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Languages\lang.fr-FR.Designer.cs">
+      <DependentUpon>lang.fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Update="Resources\Languages\lang.it-IT.Designer.cs">
       <DependentUpon>lang.it-IT.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\Languages\lang.nl-NL.Designer.cs">
-      <DependentUpon>lang.nl-NL.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-	<Compile Update="Resources\Languages\lang.pt-BR.Designer.cs">
-      <DependentUpon>lang.pt-BR.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-	<Compile Update="Resources\Languages\lang.cs-CZ.Designer.cs">
-      <DependentUpon>lang.cs-CZ.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-	<Compile Update="Resources\Languages\lang.zh-CN.Designer.cs">
-      <DependentUpon>lang.zh-CN.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-  <Compile Update="Resources\Languages\lang.zh-TW.Designer.cs">
-      <DependentUpon>lang.zh-TW.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-	<Compile Update="Resources\Languages\lang.ja-JP.Designer.cs">
+    <Compile Update="Resources\Languages\lang.ja-JP.Designer.cs">
       <DependentUpon>lang.ja-JP.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\Languages\lang.ko-KR.Designer.cs">
+    <Compile Update="Resources\Languages\lang.ko-KR.Designer.cs">
       <DependentUpon>lang.ko-KR.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\Languages\lang.ru-RU.Designer.cs">
+    <Compile Update="Resources\Languages\lang.nl-NL.Designer.cs">
+      <DependentUpon>lang.nl-NL.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Languages\lang.pt-BR.Designer.cs">
+      <DependentUpon>lang.pt-BR.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Languages\lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lang.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Languages\lang.ru-RU.Designer.cs">
       <DependentUpon>lang.ru-RU.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Resources\Languages\lang.vi-VN.Designer.cs">
-      <DependentUpon>lang.vi-VN.resx</DependentUpon>
+    <Compile Update="Resources\Languages\lang.sk-SK.Designer.cs">
+      <DependentUpon>lang.sk-SK.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -208,10 +208,20 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Resources\Languages\lang.Designer.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Update="Resources\Languages\lang.vi-VN.Designer.cs">
+      <DependentUpon>lang.vi-VN.resx</DependentUpon>
       <DesignTime>True</DesignTime>
-      <DependentUpon>lang.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Languages\lang.zh-CN.Designer.cs">
+      <DependentUpon>lang.zh-CN.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  <Compile Update="Resources\Languages\lang.zh-TW.Designer.cs">
+      <DependentUpon>lang.zh-TW.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Update="UserInterface\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>

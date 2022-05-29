@@ -282,7 +282,8 @@ Thanks for ideas, reporting issues and contributing!
 #372 [not-nef](https://github.com/not-nef),
 #376 Michelle H.,
 #377 [SoenkeHob](https://github.com/SoenkeHob),
-#384 [boydfields](https://github.com/boydfields)
+#384 [boydfields](https://github.com/boydfields),
+#387 [yrctw](https://github.com/yrctw)
 
 Donations
 ------------------
