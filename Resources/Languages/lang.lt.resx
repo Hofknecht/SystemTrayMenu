@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Laikas iki meniu atsidarymo</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Jei elementas buvo paspaustas</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Jei spustelėjote elementą</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Fonas</value>

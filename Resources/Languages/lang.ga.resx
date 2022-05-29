@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Am go dtí go n-osclaíonn roghchlár</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Má chliceáiltear mír</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Má chliceáiltear eilimint</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Cúlra</value>

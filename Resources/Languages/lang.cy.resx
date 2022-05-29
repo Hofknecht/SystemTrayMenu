@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Amser nes bod dewislen yn agor</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Os cafodd eitem ei chlicio</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Os cafodd elfen ei chlicio</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Cefndir</value>

@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>مینو کھلنے تک کا وقت</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>اگر کسی آئٹم پر کلک کیا گیا تھا۔</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>اگر کسی عنصر پر کلک کیا گیا تھا۔</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>پس منظر</value>

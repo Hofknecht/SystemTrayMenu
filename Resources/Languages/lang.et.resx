@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Aeg menüü avamiseni</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Kui üksusel klõpsati</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Kui elemendil klõpsati</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Taust</value>

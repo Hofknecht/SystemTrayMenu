@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Време додека не се отвори мени</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Доколку е кликнато на некоја ставка</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Ако некој елемент бил кликнат</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Позадина</value>

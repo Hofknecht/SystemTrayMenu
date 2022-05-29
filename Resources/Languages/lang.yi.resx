@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>צייט ביז אַ מעניו אָפּענס</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>אויב אַ נומער איז קליקט</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>אויב אַ עלעמענט איז קליקט</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>הינטערגרונט</value>

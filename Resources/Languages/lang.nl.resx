@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tijd tot een menu opent</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Als er op een item is geklikt</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Als er op een element is geklikt</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Achtergrond</value>

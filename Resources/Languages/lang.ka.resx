@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>დროა მენიუს გახსნამდე</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>თუ ნივთზე დააწკაპუნეთ</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>თუ ელემენტზე დააწკაპუნეთ</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>ფონი</value>

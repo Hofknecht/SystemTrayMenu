@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>ಮೆನು ತೆರೆಯುವವರೆಗೆ ಸಮಯ</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>ಒಂದು ಐಟಂ ಅನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿದರೆ</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>ಒಂದು ಅಂಶವನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿದರೆ</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>ಹಿನ್ನೆಲೆ</value>

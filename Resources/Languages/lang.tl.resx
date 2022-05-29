@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Oras hanggang magbukas ang isang menu</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Kung ang isang item ay na-click</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Kung may na-click na elemento</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Background</value>

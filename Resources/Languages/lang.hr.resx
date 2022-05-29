@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Vrijeme do otvaranja izbornika</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Ako se klikne na stavku</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Ako je element kliknut</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Pozadina</value>

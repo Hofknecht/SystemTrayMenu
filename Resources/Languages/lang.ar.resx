@@ -228,7 +228,7 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>الوقت حتى تفتح القائمة</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
+  <data name="If an element was clicked" xml:space="preserve">
     <value>إذا تم النقر فوق عنصر</value>
   </data>
   <data name="Background" xml:space="preserve">

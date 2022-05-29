@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tan jiskaske yon meni ouvri</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Si yo te klike sou yon atik</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Si yo te klike sou yon eleman</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Jan nou koumanse</value>

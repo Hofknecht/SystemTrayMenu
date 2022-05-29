@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>메뉴가 열릴 때까지의 시간</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>항목을 클릭한 경우</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>요소를 클릭한 경우</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>배경</value>

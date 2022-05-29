@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tími þar til valmynd opnast</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Ef smellt var á hlut</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Ef smellt var á þátt</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Bakgrunnur</value>

@@ -228,8 +228,8 @@
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Čas, kým sa otvorí ponuka</value>
   </data>
-  <data name="If an item was clicked" xml:space="preserve">
-    <value>Ak sa kliklo na položku</value>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Ak sa kliklo na prvok</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Pozadie</value>
