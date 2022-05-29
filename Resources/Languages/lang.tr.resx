@@ -118,375 +118,375 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>Hakkında</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>TAMAM</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+    <value>Otomatik başlatma</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>çıkış</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
+    <value>Dosya</value>
   </data>
   <data name="Folder empty" xml:space="preserve">
-    <value>Folder empty</value>
+    <value>klasör boş</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Details</value>
+    <value>Detaylar</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>System Info</value>
+    <value>Sistem bilgisi</value>
   </data>
   <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folder inaccessible</value>
+    <value>Klasöre erişilemiyor</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>Dil</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Log File</value>
+    <value>Log dosyası</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Restart</value>
+    <value>Tekrar başlat</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Couldn’t register the hot key.</value>
+    <value>Kısayol tuşu kaydedilemedi.</value>
   </data>
   <data name="buttonCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>İptal</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>General</value>
+    <value>Genel</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>kısayol tuşu</value>
   </data>
   <data name="Launch on startup" xml:space="preserve">
-    <value>Launch on startup</value>
+    <value>Başlangıçta başlat</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Ayarlar</value>
   </data>
   <data name="HelpFAQ" xml:space="preserve">
-    <value>Help / FAQ</value>
+    <value>Yardım / SSS</value>
   </data>
   <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
+    <value>Sistem TepsisiMenü</value>
   </data>
   <data name="TextFirstStart" xml:space="preserve">
-    <value>Read the FAQ and then choose a root directory for the SystemTrayMenu.</value>
+    <value>SSS bölümünü okuyun ve ardından SystemTrayMenu için bir kök dizin seçin.</value>
   </data>
   <data name="Select Folder" xml:space="preserve">
-    <value>Select Folder</value>
+    <value>Dosya Seç</value>
   </data>
   <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Your root folder for the SystemTrayMenu does not exist or is empty! Put some files, folders or shortcuts into the folder or change the root folder.</value>
+    <value>SystemTrayMenu için kök klasörünüz mevcut değil veya boş! Klasöre bazı dosyalar, klasörler veya kısayollar koyun veya kök klasörü değiştirin.</value>
   </data>
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder.</value>
+    <value>SystemTrayMenu için kök klasöre erişiminiz yok. Klasöre erişim izni verin veya kök klasörü değiştirin.</value>
   </data>
   <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Single click to open an item instead of double click</value>
+    <value>Bir öğeyi açmak için çift tıklama yerine tek tıklama</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
-    <value>Dark Mode always active</value>
+    <value>Karanlık Mod her zaman etkin</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Gelişmiş</value>
   </data>
   <data name="Mouse location" xml:space="preserve">
-    <value>Mouse location</value>
+    <value>fare konumu</value>
   </data>
   <data name="Change folder" xml:space="preserve">
-    <value>Change folder</value>
+    <value>Dosyayı değiştir</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Click</value>
+    <value>Tıklamak</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Customize</value>
+    <value>Özelleştirme</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Default</value>
+    <value>Varsayılan</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>If the focus is lost and if the mouse is still on the menu</value>
+    <value>Odak kaybolursa ve fare hala menüdeyse</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milliseconds until a menu opens when the mouse is on it</value>
+    <value>Fare üzerindeyken bir menü açılana kadar milisaniye</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconds until the menu closes if in this case the mouse then leaves the menu</value>
+    <value>Bu durumda fare menüden çıkarsa menü kapanana kadar milisaniye</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximum menu width</value>
+    <value>Piksel maksimum menü genişliği</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Stays open</value>
+    <value>Açık kalır</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Time until a menu opens</value>
+    <value>Bir menü açılana kadar geçen süre</value>
   </data>
   <data name="If an item was clicked" xml:space="preserve">
-    <value>If an item was clicked</value>
+    <value>Bir öğe tıklandığında</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Background</value>
+    <value>Arka fon</value>
   </data>
   <data name="Opened folder" xml:space="preserve">
-    <value>Opened folder</value>
+    <value>Açılan klasör</value>
   </data>
   <data name="Border of opened folder" xml:space="preserve">
-    <value>Border of opened folder</value>
+    <value>Açılan klasörün sınırı</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>Search field</value>
+    <value>Arama alanı</value>
   </data>
   <data name="Selected item" xml:space="preserve">
-    <value>Selected item</value>
+    <value>Seçilen öğe</value>
   </data>
   <data name="Border of selected item" xml:space="preserve">
-    <value>Border of selected item</value>
+    <value>Seçili öğenin kenarlığı</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
-    <value>Change to relative folder</value>
+    <value>Göreli klasöre geç</value>
   </data>
   <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Store config at the assembly location</value>
+    <value>Yapılandırmayı montaj konumunda saklayın</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
   <data name="Open the assembly location" xml:space="preserve">
-    <value>Open the assembly location</value>
+    <value>Montaj yerini aç</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels maximum menu height</value>
+    <value>Piksel maksimum menü yüksekliği</value>
   </data>
   <data name="Arrow" xml:space="preserve">
-    <value>Arrow</value>
+    <value>Ok</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Arrow when clicking</value>
+    <value>Tıklandığında ok</value>
   </data>
   <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Arrow while mouse hovers</value>
+    <value>Fare üzerindeyken ok</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Background of arrow when clicking</value>
+    <value>Tıklandığında okun arka planı</value>
   </data>
   <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Background of arrow while mouse hovers</value>
+    <value>Fare gezinirken okun arka planı</value>
   </data>
   <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Colors Dark Mode</value>
+    <value>Renkler Karanlık Mod</value>
   </data>
   <data name="Colors Light Mode" xml:space="preserve">
-    <value>Colors Light Mode</value>
+    <value>Renkler Işık Modu</value>
   </data>
   <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+    <value>Menü</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
-    <value>Scrollbar</value>
+    <value>Kaydırma çubuğu</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>Slider</value>
+    <value>kaydırıcı</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Slider while dragging</value>
+    <value>Sürüklerken kaydırıcı</value>
   </data>
   <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Slider while mouse hovers 1</value>
+    <value>Fare 1 üzerindeyken kaydırıcı</value>
   </data>
   <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Slider while mouse hovers 2</value>
+    <value>Fare 2 üzerindeyken kaydırıcı</value>
   </data>
   <data name="Use icon from folder" xml:space="preserve">
-    <value>Use icon from folder</value>
+    <value>Klasörden simgeyi kullan</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>Size</value>
+    <value>Boyut</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Border of menu</value>
+    <value>Menü sınırı</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>Icons</value>
+    <value>Simgeler</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Set by context menu </value>
+    <value>Bağlam menüsüne göre ayarla</value>
   </data>
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Set as SystemTrayMenu folder</value>
+    <value>SystemTrayMenu klasörü olarak ayarla</value>
   </data>
   <data name="loading" xml:space="preserve">
-    <value>loading</value>
+    <value>Yükleniyor</value>
   </data>
   <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem with Shortcut</value>
+    <value>Kısayol ile ilgili sorun</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly.</value>
+    <value>Bu kısayolun atıfta bulunduğu öğe değiştirildi veya taşındı, bu nedenle bu kısayol artık düzgün çalışmayacak.</value>
   </data>
   <data name="Open Folder" xml:space="preserve">
-    <value>Open Folder</value>
+    <value>Açık dosya</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>Task Manager</value>
+    <value>"Görev Yöneticisi"</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>Deactivated</value>
+    <value>devre dışı</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>Activated</value>
+    <value>Aktif</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
+    <value>Uzman</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>If the focus is lost and the Enter key was pressed</value>
+    <value>Odak kaybolursa ve Enter tuşuna basıldıysa</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconds until the menu closes if in this case the menu is not reactivated</value>
+    <value>Bu durumda menü yeniden etkinleştirilmezse menü kapanana kadar milisaniye</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Show in Taskbar</value>
+    <value>Görev Çubuğunda Göster</value>
   </data>
   <data name="Add folder" xml:space="preserve">
-    <value>Add folder</value>
+    <value>Klasörü eklemek</value>
   </data>
   <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Add content of folders to main menu</value>
+    <value>Ana menüye klasörlerin içeriğini ekleyin</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
-    <value>Folder paths</value>
+    <value>klasör yolları</value>
   </data>
   <data name="Folders" xml:space="preserve">
-    <value>Folders</value>
+    <value>klasörler</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>Recursive</value>
+    <value>özyinelemeli</value>
   </data>
   <data name="Remove folder" xml:space="preserve">
-    <value>Remove folder</value>
+    <value>Klasörü kaldır</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Only Files</value>
+    <value>Yalnızca Dosyalar</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cache main menu</value>
+    <value>Önbellek ana menüsü</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Clear cache if more than this number of items</value>
+    <value>Bu sayıda öğeden fazlaysa önbelleği temizle</value>
   </data>
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Add sample 'Start Menu' folder</value>
+    <value>Örnek 'Başlat Menüsü' klasörü ekleyin</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>Row height in percent</value>
+    <value>Yüzde olarak satır yüksekliği</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Round corners</value>
+    <value>Yuvarlak köşeler</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>Appearance</value>
+    <value>Dış görünüş</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>Bottom left</value>
+    <value>Sol alt</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>Bottom right</value>
+    <value>Sağ alt</value>
   </data>
   <data name="Main menu appears at" xml:space="preserve">
-    <value>Main menu appears at</value>
+    <value>Ana menü şurada görünür:</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Mouse location (Above Taskbar icon)</value>
+    <value>Fare konumu (Görev Çubuğu simgesinin üstünde)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Custom (drag it to the appropriate place)</value>
+    <value>Özel (uygun yere sürükleyin)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>item</value>
+    <value>öğe</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>items</value>
+    <value>öğeler</value>
   </data>
   <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Generate shortcuts to drives</value>
+    <value>Sürücüler için kısayollar oluşturun</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>Cache</value>
+    <value>önbellek</value>
   </data>
   <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Always Show hidden files, folders or drives</value>
+    <value>Gizli dosyaları, klasörleri veya sürücüleri her zaman göster</value>
   </data>
   <data name="Hidden files and folders" xml:space="preserve">
-    <value>Hidden files and folders</value>
+    <value>Gizli dosya ve klasörler</value>
   </data>
   <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Never show hidden files, folders or drives</value>
+    <value>Gizli dosyaları, klasörleri veya sürücüleri asla gösterme</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Size and location</value>
+    <value>Boyut ve konum</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
-    <value>Use operating system settings</value>
+    <value>İşletim sistemi ayarlarını kullan</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>Show only as search result</value>
+    <value>Yalnızca arama sonucu olarak göster</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Single click to open a directory instead of double click</value>
+    <value>Çift tıklama yerine bir dizini açmak için tek tıklama</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>Next to the previous one</value>
+    <value>Bir öncekinin yanında</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset by pixels</value>
+    <value>Piksel ile ofset</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
-    <value>Overlapping</value>
+    <value>örtüşen</value>
   </data>
   <data name="Sub menu appears at" xml:space="preserve">
-    <value>Sub menu appears at</value>
+    <value>Alt menü şurada görünür:</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Size of the icons in percent</value>
+    <value>Simgelerin yüzde olarak boyutu</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Support SystemTrayMenu</value>
+    <value>Destek SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>Fading</value>
+    <value>solma</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Send hotkey to other instance</value>
+    <value>Başka bir örneğe kısayol tuşu gönder</value>
   </data>
   <data name="By date" xml:space="preserve">
-    <value>By date</value>
+    <value>Tarihe göre</value>
   </data>
   <data name="By name" xml:space="preserve">
-    <value>By name</value>
+    <value>İsimle</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>Sorting</value>
+    <value>sıralama</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Copy row item via drag drop</value>
+    <value>Sürükle bırak yoluyla satır öğesini kopyala</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Drag</value>
+    <value>Sürüklemek</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Scroll via swipe</value>
+    <value>Kaydırarak kaydırın</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filter menu by file type e.g.: *.exe|*.dll</value>
+    <value>Menüyü dosya türüne göre filtreleyin, örneğin: *.exe|*.dll</value>
   </data>
 </root>

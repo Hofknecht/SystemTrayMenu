@@ -118,375 +118,375 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>பற்றி</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>சரி</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+    <value>ஆட்டோஸ்டார்ட்</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>வெளியேறு</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
+    <value>கோப்புறை</value>
   </data>
   <data name="Folder empty" xml:space="preserve">
-    <value>Folder empty</value>
+    <value>கோப்புறை காலியாக உள்ளது</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Details</value>
+    <value>விவரங்கள்</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>System Info</value>
+    <value>கணினி தகவல்</value>
   </data>
   <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folder inaccessible</value>
+    <value>கோப்புறை அணுக முடியாதது</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>மொழி</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Log File</value>
+    <value>பதிவு கோப்பு</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Restart</value>
+    <value>மறுதொடக்கம்</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Couldn’t register the hot key.</value>
+    <value>ஹாட் கீயை பதிவு செய்ய முடியவில்லை.</value>
   </data>
   <data name="buttonCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>ரத்து செய்</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>General</value>
+    <value>பொது</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>ஹாட்கீ</value>
   </data>
   <data name="Launch on startup" xml:space="preserve">
-    <value>Launch on startup</value>
+    <value>தொடக்கத்தில் துவக்கவும்</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>அமைப்புகள்</value>
   </data>
   <data name="HelpFAQ" xml:space="preserve">
-    <value>Help / FAQ</value>
+    <value>உதவி / அடிக்கடி கேட்கப்படும் கேள்விகள்</value>
   </data>
   <data name="SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu</value>
   </data>
   <data name="TextFirstStart" xml:space="preserve">
-    <value>Read the FAQ and then choose a root directory for the SystemTrayMenu.</value>
+    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து, SystemTrayMenuக்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
   </data>
   <data name="Select Folder" xml:space="preserve">
-    <value>Select Folder</value>
+    <value>கோப்புறையைத் தேர்ந்தெடுக்கவும்</value>
   </data>
   <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Your root folder for the SystemTrayMenu does not exist or is empty! Put some files, folders or shortcuts into the folder or change the root folder.</value>
+    <value>SystemTrayMenu க்கான உங்கள் ரூட் கோப்புறை இல்லை அல்லது காலியாக உள்ளது! கோப்புறையில் சில கோப்புகள், கோப்புறைகள் அல்லது குறுக்குவழிகளை வைக்கவும் அல்லது ரூட் கோப்புறையை மாற்றவும்.</value>
   </data>
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder.</value>
+    <value>SystemTrayMenu க்கான ரூட் கோப்புறைக்கான அணுகல் உங்களிடம் இல்லை. கோப்புறைக்கான அணுகலை வழங்கவும் அல்லது ரூட் கோப்புறையை மாற்றவும்.</value>
   </data>
   <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Single click to open an item instead of double click</value>
+    <value>இரட்டை சொடுக்கிற்கு பதிலாக ஒரு உருப்படியைத் திறக்க ஒற்றை கிளிக் செய்யவும்</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
-    <value>Dark Mode always active</value>
+    <value>டார்க் மோடு எப்போதும் செயலில் இருக்கும்</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>மேம்படுத்தபட்ட</value>
   </data>
   <data name="Mouse location" xml:space="preserve">
-    <value>Mouse location</value>
+    <value>சுட்டி இடம்</value>
   </data>
   <data name="Change folder" xml:space="preserve">
-    <value>Change folder</value>
+    <value>கோப்புறையை மாற்றவும்</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Click</value>
+    <value>கிளிக் செய்யவும்</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Customize</value>
+    <value>தனிப்பயனாக்கலாம்</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Default</value>
+    <value>இயல்புநிலை</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>If the focus is lost and if the mouse is still on the menu</value>
+    <value>ஃபோகஸ் தொலைந்து போனால் மற்றும் மவுஸ் இன்னும் மெனுவில் இருந்தால்</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milliseconds until a menu opens when the mouse is on it</value>
+    <value>மவுஸ் இருக்கும் போது மெனு திறக்கும் வரை மில்லி விநாடிகள்</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconds until the menu closes if in this case the mouse then leaves the menu</value>
+    <value>மவுஸ் மெனுவை விட்டு வெளியேறினால், மெனு மூடப்படும் வரை மில்லி விநாடிகள்</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximum menu width</value>
+    <value>பிக்சல்கள் அதிகபட்ச மெனு அகலம்</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Stays open</value>
+    <value>திறந்தே இருக்கும்</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Time until a menu opens</value>
+    <value>மெனு திறக்கும் வரை நேரம்</value>
   </data>
   <data name="If an item was clicked" xml:space="preserve">
-    <value>If an item was clicked</value>
+    <value>ஒரு உருப்படியை கிளிக் செய்தால்</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Background</value>
+    <value>பின்னணி</value>
   </data>
   <data name="Opened folder" xml:space="preserve">
-    <value>Opened folder</value>
+    <value>திறந்த கோப்புறை</value>
   </data>
   <data name="Border of opened folder" xml:space="preserve">
-    <value>Border of opened folder</value>
+    <value>திறந்த கோப்புறையின் எல்லை</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>Search field</value>
+    <value>தேடல் புலம்</value>
   </data>
   <data name="Selected item" xml:space="preserve">
-    <value>Selected item</value>
+    <value>தேர்ந்தெடுக்கப்பட்ட பொருள்</value>
   </data>
   <data name="Border of selected item" xml:space="preserve">
-    <value>Border of selected item</value>
+    <value>தேர்ந்தெடுக்கப்பட்ட பொருளின் எல்லை</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
-    <value>Change to relative folder</value>
+    <value>தொடர்புடைய கோப்புறைக்கு மாற்றவும்</value>
   </data>
   <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Store config at the assembly location</value>
+    <value>சட்டசபை இடத்தில் உள்ளமைவை சேமிக்கவும்</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
   <data name="Open the assembly location" xml:space="preserve">
-    <value>Open the assembly location</value>
+    <value>சட்டசபை இருப்பிடத்தைத் திறக்கவும்</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels maximum menu height</value>
+    <value>பிக்சல்கள் அதிகபட்ச மெனு உயரம்</value>
   </data>
   <data name="Arrow" xml:space="preserve">
-    <value>Arrow</value>
+    <value>அம்பு</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Arrow when clicking</value>
+    <value>கிளிக் செய்யும் போது அம்புக்குறி</value>
   </data>
   <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Arrow while mouse hovers</value>
+    <value>சுட்டி வட்டமிடும்போது அம்புக்குறி</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Background of arrow when clicking</value>
+    <value>கிளிக் செய்யும் போது அம்புக்குறியின் பின்னணி</value>
   </data>
   <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Background of arrow while mouse hovers</value>
+    <value>சுட்டி வட்டமிடும்போது அம்புக்குறியின் பின்னணி</value>
   </data>
   <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Colors Dark Mode</value>
+    <value>நிறங்கள் இருண்ட பயன்முறை</value>
   </data>
   <data name="Colors Light Mode" xml:space="preserve">
-    <value>Colors Light Mode</value>
+    <value>நிறங்கள் ஒளி முறை</value>
   </data>
   <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+    <value>பட்டியல்</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
-    <value>Scrollbar</value>
+    <value>உருள் பட்டை</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>Slider</value>
+    <value>ஸ்லைடர்</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Slider while dragging</value>
+    <value>இழுக்கும்போது ஸ்லைடர்</value>
   </data>
   <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Slider while mouse hovers 1</value>
+    <value>சுட்டி வட்டமிடும்போது ஸ்லைடர் 1</value>
   </data>
   <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Slider while mouse hovers 2</value>
+    <value>சுட்டி வட்டமிடும்போது ஸ்லைடர் 2</value>
   </data>
   <data name="Use icon from folder" xml:space="preserve">
-    <value>Use icon from folder</value>
+    <value>கோப்புறையிலிருந்து ஐகானைப் பயன்படுத்தவும்</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>Size</value>
+    <value>அளவு</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Border of menu</value>
+    <value>மெனுவின் எல்லை</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>Icons</value>
+    <value>சின்னங்கள்</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Set by context menu </value>
+    <value>சூழல் மெனு மூலம் அமைக்கவும்</value>
   </data>
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Set as SystemTrayMenu folder</value>
+    <value>SystemTrayMenu கோப்புறையாக அமைக்கவும்</value>
   </data>
   <data name="loading" xml:space="preserve">
-    <value>loading</value>
+    <value>ஏற்றுகிறது</value>
   </data>
   <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem with Shortcut</value>
+    <value>குறுக்குவழியில் சிக்கல்</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly.</value>
+    <value>இந்த குறுக்குவழி குறிப்பிடும் உருப்படி மாற்றப்பட்டது அல்லது நகர்த்தப்பட்டது, எனவே இந்த குறுக்குவழி இனி சரியாக வேலை செய்யாது.</value>
   </data>
   <data name="Open Folder" xml:space="preserve">
-    <value>Open Folder</value>
+    <value>கோப்புறையைத் திறக்கவும்</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>Task Manager</value>
+    <value>"பணி மேலாளர்"</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>Deactivated</value>
+    <value>செயலிழக்கப்பட்டது</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>Activated</value>
+    <value>செயல்படுத்தப்பட்டது</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
+    <value>நிபுணர்</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>If the focus is lost and the Enter key was pressed</value>
+    <value>கவனம் இழக்கப்பட்டு, Enter விசையை அழுத்தினால்</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconds until the menu closes if in this case the menu is not reactivated</value>
+    <value>இந்த வழக்கில் மெனு மீண்டும் செயல்படுத்தப்படாவிட்டால், மெனு மூடப்படும் வரை மில்லி விநாடிகள்</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Show in Taskbar</value>
+    <value>பணிப்பட்டியில் காட்டு</value>
   </data>
   <data name="Add folder" xml:space="preserve">
-    <value>Add folder</value>
+    <value>கோப்புறையைச் சேர்க்கவும்</value>
   </data>
   <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Add content of folders to main menu</value>
+    <value>கோப்புறைகளின் உள்ளடக்கத்தை பிரதான மெனுவில் சேர்க்கவும்</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
-    <value>Folder paths</value>
+    <value>கோப்புறை பாதைகள்</value>
   </data>
   <data name="Folders" xml:space="preserve">
-    <value>Folders</value>
+    <value>கோப்புறைகள்</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>Recursive</value>
+    <value>சுழல்நிலை</value>
   </data>
   <data name="Remove folder" xml:space="preserve">
-    <value>Remove folder</value>
+    <value>கோப்புறையை அகற்று</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Only Files</value>
+    <value>கோப்புகள் மட்டும்</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cache main menu</value>
+    <value>கேச் முதன்மை மெனு</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Clear cache if more than this number of items</value>
+    <value>இந்த உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Add sample 'Start Menu' folder</value>
+    <value>மாதிரி 'தொடக்க மெனு' கோப்புறையைச் சேர்க்கவும்</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>Row height in percent</value>
+    <value>வரிசை உயரம் சதவீதத்தில்</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Round corners</value>
+    <value>சுற்று மூலைகள்</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>Appearance</value>
+    <value>தோற்றம்</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>Bottom left</value>
+    <value>கீழே இடது</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>Bottom right</value>
+    <value>கீழ் வலது</value>
   </data>
   <data name="Main menu appears at" xml:space="preserve">
-    <value>Main menu appears at</value>
+    <value>முதன்மை மெனுவில் தோன்றும்</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Mouse location (Above Taskbar icon)</value>
+    <value>சுட்டி இடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Custom (drag it to the appropriate place)</value>
+    <value>தனிப்பயன் (அதை பொருத்தமான இடத்திற்கு இழுக்கவும்)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>item</value>
+    <value>பொருள்</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>items</value>
+    <value>பொருட்களை</value>
   </data>
   <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Generate shortcuts to drives</value>
+    <value>இயக்ககங்களுக்கு குறுக்குவழிகளை உருவாக்கவும்</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>Cache</value>
+    <value>தற்காலிக சேமிப்பு</value>
   </data>
   <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Always Show hidden files, folders or drives</value>
+    <value>எப்போதும் மறைக்கப்பட்ட கோப்புகள், கோப்புறைகள் அல்லது இயக்கிகளைக் காட்டு</value>
   </data>
   <data name="Hidden files and folders" xml:space="preserve">
-    <value>Hidden files and folders</value>
+    <value>மறைக்கப்பட்ட கோப்புகள் மற்றும் கோப்புறைகள்</value>
   </data>
   <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Never show hidden files, folders or drives</value>
+    <value>மறைக்கப்பட்ட கோப்புகள், கோப்புறைகள் அல்லது இயக்ககங்களைக் காட்ட வேண்டாம்</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Size and location</value>
+    <value>அளவு மற்றும் இடம்</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
-    <value>Use operating system settings</value>
+    <value>இயக்க முறைமை அமைப்புகளைப் பயன்படுத்தவும்</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>Show only as search result</value>
+    <value>தேடல் முடிவாக மட்டும் காட்டு</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Single click to open a directory instead of double click</value>
+    <value>ஒரு கோப்பகத்தைத் திறக்க, இரட்டை சொடுக்கிற்குப் பதிலாக ஒற்றை கிளிக் செய்யவும்</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>Next to the previous one</value>
+    <value>முந்தையதை அடுத்து</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset by pixels</value>
+    <value>பிக்சல்கள் மூலம் ஆஃப்செட்</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
-    <value>Overlapping</value>
+    <value>ஒன்றுடன் ஒன்று</value>
   </data>
   <data name="Sub menu appears at" xml:space="preserve">
-    <value>Sub menu appears at</value>
+    <value>துணை மெனுவில் தோன்றும்</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Size of the icons in percent</value>
+    <value>ஐகான்களின் அளவு சதவீதத்தில்</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Support SystemTrayMenu</value>
+    <value>SystemTrayMenu ஐ ஆதரிக்கவும்</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>Fading</value>
+    <value>மறைதல்</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Send hotkey to other instance</value>
+    <value>மற்றொரு நிகழ்வுக்கு ஹாட்கியை அனுப்பவும்</value>
   </data>
   <data name="By date" xml:space="preserve">
-    <value>By date</value>
+    <value>தேதிப்படி</value>
   </data>
   <data name="By name" xml:space="preserve">
-    <value>By name</value>
+    <value>பெயரால்</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>Sorting</value>
+    <value>வரிசைப்படுத்துதல்</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Copy row item via drag drop</value>
+    <value>இழுத்தல் மூலம் வரிசை உருப்படியை நகலெடுக்கவும்</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Drag</value>
+    <value>இழுக்கவும்</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Scroll via swipe</value>
+    <value>ஸ்வைப் மூலம் உருட்டவும்</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filter menu by file type e.g.: *.exe|*.dll</value>
+    <value>கோப்பு வகையின்படி மெனுவை வடிகட்டவும் எ.கா.: *.exe|*.dll</value>
   </data>
 </root>

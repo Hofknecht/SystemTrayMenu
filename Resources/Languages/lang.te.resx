@@ -118,375 +118,375 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>గురించి</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>అలాగే</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+    <value>ఆటోస్టార్ట్</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>బయటకి దారి</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
+    <value>ఫోల్డర్</value>
   </data>
   <data name="Folder empty" xml:space="preserve">
-    <value>Folder empty</value>
+    <value>ఫోల్డర్ ఖాళీ</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Details</value>
+    <value>వివరాలు</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>System Info</value>
+    <value>సిస్టమ్ సమాచారం</value>
   </data>
   <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folder inaccessible</value>
+    <value>ఫోల్డర్ అందుబాటులో లేదు</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>భాష</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Log File</value>
+    <value>లాగ్ ఫైల్</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Restart</value>
+    <value>పునఃప్రారంభించండి</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Couldn’t register the hot key.</value>
+    <value>హాట్ కీని నమోదు చేయడం సాధ్యపడలేదు.</value>
   </data>
   <data name="buttonCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>రద్దు చేయండి</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>General</value>
+    <value>జనరల్</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>హాట్కీ</value>
   </data>
   <data name="Launch on startup" xml:space="preserve">
-    <value>Launch on startup</value>
+    <value>స్టార్టప్‌లో ప్రారంభించండి</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>సెట్టింగ్‌లు</value>
   </data>
   <data name="HelpFAQ" xml:space="preserve">
-    <value>Help / FAQ</value>
+    <value>సహాయం / తరచుగా అడిగే ప్రశ్నలు</value>
   </data>
   <data name="SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu</value>
   </data>
   <data name="TextFirstStart" xml:space="preserve">
-    <value>Read the FAQ and then choose a root directory for the SystemTrayMenu.</value>
+    <value>తరచుగా అడిగే ప్రశ్నలను చదివి, ఆపై SystemTrayMenu కోసం రూట్ డైరెక్టరీని ఎంచుకోండి.</value>
   </data>
   <data name="Select Folder" xml:space="preserve">
-    <value>Select Folder</value>
+    <value>ఫోల్డర్‌ని ఎంచుకోండి</value>
   </data>
   <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Your root folder for the SystemTrayMenu does not exist or is empty! Put some files, folders or shortcuts into the folder or change the root folder.</value>
+    <value>SystemTrayMenu కోసం మీ రూట్ ఫోల్డర్ ఉనికిలో లేదు లేదా ఖాళీగా ఉంది! ఫోల్డర్‌లో కొన్ని ఫైల్‌లు, ఫోల్డర్‌లు లేదా షార్ట్‌కట్‌లను ఉంచండి లేదా రూట్ ఫోల్డర్‌ను మార్చండి.</value>
   </data>
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder.</value>
+    <value>SystemTrayMenu కోసం రూట్ ఫోల్డర్‌కి మీకు యాక్సెస్ లేదు. ఫోల్డర్‌కు ప్రాప్యతను మంజూరు చేయండి లేదా రూట్ ఫోల్డర్‌ను మార్చండి.</value>
   </data>
   <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Single click to open an item instead of double click</value>
+    <value>ఒక అంశాన్ని తెరవడానికి డబుల్ క్లిక్కు బదులుగా ఒకే క్లిక్ చేయండి</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
-    <value>Dark Mode always active</value>
+    <value>డార్క్ మోడ్ ఎల్లప్పుడూ యాక్టివ్‌గా ఉంటుంది</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>ఆధునిక</value>
   </data>
   <data name="Mouse location" xml:space="preserve">
-    <value>Mouse location</value>
+    <value>మౌస్ స్థానం</value>
   </data>
   <data name="Change folder" xml:space="preserve">
-    <value>Change folder</value>
+    <value>ఫోల్డర్‌ని మార్చండి</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Click</value>
+    <value>క్లిక్ చేయండి</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Customize</value>
+    <value>అనుకూలీకరించండి</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Default</value>
+    <value>డిఫాల్ట్</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>If the focus is lost and if the mouse is still on the menu</value>
+    <value>దృష్టి పోయినట్లయితే మరియు మౌస్ ఇప్పటికీ మెనులో ఉంటే</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milliseconds until a menu opens when the mouse is on it</value>
+    <value>మౌస్ దానిపై ఉన్నప్పుడు మెను తెరవబడే వరకు మిల్లీసెకన్లు</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconds until the menu closes if in this case the mouse then leaves the menu</value>
+    <value>ఈ సందర్భంలో మౌస్ మెను నుండి నిష్క్రమిస్తే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximum menu width</value>
+    <value>పిక్సెల్‌ల గరిష్ట మెను వెడల్పు</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Stays open</value>
+    <value>తెరిచి ఉంటుంది</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Time until a menu opens</value>
+    <value>మెను తెరవడానికి సమయం</value>
   </data>
   <data name="If an item was clicked" xml:space="preserve">
-    <value>If an item was clicked</value>
+    <value>ఒక వస్తువును క్లిక్ చేస్తే</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Background</value>
+    <value>నేపథ్య</value>
   </data>
   <data name="Opened folder" xml:space="preserve">
-    <value>Opened folder</value>
+    <value>ఫోల్డర్ తెరవబడింది</value>
   </data>
   <data name="Border of opened folder" xml:space="preserve">
-    <value>Border of opened folder</value>
+    <value>తెరిచిన ఫోల్డర్ యొక్క అంచు</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>Search field</value>
+    <value>శోధన ఫీల్డ్</value>
   </data>
   <data name="Selected item" xml:space="preserve">
-    <value>Selected item</value>
+    <value>ఎంచుకున్న అంశం</value>
   </data>
   <data name="Border of selected item" xml:space="preserve">
-    <value>Border of selected item</value>
+    <value>ఎంచుకున్న అంశం అంచు</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
-    <value>Change to relative folder</value>
+    <value>సంబంధిత ఫోల్డర్‌కి మార్చండి</value>
   </data>
   <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Store config at the assembly location</value>
+    <value>అసెంబ్లీ స్థానంలో స్టోర్ కాన్ఫిగరేషన్</value>
   </data>
   <data name="USB" xml:space="preserve">
     <value>USB</value>
   </data>
   <data name="Open the assembly location" xml:space="preserve">
-    <value>Open the assembly location</value>
+    <value>అసెంబ్లీ స్థానాన్ని తెరవండి</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels maximum menu height</value>
+    <value>పిక్సెల్‌ల గరిష్ట మెను ఎత్తు</value>
   </data>
   <data name="Arrow" xml:space="preserve">
-    <value>Arrow</value>
+    <value>బాణం</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Arrow when clicking</value>
+    <value>క్లిక్ చేసినప్పుడు బాణం</value>
   </data>
   <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Arrow while mouse hovers</value>
+    <value>మౌస్ హోవర్ చేస్తున్నప్పుడు బాణం</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Background of arrow when clicking</value>
+    <value>క్లిక్ చేసినప్పుడు బాణం యొక్క నేపథ్యం</value>
   </data>
   <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Background of arrow while mouse hovers</value>
+    <value>మౌస్ హోవర్ చేస్తున్నప్పుడు బాణం యొక్క నేపథ్యం</value>
   </data>
   <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Colors Dark Mode</value>
+    <value>రంగులు డార్క్ మోడ్</value>
   </data>
   <data name="Colors Light Mode" xml:space="preserve">
-    <value>Colors Light Mode</value>
+    <value>రంగులు లైట్ మోడ్</value>
   </data>
   <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+    <value>మెను</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
-    <value>Scrollbar</value>
+    <value>స్కోర్ల్ బార్</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>Slider</value>
+    <value>స్లయిడర్</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Slider while dragging</value>
+    <value>లాగేటప్పుడు స్లయిడర్</value>
   </data>
   <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Slider while mouse hovers 1</value>
+    <value>మౌస్ హోవర్ చేస్తున్నప్పుడు స్లైడర్ 1</value>
   </data>
   <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Slider while mouse hovers 2</value>
+    <value>మౌస్ హోవర్ చేస్తున్నప్పుడు స్లైడర్ 2</value>
   </data>
   <data name="Use icon from folder" xml:space="preserve">
-    <value>Use icon from folder</value>
+    <value>ఫోల్డర్ నుండి చిహ్నాన్ని ఉపయోగించండి</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>Size</value>
+    <value>పరిమాణం</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Border of menu</value>
+    <value>మెను అంచు</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>Icons</value>
+    <value>చిహ్నాలు</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Set by context menu </value>
+    <value>సందర్భ మెను ద్వారా సెట్ చేయండి</value>
   </data>
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Set as SystemTrayMenu folder</value>
+    <value>SystemTrayMenu ఫోల్డర్‌గా సెట్ చేయండి</value>
   </data>
   <data name="loading" xml:space="preserve">
-    <value>loading</value>
+    <value>లోడ్</value>
   </data>
   <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem with Shortcut</value>
+    <value>సత్వరమార్గంతో సమస్య</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly.</value>
+    <value>ఈ సత్వరమార్గం సూచించే అంశం మార్చబడింది లేదా తరలించబడింది, కాబట్టి ఈ సత్వరమార్గం ఇకపై సరిగ్గా పని చేయదు.</value>
   </data>
   <data name="Open Folder" xml:space="preserve">
-    <value>Open Folder</value>
+    <value>ఫోల్డర్ను తెరువు</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>Task Manager</value>
+    <value>"టాస్క్ మేనేజర్"</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>Deactivated</value>
+    <value>డియాక్టివేట్ చేయబడింది</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>Activated</value>
+    <value>యాక్టివేట్ చేయబడింది</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
+    <value>నిపుణుడు</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>If the focus is lost and the Enter key was pressed</value>
+    <value>ఫోకస్ కోల్పోయి, ఎంటర్ కీని నొక్కితే</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconds until the menu closes if in this case the menu is not reactivated</value>
+    <value>ఈ సందర్భంలో మెను మళ్లీ సక్రియం చేయబడకపోతే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Show in Taskbar</value>
+    <value>టాస్క్‌బార్‌లో చూపించు</value>
   </data>
   <data name="Add folder" xml:space="preserve">
-    <value>Add folder</value>
+    <value>ఫోల్డర్‌ని జోడించండి</value>
   </data>
   <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Add content of folders to main menu</value>
+    <value>ప్రధాన మెనూకు ఫోల్డర్‌ల కంటెంట్‌ని జోడించండి</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
-    <value>Folder paths</value>
+    <value>ఫోల్డర్ మార్గాలు</value>
   </data>
   <data name="Folders" xml:space="preserve">
-    <value>Folders</value>
+    <value>ఫోల్డర్లు</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>Recursive</value>
+    <value>పునరావృత</value>
   </data>
   <data name="Remove folder" xml:space="preserve">
-    <value>Remove folder</value>
+    <value>ఫోల్డర్‌ని తీసివేయండి</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Only Files</value>
+    <value>ఫైల్స్ మాత్రమే</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cache main menu</value>
+    <value>కాష్ ప్రధాన మెను</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Clear cache if more than this number of items</value>
+    <value>ఐటెమ్‌ల కంటే ఎక్కువ ఉంటే కాష్‌ని క్లియర్ చేయండి</value>
   </data>
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Add sample 'Start Menu' folder</value>
+    <value>నమూనా 'ప్రారంభ మెనూ' ఫోల్డర్‌ని జోడించండి</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>Row height in percent</value>
+    <value>శాతంలో అడ్డు వరుస ఎత్తు</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Round corners</value>
+    <value>రౌండ్ మూలలు</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>Appearance</value>
+    <value>స్వరూపం</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>Bottom left</value>
+    <value>దిగువ ఎడమవైపు</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>Bottom right</value>
+    <value>దిగువ కుడి</value>
   </data>
   <data name="Main menu appears at" xml:space="preserve">
-    <value>Main menu appears at</value>
+    <value>ప్రధాన మెనూ ఇక్కడ కనిపిస్తుంది</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Mouse location (Above Taskbar icon)</value>
+    <value>మౌస్ స్థానం (టాస్క్‌బార్ చిహ్నం పైన)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Custom (drag it to the appropriate place)</value>
+    <value>అనుకూలం (తగిన ప్రదేశానికి లాగండి)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>item</value>
+    <value>అంశం</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>items</value>
+    <value>అంశాలు</value>
   </data>
   <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Generate shortcuts to drives</value>
+    <value>డ్రైవ్‌లకు షార్ట్‌కట్‌లను రూపొందించండి</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>Cache</value>
+    <value>కాష్</value>
   </data>
   <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Always Show hidden files, folders or drives</value>
+    <value>దాచిన ఫైల్‌లు, ఫోల్డర్‌లు లేదా డ్రైవ్‌లను ఎల్లప్పుడూ చూపు</value>
   </data>
   <data name="Hidden files and folders" xml:space="preserve">
-    <value>Hidden files and folders</value>
+    <value>దాచిన ఫైల్‌లు మరియు ఫోల్డర్‌లు</value>
   </data>
   <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Never show hidden files, folders or drives</value>
+    <value>దాచిన ఫైల్‌లు, ఫోల్డర్‌లు లేదా డ్రైవ్‌లను ఎప్పుడూ చూపవద్దు</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Size and location</value>
+    <value>పరిమాణం మరియు స్థానం</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
-    <value>Use operating system settings</value>
+    <value>ఆపరేటింగ్ సిస్టమ్ సెట్టింగ్‌లను ఉపయోగించండి</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>Show only as search result</value>
+    <value>శోధన ఫలితంగా మాత్రమే చూపు</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Single click to open a directory instead of double click</value>
+    <value>డబుల్ క్లిక్‌కి బదులుగా డైరెక్టరీని తెరవడానికి సింగిల్ క్లిక్ చేయండి</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>Next to the previous one</value>
+    <value>మునుపటిది పక్కన</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset by pixels</value>
+    <value>పిక్సెల్‌ల ద్వారా ఆఫ్‌సెట్ చేయబడింది</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
-    <value>Overlapping</value>
+    <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears at" xml:space="preserve">
-    <value>Sub menu appears at</value>
+    <value>సబ్ మెనూ ఇక్కడ కనిపిస్తుంది</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Size of the icons in percent</value>
+    <value>శాతంలో చిహ్నాల పరిమాణం</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Support SystemTrayMenu</value>
+    <value>మద్దతు SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>Fading</value>
+    <value>మసకబారుతోంది</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Send hotkey to other instance</value>
+    <value>హాట్‌కీని ఇతర సందర్భానికి పంపండి</value>
   </data>
   <data name="By date" xml:space="preserve">
-    <value>By date</value>
+    <value>తేదీ ప్రకారం</value>
   </data>
   <data name="By name" xml:space="preserve">
-    <value>By name</value>
+    <value>పేరు చేత</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>Sorting</value>
+    <value>క్రమబద్ధీకరణ</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Copy row item via drag drop</value>
+    <value>డ్రాగ్ డ్రాప్ ద్వారా అడ్డు వరుస అంశాన్ని కాపీ చేయండి</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Drag</value>
+    <value>లాగండి</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Scroll via swipe</value>
+    <value>స్వైప్ ద్వారా స్క్రోల్ చేయండి</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filter menu by file type e.g.: *.exe|*.dll</value>
+    <value>ఫైల్ రకం ద్వారా మెనుని ఫిల్టర్ చేయండి ఉదా: *.exe|*.dll</value>
   </data>
 </root>

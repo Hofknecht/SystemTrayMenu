@@ -118,375 +118,375 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>সম্পর্কিত</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>ঠিক আছে</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+    <value>স্বয়ংক্রিয় শুরু</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>প্রস্থান করুন</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
+    <value>ফোল্ডার</value>
   </data>
   <data name="Folder empty" xml:space="preserve">
-    <value>Folder empty</value>
+    <value>ফোল্ডার খালি</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Details</value>
+    <value>বিস্তারিত</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>System Info</value>
+    <value>সিস্টেমের তথ্য</value>
   </data>
   <data name="Folder inaccessible" xml:space="preserve">
-    <value>Folder inaccessible</value>
+    <value>ফোল্ডার অ্যাক্সেসযোগ্য নয়</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>ভাষা</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Log File</value>
+    <value>লগ ফাইল</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Restart</value>
+    <value>আবার শুরু</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Couldn’t register the hot key.</value>
+    <value>হট কী নিবন্ধন করা যায়নি।</value>
   </data>
   <data name="buttonCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>বাতিল করুন</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>General</value>
+    <value>সাধারণ</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>হটকি</value>
   </data>
   <data name="Launch on startup" xml:space="preserve">
-    <value>Launch on startup</value>
+    <value>শুরুতেই দুপুরের খাবার</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>সেটিংস</value>
   </data>
   <data name="HelpFAQ" xml:space="preserve">
-    <value>Help / FAQ</value>
+    <value>সাহায্য / FAQ</value>
   </data>
   <data name="SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu</value>
+    <value>সিস্টেমট্রেমেনু</value>
   </data>
   <data name="TextFirstStart" xml:space="preserve">
-    <value>Read the FAQ and then choose a root directory for the SystemTrayMenu.</value>
+    <value>FAQ পড়ুন এবং তারপর SystemTrayMenu-এর জন্য একটি রুট ডিরেক্টরি নির্বাচন করুন।</value>
   </data>
   <data name="Select Folder" xml:space="preserve">
-    <value>Select Folder</value>
+    <value>ফোল্ডার নির্বাচন করুন</value>
   </data>
   <data name="MessageRootFolderEmpty" xml:space="preserve">
-    <value>Your root folder for the SystemTrayMenu does not exist or is empty! Put some files, folders or shortcuts into the folder or change the root folder.</value>
+    <value>SystemTrayMenu-এর জন্য আপনার রুট ফোল্ডারটি বিদ্যমান নেই বা খালি! ফোল্ডারে কিছু ফাইল, ফোল্ডার বা শর্টকাট রাখুন বা রুট ফোল্ডার পরিবর্তন করুন।</value>
   </data>
   <data name="MessageRootFolderNoAccess" xml:space="preserve">
-    <value>You have no access to the root folder for the SystemTrayMenu. Grant access to the folder or change the root folder.</value>
+    <value>SystemTrayMenu-এর রুট ফোল্ডারে আপনার কোনো অ্যাক্সেস নেই। ফোল্ডারে অ্যাক্সেস মঞ্জুর করুন বা রুট ফোল্ডার পরিবর্তন করুন।</value>
   </data>
   <data name="Single click to open an item instead of double click" xml:space="preserve">
-    <value>Single click to open an item instead of double click</value>
+    <value>ডাবল ক্লিকের পরিবর্তে একটি আইটেম খুলতে একক ক্লিক করুন</value>
   </data>
   <data name="Dark Mode always active" xml:space="preserve">
-    <value>Dark Mode always active</value>
+    <value>ডার্ক মোড সবসময় সক্রিয়</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Advanced</value>
+    <value>উন্নত</value>
   </data>
   <data name="Mouse location" xml:space="preserve">
-    <value>Mouse location</value>
+    <value>মাউসের অবস্থান</value>
   </data>
   <data name="Change folder" xml:space="preserve">
-    <value>Change folder</value>
+    <value>ফোল্ডার পরিবর্তন</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Click</value>
+    <value>ক্লিক</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Customize</value>
+    <value>কাস্টমাইজ করুন</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Default</value>
+    <value>ডিফল্ট</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>If the focus is lost and if the mouse is still on the menu</value>
+    <value>যদি ফোকাস হারিয়ে যায় এবং যদি মাউস এখনও মেনুতে থাকে</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milliseconds until a menu opens when the mouse is on it</value>
+    <value>মিলিসেকেন্ড যতক্ষণ না একটি মেনু খোলা হয় যখন মাউস এটিতে থাকে</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconds until the menu closes if in this case the mouse then leaves the menu</value>
+    <value>মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড যদি এই ক্ষেত্রে মাউস মেনু ছেড়ে চলে যায়</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximum menu width</value>
+    <value>পিক্সেল সর্বাধিক মেনু প্রস্থ</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Stays open</value>
+    <value>খোলা থাকে</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Time until a menu opens</value>
+    <value>একটি মেনু খোলা পর্যন্ত সময়</value>
   </data>
   <data name="If an item was clicked" xml:space="preserve">
-    <value>If an item was clicked</value>
+    <value>যদি একটি আইটেম ক্লিক করা হয়</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Background</value>
+    <value>পটভূমি</value>
   </data>
   <data name="Opened folder" xml:space="preserve">
-    <value>Opened folder</value>
+    <value>খোলা ফোল্ডার</value>
   </data>
   <data name="Border of opened folder" xml:space="preserve">
-    <value>Border of opened folder</value>
+    <value>খোলা ফোল্ডারের সীমানা</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>Search field</value>
+    <value>অনুসন্ধান ক্ষেত্র</value>
   </data>
   <data name="Selected item" xml:space="preserve">
-    <value>Selected item</value>
+    <value>নির্বাচিত আইটেম</value>
   </data>
   <data name="Border of selected item" xml:space="preserve">
-    <value>Border of selected item</value>
+    <value>নির্বাচিত আইটেমের সীমানা</value>
   </data>
   <data name="Change to relative folder" xml:space="preserve">
-    <value>Change to relative folder</value>
+    <value>আপেক্ষিক ফোল্ডারে পরিবর্তন করুন</value>
   </data>
   <data name="Store config at the assembly location" xml:space="preserve">
-    <value>Store config at the assembly location</value>
+    <value>সমাবেশ অবস্থানে কনফিগার সংরক্ষণ করুন</value>
   </data>
   <data name="USB" xml:space="preserve">
-    <value>USB</value>
+    <value>ইউএসবি</value>
   </data>
   <data name="Open the assembly location" xml:space="preserve">
-    <value>Open the assembly location</value>
+    <value>সমাবেশ অবস্থান খুলুন</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels maximum menu height</value>
+    <value>পিক্সেল সর্বোচ্চ মেনু উচ্চতা</value>
   </data>
   <data name="Arrow" xml:space="preserve">
-    <value>Arrow</value>
+    <value>তীর</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Arrow when clicking</value>
+    <value>ক্লিক করার সময় তীরচিহ্ন</value>
   </data>
   <data name="Arrow while mouse hovers" xml:space="preserve">
-    <value>Arrow while mouse hovers</value>
+    <value>মাউস ঘোরার সময় তীরচিহ্ন</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Background of arrow when clicking</value>
+    <value>ক্লিক করার সময় তীরের পটভূমি</value>
   </data>
   <data name="Background of arrow while mouse hovers" xml:space="preserve">
-    <value>Background of arrow while mouse hovers</value>
+    <value>মাউস ঘোরার সময় তীরের পটভূমি</value>
   </data>
   <data name="Colors Dark Mode" xml:space="preserve">
-    <value>Colors Dark Mode</value>
+    <value>রং ডার্ক মোড</value>
   </data>
   <data name="Colors Light Mode" xml:space="preserve">
-    <value>Colors Light Mode</value>
+    <value>রং হালকা মোড</value>
   </data>
   <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
+    <value>তালিকা</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
-    <value>Scrollbar</value>
+    <value>স্ক্রল বার</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>Slider</value>
+    <value>স্লাইডার</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Slider while dragging</value>
+    <value>টেনে আনার সময় স্লাইডার</value>
   </data>
   <data name="Slider while mouse hovers 1" xml:space="preserve">
-    <value>Slider while mouse hovers 1</value>
+    <value>মাউস ঘোরার সময় স্লাইডার 1</value>
   </data>
   <data name="Slider while mouse hovers 2" xml:space="preserve">
-    <value>Slider while mouse hovers 2</value>
+    <value>মাউস ঘোরার সময় স্লাইডার 2</value>
   </data>
   <data name="Use icon from folder" xml:space="preserve">
-    <value>Use icon from folder</value>
+    <value>ফোল্ডার থেকে আইকন ব্যবহার করুন</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>Size</value>
+    <value>আকার</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Border of menu</value>
+    <value>মেনুর সীমানা</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>Icons</value>
+    <value>আইকন</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Set by context menu </value>
+    <value>প্রসঙ্গ মেনু দ্বারা সেট</value>
   </data>
   <data name="Set as SystemTrayMenu folder" xml:space="preserve">
-    <value>Set as SystemTrayMenu folder</value>
+    <value>SystemTrayMenu ফোল্ডার হিসেবে সেট করুন</value>
   </data>
   <data name="loading" xml:space="preserve">
-    <value>loading</value>
+    <value>লোড হচ্ছে</value>
   </data>
   <data name="Problem with Shortcut" xml:space="preserve">
-    <value>Problem with Shortcut</value>
+    <value>শর্টকাট নিয়ে সমস্যা</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly.</value>
+    <value>এই শর্টকাটটি যে আইটেমটি নির্দেশ করে তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না।</value>
   </data>
   <data name="Open Folder" xml:space="preserve">
-    <value>Open Folder</value>
+    <value>ফোল্ডার খোলা</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>Task Manager</value>
+    <value>"কাজ ব্যবস্থাপক"</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>Deactivated</value>
+    <value>নিষ্ক্রিয়</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>Activated</value>
+    <value>সক্রিয়</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>Expert</value>
+    <value>বিশেষজ্ঞ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>If the focus is lost and the Enter key was pressed</value>
+    <value>ফোকাস হারিয়ে গেলে এবং এন্টার কী টিপতে হবে</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconds until the menu closes if in this case the menu is not reactivated</value>
+    <value>এই ক্ষেত্রে মেনু পুনরায় সক্রিয় না হলে মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Show in Taskbar</value>
+    <value>টাস্কবারে দেখান</value>
   </data>
   <data name="Add folder" xml:space="preserve">
-    <value>Add folder</value>
+    <value>ফোল্ডার যোগ করুন</value>
   </data>
   <data name="Add content of folders to main menu" xml:space="preserve">
-    <value>Add content of folders to main menu</value>
+    <value>মূল মেনুতে ফোল্ডারের বিষয়বস্তু যোগ করুন</value>
   </data>
   <data name="Folder paths" xml:space="preserve">
-    <value>Folder paths</value>
+    <value>ফোল্ডার পাথ</value>
   </data>
   <data name="Folders" xml:space="preserve">
-    <value>Folders</value>
+    <value>ফোল্ডার</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>Recursive</value>
+    <value>পুনরাবৃত্তি</value>
   </data>
   <data name="Remove folder" xml:space="preserve">
-    <value>Remove folder</value>
+    <value>ফোল্ডার সরান</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Only Files</value>
+    <value>শুধুমাত্র ফাইল</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cache main menu</value>
+    <value>ক্যাশে প্রধান মেনু</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Clear cache if more than this number of items</value>
+    <value>এই সংখ্যার বেশি আইটেম হলে ক্যাশে সাফ করুন</value>
   </data>
   <data name="Add sample 'Start Menu' folder" xml:space="preserve">
-    <value>Add sample 'Start Menu' folder</value>
+    <value>নমুনা 'স্টার্ট মেনু' ফোল্ডার যোগ করুন</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>Row height in percent</value>
+    <value>শতাংশে সারির উচ্চতা</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Round corners</value>
+    <value>বৃত্তাকার কোণগুলি</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>Appearance</value>
+    <value>চেহারা</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>Bottom left</value>
+    <value>নিচে বামে</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>Bottom right</value>
+    <value>নিচের ডানে</value>
   </data>
   <data name="Main menu appears at" xml:space="preserve">
-    <value>Main menu appears at</value>
+    <value>প্রধান মেনু প্রদর্শিত হয়</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Mouse location (Above Taskbar icon)</value>
+    <value>মাউসের অবস্থান (টাস্কবার আইকনের উপরে)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Custom (drag it to the appropriate place)</value>
+    <value>কাস্টম (উপযুক্ত জায়গায় টেনে আনুন)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>item</value>
+    <value>আইটেম</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>items</value>
+    <value>আইটেম</value>
   </data>
   <data name="Generate shortcuts to drives" xml:space="preserve">
-    <value>Generate shortcuts to drives</value>
+    <value>ড্রাইভের শর্টকাট তৈরি করুন</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>Cache</value>
+    <value>ক্যাশে</value>
   </data>
   <data name="Always Show hidden files, folders or drives" xml:space="preserve">
-    <value>Always Show hidden files, folders or drives</value>
+    <value>সর্বদা লুকানো ফাইল, ফোল্ডার বা ড্রাইভ দেখান</value>
   </data>
   <data name="Hidden files and folders" xml:space="preserve">
-    <value>Hidden files and folders</value>
+    <value>লুকানো ফাইল এবং ফোল্ডার</value>
   </data>
   <data name="Never show hidden files, folders or drives" xml:space="preserve">
-    <value>Never show hidden files, folders or drives</value>
+    <value>লুকানো ফাইল, ফোল্ডার বা ড্রাইভ কখনই দেখাবেন না</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Size and location</value>
+    <value>আকার এবং অবস্থান</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
-    <value>Use operating system settings</value>
+    <value>অপারেটিং সিস্টেম সেটিংস ব্যবহার করুন</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>Show only as search result</value>
+    <value>শুধুমাত্র অনুসন্ধান ফলাফল হিসাবে দেখান</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Single click to open a directory instead of double click</value>
+    <value>ডাবল ক্লিকের পরিবর্তে একটি ডিরেক্টরি খুলতে একক ক্লিক করুন</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>Next to the previous one</value>
+    <value>আগেরটির পাশে</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset by pixels</value>
+    <value>পিক্সেল দ্বারা অফসেট</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
-    <value>Overlapping</value>
+    <value>ওভারল্যাপিং</value>
   </data>
   <data name="Sub menu appears at" xml:space="preserve">
-    <value>Sub menu appears at</value>
+    <value>সাব মেনু প্রদর্শিত হয়</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Size of the icons in percent</value>
+    <value>শতাংশে আইকনগুলির আকার</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Support SystemTrayMenu</value>
+    <value>সিস্টেমট্রেমেনু সমর্থন করে</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>Fading</value>
+    <value>বিবর্ণ</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Send hotkey to other instance</value>
+    <value>অন্য উদাহরণে হটকি পাঠান</value>
   </data>
   <data name="By date" xml:space="preserve">
-    <value>By date</value>
+    <value>তারিখ অনুসারে</value>
   </data>
   <data name="By name" xml:space="preserve">
-    <value>By name</value>
+    <value>নামে</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>Sorting</value>
+    <value>শ্রেণীবিভাজন</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Copy row item via drag drop</value>
+    <value>ড্র্যাগ ড্রপের মাধ্যমে সারি আইটেম অনুলিপি করুন</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Drag</value>
+    <value>টেনে আনুন</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Scroll via swipe</value>
+    <value>সোয়াইপের মাধ্যমে স্ক্রোল করুন</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filter menu by file type e.g.: *.exe|*.dll</value>
+    <value>ফাইল টাইপ দ্বারা ফিল্টার মেনু যেমন: *.exe|*.dll</value>
   </data>
 </root>
