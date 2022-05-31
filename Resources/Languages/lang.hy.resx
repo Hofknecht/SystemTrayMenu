@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Քեշ</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Միշտ ցույց տալ թաքնված ֆայլերը, գրացուցակները կամ կրիչներ</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Միշտ ցուցադրեք թաքնված ֆայլերը, գրացուցակները կամ կրիչներ</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Թաքնված ֆայլեր և գրացուցակներ</value>
@@ -475,7 +475,7 @@
     <value>Տեսակավորում</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Պատճենել տողի տարրը քաշել-թափելու միջոցով</value>
+    <value>Պատճենել տողի տարրը քաշել-թողարկման միջոցով</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Քաշել</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Զտել ընտրացանկը ըստ ֆայլի տեսակի, օրինակ՝ *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Ցույց տալ տարրերի քանակը ստորև</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Ցույց տալ գրացուցակի անվանումը վերևում</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Ցուցադրել ստեղնաշարի ստեղները</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Ցույց տալ որոնման տողը</value>
   </data>
 </root>

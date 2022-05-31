@@ -298,7 +298,7 @@
     <value>Schuifregelaar tijdens het slepen</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Schuifregelaar terwijl de muis erover zweeft 1</value>
+    <value>Schuif terwijl de muis erover zweeft 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Schuif terwijl de muis erover zweeft 2</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Altijd verborgen bestanden, mappen of stations weergeven</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filter menu op bestandstype bijv.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Toon aantal elementen hieronder</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Toon maptitel bovenaan</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Functietoetsen hieronder weergeven:</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Toon zoekbalk</value>
   </data>
 </root>

@@ -897,7 +897,7 @@ namespace SystemTrayMenu.Business
                 title = Path.GetPathRoot(path);
             }
 
-            menu.SetTitle(title);
+            menu.AdjustControls(title, menuData.Validity);
             menu.UserClickedOpenFolder += () => OpenFolder(path);
             menu.Level = menuData.Level;
             menu.MouseWheel += AdjustMenusSizeAndLocation;

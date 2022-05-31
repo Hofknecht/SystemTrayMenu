@@ -268,7 +268,7 @@
     <value>Săgeată</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Săgeată când dați clic</value>
+    <value>Săgeată când faceți clic</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Săgeată în timp ce mouse-ul trece peste ea</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Afișați întotdeauna fișierele, directoarele sau unitățile ascunse</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrați meniul după tipul de fișier, de exemplu: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Arată numărul de elemente de mai jos</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Afișați titlul directorului în partea de sus</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Afișați tastele funcționale mai jos</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Afișează bara de căutare</value>
   </data>
 </root>

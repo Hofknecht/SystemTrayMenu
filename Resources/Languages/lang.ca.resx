@@ -382,7 +382,7 @@
     <value>Esborra la memòria cau si hi ha més d'aquest nombre d'elements</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Afegeix el directori de mostra "Menú Inici"</value>
+    <value>Afegeix el directori d'exemple "Menú Inici"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Alçada de fila en percentatge</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Memòria cau</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Mostra sempre fitxers, directoris o unitats ocults</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -445,7 +445,7 @@
     <value>Al costat de l'anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Compensació de píxels</value>
+    <value>Compensació per píxels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Superposició</value>
@@ -481,9 +481,21 @@
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb el dit</value>
+    <value>Desplaceu-vos amb lliscar</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Mostra el nombre d'elements a continuació</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Mostra el títol del directori a la part superior</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Mostra les tecles de funció a continuació</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Mostra la barra de cerca</value>
   </data>
 </root>

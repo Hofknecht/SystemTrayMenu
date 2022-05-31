@@ -274,7 +274,7 @@
     <value>鼠标悬停时的箭头</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>单击时箭头的背景</value>
+    <value>点击时箭头的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>鼠标悬停在箭头上时的箭头背景</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>缓存</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>总是显示隐藏的文件、目录或驱动器</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>始终显示隐藏的文件、目录或驱动器</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>隐藏的文件和目录</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>按文件类型过滤菜单，例如：*.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>在下面显示元素的数量</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>在顶部显示目录标题</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>在下方显示功能键</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>显示搜索栏</value>
   </data>
 </root>

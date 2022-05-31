@@ -133,7 +133,7 @@
     <value>kataloq</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Kataloq boş</value>
+    <value>Kataloq boşdur</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Təfərrüatlar</value>
@@ -259,7 +259,7 @@
     <value>USB</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>Proqram qovluğunu açın</value>
+    <value>Tətbiq qovluğunu açın</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Piksel maksimum menyu hündürlüyü</value>
@@ -301,7 +301,7 @@
     <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 2</value>
+    <value>Siçan üzərinə sürüşdürərkən sürüşdürün 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Kataloqdan ikonadan istifadə edin</value>
@@ -325,7 +325,7 @@
     <value>yüklənir</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Qısayol keçidində problem</value>
+    <value>Qısayol keçidi ilə bağlı problem</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Bu qısayolun istinad etdiyi element dəyişdirilib və ya köçürülüb, ona görə də bu qısayol artıq düzgün işləməyəcək.</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Gizli yer</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Həmişə gizli faylları, qovluqları və ya sürücüləri göstərin</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Fayl növünə görə menyunu süzün, məsələn: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Aşağıdakı elementlərin sayını göstərin</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Kataloq başlığını yuxarıda göstərin</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Aşağıda funksional düymələri göstərin</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Axtarış çubuğunu göstərin</value>
   </data>
 </root>

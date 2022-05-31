@@ -316,8 +316,12 @@ namespace SystemTrayMenu.UserInterface
             this.labelSearchField = new System.Windows.Forms.Label();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelAppearance = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxShowCountOfElementsBelow = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowFunctionKeysBelow = new System.Windows.Forms.CheckBox();
             this.buttonAppearanceDefault = new System.Windows.Forms.Button();
+            this.checkBoxShowSearchBar = new System.Windows.Forms.CheckBox();
             this.checkBoxUseFading = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowDirectoryTitleAtTop = new System.Windows.Forms.CheckBox();
             this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
             this.checkBoxRoundCorners = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
@@ -606,7 +610,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChangeFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
             this.buttonChangeFolder.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonChangeFolder.Name = "buttonChangeFolder";
-            this.buttonChangeFolder.Size = new System.Drawing.Size(94, 25);
+            this.buttonChangeFolder.Size = new System.Drawing.Size(119, 25);
             this.buttonChangeFolder.TabIndex = 0;
             this.buttonChangeFolder.Text = "Changing directory";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
@@ -2312,7 +2316,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(391, 1356);
+            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(391, 1456);
             this.tableLayoutPanelCustomize.TabIndex = 0;
             // 
             // groupBoxColorsDarkMode
@@ -2320,7 +2324,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxColorsDarkMode.AutoSize = true;
             this.groupBoxColorsDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxColorsDarkMode.Controls.Add(this.tableLayoutPanelDarkMode);
-            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 748);
+            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 848);
             this.groupBoxColorsDarkMode.MaximumSize = new System.Drawing.Size(385, 0);
             this.groupBoxColorsDarkMode.MinimumSize = new System.Drawing.Size(385, 0);
             this.groupBoxColorsDarkMode.Name = "groupBoxColorsDarkMode";
@@ -3393,7 +3397,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxColorsLightMode.AutoSize = true;
             this.groupBoxColorsLightMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxColorsLightMode.Controls.Add(this.tableLayoutPanelColorsAndDefault);
-            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 137);
+            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 237);
             this.groupBoxColorsLightMode.MaximumSize = new System.Drawing.Size(385, 0);
             this.groupBoxColorsLightMode.MinimumSize = new System.Drawing.Size(385, 0);
             this.groupBoxColorsLightMode.Name = "groupBoxColorsLightMode";
@@ -4473,7 +4477,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxAppearance.MaximumSize = new System.Drawing.Size(385, 0);
             this.groupBoxAppearance.MinimumSize = new System.Drawing.Size(385, 0);
             this.groupBoxAppearance.Name = "groupBoxAppearance";
-            this.groupBoxAppearance.Size = new System.Drawing.Size(385, 128);
+            this.groupBoxAppearance.Size = new System.Drawing.Size(385, 228);
             this.groupBoxAppearance.TabIndex = 1;
             this.groupBoxAppearance.TabStop = false;
             this.groupBoxAppearance.Text = "groupBoxAppearance";
@@ -4484,26 +4488,55 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAppearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelAppearance.ColumnCount = 1;
             this.tableLayoutPanelAppearance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAppearance.Controls.Add(this.buttonAppearanceDefault, 0, 3);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowCountOfElementsBelow, 0, 6);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeysBelow, 0, 5);
+            this.tableLayoutPanelAppearance.Controls.Add(this.buttonAppearanceDefault, 0, 7);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowSearchBar, 0, 4);
             this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxUseFading, 0, 1);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowDirectoryTitleAtTop, 0, 3);
             this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 2);
             this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxRoundCorners, 0, 0);
             this.tableLayoutPanelAppearance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelAppearance.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelAppearance.Name = "tableLayoutPanelAppearance";
-            this.tableLayoutPanelAppearance.RowCount = 4;
+            this.tableLayoutPanelAppearance.RowCount = 8;
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.Size = new System.Drawing.Size(379, 106);
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.Size = new System.Drawing.Size(379, 206);
             this.tableLayoutPanelAppearance.TabIndex = 1;
+            // 
+            // checkBoxShowCountOfElementsBelow
+            // 
+            this.checkBoxShowCountOfElementsBelow.AutoSize = true;
+            this.checkBoxShowCountOfElementsBelow.Location = new System.Drawing.Point(3, 153);
+            this.checkBoxShowCountOfElementsBelow.Name = "checkBoxShowCountOfElementsBelow";
+            this.checkBoxShowCountOfElementsBelow.Size = new System.Drawing.Size(232, 19);
+            this.checkBoxShowCountOfElementsBelow.TabIndex = 4;
+            this.checkBoxShowCountOfElementsBelow.Text = "checkBoxShowCountOfElementsBelow";
+            this.checkBoxShowCountOfElementsBelow.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowFunctionKeysBelow
+            // 
+            this.checkBoxShowFunctionKeysBelow.AutoSize = true;
+            this.checkBoxShowFunctionKeysBelow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxShowFunctionKeysBelow.Location = new System.Drawing.Point(3, 128);
+            this.checkBoxShowFunctionKeysBelow.Name = "checkBoxShowFunctionKeysBelow";
+            this.checkBoxShowFunctionKeysBelow.Size = new System.Drawing.Size(373, 19);
+            this.checkBoxShowFunctionKeysBelow.TabIndex = 3;
+            this.checkBoxShowFunctionKeysBelow.Text = "checkBoxShowFunctionKeysBelow";
+            this.checkBoxShowFunctionKeysBelow.UseVisualStyleBackColor = true;
             // 
             // buttonAppearanceDefault
             // 
             this.buttonAppearanceDefault.AutoSize = true;
             this.buttonAppearanceDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 78);
+            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 178);
             this.buttonAppearanceDefault.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonAppearanceDefault.Name = "buttonAppearanceDefault";
             this.buttonAppearanceDefault.Size = new System.Drawing.Size(154, 25);
@@ -4511,6 +4544,17 @@ namespace SystemTrayMenu.UserInterface
             this.buttonAppearanceDefault.Text = "buttonAppearanceDefault";
             this.buttonAppearanceDefault.UseVisualStyleBackColor = true;
             this.buttonAppearanceDefault.Click += new System.EventHandler(this.ButtonAppearanceDefault_Click);
+            // 
+            // checkBoxShowSearchBar
+            // 
+            this.checkBoxShowSearchBar.AutoSize = true;
+            this.checkBoxShowSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxShowSearchBar.Location = new System.Drawing.Point(3, 103);
+            this.checkBoxShowSearchBar.Name = "checkBoxShowSearchBar";
+            this.checkBoxShowSearchBar.Size = new System.Drawing.Size(373, 19);
+            this.checkBoxShowSearchBar.TabIndex = 2;
+            this.checkBoxShowSearchBar.Text = "checkBoxShowSearchBar";
+            this.checkBoxShowSearchBar.UseVisualStyleBackColor = true;
             // 
             // checkBoxUseFading
             // 
@@ -4522,6 +4566,17 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxUseFading.TabIndex = 5;
             this.checkBoxUseFading.Text = "checkBoxUseFading";
             this.checkBoxUseFading.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowDirectoryTitleAtTop
+            // 
+            this.checkBoxShowDirectoryTitleAtTop.AutoSize = true;
+            this.checkBoxShowDirectoryTitleAtTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxShowDirectoryTitleAtTop.Location = new System.Drawing.Point(3, 78);
+            this.checkBoxShowDirectoryTitleAtTop.Name = "checkBoxShowDirectoryTitleAtTop";
+            this.checkBoxShowDirectoryTitleAtTop.Size = new System.Drawing.Size(373, 19);
+            this.checkBoxShowDirectoryTitleAtTop.TabIndex = 1;
+            this.checkBoxShowDirectoryTitleAtTop.Text = "checkBoxShowDirectoryTitleAtTop";
+            this.checkBoxShowDirectoryTitleAtTop.UseVisualStyleBackColor = true;
             // 
             // checkBoxDarkModeAlwaysOn
             // 
@@ -4587,7 +4642,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.Location = new System.Drawing.Point(348, 0);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonCancel.Name = "Abort";
+            this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 25);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Abort";
@@ -5166,5 +5221,9 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.GroupBox groupBoxSearchPattern;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSearchPattern;
         private System.Windows.Forms.TextBox textBoxSearchPattern;
+        private System.Windows.Forms.CheckBox checkBoxShowFunctionKeysBelow;
+        private System.Windows.Forms.CheckBox checkBoxShowSearchBar;
+        private System.Windows.Forms.CheckBox checkBoxShowDirectoryTitleAtTop;
+        private System.Windows.Forms.CheckBox checkBoxShowCountOfElementsBelow;
     }
 }

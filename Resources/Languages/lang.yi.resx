@@ -181,10 +181,10 @@
     <value>אויסקלייַבן וועגווייַזער</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>דיין וואָרצל וועגווייַזער פֿאַר די אַפּ טוט נישט עקסיסטירן אָדער איז ליידיק! טוישן די וואָרצל וועגווייַזער אָדער שטעלן עטלעכע טעקעס, דיירעקטעריז אָדער דורכוועג אין דער וואָרצל וועגווייַזער.</value>
+    <value>דיין וואָרצל וועגווייַזער פֿאַר די אַפּ טוט נישט עקסיסטירן אָדער איז ליידיק! טוישן די וואָרצל וועגווייַזער אָדער שטעלן עטלעכע טעקעס, דירעקטעריז אָדער דורכוועג אין דער וואָרצל וועגווייַזער.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>איר האָט קיין אַקסעס צו דער וואָרצל וועגווייַזער פון די אַפּ. געבן אַקסעס צו דער וועגווייַזער אָדער טוישן די וואָרצל וועגווייַזער.</value>
+    <value>איר האָבן קיין אַקסעס צו דער וואָרצל וועגווייַזער פון די אַפּ. געבן אַקסעס צו דער וועגווייַזער אָדער טוישן די וואָרצל וועגווייַזער.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>איין גיט צו עפענען אַן עלעמענט אַנשטאָט פון טאָפּל גיט</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>קאַש</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>שטענדיק ווייַזן פאַרבאָרגן טעקעס, דירעקטעריז אָדער דרייווז</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>פילטער מעניו לויט טעקע טיפּ, למשל: *.עקסע|*.דלל</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>ווייַזן ציילן פון עלעמענטן אונטן</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>ווייַז דער טיטל פון דער Directory אויבן</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסלען אונטן</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>ווייַזן זוכן באַר</value>
   </data>
 </root>

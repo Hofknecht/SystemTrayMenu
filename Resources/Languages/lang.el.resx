@@ -133,7 +133,7 @@
     <value>Ευρετήριο</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Ο κατάλογος είναι κενός</value>
+    <value>Κενός κατάλογος</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Λεπτομέριες</value>
@@ -283,7 +283,7 @@
     <value>Σχέδιο χρωμάτων σκούρο</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Χρωματικός συνδυασμός φωτεινό</value>
+    <value>Χρωματικός συνδυασμός φωτεινός</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Μενού εφαρμογών</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Κρύπτη</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Εμφάνιση πάντα κρυφών αρχείων, καταλόγων ή μονάδων δίσκου</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Να εμφανίζονται πάντα κρυφά αρχεία, κατάλογοι ή μονάδες δίσκου</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Κρυφά αρχεία και κατάλογοι</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Φιλτράρισμα μενού κατά τύπο αρχείου π.χ.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Εμφάνιση του αριθμού των στοιχείων παρακάτω</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Εμφάνιση τίτλου καταλόγου στην κορυφή</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Εμφάνιση πλήκτρων λειτουργιών παρακάτω</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Εμφάνιση γραμμής αναζήτησης</value>
   </data>
 </root>

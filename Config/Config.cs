@@ -31,6 +31,14 @@ namespace SystemTrayMenu
 
         public static string SearchPattern => Settings.Default.SearchPattern;
 
+        public static bool ShowDirectoryTitleAtTop => Settings.Default.ShowDirectoryTitleAtTop;
+
+        public static bool ShowSearchBar => Settings.Default.ShowSearchBar;
+
+        public static bool ShowCountOfElementsBelow => Settings.Default.ShowCountOfElementsBelow;
+
+        public static bool ShowFunctionKeysBelow => Settings.Default.ShowFunctionKeysBelow;
+
         public static bool AlwaysOpenByPin { get; internal set; }
 
         public static void Initialize()

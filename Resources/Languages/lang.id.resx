@@ -187,7 +187,7 @@
     <value>Anda tidak memiliki akses ke direktori root aplikasi. Berikan akses ke direktori atau ubah direktori root.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Klik satu kali untuk membuka elemen alih-alih klik dua kali</value>
+    <value>Satu klik untuk membuka elemen alih-alih klik dua kali</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Skema warna gelap selalu aktif</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Selalu Tampilkan file, direktori, atau drive tersembunyi</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Selalu tampilkan file, direktori, atau drive tersembunyi</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>File dan direktori tersembunyi</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filter menu menurut jenis file mis.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Tunjukkan jumlah elemen di bawah ini</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Tampilkan judul direktori di atas</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Tampilkan tombol fungsi di bawah ini</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Tampilkan bilah pencarian</value>
   </data>
 </root>

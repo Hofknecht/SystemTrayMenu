@@ -155,7 +155,7 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");
                 radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
                 radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, directories or drives");
-                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always Show hidden files, directories or drives");
+                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always show hidden files, directories or drives");
                 groupBoxSorting.Text = Translator.GetText("Sorting");
                 radioButtonSortByName.Text = Translator.GetText("Sort by name");
                 radioButtonSortByDate.Text = Translator.GetText("Sort by date");
@@ -193,6 +193,10 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
                 checkBoxUseFading.Text = Translator.GetText("Fading");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Color scheme dark always active");
+                checkBoxShowDirectoryTitleAtTop.Text = Translator.GetText("Show directory title at top");
+                checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements below");
+                checkBoxShowSearchBar.Text = Translator.GetText("Show search bar");
+                checkBoxShowFunctionKeysBelow.Text = Translator.GetText("Show function keys below");
                 buttonAppearanceDefault.Text = Translator.GetText("Default");
                 groupBoxColorsLightMode.Text = Translator.GetText("Color scheme bright");
                 groupBoxColorsDarkMode.Text = Translator.GetText("Color scheme dark");
@@ -522,6 +526,10 @@ namespace SystemTrayMenu.UserInterface
             checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
             checkBoxUseFading.Checked = Settings.Default.UseFading;
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
+            checkBoxShowDirectoryTitleAtTop.Checked = Settings.Default.ShowDirectoryTitleAtTop;
+            checkBoxShowSearchBar.Checked = Settings.Default.ShowSearchBar;
+            checkBoxShowCountOfElementsBelow.Checked = Settings.Default.ShowCountOfElementsBelow;
+            checkBoxShowFunctionKeysBelow.Checked = Settings.Default.ShowFunctionKeysBelow;
 
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
             textBoxColorSelecetedItemDarkMode.Text = Settings.Default.ColorDarkModeSelecetedItem;
@@ -946,6 +954,10 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
             Settings.Default.UseFading = checkBoxUseFading.Checked;
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+            Settings.Default.ShowDirectoryTitleAtTop = checkBoxShowDirectoryTitleAtTop.Checked;
+            Settings.Default.ShowSearchBar = checkBoxShowSearchBar.Checked;
+            Settings.Default.ShowCountOfElementsBelow = checkBoxShowCountOfElementsBelow.Checked;
+            Settings.Default.ShowFunctionKeysBelow = checkBoxShowFunctionKeysBelow.Checked;
 
             if (checkBoxStoreConfigAtAssemblyLocation.Checked)
             {
@@ -1198,7 +1210,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownIconSizeInPercent.Value = 100;
             numericUpDownRowHeighteInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 400;
-            numericUpDownMenuHeight.Value = 600;
+            numericUpDownMenuHeight.Value = 450;
 
             radioButtonAppearAtTheBottomRight.Checked = false;
             radioButtonAppearAtTheBottomLeft.Checked = true;
@@ -1334,9 +1346,13 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonAppearanceDefault_Click(object sender, EventArgs e)
         {
-            checkBoxRoundCorners.Checked = true;
-            checkBoxUseFading.Checked = true;
+            checkBoxRoundCorners.Checked = false;
+            checkBoxUseFading.Checked = false;
             checkBoxDarkModeAlwaysOn.Checked = true;
+            checkBoxShowDirectoryTitleAtTop.Checked = false;
+            checkBoxShowSearchBar.Checked = true;
+            checkBoxShowCountOfElementsBelow.Checked = false;
+            checkBoxShowFunctionKeysBelow.Checked = false;
         }
 
         private void ButtonDefaultColors_Click(object sender, EventArgs e)

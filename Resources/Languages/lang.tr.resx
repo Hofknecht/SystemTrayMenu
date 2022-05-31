@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>önbellek</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Gizli dosyaları, dizinleri veya sürücüleri her zaman göster</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Menüyü dosya türüne göre filtreleyin, örneğin: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Aşağıdaki eleman sayısını göster</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Dizin başlığını en üstte göster</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Aşağıdaki fonksiyon tuşlarını göster</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Arama çubuğunu göster</value>
   </data>
 </root>

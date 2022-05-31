@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Pamięć podręczna</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Zawsze pokazuj ukryte pliki, katalogi lub dyski</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -463,7 +463,7 @@
     <value>Zblakły</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Wyślij skrót do innej instancji</value>
+    <value>Wyślij klawisz skrótu do innej instancji</value>
   </data>
   <data name="Sort by date" xml:space="preserve">
     <value>Sortowanie według daty</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtruj menu według typu pliku, np.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Pokaż liczbę elementów poniżej</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Pokaż tytuł katalogu na górze</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Pokaż klawisze funkcyjne poniżej</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Pokaż pasek wyszukiwania</value>
   </data>
 </root>

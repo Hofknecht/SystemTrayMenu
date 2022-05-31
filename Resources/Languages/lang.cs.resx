@@ -283,7 +283,7 @@
     <value>Barevné provedení tmavé</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Barevné provedení světlé</value>
+    <value>Barevné schéma světlé</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Nabídka aplikací</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Mezipaměti</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Vždy zobrazit skryté soubory, adresáře nebo jednotky</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Vždy zobrazovat skryté soubory, adresáře nebo jednotky</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skryté soubory a adresáře</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrovat nabídku podle typu souboru, např.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Níže zobrazit počet prvků</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Zobrazit název adresáře nahoře</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Níže zobrazit funkční klávesy</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Zobrazit vyhledávací lištu</value>
   </data>
 </root>

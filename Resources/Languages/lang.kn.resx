@@ -166,7 +166,7 @@
     <value>ಹಾಟ್‌ಕೀ</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>ವಿಂಡೋಸ್ನೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ</value>
+    <value>ವಿಂಡೋಸ್‌ನೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>ಸಂಯೋಜನೆಗಳು</value>
@@ -385,7 +385,7 @@
     <value>ಮಾದರಿ ಡೈರೆಕ್ಟರಿಯನ್ನು ಸೇರಿಸಿ 'ಪ್ರಾರಂಭ ಮೆನು'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>ಸಾಲಿನ ಎತ್ತರ ಶೇಕಡಾದಲ್ಲಿ</value>
+    <value>ಸಾಲಿನ ಎತ್ತರ ಶೇಕಡಾ</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>ಸುತ್ತಿನ ಮೂಲೆಗಳು</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>ಸಂಗ್ರಹ</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>ಯಾವಾಗಲೂ ಗುಪ್ತ ಫೈಲ್‌ಗಳು, ಡೈರೆಕ್ಟರಿಗಳು ಅಥವಾ ಡ್ರೈವ್‌ಗಳನ್ನು ತೋರಿಸಿ</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ಫೈಲ್ ಪ್ರಕಾರದ ಮೂಲಕ ಮೆನುವನ್ನು ಫಿಲ್ಟರ್ ಮಾಡಿ ಉದಾ: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>ಕೆಳಗಿನ ಅಂಶಗಳ ಸಂಖ್ಯೆಯನ್ನು ತೋರಿಸಿ</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>ಮೇಲ್ಭಾಗದಲ್ಲಿ ಡೈರೆಕ್ಟರಿ ಶೀರ್ಷಿಕೆಯನ್ನು ತೋರಿಸಿ</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>ಫಂಕ್ಷನ್ ಕೀಗಳನ್ನು ಕೆಳಗೆ ತೋರಿಸಿ</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>ಹುಡುಕಾಟ ಪಟ್ಟಿಯನ್ನು ತೋರಿಸಿ</value>
   </data>
 </root>

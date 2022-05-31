@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Kešatmiņa</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Vienmēr rādīt slēptos failus, direktorijus vai diskus</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrēšanas izvēlne pēc faila veida, piemēram, *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Tālāk parādīt elementu skaitu</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Rādīt direktorijas nosaukumu augšpusē</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Rādīt funkciju taustiņus zemāk</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Rādīt meklēšanas joslu</value>
   </data>
 </root>

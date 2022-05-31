@@ -238,7 +238,7 @@
     <value>الدليل المفتوح</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>حدود الدليل المفتوح</value>
+    <value>حد الدليل المفتوح</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>مجال البحث</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>مخبأ</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>إظهار الملفات أو الدلائل أو محركات الأقراص المخفية دائمًا</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>اعرض دائمًا الملفات أو الدلائل أو محركات الأقراص المخفية</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>الملفات والأدلة المخفية</value>
@@ -475,7 +475,7 @@
     <value>فرز</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>نسخ عنصر الصف عن طريق السحب والإسقاط</value>
+    <value>نسخ عنصر الصف عن طريق السحب والإفلات</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>يجر</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>قائمة التصفية حسب نوع الملف على سبيل المثال: * .exe | * .dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>عرض عدد العناصر أدناه</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>إظهار عنوان الدليل في الأعلى</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>إظهار مفاتيح الوظائف أدناه</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>إظهار شريط البحث</value>
   </data>
 </root>

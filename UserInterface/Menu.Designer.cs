@@ -165,7 +165,7 @@
             this.labelItems.AutoSize = true;
             this.labelItems.ForeColor = System.Drawing.Color.White;
             this.labelItems.Location = new System.Drawing.Point(10, 3);
-            this.labelItems.Margin = new System.Windows.Forms.Padding(0);
+            this.labelItems.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.labelItems.Name = "labelItems";
             this.labelItems.Size = new System.Drawing.Size(45, 15);
             this.labelItems.TabIndex = 2;
@@ -184,7 +184,7 @@
             this.tableLayoutPanelMenu.Location = new System.Drawing.Point(1, 1);
             this.tableLayoutPanelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelMenu.Name = "tableLayoutPanelMenu";
-            this.tableLayoutPanelMenu.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.tableLayoutPanelMenu.Padding = new System.Windows.Forms.Padding(6, 0, 6, 6);
             this.tableLayoutPanelMenu.RowCount = 7;
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenu.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -243,9 +243,9 @@
             this.pictureBoxRestart.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxRestart.Location = new System.Drawing.Point(122, 1);
-            this.pictureBoxRestart.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBoxRestart.Margin = new System.Windows.Forms.Padding(1, 5, 1, 1);
             this.pictureBoxRestart.Name = "pictureBoxRestart";
-            this.pictureBoxRestart.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxRestart.Size = new System.Drawing.Size(16, 16);
             this.pictureBoxRestart.TabIndex = 3;
             this.pictureBoxRestart.TabStop = false;
             this.pictureBoxRestart.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxRestart_Paint);
@@ -259,9 +259,9 @@
             this.pictureBoxSettings.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSettings.Location = new System.Drawing.Point(100, 1);
-            this.pictureBoxSettings.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBoxSettings.Margin = new System.Windows.Forms.Padding(1, 5, 1, 1);
             this.pictureBoxSettings.Name = "pictureBoxSettings";
-            this.pictureBoxSettings.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxSettings.Size = new System.Drawing.Size(16, 16);
             this.pictureBoxSettings.TabIndex = 2;
             this.pictureBoxSettings.TabStop = false;
             this.pictureBoxSettings.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxSettings_Paint);
@@ -275,9 +275,9 @@
             this.pictureBoxMenuAlwaysOpen.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMenuAlwaysOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxMenuAlwaysOpen.Location = new System.Drawing.Point(78, 1);
-            this.pictureBoxMenuAlwaysOpen.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBoxMenuAlwaysOpen.Margin = new System.Windows.Forms.Padding(1, 5, 1, 1);
             this.pictureBoxMenuAlwaysOpen.Name = "pictureBoxMenuAlwaysOpen";
-            this.pictureBoxMenuAlwaysOpen.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxMenuAlwaysOpen.Size = new System.Drawing.Size(16, 16);
             this.pictureBoxMenuAlwaysOpen.TabIndex = 1;
             this.pictureBoxMenuAlwaysOpen.TabStop = false;
             this.pictureBoxMenuAlwaysOpen.Click += new System.EventHandler(this.PictureBoxMenuAlwaysOpen_Click);
@@ -292,9 +292,9 @@
             this.pictureBoxOpenFolder.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxOpenFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxOpenFolder.Location = new System.Drawing.Point(56, 1);
-            this.pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(1);
+            this.pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(1, 5, 1, 1);
             this.pictureBoxOpenFolder.Name = "pictureBoxOpenFolder";
-            this.pictureBoxOpenFolder.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxOpenFolder.Size = new System.Drawing.Size(16, 16);
             this.pictureBoxOpenFolder.TabIndex = 1;
             this.pictureBoxOpenFolder.TabStop = false;
             this.pictureBoxOpenFolder.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxOpenFolder_Paint);

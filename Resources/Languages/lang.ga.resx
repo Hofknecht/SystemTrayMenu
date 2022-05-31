@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Taisce</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Taispeáin comhaid fholaithe, eolairí nó tiomántáin i gcónaí</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Scag an roghchlár de réir an chineáil comhaid m.sh.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Taispeáin líon na ndúl thíos</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Taispeáin teideal an eolaire ag barr</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Taispeáin na heochracha feidhme thíos</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Taispeáin barra cuardaigh</value>
   </data>
 </root>

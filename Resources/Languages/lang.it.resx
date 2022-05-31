@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Mostra sempre file, directory o unità nascosti</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra il menu per tipo di file, ad es.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Mostra il conteggio degli elementi di seguito</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Mostra il titolo della directory in alto</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Mostra i tasti funzione di seguito</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Mostra barra di ricerca</value>
   </data>
 </root>

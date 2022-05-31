@@ -211,7 +211,7 @@
     <value>Misligholde</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Hvis fokuset er tapt og hvis musen fortsatt er på menyen</value>
+    <value>Hvis fokus er tapt og hvis musen fortsatt er på menyen</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Millisekunder til en meny åpnes når musen er på den</value>
@@ -247,7 +247,7 @@
     <value>Valgt element</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Kantlinje til valgt element</value>
+    <value>Kant til valgt element</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Konverter til relativ katalog</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Vis alltid skjulte filer, kataloger eller stasjoner</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrer menyen etter filtype, f.eks.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Vis antall elementer nedenfor</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Vis katalogtittel øverst</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Vis funksjonstaster nedenfor</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Vis søkefeltet</value>
   </data>
 </root>

@@ -349,7 +349,7 @@
     <value>Kung nawala ang focus at pinindot ang Enter key</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconds hanggang sa magsara ang menu kung sa kasong ito ay hindi na-reactivate ang menu</value>
+    <value>Milliseconds hanggang sa magsara ang menu kung sa kasong ito ay hindi muling na-activate ang menu</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Ipakita sa Taskbar</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Palaging Ipakita ang mga nakatagong file, direktoryo o drive</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Palaging ipakita ang mga nakatagong file, direktoryo o drive</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Mga nakatagong file at direktoryo</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>I-filter ang menu ayon sa uri ng file hal.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Ipakita ang bilang ng mga elemento sa ibaba</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Ipakita ang pamagat ng direktoryo sa itaas</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Ipakita ang mga function key sa ibaba</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Ipakita ang search bar</value>
   </data>
 </root>

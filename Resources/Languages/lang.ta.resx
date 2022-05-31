@@ -379,7 +379,7 @@
     <value>கேச் முதன்மை மெனு</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>இந்த உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>இந்த எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>தற்காலிக சேமிப்பு</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>மறைக்கப்பட்ட கோப்புகள், கோப்பகங்கள் அல்லது இயக்கிகளை எப்போதும் காட்டு</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>எப்போதும் மறைக்கப்பட்ட கோப்புகள், கோப்பகங்கள் அல்லது இயக்கிகளைக் காட்டு</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>மறைக்கப்பட்ட கோப்புகள் மற்றும் கோப்பகங்கள்</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>மறைக்கப்பட்ட கோப்புகள், கோப்பகங்கள் அல்லது இயக்கிகளைக் காட்ட வேண்டாம்</value>
+    <value>மறைக்கப்பட்ட கோப்புகள், கோப்பகங்கள் அல்லது இயக்ககங்களைக் காட்ட வேண்டாம்</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>அளவு மற்றும் இடம்</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>கோப்பு வகையின்படி மெனுவை வடிகட்டவும் எ.கா.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>உறுப்புகளின் எண்ணிக்கையை கீழே காட்டு</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>கோப்பகத்தின் தலைப்பை மேலே காட்டு</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>செயல்பாட்டு விசைகளை கீழே காட்டு</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>தேடல் பட்டியைக் காட்டு</value>
   </data>
 </root>

@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Цацхе</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Увек прикажи скривене датотеке, директоријуме или диск јединице</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Филтрирај мени према типу датотеке, нпр.: *.еке|*.длл</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Прикажи број елемената испод</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Прикажи наслов директоријума на врху</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Прикажите функцијске тастере испод</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Прикажи траку за претрагу</value>
   </data>
 </root>

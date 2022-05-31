@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Kas</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Wys altyd verborge lêers, gidse of dryf</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Wys altyd versteekte lêers, gidse of dryf</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Versteekte lêers en gidse</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtreer spyskaart volgens lêertipe, bv.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Toon die aantal elemente hieronder</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Wys gidstitel bo-aan</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Wys funksiesleutels hieronder</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Wys soekbalk</value>
   </data>
 </root>

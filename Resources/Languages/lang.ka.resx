@@ -316,7 +316,7 @@
     <value>ხატები</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>კონტექსტური მენიუს დაყენება</value>
+    <value>დაყენებულია კონტექსტური მენიუს მიხედვით</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>დააყენეთ დირექტორიად</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>ქეში</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>ყოველთვის აჩვენე ფარული ფაილები, დირექტორიები ან დისკები</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>მენიუს გაფილტვრა ფაილის ტიპის მიხედვით, მაგ.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>ელემენტების რაოდენობის ჩვენება ქვემოთ</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>აჩვენე დირექტორია სათაური ზედა</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>აჩვენეთ ფუნქციის კლავიშები ქვემოთ</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>საძიებო ზოლის ჩვენება</value>
   </data>
 </root>

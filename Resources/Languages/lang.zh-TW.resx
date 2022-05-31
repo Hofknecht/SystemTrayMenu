@@ -325,7 +325,7 @@
     <value>加載</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>快捷鏈接問題</value>
+    <value>快捷方式鏈接問題</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>此快捷方式所指的項目已更改或移動，因此此快捷方式將不再正常工作。</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>緩存</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>總是顯示隱藏的文件、目錄或驅動器</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>始終顯示隱藏的文件、目錄或驅動器</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>隱藏的文件和目錄</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>按文件類型過濾菜單，例如：*.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>在下面顯示元素的數量</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>在頂部顯示目錄標題</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>在下方顯示功能鍵</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>顯示搜索欄</value>
   </data>
 </root>

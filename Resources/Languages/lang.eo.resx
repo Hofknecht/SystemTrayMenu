@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Kaŝaĵo</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Ĉiam Montru kaŝitajn dosierojn, dosierujojn aŭ diskojn</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Ĉiam montru kaŝitajn dosierojn, dosierujojn aŭ diskojn</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Kaŝitaj dosieroj kaj dosierujoj</value>
@@ -460,7 +460,7 @@
     <value>Subtenu SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>Forvelkanta</value>
+    <value>Fading</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Sendu klavoklavon al alia petskribo</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrila menuon laŭ dosiertipo ekz.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Montru nombron de elementoj sube</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Montru dosierujan titolon supre</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Montru funkcioklavojn sube</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Montru serĉbreton</value>
   </data>
 </root>

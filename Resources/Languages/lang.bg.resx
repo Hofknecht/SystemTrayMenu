@@ -196,7 +196,7 @@
     <value>Разширено</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
-    <value>На мястото на мишката</value>
+    <value>На местоположението на мишката</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
     <value>Промяна на директория</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Кеш</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Винаги показвайте скрити файлове, директории или устройства</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Винаги показвайте скрити файлове, директории или дискове</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Скрити файлове и директории</value>
@@ -457,7 +457,7 @@
     <value>Размер на иконите в проценти</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Поддръжка на SystemTrayMenu</value>
+    <value>Поддръжка SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Затихване</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Филтриране на менюто по тип файл, напр.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Покажете броя на елементите по-долу</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Показване на заглавието на директорията отгоре</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Покажете функционалните клавиши по-долу</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Показване на лентата за търсене</value>
   </data>
 </root>

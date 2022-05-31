@@ -298,7 +298,7 @@
     <value>Liugur lohistamise ajal</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Liugur, kui hiir liigub selle kohal 1</value>
+    <value>Liugur, kui hiir hõljub selle kohal 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Liugur, kui hiir hõljub selle kohal 2</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Vahemälu</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Kuva alati peidetud failid, kataloogid või draivid</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Näidake alati peidetud faile, katalooge või draive</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Peidetud failid ja kataloogid</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrimenüü failitüübi järgi, nt: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Kuva elementide arv allpool</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Kuva kataloogi pealkiri üleval</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Kuva funktsiooniklahvid allpool</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Kuva otsinguriba</value>
   </data>
 </root>

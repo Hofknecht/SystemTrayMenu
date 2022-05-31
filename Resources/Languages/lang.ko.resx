@@ -301,7 +301,7 @@
     <value>마우스를 가져가는 동안 슬라이더 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>마우스가 위에 있는 동안 슬라이더 2</value>
+    <value>슬라이더 위에 마우스를 올려 놓는 동안 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>디렉토리의 아이콘 사용</value>
@@ -310,7 +310,7 @@
     <value>크기</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>메뉴 테두리</value>
+    <value>메뉴의 테두리</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>아이콘</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>은닉처</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>항상 숨김 파일, 디렉토리 또는 드라이브 표시</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>파일 유형별 필터 메뉴 예: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>아래 요소 수 표시</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>맨 위에 디렉토리 제목 표시</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>아래에 기능 키 표시</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>검색창 표시</value>
   </data>
 </root>

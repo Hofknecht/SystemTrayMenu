@@ -178,7 +178,7 @@
     <value>Lexoni FAQ dhe më pas zgjidhni një direktori rrënjësore për SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
-    <value>Zgjidhni direktorinë</value>
+    <value>Zgjidhni drejtorinë</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
     <value>Drejtoria juaj kryesore për aplikacionin nuk ekziston ose është bosh! Ndryshoni direktorinë rrënjë ose vendosni disa skedarë, drejtori ose shkurtore në direktorinë rrënjë.</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Shfaq gjithmonë skedarë, drejtori ose disqe të fshehura</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Trego gjithmonë skedarë, drejtori ose disqe të fshehura</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skedarët dhe drejtoritë e fshehura</value>
@@ -463,7 +463,7 @@
     <value>Venitje</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Dërgo çelësin e nxehtësisë në një shembull tjetër</value>
+    <value>Dërgo çelësin e nxehtë në një shembull tjetër</value>
   </data>
   <data name="Sort by date" xml:space="preserve">
     <value>Rendit sipas datës</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Menyja e filtrit sipas llojit të skedarit p.sh.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Trego numrin e elementeve më poshtë</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Shfaq titullin e drejtorisë në krye</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Shfaq çelësat e funksionit më poshtë</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Shfaq shiritin e kërkimit</value>
   </data>
 </root>

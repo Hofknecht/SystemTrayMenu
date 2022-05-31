@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Talpykla</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Visada rodyti paslėptus failus, katalogus ar diskus</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtravimo meniu pagal failo tipą, pvz.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Žemiau parodykite elementų skaičių</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Rodyti katalogo pavadinimą viršuje</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Rodyti funkcinius klavišus žemiau</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Rodyti paieškos juostą</value>
   </data>
 </root>

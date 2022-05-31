@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>predpomnilnik</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Vedno prikaži skrite datoteke, imenike ali pogone</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -481,9 +481,21 @@
     <value>Povlecite</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Pomikajte se s potegom</value>
+    <value>Pomikanje s potegom</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtriraj meni po vrsti datoteke, npr.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Spodaj prikaži število elementov</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Prikaži naslov imenika na vrhu</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Spodaj prikažite funkcijske tipke</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Pokaži iskalno vrstico</value>
   </data>
 </root>

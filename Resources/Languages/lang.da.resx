@@ -184,7 +184,7 @@
     <value>Din rodmappe til appen eksisterer ikke eller er tom! Skift rodmappen eller indsæt nogle filer, mapper eller genveje i rodmappen.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>Du har ingen adgang til rodmappen på appen. Giv adgang til biblioteket eller skift rodmappen.</value>
+    <value>Du har ingen adgang til rodmappen til appen. Giv adgang til biblioteket eller skift rodmappen.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Enkeltklik for at åbne et element i stedet for at dobbeltklikke</value>
@@ -217,7 +217,7 @@
     <value>Millisekunder, indtil en menu åbnes, når musen er på den</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekunder, indtil menuen lukker, hvis musen i dette tilfælde forlader menuen</value>
+    <value>Millisekunder indtil menuen lukker, hvis musen i dette tilfælde forlader menuen</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixels maksimale menubredde</value>
@@ -349,7 +349,7 @@
     <value>Hvis fokus mistes, og Enter-tasten blev trykket</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Millisekunder indtil menuen lukker, hvis menuen i dette tilfælde ikke genaktiveres</value>
+    <value>Millisekunder, indtil menuen lukker, hvis menuen i dette tilfælde ikke genaktiveres</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Vis i proceslinjen</value>
@@ -358,7 +358,7 @@
     <value>Tilføj bibliotek</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Tilføj indhold af mappe til rodbibliotek</value>
+    <value>Tilføj indholdet af mappen til rodmappen</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>Directory stier</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Vis altid skjulte filer, mapper eller drev</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -484,6 +484,18 @@
     <value>Rul via swipe</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filtrer menuen efter filtype, f.eks.: *.exe|*.dll</value>
+    <value>Filtrer menu efter filtype, f.eks.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Vis antallet af elementer nedenfor</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Vis mappetitel øverst</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Vis funktionstaster nedenfor</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Vis søgelinjen</value>
   </data>
 </root>

@@ -347,9 +347,9 @@ namespace SystemTrayMenu.UserInterface
             return dgv;
         }
 
-        internal void SetTitle(string title)
+        internal void AdjustControls(string title, MenuDataValidity menuDataValidity)
         {
-            if (!string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title) && Config.ShowDirectoryTitleAtTop)
             {
                 if (title.Length > MenuDefines.LengthMax)
                 {
@@ -357,6 +357,35 @@ namespace SystemTrayMenu.UserInterface
                 }
 
                 labelTitle.Text = title;
+                labelTitle.AutoSize = true;
+            }
+            else
+            {
+                labelTitle.Text = string.Empty;
+            }
+
+            if (!Config.ShowSearchBar)
+            {
+                tableLayoutPanelSearch.AutoSize = false;
+                tableLayoutPanelSearch.Height = 0;
+                textBoxSearch.AutoSize = false;
+                textBoxSearch.Height = 0;
+                pictureBoxSearch.Visible = false;
+                panelLine.Visible = false;
+            }
+
+            if (!Config.ShowCountOfElementsBelow &&
+                menuDataValidity == MenuDataValidity.Valid)
+            {
+                labelItems.Visible = false;
+            }
+
+            if (!Config.ShowFunctionKeysBelow)
+            {
+                pictureBoxOpenFolder.Visible = false;
+                pictureBoxMenuAlwaysOpen.Visible = false;
+                pictureBoxSettings.Visible = false;
+                pictureBoxRestart.Visible = false;
             }
         }
 

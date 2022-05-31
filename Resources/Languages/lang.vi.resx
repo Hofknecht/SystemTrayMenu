@@ -277,7 +277,7 @@
     <value>Nền của mũi tên khi nhấp vào</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Hình nền của mũi tên khi di chuột qua nó</value>
+    <value>Hình nền của mũi tên khi chuột di chuột qua nó</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Phối màu tối</value>
@@ -292,7 +292,7 @@
     <value>Thanh cuộn</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>Con trượt</value>
+    <value>Thanh trượt</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
     <value>Thanh trượt trong khi kéo</value>
@@ -328,7 +328,7 @@
     <value>Sự cố với liên kết lối tắt</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
+    <value>Mục mà lối tắt này đề cập đến đã bị thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Mở thư mục</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Bộ nhớ đệm</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Luôn hiển thị các tệp, thư mục hoặc ổ đĩa ẩn</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Trình đơn lọc theo loại tệp, ví dụ: * .exe | * .dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Hiển thị số lượng các phần tử bên dưới</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Hiển thị tiêu đề thư mục ở trên cùng</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Hiển thị các phím chức năng bên dưới</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Hiển thị thanh tìm kiếm</value>
   </data>
 </root>

@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>કેશ</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>હંમેશા છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ બતાવો</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ફાઇલ પ્રકાર દ્વારા ફિલ્ટર મેનૂ ઉ.દા.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>નીચે ઘટકોની સંખ્યા બતાવો</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>ટોચ પર ડિરેક્ટરી શીર્ષક બતાવો</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>નીચે ફંક્શન કીઓ બતાવો</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>શોધ બાર બતાવો</value>
   </data>
 </root>

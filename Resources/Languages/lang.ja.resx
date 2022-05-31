@@ -331,7 +331,7 @@
     <value>このショートカットが参照するアイテムが変更または移動されたため、このショートカットは正しく機能しなくなります。</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Directoryを開く</value>
+    <value>ディレクトリを開く</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>タスクマネージャー</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>キャッシュ</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>非表示のファイル、ディレクトリ、またはドライブを常に表示する</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ファイルタイプでメニューをフィルタリングします。例：*。exe | * .dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>以下に要素数を表示</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>ディレクトリタイトルを上部に表示</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>以下にファンクションキーを表示</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>検索バーを表示</value>
   </data>
 </root>

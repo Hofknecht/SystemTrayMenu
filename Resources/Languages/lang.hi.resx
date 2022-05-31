@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>सिस्टमट्रेमेनू के बारे में</value>
+    <value>SystemTrayMenu के बारे में</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>ठीक है</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>कैश</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>हमेशा छिपी हुई फ़ाइलें, निर्देशिका या ड्राइव दिखाएं</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>फ़ाइल प्रकार के अनुसार फ़िल्टर मेनू उदा.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>नीचे तत्वों की संख्या दिखाएँ</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>शीर्ष पर निर्देशिका शीर्षक दिखाएं</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>नीचे फ़ंक्शन कुंजियां दिखाएं</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>खोज बार दिखाएं</value>
   </data>
 </root>

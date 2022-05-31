@@ -238,7 +238,7 @@
     <value>డైరెక్టరీ తెరవబడింది</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>తెరిచిన డైరెక్టరీ సరిహద్దు</value>
+    <value>తెరిచిన డైరెక్టరీ అంచు</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>శోధన ఫీల్డ్</value>
@@ -301,7 +301,7 @@
     <value>మౌస్ దానిపై కదులుతున్నప్పుడు స్లైడర్ 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>మౌస్ దానిపై హోవర్ చేస్తున్నప్పుడు స్లైడర్ 2</value>
+    <value>మౌస్ దానిపై కదులుతున్నప్పుడు స్లైడర్ 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>డైరెక్టరీ నుండి చిహ్నాన్ని ఉపయోగించండి</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>కాష్</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>దాచిన ఫైల్‌లు, డైరెక్టరీలు లేదా డ్రైవ్‌లను ఎల్లప్పుడూ చూపు</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>దాచిన ఫైల్‌లు, డైరెక్టరీలు లేదా డ్రైవ్‌లను ఎల్లప్పుడూ చూపండి</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>దాచిన ఫైల్‌లు మరియు డైరెక్టరీలు</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ఫైల్ రకం ద్వారా మెనుని ఫిల్టర్ చేయండి ఉదా: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>దిగువ మూలకాల సంఖ్యను చూపు</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>ఎగువన డైరెక్టరీ శీర్షికను చూపు</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>క్రింద ఫంక్షన్ కీలను చూపించు</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>శోధన పట్టీని చూపు</value>
   </data>
 </root>

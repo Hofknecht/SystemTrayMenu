@@ -271,7 +271,7 @@
     <value>Anak panah apabila mengklik</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Anak panah semasa tetikus melayang di atasnya</value>
+    <value>Anak panah sambil tetikus melayang di atasnya</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Latar belakang anak panah apabila mengklik</value>
@@ -420,8 +420,8 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
-    <value>Sentiasa Tunjukkan fail tersembunyi, direktori atau pemacu</value>
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
+    <value>Sentiasa tunjukkan fail, direktori atau pemacu tersembunyi</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Fail dan direktori tersembunyi</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Tapis menu mengikut jenis fail cth.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Tunjukkan kiraan unsur di bawah</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Tunjukkan tajuk direktori di bahagian atas</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Tunjukkan kekunci fungsi di bawah</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Tunjukkan bar carian</value>
   </data>
 </root>

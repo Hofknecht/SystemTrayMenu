@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>ক্যাশে</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>সর্বদা লুকানো ফাইল, ডিরেক্টরি বা ড্রাইভ দেখান</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -475,7 +475,7 @@
     <value>শ্রেণীবিভাজন</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ড্র্যাগ ড্রপের মাধ্যমে সারি আইটেম অনুলিপি করুন</value>
+    <value>ড্র্যাগ ড্রপের মাধ্যমে সারি আইটেম কপি করুন</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>টেনে আনুন</value>
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ফাইল টাইপ দ্বারা ফিল্টার মেনু যেমন: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>নিচের উপাদানের সংখ্যা দেখান</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>শীর্ষে ডিরেক্টরি শিরোনাম দেখান</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>নিচে ফাংশন কী দেখান</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>সার্চ বার দেখান</value>
   </data>
 </root>

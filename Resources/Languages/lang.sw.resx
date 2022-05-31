@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Akiba</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Onyesha faili, saraka au hifadhi zilizofichwa kila wakati</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Chuja menyu kwa aina ya faili k.m.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Onyesha idadi ya vipengele hapa chini</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Onyesha kichwa cha saraka juu</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Onyesha vitufe vya kukokotoa hapa chini</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Onyesha upau wa kutafutia</value>
   </data>
 </root>

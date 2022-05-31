@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso rápido</value>
+    <value>tecla de acceso directo</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -217,7 +217,7 @@
     <value>Milisegundos hasta que se abre un menú cuando el mouse está sobre él</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisegundos hasta que se cierre el menú si en este caso el ratón sale del menú</value>
+    <value>Milisegundos hasta que el menú se cierre si en este caso el ratón sale del menú</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Ancho máximo de menú en píxeles</value>
@@ -420,7 +420,7 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always Show hidden files, directories or drives" xml:space="preserve">
+  <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Mostrar siempre archivos, directorios o unidades ocultos</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
@@ -485,5 +485,17 @@
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtre el menú por tipo de archivo, por ejemplo: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Mostrar recuento de elementos a continuación</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Mostrar el título del directorio en la parte superior</value>
+  </data>
+  <data name="Show function keys below" xml:space="preserve">
+    <value>Mostrar las teclas de función a continuación</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Mostrar barra de búsqueda</value>
   </data>
 </root>
