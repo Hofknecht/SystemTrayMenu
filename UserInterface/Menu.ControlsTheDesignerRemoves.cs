@@ -35,7 +35,7 @@ namespace SystemTrayMenu.UserInterface
 
             // labelTitle
             labelTitle.AutoEllipsis = true;
-            labelTitle.AutoSize = false;
+            labelTitle.AutoSize = true;
             labelTitle.Dock = DockStyle.Fill;
             labelTitle.Font = new Font("Segoe UI", 8.25F * Scaling.Factor, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTitle.ForeColor = Color.Black;
@@ -43,7 +43,7 @@ namespace SystemTrayMenu.UserInterface
             labelTitle.Margin = new Padding(0);
             labelTitle.Name = "labelTitle";
             labelTitle.Padding = new Padding(3, 0, 0, 1);
-            labelTitle.Size = new Size(70, 12);
+            labelTitle.Size = new Size(70, 14);
             labelTitle.Text = "SystemTrayMenu";
             labelTitle.TextAlign = ContentAlignment.MiddleCenter;
             labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);

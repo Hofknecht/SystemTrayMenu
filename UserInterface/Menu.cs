@@ -357,11 +357,11 @@ namespace SystemTrayMenu.UserInterface
                 }
 
                 labelTitle.Text = title;
-                labelTitle.AutoSize = true;
             }
             else
             {
                 labelTitle.Text = string.Empty;
+                labelTitle.MaximumSize = new Size(0, 12);
             }
 
             if (!Config.ShowSearchBar)
