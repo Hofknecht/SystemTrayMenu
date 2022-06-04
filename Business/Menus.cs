@@ -14,6 +14,7 @@ namespace SystemTrayMenu.Business
     using System.Linq;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
+    using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.UserInterface;
@@ -559,6 +560,19 @@ namespace SystemTrayMenu.Business
         internal void SwitchOpenCloseByTaskbarItem()
         {
             SwitchOpenClose(true);
+            timerStillActiveCheck.Start();
+        }
+
+        internal bool IsNotNullAndIsUsableAndNotClosing()
+        {
+            return menus[0] != null && menus[0].IsUsable && Form.ActiveForm == menus[0];
+        }
+
+        internal void ReActivateIfVisible()
+        {
+            menus[0].Activate();
+            NativeMethods.User32ShowInactiveTopmost(menus[0]);
+            NativeMethods.ForceForegroundWindow(menus[0].Handle);
             timerStillActiveCheck.Start();
         }
 

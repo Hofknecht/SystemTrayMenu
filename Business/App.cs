@@ -18,6 +18,7 @@ namespace SystemTrayMenu
         private readonly AppNotifyIcon menuNotifyIcon = new();
         private readonly Menus menus = new();
         private readonly TaskbarForm taskbarForm = null;
+        private readonly Timer timerActivateMenuAfterTaskbarFormMinimizedFinished = new();
 
         public App()
         {
@@ -28,29 +29,43 @@ namespace SystemTrayMenu
             menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
+            timerActivateMenuAfterTaskbarFormMinimizedFinished.Interval = 20;
+            timerActivateMenuAfterTaskbarFormMinimizedFinished.Tick += Timer_Tick;
+
+            void Timer_Tick(object sender, EventArgs e)
+            {
+                timerActivateMenuAfterTaskbarFormMinimizedFinished.Stop();
+                if (menus.IsNotNullAndIsUsableAndNotClosing())
+                {
+                    taskbarForm.Activate();
+                    menus.ReActivateIfVisible();
+                }
+            }
 
             if (Properties.Settings.Default.ShowInTaskbar)
             {
                 taskbarForm = new TaskbarForm();
                 taskbarForm.FormClosed += (s, e) => Application.Exit();
-                taskbarForm.Deactivate += (s, e) => SetStateNormal();
-                taskbarForm.Resize += (s, e) => SetStateNormal();
-                taskbarForm.Activated += TasbkarItemActivated;
-                void TasbkarItemActivated(object sender, EventArgs e)
+                int eachSecondResizeEvent = 1;
+                taskbarForm.Resize += (s, e) =>
                 {
-                    SetStateNormal();
-                    taskbarForm.Activate();
-                    taskbarForm.Focus();
-                    menus.SwitchOpenCloseByTaskbarItem();
-                }
-            }
+                    if (eachSecondResizeEvent++ % 2 == 0 && Form.ActiveForm != null)
+                    {
+                        menus.SwitchOpenCloseByTaskbarItem();
+                        timerActivateMenuAfterTaskbarFormMinimizedFinished.Start();
+                    }
 
-            DllImports.NativeMethods.User32ShowInactiveTopmost(taskbarForm);
+                    taskbarForm.WindowState = FormWindowState.Minimized;
+                };
+
+                taskbarForm.Show();
+            }
         }
 
         public void Dispose()
         {
             taskbarForm?.Dispose();
+            timerActivateMenuAfterTaskbarFormMinimizedFinished.Dispose();
             SystemEvents.DisplaySettingsChanged -= (s, e) => SystemEvents_DisplaySettingsChanged();
             menus.Dispose();
             menuNotifyIcon.Dispose();
@@ -59,17 +74,6 @@ namespace SystemTrayMenu
         private void SystemEvents_DisplaySettingsChanged()
         {
             menus.ReAdjustSizeAndLocation();
-        }
-
-        /// <summary>
-        /// This ensures that next click on taskbaritem works as activate event/click event.
-        /// </summary>
-        private void SetStateNormal()
-        {
-            if (Form.ActiveForm == taskbarForm)
-            {
-                taskbarForm.WindowState = FormWindowState.Normal;
-            }
         }
     }
 }

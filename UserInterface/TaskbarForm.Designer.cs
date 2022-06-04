@@ -45,6 +45,7 @@
             this.Name = "TaskbarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SystemTrayMenu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.LocationChanged += new System.EventHandler(this.TaskbarForm_LocationChanged);
             this.ResumeLayout(false);
 
