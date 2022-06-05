@@ -154,7 +154,7 @@
     <value>Рестарт</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Не може да се регистрира топлото копче.</value>
+    <value>Не можеше да се регистрира копче за готвење.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Прекини</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Претворете во релативен директориум</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Зачувајте ја конфигурацијата во папката со апликации</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Зачувајте ја конфигурацијата во директориумот со апликации</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Конфигурациска датотека и датотека за евиденција</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Отворете го директориумот со апликации</value>
@@ -370,7 +370,7 @@
     <value>Рекурзивен</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>Отстрани директориум</value>
+    <value>Отстранете го директориумот</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Само датотеки</value>
@@ -463,7 +463,7 @@
     <value>Избледување</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Испратете копче на друга инстанца</value>
+    <value>Испрати копче на друга инстанца</value>
   </data>
   <data name="Sort by date" xml:space="preserve">
     <value>Подреди по датум</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Прикажи лента за пребарување</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Зачувување на датотеката за евиденција во директориумот на апликацијата наместо AppData</value>
   </data>
 </root>

@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>தொடர்புடைய கோப்பகத்திற்கு மாற்றவும்</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>பயன்பாட்டு கோப்புறையில் உள்ளமைவைச் சேமிக்கவும்</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>பயன்பாட்டு கோப்பகத்தில் உள்ளமைவைச் சேமிக்கவும்</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>கட்டமைப்பு கோப்பு மற்றும் பதிவு கோப்பு</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>பயன்பாட்டு கோப்பகத்தைத் திறக்கவும்</value>
@@ -379,7 +379,7 @@
     <value>கேச் முதன்மை மெனு</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>இந்த எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>இந்த உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>தேடல் பட்டியைக் காட்டு</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>AppData க்கு பதிலாக பதிவு கோப்பை பயன்பாட்டு கோப்பகத்தில் சேமிக்கிறது</value>
   </data>
 </root>

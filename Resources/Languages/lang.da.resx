@@ -184,7 +184,7 @@
     <value>Din rodmappe til appen eksisterer ikke eller er tom! Skift rodmappen eller indsæt nogle filer, mapper eller genveje i rodmappen.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>Du har ingen adgang til rodmappen til appen. Giv adgang til biblioteket eller skift rodmappen.</value>
+    <value>Du har ingen adgang til rodmappen på appen. Giv adgang til biblioteket eller skift rodmappen.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Enkeltklik for at åbne et element i stedet for at dobbeltklikke</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Konverter til relativ mappe</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
+  <data name="Save configuration in application directory" xml:space="preserve">
     <value>Gem konfigurationen i applikationsmappen</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Konfigurationsfil og logfil</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Åbn applikationsmappe</value>
@@ -346,7 +346,7 @@
     <value>Ekspert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Hvis fokus mistes, og Enter-tasten blev trykket</value>
+    <value>Hvis fokus mistes, og der blev trykket på Enter-tasten</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Millisekunder, indtil menuen lukker, hvis menuen i dette tilfælde ikke genaktiveres</value>
@@ -361,7 +361,7 @@
     <value>Tilføj indholdet af mappen til rodmappen</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>Directory stier</value>
+    <value>Vejviserstier</value>
   </data>
   <data name="Directories" xml:space="preserve">
     <value>Vejviser</value>
@@ -430,7 +430,7 @@
     <value>Vis aldrig skjulte filer, mapper eller drev</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og placering</value>
+    <value>Størrelse og beliggenhed</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Vis søgelinjen</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Gemmer logfilen i applikationsmappen i stedet for AppData</value>
   </data>
 </root>

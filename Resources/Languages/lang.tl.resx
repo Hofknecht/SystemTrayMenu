@@ -190,7 +190,7 @@
     <value>Isang pag-click upang magbukas ng isang elemento sa halip na mag-double click</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Madilim ang kulay na laging aktibo</value>
+    <value>Color scheme dark laging aktibo</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Advanced</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>I-convert sa kamag-anak na direktoryo</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>I-save ang configuration sa folder ng application</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>I-save ang configuration sa application directory</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Configuration file at log file</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Buksan ang direktoryo ng application</value>
@@ -349,7 +349,7 @@
     <value>Kung nawala ang focus at pinindot ang Enter key</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconds hanggang sa magsara ang menu kung sa kasong ito ay hindi muling na-activate ang menu</value>
+    <value>Milliseconds hanggang sa magsara ang menu kung sa kasong ito ay hindi na-reactivate ang menu</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Ipakita sa Taskbar</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Ipakita ang search bar</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Sine-save ang log file sa direktoryo ng application sa halip na AppData</value>
   </data>
 </root>

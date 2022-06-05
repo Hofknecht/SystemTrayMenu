@@ -181,7 +181,7 @@
     <value>Vyberte adresář</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Váš kořenový adresář pro aplikaci neexistuje nebo je prázdný! Změňte kořenový adresář nebo do něj vložte některé soubory, adresáře nebo zástupce.</value>
+    <value>Váš kořenový adresář pro aplikaci neexistuje nebo je prázdný! Změňte kořenový adresář nebo vložte některé soubory, adresáře nebo zástupce do kořenového adresáře.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nemáte přístup do kořenového adresáře aplikace. Udělte přístup k adresáři nebo změňte kořenový adresář.</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Převést do relativního adresáře</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Uložte konfiguraci do složky aplikace</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Uložte konfiguraci do adresáře aplikace</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Konfigurační soubor a soubor protokolu</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Otevřete adresář aplikace</value>
@@ -283,7 +283,7 @@
     <value>Barevné provedení tmavé</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Barevné schéma světlé</value>
+    <value>Barevné provedení světlé</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Nabídka aplikací</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Zobrazit vyhledávací lištu</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Uložení souboru protokolu do adresáře aplikace namísto AppData</value>
   </data>
 </root>

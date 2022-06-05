@@ -181,7 +181,7 @@
     <value>בחר ספרייה</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס כמה קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
+    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס מספר קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>אין לך גישה לספריית השורש של האפליקציה. הענק גישה לספרייה או שנה את ספריית הבסיס.</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>המר לספרייה יחסית</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>שמור את התצורה בתיקיית היישום</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>שמור את התצורה בספריית היישומים</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>יו אס בי</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>קובץ תצורה וקובץ יומן</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>פתח את ספריית היישומים</value>
@@ -424,7 +424,7 @@
     <value>הצג תמיד קבצים מוסתרים, ספריות או כוננים</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>קבצים וספריות נסתרות</value>
+    <value>קבצים וספריות מוסתרים</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
     <value>לעולם אל תציג קבצים מוסתרים, ספריות או כוננים</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>הצג את שורת החיפוש</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>שמירת קובץ היומן בספריית היישום במקום AppData</value>
   </data>
 </root>

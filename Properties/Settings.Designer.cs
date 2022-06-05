@@ -95,15 +95,31 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool PossibilityToSelectFolderByWindowsContextMenu
+        public bool SetFolderByWindowsContextMenu
         {
             get
             {
-                return ((bool)(this["PossibilityToSelectFolderByWindowsContextMenu"]));
+                return ((bool)(this["SetFolderByWindowsContextMenu"]));
             }
             set
             {
-                this["PossibilityToSelectFolderByWindowsContextMenu"] = value;
+                this["SetFolderByWindowsContextMenu"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool SaveLogFileInApplicationDirectory
+        {
+            get
+            {
+                return ((bool)(this["SaveLogFileInApplicationDirectory"]));
+            }
+            set
+            {
+                this["SaveLogFileInApplicationDirectory"] = value;
             }
         }
 

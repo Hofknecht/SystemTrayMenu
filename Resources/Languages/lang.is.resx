@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Umbreyta í hlutfallslega skrá</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Vistaðu stillingar í forritamöppunni</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Vistaðu stillingar í forritaskrá</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Stillingarskrá og log skrá</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Opnaðu forritaskrá</value>
@@ -403,7 +403,7 @@
     <value>Aðalvalmynd birtist</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Staðsetning músar (fyrir ofan verkstiku táknið)</value>
+    <value>Staðsetning músar (fyrir ofan verkefnastikuna)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Sérsniðið (dragaðu það á viðeigandi stað)</value>
@@ -439,7 +439,7 @@
     <value>Sýna aðeins sem leitarniðurstöðu</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Einfaldur smellur til að opna möppu í stað þess að tvísmella</value>
+    <value>Einn smellur til að opna möppu í stað þess að tvísmella</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Við hliðina á fyrri</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Sýna leitarstiku</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Vistar annálaskrána í forritaskránni í stað AppData</value>
   </data>
 </root>

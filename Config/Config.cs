@@ -25,8 +25,6 @@ namespace SystemTrayMenu
         private static bool readHideFileExtdone;
         private static bool isHideFileExtension;
 
-        public static bool IsHideFileExtdone => IsHideFileExtension();
-
         public static string Path => Settings.Default.PathDirectory;
 
         public static string SearchPattern => Settings.Default.SearchPattern;
@@ -464,8 +462,6 @@ namespace SystemTrayMenu
 
         private static void UpgradeIfNotUpgraded()
         {
-            // string path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
-            // path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             if (!Settings.Default.IsUpgraded)
             {
                 Settings.Default.Upgrade();

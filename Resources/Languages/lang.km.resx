@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>បម្លែង​ទៅ​ថត​ដែល​ទាក់ទង</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>រក្សាទុកការកំណត់ទៅថតកម្មវិធី</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>រក្សាទុកការកំណត់នៅក្នុងថតកម្មវិធី</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>យូ​អេ​ស​ប៊ី</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>ឯកសារកំណត់រចនាសម្ព័ន្ធ និងឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>បើកថតកម្មវិធី</value>
@@ -355,7 +355,7 @@
     <value>បង្ហាញនៅក្នុងរបារភារកិច្ច</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>បន្ថែមថត</value>
+    <value>បន្ថែម​ថត</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>បន្ថែមមាតិកានៃថតទៅថតឫស</value>
@@ -376,7 +376,7 @@
     <value>ឯកសារតែប៉ុណ្ណោះ</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>ម៉ឺនុយមេនៃឃ្លាំងសម្ងាត់</value>
+    <value>ម៉ឺនុយមេឃ្លាំងសម្ងាត់</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>សម្អាតឃ្លាំងសម្ងាត់ប្រសិនបើមានច្រើនជាងចំនួនធាតុនេះ។</value>
@@ -475,7 +475,7 @@
     <value>ការតម្រៀប</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ចម្លងធាតុជួរដេកតាមរយៈការអូសទម្លាក់</value>
+    <value>ចម្លង​ធាតុ​ជួរ​ដេក​តាម​រយៈ​ការ​អូស​ទម្លាក់</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>អូស</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>បង្ហាញរបារស្វែងរក</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>ការរក្សាទុកឯកសារកំណត់ហេតុនៅក្នុងថតកម្មវិធីជំនួសឱ្យ AppData</value>
   </data>
 </root>

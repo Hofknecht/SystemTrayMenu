@@ -107,11 +107,11 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxFolder.Text = Translator.GetText("Directory");
                 buttonChangeFolder.Text = Translator.GetText("Changing directory");
                 buttonOpenFolder.Text = Translator.GetText("Open directory");
-                checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from directory");
-                checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
-                groupBoxUSB.Text = Translator.GetText("USB");
+                checkBoxSetFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
+                groupBoxConfigAndLogfile.Text = Translator.GetText("Configuration file and log file");
                 buttonChangeRelativeFolder.Text = Translator.GetText("Convert to relative directory");
-                checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Save configuration to the application folder");
+                checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration in application directory");
+                checkBoxSaveLogFileInApplicationDirectory.Text = Translator.GetText("Saving log file in application directory instead of AppData");
                 buttonOpenAssemblyLocation.Text = Translator.GetText("Open application directory");
                 groupBoxAutostart.Text = Translator.GetText("Autostart");
                 if (IsStartupTask())
@@ -190,9 +190,10 @@ namespace SystemTrayMenu.UserInterface
 
                 tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxAppearance.Text = Translator.GetText("Appearance");
+                checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from directory");
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
-                checkBoxUseFading.Text = Translator.GetText("Fading");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Color scheme dark always active");
+                checkBoxUseFading.Text = Translator.GetText("Fading");
                 checkBoxShowDirectoryTitleAtTop.Text = Translator.GetText("Show directory title at top");
                 checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements below");
                 checkBoxShowSearchBar.Text = Translator.GetText("Show search bar");
@@ -247,37 +248,24 @@ namespace SystemTrayMenu.UserInterface
                 buttonCancel.Text = Translator.GetText("Abort");
             }
 
-            InitializeFolder();
-            void InitializeFolder()
+            textBoxFolder.Text = Config.Path;
+            checkBoxSetFolderByWindowsContextMenu.Checked = Settings.Default.SetFolderByWindowsContextMenu;
+            checkBoxSaveConfigInApplicationDirectory.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
+            checkBoxSaveLogFileInApplicationDirectory.Checked = Settings.Default.SaveLogFileInApplicationDirectory;
+
+            if (IsStartupTask())
             {
-                textBoxFolder.Text = Config.Path;
-                checkBoxUseIconFromRootFolder.Checked =
-                    Settings.Default.UseIconFromRootFolder;
-                checkBoxPossibilityToSelectFolderByWindowsContextMenu.Checked =
-                    Settings.Default.PossibilityToSelectFolderByWindowsContextMenu;
+                checkBoxAutostart.Visible = false;
+                labelStartupTaskStatus.Text = string.Empty;
+            }
+            else
+            {
+                buttonAddTaskManagerStartupTask.Visible = false;
+                labelStartupTaskStatus.Visible = false;
+                checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
             }
 
-            InitializeAutostart();
-            void InitializeAutostart()
-            {
-                if (IsStartupTask())
-                {
-                    checkBoxAutostart.Visible = false;
-                    labelStartupTaskStatus.Text = string.Empty;
-                }
-                else
-                {
-                    buttonAddTaskManagerStartupTask.Visible = false;
-                    labelStartupTaskStatus.Visible = false;
-                    checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
-                }
-            }
-
-            InitializeHotkey();
-            void InitializeHotkey()
-            {
-                textBoxHotkey.SetHotkey(Settings.Default.HotKey);
-            }
+            textBoxHotkey.SetHotkey(Settings.Default.HotKey);
 
             InitializeLanguage();
             void InitializeLanguage()
@@ -361,8 +349,6 @@ namespace SystemTrayMenu.UserInterface
                     comboBoxLanguage.SelectedValue = "en";
                 }
             }
-
-            checkBoxStoreConfigAtAssemblyLocation.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
 
             numericUpDownSizeInPercent.Minimum = 100;
             numericUpDownSizeInPercent.Maximum = 200;
@@ -523,9 +509,10 @@ namespace SystemTrayMenu.UserInterface
 
             textBoxSearchPattern.Text = Settings.Default.SearchPattern;
 
+            checkBoxUseIconFromRootFolder.Checked = Settings.Default.UseIconFromRootFolder;
             checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
-            checkBoxUseFading.Checked = Settings.Default.UseFading;
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
+            checkBoxUseFading.Checked = Settings.Default.UseFading;
             checkBoxShowDirectoryTitleAtTop.Checked = Settings.Default.ShowDirectoryTitleAtTop;
             checkBoxShowSearchBar.Checked = Settings.Default.ShowSearchBar;
             checkBoxShowCountOfElementsBelow.Checked = Settings.Default.ShowCountOfElementsBelow;
@@ -734,7 +721,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private static void AddPossibilityToSelectFolderByWindowsContextMenu()
+        private static void AddSetFolderByWindowsContextMenu()
         {
             RegistryKey registryKeyContextMenu = null;
             RegistryKey registryKeyContextMenuCommand = null;
@@ -756,11 +743,11 @@ namespace SystemTrayMenu.UserInterface
                     registryKeyContextMenuCommand.SetValue(string.Empty, binLocation + " \"%1\"");
                 }
 
-                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = true;
+                Settings.Default.SetFolderByWindowsContextMenu = true;
             }
             catch (Exception ex)
             {
-                Log.Warn("SavePossibilityToSelectFolderByWindowsContextMenu failed", ex);
+                Log.Warn("SaveSetFolderByWindowsContextMenu failed", ex);
             }
             finally
             {
@@ -776,7 +763,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private static void RemovePossibilityToSelectFolderByWindowsContextMenu()
+        private static void RemoveSetFolderByWindowsContextMenu()
         {
             try
             {
@@ -794,11 +781,11 @@ namespace SystemTrayMenu.UserInterface
                     Registry.CurrentUser.DeleteSubKey(MenuName);
                 }
 
-                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = false;
+                Settings.Default.SetFolderByWindowsContextMenu = false;
             }
             catch (Exception ex)
             {
-                Log.Warn("DeletePossibilityToSelectFolderByWindowsContextMenu failed", ex);
+                Log.Warn("DeleteSetFolderByWindowsContextMenu failed", ex);
             }
         }
 
@@ -824,39 +811,55 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonOk_Click(object sender, EventArgs e)
         {
-            Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.Checked;
+            if (checkBoxSetFolderByWindowsContextMenu.Checked)
+            {
+                AddSetFolderByWindowsContextMenu();
+            }
+            else
+            {
+                RemoveSetFolderByWindowsContextMenu();
+            }
+
+            if (checkBoxSaveLogFileInApplicationDirectory.Checked)
+            {
+                try
+                {
+                    string fileNameToCheckWriteAccess = "CheckWriteAccess";
+                    File.WriteAllText(fileNameToCheckWriteAccess, fileNameToCheckWriteAccess);
+                    File.Delete(fileNameToCheckWriteAccess);
+                    Settings.Default.SaveLogFileInApplicationDirectory = true;
+                }
+                catch (Exception ex)
+                {
+                    Settings.Default.SaveLogFileInApplicationDirectory = false;
+                    Log.Warn($"Failed to save log file in application folder {Log.GetLogFilePath()}", ex);
+                }
+            }
 
             if (!IsStartupTask())
             {
-                SaveAutostartRegistryEntry();
-            }
-
-            SaveHotkey();
-            void SaveHotkey()
-            {
-                Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(
-                    textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-            }
-
-            SaveLanguage();
-            void SaveLanguage()
-            {
-                Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
-                Translator.Initialize();
-            }
-
-            PossibilityToSelectFolderByWindowsContextMenu();
-            void PossibilityToSelectFolderByWindowsContextMenu()
-            {
-                if (checkBoxPossibilityToSelectFolderByWindowsContextMenu.Checked)
+                if (checkBoxAutostart.Checked)
                 {
-                    AddPossibilityToSelectFolderByWindowsContextMenu();
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                            @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                    key.SetValue(
+                        Assembly.GetExecutingAssembly().GetName().Name,
+                        Environment.ProcessPath);
+
+                    Settings.Default.IsAutostartActivated = true;
                 }
                 else
                 {
-                    RemovePossibilityToSelectFolderByWindowsContextMenu();
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                    key.DeleteValue("SystemTrayMenu", false);
+
+                    Settings.Default.IsAutostartActivated = false;
                 }
             }
+
+            Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
+            Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
 
             Settings.Default.SizeInPercent = (int)numericUpDownSizeInPercent.Value;
             Settings.Default.IconSizeInPercent = (int)numericUpDownIconSizeInPercent.Value;
@@ -929,7 +932,6 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.SortFolderAndFilesByDate = radioButtonSortByDate.Checked;
 
             Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.Checked;
-
             Settings.Default.PathsAddToMainMenu = string.Empty;
             foreach (DataGridViewRow row in dataGridViewFolders.Rows)
             {
@@ -951,15 +953,16 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
             Settings.Default.SearchPattern = textBoxSearchPattern.Text;
 
+            Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.Checked;
             Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
-            Settings.Default.UseFading = checkBoxUseFading.Checked;
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+            Settings.Default.UseFading = checkBoxUseFading.Checked;
             Settings.Default.ShowDirectoryTitleAtTop = checkBoxShowDirectoryTitleAtTop.Checked;
             Settings.Default.ShowSearchBar = checkBoxShowSearchBar.Checked;
             Settings.Default.ShowCountOfElementsBelow = checkBoxShowCountOfElementsBelow.Checked;
             Settings.Default.ShowFunctionKeysBelow = checkBoxShowFunctionKeysBelow.Checked;
 
-            if (checkBoxStoreConfigAtAssemblyLocation.Checked)
+            if (checkBoxSaveConfigInApplicationDirectory.Checked)
             {
                 CustomSettingsProvider.ActivateConfigPathAssembly();
                 TrySettingsDefaultSave();
@@ -978,35 +981,13 @@ namespace SystemTrayMenu.UserInterface
                 }
                 catch (Exception ex)
                 {
-                    Log.Warn($"Failed to store config at assembly location {CustomSettingsProvider.ConfigPathAssembly}", ex);
+                    Log.Warn($"Failed to save configuration file in application folder {CustomSettingsProvider.ConfigPathAssembly}", ex);
                 }
             }
 
             DialogResult = DialogResult.OK;
             AppRestart.ByConfigChange();
             Close();
-        }
-
-        private void SaveAutostartRegistryEntry()
-        {
-            if (checkBoxAutostart.Checked)
-            {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.SetValue(
-                    Assembly.GetExecutingAssembly().GetName().Name,
-                    Environment.ProcessPath);
-
-                Settings.Default.IsAutostartActivated = true;
-            }
-            else
-            {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.DeleteValue("SystemTrayMenu", false);
-
-                Settings.Default.IsAutostartActivated = false;
-            }
         }
 
         private void ButtonAddTaskManagerStartupTask_Click(object sender, EventArgs e)
@@ -1346,6 +1327,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonAppearanceDefault_Click(object sender, EventArgs e)
         {
+            checkBoxUseIconFromRootFolder.Checked = false;
             checkBoxRoundCorners.Checked = false;
             checkBoxUseFading.Checked = false;
             checkBoxDarkModeAlwaysOn.Checked = true;

@@ -217,7 +217,7 @@
     <value>마우스가 메뉴에 있을 때 메뉴가 열릴 때까지의 밀리초</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>이 경우 마우스가 메뉴를 떠나면 메뉴가 닫힐 때까지의 밀리초</value>
+    <value>이 경우 마우스가 메뉴를 떠날 때까지 메뉴가 닫힐 때까지의 시간(밀리초)</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>픽셀 최대 메뉴 너비</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>상대 디렉토리로 변환</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>응용 프로그램 폴더에 구성 저장</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>애플리케이션 디렉토리에 구성 저장</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>구성 파일 및 로그 파일</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>애플리케이션 디렉토리 열기</value>
@@ -301,7 +301,7 @@
     <value>마우스를 가져가는 동안 슬라이더 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>슬라이더 위에 마우스를 올려 놓는 동안 2</value>
+    <value>마우스가 위에 있는 동안 슬라이더 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>디렉토리의 아이콘 사용</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>검색창 표시</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>AppData 대신 애플리케이션 디렉토리에 로그 파일 저장</value>
   </data>
 </root>

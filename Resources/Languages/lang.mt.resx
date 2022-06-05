@@ -217,7 +217,7 @@
     <value>Millisekondi sakemm jinfetaħ menu meta l-maws ikun fuqu</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekondi sakemm il-menu jagħlaq jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
+    <value>Millisekondi sakemm jingħalaq il-menu jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Wisa' massimu tal-menu tal-pixels</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Ikkonverti għal direttorju relattiv</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Issejvja l-konfigurazzjoni fil-folder tal-applikazzjoni</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Issejvja l-konfigurazzjoni fid-direttorju tal-applikazzjoni</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Fajl tal-konfigurazzjoni u fajl tal-log</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Iftaħ id-direttorju tal-applikazzjoni</value>
@@ -445,7 +445,7 @@
     <value>Ħdejn dak ta’ qabel</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset mill-pixels</value>
+    <value>Offset bil-pixels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Jikkoinċidu</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Uri l-bar tat-tiftix</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Iffrankar tal-fajl log fid-direttorju tal-applikazzjoni minflok AppData</value>
   </data>
 </root>

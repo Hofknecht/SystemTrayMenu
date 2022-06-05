@@ -133,7 +133,7 @@
     <value>kataloq</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Kataloq boşdur</value>
+    <value>Kataloq boş</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Təfərrüatlar</value>
@@ -187,7 +187,7 @@
     <value>Proqramın kök kataloquna girişiniz yoxdur. Kataloqa giriş icazəsi verin və ya kök kataloqunu dəyişdirin.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>İki klik əvəzinə elementi açmaq üçün bir kliklə</value>
+    <value>İki klik əvəzinə bir elementi açmaq üçün bir kliklə</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Rəng sxemi qaranlıq həmişə aktivdir</value>
@@ -252,14 +252,14 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Nisbi qovluğa çevirin</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Konfiqurasiyanı proqram qovluğunda saxlayın</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Konfiqurasiyanı proqram kataloqunda saxlayın</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Konfiqurasiya faylı və log faylı</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>Tətbiq qovluğunu açın</value>
+    <value>Proqram qovluğunu açın</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Piksel maksimum menyu hündürlüyü</value>
@@ -301,7 +301,7 @@
     <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Siçan üzərinə sürüşdürərkən sürüşdürün 2</value>
+    <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Kataloqdan ikonadan istifadə edin</value>
@@ -310,7 +310,7 @@
     <value>Ölçü</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Menyunun sərhədi</value>
+    <value>Menyu sərhədi</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Nişanlar</value>
@@ -382,7 +382,7 @@
     <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>'Başlat Menyu' nümunə kataloqu əlavə edin</value>
+    <value>'Başlat Menyu' nümunə qovluğu əlavə edin</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Sətir hündürlüyü faizlə</value>
@@ -427,7 +427,7 @@
     <value>Gizli fayllar və qovluqlar</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Heç vaxt gizli faylları, kataloqları və ya sürücüləri göstərməyin</value>
+    <value>Heç vaxt gizli faylları, qovluqları və ya diskləri göstərməyin</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ölçü və yer</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Axtarış çubuğunu göstərin</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Log faylının AppData əvəzinə proqram kataloqunda saxlanması</value>
   </data>
 </root>

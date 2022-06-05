@@ -247,16 +247,16 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Ивица изабраног елемента</value>
+    <value>Граница изабраног елемента</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Конвертујте у релативни директоријум</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Сачувајте конфигурацију у фолдеру апликације</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Сачувајте конфигурацију у директоријуму апликација</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>УСБ</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Конфигурациона датотека и датотека евиденције</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Отворите директоријум апликације</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Прикажи траку за претрагу</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Чување датотеке евиденције у директоријуму апликације уместо у АппДата</value>
   </data>
 </root>

@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>转换为相对目录</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>将配置保存到应用程序文件夹</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>将配置保存在应用程序目录中</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>配置文件和日志文件</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>打开应用程序目录</value>
@@ -274,7 +274,7 @@
     <value>鼠标悬停时的箭头</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>点击时箭头的背景</value>
+    <value>单击时箭头的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>鼠标悬停在箭头上时的箭头背景</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>显示搜索栏</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>将日志文件保存在应用程序目录中，而不是 AppData</value>
   </data>
 </root>

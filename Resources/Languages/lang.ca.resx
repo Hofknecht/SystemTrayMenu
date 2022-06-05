@@ -175,7 +175,7 @@
     <value>Preguntes freqüents</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Llegiu les PMF i, a continuació, trieu un directori arrel per al SystemTrayMenu.</value>
+    <value>Llegiu les PMF i trieu un directori arrel per al SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Seleccioneu el directori</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Converteix al directori relatiu</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Desa la configuració a la carpeta de l'aplicació</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Desa la configuració al directori de l'aplicació</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Fitxer de configuració i fitxer de registre</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Obriu el directori d'aplicacions</value>
@@ -382,7 +382,7 @@
     <value>Esborra la memòria cau si hi ha més d'aquest nombre d'elements</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Afegeix el directori d'exemple "Menú Inici"</value>
+    <value>Afegeix el directori de mostra "Menú Inici"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Alçada de fila en percentatge</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Mostra la barra de cerca</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Deseu el fitxer de registre al directori de l'aplicació en lloc d'AppData</value>
   </data>
 </root>

@@ -181,7 +181,7 @@
     <value>دایرکتوری را انتخاب کنید</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>دایرکتوری ریشه شما برای برنامه وجود ندارد یا خالی است! دایرکتوری ریشه را تغییر دهید یا چند فایل، دایرکتوری یا میانبر را در فهرست اصلی قرار دهید.</value>
+    <value>دایرکتوری ریشه شما برای برنامه وجود ندارد یا خالی است! دایرکتوری ریشه را تغییر دهید یا چند فایل، دایرکتوری یا میانبر را در دایرکتوری ریشه قرار دهید.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>شما به فهرست اصلی برنامه دسترسی ندارید. به دایرکتوری دسترسی بدهید یا دایرکتوری ریشه را تغییر دهید.</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>تبدیل به دایرکتوری نسبی</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>تنظیمات را در پوشه برنامه ذخیره کنید</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>پیکربندی را در فهرست برنامه ذخیره کنید</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>یو اس بی</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>فایل پیکربندی و فایل لاگ</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>دایرکتوری برنامه را باز کنید</value>
@@ -436,7 +436,7 @@
     <value>از تنظیمات سیستم عامل استفاده کنید</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>فقط به عنوان نتیجه جستجو نمایش داده شود</value>
+    <value>نمایش فقط به عنوان نتیجه جستجو</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
     <value>یک کلیک برای باز کردن یک دایرکتوری به جای دوبار کلیک کردن</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>نمایش نوار جستجو</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>ذخیره فایل گزارش در فهرست برنامه به جای AppData</value>
   </data>
 </root>

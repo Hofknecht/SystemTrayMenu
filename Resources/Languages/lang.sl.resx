@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Pretvori v relativni imenik</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Shranite konfiguracijo v mapo aplikacije</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Shranite konfiguracijo v imenik aplikacij</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Konfiguracijska datoteka in datoteka dnevnika</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Odprite imenik aplikacij</value>
@@ -481,7 +481,7 @@
     <value>Povlecite</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Pomikanje s potegom</value>
+    <value>Pomikajte se s potegom</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtriraj meni po vrsti datoteke, npr.: *.exe|*.dll</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Pokaži iskalno vrstico</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Shranjevanje datoteke dnevnika v imenik aplikacije namesto v AppData</value>
   </data>
 </root>

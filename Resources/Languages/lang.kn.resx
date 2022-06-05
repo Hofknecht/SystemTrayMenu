@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>ಸಂಬಂಧಿತ ಡೈರೆಕ್ಟರಿಗೆ ಪರಿವರ್ತಿಸಿ</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>ಅಪ್ಲಿಕೇಶನ್ ಫೋಲ್ಡರ್‌ಗೆ ಸಂರಚನೆಯನ್ನು ಉಳಿಸಿ</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>ಅಪ್ಲಿಕೇಶನ್ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಸಂರಚನೆಯನ್ನು ಉಳಿಸಿ</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>ಯುಎಸ್ಬಿ</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>ಕಾನ್ಫಿಗರೇಶನ್ ಫೈಲ್ ಮತ್ತು ಲಾಗ್ ಫೈಲ್</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>ಅಪ್ಲಿಕೇಶನ್ ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಿರಿ</value>
@@ -349,7 +349,7 @@
     <value>ಫೋಕಸ್ ಕಳೆದುಹೋದರೆ ಮತ್ತು Enter ಕೀಲಿಯನ್ನು ಒತ್ತಿದರೆ</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>ಈ ಸಂದರ್ಭದಲ್ಲಿ ಮೆನುವನ್ನು ಮರುಸಕ್ರಿಯಗೊಳಿಸದಿದ್ದರೆ ಮೆನು ಮುಚ್ಚುವವರೆಗೆ ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
+    <value>ಈ ಸಂದರ್ಭದಲ್ಲಿ ಮೆನುವನ್ನು ಮರುಸಕ್ರಿಯಗೊಳಿಸದಿದ್ದಲ್ಲಿ ಮೆನು ಮುಚ್ಚುವವರೆಗೆ ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ಕಾರ್ಯಪಟ್ಟಿಯಲ್ಲಿ ತೋರಿಸಿ</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>ಹುಡುಕಾಟ ಪಟ್ಟಿಯನ್ನು ತೋರಿಸಿ</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>AppData ಬದಲಿಗೆ ಅಪ್ಲಿಕೇಶನ್ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಲಾಗ್ ಫೈಲ್ ಅನ್ನು ಉಳಿಸಲಾಗುತ್ತಿದೆ</value>
   </data>
 </root>

@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Converti in directory relativa</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Salva la configurazione nella cartella dell'applicazione</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Salva la configurazione nella directory dell'applicazione</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>File di configurazione e file di registro</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Aprire la directory dell'applicazione</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Mostra barra di ricerca</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Salvataggio del file di registro nella directory dell'applicazione anziché in AppData</value>
   </data>
 </root>

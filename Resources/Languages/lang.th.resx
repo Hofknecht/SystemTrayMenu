@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>แปลงเป็นไดเร็กทอรีสัมพันธ์</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>บันทึกการกำหนดค่าลงในโฟลเดอร์แอปพลิเคชัน</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>บันทึกการกำหนดค่าในไดเรกทอรีแอปพลิเคชัน</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>ยูเอสบี</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>ไฟล์การกำหนดค่าและไฟล์บันทึก</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>เปิดไดเรกทอรีแอปพลิเคชัน</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>แสดงแถบค้นหา</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>การบันทึกล็อกไฟล์ในไดเร็กทอรีแอปพลิเคชันแทน AppData</value>
   </data>
 </root>

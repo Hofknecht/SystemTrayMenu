@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Tukar kepada direktori relatif</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Simpan konfigurasi ke folder aplikasi</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Simpan konfigurasi dalam direktori aplikasi</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Fail konfigurasi dan fail log</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Buka direktori aplikasi</value>
@@ -271,7 +271,7 @@
     <value>Anak panah apabila mengklik</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Anak panah sambil tetikus melayang di atasnya</value>
+    <value>Anak panah semasa tetikus melayang di atasnya</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Latar belakang anak panah apabila mengklik</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Tunjukkan bar carian</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Menyimpan fail log dalam direktori aplikasi dan bukannya AppData</value>
   </data>
 </root>

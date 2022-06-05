@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Convertere ad relativum Directory</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Servo configuratione ad applicationem folder</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Servo configuratione in applicatione Directory</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Configurationis lima et stipes lima</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Open application directory</value>
@@ -475,7 +475,7 @@
     <value>Sorting</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Effingo row item per drag gutta</value>
+    <value>Effingo row item per drag stilla</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Drag</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Monstra quaerere talea</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Servo stipes lima in applicatione presul pro AppData</value>
   </data>
 </root>

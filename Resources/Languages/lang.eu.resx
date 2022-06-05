@@ -175,7 +175,7 @@
     <value>Galdera arruntak</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Irakurri ohiko galderak eta, ondoren, aukeratu SystemTrayMenurako erro-direktorio bat.</value>
+    <value>Irakurri ohiko galderak eta, ondoren, aukeratu SystemTrayMenurako root direktorioa.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Hautatu direktorioa</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Bihurtu direktorio erlatibora</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Gorde konfigurazioa aplikazioen karpetan</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Gorde konfigurazioa aplikazioen direktorioan</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Konfigurazio-fitxategia eta erregistro-fitxategia</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Ireki aplikazioen direktorioa</value>
@@ -376,7 +376,7 @@
     <value>Fitxategiak bakarrik</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cachearen menu nagusia</value>
+    <value>Cache menu nagusia</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Garbitu cachea elementu kopuru hori baino gehiago bada</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Erakutsi bilaketa-barra</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Erregistro fitxategia aplikazioaren direktorioan gordetzea AppData-ren ordez</value>
   </data>
 </root>

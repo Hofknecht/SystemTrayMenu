@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>轉換為相對目錄</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>將配置保存到應用程序文件夾</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>將配置保存在應用程序目錄中</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>配置文件和日誌文件</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>打開應用程序目錄</value>
@@ -325,7 +325,7 @@
     <value>加載</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>快捷方式鏈接問題</value>
+    <value>快捷鏈接問題</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>此快捷方式所指的項目已更改或移動，因此此快捷方式將不再正常工作。</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>顯示搜索欄</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>將日誌文件保存在應用程序目錄中，而不是 AppData</value>
   </data>
 </root>

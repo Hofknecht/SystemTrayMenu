@@ -196,7 +196,7 @@
     <value>Разширено</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
-    <value>На местоположението на мишката</value>
+    <value>На мястото на мишката</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
     <value>Промяна на директория</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Преобразуване в относителна директория</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Запазете конфигурацията в папката на приложението</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Запазете конфигурацията в директорията на приложението</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Конфигурационен файл и регистрационен файл</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Отворете директорията на приложението</value>
@@ -457,7 +457,7 @@
     <value>Размер на иконите в проценти</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Поддръжка SystemTrayMenu</value>
+    <value>Поддръжка на SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Затихване</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Показване на лентата за търсене</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Записване на регистрационния файл в директорията на приложението вместо в AppData</value>
   </data>
 </root>

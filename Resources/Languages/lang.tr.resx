@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Göreli dizine dönüştür</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Yapılandırmayı uygulama klasörüne kaydedin</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Yapılandırmayı uygulama dizinine kaydet</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Yapılandırma dosyası ve günlük dosyası</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Uygulama dizinini aç</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Arama çubuğunu göster</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Günlük dosyasını AppData yerine uygulama dizinine kaydetme</value>
   </data>
 </root>

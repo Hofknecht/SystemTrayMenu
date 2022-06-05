@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Преобразовать в относительный каталог</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Сохраните конфигурацию в папку приложения</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Сохраните конфигурацию в каталоге приложения</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Файл конфигурации и файл журнала</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Откройте каталог приложений</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Показать панель поиска</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Сохранение файла журнала в каталоге приложения вместо AppData</value>
   </data>
 </root>

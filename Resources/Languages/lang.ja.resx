@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>相対ディレクトリに変換</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>構成をアプリケーションフォルダーに保存します</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>アプリケーションディレクトリに設定を保存します</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>構成ファイルとログファイル</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>アプリケーションディレクトリを開く</value>
@@ -331,7 +331,7 @@
     <value>このショートカットが参照するアイテムが変更または移動されたため、このショートカットは正しく機能しなくなります。</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>ディレクトリを開く</value>
+    <value>Directoryを開く</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>タスクマネージャー</value>
@@ -382,7 +382,7 @@
     <value>この数を超えるアイテムがある場合は、キャッシュをクリアします</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>サンプルディレクトリ「スタートメニュー」を追加</value>
+    <value>サンプルディレクトリを追加する'スタートメニュー'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>行の高さ（パーセント）</value>
@@ -421,13 +421,13 @@
     <value>キャッシュ</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>非表示のファイル、ディレクトリ、またはドライブを常に表示する</value>
+    <value>隠しファイル、ディレクトリ、またはドライブを常に表示する</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>隠しファイルとディレクトリ</value>
+    <value>隠しファイルと隠しディレクトリ</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>非表示のファイル、ディレクトリ、またはドライブを表示しないでください</value>
+    <value>隠しファイル、ディレクトリ、またはドライブを表示しないでください</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>サイズと場所</value>
@@ -439,7 +439,7 @@
     <value>検索結果としてのみ表示</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ダブルクリックではなく、シングルクリックしてディレクトリを開きます</value>
+    <value>ダブルクリックする代わりに、シングルクリックしてディレクトリを開きます</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>前のものの隣</value>
@@ -496,6 +496,9 @@
     <value>以下にファンクションキーを表示</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
-    <value>検索バーを表示</value>
+    <value>検索バーを表示する</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>AppDataではなくアプリケーションディレクトリにログファイルを保存する</value>
   </data>
 </root>

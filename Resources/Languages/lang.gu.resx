@@ -154,7 +154,7 @@
     <value>ફરી થી શરૂ કરવું</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>હોટ કી રજીસ્ટર કરી શકાઈ નથી.</value>
+    <value>હોટ કીની નોંધણી કરી શકાઈ નથી.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>ગર્ભપાત</value>
@@ -235,7 +235,7 @@
     <value>પૃષ્ઠભૂમિ</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
-    <value>ડિરેક્ટરી ખોલી</value>
+    <value>ખોલી ડિરેક્ટરી</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
     <value>ખોલેલી ડિરેક્ટરીની સરહદ</value>
@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>સંબંધિત ડિરેક્ટરીમાં કન્વર્ટ કરો</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>એપ્લિકેશન ફોલ્ડરમાં ગોઠવણી સાચવો</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>એપ્લિકેશન ડિરેક્ટરીમાં ગોઠવણી સાચવો</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>યુએસબી</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>રૂપરેખાંકન ફાઇલ અને લોગ ફાઇલ</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>એપ્લિકેશન ડિરેક્ટરી ખોલો</value>
@@ -328,7 +328,7 @@
     <value>શોર્ટકટ લિંક સાથે સમસ્યા</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલવામાં આવી છે અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કાર્ય કરશે નહીં.</value>
+    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કામ કરશે નહીં.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ડિરેક્ટરી ખોલો</value>
@@ -421,7 +421,7 @@
     <value>કેશ</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>હંમેશા છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ બતાવો</value>
+    <value>હંમેશા છુપાયેલ ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ બતાવો</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>છુપાયેલ ફાઇલો અને ડિરેક્ટરીઓ</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>શોધ બાર બતાવો</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>AppData ને બદલે એપ્લિકેશન ડિરેક્ટરીમાં લોગ ફાઇલને સાચવી રહ્યું છે</value>
   </data>
 </root>

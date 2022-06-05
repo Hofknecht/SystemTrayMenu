@@ -252,17 +252,17 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>رشتہ دار ڈائریکٹری میں تبدیل کریں۔</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>ایپلیکیشن فولڈر میں کنفیگریشن کو محفوظ کریں۔</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>ایپلیکیشن ڈائرکٹری میں کنفیگریشن کو محفوظ کریں۔</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>یو ایس بی</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>کنفیگریشن فائل اور لاگ فائل</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>ایپلیکیشن ڈائرکٹری کھولیں۔</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>پکسلز زیادہ سے زیادہ مینو اونچائی</value>
+    <value>پکسلز مینو کی زیادہ سے زیادہ اونچائی</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>تیر</value>
@@ -304,7 +304,7 @@
     <value>سلائیڈر جب اس پر ماؤس منڈلاتا ہے 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>ڈائریکٹری سے آئیکن استعمال کریں۔</value>
+    <value>ڈائرکٹری سے آئیکن استعمال کریں۔</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>سائز</value>
@@ -325,7 +325,7 @@
     <value>لوڈ ہو رہا ہے</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>شارٹ کٹ لنک کے ساتھ مسئلہ</value>
+    <value>شارٹ کٹ لنک میں مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>سرچ بار دکھائیں۔</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>لاگ فائل کو AppData کی بجائے ایپلیکیشن ڈائرکٹری میں محفوظ کرنا</value>
   </data>
 </root>

@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>ປ່ຽນເປັນໄດເລກະທໍລີທີ່ກ່ຽວຂ້ອງ</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>ບັນທຶກການຕັ້ງຄ່າໃສ່ໂຟນເດີແອັບພລິເຄຊັນ</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>ບັນທຶກການຕັ້ງຄ່າໃນໄດເລກະທໍລີແອັບພລິເຄຊັນ</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>ໄຟລ໌ການຕັ້ງຄ່າ ແລະໄຟລ໌ບັນທຶກ</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>ເປີດໄດເລກະທໍລີແອັບພລິເຄຊັນ</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>ສະແດງແຖບຄົ້ນຫາ</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>ບັນທຶກໄຟລ໌ບັນທຶກໃນໄດເລກະທໍລີແອັບພລິເຄຊັນແທນ AppData</value>
   </data>
 </root>

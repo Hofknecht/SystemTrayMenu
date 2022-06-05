@@ -23,11 +23,32 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Initialize()
         {
+            bool warnFailedToSaveLogFile = false;
+            Exception exceptionWarnFailedToSaveLogFile = new();
+            if (Properties.Settings.Default.SaveLogFileInApplicationDirectory)
+            {
+                try
+                {
+                    string fileNameToCheckWriteAccess = "CheckWriteAccess";
+                    File.WriteAllText(fileNameToCheckWriteAccess, fileNameToCheckWriteAccess);
+                    File.Delete(fileNameToCheckWriteAccess);
+                }
+                catch (Exception ex)
+                {
+                    Properties.Settings.Default.SaveLogFileInApplicationDirectory = false;
+                    warnFailedToSaveLogFile = true;
+                    exceptionWarnFailedToSaveLogFile = ex;
+                }
+            }
+
+            bool warnCanNotClearLogfile = false;
+            Exception exceptionWarnCanNotClearLogfile = new();
             string fileNamePath = GetLogFilePath();
             FileInfo fileInfo = new(fileNamePath);
+            string fileNamePathLast = string.Empty;
             if (fileInfo.Exists && fileInfo.Length > 2000000)
             {
-                string fileNamePathLast = GetLogFilePath(LogfileLastExtension);
+                fileNamePathLast = GetLogFilePath(LogfileLastExtension);
 
                 try
                 {
@@ -36,11 +57,22 @@ namespace SystemTrayMenu.Utilities
                 }
                 catch (Exception ex)
                 {
-                    Log.Warn($"Can not clear logfile:'{fileNamePathLast}'", ex);
+                    warnCanNotClearLogfile = true;
+                    exceptionWarnCanNotClearLogfile = ex;
                 }
             }
 
             Logger.Start(fileInfo);
+
+            if (warnFailedToSaveLogFile)
+            {
+                Warn($"Failed to save log file in application folder {GetLogFilePath()}", exceptionWarnFailedToSaveLogFile);
+            }
+
+            if (warnCanNotClearLogfile)
+            {
+                Warn($"Can not clear logfile:'{fileNamePathLast}'", exceptionWarnCanNotClearLogfile);
+            }
         }
 
         internal static void Info(string message)
@@ -70,22 +102,24 @@ namespace SystemTrayMenu.Utilities
 
         internal static string GetLogFilePath(string backup = "")
         {
-            return Path.Combine(
-                Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                $"SystemTrayMenu"),
-                $"log-{Environment.MachineName}{backup}.txt");
+            string logFilePath = string.Empty;
+            if (!Properties.Settings.Default.SaveLogFileInApplicationDirectory)
+            {
+                logFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"SystemTrayMenu");
+            }
+
+            return Path.Combine(logFilePath, $"log-{Environment.MachineName}{backup}.txt");
         }
 
         internal static void OpenLogFile()
         {
-            ProcessStart(GetLogFilePath());
-
             string lastLogfile = GetLogFilePath(LogfileLastExtension);
             if (File.Exists(lastLogfile))
             {
                 ProcessStart(lastLogfile);
             }
+
+            ProcessStart(GetLogFilePath());
         }
 
         internal static void WriteApplicationRuns()
@@ -99,7 +133,15 @@ namespace SystemTrayMenu.Utilities
 
         internal static void Close()
         {
-            Logger.ShutDown();
+            try
+            {
+                Logger.ShutDown();
+            }
+            catch (Exception ex)
+            {
+                Properties.Settings.Default.SaveLogFileInApplicationDirectory = false;
+                Warn($"Failed to save log file in application folder {GetLogFilePath()}", ex);
+            }
         }
 
         internal static void ProcessStart(

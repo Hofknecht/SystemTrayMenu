@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Konwertuj na katalog względny</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Zapisz konfigurację w folderze aplikacji</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Zapisz konfigurację w katalogu aplikacji</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Plik konfiguracyjny i plik dziennika</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Otwórz katalog aplikacji</value>
@@ -463,7 +463,7 @@
     <value>Zblakły</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Wyślij klawisz skrótu do innej instancji</value>
+    <value>Wyślij skrót do innej instancji</value>
   </data>
   <data name="Sort by date" xml:space="preserve">
     <value>Sortowanie według daty</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Pokaż pasek wyszukiwania</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Zapisywanie pliku dziennika w katalogu aplikacji zamiast AppData</value>
   </data>
 </root>

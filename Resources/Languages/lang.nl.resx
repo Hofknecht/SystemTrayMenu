@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Converteren naar relatieve map</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>Configuratie opslaan in de applicatiemap</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Configuratie opslaan in applicatiemap</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Configuratiebestand en logbestand</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Applicatiemap openen</value>
@@ -328,7 +328,7 @@
     <value>Probleem met snelkoppeling</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Het item waar deze snelkoppeling naar verwijst is gewijzigd of verplaatst, waardoor deze snelkoppeling niet meer goed werkt.</value>
+    <value>Het item waarnaar deze snelkoppeling verwijst is gewijzigd of verplaatst, waardoor deze snelkoppeling niet meer goed werkt.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Map openen</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Toon zoekbalk</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>Het logbestand opslaan in de applicatiemap in plaats van AppData</value>
   </data>
 </root>

@@ -252,11 +252,11 @@
   <data name="Convert to relative directory" xml:space="preserve">
     <value>సంబంధిత డైరెక్టరీకి మార్చండి</value>
   </data>
-  <data name="Save configuration to the application folder" xml:space="preserve">
-    <value>అప్లికేషన్ ఫోల్డర్‌లో కాన్ఫిగరేషన్‌ను సేవ్ చేయండి</value>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>అప్లికేషన్ డైరెక్టరీలో కాన్ఫిగరేషన్‌ను సేవ్ చేయండి</value>
   </data>
-  <data name="USB" xml:space="preserve">
-    <value>USB</value>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>కాన్ఫిగరేషన్ ఫైల్ మరియు లాగ్ ఫైల్</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>అప్లికేషన్ డైరెక్టరీని తెరవండి</value>
@@ -301,7 +301,7 @@
     <value>మౌస్ దానిపై కదులుతున్నప్పుడు స్లైడర్ 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>మౌస్ దానిపై కదులుతున్నప్పుడు స్లైడర్ 2</value>
+    <value>మౌస్ దానిపై హోవర్ చేస్తున్నప్పుడు స్లైడర్ 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>డైరెక్టరీ నుండి చిహ్నాన్ని ఉపయోగించండి</value>
@@ -373,7 +373,7 @@
     <value>డైరెక్టరీని తీసివేయండి</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>ఫైల్స్ మాత్రమే</value>
+    <value>ఫైల్‌లు మాత్రమే</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
     <value>కాష్ ప్రధాన మెను</value>
@@ -497,5 +497,8 @@
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>శోధన పట్టీని చూపు</value>
+  </data>
+  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
+    <value>AppDataకి బదులుగా అప్లికేషన్ డైరెక్టరీలో లాగ్ ఫైల్‌ను సేవ్ చేస్తోంది</value>
   </data>
 </root>
