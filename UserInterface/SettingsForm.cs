@@ -820,7 +820,8 @@ namespace SystemTrayMenu.UserInterface
                 RemoveSetFolderByWindowsContextMenu();
             }
 
-            if (checkBoxSaveLogFileInApplicationDirectory.Checked)
+            Settings.Default.SaveLogFileInApplicationDirectory = checkBoxSaveLogFileInApplicationDirectory.Checked;
+            if (Settings.Default.SaveLogFileInApplicationDirectory)
             {
                 try
                 {
