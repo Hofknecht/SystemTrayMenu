@@ -22,9 +22,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void TaskbarForm_LocationChanged(object sender, System.EventArgs e)
         {
-            this.LocationChanged -= new System.EventHandler(this.TaskbarForm_LocationChanged);
             SetLocation();
-            this.LocationChanged += new System.EventHandler(this.TaskbarForm_LocationChanged);
         }
 
         /// <summary>
