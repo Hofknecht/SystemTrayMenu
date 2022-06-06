@@ -1208,7 +1208,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxShowInTaskbar.Checked = true;
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = false;
             checkBoxOpenItemWithOneClick.Checked = true;
-            checkBoxOpenDirectoryWithOneClick.Checked = true;
+            checkBoxOpenDirectoryWithOneClick.Checked = false;
 
             radioButtonSystemSettingsShowHiddenFiles.Checked = true;
             radioButtonNeverShowHiddenFiles.Checked = false;
