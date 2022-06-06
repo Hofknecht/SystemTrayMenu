@@ -460,10 +460,10 @@
     <value>Subtenu SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>Fading</value>
+    <value>Forvelkanta</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Sendu klavoklavon al alia kazo</value>
+    <value>Sendu klavoklavon al alia petskribo</value>
   </data>
   <data name="Sort by date" xml:space="preserve">
     <value>Ordigi laŭ dato</value>
@@ -499,6 +499,9 @@
     <value>Montru serĉbreton</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Konservante la protokoldosieron en la aplikaĵa dosierujo anstataŭ AppData</value>
+    <value>Konservante protokoldosieron en aplikaĵa dosierujo anstataŭ AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Montru ligkovraĵon</value>
   </data>
 </root>

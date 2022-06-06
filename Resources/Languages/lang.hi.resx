@@ -181,7 +181,7 @@
     <value>निर्देशिका का चयन करें</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ऐप के लिए आपकी रूट निर्देशिका मौजूद नहीं है या खाली है! रूट डायरेक्टरी बदलें या रूट डायरेक्टरी में कुछ फाइल, डायरेक्टरी या शॉर्टकट डालें।</value>
+    <value>ऐप के लिए आपकी रूट डायरेक्टरी मौजूद नहीं है या खाली है! रूट डायरेक्टरी बदलें या रूट डायरेक्टरी में कुछ फाइल, डायरेक्टरी या शॉर्टकट डालें।</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>आपके पास ऐप की रूट डायरेक्टरी तक पहुंच नहीं है। निर्देशिका तक पहुंच प्रदान करें या रूट निर्देशिका बदलें।</value>
@@ -499,6 +499,9 @@
     <value>खोज बार दिखाएं</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>लॉग फ़ाइल को AppData के बजाय एप्लिकेशन निर्देशिका में सहेजा जा रहा है</value>
+    <value>AppData के बजाय एप्लिकेशन निर्देशिका में लॉग फ़ाइल सहेजा जा रहा है</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>लिंक ओवरले दिखाएं</value>
   </data>
 </root>

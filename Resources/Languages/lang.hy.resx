@@ -226,7 +226,7 @@
     <value>Բաց է մնում</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Ժամանակ, մինչև մենյու բացվի</value>
+    <value>Ժամանակ է, մինչև մենյու բացվի</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>Եթե ​​որևէ տարր սեղմված է եղել</value>
@@ -499,6 +499,9 @@
     <value>Ցույց տալ որոնման տողը</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Պահպանելով գրանցամատյանի ֆայլը հավելվածի գրացուցակում՝ AppData-ի փոխարեն</value>
+    <value>Մատյան ֆայլի պահպանում հավելվածի գրացուցակում՝ AppData-ի փոխարեն</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Ցույց տալ հղման ծածկույթը</value>
   </data>
 </root>

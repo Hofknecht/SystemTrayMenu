@@ -499,6 +499,9 @@
     <value>Dangos bar chwilio</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Arbed y ffeil log yn y cyfeiriadur cais yn lle AppData</value>
+    <value>Cadw ffeil log yn y cyfeiriadur cais yn lle AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Dangos troshaen cyswllt</value>
   </data>
 </root>

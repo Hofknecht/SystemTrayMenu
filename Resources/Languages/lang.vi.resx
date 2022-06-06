@@ -301,7 +301,7 @@
     <value>Trượt trong khi di chuột qua nó 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Thanh trượt trong khi di chuột qua nó 2</value>
+    <value>Trượt trong khi di chuột qua nó 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Sử dụng biểu tượng từ thư mục</value>
@@ -328,7 +328,7 @@
     <value>Sự cố với liên kết lối tắt</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Mục mà lối tắt này đề cập đến đã bị thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
+    <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Mở thư mục</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Lưu tệp nhật ký trong thư mục ứng dụng thay vì AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Hiển thị lớp phủ liên kết</value>
   </data>
 </root>

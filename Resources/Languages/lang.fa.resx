@@ -181,7 +181,7 @@
     <value>دایرکتوری را انتخاب کنید</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>دایرکتوری ریشه شما برای برنامه وجود ندارد یا خالی است! دایرکتوری ریشه را تغییر دهید یا چند فایل، دایرکتوری یا میانبر را در دایرکتوری ریشه قرار دهید.</value>
+    <value>دایرکتوری ریشه شما برای برنامه وجود ندارد یا خالی است! دایرکتوری ریشه را تغییر دهید یا چند فایل، دایرکتوری یا میانبر را در فهرست اصلی قرار دهید.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>شما به فهرست اصلی برنامه دسترسی ندارید. به دایرکتوری دسترسی بدهید یا دایرکتوری ریشه را تغییر دهید.</value>
@@ -445,7 +445,7 @@
     <value>کنار قبلی</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>انحراف با پیکسل</value>
+    <value>افست با پیکسل</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>با هم تداخل دارند</value>
@@ -499,6 +499,9 @@
     <value>نمایش نوار جستجو</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>ذخیره فایل گزارش در فهرست برنامه به جای AppData</value>
+    <value>ذخیره فایل log در فهرست برنامه به جای AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>نمایش همپوشانی پیوند</value>
   </data>
 </root>

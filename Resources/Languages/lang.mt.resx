@@ -217,7 +217,7 @@
     <value>Millisekondi sakemm jinfetaħ menu meta l-maws ikun fuqu</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekondi sakemm jingħalaq il-menu jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
+    <value>Millisekondi sakemm il-menu jagħlaq jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Wisa' massimu tal-menu tal-pixels</value>
@@ -445,7 +445,7 @@
     <value>Ħdejn dak ta’ qabel</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset bil-pixels</value>
+    <value>Offset mill-pixels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Jikkoinċidu</value>
@@ -499,6 +499,9 @@
     <value>Uri l-bar tat-tiftix</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Iffrankar tal-fajl log fid-direttorju tal-applikazzjoni minflok AppData</value>
+    <value>Iffrankar tal-fajl tal-log fid-direttorju tal-applikazzjoni minflok AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Uri link overlay</value>
   </data>
 </root>

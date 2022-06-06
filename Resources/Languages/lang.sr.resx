@@ -247,7 +247,7 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Граница изабраног елемента</value>
+    <value>Ивица изабраног елемента</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Конвертујте у релативни директоријум</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Чување датотеке евиденције у директоријуму апликације уместо у АппДата</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Прикажи преклапање везе</value>
   </data>
 </root>

@@ -181,7 +181,7 @@
     <value>Vyberte adresář</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Váš kořenový adresář pro aplikaci neexistuje nebo je prázdný! Změňte kořenový adresář nebo vložte některé soubory, adresáře nebo zástupce do kořenového adresáře.</value>
+    <value>Váš kořenový adresář pro aplikaci neexistuje nebo je prázdný! Změňte kořenový adresář nebo do něj vložte některé soubory, adresáře nebo zástupce.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nemáte přístup do kořenového adresáře aplikace. Udělte přístup k adresáři nebo změňte kořenový adresář.</value>
@@ -271,7 +271,7 @@
     <value>Šipka při kliknutí</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Šipka, zatímco nad ní přechází myš</value>
+    <value>Šipka, zatímco nad ní umístíte myš</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Pozadí šipky při kliknutí</value>
@@ -283,7 +283,7 @@
     <value>Barevné provedení tmavé</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Barevné provedení světlé</value>
+    <value>Barevné schéma světlé</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Nabídka aplikací</value>
@@ -499,6 +499,9 @@
     <value>Zobrazit vyhledávací lištu</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Uložení souboru protokolu do adresáře aplikace namísto AppData</value>
+    <value>Ukládání souboru protokolu do adresáře aplikace namísto AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Zobrazit překryvnou vrstvu odkazu</value>
   </data>
 </root>

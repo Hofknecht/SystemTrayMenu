@@ -196,7 +196,7 @@
     <value>Пашыраны</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
-    <value>У месцы размяшчэння мышы</value>
+    <value>Па месцы размяшчэння мышы</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
     <value>Змена каталога</value>
@@ -316,7 +316,7 @@
     <value>Абразкі</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Устанаўліваецца з дапамогай кантэкстнага меню</value>
+    <value>Усталёўваецца з дапамогай кантэкстнага меню</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Ўсталяваць у якасці каталога</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Захаванне файла журнала ў каталогу прыкладання замест AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Паказаць накладанне спасылак</value>
   </data>
 </root>

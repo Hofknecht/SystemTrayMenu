@@ -184,7 +184,7 @@
     <value>ایپ کے لیے آپ کی روٹ ڈائرکٹری موجود نہیں ہے یا خالی ہے! روٹ ڈائرکٹری کو تبدیل کریں یا روٹ ڈائرکٹری میں کچھ فائلیں، ڈائریکٹریز یا شارٹ کٹ ڈالیں۔</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>آپ کو ایپ کی روٹ ڈائرکٹری تک رسائی نہیں ہے۔ ڈائرکٹری تک رسائی فراہم کریں یا روٹ ڈائرکٹری کو تبدیل کریں۔</value>
+    <value>آپ کو ایپ کی روٹ ڈائرکٹری تک رسائی نہیں ہے۔ ڈائریکٹری تک رسائی فراہم کریں یا روٹ ڈائرکٹری کو تبدیل کریں۔</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ڈبل کلک کے بجائے کسی عنصر کو کھولنے کے لیے سنگل کلک کریں۔</value>
@@ -262,7 +262,7 @@
     <value>ایپلیکیشن ڈائرکٹری کھولیں۔</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>پکسلز مینو کی زیادہ سے زیادہ اونچائی</value>
+    <value>پکسلز زیادہ سے زیادہ مینو اونچائی</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>تیر</value>
@@ -445,7 +445,7 @@
     <value>پچھلے کے آگے</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>پکسلز کے ذریعہ آفسیٹ</value>
+    <value>پکسلز کے ذریعے آفسیٹ</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>اوور لیپنگ</value>
@@ -499,6 +499,9 @@
     <value>سرچ بار دکھائیں۔</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>لاگ فائل کو AppData کی بجائے ایپلیکیشن ڈائرکٹری میں محفوظ کرنا</value>
+    <value>AppData کی بجائے ایپلیکیشن ڈائرکٹری میں لاگ فائل کو محفوظ کرنا</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>لنک اوورلے دکھائیں۔</value>
   </data>
 </root>

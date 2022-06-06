@@ -400,7 +400,7 @@
     <value>למטה מימין</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>התפריט הראשי מופיע</value>
+    <value>מופיע תפריט ראשי</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>מיקום העכבר (מעל סמל שורת המשימות)</value>
@@ -490,7 +490,7 @@
     <value>הצג את ספירת האלמנטים למטה</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>הצג את כותרת הספרייה בראש</value>
+    <value>הצג את כותרת הספרייה למעלה</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
     <value>הצג מקשי פונקציות למטה</value>
@@ -499,6 +499,9 @@
     <value>הצג את שורת החיפוש</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>שמירת קובץ היומן בספריית היישום במקום AppData</value>
+    <value>שמירת קובץ יומן בספריית האפליקציה במקום AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>הצג שכבת-על של קישור</value>
   </data>
 </root>

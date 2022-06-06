@@ -229,7 +229,7 @@
     <value>మెను తెరవడానికి సమయం</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>ఒక మూలకం క్లిక్ చేయబడితే</value>
+    <value>ఒక మూలకం క్లిక్ చేయబడి ఉంటే</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>నేపథ్య</value>
@@ -373,7 +373,7 @@
     <value>డైరెక్టరీని తీసివేయండి</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>ఫైల్‌లు మాత్రమే</value>
+    <value>ఫైల్స్ మాత్రమే</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
     <value>కాష్ ప్రధాన మెను</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>AppDataకి బదులుగా అప్లికేషన్ డైరెక్టరీలో లాగ్ ఫైల్‌ను సేవ్ చేస్తోంది</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>లింక్ అతివ్యాప్తిని చూపు</value>
   </data>
 </root>

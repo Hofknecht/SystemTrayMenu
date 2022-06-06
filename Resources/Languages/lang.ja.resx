@@ -262,7 +262,7 @@
     <value>アプリケーションディレクトリを開く</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>ピクセルの最大メニュー高</value>
+    <value>メニューの最大高さ</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>矢印</value>
@@ -340,7 +340,7 @@
     <value>非アクティブ化</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>アクティベート</value>
+    <value>有効化</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>エキスパート</value>
@@ -493,12 +493,15 @@
     <value>ディレクトリタイトルを上部に表示</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
-    <value>以下にファンクションキーを表示</value>
+    <value>以下にファンクションキーを表示します</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>検索バーを表示する</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>AppDataではなくアプリケーションディレクトリにログファイルを保存する</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>リンクオーバーレイを表示</value>
   </data>
 </root>

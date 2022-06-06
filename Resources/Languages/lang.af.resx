@@ -304,7 +304,7 @@
     <value>Skuif terwyl die muis daaroor beweeg 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>Gebruik ikoon uit gids</value>
+    <value>Gebruik ikoon uit die gids</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Grootte</value>
@@ -499,6 +499,9 @@
     <value>Wys soekbalk</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Stoor die loglêer in die toepassingsgids in plaas van AppData</value>
+    <value>Stoor tans loglêer in toepassingsgids in plaas van AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Wys skakeloorleg</value>
   </data>
 </root>

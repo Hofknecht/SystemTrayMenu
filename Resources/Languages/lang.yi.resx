@@ -499,6 +499,9 @@
     <value>ווייַזן זוכן באַר</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>שפּאָרן די קלאָץ טעקע אין די אַפּלאַקיישאַן וועגווייַזער אַנשטאָט פון אַפּפּדאַטאַ</value>
+    <value>שפּאָרן קלאָץ טעקע אין אַפּלאַקיישאַן וועגווייַזער אַנשטאָט פון אַפּפּדאַטאַ</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>ווייַזן לינק אָוווערליי</value>
   </data>
 </root>

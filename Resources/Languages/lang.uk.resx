@@ -229,7 +229,7 @@
     <value>Час до відкриття меню</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>Якщо елемент було натиснуто</value>
+    <value>Якщо клацнули елемент</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Фон</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Збереження файлу журналу в каталозі програми замість AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Показати накладання посилань</value>
   </data>
 </root>

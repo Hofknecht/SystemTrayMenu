@@ -91,7 +91,13 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (isDirectory)
             {
-                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Closed, false, true, level == 0, out bool loading);
+                icon = IconReader.GetFolderIconWithCache(
+                    TargetFilePathOrig,
+                    IconReader.FolderType.Closed,
+                    false,
+                    true,
+                    level == 0,
+                    out bool loading);
                 IconLoading = loading;
             }
             else
@@ -103,12 +109,12 @@ namespace SystemTrayMenu.DataClasses
                 if (fileExtension.Equals(".lnk", StringComparison.InvariantCultureIgnoreCase))
                 {
                     handled = SetLnk(level, ref isLnkDirectory, ref resolvedLnkPath);
-                    showOverlay = true;
+                    showOverlay = Properties.Settings.Default.ShowLinkOverlay;
                 }
                 else if (fileExtension.Equals(".url", StringComparison.InvariantCultureIgnoreCase))
                 {
                     SetText($"{FileInfo.Name[0..^4]}");
-                    showOverlay = true;
+                    showOverlay = Properties.Settings.Default.ShowLinkOverlay;
                 }
                 else if (fileExtension.Equals(".sln", StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -116,7 +122,7 @@ namespace SystemTrayMenu.DataClasses
                 }
                 else if (fileExtension.Equals(".appref-ms", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    showOverlay = true;
+                    showOverlay = Properties.Settings.Default.ShowLinkOverlay;
                 }
 
                 if (!handled)
@@ -124,7 +130,12 @@ namespace SystemTrayMenu.DataClasses
                     try
                     {
                         FilePathIcon = TargetFilePathOrig;
-                        icon = IconReader.GetFileIconWithCache(FilePathIcon, showOverlay, true, level == 0, out bool loading);
+                        icon = IconReader.GetFileIconWithCache(
+                            FilePathIcon,
+                            showOverlay,
+                            true,
+                            level == 0,
+                            out bool loading);
                         IconLoading = loading;
                     }
                     catch (Exception ex)
@@ -227,7 +238,13 @@ namespace SystemTrayMenu.DataClasses
         {
             if (ContainsMenu)
             {
-                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Closed, false, false, MenuLevel == 0, out bool loading);
+                icon = IconReader.GetFolderIconWithCache(
+                    TargetFilePathOrig,
+                    IconReader.FolderType.Closed,
+                    false,
+                    false,
+                    MenuLevel == 0,
+                    out bool loading);
                 IconLoading = loading;
             }
             else
@@ -236,7 +253,7 @@ namespace SystemTrayMenu.DataClasses
                 string fileExtension = Path.GetExtension(TargetFilePath);
                 if (fileExtension == ".lnk" || fileExtension == ".url" || fileExtension == ".appref-ms")
                 {
-                    showOverlay = true;
+                    showOverlay = Properties.Settings.Default.ShowLinkOverlay;
                 }
 
                 string filePath = FilePathIcon;
@@ -245,7 +262,12 @@ namespace SystemTrayMenu.DataClasses
                     filePath = TargetFilePathOrig;
                 }
 
-                icon = IconReader.GetFileIconWithCache(filePath, showOverlay, false, MenuLevel == 0, out bool loading);
+                icon = IconReader.GetFileIconWithCache(
+                    filePath,
+                    showOverlay,
+                    false,
+                    MenuLevel == 0,
+                    out bool loading);
                 IconLoading = loading;
             }
 
@@ -288,7 +310,13 @@ namespace SystemTrayMenu.DataClasses
             }
             else if (isFolder)
             {
-                icon = IconReader.GetFolderIconWithCache(TargetFilePathOrig, IconReader.FolderType.Open, true, true, level == 0, out bool loading);
+                icon = IconReader.GetFolderIconWithCache(
+                    TargetFilePathOrig,
+                    IconReader.FolderType.Open,
+                    Properties.Settings.Default.ShowLinkOverlay,
+                    true,
+                    level == 0,
+                    out bool loading);
                 IconLoading = loading;
                 handled = true;
                 isLnkDirectory = true;
@@ -312,7 +340,11 @@ namespace SystemTrayMenu.DataClasses
             bool handled = false;
             try
             {
-                icon = IconReader.GetExtractAllIconsLastWithCache(TargetFilePathOrig, true, level == 0, out bool loading);
+                icon = IconReader.GetExtractAllIconsLastWithCache(
+                    TargetFilePathOrig,
+                    true,
+                    level == 0,
+                    out bool loading);
                 IconLoading = loading;
                 handled = true;
             }

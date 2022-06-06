@@ -501,4 +501,7 @@
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Salvando o arquivo de log no diretório do aplicativo em vez de AppData</value>
   </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Mostrar sobreposição de links</value>
+  </data>
 </root>

@@ -190,7 +190,7 @@
     <value>Isang pag-click upang magbukas ng isang elemento sa halip na mag-double click</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Color scheme dark laging aktibo</value>
+    <value>Madilim ang kulay na laging aktibo</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Advanced</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Sine-save ang log file sa direktoryo ng application sa halip na AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Ipakita ang overlay ng link</value>
   </data>
 </root>

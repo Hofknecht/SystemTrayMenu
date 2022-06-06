@@ -349,7 +349,7 @@
     <value>ಫೋಕಸ್ ಕಳೆದುಹೋದರೆ ಮತ್ತು Enter ಕೀಲಿಯನ್ನು ಒತ್ತಿದರೆ</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>ಈ ಸಂದರ್ಭದಲ್ಲಿ ಮೆನುವನ್ನು ಮರುಸಕ್ರಿಯಗೊಳಿಸದಿದ್ದಲ್ಲಿ ಮೆನು ಮುಚ್ಚುವವರೆಗೆ ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
+    <value>ಈ ಸಂದರ್ಭದಲ್ಲಿ ಮೆನುವನ್ನು ಮರುಸಕ್ರಿಯಗೊಳಿಸದಿದ್ದರೆ ಮೆನು ಮುಚ್ಚುವವರೆಗೆ ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ಕಾರ್ಯಪಟ್ಟಿಯಲ್ಲಿ ತೋರಿಸಿ</value>
@@ -361,7 +361,7 @@
     <value>ಡೈರೆಕ್ಟರಿಯ ವಿಷಯವನ್ನು ರೂಟ್ ಡೈರೆಕ್ಟರಿಗೆ ಸೇರಿಸಿ</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>ಡೈರೆಕ್ಟರಿ ಪಥಗಳು</value>
+    <value>ಡೈರೆಕ್ಟರಿ ಮಾರ್ಗಗಳು</value>
   </data>
   <data name="Directories" xml:space="preserve">
     <value>ಡೈರೆಕ್ಟರಿಗಳು</value>
@@ -385,7 +385,7 @@
     <value>ಮಾದರಿ ಡೈರೆಕ್ಟರಿಯನ್ನು ಸೇರಿಸಿ 'ಪ್ರಾರಂಭ ಮೆನು'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>ಸಾಲಿನ ಎತ್ತರ ಶೇಕಡಾ</value>
+    <value>ಸಾಲು ಎತ್ತರ ಶೇಕಡಾ</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>ಸುತ್ತಿನ ಮೂಲೆಗಳು</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>AppData ಬದಲಿಗೆ ಅಪ್ಲಿಕೇಶನ್ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಲಾಗ್ ಫೈಲ್ ಅನ್ನು ಉಳಿಸಲಾಗುತ್ತಿದೆ</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>ಲಿಂಕ್ ಓವರ್‌ಲೇ ತೋರಿಸಿ</value>
   </data>
 </root>

@@ -499,6 +499,9 @@
     <value>Monstra quaerere talea</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Servo stipes lima in applicatione presul pro AppData</value>
+    <value>Salvis stipes lima in applicatione presul pro AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Ostendere nexum operies</value>
   </data>
 </root>

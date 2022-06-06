@@ -268,7 +268,7 @@
     <value>Săgeată</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Săgeată când dați clic</value>
+    <value>Săgeată când faceți clic</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Săgeată în timp ce mouse-ul trece peste ea</value>
@@ -310,7 +310,7 @@
     <value>mărimea</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Chenarul meniului</value>
+    <value>Marginea meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>icoane</value>
@@ -499,6 +499,9 @@
     <value>Afișează bara de căutare</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Salvarea fișierului jurnal în directorul aplicației în loc de AppData</value>
+    <value>Se salvează fișierul jurnal în directorul aplicației în loc de AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Afișați suprapunerea linkului</value>
   </data>
 </root>

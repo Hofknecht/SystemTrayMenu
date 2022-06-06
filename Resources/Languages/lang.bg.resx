@@ -501,4 +501,7 @@
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Записване на регистрационния файл в директорията на приложението вместо в AppData</value>
   </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Показване на наслагване на връзката</value>
+  </data>
 </root>

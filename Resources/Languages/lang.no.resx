@@ -499,6 +499,9 @@
     <value>Vis søkefeltet</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Lagre loggfilen i applikasjonskatalogen i stedet for AppData</value>
+    <value>Lagrer loggfil i applikasjonskatalog i stedet for AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Vis linkoverlegg</value>
   </data>
 </root>

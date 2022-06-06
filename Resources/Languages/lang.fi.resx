@@ -501,4 +501,7 @@
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Lokitiedoston tallentaminen sovellushakemistoon AppDatan sijaan</value>
   </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Näytä linkin peittokuva</value>
+  </data>
 </root>

@@ -403,7 +403,7 @@
     <value>Megjelenik a főmenü</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Az egér helye (a tálcán lévő ikon felett)</value>
+    <value>Az egér helye (a tálca ikonja felett)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Egyéni (húzza a megfelelő helyre)</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>A naplófájl mentése az alkalmazáskönyvtárba az AppData helyett</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Linkfedvény megjelenítése</value>
   </data>
 </root>

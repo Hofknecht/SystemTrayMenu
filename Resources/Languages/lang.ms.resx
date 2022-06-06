@@ -244,7 +244,7 @@
     <value>Medan carian</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>Elemen yang dipilih</value>
+    <value>Elemen terpilih</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
     <value>Sempadan elemen yang dipilih</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Menyimpan fail log dalam direktori aplikasi dan bukannya AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Tunjukkan tindanan pautan</value>
   </data>
 </root>

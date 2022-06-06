@@ -187,7 +187,7 @@
     <value>Anda tidak memiliki akses ke direktori root aplikasi. Berikan akses ke direktori atau ubah direktori root.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Klik satu kali untuk membuka elemen alih-alih klik dua kali</value>
+    <value>Satu klik untuk membuka elemen alih-alih klik dua kali</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Skema warna gelap selalu aktif</value>
@@ -241,7 +241,7 @@
     <value>Batas direktori yang dibuka</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>bidang pencarian</value>
+    <value>Bidang pencarian</value>
   </data>
   <data name="Selected element" xml:space="preserve">
     <value>Elemen yang dipilih</value>
@@ -484,7 +484,7 @@
     <value>Gulir melalui geser</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filter menu menurut jenis file misalnya: *.exe|*.dll</value>
+    <value>Filter menu menurut jenis file mis.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Tunjukkan jumlah elemen di bawah ini</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Menyimpan file log di direktori aplikasi alih-alih AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Tampilkan hamparan tautan</value>
   </data>
 </root>

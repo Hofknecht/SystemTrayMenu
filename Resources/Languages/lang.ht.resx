@@ -310,7 +310,7 @@
     <value>Gwosè</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Fwontyè nan meni an</value>
+    <value>Fwontyè meni an</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Ikon</value>
@@ -499,6 +499,9 @@
     <value>Montre ba rechèch la</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Sove dosye log la nan anyè aplikasyon an olye pou yo AppData</value>
+    <value>Ekonomize dosye log nan anyè aplikasyon olye pou yo AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Montre lyen ki kouvri</value>
   </data>
 </root>

@@ -175,7 +175,7 @@
     <value>Galdera arruntak</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Irakurri ohiko galderak eta, ondoren, aukeratu SystemTrayMenurako root direktorioa.</value>
+    <value>Irakurri ohiko galderak eta, ondoren, aukeratu SystemTrayMenurako erro-direktorio bat.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Hautatu direktorioa</value>
@@ -226,7 +226,7 @@
     <value>Zabalik egoten da</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Menu bat ireki arte</value>
+    <value>Denbora menu bat ireki arte</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>Elementu batean klik egin bada</value>
@@ -376,7 +376,7 @@
     <value>Fitxategiak bakarrik</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cache menu nagusia</value>
+    <value>Cachearen menu nagusia</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Garbitu cachea elementu kopuru hori baino gehiago bada</value>
@@ -499,6 +499,9 @@
     <value>Erakutsi bilaketa-barra</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Erregistro fitxategia aplikazioaren direktorioan gordetzea AppData-ren ordez</value>
+    <value>Erregistro fitxategia aplikazioaren direktorioan gordetzen AppData-n ordez</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Erakutsi esteken gainjartzea</value>
   </data>
 </root>

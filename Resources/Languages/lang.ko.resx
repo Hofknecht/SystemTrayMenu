@@ -217,7 +217,7 @@
     <value>마우스가 메뉴에 있을 때 메뉴가 열릴 때까지의 밀리초</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>이 경우 마우스가 메뉴를 떠날 때까지 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+    <value>이 경우 마우스가 메뉴를 떠나면 메뉴가 닫힐 때까지의 밀리초</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>픽셀 최대 메뉴 너비</value>
@@ -439,7 +439,7 @@
     <value>검색 결과로만 표시</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>더블 클릭이 아닌 한 번의 클릭으로 디렉토리 열기</value>
+    <value>더블 클릭 대신 한 번의 클릭으로 디렉토리 열기</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>전작에 이어</value>
@@ -451,13 +451,13 @@
     <value>겹침</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>하위 메뉴가 나타납니다.</value>
+    <value>하위 메뉴가 나타납니다</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
-    <value>아이콘 크기(%)</value>
+    <value>아이콘 크기(퍼센트)</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>지원 시스템TrayMenu</value>
+    <value>지원 시스템 트레이 메뉴</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>페이딩</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>AppData 대신 애플리케이션 디렉토리에 로그 파일 저장</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>링크 오버레이 표시</value>
   </data>
 </root>

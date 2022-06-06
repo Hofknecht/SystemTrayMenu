@@ -499,6 +499,9 @@
     <value>顯示搜索欄</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>將日誌文件保存在應用程序目錄中，而不是 AppData</value>
+    <value>將日誌文件保存在應用程序目錄而不是 AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>顯示鏈接覆蓋</value>
   </data>
 </root>

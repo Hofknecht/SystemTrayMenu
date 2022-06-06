@@ -194,6 +194,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
                 checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Color scheme dark always active");
                 checkBoxUseFading.Text = Translator.GetText("Fading");
+                checkBoxShowLinkOverlay.Text = Translator.GetText("Show link overlay");
                 checkBoxShowDirectoryTitleAtTop.Text = Translator.GetText("Show directory title at top");
                 checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements below");
                 checkBoxShowSearchBar.Text = Translator.GetText("Show search bar");
@@ -513,6 +514,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
             checkBoxUseFading.Checked = Settings.Default.UseFading;
+            checkBoxShowLinkOverlay.Checked = Settings.Default.ShowLinkOverlay;
             checkBoxShowDirectoryTitleAtTop.Checked = Settings.Default.ShowDirectoryTitleAtTop;
             checkBoxShowSearchBar.Checked = Settings.Default.ShowSearchBar;
             checkBoxShowCountOfElementsBelow.Checked = Settings.Default.ShowCountOfElementsBelow;
@@ -958,6 +960,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
             Settings.Default.UseFading = checkBoxUseFading.Checked;
+            Settings.Default.ShowLinkOverlay = checkBoxShowLinkOverlay.Checked;
             Settings.Default.ShowDirectoryTitleAtTop = checkBoxShowDirectoryTitleAtTop.Checked;
             Settings.Default.ShowSearchBar = checkBoxShowSearchBar.Checked;
             Settings.Default.ShowCountOfElementsBelow = checkBoxShowCountOfElementsBelow.Checked;
@@ -1332,6 +1335,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxRoundCorners.Checked = false;
             checkBoxUseFading.Checked = false;
             checkBoxDarkModeAlwaysOn.Checked = true;
+            checkBoxShowLinkOverlay.Checked = false;
             checkBoxShowDirectoryTitleAtTop.Checked = false;
             checkBoxShowSearchBar.Checked = true;
             checkBoxShowCountOfElementsBelow.Checked = false;

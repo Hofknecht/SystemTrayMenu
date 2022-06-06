@@ -388,7 +388,7 @@
     <value>Altura da fila en porcentaxe</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Cantos redondeados</value>
+    <value>Esquinas redondeadas</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Aparencia</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Gardando o ficheiro de rexistro no directorio da aplicación en lugar de AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Mostra a superposición de ligazóns</value>
   </data>
 </root>

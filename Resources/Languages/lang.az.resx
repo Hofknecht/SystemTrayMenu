@@ -133,7 +133,7 @@
     <value>kataloq</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Kataloq boş</value>
+    <value>Kataloq boşdur</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Təfərrüatlar</value>
@@ -187,7 +187,7 @@
     <value>Proqramın kök kataloquna girişiniz yoxdur. Kataloqa giriş icazəsi verin və ya kök kataloqunu dəyişdirin.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>İki klik əvəzinə bir elementi açmaq üçün bir kliklə</value>
+    <value>İki klik əvəzinə elementi açmaq üçün bir kliklə</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Rəng sxemi qaranlıq həmişə aktivdir</value>
@@ -259,7 +259,7 @@
     <value>Konfiqurasiya faylı və log faylı</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>Proqram qovluğunu açın</value>
+    <value>Tətbiq qovluğunu açın</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Piksel maksimum menyu hündürlüyü</value>
@@ -298,7 +298,7 @@
     <value>Sürükləyərkən sürüşdürün</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 1</value>
+    <value>Siçan üzərinə sürüşdürərkən sürüşdürün 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 2</value>
@@ -382,7 +382,7 @@
     <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>'Başlat Menyu' nümunə qovluğu əlavə edin</value>
+    <value>'Başlat Menyu' nümunə kataloqu əlavə edin</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Sətir hündürlüyü faizlə</value>
@@ -499,6 +499,9 @@
     <value>Axtarış çubuğunu göstərin</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Log faylının AppData əvəzinə proqram kataloqunda saxlanması</value>
+    <value>Log faylı AppData əvəzinə proqram kataloqunda saxlanılır</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Link örtüyünü göstərin</value>
   </data>
 </root>

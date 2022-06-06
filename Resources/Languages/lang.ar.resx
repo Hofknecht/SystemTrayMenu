@@ -376,7 +376,7 @@
     <value>الملفات فقط</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>ذاكرة التخزين المؤقت القائمة الرئيسية</value>
+    <value>القائمة الرئيسية لذاكرة التخزين المؤقت</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>امسح ذاكرة التخزين المؤقت إذا كان هناك أكثر من هذا العدد من العناصر</value>
@@ -475,7 +475,7 @@
     <value>فرز</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>نسخ عنصر الصف عن طريق السحب والإفلات</value>
+    <value>نسخ عنصر الصف عن طريق السحب والإسقاط</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>يجر</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>حفظ ملف السجل في دليل التطبيق بدلاً من AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>إظهار تراكب الارتباط</value>
   </data>
 </root>

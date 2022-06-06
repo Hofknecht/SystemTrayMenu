@@ -501,4 +501,7 @@
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>ការរក្សាទុកឯកសារកំណត់ហេតុនៅក្នុងថតកម្មវិធីជំនួសឱ្យ AppData</value>
   </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>បង្ហាញតំណជាន់លើ</value>
+  </data>
 </root>

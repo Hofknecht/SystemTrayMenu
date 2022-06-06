@@ -439,7 +439,7 @@
     <value>Sýna aðeins sem leitarniðurstöðu</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Einn smellur til að opna möppu í stað þess að tvísmella</value>
+    <value>Einfaldur smellur til að opna möppu í stað þess að tvísmella</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Við hliðina á fyrri</value>
@@ -499,6 +499,9 @@
     <value>Sýna leitarstiku</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Vistar annálaskrána í forritaskránni í stað AppData</value>
+    <value>Vistar notendaskrá í forritaskrá í stað AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Sýna hlekkjayfirlag</value>
   </data>
 </root>

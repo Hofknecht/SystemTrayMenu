@@ -217,7 +217,7 @@
     <value>Milisekundes, līdz tiek atvērta izvēlne, kad uz tās ir pele</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja šajā gadījumā pele iziet no izvēlnes</value>
+    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja šajā gadījumā pele pēc tam iziet no izvēlnes</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maksimālais izvēlnes platums pikseļos</value>
@@ -499,6 +499,9 @@
     <value>Rādīt meklēšanas joslu</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Žurnāla faila saglabāšana lietojumprogrammu direktorijā, nevis AppData</value>
+    <value>Žurnālfaila saglabāšana lietojumprogrammu direktorijā, nevis AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Rādīt saites pārklājumu</value>
   </data>
 </root>

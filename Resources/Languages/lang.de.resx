@@ -501,4 +501,7 @@
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Speichern der Protokolldatei im Anwendungsverzeichnis anstelle von AppData</value>
   </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Link-Overlay anzeigen</value>
+  </data>
 </root>

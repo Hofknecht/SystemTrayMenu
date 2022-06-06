@@ -15,6 +15,7 @@ namespace SystemTrayMenu.Utilities
     using System.Runtime.InteropServices;
     using System.Text;
     using System.Threading;
+    using SystemTrayMenu.DllImports;
     using TAFactory.IconPack;
 
     /// <summary>
@@ -97,14 +98,9 @@ namespace SystemTrayMenu.Utilities
                     new Thread(UpdateIconInBackground).Start();
                     void UpdateIconInBackground()
                     {
-                        DictIconCache(isMainMenu).GetOrAdd(key, GetExtractAllIconsLast);
+                        DictIconCache(isMainMenu).GetOrAdd(key, GetExtractAllIconsLastSTA(filePath));
                     }
                 }
-            }
-
-            Icon GetExtractAllIconsLast(string keyExtension)
-            {
-                return GetExtractAllIconsLastSTA(filePath);
             }
 
             static Icon GetExtractAllIconsLastSTA(string filePath)
@@ -131,7 +127,7 @@ namespace SystemTrayMenu.Utilities
                 static Icon GetExtractAllIconsLast(string filePath)
                 {
                     StringBuilder executable = new(1024);
-                    DllImports.NativeMethods.Shell32FindExecutable(filePath, string.Empty, executable);
+                    NativeMethods.Shell32FindExecutable(filePath, string.Empty, executable);
 
                     // icon = IconReader.GetFileIcon(executable, false);
                     // e.g. VS 2019 icon, need another icom in imagelist
@@ -178,44 +174,14 @@ namespace SystemTrayMenu.Utilities
             {
                 icon = Resources.StaticResources.LoadingIcon;
                 loading = true;
-
                 if (updateIconInBackground)
                 {
                     new Thread(UpdateIconInBackground).Start();
                     void UpdateIconInBackground()
                     {
-                        DictIconCache(isMainMenu).GetOrAdd(key, GetIcon);
+                        DictIconCache(isMainMenu).GetOrAdd(key, GetIconSTA(filePath, linkOverlay, size, null));
                     }
                 }
-            }
-
-            Icon GetIcon(string keyExtension)
-            {
-                return GetFileIconSTA(filePath, linkOverlay, size);
-            }
-
-            static Icon GetFileIconSTA(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
-            {
-                Icon icon = null;
-
-                if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
-                {
-                    icon = GetFileIcon(filePath, linkOverlay, size);
-                }
-                else
-                {
-                    Thread staThread = new(new ParameterizedThreadStart(StaThreadMethod));
-                    void StaThreadMethod(object obj)
-                    {
-                        icon = GetFileIcon(filePath, linkOverlay, size);
-                    }
-
-                    staThread.SetApartmentState(ApartmentState.STA);
-                    staThread.Start(icon);
-                    staThread.Join();
-                }
-
-                return icon;
             }
 
             return icon;
@@ -261,100 +227,30 @@ namespace SystemTrayMenu.Utilities
 
             Icon GetFolder(string keyExtension)
             {
-                return GetFolderIconSTA(path, folderType, linkOverlay, size);
+                return GetIconSTA(path, linkOverlay, size, folderType);
             }
 
             return icon;
         }
 
-        public static Icon GetFolderIconSTA(
-            string directoryPath,
-            FolderType folderType,
-            bool linkOverlay,
-            IconSize size = IconSize.Small)
+        public static Icon GetIconSTA(string path, bool linkOverlay, IconSize size, FolderType? folderType)
         {
             Icon icon = null;
             if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
             {
-                icon = GetFolderIcon(
-                    directoryPath,
-                    folderType,
-                    linkOverlay,
-                    size);
+                icon = GetIcon(path, linkOverlay, size, folderType);
             }
             else
             {
                 Thread staThread = new(new ParameterizedThreadStart(StaThreadMethod));
                 void StaThreadMethod(object obj)
                 {
-                    icon = GetFolderIcon(
-                        directoryPath,
-                        folderType,
-                        linkOverlay,
-                        size);
+                    icon = GetIcon(path, linkOverlay, size, folderType);
                 }
 
                 staThread.SetApartmentState(ApartmentState.STA);
                 staThread.Start(icon);
                 staThread.Join();
-            }
-
-            return icon;
-        }
-
-        public static Icon GetFolderIcon(
-            string directoryPath,
-            FolderType folderType,
-            bool linkOverlay,
-            IconSize size = IconSize.Small)
-        {
-            Icon icon = null;
-
-            // Need to add size check, although errors generated at present!
-            // uint flags = Shell32.SHGFI_ICON | Shell32.SHGFI_USEFILEATTRIBUTES;
-
-            // Removed SHGFI_USEFILEATTRIBUTES, otherwise was wrong folder icon
-            uint flags = DllImports.NativeMethods.ShgfiIcon; // | Shell32.SHGFI_USEFILEATTRIBUTES;
-
-            if (linkOverlay)
-            {
-                flags += DllImports.NativeMethods.ShgfiLINKOVERLAY;
-            }
-
-            if (folderType == FolderType.Open)
-            {
-                flags += DllImports.NativeMethods.ShgfiOPENICON;
-            }
-
-            if (size == IconSize.Small)
-            {
-                flags += DllImports.NativeMethods.ShgfiSMALLICON;
-            }
-            else
-            {
-                flags += DllImports.NativeMethods.ShgfiLARGEICON;
-            }
-
-            // Get the folder icon
-            DllImports.NativeMethods.SHFILEINFO shfi = default;
-            IntPtr success = DllImports.NativeMethods.Shell32SHGetFileInfo(
-                directoryPath,
-                DllImports.NativeMethods.FileAttributeDirectory,
-                ref shfi,
-                (uint)Marshal.SizeOf(shfi),
-                flags);
-            if (success != IntPtr.Zero &&
-                shfi.hIcon != IntPtr.Zero)
-            {
-                try
-                {
-                    icon = (Icon)Icon.FromHandle(shfi.hIcon).Clone();
-                    DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"directoryPath:'{directoryPath}'", ex);
-                }
             }
 
             return icon;
@@ -372,7 +268,7 @@ namespace SystemTrayMenu.Utilities
                 target.MakeTransparent(target.GetPixel(1, 1));
                 IntPtr hIcon = target.GetHicon();
                 icon = (Icon)Icon.FromHandle(hIcon).Clone();
-                DllImports.NativeMethods.User32DestroyIcon(hIcon);
+                NativeMethods.User32DestroyIcon(hIcon);
             }
 
             return icon;
@@ -402,64 +298,74 @@ namespace SystemTrayMenu.Utilities
             return isExtensionWithSameIcon;
         }
 
-        private static Icon GetFileIcon(string filePath, bool linkOverlay, IconSize size = IconSize.Small)
+        private static Icon GetIcon(string path, bool linkOverlay, IconSize size, FolderType? type)
         {
-            Icon icon = null;
-            DllImports.NativeMethods.SHFILEINFO shfi = default;
-            uint flags = DllImports.NativeMethods.ShgfiIcon | DllImports.NativeMethods.ShgfiSYSICONINDEX;
+            NativeMethods.SHFILEINFO shFileInfo = default;
+            uint flags = GetFlags(linkOverlay, size, type);
+            uint attribute = type == null ? NativeMethods.FileAttributeNormal :
+                NativeMethods.FileAttributeDirectory;
+            IntPtr imageList = NativeMethods.Shell32SHGetFileInfo(
+                path, attribute, ref shFileInfo, (uint)Marshal.SizeOf(shFileInfo), flags);
+            return GetIcon(path, linkOverlay, shFileInfo, imageList);
+        }
 
+        private static uint GetFlags(bool linkOverlay, IconSize size, FolderType? folderType)
+        {
+            uint flags = NativeMethods.ShgfiIcon | NativeMethods.ShgfiSYSICONINDEX;
             if (linkOverlay)
             {
-                flags += DllImports.NativeMethods.ShgfiLINKOVERLAY;
+                flags += NativeMethods.ShgfiLINKOVERLAY;
             }
 
-            // Check the size specified for return.
+            if (folderType == FolderType.Open)
+            {
+                flags += NativeMethods.ShgfiOPENICON;
+            }
+
             if (size == IconSize.Small)
             {
-                flags += DllImports.NativeMethods.ShgfiSMALLICON;
+                flags += NativeMethods.ShgfiSMALLICON;
             }
             else
             {
-                flags += DllImports.NativeMethods.ShgfiLARGEICON;
+                flags += NativeMethods.ShgfiLARGEICON;
             }
 
-            IntPtr hImageList = DllImports.NativeMethods.Shell32SHGetFileInfo(
-                filePath,
-                DllImports.NativeMethods.FileAttributeNormal,
-                ref shfi,
-                (uint)Marshal.SizeOf(shfi),
-                flags);
-            if (hImageList != IntPtr.Zero)
+            return flags;
+        }
+
+        private static Icon GetIcon(
+            string path, bool linkOverlay, NativeMethods.SHFILEINFO shFileInfo, IntPtr imageList)
+        {
+            Icon icon = null;
+            if (imageList != IntPtr.Zero)
             {
                 IntPtr hIcon;
                 if (linkOverlay)
                 {
-                    // Get icon directly
-                    hIcon = shfi.hIcon;
+                    hIcon = shFileInfo.hIcon;
                 }
                 else
                 {
-                    // Get icon from .ink without overlay
-                    hIcon = DllImports.NativeMethods.ImageList_GetIcon(hImageList, shfi.iIcon, DllImports.NativeMethods.IldTransparent);
+                    hIcon = NativeMethods.ImageList_GetIcon(
+                        imageList, shFileInfo.iIcon, NativeMethods.IldTransparent);
                 }
 
                 try
                 {
-                    // Copy (clone) the returned icon to a new object, thus allowing us to clean-up properly
                     icon = (Icon)Icon.FromHandle(hIcon).Clone();
                 }
                 catch (Exception ex)
                 {
-                    Log.Warn($"filePath:'{filePath}'", ex);
+                    Log.Warn($"path:'{path}'", ex);
                 }
 
-                // Cleanup
                 if (!linkOverlay)
                 {
-                    DllImports.NativeMethods.User32DestroyIcon(hIcon);
+                    NativeMethods.User32DestroyIcon(hIcon);
                 }
 
-                DllImports.NativeMethods.User32DestroyIcon(shfi.hIcon);
+                NativeMethods.User32DestroyIcon(shFileInfo.hIcon);
             }
 
             return icon;

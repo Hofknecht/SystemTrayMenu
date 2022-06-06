@@ -46,6 +46,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOpenAssemblyLocation = new System.Windows.Forms.Button();
             this.groupBoxConfigAndLogfile = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelConfigAndLogfile = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxSaveLogFileInApplicationDirectory = new System.Windows.Forms.CheckBox();
             this.checkBoxSaveConfigInApplicationDirectory = new System.Windows.Forms.CheckBox();
             this.groupBoxAutostart = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelAutostart = new System.Windows.Forms.TableLayoutPanel();
@@ -328,7 +329,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.checkBoxSaveLogFileInApplicationDirectory = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowLinkOverlay = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -734,6 +735,17 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelConfigAndLogfile.Size = new System.Drawing.Size(394, 50);
             this.tableLayoutPanelConfigAndLogfile.TabIndex = 0;
+            // 
+            // checkBoxSaveLogFileInApplicationDirectory
+            // 
+            this.checkBoxSaveLogFileInApplicationDirectory.AutoSize = true;
+            this.checkBoxSaveLogFileInApplicationDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxSaveLogFileInApplicationDirectory.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxSaveLogFileInApplicationDirectory.Name = "checkBoxSaveLogFileInApplicationDirectory";
+            this.checkBoxSaveLogFileInApplicationDirectory.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxSaveLogFileInApplicationDirectory.TabIndex = 1;
+            this.checkBoxSaveLogFileInApplicationDirectory.Text = "checkBoxSaveLogFileInApplicationDirectory";
+            this.checkBoxSaveLogFileInApplicationDirectory.UseVisualStyleBackColor = true;
             // 
             // checkBoxSaveConfigInApplicationDirectory
             // 
@@ -2310,7 +2322,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(391, 1481);
+            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(391, 1506);
             this.tableLayoutPanelCustomize.TabIndex = 0;
             // 
             // groupBoxColorsDarkMode
@@ -2318,7 +2330,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxColorsDarkMode.AutoSize = true;
             this.groupBoxColorsDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxColorsDarkMode.Controls.Add(this.tableLayoutPanelDarkMode);
-            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 873);
+            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 898);
             this.groupBoxColorsDarkMode.MaximumSize = new System.Drawing.Size(385, 0);
             this.groupBoxColorsDarkMode.MinimumSize = new System.Drawing.Size(385, 0);
             this.groupBoxColorsDarkMode.Name = "groupBoxColorsDarkMode";
@@ -3391,7 +3403,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxColorsLightMode.AutoSize = true;
             this.groupBoxColorsLightMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxColorsLightMode.Controls.Add(this.tableLayoutPanelColorsAndDefault);
-            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 262);
+            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 287);
             this.groupBoxColorsLightMode.MaximumSize = new System.Drawing.Size(385, 0);
             this.groupBoxColorsLightMode.MinimumSize = new System.Drawing.Size(385, 0);
             this.groupBoxColorsLightMode.Name = "groupBoxColorsLightMode";
@@ -4471,7 +4483,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxAppearance.MaximumSize = new System.Drawing.Size(385, 0);
             this.groupBoxAppearance.MinimumSize = new System.Drawing.Size(385, 0);
             this.groupBoxAppearance.Name = "groupBoxAppearance";
-            this.groupBoxAppearance.Size = new System.Drawing.Size(385, 253);
+            this.groupBoxAppearance.Size = new System.Drawing.Size(385, 278);
             this.groupBoxAppearance.TabIndex = 1;
             this.groupBoxAppearance.TabStop = false;
             this.groupBoxAppearance.Text = "groupBoxAppearance";
@@ -4482,19 +4494,20 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAppearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelAppearance.ColumnCount = 1;
             this.tableLayoutPanelAppearance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowCountOfElementsBelow, 0, 7);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowLinkOverlay, 0, 4);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowCountOfElementsBelow, 0, 8);
             this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxUseFading, 0, 3);
             this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxUseIconFromRootFolder, 0, 0);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeysBelow, 0, 6);
-            this.tableLayoutPanelAppearance.Controls.Add(this.buttonAppearanceDefault, 0, 8);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowSearchBar, 0, 5);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowDirectoryTitleAtTop, 0, 4);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeysBelow, 0, 7);
+            this.tableLayoutPanelAppearance.Controls.Add(this.buttonAppearanceDefault, 0, 9);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowSearchBar, 0, 6);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowDirectoryTitleAtTop, 0, 5);
             this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxRoundCorners, 0, 1);
             this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 2);
             this.tableLayoutPanelAppearance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelAppearance.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelAppearance.Name = "tableLayoutPanelAppearance";
-            this.tableLayoutPanelAppearance.RowCount = 9;
+            this.tableLayoutPanelAppearance.RowCount = 10;
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -4504,13 +4517,14 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.Size = new System.Drawing.Size(379, 231);
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.Size = new System.Drawing.Size(379, 256);
             this.tableLayoutPanelAppearance.TabIndex = 1;
             // 
             // checkBoxShowCountOfElementsBelow
             // 
             this.checkBoxShowCountOfElementsBelow.AutoSize = true;
-            this.checkBoxShowCountOfElementsBelow.Location = new System.Drawing.Point(3, 178);
+            this.checkBoxShowCountOfElementsBelow.Location = new System.Drawing.Point(3, 203);
             this.checkBoxShowCountOfElementsBelow.Name = "checkBoxShowCountOfElementsBelow";
             this.checkBoxShowCountOfElementsBelow.Size = new System.Drawing.Size(232, 19);
             this.checkBoxShowCountOfElementsBelow.TabIndex = 4;
@@ -4543,7 +4557,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.checkBoxShowFunctionKeysBelow.AutoSize = true;
             this.checkBoxShowFunctionKeysBelow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxShowFunctionKeysBelow.Location = new System.Drawing.Point(3, 153);
+            this.checkBoxShowFunctionKeysBelow.Location = new System.Drawing.Point(3, 178);
             this.checkBoxShowFunctionKeysBelow.Name = "checkBoxShowFunctionKeysBelow";
             this.checkBoxShowFunctionKeysBelow.Size = new System.Drawing.Size(373, 19);
             this.checkBoxShowFunctionKeysBelow.TabIndex = 3;
@@ -4554,7 +4568,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAppearanceDefault.AutoSize = true;
             this.buttonAppearanceDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 203);
+            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 228);
             this.buttonAppearanceDefault.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonAppearanceDefault.Name = "buttonAppearanceDefault";
             this.buttonAppearanceDefault.Size = new System.Drawing.Size(154, 25);
@@ -4567,7 +4581,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.checkBoxShowSearchBar.AutoSize = true;
             this.checkBoxShowSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxShowSearchBar.Location = new System.Drawing.Point(3, 128);
+            this.checkBoxShowSearchBar.Location = new System.Drawing.Point(3, 153);
             this.checkBoxShowSearchBar.Name = "checkBoxShowSearchBar";
             this.checkBoxShowSearchBar.Size = new System.Drawing.Size(373, 19);
             this.checkBoxShowSearchBar.TabIndex = 2;
@@ -4578,7 +4592,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.checkBoxShowDirectoryTitleAtTop.AutoSize = true;
             this.checkBoxShowDirectoryTitleAtTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxShowDirectoryTitleAtTop.Location = new System.Drawing.Point(3, 103);
+            this.checkBoxShowDirectoryTitleAtTop.Location = new System.Drawing.Point(3, 128);
             this.checkBoxShowDirectoryTitleAtTop.Name = "checkBoxShowDirectoryTitleAtTop";
             this.checkBoxShowDirectoryTitleAtTop.Size = new System.Drawing.Size(373, 19);
             this.checkBoxShowDirectoryTitleAtTop.TabIndex = 1;
@@ -4656,16 +4670,15 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
-            // checkBoxSaveLogFileInApplicationDirectory
+            // checkBoxShowLinkOverlay
             // 
-            this.checkBoxSaveLogFileInApplicationDirectory.AutoSize = true;
-            this.checkBoxSaveLogFileInApplicationDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxSaveLogFileInApplicationDirectory.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxSaveLogFileInApplicationDirectory.Name = "checkBoxSaveLogFileInApplicationDirectory";
-            this.checkBoxSaveLogFileInApplicationDirectory.Size = new System.Drawing.Size(388, 19);
-            this.checkBoxSaveLogFileInApplicationDirectory.TabIndex = 1;
-            this.checkBoxSaveLogFileInApplicationDirectory.Text = "checkBoxSaveLogFileInApplicationDirectory";
-            this.checkBoxSaveLogFileInApplicationDirectory.UseVisualStyleBackColor = true;
+            this.checkBoxShowLinkOverlay.AutoSize = true;
+            this.checkBoxShowLinkOverlay.Location = new System.Drawing.Point(3, 103);
+            this.checkBoxShowLinkOverlay.Name = "checkBoxShowLinkOverlay";
+            this.checkBoxShowLinkOverlay.Size = new System.Drawing.Size(168, 19);
+            this.checkBoxShowLinkOverlay.TabIndex = 5;
+            this.checkBoxShowLinkOverlay.Text = "checkBoxShowLinkOverlay";
+            this.checkBoxShowLinkOverlay.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
@@ -5244,5 +5257,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.CheckBox checkBoxShowDirectoryTitleAtTop;
         private System.Windows.Forms.CheckBox checkBoxShowCountOfElementsBelow;
         private System.Windows.Forms.CheckBox checkBoxSaveLogFileInApplicationDirectory;
+        private System.Windows.Forms.CheckBox checkBoxShowLinkOverlay;
     }
 }

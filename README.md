@@ -282,7 +282,7 @@ Thanks for ideas, reporting issues and contributing!
 #372 [not-nef](https://github.com/not-nef),
 #376 Michelle H.,
 #377 [SoenkeHob](https://github.com/SoenkeHob),
-#380 [TransLucida](https://github.com/TransLucida),
+#380 #394 [TransLucida](https://github.com/TransLucida),
 #384 [boydfields](https://github.com/boydfields),
 #386 [visusys](https://github.com/visusys),
 #387 [yrctw](https://github.com/yrctw)

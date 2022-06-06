@@ -499,6 +499,9 @@
     <value>Onyesha upau wa kutafutia</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Kuhifadhi faili ya kumbukumbu kwenye saraka ya programu badala ya AppData</value>
+    <value>Kuhifadhi faili ya kumbukumbu katika saraka ya programu badala ya AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Onyesha wekeleo la kiungo</value>
   </data>
 </root>

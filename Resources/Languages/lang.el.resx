@@ -499,6 +499,9 @@
     <value>Εμφάνιση γραμμής αναζήτησης</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Αποθήκευση του αρχείου καταγραφής στον κατάλογο της εφαρμογής αντί για το AppData</value>
+    <value>Αποθήκευση αρχείου καταγραφής στον κατάλογο εφαρμογών αντί για AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Εμφάνιση επικάλυψης συνδέσμου</value>
   </data>
 </root>

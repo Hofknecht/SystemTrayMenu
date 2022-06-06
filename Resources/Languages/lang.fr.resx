@@ -217,7 +217,7 @@
     <value>Millisecondes jusqu'à ce qu'un menu s'ouvre lorsque la souris est dessus</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas la souris quitte ensuite le menu</value>
+    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas la souris quitte alors le menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Largeur maximale du menu en pixels</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Enregistrement du fichier journal dans le répertoire de l'application au lieu d'AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Afficher la superposition de liens</value>
   </data>
 </root>

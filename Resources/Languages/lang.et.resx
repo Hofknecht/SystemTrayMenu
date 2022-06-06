@@ -139,7 +139,7 @@
     <value>Üksikasjad</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Süsteemiteave</value>
+    <value>Süsteemi teave</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Kataloog pole juurdepääsetav</value>
@@ -499,6 +499,9 @@
     <value>Kuva otsinguriba</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Logifaili salvestamine AppData asemel rakenduste kataloogi</value>
+    <value>Logifaili salvestamine rakenduste kataloogi AppData asemel</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Kuva lingi ülekate</value>
   </data>
 </root>

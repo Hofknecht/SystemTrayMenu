@@ -175,7 +175,7 @@
     <value>Preguntes freqüents</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Llegiu les PMF i trieu un directori arrel per al SystemTrayMenu.</value>
+    <value>Llegiu les PMF i, a continuació, trieu un directori arrel per al SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Seleccioneu el directori</value>
@@ -481,7 +481,7 @@
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb lliscar</value>
+    <value>Desplaceu-vos amb el dit</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>
@@ -499,6 +499,9 @@
     <value>Mostra la barra de cerca</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Deseu el fitxer de registre al directori de l'aplicació en lloc d'AppData</value>
+    <value>Desant el fitxer de registre al directori de l'aplicació en lloc d'AppData</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Mostra la superposició d'enllaços</value>
   </data>
 </root>

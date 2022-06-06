@@ -247,7 +247,7 @@
     <value>Seçili eleman</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Seçili öğenin sınırı</value>
+    <value>Seçili öğenin kenarlığı</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Göreli dizine dönüştür</value>
@@ -500,5 +500,8 @@
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
     <value>Günlük dosyasını AppData yerine uygulama dizinine kaydetme</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Bağlantı yer paylaşımını göster</value>
   </data>
 </root>

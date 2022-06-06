@@ -18,7 +18,8 @@ namespace SystemTrayMenu
     public static class Config
     {
         private static readonly Icon SystemTrayMenu = Properties.Resources.SystemTrayMenu;
-        private static readonly Icon IconFromRootFolder = IconReader.GetFolderIconSTA(Path, IconReader.FolderType.Closed, false);
+        private static readonly Icon IconFromRootFolder = IconReader.GetIconSTA(
+            Path, false, IconReader.IconSize.Small, IconReader.FolderType.Closed);
 
         private static bool readDarkModeDone;
         private static bool isDarkMode;
@@ -82,7 +83,8 @@ namespace SystemTrayMenu
         {
             if (string.IsNullOrEmpty(Path))
             {
-                string textFirstStart = Translator.GetText("Read the FAQ and then choose a root directory for the SystemTrayMenu.");
+                string textFirstStart = Translator.GetText(
+                    "Read the FAQ and then choose a root directory for the SystemTrayMenu.");
                 MessageBox.Show(
                     textFirstStart,
                     "SystemTrayMenu",
@@ -246,12 +248,18 @@ namespace SystemTrayMenu
                 htmlColorCodeIcons = Settings.Default.ColorIcons;
             }
 
-            AppColors.BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapSettings = ReadSvg(Properties.Resources.ic_fluent_settings_28_regular, htmlColorCodeIcons);
-            AppColors.BitmapRestart = ReadSvg(Properties.Resources.ic_fluent_arrow_sync_24_regular, htmlColorCodeIcons);
-            AppColors.BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
-            AppColors.BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapOpenFolder =
+                ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapPin =
+                ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapSettings =
+                ReadSvg(Properties.Resources.ic_fluent_settings_28_regular, htmlColorCodeIcons);
+            AppColors.BitmapRestart =
+                ReadSvg(Properties.Resources.ic_fluent_arrow_sync_24_regular, htmlColorCodeIcons);
+            AppColors.BitmapPinActive =
+                ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
+            AppColors.BitmapSearch =
+                ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSearchField;
             colorAndCode.Color = Color.FromArgb(255, 255, 255);
