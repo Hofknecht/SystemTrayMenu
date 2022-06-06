@@ -100,6 +100,13 @@ namespace SystemTrayMenu.Helper
                     }
                     else
                     {
+                        if (!Properties.Settings.Default.UseFading)
+                        {
+                            // #393 provoke a redraw for the CS_DROPSHADOW to work
+                            opacity = ShownMinus;
+                            ChangeOpacity?.Invoke(this, opacity);
+                        }
+
                         opacity = Shown;
                         ChangeOpacity?.Invoke(this, opacity);
                         StartStopTimer(FadingState.Idle);
