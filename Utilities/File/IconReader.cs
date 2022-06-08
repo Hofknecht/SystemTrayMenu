@@ -152,11 +152,7 @@ namespace SystemTrayMenu.Utilities
         {
             loading = false;
             string extension = Path.GetExtension(filePath);
-            IconSize size = IconSize.Small;
-            if (Scaling.Factor > 1)
-            {
-                size = IconSize.Large;
-            }
+            IconSize size = IconSize.Large;
 
             string key = filePath;
             if (!string.IsNullOrEmpty(keyPath))
@@ -197,8 +193,13 @@ namespace SystemTrayMenu.Utilities
         {
             loading = false;
 
-            // always IconSize.Small, because IconSize.Large returns another folder icon than windows explorer
             IconSize size = IconSize.Small;
+            if (Scaling.Factor >= 1.50f ||
+                Properties.Settings.Default.IconSizeInPercent / 100f >= 1.50f)
+            {
+                // IconSize.Large returns another folder icon than windows explorer
+                size = IconSize.Large;
+            }
 
             string key = path;
 
