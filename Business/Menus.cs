@@ -470,7 +470,7 @@ namespace SystemTrayMenu.Business
                     RowData rowData = ReadRowData(directory, false, true);
                     rowData.HiddenEntry = hiddenEntry;
                     string resolvedLnkPath = string.Empty;
-                    rowData.ReadIcon(true, ref resolvedLnkPath, level);
+                    rowData.ReadIconOrResolveLinkAndReadIcon(true, ref resolvedLnkPath, level);
                     rowData.MenuLevel = level;
                     menuData.RowDatas.Add(rowData);
                 }
@@ -528,7 +528,7 @@ namespace SystemTrayMenu.Business
                     }
 
                     string resolvedLnkPath = string.Empty;
-                    if (rowData.ReadIcon(false, ref resolvedLnkPath, level))
+                    if (rowData.ReadIconOrResolveLinkAndReadIcon(false, ref resolvedLnkPath, level))
                     {
                         rowData = ReadRowData(resolvedLnkPath, true, true, rowData);
                         rowData.HiddenEntry = hiddenEntry;

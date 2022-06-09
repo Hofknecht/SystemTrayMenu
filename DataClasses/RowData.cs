@@ -81,7 +81,7 @@ namespace SystemTrayMenu.DataClasses
             row[2] = data;
         }
 
-        internal bool ReadIcon(bool isDirectory, ref string resolvedLnkPath, int level)
+        internal bool ReadIconOrResolveLinkAndReadIcon(bool isDirectory, ref string resolvedLnkPath, int level)
         {
             bool isLnkDirectory = false;
 
@@ -108,17 +108,13 @@ namespace SystemTrayMenu.DataClasses
 
                 if (fileExtension.Equals(".lnk", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    handled = SetLnk(level, ref isLnkDirectory, ref resolvedLnkPath);
+                    handled = ResolveLinkAndReadIcon(level, ref isLnkDirectory, ref resolvedLnkPath);
                     showOverlay = Properties.Settings.Default.ShowLinkOverlay;
                 }
                 else if (fileExtension.Equals(".url", StringComparison.InvariantCultureIgnoreCase))
                 {
                     SetText($"{FileInfo.Name[0..^4]}");
                     showOverlay = Properties.Settings.Default.ShowLinkOverlay;
-                }
-                else if (fileExtension.Equals(".sln", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    handled = SetSln(level);
                 }
                 else if (fileExtension.Equals(".appref-ms", StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -127,21 +123,14 @@ namespace SystemTrayMenu.DataClasses
 
                 if (!handled)
                 {
-                    try
-                    {
-                        FilePathIcon = TargetFilePathOrig;
-                        icon = IconReader.GetFileIconWithCache(
-                            FilePathIcon,
-                            showOverlay,
-                            true,
-                            level == 0,
-                            out bool loading);
-                        IconLoading = loading;
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Warn($"path:'{TargetFilePathOrig}'", ex);
-                    }
+                    icon = IconReader.GetFileIconWithCache(
+                        TargetFilePathOrig,
+                        TargetFilePath,
+                        showOverlay,
+                        true,
+                        level == 0,
+                        out bool loading);
+                    IconLoading = loading;
                 }
             }
 
@@ -250,20 +239,15 @@ namespace SystemTrayMenu.DataClasses
             else
             {
                 bool showOverlay = false;
-                string fileExtension = Path.GetExtension(TargetFilePath);
+                string fileExtension = Path.GetExtension(TargetFilePathOrig);
                 if (fileExtension == ".lnk" || fileExtension == ".url" || fileExtension == ".appref-ms")
                 {
                     showOverlay = Properties.Settings.Default.ShowLinkOverlay;
                 }
 
-                string filePath = FilePathIcon;
-                if (string.IsNullOrEmpty(filePath))
-                {
-                    filePath = TargetFilePathOrig;
-                }
-
                 icon = IconReader.GetFileIconWithCache(
-                    filePath,
+                    TargetFilePathOrig,
+                    TargetFilePath,
                     showOverlay,
                     false,
                     MenuLevel == 0,
@@ -299,7 +283,7 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        private bool SetLnk(int level, ref bool isLnkDirectory, ref string resolvedLnkPath)
+        private bool ResolveLinkAndReadIcon(int level, ref bool isLnkDirectory, ref string resolvedLnkPath)
         {
             bool handled = false;
             resolvedLnkPath = FileLnk.GetResolvedFileName(TargetFilePath, out bool isFolder);
@@ -331,27 +315,6 @@ namespace SystemTrayMenu.DataClasses
             }
 
             SetText(Path.GetFileNameWithoutExtension(TargetFilePathOrig));
-
-            return handled;
-        }
-
-        private bool SetSln(int level)
-        {
-            bool handled = false;
-            try
-            {
-                icon = IconReader.GetExtractAllIconsLastWithCache(
-                    TargetFilePathOrig,
-                    true,
-                    level == 0,
-                    out bool loading);
-                IconLoading = loading;
-                handled = true;
-            }
-            catch (Exception ex)
-            {
-                Log.Warn($"path:'{TargetFilePath}'", ex);
-            }
 
             return handled;
         }

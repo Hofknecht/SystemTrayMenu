@@ -19,7 +19,7 @@ namespace SystemTrayMenu
     {
         private static readonly Icon SystemTrayMenu = Properties.Resources.SystemTrayMenu;
         private static readonly Icon IconFromRootFolder = IconReader.GetIconSTA(
-            Path, false, IconReader.IconSize.Small, IconReader.FolderType.Closed);
+            Path, Path, false, IconReader.IconSize.Small, IconReader.FolderType.Closed);
 
         private static bool readDarkModeDone;
         private static bool isDarkMode;
