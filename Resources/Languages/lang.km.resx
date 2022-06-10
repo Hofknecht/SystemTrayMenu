@@ -355,7 +355,7 @@
     <value>បង្ហាញនៅក្នុងរបារភារកិច្ច</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>បន្ថែម​ថត</value>
+    <value>បន្ថែមថត</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>បន្ថែមមាតិកានៃថតទៅថតឫស</value>
@@ -502,6 +502,9 @@
     <value>ការរក្សាទុកឯកសារកំណត់ហេតុនៅក្នុងថតកម្មវិធីជំនួសឱ្យ AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
-    <value>បង្ហាញតំណជាន់លើ</value>
+    <value>បង្ហាញការត្រួតលើតំណ</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>បញ្ជីឈ្មោះរូបតំណាងផ្លូវកាត់អ៊ីនធឺណិត</value>
   </data>
 </root>

@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>Zobraziť prekrytie odkazu</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Adresár ikon internetových skratiek</value>
+  </data>
 </root>

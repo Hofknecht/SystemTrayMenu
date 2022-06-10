@@ -316,7 +316,7 @@
     <value>ხატები</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>კონტექსტური მენიუს დაყენება</value>
+    <value>დაყენებულია კონტექსტური მენიუს მიხედვით</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>დააყენეთ დირექტორიად</value>
@@ -481,7 +481,7 @@
     <value>გადაათრიეთ</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>გადაფურცლეთ დარტყმის საშუალებით</value>
+    <value>გადაფურცვლა დარტყმის საშუალებით</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>მენიუს გაფილტვრა ფაილის ტიპის მიხედვით, მაგ.: *.exe|*.dll</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>ბმულის გადაფარვის ჩვენება</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ინტერნეტ მალსახმობების ხატულების დირექტორია</value>
   </data>
 </root>

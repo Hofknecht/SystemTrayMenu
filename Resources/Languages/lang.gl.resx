@@ -316,7 +316,7 @@
     <value>Iconas</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Establecer mediante menú contextual</value>
+    <value>Establecido por menú contextual</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Establecer como directorio</value>
@@ -442,7 +442,7 @@
     <value>Fai un só clic para abrir un directorio en lugar de facer dobre clic</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>A carón do anterior</value>
+    <value>Xunto ao anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
     <value>Compensación por píxeles</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Mostra a superposición de ligazóns</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Directorio de iconas de atallos de Internet</value>
   </data>
 </root>

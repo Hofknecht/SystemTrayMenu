@@ -499,9 +499,12 @@
     <value>Taispeáin barra cuardaigh</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Comhad loga a shábháil in eolaire feidhmchlár in ionad AppData</value>
+    <value>Comhad loga a shábháil san eolaire feidhmchlár in ionad AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Taispeáin forleagan naisc</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Eolaire de Dheilbhíní Aicearra Idirlín</value>
   </data>
 </root>

@@ -463,7 +463,7 @@
     <value>Forvelkanta</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Sendu klavoklavon al alia petskribo</value>
+    <value>Sendu klavoklavon al alia kazo</value>
   </data>
   <data name="Sort by date" xml:space="preserve">
     <value>Ordigi laŭ dato</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Montru ligkovraĵon</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Dosierujo de Interretaj Ŝparvojaj Ikonoj</value>
   </data>
 </root>

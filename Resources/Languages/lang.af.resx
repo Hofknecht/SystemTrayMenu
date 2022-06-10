@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>Wys skakeloorleg</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Gids van internetkortpad-ikone</value>
+  </data>
 </root>

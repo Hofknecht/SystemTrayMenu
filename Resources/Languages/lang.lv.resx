@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>Rādīt saites pārklājumu</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Interneta īsceļu ikonu direktorijs</value>
+  </data>
 </root>

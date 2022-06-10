@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>Uri link overlay</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Direttorju tal-Ikoni tal-Shortcut tal-Internet</value>
+  </data>
 </root>

@@ -229,7 +229,7 @@
     <value>Laikas iki meniu atsidarymo</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>Jei spustelėjote elementą</value>
+    <value>Jei elementas buvo paspaustas</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Fonas</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Rodyti nuorodos perdangą</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Interneto nuorodų piktogramų katalogas</value>
   </data>
 </root>

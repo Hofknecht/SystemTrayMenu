@@ -403,7 +403,7 @@
     <value>Pojavljuje se glavni izbornik</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Lokacija miša (iznad ikone na traci zadataka)</value>
+    <value>Lokacija miša (iznad ikone trake zadataka)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Prilagođeno (povucite na odgovarajuće mjesto)</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Prikaži preklapanje veze</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Imenik ikona internetskih prečaca</value>
   </data>
 </root>

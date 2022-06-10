@@ -152,13 +152,15 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxDrag.Text = Translator.GetText("Drag");
                 checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
+                groupBoxInternetShortcutIcons.Text = Translator.GetText("Directory of Internet Shortcut Icons");
+                buttonChangeIcoFolder.Text = Translator.GetText("Changing directory");
+                groupBoxSorting.Text = Translator.GetText("Sorting");
+                radioButtonSortByName.Text = Translator.GetText("Sort by name");
+                radioButtonSortByDate.Text = Translator.GetText("Sort by date");
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");
                 radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
                 radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, directories or drives");
                 radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always show hidden files, directories or drives");
-                groupBoxSorting.Text = Translator.GetText("Sorting");
-                radioButtonSortByName.Text = Translator.GetText("Sort by name");
-                radioButtonSortByDate.Text = Translator.GetText("Sort by date");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
 
                 tabPageFolders.Text = Translator.GetText("Directories");
@@ -456,11 +458,12 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxSwipeScrolling.Checked = Settings.Default.SwipeScrollingEnabled;
             }
 
+            textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
+            radioButtonSortByName.Checked = !Settings.Default.SortFolderAndFilesByDate;
+            radioButtonSortByDate.Checked = Settings.Default.SortFolderAndFilesByDate;
             radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
             radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
             radioButtonAlwaysShowHiddenFiles.Checked = Settings.Default.AlwaysShowHiddenFiles;
-            radioButtonSortByName.Checked = !Settings.Default.SortFolderAndFilesByDate;
-            radioButtonSortByDate.Checked = Settings.Default.SortFolderAndFilesByDate;
 
             checkBoxShowOnlyAsSearchResult.Checked = Settings.Default.ShowOnlyAsSearchResult;
             try
@@ -929,10 +932,11 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.SwipeScrollingEnabled = checkBoxSwipeScrolling.Checked;
             }
 
+            Settings.Default.PathIcoDirectory = textBoxIcoFolder.Text;
+            Settings.Default.SortFolderAndFilesByDate = radioButtonSortByDate.Checked;
             Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
             Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
             Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;
-            Settings.Default.SortFolderAndFilesByDate = radioButtonSortByDate.Checked;
 
             Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.Checked;
             Settings.Default.PathsAddToMainMenu = string.Empty;
@@ -1091,6 +1095,12 @@ namespace SystemTrayMenu.UserInterface
             inHotkey = false;
         }
 
+        private void ButtonChangeIcoFolder_Click(object sender, EventArgs e)
+        {
+            Config.SetFolderIcoByUser();
+            textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
+        }
+
         private void ButtonAddSampleStartMenuFolder_Click(object sender, EventArgs e)
         {
             dataGridViewFolders.Rows.Clear();
@@ -1212,13 +1222,31 @@ namespace SystemTrayMenu.UserInterface
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = false;
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxOpenDirectoryWithOneClick.Checked = false;
+            if (DllImports.NativeMethods.IsTouchEnabled())
+            {
+                checkBoxDragDropItems.Checked = false;
+                checkBoxSwipeScrolling.Checked = true;
+            }
+            else
+            {
+                checkBoxDragDropItems.Checked = true;
+                checkBoxSwipeScrolling.Checked = false;
+            }
 
-            radioButtonSystemSettingsShowHiddenFiles.Checked = true;
-            radioButtonNeverShowHiddenFiles.Checked = false;
-            radioButtonAlwaysShowHiddenFiles.Checked = false;
+            textBoxIcoFolder.Text = Path.Combine(
+                    Path.Combine(
+                        Environment.GetFolderPath(
+                            Environment.SpecialFolder.ApplicationData), $"SystemTrayMenu"), "ico");
+            if (!Directory.Exists(Settings.Default.PathIcoDirectory))
+            {
+                Directory.CreateDirectory(Settings.Default.PathIcoDirectory);
+            }
 
             radioButtonSortByName.Checked = true;
             radioButtonSortByDate.Checked = false;
+            radioButtonSystemSettingsShowHiddenFiles.Checked = true;
+            radioButtonNeverShowHiddenFiles.Checked = false;
+            radioButtonAlwaysShowHiddenFiles.Checked = false;
         }
 
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)

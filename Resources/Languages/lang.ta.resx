@@ -439,7 +439,7 @@
     <value>தேடல் முடிவாக மட்டும் காட்டு</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>டபுள் கிளிக் செய்வதற்குப் பதிலாக ஒரு கோப்பகத்தைத் திறக்க ஒற்றைக் கிளிக் செய்யவும்</value>
+    <value>ஒரு கோப்பகத்தைத் திறக்க, இரட்டை சொடுக்கிற்குப் பதிலாக ஒற்றை கிளிக் செய்யவும்</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>முந்தையதை அடுத்து</value>
@@ -499,9 +499,12 @@
     <value>தேடல் பட்டியைக் காட்டு</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>AppData க்குப் பதிலாகப் பதிவுக் கோப்பை பயன்பாட்டுக் கோப்பகத்தில் சேமிக்கிறது</value>
+    <value>AppData க்குப் பதிலாக பதிவுக் கோப்பை பயன்பாட்டுக் கோப்பகத்தில் சேமிக்கிறது</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>இணைப்பு மேலடுக்கைக் காட்டு</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>இணைய குறுக்குவழி ஐகான்களின் அடைவு</value>
   </data>
 </root>

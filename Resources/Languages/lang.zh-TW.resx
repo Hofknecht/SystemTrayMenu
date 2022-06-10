@@ -274,7 +274,7 @@
     <value>鼠標懸停時的箭頭</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>單擊時箭頭的背景</value>
+    <value>點擊時箭頭的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>鼠標懸停在箭頭上時的箭頭背景</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>顯示鏈接覆蓋</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Internet 快捷方式圖標目錄</value>
   </data>
 </root>

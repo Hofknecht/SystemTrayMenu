@@ -44,6 +44,17 @@ namespace SystemTrayMenu
         {
             UpgradeIfNotUpgraded();
             InitializeColors();
+            if (string.IsNullOrEmpty(Settings.Default.PathIcoDirectory))
+            {
+                Settings.Default.PathIcoDirectory = System.IO.Path.Combine(
+                    System.IO.Path.Combine(
+                        Environment.GetFolderPath(
+                            Environment.SpecialFolder.ApplicationData), $"SystemTrayMenu"), "ico");
+                if (!Directory.Exists(Settings.Default.PathIcoDirectory))
+                {
+                    Directory.CreateDirectory(Settings.Default.PathIcoDirectory);
+                }
+            }
         }
 
         public static void Dispose()
@@ -106,6 +117,17 @@ namespace SystemTrayMenu
                 {
                     Settings.Default.Save();
                 }
+            }
+        }
+
+        public static void SetFolderIcoByUser()
+        {
+            using FolderDialog dialog = new();
+            dialog.InitialFolder = Settings.Default.PathIcoDirectory;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Settings.Default.PathIcoDirectory = dialog.Folder;
             }
         }
 

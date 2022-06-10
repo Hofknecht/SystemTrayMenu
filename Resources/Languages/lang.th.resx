@@ -175,7 +175,7 @@
     <value>คำถามที่พบบ่อย</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>อ่านคำถามที่พบบ่อย จากนั้นเลือกไดเรกทอรีรากสำหรับ SystemTrayMenu</value>
+    <value>อ่านคำถามที่พบบ่อย จากนั้นเลือกไดเร็กทอรีรากสำหรับ SystemTrayMenu</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>เลือกไดเรกทอรี</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>แสดงการวางซ้อนลิงก์</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ไดเรกทอรีของไอคอนทางลัดอินเทอร์เน็ต</value>
   </data>
 </root>

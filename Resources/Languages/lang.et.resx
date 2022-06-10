@@ -139,7 +139,7 @@
     <value>Üksikasjad</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Süsteemi teave</value>
+    <value>Süsteemiteave</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Kataloog pole juurdepääsetav</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Kuva lingi ülekate</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Interneti otseteede ikoonide kataloog</value>
   </data>
 </root>

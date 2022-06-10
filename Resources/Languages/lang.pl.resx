@@ -277,7 +277,7 @@
     <value>Tło strzałki po kliknięciu</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Tło strzałki po najechaniu na nią myszą</value>
+    <value>Tło strzałki po najechaniu na nią kursorem myszy</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Kolorystyka ciemny</value>
@@ -457,7 +457,7 @@
     <value>Rozmiar ikon w procentach</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Wsparcie systemoweZasobnikMenu</value>
+    <value>Wsparcie SystemoweTacaMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Zblakły</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Pokaż nakładkę linku</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Katalog ikon skrótów internetowych</value>
   </data>
 </root>

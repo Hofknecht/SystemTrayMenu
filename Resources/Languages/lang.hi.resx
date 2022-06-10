@@ -181,7 +181,7 @@
     <value>निर्देशिका का चयन करें</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ऐप के लिए आपकी रूट डायरेक्टरी मौजूद नहीं है या खाली है! रूट डायरेक्टरी बदलें या रूट डायरेक्टरी में कुछ फाइल, डायरेक्टरी या शॉर्टकट डालें।</value>
+    <value>ऐप के लिए आपकी रूट निर्देशिका मौजूद नहीं है या खाली है! रूट डायरेक्टरी बदलें या रूट डायरेक्टरी में कुछ फाइल, डायरेक्टरी या शॉर्टकट डालें।</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>आपके पास ऐप की रूट डायरेक्टरी तक पहुंच नहीं है। निर्देशिका तक पहुंच प्रदान करें या रूट निर्देशिका बदलें।</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>लिंक ओवरले दिखाएं</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>इंटरनेट शॉर्टकट आइकन की निर्देशिका</value>
   </data>
 </root>

@@ -133,7 +133,7 @@
     <value>Ευρετήριο</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Κενός κατάλογος</value>
+    <value>Ο κατάλογος είναι κενός</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Λεπτομέριες</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Εμφάνιση επικάλυψης συνδέσμου</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Κατάλογος εικονιδίων συντομεύσεων Διαδικτύου</value>
   </data>
 </root>

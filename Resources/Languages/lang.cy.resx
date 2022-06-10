@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>Dangos troshaen cyswllt</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Cyfeiriadur o Eiconau Llwybr Byr Rhyngrwyd</value>
+  </data>
 </root>

@@ -403,7 +403,7 @@
     <value>Aðalvalmynd birtist</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Staðsetning músar (fyrir ofan verkefnastikuna)</value>
+    <value>Staðsetning músar (fyrir ofan verkstiku táknið)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Sérsniðið (dragaðu það á viðeigandi stað)</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Sýna hlekkjayfirlag</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Skrá yfir Internet flýtivísa tákn</value>
   </data>
 </root>

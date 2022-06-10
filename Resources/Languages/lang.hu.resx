@@ -403,7 +403,7 @@
     <value>Megjelenik a főmenü</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Az egér helye (a tálca ikonja felett)</value>
+    <value>Az egér helye (a tálcán lévő ikon felett)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Egyéni (húzza a megfelelő helyre)</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Linkfedvény megjelenítése</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Internet parancsikonok könyvtára</value>
   </data>
 </root>

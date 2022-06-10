@@ -184,7 +184,7 @@
     <value>דיין וואָרצל וועגווייַזער פֿאַר די אַפּ טוט נישט עקסיסטירן אָדער איז ליידיק! טוישן די וואָרצל וועגווייַזער אָדער שטעלן עטלעכע טעקעס, דירעקטעריז אָדער דורכוועג אין דער וואָרצל וועגווייַזער.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>איר האָט קיין אַקסעס צו דער וואָרצל וועגווייַזער פון די אַפּ. געבן אַקסעס צו דער וועגווייַזער אָדער טוישן די וואָרצל וועגווייַזער.</value>
+    <value>איר האָבן קיין אַקסעס צו דער וואָרצל וועגווייַזער פון די אַפּ. געבן אַקסעס צו דער וועגווייַזער אָדער טוישן די וואָרצל וועגווייַזער.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>איין גיט צו עפענען אַן עלעמענט אַנשטאָט פון טאָפּל גיט</value>
@@ -433,7 +433,7 @@
     <value>גרייס און אָרט</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
-    <value>ניצן אַפּערייטינג סיסטעם סעטטינגס</value>
+    <value>ניצן אָפּערייטינג סיסטעם סעטטינגס</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>ווייַזן בלויז ווי זוכן רעזולטאַט</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>ווייַזן לינק אָוווערליי</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Directory פון אינטערנעט דורכוועג יקאָנס</value>
   </data>
 </root>

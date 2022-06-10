@@ -30,16 +30,16 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string CurrentCultureInfoName
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool IsUpgraded
         {
             get
             {
-                return ((string)(this["CurrentCultureInfoName"]));
+                return ((bool)(this["IsUpgraded"]));
             }
             set
             {
-                this["CurrentCultureInfoName"] = value;
+                this["IsUpgraded"] = value;
             }
         }
 
@@ -56,38 +56,6 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["PathDirectory"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string PathsAddToMainMenu
-        {
-            get
-            {
-                return ((string)(this["PathsAddToMainMenu"]));
-            }
-            set
-            {
-                this["PathsAddToMainMenu"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool IsAutostartActivated
-        {
-            get
-            {
-                return ((bool)(this["IsAutostartActivated"]));
-            }
-            set
-            {
-                this["IsAutostartActivated"] = value;
             }
         }
 
@@ -126,6 +94,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool IsAutostartActivated
+        {
+            get
+            {
+                return ((bool)(this["IsAutostartActivated"]));
+            }
+            set
+            {
+                this["IsAutostartActivated"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+LWin")]
         public string HotKey
         {
@@ -142,16 +126,225 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool IsUpgraded
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CurrentCultureInfoName
         {
             get
             {
-                return ((bool)(this["IsUpgraded"]));
+                return ((string)(this["CurrentCultureInfoName"]));
             }
             set
             {
-                this["IsUpgraded"] = value;
+                this["CurrentCultureInfoName"] = value;
+            }
+        }
+
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("125")]
+        public int SizeInPercent
+        {
+            get
+            {
+                return ((int)(this["SizeInPercent"]));
+            }
+            set
+            {
+                this["SizeInPercent"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int IconSizeInPercent
+        {
+            get
+            {
+                return ((int)(this["IconSizeInPercent"]));
+            }
+            set
+            {
+                this["IconSizeInPercent"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("150")]
+        public int RowHeighteInPercentageTouch
+        {
+            get
+            {
+                return ((int)(this["RowHeighteInPercentageTouch"]));
+            }
+            set
+            {
+                this["RowHeighteInPercentageTouch"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int RowHeighteInPercentage
+        {
+            get
+            {
+                return ((int)(this["RowHeighteInPercentage"]));
+            }
+            set
+            {
+                this["RowHeighteInPercentage"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        public int MaximumMenuWidth
+        {
+            get
+            {
+                return ((int)(this["MaximumMenuWidth"]));
+            }
+            set
+            {
+                this["MaximumMenuWidth"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("450")]
+        public int MaximumMenuHeight
+        {
+            get
+            {
+                return ((int)(this["MaximumMenuHeight"]));
+            }
+            set
+            {
+                this["MaximumMenuHeight"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool AppearAtTheBottomLeft
+        {
+            get
+            {
+                return ((bool)(this["AppearAtTheBottomLeft"]));
+            }
+            set
+            {
+                this["AppearAtTheBottomLeft"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool UseCustomLocation
+        {
+            get
+            {
+                return ((bool)(this["UseCustomLocation"]));
+            }
+            set
+            {
+                this["UseCustomLocation"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("600")]
+        public int CustomLocationX
+        {
+            get
+            {
+                return ((int)(this["CustomLocationX"]));
+            }
+            set
+            {
+                this["CustomLocationX"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("600")]
+        public int CustomLocationY
+        {
+            get
+            {
+                return ((int)(this["CustomLocationY"]));
+            }
+            set
+            {
+                this["CustomLocationY"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool AppearAtMouseLocation
+        {
+            get
+            {
+                return ((bool)(this["AppearAtMouseLocation"]));
+            }
+            set
+            {
+                this["AppearAtMouseLocation"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool AppearNextToPreviousMenu
+        {
+            get
+            {
+                return ((bool)(this["AppearNextToPreviousMenu"]));
+            }
+            set
+            {
+                this["AppearNextToPreviousMenu"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("150")]
+        public int OverlappingOffsetPixels
+        {
+            get
+            {
+                return ((int)(this["OverlappingOffsetPixels"]));
+            }
+            set
+            {
+                this["OverlappingOffsetPixels"] = value;
             }
         }
 
@@ -187,102 +380,6 @@ namespace SystemTrayMenu.Properties
             }
         }
 
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public bool SystemSettingsShowHiddenFiles
-        {
-            get
-            {
-                return ((bool)(this["SystemSettingsShowHiddenFiles"]));
-            }
-            set
-            {
-                this["SystemSettingsShowHiddenFiles"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool AlwaysShowHiddenFiles
-        {
-            get
-            {
-                return ((bool)(this["AlwaysShowHiddenFiles"]));
-            }
-            set
-            {
-                this["AlwaysShowHiddenFiles"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool NeverShowHiddenFiles
-        {
-            get
-            {
-                return ((bool)(this["NeverShowHiddenFiles"]));
-            }
-            set
-            {
-                this["NeverShowHiddenFiles"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public bool AppearAtTheBottomLeft
-        {
-            get
-            {
-                return ((bool)(this["AppearAtTheBottomLeft"]));
-            }
-            set
-            {
-                this["AppearAtTheBottomLeft"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public bool AppearNextToPreviousMenu
-        {
-            get
-            {
-                return ((bool)(this["AppearNextToPreviousMenu"]));
-            }
-            set
-            {
-                this["AppearNextToPreviousMenu"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("150")]
-        public int OverlappingOffsetPixels
-        {
-            get
-            {
-                return ((int)(this["OverlappingOffsetPixels"]));
-            }
-            set
-            {
-                this["OverlappingOffsetPixels"] = value;
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -382,6 +479,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PathIcoDirectory
+        {
+            get
+            {
+                return ((string)(this["PathIcoDirectory"]));
+            }
+            set
+            {
+                this["PathIcoDirectory"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("false")]
         public bool SortFolderAndFilesByDate
         {
@@ -392,6 +505,54 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["SortFolderAndFilesByDate"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool SystemSettingsShowHiddenFiles
+        {
+            get
+            {
+                return ((bool)(this["SystemSettingsShowHiddenFiles"]));
+            }
+            set
+            {
+                this["SystemSettingsShowHiddenFiles"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool NeverShowHiddenFiles
+        {
+            get
+            {
+                return ((bool)(this["NeverShowHiddenFiles"]));
+            }
+            set
+            {
+                this["NeverShowHiddenFiles"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool AlwaysShowHiddenFiles
+        {
+            get
+            {
+                return ((bool)(this["AlwaysShowHiddenFiles"]));
+            }
+            set
+            {
+                this["AlwaysShowHiddenFiles"] = value;
             }
         }
 
@@ -414,6 +575,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PathsAddToMainMenu
+        {
+            get
+            {
+                return ((string)(this["PathsAddToMainMenu"]));
+            }
+            set
+            {
+                this["PathsAddToMainMenu"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("false")]
         public bool GenerateShortcutsToDrives
         {
@@ -424,6 +601,102 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["GenerateShortcutsToDrives"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int TimeUntilOpens
+        {
+            get
+            {
+                return ((int)(this["TimeUntilOpens"]));
+            }
+            set
+            {
+                this["TimeUntilOpens"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool StaysOpenWhenItemClicked
+        {
+            get
+            {
+                return ((bool)(this["StaysOpenWhenItemClicked"]));
+            }
+            set
+            {
+                this["StaysOpenWhenItemClicked"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool StaysOpenWhenFocusLost
+        {
+            get
+            {
+                return ((bool)(this["StaysOpenWhenFocusLost"]));
+            }
+            set
+            {
+                this["StaysOpenWhenFocusLost"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        public int TimeUntilCloses
+        {
+            get
+            {
+                return ((int)(this["TimeUntilCloses"]));
+            }
+            set
+            {
+                this["TimeUntilCloses"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool StaysOpenWhenFocusLostAfterEnterPressed
+        {
+            get
+            {
+                return ((bool)(this["StaysOpenWhenFocusLostAfterEnterPressed"]));
+            }
+            set
+            {
+                this["StaysOpenWhenFocusLostAfterEnterPressed"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int TimeUntilClosesAfterEnterPressed
+        {
+            get
+            {
+                return ((int)(this["TimeUntilClosesAfterEnterPressed"]));
+            }
+            set
+            {
+                this["TimeUntilClosesAfterEnterPressed"] = value;
             }
         }
 
@@ -446,6 +719,70 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int ClearCacheIfMoreThanThisNumberOfItems
+        {
+            get
+            {
+                return ((int)(this["ClearCacheIfMoreThanThisNumberOfItems"]));
+            }
+            set
+            {
+                this["ClearCacheIfMoreThanThisNumberOfItems"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SearchPattern
+        {
+            get
+            {
+                return ((string)(this["SearchPattern"]));
+            }
+            set
+            {
+                this["SearchPattern"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool UseIconFromRootFolder
+        {
+            get
+            {
+                return ((bool)(this["UseIconFromRootFolder"]));
+            }
+            set
+            {
+                this["UseIconFromRootFolder"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool RoundCorners
+        {
+            get
+            {
+                return ((bool)(this["RoundCorners"]));
+            }
+            set
+            {
+                this["RoundCorners"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("true")]
         public bool IsDarkModeAlwaysOn
         {
@@ -456,6 +793,22 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["IsDarkModeAlwaysOn"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool UseFading
+        {
+            get
+            {
+                return ((bool)(this["UseFading"]));
+            }
+            set
+            {
+                this["UseFading"] = value;
             }
         }
 
@@ -511,22 +864,6 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool ShowCountOfElementsBelow
-        {
-            get
-            {
-                return ((bool)(this["ShowCountOfElementsBelow"]));
-            }
-            set
-            {
-                this["ShowCountOfElementsBelow"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
         public bool ShowFunctionKeysBelow
         {
             get
@@ -542,304 +879,16 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200")]
-        public int ClearCacheIfMoreThanThisNumberOfItems
-        {
-            get
-            {
-                return ((int)(this["ClearCacheIfMoreThanThisNumberOfItems"]));
-            }
-            set
-            {
-                this["ClearCacheIfMoreThanThisNumberOfItems"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("125")]
-        public int SizeInPercent
-        {
-            get
-            {
-                return ((int)(this["SizeInPercent"]));
-            }
-            set
-            {
-                this["SizeInPercent"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("150")]
-        public int RowHeighteInPercentageTouch
-        {
-            get
-            {
-                return ((int)(this["RowHeighteInPercentageTouch"]));
-            }
-            set
-            {
-                this["RowHeighteInPercentageTouch"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int RowHeighteInPercentage
-        {
-            get
-            {
-                return ((int)(this["RowHeighteInPercentage"]));
-            }
-            set
-            {
-                this["RowHeighteInPercentage"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int IconSizeInPercent
-        {
-            get
-            {
-                return ((int)(this["IconSizeInPercent"]));
-            }
-            set
-            {
-                this["IconSizeInPercent"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool RoundCorners
+        public bool ShowCountOfElementsBelow
         {
             get
             {
-                return ((bool)(this["RoundCorners"]));
+                return ((bool)(this["ShowCountOfElementsBelow"]));
             }
             set
             {
-                this["RoundCorners"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("400")]
-        public int MaximumMenuWidth
-        {
-            get
-            {
-                return ((int)(this["MaximumMenuWidth"]));
-            }
-            set
-            {
-                this["MaximumMenuWidth"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("450")]
-        public int MaximumMenuHeight
-        {
-            get
-            {
-                return ((int)(this["MaximumMenuHeight"]));
-            }
-            set
-            {
-                this["MaximumMenuHeight"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool AppearAtMouseLocation
-        {
-            get
-            {
-                return ((bool)(this["AppearAtMouseLocation"]));
-            }
-            set
-            {
-                this["AppearAtMouseLocation"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool UseCustomLocation
-        {
-            get
-            {
-                return ((bool)(this["UseCustomLocation"]));
-            }
-            set
-            {
-                this["UseCustomLocation"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool UseFading
-        {
-            get
-            {
-                return ((bool)(this["UseFading"]));
-            }
-            set
-            {
-                this["UseFading"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("600")]
-        public int CustomLocationX
-        {
-            get
-            {
-                return ((int)(this["CustomLocationX"]));
-            }
-            set
-            {
-                this["CustomLocationX"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("600")]
-        public int CustomLocationY
-        {
-            get
-            {
-                return ((int)(this["CustomLocationY"]));
-            }
-            set
-            {
-                this["CustomLocationY"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public bool StaysOpenWhenItemClicked
-        {
-            get
-            {
-                return ((bool)(this["StaysOpenWhenItemClicked"]));
-            }
-            set
-            {
-                this["StaysOpenWhenItemClicked"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public bool StaysOpenWhenFocusLost
-        {
-            get
-            {
-                return ((bool)(this["StaysOpenWhenFocusLost"]));
-            }
-            set
-            {
-                this["StaysOpenWhenFocusLost"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("400")]
-        public int TimeUntilCloses
-        {
-            get
-            {
-                return ((int)(this["TimeUntilCloses"]));
-            }
-            set
-            {
-                this["TimeUntilCloses"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int TimeUntilOpens
-        {
-            get
-            {
-                return ((int)(this["TimeUntilOpens"]));
-            }
-            set
-            {
-                this["TimeUntilOpens"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("true")]
-        public bool StaysOpenWhenFocusLostAfterEnterPressed
-        {
-            get
-            {
-                return ((bool)(this["StaysOpenWhenFocusLostAfterEnterPressed"]));
-            }
-            set
-            {
-                this["StaysOpenWhenFocusLostAfterEnterPressed"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200")]
-        public int TimeUntilClosesAfterEnterPressed
-        {
-            get
-            {
-                return ((int)(this["TimeUntilClosesAfterEnterPressed"]));
-            }
-            set
-            {
-                this["TimeUntilClosesAfterEnterPressed"] = value;
+                this["ShowCountOfElementsBelow"] = value;
             }
         }
 
@@ -1386,22 +1435,6 @@ namespace SystemTrayMenu.Properties
                 this["ColorScrollbarBackgroundDarkMode"] = value;
             }
         }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool UseIconFromRootFolder
-        {
-            get
-            {
-                return ((bool)(this["UseIconFromRootFolder"]));
-            }
-            set
-            {
-                this["UseIconFromRootFolder"] = value;
-            }
-        }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
@@ -1432,22 +1465,6 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["ColorDarkModeIcons"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SearchPattern
-        {
-            get
-            {
-                return ((string)(this["SearchPattern"]));
-            }
-            set
-            {
-                this["SearchPattern"] = value;
             }
         }
     }

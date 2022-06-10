@@ -247,7 +247,7 @@
     <value>Seçili eleman</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Seçili öğenin kenarlığı</value>
+    <value>Seçili öğenin sınırı</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Göreli dizine dönüştür</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Bağlantı yer paylaşımını göster</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>İnternet Kısayol Simgeleri Dizini</value>
   </data>
 </root>

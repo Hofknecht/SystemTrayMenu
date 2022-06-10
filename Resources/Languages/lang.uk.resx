@@ -229,7 +229,7 @@
     <value>Час до відкриття меню</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>Якщо клацнули елемент</value>
+    <value>Якщо елемент було натиснуто</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Фон</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Показати накладання посилань</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Каталог значків ярликів Інтернету</value>
   </data>
 </root>

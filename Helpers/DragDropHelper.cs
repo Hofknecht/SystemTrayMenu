@@ -8,6 +8,7 @@ namespace SystemTrayMenu.Helper
     using System.IO;
     using System.Net.Http;
     using System.Text;
+    using System.Threading;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.UserInterface;
@@ -56,12 +57,17 @@ namespace SystemTrayMenu.Helper
             byte[] bytes = ms.ToArray();
             Encoding encod = Encoding.ASCII;
             string url = encod.GetString(bytes);
-            CreateShortcut(url.Replace("\0", string.Empty), path);
+
+            new Thread(CreateShortcutInBackground).Start();
+            void CreateShortcutInBackground()
+            {
+                CreateShortcut(url.Replace("\0", string.Empty), path);
+            }
         }
 
         private static void CreateShortcut(string url, string pathToStoreFile)
         {
-            string pathToStoreIcons = Path.Combine(pathToStoreFile, "ico");
+            string pathToStoreIcons = Properties.Settings.Default.PathIcoDirectory;
             if (!Directory.Exists(pathToStoreIcons))
             {
                 Directory.CreateDirectory(pathToStoreIcons);

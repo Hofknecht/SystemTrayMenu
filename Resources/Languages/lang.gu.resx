@@ -235,7 +235,7 @@
     <value>પૃષ્ઠભૂમિ</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
-    <value>ડિરેક્ટરી ખોલી</value>
+    <value>ખોલી ડિરેક્ટરી</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
     <value>ખોલેલી ડિરેક્ટરીની સરહદ</value>
@@ -286,7 +286,7 @@
     <value>રંગ યોજના તેજસ્વી</value>
   </data>
   <data name="App menu" xml:space="preserve">
-    <value>એપ્લિકેશન મેનુ</value>
+    <value>એપ્લિકેશન મેનૂ</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>સ્ક્રોલબાર</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>લિંક ઓવરલે બતાવો</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ઈન્ટરનેટ શોર્ટકટ ચિહ્નોની ડિરેક્ટરી</value>
   </data>
 </root>

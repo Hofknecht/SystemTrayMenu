@@ -382,7 +382,7 @@
     <value>Hapus cache jika lebih dari jumlah item ini</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Tambahkan direktori contoh 'Start Menu'</value>
+    <value>Tambahkan direktori sampel 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Tinggi baris dalam persen</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Tampilkan hamparan tautan</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Direktori Ikon Pintasan Internet</value>
   </data>
 </root>

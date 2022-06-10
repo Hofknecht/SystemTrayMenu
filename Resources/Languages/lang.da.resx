@@ -184,7 +184,7 @@
     <value>Din rodmappe til appen eksisterer ikke eller er tom! Skift rodmappen eller indsæt nogle filer, mapper eller genveje i rodmappen.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>Du har ingen adgang til rodmappen til appen. Giv adgang til biblioteket eller skift rodmappen.</value>
+    <value>Du har ingen adgang til rodmappen på appen. Giv adgang til biblioteket eller skift rodmappen.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Enkeltklik for at åbne et element i stedet for at dobbeltklikke</value>
@@ -349,7 +349,7 @@
     <value>Hvis fokus mistes, og Enter-tasten blev trykket</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Millisekunder indtil menuen lukker, hvis menuen i dette tilfælde ikke genaktiveres</value>
+    <value>Millisekunder, indtil menuen lukker, hvis menuen i dette tilfælde ikke genaktiveres</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Vis i proceslinjen</value>
@@ -358,10 +358,10 @@
     <value>Tilføj bibliotek</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Tilføj indhold af mappe til rodbibliotek</value>
+    <value>Tilføj indholdet af mappen til rodmappen</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>Directory stier</value>
+    <value>Vejviserstier</value>
   </data>
   <data name="Directories" xml:space="preserve">
     <value>Vejviser</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Vis linkoverlejring</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Katalog over internetgenvejsikoner</value>
   </data>
 </root>

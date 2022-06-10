@@ -229,7 +229,7 @@
     <value>మెను తెరవడానికి సమయం</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>ఒక మూలకం క్లిక్ చేయబడి ఉంటే</value>
+    <value>ఒక మూలకం క్లిక్ చేయబడితే</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>నేపథ్య</value>
@@ -238,7 +238,7 @@
     <value>డైరెక్టరీ తెరవబడింది</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>తెరిచిన డైరెక్టరీ అంచు</value>
+    <value>తెరిచిన డైరెక్టరీ సరిహద్దు</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>శోధన ఫీల్డ్</value>
@@ -358,7 +358,7 @@
     <value>డైరెక్టరీని జోడించండి</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>రూట్ డైరెక్టరీకి డైరెక్టరీ యొక్క కంటెంట్‌ను జోడించండి</value>
+    <value>రూట్ డైరెక్టరీకి డైరెక్టరీ యొక్క కంటెంట్‌ని జోడించండి</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>డైరెక్టరీ మార్గాలు</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>లింక్ అతివ్యాప్తిని చూపు</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ఇంటర్నెట్ షార్ట్‌కట్ చిహ్నాల డైరెక్టరీ</value>
   </data>
 </root>

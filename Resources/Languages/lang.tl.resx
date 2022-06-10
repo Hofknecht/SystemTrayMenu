@@ -499,9 +499,12 @@
     <value>Ipakita ang search bar</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Sine-save ang log file sa direktoryo ng application sa halip na AppData</value>
+    <value>Sine-save ang log file sa application directory sa halip na AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Ipakita ang overlay ng link</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Direktoryo ng Internet Shortcut Icon</value>
   </data>
 </root>

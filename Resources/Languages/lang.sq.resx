@@ -475,7 +475,7 @@
     <value>Renditja</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopjoni artikullin e rreshtit përmes zvarritjes</value>
+    <value>Kopjo artikullin e rreshtit përmes zvarritjes</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Zvarritni</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Shfaq mbivendosjen e lidhjes</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Drejtoria e ikonave të shkurtoreve të internetit</value>
   </data>
 </root>

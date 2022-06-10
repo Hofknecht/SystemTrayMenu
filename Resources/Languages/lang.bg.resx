@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>Показване на наслагване на връзката</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Директория с икони за бърз достъп до интернет</value>
+  </data>
 </root>

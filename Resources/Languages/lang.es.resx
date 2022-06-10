@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso rápido</value>
+    <value>tecla de acceso directo</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -217,7 +217,7 @@
     <value>Milisegundos hasta que se abre un menú cuando el mouse está sobre él</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisegundos hasta que se cierre el menú si en este caso el ratón sale del menú</value>
+    <value>Milisegundos hasta que el menú se cierre si en este caso el ratón sale del menú</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Ancho máximo de menú en píxeles</value>
@@ -364,7 +364,7 @@
     <value>Rutas de directorio</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>Directorios</value>
+    <value>directorios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursivo</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Mostrar superposición de enlaces</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Directorio de iconos de acceso directo a Internet</value>
   </data>
 </root>

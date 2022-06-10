@@ -268,7 +268,7 @@
     <value>Săgeată</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Săgeată când faceți clic</value>
+    <value>Săgeată când dați clic</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Săgeată în timp ce mouse-ul trece peste ea</value>
@@ -310,7 +310,7 @@
     <value>mărimea</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Marginea meniului</value>
+    <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>icoane</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Afișați suprapunerea linkului</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Director cu pictograme pentru comenzi rapide pe Internet</value>
   </data>
 </root>

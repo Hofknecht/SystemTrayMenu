@@ -316,7 +316,7 @@
     <value>আইকন</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>প্রসঙ্গ মেনু দ্বারা সেট</value>
+    <value>প্রসঙ্গ মেনু দ্বারা সেট করুন</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ডিরেক্টরি হিসাবে সেট করুন</value>
@@ -475,7 +475,7 @@
     <value>শ্রেণীবিভাজন</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ড্র্যাগ ড্রপের মাধ্যমে সারি আইটেম কপি করুন</value>
+    <value>ড্র্যাগ ড্রপের মাধ্যমে সারি আইটেম অনুলিপি করুন</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>টেনে আনুন</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>লিঙ্ক ওভারলে দেখান</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ইন্টারনেট শর্টকাট আইকনের ডিরেক্টরি</value>
   </data>
 </root>

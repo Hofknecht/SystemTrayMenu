@@ -244,7 +244,7 @@
     <value>Medan carian</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>Elemen terpilih</value>
+    <value>Elemen yang dipilih</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
     <value>Sempadan elemen yang dipilih</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Tunjukkan tindanan pautan</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Direktori Ikon Pintasan Internet</value>
   </data>
 </root>

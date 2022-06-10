@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>Ցույց տալ հղման ծածկույթը</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Ինտերնետային դյուրանցումների պատկերակների տեղեկատու</value>
+  </data>
 </root>

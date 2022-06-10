@@ -181,7 +181,7 @@
     <value>בחר ספרייה</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס מספר קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
+    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס כמה קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>אין לך גישה לספריית השורש של האפליקציה. הענק גישה לספרייה או שנה את ספריית הבסיס.</value>
@@ -424,7 +424,7 @@
     <value>הצג תמיד קבצים מוסתרים, ספריות או כוננים</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>קבצים וספריות מוסתרים</value>
+    <value>קבצים וספריות נסתרות</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
     <value>לעולם אל תציג קבצים מוסתרים, ספריות או כוננים</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>הצג שכבת-על של קישור</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ספריית סמלי קיצורי אינטרנט</value>
   </data>
 </root>

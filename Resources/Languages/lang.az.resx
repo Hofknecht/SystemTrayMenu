@@ -133,7 +133,7 @@
     <value>kataloq</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Kataloq boşdur</value>
+    <value>Kataloq boş</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Təfərrüatlar</value>
@@ -259,7 +259,7 @@
     <value>Konfiqurasiya faylı və log faylı</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>Tətbiq qovluğunu açın</value>
+    <value>Proqram qovluğunu açın</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Piksel maksimum menyu hündürlüyü</value>
@@ -310,7 +310,7 @@
     <value>Ölçü</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Menyu sərhədi</value>
+    <value>Menyunun sərhədi</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Nişanlar</value>
@@ -427,7 +427,7 @@
     <value>Gizli fayllar və qovluqlar</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Heç vaxt gizli faylları, qovluqları və ya diskləri göstərməyin</value>
+    <value>Heç vaxt gizli faylları, qovluqları və ya sürücüləri göstərməyin</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ölçü və yer</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Link örtüyünü göstərin</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>İnternet Qısayol İkonlarının Kataloqu</value>
   </data>
 </root>

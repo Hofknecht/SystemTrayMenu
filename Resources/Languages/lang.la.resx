@@ -475,7 +475,7 @@
     <value>Sorting</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Effingo row item per drag stilla</value>
+    <value>Effingo row item per drag gutta</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Drag</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Ostendere nexum operies</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Directorium Internet Brevis Icones</value>
   </data>
 </root>

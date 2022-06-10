@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>ສະແດງການວາງຊ້ອນລິ້ງ</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ໄດເລກະທໍລີຂອງໄອຄອນທາງລັດອິນເຕີເນັດ</value>
+  </data>
 </root>

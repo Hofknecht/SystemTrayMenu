@@ -175,7 +175,7 @@
     <value>よくある質問</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>FAQを読み、SystemTrayMenuのルートディレクトリを選択します。</value>
+    <value>FAQを読んでから、SystemTrayMenuのルートディレクトリを選択してください。</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>ディレクトリを選択</value>
@@ -331,7 +331,7 @@
     <value>このショートカットが参照するアイテムが変更または移動されたため、このショートカットは正しく機能しなくなります。</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Directoryを開く</value>
+    <value>ディレクトリを開く</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>タスクマネージャー</value>
@@ -340,7 +340,7 @@
     <value>非アクティブ化</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>有効化</value>
+    <value>アクティベート</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>エキスパート</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>リンクオーバーレイを表示</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>インターネットショートカットアイコンのディレクトリ</value>
   </data>
 </root>

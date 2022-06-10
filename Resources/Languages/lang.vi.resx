@@ -292,7 +292,7 @@
     <value>Thanh cuộn</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>Thanh trượt</value>
+    <value>Con trượt</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
     <value>Thanh trượt trong khi kéo</value>
@@ -301,7 +301,7 @@
     <value>Trượt trong khi di chuột qua nó 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Trượt trong khi di chuột qua nó 2</value>
+    <value>Thanh trượt trong khi di chuột qua nó 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Sử dụng biểu tượng từ thư mục</value>
@@ -328,7 +328,7 @@
     <value>Sự cố với liên kết lối tắt</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
+    <value>Mục mà lối tắt này đề cập đến đã bị thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Mở thư mục</value>
@@ -415,7 +415,7 @@
     <value>các yếu tố</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>Tạo các phím tắt cho ổ đĩa khi khởi động</value>
+    <value>Tạo phím tắt cho ổ đĩa khi khởi động</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Bộ nhớ đệm</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Hiển thị lớp phủ liên kết</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Thư mục các biểu tượng lối tắt trên Internet</value>
   </data>
 </root>

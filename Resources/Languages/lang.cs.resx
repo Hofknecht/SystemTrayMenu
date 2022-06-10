@@ -271,7 +271,7 @@
     <value>Šipka při kliknutí</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Šipka, zatímco nad ní umístíte myš</value>
+    <value>Šipka, zatímco nad ní přechází myš</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Pozadí šipky při kliknutí</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Zobrazit překryvnou vrstvu odkazu</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Adresář ikon zástupců Internetu</value>
   </data>
 </root>

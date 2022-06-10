@@ -504,4 +504,7 @@
   <data name="Show link overlay" xml:space="preserve">
     <value>Link-Overlay anzeigen</value>
   </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Verzeichnis der Internet-Verknüpfungssymbole</value>
+  </data>
 </root>

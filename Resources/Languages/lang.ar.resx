@@ -238,7 +238,7 @@
     <value>الدليل المفتوح</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>حد الدليل المفتوح</value>
+    <value>حدود الدليل المفتوح</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>مجال البحث</value>
@@ -376,7 +376,7 @@
     <value>الملفات فقط</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>القائمة الرئيسية لذاكرة التخزين المؤقت</value>
+    <value>ذاكرة التخزين المؤقت القائمة الرئيسية</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>امسح ذاكرة التخزين المؤقت إذا كان هناك أكثر من هذا العدد من العناصر</value>
@@ -475,7 +475,7 @@
     <value>فرز</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>نسخ عنصر الصف عن طريق السحب والإسقاط</value>
+    <value>نسخ عنصر الصف عن طريق السحب والإفلات</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>يجر</value>
@@ -503,5 +503,8 @@
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>إظهار تراكب الارتباط</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>دليل أيقونات اختصارات الإنترنت</value>
   </data>
 </root>
