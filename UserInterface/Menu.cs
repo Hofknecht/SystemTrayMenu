@@ -191,7 +191,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal event EventHandlerEmpty SearchTextChanging;
 
-        internal event EventHandler SearchTextChanged;
+        internal event EventHandler<bool> SearchTextChanged;
 
         internal event EventHandlerEmpty UserDragsMenu;
 
@@ -828,16 +828,15 @@ namespace SystemTrayMenu.UserInterface
                 .Replace("%", " ")
                 .Replace("*", " ");
 
-            // Replace special characters
-            string tmp = new(searchString);
+            string searchStringReplaceSpecialCharacters = new(searchString);
             searchString = string.Empty;
-            foreach (char ch in tmp)
+            foreach (char character in searchStringReplaceSpecialCharacters)
             {
-                searchString += ch switch
+                searchString += character switch
                 {
                     '[' => "[[]",
                     ']' => "[]]",
-                    _ => ch,
+                    _ => character,
                 };
             }
 
@@ -957,7 +956,7 @@ namespace SystemTrayMenu.UserInterface
 
             SetCounts(foldersCount, filesCount);
 
-            SearchTextChanged.Invoke(this, null);
+            SearchTextChanged.Invoke(this, isSearchStringEmpty);
 
             if (anyIconNotUpdated)
             {

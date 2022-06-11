@@ -1511,10 +1511,10 @@ namespace SystemTrayMenu.Business
             keyboardInput.SearchTextChanging();
         }
 
-        private void Menu_SearchTextChanged(object sender, EventArgs e)
+        private void Menu_SearchTextChanged(object sender, bool isSearchStringEmpty)
         {
             Menu menu = (Menu)sender;
-            keyboardInput.SearchTextChanged(menu);
+            keyboardInput.SearchTextChanged(menu, isSearchStringEmpty);
             AdjustMenusSizeAndLocation();
             searchTextChanging = false;
 
