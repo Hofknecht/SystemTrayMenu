@@ -962,7 +962,7 @@ namespace SystemTrayMenu.UserInterface
                 timerUpdateIcons.Start();
             }
 
-            if (isSearchStringEmpty && dgv.Rows.Count > 0)
+            if (dgv.Rows.Count > 0)
             {
                 dgv.FirstDisplayedScrollingRowIndex = 0;
             }
