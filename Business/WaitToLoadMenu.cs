@@ -191,7 +191,11 @@ namespace SystemTrayMenu.Handler
             this.dgv = dgv;
             this.rowIndex = rowIndex;
             RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
-            rowData.IsSelected = true;
+            if (rowData != null)
+            {
+                rowData.IsSelected = true;
+            }
+
             dgv.Rows[rowIndex].Selected = false;
             dgv.Rows[rowIndex].Selected = true;
         }

@@ -234,6 +234,8 @@ namespace SystemTrayMenu.UserInterface
         internal void ResetSearchText()
         {
             textBoxSearch.Text = string.Empty;
+            dgv.FirstDisplayedScrollingRowIndex = 0;
+            AdjustScrollbar();
         }
 
         internal void FocusTextBox()

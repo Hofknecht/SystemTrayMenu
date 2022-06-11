@@ -77,7 +77,6 @@ namespace SystemTrayMenu.Business
                     }
 
                     AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                    menus[0].ResetSearchText();
                 }
                 else
                 {
@@ -1028,8 +1027,7 @@ namespace SystemTrayMenu.Business
 
                 if (menu.Level == 0)
                 {
-                    DataGridView dgv = menu.GetDataGridView();
-                    ((DataTable)dgv.DataSource).DefaultView.RowFilter = "[SortIndex] LIKE '%0%'";
+                    menu.ResetSearchText();
                     AdjustMenusSizeAndLocation();
                 }
             }
