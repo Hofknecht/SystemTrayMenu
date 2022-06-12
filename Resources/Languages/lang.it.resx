@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Invia tasto di scelta rapida ad un'altra istanza</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Ordinare per data</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Ordinati per data</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Ordina per nome</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Ordinati per nome</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Ordinamento</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directory di icone di collegamento a Internet</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Ordinati per tipo e data</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Ordinati per tipo e nome</value>
   </data>
 </root>

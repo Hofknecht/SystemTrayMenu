@@ -154,7 +154,7 @@
     <value>ફરી થી શરૂ કરવું</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>હોટ કીની નોંધણી કરી શકાઈ નથી.</value>
+    <value>હોટ કી રજીસ્ટર કરી શકાઈ નથી.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>ગર્ભપાત</value>
@@ -286,7 +286,7 @@
     <value>રંગ યોજના તેજસ્વી</value>
   </data>
   <data name="App menu" xml:space="preserve">
-    <value>એપ્લિકેશન મેનૂ</value>
+    <value>એપ્લિકેશન મેનુ</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>સ્ક્રોલબાર</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>અન્ય ઉદાહરણ પર હોટકી મોકલો</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>તારીખ દ્વારા સૉર્ટ કરો</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>તારીખ દ્વારા ક્રમાંકિત</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>નામ પ્રમાણે સૉર્ટ કરો</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>નામ પ્રમાણે ક્રમાંકિત</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>વર્ગીકરણ</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ઈન્ટરનેટ શોર્ટકટ ચિહ્નોની ડિરેક્ટરી</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>પ્રકાર અને તારીખ દ્વારા ક્રમાંકિત</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>પ્રકાર અને નામ દ્વારા ક્રમાંકિત</value>
   </data>
 </root>

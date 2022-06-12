@@ -463,13 +463,13 @@
     <value>Zblakły</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Wyślij klawisz skrótu do innej instancji</value>
+    <value>Wyślij skrót do innej instancji</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Sortowanie według daty</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Posortowane według daty</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Sortuj według nazwy</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Posortowane według nazwy</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sortowanie</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Katalog ikon skrótów internetowych</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Posortowane według typu i daty</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Posortowane według typu i nazwy</value>
   </data>
 </root>

@@ -175,7 +175,7 @@
     <value>คำถามที่พบบ่อย</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>อ่านคำถามที่พบบ่อย จากนั้นเลือกไดเร็กทอรีรากสำหรับ SystemTrayMenu</value>
+    <value>อ่านคำถามที่พบบ่อย จากนั้นเลือกไดเรกทอรีรากสำหรับ SystemTrayMenu</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>เลือกไดเรกทอรี</value>
@@ -214,7 +214,7 @@
     <value>หากโฟกัสหายและหากเมาส์ยังคงอยู่บนเมนู</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>มิลลิวินาทีจนกว่าเมนูจะเปิดขึ้นเมื่อเมาส์อยู่</value>
+    <value>มิลลิวินาทีจนกระทั่งเมนูเปิดขึ้นเมื่อวางเมาส์ไว้</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>มิลลิวินาทีจนกว่าเมนูจะปิด ถ้าในกรณีนี้เมาส์ออกจากเมนู</value>
@@ -325,7 +325,7 @@
     <value>กำลังโหลด</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>ปัญหาเกี่ยวกับลิงก์ทางลัด</value>
+    <value>ปัญหาเกี่ยวกับลิงค์ทางลัด</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>รายการที่ทางลัดนี้อ้างถึงมีการเปลี่ยนแปลงหรือย้าย ดังนั้นคำสั่งลัดนี้จะทำงานไม่ถูกต้องอีกต่อไป</value>
@@ -403,7 +403,7 @@
     <value>เมนูหลักปรากฏขึ้น</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>ตำแหน่งเมาส์ (เหนือไอคอนแถบงาน)</value>
+    <value>ตำแหน่งของเมาส์ (เหนือไอคอนแถบงาน)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>กำหนดเอง (ลากไปยังตำแหน่งที่เหมาะสม)</value>
@@ -465,10 +465,10 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>ส่งฮ็อตคีย์ไปยังอินสแตนซ์อื่น</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
+  <data name="Sorted by date" xml:space="preserve">
     <value>เรียงตามวันที่</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
+  <data name="Sorted by name" xml:space="preserve">
     <value>เรียงตามชื่อ</value>
   </data>
   <data name="Sorting" xml:space="preserve">
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ไดเรกทอรีของไอคอนทางลัดอินเทอร์เน็ต</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>เรียงตามประเภทและวันที่</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>เรียงตามประเภทและชื่อ</value>
   </data>
 </root>

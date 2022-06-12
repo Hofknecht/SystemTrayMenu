@@ -181,7 +181,7 @@
     <value>Vyberte adresář</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Váš kořenový adresář pro aplikaci neexistuje nebo je prázdný! Změňte kořenový adresář nebo do něj vložte některé soubory, adresáře nebo zástupce.</value>
+    <value>Váš kořenový adresář pro aplikaci neexistuje nebo je prázdný! Změňte kořenový adresář nebo vložte některé soubory, adresáře nebo zástupce do kořenového adresáře.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nemáte přístup do kořenového adresáře aplikace. Udělte přístup k adresáři nebo změňte kořenový adresář.</value>
@@ -283,7 +283,7 @@
     <value>Barevné provedení tmavé</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Barevné schéma světlé</value>
+    <value>Barevné provedení světlé</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Nabídka aplikací</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Odeslat klávesovou zkratku do jiné instance</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Seřadit podle data</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Seřazeno podle data</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Seřaď dle jména</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Seřazeno podle názvu</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Řazení</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Adresář ikon zástupců Internetu</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Seřazeno podle typu a data</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Seřazeno podle typu a názvu</value>
   </data>
 </root>

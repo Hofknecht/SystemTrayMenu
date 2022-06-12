@@ -139,7 +139,7 @@
     <value>Üksikasjad</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Süsteemiteave</value>
+    <value>Süsteemi teave</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Kataloog pole juurdepääsetav</value>
@@ -361,7 +361,7 @@
     <value>Lisage juurkataloogi kataloogi sisu</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>Kataloogiteed</value>
+    <value>Kataloogi teed</value>
   </data>
   <data name="Directories" xml:space="preserve">
     <value>Kataloogid</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Saada kiirklahv teisele eksemplarile</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Sorteeri kuupäeva järgi</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Sorteeritud kuupäeva järgi</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Sorteeri nime järgi</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Sorteeritud nime järgi</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sorteerimine</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Interneti otseteede ikoonide kataloog</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Sorteeritud tüübi ja kuupäeva järgi</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Sorteeritud tüübi ja nime järgi</value>
   </data>
 </root>

@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Pošlji bližnjico drugemu primerku</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Razvrsti po datumu</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Razvrščeno po datumu</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Razvrsti po imenu</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Razvrščeno po imenu</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Razvrščanje</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Imenik ikon internetnih bližnjic</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Razvrščeno po vrsti in datumu</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Razvrščeno po vrsti in imenu</value>
   </data>
 </root>

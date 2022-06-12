@@ -184,7 +184,7 @@
     <value>Din rodmappe til appen eksisterer ikke eller er tom! Skift rodmappen eller indsæt nogle filer, mapper eller genveje i rodmappen.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>Du har ingen adgang til rodmappen på appen. Giv adgang til biblioteket eller skift rodmappen.</value>
+    <value>Du har ingen adgang til rodmappen til appen. Giv adgang til biblioteket eller skift rodmappen.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Enkeltklik for at åbne et element i stedet for at dobbeltklikke</value>
@@ -346,7 +346,7 @@
     <value>Ekspert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Hvis fokus mistes, og Enter-tasten blev trykket</value>
+    <value>Hvis fokus mistes, og der blev trykket på Enter-tasten</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Millisekunder, indtil menuen lukker, hvis menuen i dette tilfælde ikke genaktiveres</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Send genvejstasten til en anden instans</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Sorter efter dato</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Sorteret efter dato</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Sorter efter navn</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Sorteret efter navn</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sortering</value>
@@ -484,7 +484,7 @@
     <value>Rul via swipe</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filtrer menu efter filtype, f.eks.: *.exe|*.dll</value>
+    <value>Filtrer menuen efter filtype, f.eks.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Vis antallet af elementer nedenfor</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Katalog over internetgenvejsikoner</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Sorteret efter type og dato</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Sorteret efter type og navn</value>
   </data>
 </root>

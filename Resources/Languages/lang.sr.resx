@@ -247,7 +247,7 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Ивица изабраног елемента</value>
+    <value>Граница изабраног елемента</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Конвертујте у релативни директоријум</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Пошаљи интервентни тастер на другу инстанцу</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Сортирај по датуму</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Сортирано по датуму</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Сортирај по имену</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Сортирано по имену</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортирање</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Именик икона Интернет пречица</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Сортирано по врсти и датуму</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Сортирано по врсти и имену</value>
   </data>
 </root>

@@ -437,7 +437,10 @@ namespace SystemTrayMenu.Business
                         directories = directories.Concat(directoriesToAddToMainMenu).ToArray();
                     }
 
-                    Array.Sort(directories, new WindowsExplorerSort());
+                    if (Properties.Settings.Default.SortByTypeAndNameWindowsExplorerSort)
+                    {
+                        Array.Sort(directories, new WindowsExplorerSort());
+                    }
                 }
                 catch (UnauthorizedAccessException ex)
                 {
@@ -473,11 +476,17 @@ namespace SystemTrayMenu.Business
                     rowData.MenuLevel = level;
                     menuData.RowDatas.Add(rowData);
                 }
+
+                if (Properties.Settings.Default.SortByTypeAndDate)
+                {
+                    menuData.RowDatas = menuData.RowDatas.OrderBy(x => x.FileInfo.LastWriteTime).Reverse().ToList();
+                }
             }
 
             if (!worker.CancellationPending)
             {
                 string[] files = Array.Empty<string>();
+                List<RowData> rowDatasFiles = new List<RowData>();
 
                 try
                 {
@@ -491,7 +500,10 @@ namespace SystemTrayMenu.Business
                         files = files.Concat(filesToAddToMainMenu).ToArray();
                     }
 
-                    Array.Sort(files, new WindowsExplorerSort());
+                    if (Properties.Settings.Default.SortByTypeAndNameWindowsExplorerSort)
+                    {
+                        Array.Sort(files, new WindowsExplorerSort());
+                    }
                 }
                 catch (UnauthorizedAccessException ex)
                 {
@@ -533,8 +545,15 @@ namespace SystemTrayMenu.Business
                         rowData.HiddenEntry = hiddenEntry;
                     }
 
-                    menuData.RowDatas.Add(rowData);
+                    rowDatasFiles.Add(rowData);
                 }
+
+                if (Properties.Settings.Default.SortByTypeAndDate)
+                {
+                    rowDatasFiles = rowDatasFiles.OrderBy(x => x.FileInfo.LastWriteTime).Reverse().ToList();
+                }
+
+                menuData.RowDatas = menuData.RowDatas.Concat(rowDatasFiles).ToList();
             }
 
             if (!worker.CancellationPending)
@@ -547,6 +566,15 @@ namespace SystemTrayMenu.Business
                     }
                     else
                     {
+                        if (Properties.Settings.Default.SortByName)
+                        {
+                            menuData.RowDatas = menuData.RowDatas.OrderBy(x => x.Text).ToList();
+                        }
+                        else if (Properties.Settings.Default.SortByDate)
+                        {
+                            menuData.RowDatas = menuData.RowDatas.OrderBy(x => x.FileInfo.LastWriteTime).Reverse().ToList();
+                        }
+
                         menuData.Validity = MenuDataValidity.Valid;
                     }
                 }
@@ -795,26 +823,27 @@ namespace SystemTrayMenu.Business
 
             try
             {
-                rowData.FileInfo = new FileInfo(fileName);
-                rowData.TargetFilePath = rowData.FileInfo.FullName;
+                FileInfo fileInfo = new FileInfo(fileName);
+                rowData.TargetFilePath = fileInfo.FullName;
                 if (!isResolvedLnk)
                 {
-                    if (string.IsNullOrEmpty(rowData.FileInfo.Name))
+                    rowData.FileInfo = fileInfo;
+                    if (string.IsNullOrEmpty(fileInfo.Name))
                     {
-                        string path = rowData.FileInfo.FullName;
+                        string path = fileInfo.FullName;
                         int directoryNameBegin = path.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1;
                         rowData.SetText(path[directoryNameBegin..]);
                     }
                     else if (!rowData.ContainsMenu && Config.IsHideFileExtension())
                     {
-                        rowData.SetText(Path.GetFileNameWithoutExtension(rowData.FileInfo.Name));
+                        rowData.SetText(Path.GetFileNameWithoutExtension(fileInfo.Name));
                     }
                     else
                     {
-                        rowData.SetText(rowData.FileInfo.Name);
+                        rowData.SetText(fileInfo.Name);
                     }
 
-                    rowData.TargetFilePathOrig = rowData.FileInfo.FullName;
+                    rowData.TargetFilePathOrig = fileInfo.FullName;
                 }
             }
             catch (Exception ex)

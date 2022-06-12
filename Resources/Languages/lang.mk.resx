@@ -154,7 +154,7 @@
     <value>Рестарт</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Не може да се регистрира топлото копче.</value>
+    <value>Не можеше да се регистрира копче за готвење.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Прекини</value>
@@ -184,7 +184,7 @@
     <value>Вашиот root директориум за апликацијата не постои или е празен! Променете го root директориумот или ставете некои датотеки, директориуми или кратенки во root директориумот.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>Немате пристап до root директориумот на апликацијата. Дозволете пристап до директориумот или променете го root директориумот.</value>
+    <value>Немате пристап до root директориумот на апликацијата. Дозволете пристап до директориумот или сменете го root директориумот.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Еден клик за отворање на елемент наместо двоен клик</value>
@@ -325,7 +325,7 @@
     <value>вчитување</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Проблем со врската со кратенка</value>
+    <value>Проблем со кратенка врска</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Ставката на која се однесува оваа кратенка е променета или преместена, така што оваа кратенка повеќе нема да работи правилно.</value>
@@ -463,13 +463,13 @@
     <value>Избледување</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Испратете копче на друга инстанца</value>
+    <value>Испрати копче на друга инстанца</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Подреди по датум</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Подредени по датум</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Подреди по име</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Подредени по име</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортирање</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Директориум на икони за кратенки на Интернет</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Подредени по тип и датум</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Подредени по тип и име</value>
   </data>
 </root>

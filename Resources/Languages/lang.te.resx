@@ -238,7 +238,7 @@
     <value>డైరెక్టరీ తెరవబడింది</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>తెరిచిన డైరెక్టరీ సరిహద్దు</value>
+    <value>తెరిచిన డైరెక్టరీ అంచు</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>శోధన ఫీల్డ్</value>
@@ -301,7 +301,7 @@
     <value>మౌస్ దానిపై కదులుతున్నప్పుడు స్లైడర్ 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>మౌస్ దానిపై హోవర్ చేస్తున్నప్పుడు స్లైడర్ 2</value>
+    <value>మౌస్ దానిపై కదులుతున్నప్పుడు స్లైడర్ 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>డైరెక్టరీ నుండి చిహ్నాన్ని ఉపయోగించండి</value>
@@ -358,7 +358,7 @@
     <value>డైరెక్టరీని జోడించండి</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>రూట్ డైరెక్టరీకి డైరెక్టరీ యొక్క కంటెంట్‌ని జోడించండి</value>
+    <value>రూట్ డైరెక్టరీకి డైరెక్టరీ యొక్క కంటెంట్‌ను జోడించండి</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>డైరెక్టరీ మార్గాలు</value>
@@ -451,7 +451,7 @@
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>ఉప మెను కనిపిస్తుంది</value>
+    <value>సబ్ మెనూ కనిపిస్తుంది</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>శాతంలో చిహ్నాల పరిమాణం</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>హాట్‌కీని ఇతర సందర్భానికి పంపండి</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>తేదీ వారీగా క్రమబద్ధీకరించండి</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>తేదీ ప్రకారం క్రమబద్ధీకరించబడింది</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>పేరు ద్వారా క్రమబద్ధీకరించండి</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>క్రమబద్ధీకరణ</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ఇంటర్నెట్ షార్ట్‌కట్ చిహ్నాల డైరెక్టరీ</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>రకం మరియు తేదీ ద్వారా క్రమబద్ధీకరించబడింది</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>రకం మరియు పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
   </data>
 </root>

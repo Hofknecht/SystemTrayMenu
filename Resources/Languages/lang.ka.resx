@@ -214,7 +214,7 @@
     <value>თუ ფოკუსი დაკარგულია და თუ მაუსი კვლავ მენიუშია</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>მილიწამებში მენიუს გახსნამდე, როცა მასზე მაუსია</value>
+    <value>მილიწამებში მენიუს გახსნამდე, როდესაც მასზე მაუსია</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>მილიწამები მენიუს დახურვამდე, თუ ამ შემთხვევაში მაუსი ტოვებს მენიუს</value>
@@ -316,7 +316,7 @@
     <value>ხატები</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>დაყენებულია კონტექსტური მენიუს მიხედვით</value>
+    <value>კონტექსტური მენიუს დაყენება</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>დააყენეთ დირექტორიად</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>ცხელი კლავიშის გაგზავნა სხვა ინსტანციაზე</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>დალაგება თარიღის მიხედვით</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>დალაგებულია თარიღის მიხედვით</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>დალაგება სახელის მიხედვით</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>დალაგებულია სახელის მიხედვით</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>დახარისხება</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ინტერნეტ მალსახმობების ხატულების დირექტორია</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>დალაგებულია ტიპისა და თარიღის მიხედვით</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>დალაგებულია ტიპისა და სახელის მიხედვით</value>
   </data>
 </root>

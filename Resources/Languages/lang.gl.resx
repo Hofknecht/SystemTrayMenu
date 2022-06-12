@@ -316,7 +316,7 @@
     <value>Iconas</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Establecido por menú contextual</value>
+    <value>Establecer mediante menú contextual</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Establecer como directorio</value>
@@ -388,10 +388,10 @@
     <value>Altura da fila en porcentaxe</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Esquinas redondeadas</value>
+    <value>Cantos redondeados</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>Aparencia</value>
+    <value>Aparición</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
     <value>Abaixo á esquerda</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Enviar tecla de acceso rápido a outra instancia</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Ordenar por data</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Ordenado por data</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Ordenar por nome</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Ordenado polo nome</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Ordenación</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directorio de iconas de atallos de Internet</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Ordenado por tipo e data</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Ordenado por tipo e nome</value>
   </data>
 </root>

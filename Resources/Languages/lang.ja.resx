@@ -175,7 +175,7 @@
     <value>よくある質問</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>FAQを読んでから、SystemTrayMenuのルートディレクトリを選択してください。</value>
+    <value>FAQを読み、SystemTrayMenuのルートディレクトリを選択します。</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>ディレクトリを選択</value>
@@ -331,7 +331,7 @@
     <value>このショートカットが参照するアイテムが変更または移動されたため、このショートカットは正しく機能しなくなります。</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>ディレクトリを開く</value>
+    <value>Directoryを開く</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>タスクマネージャー</value>
@@ -406,7 +406,7 @@
     <value>マウスの位置（タスクバーアイコンの上）</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>カスタム（適切な場所にドラッグ）</value>
+    <value>カスタム（適切な場所にドラッグします）</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>エレメント</value>
@@ -465,17 +465,17 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>ホットキーを他のインスタンスに送信する</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>日付けで並び替え</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>日付でソート</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>名前順</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>名前で並べ替え</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>並べ替え</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ドラッグドロップで行アイテムをコピーする</value>
+    <value>ドラッグアンドドロップで行アイテムをコピーする</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>引っ張る</value>
@@ -493,7 +493,7 @@
     <value>ディレクトリタイトルを上部に表示</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
-    <value>以下にファンクションキーを表示します</value>
+    <value>以下にファンクションキーを表示</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>検索バーを表示する</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>インターネットショートカットアイコンのディレクトリ</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>タイプと日付で並べ替え</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>タイプと名前で並べ替え</value>
   </data>
 </root>

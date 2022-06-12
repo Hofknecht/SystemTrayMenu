@@ -214,7 +214,7 @@
     <value>Ak sa stratí zameranie a ak je myš stále v ponuke</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milisekúnd, kým sa otvorí ponuka, keď je na nej myš</value>
+    <value>Milisekundy, kým sa otvorí ponuka, keď je na nej myš</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundy, kým sa ponuka zatvorí, ak v tomto prípade myš opustí ponuku</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Odoslať klávesovú skratku do inej inštancie</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Zoradiť podľa dátumu</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Zoradené podľa dátumu</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Zoradiť podľa názvu</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Zoradené podľa názvu</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Triedenie</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Adresár ikon internetových skratiek</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Zoradené podľa typu a dátumu</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Zoradené podľa typu a názvu</value>
   </data>
 </root>

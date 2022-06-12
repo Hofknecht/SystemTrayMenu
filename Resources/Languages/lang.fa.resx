@@ -337,7 +337,7 @@
     <value>Task Manager</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>غیر فعال شد</value>
+    <value>غیرفعال شد</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>فعال شد</value>
@@ -436,7 +436,7 @@
     <value>از تنظیمات سیستم عامل استفاده کنید</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>فقط به عنوان نتیجه جستجو نمایش داده شود</value>
+    <value>نمایش فقط به عنوان نتیجه جستجو</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
     <value>یک کلیک برای باز کردن یک دایرکتوری به جای دوبار کلیک کردن</value>
@@ -445,7 +445,7 @@
     <value>کنار قبلی</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>انحراف با پیکسل</value>
+    <value>افست با پیکسل</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>با هم تداخل دارند</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>کلید میانبر را به نمونه دیگر ارسال کنید</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>به ترتیب تاریخ مرتب کن</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>مرتب شده بر اساس تاریخ</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>مرتب سازی بر اساس نام</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>مرتب شده بر اساس نام</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>مرتب سازی</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>دایرکتوری آیکون های میانبر اینترنت</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>بر اساس نوع و تاریخ مرتب شده است</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>بر اساس نوع و نام مرتب شده است</value>
   </data>
 </root>

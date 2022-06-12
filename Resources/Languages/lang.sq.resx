@@ -262,7 +262,7 @@
     <value>Hap direktorinë e aplikacionit</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Lartësia maksimale e pikselëve të menusë</value>
+    <value>Lartësia maksimale e pikselëve të menysë</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Shigjeta</value>
@@ -463,22 +463,22 @@
     <value>Venitje</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Dërgo çelësin e nxehtë në një shembull tjetër</value>
+    <value>Dërgo çelësin e nxehtësisë në një shembull tjetër</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Rendit sipas datës</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Renditur sipas datës</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Rendit sipas emrit</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Renditur sipas emrit</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Renditja</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopjo artikullin e rreshtit përmes zvarritjes</value>
+    <value>Kopjoni artikullin e rreshtit përmes zvarritjes</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Zvarritni</value>
+    <value>Zvarrit</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Lëvizni përmes rrëshqitjes</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Drejtoria e ikonave të shkurtoreve të internetit</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Renditur sipas llojit dhe datës</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Renditur sipas llojit dhe emrit</value>
   </data>
 </root>

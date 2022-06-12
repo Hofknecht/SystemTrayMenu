@@ -445,7 +445,7 @@
     <value>Ħdejn dak ta’ qabel</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset mill-pixels</value>
+    <value>Offset bil-pixels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Jikkoinċidu</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Ibgħat hotkey lil eżempju ieħor</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Issortja skond id-data</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Issortjati skond id-data</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Issortja skond l-isem</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Issortjati skond l-isem</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Issortjar</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Direttorju tal-Ikoni tal-Shortcut tal-Internet</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Issortjati skond it-tip u d-data</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Issortjati skond it-tip u l-isem</value>
   </data>
 </root>

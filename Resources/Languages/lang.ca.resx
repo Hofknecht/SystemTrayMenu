@@ -175,7 +175,7 @@
     <value>Preguntes freqüents</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Llegiu les PMF i, a continuació, trieu un directori arrel per al SystemTrayMenu.</value>
+    <value>Llegiu les PMF i trieu un directori arrel per al SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Seleccioneu el directori</value>
@@ -346,7 +346,7 @@
     <value>Expert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Si es perd el focus i es prem la tecla Enter</value>
+    <value>Si es perd el focus i es premeu la tecla Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Mil·lisegons fins que es tanqui el menú si en aquest cas el menú no es reactiva</value>
@@ -382,7 +382,7 @@
     <value>Esborra la memòria cau si hi ha més d'aquest nombre d'elements</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Afegeix el directori de mostra "Menú Inici"</value>
+    <value>Afegeix el directori d'exemple "Menú Inici"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Alçada de fila en percentatge</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Envia la tecla d'accés ràpid a una altra instància</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Ordena per data</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Ordenat per data</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Ordena per nom</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Ordenat per nom</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Classificació</value>
@@ -481,7 +481,7 @@
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb el dit</value>
+    <value>Desplaceu-vos amb lliscar</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directori d'icones de dreceres d'Internet</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Ordenat per tipus i data</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Ordenat per tipus i nom</value>
   </data>
 </root>

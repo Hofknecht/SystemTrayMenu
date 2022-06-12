@@ -211,7 +211,7 @@
     <value>기본</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>포커스가 손실되고 마우스가 여전히 메뉴에 있는 경우</value>
+    <value>초점을 잃고 마우스가 여전히 메뉴에 있는 경우</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>마우스가 메뉴에 있을 때 메뉴가 열릴 때까지의 밀리초</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>다른 인스턴스로 단축키 보내기</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
+  <data name="Sorted by date" xml:space="preserve">
     <value>날짜순 정렬</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>이름으로 분류하다</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>이름순으로 정렬</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>정렬</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>인터넷 바로 가기 아이콘 디렉토리</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>유형 및 날짜별로 정렬</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>유형 및 이름별로 정렬</value>
   </data>
 </root>

@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Надіслати гарячу клавішу в інший екземпляр</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Сортувати за датою</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Відсортовано за датою</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Сортувати за назвою</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Відсортовано за назвою</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортування</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Каталог значків ярликів Інтернету</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Відсортовано за типом і датою</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Відсортовано за типом та назвою</value>
   </data>
 </root>

@@ -301,7 +301,7 @@
     <value>鼠标悬停时的滑块 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>鼠标悬停在滑块上时的滑块 2</value>
+    <value>鼠标悬停时的滑块 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>使用目录中的图标</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>向其他实例发送热键</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
+  <data name="Sorted by date" xml:space="preserve">
     <value>按日期排序</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>按名称分类</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>按名称排序</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>排序</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Internet 快捷方式图标目录</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>按类型和日期排序</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>按类型和名称排序</value>
   </data>
 </root>

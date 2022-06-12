@@ -235,7 +235,7 @@
     <value>پس منظر</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
-    <value>کھلی ڈائریکٹری</value>
+    <value>ڈائرکٹری کھولی۔</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
     <value>کھلی ڈائریکٹری کا بارڈر</value>
@@ -304,7 +304,7 @@
     <value>سلائیڈر جب اس پر ماؤس منڈلاتا ہے 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>ڈائرکٹری سے آئیکن استعمال کریں۔</value>
+    <value>ڈائریکٹری سے آئیکن استعمال کریں۔</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>سائز</value>
@@ -445,7 +445,7 @@
     <value>پچھلے کے آگے</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>پکسلز کے ذریعے آفسیٹ</value>
+    <value>پکسلز کے ذریعہ آفسیٹ</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>اوور لیپنگ</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>ہاٹکی کو دوسری مثال میں بھیجیں۔</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>تاریخ کے لحاظ سے ترتیب دیں۔</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>تاریخ کے لحاظ سے ترتیب دیا گیا۔</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>نام سے ترتیب دیں۔</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>نام کے لحاظ سے ترتیب دیا گیا۔</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>چھانٹنا</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>انٹرنیٹ شارٹ کٹ شبیہیں کی ڈائرکٹری</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>قسم اور تاریخ کے لحاظ سے ترتیب دیا گیا ہے۔</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>قسم اور نام کے لحاظ سے ترتیب دیا گیا ہے۔</value>
   </data>
 </root>

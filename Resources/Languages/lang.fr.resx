@@ -181,7 +181,7 @@
     <value>Sélectionnez le répertoire</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Votre répertoire racine pour l'application n'existe pas ou est vide ! Modifiez le répertoire racine ou placez des fichiers, répertoires ou raccourcis dans le répertoire racine.</value>
+    <value>Votre répertoire racine pour l'application n'existe pas ou est vide ! Modifiez le répertoire racine ou placez des fichiers, des répertoires ou des raccourcis dans le répertoire racine.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Vous n'avez pas accès au répertoire racine de l'application. Accordez l'accès au répertoire ou modifiez le répertoire racine.</value>
@@ -217,7 +217,7 @@
     <value>Millisecondes jusqu'à ce qu'un menu s'ouvre lorsque la souris est dessus</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas la souris quitte alors le menu</value>
+    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas la souris quitte ensuite le menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Largeur maximale du menu en pixels</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Envoyer le raccourci vers une autre instance</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Trier par date</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Trié par date</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Trier par nom</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Trié par nom</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Tri</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Répertoire des icônes de raccourcis Internet</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Trié par type et date</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Trié par type et nom</value>
   </data>
 </root>

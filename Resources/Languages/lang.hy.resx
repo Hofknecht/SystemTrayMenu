@@ -181,7 +181,7 @@
     <value>Ընտրեք գրացուցակը</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Հավելվածի ձեր արմատային գրացուցակը գոյություն չունի կամ դատարկ է: Փոխեք արմատային գրացուցակը կամ որոշ ֆայլեր, գրացուցակներ կամ դյուրանցումներ դրեք արմատային գրացուցակում:</value>
+    <value>Հավելվածի ձեր արմատային գրացուցակը գոյություն չունի կամ դատարկ է: Փոխեք արմատային գրացուցակը կամ որոշ ֆայլեր, գրացուցակներ կամ դյուրանցումներ տեղադրեք արմատային գրացուցակում:</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Դուք մուտք չունեք հավելվածի արմատային գրացուցակ: Տրամադրել մուտք դեպի գրացուցակ կամ փոխել արմատային գրացուցակը:</value>
@@ -226,7 +226,7 @@
     <value>Բաց է մնում</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Ժամանակ է, մինչև մենյու բացվի</value>
+    <value>Ժամանակ, մինչև մենյու բացվի</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>Եթե ​​որևէ տարր սեղմված է եղել</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Ուղարկեք թեժ ստեղնը այլ օրինակ</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Դասավորել ըստ ամսաթվի</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Դասավորված է ըստ ամսաթվի</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Դասավորել ըստ անվանման</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Տեսակավորված ըստ անվանման</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Տեսակավորում</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Ինտերնետային դյուրանցումների պատկերակների տեղեկատու</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Տեսակավորված ըստ տեսակի և ամսաթվի</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Տեսակավորված ըստ տեսակի և անվան</value>
   </data>
 </root>

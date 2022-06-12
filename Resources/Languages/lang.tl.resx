@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Ipadala ang hotkey sa ibang instance</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Ayusin ayon sa petsa</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Inayos ayon sa petsa</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Pagbukud-bukurin ayon sa pangalan</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Pinagbukud-bukod ayon sa pangalan</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Pag-uuri</value>
@@ -499,12 +499,18 @@
     <value>Ipakita ang search bar</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Sine-save ang log file sa application directory sa halip na AppData</value>
+    <value>Sine-save ang log file sa direktoryo ng application sa halip na AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Ipakita ang overlay ng link</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Direktoryo ng Internet Shortcut Icon</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Pinagbukud-bukod ayon sa uri at petsa</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Pinagbukud-bukod ayon sa uri at pangalan</value>
   </data>
 </root>

@@ -298,7 +298,7 @@
     <value>Schuifregelaar tijdens het slepen</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Schuif terwijl de muis erover zweeft 1</value>
+    <value>Schuifregelaar terwijl de muis erover zweeft 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Schuif terwijl de muis erover zweeft 2</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Sneltoets naar andere instantie verzenden</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Sorteren op datum</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Gesorteerd op datum</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Sorteren op naam</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Gesorteerd op naam</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sorteren</value>
@@ -490,7 +490,7 @@
     <value>Toon aantal elementen hieronder</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Titel van directory bovenaan weergeven</value>
+    <value>Toon maptitel bovenaan</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
     <value>Functietoetsen hieronder weergeven:</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directory met pictogrammen voor internetsnelkoppelingen</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Gesorteerd op soort en datum</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Gesorteerd op type en naam</value>
   </data>
 </root>

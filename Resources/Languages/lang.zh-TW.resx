@@ -274,7 +274,7 @@
     <value>鼠標懸停時的箭頭</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>點擊時箭頭的背景</value>
+    <value>單擊時箭頭的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>鼠標懸停在箭頭上時的箭頭背景</value>
@@ -325,7 +325,7 @@
     <value>加載</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>快捷鏈接問題</value>
+    <value>快捷方式鏈接問題</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>此快捷方式所指的項目已更改或移動，因此此快捷方式將不再正常工作。</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>向其他實例發送熱鍵</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
+  <data name="Sorted by date" xml:space="preserve">
     <value>按日期排序</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>按名稱分類</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>按名稱排序</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>排序</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Internet 快捷方式圖標目錄</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>按類型和日期排序</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>按類型和名稱排序</value>
   </data>
 </root>

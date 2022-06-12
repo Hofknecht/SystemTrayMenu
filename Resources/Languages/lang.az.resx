@@ -145,7 +145,7 @@
     <value>Kataloq əlçatmaz</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>dil</value>
+    <value>Dil</value>
   </data>
   <data name="Log File" xml:space="preserve">
     <value>Günlük Faylı</value>
@@ -217,7 +217,7 @@
     <value>Siçan üzərində olduqda menyu açılana qədər millisaniyə</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Əgər bu halda siçan menyunu tərk edərsə, menyu bağlanana qədər millisaniyələr</value>
+    <value>Bu halda siçan menyunu tərk edərsə, menyu bağlanana qədər millisaniyələr</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Piksel maksimum menyu eni</value>
@@ -325,7 +325,7 @@
     <value>yüklənir</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Qısayol keçidi ilə bağlı problem</value>
+    <value>Qısayol keçidində problem</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Bu qısayolun istinad etdiyi element dəyişdirilib və ya köçürülüb, ona görə də bu qısayol artıq düzgün işləməyəcək.</value>
@@ -427,7 +427,7 @@
     <value>Gizli fayllar və qovluqlar</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Heç vaxt gizli faylları, qovluqları və ya sürücüləri göstərməyin</value>
+    <value>Heç vaxt gizli faylları, qovluqları və ya diskləri göstərməyin</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ölçü və yer</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>İsti düyməni digər nümunəyə göndərin</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Tarixə görə çeşidləyin</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Tarixə görə çeşidlənib</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Ada görə çeşidləyin</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Ada görə sıralanıb</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Çeşidləmə</value>
@@ -505,6 +505,12 @@
     <value>Link örtüyünü göstərin</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>İnternet Qısayol İkonlarının Kataloqu</value>
+    <value>İnternet Qısayol Nişanlarının Kataloqu</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Növ və tarixə görə çeşidlənir</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Növ və ada görə çeşidlənir</value>
   </data>
 </root>

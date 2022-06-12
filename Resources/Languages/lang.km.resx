@@ -465,10 +465,10 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>ផ្ញើ hotkey ទៅឧទាហរណ៍ផ្សេងទៀត។</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
+  <data name="Sorted by date" xml:space="preserve">
     <value>តម្រៀបតាមកាលបរិច្ឆេទ</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
+  <data name="Sorted by name" xml:space="preserve">
     <value>តម្រៀបតាមឈ្មោះ</value>
   </data>
   <data name="Sorting" xml:space="preserve">
@@ -502,9 +502,15 @@
     <value>ការរក្សាទុកឯកសារកំណត់ហេតុនៅក្នុងថតកម្មវិធីជំនួសឱ្យ AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
-    <value>បង្ហាញការត្រួតលើតំណ</value>
+    <value>បង្ហាញតំណជាន់លើ</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>បញ្ជីឈ្មោះរូបតំណាងផ្លូវកាត់អ៊ីនធឺណិត</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>តម្រៀបតាមប្រភេទ និងកាលបរិច្ឆេទ</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>តម្រៀបតាមប្រភេទនិងឈ្មោះ</value>
   </data>
 </root>

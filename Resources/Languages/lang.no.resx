@@ -211,7 +211,7 @@
     <value>Misligholde</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Hvis fokuset er tapt og hvis musen fortsatt er på menyen</value>
+    <value>Hvis fokus er tapt og hvis musen fortsatt er på menyen</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Millisekunder til en meny åpnes når musen er på den</value>
@@ -325,7 +325,7 @@
     <value>lasting</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Problem med snarveislenke</value>
+    <value>Problem med snarveislink</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Elementet som denne snarveien refererer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
@@ -465,17 +465,17 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Send hurtigtast til en annen instans</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Sorter etter dato</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Sortert etter dato</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Sorter etter navn</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Sortert etter navn</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sortering</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopier radelement via dra-slipp</value>
+    <value>Kopier radelementet med dra-slipp</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Dra</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Katalog over Internett-snarveisikoner</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Sortert etter type og dato</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Sortert etter type og navn</value>
   </data>
 </root>

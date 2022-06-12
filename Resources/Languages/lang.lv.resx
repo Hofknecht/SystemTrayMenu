@@ -217,7 +217,7 @@
     <value>Milisekundes, līdz tiek atvērta izvēlne, kad uz tās ir pele</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja šajā gadījumā pele pēc tam iziet no izvēlnes</value>
+    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja šajā gadījumā pele iziet no izvēlnes</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maksimālais izvēlnes platums pikseļos</value>
@@ -274,7 +274,7 @@
     <value>Bultiņa, kamēr pele atrodas virs tās</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Noklikšķinot, bultiņas fons</value>
+    <value>Bultiņas fons, noklikšķinot</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Bultas fons, kamēr pele atrodas virs tās</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Sūtīt karsto taustiņu uz citu gadījumu</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Kārtot pēc datuma</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Sakārtots pēc datuma</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Kārtot pēc nosaukuma</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Sakārtots pēc nosaukuma</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Šķirošana</value>
@@ -484,7 +484,7 @@
     <value>Ritiniet, velkot</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filtrēšanas izvēlne pēc faila veida, piemēram, *.exe|*.dll</value>
+    <value>Filtrēšanas izvēlne pēc faila veida, piemēram: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Tālāk parādīt elementu skaitu</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Interneta īsceļu ikonu direktorijs</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Sakārtots pēc veida un datuma</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Sakārtots pēc veida un nosaukuma</value>
   </data>
 </root>

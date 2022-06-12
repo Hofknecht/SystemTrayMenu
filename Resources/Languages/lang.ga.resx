@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Seol hotkey chuig cás eile</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Sórtáil de réir dáta</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Sórtáilte de réir dáta</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Sórtáil de réir ainm</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Sórtáilte de réir ainm</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sórtáil</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Eolaire de Dheilbhíní Aicearra Idirlín</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Sórtáilte de réir cineáil agus dáta</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Sórtáilte de réir cineáil agus ainm</value>
   </data>
 </root>

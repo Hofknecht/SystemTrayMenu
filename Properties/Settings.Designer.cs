@@ -495,16 +495,64 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool SortFolderAndFilesByDate
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool SortByTypeAndNameWindowsExplorerSort
         {
             get
             {
-                return ((bool)(this["SortFolderAndFilesByDate"]));
+                return ((bool)(this["SortByTypeAndNameWindowsExplorerSort"]));
             }
             set
             {
-                this["SortFolderAndFilesByDate"] = value;
+                this["SortByTypeAndNameWindowsExplorerSort"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool SortByTypeAndDate
+        {
+            get
+            {
+                return ((bool)(this["SortByTypeAndDate"]));
+            }
+            set
+            {
+                this["SortByTypeAndDate"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool SortByName
+        {
+            get
+            {
+                return ((bool)(this["SortByName"]));
+            }
+            set
+            {
+                this["SortByName"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool SortByDate
+        {
+            get
+            {
+                return ((bool)(this["SortByDate"]));
+            }
+            set
+            {
+                this["SortByDate"] = value;
             }
         }
 

@@ -17,12 +17,13 @@ namespace SystemTrayMenu.DataClasses
         private static readonly Icon White50PercentageIcon = Properties.Resources.White50Percentage;
         private static readonly Icon NotFoundIcon = Properties.Resources.NotFound;
         private static DateTime contextMenuClosed;
-        private string text;
         private Icon icon;
 
         internal RowData()
         {
         }
+
+        internal string Text { get; set; }
 
         internal FileInfo FileInfo { get; set; }
 
@@ -60,7 +61,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal void SetText(string text)
         {
-            this.text = text;
+            this.Text = text;
         }
 
         internal void SetData(RowData data, DataTable dataTable)
@@ -77,7 +78,7 @@ namespace SystemTrayMenu.DataClasses
                 row[0] = data.icon;
             }
 
-            row[1] = data.text;
+            row[1] = data.Text;
             row[2] = data;
         }
 
@@ -113,7 +114,7 @@ namespace SystemTrayMenu.DataClasses
                 }
                 else if (fileExtension.Equals(".url", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    SetText($"{FileInfo.Name[0..^4]}");
+                    SetText($"{Text[0..^4]}");
                     showOverlay = Properties.Settings.Default.ShowLinkOverlay;
                 }
                 else if (fileExtension.Equals(".appref-ms", StringComparison.InvariantCultureIgnoreCase))

@@ -155,8 +155,10 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxInternetShortcutIcons.Text = Translator.GetText("Directory of Internet Shortcut Icons");
                 buttonChangeIcoFolder.Text = Translator.GetText("Changing directory");
                 groupBoxSorting.Text = Translator.GetText("Sorting");
-                radioButtonSortByName.Text = Translator.GetText("Sort by name");
-                radioButtonSortByDate.Text = Translator.GetText("Sort by date");
+                radioButtonSortByTypeAndName.Text = Translator.GetText("Sorted by type and name");
+                radioButtonSortByTypeAndDate.Text = Translator.GetText("Sorted by type and date");
+                radioButtonSortByName.Text = Translator.GetText("Sorted by name");
+                radioButtonSortByDate.Text = Translator.GetText("Sorted by date");
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");
                 radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
                 radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, directories or drives");
@@ -459,8 +461,10 @@ namespace SystemTrayMenu.UserInterface
             }
 
             textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
-            radioButtonSortByName.Checked = !Settings.Default.SortFolderAndFilesByDate;
-            radioButtonSortByDate.Checked = Settings.Default.SortFolderAndFilesByDate;
+            radioButtonSortByTypeAndName.Checked = Settings.Default.SortByTypeAndNameWindowsExplorerSort;
+            radioButtonSortByTypeAndDate.Checked = Settings.Default.SortByTypeAndDate;
+            radioButtonSortByName.Checked = Settings.Default.SortByName;
+            radioButtonSortByDate.Checked = Settings.Default.SortByDate;
             radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
             radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
             radioButtonAlwaysShowHiddenFiles.Checked = Settings.Default.AlwaysShowHiddenFiles;
@@ -933,7 +937,10 @@ namespace SystemTrayMenu.UserInterface
             }
 
             Settings.Default.PathIcoDirectory = textBoxIcoFolder.Text;
-            Settings.Default.SortFolderAndFilesByDate = radioButtonSortByDate.Checked;
+            Settings.Default.SortByTypeAndNameWindowsExplorerSort = radioButtonSortByTypeAndName.Checked;
+            Settings.Default.SortByTypeAndDate = radioButtonSortByTypeAndDate.Checked;
+            Settings.Default.SortByName = radioButtonSortByName.Checked;
+            Settings.Default.SortByDate = radioButtonSortByDate.Checked;
             Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
             Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
             Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;

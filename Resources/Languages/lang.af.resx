@@ -217,7 +217,7 @@
     <value>Millisekondes totdat 'n spyskaart oopmaak wanneer die muis daarop is</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekondes totdat die spyskaart toemaak as in hierdie geval die muis dan die spyskaart verlaat</value>
+    <value>Millisekondes totdat die spyskaart sluit as in hierdie geval die muis dan die spyskaart verlaat</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixel maksimum spyskaart breedte</value>
@@ -238,7 +238,7 @@
     <value>Geopende gids</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>Rand van oop gids</value>
+    <value>Rand van oopgemaakte gids</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Soek veld</value>
@@ -274,7 +274,7 @@
     <value>Pyltjie terwyl die muis daaroor beweeg</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Agtergrond van pyl wanneer u klik</value>
+    <value>Agtergrond van pyl wanneer jy klik</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Agtergrond van pyl terwyl die muis daaroor beweeg</value>
@@ -421,7 +421,7 @@
     <value>Kas</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Wys altyd versteekte lêers, gidse of dryf</value>
+    <value>Wys altyd versteekte lêers, gidse of aandrywers</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Versteekte lêers en gidse</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Stuur sneltoets na ander instansie</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Sorteer volgens datum</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Gesorteer volgens datum</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Sorteer volgens naam</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Gesorteer volgens naam</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sorteer</value>
@@ -499,12 +499,18 @@
     <value>Wys soekbalk</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Stoor tans loglêer in toepassingsgids in plaas van AppData</value>
+    <value>Stoor loglêer in toepassingsgids in plaas van AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Wys skakeloorleg</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Gids van internetkortpad-ikone</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Gesorteer volgens tipe en datum</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Gesorteer volgens tipe en naam</value>
   </data>
 </root>

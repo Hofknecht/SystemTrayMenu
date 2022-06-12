@@ -127,7 +127,7 @@
     <value>Sjálfvirk ræsing</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>Hætta app</value>
+    <value>Lokaðu appinu</value>
   </data>
   <data name="Directory" xml:space="preserve">
     <value>Skrá</value>
@@ -439,7 +439,7 @@
     <value>Sýna aðeins sem leitarniðurstöðu</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Einfaldur smellur til að opna möppu í stað þess að tvísmella</value>
+    <value>Einn smellur til að opna möppu í stað þess að tvísmella</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Við hliðina á fyrri</value>
@@ -465,11 +465,11 @@
   <data name="Send hotkey to other instance" xml:space="preserve">
     <value>Sendu flýtilykla í annað tilvik</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Raða eftir dagsetningu</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Raðað eftir dagsetningu</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Raða eftir nafni</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Raðað eftir nafni</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Flokkun</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Skrá yfir Internet flýtivísa tákn</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Raðað eftir tegund og dagsetningu</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Raðað eftir tegund og nafni</value>
   </data>
 </root>

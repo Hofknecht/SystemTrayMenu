@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso directo</value>
+    <value>tecla de acceso rápido</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -184,7 +184,7 @@
     <value>¡Su directorio raíz para la aplicación no existe o está vacío! Cambie el directorio raíz o coloque algunos archivos, directorios o accesos directos en el directorio raíz.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>No tiene acceso al directorio raíz de la aplicación. Otorgue acceso al directorio o cambie el directorio raíz.</value>
+    <value>No tienes acceso al directorio raíz de la aplicación. Otorgue acceso al directorio o cambie el directorio raíz.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Un solo clic para abrir un elemento en lugar de doble clic</value>
@@ -463,13 +463,13 @@
     <value>Desvanecimiento</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Enviar tecla de acceso directo a otra instancia</value>
+    <value>Enviar tecla de acceso rápido a otra instancia</value>
   </data>
-  <data name="Sort by date" xml:space="preserve">
-    <value>Ordenar por fecha</value>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Ordenado por fecha</value>
   </data>
-  <data name="Sort by name" xml:space="preserve">
-    <value>Ordenar por nombre</value>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Ordenado por nombre</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Clasificación</value>
@@ -506,5 +506,11 @@
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directorio de iconos de acceso directo a Internet</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Ordenado por tipo y fecha</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Ordenado por tipo y nombre</value>
   </data>
 </root>
