@@ -69,9 +69,17 @@ namespace SystemTrayMenu.Utilities
             return cleared;
         }
 
+        public static void RemoveIconFromCache(string path)
+        {
+            if (DictIconCacheMainMenu.Remove(path, out Icon iconToRemove))
+            {
+                iconToRemove?.Dispose();
+            }
+        }
+
         public static Icon GetFileIconWithCache(
-            string pathOrig,
             string path,
+            string resolvedPath,
             bool linkOverlay,
             bool updateIconInBackground,
             bool isMainMenu,
@@ -79,10 +87,10 @@ namespace SystemTrayMenu.Utilities
             string keyPath = "")
         {
             loading = false;
-            string extension = Path.GetExtension(pathOrig);
+            string extension = Path.GetExtension(path);
             IconSize size = IconSize.Large;
 
-            string key = pathOrig;
+            string key = path;
             if (!string.IsNullOrEmpty(keyPath))
             {
                 key = keyPath;
@@ -103,7 +111,7 @@ namespace SystemTrayMenu.Utilities
                     new Thread(UpdateIconInBackground).Start();
                     void UpdateIconInBackground()
                     {
-                        DictIconCache(isMainMenu).GetOrAdd(key, GetIconSTA(pathOrig, path, linkOverlay, size, null));
+                        DictIconCache(isMainMenu).GetOrAdd(key, GetIconSTA(path, resolvedPath, linkOverlay, size, false));
                     }
                 }
             }
@@ -113,7 +121,6 @@ namespace SystemTrayMenu.Utilities
 
         public static Icon GetFolderIconWithCache(
             string path,
-            FolderType folderType,
             bool linkOverlay,
             bool updateIconInBackground,
             bool isMainMenu,
@@ -156,25 +163,25 @@ namespace SystemTrayMenu.Utilities
 
             Icon GetFolder(string keyExtension)
             {
-                return GetIconSTA(path, path, linkOverlay, size, folderType);
+                return GetIconSTA(path, path, linkOverlay, size, true);
             }
 
             return icon;
         }
 
-        public static Icon GetIconSTA(string pathOrig, string path, bool linkOverlay, IconSize size, FolderType? folderType)
+        public static Icon GetIconSTA(string path, string resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
         {
             Icon icon = null;
             if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
             {
-                icon = GetIcon(pathOrig, path, linkOverlay, size, folderType);
+                icon = GetIcon(path, resolvedPath, linkOverlay, size, isFolder);
             }
             else
             {
                 Thread staThread = new(new ParameterizedThreadStart(StaThreadMethod));
                 void StaThreadMethod(object obj)
                 {
-                    icon = GetIcon(pathOrig, path, linkOverlay, size, folderType);
+                    icon = GetIcon(path, resolvedPath, linkOverlay, size, isFolder);
                 }
 
                 staThread.SetApartmentState(ApartmentState.STA);
@@ -227,17 +234,17 @@ namespace SystemTrayMenu.Utilities
             return isExtensionWithSameIcon;
         }
 
-        private static Icon GetIcon(string path, string pathOrig, bool linkOverlay, IconSize size, FolderType? type)
+        private static Icon GetIcon(string path, string resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
         {
             Icon icon;
             if (Path.GetExtension(path).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
             {
                 icon = Icon.ExtractAssociatedIcon(path);
             }
-            else if (Path.GetExtension(pathOrig).Equals(".ico", StringComparison.InvariantCultureIgnoreCase) &&
-                File.Exists(pathOrig))
+            else if (Path.GetExtension(resolvedPath).Equals(".ico", StringComparison.InvariantCultureIgnoreCase) &&
+                File.Exists(resolvedPath))
             {
-                icon = Icon.ExtractAssociatedIcon(pathOrig);
+                icon = Icon.ExtractAssociatedIcon(resolvedPath);
                 if (linkOverlay)
                 {
                     icon = AddIconOverlay(icon, Properties.Resources.LinkArrow);
@@ -246,9 +253,8 @@ namespace SystemTrayMenu.Utilities
             else
             {
                 NativeMethods.SHFILEINFO shFileInfo = default;
-                uint flags = GetFlags(linkOverlay, size, type);
-                uint attribute = type == null ? NativeMethods.FileAttributeNormal :
-                    NativeMethods.FileAttributeDirectory;
+                uint flags = GetFlags(linkOverlay, size);
+                uint attribute = isFolder ? NativeMethods.FileAttributeDirectory : NativeMethods.FileAttributeNormal;
                 IntPtr imageList = NativeMethods.Shell32SHGetFileInfo(
                     path, attribute, ref shFileInfo, (uint)Marshal.SizeOf(shFileInfo), flags);
                 icon = GetIcon(path, linkOverlay, shFileInfo, imageList);
@@ -257,17 +263,12 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        private static uint GetFlags(bool linkOverlay, IconSize size, FolderType? folderType)
+        private static uint GetFlags(bool linkOverlay, IconSize size)
         {
             uint flags = NativeMethods.ShgfiIcon | NativeMethods.ShgfiSYSICONINDEX;
             if (linkOverlay)
             {
                 flags += NativeMethods.ShgfiLINKOVERLAY;
-            }
-
-            if (folderType == FolderType.Open)
-            {
-                flags += NativeMethods.ShgfiOPENICON;
             }
 
             if (size == IconSize.Small)

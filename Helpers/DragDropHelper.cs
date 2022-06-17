@@ -40,7 +40,7 @@ namespace SystemTrayMenu.Helper
                 RowData rowData = (RowData)menu.Tag;
                 if (rowData != null)
                 {
-                    path = rowData.TargetFilePath;
+                    path = rowData.ResolvedPath;
                 }
                 else
                 {

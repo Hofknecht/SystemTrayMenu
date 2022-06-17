@@ -18,6 +18,7 @@ namespace SystemTrayMenu.UserInterface
     internal partial class Menu : Form
     {
         private const int CornerRadius = 20;
+        private const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
         private readonly Fading fading = new();
         private bool isShowing;
         private bool directionToRight;
@@ -234,7 +235,22 @@ namespace SystemTrayMenu.UserInterface
         internal void ResetSearchText()
         {
             textBoxSearch.Text = string.Empty;
-            dgv.FirstDisplayedScrollingRowIndex = 0;
+            if (dgv.Rows.Count > 0)
+            {
+                dgv.FirstDisplayedScrollingRowIndex = 0;
+            }
+
+            AdjustScrollbar();
+        }
+
+        internal void RefreshSearchText()
+        {
+            TextBoxSearch_TextChanged(textBoxSearch, null);
+            if (dgv.Rows.Count > 0)
+            {
+                dgv.FirstDisplayedScrollingRowIndex = 0;
+            }
+
             AdjustScrollbar();
         }
 
@@ -419,6 +435,11 @@ namespace SystemTrayMenu.UserInterface
             {
                 fading.Fade(Fading.FadingState.Hide);
             }
+        }
+
+        internal void TimerUpdateIconsStart()
+        {
+            timerUpdateIcons.Start();
         }
 
         /// <summary>
@@ -757,7 +778,8 @@ namespace SystemTrayMenu.UserInterface
                 ScrollbarVisible = false;
             }
 
-            if (string.IsNullOrEmpty(data.DefaultView.RowFilter))
+            if (string.IsNullOrEmpty(textBoxSearch.Text) &&
+                dgv.Height != dgvHeightNew)
             {
                 dgv.Height = dgvHeightNew;
             }
@@ -765,12 +787,12 @@ namespace SystemTrayMenu.UserInterface
 
         private void AdjustDataGridViewWidth()
         {
-            DataGridViewExtensions.FastAutoSizeColumns(dgv);
-
-            if (dgv.Columns[1].Width < 60)
+            if (!string.IsNullOrEmpty(textBoxSearch.Text))
             {
-                dgv.Columns[1].Width = 60;
+                return;
             }
+
+            DataGridViewExtensions.FastAutoSizeColumns(dgv);
 
             int widthIcon = dgv.Columns[0].Width;
             int widthText = dgv.Columns[1].Width;
@@ -780,14 +802,23 @@ namespace SystemTrayMenu.UserInterface
                 widthScrollbar = customScrollbar.Width;
             }
 
-            if (tableLayoutPanelBottom.Width > (widthIcon + widthText + widthScrollbar))
+            using Graphics gfx = labelTitle.CreateGraphics();
+            gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            int withTitle = (int)(gfx.MeasureString(
+                labelTitle.Text + "___",
+                dgv.RowTemplate.DefaultCellStyle.Font).Width + 0.5);
+
+            if (withTitle > (widthIcon + widthText + widthScrollbar))
             {
-                dgv.Width = tableLayoutPanelBottom.Width - widthScrollbar;
-                dgv.Columns[1].Width = tableLayoutPanelBottom.Width - widthIcon - widthScrollbar;
+                tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(withTitle, 0);
+                dgv.Width = withTitle - widthScrollbar;
+                dgv.Columns[1].Width = dgv.Width - widthIcon;
             }
             else
             {
+                tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(widthIcon + widthText + widthScrollbar, 0);
                 dgv.Width = widthIcon + widthText;
+                dgv.Columns[1].Width = dgv.Width - widthIcon;
             }
 
             tableLayoutPanelSearch.MinimumSize = new Size(dgv.Width + widthScrollbar, 0);
@@ -867,7 +898,7 @@ namespace SystemTrayMenu.UserInterface
                 if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
                     isSearchStringEmpty)
                 {
-                    data.DefaultView.RowFilter = "[SortIndex] LIKE '%0%'";
+                    data.DefaultView.RowFilter = RowFilterShowAll;
                 }
                 else
                 {
@@ -893,8 +924,7 @@ namespace SystemTrayMenu.UserInterface
                 foreach (DataRow row in data.Rows)
                 {
                     RowData rowData = (RowData)row[2];
-                    if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
-                        rowData.ShowOnlyWhenSearch)
+                    if (rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult)
                     {
                         row[columnSortIndex] = 99;
                     }
@@ -934,7 +964,8 @@ namespace SystemTrayMenu.UserInterface
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
 
-                if (!isSearchStringEmpty || !rowData.ShowOnlyWhenSearch)
+                if (!isSearchStringEmpty ||
+                    !(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
                 {
                     rowData.RowIndex = row.Index;
 
@@ -1113,7 +1144,7 @@ namespace SystemTrayMenu.UserInterface
                 if (rowData.IconLoading)
                 {
                     iconsToUpdate++;
-                    row.Cells[0].Value = rowData.ReadLoadedIcon();
+                    row.Cells[0].Value = rowData.ReadIcon(false);
                 }
             }
 

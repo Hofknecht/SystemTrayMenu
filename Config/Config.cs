@@ -14,12 +14,12 @@ namespace SystemTrayMenu
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.Utilities.IconReader;
 
     public static class Config
     {
         private static readonly Icon SystemTrayMenu = Properties.Resources.SystemTrayMenu;
-        private static readonly Icon IconFromRootFolder = IconReader.GetIconSTA(
-            Path, Path, false, IconReader.IconSize.Small, IconReader.FolderType.Closed);
+        private static readonly Icon IconRootFolder = GetIconSTA(Path, Path, false, IconSize.Small, true);
 
         private static bool readDarkModeDone;
         private static bool isDarkMode;
@@ -71,7 +71,7 @@ namespace SystemTrayMenu
         {
             if (Settings.Default.UseIconFromRootFolder)
             {
-                return IconFromRootFolder;
+                return IconRootFolder;
             }
             else
             {
@@ -174,7 +174,7 @@ namespace SystemTrayMenu
         /// <summary>
         /// Read the OS setting whether HideFileExt enabled.
         /// </summary>
-        /// <returns>true = Dark mode; false = Light mode.</returns>
+        /// <returns>isHideFileExtension.</returns>
         internal static bool IsHideFileExtension()
         {
             if (!readHideFileExtdone)

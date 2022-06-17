@@ -8,7 +8,7 @@ namespace SystemTrayMenu.DataClasses
 
     internal enum MenuDataValidity
     {
-        AbortedOrUnknown,
+        Undefined,
         Valid,
         Empty,
         NoAccess,
@@ -16,9 +16,23 @@ namespace SystemTrayMenu.DataClasses
 
     internal struct MenuData
     {
-        internal List<RowData> RowDatas;
-        internal MenuDataValidity Validity;
-        internal int Level;
-        internal RowData RowDataParent;
+        public MenuData(int level)
+        {
+            RowDatas = new List<RowData>();
+            Validity = MenuDataValidity.Undefined;
+            Level = level;
+            RowDataParent = null;
+            IsNetworkRoot = false;
+        }
+
+        internal List<RowData> RowDatas { get; set; }
+
+        internal MenuDataValidity Validity { get; set; }
+
+        internal int Level { get; }
+
+        internal RowData RowDataParent { get; set; }
+
+        internal bool IsNetworkRoot { get; set; }
     }
 }

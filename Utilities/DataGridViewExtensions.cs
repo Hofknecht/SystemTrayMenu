@@ -11,6 +11,8 @@ namespace SystemTrayMenu.Utilities
 
     internal static class DataGridViewExtensions
     {
+        private const float WidthMin = 100f;
+
         /// <summary>
         /// dgv.AutoResizeColumns() was too slow ~45ms.
         /// </summary>
@@ -22,13 +24,12 @@ namespace SystemTrayMenu.Utilities
             using Graphics gfx = dgv.CreateGraphics();
             int i = 1;
             gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            float widthMax = dgv.Columns[i].HeaderCell.Size.Width;
+            float widthMax = WidthMin;
             foreach (DataGridViewRow row in rows)
             {
                 float checkWidth = gfx.MeasureString(
                     row.Cells[i].Value.ToString() + "___",
-                    dgv.RowTemplate.DefaultCellStyle.Font)
-                    .Width;
+                    dgv.RowTemplate.DefaultCellStyle.Font).Width;
                 if (checkWidth > widthMax)
                 {
                     widthMax = checkWidth;

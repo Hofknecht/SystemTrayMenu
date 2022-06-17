@@ -168,17 +168,17 @@ namespace SystemTrayMenu.Handler
             {
                 RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
                 Menu menu = (Menu)dgv.FindForm();
-                rowData.MenuLevel = menu.Level;
+                rowData.Level = menu.Level;
                 if (rowData.ContainsMenu)
                 {
-                    CloseMenu.Invoke(rowData.MenuLevel + 2);
+                    CloseMenu.Invoke(rowData.Level + 2);
                 }
 
-                CloseMenu.Invoke(rowData.MenuLevel + 1);
+                CloseMenu.Invoke(rowData.Level + 1);
 
                 if (!rowData.IsContextMenuOpen &&
                     rowData.ContainsMenu &&
-                    rowData.MenuLevel + 1 < MenuDefines.MenusMax)
+                    rowData.Level + 1 < MenuDefines.MenusMax)
                 {
                     StartLoadMenu.Invoke(rowData);
                 }

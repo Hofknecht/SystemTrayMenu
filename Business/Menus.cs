@@ -30,6 +30,8 @@ namespace SystemTrayMenu.Business
         private readonly DgvMouseRow dgvMouseRow = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
+        private readonly List<FileSystemWatcher> watchers = new();
+        private readonly List<FileSystemEventArgs> watcherHistory = new();
         private readonly Timer timerShowProcessStartedAsLoadingIcon = new();
         private readonly Timer timerStillActiveCheck = new();
         private readonly WaitLeave waitLeave = new(Properties.Settings.Default.TimeUntilCloses);
@@ -43,12 +45,12 @@ namespace SystemTrayMenu.Business
         private int dragSwipeScrollingStartRowIndex = -1;
         private bool isDraggingSwipeScrolling;
         private bool isDragSwipeScrolled;
+        private bool hideSubmenuDuringRefreshSearch;
 
         public Menus()
         {
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;
-
             workerMainMenu.RunWorkerCompleted += LoadMainMenuCompleted;
             void LoadMainMenuCompleted(object sender, RunWorkerCompletedEventArgs e)
             {
@@ -90,8 +92,8 @@ namespace SystemTrayMenu.Business
                                 {
                                     workerMainMenu.DoWork -= LoadMenu;
                                     menus[0] = Create(menuData, Path.GetFileName(Config.Path));
+                                    menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
                                     IconReader.MainPreload = false;
-
                                     if (showMenuAfterMainPreload)
                                     {
                                         AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
@@ -135,8 +137,8 @@ namespace SystemTrayMenu.Business
                             Config.SetFolderByUser();
                             AppRestart.ByConfigChange();
                             break;
-                        case MenuDataValidity.AbortedOrUnknown:
-                            Log.Info("MenuDataValidity.AbortedOrUnknown");
+                        case MenuDataValidity.Undefined:
+                            Log.Info($"{nameof(MenuDataValidity)}.{nameof(MenuDataValidity.Undefined)}");
                             break;
                         default:
                             break;
@@ -162,23 +164,21 @@ namespace SystemTrayMenu.Business
             void StartLoadMenu(RowData rowData)
             {
                 if (menus[0].IsUsable &&
-                    (menus[rowData.MenuLevel + 1] == null ||
-                    menus[rowData.MenuLevel + 1].Tag as RowData != rowData))
+                    (menus[rowData.Level + 1] == null ||
+                    menus[rowData.Level + 1].Tag as RowData != rowData))
                 {
                     CreateAndShowLoadingMenu(rowData);
                     void CreateAndShowLoadingMenu(RowData rowData)
                     {
-                        MenuData menuDataLoading = new()
+                        MenuData menuDataLoading = new(rowData.Level + 1)
                         {
-                            RowDatas = new List<RowData>(),
                             Validity = MenuDataValidity.Valid,
-                            Level = rowData.MenuLevel + 1,
                         };
 
-                        Menu menuLoading = Create(menuDataLoading, Path.GetFileName(rowData.TargetFilePathOrig));
+                        Menu menuLoading = Create(menuDataLoading, Path.GetFileName(rowData.Path));
                         menuLoading.IsLoadingMenu = true;
                         AdjustMenusSizeAndLocation();
-                        menus[rowData.MenuLevel + 1] = menuLoading;
+                        menus[rowData.Level + 1] = menuLoading;
                         menuLoading.Tag = menuDataLoading.RowDataParent = rowData;
                         menuDataLoading.RowDataParent.SubMenu = menuLoading;
                         menuLoading.SetTypeLoading();
@@ -216,7 +216,7 @@ namespace SystemTrayMenu.Business
                         closedLoadingMenu = true;
                     }
 
-                    if (menuData.Validity != MenuDataValidity.AbortedOrUnknown &&
+                    if (menuData.Validity != MenuDataValidity.Undefined &&
                         menus[0].IsUsable)
                     {
                         Menu menu = Create(menuData);
@@ -270,20 +270,6 @@ namespace SystemTrayMenu.Business
             }
 
             waitToOpenMenu.MouseEnterOk += MouseEnterOk;
-            void MouseEnterOk(DataGridView dgv, int rowIndex)
-            {
-                if (menus[0].IsUsable)
-                {
-                    if (keyboardInput.InUse)
-                    {
-                        keyboardInput.ClearIsSelectedByKey();
-                        keyboardInput.InUse = false;
-                    }
-
-                    keyboardInput.Select(dgv, rowIndex, false);
-                }
-            }
-
             dgvMouseRow.RowMouseEnter += waitToOpenMenu.MouseEnter;
             dgvMouseRow.RowMouseLeave += waitToOpenMenu.MouseLeave;
             dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave;
@@ -316,6 +302,37 @@ namespace SystemTrayMenu.Business
             }
 
             waitLeave.LeaveTriggered += FadeHalfOrOutIfNeeded;
+
+            CreateWatcher(Config.Path, false);
+            foreach (var pathAndFlags in MenusHelpers.GetAddionalPathsForMainMenu())
+            {
+                CreateWatcher(pathAndFlags.Path, pathAndFlags.Recursive);
+            }
+
+            void CreateWatcher(string path, bool recursiv)
+            {
+                try
+                {
+                    FileSystemWatcher watcher = new FileSystemWatcher();
+                    watcher.Path = path;
+                    watcher.NotifyFilter = NotifyFilters.Attributes |
+                        NotifyFilters.DirectoryName |
+                        NotifyFilters.FileName |
+                        NotifyFilters.LastWrite;
+                    watcher.Filter = "*.*";
+                    watcher.Created += WatcherProcessItem;
+                    watcher.Deleted += WatcherProcessItem;
+                    watcher.Renamed += WatcherRenamed;
+                    watcher.Changed += WatcherChanged;
+                    watcher.IncludeSubdirectories = recursiv;
+                    watcher.EnableRaisingEvents = true;
+                    watchers.Add(watcher);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"Failed to {nameof(CreateWatcher)}: {path}", ex);
+                }
+            }
         }
 
         internal event EventHandlerEmpty LoadStarted;
@@ -349,237 +366,44 @@ namespace SystemTrayMenu.Business
             IconReader.Dispose();
             DisposeMenu(menus[0]);
             dgvMouseRow.Dispose();
+            foreach (FileSystemWatcher watcher in watchers)
+            {
+                watcher.Created -= WatcherProcessItem;
+                watcher.Deleted -= WatcherProcessItem;
+                watcher.Renamed -= WatcherRenamed;
+                watcher.Changed -= WatcherChanged;
+                watcher.Dispose();
+            }
         }
 
         internal static MenuData GetData(BackgroundWorker worker, string path, int level)
         {
-            MenuData menuData = new()
+            MenuData menuData = new(level);
+            if (worker?.CancellationPending == true || string.IsNullOrEmpty(path))
             {
-                RowDatas = new List<RowData>(),
-                Validity = MenuDataValidity.AbortedOrUnknown,
-                Level = level,
-            };
-
-            string[] directoriesToAddToMainMenu = Array.Empty<string>();
-            string[] filesToAddToMainMenu = Array.Empty<string>();
-            if (level == 0)
-            {
-                AddFoldersToMainMenu(ref directoriesToAddToMainMenu, ref filesToAddToMainMenu);
+                return menuData;
             }
 
-            if (!worker.CancellationPending)
+            MenusHelpers.GetItemsForMainMenu(worker, path, ref menuData);
+            if (worker?.CancellationPending == true)
             {
-                string[] directories = Array.Empty<string>();
-                bool isSharedDirectory = false;
-
-                try
-                {
-                    if (string.IsNullOrEmpty(path))
-                    {
-                        Log.Info($"path is null or empty");
-                    }
-                    else if (FileLnk.IsNetworkRoot(path))
-                    {
-                        isSharedDirectory = true;
-                        directories = GetDirectoriesInNetworkLocation(path);
-                        static string[] GetDirectoriesInNetworkLocation(string networkLocationRootPath)
-                        {
-                            List<string> directories = new();
-                            Process cmd = new();
-                            cmd.StartInfo.FileName = "cmd.exe";
-                            cmd.StartInfo.RedirectStandardInput = true;
-                            cmd.StartInfo.RedirectStandardOutput = true;
-                            cmd.StartInfo.CreateNoWindow = true;
-                            cmd.StartInfo.UseShellExecute = false;
-                            cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                            cmd.Start();
-                            cmd.StandardInput.WriteLine($"net view {networkLocationRootPath}");
-                            cmd.StandardInput.Flush();
-                            cmd.StandardInput.Close();
-
-                            string output = cmd.StandardOutput.ReadToEnd();
-
-                            cmd.WaitForExit();
-                            cmd.Close();
-
-                            bool resolvedSomething = false;
-
-                            List<string> lines = output
-                                .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                            if (lines.Count > 8)
-                            {
-                                foreach (string line in lines.Skip(6).SkipLast(2))
-                                {
-                                    int indexOfFirstSpace = line.IndexOf("  ", StringComparison.InvariantCulture);
-                                    if (indexOfFirstSpace > 0)
-                                    {
-                                        string directory = Path.Combine(
-                                            networkLocationRootPath,
-                                            line[..indexOfFirstSpace]);
-
-                                        directories.Add(directory);
-                                        resolvedSomething = true;
-                                    }
-                                }
-                            }
-
-                            if (!resolvedSomething)
-                            {
-                                Log.Info($"Could not resolve network root folder: {networkLocationRootPath} , output:{output}");
-                            }
-
-                            return directories.ToArray();
-                        }
-                    }
-                    else
-                    {
-                        directories = Directory.GetDirectories(path);
-                        directories = directories.Concat(directoriesToAddToMainMenu).ToArray();
-                    }
-
-                    if (Properties.Settings.Default.SortByTypeAndNameWindowsExplorerSort)
-                    {
-                        Array.Sort(directories, new WindowsExplorerSort());
-                    }
-                }
-                catch (UnauthorizedAccessException ex)
-                {
-                    Log.Warn($"path:'{path}'", ex);
-                    menuData.Validity = MenuDataValidity.NoAccess;
-                }
-                catch (Exception ex)
-                {
-                    Log.Warn($"path:'{path}'", ex);
-                }
-
-                foreach (string directoryWithIllegalCharacters in directories)
-                {
-                    if (worker != null && worker.CancellationPending)
-                    {
-                        break;
-                    }
-
-                    // https://github.com/Hofknecht/SystemTrayMenu/issues/171
-                    string directory = directoryWithIllegalCharacters.Replace("\x00", string.Empty);
-
-                    bool hiddenEntry = false;
-                    if (!isSharedDirectory &&
-                        FolderOptions.IsHidden(directory, ref hiddenEntry))
-                    {
-                        continue;
-                    }
-
-                    RowData rowData = ReadRowData(directory, false, true);
-                    rowData.HiddenEntry = hiddenEntry;
-                    string resolvedLnkPath = string.Empty;
-                    rowData.ReadIconOrResolveLinkAndReadIcon(true, ref resolvedLnkPath, level);
-                    rowData.MenuLevel = level;
-                    menuData.RowDatas.Add(rowData);
-                }
-
-                if (Properties.Settings.Default.SortByTypeAndDate)
-                {
-                    menuData.RowDatas = menuData.RowDatas.OrderBy(x => x.FileInfo.LastWriteTime).Reverse().ToList();
-                }
+                return menuData;
             }
 
-            if (!worker.CancellationPending)
+            MenusHelpers.GetAddionalItemsForMainMenu(ref menuData);
+            if (worker?.CancellationPending == true)
             {
-                string[] files = Array.Empty<string>();
-                List<RowData> rowDatasFiles = new List<RowData>();
-
-                try
-                {
-                    if (string.IsNullOrEmpty(path))
-                    {
-                        Log.Info($"path is null or empty");
-                    }
-                    else if (!FileLnk.IsNetworkRoot(path))
-                    {
-                        files = DirectoryBySearchPattern.GetFiles(path, Config.SearchPattern);
-                        files = files.Concat(filesToAddToMainMenu).ToArray();
-                    }
-
-                    if (Properties.Settings.Default.SortByTypeAndNameWindowsExplorerSort)
-                    {
-                        Array.Sort(files, new WindowsExplorerSort());
-                    }
-                }
-                catch (UnauthorizedAccessException ex)
-                {
-                    Log.Warn($"path:'{path}'", ex);
-                    menuData.Validity = MenuDataValidity.NoAccess;
-                }
-                catch (Exception ex)
-                {
-                    Log.Warn($"path:'{path}'", ex);
-                }
-
-                foreach (string fileWithIllegalCharacters in files)
-                {
-                    if (worker != null && worker.CancellationPending)
-                    {
-                        break;
-                    }
-
-                    // https://github.com/Hofknecht/SystemTrayMenu/issues/171
-                    string file = fileWithIllegalCharacters.Replace("\x00", string.Empty);
-
-                    bool hiddenEntry = false;
-                    if (FolderOptions.IsHidden(file, ref hiddenEntry))
-                    {
-                        continue;
-                    }
-
-                    RowData rowData = ReadRowData(file, false, false);
-                    rowData.HiddenEntry = hiddenEntry;
-                    if (Properties.Settings.Default.ShowOnlyAsSearchResult)
-                    {
-                        rowData.ShowOnlyWhenSearch = filesToAddToMainMenu.Contains(fileWithIllegalCharacters);
-                    }
-
-                    string resolvedLnkPath = string.Empty;
-                    if (rowData.ReadIconOrResolveLinkAndReadIcon(false, ref resolvedLnkPath, level))
-                    {
-                        rowData = ReadRowData(resolvedLnkPath, true, true, rowData);
-                        rowData.HiddenEntry = hiddenEntry;
-                    }
-
-                    rowDatasFiles.Add(rowData);
-                }
-
-                if (Properties.Settings.Default.SortByTypeAndDate)
-                {
-                    rowDatasFiles = rowDatasFiles.OrderBy(x => x.FileInfo.LastWriteTime).Reverse().ToList();
-                }
-
-                menuData.RowDatas = menuData.RowDatas.Concat(rowDatasFiles).ToList();
+                return menuData;
             }
 
-            if (!worker.CancellationPending)
+            MenusHelpers.ReadHiddenAndReadIcons(worker, ref menuData);
+            if (worker?.CancellationPending == true)
             {
-                if (menuData.Validity == MenuDataValidity.AbortedOrUnknown)
-                {
-                    if (menuData.RowDatas.Count == 0)
-                    {
-                        menuData.Validity = MenuDataValidity.Empty;
-                    }
-                    else
-                    {
-                        if (Properties.Settings.Default.SortByName)
-                        {
-                            menuData.RowDatas = menuData.RowDatas.OrderBy(x => x.Text).ToList();
-                        }
-                        else if (Properties.Settings.Default.SortByDate)
-                        {
-                            menuData.RowDatas = menuData.RowDatas.OrderBy(x => x.FileInfo.LastWriteTime).Reverse().ToList();
-                        }
-
-                        menuData.Validity = MenuDataValidity.Valid;
-                    }
-                }
+                return menuData;
             }
 
+            MenusHelpers.CheckIfValid(ref menuData);
+            MenusHelpers.SortItemsWhenValid(ref menuData);
             return menuData;
         }
 
@@ -726,8 +550,8 @@ namespace SystemTrayMenu.Business
             RowData rowData = eDoWork.Argument as RowData;
             if (rowData != null)
             {
-                path = rowData.TargetFilePath;
-                level = rowData.MenuLevel + 1;
+                path = rowData.ResolvedPath;
+                level = rowData.Level + 1;
             }
 
             if (Properties.Settings.Default.GenerateShortcutsToDrives)
@@ -738,120 +562,6 @@ namespace SystemTrayMenu.Business
             MenuData menuData = GetData((BackgroundWorker)senderDoWork, path, level);
             menuData.RowDataParent = rowData;
             eDoWork.Result = menuData;
-        }
-
-        private static void AddFoldersToMainMenu(ref string[] directoriesToAddToMainMenu, ref string[] filesToAddToMainMenu)
-        {
-            string pathAddToMainMenu = string.Empty;
-            bool recursive = false;
-            try
-            {
-                foreach (string pathAndRecursivString in Properties.Settings.Default.PathsAddToMainMenu.Split(@"|"))
-                {
-                    if (string.IsNullOrEmpty(pathAndRecursivString))
-                    {
-                        continue;
-                    }
-
-                    pathAddToMainMenu = pathAndRecursivString.Split("recursiv:")[0].Trim();
-                    recursive = pathAndRecursivString.Split("recursiv:")[1].StartsWith("True");
-                    bool onlyFiles = pathAndRecursivString.Split("onlyFiles:")[1].StartsWith("True");
-
-                    string[] directoriesToConcat = Array.Empty<string>();
-                    string[] filesToAddToConcat = Array.Empty<string>();
-                    if (recursive)
-                    {
-                        GetDirectoriesAndFilesRecursive(ref directoriesToConcat, ref filesToAddToConcat, pathAddToMainMenu);
-                    }
-                    else
-                    {
-                        directoriesToConcat = Directory.GetDirectories(pathAddToMainMenu);
-                        filesToAddToConcat = DirectoryBySearchPattern.GetFiles(pathAddToMainMenu, Config.SearchPattern);
-                    }
-
-                    if (!onlyFiles)
-                    {
-                        directoriesToAddToMainMenu = directoriesToAddToMainMenu.Concat(directoriesToConcat).ToArray();
-                    }
-
-                    filesToAddToMainMenu = filesToAddToMainMenu.Concat(filesToAddToConcat).ToArray();
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Warn($"path:'{pathAddToMainMenu}' recursiv:{recursive}", ex);
-            }
-        }
-
-        private static void GetDirectoriesAndFilesRecursive(ref string[] directoriesToConcat, ref string[] filesToAddToConcat, string pathAddToMainMenu)
-        {
-            try
-            {
-                string[] directories = Directory.GetDirectories(pathAddToMainMenu);
-
-                try
-                {
-                    filesToAddToConcat = filesToAddToConcat.Concat(DirectoryBySearchPattern.GetFiles(pathAddToMainMenu, Config.SearchPattern)).ToArray();
-                }
-                catch (Exception ex)
-                {
-                    Log.Warn($"GetDirectoriesAndFilesRecursive path:'{pathAddToMainMenu}'", ex);
-                }
-
-                foreach (string directory in directories)
-                {
-                    GetDirectoriesAndFilesRecursive(ref directoriesToConcat, ref filesToAddToConcat, directory);
-                }
-
-                directoriesToConcat = directoriesToConcat.Concat(directories).ToArray();
-            }
-            catch (Exception ex)
-            {
-                Log.Warn($"GetDirectoriesAndFilesRecursive path:'{pathAddToMainMenu}'", ex);
-            }
-        }
-
-        private static RowData ReadRowData(string fileName, bool isResolvedLnk, bool containsMenu, RowData rowData = null)
-        {
-            if (rowData == null)
-            {
-                rowData = new RowData();
-            }
-
-            rowData.ContainsMenu = containsMenu;
-            rowData.IsResolvedLnk = isResolvedLnk;
-
-            try
-            {
-                FileInfo fileInfo = new FileInfo(fileName);
-                rowData.TargetFilePath = fileInfo.FullName;
-                if (!isResolvedLnk)
-                {
-                    rowData.FileInfo = fileInfo;
-                    if (string.IsNullOrEmpty(fileInfo.Name))
-                    {
-                        string path = fileInfo.FullName;
-                        int directoryNameBegin = path.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1;
-                        rowData.SetText(path[directoryNameBegin..]);
-                    }
-                    else if (!rowData.ContainsMenu && Config.IsHideFileExtension())
-                    {
-                        rowData.SetText(Path.GetFileNameWithoutExtension(fileInfo.Name));
-                    }
-                    else
-                    {
-                        rowData.SetText(fileInfo.Name);
-                    }
-
-                    rowData.TargetFilePathOrig = fileInfo.FullName;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Warn($"fileName:'{fileName}'", ex);
-            }
-
-            return rowData;
         }
 
         private static void OpenFolder(string pathToFolder = "")
@@ -876,6 +586,52 @@ namespace SystemTrayMenu.Business
             if (rowIndex > -1 && rowIndex < dgv.Rows.Count)
             {
                 dgv.InvalidateRow(rowIndex);
+            }
+        }
+
+        private static void AddItemsToMenu(List<RowData> data, Menu menu, out int foldersCount, out int filesCount)
+        {
+            foldersCount = 0;
+            filesCount = 0;
+            DataGridView dgv = menu.GetDataGridView();
+            DataTable dataTable = new();
+            dataTable.Columns.Add(dgv.Columns[0].Name, typeof(Icon));
+            dataTable.Columns.Add(dgv.Columns[1].Name, typeof(string));
+            dataTable.Columns.Add("data", typeof(RowData));
+            dataTable.Columns.Add("SortIndex");
+            foreach (RowData rowData in data)
+            {
+                if (!(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
+                {
+                    if (rowData.ContainsMenu)
+                    {
+                        foldersCount++;
+                    }
+                    else
+                    {
+                        filesCount++;
+                    }
+                }
+
+                rowData.SetData(rowData, dataTable);
+            }
+
+            dgv.DataSource = dataTable;
+            dgv.Columns["data"].Visible = false;
+            dgv.Columns["SortIndex"].Visible = false;
+
+            string columnSortIndex = "SortIndex";
+            foreach (DataRow row in dataTable.Rows)
+            {
+                RowData rowData = (RowData)row[2];
+                if (rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult)
+                {
+                    row[columnSortIndex] = 99;
+                }
+                else
+                {
+                    row[columnSortIndex] = 0;
+                }
             }
         }
 
@@ -916,8 +672,8 @@ namespace SystemTrayMenu.Business
             string path = Config.Path;
             if (title == null)
             {
-                title = Path.GetFileName(menuData.RowDataParent.TargetFilePath);
-                path = menuData.RowDataParent.TargetFilePath;
+                title = Path.GetFileName(menuData.RowDataParent.ResolvedPath);
+                path = menuData.RowDataParent.ResolvedPath;
             }
 
             if (string.IsNullOrEmpty(title))
@@ -975,51 +731,6 @@ namespace SystemTrayMenu.Business
 
             menu.VisibleChanged += MenuVisibleChanged;
             AddItemsToMenu(menuData.RowDatas, menu, out int foldersCount, out int filesCount);
-            static void AddItemsToMenu(List<RowData> data, Menu menu, out int foldersCount, out int filesCount)
-            {
-                foldersCount = 0;
-                filesCount = 0;
-                DataGridView dgv = menu.GetDataGridView();
-                DataTable dataTable = new();
-                dataTable.Columns.Add(dgv.Columns[0].Name, typeof(Icon));
-                dataTable.Columns.Add(dgv.Columns[1].Name, typeof(string));
-                dataTable.Columns.Add("data", typeof(RowData));
-                dataTable.Columns.Add("SortIndex");
-                foreach (RowData rowData in data)
-                {
-                    if (!rowData.ShowOnlyWhenSearch)
-                    {
-                        if (rowData.ContainsMenu)
-                        {
-                            foldersCount++;
-                        }
-                        else
-                        {
-                            filesCount++;
-                        }
-                    }
-
-                    rowData.SetData(rowData, dataTable);
-                }
-
-                dgv.DataSource = dataTable;
-                dgv.Columns["data"].Visible = false;
-                dgv.Columns["SortIndex"].Visible = false;
-
-                string columnSortIndex = "SortIndex";
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    RowData rowData = (RowData)row[2];
-                    if (rowData.ShowOnlyWhenSearch)
-                    {
-                        row[columnSortIndex] = 99;
-                    }
-                    else
-                    {
-                        row[columnSortIndex] = 0;
-                    }
-                }
-            }
 
             DataGridView dgv = menu.GetDataGridView();
             dgv.CellMouseEnter += dgvMouseRow.CellMouseEnter;
@@ -1137,6 +848,7 @@ namespace SystemTrayMenu.Business
             if (hitTestInfo.RowIndex > -1 &&
                 hitTestInfo.RowIndex < dgv.Rows.Count)
             {
+                MouseEnterOk(dgv, hitTestInfo.RowIndex, true);
                 RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
                 rowData.MouseDown(dgv, e);
                 InvalidateRowIfIndexInRange(dgv, hitTestInfo.RowIndex);
@@ -1178,6 +890,25 @@ namespace SystemTrayMenu.Business
             isDragSwipeScrolled = false;
         }
 
+        private void MouseEnterOk(DataGridView dgv, int rowIndex)
+        {
+            MouseEnterOk(dgv, rowIndex, false);
+        }
+
+        private void MouseEnterOk(DataGridView dgv, int rowIndex, bool refreshView)
+        {
+            if (menus[0].IsUsable)
+            {
+                if (keyboardInput.InUse)
+                {
+                    keyboardInput.ClearIsSelectedByKey();
+                    keyboardInput.InUse = false;
+                }
+
+                keyboardInput.Select(dgv, rowIndex, refreshView);
+            }
+        }
+
         private void Dgv_RowMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
@@ -1189,7 +920,7 @@ namespace SystemTrayMenu.Business
             {
                 lastMouseDownRowIndex = -1;
                 RowData rowData = (RowData)dgv.Rows[e.RowIndex].Cells[2].Value;
-                string[] files = new string[] { rowData.TargetFilePathOrig };
+                string[] files = new string[] { rowData.Path };
 
                 // Update position raises move event which prevent DoDragDrop blocking UI when mouse not moved
                 Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y);
@@ -1332,7 +1063,7 @@ namespace SystemTrayMenu.Business
                     {
                         timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
                         timerShowProcessStartedAsLoadingIcon.Stop();
-                        row.Cells[0].Value = rowData.ReadLoadedIcon();
+                        row.Cells[0].Value = rowData.ReadIcon(false);
                         waitingForReactivate = false;
                     }
 
@@ -1538,6 +1269,7 @@ namespace SystemTrayMenu.Business
         {
             searchTextChanging = true;
             keyboardInput.SearchTextChanging();
+            waitToOpenMenu.MouseActive = false;
         }
 
         private void Menu_SearchTextChanged(object sender, bool isSearchStringEmpty)
@@ -1551,10 +1283,125 @@ namespace SystemTrayMenu.Business
             if (menu.Level + 1 < menus.Length)
             {
                 Menu menuToClose = menus[menu.Level + 1];
-                if (menuToClose != null)
+                if (menuToClose != null && hideSubmenuDuringRefreshSearch)
                 {
                     HideOldMenu(menuToClose);
                 }
+            }
+        }
+
+        private void ExecuteWatcherHistory()
+        {
+            foreach (var fileSystemEventArgs in watcherHistory)
+            {
+                WatcherProcessItem(watchers, fileSystemEventArgs);
+            }
+
+            watcherHistory.Clear();
+        }
+
+        private void WatcherRenamed(object sender, RenamedEventArgs e)
+        {
+            WatcherProcessItem(sender, new FileSystemEventArgs(WatcherChangeTypes.Deleted, Path.GetDirectoryName(e.OldFullPath), e.OldName));
+            WatcherProcessItem(sender, new FileSystemEventArgs(WatcherChangeTypes.Created, Path.GetDirectoryName(e.FullPath), e.Name));
+        }
+
+        private void WatcherChanged(object sender, FileSystemEventArgs e)
+        {
+            WatcherProcessItem(sender, new FileSystemEventArgs(WatcherChangeTypes.Deleted, Path.GetDirectoryName(e.FullPath), e.Name));
+            WatcherProcessItem(sender, new FileSystemEventArgs(WatcherChangeTypes.Created, Path.GetDirectoryName(e.FullPath), e.Name));
+        }
+
+        private void WatcherProcessItem(object sender, FileSystemEventArgs e)
+        {
+            if (menus[0] == null || !menus[0].IsHandleCreated)
+            {
+                watcherHistory.Add(e);
+                return;
+            }
+
+            if (e.ChangeType == WatcherChangeTypes.Deleted)
+            {
+                menus[0].Invoke(() => DeleteItem(e));
+            }
+            else if (e.ChangeType == WatcherChangeTypes.Created)
+            {
+                menus[0].Invoke(() => CreateItem(e));
+            }
+        }
+
+        private void DeleteItem(FileSystemEventArgs e)
+        {
+            try
+            {
+                DataRow rowToRemove = null;
+                DataGridView dgv = menus[0].GetDataGridView();
+                DataTable dataTable = (DataTable)dgv.DataSource;
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    RowData rowData = (RowData)row[2];
+                    if (rowData.Path == e.FullPath)
+                    {
+                        IconReader.RemoveIconFromCache(rowData.Path);
+                        rowToRemove = row;
+                    }
+                }
+
+                if (rowToRemove != null)
+                {
+                    dataTable.Rows.Remove(rowToRemove);
+                }
+
+                keyboardInput.ClearIsSelectedByKey();
+                dgv.DataSource = dataTable;
+
+                hideSubmenuDuringRefreshSearch = false;
+                menus[0].RefreshSearchText();
+                hideSubmenuDuringRefreshSearch = true;
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"Failed to {nameof(DeleteItem)}: {e.FullPath}", ex);
+            }
+        }
+
+        private void CreateItem(FileSystemEventArgs e)
+        {
+            try
+            {
+                FileAttributes attr = File.GetAttributes(e.FullPath);
+                bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
+                bool isAddionalItem = Path.GetDirectoryName(e.FullPath) != Config.Path;
+                RowData rowData = new(isFolder, isAddionalItem, false, 0, e.FullPath);
+                if (FolderOptions.IsHidden(rowData))
+                {
+                    return;
+                }
+
+                rowData.ReadIcon(true);
+
+                List<RowData> rowDatas = new();
+                rowDatas.Add(rowData);
+
+                DataTable dataTable = (DataTable)menus[0].GetDataGridView().DataSource;
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    rowDatas.Add((RowData)row[2]);
+                }
+
+                rowDatas = MenusHelpers.SortItems(rowDatas);
+                keyboardInput.ClearIsSelectedByKey();
+                AddItemsToMenu(rowDatas, menus[0], out _, out _);
+
+                hideSubmenuDuringRefreshSearch = false;
+                menus[0].RefreshSearchText();
+                hideSubmenuDuringRefreshSearch = true;
+
+                menus[0].TimerUpdateIconsStart();
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"Failed to {nameof(CreateItem)}: {e.FullPath}", ex);
             }
         }
     }
