@@ -8,6 +8,7 @@ namespace SystemTrayMenu.Utilities
     using System.Drawing;
     using System.Linq;
     using System.Windows.Forms;
+    using SystemTrayMenu.DataClasses;
 
     internal static class DataGridViewExtensions
     {
@@ -22,13 +23,13 @@ namespace SystemTrayMenu.Utilities
             System.Collections.Generic.IEnumerable<DataGridViewRow> rows =
                 dgv.Rows.Cast<DataGridViewRow>();
             using Graphics gfx = dgv.CreateGraphics();
-            int i = 1;
             gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             float widthMax = WidthMin;
-            foreach (DataGridViewRow row in rows)
+            DataTable data = (DataTable)dgv.DataSource;
+            foreach (DataRow row in data.Rows)
             {
                 float checkWidth = gfx.MeasureString(
-                    row.Cells[i].Value.ToString() + "___",
+                    ((RowData)row[2]).Text + "___",
                     dgv.RowTemplate.DefaultCellStyle.Font).Width;
                 if (checkWidth > widthMax)
                 {
@@ -41,7 +42,7 @@ namespace SystemTrayMenu.Utilities
                 widthMax = Properties.Settings.Default.MaximumMenuWidth;
             }
 
-            dgv.Columns[i].Width = (int)(widthMax + 0.5);
+            dgv.Columns[1].Width = (int)(widthMax + 0.5);
             string stringWithWidthLikeIcon = "____";
             float width0 = gfx.MeasureString(
                 stringWithWidthLikeIcon,

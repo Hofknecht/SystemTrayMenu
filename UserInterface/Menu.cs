@@ -17,8 +17,8 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu : Form
     {
+        public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
         private const int CornerRadius = 20;
-        private const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
         private readonly Fading fading = new();
         private bool isShowing;
         private bool directionToRight;
@@ -26,6 +26,7 @@ namespace SystemTrayMenu.UserInterface
         private bool mouseDown;
         private Point lastLocation;
         private bool isSetSearchText;
+        private bool dgvHeightSet;
 
         internal Menu()
         {
@@ -778,10 +779,10 @@ namespace SystemTrayMenu.UserInterface
                 ScrollbarVisible = false;
             }
 
-            if (string.IsNullOrEmpty(textBoxSearch.Text) &&
-                dgv.Height != dgvHeightNew)
+            if (!dgvHeightSet)
             {
                 dgv.Height = dgvHeightNew;
+                dgvHeightSet = true;
             }
         }
 
@@ -830,6 +831,9 @@ namespace SystemTrayMenu.UserInterface
                 FontStyle.Regular,
                 GraphicsUnit.Point,
                 0);
+
+            DataTable dataTable = (DataTable)dgv.DataSource;
+            dataTable.DefaultView.RowFilter = RowFilterShowAll;
         }
 
         private void DgvMouseWheel(object sender, MouseEventArgs e)
