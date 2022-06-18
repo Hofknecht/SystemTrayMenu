@@ -211,24 +211,31 @@ namespace SystemTrayMenu.DataClasses
                     DirectoryInfo[] dir = new DirectoryInfo[1];
                     dir[0] = new DirectoryInfo(Path);
                     ctxMnu.ShowContextMenu(dir, point);
-
-                    // Triggers filewatcher change event
-                    string parentFolder = System.IO.Path.GetDirectoryName(Path);
-                    Directory.GetFiles(parentFolder);
+                    TriggerFileWatcherChangeWorkaround();
                 }
                 else
                 {
                     FileInfo[] arrFI = new FileInfo[1];
                     arrFI[0] = FileInfo;
                     ctxMnu.ShowContextMenu(arrFI, point);
-
-                    // Triggers filewatcher change event
-                    string parentFolder = System.IO.Path.GetDirectoryName(Path);
-                    Directory.GetFiles(parentFolder);
+                    TriggerFileWatcherChangeWorkaround();
                 }
 
                 IsContextMenuOpen = false;
                 contextMenuClosed = DateTime.Now;
+            }
+
+            void TriggerFileWatcherChangeWorkaround()
+            {
+                try
+                {
+                    string parentFolder = System.IO.Path.GetDirectoryName(Path);
+                    Directory.GetFiles(parentFolder);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"{nameof(TriggerFileWatcherChangeWorkaround)} '{Path}'", ex);
+                }
             }
         }
 

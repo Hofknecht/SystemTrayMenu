@@ -1334,20 +1334,21 @@ namespace SystemTrayMenu.Business
         {
             try
             {
-                DataRow rowToRemove = null;
+                List<DataRow> rowsToRemove = new List<DataRow>();
                 DataGridView dgv = menus[0].GetDataGridView();
                 DataTable dataTable = (DataTable)dgv.DataSource;
                 foreach (DataRow row in dataTable.Rows)
                 {
                     RowData rowData = (RowData)row[2];
-                    if (rowData.Path == e.FullPath)
+                    if (rowData.Path == e.FullPath ||
+                        rowData.Path.StartsWith($"{e.FullPath}\\"))
                     {
                         IconReader.RemoveIconFromCache(rowData.Path);
-                        rowToRemove = row;
+                        rowsToRemove.Add(row);
                     }
                 }
 
-                if (rowToRemove != null)
+                foreach (DataRow rowToRemove in rowsToRemove)
                 {
                     dataTable.Rows.Remove(rowToRemove);
                 }
