@@ -31,7 +31,7 @@ namespace SystemTrayMenu.Business
         private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
         private readonly List<FileSystemWatcher> watchers = new();
-        private readonly List<FileSystemEventArgs> watcherHistory = new();
+        private readonly List<EventArgs> watcherHistory = new();
         private readonly Timer timerShowProcessStartedAsLoadingIcon = new();
         private readonly Timer timerStillActiveCheck = new();
         private readonly WaitLeave waitLeave = new(Properties.Settings.Default.TimeUntilCloses);
@@ -313,7 +313,7 @@ namespace SystemTrayMenu.Business
             {
                 try
                 {
-                    FileSystemWatcher watcher = new FileSystemWatcher();
+                    FileSystemWatcher watcher = new();
                     watcher.Path = path;
                     watcher.NotifyFilter = NotifyFilters.Attributes |
                         NotifyFilters.DirectoryName |
@@ -322,8 +322,8 @@ namespace SystemTrayMenu.Business
                     watcher.Filter = "*.*";
                     watcher.Created += WatcherProcessItem;
                     watcher.Deleted += WatcherProcessItem;
-                    watcher.Renamed += WatcherRenamed;
-                    watcher.Changed += WatcherChanged;
+                    watcher.Renamed += WatcherProcessItem;
+                    watcher.Changed += WatcherProcessItem;
                     watcher.IncludeSubdirectories = recursiv;
                     watcher.EnableRaisingEvents = true;
                     watchers.Add(watcher);
@@ -370,8 +370,8 @@ namespace SystemTrayMenu.Business
             {
                 watcher.Created -= WatcherProcessItem;
                 watcher.Deleted -= WatcherProcessItem;
-                watcher.Renamed -= WatcherRenamed;
-                watcher.Changed -= WatcherChanged;
+                watcher.Renamed -= WatcherProcessItem;
+                watcher.Changed -= WatcherProcessItem;
                 watcher.Dispose();
             }
         }
@@ -1300,19 +1300,7 @@ namespace SystemTrayMenu.Business
             watcherHistory.Clear();
         }
 
-        private void WatcherRenamed(object sender, RenamedEventArgs e)
-        {
-            WatcherProcessItem(sender, new FileSystemEventArgs(WatcherChangeTypes.Deleted, Path.GetDirectoryName(e.OldFullPath), e.OldName));
-            WatcherProcessItem(sender, new FileSystemEventArgs(WatcherChangeTypes.Created, Path.GetDirectoryName(e.FullPath), e.Name));
-        }
-
-        private void WatcherChanged(object sender, FileSystemEventArgs e)
-        {
-            WatcherProcessItem(sender, new FileSystemEventArgs(WatcherChangeTypes.Deleted, Path.GetDirectoryName(e.FullPath), e.Name));
-            WatcherProcessItem(sender, new FileSystemEventArgs(WatcherChangeTypes.Created, Path.GetDirectoryName(e.FullPath), e.Name));
-        }
-
-        private void WatcherProcessItem(object sender, FileSystemEventArgs e)
+        private void WatcherProcessItem(object sender, EventArgs e)
         {
             if (menus[0] == null || !menus[0].IsHandleCreated)
             {
@@ -1320,13 +1308,85 @@ namespace SystemTrayMenu.Business
                 return;
             }
 
-            if (e.ChangeType == WatcherChangeTypes.Deleted)
+            if (e is RenamedEventArgs renamedEventArgs)
             {
-                menus[0].Invoke(() => DeleteItem(e));
+                menus[0].Invoke(() => RenameItem(renamedEventArgs));
             }
-            else if (e.ChangeType == WatcherChangeTypes.Created)
+            else
             {
-                menus[0].Invoke(() => CreateItem(e));
+                FileSystemEventArgs fileSystemEventArgs = (FileSystemEventArgs)e;
+                if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Deleted)
+                {
+                    menus[0].Invoke(() => DeleteItem(e as FileSystemEventArgs));
+                }
+                else if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Created)
+                {
+                    menus[0].Invoke(() => CreateItem(e as FileSystemEventArgs));
+                }
+            }
+        }
+
+        private void RenameItem(RenamedEventArgs e)
+        {
+            try
+            {
+                List<RowData> rowDatas = new();
+                DataTable dataTable = (DataTable)menus[0].GetDataGridView().DataSource;
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    RowData rowData = (RowData)row[2];
+                    if (rowData.Path.StartsWith($"{e.OldFullPath}"))
+                    {
+                        bool isAddionalPathRenamed = false;
+                        string oldPath = rowData.Path;
+                        string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
+                        foreach (var pathAndFlags in MenusHelpers.GetAddionalPathsForMainMenu())
+                        {
+                            if (oldPath.StartsWith($"{pathAndFlags.Path}\\") &&
+                                !path.StartsWith($"{pathAndFlags.Path}\\"))
+                            {
+                                isAddionalPathRenamed = true;
+                                break;
+                            }
+                        }
+
+                        if (isAddionalPathRenamed)
+                        {
+                            continue;
+                        }
+
+                        FileAttributes attr = File.GetAttributes(path);
+                        bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
+                        bool isAddionalItem = Path.GetDirectoryName(path) != Config.Path;
+                        RowData rowDataRenamed = new(isFolder, isAddionalItem, false, 0, path);
+                        if (FolderOptions.IsHidden(rowDataRenamed))
+                        {
+                            continue;
+                        }
+
+                        IconReader.RemoveIconFromCache(rowData.Path);
+                        rowDataRenamed.ReadIcon(true);
+                        rowDatas.Add(rowDataRenamed);
+                    }
+                    else
+                    {
+                        rowDatas.Add(rowData);
+                    }
+                }
+
+                rowDatas = MenusHelpers.SortItems(rowDatas);
+                keyboardInput.ClearIsSelectedByKey();
+                AddItemsToMenu(rowDatas, menus[0], out _, out _);
+
+                hideSubmenuDuringRefreshSearch = false;
+                menus[0].RefreshSearchText();
+                hideSubmenuDuringRefreshSearch = true;
+
+                menus[0].TimerUpdateIconsStart();
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"Failed to {nameof(RenameItem)}: {e.OldFullPath} {e.FullPath}", ex);
             }
         }
 
@@ -1334,7 +1394,7 @@ namespace SystemTrayMenu.Business
         {
             try
             {
-                List<DataRow> rowsToRemove = new List<DataRow>();
+                List<DataRow> rowsToRemove = new();
                 DataGridView dgv = menus[0].GetDataGridView();
                 DataTable dataTable = (DataTable)dgv.DataSource;
                 foreach (DataRow row in dataTable.Rows)

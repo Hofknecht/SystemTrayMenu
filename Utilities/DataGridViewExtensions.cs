@@ -20,8 +20,6 @@ namespace SystemTrayMenu.Utilities
         /// <param name="dgv">datagridview.</param>
         internal static void FastAutoSizeColumns(this DataGridView dgv)
         {
-            System.Collections.Generic.IEnumerable<DataGridViewRow> rows =
-                dgv.Rows.Cast<DataGridViewRow>();
             using Graphics gfx = dgv.CreateGraphics();
             gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             float widthMax = WidthMin;

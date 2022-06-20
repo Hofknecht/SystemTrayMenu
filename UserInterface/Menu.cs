@@ -747,9 +747,8 @@ namespace SystemTrayMenu.UserInterface
                 row.Height = dgv.RowTemplate.Height;
             }
 
-            DataTable data = (DataTable)dgv.DataSource;
-            int dgvHeightNew = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None); // Height of all rows
-            int dgvHeightMax = screenHeightMax - (Height - dgv.Height); // except dgv
+            int dgvHeightNew = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
+            int dgvHeightMax = screenHeightMax - (Height - dgv.Height);
 
             if (dgvHeightMax > Properties.Settings.Default.MaximumMenuHeight)
             {
