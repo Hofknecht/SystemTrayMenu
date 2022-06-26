@@ -939,6 +939,7 @@ namespace SystemTrayMenu.Business
                 hitTestInfo.RowIndex > -1 &&
                 hitTestInfo.RowIndex < dgv.Rows.Count)
             {
+                lastMouseDownRowIndex = -1;
                 RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
                 rowData.MouseClick(e, out bool toCloseByClick);
                 waitToOpenMenu.ClickOpensInstantly(dgv, hitTestInfo.RowIndex);
@@ -959,8 +960,9 @@ namespace SystemTrayMenu.Business
             if (hitTestInfo.RowIndex > -1 &&
                 dgv.Rows.Count > hitTestInfo.RowIndex)
             {
-                RowData trigger = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
-                trigger.DoubleClick(e, out bool toCloseByDoubleClick);
+                lastMouseDownRowIndex = -1;
+                RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
+                rowData.DoubleClick(e, out bool toCloseByDoubleClick);
                 InvalidateRowIfIndexInRange(dgv, hitTestInfo.RowIndex);
                 if (toCloseByDoubleClick)
                 {

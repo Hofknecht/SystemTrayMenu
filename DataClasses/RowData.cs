@@ -242,7 +242,6 @@ namespace SystemTrayMenu.DataClasses
         internal void MouseClick(MouseEventArgs e, out bool toCloseByDoubleClick)
         {
             IsClicking = false;
-
             toCloseByDoubleClick = false;
             if (Properties.Settings.Default.OpenItemWithOneClick)
             {
@@ -263,7 +262,6 @@ namespace SystemTrayMenu.DataClasses
         internal void DoubleClick(MouseEventArgs e, out bool toCloseByDoubleClick)
         {
             IsClicking = false;
-
             toCloseByDoubleClick = false;
             if (!Properties.Settings.Default.OpenItemWithOneClick)
             {
@@ -288,7 +286,7 @@ namespace SystemTrayMenu.DataClasses
             {
                 ProcessStarted = true;
                 string workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);
-                Log.ProcessStart(Path, string.Empty, false, workingDirectory, true);
+                Log.ProcessStart(Path, string.Empty, false, workingDirectory, true, ResolvedPath);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
                 {
                     toCloseByOpenItem = true;

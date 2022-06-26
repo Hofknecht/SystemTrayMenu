@@ -149,7 +149,8 @@ namespace SystemTrayMenu.Utilities
             string arguments = "",
             bool doubleQuoteArg = false,
             string workingDirectory = "",
-            bool createNoWindow = false)
+            bool createNoWindow = false,
+            string resolvedPath = "")
         {
             if (doubleQuoteArg && !string.IsNullOrEmpty(arguments))
             {
@@ -175,7 +176,8 @@ namespace SystemTrayMenu.Utilities
             {
                 Warn($"fileName:'{fileName}' arguments:'{arguments}'", ex);
 
-                if (ex.NativeErrorCode == 2 || ex.NativeErrorCode == 1223)
+                if ((ex.NativeErrorCode == 2 || ex.NativeErrorCode == 1223) &&
+                    (string.IsNullOrEmpty(resolvedPath) || !File.Exists(resolvedPath)))
                 {
                     new Thread(ShowProblemWithShortcut).Start();
                     static void ShowProblemWithShortcut()
