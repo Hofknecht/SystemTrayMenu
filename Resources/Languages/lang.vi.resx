@@ -277,7 +277,7 @@
     <value>Nền của mũi tên khi nhấp vào</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Hình nền của mũi tên khi chuột di chuột qua nó</value>
+    <value>Hình nền của mũi tên khi di chuột qua nó</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Phối màu tối</value>
@@ -298,7 +298,7 @@
     <value>Thanh trượt trong khi kéo</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Trượt trong khi di chuột qua nó 1</value>
+    <value>Thanh trượt trong khi di chuột qua nó 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Thanh trượt trong khi di chuột qua nó 2</value>
@@ -328,7 +328,7 @@
     <value>Sự cố với liên kết lối tắt</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Mục mà lối tắt này đề cập đến đã bị thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
+    <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Mở thư mục</value>
@@ -346,7 +346,7 @@
     <value>Chuyên gia</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Nếu tiêu điểm bị mất và phím Enter được nhấn</value>
+    <value>Nếu mất tiêu điểm và nhấn phím Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Mili giây cho đến khi menu đóng lại nếu trong trường hợp này, menu chưa được kích hoạt lại</value>
@@ -403,7 +403,7 @@
     <value>Menu chính xuất hiện</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Vị trí chuột (phía trên biểu tượng Thanh tác vụ)</value>
+    <value>Vị trí chuột (Biểu tượng trên Thanh tác vụ)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Tùy chỉnh (kéo nó đến vị trí thích hợp)</value>
@@ -508,9 +508,24 @@
     <value>Thư mục các biểu tượng lối tắt trên Internet</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sắp xếp theo loại và ngày</value>
+    <value>Được sắp xếp theo loại và ngày tháng</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Sắp xếp theo loại và tên</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Kiểm tra cập nhật</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Đi đến trang tải xuống</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Phiên bản mới nhất hiện có:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Có phiên bản mới!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Bạn có phiên bản SystemTrayMenu mới nhất!</value>
   </data>
 </root>

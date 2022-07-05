@@ -133,7 +133,7 @@
     <value>Ευρετήριο</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Ο κατάλογος είναι κενός</value>
+    <value>Κενός κατάλογος</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Λεπτομέριες</value>
@@ -217,7 +217,7 @@
     <value>Χιλιοστά του δευτερολέπτου μέχρι να ανοίξει ένα μενού όταν το ποντίκι είναι σε αυτό</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Χιλιοστά του δευτερολέπτου έως ότου κλείσει το μενού, εάν σε αυτήν την περίπτωση το ποντίκι φύγει από το μενού</value>
+    <value>Χιλιοστά του δευτερολέπτου έως ότου κλείσει το μενού, αν σε αυτήν την περίπτωση το ποντίκι φύγει από το μενού</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Μέγιστο πλάτος μενού εικονοστοιχείων</value>
@@ -277,13 +277,13 @@
     <value>Φόντο βέλους όταν κάνετε κλικ</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Φόντο του βέλους ενώ το ποντίκι αιωρείται πάνω του</value>
+    <value>Φόντο βέλους ενώ το ποντίκι αιωρείται πάνω του</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Σχέδιο χρωμάτων σκούρο</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Χρωματικός συνδυασμός φωτεινό</value>
+    <value>Χρωματικός συνδυασμός φωτεινός</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Μενού εφαρμογών</value>
@@ -349,7 +349,7 @@
     <value>Εάν χαθεί η εστίαση και πατηθεί το πλήκτρο Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Χιλιοστά του δευτερολέπτου έως ότου κλείσει το μενού εάν σε αυτήν την περίπτωση το μενού δεν ενεργοποιηθεί ξανά</value>
+    <value>Χιλιοστά του δευτερολέπτου έως ότου κλείσει το μενού εάν σε αυτή την περίπτωση το μενού δεν ενεργοποιηθεί ξανά</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Εμφάνιση στη γραμμή εργασιών</value>
@@ -379,7 +379,7 @@
     <value>Κύριο μενού προσωρινής αποθήκευσης</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Εκκαθάριση της προσωρινής μνήμης εάν υπάρχουν περισσότερα από αυτόν τον αριθμό στοιχείων</value>
+    <value>Εκκαθαρίστε την προσωρινή μνήμη εάν υπάρχουν περισσότερα από αυτόν τον αριθμό στοιχείων</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Προσθήκη δείγματος καταλόγου "Μενού Έναρξης"</value>
@@ -493,7 +493,7 @@
     <value>Εμφάνιση τίτλου καταλόγου στην κορυφή</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
-    <value>Εμφάνιση πλήκτρων λειτουργιών παρακάτω</value>
+    <value>Εμφάνιση των πλήκτρων λειτουργιών παρακάτω</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Εμφάνιση γραμμής αναζήτησης</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Ταξινόμηση κατά τύπο και όνομα</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Ελεγχος για ενημερώσεις</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Μεταβείτε στη σελίδα λήψης</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Τελευταία διαθέσιμη έκδοση:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Νέα έκδοση διαθέσιμη!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Έχετε την πιο πρόσφατη έκδοση του SystemTrayMenu!</value>
   </data>
 </root>

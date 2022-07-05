@@ -190,7 +190,7 @@
     <value>Enkeltklikk for å åpne et element i stedet for dobbeltklikk</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Fargeskjema mørkt alltid aktivt</value>
+    <value>Fargeskjema mørk alltid aktiv</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avansert</value>
@@ -211,7 +211,7 @@
     <value>Misligholde</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Hvis fokus er tapt og hvis musen fortsatt er på menyen</value>
+    <value>Hvis fokuset er tapt og hvis musen fortsatt er på menyen</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Millisekunder til en meny åpnes når musen er på den</value>
@@ -325,10 +325,10 @@
     <value>lasting</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Problem med snarveislink</value>
+    <value>Problem med snarveislenke</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Elementet som denne snarveien refererer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
+    <value>Elementet som denne snarveien referer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Åpne katalogen</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Sortert etter type og navn</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Se etter oppdateringer</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Gå til nedlastingssiden</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Siste tilgjengelige versjon:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Ny versjon tilgjengelig!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Du har den nyeste versjonen av SystemTrayMenu!</value>
   </data>
 </root>

@@ -154,7 +154,7 @@
     <value>Rifillo, fillo përsëri</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Nuk mund të regjistrohej çelësi i nxehtësisë.</value>
+    <value>Nuk mund të regjistrohej çelësi i nxehtë.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Aborti</value>
@@ -181,10 +181,10 @@
     <value>Zgjidhni direktorinë</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Drejtoria juaj kryesore për aplikacionin nuk ekziston ose është bosh! Ndryshoni direktorinë rrënjë ose vendosni disa skedarë, drejtori ose shkurtore në direktorinë rrënjë.</value>
+    <value>Drejtoria juaj rrënjësore për aplikacionin nuk ekziston ose është bosh! Ndryshoni direktorinë rrënjë ose vendosni disa skedarë, drejtori ose shkurtore në direktorinë rrënjë.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>Nuk keni akses në direktorinë rrënjë të aplikacionit. Jepni akses në drejtori ose ndryshoni direktorinë rrënjë.</value>
+    <value>Nuk keni akses në direktorinë rrënjësore të aplikacionit. Jepni akses në drejtori ose ndryshoni direktorinë rrënjë.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Një klikim i vetëm për të hapur një element në vend të klikimit të dyfishtë</value>
@@ -253,7 +253,7 @@
     <value>Konvertoni në drejtorinë përkatëse</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Ruani konfigurimin në drejtorinë e aplikacionit</value>
+    <value>Ruani konfigurimin në direktorinë e aplikacionit</value>
   </data>
   <data name="Configuration file and log file" xml:space="preserve">
     <value>Skedari i konfigurimit dhe skedari i regjistrit</value>
@@ -262,7 +262,7 @@
     <value>Hap direktorinë e aplikacionit</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Lartësia maksimale e pikselëve të menysë</value>
+    <value>Lartësia maksimale e pikselëve të menusë</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Shigjeta</value>
@@ -331,13 +331,13 @@
     <value>Artikulli të cilit i referohet kjo shkurtore është ndryshuar ose zhvendosur, kështu që kjo shkurtore nuk do të funksionojë më siç duhet.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Hap drejtorinë</value>
+    <value>Hap direktorinë</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>Menaxher detyrë</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>Çaktivizohet</value>
+    <value>I çaktivizuar</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>Aktivizuar</value>
@@ -463,7 +463,7 @@
     <value>Venitje</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Dërgo çelësin e nxehtësisë në një shembull tjetër</value>
+    <value>Dërgo çelësin e nxehtë në një shembull tjetër</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Renditur sipas datës</value>
@@ -478,7 +478,7 @@
     <value>Kopjoni artikullin e rreshtit përmes zvarritjes</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Zvarrit</value>
+    <value>Zvarritni</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Lëvizni përmes rrëshqitjes</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Renditur sipas llojit dhe emrit</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Kontrolloni për përditësime</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Shkoni te faqja e shkarkimit</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Versioni i fundit i disponueshëm:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Versioni i ri në dispozicion!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Ju keni versionin më të fundit të SystemTrayMenu!</value>
   </data>
 </root>

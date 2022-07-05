@@ -157,7 +157,7 @@
     <value>హాట్ కీని నమోదు చేయడం సాధ్యపడలేదు.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>రద్దు చేయండి</value>
+    <value>రద్దు</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>జనరల్</value>
@@ -229,7 +229,7 @@
     <value>మెను తెరవడానికి సమయం</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>ఒక మూలకం క్లిక్ చేయబడితే</value>
+    <value>ఒక మూలకం క్లిక్ చేయబడి ఉంటే</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>నేపథ్య</value>
@@ -292,7 +292,7 @@
     <value>స్కోర్ల్ బార్</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>స్లయిడర్</value>
+    <value>స్లైడర్</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
     <value>లాగేటప్పుడు స్లయిడర్</value>
@@ -349,7 +349,7 @@
     <value>ఫోకస్ కోల్పోయి, ఎంటర్ కీని నొక్కితే</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>ఈ సందర్భంలో మెను మళ్లీ సక్రియం చేయబడకపోతే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
+    <value>ఈ సందర్భంలో మెను మళ్లీ సక్రియం చేయకపోతే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>టాస్క్‌బార్‌లో చూపించు</value>
@@ -358,7 +358,7 @@
     <value>డైరెక్టరీని జోడించండి</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>రూట్ డైరెక్టరీకి డైరెక్టరీ యొక్క కంటెంట్‌ను జోడించండి</value>
+    <value>రూట్ డైరెక్టరీకి డైరెక్టరీ యొక్క కంటెంట్‌ని జోడించండి</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>డైరెక్టరీ మార్గాలు</value>
@@ -367,7 +367,7 @@
     <value>డైరెక్టరీలు</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>పునరావృత</value>
+    <value>పునరావృతం</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
     <value>డైరెక్టరీని తీసివేయండి</value>
@@ -394,10 +394,10 @@
     <value>స్వరూపం</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>దిగువ ఎడమవైపు</value>
+    <value>దిగువ ఎడమ</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>దిగువ కుడి</value>
+    <value>దిగువ కుడివైపు</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>ప్రధాన మెనూ కనిపిస్తుంది</value>
@@ -499,7 +499,7 @@
     <value>శోధన పట్టీని చూపు</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>AppDataకి బదులుగా అప్లికేషన్ డైరెక్టరీలో లాగ్ ఫైల్‌ను సేవ్ చేస్తోంది</value>
+    <value>AppDataకి బదులుగా లాగ్ ఫైల్‌ని అప్లికేషన్ డైరెక్టరీలో సేవ్ చేస్తోంది</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>లింక్ అతివ్యాప్తిని చూపు</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>రకం మరియు పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>తాజాకరణలకోసం ప్రయత్నించండి</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>డౌన్‌లోడ్ పేజీకి వెళ్లండి</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>అందుబాటులో ఉన్న తాజా వెర్షన్:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>కొత్త వెర్షన్ అందుబాటులో ఉంది!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>మీరు SystemTrayMenu యొక్క తాజా సంస్కరణను కలిగి ఉన్నారు!</value>
   </data>
 </root>

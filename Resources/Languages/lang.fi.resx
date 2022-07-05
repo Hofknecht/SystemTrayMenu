@@ -247,7 +247,7 @@
     <value>Valittu elementti</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Valitun elementin reunus</value>
+    <value>Valitun elementin reuna</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Muunna suhteelliseksi hakemistoksi</value>
@@ -268,10 +268,10 @@
     <value>Nuoli</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Nuoli napsauttaessa</value>
+    <value>Nuoli napsautettaessa</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Nuoli, kun hiiri liikkuu sen päällä</value>
+    <value>Nuoli, kun hiiri on sen päällä</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Nuolen tausta klikattaessa</value>
@@ -346,7 +346,7 @@
     <value>Asiantuntija</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Jos tarkennus katoaa ja Enter-näppäintä painettiin</value>
+    <value>Jos tarkennus katoaa ja Enter-näppäintä on painettu</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Millisekuntia, kunnes valikko sulkeutuu, jos valikkoa ei tässä tapauksessa aktivoida uudelleen</value>
@@ -445,7 +445,7 @@
     <value>Edellisen viereen</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Poikkeama pikseleillä</value>
+    <value>Offset pikseleillä</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Päällekkäinen</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Lajiteltu tyypin ja nimen mukaan</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Tarkista päivitykset</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Siirry lataussivulle</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Viimeisin saatavilla oleva versio:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Uusi versio saatavilla!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Sinulla on uusin SystemTrayMenu-versio!</value>
   </data>
 </root>

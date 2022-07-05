@@ -184,7 +184,7 @@
     <value>¡Su directorio raíz para la aplicación no existe o está vacío! Cambie el directorio raíz o coloque algunos archivos, directorios o accesos directos en el directorio raíz.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>No tienes acceso al directorio raíz de la aplicación. Otorgue acceso al directorio o cambie el directorio raíz.</value>
+    <value>No tiene acceso al directorio raíz de la aplicación. Otorgue acceso al directorio o cambie el directorio raíz.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>Un solo clic para abrir un elemento en lugar de doble clic</value>
@@ -217,7 +217,7 @@
     <value>Milisegundos hasta que se abre un menú cuando el mouse está sobre él</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisegundos hasta que el menú se cierre si en este caso el ratón sale del menú</value>
+    <value>Milisegundos hasta que se cierre el menú si en este caso el ratón sale del menú</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Ancho máximo de menú en píxeles</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Ordenado por tipo y nombre</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Buscar actualizaciones</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Ir a la página de descarga</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Última versión disponible:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>¡Nueva versión disponible!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>¡Tienes la última versión de SystemTrayMenu!</value>
   </data>
 </root>

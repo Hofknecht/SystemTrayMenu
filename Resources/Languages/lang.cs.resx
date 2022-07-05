@@ -190,7 +190,7 @@
     <value>Jediným kliknutím otevřete prvek namísto dvojitého kliknutí</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Barevné schéma tmavé vždy aktivní</value>
+    <value>Barevné schéma tmavé je vždy aktivní</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Pokročilý</value>
@@ -214,7 +214,7 @@
     <value>Pokud dojde ke ztrátě fokusu a pokud je myš stále v nabídce</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milisekundy, než se otevře nabídka, když je na ní myš</value>
+    <value>Milisekundy do otevření nabídky, když je na ní myš</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundy, než se nabídka zavře, pokud v tomto případě myš nabídku opustí</value>
@@ -223,7 +223,7 @@
     <value>Maximální šířka nabídky pixelů</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Zůstane otevřené</value>
+    <value>Zůstává otevřené</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Čas do otevření nabídky</value>
@@ -271,7 +271,7 @@
     <value>Šipka při kliknutí</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Šipka, zatímco nad ní přechází myš</value>
+    <value>Šipka, zatímco nad ní umístíte myš</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Pozadí šipky při kliknutí</value>
@@ -283,7 +283,7 @@
     <value>Barevné provedení tmavé</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Barevné provedení světlé</value>
+    <value>Barevné schéma světlé</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Nabídka aplikací</value>
@@ -301,7 +301,7 @@
     <value>Posuňte posuvník, když na něj umístíte ukazatel myši 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Posuňte posuvník, když na něj umístíte ukazatel myši 2</value>
+    <value>Posuňte posuvník, zatímco nad ním umístíte ukazatel myši 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Použijte ikonu z adresáře</value>
@@ -382,7 +382,7 @@
     <value>Pokud je více než tento počet položek, vymažte mezipaměť</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Přidat ukázkový adresář 'Start Menu'</value>
+    <value>Přidat ukázkový adresář 'Nabídka Start'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Výška řádku v procentech</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Seřazeno podle typu a názvu</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Kontrola aktualizací</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Přejděte na stránku stahování</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Poslední dostupná verze:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>K dispozici nová verze!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Máte nejnovější verzi SystemTrayMenu!</value>
   </data>
 </root>

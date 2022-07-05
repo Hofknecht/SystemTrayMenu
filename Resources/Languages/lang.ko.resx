@@ -190,7 +190,7 @@
     <value>더블 클릭 대신 요소를 열려면 한 번 클릭</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>색 구성표 어두운 항상 활성</value>
+    <value>어두운 색 구성표 항상 활성</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>고급의</value>
@@ -211,7 +211,7 @@
     <value>기본</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>초점을 잃고 마우스가 여전히 메뉴에 있는 경우</value>
+    <value>포커스가 손실되고 마우스가 여전히 메뉴에 있는 경우</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>마우스가 메뉴에 있을 때 메뉴가 열릴 때까지의 밀리초</value>
@@ -277,7 +277,7 @@
     <value>클릭 시 화살표 배경</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>마우스가 화살표 위에 있는 동안 화살표의 배경</value>
+    <value>마우스가 위에 있는 동안 화살표의 배경</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>색 구성표 어두운</value>
@@ -439,7 +439,7 @@
     <value>검색 결과로만 표시</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>더블 클릭이 아닌 한 번의 클릭으로 디렉토리 열기</value>
+    <value>더블 클릭 대신 한 번의 클릭으로 디렉토리 열기</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>전작에 이어</value>
@@ -451,7 +451,7 @@
     <value>겹침</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>하위 메뉴가 나타납니다.</value>
+    <value>하위 메뉴가 나타납니다</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>아이콘 크기(%)</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>유형 및 이름별로 정렬</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>업데이트 확인</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>다운로드 페이지로 이동</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>사용 가능한 최신 버전:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>새 버전을 사용할 수 있습니다!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>최신 버전의 SystemTrayMenu가 있습니다!</value>
   </data>
 </root>

@@ -154,10 +154,10 @@
     <value>ફરી થી શરૂ કરવું</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>હોટ કી રજીસ્ટર કરી શકાઈ નથી.</value>
+    <value>હોટ કીની નોંધણી કરી શકાઈ નથી.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>ગર્ભપાત</value>
+    <value>એબોર્ટ</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>જનરલ</value>
@@ -184,7 +184,7 @@
     <value>એપ્લિકેશન માટેની તમારી રૂટ ડિરેક્ટરી અસ્તિત્વમાં નથી અથવા ખાલી છે! રૂટ ડિરેક્ટરી બદલો અથવા રૂટ ડિરેક્ટરીમાં કેટલીક ફાઇલો, ડિરેક્ટરીઓ અથવા શોર્ટકટ્સ મૂકો.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં એક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
+    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં ઍક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ડબલ ક્લિકને બદલે એલિમેન્ટ ખોલવા માટે સિંગલ ક્લિક કરો</value>
@@ -235,7 +235,7 @@
     <value>પૃષ્ઠભૂમિ</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
-    <value>ખોલી ડિરેક્ટરી</value>
+    <value>ડિરેક્ટરી ખોલી</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
     <value>ખોલેલી ડિરેક્ટરીની સરહદ</value>
@@ -286,7 +286,7 @@
     <value>રંગ યોજના તેજસ્વી</value>
   </data>
   <data name="App menu" xml:space="preserve">
-    <value>એપ્લિકેશન મેનુ</value>
+    <value>એપ્લિકેશન મેનૂ</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>સ્ક્રોલબાર</value>
@@ -301,7 +301,7 @@
     <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 2</value>
+    <value>સ્લાઇડર જ્યારે માઉસ તેના પર ફરે છે 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>ડિરેક્ટરીમાંથી આયકનનો ઉપયોગ કરો</value>
@@ -349,7 +349,7 @@
     <value>જો ફોકસ ખોવાઈ જાય અને Enter કી દબાવવામાં આવી હોય</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>જો આ કિસ્સામાં મેનુ પુનઃસક્રિય ન થાય તો મેનૂ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
+    <value>જો આ કિસ્સામાં મેનૂ પુનઃસક્રિય ન થાય તો મેનૂ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ટાસ્કબારમાં બતાવો</value>
@@ -421,7 +421,7 @@
     <value>કેશ</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>હંમેશા છુપાયેલ ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ બતાવો</value>
+    <value>હંમેશા છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ બતાવો</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>છુપાયેલ ફાઇલો અને ડિરેક્ટરીઓ</value>
@@ -451,7 +451,7 @@
     <value>ઓવરલેપિંગ</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>સબ મેનુ દેખાય છે</value>
+    <value>સબ મેનૂ દેખાય છે</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>ટકામાં ચિહ્નોનું કદ</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>પ્રકાર અને નામ દ્વારા ક્રમાંકિત</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>અપડેટ માટે ચકાસો</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>ડાઉનલોડ પૃષ્ઠ પર જાઓ</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>નવીનતમ ઉપલબ્ધ સંસ્કરણ:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>નવું સંસ્કરણ ઉપલબ્ધ છે!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>તમારી પાસે SystemTrayMenu નું નવીનતમ સંસ્કરણ છે!</value>
   </data>
 </root>

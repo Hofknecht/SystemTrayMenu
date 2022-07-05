@@ -241,7 +241,7 @@
     <value>Batas direktori yang dibuka</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>bidang pencarian</value>
+    <value>Bidang pencarian</value>
   </data>
   <data name="Selected element" xml:space="preserve">
     <value>Elemen yang dipilih</value>
@@ -286,7 +286,7 @@
     <value>Skema warna cerah</value>
   </data>
   <data name="App menu" xml:space="preserve">
-    <value>menu aplikasi</value>
+    <value>Menu aplikasi</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Scroll bar</value>
@@ -301,7 +301,7 @@
     <value>Penggeser saat mouse melayang di atasnya 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Geser saat mouse melayang di atasnya 2</value>
+    <value>Penggeser saat mouse melayang di atasnya 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Gunakan ikon dari direktori</value>
@@ -313,7 +313,7 @@
     <value>Batas menu</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>ikon</value>
+    <value>Ikon</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>Ditetapkan oleh menu konteks</value>
@@ -328,7 +328,7 @@
     <value>Masalah dengan tautan pintasan</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Item yang dirujuk pintasan ini telah diubah atau dipindahkan, sehingga pintasan ini tidak lagi berfungsi dengan benar.</value>
+    <value>Item yang dirujuk pintasan ini telah diubah atau dipindahkan, sehingga pintasan ini tidak lagi berfungsi dengan baik.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Buka direktori</value>
@@ -382,7 +382,7 @@
     <value>Hapus cache jika lebih dari jumlah item ini</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Tambahkan direktori sampel 'Start Menu'</value>
+    <value>Tambahkan direktori contoh 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Tinggi baris dalam persen</value>
@@ -484,7 +484,7 @@
     <value>Gulir melalui geser</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filter menu menurut jenis file mis.: *.exe|*.dll</value>
+    <value>Filter menu menurut jenis file misalnya: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Tunjukkan jumlah elemen di bawah ini</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Diurutkan berdasarkan jenis dan nama</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Periksa pembaruan</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Buka halaman unduh</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Versi terbaru yang tersedia:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Versi baru tersedia!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Anda memiliki SystemTrayMenu versi terbaru!</value>
   </data>
 </root>

@@ -513,4 +513,19 @@
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Türe ve ada göre sıralanmış</value>
   </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Güncellemeleri kontrol et</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>İndirme sayfasına git</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Mevcut en son sürüm:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Yeni sürüm mevcut!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>SystemTrayMenu'nun en son sürümüne sahipsiniz!</value>
+  </data>
 </root>

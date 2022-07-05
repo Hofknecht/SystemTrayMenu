@@ -187,10 +187,10 @@
     <value>Níl aon rochtain agat ar fhréamh-eolaire na haipe. Deonaigh rochtain ar an eolaire nó athraigh an t-eolaire fréamhacha.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Cliceáil amháin chun eilimint a oscailt in ionad cliceáil faoi dhó</value>
+    <value>Cliceáil amháin chun eilimint a oscailt in ionad cliceáil dúbailte</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Scéim dathanna dorcha gníomhach i gcónaí</value>
+    <value>Scéim dathanna dorcha i gcónaí gníomhach</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Casta</value>
@@ -220,7 +220,7 @@
     <value>Milleasoicindí go dtí go ndúnann an roghchlár má fhágann an luch sa chás seo an roghchlár</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Picteilín leithead uasta roghchláir</value>
+    <value>Uasleithead roghchláir picteilíní</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Fanann oscailte</value>
@@ -253,7 +253,7 @@
     <value>Tiontaigh go eolaire coibhneasta</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Sábháil cumraíocht san eolaire feidhmchlár</value>
+    <value>Sábháil cumraíocht i eolaire feidhmchlár</value>
   </data>
   <data name="Configuration file and log file" xml:space="preserve">
     <value>Comhad cumraíochta agus logchomhad</value>
@@ -298,7 +298,7 @@
     <value>Sleamhnán agus tú ag tarraingt</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Sleamhnán agus an luch ag foluain thairis air 1</value>
+    <value>Sleamhnán agus an luch ag foluain os a chionn 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Sleamhnán agus an luch ag foluain os a chionn 2</value>
@@ -349,7 +349,7 @@
     <value>Má chailltear an fócas agus má bhrúitear an eochair Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milleasoicindí go dtí go ndúnann an roghchlár más rud é sa chás seo nach bhfuil an roghchlár athghníomhachtú</value>
+    <value>Milleasoicindí go dtí go ndúnann an roghchlár mura n-athghníomhaítear an roghchlár sa chás seo</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Taispeáin sa Tascbharra</value>
@@ -454,7 +454,7 @@
     <value>Feictear fo-roghchlár</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Méid na ndeilbhín ina gcéad</value>
+    <value>Méid na deilbhíní ina gcéad</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Tacaíocht SystemTrayMenu</value>
@@ -475,7 +475,7 @@
     <value>Sórtáil</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Cóipeáil mír as a chéile trí tharraingt anuas</value>
+    <value>Cóipeáil mír ró trí tharraingt anuas</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Tarraing</value>
@@ -499,7 +499,7 @@
     <value>Taispeáin barra cuardaigh</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Comhad loga a shábháil san eolaire feidhmchlár in ionad AppData</value>
+    <value>Comhad loga a shábháil in eolaire feidhmchlár in ionad AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Taispeáin forleagan naisc</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Sórtáilte de réir cineáil agus ainm</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Seiceáil do nuashrónaithe</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Téigh go dtí an leathanach íoslódáil</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>An leagan is déanaí atá ar fáil:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Leagan nua ar fáil!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Tá an leagan is déanaí de SystemTrayMenu agat!</value>
   </data>
 </root>

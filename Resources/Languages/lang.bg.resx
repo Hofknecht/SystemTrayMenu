@@ -127,13 +127,13 @@
     <value>Автоматично стартиране</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>Излезте от приложението</value>
+    <value>Изход от приложението</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Указател</value>
+    <value>Справочник</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Указателят е празен</value>
+    <value>Директорията е празна</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Подробности</value>
@@ -154,16 +154,16 @@
     <value>Рестартирам</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Горещият клавиш не можа да се регистрира.</value>
+    <value>Не може да се регистрира горещият клавиш.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>Прекратяване</value>
+    <value>Прекъсване</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Общ</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Горещ клавиш</value>
+    <value>Бърз клавиш</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Започнете с Windows</value>
@@ -175,22 +175,22 @@
     <value>често задавани въпроси</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Прочетете ЧЗВ и след това изберете основна директория за SystemTrayMenu.</value>
+    <value>Прочетете ЧЗВ и след това изберете главна директория за SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Изберете директория</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Вашата основна директория за приложението не съществува или е празна! Променете главната директория или поставете някои файлове, директории или преки пътища в основната директория.</value>
+    <value>Вашата основна директория за приложението не съществува или е празна! Променете основната директория или поставете някои файлове, директории или преки пътища в основната директория.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>Нямате достъп до главната директория на приложението. Предоставете достъп до директорията или променете главната директория.</value>
+    <value>Нямате достъп до основната директория на приложението. Дайте достъп до директорията или сменете основната директория.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Едно щракване, за да отворите елемент вместо двойно щракване</value>
+    <value>Едно щракване за отваряне на елемент вместо двойно щракване</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Цветовата схема тъмно винаги е активна</value>
+    <value>Тъмната цветова схема винаги е активна</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Разширено</value>
@@ -199,28 +199,28 @@
     <value>На мястото на мишката</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>Промяна на директория</value>
+    <value>Смяна на директорията</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Щракнете върху</value>
+    <value>Кликнете</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Персонализирайте</value>
+    <value>Персонализиране</value>
   </data>
   <data name="Default" xml:space="preserve">
     <value>По подразбиране</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Ако фокусът е загубен и ако мишката все още е в менюто</value>
+    <value>Ако фокусът е изгубен и ако мишката все още е в менюто</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Милисекунди, докато се отвори меню, когато мишката е върху него</value>
+    <value>Милисекунди до отваряне на меню, когато мишката е върху него</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Милисекунди, докато менюто се затвори, ако в този случай мишката напусне менюто</value>
+    <value>Милисекунди до затваряне на менюто, ако в този случай мишката напусне менюто</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Максимална ширина на менюто пиксели</value>
+    <value>Пиксели максимална ширина на менюто</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Остава отворен</value>
@@ -229,7 +229,7 @@
     <value>Време до отваряне на меню</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>Ако е щракнат върху елемент</value>
+    <value>Ако е щракнато върху елемент</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Заден план</value>
@@ -256,13 +256,13 @@
     <value>Запазете конфигурацията в директорията на приложението</value>
   </data>
   <data name="Configuration file and log file" xml:space="preserve">
-    <value>Конфигурационен файл и регистрационен файл</value>
+    <value>Конфигурационен файл и лог файл</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Отворете директорията на приложението</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Максимална височина на менюто пиксели</value>
+    <value>Пиксели максимална височина на менюто</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Стрелка</value>
@@ -271,13 +271,13 @@
     <value>Стрелка при щракване</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Стрелка, докато мишката се задържа над нея</value>
+    <value>Стрелка, докато мишката се движи над нея</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Фон на стрелка при щракване</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Фон на стрелка, докато мишката се задържа над нея</value>
+    <value>Фон на стрелка, докато мишката се движи над нея</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Цветова схема тъмна</value>
@@ -295,19 +295,19 @@
     <value>Плъзгач</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Плъзгач, докато плъзгате</value>
+    <value>Плъзгач при плъзгане</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Плъзгач, докато мишката се задържа над него 1</value>
+    <value>Плъзгач, докато курсорът на мишката е върху него 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Плъзгач, докато мишката се задържа над него 2</value>
+    <value>Плъзгач, докато мишката се движи върху него 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Използвайте икона от директорията</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>размер</value>
+    <value>Размер</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Граница на менюто</value>
@@ -319,16 +319,16 @@
     <value>Задава се от контекстното меню</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Задайте като директория</value>
+    <value>Задаване като директория</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Зареждане</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Проблем с връзката за пряк път</value>
+    <value>Проблем с връзката за бърз достъп</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Елементът, за който се отнася този пряк път, е променен или преместен, така че този пряк път вече няма да работи правилно.</value>
+    <value>Елементът, към който се отнася този пряк път, е променен или преместен, така че този пряк път вече няма да работи правилно.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Отворете директорията</value>
@@ -346,7 +346,7 @@
     <value>Експерт</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Ако фокусът е загубен и е натиснат клавишът Enter</value>
+    <value>Ако фокусът е изгубен и е натиснат клавишът Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Милисекунди до затваряне на менюто, ако в този случай менюто не се активира отново</value>
@@ -358,16 +358,16 @@
     <value>Добавете директория</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Добавете съдържание на директорията към основната директория</value>
+    <value>Добавете съдържанието на директорията към основната директория</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>Пътища на директории</value>
+    <value>Пътища на директория</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>Директории</value>
+    <value>Справочници</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>Рекурсивна</value>
+    <value>Рекурсивен</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
     <value>Премахване на директория</value>
@@ -376,13 +376,13 @@
     <value>Само файлове</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Главно меню за кеширане</value>
+    <value>Главно меню на кеша</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Изчистете кеша, ако повече от този брой елементи</value>
+    <value>Изчистете кеша, ако има повече от този брой елементи</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Добавете примерна директория „Меню Старт“</value>
+    <value>Добавете примерна директория „Старт меню“</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Височина на реда в проценти</value>
@@ -406,7 +406,7 @@
     <value>Местоположение на мишката (над иконата на лентата на задачите)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Персонализиран (плъзнете го на подходящото място)</value>
+    <value>По избор (плъзнете го на подходящото място)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>елемент</value>
@@ -415,13 +415,13 @@
     <value>елементи</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>Генерирайте преки пътища на устройството при стартиране</value>
+    <value>Генерирайте преки пътища за устройството при стартиране</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>Кеш</value>
+    <value>Кеш памет</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Винаги показвайте скрити файлове, директории или дискове</value>
+    <value>Винаги показвай скрити файлове, директории или дискове</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Скрити файлове и директории</value>
@@ -439,13 +439,13 @@
     <value>Показване само като резултат от търсенето</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Едно щракване, за да отворите директория вместо двойно щракване</value>
+    <value>Едно щракване за отваряне на директория вместо двойно щракване</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>До предишната</value>
+    <value>До предишния</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Изместване с пиксели</value>
+    <value>Отместване с пиксели</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Припокриване</value>
@@ -463,13 +463,13 @@
     <value>Затихване</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Изпратете бърз клавиш към друг екземпляр</value>
+    <value>Изпратете клавишна комбинация до друг екземпляр</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>Сортирано по дата</value>
+    <value>Сортирани по дата</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Сортирано по име</value>
+    <value>Сортирани по име</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортиране</value>
@@ -484,25 +484,25 @@
     <value>Превъртете чрез плъзгане</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Филтриране на менюто по тип файл, напр.: *.exe|*.dll</value>
+    <value>Меню за филтриране по тип файл, напр.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
-    <value>Покажете броя на елементите по-долу</value>
+    <value>Показване на броя на елементите по-долу</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Показване на заглавието на директорията отгоре</value>
+    <value>Показване на заглавието на директорията в горната част</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
-    <value>Покажете функционалните клавиши по-долу</value>
+    <value>Показване на функционалните клавиши по-долу</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Показване на лентата за търсене</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Записване на регистрационния файл в директорията на приложението вместо в AppData</value>
+    <value>Запазване на регистрационен файл в директорията на приложението вместо AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
-    <value>Показване на наслагване на връзката</value>
+    <value>Показване на наслагване на връзка</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Директория с икони за бърз достъп до интернет</value>
@@ -511,6 +511,21 @@
     <value>Сортирани по вид и дата</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
-    <value>Сортирани по вид и име</value>
+    <value>Сортирани по тип и име</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Провери за обновления</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Отидете на страницата за изтегляне</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Последна налична версия:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Налична е нова версия!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Имате най-новата версия на SystemTrayMenu!</value>
   </data>
 </root>

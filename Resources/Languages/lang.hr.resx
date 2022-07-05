@@ -124,19 +124,19 @@
     <value>u redu</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+    <value>Automatsko pokretanje</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>Izađi iz aplikacije</value>
+    <value>Izlaz iz aplikacije</value>
   </data>
   <data name="Directory" xml:space="preserve">
     <value>Imenik</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Imenik je prazan</value>
+    <value>Imenik prazan</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>Pojedinosti</value>
+    <value>pojedinosti</value>
   </data>
   <data name="System Info" xml:space="preserve">
     <value>Informacije o sustavu</value>
@@ -148,13 +148,13 @@
     <value>Jezik</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Dnevnik</value>
+    <value>Log datoteka</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Ponovno pokrenite</value>
+    <value>Ponovno pokretanje</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Nije moguće registrirati vruću tipku.</value>
+    <value>Nije moguće registrirati prečac.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Prekid</value>
@@ -163,13 +163,13 @@
     <value>Općenito</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>Prečac</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Počnite sa sustavom Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Postavke</value>
+    <value>postavke</value>
   </data>
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Često postavljana pitanja</value>
@@ -214,13 +214,13 @@
     <value>Ako se fokus izgubi i ako je miš još uvijek na izborniku</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milisekunde dok se ne otvori izbornik kada je miš na njemu</value>
+    <value>Milisekunde do otvaranja izbornika kada je miš na njemu</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekunde do zatvaranja izbornika ako u tom slučaju miš napusti izbornik</value>
+    <value>Milisekunde do zatvaranja izbornika ako u ovom slučaju miš tada napusti izbornik</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Maksimalna širina izbornika piksela</value>
+    <value>Maksimalna širina izbornika u pikselima</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Ostaje otvoren</value>
@@ -238,7 +238,7 @@
     <value>Otvoren imenik</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>Granica otvorenog imenika</value>
+    <value>Obrub otvorenog imenika</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Polje za pretraživanje</value>
@@ -250,25 +250,25 @@
     <value>Obrub odabranog elementa</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
-    <value>Pretvori u relativni direktorij</value>
+    <value>Pretvori u relativni imenik</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Spremite konfiguraciju u imenik aplikacije</value>
   </data>
   <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfiguracijska datoteka i datoteka zapisnika</value>
+    <value>Konfiguracijska datoteka i datoteka dnevnika</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Otvorite imenik aplikacija</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Maksimalna visina izbornika piksela</value>
+    <value>Maksimalna visina izbornika u pikselima</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Strijela</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Strelica prilikom klika</value>
+    <value>Strelica pri kliku</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Strelica dok miš lebdi iznad nje</value>
@@ -304,22 +304,22 @@
     <value>Klizač dok miš lebdi iznad njega 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>Koristite ikonu iz imenika</value>
+    <value>Koristi ikonu iz imenika</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Veličina</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Granica izbornika</value>
+    <value>Obrub izbornika</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Ikone</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Postavlja se pomoću kontekstnog izbornika</value>
+    <value>Postavite kontekstnim izbornikom</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Postavi kao imenik</value>
+    <value>Postavi kao direktorij</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Učitavam</value>
@@ -328,10 +328,10 @@
     <value>Problem s vezom prečaca</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Stavka na koju se odnosi ovaj prečac je promijenjena ili premještena, tako da ovaj prečac više neće raditi ispravno.</value>
+    <value>Stavka na koju se ovaj prečac odnosi je promijenjena ili premještena, tako da ovaj prečac više neće ispravno raditi.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Otvorite imenik</value>
+    <value>Otvori imenik</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>Upravitelj zadataka</value>
@@ -340,19 +340,19 @@
     <value>Deaktivirano</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>Aktivirano</value>
+    <value>Aktiviran</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>Stručnjak</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Ako je fokus izgubljen i pritisnuta tipka Enter</value>
+    <value>Ako je fokus izgubljen i pritisnuta je tipka Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisekunde do zatvaranja izbornika ako se u tom slučaju izbornik ponovno ne aktivira</value>
+    <value>Milisekunde do zatvaranja izbornika ako se u ovom slučaju izbornik ne aktivira ponovno</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Prikaži na traci zadataka</value>
+    <value>Prikaži na programskoj traci</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>Dodaj imenik</value>
@@ -361,7 +361,7 @@
     <value>Dodajte sadržaj direktorija u korijenski direktorij</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>Putevi imenika</value>
+    <value>Staze imenika</value>
   </data>
   <data name="Directories" xml:space="preserve">
     <value>Imenici</value>
@@ -379,16 +379,16 @@
     <value>Glavni izbornik predmemorije</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Izbrišite predmemoriju ako je više od ovog broja stavki</value>
+    <value>Izbriši predmemoriju ako je više od ovog broja stavki</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Dodaj uzorak direktorija "Izbornik Start"</value>
+    <value>Dodaj primjer direktorija 'Izbornik Start'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>Visina reda u postocima</value>
+    <value>Visina retka u postocima</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Zaobljeni kutovi</value>
+    <value>Okrugli kutovi</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Izgled</value>
@@ -403,7 +403,7 @@
     <value>Pojavljuje se glavni izbornik</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Lokacija miša (iznad ikone na traci zadataka)</value>
+    <value>Lokacija miša (iznad ikone programske trake)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Prilagođeno (povucite na odgovarajuće mjesto)</value>
@@ -418,16 +418,16 @@
     <value>Generirajte prečace pogona pri pokretanju</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>Cache</value>
+    <value>Predmemorija</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
     <value>Uvijek prikaži skrivene datoteke, direktorije ili pogone</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>Skrivene datoteke i direktorije</value>
+    <value>Skrivene datoteke i direktoriji</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Nikada nemojte prikazivati ​​skrivene datoteke, direktorije ili pogone</value>
+    <value>Nikad ne prikazuj skrivene datoteke, direktorije ili pogone</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Veličina i mjesto</value>
@@ -460,49 +460,49 @@
     <value>Podrška SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>Blijedeći</value>
+    <value>Blijeđenje</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Pošalji prečac na drugu instancu</value>
+    <value>Pošalji prečac drugoj instanci</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Poredano po datumu</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Poredano po imenu</value>
+    <value>Poredano po nazivu</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Sortiranje</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopirajte stavku retka putem povlačenja</value>
+    <value>Kopiraj stavku retka povlačenjem</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Opterećenje</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Pomičite se prelaskom</value>
+    <value>Pomičite se povlačenjem</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Izbornik filtriranja prema vrsti datoteke, npr.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
-    <value>Prikaži broj elemenata u nastavku</value>
+    <value>Prikaži broj elemenata ispod</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Prikaži naslov imenika na vrhu</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
-    <value>U nastavku prikažite funkcijske tipke</value>
+    <value>Prikaži funkcijske tipke ispod</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Prikaži traku za pretraživanje</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Spremanje datoteke dnevnika u direktorij aplikacije umjesto AppData</value>
+    <value>Spremanje datoteke dnevnika u imenik aplikacije umjesto AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
-    <value>Prikaži preklapanje veze</value>
+    <value>Prikaži sloj veze</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Imenik ikona internetskih prečaca</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Poredano po vrsti i nazivu</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Provjerite ima li ažuriranja</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Idi na stranicu za preuzimanje</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Najnovija dostupna verzija:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Nova verzija dostupna!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Imate najnoviju verziju SystemTrayMenu!</value>
   </data>
 </root>

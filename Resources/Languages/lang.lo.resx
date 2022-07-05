@@ -181,7 +181,7 @@
     <value>ເລືອກໄດເລກະທໍລີ</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ໄດເລກະທໍລີຮາກຂອງເຈົ້າສໍາລັບແອັບຯນັ້ນບໍ່ມີຢູ່ ຫຼືຫວ່າງເປົ່າ! ປ່ຽນໄດເລກະທໍລີຮາກຫຼືໃສ່ບາງໄຟລ໌, ໄດເລກະທໍລີຫຼືທາງລັດເຂົ້າໄປໃນໄດເລກະທໍລີຮາກ.</value>
+    <value>ໄດເລກະທໍລີຮາກຂອງເຈົ້າສໍາລັບແອັບຯບໍ່ມີຢູ່ຫຼືຫວ່າງເປົ່າ! ປ່ຽນໄດເລກະທໍລີຮາກຫຼືໃສ່ບາງໄຟລ໌, ໄດເລກະທໍລີຫຼືທາງລັດເຂົ້າໄປໃນໄດເລກະທໍລີຮາກ.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>ທ່ານບໍ່ມີການເຂົ້າເຖິງໄດເລກະທໍລີຮາກຂອງແອັບຯ. ໃຫ້ການເຂົ້າເຖິງໄດເລກະທໍລີຫຼືປ່ຽນໄດເລກະທໍລີຮາກ.</value>
@@ -190,7 +190,7 @@
     <value>ຄລິກດຽວເພື່ອເປີດອົງປະກອບໃດໜຶ່ງແທນການຄລິກສອງເທື່ອ</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>ຮູບແບບສີມືດມີການເຄື່ອນໄຫວສະເໝີ</value>
+    <value>ຮູບແບບສີມືດເຮັດວຽກສະເໝີ</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>ຂັ້ນສູງ</value>
@@ -211,7 +211,7 @@
     <value>ຄ່າເລີ່ມຕົ້ນ</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>ຖ້າຫາກວ່າຈຸດສຸມແມ່ນສູນເສຍໄປແລະຖ້າຫາກວ່າຫນູຍັງຢູ່ໃນເມນູ</value>
+    <value>ຖ້າຫາກວ່າຈຸດສຸມແມ່ນສູນເສຍແລະຖ້າຫາກວ່າຫນູຍັງຢູ່ໃນເມນູ</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>milliseconds ຈົນກ່ວາເມນູເປີດໃນເວລາທີ່ຫນູຢູ່ເທິງມັນ</value>
@@ -274,7 +274,7 @@
     <value>ລູກສອນໃນຂະນະທີ່ຫນູເລື່ອນຂ້າມມັນ</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>ພື້ນຫລັງຂອງລູກສອນເມື່ອຄລິກ</value>
+    <value>ພື້ນຫຼັງຂອງລູກສອນເມື່ອຄລິກ</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>ພື້ນຫຼັງຂອງລູກສອນໃນຂະນະທີ່ຫນູເລື່ອນຢູ່ເທິງມັນ</value>
@@ -283,7 +283,7 @@
     <value>ຮູບແບບສີເຂັ້ມ</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>ໂຄງການສີສົດໃສ</value>
+    <value>ຮູບແບບສີສັນສົດໃສ</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>ເມນູແອັບ</value>
@@ -346,10 +346,10 @@
     <value>ຜູ້ຊ່ຽວຊານ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>ຖ້າ​ສູນ​ເສຍ​ການ​ສຸມ​ໃສ່​ການ​ແລະ​ປຸ່ມ Enter ຖືກ​ກົດ​ດັນ​</value>
+    <value>ຖ້າ​ສູນ​ເສຍ​ຈຸດ​ສຸມ​ແລະ​ປຸ່ມ Enter ຖືກ​ກົດ​ດັນ</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>ມິນລິວິນາທີຈົນກ່ວາເມນູປິດຖ້າໃນກໍລະນີນີ້ເມນູບໍ່ໄດ້ເປີດໃຊ້ຄືນ</value>
+    <value>ມິນລິວິນາທີຈົນກ່ວາເມນູປິດຖ້າໃນກໍລະນີນີ້ເມນູບໍ່ໄດ້ເປີດໃຊ້ຄືນໃຫມ່</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ສະແດງໃຫ້ເຫັນໃນ Taskbar</value>
@@ -421,7 +421,7 @@
     <value>ແຄດ</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>ສະແດງໄຟລ໌, ໄດເລກະທໍລີ ຫຼືໄດທີ່ເຊື່ອງໄວ້ສະເໝີ</value>
+    <value>ສະແດງໄຟລ໌, ໄດເລກະທໍລີ ຫຼືໄດທີ່ເຊື່ອງໄວ້ຢູ່ສະເໝີ</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>ໄຟລ໌ທີ່ເຊື່ອງໄວ້ແລະໄດເລກະທໍລີ</value>
@@ -484,7 +484,7 @@
     <value>ເລື່ອນຜ່ານ swipe</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ການກັ່ນຕອງເມນູຕາມປະເພດໄຟລ໌ເຊັ່ນ: *.exe|*.dll</value>
+    <value>ກັ່ນຕອງເມນູຕາມປະເພດໄຟລ໌ເຊັ່ນ: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>ສະແດງຈໍານວນອົງປະກອບຂ້າງລຸ່ມນີ້</value>
@@ -499,7 +499,7 @@
     <value>ສະແດງແຖບຄົ້ນຫາ</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>ບັນທຶກໄຟລ໌ບັນທຶກຢູ່ໃນໄດເລກະທໍລີແອັບພລິເຄຊັນແທນ AppData</value>
+    <value>ບັນທຶກໄຟລ໌ບັນທຶກໃນໄດເລກະທໍລີແອັບພລິເຄຊັນແທນ AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>ສະແດງການວາງຊ້ອນລິ້ງ</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>ຈັດຮຽງຕາມປະເພດແລະຊື່</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>ກວດສອບການອັບເດດ</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>ໄປທີ່ໜ້າດາວໂຫຼດ</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>ສະ​ບັບ​ຫລ້າ​ສຸດ​ທີ່​ມີ​ຢູ່​:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>ລຸ້ນໃໝ່ມີໃຫ້!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>ທ່ານມີເວີຊັນຫຼ້າສຸດຂອງ SystemTrayMenu!</value>
   </data>
 </root>

@@ -175,7 +175,7 @@
     <value>よくある質問</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>FAQを読み、SystemTrayMenuのルートディレクトリを選択します。</value>
+    <value>FAQを読んでから、SystemTrayMenuのルートディレクトリを選択してください。</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>ディレクトリを選択</value>
@@ -406,7 +406,7 @@
     <value>マウスの位置（タスクバーアイコンの上）</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>カスタム（適切な場所にドラッグします）</value>
+    <value>カスタム（適切な場所にドラッグ）</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>エレメント</value>
@@ -466,7 +466,7 @@
     <value>ホットキーを他のインスタンスに送信する</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>日付でソート</value>
+    <value>日付で並べ替え</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
     <value>名前で並べ替え</value>
@@ -493,7 +493,7 @@
     <value>ディレクトリタイトルを上部に表示</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
-    <value>以下にファンクションキーを表示</value>
+    <value>以下にファンクションキーを表示します</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>検索バーを表示する</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>タイプと名前で並べ替え</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>アップデートを確認</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>ダウンロードページに移動</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>利用可能な最新バージョン：</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>新しいバージョンが利用可能です！</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>SystemTrayMenuの最新バージョンがあります！</value>
   </data>
 </root>

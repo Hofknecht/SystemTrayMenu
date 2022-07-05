@@ -133,7 +133,7 @@
     <value>Orodha</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Orodha tupu</value>
+    <value>Saraka tupu</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Maelezo</value>
@@ -241,7 +241,7 @@
     <value>Mpaka wa saraka iliyofunguliwa</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>Tafuta sehemu</value>
+    <value>Sehemu ya utafutaji</value>
   </data>
   <data name="Selected element" xml:space="preserve">
     <value>Kipengele kilichochaguliwa</value>
@@ -277,7 +277,7 @@
     <value>Usuli wa mshale unapobofya</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Usuli wa mshale huku kipanya ikielea juu yake</value>
+    <value>Mandharinyuma ya mshale huku kipanya ikielea juu yake</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Mpango wa rangi giza</value>
@@ -346,7 +346,7 @@
     <value>Mtaalamu</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Ikiwa lengo limepotea na kitufe cha Ingiza kikabofya</value>
+    <value>Ikiwa lengo limepotea na kitufe cha Ingiza kilibofya</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Milisekunde hadi menyu ifunge ikiwa katika hali hii menyu haijawashwa tena</value>
@@ -382,7 +382,7 @@
     <value>Futa akiba ikiwa ni zaidi ya idadi hii ya vipengee</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Ongeza sampuli ya saraka 'Start Menu'</value>
+    <value>Ongeza saraka ya sampuli 'Menyu ya Anza'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Urefu wa safu kwa asilimia</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Imepangwa kwa aina na jina</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Angalia vilivyojiri vipya</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Nenda kwenye ukurasa wa kupakua</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Toleo linalopatikana hivi karibuni:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Toleo jipya linapatikana!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Una toleo jipya zaidi la SystemTrayMenu!</value>
   </data>
 </root>

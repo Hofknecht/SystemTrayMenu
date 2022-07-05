@@ -175,13 +175,13 @@
     <value>أسئلة مكررة</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>اقرأ الأسئلة الشائعة ثم اختر دليلًا جذريًا لقائمة SystemTrayMenu.</value>
+    <value>اقرأ الأسئلة الشائعة ثم اختر دليلًا جذرًا لـ SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>حدد الدليل</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>الدليل الجذر للتطبيق غير موجود أو فارغ! قم بتغيير الدليل الجذر أو ضع بعض الملفات أو الدلائل أو الاختصارات في الدليل الجذر.</value>
+    <value>الدليل الجذر للتطبيق غير موجود أو أنه فارغ! قم بتغيير الدليل الجذر أو ضع بعض الملفات أو الدلائل أو الاختصارات في الدليل الجذر.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>ليس لديك حق الوصول إلى الدليل الجذر للتطبيق. امنح حق الوصول إلى الدليل أو قم بتغيير الدليل الجذر.</value>
@@ -214,7 +214,7 @@
     <value>إذا فقد التركيز وما إذا كان الماوس لا يزال على القائمة</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>مللي ثانية حتى تفتح القائمة عندما يكون الماوس عليها</value>
+    <value>ملي ثانية حتى تفتح القائمة عندما يكون الماوس عليها</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>ملي ثانية حتى يتم إغلاق القائمة إذا ترك الماوس في هذه الحالة القائمة</value>
@@ -238,7 +238,7 @@
     <value>الدليل المفتوح</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>حد الدليل المفتوح</value>
+    <value>حدود الدليل المفتوح</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>مجال البحث</value>
@@ -304,7 +304,7 @@
     <value>شريط التمرير أثناء تحريك الماوس فوقه 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>استخدام رمز من الدليل</value>
+    <value>استخدم رمز من الدليل</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>بحجم</value>
@@ -313,7 +313,7 @@
     <value>حدود القائمة</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>أيقونات</value>
+    <value>الأيقونات</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>مجموعة حسب قائمة السياق</value>
@@ -352,7 +352,7 @@
     <value>مللي ثانية حتى يتم إغلاق القائمة إذا لم يتم إعادة تنشيط القائمة في هذه الحالة</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>تظهر في شريط المهام</value>
+    <value>إظهار في شريط المهام</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>أضف الدليل</value>
@@ -376,7 +376,7 @@
     <value>الملفات فقط</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>ذاكرة التخزين المؤقت القائمة الرئيسية</value>
+    <value>القائمة الرئيسية لذاكرة التخزين المؤقت</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>امسح ذاكرة التخزين المؤقت إذا كان هناك أكثر من هذا العدد من العناصر</value>
@@ -445,7 +445,7 @@
     <value>بجانب السابق</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>تعويض بالبكسل</value>
+    <value>الإزاحة بالبكسل</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>تداخل</value>
@@ -475,7 +475,7 @@
     <value>فرز</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>نسخ عنصر الصف عن طريق السحب والإفلات</value>
+    <value>نسخ عنصر الصف عن طريق السحب والإسقاط</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>يجر</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>مرتبة حسب النوع والاسم</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>تحقق من وجود تحديثات</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>انتقل إلى صفحة التنزيل</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>أحدث نسخة متاحة:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>نسخة جديدة متاحة!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>لديك أحدث إصدار من SystemTrayMenu!</value>
   </data>
 </root>

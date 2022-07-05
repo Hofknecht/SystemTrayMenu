@@ -217,13 +217,13 @@
     <value>Milisekundy, kým sa otvorí ponuka, keď je na nej myš</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundy, kým sa ponuka zatvorí, ak v tomto prípade myš opustí ponuku</value>
+    <value>Milisekundy, kým sa ponuka nezatvorí, ak v tomto prípade myš opustí ponuku</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maximálna šírka ponuky pixelov</value>
   </data>
   <data name="Stays open" xml:space="preserve">
-    <value>Zostane otvorený</value>
+    <value>Zostáva otvorené</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Čas, kým sa otvorí ponuka</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Zoradené podľa typu a názvu</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Skontroluj aktualizácie</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Prejdite na stránku sťahovania</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Najnovšia dostupná verzia:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>K dispozícii nová verzia!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Máte najnovšiu verziu SystemTrayMenu!</value>
   </data>
 </root>

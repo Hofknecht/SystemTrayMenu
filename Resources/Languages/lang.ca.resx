@@ -175,7 +175,7 @@
     <value>Preguntes freqüents</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Llegiu les PMF i trieu un directori arrel per al SystemTrayMenu.</value>
+    <value>Llegiu les PMF i, a continuació, trieu un directori arrel per al SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Seleccioneu el directori</value>
@@ -346,7 +346,7 @@
     <value>Expert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Si es perd el focus i es premeu la tecla Enter</value>
+    <value>Si es perd el focus i es prem la tecla Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Mil·lisegons fins que es tanqui el menú si en aquest cas el menú no es reactiva</value>
@@ -382,7 +382,7 @@
     <value>Esborra la memòria cau si hi ha més d'aquest nombre d'elements</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Afegeix el directori d'exemple "Menú Inici"</value>
+    <value>Afegeix el directori de mostra "Menú Inici"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Alçada de fila en percentatge</value>
@@ -445,7 +445,7 @@
     <value>Al costat de l'anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Compensació de píxels</value>
+    <value>Compensació per píxels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Superposició</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Ordenat per tipus i nom</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Buscar actualitzacions</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Aneu a la pàgina de descàrrega</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Última versió disponible:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Nova versió disponible!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Tens la darrera versió de SystemTrayMenu!</value>
   </data>
 </root>

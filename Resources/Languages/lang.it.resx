@@ -513,4 +513,19 @@
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Ordinati per tipo e nome</value>
   </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Controlla gli aggiornamenti</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Vai alla pagina di download</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Ultima versione disponibile:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Nuova versione disponibile!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Hai l'ultima versione di SystemTrayMenu!</value>
+  </data>
 </root>

@@ -154,7 +154,7 @@
     <value>Рестарт</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Не можеше да се регистрира копче за готвење.</value>
+    <value>Не може да се регистрира топлото копче.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Прекини</value>
@@ -238,7 +238,7 @@
     <value>Отворен директориум</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>Граница на отворен директориум</value>
+    <value>Граница на отворениот директориум</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Поле за пребарување</value>
@@ -250,7 +250,7 @@
     <value>Граница на избраниот елемент</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
-    <value>Претворете во релативен директориум</value>
+    <value>Конвертирај во релативен директориум</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Зачувајте ја конфигурацијата во директориумот со апликации</value>
@@ -325,7 +325,7 @@
     <value>вчитување</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Проблем со кратенка врска</value>
+    <value>Проблем со врската со кратенки</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Ставката на која се однесува оваа кратенка е променета или преместена, така што оваа кратенка повеќе нема да работи правилно.</value>
@@ -379,7 +379,7 @@
     <value>Главното мени за кеширање</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Исчистете го кешот ако повеќе од овој број на ставки</value>
+    <value>Исчистете го кешот ако повеќе од овој број ставки</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Додадете примерок директориум „Старт мени“</value>
@@ -421,7 +421,7 @@
     <value>Кеш</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Секогаш прикажувајте скриени датотеки, директориуми или дискови</value>
+    <value>Секогаш прикажувај скриени датотеки, директориуми или дискови</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Скриени датотеки и директориуми</value>
@@ -451,7 +451,7 @@
     <value>Преклопување</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>Се појавува подмени</value>
+    <value>Се појавува подменито</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Големината на иконите во проценти</value>
@@ -469,7 +469,7 @@
     <value>Подредени по датум</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Подредени по име</value>
+    <value>Подредено по име</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортирање</value>
@@ -490,7 +490,7 @@
     <value>Прикажи го бројот на елементи подолу</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Прикажи наслов на директориумот на врвот</value>
+    <value>Прикажи го насловот на директориумот на врвот</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
     <value>Прикажи ги функциските копчиња подолу</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Подредени по тип и име</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Проверете дали има ажурирања</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Одете на страницата за преземање</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Најнова достапна верзија:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Достапна е нова верзија!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Ја имате најновата верзија на SystemTrayMenu!</value>
   </data>
 </root>

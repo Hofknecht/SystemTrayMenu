@@ -163,7 +163,7 @@
     <value>გენერალი</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>ცხელი კლავიში</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>დაიწყეთ Windows-ით</value>
@@ -184,7 +184,7 @@
     <value>აპლიკაციის თქვენი root დირექტორია არ არსებობს ან ცარიელია! შეცვალეთ root დირექტორია ან განათავსეთ რამდენიმე ფაილი, დირექტორია ან მალსახმობები root დირექტორიაში.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>თქვენ არ გაქვთ წვდომა აპის root დირექტორიაზე. მიეცით წვდომა დირექტორიაზე ან შეცვალეთ root დირექტორია.</value>
+    <value>თქვენ არ გაქვთ წვდომა აპის ძირეულ დირექტორიაზე. მიეცით წვდომა დირექტორიაზე ან შეცვალეთ root დირექტორია.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ერთი დაწკაპუნებით ელემენტის გასახსნელად ორმაგი დაწკაპუნების ნაცვლად</value>
@@ -214,13 +214,13 @@
     <value>თუ ფოკუსი დაკარგულია და თუ მაუსი კვლავ მენიუშია</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>მილიწამებში მენიუს გახსნამდე, როდესაც მასზე მაუსია</value>
+    <value>მილიწამებში მენიუს გახსნამდე, როცა მასზე მაუსია</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>მილიწამები მენიუს დახურვამდე, თუ ამ შემთხვევაში მაუსი ტოვებს მენიუს</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>პიქსელების მენიუს მაქსიმალური სიგანე</value>
+    <value>პიქსელების მაქსიმალური მენიუს სიგანე</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>ღია რჩება</value>
@@ -277,7 +277,7 @@
     <value>ისრის ფონი დაწკაპუნებისას</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>ისრის ფონი, როდესაც მაუსი დევს მასზე</value>
+    <value>ისრის ფონი, როდესაც მაუსი ჩერდება მასზე</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>ფერის სქემა მუქი</value>
@@ -298,7 +298,7 @@
     <value>გადაადგილებისას სლაიდერი</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>სლაიდერი, სანამ მაუსი დევს მასზე 1</value>
+    <value>სლაიდერი, სანამ მაუსი ეშვება მასზე 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>სლაიდერი, სანამ მაუსი ეშვება მასზე 2</value>
@@ -316,7 +316,7 @@
     <value>ხატები</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>კონტექსტური მენიუს დაყენება</value>
+    <value>დაყენებულია კონტექსტური მენიუს მიხედვით</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>დააყენეთ დირექტორიად</value>
@@ -346,7 +346,7 @@
     <value>ექსპერტი</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>თუ ფოკუსი დაკარგულია და დააჭირეთ Enter ღილაკს</value>
+    <value>თუ ფოკუსი დაიკარგა და დააჭირეთ Enter ღილაკს</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>მენიუს დახურვამდე მილიწამები, თუ ამ შემთხვევაში მენიუ ხელახლა არ გააქტიურდება</value>
@@ -355,7 +355,7 @@
     <value>დავალების პანელში ჩვენება</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>დირექტორიას დამატება</value>
+    <value>დირექტორია დაამატეთ</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>დაამატეთ დირექტორიას შინაარსი root დირექტორიაში</value>
@@ -376,7 +376,7 @@
     <value>მხოლოდ ფაილები</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>ქეში მთავარი მენიუ</value>
+    <value>ქეშის მთავარი მენიუ</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ქეშის გასუფთავება, თუ ამ რაოდენობაზე მეტია</value>
@@ -445,7 +445,7 @@
     <value>წინას გვერდით</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>კომპენსირებული პიქსელებით</value>
+    <value>ოფსეტური პიქსელებით</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>გადახურვა</value>
@@ -481,7 +481,7 @@
     <value>გადაათრიეთ</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>გადაფურცვლა დარტყმის საშუალებით</value>
+    <value>გადაფურცლეთ დარტყმის საშუალებით</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>მენიუს გაფილტვრა ფაილის ტიპის მიხედვით, მაგ.: *.exe|*.dll</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>დალაგებულია ტიპისა და სახელის მიხედვით</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Შეამოწმოთ განახლებები</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>გადადით ჩამოტვირთვის გვერდზე</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>უახლესი ხელმისაწვდომი ვერსია:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>ხელმისაწვდომია ახალი ვერსია!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>თქვენ გაქვთ SystemTrayMenu-ს უახლესი ვერსია!</value>
   </data>
 </root>

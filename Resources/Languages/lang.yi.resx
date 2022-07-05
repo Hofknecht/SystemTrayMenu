@@ -181,7 +181,7 @@
     <value>אויסקלייַבן וועגווייַזער</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>דיין וואָרצל וועגווייַזער פֿאַר די אַפּ טוט נישט עקסיסטירן אָדער איז ליידיק! טוישן די וואָרצל וועגווייַזער אָדער שטעלן עטלעכע טעקעס, דירעקטעריז אָדער דורכוועג אין דער וואָרצל וועגווייַזער.</value>
+    <value>דיין וואָרצל וועגווייַזער פֿאַר די אַפּ טוט נישט עקסיסטירן אָדער איז ליידיק! טוישן די וואָרצל וועגווייַזער אָדער שטעלן עטלעכע טעקעס, דיירעקטעריז אָדער דורכוועג אין דער וואָרצל וועגווייַזער.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>איר האָבן קיין אַקסעס צו דער וואָרצל וועגווייַזער פון די אַפּ. געבן אַקסעס צו דער וועגווייַזער אָדער טוישן די וואָרצל וועגווייַזער.</value>
@@ -217,7 +217,7 @@
     <value>מיליסעקאַנדז ביז אַ מעניו אָפּענס ווען די מויז איז אויף עס</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב אין דעם פאַל די מויז דאַן לאָזן די מעניו</value>
+    <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב אין דעם פאַל די מויז דעמאָלט לאָזן די מעניו</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>פּיקסעלס מאַקסימום מעניו ברייט</value>
@@ -301,7 +301,7 @@
     <value>סליידער בשעת די מויז כאַווז איבער אים 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>סליידער בשעת די מויז כאַווז איבער עס 2</value>
+    <value>סליידער בשעת די מויז כאַווז איבער אים 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>ניצן ייקאַן פון וועגווייַזער</value>
@@ -328,7 +328,7 @@
     <value>פּראָבלעם מיט דורכוועג לינק</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>דער נומער וואָס דער דורכוועג רעפערס צו איז טשיינדזשד אָדער אריבערגעפארן, אַזוי דער דורכוועג וועט נישט אַרבעטן רעכט.</value>
+    <value>דער נומער וואָס דער דורכוועג רעפערס צו איז פארענדערט אָדער אריבערגעפארן, אַזוי דעם דורכוועג וועט ניט מער אַרבעט רעכט.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>עפענען וועגווייַזער</value>
@@ -451,7 +451,7 @@
     <value>אָוווערלאַפּינג</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>אונטער מעניו איז ארויס</value>
+    <value>סוב מעניו איז ארויס</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>גרייס פון די ייקאַנז אין פּראָצענט</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>סאָרטירט לויט טיפּ און נאָמען</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>זוך נייע ווערסיעס</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>גיין צו אראפקאפיע בלאַט</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>לעצטע בנימצא ווערסיע:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>ניו ווערסיע בנימצא!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>איר האָט די לעצטע ווערסיע פון ​​SystemTrayMenu!</value>
   </data>
 </root>

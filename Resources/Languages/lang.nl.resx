@@ -157,7 +157,7 @@
     <value>Kan de sneltoets niet registreren.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>afbreken</value>
+    <value>Afbreken</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Algemeen</value>
@@ -340,7 +340,7 @@
     <value>gedeactiveerd</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>geactiveerd</value>
+    <value>Geactiveerd</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>Deskundige</value>
@@ -457,7 +457,7 @@
     <value>Grootte van de pictogrammen in procent</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Ondersteuning SysteemTrayMenu</value>
+    <value>OndersteuningssysteemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Vervagen</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Gesorteerd op type en naam</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Controleren op updates</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Ga naar de downloadpagina</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Laatste beschikbare versie:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Nieuwe versie beschikbaar!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Je hebt de nieuwste versie van SystemTrayMenu!</value>
   </data>
 </root>

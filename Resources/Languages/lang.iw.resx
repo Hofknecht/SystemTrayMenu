@@ -238,7 +238,7 @@
     <value>ספרייה נפתחה</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>גבול הספרייה שנפתחה</value>
+    <value>גבול של ספרייה שנפתחה</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>שדה חיפוש</value>
@@ -262,7 +262,7 @@
     <value>פתח את ספריית היישומים</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>פיקסלים גובה תפריט מקסימלי</value>
+    <value>גובה תפריט מקסימלי של פיקסלים</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>חֵץ</value>
@@ -292,7 +292,7 @@
     <value>בר גלילה</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>סליידר</value>
+    <value>המחוון</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
     <value>המחוון בזמן גרירה</value>
@@ -325,7 +325,7 @@
     <value>טוען</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>בעיה עם קישור קיצור</value>
+    <value>בעיה בקישור קיצורי דרך</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שקיצור זה לא יפעל עוד כראוי.</value>
@@ -400,7 +400,7 @@
     <value>למטה מימין</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>מופיע תפריט ראשי</value>
+    <value>התפריט הראשי מופיע</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>מיקום העכבר (מעל סמל שורת המשימות)</value>
@@ -475,7 +475,7 @@
     <value>מִיוּן</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>העתק פריט בשורה באמצעות שחרור גרור</value>
+    <value>העתק את פריט השורה באמצעות גרירה</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>לִגרוֹר</value>
@@ -499,7 +499,7 @@
     <value>הצג את שורת החיפוש</value>
   </data>
   <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>שמירת קובץ יומן בספריית האפליקציה במקום AppData</value>
+    <value>שומר קובץ יומן בספריית האפליקציה במקום AppData</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>הצג שכבת-על של קישור</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>ממוין לפי סוג ושם</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>בדוק עדכונים</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>עבור לדף ההורדה</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>הגרסה האחרונה הזמינה:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>גרסה חדשה זמינה!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>יש לך את הגרסה האחרונה של SystemTrayMenu!</value>
   </data>
 </root>

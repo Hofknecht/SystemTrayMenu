@@ -513,4 +513,19 @@
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Issortjati skond it-tip u l-isem</value>
   </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Iċċekkja għal aġġornamenti</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Mur fil-paġna tat-tniżżil</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>L-aħħar verżjoni disponibbli:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Verżjoni ġdida disponibbli!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Għandek l-aħħar verżjoni ta' SystemTrayMenu!</value>
+  </data>
 </root>

@@ -142,7 +142,7 @@
     <value>Sistēmas informācija</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
-    <value>Direktorija nav pieejama</value>
+    <value>Katalogs nav pieejams</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Valoda</value>
@@ -163,7 +163,7 @@
     <value>Ģenerālis</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>Karstais taustiņš</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Sāciet ar Windows</value>
@@ -211,7 +211,7 @@
     <value>Noklusējums</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Ja fokuss ir zaudēts un ja pele joprojām atrodas izvēlnē</value>
+    <value>Ja fokuss ir zaudēts un pele joprojām atrodas izvēlnē</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisekundes, līdz tiek atvērta izvēlne, kad uz tās ir pele</value>
@@ -274,7 +274,7 @@
     <value>Bultiņa, kamēr pele atrodas virs tās</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Bultiņas fons, noklikšķinot</value>
+    <value>Noklikšķinot, bultiņas fons</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Bultas fons, kamēr pele atrodas virs tās</value>
@@ -301,7 +301,7 @@
     <value>Slīdni, kamēr pele atrodas virs tā 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Pavelciet slīdni, kamēr pele atrodas virs tā 2</value>
+    <value>Slīdni, kamēr pele atrodas virs tā 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Izmantojiet ikonu no direktorija</value>
@@ -475,7 +475,7 @@
     <value>Šķirošana</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopēt rindas vienumu, velkot nometot</value>
+    <value>Kopēt rindas vienumu, nolaižot</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Velciet</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Sakārtots pēc veida un nosaukuma</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Meklēt atjauninājumus</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Dodieties uz lejupielādes lapu</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Jaunākā pieejamā versija:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Pieejama jauna versija!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Jums ir jaunākā SystemTrayMenu versija!</value>
   </data>
 </root>

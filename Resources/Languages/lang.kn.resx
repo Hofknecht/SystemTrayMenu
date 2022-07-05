@@ -157,7 +157,7 @@
     <value>ಹಾಟ್ ಕೀ ಅನ್ನು ನೋಂದಾಯಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>ಸ್ಥಗಿತಗೊಳಿಸು</value>
+    <value>ಸ್ಥಗಿತಗೊಳಿಸಿ</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>ಸಾಮಾನ್ಯ</value>
@@ -166,7 +166,7 @@
     <value>ಹಾಟ್‌ಕೀ</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>ವಿಂಡೋಸ್‌ನೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ</value>
+    <value>ವಿಂಡೋಸ್ನೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಿ</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>ಸಂಯೋಜನೆಗಳು</value>
@@ -211,7 +211,7 @@
     <value>ಡೀಫಾಲ್ಟ್</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>ಗಮನವು ಕಳೆದುಹೋದರೆ ಮತ್ತು ಮೌಸ್ ಇನ್ನೂ ಮೆನುವಿನಲ್ಲಿದ್ದರೆ</value>
+    <value>ಫೋಕಸ್ ಕಳೆದುಹೋದರೆ ಮತ್ತು ಮೌಸ್ ಇನ್ನೂ ಮೆನುವಿನಲ್ಲಿದ್ದರೆ</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>ಮೌಸ್ ಅದರ ಮೇಲೆ ಇರುವಾಗ ಮೆನು ತೆರೆಯುವವರೆಗೆ ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
@@ -277,7 +277,7 @@
     <value>ಕ್ಲಿಕ್ ಮಾಡುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>ಮೌಸ್ ಅದರ ಮೇಲೆ ಸುಳಿದಾಡುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
+    <value>ಮೌಸ್ ಅದರ ಮೇಲೆ ಸುಳಿದಾಡುತ್ತಿರುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>ಬಣ್ಣದ ಯೋಜನೆ ಡಾರ್ಕ್</value>
@@ -349,7 +349,7 @@
     <value>ಫೋಕಸ್ ಕಳೆದುಹೋದರೆ ಮತ್ತು Enter ಕೀಲಿಯನ್ನು ಒತ್ತಿದರೆ</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>ಈ ಸಂದರ್ಭದಲ್ಲಿ ಮೆನುವನ್ನು ಮರುಸಕ್ರಿಯಗೊಳಿಸದಿದ್ದಲ್ಲಿ ಮೆನು ಮುಚ್ಚುವವರೆಗೆ ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
+    <value>ಈ ಸಂದರ್ಭದಲ್ಲಿ ಮೆನುವನ್ನು ಮರುಸಕ್ರಿಯಗೊಳಿಸದಿದ್ದರೆ ಮೆನು ಮುಚ್ಚುವವರೆಗೆ ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ಕಾರ್ಯಪಟ್ಟಿಯಲ್ಲಿ ತೋರಿಸಿ</value>
@@ -361,7 +361,7 @@
     <value>ಡೈರೆಕ್ಟರಿಯ ವಿಷಯವನ್ನು ರೂಟ್ ಡೈರೆಕ್ಟರಿಗೆ ಸೇರಿಸಿ</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>ಡೈರೆಕ್ಟರಿ ಪಥಗಳು</value>
+    <value>ಡೈರೆಕ್ಟರಿ ಮಾರ್ಗಗಳು</value>
   </data>
   <data name="Directories" xml:space="preserve">
     <value>ಡೈರೆಕ್ಟರಿಗಳು</value>
@@ -385,7 +385,7 @@
     <value>ಮಾದರಿ ಡೈರೆಕ್ಟರಿಯನ್ನು ಸೇರಿಸಿ 'ಪ್ರಾರಂಭ ಮೆನು'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>ಸಾಲಿನ ಎತ್ತರ ಶೇಕಡಾ</value>
+    <value>ಸಾಲು ಎತ್ತರ ಶೇಕಡಾ</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>ಸುತ್ತಿನ ಮೂಲೆಗಳು</value>
@@ -439,7 +439,7 @@
     <value>ಹುಡುಕಾಟ ಫಲಿತಾಂಶವಾಗಿ ಮಾತ್ರ ತೋರಿಸಿ</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ಡಬಲ್ ಕ್ಲಿಕ್ ಮಾಡುವ ಬದಲು ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
+    <value>ಡಬಲ್ ಕ್ಲಿಕ್ ಬದಲಿಗೆ ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ಹಿಂದಿನದಕ್ಕೆ ಮುಂದೆ</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>ಪ್ರಕಾರ ಮತ್ತು ಹೆಸರಿನ ಮೂಲಕ ವಿಂಗಡಿಸಲಾಗಿದೆ</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>ಡೌನ್‌ಲೋಡ್ ಪುಟಕ್ಕೆ ಹೋಗಿ</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>ಇತ್ತೀಚಿನ ಲಭ್ಯವಿರುವ ಆವೃತ್ತಿ:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>ಹೊಸ ಆವೃತ್ತಿ ಲಭ್ಯವಿದೆ!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>ನೀವು SystemTrayMenu ನ ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯನ್ನು ಹೊಂದಿರುವಿರಿ!</value>
   </data>
 </root>

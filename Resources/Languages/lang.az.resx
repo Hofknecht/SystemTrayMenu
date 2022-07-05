@@ -175,19 +175,19 @@
     <value>Tez-tez soruşulan suallar</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Tez-tez verilən sualları oxuyun və sonra SystemTrayMenu üçün kök kataloqu seçin.</value>
+    <value>Tez-tez verilən sualları oxuyun və sonra SystemTrayMenu üçün kök kataloq seçin.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Kataloq seçin</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök kataloqunu dəyişdirin və ya bəzi faylları, qovluqları və ya qısa yolları kök qovluğuna qoyun.</value>
+    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök qovluğunu dəyişdirin və ya bəzi faylları, kataloqları və ya qısa yolları kök qovluğuna qoyun.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Proqramın kök kataloquna girişiniz yoxdur. Kataloqa giriş icazəsi verin və ya kök kataloqunu dəyişdirin.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>İki klik əvəzinə elementi açmaq üçün bir kliklə</value>
+    <value>İki klik əvəzinə elementi açmaq üçün bir klik</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Rəng sxemi qaranlıq həmişə aktivdir</value>
@@ -259,7 +259,7 @@
     <value>Konfiqurasiya faylı və log faylı</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>Proqram qovluğunu açın</value>
+    <value>Tətbiq qovluğunu açın</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
     <value>Piksel maksimum menyu hündürlüyü</value>
@@ -310,7 +310,7 @@
     <value>Ölçü</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Menyunun sərhədi</value>
+    <value>Menyu sərhədi</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Nişanlar</value>
@@ -325,7 +325,7 @@
     <value>yüklənir</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Qısayol keçidində problem</value>
+    <value>Qısayol keçidi ilə bağlı problem</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Bu qısayolun istinad etdiyi element dəyişdirilib və ya köçürülüb, ona görə də bu qısayol artıq düzgün işləməyəcək.</value>
@@ -382,13 +382,13 @@
     <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>'Başlat Menyu' nümunə kataloqu əlavə edin</value>
+    <value>'Başlat Menyu' nümunə qovluğu əlavə edin</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Sətir hündürlüyü faizlə</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Dairəvi künclər</value>
+    <value>Dəyirmi künclər</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Görünüş</value>
@@ -427,7 +427,7 @@
     <value>Gizli fayllar və qovluqlar</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Heç vaxt gizli faylları, qovluqları və ya diskləri göstərməyin</value>
+    <value>Heç vaxt gizli faylları, qovluqları və ya sürücüləri göstərməyin</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ölçü və yer</value>
@@ -475,7 +475,7 @@
     <value>Çeşidləmə</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Sətir elementini sürükləmə vasitəsi ilə kopyalayın</value>
+    <value>Sürüşdürmə vasitəsi ilə sıra elementini kopyalayın</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Çək</value>
@@ -505,12 +505,27 @@
     <value>Link örtüyünü göstərin</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>İnternet Qısayol Nişanlarının Kataloqu</value>
+    <value>İnternet Qısayol İkonlarının Kataloqu</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
     <value>Növ və tarixə görə çeşidlənir</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Növ və ada görə çeşidlənir</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Yeniləmələri yoxlayın</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Yükləmə səhifəsinə keçin</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Ən son mövcud versiya:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Yeni versiya mövcuddur!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Siz SystemTrayMenu proqramının ən son versiyasına sahibsiniz!</value>
   </data>
 </root>

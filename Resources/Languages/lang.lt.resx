@@ -187,7 +187,7 @@
     <value>Neturite prieigos prie programos šakninio katalogo. Suteikite prieigą prie katalogo arba pakeiskite šakninį katalogą.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Norėdami atidaryti elementą, spustelėkite vieną kartą, o ne dukart</value>
+    <value>Vienu spustelėjimu atidarykite elementą, o ne du kartus</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Spalvų schema tamsi visada aktyvi</value>
@@ -226,10 +226,10 @@
     <value>Lieka atvira</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Laikas iki meniu atsidarymo</value>
+    <value>Laikas, kol atsidarys meniu</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>Jei elementas buvo paspaustas</value>
+    <value>Jei spustelėjote elementą</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>Fonas</value>
@@ -439,7 +439,7 @@
     <value>Rodyti tik kaip paieškos rezultatą</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Vienu paspaudimu atidarykite katalogą, o ne dukart</value>
+    <value>Norėdami atidaryti katalogą, spustelėkite vieną kartą, o ne dukart</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Šalia ankstesnio</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Rūšiuojama pagal tipą ir pavadinimą</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Tikrinti, ar yra atnaujinimų</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Eikite į atsisiuntimo puslapį</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Naujausia galima versija:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Galima nauja versija!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Turite naujausią SystemTrayMenu versiją!</value>
   </data>
 </root>

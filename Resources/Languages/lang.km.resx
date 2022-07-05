@@ -151,7 +151,7 @@
     <value>ឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ចាប់ផ្តើមឡើងវិញ</value>
+    <value>ចាប់ផ្ដើមឡើងវិញ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>មិនអាចចុះឈ្មោះ hot key បានទេ។</value>
@@ -181,10 +181,10 @@
     <value>ជ្រើសរើសថត</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ថត root របស់អ្នកសម្រាប់កម្មវិធីមិនមានទេ ឬទទេ! ផ្លាស់ប្តូរថតឯកសារឬដាក់ឯកសារ ថត ឬផ្លូវកាត់មួយចំនួនទៅក្នុងថតឫស។</value>
+    <value>ថត root របស់អ្នកសម្រាប់កម្មវិធីមិនមានទេ ឬទទេ! ផ្លាស់ប្តូរថត root ឬដាក់ឯកសារ ថត ឬផ្លូវកាត់មួយចំនួនទៅក្នុងថត root ។</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>អ្នក​មិន​អាច​ចូល​ទៅ​កាន់​ថត root របស់​កម្មវិធី​បាន​ទេ។ ផ្តល់សិទ្ធិចូលដំណើរការទៅកាន់ថតឯកសារ ឬផ្លាស់ប្តូរថតឫស។</value>
+    <value>អ្នក​មិន​មាន​សិទ្ធិ​ចូល​ទៅ​ថត​ឫស​របស់​កម្មវិធី​ទេ។ ផ្តល់សិទ្ធិចូលដំណើរការទៅកាន់ថតឯកសារ ឬផ្លាស់ប្តូរថតឫស។</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
     <value>ចុចមួយដងដើម្បីបើកធាតុមួយជំនួសឱ្យការចុចពីរដង</value>
@@ -277,7 +277,7 @@
     <value>ផ្ទៃខាងក្រោយនៃព្រួញនៅពេលចុច</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>ផ្ទៃខាងក្រោយនៃព្រួញ ខណៈពេលដែលកណ្ដុរដាក់ពីលើវា។</value>
+    <value>ផ្ទៃ​ខាង​ក្រោយ​នៃ​ព្រួញ ខណៈ​កណ្ដុរ​ដាក់​លើ​វា។</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>ពណ៌ចម្រុះ</value>
@@ -427,10 +427,10 @@
     <value>ឯកសារនិងថតដែលលាក់</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>កុំបង្ហាញឯកសារ ថតឯកសារ ឬដ្រាយដែលលាក់</value>
+    <value>កុំបង្ហាញឯកសារ ថត ឬដ្រាយដែលលាក់</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>ទំហំ និងទីតាំង</value>
+    <value>ទំហំនិងទីតាំង</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>ប្រើការកំណត់ប្រព័ន្ធប្រតិបត្តិការ</value>
@@ -475,7 +475,7 @@
     <value>ការតម្រៀប</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ចម្លង​ធាតុ​ជួរ​ដេក​តាម​រយៈ​ការ​អូស​ទម្លាក់</value>
+    <value>ចម្លងធាតុជួរដេកតាមរយៈការអូសទម្លាក់</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>អូស</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>តម្រៀបតាមប្រភេទនិងឈ្មោះ</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>ពិនិត្យមើលបច្ចុប្បន្នភាព</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>ចូលទៅកាន់ទំព័រទាញយក</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>កំណែដែលអាចប្រើបានចុងក្រោយបំផុត៖</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>មានកំណែថ្មី!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>អ្នកមានកំណែចុងក្រោយបំផុតរបស់ SystemTrayMenu!</value>
   </data>
 </root>

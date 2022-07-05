@@ -139,7 +139,7 @@
     <value>Besonderhede</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Stelsel inligting</value>
+    <value>Stelselinligting</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Gids ontoeganklik</value>
@@ -238,7 +238,7 @@
     <value>Geopende gids</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>Rand van oopgemaakte gids</value>
+    <value>Rand van oop gids</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Soek veld</value>
@@ -274,7 +274,7 @@
     <value>Pyltjie terwyl die muis daaroor beweeg</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Agtergrond van pyl wanneer jy klik</value>
+    <value>Agtergrond van pyl wanneer u klik</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Agtergrond van pyl terwyl die muis daaroor beweeg</value>
@@ -349,7 +349,7 @@
     <value>As die fokus verloor word en die Enter-sleutel gedruk is</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Millisekondes totdat die spyskaart toemaak as die spyskaart in hierdie geval nie heraktiveer word nie</value>
+    <value>Millisekondes totdat die spyskaart sluit as die spyskaart in hierdie geval nie heraktiveer word nie</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Wys in taakbalk</value>
@@ -421,7 +421,7 @@
     <value>Kas</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Wys altyd versteekte lêers, gidse of aandrywers</value>
+    <value>Wys altyd verborge lêers, gidse of dryf</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Versteekte lêers en gidse</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Gesorteer volgens tipe en naam</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Kyk vir opdaterings</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Gaan na die aflaai bladsy</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Nuutste beskikbare weergawe:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Nuwe weergawe beskikbaar!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Jy het die nuutste weergawe van SystemTrayMenu!</value>
   </data>
 </root>

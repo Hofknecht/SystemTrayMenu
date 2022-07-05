@@ -810,6 +810,7 @@ namespace SystemTrayMenu.UserInterface
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
+            AdjustControlMultilineIfNecessary(checkBoxSaveLogFileInApplicationDirectory);
 
             tabControl.Size = new Size(
                 tabControl.Size.Width,

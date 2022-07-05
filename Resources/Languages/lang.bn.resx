@@ -316,7 +316,7 @@
     <value>আইকন</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>প্রসঙ্গ মেনু দ্বারা সেট করুন</value>
+    <value>প্রসঙ্গ মেনু দ্বারা সেট</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ডিরেক্টরি হিসাবে সেট করুন</value>
@@ -328,7 +328,7 @@
     <value>শর্টকাট লিঙ্কে সমস্যা</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>এই শর্টকাটটি যে আইটেমটি নির্দেশ করে তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না।</value>
+    <value>এই শর্টকাটটি যে আইটেমটিকে বোঝায় তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না৷</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ডিরেক্টরি খুলুন</value>
@@ -385,7 +385,7 @@
     <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
-    <value>শতাংশে সারির উচ্চতা</value>
+    <value>সারির উচ্চতা শতাংশে</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>বৃত্তাকার কোণগুলি</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>প্রকার এবং নাম অনুসারে সাজানো</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>হালনাগাদ এর জন্য অনুসন্ধান করুন</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>ডাউনলোড পেজে যান</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>সর্বশেষ উপলব্ধ সংস্করণ:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>নতুন সংস্করণ উপলব্ধ!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>আপনার কাছে SystemTrayMenu এর সর্বশেষ সংস্করণ আছে!</value>
   </data>
 </root>

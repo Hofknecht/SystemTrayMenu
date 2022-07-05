@@ -154,7 +154,7 @@
     <value>Վերսկսել</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Չհաջողվեց գրանցել թեժ բանալին:</value>
+    <value>Չհաջողվեց գրանցել տաք բանալին:</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Դադարեցրեք</value>
@@ -226,7 +226,7 @@
     <value>Բաց է մնում</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Ժամանակ, մինչև մենյու բացվի</value>
+    <value>Ժամանակ է, մինչև մենյու բացվի</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>Եթե ​​որևէ տարր սեղմված է եղել</value>
@@ -250,7 +250,7 @@
     <value>Ընտրված տարրի եզրագիծը</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
-    <value>Փոխարկել հարաբերական գրացուցակ</value>
+    <value>Փոխարկել հարաբերական գրացուցակին</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Պահպանեք կոնֆիգուրացիան հավելվածի գրացուցակում</value>
@@ -310,7 +310,7 @@
     <value>Չափը</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Մենյուի սահման</value>
+    <value>Մենյուի սահմանը</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Սրբապատկերներ</value>
@@ -346,7 +346,7 @@
     <value>Փորձագետ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Եթե ​​ֆոկուսը կորել է, և Enter ստեղնը սեղմվել է</value>
+    <value>Եթե ​​կենտրոնացումը կորչում է, և Enter ստեղնը սեղմված է</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Միլիվայրկյաններ, մինչև ընտրացանկը փակվի, եթե այս դեպքում մենյուն նորից չակտիվացվի</value>
@@ -436,7 +436,7 @@
     <value>Օգտագործեք օպերացիոն համակարգի կարգավորումները</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>Ցուցադրել միայն որպես որոնման արդյունք</value>
+    <value>Ցույց տալ միայն որպես որոնման արդյունք</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
     <value>Կրկնակի սեղմման փոխարեն գրացուցակ բացելու համար մեկ սեղմումով</value>
@@ -475,7 +475,7 @@
     <value>Տեսակավորում</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Պատճենել տողի տարրը քաշել-թափելու միջոցով</value>
+    <value>Պատճենել տողի տարրը քաշել անկման միջոցով</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Քաշել</value>
@@ -505,12 +505,27 @@
     <value>Ցույց տալ հղման ծածկույթը</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Ինտերնետային դյուրանցումների պատկերակների տեղեկատու</value>
+    <value>Ինտերնետային դյուրանցման պատկերակների տեղեկատու</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
     <value>Տեսակավորված ըստ տեսակի և ամսաթվի</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Տեսակավորված ըստ տեսակի և անվան</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Ստուգել թարմացումները</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Գնացեք ներբեռնման էջ</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Վերջին հասանելի տարբերակը.</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Նոր տարբերակը հասանելի է:</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Դուք ունեք SystemTrayMenu-ի վերջին տարբերակը:</value>
   </data>
 </root>

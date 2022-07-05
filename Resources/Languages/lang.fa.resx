@@ -181,7 +181,7 @@
     <value>دایرکتوری را انتخاب کنید</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>دایرکتوری ریشه شما برای برنامه وجود ندارد یا خالی است! دایرکتوری ریشه را تغییر دهید یا چند فایل، دایرکتوری یا میانبر را در فهرست اصلی قرار دهید.</value>
+    <value>دایرکتوری ریشه شما برای برنامه وجود ندارد یا خالی است! دایرکتوری ریشه را تغییر دهید یا چند فایل، دایرکتوری یا میانبر را در دایرکتوری ریشه قرار دهید.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>شما به فهرست اصلی برنامه دسترسی ندارید. به دایرکتوری دسترسی بدهید یا دایرکتوری ریشه را تغییر دهید.</value>
@@ -214,7 +214,7 @@
     <value>اگر فوکوس از بین رفته باشد و اگر ماوس همچنان در منو است</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>چند میلی ثانیه تا زمانی که یک منو باز شود وقتی ماوس روی آن است</value>
+    <value>میلی ثانیه تا زمانی که یک منو باز شود وقتی ماوس روی آن است</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>میلی ثانیه تا بسته شدن منو، اگر در این حالت ماوس از منو خارج شود</value>
@@ -277,7 +277,7 @@
     <value>پس زمینه فلش هنگام کلیک کردن</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>پس‌زمینه فلش در حالی که ماوس روی آن شناور است</value>
+    <value>پس زمینه فلش در حالی که ماوس روی آن شناور است</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>طرح رنگ تیره</value>
@@ -346,10 +346,10 @@
     <value>کارشناس</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>اگر فوکوس از دست رفت و کلید Enter فشار داده شد</value>
+    <value>اگر فوکوس از بین رفت و کلید Enter فشار داده شد</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>میلی ثانیه تا بسته شدن منو اگر در این حالت منو دوباره فعال نشود</value>
+    <value>اگر در این حالت منو دوباره فعال نشود، چند میلی ثانیه تا بسته شدن منو</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>نمایش در نوار وظیفه</value>
@@ -382,7 +382,7 @@
     <value>اگر بیشتر از این تعداد مورد باشد، حافظه پنهان را پاک کنید</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>اضافه کردن دایرکتوری نمونه 'Start Menu'</value>
+    <value>افزودن دایرکتوری نمونه 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>ارتفاع ردیف بر حسب درصد</value>
@@ -469,7 +469,7 @@
     <value>مرتب شده بر اساس تاریخ</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>مرتب شده بر اساس نام</value>
+    <value>بر اساس نام مرتب شده است</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>مرتب سازی</value>
@@ -481,13 +481,13 @@
     <value>بکشید</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>از طریق سوایپ پیمایش کنید</value>
+    <value>از طریق کشیدن انگشت پیمایش کنید</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>فیلتر منو بر اساس نوع فایل به عنوان مثال: *.exe|*.dll</value>
+    <value>منوی فیلتر بر اساس نوع فایل به عنوان مثال: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
-    <value>تعداد عناصر را در زیر نمایش دهید</value>
+    <value>نمایش تعداد عناصر در زیر</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>نمایش عنوان دایرکتوری در بالا</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>بر اساس نوع و نام مرتب شده است</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>به روز رسانی را بررسی کنید</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>به صفحه دانلود بروید</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>آخرین نسخه موجود:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>نسخه جدید در دسترس است!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>شما آخرین نسخه SystemTrayMenu را دارید!</value>
   </data>
 </root>

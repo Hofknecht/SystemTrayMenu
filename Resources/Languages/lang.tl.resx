@@ -316,7 +316,7 @@
     <value>Mga icon</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Itinakda ayon sa menu ng konteksto</value>
+    <value>Itakda sa pamamagitan ng menu ng konteksto</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Itakda bilang direktoryo</value>
@@ -433,13 +433,13 @@
     <value>Sukat at lokasyon</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
-    <value>Gamitin ang mga setting ng operating system</value>
+    <value>Gumamit ng mga setting ng operating system</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>Ipakita lamang bilang resulta ng paghahanap</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Isang pag-click upang magbukas ng isang direktoryo sa halip na mag-double click</value>
+    <value>Isang pag-click upang magbukas ng direktoryo sa halip na mag-double click</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Sa tabi ng nauna</value>
@@ -466,7 +466,7 @@
     <value>Ipadala ang hotkey sa ibang instance</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>Inayos ayon sa petsa</value>
+    <value>Pinagbukud-bukod ayon sa petsa</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
     <value>Pinagbukud-bukod ayon sa pangalan</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Pinagbukud-bukod ayon sa uri at pangalan</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Tingnan ang mga update</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Pumunta sa pahina ng pag-download</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Pinakabagong available na bersyon:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Available ang bagong bersyon!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Mayroon kang pinakabagong bersyon ng SystemTrayMenu!</value>
   </data>
 </root>

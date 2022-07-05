@@ -181,7 +181,7 @@
     <value>Selectați directorul</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Directorul dvs. rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
+    <value>Directorul tău rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
@@ -310,7 +310,7 @@
     <value>mărimea</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Marginea meniului</value>
+    <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>icoane</value>
@@ -382,7 +382,7 @@
     <value>Goliți memoria cache dacă este mai mare de acest număr de articole</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Adăugați exemplu de director „Meniu Start”</value>
+    <value>Adăugați exemplu de director „Start Menu”</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Înălțimea rândului în procente</value>
@@ -430,7 +430,7 @@
     <value>Nu afișa niciodată fișiere, directoare sau unități ascunse</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Dimensiunea si locatia</value>
+    <value>Dimensiunea și locația</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Utilizați setările sistemului de operare</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Sortate după tip și nume</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Verifică pentru actualizări</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Accesați pagina de descărcare</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Cea mai recentă versiune disponibilă:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Noua versiune disponibila!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Ai cea mai recentă versiune a SystemTrayMenu!</value>
   </data>
 </root>

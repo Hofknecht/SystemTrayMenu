@@ -127,7 +127,7 @@
     <value>Autostart</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>Keluar dari apl</value>
+    <value>Keluar apl</value>
   </data>
   <data name="Directory" xml:space="preserve">
     <value>Direktori</value>
@@ -208,7 +208,7 @@
     <value>Sesuaikan</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>lalai</value>
+    <value>Lalai</value>
   </data>
   <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
     <value>Jika fokus hilang dan jika tetikus masih dalam menu</value>
@@ -382,7 +382,7 @@
     <value>Kosongkan cache jika lebih daripada bilangan item ini</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Tambahkan direktori sampel 'Menu Mula'</value>
+    <value>Tambah direktori sampel 'Menu Mula'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Ketinggian baris dalam peratus</value>
@@ -421,7 +421,7 @@
     <value>Cache</value>
   </data>
   <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Sentiasa tunjukkan fail, direktori atau pemacu tersembunyi</value>
+    <value>Sentiasa tunjukkan fail tersembunyi, direktori atau pemacu</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Fail dan direktori tersembunyi</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Diisih mengikut jenis dan nama</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Menyemak kemas kini</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Pergi ke halaman muat turun</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Versi terkini yang tersedia:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Versi baharu tersedia!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Anda mempunyai versi terkini SystemTrayMenu!</value>
   </data>
 </root>

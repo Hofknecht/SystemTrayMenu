@@ -187,7 +187,7 @@
     <value>Немате приступ основном директоријуму апликације. Одобрите приступ директоријуму или промените основни директоријум.</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Један клик за отварање елемента уместо двоструког клика</value>
+    <value>Један клик да отворите елемент уместо двоструког клика</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Шема боја тамна је увек активна</value>
@@ -247,13 +247,13 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Граница изабраног елемента</value>
+    <value>Ивица изабраног елемента</value>
   </data>
   <data name="Convert to relative directory" xml:space="preserve">
     <value>Конвертујте у релативни директоријум</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Сачувајте конфигурацију у директоријуму апликација</value>
+    <value>Сачувајте конфигурацију у директоријуму апликације</value>
   </data>
   <data name="Configuration file and log file" xml:space="preserve">
     <value>Конфигурациона датотека и датотека евиденције</value>
@@ -328,7 +328,7 @@
     <value>Проблем са везом за пречицу</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Ставка на коју се ова пречица односи је промењена или премештена, тако да ова пречица више неће радити исправно.</value>
+    <value>Ставка на коју се односи ова пречица је промењена или премештена, тако да ова пречица више неће радити исправно.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Отворите директоријум</value>
@@ -355,7 +355,7 @@
     <value>Прикажи на траци задатака</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>Додај именик</value>
+    <value>Додај директоријум</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>Додајте садржај директоријума у ​​основни директоријум</value>
@@ -427,7 +427,7 @@
     <value>Скривене датотеке и директоријуми</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Никада не приказујте скривене датотеке, директоријуме или диск јединице</value>
+    <value>Никада не приказујте скривене датотеке, директоријуме или дискове</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Величина и локација</value>
@@ -484,7 +484,7 @@
     <value>Померајте се превлачењем</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Филтрирај мени према типу датотеке, нпр.: *.еке|*.длл</value>
+    <value>Филтрирајте мени према типу датотеке, нпр.: *.еке|*.длл</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Прикажи број елемената испод</value>
@@ -511,6 +511,21 @@
     <value>Сортирано по врсти и датуму</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
-    <value>Сортирано по врсти и имену</value>
+    <value>Сортирано по врсти и називу</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Провери ажурирања</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Идите на страницу за преузимање</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Најновија доступна верзија:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Доступна нова верзија!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Имате најновију верзију СистемТраиМену-а!</value>
   </data>
 </root>

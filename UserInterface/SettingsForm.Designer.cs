@@ -113,6 +113,8 @@ namespace SystemTrayMenu.UserInterface
             this.buttonAdvancedDefault = new System.Windows.Forms.Button();
             this.groupBoxSorting = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelSorting = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButtonSortByTypeAndDate = new System.Windows.Forms.RadioButton();
+            this.radioButtonSortByTypeAndName = new System.Windows.Forms.RadioButton();
             this.radioButtonSortByDate = new System.Windows.Forms.RadioButton();
             this.radioButtonSortByName = new System.Windows.Forms.RadioButton();
             this.groupBoxHiddenFilesAndFolders = new System.Windows.Forms.GroupBox();
@@ -335,8 +337,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.radioButtonSortByTypeAndDate = new System.Windows.Forms.RadioButton();
-            this.radioButtonSortByTypeAndName = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -1664,7 +1664,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSorting.TabStop = false;
             this.groupBoxSorting.Text = "groupBoxSorting";
             // 
-            // tableLayoutPanel5
+            // tableLayoutPanelSorting
             // 
             this.tableLayoutPanelSorting.AutoSize = true;
             this.tableLayoutPanelSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -1676,7 +1676,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByName, 0, 2);
             this.tableLayoutPanelSorting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelSorting.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelSorting.Name = "tableLayoutPanel5";
+            this.tableLayoutPanelSorting.Name = "tableLayoutPanelSorting";
             this.tableLayoutPanelSorting.RowCount = 4;
             this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1684,6 +1684,28 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSorting.Size = new System.Drawing.Size(379, 100);
             this.tableLayoutPanelSorting.TabIndex = 1;
+            // 
+            // radioButtonSortByTypeAndDate
+            // 
+            this.radioButtonSortByTypeAndDate.AutoSize = true;
+            this.radioButtonSortByTypeAndDate.Location = new System.Drawing.Point(3, 28);
+            this.radioButtonSortByTypeAndDate.Name = "radioButtonSortByTypeAndDate";
+            this.radioButtonSortByTypeAndDate.Size = new System.Drawing.Size(192, 19);
+            this.radioButtonSortByTypeAndDate.TabIndex = 3;
+            this.radioButtonSortByTypeAndDate.TabStop = true;
+            this.radioButtonSortByTypeAndDate.Text = "radioButtonSortByTypeAndDate";
+            this.radioButtonSortByTypeAndDate.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSortByTypeAndName
+            // 
+            this.radioButtonSortByTypeAndName.AutoSize = true;
+            this.radioButtonSortByTypeAndName.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonSortByTypeAndName.Name = "radioButtonSortByTypeAndName";
+            this.radioButtonSortByTypeAndName.Size = new System.Drawing.Size(200, 19);
+            this.radioButtonSortByTypeAndName.TabIndex = 4;
+            this.radioButtonSortByTypeAndName.TabStop = true;
+            this.radioButtonSortByTypeAndName.Text = "radioButtonSortByTypeAndName";
+            this.radioButtonSortByTypeAndName.UseVisualStyleBackColor = true;
             // 
             // radioButtonSortByDate
             // 
@@ -4772,28 +4794,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.Text = "Abort";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
-            // 
-            // radioButtonSortByTypeAndDate
-            // 
-            this.radioButtonSortByTypeAndDate.AutoSize = true;
-            this.radioButtonSortByTypeAndDate.Location = new System.Drawing.Point(3, 28);
-            this.radioButtonSortByTypeAndDate.Name = "radioButtonSortByTypeAndDate";
-            this.radioButtonSortByTypeAndDate.Size = new System.Drawing.Size(192, 19);
-            this.radioButtonSortByTypeAndDate.TabIndex = 3;
-            this.radioButtonSortByTypeAndDate.TabStop = true;
-            this.radioButtonSortByTypeAndDate.Text = "radioButtonSortByTypeAndDate";
-            this.radioButtonSortByTypeAndDate.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSortByTypeAndName
-            // 
-            this.radioButtonSortByTypeAndName.AutoSize = true;
-            this.radioButtonSortByTypeAndName.Location = new System.Drawing.Point(3, 3);
-            this.radioButtonSortByTypeAndName.Name = "radioButtonSortByTypeAndName";
-            this.radioButtonSortByTypeAndName.Size = new System.Drawing.Size(200, 19);
-            this.radioButtonSortByTypeAndName.TabIndex = 4;
-            this.radioButtonSortByTypeAndName.TabStop = true;
-            this.radioButtonSortByTypeAndName.Text = "radioButtonSortByTypeAndName";
-            this.radioButtonSortByTypeAndName.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 

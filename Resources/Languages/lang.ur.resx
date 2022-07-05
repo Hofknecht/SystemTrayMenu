@@ -130,10 +130,10 @@
     <value>ایپ سے باہر نکلیں۔</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>ڈائرکٹری</value>
+    <value>ڈائریکٹری</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>ڈائرکٹری خالی ہے۔</value>
+    <value>ڈائریکٹری خالی</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>تفصیلات</value>
@@ -187,7 +187,7 @@
     <value>آپ کو ایپ کی روٹ ڈائرکٹری تک رسائی نہیں ہے۔ ڈائرکٹری تک رسائی فراہم کریں یا روٹ ڈائرکٹری کو تبدیل کریں۔</value>
   </data>
   <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>ڈبل کلک کے بجائے کسی عنصر کو کھولنے کے لیے سنگل کلک کریں۔</value>
+    <value>ڈبل کلک کے بجائے ایک عنصر کو کھولنے کے لیے سنگل کلک کریں۔</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>رنگ سکیم سیاہ ہمیشہ فعال</value>
@@ -244,7 +244,7 @@
     <value>تلاش کا میدان</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>منتخب کردہ عنصر</value>
+    <value>منتخب عنصر</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
     <value>منتخب کردہ عنصر کا بارڈر</value>
@@ -262,7 +262,7 @@
     <value>ایپلیکیشن ڈائرکٹری کھولیں۔</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>پکسلز زیادہ سے زیادہ مینو اونچائی</value>
+    <value>پکسلز مینو کی زیادہ سے زیادہ اونچائی</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>تیر</value>
@@ -328,7 +328,7 @@
     <value>شارٹ کٹ لنک میں مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
+    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، اس لیے یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ڈائرکٹری کھولیں۔</value>
@@ -346,7 +346,7 @@
     <value>ماہر</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>اگر توجہ ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
+    <value>اگر فوکس ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>ملی سیکنڈز جب تک مینو بند نہیں ہوتا ہے اگر اس صورت میں مینو دوبارہ فعال نہیں ہوتا ہے۔</value>
@@ -415,7 +415,7 @@
     <value>عناصر</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹ بنائیں</value>
+    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹس بنائیں</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
@@ -445,7 +445,7 @@
     <value>پچھلے کے آگے</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>پکسلز کے ذریعہ آفسیٹ</value>
+    <value>پکسلز کے ذریعے آفسیٹ</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>اوور لیپنگ</value>
@@ -481,7 +481,7 @@
     <value>گھسیٹیں۔</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>سوائپ کے ذریعے اسکرول کریں۔</value>
+    <value>سوائپ کے ذریعے سکرول کریں۔</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>فائل کی قسم کے لحاظ سے مینو کو فلٹر کریں جیسے: *.exe|*.dll</value>
@@ -512,5 +512,20 @@
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>قسم اور نام کے لحاظ سے ترتیب دیا گیا ہے۔</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>اپ ڈیٹ کے لیے چیک کریں</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>ڈاؤن لوڈ صفحہ پر جائیں۔</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>تازہ ترین دستیاب ورژن:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>نیا ورژن دستیاب ہے!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>آپ کے پاس SystemTrayMenu کا تازہ ترین ورژن ہے!</value>
   </data>
 </root>
