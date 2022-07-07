@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>نعم</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>بدء تلقائي</value>
+  <data name="App start" xml:space="preserve">
+    <value>بدء التطبيق</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>الخروج من التطبيق</value>
@@ -328,7 +328,7 @@
     <value>مشكلة في ارتباط الاختصار</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>تم تغيير العنصر الذي يشير إليه هذا الاختصار أو نقله ، لذا لن يعمل هذا الاختصار بشكل صحيح بعد الآن.</value>
+    <value>تم تغيير العنصر الذي يشير إليه هذا الاختصار أو نقله ، لذلك لن يعمل هذا الاختصار بشكل صحيح بعد الآن.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>الدليل المفتوح</value>

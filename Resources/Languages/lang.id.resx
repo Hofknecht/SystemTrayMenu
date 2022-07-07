@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>Oke</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Mulai otomatis</value>
+  <data name="App start" xml:space="preserve">
+    <value>Aplikasi mulai</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Keluar dari aplikasi</value>

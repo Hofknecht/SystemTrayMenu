@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>అలాగే</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>ఆటోస్టార్ట్</value>
+  <data name="App start" xml:space="preserve">
+    <value>యాప్ ప్రారంభం</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>యాప్ నుండి నిష్క్రమించండి</value>
@@ -292,7 +292,7 @@
     <value>స్కోర్ల్ బార్</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>స్లైడర్</value>
+    <value>స్లయిడర్</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
     <value>లాగేటప్పుడు స్లయిడర్</value>
@@ -451,7 +451,7 @@
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>సబ్ మెనూ కనిపిస్తుంది</value>
+    <value>ఉప మెనూ కనిపిస్తుంది</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>శాతంలో చిహ్నాల పరిమాణం</value>

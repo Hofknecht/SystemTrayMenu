@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>બરાબર</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>ઑટોસ્ટાર્ટ</value>
+  <data name="App start" xml:space="preserve">
+    <value>એપ્લિકેશન પ્રારંભ</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>એપ્લિકેશનમાંથી બહાર નીકળો</value>
@@ -301,7 +301,7 @@
     <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>સ્લાઇડર જ્યારે માઉસ તેના પર ફરે છે 2</value>
+    <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>ડિરેક્ટરીમાંથી આયકનનો ઉપયોગ કરો</value>
@@ -424,7 +424,7 @@
     <value>હંમેશા છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ બતાવો</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>છુપાયેલ ફાઇલો અને ડિરેક્ટરીઓ</value>
+    <value>છુપાયેલી ફાઇલો અને ડિરેક્ટરીઓ</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
     <value>છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ ક્યારેય બતાવશો નહીં</value>

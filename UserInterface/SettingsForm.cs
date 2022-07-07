@@ -113,14 +113,15 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration in application directory");
                 checkBoxSaveLogFileInApplicationDirectory.Text = Translator.GetText("Saving log file in application directory instead of AppData");
                 buttonOpenAssemblyLocation.Text = Translator.GetText("Open application directory");
-                groupBoxAutostart.Text = Translator.GetText("Autostart");
+                groupBoxAutostart.Text = Translator.GetText("App start");
                 if (IsStartupTask())
                 {
                     groupBoxAutostart.Text += $" ({Translator.GetText("Task Manager")})";
                 }
 
                 checkBoxAutostart.Text = Translator.GetText("Start with Windows");
-                buttonAddTaskManagerStartupTask.Text = Translator.GetText("Start with Windows");
+                checkBoxCheckForUpdates.Text = Translator.GetText("Check for updates");
+                buttonAddStartupTask.Text = Translator.GetText("Start with Windows");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
                 buttonHotkeyDefault.Text = Translator.GetText("Default");
                 groupBoxLanguage.Text = Translator.GetText("Language");
@@ -265,11 +266,12 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                buttonAddTaskManagerStartupTask.Visible = false;
+                buttonAddStartupTask.Visible = false;
                 labelStartupTaskStatus.Visible = false;
                 checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
             }
 
+            checkBoxCheckForUpdates.Checked = Settings.Default.CheckForUpdates;
             textBoxHotkey.SetHotkey(Settings.Default.HotKey);
 
             InitializeLanguage();
@@ -869,6 +871,8 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
+            Settings.Default.CheckForUpdates = checkBoxCheckForUpdates.Checked;
+
             Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
 
@@ -1006,7 +1010,7 @@ namespace SystemTrayMenu.UserInterface
             Close();
         }
 
-        private void ButtonAddTaskManagerStartupTask_Click(object sender, EventArgs e)
+        private void ButtonAddStartupTask_Click(object sender, EventArgs e)
         {
             _ = AddStartUpAsync();
             async Task AddStartUpAsync()

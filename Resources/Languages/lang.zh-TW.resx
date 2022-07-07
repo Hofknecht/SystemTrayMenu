@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>好的</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>自動開啟</value>
+  <data name="App start" xml:space="preserve">
+    <value>應用啟動</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>退出應用</value>
@@ -274,7 +274,7 @@
     <value>鼠標懸停時的箭頭</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>點擊時箭頭的背景</value>
+    <value>單擊時箭頭的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>鼠標懸停在箭頭上時的箭頭背景</value>

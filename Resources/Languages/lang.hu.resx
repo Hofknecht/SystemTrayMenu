@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>rendben</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Automatikus indítás</value>
+  <data name="App start" xml:space="preserve">
+    <value>Alkalmazás indítása</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Lépjen ki az alkalmazásból</value>
@@ -298,7 +298,7 @@
     <value>Csúszka húzás közben</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Csúszkázás közben, miközben az egeret fölé viszi 1</value>
+    <value>Csúsztassa, miközben az egeret fölé viszi 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Csúsztassa, miközben az egeret fölé viszi 2</value>

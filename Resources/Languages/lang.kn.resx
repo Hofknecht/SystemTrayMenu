@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>ಸರಿ</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>ಸ್ವಯಂ ಚಾಲಿತ</value>
+  <data name="App start" xml:space="preserve">
+    <value>ಅಪ್ಲಿಕೇಶನ್ ಪ್ರಾರಂಭ</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>ಅಪ್ಲಿಕೇಶನ್ ನಿರ್ಗಮಿಸಿ</value>
@@ -343,7 +343,7 @@
     <value>ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>ಪರಿಣಿತ</value>
+    <value>ತಜ್ಞ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>ಫೋಕಸ್ ಕಳೆದುಹೋದರೆ ಮತ್ತು Enter ಕೀಲಿಯನ್ನು ಒತ್ತಿದರೆ</value>
@@ -439,7 +439,7 @@
     <value>ಹುಡುಕಾಟ ಫಲಿತಾಂಶವಾಗಿ ಮಾತ್ರ ತೋರಿಸಿ</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ಡಬಲ್ ಕ್ಲಿಕ್ ಬದಲಿಗೆ ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
+    <value>ಡಬಲ್ ಕ್ಲಿಕ್ ಮಾಡುವ ಬದಲು ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ಹಿಂದಿನದಕ್ಕೆ ಮುಂದೆ</value>

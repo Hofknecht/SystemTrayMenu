@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>ຕົກ​ລົງ</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>ເລີ່ມອັດຕະໂນມັດ</value>
+  <data name="App start" xml:space="preserve">
+    <value>ແອັບເລີ່ມຕົ້ນ</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>ອອກຈາກແອັບ</value>

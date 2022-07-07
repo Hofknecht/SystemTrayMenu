@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>Okei</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+  <data name="App start" xml:space="preserve">
+    <value>Rakenduse käivitamine</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Välju rakendusest</value>
@@ -490,7 +490,7 @@
     <value>Kuva elementide arv allpool</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Kuva kataloogi pealkiri ülaosas</value>
+    <value>Kuva kataloogi pealkiri üleval</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
     <value>Kuva funktsiooniklahvid allpool</value>

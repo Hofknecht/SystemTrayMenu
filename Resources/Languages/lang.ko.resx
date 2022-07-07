@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>시스템 트레이 메뉴 정보</value>
+    <value>SystemTray 메뉴 정보</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>확인</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>자동 시작</value>
+  <data name="App start" xml:space="preserve">
+    <value>앱 시작</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>앱 종료</value>

@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>sawa</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Anzisha kiotomatiki</value>
+  <data name="App start" xml:space="preserve">
+    <value>Kuanza kwa programu</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Ondoka kwenye programu</value>

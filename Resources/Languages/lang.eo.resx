@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>bone</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Aŭtomata lanĉo</value>
+  <data name="App start" xml:space="preserve">
+    <value>Komenco de la aplikaĵo</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Eliru la apon</value>
@@ -154,7 +154,7 @@
     <value>Rekomenci</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Ne eblis registri la klavoklavon.</value>
+    <value>Ne eblis registri la varmaklavon.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Ĉesigi</value>
@@ -463,7 +463,7 @@
     <value>Forvelkanta</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Sendu klavoklavon al alia kazo</value>
+    <value>Sendu klavoklavon al alia petskribo</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Ordigita laŭ dato</value>

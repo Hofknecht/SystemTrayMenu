@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>լավ</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Ավտոմատ մեկնարկ</value>
+  <data name="App start" xml:space="preserve">
+    <value>Հավելվածի սկիզբը</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Դուրս գալ հավելվածից</value>

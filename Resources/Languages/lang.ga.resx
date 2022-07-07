@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>ceart go leor</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Uath-thosú</value>
+  <data name="App start" xml:space="preserve">
+    <value>Tosaigh app</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Scoir an app</value>

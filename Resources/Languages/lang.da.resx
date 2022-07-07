@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>Okay</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Automatisk start</value>
+  <data name="App start" xml:space="preserve">
+    <value>App start</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Afslut app</value>
@@ -430,7 +430,7 @@
     <value>Vis aldrig skjulte filer, mapper eller drev</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og placering</value>
+    <value>Størrelse og beliggenhed</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>

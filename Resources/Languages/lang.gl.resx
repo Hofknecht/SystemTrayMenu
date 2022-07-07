@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>Ok</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Inicio automático</value>
+  <data name="App start" xml:space="preserve">
+    <value>Inicio da aplicación</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Saír da aplicación</value>
@@ -316,7 +316,7 @@
     <value>Iconas</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Establecido por menú contextual</value>
+    <value>Establecer mediante menú contextual</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Establecer como directorio</value>
@@ -388,7 +388,7 @@
     <value>Altura da fila en porcentaxe</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Esquinas redondeadas</value>
+    <value>Cantos redondeados</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Aparencia</value>
@@ -442,7 +442,7 @@
     <value>Fai un só clic para abrir un directorio en lugar de facer dobre clic</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>Xunto ao anterior</value>
+    <value>A carón do anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
     <value>Compensación por píxeles</value>

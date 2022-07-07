@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>Allt í lagi</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Sjálfvirk ræsing</value>
+  <data name="App start" xml:space="preserve">
+    <value>App byrja</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Hætta app</value>
@@ -220,7 +220,7 @@
     <value>Millisúndur þar til valmyndin lokar ef í þessu tilfelli fer músin þá út úr valmyndinni</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixel hámarks breidd valmyndar</value>
+    <value>Pixel hámarksbreidd valmyndar</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Heldur opið</value>
@@ -382,7 +382,7 @@
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Bæta við sýnishornsmöppu 'Start Menu'</value>
+    <value>Bæta við sýnishornsskrá 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Róðurhæð í prósentum</value>
@@ -439,7 +439,7 @@
     <value>Sýna aðeins sem leitarniðurstöðu</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Einn smellur til að opna möppu í stað þess að tvísmella</value>
+    <value>Einfaldur smellur til að opna möppu í stað þess að tvísmella</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Við hliðina á fyrri</value>
@@ -484,13 +484,13 @@
     <value>Skrunaðu með því að strjúka</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Sía valmynd eftir skráartegund, t.d.: *.exe|*.dll</value>
+    <value>Sía valmynd eftir skráargerð, t.d.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Sýndu fjölda þátta hér að neðan</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Sýna möppu titil efst</value>
+    <value>Sýna möppuheiti efst</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
     <value>Sýna aðgerðarlykla hér að neðan</value>

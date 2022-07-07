@@ -110,6 +110,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool CheckForUpdates
+        {
+            get
+            {
+                return ((bool)(this["CheckForUpdates"]));
+            }
+            set
+            {
+                this["CheckForUpdates"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+LWin")]
         public string HotKey
         {

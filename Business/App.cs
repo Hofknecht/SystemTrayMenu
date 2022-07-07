@@ -4,9 +4,11 @@
 namespace SystemTrayMenu
 {
     using System;
+    using System.Threading;
     using System.Windows.Forms;
     using Microsoft.Win32;
     using SystemTrayMenu.Business;
+    using SystemTrayMenu.Helper.Updater;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
 
@@ -46,6 +48,13 @@ namespace SystemTrayMenu
             }
 
             DllImports.NativeMethods.User32ShowInactiveTopmost(taskbarForm);
+
+            if (Properties.Settings.Default.CheckForUpdates)
+            {
+                new Thread((obj) => GitHubUpdate.ActivateNewVersionFormOrCheckForUpdates(
+                    showWhenUpToDate: false))
+                    .Start();
+            }
         }
 
         public void Dispose()

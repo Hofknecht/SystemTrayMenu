@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>კარგი</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Ავტომატური დაწყება</value>
+  <data name="App start" xml:space="preserve">
+    <value>აპლიკაციის დაწყება</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>აპიდან გასვლა</value>
@@ -283,7 +283,7 @@
     <value>ფერის სქემა მუქი</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>ნათელი ფერების სქემა</value>
+    <value>ფერადი სქემა ნათელი</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>აპლიკაციის მენიუ</value>

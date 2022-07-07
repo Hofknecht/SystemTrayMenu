@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>labi</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+  <data name="App start" xml:space="preserve">
+    <value>Lietotnes palaišana</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Iziet no lietotnes</value>
@@ -301,7 +301,7 @@
     <value>Slīdni, kamēr pele atrodas virs tā 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Slīdni, kamēr pele atrodas virs tā 2</value>
+    <value>Pavelciet slīdni, kamēr pele atrodas virs tā 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Izmantojiet ikonu no direktorija</value>

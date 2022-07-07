@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>சரி</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>ஆட்டோஸ்டார்ட்</value>
+  <data name="App start" xml:space="preserve">
+    <value>பயன்பாட்டின் தொடக்கம்</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>பயன்பாட்டிலிருந்து வெளியேறு</value>
@@ -166,7 +166,7 @@
     <value>ஹாட்கீ</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>விண்டோஸ் மூலம் தொடங்கவும்</value>
+    <value>விண்டோஸில் தொடங்கவும்</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>அமைப்புகள்</value>
@@ -175,7 +175,7 @@
     <value>அடிக்கடி கேட்கப்படும் கேள்விகள்</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து, SystemTrayMenuக்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
+    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து பின்னர் SystemTrayMenu க்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>கோப்பகத்தைத் தேர்ந்தெடுக்கவும்</value>
@@ -379,7 +379,7 @@
     <value>கேச் முதன்மை மெனு</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>இந்த எண்ணிக்கையை விட அதிகமான உருப்படிகள் இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -403,7 +403,7 @@
     <value>முதன்மை மெனு தோன்றும்</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>சுட்டி இருப்பிடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
+    <value>சுட்டி இடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>தனிப்பயன் (அதை பொருத்தமான இடத்திற்கு இழுக்கவும்)</value>
@@ -463,7 +463,7 @@
     <value>மறைதல்</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>மற்ற நிகழ்வுகளுக்கு ஹாட்கியை அனுப்பவும்</value>
+    <value>மற்றொரு நிகழ்வுக்கு ஹாட்கியை அனுப்பவும்</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>தேதியின்படி வரிசைப்படுத்தப்பட்டது</value>

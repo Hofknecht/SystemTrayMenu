@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>O.K</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Pornire automată</value>
+  <data name="App start" xml:space="preserve">
+    <value>Pornirea aplicației</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Ieșiți din aplicație</value>
@@ -181,7 +181,7 @@
     <value>Selectați directorul</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Directorul tău rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
+    <value>Directorul dvs. rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
@@ -310,7 +310,7 @@
     <value>mărimea</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Chenarul meniului</value>
+    <value>Marginea meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>icoane</value>
@@ -430,7 +430,7 @@
     <value>Nu afișa niciodată fișiere, directoare sau unități ascunse</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Dimensiunea și locația</value>
+    <value>Dimensiunea si locatia</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Utilizați setările sistemului de operare</value>

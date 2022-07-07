@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>Ne rregull</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Fillim Automatik</value>
+  <data name="App start" xml:space="preserve">
+    <value>Fillimi i aplikacionit</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Dilni nga aplikacioni</value>
@@ -316,7 +316,7 @@
     <value>Ikonat</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Vendoset sipas menysë së kontekstit</value>
+    <value>Vendosur sipas menysë së kontekstit</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Cakto si drejtori</value>

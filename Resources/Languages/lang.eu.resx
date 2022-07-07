@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>Ados</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Abiarazi automatikoa</value>
+  <data name="App start" xml:space="preserve">
+    <value>Aplikazioaren hasiera</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Irten aplikaziotik</value>
@@ -376,7 +376,7 @@
     <value>Fitxategiak bakarrik</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cache menu nagusia</value>
+    <value>Cachearen menu nagusia</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Garbitu cachea elementu kopuru hori baino gehiago bada</value>

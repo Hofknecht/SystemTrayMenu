@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Auto Start</value>
+  <data name="App start" xml:space="preserve">
+    <value>Appstart</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Avslutt appen</value>
@@ -316,10 +316,10 @@
     <value>Ikoner</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Angis av kontekstmenyen</value>
+    <value>Sett av kontekstmeny</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Angi som katalog</value>
+    <value>Sett som katalog</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>lasting</value>
@@ -328,7 +328,7 @@
     <value>Problem med snarveislenke</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Elementet som denne snarveien referer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
+    <value>Elementet som denne snarveien refererer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Åpne katalogen</value>

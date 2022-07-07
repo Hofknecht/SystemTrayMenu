@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>ঠিক আছে</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>স্বয়ংক্রিয় শুরু</value>
+  <data name="App start" xml:space="preserve">
+    <value>অ্যাপ শুরু</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>অ্যাপ থেকে প্রস্থান করুন</value>
@@ -379,7 +379,7 @@
     <value>ক্যাশে প্রধান মেনু</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>এই সংখ্যার বেশি আইটেম থাকলে ক্যাশে সাফ করুন</value>
+    <value>এই সংখ্যার বেশি আইটেম হলে ক্যাশে সাফ করুন</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>

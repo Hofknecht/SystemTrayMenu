@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Automatické spuštění</value>
+  <data name="App start" xml:space="preserve">
+    <value>Spuštění aplikace</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Ukončete aplikaci</value>

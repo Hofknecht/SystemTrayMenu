@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Outomatiese begin</value>
+  <data name="App start" xml:space="preserve">
+    <value>App begin</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Verlaat toepassing</value>
@@ -139,7 +139,7 @@
     <value>Besonderhede</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Stelselinligting</value>
+    <value>Stelsel inligting</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Gids ontoeganklik</value>

@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>خوب</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>شروع خودکار</value>
+  <data name="App start" xml:space="preserve">
+    <value>شروع برنامه</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>خروج از برنامه</value>
@@ -481,7 +481,7 @@
     <value>بکشید</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>از طریق کشیدن انگشت پیمایش کنید</value>
+    <value>از طریق سوایپ پیمایش کنید</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>منوی فیلتر بر اساس نوع فایل به عنوان مثال: *.exe|*.dll</value>

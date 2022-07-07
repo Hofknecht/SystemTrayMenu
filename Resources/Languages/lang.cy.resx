@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>iawn</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Cychwyn yn awtomatig</value>
+  <data name="App start" xml:space="preserve">
+    <value>Dechrau ap</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Gadael ap</value>

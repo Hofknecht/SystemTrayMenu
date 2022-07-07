@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+  <data name="App start" xml:space="preserve">
+    <value>Appstart</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Avsluta appen</value>
@@ -310,7 +310,7 @@
     <value>Storlek</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Kant på menyn</value>
+    <value>Kant av menyn</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Ikoner</value>
@@ -481,7 +481,7 @@
     <value>Drag</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Bläddra via svep</value>
+    <value>Scrolla via svep</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrera menyn efter filtyp, t.ex.: *.exe|*.dll</value>

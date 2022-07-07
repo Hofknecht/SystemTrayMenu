@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>យល់ព្រម</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>ចាប់ផ្តើមដោយស្វ័យប្រវត្តិ</value>
+  <data name="App start" xml:space="preserve">
+    <value>ការចាប់ផ្តើមកម្មវិធី</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>ចេញពីកម្មវិធី</value>
@@ -151,7 +151,7 @@
     <value>ឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ចាប់ផ្ដើមឡើងវិញ</value>
+    <value>ចាប់ផ្តើមឡើងវិញ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>មិនអាចចុះឈ្មោះ hot key បានទេ។</value>

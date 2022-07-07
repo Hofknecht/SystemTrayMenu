@@ -123,8 +123,8 @@
   <data name="OK" xml:space="preserve">
     <value>kollox sew</value>
   </data>
-  <data name="Autostart" xml:space="preserve">
-    <value>Autostart</value>
+  <data name="App start" xml:space="preserve">
+    <value>App start</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Ħruġ app</value>
@@ -199,7 +199,7 @@
     <value>Fil-post tal-ġurdien</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>Bdil tad-direttorju</value>
+    <value>Tibdil tad-direttorju</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Ikklikkja</value>
@@ -445,7 +445,7 @@
     <value>Ħdejn dak ta’ qabel</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset bil-pixels</value>
+    <value>Offset mill-pixels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Jikkoinċidu</value>
