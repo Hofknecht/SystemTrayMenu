@@ -815,18 +815,15 @@ namespace SystemTrayMenu.UserInterface
         {
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
             dataGridViewFolders.ClearSelection();
-            int heightFirstTabpage = tableLayoutPanelGeneral.Size.Height + (int)(50 * Scaling.Factor);
-            tabControl.Size = new Size(
-                tabControl.Size.Width,
-                heightFirstTabpage);
             tabPageGeneral.AutoScrollMinSize = tabPageGeneral.Size;
-            int widthMin = tableLayoutPanelMain.Width +
-                tableLayoutPanelMain.Margin.Horizontal +
-                tableLayoutPanelMain.Padding.Horizontal + 16;
-            int heightMin = heightFirstTabpage + tableLayoutPanelBottom.Height + 54;
-            Size = new Size(widthMin, heightMin);
             tableLayoutPanelMain.Dock = DockStyle.Fill;
             tabControl.Dock = DockStyle.Fill;
+        }
+
+        private void SettingsForm_Shown(object sender, EventArgs e)
+        {
+            AutoSize = false;
+            AutoSizeMode = AutoSizeMode.GrowOnly;
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
