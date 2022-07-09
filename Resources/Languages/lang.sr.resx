@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Ивица изабраног елемента</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Конвертујте у релативни директоријум</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Релативни именик</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Сачувајте конфигурацију у директоријуму апликације</value>
@@ -373,7 +373,7 @@
     <value>Уклони директоријум</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Онли Филес</value>
+    <value>Само датотеке</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
     <value>Главни мени кеширања</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Прикажи траку за претрагу</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Чување датотеке евиденције у директоријуму апликације уместо у АппДата</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Чување датотеке евиденције у директоријуму апликације</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Прикажи преклапање везе</value>
@@ -511,7 +511,7 @@
     <value>Сортирано по врсти и датуму</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
-    <value>Сортирано по врсти и имену</value>
+    <value>Сортирано по врсти и називу</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Провери ажурирања</value>

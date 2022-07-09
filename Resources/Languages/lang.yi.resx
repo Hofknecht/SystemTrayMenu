@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>גרענעץ פון אויסגעקליבן עלעמענט</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>גער צו קאָרעוו וועגווייַזער</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>קאָרעוו וועגווייַזער</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>היט קאַנפיגיעריישאַן אין אַפּלאַקיישאַן וועגווייַזער</value>
@@ -397,7 +397,7 @@
     <value>לינקס אונטן</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>דנאָ רעכט</value>
+    <value>רעכטס אונטן</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>הויפּט מעניו אויס</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>ווייַזן זוכן באַר</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>שפּאָרן קלאָץ טעקע אין אַפּלאַקיישאַן וועגווייַזער אַנשטאָט פון אַפּפּדאַטאַ</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>שפּאָרן קלאָץ טעקע אין אַפּלאַקיישאַן וועגווייַזער</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>ווייַזן לינק אָוווערליי</value>

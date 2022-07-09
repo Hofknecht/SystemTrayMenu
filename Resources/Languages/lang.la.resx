@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Terminus lectus elementum</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Convertere ad relativum Directory</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relativum directorium</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Servo configuratione in applicatione Directory</value>
@@ -490,7 +490,7 @@
     <value>Ostende comitem elementorum infra</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Ostende indicem titulum ad top</value>
+    <value>Ostendere indicem titulum ad top</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
     <value>Munus ostende claves infra</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Monstra quaerere talea</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Salvis stipes lima in applicatione presul pro AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Salvis stipes lima in applicatione Directory</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Ostendere nexum operies</value>

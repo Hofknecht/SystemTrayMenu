@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Rand van geselecteerd element</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Converteren naar relatieve map</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relatieve map</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Configuratie opslaan in applicatiemap</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Toon zoekbalk</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Logbestand opslaan in applicatiemap in plaats van AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Logbestand opslaan in applicatiemap</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Link-overlay weergeven</value>

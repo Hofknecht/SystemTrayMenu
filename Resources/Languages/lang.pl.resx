@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Obramowanie wybranego elementu</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Konwertuj na katalog względny</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Katalog względny</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Zapisz konfigurację w katalogu aplikacji</value>
@@ -457,7 +457,7 @@
     <value>Rozmiar ikon w procentach</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Wsparcie systemoweTacaMenu</value>
+    <value>Wsparcie SystemoweTacaMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Zblakły</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Pokaż pasek wyszukiwania</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Zapisywanie pliku dziennika w katalogu aplikacji zamiast AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Zapisywanie pliku dziennika w katalogu aplikacji</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Pokaż nakładkę linku</value>

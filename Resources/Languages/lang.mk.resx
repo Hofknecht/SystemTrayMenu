@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Граница на избраниот елемент</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Конвертирај во релативен директориум</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Релативен директориум</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Зачувајте ја конфигурацијата во директориумот со апликации</value>
@@ -451,7 +451,7 @@
     <value>Преклопување</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>Се појавува подменито</value>
+    <value>Се појавува подмени</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>Големината на иконите во проценти</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Прикажи лента за пребарување</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Зачувување на датотеката за евиденција во директориумот на апликации наместо AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Зачувување на датотеката за евиденција во директориумот со апликации</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Прикажи преклопување на врската</value>

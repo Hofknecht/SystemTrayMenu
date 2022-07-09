@@ -232,7 +232,7 @@
     <value>Si yo te klike sou yon eleman</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Jan nou koumanse</value>
+    <value>Background</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
     <value>Anyè louvri</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Fwontyè nan eleman chwazi</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Konvèti nan anyè relatif</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Anyè relatif</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Sove konfigirasyon nan anyè aplikasyon an</value>
@@ -349,7 +349,7 @@
     <value>Si konsantre a pèdi epi yo te peze kle antre a</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisecond jiskaske meni an fèmen si nan ka sa a meni an pa reaktive</value>
+    <value>Milisgond jiskaske meni an fèmen si nan ka sa a meni an pa reaktive</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Montre nan Taskbar</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Montre ba rechèch la</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Ekonomize dosye log nan anyè aplikasyon olye pou yo AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Ekonomize dosye log nan anyè aplikasyon an</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Montre lyen ki kouvri</value>

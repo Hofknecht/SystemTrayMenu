@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Мяжа вылучанага элемента</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Пераўтварыць у адносны каталог</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Адносны каталог</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Захавайце канфігурацыю ў каталогу прыкладання</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Паказаць радок пошуку</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Захаванне файла журнала ў каталогу прыкладання замест AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Захаванне файла журнала ў каталогу прыкладання</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Паказаць накладанне спасылак</value>

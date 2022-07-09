@@ -130,7 +130,7 @@
     <value>Iziet no lietotnes</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Direktorija</value>
+    <value>Katalogs</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
     <value>Direktorija tukša</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Atlasītā elementa apmale</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Konvertēt uz relatīvo direktoriju</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relatīvā direktorija</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Saglabājiet konfigurāciju lietojumprogrammu direktorijā</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Rādīt meklēšanas joslu</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Žurnālfaila saglabāšana lietojumprogrammu direktorijā, nevis AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Žurnāla faila saglabāšana lietojumprogrammu direktorijā</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Rādīt saites pārklājumu</value>

@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>ຂອບຂອງອົງປະກອບທີ່ເລືອກ</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>ປ່ຽນເປັນໄດເລກະທໍລີທີ່ກ່ຽວຂ້ອງ</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>ລາຍຊື່ພີ່ນ້ອງ</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>ບັນທຶກການຕັ້ງຄ່າໃນໄດເລກະທໍລີແອັບພລິເຄຊັນ</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>ສະແດງແຖບຄົ້ນຫາ</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>ບັນທຶກໄຟລ໌ບັນທຶກໃນໄດເລກະທໍລີແອັບພລິເຄຊັນແທນ AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>ບັນທຶກໄຟລ໌ບັນທຶກໃນໄດເລກະທໍລີແອັບພລິເຄຊັນ</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>ສະແດງການວາງຊ້ອນລິ້ງ</value>
@@ -523,7 +523,7 @@
     <value>ສະ​ບັບ​ຫລ້າ​ສຸດ​ທີ່​ມີ​ຢູ່​:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ລຸ້ນໃໝ່ມີໃຫ້!</value>
+    <value>ມີລຸ້ນໃໝ່!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>ທ່ານມີເວີຊັນຫຼ້າສຸດຂອງ SystemTrayMenu!</value>

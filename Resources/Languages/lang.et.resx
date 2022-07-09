@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Valitud elemendi ääris</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Teisenda suhteliseks kataloogiks</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Suhteline kataloog</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Salvestage konfiguratsioon rakenduste kataloogi</value>
@@ -490,7 +490,7 @@
     <value>Kuva elementide arv allpool</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Kuva kataloogi pealkiri üleval</value>
+    <value>Kuva kataloogi pealkiri ülaosas</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
     <value>Kuva funktsiooniklahvid allpool</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Kuva otsinguriba</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Logifaili salvestamine rakenduste kataloogi AppData asemel</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Logifaili salvestamine rakenduste kataloogi</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Kuva lingi ülekate</value>

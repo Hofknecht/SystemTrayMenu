@@ -175,7 +175,7 @@
     <value>Galdera arruntak</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Irakurri ohiko galderak eta, ondoren, aukeratu SystemTrayMenurako erro-direktorio bat.</value>
+    <value>Irakurri ohiko galderak eta, ondoren, aukeratu SystemTrayMenurako root direktorioa.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Hautatu direktorioa</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Hautatutako elementuaren ertza</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Bihurtu direktorio erlatibora</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Direktorio erlatiboa</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Gorde konfigurazioa aplikazioen direktorioan</value>
@@ -358,7 +358,7 @@
     <value>Gehitu direktorioa</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Gehitu direktorioaren edukia erroko direktoriora</value>
+    <value>Gehitu direktorioaren edukia erro direktoriora</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>Direktorio bideak</value>
@@ -376,7 +376,7 @@
     <value>Fitxategiak bakarrik</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cachearen menu nagusia</value>
+    <value>Cache menu nagusia</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Garbitu cachea elementu kopuru hori baino gehiago bada</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Erakutsi bilaketa-barra</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Erregistro fitxategia aplikazioaren direktorioan gordetzen AppData-n ordez</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Erregistro fitxategia aplikazioen direktorioan gordetzen</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Erakutsi esteken gainjartzea</value>

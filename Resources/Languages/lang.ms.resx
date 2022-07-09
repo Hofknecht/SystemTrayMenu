@@ -127,7 +127,7 @@
     <value>Permulaan apl</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>Keluar dari apl</value>
+    <value>Keluar apl</value>
   </data>
   <data name="Directory" xml:space="preserve">
     <value>Direktori</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Sempadan elemen yang dipilih</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Tukar kepada direktori relatif</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Direktori relatif</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Simpan konfigurasi dalam direktori aplikasi</value>
@@ -271,7 +271,7 @@
     <value>Anak panah apabila mengklik</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Anak panah semasa tetikus melayang di atasnya</value>
+    <value>Anak panah sambil tetikus melayang di atasnya</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Latar belakang anak panah apabila mengklik</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Tunjukkan bar carian</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Menyimpan fail log dalam direktori aplikasi dan bukannya AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Menyimpan fail log dalam direktori aplikasi</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Tunjukkan tindanan pautan</value>

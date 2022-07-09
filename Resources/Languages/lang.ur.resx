@@ -133,7 +133,7 @@
     <value>ڈائریکٹری</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>ڈائریکٹری خالی</value>
+    <value>ڈائرکٹری خالی ہے۔</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>تفصیلات</value>
@@ -181,7 +181,7 @@
     <value>ڈائریکٹری منتخب کریں۔</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ایپ کے لیے آپ کی روٹ ڈائرکٹری موجود نہیں ہے یا خالی ہے! روٹ ڈائرکٹری کو تبدیل کریں یا روٹ ڈائرکٹری میں کچھ فائلیں، ڈائریکٹریز یا شارٹ کٹس ڈالیں۔</value>
+    <value>ایپ کے لیے آپ کی روٹ ڈائرکٹری موجود نہیں ہے یا خالی ہے! روٹ ڈائرکٹری کو تبدیل کریں یا روٹ ڈائرکٹری میں کچھ فائلیں، ڈائریکٹریز یا شارٹ کٹ ڈالیں۔</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>آپ کو ایپ کی روٹ ڈائرکٹری تک رسائی نہیں ہے۔ ڈائرکٹری تک رسائی فراہم کریں یا روٹ ڈائرکٹری کو تبدیل کریں۔</value>
@@ -244,13 +244,13 @@
     <value>تلاش کا میدان</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>منتخب عنصر</value>
+    <value>منتخب کردہ عنصر</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
     <value>منتخب کردہ عنصر کا بارڈر</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>رشتہ دار ڈائریکٹری میں تبدیل کریں۔</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>متعلقہ ڈائریکٹری</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>ایپلیکیشن ڈائرکٹری میں کنفیگریشن کو محفوظ کریں۔</value>
@@ -262,7 +262,7 @@
     <value>ایپلیکیشن ڈائرکٹری کھولیں۔</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>پکسلز مینو کی زیادہ سے زیادہ اونچائی</value>
+    <value>پکسلز زیادہ سے زیادہ مینو اونچائی</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>تیر</value>
@@ -316,7 +316,7 @@
     <value>شبیہیں</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>سیاق و سباق کے مینو سے سیٹ کریں۔</value>
+    <value>سیاق و سباق کے مینو کے مطابق سیٹ کریں۔</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ڈائرکٹری کے طور پر سیٹ کریں۔</value>
@@ -325,10 +325,10 @@
     <value>لوڈ ہو رہا ہے</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>شارٹ کٹ لنک کے ساتھ مسئلہ</value>
+    <value>شارٹ کٹ لنک میں مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، اس لیے یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
+    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ڈائرکٹری کھولیں۔</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>سرچ بار دکھائیں۔</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>AppData کی بجائے ایپلیکیشن ڈائرکٹری میں لاگ فائل کو محفوظ کرنا</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>لاگ فائل کو ایپلی کیشن ڈائرکٹری میں محفوظ کرنا</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>لنک اوورلے دکھائیں۔</value>

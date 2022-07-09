@@ -124,7 +124,7 @@
     <value>சரி</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>பயன்பாட்டின் தொடக்கம்</value>
+    <value>ஆப்ஸ் ஆரம்பம்</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>பயன்பாட்டிலிருந்து வெளியேறு</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>தேர்ந்தெடுக்கப்பட்ட உறுப்பின் எல்லை</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>தொடர்புடைய கோப்பகத்திற்கு மாற்றவும்</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>தொடர்புடைய அடைவு</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>பயன்பாட்டு கோப்பகத்தில் உள்ளமைவைச் சேமிக்கவும்</value>
@@ -379,7 +379,7 @@
     <value>கேச் முதன்மை மெனு</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>இந்த எண்ணிக்கையை விட அதிகமான உருப்படிகள் இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -403,7 +403,7 @@
     <value>முதன்மை மெனு தோன்றும்</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>சுட்டி இடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
+    <value>சுட்டி இருப்பிடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>தனிப்பயன் (அதை பொருத்தமான இடத்திற்கு இழுக்கவும்)</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>தேடல் பட்டியைக் காட்டு</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>AppData க்குப் பதிலாக பதிவுக் கோப்பை பயன்பாட்டுக் கோப்பகத்தில் சேமிக்கிறது</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>பயன்பாட்டு கோப்பகத்தில் பதிவு கோப்பைச் சேமிக்கிறது</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>இணைப்பு மேலடுக்கைக் காட்டு</value>

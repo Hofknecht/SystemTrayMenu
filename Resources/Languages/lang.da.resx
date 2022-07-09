@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Kant af valgt element</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Konverter til relativ mappe</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relativ mappe</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Gem konfigurationen i applikationsmappen</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Vis søgelinjen</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Gemmer logfil i applikationsmappe i stedet for AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Gemmer logfil i applikationsmappe</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Vis linkoverlejring</value>

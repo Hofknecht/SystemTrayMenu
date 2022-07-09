@@ -181,7 +181,7 @@
     <value>בחר ספרייה</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס מספר קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
+    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס כמה קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>אין לך גישה לספריית השורש של האפליקציה. הענק גישה לספרייה או שנה את ספריית הבסיס.</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>גבול של אלמנט נבחר</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>המר לספרייה יחסית</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>ספרייה יחסית</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>שמור את התצורה בספריית היישומים</value>
@@ -424,7 +424,7 @@
     <value>הצג תמיד קבצים מוסתרים, ספריות או כוננים</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>קבצים וספריות מוסתרים</value>
+    <value>קבצים וספריות נסתרות</value>
   </data>
   <data name="Never show hidden files, directories or drives" xml:space="preserve">
     <value>לעולם אל תציג קבצים מוסתרים, ספריות או כוננים</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>הצג את שורת החיפוש</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>שומר קובץ יומן בספריית האפליקציה במקום AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>שומר קובץ יומן בספריית היישום</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>הצג שכבת-על של קישור</value>
@@ -517,7 +517,7 @@
     <value>בדוק עדכונים</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>עבור לדף ההורדה</value>
+    <value>עבור לדף ההורדות</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>הגרסה האחרונה הזמינה:</value>

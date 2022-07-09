@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>შერჩეული ელემენტის საზღვარი</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>კონვერტაცია შედარებით დირექტორიაში</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>შედარებითი დირექტორია</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>შეინახეთ კონფიგურაცია განაცხადის დირექტორიაში</value>
@@ -283,7 +283,7 @@
     <value>ფერის სქემა მუქი</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>ფერადი სქემა ნათელი</value>
+    <value>ნათელი ფერების სქემა</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>აპლიკაციის მენიუ</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>საძიებო ზოლის ჩვენება</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>ჟურნალის ფაილის შენახვა აპლიკაციის დირექტორიაში AppData-ის ნაცვლად</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>ჟურნალის ფაილის შენახვა განაცხადის დირექტორიაში</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>ბმულის გადაფარვის ჩვენება</value>

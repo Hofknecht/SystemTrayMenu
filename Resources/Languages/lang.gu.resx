@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>પસંદ કરેલ ઘટકની સરહદ</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>સંબંધિત ડિરેક્ટરીમાં કન્વર્ટ કરો</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>સંબંધિત ડિરેક્ટરી</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>એપ્લિકેશન ડિરેક્ટરીમાં ગોઠવણી સાચવો</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>શોધ બાર બતાવો</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>AppData ને બદલે એપ્લિકેશન ડિરેક્ટરીમાં લોગ ફાઇલ સાચવી રહ્યું છે</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>એપ્લિકેશન ડિરેક્ટરીમાં લોગ ફાઇલ સાચવી રહ્યું છે</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>લિંક ઓવરલે બતાવો</value>

@@ -7,6 +7,7 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Globalization;
     using System.IO;
     using System.Reflection;
     using System.Text;
@@ -109,9 +110,9 @@ namespace SystemTrayMenu.UserInterface
                 buttonOpenFolder.Text = Translator.GetText("Open directory");
                 checkBoxSetFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
                 groupBoxConfigAndLogfile.Text = Translator.GetText("Configuration file and log file");
-                buttonChangeRelativeFolder.Text = Translator.GetText("Convert to relative directory");
+                buttonChangeRelativeFolder.Text = Translator.GetText("Relative directory");
                 checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration in application directory");
-                checkBoxSaveLogFileInApplicationDirectory.Text = Translator.GetText("Saving log file in application directory instead of AppData");
+                checkBoxSaveLogFileInApplicationDirectory.Text = Translator.GetText("Saving log file in application directory");
                 buttonOpenAssemblyLocation.Text = Translator.GetText("Open application directory");
                 groupBoxAutostart.Text = Translator.GetText("App start");
                 if (IsStartupTask())
@@ -121,10 +122,11 @@ namespace SystemTrayMenu.UserInterface
 
                 checkBoxAutostart.Text = Translator.GetText("Start with Windows");
                 checkBoxCheckForUpdates.Text = Translator.GetText("Check for updates");
-                buttonAddStartupTask.Text = Translator.GetText("Start with Windows");
+                buttonAddStartup.Text = Translator.GetText("Start with Windows");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
                 buttonHotkeyDefault.Text = Translator.GetText("Default");
                 groupBoxLanguage.Text = Translator.GetText("Language");
+                buttonGeneralDefault.Text = Translator.GetText("Default");
 
                 tabPageSizeAndLocation.Text = Translator.GetText("Size and location");
                 groupBoxSize.Text = Translator.GetText("Size");
@@ -262,12 +264,12 @@ namespace SystemTrayMenu.UserInterface
             if (IsStartupTask())
             {
                 checkBoxAutostart.Visible = false;
-                labelStartupTaskStatus.Text = string.Empty;
+                labelStartupStatus.Text = string.Empty;
             }
             else
             {
-                buttonAddStartupTask.Visible = false;
-                labelStartupTaskStatus.Visible = false;
+                buttonAddStartup.Visible = false;
+                labelStartupStatus.Visible = false;
                 checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
             }
 
@@ -812,13 +814,19 @@ namespace SystemTrayMenu.UserInterface
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
-            AdjustControlMultilineIfNecessary(checkBoxSaveLogFileInApplicationDirectory);
-
+            dataGridViewFolders.ClearSelection();
+            int heightFirstTabpage = tableLayoutPanelGeneral.Size.Height + (int)(50 * Scaling.Factor);
             tabControl.Size = new Size(
                 tabControl.Size.Width,
-                tableLayoutPanelGeneral.Size.Height + (int)(50 * Scaling.Factor));
-
-            dataGridViewFolders.ClearSelection();
+                heightFirstTabpage);
+            tabPageGeneral.AutoScrollMinSize = tabPageGeneral.Size;
+            int widthMin = tableLayoutPanelMain.Width +
+                tableLayoutPanelMain.Margin.Horizontal +
+                tableLayoutPanelMain.Padding.Horizontal + 16;
+            int heightMin = heightFirstTabpage + tableLayoutPanelBottom.Height + 54;
+            Size = new Size(widthMin, heightMin);
+            tableLayoutPanelMain.Dock = DockStyle.Fill;
+            tabControl.Dock = DockStyle.Fill;
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
@@ -1010,7 +1018,7 @@ namespace SystemTrayMenu.UserInterface
             Close();
         }
 
-        private void ButtonAddStartupTask_Click(object sender, EventArgs e)
+        private void ButtonAddStartup_Click(object sender, EventArgs e)
         {
             _ = AddStartUpAsync();
             async Task AddStartUpAsync()
@@ -1049,20 +1057,15 @@ namespace SystemTrayMenu.UserInterface
                 case StartupTaskState.Disabled:
                 case StartupTaskState.DisabledByUser:
                 case StartupTaskState.DisabledByPolicy:
-                    labelStartupTaskStatus.Text = Translator.GetText("Deactivated");
+                    labelStartupStatus.Text = Translator.GetText("Deactivated");
                     break;
                 case StartupTaskState.Enabled:
                 case StartupTaskState.EnabledByPolicy:
-                    labelStartupTaskStatus.Text = Translator.GetText("Activated");
+                    labelStartupStatus.Text = Translator.GetText("Activated");
                     break;
                 default:
                     break;
             }
-        }
-
-        private void ButtonHotkeyDefault_Click(object sender, EventArgs e)
-        {
-            textBoxHotkey.SetHotkey("Ctrl+LWin");
         }
 
         private void ButtonChange_Click(object sender, EventArgs e)
@@ -1105,6 +1108,20 @@ namespace SystemTrayMenu.UserInterface
                 textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             RegisterHotkeys();
             inHotkey = false;
+        }
+
+        private void ButtonHotkeyDefault_Click(object sender, EventArgs e)
+        {
+            textBoxHotkey.SetHotkey("Ctrl+LWin");
+        }
+
+        private void ButtonGeneralDefault_Click(object sender, EventArgs e)
+        {
+            checkBoxSetFolderByWindowsContextMenu.Checked = false;
+            checkBoxSaveConfigInApplicationDirectory.Checked = false;
+            checkBoxSaveLogFileInApplicationDirectory.Checked = false;
+            checkBoxAutostart.Checked = false;
+            checkBoxCheckForUpdates.Checked = false;
         }
 
         private void ButtonChangeIcoFolder_Click(object sender, EventArgs e)

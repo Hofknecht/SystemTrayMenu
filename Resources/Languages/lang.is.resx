@@ -220,7 +220,7 @@
     <value>Millisúndur þar til valmyndin lokar ef í þessu tilfelli fer músin þá út úr valmyndinni</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixel hámarksbreidd valmyndar</value>
+    <value>Pixel hámarks breidd valmyndar</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>Heldur opið</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Rammi valins þáttar</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Umbreyta í hlutfallslega skrá</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Ættingjaskrá</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Vistaðu stillingar í forritaskrá</value>
@@ -484,7 +484,7 @@
     <value>Skrunaðu með því að strjúka</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Sía valmynd eftir skráargerð, t.d.: *.exe|*.dll</value>
+    <value>Sía valmynd eftir skráartegund, t.d.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Sýndu fjölda þátta hér að neðan</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Sýna leitarstiku</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Vistar notendaskrá í forritaskrá í stað AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Vistar notendaskrá í forritaskrá</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Sýna hlekkjayfirlag</value>

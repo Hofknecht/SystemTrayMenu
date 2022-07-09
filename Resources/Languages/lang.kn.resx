@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>ಆಯ್ದ ಅಂಶದ ಗಡಿ</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>ಸಂಬಂಧಿತ ಡೈರೆಕ್ಟರಿಗೆ ಪರಿವರ್ತಿಸಿ</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>ಸಂಬಂಧಿತ ಡೈರೆಕ್ಟರಿ</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>ಅಪ್ಲಿಕೇಶನ್ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಸಂರಚನೆಯನ್ನು ಉಳಿಸಿ</value>
@@ -439,7 +439,7 @@
     <value>ಹುಡುಕಾಟ ಫಲಿತಾಂಶವಾಗಿ ಮಾತ್ರ ತೋರಿಸಿ</value>
   </data>
   <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ಡಬಲ್ ಕ್ಲಿಕ್ ಮಾಡುವ ಬದಲು ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
+    <value>ಡಬಲ್ ಕ್ಲಿಕ್ ಬದಲಿಗೆ ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ಹಿಂದಿನದಕ್ಕೆ ಮುಂದೆ</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>ಹುಡುಕಾಟ ಪಟ್ಟಿಯನ್ನು ತೋರಿಸಿ</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>AppData ಬದಲಿಗೆ ಅಪ್ಲಿಕೇಶನ್ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಲಾಗ್ ಫೈಲ್ ಅನ್ನು ಉಳಿಸಲಾಗುತ್ತಿದೆ</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>ಅಪ್ಲಿಕೇಶನ್ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಲಾಗ್ ಫೈಲ್ ಅನ್ನು ಉಳಿಸಲಾಗುತ್ತಿದೆ</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>ಲಿಂಕ್ ಓವರ್‌ಲೇ ತೋರಿಸಿ</value>

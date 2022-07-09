@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Ընտրված տարրի եզրագիծը</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Փոխարկել հարաբերական գրացուցակին</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Հարաբերական գրացուցակ</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Պահպանեք կոնֆիգուրացիան հավելվածի գրացուցակում</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Ցույց տալ որոնման տողը</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Մատյան ֆայլի պահպանում հավելվածի գրացուցակում՝ AppData-ի փոխարեն</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Մատյան ֆայլի պահպանում հավելվածի գրացուցակում</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Ցույց տալ հղման ծածկույթը</value>

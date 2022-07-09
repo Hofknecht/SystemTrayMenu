@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>حاشیه عنصر انتخاب شده</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>تبدیل به دایرکتوری نسبی</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>دایرکتوری نسبی</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>پیکربندی را در فهرست برنامه ذخیره کنید</value>
@@ -355,7 +355,7 @@
     <value>نمایش در نوار وظیفه</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>دایرکتوری اضافه کنید</value>
+    <value>اضافه کردن دایرکتوری</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>محتوای دایرکتوری را به دایرکتوری ریشه اضافه کنید</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>نمایش نوار جستجو</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>ذخیره فایل log در فهرست برنامه به جای AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>ذخیره فایل لاگ در فهرست برنامه</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>نمایش همپوشانی پیوند</value>

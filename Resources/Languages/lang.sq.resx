@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Kufiri i elementit të zgjedhur</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Konvertoni në drejtorinë përkatëse</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Drejtoria relative</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Ruani konfigurimin në direktorinë e aplikacionit</value>
@@ -262,7 +262,7 @@
     <value>Hap direktorinë e aplikacionit</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Lartësia maksimale e pikselëve të menusë</value>
+    <value>Lartësia maksimale e pikselëve të menysë</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Shigjeta</value>
@@ -352,7 +352,7 @@
     <value>Milisekonda derisa menyja të mbyllet nëse në këtë rast menyja nuk riaktivizohet</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Shfaq në Taskbar</value>
+    <value>Shfaq në shiritin e detyrave</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>Shto direktori</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Shfaq shiritin e kërkimit</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Ruajtja e skedarit të regjistrit në drejtorinë e aplikacionit në vend të AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Ruajtja e skedarit të regjistrit në drejtorinë e aplikacionit</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Shfaq mbivendosjen e lidhjes</value>

@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Kantlinje til valgt element</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Konverter til relativ katalog</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relativ katalog</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Lagre konfigurasjonen i applikasjonskatalogen</value>
@@ -280,7 +280,7 @@
     <value>Bakgrunn av pil mens musen svever over den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>Mørkt fargevalg</value>
+    <value>Fargeskjema mørkt</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
     <value>Lys fargevalg</value>
@@ -316,7 +316,7 @@
     <value>Ikoner</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Sett av kontekstmeny</value>
+    <value>Angis av kontekstmenyen</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Sett som katalog</value>
@@ -328,7 +328,7 @@
     <value>Problem med snarveislenke</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Elementet som denne snarveien refererer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
+    <value>Elementet som denne snarveien referer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Åpne katalogen</value>
@@ -475,7 +475,7 @@
     <value>Sortering</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopier radelementet med dra-slipp</value>
+    <value>Kopier radelement via dra-slipp</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Dra</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Vis søkefeltet</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Lagrer loggfil i applikasjonskatalog i stedet for AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Lagrer loggfilen i programkatalogen</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Vis linkoverlegg</value>

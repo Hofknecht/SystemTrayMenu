@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>चयनित तत्व की सीमा</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>सापेक्ष निर्देशिका में कनवर्ट करें</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>सापेक्ष निर्देशिका</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>एप्लिकेशन निर्देशिका में कॉन्फ़िगरेशन सहेजें</value>
@@ -346,7 +346,7 @@
     <value>विशेषज्ञ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>यदि फोकस खो गया है और एंटर कुंजी दबाई गई है</value>
+    <value>यदि फोकस खो गया है और एंटर कुंजी दबा दी गई है</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>मेनू बंद होने तक मिलीसेकंड यदि इस मामले में मेनू पुन: सक्रिय नहीं होता है</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>खोज बार दिखाएं</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>AppData के बजाय एप्लिकेशन निर्देशिका में लॉग फ़ाइल सहेजा जा रहा है</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>अनुप्रयोग निर्देशिका में लॉग फ़ाइल सहेजा जा रहा है</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>लिंक ओवरले दिखाएं</value>

@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Bordo do elemento seleccionado</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Converter a directorio relativo</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Directorio relativo</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Garda a configuración no directorio da aplicación</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Mostrar a barra de busca</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Gardando o ficheiro de rexistro no directorio da aplicación en lugar de AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Gardando o ficheiro de rexistro no directorio da aplicación</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Mostra a superposición de ligazóns</value>

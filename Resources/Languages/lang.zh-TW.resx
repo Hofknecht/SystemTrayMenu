@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>被選元素的邊框</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>轉換為相對目錄</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>相對目錄</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>將配置保存在應用程序目錄中</value>
@@ -274,7 +274,7 @@
     <value>鼠標懸停時的箭頭</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>單擊時箭頭的背景</value>
+    <value>點擊時箭頭的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>鼠標懸停在箭頭上時的箭頭背景</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>顯示搜索欄</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>將日誌文件保存在應用程序目錄而不是 AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>將日誌文件保存在應用程序目錄中</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>顯示鏈接覆蓋</value>

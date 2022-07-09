@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso directo</value>
+    <value>tecla de acceso rápido</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -217,7 +217,7 @@
     <value>Milisegundos hasta que se abre un menú cuando el mouse está sobre él</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisegundos hasta que el menú se cierre si en este caso el ratón sale del menú</value>
+    <value>Milisegundos hasta que se cierre el menú si en este caso el ratón sale del menú</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Ancho máximo de menú en píxeles</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Borde del elemento seleccionado</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Convertir a directorio relativo</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Directorio relativo</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Guardar configuración en el directorio de la aplicación</value>
@@ -463,7 +463,7 @@
     <value>Desvanecimiento</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Enviar tecla de acceso rápido a otra instancia</value>
+    <value>Enviar tecla de acceso directo a otra instancia</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Ordenado por fecha</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Mostrar barra de búsqueda</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Guardar el archivo de registro en el directorio de la aplicación en lugar de AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Guardar el archivo de registro en el directorio de la aplicación</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Mostrar superposición de enlaces</value>

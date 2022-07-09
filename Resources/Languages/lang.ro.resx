@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Chenarul elementului selectat</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Convertiți în directorul relativ</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Director relativ</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Salvați configurația în directorul aplicației</value>
@@ -310,7 +310,7 @@
     <value>mărimea</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Marginea meniului</value>
+    <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>icoane</value>
@@ -382,7 +382,7 @@
     <value>Goliți memoria cache dacă este mai mare de acest număr de articole</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Adăugați exemplu de director „Start Menu”</value>
+    <value>Adăugați exemplu de director „Meniu Start”</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Înălțimea rândului în procente</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Afișează bara de căutare</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Se salvează fișierul jurnal în directorul aplicației în loc de AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Se salvează fișierul jurnal în directorul aplicației</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Afișați suprapunerea linkului</value>

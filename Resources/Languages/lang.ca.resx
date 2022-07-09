@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Vora de l'element seleccionat</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Converteix al directori relatiu</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Directori relatiu</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Desa la configuració al directori de l'aplicació</value>
@@ -445,7 +445,7 @@
     <value>Al costat de l'anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Compensació de píxels</value>
+    <value>Compensació per píxels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Superposició</value>
@@ -481,7 +481,7 @@
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb el dit</value>
+    <value>Desplaceu-vos amb lliscar</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Mostra la barra de cerca</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Desant el fitxer de registre al directori de l'aplicació en lloc d'AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Desant el fitxer de registre al directori de l'aplicació</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Mostra la superposició d'enllaços</value>

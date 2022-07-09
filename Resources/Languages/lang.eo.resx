@@ -154,7 +154,7 @@
     <value>Rekomenci</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Ne eblis registri la varmaklavon.</value>
+    <value>Ne eblis registri la klavoklavon.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Ĉesigi</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Bordo de elektita elemento</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Konverti al relativa dosierujo</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relativa dosierujo</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Konservu agordon en aplikaĵa dosierujo</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Montru serĉbreton</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Konservante protokoldosieron en aplikaĵa dosierujo anstataŭ AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Konservante protokoldosieron en aplikaĵa dosierujo</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Montru ligkovraĵon</value>

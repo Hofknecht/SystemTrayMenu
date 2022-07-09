@@ -202,7 +202,7 @@
     <value>Kataloqun dəyişdirilməsi</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>basın</value>
+    <value>klikləyin</value>
   </data>
   <data name="Customize" xml:space="preserve">
     <value>Özəlləşdirmək</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Seçilmiş elementin sərhədi</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Nisbi qovluğa çevirin</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Nisbi kataloq</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Konfiqurasiyanı proqram kataloqunda saxlayın</value>
@@ -325,7 +325,7 @@
     <value>yüklənir</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Qısayol keçidi ilə bağlı problem</value>
+    <value>Qısayol keçidində problem</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Bu qısayolun istinad etdiyi element dəyişdirilib və ya köçürülüb, ona görə də bu qısayol artıq düzgün işləməyəcək.</value>
@@ -379,10 +379,10 @@
     <value>Cache əsas menyusu</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Bu sayda element varsa, önbelleği təmizləyin</value>
+    <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>'Başlat Menyu' nümunə kataloqu əlavə edin</value>
+    <value>'Başlat Menyu' nümunə qovluğu əlavə edin</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Sətir hündürlüyü faizlə</value>
@@ -457,7 +457,7 @@
     <value>Nişanların ölçüsü faizlə</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu-nu dəstəkləyin</value>
+    <value>SystemTrayMenu dəstəyi</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Solğunluq</value>
@@ -481,7 +481,7 @@
     <value>Çək</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Sürüşdürmə vasitəsilə sürüşdürün</value>
+    <value>Sürüşdürərək sürüşdürün</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Fayl növünə görə menyunu süzün, məsələn: *.exe|*.dll</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Axtarış çubuğunu göstərin</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Log faylı AppData əvəzinə proqram kataloqunda saxlanılır</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Günlük faylı proqram kataloqunda saxlanılır</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Link örtüyünü göstərin</value>

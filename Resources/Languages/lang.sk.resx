@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Orámovanie vybraného prvku</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Previesť do relatívneho adresára</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relatívny adresár</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Uložte konfiguráciu do adresára aplikácie</value>
@@ -373,7 +373,7 @@
     <value>Odstrániť adresár</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Iba súbory</value>
+    <value>Iba Súbory</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
     <value>Hlavná ponuka vyrovnávacej pamäte</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Zobraziť panel vyhľadávania</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Uloženie súboru denníka do adresára aplikácie namiesto AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Ukladanie log súboru do adresára aplikácie</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Zobraziť prekrytie odkazu</value>

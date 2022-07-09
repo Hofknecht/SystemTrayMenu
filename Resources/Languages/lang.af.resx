@@ -139,7 +139,7 @@
     <value>Besonderhede</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Stelsel inligting</value>
+    <value>Stelselinligting</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Gids ontoeganklik</value>
@@ -249,8 +249,8 @@
   <data name="Border of selected element" xml:space="preserve">
     <value>Rand van geselekteerde element</value>
   </data>
-  <data name="Convert to relative directory" xml:space="preserve">
-    <value>Skakel om na relatiewe gids</value>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relatiewe gids</value>
   </data>
   <data name="Save configuration in application directory" xml:space="preserve">
     <value>Stoor konfigurasie in toepassingsgids</value>
@@ -498,8 +498,8 @@
   <data name="Show search bar" xml:space="preserve">
     <value>Wys soekbalk</value>
   </data>
-  <data name="Saving log file in application directory instead of AppData" xml:space="preserve">
-    <value>Stoor loglêer in toepassingsgids in plaas van AppData</value>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Stoor tans loglêer in toepassingsgids</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Wys skakeloorleg</value>
