@@ -76,6 +76,8 @@ namespace SystemTrayMenu.UserInterface
 
             InitializeComponent();
 
+            SetDoubleBuffer(dgv, true);
+
             Color foreColor = Color.Black;
             Color backColor = AppColors.Background;
             Color backColorSearch = AppColors.SearchField;
@@ -694,6 +696,17 @@ namespace SystemTrayMenu.UserInterface
             }
 
             return base.ProcessCmdKey(ref msg, keys);
+        }
+
+        private static void SetDoubleBuffer(Control ctl, bool doubleBuffered)
+        {
+            typeof(Control).InvokeMember(
+                "DoubleBuffered",
+                BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+                null,
+                ctl,
+                new object[] { doubleBuffered },
+                CultureInfo.InvariantCulture);
         }
 
         private void AdjustDataGridViewHeight(Menu menuPredecessor, int screenHeightMax)
