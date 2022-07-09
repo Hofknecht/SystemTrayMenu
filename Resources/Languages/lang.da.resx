@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Du har ingen adgang til rodmappen til appen. Giv adgang til biblioteket eller skift rodmappen.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Enkeltklik for at åbne et element i stedet for at dobbeltklikke</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Et enkelt klik for at åbne et element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Farveskema mørkt altid aktivt</value>
@@ -217,7 +217,7 @@
     <value>Millisekunder, indtil en menu åbnes, når musen er på den</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekunder indtil menuen lukker, hvis musen i dette tilfælde forlader menuen</value>
+    <value>Millisekunder, indtil menuen lukker, hvis musen i dette tilfælde forlader menuen</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixels maksimale menubredde</value>
@@ -358,7 +358,7 @@
     <value>Tilføj bibliotek</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Tilføj indholdet af mappen til rodmappen</value>
+    <value>Tilføj indhold af mappe til rodbibliotek</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>Vejviserstier</value>
@@ -420,17 +420,17 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Vis altid skjulte filer, mapper eller drev</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Vis altid</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skjulte filer og mapper</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Vis aldrig skjulte filer, mapper eller drev</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Vis aldrig</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og beliggenhed</value>
+    <value>Størrelse og placering</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Vis kun som søgeresultat</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Enkeltklik for at åbne en mappe i stedet for at dobbeltklikke</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Enkelt klik for at åbne en mappe</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ved siden af ​​den forrige</value>

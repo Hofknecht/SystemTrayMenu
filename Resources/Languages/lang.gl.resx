@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Non tes acceso ao directorio raíz da aplicación. Conceda acceso ao directorio ou cambie o directorio raíz.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Fai clic só para abrir un elemento en lugar de facer dobre clic</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Fai clic só para abrir un elemento</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Esquema de cores escuro sempre activo</value>
@@ -388,7 +388,7 @@
     <value>Altura da fila en porcentaxe</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Cantos redondeados</value>
+    <value>Esquinas redondeadas</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Aparencia</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Caché</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Mostra sempre ficheiros, directorios ou unidades ocultos</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Mostrar sempre</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Ficheiros e directorios ocultos</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Nunca mostre ficheiros, directorios ou unidades ocultos</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Nunca mostrar</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Tamaño e localización</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Mostrar só como resultado da busca</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Fai un só clic para abrir un directorio en lugar de facer dobre clic</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Fai clic só para abrir un directorio</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>A carón do anterior</value>

@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>U heeft geen toegang tot de hoofdmap van de app. Verleen toegang tot de map of wijzig de hoofdmap.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Enkele klik om een ​​element te openen in plaats van dubbelklikken</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Enkele klik om een ​​element te openen</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Kleurenschema donker altijd actief</value>
@@ -298,7 +298,7 @@
     <value>Schuifregelaar tijdens het slepen</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Schuifregelaar terwijl de muis erover zweeft 1</value>
+    <value>Schuif terwijl de muis erover zweeft 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Schuif terwijl de muis erover zweeft 2</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Altijd verborgen bestanden, mappen of stations weergeven</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Altijd laten zien</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Verborgen bestanden en mappen</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Toon nooit verborgen bestanden, mappen of stations</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Nooit laten zien</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Grootte en locatie</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Alleen weergeven als zoekresultaat</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Enkele klik om een ​​map te openen in plaats van dubbelklikken</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Enkele klik om een ​​map te openen</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Naast de vorige</value>

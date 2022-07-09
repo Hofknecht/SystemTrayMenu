@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Anda tidak memiliki akses ke direktori root aplikasi. Berikan akses ke direktori atau ubah direktori root.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Satu klik untuk membuka elemen alih-alih klik dua kali</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Satu klik untuk membuka elemen</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Skema warna gelap selalu aktif</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Selalu tampilkan file, direktori, atau drive tersembunyi</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Selalu tampilkan</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>File dan direktori tersembunyi</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Jangan pernah tampilkan file, direktori, atau drive tersembunyi</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Jangan pernah tampilkan</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ukuran dan lokasi</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Tampilkan hanya sebagai hasil pencarian</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Satu klik untuk membuka direktori alih-alih klik dua kali</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Satu klik untuk membuka direktori</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Di sebelah yang sebelumnya</value>

@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nincs hozzáférése az alkalmazás gyökérkönyvtárához. Adjon hozzáférést a könyvtárhoz, vagy módosítsa a gyökérkönyvtárat.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Egyetlen kattintással nyithat meg egy elemet dupla kattintás helyett</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Egyetlen kattintással megnyithat egy elemet</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Színséma sötét mindig aktív</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Gyorsítótár</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Mindig mutasson rejtett fájlokat, könyvtárakat vagy meghajtókat</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Mindig mutassa</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Rejtett fájlok és könyvtárak</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Soha ne mutasson rejtett fájlokat, könyvtárakat vagy meghajtókat</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Soha ne mutasd</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Méret és hely</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Csak keresési eredményként jelenítse meg</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Egyetlen kattintással nyithat meg egy könyvtárat dupla kattintás helyett</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Egyetlen kattintással megnyithat egy könyvtárat</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Az előző mellé</value>

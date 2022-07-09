@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Neturite prieigos prie programos šakninio katalogo. Suteikite prieigą prie katalogo arba pakeiskite šakninį katalogą.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Vienu spustelėjimu atidarykite elementą, o ne du kartus</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Vienu paspaudimu atidarykite elementą</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Spalvų schema tamsi visada aktyvi</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Talpykla</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Visada rodyti paslėptus failus, katalogus ar diskus</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Visada rodyti</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Paslėpti failai ir katalogai</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Niekada nerodykite paslėptų failų, katalogų ar diskų</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Niekada nerodykite</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Dydis ir vieta</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Rodyti tik kaip paieškos rezultatą</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Norėdami atidaryti katalogą, spustelėkite vieną kartą, o ne dukart</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Vienu paspaudimu atidarykite katalogą</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Šalia ankstesnio</value>

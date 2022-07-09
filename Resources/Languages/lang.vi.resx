@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Bạn không có quyền truy cập vào thư mục gốc của ứng dụng. Cấp quyền truy cập vào thư mục hoặc thay đổi thư mục gốc.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Nhấp một lần để mở một phần tử thay vì nhấp đúp</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Một cú nhấp chuột để mở một phần tử</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Phối màu tối luôn hoạt động</value>
@@ -298,7 +298,7 @@
     <value>Thanh trượt trong khi kéo</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Trượt trong khi di chuột qua nó 1</value>
+    <value>Thanh trượt trong khi di chuột qua nó 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Thanh trượt trong khi di chuột qua nó 2</value>
@@ -403,7 +403,7 @@
     <value>Menu chính xuất hiện</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Vị trí chuột (Biểu tượng trên Thanh tác vụ)</value>
+    <value>Vị trí chuột (phía trên biểu tượng Thanh tác vụ)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>Tùy chỉnh (kéo nó đến vị trí thích hợp)</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Bộ nhớ đệm</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Luôn hiển thị các tệp, thư mục hoặc ổ đĩa ẩn</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Luôn luôn hiển thị</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Tệp và thư mục ẩn</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Không bao giờ hiển thị các tệp, thư mục hoặc ổ đĩa ẩn</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Không bao giờ lộ diện</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Kích thước và vị trí</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Chỉ hiển thị dưới dạng kết quả tìm kiếm</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Nhấp một lần để mở thư mục thay vì nhấp đúp</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Một cú nhấp chuột để mở một thư mục</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Bên cạnh cái trước</value>

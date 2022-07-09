@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Vi ne havas aliron al la radika dosierujo de la programo. Donu aliron al la dosierujo aŭ ŝanĝu la radikan dosierujon.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Unuopa klako por malfermi elementon anstataŭ duobla klako</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Unu alklaku por malfermi elementon</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Kolorskemo malhela ĉiam aktiva</value>
@@ -328,7 +328,7 @@
     <value>Problemo kun ŝparvoja ligilo</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>La elemento, al kiu ĉi tiu ŝparvojo rilatas, estis ŝanĝita aŭ movita, do ĉi tiu ŝparvojo ne plu funkcios ĝuste.</value>
+    <value>La ero, al kiu ĉi tiu ŝparvojo rilatas, estis ŝanĝita aŭ movita, do ĉi tiu ŝparvojo ne plu funkcios ĝuste.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Malfermu dosierujon</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Kaŝaĵo</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Ĉiam montru kaŝitajn dosierojn, dosierujojn aŭ diskojn</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Ĉiam montru</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Kaŝitaj dosieroj kaj dosierujoj</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Neniam montru kaŝitajn dosierojn, dosierujojn aŭ diskojn</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Neniam montru</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Grandeco kaj loko</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Montru nur kiel serĉrezulton</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Unuopa klako por malfermi dosierujon anstataŭ duobla klako</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Unu alklaku por malfermi dosierujon</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Apud la antaŭa</value>

@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>యాప్ యొక్క రూట్ డైరెక్టరీకి మీకు యాక్సెస్ లేదు. డైరెక్టరీకి యాక్సెస్ ఇవ్వండి లేదా రూట్ డైరెక్టరీని మార్చండి.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>డబుల్ క్లిక్‌కు బదులుగా ఎలిమెంట్‌ను తెరవడానికి సింగిల్ క్లిక్ చేయండి</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>మూలకాన్ని తెరవడానికి ఒకే క్లిక్ చేయండి</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>ముదురు రంగు పథకం ఎల్లప్పుడూ చురుకుగా ఉంటుంది</value>
@@ -397,7 +397,7 @@
     <value>దిగువ ఎడమ</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>దిగువ కుడి</value>
+    <value>దిగువ కుడివైపు</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>ప్రధాన మెనూ కనిపిస్తుంది</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>కాష్</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>దాచిన ఫైల్‌లు, డైరెక్టరీలు లేదా డ్రైవ్‌లను ఎల్లప్పుడూ చూపండి</value>
+  <data name="Always show" xml:space="preserve">
+    <value>ఎల్లప్పుడూ చూపించు</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>దాచిన ఫైల్‌లు మరియు డైరెక్టరీలు</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>దాచిన ఫైల్‌లు, డైరెక్టరీలు లేదా డ్రైవ్‌లను ఎప్పుడూ చూపవద్దు</value>
+  <data name="Never show" xml:space="preserve">
+    <value>ఎప్పుడూ చూపించవద్దు</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>పరిమాణం మరియు స్థానం</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>శోధన ఫలితంగా మాత్రమే చూపు</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>డబుల్ క్లిక్‌కి బదులుగా డైరెక్టరీని తెరవడానికి సింగిల్ క్లిక్ చేయండి</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>డైరెక్టరీని తెరవడానికి ఒక్క క్లిక్ చేయండి</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>మునుపటిది పక్కన</value>
@@ -451,7 +451,7 @@
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>ఉప మెనూ కనిపిస్తుంది</value>
+    <value>సబ్ మెనూ కనిపిస్తుంది</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>శాతంలో చిహ్నాల పరిమాణం</value>

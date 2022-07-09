@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>ಅಪ್ಲಿಕೇಶನ್‌ನ ಮೂಲ ಡೈರೆಕ್ಟರಿಗೆ ನೀವು ಯಾವುದೇ ಪ್ರವೇಶವನ್ನು ಹೊಂದಿಲ್ಲ. ಡೈರೆಕ್ಟರಿಗೆ ಪ್ರವೇಶವನ್ನು ನೀಡಿ ಅಥವಾ ರೂಟ್ ಡೈರೆಕ್ಟರಿಯನ್ನು ಬದಲಾಯಿಸಿ.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>ಡಬಲ್ ಕ್ಲಿಕ್‌ಗೆ ಬದಲಾಗಿ ಅಂಶವನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>ಅಂಶವನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>ಕಲರ್ ಸ್ಕೀಮ್ ಡಾರ್ಕ್ ಯಾವಾಗಲೂ ಸಕ್ರಿಯವಾಗಿರುತ್ತದೆ</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>ಸಂಗ್ರಹ</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>ಯಾವಾಗಲೂ ಗುಪ್ತ ಫೈಲ್‌ಗಳು, ಡೈರೆಕ್ಟರಿಗಳು ಅಥವಾ ಡ್ರೈವ್‌ಗಳನ್ನು ತೋರಿಸಿ</value>
+  <data name="Always show" xml:space="preserve">
+    <value>ಯಾವಾಗಲೂ ತೋರಿಸು</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>ಗುಪ್ತ ಫೈಲ್‌ಗಳು ಮತ್ತು ಡೈರೆಕ್ಟರಿಗಳು</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>ಗುಪ್ತ ಫೈಲ್‌ಗಳು, ಡೈರೆಕ್ಟರಿಗಳು ಅಥವಾ ಡ್ರೈವ್‌ಗಳನ್ನು ಎಂದಿಗೂ ತೋರಿಸಬೇಡಿ</value>
+  <data name="Never show" xml:space="preserve">
+    <value>ಎಂದಿಗೂ ತೋರಿಸಬೇಡ</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>ಗಾತ್ರ ಮತ್ತು ಸ್ಥಳ</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>ಹುಡುಕಾಟ ಫಲಿತಾಂಶವಾಗಿ ಮಾತ್ರ ತೋರಿಸಿ</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ಡಬಲ್ ಕ್ಲಿಕ್ ಬದಲಿಗೆ ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ಹಿಂದಿನದಕ್ಕೆ ಮುಂದೆ</value>

@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>M'għandekx aċċess għad-direttorju tal-għeruq tal-app. Agħti aċċess għad-direttorju jew ibdel id-direttorju tal-għeruq.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Ikklikkja waħda biex tiftaħ element minflok ikklikkja darbtejn</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Ikklikkja waħda biex tiftaħ element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Skema tal-kulur skur dejjem attiv</value>
@@ -217,7 +217,7 @@
     <value>Millisekondi sakemm jinfetaħ menu meta l-maws ikun fuqu</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekondi sakemm il-menu jagħlaq jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
+    <value>Millisekondi sakemm jingħalaq il-menu jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Wisa' massimu tal-menu tal-pixels</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Dejjem uri fajls moħbija, direttorji jew drives</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Dejjem uri</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Fajls u direttorji moħbija</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Qatt turi fajls moħbija, direttorji jew drives</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Qatt turi</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Daqs u post</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Uri biss bħala riżultat tat-tfittxija</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Ikklikkja waħda biex tiftaħ direttorju minflok ikklikkja darbtejn</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Ikklikkja waħda biex tiftaħ direttorju</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ħdejn dak ta’ qabel</value>

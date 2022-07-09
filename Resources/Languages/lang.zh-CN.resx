@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>您无权访问应用程序的根目录。授予对目录的访问权限或更改根目录。</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>单击以打开元素而不是双击</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>单击以打开元素</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>配色方案暗始终处于活动状态</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>缓存</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>始终显示隐藏的文件、目录或驱动器</value>
+  <data name="Always show" xml:space="preserve">
+    <value>总是显示</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>隐藏的文件和目录</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>从不显示隐藏的文件、目录或驱动器</value>
+  <data name="Never show" xml:space="preserve">
+    <value>从不显示</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>大小和位置</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>仅显示为搜索结果</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>单击打开目录而不是双击</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>单击打开目录</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>在上一个旁边</value>

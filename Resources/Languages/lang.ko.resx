@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>SystemTray 메뉴 정보</value>
+    <value>시스템 트레이 메뉴 정보</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>확인</value>
@@ -186,11 +186,11 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>앱의 루트 디렉터리에 액세스할 수 없습니다. 디렉토리에 대한 액세스 권한을 부여하거나 루트 디렉토리를 변경하십시오.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>더블 클릭 대신 요소를 열려면 한 번 클릭</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>요소를 열려면 한 번 클릭</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>색 구성표 어두운 항상 활성</value>
+    <value>어두운 색 구성표 항상 활성</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>고급의</value>
@@ -277,7 +277,7 @@
     <value>클릭 시 화살표 배경</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>마우스가 화살표 위에 있는 동안 화살표의 배경</value>
+    <value>마우스가 위에 있는 동안 화살표의 배경</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>색 구성표 어두운</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>은닉처</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>항상 숨김 파일, 디렉토리 또는 드라이브 표시</value>
+  <data name="Always show" xml:space="preserve">
+    <value>항상 표시</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>숨겨진 파일 및 디렉토리</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>숨겨진 파일, 디렉토리 또는 드라이브를 표시하지 않음</value>
+  <data name="Never show" xml:space="preserve">
+    <value>표시 안 함</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>크기 및 위치</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>검색 결과로만 표시</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>더블 클릭 대신 한 번의 클릭으로 디렉토리 열기</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>한 번 클릭하여 디렉토리 열기</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>전작에 이어</value>

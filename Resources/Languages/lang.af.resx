@@ -139,7 +139,7 @@
     <value>Besonderhede</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Stelselinligting</value>
+    <value>Stelsel inligting</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Gids ontoeganklik</value>
@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Jy het geen toegang tot die wortelgids van die toepassing nie. Verleen toegang tot die gids of verander die wortelgids.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Enkelklik om 'n element oop te maak in plaas van dubbelklik</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Enkelklik om 'n element oop te maak</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Kleurskema donker altyd aktief</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Kas</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Wys altyd verborge lêers, gidse of dryf</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Wys altyd</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Versteekte lêers en gidse</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Moet nooit verborge lêers, gidse of aandrywers wys nie</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Moet nooit wys nie</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Grootte en ligging</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Wys slegs as soekresultaat</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Enkelklik om 'n gids oop te maak in plaas van dubbelklik</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Enkelklik om 'n gids oop te maak</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Langs die vorige een</value>
@@ -517,7 +517,7 @@
     <value>Kyk vir opdaterings</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>Gaan na die aflaai bladsy</value>
+    <value>Gaan na die aflaaibladsy</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>Nuutste beskikbare weergawe:</value>

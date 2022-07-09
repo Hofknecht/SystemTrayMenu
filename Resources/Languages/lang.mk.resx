@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Немате пристап до root директориумот на апликацијата. Дозволете пристап до директориумот или сменете го root директориумот.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Еден клик за отворање на елемент наместо двоен клик</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Еден клик за да се отвори елемент</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Шема на бои темно секогаш активна</value>
@@ -325,7 +325,7 @@
     <value>вчитување</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Проблем со врската со кратенки</value>
+    <value>Проблем со кратенка врска</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Ставката на која се однесува оваа кратенка е променета или преместена, така што оваа кратенка повеќе нема да работи правилно.</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Кеш</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Секогаш прикажувај скриени датотеки, директориуми или дискови</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Секогаш покажувај</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Скриени датотеки и директориуми</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Никогаш не прикажувајте скриени датотеки, директориуми или дискови</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Никогаш не покажувај</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Големина и локација</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Прикажи само како резултат од пребарувањето</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Еден клик за отворање директориум наместо двоен клик</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Еден клик за да отворите директориум</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>До претходниот</value>

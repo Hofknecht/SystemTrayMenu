@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nullas aditus ad directorium radicis app. Da aditum ad indicem vel directorium radicem mutare.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Unum click aperire elementum pro geminus click</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Single click aperire elementum</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Color ratio obscura semper activae</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Semper ostende files occulta, directoria vel foras</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Semper ostende</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Occulta files et directoriis</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Numquam ostendere files occulta, directoria vel foras</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Numquam ostende</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Magnitudine et loco</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Ostende modo ut eventus investigationis</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Unum click aperire directorium loco geminus click</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Single click aperire directorium</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Iuxta priorem</value>
@@ -475,7 +475,7 @@
     <value>Sorting</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Effingo row item per drag gutta</value>
+    <value>Effingo row item per drag stilla</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Drag</value>
@@ -490,7 +490,7 @@
     <value>Ostende comitem elementorum infra</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Ostendere indicem titulum ad top</value>
+    <value>Ostende indicem titulum ad top</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
     <value>Munus ostende claves infra</value>
@@ -511,7 +511,7 @@
     <value>Ordinatae genus et diem</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordinatae genus et nomen</value>
+    <value>Ordinata genus et nomen</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Reprehendo pro updates</value>

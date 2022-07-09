@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Δεν έχετε πρόσβαση στον ριζικό κατάλογο της εφαρμογής. Παραχωρήστε πρόσβαση στον κατάλογο ή αλλάξτε τον ριζικό κατάλογο.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Ένα μόνο κλικ για να ανοίξετε ένα στοιχείο αντί για διπλό κλικ</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Ένα μόνο κλικ για να ανοίξετε ένα στοιχείο</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Ο συνδυασμός χρωμάτων σκούρο πάντα ενεργός</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Κρύπτη</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Να εμφανίζονται πάντα κρυφά αρχεία, κατάλογοι ή μονάδες δίσκου</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Να δείχνεις πάντα</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Κρυφά αρχεία και κατάλογοι</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Μην εμφανίζετε ποτέ κρυφά αρχεία, καταλόγους ή μονάδες δίσκου</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Να μην εμφανιστεί ποτέ</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Μέγεθος και τοποθεσία</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Εμφάνιση μόνο ως αποτέλεσμα αναζήτησης</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Ένα μόνο κλικ για να ανοίξετε έναν κατάλογο αντί για διπλό κλικ</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Ένα μόνο κλικ για να ανοίξετε έναν κατάλογο</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Δίπλα στο προηγούμενο</value>

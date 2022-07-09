@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Non hai accesso alla directory principale dell'app. Concedi l'accesso alla directory o cambia la directory principale.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Fare clic singolo per aprire un elemento anziché fare doppio clic</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Fare clic una volta per aprire un elemento</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Combinazione di colori scura sempre attiva</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Mostra sempre file, directory o unità nascosti</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Mostra sempre</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>File e directory nascosti</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Non mostrare mai file, directory o unità nascoste</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Non mostrare mai</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Dimensioni e posizione</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Mostra solo come risultato della ricerca</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Fare clic una volta per aprire una directory invece di fare doppio clic</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Fare clic per aprire una directory</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Accanto al precedente</value>

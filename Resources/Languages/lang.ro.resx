@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Un singur clic pentru a deschide un element în loc de dublu clic</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Un singur clic pentru a deschide un element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Schema de culori întunecată întotdeauna activă</value>
@@ -310,7 +310,7 @@
     <value>mărimea</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Chenarul meniului</value>
+    <value>Marginea meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>icoane</value>
@@ -346,7 +346,7 @@
     <value>Expert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Dacă focalizarea este pierdută și tasta Enter a fost apăsată</value>
+    <value>Dacă focalizarea este pierdută și a fost apăsată tasta Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
     <value>Milisecunde până când meniul se închide dacă în acest caz meniul nu este reactivat</value>
@@ -382,7 +382,7 @@
     <value>Goliți memoria cache dacă este mai mare de acest număr de articole</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Adăugați exemplu de director „Meniu Start”</value>
+    <value>Adăugați exemplu de director „Start Menu”</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Înălțimea rândului în procente</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Afișați întotdeauna fișierele, directoarele sau unitățile ascunse</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Arata intotdeauna</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Fișiere și directoare ascunse</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Nu afișa niciodată fișiere, directoare sau unități ascunse</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Nu arăta niciodată</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Dimensiunea si locatia</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Afișați numai ca rezultat al căutării</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Faceți un singur clic pentru a deschide un director în loc să faceți dublu clic</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Un singur clic pentru a deschide un director</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Alături de precedentul</value>

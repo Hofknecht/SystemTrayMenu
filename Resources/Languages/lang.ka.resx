@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>თქვენ არ გაქვთ წვდომა აპის ძირეულ დირექტორიაზე. მიეცით წვდომა დირექტორიაზე ან შეცვალეთ root დირექტორია.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>ერთი დაწკაპუნებით ელემენტის გასახსნელად ორმაგი დაწკაპუნების ნაცვლად</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>ელემენტის გასახსნელად ერთი დაწკაპუნებით</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>მუქი ფერის სქემა ყოველთვის აქტიურია</value>
@@ -355,7 +355,7 @@
     <value>დავალების პანელში ჩვენება</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>დირექტორია დაამატეთ</value>
+    <value>დირექტორიას დამატება</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>დაამატეთ დირექტორიას შინაარსი root დირექტორიაში</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>ქეში</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>ყოველთვის აჩვენე ფარული ფაილები, დირექტორიები ან დისკები</value>
+  <data name="Always show" xml:space="preserve">
+    <value>ყოველთვის აჩვენე</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>დამალული ფაილები და დირექტორიები</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>არასოდეს აჩვენოთ ფარული ფაილები, დირექტორიები ან დისკები</value>
+  <data name="Never show" xml:space="preserve">
+    <value>არასოდეს აჩვენო</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>ზომა და ადგილმდებარეობა</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>ჩვენება მხოლოდ როგორც ძიების შედეგი</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ერთი დაწკაპუნებით დირექტორია გახსნის ნაცვლად ორმაგი დაწკაპუნებისა</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>ერთი დაწკაპუნებით დირექტორიას გასახსნელად</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>წინას გვერდით</value>

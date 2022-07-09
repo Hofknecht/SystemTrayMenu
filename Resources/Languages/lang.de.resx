@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Sie haben keinen Zugriff auf das Stammverzeichnis der App. Gewähren Sie Zugriff auf das Verzeichnis oder ändern Sie das Stammverzeichnis.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Einfacher Klick zum Öffnen eines Elements statt Doppelklick</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Klicken Sie einmal, um ein Element zu öffnen</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Farbschema dunkel immer aktiv</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Zwischenspeicher</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Versteckte Dateien, Verzeichnisse oder Laufwerke immer anzeigen</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Immer anzeigen</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Versteckte Dateien und Verzeichnisse</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Niemals versteckte Dateien, Verzeichnisse oder Laufwerke anzeigen</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Niemals zeigen</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Größe und Lage</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Nur als Suchergebnis anzeigen</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Einfacher Klick zum Öffnen eines Verzeichnisses statt Doppelklick</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Klicken Sie einmal, um ein Verzeichnis zu öffnen</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Neben dem vorherigen</value>

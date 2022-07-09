@@ -181,13 +181,13 @@
     <value>Kataloq seçin</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök kataloqunu dəyişdirin və ya bəzi faylları, qovluqları və ya qısa yolları kök qovluğuna qoyun.</value>
+    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök qovluğunu dəyişdirin və ya bəzi faylları, kataloqları və ya qısa yolları kök qovluğuna qoyun.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Proqramın kök kataloquna girişiniz yoxdur. Kataloqa giriş icazəsi verin və ya kök kataloqunu dəyişdirin.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>İki klik əvəzinə elementi açmaq üçün bir klik</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Elementi açmaq üçün bir kliklə</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Rəng sxemi qaranlıq həmişə aktivdir</value>
@@ -388,7 +388,7 @@
     <value>Sətir hündürlüyü faizlə</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Dəyirmi künclər</value>
+    <value>Dairəvi künclər</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Görünüş</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Gizli yer</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Həmişə gizli faylları, qovluqları və ya sürücüləri göstərin</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Həmişə göstər</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Gizli fayllar və qovluqlar</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Heç vaxt gizli faylları, qovluqları və ya sürücüləri göstərməyin</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Heç vaxt göstərmə</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ölçü və yer</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Yalnız axtarış nəticəsi kimi göstərin</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>İki klik əvəzinə bir qovluğu açmaq üçün bir kliklə</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Bir qovluğu açmaq üçün bir kliklə</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Əvvəlki birinin yanında</value>
@@ -457,7 +457,7 @@
     <value>Nişanların ölçüsü faizlə</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu dəstəyi</value>
+    <value>SystemTrayMenu-nu dəstəkləyin</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Solğunluq</value>
@@ -481,7 +481,7 @@
     <value>Çək</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Sürüşdürərək sürüşdürün</value>
+    <value>Sürüşdürmə vasitəsilə sürüşdürün</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Fayl növünə görə menyunu süzün, məsələn: *.exe|*.dll</value>

@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં ઍક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>ડબલ ક્લિકને બદલે એલિમેન્ટ ખોલવા માટે સિંગલ ક્લિક કરો</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>એક તત્વ ખોલવા માટે એક ક્લિક કરો</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>રંગ યોજના શ્યામ હંમેશા સક્રિય</value>
@@ -262,7 +262,7 @@
     <value>એપ્લિકેશન ડિરેક્ટરી ખોલો</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>પિક્સેલ્સ મેનુની મહત્તમ ઊંચાઈ</value>
+    <value>પિક્સેલ મહત્તમ મેનુ ઊંચાઈ</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>તીર</value>
@@ -271,7 +271,7 @@
     <value>ક્લિક કરતી વખતે એરો</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>તીર જ્યારે માઉસ તેના પર ફરે છે</value>
+    <value>તીર જ્યારે તેના પર માઉસ ફરે છે</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>ક્લિક કરતી વખતે તીરની પૃષ્ઠભૂમિ</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>કેશ</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>હંમેશા છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ બતાવો</value>
+  <data name="Always show" xml:space="preserve">
+    <value>હંમેશા બતાવો</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>છુપાયેલી ફાઇલો અને ડિરેક્ટરીઓ</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>છુપાયેલી ફાઇલો, ડિરેક્ટરીઓ અથવા ડ્રાઇવ્સ ક્યારેય બતાવશો નહીં</value>
+  <data name="Never show" xml:space="preserve">
+    <value>ક્યારેય બતાવશો નહીં</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>કદ અને સ્થાન</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>ફક્ત શોધ પરિણામ તરીકે બતાવો</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ડબલ ક્લિકને બદલે ડાયરેક્ટરી ખોલવા માટે સિંગલ ક્લિક કરો</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>ડિરેક્ટરી ખોલવા માટે એક ક્લિક કરો</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>પાછલા એકની બાજુમાં</value>
@@ -451,7 +451,7 @@
     <value>ઓવરલેપિંગ</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>સબ મેનૂ દેખાય છે</value>
+    <value>સબ મેનુ દેખાય છે</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>ટકામાં ચિહ્નોનું કદ</value>

@@ -675,14 +675,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // textBoxFolder
             // 
-            this.textBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFolder.BackColor = System.Drawing.Color.White;
             this.textBoxFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFolder.Location = new System.Drawing.Point(6, 3);
             this.textBoxFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.textBoxFolder.Name = "textBoxFolder";
             this.textBoxFolder.ReadOnly = true;
-            this.textBoxFolder.Size = new System.Drawing.Size(361, 16);
+            this.textBoxFolder.Size = new System.Drawing.Size(277, 16);
             this.textBoxFolder.TabIndex = 0;
             this.textBoxFolder.TabStop = false;
             // 
@@ -913,10 +912,9 @@ namespace SystemTrayMenu.UserInterface
             // 
             // textBoxHotkeyPlaceholder
             // 
-            this.textBoxHotkeyPlaceholder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxHotkeyPlaceholder.Location = new System.Drawing.Point(3, 4);
+            this.textBoxHotkeyPlaceholder.Location = new System.Drawing.Point(3, 3);
             this.textBoxHotkeyPlaceholder.Name = "textBoxHotkeyPlaceholder";
-            this.textBoxHotkeyPlaceholder.Size = new System.Drawing.Size(232, 23);
+            this.textBoxHotkeyPlaceholder.Size = new System.Drawing.Size(131, 23);
             this.textBoxHotkeyPlaceholder.TabIndex = 0;
             this.textBoxHotkeyPlaceholder.TabStop = false;
             // 
@@ -979,7 +977,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageSizeAndLocation.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
             this.tabPageSizeAndLocation.Name = "tabPageSizeAndLocation";
             this.tabPageSizeAndLocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSizeAndLocation.Size = new System.Drawing.Size(402, 472);
+            this.tabPageSizeAndLocation.Size = new System.Drawing.Size(412, 472);
             this.tabPageSizeAndLocation.TabIndex = 3;
             this.tabPageSizeAndLocation.Text = "tabPageSizeAndLocation";
             this.tabPageSizeAndLocation.UseVisualStyleBackColor = true;
@@ -1434,7 +1432,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
             this.tabPageAdvanced.Name = "tabPageAdvanced";
             this.tabPageAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdvanced.Size = new System.Drawing.Size(402, 472);
+            this.tabPageAdvanced.Size = new System.Drawing.Size(412, 472);
             this.tabPageAdvanced.TabIndex = 0;
             this.tabPageAdvanced.Text = "tabPageAdvanced";
             this.tabPageAdvanced.UseVisualStyleBackColor = true;
@@ -1530,7 +1528,6 @@ namespace SystemTrayMenu.UserInterface
             // 
             // textBoxIcoFolder
             // 
-            this.textBoxIcoFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxIcoFolder.BackColor = System.Drawing.Color.White;
             this.textBoxIcoFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxIcoFolder.Location = new System.Drawing.Point(6, 3);
@@ -1838,7 +1835,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageFolders.Location = new System.Drawing.Point(4, 24);
             this.tabPageFolders.Name = "tabPageFolders";
             this.tabPageFolders.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFolders.Size = new System.Drawing.Size(402, 472);
+            this.tabPageFolders.Size = new System.Drawing.Size(412, 472);
             this.tabPageFolders.TabIndex = 2;
             this.tabPageFolders.Text = "tabPageFolders";
             this.tabPageFolders.UseVisualStyleBackColor = true;
@@ -1858,7 +1855,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelFoldersInRootFolder.Size = new System.Drawing.Size(355, 415);
+            this.tableLayoutPanelFoldersInRootFolder.Size = new System.Drawing.Size(345, 415);
             this.tableLayoutPanelFoldersInRootFolder.TabIndex = 1;
             // 
             // groupBoxFoldersInRootFolder
@@ -1869,7 +1866,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxFoldersInRootFolder.Controls.Add(this.tableLayoutPanelFolderToRootFoldersList);
             this.groupBoxFoldersInRootFolder.Location = new System.Drawing.Point(3, 3);
             this.groupBoxFoldersInRootFolder.Name = "groupBoxFoldersInRootFolder";
-            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(343, 366);
+            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(333, 366);
             this.groupBoxFoldersInRootFolder.TabIndex = 0;
             this.groupBoxFoldersInRootFolder.TabStop = false;
             this.groupBoxFoldersInRootFolder.Text = "groupBoxFoldersInRootFolder";
@@ -1894,7 +1891,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList.Size = new System.Drawing.Size(337, 344);
+            this.tableLayoutPanelFolderToRootFoldersList.Size = new System.Drawing.Size(327, 344);
             this.tableLayoutPanelFolderToRootFoldersList.TabIndex = 0;
             // 
             // tableLayoutPanelFolderToRootFolder
@@ -1913,7 +1910,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolderToRootFolder.Name = "tableLayoutPanelFolderToRootFolder";
             this.tableLayoutPanelFolderToRootFolder.RowCount = 1;
             this.tableLayoutPanelFolderToRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFolderToRootFolder.Size = new System.Drawing.Size(337, 31);
+            this.tableLayoutPanelFolderToRootFolder.Size = new System.Drawing.Size(327, 31);
             this.tableLayoutPanelFolderToRootFolder.TabIndex = 2;
             // 
             // buttonAddFolderToRootFolder
@@ -1934,7 +1931,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonRemoveFolder.AutoSize = true;
             this.buttonRemoveFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRemoveFolder.Location = new System.Drawing.Point(205, 3);
+            this.buttonRemoveFolder.Location = new System.Drawing.Point(195, 3);
             this.buttonRemoveFolder.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonRemoveFolder.Name = "buttonRemoveFolder";
             this.buttonRemoveFolder.Size = new System.Drawing.Size(129, 25);
@@ -1955,13 +1952,12 @@ namespace SystemTrayMenu.UserInterface
             this.ColumnFolder,
             this.ColumnRecursiveLevel,
             this.ColumnOnlyFiles});
-            this.dataGridViewFolders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFolders.Location = new System.Drawing.Point(3, 59);
             this.dataGridViewFolders.Name = "dataGridViewFolders";
             this.dataGridViewFolders.RowHeadersVisible = false;
             this.dataGridViewFolders.RowTemplate.Height = 25;
             this.dataGridViewFolders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewFolders.Size = new System.Drawing.Size(331, 226);
+            this.dataGridViewFolders.Size = new System.Drawing.Size(321, 226);
             this.dataGridViewFolders.TabIndex = 6;
             this.dataGridViewFolders.TabStop = false;
             this.dataGridViewFolders.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DataGridViewFolders_CellValidating);
@@ -2010,7 +2006,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAddSampleStartMenuFolder.Name = "tableLayoutPanelAddSampleStartMenuFolder";
             this.tableLayoutPanelAddSampleStartMenuFolder.RowCount = 1;
             this.tableLayoutPanelAddSampleStartMenuFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAddSampleStartMenuFolder.Size = new System.Drawing.Size(337, 31);
+            this.tableLayoutPanelAddSampleStartMenuFolder.Size = new System.Drawing.Size(327, 31);
             this.tableLayoutPanelAddSampleStartMenuFolder.TabIndex = 3;
             // 
             // buttonAddSampleStartMenuFolder
@@ -2067,7 +2063,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageExpert.Location = new System.Drawing.Point(4, 24);
             this.tabPageExpert.Name = "tabPageExpert";
             this.tabPageExpert.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageExpert.Size = new System.Drawing.Size(402, 472);
+            this.tabPageExpert.Size = new System.Drawing.Size(412, 472);
             this.tabPageExpert.TabIndex = 1;
             this.tabPageExpert.Text = "tabPageExpert";
             this.tabPageExpert.UseVisualStyleBackColor = true;
@@ -2092,7 +2088,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelExpert.Size = new System.Drawing.Size(396, 466);
+            this.tableLayoutPanelExpert.Size = new System.Drawing.Size(406, 466);
             this.tableLayoutPanelExpert.TabIndex = 1;
             // 
             // groupBoxSearchPattern
@@ -2449,7 +2445,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageCustomize.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomize.Name = "tabPageCustomize";
             this.tabPageCustomize.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCustomize.Size = new System.Drawing.Size(402, 472);
+            this.tabPageCustomize.Size = new System.Drawing.Size(412, 472);
             this.tabPageCustomize.TabIndex = 0;
             this.tabPageCustomize.Text = "tabPageCustomize";
             this.tabPageCustomize.UseVisualStyleBackColor = true;
@@ -4834,7 +4830,7 @@ namespace SystemTrayMenu.UserInterface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(995, 554);
+            this.ClientSize = new System.Drawing.Size(997, 547);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

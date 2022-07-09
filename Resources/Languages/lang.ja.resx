@@ -175,7 +175,7 @@
     <value>よくある質問</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>FAQを読んでから、SystemTrayMenuのルートディレクトリを選択してください。</value>
+    <value>FAQを読み、SystemTrayMenuのルートディレクトリを選択します。</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>ディレクトリを選択</value>
@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>アプリのルートディレクトリにアクセスできません。ディレクトリへのアクセスを許可するか、ルートディレクトリを変更します。</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>ダブルクリックではなく、シングルクリックで要素を開きます</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>シングルクリックして要素を開きます</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>配色は常にアクティブダーク</value>
@@ -406,7 +406,7 @@
     <value>マウスの位置（タスクバーアイコンの上）</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>カスタム（適切な場所にドラッグします）</value>
+    <value>カスタム（適切な場所にドラッグ）</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>エレメント</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>キャッシュ</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>隠しファイル、ディレクトリ、またはドライブを常に表示する</value>
+  <data name="Always show" xml:space="preserve">
+    <value>いつも見せる</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>隠しファイルと隠しディレクトリ</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>隠しファイル、ディレクトリ、またはドライブを表示しないでください</value>
+  <data name="Never show" xml:space="preserve">
+    <value>表示しない</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>サイズと場所</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>検索結果としてのみ表示</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ダブルクリックする代わりに、シングルクリックしてディレクトリを開きます</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>シングルクリックしてディレクトリを開きます</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>前のものの隣</value>
@@ -493,7 +493,7 @@
     <value>ディレクトリタイトルを上部に表示</value>
   </data>
   <data name="Show function keys below" xml:space="preserve">
-    <value>以下にファンクションキーを表示</value>
+    <value>以下にファンクションキーを表示します</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>検索バーを表示する</value>

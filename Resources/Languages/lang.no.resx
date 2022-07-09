@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Du har ikke tilgang til rotkatalogen til appen. Gi tilgang til katalogen eller endre rotkatalogen.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Enkeltklikk for å åpne et element i stedet for dobbeltklikk</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Enkeltklikk for å åpne et element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Fargeskjema mørk alltid aktiv</value>
@@ -280,7 +280,7 @@
     <value>Bakgrunn av pil mens musen svever over den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>Fargeskjema mørkt</value>
+    <value>Mørkt fargevalg</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
     <value>Lys fargevalg</value>
@@ -319,7 +319,7 @@
     <value>Angis av kontekstmenyen</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Sett som katalog</value>
+    <value>Angi som katalog</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>lasting</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Vis alltid skjulte filer, kataloger eller stasjoner</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Alltid vis</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skjulte filer og kataloger</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Vis aldri skjulte filer, kataloger eller stasjoner</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Vis aldri</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Størrelse og plassering</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Vis kun som søkeresultat</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Enkeltklikk for å åpne en katalog i stedet for dobbeltklikk</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Enkeltklikk for å åpne en katalog</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ved siden av den forrige</value>
@@ -475,7 +475,7 @@
     <value>Sortering</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopier radelement via dra-slipp</value>
+    <value>Kopier radelementet med dra-slipp</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Dra</value>

@@ -175,7 +175,7 @@
     <value>perguntas frequentes</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Leia o FAQ e escolha um diretório raiz para o SystemTrayMenu.</value>
+    <value>Leia as perguntas frequentes e escolha um diretório raiz para o SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Selecionar diretório</value>
@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Você não tem acesso ao diretório raiz do aplicativo. Conceda acesso ao diretório ou altere o diretório raiz.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Clique uma vez para abrir um elemento em vez de clicar duas vezes</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Clique único para abrir um elemento</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Esquema de cores escuro sempre ativo</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Sempre mostre arquivos, diretórios ou unidades ocultas</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Sempre aparece</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Arquivos e diretórios ocultos</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Nunca mostre arquivos, diretórios ou unidades ocultas</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Nunca mostrar</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Tamanho e localização</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Mostrar apenas como resultado da pesquisa</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Clique uma vez para abrir um diretório em vez de clicar duas vezes</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Clique único para abrir um diretório</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ao lado do anterior</value>

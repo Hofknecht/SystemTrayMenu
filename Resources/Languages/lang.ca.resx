@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>No teniu accés al directori arrel de l'aplicació. Concedeix accés al directori o canvia el directori arrel.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Un sol clic per obrir un element en lloc de fer doble clic</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Un sol clic per obrir un element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Esquema de colors fosc sempre actiu</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Memòria cau</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Mostra sempre fitxers, directoris o unitats ocults</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Mostra sempre</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Fitxers i directoris ocults</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>No mostris mai fitxers, directoris o unitats ocults</value>
+  <data name="Never show" xml:space="preserve">
+    <value>No mostris mai</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Mida i ubicació</value>
@@ -438,14 +438,14 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Mostra només com a resultat de la cerca</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Un sol clic per obrir un directori en lloc de fer doble clic</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Un sol clic per obrir un directori</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Al costat de l'anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Compensació per píxels</value>
+    <value>Compensació de píxels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Superposició</value>

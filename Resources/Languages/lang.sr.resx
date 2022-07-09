@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Немате приступ основном директоријуму апликације. Одобрите приступ директоријуму или промените основни директоријум.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Један клик да отворите елемент уместо двоструког клика</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Један клик да отворите елемент</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Шема боја тамна је увек активна</value>
@@ -373,7 +373,7 @@
     <value>Уклони директоријум</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Само датотеке</value>
+    <value>Онли Филес</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
     <value>Главни мени кеширања</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Цацхе</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Увек прикажи скривене датотеке, директоријуме или диск јединице</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Увек показују</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Скривене датотеке и директоријуми</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Никада не приказујте скривене датотеке, директоријуме или дискове</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Никад не показуј</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Величина и локација</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Прикажи само као резултат претраге</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Једноструки клик да отворите директоријум уместо дуплог клика</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Један клик да отворите директоријум</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Поред претходног</value>

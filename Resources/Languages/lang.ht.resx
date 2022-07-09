@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Ou pa gen aksè nan anyè rasin aplikasyon an. Bay aksè nan anyè a oswa chanje anyè rasin lan.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Yon sèl klike sou yo louvri yon eleman olye pou yo klike sou doub</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Yon sèl klike sou yo louvri yon eleman</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Konplo koulè nwa toujou aktif</value>
@@ -232,7 +232,7 @@
     <value>Si yo te klike sou yon eleman</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Background</value>
+    <value>Jan nou koumanse</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
     <value>Anyè louvri</value>
@@ -349,7 +349,7 @@
     <value>Si konsantre a pèdi epi yo te peze kle antre a</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisgond jiskaske meni an fèmen si nan ka sa a meni an pa reaktive</value>
+    <value>Milisecond jiskaske meni an fèmen si nan ka sa a meni an pa reaktive</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Montre nan Taskbar</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Toujou montre dosye kache, anyè oswa kondui</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Toujou montre</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Fichye kache ak anyè</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Pa janm montre dosye kache, anyè oswa kondui</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Pa janm montre</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Gwosè ak kote</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Montre sèlman kòm rezilta rechèch la</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Yon sèl klike sou yo louvri yon anyè olye pou yo klike sou doub</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Yon sèl klike sou yo louvri yon anyè</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Akote youn anvan an</value>

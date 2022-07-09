@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Vous n'avez pas accès au répertoire racine de l'application. Accordez l'accès au répertoire ou modifiez le répertoire racine.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Un simple clic pour ouvrir un élément au lieu d'un double clic</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Un clic pour ouvrir un élément</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Jeu de couleurs sombre toujours actif</value>
@@ -217,7 +217,7 @@
     <value>Millisecondes jusqu'à ce qu'un menu s'ouvre lorsque la souris est dessus</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas la souris quitte ensuite le menu</value>
+    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas la souris quitte alors le menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Largeur maximale du menu en pixels</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Toujours afficher les fichiers, répertoires ou lecteurs cachés</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Montre toujours</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Fichiers et répertoires cachés</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Ne jamais afficher les fichiers, répertoires ou lecteurs cachés</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Ne montre jamais</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Taille et emplacement</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Afficher uniquement comme résultat de recherche</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Un simple clic pour ouvrir un répertoire au lieu d'un double clic</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Un clic pour ouvrir un répertoire</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>A côté du précédent</value>

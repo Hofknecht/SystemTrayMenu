@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>אין לך גישה לספריית השורש של האפליקציה. הענק גישה לספרייה או שנה את ספריית הבסיס.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>לחיצה אחת כדי לפתוח אלמנט במקום לחיצה כפולה</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>לחיצה אחת כדי לפתוח אלמנט</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>ערכת צבעים כהה תמיד פעילה</value>
@@ -325,10 +325,10 @@
     <value>טוען</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>בעיה בקישור קיצורי דרך</value>
+    <value>בעיה בקישור קיצור</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שקיצור זה לא יפעל עוד כראוי.</value>
+    <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שהקיצור הזה כבר לא יפעל כראוי.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>פתח את הספרייה</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>מטמון</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>הצג תמיד קבצים מוסתרים, ספריות או כוננים</value>
+  <data name="Always show" xml:space="preserve">
+    <value>תמיד מראה</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>קבצים וספריות נסתרות</value>
+    <value>קבצים וספריות מוסתרים</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>לעולם אל תציג קבצים מוסתרים, ספריות או כוננים</value>
+  <data name="Never show" xml:space="preserve">
+    <value>לעולם אל תראה</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>גודל ומיקום</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>הצג רק כתוצאת חיפוש</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>לחיצה אחת לפתיחת ספרייה במקום לחיצה כפולה</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>לחיצה אחת לפתיחת ספרייה</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ליד הקודם</value>

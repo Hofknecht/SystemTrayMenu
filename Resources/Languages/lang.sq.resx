@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nuk keni akses në direktorinë rrënjësore të aplikacionit. Jepni akses në drejtori ose ndryshoni direktorinë rrënjë.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Një klikim i vetëm për të hapur një element në vend të klikimit të dyfishtë</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Një klikim i vetëm për të hapur një element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Skema e ngjyrave të errëta gjithmonë aktive</value>
@@ -262,7 +262,7 @@
     <value>Hap direktorinë e aplikacionit</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Lartësia maksimale e pikselëve të menysë</value>
+    <value>Lartësia maksimale e pikselëve të menusë</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Shigjeta</value>
@@ -316,7 +316,7 @@
     <value>Ikonat</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Vendosur sipas menysë së kontekstit</value>
+    <value>Vendoset sipas menysë së kontekstit</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Cakto si drejtori</value>
@@ -352,7 +352,7 @@
     <value>Milisekonda derisa menyja të mbyllet nëse në këtë rast menyja nuk riaktivizohet</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Shfaq në shiritin e detyrave</value>
+    <value>Shfaq në Taskbar</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>Shto direktori</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Trego gjithmonë skedarë, drejtori ose disqe të fshehura</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Gjithmonë tregoni</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skedarët dhe drejtoritë e fshehura</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Asnjëherë mos shfaq skedarë, drejtori ose disqe të fshehura</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Mos shfaq kurrë</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Madhësia dhe vendndodhja</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Shfaq vetëm si rezultat kërkimi</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Një klikim i vetëm për të hapur një direktori në vend të klikimit të dyfishtë</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Një klikim i vetëm për të hapur një direktori</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Pranë të mëparshmes</value>

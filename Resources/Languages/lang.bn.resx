@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>অ্যাপের রুট ডিরেক্টরিতে আপনার কোনো অ্যাক্সেস নেই। ডিরেক্টরিতে অ্যাক্সেস মঞ্জুর করুন বা রুট ডিরেক্টরি পরিবর্তন করুন।</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>ডাবল ক্লিকের পরিবর্তে একটি উপাদান খুলতে একক ক্লিক করুন</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>একটি উপাদান খুলতে একক ক্লিক করুন</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>রঙের স্কিম অন্ধকার সবসময় সক্রিয়</value>
@@ -268,7 +268,7 @@
     <value>তীর</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>ক্লিক করার সময় তীর</value>
+    <value>ক্লিক করার সময় তীরচিহ্ন</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>মাউস এটির উপর ঘোরার সময় তীরচিহ্ন</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>ক্যাশে</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>সর্বদা লুকানো ফাইল, ডিরেক্টরি বা ড্রাইভ দেখান</value>
+  <data name="Always show" xml:space="preserve">
+    <value>সবসময় প্রদর্শন</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>লুকানো ফাইল এবং ডিরেক্টরি</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>লুকানো ফাইল, ডিরেক্টরি বা ড্রাইভ কখনই দেখাবেন না</value>
+  <data name="Never show" xml:space="preserve">
+    <value>কখনও দেখাবে না</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>আকার এবং অবস্থান</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>শুধুমাত্র অনুসন্ধান ফলাফল হিসাবে দেখান</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ডাবল ক্লিকের পরিবর্তে একটি ডিরেক্টরি খুলতে একক ক্লিক করুন</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>একটি ডিরেক্টরি খুলতে একক ক্লিক করুন</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>আগেরটির পাশে</value>

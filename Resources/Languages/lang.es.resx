@@ -184,10 +184,10 @@
     <value>¡Su directorio raíz para la aplicación no existe o está vacío! Cambie el directorio raíz o coloque algunos archivos, directorios o accesos directos en el directorio raíz.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>No tiene acceso al directorio raíz de la aplicación. Otorgue acceso al directorio o cambie el directorio raíz.</value>
+    <value>No tienes acceso al directorio raíz de la aplicación. Otorgue acceso al directorio o cambie el directorio raíz.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Un solo clic para abrir un elemento en lugar de doble clic</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Un solo clic para abrir un elemento</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Esquema de color oscuro siempre activo</value>
@@ -364,7 +364,7 @@
     <value>Rutas de directorio</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>Directorios</value>
+    <value>directorios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursivo</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Mostrar siempre archivos, directorios o unidades ocultos</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Siempre muestra</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Archivos y directorios ocultos</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Nunca mostrar archivos, directorios o unidades ocultos</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Nunca mostrar</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Tamaño y ubicación</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Mostrar solo como resultado de búsqueda</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Un solo clic para abrir un directorio en lugar de doble clic</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Un solo clic para abrir un directorio</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Al lado del anterior</value>
@@ -463,7 +463,7 @@
     <value>Desvanecimiento</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Enviar tecla de acceso directo a otra instancia</value>
+    <value>Enviar tecla de acceso rápido a otra instancia</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Ordenado por fecha</value>

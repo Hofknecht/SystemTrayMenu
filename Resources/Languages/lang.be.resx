@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>У вас няма доступу да каранёвага каталога праграмы. Дайце доступ да каталога або зменіце каранёвы каталог.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Адзін пстрычка, каб адкрыць элемент замест падвойнага пстрычкі</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Адзін клік, каб адкрыць элемент</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Колеравая гама цёмная заўсёды актыўная</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Кэш</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Заўсёды паказваць схаваныя файлы, каталогі або дыскі</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Заўсёды паказваць</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Схаваныя файлы і каталогі</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Ніколі не паказваць схаваныя файлы, каталогі або дыскі</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Ніколі не паказваць</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Памер і размяшчэнне</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Паказаць толькі як вынік пошуку</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Адзін пстрычка, каб адкрыць каталог замест падвойнага пстрычкі</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Адзін клік, каб адкрыць каталог</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Побач з папярэднім</value>

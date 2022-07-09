@@ -175,7 +175,7 @@
     <value>Galdera arruntak</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Irakurri ohiko galderak eta, ondoren, aukeratu SystemTrayMenurako root direktorioa.</value>
+    <value>Irakurri ohiko galderak eta, ondoren, aukeratu SystemTrayMenurako erro-direktorio bat.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Hautatu direktorioa</value>
@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Ez duzu aplikazioaren erroko direktoriorako sarbiderik. Eman direktoriorako sarbidea edo aldatu erroko direktorioa.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Egin klik bakarrean klik bikoitza egin beharrean elementu bat irekitzeko</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Egin klik bakarra elementu bat irekitzeko</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Kolore-eskema iluna beti aktibo</value>
@@ -226,7 +226,7 @@
     <value>Zabalik egoten da</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Menu bat ireki arte</value>
+    <value>Denbora menu bat ireki arte</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>Elementu batean klik egin bada</value>
@@ -358,7 +358,7 @@
     <value>Gehitu direktorioa</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Gehitu direktorioaren edukia erro direktoriora</value>
+    <value>Gehitu direktorioaren edukia erroko direktoriora</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>Direktorio bideak</value>
@@ -376,7 +376,7 @@
     <value>Fitxategiak bakarrik</value>
   </data>
   <data name="Cache main menu" xml:space="preserve">
-    <value>Cache menu nagusia</value>
+    <value>Cachearen menu nagusia</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Garbitu cachea elementu kopuru hori baino gehiago bada</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cachea</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Erakutsi beti ezkutuko fitxategiak, direktorioak edo unitateak</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Erakutsi beti</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Ezkutuko fitxategiak eta direktorioak</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Inoiz ez erakutsi ezkutuko fitxategiak, direktorioak edo unitateak</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Inoiz ez erakutsi</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Tamaina eta kokapena</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Erakutsi bilaketa-emaitza gisa soilik</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Egin klik bakarrean direktorio bat irekitzeko, klik bikoitza egin beharrean</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Egin klik bakarrean direktorio bat irekitzeko</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Aurrekoaren ondoan</value>

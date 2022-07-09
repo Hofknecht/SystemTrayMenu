@@ -166,7 +166,7 @@
     <value>ஹாட்கீ</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>விண்டோஸில் தொடங்கவும்</value>
+    <value>விண்டோஸ் மூலம் தொடங்கவும்</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>அமைப்புகள்</value>
@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>பயன்பாட்டின் ரூட் கோப்பகத்திற்கான அணுகல் உங்களிடம் இல்லை. கோப்பகத்திற்கான அணுகலை வழங்கவும் அல்லது ரூட் கோப்பகத்தை மாற்றவும்.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>இருமுறை கிளிக் செய்வதற்குப் பதிலாக ஒரு உறுப்பைத் திறக்க ஒற்றை கிளிக் செய்யவும்</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>ஒரு உறுப்பைத் திறக்க ஒற்றை கிளிக் செய்யவும்</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>இருண்ட வண்ணத் திட்டம் எப்போதும் சுறுசுறுப்பாக இருக்கும்</value>
@@ -403,7 +403,7 @@
     <value>முதன்மை மெனு தோன்றும்</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>சுட்டி இருப்பிடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
+    <value>சுட்டி இடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>தனிப்பயன் (அதை பொருத்தமான இடத்திற்கு இழுக்கவும்)</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>தற்காலிக சேமிப்பு</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>எப்போதும் மறைக்கப்பட்ட கோப்புகள், கோப்பகங்கள் அல்லது இயக்கிகளைக் காட்டு</value>
+  <data name="Always show" xml:space="preserve">
+    <value>எப்போதும் காட்டு</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>மறைக்கப்பட்ட கோப்புகள் மற்றும் கோப்பகங்கள்</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>மறைக்கப்பட்ட கோப்புகள், கோப்பகங்கள் அல்லது இயக்ககங்களைக் காட்ட வேண்டாம்</value>
+  <data name="Never show" xml:space="preserve">
+    <value>ஒருபோதும் காட்டாதே</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>அளவு மற்றும் இடம்</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>தேடல் முடிவாக மட்டும் காட்டு</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ஒரு கோப்பகத்தைத் திறக்க இரட்டை சொடுக்கிற்குப் பதிலாக ஒற்றை கிளிக் செய்யவும்</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>ஒரு கோப்பகத்தைத் திறக்க ஒற்றை கிளிக் செய்யவும்</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>முந்தையதை அடுத்து</value>

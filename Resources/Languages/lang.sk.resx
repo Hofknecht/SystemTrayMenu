@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nemáte prístup do koreňového adresára aplikácie. Udeľte prístup k adresáru alebo zmeňte koreňový adresár.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Jediným kliknutím otvoríte prvok namiesto dvojitého kliknutia</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Jediným kliknutím otvoríte prvok</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Farebná schéma tmavá vždy aktívna</value>
@@ -217,7 +217,7 @@
     <value>Milisekundy, kým sa otvorí ponuka, keď je na nej myš</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundy, kým sa ponuka nezatvorí, ak v tomto prípade myš opustí ponuku</value>
+    <value>Milisekundy, kým sa ponuka zatvorí, ak v tomto prípade myš opustí ponuku</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maximálna šírka ponuky pixelov</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Vždy zobrazovať skryté súbory, adresáre alebo jednotky</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Vždy ukázať</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skryté súbory a adresáre</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Nikdy nezobrazujte skryté súbory, adresáre alebo jednotky</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Nikdy nezobrazovať</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Veľkosť a umiestnenie</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Zobraziť iba ako výsledok vyhľadávania</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Jediným kliknutím otvoríte adresár namiesto dvojitého kliknutia</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Jediným kliknutím otvoríte adresár</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Vedľa predchádzajúcej</value>

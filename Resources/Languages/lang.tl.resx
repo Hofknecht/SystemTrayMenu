@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Wala kang access sa root directory ng app. Magbigay ng access sa direktoryo o baguhin ang root directory.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Isang pag-click upang magbukas ng isang elemento sa halip na mag-double click</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Isang pag-click upang buksan ang isang elemento</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Madilim ang kulay na laging aktibo</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Palaging ipakita ang mga nakatagong file, direktoryo o drive</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Laging ipakita</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Mga nakatagong file at direktoryo</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Huwag magpakita ng mga nakatagong file, direktoryo o drive</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Huwag kailanman ipakita</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Sukat at lokasyon</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Ipakita lamang bilang resulta ng paghahanap</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Isang pag-click upang magbukas ng direktoryo sa halip na mag-double click</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Isang pag-click upang buksan ang isang direktoryo</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Sa tabi ng nauna</value>

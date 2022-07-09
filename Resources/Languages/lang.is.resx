@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Þú hefur engan aðgang að rótarskrá appsins. Veittu aðgang að skránni eða breyttu rótarskránni.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Einn smellur til að opna frumefni í stað þess að tvísmella</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Einn smellur til að opna frumefni</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Litasamsetning dökk alltaf virk</value>
@@ -382,7 +382,7 @@
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Bæta við sýnishornsskrá 'Start Menu'</value>
+    <value>Bæta við sýnishornsmöppu 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Róðurhæð í prósentum</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Skyndiminni</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Sýndu alltaf faldar skrár, möppur eða drif</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Sýna alltaf</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Faldar skrár og möppur</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Sýndu aldrei faldar skrár, möppur eða drif</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Aldrei sýna</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Stærð og staðsetning</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Sýna aðeins sem leitarniðurstöðu</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Einfaldur smellur til að opna möppu í stað þess að tvísmella</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Einn smellur til að opna möppu</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Við hliðina á fyrri</value>
@@ -484,7 +484,7 @@
     <value>Skrunaðu með því að strjúka</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Sía valmynd eftir skráartegund, t.d.: *.exe|*.dll</value>
+    <value>Sía valmynd eftir skráargerð, t.d.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Sýndu fjölda þátta hér að neðan</value>

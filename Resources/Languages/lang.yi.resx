@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>איר האָבן קיין אַקסעס צו דער וואָרצל וועגווייַזער פון די אַפּ. געבן אַקסעס צו דער וועגווייַזער אָדער טוישן די וואָרצל וועגווייַזער.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>איין גיט צו עפענען אַן עלעמענט אַנשטאָט פון טאָפּל גיט</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>איין גיט צו עפענען אַן עלעמענט</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>קאָליר סכעמע טונקל שטענדיק אַקטיוו</value>
@@ -397,7 +397,7 @@
     <value>לינקס אונטן</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>רעכטס אונטן</value>
+    <value>דנאָ רעכט</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>הויפּט מעניו אויס</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>קאַש</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>שטענדיק ווייַזן פאַרבאָרגן טעקעס, דירעקטעריז אָדער דרייווז</value>
+  <data name="Always show" xml:space="preserve">
+    <value>שטענדיק ווייַזן</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>פאַרבאָרגן טעקעס און דירעקטעריז</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>קיינמאָל ווייַזן פאַרבאָרגן טעקעס, דירעקטעריז אָדער דרייווז</value>
+  <data name="Never show" xml:space="preserve">
+    <value>קיינמאָל ווייַזן</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>גרייס און אָרט</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>ווייַזן בלויז ווי זוכן רעזולטאַט</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>איין גיט צו עפענען אַ וועגווייַזער אַנשטאָט פון טאָפּל גיט</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>איין גיט צו עפענען אַ וועגווייַזער</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>נעבן דעם פריערדיקן</value>
@@ -451,7 +451,7 @@
     <value>אָוווערלאַפּינג</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>אונטער מעניו איז ארויס</value>
+    <value>סוב מעניו איז ארויס</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>גרייס פון די ייקאַנז אין פּראָצענט</value>

@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>คุณไม่มีสิทธิ์เข้าถึงไดเรกทอรีรากของแอป ให้สิทธิ์เข้าถึงไดเร็กทอรีหรือเปลี่ยนไดเร็กทอรีราก</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>คลิกเพียงครั้งเดียวเพื่อเปิดองค์ประกอบแทนการดับเบิลคลิก</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>คลิกเพียงครั้งเดียวเพื่อเปิดองค์ประกอบ</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>โทนสีเข้ม ใช้งานตลอดเวลา</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>แคช</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>แสดงไฟล์ ไดเร็กทอรี หรือไดรฟ์ที่ซ่อนอยู่เสมอ</value>
+  <data name="Always show" xml:space="preserve">
+    <value>แสดงเสมอ</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>ไฟล์และไดเรกทอรีที่ซ่อนอยู่</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>ไม่แสดงไฟล์ ไดเร็กทอรี หรือไดรฟ์ที่ซ่อนอยู่</value>
+  <data name="Never show" xml:space="preserve">
+    <value>ไม่ต้องแสดง</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>ขนาดและที่ตั้ง</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>แสดงเป็นผลการค้นหาเท่านั้น</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>คลิกเพียงครั้งเดียวเพื่อเปิดไดเร็กทอรีแทนการดับเบิลคลิก</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>คลิกเพียงครั้งเดียวเพื่อเปิดไดเร็กทอรี</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ต่อจากอันที่แล้ว</value>

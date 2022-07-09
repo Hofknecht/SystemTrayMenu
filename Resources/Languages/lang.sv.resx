@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Du har ingen tillgång till appens rotkatalog. Ge åtkomst till katalogen eller ändra rotkatalogen.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Enkelklick för att öppna ett element istället för att dubbelklicka</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Ett klick för att öppna ett element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Färgschema mörkt alltid aktivt</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Visa alltid dolda filer, kataloger eller enheter</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Visa alltid</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Dolda filer och kataloger</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Visa aldrig dolda filer, kataloger eller enheter</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Visa aldrig</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Storlek och plats</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Visa endast som sökresultat</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Enkelklick för att öppna en katalog istället för att dubbelklicka</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Enkelklick för att öppna en katalog</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Bredvid den föregående</value>

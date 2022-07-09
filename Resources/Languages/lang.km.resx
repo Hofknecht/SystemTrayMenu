@@ -151,7 +151,7 @@
     <value>ឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ចាប់ផ្ដើមឡើងវិញ</value>
+    <value>ចាប់ផ្តើមឡើងវិញ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>មិនអាចចុះឈ្មោះ hot key បានទេ។</value>
@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>អ្នក​មិន​មាន​សិទ្ធិ​ចូល​ទៅ​ថត​ឫស​របស់​កម្មវិធី​ទេ។ ផ្តល់សិទ្ធិចូលដំណើរការទៅកាន់ថតឯកសារ ឬផ្លាស់ប្តូរថតឫស។</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>ចុចមួយដងដើម្បីបើកធាតុមួយជំនួសឱ្យការចុចពីរដង</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>ចុចមួយដងដើម្បីបើកធាតុមួយ។</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>ពណ៌ចម្រុះងងឹតតែងតែសកម្ម</value>
@@ -277,7 +277,7 @@
     <value>ផ្ទៃខាងក្រោយនៃព្រួញនៅពេលចុច</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>ផ្ទៃខាងក្រោយនៃព្រួញ ខណៈពេលដែលកណ្ដុរដាក់ពីលើវា។</value>
+    <value>ផ្ទៃ​ខាង​ក្រោយ​នៃ​ព្រួញ ខណៈ​កណ្ដុរ​ដាក់​លើ​វា។</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>ពណ៌ចម្រុះ</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>ឃ្លាំង​សម្ងាត់</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>តែងតែបង្ហាញឯកសារ ថត ឬដ្រាយដែលលាក់</value>
+  <data name="Always show" xml:space="preserve">
+    <value>បង្ហាញជានិច្ច</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>ឯកសារនិងថតដែលលាក់</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>កុំបង្ហាញឯកសារ ថត ឬដ្រាយដែលលាក់</value>
+  <data name="Never show" xml:space="preserve">
+    <value>កុំបង្ហាញ</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>ទំហំនិងទីតាំង</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>បង្ហាញតែជាលទ្ធផលស្វែងរកប៉ុណ្ណោះ។</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ចុចមួយដងដើម្បីបើកថតជំនួសឱ្យការចុចពីរដង</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>ចុចមួយដងដើម្បីបើកថត</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>នៅជាប់នឹងមុន។</value>

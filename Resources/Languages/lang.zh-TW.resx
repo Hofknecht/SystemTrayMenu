@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>您無權訪問應用程序的根目錄。授予對目錄的訪問權限或更改根目錄。</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>單擊以打開元素而不是雙擊</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>單擊以打開元素</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>配色方案暗始終處於活動狀態</value>
@@ -274,7 +274,7 @@
     <value>鼠標懸停時的箭頭</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>點擊時箭頭的背景</value>
+    <value>單擊時箭頭的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>鼠標懸停在箭頭上時的箭頭背景</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>緩存</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>始終顯示隱藏的文件、目錄或驅動器</value>
+  <data name="Always show" xml:space="preserve">
+    <value>總是顯示</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>隱藏的文件和目錄</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>從不顯示隱藏的文件、目錄或驅動器</value>
+  <data name="Never show" xml:space="preserve">
+    <value>從不顯示</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>大小和位置</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>僅顯示為搜索結果</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>單擊打開目錄而不是雙擊</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>單擊以打開目錄</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>在上一個旁邊</value>

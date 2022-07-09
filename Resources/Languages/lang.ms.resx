@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Anda tidak mempunyai akses kepada direktori akar apl. Berikan akses kepada direktori atau tukar direktori akar.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Klik sekali untuk membuka elemen dan bukannya klik dua kali</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Satu klik untuk membuka elemen</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Skema warna gelap sentiasa aktif</value>
@@ -271,7 +271,7 @@
     <value>Anak panah apabila mengklik</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Anak panah sambil tetikus melayang di atasnya</value>
+    <value>Anak panah semasa tetikus melayang di atasnya</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Latar belakang anak panah apabila mengklik</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Sentiasa tunjukkan fail tersembunyi, direktori atau pemacu</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Sentiasa tunjukkan</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Fail dan direktori tersembunyi</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Jangan sekali-kali tunjukkan fail, direktori atau pemacu tersembunyi</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Jangan pernah tunjukkan</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Saiz dan lokasi</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Tunjukkan hanya sebagai hasil carian</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Klik sekali untuk membuka direktori dan bukannya klik dua kali</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Satu klik untuk membuka direktori</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Bersebelahan dengan yang sebelumnya</value>

@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nemate pristup korijenskom direktoriju aplikacije. Odobrite pristup direktoriju ili promijenite korijenski direktorij.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Jedan klik za otvaranje elementa umjesto dvostrukog klika</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Jedan klik za otvaranje elementa</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Shema boja tamna uvijek aktivna</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Predmemorija</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Uvijek prikaži skrivene datoteke, direktorije ili pogone</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Uvijek pokaži</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skrivene datoteke i direktoriji</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Nikad ne prikazuj skrivene datoteke, direktorije ili pogone</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Nikad ne pokazuj</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Veličina i mjesto</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Prikaži samo kao rezultat pretraživanja</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Jednostruki klik za otvaranje imenika umjesto dvostrukog klika</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Jednim klikom otvorite imenik</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Pored prethodnog</value>

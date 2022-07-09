@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Нямате достъп до основната директория на приложението. Дайте достъп до директорията или сменете основната директория.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Едно щракване за отваряне на елемент вместо двойно щракване</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Едно кликване за отваряне на елемент</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Тъмната цветова схема винаги е активна</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Кеш памет</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Винаги показвай скрити файлове, директории или дискове</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Винаги показвай</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Скрити файлове и директории</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Никога не показвайте скрити файлове, директории или дискове</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Никога не показвай</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Размер и местоположение</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Показване само като резултат от търсенето</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Едно щракване за отваряне на директория вместо двойно щракване</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Едно щракване за отваряне на директория</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>До предишния</value>

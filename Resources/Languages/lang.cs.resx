@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nemáte přístup do kořenového adresáře aplikace. Udělte přístup k adresáři nebo změňte kořenový adresář.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Jediným kliknutím otevřete prvek namísto dvojitého kliknutí</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Jediným kliknutím otevřete prvek</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Barevné schéma tmavé je vždy aktivní</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Mezipaměti</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Vždy zobrazovat skryté soubory, adresáře nebo jednotky</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Vždy ukázat</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skryté soubory a adresáře</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Nikdy nezobrazujte skryté soubory, adresáře nebo jednotky</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Nikdy neukázat</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Velikost a umístění</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Zobrazit pouze jako výsledek vyhledávání</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Jediným kliknutím otevřete adresář namísto dvojitého kliknutí</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Jediným kliknutím otevřete adresář</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Vedle předchozího</value>

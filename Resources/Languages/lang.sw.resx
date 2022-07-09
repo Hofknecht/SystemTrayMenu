@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Huna ufikiaji wa saraka ya mizizi ya programu. Ruhusu ufikiaji wa saraka au ubadilishe saraka ya mizizi.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Bofya mara moja ili kufungua kipengele badala ya kubofya mara mbili</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Bofya mara moja ili kufungua kipengele</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Mpangilio wa rangi giza unafanya kazi kila wakati</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Akiba</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Onyesha faili, saraka au hifadhi zilizofichwa kila wakati</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Onyesha kila wakati</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Faili zilizofichwa na saraka</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Usionyeshe kamwe faili, saraka au hifadhi zilizofichwa</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Usionyeshe kamwe</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Ukubwa na eneo</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Onyesha tu kama matokeo ya utafutaji</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Bofya mara moja ili kufungua saraka badala ya kubofya mara mbili</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Bofya mara moja ili kufungua saraka</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Karibu na uliopita</value>

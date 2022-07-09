@@ -130,10 +130,10 @@
     <value>ایپ سے باہر نکلیں۔</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>ڈائریکٹری</value>
+    <value>ڈائرکٹری</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>ڈائرکٹری خالی ہے۔</value>
+    <value>ڈائریکٹری خالی</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>تفصیلات</value>
@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>آپ کو ایپ کی روٹ ڈائرکٹری تک رسائی نہیں ہے۔ ڈائرکٹری تک رسائی فراہم کریں یا روٹ ڈائرکٹری کو تبدیل کریں۔</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>ڈبل کلک کے بجائے ایک عنصر کو کھولنے کے لیے سنگل کلک کریں۔</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>ایک عنصر کو کھولنے کے لیے سنگل کلک کریں۔</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>رنگ سکیم سیاہ ہمیشہ فعال</value>
@@ -244,7 +244,7 @@
     <value>تلاش کا میدان</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>منتخب کردہ عنصر</value>
+    <value>منتخب عنصر</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
     <value>منتخب کردہ عنصر کا بارڈر</value>
@@ -325,7 +325,7 @@
     <value>لوڈ ہو رہا ہے</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>شارٹ کٹ لنک میں مسئلہ</value>
+    <value>شارٹ کٹ لنک کے ساتھ مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
@@ -406,7 +406,7 @@
     <value>ماؤس کا مقام (ٹاسک بار آئیکن کے اوپر)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>حسب ضرورت (اسے مناسب جگہ پر گھسیٹیں)</value>
+    <value>حسب ضرورت (مناسب جگہ پر گھسیٹیں)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>عنصر</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>ہمیشہ چھپی ہوئی فائلیں، ڈائریکٹریز یا ڈرائیوز دکھائیں۔</value>
+  <data name="Always show" xml:space="preserve">
+    <value>ہمیشہ دکھائیں۔</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>پوشیدہ فائلیں اور ڈائریکٹریز</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>چھپی ہوئی فائلیں، ڈائریکٹریز یا ڈرائیوز کبھی نہ دکھائیں۔</value>
+  <data name="Never show" xml:space="preserve">
+    <value>کبھی نہ دکھائیں۔</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>سائز اور مقام</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>صرف تلاش کے نتائج کے طور پر دکھائیں۔</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>ڈائرکٹری کھولنے کے لیے ڈبل کلک کے بجائے سنگل کلک کریں۔</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>ڈائرکٹری کھولنے کے لیے سنگل کلک کریں۔</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>پچھلے کے آگے</value>

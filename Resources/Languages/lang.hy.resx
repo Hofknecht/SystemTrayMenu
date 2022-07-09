@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Դուք մուտք չունեք հավելվածի արմատային գրացուցակ: Տրամադրել մուտք դեպի գրացուցակ կամ փոխել արմատային գրացուցակը:</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Մեկ կտտոց՝ կրկնակի սեղմման փոխարեն տարր բացելու համար</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Մեկ կտտոց՝ տարրը բացելու համար</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Գունային սխեման մուգ միշտ ակտիվ</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Քեշ</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Միշտ ցուցադրեք թաքնված ֆայլերը, գրացուցակները կամ կրիչներ</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Միշտ ցույց տվեք</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Թաքնված ֆայլեր և գրացուցակներ</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Երբեք մի ցուցադրեք թաքնված ֆայլերը, գրացուցակները կամ կրիչներ</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Երբեք ցույց մի տվեք</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Չափը և գտնվելու վայրը</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Ցույց տալ միայն որպես որոնման արդյունք</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Կրկնակի սեղմման փոխարեն գրացուցակ բացելու համար մեկ սեղմումով</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Մեկ սեղմումով գրացուցակ բացելու համար</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Նախկինի կողքին</value>

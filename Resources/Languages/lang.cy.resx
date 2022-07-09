@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nid oes gennych fynediad i gyfeiriadur gwraidd yr app. Caniatáu mynediad i'r cyfeiriadur neu newid y cyfeiriadur gwraidd.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Cliciwch sengl i agor elfen yn lle clic dwbl</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Cliciwch sengl i agor elfen</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Cynllun lliw tywyll bob amser yn weithredol</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Dangoswch ffeiliau, cyfeiriaduron neu yriannau cudd bob amser</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Dangoswch bob amser</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Ffeiliau a chyfeiriaduron cudd</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Peidiwch byth â dangos ffeiliau, cyfeiriaduron na gyriannau cudd</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Peidiwch byth â dangos</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Maint a lleoliad</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Dangoswch fel canlyniad chwilio yn unig</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Cliciwch sengl i agor cyfeiriadur yn lle clic dwbl</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Cliciwch sengl i agor cyfeiriadur</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Wrth ymyl yr un blaenorol</value>

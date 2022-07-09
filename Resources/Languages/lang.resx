@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>You have no access to the root directory of the app. Grant access to the directory or change the root directory.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>Single click to open an element instead of double click</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Single click to open an element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Color scheme dark always active</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>Always show hidden files, directories or drives</value>
+  <data name="Always show" xml:space="preserve">
+    <value>Always show</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Hidden files and directories</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>Never show hidden files, directories or drives</value>
+  <data name="Never show" xml:space="preserve">
+    <value>Never show</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Size and location</value>
@@ -438,8 +438,8 @@
   <data name="Show only as search result" xml:space="preserve">
     <value>Show only as search result</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>Single click to open a directory instead of double click</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Single click to open a directory</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Next to the previous one</value>
@@ -499,7 +499,7 @@
     <value>Show search bar</value>
   </data>
   <data name="Saving log file in application directory" xml:space="preserve">
-    <value>Save log file in application directory instead of AppData</value>
+    <value>Save log file in application directory</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Show link overlay</value>

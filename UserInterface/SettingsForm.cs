@@ -150,8 +150,8 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
                 checkBoxSendHotkeyInsteadKillOtherInstances.Text = Translator.GetText("Send hotkey to other instance");
-                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element instead of double click");
-                checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory instead of double click");
+                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element");
+                checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory");
                 groupBoxDrag.Text = Translator.GetText("Drag");
                 checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
@@ -164,8 +164,8 @@ namespace SystemTrayMenu.UserInterface
                 radioButtonSortByDate.Text = Translator.GetText("Sorted by date");
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");
                 radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
-                radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, directories or drives");
-                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always show hidden files, directories or drives");
+                radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show");
+                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always show");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
 
                 tabPageFolders.Text = Translator.GetText("Directories");
@@ -815,10 +815,10 @@ namespace SystemTrayMenu.UserInterface
         {
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
             dataGridViewFolders.ClearSelection();
-            tableLayoutPanelGeneral.AutoScrollMinSize = tableLayoutPanelGeneral.Size;
-            tableLayoutPanelSizeAndLocation.AutoScrollMinSize = tableLayoutPanelSizeAndLocation.Size;
-            tableLayoutPanelAdvanced.AutoScrollMinSize = tableLayoutPanelAdvanced.Size;
-            tableLayoutPanelFoldersInRootFolder.AutoScrollMinSize = tableLayoutPanelFoldersInRootFolder.Size;
+            tabPageGeneral.AutoScrollMinSize = tableLayoutPanelGeneral.Size;
+            tabPageSizeAndLocation.AutoScrollMinSize = tableLayoutPanelSizeAndLocation.Size;
+            tabPageAdvanced.AutoScrollMinSize = tableLayoutPanelAdvanced.Size;
+            tabPageFolders.AutoScrollMinSize = tableLayoutPanelFoldersInRootFolder.Size;
             tableLayoutPanelMain.Dock = DockStyle.Fill;
             tabControl.Dock = DockStyle.Fill;
             tabPageGeneral.Dock = DockStyle.Fill;
@@ -838,6 +838,10 @@ namespace SystemTrayMenu.UserInterface
             AutoSize = false;
             AutoSizeMode = AutoSizeMode.GrowOnly;
             Size = size;
+            textBoxFolder.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxHotkey.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxIcoFolder.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewFolders.Dock = DockStyle.Fill;
             ResumeLayout();
         }
 

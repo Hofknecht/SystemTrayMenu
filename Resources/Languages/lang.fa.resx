@@ -186,8 +186,8 @@
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>شما به فهرست اصلی برنامه دسترسی ندارید. به دایرکتوری دسترسی بدهید یا دایرکتوری ریشه را تغییر دهید.</value>
   </data>
-  <data name="Single click to open an element instead of double click" xml:space="preserve">
-    <value>یک کلیک برای باز کردن یک عنصر به جای دوبار کلیک کردن</value>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>برای باز کردن یک عنصر تنها کلیک کنید</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>طرح رنگ تیره همیشه فعال است</value>
@@ -337,7 +337,7 @@
     <value>Task Manager</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>غیرفعال شد</value>
+    <value>غیر فعال شد</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>فعال شد</value>
@@ -420,14 +420,14 @@
   <data name="Cache" xml:space="preserve">
     <value>حافظه پنهان</value>
   </data>
-  <data name="Always show hidden files, directories or drives" xml:space="preserve">
-    <value>همیشه فایل ها، دایرکتوری ها یا درایوهای پنهان را نشان دهید</value>
+  <data name="Always show" xml:space="preserve">
+    <value>همیشه نشان دهید</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>فایل ها و دایرکتوری های مخفی</value>
   </data>
-  <data name="Never show hidden files, directories or drives" xml:space="preserve">
-    <value>هرگز فایل ها، دایرکتوری ها یا درایوهای مخفی را نشان ندهید</value>
+  <data name="Never show" xml:space="preserve">
+    <value>هرگز نشان نده</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>اندازه و مکان</value>
@@ -436,10 +436,10 @@
     <value>از تنظیمات سیستم عامل استفاده کنید</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>نمایش فقط به عنوان نتیجه جستجو</value>
+    <value>فقط به عنوان نتیجه جستجو نمایش داده شود</value>
   </data>
-  <data name="Single click to open a directory instead of double click" xml:space="preserve">
-    <value>یک کلیک برای باز کردن یک دایرکتوری به جای دوبار کلیک کردن</value>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>برای باز کردن دایرکتوری فقط کلیک کنید</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>کنار قبلی</value>
