@@ -819,6 +819,8 @@ namespace SystemTrayMenu.UserInterface
             tabPageSizeAndLocation.AutoScrollMinSize = tableLayoutPanelSizeAndLocation.Size;
             tabPageAdvanced.AutoScrollMinSize = tableLayoutPanelAdvanced.Size;
             tabPageFolders.AutoScrollMinSize = tableLayoutPanelFoldersInRootFolder.Size;
+            tabPageExpert.AutoScrollMinSize = tableLayoutPanelExpert.Size;
+            tabPageCustomize.AutoScrollMinSize = tableLayoutPanelCustomize.Size;
             tableLayoutPanelMain.Dock = DockStyle.Fill;
             tabControl.Dock = DockStyle.Fill;
             tabPageGeneral.Dock = DockStyle.Fill;
@@ -829,6 +831,10 @@ namespace SystemTrayMenu.UserInterface
             tableLayoutPanelAdvanced.Dock = DockStyle.Fill;
             tabPageFolders.Dock = DockStyle.Fill;
             tableLayoutPanelFoldersInRootFolder.Dock = DockStyle.Fill;
+            tabPageExpert.Dock = DockStyle.Fill;
+            tableLayoutPanelExpert.Dock = DockStyle.Fill;
+            tabPageCustomize.Dock = DockStyle.Fill;
+            tableLayoutPanelCustomize.Dock = DockStyle.Fill;
         }
 
         private void SettingsForm_Shown(object sender, EventArgs e)
@@ -842,6 +848,8 @@ namespace SystemTrayMenu.UserInterface
             textBoxHotkey.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxIcoFolder.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewFolders.Dock = DockStyle.Fill;
+            textBoxSearchPattern.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Opacity = 1;
             ResumeLayout();
         }
 
