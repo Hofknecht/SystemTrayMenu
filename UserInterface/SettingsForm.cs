@@ -822,8 +822,12 @@ namespace SystemTrayMenu.UserInterface
 
         private void SettingsForm_Shown(object sender, EventArgs e)
         {
+            Size size = Size;
+            SuspendLayout();
             AutoSize = false;
             AutoSizeMode = AutoSizeMode.GrowOnly;
+            Size = size;
+            ResumeLayout();
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
