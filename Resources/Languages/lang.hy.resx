@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Միայն Ֆայլեր</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Քեշի հիմնական ընտրացանկը</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Մաքրել քեշը, եթե այս քանակի տարրերից ավելին է</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Ցույց տալ գրացուցակի անվանումը վերևում</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Ցուցադրել ստեղնաշարի ստեղները</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Ցույց տալ «Բացել թղթապանակ» գործառույթի ստեղնը</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Ցույց տալ «Pin menu» գործառույթի ստեղնը</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Ցուցադրել «Կարգավորումներ» գործառույթի ստեղնը</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Ցուցադրել «Վերագործարկեք» գործառույթի ստեղնը</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Ցույց տալ որոնման տողը</value>

@@ -399,11 +399,23 @@ namespace SystemTrayMenu.UserInterface
                 labelItems.Visible = false;
             }
 
-            if (!Config.ShowFunctionKeysBelow)
+            if (!Config.ShowFunctionKeyOpenFolder)
             {
                 pictureBoxOpenFolder.Visible = false;
+            }
+
+            if (!Config.ShowFunctionKeyPinMenu)
+            {
                 pictureBoxMenuAlwaysOpen.Visible = false;
+            }
+
+            if (!Config.ShowFunctionKeySettings)
+            {
                 pictureBoxSettings.Visible = false;
+            }
+
+            if (!Config.ShowFunctionKeyRestart)
+            {
                 pictureBoxRestart.Visible = false;
             }
         }

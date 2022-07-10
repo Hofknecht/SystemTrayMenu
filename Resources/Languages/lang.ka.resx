@@ -220,7 +220,7 @@
     <value>მილიწამები მენიუს დახურვამდე, თუ ამ შემთხვევაში მაუსი ტოვებს მენიუს</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>პიქსელების მაქსიმალური მენიუს სიგანე</value>
+    <value>პიქსელების მენიუს მაქსიმალური სიგანე</value>
   </data>
   <data name="Stays open" xml:space="preserve">
     <value>ღია რჩება</value>
@@ -283,7 +283,7 @@
     <value>ფერის სქემა მუქი</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>ნათელი ფერების სქემა</value>
+    <value>ფერადი სქემა ნათელი</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>აპლიკაციის მენიუ</value>
@@ -316,7 +316,7 @@
     <value>ხატები</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>დაყენებულია კონტექსტური მენიუს მიხედვით</value>
+    <value>კონტექსტური მენიუს დაყენება</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>დააყენეთ დირექტორიად</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>მხოლოდ ფაილები</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>ქეშის მთავარი მენიუ</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ქეშის გასუფთავება, თუ ამ რაოდენობაზე მეტია</value>
   </data>
@@ -400,7 +397,7 @@
     <value>ქვედა მარჯვენა</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>გამოჩნდება მთავარი მენიუ</value>
+    <value>მთავარი მენიუ გამოჩნდება</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
     <value>მაუსის მდებარეობა (დავალებების ზოლის ხატულაზე)</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>აჩვენე დირექტორია სათაური ზედა</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>აჩვენეთ ფუნქციის კლავიშები ქვემოთ</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ფუნქციის ღილაკის "გახსნა საქაღალდის" ჩვენება</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ფუნქციის ღილაკის "Pin მენიუს" ჩვენება</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ფუნქციის ღილაკის "პარამეტრების" ჩვენება</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ფუნქციის ღილაკის "გადატვირთვა" ჩვენება</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>საძიებო ზოლის ჩვენება</value>
@@ -523,7 +529,7 @@
     <value>უახლესი ხელმისაწვდომი ვერსია:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ხელმისაწვდომია ახალი ვერსია!</value>
+    <value>ახალი ვერსია ხელმისაწვდომია!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>თქვენ გაქვთ SystemTrayMenu-ს უახლესი ვერსია!</value>

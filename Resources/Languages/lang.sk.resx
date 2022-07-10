@@ -373,10 +373,7 @@
     <value>Odstrániť adresár</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Iba Súbory</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Hlavná ponuka vyrovnávacej pamäte</value>
+    <value>Iba súbory</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Ak je viac ako tento počet položiek, vymažte vyrovnávaciu pamäť</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Zobraziť názov adresára v hornej časti</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Nižšie zobraziť funkčné klávesy</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Zobraziť funkčný kláves „Otvoriť priečinok“</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Zobraziť funkčný kláves „ponuka pripnúť“</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Zobraziť funkčný kláves „Nastavenia“</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Zobraziť funkčný kláves „Reštartovať“</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Zobraziť panel vyhľadávania</value>

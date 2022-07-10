@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>בלויז פילעס</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>קאַש הויפּט מעניו</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ויסמעקן קאַש אויב מער ווי די נומער פון זאכן</value>
   </data>
@@ -397,7 +394,7 @@
     <value>לינקס אונטן</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>דנאָ רעכט</value>
+    <value>רעכטס אונטן</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>הויפּט מעניו אויס</value>
@@ -451,7 +448,7 @@
     <value>אָוווערלאַפּינג</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>סוב מעניו איז ארויס</value>
+    <value>אונטער מעניו איז ארויס</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>גרייס פון די ייקאַנז אין פּראָצענט</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>ווייַז דער טיטל פון דער Directory אויבן</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>ווייַזן פֿונקציע שליסלען אונטן</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסל 'עפֿן טעקע'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסל 'שפּין מעניו'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסל 'סעטטינגס'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסל 'ריסטאַרט'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>ווייַזן זוכן באַר</value>

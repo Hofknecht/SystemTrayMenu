@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Hanya File</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache menu utama</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Hapus cache jika lebih dari jumlah item ini</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Tampilkan judul direktori di atas</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Tampilkan tombol fungsi di bawah ini</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Tampilkan tombol fungsi 'Buka Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Tampilkan tombol fungsi 'Menu pin'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Tampilkan tombol fungsi 'Pengaturan'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Tampilkan tombol fungsi 'Mulai ulang'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Tampilkan bilah pencarian</value>

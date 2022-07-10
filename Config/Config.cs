@@ -36,7 +36,13 @@ namespace SystemTrayMenu
 
         public static bool ShowCountOfElementsBelow => Settings.Default.ShowCountOfElementsBelow;
 
-        public static bool ShowFunctionKeysBelow => Settings.Default.ShowFunctionKeysBelow;
+        public static bool ShowFunctionKeyOpenFolder => Settings.Default.ShowFunctionKeyOpenFolder;
+
+        public static bool ShowFunctionKeyPinMenu => Settings.Default.ShowFunctionKeyPinMenu;
+
+        public static bool ShowFunctionKeySettings => Settings.Default.ShowFunctionKeySettings;
+
+        public static bool ShowFunctionKeyRestart => Settings.Default.ShowFunctionKeyRestart;
 
         public static bool AlwaysOpenByPin { get; internal set; }
 

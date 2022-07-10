@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>केवल फ़ाइलें</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>कैशे मुख्य मेनू</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>इस संख्या से अधिक आइटम होने पर कैशे साफ़ करें</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>शीर्ष पर निर्देशिका शीर्षक दिखाएं</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>नीचे फ़ंक्शन कुंजियां दिखाएं</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>फ़ंक्शन कुंजी दिखाएं 'फ़ोल्डर खोलें'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>फ़ंक्शन कुंजी दिखाएं 'मेनू पिन करें'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>फ़ंक्शन कुंजी 'सेटिंग्स' दिखाएं</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>फ़ंक्शन कुंजी दिखाएं 'पुनरारंभ करें'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>खोज बार दिखाएं</value>

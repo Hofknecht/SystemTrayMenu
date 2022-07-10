@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>ໄຟລ໌ເທົ່ານັ້ນ</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache ເມນູຫຼັກ</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ລ້າງແຄດຖ້າມີຫຼາຍກວ່າຈໍານວນລາຍການນີ້</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>ສະແດງຊື່ໄດເລກະທໍລີຢູ່ເທິງ</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>ສະແດງປຸ່ມຟັງຊັນຂ້າງລຸ່ມນີ້</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ສະແດງປຸ່ມຟັງຊັນ 'Open Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ສະແດງປຸ່ມຟັງຊັນ 'ເມນູ PIN'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ສະແດງປຸ່ມຟັງຊັນ 'ການຕັ້ງຄ່າ'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ສະແດງປຸ່ມຟັງຊັນ 'Restart'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>ສະແດງແຖບຄົ້ນຫາ</value>

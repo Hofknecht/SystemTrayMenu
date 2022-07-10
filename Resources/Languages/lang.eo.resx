@@ -154,7 +154,7 @@
     <value>Rekomenci</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Ne eblis registri la klavoklavon.</value>
+    <value>Ne eblis registri la varmaklavon.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Ĉesigi</value>
@@ -328,7 +328,7 @@
     <value>Problemo kun ŝparvoja ligilo</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>La ero, al kiu ĉi tiu ŝparvojo rilatas, estis ŝanĝita aŭ movita, do ĉi tiu ŝparvojo ne plu funkcios ĝuste.</value>
+    <value>La elemento, al kiu ĉi tiu ŝparvojo rilatas, estis ŝanĝita aŭ movita, do ĉi tiu ŝparvojo ne plu funkcios ĝuste.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Malfermu dosierujon</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Nur Dosieroj</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache ĉefa menuo</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Forigi kaŝmemoron se pli ol ĉi tiu nombro da eroj</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Montru dosierujan titolon supre</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Montru funkcioklavojn sube</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Montru funkcioklavon 'Malfermu Dosierujon'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Montru funkcioklavon 'Alpingli menuon'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Montru funkcioklavon 'Agordoj'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Montru funkcioklavon 'Rekomenci'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Montru serĉbreton</value>

@@ -340,7 +340,7 @@
     <value>非アクティブ化</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>有効化</value>
+    <value>アクティベート</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>エキスパート</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>ファイルのみ</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>キャッシュのメインメニュー</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>この数を超えるアイテムがある場合は、キャッシュをクリアします</value>
   </data>
@@ -406,7 +403,7 @@
     <value>マウスの位置（タスクバーアイコンの上）</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>カスタム（適切な場所にドラッグ）</value>
+    <value>カスタム（適切な場所にドラッグします）</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>エレメント</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>ディレクトリタイトルを上部に表示</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>以下にファンクションキーを表示します</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ファンクションキー「フォルダを開く」を表示</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ファンクションキー「ピンメニュー」を表示</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ファンクションキー「設定」を表示</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ファンクションキーの表示'再起動'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>検索バーを表示する</value>

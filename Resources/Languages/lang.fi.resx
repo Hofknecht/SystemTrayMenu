@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Vain tiedostot</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Välimuistin päävalikko</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Tyhjennä välimuisti, jos kohteita on enemmän kuin tämä määrä</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Näytä hakemiston otsikko yläreunassa</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Näytä toimintonäppäimet alla</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Näytä toimintonäppäin "Avaa kansio"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Näytä toimintonäppäin "Kiinnitä valikko"</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Näytä toimintonäppäin "Asetukset"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Näytä toimintonäppäin "Käynnistä uudelleen"</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Näytä hakupalkki</value>

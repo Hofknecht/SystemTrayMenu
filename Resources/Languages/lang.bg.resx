@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Само файлове</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Главно меню на кеша</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Изчистете кеша, ако има повече от този брой елементи</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Показване на заглавието на директорията в горната част</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Показване на функционалните клавиши по-долу</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Показване на функционалния клавиш „Отваряне на папка“</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Показване на функционалния клавиш „Пин меню“</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Показване на функционален клавиш „Настройки“</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Показване на функционалния клавиш „Рестартиране“</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Показване на лентата за търсене</value>

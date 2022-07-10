@@ -271,7 +271,7 @@
     <value>Strzałka po kliknięciu</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Strzałka, gdy mysz nad nią znajduje się</value>
+    <value>Strzałka, gdy mysz nad nią najedzie</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Tło strzałki po kliknięciu</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Tylko pliki</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Menu główne pamięci podręcznej</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Wyczyść pamięć podręczną, jeśli więcej niż ta liczba elementów</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Pokaż tytuł katalogu na górze</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Pokaż klawisze funkcyjne poniżej</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Pokaż klawisz funkcyjny „Otwórz folder”</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Pokaż klawisz funkcyjny „Pin menu”</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Pokaż klawisz funkcyjny „Ustawienia”</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Pokaż klawisz funkcyjny „Uruchom ponownie”</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Pokaż pasek wyszukiwania</value>

@@ -226,7 +226,7 @@
     <value>Zabalik egoten da</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Denbora menu bat ireki arte</value>
+    <value>Menu bat ireki arte</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>Elementu batean klik egin bada</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Fitxategiak bakarrik</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cachearen menu nagusia</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Garbitu cachea elementu kopuru hori baino gehiago bada</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Erakutsi direktorioaren izenburua goian</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Erakutsi funtzio-teklak behean</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Erakutsi funtzio-tekla "Ireki karpeta"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Erakutsi 'Pin menua' funtzio-tekla</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Erakutsi 'Ezarpenak' funtzio-tekla</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Erakutsi 'Berrabiarazi' funtzio-tekla</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Erakutsi bilaketa-barra</value>

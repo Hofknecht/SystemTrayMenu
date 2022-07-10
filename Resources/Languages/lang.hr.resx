@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Samo datoteke</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Glavni izbornik predmemorije</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Izbriši predmemoriju ako je više od ovog broja stavki</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Prikaži naslov imenika na vrhu</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Prikaži funkcijske tipke ispod</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Prikaži funkcijsku tipku 'Otvori mapu'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Prikaži funkcijsku tipku 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Prikaži funkcijsku tipku 'Postavke'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Prikaži funkcijsku tipku 'Restart'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Prikaži traku za pretraživanje</value>

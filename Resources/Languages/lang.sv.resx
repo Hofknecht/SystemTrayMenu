@@ -277,7 +277,7 @@
     <value>Bakgrund av pil när du klickar</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Bakgrund av pil medan musen svävar över den</value>
+    <value>Bakgrund av pilen medan musen svävar över den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Färgschema mörkt</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Endast filer</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache huvudmeny</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Rensa cacheminnet om fler än detta antal objekt</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Visa katalogtitel överst</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Visa funktionstangenter nedan</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Visa funktionstangenten 'Öppna mapp'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Visa funktionstangent 'Pin-meny'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Visa funktionstangent "Inställningar"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Visa funktionstangent 'Starta om'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Visa sökfältet</value>
@@ -505,7 +511,7 @@
     <value>Visa länköverlagring</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Katalog över internetgenvägsikoner</value>
+    <value>Katalog över Internet genvägsikoner</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
     <value>Sorterat efter typ och datum</value>

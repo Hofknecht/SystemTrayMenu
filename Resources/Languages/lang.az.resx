@@ -181,7 +181,7 @@
     <value>Kataloq seçin</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök qovluğunu dəyişdirin və ya bəzi faylları, kataloqları və ya qısa yolları kök qovluğuna qoyun.</value>
+    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök kataloqunu dəyişdirin və ya bəzi faylları, qovluqları və ya qısa yolları kök qovluğuna qoyun.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Proqramın kök kataloquna girişiniz yoxdur. Kataloqa giriş icazəsi verin və ya kök kataloqunu dəyişdirin.</value>
@@ -202,7 +202,7 @@
     <value>Kataloqun dəyişdirilməsi</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>klikləyin</value>
+    <value>basın</value>
   </data>
   <data name="Customize" xml:space="preserve">
     <value>Özəlləşdirmək</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Yalnız Fayllar</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache əsas menyusu</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
@@ -481,7 +478,7 @@
     <value>Çək</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Sürüşdürmə vasitəsilə sürüşdürün</value>
+    <value>Sürüşdürərək sürüşdürün</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Fayl növünə görə menyunu süzün, məsələn: *.exe|*.dll</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Kataloq başlığını yuxarıda göstərin</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Aşağıda funksional düymələri göstərin</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>"Qovluğu Aç" funksiya düyməsini göstərin</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>"Pin menyusu" funksiya düyməsini göstərin</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>"Parametrlər" funksiya düyməsini göstərin</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>"Yenidən başladın" funksiya düyməsini göstərin</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Axtarış çubuğunu göstərin</value>

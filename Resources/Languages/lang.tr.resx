@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Yalnızca Dosyalar</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Önbellek ana menüsü</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Bu sayıda öğeden fazlaysa önbelleği temizle</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Klasör başlığını en üstte göster</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Aşağıda fonksiyon tuşlarını göster</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>'Klasörü Aç' işlev tuşunu göster</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>'Menüyü sabitle' fonksiyon tuşunu göster</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>'Ayarlar' fonksiyon tuşunu göster</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>'Yeniden Başlat' fonksiyon tuşunu göster</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Arama çubuğunu göster</value>

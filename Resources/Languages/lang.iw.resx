@@ -181,7 +181,7 @@
     <value>בחר ספרייה</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס כמה קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
+    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס מספר קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>אין לך גישה לספריית השורש של האפליקציה. הענק גישה לספרייה או שנה את ספריית הבסיס.</value>
@@ -325,10 +325,10 @@
     <value>טוען</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>בעיה בקישור קיצור</value>
+    <value>בעיה עם קישור קיצור</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שהקיצור הזה כבר לא יפעל כראוי.</value>
+    <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שקיצור זה לא יפעל עוד כראוי.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>פתח את הספרייה</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>רק קבצים</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>מטמון התפריט הראשי</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>נקה את המטמון אם יותר ממספר הפריטים הזה</value>
@@ -424,7 +421,7 @@
     <value>תמיד מראה</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>קבצים וספריות מוסתרים</value>
+    <value>קבצים וספריות נסתרות</value>
   </data>
   <data name="Never show" xml:space="preserve">
     <value>לעולם אל תראה</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>הצג את כותרת הספרייה בראש</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>הצג מקשי פונקציות למטה</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>הצג את מקש הפונקציה 'פתח תיקייה'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>הצג את מקש הפונקציה 'תפריט סיכה'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>הצג את מקש הפונקציה 'הגדרות'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>הצג את מקש הפונקציה 'הפעל מחדש'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>הצג את שורת החיפוש</value>

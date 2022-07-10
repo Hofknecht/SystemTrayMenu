@@ -217,7 +217,7 @@
     <value>Milliseconds quam in menu aperit cum muris in eo est</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconds usque ad menu claudit si in hoc casu, muris tunc exit in menu</value>
+    <value>Milliseconds usque ad menu claudit si in hoc casu, mus tunc relinquat menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maximum menu width elementa</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Tantum Tabularia</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache elencho</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Patet cache si plures quam hic numerus rerum</value>
   </data>
@@ -475,7 +472,7 @@
     <value>Sorting</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Effingo row item per drag stilla</value>
+    <value>Effingo row item per drag gutta</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Drag</value>
@@ -490,10 +487,19 @@
     <value>Ostende comitem elementorum infra</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Ostende indicem titulum ad top</value>
+    <value>Ostendere indicem titulum ad top</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Munus ostende claves infra</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Munus monstrare clavis 'Open Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Munus monstrare key 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Munus monstrare key 'Optiones'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Munus monstrare key 'Sileo'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Monstra quaerere talea</value>

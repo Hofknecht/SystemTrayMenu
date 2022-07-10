@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Solo file</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Menu principale della cache</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Svuota la cache se supera questo numero di elementi</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Mostra il titolo della directory in alto</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Mostra i tasti funzione di seguito</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Mostra il tasto funzione 'Apri cartella'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Mostra il tasto funzione 'Menù Pin'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Mostra il tasto funzione 'Impostazioni'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Mostra il tasto funzione 'Riavvia'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Mostra barra di ricerca</value>

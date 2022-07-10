@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Aðeins skrár</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache aðalvalmynd</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
@@ -484,7 +481,7 @@
     <value>Skrunaðu með því að strjúka</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Sía valmynd eftir skráargerð, t.d.: *.exe|*.dll</value>
+    <value>Sía valmynd eftir skráartegund, t.d.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements below" xml:space="preserve">
     <value>Sýndu fjölda þátta hér að neðan</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Sýna möppuheiti efst</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Sýna aðgerðarlykla hér að neðan</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Sýna aðgerðarlykilinn 'Opna möppu'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Sýna aðgerðarlykil 'Pin valmynd'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Sýna aðgerðarlykil 'Stillingar'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Sýna aðgerðarlykil 'Endurræsa'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Sýna leitarstiku</value>

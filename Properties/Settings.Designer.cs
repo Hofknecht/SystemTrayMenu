@@ -912,15 +912,63 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool ShowFunctionKeysBelow
+        public bool ShowFunctionKeyOpenFolder
         {
             get
             {
-                return ((bool)(this["ShowFunctionKeysBelow"]));
+                return ((bool)(this["ShowFunctionKeyOpenFolder"]));
             }
             set
             {
-                this["ShowFunctionKeysBelow"] = value;
+                this["ShowFunctionKeyOpenFolder"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool ShowFunctionKeyPinMenu
+        {
+            get
+            {
+                return ((bool)(this["ShowFunctionKeyPinMenu"]));
+            }
+            set
+            {
+                this["ShowFunctionKeyPinMenu"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool ShowFunctionKeySettings
+        {
+            get
+            {
+                return ((bool)(this["ShowFunctionKeySettings"]));
+            }
+            set
+            {
+                this["ShowFunctionKeySettings"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool ShowFunctionKeyRestart
+        {
+            get
+            {
+                return ((bool)(this["ShowFunctionKeyRestart"]));
+            }
+            set
+            {
+                this["ShowFunctionKeyRestart"] = value;
             }
         }
 

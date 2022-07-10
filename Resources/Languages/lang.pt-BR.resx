@@ -175,7 +175,7 @@
     <value>perguntas frequentes</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Leia as perguntas frequentes e escolha um diretório raiz para o SystemTrayMenu.</value>
+    <value>Leia o FAQ e escolha um diretório raiz para o SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Selecionar diretório</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Somente arquivos</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Menu principal de cache</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Limpe o cache se mais do que esse número de itens</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Mostrar o título do diretório no topo</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Mostrar as teclas de função abaixo</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Mostrar tecla de função 'Abrir pasta'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Mostrar tecla de função 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Mostrar tecla de função 'Configurações'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Mostrar tecla de função 'Reiniciar'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Mostrar barra de pesquisa</value>

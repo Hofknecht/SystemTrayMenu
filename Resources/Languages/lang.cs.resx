@@ -214,7 +214,7 @@
     <value>Pokud dojde ke ztrátě fokusu a pokud je myš stále v nabídce</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milisekundy do otevření nabídky, když je na ní myš</value>
+    <value>Milisekundy, než se otevře nabídka, když je na ní myš</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundy, než se nabídka zavře, pokud v tomto případě myš nabídku opustí</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Pouze soubory</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Hlavní nabídka mezipaměti</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Pokud je více než tento počet položek, vymažte mezipaměť</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Zobrazit název adresáře nahoře</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Níže zobrazit funkční klávesy</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Zobrazit funkční klávesu 'Otevřít složku'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Zobrazit funkční tlačítko 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Zobrazit funkční klávesu „Nastavení“</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Zobrazit funkční klávesu 'Restartovat'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Zobrazit vyhledávací lištu</value>

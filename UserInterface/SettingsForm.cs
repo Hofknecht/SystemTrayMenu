@@ -204,7 +204,10 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxShowDirectoryTitleAtTop.Text = Translator.GetText("Show directory title at top");
                 checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements below");
                 checkBoxShowSearchBar.Text = Translator.GetText("Show search bar");
-                checkBoxShowFunctionKeysBelow.Text = Translator.GetText("Show function keys below");
+                checkBoxShowFunctionKeyOpenFolder.Text = Translator.GetText("Show function key 'Open Folder'");
+                checkBoxShowFunctionKeyPinMenu.Text = Translator.GetText("Show function key 'Pin menu'");
+                checkBoxShowFunctionKeySettings.Text = Translator.GetText("Show function key 'Settings'");
+                checkBoxShowFunctionKeyRestart.Text = Translator.GetText("Show function key 'Restart'");
                 buttonAppearanceDefault.Text = Translator.GetText("Default");
                 groupBoxColorsLightMode.Text = Translator.GetText("Color scheme bright");
                 groupBoxColorsDarkMode.Text = Translator.GetText("Color scheme dark");
@@ -527,7 +530,10 @@ namespace SystemTrayMenu.UserInterface
             checkBoxShowDirectoryTitleAtTop.Checked = Settings.Default.ShowDirectoryTitleAtTop;
             checkBoxShowSearchBar.Checked = Settings.Default.ShowSearchBar;
             checkBoxShowCountOfElementsBelow.Checked = Settings.Default.ShowCountOfElementsBelow;
-            checkBoxShowFunctionKeysBelow.Checked = Settings.Default.ShowFunctionKeysBelow;
+            checkBoxShowFunctionKeyOpenFolder.Checked = Settings.Default.ShowFunctionKeyOpenFolder;
+            checkBoxShowFunctionKeyPinMenu.Checked = Settings.Default.ShowFunctionKeyPinMenu;
+            checkBoxShowFunctionKeySettings.Checked = Settings.Default.ShowFunctionKeySettings;
+            checkBoxShowFunctionKeyRestart.Checked = Settings.Default.ShowFunctionKeyRestart;
 
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
             textBoxColorSelecetedItemDarkMode.Text = Settings.Default.ColorDarkModeSelecetedItem;
@@ -1009,7 +1015,10 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.ShowDirectoryTitleAtTop = checkBoxShowDirectoryTitleAtTop.Checked;
             Settings.Default.ShowSearchBar = checkBoxShowSearchBar.Checked;
             Settings.Default.ShowCountOfElementsBelow = checkBoxShowCountOfElementsBelow.Checked;
-            Settings.Default.ShowFunctionKeysBelow = checkBoxShowFunctionKeysBelow.Checked;
+            Settings.Default.ShowFunctionKeyOpenFolder = checkBoxShowFunctionKeyOpenFolder.Checked;
+            Settings.Default.ShowFunctionKeyPinMenu = checkBoxShowFunctionKeyPinMenu.Checked;
+            Settings.Default.ShowFunctionKeySettings = checkBoxShowFunctionKeySettings.Checked;
+            Settings.Default.ShowFunctionKeyRestart = checkBoxShowFunctionKeyRestart.Checked;
 
             if (checkBoxSaveConfigInApplicationDirectory.Checked)
             {
@@ -1416,7 +1425,10 @@ namespace SystemTrayMenu.UserInterface
             checkBoxShowDirectoryTitleAtTop.Checked = false;
             checkBoxShowSearchBar.Checked = true;
             checkBoxShowCountOfElementsBelow.Checked = false;
-            checkBoxShowFunctionKeysBelow.Checked = false;
+            checkBoxShowFunctionKeyOpenFolder.Checked = false;
+            checkBoxShowFunctionKeyPinMenu.Checked = false;
+            checkBoxShowFunctionKeySettings.Checked = false;
+            checkBoxShowFunctionKeyRestart.Checked = false;
         }
 
         private void ButtonDefaultColors_Click(object sender, EventArgs e)

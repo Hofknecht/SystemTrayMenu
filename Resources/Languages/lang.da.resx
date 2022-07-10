@@ -358,7 +358,7 @@
     <value>Tilføj bibliotek</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Tilføj indhold af mappe til rodbibliotek</value>
+    <value>Tilføj indholdet af mappen til rodmappen</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>Vejviserstier</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Kun filer</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache hovedmenu</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Ryd cache, hvis der er flere end dette antal elementer</value>
@@ -430,7 +427,7 @@
     <value>Vis aldrig</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og placering</value>
+    <value>Størrelse og beliggenhed</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Vis mappetitel øverst</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Vis funktionstaster nedenfor</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Vis funktionstast 'Åbn mappe'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Vis funktionstast 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Vis funktionstast 'Indstillinger'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Vis funktionstast 'Genstart'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Vis søgelinjen</value>

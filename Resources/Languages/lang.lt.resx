@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Tik Failai</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Pagrindinis talpyklos meniu</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Išvalykite talpyklą, jei daugiau nei šis elementų skaičius</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Rodyti katalogo pavadinimą viršuje</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Rodyti funkcinius klavišus žemiau</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Rodyti funkcinį klavišą „Atidaryti aplanką“</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Rodyti funkcijos klavišą „Prisegti meniu“</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Rodyti funkcinį klavišą „Nustatymai“</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Rodyti funkcijos klavišą „Paleisti iš naujo“</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Rodyti paieškos juostą</value>

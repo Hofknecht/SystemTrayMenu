@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Mga File lang</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Pangunahing menu ng cache</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>I-clear ang cache kung higit pa sa bilang na ito ng mga item</value>
   </data>
@@ -469,7 +466,7 @@
     <value>Pinagbukud-bukod ayon sa petsa</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Pinagbukud-bukod ayon sa pangalan</value>
+    <value>Inayos ayon sa pangalan</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Pag-uuri</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Ipakita ang pamagat ng direktoryo sa itaas</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Ipakita ang mga function key sa ibaba</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Ipakita ang function key na 'Buksan ang Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Ipakita ang function key na 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Ipakita ang function key na 'Mga Setting'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Ipakita ang function key na 'I-restart'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Ipakita ang search bar</value>

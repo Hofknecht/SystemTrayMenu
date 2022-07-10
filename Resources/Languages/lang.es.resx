@@ -184,7 +184,7 @@
     <value>¡Su directorio raíz para la aplicación no existe o está vacío! Cambie el directorio raíz o coloque algunos archivos, directorios o accesos directos en el directorio raíz.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>No tienes acceso al directorio raíz de la aplicación. Otorgue acceso al directorio o cambie el directorio raíz.</value>
+    <value>No tiene acceso al directorio raíz de la aplicación. Otorgue acceso al directorio o cambie el directorio raíz.</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
     <value>Un solo clic para abrir un elemento</value>
@@ -217,7 +217,7 @@
     <value>Milisegundos hasta que se abre un menú cuando el mouse está sobre él</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisegundos hasta que se cierre el menú si en este caso el ratón sale del menú</value>
+    <value>Milisegundos hasta que el menú se cierre si en este caso el ratón sale del menú</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Ancho máximo de menú en píxeles</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Solo archivos</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Menú principal de caché</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Borrar caché si hay más de este número de elementos</value>
   </data>
@@ -463,7 +460,7 @@
     <value>Desvanecimiento</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Enviar tecla de acceso rápido a otra instancia</value>
+    <value>Enviar tecla de acceso directo a otra instancia</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Ordenado por fecha</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Mostrar el título del directorio en la parte superior</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Mostrar las teclas de función a continuación</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Mostrar la tecla de función 'Abrir carpeta'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Mostrar la tecla de función 'Menú PIN'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Mostrar la tecla de función 'Configuración'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Mostrar la tecla de función 'Reiniciar'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Mostrar barra de búsqueda</value>

@@ -298,7 +298,7 @@
     <value>Slaidi huku ukiburuta</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Kitelezi wakati panya inaelea juu yake 1</value>
+    <value>Kitelezi wakati kipanya kinaelea juu yake 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Kitelezi wakati panya inaelea juu yake 2</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Faili Pekee</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Menyu kuu ya akiba</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Futa akiba ikiwa ni zaidi ya idadi hii ya vipengee</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Onyesha kichwa cha saraka juu</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Onyesha vitufe vya kukokotoa hapa chini</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Onyesha kitufe cha kukokotoa 'Fungua Folda'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Onyesha kitufe cha chaguo la kukokotoa 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Onyesha kitufe cha utendakazi 'Mipangilio'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Onyesha kitufe cha kukokotoa 'Anzisha upya'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Onyesha upau wa kutafutia</value>

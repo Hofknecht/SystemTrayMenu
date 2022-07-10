@@ -217,7 +217,7 @@
     <value>Millisekondi sakemm jinfetaħ menu meta l-maws ikun fuqu</value>
   </data>
   <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekondi sakemm jingħalaq il-menu jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
+    <value>Millisekondi sakemm il-menu jagħlaq jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Wisa' massimu tal-menu tal-pixels</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Fajls biss</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Cache menu prinċipali</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Ċar il-cache jekk aktar minn dan in-numru ta' oġġetti</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Uri t-titlu tad-direttorju fuq nett</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Uri ċwievet tal-funzjoni hawn taħt</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Uri ċ-ċavetta tal-funzjoni 'Open Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Uri ċ-ċavetta tal-funzjoni 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Uri ċ-ċavetta tal-funzjoni 'Settings'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Uri ċ-ċavetta tal-funzjoni 'Ibda mill-ġdid'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Uri l-bar tat-tiftix</value>

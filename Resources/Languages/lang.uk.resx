@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Тільки файли</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Головне меню кешу</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Очистити кеш, якщо кількість елементів перевищує вказану</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Показати назву каталогу вгорі</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Показати функціональні клавіші нижче</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Показати функціональну клавішу «Відкрити папку»</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Показати функціональну клавішу «Закріпити меню»</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Показати функціональну клавішу «Налаштування»</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Показати функціональну клавішу «Перезапустити»</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Показати панель пошуку</value>

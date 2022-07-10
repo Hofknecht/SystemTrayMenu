@@ -370,13 +370,10 @@
     <value>เรียกซ้ำ</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>ลบไดเรกทอรี</value>
+    <value>ลบไดเร็กทอรี</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>เฉพาะไฟล์</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>แคชเมนูหลัก</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ล้างแคชหากมีรายการมากกว่าจำนวนนี้</value>
@@ -403,7 +400,7 @@
     <value>เมนูหลักปรากฏขึ้น</value>
   </data>
   <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>ตำแหน่งของเมาส์ (เหนือไอคอนแถบงาน)</value>
+    <value>ตำแหน่งเมาส์ (เหนือไอคอนแถบงาน)</value>
   </data>
   <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
     <value>กำหนดเอง (ลากไปยังตำแหน่งที่เหมาะสม)</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>แสดงชื่อไดเร็กทอรีที่ด้านบน</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>แสดงปุ่มฟังก์ชั่นด้านล่าง</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>แสดงปุ่มฟังก์ชั่น 'เปิดโฟลเดอร์'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>แสดงปุ่มฟังก์ชั่น 'เมนูปักหมุด'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>แสดงปุ่มฟังก์ชั่น 'การตั้งค่า'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>แสดงปุ่มฟังก์ชั่น 'รีสตาร์ท'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>แสดงแถบค้นหา</value>

@@ -151,7 +151,7 @@
     <value>ឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ចាប់ផ្តើមឡើងវិញ</value>
+    <value>ចាប់ផ្ដើមឡើងវិញ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>មិនអាចចុះឈ្មោះ hot key បានទេ។</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>ឯកសារតែប៉ុណ្ណោះ</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>ម៉ឺនុយមេឃ្លាំងសម្ងាត់</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>សម្អាតឃ្លាំងសម្ងាត់ប្រសិនបើមានច្រើនជាងចំនួនធាតុនេះ។</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>បង្ហាញចំណងជើងថតនៅខាងលើ</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>បង្ហាញគ្រាប់ចុចមុខងារខាងក្រោម</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>បង្ហាញគ្រាប់ចុចមុខងារ 'បើកថត'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>បង្ហាញប៊ូតុងមុខងារ 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>បង្ហាញសោមុខងារ 'ការកំណត់'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>បង្ហាញសោមុខងារ 'ចាប់ផ្តើមឡើងវិញ'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>បង្ហាញរបារស្វែងរក</value>

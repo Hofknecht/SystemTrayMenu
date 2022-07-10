@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Només arxius</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Menú principal de la memòria cau</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Esborra la memòria cau si hi ha més d'aquest nombre d'elements</value>
   </data>
@@ -445,7 +442,7 @@
     <value>Al costat de l'anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Compensació de píxels</value>
+    <value>Compensació per píxels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Superposició</value>
@@ -481,7 +478,7 @@
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb lliscar</value>
+    <value>Desplaceu-vos amb el dit</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Mostra el títol del directori a la part superior</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Mostra les tecles de funció a continuació</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Mostra la tecla de funció "Obre carpeta"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Mostra la tecla de funció "Fin del menú"</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Mostra la tecla de funció "Configuració"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Mostra la tecla de funció "Reinicia"</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Mostra la barra de cerca</value>

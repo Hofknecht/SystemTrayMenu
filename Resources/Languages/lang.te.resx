@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>ఫైల్స్ మాత్రమే</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>కాష్ ప్రధాన మెను</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>ఐటెమ్‌ల కంటే ఎక్కువ ఉంటే కాష్‌ని క్లియర్ చేయండి</value>
   </data>
@@ -451,7 +448,7 @@
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>సబ్ మెనూ కనిపిస్తుంది</value>
+    <value>ఉప మెనూ కనిపిస్తుంది</value>
   </data>
   <data name="Size of the icons in percent" xml:space="preserve">
     <value>శాతంలో చిహ్నాల పరిమాణం</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>ఎగువన డైరెక్టరీ శీర్షికను చూపు</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>క్రింద ఫంక్షన్ కీలను చూపించు</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ఫంక్షన్ కీ 'ఓపెన్ ఫోల్డర్'ని చూపించు</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ఫంక్షన్ కీ 'పిన్ మెను'ని చూపించు</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ఫంక్షన్ కీ 'సెట్టింగ్‌లు' చూపించు</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ఫంక్షన్ కీ 'పునఃప్రారంభించు' చూపించు</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>శోధన పట్టీని చూపు</value>

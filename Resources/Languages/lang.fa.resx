@@ -337,7 +337,7 @@
     <value>Task Manager</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>غیر فعال شد</value>
+    <value>غیرفعال شد</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>فعال شد</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>فقط فایل ها</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>منوی اصلی کش</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>اگر بیشتر از این تعداد مورد باشد، حافظه پنهان را پاک کنید</value>
@@ -436,7 +433,7 @@
     <value>از تنظیمات سیستم عامل استفاده کنید</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>فقط به عنوان نتیجه جستجو نمایش داده شود</value>
+    <value>نمایش فقط به عنوان نتیجه جستجو</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>برای باز کردن دایرکتوری فقط کلیک کنید</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>نمایش عنوان دایرکتوری در بالا</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>نمایش کلیدهای تابع در زیر</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>نمایش کلید عملکرد "باز کردن پوشه"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>نمایش کلید عملکرد "Pin menu"</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>نمایش کلید عملکرد "تنظیمات"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>نمایش کلید عملکرد 'Restart'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>نمایش نوار جستجو</value>

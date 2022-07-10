@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Ainult failid</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Vahemälu peamenüü</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Tühjendage vahemälu, kui üksusi on rohkem kui see arv</value>
   </data>
@@ -490,10 +487,19 @@
     <value>Kuva elementide arv allpool</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Kuva kataloogi pealkiri ülaosas</value>
+    <value>Kuva kataloogi pealkiri üleval</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Kuva funktsiooniklahvid allpool</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Kuva funktsiooniklahvi 'Ava kaust'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Kuva funktsiooniklahvi 'Kinnita menüü'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Kuva funktsiooniklahvi 'Seaded'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Näita funktsiooniklahvi 'Restart'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Kuva otsinguriba</value>

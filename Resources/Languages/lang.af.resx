@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Slegs lêers</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Kas hoofkieslys</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Vee kas uit as meer as hierdie aantal items</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Wys gidstitel bo-aan</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Wys funksiesleutels hieronder</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Wys funksie sleutel 'Open Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Wys funksie sleutel 'Pin spyskaart'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Wys funksiesleutel 'Instellings'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Wys funksiesleutel 'Herbegin'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Wys soekbalk</value>
@@ -517,7 +523,7 @@
     <value>Kyk vir opdaterings</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>Gaan na die aflaaibladsy</value>
+    <value>Gaan na die aflaai bladsy</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>Nuutste beskikbare weergawe:</value>

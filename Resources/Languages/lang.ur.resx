@@ -316,7 +316,7 @@
     <value>شبیہیں</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>سیاق و سباق کے مینو کے مطابق سیٹ کریں۔</value>
+    <value>سیاق و سباق کے مینو سے سیٹ کریں۔</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ڈائرکٹری کے طور پر سیٹ کریں۔</value>
@@ -328,7 +328,7 @@
     <value>شارٹ کٹ لنک کے ساتھ مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
+    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، اس لیے یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ڈائرکٹری کھولیں۔</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>صرف فائلیں۔</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>کیشے مین مینو</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>اگر آئٹمز کی اس تعداد سے زیادہ ہوں تو کیشے کو صاف کریں۔</value>
   </data>
@@ -415,7 +412,7 @@
     <value>عناصر</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹ بنائیں</value>
+    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹس بنائیں</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>ڈائرکٹری کا عنوان اوپر دکھائیں۔</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>ذیل میں فنکشن کیز دکھائیں۔</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>فنکشن کلید 'اوپن فولڈر' دکھائیں</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>فنکشن کلید 'پن مینو' دکھائیں</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>فنکشن کلید 'ترتیبات' دکھائیں</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>فنکشن کلید 'دوبارہ شروع کریں' دکھائیں</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>سرچ بار دکھائیں۔</value>

@@ -175,7 +175,7 @@
     <value>أسئلة مكررة</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>اقرأ الأسئلة الشائعة ثم اختر دليلًا جذرًا لـ SystemTrayMenu.</value>
+    <value>اقرأ الأسئلة الشائعة ثم اختر دليلًا جذريًا لقائمة SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>حدد الدليل</value>
@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>الملفات فقط</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>القائمة الرئيسية لذاكرة التخزين المؤقت</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>امسح ذاكرة التخزين المؤقت إذا كان هناك أكثر من هذا العدد من العناصر</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>إظهار عنوان الدليل في الأعلى</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>إظهار مفاتيح الوظائف أدناه</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>إظهار مفتاح الوظيفة "فتح مجلد"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>إظهار مفتاح الوظيفة "Pin menu"</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>إظهار مفتاح الوظيفة "الإعدادات"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>إظهار مفتاح الوظيفة "إعادة التشغيل"</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>إظهار شريط البحث</value>

@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>파일만</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>캐시 메인 메뉴</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>이 항목 수보다 많은 경우 캐시 지우기</value>
   </data>
@@ -457,7 +454,7 @@
     <value>아이콘 크기(%)</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>지원 시스템TrayMenu</value>
+    <value>지원 시스템 트레이 메뉴</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>페이딩</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>맨 위에 디렉토리 제목 표시</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>아래에 기능 키 표시</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>기능 키 '폴더 열기' 표시</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>기능 키 '핀 메뉴' 표시</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>기능 키 '설정' 표시</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>기능 키 '다시 시작' 표시</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>검색창 표시</value>

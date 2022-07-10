@@ -375,9 +375,6 @@
   <data name="Only Files" xml:space="preserve">
     <value>Comhaid amháin</value>
   </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>Príomh-roghchlár taisce</value>
-  </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Glan an taisce má tá níos mó ná an líon seo míreanna agat</value>
   </data>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>Taispeáin teideal an eolaire ag barr</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>Taispeáin na heochracha feidhme thíos</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Taispeáin an eochair feidhme 'Fillteán Oscailte'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Taispeáin an eochair fheidhme 'Roghchlár bioráin'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Taispeáin an eochair fheidhme 'Socruithe'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Taispeáin an eochair fheidhme 'Atosaigh'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Taispeáin barra cuardaigh</value>

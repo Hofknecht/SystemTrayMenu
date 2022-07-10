@@ -262,7 +262,7 @@
     <value>એપ્લિકેશન ડિરેક્ટરી ખોલો</value>
   </data>
   <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>પિક્સેલ મહત્તમ મેનુ ઊંચાઈ</value>
+    <value>પિક્સેલ્સ મેનુની મહત્તમ ઊંચાઈ</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>તીર</value>
@@ -271,7 +271,7 @@
     <value>ક્લિક કરતી વખતે એરો</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>તીર જ્યારે તેના પર માઉસ ફરે છે</value>
+    <value>તીર જ્યારે માઉસ તેના પર ફરે છે</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>ક્લિક કરતી વખતે તીરની પૃષ્ઠભૂમિ</value>
@@ -301,7 +301,7 @@
     <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 2</value>
+    <value>સ્લાઇડર જ્યારે માઉસ તેના પર ફરે છે 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>ડિરેક્ટરીમાંથી આયકનનો ઉપયોગ કરો</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>ફક્ત ફાઇલો</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>કેશ મુખ્ય મેનુ</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>આઇટમ્સની આ સંખ્યા કરતાં વધુ હોય તો કેશ સાફ કરો</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>ટોચ પર ડિરેક્ટરી શીર્ષક બતાવો</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>નીચે ફંક્શન કીઓ બતાવો</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ફંક્શન કી 'ઓપન ફોલ્ડર' બતાવો</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ફંક્શન કી 'પિન મેનુ' બતાવો</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ફંક્શન કી 'સેટિંગ્સ' બતાવો</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ફંક્શન કી 'રીસ્ટાર્ટ' બતાવો</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>શોધ બાર બતાવો</value>

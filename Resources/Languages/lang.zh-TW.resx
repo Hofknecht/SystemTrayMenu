@@ -325,7 +325,7 @@
     <value>加載</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>快捷鏈接問題</value>
+    <value>快捷方式鏈接問題</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>此快捷方式所指的項目已更改或移動，因此此快捷方式將不再正常工作。</value>
@@ -374,9 +374,6 @@
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>僅文件</value>
-  </data>
-  <data name="Cache main menu" xml:space="preserve">
-    <value>緩存主菜單</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>如果超過此數量的項目，則清除緩存</value>
@@ -492,8 +489,17 @@
   <data name="Show directory title at top" xml:space="preserve">
     <value>在頂部顯示目錄標題</value>
   </data>
-  <data name="Show function keys below" xml:space="preserve">
-    <value>在下方顯示功能鍵</value>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>顯示功能鍵“打開文件夾”</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>顯示功能鍵“Pin 菜單”</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>顯示功能鍵“設置”</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>顯示功能鍵“重啟”</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>顯示搜索欄</value>
