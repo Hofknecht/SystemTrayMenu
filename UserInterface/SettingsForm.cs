@@ -190,7 +190,6 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = Translator.GetText("If the focus is lost and the Enter key was pressed");
                 labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if in this case the menu is not reactivated");
                 groupBoxCache.Text = Translator.GetText("Cache");
-                checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 groupBoxSearchPattern.Text = Translator.GetText("Filter menu by file type e.g.: *.exe|*.dll");
                 buttonExpertDefault.Text = Translator.GetText("Default");
@@ -516,7 +515,6 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilClosesAfterEnterPressed.Increment = 10;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = Settings.Default.TimeUntilClosesAfterEnterPressed;
 
-            checkBoxCacheMainMenu.Checked = Settings.Default.CacheMainMenu;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
             textBoxSearchPattern.Text = Settings.Default.SearchPattern;
@@ -1000,7 +998,6 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
             Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed = checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked;
             Settings.Default.TimeUntilClosesAfterEnterPressed = (int)numericUpDownTimeUntilClosesAfterEnterPressed.Value;
-            Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
             Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
             Settings.Default.SearchPattern = textBoxSearchPattern.Text;
 
@@ -1320,7 +1317,6 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilOpens.Value = 100;
             checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = true;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = 200;
-            checkBoxCacheMainMenu.Checked = true;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
             textBoxSearchPattern.Text = string.Empty;
         }

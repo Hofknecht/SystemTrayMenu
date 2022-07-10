@@ -72,8 +72,7 @@ namespace SystemTrayMenu.Business
 
                     RefreshSelection(dgvMainMenu);
 
-                    if (Properties.Settings.Default.CacheMainMenu &&
-                        Properties.Settings.Default.AppearAtMouseLocation)
+                    if (Properties.Settings.Default.AppearAtMouseLocation)
                     {
                         menus[0].Tag = null;
                     }
@@ -86,42 +85,20 @@ namespace SystemTrayMenu.Business
                     switch (menuData.Validity)
                     {
                         case MenuDataValidity.Valid:
-                            if (Properties.Settings.Default.CacheMainMenu)
+                            if (IconReader.MainPreload)
                             {
-                                if (IconReader.MainPreload)
-                                {
-                                    workerMainMenu.DoWork -= LoadMenu;
-                                    menus[0] = Create(menuData, Path.GetFileName(Config.Path));
-                                    menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
-                                    IconReader.MainPreload = false;
-                                    if (showMenuAfterMainPreload)
-                                    {
-                                        AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                                    }
-                                }
-                                else
+                                workerMainMenu.DoWork -= LoadMenu;
+                                menus[0] = Create(menuData, Path.GetFileName(Config.Path));
+                                menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
+                                IconReader.MainPreload = false;
+                                if (showMenuAfterMainPreload)
                                 {
                                     AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
                                 }
                             }
                             else
                             {
-                                DisposeMenu(menus[menuData.Level]);
-                                menus[0] = Create(menuData, Path.GetFileName(Config.Path));
-
-                                if (IconReader.MainPreload)
-                                {
-                                    IconReader.MainPreload = false;
-
-                                    if (showMenuAfterMainPreload)
-                                    {
-                                        AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                                    }
-                                }
-                                else
-                                {
-                                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                                }
+                                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
                             }
 
                             break;
@@ -518,15 +495,15 @@ namespace SystemTrayMenu.Business
                 timerShowProcessStartedAsLoadingIcon.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed;
                 SwitchOpenClose(false, true);
             }
-
-            if (!Properties.Settings.Default.CacheMainMenu)
-            {
-                DisposeMenu(menus[0]);
-            }
         }
 
         internal void StartWorker()
         {
+            if (Properties.Settings.Default.GenerateShortcutsToDrives)
+            {
+                GenerateDriveShortcuts.Start();
+            }
+
             if (!workerMainMenu.IsBusy)
             {
                 LoadStarted();
@@ -545,7 +522,7 @@ namespace SystemTrayMenu.Business
 
         private static void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
         {
-            string path = Config.Path;
+            string path;
             int level = 0;
             RowData rowData = eDoWork.Argument as RowData;
             if (rowData != null)
@@ -553,10 +530,9 @@ namespace SystemTrayMenu.Business
                 path = rowData.ResolvedPath;
                 level = rowData.Level + 1;
             }
-
-            if (Properties.Settings.Default.GenerateShortcutsToDrives)
+            else
             {
-                GenerateDriveShortcuts.Start();
+                path = Config.Path;
             }
 
             MenuData menuData = GetData((BackgroundWorker)senderDoWork, path, level);
@@ -782,11 +758,6 @@ namespace SystemTrayMenu.Business
                 if (IconReader.ClearIfCacheTooBig())
                 {
                     GC.Collect();
-
-                    if (!Properties.Settings.Default.CacheMainMenu)
-                    {
-                        MainPreload();
-                    }
                 }
 
                 openCloseState = OpenCloseState.Default;

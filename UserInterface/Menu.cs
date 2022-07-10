@@ -1088,14 +1088,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (Properties.Settings.Default.CacheMainMenu)
-                {
-                    SettingsForm.ShowSingleInstance(this);
-                }
-                else
-                {
-                    SettingsForm.ShowSingleInstance(null);
-                }
+                SettingsForm.ShowSingleInstance(this);
             }
         }
 
