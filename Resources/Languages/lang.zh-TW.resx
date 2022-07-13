@@ -124,7 +124,7 @@
     <value>確定</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>開機時啟動</value>
+    <value>啟動應用程式</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>離開</value>
@@ -172,7 +172,7 @@
     <value>設定</value>
   </data>
   <data name="Frequently Asked Questions" xml:space="preserve">
-    <value>說明與常見問題</value>
+    <value>常見問題</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
     <value>請參閱常見問題，然後指定一個目錄作為 SystemTrayMenu 的起始位置。</value>
@@ -472,7 +472,7 @@
     <value>排序</value>
   </data>
   <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>通過拖放複製行項目</value>
+    <value>透過拖曳複製項目</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>拖曳</value>
@@ -490,16 +490,16 @@
     <value>在頂部顯示目錄標題</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>顯示「開啟資料夾」圖示</value>
+    <value>顯示「開啟資料夾」功能圖示</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>顯示「固定選單」圖示</value>
+    <value>顯示「固定選單」功能圖示</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>顯示「設定」圖示</value>
+    <value>顯示「設定」功能圖示</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>顯示「重新啟動」圖示</value>
+    <value>顯示「重新啟動」功能圖示</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>顯示搜尋列</value>
