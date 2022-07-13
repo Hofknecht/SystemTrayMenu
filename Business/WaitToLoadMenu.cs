@@ -168,17 +168,17 @@ namespace SystemTrayMenu.Handler
             {
                 RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
                 Menu menu = (Menu)dgv.FindForm();
-                rowData.MenuLevel = menu.Level;
+                rowData.Level = menu.Level;
                 if (rowData.ContainsMenu)
                 {
-                    CloseMenu.Invoke(rowData.MenuLevel + 2);
+                    CloseMenu.Invoke(rowData.Level + 2);
                 }
 
-                CloseMenu.Invoke(rowData.MenuLevel + 1);
+                CloseMenu.Invoke(rowData.Level + 1);
 
                 if (!rowData.IsContextMenuOpen &&
                     rowData.ContainsMenu &&
-                    rowData.MenuLevel + 1 < MenuDefines.MenusMax)
+                    rowData.Level + 1 < MenuDefines.MenusMax)
                 {
                     StartLoadMenu.Invoke(rowData);
                 }
@@ -191,7 +191,11 @@ namespace SystemTrayMenu.Handler
             this.dgv = dgv;
             this.rowIndex = rowIndex;
             RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
-            rowData.IsSelected = true;
+            if (rowData != null)
+            {
+                rowData.IsSelected = true;
+            }
+
             dgv.Rows[rowIndex].Selected = false;
             dgv.Rows[rowIndex].Selected = true;
         }

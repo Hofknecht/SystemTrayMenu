@@ -17,6 +17,7 @@ namespace SystemTrayMenu.UserInterface
 
     internal partial class Menu : Form
     {
+        public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
         private const int CornerRadius = 20;
         private readonly Fading fading = new();
         private bool isShowing;
@@ -25,6 +26,7 @@ namespace SystemTrayMenu.UserInterface
         private bool mouseDown;
         private Point lastLocation;
         private bool isSetSearchText;
+        private bool dgvHeightSet;
 
         internal Menu()
         {
@@ -191,7 +193,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal event EventHandlerEmpty SearchTextChanging;
 
-        internal event EventHandler SearchTextChanged;
+        internal event EventHandler<bool> SearchTextChanged;
 
         internal event EventHandlerEmpty UserDragsMenu;
 
@@ -234,6 +236,23 @@ namespace SystemTrayMenu.UserInterface
         internal void ResetSearchText()
         {
             textBoxSearch.Text = string.Empty;
+            if (dgv.Rows.Count > 0)
+            {
+                dgv.FirstDisplayedScrollingRowIndex = 0;
+            }
+
+            AdjustScrollbar();
+        }
+
+        internal void RefreshSearchText()
+        {
+            TextBoxSearch_TextChanged(textBoxSearch, null);
+            if (dgv.Rows.Count > 0)
+            {
+                dgv.FirstDisplayedScrollingRowIndex = 0;
+            }
+
+            AdjustScrollbar();
         }
 
         internal void FocusTextBox()
@@ -292,14 +311,14 @@ namespace SystemTrayMenu.UserInterface
                     pictureBoxSearch.Visible = true;
                     textBoxSearch.Visible = true;
                     tableLayoutPanelSearch.Visible = true;
-                    labelItems.Text = Translator.GetText("Folder empty");
+                    labelItems.Text = Translator.GetText("Directory empty");
                     pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
                 case MenuType.NoAccess:
                     pictureBoxSearch.Visible = true;
                     textBoxSearch.Visible = true;
                     tableLayoutPanelSearch.Visible = true;
-                    labelItems.Text = Translator.GetText("Folder inaccessible");
+                    labelItems.Text = Translator.GetText("Directory inaccessible");
                     pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
                 case MenuType.Loading:
@@ -347,9 +366,9 @@ namespace SystemTrayMenu.UserInterface
             return dgv;
         }
 
-        internal void SetTitle(string title)
+        internal void AdjustControls(string title, MenuDataValidity menuDataValidity)
         {
-            if (!string.IsNullOrEmpty(title))
+            if (!string.IsNullOrEmpty(title) && Config.ShowDirectoryTitleAtTop)
             {
                 if (title.Length > MenuDefines.LengthMax)
                 {
@@ -357,6 +376,47 @@ namespace SystemTrayMenu.UserInterface
                 }
 
                 labelTitle.Text = title;
+            }
+            else
+            {
+                labelTitle.Text = string.Empty;
+                labelTitle.MaximumSize = new Size(0, 12);
+            }
+
+            if (!Config.ShowSearchBar)
+            {
+                tableLayoutPanelSearch.AutoSize = false;
+                tableLayoutPanelSearch.Height = 0;
+                textBoxSearch.AutoSize = false;
+                textBoxSearch.Height = 0;
+                pictureBoxSearch.Visible = false;
+                panelLine.Visible = false;
+            }
+
+            if (!Config.ShowCountOfElementsBelow &&
+                menuDataValidity == MenuDataValidity.Valid)
+            {
+                labelItems.Visible = false;
+            }
+
+            if (!Config.ShowFunctionKeyOpenFolder)
+            {
+                pictureBoxOpenFolder.Visible = false;
+            }
+
+            if (!Config.ShowFunctionKeyPinMenu)
+            {
+                pictureBoxMenuAlwaysOpen.Visible = false;
+            }
+
+            if (!Config.ShowFunctionKeySettings)
+            {
+                pictureBoxSettings.Visible = false;
+            }
+
+            if (!Config.ShowFunctionKeyRestart)
+            {
+                pictureBoxRestart.Visible = false;
             }
         }
 
@@ -388,6 +448,11 @@ namespace SystemTrayMenu.UserInterface
             {
                 fading.Fade(Fading.FadingState.Hide);
             }
+        }
+
+        internal void TimerUpdateIconsStart()
+        {
+            timerUpdateIcons.Start();
         }
 
         /// <summary>
@@ -694,9 +759,8 @@ namespace SystemTrayMenu.UserInterface
                 row.Height = dgv.RowTemplate.Height;
             }
 
-            DataTable data = (DataTable)dgv.DataSource;
-            int dgvHeightNew = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None); // Height of all rows
-            int dgvHeightMax = screenHeightMax - (Height - dgv.Height); // except dgv
+            int dgvHeightNew = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
+            int dgvHeightMax = screenHeightMax - (Height - dgv.Height);
 
             if (dgvHeightMax > Properties.Settings.Default.MaximumMenuHeight)
             {
@@ -726,20 +790,21 @@ namespace SystemTrayMenu.UserInterface
                 ScrollbarVisible = false;
             }
 
-            if (string.IsNullOrEmpty(data.DefaultView.RowFilter))
+            if (!dgvHeightSet)
             {
                 dgv.Height = dgvHeightNew;
+                dgvHeightSet = true;
             }
         }
 
         private void AdjustDataGridViewWidth()
         {
-            DataGridViewExtensions.FastAutoSizeColumns(dgv);
-
-            if (dgv.Columns[1].Width < 60)
+            if (!string.IsNullOrEmpty(textBoxSearch.Text))
             {
-                dgv.Columns[1].Width = 60;
+                return;
             }
+
+            DataGridViewExtensions.FastAutoSizeColumns(dgv);
 
             int widthIcon = dgv.Columns[0].Width;
             int widthText = dgv.Columns[1].Width;
@@ -749,14 +814,23 @@ namespace SystemTrayMenu.UserInterface
                 widthScrollbar = customScrollbar.Width;
             }
 
-            if (tableLayoutPanelBottom.Width > (widthIcon + widthText + widthScrollbar))
+            using Graphics gfx = labelTitle.CreateGraphics();
+            gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            int withTitle = (int)(gfx.MeasureString(
+                labelTitle.Text + "___",
+                dgv.RowTemplate.DefaultCellStyle.Font).Width + 0.5);
+
+            if (withTitle > (widthIcon + widthText + widthScrollbar))
             {
-                dgv.Width = tableLayoutPanelBottom.Width - widthScrollbar;
-                dgv.Columns[1].Width = tableLayoutPanelBottom.Width - widthIcon - widthScrollbar;
+                tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(withTitle, 0);
+                dgv.Width = withTitle - widthScrollbar;
+                dgv.Columns[1].Width = dgv.Width - widthIcon;
             }
             else
             {
+                tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(widthIcon + widthText + widthScrollbar, 0);
                 dgv.Width = widthIcon + widthText;
+                dgv.Columns[1].Width = dgv.Width - widthIcon;
             }
 
             tableLayoutPanelSearch.MinimumSize = new Size(dgv.Width + widthScrollbar, 0);
@@ -768,6 +842,9 @@ namespace SystemTrayMenu.UserInterface
                 FontStyle.Regular,
                 GraphicsUnit.Point,
                 0);
+
+            DataTable dataTable = (DataTable)dgv.DataSource;
+            dataTable.DefaultView.RowFilter = RowFilterShowAll;
         }
 
         private void DgvMouseWheel(object sender, MouseEventArgs e)
@@ -797,16 +874,15 @@ namespace SystemTrayMenu.UserInterface
                 .Replace("%", " ")
                 .Replace("*", " ");
 
-            // Replace special characters
-            string tmp = new(searchString);
+            string searchStringReplaceSpecialCharacters = new(searchString);
             searchString = string.Empty;
-            foreach (char ch in tmp)
+            foreach (char character in searchStringReplaceSpecialCharacters)
             {
-                searchString += ch switch
+                searchString += character switch
                 {
                     '[' => "[[]",
                     ']' => "[]]",
-                    _ => ch,
+                    _ => character,
                 };
             }
 
@@ -837,7 +913,7 @@ namespace SystemTrayMenu.UserInterface
                 if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
                     isSearchStringEmpty)
                 {
-                    data.DefaultView.RowFilter = "[SortIndex] LIKE '%0%'";
+                    data.DefaultView.RowFilter = RowFilterShowAll;
                 }
                 else
                 {
@@ -863,8 +939,7 @@ namespace SystemTrayMenu.UserInterface
                 foreach (DataRow row in data.Rows)
                 {
                     RowData rowData = (RowData)row[2];
-                    if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
-                        rowData.ShowOnlyWhenSearch)
+                    if (rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult)
                     {
                         row[columnSortIndex] = 99;
                     }
@@ -904,7 +979,8 @@ namespace SystemTrayMenu.UserInterface
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
 
-                if (!isSearchStringEmpty || !rowData.ShowOnlyWhenSearch)
+                if (!isSearchStringEmpty ||
+                    !(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
                 {
                     rowData.RowIndex = row.Index;
 
@@ -926,14 +1002,14 @@ namespace SystemTrayMenu.UserInterface
 
             SetCounts(foldersCount, filesCount);
 
-            SearchTextChanged.Invoke(this, null);
+            SearchTextChanged.Invoke(this, isSearchStringEmpty);
 
             if (anyIconNotUpdated)
             {
                 timerUpdateIcons.Start();
             }
 
-            if (isSearchStringEmpty && dgv.Rows.Count > 0)
+            if (dgv.Rows.Count > 0)
             {
                 dgv.FirstDisplayedScrollingRowIndex = 0;
             }
@@ -1024,14 +1100,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                if (Properties.Settings.Default.CacheMainMenu)
-                {
-                    SettingsForm.ShowSingleInstance(this);
-                }
-                else
-                {
-                    SettingsForm.ShowSingleInstance(null);
-                }
+                SettingsForm.ShowSingleInstance(this);
             }
         }
 
@@ -1083,7 +1152,7 @@ namespace SystemTrayMenu.UserInterface
                 if (rowData.IconLoading)
                 {
                     iconsToUpdate++;
-                    row.Cells[0].Value = rowData.ReadLoadedIcon();
+                    row.Cells[0].Value = rowData.ReadIcon(false);
                 }
             }
 

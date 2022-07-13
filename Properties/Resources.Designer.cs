@@ -123,6 +123,16 @@ namespace SystemTrayMenu.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        public static System.Drawing.Icon LinkArrow {
+            get {
+                object obj = ResourceManager.GetObject("LinkArrow", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         public static System.Drawing.Icon Loading {
             get {
                 object obj = ResourceManager.GetObject("Loading", resourceCulture);

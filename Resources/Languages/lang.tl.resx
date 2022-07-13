@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Tungkol sa SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>Pagsisimula ng app</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Lumabas sa app</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Direktoryo</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Walang laman ang direktoryo</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Mga Detalye</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Info ng sistema</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Hindi naa-access ang direktoryo</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Wika</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Log File</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>I-restart</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Hindi mairehistro ang hot key.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>I-abort</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Heneral</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Magsimula sa Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Mga setting</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Mga Madalas Itanong</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Basahin ang FAQ at pagkatapos ay pumili ng root directory para sa SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Pumili ng direktoryo</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Ang iyong root directory para sa app ay wala o walang laman! Baguhin ang root directory o maglagay ng ilang file, directory o shortcut sa root directory.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Wala kang access sa root directory ng app. Magbigay ng access sa direktoryo o baguhin ang root directory.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Isang pag-click upang buksan ang isang elemento</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Madilim ang kulay na laging aktibo</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Sa lokasyon ng mouse</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Pagbabago ng direktoryo</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>I-click</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>I-customize</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Kung nawala ang focus at kung nasa menu pa rin ang mouse</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Milliseconds hanggang magbukas ang isang menu kapag ang mouse ay nasa ibabaw nito</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Milliseconds hanggang sa magsara ang menu kung sa kasong ito ay aalis ang mouse sa menu</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Pixels maximum na lapad ng menu</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Nananatiling bukas</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Oras hanggang magbukas ang isang menu</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Kung may na-click na elemento</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Binuksan ang direktoryo</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Border ng binuksan na direktoryo</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Field ng paghahanap</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Napiling elemento</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Border ng napiling elemento</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Kamag-anak na direktoryo</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>I-save ang configuration sa application directory</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Configuration file at log file</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Buksan ang direktoryo ng application</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Pixels maximum na taas ng menu</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Palaso</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Arrow kapag nag-click</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Arrow habang naka-hover ang mouse sa ibabaw nito</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Background ng arrow kapag nag-click</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Background ng arrow habang naka-hover ang mouse sa ibabaw nito</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Madilim ang scheme ng kulay</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Maliwanag ang scheme ng kulay</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu ng app</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Scroll bar</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Slider habang kinakaladkad</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Slider habang naka-hover ang mouse sa ibabaw nito 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Slider habang naka-hover ang mouse sa ibabaw nito 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Gamitin ang icon mula sa direktoryo</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Sukat</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Border ng menu</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Mga icon</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Itakda sa pamamagitan ng menu ng konteksto</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Itakda bilang direktoryo</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>naglo-load</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problema sa shortcut link</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Ang item na tinutukoy ng shortcut na ito ay binago o inilipat, kaya hindi na gagana nang maayos ang shortcut na ito.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Buksan ang direktoryo</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Task manager</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Na-deactivate</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Na-activate</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Dalubhasa</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Kung nawala ang focus at pinindot ang Enter key</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milliseconds hanggang sa magsara ang menu kung sa kasong ito ay hindi na-reactivate ang menu</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Ipakita sa Taskbar</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Magdagdag ng direktoryo</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Magdagdag ng nilalaman ng direktoryo sa root directory</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Mga landas ng direktoryo</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Mga direktoryo</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Recursive</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Alisin ang direktoryo</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Mga File lang</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>I-clear ang cache kung higit pa sa bilang na ito ng mga item</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Magdagdag ng sample na direktoryo na 'Start Menu'</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Taas ng hilera sa porsyento</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Pabilog na sulok</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Hitsura</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Babang kaliwa</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>kanang ibaba</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Lumilitaw ang pangunahing menu</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Lokasyon ng mouse (sa itaas ng icon ng Taskbar)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Custom (i-drag ito sa naaangkop na lugar)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>elemento</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>mga elemento</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Bumuo ng mga shortcut sa drive sa startup</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Cache</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Laging ipakita</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Mga nakatagong file at direktoryo</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Huwag kailanman ipakita</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Sukat at lokasyon</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Gumamit ng mga setting ng operating system</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Ipakita lamang bilang resulta ng paghahanap</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Isang pag-click upang buksan ang isang direktoryo</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Sa tabi ng nauna</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Offset ng mga pixel</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Nagsasapawan</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Lumilitaw ang sub menu</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Sukat ng mga icon sa porsyento</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Suportahan ang SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Kumukupas</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Ipadala ang hotkey sa ibang instance</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Pinagbukud-bukod ayon sa petsa</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Inayos ayon sa pangalan</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Pag-uuri</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Kopyahin ang row item sa pamamagitan ng drag drop</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>I-drag</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Mag-scroll sa pamamagitan ng pag-swipe</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>I-filter ang menu ayon sa uri ng file hal.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Ipakita ang bilang ng mga elemento sa ibaba</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Ipakita ang pamagat ng direktoryo sa itaas</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Ipakita ang function key na 'Buksan ang Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Ipakita ang function key na 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Ipakita ang function key na 'Mga Setting'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Ipakita ang function key na 'I-restart'</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Ipakita ang search bar</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Pag-save ng log file sa direktoryo ng application</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Ipakita ang overlay ng link</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Direktoryo ng Internet Shortcut Icon</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Pinagbukud-bukod ayon sa uri at petsa</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Pinagbukud-bukod ayon sa uri at pangalan</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Tingnan ang mga update</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Pumunta sa pahina ng pag-download</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Pinakabagong available na bersyon:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Available ang bagong bersyon!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Mayroon kang pinakabagong bersyon ng SystemTrayMenu!</value>
+  </data>
+</root>

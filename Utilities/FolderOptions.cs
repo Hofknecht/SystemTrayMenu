@@ -9,6 +9,7 @@ namespace SystemTrayMenu.Utilities
     using System.Reflection;
     using System.Runtime.InteropServices;
     using Shell32;
+    using SystemTrayMenu.DataClasses;
 
     internal static class FolderOptions
     {
@@ -55,38 +56,37 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        internal static bool IsHidden(string path, ref bool hiddenEntry)
+        internal static bool IsHidden(RowData rowData)
         {
             bool isDirectoryToHide = false;
-            if (path.Length < 260)
+            if (rowData.Path.Length >= 260)
             {
-                try
+                Log.Info($"path too long (>=260):'{rowData.Path}'");
+                return isDirectoryToHide;
+            }
+
+            try
+            {
+                FileAttributes attributes = File.GetAttributes(rowData.Path);
+                rowData.HiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
+                bool systemEntry = attributes.HasFlag(
+                    FileAttributes.Hidden | FileAttributes.System);
+                if (Properties.Settings.Default.SystemSettingsShowHiddenFiles)
                 {
-                    FileAttributes attributes = File.GetAttributes(path);
-                    hiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
-                    bool systemEntry = attributes.HasFlag(
-                        FileAttributes.Hidden | FileAttributes.System);
-                    if (Properties.Settings.Default.SystemSettingsShowHiddenFiles)
-                    {
-                        if ((hideHiddenEntries && hiddenEntry) ||
-                           (hideSystemEntries && systemEntry))
-                        {
-                            isDirectoryToHide = true;
-                        }
-                    }
-                    else if (hiddenEntry && Properties.Settings.Default.NeverShowHiddenFiles)
+                    if ((hideHiddenEntries && rowData.HiddenEntry) ||
+                        (hideSystemEntries && systemEntry))
                     {
                         isDirectoryToHide = true;
                     }
                 }
-                catch (Exception ex)
+                else if (rowData.HiddenEntry && Properties.Settings.Default.NeverShowHiddenFiles)
                 {
-                    Log.Warn($"path:'{path}'", ex);
+                    isDirectoryToHide = true;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Log.Info($"path too long (>=260):'{path}'");
+                Log.Warn($"path:'{rowData.Path}'", ex);
             }
 
             return isDirectoryToHide;

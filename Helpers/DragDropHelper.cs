@@ -8,9 +8,11 @@ namespace SystemTrayMenu.Helper
     using System.IO;
     using System.Net.Http;
     using System.Text;
+    using System.Threading;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.UserInterface;
+    using SystemTrayMenu.Utilities;
 
     public static class DragDropHelper
     {
@@ -39,7 +41,7 @@ namespace SystemTrayMenu.Helper
                 RowData rowData = (RowData)menu.Tag;
                 if (rowData != null)
                 {
-                    path = rowData.TargetFilePath;
+                    path = rowData.ResolvedPath;
                 }
                 else
                 {
@@ -56,12 +58,17 @@ namespace SystemTrayMenu.Helper
             byte[] bytes = ms.ToArray();
             Encoding encod = Encoding.ASCII;
             string url = encod.GetString(bytes);
-            CreateShortcut(url.Replace("\0", string.Empty), path);
+
+            new Thread(CreateShortcutInBackground).Start();
+            void CreateShortcutInBackground()
+            {
+                CreateShortcut(url.Replace("\0", string.Empty), path);
+            }
         }
 
         private static void CreateShortcut(string url, string pathToStoreFile)
         {
-            string pathToStoreIcons = Path.Combine(pathToStoreFile, "ico");
+            string pathToStoreIcons = Properties.Settings.Default.PathIcoDirectory;
             if (!Directory.Exists(pathToStoreIcons))
             {
                 Directory.CreateDirectory(pathToStoreIcons);
@@ -74,22 +81,30 @@ namespace SystemTrayMenu.Helper
 
             string urlGoogleIconDownload = @"http://www.google.com/s2/favicons?sz=32&domain=" + url;
             HttpClient client = new();
-            using (HttpResponseMessage response = client.GetAsync(urlGoogleIconDownload).Result)
+
+            try
             {
+                using HttpResponseMessage response = client.GetAsync(urlGoogleIconDownload).Result;
                 using HttpContent content = response.Content;
                 Stream stream = content.ReadAsStreamAsync().Result;
                 using var fileStream = File.Create(pathIconPng);
                 stream.Seek(0, SeekOrigin.Begin);
                 stream.CopyTo(fileStream);
             }
+            catch (Exception ex)
+            {
+                Log.Warn($"{nameof(CreateShortcut)} failed", ex);
+            }
 
             string pathIcon = Path.Combine(pathToStoreIcons, $"{hostname}.ico");
-            ImagingHelper.ConvertToIcon(pathIconPng, pathIcon, 32);
+            if (!ImagingHelper.ConvertToIcon(pathIconPng, pathIcon, 32))
+            {
+                Log.Info("Failed to convert icon.");
+            }
+
             File.Delete(pathIconPng);
 
-            string title = url;
-
-            title = title.Replace("/", " ").
+            string title = url.Replace("/", " ").
                 Replace("https", string.Empty).
                 Replace("http", string.Empty);
 

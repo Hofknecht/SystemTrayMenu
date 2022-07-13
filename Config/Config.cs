@@ -14,22 +14,35 @@ namespace SystemTrayMenu
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.Utilities.IconReader;
 
     public static class Config
     {
         private static readonly Icon SystemTrayMenu = Properties.Resources.SystemTrayMenu;
-        private static readonly Icon IconFromRootFolder = IconReader.GetFolderIconSTA(Path, IconReader.FolderType.Closed, false);
+        private static readonly Icon IconRootFolder = GetIconSTA(Path, Path, false, IconSize.Small, true);
 
         private static bool readDarkModeDone;
         private static bool isDarkMode;
         private static bool readHideFileExtdone;
         private static bool isHideFileExtension;
 
-        public static bool IsHideFileExtdone => IsHideFileExtension();
-
         public static string Path => Settings.Default.PathDirectory;
 
         public static string SearchPattern => Settings.Default.SearchPattern;
+
+        public static bool ShowDirectoryTitleAtTop => Settings.Default.ShowDirectoryTitleAtTop;
+
+        public static bool ShowSearchBar => Settings.Default.ShowSearchBar;
+
+        public static bool ShowCountOfElementsBelow => Settings.Default.ShowCountOfElementsBelow;
+
+        public static bool ShowFunctionKeyOpenFolder => Settings.Default.ShowFunctionKeyOpenFolder;
+
+        public static bool ShowFunctionKeyPinMenu => Settings.Default.ShowFunctionKeyPinMenu;
+
+        public static bool ShowFunctionKeySettings => Settings.Default.ShowFunctionKeySettings;
+
+        public static bool ShowFunctionKeyRestart => Settings.Default.ShowFunctionKeyRestart;
 
         public static bool AlwaysOpenByPin { get; internal set; }
 
@@ -37,6 +50,17 @@ namespace SystemTrayMenu
         {
             UpgradeIfNotUpgraded();
             InitializeColors();
+            if (string.IsNullOrEmpty(Settings.Default.PathIcoDirectory))
+            {
+                Settings.Default.PathIcoDirectory = System.IO.Path.Combine(
+                    System.IO.Path.Combine(
+                        Environment.GetFolderPath(
+                            Environment.SpecialFolder.ApplicationData), $"SystemTrayMenu"), "ico");
+                if (!Directory.Exists(Settings.Default.PathIcoDirectory))
+                {
+                    Directory.CreateDirectory(Settings.Default.PathIcoDirectory);
+                }
+            }
         }
 
         public static void Dispose()
@@ -53,7 +77,7 @@ namespace SystemTrayMenu
         {
             if (Settings.Default.UseIconFromRootFolder)
             {
-                return IconFromRootFolder;
+                return IconRootFolder;
             }
             else
             {
@@ -76,10 +100,11 @@ namespace SystemTrayMenu
         {
             if (string.IsNullOrEmpty(Path))
             {
-                string textFirstStart = Translator.GetText("TextFirstStart");
+                string textFirstStart = Translator.GetText(
+                    "Read the FAQ and then choose a root directory for the SystemTrayMenu.");
                 MessageBox.Show(
                     textFirstStart,
-                    Translator.GetText("SystemTrayMenu"),
+                    "SystemTrayMenu",
                     MessageBoxButtons.OK);
                 ShowHelpFAQ();
                 SetFolderByUser();
@@ -98,6 +123,17 @@ namespace SystemTrayMenu
                 {
                     Settings.Default.Save();
                 }
+            }
+        }
+
+        public static void SetFolderIcoByUser()
+        {
+            using FolderDialog dialog = new();
+            dialog.InitialFolder = Settings.Default.PathIcoDirectory;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Settings.Default.PathIcoDirectory = dialog.Folder;
             }
         }
 
@@ -144,7 +180,7 @@ namespace SystemTrayMenu
         /// <summary>
         /// Read the OS setting whether HideFileExt enabled.
         /// </summary>
-        /// <returns>true = Dark mode; false = Light mode.</returns>
+        /// <returns>isHideFileExtension.</returns>
         internal static bool IsHideFileExtension()
         {
             if (!readHideFileExtdone)
@@ -240,12 +276,18 @@ namespace SystemTrayMenu
                 htmlColorCodeIcons = Settings.Default.ColorIcons;
             }
 
-            AppColors.BitmapOpenFolder = ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapPin = ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapSettings = ReadSvg(Properties.Resources.ic_fluent_settings_28_regular, htmlColorCodeIcons);
-            AppColors.BitmapRestart = ReadSvg(Properties.Resources.ic_fluent_arrow_sync_24_regular, htmlColorCodeIcons);
-            AppColors.BitmapPinActive = ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
-            AppColors.BitmapSearch = ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapOpenFolder =
+                ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapPin =
+                ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons);
+            AppColors.BitmapSettings =
+                ReadSvg(Properties.Resources.ic_fluent_settings_28_regular, htmlColorCodeIcons);
+            AppColors.BitmapRestart =
+                ReadSvg(Properties.Resources.ic_fluent_arrow_sync_24_regular, htmlColorCodeIcons);
+            AppColors.BitmapPinActive =
+                ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
+            AppColors.BitmapSearch =
+                ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSearchField;
             colorAndCode.Color = Color.FromArgb(255, 255, 255);
@@ -456,8 +498,6 @@ namespace SystemTrayMenu
 
         private static void UpgradeIfNotUpgraded()
         {
-            // string path = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming).FilePath;
-            // path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             if (!Settings.Default.IsUpgraded)
             {
                 Settings.Default.Upgrade();

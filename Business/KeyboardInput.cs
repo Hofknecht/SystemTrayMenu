@@ -173,10 +173,14 @@ namespace SystemTrayMenu.Handler
             ClearIsSelectedByKey();
         }
 
-        internal void SearchTextChanged(Menu menu)
+        internal void SearchTextChanged(Menu menu, bool isSearchStringEmpty)
         {
             DataGridView dgv = menu.GetDataGridView();
-            if (dgv.Rows.Count > 0)
+            if (isSearchStringEmpty)
+            {
+                ClearIsSelectedByKey();
+            }
+            else if (dgv.Rows.Count > 0)
             {
                 Select(dgv, 0, true);
             }

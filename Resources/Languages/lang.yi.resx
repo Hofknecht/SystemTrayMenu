@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>וועגן SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>אקעי</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>אַפּ אָנהייב</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>אַרויסגאַנג אַפּ</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Directory</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Directory ליידיק</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>דעטאַילס</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>סיסטעם אינפֿאָרמאַציע</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Directory ינאַקסעסאַבאַל</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>שפּראַך</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>קלאָץ טעקע</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>הייב אן נאכאמאל</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>קען נישט רעגיסטרירן די הייס שליסל.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>אַבאָרט</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>אַלגעמיינע</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>האָטקיי</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>אָנהייבן מיט Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>סעטטינגס</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>אָפט געשטעלטע פֿראגן</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>לייענען די FAQ און דעמאָלט קלייַבן אַ וואָרצל וועגווייַזער פֿאַר די SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>אויסקלייַבן וועגווייַזער</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>דיין וואָרצל וועגווייַזער פֿאַר די אַפּ טוט נישט עקסיסטירן אָדער איז ליידיק! טוישן די וואָרצל וועגווייַזער אָדער שטעלן עטלעכע טעקעס, דיירעקטעריז אָדער דורכוועג אין דער וואָרצל וועגווייַזער.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>איר האָבן קיין אַקסעס צו דער וואָרצל וועגווייַזער פון די אַפּ. געבן אַקסעס צו דער וועגווייַזער אָדער טוישן די וואָרצל וועגווייַזער.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>איין גיט צו עפענען אַן עלעמענט</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>קאָליר סכעמע טונקל שטענדיק אַקטיוו</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>אַוואַנסירטע</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>אין מויז אָרט</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>טשאַנגינג וועגווייַזער</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>דריקט</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>קאַסטאַמייז</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>פעליקייַט</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>אויב דער פאָקוס איז פאַרפאַלן און אויב די מויז איז נאָך אויף די מעניו</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>מיליסעקאַנדז ביז אַ מעניו אָפּענס ווען די מויז איז אויף עס</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב אין דעם פאַל די מויז דעמאָלט בלעטער די מעניו</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>פּיקסעלס מאַקסימום מעניו ברייט</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>בלײַבט אָפֿן</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>צייט ביז אַ מעניו אָפּענס</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>אויב אַ עלעמענט איז קליקט</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>הינטערגרונט</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>געעפנט וועגווייַזער</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>גרענעץ פון געעפנט וועגווייַזער</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>זוכן פעלד</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>אויסגעקליבן עלעמענט</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>גרענעץ פון אויסגעקליבן עלעמענט</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>קאָרעוו וועגווייַזער</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>היט קאַנפיגיעריישאַן אין אַפּלאַקיישאַן וועגווייַזער</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>קאָנפיגוראַטיאָן טעקע און קלאָץ טעקע</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>עפענען אַפּלאַקיישאַן וועגווייַזער</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>פּיקסעלס מאַקסימום מעניו הייך</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>פייַל</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>פייַל ווען קליקינג</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>פייַל בשעת מויז כאַווערז איבער אים</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>הינטערגרונט פון פייַל ווען קליקינג</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>הינטערגרונט פון פייַל בשעת מויז כאַווערז איבער אים</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>קאָליר סכעמע טונקל</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>קאָליר סכעמע העל</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>אַפּ מעניו</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>סקראָלבאַר</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>סליידער</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>סליידער בשעת דראַגינג</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>סליידער בשעת די מויז כאַווז איבער אים 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>סליידער בשעת די מויז כאַווז איבער אים 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>ניצן ייקאַן פון וועגווייַזער</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>גרייס</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>גרענעץ פון מעניו</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>ייקאַנז</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>שטעלן דורך קאָנטעקסט מעניו</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>שטעלן ווי וועגווייַזער</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>loading</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>פּראָבלעם מיט דורכוועג לינק</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>דער נומער וואָס דער דורכוועג רעפערס צו איז פארענדערט אָדער אריבערגעפארן, אַזוי דעם דורכוועג וועט ניט מער אַרבעט רעכט.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>עפענען וועגווייַזער</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>טאַסק מאַנאַגער</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>דיאַקטיווייטיד</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>אַקטיווייטיד</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>מומחה</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>אויב דער פאָקוס איז פאַרפאַלן און די אַרייַן key איז געדריקט</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב אין דעם פאַל די מעניו איז נישט ריאַקטיווייטיד</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>ווייַזן אין טאַסקבאַר</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>לייג וועגווייַזער</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>לייג אינהאַלט פון וועגווייַזער צו וואָרצל וועגווייַזער</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Directory פּאַטס</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>דירעקטעריז</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>רעקורסיווע</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>אַראָפּנעמען וועגווייַזער</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>בלויז פילעס</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>ויסמעקן קאַש אויב מער ווי די נומער פון זאכן</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>לייג מוסטער וועגווייַזער 'אָנהייב מעניו'</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>רודערן הייך אין פּראָצענט</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>קייַלעכיק עקן</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>אויסזען</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>לינקס אונטן</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>רעכטס אונטן</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>הויפּט מעניו אויס</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>מויז אָרט (אויבן טאַסקבאַר בילדל)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>מנהג (שלעפּן עס צו די צונעמען אָרט)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>עלעמענט</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>עלעמענטן</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>דזשענערייט פאָר שאָרטקאַץ אויף סטאַרטאַפּ</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>קאַש</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>שטענדיק ווייַזן</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>פאַרבאָרגן טעקעס און דירעקטעריז</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>קיינמאָל ווייַזן</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>גרייס און אָרט</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>ניצן אָפּערייטינג סיסטעם סעטטינגס</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>ווייַזן בלויז ווי זוכן רעזולטאַט</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>איין גיט צו עפענען אַ וועגווייַזער</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>נעבן דעם פריערדיקן</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>אָפסעט דורך בילדצעלן</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>אָוווערלאַפּינג</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>אונטער מעניו איז ארויס</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>גרייס פון די ייקאַנז אין פּראָצענט</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>שטיצן SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>פאַדינג</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>שיקן האָטקיי צו אנדערע בייַשפּיל</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>סאָרטירט לויט דאַטע</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>סאָרטירט לויט נאָמען</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>סאָרטינג</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>נאָכמאַכן רודערן נומער דורך שלעפּן קאַפּ</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>שלעפּן</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>מעגילע דורך לאַקכענען</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>פילטער מעניו לויט טעקע טיפּ, למשל: *.עקסע|*.דלל</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>ווייַזן ציילן פון עלעמענטן אונטן</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>ווייַז דער טיטל פון דער Directory אויבן</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסל 'עפֿן טעקע'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסל 'שפּין מעניו'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסל 'סעטטינגס'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ווייַזן פֿונקציע שליסל 'ריסטאַרט'</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>ווייַזן זוכן באַר</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>שפּאָרן קלאָץ טעקע אין אַפּלאַקיישאַן וועגווייַזער</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>ווייַזן לינק אָוווערליי</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Directory פון אינטערנעט דורכוועג יקאָנס</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>סאָרטירט לויט טיפּ און דאַטע</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>סאָרטירט לויט טיפּ און נאָמען</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>זוך נייע ווערסיעס</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>גיין צו אראפקאפיע בלאַט</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>לעצטע בנימצא ווערסיע:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>ניו ווערסיע בנימצא!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>איר האָט די לעצטע ווערסיע פון ​​SystemTrayMenu!</value>
+  </data>
+</root>

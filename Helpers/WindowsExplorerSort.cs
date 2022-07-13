@@ -11,21 +11,7 @@ namespace SystemTrayMenu.Helper
     {
         public int Compare(string x, string y)
         {
-            if (Properties.Settings.Default.SortFolderAndFilesByDate)
-            {
-                if (new FileInfo(x).LastWriteTime > new FileInfo(y).LastWriteTime)
-                {
-                    return -1;
-                }
-                else
-                {
-                    return 1;
-                }
-            }
-            else
-            {
-                return DllImports.NativeMethods.ShlwapiStrCmpLogicalW(x, y);
-            }
+            return DllImports.NativeMethods.ShlwapiStrCmpLogicalW(x, y);
         }
     }
 }

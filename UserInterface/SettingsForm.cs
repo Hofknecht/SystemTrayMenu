@@ -7,6 +7,7 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Globalization;
     using System.IO;
     using System.Reflection;
     using System.Text;
@@ -104,26 +105,28 @@ namespace SystemTrayMenu.UserInterface
             {
                 Text = Translator.GetText("Settings");
                 tabPageGeneral.Text = Translator.GetText("General");
-                groupBoxFolder.Text = Translator.GetText("Folder");
-                buttonChangeFolder.Text = Translator.GetText("Change folder");
-                buttonOpenFolder.Text = Translator.GetText("Open Folder");
-                checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from folder");
-                checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
-                groupBoxUSB.Text = Translator.GetText("USB");
-                buttonChangeRelativeFolder.Text = Translator.GetText("Change to relative folder");
-                checkBoxStoreConfigAtAssemblyLocation.Text = Translator.GetText("Store config at the assembly location");
-                buttonOpenAssemblyLocation.Text = Translator.GetText("Open the assembly location");
-                groupBoxAutostart.Text = Translator.GetText("Autostart");
+                groupBoxFolder.Text = Translator.GetText("Directory");
+                buttonChangeFolder.Text = Translator.GetText("Changing directory");
+                buttonOpenFolder.Text = Translator.GetText("Open directory");
+                checkBoxSetFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
+                groupBoxConfigAndLogfile.Text = Translator.GetText("Configuration file and log file");
+                buttonChangeRelativeFolder.Text = Translator.GetText("Relative directory");
+                checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration in application directory");
+                checkBoxSaveLogFileInApplicationDirectory.Text = Translator.GetText("Saving log file in application directory");
+                buttonOpenAssemblyLocation.Text = Translator.GetText("Open application directory");
+                groupBoxAutostart.Text = Translator.GetText("App start");
                 if (IsStartupTask())
                 {
                     groupBoxAutostart.Text += $" ({Translator.GetText("Task Manager")})";
                 }
 
-                checkBoxAutostart.Text = Translator.GetText("Launch on startup");
-                buttonAddTaskManagerStartupTask.Text = Translator.GetText("Launch on startup");
+                checkBoxAutostart.Text = Translator.GetText("Start with Windows");
+                checkBoxCheckForUpdates.Text = Translator.GetText("Check for updates");
+                buttonAddStartup.Text = Translator.GetText("Start with Windows");
                 groupBoxHotkey.Text = Translator.GetText("Hotkey");
                 buttonHotkeyDefault.Text = Translator.GetText("Default");
                 groupBoxLanguage.Text = Translator.GetText("Language");
+                buttonGeneralDefault.Text = Translator.GetText("Default");
 
                 tabPageSizeAndLocation.Text = Translator.GetText("Size and location");
                 groupBoxSize.Text = Translator.GetText("Size");
@@ -132,12 +135,12 @@ namespace SystemTrayMenu.UserInterface
                 labelRowHeightInPercentage.Text = Translator.GetText("Row height in percent");
                 labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
                 labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
-                groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears at");
+                groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears");
                 radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
                 radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate place)");
-                radioButtonAppearAtMouseLocation.Text = Translator.GetText("Mouse location");
-                groupBoxSubMenuAppearAt.Text = Translator.GetText("Sub menu appears at");
+                radioButtonAppearAtMouseLocation.Text = Translator.GetText("At mouse location");
+                groupBoxSubMenuAppearAt.Text = Translator.GetText("Sub menu appears");
                 radioButtonNextToPreviousMenu.Text = Translator.GetText("Next to the previous one");
                 radioButtonOverlapping.Text = Translator.GetText("Overlapping");
                 labelOverlappingByPixelsOffset.Text = Translator.GetText("Offset by pixels");
@@ -147,35 +150,39 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
                 checkBoxSendHotkeyInsteadKillOtherInstances.Text = Translator.GetText("Send hotkey to other instance");
-                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an item instead of double click");
-                checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory instead of double click");
+                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element");
+                checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory");
                 groupBoxDrag.Text = Translator.GetText("Drag");
                 checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
-                groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and folders");
-                radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
-                radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show hidden files, folders or drives");
-                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always Show hidden files, folders or drives");
+                groupBoxInternetShortcutIcons.Text = Translator.GetText("Directory of Internet Shortcut Icons");
+                buttonChangeIcoFolder.Text = Translator.GetText("Changing directory");
                 groupBoxSorting.Text = Translator.GetText("Sorting");
-                radioButtonSortByName.Text = Translator.GetText("By name");
-                radioButtonSortByDate.Text = Translator.GetText("By date");
+                radioButtonSortByTypeAndName.Text = Translator.GetText("Sorted by type and name");
+                radioButtonSortByTypeAndDate.Text = Translator.GetText("Sorted by type and date");
+                radioButtonSortByName.Text = Translator.GetText("Sorted by name");
+                radioButtonSortByDate.Text = Translator.GetText("Sorted by date");
+                groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");
+                radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
+                radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show");
+                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always show");
                 buttonAdvancedDefault.Text = Translator.GetText("Default");
 
-                tabPageFolders.Text = Translator.GetText("Folders");
-                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add content of folders to main menu");
+                tabPageFolders.Text = Translator.GetText("Directories");
+                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add content of directory to root directory");
                 checkBoxShowOnlyAsSearchResult.Text = Translator.GetText("Show only as search result");
-                buttonAddFolderToRootFolder.Text = Translator.GetText("Add folder");
-                buttonRemoveFolder.Text = Translator.GetText("Remove folder");
-                ColumnFolder.HeaderText = Translator.GetText("Folder paths");
+                buttonAddFolderToRootFolder.Text = Translator.GetText("Add directory");
+                buttonRemoveFolder.Text = Translator.GetText("Remove directory");
+                ColumnFolder.HeaderText = Translator.GetText("Directory paths");
                 ColumnRecursiveLevel.HeaderText = Translator.GetText("Recursive");
                 ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
-                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample 'Start Menu' folder");
+                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample directory 'Start Menu'");
                 buttonDefaultFolders.Text = Translator.GetText("Default");
-                checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate shortcuts to drives");
+                checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate drive shortcuts on startup");
 
                 tabPageExpert.Text = Translator.GetText("Expert");
                 groupBoxStaysOpen.Text = Translator.GetText("Stays open");
-                checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an item was clicked");
+                checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an element was clicked");
                 checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
                 labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if in this case the mouse then leaves the menu");
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
@@ -183,21 +190,29 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = Translator.GetText("If the focus is lost and the Enter key was pressed");
                 labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if in this case the menu is not reactivated");
                 groupBoxCache.Text = Translator.GetText("Cache");
-                checkBoxCacheMainMenu.Text = Translator.GetText("Cache main menu");
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 groupBoxSearchPattern.Text = Translator.GetText("Filter menu by file type e.g.: *.exe|*.dll");
                 buttonExpertDefault.Text = Translator.GetText("Default");
 
                 tabPageCustomize.Text = Translator.GetText("Customize");
                 groupBoxAppearance.Text = Translator.GetText("Appearance");
+                checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from directory");
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
+                checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Color scheme dark always active");
                 checkBoxUseFading.Text = Translator.GetText("Fading");
-                checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Dark Mode always active");
+                checkBoxShowLinkOverlay.Text = Translator.GetText("Show link overlay");
+                checkBoxShowDirectoryTitleAtTop.Text = Translator.GetText("Show directory title at top");
+                checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements below");
+                checkBoxShowSearchBar.Text = Translator.GetText("Show search bar");
+                checkBoxShowFunctionKeyOpenFolder.Text = Translator.GetText("Show function key 'Open Folder'");
+                checkBoxShowFunctionKeyPinMenu.Text = Translator.GetText("Show function key 'Pin menu'");
+                checkBoxShowFunctionKeySettings.Text = Translator.GetText("Show function key 'Settings'");
+                checkBoxShowFunctionKeyRestart.Text = Translator.GetText("Show function key 'Restart'");
                 buttonAppearanceDefault.Text = Translator.GetText("Default");
-                groupBoxColorsLightMode.Text = Translator.GetText("Colors Light Mode");
-                groupBoxColorsDarkMode.Text = Translator.GetText("Colors Dark Mode");
-                labelMenuLightMode.Text = Translator.GetText("Menu");
-                labelMenuDarkMode.Text = Translator.GetText("Menu");
+                groupBoxColorsLightMode.Text = Translator.GetText("Color scheme bright");
+                groupBoxColorsDarkMode.Text = Translator.GetText("Color scheme dark");
+                labelMenuLightMode.Text = Translator.GetText("App menu");
+                labelMenuDarkMode.Text = Translator.GetText("App menu");
                 labelScrollbarLightMode.Text = Translator.GetText("Scrollbar");
                 labelScrollbarDarkMode.Text = Translator.GetText("Scrollbar");
                 labelIcons.Text = Translator.GetText("Icons");
@@ -208,94 +223,132 @@ namespace SystemTrayMenu.UserInterface
                 labelBackgroundBorderDarkMode.Text = Translator.GetText("Border of menu");
                 labelSearchField.Text = Translator.GetText("Search field");
                 labelSearchFieldDarkMode.Text = Translator.GetText("Search field");
-                labelOpenFolder.Text = Translator.GetText("Opened folder");
-                labelOpenFolderDarkMode.Text = Translator.GetText("Opened folder");
-                labelOpenFolderBorder.Text = Translator.GetText("Border of opened folder");
-                labelOpenFolderBorderDarkMode.Text = Translator.GetText("Border of opened folder");
-                labelSelectedItem.Text = Translator.GetText("Selected item");
-                labelSelectedItemDarkMode.Text = Translator.GetText("Selected item");
-                labelSelectedItemBorder.Text = Translator.GetText("Border of selected item");
-                labelSelectedItemBorderDarkMode.Text = Translator.GetText("Border of selected item");
+                labelOpenFolder.Text = Translator.GetText("Opened directory");
+                labelOpenFolderDarkMode.Text = Translator.GetText("Opened directory");
+                labelOpenFolderBorder.Text = Translator.GetText("Border of opened directory");
+                labelOpenFolderBorderDarkMode.Text = Translator.GetText("Border of opened directory");
+                labelSelectedItem.Text = Translator.GetText("Selected element");
+                labelSelectedItemDarkMode.Text = Translator.GetText("Selected element");
+                labelSelectedItemBorder.Text = Translator.GetText("Border of selected element");
+                labelSelectedItemBorderDarkMode.Text = Translator.GetText("Border of selected element");
                 labelScrollbarBackground.Text = Translator.GetText("Background");
                 labelColorDarkModeScrollbarBackground.Text = Translator.GetText("Background");
                 labelSlider.Text = Translator.GetText("Slider");
                 labelColorDarkModeSlider.Text = Translator.GetText("Slider");
                 labelSliderDragging.Text = Translator.GetText("Slider while dragging");
                 labelColorDarkModeSliderDragging.Text = Translator.GetText("Slider while dragging");
-                labelSliderHover.Text = Translator.GetText("Slider while mouse hovers 1");
-                labelColorDarkModeSliderHover.Text = Translator.GetText("Slider while mouse hovers 1");
-                labelSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers 2");
-                labelColorDarkModeSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers 2");
+                labelSliderHover.Text = Translator.GetText("Slider while mouse hovers over it 1");
+                labelColorDarkModeSliderHover.Text = Translator.GetText("Slider while mouse hovers over it 1");
+                labelSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers over it 2");
+                labelColorDarkModeSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers over it 2");
                 labelArrow.Text = Translator.GetText("Arrow");
                 labelColorDarkModeArrow.Text = Translator.GetText("Arrow");
                 labelArrowClick.Text = Translator.GetText("Arrow when clicking");
                 labelColorDarkModeArrowClick.Text = Translator.GetText("Arrow when clicking");
                 labelArrowClickBackground.Text = Translator.GetText("Background of arrow when clicking");
                 labelColorDarkModeArrowClickBackground.Text = Translator.GetText("Background of arrow when clicking");
-                labelArrowHover.Text = Translator.GetText("Arrow while mouse hovers");
-                labelColorDarkModeArrowHover.Text = Translator.GetText("Arrow while mouse hovers");
-                labelArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers");
-                labelColorDarkModeArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers");
+                labelArrowHover.Text = Translator.GetText("Arrow while mouse hovers over it");
+                labelColorDarkModeArrowHover.Text = Translator.GetText("Arrow while mouse hovers over it");
+                labelArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers over it");
+                labelColorDarkModeArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers over it");
 
                 buttonColorsDefault.Text = Translator.GetText("Default");
                 buttonColorsDefaultDarkMode.Text = Translator.GetText("Default");
                 buttonOk.Text = Translator.GetText("OK");
-                buttonCancel.Text = Translator.GetText("buttonCancel");
+                buttonCancel.Text = Translator.GetText("Abort");
             }
 
-            InitializeFolder();
-            void InitializeFolder()
+            textBoxFolder.Text = Config.Path;
+            checkBoxSetFolderByWindowsContextMenu.Checked = Settings.Default.SetFolderByWindowsContextMenu;
+            checkBoxSaveConfigInApplicationDirectory.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
+            checkBoxSaveLogFileInApplicationDirectory.Checked = Settings.Default.SaveLogFileInApplicationDirectory;
+
+            if (IsStartupTask())
             {
-                textBoxFolder.Text = Config.Path;
-                checkBoxUseIconFromRootFolder.Checked =
-                    Settings.Default.UseIconFromRootFolder;
-                checkBoxPossibilityToSelectFolderByWindowsContextMenu.Checked =
-                    Settings.Default.PossibilityToSelectFolderByWindowsContextMenu;
+                checkBoxAutostart.Visible = false;
+                labelStartupStatus.Text = string.Empty;
+            }
+            else
+            {
+                buttonAddStartup.Visible = false;
+                labelStartupStatus.Visible = false;
+                checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
             }
 
-            InitializeAutostart();
-            void InitializeAutostart()
-            {
-                if (IsStartupTask())
-                {
-                    checkBoxAutostart.Visible = false;
-                    labelStartupTaskStatus.Text = string.Empty;
-                }
-                else
-                {
-                    buttonAddTaskManagerStartupTask.Visible = false;
-                    labelStartupTaskStatus.Visible = false;
-                    checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
-                }
-            }
-
-            InitializeHotkey();
-            void InitializeHotkey()
-            {
-                textBoxHotkey.SetHotkey(Settings.Default.HotKey);
-            }
+            checkBoxCheckForUpdates.Checked = Settings.Default.CheckForUpdates;
+            textBoxHotkey.SetHotkey(Settings.Default.HotKey);
 
             InitializeLanguage();
             void InitializeLanguage()
             {
                 List<Language> dataSource = new()
                 {
+                    new Language() { Name = "Afrikaans", Value = "af" },
+                    new Language() { Name = "Azərbaycan", Value = "az" },
+                    new Language() { Name = "bahasa Indonesia", Value = "id" },
+                    new Language() { Name = "català", Value = "ca" },
                     new Language() { Name = "čeština", Value = "cs" },
+                    new Language() { Name = "Cymraeg", Value = "cy" },
+                    new Language() { Name = "dansk", Value = "da" },
                     new Language() { Name = "Deutsch", Value = "de" },
+                    new Language() { Name = "eesti keel", Value = "et" },
                     new Language() { Name = "English", Value = "en" },
                     new Language() { Name = "Español", Value = "es" },
+                    new Language() { Name = "Esperanto", Value = "eo" },
+                    new Language() { Name = "euskara", Value = "eu" },
+                    new Language() { Name = "Filipino", Value = "tl" },
                     new Language() { Name = "Français", Value = "fr" },
-                    new Language() { Name = "Italiano", Value = "it" },
+                    new Language() { Name = "Gaeilge", Value = "it" },
+                    new Language() { Name = "galego", Value = "gl" },
+                    new Language() { Name = "Hrvatski", Value = "hr" },
+                    new Language() { Name = "Irish", Value = "ga" },
+                    new Language() { Name = "íslenskur", Value = "is" },
+                    new Language() { Name = "kiswahili", Value = "sw" },
+                    new Language() { Name = "Kreyòl ayisyen", Value = "ht" },
+                    new Language() { Name = "Latinus", Value = "la" },
+                    new Language() { Name = "latviski", Value = "lv" },
+                    new Language() { Name = "lietuvių", Value = "lt" },
+                    new Language() { Name = "Magyar", Value = "hu" },
+                    new Language() { Name = "Malti", Value = "mt" },
+                    new Language() { Name = "Melayu", Value = "ms" },
                     new Language() { Name = "Nederlands", Value = "nl" },
+                    new Language() { Name = "norsk", Value = "no" },
+                    new Language() { Name = "Polski", Value = "pl" },
                     new Language() { Name = "Português (Brasil)", Value = "pt-BR" },
+                    new Language() { Name = "português (Portugal)", Value = "pt-PT" },
+                    new Language() { Name = "Română", Value = "ro" },
+                    new Language() { Name = "shqiptare", Value = "sq" },
+                    new Language() { Name = "Slovenščina", Value = "sl" },
+                    new Language() { Name = "slovenský", Value = "sk" },
+                    new Language() { Name = "Suorittaa loppuun", Value = "fi" },
+                    new Language() { Name = "svenska", Value = "sv" },
+                    new Language() { Name = "Tiếng Việt", Value = "vi" },
                     new Language() { Name = "Türkçe ", Value = "tr" },
+                    new Language() { Name = "Ελληνικά", Value = "el" },
+                    new Language() { Name = "беларуская", Value = "bg" },
+                    new Language() { Name = "македонски", Value = "mk" },
+                    new Language() { Name = "русский", Value = "ru" },
+                    new Language() { Name = "Српски", Value = "sr" },
+                    new Language() { Name = "український", Value = "uk" },
+                    new Language() { Name = "ქართული", Value = "ka" },
+                    new Language() { Name = "հայերեն", Value = "hy" },
+                    new Language() { Name = "יידיש", Value = "yi" },
+                    new Language() { Name = "עִברִית", Value = "iw" },
+                    new Language() { Name = "اردو", Value = "ur" },
+                    new Language() { Name = "عربي", Value = "ar" },
+                    new Language() { Name = "فارسی", Value = "fa" },
+                    new Language() { Name = "हिन्दी", Value = "hi" },
+                    new Language() { Name = "ગુજરાતી", Value = "gu" },
+                    new Language() { Name = "தமிழ்", Value = "ta" },
+                    new Language() { Name = "తెలుగు", Value = "te" },
+                    new Language() { Name = "ಕನ್ನಡ", Value = "kn" },
+                    new Language() { Name = "ไทย", Value = "th" },
+                    new Language() { Name = "ພາສາລາວ", Value = "lo" },
+                    new Language() { Name = "ខ្មែរ", Value = "km" },
+                    new Language() { Name = "한국어", Value = "ko" },
+                    new Language() { Name = "中文(正體)", Value = "zh-TW" },
                     new Language() { Name = "中文(简体)", Value = "zh-CN" },
                     new Language() { Name = "日本語", Value = "ja" },
-                    new Language() { Name = "한국어", Value = "ko" },
-                    new Language() { Name = "русский", Value = "ru" },
-                    new Language() { Name = "Tiếng Việt", Value = "vi" },
-                    new Language() { Name = "فارسی", Value = "fa" },
-                    new Language() { Name = "中文(正體)", Value = "zh-TW" },
                 };
                 comboBoxLanguage.DataSource = dataSource;
                 comboBoxLanguage.DisplayMember = "Name";
@@ -307,8 +360,6 @@ namespace SystemTrayMenu.UserInterface
                     comboBoxLanguage.SelectedValue = "en";
                 }
             }
-
-            checkBoxStoreConfigAtAssemblyLocation.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
 
             numericUpDownSizeInPercent.Minimum = 100;
             numericUpDownSizeInPercent.Maximum = 200;
@@ -415,11 +466,14 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxSwipeScrolling.Checked = Settings.Default.SwipeScrollingEnabled;
             }
 
+            textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
+            radioButtonSortByTypeAndName.Checked = Settings.Default.SortByTypeAndNameWindowsExplorerSort;
+            radioButtonSortByTypeAndDate.Checked = Settings.Default.SortByTypeAndDate;
+            radioButtonSortByName.Checked = Settings.Default.SortByName;
+            radioButtonSortByDate.Checked = Settings.Default.SortByDate;
             radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
             radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
             radioButtonAlwaysShowHiddenFiles.Checked = Settings.Default.AlwaysShowHiddenFiles;
-            radioButtonSortByName.Checked = !Settings.Default.SortFolderAndFilesByDate;
-            radioButtonSortByDate.Checked = Settings.Default.SortFolderAndFilesByDate;
 
             checkBoxShowOnlyAsSearchResult.Checked = Settings.Default.ShowOnlyAsSearchResult;
             try
@@ -464,14 +518,22 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilClosesAfterEnterPressed.Increment = 10;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = Settings.Default.TimeUntilClosesAfterEnterPressed;
 
-            checkBoxCacheMainMenu.Checked = Settings.Default.CacheMainMenu;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
             textBoxSearchPattern.Text = Settings.Default.SearchPattern;
 
+            checkBoxUseIconFromRootFolder.Checked = Settings.Default.UseIconFromRootFolder;
             checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
-            checkBoxUseFading.Checked = Settings.Default.UseFading;
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
+            checkBoxUseFading.Checked = Settings.Default.UseFading;
+            checkBoxShowLinkOverlay.Checked = Settings.Default.ShowLinkOverlay;
+            checkBoxShowDirectoryTitleAtTop.Checked = Settings.Default.ShowDirectoryTitleAtTop;
+            checkBoxShowSearchBar.Checked = Settings.Default.ShowSearchBar;
+            checkBoxShowCountOfElementsBelow.Checked = Settings.Default.ShowCountOfElementsBelow;
+            checkBoxShowFunctionKeyOpenFolder.Checked = Settings.Default.ShowFunctionKeyOpenFolder;
+            checkBoxShowFunctionKeyPinMenu.Checked = Settings.Default.ShowFunctionKeyPinMenu;
+            checkBoxShowFunctionKeySettings.Checked = Settings.Default.ShowFunctionKeySettings;
+            checkBoxShowFunctionKeyRestart.Checked = Settings.Default.ShowFunctionKeyRestart;
 
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
             textBoxColorSelecetedItemDarkMode.Text = Settings.Default.ColorDarkModeSelecetedItem;
@@ -676,7 +738,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private static void AddPossibilityToSelectFolderByWindowsContextMenu()
+        private static void AddSetFolderByWindowsContextMenu()
         {
             RegistryKey registryKeyContextMenu = null;
             RegistryKey registryKeyContextMenuCommand = null;
@@ -687,7 +749,7 @@ namespace SystemTrayMenu.UserInterface
                 string binLocation = Environment.ProcessPath;
                 if (registryKeyContextMenu != null)
                 {
-                    registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as SystemTrayMenu folder"));
+                    registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as directory"));
                     registryKeyContextMenu.SetValue("Icon", binLocation);
                 }
 
@@ -698,11 +760,11 @@ namespace SystemTrayMenu.UserInterface
                     registryKeyContextMenuCommand.SetValue(string.Empty, binLocation + " \"%1\"");
                 }
 
-                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = true;
+                Settings.Default.SetFolderByWindowsContextMenu = true;
             }
             catch (Exception ex)
             {
-                Log.Warn("SavePossibilityToSelectFolderByWindowsContextMenu failed", ex);
+                Log.Warn("SaveSetFolderByWindowsContextMenu failed", ex);
             }
             finally
             {
@@ -718,7 +780,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private static void RemovePossibilityToSelectFolderByWindowsContextMenu()
+        private static void RemoveSetFolderByWindowsContextMenu()
         {
             try
             {
@@ -736,11 +798,11 @@ namespace SystemTrayMenu.UserInterface
                     Registry.CurrentUser.DeleteSubKey(MenuName);
                 }
 
-                Settings.Default.PossibilityToSelectFolderByWindowsContextMenu = false;
+                Settings.Default.SetFolderByWindowsContextMenu = false;
             }
             catch (Exception ex)
             {
-                Log.Warn("DeletePossibilityToSelectFolderByWindowsContextMenu failed", ex);
+                Log.Warn("DeleteSetFolderByWindowsContextMenu failed", ex);
             }
         }
 
@@ -756,49 +818,99 @@ namespace SystemTrayMenu.UserInterface
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
-
-            tabControl.Size = new Size(
-                tabControl.Size.Width,
-                tableLayoutPanelGeneral.Size.Height + (int)(50 * Scaling.Factor));
-
             dataGridViewFolders.ClearSelection();
+            tabPageGeneral.AutoScrollMinSize = tableLayoutPanelGeneral.Size;
+            tabPageSizeAndLocation.AutoScrollMinSize = tableLayoutPanelSizeAndLocation.Size;
+            tabPageAdvanced.AutoScrollMinSize = tableLayoutPanelAdvanced.Size;
+            tabPageFolders.AutoScrollMinSize = tableLayoutPanelFoldersInRootFolder.Size;
+            tabPageExpert.AutoScrollMinSize = tableLayoutPanelExpert.Size;
+            tabPageCustomize.AutoScrollMinSize = tableLayoutPanelCustomize.Size;
+            tableLayoutPanelMain.Dock = DockStyle.Fill;
+            tabControl.Dock = DockStyle.Fill;
+            tabPageGeneral.Dock = DockStyle.Fill;
+            tableLayoutPanelGeneral.Dock = DockStyle.Fill;
+            tabPageSizeAndLocation.Dock = DockStyle.Fill;
+            tableLayoutPanelSizeAndLocation.Dock = DockStyle.Fill;
+            tabPageAdvanced.Dock = DockStyle.Fill;
+            tableLayoutPanelAdvanced.Dock = DockStyle.Fill;
+            tabPageFolders.Dock = DockStyle.Fill;
+            tableLayoutPanelFoldersInRootFolder.Dock = DockStyle.Fill;
+            tabPageExpert.Dock = DockStyle.Fill;
+            tableLayoutPanelExpert.Dock = DockStyle.Fill;
+            tabPageCustomize.Dock = DockStyle.Fill;
+            tableLayoutPanelCustomize.Dock = DockStyle.Fill;
+        }
+
+        private void SettingsForm_Shown(object sender, EventArgs e)
+        {
+            Size size = Size;
+            SuspendLayout();
+            AutoSize = false;
+            AutoSizeMode = AutoSizeMode.GrowOnly;
+            Size = size;
+            textBoxFolder.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxHotkey.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxIcoFolder.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewFolders.Dock = DockStyle.Fill;
+            textBoxSearchPattern.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Opacity = 1;
+            ResumeLayout();
         }
 
         private void ButtonOk_Click(object sender, EventArgs e)
         {
-            Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.Checked;
+            if (checkBoxSetFolderByWindowsContextMenu.Checked)
+            {
+                AddSetFolderByWindowsContextMenu();
+            }
+            else
+            {
+                RemoveSetFolderByWindowsContextMenu();
+            }
+
+            Settings.Default.SaveLogFileInApplicationDirectory = checkBoxSaveLogFileInApplicationDirectory.Checked;
+            if (Settings.Default.SaveLogFileInApplicationDirectory)
+            {
+                try
+                {
+                    string fileNameToCheckWriteAccess = "CheckWriteAccess";
+                    File.WriteAllText(fileNameToCheckWriteAccess, fileNameToCheckWriteAccess);
+                    File.Delete(fileNameToCheckWriteAccess);
+                    Settings.Default.SaveLogFileInApplicationDirectory = true;
+                }
+                catch (Exception ex)
+                {
+                    Settings.Default.SaveLogFileInApplicationDirectory = false;
+                    Log.Warn($"Failed to save log file in application folder {Log.GetLogFilePath()}", ex);
+                }
+            }
 
             if (!IsStartupTask())
             {
-                SaveAutostartRegistryEntry();
-            }
-
-            SaveHotkey();
-            void SaveHotkey()
-            {
-                Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(
-                    textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-            }
-
-            SaveLanguage();
-            void SaveLanguage()
-            {
-                Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
-                Translator.Initialize();
-            }
-
-            PossibilityToSelectFolderByWindowsContextMenu();
-            void PossibilityToSelectFolderByWindowsContextMenu()
-            {
-                if (checkBoxPossibilityToSelectFolderByWindowsContextMenu.Checked)
+                if (checkBoxAutostart.Checked)
                 {
-                    AddPossibilityToSelectFolderByWindowsContextMenu();
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                            @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                    key.SetValue(
+                        Assembly.GetExecutingAssembly().GetName().Name,
+                        Environment.ProcessPath);
+
+                    Settings.Default.IsAutostartActivated = true;
                 }
                 else
                 {
-                    RemovePossibilityToSelectFolderByWindowsContextMenu();
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                    key.DeleteValue("SystemTrayMenu", false);
+
+                    Settings.Default.IsAutostartActivated = false;
                 }
             }
+
+            Settings.Default.CheckForUpdates = checkBoxCheckForUpdates.Checked;
+
+            Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
+            Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
 
             Settings.Default.SizeInPercent = (int)numericUpDownSizeInPercent.Value;
             Settings.Default.IconSizeInPercent = (int)numericUpDownIconSizeInPercent.Value;
@@ -865,13 +977,16 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.SwipeScrollingEnabled = checkBoxSwipeScrolling.Checked;
             }
 
+            Settings.Default.PathIcoDirectory = textBoxIcoFolder.Text;
+            Settings.Default.SortByTypeAndNameWindowsExplorerSort = radioButtonSortByTypeAndName.Checked;
+            Settings.Default.SortByTypeAndDate = radioButtonSortByTypeAndDate.Checked;
+            Settings.Default.SortByName = radioButtonSortByName.Checked;
+            Settings.Default.SortByDate = radioButtonSortByDate.Checked;
             Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
             Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
             Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;
-            Settings.Default.SortFolderAndFilesByDate = radioButtonSortByDate.Checked;
 
             Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.Checked;
-
             Settings.Default.PathsAddToMainMenu = string.Empty;
             foreach (DataGridViewRow row in dataGridViewFolders.Rows)
             {
@@ -889,15 +1004,23 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
             Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed = checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked;
             Settings.Default.TimeUntilClosesAfterEnterPressed = (int)numericUpDownTimeUntilClosesAfterEnterPressed.Value;
-            Settings.Default.CacheMainMenu = checkBoxCacheMainMenu.Checked;
             Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
             Settings.Default.SearchPattern = textBoxSearchPattern.Text;
 
+            Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.Checked;
             Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
-            Settings.Default.UseFading = checkBoxUseFading.Checked;
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+            Settings.Default.UseFading = checkBoxUseFading.Checked;
+            Settings.Default.ShowLinkOverlay = checkBoxShowLinkOverlay.Checked;
+            Settings.Default.ShowDirectoryTitleAtTop = checkBoxShowDirectoryTitleAtTop.Checked;
+            Settings.Default.ShowSearchBar = checkBoxShowSearchBar.Checked;
+            Settings.Default.ShowCountOfElementsBelow = checkBoxShowCountOfElementsBelow.Checked;
+            Settings.Default.ShowFunctionKeyOpenFolder = checkBoxShowFunctionKeyOpenFolder.Checked;
+            Settings.Default.ShowFunctionKeyPinMenu = checkBoxShowFunctionKeyPinMenu.Checked;
+            Settings.Default.ShowFunctionKeySettings = checkBoxShowFunctionKeySettings.Checked;
+            Settings.Default.ShowFunctionKeyRestart = checkBoxShowFunctionKeyRestart.Checked;
 
-            if (checkBoxStoreConfigAtAssemblyLocation.Checked)
+            if (checkBoxSaveConfigInApplicationDirectory.Checked)
             {
                 CustomSettingsProvider.ActivateConfigPathAssembly();
                 TrySettingsDefaultSave();
@@ -916,7 +1039,7 @@ namespace SystemTrayMenu.UserInterface
                 }
                 catch (Exception ex)
                 {
-                    Log.Warn($"Failed to store config at assembly location {CustomSettingsProvider.ConfigPathAssembly}", ex);
+                    Log.Warn($"Failed to save configuration file in application folder {CustomSettingsProvider.ConfigPathAssembly}", ex);
                 }
             }
 
@@ -925,29 +1048,7 @@ namespace SystemTrayMenu.UserInterface
             Close();
         }
 
-        private void SaveAutostartRegistryEntry()
-        {
-            if (checkBoxAutostart.Checked)
-            {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                        @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.SetValue(
-                    Assembly.GetExecutingAssembly().GetName().Name,
-                    Environment.ProcessPath);
-
-                Settings.Default.IsAutostartActivated = true;
-            }
-            else
-            {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(
-                @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                key.DeleteValue("SystemTrayMenu", false);
-
-                Settings.Default.IsAutostartActivated = false;
-            }
-        }
-
-        private void ButtonAddTaskManagerStartupTask_Click(object sender, EventArgs e)
+        private void ButtonAddStartup_Click(object sender, EventArgs e)
         {
             _ = AddStartUpAsync();
             async Task AddStartUpAsync()
@@ -986,20 +1087,15 @@ namespace SystemTrayMenu.UserInterface
                 case StartupTaskState.Disabled:
                 case StartupTaskState.DisabledByUser:
                 case StartupTaskState.DisabledByPolicy:
-                    labelStartupTaskStatus.Text = Translator.GetText("Deactivated");
+                    labelStartupStatus.Text = Translator.GetText("Deactivated");
                     break;
                 case StartupTaskState.Enabled:
                 case StartupTaskState.EnabledByPolicy:
-                    labelStartupTaskStatus.Text = Translator.GetText("Activated");
+                    labelStartupStatus.Text = Translator.GetText("Activated");
                     break;
                 default:
                     break;
             }
-        }
-
-        private void ButtonHotkeyDefault_Click(object sender, EventArgs e)
-        {
-            textBoxHotkey.SetHotkey("Ctrl+LWin");
         }
 
         private void ButtonChange_Click(object sender, EventArgs e)
@@ -1042,6 +1138,26 @@ namespace SystemTrayMenu.UserInterface
                 textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             RegisterHotkeys();
             inHotkey = false;
+        }
+
+        private void ButtonHotkeyDefault_Click(object sender, EventArgs e)
+        {
+            textBoxHotkey.SetHotkey("Ctrl+LWin");
+        }
+
+        private void ButtonGeneralDefault_Click(object sender, EventArgs e)
+        {
+            checkBoxSetFolderByWindowsContextMenu.Checked = false;
+            checkBoxSaveConfigInApplicationDirectory.Checked = false;
+            checkBoxSaveLogFileInApplicationDirectory.Checked = false;
+            checkBoxAutostart.Checked = false;
+            checkBoxCheckForUpdates.Checked = false;
+        }
+
+        private void ButtonChangeIcoFolder_Click(object sender, EventArgs e)
+        {
+            Config.SetFolderIcoByUser();
+            textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
         }
 
         private void ButtonAddSampleStartMenuFolder_Click(object sender, EventArgs e)
@@ -1148,7 +1264,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownIconSizeInPercent.Value = 100;
             numericUpDownRowHeighteInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 400;
-            numericUpDownMenuHeight.Value = 600;
+            numericUpDownMenuHeight.Value = 450;
 
             radioButtonAppearAtTheBottomRight.Checked = false;
             radioButtonAppearAtTheBottomLeft.Checked = true;
@@ -1164,14 +1280,32 @@ namespace SystemTrayMenu.UserInterface
             checkBoxShowInTaskbar.Checked = true;
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = false;
             checkBoxOpenItemWithOneClick.Checked = true;
-            checkBoxOpenDirectoryWithOneClick.Checked = true;
+            checkBoxOpenDirectoryWithOneClick.Checked = false;
+            if (DllImports.NativeMethods.IsTouchEnabled())
+            {
+                checkBoxDragDropItems.Checked = false;
+                checkBoxSwipeScrolling.Checked = true;
+            }
+            else
+            {
+                checkBoxDragDropItems.Checked = true;
+                checkBoxSwipeScrolling.Checked = false;
+            }
 
-            radioButtonSystemSettingsShowHiddenFiles.Checked = true;
-            radioButtonNeverShowHiddenFiles.Checked = false;
-            radioButtonAlwaysShowHiddenFiles.Checked = false;
+            textBoxIcoFolder.Text = Path.Combine(
+                    Path.Combine(
+                        Environment.GetFolderPath(
+                            Environment.SpecialFolder.ApplicationData), $"SystemTrayMenu"), "ico");
+            if (!Directory.Exists(Settings.Default.PathIcoDirectory))
+            {
+                Directory.CreateDirectory(Settings.Default.PathIcoDirectory);
+            }
 
             radioButtonSortByName.Checked = true;
             radioButtonSortByDate.Checked = false;
+            radioButtonSystemSettingsShowHiddenFiles.Checked = true;
+            radioButtonNeverShowHiddenFiles.Checked = false;
+            radioButtonAlwaysShowHiddenFiles.Checked = false;
         }
 
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)
@@ -1192,7 +1326,6 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilOpens.Value = 100;
             checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = true;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = 200;
-            checkBoxCacheMainMenu.Checked = true;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
             textBoxSearchPattern.Text = string.Empty;
         }
@@ -1284,9 +1417,18 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonAppearanceDefault_Click(object sender, EventArgs e)
         {
-            checkBoxRoundCorners.Checked = true;
-            checkBoxUseFading.Checked = true;
+            checkBoxUseIconFromRootFolder.Checked = false;
+            checkBoxRoundCorners.Checked = false;
+            checkBoxUseFading.Checked = false;
             checkBoxDarkModeAlwaysOn.Checked = true;
+            checkBoxShowLinkOverlay.Checked = false;
+            checkBoxShowDirectoryTitleAtTop.Checked = false;
+            checkBoxShowSearchBar.Checked = true;
+            checkBoxShowCountOfElementsBelow.Checked = false;
+            checkBoxShowFunctionKeyOpenFolder.Checked = false;
+            checkBoxShowFunctionKeyPinMenu.Checked = false;
+            checkBoxShowFunctionKeySettings.Checked = false;
+            checkBoxShowFunctionKeyRestart.Checked = false;
         }
 
         private void ButtonDefaultColors_Click(object sender, EventArgs e)

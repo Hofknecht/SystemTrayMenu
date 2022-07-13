@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Tietoja SystemTrayMenusta</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>Sovelluksen käynnistys</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Poistu sovelluksesta</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Hakemisto</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Hakemisto tyhjä</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Yksityiskohdat</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Järjestelmän tiedot</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Hakemisto ei ole käytettävissä</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Kieli</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Loki tiedosto</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Uudelleenkäynnistää</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Pikanäppäintä ei voitu rekisteröidä.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Keskeyttää</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Kenraali</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Pikanäppäin</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Aloita Windowsilla</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>asetukset</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Usein Kysytyt Kysymykset</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Lue FAQ ja valitse sitten SystemTrayMenu-päähakemisto.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Valitse hakemisto</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Sovelluksen juurihakemistoa ei ole olemassa tai se on tyhjä! Muuta juurihakemistoa tai laita tiedostoja, hakemistoja tai pikakuvakkeita juurihakemistoon.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Sinulla ei ole pääsyä sovelluksen juurihakemistoon. Myönnä pääsy hakemistoon tai muuta juurihakemistoa.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Avaa elementti yhdellä napsautuksella</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Värimaailma tumma aina aktiivinen</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Pitkälle kehittynyt</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Hiiren sijainnissa</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Vaihdetaan hakemistoa</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Klikkaus</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Mukauta</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Oletus</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Jos tarkennus katoaa ja hiiri on edelleen valikossa</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Millisekuntia, kunnes valikko avautuu, kun hiiri on sen päällä</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisekuntia, kunnes valikko sulkeutuu, jos tässä tapauksessa hiiri poistuu valikosta</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Valikon enimmäisleveys pikseliä</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Pysyy auki</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Aika valikon avautumiseen</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Jos elementtiä napsautettiin</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Tausta</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Avattu hakemisto</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Avatun hakemiston reuna</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Hakukenttä</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Valittu elementti</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Valitun elementin reuna</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Suhteellinen hakemisto</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Tallenna asetukset sovellushakemistoon</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Asetustiedosto ja lokitiedosto</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Avaa sovellushakemisto</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Valikon enimmäiskorkeus pikseliä</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Nuoli</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Nuoli napsautettaessa</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Nuoli, kun hiiri on sen päällä</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Nuolen tausta klikattaessa</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Nuolen tausta, kun hiiri liikkuu sen päällä</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Värimaailma tumma</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Värimaailma kirkas</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Sovellusvalikko</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Vierityspalkki</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Liukusäädin</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Liukusäädin vedettäessä</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Liukusäädin, kun hiiri on sen päällä 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Liukusäädin, kun hiiri on sen päällä 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Käytä kuvaketta hakemistosta</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Koko</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Valikon reuna</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Kuvakkeet</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Kontekstivalikon asetus</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Aseta hakemistoksi</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Ladataan</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Ongelma pikalinkin kanssa</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Kohde, johon tämä pikakuvake viittaa, on muutettu tai siirretty, joten tämä pikakuvake ei enää toimi kunnolla.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Avaa hakemisto</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Tehtävienhallinta</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Ei käytössä</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktivoitu</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Asiantuntija</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Jos tarkennus katoaa ja Enter-näppäintä on painettu</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Millisekuntia, kunnes valikko sulkeutuu, jos valikkoa ei tässä tapauksessa aktivoida uudelleen</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Näytä tehtäväpalkissa</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Lisää hakemisto</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Lisää hakemiston sisältö juurihakemistoon</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Hakemistopolut</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Hakemistot</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekursiivinen</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Poista hakemisto</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Vain tiedostot</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Tyhjennä välimuisti, jos kohteita on enemmän kuin tämä määrä</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Lisää esimerkkihakemisto "Käynnistä-valikko"</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Rivin korkeus prosentteina</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Pyöreät kulmat</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Ulkomuoto</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Alhaalla vasemmalla</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Ala oikea</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Päävalikko tulee näkyviin</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Hiiren sijainti (tehtäväpalkin kuvakkeen yläpuolella)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Mukautettu (vedä se oikeaan paikkaan)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>elementti</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementtejä</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Luo aseman pikakuvakkeita käynnistyksen yhteydessä</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Kätkö</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Näytä aina</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Piilotetut tiedostot ja hakemistot</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Älä koskaan näytä</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Koko ja sijainti</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Käytä käyttöjärjestelmän asetuksia</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Näytä vain hakutuloksena</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Avaa hakemisto yhdellä napsautuksella</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Edellisen viereen</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Offset pikseleillä</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Päällekkäinen</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Alivalikko tulee näkyviin</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Kuvakkeiden koko prosentteina</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Tuki SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Häipyminen</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Lähetä pikanäppäin toiseen esiintymään</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Lajiteltu päivämäärän mukaan</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Lajiteltu nimen mukaan</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Lajittelu</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Kopioi rivikohta vetämällä pudottamalla</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Raahata</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Selaa pyyhkäisemällä</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Suodatinvalikko tiedostotyypin mukaan, esim.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Näytä elementtien lukumäärä alla</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Näytä hakemiston otsikko yläreunassa</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Näytä toimintonäppäin "Avaa kansio"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Näytä toimintonäppäin "Kiinnitä valikko"</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Näytä toimintonäppäin "Asetukset"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Näytä toimintonäppäin "Käynnistä uudelleen"</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Näytä hakupalkki</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Tallennetaan lokitiedostoa sovellushakemistoon</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Näytä linkin peittokuva</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Internet-pikakuvakkeiden hakemisto</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Lajiteltu tyypin ja päivämäärän mukaan</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Lajiteltu tyypin ja nimen mukaan</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Tarkista päivitykset</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Siirry lataussivulle</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Viimeisin saatavilla oleva versio:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Uusi versio saatavilla!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Sinulla on uusin SystemTrayMenu-versio!</value>
+  </data>
+</root>

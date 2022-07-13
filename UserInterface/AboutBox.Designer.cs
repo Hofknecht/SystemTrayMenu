@@ -43,18 +43,18 @@
             this.TabPanelDetails = new System.Windows.Forms.TabControl();
             this.TabPageApplication = new System.Windows.Forms.TabPage();
             this.AppInfoListView = new System.Windows.Forms.ListView();
-            this.colKey = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colKey = new System.Windows.Forms.ColumnHeader();
+            this.colValue = new System.Windows.Forms.ColumnHeader();
             this.TabPageAssemblies = new System.Windows.Forms.TabPage();
             this.AssemblyInfoListView = new System.Windows.Forms.ListView();
-            this.colAssemblyName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colAssemblyVersion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colAssemblyBuilt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colAssemblyCodeBase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colAssemblyName = new System.Windows.Forms.ColumnHeader();
+            this.colAssemblyVersion = new System.Windows.Forms.ColumnHeader();
+            this.colAssemblyBuilt = new System.Windows.Forms.ColumnHeader();
+            this.colAssemblyCodeBase = new System.Windows.Forms.ColumnHeader();
             this.TabPageAssemblyDetails = new System.Windows.Forms.TabPage();
             this.AssemblyDetailsListView = new System.Windows.Forms.ListView();
-            this.ColumnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColumnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColumnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.ColumnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.AssemblyNamesComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -76,10 +76,10 @@
             this.buttonDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDetails.AutoSize = true;
             this.buttonDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonDetails.Location = new System.Drawing.Point(85, 3);
+            this.buttonDetails.Location = new System.Drawing.Point(88, 3);
             this.buttonDetails.MinimumSize = new System.Drawing.Size(76, 23);
-            this.buttonDetails.Name = "Details";
-            this.buttonDetails.Size = new System.Drawing.Size(76, 23);
+            this.buttonDetails.Name = "buttonDetails";
+            this.buttonDetails.Size = new System.Drawing.Size(76, 25);
             this.buttonDetails.TabIndex = 25;
             this.buttonDetails.Text = "Details";
             this.buttonDetails.Click += new System.EventHandler(this.DetailsButton_Click);
@@ -99,10 +99,10 @@
             this.AppDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AppDateLabel.AutoSize = true;
-            this.AppDateLabel.Location = new System.Drawing.Point(3, 76);
+            this.AppDateLabel.Location = new System.Drawing.Point(3, 82);
             this.AppDateLabel.Margin = new System.Windows.Forms.Padding(3);
             this.AppDateLabel.Name = "AppDateLabel";
-            this.AppDateLabel.Size = new System.Drawing.Size(383, 13);
+            this.AppDateLabel.Size = new System.Drawing.Size(383, 15);
             this.AppDateLabel.TabIndex = 23;
             this.AppDateLabel.Text = "Built on %builddate%";
             // 
@@ -113,8 +113,8 @@
             this.buttonSystemInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonSystemInfo.Location = new System.Drawing.Point(3, 3);
             this.buttonSystemInfo.MinimumSize = new System.Drawing.Size(76, 23);
-            this.buttonSystemInfo.Name = "System Info";
-            this.buttonSystemInfo.Size = new System.Drawing.Size(76, 23);
+            this.buttonSystemInfo.Name = "buttonSystemInfo";
+            this.buttonSystemInfo.Size = new System.Drawing.Size(79, 25);
             this.buttonSystemInfo.TabIndex = 22;
             this.buttonSystemInfo.Text = "System Info";
             this.buttonSystemInfo.Visible = false;
@@ -125,10 +125,10 @@
             this.AppCopyrightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AppCopyrightLabel.AutoSize = true;
-            this.AppCopyrightLabel.Location = new System.Drawing.Point(3, 95);
+            this.AppCopyrightLabel.Location = new System.Drawing.Point(3, 103);
             this.AppCopyrightLabel.Margin = new System.Windows.Forms.Padding(3);
             this.AppCopyrightLabel.Name = "AppCopyrightLabel";
-            this.AppCopyrightLabel.Size = new System.Drawing.Size(383, 13);
+            this.AppCopyrightLabel.Size = new System.Drawing.Size(383, 15);
             this.AppCopyrightLabel.TabIndex = 21;
             this.AppCopyrightLabel.Text = "Copyright © %year%, %company%";
             // 
@@ -137,10 +137,10 @@
             this.AppVersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AppVersionLabel.AutoSize = true;
-            this.AppVersionLabel.Location = new System.Drawing.Point(3, 57);
+            this.AppVersionLabel.Location = new System.Drawing.Point(3, 61);
             this.AppVersionLabel.Margin = new System.Windows.Forms.Padding(3);
             this.AppVersionLabel.Name = "AppVersionLabel";
-            this.AppVersionLabel.Size = new System.Drawing.Size(383, 13);
+            this.AppVersionLabel.Size = new System.Drawing.Size(383, 15);
             this.AppVersionLabel.TabIndex = 20;
             this.AppVersionLabel.Text = "Version %version%";
             // 
@@ -149,10 +149,10 @@
             this.AppDescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AppDescriptionLabel.AutoSize = true;
-            this.AppDescriptionLabel.Location = new System.Drawing.Point(3, 22);
+            this.AppDescriptionLabel.Location = new System.Drawing.Point(3, 24);
             this.AppDescriptionLabel.Margin = new System.Windows.Forms.Padding(3);
             this.AppDescriptionLabel.Name = "AppDescriptionLabel";
-            this.AppDescriptionLabel.Size = new System.Drawing.Size(74, 13);
+            this.AppDescriptionLabel.Size = new System.Drawing.Size(86, 15);
             this.AppDescriptionLabel.TabIndex = 19;
             this.AppDescriptionLabel.Text = "%description%";
             // 
@@ -160,7 +160,7 @@
             // 
             this.GroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GroupBox1.Location = new System.Drawing.Point(3, 49);
+            this.GroupBox1.Location = new System.Drawing.Point(3, 53);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(383, 2);
             this.GroupBox1.TabIndex = 18;
@@ -175,7 +175,7 @@
             this.AppTitleLabel.Location = new System.Drawing.Point(3, 3);
             this.AppTitleLabel.Margin = new System.Windows.Forms.Padding(3);
             this.AppTitleLabel.Name = "AppTitleLabel";
-            this.AppTitleLabel.Size = new System.Drawing.Size(74, 13);
+            this.AppTitleLabel.Size = new System.Drawing.Size(86, 15);
             this.AppTitleLabel.TabIndex = 17;
             this.AppTitleLabel.Text = "%title%";
             // 
@@ -185,10 +185,10 @@
             this.buttonOk.AutoSize = true;
             this.buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonOk.Location = new System.Drawing.Point(167, 3);
+            this.buttonOk.Location = new System.Drawing.Point(170, 3);
             this.buttonOk.MinimumSize = new System.Drawing.Size(76, 23);
-            this.buttonOk.Name = "OK";
-            this.buttonOk.Size = new System.Drawing.Size(76, 23);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(76, 25);
             this.buttonOk.TabIndex = 16;
             this.buttonOk.Text = "OK";
             // 
@@ -198,7 +198,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MoreRichTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.MoreRichTextBox.Location = new System.Drawing.Point(3, 114);
+            this.MoreRichTextBox.Location = new System.Drawing.Point(3, 124);
             this.MoreRichTextBox.Name = "MoreRichTextBox";
             this.MoreRichTextBox.ReadOnly = true;
             this.MoreRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -215,7 +215,7 @@
             this.TabPanelDetails.Controls.Add(this.TabPageApplication);
             this.TabPanelDetails.Controls.Add(this.TabPageAssemblies);
             this.TabPanelDetails.Controls.Add(this.TabPageAssemblyDetails);
-            this.TabPanelDetails.Location = new System.Drawing.Point(3, 242);
+            this.TabPanelDetails.Location = new System.Drawing.Point(3, 252);
             this.TabPanelDetails.Name = "TabPanelDetails";
             this.TabPanelDetails.SelectedIndex = 0;
             this.TabPanelDetails.Size = new System.Drawing.Size(383, 149);
@@ -226,9 +226,9 @@
             // TabPageApplication
             // 
             this.TabPageApplication.Controls.Add(this.AppInfoListView);
-            this.TabPageApplication.Location = new System.Drawing.Point(4, 22);
+            this.TabPageApplication.Location = new System.Drawing.Point(4, 24);
             this.TabPageApplication.Name = "TabPageApplication";
-            this.TabPageApplication.Size = new System.Drawing.Size(375, 123);
+            this.TabPageApplication.Size = new System.Drawing.Size(375, 121);
             this.TabPageApplication.TabIndex = 0;
             this.TabPageApplication.Text = "Application";
             // 
@@ -240,10 +240,9 @@
             this.AppInfoListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AppInfoListView.FullRowSelect = true;
             this.AppInfoListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.AppInfoListView.HideSelection = false;
             this.AppInfoListView.Location = new System.Drawing.Point(0, 0);
             this.AppInfoListView.Name = "AppInfoListView";
-            this.AppInfoListView.Size = new System.Drawing.Size(375, 123);
+            this.AppInfoListView.Size = new System.Drawing.Size(375, 121);
             this.AppInfoListView.TabIndex = 16;
             this.AppInfoListView.UseCompatibleStateImageBehavior = false;
             this.AppInfoListView.View = System.Windows.Forms.View.Details;
@@ -261,9 +260,9 @@
             // TabPageAssemblies
             // 
             this.TabPageAssemblies.Controls.Add(this.AssemblyInfoListView);
-            this.TabPageAssemblies.Location = new System.Drawing.Point(4, 22);
+            this.TabPageAssemblies.Location = new System.Drawing.Point(4, 24);
             this.TabPageAssemblies.Name = "TabPageAssemblies";
-            this.TabPageAssemblies.Size = new System.Drawing.Size(375, 123);
+            this.TabPageAssemblies.Size = new System.Drawing.Size(375, 109);
             this.TabPageAssemblies.TabIndex = 1;
             this.TabPageAssemblies.Text = "Assemblies";
             // 
@@ -276,11 +275,10 @@
             this.colAssemblyCodeBase});
             this.AssemblyInfoListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AssemblyInfoListView.FullRowSelect = true;
-            this.AssemblyInfoListView.HideSelection = false;
             this.AssemblyInfoListView.Location = new System.Drawing.Point(0, 0);
             this.AssemblyInfoListView.MultiSelect = false;
             this.AssemblyInfoListView.Name = "AssemblyInfoListView";
-            this.AssemblyInfoListView.Size = new System.Drawing.Size(375, 123);
+            this.AssemblyInfoListView.Size = new System.Drawing.Size(375, 109);
             this.AssemblyInfoListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.AssemblyInfoListView.TabIndex = 13;
             this.AssemblyInfoListView.UseCompatibleStateImageBehavior = false;
@@ -312,9 +310,9 @@
             // 
             this.TabPageAssemblyDetails.Controls.Add(this.AssemblyDetailsListView);
             this.TabPageAssemblyDetails.Controls.Add(this.AssemblyNamesComboBox);
-            this.TabPageAssemblyDetails.Location = new System.Drawing.Point(4, 22);
+            this.TabPageAssemblyDetails.Location = new System.Drawing.Point(4, 24);
             this.TabPageAssemblyDetails.Name = "TabPageAssemblyDetails";
-            this.TabPageAssemblyDetails.Size = new System.Drawing.Size(375, 123);
+            this.TabPageAssemblyDetails.Size = new System.Drawing.Size(375, 109);
             this.TabPageAssemblyDetails.TabIndex = 2;
             this.TabPageAssemblyDetails.Text = "Assembly Details";
             // 
@@ -326,10 +324,9 @@
             this.AssemblyDetailsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AssemblyDetailsListView.FullRowSelect = true;
             this.AssemblyDetailsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.AssemblyDetailsListView.HideSelection = false;
-            this.AssemblyDetailsListView.Location = new System.Drawing.Point(0, 21);
+            this.AssemblyDetailsListView.Location = new System.Drawing.Point(0, 23);
             this.AssemblyDetailsListView.Name = "AssemblyDetailsListView";
-            this.AssemblyDetailsListView.Size = new System.Drawing.Size(375, 102);
+            this.AssemblyDetailsListView.Size = new System.Drawing.Size(375, 86);
             this.AssemblyDetailsListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.AssemblyDetailsListView.TabIndex = 19;
             this.AssemblyDetailsListView.UseCompatibleStateImageBehavior = false;
@@ -351,7 +348,7 @@
             this.AssemblyNamesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AssemblyNamesComboBox.Location = new System.Drawing.Point(0, 0);
             this.AssemblyNamesComboBox.Name = "AssemblyNamesComboBox";
-            this.AssemblyNamesComboBox.Size = new System.Drawing.Size(375, 21);
+            this.AssemblyNamesComboBox.Size = new System.Drawing.Size(375, 23);
             this.AssemblyNamesComboBox.Sorted = true;
             this.AssemblyNamesComboBox.TabIndex = 18;
             this.AssemblyNamesComboBox.SelectedIndexChanged += new System.EventHandler(this.AssemblyNamesComboBox_SelectedIndexChanged);
@@ -383,7 +380,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(389, 427);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(389, 439);
             this.tableLayoutPanel1.TabIndex = 28;
             // 
             // tableLayoutPanel4
@@ -397,12 +394,12 @@
             this.tableLayoutPanel4.Controls.Add(this.buttonSystemInfo, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.buttonDetails, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.buttonOk, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 396);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 406);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(246, 29);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(249, 31);
             this.tableLayoutPanel4.TabIndex = 29;
             // 
             // tableLayoutPanel2
@@ -419,7 +416,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 46);
             this.tableLayoutPanel2.TabIndex = 29;
             // 
             // tableLayoutPanel3
@@ -436,7 +433,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(80, 38);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(92, 42);
             this.tableLayoutPanel3.TabIndex = 25;
             // 
             // AboutBox

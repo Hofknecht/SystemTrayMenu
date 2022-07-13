@@ -21,7 +21,7 @@ namespace SystemTrayMenu.DllImports
             if (handle != IntPtr.Zero)
             {
                 region = System.Drawing.Region.FromHrgn(handle);
-                DeleteObject(handle);
+                _ = DeleteObject(handle);
                 success = true;
             }
 

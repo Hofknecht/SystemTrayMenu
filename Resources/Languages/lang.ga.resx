@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Maidir le SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>ceart go leor</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>Tosaigh app</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Scoir an app</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Eolaire</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Eolaire folamh</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Sonraí</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Eolas faoin gCóras</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Eolaire dorochtana</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Teanga</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Logchomhad</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Tosaigh arís</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Níorbh fhéidir an eochair te a chlárú.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>ginmhilleadh</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Ginearálta</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Eochair te</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Tosaigh le Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Socruithe</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Ceisteanna Coitianta</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Léigh na Ceisteanna Coitianta agus ansin roghnaigh eolaire fréimhe don SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Roghnaigh eolaire</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Níl do fhréamh-eolaire don aip ann nó tá sé folamh! Athraigh an eolaire fréimhe nó cuir roinnt comhad, eolairí nó aicearraí isteach sa fhréamh-eolaire.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Níl aon rochtain agat ar fhréamh-eolaire na haipe. Deonaigh rochtain ar an eolaire nó athraigh an t-eolaire fréamhacha.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Cliceáil amháin chun eilimint a oscailt</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Scéim dathanna dorcha i gcónaí gníomhach</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Casta</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Ag suíomh luch</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Eolaire a athrú</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Cliceáil</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Saincheap</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Réamhshocrú</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Má tá an fócas caillte agus má tá an luch fós ar an roghchlár</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Milleasoicindí go dtí go n-osclaíonn roghchlár nuair a bhíonn an luch air</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Milleasoicindí go dtí go ndúnann an roghchlár má fhágann an luch sa chás seo an roghchlár</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Uasleithead roghchláir picteilíní</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Fanann oscailte</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Am go dtí go n-osclaíonn roghchlár</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Má chliceáiltear eilimint</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Cúlra</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Comhadlann oscailte</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Teorainn an eolaire oscail</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Réimse cuardaigh</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Gné roghnaithe</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Teorainn na heiliminte roghnaithe</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Eolaire coibhneasta</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Sábháil cumraíocht i eolaire feidhmchlár</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Comhad cumraíochta agus logchomhad</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Oscail eolaire feidhmchlár</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Uasairde roghchláir picteilíní</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Saighead</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Arrow nuair a chliceáil</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Saighead agus luch hovers níos mó ná é</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Cúlra na saigheada nuair a chliceálann tú</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Cúlra na saigheada agus an luch ag foluain os a chionn</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Scéim dathanna dorcha</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Scéim dathanna geal</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Roghchlár app</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Scrollbharra</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Sleamhnán</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Sleamhnán agus tú ag tarraingt</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Sleamhnán agus an luch ag foluain os a chionn 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Sleamhnán agus an luch ag foluain os a chionn 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Úsáid deilbhín ón eolaire</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Méid</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Teorainn an roghchláir</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Deilbhíní</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Socraithe ag roghchlár comhthéacs</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Socraigh mar eolaire</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>ag lódáil</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Fadhb le nasc aicearra</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Athraíodh nó aistríodh an mhír dá dtagraíonn an t-aicearra seo, mar sin ní oibreoidh an t-aicearra seo i gceart a thuilleadh.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Oscail eolaire</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Bainisteoir Tasc</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Díghníomhaithe</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Gníomhachtaithe</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Saineolaí</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Má chailltear an fócas agus má bhrúitear an eochair Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milleasoicindí go dtí go ndúnann an roghchlár mura n-athghníomhaítear an roghchlár sa chás seo</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Taispeáin sa Tascbharra</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Cuir eolaire leis</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Cuir ábhar an eolaire leis an bhfréamheolaire</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Cosáin eolaire</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Comhadlanna</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Athchúrsach</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Bain eolaire</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Comhaid amháin</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Glan an taisce má tá níos mó ná an líon seo míreanna agat</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Cuir eolaire samplach 'Roghchlár Tosaigh' leis</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Airde ró i faoin gcéad</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>coirnéil bhabhta</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Dealramh</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Bun ar chlé</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Bun ar dheis</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Tá an príomh-roghchlár le feiceáil</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Suíomh luiche (Os cionn íocón an Tascbharra)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Saincheaptha (tarraing chuig an áit chuí é)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>eilimint</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>eilimintí</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Gin aicearraí tiomána ar am tosaithe</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Taisce</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Taispeáin i gcónaí</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Comhaid agus eolairí ceilte</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Ná taispeáin</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Méid agus suíomh</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Bain úsáid as socruithe an chórais oibriúcháin</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Taispeáin mar thoradh cuardaigh amháin</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Cliceáil amháin chun eolaire a oscailt</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>In aice leis an gceann roimhe seo</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Fritháireamh le picteilíní</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Forluí</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Feictear fo-roghchlár</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Méid na deilbhíní ina gcéad</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Tacaíocht SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>fading</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Seol hotkey chuig cás eile</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Sórtáilte de réir dáta</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Sórtáilte de réir ainm</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Sórtáil</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Cóipeáil mír ró trí tharraingt anuas</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Tarraing</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Scrollaigh trí swipe</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Scag an roghchlár de réir an chineáil comhaid m.sh.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Taispeáin líon na ndúl thíos</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Taispeáin teideal an eolaire ag barr</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Taispeáin an eochair feidhme 'Fillteán Oscailte'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Taispeáin an eochair fheidhme 'Roghchlár bioráin'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Taispeáin an eochair fheidhme 'Socruithe'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Taispeáin an eochair fheidhme 'Atosaigh'</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Taispeáin barra cuardaigh</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Comhad loga a shábháil i eolaire feidhmchlár</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Taispeáin forleagan naisc</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Eolaire de Dheilbhíní Aicearra Idirlín</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Sórtáilte de réir cineáil agus dáta</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Sórtáilte de réir cineáil agus ainm</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Seiceáil do nuashrónaithe</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Téigh go dtí an leathanach íoslódáil</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>An leagan is déanaí atá ar fáil:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Leagan nua ar fáil!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Tá an leagan is déanaí de SystemTrayMenu agat!</value>
+  </data>
+</root>

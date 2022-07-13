@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>حول SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>بدء التطبيق</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>الخروج من التطبيق</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>الدليل</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>الدليل فارغ</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>تفاصيل</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>معلومات النظام</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>الدليل لا يمكن الوصول إليه</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>لغة</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>ملف تسجيل</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>إعادة بدء</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>تعذر تسجيل مفتاح التشغيل السريع.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>إحباط</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>مفتاح التشغيل السريع</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>ابدأ بنظام Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>إعدادات</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>أسئلة مكررة</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>اقرأ الأسئلة الشائعة ثم اختر دليلًا جذريًا لقائمة SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>حدد الدليل</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>الدليل الجذر للتطبيق غير موجود أو أنه فارغ! قم بتغيير الدليل الجذر أو ضع بعض الملفات أو الدلائل أو الاختصارات في الدليل الجذر.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>ليس لديك حق الوصول إلى الدليل الجذر للتطبيق. امنح حق الوصول إلى الدليل أو قم بتغيير الدليل الجذر.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>نقرة واحدة لفتح عنصر</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>نظام الألوان الداكن نشط دائمًا</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>متقدم</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>في موقع الماوس</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>تغيير الدليل</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>انقر</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>يعدل أو يكيف</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>تقصير</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>إذا فقد التركيز وما إذا كان الماوس لا يزال على القائمة</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>ملي ثانية حتى تفتح القائمة عندما يكون الماوس عليها</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>ملي ثانية حتى يتم إغلاق القائمة إذا ترك الماوس في هذه الحالة القائمة</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>الحد الأقصى لعرض القائمة بالبكسل</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>يظل مفتوحًا</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>الوقت حتى تفتح القائمة</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>إذا تم النقر فوق عنصر</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>خلفية</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>الدليل المفتوح</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>حدود الدليل المفتوح</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>مجال البحث</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>العنصر المحدد</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>حدود العنصر المحدد</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>دليل نسبي</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>حفظ التكوين في دليل التطبيق</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>ملف التكوين وملف السجل</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>افتح دليل التطبيق</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>الحد الأقصى لارتفاع القائمة بالبكسل</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>سهم</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>السهم عند النقر</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>السهم بينما تحوم الماوس فوقه</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>خلفية السهم عند النقر</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>خلفية السهم أثناء تحوم الماوس فوقه</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>مخطط الألوان الداكن</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>نظام الألوان مشرق</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>قائمة التطبيق</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>شريط التمرير</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>المنزلق</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>المنزلق أثناء السحب</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>شريط التمرير أثناء تحريك الماوس فوقه 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>شريط التمرير أثناء تحريك الماوس فوقه 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>استخدم رمز من الدليل</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>بحجم</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>حدود القائمة</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>الأيقونات</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>مجموعة حسب قائمة السياق</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>تعيين كدليل</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>جار التحميل</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>مشكلة في ارتباط الاختصار</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>تم تغيير العنصر الذي يشير إليه هذا الاختصار أو نقله ، لذا لن يعمل هذا الاختصار بشكل صحيح بعد الآن.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>الدليل المفتوح</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>مدير المهام</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>معطل</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>مفعل</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>خبير</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>إذا فقد التركيز وتم الضغط على مفتاح Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>مللي ثانية حتى يتم إغلاق القائمة إذا لم يتم إعادة تنشيط القائمة في هذه الحالة</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>إظهار في شريط المهام</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>أضف الدليل</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>إضافة محتوى الدليل إلى الدليل الجذر</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>مسارات الدليل</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>الدلائل</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>العودية</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>إزالة الدليل</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>الملفات فقط</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>امسح ذاكرة التخزين المؤقت إذا كان هناك أكثر من هذا العدد من العناصر</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>إضافة دليل نموذج "قائمة ابدأ"</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>ارتفاع الصف بالنسبة المئوية</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>زوايا مستديرة</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>مظهر</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>أسفل اليسار</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>أسفل اليمين</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>تظهر القائمة الرئيسية</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>موقع الماوس (فوق رمز شريط المهام)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>مخصص (اسحبه إلى المكان المناسب)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>عنصر</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>عناصر</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>إنشاء اختصارات محرك الأقراص عند بدء التشغيل</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>مخبأ</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>تظهر دائما</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>الملفات والأدلة المخفية</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>لا تظهر أبدا</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>الحجم والموقع</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>استخدم إعدادات نظام التشغيل</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>تظهر فقط كنتيجة بحث</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>نقرة واحدة لفتح دليل</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>بجانب السابق</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>الإزاحة بالبكسل</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>تداخل</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>تظهر القائمة الفرعية</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>حجم الرموز بالنسبة المئوية</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>دعم SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>بهوت</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>إرسال مفتاح التشغيل السريع إلى حالة أخرى</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>مرتبة حسب التاريخ</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>مرتبة حسب الاسم</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>فرز</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>نسخ عنصر الصف عن طريق السحب والإسقاط</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>يجر</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>انتقل عبر انتقاد</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>قائمة التصفية حسب نوع الملف على سبيل المثال: * .exe | * .dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>عرض عدد العناصر أدناه</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>إظهار عنوان الدليل في الأعلى</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>إظهار مفتاح الوظيفة "فتح مجلد"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>إظهار مفتاح الوظيفة "Pin menu"</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>إظهار مفتاح الوظيفة "الإعدادات"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>إظهار مفتاح الوظيفة "إعادة التشغيل"</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>إظهار شريط البحث</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>حفظ ملف السجل في دليل التطبيق</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>إظهار تراكب الارتباط</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>دليل أيقونات اختصارات الإنترنت</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>مرتبة حسب النوع والتاريخ</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>مرتبة حسب النوع والاسم</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>تحقق من وجود تحديثات</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>انتقل إلى صفحة التنزيل</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>أحدث نسخة متاحة:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>نسخة جديدة متاحة!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>لديك أحدث إصدار من SystemTrayMenu!</value>
+  </data>
+</root>

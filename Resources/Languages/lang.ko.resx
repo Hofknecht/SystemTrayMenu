@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>시스템 트레이 메뉴 정보</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>앱 시작</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>앱 종료</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>예배 규칙서</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>디렉토리가 비어 있습니다.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>세부</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>시스템 정보</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>디렉토리에 액세스할 수 없음</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>로그 파일</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>재시작</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>단축키를 등록할 수 없습니다.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>중단</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>일반적인</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>단축키</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Windows로 시작</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>자주 묻는 질문</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>FAQ를 읽고 SystemTrayMenu의 루트 디렉토리를 선택하십시오.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>디렉토리 선택</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>앱의 루트 디렉토리가 존재하지 않거나 비어 있습니다! 루트 디렉터리를 변경하거나 일부 파일, 디렉터리 또는 바로 가기를 루트 디렉터리에 넣습니다.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>앱의 루트 디렉터리에 액세스할 수 없습니다. 디렉토리에 대한 액세스 권한을 부여하거나 루트 디렉토리를 변경하십시오.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>요소를 열려면 한 번 클릭</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>어두운 색 구성표 항상 활성</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>고급의</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>마우스 위치에서</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>디렉토리 변경</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>딸깍 하는 소리</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>사용자 정의</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>기본</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>초점을 잃은 경우 및 마우스가 여전히 메뉴에 있는 경우</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>마우스가 메뉴에 있을 때 메뉴가 열릴 때까지의 밀리초</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>이 경우 마우스가 메뉴를 떠나면 메뉴가 닫힐 때까지의 밀리초</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>픽셀 최대 메뉴 너비</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>열린 상태로 유지</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>메뉴가 열릴 때까지의 시간</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>요소를 클릭한 경우</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>배경</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>열린 디렉토리</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>열린 디렉토리의 경계</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>검색 필드</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>선택한 요소</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>선택한 요소의 테두리</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>상대 디렉토리</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>애플리케이션 디렉토리에 구성 저장</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>구성 파일 및 로그 파일</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>애플리케이션 디렉토리 열기</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>픽셀 최대 메뉴 높이</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>화살</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>클릭 시 화살표</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>마우스가 위에 있는 동안 화살표</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>클릭 시 화살표 배경</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>마우스가 위에 있는 동안 화살표의 배경</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>색 구성표 어두운</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>밝은 색 구성표</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>앱 메뉴</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>스크롤 바</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>슬라이더</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>드래그하는 동안 슬라이더</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>마우스를 가져가는 동안 슬라이더 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>마우스가 위에 있는 동안 슬라이더 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>디렉토리의 아이콘 사용</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>크기</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>메뉴의 테두리</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>아이콘</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>컨텍스트 메뉴로 설정</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>디렉토리로 설정</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>로딩</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>바로가기 링크 문제</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>이 바로 가기가 참조하는 항목이 변경되거나 이동되었으므로 이 바로 가기가 더 이상 제대로 작동하지 않습니다.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>디렉토리 열기</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>작업 관리자</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>비활성화됨</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>활성화됨</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>전문가</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>초점을 잃고 Enter 키를 누른 경우</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>이 경우 메뉴가 다시 활성화되지 않으면 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>작업 표시줄에 표시</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>디렉토리 추가</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>루트 디렉토리에 디렉토리 내용 추가</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>디렉토리 경로</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>디렉토리</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>재귀</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>디렉토리 제거</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>파일만</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>이 항목 수보다 많은 경우 캐시 지우기</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>샘플 디렉토리 '시작 메뉴' 추가</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>행 높이(%)</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>둥근 모서리</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>모습</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>왼쪽 하단</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>오른쪽 하단</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>메인 메뉴가 나타납니다</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>마우스 위치(작업 표시줄 아이콘 위)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>사용자 지정(적절한 위치로 드래그)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>요소</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>집단</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>시작 시 드라이브 바로 가기 생성</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>은닉처</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>항상 표시</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>숨겨진 파일 및 디렉토리</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>표시 안 함</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>크기 및 위치</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>운영 체제 설정 사용</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>검색 결과로만 표시</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>한 번 클릭하여 디렉토리 열기</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>전작에 이어</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>픽셀로 오프셋</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>겹침</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>하위 메뉴가 나타납니다</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>아이콘 크기(%)</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>지원 시스템 트레이 메뉴</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>페이딩</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>다른 인스턴스로 단축키 보내기</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>날짜순 정렬</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>이름순으로 정렬</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>정렬</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>드래그 드롭을 통해 행 항목 복사</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>견인</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>스와이프로 스크롤</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>파일 유형별 필터 메뉴 예: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>아래 요소 수 표시</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>맨 위에 디렉토리 제목 표시</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>기능 키 '폴더 열기' 표시</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>기능 키 '핀 메뉴' 표시</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>기능 키 '설정' 표시</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>기능 키 '다시 시작' 표시</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>검색창 표시</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>애플리케이션 디렉토리에 로그 파일 저장</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>링크 오버레이 표시</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>인터넷 바로 가기 아이콘 디렉토리</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>유형 및 날짜별로 정렬</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>유형 및 이름별로 정렬</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>업데이트 확인</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>다운로드 페이지로 이동</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>사용 가능한 최신 버전:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>새 버전을 사용할 수 있습니다!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>최신 버전의 SystemTrayMenu가 있습니다!</value>
+  </data>
+</root>

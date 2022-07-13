@@ -133,7 +133,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             }
 
             frm.OverwritePrompt = false;
-            frm.Title = Translator.GetText("Select Folder");
+            frm.Title = Translator.GetText("Select directory");
             frm.ValidateNames = false;
             if (frm.ShowDialog(owner) == DialogResult.OK)
             {

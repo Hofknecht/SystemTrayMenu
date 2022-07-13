@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu-ს შესახებ</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>კარგი</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>აპლიკაციის დაწყება</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>აპიდან გასვლა</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>დირექტორია</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>დირექტორია ცარიელი</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>დეტალები</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>სისტემის ინფორმაცია</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>დირექტორია მიუწვდომელია</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Ენა</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>ჟურნალის ფაილი</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Რესტარტი</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>ცხელი კლავიშის რეგისტრაცია ვერ მოხერხდა.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Გაუქმება</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>გენერალი</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>ცხელი კლავიში</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>დაიწყეთ Windows-ით</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>პარამეტრები</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>ხშირად დასმული შეკითხვები</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>წაიკითხეთ FAQ და შემდეგ აირჩიეთ root დირექტორია SystemTrayMenu-სთვის.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>აირჩიეთ დირექტორია</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>აპლიკაციის თქვენი root დირექტორია არ არსებობს ან ცარიელია! შეცვალეთ root დირექტორია ან განათავსეთ რამდენიმე ფაილი, დირექტორია ან მალსახმობები root დირექტორიაში.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>თქვენ არ გაქვთ წვდომა აპის ძირეულ დირექტორიაზე. მიეცით წვდომა დირექტორიაზე ან შეცვალეთ root დირექტორია.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>ელემენტის გასახსნელად ერთი დაწკაპუნებით</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>მუქი ფერის სქემა ყოველთვის აქტიურია</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Მოწინავე</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>მაუსის ადგილმდებარეობაზე</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>დირექტორია იცვლება</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>დააწკაპუნეთ</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>მორგება</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>ნაგულისხმევი</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>თუ ფოკუსი დაკარგულია და თუ მაუსი კვლავ მენიუშია</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>მილიწამებში მენიუს გახსნამდე, როცა მასზე მაუსია</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>მილიწამები მენიუს დახურვამდე, თუ ამ შემთხვევაში მაუსი ტოვებს მენიუს</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>პიქსელების მენიუს მაქსიმალური სიგანე</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>ღია რჩება</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>დროა მენიუს გახსნამდე</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>თუ ელემენტზე დააწკაპუნეთ</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>ფონი</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>გახსნილი დირექტორია</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>გახსნილი დირექტორიას საზღვარი</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>საძიებო ველი</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>არჩეული ელემენტი</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>შერჩეული ელემენტის საზღვარი</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>შედარებითი დირექტორია</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>შეინახეთ კონფიგურაცია განაცხადის დირექტორიაში</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>კონფიგურაციის ფაილი და ჟურნალის ფაილი</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>გახსენით განაცხადის დირექტორია</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>პიქსელების მენიუს მაქსიმალური სიმაღლე</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>ისარი</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>ისარი დაწკაპუნებისას</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>ისარი, როცა მაუსი დევს მასზე</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>ისრის ფონი დაწკაპუნებისას</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>ისრის ფონი, როდესაც მაუსი ჩერდება მასზე</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>ფერის სქემა მუქი</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>ფერადი სქემა ნათელი</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>აპლიკაციის მენიუ</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>გადახვევის პანელი</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>სლაიდერი</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>გადაადგილებისას სლაიდერი</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>სლაიდერი, სანამ მაუსი ეშვება მასზე 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>სლაიდერი, სანამ მაუსი ეშვება მასზე 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>გამოიყენეთ ხატულა დირექტორიადან</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>ზომა</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>მენიუს საზღვარი</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>ხატები</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>კონტექსტური მენიუს დაყენება</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>დააყენეთ დირექტორიად</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>ჩატვირთვა</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>პრობლემა მალსახმობის ბმულზე</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>ელემენტი, რომელსაც ეს მალსახმობი ეხება, შეიცვალა ან გადატანილია, ამიტომ ეს მალსახმობი აღარ იმუშავებს გამართულად.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>გახსენით დირექტორია</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Პროცესების ადმინისტრატორი</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>გამორთულია</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>გააქტიურებულია</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>ექსპერტი</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>თუ ფოკუსი დაიკარგა და დააჭირეთ Enter ღილაკს</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>მენიუს დახურვამდე მილიწამები, თუ ამ შემთხვევაში მენიუ ხელახლა არ გააქტიურდება</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>დავალების პანელში ჩვენება</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>დირექტორიას დამატება</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>დაამატეთ დირექტორიას შინაარსი root დირექტორიაში</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>დირექტორია ბილიკები</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>დირექტორიები</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Რეკურსიული</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>დირექტორიას წაშლა</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>მხოლოდ ფაილები</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>ქეშის გასუფთავება, თუ ამ რაოდენობაზე მეტია</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>დაამატეთ სანიმუშო დირექტორია „დაწყების მენიუ“</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>მწკრივის სიმაღლე პროცენტებში</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>მრგვალი კუთხეები</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>გარეგნობა</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Ქვედა მარცხენა</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>ქვედა მარჯვენა</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>მთავარი მენიუ გამოჩნდება</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>მაუსის მდებარეობა (დავალებების ზოლის ხატულაზე)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>მორგებული (გადაათრიეთ შესაბამის ადგილას)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>ელემენტი</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>ელემენტები</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>დისკის მალსახმობების გენერირება გაშვებისას</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>ქეში</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>ყოველთვის აჩვენე</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>დამალული ფაილები და დირექტორიები</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>არასოდეს აჩვენო</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>ზომა და ადგილმდებარეობა</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>გამოიყენეთ ოპერაციული სისტემის პარამეტრები</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>ჩვენება მხოლოდ როგორც ძიების შედეგი</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>ერთი დაწკაპუნებით დირექტორიას გასახსნელად</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>წინას გვერდით</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>ოფსეტური პიქსელებით</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>გადახურვა</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>ქვემენიუ გამოჩნდება</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>ხატების ზომა პროცენტებში</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu-ს მხარდაჭერა</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>ქრებოდა</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>ცხელი კლავიშის გაგზავნა სხვა ინსტანციაზე</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>დალაგებულია თარიღის მიხედვით</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>დალაგებულია სახელის მიხედვით</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>დახარისხება</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>დააკოპირეთ მწკრივის ელემენტი გადათრევის საშუალებით</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>გადაათრიეთ</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>გადაფურცლეთ დარტყმის საშუალებით</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>მენიუს გაფილტვრა ფაილის ტიპის მიხედვით, მაგ.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>ელემენტების რაოდენობის ჩვენება ქვემოთ</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>აჩვენე დირექტორია სათაური ზედა</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ფუნქციის ღილაკის "გახსნა საქაღალდის" ჩვენება</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ფუნქციის ღილაკის "Pin მენიუს" ჩვენება</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ფუნქციის ღილაკის "პარამეტრების" ჩვენება</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ფუნქციის ღილაკის "გადატვირთვა" ჩვენება</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>საძიებო ზოლის ჩვენება</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>ჟურნალის ფაილის შენახვა განაცხადის დირექტორიაში</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>ბმულის გადაფარვის ჩვენება</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ინტერნეტ მალსახმობების ხატულების დირექტორია</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>დალაგებულია ტიპისა და თარიღის მიხედვით</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>დალაგებულია ტიპისა და სახელის მიხედვით</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Შეამოწმოთ განახლებები</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>გადადით ჩამოტვირთვის გვერდზე</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>უახლესი ხელმისაწვდომი ვერსია:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>ახალი ვერსია ხელმისაწვდომია!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>თქვენ გაქვთ SystemTrayMenu-ს უახლესი ვერსია!</value>
+  </data>
+</root>

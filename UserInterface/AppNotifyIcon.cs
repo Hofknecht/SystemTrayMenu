@@ -16,7 +16,7 @@ namespace SystemTrayMenu.UserInterface
 
         public AppNotifyIcon()
         {
-            notifyIcon.Text = Translator.GetText("SystemTrayMenu");
+            notifyIcon.Text = "SystemTrayMenu";
             notifyIcon.Icon = Config.GetAppIcon();
             notifyIcon.Visible = true;
 

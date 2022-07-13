@@ -392,7 +392,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                             return "* " + keyString;
                         }
 
-                        keyString = keyString.Substring(0, 1).ToUpperInvariant() + keyString[1..].ToLowerInvariant();
+                        keyString = keyString[..1].ToUpperInvariant() + keyString[1..].ToLowerInvariant();
                     }
 
                     return keyString + " *";
@@ -405,7 +405,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                             return "/ " + keyString;
                         }
 
-                        keyString = keyString.Substring(0, 1).ToUpperInvariant() + keyString[1..].ToLowerInvariant();
+                        keyString = keyString[..1].ToUpperInvariant() + keyString[1..].ToLowerInvariant();
                     }
 
                     return keyString + " /";
@@ -443,7 +443,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                 string visibleName = keyName.ToString();
                 if (visibleName.Length > 1)
                 {
-                    visibleName = visibleName.Substring(0, 1) + visibleName[1..].ToLowerInvariant();
+                    visibleName = visibleName[..1] + visibleName[1..].ToLowerInvariant();
                 }
 
                 return visibleName;

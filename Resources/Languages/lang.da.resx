@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Om SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Okay</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>App start</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Afslut app</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Vejviser</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Katalog tom</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>detaljer</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>System info</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Directory utilgængelig</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Sprog</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Logfil</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Genstart</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Genvejstasten kunne ikke registreres.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Generel</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Genvejstast</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Start med Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Ofte stillede spørgsmål</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Læs FAQ og vælg derefter en rodmappe til SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Vælg bibliotek</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Din rodmappe til appen eksisterer ikke eller er tom! Skift rodmappen eller indsæt nogle filer, mapper eller genveje i rodmappen.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Du har ingen adgang til rodmappen til appen. Giv adgang til biblioteket eller skift rodmappen.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Et enkelt klik for at åbne et element</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Farveskema mørkt altid aktivt</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Fremskreden</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>På musens placering</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Skifter mappe</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Klik</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Tilpas</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Hvis fokus er tabt, og hvis musen stadig er på menuen</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Millisekunder, indtil en menu åbnes, når musen er på den</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisekunder, indtil menuen lukker, hvis musen i dette tilfælde forlader menuen</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Pixels maksimale menubredde</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Holder åbent</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Tid indtil en menu åbner</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Hvis der blev klikket på et element</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Baggrund</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Åbnet bibliotek</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Kant af åbnet bibliotek</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Søgefelt</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Valgt element</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Kant af valgt element</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relativ mappe</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Gem konfigurationen i applikationsmappen</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Konfigurationsfil og logfil</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Åbn applikationsmappe</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Pixels maksimale menuhøjde</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Pil</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Pil, når du klikker</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Pil, mens musen svæver over den</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Baggrund af pil, når du klikker</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Baggrund af pil, mens musen svæver over den</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Farveskema mørkt</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Farveskema lyst</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>App menu</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Rullebar</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Skyder</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Skyder mens du trækker</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Skyder mens musen svæver over den 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Skyder mens musen svæver over den 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Brug ikon fra bibliotek</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Størrelse</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Kant af menu</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Ikoner</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Indstillet af kontekstmenuen</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Indstil som bibliotek</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Indlæser</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problem med genvejslink</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Elementet, som denne genvej henviser til, er blevet ændret eller flyttet, så denne genvej vil ikke længere fungere korrekt.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Åbn mappe</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Jobliste</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Deaktiveret</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktiveret</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Ekspert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Hvis fokus mistes, og der blev trykket på Enter-tasten</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Millisekunder indtil menuen lukker, hvis menuen i dette tilfælde ikke genaktiveres</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Vis i proceslinjen</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Tilføj bibliotek</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Tilføj indholdet af mappen til rodmappen</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Vejviserstier</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Vejviser</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekursiv</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Fjern mappe</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Kun filer</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Ryd cache, hvis der er flere end dette antal elementer</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Tilføj eksempelmappe 'Startmenu'</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Rækkehøjde i procent</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Runde hjørner</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Udseende</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Nederst til venstre</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Nederst til højre</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Hovedmenuen vises</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Musens placering (over proceslinjeikonet)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Brugerdefineret (træk det til det rigtige sted)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementer</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Generer drevgenveje ved opstart</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Cache</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Vis altid</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Skjulte filer og mapper</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Vis aldrig</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Størrelse og beliggenhed</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Brug operativsystemindstillinger</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Vis kun som søgeresultat</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Enkelt klik for at åbne en mappe</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Ved siden af ​​den forrige</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Forskudt med pixels</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Overlappende</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Undermenuen vises</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Ikonernes størrelse i procent</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Support SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Faldende</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Send genvejstasten til en anden instans</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Sorteret efter dato</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Sorteret efter navn</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Sortering</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Kopier rækkeemne via træk-drop</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Træk</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Rul via swipe</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Filtrer menu efter filtype, f.eks.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Vis antallet af elementer nedenfor</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Vis mappetitel øverst</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Vis funktionstast 'Åbn mappe'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Vis funktionstast 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Vis funktionstast 'Indstillinger'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Vis funktionstast 'Genstart'</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Vis søgelinjen</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Gemmer logfil i applikationsmappe</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Vis linkoverlejring</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Katalog over internetgenvejsikoner</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Sorteret efter type og dato</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Sorteret efter type og navn</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Søg efter opdateringer</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Gå til downloadsiden</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Seneste tilgængelige version:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Ny version tilgængelig!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Du har den seneste version af SystemTrayMenu!</value>
+  </data>
+</root>

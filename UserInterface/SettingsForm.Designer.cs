@@ -34,24 +34,27 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonGeneralDefault = new System.Windows.Forms.Button();
             this.groupBoxFolder = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelFolder = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelChangeFolder = new System.Windows.Forms.TableLayoutPanel();
             this.buttonChangeFolder = new System.Windows.Forms.Button();
             this.buttonOpenFolder = new System.Windows.Forms.Button();
+            this.checkBoxSetFolderByWindowsContextMenu = new System.Windows.Forms.CheckBox();
             this.textBoxFolder = new System.Windows.Forms.TextBox();
-            this.checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu = new System.Windows.Forms.CheckBox();
-            this.groupBoxUSB = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelUSB = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelRelativeFolderOpenAssembly = new System.Windows.Forms.TableLayoutPanel();
             this.buttonChangeRelativeFolder = new System.Windows.Forms.Button();
             this.buttonOpenAssemblyLocation = new System.Windows.Forms.Button();
-            this.checkBoxStoreConfigAtAssemblyLocation = new System.Windows.Forms.CheckBox();
+            this.groupBoxConfigAndLogfile = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelConfigAndLogfile = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxSaveLogFileInApplicationDirectory = new System.Windows.Forms.CheckBox();
+            this.checkBoxSaveConfigInApplicationDirectory = new System.Windows.Forms.CheckBox();
             this.groupBoxAutostart = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxCheckForUpdates = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelAutostart = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAddTaskManagerStartupTask = new System.Windows.Forms.Button();
-            this.labelStartupTaskStatus = new System.Windows.Forms.Label();
+            this.buttonAddStartup = new System.Windows.Forms.Button();
+            this.labelStartupStatus = new System.Windows.Forms.Label();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
             this.groupBoxHotkey = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelHotkey = new System.Windows.Forms.TableLayoutPanel();
@@ -61,7 +64,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelLanguage = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.tabPageSizeAndLocation = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelSizeAndLocation = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxSubMenuAppearAt = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -95,6 +98,11 @@ namespace SystemTrayMenu.UserInterface
             this.labelMaxMenuWidth = new System.Windows.Forms.Label();
             this.tabPageAdvanced = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelAdvanced = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBoxInternetShortcutIcons = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelInternetShortcutIcons = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelChangeIcoFolder = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonChangeIcoFolder = new System.Windows.Forms.Button();
+            this.textBoxIcoFolder = new System.Windows.Forms.TextBox();
             this.groupBoxDrag = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxSwipeScrolling = new System.Windows.Forms.CheckBox();
@@ -107,7 +115,9 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxShowInTaskbar = new System.Windows.Forms.CheckBox();
             this.buttonAdvancedDefault = new System.Windows.Forms.Button();
             this.groupBoxSorting = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelSorting = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButtonSortByTypeAndDate = new System.Windows.Forms.RadioButton();
+            this.radioButtonSortByTypeAndName = new System.Windows.Forms.RadioButton();
             this.radioButtonSortByDate = new System.Windows.Forms.RadioButton();
             this.radioButtonSortByName = new System.Windows.Forms.RadioButton();
             this.groupBoxHiddenFilesAndFolders = new System.Windows.Forms.GroupBox();
@@ -138,7 +148,6 @@ namespace SystemTrayMenu.UserInterface
             this.textBoxSearchPattern = new System.Windows.Forms.TextBox();
             this.groupBoxCache = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelCache = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxCacheMainMenu = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.TableLayoutPanel();
             this.labelClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.Label();
             this.numericUpDownClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.NumericUpDown();
@@ -316,10 +325,19 @@ namespace SystemTrayMenu.UserInterface
             this.labelSearchField = new System.Windows.Forms.Label();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelAppearance = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAppearanceDefault = new System.Windows.Forms.Button();
+            this.checkBoxShowFunctionKeyPinMenu = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowFunctionKeySettings = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowFunctionKeyRestart = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowLinkOverlay = new System.Windows.Forms.CheckBox();
             this.checkBoxUseFading = new System.Windows.Forms.CheckBox();
-            this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
+            this.checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowSearchBar = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowDirectoryTitleAtTop = new System.Windows.Forms.CheckBox();
             this.checkBoxRoundCorners = new System.Windows.Forms.CheckBox();
+            this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
+            this.buttonAppearanceDefault = new System.Windows.Forms.Button();
+            this.checkBoxShowCountOfElementsBelow = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowFunctionKeyOpenFolder = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -331,17 +349,18 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxFolder.SuspendLayout();
             this.tableLayoutPanelFolder.SuspendLayout();
             this.tableLayoutPanelChangeFolder.SuspendLayout();
-            this.groupBoxUSB.SuspendLayout();
-            this.tableLayoutPanelUSB.SuspendLayout();
             this.tableLayoutPanelRelativeFolderOpenAssembly.SuspendLayout();
+            this.groupBoxConfigAndLogfile.SuspendLayout();
+            this.tableLayoutPanelConfigAndLogfile.SuspendLayout();
             this.groupBoxAutostart.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanelAutostart.SuspendLayout();
             this.groupBoxHotkey.SuspendLayout();
             this.tableLayoutPanelHotkey.SuspendLayout();
             this.groupBoxLanguage.SuspendLayout();
             this.tableLayoutPanelLanguage.SuspendLayout();
             this.tabPageSizeAndLocation.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanelSizeAndLocation.SuspendLayout();
             this.groupBoxSubMenuAppearAt.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -362,12 +381,15 @@ namespace SystemTrayMenu.UserInterface
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuWidth)).BeginInit();
             this.tabPageAdvanced.SuspendLayout();
             this.tableLayoutPanelAdvanced.SuspendLayout();
+            this.groupBoxInternetShortcutIcons.SuspendLayout();
+            this.tableLayoutPanelInternetShortcutIcons.SuspendLayout();
+            this.tableLayoutPanelChangeIcoFolder.SuspendLayout();
             this.groupBoxDrag.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBoxClick.SuspendLayout();
             this.tableLayoutPanelClick.SuspendLayout();
             this.groupBoxSorting.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanelSorting.SuspendLayout();
             this.groupBoxHiddenFilesAndFolders.SuspendLayout();
             this.tableLayoutPanelHiddenFilesAndFolders.SuspendLayout();
             this.tabPageFolders.SuspendLayout();
@@ -485,12 +507,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.Controls.Add(this.tabControl, 0, 0);
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelBottom, 0, 1);
-            this.tableLayoutPanelMain.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 2;
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(434, 478);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(432, 553);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // tabControl
@@ -505,16 +527,18 @@ namespace SystemTrayMenu.UserInterface
             this.tabControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 2;
-            this.tabControl.Size = new System.Drawing.Size(422, 441);
+            this.tabControl.Size = new System.Drawing.Size(420, 513);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageGeneral
             // 
+            this.tabPageGeneral.AutoScroll = true;
             this.tabPageGeneral.Controls.Add(this.tableLayoutPanelGeneral);
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 24);
+            this.tabPageGeneral.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(414, 413);
+            this.tabPageGeneral.Size = new System.Drawing.Size(412, 485);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "tabPageGeneral";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
@@ -525,34 +549,48 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelGeneral.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelGeneral.ColumnCount = 1;
             this.tableLayoutPanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelGeneral.Controls.Add(this.buttonGeneralDefault, 0, 5);
             this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxFolder, 0, 0);
-            this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxUSB, 0, 1);
+            this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxConfigAndLogfile, 0, 1);
             this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxAutostart, 0, 2);
             this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxHotkey, 0, 3);
             this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxLanguage, 0, 4);
-            this.tableLayoutPanelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelGeneral.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelGeneral.Name = "tableLayoutPanelGeneral";
-            this.tableLayoutPanelGeneral.RowCount = 5;
+            this.tableLayoutPanelGeneral.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            this.tableLayoutPanelGeneral.RowCount = 6;
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(408, 407);
+            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(377, 458);
             this.tableLayoutPanelGeneral.TabIndex = 0;
+            // 
+            // buttonGeneralDefault
+            // 
+            this.buttonGeneralDefault.AutoSize = true;
+            this.buttonGeneralDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonGeneralDefault.Location = new System.Drawing.Point(9, 424);
+            this.buttonGeneralDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
+            this.buttonGeneralDefault.MinimumSize = new System.Drawing.Size(75, 25);
+            this.buttonGeneralDefault.Name = "buttonGeneralDefault";
+            this.buttonGeneralDefault.Size = new System.Drawing.Size(131, 25);
+            this.buttonGeneralDefault.TabIndex = 1;
+            this.buttonGeneralDefault.Text = "buttonGeneralDefault";
+            this.buttonGeneralDefault.UseVisualStyleBackColor = true;
+            this.buttonGeneralDefault.Click += new System.EventHandler(this.ButtonGeneralDefault_Click);
             // 
             // groupBoxFolder
             // 
+            this.groupBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxFolder.AutoSize = true;
             this.groupBoxFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxFolder.Controls.Add(this.tableLayoutPanelFolder);
             this.groupBoxFolder.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxFolder.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxFolder.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxFolder.Name = "groupBoxFolder";
-            this.groupBoxFolder.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxFolder.Size = new System.Drawing.Size(400, 131);
+            this.groupBoxFolder.Size = new System.Drawing.Size(365, 131);
             this.groupBoxFolder.TabIndex = 0;
             this.groupBoxFolder.TabStop = false;
             this.groupBoxFolder.Text = "groupBoxFolder";
@@ -564,18 +602,18 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolder.ColumnCount = 1;
             this.tableLayoutPanelFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelFolder.Controls.Add(this.tableLayoutPanelChangeFolder, 0, 1);
+            this.tableLayoutPanelFolder.Controls.Add(this.checkBoxSetFolderByWindowsContextMenu, 0, 2);
             this.tableLayoutPanelFolder.Controls.Add(this.textBoxFolder, 0, 0);
-            this.tableLayoutPanelFolder.Controls.Add(this.checkBoxUseIconFromRootFolder, 0, 2);
-            this.tableLayoutPanelFolder.Controls.Add(this.checkBoxPossibilityToSelectFolderByWindowsContextMenu, 0, 3);
+            this.tableLayoutPanelFolder.Controls.Add(this.tableLayoutPanelRelativeFolderOpenAssembly, 0, 3);
             this.tableLayoutPanelFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFolder.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelFolder.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelFolder.Name = "tableLayoutPanelFolder";
             this.tableLayoutPanelFolder.RowCount = 4;
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(394, 103);
+            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(359, 109);
             this.tableLayoutPanelFolder.TabIndex = 0;
             // 
             // tableLayoutPanelChangeFolder
@@ -594,7 +632,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelChangeFolder.Name = "tableLayoutPanelChangeFolder";
             this.tableLayoutPanelChangeFolder.RowCount = 1;
             this.tableLayoutPanelChangeFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelChangeFolder.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelChangeFolder.Size = new System.Drawing.Size(359, 31);
             this.tableLayoutPanelChangeFolder.TabIndex = 0;
             // 
             // buttonChangeFolder
@@ -606,9 +644,9 @@ namespace SystemTrayMenu.UserInterface
             this.buttonChangeFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
             this.buttonChangeFolder.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonChangeFolder.Name = "buttonChangeFolder";
-            this.buttonChangeFolder.Size = new System.Drawing.Size(94, 25);
+            this.buttonChangeFolder.Size = new System.Drawing.Size(127, 25);
             this.buttonChangeFolder.TabIndex = 0;
-            this.buttonChangeFolder.Text = "Change Folder";
+            this.buttonChangeFolder.Text = "buttonChangeFolder";
             this.buttonChangeFolder.UseVisualStyleBackColor = true;
             this.buttonChangeFolder.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
@@ -616,7 +654,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonOpenFolder.AutoSize = true;
             this.buttonOpenFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOpenFolder.Location = new System.Drawing.Point(276, 3);
+            this.buttonOpenFolder.Location = new System.Drawing.Point(241, 3);
             this.buttonOpenFolder.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonOpenFolder.Name = "buttonOpenFolder";
             this.buttonOpenFolder.Size = new System.Drawing.Size(115, 25);
@@ -625,72 +663,28 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOpenFolder.UseVisualStyleBackColor = true;
             this.buttonOpenFolder.Click += new System.EventHandler(this.ButtonOpenFolder_Click);
             // 
+            // checkBoxSetFolderByWindowsContextMenu
+            // 
+            this.checkBoxSetFolderByWindowsContextMenu.AutoSize = true;
+            this.checkBoxSetFolderByWindowsContextMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxSetFolderByWindowsContextMenu.Location = new System.Drawing.Point(3, 56);
+            this.checkBoxSetFolderByWindowsContextMenu.Name = "checkBoxSetFolderByWindowsContextMenu";
+            this.checkBoxSetFolderByWindowsContextMenu.Size = new System.Drawing.Size(353, 19);
+            this.checkBoxSetFolderByWindowsContextMenu.TabIndex = 5;
+            this.checkBoxSetFolderByWindowsContextMenu.Text = "SetFolderByWindowsContextMenu";
+            this.checkBoxSetFolderByWindowsContextMenu.UseVisualStyleBackColor = true;
+            // 
             // textBoxFolder
             // 
             this.textBoxFolder.BackColor = System.Drawing.Color.White;
             this.textBoxFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxFolder.Location = new System.Drawing.Point(6, 3);
             this.textBoxFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.textBoxFolder.MaximumSize = new System.Drawing.Size(380, 0);
             this.textBoxFolder.Name = "textBoxFolder";
             this.textBoxFolder.ReadOnly = true;
-            this.textBoxFolder.Size = new System.Drawing.Size(380, 16);
+            this.textBoxFolder.Size = new System.Drawing.Size(277, 16);
             this.textBoxFolder.TabIndex = 0;
             this.textBoxFolder.TabStop = false;
-            // 
-            // checkBoxUseIconFromRootFolder
-            // 
-            this.checkBoxUseIconFromRootFolder.AutoSize = true;
-            this.checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(3, 56);
-            this.checkBoxUseIconFromRootFolder.Name = "checkBoxUseIconFromRootFolder";
-            this.checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(205, 19);
-            this.checkBoxUseIconFromRootFolder.TabIndex = 4;
-            this.checkBoxUseIconFromRootFolder.Text = "checkBoxUseIconFromRootFolder";
-            this.checkBoxUseIconFromRootFolder.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxPossibilityToSelectFolderByWindowsContextMenu
-            // 
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.AutoSize = true;
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Location = new System.Drawing.Point(3, 81);
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Name = "checkBoxPossibilityToSelectFolderByWindowsContextMenu";
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Size = new System.Drawing.Size(290, 19);
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.TabIndex = 5;
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.Text = "PossibilityToSelectFolderByWindowsContextMenu";
-            this.checkBoxPossibilityToSelectFolderByWindowsContextMenu.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxUSB
-            // 
-            this.groupBoxUSB.AutoSize = true;
-            this.groupBoxUSB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxUSB.Controls.Add(this.tableLayoutPanelUSB);
-            this.groupBoxUSB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxUSB.Location = new System.Drawing.Point(3, 140);
-            this.groupBoxUSB.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxUSB.MinimumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxUSB.Name = "groupBoxUSB";
-            this.groupBoxUSB.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxUSB.Size = new System.Drawing.Size(400, 84);
-            this.groupBoxUSB.TabIndex = 0;
-            this.groupBoxUSB.TabStop = false;
-            this.groupBoxUSB.Text = "groupBoxUSB";
-            // 
-            // tableLayoutPanelUSB
-            // 
-            this.tableLayoutPanelUSB.AutoSize = true;
-            this.tableLayoutPanelUSB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelUSB.ColumnCount = 1;
-            this.tableLayoutPanelUSB.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelUSB.Controls.Add(this.tableLayoutPanelRelativeFolderOpenAssembly, 0, 0);
-            this.tableLayoutPanelUSB.Controls.Add(this.checkBoxStoreConfigAtAssemblyLocation, 0, 1);
-            this.tableLayoutPanelUSB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelUSB.Location = new System.Drawing.Point(3, 22);
-            this.tableLayoutPanelUSB.Name = "tableLayoutPanelUSB";
-            this.tableLayoutPanelUSB.RowCount = 2;
-            this.tableLayoutPanelUSB.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelUSB.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelUSB.Size = new System.Drawing.Size(394, 56);
-            this.tableLayoutPanelUSB.TabIndex = 0;
             // 
             // tableLayoutPanelRelativeFolderOpenAssembly
             // 
@@ -703,12 +697,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelRelativeFolderOpenAssembly.Controls.Add(this.buttonChangeRelativeFolder, 0, 0);
             this.tableLayoutPanelRelativeFolderOpenAssembly.Controls.Add(this.buttonOpenAssemblyLocation, 2, 0);
             this.tableLayoutPanelRelativeFolderOpenAssembly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelRelativeFolderOpenAssembly.Location = new System.Drawing.Point(0, 78);
             this.tableLayoutPanelRelativeFolderOpenAssembly.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelRelativeFolderOpenAssembly.Name = "tableLayoutPanelRelativeFolderOpenAssembly";
             this.tableLayoutPanelRelativeFolderOpenAssembly.RowCount = 1;
             this.tableLayoutPanelRelativeFolderOpenAssembly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelRelativeFolderOpenAssembly.Size = new System.Drawing.Size(359, 31);
             this.tableLayoutPanelRelativeFolderOpenAssembly.TabIndex = 0;
             // 
             // buttonChangeRelativeFolder
@@ -729,7 +723,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonOpenAssemblyLocation.AutoSize = true;
             this.buttonOpenAssemblyLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOpenAssemblyLocation.Location = new System.Drawing.Point(212, 3);
+            this.buttonOpenAssemblyLocation.Location = new System.Drawing.Point(177, 3);
             this.buttonOpenAssemblyLocation.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonOpenAssemblyLocation.Name = "buttonOpenAssemblyLocation";
             this.buttonOpenAssemblyLocation.Size = new System.Drawing.Size(179, 25);
@@ -738,30 +732,99 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOpenAssemblyLocation.UseVisualStyleBackColor = true;
             this.buttonOpenAssemblyLocation.Click += new System.EventHandler(this.ButtonOpenAssemblyLocation_Click);
             // 
-            // checkBoxStoreConfigAtAssemblyLocation
+            // groupBoxConfigAndLogfile
             // 
-            this.checkBoxStoreConfigAtAssemblyLocation.AutoSize = true;
-            this.checkBoxStoreConfigAtAssemblyLocation.Location = new System.Drawing.Point(3, 34);
-            this.checkBoxStoreConfigAtAssemblyLocation.Name = "checkBoxStoreConfigAtAssemblyLocation";
-            this.checkBoxStoreConfigAtAssemblyLocation.Size = new System.Drawing.Size(249, 19);
-            this.checkBoxStoreConfigAtAssemblyLocation.TabIndex = 0;
-            this.checkBoxStoreConfigAtAssemblyLocation.Text = "checkBoxStoreConfigAtAssemblyLocation";
-            this.checkBoxStoreConfigAtAssemblyLocation.UseVisualStyleBackColor = true;
+            this.groupBoxConfigAndLogfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxConfigAndLogfile.AutoSize = true;
+            this.groupBoxConfigAndLogfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxConfigAndLogfile.Controls.Add(this.tableLayoutPanelConfigAndLogfile);
+            this.groupBoxConfigAndLogfile.Location = new System.Drawing.Point(3, 140);
+            this.groupBoxConfigAndLogfile.Name = "groupBoxConfigAndLogfile";
+            this.groupBoxConfigAndLogfile.Size = new System.Drawing.Size(365, 72);
+            this.groupBoxConfigAndLogfile.TabIndex = 0;
+            this.groupBoxConfigAndLogfile.TabStop = false;
+            this.groupBoxConfigAndLogfile.Text = "groupBoxConfigAndLogfile";
+            // 
+            // tableLayoutPanelConfigAndLogfile
+            // 
+            this.tableLayoutPanelConfigAndLogfile.AutoSize = true;
+            this.tableLayoutPanelConfigAndLogfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelConfigAndLogfile.ColumnCount = 1;
+            this.tableLayoutPanelConfigAndLogfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelConfigAndLogfile.Controls.Add(this.checkBoxSaveLogFileInApplicationDirectory, 0, 2);
+            this.tableLayoutPanelConfigAndLogfile.Controls.Add(this.checkBoxSaveConfigInApplicationDirectory, 0, 1);
+            this.tableLayoutPanelConfigAndLogfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelConfigAndLogfile.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelConfigAndLogfile.Name = "tableLayoutPanelConfigAndLogfile";
+            this.tableLayoutPanelConfigAndLogfile.RowCount = 3;
+            this.tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelConfigAndLogfile.Size = new System.Drawing.Size(359, 50);
+            this.tableLayoutPanelConfigAndLogfile.TabIndex = 0;
+            // 
+            // checkBoxSaveLogFileInApplicationDirectory
+            // 
+            this.checkBoxSaveLogFileInApplicationDirectory.AutoSize = true;
+            this.checkBoxSaveLogFileInApplicationDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxSaveLogFileInApplicationDirectory.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxSaveLogFileInApplicationDirectory.Name = "checkBoxSaveLogFileInApplicationDirectory";
+            this.checkBoxSaveLogFileInApplicationDirectory.Size = new System.Drawing.Size(353, 19);
+            this.checkBoxSaveLogFileInApplicationDirectory.TabIndex = 1;
+            this.checkBoxSaveLogFileInApplicationDirectory.Text = "checkBoxSaveLogFileInApplicationDirectory";
+            this.checkBoxSaveLogFileInApplicationDirectory.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSaveConfigInApplicationDirectory
+            // 
+            this.checkBoxSaveConfigInApplicationDirectory.AutoSize = true;
+            this.checkBoxSaveConfigInApplicationDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxSaveConfigInApplicationDirectory.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxSaveConfigInApplicationDirectory.Name = "checkBoxSaveConfigInApplicationDirectory";
+            this.checkBoxSaveConfigInApplicationDirectory.Size = new System.Drawing.Size(353, 19);
+            this.checkBoxSaveConfigInApplicationDirectory.TabIndex = 0;
+            this.checkBoxSaveConfigInApplicationDirectory.Text = "checkBoxSaveConfigInApplicationDirectory";
+            this.checkBoxSaveConfigInApplicationDirectory.UseVisualStyleBackColor = true;
             // 
             // groupBoxAutostart
             // 
+            this.groupBoxAutostart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxAutostart.AutoSize = true;
             this.groupBoxAutostart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxAutostart.Controls.Add(this.tableLayoutPanelAutostart);
-            this.groupBoxAutostart.Location = new System.Drawing.Point(3, 230);
-            this.groupBoxAutostart.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxAutostart.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxAutostart.Controls.Add(this.tableLayoutPanel5);
+            this.groupBoxAutostart.Location = new System.Drawing.Point(3, 218);
             this.groupBoxAutostart.Name = "groupBoxAutostart";
-            this.groupBoxAutostart.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxAutostart.Size = new System.Drawing.Size(400, 59);
+            this.groupBoxAutostart.Size = new System.Drawing.Size(365, 78);
             this.groupBoxAutostart.TabIndex = 0;
             this.groupBoxAutostart.TabStop = false;
             this.groupBoxAutostart.Text = "groupBoxAutostart";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.AutoSize = true;
+            this.tableLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.checkBoxCheckForUpdates, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanelAutostart, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(359, 56);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // checkBoxCheckForUpdates
+            // 
+            this.checkBoxCheckForUpdates.AutoSize = true;
+            this.checkBoxCheckForUpdates.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxCheckForUpdates.Location = new System.Drawing.Point(3, 34);
+            this.checkBoxCheckForUpdates.Name = "checkBoxCheckForUpdates";
+            this.checkBoxCheckForUpdates.Size = new System.Drawing.Size(353, 19);
+            this.checkBoxCheckForUpdates.TabIndex = 10;
+            this.checkBoxCheckForUpdates.Text = "checkBoxCheckForUpdates";
+            this.checkBoxCheckForUpdates.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelAutostart
             // 
@@ -771,39 +834,40 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAutostart.Controls.Add(this.buttonAddTaskManagerStartupTask, 0, 0);
-            this.tableLayoutPanelAutostart.Controls.Add(this.labelStartupTaskStatus, 2, 0);
+            this.tableLayoutPanelAutostart.Controls.Add(this.buttonAddStartup, 0, 0);
+            this.tableLayoutPanelAutostart.Controls.Add(this.labelStartupStatus, 2, 0);
             this.tableLayoutPanelAutostart.Controls.Add(this.checkBoxAutostart, 0, 0);
-            this.tableLayoutPanelAutostart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAutostart.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelAutostart.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelAutostart.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelAutostart.Name = "tableLayoutPanelAutostart";
             this.tableLayoutPanelAutostart.RowCount = 1;
             this.tableLayoutPanelAutostart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAutostart.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelAutostart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelAutostart.Size = new System.Drawing.Size(359, 31);
             this.tableLayoutPanelAutostart.TabIndex = 0;
             // 
-            // buttonAddTaskManagerStartupTask
+            // buttonAddStartup
             // 
-            this.buttonAddTaskManagerStartupTask.AutoSize = true;
-            this.buttonAddTaskManagerStartupTask.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAddTaskManagerStartupTask.Location = new System.Drawing.Point(135, 3);
-            this.buttonAddTaskManagerStartupTask.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonAddTaskManagerStartupTask.Name = "buttonAddTaskManagerStartupTask";
-            this.buttonAddTaskManagerStartupTask.Size = new System.Drawing.Size(204, 25);
-            this.buttonAddTaskManagerStartupTask.TabIndex = 10;
-            this.buttonAddTaskManagerStartupTask.Text = "buttonAddTaskManagerStartupTask";
-            this.buttonAddTaskManagerStartupTask.UseVisualStyleBackColor = true;
-            this.buttonAddTaskManagerStartupTask.Click += new System.EventHandler(this.ButtonAddTaskManagerStartupTask_Click);
+            this.buttonAddStartup.AutoSize = true;
+            this.buttonAddStartup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAddStartup.Location = new System.Drawing.Point(135, 3);
+            this.buttonAddStartup.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonAddStartup.Name = "buttonAddStartup";
+            this.buttonAddStartup.Size = new System.Drawing.Size(113, 25);
+            this.buttonAddStartup.TabIndex = 10;
+            this.buttonAddStartup.Text = "buttonAddStartup";
+            this.buttonAddStartup.UseVisualStyleBackColor = true;
+            this.buttonAddStartup.Click += new System.EventHandler(this.ButtonAddStartup_Click);
             // 
-            // labelStartupTaskStatus
+            // labelStartupStatus
             // 
-            this.labelStartupTaskStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelStartupTaskStatus.AutoSize = true;
-            this.labelStartupTaskStatus.Location = new System.Drawing.Point(345, 0);
-            this.labelStartupTaskStatus.Name = "labelStartupTaskStatus";
-            this.labelStartupTaskStatus.Size = new System.Drawing.Size(46, 31);
-            this.labelStartupTaskStatus.TabIndex = 2;
-            this.labelStartupTaskStatus.Text = "labelStartupTaskStatus";
+            this.labelStartupStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelStartupStatus.AutoSize = true;
+            this.labelStartupStatus.Location = new System.Drawing.Point(254, 8);
+            this.labelStartupStatus.Name = "labelStartupStatus";
+            this.labelStartupStatus.Size = new System.Drawing.Size(102, 15);
+            this.labelStartupStatus.TabIndex = 2;
+            this.labelStartupStatus.Text = "labelStartupStatus";
             // 
             // checkBoxAutostart
             // 
@@ -818,15 +882,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxHotkey
             // 
+            this.groupBoxHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxHotkey.AutoSize = true;
             this.groupBoxHotkey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHotkey.Controls.Add(this.tableLayoutPanelHotkey);
-            this.groupBoxHotkey.Location = new System.Drawing.Point(3, 295);
-            this.groupBoxHotkey.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxHotkey.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxHotkey.Location = new System.Drawing.Point(3, 302);
             this.groupBoxHotkey.Name = "groupBoxHotkey";
-            this.groupBoxHotkey.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxHotkey.Size = new System.Drawing.Size(400, 59);
+            this.groupBoxHotkey.Size = new System.Drawing.Size(365, 53);
             this.groupBoxHotkey.TabIndex = 0;
             this.groupBoxHotkey.TabStop = false;
             this.groupBoxHotkey.Text = "groupBoxHotkey";
@@ -842,18 +904,18 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelHotkey.Controls.Add(this.textBoxHotkeyPlaceholder, 1, 0);
             this.tableLayoutPanelHotkey.Controls.Add(this.buttonHotkeyDefault, 2, 0);
             this.tableLayoutPanelHotkey.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelHotkey.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelHotkey.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelHotkey.Name = "tableLayoutPanelHotkey";
             this.tableLayoutPanelHotkey.RowCount = 1;
             this.tableLayoutPanelHotkey.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelHotkey.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelHotkey.Size = new System.Drawing.Size(359, 31);
             this.tableLayoutPanelHotkey.TabIndex = 0;
             // 
             // textBoxHotkeyPlaceholder
             // 
             this.textBoxHotkeyPlaceholder.Location = new System.Drawing.Point(3, 3);
             this.textBoxHotkeyPlaceholder.Name = "textBoxHotkeyPlaceholder";
-            this.textBoxHotkeyPlaceholder.Size = new System.Drawing.Size(200, 23);
+            this.textBoxHotkeyPlaceholder.Size = new System.Drawing.Size(131, 23);
             this.textBoxHotkeyPlaceholder.TabIndex = 0;
             this.textBoxHotkeyPlaceholder.TabStop = false;
             // 
@@ -861,7 +923,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonHotkeyDefault.AutoSize = true;
             this.buttonHotkeyDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonHotkeyDefault.Location = new System.Drawing.Point(262, 3);
+            this.buttonHotkeyDefault.Location = new System.Drawing.Point(227, 3);
             this.buttonHotkeyDefault.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonHotkeyDefault.Name = "buttonHotkeyDefault";
             this.buttonHotkeyDefault.Size = new System.Drawing.Size(129, 25);
@@ -872,15 +934,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxLanguage
             // 
+            this.groupBoxLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxLanguage.AutoSize = true;
             this.groupBoxLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxLanguage.Controls.Add(this.tableLayoutPanelLanguage);
-            this.groupBoxLanguage.Location = new System.Drawing.Point(3, 360);
-            this.groupBoxLanguage.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxLanguage.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxLanguage.Location = new System.Drawing.Point(3, 361);
             this.groupBoxLanguage.Name = "groupBoxLanguage";
-            this.groupBoxLanguage.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxLanguage.Size = new System.Drawing.Size(400, 57);
+            this.groupBoxLanguage.Size = new System.Drawing.Size(365, 51);
             this.groupBoxLanguage.TabIndex = 0;
             this.groupBoxLanguage.TabStop = false;
             this.groupBoxLanguage.Text = "groupBoxLanguage";
@@ -894,11 +954,11 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelLanguage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelLanguage.Controls.Add(this.comboBoxLanguage, 0, 0);
             this.tableLayoutPanelLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelLanguage.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelLanguage.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelLanguage.Name = "tableLayoutPanelLanguage";
             this.tableLayoutPanelLanguage.RowCount = 1;
             this.tableLayoutPanelLanguage.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelLanguage.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelLanguage.Size = new System.Drawing.Size(359, 29);
             this.tableLayoutPanelLanguage.TabIndex = 0;
             // 
             // comboBoxLanguage
@@ -912,46 +972,47 @@ namespace SystemTrayMenu.UserInterface
             // 
             // tabPageSizeAndLocation
             // 
-            this.tabPageSizeAndLocation.Controls.Add(this.tableLayoutPanel2);
+            this.tabPageSizeAndLocation.AutoScroll = true;
+            this.tabPageSizeAndLocation.Controls.Add(this.tableLayoutPanelSizeAndLocation);
             this.tabPageSizeAndLocation.Location = new System.Drawing.Point(4, 24);
+            this.tabPageSizeAndLocation.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
             this.tabPageSizeAndLocation.Name = "tabPageSizeAndLocation";
             this.tabPageSizeAndLocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSizeAndLocation.Size = new System.Drawing.Size(414, 413);
+            this.tabPageSizeAndLocation.Size = new System.Drawing.Size(412, 493);
             this.tabPageSizeAndLocation.TabIndex = 3;
             this.tabPageSizeAndLocation.Text = "tabPageSizeAndLocation";
             this.tabPageSizeAndLocation.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanelSizeAndLocation
             // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.groupBoxSubMenuAppearAt, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.buttonSizeAndLocationDefault, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.groupBoxMenuAppearAt, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.groupBoxSize, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 407);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanelSizeAndLocation.AutoSize = true;
+            this.tableLayoutPanelSizeAndLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelSizeAndLocation.ColumnCount = 1;
+            this.tableLayoutPanelSizeAndLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.groupBoxSubMenuAppearAt, 0, 2);
+            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.buttonSizeAndLocationDefault, 0, 3);
+            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.groupBoxMenuAppearAt, 0, 1);
+            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.groupBoxSize, 0, 0);
+            this.tableLayoutPanelSizeAndLocation.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelSizeAndLocation.Name = "tableLayoutPanelSizeAndLocation";
+            this.tableLayoutPanelSizeAndLocation.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            this.tableLayoutPanelSizeAndLocation.RowCount = 4;
+            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(308, 426);
+            this.tableLayoutPanelSizeAndLocation.TabIndex = 1;
             // 
             // groupBoxSubMenuAppearAt
             // 
+            this.groupBoxSubMenuAppearAt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSubMenuAppearAt.AutoSize = true;
             this.groupBoxSubMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxSubMenuAppearAt.Controls.Add(this.tableLayoutPanel3);
-            this.groupBoxSubMenuAppearAt.Location = new System.Drawing.Point(3, 307);
-            this.groupBoxSubMenuAppearAt.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxSubMenuAppearAt.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxSubMenuAppearAt.Location = new System.Drawing.Point(3, 304);
             this.groupBoxSubMenuAppearAt.Name = "groupBoxSubMenuAppearAt";
-            this.groupBoxSubMenuAppearAt.Size = new System.Drawing.Size(400, 76);
+            this.groupBoxSubMenuAppearAt.Size = new System.Drawing.Size(296, 76);
             this.groupBoxSubMenuAppearAt.TabIndex = 2;
             this.groupBoxSubMenuAppearAt.TabStop = false;
             this.groupBoxSubMenuAppearAt.Text = "groupBoxSubMenuAppearAt";
@@ -970,7 +1031,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(394, 54);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(290, 54);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -990,7 +1051,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(290, 29);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // numericUpDownOverlappingOffsetPixels
@@ -1040,7 +1101,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonNextToPreviousMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonNextToPreviousMenu.Location = new System.Drawing.Point(3, 3);
             this.radioButtonNextToPreviousMenu.Name = "radioButtonNextToPreviousMenu";
-            this.radioButtonNextToPreviousMenu.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonNextToPreviousMenu.Size = new System.Drawing.Size(284, 19);
             this.radioButtonNextToPreviousMenu.TabIndex = 2;
             this.radioButtonNextToPreviousMenu.TabStop = true;
             this.radioButtonNextToPreviousMenu.Text = "radioButtonNextToPreviousMenu";
@@ -1051,7 +1112,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonSizeAndLocationDefault.AutoSize = true;
             this.buttonSizeAndLocationDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSizeAndLocationDefault.Location = new System.Drawing.Point(9, 395);
+            this.buttonSizeAndLocationDefault.Location = new System.Drawing.Point(9, 392);
             this.buttonSizeAndLocationDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonSizeAndLocationDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonSizeAndLocationDefault.Name = "buttonSizeAndLocationDefault";
@@ -1063,14 +1124,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxMenuAppearAt
             // 
+            this.groupBoxMenuAppearAt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxMenuAppearAt.AutoSize = true;
             this.groupBoxMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxMenuAppearAt.Controls.Add(this.tableLayoutPanelMenuAppearAt);
-            this.groupBoxMenuAppearAt.Location = new System.Drawing.Point(3, 179);
-            this.groupBoxMenuAppearAt.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxMenuAppearAt.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxMenuAppearAt.Location = new System.Drawing.Point(3, 176);
             this.groupBoxMenuAppearAt.Name = "groupBoxMenuAppearAt";
-            this.groupBoxMenuAppearAt.Size = new System.Drawing.Size(400, 122);
+            this.groupBoxMenuAppearAt.Size = new System.Drawing.Size(296, 122);
             this.groupBoxMenuAppearAt.TabIndex = 1;
             this.groupBoxMenuAppearAt.TabStop = false;
             this.groupBoxMenuAppearAt.Text = "groupBoxMenuAppearAt";
@@ -1093,7 +1153,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenuAppearAt.Size = new System.Drawing.Size(394, 100);
+            this.tableLayoutPanelMenuAppearAt.Size = new System.Drawing.Size(290, 100);
             this.tableLayoutPanelMenuAppearAt.TabIndex = 1;
             // 
             // radioButtonUseCustomLocation
@@ -1102,7 +1162,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonUseCustomLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonUseCustomLocation.Location = new System.Drawing.Point(3, 53);
             this.radioButtonUseCustomLocation.Name = "radioButtonUseCustomLocation";
-            this.radioButtonUseCustomLocation.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonUseCustomLocation.Size = new System.Drawing.Size(284, 19);
             this.radioButtonUseCustomLocation.TabIndex = 2;
             this.radioButtonUseCustomLocation.TabStop = true;
             this.radioButtonUseCustomLocation.Text = "radioButtonUseCustomLocation";
@@ -1114,7 +1174,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonAppearAtTheBottomLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonAppearAtTheBottomLeft.Location = new System.Drawing.Point(3, 28);
             this.radioButtonAppearAtTheBottomLeft.Name = "radioButtonAppearAtTheBottomLeft";
-            this.radioButtonAppearAtTheBottomLeft.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonAppearAtTheBottomLeft.Size = new System.Drawing.Size(284, 19);
             this.radioButtonAppearAtTheBottomLeft.TabIndex = 1;
             this.radioButtonAppearAtTheBottomLeft.TabStop = true;
             this.radioButtonAppearAtTheBottomLeft.Text = "radioButtonradioButtonAppearAtTheBottomLeft";
@@ -1126,7 +1186,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonAppearAtTheBottomRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonAppearAtTheBottomRight.Location = new System.Drawing.Point(3, 3);
             this.radioButtonAppearAtTheBottomRight.Name = "radioButtonAppearAtTheBottomRight";
-            this.radioButtonAppearAtTheBottomRight.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonAppearAtTheBottomRight.Size = new System.Drawing.Size(284, 19);
             this.radioButtonAppearAtTheBottomRight.TabIndex = 2;
             this.radioButtonAppearAtTheBottomRight.TabStop = true;
             this.radioButtonAppearAtTheBottomRight.Text = "radioButtonAppearAtTheBottomRight";
@@ -1138,7 +1198,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonAppearAtMouseLocation.Location = new System.Drawing.Point(3, 78);
             this.radioButtonAppearAtMouseLocation.Name = "radioButtonAppearAtMouseLocation";
-            this.radioButtonAppearAtMouseLocation.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonAppearAtMouseLocation.Size = new System.Drawing.Size(284, 19);
             this.radioButtonAppearAtMouseLocation.TabIndex = 3;
             this.radioButtonAppearAtMouseLocation.TabStop = true;
             this.radioButtonAppearAtMouseLocation.Text = "radioButtonAppearAtMouseLocation";
@@ -1146,15 +1206,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxSize
             // 
+            this.groupBoxSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSize.AutoSize = true;
             this.groupBoxSize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxSize.Controls.Add(this.tableLayoutPanelSize);
             this.groupBoxSize.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxSize.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxSize.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxSize.Name = "groupBoxSize";
-            this.groupBoxSize.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxSize.Size = new System.Drawing.Size(400, 170);
+            this.groupBoxSize.Size = new System.Drawing.Size(296, 167);
             this.groupBoxSize.TabIndex = 0;
             this.groupBoxSize.TabStop = false;
             this.groupBoxSize.Text = "groupBoxSize";
@@ -1179,7 +1237,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSize.Size = new System.Drawing.Size(394, 145);
+            this.tableLayoutPanelSize.Size = new System.Drawing.Size(290, 145);
             this.tableLayoutPanelSize.TabIndex = 0;
             // 
             // tableLayoutPanelIconSizeInPercent
@@ -1197,7 +1255,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelIconSizeInPercent.Name = "tableLayoutPanelIconSizeInPercent";
             this.tableLayoutPanelIconSizeInPercent.RowCount = 1;
             this.tableLayoutPanelIconSizeInPercent.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelIconSizeInPercent.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelIconSizeInPercent.Size = new System.Drawing.Size(290, 29);
             this.tableLayoutPanelIconSizeInPercent.TabIndex = 1;
             // 
             // numericUpDownIconSizeInPercent
@@ -1233,7 +1291,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelRowHeighteInPercentage.Name = "tableLayoutPanelRowHeighteInPercentage";
             this.tableLayoutPanelRowHeighteInPercentage.RowCount = 1;
             this.tableLayoutPanelRowHeighteInPercentage.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelRowHeighteInPercentage.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelRowHeighteInPercentage.Size = new System.Drawing.Size(290, 29);
             this.tableLayoutPanelRowHeighteInPercentage.TabIndex = 3;
             // 
             // numericUpDownRowHeighteInPercentage
@@ -1269,7 +1327,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSizeInPercent.Name = "tableLayoutPanelSizeInPercent";
             this.tableLayoutPanelSizeInPercent.RowCount = 1;
             this.tableLayoutPanelSizeInPercent.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeInPercent.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelSizeInPercent.Size = new System.Drawing.Size(290, 29);
             this.tableLayoutPanelSizeInPercent.TabIndex = 0;
             // 
             // numericUpDownSizeInPercent
@@ -1307,7 +1365,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMenuHeight.Name = "tableLayoutPanelMenuHeight";
             this.tableLayoutPanelMenuHeight.RowCount = 1;
             this.tableLayoutPanelMenuHeight.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenuHeight.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelMenuHeight.Size = new System.Drawing.Size(290, 29);
             this.tableLayoutPanelMenuHeight.TabIndex = 0;
             // 
             // numericUpDownMenuHeight
@@ -1345,7 +1403,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelMaxMenuWidth.Name = "tableLayoutPanelMaxMenuWidth";
             this.tableLayoutPanelMaxMenuWidth.RowCount = 1;
             this.tableLayoutPanelMaxMenuWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMaxMenuWidth.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelMaxMenuWidth.Size = new System.Drawing.Size(290, 29);
             this.tableLayoutPanelMaxMenuWidth.TabIndex = 0;
             // 
             // numericUpDownMenuWidth
@@ -1370,11 +1428,12 @@ namespace SystemTrayMenu.UserInterface
             // 
             // tabPageAdvanced
             // 
+            this.tabPageAdvanced.AutoScroll = true;
             this.tabPageAdvanced.Controls.Add(this.tableLayoutPanelAdvanced);
             this.tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
             this.tabPageAdvanced.Name = "tabPageAdvanced";
             this.tabPageAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdvanced.Size = new System.Drawing.Size(414, 413);
+            this.tabPageAdvanced.Size = new System.Drawing.Size(412, 493);
             this.tabPageAdvanced.TabIndex = 0;
             this.tabPageAdvanced.Text = "tabPageAdvanced";
             this.tabPageAdvanced.UseVisualStyleBackColor = true;
@@ -1385,33 +1444,110 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAdvanced.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelAdvanced.ColumnCount = 1;
             this.tableLayoutPanelAdvanced.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxInternetShortcutIcons, 0, 2);
             this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxDrag, 0, 1);
             this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxClick, 0, 0);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.buttonAdvancedDefault, 0, 4);
+            this.tableLayoutPanelAdvanced.Controls.Add(this.buttonAdvancedDefault, 0, 5);
             this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxSorting, 0, 3);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxHiddenFilesAndFolders, 0, 2);
-            this.tableLayoutPanelAdvanced.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxHiddenFilesAndFolders, 0, 4);
             this.tableLayoutPanelAdvanced.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelAdvanced.Name = "tableLayoutPanelAdvanced";
-            this.tableLayoutPanelAdvanced.RowCount = 5;
+            this.tableLayoutPanelAdvanced.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            this.tableLayoutPanelAdvanced.RowCount = 6;
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(408, 407);
+            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 567);
             this.tableLayoutPanelAdvanced.TabIndex = 0;
+            // 
+            // groupBoxInternetShortcutIcons
+            // 
+            this.groupBoxInternetShortcutIcons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxInternetShortcutIcons.AutoSize = true;
+            this.groupBoxInternetShortcutIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxInternetShortcutIcons.Controls.Add(this.tableLayoutPanelInternetShortcutIcons);
+            this.groupBoxInternetShortcutIcons.Location = new System.Drawing.Point(3, 209);
+            this.groupBoxInternetShortcutIcons.Name = "groupBoxInternetShortcutIcons";
+            this.groupBoxInternetShortcutIcons.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.groupBoxInternetShortcutIcons.Size = new System.Drawing.Size(289, 81);
+            this.groupBoxInternetShortcutIcons.TabIndex = 1;
+            this.groupBoxInternetShortcutIcons.TabStop = false;
+            this.groupBoxInternetShortcutIcons.Text = "groupBoxInternetShortcutIcons";
+            // 
+            // tableLayoutPanelInternetShortcutIcons
+            // 
+            this.tableLayoutPanelInternetShortcutIcons.AutoSize = true;
+            this.tableLayoutPanelInternetShortcutIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelInternetShortcutIcons.ColumnCount = 1;
+            this.tableLayoutPanelInternetShortcutIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelInternetShortcutIcons.Controls.Add(this.tableLayoutPanelChangeIcoFolder, 0, 1);
+            this.tableLayoutPanelInternetShortcutIcons.Controls.Add(this.textBoxIcoFolder, 0, 0);
+            this.tableLayoutPanelInternetShortcutIcons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelInternetShortcutIcons.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanelInternetShortcutIcons.Name = "tableLayoutPanelInternetShortcutIcons";
+            this.tableLayoutPanelInternetShortcutIcons.RowCount = 2;
+            this.tableLayoutPanelInternetShortcutIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelInternetShortcutIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelInternetShortcutIcons.Size = new System.Drawing.Size(283, 53);
+            this.tableLayoutPanelInternetShortcutIcons.TabIndex = 0;
+            // 
+            // tableLayoutPanelChangeIcoFolder
+            // 
+            this.tableLayoutPanelChangeIcoFolder.AutoSize = true;
+            this.tableLayoutPanelChangeIcoFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelChangeIcoFolder.ColumnCount = 2;
+            this.tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelChangeIcoFolder.Controls.Add(this.buttonChangeIcoFolder, 0, 0);
+            this.tableLayoutPanelChangeIcoFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelChangeIcoFolder.Location = new System.Drawing.Point(0, 22);
+            this.tableLayoutPanelChangeIcoFolder.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelChangeIcoFolder.Name = "tableLayoutPanelChangeIcoFolder";
+            this.tableLayoutPanelChangeIcoFolder.RowCount = 1;
+            this.tableLayoutPanelChangeIcoFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelChangeIcoFolder.Size = new System.Drawing.Size(283, 31);
+            this.tableLayoutPanelChangeIcoFolder.TabIndex = 0;
+            // 
+            // buttonChangeIcoFolder
+            // 
+            this.buttonChangeIcoFolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonChangeIcoFolder.AutoSize = true;
+            this.buttonChangeIcoFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonChangeIcoFolder.Location = new System.Drawing.Point(2, 3);
+            this.buttonChangeIcoFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            this.buttonChangeIcoFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            this.buttonChangeIcoFolder.Name = "buttonChangeIcoFolder";
+            this.buttonChangeIcoFolder.Size = new System.Drawing.Size(143, 25);
+            this.buttonChangeIcoFolder.TabIndex = 0;
+            this.buttonChangeIcoFolder.Text = "buttonChangeIcoFolder";
+            this.buttonChangeIcoFolder.UseVisualStyleBackColor = true;
+            this.buttonChangeIcoFolder.Click += new System.EventHandler(this.ButtonChangeIcoFolder_Click);
+            // 
+            // textBoxIcoFolder
+            // 
+            this.textBoxIcoFolder.BackColor = System.Drawing.Color.White;
+            this.textBoxIcoFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIcoFolder.Location = new System.Drawing.Point(6, 3);
+            this.textBoxIcoFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.textBoxIcoFolder.Name = "textBoxIcoFolder";
+            this.textBoxIcoFolder.ReadOnly = true;
+            this.textBoxIcoFolder.Size = new System.Drawing.Size(271, 16);
+            this.textBoxIcoFolder.TabIndex = 0;
+            this.textBoxIcoFolder.TabStop = false;
             // 
             // groupBoxDrag
             // 
+            this.groupBoxDrag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxDrag.AutoSize = true;
             this.groupBoxDrag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxDrag.Controls.Add(this.tableLayoutPanel1);
             this.groupBoxDrag.Location = new System.Drawing.Point(3, 131);
-            this.groupBoxDrag.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxDrag.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxDrag.Name = "groupBoxDrag";
-            this.groupBoxDrag.Size = new System.Drawing.Size(400, 72);
+            this.groupBoxDrag.Size = new System.Drawing.Size(289, 72);
             this.groupBoxDrag.TabIndex = 4;
             this.groupBoxDrag.TabStop = false;
             this.groupBoxDrag.Text = "groupBoxDrag";
@@ -1430,7 +1566,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(394, 50);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(283, 50);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // checkBoxSwipeScrolling
@@ -1439,7 +1575,7 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxSwipeScrolling.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxSwipeScrolling.Location = new System.Drawing.Point(3, 28);
             this.checkBoxSwipeScrolling.Name = "checkBoxSwipeScrolling";
-            this.checkBoxSwipeScrolling.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxSwipeScrolling.Size = new System.Drawing.Size(277, 19);
             this.checkBoxSwipeScrolling.TabIndex = 4;
             this.checkBoxSwipeScrolling.Text = "checkBoxSwipeScrolling";
             this.checkBoxSwipeScrolling.UseVisualStyleBackColor = true;
@@ -1450,21 +1586,20 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxDragDropItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxDragDropItems.Location = new System.Drawing.Point(3, 3);
             this.checkBoxDragDropItems.Name = "checkBoxDragDropItems";
-            this.checkBoxDragDropItems.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxDragDropItems.Size = new System.Drawing.Size(277, 19);
             this.checkBoxDragDropItems.TabIndex = 3;
             this.checkBoxDragDropItems.Text = "checkBoxDragDropItems";
             this.checkBoxDragDropItems.UseVisualStyleBackColor = true;
             // 
             // groupBoxClick
             // 
+            this.groupBoxClick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxClick.AutoSize = true;
             this.groupBoxClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxClick.Controls.Add(this.tableLayoutPanelClick);
             this.groupBoxClick.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxClick.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxClick.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxClick.Name = "groupBoxClick";
-            this.groupBoxClick.Size = new System.Drawing.Size(400, 122);
+            this.groupBoxClick.Size = new System.Drawing.Size(289, 122);
             this.groupBoxClick.TabIndex = 0;
             this.groupBoxClick.TabStop = false;
             this.groupBoxClick.Text = "groupBoxClick";
@@ -1487,7 +1622,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.Size = new System.Drawing.Size(394, 100);
+            this.tableLayoutPanelClick.Size = new System.Drawing.Size(283, 100);
             this.tableLayoutPanelClick.TabIndex = 0;
             // 
             // checkBoxSendHotkeyInsteadKillOtherInstances
@@ -1497,7 +1632,7 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxSendHotkeyInsteadKillOtherInstances.Location = new System.Drawing.Point(3, 28);
             this.checkBoxSendHotkeyInsteadKillOtherInstances.MaximumSize = new System.Drawing.Size(330, 0);
             this.checkBoxSendHotkeyInsteadKillOtherInstances.Name = "checkBoxSendHotkeyInsteadKillOtherInstances";
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Size = new System.Drawing.Size(330, 19);
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Size = new System.Drawing.Size(277, 19);
             this.checkBoxSendHotkeyInsteadKillOtherInstances.TabIndex = 3;
             this.checkBoxSendHotkeyInsteadKillOtherInstances.Text = "checkBoxSendHotkeyInsteadKillOtherInstances";
             this.checkBoxSendHotkeyInsteadKillOtherInstances.UseVisualStyleBackColor = true;
@@ -1508,7 +1643,7 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxOpenDirectoryWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxOpenDirectoryWithOneClick.Location = new System.Drawing.Point(3, 78);
             this.checkBoxOpenDirectoryWithOneClick.Name = "checkBoxOpenDirectoryWithOneClick";
-            this.checkBoxOpenDirectoryWithOneClick.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxOpenDirectoryWithOneClick.Size = new System.Drawing.Size(277, 19);
             this.checkBoxOpenDirectoryWithOneClick.TabIndex = 2;
             this.checkBoxOpenDirectoryWithOneClick.Text = "checkBoxOpenDirectoryWithOneClick";
             this.checkBoxOpenDirectoryWithOneClick.UseVisualStyleBackColor = true;
@@ -1519,7 +1654,7 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxOpenItemWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(3, 53);
             this.checkBoxOpenItemWithOneClick.Name = "checkBoxOpenItemWithOneClick";
-            this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(277, 19);
             this.checkBoxOpenItemWithOneClick.TabIndex = 0;
             this.checkBoxOpenItemWithOneClick.Text = "checkBoxOpenItemWithOneClick";
             this.checkBoxOpenItemWithOneClick.UseVisualStyleBackColor = true;
@@ -1530,7 +1665,7 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxShowInTaskbar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxShowInTaskbar.Location = new System.Drawing.Point(3, 3);
             this.checkBoxShowInTaskbar.Name = "checkBoxShowInTaskbar";
-            this.checkBoxShowInTaskbar.Size = new System.Drawing.Size(388, 19);
+            this.checkBoxShowInTaskbar.Size = new System.Drawing.Size(277, 19);
             this.checkBoxShowInTaskbar.TabIndex = 1;
             this.checkBoxShowInTaskbar.Text = "checkBoxShowInTaskbar";
             this.checkBoxShowInTaskbar.UseVisualStyleBackColor = true;
@@ -1539,7 +1674,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 396);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 533);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -1551,42 +1686,66 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxSorting
             // 
+            this.groupBoxSorting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSorting.AutoSize = true;
             this.groupBoxSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxSorting.Controls.Add(this.tableLayoutPanel5);
-            this.groupBoxSorting.Location = new System.Drawing.Point(3, 312);
-            this.groupBoxSorting.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxSorting.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxSorting.Controls.Add(this.tableLayoutPanelSorting);
+            this.groupBoxSorting.Location = new System.Drawing.Point(3, 296);
             this.groupBoxSorting.Name = "groupBoxSorting";
-            this.groupBoxSorting.Size = new System.Drawing.Size(400, 72);
+            this.groupBoxSorting.Size = new System.Drawing.Size(289, 122);
             this.groupBoxSorting.TabIndex = 3;
             this.groupBoxSorting.TabStop = false;
             this.groupBoxSorting.Text = "groupBoxSorting";
             // 
-            // tableLayoutPanel5
+            // tableLayoutPanelSorting
             // 
-            this.tableLayoutPanel5.AutoSize = true;
-            this.tableLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.radioButtonSortByDate, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.radioButtonSortByName, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(394, 50);
-            this.tableLayoutPanel5.TabIndex = 1;
+            this.tableLayoutPanelSorting.AutoSize = true;
+            this.tableLayoutPanelSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelSorting.ColumnCount = 1;
+            this.tableLayoutPanelSorting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByTypeAndDate, 0, 1);
+            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByTypeAndName, 0, 0);
+            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByDate, 0, 3);
+            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByName, 0, 2);
+            this.tableLayoutPanelSorting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSorting.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelSorting.Name = "tableLayoutPanelSorting";
+            this.tableLayoutPanelSorting.RowCount = 4;
+            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSorting.Size = new System.Drawing.Size(283, 100);
+            this.tableLayoutPanelSorting.TabIndex = 1;
+            // 
+            // radioButtonSortByTypeAndDate
+            // 
+            this.radioButtonSortByTypeAndDate.AutoSize = true;
+            this.radioButtonSortByTypeAndDate.Location = new System.Drawing.Point(3, 28);
+            this.radioButtonSortByTypeAndDate.Name = "radioButtonSortByTypeAndDate";
+            this.radioButtonSortByTypeAndDate.Size = new System.Drawing.Size(192, 19);
+            this.radioButtonSortByTypeAndDate.TabIndex = 3;
+            this.radioButtonSortByTypeAndDate.TabStop = true;
+            this.radioButtonSortByTypeAndDate.Text = "radioButtonSortByTypeAndDate";
+            this.radioButtonSortByTypeAndDate.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSortByTypeAndName
+            // 
+            this.radioButtonSortByTypeAndName.AutoSize = true;
+            this.radioButtonSortByTypeAndName.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonSortByTypeAndName.Name = "radioButtonSortByTypeAndName";
+            this.radioButtonSortByTypeAndName.Size = new System.Drawing.Size(200, 19);
+            this.radioButtonSortByTypeAndName.TabIndex = 4;
+            this.radioButtonSortByTypeAndName.TabStop = true;
+            this.radioButtonSortByTypeAndName.Text = "radioButtonSortByTypeAndName";
+            this.radioButtonSortByTypeAndName.UseVisualStyleBackColor = true;
             // 
             // radioButtonSortByDate
             // 
             this.radioButtonSortByDate.AutoSize = true;
-            this.radioButtonSortByDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonSortByDate.Location = new System.Drawing.Point(3, 28);
+            this.radioButtonSortByDate.Location = new System.Drawing.Point(3, 78);
             this.radioButtonSortByDate.Name = "radioButtonSortByDate";
-            this.radioButtonSortByDate.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonSortByDate.Size = new System.Drawing.Size(146, 19);
             this.radioButtonSortByDate.TabIndex = 1;
             this.radioButtonSortByDate.TabStop = true;
             this.radioButtonSortByDate.Text = "radioButtonSortByDate";
@@ -1595,10 +1754,9 @@ namespace SystemTrayMenu.UserInterface
             // radioButtonSortByName
             // 
             this.radioButtonSortByName.AutoSize = true;
-            this.radioButtonSortByName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonSortByName.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonSortByName.Location = new System.Drawing.Point(3, 53);
             this.radioButtonSortByName.Name = "radioButtonSortByName";
-            this.radioButtonSortByName.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonSortByName.Size = new System.Drawing.Size(154, 19);
             this.radioButtonSortByName.TabIndex = 2;
             this.radioButtonSortByName.TabStop = true;
             this.radioButtonSortByName.Text = "radioButtonSortByName";
@@ -1606,14 +1764,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxHiddenFilesAndFolders
             // 
+            this.groupBoxHiddenFilesAndFolders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxHiddenFilesAndFolders.AutoSize = true;
             this.groupBoxHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHiddenFilesAndFolders.Controls.Add(this.tableLayoutPanelHiddenFilesAndFolders);
-            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 209);
-            this.groupBoxHiddenFilesAndFolders.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxHiddenFilesAndFolders.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 424);
             this.groupBoxHiddenFilesAndFolders.Name = "groupBoxHiddenFilesAndFolders";
-            this.groupBoxHiddenFilesAndFolders.Size = new System.Drawing.Size(400, 97);
+            this.groupBoxHiddenFilesAndFolders.Size = new System.Drawing.Size(289, 97);
             this.groupBoxHiddenFilesAndFolders.TabIndex = 2;
             this.groupBoxHiddenFilesAndFolders.TabStop = false;
             this.groupBoxHiddenFilesAndFolders.Text = "groupBoxHiddenFilesAndFolders";
@@ -1634,7 +1791,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelHiddenFilesAndFolders.Size = new System.Drawing.Size(394, 75);
+            this.tableLayoutPanelHiddenFilesAndFolders.Size = new System.Drawing.Size(283, 75);
             this.tableLayoutPanelHiddenFilesAndFolders.TabIndex = 1;
             // 
             // radioButtonAlwaysShowHiddenFiles
@@ -1643,7 +1800,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonAlwaysShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonAlwaysShowHiddenFiles.Location = new System.Drawing.Point(3, 53);
             this.radioButtonAlwaysShowHiddenFiles.Name = "radioButtonAlwaysShowHiddenFiles";
-            this.radioButtonAlwaysShowHiddenFiles.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonAlwaysShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
             this.radioButtonAlwaysShowHiddenFiles.TabIndex = 2;
             this.radioButtonAlwaysShowHiddenFiles.TabStop = true;
             this.radioButtonAlwaysShowHiddenFiles.Text = "radioButtonAlwaysShowHiddenFiles";
@@ -1655,7 +1812,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonNeverShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonNeverShowHiddenFiles.Location = new System.Drawing.Point(3, 28);
             this.radioButtonNeverShowHiddenFiles.Name = "radioButtonNeverShowHiddenFiles";
-            this.radioButtonNeverShowHiddenFiles.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonNeverShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
             this.radioButtonNeverShowHiddenFiles.TabIndex = 1;
             this.radioButtonNeverShowHiddenFiles.TabStop = true;
             this.radioButtonNeverShowHiddenFiles.Text = "radioButtonNeverShowHiddenFiles";
@@ -1667,7 +1824,7 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonSystemSettingsShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonSystemSettingsShowHiddenFiles.Location = new System.Drawing.Point(3, 3);
             this.radioButtonSystemSettingsShowHiddenFiles.Name = "radioButtonSystemSettingsShowHiddenFiles";
-            this.radioButtonSystemSettingsShowHiddenFiles.Size = new System.Drawing.Size(388, 19);
+            this.radioButtonSystemSettingsShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
             this.radioButtonSystemSettingsShowHiddenFiles.TabIndex = 2;
             this.radioButtonSystemSettingsShowHiddenFiles.TabStop = true;
             this.radioButtonSystemSettingsShowHiddenFiles.Text = "radioButtonSystemSettingsShowHiddenFiles";
@@ -1679,7 +1836,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageFolders.Location = new System.Drawing.Point(4, 24);
             this.tabPageFolders.Name = "tabPageFolders";
             this.tabPageFolders.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFolders.Size = new System.Drawing.Size(414, 413);
+            this.tabPageFolders.Size = new System.Drawing.Size(412, 493);
             this.tabPageFolders.TabIndex = 2;
             this.tabPageFolders.Text = "tabPageFolders";
             this.tabPageFolders.UseVisualStyleBackColor = true;
@@ -1692,26 +1849,25 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFoldersInRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelFoldersInRootFolder.Controls.Add(this.groupBoxFoldersInRootFolder, 0, 0);
             this.tableLayoutPanelFoldersInRootFolder.Controls.Add(this.buttonDefaultFolders, 0, 1);
-            this.tableLayoutPanelFoldersInRootFolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelFoldersInRootFolder.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelFoldersInRootFolder.Name = "tableLayoutPanelFoldersInRootFolder";
+            this.tableLayoutPanelFoldersInRootFolder.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.tableLayoutPanelFoldersInRootFolder.RowCount = 2;
             this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelFoldersInRootFolder.Size = new System.Drawing.Size(408, 407);
+            this.tableLayoutPanelFoldersInRootFolder.Size = new System.Drawing.Size(345, 415);
             this.tableLayoutPanelFoldersInRootFolder.TabIndex = 1;
             // 
             // groupBoxFoldersInRootFolder
             // 
+            this.groupBoxFoldersInRootFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxFoldersInRootFolder.AutoSize = true;
             this.groupBoxFoldersInRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxFoldersInRootFolder.Controls.Add(this.tableLayoutPanelFolderToRootFoldersList);
             this.groupBoxFoldersInRootFolder.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxFoldersInRootFolder.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxFoldersInRootFolder.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxFoldersInRootFolder.Name = "groupBoxFoldersInRootFolder";
-            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(400, 324);
+            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(333, 366);
             this.groupBoxFoldersInRootFolder.TabIndex = 0;
             this.groupBoxFoldersInRootFolder.TabStop = false;
             this.groupBoxFoldersInRootFolder.Text = "groupBoxFoldersInRootFolder";
@@ -1719,7 +1875,6 @@ namespace SystemTrayMenu.UserInterface
             // tableLayoutPanelFolderToRootFoldersList
             // 
             this.tableLayoutPanelFolderToRootFoldersList.AutoSize = true;
-            this.tableLayoutPanelFolderToRootFoldersList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelFolderToRootFoldersList.ColumnCount = 1;
             this.tableLayoutPanelFolderToRootFoldersList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.tableLayoutPanelFolderToRootFolder, 0, 2);
@@ -1734,10 +1889,10 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList.Size = new System.Drawing.Size(394, 302);
+            this.tableLayoutPanelFolderToRootFoldersList.Size = new System.Drawing.Size(327, 344);
             this.tableLayoutPanelFolderToRootFoldersList.TabIndex = 0;
             // 
             // tableLayoutPanelFolderToRootFolder
@@ -1756,7 +1911,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolderToRootFolder.Name = "tableLayoutPanelFolderToRootFolder";
             this.tableLayoutPanelFolderToRootFolder.RowCount = 1;
             this.tableLayoutPanelFolderToRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFolderToRootFolder.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelFolderToRootFolder.Size = new System.Drawing.Size(327, 31);
             this.tableLayoutPanelFolderToRootFolder.TabIndex = 2;
             // 
             // buttonAddFolderToRootFolder
@@ -1777,7 +1932,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonRemoveFolder.AutoSize = true;
             this.buttonRemoveFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRemoveFolder.Location = new System.Drawing.Point(262, 3);
+            this.buttonRemoveFolder.Location = new System.Drawing.Point(195, 3);
             this.buttonRemoveFolder.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonRemoveFolder.Name = "buttonRemoveFolder";
             this.buttonRemoveFolder.Size = new System.Drawing.Size(129, 25);
@@ -1798,13 +1953,12 @@ namespace SystemTrayMenu.UserInterface
             this.ColumnFolder,
             this.ColumnRecursiveLevel,
             this.ColumnOnlyFiles});
-            this.dataGridViewFolders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFolders.Location = new System.Drawing.Point(3, 59);
             this.dataGridViewFolders.Name = "dataGridViewFolders";
             this.dataGridViewFolders.RowHeadersVisible = false;
             this.dataGridViewFolders.RowTemplate.Height = 25;
             this.dataGridViewFolders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewFolders.Size = new System.Drawing.Size(388, 184);
+            this.dataGridViewFolders.Size = new System.Drawing.Size(321, 226);
             this.dataGridViewFolders.TabIndex = 6;
             this.dataGridViewFolders.TabStop = false;
             this.dataGridViewFolders.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DataGridViewFolders_CellValidating);
@@ -1848,12 +2002,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAddSampleStartMenuFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelAddSampleStartMenuFolder.Controls.Add(this.buttonAddSampleStartMenuFolder, 0, 0);
             this.tableLayoutPanelAddSampleStartMenuFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAddSampleStartMenuFolder.Location = new System.Drawing.Point(0, 246);
+            this.tableLayoutPanelAddSampleStartMenuFolder.Location = new System.Drawing.Point(0, 288);
             this.tableLayoutPanelAddSampleStartMenuFolder.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelAddSampleStartMenuFolder.Name = "tableLayoutPanelAddSampleStartMenuFolder";
             this.tableLayoutPanelAddSampleStartMenuFolder.RowCount = 1;
             this.tableLayoutPanelAddSampleStartMenuFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAddSampleStartMenuFolder.Size = new System.Drawing.Size(394, 31);
+            this.tableLayoutPanelAddSampleStartMenuFolder.Size = new System.Drawing.Size(327, 31);
             this.tableLayoutPanelAddSampleStartMenuFolder.TabIndex = 3;
             // 
             // buttonAddSampleStartMenuFolder
@@ -1873,7 +2027,7 @@ namespace SystemTrayMenu.UserInterface
             // checkBoxGenerateShortcutsToDrives
             // 
             this.checkBoxGenerateShortcutsToDrives.AutoSize = true;
-            this.checkBoxGenerateShortcutsToDrives.Location = new System.Drawing.Point(3, 280);
+            this.checkBoxGenerateShortcutsToDrives.Location = new System.Drawing.Point(3, 322);
             this.checkBoxGenerateShortcutsToDrives.Name = "checkBoxGenerateShortcutsToDrives";
             this.checkBoxGenerateShortcutsToDrives.Size = new System.Drawing.Size(218, 19);
             this.checkBoxGenerateShortcutsToDrives.TabIndex = 7;
@@ -1894,7 +2048,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonDefaultFolders.AutoSize = true;
             this.buttonDefaultFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonDefaultFolders.Location = new System.Drawing.Point(9, 339);
+            this.buttonDefaultFolders.Location = new System.Drawing.Point(9, 381);
             this.buttonDefaultFolders.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonDefaultFolders.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonDefaultFolders.Name = "buttonDefaultFolders";
@@ -1910,7 +2064,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageExpert.Location = new System.Drawing.Point(4, 24);
             this.tabPageExpert.Name = "tabPageExpert";
             this.tabPageExpert.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageExpert.Size = new System.Drawing.Size(414, 413);
+            this.tabPageExpert.Size = new System.Drawing.Size(412, 493);
             this.tabPageExpert.TabIndex = 1;
             this.tabPageExpert.Text = "tabPageExpert";
             this.tabPageExpert.UseVisualStyleBackColor = true;
@@ -1926,29 +2080,28 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelExpert.Controls.Add(this.groupBoxStaysOpen, 0, 1);
             this.tableLayoutPanelExpert.Controls.Add(this.groupBoxOpenSubmenus, 0, 0);
             this.tableLayoutPanelExpert.Controls.Add(this.buttonExpertDefault, 0, 4);
-            this.tableLayoutPanelExpert.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelExpert.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelExpert.Name = "tableLayoutPanelExpert";
+            this.tableLayoutPanelExpert.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.tableLayoutPanelExpert.RowCount = 5;
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelExpert.Size = new System.Drawing.Size(408, 407);
+            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelExpert.Size = new System.Drawing.Size(345, 387);
             this.tableLayoutPanelExpert.TabIndex = 1;
             // 
             // groupBoxSearchPattern
             // 
+            this.groupBoxSearchPattern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSearchPattern.AutoSize = true;
             this.groupBoxSearchPattern.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxSearchPattern.Controls.Add(this.tableLayoutPanelSearchPattern);
-            this.groupBoxSearchPattern.Location = new System.Drawing.Point(3, 312);
-            this.groupBoxSearchPattern.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxSearchPattern.MinimumSize = new System.Drawing.Size(400, 0);
+            this.groupBoxSearchPattern.Location = new System.Drawing.Point(3, 287);
             this.groupBoxSearchPattern.Name = "groupBoxSearchPattern";
             this.groupBoxSearchPattern.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxSearchPattern.Size = new System.Drawing.Size(400, 54);
+            this.groupBoxSearchPattern.Size = new System.Drawing.Size(333, 54);
             this.groupBoxSearchPattern.TabIndex = 2;
             this.groupBoxSearchPattern.TabStop = false;
             this.groupBoxSearchPattern.Text = "groupBoxSearchPattern";
@@ -1965,28 +2118,27 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSearchPattern.Name = "tableLayoutPanelSearchPattern";
             this.tableLayoutPanelSearchPattern.RowCount = 1;
             this.tableLayoutPanelSearchPattern.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearchPattern.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelSearchPattern.Size = new System.Drawing.Size(327, 29);
             this.tableLayoutPanelSearchPattern.TabIndex = 0;
             // 
             // textBoxSearchPattern
             // 
             this.textBoxSearchPattern.Location = new System.Drawing.Point(3, 3);
             this.textBoxSearchPattern.Name = "textBoxSearchPattern";
-            this.textBoxSearchPattern.Size = new System.Drawing.Size(350, 23);
+            this.textBoxSearchPattern.Size = new System.Drawing.Size(311, 23);
             this.textBoxSearchPattern.TabIndex = 1;
             this.textBoxSearchPattern.TabStop = false;
             // 
             // groupBoxCache
             // 
+            this.groupBoxCache.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxCache.AutoSize = true;
             this.groupBoxCache.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxCache.Controls.Add(this.tableLayoutPanelCache);
             this.groupBoxCache.Location = new System.Drawing.Point(3, 227);
-            this.groupBoxCache.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxCache.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxCache.Name = "groupBoxCache";
             this.groupBoxCache.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxCache.Size = new System.Drawing.Size(400, 79);
+            this.groupBoxCache.Size = new System.Drawing.Size(333, 54);
             this.groupBoxCache.TabIndex = 1;
             this.groupBoxCache.TabStop = false;
             this.groupBoxCache.Text = "groupBoxCache";
@@ -1997,26 +2149,15 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCache.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelCache.ColumnCount = 1;
             this.tableLayoutPanelCache.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelCache.Controls.Add(this.checkBoxCacheMainMenu, 0, 0);
-            this.tableLayoutPanelCache.Controls.Add(this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems, 0, 1);
+            this.tableLayoutPanelCache.Controls.Add(this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems, 0, 0);
             this.tableLayoutPanelCache.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelCache.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelCache.Name = "tableLayoutPanelCache";
-            this.tableLayoutPanelCache.RowCount = 2;
+            this.tableLayoutPanelCache.RowCount = 1;
             this.tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCache.Size = new System.Drawing.Size(394, 54);
+            this.tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelCache.Size = new System.Drawing.Size(327, 29);
             this.tableLayoutPanelCache.TabIndex = 0;
-            // 
-            // checkBoxCacheMainMenu
-            // 
-            this.checkBoxCacheMainMenu.AutoSize = true;
-            this.checkBoxCacheMainMenu.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxCacheMainMenu.Name = "checkBoxCacheMainMenu";
-            this.checkBoxCacheMainMenu.Size = new System.Drawing.Size(168, 19);
-            this.checkBoxCacheMainMenu.TabIndex = 3;
-            this.checkBoxCacheMainMenu.Text = "checkBoxCacheMainMenu";
-            this.checkBoxCacheMainMenu.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems
             // 
@@ -2028,12 +2169,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Controls.Add(this.labelClearCacheIfMoreThanThisNumberOfItems, 1, 0);
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Controls.Add(this.numericUpDownClearCacheIfMoreThanThisNumberOfItems, 0, 0);
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Location = new System.Drawing.Point(0, 25);
+            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Name = "tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems";
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.RowCount = 1;
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Size = new System.Drawing.Size(327, 29);
             this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.TabIndex = 3;
             // 
             // labelClearCacheIfMoreThanThisNumberOfItems
@@ -2071,15 +2212,14 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxStaysOpen
             // 
+            this.groupBoxStaysOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxStaysOpen.AutoSize = true;
             this.groupBoxStaysOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxStaysOpen.Controls.Add(this.tableLayoutPanelStaysOpen);
             this.groupBoxStaysOpen.Location = new System.Drawing.Point(3, 63);
-            this.groupBoxStaysOpen.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxStaysOpen.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxStaysOpen.Name = "groupBoxStaysOpen";
             this.groupBoxStaysOpen.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxStaysOpen.Size = new System.Drawing.Size(400, 158);
+            this.groupBoxStaysOpen.Size = new System.Drawing.Size(333, 158);
             this.groupBoxStaysOpen.TabIndex = 0;
             this.groupBoxStaysOpen.TabStop = false;
             this.groupBoxStaysOpen.Text = "groupBoxStaysOpen";
@@ -2104,7 +2244,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelStaysOpen.Size = new System.Drawing.Size(394, 133);
+            this.tableLayoutPanelStaysOpen.Size = new System.Drawing.Size(327, 133);
             this.tableLayoutPanelStaysOpen.TabIndex = 0;
             // 
             // tableLayoutPanelTimeUntilClosesAfterEnterPressed
@@ -2122,7 +2262,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Name = "tableLayoutPanelTimeUntilClosesAfterEnterPressed";
             this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.RowCount = 1;
             this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(327, 29);
             this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.TabIndex = 2;
             // 
             // labelTimeUntilClosesAfterEnterPressed
@@ -2130,7 +2270,7 @@ namespace SystemTrayMenu.UserInterface
             this.labelTimeUntilClosesAfterEnterPressed.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelTimeUntilClosesAfterEnterPressed.AutoSize = true;
             this.labelTimeUntilClosesAfterEnterPressed.Location = new System.Drawing.Point(64, 7);
-            this.labelTimeUntilClosesAfterEnterPressed.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelTimeUntilClosesAfterEnterPressed.MaximumSize = new System.Drawing.Size(300, 0);
             this.labelTimeUntilClosesAfterEnterPressed.Name = "labelTimeUntilClosesAfterEnterPressed";
             this.labelTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(210, 15);
             this.labelTimeUntilClosesAfterEnterPressed.TabIndex = 0;
@@ -2183,7 +2323,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilCloses.Name = "tableLayoutPanelTimeUntilCloses";
             this.tableLayoutPanelTimeUntilCloses.RowCount = 1;
             this.tableLayoutPanelTimeUntilCloses.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTimeUntilCloses.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelTimeUntilCloses.Size = new System.Drawing.Size(327, 29);
             this.tableLayoutPanelTimeUntilCloses.TabIndex = 0;
             // 
             // labelTimeUntilCloses
@@ -2191,7 +2331,7 @@ namespace SystemTrayMenu.UserInterface
             this.labelTimeUntilCloses.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelTimeUntilCloses.AutoSize = true;
             this.labelTimeUntilCloses.Location = new System.Drawing.Point(64, 7);
-            this.labelTimeUntilCloses.MaximumSize = new System.Drawing.Size(330, 0);
+            this.labelTimeUntilCloses.MaximumSize = new System.Drawing.Size(300, 0);
             this.labelTimeUntilCloses.Name = "labelTimeUntilCloses";
             this.labelTimeUntilCloses.Size = new System.Drawing.Size(117, 15);
             this.labelTimeUntilCloses.TabIndex = 0;
@@ -2221,15 +2361,14 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxOpenSubmenus
             // 
+            this.groupBoxOpenSubmenus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxOpenSubmenus.AutoSize = true;
             this.groupBoxOpenSubmenus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxOpenSubmenus.Controls.Add(this.tableLayoutPanelTimeUntilOpen);
             this.groupBoxOpenSubmenus.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxOpenSubmenus.MaximumSize = new System.Drawing.Size(400, 0);
-            this.groupBoxOpenSubmenus.MinimumSize = new System.Drawing.Size(400, 0);
             this.groupBoxOpenSubmenus.Name = "groupBoxOpenSubmenus";
             this.groupBoxOpenSubmenus.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxOpenSubmenus.Size = new System.Drawing.Size(400, 54);
+            this.groupBoxOpenSubmenus.Size = new System.Drawing.Size(333, 54);
             this.groupBoxOpenSubmenus.TabIndex = 0;
             this.groupBoxOpenSubmenus.TabStop = false;
             this.groupBoxOpenSubmenus.Text = "groupBoxOpenSubmenus";
@@ -2248,7 +2387,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelTimeUntilOpen.Name = "tableLayoutPanelTimeUntilOpen";
             this.tableLayoutPanelTimeUntilOpen.RowCount = 1;
             this.tableLayoutPanelTimeUntilOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTimeUntilOpen.Size = new System.Drawing.Size(394, 29);
+            this.tableLayoutPanelTimeUntilOpen.Size = new System.Drawing.Size(327, 29);
             this.tableLayoutPanelTimeUntilOpen.TabIndex = 0;
             // 
             // numericUpDownTimeUntilOpens
@@ -2275,7 +2414,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonExpertDefault.AutoSize = true;
             this.buttonExpertDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonExpertDefault.Location = new System.Drawing.Point(9, 378);
+            this.buttonExpertDefault.Location = new System.Drawing.Point(9, 353);
             this.buttonExpertDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonExpertDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonExpertDefault.Name = "buttonExpertDefault";
@@ -2292,7 +2431,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageCustomize.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomize.Name = "tabPageCustomize";
             this.tabPageCustomize.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCustomize.Size = new System.Drawing.Size(414, 413);
+            this.tabPageCustomize.Size = new System.Drawing.Size(412, 493);
             this.tabPageCustomize.TabIndex = 0;
             this.tabPageCustomize.Text = "tabPageCustomize";
             this.tabPageCustomize.UseVisualStyleBackColor = true;
@@ -2308,23 +2447,23 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxAppearance, 0, 0);
             this.tableLayoutPanelCustomize.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelCustomize.Name = "tableLayoutPanelCustomize";
+            this.tableLayoutPanelCustomize.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.tableLayoutPanelCustomize.RowCount = 3;
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(391, 1356);
+            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(385, 1581);
             this.tableLayoutPanelCustomize.TabIndex = 0;
             // 
             // groupBoxColorsDarkMode
             // 
+            this.groupBoxColorsDarkMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxColorsDarkMode.AutoSize = true;
             this.groupBoxColorsDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxColorsDarkMode.Controls.Add(this.tableLayoutPanelDarkMode);
-            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 748);
-            this.groupBoxColorsDarkMode.MaximumSize = new System.Drawing.Size(385, 0);
-            this.groupBoxColorsDarkMode.MinimumSize = new System.Drawing.Size(385, 0);
+            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 973);
             this.groupBoxColorsDarkMode.Name = "groupBoxColorsDarkMode";
-            this.groupBoxColorsDarkMode.Size = new System.Drawing.Size(385, 605);
+            this.groupBoxColorsDarkMode.Size = new System.Drawing.Size(373, 605);
             this.groupBoxColorsDarkMode.TabIndex = 0;
             this.groupBoxColorsDarkMode.TabStop = false;
             this.groupBoxColorsDarkMode.Text = "groupBoxColorsDarkMode";
@@ -2334,7 +2473,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelDarkMode.AutoSize = true;
             this.tableLayoutPanelDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelDarkMode.ColumnCount = 1;
-            this.tableLayoutPanelDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
+            this.tableLayoutPanelDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelColorIconsDarkMode, 0, 1);
             this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelColorBackgroundBorderDarkMode, 0, 3);
             this.tableLayoutPanelDarkMode.Controls.Add(this.labelMenuDarkMode, 0, 0);
@@ -2381,8 +2520,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelDarkMode.Size = new System.Drawing.Size(379, 583);
+            this.tableLayoutPanelDarkMode.Size = new System.Drawing.Size(367, 583);
             this.tableLayoutPanelDarkMode.TabIndex = 0;
             // 
             // tableLayoutPanelColorIconsDarkMode
@@ -3390,14 +3528,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxColorsLightMode
             // 
+            this.groupBoxColorsLightMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxColorsLightMode.AutoSize = true;
             this.groupBoxColorsLightMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxColorsLightMode.Controls.Add(this.tableLayoutPanelColorsAndDefault);
-            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 137);
-            this.groupBoxColorsLightMode.MaximumSize = new System.Drawing.Size(385, 0);
-            this.groupBoxColorsLightMode.MinimumSize = new System.Drawing.Size(385, 0);
+            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 362);
             this.groupBoxColorsLightMode.Name = "groupBoxColorsLightMode";
-            this.groupBoxColorsLightMode.Size = new System.Drawing.Size(385, 605);
+            this.groupBoxColorsLightMode.Size = new System.Drawing.Size(373, 605);
             this.groupBoxColorsLightMode.TabIndex = 0;
             this.groupBoxColorsLightMode.TabStop = false;
             this.groupBoxColorsLightMode.Text = "groupBoxColorsLightMode";
@@ -3407,7 +3544,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColorsAndDefault.AutoSize = true;
             this.tableLayoutPanelColorsAndDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelColorsAndDefault.ColumnCount = 1;
-            this.tableLayoutPanelColorsAndDefault.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
+            this.tableLayoutPanelColorsAndDefault.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelIcons, 0, 1);
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelBackgroundBorder, 0, 3);
             this.tableLayoutPanelColorsAndDefault.Controls.Add(this.labelMenuLightMode, 0, 0);
@@ -3454,8 +3591,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelColorsAndDefault.Size = new System.Drawing.Size(379, 583);
+            this.tableLayoutPanelColorsAndDefault.Size = new System.Drawing.Size(367, 583);
             this.tableLayoutPanelColorsAndDefault.TabIndex = 0;
             // 
             // tableLayoutPanelIcons
@@ -4466,14 +4602,13 @@ namespace SystemTrayMenu.UserInterface
             // 
             // groupBoxAppearance
             // 
+            this.groupBoxAppearance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxAppearance.AutoSize = true;
             this.groupBoxAppearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxAppearance.Controls.Add(this.tableLayoutPanelAppearance);
             this.groupBoxAppearance.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxAppearance.MaximumSize = new System.Drawing.Size(385, 0);
-            this.groupBoxAppearance.MinimumSize = new System.Drawing.Size(385, 0);
             this.groupBoxAppearance.Name = "groupBoxAppearance";
-            this.groupBoxAppearance.Size = new System.Drawing.Size(385, 128);
+            this.groupBoxAppearance.Size = new System.Drawing.Size(373, 353);
             this.groupBoxAppearance.TabIndex = 1;
             this.groupBoxAppearance.TabStop = false;
             this.groupBoxAppearance.Text = "groupBoxAppearance";
@@ -4484,26 +4619,151 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAppearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelAppearance.ColumnCount = 1;
             this.tableLayoutPanelAppearance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAppearance.Controls.Add(this.buttonAppearanceDefault, 0, 3);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxUseFading, 0, 1);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeyPinMenu, 0, 8);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeySettings, 0, 9);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeyRestart, 0, 10);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowLinkOverlay, 0, 4);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxUseFading, 0, 3);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxUseIconFromRootFolder, 0, 0);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowSearchBar, 0, 6);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowDirectoryTitleAtTop, 0, 5);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxRoundCorners, 0, 1);
             this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 2);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxRoundCorners, 0, 0);
+            this.tableLayoutPanelAppearance.Controls.Add(this.buttonAppearanceDefault, 0, 12);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowCountOfElementsBelow, 0, 11);
+            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeyOpenFolder, 0, 7);
             this.tableLayoutPanelAppearance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelAppearance.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelAppearance.Name = "tableLayoutPanelAppearance";
-            this.tableLayoutPanelAppearance.RowCount = 4;
+            this.tableLayoutPanelAppearance.RowCount = 13;
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.Size = new System.Drawing.Size(379, 106);
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAppearance.Size = new System.Drawing.Size(367, 331);
             this.tableLayoutPanelAppearance.TabIndex = 1;
+            // 
+            // checkBoxShowFunctionKeyPinMenu
+            // 
+            this.checkBoxShowFunctionKeyPinMenu.AutoSize = true;
+            this.checkBoxShowFunctionKeyPinMenu.Location = new System.Drawing.Point(3, 203);
+            this.checkBoxShowFunctionKeyPinMenu.Name = "checkBoxShowFunctionKeyPinMenu";
+            this.checkBoxShowFunctionKeyPinMenu.Size = new System.Drawing.Size(220, 19);
+            this.checkBoxShowFunctionKeyPinMenu.TabIndex = 4;
+            this.checkBoxShowFunctionKeyPinMenu.Text = "checkBoxShowFunctionKeyPinMenu";
+            this.checkBoxShowFunctionKeyPinMenu.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowFunctionKeySettings
+            // 
+            this.checkBoxShowFunctionKeySettings.AutoSize = true;
+            this.checkBoxShowFunctionKeySettings.Location = new System.Drawing.Point(3, 228);
+            this.checkBoxShowFunctionKeySettings.Name = "checkBoxShowFunctionKeySettings";
+            this.checkBoxShowFunctionKeySettings.Size = new System.Drawing.Size(214, 19);
+            this.checkBoxShowFunctionKeySettings.TabIndex = 5;
+            this.checkBoxShowFunctionKeySettings.Text = "checkBoxShowFunctionKeySettings";
+            this.checkBoxShowFunctionKeySettings.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowFunctionKeyRestart
+            // 
+            this.checkBoxShowFunctionKeyRestart.AutoSize = true;
+            this.checkBoxShowFunctionKeyRestart.Location = new System.Drawing.Point(3, 253);
+            this.checkBoxShowFunctionKeyRestart.Name = "checkBoxShowFunctionKeyRestart";
+            this.checkBoxShowFunctionKeyRestart.Size = new System.Drawing.Size(208, 19);
+            this.checkBoxShowFunctionKeyRestart.TabIndex = 6;
+            this.checkBoxShowFunctionKeyRestart.Text = "checkBoxShowFunctionKeyRestart";
+            this.checkBoxShowFunctionKeyRestart.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowLinkOverlay
+            // 
+            this.checkBoxShowLinkOverlay.AutoSize = true;
+            this.checkBoxShowLinkOverlay.Location = new System.Drawing.Point(3, 103);
+            this.checkBoxShowLinkOverlay.Name = "checkBoxShowLinkOverlay";
+            this.checkBoxShowLinkOverlay.Size = new System.Drawing.Size(168, 19);
+            this.checkBoxShowLinkOverlay.TabIndex = 5;
+            this.checkBoxShowLinkOverlay.Text = "checkBoxShowLinkOverlay";
+            this.checkBoxShowLinkOverlay.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxUseFading
+            // 
+            this.checkBoxUseFading.AutoSize = true;
+            this.checkBoxUseFading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxUseFading.Location = new System.Drawing.Point(3, 78);
+            this.checkBoxUseFading.Name = "checkBoxUseFading";
+            this.checkBoxUseFading.Size = new System.Drawing.Size(361, 19);
+            this.checkBoxUseFading.TabIndex = 5;
+            this.checkBoxUseFading.Text = "checkBoxUseFading";
+            this.checkBoxUseFading.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxUseIconFromRootFolder
+            // 
+            this.checkBoxUseIconFromRootFolder.AutoSize = true;
+            this.checkBoxUseIconFromRootFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxUseIconFromRootFolder.Name = "checkBoxUseIconFromRootFolder";
+            this.checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(361, 19);
+            this.checkBoxUseIconFromRootFolder.TabIndex = 4;
+            this.checkBoxUseIconFromRootFolder.Text = "checkBoxUseIconFromRootFolder";
+            this.checkBoxUseIconFromRootFolder.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowSearchBar
+            // 
+            this.checkBoxShowSearchBar.AutoSize = true;
+            this.checkBoxShowSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxShowSearchBar.Location = new System.Drawing.Point(3, 153);
+            this.checkBoxShowSearchBar.Name = "checkBoxShowSearchBar";
+            this.checkBoxShowSearchBar.Size = new System.Drawing.Size(361, 19);
+            this.checkBoxShowSearchBar.TabIndex = 2;
+            this.checkBoxShowSearchBar.Text = "checkBoxShowSearchBar";
+            this.checkBoxShowSearchBar.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowDirectoryTitleAtTop
+            // 
+            this.checkBoxShowDirectoryTitleAtTop.AutoSize = true;
+            this.checkBoxShowDirectoryTitleAtTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxShowDirectoryTitleAtTop.Location = new System.Drawing.Point(3, 128);
+            this.checkBoxShowDirectoryTitleAtTop.Name = "checkBoxShowDirectoryTitleAtTop";
+            this.checkBoxShowDirectoryTitleAtTop.Size = new System.Drawing.Size(361, 19);
+            this.checkBoxShowDirectoryTitleAtTop.TabIndex = 1;
+            this.checkBoxShowDirectoryTitleAtTop.Text = "checkBoxShowDirectoryTitleAtTop";
+            this.checkBoxShowDirectoryTitleAtTop.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRoundCorners
+            // 
+            this.checkBoxRoundCorners.AutoSize = true;
+            this.checkBoxRoundCorners.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxRoundCorners.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxRoundCorners.Name = "checkBoxRoundCorners";
+            this.checkBoxRoundCorners.Size = new System.Drawing.Size(361, 19);
+            this.checkBoxRoundCorners.TabIndex = 4;
+            this.checkBoxRoundCorners.Text = "checkBoxRoundCorners";
+            this.checkBoxRoundCorners.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDarkModeAlwaysOn
+            // 
+            this.checkBoxDarkModeAlwaysOn.AutoSize = true;
+            this.checkBoxDarkModeAlwaysOn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxDarkModeAlwaysOn.Location = new System.Drawing.Point(3, 53);
+            this.checkBoxDarkModeAlwaysOn.Name = "checkBoxDarkModeAlwaysOn";
+            this.checkBoxDarkModeAlwaysOn.Size = new System.Drawing.Size(361, 19);
+            this.checkBoxDarkModeAlwaysOn.TabIndex = 0;
+            this.checkBoxDarkModeAlwaysOn.Text = "checkBoxDarkModeAlwaysOn";
+            this.checkBoxDarkModeAlwaysOn.UseVisualStyleBackColor = true;
+            this.checkBoxDarkModeAlwaysOn.CheckedChanged += new System.EventHandler(this.CheckBoxDarkModeAlwaysOnCheckedChanged);
             // 
             // buttonAppearanceDefault
             // 
             this.buttonAppearanceDefault.AutoSize = true;
             this.buttonAppearanceDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 78);
+            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 303);
             this.buttonAppearanceDefault.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonAppearanceDefault.Name = "buttonAppearanceDefault";
             this.buttonAppearanceDefault.Size = new System.Drawing.Size(154, 25);
@@ -4512,39 +4772,25 @@ namespace SystemTrayMenu.UserInterface
             this.buttonAppearanceDefault.UseVisualStyleBackColor = true;
             this.buttonAppearanceDefault.Click += new System.EventHandler(this.ButtonAppearanceDefault_Click);
             // 
-            // checkBoxUseFading
+            // checkBoxShowCountOfElementsBelow
             // 
-            this.checkBoxUseFading.AutoSize = true;
-            this.checkBoxUseFading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxUseFading.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxUseFading.Name = "checkBoxUseFading";
-            this.checkBoxUseFading.Size = new System.Drawing.Size(373, 19);
-            this.checkBoxUseFading.TabIndex = 5;
-            this.checkBoxUseFading.Text = "checkBoxUseFading";
-            this.checkBoxUseFading.UseVisualStyleBackColor = true;
+            this.checkBoxShowCountOfElementsBelow.AutoSize = true;
+            this.checkBoxShowCountOfElementsBelow.Location = new System.Drawing.Point(3, 278);
+            this.checkBoxShowCountOfElementsBelow.Name = "checkBoxShowCountOfElementsBelow";
+            this.checkBoxShowCountOfElementsBelow.Size = new System.Drawing.Size(232, 19);
+            this.checkBoxShowCountOfElementsBelow.TabIndex = 4;
+            this.checkBoxShowCountOfElementsBelow.Text = "checkBoxShowCountOfElementsBelow";
+            this.checkBoxShowCountOfElementsBelow.UseVisualStyleBackColor = true;
             // 
-            // checkBoxDarkModeAlwaysOn
+            // checkBoxShowFunctionKeyOpenFolder
             // 
-            this.checkBoxDarkModeAlwaysOn.AutoSize = true;
-            this.checkBoxDarkModeAlwaysOn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxDarkModeAlwaysOn.Location = new System.Drawing.Point(3, 53);
-            this.checkBoxDarkModeAlwaysOn.Name = "checkBoxDarkModeAlwaysOn";
-            this.checkBoxDarkModeAlwaysOn.Size = new System.Drawing.Size(373, 19);
-            this.checkBoxDarkModeAlwaysOn.TabIndex = 0;
-            this.checkBoxDarkModeAlwaysOn.Text = "checkBoxDarkModeAlwaysOn";
-            this.checkBoxDarkModeAlwaysOn.UseVisualStyleBackColor = true;
-            this.checkBoxDarkModeAlwaysOn.CheckedChanged += new System.EventHandler(this.CheckBoxDarkModeAlwaysOnCheckedChanged);
-            // 
-            // checkBoxRoundCorners
-            // 
-            this.checkBoxRoundCorners.AutoSize = true;
-            this.checkBoxRoundCorners.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxRoundCorners.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxRoundCorners.Name = "checkBoxRoundCorners";
-            this.checkBoxRoundCorners.Size = new System.Drawing.Size(373, 19);
-            this.checkBoxRoundCorners.TabIndex = 4;
-            this.checkBoxRoundCorners.Text = "checkBoxRoundCorners";
-            this.checkBoxRoundCorners.UseVisualStyleBackColor = true;
+            this.checkBoxShowFunctionKeyOpenFolder.AutoSize = true;
+            this.checkBoxShowFunctionKeyOpenFolder.Location = new System.Drawing.Point(3, 178);
+            this.checkBoxShowFunctionKeyOpenFolder.Name = "checkBoxShowFunctionKeyOpenFolder";
+            this.checkBoxShowFunctionKeyOpenFolder.Size = new System.Drawing.Size(234, 19);
+            this.checkBoxShowFunctionKeyOpenFolder.TabIndex = 3;
+            this.checkBoxShowFunctionKeyOpenFolder.Text = "checkBoxShowFunctionKeyOpenFolder";
+            this.checkBoxShowFunctionKeyOpenFolder.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelBottom
             // 
@@ -4557,11 +4803,12 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelBottom.Controls.Add(this.buttonOk, 1, 0);
             this.tableLayoutPanelBottom.Controls.Add(this.buttonCancel, 2, 0);
-            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 450);
+            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 522);
+            this.tableLayoutPanelBottom.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
             this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
             this.tableLayoutPanelBottom.RowCount = 1;
             this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(428, 25);
+            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(426, 25);
             this.tableLayoutPanelBottom.TabIndex = 0;
             // 
             // buttonOk
@@ -4569,7 +4816,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk.AutoSize = true;
             this.buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(267, 0);
+            this.buttonOk.Location = new System.Drawing.Point(265, 0);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.buttonOk.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonOk.Name = "buttonOk";
@@ -4584,13 +4831,13 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.AutoSize = true;
             this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(348, 0);
+            this.buttonCancel.Location = new System.Drawing.Point(346, 0);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 25);
             this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "Abort";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
@@ -4600,16 +4847,15 @@ namespace SystemTrayMenu.UserInterface
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1484, 1061);
+            this.ClientSize = new System.Drawing.Size(1080, 577);
             this.Controls.Add(this.tableLayoutPanelMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "SettingsForm";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsForm_FormClosed);
             this.Load += new System.EventHandler(this.SettingsForm_Load);
+            this.Shown += new System.EventHandler(this.SettingsForm_Shown);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();
             this.tabControl.ResumeLayout(false);
@@ -4623,14 +4869,16 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelFolder.PerformLayout();
             this.tableLayoutPanelChangeFolder.ResumeLayout(false);
             this.tableLayoutPanelChangeFolder.PerformLayout();
-            this.groupBoxUSB.ResumeLayout(false);
-            this.groupBoxUSB.PerformLayout();
-            this.tableLayoutPanelUSB.ResumeLayout(false);
-            this.tableLayoutPanelUSB.PerformLayout();
             this.tableLayoutPanelRelativeFolderOpenAssembly.ResumeLayout(false);
             this.tableLayoutPanelRelativeFolderOpenAssembly.PerformLayout();
+            this.groupBoxConfigAndLogfile.ResumeLayout(false);
+            this.groupBoxConfigAndLogfile.PerformLayout();
+            this.tableLayoutPanelConfigAndLogfile.ResumeLayout(false);
+            this.tableLayoutPanelConfigAndLogfile.PerformLayout();
             this.groupBoxAutostart.ResumeLayout(false);
             this.groupBoxAutostart.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanelAutostart.ResumeLayout(false);
             this.tableLayoutPanelAutostart.PerformLayout();
             this.groupBoxHotkey.ResumeLayout(false);
@@ -4642,8 +4890,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelLanguage.ResumeLayout(false);
             this.tabPageSizeAndLocation.ResumeLayout(false);
             this.tabPageSizeAndLocation.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanelSizeAndLocation.ResumeLayout(false);
+            this.tableLayoutPanelSizeAndLocation.PerformLayout();
             this.groupBoxSubMenuAppearAt.ResumeLayout(false);
             this.groupBoxSubMenuAppearAt.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -4678,6 +4926,12 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageAdvanced.PerformLayout();
             this.tableLayoutPanelAdvanced.ResumeLayout(false);
             this.tableLayoutPanelAdvanced.PerformLayout();
+            this.groupBoxInternetShortcutIcons.ResumeLayout(false);
+            this.groupBoxInternetShortcutIcons.PerformLayout();
+            this.tableLayoutPanelInternetShortcutIcons.ResumeLayout(false);
+            this.tableLayoutPanelInternetShortcutIcons.PerformLayout();
+            this.tableLayoutPanelChangeIcoFolder.ResumeLayout(false);
+            this.tableLayoutPanelChangeIcoFolder.PerformLayout();
             this.groupBoxDrag.ResumeLayout(false);
             this.groupBoxDrag.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -4688,8 +4942,8 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClick.PerformLayout();
             this.groupBoxSorting.ResumeLayout(false);
             this.groupBoxSorting.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanelSorting.ResumeLayout(false);
+            this.tableLayoutPanelSorting.PerformLayout();
             this.groupBoxHiddenFilesAndFolders.ResumeLayout(false);
             this.groupBoxHiddenFilesAndFolders.PerformLayout();
             this.tableLayoutPanelHiddenFilesAndFolders.ResumeLayout(false);
@@ -4942,9 +5196,9 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.Label labelOpenFolderBorder;
         private System.Windows.Forms.Label labelSelectedItem;
         private System.Windows.Forms.Label labelSelectedItemBorder;
-        private System.Windows.Forms.CheckBox checkBoxStoreConfigAtAssemblyLocation;
-        private System.Windows.Forms.GroupBox groupBoxUSB;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelUSB;
+        private System.Windows.Forms.CheckBox checkBoxSaveConfigInApplicationDirectory;
+        private System.Windows.Forms.GroupBox groupBoxConfigAndLogfile;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelConfigAndLogfile;
         private System.Windows.Forms.Button buttonChangeRelativeFolder;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRelativeFolderOpenAssembly;
         private System.Windows.Forms.Button buttonOpenAssemblyLocation;
@@ -5087,10 +5341,10 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.PictureBox pictureBoxIconsDarkMode;
         private System.Windows.Forms.Label labelIconsDarkMode;
         private System.Windows.Forms.TextBox textBoxColorIconsDarkMode;
-        private System.Windows.Forms.CheckBox checkBoxPossibilityToSelectFolderByWindowsContextMenu;
+        private System.Windows.Forms.CheckBox checkBoxSetFolderByWindowsContextMenu;
         private System.Windows.Forms.Button buttonOpenFolder;
-        private System.Windows.Forms.Button buttonAddTaskManagerStartupTask;
-        private System.Windows.Forms.Label labelStartupTaskStatus;
+        private System.Windows.Forms.Button buttonAddStartup;
+        private System.Windows.Forms.Label labelStartupStatus;
         private System.Windows.Forms.TabPage tabPageExpert;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelExpert;
         private System.Windows.Forms.Button buttonExpertDefault;
@@ -5131,14 +5385,13 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.CheckBox checkBoxGenerateShortcutsToDrives;
         private System.Windows.Forms.GroupBox groupBoxCache;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCache;
-        private System.Windows.Forms.CheckBox checkBoxCacheMainMenu;
         private System.Windows.Forms.TabPage tabPageSizeAndLocation;
         private System.Windows.Forms.GroupBox groupBoxHiddenFilesAndFolders;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelHiddenFilesAndFolders;
         private System.Windows.Forms.RadioButton radioButtonAlwaysShowHiddenFiles;
         private System.Windows.Forms.RadioButton radioButtonNeverShowHiddenFiles;
         private System.Windows.Forms.RadioButton radioButtonSystemSettingsShowHiddenFiles;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSizeAndLocation;
         private System.Windows.Forms.Button buttonSizeAndLocationDefault;
         private System.Windows.Forms.CheckBox checkBoxShowOnlyAsSearchResult;
         private System.Windows.Forms.CheckBox checkBoxOpenDirectoryWithOneClick;
@@ -5156,7 +5409,7 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.Button buttonAppearanceDefault;
         private System.Windows.Forms.CheckBox checkBoxSendHotkeyInsteadKillOtherInstances;
         private System.Windows.Forms.GroupBox groupBoxSorting;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSorting;
         private System.Windows.Forms.RadioButton radioButtonSortByDate;
         private System.Windows.Forms.RadioButton radioButtonSortByName;
         private System.Windows.Forms.GroupBox groupBoxDrag;
@@ -5166,5 +5419,24 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.GroupBox groupBoxSearchPattern;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSearchPattern;
         private System.Windows.Forms.TextBox textBoxSearchPattern;
+        private System.Windows.Forms.CheckBox checkBoxShowFunctionKeyOpenFolder;
+        private System.Windows.Forms.CheckBox checkBoxShowSearchBar;
+        private System.Windows.Forms.CheckBox checkBoxShowDirectoryTitleAtTop;
+        private System.Windows.Forms.CheckBox checkBoxShowCountOfElementsBelow;
+        private System.Windows.Forms.CheckBox checkBoxSaveLogFileInApplicationDirectory;
+        private System.Windows.Forms.CheckBox checkBoxShowLinkOverlay;
+        private System.Windows.Forms.GroupBox groupBoxInternetShortcutIcons;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelInternetShortcutIcons;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelChangeIcoFolder;
+        private System.Windows.Forms.Button buttonChangeIcoFolder;
+        private System.Windows.Forms.TextBox textBoxIcoFolder;
+        private System.Windows.Forms.RadioButton radioButtonSortByTypeAndDate;
+        private System.Windows.Forms.RadioButton radioButtonSortByTypeAndName;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.CheckBox checkBoxCheckForUpdates;
+        private System.Windows.Forms.Button buttonGeneralDefault;
+        private System.Windows.Forms.CheckBox checkBoxShowFunctionKeyPinMenu;
+        private System.Windows.Forms.CheckBox checkBoxShowFunctionKeySettings;
+        private System.Windows.Forms.CheckBox checkBoxShowFunctionKeyRestart;
     }
 }

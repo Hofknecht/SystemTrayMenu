@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Par SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>labi</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>Lietotnes palaišana</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Iziet no lietotnes</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Direktorija</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Direktorija tukša</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Sīkāka informācija</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Sistēmas informācija</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Katalogs nav pieejams</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Valoda</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Žurnāla fails</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Restartēt</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Nevarēja reģistrēt karsto taustiņu.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Pārtraukt</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Ģenerālis</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Karstais taustiņš</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Sāciet ar Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Iestatījumi</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>bieži uzdotie jautājumi</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Izlasiet FAQ un pēc tam izvēlieties SystemTrayMenu saknes direktoriju.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Izvēlieties direktoriju</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Jūsu lietotnes saknes direktorijs neeksistē vai ir tukšs! Mainiet saknes direktoriju vai ievietojiet dažus failus, direktorijus vai saīsnes saknes direktorijā.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Jums nav piekļuves lietotnes saknes direktorijam. Piešķiriet piekļuvi direktorijam vai mainiet saknes direktoriju.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Ar vienu klikšķi atveriet elementu</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Krāsu shēma tumša vienmēr aktīva</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Papildu</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Peles atrašanās vietā</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Mainot direktoriju</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Klikšķis</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Pielāgot</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Noklusējums</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Ja fokuss ir zaudēts un pele joprojām atrodas izvēlnē</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Milisekundes, līdz tiek atvērta izvēlne, kad uz tās ir pele</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja šajā gadījumā pele iziet no izvēlnes</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Maksimālais izvēlnes platums pikseļos</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Paliek atvērts</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Laiks līdz izvēlnes atvēršanai</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Ja tika noklikšķināts uz elementa</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Fons</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Atvērts direktorijs</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Atvērtā direktorija robeža</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Meklēšanas lauks</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Atlasīts elements</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Atlasītā elementa apmale</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Relatīvā direktorija</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Saglabājiet konfigurāciju lietojumprogrammu direktorijā</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Konfigurācijas fails un žurnālfails</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Atveriet lietojumprogrammu direktoriju</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Maksimālais izvēlnes augstums pikseļos</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Bultiņa</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Bultiņa, noklikšķinot</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Bultiņa, kamēr pele atrodas virs tās</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Noklikšķinot, bultiņas fons</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Bultas fons, kamēr pele atrodas virs tās</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Krāsu shēma tumša</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Krāsu shēma gaiša</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Lietotņu izvēlne</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Ritjosla</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Slīdnis</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Slīdni velkot</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Slīdni, kamēr pele atrodas virs tā 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Pavelciet slīdni, kamēr pele atrodas virs tā 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Izmantojiet ikonu no direktorija</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Izmērs</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Izvēlnes robeža</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Ikonas</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Iestata konteksta izvēlnē</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Iestatīt kā direktoriju</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>iekraušana</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problēma ar saīsnes saiti</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Vienums, uz kuru attiecas šī saīsne, ir mainīts vai pārvietots, tāpēc šī saīsne vairs nedarbosies pareizi.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Atvērt direktoriju</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Uzdevumu pārvaldnieks</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Deaktivizēts</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktivizēts</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Eksperts</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Ja fokuss ir zaudēts un tika nospiests taustiņš Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja šajā gadījumā izvēlne netiek atkārtoti aktivizēta</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Rādīt uzdevumjoslā</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Pievienot direktoriju</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Pievienojiet direktorijas saturu saknes direktorijam</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Direktoriju ceļi</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Katalogi</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekursīvs</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Noņemt direktoriju</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Tikai faili</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Notīriet kešatmiņu, ja vienumu skaits pārsniedz šo</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Pievienot parauga direktoriju "Start Menu"</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Rindas augstums procentos</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Apaļi stūri</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Izskats</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Apakšā pa kreisi</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Apakšā pa labi</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Parādās galvenā izvēlne</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Peles atrašanās vieta (virs uzdevumjoslas ikonas)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Pielāgots (velciet to uz atbilstošo vietu)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>elements</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementi</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Startējot, ģenerējiet diska saīsnes</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Kešatmiņa</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Vienmēr rādīt</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Slēptie faili un direktoriji</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Nekad nerādīt</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Izmērs un atrašanās vieta</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Izmantojiet operētājsistēmas iestatījumus</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Rādīt tikai kā meklēšanas rezultātu</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Ar vienu klikšķi atveriet direktoriju</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Blakus iepriekšējam</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Nobīde ar pikseļiem</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Pārklāšanās</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Tiek parādīta apakšizvēlne</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Ikonu lielums procentos</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Atbalstiet SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Izbalēšana</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Sūtīt karsto taustiņu uz citu gadījumu</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Sakārtots pēc datuma</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Sakārtots pēc nosaukuma</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Šķirošana</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Kopēt rindas vienumu, nolaižot</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Velciet</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Ritiniet, velkot</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Filtrēšanas izvēlne pēc faila veida, piemēram: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Tālāk parādīt elementu skaitu</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Rādīt direktorijas nosaukumu augšpusē</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Rādīt funkcijas taustiņu "Atvērt mapi"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Rādīt funkcijas taustiņu "Piespraust izvēlni"</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Rādīt funkcijas taustiņu "Iestatījumi"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Rādīt funkcijas taustiņu "Restartēt"</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Rādīt meklēšanas joslu</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Žurnāla faila saglabāšana lietojumprogrammu direktorijā</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Rādīt saites pārklājumu</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Interneta īsceļu ikonu direktorijs</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Sakārtots pēc veida un datuma</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Sakārtots pēc veida un nosaukuma</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Meklēt atjauninājumus</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Dodieties uz lejupielādes lapu</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Jaunākā pieejamā versija:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Pieejama jauna versija!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Jums ir jaunākā SystemTrayMenu versija!</value>
+  </data>
+</root>

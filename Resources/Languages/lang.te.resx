@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu గురించి</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>అలాగే</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>యాప్ ప్రారంభం</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>యాప్ నుండి నిష్క్రమించండి</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>డైరెక్టరీ</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>డైరెక్టరీ ఖాళీగా ఉంది</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>వివరాలు</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>సిస్టమ్ సమాచారం</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>డైరెక్టరీ యాక్సెస్ చేయబడదు</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>భాష</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>లాగ్ ఫైల్</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>పునఃప్రారంభించండి</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>హాట్ కీని నమోదు చేయడం సాధ్యపడలేదు.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>రద్దు</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>జనరల్</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>హాట్కీ</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>విండోస్‌తో ప్రారంభించండి</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>సెట్టింగ్‌లు</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>తరచుగా అడుగు ప్రశ్నలు</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>తరచుగా అడిగే ప్రశ్నలను చదివి, ఆపై SystemTrayMenu కోసం రూట్ డైరెక్టరీని ఎంచుకోండి.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>డైరెక్టరీని ఎంచుకోండి</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>యాప్ కోసం మీ రూట్ డైరెక్టరీ ఉనికిలో లేదు లేదా ఖాళీగా ఉంది! రూట్ డైరెక్టరీని మార్చండి లేదా కొన్ని ఫైల్‌లు, డైరెక్టరీలు లేదా షార్ట్‌కట్‌లను రూట్ డైరెక్టరీలో ఉంచండి.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>యాప్ యొక్క రూట్ డైరెక్టరీకి మీకు యాక్సెస్ లేదు. డైరెక్టరీకి యాక్సెస్ ఇవ్వండి లేదా రూట్ డైరెక్టరీని మార్చండి.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>మూలకాన్ని తెరవడానికి ఒకే క్లిక్ చేయండి</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>ముదురు రంగు పథకం ఎల్లప్పుడూ చురుకుగా ఉంటుంది</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>ఆధునిక</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>మౌస్ స్థానంలో</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>డైరెక్టరీని మారుస్తోంది</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>క్లిక్ చేయండి</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>అనుకూలీకరించండి</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>డిఫాల్ట్</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>దృష్టి పోయినట్లయితే మరియు మౌస్ ఇప్పటికీ మెనులో ఉంటే</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>మౌస్ దానిపై ఉన్నప్పుడు మెను తెరవబడే వరకు మిల్లీసెకన్లు</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>ఈ సందర్భంలో మౌస్ మెను నుండి నిష్క్రమిస్తే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>పిక్సెల్‌ల గరిష్ట మెను వెడల్పు</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>తెరిచి ఉంటుంది</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>మెను తెరవడానికి సమయం</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>ఒక మూలకం క్లిక్ చేయబడి ఉంటే</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>నేపథ్య</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>డైరెక్టరీ తెరవబడింది</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>తెరిచిన డైరెక్టరీ అంచు</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>శోధన ఫీల్డ్</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>ఎంచుకున్న మూలకం</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>ఎంచుకున్న మూలకం యొక్క సరిహద్దు</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>సంబంధిత డైరెక్టరీ</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>అప్లికేషన్ డైరెక్టరీలో కాన్ఫిగరేషన్‌ను సేవ్ చేయండి</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>కాన్ఫిగరేషన్ ఫైల్ మరియు లాగ్ ఫైల్</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>అప్లికేషన్ డైరెక్టరీని తెరవండి</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>పిక్సెల్‌ల గరిష్ట మెను ఎత్తు</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>బాణం</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>క్లిక్ చేసినప్పుడు బాణం</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>మౌస్ దానిపై కదులుతున్నప్పుడు బాణం</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>క్లిక్ చేసినప్పుడు బాణం యొక్క నేపథ్యం</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>మౌస్ దానిపై కదులుతున్నప్పుడు బాణం యొక్క నేపథ్యం</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>రంగు పథకం చీకటి</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>ప్రకాశవంతమైన రంగు పథకం</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>యాప్ మెను</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>స్కోర్ల్ బార్</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>స్లైడర్</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>లాగేటప్పుడు స్లయిడర్</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>మౌస్ దానిపై కదులుతున్నప్పుడు స్లైడర్ 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>మౌస్ దానిపై కదులుతున్నప్పుడు స్లైడర్ 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>డైరెక్టరీ నుండి చిహ్నాన్ని ఉపయోగించండి</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>పరిమాణం</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>మెను అంచు</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>చిహ్నాలు</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>సందర్భ మెను ద్వారా సెట్ చేయండి</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>డైరెక్టరీగా సెట్ చేయండి</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>లోడ్</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>సత్వరమార్గం లింక్‌తో సమస్య</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>ఈ సత్వరమార్గం సూచించే అంశం మార్చబడింది లేదా తరలించబడింది, కాబట్టి ఈ సత్వరమార్గం ఇకపై సరిగ్గా పని చేయదు.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>డైరెక్టరీని తెరవండి</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>టాస్క్ మేనేజర్</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>డియాక్టివేట్ చేయబడింది</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>యాక్టివేట్ చేయబడింది</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>నిపుణుడు</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>ఫోకస్ కోల్పోయి, ఎంటర్ కీని నొక్కితే</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>ఈ సందర్భంలో మెను మళ్లీ సక్రియం చేయకపోతే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>టాస్క్‌బార్‌లో చూపించు</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>డైరెక్టరీని జోడించండి</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>రూట్ డైరెక్టరీకి డైరెక్టరీ యొక్క కంటెంట్‌ని జోడించండి</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>డైరెక్టరీ మార్గాలు</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>డైరెక్టరీలు</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>పునరావృతం</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>డైరెక్టరీని తీసివేయండి</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>ఫైల్స్ మాత్రమే</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>ఐటెమ్‌ల కంటే ఎక్కువ ఉంటే కాష్‌ని క్లియర్ చేయండి</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>నమూనా డైరెక్టరీని జోడించండి 'ప్రారంభ మెనూ'</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>శాతంలో అడ్డు వరుస ఎత్తు</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>రౌండ్ మూలలు</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>స్వరూపం</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>దిగువ ఎడమ</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>దిగువ కుడివైపు</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>ప్రధాన మెనూ కనిపిస్తుంది</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>మౌస్ స్థానం (టాస్క్‌బార్ చిహ్నం పైన)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>కస్టమ్ (దీన్ని తగిన ప్రదేశానికి లాగండి)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>మూలకం</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>అంశాలు</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>స్టార్టప్‌లో డ్రైవ్ షార్ట్‌కట్‌లను రూపొందించండి</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>కాష్</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>ఎల్లప్పుడూ చూపించు</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>దాచిన ఫైల్‌లు మరియు డైరెక్టరీలు</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>ఎప్పుడూ చూపించవద్దు</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>పరిమాణం మరియు స్థానం</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>ఆపరేటింగ్ సిస్టమ్ సెట్టింగ్‌లను ఉపయోగించండి</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>శోధన ఫలితంగా మాత్రమే చూపు</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>డైరెక్టరీని తెరవడానికి ఒక్క క్లిక్ చేయండి</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>మునుపటిది పక్కన</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>పిక్సెల్‌ల ద్వారా ఆఫ్‌సెట్ చేయబడింది</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>అతివ్యాప్తి చెందుతోంది</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>ఉప మెనూ కనిపిస్తుంది</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>శాతంలో చిహ్నాల పరిమాణం</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>మద్దతు SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>మసకబారుతోంది</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>హాట్‌కీని ఇతర సందర్భానికి పంపండి</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>తేదీ ప్రకారం క్రమబద్ధీకరించబడింది</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>క్రమబద్ధీకరణ</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>డ్రాగ్ డ్రాప్ ద్వారా అడ్డు వరుస అంశాన్ని కాపీ చేయండి</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>లాగండి</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>స్వైప్ ద్వారా స్క్రోల్ చేయండి</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>ఫైల్ రకం ద్వారా మెనుని ఫిల్టర్ చేయండి ఉదా: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>దిగువ మూలకాల సంఖ్యను చూపు</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>ఎగువన డైరెక్టరీ శీర్షికను చూపు</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>ఫంక్షన్ కీ 'ఓపెన్ ఫోల్డర్'ని చూపించు</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>ఫంక్షన్ కీ 'పిన్ మెను'ని చూపించు</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>ఫంక్షన్ కీ 'సెట్టింగ్‌లు' చూపించు</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>ఫంక్షన్ కీ 'పునఃప్రారంభించు' చూపించు</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>శోధన పట్టీని చూపు</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>అప్లికేషన్ డైరెక్టరీలో లాగ్ ఫైల్‌ను సేవ్ చేస్తోంది</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>లింక్ అతివ్యాప్తిని చూపు</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>ఇంటర్నెట్ షార్ట్‌కట్ చిహ్నాల డైరెక్టరీ</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>రకం మరియు తేదీ ద్వారా క్రమబద్ధీకరించబడింది</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>రకం మరియు పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>తాజాకరణలకోసం ప్రయత్నించండి</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>డౌన్‌లోడ్ పేజీకి వెళ్లండి</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>అందుబాటులో ఉన్న తాజా వెర్షన్:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>కొత్త వెర్షన్ అందుబాటులో ఉంది!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>మీరు SystemTrayMenu యొక్క తాజా సంస్కరణను కలిగి ఉన్నారు!</value>
+  </data>
+</root>

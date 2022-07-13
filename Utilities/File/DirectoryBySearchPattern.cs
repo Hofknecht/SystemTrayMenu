@@ -9,17 +9,16 @@ namespace SystemTrayMenu.Utilities
 
     public static class DirectoryBySearchPattern
     {
-        public static string[] GetFiles(string path, string searchPatternCombined)
+        public static List<string> GetFiles(string path, string searchPatternCombined)
         {
             string[] searchPatterns = searchPatternCombined.Split('|');
-            List<string> files = new List<string>();
+            List<string> files = new();
             foreach (string searchPattern in searchPatterns)
             {
                 files.AddRange(System.IO.Directory.GetFiles(path, searchPattern));
             }
 
-            files.Sort();
-            return files.ToArray();
+            return files;
         }
     }
 }

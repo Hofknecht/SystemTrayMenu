@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Dwar SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>kollox sew</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>App start</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Ħruġ app</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Direttorju</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Direttorju vojt</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Dettalji</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Informazzjoni tas-Sistema</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Direttorju inaċċessibbli</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Lingwa</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Log File</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Erġa ibda</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Ma setgħetx tirreġistra l-hot key.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Aborta</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Ġenerali</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Ibda bil-Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Mistoqsijiet Frekwenti</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Aqra l-FAQ u mbagħad agħżel direttorju tal-għeruq għas-SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Agħżel direttorju</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Id-direttorju tal-għeruq tiegħek għall-app ma jeżistix jew huwa vojt! Ibdel id-direttorju tal-għeruq jew poġġi xi fajls, direttorji jew shortcuts fid-direttorju tal-għeruq.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>M'għandekx aċċess għad-direttorju tal-għeruq tal-app. Agħti aċċess għad-direttorju jew ibdel id-direttorju tal-għeruq.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Ikklikkja waħda biex tiftaħ element</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Skema tal-kulur skur dejjem attiv</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avvanzat</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Fil-post tal-ġurdien</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Bdil tad-direttorju</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Ikklikkja</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Ippersonalizza</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Jekk l-attenzjoni tintilef u jekk il-maws ikun għadu fuq il-menu</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Millisekondi sakemm jinfetaħ menu meta l-maws ikun fuqu</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisekondi sakemm il-menu jagħlaq jekk f'dan il-każ il-maws imbagħad iħalli l-menu</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Wisa' massimu tal-menu tal-pixels</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Jibqa' miftuħ</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Ħin sakemm jinfetaħ menu</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Jekk element kien ikklikkjat</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Sfond</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Direttorju miftuħ</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Fruntieri tad-direttorju miftuħ</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Fittex qasam</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Element magħżul</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Bordur tal-element magħżul</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Direttorju relattiv</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Issejvja l-konfigurazzjoni fid-direttorju tal-applikazzjoni</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Fajl tal-konfigurazzjoni u fajl tal-log</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Iftaħ id-direttorju tal-applikazzjoni</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Pixels għoli massimu menu</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Vleġġa</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Vleġġa meta tikklikkja</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Vleġġa waqt li l-maws jgħaddi fuqha</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Sfond tal-vleġġa meta tikklikkja</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Sfond tal-vleġġa waqt li l-maws jgħaddi fuqha</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Skema tal-kulur skur</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Skema tal-kulur qawwi</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu tal-app</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Scrollbar</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Slider waqt li jkaxkru</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Slider waqt li l-maws jgħaddi fuqu 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Slider waqt li l-maws jgħaddi fuqu 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Uża l-ikona mid-direttorju</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Daqs</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Bord tal-menu</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Ikoni</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Issettja mill-menu tal-kuntest</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Issettja bħala direttorju</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>tagħbija</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problema bil-link tas-shortcut</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>L-oġġett li jirreferi għalih din is-shortcut ġie mibdul jew imċaqlaq, għalhekk din is-shortcut ma tibqax taħdem sew.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Direttorju miftuħ</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Task Manager</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Diżattivat</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Attivat</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Espert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Jekk l-attenzjoni tintilef u ċ-ċavetta Enter ġiet ippressata</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Millisekondi sakemm jingħalaq il-menu jekk f'dan il-każ il-menu ma jerġax jiġi attivat</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Uri fit-Taskbar</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Żid direttorju</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Żid il-kontenut tad-direttorju mad-direttorju tal-għeruq</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Mogħdijiet tad-direttorju</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Direttorji</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rikursiv</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Neħħi direttorju</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Fajls biss</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Ċar il-cache jekk aktar minn dan in-numru ta' oġġetti</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Żid kampjun tad-direttorju 'Start Menu'</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Għoli tar-ringiela fil-mija</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Kantunieri tondi</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Dehra</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>T'isfel tax-xellug</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Ta’ isfel fuq il-lemin</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Jidher il-menu prinċipali</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Post tal-maws (Fuq l-ikona tal-Barra tat-Task)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Custom (draggha fil-post xieraq)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementi</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Iġġenera shortcuts tas-sewqan fuq l-istartjar</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Cache</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Dejjem uri</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Fajls u direttorji moħbija</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Qatt turi</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Daqs u post</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Uża l-issettjar tas-sistema operattiva</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Uri biss bħala riżultat tat-tfittxija</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Ikklikkja waħda biex tiftaħ direttorju</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Ħdejn dak ta’ qabel</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Offset bil-pixels</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Jikkoinċidu</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Jidher sottomenu</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Daqs tal-ikoni fil-mija</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Appoġġ SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Fading</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Ibgħat hotkey lil eżempju ieħor</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Issortjati skond id-data</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Issortjati skond l-isem</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Issortjar</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Ikkopja l-oġġett tar-ringiela permezz tad-drag drop</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Iddreggja</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Skrollja permezz ta' swipe</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Iffiltra menu skont it-tip ta' fajl eż.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Uri l-għadd ta' elementi hawn taħt</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Uri t-titlu tad-direttorju fuq nett</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Uri ċ-ċavetta tal-funzjoni 'Open Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Uri ċ-ċavetta tal-funzjoni 'Pin menu'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Uri ċ-ċavetta tal-funzjoni 'Settings'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Uri ċ-ċavetta tal-funzjoni 'Ibda mill-ġdid'</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Uri l-bar tat-tiftix</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Iffrankar tal-fajl tal-log fid-direttorju tal-applikazzjoni</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Uri link overlay</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Direttorju tal-Ikoni tal-Shortcut tal-Internet</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Issortjati skond it-tip u d-data</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Issortjati skond it-tip u l-isem</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Iċċekkja għal aġġornamenti</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Mur fil-paġna tat-tniżżil</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>L-aħħar verżjoni disponibbli:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Verżjoni ġdida disponibbli!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Għandek l-aħħar verżjoni ta' SystemTrayMenu!</value>
+  </data>
+</root>

@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Rreth SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Ne rregull</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>Fillimi i aplikacionit</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Dilni nga aplikacioni</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Drejtoria</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Drejtoria bosh</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detajet</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Informacioni i Sistemit</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Drejtoria e paarritshme</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Gjuhe</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Skedari i regjistrit</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Rifillo, fillo përsëri</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Nuk mund të regjistrohej çelësi i nxehtë.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Aborti</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Gjeneral</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Filloni me Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Cilësimet</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Pyetjet e bëra më shpesh</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Lexoni FAQ dhe më pas zgjidhni një direktori rrënjësore për SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Zgjidhni direktorinë</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Drejtoria juaj rrënjësore për aplikacionin nuk ekziston ose është bosh! Ndryshoni direktorinë rrënjë ose vendosni disa skedarë, drejtori ose shkurtore në direktorinë rrënjë.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nuk keni akses në direktorinë rrënjësore të aplikacionit. Jepni akses në drejtori ose ndryshoni direktorinë rrënjë.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Një klikim i vetëm për të hapur një element</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Skema e ngjyrave të errëta gjithmonë aktive</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>E avancuar</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Në vendndodhjen e miut</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Po ndryshon direktoriumin</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Klikoni</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Personalizoje</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>E paracaktuar</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Nëse fokusi humbet dhe nëse miu është ende në meny</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Milisekonda derisa të hapet një menu kur miu është në të</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekonda derisa menyja të mbyllet nëse në këtë rast miu largohet nga menyja</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Gjerësia maksimale e pikselëve të menysë</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Qëndron e hapur</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Koha derisa të hapet një menu</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Nëse është klikuar një element</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Sfondi</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Drejtoria e hapur</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Kufiri i drejtorisë së hapur</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Fusha e kërkimit</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Elementi i zgjedhur</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Kufiri i elementit të zgjedhur</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Drejtoria relative</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Ruani konfigurimin në direktorinë e aplikacionit</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Skedari i konfigurimit dhe skedari i regjistrit</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Hap direktorinë e aplikacionit</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Lartësia maksimale e pikselëve të menusë</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Shigjeta</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Shigjeta kur klikoni</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Shigjeta ndërsa miu rri pezull mbi të</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Sfondi i shigjetës kur klikoni</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Sfondi i shigjetës ndërsa miu rri pezull mbi të</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Skema e ngjyrave e errët</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Skema e ngjyrave e ndritshme</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Menyja e aplikacionit</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Shiriti i lëvizjes</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Rrëshqitës</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Rrëshqitës gjatë zvarritjes</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Rrëshqiteni ndërsa miu rri pezull mbi të 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Rrëshqiteni ndërsa miu rri pezull mbi të 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Përdorni ikonën nga drejtoria</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Madhësia</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Kufiri i menusë</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Ikonat</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Vendosur sipas menysë së kontekstit</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Cakto si drejtori</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>ngarkim</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problem me lidhjen e shkurtoreve</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Artikulli të cilit i referohet kjo shkurtore është ndryshuar ose zhvendosur, kështu që kjo shkurtore nuk do të funksionojë më siç duhet.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Hap direktorinë</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Menaxher detyrë</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>I çaktivizuar</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktivizuar</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Ekspert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Nëse fokusi humbet dhe është shtypur tasti Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milisekonda derisa menyja të mbyllet nëse në këtë rast menyja nuk riaktivizohet</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Shfaq në Taskbar</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Shto direktori</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Shtoni përmbajtjen e drejtorisë në direktorinë rrënjë</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Shtigjet e drejtorisë</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Drejtoritë</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekursive</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Hiq drejtorinë</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Vetëm Skedarët</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Pastro cache-në nëse ka më shumë se ky numër artikujsh</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Shto drejtorinë e mostrës "Menyja e fillimit"</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Lartësia e rreshtit në përqindje</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Qoshe të rrumbullakëta</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Pamja e jashtme</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Poshtë majtas</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Poshtë djathtas</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Shfaqet menyja kryesore</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Vendndodhja e miut (mbi ikonën e shiritit të detyrave)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Me porosi (zvarriteni në vendin e duhur)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementet</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Gjeneroni shkurtore të diskut gjatë nisjes</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Cache</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Gjithmonë tregoni</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Skedarët dhe drejtoritë e fshehura</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Mos shfaq kurrë</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Madhësia dhe vendndodhja</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Përdorni cilësimet e sistemit operativ</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Shfaq vetëm si rezultat kërkimi</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Një klikim i vetëm për të hapur një direktori</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Pranë të mëparshmes</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Kompensuar me piksele</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Mbivendosja</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Shfaqet nënmenyja</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Madhësia e ikonave në përqindje</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Mbështet SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Venitje</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Dërgo çelësin e nxehtë në një shembull tjetër</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Renditur sipas datës</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Renditur sipas emrit</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Renditja</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Kopjoni artikullin e rreshtit përmes zvarritjes</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Zvarritni</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Lëvizni përmes rrëshqitjes</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Menyja e filtrit sipas llojit të skedarit p.sh.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Trego numrin e elementeve më poshtë</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Shfaq titullin e drejtorisë në krye</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Shfaq tastin e funksionit "Hap dosjen"</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Shfaq tastin e funksionit "Pin menu"</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Shfaq tastin e funksionit "Cilësimet"</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Shfaq tastin e funksionit "Rinisni"</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Shfaq shiritin e kërkimit</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Ruajtja e skedarit të regjistrit në drejtorinë e aplikacionit</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Shfaq mbivendosjen e lidhjes</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Drejtoria e ikonave të shkurtoreve të internetit</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Renditur sipas llojit dhe datës</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Renditur sipas llojit dhe emrit</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Kontrolloni për përditësime</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Shkoni te faqja e shkarkimit</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Versioni i fundit i disponueshëm:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Versioni i ri në dispozicion!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Ju keni versionin më të fundit të SystemTrayMenu!</value>
+  </data>
+</root>

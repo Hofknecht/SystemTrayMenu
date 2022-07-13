@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Informacje o menu zasobnika systemowego</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>Początek aplikacji</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Zamknij aplikację</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Informator</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Katalog pusty</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detale</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Informacja o systemie</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Katalog niedostępny</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Język</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Plik dziennika</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Uruchom ponownie</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Nie można zarejestrować klawisza skrótu.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Anulować</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Ogólny</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Klawisz skrótu</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Uruchom z Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Często Zadawane Pytania</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Przeczytaj FAQ, a następnie wybierz katalog główny dla SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Wybierz katalog</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Twój katalog główny aplikacji nie istnieje lub jest pusty! Zmień katalog główny lub umieść pliki, katalogi lub skróty w katalogu głównym.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Nie masz dostępu do katalogu głównego aplikacji. Przyznaj dostęp do katalogu lub zmień katalog główny.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Pojedyncze kliknięcie, aby otworzyć element</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Schemat kolorów ciemny zawsze aktywny</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Zaawansowany</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>W lokalizacji myszy</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Zmiana katalogu</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Kliknij</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Dostosuj</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Domyślna</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Jeśli fokus zostanie utracony, a mysz nadal znajduje się w menu</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Milisekundy do momentu otwarcia menu po najechaniu na nie myszą</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekundy do zamknięcia menu, jeśli w tym przypadku mysz opuści menu</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Maksymalna szerokość menu w pikselach</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Pozostaje otwarty</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Czas do otwarcia menu</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Jeśli element został kliknięty</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Tło</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Otwarty katalog</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Granica otwartego katalogu</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Pole wyszukiwania</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Wybrany element</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Obramowanie wybranego elementu</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Katalog względny</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Zapisz konfigurację w katalogu aplikacji</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Plik konfiguracyjny i plik dziennika</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Otwórz katalog aplikacji</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Maksymalna wysokość menu w pikselach</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Strzałka</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Strzałka po kliknięciu</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Strzałka, gdy mysz nad nią najedzie</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Tło strzałki po kliknięciu</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Tło strzałki po najechaniu na nią myszą</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Kolorystyka ciemny</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Schemat kolorów jasny</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu aplikacji</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Pasek przewijania</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Suwak</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Suwak podczas przeciągania</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Suwak, gdy mysz nad nim znajduje się 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Suwak, gdy kursor myszy nad nim znajduje się 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Użyj ikony z katalogu</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Rozmiar</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Obramowanie menu</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Ikony</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Ustaw przez menu kontekstowe</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Ustaw jako katalog</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Ładowanie</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Problem z linkiem skrótu</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Element, do którego odnosi się ten skrót, został zmieniony lub przeniesiony, więc ten skrót nie będzie już działał poprawnie.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Otwarty katalog</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Menadżer zadań</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Dezaktywowany</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktywowany</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Ekspert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Jeśli fokus zostanie utracony i naciśnięto klawisz Enter</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundy do zamknięcia menu, jeśli w tym przypadku menu nie zostanie ponownie aktywowane</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Pokaż na pasku zadań</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Dodaj katalog</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Dodaj zawartość katalogu do katalogu głównego</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Ścieżki katalogów</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Katalogi</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekursywny</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Usuń katalog</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Tylko pliki</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Wyczyść pamięć podręczną, jeśli więcej niż ta liczba elementów</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Dodaj przykładowy katalog 'Menu Start'</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Wysokość wiersza w procentach</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Zaokrąglone rogi</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Wygląd zewnętrzny</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Na dole po lewej</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Prawy dolny</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Pojawia się menu główne</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Lokalizacja myszy (nad ikoną paska zadań)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Niestandardowy (przeciągnij go w odpowiednie miejsce)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementy</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Generuj skróty do dysku podczas uruchamiania</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Pamięć podręczna</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Zawsze pokazuj</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Ukryte pliki i katalogi</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Nigdy nie pokazują</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Rozmiar i lokalizacja</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Użyj ustawień systemu operacyjnego</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Pokaż tylko jako wynik wyszukiwania</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Pojedyncze kliknięcie, aby otworzyć katalog</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Obok poprzedniego</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Przesunięcie o piksele</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Nakładające się</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Pojawia się podmenu</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Rozmiar ikon w procentach</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Wsparcie SystemoweTacaMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Zblakły</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Wyślij klawisz skrótu do innej instancji</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Posortowane według daty</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Posortowane według nazwy</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Sortowanie</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Skopiuj element wiersza za pomocą przeciągania i upuszczania</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Ciągnąć</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Przewiń przez przesunięcie</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Filtruj menu według typu pliku, np.: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Pokaż liczbę elementów poniżej</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Pokaż tytuł katalogu na górze</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Pokaż klawisz funkcyjny „Otwórz folder”</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Pokaż klawisz funkcyjny „Pin menu”</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Pokaż klawisz funkcyjny „Ustawienia”</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Pokaż klawisz funkcyjny „Uruchom ponownie”</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Pokaż pasek wyszukiwania</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Zapisywanie pliku dziennika w katalogu aplikacji</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Pokaż nakładkę linku</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Katalog ikon skrótów internetowych</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Posortowane według typu i daty</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Posortowane według typu i nazwy</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Sprawdź aktualizacje</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Przejdź do strony pobierania</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Najnowsza dostępna wersja:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Nowa wersja dostępna!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Masz najnowszą wersję SystemTrayMenu!</value>
+  </data>
+</root>

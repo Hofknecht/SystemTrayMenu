@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu haqqında</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>tamam</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>Proqram başlanğıcı</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Proqramdan çıxın</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>kataloq</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Kataloq boş</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Təfərrüatlar</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Sistem Məlumatı</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Kataloq əlçatmaz</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>Günlük Faylı</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Yenidən başlamaq</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>İsti düyməni qeydiyyatdan keçirmək mümkün olmadı.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Qaynar düymə</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Windows ilə başlayın</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Parametrlər</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Tez-tez soruşulan suallar</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Tez-tez verilən sualları oxuyun və sonra SystemTrayMenu üçün kök kataloq seçin.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Kataloq seçin</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök kataloqunu dəyişdirin və ya bəzi faylları, qovluqları və ya qısa yolları kök qovluğuna qoyun.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Proqramın kök kataloquna girişiniz yoxdur. Kataloqa giriş icazəsi verin və ya kök kataloqunu dəyişdirin.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Elementi açmaq üçün bir kliklə</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Rəng sxemi qaranlıq həmişə aktivdir</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Qabaqcıl</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Siçan yerində</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Kataloqun dəyişdirilməsi</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>basın</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Özəlləşdirmək</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Defolt</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Əgər fokus itibsə və siçan hələ də menyudadırsa</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Siçan üzərində olduqda menyu açılana qədər millisaniyə</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Bu halda siçan menyunu tərk edərsə, menyu bağlanana qədər millisaniyələr</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Piksel maksimum menyu eni</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Açıq qalır</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Menyu açılana qədər vaxt</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Əgər elementə klik edilibsə</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Fon</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Açılan kataloq</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Açılan kataloqun sərhədi</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Axtarış sahəsi</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Seçilmiş element</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Seçilmiş elementin sərhədi</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Nisbi kataloq</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Konfiqurasiyanı proqram kataloqunda saxlayın</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>Konfiqurasiya faylı və log faylı</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Tətbiq qovluğunu açın</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Piksel maksimum menyu hündürlüyü</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Ox</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Kliklədikdə ox</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Siçan onun üzərində hərəkət edərkən ox</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Kliklədikdə oxun fonu</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Siçan onun üzərində hərəkət edərkən oxun fonu</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Rəng sxemi qaranlıq</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Rəng sxemi parlaq</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Proqram menyusu</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Sürüşdürmə zolağı</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Sürgü</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Sürükləyərkən sürüşdürün</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Siçan üzərinə sürüşdürərkən sürüşdürün 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Siçan üzərinə sürüşdürərkən sürüşdürün 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Kataloqdan ikonadan istifadə edin</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Ölçü</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Menyu sərhədi</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Nişanlar</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Kontekst menyusu ilə təyin edin</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Kataloq olaraq təyin edin</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>yüklənir</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Qısayol keçidində problem</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Bu qısayolun istinad etdiyi element dəyişdirilib və ya köçürülüb, ona görə də bu qısayol artıq düzgün işləməyəcək.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Açıq kataloq</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Tapşırıq meneceri</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Deaktiv edilib</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Aktivləşdirilib</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Ekspert</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Əgər fokus itibsə və Enter düyməsi basılıbsa</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Bu halda menyu yenidən aktivləşdirilməsə, menyu bağlanana qədər millisaniyə</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Tapşırıq çubuğunda göstərin</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Kataloq əlavə edin</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Kök qovluğuna qovluğun məzmunu əlavə edin</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Kataloq yolları</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Kataloqlar</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekursiv</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Kataloqu silin</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Yalnız Fayllar</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Bu sayda element varsa, keşi təmizləyin</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>'Başlat Menyu' nümunə qovluğu əlavə edin</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Sətir hündürlüyü faizlə</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Dairəvi künclər</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Görünüş</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Aşağı sol</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Aşağı sağ</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Əsas menyu görünür</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Siçan yeri (Tapşırıq panelinin üstündə)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Fərdi (uyğun yerə sürükləyin)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementləri</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Başlanğıcda sürücü qısa yolları yaradın</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Gizli yer</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Həmişə göstər</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>Gizli fayllar və qovluqlar</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Heç vaxt göstərmə</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Ölçü və yer</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Əməliyyat sistemi parametrlərindən istifadə edin</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Yalnız axtarış nəticəsi kimi göstərin</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Bir qovluğu açmaq üçün bir kliklə</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Əvvəlki birinin yanında</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Piksellə ofset</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Üst-üstə düşən</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Alt menyu görünür</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Nişanların ölçüsü faizlə</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>SystemTrayMenu-nu dəstəkləyin</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Solğunluq</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>İsti düyməni digər nümunəyə göndərin</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Tarixə görə çeşidlənib</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Ada görə sıralanıb</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Çeşidləmə</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Sürüşdürmə vasitəsi ilə sıra elementini kopyalayın</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Çək</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Sürüşdürərək sürüşdürün</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Fayl növünə görə menyunu süzün, məsələn: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Aşağıdakı elementlərin sayını göstərin</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Kataloq başlığını yuxarıda göstərin</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>"Qovluğu Aç" funksiya düyməsini göstərin</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>"Pin menyusu" funksiya düyməsini göstərin</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>"Parametrlər" funksiya düyməsini göstərin</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>"Yenidən başladın" funksiya düyməsini göstərin</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Axtarış çubuğunu göstərin</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Günlük faylı proqram kataloqunda saxlanılır</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Link örtüyünü göstərin</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>İnternet Qısayol İkonlarının Kataloqu</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Növ və tarixə görə çeşidlənir</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Növ və ada görə çeşidlənir</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Yeniləmələri yoxlayın</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Yükləmə səhifəsinə keçin</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Ən son mövcud versiya:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Yeni versiya mövcuddur!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Siz SystemTrayMenu proqramının ən son versiyasına sahibsiniz!</value>
+  </data>
+</root>

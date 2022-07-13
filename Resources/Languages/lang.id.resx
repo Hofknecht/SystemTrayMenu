@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About SystemTrayMenu" xml:space="preserve">
+    <value>Tentang SystemTrayMenu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Oke</value>
+  </data>
+  <data name="App start" xml:space="preserve">
+    <value>Aplikasi mulai</value>
+  </data>
+  <data name="Exit app" xml:space="preserve">
+    <value>Keluar dari aplikasi</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Direktori</value>
+  </data>
+  <data name="Directory empty" xml:space="preserve">
+    <value>Direktori kosong</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>rincian</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Sistem Informasi</value>
+  </data>
+  <data name="Directory inaccessible" xml:space="preserve">
+    <value>Direktori tidak dapat diakses</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Bahasa</value>
+  </data>
+  <data name="Log File" xml:space="preserve">
+    <value>File Log</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Mengulang kembali</value>
+  </data>
+  <data name="Could not register the hot key." xml:space="preserve">
+    <value>Tidak dapat mendaftarkan kunci pintas.</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Menggugurkan</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Umum</value>
+  </data>
+  <data name="Hotkey" xml:space="preserve">
+    <value>Tombol pintas</value>
+  </data>
+  <data name="Start with Windows" xml:space="preserve">
+    <value>Mulai dengan Windows</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="Frequently Asked Questions" xml:space="preserve">
+    <value>Pertanyaan yang Sering Diajukan</value>
+  </data>
+  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+    <value>Baca FAQ dan kemudian pilih direktori root untuk SystemTrayMenu.</value>
+  </data>
+  <data name="Select directory" xml:space="preserve">
+    <value>Pilih direktori</value>
+  </data>
+  <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
+    <value>Direktori root Anda untuk aplikasi tidak ada atau kosong! Ubah direktori root atau letakkan beberapa file, direktori, atau pintasan ke direktori root.</value>
+  </data>
+  <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
+    <value>Anda tidak memiliki akses ke direktori root aplikasi. Berikan akses ke direktori atau ubah direktori root.</value>
+  </data>
+  <data name="Single click to open an element" xml:space="preserve">
+    <value>Satu klik untuk membuka elemen</value>
+  </data>
+  <data name="Color scheme dark always active" xml:space="preserve">
+    <value>Skema warna gelap selalu aktif</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Canggih</value>
+  </data>
+  <data name="At mouse location" xml:space="preserve">
+    <value>Di lokasi tikus</value>
+  </data>
+  <data name="Changing directory" xml:space="preserve">
+    <value>Mengubah direktori</value>
+  </data>
+  <data name="Click" xml:space="preserve">
+    <value>Klik</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Sesuaikan</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Bawaan</value>
+  </data>
+  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+    <value>Jika fokus hilang dan jika mouse masih berada di menu</value>
+  </data>
+  <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
+    <value>Milidetik hingga menu terbuka saat mouse berada di atasnya</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+    <value>Milidetik hingga menu ditutup jika dalam hal ini mouse kemudian meninggalkan menu</value>
+  </data>
+  <data name="Pixels maximum menu width" xml:space="preserve">
+    <value>Lebar menu maksimum piksel</value>
+  </data>
+  <data name="Stays open" xml:space="preserve">
+    <value>Tetap buka</value>
+  </data>
+  <data name="Time until a menu opens" xml:space="preserve">
+    <value>Waktu sampai menu terbuka</value>
+  </data>
+  <data name="If an element was clicked" xml:space="preserve">
+    <value>Jika sebuah elemen diklik</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Latar belakang</value>
+  </data>
+  <data name="Opened directory" xml:space="preserve">
+    <value>Direktori terbuka</value>
+  </data>
+  <data name="Border of opened directory" xml:space="preserve">
+    <value>Batas direktori yang dibuka</value>
+  </data>
+  <data name="Search field" xml:space="preserve">
+    <value>Bidang pencarian</value>
+  </data>
+  <data name="Selected element" xml:space="preserve">
+    <value>Elemen yang dipilih</value>
+  </data>
+  <data name="Border of selected element" xml:space="preserve">
+    <value>Batas elemen yang dipilih</value>
+  </data>
+  <data name="Relative directory" xml:space="preserve">
+    <value>Direktori relatif</value>
+  </data>
+  <data name="Save configuration in application directory" xml:space="preserve">
+    <value>Simpan konfigurasi di direktori aplikasi</value>
+  </data>
+  <data name="Configuration file and log file" xml:space="preserve">
+    <value>File konfigurasi dan file log</value>
+  </data>
+  <data name="Open application directory" xml:space="preserve">
+    <value>Buka direktori aplikasi</value>
+  </data>
+  <data name="Pixels maximum menu height" xml:space="preserve">
+    <value>Tinggi menu maksimum piksel</value>
+  </data>
+  <data name="Arrow" xml:space="preserve">
+    <value>Anak panah</value>
+  </data>
+  <data name="Arrow when clicking" xml:space="preserve">
+    <value>Panah saat mengklik</value>
+  </data>
+  <data name="Arrow while mouse hovers over it" xml:space="preserve">
+    <value>Panah saat mouse melayang di atasnya</value>
+  </data>
+  <data name="Background of arrow when clicking" xml:space="preserve">
+    <value>Latar belakang panah saat mengklik</value>
+  </data>
+  <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
+    <value>Latar belakang panah saat mouse melayang di atasnya</value>
+  </data>
+  <data name="Color scheme dark" xml:space="preserve">
+    <value>Skema warna gelap</value>
+  </data>
+  <data name="Color scheme bright" xml:space="preserve">
+    <value>Skema warna cerah</value>
+  </data>
+  <data name="App menu" xml:space="preserve">
+    <value>Menu aplikasi</value>
+  </data>
+  <data name="Scrollbar" xml:space="preserve">
+    <value>Scroll bar</value>
+  </data>
+  <data name="Slider" xml:space="preserve">
+    <value>Penggeser</value>
+  </data>
+  <data name="Slider while dragging" xml:space="preserve">
+    <value>Penggeser sambil menyeret</value>
+  </data>
+  <data name="Slider while mouse hovers over it 1" xml:space="preserve">
+    <value>Penggeser saat mouse melayang di atasnya 1</value>
+  </data>
+  <data name="Slider while mouse hovers over it 2" xml:space="preserve">
+    <value>Penggeser saat mouse melayang di atasnya 2</value>
+  </data>
+  <data name="Use icon from directory" xml:space="preserve">
+    <value>Gunakan ikon dari direktori</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Ukuran</value>
+  </data>
+  <data name="Border of menu" xml:space="preserve">
+    <value>Batas menu</value>
+  </data>
+  <data name="Icons" xml:space="preserve">
+    <value>Ikon</value>
+  </data>
+  <data name="Set by context menu " xml:space="preserve">
+    <value>Ditetapkan oleh menu konteks</value>
+  </data>
+  <data name="Set as directory" xml:space="preserve">
+    <value>Tetapkan sebagai direktori</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Memuat</value>
+  </data>
+  <data name="Problem with shortcut link" xml:space="preserve">
+    <value>Masalah dengan tautan pintasan</value>
+  </data>
+  <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
+    <value>Item yang dirujuk pintasan ini telah diubah atau dipindahkan, sehingga pintasan ini tidak lagi berfungsi dengan baik.</value>
+  </data>
+  <data name="Open directory" xml:space="preserve">
+    <value>Buka direktori</value>
+  </data>
+  <data name="Task Manager" xml:space="preserve">
+    <value>Pengelola tugas</value>
+  </data>
+  <data name="Deactivated" xml:space="preserve">
+    <value>Dinonaktifkan</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Diaktifkan</value>
+  </data>
+  <data name="Expert" xml:space="preserve">
+    <value>Ahli</value>
+  </data>
+  <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
+    <value>Jika fokus hilang dan tombol Enter ditekan</value>
+  </data>
+  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+    <value>Milidetik hingga menu ditutup jika dalam hal ini menu tidak diaktifkan kembali</value>
+  </data>
+  <data name="Show in Taskbar" xml:space="preserve">
+    <value>Tampilkan di Bilah Tugas</value>
+  </data>
+  <data name="Add directory" xml:space="preserve">
+    <value>Tambahkan direktori</value>
+  </data>
+  <data name="Add content of directory to root directory" xml:space="preserve">
+    <value>Tambahkan konten direktori ke direktori root</value>
+  </data>
+  <data name="Directory paths" xml:space="preserve">
+    <value>Jalur direktori</value>
+  </data>
+  <data name="Directories" xml:space="preserve">
+    <value>Direktori</value>
+  </data>
+  <data name="Recursive" xml:space="preserve">
+    <value>Rekursif</value>
+  </data>
+  <data name="Remove directory" xml:space="preserve">
+    <value>Hapus direktori</value>
+  </data>
+  <data name="Only Files" xml:space="preserve">
+    <value>Hanya File</value>
+  </data>
+  <data name="Clear cache if more than this number of items" xml:space="preserve">
+    <value>Hapus cache jika lebih dari jumlah item ini</value>
+  </data>
+  <data name="Add sample directory 'Start Menu'" xml:space="preserve">
+    <value>Tambahkan direktori contoh 'Start Menu'</value>
+  </data>
+  <data name="Row height in percent" xml:space="preserve">
+    <value>Tinggi baris dalam persen</value>
+  </data>
+  <data name="Round corners" xml:space="preserve">
+    <value>Sudut bundar</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Penampilan</value>
+  </data>
+  <data name="Bottom left" xml:space="preserve">
+    <value>Kiri bawah</value>
+  </data>
+  <data name="Bottom right" xml:space="preserve">
+    <value>Kanan bawah</value>
+  </data>
+  <data name="Main menu appears" xml:space="preserve">
+    <value>Menu utama muncul</value>
+  </data>
+  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+    <value>Lokasi mouse (Di atas ikon Taskbar)</value>
+  </data>
+  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+    <value>Kustom (seret ke tempat yang sesuai)</value>
+  </data>
+  <data name="element" xml:space="preserve">
+    <value>elemen</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elemen</value>
+  </data>
+  <data name="Generate drive shortcuts on startup" xml:space="preserve">
+    <value>Hasilkan pintasan drive saat startup</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Cache</value>
+  </data>
+  <data name="Always show" xml:space="preserve">
+    <value>Selalu tampilkan</value>
+  </data>
+  <data name="Hidden files and directories" xml:space="preserve">
+    <value>File dan direktori tersembunyi</value>
+  </data>
+  <data name="Never show" xml:space="preserve">
+    <value>Jangan pernah tampilkan</value>
+  </data>
+  <data name="Size and location" xml:space="preserve">
+    <value>Ukuran dan lokasi</value>
+  </data>
+  <data name="Use operating system settings" xml:space="preserve">
+    <value>Gunakan pengaturan sistem operasi</value>
+  </data>
+  <data name="Show only as search result" xml:space="preserve">
+    <value>Tampilkan hanya sebagai hasil pencarian</value>
+  </data>
+  <data name="Single click to open a directory" xml:space="preserve">
+    <value>Satu klik untuk membuka direktori</value>
+  </data>
+  <data name="Next to the previous one" xml:space="preserve">
+    <value>Di sebelah yang sebelumnya</value>
+  </data>
+  <data name="Offset by pixels" xml:space="preserve">
+    <value>Diimbangi oleh piksel</value>
+  </data>
+  <data name="Overlapping" xml:space="preserve">
+    <value>Tumpang tindih</value>
+  </data>
+  <data name="Sub menu appears" xml:space="preserve">
+    <value>Submenu muncul</value>
+  </data>
+  <data name="Size of the icons in percent" xml:space="preserve">
+    <value>Ukuran ikon dalam persen</value>
+  </data>
+  <data name="Support SystemTrayMenu" xml:space="preserve">
+    <value>Mendukung SystemTrayMenu</value>
+  </data>
+  <data name="Fading" xml:space="preserve">
+    <value>Kabur</value>
+  </data>
+  <data name="Send hotkey to other instance" xml:space="preserve">
+    <value>Kirim hotkey ke instance lain</value>
+  </data>
+  <data name="Sorted by date" xml:space="preserve">
+    <value>Diurutkan berdasarkan tanggal</value>
+  </data>
+  <data name="Sorted by name" xml:space="preserve">
+    <value>Diurutkan berdasarkan nama</value>
+  </data>
+  <data name="Sorting" xml:space="preserve">
+    <value>Penyortiran</value>
+  </data>
+  <data name="Copy row item via drag drop" xml:space="preserve">
+    <value>Salin item baris melalui drag drop</value>
+  </data>
+  <data name="Drag" xml:space="preserve">
+    <value>Menyeret</value>
+  </data>
+  <data name="Scroll via swipe" xml:space="preserve">
+    <value>Gulir melalui geser</value>
+  </data>
+  <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
+    <value>Filter menu menurut jenis file misalnya: *.exe|*.dll</value>
+  </data>
+  <data name="Show count of elements below" xml:space="preserve">
+    <value>Tunjukkan jumlah elemen di bawah ini</value>
+  </data>
+  <data name="Show directory title at top" xml:space="preserve">
+    <value>Tampilkan judul direktori di atas</value>
+  </data>
+  <data name="Show function key 'Open Folder'" xml:space="preserve">
+    <value>Tampilkan tombol fungsi 'Buka Folder'</value>
+  </data>
+  <data name="Show function key 'Pin menu'" xml:space="preserve">
+    <value>Tampilkan tombol fungsi 'Menu pin'</value>
+  </data>
+  <data name="Show function key 'Settings'" xml:space="preserve">
+    <value>Tampilkan tombol fungsi 'Pengaturan'</value>
+  </data>
+  <data name="Show function key 'Restart'" xml:space="preserve">
+    <value>Tampilkan tombol fungsi 'Mulai ulang'</value>
+  </data>
+  <data name="Show search bar" xml:space="preserve">
+    <value>Tampilkan bilah pencarian</value>
+  </data>
+  <data name="Saving log file in application directory" xml:space="preserve">
+    <value>Menyimpan file log di direktori aplikasi</value>
+  </data>
+  <data name="Show link overlay" xml:space="preserve">
+    <value>Tampilkan hamparan tautan</value>
+  </data>
+  <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
+    <value>Direktori Ikon Pintasan Internet</value>
+  </data>
+  <data name="Sorted by type and date" xml:space="preserve">
+    <value>Diurutkan berdasarkan jenis dan tanggal</value>
+  </data>
+  <data name="Sorted by type and name" xml:space="preserve">
+    <value>Diurutkan berdasarkan jenis dan nama</value>
+  </data>
+  <data name="Check for updates" xml:space="preserve">
+    <value>Periksa pembaruan</value>
+  </data>
+  <data name="Go to download page" xml:space="preserve">
+    <value>Buka halaman unduh</value>
+  </data>
+  <data name="Latest available version:" xml:space="preserve">
+    <value>Versi terbaru yang tersedia:</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Versi baru tersedia!</value>
+  </data>
+  <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
+    <value>Anda memiliki SystemTrayMenu versi terbaru!</value>
+  </data>
+</root>
