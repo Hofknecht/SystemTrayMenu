@@ -157,7 +157,7 @@
     <value>Could not register the hot key.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>Abort</value>
+    <value>Cancel</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>General</value>
