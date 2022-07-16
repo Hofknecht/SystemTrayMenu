@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>סאָרטינג</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>נאָכמאַכן רודערן נומער דורך שלעפּן און קאַפּ</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>נאָכמאַכן רודערן עלעמענט דורך שלעפּן און קאַפּ</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>שלעפּן</value>

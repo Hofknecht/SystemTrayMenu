@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>排序</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>通过拖放复制行项目</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>通过拖放复制行元素</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>拖</value>

@@ -153,7 +153,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element");
                 checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory");
                 groupBoxDrag.Text = Translator.GetText("Drag");
-                checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag and drop");
+                checkBoxDragDropItems.Text = Translator.GetText("Copy row element via drag and drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
                 groupBoxInternetShortcutIcons.Text = Translator.GetText("Directory of Internet Shortcut Icons");
                 buttonChangeIcoFolder.Text = Translator.GetText("Changing directory");

@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Çeşidləmə</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Sürük və buraxma vasitəsilə sıra elementini kopyalayın</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Sürü elementini sürükləyib buraxmaqla kopyalayın</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Çək</value>

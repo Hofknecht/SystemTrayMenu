@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Didoli</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Copïwch eitem rhes trwy lusgo a gollwng</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Copïwch yr elfen rhes trwy lusgo a gollwng</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Llusgwch</value>

@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Flokkun</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Afritaðu línuatriði með því að draga og sleppa</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Afritaðu línuþátt með því að draga og sleppa</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Dragðu</value>

@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Issortjar</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Ikkopja l-oġġett tar-ringiela permezz tad-drag and drop</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Ikkopja l-element tar-ringiela permezz tad-drag and drop</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Iddreggja</value>

@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sailkatzea</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Kopiatu errenkadako elementua arrastatu eta jaregin bidez</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Kopiatu errenkada elementua arrastatu eta jaregin bidez</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Arrastatu</value>

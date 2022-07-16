@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sortowanie</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
+  <data name="Copy row element via drag and drop" xml:space="preserve">
     <value>Skopiuj element wiersza za pomocą przeciągania i upuszczania</value>
   </data>
   <data name="Drag" xml:space="preserve">

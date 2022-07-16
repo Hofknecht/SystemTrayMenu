@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Klasman</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Kopi atik ranje atravè trennen ak gout</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Kopi eleman ranje atravè trennen ak gout</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Trennen</value>

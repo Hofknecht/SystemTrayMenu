@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sắp xếp</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Sao chép mục hàng bằng cách kéo và thả</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Sao chép phần tử hàng bằng cách kéo và thả</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Lôi kéo</value>

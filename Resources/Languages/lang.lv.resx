@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Šķirošana</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Kopēt rindas vienumu, velkot un nometot</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Kopēt rindas elementu, velkot un nometot</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Velciet</value>

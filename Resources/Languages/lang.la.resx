@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sorting</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Effingo row item per drag et stilla</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Effingo row elementum per drag et stilla</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Drag</value>

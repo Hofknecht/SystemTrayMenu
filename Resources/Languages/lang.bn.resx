@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>শ্রেণীবিভাজন</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>ড্র্যাগ এবং ড্রপের মাধ্যমে সারি আইটেম অনুলিপি করুন</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>ড্র্যাগ এবং ড্রপের মাধ্যমে সারি উপাদান কপি করুন</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>টেনে আনুন</value>

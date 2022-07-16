@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>క్రమబద్ధీకరణ</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>డ్రాగ్ మరియు డ్రాప్ ద్వారా అడ్డు వరుస అంశాన్ని కాపీ చేయండి</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>డ్రాగ్ మరియు డ్రాప్ ద్వారా అడ్డు వరుస మూలకాన్ని కాపీ చేయండి</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>లాగండి</value>

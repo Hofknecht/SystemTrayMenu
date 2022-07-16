@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Triedenie</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Skopírujte položku riadka presunutím myšou</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Skopírujte prvok riadka presunutím myšou</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Potiahnite</value>

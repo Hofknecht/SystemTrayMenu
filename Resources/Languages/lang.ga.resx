@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sórtáil</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Cóipeáil mír as a chéile trí tharraingt agus scaoil</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Cóipeáil eilimint ró trí tharraingt agus scaoil</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Tarraing</value>

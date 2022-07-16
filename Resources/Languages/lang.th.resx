@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>การเรียงลำดับ</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>คัดลอกรายการแถวด้วยการลากและวาง</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>คัดลอกองค์ประกอบแถวผ่านการลากและวาง</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>ลาก</value>

@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>فرز</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>نسخ عنصر الصف عن طريق السحب والإفلات</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>انسخ عنصر الصف عن طريق السحب والإفلات</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>يجر</value>

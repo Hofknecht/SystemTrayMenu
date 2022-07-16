@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sorteer</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Kopieer ry-item deur te sleep en te laat val</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Kopieer ry-element deur te sleep en te laat val</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Sleep</value>

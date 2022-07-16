@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>چھانٹنا</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>ڈریگ اینڈ ڈراپ کے ذریعے قطار کے آئٹم کو کاپی کریں۔</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>ڈریگ اینڈ ڈراپ کے ذریعے قطار کے عنصر کو کاپی کریں۔</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>گھسیٹیں۔</value>

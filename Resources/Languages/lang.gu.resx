@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>વર્ગીકરણ</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>ખેંચો અને છોડો મારફતે પંક્તિ આઇટમ કૉપિ કરો</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>ખેંચો અને છોડો દ્વારા પંક્તિ તત્વની નકલ કરો</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>ખેંચો</value>

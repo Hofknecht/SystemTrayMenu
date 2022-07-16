@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>Rūšiavimas</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
+  <data name="Copy row element via drag and drop" xml:space="preserve">
     <value>Nukopijuokite eilutės elementą vilkdami ir numesdami</value>
   </data>
   <data name="Drag" xml:space="preserve">

@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>வரிசைப்படுத்துதல்</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>இழுத்து விடுவதன் மூலம் வரிசை உருப்படியை நகலெடுக்கவும்</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>இழுத்து விடுவதன் மூலம் வரிசை உறுப்பை நகலெடுக்கவும்</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>இழுக்கவும்</value>

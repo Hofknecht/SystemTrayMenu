@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>छंटाई</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>ड्रैग एंड ड्रॉप के माध्यम से पंक्ति वस्तु को कॉपी करें</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>ड्रैग एंड ड्रॉप के माध्यम से पंक्ति तत्व की प्रतिलिपि बनाएँ</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>खींचें</value>

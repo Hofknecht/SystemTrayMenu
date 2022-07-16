@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>مرتب سازی</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>مورد ردیف را از طریق کشیدن و رها کردن کپی کنید</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>عنصر ردیف را از طریق کشیدن و رها کردن کپی کنید</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>بکشید</value>

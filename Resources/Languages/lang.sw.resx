@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Inapanga</value>
   </data>
-  <data name="Copy row item via drag and drop" xml:space="preserve">
-    <value>Nakili kipengee cha safu mlalo kupitia kuburuta na kudondosha</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Nakili kipengele cha safu mlalo kupitia kuburuta na kudondosha</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Buruta</value>
