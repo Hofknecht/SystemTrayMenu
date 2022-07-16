@@ -166,7 +166,6 @@ namespace SystemTrayMenu.Helper
                 {
                     Log.Info("Failed to convert icon.");
                 }
-
             }
             catch (Exception ex)
             {

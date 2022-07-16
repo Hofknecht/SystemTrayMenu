@@ -13,6 +13,9 @@ namespace SystemTrayMenu.Utilities
     using SystemTrayMenu.Helper;
 
     /// <summary>
+    /// source: https://www.codeproject.com/Articles/22012/Explorer-Shell-Context-Menu
+    /// modified to fit SystemTrayMenu.
+    ///
     /// "Stand-alone" shell context menu
     ///
     /// It isn't really debugged but is mostly working.
@@ -841,13 +844,6 @@ namespace SystemTrayMenu.Utilities
         /// <param name="m">the Message of the Browser's WndProc.</param>
         protected override void WndProc(ref Message m)
         {
-            if (oContextMenu != null &&
-                m.Msg == (int)WM.MENUSELECT &&
-                ((int)ShellHelper.HiWord(m.WParam) & (int)MFT.SEPARATOR) == 0 &&
-                ((int)ShellHelper.HiWord(m.WParam) & (int)MFT.POPUP) == 0)
-            {
-            }
-
             if (oContextMenu2 != null &&
                 (m.Msg == (int)WM.INITMENUPOPUP ||
                  m.Msg == (int)WM.MEASUREITEM ||

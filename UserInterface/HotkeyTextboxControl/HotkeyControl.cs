@@ -15,18 +15,16 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
     /// A simple control that allows the user to select pretty much any valid hotkey combination
     /// See: http://www.codeproject.com/KB/buttons/hotkeycontrol.aspx
     /// But is modified to fit in Greenshot, and have localized support.
+    /// modfied to fit SystemTrayMenu.
     /// </summary>
     public sealed class HotkeyControl : TextBox
     {
-        private const uint WmHotkey = 0x312;
-
-        private static readonly EventDelay EventDelay = new(TimeSpan.FromMilliseconds(600).Ticks);
         private static readonly bool IsWindows7OrOlder = Environment.OSVersion.Version.Major >= 6 && Environment.OSVersion.Version.Minor >= 1;
+        private static readonly IntPtr HotkeyHwnd = (IntPtr)0x0000000000000000;
 
         // Holds the list of hotkeys
         private static readonly IDictionary<int, HotKeyHandler> KeyHandlers = new Dictionary<int, HotKeyHandler>();
         private static int hotKeyCounter = 1;
-        private static IntPtr hotkeyHwnd;
 
         // ArrayLists used to enforce the use of proper modifiers.
         // Shift+A isn't a valid hotkey, for instance, as it would screw up when the user is typing.
@@ -119,13 +117,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                 modifiers = value;
                 Redraw(true);
             }
-        }
-
-        public static string GetLocalizedHotkeyStringFromString(string hotkeyString)
-        {
-            Keys virtualKeyCode = HotkeyFromString(hotkeyString);
-            Keys modifiers = HotkeyModifiersFromString(hotkeyString);
-            return HotkeyToLocalizedString(modifiers, virtualKeyCode);
         }
 
         public static string HotkeyToString(Keys modifierKeyCode, Keys virtualKeyCode)
@@ -246,16 +237,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             return key;
         }
 
-        public static void RegisterHotkeyHwnd(IntPtr hWnd)
-        {
-            hotkeyHwnd = hWnd;
-        }
-
-        public static int RegisterHotKey(string hotkey, HotKeyHandler handler)
-        {
-            return RegisterHotKey(HotkeyModifiersFromString(hotkey), HotkeyFromString(hotkey), handler);
-        }
-
         /// <summary>
         /// Register a hotkey.
         /// </summary>
@@ -297,7 +278,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                 modifiers |= (uint)Modifiers.NOREPEAT;
             }
 
-            if (NativeMethods.User32RegisterHotKey(hotkeyHwnd, hotKeyCounter, modifiers, (uint)virtualKeyCode))
+            if (NativeMethods.User32RegisterHotKey(HotkeyHwnd, hotKeyCounter, modifiers, (uint)virtualKeyCode))
             {
                 KeyHandlers.Add(hotKeyCounter, handler);
                 return hotKeyCounter++;
@@ -313,54 +294,10 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
         {
             foreach (int hotkey in KeyHandlers.Keys)
             {
-                NativeMethods.User32UnregisterHotKey(hotkeyHwnd, hotkey);
+                NativeMethods.User32UnregisterHotKey(HotkeyHwnd, hotkey);
             }
 
             KeyHandlers.Clear();
-        }
-
-        public static void UnregisterHotkey(int hotkey)
-        {
-            bool removeHotkey = false;
-            foreach (int availableHotkey in KeyHandlers.Keys)
-            {
-                if (availableHotkey == hotkey)
-                {
-                    NativeMethods.User32UnregisterHotKey(hotkeyHwnd, hotkey);
-                    removeHotkey = true;
-                }
-            }
-
-            if (removeHotkey)
-            {
-                // Remove key handler
-                KeyHandlers.Remove(hotkey);
-            }
-        }
-
-        /// <summary>
-        /// Handle WndProc messages for the hotkey.
-        /// </summary>
-        /// <param name="m">m.</param>
-        /// <returns>true if the message was handled.</returns>
-        public static bool HandleMessages(ref Message m)
-        {
-            if (m.Msg != WmHotkey)
-            {
-                return false;
-            }
-
-            if (!IsWindows7OrOlder && !EventDelay.Check())
-            {
-                return true;
-            }
-
-            if (KeyHandlers.TryGetValue((int)m.WParam, out HotKeyHandler handler))
-            {
-                handler();
-            }
-
-            return true;
         }
 
         public static string GetKeyName(Keys givenKey)
@@ -452,15 +389,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             {
                 return givenKey.ToString();
             }
-        }
-
-        /// <summary>
-        /// Resets this hotkey control to None.
-        /// </summary>
-        public new void Clear()
-        {
-            Hotkey = Keys.None;
-            HotkeyModifiers = Keys.None;
         }
 
         /// <summary>
