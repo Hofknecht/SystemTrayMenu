@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Kesyon yo poze souvan</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Li FAQ epi chwazi yon anyè rasin pou SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Si konsantre a pèdi epi si sourit la toujou nan meni an</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Si konsantre a pèdi epi sourit la toujou nan meni an</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisgond jiskaske yon meni ouvè lè sourit la sou li</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisgond jiskaske meni an fèmen si nan ka sa a sourit la Lè sa a, kite meni an</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisecond jiskaske meni an fèmen si sourit la kite meni an</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Piksèl lajè meni maksimòm</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Rete ouvè</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Meni rete ouvè</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tan jiskaske yon meni ouvri</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Anyè relatif</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Sove konfigirasyon nan anyè aplikasyon an</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Sove fichye konfigirasyon nan anyè aplikasyon an</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Fichye konfigirasyon ak dosye log</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfigirasyon ak dosye boutèy demi lit</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Louvri anyè aplikasyon an</value>
@@ -310,7 +310,7 @@
     <value>Gwosè</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Fwontyè nan meni an</value>
+    <value>Fwontyè meni an</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Ikon</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Si konsantre a pèdi epi yo te peze kle antre a</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisecond jiskaske meni an fèmen si nan ka sa a meni an pa reaktive</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milizegond jiskaske meni an fèmen si meni an pa reaktive</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Montre nan Taskbar</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Meni prensipal la parèt</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Kote sourit (anwo ikòn ba travay la)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Kote sourit (anwo a ikòn ba Travay la)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Custom (trenen li nan kote ki apwopriye a)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Custom (trenen li nan pozisyon ki apwopriye a)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>eleman</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Klasman</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopi atik ranje atravè gout trennen</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Kopi atik ranje atravè trennen ak gout</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Trennen</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtre meni pa kalite fichye pa egzanp: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Montre kantite eleman ki anba a</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Montre konte eleman yo</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Montre tit anyè anlè</value>

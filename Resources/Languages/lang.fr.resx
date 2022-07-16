@@ -174,14 +174,14 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Questions fréquemment posées</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Lisez la FAQ, puis choisissez un répertoire racine pour le SystemTrayMenu.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>Lisez la FAQ, puis choisissez un répertoire racine pour SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Sélectionnez le répertoire</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Votre répertoire racine pour l'application n'existe pas ou est vide ! Modifiez le répertoire racine ou placez des fichiers, des répertoires ou des raccourcis dans le répertoire racine.</value>
+    <value>Votre répertoire racine pour l'application n'existe pas ou est vide ! Modifiez le répertoire racine ou placez des fichiers, répertoires ou raccourcis dans le répertoire racine.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Vous n'avez pas accès au répertoire racine de l'application. Accordez l'accès au répertoire ou modifiez le répertoire racine.</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Défaut</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Si le focus est perdu et si la souris est toujours sur le menu</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Si le focus est perdu et que la souris est toujours sur le menu</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Millisecondes jusqu'à ce qu'un menu s'ouvre lorsque la souris est dessus</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas la souris quitte alors le menu</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisecondes jusqu'à ce que le menu se ferme si la souris quitte ensuite le menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Largeur maximale du menu en pixels</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Reste ouvert</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Le menu reste ouvert</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Temps jusqu'à ce qu'un menu s'ouvre</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Répertoire relatif</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Enregistrer la configuration dans le répertoire de l'application</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Enregistrer le fichier de configuration dans le répertoire de l'application</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Fichier de configuration et fichier journal</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Fichiers de configuration et journaux</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Ouvrir le répertoire des applications</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Si la mise au point est perdue et que la touche Entrée a été enfoncée</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Millisecondes jusqu'à la fermeture du menu si dans ce cas le menu n'est pas réactivé</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Millisecondes jusqu'à ce que le menu se ferme si le menu n'est pas réactivé</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Afficher dans la barre des tâches</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Le menu principal apparaît</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Emplacement de la souris (au-dessus de l'icône de la barre des tâches)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Personnalisé (faites-le glisser à l'endroit approprié)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Personnalisé (faites-le glisser vers la position appropriée)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>élément</value>
@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>Tri</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
+  <data name="Copy row item via drag and drop" xml:space="preserve">
     <value>Copier l'élément de ligne par glisser-déposer</value>
   </data>
   <data name="Drag" xml:space="preserve">
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Menu Filtrer par type de fichier, par exemple : *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Afficher le nombre d'éléments ci-dessous</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Afficher le nombre d'éléments</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Afficher le titre du répertoire en haut</value>

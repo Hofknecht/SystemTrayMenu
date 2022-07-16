@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Ofte stillede spørgsmål</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Læs FAQ og vælg derefter en rodmappe til SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Standard</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Hvis fokus er tabt, og hvis musen stadig er på menuen</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Hvis fokus er tabt, og musen stadig er på menuen</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Millisekunder, indtil en menu åbnes, når musen er på den</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekunder, indtil menuen lukker, hvis musen i dette tilfælde forlader menuen</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisekunder indtil menuen lukker, hvis musen så forlader menuen</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixels maksimale menubredde</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Holder åbent</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menuen forbliver åben</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tid indtil en menu åbner</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Relativ mappe</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Gem konfigurationen i applikationsmappen</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Gem konfigurationsfilen i applikationsmappen</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfigurationsfil og logfil</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfiguration og logfiler</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Åbn applikationsmappe</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Hvis fokus mistes, og der blev trykket på Enter-tasten</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Millisekunder indtil menuen lukker, hvis menuen i dette tilfælde ikke genaktiveres</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Millisekunder, indtil menuen lukker, hvis menuen ikke genaktiveres</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Vis i proceslinjen</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Hovedmenuen vises</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Musens placering (over proceslinjeikonet)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Brugerdefineret (træk det til det rigtige sted)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Brugerdefineret (træk den til den passende position)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>element</value>
@@ -427,7 +427,7 @@
     <value>Vis aldrig</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og beliggenhed</value>
+    <value>Størrelse og placering</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sortering</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopier rækkeemne via træk-drop</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Kopier rækkeemne via træk og slip</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Træk</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrer menu efter filtype, f.eks.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Vis antallet af elementer nedenfor</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Vis antallet af elementer</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Vis mappetitel øverst</value>

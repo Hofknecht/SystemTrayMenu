@@ -174,8 +174,8 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Veel Gestelde Vragen</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Lees de veelgestelde vragen en kies vervolgens een hoofdmap voor het SystemTrayMenu.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>Lees de veelgestelde vragen en kies vervolgens een hoofdmap voor SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Selecteer map</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Standaard</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Als de focus verloren gaat en als de muis nog steeds in het menu staat</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Als de focus verloren gaat en de muis nog steeds in het menu staat</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milliseconden totdat een menu wordt geopend wanneer de muis erop staat</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconden totdat het menu sluit als in dit geval de muis het menu verlaat</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milliseconden totdat het menu sluit als de muis het menu verlaat</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixels maximale menubreedte</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>blijft open</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menu blijft open</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tijd tot een menu opent</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Relatieve map</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Configuratie opslaan in applicatiemap</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Configuratiebestand opslaan in toepassingsmap</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Configuratiebestand en logbestand</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Configuratie- en logbestanden</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Applicatiemap openen</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Als de focus verloren is gegaan en de Enter-toets is ingedrukt</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconden totdat het menu wordt gesloten als het menu in dit geval niet opnieuw wordt geactiveerd</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milliseconden totdat het menu sluit als het menu niet opnieuw wordt geactiveerd</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Weergeven in taakbalk</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Hoofdmenu verschijnt</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Muislocatie (boven taakbalkpictogram)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Aangepast (sleep het naar de juiste plaats)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Aangepast (sleep het naar de juiste positie)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>element</value>
@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sorteren</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
+  <data name="Copy row item via drag and drop" xml:space="preserve">
     <value>Kopieer rij-item via slepen en neerzetten</value>
   </data>
   <data name="Drag" xml:space="preserve">
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filter menu op bestandstype bijv.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Toon aantal elementen hieronder</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Aantal elementen weergeven</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Toon maptitel bovenaan</value>

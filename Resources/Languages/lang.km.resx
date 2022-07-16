@@ -151,7 +151,7 @@
     <value>ឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ចាប់ផ្ដើមឡើងវិញ</value>
+    <value>ចាប់ផ្តើមឡើងវិញ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>មិនអាចចុះឈ្មោះ hot key បានទេ។</value>
@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>សំណួរ​ដែលគេ​ច្រើន​សួរ</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>អាន FAQ ហើយបន្ទាប់មកជ្រើសរើសថត root សម្រាប់ SystemTrayMenu ។</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>លំនាំដើម</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>ប្រសិនបើការផ្តោតអារម្មណ៍ត្រូវបានបាត់បង់ ហើយប្រសិនបើកណ្តុរនៅតែស្ថិតនៅលើម៉ឺនុយ</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>ប្រសិនបើការផ្តោតអារម្មណ៍ត្រូវបានបាត់បង់ ហើយកណ្តុរនៅតែស្ថិតនៅលើម៉ឺនុយ</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>មិល្លីវិនាទីរហូតដល់ម៉ឺនុយមួយបើកនៅពេលដែលកណ្ដុរនៅលើវា។</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>មិល្លីវិនាទីរហូតដល់ម៉ឺនុយបិទ ប្រសិនបើក្នុងករណីនេះកណ្តុរបន្ទាប់មកចាកចេញពីម៉ឺនុយ</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>មិល្លីវិនាទីរហូតដល់ម៉ឺនុយបិទ ប្រសិនបើកណ្តុរបន្ទាប់មកចាកចេញពីម៉ឺនុយ</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>ទទឹងម៉ឺនុយអតិបរមាភីកសែល</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>នៅតែបើកចំហ</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>ម៉ឺនុយនៅតែបើក</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>ពេលវេលារហូតដល់ម៉ឺនុយបើក</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>បញ្ជីទំនាក់ទំនង</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>រក្សាទុកការកំណត់នៅក្នុងថតកម្មវិធី</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>រក្សាទុកឯកសារកំណត់រចនាសម្ព័ន្ធនៅក្នុងថតកម្មវិធី</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>ឯកសារកំណត់រចនាសម្ព័ន្ធ និងឯកសារកំណត់ហេតុ</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>ការកំណត់រចនាសម្ព័ន្ធ និងឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>បើកថតកម្មវិធី</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>ប្រសិនបើការផ្តោតអារម្មណ៍ត្រូវបានបាត់បង់ហើយគ្រាប់ចុចបញ្ចូលត្រូវបានចុច</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>មិល្លីវិនាទីរហូតដល់ម៉ឺនុយបិទ ប្រសិនបើក្នុងករណីនេះ ម៉ឺនុយមិនត្រូវបានដំណើរការឡើងវិញទេ។</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>មិល្លីវិនាទីរហូតដល់ម៉ឺនុយបិទ ប្រសិនបើម៉ឺនុយមិនត្រូវបានដំណើរការឡើងវិញ</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>បង្ហាញនៅក្នុងរបារភារកិច្ច</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>ម៉ឺនុយមេលេចឡើង</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>ទីតាំងកណ្ដុរ (រូបតំណាងរបារភារកិច្ចខាងលើ)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>ទីតាំងកណ្ដុរ (ខាងលើរូបតំណាងរបារភារកិច្ច)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>ផ្ទាល់ខ្លួន (អូសវាទៅកន្លែងដែលសមរម្យ)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>ផ្ទាល់ខ្លួន (អូសវាទៅទីតាំងសមស្រប)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>ធាតុ</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>ការតម្រៀប</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ចម្លងធាតុជួរដេកតាមរយៈការអូសទម្លាក់</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>ចម្លងធាតុជួរដេកតាមរយៈការអូសនិងទម្លាក់</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>អូស</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ត្រងម៉ឺនុយតាមប្រភេទឯកសារ ឧ៖ *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>បង្ហាញចំនួនធាតុខាងក្រោម</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>បង្ហាញចំនួនធាតុ</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>បង្ហាញចំណងជើងថតនៅខាងលើ</value>

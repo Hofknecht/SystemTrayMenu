@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Sıkça Sorulan Sorular</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>SSS bölümünü okuyun ve ardından SystemTrayMenu için bir kök dizin seçin.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Varsayılan</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
     <value>Odak kaybolursa ve fare hala menü üzerindeyse</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Fare üzerindeyken bir menü açılana kadar milisaniye</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Bu durumda fare menüden ayrılırsa menü kapanana kadar milisaniye</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Piksel maksimum menü genişliği</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Açık kalır</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menü açık kalır</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Bir menü açılana kadar geçen süre</value>
@@ -252,10 +252,10 @@
   <data name="Relative directory" xml:space="preserve">
     <value>göreli dizin</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
+  <data name="Save configuration file in application directory" xml:space="preserve">
     <value>Yapılandırmayı uygulama klasörüne kaydet</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
+  <data name="Configuration and log files" xml:space="preserve">
     <value>Yapılandırma dosyası ve günlük dosyası</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
@@ -348,7 +348,7 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Odak kaybolursa ve Enter tuşuna basıldıysa</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>Bu durumda menü yeniden etkinleştirilmezse menü kapanana kadar milisaniye</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
@@ -399,10 +399,10 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Ana menü belirir</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Fare konumu (Görev Çubuğu simgesinin üstünde)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Özel (uygun yere sürükleyin)</value>
   </data>
   <data name="element" xml:space="preserve">
@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sıralama</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
+  <data name="Copy row item via drag and drop" xml:space="preserve">
     <value>Sürükle bırak yoluyla satır öğesini kopyala</value>
   </data>
   <data name="Drag" xml:space="preserve">
@@ -483,7 +483,7 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Menüyü dosya türüne göre filtreleyin, örneğin: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
+  <data name="Show count of elements" xml:space="preserve">
     <value>Aşağıda öğe sayısını göster</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">

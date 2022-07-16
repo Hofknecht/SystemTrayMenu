@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>คำถามที่พบบ่อย</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>อ่านคำถามที่พบบ่อย จากนั้นเลือกไดเรกทอรีรากสำหรับ SystemTrayMenu</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>ค่าเริ่มต้น</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>หากโฟกัสหายและหากเมาส์ยังอยู่ในเมนู</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>หากโฟกัสหายและเมาส์ยังคงอยู่ที่เมนู</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>มิลลิวินาทีจนกว่าเมนูจะเปิดขึ้นเมื่อเมาส์อยู่</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>มิลลิวินาทีจนกว่าเมนูจะปิด ถ้าในกรณีนี้เมาส์ออกจากเมนู</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>มิลลิวินาทีจนกว่าเมนูจะปิดลงหากเมาส์ออกจากเมนู</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>พิกเซลความกว้างเมนูสูงสุด</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>ยังคงเปิดอยู่</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>เมนูยังคงเปิดอยู่</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>เวลาจนกว่าเมนูจะเปิดขึ้น</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>ไดเรกทอรีสัมพัทธ์</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>บันทึกการกำหนดค่าในไดเรกทอรีแอปพลิเคชัน</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>บันทึกไฟล์การกำหนดค่าในไดเรกทอรีแอปพลิเคชัน</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>ไฟล์การกำหนดค่าและไฟล์บันทึก</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>การกำหนดค่าและล็อกไฟล์</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>เปิดไดเรกทอรีแอปพลิเคชัน</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>หากโฟกัสหายและกดปุ่ม Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>มิลลิวินาทีจนกว่าเมนูจะปิดลงหากในกรณีนี้เมนูไม่ได้เปิดใช้งานอีกครั้ง</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>มิลลิวินาทีจนกว่าเมนูจะปิดลงหากเมนูไม่เปิดใช้งานอีกครั้ง</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>แสดงในแถบงาน</value>
@@ -370,7 +370,7 @@
     <value>เรียกซ้ำ</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>ลบไดเร็กทอรี</value>
+    <value>ลบไดเรกทอรี</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>เฉพาะไฟล์</value>
@@ -399,10 +399,10 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>เมนูหลักปรากฏขึ้น</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>ตำแหน่งเมาส์ (เหนือไอคอนแถบงาน)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>กำหนดเอง (ลากไปยังตำแหน่งที่เหมาะสม)</value>
   </data>
   <data name="element" xml:space="preserve">
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>การเรียงลำดับ</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>คัดลอกรายการแถวผ่านการลากวาง</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>คัดลอกรายการแถวด้วยการลากและวาง</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>ลาก</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>เมนูกรองตามประเภทไฟล์ เช่น *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>แสดงจำนวนองค์ประกอบด้านล่าง</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>แสดงจำนวนองค์ประกอบ</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>แสดงชื่อไดเร็กทอรีที่ด้านบน</value>

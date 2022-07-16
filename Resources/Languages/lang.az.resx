@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Tez-tez soruşulan suallar</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Tez-tez verilən sualları oxuyun və sonra SystemTrayMenu üçün kök kataloq seçin.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Defolt</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Əgər fokus itibsə və siçan hələ də menyudadırsa</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Fokus itibsə və siçan hələ də menyudadırsa</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Siçan üzərində olduqda menyu açılana qədər millisaniyə</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Bu halda siçan menyunu tərk edərsə, menyu bağlanana qədər millisaniyələr</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Siçan menyunu tərk edərsə, menyu bağlanana qədər millisaniyə</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Piksel maksimum menyu eni</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Açıq qalır</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menyu açıq qalır</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Menyu açılana qədər vaxt</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Nisbi kataloq</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Konfiqurasiyanı proqram kataloqunda saxlayın</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Konfiqurasiya faylını proqram kataloqunda saxlayın</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfiqurasiya faylı və log faylı</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfiqurasiya və log faylları</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Tətbiq qovluğunu açın</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Əgər fokus itibsə və Enter düyməsi basılıbsa</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Bu halda menyu yenidən aktivləşdirilməsə, menyu bağlanana qədər millisaniyə</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Menyu yenidən aktivləşdirilmədikdə, menyu bağlanana qədər millisaniyə</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Tapşırıq çubuğunda göstərin</value>
@@ -379,13 +379,13 @@
     <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>'Başlat Menyu' nümunə qovluğu əlavə edin</value>
+    <value>'Başlat Menyu' nümunə kataloqu əlavə edin</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Sətir hündürlüyü faizlə</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Dairəvi künclər</value>
+    <value>Dəyirmi künclər</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Görünüş</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Əsas menyu görünür</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Siçan yeri (Tapşırıq panelinin üstündə)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Siçan yeri (Tapşırıq paneli ikonasının üstündə)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Fərdi (uyğun yerə sürükləyin)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Fərdi (uyğun mövqeyə sürükləyin)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>element</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Çeşidləmə</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Sürüşdürmə vasitəsi ilə sıra elementini kopyalayın</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Sürük və buraxma vasitəsilə sıra elementini kopyalayın</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Çək</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Fayl növünə görə menyunu süzün, məsələn: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Aşağıdakı elementlərin sayını göstərin</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Elementlərin sayını göstərin</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Kataloq başlığını yuxarıda göstərin</value>

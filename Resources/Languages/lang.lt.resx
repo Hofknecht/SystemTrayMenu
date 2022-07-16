@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Dažnai užduodami klausimai</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Perskaitykite DUK ir pasirinkite SystemTrayMenu šakninį katalogą.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Numatytas</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Jei židinys prarastas ir pelė vis dar yra meniu</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Jei židinys prarastas, o pelė vis dar yra meniu</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisekundės, kol atidaromas meniu, kai ant jo yra pelė</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundės, kol meniu užsidaro, jei tokiu atveju pelė išeina iš meniu</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekundės, kol meniu užsidaro, jei pelė išeina iš meniu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maksimalus meniu plotis pikseliais</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Lieka atvira</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Meniu lieka atidarytas</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Laikas, kol atsidarys meniu</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Santykinis katalogas</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Išsaugokite konfigūraciją programų kataloge</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Išsaugokite konfigūracijos failą programų kataloge</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfigūracijos failas ir žurnalo failas</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfigūracijos ir žurnalo failai</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Atidarykite programų katalogą</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Jei židinys prarastas ir buvo paspaustas klavišas Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisekundės, kol meniu užsidaro, jei tokiu atveju meniu vėl neįjungiamas</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundės, kol meniu uždaromas, jei meniu neįjungiamas iš naujo</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Rodyti užduočių juostoje</value>
@@ -399,10 +399,10 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Pasirodo pagrindinis meniu</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Pelės vieta (virš užduočių juostos piktogramos)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Pasirinktinis (vilkite jį į atitinkamą vietą)</value>
   </data>
   <data name="element" xml:space="preserve">
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Rūšiavimas</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Nukopijuokite eilutės elementą vilkdami</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Nukopijuokite eilutės elementą vilkdami ir numesdami</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Vilkite</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtravimo meniu pagal failo tipą, pvz.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Žemiau parodykite elementų skaičių</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Rodyti elementų skaičių</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Rodyti katalogo pavadinimą viršuje</value>

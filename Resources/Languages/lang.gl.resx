@@ -174,8 +174,8 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Preguntas máis frecuentes</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Lea as preguntas frecuentes e despois escolla un directorio raíz para o SystemTrayMenu.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>Lea as preguntas frecuentes e despois escolla un directorio raíz para SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Seleccione o directorio</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Por defecto</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Se se perde o foco e se o rato aínda está no menú</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Se se perde o foco e o rato aínda está no menú</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisegundos ata que se abre un menú cando o rato está sobre el</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisegundos ata que se peche o menú se neste caso o rato abandona o menú</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisegundos ata que se pecha o menú se o rato abandona o menú</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Anchura máxima do menú en píxeles</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Permanece aberto</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>O menú permanece aberto</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tempo ata que se abra un menú</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Directorio relativo</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Garda a configuración no directorio da aplicación</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Garda o ficheiro de configuración no directorio da aplicación</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Ficheiro de configuración e ficheiro de rexistro</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Ficheiros de configuración e rexistro</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Abrir o directorio de aplicacións</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Se se perde o foco e se premeu a tecla Intro</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisegundos ata que se peche o menú se neste caso non se reactiva o menú</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisegundos ata que se peche o menú se non se reactiva</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostrar na barra de tarefas</value>
@@ -385,7 +385,7 @@
     <value>Altura da fila en porcentaxe</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Esquinas redondeadas</value>
+    <value>Cantos redondeados</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Aparencia</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Aparece o menú principal</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Ubicación do rato (enriba da icona da barra de tarefas)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Localización do rato (enriba da icona da barra de tarefas)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Personalizado (arrástreo ao lugar adecuado)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Personalizado (arrástreo á posición adecuada)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>elemento</value>
@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>Ordenación</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
+  <data name="Copy row item via drag and drop" xml:space="preserve">
     <value>Copia o elemento da fila arrastrando e soltando</value>
   </data>
   <data name="Drag" xml:space="preserve">
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrar menú por tipo de ficheiro, por exemplo: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Mostra o número de elementos a continuación</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Mostra o número de elementos</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Mostra o título do directorio na parte superior</value>

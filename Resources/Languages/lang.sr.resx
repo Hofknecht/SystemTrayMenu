@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Често постављана питања</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Прочитајте често постављана питања, а затим изаберите основни директоријум за СистемТраиМену.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Уобичајено</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Ако је фокус изгубљен и ако је миш још увек у менију</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Ако је фокус изгубљен, а миш је и даље у менију</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Милисекунде док се не отвори мени када је миш на њему</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Милисекунде док се мени не затвори, ако у овом случају миш напусти мени</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Милисекунде док се мени не затвори ако миш напусти мени</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Максимална ширина менија пиксела</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Остаје отворен</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Мени остаје отворен</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Време до отварања менија</value>
@@ -247,16 +247,16 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Ивица изабраног елемента</value>
+    <value>Граница изабраног елемента</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Релативни именик</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Сачувајте конфигурацију у директоријуму апликације</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Сачувајте конфигурациону датотеку у директоријуму апликације</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Конфигурациона датотека и датотека евиденције</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Конфигурациони и лог фајлови</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Отворите директоријум апликације</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Ако је фокус изгубљен и притиснут тастер Ентер</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Милисекунде до затварања менија ако се у овом случају мени поново не активира</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Милисекунде док се мени не затвори ако се мени поново не активира</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Прикажи на траци задатака</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Појављује се главни мени</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Локација миша (изнад иконе на траци задатака)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Прилагођено (превуците га на одговарајуће место)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Прилагођено (превуците га на одговарајућу позицију)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>елемент</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Сортирање</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Копирајте ставку реда превлачењем</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Копирајте ставку реда превлачењем и испуштањем</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Драг</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Филтрирајте мени према типу датотеке, нпр.: *.еке|*.длл</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Прикажи број елемената испод</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Прикажи број елемената</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Прикажи наслов директоријума на врху</value>

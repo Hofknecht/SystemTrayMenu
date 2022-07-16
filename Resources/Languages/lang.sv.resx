@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Vanliga frågor</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Läs FAQ och välj sedan en rotkatalog för SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Standard</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Om fokus tappas och om musen fortfarande finns på menyn</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Om fokus tappas och musen fortfarande finns på menyn</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Millisekunder tills en meny öppnas när musen är på den</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekunder tills menyn stängs om musen i detta fall lämnar menyn</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisekunder tills menyn stängs om musen sedan lämnar menyn</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pixels maximala menybredd</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Håller öppet</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menyn förblir öppen</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tid tills en meny öppnas</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Relativ katalog</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Spara konfigurationen i applikationskatalogen</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Spara konfigurationsfilen i programkatalogen</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfigurationsfil och loggfil</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfiguration och loggfiler</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Öppna programkatalogen</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Om fokus tappas och Enter-tangenten trycktes</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Millisekunder tills menyn stängs om menyn i detta fall inte återaktiveras</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Millisekunder tills menyn stängs om menyn inte återaktiveras</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Visa i Aktivitetsfältet</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Huvudmenyn visas</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Musens plats (ovanför aktivitetsfältsikonen)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Anpassad (dra den till lämplig plats)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Anpassad (dra den till lämplig position)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>element</value>
@@ -471,26 +471,26 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sortering</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopiera radobjekt med dra-släpp</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Kopiera radobjekt genom att dra och släppa</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Drag</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Scrolla via svep</value>
+    <value>Bläddra via svep</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrera menyn efter filtyp, t.ex.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Visa antalet element nedan</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Visa antalet element</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Visa katalogtitel överst</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>Visa funktionstangenten 'Öppna mapp'</value>
+    <value>Visa funktionstangent 'Öppna mapp'</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>Visa funktionstangent 'Pin-meny'</value>
@@ -511,7 +511,7 @@
     <value>Visa länköverlagring</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Katalog över Internet genvägsikoner</value>
+    <value>Katalog över internetgenvägsikoner</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
     <value>Sorterat efter typ och datum</value>

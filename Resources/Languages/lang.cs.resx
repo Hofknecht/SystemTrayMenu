@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Často kladené otázky</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Přečtěte si FAQ a poté vyberte kořenový adresář pro SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Výchozí</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Pokud dojde ke ztrátě fokusu a pokud je myš stále v nabídce</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Pokud dojde ke ztrátě fokusu a myš je stále v nabídce</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>Milisekundy, než se otevře nabídka, když je na ní myš</value>
+    <value>Milisekundy do otevření nabídky, když je na ní myš</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundy, než se nabídka zavře, pokud v tomto případě myš nabídku opustí</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekundy, než se nabídka zavře, pokud myš poté nabídku opustí</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maximální šířka nabídky pixelů</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Zůstává otevřené</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menu zůstane otevřené</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Čas do otevření nabídky</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Relativní adresář</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Uložte konfiguraci do adresáře aplikace</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Uložte konfigurační soubor do adresáře aplikace</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfigurační soubor a soubor protokolu</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfigurace a soubory protokolu</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Otevřete adresář aplikace</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Pokud dojde ke ztrátě fokusu a byla stisknuta klávesa Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisekundy, než se nabídka zavře, pokud v tomto případě není nabídka znovu aktivována</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundy, než se nabídka zavře, pokud není znovu aktivována</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Zobrazit na hlavním panelu</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Zobrazí se hlavní nabídka</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Umístění myši (nad ikonou na hlavním panelu)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Umístění myši (nad ikonou hlavního panelu)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Vlastní (přetáhněte jej na příslušné místo)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Vlastní (přetáhněte jej na příslušnou pozici)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>živel</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Řazení</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Zkopírujte položku řádku pomocí přetažení</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Zkopírujte položku řádku přetažením</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Táhnout</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrovat nabídku podle typu souboru, např.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Níže zobrazit počet prvků</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Zobrazit počet prvků</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Zobrazit název adresáře nahoře</value>

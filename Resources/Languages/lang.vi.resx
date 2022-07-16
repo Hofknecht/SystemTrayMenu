@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Các câu hỏi thường gặp</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Đọc Câu hỏi thường gặp và sau đó chọn một thư mục gốc cho SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Mặc định</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Nếu tiêu điểm bị mất và nếu chuột vẫn ở trên menu</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Nếu tiêu điểm bị mất và chuột vẫn ở trên menu</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Mili giây cho đến khi menu mở ra khi chuột ở trên đó</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Mili giây cho đến khi menu đóng lại nếu trong trường hợp này là chuột rời khỏi menu</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Mili giây cho đến khi menu đóng lại nếu sau đó chuột rời khỏi menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Chiều rộng menu tối đa của pixel</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Tiếp tục mở</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menu vẫn mở</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Thời gian cho đến khi menu mở ra</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Thư mục tương đối</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Lưu cấu hình trong thư mục ứng dụng</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Lưu tệp cấu hình trong thư mục ứng dụng</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Tệp cấu hình và tệp nhật ký</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Cấu hình và tệp nhật ký</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Mở thư mục ứng dụng</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Nếu mất tiêu điểm và nhấn phím Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Mili giây cho đến khi menu đóng lại nếu trong trường hợp này, menu chưa được kích hoạt lại</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Mili giây cho đến khi menu đóng lại nếu menu chưa được kích hoạt lại</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Hiển thị trên Thanh tác vụ</value>
@@ -399,10 +399,10 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Menu chính xuất hiện</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Vị trí chuột (phía trên biểu tượng Thanh tác vụ)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Tùy chỉnh (kéo nó đến vị trí thích hợp)</value>
   </data>
   <data name="element" xml:space="preserve">
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sắp xếp</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Sao chép mục hàng thông qua kéo thả</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Sao chép mục hàng bằng cách kéo và thả</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Lôi kéo</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Trình đơn lọc theo loại tệp, ví dụ: * .exe | * .dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Hiển thị số lượng các phần tử bên dưới</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Hiển thị số lượng phần tử</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Hiển thị tiêu đề thư mục ở trên cùng</value>
@@ -514,7 +514,7 @@
     <value>Thư mục các biểu tượng lối tắt trên Internet</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
-    <value>Được sắp xếp theo loại và ngày tháng</value>
+    <value>Sắp xếp theo loại và ngày</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Sắp xếp theo loại và tên</value>

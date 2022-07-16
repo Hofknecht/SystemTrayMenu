@@ -174,14 +174,14 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Frequenter Interrogata</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>FAQ lege et tunc directorium radicem pro SystemTrayMenu elige.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>FAQ lege et elige directorium radicis pro SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Lego Directory</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Radix tua directorium pro app non est vel inanis est! Mutare directorium radix vel aliquas tabulas, directoria vel breves in directorio radix pone.</value>
+    <value>Radix tua directorium pro app non est vel inanis est! Mutare directorium radix vel aliquas tabulas, directoria vel breves in directorio radicis pone.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nullas aditus ad directorium radicis app. Da aditum ad indicem vel directorium radicem mutare.</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
     <value>Si focus periit et mus adhuc in menu</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milliseconds quam in menu aperit cum muris in eo est</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconds usque ad menu claudit si in hoc casu, mus tunc relinquat menu</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milliseconds usque ad menu claudit si mus tunc relinquit menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maximum menu width elementa</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>aere aperto</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menu aperta manet</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tempus donec a menu opens</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Relativum directorium</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Servo configuratione in applicatione Directory</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Servo configuratione file in application Directory</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Configurationis lima et stipes lima</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Configurationis et stipes lima</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Open application directory</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Si focus periit et Intra key premebatur</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconds usque ad menu claudit si in hoc casu menu non reactivated</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milliseconds quam in menu claudit si menu non est supra</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Ostende in Taskbar</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Pelagus menu videtur</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Mus location (Icon Super Taskbar)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Mus locus (supra icon Taskbar)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Consuetudo (ad aptum locum trahere)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Consuetudo (ad convenientem locum trahat)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>elementum</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Sorting</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Effingo row item per drag gutta</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Effingo row item per drag et stilla</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Drag</value>
@@ -483,11 +483,11 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Menu e file type e.g.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Ostende comitem elementorum infra</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Ostende comitem elementorum</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Ostendere indicem titulum ad top</value>
+    <value>Ostende indicem titulum ad top</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>Munus monstrare clavis 'Open Folder'</value>

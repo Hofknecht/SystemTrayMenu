@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Gyakran Ismételt Kérdések</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Olvassa el a GYIK-et, majd válasszon gyökérkönyvtárat a SystemTrayMenu számára.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Alapértelmezett</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Ha a fókusz elveszett, és ha az egér továbbra is a menüben van</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Ha a fókusz elveszett, és az egér továbbra is a menüben van</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Ezredmásodperc, amíg meg nem nyílik egy menü, amikor az egér rajta van</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Ezredmásodperc a menü bezárásáig, ha ebben az esetben az egér elhagyja a menüt</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Ezredmásodperc a menü bezárásáig, ha az egér ezután elhagyja a menüt</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>A menü maximális szélessége képpont</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Nyitva marad</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>A menü nyitva marad</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Menü megnyílásáig eltelt idő</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Relatív könyvtár</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Mentse a konfigurációt az alkalmazáskönyvtárba</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Mentse el a konfigurációs fájlt az alkalmazáskönyvtárba</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfigurációs fájl és naplófájl</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfigurációs és naplófájlok</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Nyissa meg az alkalmazáskönyvtárat</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Ha a fókusz elveszett, és megnyomta az Enter billentyűt</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Ezredmásodperc a menü bezárásáig, ha ebben az esetben a menüt nem aktiválják újra</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Ezredmásodperc a menü bezárásáig, ha a menüt nem aktiválják újra</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Megjelenítés a tálcán</value>
@@ -399,10 +399,10 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Megjelenik a főmenü</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Az egér helye (a tálcán lévő ikon felett)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Az egér helye (a tálca ikonja felett)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Egyéni (húzza a megfelelő helyre)</value>
   </data>
   <data name="element" xml:space="preserve">
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Válogató</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Sorelem másolása húzással</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Sorelem másolása fogd és vidd segítségével</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Húzza</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Szűrőmenü fájltípus szerint, pl.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Mutasd az elemek számát alább</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Mutasd az elemek számát</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>A könyvtár címének megjelenítése felül</value>

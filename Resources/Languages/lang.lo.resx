@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>ຄໍາ​ຖາມ​ທີ່​ຖືກ​ຖາມ​ເລື້ອຍໆ</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>ອ່ານ FAQ ແລະຫຼັງຈາກນັ້ນເລືອກໄດເລກະທໍລີຮາກສໍາລັບ SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>ຄ່າເລີ່ມຕົ້ນ</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>ຖ້າຫາກວ່າຈຸດສຸມແມ່ນສູນເສຍແລະຖ້າຫາກວ່າຫນູຍັງຢູ່ໃນເມນູ</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>ຖ້າຫາກວ່າຈຸດສຸມແມ່ນສູນເສຍແລະຫນູຍັງຢູ່ໃນເມນູ</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>milliseconds ຈົນກ່ວາເມນູເປີດໃນເວລາທີ່ຫນູຢູ່ເທິງມັນ</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>milliseconds ຈົນກ່ວາເມນູປິດຖ້າຫາກວ່າໃນກໍລະນີນີ້ຫນູຫຼັງຈາກນັ້ນອອກຈາກເມນູ</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>milliseconds ຈົນກ່ວາເມນູປິດຖ້າຫາກວ່າຫນູຫຼັງຈາກນັ້ນອອກຈາກເມນູ</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>ຄວາມກວ້າງຂອງເມນູສູງສຸດ pixels</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>ເປີດຢູ່</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>ເມນູເປີດຢູ່</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>ເວລາຈົນກ່ວາເມນູເປີດ</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>ລາຍຊື່ພີ່ນ້ອງ</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>ບັນທຶກການຕັ້ງຄ່າໃນໄດເລກະທໍລີແອັບພລິເຄຊັນ</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>ບັນທຶກໄຟລ໌ການຕັ້ງຄ່າໃນໄດເລກະທໍລີແອັບພລິເຄຊັນ</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>ໄຟລ໌ການຕັ້ງຄ່າ ແລະໄຟລ໌ບັນທຶກ</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>ການຕັ້ງຄ່າແລະບັນທຶກໄຟລ໌</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>ເປີດໄດເລກະທໍລີແອັບພລິເຄຊັນ</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>ຖ້າ​ສູນ​ເສຍ​ຈຸດ​ສຸມ​ແລະ​ປຸ່ມ Enter ຖືກ​ກົດ​ດັນ</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>ມິນລິວິນາທີຈົນກ່ວາເມນູປິດຖ້າໃນກໍລະນີນີ້ເມນູບໍ່ໄດ້ເປີດໃຊ້ຄືນໃຫມ່</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>ມິນລິວິນາທີຈົນກ່ວາເມນູປິດຖ້າເມນູບໍ່ໄດ້ຖືກເປີດໃຊ້ຄືນ</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ສະແດງໃຫ້ເຫັນໃນ Taskbar</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>ເມນູຫຼັກປະກົດຂຶ້ນ</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>ທີ່ຢູ່ຂອງເມົ້າ (ໄອຄອນແຖບໜ້າວຽກຂ້າງເທິງ)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>ທີ່ຢູ່ຂອງເມົ້າ (ຢູ່ເທິງໄອຄອນແຖບໜ້າວຽກ)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>ປັບແຕ່ງ (ລາກມັນໄປຫາບ່ອນທີ່ເຫມາະສົມ)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>ປັບແຕ່ງ (ລາກມັນໄປຫາຕໍາແໜ່ງທີ່ເຫມາະສົມ)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>ອົງປະກອບ</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>ການຈັດຮຽງ</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ສຳເນົາລາຍການແຖວໂດຍການລາກລົງ</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>ສຳເນົາລາຍການແຖວຜ່ານລາກແລ້ວວາງ</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>ລາກ</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ກັ່ນຕອງເມນູຕາມປະເພດໄຟລ໌ເຊັ່ນ: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>ສະແດງຈໍານວນອົງປະກອບຂ້າງລຸ່ມນີ້</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>ສະແດງຈໍານວນອົງປະກອບ</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>ສະແດງຊື່ໄດເລກະທໍລີຢູ່ເທິງ</value>
@@ -529,7 +529,7 @@
     <value>ສະ​ບັບ​ຫລ້າ​ສຸດ​ທີ່​ມີ​ຢູ່​:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ມີລຸ້ນໃໝ່!</value>
+    <value>ລຸ້ນໃໝ່ມີໃຫ້!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>ທ່ານມີເວີຊັນຫຼ້າສຸດຂອງ SystemTrayMenu!</value>

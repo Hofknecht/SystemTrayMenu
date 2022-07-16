@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Pertanyaan yang Sering Diajukan</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Baca FAQ dan kemudian pilih direktori root untuk SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Bawaan</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Jika fokus hilang dan jika mouse masih berada di menu</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Jika fokus hilang dan mouse masih berada di menu</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milidetik hingga menu terbuka saat mouse berada di atasnya</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milidetik hingga menu ditutup jika dalam hal ini mouse kemudian meninggalkan menu</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milidetik hingga menu ditutup jika mouse kemudian meninggalkan menu</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Lebar menu maksimum piksel</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Tetap buka</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menu tetap buka</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Waktu sampai menu terbuka</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Direktori relatif</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Simpan konfigurasi di direktori aplikasi</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Simpan file konfigurasi di direktori aplikasi</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>File konfigurasi dan file log</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfigurasi dan file log</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Buka direktori aplikasi</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Jika fokus hilang dan tombol Enter ditekan</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milidetik hingga menu ditutup jika dalam hal ini menu tidak diaktifkan kembali</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milidetik hingga menu ditutup jika menu tidak diaktifkan kembali</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Tampilkan di Bilah Tugas</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Menu utama muncul</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Lokasi mouse (Di atas ikon Taskbar)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Lokasi mouse (di atas ikon Taskbar)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Kustom (seret ke tempat yang sesuai)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Kustom (seret ke posisi yang sesuai)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>elemen</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Penyortiran</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Salin item baris melalui drag drop</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Salin item baris melalui seret dan lepas</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Menyeret</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filter menu menurut jenis file misalnya: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Tunjukkan jumlah elemen di bawah ini</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Tampilkan jumlah elemen</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Tampilkan judul direktori di atas</value>

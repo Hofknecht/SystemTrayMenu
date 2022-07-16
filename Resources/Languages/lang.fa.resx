@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>سوالات متداول</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>سوالات متداول را بخوانید و سپس یک دایرکتوری ریشه برای SystemTrayMenu انتخاب کنید.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>پیش فرض</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>اگر فوکوس از بین رفته باشد و اگر ماوس همچنان در منو است</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>اگر فوکوس از بین رفته باشد و ماوس همچنان در منو باشد</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>میلی ثانیه تا زمانی که یک منو باز شود وقتی ماوس روی آن است</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>میلی ثانیه تا بسته شدن منو، اگر در این حالت ماوس از منو خارج شود</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>اگر موس از منو خارج شود، چند میلی ثانیه تا بسته شدن منو</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>حداکثر عرض منو پیکسل</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>باز می ماند</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>منو باز می ماند</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>زمان تا باز شدن یک منو</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>دایرکتوری نسبی</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>پیکربندی را در فهرست برنامه ذخیره کنید</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>فایل پیکربندی را در فهرست برنامه ذخیره کنید</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>فایل پیکربندی و فایل لاگ</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>فایل های پیکربندی و لاگ</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>دایرکتوری برنامه را باز کنید</value>
@@ -348,14 +348,14 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>اگر فوکوس از بین رفت و کلید Enter فشار داده شد</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>اگر در این حالت منو دوباره فعال نشود، چند میلی ثانیه تا بسته شدن منو</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>میلی ثانیه تا بسته شدن منو اگر منو دوباره فعال نشود</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>نمایش در نوار وظیفه</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>اضافه کردن دایرکتوری</value>
+    <value>دایرکتوری اضافه کنید</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>محتوای دایرکتوری را به دایرکتوری ریشه اضافه کنید</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>منوی اصلی ظاهر می شود</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>مکان ماوس (بالای نماد نوار وظیفه)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>سفارشی (آن را به مکان مناسب بکشید)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>سفارشی (آن را به موقعیت مناسب بکشید)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>عنصر</value>
@@ -471,20 +471,20 @@
   <data name="Sorting" xml:space="preserve">
     <value>مرتب سازی</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>از طریق کشیدن دراپ، آیتم ردیف را کپی کنید</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>مورد ردیف را از طریق کشیدن و رها کردن کپی کنید</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>بکشید</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>از طریق سوایپ پیمایش کنید</value>
+    <value>از طریق کشیدن انگشت پیمایش کنید</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>منوی فیلتر بر اساس نوع فایل به عنوان مثال: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>نمایش تعداد عناصر در زیر</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>نمایش تعداد عناصر</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>نمایش عنوان دایرکتوری در بالا</value>

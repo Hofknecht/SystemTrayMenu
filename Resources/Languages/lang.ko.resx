@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>자주 묻는 질문</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>FAQ를 읽고 SystemTrayMenu의 루트 디렉토리를 선택하십시오.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>기본</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>초점을 잃은 경우 및 마우스가 여전히 메뉴에 있는 경우</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>초점을 잃고 마우스가 여전히 메뉴에 있는 경우</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>마우스가 메뉴에 있을 때 메뉴가 열릴 때까지의 밀리초</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>이 경우 마우스가 메뉴를 떠나면 메뉴가 닫힐 때까지의 밀리초</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>마우스가 메뉴를 떠난 후 메뉴가 닫힐 때까지의 시간(밀리초)</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>픽셀 최대 메뉴 너비</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>열린 상태로 유지</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>메뉴는 계속 열려 있습니다</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>메뉴가 열릴 때까지의 시간</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>상대 디렉토리</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>애플리케이션 디렉토리에 구성 저장</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>응용 프로그램 디렉토리에 구성 파일 저장</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>구성 파일 및 로그 파일</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>구성 및 로그 파일</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>애플리케이션 디렉토리 열기</value>
@@ -277,7 +277,7 @@
     <value>클릭 시 화살표 배경</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>마우스가 위에 있는 동안 화살표의 배경</value>
+    <value>마우스가 화살표 위에 있는 동안 화살표의 배경</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>색 구성표 어두운</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>초점을 잃고 Enter 키를 누른 경우</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>이 경우 메뉴가 다시 활성화되지 않으면 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>메뉴가 다시 활성화되지 않으면 메뉴가 닫힐 때까지의 시간(밀리초)</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>작업 표시줄에 표시</value>
@@ -399,10 +399,10 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>메인 메뉴가 나타납니다</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>마우스 위치(작업 표시줄 아이콘 위)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>사용자 지정(적절한 위치로 드래그)</value>
   </data>
   <data name="element" xml:space="preserve">
@@ -454,7 +454,7 @@
     <value>아이콘 크기(%)</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>지원 시스템 트레이 메뉴</value>
+    <value>지원 시스템TrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>페이딩</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>정렬</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>드래그 드롭을 통해 행 항목 복사</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>끌어서 놓기를 통해 행 항목 복사</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>견인</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>파일 유형별 필터 메뉴 예: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>아래 요소 수 표시</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>요소 수 표시</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>맨 위에 디렉토리 제목 표시</value>

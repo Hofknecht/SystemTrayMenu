@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso rápido</value>
+    <value>tecla de acceso directo</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Preguntas frecuentes</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Lea las preguntas frecuentes y luego elija un directorio raíz para SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Defecto</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Si se pierde el foco y si el mouse todavía está en el menú</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Si se pierde el foco y el mouse todavía está en el menú</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisegundos hasta que se abre un menú cuando el mouse está sobre él</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisegundos hasta que el menú se cierre si en este caso el ratón sale del menú</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisegundos hasta que el menú se cierre si el mouse sale del menú</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Ancho máximo de menú en píxeles</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>permanece abierto</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>El menú permanece abierto</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tiempo hasta que se abre un menú</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Directorio relativo</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Guardar configuración en el directorio de la aplicación</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Guardar el archivo de configuración en el directorio de la aplicación</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Archivo de configuración y archivo de registro</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Archivos de registro y configuración</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Abra el directorio de la aplicación</value>
@@ -277,7 +277,7 @@
     <value>Fondo de flecha al hacer clic</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Fondo de flecha mientras el mouse pasa sobre ella</value>
+    <value>Fondo de la flecha mientras el mouse pasa sobre ella</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Esquema de color oscuro</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Si se pierde el foco y se presionó la tecla Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisegundos hasta que se cierre el menú si en este caso no se reactiva el menú</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisegundos hasta que se cierre el menú si no se reactiva el menú</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostrar en la barra de tareas</value>
@@ -364,7 +364,7 @@
     <value>Rutas de directorio</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>directorios</value>
+    <value>Directorios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursivo</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Aparece el menú principal</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Ubicación del ratón (sobre el icono de la barra de tareas)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Personalizado (arrástrelo al lugar apropiado)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Personalizado (arrástrelo a la posición adecuada)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>elemento</value>
@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>Clasificación</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
+  <data name="Copy row item via drag and drop" xml:space="preserve">
     <value>Copie el elemento de la fila arrastrando y soltando</value>
   </data>
   <data name="Drag" xml:space="preserve">
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtre el menú por tipo de archivo, por ejemplo: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Mostrar recuento de elementos a continuación</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Mostrar recuento de elementos</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Mostrar el título del directorio en la parte superior</value>

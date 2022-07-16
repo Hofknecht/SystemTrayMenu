@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Algengar spurningar</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Lestu FAQ og veldu síðan rótarskrá fyrir SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Sjálfgefið</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Ef fókusinn glatast og ef músin er enn á valmyndinni</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Ef fókusinn glatast og músin er enn á valmyndinni</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Millisúndur þar til valmynd opnast þegar músin er á henni</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisúndur þar til valmyndin lokar ef í þessu tilfelli fer músin þá út úr valmyndinni</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisúndur þar til valmyndin lokar ef músin fer þá úr valmyndinni</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixel hámarks breidd valmyndar</value>
+    <value>Pixel hámarksbreidd valmyndar</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Heldur opið</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Matseðill helst opinn</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tími þar til valmynd opnast</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Ættingjaskrá</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Vistaðu stillingar í forritaskrá</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Vistaðu stillingarskrá í forritaskrá</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Stillingarskrá og log skrá</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Stillingar og log skrár</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Opnaðu forritaskrá</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Ef fókusinn glatast og ýtt var á Enter takkann</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Millisúndur þar til valmyndin lokar ef valmyndin er ekki endurvirkjuð í þessu tilfelli</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Millisúndur þar til valmyndin lokar ef valmyndin er ekki endurvirkjuð</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Sýna á verkefnastikunni</value>
@@ -399,10 +399,10 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Aðalvalmynd birtist</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Staðsetning músar (fyrir ofan verkefnastikuna)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Staðsetning músar (fyrir ofan verkstiku táknið)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Sérsniðið (dragaðu það á viðeigandi stað)</value>
   </data>
   <data name="element" xml:space="preserve">
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Flokkun</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Afritaðu línuatriði með því að draga</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Afritaðu línuatriði með því að draga og sleppa</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Dragðu</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Sía valmynd eftir skráartegund, t.d.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Sýndu fjölda þátta hér að neðan</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Sýna fjölda þátta</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Sýna möppuheiti efst</value>

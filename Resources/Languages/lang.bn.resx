@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>সচরাচর জিজ্ঞাস্য</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>FAQ পড়ুন এবং তারপর SystemTrayMenu-এর জন্য একটি রুট ডিরেক্টরি নির্বাচন করুন।</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>ডিফল্ট</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>যদি ফোকাস হারিয়ে যায় এবং যদি মাউস এখনও মেনুতে থাকে</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>যদি ফোকাস হারিয়ে যায় এবং মাউস এখনও মেনুতে থাকে</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>মিলিসেকেন্ড যতক্ষণ না একটি মেনু খোলা হয় যখন মাউস এটিতে থাকে</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড যদি এই ক্ষেত্রে মাউস মেনু ছেড়ে চলে যায়</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড যদি মাউস তারপর মেনু ছেড়ে যায়</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>পিক্সেল সর্বাধিক মেনু প্রস্থ</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>খোলা থাকে</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>মেনু খোলা থাকে</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>একটি মেনু খোলা পর্যন্ত সময়</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>আপেক্ষিক ডিরেক্টরি</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>অ্যাপ্লিকেশন ডিরেক্টরিতে কনফিগারেশন সংরক্ষণ করুন</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>অ্যাপ্লিকেশন ডিরেক্টরিতে কনফিগারেশন ফাইল সংরক্ষণ করুন</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>কনফিগারেশন ফাইল এবং লগ ফাইল</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>কনফিগারেশন এবং লগ ফাইল</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>অ্যাপ্লিকেশন ডিরেক্টরি খুলুন</value>
@@ -268,7 +268,7 @@
     <value>তীর</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>ক্লিক করার সময় তীরচিহ্ন</value>
+    <value>ক্লিক করার সময় তীর</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>মাউস এটির উপর ঘোরার সময় তীরচিহ্ন</value>
@@ -337,7 +337,7 @@
     <value>কাজ ব্যবস্থাপক</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>নিষ্ক্রিয়</value>
+    <value>নিষ্ক্রিয় করা হয়েছে</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>সক্রিয়</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>ফোকাস হারিয়ে গেলে এবং এন্টার কী টিপতে হবে</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>এই ক্ষেত্রে মেনু পুনরায় সক্রিয় না হলে মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>মেনু পুনরায় সক্রিয় না হলে মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>টাস্কবারে দেখান</value>
@@ -376,7 +376,7 @@
     <value>শুধুমাত্র ফাইল</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>এই সংখ্যার বেশি আইটেম হলে ক্যাশে সাফ করুন</value>
+    <value>এই সংখ্যার বেশি আইটেম থাকলে ক্যাশে সাফ করুন</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>প্রধান মেনু প্রদর্শিত হবে</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>মাউসের অবস্থান (টাস্কবার আইকনের উপরে)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>কাস্টম (উপযুক্ত জায়গায় টেনে আনুন)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>কাস্টম (উপযুক্ত অবস্থানে টেনে আনুন)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>উপাদান</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>শ্রেণীবিভাজন</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ড্র্যাগ ড্রপের মাধ্যমে সারি আইটেম অনুলিপি করুন</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>ড্র্যাগ এবং ড্রপের মাধ্যমে সারি আইটেম অনুলিপি করুন</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>টেনে আনুন</value>
@@ -481,16 +481,16 @@
     <value>সোয়াইপের মাধ্যমে স্ক্রোল করুন</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ফাইলের ধরন অনুযায়ী ফিল্টার মেনু যেমন: *.exe|*.dll</value>
+    <value>ফাইল টাইপ দ্বারা ফিল্টার মেনু যেমন: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>নিচের উপাদানের সংখ্যা দেখান</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>উপাদানের সংখ্যা দেখান</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>শীর্ষে ডিরেক্টরি শিরোনাম দেখান</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>'ফোল্ডার খুলুন' ফাংশন কী দেখান</value>
+    <value>ফাংশন কী 'ফোল্ডার খুলুন' দেখান</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>ফাংশন কী 'পিন মেনু' দেখান</value>

@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>často kladené otázky</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Prečítajte si FAQ a potom vyberte koreňový adresár pre SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Predvolené</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Ak sa stratí zameranie a ak je myš stále v ponuke</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Ak sa stratí zameranie a myš je stále v ponuke</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisekundy, kým sa otvorí ponuka, keď je na nej myš</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundy, kým sa ponuka zatvorí, ak v tomto prípade myš opustí ponuku</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekundy, kým sa ponuka zatvorí, ak myš opustí ponuku</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Maximálna šírka ponuky pixelov</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Zostáva otvorené</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menu zostane otvorené</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Čas, kým sa otvorí ponuka</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Relatívny adresár</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Uložte konfiguráciu do adresára aplikácie</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Uložte konfiguračný súbor do adresára aplikácie</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfiguračný súbor a protokolový súbor</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfiguračné a protokolové súbory</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Otvorte adresár aplikácie</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Ak dôjde k strate zamerania a stlačeniu klávesu Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisekundy, kým sa ponuka nezatvorí, ak sa v tomto prípade ponuka znova neaktivuje</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundy, kým sa ponuka nezatvorí, ak sa ponuka znova neaktivuje</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Zobraziť na paneli úloh</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Zobrazí sa hlavné menu</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Poloha myši (nad ikonou na paneli úloh)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Vlastné (pretiahnite ho na príslušné miesto)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Vlastné (presuňte ho na príslušné miesto)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>prvok</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Triedenie</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Skopírujte položku riadka pomocou presunutia</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Skopírujte položku riadka presunutím myšou</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Potiahnite</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrovať menu podľa typu súboru, napr.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Nižšie zobraziť počet prvkov</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Zobraziť počet prvkov</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Zobraziť názov adresára v hornej časti</value>

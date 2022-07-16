@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>经常问的问题</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>阅读常见问题解答，然后为 SystemTrayMenu 选择根目录。</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>默认</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>如果焦点丢失并且鼠标仍在菜单上</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>如果焦点丢失且鼠标仍在菜单上</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>鼠标悬停在菜单打开之前的毫秒数</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>如果在这种情况下鼠标离开菜单，则直到菜单关闭的毫秒数</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>如果鼠标离开菜单，直到菜单关闭的毫秒数</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>像素最大菜单宽度</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>保持开放</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>菜单保持打开状态</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>菜单打开前的时间</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>相对目录</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>将配置保存在应用程序目录中</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>将配置文件保存在应用程序目录中</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>配置文件和日志文件</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>配置和日志文件</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>打开应用程序目录</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>如果焦点丢失并且按下了 Enter 键</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>如果在这种情况下未重新激活菜单，则在菜单关闭之前的毫秒数</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>如果菜单没有重新激活，直到菜单关闭的毫秒数</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>在任务栏中显示</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>出现主菜单</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>鼠标位置（任务栏图标上方）</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>自定义（拖到合适的地方）</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>自定义（拖动到合适的位置）</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>元素</value>
@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>排序</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
+  <data name="Copy row item via drag and drop" xml:space="preserve">
     <value>通过拖放复制行项目</value>
   </data>
   <data name="Drag" xml:space="preserve">
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>按文件类型过滤菜单，例如：*.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>在下面显示元素的数量</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>显示元素数量</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>在顶部显示目录标题</value>

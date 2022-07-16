@@ -154,7 +154,7 @@
     <value>Rekomenci</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>Ne eblis registri la varmaklavon.</value>
+    <value>Ne eblis registri la klavoklavon.</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>Ĉesigi</value>
@@ -174,8 +174,8 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Oftaj Demandoj</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Legu la Oftajn Demandojn kaj poste elektu radikan dosierujon por la SystemTrayMenu.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>Legu la Oftajn Demandojn kaj poste elektu radikan dosierujon por SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Elektu dosierujon</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Defaŭlte</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Se la fokuso estas perdita kaj se la muso ankoraŭ estas en la menuo</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Se la fokuso estas perdita kaj la muso ankoraŭ estas en la menuo</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisekundoj ĝis menuo malfermiĝas kiam la muso estas sur ĝi</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundoj ĝis la menuo fermiĝas se en ĉi tiu kazo la muso tiam forlasas la menuon</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekundoj ĝis la menuo fermiĝas se la muso tiam forlasas la menuon</value>
   </data>
   <data name="Pixels maximum menu width" xml:space="preserve">
     <value>Pikseloj maksimuma menularĝo</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Restas malfermita</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menuo restas malfermita</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Tempo ĝis menuo malfermiĝas</value>
@@ -252,11 +252,11 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Relativa dosierujo</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Konservu agordon en aplikaĵa dosierujo</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Konservu agordan dosieron en aplikaĵa dosierujo</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Agorda dosiero kaj protokolo-dosiero</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Agordaj kaj protokolaj dosieroj</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Malfermu aplikan dosierujon</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Se la fokuso estas perdita kaj la Enigu klavon estis premita</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisekundoj ĝis la menuo fermiĝas se ĉi-kaze la menuo ne estas reaktivigita</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundoj ĝis la menuo fermiĝas se la menuo ne estas reaktivigita</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Montru en Taskbaro</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Ĉefa menuo aperas</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Musloko (Supre Taskobreto-ikono)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Musloko (super Taskobreto-ikono)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Propra (trenu ĝin al la taŭga loko)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Propra (trenu ĝin al la taŭga pozicio)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>elemento</value>
@@ -460,7 +460,7 @@
     <value>Forvelkanta</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Sendu klavoklavon al alia petskribo</value>
+    <value>Sendu klavoklavon al alia kazo</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Ordigita laŭ dato</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Ordigo</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopiu vico-elemento per trena guto</value>
+  <data name="Copy row item via drag and drop" xml:space="preserve">
+    <value>Kopiu vicon per treni kaj faligi</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Trenu</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrila menuon laŭ dosiertipo ekz.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Montru nombron de elementoj sube</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Montru nombron de elementoj</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Montru dosierujan titolon supre</value>

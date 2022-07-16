@@ -109,9 +109,9 @@ namespace SystemTrayMenu.UserInterface
                 buttonChangeFolder.Text = Translator.GetText("Changing directory");
                 buttonOpenFolder.Text = Translator.GetText("Open directory");
                 checkBoxSetFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
-                groupBoxConfigAndLogfile.Text = Translator.GetText("Configuration file and log file");
+                groupBoxConfigAndLogfile.Text = Translator.GetText("Configuration and log files");
                 buttonChangeRelativeFolder.Text = Translator.GetText("Relative directory");
-                checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration in application directory");
+                checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration file in application directory");
                 checkBoxSaveLogFileInApplicationDirectory.Text = Translator.GetText("Saving log file in application directory");
                 buttonOpenAssemblyLocation.Text = Translator.GetText("Open application directory");
                 groupBoxAutostart.Text = Translator.GetText("App start");
@@ -138,7 +138,7 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears");
                 radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
-                radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate place)");
+                radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate position)");
                 radioButtonAppearAtMouseLocation.Text = Translator.GetText("At mouse location");
                 groupBoxSubMenuAppearAt.Text = Translator.GetText("Sub menu appears");
                 radioButtonNextToPreviousMenu.Text = Translator.GetText("Next to the previous one");
@@ -153,7 +153,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element");
                 checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory");
                 groupBoxDrag.Text = Translator.GetText("Drag");
-                checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag drop");
+                checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag and drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
                 groupBoxInternetShortcutIcons.Text = Translator.GetText("Directory of Internet Shortcut Icons");
                 buttonChangeIcoFolder.Text = Translator.GetText("Changing directory");
@@ -181,14 +181,14 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate drive shortcuts on startup");
 
                 tabPageExpert.Text = Translator.GetText("Expert");
-                groupBoxStaysOpen.Text = Translator.GetText("Stays open");
+                groupBoxStaysOpen.Text = Translator.GetText("Menu stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an element was clicked");
-                checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
-                labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if in this case the mouse then leaves the menu");
+                checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and the mouse is still on the menu");
+                labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if the mouse then leaves the menu");
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
                 labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
                 checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = Translator.GetText("If the focus is lost and the Enter key was pressed");
-                labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if in this case the menu is not reactivated");
+                labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if the menu is not reactivated");
                 groupBoxCache.Text = Translator.GetText("Cache");
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 groupBoxSearchPattern.Text = Translator.GetText("Filter menu by file type e.g.: *.exe|*.dll");
@@ -202,7 +202,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxUseFading.Text = Translator.GetText("Fading");
                 checkBoxShowLinkOverlay.Text = Translator.GetText("Show link overlay");
                 checkBoxShowDirectoryTitleAtTop.Text = Translator.GetText("Show directory title at top");
-                checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements below");
+                checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements");
                 checkBoxShowSearchBar.Text = Translator.GetText("Show search bar");
                 checkBoxShowFunctionKeyOpenFolder.Text = Translator.GetText("Show function key 'Open Folder'");
                 checkBoxShowFunctionKeyPinMenu.Text = Translator.GetText("Show function key 'Pin menu'");
@@ -293,6 +293,7 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "Deutsch", Value = "de" },
                     new Language() { Name = "eesti keel", Value = "et" },
                     new Language() { Name = "English", Value = "en" },
+                    new Language() { Name = "English (United Kingdom)", Value = "en-GB" },
                     new Language() { Name = "Español", Value = "es" },
                     new Language() { Name = "Esperanto", Value = "eo" },
                     new Language() { Name = "euskara", Value = "eu" },
