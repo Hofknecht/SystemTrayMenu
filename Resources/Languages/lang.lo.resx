@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>milliseconds ຈົນກ່ວາເມນູປິດຖ້າຫາກວ່າຫນູຫຼັງຈາກນັ້ນອອກຈາກເມນູ</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>ຄວາມກວ້າງຂອງເມນູສູງສຸດ pixels</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>ຄວາມກວ້າງຂອງເມນູສູງສຸດເປັນ pixels</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>ເມນູເປີດຢູ່</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>ເປີດໄດເລກະທໍລີແອັບພລິເຄຊັນ</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>ຄວາມສູງຂອງເມນູສູງສຸດ pixels</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>ຄວາມສູງຂອງເມນູສູງສຸດເປັນ pixels</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>ລູກສອນ</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>ເມນູຍ່ອຍປາກົດ</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>ຂະໜາດຂອງໄອຄອນເປັນເປີເຊັນ</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>ຂະໜາດໄອຄອນເປັນເປີເຊັນ</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>ຮອງຮັບ SystemTrayMenu</value>
@@ -529,9 +529,12 @@
     <value>ສະ​ບັບ​ຫລ້າ​ສຸດ​ທີ່​ມີ​ຢູ່​:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ລຸ້ນໃໝ່ມີໃຫ້!</value>
+    <value>ມີລຸ້ນໃໝ່!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>ທ່ານມີເວີຊັນຫຼ້າສຸດຂອງ SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>ຂະຫນາດຄໍາຮ້ອງສະຫມັກເປັນເປີເຊັນ</value>
   </data>
 </root>

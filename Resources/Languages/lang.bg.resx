@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Милисекунди до затваряне на менюто, ако след това мишката напусне менюто</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Пиксели максимална ширина на менюто</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Максимална ширина на менюто в пиксели</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Менюто остава отворено</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Отворете директорията на приложението</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Пиксели максимална височина на менюто</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Максимална височина на менюто в пиксели</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Стрелка</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Появява се подменю</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Размер на иконите в проценти</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Размер на иконата в проценти</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Поддръжка на SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Имате най-новата версия на SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Размер на приложението в проценти</value>
   </data>
 </root>

@@ -133,7 +133,7 @@
     <value>Orodha</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Saraka tupu</value>
+    <value>Orodha tupu</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Maelezo</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekunde hadi menyu ifunge ikiwa kipanya kisha huacha menyu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels upeo wa upana wa menyu</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Upeo wa upana wa menyu katika pikseli</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menyu inabaki wazi</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Fungua saraka ya programu</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Saizi ya juu zaidi ya urefu wa menyu</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Upeo wa juu wa urefu wa menyu katika pikseli</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Mshale</value>
@@ -379,7 +379,7 @@
     <value>Futa akiba ikiwa ni zaidi ya idadi hii ya vipengee</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Ongeza saraka ya sampuli 'Menyu ya Anza'</value>
+    <value>Ongeza sampuli ya saraka 'Start Menu'</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Urefu wa safu kwa asilimia</value>
@@ -450,7 +450,7 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Menyu ndogo inaonekana</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
+  <data name="Icon size in percent" xml:space="preserve">
     <value>Ukubwa wa ikoni kwa asilimia</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Una toleo jipya zaidi la SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Ukubwa wa programu katika asilimia</value>
   </data>
 </root>

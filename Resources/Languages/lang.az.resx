@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Siçan menyunu tərk edərsə, menyu bağlanana qədər millisaniyə</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Piksel maksimum menyu eni</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Piksellə maksimum menyu eni</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menyu açıq qalır</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Tətbiq qovluğunu açın</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Piksel maksimum menyu hündürlüyü</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Piksellə maksimum menyu hündürlüyü</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Ox</value>
@@ -376,7 +376,7 @@
     <value>Yalnız Fayllar</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Bu sayda element varsa, keşi təmizləyin</value>
+    <value>Bu sayda element varsa, önbelleği təmizləyin</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'Başlat Menyu' nümunə kataloqu əlavə edin</value>
@@ -385,7 +385,7 @@
     <value>Sətir hündürlüyü faizlə</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Dəyirmi künclər</value>
+    <value>Dairəvi künclər</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Görünüş</value>
@@ -450,11 +450,11 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Alt menyu görünür</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Nişanların ölçüsü faizlə</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Nişan ölçüsü faizlə</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu-nu dəstəkləyin</value>
+    <value>SystemTrayMenu dəstəyi</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Solğunluq</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Siz SystemTrayMenu proqramının ən son versiyasına sahibsiniz!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Tətbiq ölçüsü faizlə</value>
   </data>
 </root>

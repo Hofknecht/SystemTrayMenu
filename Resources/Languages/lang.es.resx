@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso directo</value>
+    <value>tecla de acceso rápido</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisegundos hasta que el menú se cierre si el mouse sale del menú</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Ancho máximo de menú en píxeles</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Ancho máximo del menú en píxeles</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>El menú permanece abierto</value>
@@ -261,7 +261,7 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Abra el directorio de la aplicación</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
+  <data name="Maximum menu height in pixels" xml:space="preserve">
     <value>Altura máxima del menú en píxeles</value>
   </data>
   <data name="Arrow" xml:space="preserve">
@@ -277,7 +277,7 @@
     <value>Fondo de flecha al hacer clic</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Fondo de la flecha mientras el mouse pasa sobre ella</value>
+    <value>Fondo de flecha mientras el mouse pasa sobre ella</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Esquema de color oscuro</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Aparece el submenú</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Tamaño de los iconos en porcentaje</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Tamaño del icono en porcentaje</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Soporte SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>¡Tienes la última versión de SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Tamaño de la aplicación en porcentaje</value>
   </data>
 </root>

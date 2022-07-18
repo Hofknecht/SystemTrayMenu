@@ -130,11 +130,11 @@ namespace SystemTrayMenu.UserInterface
 
                 tabPageSizeAndLocation.Text = Translator.GetText("Size and location");
                 groupBoxSize.Text = Translator.GetText("Size");
-                labelSizeInPercent.Text = $"% {Translator.GetText("Size")}";
-                labelIconSizeInPercent.Text = Translator.GetText("Size of the icons in percent");
+                labelSizeInPercent.Text = Translator.GetText("Application size in percent");
+                labelIconSizeInPercent.Text = Translator.GetText("Icon size in percent");
                 labelRowHeightInPercentage.Text = Translator.GetText("Row height in percent");
-                labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
-                labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
+                labelMaxMenuWidth.Text = Translator.GetText("Maximum menu width in pixels");
+                labelMaxMenuHeight.Text = Translator.GetText("Maximum menu height in pixels");
                 groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears");
                 radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");

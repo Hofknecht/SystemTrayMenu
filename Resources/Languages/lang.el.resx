@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Χιλιοστά του δευτερολέπτου μέχρι να κλείσει το μενού εάν το ποντίκι φύγει από το μενού</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Μέγιστο πλάτος μενού εικονοστοιχείων</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Μέγιστο πλάτος μενού σε pixel</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Το μενού παραμένει ανοιχτό</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Ανοίξτε τον κατάλογο εφαρμογών</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Μέγιστο ύψος μενού εικονοστοιχείων</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Μέγιστο ύψος μενού σε pixel</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Βέλος</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Εμφανίζεται το υπομενού</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Το μέγεθος των εικονιδίων σε ποσοστό</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Μέγεθος εικονιδίου σε ποσοστό</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Υποστήριξη SystemTrayMenu</value>
@@ -490,7 +490,7 @@
     <value>Εμφάνιση τίτλου καταλόγου στην κορυφή</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>Εμφάνιση πλήκτρου λειτουργίας 'Άνοιγμα φακέλου'</value>
+    <value>Εμφάνιση πλήκτρου λειτουργίας «Άνοιγμα φακέλου»</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>Εμφάνιση πλήκτρου λειτουργίας "Καρφίτσωμα μενού"</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Έχετε την πιο πρόσφατη έκδοση του SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Μέγεθος εφαρμογής σε ποσοστό</value>
   </data>
 </root>

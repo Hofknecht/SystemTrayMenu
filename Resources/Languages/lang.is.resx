@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisúndur þar til valmyndin lokar ef músin fer þá úr valmyndinni</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixel hámarksbreidd valmyndar</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Hámarksbreidd valmyndar í pixlum</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Matseðill helst opinn</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Opnaðu forritaskrá</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixel hámarkshæð valmyndar</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Hámarkshæð valmyndar í pixlum</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Ör</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Undirvalmynd birtist</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Stærð táknanna í prósentum</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Táknstærð í prósentum</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Styðja SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Þú ert með nýjustu útgáfuna af SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Umsóknarstærð í prósentum</value>
   </data>
 </root>

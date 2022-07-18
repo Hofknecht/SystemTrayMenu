@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milliseconden totdat het menu sluit als de muis het menu verlaat</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximale menubreedte</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Maximale menubreedte in pixels</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menu blijft open</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Applicatiemap openen</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels maximale menuhoogte</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Maximale menuhoogte in pixels</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Pijl</value>
@@ -298,7 +298,7 @@
     <value>Schuifregelaar tijdens het slepen</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Schuifregelaar terwijl de muis erover zweeft 1</value>
+    <value>Schuif terwijl de muis erover zweeft 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Schuif terwijl de muis erover zweeft 2</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Submenu verschijnt</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Grootte van de pictogrammen in procent</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Pictogramgrootte in procent</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>OndersteuningssysteemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Je hebt de nieuwste versie van SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Applicatiegrootte in procent</value>
   </data>
 </root>

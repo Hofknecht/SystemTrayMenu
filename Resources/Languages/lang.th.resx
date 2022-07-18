@@ -217,10 +217,10 @@
     <value>มิลลิวินาทีจนกว่าเมนูจะเปิดขึ้นเมื่อเมาส์อยู่</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>มิลลิวินาทีจนกว่าเมนูจะปิดลงหากเมาส์ออกจากเมนู</value>
+    <value>มิลลิวินาทีจนกว่าเมนูจะปิดถ้าเมาส์ออกจากเมนู</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>พิกเซลความกว้างเมนูสูงสุด</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>ความกว้างสูงสุดของเมนูเป็นพิกเซล</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>เมนูยังคงเปิดอยู่</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>เปิดไดเรกทอรีแอปพลิเคชัน</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>ความสูงของเมนูพิกเซลสูงสุด</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>ความสูงของเมนูสูงสุดเป็นพิกเซล</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>ลูกศร</value>
@@ -400,7 +400,7 @@
     <value>เมนูหลักปรากฏขึ้น</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>ตำแหน่งเมาส์ (เหนือไอคอนแถบงาน)</value>
+    <value>ตำแหน่งของเมาส์ (เหนือไอคอนแถบงาน)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>กำหนดเอง (ลากไปยังตำแหน่งที่เหมาะสม)</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>เมนูย่อยปรากฏขึ้น</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>ขนาดของไอคอนเป็นเปอร์เซ็นต์</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>ขนาดไอคอนเป็นเปอร์เซ็นต์</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>รองรับระบบถาดเมนู</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>คุณมี SystemTrayMenu เวอร์ชันล่าสุดแล้ว!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>ขนาดแอปพลิเคชันเป็นเปอร์เซ็นต์</value>
   </data>
 </root>

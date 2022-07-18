@@ -217,10 +217,10 @@
     <value>Milieiliadau nes bod dewislen yn agor pan fydd y llygoden arno</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>Mae milieiliadau nes bod y ddewislen yn cau os bydd y llygoden wedyn yn gadael y ddewislen</value>
+    <value>Milieiliadau nes bod y ddewislen yn cau os bydd y llygoden wedyn yn gadael y ddewislen</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Uchafswm lled dewislen picsel</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Lled uchaf y ddewislen mewn picseli</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Mae'r fwydlen yn aros ar agor</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Agor cyfeiriadur cais</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Uchafswm uchder dewislen picsel</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Uchder uchaf y ddewislen mewn picseli</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Saeth</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Mae is-ddewislen yn ymddangos</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Maint yr eiconau yn y cant</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Maint eicon yn y cant</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Cefnogi SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Mae gennych y fersiwn diweddaraf o SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Maint y cais yn y cant</value>
   </data>
 </root>

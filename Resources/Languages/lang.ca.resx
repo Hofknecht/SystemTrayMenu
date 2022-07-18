@@ -219,7 +219,7 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Mil·lisegons fins que el menú es tanqui si el ratolí surt del menú</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
+  <data name="Maximum menu width in pixels" xml:space="preserve">
     <value>Amplada màxima del menú en píxels</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
@@ -261,7 +261,7 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Obriu el directori d'aplicacions</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
+  <data name="Maximum menu height in pixels" xml:space="preserve">
     <value>Alçada màxima del menú en píxels</value>
   </data>
   <data name="Arrow" xml:space="preserve">
@@ -349,7 +349,7 @@
     <value>Si es perd el focus i es prem la tecla Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>Mil·lisegons fins que es tanqui el menú si el menú no es reactiva</value>
+    <value>Mil·lisegons fins que es tanqui el menú si no es reactiva</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostra a la barra de tasques</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Apareix el submenú</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Mida de les icones en percentatge</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Mida de la icona en percentatge</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suport SystemTrayMenu</value>
@@ -478,7 +478,7 @@
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb el dit</value>
+    <value>Desplaceu-vos amb lliscar</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Tens la darrera versió de SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Mida de l'aplicació en percentatge</value>
   </data>
 </root>

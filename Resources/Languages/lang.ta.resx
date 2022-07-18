@@ -175,7 +175,7 @@
     <value>அடிக்கடி கேட்கப்படும் கேள்விகள்</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து, பின்னர் SystemTrayMenu க்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
+    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து, பின்னர் SystemTrayMenuக்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>கோப்பகத்தைத் தேர்ந்தெடுக்கவும்</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>மவுஸ் மெனுவை விட்டு வெளியேறினால் மெனு மூடப்படும் வரை மில்லி விநாடிகள்</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>பிக்சல்கள் அதிகபட்ச மெனு அகலம்</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>பிக்சல்களில் அதிகபட்ச மெனு அகலம்</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>மெனு திறந்தே இருக்கும்</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>பயன்பாட்டு கோப்பகத்தைத் திறக்கவும்</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>பிக்சல்கள் அதிகபட்ச மெனு உயரம்</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>பிக்சல்களில் அதிகபட்ச மெனு உயரம்</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>அம்பு</value>
@@ -385,7 +385,7 @@
     <value>வரிசை உயரம் சதவீதத்தில்</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>வட்ட மூலைகள்</value>
+    <value>சுற்று மூலைகள்</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>தோற்றம்</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>துணை மெனு தோன்றும்</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>ஐகான்களின் அளவு சதவீதத்தில்</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>ஐகான் அளவு சதவீதத்தில்</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu ஐ ஆதரிக்கவும்</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>SystemTrayMenu இன் சமீபத்திய பதிப்பு உங்களிடம் உள்ளது!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>பயன்பாட்டின் அளவு சதவீதத்தில்</value>
   </data>
 </root>

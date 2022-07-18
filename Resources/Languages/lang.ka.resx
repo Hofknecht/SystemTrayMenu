@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>მილიწამებში მენიუს დახურვამდე, თუ მაუსი დატოვებს მენიუს</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>პიქსელების მაქსიმალური მენიუს სიგანე</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>მენიუს მაქსიმალური სიგანე პიქსელებში</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>მენიუ ღია რჩება</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>გახსენით განაცხადის დირექტორია</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>პიქსელების მენიუს მაქსიმალური სიმაღლე</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>მენიუს მაქსიმალური სიმაღლე პიქსელებში</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>ისარი</value>
@@ -397,7 +397,7 @@
     <value>ქვედა მარჯვენა</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>მთავარი მენიუ გამოჩნდება</value>
+    <value>გამოჩნდება მთავარი მენიუ</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>მაუსის მდებარეობა (დავალებების ზოლის ხატულაზე)</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>ქვემენიუ გამოჩნდება</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>ხატების ზომა პროცენტებში</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>ხატის ზომა პროცენტებში</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu-ს მხარდაჭერა</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>თქვენ გაქვთ SystemTrayMenu-ს უახლესი ვერსია!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>განაცხადის ზომა პროცენტებში</value>
   </data>
 </root>

@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Mili giây cho đến khi menu đóng lại nếu sau đó chuột rời khỏi menu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Chiều rộng menu tối đa của pixel</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Chiều rộng menu tối đa tính bằng pixel</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menu vẫn mở</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Mở thư mục ứng dụng</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Chiều cao menu tối đa của pixel</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Chiều cao menu tối đa tính bằng pixel</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Mũi tên</value>
@@ -328,7 +328,7 @@
     <value>Sự cố với liên kết lối tắt</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Mục mà lối tắt này đề cập đến đã được thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
+    <value>Mục mà lối tắt này đề cập đến đã bị thay đổi hoặc di chuyển, vì vậy lối tắt này sẽ không còn hoạt động bình thường.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Mở thư mục</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Menu phụ xuất hiện</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Kích thước của các biểu tượng tính bằng phần trăm</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Kích thước biểu tượng tính bằng phần trăm</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Hỗ trợ SystemTrayMenu</value>
@@ -514,7 +514,7 @@
     <value>Thư mục các biểu tượng lối tắt trên Internet</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sắp xếp theo loại và ngày</value>
+    <value>Được sắp xếp theo loại và ngày tháng</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>Sắp xếp theo loại và tên</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Bạn có phiên bản SystemTrayMenu mới nhất!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Kích thước ứng dụng tính bằng phần trăm</value>
   </data>
 </root>

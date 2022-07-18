@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>マウスがメニューを離れた場合にメニューが閉じるまでのミリ秒</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>ピクセルの最大メニュー幅</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>メニューの最大幅（ピクセル単位）</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>メニューは開いたままです</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>アプリケーションディレクトリを開く</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>メニューの最大高さ</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>メニューの最大の高さ（ピクセル単位）</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>矢印</value>
@@ -331,7 +331,7 @@
     <value>このショートカットが参照するアイテムが変更または移動されたため、このショートカットは正しく機能しなくなります。</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>ディレクトリを開く</value>
+    <value>Directoryを開く</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>タスクマネージャー</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>サブメニューが表示されます</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>アイコンのサイズ（パーセント）</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>アイコンサイズ（パーセント）</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenuをサポートする</value>
@@ -499,7 +499,7 @@
     <value>ファンクションキー「設定」を表示</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>ファンクションキーの表示'再起動'</value>
+    <value>ファンクションキーを表示'再起動'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>検索バーを表示する</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>SystemTrayMenuの最新バージョンがあります！</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>アプリケーションサイズ（パーセント）</value>
   </data>
 </root>

@@ -219,7 +219,7 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisecunde până când meniul se închide dacă mouse-ul părăsește meniul</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
+  <data name="Maximum menu width in pixels" xml:space="preserve">
     <value>Lățimea maximă a meniului în pixeli</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Deschideți directorul aplicației</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Înălțimea maximă în pixeli a meniului</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Înălțimea maximă a meniului în pixeli</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Săgeată</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Apare submeniul</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Dimensiunea pictogramelor în procente</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Dimensiunea pictogramei în procente</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suport SystemTrayMenu</value>
@@ -511,7 +511,7 @@
     <value>Afișați suprapunerea linkului</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Director cu pictograme pentru comenzi rapide pe Internet</value>
+    <value>Director cu pictograme de comenzi rapide pe Internet</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
     <value>Sortate după tip și dată</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Ai cea mai recentă versiune a SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Dimensiunea aplicației în procente</value>
   </data>
 </root>

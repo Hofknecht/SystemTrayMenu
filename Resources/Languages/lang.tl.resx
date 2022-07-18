@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milliseconds hanggang sa magsara ang menu kung aalis ang mouse sa menu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximum na lapad ng menu</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Pinakamataas na lapad ng menu sa mga pixel</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Nananatiling bukas ang menu</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Buksan ang direktoryo ng application</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels maximum na taas ng menu</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Pinakamataas na taas ng menu sa mga pixel</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Palaso</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Lumilitaw ang sub menu</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Sukat ng mga icon sa porsyento</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Laki ng icon sa porsyento</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suportahan ang SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Mayroon kang pinakabagong bersyon ng SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Laki ng aplikasyon sa porsyento</value>
   </data>
 </root>

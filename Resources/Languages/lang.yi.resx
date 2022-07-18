@@ -219,11 +219,11 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב די מויז דעמאָלט בלעטער די מעניו</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>פּיקסעלס מאַקסימום מעניו ברייט</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>מאַקסימום מעניו ברייט אין בילדצעלן</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
-    <value>מעניו סטייז עפענען</value>
+    <value>מעניו סטייז אָפֿן</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>צייט ביז אַ מעניו אָפּענס</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>עפענען אַפּלאַקיישאַן וועגווייַזער</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>פּיקסעלס מאַקסימום מעניו הייך</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>מאַקסימום מעניו הייך אין בילדצעלן</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>פייַל</value>
@@ -394,7 +394,7 @@
     <value>לינקס אונטן</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>דנאָ רעכט</value>
+    <value>רעכטס אונטן</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>הויפּט מעניו אויס</value>
@@ -448,10 +448,10 @@
     <value>אָוווערלאַפּינג</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>אונטער מעניו איז ארויס</value>
+    <value>סוב מעניו איז ארויס</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>גרייס פון די ייקאַנז אין פּראָצענט</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>ייקאַן גרייס אין פּראָצענט</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>שטיצן SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>איר האָט די לעצטע ווערסיע פון ​​SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>אַפּפּליקאַטיאָן גרייס אין פּראָצענט</value>
   </data>
 </root>

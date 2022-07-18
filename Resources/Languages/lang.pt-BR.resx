@@ -175,7 +175,7 @@
     <value>perguntas frequentes</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>Leia as perguntas frequentes e escolha um diretório raiz para SystemTrayMenu.</value>
+    <value>Leia o FAQ e escolha um diretório raiz para SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Selecionar diretório</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milissegundos até o menu fechar se o mouse sair do menu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Largura máxima do menu de pixels</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Largura máxima do menu em pixels</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menu permanece aberto</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Abra o diretório do aplicativo</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Altura máxima do menu de pixels</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Altura máxima do menu em pixels</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Flecha</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>O submenu aparece</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Tamanho dos ícones em porcentagem</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Tamanho do ícone em porcentagem</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Sistema de suporteBandejaMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Você tem a versão mais recente do SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Tamanho do aplicativo em porcentagem</value>
   </data>
 </root>

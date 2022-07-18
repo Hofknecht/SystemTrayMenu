@@ -219,7 +219,7 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundy do zamknięcia menu, jeśli mysz opuści menu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
+  <data name="Maximum menu width in pixels" xml:space="preserve">
     <value>Maksymalna szerokość menu w pikselach</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
@@ -261,7 +261,7 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Otwórz katalog aplikacji</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
+  <data name="Maximum menu height in pixels" xml:space="preserve">
     <value>Maksymalna wysokość menu w pikselach</value>
   </data>
   <data name="Arrow" xml:space="preserve">
@@ -271,7 +271,7 @@
     <value>Strzałka po kliknięciu</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Strzałka, gdy mysz nad nią najedzie</value>
+    <value>Strzałka, gdy mysz nad nią znajduje się</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Tło strzałki po kliknięciu</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Pojawia się podmenu</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Rozmiar ikon w procentach</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Rozmiar ikony w procentach</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Wsparcie SystemoweTacaMenu</value>
@@ -460,7 +460,7 @@
     <value>Zblakły</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Wyślij skrót do innej instancji</value>
+    <value>Wyślij klawisz skrótu do innej instancji</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Posortowane według daty</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Masz najnowszą wersję SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Rozmiar aplikacji w procentach</value>
   </data>
 </root>

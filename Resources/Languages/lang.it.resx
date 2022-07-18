@@ -219,7 +219,7 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisecondi fino alla chiusura del menu se il mouse esce dal menu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
+  <data name="Maximum menu width in pixels" xml:space="preserve">
     <value>Larghezza massima del menu in pixel</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
@@ -261,7 +261,7 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Aprire la directory dell'applicazione</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
+  <data name="Maximum menu height in pixels" xml:space="preserve">
     <value>Altezza massima del menu in pixel</value>
   </data>
   <data name="Arrow" xml:space="preserve">
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Viene visualizzato il sottomenu</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Dimensione delle icone in percentuale</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Dimensione dell'icona in percentuale</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Supporta SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Hai l'ultima versione di SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Dimensioni dell'applicazione in percentuale</value>
   </data>
 </root>

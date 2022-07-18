@@ -130,7 +130,7 @@
     <value>Iziet no lietotnes</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Direktorija</value>
+    <value>Katalogs</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
     <value>Direktorija tukša</value>
@@ -219,7 +219,7 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundes, līdz izvēlne tiek aizvērta, ja pele pēc tam iziet no izvēlnes</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
+  <data name="Maximum menu width in pixels" xml:space="preserve">
     <value>Maksimālais izvēlnes platums pikseļos</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
@@ -261,7 +261,7 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Atveriet lietojumprogrammu direktoriju</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
+  <data name="Maximum menu height in pixels" xml:space="preserve">
     <value>Maksimālais izvēlnes augstums pikseļos</value>
   </data>
   <data name="Arrow" xml:space="preserve">
@@ -379,7 +379,7 @@
     <value>Notīriet kešatmiņu, ja vienumu skaits pārsniedz šo</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Pievienot parauga direktoriju "Start Menu"</value>
+    <value>Pievienot parauga direktoriju "Sākt izvēlne"</value>
   </data>
   <data name="Row height in percent" xml:space="preserve">
     <value>Rindas augstums procentos</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Tiek parādīta apakšizvēlne</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Ikonu lielums procentos</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Ikonas izmērs procentos</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Atbalstiet SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Jums ir jaunākā SystemTrayMenu versija!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Pieteikuma lielums procentos</value>
   </data>
 </root>

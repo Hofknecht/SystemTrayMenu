@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundy, než se nabídka zavře, pokud myš poté nabídku opustí</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Maximální šířka nabídky pixelů</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Maximální šířka nabídky v pixelech</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menu zůstane otevřené</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Otevřete adresář aplikace</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Maximální výška nabídky pixelů</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Maximální výška nabídky v pixelech</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Šipka</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Zobrazí se podnabídka</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Velikost ikon v procentech</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Velikost ikony v procentech</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Podpora SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Máte nejnovější verzi SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Velikost aplikace v procentech</value>
   </data>
 </root>

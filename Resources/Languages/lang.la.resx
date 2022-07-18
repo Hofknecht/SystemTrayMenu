@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milliseconds usque ad menu claudit si mus tunc relinquit menu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Maximum menu width elementa</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Maximum menu latum in elementa</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menu aperta manet</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Open application directory</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Maximum elementorum altitudo menu</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Maximum menu altitudo elementa</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Sagitta</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Sub menu videtur</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Magnitudo iconum in percent</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Icon magnitudine in percent</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Support SystemTrayMenu</value>
@@ -487,7 +487,7 @@
     <value>Ostende comitem elementorum</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Ostende indicem titulum ad top</value>
+    <value>Ostendere indicem titulum ad top</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>Munus monstrare clavis 'Open Folder'</value>
@@ -517,7 +517,7 @@
     <value>Ordinatae genus et diem</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordinata genus et nomen</value>
+    <value>Ordinatae genus et nomen</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Reprehendo pro updates</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Novam versionem SystemTrayMenu habes!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Applicationem amplitudo in percent</value>
   </data>
 </root>

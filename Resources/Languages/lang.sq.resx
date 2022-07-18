@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekonda derisa menyja të mbyllet nëse më pas miu largohet nga menyja</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Gjerësia maksimale e pikselëve të menysë</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Gjerësia maksimale e menysë në piksel</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menuja mbetet e hapur</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Hap direktorinë e aplikacionit</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Lartësia maksimale e pikselëve të menusë</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Lartësia maksimale e menysë në piksel</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Shigjeta</value>
@@ -352,7 +352,7 @@
     <value>Milisekonda derisa menyja të mbyllet nëse menyja nuk riaktivizohet</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Shfaq në shiritin e detyrave</value>
+    <value>Shfaq në Taskbar</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>Shto direktori</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Shfaqet nënmenyja</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Madhësia e ikonave në përqindje</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Madhësia e ikonës në përqindje</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Mbështet SystemTrayMenu</value>
@@ -460,7 +460,7 @@
     <value>Venitje</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Dërgo çelësin e nxehtësisë në një shembull tjetër</value>
+    <value>Dërgo çelësin e nxehtë në një shembull tjetër</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Renditur sipas datës</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Ju keni versionin më të fundit të SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Madhësia e aplikacionit në përqindje</value>
   </data>
 </root>

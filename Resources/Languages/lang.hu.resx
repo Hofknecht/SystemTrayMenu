@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Ezredmásodperc a menü bezárásáig, ha az egér ezután elhagyja a menüt</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>A menü maximális szélessége képpont</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>A menü maximális szélessége képpontban</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>A menü nyitva marad</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Nyissa meg az alkalmazáskönyvtárat</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixel maximális menümagasság</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>A menü maximális magassága képpontban</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Nyíl</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Megjelenik az almenü</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Az ikonok mérete százalékban</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Az ikon mérete százalékban</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>A SystemTrayMenu támogatása</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Ön a SystemTrayMenu legújabb verziójával rendelkezik!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Az alkalmazás mérete százalékban</value>
   </data>
 </root>

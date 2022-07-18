@@ -199,7 +199,7 @@
     <value>Fil-post tal-ġurdien</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>Bdil tad-direttorju</value>
+    <value>Tibdil tad-direttorju</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Ikklikkja</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisekondi sakemm il-menu jagħlaq jekk il-maws imbagħad iħalli l-menu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Wisa' massimu tal-menu tal-pixels</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Wisa' massimu tal-menu f'pixels</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Il-menu jibqa' miftuħ</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Iftaħ id-direttorju tal-applikazzjoni</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels għoli massimu menu</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Għoli massimu tal-menu f'pixels</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Vleġġa</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Jidher sottomenu</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Daqs tal-ikoni fil-mija</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Daqs tal-ikona fil-mija</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Appoġġ SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Għandek l-aħħar verżjoni ta' SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Daqs tal-applikazzjoni fil-mija</value>
   </data>
 </root>

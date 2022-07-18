@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundoj ĝis la menuo fermiĝas se la muso tiam forlasas la menuon</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pikseloj maksimuma menularĝo</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Maksimuma menularĝo en pikseloj</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menuo restas malfermita</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Malfermu aplikan dosierujon</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pikseloj maksimuma menua alteco</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Maksimuma menua alteco en pikseloj</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Sago</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Submenuo aperas</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Grandeco de la ikonoj en procentoj</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Ikono grandeco en procentoj</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Subtenu SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Vi havas la lastan version de SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Aplika grandeco en procentoj</value>
   </data>
 </root>

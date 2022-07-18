@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milleasoicindí go dtí go ndúnann an roghchlár má fhágann an luch an roghchlár ansin</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Uasleithead roghchláir picteilíní</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Uasleithead roghchláir i bpicteilíní</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Fanann an roghchlár ar oscailt</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Oscail eolaire feidhmchlár</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Uasairde roghchláir picteilíní</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Uasairde roghchláir i bpicteilíní</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Saighead</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Feictear fo-roghchlár</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Méid na deilbhíní ina gcéad</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Méid an deilbhín ina faoin gcéad</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Tacaíocht SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Tá an leagan is déanaí de SystemTrayMenu agat!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Méid an iarratais ina faoin gcéad</value>
   </data>
 </root>

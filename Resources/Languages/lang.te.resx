@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>మౌస్ మెను నుండి నిష్క్రమిస్తే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>పిక్సెల్‌ల గరిష్ట మెను వెడల్పు</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>పిక్సెల్‌లలో గరిష్ట మెను వెడల్పు</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>మెనూ తెరిచి ఉంటుంది</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>అప్లికేషన్ డైరెక్టరీని తెరవండి</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>పిక్సెల్‌ల గరిష్ట మెను ఎత్తు</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>పిక్సెల్‌లలో గరిష్ట మెను ఎత్తు</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>బాణం</value>
@@ -448,10 +448,10 @@
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>సబ్ మెనూ కనిపిస్తుంది</value>
+    <value>ఉప మెనూ కనిపిస్తుంది</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>శాతంలో చిహ్నాల పరిమాణం</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>చిహ్నం పరిమాణం శాతంలో</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>మద్దతు SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>మీరు SystemTrayMenu యొక్క తాజా సంస్కరణను కలిగి ఉన్నారు!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>అప్లికేషన్ పరిమాణం శాతంలో</value>
   </data>
 </root>

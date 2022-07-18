@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisekunder tills menyn stängs om musen sedan lämnar menyn</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximala menybredd</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Maximal menybredd i pixlar</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menyn förblir öppen</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Öppna programkatalogen</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels maximala menyhöjd</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Maximal menyhöjd i pixlar</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Pil</value>
@@ -436,7 +436,7 @@
     <value>Visa endast som sökresultat</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>Enkelklick för att öppna en katalog</value>
+    <value>Ett klick för att öppna en katalog</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Bredvid den föregående</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Undermenyn visas</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Storleken på ikonerna i procent</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Ikonstorlek i procent</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Stöd SystemTrayMenu</value>
@@ -478,7 +478,7 @@
     <value>Drag</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Bläddra via svep</value>
+    <value>Scrolla via svep</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrera menyn efter filtyp, t.ex.: *.exe|*.dll</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Du har den senaste versionen av SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Applikationsstorlek i procent</value>
   </data>
 </root>

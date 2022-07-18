@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Bu durumda fare menüden ayrılırsa menü kapanana kadar milisaniye</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Piksel maksimum menü genişliği</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Piksel cinsinden maksimum menü genişliği</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menü açık kalır</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Uygulama klasörünü aç</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Piksel maksimum menü yüksekliği</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Piksel cinsinden maksimum menü yüksekliği</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Ok</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Alt menü belirir</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Simgelerin yüzde olarak boyutu</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Yüzde olarak simge boyutu</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu'yü Destekle</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>SystemTrayMenu'nun en son sürümüne sahipsiniz!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Yüzde olarak uygulama boyutu</value>
   </data>
 </root>

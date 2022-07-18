@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisegunduko menua itxi arte sagua menutik irteten bada</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixelen gehienezko menuaren zabalera</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Menuaren gehienezko zabalera pixeletan</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menua irekita dago</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Ireki aplikazioen direktorioa</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixelen gehienezko menuaren altuera</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Menuaren gehienezko altuera pixeletan</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Gezia</value>
@@ -436,7 +436,7 @@
     <value>Erakutsi bilaketa-emaitza gisa soilik</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>Egin klik bakarra direktorio bat irekitzeko</value>
+    <value>Egin klik bakarrean direktorio bat irekitzeko</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Aurrekoaren ondoan</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Azpi menua agertzen da</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Ikonoen tamaina ehunekotan</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Ikonoaren tamaina ehunekotan</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Laguntza SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>SystemTrayMenu-ren azken bertsioa duzu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Aplikazioaren tamaina ehunekotan</value>
   </data>
 </root>

@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>اگر موس از منو خارج شود، چند میلی ثانیه تا بسته شدن منو</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>حداکثر عرض منو پیکسل</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>حداکثر عرض منو بر حسب پیکسل</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>منو باز می ماند</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>دایرکتوری برنامه را باز کنید</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>حداکثر ارتفاع منو پیکسل</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>حداکثر ارتفاع منو بر حسب پیکسل</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>فلش</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>منوی فرعی ظاهر می شود</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>اندازه آیکون ها بر حسب درصد</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>اندازه آیکون بر حسب درصد</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>پشتیبانی از SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>شما آخرین نسخه SystemTrayMenu را دارید!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>اندازه برنامه به درصد</value>
   </data>
 </root>

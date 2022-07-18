@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>마우스가 메뉴를 떠난 후 메뉴가 닫힐 때까지의 시간(밀리초)</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>픽셀 최대 메뉴 너비</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>최대 메뉴 너비(픽셀)</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>메뉴는 계속 열려 있습니다</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>애플리케이션 디렉토리 열기</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>픽셀 최대 메뉴 높이</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>최대 메뉴 높이(픽셀)</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>화살</value>
@@ -277,7 +277,7 @@
     <value>클릭 시 화살표 배경</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>마우스가 화살표 위에 있는 동안 화살표의 배경</value>
+    <value>마우스가 위에 있는 동안 화살표의 배경</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>색 구성표 어두운</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>하위 메뉴가 나타납니다</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>아이콘 크기(%)</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>아이콘 크기(퍼센트)</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>지원 시스템TrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>최신 버전의 SystemTrayMenu가 있습니다!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>애플리케이션 크기(%)</value>
   </data>
 </root>

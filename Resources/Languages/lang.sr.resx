@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Милисекунде док се мени не затвори ако миш напусти мени</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Максимална ширина менија пиксела</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Максимална ширина менија у пикселима</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Мени остаје отворен</value>
@@ -247,7 +247,7 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Граница изабраног елемента</value>
+    <value>Ивица изабраног елемента</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Релативни именик</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Отворите директоријум апликације</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Максимална висина менија пиксела</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Максимална висина менија у пикселима</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Стрелац</value>
@@ -373,7 +373,7 @@
     <value>Уклони директоријум</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Само датотеке</value>
+    <value>Онли Филес</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Обришите кеш ако је више од овог броја ставки</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Појављује се подмени</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Величина икона у процентима</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Величина иконе у процентима</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Подршка СистемТраиМену</value>
@@ -517,7 +517,7 @@
     <value>Сортирано по врсти и датуму</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
-    <value>Сортирано по врсти и називу</value>
+    <value>Сортирано по врсти и имену</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Провери ажурирања</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Имате најновију верзију СистемТраиМену-а!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Величина апликације у процентима</value>
   </data>
 </root>

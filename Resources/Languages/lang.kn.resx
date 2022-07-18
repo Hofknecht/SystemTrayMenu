@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>ಮೌಸ್ ನಂತರ ಮೆನುವನ್ನು ತೊರೆದರೆ ಮೆನು ಮುಚ್ಚುವವರೆಗೆ ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>ಪಿಕ್ಸೆಲ್‌ಗಳ ಗರಿಷ್ಠ ಮೆನು ಅಗಲ</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>ಪಿಕ್ಸೆಲ್‌ಗಳಲ್ಲಿ ಗರಿಷ್ಠ ಮೆನು ಅಗಲ</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>ಮೆನು ತೆರೆದಿರುತ್ತದೆ</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>ಅಪ್ಲಿಕೇಶನ್ ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಿರಿ</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>ಪಿಕ್ಸೆಲ್‌ಗಳ ಗರಿಷ್ಠ ಮೆನು ಎತ್ತರ</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>ಪಿಕ್ಸೆಲ್‌ಗಳಲ್ಲಿ ಗರಿಷ್ಠ ಮೆನು ಎತ್ತರ</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>ಬಾಣ</value>
@@ -277,7 +277,7 @@
     <value>ಕ್ಲಿಕ್ ಮಾಡುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>ಮೌಸ್ ಅದರ ಮೇಲೆ ಸುಳಿದಾಡುತ್ತಿರುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
+    <value>ಮೌಸ್ ಅದರ ಮೇಲೆ ಸುಳಿದಾಡುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>ಬಣ್ಣದ ಯೋಜನೆ ಡಾರ್ಕ್</value>
@@ -343,7 +343,7 @@
     <value>ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>ತಜ್ಞ</value>
+    <value>ಪರಿಣಿತ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>ಫೋಕಸ್ ಕಳೆದುಹೋದರೆ ಮತ್ತು Enter ಕೀಲಿಯನ್ನು ಒತ್ತಿದರೆ</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>ಉಪ ಮೆನು ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತದೆ</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>ಪ್ರತಿಶತದಲ್ಲಿ ಐಕಾನ್‌ಗಳ ಗಾತ್ರ</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>ಪ್ರತಿಶತದಲ್ಲಿ ಐಕಾನ್ ಗಾತ್ರ</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu ಅನ್ನು ಬೆಂಬಲಿಸಿ</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>ನೀವು SystemTrayMenu ನ ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯನ್ನು ಹೊಂದಿರುವಿರಿ!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>ಅಪ್ಲಿಕೇಶನ್ ಗಾತ್ರ ಶೇಕಡಾದಲ್ಲಿ</value>
   </data>
 </root>

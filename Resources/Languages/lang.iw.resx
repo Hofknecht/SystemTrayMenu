@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>אלפיות שניות עד שהתפריט ייסגר אם העכבר עוזב את התפריט</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>פיקסלים רוחב תפריט מקסימלי</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>רוחב תפריט מקסימלי בפיקסלים</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>התפריט נשאר פתוח</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>פתח את ספריית היישומים</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>גובה תפריט מקסימלי של פיקסלים</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>גובה תפריט מקסימלי בפיקסלים</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>חֵץ</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>תפריט משנה מופיע</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>גודל הסמלים באחוזים</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>גודל הסמל באחוזים</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>תמיכה ב-SystemTrayMenu</value>
@@ -493,7 +493,7 @@
     <value>הצג את מקש הפונקציה 'פתח תיקייה'</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>הצג את מקש הפונקציה 'תפריט סיכה'</value>
+    <value>הצג מקש פונקציה 'תפריט סיכה'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
     <value>הצג את מקש הפונקציה 'הגדרות'</value>
@@ -523,7 +523,7 @@
     <value>בדוק עדכונים</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>עבור לדף ההורדות</value>
+    <value>עבור לדף ההורדה</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>הגרסה האחרונה הזמינה:</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>יש לך את הגרסה האחרונה של SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>גודל היישום באחוזים</value>
   </data>
 </root>

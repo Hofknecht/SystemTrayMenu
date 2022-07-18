@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisecond jiskaske meni an fèmen si sourit la kite meni an</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Piksèl lajè meni maksimòm</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Maksimòm lajè meni an piksèl</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Meni rete ouvè</value>
@@ -232,7 +232,7 @@
     <value>Si yo te klike sou yon eleman</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Jan nou koumanse</value>
+    <value>Background</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
     <value>Anyè louvri</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Louvri anyè aplikasyon an</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Piksèl wotè meni maksimòm</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Wotè maksimòm meni an piksèl</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Flèch</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Sou-meni parèt</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Gwosè ikon yo an pousan</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Gwosè ikon an pousan</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Sipòte SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Ou gen dènye vèsyon SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Gwosè aplikasyon an nan pousan</value>
   </data>
 </root>

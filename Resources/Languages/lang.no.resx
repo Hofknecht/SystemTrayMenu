@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisekunder til menyen lukkes hvis musen da forlater menyen</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pikslers maksimale menybredde</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>Maksimal menybredde i piksler</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menyen forblir åpen</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Åpne programkatalogen</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pikslers maksimale menyhøyde</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>Maksimal menyhøyde i piksler</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Pil</value>
@@ -280,7 +280,7 @@
     <value>Bakgrunn av pil mens musen svever over den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>Mørkt fargevalg</value>
+    <value>Fargeskjema mørkt</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
     <value>Lys fargevalg</value>
@@ -376,7 +376,7 @@
     <value>Kun filer</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Tøm buffer hvis flere enn dette antallet elementer</value>
+    <value>Tøm hurtigbufferen hvis flere enn dette antallet elementer</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Legg til eksempelkatalog "Startmeny"</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Undermenyen vises</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Størrelsen på ikonene i prosent</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>Ikonstørrelse i prosent</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Støtte SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Du har den nyeste versjonen av SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>Søknadsstørrelse i prosent</value>
   </data>
 </root>

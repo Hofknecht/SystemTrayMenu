@@ -219,7 +219,7 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>當滑鼠指標已離開選單，選單關閉的延遲時間 (毫秒)</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
+  <data name="Maximum menu width in pixels" xml:space="preserve">
     <value>選單最大寬度 (像素)</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
@@ -261,7 +261,7 @@
   <data name="Open application directory" xml:space="preserve">
     <value>開啟應用程式位置</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
+  <data name="Maximum menu height in pixels" xml:space="preserve">
     <value>選單最大高度 (像素)</value>
   </data>
   <data name="Arrow" xml:space="preserve">
@@ -450,7 +450,7 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>子選單顯示在</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
+  <data name="Icon size in percent" xml:space="preserve">
     <value>圖示大小百分比</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>您擁有最新版本的 SystemTrayMenu！</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>應用程序大小百分比</value>
   </data>
 </root>

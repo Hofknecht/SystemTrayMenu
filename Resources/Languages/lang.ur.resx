@@ -181,7 +181,7 @@
     <value>ڈائریکٹری منتخب کریں۔</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ایپ کے لیے آپ کی روٹ ڈائرکٹری موجود نہیں ہے یا خالی ہے! روٹ ڈائرکٹری کو تبدیل کریں یا روٹ ڈائرکٹری میں کچھ فائلیں، ڈائریکٹریز یا شارٹ کٹس ڈالیں۔</value>
+    <value>ایپ کے لیے آپ کی روٹ ڈائرکٹری موجود نہیں ہے یا خالی ہے! روٹ ڈائرکٹری کو تبدیل کریں یا روٹ ڈائرکٹری میں کچھ فائلیں، ڈائریکٹریز یا شارٹ کٹ ڈالیں۔</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>آپ کو ایپ کی روٹ ڈائرکٹری تک رسائی نہیں ہے۔ ڈائرکٹری تک رسائی فراہم کریں یا روٹ ڈائرکٹری کو تبدیل کریں۔</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>ملی سیکنڈ جب تک مینو بند نہ ہو جائے اگر ماؤس مینو کو چھوڑ دیتا ہے۔</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>پکسلز زیادہ سے زیادہ مینو چوڑائی</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>مینو کی زیادہ سے زیادہ چوڑائی پکسلز میں</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>مینو کھلا رہتا ہے۔</value>
@@ -238,13 +238,13 @@
     <value>ڈائرکٹری کھولی۔</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>کھلی ڈائریکٹری کا بارڈر</value>
+    <value>کھلی ڈائرکٹری کا بارڈر</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>تلاش کا میدان</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>منتخب کردہ عنصر</value>
+    <value>منتخب عنصر</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
     <value>منتخب کردہ عنصر کا بارڈر</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>ایپلیکیشن ڈائرکٹری کھولیں۔</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>پکسلز زیادہ سے زیادہ مینو اونچائی</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>پکسلز میں مینو کی زیادہ سے زیادہ اونچائی</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>تیر</value>
@@ -325,10 +325,10 @@
     <value>لوڈ ہو رہا ہے</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>شارٹ کٹ لنک کے ساتھ مسئلہ</value>
+    <value>شارٹ کٹ لنک میں مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
+    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، اس لیے یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ڈائرکٹری کھولیں۔</value>
@@ -346,7 +346,7 @@
     <value>ماہر</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>اگر فوکس ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
+    <value>اگر توجہ ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>اگر مینو دوبارہ فعال نہیں ہوتا ہے تو مینو بند ہونے تک ملی سیکنڈ</value>
@@ -412,7 +412,7 @@
     <value>عناصر</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹ بنائیں</value>
+    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹس بنائیں</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>ذیلی مینو ظاہر ہوتا ہے۔</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>شبیہیں کا سائز فیصد میں</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>آئیکن کا سائز فیصد میں</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>سپورٹ سسٹم ٹری مینو</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>آپ کے پاس SystemTrayMenu کا تازہ ترین ورژن ہے!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>فیصد میں درخواست کا سائز</value>
   </data>
 </root>

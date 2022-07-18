@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>مللي ثانية حتى يتم إغلاق القائمة إذا غادر الماوس القائمة</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>الحد الأقصى لعرض القائمة بالبكسل</value>
+  <data name="Maximum menu width in pixels" xml:space="preserve">
+    <value>أقصى عرض للقائمة بالبكسل</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>تظل القائمة مفتوحة</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>افتح دليل التطبيق</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>الحد الأقصى لارتفاع القائمة بالبكسل</value>
+  <data name="Maximum menu height in pixels" xml:space="preserve">
+    <value>أقصى ارتفاع للقائمة بالبكسل</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>سهم</value>
@@ -328,7 +328,7 @@
     <value>مشكلة في ارتباط الاختصار</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>تم تغيير العنصر الذي يشير إليه هذا الاختصار أو نقله ، لذلك لن يعمل هذا الاختصار بشكل صحيح بعد الآن.</value>
+    <value>تم تغيير العنصر الذي يشير إليه هذا الاختصار أو نقله ، لذا لن يعمل هذا الاختصار بشكل صحيح بعد الآن.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>الدليل المفتوح</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>تظهر القائمة الفرعية</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>حجم الرموز بالنسبة المئوية</value>
+  <data name="Icon size in percent" xml:space="preserve">
+    <value>حجم الرمز بالنسبة المئوية</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>دعم SystemTrayMenu</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>لديك أحدث إصدار من SystemTrayMenu!</value>
+  </data>
+  <data name="Application size in percent" xml:space="preserve">
+    <value>حجم التطبيق بالنسبة المئوية</value>
   </data>
 </root>
