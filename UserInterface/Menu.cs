@@ -9,6 +9,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Drawing;
     using System.Globalization;
     using System.Reflection;
+    using System.Threading;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
@@ -1100,7 +1101,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                SettingsForm.ShowSingleInstance(this);
+                new Thread(SettingsForm.ShowSingleInstance).Start();
             }
         }
 

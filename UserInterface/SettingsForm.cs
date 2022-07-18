@@ -589,23 +589,16 @@ namespace SystemTrayMenu.UserInterface
             return RegisterHotkeys(false);
         }
 
-        public static void ShowSingleInstance(IWin32Window owner = null)
+        public static void ShowSingleInstance()
         {
             if (IsOpen())
             {
-                settingsForm.Activate();
+                settingsForm.HandleInvoke(settingsForm.Activate);
             }
             else
             {
                 settingsForm = new();
-                if (owner == null)
-                {
-                    settingsForm.ShowDialog();
-                }
-                else
-                {
-                    settingsForm.Show(owner);
-                }
+                settingsForm.ShowDialog();
             }
         }
 
