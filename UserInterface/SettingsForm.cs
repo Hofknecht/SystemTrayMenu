@@ -1494,7 +1494,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            settingsForm.Dispose();
+            settingsForm?.Dispose();
             settingsForm = null;
         }
 
