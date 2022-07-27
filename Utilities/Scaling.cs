@@ -5,25 +5,27 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
+    using System.Drawing;
 
     internal static class Scaling
     {
-        private enum DeviceCap
-        {
-            VERTRES = 10,
-            DESKTOPVERTRES = 117,
-        }
-
         public static float Factor { get; private set; } = 1;
 
-        internal static void Initialize()
+        public static float FactorByDpi { get; private set; } = 1;
+
+        public static void Initialize()
         {
             Factor = Properties.Settings.Default.SizeInPercent / 100f;
         }
 
-        internal static int Scale(int width)
+        public static int Scale(int width)
         {
             return (int)Math.Round(width * Factor, 0, MidpointRounding.AwayFromZero);
+        }
+
+        public static void CalculateFactorByDpi(Graphics graphics)
+        {
+            FactorByDpi = graphics.DpiX / 96;
         }
     }
 }

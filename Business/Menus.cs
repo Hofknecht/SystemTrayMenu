@@ -90,6 +90,7 @@ namespace SystemTrayMenu.Business
                                 workerMainMenu.DoWork -= LoadMenu;
                                 menus[0] = Create(menuData, Path.GetFileName(Config.Path));
                                 menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
+                                Scaling.CalculateFactorByDpi(menus[0].GetDataGridView().CreateGraphics());
                                 IconReader.MainPreload = false;
                                 if (showMenuAfterMainPreload)
                                 {

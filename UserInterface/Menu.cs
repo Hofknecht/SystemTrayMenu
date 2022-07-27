@@ -730,20 +730,17 @@ namespace SystemTrayMenu.UserInterface
                 factor = Properties.Settings.Default.RowHeighteInPercentageTouch / 100f;
             }
 
-            double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
-
-            if (factor < factorIconSizeInPercent)
-            {
-                factor = factorIconSizeInPercent;
-            }
-
             if (menuPredecessor == null)
             {
                 if (dgv.Tag == null && dgv.Rows.Count > 0)
                 {
-                    // Find row size based on content and apply factor
-                    dgv.AutoResizeRows();
-                    dgv.RowTemplate.Height = (int)(dgv.Rows[0].Height * factor);
+                    // dgv.AutoResizeRows(); slightly incorrect depending on dpi
+                    // 100% = 20 instead 21
+                    // 125% = 23 instead 27, 150% = 28 instead 32
+                    // 175% = 33 instead 37, 200% = 35 instead 42
+                    // #418 use 21 as default and scale it manually
+                    float rowHeightDefault = 21.24f * Scaling.FactorByDpi;
+                    dgv.RowTemplate.Height = (int)((rowHeightDefault * factor * Scaling.Factor) + 0.5);
                     dgv.Tag = true;
                 }
             }

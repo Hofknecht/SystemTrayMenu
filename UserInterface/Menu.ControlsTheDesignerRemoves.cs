@@ -55,7 +55,7 @@ namespace SystemTrayMenu.UserInterface
             ColumnIcon.DataPropertyName = "ColumnIcon";
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.NullValue = "System.Drawing.Icon";
-            dataGridViewCellStyle1.Padding = new Padding(3, 2, 6, 2);
+            dataGridViewCellStyle1.Padding = new Padding(3, 1, 2, 1);
             ColumnIcon.DefaultCellStyle = dataGridViewCellStyle1;
             ColumnIcon.Frozen = true;
             ColumnIcon.HeaderText = "ColumnIcon";

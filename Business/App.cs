@@ -59,10 +59,17 @@ namespace SystemTrayMenu
 
         public void Dispose()
         {
-            taskbarForm?.Dispose();
-            SystemEvents.DisplaySettingsChanged -= (s, e) => SystemEvents_DisplaySettingsChanged();
-            menus.Dispose();
-            menuNotifyIcon.Dispose();
+            if (taskbarForm?.InvokeRequired == true)
+            {
+                Dispose();
+            }
+            else
+            {
+                taskbarForm?.Dispose();
+                SystemEvents.DisplaySettingsChanged -= (s, e) => SystemEvents_DisplaySettingsChanged();
+                menus.Dispose();
+                menuNotifyIcon.Dispose();
+            }
         }
 
         private void SystemEvents_DisplaySettingsChanged()

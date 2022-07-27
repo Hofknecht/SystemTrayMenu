@@ -1254,7 +1254,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonSizeAndLocationDefault_Click(object sender, EventArgs e)
         {
-            numericUpDownSizeInPercent.Value = 125;
+            numericUpDownSizeInPercent.Value = 100;
             numericUpDownIconSizeInPercent.Value = 100;
             numericUpDownRowHeighteInPercentage.Value = 100;
             numericUpDownMenuWidth.Value = 400;
