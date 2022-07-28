@@ -698,6 +698,7 @@ namespace SystemTrayMenu.UserInterface
                 case Keys.Left:
                 case Keys.Right:
                 case Keys.Escape:
+                case Keys.Alt | Keys.F4:
                 case Keys.Control | Keys.F:
                 case Keys.Tab:
                 case Keys.Tab | Keys.Shift:
