@@ -181,7 +181,7 @@
     <value>Lego Directory</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Radix tua directorium pro app non est vel inanis est! Mutare directorium radix vel aliquas tabulas, directoria vel breves in directorio radicis pone.</value>
+    <value>Radix tua directorium pro app non est vel inanis est! Mutare directorium radix vel aliquas tabulas, directoria vel breves in directorio radix pone.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nullas aditus ad directorium radicis app. Da aditum ad indicem vel directorium radicem mutare.</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milliseconds usque ad menu claudit si mus tunc relinquit menu</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Maximum menu latum in elementa</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maximum menu width</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menu aperta manet</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Open application directory</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Maximum menu altitudo elementa</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maximum menu altitudo</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Sagitta</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Usus icon ex Directory</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Magnitudo</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Moles in percent</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Terminus menu</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Add sample directory 'Start Menu'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Row altitudo in percent</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Row altitudo</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Circum corners</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Sub menu videtur</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Icon magnitudine in percent</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Icon magnitudine</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Support SystemTrayMenu</value>
@@ -517,7 +517,7 @@
     <value>Ordinatae genus et diem</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordinatae genus et nomen</value>
+    <value>Ordinata genus et nomen</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Reprehendo pro updates</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Novam versionem SystemTrayMenu habes!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Applicationem amplitudo in percent</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Applicationem magnitudine</value>
   </data>
 </root>

@@ -124,7 +124,7 @@
     <value>kollox sew</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>App start</value>
+    <value>Bidu tal-app</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Ħruġ app</value>
@@ -199,7 +199,7 @@
     <value>Fil-post tal-ġurdien</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>Tibdil tad-direttorju</value>
+    <value>Bdil tad-direttorju</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Ikklikkja</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisekondi sakemm il-menu jagħlaq jekk il-maws imbagħad iħalli l-menu</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Wisa' massimu tal-menu f'pixels</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Wisa 'massimu tal-menu</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Il-menu jibqa' miftuħ</value>
@@ -247,7 +247,7 @@
     <value>Element magħżul</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Bordur tal-element magħżul</value>
+    <value>Bord tal-element magħżul</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Direttorju relattiv</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Iftaħ id-direttorju tal-applikazzjoni</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Għoli massimu tal-menu f'pixels</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Għoli massimu tal-menu</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Vleġġa</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Uża l-ikona mid-direttorju</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Daqs</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Daqsijiet fil-mija</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Bord tal-menu</value>
@@ -376,13 +376,13 @@
     <value>Fajls biss</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Ċar il-cache jekk aktar minn dan in-numru ta' oġġetti</value>
+    <value>Ċar il-cache jekk aktar minn dan in-numru ta 'oġġetti</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Żid kampjun tad-direttorju 'Start Menu'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Għoli tar-ringiela fil-mija</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Għoli tar-ringiela</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Kantunieri tondi</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Jidher sottomenu</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Daqs tal-ikona fil-mija</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Daqs tal-ikona</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Appoġġ SystemTrayMenu</value>
@@ -508,10 +508,10 @@
     <value>Iffrankar tal-fajl tal-log fid-direttorju tal-applikazzjoni</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
-    <value>Uri link overlay</value>
+    <value>Uri s-superpożizzjoni tal-link</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Direttorju tal-Ikoni tal-Shortcut tal-Internet</value>
+    <value>Direttorju ta' Ikoni ta' Shortcut ta' l-Internet</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
     <value>Issortjati skond it-tip u d-data</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Għandek l-aħħar verżjoni ta' SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Daqs tal-applikazzjoni fil-mija</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Daqs tal-applikazzjoni</value>
   </data>
 </root>

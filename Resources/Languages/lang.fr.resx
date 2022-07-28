@@ -181,7 +181,7 @@
     <value>Sélectionnez le répertoire</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Votre répertoire racine pour l'application n'existe pas ou est vide ! Modifiez le répertoire racine ou placez des fichiers, des répertoires ou des raccourcis dans le répertoire racine.</value>
+    <value>Votre répertoire racine pour l'application n'existe pas ou est vide ! Modifiez le répertoire racine ou placez des fichiers, répertoires ou raccourcis dans le répertoire racine.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Vous n'avez pas accès au répertoire racine de l'application. Accordez l'accès au répertoire ou modifiez le répertoire racine.</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisecondes jusqu'à ce que le menu se ferme si la souris quitte ensuite le menu</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Largeur maximale du menu en pixels</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Largeur maximale du menu</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Le menu reste ouvert</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Ouvrir le répertoire des applications</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Hauteur maximale du menu en pixels</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Hauteur maximale du menu</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Flèche</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Utiliser l'icône du répertoire</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Taille</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Tailles en pourcentage</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Bordure de menu</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Ajouter un exemple de répertoire 'Menu Démarrer'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Hauteur de ligne en pourcentage</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Hauteur de ligne</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Coins ronds</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Le sous-menu apparaît</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Taille de l'icône en pourcentage</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Taille de l'icône</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Support SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Vous avez la dernière version de SystemTrayMenu !</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Taille de l'application en pourcentage</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Taille de l'application</value>
   </data>
 </root>

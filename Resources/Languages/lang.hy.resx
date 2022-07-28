@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Միլիվայրկյաններ, մինչև ընտրացանկը փակվի, եթե մկնիկը դուրս գա մենյուից</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Մենյուի առավելագույն լայնությունը պիքսելներով</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Մենյուի առավելագույն լայնությունը</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Մենյու բաց է մնում</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Բացեք հավելվածի գրացուցակը</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Մենյուի առավելագույն բարձրությունը պիքսելներով</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Մենյուի առավելագույն բարձրությունը</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Սլաք</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Օգտագործեք պատկերակը գրացուցակից</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Չափը</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Չափերը տոկոսներով</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Մենյուի սահմանը</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Ավելացնել ընտրանքային գրացուցակ «Սկսել մենյու»</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Շարքի բարձրությունը տոկոսներով</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Շարքի բարձրությունը</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Կլոր անկյուններ</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Ենթացանկը հայտնվում է</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Սրբապատկերի չափը տոկոսներով</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Սրբապատկերի չափը</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Աջակցեք SystemTrayMenu-ին</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Դուք ունեք SystemTrayMenu-ի վերջին տարբերակը:</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Դիմումի չափը տոկոսներով</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Դիմումի չափը</value>
   </data>
 </root>

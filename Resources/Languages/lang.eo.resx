@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundoj ĝis la menuo fermiĝas se la muso tiam forlasas la menuon</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Maksimuma menularĝo en pikseloj</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maksimuma menularĝo</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menuo restas malfermita</value>
@@ -261,14 +261,14 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Malfermu aplikan dosierujon</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Maksimuma menua alteco en pikseloj</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maksimuma menua alteco</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Sago</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Sago kiam vi klakas</value>
+    <value>Sago alklakante</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Sago dum muso ŝvebas super ĝi</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Uzu ikonon de dosierujo</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Grandeco</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Grandecoj en procentoj</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Limo de menuo</value>
@@ -328,7 +328,7 @@
     <value>Problemo kun ŝparvoja ligilo</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>La elemento, al kiu ĉi tiu ŝparvojo rilatas, estis ŝanĝita aŭ movita, do ĉi tiu ŝparvojo ne plu funkcios ĝuste.</value>
+    <value>La ero, al kiu ĉi tiu ŝparvojo rilatas, estis ŝanĝita aŭ movita, do ĉi tiu ŝparvojo ne plu funkcios ĝuste.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Malfermu dosierujon</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Aldonu ekzemplan dosierujon 'Komenuo'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Vico alteco en procentoj</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Vico alteco</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Rondaj anguloj</value>
@@ -400,7 +400,7 @@
     <value>Ĉefa menuo aperas</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>Musloko (super Taskobreto-ikono)</value>
+    <value>Musloko (super Taskobara ikono)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Propra (trenu ĝin al la taŭga pozicio)</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Submenuo aperas</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Ikono grandeco en procentoj</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikono grandeco</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Subtenu SystemTrayMenu</value>
@@ -472,7 +472,7 @@
     <value>Ordigo</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>Kopiu vico-elemento per treni kaj faligi</value>
+    <value>Kopiu vico-elemento per trenado kaj faligo</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Trenu</value>
@@ -496,7 +496,7 @@
     <value>Montru funkcioklavon 'Alpingli menuon'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>Montru funkcioklavon 'Agordoj'</value>
+    <value>Montri funkcioklavon 'Agordoj'</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
     <value>Montru funkcioklavon 'Rekomenci'</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Vi havas la lastan version de SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Aplika grandeco en procentoj</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Aplika grandeco</value>
   </data>
 </root>

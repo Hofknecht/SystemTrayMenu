@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>مللي ثانية حتى يتم إغلاق القائمة إذا غادر الماوس القائمة</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>أقصى عرض للقائمة بالبكسل</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>أقصى عرض للقائمة</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>تظل القائمة مفتوحة</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>افتح دليل التطبيق</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>أقصى ارتفاع للقائمة بالبكسل</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>أقصى ارتفاع للقائمة</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>سهم</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>استخدم رمز من الدليل</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>بحجم</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>الأحجام في المئة</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>حدود القائمة</value>
@@ -358,7 +358,7 @@
     <value>أضف الدليل</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>إضافة محتوى الدليل إلى الدليل الجذر</value>
+    <value>أضف محتوى الدليل إلى الدليل الجذر</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>مسارات الدليل</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>إضافة دليل نموذج "قائمة ابدأ"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>ارتفاع الصف بالنسبة المئوية</value>
+  <data name="Row height" xml:space="preserve">
+    <value>ارتفاع الصف</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>زوايا مستديرة</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>تظهر القائمة الفرعية</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>حجم الرمز بالنسبة المئوية</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>حجم الرمز</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>دعم SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>لديك أحدث إصدار من SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>حجم التطبيق بالنسبة المئوية</value>
+  <data name="Application size" xml:space="preserve">
+    <value>حجم التطبيق</value>
   </data>
 </root>

@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisekunder indtil menuen lukker, hvis musen så forlader menuen</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Maksimal menubredde i pixels</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maksimal menubredde</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menuen forbliver åben</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Åbn applikationsmappe</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Maksimal menuhøjde i pixels</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maksimal menuhøjde</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Pil</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Brug ikon fra bibliotek</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Størrelse</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Størrelser i procent</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Kant af menu</value>
@@ -346,7 +346,7 @@
     <value>Ekspert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Hvis fokus mistes, og Enter-tasten blev trykket</value>
+    <value>Hvis fokus mistes, og der blev trykket på Enter-tasten</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>Millisekunder, indtil menuen lukker, hvis menuen ikke genaktiveres</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Tilføj eksempelmappe 'Startmenu'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Rækkehøjde i procent</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Rækkehøjde</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Runde hjørner</value>
@@ -427,7 +427,7 @@
     <value>Vis aldrig</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og placering</value>
+    <value>Størrelse og beliggenhed</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>
@@ -436,7 +436,7 @@
     <value>Vis kun som søgeresultat</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>Et enkelt klik for at åbne en mappe</value>
+    <value>Enkelt klik for at åbne en mappe</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ved siden af ​​den forrige</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Undermenuen vises</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Ikonstørrelse i procent</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikon størrelse</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Support SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Du har den seneste version af SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Anvendelsesstørrelse i procent</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Applikationsstørrelse</value>
   </data>
 </root>

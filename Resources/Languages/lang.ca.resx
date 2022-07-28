@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Mil·lisegons fins que el menú es tanqui si el ratolí surt del menú</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Amplada màxima del menú en píxels</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Amplada màxima del menú</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>El menú continua obert</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Obriu el directori d'aplicacions</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Alçada màxima del menú en píxels</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Alçada màxima del menú</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Fletxa</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Utilitza la icona del directori</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Mida</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Mides en percentatge</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Vora del menú</value>
@@ -346,10 +346,10 @@
     <value>Expert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Si es perd el focus i es prem la tecla Enter</value>
+    <value>Si es perd el focus i es premeu la tecla Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>Mil·lisegons fins que es tanqui el menú si no es reactiva</value>
+    <value>Mil·lisegons fins que el menú es tanqui si el menú no es reactiva</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostra a la barra de tasques</value>
@@ -379,10 +379,10 @@
     <value>Esborra la memòria cau si hi ha més d'aquest nombre d'elements</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Afegeix el directori de mostra "Menú Inici"</value>
+    <value>Afegeix el directori d'exemple "Menú Inici"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Alçada de fila en percentatge</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Alçada de fila</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Cantons arrodonits</value>
@@ -424,7 +424,7 @@
     <value>Fitxers i directoris ocults</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>No mostris mai</value>
+    <value>No mostrar mai</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Mida i ubicació</value>
@@ -442,7 +442,7 @@
     <value>Al costat de l'anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Compensació per píxels</value>
+    <value>Compensació de píxels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Superposició</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Apareix el submenú</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Mida de la icona en percentatge</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Mida de la icona</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suport SystemTrayMenu</value>
@@ -472,7 +472,7 @@
     <value>Classificació</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>Copieu l'element de fila arrossegant i deixant anar</value>
+    <value>Copia l'element de fila arrossegant i deixant anar</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Arrossegueu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Tens la darrera versió de SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Mida de l'aplicació en percentatge</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Mida de l'aplicació</value>
   </data>
 </root>

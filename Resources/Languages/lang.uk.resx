@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Мілісекунди, доки меню не закриється, якщо миша залишить меню</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Максимальна ширина меню в пікселях</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Максимальна ширина меню</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Меню залишається відкритим</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Відкрити каталог програм</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Максимальна висота меню в пікселях</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Максимальна висота меню</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Стрілка</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Використовуйте піктограму з каталогу</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Розмір</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Розміри у відсотках</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Кордон меню</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Додати зразок каталогу «Меню «Пуск»</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Висота рядка у відсотках</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Висота рядка</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Круглі кути</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>З'явиться підменю</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Розмір значка у відсотках</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Розмір значка</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Підтримка SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>У вас остання версія SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Розмір програми у відсотках</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Розмір програми</value>
   </data>
 </root>

@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisekunder til menyen lukkes hvis musen da forlater menyen</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Maksimal menybredde i piksler</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maksimal menybredde</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menyen forblir åpen</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Åpne programkatalogen</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Maksimal menyhøyde i piksler</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maksimal menyhøyde</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Pil</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Bruk ikon fra katalogen</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Størrelse</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Størrelser i prosent</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Kant av menyen</value>
@@ -319,7 +319,7 @@
     <value>Sett av kontekstmeny</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Angi som katalog</value>
+    <value>Sett som katalog</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>lasting</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Legg til eksempelkatalog "Startmeny"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Radhøyde i prosent</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Radhøyde</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Runde hjørner</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Undermenyen vises</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Ikonstørrelse i prosent</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikonstørrelse</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Støtte SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Du har den nyeste versjonen av SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Søknadsstørrelse i prosent</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Søknadsstørrelse</value>
   </data>
 </root>

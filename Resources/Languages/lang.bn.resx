@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড যদি মাউস তারপর মেনু ছেড়ে যায়</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>পিক্সেলে সর্বাধিক মেনু প্রস্থ</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>সর্বাধিক মেনু প্রস্থ</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>মেনু খোলা থাকে</value>
@@ -261,14 +261,14 @@
   <data name="Open application directory" xml:space="preserve">
     <value>অ্যাপ্লিকেশন ডিরেক্টরি খুলুন</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>পিক্সেলে সর্বোচ্চ মেনু উচ্চতা</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>সর্বোচ্চ মেনু উচ্চতা</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>তীর</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>ক্লিক করার সময় তীর</value>
+    <value>ক্লিক করার সময় তীরচিহ্ন</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>মাউস এটির উপর ঘোরার সময় তীরচিহ্ন</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>ডিরেক্টরি থেকে আইকন ব্যবহার করুন</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>আকার</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>শতাংশে আকার</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>মেনুর সীমানা</value>
@@ -316,7 +316,7 @@
     <value>আইকন</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>প্রসঙ্গ মেনু দ্বারা সেট করুন</value>
+    <value>প্রসঙ্গ মেনু দ্বারা সেট</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ডিরেক্টরি হিসাবে সেট করুন</value>
@@ -337,7 +337,7 @@
     <value>কাজ ব্যবস্থাপক</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>নিষ্ক্রিয়</value>
+    <value>নিষ্ক্রিয় করা হয়েছে</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>সক্রিয়</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>সারির উচ্চতা শতাংশে</value>
+  <data name="Row height" xml:space="preserve">
+    <value>সারির উচ্চতা</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>বৃত্তাকার কোণগুলি</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>সাব মেনু প্রদর্শিত হবে</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>শতাংশে আইকনের আকার</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>আইকনের আকার</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>সিস্টেমট্রেমেনু সমর্থন করে</value>
@@ -481,7 +481,7 @@
     <value>সোয়াইপের মাধ্যমে স্ক্রোল করুন</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ফাইল টাইপ দ্বারা ফিল্টার মেনু যেমন: *.exe|*.dll</value>
+    <value>ফাইলের ধরন অনুযায়ী ফিল্টার মেনু যেমন: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>উপাদানের সংখ্যা দেখান</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>আপনার কাছে SystemTrayMenu এর সর্বশেষ সংস্করণ আছে!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>শতাংশে আবেদনের আকার</value>
+  <data name="Application size" xml:space="preserve">
+    <value>আবেদনের আকার</value>
   </data>
 </root>

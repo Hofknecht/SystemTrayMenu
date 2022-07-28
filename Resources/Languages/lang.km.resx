@@ -151,7 +151,7 @@
     <value>ឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ចាប់ផ្តើមឡើងវិញ</value>
+    <value>ចាប់ផ្ដើមឡើងវិញ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>មិនអាចចុះឈ្មោះ hot key បានទេ។</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>មិល្លីវិនាទីរហូតដល់ម៉ឺនុយបិទ ប្រសិនបើកណ្តុរបន្ទាប់មកចាកចេញពីម៉ឺនុយ</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>ទទឹងម៉ឺនុយអតិបរមាគិតជាភីកសែល</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>ទទឹងម៉ឺនុយអតិបរមា</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>ម៉ឺនុយនៅតែបើក</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>បើកថតកម្មវិធី</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>កម្ពស់ម៉ឺនុយអតិបរមាគិតជាភីកសែល</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>កម្ពស់ម៉ឺនុយអតិបរមា</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>ព្រួញ</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>ប្រើរូបតំណាងពីថត</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>ទំហំ</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>ទំហំគិតជាភាគរយ</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>ព្រំដែននៃម៉ឺនុយ</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>បន្ថែមថតគំរូ 'ម៉ឺនុយចាប់ផ្តើម'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>កម្ពស់ជួរដេកគិតជាភាគរយ</value>
+  <data name="Row height" xml:space="preserve">
+    <value>កម្ពស់ជួរ</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>ជ្រុងមូល</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>ម៉ឺនុយរងលេចឡើង</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>ទំហំរូបតំណាងគិតជាភាគរយ</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>ទំហំរូបតំណាង</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>គាំទ្រ SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>អ្នកមានកំណែចុងក្រោយបំផុតរបស់ SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>ទំហំកម្មវិធីគិតជាភាគរយ</value>
+  <data name="Application size" xml:space="preserve">
+    <value>ទំហំកម្មវិធី</value>
   </data>
 </root>

@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundy, kým sa ponuka zatvorí, ak myš opustí ponuku</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Maximálna šírka ponuky v pixeloch</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maximálna šírka ponuky</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menu zostane otvorené</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Otvorte adresár aplikácie</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Maximálna výška ponuky v pixeloch</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maximálna výška ponuky</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Šípka</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Použite ikonu z adresára</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Veľkosť</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Veľkosti v percentách</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Hranica menu</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Pridať vzorový adresár „Ponuka Štart“</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Výška riadku v percentách</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Výška riadku</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Zaoblené rohy</value>
@@ -400,7 +400,7 @@
     <value>Zobrazí sa hlavné menu</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>Poloha myši (nad ikonou na paneli úloh)</value>
+    <value>Umiestnenie myši (nad ikonou na paneli úloh)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Vlastné (presuňte ho na príslušné miesto)</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Zobrazí sa podponuka</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Veľkosť ikony v percentách</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Veľkosť ikony</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Podpora SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Máte najnovšiu verziu SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Veľkosť aplikácie v percentách</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Veľkosť aplikácie</value>
   </data>
 </root>

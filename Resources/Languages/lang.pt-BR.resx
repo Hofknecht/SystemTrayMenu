@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milissegundos até o menu fechar se o mouse sair do menu</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Largura máxima do menu em pixels</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Largura máxima do menu</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menu permanece aberto</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Abra o diretório do aplicativo</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Altura máxima do menu em pixels</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Altura máxima do menu</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Flecha</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Use o ícone do diretório</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Tamanho</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Tamanhos em porcentagem</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Borda do cardápio</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Adicionar diretório de amostra 'Menu Iniciar'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Altura da linha em porcentagem</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Altura da linha</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Cantos arredondados</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>O submenu aparece</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Tamanho do ícone em porcentagem</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Tamanho do ícone</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Sistema de suporteBandejaMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Você tem a versão mais recente do SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Tamanho do aplicativo em porcentagem</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Tamanho do aplicativo</value>
   </data>
 </root>

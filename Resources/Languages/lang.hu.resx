@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Ezredmásodperc a menü bezárásáig, ha az egér ezután elhagyja a menüt</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>A menü maximális szélessége képpontban</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maximális menüszélesség</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>A menü nyitva marad</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Nyissa meg az alkalmazáskönyvtárat</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>A menü maximális magassága képpontban</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maximális menü magasság</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Nyíl</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Használja a könyvtár ikonját</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Méret</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Méretek százalékban</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>A menü szegélye</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Példakönyvtár hozzáadása "Start menü"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Sormagasság százalékban</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Sor magasság</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Lekerekített sarkok</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Megjelenik az almenü</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Az ikon mérete százalékban</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikon mérete</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>A SystemTrayMenu támogatása</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Ön a SystemTrayMenu legújabb verziójával rendelkezik!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Az alkalmazás mérete százalékban</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Alkalmazás mérete</value>
   </data>
 </root>

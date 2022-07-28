@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Милисекунди додека менито не се затвори ако глувчето потоа го напушти менито</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Максимална ширина на менито во пиксели</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Максимална ширина на менито</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Менито останува отворено</value>
@@ -238,7 +238,7 @@
     <value>Отворен директориум</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>Граница на отворен директориум</value>
+    <value>Граница на отворениот директориум</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Поле за пребарување</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Отворете го директориумот со апликации</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Максимална висина на менито во пиксели</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Максимална висина на менито</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Стрелка</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Користете ја иконата од директориумот</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Големина</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Големини во проценти</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Граница на менито</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Додадете примерок директориум „Старт мени“</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Висина на редот во проценти</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Висина на редот</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Кружни агли</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Се појавува подмени</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Големината на иконата во проценти</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Големина на иконата</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Поддршка SystemTrayMenu</value>
@@ -460,13 +460,13 @@
     <value>Избледување</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Испратете копче на друга инстанца</value>
+    <value>Испрати копче на друга инстанца</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Подредени по датум</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Подредени по име</value>
+    <value>Подредено по име</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортирање</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Ја имате најновата верзија на SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Големината на апликацијата во проценти</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Големина на апликацијата</value>
   </data>
 </root>

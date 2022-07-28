@@ -211,16 +211,16 @@
     <value>طے شدہ</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>اگر توجہ ختم ہو جائے اور ماؤس ابھی بھی مینو پر موجود ہے۔</value>
+    <value>اگر توجہ ختم ہو جائے اور ماؤس ابھی بھی مینو پر موجود ہو۔</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>جب ماؤس اس پر ہوتا ہے تو ایک مینو کھلنے تک ملی سیکنڈ</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>ملی سیکنڈ جب تک مینو بند نہ ہو جائے اگر ماؤس مینو کو چھوڑ دیتا ہے۔</value>
+    <value>ملی سیکنڈ جب تک مینو بند نہ ہو جائے اگر ماؤس پھر مینو کو چھوڑ دیتا ہے۔</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>مینو کی زیادہ سے زیادہ چوڑائی پکسلز میں</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>مینو کی زیادہ سے زیادہ چوڑائی</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>مینو کھلا رہتا ہے۔</value>
@@ -238,7 +238,7 @@
     <value>ڈائرکٹری کھولی۔</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>کھلی ڈائرکٹری کا بارڈر</value>
+    <value>کھلی ڈائریکٹری کا بارڈر</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>تلاش کا میدان</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>ایپلیکیشن ڈائرکٹری کھولیں۔</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>پکسلز میں مینو کی زیادہ سے زیادہ اونچائی</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>مینو کی زیادہ سے زیادہ اونچائی</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>تیر</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>ڈائریکٹری سے آئیکن استعمال کریں۔</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>سائز</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>فیصد میں سائز</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>مینو کی سرحد</value>
@@ -328,7 +328,7 @@
     <value>شارٹ کٹ لنک میں مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، اس لیے یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
+    <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ڈائرکٹری کھولیں۔</value>
@@ -346,7 +346,7 @@
     <value>ماہر</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>اگر توجہ ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
+    <value>اگر فوکس ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>اگر مینو دوبارہ فعال نہیں ہوتا ہے تو مینو بند ہونے تک ملی سیکنڈ</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>نمونہ ڈائرکٹری 'اسٹارٹ مینو' شامل کریں</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>قطار کی اونچائی فیصد میں</value>
+  <data name="Row height" xml:space="preserve">
+    <value>قطار کی اونچائی</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>گول کونے</value>
@@ -412,7 +412,7 @@
     <value>عناصر</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹس بنائیں</value>
+    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹ بنائیں</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>ذیلی مینو ظاہر ہوتا ہے۔</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>آئیکن کا سائز فیصد میں</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>آئیکن کا سائز</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>سپورٹ سسٹم ٹری مینو</value>
@@ -490,7 +490,7 @@
     <value>ڈائرکٹری کا عنوان اوپر دکھائیں۔</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>فنکشن کلید 'اوپن فولڈر' دکھائیں</value>
+    <value>فنکشن کی کلید 'اوپن فولڈر' دکھائیں</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>فنکشن کلید 'پن مینو' دکھائیں</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>آپ کے پاس SystemTrayMenu کا تازہ ترین ورژن ہے!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>فیصد میں درخواست کا سائز</value>
+  <data name="Application size" xml:space="preserve">
+    <value>درخواست کا سائز</value>
   </data>
 </root>

@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisekondes totdat die spyskaart toemaak as die muis dan die spyskaart verlaat</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Maksimum spyskaartwydte in pixels</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maksimum spyskaart breedte</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Spyskaart bly oop</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Maak toepassingsgids oop</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Maksimum spyskaarthoogte in pixels</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maksimum spyskaart hoogte</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Pyltjie</value>
@@ -274,7 +274,7 @@
     <value>Pyltjie terwyl die muis daaroor beweeg</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Agtergrond van pyl wanneer jy klik</value>
+    <value>Agtergrond van pyl wanneer u klik</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Agtergrond van pyl terwyl die muis daaroor beweeg</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Gebruik ikoon uit die gids</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Grootte</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Groottes in persentasie</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Rand van spyskaart</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Voeg voorbeeldgids 'Start Menu' by</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Ryhoogte in persentasie</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Ry hoogte</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Ronde hoeke</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Sub-kieslys verskyn</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Ikoongrootte in persentasie</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikoon grootte</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Ondersteun SystemTrayMenu</value>
@@ -496,7 +496,7 @@
     <value>Wys funksie sleutel 'Pin spyskaart'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>Wys funksiesleutel 'Instellings'</value>
+    <value>Wys funksie sleutel 'Instellings'</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
     <value>Wys funksiesleutel 'Herbegin'</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Jy het die nuutste weergawe van SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Toepassingsgrootte in persentasie</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Toepassingsgrootte</value>
   </data>
 </root>

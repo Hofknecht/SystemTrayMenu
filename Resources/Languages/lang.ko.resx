@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>마우스가 메뉴를 떠난 후 메뉴가 닫힐 때까지의 시간(밀리초)</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>최대 메뉴 너비(픽셀)</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>최대 메뉴 너비</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>메뉴는 계속 열려 있습니다</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>애플리케이션 디렉토리 열기</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>최대 메뉴 높이(픽셀)</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>최대 메뉴 높이</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>화살</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>디렉토리의 아이콘 사용</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>크기</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>크기(%)</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>메뉴의 테두리</value>
@@ -349,7 +349,7 @@
     <value>초점을 잃고 Enter 키를 누른 경우</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>메뉴가 다시 활성화되지 않으면 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+    <value>메뉴가 다시 활성화되지 않은 경우 메뉴가 닫힐 때까지의 시간(밀리초)</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>작업 표시줄에 표시</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>샘플 디렉토리 '시작 메뉴' 추가</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>행 높이(%)</value>
+  <data name="Row height" xml:space="preserve">
+    <value>행 높이</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>둥근 모서리</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>하위 메뉴가 나타납니다</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>아이콘 크기(퍼센트)</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>아이콘 크기</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>지원 시스템TrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>최신 버전의 SystemTrayMenu가 있습니다!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>애플리케이션 크기(%)</value>
+  <data name="Application size" xml:space="preserve">
+    <value>애플리케이션 크기</value>
   </data>
 </root>

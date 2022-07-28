@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>當滑鼠指標已離開選單，選單關閉的延遲時間 (毫秒)</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>選單最大寬度 (像素)</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>最大菜單寬度</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>保持開啟</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>開啟應用程式位置</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>選單最大高度 (像素)</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>最大菜單高度</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>箭頭</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>使用資料夾的圖示</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>大小</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>尺寸百分比</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>選單外框</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>新增「開始」選單目錄</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>列高百分比</value>
+  <data name="Row height" xml:space="preserve">
+    <value>行高</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>圓角外框</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>子選單顯示在</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>圖示大小百分比</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>圖標大小</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>贊助 SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>您擁有最新版本的 SystemTrayMenu！</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>應用程序大小百分比</value>
+  <data name="Application size" xml:space="preserve">
+    <value>應用規模</value>
   </data>
 </root>

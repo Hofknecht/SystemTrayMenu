@@ -181,7 +181,7 @@
     <value>Selectați directorul</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Directorul dvs. rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
+    <value>Directorul tău rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisecunde până când meniul se închide dacă mouse-ul părăsește meniul</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Lățimea maximă a meniului în pixeli</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Lățimea maximă a meniului</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Meniul rămâne deschis</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Deschideți directorul aplicației</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Înălțimea maximă a meniului în pixeli</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Înălțimea maximă a meniului</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Săgeată</value>
@@ -306,14 +306,14 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Utilizați pictograma din director</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>mărimea</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Dimensiuni în procente</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>icoane</value>
+    <value>Pictograme</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>Setați prin meniul contextual</value>
@@ -328,7 +328,7 @@
     <value>Problemă cu legătura rapidă</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Elementul la care se referă această comandă rapidă a fost modificat sau mutat, astfel încât această comandă rapidă nu va mai funcționa corect.</value>
+    <value>Elementul la care se referă această comandă rapidă a fost schimbat sau mutat, așa că această comandă rapidă nu va mai funcționa corect.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Deschide directorul</value>
@@ -376,13 +376,13 @@
     <value>Doar Fișiere</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Goliți memoria cache dacă este mai mare de acest număr de articole</value>
+    <value>Goliți memoria cache dacă este mai mare de acest număr de elemente</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Adăugați exemplu de director „Start Menu”</value>
+    <value>Adăugați exemplu de director „Meniu Start”</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Înălțimea rândului în procente</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Înălțimea rândului</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Colțuri rotunjite</value>
@@ -427,7 +427,7 @@
     <value>Nu arăta niciodată</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Dimensiunea si locatia</value>
+    <value>Dimensiunea și locația</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Utilizați setările sistemului de operare</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Apare submeniul</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Dimensiunea pictogramei în procente</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Dimensiunea pictogramei</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suport SystemTrayMenu</value>
@@ -532,9 +532,9 @@
     <value>Noua versiune disponibila!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
-    <value>Ai cea mai recentă versiune a SystemTrayMenu!</value>
+    <value>Aveți cea mai recentă versiune a SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Dimensiunea aplicației în procente</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Dimensiunea aplicației</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>सिस्टमट्रेमेनू के बारे में</value>
+    <value>SystemTrayMenu के बारे में</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>ठीक है</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>मेनू बंद होने तक मिलीसेकंड यदि माउस तब मेनू छोड़ देता है</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>पिक्सेल में अधिकतम मेनू चौड़ाई</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>अधिकतम मेनू चौड़ाई</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>मेनू खुला रहता है</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>एप्लिकेशन निर्देशिका खोलें</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>पिक्सेल में अधिकतम मेनू ऊंचाई</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>अधिकतम मेनू ऊंचाई</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>तीर</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>निर्देशिका से आइकन का प्रयोग करें</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>आकार</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>प्रतिशत में आकार</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>मेनू की सीमा</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>नमूना निर्देशिका 'प्रारंभ मेनू' जोड़ें</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>प्रतिशत में पंक्ति ऊंचाई</value>
+  <data name="Row height" xml:space="preserve">
+    <value>पंक्ति की ऊंचाई</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>गोल कोनों</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>उप मेनू प्रकट होता है</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>प्रतिशत में आइकन का आकार</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>चिह्न आकार</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>समर्थन प्रणालीट्रेमेनू</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>आपके पास SystemTrayMenu का नवीनतम संस्करण है!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>आवेदन का आकार प्रतिशत में</value>
+  <data name="Application size" xml:space="preserve">
+    <value>आवेदन का आकार</value>
   </data>
 </root>

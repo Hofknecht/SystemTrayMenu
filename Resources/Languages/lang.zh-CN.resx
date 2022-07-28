@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>如果鼠标离开菜单，直到菜单关闭的毫秒数</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>最大菜单宽度（以像素为单位）</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>最大菜单宽度</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>菜单保持打开状态</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>打开应用程序目录</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>最大菜单高度（以像素为单位）</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>最大菜单高度</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>箭</value>
@@ -301,13 +301,13 @@
     <value>鼠标悬停时的滑块 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>鼠标悬停时的滑块 2</value>
+    <value>鼠标悬停在滑块上时的滑块 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>使用目录中的图标</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>尺寸</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>尺寸百分比</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>菜单边框</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>添加示例目录“开始菜单”</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>行高百分比</value>
+  <data name="Row height" xml:space="preserve">
+    <value>行高</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>圆角</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>出现子菜单</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>图标大小百分比</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>图标大小</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>支持 SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>您拥有最新版本的 SystemTrayMenu！</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>应用程序大小百分比</value>
+  <data name="Application size" xml:space="preserve">
+    <value>应用规模</value>
   </data>
 </root>

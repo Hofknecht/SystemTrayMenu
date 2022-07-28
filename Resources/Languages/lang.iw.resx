@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>אלפיות שניות עד שהתפריט ייסגר אם העכבר עוזב את התפריט</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>רוחב תפריט מקסימלי בפיקסלים</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>רוחב תפריט מקסימלי</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>התפריט נשאר פתוח</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>פתח את ספריית היישומים</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>גובה תפריט מקסימלי בפיקסלים</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>גובה תפריט מקסימלי</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>חֵץ</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>השתמש בסמל מהספרייה</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>גודל</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>מידות באחוזים</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>גבול התפריט</value>
@@ -325,7 +325,7 @@
     <value>טוען</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>בעיה בקישור קיצורי דרך</value>
+    <value>בעיה עם קישור קיצור</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שקיצור זה לא יפעל עוד כראוי.</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>הוסף ספרייה לדוגמה 'תפריט התחל'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>גובה השורה באחוזים</value>
+  <data name="Row height" xml:space="preserve">
+    <value>גובה השורה</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>פינות עגולות</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>תפריט משנה מופיע</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>גודל הסמל באחוזים</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>גודל סמל</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>תמיכה ב-SystemTrayMenu</value>
@@ -493,7 +493,7 @@
     <value>הצג את מקש הפונקציה 'פתח תיקייה'</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>הצג מקש פונקציה 'תפריט סיכה'</value>
+    <value>הצג את מקש הפונקציה 'תפריט סיכה'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
     <value>הצג את מקש הפונקציה 'הגדרות'</value>
@@ -523,7 +523,7 @@
     <value>בדוק עדכונים</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>עבור לדף ההורדה</value>
+    <value>עבור לדף ההורדות</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>הגרסה האחרונה הזמינה:</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>יש לך את הגרסה האחרונה של SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>גודל היישום באחוזים</value>
+  <data name="Application size" xml:space="preserve">
+    <value>גודל יישום</value>
   </data>
 </root>

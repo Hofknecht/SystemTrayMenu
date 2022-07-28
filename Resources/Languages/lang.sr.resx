@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Милисекунде док се мени не затвори ако миш напусти мени</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Максимална ширина менија у пикселима</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Максимална ширина менија</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Мени остаје отворен</value>
@@ -247,7 +247,7 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Ивица изабраног елемента</value>
+    <value>Граница изабраног елемента</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Релативни именик</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Отворите директоријум апликације</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Максимална висина менија у пикселима</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Максимална висина менија</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Стрелац</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Користите икону из директоријума</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Величина</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Величине у процентима</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Граница менија</value>
@@ -373,7 +373,7 @@
     <value>Уклони директоријум</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Онли Филес</value>
+    <value>Само датотеке</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Обришите кеш ако је више од овог броја ставки</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Додајте пример директоријума „Старт мени“</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Висина реда у процентима</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Висине реда</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Заобљени углови</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Појављује се подмени</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Величина иконе у процентима</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Величина иконе</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Подршка СистемТраиМену</value>
@@ -481,7 +481,7 @@
     <value>Померајте се превлачењем</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Филтрирајте мени према типу датотеке, нпр.: *.еке|*.длл</value>
+    <value>Филтрирај мени према типу датотеке, нпр.: *.еке|*.длл</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>Прикажи број елемената</value>
@@ -517,7 +517,7 @@
     <value>Сортирано по врсти и датуму</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
-    <value>Сортирано по врсти и имену</value>
+    <value>Сортирано по врсти и називу</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Провери ажурирања</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Имате најновију верзију СистемТраиМену-а!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Величина апликације у процентима</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Величина апликације</value>
   </data>
 </root>

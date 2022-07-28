@@ -124,7 +124,7 @@
     <value>わかった</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>アプリの開始</value>
+    <value>アプリの起動</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>アプリを終了します</value>
@@ -217,10 +217,10 @@
     <value>マウスを置いたときにメニューが開くまでのミリ秒</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>マウスがメニューを離れた場合にメニューが閉じるまでのミリ秒</value>
+    <value>マウスがメニューを離れた場合、メニューが閉じるまでのミリ秒</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>メニューの最大幅（ピクセル単位）</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>メニューの最大幅</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>メニューは開いたままです</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>アプリケーションディレクトリを開く</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>メニューの最大の高さ（ピクセル単位）</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>メニューの最大の高さ</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>矢印</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>ディレクトリのアイコンを使用</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>サイズ</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>サイズ（パーセント）</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>メニューの境界</value>
@@ -340,7 +340,7 @@
     <value>非アクティブ化</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>アクティベート</value>
+    <value>有効化</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>エキスパート</value>
@@ -349,7 +349,7 @@
     <value>フォーカスが失われ、Enterキーが押された場合</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>メニューが再度アクティブ化されていない場合、メニューが閉じるまでのミリ秒</value>
+    <value>メニューが再度アクティブ化されない場合、メニューが閉じるまでのミリ秒</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>タスクバーに表示</value>
@@ -379,10 +379,10 @@
     <value>この数を超えるアイテムがある場合は、キャッシュをクリアします</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>サンプルディレクトリを追加する'スタートメニュー'</value>
+    <value>サンプルディレクトリを追加する「スタートメニュー」</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>行の高さ（パーセント）</value>
+  <data name="Row height" xml:space="preserve">
+    <value>行の高さ</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>丸い角</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>サブメニューが表示されます</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>アイコンサイズ（パーセント）</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>アイコンサイズ</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenuをサポートする</value>
@@ -463,7 +463,7 @@
     <value>ホットキーを他のインスタンスに送信する</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>日付で並べ替え</value>
+    <value>日付でソート</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
     <value>名前で並べ替え</value>
@@ -472,7 +472,7 @@
     <value>並べ替え</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>ドラッグアンドドロップで行要素をコピーします</value>
+    <value>ドラッグアンドドロップで行要素をコピーする</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>引っ張る</value>
@@ -487,10 +487,10 @@
     <value>要素の数を表示する</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>ディレクトリタイトルを上部に表示</value>
+    <value>上部にディレクトリタイトルを表示する</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>ファンクションキー「フォルダを開く」を表示</value>
+    <value>ファンクションキー「フォルダを開く」を表示する</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>ファンクションキー「ピンメニュー」を表示</value>
@@ -499,7 +499,7 @@
     <value>ファンクションキー「設定」を表示</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>ファンクションキーを表示'再起動'</value>
+    <value>ファンクションキーの表示「再起動」</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>検索バーを表示する</value>
@@ -514,7 +514,7 @@
     <value>インターネットショートカットアイコンのディレクトリ</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
-    <value>タイプと日付で並べ替え</value>
+    <value>タイプと日付でソート</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>タイプと名前で並べ替え</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>SystemTrayMenuの最新バージョンがあります！</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>アプリケーションサイズ（パーセント）</value>
+  <data name="Application size" xml:space="preserve">
+    <value>アプリケーションサイズ</value>
   </data>
 </root>

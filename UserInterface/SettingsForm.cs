@@ -129,12 +129,12 @@ namespace SystemTrayMenu.UserInterface
                 buttonGeneralDefault.Text = Translator.GetText("Default");
 
                 tabPageSizeAndLocation.Text = Translator.GetText("Size and location");
-                groupBoxSize.Text = Translator.GetText("Size");
-                labelSizeInPercent.Text = Translator.GetText("Application size in percent");
-                labelIconSizeInPercent.Text = Translator.GetText("Icon size in percent");
-                labelRowHeightInPercentage.Text = Translator.GetText("Row height in percent");
-                labelMaxMenuWidth.Text = Translator.GetText("Maximum menu width in pixels");
-                labelMaxMenuHeight.Text = Translator.GetText("Maximum menu height in pixels");
+                groupBoxSize.Text = Translator.GetText("Sizes in percent");
+                labelSizeInPercent.Text = Translator.GetText("Application size");
+                labelIconSizeInPercent.Text = Translator.GetText("Icon size");
+                labelRowHeightInPercentage.Text = Translator.GetText("Row height");
+                labelMaxMenuWidth.Text = Translator.GetText("Maximum menu width");
+                labelMaxMenuHeight.Text = Translator.GetText("Maximum menu height");
                 groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears");
                 radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
@@ -364,7 +364,7 @@ namespace SystemTrayMenu.UserInterface
 
             numericUpDownSizeInPercent.Minimum = 100;
             numericUpDownSizeInPercent.Maximum = 200;
-            numericUpDownSizeInPercent.Increment = 25;
+            numericUpDownSizeInPercent.Increment = 5;
             numericUpDownSizeInPercent.MouseWheel += NumericUpDown_MouseWheel;
             void NumericUpDown_MouseWheel(object sender, MouseEventArgs e)
             {
@@ -401,7 +401,7 @@ namespace SystemTrayMenu.UserInterface
 
             numericUpDownRowHeighteInPercentage.Minimum = 50;
             numericUpDownRowHeighteInPercentage.Maximum = 200;
-            numericUpDownRowHeighteInPercentage.Increment = 25;
+            numericUpDownRowHeighteInPercentage.Increment = 5;
             numericUpDownRowHeighteInPercentage.MouseWheel += NumericUpDown_MouseWheel;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
@@ -412,15 +412,15 @@ namespace SystemTrayMenu.UserInterface
                 numericUpDownRowHeighteInPercentage.Value = Settings.Default.RowHeighteInPercentage;
             }
 
-            numericUpDownMenuWidth.Minimum = 50;
-            numericUpDownMenuWidth.Maximum = 8000;
-            numericUpDownMenuWidth.Increment = 10;
-            numericUpDownMenuWidth.Value = Settings.Default.MaximumMenuWidth;
+            numericUpDownMenuWidth.Minimum = 25;
+            numericUpDownMenuWidth.Maximum = 400;
+            numericUpDownMenuWidth.Increment = 5;
+            numericUpDownMenuWidth.Value = Settings.Default.WidthMaxInPercent;
 
-            numericUpDownMenuHeight.Minimum = 200;
-            numericUpDownMenuHeight.Maximum = 4000;
-            numericUpDownMenuHeight.Increment = 10;
-            numericUpDownMenuHeight.Value = Settings.Default.MaximumMenuHeight;
+            numericUpDownMenuHeight.Minimum = 25;
+            numericUpDownMenuHeight.Maximum = 400;
+            numericUpDownMenuHeight.Increment = 5;
+            numericUpDownMenuHeight.Value = Settings.Default.HeightMaxInPercent;
 
             if (Settings.Default.UseCustomLocation)
             {
@@ -917,8 +917,8 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.RowHeighteInPercentage = (int)numericUpDownRowHeighteInPercentage.Value;
             }
 
-            Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
-            Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
+            Settings.Default.WidthMaxInPercent = (int)numericUpDownMenuWidth.Value;
+            Settings.Default.HeightMaxInPercent = (int)numericUpDownMenuHeight.Value;
 
             if (radioButtonUseCustomLocation.Checked)
             {
@@ -1257,8 +1257,8 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownSizeInPercent.Value = 100;
             numericUpDownIconSizeInPercent.Value = 100;
             numericUpDownRowHeighteInPercentage.Value = 100;
-            numericUpDownMenuWidth.Value = 400;
-            numericUpDownMenuHeight.Value = 450;
+            numericUpDownMenuWidth.Value = 100;
+            numericUpDownMenuHeight.Value = 100;
 
             radioButtonAppearAtTheBottomRight.Checked = false;
             radioButtonAppearAtTheBottomLeft.Checked = true;

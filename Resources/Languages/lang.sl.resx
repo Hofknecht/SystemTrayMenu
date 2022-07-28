@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekunde, dokler se meni ne zapre, če miška nato zapusti meni</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Največja širina menija v slikovnih pikah</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Največja širina menija</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Meni ostane odprt</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Odpri imenik aplikacij</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Največja višina menija v slikovnih pikah</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Največja višina menija</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Puščica</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Uporabi ikono iz imenika</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Velikost</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Velikosti v odstotkih</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Obroba menija</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Dodajte vzorčni imenik 'Meni Start'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Višina vrstice v odstotkih</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Višina vrstice</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Okrogli vogali</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Prikaže se podmeni</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Velikost ikone v odstotkih</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Velikost ikone</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Podpora SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Imate najnovejšo različico SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Velikost aplikacije v odstotkih</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Velikost aplikacije</value>
   </data>
 </root>

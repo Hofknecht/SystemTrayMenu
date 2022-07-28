@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso rápido</value>
+    <value>tecla de acceso directo</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisegundos hasta que el menú se cierre si el mouse sale del menú</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Ancho máximo del menú en píxeles</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Ancho máximo del menú</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>El menú permanece abierto</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Abra el directorio de la aplicación</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Altura máxima del menú en píxeles</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Altura máxima del menú</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Flecha</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Usar icono del directorio</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Tamaño</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Tamaños en porcentaje</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Borde del menú</value>
@@ -364,7 +364,7 @@
     <value>Rutas de directorio</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>Directorios</value>
+    <value>directorios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursivo</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Agregue el directorio de muestra 'Menú de inicio'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Altura de fila en porcentaje</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Altura de la fila</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Esquinas redondas</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Aparece el submenú</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Tamaño del icono en porcentaje</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Tamaño de ícono</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Soporte SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>¡Tienes la última versión de SystemTrayMenu!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Tamaño de la aplicación en porcentaje</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Tamaño de la aplicación</value>
   </data>
 </root>

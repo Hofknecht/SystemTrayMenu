@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Milisekundes, līdz izvēlne tiek aizvērta, ja pele pēc tam iziet no izvēlnes</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Maksimālais izvēlnes platums pikseļos</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maksimālais izvēlnes platums</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Izvēlne paliek atvērta</value>
@@ -250,7 +250,7 @@
     <value>Atlasītā elementa apmale</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
-    <value>Relatīvā direktorija</value>
+    <value>Relatīvais direktorijs</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
     <value>Saglabājiet konfigurācijas failu lietojumprogrammu direktorijā</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Atveriet lietojumprogrammu direktoriju</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Maksimālais izvēlnes augstums pikseļos</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maksimālais izvēlnes augstums</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Bultiņa</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Izmantojiet ikonu no direktorija</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Izmērs</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Izmēri procentos</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Izvēlnes robeža</value>
@@ -379,10 +379,10 @@
     <value>Notīriet kešatmiņu, ja vienumu skaits pārsniedz šo</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Pievienot parauga direktoriju "Sākt izvēlne"</value>
+    <value>Pievienot parauga direktoriju "Start Menu"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Rindas augstums procentos</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Rindas augstums</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Apaļi stūri</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Tiek parādīta apakšizvēlne</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Ikonas izmērs procentos</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikonas izmērs</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Atbalstiet SystemTrayMenu</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Jums ir jaunākā SystemTrayMenu versija!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Pieteikuma lielums procentos</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Lietojumprogrammas izmērs</value>
   </data>
 </root>

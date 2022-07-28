@@ -760,9 +760,11 @@ namespace SystemTrayMenu.UserInterface
             int dgvHeightNew = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
             int dgvHeightMax = screenHeightMax - (Height - dgv.Height);
 
-            if (dgvHeightMax > Properties.Settings.Default.MaximumMenuHeight)
+            int heightMaxInPixel = (int)(Scaling.Factor * Scaling.FactorByDpi *
+                450f * (Properties.Settings.Default.HeightMaxInPercent / 100));
+            if (dgvHeightMax > heightMaxInPixel)
             {
-                dgvHeightMax = Properties.Settings.Default.MaximumMenuHeight;
+                dgvHeightMax = heightMaxInPixel;
             }
 
             if (dgvHeightNew > dgvHeightMax)

@@ -219,8 +219,8 @@
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
     <value>Millisekundid kuni menüü sulgumiseni, kui hiir seejärel menüüst lahkub</value>
   </data>
-  <data name="Maximum menu width in pixels" xml:space="preserve">
-    <value>Menüü maksimaalne laius pikslites</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Menüü maksimaalne laius</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>Menüü jääb avatuks</value>
@@ -261,8 +261,8 @@
   <data name="Open application directory" xml:space="preserve">
     <value>Avage rakenduste kataloog</value>
   </data>
-  <data name="Maximum menu height in pixels" xml:space="preserve">
-    <value>Menüü maksimaalne kõrgus pikslites</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Menüü maksimaalne kõrgus</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Nool</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Kasutage kataloogi ikooni</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Suurus</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Suurused protsentides</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Menüü piir</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Lisa näidiskataloog "Startmenüü"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Rea kõrgus protsentides</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Rea kõrgus</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Ümarad nurgad</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Ilmub alammenüü</value>
   </data>
-  <data name="Icon size in percent" xml:space="preserve">
-    <value>Ikooni suurus protsentides</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikooni suurus</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Toetage SystemTrayMenu</value>
@@ -487,7 +487,7 @@
     <value>Näita elementide arvu</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Kuva kataloogi pealkiri üleval</value>
+    <value>Kuva kataloogi pealkiri ülaosas</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>Kuva funktsiooniklahvi 'Ava kaust'</value>
@@ -534,7 +534,7 @@
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Teil on SystemTrayMenu uusim versioon!</value>
   </data>
-  <data name="Application size in percent" xml:space="preserve">
-    <value>Rakenduse suurus protsentides</value>
+  <data name="Application size" xml:space="preserve">
+    <value>Rakenduse suurus</value>
   </data>
 </root>

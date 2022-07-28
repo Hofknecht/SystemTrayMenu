@@ -35,9 +35,11 @@ namespace SystemTrayMenu.Utilities
                 }
             }
 
-            if (widthMax > Properties.Settings.Default.MaximumMenuWidth)
+            int widthMaxInPixel = (int)(Scaling.Factor * Scaling.FactorByDpi *
+                400f * (Properties.Settings.Default.WidthMaxInPercent / 100));
+            if (widthMax > widthMaxInPixel)
             {
-                widthMax = Properties.Settings.Default.MaximumMenuWidth;
+                widthMax = widthMaxInPixel;
             }
 
             dgv.Columns[1].Width = (int)(widthMax + 0.5);
