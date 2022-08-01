@@ -27,7 +27,6 @@ namespace SystemTrayMenu.UserInterface
         private bool mouseDown;
         private Point lastLocation;
         private bool isSetSearchText;
-        private bool dgvHeightSet;
 
         internal Menu()
         {
@@ -768,14 +767,16 @@ namespace SystemTrayMenu.UserInterface
                 dgvHeightMax = heightMaxInPixel;
             }
 
+            tableLayoutPanelDgvAndScrollbar.SuspendLayout();
+            tableLayoutPanelMenu.SuspendLayout();
+            dgv.ScrollBars = ScrollBars.None;
             if (dgvHeightNew > dgvHeightMax)
             {
                 // Make all rows fit into the screen
-                customScrollbar.PaintEnable();
+                customScrollbar.PaintEnable(dgvHeightMax);
                 if (customScrollbar.Maximum != dgvHeightNew)
                 {
                     customScrollbar.Reset();
-                    customScrollbar.Height = dgvHeightMax;
                     customScrollbar.Minimum = 0;
                     customScrollbar.Maximum = dgvHeightNew;
                     customScrollbar.LargeChange = dgvHeightMax;
@@ -791,11 +792,12 @@ namespace SystemTrayMenu.UserInterface
                 ScrollbarVisible = false;
             }
 
-            if (!dgvHeightSet)
-            {
-                dgv.Height = dgvHeightNew;
-                dgvHeightSet = true;
-            }
+            dgv.Height = dgvHeightNew;
+            tableLayoutPanelMenu.ResumeLayout();
+            tableLayoutPanelDgvAndScrollbar.AutoScroll = false;
+            tableLayoutPanelDgvAndScrollbar.ResumeLayout();
+            tableLayoutPanelMenu.PerformLayout();
+            tableLayoutPanelDgvAndScrollbar.PerformLayout();
         }
 
         private void AdjustDataGridViewWidth()
@@ -809,11 +811,7 @@ namespace SystemTrayMenu.UserInterface
 
             int widthIcon = dgv.Columns[0].Width;
             int widthText = dgv.Columns[1].Width;
-            int widthScrollbar = 0;
-            if (customScrollbar.Enabled)
-            {
-                widthScrollbar = customScrollbar.Width;
-            }
+            int widthScrollbar = customScrollbar.Width;
 
             using Graphics gfx = labelTitle.CreateGraphics();
             gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;

@@ -30,8 +30,8 @@ namespace SystemTrayMenu.UserInterface
         private bool mouseStillClickedMoveUp = false;
         private bool mouseStillClickedMoveLarge = false;
         private int timerMouseStillClickedCounter = 0;
-        private bool paintEnabledWasCalled = false;
         private bool paintEnabled = false;
+        private int width;
 
         public CustomScrollbar()
         {
@@ -179,16 +179,12 @@ namespace SystemTrayMenu.UserInterface
         /// Show the control
         /// (workaround, because visible = false, was causing appearing scrollbars).
         /// </summary>
-        internal void PaintEnable()
+        /// <param name="newHeight">newHeight which to paint</param>
+        internal void PaintEnable(int newHeight)
         {
-            Enabled = true;
-            if (!paintEnabled)
-            {
-                paintEnabledWasCalled = true;
-            }
-
+            int newWidth = Math.Max(width, Width);
+            Size = new Size(newWidth, newHeight);
             paintEnabled = true;
-            Invalidate();
         }
 
         /// <summary>
@@ -197,14 +193,13 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         internal void PaintDisable()
         {
-            if (!paintEnabledWasCalled)
+            if (Width > 0)
             {
-                Enabled = false;
-                Size = new Size(0, 0);
+                width = Width;
             }
 
+            Size = new Size(0, 0);
             paintEnabled = false;
-            Invalidate();
         }
 
         protected override void Dispose(bool disposing)

@@ -63,7 +63,6 @@
             // 
             // tableLayoutPanelDgvAndScrollbar
             // 
-            this.tableLayoutPanelDgvAndScrollbar.AutoScroll = true;
             this.tableLayoutPanelDgvAndScrollbar.AutoSize = true;
             this.tableLayoutPanelDgvAndScrollbar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelDgvAndScrollbar.ColumnCount = 2;
@@ -196,9 +195,6 @@
             this.tableLayoutPanelMenu.Size = new System.Drawing.Size(159, 89);
             this.tableLayoutPanelMenu.TabIndex = 4;
             this.tableLayoutPanelMenu.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.DgvMouseWheel);
-            this.tableLayoutPanelMenu.MouseDown += Menu_MouseDown;
-            this.tableLayoutPanelMenu.MouseUp += Menu_MouseUp;
-            this.tableLayoutPanelMenu.MouseMove += Menu_MouseMove;
             // 
             // panelLine
             // 
@@ -240,9 +236,6 @@
             this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelBottom.Size = new System.Drawing.Size(153, 22);
             this.tableLayoutPanelBottom.TabIndex = 5;
-            this.tableLayoutPanelBottom.MouseDown += Menu_MouseDown;
-            this.tableLayoutPanelBottom.MouseUp += Menu_MouseUp;
-            this.tableLayoutPanelBottom.MouseMove += Menu_MouseMove;
             // 
             // pictureBoxRestart
             // 
@@ -328,7 +321,7 @@
             this.ClientSize = new System.Drawing.Size(302, 347);
             this.Controls.Add(this.tableLayoutPanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "App menu";
+            this.Name = "Menu";
             this.Opacity = 0.01D;
             this.Padding = new System.Windows.Forms.Padding(1);
             this.ShowInTaskbar = false;
