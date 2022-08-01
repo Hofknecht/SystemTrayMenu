@@ -762,7 +762,7 @@ namespace SystemTrayMenu.UserInterface
             int dgvHeightMax = screenHeightMax - (Height - dgv.Height);
 
             int heightMaxInPixel = (int)(Scaling.Factor * Scaling.FactorByDpi *
-                450f * (Properties.Settings.Default.HeightMaxInPercent / 100));
+                450f * (Properties.Settings.Default.HeightMaxInPercent / 100f));
             if (dgvHeightMax > heightMaxInPixel)
             {
                 dgvHeightMax = heightMaxInPixel;

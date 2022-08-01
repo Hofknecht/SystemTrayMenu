@@ -35,7 +35,7 @@ namespace SystemTrayMenu.Utilities
             }
 
             int widthMaxInPixel = (int)(Scaling.Factor * Scaling.FactorByDpi *
-                400f * (Properties.Settings.Default.WidthMaxInPercent / 100));
+                400f * (Properties.Settings.Default.WidthMaxInPercent / 100f));
             if (widthMax > widthMaxInPixel)
             {
                 widthMax = widthMaxInPixel;
