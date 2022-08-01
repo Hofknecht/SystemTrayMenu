@@ -61,7 +61,7 @@ namespace SystemTrayMenu
         {
             if (taskbarForm?.InvokeRequired == true)
             {
-                Dispose();
+                taskbarForm.Invoke(Dispose);
             }
             else
             {
