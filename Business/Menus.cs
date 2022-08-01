@@ -745,6 +745,7 @@ namespace SystemTrayMenu.Business
                 if (menu.Level == 0)
                 {
                     menu.ResetSearchText();
+                    menu.ResetHeight();
                     AdjustMenusSizeAndLocation();
                 }
             }
@@ -1391,6 +1392,7 @@ namespace SystemTrayMenu.Business
                 dgv.DataSource = dataTable;
 
                 hideSubmenuDuringRefreshSearch = false;
+                menus[0].ResetHeight();
                 menus[0].RefreshSearchText();
                 hideSubmenuDuringRefreshSearch = true;
             }
@@ -1429,6 +1431,7 @@ namespace SystemTrayMenu.Business
                 AddItemsToMenu(rowDatas, menus[0], out _, out _);
 
                 hideSubmenuDuringRefreshSearch = false;
+                menus[0].ResetHeight();
                 menus[0].RefreshSearchText();
                 hideSubmenuDuringRefreshSearch = true;
 

@@ -27,6 +27,7 @@ namespace SystemTrayMenu.UserInterface
         private bool mouseDown;
         private Point lastLocation;
         private bool isSetSearchText;
+        private bool dgvHeightSet;
 
         internal Menu()
         {
@@ -678,6 +679,11 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        internal void ResetHeight()
+        {
+            dgvHeightSet = false;
+        }
+
         internal void SetCounts(int foldersCount, int filesCount)
         {
             int filesAndFoldersCount = foldersCount + filesCount;
@@ -757,47 +763,35 @@ namespace SystemTrayMenu.UserInterface
                 row.Height = dgv.RowTemplate.Height;
             }
 
-            int dgvHeightNew = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
-            int dgvHeightMax = screenHeightMax - (Height - dgv.Height);
-
-            int heightMaxInPixel = (int)(Scaling.Factor * Scaling.FactorByDpi *
+            int dgvHeightByItems = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
+            int dgvHeightMaxByScreen = screenHeightMax - (Height - dgv.Height);
+            int dgvHeightMaxByOptions = (int)(Scaling.Factor * Scaling.FactorByDpi *
                 450f * (Properties.Settings.Default.HeightMaxInPercent / 100f));
-            if (dgvHeightMax > heightMaxInPixel)
+            int dgvHeightMax = Math.Min(dgvHeightMaxByScreen, dgvHeightMaxByOptions);
+            if (!dgvHeightSet)
             {
-                dgvHeightMax = heightMaxInPixel;
+                dgv.Height = Math.Min(dgvHeightByItems, dgvHeightMax);
+                dgvHeightSet = true;
             }
 
-            tableLayoutPanelDgvAndScrollbar.SuspendLayout();
-            tableLayoutPanelMenu.SuspendLayout();
-            dgv.ScrollBars = ScrollBars.None;
-            if (dgvHeightNew > dgvHeightMax)
+            if (dgvHeightByItems > dgvHeightMax)
             {
-                // Make all rows fit into the screen
-                customScrollbar.PaintEnable(dgvHeightMax);
-                if (customScrollbar.Maximum != dgvHeightNew)
+                ScrollbarVisible = true;
+                customScrollbar.PaintEnable(dgv.Height);
+                if (customScrollbar.Maximum != dgvHeightByItems)
                 {
                     customScrollbar.Reset();
                     customScrollbar.Minimum = 0;
-                    customScrollbar.Maximum = dgvHeightNew;
+                    customScrollbar.Maximum = dgvHeightByItems;
                     customScrollbar.LargeChange = dgvHeightMax;
                     customScrollbar.SmallChange = dgv.RowTemplate.Height;
                 }
-
-                dgvHeightNew = dgvHeightMax;
-                ScrollbarVisible = true;
             }
             else
             {
-                customScrollbar.PaintDisable();
                 ScrollbarVisible = false;
+                customScrollbar.PaintDisable();
             }
-
-            dgv.Height = dgvHeightNew;
-            tableLayoutPanelMenu.ResumeLayout();
-            tableLayoutPanelDgvAndScrollbar.AutoScroll = false;
-            tableLayoutPanelDgvAndScrollbar.ResumeLayout();
-            tableLayoutPanelMenu.PerformLayout();
-            tableLayoutPanelDgvAndScrollbar.PerformLayout();
         }
 
         private void AdjustDataGridViewWidth()
