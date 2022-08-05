@@ -91,7 +91,7 @@ namespace SystemTrayMenu.Helper
             aboutBox.AppMoreInfo += "#277 Jan S., #282 akuznets, #283 #284 #289 RuSieg, #285 #286 dao-net, #288 William P., #294 #295 #296 Stefan Mahrer, ";
             aboutBox.AppMoreInfo += "#225 #297 #299 #317 #321 #324 #330 #386 #390 #401 #402 #407 #409 #414 #416 #418 #428 #430 chip33, ";
             aboutBox.AppMoreInfo += "#298 phanirithvij, #306 wini2, #370 dna5589, #372 not-nef, #376 Michelle H., ";
-            aboutBox.AppMoreInfo += "#377 SoenkeHob, #380 #394 TransLucida, #384 boydfields, #386 visusys, #387 #411 yrctw" + Environment.NewLine;
+            aboutBox.AppMoreInfo += "#377 SoenkeHob, #380 #394 TransLucida, #384 #434 #435 boydfields, #386 visusys, #387 #411 yrctw" + Environment.NewLine;
             aboutBox.AppMoreInfo += @"
 Sponsors - Thank you!
 ------------------

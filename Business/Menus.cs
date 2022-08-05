@@ -8,12 +8,12 @@ namespace SystemTrayMenu.Business
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data;
-    using System.Diagnostics;
     using System.Drawing;
     using System.IO;
     using System.Linq;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
+    using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.UserInterface;
@@ -26,7 +26,6 @@ namespace SystemTrayMenu.Business
         private readonly Menu[] menus = new Menu[MenuDefines.MenusMax];
         private readonly BackgroundWorker workerMainMenu = new();
         private readonly List<BackgroundWorker> workersSubMenu = new();
-
         private readonly DgvMouseRow dgvMouseRow = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
@@ -88,7 +87,7 @@ namespace SystemTrayMenu.Business
                             if (IconReader.MainPreload)
                             {
                                 workerMainMenu.DoWork -= LoadMenu;
-                                menus[0] = Create(menuData, Path.GetFileName(Config.Path));
+                                menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name);
                                 menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
                                 Scaling.CalculateFactorByDpi(menus[0].GetDataGridView().CreateGraphics());
                                 IconReader.MainPreload = false;
@@ -153,7 +152,7 @@ namespace SystemTrayMenu.Business
                             Validity = MenuDataValidity.Valid,
                         };
 
-                        Menu menuLoading = Create(menuDataLoading, Path.GetFileName(rowData.Path));
+                        Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name);
                         menuLoading.IsLoadingMenu = true;
                         AdjustMenusSizeAndLocation();
                         menus[rowData.Level + 1] = menuLoading;
@@ -649,7 +648,7 @@ namespace SystemTrayMenu.Business
             string path = Config.Path;
             if (title == null)
             {
-                title = Path.GetFileName(menuData.RowDataParent.ResolvedPath);
+                title = new DirectoryInfo(menuData.RowDataParent.ResolvedPath).Name;
                 path = menuData.RowDataParent.ResolvedPath;
             }
 
