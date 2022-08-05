@@ -8,7 +8,6 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Forms;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
-    using Timer = System.Windows.Forms.Timer;
 
     internal class AppNotifyIcon : IDisposable
     {
