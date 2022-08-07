@@ -386,10 +386,9 @@ namespace SystemTrayMenu.UserInterface
 
             if (!Config.ShowSearchBar)
             {
-                tableLayoutPanelSearch.AutoSize = false;
-                tableLayoutPanelSearch.Height = 0;
                 textBoxSearch.AutoSize = false;
-                textBoxSearch.Height = 0;
+                textBoxSearch.Size = new Size(0, 0);
+                textBoxSearch.Margin = new Padding(0);
                 pictureBoxSearch.Visible = false;
                 panelLine.Visible = false;
             }

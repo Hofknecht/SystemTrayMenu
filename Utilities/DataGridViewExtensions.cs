@@ -4,6 +4,7 @@
 
 namespace SystemTrayMenu.Utilities
 {
+    using System;
     using System.Data;
     using System.Drawing;
     using System.Windows.Forms;
@@ -36,11 +37,7 @@ namespace SystemTrayMenu.Utilities
 
             int widthMaxInPixel = (int)(Scaling.Factor * Scaling.FactorByDpi *
                 400f * (Properties.Settings.Default.WidthMaxInPercent / 100f));
-            if (widthMax > widthMaxInPixel)
-            {
-                widthMax = widthMaxInPixel;
-            }
-
+            widthMax = Math.Min(widthMax, widthMaxInPixel);
             dgv.Columns[1].Width = (int)(widthMax + 0.5);
             double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
 
