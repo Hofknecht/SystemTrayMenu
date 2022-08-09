@@ -21,7 +21,7 @@ namespace SystemTrayMenu.Helper.Updater
         {
             if (newVersionForm != null)
             {
-                newVersionForm.Activate();
+                newVersionForm.HandleInvoke(newVersionForm.Activate);
             }
             else
             {
