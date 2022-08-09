@@ -125,33 +125,37 @@ namespace SystemTrayMenu.Helper.Updater
             label.Text = $"{Translator.GetText("Latest available version:")}    {GetLatestVersionName()}";
             newVersionForm.Controls.Add(label);
 
-            Button okButton = new();
-            okButton.DialogResult = DialogResult.OK;
-            okButton.Name = "okButton";
-            okButton.Location = new Point(
-                newVersionForm.ClientSize.Width - okButton.Size.Width - ClientPad,
-                newVersionForm.ClientSize.Height - okButton.Size.Height - ClientPad);
-            okButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            okButton.Text = Translator.GetText("OK");
-            newVersionForm.Controls.Add(okButton);
+            Button buttonOK = new();
+            buttonOK.DialogResult = DialogResult.OK;
+            buttonOK.Name = "buttonOK";
+            buttonOK.Location = new Point(
+                newVersionForm.ClientSize.Width - buttonOK.Size.Width - ClientPad,
+                newVersionForm.ClientSize.Height - buttonOK.Size.Height - ClientPad);
+            buttonOK.MinimumSize = new Size(75, 23);
+            buttonOK.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonOK.Text = Translator.GetText("OK");
+            buttonOK.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonOK.AutoSize = true;
+            newVersionForm.Controls.Add(buttonOK);
 
-            Button wwwButton = new();
-            wwwButton.DialogResult = DialogResult.Yes;
-            wwwButton.Name = "wwwButton";
-            wwwButton.Location = new Point(
-                newVersionForm.ClientSize.Width - wwwButton.Size.Width - ClientPad - okButton.Size.Width - ClientPad,
-                newVersionForm.ClientSize.Height - wwwButton.Size.Height - ClientPad);
-            wwwButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            wwwButton.Text = Translator.GetText("Go to download page");
-            wwwButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            wwwButton.AutoSize = true;
-            newVersionForm.Controls.Add(wwwButton);
+            Button buttonGoToDownloadPage = new();
+            buttonGoToDownloadPage.DialogResult = DialogResult.Yes;
+            buttonGoToDownloadPage.Name = "buttonGoToDownloadPage";
+            buttonGoToDownloadPage.Location = new Point(
+                newVersionForm.ClientSize.Width - buttonGoToDownloadPage.Size.Width - ClientPad - buttonOK.Size.Width - ClientPad,
+                newVersionForm.ClientSize.Height - buttonGoToDownloadPage.Size.Height - ClientPad);
+            buttonGoToDownloadPage.MinimumSize = new Size(75, 23);
+            buttonGoToDownloadPage.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonGoToDownloadPage.Text = Translator.GetText("Go to download page");
+            buttonGoToDownloadPage.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonGoToDownloadPage.AutoSize = true;
+            newVersionForm.Controls.Add(buttonGoToDownloadPage);
 
             TextBox textBox = new();
             textBox.Location = new Point(ClientPad, label.Location.Y + label.Size.Height + 5);
             textBox.Size = new Size(
                 newVersionForm.ClientSize.Width - (ClientPad * 2),
-                okButton.Location.Y - ClientPad - textBox.Location.Y);
+                buttonOK.Location.Y - ClientPad - textBox.Location.Y);
             textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox.Multiline = true;
             textBox.Text = GetChangelog();
@@ -161,7 +165,7 @@ namespace SystemTrayMenu.Helper.Updater
             textBox.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
             newVersionForm.Controls.Add(textBox);
 
-            newVersionForm.AcceptButton = okButton;
+            newVersionForm.AcceptButton = buttonOK;
             return newVersionForm.ShowDialog();
         }
 
