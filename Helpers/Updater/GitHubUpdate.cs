@@ -69,12 +69,12 @@ namespace SystemTrayMenu.Helper.Updater
         private static void RemoveCurrentAndOlderVersions()
         {
             int releasesCount = releases.Count;
-            Version version = Assembly.GetExecutingAssembly().GetName().Version;
-            string majorPlusMinorVersionString = $"{version.Major}.{version.Minor}.{version.Build}";
+            Version versionCurrent = Assembly.GetExecutingAssembly().GetName().Version;
             for (int i = 0; i < releasesCount; i++)
             {
-                string tag_name = releases[i]["tag_name"].ToString();
-                if (tag_name.Contains($"{majorPlusMinorVersionString}."))
+                string tagName = releases[i]["tag_name"].ToString();
+                Version versionGitHub = new Version(tagName.Replace("v", string.Empty));
+                if (versionGitHub.CompareTo(versionCurrent) < 1)
                 {
                     releases.RemoveRange(i, releasesCount - i);
                     break;
