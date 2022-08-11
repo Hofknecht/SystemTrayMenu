@@ -157,7 +157,7 @@
     <value>無法註冊快捷鍵。</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>中止</value>
+    <value>取消</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>一般</value>
@@ -166,7 +166,7 @@
     <value>快捷鍵</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>跟隨 Windows 啟動</value>
+    <value>隨 Windows 啟動</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>設定</value>
@@ -220,13 +220,13 @@
     <value>當滑鼠指標已離開選單，選單關閉的延遲時間 (毫秒)</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
-    <value>最大菜單寬度</value>
+    <value>最大選單寬度</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
     <value>保持開啟</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>選單開啟延遲</value>
+    <value>選單開啟前延遲</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>如果一個項目被點選</value>
@@ -253,28 +253,28 @@
     <value>對應目錄</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>將設定檔儲存在程式所在位置</value>
+    <value>將設定檔儲存在程式檔案位置</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
     <value>設定檔和日誌檔案</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>開啟應用程式位置</value>
+    <value>開啟應用程式檔案位置</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
-    <value>最大菜單高度</value>
+    <value>最大選單高度</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>箭頭</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>點選時箭頭的箭頭</value>
+    <value>點選時的箭頭</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>滑鼠游標懸浮時箭頭背景</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>點選時箭頭的背景頭的背景</value>
+    <value>點選時箭頭的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>滑鼠游標懸停時箭頭背景</value>
@@ -382,7 +382,7 @@
     <value>新增「開始」選單目錄</value>
   </data>
   <data name="Row height" xml:space="preserve">
-    <value>行高</value>
+    <value>列高</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>圓角外框</value>
@@ -406,10 +406,10 @@
     <value>自訂 (拖曳到適合的位置)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>元素</value>
+    <value>個項目</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>元素</value>
+    <value>個項目</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
     <value>在啟動時建立磁碟機的捷徑</value>
@@ -451,7 +451,7 @@
     <value>子選單顯示在</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>圖標大小</value>
+    <value>圖示大小</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>贊助 SystemTrayMenu</value>
@@ -481,7 +481,7 @@
     <value>透過滑動來捲動捲軸</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>依檔案類型來過濾選單，例如：*.exe|*.dll</value>
+    <value>依檔案類型來過濾選單 (例如：*.exe|*.dll)</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>在底部顯示項目的數量</value>
@@ -535,6 +535,6 @@
     <value>您擁有最新版本的 SystemTrayMenu！</value>
   </data>
   <data name="Application size" xml:space="preserve">
-    <value>應用規模</value>
+    <value>應用程式大小</value>
   </data>
 </root>
