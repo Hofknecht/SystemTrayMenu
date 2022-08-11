@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Mga Madalas Itanong</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Basahin ang FAQ at pagkatapos ay pumili ng root directory para sa SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Kung nawala ang focus at kung nasa menu pa rin ang mouse</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Kung nawala ang focus at nasa menu pa rin ang mouse</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milliseconds hanggang magbukas ang isang menu kapag ang mouse ay nasa ibabaw nito</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milliseconds hanggang sa magsara ang menu kung sa kasong ito ay aalis ang mouse sa menu</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milliseconds hanggang sa magsara ang menu kung aalis ang mouse sa menu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels maximum na lapad ng menu</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Pinakamataas na lapad ng menu</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Nananatiling bukas</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Nananatiling bukas ang menu</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Oras hanggang magbukas ang isang menu</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Kamag-anak na direktoryo</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>I-save ang configuration sa application directory</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>I-save ang configuration file sa application directory</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Configuration file at log file</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Configuration at log file</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Buksan ang direktoryo ng application</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Pixels maximum na taas ng menu</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Pinakamataas na taas ng menu</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Palaso</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Gamitin ang icon mula sa direktoryo</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Sukat</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Mga sukat sa porsyento</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Border ng menu</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Kung nawala ang focus at pinindot ang Enter key</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milliseconds hanggang sa magsara ang menu kung sa kasong ito ay hindi na-reactivate ang menu</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milliseconds hanggang sa magsara ang menu kung hindi muling na-activate ang menu</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Ipakita sa Taskbar</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Magdagdag ng sample na direktoryo na 'Start Menu'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Taas ng hilera sa porsyento</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Taas ng hilera</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Pabilog na sulok</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Lumilitaw ang pangunahing menu</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Lokasyon ng mouse (sa itaas ng icon ng Taskbar)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Custom (i-drag ito sa naaangkop na lugar)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Custom (i-drag ito sa naaangkop na posisyon)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>elemento</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Lumilitaw ang sub menu</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Sukat ng mga icon sa porsyento</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Laki ng icon</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suportahan ang SystemTrayMenu</value>
@@ -466,13 +466,13 @@
     <value>Pinagbukud-bukod ayon sa petsa</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Inayos ayon sa pangalan</value>
+    <value>Pinagbukud-bukod ayon sa pangalan</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Pag-uuri</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopyahin ang row item sa pamamagitan ng drag drop</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Kopyahin ang elemento ng row sa pamamagitan ng drag and drop</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>I-drag</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>I-filter ang menu ayon sa uri ng file hal.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Ipakita ang bilang ng mga elemento sa ibaba</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Ipakita ang bilang ng mga elemento</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Ipakita ang pamagat ng direktoryo sa itaas</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Mayroon kang pinakabagong bersyon ng SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Laki ng application</value>
   </data>
 </root>

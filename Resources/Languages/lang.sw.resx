@@ -174,8 +174,8 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>maswali yanayoulizwa mara kwa mara</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Soma Maswali Yanayoulizwa Mara kwa Mara na kisha uchague saraka ya mizizi kwa SystemTrayMenu.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>Soma Maswali Yanayoulizwa Mara kwa Mara na kisha uchague saraka ya mizizi ya SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Chagua saraka</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Chaguomsingi</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Ikiwa lengo limepotea na ikiwa panya bado iko kwenye menyu</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Ikiwa lengo limepotea na panya bado iko kwenye menyu</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisekunde hadi menyu ifunguke wakati kipanya iko juu yake</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekunde hadi menyu ifunge ikiwa katika kesi hii kipanya basi huacha menyu</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekunde hadi menyu ifunge ikiwa kipanya kisha huacha menyu</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Pixels upeo wa upana wa menyu</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Upeo wa upana wa menyu</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Inabaki wazi</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menyu inabaki wazi</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Muda hadi menyu ifunguliwe</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Saraka ya jamaa</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Hifadhi usanidi katika saraka ya programu</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Hifadhi faili ya usanidi katika saraka ya programu</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Faili ya usanidi na faili ya kumbukumbu</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Faili za usanidi na kumbukumbu</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Fungua saraka ya programu</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Saizi ya juu zaidi ya urefu wa menyu</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Upeo wa urefu wa menyu</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Mshale</value>
@@ -298,7 +298,7 @@
     <value>Slaidi huku ukiburuta</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Kitelezi wakati kipanya kinaelea juu yake 1</value>
+    <value>Kitelezi wakati panya inaelea juu yake 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Kitelezi wakati panya inaelea juu yake 2</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Tumia ikoni kutoka kwa saraka</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Ukubwa</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Ukubwa kwa asilimia</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Mpaka wa menyu</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Ikiwa lengo limepotea na kitufe cha Ingiza kilibofya</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisekunde hadi menyu ifunge ikiwa katika hali hii menyu haijawashwa tena</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisekunde hadi menyu ifunge ikiwa menyu haijawashwa tena</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Onyesha kwenye Taskbar</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Ongeza saraka ya sampuli 'Menyu ya Anza'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Urefu wa safu kwa asilimia</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Urefu wa safu</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Pembe za pande zote</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Menyu kuu inaonekana</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Mahali pa panya (Ikoni ya Juu ya Upau wa Task)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Mahali pa panya (juu ya ikoni ya Upau wa Task)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Maalum (iburute hadi mahali panapofaa)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Maalum (iburute kwa nafasi inayofaa)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>kipengele</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Menyu ndogo inaonekana</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Ukubwa wa ikoni kwa asilimia</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ukubwa wa ikoni</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Msaada SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Inapanga</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Nakili kipengee cha safu mlalo kupitia kuburuta</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Nakili kipengele cha safu mlalo kupitia kuburuta na kudondosha</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Buruta</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Chuja menyu kwa aina ya faili k.m.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Onyesha idadi ya vipengele hapa chini</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Onyesha idadi ya vipengele</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Onyesha kichwa cha saraka juu</value>
@@ -526,12 +526,15 @@
     <value>Nenda kwenye ukurasa wa kupakua</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
-    <value>Toleo linalopatikana hivi karibuni:</value>
+    <value>Toleo la hivi punde linalopatikana:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
     <value>Toleo jipya linapatikana!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Una toleo jipya zaidi la SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Ukubwa wa maombi</value>
   </data>
 </root>

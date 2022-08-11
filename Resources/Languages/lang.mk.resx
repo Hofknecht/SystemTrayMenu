@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Најчесто поставувани прашања</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Прочитајте ги најчесто поставуваните прашања и потоа изберете root директориум за SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Стандардно</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Ако фокусот е изгубен и ако глувчето сè уште е на менито</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Ако фокусот се изгуби и глувчето е сè уште на менито</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Милисекунди додека не се отвори мени кога глувчето е на него</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Милисекунди додека менито не се затвори ако во овој случај глувчето потоа го напушти менито</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Милисекунди додека менито не се затвори ако глувчето потоа го напушти менито</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Пиксели максимална ширина на менито</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Максимална ширина на менито</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Останува отворено</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Менито останува отворено</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Време додека не се отвори мени</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Релативен директориум</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Зачувајте ја конфигурацијата во директориумот со апликации</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Зачувајте ја конфигурациската датотека во директориумот со апликации</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Конфигурациска датотека и датотека за евиденција</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Датотеки за конфигурација и дневници</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Отворете го директориумот со апликации</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Пиксели максимална висина на менито</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Максимална висина на менито</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Стрелка</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Користете ја иконата од директориумот</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Големина</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Големини во проценти</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Граница на менито</value>
@@ -325,7 +325,7 @@
     <value>вчитување</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Проблем со врската со кратенки</value>
+    <value>Проблем со кратенка врска</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Ставката на која се однесува оваа кратенка е променета или преместена, така што оваа кратенка повеќе нема да работи правилно.</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Ако се изгуби фокусот и е притиснато копчето Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Милисекунди додека менито не се затвори ако во овој случај менито не се активира повторно</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Милисекунди додека менито не се затвори ако менито не се активира повторно</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Прикажи во лентата со задачи</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Додадете примерок директориум „Старт мени“</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Висина на редот во проценти</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Висина на редот</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Кружни агли</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Се појавува главното мени</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Локација на глувчето (над иконата на лентата со задачи)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Прилагодено (повлечете го на соодветното место)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Прилагодено (повлечете го на соодветната позиција)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>елемент</value>
@@ -448,10 +448,10 @@
     <value>Преклопување</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>Се појавува подменито</value>
+    <value>Се појавува подмени</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Големината на иконите во проценти</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Големина на иконата</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Поддршка SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Сортирање</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Копирај ја ставката од редот преку влечење паѓање</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Копирај го елементот на редот преку влечење и пуштање</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Повлечете</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Мени за филтрирање по тип на датотека, на пр.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Прикажи го бројот на елементи подолу</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Прикажи број на елементи</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Прикажи го насловот на директориумот на врвот</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Ја имате најновата верзија на SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Големина на апликацијата</value>
   </data>
 </root>

@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Συχνές Ερωτήσεις</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Διαβάστε τις Συχνές ερωτήσεις και, στη συνέχεια, επιλέξτε έναν ριζικό κατάλογο για το SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Προκαθορισμένο</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Εάν χαθεί η εστίαση και εάν το ποντίκι εξακολουθεί να βρίσκεται στο μενού</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Εάν χαθεί η εστίαση και το ποντίκι βρίσκεται ακόμα στο μενού</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Χιλιοστά του δευτερολέπτου μέχρι να ανοίξει ένα μενού όταν το ποντίκι είναι σε αυτό</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Χιλιοστά του δευτερολέπτου έως ότου κλείσει το μενού, αν σε αυτήν την περίπτωση το ποντίκι φύγει από το μενού</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Χιλιοστά του δευτερολέπτου μέχρι να κλείσει το μενού εάν το ποντίκι φύγει από το μενού</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Μέγιστο πλάτος μενού εικονοστοιχείων</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Μέγιστο πλάτος μενού</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Μένει ανοιχτό</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Το μενού παραμένει ανοιχτό</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Χρόνος μέχρι να ανοίξει ένα μενού</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Σχετικός κατάλογος</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Αποθήκευση διαμόρφωσης στον κατάλογο εφαρμογών</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Αποθηκεύστε το αρχείο διαμόρφωσης στον κατάλογο εφαρμογών</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Αρχείο διαμόρφωσης και αρχείο καταγραφής</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Αρχεία διαμόρφωσης και καταγραφής</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Ανοίξτε τον κατάλογο εφαρμογών</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Μέγιστο ύψος μενού εικονοστοιχείων</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Μέγιστο ύψος μενού</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Βέλος</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Χρησιμοποιήστε το εικονίδιο από τον κατάλογο</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Μέγεθος</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Μεγέθη σε ποσοστό</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Σύνορα μενού</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Εάν χαθεί η εστίαση και πατηθεί το πλήκτρο Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Χιλιοστά του δευτερολέπτου έως ότου κλείσει το μενού εάν σε αυτή την περίπτωση το μενού δεν ενεργοποιηθεί ξανά</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Χιλιοστά του δευτερολέπτου έως ότου κλείσει το μενού εάν το μενού δεν ενεργοποιηθεί ξανά</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Εμφάνιση στη γραμμή εργασιών</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Προσθήκη δείγματος καταλόγου "Μενού Έναρξης"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Ύψος σειράς σε ποσοστό</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Ύψος σειράς</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Στρογγυλές γωνίες</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Εμφανίζεται το κύριο μενού</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Τοποθεσία ποντικιού (πάνω από το εικονίδιο της γραμμής εργασιών)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Προσαρμοσμένο (σύρετέ το στο κατάλληλο μέρος)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Προσαρμοσμένο (σύρετέ το στην κατάλληλη θέση)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>στοιχείο</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Εμφανίζεται το υπομενού</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Το μέγεθος των εικονιδίων σε ποσοστό</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Μέγεθος εικονιδίου</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Υποστήριξη SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Ταξινόμηση</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Αντιγράψτε το στοιχείο σειράς μέσω μεταφοράς απόθεσης</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Αντιγράψτε το στοιχείο της σειράς μέσω μεταφοράς και απόθεσης</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Σέρνω</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Φιλτράρισμα μενού κατά τύπο αρχείου π.χ.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Εμφάνιση του αριθμού των στοιχείων παρακάτω</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Εμφάνιση του αριθμού των στοιχείων</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Εμφάνιση τίτλου καταλόγου στην κορυφή</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Έχετε την πιο πρόσφατη έκδοση του SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Μέγεθος εφαρμογής</value>
   </data>
 </root>

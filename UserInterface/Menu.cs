@@ -9,6 +9,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Drawing;
     using System.Globalization;
     using System.Reflection;
+    using System.Threading;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
@@ -385,10 +386,9 @@ namespace SystemTrayMenu.UserInterface
 
             if (!Config.ShowSearchBar)
             {
-                tableLayoutPanelSearch.AutoSize = false;
-                tableLayoutPanelSearch.Height = 0;
                 textBoxSearch.AutoSize = false;
-                textBoxSearch.Height = 0;
+                textBoxSearch.Size = new Size(0, 0);
+                textBoxSearch.Margin = new Padding(0);
                 pictureBoxSearch.Visible = false;
                 panelLine.Visible = false;
             }
@@ -678,6 +678,11 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        internal void ResetHeight()
+        {
+            dgvHeightSet = false;
+        }
+
         internal void SetCounts(int foldersCount, int filesCount)
         {
             int filesAndFoldersCount = foldersCount + filesCount;
@@ -697,6 +702,7 @@ namespace SystemTrayMenu.UserInterface
                 case Keys.Left:
                 case Keys.Right:
                 case Keys.Escape:
+                case Keys.Alt | Keys.F4:
                 case Keys.Control | Keys.F:
                 case Keys.Tab:
                 case Keys.Tab | Keys.Shift:
@@ -729,20 +735,17 @@ namespace SystemTrayMenu.UserInterface
                 factor = Properties.Settings.Default.RowHeighteInPercentageTouch / 100f;
             }
 
-            double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
-
-            if (factor < factorIconSizeInPercent)
-            {
-                factor = factorIconSizeInPercent;
-            }
-
             if (menuPredecessor == null)
             {
                 if (dgv.Tag == null && dgv.Rows.Count > 0)
                 {
-                    // Find row size based on content and apply factor
-                    dgv.AutoResizeRows();
-                    dgv.RowTemplate.Height = (int)(dgv.Rows[0].Height * factor);
+                    // dgv.AutoResizeRows(); slightly incorrect depending on dpi
+                    // 100% = 20 instead 21
+                    // 125% = 23 instead 27, 150% = 28 instead 32
+                    // 175% = 33 instead 37, 200% = 35 instead 42
+                    // #418 use 21 as default and scale it manually
+                    float rowHeightDefault = 21.24f * Scaling.FactorByDpi;
+                    dgv.RowTemplate.Height = (int)((rowHeightDefault * factor * Scaling.Factor) + 0.5);
                     dgv.Tag = true;
                 }
             }
@@ -759,41 +762,34 @@ namespace SystemTrayMenu.UserInterface
                 row.Height = dgv.RowTemplate.Height;
             }
 
-            int dgvHeightNew = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
-            int dgvHeightMax = screenHeightMax - (Height - dgv.Height);
-
-            if (dgvHeightMax > Properties.Settings.Default.MaximumMenuHeight)
+            int dgvHeightByItems = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
+            int dgvHeightMaxByScreen = screenHeightMax - (Height - dgv.Height);
+            int dgvHeightMaxByOptions = (int)(Scaling.Factor * Scaling.FactorByDpi *
+                450f * (Properties.Settings.Default.HeightMaxInPercent / 100f));
+            int dgvHeightMax = Math.Min(dgvHeightMaxByScreen, dgvHeightMaxByOptions);
+            if (!dgvHeightSet)
             {
-                dgvHeightMax = Properties.Settings.Default.MaximumMenuHeight;
+                dgv.Height = Math.Min(dgvHeightByItems, dgvHeightMax);
+                dgvHeightSet = true;
             }
 
-            if (dgvHeightNew > dgvHeightMax)
+            if (dgvHeightByItems > dgvHeightMax)
             {
-                // Make all rows fit into the screen
-                customScrollbar.PaintEnable();
-                if (customScrollbar.Maximum != dgvHeightNew)
+                ScrollbarVisible = true;
+                customScrollbar.PaintEnable(dgv.Height);
+                if (customScrollbar.Maximum != dgvHeightByItems)
                 {
                     customScrollbar.Reset();
-                    customScrollbar.Height = dgvHeightMax;
                     customScrollbar.Minimum = 0;
-                    customScrollbar.Maximum = dgvHeightNew;
+                    customScrollbar.Maximum = dgvHeightByItems;
                     customScrollbar.LargeChange = dgvHeightMax;
                     customScrollbar.SmallChange = dgv.RowTemplate.Height;
                 }
-
-                dgvHeightNew = dgvHeightMax;
-                ScrollbarVisible = true;
             }
             else
             {
-                customScrollbar.PaintDisable();
                 ScrollbarVisible = false;
-            }
-
-            if (!dgvHeightSet)
-            {
-                dgv.Height = dgvHeightNew;
-                dgvHeightSet = true;
+                customScrollbar.PaintDisable();
             }
         }
 
@@ -808,11 +804,7 @@ namespace SystemTrayMenu.UserInterface
 
             int widthIcon = dgv.Columns[0].Width;
             int widthText = dgv.Columns[1].Width;
-            int widthScrollbar = 0;
-            if (customScrollbar.Enabled)
-            {
-                widthScrollbar = customScrollbar.Width;
-            }
+            int widthScrollbar = customScrollbar.Width;
 
             using Graphics gfx = labelTitle.CreateGraphics();
             gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
@@ -1100,7 +1092,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                SettingsForm.ShowSingleInstance(this);
+                new Thread(SettingsForm.ShowSingleInstance).Start();
             }
         }
 

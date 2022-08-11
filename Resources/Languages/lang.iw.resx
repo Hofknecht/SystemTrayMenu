@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>שאלות נפוצות</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>קרא את השאלות הנפוצות ולאחר מכן בחר ספריית שורש עבור SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>בְּרִירַת מֶחדָל</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>אם הפוקוס אבד ואם העכבר עדיין בתפריט</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>אם הפוקוס אובד והעכבר עדיין בתפריט</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>אלפיות שניות עד שתפריט נפתח כאשר העכבר נמצא עליו</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>אלפיות שניות עד לסגירת התפריט אם במקרה זה העכבר עוזב את התפריט</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>אלפיות שניות עד שהתפריט ייסגר אם העכבר עוזב את התפריט</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>פיקסלים רוחב תפריט מקסימלי</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>רוחב תפריט מקסימלי</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>נשאר פתוח</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>התפריט נשאר פתוח</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>זמן עד לפתיחת תפריט</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>ספרייה יחסית</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>שמור את התצורה בספריית היישומים</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>שמור קובץ תצורה בספריית היישום</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>קובץ תצורה וקובץ יומן</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>קבצי תצורה ויומן</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>פתח את ספריית היישומים</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>גובה תפריט מקסימלי של פיקסלים</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>גובה תפריט מקסימלי</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>חֵץ</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>השתמש בסמל מהספרייה</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>גודל</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>מידות באחוזים</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>גבול התפריט</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>אם הפוקוס אובד והמקש Enter נלחץ</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>אלפיות שניות עד לסגירת התפריט אם במקרה זה התפריט אינו מופעל מחדש</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>אלפיות שניות עד לסגירת התפריט אם התפריט לא מופעל מחדש</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>הצג בשורת המשימות</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>הוסף ספרייה לדוגמה 'תפריט התחל'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>גובה השורה באחוזים</value>
+  <data name="Row height" xml:space="preserve">
+    <value>גובה השורה</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>פינות עגולות</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>התפריט הראשי מופיע</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>מיקום העכבר (מעל סמל שורת המשימות)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>מותאם אישית (גרור אותו למקום המתאים)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>מותאם אישית (גרור אותו למיקום המתאים)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>אֵלֵמֶנט</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>תפריט משנה מופיע</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>גודל הסמלים באחוזים</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>גודל סמל</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>תמיכה ב-SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>מִיוּן</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>העתק את פריט השורה באמצעות גרירה</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>העתק רכיב שורה באמצעות גרירה ושחרור</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>לִגרוֹר</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>תפריט סינון לפי סוג קובץ, למשל: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>הצג את ספירת האלמנטים למטה</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>הצג את ספירת האלמנטים</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>הצג את כותרת הספרייה בראש</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>יש לך את הגרסה האחרונה של SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>גודל יישום</value>
   </data>
 </root>

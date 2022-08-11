@@ -124,7 +124,7 @@
     <value>わかった</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>アプリの開始</value>
+    <value>アプリの起動</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>アプリを終了します</value>
@@ -174,8 +174,8 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>よくある質問</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>FAQを読み、SystemTrayMenuのルートディレクトリを選択します。</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>FAQを読んでから、SystemTrayMenuのルートディレクトリを選択してください。</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>ディレクトリを選択</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>デフォルト</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
     <value>フォーカスが失われ、マウスがまだメニュー上にある場合</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>マウスを置いたときにメニューが開くまでのミリ秒</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>この場合、マウスがメニューを離れた場合、メニューが閉じるまでのミリ秒</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>マウスがメニューを離れた場合、メニューが閉じるまでのミリ秒</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>ピクセルの最大メニュー幅</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>メニューの最大幅</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>開いたまま</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>メニューは開いたままです</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>メニューが開くまでの時間</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>相対ディレクトリ</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>アプリケーションディレクトリに設定を保存します</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>構成ファイルをアプリケーションディレクトリに保存します</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
+  <data name="Configuration and log files" xml:space="preserve">
     <value>構成ファイルとログファイル</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>アプリケーションディレクトリを開く</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>メニューの最大高さ</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>メニューの最大の高さ</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>矢印</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>ディレクトリのアイコンを使用</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>サイズ</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>サイズ（パーセント）</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>メニューの境界</value>
@@ -340,7 +340,7 @@
     <value>非アクティブ化</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>アクティベート</value>
+    <value>有効化</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>エキスパート</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>フォーカスが失われ、Enterキーが押された場合</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>この場合、メニューが再度アクティブ化されない場合、メニューが閉じるまでのミリ秒</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>メニューが再度アクティブ化されない場合、メニューが閉じるまでのミリ秒</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>タスクバーに表示</value>
@@ -379,10 +379,10 @@
     <value>この数を超えるアイテムがある場合は、キャッシュをクリアします</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>サンプルディレクトリを追加する'スタートメニュー'</value>
+    <value>サンプルディレクトリを追加する「スタートメニュー」</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>行の高さ（パーセント）</value>
+  <data name="Row height" xml:space="preserve">
+    <value>行の高さ</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>丸い角</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>メインメニューが表示されます</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>マウスの位置（タスクバーアイコンの上）</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>カスタム（適切な場所にドラッグします）</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>カスタム（適切な位置にドラッグします）</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>エレメント</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>サブメニューが表示されます</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>アイコンのサイズ（パーセント）</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>アイコンサイズ</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenuをサポートする</value>
@@ -463,7 +463,7 @@
     <value>ホットキーを他のインスタンスに送信する</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>日付で並べ替え</value>
+    <value>日付でソート</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
     <value>名前で並べ替え</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>並べ替え</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ドラッグアンドドロップで行アイテムをコピーする</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>ドラッグアンドドロップで行要素をコピーする</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>引っ張る</value>
@@ -483,14 +483,14 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ファイルタイプでメニューをフィルタリングします。例：*。exe | * .dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>以下に要素数を表示</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>要素の数を表示する</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>ディレクトリタイトルを上部に表示</value>
+    <value>上部にディレクトリタイトルを表示する</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>ファンクションキー「フォルダを開く」を表示</value>
+    <value>ファンクションキー「フォルダを開く」を表示する</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>ファンクションキー「ピンメニュー」を表示</value>
@@ -499,7 +499,7 @@
     <value>ファンクションキー「設定」を表示</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>ファンクションキーの表示'再起動'</value>
+    <value>ファンクションキーの表示「再起動」</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>検索バーを表示する</value>
@@ -514,7 +514,7 @@
     <value>インターネットショートカットアイコンのディレクトリ</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
-    <value>タイプと日付で並べ替え</value>
+    <value>タイプと日付でソート</value>
   </data>
   <data name="Sorted by type and name" xml:space="preserve">
     <value>タイプと名前で並べ替え</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>SystemTrayMenuの最新バージョンがあります！</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>アプリケーションサイズ</value>
   </data>
 </root>

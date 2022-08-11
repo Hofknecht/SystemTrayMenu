@@ -130,7 +130,7 @@
     <value>Iziet no lietotnes</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Direktorija</value>
+    <value>Katalogs</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
     <value>Direktorija tukša</value>
@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>bieži uzdotie jautājumi</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Izlasiet FAQ un pēc tam izvēlieties SystemTrayMenu saknes direktoriju.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Noklusējums</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
     <value>Ja fokuss ir zaudēts un pele joprojām atrodas izvēlnē</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisekundes, līdz tiek atvērta izvēlne, kad uz tās ir pele</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja šajā gadījumā pele iziet no izvēlnes</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja pele pēc tam iziet no izvēlnes</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Maksimālais izvēlnes platums pikseļos</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Maksimālais izvēlnes platums</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Paliek atvērts</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Izvēlne paliek atvērta</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Laiks līdz izvēlnes atvēršanai</value>
@@ -250,19 +250,19 @@
     <value>Atlasītā elementa apmale</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
-    <value>Relatīvā direktorija</value>
+    <value>Relatīvais direktorijs</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Saglabājiet konfigurāciju lietojumprogrammu direktorijā</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Saglabājiet konfigurācijas failu lietojumprogrammu direktorijā</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Konfigurācijas fails un žurnālfails</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Konfigurācijas un žurnālfaili</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Atveriet lietojumprogrammu direktoriju</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Maksimālais izvēlnes augstums pikseļos</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Maksimālais izvēlnes augstums</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Bultiņa</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Izmantojiet ikonu no direktorija</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Izmērs</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Izmēri procentos</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Izvēlnes robeža</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Ja fokuss ir zaudēts un tika nospiests taustiņš Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja šajā gadījumā izvēlne netiek atkārtoti aktivizēta</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisekundes, līdz izvēlne tiek aizvērta, ja izvēlne netiek atkārtoti aktivizēta</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Rādīt uzdevumjoslā</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Pievienot parauga direktoriju "Start Menu"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Rindas augstums procentos</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Rindas augstums</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Apaļi stūri</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Parādās galvenā izvēlne</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Peles atrašanās vieta (virs uzdevumjoslas ikonas)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Pielāgots (velciet to uz atbilstošo vietu)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Pielāgots (velciet to uz atbilstošo pozīciju)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>elements</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Tiek parādīta apakšizvēlne</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Ikonu lielums procentos</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikonas izmērs</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Atbalstiet SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Šķirošana</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopēt rindas vienumu, nolaižot</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Kopēt rindas elementu, velkot un nometot</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Velciet</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrēšanas izvēlne pēc faila veida, piemēram: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Tālāk parādīt elementu skaitu</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Rādīt elementu skaitu</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Rādīt direktorijas nosaukumu augšpusē</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Jums ir jaunākā SystemTrayMenu versija!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Lietojumprogrammas izmērs</value>
   </data>
 </root>

@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>తరచుగా అడుగు ప్రశ్నలు</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>తరచుగా అడిగే ప్రశ్నలను చదివి, ఆపై SystemTrayMenu కోసం రూట్ డైరెక్టరీని ఎంచుకోండి.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>డిఫాల్ట్</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>దృష్టి పోయినట్లయితే మరియు మౌస్ ఇప్పటికీ మెనులో ఉంటే</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>ఫోకస్ కోల్పోయి, మౌస్ ఇప్పటికీ మెనులో ఉంటే</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>మౌస్ దానిపై ఉన్నప్పుడు మెను తెరవబడే వరకు మిల్లీసెకన్లు</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>ఈ సందర్భంలో మౌస్ మెను నుండి నిష్క్రమిస్తే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>మౌస్ మెను నుండి నిష్క్రమిస్తే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>పిక్సెల్‌ల గరిష్ట మెను వెడల్పు</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>గరిష్ట మెను వెడల్పు</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>తెరిచి ఉంటుంది</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>మెనూ తెరిచి ఉంటుంది</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>మెను తెరవడానికి సమయం</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>సంబంధిత డైరెక్టరీ</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>అప్లికేషన్ డైరెక్టరీలో కాన్ఫిగరేషన్‌ను సేవ్ చేయండి</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>అప్లికేషన్ డైరెక్టరీలో కాన్ఫిగరేషన్ ఫైల్‌ను సేవ్ చేయండి</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>కాన్ఫిగరేషన్ ఫైల్ మరియు లాగ్ ఫైల్</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>కాన్ఫిగరేషన్ మరియు లాగ్ ఫైల్స్</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>అప్లికేషన్ డైరెక్టరీని తెరవండి</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>పిక్సెల్‌ల గరిష్ట మెను ఎత్తు</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>గరిష్ట మెను ఎత్తు</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>బాణం</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>డైరెక్టరీ నుండి చిహ్నాన్ని ఉపయోగించండి</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>పరిమాణం</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>శాతంలో పరిమాణాలు</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>మెను అంచు</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>ఫోకస్ కోల్పోయి, ఎంటర్ కీని నొక్కితే</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>ఈ సందర్భంలో మెను మళ్లీ సక్రియం చేయకపోతే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>మెను మళ్లీ సక్రియం చేయకపోతే మెను మూసివేయబడే వరకు మిల్లీసెకన్లు</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>టాస్క్‌బార్‌లో చూపించు</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>నమూనా డైరెక్టరీని జోడించండి 'ప్రారంభ మెనూ'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>శాతంలో అడ్డు వరుస ఎత్తు</value>
+  <data name="Row height" xml:space="preserve">
+    <value>వరుస ఎత్తు</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>రౌండ్ మూలలు</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>ప్రధాన మెనూ కనిపిస్తుంది</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>మౌస్ స్థానం (టాస్క్‌బార్ చిహ్నం పైన)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>కస్టమ్ (దీన్ని తగిన ప్రదేశానికి లాగండి)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>కస్టమ్ (దీన్ని తగిన స్థానానికి లాగండి)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>మూలకం</value>
@@ -448,10 +448,10 @@
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>ఉప మెనూ కనిపిస్తుంది</value>
+    <value>సబ్ మెనూ కనిపిస్తుంది</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>శాతంలో చిహ్నాల పరిమాణం</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>చిహ్నం పరిమాణం</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>మద్దతు SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>క్రమబద్ధీకరణ</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>డ్రాగ్ డ్రాప్ ద్వారా అడ్డు వరుస అంశాన్ని కాపీ చేయండి</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>డ్రాగ్ మరియు డ్రాప్ ద్వారా అడ్డు వరుస మూలకాన్ని కాపీ చేయండి</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>లాగండి</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ఫైల్ రకం ద్వారా మెనుని ఫిల్టర్ చేయండి ఉదా: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>దిగువ మూలకాల సంఖ్యను చూపు</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>మూలకాల సంఖ్యను చూపు</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>ఎగువన డైరెక్టరీ శీర్షికను చూపు</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>మీరు SystemTrayMenu యొక్క తాజా సంస్కరణను కలిగి ఉన్నారు!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>అప్లికేషన్ పరిమాణం</value>
   </data>
 </root>

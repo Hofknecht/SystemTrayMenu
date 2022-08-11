@@ -174,14 +174,14 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>întrebări frecvente</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Citiți întrebările frecvente și apoi alegeți un director rădăcină pentru SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Selectați directorul</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Directorul dvs. rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
+    <value>Directorul tău rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Mod implicit</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Dacă focalizarea este pierdută și dacă mouse-ul este încă în meniu</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Dacă focalizarea este pierdută și mouse-ul este încă în meniu</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisecunde până când se deschide un meniu când mouse-ul este pe el</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Milisecunde până când meniul se închide dacă în acest caz mouse-ul părăsește meniul</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Milisecunde până când meniul se închide dacă mouse-ul părăsește meniul</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Lățimea maximă a meniului în pixeli</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Lățimea maximă a meniului</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Rămâne deschis</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Meniul rămâne deschis</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Timp până când se deschide un meniu</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Director relativ</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Salvați configurația în directorul aplicației</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Salvați fișierul de configurare în directorul aplicației</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Fișier de configurare și fișier jurnal</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Fișiere de configurare și jurnal</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Deschideți directorul aplicației</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Înălțimea maximă în pixeli a meniului</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Înălțimea maximă a meniului</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Săgeată</value>
@@ -306,14 +306,14 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Utilizați pictograma din director</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>mărimea</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Dimensiuni în procente</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Marginea meniului</value>
+    <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>icoane</value>
+    <value>Pictograme</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>Setați prin meniul contextual</value>
@@ -328,7 +328,7 @@
     <value>Problemă cu legătura rapidă</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Elementul la care se referă această comandă rapidă a fost modificat sau mutat, astfel încât această comandă rapidă nu va mai funcționa corect.</value>
+    <value>Elementul la care se referă această comandă rapidă a fost schimbat sau mutat, așa că această comandă rapidă nu va mai funcționa corect.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Deschide directorul</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Dacă focalizarea este pierdută și tasta Enter a fost apăsată</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Milisecunde până când meniul se închide dacă în acest caz meniul nu este reactivat</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Milisecunde până când meniul se închide dacă meniul nu este reactivat</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Afișați în bara de activități</value>
@@ -376,13 +376,13 @@
     <value>Doar Fișiere</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Goliți memoria cache dacă este mai mare de acest număr de articole</value>
+    <value>Goliți memoria cache dacă este mai mare de acest număr de elemente</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Adăugați exemplu de director „Start Menu”</value>
+    <value>Adăugați exemplu de director „Meniu Start”</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Înălțimea rândului în procente</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Înălțimea rândului</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Colțuri rotunjite</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Apare meniul principal</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
-    <value>Locația mouse-ului (deasupra pictogramei Barei de activități)</value>
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
+    <value>Locația mouse-ului (deasupra pictogramei Bara de activități)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Personalizat (trageți-l în locul potrivit)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Personalizat (trageți-l în poziția corespunzătoare)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>element</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Apare submeniul</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Dimensiunea pictogramelor în procente</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Dimensiunea pictogramei</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suport SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Triere</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Copiați elementul rând prin glisare</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Copiați elementul rând prin glisare și plasare</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Trage</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrați meniul după tipul de fișier, de exemplu: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Arată numărul de elemente de mai jos</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Arată numărul de elemente</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Afișați titlul directorului în partea de sus</value>
@@ -511,7 +511,7 @@
     <value>Afișați suprapunerea linkului</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Director cu pictograme pentru comenzi rapide pe Internet</value>
+    <value>Director cu pictograme de comenzi rapide pe Internet</value>
   </data>
   <data name="Sorted by type and date" xml:space="preserve">
     <value>Sortate după tip și dată</value>
@@ -532,6 +532,9 @@
     <value>Noua versiune disponibila!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
-    <value>Ai cea mai recentă versiune a SystemTrayMenu!</value>
+    <value>Aveți cea mai recentă versiune a SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Dimensiunea aplicației</value>
   </data>
 </root>

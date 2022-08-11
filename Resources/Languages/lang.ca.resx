@@ -174,8 +174,8 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Preguntes freqüents</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Llegiu les PMF i, a continuació, trieu un directori arrel per al SystemTrayMenu.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>Llegiu les PMF i trieu un directori arrel per al SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Seleccioneu el directori</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Per defecte</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Si es perd el focus i si el ratolí encara està al menú</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Si es perd el focus i el ratolí encara està al menú</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Mil·lisegons fins que s'obre un menú quan hi ha el ratolí</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Mil·lisegons fins que es tanqui el menú si en aquest cas el ratolí surt del menú</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Mil·lisegons fins que el menú es tanqui si el ratolí surt del menú</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Amplada màxima del menú en píxels</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Amplada màxima del menú</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Es manté obert</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>El menú continua obert</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Temps fins que s'obri un menú</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Directori relatiu</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Desa la configuració al directori de l'aplicació</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Desa el fitxer de configuració al directori de l'aplicació</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Fitxer de configuració i fitxer de registre</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Fitxers de configuració i registre</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Obriu el directori d'aplicacions</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Alçada màxima del menú en píxels</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Alçada màxima del menú</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Fletxa</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Utilitza la icona del directori</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Mida</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Mides en percentatge</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Vora del menú</value>
@@ -346,10 +346,10 @@
     <value>Expert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Si es perd el focus i es prem la tecla Enter</value>
+    <value>Si es perd el focus i es premeu la tecla Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Mil·lisegons fins que es tanqui el menú si en aquest cas el menú no es reactiva</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Mil·lisegons fins que el menú es tanqui si el menú no es reactiva</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Mostra a la barra de tasques</value>
@@ -379,10 +379,10 @@
     <value>Esborra la memòria cau si hi ha més d'aquest nombre d'elements</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Afegeix el directori de mostra "Menú Inici"</value>
+    <value>Afegeix el directori d'exemple "Menú Inici"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Alçada de fila en percentatge</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Alçada de fila</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Cantons arrodonits</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Apareix el menú principal</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Ubicació del ratolí (a sobre de la icona de la barra de tasques)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Personalitzat (arrossegar-lo al lloc adequat)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Personalitzat (arrossegar-lo a la posició adequada)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>element</value>
@@ -424,7 +424,7 @@
     <value>Fitxers i directoris ocults</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>No mostris mai</value>
+    <value>No mostrar mai</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Mida i ubicació</value>
@@ -442,7 +442,7 @@
     <value>Al costat de l'anterior</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Compensació per píxels</value>
+    <value>Compensació de píxels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Superposició</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Apareix el submenú</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Mida de les icones en percentatge</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Mida de la icona</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Suport SystemTrayMenu</value>
@@ -471,20 +471,20 @@
   <data name="Sorting" xml:space="preserve">
     <value>Classificació</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Copieu l'element de fila arrossegant i deixant anar</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Copia l'element de fila arrossegant i deixant anar</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb el dit</value>
+    <value>Desplaceu-vos amb lliscar</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Mostra el nombre d'elements a continuació</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Mostra el recompte d'elements</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Mostra el títol del directori a la part superior</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Tens la darrera versió de SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Mida de l'aplicació</value>
   </data>
 </root>

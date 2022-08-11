@@ -63,7 +63,6 @@
             // 
             // tableLayoutPanelDgvAndScrollbar
             // 
-            this.tableLayoutPanelDgvAndScrollbar.AutoScroll = true;
             this.tableLayoutPanelDgvAndScrollbar.AutoSize = true;
             this.tableLayoutPanelDgvAndScrollbar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelDgvAndScrollbar.ColumnCount = 2;
@@ -322,7 +321,7 @@
             this.ClientSize = new System.Drawing.Size(302, 347);
             this.Controls.Add(this.tableLayoutPanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "App menu";
+            this.Name = "Menu";
             this.Opacity = 0.01D;
             this.Padding = new System.Windows.Forms.Padding(1);
             this.ShowInTaskbar = false;

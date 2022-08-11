@@ -89,6 +89,7 @@ namespace SystemTrayMenu.Handler
                 case Keys.Up:
                 case Keys.Down:
                 case Keys.Escape:
+                case Keys.Alt | Keys.F4:
                     SelectByKey(keys);
                     break;
                 case Keys.Control | Keys.F:
@@ -374,6 +375,7 @@ namespace SystemTrayMenu.Handler
 
                     break;
                 case Keys.Escape:
+                case Keys.Alt | Keys.F4:
                     RowDeselected(iRowBefore, dgvBefore);
                     iMenuKey = 0;
                     iRowKey = -1;

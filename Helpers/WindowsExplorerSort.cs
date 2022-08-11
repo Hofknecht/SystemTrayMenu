@@ -5,7 +5,6 @@
 namespace SystemTrayMenu.Helper
 {
     using System.Collections.Generic;
-    using System.IO;
 
     internal class WindowsExplorerSort : IComparer<string>
     {

@@ -159,7 +159,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("125")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public int SizeInPercent
         {
             get
@@ -223,32 +223,32 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("400")]
-        public int MaximumMenuWidth
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int WidthMaxInPercent
         {
             get
             {
-                return ((int)(this["MaximumMenuWidth"]));
+                return ((int)(this["WidthMaxInPercent"]));
             }
             set
             {
-                this["MaximumMenuWidth"] = value;
+                this["WidthMaxInPercent"] = value;
             }
         }
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("450")]
-        public int MaximumMenuHeight
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int HeightMaxInPercent
         {
             get
             {
-                return ((int)(this["MaximumMenuHeight"]));
+                return ((int)(this["HeightMaxInPercent"]));
             }
             set
             {
-                this["MaximumMenuHeight"] = value;
+                this["HeightMaxInPercent"] = value;
             }
         }
 

@@ -4,9 +4,9 @@
 
 namespace SystemTrayMenu.Utilities
 {
+    using System;
     using System.Data;
     using System.Drawing;
-    using System.Linq;
     using System.Windows.Forms;
     using SystemTrayMenu.DataClasses;
 
@@ -20,13 +20,13 @@ namespace SystemTrayMenu.Utilities
         /// <param name="dgv">datagridview.</param>
         internal static void FastAutoSizeColumns(this DataGridView dgv)
         {
-            using Graphics gfx = dgv.CreateGraphics();
-            gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            using Graphics graphics = dgv.CreateGraphics();
+            graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             float widthMax = WidthMin;
             DataTable data = (DataTable)dgv.DataSource;
             foreach (DataRow row in data.Rows)
             {
-                float checkWidth = gfx.MeasureString(
+                float checkWidth = graphics.MeasureString(
                     ((RowData)row[2]).Text + "___",
                     dgv.RowTemplate.DefaultCellStyle.Font).Width;
                 if (checkWidth > widthMax)
@@ -35,19 +35,15 @@ namespace SystemTrayMenu.Utilities
                 }
             }
 
-            if (widthMax > Properties.Settings.Default.MaximumMenuWidth)
-            {
-                widthMax = Properties.Settings.Default.MaximumMenuWidth;
-            }
-
+            int widthMaxInPixel = (int)(Scaling.Factor * Scaling.FactorByDpi *
+                400f * (Properties.Settings.Default.WidthMaxInPercent / 100f));
+            widthMax = Math.Min(widthMax, widthMaxInPixel);
             dgv.Columns[1].Width = (int)(widthMax + 0.5);
-            string stringWithWidthLikeIcon = "____";
-            float width0 = gfx.MeasureString(
-                stringWithWidthLikeIcon,
-                dgv.RowTemplate.DefaultCellStyle.Font).Width;
-
             double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
-            dgv.Columns[0].Width = (int)(width0 * factorIconSizeInPercent);
+
+            // IcoWidth 100% = 21px, 175% is 33, +3+2 is padding from ColumnIcon
+            float icoWidth = (16 * Scaling.FactorByDpi) + 5;
+            dgv.Columns[0].Width = (int)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
         }
     }
 }

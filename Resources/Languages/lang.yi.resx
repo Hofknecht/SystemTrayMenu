@@ -174,8 +174,8 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>אָפט געשטעלטע פֿראגן</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>לייענען די FAQ און דעמאָלט קלייַבן אַ וואָרצל וועגווייַזער פֿאַר די SystemTrayMenu.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>לייענען די FAQ און דעמאָלט קלייַבן אַ וואָרצל וועגווייַזער פֿאַר SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>אויסקלייַבן וועגווייַזער</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>פעליקייַט</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>אויב דער פאָקוס איז פאַרפאַלן און אויב די מויז איז נאָך אויף די מעניו</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>אויב דער פאָקוס איז פאַרפאַלן און די מויז איז נאָך אויף די מעניו</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>מיליסעקאַנדז ביז אַ מעניו אָפּענס ווען די מויז איז אויף עס</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב אין דעם פאַל די מויז דעמאָלט בלעטער די מעניו</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב די מויז דעמאָלט בלעטער די מעניו</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>פּיקסעלס מאַקסימום מעניו ברייט</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>מאַקסימום מעניו ברייט</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>בלײַבט אָפֿן</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>מעניו סטייז עפענען</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>צייט ביז אַ מעניו אָפּענס</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>קאָרעוו וועגווייַזער</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>היט קאַנפיגיעריישאַן אין אַפּלאַקיישאַן וועגווייַזער</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>היט קאַנפיגיעריישאַן טעקע אין אַפּלאַקיישאַן וועגווייַזער</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>קאָנפיגוראַטיאָן טעקע און קלאָץ טעקע</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>קאָנפיגוראַטיאָן און קלאָץ טעקעס</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>עפענען אַפּלאַקיישאַן וועגווייַזער</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>פּיקסעלס מאַקסימום מעניו הייך</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>מאַקסימום מעניו הייך</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>פייַל</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>ניצן ייקאַן פון וועגווייַזער</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>גרייס</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>סיזעס אין פּראָצענט</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>גרענעץ פון מעניו</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>אויב דער פאָקוס איז פאַרפאַלן און די אַרייַן key איז געדריקט</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב אין דעם פאַל די מעניו איז נישט ריאַקטיווייטיד</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>מיליסעקאַנדז ביז די מעניו קלאָוזיז אויב די מעניו איז נישט ריאַקטיווייטיד</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ווייַזן אין טאַסקבאַר</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>לייג מוסטער וועגווייַזער 'אָנהייב מעניו'</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>רודערן הייך אין פּראָצענט</value>
+  <data name="Row height" xml:space="preserve">
+    <value>רודערן הייך</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>קייַלעכיק עקן</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>הויפּט מעניו אויס</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>מויז אָרט (אויבן טאַסקבאַר בילדל)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>מנהג (שלעפּן עס צו די צונעמען אָרט)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>מנהג (שלעפּן עס צו די צונעמען שטעלע)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>עלעמענט</value>
@@ -448,10 +448,10 @@
     <value>אָוווערלאַפּינג</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>אונטער מעניו איז ארויס</value>
+    <value>סוב מעניו איז ארויס</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>גרייס פון די ייקאַנז אין פּראָצענט</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>בילדל גרייס</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>שטיצן SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>סאָרטינג</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>נאָכמאַכן רודערן נומער דורך שלעפּן קאַפּ</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>נאָכמאַכן רודערן עלעמענט דורך שלעפּן און קאַפּ</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>שלעפּן</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>פילטער מעניו לויט טעקע טיפּ, למשל: *.עקסע|*.דלל</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>ווייַזן ציילן פון עלעמענטן אונטן</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>ווייַזן ציילן פון עלעמענטן</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>ווייַז דער טיטל פון דער Directory אויבן</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>איר האָט די לעצטע ווערסיע פון ​​SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>אַפּפּליקאַטיאָן גרייס</value>
   </data>
 </root>

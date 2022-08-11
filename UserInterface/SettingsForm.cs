@@ -7,7 +7,6 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Drawing;
-    using System.Globalization;
     using System.IO;
     using System.Reflection;
     using System.Text;
@@ -109,9 +108,9 @@ namespace SystemTrayMenu.UserInterface
                 buttonChangeFolder.Text = Translator.GetText("Changing directory");
                 buttonOpenFolder.Text = Translator.GetText("Open directory");
                 checkBoxSetFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
-                groupBoxConfigAndLogfile.Text = Translator.GetText("Configuration file and log file");
+                groupBoxConfigAndLogfile.Text = Translator.GetText("Configuration and log files");
                 buttonChangeRelativeFolder.Text = Translator.GetText("Relative directory");
-                checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration in application directory");
+                checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration file in application directory");
                 checkBoxSaveLogFileInApplicationDirectory.Text = Translator.GetText("Saving log file in application directory");
                 buttonOpenAssemblyLocation.Text = Translator.GetText("Open application directory");
                 groupBoxAutostart.Text = Translator.GetText("App start");
@@ -129,16 +128,16 @@ namespace SystemTrayMenu.UserInterface
                 buttonGeneralDefault.Text = Translator.GetText("Default");
 
                 tabPageSizeAndLocation.Text = Translator.GetText("Size and location");
-                groupBoxSize.Text = Translator.GetText("Size");
-                labelSizeInPercent.Text = $"% {Translator.GetText("Size")}";
-                labelIconSizeInPercent.Text = Translator.GetText("Size of the icons in percent");
-                labelRowHeightInPercentage.Text = Translator.GetText("Row height in percent");
-                labelMaxMenuWidth.Text = Translator.GetText("Pixels maximum menu width");
-                labelMaxMenuHeight.Text = Translator.GetText("Pixels maximum menu height");
+                groupBoxSize.Text = Translator.GetText("Sizes in percent");
+                labelSizeInPercent.Text = Translator.GetText("Application size");
+                labelIconSizeInPercent.Text = Translator.GetText("Icon size");
+                labelRowHeightInPercentage.Text = Translator.GetText("Row height");
+                labelMaxMenuWidth.Text = Translator.GetText("Maximum menu width");
+                labelMaxMenuHeight.Text = Translator.GetText("Maximum menu height");
                 groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears");
                 radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
                 radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
-                radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate place)");
+                radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate position)");
                 radioButtonAppearAtMouseLocation.Text = Translator.GetText("At mouse location");
                 groupBoxSubMenuAppearAt.Text = Translator.GetText("Sub menu appears");
                 radioButtonNextToPreviousMenu.Text = Translator.GetText("Next to the previous one");
@@ -153,7 +152,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element");
                 checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory");
                 groupBoxDrag.Text = Translator.GetText("Drag");
-                checkBoxDragDropItems.Text = Translator.GetText("Copy row item via drag drop");
+                checkBoxDragDropItems.Text = Translator.GetText("Copy row element via drag and drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
                 groupBoxInternetShortcutIcons.Text = Translator.GetText("Directory of Internet Shortcut Icons");
                 buttonChangeIcoFolder.Text = Translator.GetText("Changing directory");
@@ -181,14 +180,14 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate drive shortcuts on startup");
 
                 tabPageExpert.Text = Translator.GetText("Expert");
-                groupBoxStaysOpen.Text = Translator.GetText("Stays open");
+                groupBoxStaysOpen.Text = Translator.GetText("Menu stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an element was clicked");
-                checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and if the mouse is still on the menu");
-                labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if in this case the mouse then leaves the menu");
+                checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and the mouse is still on the menu");
+                labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if the mouse then leaves the menu");
                 groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
                 labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
                 checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = Translator.GetText("If the focus is lost and the Enter key was pressed");
-                labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if in this case the menu is not reactivated");
+                labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if the menu is not reactivated");
                 groupBoxCache.Text = Translator.GetText("Cache");
                 labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
                 groupBoxSearchPattern.Text = Translator.GetText("Filter menu by file type e.g.: *.exe|*.dll");
@@ -202,7 +201,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxUseFading.Text = Translator.GetText("Fading");
                 checkBoxShowLinkOverlay.Text = Translator.GetText("Show link overlay");
                 checkBoxShowDirectoryTitleAtTop.Text = Translator.GetText("Show directory title at top");
-                checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements below");
+                checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements");
                 checkBoxShowSearchBar.Text = Translator.GetText("Show search bar");
                 checkBoxShowFunctionKeyOpenFolder.Text = Translator.GetText("Show function key 'Open Folder'");
                 checkBoxShowFunctionKeyPinMenu.Text = Translator.GetText("Show function key 'Pin menu'");
@@ -293,6 +292,7 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "Deutsch", Value = "de" },
                     new Language() { Name = "eesti keel", Value = "et" },
                     new Language() { Name = "English", Value = "en" },
+                    new Language() { Name = "English (United Kingdom)", Value = "en-GB" },
                     new Language() { Name = "Español", Value = "es" },
                     new Language() { Name = "Esperanto", Value = "eo" },
                     new Language() { Name = "euskara", Value = "eu" },
@@ -363,7 +363,7 @@ namespace SystemTrayMenu.UserInterface
 
             numericUpDownSizeInPercent.Minimum = 100;
             numericUpDownSizeInPercent.Maximum = 200;
-            numericUpDownSizeInPercent.Increment = 25;
+            numericUpDownSizeInPercent.Increment = 5;
             numericUpDownSizeInPercent.MouseWheel += NumericUpDown_MouseWheel;
             void NumericUpDown_MouseWheel(object sender, MouseEventArgs e)
             {
@@ -400,7 +400,7 @@ namespace SystemTrayMenu.UserInterface
 
             numericUpDownRowHeighteInPercentage.Minimum = 50;
             numericUpDownRowHeighteInPercentage.Maximum = 200;
-            numericUpDownRowHeighteInPercentage.Increment = 25;
+            numericUpDownRowHeighteInPercentage.Increment = 5;
             numericUpDownRowHeighteInPercentage.MouseWheel += NumericUpDown_MouseWheel;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
@@ -411,15 +411,15 @@ namespace SystemTrayMenu.UserInterface
                 numericUpDownRowHeighteInPercentage.Value = Settings.Default.RowHeighteInPercentage;
             }
 
-            numericUpDownMenuWidth.Minimum = 50;
-            numericUpDownMenuWidth.Maximum = 8000;
-            numericUpDownMenuWidth.Increment = 10;
-            numericUpDownMenuWidth.Value = Settings.Default.MaximumMenuWidth;
+            numericUpDownMenuWidth.Minimum = 25;
+            numericUpDownMenuWidth.Maximum = 400;
+            numericUpDownMenuWidth.Increment = 5;
+            numericUpDownMenuWidth.Value = Settings.Default.WidthMaxInPercent;
 
-            numericUpDownMenuHeight.Minimum = 200;
-            numericUpDownMenuHeight.Maximum = 4000;
-            numericUpDownMenuHeight.Increment = 10;
-            numericUpDownMenuHeight.Value = Settings.Default.MaximumMenuHeight;
+            numericUpDownMenuHeight.Minimum = 25;
+            numericUpDownMenuHeight.Maximum = 400;
+            numericUpDownMenuHeight.Increment = 5;
+            numericUpDownMenuHeight.Value = Settings.Default.HeightMaxInPercent;
 
             if (Settings.Default.UseCustomLocation)
             {
@@ -588,23 +588,16 @@ namespace SystemTrayMenu.UserInterface
             return RegisterHotkeys(false);
         }
 
-        public static void ShowSingleInstance(IWin32Window owner = null)
+        public static void ShowSingleInstance()
         {
             if (IsOpen())
             {
-                settingsForm.Activate();
+                settingsForm.HandleInvoke(settingsForm.Activate);
             }
             else
             {
                 settingsForm = new();
-                if (owner == null)
-                {
-                    settingsForm.ShowDialog();
-                }
-                else
-                {
-                    settingsForm.Show(owner);
-                }
+                settingsForm.ShowDialog();
             }
         }
 
@@ -923,8 +916,8 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.RowHeighteInPercentage = (int)numericUpDownRowHeighteInPercentage.Value;
             }
 
-            Settings.Default.MaximumMenuWidth = (int)numericUpDownMenuWidth.Value;
-            Settings.Default.MaximumMenuHeight = (int)numericUpDownMenuHeight.Value;
+            Settings.Default.WidthMaxInPercent = (int)numericUpDownMenuWidth.Value;
+            Settings.Default.HeightMaxInPercent = (int)numericUpDownMenuHeight.Value;
 
             if (radioButtonUseCustomLocation.Checked)
             {
@@ -1260,11 +1253,11 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonSizeAndLocationDefault_Click(object sender, EventArgs e)
         {
-            numericUpDownSizeInPercent.Value = 125;
+            numericUpDownSizeInPercent.Value = 100;
             numericUpDownIconSizeInPercent.Value = 100;
             numericUpDownRowHeighteInPercentage.Value = 100;
-            numericUpDownMenuWidth.Value = 400;
-            numericUpDownMenuHeight.Value = 450;
+            numericUpDownMenuWidth.Value = 100;
+            numericUpDownMenuHeight.Value = 100;
 
             radioButtonAppearAtTheBottomRight.Checked = false;
             radioButtonAppearAtTheBottomLeft.Checked = true;
@@ -1500,7 +1493,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            settingsForm.Dispose();
+            settingsForm?.Dispose();
             settingsForm = null;
         }
 

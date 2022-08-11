@@ -51,11 +51,21 @@ namespace SystemTrayMenu.UserInterface
             labelTitle.MouseUp += Menu_MouseUp;
             labelTitle.MouseMove += Menu_MouseMove;
 
+            // tableLayoutPanelMenu
+            tableLayoutPanelMenu.MouseDown += Menu_MouseDown;
+            tableLayoutPanelMenu.MouseUp += Menu_MouseUp;
+            tableLayoutPanelMenu.MouseMove += Menu_MouseMove;
+
+            // tableLayoutPanelBottom
+            tableLayoutPanelBottom.MouseDown += Menu_MouseDown;
+            tableLayoutPanelBottom.MouseUp += Menu_MouseUp;
+            tableLayoutPanelBottom.MouseMove += Menu_MouseMove;
+
             // ColumnIcon
             ColumnIcon.DataPropertyName = "ColumnIcon";
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.NullValue = "System.Drawing.Icon";
-            dataGridViewCellStyle1.Padding = new Padding(3, 2, 6, 2);
+            dataGridViewCellStyle1.Padding = new Padding(3, 1, 2, 1);
             ColumnIcon.DefaultCellStyle = dataGridViewCellStyle1;
             ColumnIcon.Frozen = true;
             ColumnIcon.HeaderText = "ColumnIcon";

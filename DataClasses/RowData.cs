@@ -45,7 +45,7 @@ namespace SystemTrayMenu.DataClasses
             try
             {
                 FileInfo = new FileInfo(path.Replace("\x00", string.Empty));
-                Path = FileInfo.FullName;
+                Path = IsFolder ? $@"{FileInfo.FullName}\" : FileInfo.FullName;
                 FileExtension = System.IO.Path.GetExtension(Path);
                 IsLink = FileExtension.Equals(".lnk", StringComparison.InvariantCultureIgnoreCase);
                 if (IsLink)

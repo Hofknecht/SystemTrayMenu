@@ -101,7 +101,7 @@ namespace SystemTrayMenu
             if (string.IsNullOrEmpty(Path))
             {
                 string textFirstStart = Translator.GetText(
-                    "Read the FAQ and then choose a root directory for the SystemTrayMenu.");
+                    "Read the FAQ and then choose a root directory for SystemTrayMenu.");
                 MessageBox.Show(
                     textFirstStart,
                     "SystemTrayMenu",

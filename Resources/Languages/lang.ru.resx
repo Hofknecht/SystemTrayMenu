@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Часто задаваемые вопросы</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>Прочтите FAQ, а затем выберите корневой каталог для SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>По умолчанию</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>Если фокус потерян, и если мышь все еще находится в меню</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>Если фокус потерян, а мышь все еще находится в меню</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Миллисекунды до открытия меню при наведении на него мыши</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Миллисекунды до закрытия меню, если в этом случае мышь покидает меню</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Миллисекунды до закрытия меню, если мышь затем покидает меню</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Максимальная ширина меню в пикселях</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Максимальная ширина меню</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Остается открытым</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Меню остается открытым</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Время до открытия меню</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Относительный каталог</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Сохраните конфигурацию в каталоге приложения</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Сохраните файл конфигурации в каталоге приложения</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Файл конфигурации и файл журнала</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Файлы конфигурации и журналы</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Откройте каталог приложений</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Максимальная высота меню в пикселях</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Максимальная высота меню</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Стрелка</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Использовать значок из каталога</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Размер</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Размеры в процентах</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Граница меню</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Если фокус потерян и была нажата клавиша Enter</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Миллисекунды до закрытия меню, если в этом случае меню не активируется повторно</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Миллисекунды до закрытия меню, если меню не активируется повторно</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Показать на панели задач</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Добавить образец каталога «Меню Пуск»</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Высота строки в процентах</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Высота строки</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Скругленные углы</value>
@@ -399,10 +399,10 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Появится главное меню</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Расположение мыши (над значком панели задач)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Пользовательский (перетащите его в нужное место)</value>
   </data>
   <data name="element" xml:space="preserve">
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Появляется подменю</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Размер иконок в процентах</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Размер значка</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Поддержка SystemTrayMenu</value>
@@ -471,7 +471,7 @@
   <data name="Sorting" xml:space="preserve">
     <value>Сортировка</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
+  <data name="Copy row element via drag and drop" xml:space="preserve">
     <value>Скопируйте элемент строки с помощью перетаскивания</value>
   </data>
   <data name="Drag" xml:space="preserve">
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Меню фильтра по типу файла, например: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Показать количество элементов ниже</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Показать количество элементов</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Показать заголовок каталога вверху</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>У вас установлена ​​последняя версия SystemTrayMenu!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Размер приложения</value>
   </data>
 </root>

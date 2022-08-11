@@ -174,7 +174,7 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>વારંવાર પૂછાતા પ્રશ્નો</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
     <value>FAQ વાંચો અને પછી SystemTrayMenu માટે રૂટ ડિરેક્ટરી પસંદ કરો.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>ડિફૉલ્ટ</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
-    <value>જો ધ્યાન ખોવાઈ ગયું હોય અને જો માઉસ હજી પણ મેનુ પર હોય</value>
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
+    <value>જો ફોકસ ખોવાઈ જાય અને માઉસ હજુ પણ મેનુ પર હોય</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>જ્યારે માઉસ તેના પર હોય ત્યારે મેનૂ ખુલે ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>મેનુ બંધ ન થાય ત્યાં સુધી મિલિસેકન્ડ જો આ સ્થિતિમાં માઉસ મેનુ છોડી દે</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>જો માઉસ મેનુ છોડી દે તો મેનુ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>પિક્સેલ્સ મેનુની મહત્તમ પહોળાઈ</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>મેનુની મહત્તમ પહોળાઈ</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>ખુલ્લું રહે છે</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>મેનુ ખુલ્લું રહે છે</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>મેનુ ખુલે ત્યાં સુધીનો સમય</value>
@@ -252,17 +252,17 @@
   <data name="Relative directory" xml:space="preserve">
     <value>સંબંધિત ડિરેક્ટરી</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>એપ્લિકેશન ડિરેક્ટરીમાં ગોઠવણી સાચવો</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>એપ્લિકેશન ડિરેક્ટરીમાં રૂપરેખાંકન ફાઇલ સાચવો</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>રૂપરેખાંકન ફાઇલ અને લોગ ફાઇલ</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>રૂપરેખાંકન અને લોગ ફાઇલો</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>એપ્લિકેશન ડિરેક્ટરી ખોલો</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>પિક્સેલ્સ મેનુની મહત્તમ ઊંચાઈ</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>મેનુની મહત્તમ ઊંચાઈ</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>તીર</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>ડિરેક્ટરીમાંથી આયકનનો ઉપયોગ કરો</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>કદ</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>ટકામાં કદ</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>મેનુની સરહદ</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>જો ફોકસ ખોવાઈ જાય અને Enter કી દબાવવામાં આવી હોય</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>જો આ કિસ્સામાં મેનૂ પુનઃસક્રિય ન થાય તો મેનૂ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>જો મેનૂ ફરીથી સક્રિય ન થાય તો મેનૂ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>ટાસ્કબારમાં બતાવો</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>સેમ્પલ ડિરેક્ટરી 'સ્ટાર્ટ મેનૂ' ઉમેરો</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>ટકામાં પંક્તિની ઊંચાઈ</value>
+  <data name="Row height" xml:space="preserve">
+    <value>પંક્તિની ઊંચાઈ</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>રાઉન્ડ ખૂણા</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>મુખ્ય મેનુ દેખાય છે</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>માઉસ સ્થાન (ટાસ્કબાર આયકન ઉપર)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>કસ્ટમ (તેને યોગ્ય જગ્યાએ ખેંચો)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>કસ્ટમ (તેને યોગ્ય સ્થાને ખેંચો)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>તત્વ</value>
@@ -421,7 +421,7 @@
     <value>હંમેશા બતાવો</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>છુપાયેલી ફાઇલો અને ડિરેક્ટરીઓ</value>
+    <value>છુપાયેલ ફાઇલો અને ડિરેક્ટરીઓ</value>
   </data>
   <data name="Never show" xml:space="preserve">
     <value>ક્યારેય બતાવશો નહીં</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>સબ મેનુ દેખાય છે</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>ટકામાં ચિહ્નોનું કદ</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>ચિહ્નનું કદ</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>SystemTrayMenu ને સપોર્ટ કરો</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>વર્ગીકરણ</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>ડ્રેગ ડ્રોપ દ્વારા પંક્તિ આઇટમની નકલ કરો</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>ખેંચો અને છોડો દ્વારા પંક્તિ તત્વની નકલ કરો</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>ખેંચો</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>ફાઇલ પ્રકાર દ્વારા ફિલ્ટર મેનૂ ઉ.દા.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>નીચે ઘટકોની સંખ્યા બતાવો</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>તત્વોની સંખ્યા બતાવો</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>ટોચ પર ડિરેક્ટરી શીર્ષક બતાવો</value>
@@ -493,7 +493,7 @@
     <value>ફંક્શન કી 'ઓપન ફોલ્ડર' બતાવો</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>ફંક્શન કી 'પિન મેનુ' બતાવો</value>
+    <value>ફંક્શન કી 'પિન મેનૂ' બતાવો</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
     <value>ફંક્શન કી 'સેટિંગ્સ' બતાવો</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>તમારી પાસે SystemTrayMenu નું નવીનતમ સંસ્કરણ છે!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>એપ્લિકેશનનું કદ</value>
   </data>
 </root>

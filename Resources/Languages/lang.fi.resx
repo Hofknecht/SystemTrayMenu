@@ -174,8 +174,8 @@
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Usein Kysytyt Kysymykset</value>
   </data>
-  <data name="Read the FAQ and then choose a root directory for the SystemTrayMenu." xml:space="preserve">
-    <value>Lue FAQ ja valitse sitten SystemTrayMenu-päähakemisto.</value>
+  <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
+    <value>Lue UKK ja valitse sitten SystemTrayMenu-päähakemisto.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Valitse hakemisto</value>
@@ -210,20 +210,20 @@
   <data name="Default" xml:space="preserve">
     <value>Oletus</value>
   </data>
-  <data name="If the focus is lost and if the mouse is still on the menu" xml:space="preserve">
+  <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
     <value>Jos tarkennus katoaa ja hiiri on edelleen valikossa</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Millisekuntia, kunnes valikko avautuu, kun hiiri on sen päällä</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the mouse then leaves the menu" xml:space="preserve">
-    <value>Millisekuntia, kunnes valikko sulkeutuu, jos tässä tapauksessa hiiri poistuu valikosta</value>
+  <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
+    <value>Millisekuntia, kunnes valikko sulkeutuu, jos hiiri poistuu valikosta</value>
   </data>
-  <data name="Pixels maximum menu width" xml:space="preserve">
-    <value>Valikon enimmäisleveys pikseliä</value>
+  <data name="Maximum menu width" xml:space="preserve">
+    <value>Valikon enimmäisleveys</value>
   </data>
-  <data name="Stays open" xml:space="preserve">
-    <value>Pysyy auki</value>
+  <data name="Menu stays open" xml:space="preserve">
+    <value>Menu pysyy auki</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>Aika valikon avautumiseen</value>
@@ -252,23 +252,23 @@
   <data name="Relative directory" xml:space="preserve">
     <value>Suhteellinen hakemisto</value>
   </data>
-  <data name="Save configuration in application directory" xml:space="preserve">
-    <value>Tallenna asetukset sovellushakemistoon</value>
+  <data name="Save configuration file in application directory" xml:space="preserve">
+    <value>Tallenna asetustiedosto sovellushakemistoon</value>
   </data>
-  <data name="Configuration file and log file" xml:space="preserve">
-    <value>Asetustiedosto ja lokitiedosto</value>
+  <data name="Configuration and log files" xml:space="preserve">
+    <value>Asetukset ja lokitiedostot</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Avaa sovellushakemisto</value>
   </data>
-  <data name="Pixels maximum menu height" xml:space="preserve">
-    <value>Valikon enimmäiskorkeus pikseliä</value>
+  <data name="Maximum menu height" xml:space="preserve">
+    <value>Valikon enimmäiskorkeus</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Nuoli</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Nuoli napsautettaessa</value>
+    <value>Nuoli napsauttaessa</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Nuoli, kun hiiri on sen päällä</value>
@@ -306,8 +306,8 @@
   <data name="Use icon from directory" xml:space="preserve">
     <value>Käytä kuvaketta hakemistosta</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Koko</value>
+  <data name="Sizes in percent" xml:space="preserve">
+    <value>Koot prosentteina</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
     <value>Valikon reuna</value>
@@ -348,8 +348,8 @@
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>Jos tarkennus katoaa ja Enter-näppäintä on painettu</value>
   </data>
-  <data name="Milliseconds until the menu closes if in this case the menu is not reactivated" xml:space="preserve">
-    <value>Millisekuntia, kunnes valikko sulkeutuu, jos valikkoa ei tässä tapauksessa aktivoida uudelleen</value>
+  <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
+    <value>Millisekuntia, kunnes valikko sulkeutuu, jos valikkoa ei aktivoida uudelleen</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Näytä tehtäväpalkissa</value>
@@ -381,8 +381,8 @@
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Lisää esimerkkihakemisto "Käynnistä-valikko"</value>
   </data>
-  <data name="Row height in percent" xml:space="preserve">
-    <value>Rivin korkeus prosentteina</value>
+  <data name="Row height" xml:space="preserve">
+    <value>Rivin korkeus</value>
   </data>
   <data name="Round corners" xml:space="preserve">
     <value>Pyöreät kulmat</value>
@@ -399,11 +399,11 @@
   <data name="Main menu appears" xml:space="preserve">
     <value>Päävalikko tulee näkyviin</value>
   </data>
-  <data name="Mouse location (Above Taskbar icon)" xml:space="preserve">
+  <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Hiiren sijainti (tehtäväpalkin kuvakkeen yläpuolella)</value>
   </data>
-  <data name="Custom (drag it to the appropriate place)" xml:space="preserve">
-    <value>Mukautettu (vedä se oikeaan paikkaan)</value>
+  <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
+    <value>Mukautettu (vedä se oikeaan kohtaan)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>elementti</value>
@@ -442,7 +442,7 @@
     <value>Edellisen viereen</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset pikseleillä</value>
+    <value>Poikkeama pikseleillä</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Päällekkäinen</value>
@@ -450,8 +450,8 @@
   <data name="Sub menu appears" xml:space="preserve">
     <value>Alivalikko tulee näkyviin</value>
   </data>
-  <data name="Size of the icons in percent" xml:space="preserve">
-    <value>Kuvakkeiden koko prosentteina</value>
+  <data name="Icon size" xml:space="preserve">
+    <value>Ikonin koko</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>Tuki SystemTrayMenu</value>
@@ -471,8 +471,8 @@
   <data name="Sorting" xml:space="preserve">
     <value>Lajittelu</value>
   </data>
-  <data name="Copy row item via drag drop" xml:space="preserve">
-    <value>Kopioi rivikohta vetämällä pudottamalla</value>
+  <data name="Copy row element via drag and drop" xml:space="preserve">
+    <value>Kopioi rivielementti vetämällä ja pudottamalla</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Raahata</value>
@@ -483,8 +483,8 @@
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Suodatinvalikko tiedostotyypin mukaan, esim.: *.exe|*.dll</value>
   </data>
-  <data name="Show count of elements below" xml:space="preserve">
-    <value>Näytä elementtien lukumäärä alla</value>
+  <data name="Show count of elements" xml:space="preserve">
+    <value>Näytä elementtien lukumäärä</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Näytä hakemiston otsikko yläreunassa</value>
@@ -533,5 +533,8 @@
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>Sinulla on uusin SystemTrayMenu-versio!</value>
+  </data>
+  <data name="Application size" xml:space="preserve">
+    <value>Sovelluksen koko</value>
   </data>
 </root>
