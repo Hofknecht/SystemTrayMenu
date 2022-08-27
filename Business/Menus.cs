@@ -1310,28 +1310,15 @@ namespace SystemTrayMenu.Business
                     RowData rowData = (RowData)row[2];
                     if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                     {
-                        bool isAddionalPathRenamed = false;
-                        string oldPath = rowData.Path;
                         string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
-                        foreach (var pathAndFlags in MenusHelpers.GetAddionalPathsForMainMenu())
-                        {
-                            if (oldPath.StartsWith($"{pathAndFlags.Path}\\") &&
-                                !path.StartsWith($"{pathAndFlags.Path}\\"))
-                            {
-                                isAddionalPathRenamed = true;
-                                break;
-                            }
-                        }
-
-                        if (isAddionalPathRenamed)
-                        {
-                            continue;
-                        }
-
                         FileAttributes attr = File.GetAttributes(path);
                         bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
-                        bool isAddionalItem = Path.GetDirectoryName(path) != Config.Path;
-                        RowData rowDataRenamed = new(isFolder, isAddionalItem, false, 0, path);
+                        if (isFolder)
+                        {
+                            path = Path.GetDirectoryName(path);
+                        }
+
+                        RowData rowDataRenamed = new(isFolder, rowData.IsAddionalItem, false, 0, path);
                         if (FolderOptions.IsHidden(rowDataRenamed))
                         {
                             continue;
