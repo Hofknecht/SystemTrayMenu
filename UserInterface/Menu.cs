@@ -309,23 +309,14 @@ namespace SystemTrayMenu.UserInterface
                     pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
                 case MenuType.Empty:
-                    pictureBoxSearch.Visible = true;
-                    textBoxSearch.Visible = true;
-                    tableLayoutPanelSearch.Visible = true;
                     labelItems.Text = Translator.GetText("Directory empty");
                     pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
                 case MenuType.NoAccess:
-                    pictureBoxSearch.Visible = true;
-                    textBoxSearch.Visible = true;
-                    tableLayoutPanelSearch.Visible = true;
                     labelItems.Text = Translator.GetText("Directory inaccessible");
                     pictureBoxMenuAlwaysOpen.Visible = false;
                     break;
                 case MenuType.Loading:
-                    pictureBoxSearch.Visible = true;
-                    textBoxSearch.Visible = true;
-                    tableLayoutPanelSearch.Visible = true;
                     labelItems.Text = Translator.GetText("loading");
                     pictureBoxMenuAlwaysOpen.Visible = true;
                     textBoxSearch.TextChanged -= TextBoxSearch_TextChanged;

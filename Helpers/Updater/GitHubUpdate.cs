@@ -73,7 +73,7 @@ namespace SystemTrayMenu.Helper.Updater
             for (int i = 0; i < releasesCount; i++)
             {
                 string tagName = releases[i]["tag_name"].ToString();
-                Version versionGitHub = new Version(tagName.Replace("v", string.Empty));
+                Version versionGitHub = new(tagName.Replace("v", string.Empty));
                 if (versionGitHub.CompareTo(versionCurrent) < 1)
                 {
                     releases.RemoveRange(i, releasesCount - i);

@@ -1052,10 +1052,9 @@ namespace SystemTrayMenu.Business
         private void ShowSubMenu(Menu menuToShow)
         {
             HideOldMenu(menuToShow, true);
-
             menus[menuToShow.Level] = menuToShow;
             AdjustMenusSizeAndLocation();
-            menus[menuToShow.Level].ShowWithFadeOrTransparent(IsActive());
+            menus[menuToShow.Level]?.ShowWithFadeOrTransparent(IsActive());
         }
 
         private void HideOldMenu(Menu menuToShow, bool keepOrSetIsMenuOpen = false)
