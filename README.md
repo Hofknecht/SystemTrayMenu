@@ -285,7 +285,8 @@ Thanks for ideas, reporting issues and contributing!
 #380 #394 [TransLucida](https://github.com/TransLucida),
 #384 #434 #435 [boydfields](https://github.com/boydfields),
 #386 [visusys](https://github.com/visusys),
-#387 #411 #444 [yrctw](https://github.com/yrctw)
+#387 #411 #444 [yrctw](https://github.com/yrctw),
+#446 [timinformatica](https://github.com/timinformatica)
 
 Donations
 ------------------
