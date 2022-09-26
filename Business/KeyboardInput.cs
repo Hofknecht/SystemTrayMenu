@@ -72,6 +72,8 @@ namespace SystemTrayMenu.Handler
 
         internal void CmdKeyProcessed(object sender, Keys keys)
         {
+            sender ??= menus[iMenuKey];
+
             switch (keys)
             {
                 case Keys.Enter:
@@ -352,23 +354,25 @@ namespace SystemTrayMenu.Handler
                     break;
                 case Keys.Left:
                     bool nextMenuLocationIsLeft = menus[iMenuKey + 1] != null && menus[iMenuKey + 1].Location.X < menus[iMenuKey].Location.X;
-                    if (nextMenuLocationIsLeft)
+                    bool previousMenuLocationIsRight = iMenuKey > 0 && menus[iMenuKey]?.Location.X < menus[iMenuKey - 1]?.Location.X;
+                    if (nextMenuLocationIsLeft || previousMenuLocationIsRight)
                     {
                         SelectNextMenu(iRowBefore, ref dgv, dgvBefore, menuFromSelected, isStillSelected, ref toClear);
                     }
-                    else
+                    else if (iMenuKey > 0)
                     {
                         SelectPreviousMenu(iRowBefore, ref menu, ref dgv, dgvBefore, ref toClear);
                     }
 
                     break;
                 case Keys.Right:
-                    bool nextMenuLocationIsRight = menus[iMenuKey + 1] != null && menus[iMenuKey + 1].Location.X > menus[iMenuKey].Location.X;
-                    if (nextMenuLocationIsRight)
+                    bool nextMenuLocationIsRight = menus[iMenuKey + 1]?.Location.X > menus[iMenuKey]?.Location.X;
+                    bool previousMenuLocationIsLeft = iMenuKey > 0 && menus[iMenuKey]?.Location.X > menus[iMenuKey - 1]?.Location.X;
+                    if (nextMenuLocationIsRight || previousMenuLocationIsLeft)
                     {
                         SelectNextMenu(iRowBefore, ref dgv, dgvBefore, menuFromSelected, isStillSelected, ref toClear);
                     }
-                    else
+                    else if (iMenuKey > 0)
                     {
                         SelectPreviousMenu(iRowBefore, ref menu, ref dgv, dgvBefore, ref toClear);
                     }

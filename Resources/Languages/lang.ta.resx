@@ -175,7 +175,7 @@
     <value>அடிக்கடி கேட்கப்படும் கேள்விகள்</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து, பின்னர் SystemTrayMenuக்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
+    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து பின்னர் SystemTrayMenu க்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>கோப்பகத்தைத் தேர்ந்தெடுக்கவும்</value>
@@ -376,7 +376,7 @@
     <value>கோப்புகள் மட்டும்</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>இந்த எண்ணிக்கையை விட அதிகமான உருப்படிகள் இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ஒரு கோப்பகத்தைத் திறக்க ஒற்றை கிளிக் செய்யவும்</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>கேம்பேடை ஆதரிக்கவும்</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>முந்தையதை அடுத்து</value>

@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ಡೈರೆಕ್ಟರಿಯನ್ನು ತೆರೆಯಲು ಒಂದೇ ಕ್ಲಿಕ್ ಮಾಡಿ</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>ಗೇಮ್‌ಪ್ಯಾಡ್ ಅನ್ನು ಬೆಂಬಲಿಸಿ</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ಹಿಂದಿನದಕ್ಕೆ ಮುಂದೆ</value>
   </data>

@@ -53,7 +53,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             PopulateModifierLists();
         }
 
-        // Delegates for hooking up events.
         public delegate void HotKeyHandler();
 
         private enum Modifiers

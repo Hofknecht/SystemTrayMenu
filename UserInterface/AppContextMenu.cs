@@ -97,11 +97,12 @@ namespace SystemTrayMenu.Helper
 Sponsors - Thank you!
 ------------------
 * Stefan Mahrer
+* boydfields
 * RuSieg
 * Ralf K.
 * donaldaken
 * Marc Speer
-* boydfields
+* Peter G.
 * Traditional_Tap3954
 * Maximilian H.
 ";

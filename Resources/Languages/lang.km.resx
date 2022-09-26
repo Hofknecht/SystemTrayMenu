@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ចុចមួយដងដើម្បីបើកថត</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>គាំទ្រ Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>នៅជាប់នឹងមុន។</value>
   </data>
@@ -499,7 +502,7 @@
     <value>បង្ហាញសោមុខងារ 'ការកំណត់'</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>បង្ហាញសោមុខងារ 'ចាប់ផ្តើមឡើងវិញ'</value>
+    <value>បង្ហាញប៊ូតុងមុខងារ 'ចាប់ផ្តើមឡើងវិញ'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>បង្ហាញរបារស្វែងរក</value>

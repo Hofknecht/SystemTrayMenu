@@ -379,7 +379,7 @@
     <value>Išvalykite talpyklą, jei daugiau nei šis elementų skaičius</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Pridėti pavyzdinį katalogą "Start Menu"</value>
+    <value>Pridėti pavyzdinį katalogą „Start Menu“</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Eilės aukštis</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Vienu paspaudimu atidarykite katalogą</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Palaikykite žaidimų pultą</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Šalia ankstesnio</value>

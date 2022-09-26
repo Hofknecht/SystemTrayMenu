@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Cliciwch sengl i agor cyfeiriadur</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Cefnogi Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Wrth ymyl yr un blaenorol</value>
   </data>

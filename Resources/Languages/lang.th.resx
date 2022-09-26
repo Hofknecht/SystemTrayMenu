@@ -370,7 +370,7 @@
     <value>เรียกซ้ำ</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>ลบไดเร็กทอรี</value>
+    <value>ลบไดเรกทอรี</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>เฉพาะไฟล์</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>คลิกเพียงครั้งเดียวเพื่อเปิดไดเร็กทอรี</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>รองรับ Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ต่อจากอันที่แล้ว</value>

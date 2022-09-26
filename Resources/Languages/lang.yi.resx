@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>איין גיט צו עפענען אַ וועגווייַזער</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>שטיצן גאַמעפּאַד</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>נעבן דעם פריערדיקן</value>
   </data>
@@ -448,7 +451,7 @@
     <value>אָוווערלאַפּינג</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>סוב מעניו איז ארויס</value>
+    <value>אונטער מעניו איז ארויס</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>בילדל גרייס</value>

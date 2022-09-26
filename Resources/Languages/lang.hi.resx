@@ -438,8 +438,11 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>निर्देशिका खोलने के लिए सिंगल क्लिक</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>गेमपैड का समर्थन करें</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>पिछले एक के आगे</value>
+    <value>पिछले वाले के आगे</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
     <value>पिक्सेल द्वारा ऑफ़सेट</value>
@@ -451,7 +454,7 @@
     <value>उप मेनू प्रकट होता है</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>चिह्न आकार</value>
+    <value>चिह्न का आकार</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>समर्थन प्रणालीट्रेमेनू</value>

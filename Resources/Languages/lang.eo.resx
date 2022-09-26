@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Unu alklaku por malfermi dosierujon</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Subtenu Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Apud la antaŭa</value>
   </data>
@@ -496,7 +499,7 @@
     <value>Montru funkcioklavon 'Alpingli menuon'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>Montri funkcioklavon 'Agordoj'</value>
+    <value>Montru funkcioklavon 'Agordoj'</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
     <value>Montru funkcioklavon 'Rekomenci'</value>

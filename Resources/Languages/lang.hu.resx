@@ -262,7 +262,7 @@
     <value>Nyissa meg az alkalmazáskönyvtárat</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
-    <value>Maximális menü magasság</value>
+    <value>A menü maximális magassága</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Nyíl</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Egyetlen kattintással megnyithat egy könyvtárat</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Támogatás Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Az előző mellé</value>

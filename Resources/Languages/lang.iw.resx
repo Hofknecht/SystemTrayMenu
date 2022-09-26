@@ -181,7 +181,7 @@
     <value>בחר ספרייה</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס מספר קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
+    <value>ספריית השורש שלך עבור האפליקציה אינה קיימת או ריקה! שנה את ספריית השורש או הכנס כמה קבצים, ספריות או קיצורי דרך בספריית השורש.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>אין לך גישה לספריית השורש של האפליקציה. הענק גישה לספרייה או שנה את ספריית הבסיס.</value>
@@ -325,7 +325,7 @@
     <value>טוען</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>בעיה עם קישור קיצור</value>
+    <value>בעיה בקישור קיצורי דרך</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שקיצור זה לא יפעל עוד כראוי.</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>לחיצה אחת לפתיחת ספרייה</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>תמיכה ב-Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ליד הקודם</value>

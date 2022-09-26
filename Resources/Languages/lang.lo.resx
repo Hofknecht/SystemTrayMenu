@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ຄລິກດຽວເພື່ອເປີດໄດເລກະທໍລີ</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>ຮອງຮັບ Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ຖັດຈາກອັນກ່ອນໜ້າ</value>
   </data>
@@ -529,7 +532,7 @@
     <value>ສະ​ບັບ​ຫລ້າ​ສຸດ​ທີ່​ມີ​ຢູ່​:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ລຸ້ນໃໝ່ມີໃຫ້!</value>
+    <value>ມີລຸ້ນໃໝ່!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>ທ່ານມີເວີຊັນຫຼ້າສຸດຂອງ SystemTrayMenu!</value>

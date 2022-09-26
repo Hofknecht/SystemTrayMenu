@@ -193,7 +193,7 @@
     <value>Värvilahendus tume alati aktiivne</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Täpsemalt</value>
+    <value>Täiustatud</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>Hiire asukohas</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Kataloogi avamiseks tehke üks klõps</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Toetage mängupulti</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Eelmise kõrval</value>

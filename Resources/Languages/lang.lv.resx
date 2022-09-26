@@ -130,7 +130,7 @@
     <value>Iziet no lietotnes</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Katalogs</value>
+    <value>Direktorija</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
     <value>Direktorija tukša</value>
@@ -250,7 +250,7 @@
     <value>Atlasītā elementa apmale</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
-    <value>Relatīvais direktorijs</value>
+    <value>Relatīvā direktorija</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
     <value>Saglabājiet konfigurācijas failu lietojumprogrammu direktorijā</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Ar vienu klikšķi atveriet direktoriju</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Atbalsta spēļu paneli</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Blakus iepriekšējam</value>

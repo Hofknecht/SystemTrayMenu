@@ -277,7 +277,7 @@
     <value>Bakgrund av pil när du klickar</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Bakgrund av pilen medan musen svävar över den</value>
+    <value>Bakgrund av pil medan musen svävar över den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Färgschema mörkt</value>
@@ -436,7 +436,10 @@
     <value>Visa endast som sökresultat</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>Ett klick för att öppna en katalog</value>
+    <value>Enkelklick för att öppna en katalog</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Support Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Bredvid den föregående</value>

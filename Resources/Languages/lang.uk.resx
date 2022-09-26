@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Один клік, щоб відкрити каталог</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Підтримка геймпада</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Поряд з попереднім</value>
   </data>

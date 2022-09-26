@@ -175,7 +175,7 @@
     <value>perguntas frequentes</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>Leia o FAQ e escolha um diretório raiz para SystemTrayMenu.</value>
+    <value>Leia as perguntas frequentes e escolha um diretório raiz para SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>Selecionar diretório</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Clique único para abrir um diretório</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Suporte Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ao lado do anterior</value>

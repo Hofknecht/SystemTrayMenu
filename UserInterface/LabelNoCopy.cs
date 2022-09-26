@@ -26,10 +26,7 @@ namespace SystemTrayMenu.UserInterface
             get => text;
             set
             {
-                if (value == null)
-                {
-                    value = string.Empty;
-                }
+                value ??= string.Empty;
 
                 if (text != value)
                 {

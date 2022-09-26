@@ -342,6 +342,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.checkBoxSupportGamepad = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -978,7 +979,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageSizeAndLocation.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
             this.tabPageSizeAndLocation.Name = "tabPageSizeAndLocation";
             this.tabPageSizeAndLocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSizeAndLocation.Size = new System.Drawing.Size(412, 493);
+            this.tabPageSizeAndLocation.Size = new System.Drawing.Size(412, 485);
             this.tabPageSizeAndLocation.TabIndex = 3;
             this.tabPageSizeAndLocation.Text = "tabPageSizeAndLocation";
             this.tabPageSizeAndLocation.UseVisualStyleBackColor = true;
@@ -1433,7 +1434,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
             this.tabPageAdvanced.Name = "tabPageAdvanced";
             this.tabPageAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdvanced.Size = new System.Drawing.Size(412, 493);
+            this.tabPageAdvanced.Size = new System.Drawing.Size(412, 485);
             this.tabPageAdvanced.TabIndex = 0;
             this.tabPageAdvanced.Text = "tabPageAdvanced";
             this.tabPageAdvanced.UseVisualStyleBackColor = true;
@@ -1460,7 +1461,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 567);
+            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 592);
             this.tableLayoutPanelAdvanced.TabIndex = 0;
             // 
             // groupBoxInternetShortcutIcons
@@ -1469,7 +1470,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxInternetShortcutIcons.AutoSize = true;
             this.groupBoxInternetShortcutIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxInternetShortcutIcons.Controls.Add(this.tableLayoutPanelInternetShortcutIcons);
-            this.groupBoxInternetShortcutIcons.Location = new System.Drawing.Point(3, 209);
+            this.groupBoxInternetShortcutIcons.Location = new System.Drawing.Point(3, 234);
             this.groupBoxInternetShortcutIcons.Name = "groupBoxInternetShortcutIcons";
             this.groupBoxInternetShortcutIcons.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBoxInternetShortcutIcons.Size = new System.Drawing.Size(289, 81);
@@ -1545,7 +1546,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxDrag.AutoSize = true;
             this.groupBoxDrag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxDrag.Controls.Add(this.tableLayoutPanel1);
-            this.groupBoxDrag.Location = new System.Drawing.Point(3, 131);
+            this.groupBoxDrag.Location = new System.Drawing.Point(3, 156);
             this.groupBoxDrag.Name = "groupBoxDrag";
             this.groupBoxDrag.Size = new System.Drawing.Size(289, 72);
             this.groupBoxDrag.TabIndex = 4;
@@ -1599,7 +1600,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxClick.Controls.Add(this.tableLayoutPanelClick);
             this.groupBoxClick.Location = new System.Drawing.Point(3, 3);
             this.groupBoxClick.Name = "groupBoxClick";
-            this.groupBoxClick.Size = new System.Drawing.Size(289, 122);
+            this.groupBoxClick.Size = new System.Drawing.Size(289, 147);
             this.groupBoxClick.TabIndex = 0;
             this.groupBoxClick.TabStop = false;
             this.groupBoxClick.Text = "groupBoxClick";
@@ -1610,6 +1611,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelClick.ColumnCount = 1;
             this.tableLayoutPanelClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelClick.Controls.Add(this.checkBoxSupportGamepad, 0, 4);
             this.tableLayoutPanelClick.Controls.Add(this.checkBoxSendHotkeyInsteadKillOtherInstances, 0, 1);
             this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenDirectoryWithOneClick, 0, 3);
             this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 2);
@@ -1617,12 +1619,13 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelClick.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelClick.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelClick.Name = "tableLayoutPanelClick";
-            this.tableLayoutPanelClick.RowCount = 4;
+            this.tableLayoutPanelClick.RowCount = 5;
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.Size = new System.Drawing.Size(283, 100);
+            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelClick.Size = new System.Drawing.Size(283, 125);
             this.tableLayoutPanelClick.TabIndex = 0;
             // 
             // checkBoxSendHotkeyInsteadKillOtherInstances
@@ -1674,7 +1677,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 533);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 558);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -1690,7 +1693,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSorting.AutoSize = true;
             this.groupBoxSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxSorting.Controls.Add(this.tableLayoutPanelSorting);
-            this.groupBoxSorting.Location = new System.Drawing.Point(3, 296);
+            this.groupBoxSorting.Location = new System.Drawing.Point(3, 321);
             this.groupBoxSorting.Name = "groupBoxSorting";
             this.groupBoxSorting.Size = new System.Drawing.Size(289, 122);
             this.groupBoxSorting.TabIndex = 3;
@@ -1768,7 +1771,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHiddenFilesAndFolders.AutoSize = true;
             this.groupBoxHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHiddenFilesAndFolders.Controls.Add(this.tableLayoutPanelHiddenFilesAndFolders);
-            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 424);
+            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 449);
             this.groupBoxHiddenFilesAndFolders.Name = "groupBoxHiddenFilesAndFolders";
             this.groupBoxHiddenFilesAndFolders.Size = new System.Drawing.Size(289, 97);
             this.groupBoxHiddenFilesAndFolders.TabIndex = 2;
@@ -1836,7 +1839,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageFolders.Location = new System.Drawing.Point(4, 24);
             this.tabPageFolders.Name = "tabPageFolders";
             this.tabPageFolders.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFolders.Size = new System.Drawing.Size(412, 493);
+            this.tabPageFolders.Size = new System.Drawing.Size(412, 485);
             this.tabPageFolders.TabIndex = 2;
             this.tabPageFolders.Text = "tabPageFolders";
             this.tabPageFolders.UseVisualStyleBackColor = true;
@@ -2064,7 +2067,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageExpert.Location = new System.Drawing.Point(4, 24);
             this.tabPageExpert.Name = "tabPageExpert";
             this.tabPageExpert.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageExpert.Size = new System.Drawing.Size(412, 493);
+            this.tabPageExpert.Size = new System.Drawing.Size(412, 485);
             this.tabPageExpert.TabIndex = 1;
             this.tabPageExpert.Text = "tabPageExpert";
             this.tabPageExpert.UseVisualStyleBackColor = true;
@@ -2431,7 +2434,7 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageCustomize.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomize.Name = "tabPageCustomize";
             this.tabPageCustomize.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCustomize.Size = new System.Drawing.Size(412, 493);
+            this.tabPageCustomize.Size = new System.Drawing.Size(412, 485);
             this.tabPageCustomize.TabIndex = 0;
             this.tabPageCustomize.Text = "tabPageCustomize";
             this.tabPageCustomize.UseVisualStyleBackColor = true;
@@ -4841,6 +4844,17 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // checkBoxSupportGamepad
+            // 
+            this.checkBoxSupportGamepad.AutoSize = true;
+            this.checkBoxSupportGamepad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxSupportGamepad.Location = new System.Drawing.Point(3, 103);
+            this.checkBoxSupportGamepad.Name = "checkBoxSupportGamepad";
+            this.checkBoxSupportGamepad.Size = new System.Drawing.Size(277, 19);
+            this.checkBoxSupportGamepad.TabIndex = 4;
+            this.checkBoxSupportGamepad.Text = "checkBoxSupportGamepad";
+            this.checkBoxSupportGamepad.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -5438,5 +5452,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.CheckBox checkBoxShowFunctionKeyPinMenu;
         private System.Windows.Forms.CheckBox checkBoxShowFunctionKeySettings;
         private System.Windows.Forms.CheckBox checkBoxShowFunctionKeyRestart;
+        private System.Windows.Forms.CheckBox checkBoxSupportGamepad;
     }
 }

@@ -45,8 +45,8 @@ namespace SystemTrayMenu.UserInterface
                     Name = "textBoxHotkey",
                     Size = new Size(200, 20),
                     Text = "None",
+                    TabStop = false,
                 };
-                textBoxHotkey.TabStop = false;
                 textBoxHotkey.Enter += new EventHandler(TextBoxHotkeyEnter);
                 textBoxHotkey.Leave += new EventHandler(TextBoxHotkey_Leave);
                 tableLayoutPanelHotkey.Controls.Remove(textBoxHotkeyPlaceholder);
@@ -151,6 +151,7 @@ namespace SystemTrayMenu.UserInterface
                 checkBoxSendHotkeyInsteadKillOtherInstances.Text = Translator.GetText("Send hotkey to other instance");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element");
                 checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory");
+                checkBoxSupportGamepad.Text = Translator.GetText("Support Gamepad");
                 groupBoxDrag.Text = Translator.GetText("Drag");
                 checkBoxDragDropItems.Text = Translator.GetText("Copy row element via drag and drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
@@ -355,10 +356,7 @@ namespace SystemTrayMenu.UserInterface
                 comboBoxLanguage.ValueMember = "Value";
                 comboBoxLanguage.SelectedValue =
                     Settings.Default.CurrentCultureInfoName;
-                if (comboBoxLanguage.SelectedValue == null)
-                {
-                    comboBoxLanguage.SelectedValue = "en";
-                }
+                comboBoxLanguage.SelectedValue ??= "en";
             }
 
             numericUpDownSizeInPercent.Minimum = 100;
@@ -454,6 +452,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = Settings.Default.SendHotkeyInsteadKillOtherInstances;
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
             checkBoxOpenDirectoryWithOneClick.Checked = Settings.Default.OpenDirectoryWithOneClick;
+            checkBoxSupportGamepad.Checked = Settings.Default.SupportGamepad;
 
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
@@ -958,6 +957,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.SendHotkeyInsteadKillOtherInstances = checkBoxSendHotkeyInsteadKillOtherInstances.Checked;
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Settings.Default.OpenDirectoryWithOneClick = checkBoxOpenDirectoryWithOneClick.Checked;
+            Settings.Default.SupportGamepad = checkBoxSupportGamepad.Checked;
 
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
@@ -1274,6 +1274,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = false;
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxOpenDirectoryWithOneClick.Checked = false;
+            checkBoxSupportGamepad.Checked = false;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
                 checkBoxDragDropItems.Checked = false;

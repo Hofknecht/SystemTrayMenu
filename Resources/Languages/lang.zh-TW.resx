@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>按一下以開啟目錄</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>支持遊戲手柄</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>在上一個選單的旁邊</value>
   </data>

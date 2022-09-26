@@ -139,7 +139,7 @@
     <value>Детали</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Информации за системот</value>
+    <value>Системски информации</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Директориумот е недостапен</value>
@@ -370,7 +370,7 @@
     <value>Рекурзивен</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>Отстрани директориум</value>
+    <value>Отстранете го директориумот</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Само датотеки</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Еден клик за да отворите директориум</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Поддржете гејмпад</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>До претходниот</value>

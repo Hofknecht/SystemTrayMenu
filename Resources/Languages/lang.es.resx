@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso directo</value>
+    <value>tecla de acceso rápido</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -364,7 +364,7 @@
     <value>Rutas de directorio</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>directorios</value>
+    <value>Directorios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursivo</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Un solo clic para abrir un directorio</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Compatible con mando</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Al lado del anterior</value>
   </data>
@@ -460,7 +463,7 @@
     <value>Desvanecimiento</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Enviar tecla de acceso directo a otra instancia</value>
+    <value>Enviar tecla de acceso rápido a otra instancia</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Ordenado por fecha</value>

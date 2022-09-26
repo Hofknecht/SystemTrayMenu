@@ -385,7 +385,7 @@
     <value>Altura da fila</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Esquinas redondeadas</value>
+    <value>Cantos redondeados</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Aparición</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Fai clic só para abrir un directorio</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Soporte Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>A carón do anterior</value>

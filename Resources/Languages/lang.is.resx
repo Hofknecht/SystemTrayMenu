@@ -379,7 +379,7 @@
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Bæta við sýnishornsmöppu 'Start Menu'</value>
+    <value>Bæta við sýnishornsskrá 'Start Menu'</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Röð hæð</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Einn smellur til að opna möppu</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Stuðningur Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Við hliðina á fyrri</value>
   </data>
@@ -460,7 +463,7 @@
     <value>Dvínandi</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Sendu flýtilykla í annað tilvik</value>
+    <value>Sendu flýtilykil í annað tilvik</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Raðað eftir dagsetningu</value>

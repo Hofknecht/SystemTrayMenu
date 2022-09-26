@@ -301,7 +301,7 @@
     <value>Penggeser saat mouse melayang di atasnya 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Geser saat mouse melayang di atasnya 2</value>
+    <value>Penggeser saat mouse melayang di atasnya 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Gunakan ikon dari direktori</value>
@@ -385,7 +385,7 @@
     <value>Tinggi baris</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Sudut bulat</value>
+    <value>Sudut bundar</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Penampilan</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Satu klik untuk membuka direktori</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Mendukung Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Di sebelah yang sebelumnya</value>

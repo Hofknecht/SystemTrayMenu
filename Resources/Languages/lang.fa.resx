@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>برای باز کردن دایرکتوری فقط کلیک کنید</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>پشتیبانی از گیم پد</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>کنار قبلی</value>
   </data>
@@ -478,7 +481,7 @@
     <value>بکشید</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>از طریق کشیدن انگشت پیمایش کنید</value>
+    <value>از طریق سوایپ پیمایش کنید</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>منوی فیلتر بر اساس نوع فایل به عنوان مثال: *.exe|*.dll</value>

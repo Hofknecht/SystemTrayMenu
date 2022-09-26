@@ -325,7 +325,7 @@
     <value>加载</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>快捷链接问题</value>
+    <value>快捷方式链接问题</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>此快捷方式所指的项目已更改或移动，因此此快捷方式将不再正常工作。</value>
@@ -403,7 +403,7 @@
     <value>鼠标位置（任务栏图标上方）</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
-    <value>自定义（拖到合适的位置）</value>
+    <value>自定义（拖动到合适的位置）</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>元素</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>单击以打开目录</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>支持游戏手柄</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>在上一个旁边</value>

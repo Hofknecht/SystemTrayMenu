@@ -181,7 +181,7 @@
     <value>Selectați directorul</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Directorul tău rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
+    <value>Directorul dvs. rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
@@ -313,7 +313,7 @@
     <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>Pictograme</value>
+    <value>icoane</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>Setați prin meniul contextual</value>
@@ -328,7 +328,7 @@
     <value>Problemă cu legătura rapidă</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Elementul la care se referă această comandă rapidă a fost schimbat sau mutat, așa că această comandă rapidă nu va mai funcționa corect.</value>
+    <value>Elementul la care se referă această comandă rapidă a fost modificat sau mutat, așa că această comandă rapidă nu va mai funcționa corect.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Deschide directorul</value>
@@ -379,7 +379,7 @@
     <value>Goliți memoria cache dacă este mai mare de acest număr de elemente</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Adăugați exemplu de director „Meniu Start”</value>
+    <value>Adăugați exemplu de director „Meniul Start”</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Înălțimea rândului</value>
@@ -412,7 +412,7 @@
     <value>elemente</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>Generați comenzi rapide pentru unitate la pornire</value>
+    <value>Generați comenzi rapide pentru unități la pornire</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Un singur clic pentru a deschide un director</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Suport Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Alături de precedentul</value>
@@ -490,7 +493,7 @@
     <value>Afișați titlul directorului în partea de sus</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>Afișați tasta funcțională „Deschidere folder”</value>
+    <value>Afișați tasta funcțională „Deschidere dosar”</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>Afișați tasta funcțională „Pin meniu”</value>

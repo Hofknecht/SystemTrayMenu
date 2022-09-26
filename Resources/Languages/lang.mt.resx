@@ -124,7 +124,7 @@
     <value>kollox sew</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>Bidu tal-app</value>
+    <value>App start</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Ħruġ app</value>
@@ -199,7 +199,7 @@
     <value>Fil-post tal-ġurdien</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>Bdil tad-direttorju</value>
+    <value>Tibdil tad-direttorju</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Ikklikkja</value>
@@ -256,7 +256,7 @@
     <value>Issejvja l-fajl tal-konfigurazzjoni fid-direttorju tal-applikazzjoni</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
-    <value>Konfigurazzjoni u fajls log</value>
+    <value>Konfigurazzjoni u log files</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Iftaħ id-direttorju tal-applikazzjoni</value>
@@ -295,7 +295,7 @@
     <value>Slider</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Slider waqt li jkaxkru</value>
+    <value>Slider waqt li tkaxkar</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
     <value>Slider waqt li l-maws jgħaddi fuqu 1</value>
@@ -438,11 +438,14 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Ikklikkja waħda biex tiftaħ direttorju</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Appoġġ Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ħdejn dak ta’ qabel</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset mill-pixels</value>
+    <value>Offset bil-pixels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Jikkoinċidu</value>

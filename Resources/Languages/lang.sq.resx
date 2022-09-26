@@ -316,7 +316,7 @@
     <value>Ikonat</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Vendosur sipas menysë së kontekstit</value>
+    <value>Vendoset sipas menysë së kontekstit</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Cakto si drejtori</value>
@@ -331,7 +331,7 @@
     <value>Artikulli të cilit i referohet kjo shkurtore është ndryshuar ose zhvendosur, kështu që kjo shkurtore nuk do të funksionojë më siç duhet.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Hap direktorinë</value>
+    <value>Hap drejtorinë</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>Menaxher detyrë</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Një klikim i vetëm për të hapur një direktori</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Mbështet Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Pranë të mëparshmes</value>
   </data>
@@ -475,7 +478,7 @@
     <value>Kopjoni elementin e rreshtit duke zvarritur dhe lëshuar</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Zvarritni</value>
+    <value>Zvarrit</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Lëvizni përmes rrëshqitjes</value>

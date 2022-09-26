@@ -424,7 +424,7 @@
     <value>Fitxers i directoris ocults</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>No mostrar mai</value>
+    <value>No mostris mai</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Mida i ubicació</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Un sol clic per obrir un directori</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Suport Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Al costat de l'anterior</value>
@@ -478,7 +481,7 @@
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb lliscar</value>
+    <value>Desplaceu-vos amb el dit</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>

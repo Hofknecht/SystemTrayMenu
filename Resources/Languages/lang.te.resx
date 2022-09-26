@@ -394,7 +394,7 @@
     <value>దిగువ ఎడమ</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>దిగువ కుడివైపు</value>
+    <value>దిగువ కుడి</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>ప్రధాన మెనూ కనిపిస్తుంది</value>
@@ -436,7 +436,10 @@
     <value>శోధన ఫలితంగా మాత్రమే చూపు</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>డైరెక్టరీని తెరవడానికి ఒక్క క్లిక్ చేయండి</value>
+    <value>డైరెక్టరీని తెరవడానికి ఒకే క్లిక్ చేయండి</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>గేమ్‌ప్యాడ్‌కు మద్దతు ఇవ్వండి</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>మునుపటిది పక్కన</value>

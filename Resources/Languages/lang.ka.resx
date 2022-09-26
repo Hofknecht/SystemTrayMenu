@@ -127,7 +127,7 @@
     <value>აპლიკაციის დაწყება</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>აპიდან გასვლა</value>
+    <value>აპლიკაციიდან გასვლა</value>
   </data>
   <data name="Directory" xml:space="preserve">
     <value>დირექტორია</value>
@@ -316,7 +316,7 @@
     <value>ხატები</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>დაყენებულია კონტექსტური მენიუს მიხედვით</value>
+    <value>კონტექსტური მენიუს დაყენება</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>დააყენეთ დირექტორიად</value>
@@ -355,7 +355,7 @@
     <value>დავალების პანელში ჩვენება</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>დირექტორია დაამატეთ</value>
+    <value>დირექტორიას დამატება</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>დაამატეთ დირექტორიას შინაარსი root დირექტორიაში</value>
@@ -397,7 +397,7 @@
     <value>ქვედა მარჯვენა</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>მთავარი მენიუ გამოჩნდება</value>
+    <value>გამოჩნდება მთავარი მენიუ</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>მაუსის მდებარეობა (დავალებების ზოლის ხატულაზე)</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ერთი დაწკაპუნებით დირექტორიას გასახსნელად</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Gamepad-ის მხარდაჭერა</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>წინას გვერდით</value>
@@ -529,7 +532,7 @@
     <value>უახლესი ხელმისაწვდომი ვერსია:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ხელმისაწვდომია ახალი ვერსია!</value>
+    <value>ახალი ვერსია ხელმისაწვდომია!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>თქვენ გაქვთ SystemTrayMenu-ს უახლესი ვერსია!</value>

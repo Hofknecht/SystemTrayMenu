@@ -427,7 +427,7 @@
     <value>Vis aldrig</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og beliggenhed</value>
+    <value>Størrelse og placering</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Enkelt klik for at åbne en mappe</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Support Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ved siden af ​​den forrige</value>
@@ -535,6 +538,6 @@
     <value>Du har den seneste version af SystemTrayMenu!</value>
   </data>
   <data name="Application size" xml:space="preserve">
-    <value>Applikationsstørrelse</value>
+    <value>Anvendelsesstørrelse</value>
   </data>
 </root>

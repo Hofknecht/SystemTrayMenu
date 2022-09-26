@@ -331,10 +331,11 @@ PayPal/GitHub Sponsors - Thank you!
 ------------------
 (Sponsors are listed here in the ReadMe and in the application about menu)
 * Stefan Mahrer
+* [boydfields](https://github.com/boydfields)
 * [RuSieg](https://github.com/RuSieg)
 * Ralf K.
 * [donaldaken](https://github.com/donaldaken)
 * Marc Speer
-* [boydfields](https://github.com/boydfields)
+* Peter G.
 * [Traditional_Tap3954](https://www.reddit.com/user/Traditional_Tap3954/)
 * Maximilian H.

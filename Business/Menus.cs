@@ -16,6 +16,7 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
     using Menu = SystemTrayMenu.UserInterface.Menu;
@@ -29,6 +30,7 @@ namespace SystemTrayMenu.Business
         private readonly DgvMouseRow dgvMouseRow = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
+        private readonly JoystickHelper joystickHelper;
         private readonly List<FileSystemWatcher> watchers = new();
         private readonly List<EventArgs> watcherHistory = new();
         private readonly Timer timerShowProcessStartedAsLoadingIcon = new();
@@ -251,7 +253,7 @@ namespace SystemTrayMenu.Business
             dgvMouseRow.RowMouseLeave += waitToOpenMenu.MouseLeave;
             dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave;
 
-            keyboardInput = new KeyboardInput(menus);
+            keyboardInput = new(menus);
             keyboardInput.RegisterHotKey();
             keyboardInput.HotKeyPressed += () => SwitchOpenClose(false);
             keyboardInput.ClosePressed += MenusFadeOut;
@@ -264,6 +266,9 @@ namespace SystemTrayMenu.Business
                 Menu menu = (Menu)dgv.FindForm();
                 menu.AdjustScrollbar();
             }
+
+            joystickHelper = new();
+            joystickHelper.KeyPressed += (key) => menus[0].Invoke(keyboardInput.CmdKeyProcessed, null, key);
 
             timerShowProcessStartedAsLoadingIcon.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed;
             timerStillActiveCheck.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed + 20;
@@ -290,13 +295,15 @@ namespace SystemTrayMenu.Business
             {
                 try
                 {
-                    FileSystemWatcher watcher = new();
-                    watcher.Path = path;
-                    watcher.NotifyFilter = NotifyFilters.Attributes |
+                    FileSystemWatcher watcher = new()
+                    {
+                        Path = path,
+                        NotifyFilter = NotifyFilters.Attributes |
                         NotifyFilters.DirectoryName |
                         NotifyFilters.FileName |
-                        NotifyFilters.LastWrite;
-                    watcher.Filter = "*.*";
+                        NotifyFilters.LastWrite,
+                        Filter = "*.*",
+                    };
                     watcher.Created += WatcherProcessItem;
                     watcher.Deleted += WatcherProcessItem;
                     watcher.Renamed += WatcherProcessItem;
@@ -337,6 +344,7 @@ namespace SystemTrayMenu.Business
 
             waitToOpenMenu.Dispose();
             keyboardInput.Dispose();
+            joystickHelper.Dispose();
             timerShowProcessStartedAsLoadingIcon.Dispose();
             timerStillActiveCheck.Dispose();
             waitLeave.Dispose();
@@ -429,6 +437,7 @@ namespace SystemTrayMenu.Business
             else
             {
                 openCloseState = OpenCloseState.Opening;
+                joystickHelper.Enable();
                 StartWorker();
             }
 
@@ -1130,6 +1139,7 @@ namespace SystemTrayMenu.Business
             });
 
             Config.AlwaysOpenByPin = false;
+            joystickHelper.Disable();
         }
 
         private void AdjustMenusSizeAndLocation()
@@ -1402,8 +1412,10 @@ namespace SystemTrayMenu.Business
 
                 rowData.ReadIcon(true);
 
-                List<RowData> rowDatas = new();
-                rowDatas.Add(rowData);
+                List<RowData> rowDatas = new()
+                {
+                    rowData,
+                };
 
                 DataTable dataTable = (DataTable)menus[0].GetDataGridView().DataSource;
                 foreach (DataRow row in dataTable.Rows)

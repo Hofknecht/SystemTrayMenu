@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Bofya mara moja ili kufungua saraka</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Msaada wa Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Karibu na uliopita</value>
   </data>
@@ -526,7 +529,7 @@
     <value>Nenda kwenye ukurasa wa kupakua</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
-    <value>Toleo la hivi punde linalopatikana:</value>
+    <value>Toleo linalopatikana hivi karibuni:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
     <value>Toleo jipya linapatikana!</value>

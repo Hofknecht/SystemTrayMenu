@@ -190,7 +190,7 @@
     <value>نقرة واحدة لفتح عنصر</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>نظام الألوان الداكن نشط دائمًا</value>
+    <value>نظام الألوان داكن نشط دائمًا</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>متقدم</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>نقرة واحدة لفتح دليل</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>دعم Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>بجانب السابق</value>
   </data>
@@ -526,7 +529,7 @@
     <value>انتقل إلى صفحة التنزيل</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
-    <value>أحدث نسخة متاحة:</value>
+    <value>أحدث إصدار متاح:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
     <value>نسخة جديدة متاحة!</value>

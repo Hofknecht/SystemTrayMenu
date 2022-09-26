@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Un clic pour ouvrir un répertoire</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Prise en charge de la manette</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>A côté du précédent</value>
   </data>

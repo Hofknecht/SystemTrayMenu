@@ -316,10 +316,10 @@
     <value>Ikoner</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Sett av kontekstmeny</value>
+    <value>Angis av kontekstmenyen</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Sett som katalog</value>
+    <value>Angi som katalog</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>lasting</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Enkeltklikk for å åpne en katalog</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Støtte Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ved siden av den forrige</value>

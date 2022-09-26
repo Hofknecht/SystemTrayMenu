@@ -190,7 +190,7 @@
     <value>Jediným kliknutím otevřete prvek</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Barevné schéma tmavé vždy aktivní</value>
+    <value>Barevné schéma tmavé je vždy aktivní</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Pokročilý</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Jediným kliknutím otevřete adresář</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Podpora gamepadu</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Vedle předchozího</value>

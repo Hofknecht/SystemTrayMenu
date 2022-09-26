@@ -217,7 +217,7 @@
     <value>মিলিসেকেন্ড যতক্ষণ না একটি মেনু খোলা হয় যখন মাউস এটিতে থাকে</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড যদি মাউস তারপর মেনু ছেড়ে যায়</value>
+    <value>মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড যদি মাউস মেনু ছেড়ে চলে যায়</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>সর্বাধিক মেনু প্রস্থ</value>
@@ -268,7 +268,7 @@
     <value>তীর</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>ক্লিক করার সময় তীরচিহ্ন</value>
+    <value>ক্লিক করার সময় তীর</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>মাউস এটির উপর ঘোরার সময় তীরচিহ্ন</value>
@@ -316,7 +316,7 @@
     <value>আইকন</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>প্রসঙ্গ মেনু দ্বারা সেট</value>
+    <value>প্রসঙ্গ মেনু দ্বারা সেট করুন</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ডিরেক্টরি হিসাবে সেট করুন</value>
@@ -328,7 +328,7 @@
     <value>শর্টকাট লিঙ্কে সমস্যা</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>এই শর্টকাটটি যে আইটেমটিকে বোঝায় তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না৷</value>
+    <value>এই শর্টকাটটি যে আইটেমটি নির্দেশ করে তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না।</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ডিরেক্টরি খুলুন</value>
@@ -337,7 +337,7 @@
     <value>কাজ ব্যবস্থাপক</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>নিষ্ক্রিয় করা হয়েছে</value>
+    <value>নিষ্ক্রিয়</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>সক্রিয়</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>একটি ডিরেক্টরি খুলতে একক ক্লিক করুন</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>গেমপ্যাড সমর্থন করে</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>আগেরটির পাশে</value>
   </data>
@@ -451,7 +454,7 @@
     <value>সাব মেনু প্রদর্শিত হবে</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>আইকনের আকার</value>
+    <value>আইকন আকার</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>সিস্টেমট্রেমেনু সমর্থন করে</value>

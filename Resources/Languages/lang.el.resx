@@ -295,7 +295,7 @@
     <value>Ολισθητής</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Ρυθμίστε κατά τη μεταφορά</value>
+    <value>Ρυθμιστικό κατά τη μεταφορά</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
     <value>Σύρετε ενώ το ποντίκι αιωρείται πάνω του 1</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Ένα μόνο κλικ για να ανοίξετε έναν κατάλογο</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Υποστήριξη Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Δίπλα στο προηγούμενο</value>

@@ -438,11 +438,14 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Avaa hakemisto yhdellä napsautuksella</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Tuki peliohjainta</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Edellisen viereen</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Poikkeama pikseleillä</value>
+    <value>Offset pikseleillä</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Päällekkäinen</value>

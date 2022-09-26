@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Մեկ սեղմումով գրացուցակ բացելու համար</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Աջակցեք Gamepad-ին</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Նախկինի կողքին</value>
   </data>

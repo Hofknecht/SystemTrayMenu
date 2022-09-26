@@ -361,7 +361,7 @@
     <value>Inhoud van map toevoegen aan hoofdmap</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>Directorypaden</value>
+    <value>Mappaden</value>
   </data>
   <data name="Directories" xml:space="preserve">
     <value>Directory's</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Enkele klik om een ​​map te openen</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Ondersteuning Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Naast de vorige</value>

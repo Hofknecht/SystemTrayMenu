@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Pojedyncze kliknięcie, aby otworzyć katalog</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Wsparcie Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Obok poprzedniego</value>
   </data>
@@ -454,13 +457,13 @@
     <value>Rozmiar ikony</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Wsparcie SystemoweTacaMenu</value>
+    <value>Wsparcie systemoweTacaMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Zblakły</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Wyślij klawisz skrótu do innej instancji</value>
+    <value>Wyślij skrót do innej instancji</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Posortowane według daty</value>
