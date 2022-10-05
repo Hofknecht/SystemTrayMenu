@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directory of Internet Shortcut Icons</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sorted by type and date</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Sorted by type (folder or file) and date</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Sorted by type and name</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Sorted by type (folder or file) and name</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Check for updates</value>

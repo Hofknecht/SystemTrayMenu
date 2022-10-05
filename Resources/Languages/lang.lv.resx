@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Interneta īsceļu ikonu direktorijs</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sakārtots pēc veida un datuma</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Kārtots pēc veida (mape vai fails) un datuma</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Sakārtots pēc veida un nosaukuma</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Sakārtots pēc veida (mape vai fails) un nosaukuma</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Meklēt atjauninājumus</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Lietojumprogrammas izmērs</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Izvēles funkcijas</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Atrisiniet saites uz mapēm un parādiet saturu</value>
   </data>
 </root>

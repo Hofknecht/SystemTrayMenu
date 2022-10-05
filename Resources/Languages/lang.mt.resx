@@ -124,7 +124,7 @@
     <value>kollox sew</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>App start</value>
+    <value>Bidu tal-app</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Ħruġ app</value>
@@ -256,7 +256,7 @@
     <value>Issejvja l-fajl tal-konfigurazzjoni fid-direttorju tal-applikazzjoni</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
-    <value>Konfigurazzjoni u log files</value>
+    <value>Konfigurazzjoni u fajls log</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Iftaħ id-direttorju tal-applikazzjoni</value>
@@ -451,7 +451,7 @@
     <value>Jikkoinċidu</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>Jidher sottomenu</value>
+    <value>Jidher is-sottomenu</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>Daqs tal-ikona</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Direttorju ta' Ikoni ta' Shortcut ta' l-Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Issortjati skond it-tip u d-data</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Issortjati skont it-tip (folder jew fajl) u d-data</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Issortjati skond it-tip u l-isem</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Issortjati skond it-tip (folder jew fajl) u l-isem</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Iċċekkja għal aġġornamenti</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Daqs tal-applikazzjoni</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Karatteristiċi Fakultattivi</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Issolvi links għal folders u uri l-kontenut</value>
   </data>
 </root>

@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>دليل أيقونات اختصارات الإنترنت</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>مرتبة حسب النوع والتاريخ</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>مرتبة حسب النوع (مجلد أو ملف) والتاريخ</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>مرتبة حسب النوع والاسم</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>مرتبة حسب النوع (المجلد أو الملف) والاسم</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>تحقق من وجود تحديثات</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>حجم التطبيق</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>ميزات اختيارية</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>حل روابط المجلدات وإظهار المحتوى</value>
   </data>
 </root>

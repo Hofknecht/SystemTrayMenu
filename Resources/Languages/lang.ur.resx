@@ -130,10 +130,10 @@
     <value>ایپ سے باہر نکلیں۔</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>ڈائریکٹری</value>
+    <value>ڈائرکٹری</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>ڈائرکٹری خالی ہے۔</value>
+    <value>ڈائریکٹری خالی</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>تفصیلات</value>
@@ -325,7 +325,7 @@
     <value>لوڈ ہو رہا ہے</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>شارٹ کٹ لنک میں مسئلہ</value>
+    <value>شارٹ کٹ لنک کے ساتھ مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، لہذا یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
@@ -412,7 +412,7 @@
     <value>عناصر</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹ بنائیں</value>
+    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹس بنائیں</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
@@ -493,13 +493,13 @@
     <value>ڈائرکٹری کا عنوان اوپر دکھائیں۔</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>فنکشن کی کلید 'اوپن فولڈر' دکھائیں</value>
+    <value>فنکشن کلید 'اوپن فولڈر' دکھائیں</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>فنکشن کلید 'پن مینو' دکھائیں</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>فنکشن کلید 'ترتیبات' دکھائیں</value>
+    <value>فنکشن کی 'ترتیبات' دکھائیں</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
     <value>فنکشن کلید 'دوبارہ شروع کریں' دکھائیں</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>انٹرنیٹ شارٹ کٹ شبیہیں کی ڈائرکٹری</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>قسم اور تاریخ کے لحاظ سے ترتیب دیا گیا ہے۔</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>قسم (فولڈر یا فائل) اور تاریخ کے لحاظ سے ترتیب دیا گیا ہے۔</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>قسم اور نام کے لحاظ سے ترتیب دیا گیا ہے۔</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>قسم (فولڈر یا فائل) اور نام کے لحاظ سے ترتیب دیا گیا ہے۔</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>اپ ڈیٹ کے لیے چیک کریں</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>درخواست کا سائز</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>اختیاری خصوصیات</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>فولڈرز کے لنکس حل کریں اور مواد دکھائیں۔</value>
   </data>
 </root>

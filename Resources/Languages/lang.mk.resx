@@ -133,7 +133,7 @@
     <value>Директориум</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Именикот празен</value>
+    <value>Именик празен</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Детали</value>
@@ -370,7 +370,7 @@
     <value>Рекурзивен</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>Отстранете го директориумот</value>
+    <value>Отстрани директориум</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Само датотеки</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Директориум на икони за кратенки на Интернет</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Подредени по тип и датум</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Подредени по тип (папка или датотека) и датум</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Подредени по тип и име</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Подредени по тип (папка или датотека) и име</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Проверете дали има ажурирања</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Големина на апликацијата</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Факултативни карактеристики</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Решете ги врските до папките и прикажувајте содржина</value>
   </data>
 </root>

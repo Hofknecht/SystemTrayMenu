@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Saraka ya Aikoni za Njia za Mkato za Mtandao</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Imepangwa kwa aina na tarehe</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Imepangwa kwa aina (folda au faili) na tarehe</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Imepangwa kwa aina na jina</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Imepangwa kwa aina (folda au faili) na jina</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Angalia vilivyojiri vipya</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Ukubwa wa maombi</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Sifa za hiari</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Tatua viungo vya folda na uonyeshe maudhui</value>
   </data>
 </root>

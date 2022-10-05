@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu के बारे में</value>
+    <value>सिस्टमट्रेमेनू के बारे में</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>ठीक है</value>
@@ -346,7 +346,7 @@
     <value>विशेषज्ञ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>यदि फोकस खो गया है और एंटर कुंजी दबा दी गई है</value>
+    <value>यदि फोकस खो गया है और एंटर कुंजी दबाई गई है</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>मिलीसेकंड जब तक मेनू बंद नहीं हो जाता है यदि मेनू पुनः सक्रिय नहीं होता है</value>
@@ -442,7 +442,7 @@
     <value>गेमपैड का समर्थन करें</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>पिछले वाले के आगे</value>
+    <value>पिछले एक के आगे</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
     <value>पिक्सेल द्वारा ऑफ़सेट</value>
@@ -454,7 +454,7 @@
     <value>उप मेनू प्रकट होता है</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>चिह्न का आकार</value>
+    <value>चिह्न आकार</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>समर्थन प्रणालीट्रेमेनू</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>इंटरनेट शॉर्टकट आइकन की निर्देशिका</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>प्रकार और तिथि के अनुसार क्रमबद्ध</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>प्रकार (फ़ोल्डर या फ़ाइल) और दिनांक के अनुसार क्रमित</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>प्रकार और नाम द्वारा क्रमबद्ध</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>प्रकार (फ़ोल्डर या फ़ाइल) और नाम के आधार पर छाँटा गया</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>अद्यतन के लिए जाँच</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>आवेदन का आकार</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>वैकल्पिक विशेषताएं</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>फ़ोल्डरों के लिंक का समाधान करें और सामग्री दिखाएं</value>
   </data>
 </root>

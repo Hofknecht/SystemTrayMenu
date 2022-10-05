@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>인터넷 바로 가기 아이콘 디렉토리</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>유형 및 날짜별로 정렬</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>유형(폴더 또는 파일) 및 날짜별로 정렬</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>유형 및 이름별로 정렬</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>유형(폴더 또는 파일) 및 이름별로 정렬</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>업데이트 확인</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>애플리케이션 크기</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>옵션 기능</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>폴더에 대한 링크를 확인하고 콘텐츠를 표시합니다.</value>
   </data>
 </root>

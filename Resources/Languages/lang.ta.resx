@@ -124,7 +124,7 @@
     <value>சரி</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>ஆப்ஸ் ஆரம்பம்</value>
+    <value>பயன்பாட்டின் தொடக்கம்</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>பயன்பாட்டிலிருந்து வெளியேறு</value>
@@ -175,7 +175,7 @@
     <value>அடிக்கடி கேட்கப்படும் கேள்விகள்</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து பின்னர் SystemTrayMenu க்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
+    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து, பின்னர் SystemTrayMenuக்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>கோப்பகத்தைத் தேர்ந்தெடுக்கவும்</value>
@@ -376,7 +376,7 @@
     <value>கோப்புகள் மட்டும்</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>இந்த எண்ணிக்கையை விட அதிகமான உருப்படிகள் இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>இணைய குறுக்குவழி ஐகான்களின் அடைவு</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>வகை மற்றும் தேதி மூலம் வரிசைப்படுத்தப்பட்டது</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>வகை (கோப்புறை அல்லது கோப்பு) மற்றும் தேதி மூலம் வரிசைப்படுத்தப்பட்டது</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>வகை மற்றும் பெயர் மூலம் வரிசைப்படுத்தப்பட்டது</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>வகை (கோப்புறை அல்லது கோப்பு) மற்றும் பெயர் மூலம் வரிசைப்படுத்தப்பட்டது</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>புதுப்பிப்புகளைச் சரிபார்க்கவும்</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>விண்ணப்ப அளவு</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>விருப்ப அம்சங்கள்</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>கோப்புறைகளுக்கான இணைப்புகளைத் தீர்த்து உள்ளடக்கத்தைக் காட்டு</value>
   </data>
 </root>

@@ -379,7 +379,7 @@
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Bæta við sýnishornsskrá 'Start Menu'</value>
+    <value>Bæta við sýnishornsmöppu 'Start Menu'</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Röð hæð</value>
@@ -400,7 +400,7 @@
     <value>Aðalvalmynd birtist</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>Staðsetning músar (fyrir ofan verkstiku táknið)</value>
+    <value>Staðsetning músar (fyrir ofan verkstikutáknið)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Sérsniðið (dragaðu það á viðeigandi stað)</value>
@@ -463,7 +463,7 @@
     <value>Dvínandi</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Sendu flýtilykil í annað tilvik</value>
+    <value>Sendu flýtilykla í annað tilvik</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Raðað eftir dagsetningu</value>
@@ -490,7 +490,7 @@
     <value>Sýna fjölda þátta</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Sýna möppuheiti efst</value>
+    <value>Sýna möppu titil efst</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>Sýna aðgerðarlykilinn 'Opna möppu'</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Skrá yfir Internet flýtivísa tákn</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Raðað eftir tegund og dagsetningu</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Raðað eftir tegund (möppu eða skrá) og dagsetningu</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Raðað eftir tegund og nafni</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Raðað eftir tegund (möppu eða skrá) og nafni</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Athugaðu með uppfærslur</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Umsóknarstærð</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Valfrjálsir eiginleikar</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Leysa tengla á möppur og sýna efni</value>
   </data>
 </root>

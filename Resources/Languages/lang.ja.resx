@@ -442,7 +442,7 @@
     <value>ゲームパッドをサポート</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>一つ前の続き</value>
+    <value>前の隣に</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
     <value>ピクセル単位でオフセット</value>
@@ -463,7 +463,7 @@
     <value>フェージング</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>ホットキーを他のインスタンスに送信する</value>
+    <value>ホットキーを他のインスタンスに送信</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>日付順</value>
@@ -484,7 +484,7 @@
     <value>スワイプでスクロール</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ファイルの種類でメニューをフィルター処理します。例: *.exe|*.dll</value>
+    <value>ファイルの種類でメニューをフィルタします。例: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>要素数を表示</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>インターネット ショートカット アイコンのディレクトリ</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>種類別、日付別</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>タイプ（フォルダまたはファイル）および日付でソート</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>種類と名前で並べ替え</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>種類 (フォルダーまたはファイル) と名前で並べ替え</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>アップデートを確認</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>アプリケーションサイズ</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>オプション機能</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>フォルダへのリンクを解決してコンテンツを表示する</value>
   </data>
 </root>
