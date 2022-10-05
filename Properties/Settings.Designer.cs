@@ -368,6 +368,22 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("true")]
+        public bool ResolveLinksToFolders
+        {
+            get
+            {
+                return ((bool)(this["ResolveLinksToFolders"]));
+            }
+            set
+            {
+                this["ResolveLinksToFolders"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
         public bool ShowInTaskbar
         {
             get
@@ -393,6 +409,22 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["SendHotkeyInsteadKillOtherInstances"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("false")]
+        public bool SupportGamepad
+        {
+            get
+            {
+                return ((bool)(this["SupportGamepad"]));
+            }
+            set
+            {
+                this["SupportGamepad"] = value;
             }
         }
 
@@ -425,22 +457,6 @@ namespace SystemTrayMenu.Properties
             set
             {
                 this["OpenDirectoryWithOneClick"] = value;
-            }
-        }
-
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("false")]
-        public bool SupportGamepad
-        {
-            get
-            {
-                return ((bool)(this["SupportGamepad"]));
-            }
-            set
-            {
-                this["SupportGamepad"] = value;
             }
         }
 

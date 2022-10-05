@@ -84,7 +84,12 @@ namespace SystemTrayMenu.DataClasses
                     }
                 }
 
-                ContainsMenu = IsFolder || IsLinkToFolder;
+                ContainsMenu = IsFolder;
+                if (Properties.Settings.Default.ResolveLinksToFolders)
+                {
+                    ContainsMenu |= IsLinkToFolder;
+                }
+
                 IsMainMenu = Level == 0;
             }
             catch (Exception ex)

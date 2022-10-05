@@ -438,7 +438,7 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Single click to open a directory</value>
   </data>
-	<data name="Support Gamepad" xml:space="preserve">
+  <data name="Support Gamepad" xml:space="preserve">
     <value>Support Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Application size</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Optional Features</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Resolve links to folders and show content</value>
   </data>
 </root>

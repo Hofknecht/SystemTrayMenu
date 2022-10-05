@@ -179,7 +179,7 @@ namespace SystemTrayMenu.UserInterface
         /// Show the control
         /// (workaround, because visible = false, was causing appearing scrollbars).
         /// </summary>
-        /// <param name="newHeight">newHeight which to paint</param>
+        /// <param name="newHeight">newHeight which to paint.</param>
         internal void PaintEnable(int newHeight)
         {
             int newWidth = Math.Max(width, Width);

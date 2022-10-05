@@ -98,6 +98,12 @@ namespace SystemTrayMenu.UserInterface
             this.labelMaxMenuWidth = new System.Windows.Forms.Label();
             this.tabPageAdvanced = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelAdvanced = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBoxOptionalFeatures = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxShowInTaskbar = new System.Windows.Forms.CheckBox();
+            this.checkBoxSendHotkeyInsteadKillOtherInstances = new System.Windows.Forms.CheckBox();
+            this.checkBoxSupportGamepad = new System.Windows.Forms.CheckBox();
+            this.checkBoxResolveLinksToFolders = new System.Windows.Forms.CheckBox();
             this.groupBoxInternetShortcutIcons = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelInternetShortcutIcons = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelChangeIcoFolder = new System.Windows.Forms.TableLayoutPanel();
@@ -107,12 +113,6 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxSwipeScrolling = new System.Windows.Forms.CheckBox();
             this.checkBoxDragDropItems = new System.Windows.Forms.CheckBox();
-            this.groupBoxClick = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelClick = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxSendHotkeyInsteadKillOtherInstances = new System.Windows.Forms.CheckBox();
-            this.checkBoxOpenDirectoryWithOneClick = new System.Windows.Forms.CheckBox();
-            this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowInTaskbar = new System.Windows.Forms.CheckBox();
             this.buttonAdvancedDefault = new System.Windows.Forms.Button();
             this.groupBoxSorting = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanelSorting = new System.Windows.Forms.TableLayoutPanel();
@@ -125,6 +125,10 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonAlwaysShowHiddenFiles = new System.Windows.Forms.RadioButton();
             this.radioButtonNeverShowHiddenFiles = new System.Windows.Forms.RadioButton();
             this.radioButtonSystemSettingsShowHiddenFiles = new System.Windows.Forms.RadioButton();
+            this.groupBoxClick = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanelClick = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxOpenDirectoryWithOneClick = new System.Windows.Forms.CheckBox();
+            this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
             this.tabPageFolders = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelFoldersInRootFolder = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxFoldersInRootFolder = new System.Windows.Forms.GroupBox();
@@ -342,7 +346,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.checkBoxSupportGamepad = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -382,17 +385,19 @@ namespace SystemTrayMenu.UserInterface
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuWidth)).BeginInit();
             this.tabPageAdvanced.SuspendLayout();
             this.tableLayoutPanelAdvanced.SuspendLayout();
+            this.groupBoxOptionalFeatures.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.groupBoxInternetShortcutIcons.SuspendLayout();
             this.tableLayoutPanelInternetShortcutIcons.SuspendLayout();
             this.tableLayoutPanelChangeIcoFolder.SuspendLayout();
             this.groupBoxDrag.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBoxClick.SuspendLayout();
-            this.tableLayoutPanelClick.SuspendLayout();
             this.groupBoxSorting.SuspendLayout();
             this.tableLayoutPanelSorting.SuspendLayout();
             this.groupBoxHiddenFilesAndFolders.SuspendLayout();
             this.tableLayoutPanelHiddenFilesAndFolders.SuspendLayout();
+            this.groupBoxClick.SuspendLayout();
+            this.tableLayoutPanelClick.SuspendLayout();
             this.tabPageFolders.SuspendLayout();
             this.tableLayoutPanelFoldersInRootFolder.SuspendLayout();
             this.groupBoxFoldersInRootFolder.SuspendLayout();
@@ -1445,24 +1450,101 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAdvanced.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelAdvanced.ColumnCount = 1;
             this.tableLayoutPanelAdvanced.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxInternetShortcutIcons, 0, 2);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxDrag, 0, 1);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxClick, 0, 0);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.buttonAdvancedDefault, 0, 5);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxSorting, 0, 3);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxHiddenFilesAndFolders, 0, 4);
+            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxOptionalFeatures, 0, 0);
+            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxInternetShortcutIcons, 0, 3);
+            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxDrag, 0, 2);
+            this.tableLayoutPanelAdvanced.Controls.Add(this.buttonAdvancedDefault, 0, 6);
+            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxSorting, 0, 4);
+            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxHiddenFilesAndFolders, 0, 5);
+            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxClick, 0, 1);
             this.tableLayoutPanelAdvanced.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelAdvanced.Name = "tableLayoutPanelAdvanced";
             this.tableLayoutPanelAdvanced.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
-            this.tableLayoutPanelAdvanced.RowCount = 6;
+            this.tableLayoutPanelAdvanced.RowCount = 7;
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 592);
+            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 645);
             this.tableLayoutPanelAdvanced.TabIndex = 0;
+            // 
+            // groupBoxOptionalFeatures
+            // 
+            this.groupBoxOptionalFeatures.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxOptionalFeatures.AutoSize = true;
+            this.groupBoxOptionalFeatures.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxOptionalFeatures.Controls.Add(this.tableLayoutPanel2);
+            this.groupBoxOptionalFeatures.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxOptionalFeatures.Name = "groupBoxOptionalFeatures";
+            this.groupBoxOptionalFeatures.Size = new System.Drawing.Size(289, 122);
+            this.groupBoxOptionalFeatures.TabIndex = 1;
+            this.groupBoxOptionalFeatures.TabStop = false;
+            this.groupBoxOptionalFeatures.Text = "groupBoxOptionalFeatures";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.checkBoxShowInTaskbar, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.checkBoxSendHotkeyInsteadKillOtherInstances, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.checkBoxSupportGamepad, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.checkBoxResolveLinksToFolders, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(283, 100);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // checkBoxShowInTaskbar
+            // 
+            this.checkBoxShowInTaskbar.AutoSize = true;
+            this.checkBoxShowInTaskbar.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxShowInTaskbar.Name = "checkBoxShowInTaskbar";
+            this.checkBoxShowInTaskbar.Size = new System.Drawing.Size(155, 19);
+            this.checkBoxShowInTaskbar.TabIndex = 1;
+            this.checkBoxShowInTaskbar.Text = "checkBoxShowInTaskbar";
+            this.checkBoxShowInTaskbar.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSendHotkeyInsteadKillOtherInstances
+            // 
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.AutoSize = true;
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Location = new System.Drawing.Point(3, 53);
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.MaximumSize = new System.Drawing.Size(330, 0);
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Name = "checkBoxSendHotkeyInsteadKillOtherInstances";
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Size = new System.Drawing.Size(274, 19);
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.TabIndex = 3;
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.Text = "checkBoxSendHotkeyInsteadKillOtherInstances";
+            this.checkBoxSendHotkeyInsteadKillOtherInstances.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSupportGamepad
+            // 
+            this.checkBoxSupportGamepad.AutoSize = true;
+            this.checkBoxSupportGamepad.Location = new System.Drawing.Point(3, 78);
+            this.checkBoxSupportGamepad.Name = "checkBoxSupportGamepad";
+            this.checkBoxSupportGamepad.Size = new System.Drawing.Size(170, 19);
+            this.checkBoxSupportGamepad.TabIndex = 4;
+            this.checkBoxSupportGamepad.Text = "checkBoxSupportGamepad";
+            this.checkBoxSupportGamepad.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxResolveLinksToFolders
+            // 
+            this.checkBoxResolveLinksToFolders.AutoSize = true;
+            this.checkBoxResolveLinksToFolders.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxResolveLinksToFolders.Name = "checkBoxResolveLinksToFolders";
+            this.checkBoxResolveLinksToFolders.Size = new System.Drawing.Size(194, 19);
+            this.checkBoxResolveLinksToFolders.TabIndex = 1;
+            this.checkBoxResolveLinksToFolders.Text = "checkBoxResolveLinksToFolders";
+            this.checkBoxResolveLinksToFolders.UseVisualStyleBackColor = true;
             // 
             // groupBoxInternetShortcutIcons
             // 
@@ -1470,7 +1552,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxInternetShortcutIcons.AutoSize = true;
             this.groupBoxInternetShortcutIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxInternetShortcutIcons.Controls.Add(this.tableLayoutPanelInternetShortcutIcons);
-            this.groupBoxInternetShortcutIcons.Location = new System.Drawing.Point(3, 234);
+            this.groupBoxInternetShortcutIcons.Location = new System.Drawing.Point(3, 287);
             this.groupBoxInternetShortcutIcons.Name = "groupBoxInternetShortcutIcons";
             this.groupBoxInternetShortcutIcons.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBoxInternetShortcutIcons.Size = new System.Drawing.Size(289, 81);
@@ -1546,7 +1628,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxDrag.AutoSize = true;
             this.groupBoxDrag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxDrag.Controls.Add(this.tableLayoutPanel1);
-            this.groupBoxDrag.Location = new System.Drawing.Point(3, 156);
+            this.groupBoxDrag.Location = new System.Drawing.Point(3, 209);
             this.groupBoxDrag.Name = "groupBoxDrag";
             this.groupBoxDrag.Size = new System.Drawing.Size(289, 72);
             this.groupBoxDrag.TabIndex = 4;
@@ -1592,92 +1674,11 @@ namespace SystemTrayMenu.UserInterface
             this.checkBoxDragDropItems.Text = "checkBoxDragDropItems";
             this.checkBoxDragDropItems.UseVisualStyleBackColor = true;
             // 
-            // groupBoxClick
-            // 
-            this.groupBoxClick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxClick.AutoSize = true;
-            this.groupBoxClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxClick.Controls.Add(this.tableLayoutPanelClick);
-            this.groupBoxClick.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxClick.Name = "groupBoxClick";
-            this.groupBoxClick.Size = new System.Drawing.Size(289, 147);
-            this.groupBoxClick.TabIndex = 0;
-            this.groupBoxClick.TabStop = false;
-            this.groupBoxClick.Text = "groupBoxClick";
-            // 
-            // tableLayoutPanelClick
-            // 
-            this.tableLayoutPanelClick.AutoSize = true;
-            this.tableLayoutPanelClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelClick.ColumnCount = 1;
-            this.tableLayoutPanelClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxSupportGamepad, 0, 4);
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxSendHotkeyInsteadKillOtherInstances, 0, 1);
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenDirectoryWithOneClick, 0, 3);
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 2);
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxShowInTaskbar, 0, 0);
-            this.tableLayoutPanelClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelClick.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelClick.Name = "tableLayoutPanelClick";
-            this.tableLayoutPanelClick.RowCount = 5;
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.Size = new System.Drawing.Size(283, 125);
-            this.tableLayoutPanelClick.TabIndex = 0;
-            // 
-            // checkBoxSendHotkeyInsteadKillOtherInstances
-            // 
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.AutoSize = true;
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.MaximumSize = new System.Drawing.Size(330, 0);
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Name = "checkBoxSendHotkeyInsteadKillOtherInstances";
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.TabIndex = 3;
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Text = "checkBoxSendHotkeyInsteadKillOtherInstances";
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxOpenDirectoryWithOneClick
-            // 
-            this.checkBoxOpenDirectoryWithOneClick.AutoSize = true;
-            this.checkBoxOpenDirectoryWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxOpenDirectoryWithOneClick.Location = new System.Drawing.Point(3, 78);
-            this.checkBoxOpenDirectoryWithOneClick.Name = "checkBoxOpenDirectoryWithOneClick";
-            this.checkBoxOpenDirectoryWithOneClick.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxOpenDirectoryWithOneClick.TabIndex = 2;
-            this.checkBoxOpenDirectoryWithOneClick.Text = "checkBoxOpenDirectoryWithOneClick";
-            this.checkBoxOpenDirectoryWithOneClick.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxOpenItemWithOneClick
-            // 
-            this.checkBoxOpenItemWithOneClick.AutoSize = true;
-            this.checkBoxOpenItemWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(3, 53);
-            this.checkBoxOpenItemWithOneClick.Name = "checkBoxOpenItemWithOneClick";
-            this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxOpenItemWithOneClick.TabIndex = 0;
-            this.checkBoxOpenItemWithOneClick.Text = "checkBoxOpenItemWithOneClick";
-            this.checkBoxOpenItemWithOneClick.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShowInTaskbar
-            // 
-            this.checkBoxShowInTaskbar.AutoSize = true;
-            this.checkBoxShowInTaskbar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxShowInTaskbar.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxShowInTaskbar.Name = "checkBoxShowInTaskbar";
-            this.checkBoxShowInTaskbar.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxShowInTaskbar.TabIndex = 1;
-            this.checkBoxShowInTaskbar.Text = "checkBoxShowInTaskbar";
-            this.checkBoxShowInTaskbar.UseVisualStyleBackColor = true;
-            // 
             // buttonAdvancedDefault
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 558);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 611);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -1693,7 +1694,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSorting.AutoSize = true;
             this.groupBoxSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxSorting.Controls.Add(this.tableLayoutPanelSorting);
-            this.groupBoxSorting.Location = new System.Drawing.Point(3, 321);
+            this.groupBoxSorting.Location = new System.Drawing.Point(3, 374);
             this.groupBoxSorting.Name = "groupBoxSorting";
             this.groupBoxSorting.Size = new System.Drawing.Size(289, 122);
             this.groupBoxSorting.TabIndex = 3;
@@ -1771,7 +1772,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHiddenFilesAndFolders.AutoSize = true;
             this.groupBoxHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHiddenFilesAndFolders.Controls.Add(this.tableLayoutPanelHiddenFilesAndFolders);
-            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 449);
+            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 502);
             this.groupBoxHiddenFilesAndFolders.Name = "groupBoxHiddenFilesAndFolders";
             this.groupBoxHiddenFilesAndFolders.Size = new System.Drawing.Size(289, 97);
             this.groupBoxHiddenFilesAndFolders.TabIndex = 2;
@@ -1832,6 +1833,60 @@ namespace SystemTrayMenu.UserInterface
             this.radioButtonSystemSettingsShowHiddenFiles.TabStop = true;
             this.radioButtonSystemSettingsShowHiddenFiles.Text = "radioButtonSystemSettingsShowHiddenFiles";
             this.radioButtonSystemSettingsShowHiddenFiles.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxClick
+            // 
+            this.groupBoxClick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxClick.AutoSize = true;
+            this.groupBoxClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxClick.Controls.Add(this.tableLayoutPanelClick);
+            this.groupBoxClick.Location = new System.Drawing.Point(3, 131);
+            this.groupBoxClick.Name = "groupBoxClick";
+            this.groupBoxClick.Size = new System.Drawing.Size(289, 72);
+            this.groupBoxClick.TabIndex = 0;
+            this.groupBoxClick.TabStop = false;
+            this.groupBoxClick.Text = "groupBoxClick";
+            // 
+            // tableLayoutPanelClick
+            // 
+            this.tableLayoutPanelClick.AutoSize = true;
+            this.tableLayoutPanelClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanelClick.ColumnCount = 1;
+            this.tableLayoutPanelClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenDirectoryWithOneClick, 0, 1);
+            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 0);
+            this.tableLayoutPanelClick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelClick.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanelClick.Name = "tableLayoutPanelClick";
+            this.tableLayoutPanelClick.RowCount = 2;
+            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelClick.Size = new System.Drawing.Size(283, 50);
+            this.tableLayoutPanelClick.TabIndex = 0;
+            // 
+            // checkBoxOpenDirectoryWithOneClick
+            // 
+            this.checkBoxOpenDirectoryWithOneClick.AutoSize = true;
+            this.checkBoxOpenDirectoryWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxOpenDirectoryWithOneClick.Location = new System.Drawing.Point(3, 28);
+            this.checkBoxOpenDirectoryWithOneClick.Name = "checkBoxOpenDirectoryWithOneClick";
+            this.checkBoxOpenDirectoryWithOneClick.Size = new System.Drawing.Size(277, 19);
+            this.checkBoxOpenDirectoryWithOneClick.TabIndex = 2;
+            this.checkBoxOpenDirectoryWithOneClick.Text = "checkBoxOpenDirectoryWithOneClick";
+            this.checkBoxOpenDirectoryWithOneClick.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxOpenItemWithOneClick
+            // 
+            this.checkBoxOpenItemWithOneClick.AutoSize = true;
+            this.checkBoxOpenItemWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxOpenItemWithOneClick.Name = "checkBoxOpenItemWithOneClick";
+            this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(277, 19);
+            this.checkBoxOpenItemWithOneClick.TabIndex = 0;
+            this.checkBoxOpenItemWithOneClick.Text = "checkBoxOpenItemWithOneClick";
+            this.checkBoxOpenItemWithOneClick.UseVisualStyleBackColor = true;
             // 
             // tabPageFolders
             // 
@@ -4844,17 +4899,6 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
-            // checkBoxSupportGamepad
-            // 
-            this.checkBoxSupportGamepad.AutoSize = true;
-            this.checkBoxSupportGamepad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxSupportGamepad.Location = new System.Drawing.Point(3, 103);
-            this.checkBoxSupportGamepad.Name = "checkBoxSupportGamepad";
-            this.checkBoxSupportGamepad.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxSupportGamepad.TabIndex = 4;
-            this.checkBoxSupportGamepad.Text = "checkBoxSupportGamepad";
-            this.checkBoxSupportGamepad.UseVisualStyleBackColor = true;
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4940,6 +4984,10 @@ namespace SystemTrayMenu.UserInterface
             this.tabPageAdvanced.PerformLayout();
             this.tableLayoutPanelAdvanced.ResumeLayout(false);
             this.tableLayoutPanelAdvanced.PerformLayout();
+            this.groupBoxOptionalFeatures.ResumeLayout(false);
+            this.groupBoxOptionalFeatures.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.groupBoxInternetShortcutIcons.ResumeLayout(false);
             this.groupBoxInternetShortcutIcons.PerformLayout();
             this.tableLayoutPanelInternetShortcutIcons.ResumeLayout(false);
@@ -4950,10 +4998,6 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxDrag.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.groupBoxClick.ResumeLayout(false);
-            this.groupBoxClick.PerformLayout();
-            this.tableLayoutPanelClick.ResumeLayout(false);
-            this.tableLayoutPanelClick.PerformLayout();
             this.groupBoxSorting.ResumeLayout(false);
             this.groupBoxSorting.PerformLayout();
             this.tableLayoutPanelSorting.ResumeLayout(false);
@@ -4962,6 +5006,10 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHiddenFilesAndFolders.PerformLayout();
             this.tableLayoutPanelHiddenFilesAndFolders.ResumeLayout(false);
             this.tableLayoutPanelHiddenFilesAndFolders.PerformLayout();
+            this.groupBoxClick.ResumeLayout(false);
+            this.groupBoxClick.PerformLayout();
+            this.tableLayoutPanelClick.ResumeLayout(false);
+            this.tableLayoutPanelClick.PerformLayout();
             this.tabPageFolders.ResumeLayout(false);
             this.tabPageFolders.PerformLayout();
             this.tableLayoutPanelFoldersInRootFolder.ResumeLayout(false);
@@ -5453,5 +5501,8 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.CheckBox checkBoxShowFunctionKeySettings;
         private System.Windows.Forms.CheckBox checkBoxShowFunctionKeyRestart;
         private System.Windows.Forms.CheckBox checkBoxSupportGamepad;
+        private System.Windows.Forms.GroupBox groupBoxOptionalFeatures;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.CheckBox checkBoxResolveLinksToFolders;
     }
 }

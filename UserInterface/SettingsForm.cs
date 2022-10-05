@@ -146,12 +146,14 @@ namespace SystemTrayMenu.UserInterface
                 buttonSizeAndLocationDefault.Text = Translator.GetText("Default");
 
                 tabPageAdvanced.Text = Translator.GetText("Advanced");
-                groupBoxClick.Text = Translator.GetText("Click");
+                groupBoxOptionalFeatures.Text = Translator.GetText("Optional Features");
+                checkBoxResolveLinksToFolders.Text = Translator.GetText("Resolve links to folders and show content");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
                 checkBoxSendHotkeyInsteadKillOtherInstances.Text = Translator.GetText("Send hotkey to other instance");
+                checkBoxSupportGamepad.Text = Translator.GetText("Support Gamepad");
+                groupBoxClick.Text = Translator.GetText("Click");
                 checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element");
                 checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory");
-                checkBoxSupportGamepad.Text = Translator.GetText("Support Gamepad");
                 groupBoxDrag.Text = Translator.GetText("Drag");
                 checkBoxDragDropItems.Text = Translator.GetText("Copy row element via drag and drop");
                 checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
@@ -448,11 +450,12 @@ namespace SystemTrayMenu.UserInterface
                 numericUpDownOverlappingOffsetPixels.Enabled = true;
             }
 
+            checkBoxResolveLinksToFolders.Checked = Settings.Default.ResolveLinksToFolders;
             checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = Settings.Default.SendHotkeyInsteadKillOtherInstances;
+            checkBoxSupportGamepad.Checked = Settings.Default.SupportGamepad;
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
             checkBoxOpenDirectoryWithOneClick.Checked = Settings.Default.OpenDirectoryWithOneClick;
-            checkBoxSupportGamepad.Checked = Settings.Default.SupportGamepad;
 
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
@@ -953,11 +956,12 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.AppearNextToPreviousMenu = false;
             }
 
+            Settings.Default.ResolveLinksToFolders = checkBoxResolveLinksToFolders.Checked;
             Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
             Settings.Default.SendHotkeyInsteadKillOtherInstances = checkBoxSendHotkeyInsteadKillOtherInstances.Checked;
+            Settings.Default.SupportGamepad = checkBoxSupportGamepad.Checked;
             Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
             Settings.Default.OpenDirectoryWithOneClick = checkBoxOpenDirectoryWithOneClick.Checked;
-            Settings.Default.SupportGamepad = checkBoxSupportGamepad.Checked;
 
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
@@ -1270,11 +1274,12 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
         {
+            checkBoxResolveLinksToFolders.Checked = true;
             checkBoxShowInTaskbar.Checked = true;
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = false;
+            checkBoxSupportGamepad.Checked = false;
             checkBoxOpenItemWithOneClick.Checked = true;
             checkBoxOpenDirectoryWithOneClick.Checked = false;
-            checkBoxSupportGamepad.Checked = false;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
                 checkBoxDragDropItems.Checked = false;
