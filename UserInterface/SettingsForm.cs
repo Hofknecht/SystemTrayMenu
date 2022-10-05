@@ -160,8 +160,8 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxInternetShortcutIcons.Text = Translator.GetText("Directory of Internet Shortcut Icons");
                 buttonChangeIcoFolder.Text = Translator.GetText("Changing directory");
                 groupBoxSorting.Text = Translator.GetText("Sorting");
-                radioButtonSortByTypeAndName.Text = Translator.GetText("Sorted by type and name");
-                radioButtonSortByTypeAndDate.Text = Translator.GetText("Sorted by type and date");
+                radioButtonSortByTypeAndName.Text = Translator.GetText("Sorted by type (folder or file) and name");
+                radioButtonSortByTypeAndDate.Text = Translator.GetText("Sorted by type (folder or file) and date");
                 radioButtonSortByName.Text = Translator.GetText("Sorted by name");
                 radioButtonSortByDate.Text = Translator.GetText("Sorted by date");
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");

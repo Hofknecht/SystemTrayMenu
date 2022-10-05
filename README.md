@@ -286,7 +286,9 @@ Thanks for ideas, reporting issues and contributing!
 #384 #434 #435 [boydfields](https://github.com/boydfields),
 #386 [visusys](https://github.com/visusys),
 #387 #411 #444 [yrctw](https://github.com/yrctw),
-#446 [timinformatica](https://github.com/timinformatica)
+#446 [timinformatica](https://github.com/timinformatica),
+#450 [ppt-oldoerp](https://github.com/ppt-oldoerp),
+#453 [fubaWoW](https://github.com/fubaWoW)
 
 Donations
 ------------------

@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Eolaire de Dheilbhíní Aicearra Idirlín</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sórtáilte de réir cineáil agus dáta</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Sórtáilte de réir cineáil (fillteán nó comhaid) agus dáta</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Sórtáilte de réir cineáil agus ainm</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Sórtáilte de réir cineáil (fillteán nó comhaid) agus ainm</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Seiceáil do nuashrónaithe</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Méid an iarratais</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Gnéithe Roghnacha</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Réitigh naisc chuig fillteáin agus taispeáin ábhar</value>
   </data>
 </root>

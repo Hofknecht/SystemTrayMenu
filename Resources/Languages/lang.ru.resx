@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Каталог значков ярлыков Интернета</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Сортировка по типу и дате</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Сортировка по типу (папка или файл) и дате</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Сортировка по типу и названию</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Сортировка по типу (папка или файл) и имени</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Проверить наличие обновлений</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Размер приложения</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Дополнительные особенности</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Разрешить ссылки на папки и показать содержимое</value>
   </data>
 </root>

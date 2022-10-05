@@ -394,7 +394,7 @@
     <value>దిగువ ఎడమ</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>దిగువ కుడి</value>
+    <value>దిగువ కుడివైపు</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>ప్రధాన మెనూ కనిపిస్తుంది</value>
@@ -436,7 +436,7 @@
     <value>శోధన ఫలితంగా మాత్రమే చూపు</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>డైరెక్టరీని తెరవడానికి ఒకే క్లిక్ చేయండి</value>
+    <value>డైరెక్టరీని తెరవడానికి ఒక్క క్లిక్ చేయండి</value>
   </data>
   <data name="Support Gamepad" xml:space="preserve">
     <value>గేమ్‌ప్యాడ్‌కు మద్దతు ఇవ్వండి</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ఇంటర్నెట్ షార్ట్‌కట్ చిహ్నాల డైరెక్టరీ</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>రకం మరియు తేదీ ద్వారా క్రమబద్ధీకరించబడింది</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>రకం (ఫోల్డర్ లేదా ఫైల్) మరియు తేదీ ద్వారా క్రమబద్ధీకరించబడింది</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>రకం మరియు పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>రకం (ఫోల్డర్ లేదా ఫైల్) మరియు పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>తాజాకరణలకోసం ప్రయత్నించండి</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>అప్లికేషన్ పరిమాణం</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>ఐచ్ఛిక లక్షణాలు</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>ఫోల్డర్‌లకు లింక్‌లను పరిష్కరించండి మరియు కంటెంట్‌ను చూపండి</value>
   </data>
 </root>

@@ -92,7 +92,7 @@ namespace SystemTrayMenu.Helper
             aboutBox.AppMoreInfo += "#225 #297 #299 #317 #321 #324 #330 #386 #390 #401 #402 #407 #409 #414 #416 #418 #428 #430 #443 chip33, ";
             aboutBox.AppMoreInfo += "#298 phanirithvij, #306 wini2, #370 dna5589, #372 not-nef, #376 Michelle H., ";
             aboutBox.AppMoreInfo += "#377 SoenkeHob, #380 #394 TransLucida, #384 #434 #435 boydfields, #386 visusys, #387 #411 #444 yrctw" + Environment.NewLine;
-            aboutBox.AppMoreInfo += "#446 timinformatica" + Environment.NewLine;
+            aboutBox.AppMoreInfo += "#446 timinformatica, #450 ppt-oldoerp, #453 fubaWoW" + Environment.NewLine;
             aboutBox.AppMoreInfo += @"
 Sponsors - Thank you!
 ------------------

@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ಇಂಟರ್ನೆಟ್ ಶಾರ್ಟ್‌ಕಟ್ ಐಕಾನ್‌ಗಳ ಡೈರೆಕ್ಟರಿ</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>ಪ್ರಕಾರ ಮತ್ತು ದಿನಾಂಕದ ಪ್ರಕಾರ ವಿಂಗಡಿಸಲಾಗಿದೆ</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>ಪ್ರಕಾರ (ಫೋಲ್ಡರ್ ಅಥವಾ ಫೈಲ್) ಮತ್ತು ದಿನಾಂಕದ ಪ್ರಕಾರ ವಿಂಗಡಿಸಲಾಗಿದೆ</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>ಪ್ರಕಾರ ಮತ್ತು ಹೆಸರಿನ ಮೂಲಕ ವಿಂಗಡಿಸಲಾಗಿದೆ</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>ಪ್ರಕಾರ (ಫೋಲ್ಡರ್ ಅಥವಾ ಫೈಲ್) ಮತ್ತು ಹೆಸರಿನ ಮೂಲಕ ವಿಂಗಡಿಸಲಾಗಿದೆ</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>ಅಪ್ಲಿಕೇಶನ್ ಗಾತ್ರ</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>ಐಚ್ಛಿಕ ವೈಶಿಷ್ಟ್ಯಗಳು</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>ಫೋಲ್ಡರ್‌ಗಳಿಗೆ ಲಿಂಕ್‌ಗಳನ್ನು ಪರಿಹರಿಸಿ ಮತ್ತು ವಿಷಯವನ್ನು ತೋರಿಸಿ</value>
   </data>
 </root>

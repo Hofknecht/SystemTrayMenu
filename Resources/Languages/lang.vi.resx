@@ -487,7 +487,7 @@
     <value>Trình đơn lọc theo loại tệp, ví dụ: * .exe | * .dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
-    <value>Hiển thị số lượng phần tử</value>
+    <value>Hiển thị số lượng các phần tử</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Hiển thị tiêu đề thư mục ở trên cùng</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Thư mục các biểu tượng lối tắt trên Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sắp xếp theo loại và ngày</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Được sắp xếp theo loại (thư mục hoặc tệp) và ngày tháng</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Sắp xếp theo loại và tên</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Được sắp xếp theo loại (thư mục hoặc tệp) và tên</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Kiểm tra cập nhật</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Kích thước ứng dụng</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Tính năng tùy chọn</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Giải quyết các liên kết đến các thư mục và hiển thị nội dung</value>
   </data>
 </root>

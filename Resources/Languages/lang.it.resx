@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directory di icone di collegamento a Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Ordinati per tipo e data</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Ordinati per tipo (cartella o file) e data</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordinati per tipo e nome</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Ordinati per tipo (cartella o file) e nome</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Controlla gli aggiornamenti</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Dimensione dell'applicazione</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Caratteristiche opzionali</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Risolvi i collegamenti alle cartelle e mostra il contenuto</value>
   </data>
 </root>

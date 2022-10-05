@@ -484,7 +484,7 @@
     <value>সোয়াইপের মাধ্যমে স্ক্রোল করুন</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ফাইলের ধরন অনুযায়ী ফিল্টার মেনু যেমন: *.exe|*.dll</value>
+    <value>ফাইল টাইপ দ্বারা ফিল্টার মেনু যেমন: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>উপাদানের সংখ্যা দেখান</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ইন্টারনেট শর্টকাট আইকনের ডিরেক্টরি</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>প্রকার এবং তারিখ অনুসারে সাজানো</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>প্রকার (ফোল্ডার বা ফাইল) এবং তারিখ অনুসারে সাজানো</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>প্রকার এবং নাম অনুসারে সাজানো</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>প্রকার (ফোল্ডার বা ফাইল) এবং নাম অনুসারে সাজানো</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>হালনাগাদ এর জন্য অনুসন্ধান করুন</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>আবেদনের আকার</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>ঐচ্ছিক বৈশিষ্ট্য</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>ফোল্ডারগুলির লিঙ্কগুলি সমাধান করুন এবং সামগ্রী দেখান৷</value>
   </data>
 </root>

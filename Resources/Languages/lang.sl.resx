@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Imenik ikon internetnih bližnjic</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Razvrščeno po vrsti in datumu</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Razvrščeno po vrsti (mapa ali datoteka) in datumu</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Razvrščeno po vrsti in imenu</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Razvrščeno po vrsti (mapa ali datoteka) in imenu</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Preveri za posodobitve</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Velikost aplikacije</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Izbirne funkcije</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Razrešite povezave do map in pokažite vsebino</value>
   </data>
 </root>

@@ -163,7 +163,7 @@
     <value>გენერალი</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>ცხელი კლავიში</value>
+    <value>ცხელი კლავიატურა</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>დაიწყეთ Windows-ით</value>
@@ -316,7 +316,7 @@
     <value>ხატები</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>კონტექსტური მენიუს დაყენება</value>
+    <value>დაყენებულია კონტექსტური მენიუს მიხედვით</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>დააყენეთ დირექტორიად</value>
@@ -355,7 +355,7 @@
     <value>დავალების პანელში ჩვენება</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>დირექტორიას დამატება</value>
+    <value>დირექტორია დაამატეთ</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>დაამატეთ დირექტორიას შინაარსი root დირექტორიაში</value>
@@ -397,7 +397,7 @@
     <value>ქვედა მარჯვენა</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>გამოჩნდება მთავარი მენიუ</value>
+    <value>მთავარი მენიუ გამოჩნდება</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>მაუსის მდებარეობა (დავალებების ზოლის ხატულაზე)</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ინტერნეტ მალსახმობების ხატულების დირექტორია</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>დალაგებულია ტიპისა და თარიღის მიხედვით</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>დალაგებულია ტიპის (საქაღალდე ან ფაილი) და თარიღის მიხედვით</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>დალაგებულია ტიპისა და სახელის მიხედვით</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>დალაგებულია ტიპის (საქაღალდის ან ფაილის) და სახელის მიხედვით</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Შეამოწმოთ განახლებები</value>
@@ -532,12 +532,18 @@
     <value>უახლესი ხელმისაწვდომი ვერსია:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ახალი ვერსია ხელმისაწვდომია!</value>
+    <value>ხელმისაწვდომია ახალი ვერსია!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>თქვენ გაქვთ SystemTrayMenu-ს უახლესი ვერსია!</value>
   </data>
   <data name="Application size" xml:space="preserve">
     <value>განაცხადის ზომა</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>არჩევითი ფუნქციები</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>საქაღალდეების ბმულების გადაჭრა და შინაარსის ჩვენება</value>
   </data>
 </root>

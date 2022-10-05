@@ -316,7 +316,7 @@
     <value>Ikoner</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Angis av kontekstmenyen</value>
+    <value>Sett av kontekstmeny</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Angi som katalog</value>
@@ -328,7 +328,7 @@
     <value>Problem med snarveislenke</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Elementet som denne snarveien refererer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
+    <value>Elementet som denne snarveien referer til har blitt endret eller flyttet, så denne snarveien vil ikke lenger fungere som den skal.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Åpne katalogen</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Katalog over Internett-snarveisikoner</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sortert etter type og dato</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Sortert etter type (mappe eller fil) og dato</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Sortert etter type og navn</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Sortert etter type (mappe eller fil) og navn</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Se etter oppdateringer</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Søknadsstørrelse</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Valgfrie funksjoner</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Løs lenker til mapper og vis innhold</value>
   </data>
 </root>

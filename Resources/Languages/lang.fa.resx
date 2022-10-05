@@ -337,7 +337,7 @@
     <value>Task Manager</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>غیرفعال شد</value>
+    <value>غیر فعال شد</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>فعال شد</value>
@@ -481,7 +481,7 @@
     <value>بکشید</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>از طریق سوایپ پیمایش کنید</value>
+    <value>از طریق کشیدن انگشت پیمایش کنید</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>منوی فیلتر بر اساس نوع فایل به عنوان مثال: *.exe|*.dll</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>دایرکتوری آیکون های میانبر اینترنت</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>بر اساس نوع و تاریخ مرتب شده است</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>مرتب شده بر اساس نوع (پوشه یا فایل) و تاریخ</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>بر اساس نوع و نام مرتب شده است</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>مرتب شده بر اساس نوع (پوشه یا فایل) و نام</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>به روز رسانی را بررسی کنید</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>اندازه برنامه</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>ویژگی های اختیاری</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>پیوندهای پوشه ها را حل کنید و محتوا را نشان دهید</value>
   </data>
 </root>

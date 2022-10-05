@@ -325,7 +325,7 @@
     <value>加载</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>快捷方式链接问题</value>
+    <value>快捷链接问题</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>此快捷方式所指的项目已更改或移动，因此此快捷方式将不再正常工作。</value>
@@ -403,7 +403,7 @@
     <value>鼠标位置（任务栏图标上方）</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
-    <value>自定义（拖动到合适的位置）</value>
+    <value>自定义（拖到合适的位置）</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>元素</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Internet 快捷方式图标目录</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>按类型和日期排序</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>按类型（文件夹或文件）和日期排序</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>按类型和名称排序</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>按类型（文件夹或文件）和名称排序</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>检查更新</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>应用规模</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>可选功能</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>解析文件夹链接并显示内容</value>
   </data>
 </root>

@@ -268,7 +268,7 @@
     <value>Săgeată</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Săgeată când dați clic</value>
+    <value>Săgeată când faceți clic</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Săgeată în timp ce mouse-ul trece peste ea</value>
@@ -313,7 +313,7 @@
     <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>icoane</value>
+    <value>Pictograme</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>Setați prin meniul contextual</value>
@@ -412,7 +412,7 @@
     <value>elemente</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>Generați comenzi rapide pentru unități la pornire</value>
+    <value>Generați comenzi rapide pentru unitate la pornire</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>Cache</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Director cu pictograme de comenzi rapide pe Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sortate după tip și dată</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Sortate după tip (dosar sau fișier) și dată</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Sortate după tip și nume</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Sortate după tip (dosar sau fișier) și nume</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Verifică pentru actualizări</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Dimensiunea aplicației</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Caracteristici opționale</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Rezolvați linkurile către dosare și afișați conținutul</value>
   </data>
 </root>

@@ -298,7 +298,7 @@
     <value>Csúszka húzás közben</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Csúszkázás közben, miközben az egeret fölé viszi 1</value>
+    <value>Csúsztassa, miközben az egeret fölé viszi 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Csúsztassa, miközben az egeret fölé viszi 2</value>
@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Internet parancsikonok könyvtára</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Típus és dátum szerint rendezve</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Típus (mappa vagy fájl) és dátum szerint rendezve</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Típus és név szerint rendezve</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Típus (mappa vagy fájl) és név szerint rendezve</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Frissítések keresése</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Alkalmazás mérete</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Opcionális funkciók</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Mappákra mutató hivatkozások feloldása és tartalom megjelenítése</value>
   </data>
 </root>

@@ -516,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Adresár ikon internetových skratiek</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Zoradené podľa typu a dátumu</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Zoradené podľa typu (priečinok alebo súbor) a dátumu</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Zoradené podľa typu a názvu</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Zoradené podľa typu (priečinok alebo súbor) a názvu</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Skontroluj aktualizácie</value>
@@ -539,5 +539,11 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Veľkosť aplikácie</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Voliteľné funkcie</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Vyriešte prepojenia na priečinky a zobrazte obsah</value>
   </data>
 </root>
