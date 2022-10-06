@@ -385,7 +385,7 @@
     <value>Altura da fila</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Esquinas redondeadas</value>
+    <value>Cantos redondeados</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Aparición</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Resolve ligazóns a cartafoles e mostra o contido</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ordenado por extensión de ficheiro e nome</value>
   </data>
 </root>

@@ -202,7 +202,7 @@
     <value>Kataloqun dəyişdirilməsi</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>basın</value>
+    <value>klikləyin</value>
   </data>
   <data name="Customize" xml:space="preserve">
     <value>Özəlləşdirmək</value>
@@ -301,7 +301,7 @@
     <value>Siçan üzərinə sürüşdürərkən sürüşdürün 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Siçan onun üzərində hərəkət edərkən sürüşdürün 2</value>
+    <value>Siçan üzərinə sürüşdürərkən sürüşdürün 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Kataloqdan ikonadan istifadə edin</value>
@@ -376,16 +376,16 @@
     <value>Yalnız Fayllar</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Bu sayda element varsa, önbelleği təmizləyin</value>
+    <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>'Başlat Menyu' nümunə kataloqu əlavə edin</value>
+    <value>'Başlat Menyu' nümunə qovluğu əlavə edin</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Sıra hündürlüyü</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Dairəvi künclər</value>
+    <value>Dəyirmi künclər</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Görünüş</value>
@@ -541,9 +541,12 @@
     <value>Tətbiq ölçüsü</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
-    <value>Könüllü Xüsusiyyətlər</value>
+    <value>Əlavə Xüsusiyyətlər</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Qovluqlara keçidləri həll edin və məzmunu göstərin</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Fayl uzantısı və adına görə sıralanıb</value>
   </data>
 </root>

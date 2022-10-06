@@ -229,7 +229,7 @@
     <value>మెను తెరవడానికి సమయం</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>ఒక మూలకం క్లిక్ చేయబడి ఉంటే</value>
+    <value>ఒక మూలకం క్లిక్ చేయబడితే</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>నేపథ్య</value>
@@ -451,7 +451,7 @@
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>సబ్ మెనూ కనిపిస్తుంది</value>
+    <value>ఉప మెనూ కనిపిస్తుంది</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>చిహ్నం పరిమాణం</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>ఫోల్డర్‌లకు లింక్‌లను పరిష్కరించండి మరియు కంటెంట్‌ను చూపండి</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ఫైల్ పొడిగింపు మరియు పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
   </data>
 </root>

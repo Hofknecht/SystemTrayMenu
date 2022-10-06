@@ -301,7 +301,7 @@
     <value>Penggeser saat mouse melayang di atasnya 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Geser saat mouse melayang di atasnya 2</value>
+    <value>Penggeser saat mouse melayang di atasnya 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Gunakan ikon dari direktori</value>
@@ -379,7 +379,7 @@
     <value>Hapus cache jika lebih dari jumlah item ini</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Tambahkan direktori contoh 'Start Menu'</value>
+    <value>Tambahkan direktori sampel 'Start Menu'</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Tinggi baris</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Selesaikan tautan ke folder dan tampilkan konten</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Diurutkan berdasarkan ekstensi file dan nama</value>
   </data>
 </root>

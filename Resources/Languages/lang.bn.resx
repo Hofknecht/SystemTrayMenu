@@ -217,7 +217,7 @@
     <value>মিলিসেকেন্ড যতক্ষণ না একটি মেনু খোলা হয় যখন মাউস এটিতে থাকে</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড যদি মাউস মেনু ছেড়ে চলে যায়</value>
+    <value>মেনু বন্ধ না হওয়া পর্যন্ত মিলিসেকেন্ড যদি মাউস তারপর মেনু ছেড়ে যায়</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>সর্বাধিক মেনু প্রস্থ</value>
@@ -268,7 +268,7 @@
     <value>তীর</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>ক্লিক করার সময় তীর</value>
+    <value>ক্লিক করার সময় তীরচিহ্ন</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>মাউস এটির উপর ঘোরার সময় তীরচিহ্ন</value>
@@ -316,7 +316,7 @@
     <value>আইকন</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>প্রসঙ্গ মেনু দ্বারা সেট করুন</value>
+    <value>প্রসঙ্গ মেনু দ্বারা সেট</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ডিরেক্টরি হিসাবে সেট করুন</value>
@@ -376,7 +376,7 @@
     <value>শুধুমাত্র ফাইল</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>এই সংখ্যার বেশি আইটেম হলে ক্যাশে সাফ করুন</value>
+    <value>এই সংখ্যার বেশি আইটেম থাকলে ক্যাশে সাফ করুন</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>
@@ -454,7 +454,7 @@
     <value>সাব মেনু প্রদর্শিত হবে</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>আইকন আকার</value>
+    <value>আইকনের আকার</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>সিস্টেমট্রেমেনু সমর্থন করে</value>
@@ -484,7 +484,7 @@
     <value>সোয়াইপের মাধ্যমে স্ক্রোল করুন</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ফাইল টাইপ দ্বারা ফিল্টার মেনু যেমন: *.exe|*.dll</value>
+    <value>ফাইলের ধরন অনুযায়ী ফিল্টার মেনু যেমন: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>উপাদানের সংখ্যা দেখান</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>ফোল্ডারগুলির লিঙ্কগুলি সমাধান করুন এবং সামগ্রী দেখান৷</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ফাইল এক্সটেনশন এবং নাম অনুসারে সাজানো</value>
   </data>
 </root>

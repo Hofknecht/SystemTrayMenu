@@ -540,4 +540,7 @@
   <data name="Application size" xml:space="preserve">
     <value>Application size</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sorted by file extension and name</value>
+  </data>
 </root>

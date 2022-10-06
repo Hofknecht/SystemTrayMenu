@@ -130,7 +130,7 @@
     <value>Iziet no lietotnes</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Direktorija</value>
+    <value>Katalogs</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
     <value>Direktorija tukša</value>
@@ -517,10 +517,10 @@
     <value>Interneta īsceļu ikonu direktorijs</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
-    <value>Kārtots pēc veida (mape vai fails) un datuma</value>
+    <value>Sakārtots pēc veida (mape vai fails) un datuma</value>
   </data>
   <data name="Sorted by type (folder or file) and name" xml:space="preserve">
-    <value>Sakārtots pēc veida (mape vai fails) un nosaukuma</value>
+    <value>Kārtots pēc veida (mape vai fails) un nosaukuma</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Meklēt atjauninājumus</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Atrisiniet saites uz mapēm un parādiet saturu</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sakārtots pēc faila paplašinājuma un nosaukuma</value>
   </data>
 </root>

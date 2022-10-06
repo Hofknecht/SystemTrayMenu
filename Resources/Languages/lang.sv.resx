@@ -481,7 +481,7 @@
     <value>Drag</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Scrolla via svep</value>
+    <value>Bläddra via svep</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrera menyn efter filtyp, t.ex.: *.exe|*.dll</value>
@@ -514,7 +514,7 @@
     <value>Visa länköverlagring</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Katalog över internetgenvägsikoner</value>
+    <value>Katalog över Internet genvägsikoner</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
     <value>Sorterat efter typ (mapp eller fil) och datum</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Lös länkar till mappar och visa innehåll</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sorterat efter filtillägg och namn</value>
   </data>
 </root>

@@ -325,7 +325,7 @@
     <value>טוען</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>בעיה בקישור קיצורי דרך</value>
+    <value>בעיה עם קישור קיצור</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שהקיצור הזה כבר לא יפעל כראוי.</value>
@@ -376,7 +376,7 @@
     <value>רק קבצים</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>נקה את המטמון אם יותר ממספר הפריטים הזה</value>
+    <value>נקה את המטמון אם יותר ממספר זה של פריטים</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>הוסף ספרייה לדוגמה 'תפריט התחל'</value>
@@ -526,7 +526,7 @@
     <value>בדוק עדכונים</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>עבור לדף ההורדה</value>
+    <value>עבור לדף ההורדות</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>הגרסה האחרונה הזמינה:</value>
@@ -535,7 +535,7 @@
     <value>גרסה חדשה זמינה!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
-    <value>יש לך את הגרסה העדכנית ביותר של SystemTrayMenu!</value>
+    <value>יש לך את הגרסה האחרונה של SystemTrayMenu!</value>
   </data>
   <data name="Application size" xml:space="preserve">
     <value>גודל יישום</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>פתרון קישורים לתיקיות והצג תוכן</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ממוין לפי סיומת קובץ ושם</value>
   </data>
 </root>

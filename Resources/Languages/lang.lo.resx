@@ -532,7 +532,7 @@
     <value>ສະ​ບັບ​ຫລ້າ​ສຸດ​ທີ່​ມີ​ຢູ່​:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ລຸ້ນໃໝ່ມີໃຫ້!</value>
+    <value>ມີລຸ້ນໃໝ່!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>ທ່ານມີເວີຊັນຫຼ້າສຸດຂອງ SystemTrayMenu!</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>ແກ້ໄຂການເຊື່ອມຕໍ່ກັບໂຟນເດີແລະສະແດງເນື້ອຫາ</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ຈັດຮຽງຕາມນາມສະກຸນໄຟລ໌ ແລະຊື່</value>
   </data>
 </root>

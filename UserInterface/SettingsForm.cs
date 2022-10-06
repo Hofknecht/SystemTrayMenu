@@ -162,6 +162,7 @@ namespace SystemTrayMenu.UserInterface
                 groupBoxSorting.Text = Translator.GetText("Sorting");
                 radioButtonSortByTypeAndName.Text = Translator.GetText("Sorted by type (folder or file) and name");
                 radioButtonSortByTypeAndDate.Text = Translator.GetText("Sorted by type (folder or file) and date");
+                radioButtonSortByFileExtensionAndName.Text = Translator.GetText("Sorted by file extension and name");
                 radioButtonSortByName.Text = Translator.GetText("Sorted by name");
                 radioButtonSortByDate.Text = Translator.GetText("Sorted by date");
                 groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");
@@ -471,6 +472,7 @@ namespace SystemTrayMenu.UserInterface
             textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
             radioButtonSortByTypeAndName.Checked = Settings.Default.SortByTypeAndNameWindowsExplorerSort;
             radioButtonSortByTypeAndDate.Checked = Settings.Default.SortByTypeAndDate;
+            radioButtonSortByFileExtensionAndName.Checked = Settings.Default.SortByFileExtensionAndName;
             radioButtonSortByName.Checked = Settings.Default.SortByName;
             radioButtonSortByDate.Checked = Settings.Default.SortByDate;
             radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
@@ -977,6 +979,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.PathIcoDirectory = textBoxIcoFolder.Text;
             Settings.Default.SortByTypeAndNameWindowsExplorerSort = radioButtonSortByTypeAndName.Checked;
             Settings.Default.SortByTypeAndDate = radioButtonSortByTypeAndDate.Checked;
+            Settings.Default.SortByFileExtensionAndName = radioButtonSortByFileExtensionAndName.Checked;
             Settings.Default.SortByName = radioButtonSortByName.Checked;
             Settings.Default.SortByDate = radioButtonSortByDate.Checked;
             Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;

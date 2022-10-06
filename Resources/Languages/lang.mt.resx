@@ -199,7 +199,7 @@
     <value>Fil-post tal-ġurdien</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>Tibdil tad-direttorju</value>
+    <value>Bdil tad-direttorju</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Ikklikkja</value>
@@ -295,7 +295,7 @@
     <value>Slider</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Slider waqt li tkaxkar</value>
+    <value>Slider waqt li jkaxkru</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
     <value>Slider waqt li l-maws jgħaddi fuqu 1</value>
@@ -445,13 +445,13 @@
     <value>Ħdejn dak ta’ qabel</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset bil-pixels</value>
+    <value>Offset mill-pixels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Jikkoinċidu</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>Jidher is-sottomenu</value>
+    <value>Jidher sottomenu</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>Daqs tal-ikona</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Issolvi links għal folders u uri l-kontenut</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Issortjati skond l-estensjoni tal-fajl u l-isem</value>
   </data>
 </root>

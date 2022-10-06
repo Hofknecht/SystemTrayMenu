@@ -268,7 +268,7 @@
     <value>Flèch</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Flèch lè w klike</value>
+    <value>Flèch lè w klike sou</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Flèch pandan y ap sourit la sou li</value>
@@ -397,7 +397,7 @@
     <value>Anba dwat</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>Meni prensipal parèt</value>
+    <value>Meni prensipal la parèt</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Kote sourit (anwo a ikòn ba Travay la)</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Rezoud lyen ki mennen nan dosye epi montre kontni</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ranje pa ekstansyon dosye ak non</value>
   </data>
 </root>

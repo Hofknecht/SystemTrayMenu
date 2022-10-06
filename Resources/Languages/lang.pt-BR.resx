@@ -256,7 +256,7 @@
     <value>Salvar arquivo de configuração no diretório do aplicativo</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
-    <value>Arquivos de configuração e log</value>
+    <value>Configuração e arquivos de log</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Abra o diretório do aplicativo</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Resolver links para pastas e mostrar conteúdo</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Classificado por extensão de arquivo e nome</value>
   </data>
 </root>

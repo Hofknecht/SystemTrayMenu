@@ -544,6 +544,9 @@
     <value>Voliteľné funkcie</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>Vyriešte prepojenia na priečinky a zobrazte obsah</value>
+    <value>Vyriešte odkazy na priečinky a zobrazte obsah</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Zoradené podľa prípony súboru a názvu</value>
   </data>
 </root>

@@ -376,7 +376,7 @@
     <value>Kun filer</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Tøm hurtigbufferen hvis flere enn dette antallet elementer</value>
+    <value>Tøm buffer hvis flere enn dette antallet elementer</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Legg til eksempelkatalog "Startmeny"</value>
@@ -508,7 +508,7 @@
     <value>Vis søkefeltet</value>
   </data>
   <data name="Saving log file in application directory" xml:space="preserve">
-    <value>Lagrer loggfilen i programkatalogen</value>
+    <value>Lagrer loggfil i programkatalogen</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Vis linkoverlegg</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Løs lenker til mapper og vis innhold</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sortert etter filtype og navn</value>
   </data>
 </root>

@@ -298,7 +298,7 @@
     <value>ドラッグ中のスライダー</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>マウスを上に置いたときのスライダー 1</value>
+    <value>マウス ホバー時のスライダー 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>マウスが上にあるときのスライダー 2</value>
@@ -442,7 +442,7 @@
     <value>ゲームパッドをサポート</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>前の隣に</value>
+    <value>一つ前の続き</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
     <value>ピクセル単位でオフセット</value>
@@ -484,7 +484,7 @@
     <value>スワイプでスクロール</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ファイルの種類でメニューをフィルタします。例: *.exe|*.dll</value>
+    <value>ファイルの種類でメニューをフィルター処理します。例: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>要素数を表示</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>フォルダへのリンクを解決してコンテンツを表示する</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ファイル拡張子と名前で並べ替え</value>
   </data>
 </root>

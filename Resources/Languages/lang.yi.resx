@@ -394,7 +394,7 @@
     <value>לינקס אונטן</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>דנאָ רעכט</value>
+    <value>רעכטס אונטן</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>הויפּט מעניו אויס</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>סאָלווע לינקס צו פאָלדערס און ווייַזן אינהאַלט</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>סאָרטירט לויט טעקע געשפּרייט און נאָמען</value>
   </data>
 </root>

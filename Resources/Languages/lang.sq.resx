@@ -331,13 +331,13 @@
     <value>Artikulli të cilit i referohet kjo shkurtore është ndryshuar ose zhvendosur, kështu që kjo shkurtore nuk do të funksionojë më siç duhet.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Hap drejtorinë</value>
+    <value>Hap direktorinë</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>Menaxher detyrë</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>I çaktivizuar</value>
+    <value>Çaktivizohet</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>Aktivizuar</value>
@@ -352,7 +352,7 @@
     <value>Milisekonda derisa menyja të mbyllet nëse menyja nuk riaktivizohet</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Shfaq në Taskbar</value>
+    <value>Shfaq në shiritin e detyrave</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>Shto direktori</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Zgjidh lidhjet me dosjet dhe shfaq përmbajtjen</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Renditur sipas zgjerimit dhe emrit të skedarit</value>
   </data>
 </root>

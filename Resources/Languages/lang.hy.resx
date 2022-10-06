@@ -546,4 +546,7 @@
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Լուծեք թղթապանակների հղումները և ցուցադրեք բովանդակությունը</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Տեսակավորված ըստ ֆայլի ընդլայնման և անվան</value>
+  </data>
 </root>

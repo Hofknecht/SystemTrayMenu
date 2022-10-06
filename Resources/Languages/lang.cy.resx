@@ -546,4 +546,7 @@
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Datrys dolenni i ffolderi a dangos cynnwys</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Trefnwyd yn ôl estyniad ffeil ac enw</value>
+  </data>
 </root>

@@ -298,7 +298,7 @@
     <value>Csúszka húzás közben</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Csúsztassa, miközben az egeret fölé viszi 1</value>
+    <value>Csúszkázás közben, miközben az egeret fölé viszi 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Csúsztassa, miközben az egeret fölé viszi 2</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Mappákra mutató hivatkozások feloldása és tartalom megjelenítése</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Fájlkiterjesztés és név szerint rendezve</value>
   </data>
 </root>

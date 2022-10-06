@@ -193,7 +193,7 @@
     <value>Värvilahendus tume alati aktiivne</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>Täpsemalt</value>
+    <value>Täiustatud</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>Hiire asukohas</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Lahendage kaustade linke ja kuvage sisu</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sorteeritud faililaiendi ja nime järgi</value>
   </data>
 </root>

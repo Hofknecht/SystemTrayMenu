@@ -346,7 +346,7 @@
     <value>Expert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Si es perd el focus i es prem la tecla Enter</value>
+    <value>Si es perd el focus i es premeu la tecla Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>Mil·lisegons fins que el menú es tanqui si el menú no es reactiva</value>
@@ -424,7 +424,7 @@
     <value>Fitxers i directoris ocults</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>No mostris mai</value>
+    <value>No mostrar mai</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Mida i ubicació</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Resoldre enllaços a carpetes i mostrar contingut</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ordenat per extensió de fitxer i nom</value>
   </data>
 </root>

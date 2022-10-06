@@ -184,7 +184,7 @@
     <value>એપ્લિકેશન માટેની તમારી રૂટ ડિરેક્ટરી અસ્તિત્વમાં નથી અથવા ખાલી છે! રૂટ ડિરેક્ટરી બદલો અથવા રૂટ ડિરેક્ટરીમાં કેટલીક ફાઇલો, ડિરેક્ટરીઓ અથવા શોર્ટકટ્સ મૂકો.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં એક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
+    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં ઍક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
     <value>એક તત્વ ખોલવા માટે એક ક્લિક કરો</value>
@@ -211,7 +211,7 @@
     <value>ડિફૉલ્ટ</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>જો ફોકસ ખોવાઈ જાય અને માઉસ હજુ પણ મેનુ પર હોય</value>
+    <value>જો ફોકસ ખોવાઈ ગયું હોય અને માઉસ હજુ પણ મેનુ પર હોય</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>જ્યારે માઉસ તેના પર હોય ત્યારે મેનૂ ખુલે ત્યાં સુધી મિલિસેકન્ડ</value>
@@ -271,7 +271,7 @@
     <value>ક્લિક કરતી વખતે એરો</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>તીર જ્યારે તેના પર માઉસ ફરે છે</value>
+    <value>તીર જ્યારે માઉસ તેના પર ફરે છે</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>ક્લિક કરતી વખતે તીરની પૃષ્ઠભૂમિ</value>
@@ -301,7 +301,7 @@
     <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>સ્લાઇડર જ્યારે તેના પર માઉસ ફરે છે 2</value>
+    <value>સ્લાઇડર જ્યારે માઉસ તેના પર ફરે છે 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>ડિરેક્ટરીમાંથી આયકનનો ઉપયોગ કરો</value>
@@ -421,7 +421,7 @@
     <value>હંમેશા બતાવો</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>છુપાયેલી ફાઇલો અને ડિરેક્ટરીઓ</value>
+    <value>છુપાયેલ ફાઇલો અને ડિરેક્ટરીઓ</value>
   </data>
   <data name="Never show" xml:space="preserve">
     <value>ક્યારેય બતાવશો નહીં</value>
@@ -451,7 +451,7 @@
     <value>ઓવરલેપિંગ</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>સબ મેનુ દેખાય છે</value>
+    <value>સબ મેનૂ દેખાય છે</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>ચિહ્નનું કદ</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>ફોલ્ડર્સની લિંક્સ ઉકેલો અને સામગ્રી બતાવો</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ફાઇલ એક્સ્ટેંશન અને નામ દ્વારા સૉર્ટ કરેલ</value>
   </data>
 </root>

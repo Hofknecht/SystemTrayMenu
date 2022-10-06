@@ -181,7 +181,7 @@
     <value>Selectați directorul</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Directorul dvs. rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
+    <value>Directorul tău rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
@@ -313,7 +313,7 @@
     <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>Pictograme</value>
+    <value>icoane</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>Setați prin meniul contextual</value>
@@ -514,7 +514,7 @@
     <value>Afișați suprapunerea linkului</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Director cu pictograme de comenzi rapide pe Internet</value>
+    <value>Director de pictograme de comenzi rapide pe Internet</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
     <value>Sortate după tip (dosar sau fișier) și dată</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Rezolvați linkurile către dosare și afișați conținutul</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sortate după extensia și nume de fișier</value>
   </data>
 </root>

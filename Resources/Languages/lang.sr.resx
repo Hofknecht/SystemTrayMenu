@@ -247,7 +247,7 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Граница изабраног елемента</value>
+    <value>Ивица изабраног елемента</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Релативни именик</value>
@@ -373,7 +373,7 @@
     <value>Уклони директоријум</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Онли Филес</value>
+    <value>Само датотеке</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Обришите кеш ако је више од овог броја ставки</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Решите везе до фасцикли и прикажите садржај</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Сортирано према екстензији датотеке и називу</value>
   </data>
 </root>

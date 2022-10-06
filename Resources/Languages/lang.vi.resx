@@ -301,7 +301,7 @@
     <value>Thanh trượt trong khi di chuột qua nó 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Thanh trượt trong khi di chuột qua nó 2</value>
+    <value>Trượt trong khi di chuột qua nó 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Sử dụng biểu tượng từ thư mục</value>
@@ -487,7 +487,7 @@
     <value>Trình đơn lọc theo loại tệp, ví dụ: * .exe | * .dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
-    <value>Hiển thị số lượng các phần tử</value>
+    <value>Hiển thị số lượng phần tử</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>Hiển thị tiêu đề thư mục ở trên cùng</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Giải quyết các liên kết đến các thư mục và hiển thị nội dung</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Được sắp xếp theo phần mở rộng tệp và tên</value>
   </data>
 </root>

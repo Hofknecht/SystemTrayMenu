@@ -546,4 +546,7 @@
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Klasör bağlantılarını çözün ve içeriği gösterin</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Dosya uzantısına ve adına göre sıralanmış</value>
+  </data>
 </root>

@@ -328,7 +328,7 @@
     <value>Difficultas pagina brevis</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Item quod haec brevis refers to mutatum aut motum est, ergo haec brevis iam non recte operatur.</value>
+    <value>Item quod haec brevis ad mutatum vel motum refertur, ideo haec brevis iam non recte operatur.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Open Directory</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Resolve nexus ad folder et ostende content</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Digerere lima extensio et nomen</value>
   </data>
 </root>

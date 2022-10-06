@@ -546,4 +546,7 @@
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>फ़ोल्डरों के लिंक का समाधान करें और सामग्री दिखाएं</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>फ़ाइल एक्सटेंशन और नाम द्वारा क्रमबद्ध</value>
+  </data>
 </root>

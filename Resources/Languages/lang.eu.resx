@@ -226,7 +226,7 @@
     <value>Menua irekita dago</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Denbora menu bat ireki arte</value>
+    <value>Menu bat ireki arte</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>Elementu batean klik egin bada</value>
@@ -253,7 +253,7 @@
     <value>Direktorio erlatiboa</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>Gorde konfigurazio fitxategia aplikazioaren direktorioan</value>
+    <value>Gorde konfigurazio fitxategia aplikazioen direktorioan</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
     <value>Konfigurazio eta erregistro fitxategiak</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Ebatzi karpetetarako estekak eta erakutsi edukia</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Fitxategiaren luzapenaren eta izenaren arabera ordenatuta</value>
   </data>
 </root>

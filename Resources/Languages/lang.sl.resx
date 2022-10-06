@@ -546,4 +546,7 @@
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Razrešite povezave do map in pokažite vsebino</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Razvrščeno po končnici datoteke in imenu</value>
+  </data>
 </root>

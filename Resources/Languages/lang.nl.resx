@@ -298,7 +298,7 @@
     <value>Schuifregelaar tijdens het slepen</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Schuifregelaar terwijl de muis erover zweeft 1</value>
+    <value>Schuif terwijl de muis erover zweeft 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Schuif terwijl de muis erover zweeft 2</value>
@@ -337,7 +337,7 @@
     <value>Taakbeheer</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>Gedeactiveerd</value>
+    <value>gedeactiveerd</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>Geactiveerd</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Koppelingen naar mappen oplossen en inhoud weergeven</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Gesorteerd op bestandsextensie en naam</value>
   </data>
 </root>

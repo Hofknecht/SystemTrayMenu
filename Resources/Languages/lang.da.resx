@@ -358,7 +358,7 @@
     <value>Tilføj bibliotek</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Tilføj indholdet af mappen til rodmappen</value>
+    <value>Tilføj indhold af mappe til rodbibliotek</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>Vejviserstier</value>
@@ -427,7 +427,7 @@
     <value>Vis aldrig</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og beliggenhed</value>
+    <value>Størrelse og placering</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>
@@ -538,12 +538,15 @@
     <value>Du har den seneste version af SystemTrayMenu!</value>
   </data>
   <data name="Application size" xml:space="preserve">
-    <value>Applikationsstørrelse</value>
+    <value>Anvendelsesstørrelse</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
     <value>Valgfri funktioner</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Løs links til mapper og vis indhold</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sorteret efter filtypenavn og filtypenavn</value>
   </data>
 </root>

@@ -546,4 +546,7 @@
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Réitigh naisc chuig fillteáin agus taispeáin ábhar</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sórtáilte de réir síneadh comhaid agus ainm</value>
+  </data>
 </root>

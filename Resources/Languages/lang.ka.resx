@@ -127,7 +127,7 @@
     <value>აპლიკაციის დაწყება</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>აპლიკაციიდან გასვლა</value>
+    <value>აპიდან გასვლა</value>
   </data>
   <data name="Directory" xml:space="preserve">
     <value>დირექტორია</value>
@@ -397,7 +397,7 @@
     <value>ქვედა მარჯვენა</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>მთავარი მენიუ გამოჩნდება</value>
+    <value>გამოჩნდება მთავარი მენიუ</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>მაუსის მდებარეობა (დავალებების ზოლის ხატულაზე)</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>საქაღალდეების ბმულების გადაჭრა და შინაარსის ჩვენება</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>დალაგებულია ფაილის გაფართოებისა და სახელის მიხედვით</value>
   </data>
 </root>

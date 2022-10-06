@@ -139,7 +139,7 @@
     <value>Besonderhede</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Stelsel inligting</value>
+    <value>Stelselinligting</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Gids ontoeganklik</value>
@@ -256,7 +256,7 @@
     <value>Stoor konfigurasielêer in toepassingsgids</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
-    <value>Konfigurasie en log lêers</value>
+    <value>Konfigurasie en loglêers</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Maak toepassingsgids oop</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Los skakels na vouers op en wys inhoud</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Gesorteer volgens lêeruitbreiding en naam</value>
   </data>
 </root>

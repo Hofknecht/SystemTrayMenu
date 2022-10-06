@@ -490,7 +490,7 @@
     <value>Sýna fjölda þátta</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Sýna möppu titil efst</value>
+    <value>Sýna möppuheiti efst</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>Sýna aðgerðarlykilinn 'Opna möppu'</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Leysa tengla á möppur og sýna efni</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Raðað eftir skráarlengingu og nafni</value>
   </data>
 </root>

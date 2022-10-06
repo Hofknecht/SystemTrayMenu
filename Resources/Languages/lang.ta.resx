@@ -124,7 +124,7 @@
     <value>சரி</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>பயன்பாட்டின் தொடக்கம்</value>
+    <value>ஆப்ஸ் ஆரம்பம்</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>பயன்பாட்டிலிருந்து வெளியேறு</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>கோப்புறைகளுக்கான இணைப்புகளைத் தீர்த்து உள்ளடக்கத்தைக் காட்டு</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>கோப்பு நீட்டிப்பு மற்றும் பெயர் மூலம் வரிசைப்படுத்தப்பட்டது</value>
   </data>
 </root>

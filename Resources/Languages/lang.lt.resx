@@ -546,4 +546,7 @@
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Išspręskite nuorodas į aplankus ir parodykite turinį</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Rūšiuojama pagal failo plėtinį ir pavadinimą</value>
+  </data>
 </root>

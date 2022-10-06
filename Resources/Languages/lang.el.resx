@@ -546,4 +546,7 @@
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Επίλυση συνδέσμων σε φακέλους και εμφάνιση περιεχομένου</value>
   </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ταξινόμηση κατά επέκταση αρχείου και όνομα</value>
+  </data>
 </root>

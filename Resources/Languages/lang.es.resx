@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso rápido</value>
+    <value>tecla de acceso directo</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -364,7 +364,7 @@
     <value>Rutas de directorio</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>directorios</value>
+    <value>Directorios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursivo</value>
@@ -545,5 +545,8 @@
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Resolver enlaces a carpetas y mostrar contenido</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ordenado por extensión de archivo y nombre</value>
   </data>
 </root>

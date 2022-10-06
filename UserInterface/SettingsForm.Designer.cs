@@ -346,6 +346,7 @@ namespace SystemTrayMenu.UserInterface
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.radioButtonSortByFileExtensionAndName = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
@@ -1468,7 +1469,7 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 645);
+            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 670);
             this.tableLayoutPanelAdvanced.TabIndex = 0;
             // 
             // groupBoxOptionalFeatures
@@ -1678,7 +1679,7 @@ namespace SystemTrayMenu.UserInterface
             // 
             this.buttonAdvancedDefault.AutoSize = true;
             this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 611);
+            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 636);
             this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
             this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
             this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
@@ -1696,7 +1697,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxSorting.Controls.Add(this.tableLayoutPanelSorting);
             this.groupBoxSorting.Location = new System.Drawing.Point(3, 374);
             this.groupBoxSorting.Name = "groupBoxSorting";
-            this.groupBoxSorting.Size = new System.Drawing.Size(289, 122);
+            this.groupBoxSorting.Size = new System.Drawing.Size(289, 147);
             this.groupBoxSorting.TabIndex = 3;
             this.groupBoxSorting.TabStop = false;
             this.groupBoxSorting.Text = "groupBoxSorting";
@@ -1707,19 +1708,21 @@ namespace SystemTrayMenu.UserInterface
             this.tableLayoutPanelSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelSorting.ColumnCount = 1;
             this.tableLayoutPanelSorting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByFileExtensionAndName, 0, 2);
             this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByTypeAndDate, 0, 1);
             this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByTypeAndName, 0, 0);
-            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByDate, 0, 3);
-            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByName, 0, 2);
+            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByDate, 0, 4);
+            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByName, 0, 3);
             this.tableLayoutPanelSorting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelSorting.Location = new System.Drawing.Point(3, 19);
             this.tableLayoutPanelSorting.Name = "tableLayoutPanelSorting";
-            this.tableLayoutPanelSorting.RowCount = 4;
+            this.tableLayoutPanelSorting.RowCount = 5;
             this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSorting.Size = new System.Drawing.Size(283, 100);
+            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelSorting.Size = new System.Drawing.Size(283, 125);
             this.tableLayoutPanelSorting.TabIndex = 1;
             // 
             // radioButtonSortByTypeAndDate
@@ -1747,7 +1750,7 @@ namespace SystemTrayMenu.UserInterface
             // radioButtonSortByDate
             // 
             this.radioButtonSortByDate.AutoSize = true;
-            this.radioButtonSortByDate.Location = new System.Drawing.Point(3, 78);
+            this.radioButtonSortByDate.Location = new System.Drawing.Point(3, 103);
             this.radioButtonSortByDate.Name = "radioButtonSortByDate";
             this.radioButtonSortByDate.Size = new System.Drawing.Size(146, 19);
             this.radioButtonSortByDate.TabIndex = 1;
@@ -1758,7 +1761,7 @@ namespace SystemTrayMenu.UserInterface
             // radioButtonSortByName
             // 
             this.radioButtonSortByName.AutoSize = true;
-            this.radioButtonSortByName.Location = new System.Drawing.Point(3, 53);
+            this.radioButtonSortByName.Location = new System.Drawing.Point(3, 78);
             this.radioButtonSortByName.Name = "radioButtonSortByName";
             this.radioButtonSortByName.Size = new System.Drawing.Size(154, 19);
             this.radioButtonSortByName.TabIndex = 2;
@@ -1772,7 +1775,7 @@ namespace SystemTrayMenu.UserInterface
             this.groupBoxHiddenFilesAndFolders.AutoSize = true;
             this.groupBoxHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxHiddenFilesAndFolders.Controls.Add(this.tableLayoutPanelHiddenFilesAndFolders);
-            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 502);
+            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 527);
             this.groupBoxHiddenFilesAndFolders.Name = "groupBoxHiddenFilesAndFolders";
             this.groupBoxHiddenFilesAndFolders.Size = new System.Drawing.Size(289, 97);
             this.groupBoxHiddenFilesAndFolders.TabIndex = 2;
@@ -4899,6 +4902,17 @@ namespace SystemTrayMenu.UserInterface
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
+            // radioButtonSortByFileExtensionAndName
+            // 
+            this.radioButtonSortByFileExtensionAndName.AutoSize = true;
+            this.radioButtonSortByFileExtensionAndName.Location = new System.Drawing.Point(3, 53);
+            this.radioButtonSortByFileExtensionAndName.Name = "radioButtonSortByFileExtensionAndName";
+            this.radioButtonSortByFileExtensionAndName.Size = new System.Drawing.Size(245, 19);
+            this.radioButtonSortByFileExtensionAndName.TabIndex = 5;
+            this.radioButtonSortByFileExtensionAndName.TabStop = true;
+            this.radioButtonSortByFileExtensionAndName.Text = "radioButtonSortByFileExtensionAndName";
+            this.radioButtonSortByFileExtensionAndName.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -5504,5 +5518,6 @@ namespace SystemTrayMenu.UserInterface
         private System.Windows.Forms.GroupBox groupBoxOptionalFeatures;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.CheckBox checkBoxResolveLinksToFolders;
+        private System.Windows.Forms.RadioButton radioButtonSortByFileExtensionAndName;
     }
 }
