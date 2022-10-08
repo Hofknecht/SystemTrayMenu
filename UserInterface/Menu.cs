@@ -758,7 +758,7 @@ namespace SystemTrayMenu.UserInterface
             int dgvHeightMaxByOptions = (int)(Scaling.Factor * Scaling.FactorByDpi *
                 450f * (Properties.Settings.Default.HeightMaxInPercent / 100f));
             int dgvHeightMax = Math.Min(dgvHeightMaxByScreen, dgvHeightMaxByOptions);
-            if (!dgvHeightSet)
+            if (!dgvHeightSet && dgvHeightByItems > 0 && dgvHeightMax > 0)
             {
                 dgv.Height = Math.Min(dgvHeightByItems, dgvHeightMax);
                 dgvHeightSet = true;
