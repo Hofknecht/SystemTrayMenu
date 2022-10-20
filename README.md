@@ -240,7 +240,7 @@ Special thanks to our productive contibutors!
 
 Thanks for ideas, reporting issues and contributing!
 
-[Mario Sedlmayr](https://github.com/verdammt89x),
+#462 [Mario Sedlmayr](https://github.com/verdammt89x),
 #123 [Mordecai00](https://github.com/Mordecai00), 
 #125 [Holgermh](https://github.com/Holgermh), 
 #135 #153 #154 #164 [jakkaas](https://github.com/jakkaas), 
