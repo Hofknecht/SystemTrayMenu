@@ -24,27 +24,20 @@ namespace SystemTrayMenu
         public App()
         {
             AppRestart.BeforeRestarting += Dispose;
-            SystemEvents.DisplaySettingsChanged += (s, e) => SystemEvents_DisplaySettingsChanged();
+            SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
             menus.LoadStarted += menuNotifyIcon.LoadingStart;
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
-            menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
+            menuNotifyIcon.Click += MenuNotifyIcon_Click;
             menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
 
             if (Properties.Settings.Default.ShowInTaskbar)
             {
                 taskbarForm = new TaskbarForm();
-                taskbarForm.FormClosed += (s, e) => Application.Exit();
-                taskbarForm.Deactivate += (s, e) => SetStateNormal();
-                taskbarForm.Resize += (s, e) => SetStateNormal();
+                taskbarForm.FormClosed += TaskbarForm_FormClosed;
+                taskbarForm.Deactivate += SetStateNormal;
+                taskbarForm.Resize += SetStateNormal;
                 taskbarForm.Activated += TasbkarItemActivated;
-                void TasbkarItemActivated(object sender, EventArgs e)
-                {
-                    SetStateNormal();
-                    taskbarForm.Activate();
-                    taskbarForm.Focus();
-                    menus.SwitchOpenCloseByTaskbarItem();
-                }
             }
 
             DllImports.NativeMethods.User32ShowInactiveTopmost(taskbarForm);
@@ -65,27 +58,57 @@ namespace SystemTrayMenu
             }
             else
             {
-                taskbarForm?.Dispose();
-                SystemEvents.DisplaySettingsChanged -= (s, e) => SystemEvents_DisplaySettingsChanged();
+                AppRestart.BeforeRestarting -= Dispose;
+                SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
+                menus.LoadStarted -= menuNotifyIcon.LoadingStart;
+                menus.LoadStopped -= menuNotifyIcon.LoadingStop;
                 menus.Dispose();
+                menuNotifyIcon.Click -= MenuNotifyIcon_Click;
+                menuNotifyIcon.OpenLog -= Log.OpenLogFile;
                 menuNotifyIcon.Dispose();
+                if (taskbarForm != null)
+                {
+                    taskbarForm.FormClosed -= TaskbarForm_FormClosed;
+                    taskbarForm.Deactivate -= SetStateNormal;
+                    taskbarForm.Resize -= SetStateNormal;
+                    taskbarForm.Activated -= TasbkarItemActivated;
+                    taskbarForm.Dispose();
+                }
             }
         }
 
-        private void SystemEvents_DisplaySettingsChanged()
+        private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
         {
             menus.ReAdjustSizeAndLocation();
+        }
+
+        private void MenuNotifyIcon_Click()
+        {
+            menus.SwitchOpenClose(true);
+        }
+
+        private void TaskbarForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         /// <summary>
         /// This ensures that next click on taskbaritem works as activate event/click event.
         /// </summary>
-        private void SetStateNormal()
+        private void SetStateNormal(object sender, EventArgs e)
         {
             if (Form.ActiveForm == taskbarForm)
             {
                 taskbarForm.WindowState = FormWindowState.Normal;
             }
+        }
+
+        private void TasbkarItemActivated(object sender, EventArgs e)
+        {
+            SetStateNormal(sender, e);
+            taskbarForm.Activate();
+            taskbarForm.Focus();
+            menus.SwitchOpenCloseByTaskbarItem();
         }
     }
 }

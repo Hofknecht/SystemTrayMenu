@@ -12,6 +12,7 @@ namespace SystemTrayMenu.Business
     using System.IO;
     using System.Linq;
     using System.Windows.Forms;
+    using SharpDX.DirectInput;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Handler;
@@ -19,6 +20,7 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
+    using static System.Windows.Forms.VisualStyles.VisualStyleElement;
     using Menu = SystemTrayMenu.UserInterface.Menu;
     using Timer = System.Windows.Forms.Timer;
 
@@ -53,275 +55,33 @@ namespace SystemTrayMenu.Business
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;
             workerMainMenu.RunWorkerCompleted += LoadMainMenuCompleted;
-            void LoadMainMenuCompleted(object sender, RunWorkerCompletedEventArgs e)
-            {
-                keyboardInput.ResetSelectedByKey();
-                LoadStopped();
-
-                if (e.Result == null)
-                {
-                    // Clean up menu status IsMenuOpen for previous one
-                    DataGridView dgvMainMenu = menus[0].GetDataGridView();
-                    foreach (DataRow row in ((DataTable)dgvMainMenu.DataSource).Rows)
-                    {
-                        RowData rowDataToClear = (RowData)row[2];
-                        rowDataToClear.IsMenuOpen = false;
-                        rowDataToClear.IsClicking = false;
-                        rowDataToClear.IsSelected = false;
-                        rowDataToClear.IsContextMenuOpen = false;
-                    }
-
-                    RefreshSelection(dgvMainMenu);
-
-                    if (Properties.Settings.Default.AppearAtMouseLocation)
-                    {
-                        menus[0].Tag = null;
-                    }
-
-                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                }
-                else
-                {
-                    MenuData menuData = (MenuData)e.Result;
-                    switch (menuData.Validity)
-                    {
-                        case MenuDataValidity.Valid:
-                            if (IconReader.MainPreload)
-                            {
-                                workerMainMenu.DoWork -= LoadMenu;
-                                menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name);
-                                menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
-                                Scaling.CalculateFactorByDpi(menus[0].GetDataGridView().CreateGraphics());
-                                IconReader.MainPreload = false;
-                                if (showMenuAfterMainPreload)
-                                {
-                                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                                }
-                            }
-                            else
-                            {
-                                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                            }
-
-                            break;
-                        case MenuDataValidity.Empty:
-                            MessageBox.Show(Translator.GetText("Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory."));
-                            OpenFolder();
-                            Config.SetFolderByUser();
-                            AppRestart.ByConfigChange();
-                            break;
-                        case MenuDataValidity.NoAccess:
-                            MessageBox.Show(Translator.GetText("You have no access to the root directory of the app. Grant access to the directory or change the root directory."));
-                            OpenFolder();
-                            Config.SetFolderByUser();
-                            AppRestart.ByConfigChange();
-                            break;
-                        case MenuDataValidity.Undefined:
-                            Log.Info($"{nameof(MenuDataValidity)}.{nameof(MenuDataValidity.Undefined)}");
-                            break;
-                        default:
-                            break;
-                    }
-                }
-
-                openCloseState = OpenCloseState.Default;
-            }
-
             waitToOpenMenu.StopLoadMenu += WaitToOpenMenu_StopLoadMenu;
-            void WaitToOpenMenu_StopLoadMenu()
-            {
-                foreach (BackgroundWorker workerSubMenu in workersSubMenu.
-                    Where(w => w.IsBusy))
-                {
-                    workerSubMenu.CancelAsync();
-                }
-
-                LoadStopped();
-            }
-
             waitToOpenMenu.StartLoadMenu += StartLoadMenu;
-            void StartLoadMenu(RowData rowData)
-            {
-                if (menus[0].IsUsable &&
-                    (menus[rowData.Level + 1] == null ||
-                    menus[rowData.Level + 1].Tag as RowData != rowData))
-                {
-                    CreateAndShowLoadingMenu(rowData);
-                    void CreateAndShowLoadingMenu(RowData rowData)
-                    {
-                        MenuData menuDataLoading = new(rowData.Level + 1)
-                        {
-                            Validity = MenuDataValidity.Valid,
-                        };
-
-                        Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name);
-                        menuLoading.IsLoadingMenu = true;
-                        AdjustMenusSizeAndLocation();
-                        menus[rowData.Level + 1] = menuLoading;
-                        menuLoading.Tag = menuDataLoading.RowDataParent = rowData;
-                        menuDataLoading.RowDataParent.SubMenu = menuLoading;
-                        menuLoading.SetTypeLoading();
-                        ShowSubMenu(menuLoading);
-                    }
-
-                    BackgroundWorker workerSubMenu = workersSubMenu.
-                        Where(w => !w.IsBusy).FirstOrDefault();
-                    if (workerSubMenu == null)
-                    {
-                        workerSubMenu = new BackgroundWorker
-                        {
-                            WorkerSupportsCancellation = true,
-                        };
-                        workerSubMenu.DoWork += LoadMenu;
-                        workerSubMenu.RunWorkerCompleted += LoadSubMenuCompleted;
-                        workersSubMenu.Add(workerSubMenu);
-                    }
-
-                    workerSubMenu.RunWorkerAsync(rowData);
-                }
-
-                void LoadSubMenuCompleted(object senderCompleted, RunWorkerCompletedEventArgs e)
-                {
-                    MenuData menuData = (MenuData)e.Result;
-
-                    Menu menuLoading = menus[menuData.Level];
-                    string userSearchText = string.Empty;
-                    bool closedLoadingMenu = false;
-                    if (menuLoading != null && menuLoading.IsLoadingMenu)
-                    {
-                        menuLoading.HideWithFade();
-                        userSearchText = menuLoading.GetSearchText();
-                        menus[menuLoading.Level] = null;
-                        closedLoadingMenu = true;
-                    }
-
-                    if (menuData.Validity != MenuDataValidity.Undefined &&
-                        menus[0].IsUsable)
-                    {
-                        Menu menu = Create(menuData);
-                        switch (menuData.Validity)
-                        {
-                            case MenuDataValidity.Valid:
-                                menu.SetTypeSub();
-                                break;
-                            case MenuDataValidity.Empty:
-                                menu.SetTypeEmpty();
-                                break;
-                            case MenuDataValidity.NoAccess:
-                                menu.SetTypeNoAccess();
-                                break;
-                        }
-
-                        menu.Tag = menuData.RowDataParent;
-                        menuData.RowDataParent.SubMenu = menu;
-                        if (menus[0].IsUsable)
-                        {
-                            ShowSubMenu(menu);
-                            menu.SetSearchText(userSearchText);
-                        }
-                    }
-                    else if (closedLoadingMenu && menus[0].IsUsable)
-                    {
-                        menuData.RowDataParent.IsMenuOpen = false;
-                        menuData.RowDataParent.IsClicking = false;
-                        menuData.RowDataParent.IsSelected = false;
-                        Menu menuPrevious = menus[menuData.Level - 1];
-                        if (menuPrevious != null)
-                        {
-                            RefreshSelection(menuPrevious.GetDataGridView());
-                        }
-                    }
-                }
-            }
-
             waitToOpenMenu.CloseMenu += CloseMenu;
-            void CloseMenu(int level)
-            {
-                if (level < menus.Length && menus[level] != null)
-                {
-                    HideOldMenu(menus[level]);
-                }
-
-                if (level - 1 < menus.Length && menus[level - 1] != null)
-                {
-                    menus[level - 1].FocusTextBox();
-                }
-            }
-
             waitToOpenMenu.MouseEnterOk += MouseEnterOk;
             dgvMouseRow.RowMouseEnter += waitToOpenMenu.MouseEnter;
             dgvMouseRow.RowMouseLeave += waitToOpenMenu.MouseLeave;
             dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave;
-
             keyboardInput = new(menus);
             keyboardInput.RegisterHotKey();
-            keyboardInput.HotKeyPressed += () => SwitchOpenClose(false);
+            keyboardInput.HotKeyPressed += KeyboardInput_HotKeyPressed;
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowDeselected += waitToOpenMenu.RowDeselected;
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
             keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
             keyboardInput.RowSelected += AdjustScrollbarToDisplayedRow;
-            void AdjustScrollbarToDisplayedRow(DataGridView dgv, int index)
-            {
-                Menu menu = (Menu)dgv.FindForm();
-                menu.AdjustScrollbar();
-            }
-
             joystickHelper = new();
-            joystickHelper.KeyPressed += (key) => menus[0].Invoke(keyboardInput.CmdKeyProcessed, null, key);
-
+            joystickHelper.KeyPressed += JoystickHelper_KeyPressed;
             timerShowProcessStartedAsLoadingIcon.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed;
             timerStillActiveCheck.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed + 20;
-            timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
-            void StillActiveTick()
-            {
-                if (!IsActive())
-                {
-                    FadeHalfOrOutIfNeeded();
-                }
-
-                timerStillActiveCheck.Stop();
-            }
-
+            timerStillActiveCheck.Tick += TimerStillActiveCheck_Tick;
             waitLeave.LeaveTriggered += FadeHalfOrOutIfNeeded;
-
-            CreateWatcher(Config.Path, false);
-            foreach (var pathAndFlags in MenusHelpers.GetAddionalPathsForMainMenu())
-            {
-                CreateWatcher(pathAndFlags.Path, pathAndFlags.Recursive);
-            }
-
-            void CreateWatcher(string path, bool recursiv)
-            {
-                try
-                {
-                    FileSystemWatcher watcher = new()
-                    {
-                        Path = path,
-                        NotifyFilter = NotifyFilters.Attributes |
-                        NotifyFilters.DirectoryName |
-                        NotifyFilters.FileName |
-                        NotifyFilters.LastWrite,
-                        Filter = "*.*",
-                    };
-                    watcher.Created += WatcherProcessItem;
-                    watcher.Deleted += WatcherProcessItem;
-                    watcher.Renamed += WatcherProcessItem;
-                    watcher.Changed += WatcherProcessItem;
-                    watcher.IncludeSubdirectories = recursiv;
-                    watcher.EnableRaisingEvents = true;
-                    watchers.Add(watcher);
-                }
-                catch (Exception ex)
-                {
-                    Log.Warn($"Failed to {nameof(CreateWatcher)}: {path}", ex);
-                }
-            }
+            CreateWatchers();
         }
 
-        internal event EventHandlerEmpty LoadStarted;
+        public event Action LoadStarted;
 
-        internal event EventHandlerEmpty LoadStopped;
+        public event Action LoadStopped;
 
         private enum OpenCloseState
         {
@@ -334,34 +94,7 @@ namespace SystemTrayMenu.Business
 
         private List<Menu> AsList => AsEnumerable.ToList();
 
-        public void Dispose()
-        {
-            workerMainMenu.Dispose();
-            foreach (BackgroundWorker worker in workersSubMenu)
-            {
-                worker.Dispose();
-            }
-
-            waitToOpenMenu.Dispose();
-            keyboardInput.Dispose();
-            joystickHelper.Dispose();
-            timerShowProcessStartedAsLoadingIcon.Dispose();
-            timerStillActiveCheck.Dispose();
-            waitLeave.Dispose();
-            IconReader.Dispose();
-            DisposeMenu(menus[0]);
-            dgvMouseRow.Dispose();
-            foreach (FileSystemWatcher watcher in watchers)
-            {
-                watcher.Created -= WatcherProcessItem;
-                watcher.Deleted -= WatcherProcessItem;
-                watcher.Renamed -= WatcherProcessItem;
-                watcher.Changed -= WatcherProcessItem;
-                watcher.Dispose();
-            }
-        }
-
-        internal static MenuData GetData(BackgroundWorker worker, string path, int level)
+        public static MenuData GetData(BackgroundWorker worker, string path, int level)
         {
             MenuData menuData = new(level);
             if (worker?.CancellationPending == true || string.IsNullOrEmpty(path))
@@ -392,18 +125,65 @@ namespace SystemTrayMenu.Business
             return menuData;
         }
 
-        internal void SwitchOpenCloseByTaskbarItem()
+        public void Dispose()
+        {
+            workerMainMenu.DoWork -= LoadMenu;
+            workerMainMenu.RunWorkerCompleted -= LoadMainMenuCompleted;
+            workerMainMenu.Dispose();
+            dgvMouseRow.RowMouseEnter -= waitToOpenMenu.MouseEnter;
+            dgvMouseRow.RowMouseLeave -= waitToOpenMenu.MouseLeave;
+            dgvMouseRow.RowMouseLeave -= Dgv_RowMouseLeave;
+            keyboardInput.HotKeyPressed -= KeyboardInput_HotKeyPressed;
+            keyboardInput.ClosePressed -= MenusFadeOut;
+            keyboardInput.RowDeselected -= waitToOpenMenu.RowDeselected;
+            keyboardInput.EnterPressed -= waitToOpenMenu.EnterOpensInstantly;
+            keyboardInput.RowSelected -= waitToOpenMenu.RowSelected;
+            keyboardInput.RowSelected -= AdjustScrollbarToDisplayedRow;
+            keyboardInput.Dispose();
+            waitToOpenMenu.StopLoadMenu -= WaitToOpenMenu_StopLoadMenu;
+            waitToOpenMenu.StartLoadMenu -= StartLoadMenu;
+            waitToOpenMenu.CloseMenu -= CloseMenu;
+            waitToOpenMenu.MouseEnterOk -= MouseEnterOk;
+            waitToOpenMenu.Dispose();
+            joystickHelper.KeyPressed -= JoystickHelper_KeyPressed;
+            joystickHelper.Dispose();
+            timerShowProcessStartedAsLoadingIcon.Dispose();
+            timerStillActiveCheck.Tick -= TimerStillActiveCheck_Tick;
+            timerStillActiveCheck.Dispose();
+            waitLeave.LeaveTriggered -= FadeHalfOrOutIfNeeded;
+            waitLeave.Dispose();
+            foreach (BackgroundWorker workerSubMenu in workersSubMenu)
+            {
+                workerSubMenu.DoWork -= LoadMenu;
+                workerSubMenu.RunWorkerCompleted -= LoadSubMenuCompleted;
+                workerSubMenu.Dispose();
+            }
+
+            IconReader.Dispose();
+            dgvMouseRow.Dispose();
+            DisposeMenu(menus[0]);
+            foreach (FileSystemWatcher watcher in watchers)
+            {
+                watcher.Created -= WatcherProcessItem;
+                watcher.Deleted -= WatcherProcessItem;
+                watcher.Renamed -= WatcherProcessItem;
+                watcher.Changed -= WatcherProcessItem;
+                watcher.Dispose();
+            }
+        }
+
+        public void SwitchOpenCloseByTaskbarItem()
         {
             SwitchOpenClose(true);
             timerStillActiveCheck.Start();
         }
 
-        internal bool IsOpenCloseStateOpening()
+        public bool IsOpenCloseStateOpening()
         {
             return openCloseState == OpenCloseState.Opening;
         }
 
-        internal void SwitchOpenClose(bool byClick, bool isMainPreload = false)
+        public void SwitchOpenClose(bool byClick, bool isMainPreload = false)
         {
             // Ignore open close events during main preload #248
             if (IconReader.MainPreload && !isMainPreload)
@@ -448,13 +228,18 @@ namespace SystemTrayMenu.Business
         {
             if (menuToDispose != null)
             {
+                menuToDispose.UserClickedOpenFolder -= OpenFolder;
                 menuToDispose.MouseWheel -= AdjustMenusSizeAndLocation;
                 menuToDispose.MouseLeave -= waitLeave.Start;
                 menuToDispose.MouseEnter -= waitLeave.Stop;
                 menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
-                menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
                 menuToDispose.KeyPressCheck -= Menu_KeyPressCheck;
+                menuToDispose.SearchTextChanging -= Menu_SearchTextChanging;
                 menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
+                menuToDispose.UserDragsMenu -= Menu_UserDragsMenu;
+                menuToDispose.Activated -= Menu_Activated;
+                menuToDispose.Deactivate -= Menu_Deactivate;
+                menuToDispose.VisibleChanged -= MenuVisibleChanged;
                 DataGridView dgv = menuToDispose.GetDataGridView();
                 if (dgv != null)
                 {
@@ -470,6 +255,7 @@ namespace SystemTrayMenu.Business
                     dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
                     dgv.SelectionChanged -= Dgv_SelectionChanged;
                     dgv.RowPostPaint -= Dgv_RowPostPaint;
+                    dgv.DataError -= Dgv_DataError;
                     dgv.ClearSelection();
 
                     foreach (DataGridViewRow row in dgv.Rows)
@@ -477,6 +263,9 @@ namespace SystemTrayMenu.Business
                         RowData rowData = (RowData)row.Cells[2].Value;
                         DisposeMenu(rowData.SubMenu);
                     }
+
+                    DataTable dataTable = (DataTable)dgv.DataSource;
+                    dataTable.Dispose();
                 }
 
                 menuToDispose.Dispose();
@@ -620,6 +409,197 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        private void LoadMainMenuCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            keyboardInput.ResetSelectedByKey();
+            LoadStopped();
+
+            if (e.Result == null)
+            {
+                // Clean up menu status IsMenuOpen for previous one
+                DataGridView dgvMainMenu = menus[0].GetDataGridView();
+                foreach (DataRow row in ((DataTable)dgvMainMenu.DataSource).Rows)
+                {
+                    RowData rowDataToClear = (RowData)row[2];
+                    rowDataToClear.IsMenuOpen = false;
+                    rowDataToClear.IsClicking = false;
+                    rowDataToClear.IsSelected = false;
+                    rowDataToClear.IsContextMenuOpen = false;
+                }
+
+                RefreshSelection(dgvMainMenu);
+
+                if (Properties.Settings.Default.AppearAtMouseLocation)
+                {
+                    menus[0].Tag = null;
+                }
+
+                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+            }
+            else
+            {
+                MenuData menuData = (MenuData)e.Result;
+                switch (menuData.Validity)
+                {
+                    case MenuDataValidity.Valid:
+                        if (IconReader.MainPreload)
+                        {
+                            workerMainMenu.DoWork -= LoadMenu;
+                            menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name);
+                            menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
+                            Scaling.CalculateFactorByDpi(menus[0].GetDataGridView().CreateGraphics());
+                            IconReader.MainPreload = false;
+                            if (showMenuAfterMainPreload)
+                            {
+                                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                            }
+                        }
+                        else
+                        {
+                            AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                        }
+
+                        break;
+                    case MenuDataValidity.Empty:
+                        MessageBox.Show(Translator.GetText("Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory."));
+                        OpenFolder();
+                        Config.SetFolderByUser();
+                        AppRestart.ByConfigChange();
+                        break;
+                    case MenuDataValidity.NoAccess:
+                        MessageBox.Show(Translator.GetText("You have no access to the root directory of the app. Grant access to the directory or change the root directory."));
+                        OpenFolder();
+                        Config.SetFolderByUser();
+                        AppRestart.ByConfigChange();
+                        break;
+                    case MenuDataValidity.Undefined:
+                        Log.Info($"{nameof(MenuDataValidity)}.{nameof(MenuDataValidity.Undefined)}");
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            openCloseState = OpenCloseState.Default;
+        }
+
+        private void WaitToOpenMenu_StopLoadMenu()
+        {
+            foreach (BackgroundWorker workerSubMenu in workersSubMenu.Where(w => w.IsBusy))
+            {
+                workerSubMenu.CancelAsync();
+            }
+
+            LoadStopped();
+        }
+
+        private void StartLoadMenu(RowData rowData)
+        {
+            if (menus[0].IsUsable &&
+                (menus[rowData.Level + 1] == null ||
+                menus[rowData.Level + 1].Tag as RowData != rowData))
+            {
+                CreateAndShowLoadingMenu(rowData);
+                void CreateAndShowLoadingMenu(RowData rowData)
+                {
+                    MenuData menuDataLoading = new(rowData.Level + 1)
+                    {
+                        Validity = MenuDataValidity.Valid,
+                    };
+
+                    Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name);
+                    menuLoading.IsLoadingMenu = true;
+                    AdjustMenusSizeAndLocation();
+                    menus[rowData.Level + 1] = menuLoading;
+                    menuLoading.Tag = menuDataLoading.RowDataParent = rowData;
+                    menuDataLoading.RowDataParent.SubMenu = menuLoading;
+                    menuLoading.SetTypeLoading();
+                    ShowSubMenu(menuLoading);
+                }
+
+                BackgroundWorker workerSubMenu = workersSubMenu.
+                    Where(w => !w.IsBusy).FirstOrDefault();
+                if (workerSubMenu == null)
+                {
+                    workerSubMenu = new BackgroundWorker()
+                    {
+                        WorkerSupportsCancellation = true,
+                    };
+                    workerSubMenu.DoWork += LoadMenu;
+                    workerSubMenu.RunWorkerCompleted += LoadSubMenuCompleted;
+                    workersSubMenu.Add(workerSubMenu);
+                }
+
+                workerSubMenu.RunWorkerAsync(rowData);
+            }
+        }
+
+        private void CloseMenu(int level)
+        {
+            if (level < menus.Length && menus[level] != null)
+            {
+                HideOldMenu(menus[level]);
+            }
+
+            if (level - 1 < menus.Length && menus[level - 1] != null)
+            {
+                menus[level - 1].FocusTextBox();
+            }
+        }
+
+        private void LoadSubMenuCompleted(object senderCompleted, RunWorkerCompletedEventArgs e)
+        {
+            MenuData menuData = (MenuData)e.Result;
+
+            Menu menuLoading = menus[menuData.Level];
+            string userSearchText = string.Empty;
+            bool closedLoadingMenu = false;
+            if (menuLoading != null && menuLoading.IsLoadingMenu)
+            {
+                menuLoading.HideWithFade();
+                userSearchText = menuLoading.GetSearchText();
+                menus[menuLoading.Level] = null;
+                closedLoadingMenu = true;
+            }
+
+            if (menuData.Validity != MenuDataValidity.Undefined &&
+                menus[0].IsUsable)
+            {
+                Menu menu = Create(menuData);
+                switch (menuData.Validity)
+                {
+                    case MenuDataValidity.Valid:
+                        menu.SetTypeSub();
+                        break;
+                    case MenuDataValidity.Empty:
+                        menu.SetTypeEmpty();
+                        break;
+                    case MenuDataValidity.NoAccess:
+                        menu.SetTypeNoAccess();
+                        break;
+                }
+
+                menu.Tag = menuData.RowDataParent;
+                menuData.RowDataParent.SubMenu = menu;
+                if (menus[0].IsUsable)
+                {
+                    ShowSubMenu(menu);
+                    menu.SetSearchText(userSearchText);
+                }
+            }
+            else if (closedLoadingMenu && menus[0].IsUsable)
+            {
+                menuData.RowDataParent.IsMenuOpen = false;
+                menuData.RowDataParent.IsClicking = false;
+                menuData.RowDataParent.IsSelected = false;
+                Menu menuPrevious = menus[menuData.Level - 1];
+                if (menuPrevious != null)
+                {
+                    RefreshSelection(menuPrevious.GetDataGridView());
+                }
+            }
+        }
+
         private bool IsActive()
         {
             bool IsShellContextMenuOpen()
@@ -653,22 +633,21 @@ namespace SystemTrayMenu.Business
         private Menu Create(MenuData menuData, string title = null)
         {
             Menu menu = new();
-
-            string path = Config.Path;
+            menu.Level = menuData.Level;
+            menu.Path = Config.Path;
             if (title == null)
             {
                 title = new DirectoryInfo(menuData.RowDataParent.ResolvedPath).Name;
-                path = menuData.RowDataParent.ResolvedPath;
+                menu.Path = menuData.RowDataParent.ResolvedPath;
             }
 
             if (string.IsNullOrEmpty(title))
             {
-                title = Path.GetPathRoot(path);
+                title = Path.GetPathRoot(menu.Path);
             }
 
             menu.AdjustControls(title, menuData.Validity);
-            menu.UserClickedOpenFolder += () => OpenFolder(path);
-            menu.Level = menuData.Level;
+            menu.UserClickedOpenFolder += OpenFolder;
             menu.MouseWheel += AdjustMenusSizeAndLocation;
             menu.MouseLeave += waitLeave.Start;
             menu.MouseEnter += waitLeave.Stop;
@@ -677,43 +656,8 @@ namespace SystemTrayMenu.Business
             menu.SearchTextChanging += Menu_SearchTextChanging;
             menu.SearchTextChanged += Menu_SearchTextChanged;
             menu.UserDragsMenu += Menu_UserDragsMenu;
-            void Menu_UserDragsMenu()
-            {
-                if (menus[1] != null)
-                {
-                    HideOldMenu(menus[1]);
-                }
-            }
-
-            menu.Deactivate += Deactivate;
-            void Deactivate(object sender, EventArgs e)
-            {
-                if (IsOpenCloseStateOpening())
-                {
-                    Log.Info("Ignored Deactivate, because openCloseState == OpenCloseState.Opening");
-                }
-                else if (!Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
-                    !waitingForReactivate)
-                {
-                    FadeHalfOrOutIfNeeded();
-                    if (!IsActive())
-                    {
-                        deactivatedTime = DateTime.Now;
-                    }
-                }
-            }
-
-            menu.Activated += (sender, e) => Activated();
-            void Activated()
-            {
-                if (IsActive() && menus[0].IsUsable)
-                {
-                    AsList.ForEach(m => m.ShowWithFade());
-                    timerStillActiveCheck.Stop();
-                    timerStillActiveCheck.Start();
-                }
-            }
-
+            menu.Activated += Menu_Activated;
+            menu.Deactivate += Menu_Deactivate;
             menu.VisibleChanged += MenuVisibleChanged;
             AddItemsToMenu(menuData.RowDatas, menu, out int foldersCount, out int filesCount);
 
@@ -731,16 +675,45 @@ namespace SystemTrayMenu.Business
             dgv.SelectionChanged += Dgv_SelectionChanged;
             dgv.RowPostPaint += Dgv_RowPostPaint;
             dgv.DataError += Dgv_DataError;
-            void Dgv_DataError(object sender, DataGridViewDataErrorEventArgs e)
-            {
-                // WARN Dgv_DataError occured System.ObjectDisposedException: Cannot access a disposed object. Object name: 'Icon'
-                // => Rare times occured (e.g. when focused an close other application => closed and activated at same time)
-                Log.Warn("Dgv_DataError occured", e.Exception);
-            }
 
             menu.SetCounts(foldersCount, filesCount);
 
             return menu;
+        }
+
+        private void Menu_UserDragsMenu()
+        {
+            if (menus[1] != null)
+            {
+                HideOldMenu(menus[1]);
+            }
+        }
+
+        private void Menu_Activated(object sender, EventArgs e)
+        {
+            if (IsActive() && menus[0].IsUsable)
+            {
+                AsList.ForEach(m => m.ShowWithFade());
+                timerStillActiveCheck.Stop();
+                timerStillActiveCheck.Start();
+            }
+        }
+
+        private void Menu_Deactivate(object sender, EventArgs e)
+        {
+            if (IsOpenCloseStateOpening())
+            {
+                Log.Info("Ignored Deactivate, because openCloseState == OpenCloseState.Opening");
+            }
+            else if (!Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
+                !waitingForReactivate)
+            {
+                FadeHalfOrOutIfNeeded();
+                if (!IsActive())
+                {
+                    deactivatedTime = DateTime.Now;
+                }
+            }
         }
 
         private void MenuVisibleChanged(object sender, EventArgs e)
@@ -1058,6 +1031,13 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        private void Dgv_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // WARN Dgv_DataError occured System.ObjectDisposedException: Cannot access a disposed object. Object name: 'Icon'
+            // => Rare times occured (e.g. when focused an close other application => closed and activated at same time)
+            Log.Warn("Dgv_DataError occured", e.Exception);
+        }
+
         private void ShowSubMenu(Menu menuToShow)
         {
             HideOldMenu(menuToShow, true);
@@ -1140,6 +1120,68 @@ namespace SystemTrayMenu.Business
 
             Config.AlwaysOpenByPin = false;
             joystickHelper.Disable();
+        }
+
+        private void CreateWatchers()
+        {
+            CreateWatcher(Config.Path, false);
+            foreach (var pathAndFlags in MenusHelpers.GetAddionalPathsForMainMenu())
+            {
+                CreateWatcher(pathAndFlags.Path, pathAndFlags.Recursive);
+            }
+
+            void CreateWatcher(string path, bool recursiv)
+            {
+                try
+                {
+                    FileSystemWatcher watcher = new()
+                    {
+                        Path = path,
+                        NotifyFilter = NotifyFilters.Attributes |
+                        NotifyFilters.DirectoryName |
+                        NotifyFilters.FileName |
+                        NotifyFilters.LastWrite,
+                        Filter = "*.*",
+                    };
+                    watcher.Created += WatcherProcessItem;
+                    watcher.Deleted += WatcherProcessItem;
+                    watcher.Renamed += WatcherProcessItem;
+                    watcher.Changed += WatcherProcessItem;
+                    watcher.IncludeSubdirectories = recursiv;
+                    watcher.EnableRaisingEvents = true;
+                    watchers.Add(watcher);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"Failed to {nameof(CreateWatcher)}: {path}", ex);
+                }
+            }
+        }
+
+        private void AdjustScrollbarToDisplayedRow(DataGridView dgv, int index)
+        {
+            Menu menu = (Menu)dgv.FindForm();
+            menu.AdjustScrollbar();
+        }
+
+        private void JoystickHelper_KeyPressed(Keys keys)
+        {
+            menus[0].Invoke(keyboardInput.CmdKeyProcessed, null, keys);
+        }
+
+        private void TimerStillActiveCheck_Tick(object sender, EventArgs e)
+        {
+            if (!IsActive())
+            {
+                FadeHalfOrOutIfNeeded();
+            }
+
+            timerStillActiveCheck.Stop();
+        }
+
+        private void KeyboardInput_HotKeyPressed()
+        {
+            SwitchOpenClose(false);
         }
 
         private void AdjustMenusSizeAndLocation()

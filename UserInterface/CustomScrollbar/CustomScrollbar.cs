@@ -204,6 +204,11 @@ namespace SystemTrayMenu.UserInterface
 
         protected override void Dispose(bool disposing)
         {
+            MouseDown -= CustomScrollbar_MouseDown;
+            MouseMove -= CustomScrollbar_MouseMove;
+            MouseUp -= CustomScrollbar_MouseUp;
+            MouseLeave -= CustomScrollbar_MouseLeave;
+            timerMouseStillClicked.Tick -= TimerMouseStillClicked_Tick;
             timerMouseStillClicked.Dispose();
             base.Dispose(disposing);
         }

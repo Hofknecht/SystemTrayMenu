@@ -1,4 +1,7 @@
-﻿namespace SystemTrayMenu.UserInterface
+﻿using System.Windows.Forms;
+using SystemTrayMenu.Helper;
+
+namespace SystemTrayMenu.UserInterface
 {
     partial class Menu
     {
@@ -19,9 +22,45 @@
             }
 
             timerUpdateIcons.Stop();
+            timerUpdateIcons.Tick -= TimerUpdateIcons_Tick;
+            timerUpdateIcons.Tick += TimerUpdateIcons_Tick_Loading;
             timerUpdateIcons.Dispose();
+            fading.ChangeOpacity -= Fading_ChangeOpacity;
+            fading.Show -= Fading_Show;
+            fading.Hide -= Hide;
             fading.Dispose();
+            dgv.GotFocus -= Dgv_GotFocus;
+            dgv.MouseEnter -= ControlsMouseEnter;
+            dgv.MouseLeave -= ControlsMouseLeave;
+            customScrollbar.GotFocus -= CustomScrollbar_GotFocus;
+            customScrollbar.Scroll -= CustomScrollbar_Scroll;
+            customScrollbar.MouseEnter -= ControlsMouseEnter;
+            customScrollbar.MouseLeave -= ControlsMouseLeave;
             customScrollbar.Dispose();
+            labelTitle.MouseEnter -= ControlsMouseEnter;
+            labelTitle.MouseLeave -= ControlsMouseLeave;
+            textBoxSearch.MouseEnter -= ControlsMouseEnter;
+            textBoxSearch.MouseLeave -= ControlsMouseLeave;
+            pictureBoxOpenFolder.MouseEnter -= ControlsMouseEnter;
+            pictureBoxOpenFolder.MouseLeave -= ControlsMouseLeave;
+            pictureBoxMenuAlwaysOpen.MouseEnter -= ControlsMouseEnter;
+            pictureBoxMenuAlwaysOpen.MouseLeave -= ControlsMouseLeave;
+            pictureBoxMenuAlwaysOpen.Paint -= PictureBoxMenuAlwaysOpen_Paint;
+            pictureBoxMenuAlwaysOpen.Paint -= LoadingMenu_Paint;
+            pictureBoxSettings.MouseEnter -= ControlsMouseEnter;
+            pictureBoxSettings.MouseLeave -= ControlsMouseLeave;
+            pictureBoxRestart.MouseEnter -= ControlsMouseEnter;
+            pictureBoxRestart.MouseLeave -= ControlsMouseLeave;
+            pictureBoxSearch.MouseEnter -= ControlsMouseEnter;
+            pictureBoxSearch.MouseLeave -= ControlsMouseLeave;
+            tableLayoutPanelMenu.MouseEnter -= ControlsMouseEnter;
+            tableLayoutPanelMenu.MouseLeave -= ControlsMouseLeave;
+            tableLayoutPanelDgvAndScrollbar.MouseEnter -= ControlsMouseEnter;
+            tableLayoutPanelDgvAndScrollbar.MouseLeave -= ControlsMouseLeave;
+            tableLayoutPanelBottom.MouseEnter -= ControlsMouseEnter;
+            tableLayoutPanelBottom.MouseLeave -= ControlsMouseLeave;
+            labelItems.MouseEnter -= ControlsMouseEnter;
+            labelItems.MouseLeave -= ControlsMouseLeave;
             base.Dispose(disposing);
         }
 

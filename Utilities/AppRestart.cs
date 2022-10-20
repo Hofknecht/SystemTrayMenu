@@ -4,6 +4,7 @@
 
 namespace SystemTrayMenu.Utilities
 {
+    using System;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
@@ -11,7 +12,7 @@ namespace SystemTrayMenu.Utilities
 
     internal class AppRestart
     {
-        public static event EventHandlerEmpty BeforeRestarting;
+        public static event Action BeforeRestarting;
 
         internal static void ByThreadException()
         {

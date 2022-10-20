@@ -32,144 +32,41 @@ namespace SystemTrayMenu.UserInterface
         internal Menu()
         {
             fading.ChangeOpacity += Fading_ChangeOpacity;
-            void Fading_ChangeOpacity(object sender, double newOpacity)
-            {
-                if (newOpacity != Opacity && !IsDisposed && !Disposing)
-                {
-                    Opacity = newOpacity;
-                }
-            }
-
             fading.Show += Fading_Show;
-            void Fading_Show()
-            {
-                try
-                {
-                    isShowing = true;
-                    Visible = true;
-                    isShowing = false;
-                    timerUpdateIcons.Start();
-                }
-                catch (ObjectDisposedException)
-                {
-                    Visible = false;
-                    isShowing = false;
-                    Log.Info($"Could not open menu, old menu was disposing," +
-                        $" IsDisposed={IsDisposed}");
-                }
-
-                if (Visible)
-                {
-                    if (Level == 0)
-                    {
-                        Activate();
-                        NativeMethods.User32ShowInactiveTopmost(this);
-                        NativeMethods.ForceForegroundWindow(Handle);
-                    }
-                    else
-                    {
-                        NativeMethods.User32ShowInactiveTopmost(this);
-                    }
-                }
-            }
-
             fading.Hide += Hide;
-
             InitializeComponent();
-
             SetDoubleBuffer(dgv, true);
-
-            Color foreColor = Color.Black;
-            Color backColor = AppColors.Background;
-            Color backColorSearch = AppColors.SearchField;
-            Color backgroundBorder = AppColors.BackgroundBorder;
-
-            if (Config.IsDarkMode())
-            {
-                foreColor = Color.White;
-                labelTitle.ForeColor = foreColor;
-                textBoxSearch.ForeColor = foreColor;
-                backColor = AppColors.DarkModeBackground;
-                backColorSearch = AppColors.DarkModeSearchField;
-                backgroundBorder = AppColors.DarkModeBackgroundBorder;
-            }
-
-            ColorConverter colorConverter = new();
-            labelItems.ForeColor = MenuDefines.ColorIcons;
-
-            if (backColor.R == 0)
-            {
-                backColor = Color.White;
-            }
-
-            BackColor = backgroundBorder;
-            labelTitle.BackColor = backColor;
-            tableLayoutPanelDgvAndScrollbar.BackColor = backColor;
-            tableLayoutPanelBottom.BackColor = backColor;
-            tableLayoutPanelMenu.BackColor = backColor;
-            dgv.BackgroundColor = backColor;
-            textBoxSearch.BackColor = backColorSearch;
-            panelLine.BackColor = AppColors.Icons;
-            pictureBoxSearch.BackColor = backColorSearch;
-            tableLayoutPanelSearch.BackColor = backColorSearch;
-            dgv.DefaultCellStyle = new DataGridViewCellStyle
-            {
-                SelectionForeColor = foreColor,
-                ForeColor = foreColor,
-                BackColor = backColor,
-            };
-
-            dgv.GotFocus += (sender, e) => FocusTextBox();
-            customScrollbar.GotFocus += (sender, e) => FocusTextBox();
-
-            customScrollbar.Margin = new Padding(0);
-            customScrollbar.Scroll += CustomScrollbar_Scroll;
-            void CustomScrollbar_Scroll(object sender, EventArgs e)
-            {
-                decimal firstIndex = customScrollbar.Value * dgv.Rows.Count / (decimal)customScrollbar.Maximum;
-                int firstIndexRounded = (int)Math.Ceiling(firstIndex);
-                if (firstIndexRounded > -1 && firstIndexRounded < dgv.RowCount)
-                {
-                    dgv.FirstDisplayedScrollingRowIndex = firstIndexRounded;
-                }
-            }
-
-            customScrollbar.MouseEnter += ControlsMouseEnter;
+            AdjustColors();
+            dgv.GotFocus += Dgv_GotFocus;
             dgv.MouseEnter += ControlsMouseEnter;
-            labelTitle.MouseEnter += ControlsMouseEnter;
-            textBoxSearch.MouseEnter += ControlsMouseEnter;
-            pictureBoxOpenFolder.MouseEnter += ControlsMouseEnter;
-            pictureBoxMenuAlwaysOpen.MouseEnter += ControlsMouseEnter;
-            pictureBoxSettings.MouseEnter += ControlsMouseEnter;
-            pictureBoxRestart.MouseEnter += ControlsMouseEnter;
-            pictureBoxSearch.MouseEnter += ControlsMouseEnter;
-            tableLayoutPanelMenu.MouseEnter += ControlsMouseEnter;
-            tableLayoutPanelDgvAndScrollbar.MouseEnter += ControlsMouseEnter;
-            tableLayoutPanelBottom.MouseEnter += ControlsMouseEnter;
-            labelItems.MouseEnter += ControlsMouseEnter;
-            void ControlsMouseEnter(object sender, EventArgs e)
-            {
-                MouseEnter?.Invoke();
-            }
-
-            customScrollbar.MouseLeave += ControlsMouseLeave;
             dgv.MouseLeave += ControlsMouseLeave;
+            customScrollbar.Margin = new Padding(0);
+            customScrollbar.GotFocus += CustomScrollbar_GotFocus;
+            customScrollbar.Scroll += CustomScrollbar_Scroll;
+            customScrollbar.MouseEnter += ControlsMouseEnter;
+            customScrollbar.MouseLeave += ControlsMouseLeave;
+            labelTitle.MouseEnter += ControlsMouseEnter;
             labelTitle.MouseLeave += ControlsMouseLeave;
+            textBoxSearch.MouseEnter += ControlsMouseEnter;
             textBoxSearch.MouseLeave += ControlsMouseLeave;
-            pictureBoxMenuAlwaysOpen.MouseLeave += ControlsMouseLeave;
+            pictureBoxOpenFolder.MouseEnter += ControlsMouseEnter;
             pictureBoxOpenFolder.MouseLeave += ControlsMouseLeave;
+            pictureBoxMenuAlwaysOpen.MouseEnter += ControlsMouseEnter;
+            pictureBoxMenuAlwaysOpen.MouseLeave += ControlsMouseLeave;
+            pictureBoxSettings.MouseEnter += ControlsMouseEnter;
             pictureBoxSettings.MouseLeave += ControlsMouseLeave;
+            pictureBoxRestart.MouseEnter += ControlsMouseEnter;
             pictureBoxRestart.MouseLeave += ControlsMouseLeave;
+            pictureBoxSearch.MouseEnter += ControlsMouseEnter;
             pictureBoxSearch.MouseLeave += ControlsMouseLeave;
+            tableLayoutPanelMenu.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelMenu.MouseLeave += ControlsMouseLeave;
+            tableLayoutPanelDgvAndScrollbar.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelDgvAndScrollbar.MouseLeave += ControlsMouseLeave;
+            tableLayoutPanelBottom.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelBottom.MouseLeave += ControlsMouseLeave;
+            labelItems.MouseEnter += ControlsMouseEnter;
             labelItems.MouseLeave += ControlsMouseLeave;
-            void ControlsMouseLeave(object sender, EventArgs e)
-            {
-                MouseLeave?.Invoke();
-            }
-
             bool isTouchEnabled = NativeMethods.IsTouchEnabled();
             if ((isTouchEnabled && Properties.Settings.Default.DragDropItemsEnabledTouch) ||
                 (!isTouchEnabled && Properties.Settings.Default.DragDropItemsEnabled))
@@ -180,23 +77,23 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal new event EventHandlerEmpty MouseWheel;
+        internal new event Action MouseWheel;
 
-        internal new event EventHandlerEmpty MouseEnter;
+        internal new event Action MouseEnter;
 
-        internal new event EventHandlerEmpty MouseLeave;
+        internal new event Action MouseLeave;
 
-        internal event EventHandlerEmpty UserClickedOpenFolder;
+        internal event Action<string> UserClickedOpenFolder;
 
         internal event EventHandler<Keys> CmdKeyProcessed;
 
         internal event EventHandler<KeyPressEventArgs> KeyPressCheck;
 
-        internal event EventHandlerEmpty SearchTextChanging;
+        internal event Action SearchTextChanging;
 
         internal event EventHandler<bool> SearchTextChanged;
 
-        internal event EventHandlerEmpty UserDragsMenu;
+        internal event Action UserDragsMenu;
 
         internal enum MenuType
         {
@@ -217,6 +114,8 @@ namespace SystemTrayMenu.UserInterface
         }
 
         internal int Level { get; set; }
+
+        internal string Path { get; set; }
 
         internal bool IsUsable => Visible && !fading.IsHiding && !IsDisposed && !Disposing;
 
@@ -324,7 +223,7 @@ namespace SystemTrayMenu.UserInterface
                     pictureBoxMenuAlwaysOpen.Paint -= PictureBoxMenuAlwaysOpen_Paint;
                     pictureBoxMenuAlwaysOpen.Paint += LoadingMenu_Paint;
                     timerUpdateIcons.Tick -= TimerUpdateIcons_Tick;
-                    timerUpdateIcons.Tick += (sender, e) => pictureBoxMenuAlwaysOpen.Invalidate();
+                    timerUpdateIcons.Tick += TimerUpdateIcons_Tick_Loading;
                     timerUpdateIcons.Interval = 15;
                     break;
                 default:
@@ -718,6 +617,117 @@ namespace SystemTrayMenu.UserInterface
                 CultureInfo.InvariantCulture);
         }
 
+        private void Fading_ChangeOpacity(double newOpacity)
+        {
+            if (newOpacity != Opacity && !IsDisposed && !Disposing)
+            {
+                Opacity = newOpacity;
+            }
+        }
+
+        private void Fading_Show()
+        {
+            try
+            {
+                isShowing = true;
+                Visible = true;
+                isShowing = false;
+                timerUpdateIcons.Start();
+            }
+            catch (ObjectDisposedException)
+            {
+                Visible = false;
+                isShowing = false;
+                Log.Info($"Could not open menu, old menu was disposing," +
+                    $" IsDisposed={IsDisposed}");
+            }
+
+            if (Visible)
+            {
+                if (Level == 0)
+                {
+                    Activate();
+                    NativeMethods.User32ShowInactiveTopmost(this);
+                    NativeMethods.ForceForegroundWindow(Handle);
+                }
+                else
+                {
+                    NativeMethods.User32ShowInactiveTopmost(this);
+                }
+            }
+        }
+
+        private void AdjustColors()
+        {
+            Color foreColor = Color.Black;
+            Color backColor = AppColors.Background;
+            Color backColorSearch = AppColors.SearchField;
+            Color backgroundBorder = AppColors.BackgroundBorder;
+            if (Config.IsDarkMode())
+            {
+                foreColor = Color.White;
+                labelTitle.ForeColor = foreColor;
+                textBoxSearch.ForeColor = foreColor;
+                backColor = AppColors.DarkModeBackground;
+                backColorSearch = AppColors.DarkModeSearchField;
+                backgroundBorder = AppColors.DarkModeBackgroundBorder;
+            }
+
+            ColorConverter colorConverter = new();
+            labelItems.ForeColor = MenuDefines.ColorIcons;
+            if (backColor.R == 0)
+            {
+                backColor = Color.White;
+            }
+
+            BackColor = backgroundBorder;
+            labelTitle.BackColor = backColor;
+            tableLayoutPanelDgvAndScrollbar.BackColor = backColor;
+            tableLayoutPanelBottom.BackColor = backColor;
+            tableLayoutPanelMenu.BackColor = backColor;
+            dgv.BackgroundColor = backColor;
+            textBoxSearch.BackColor = backColorSearch;
+            panelLine.BackColor = AppColors.Icons;
+            pictureBoxSearch.BackColor = backColorSearch;
+            tableLayoutPanelSearch.BackColor = backColorSearch;
+            dgv.DefaultCellStyle = new DataGridViewCellStyle
+            {
+                SelectionForeColor = foreColor,
+                ForeColor = foreColor,
+                BackColor = backColor,
+            };
+        }
+
+        private void Dgv_GotFocus(object sender, EventArgs e)
+        {
+            FocusTextBox();
+        }
+
+        private void CustomScrollbar_GotFocus(object sender, EventArgs e)
+        {
+            FocusTextBox();
+        }
+
+        private void CustomScrollbar_Scroll(object sender, EventArgs e)
+        {
+            decimal firstIndex = customScrollbar.Value * dgv.Rows.Count / (decimal)customScrollbar.Maximum;
+            int firstIndexRounded = (int)Math.Ceiling(firstIndex);
+            if (firstIndexRounded > -1 && firstIndexRounded < dgv.RowCount)
+            {
+                dgv.FirstDisplayedScrollingRowIndex = firstIndexRounded;
+            }
+        }
+
+        private void ControlsMouseEnter(object sender, EventArgs e)
+        {
+            MouseEnter?.Invoke();
+        }
+
+        private void ControlsMouseLeave(object sender, EventArgs e)
+        {
+            MouseLeave?.Invoke();
+        }
+
         private void AdjustDataGridViewHeight(Menu menuPredecessor, int screenHeightMax)
         {
             double factor = Properties.Settings.Default.RowHeighteInPercentage / 100f;
@@ -753,12 +763,12 @@ namespace SystemTrayMenu.UserInterface
                 row.Height = dgv.RowTemplate.Height;
             }
 
-            int dgvHeightByItems = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
+            int dgvHeightByItems = Math.Max(dgv.Rows.GetRowsHeight(DataGridViewElementStates.None), 1);
             int dgvHeightMaxByScreen = screenHeightMax - (Height - dgv.Height);
             int dgvHeightMaxByOptions = (int)(Scaling.Factor * Scaling.FactorByDpi *
                 450f * (Properties.Settings.Default.HeightMaxInPercent / 100f));
             int dgvHeightMax = Math.Min(dgvHeightMaxByScreen, dgvHeightMaxByOptions);
-            if (!dgvHeightSet && dgvHeightByItems > 0 && dgvHeightMax > 0)
+            if (!dgvHeightSet)
             {
                 dgv.Height = Math.Min(dgvHeightByItems, dgvHeightMax);
                 dgvHeightSet = true;
@@ -1035,7 +1045,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e.Button == MouseButtons.Left)
             {
-                UserClickedOpenFolder?.Invoke();
+                UserClickedOpenFolder?.Invoke(Path);
             }
         }
 
@@ -1143,6 +1153,11 @@ namespace SystemTrayMenu.UserInterface
             {
                 timerUpdateIcons.Stop();
             }
+        }
+
+        private void TimerUpdateIcons_Tick_Loading(object sender, EventArgs e)
+        {
+            pictureBoxMenuAlwaysOpen.Invalidate();
         }
 
         private void Menu_MouseDown(object sender, MouseEventArgs e)

@@ -32,6 +32,11 @@ namespace SystemTrayMenu.Helpers
             }
         }
 
+        ~JoystickHelper() // the finalizer
+        {
+            Dispose(false);
+        }
+
         public event Action<Keys> KeyPressed;
 
         public void Enable()
@@ -54,6 +59,7 @@ namespace SystemTrayMenu.Helpers
         {
             if (disposing)
             {
+                timerReadJoystick.Elapsed -= ReadJoystickLoop;
                 timerReadJoystick?.Dispose();
                 joystick?.Dispose();
             }

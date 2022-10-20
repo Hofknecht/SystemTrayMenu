@@ -27,33 +27,34 @@ namespace SystemTrayMenu.Handler
             this.menus = menus;
         }
 
-        internal event EventHandlerEmpty HotKeyPressed;
+        public event Action HotKeyPressed;
 
-        internal event EventHandlerEmpty ClosePressed;
+        public event Action ClosePressed;
 
-        internal event Action<DataGridView, int> RowSelected;
+        public event Action<DataGridView, int> RowSelected;
 
-        internal event Action<int, DataGridView> RowDeselected;
+        public event Action<DataGridView, int> RowDeselected;
 
-        internal event Action<DataGridView, int> EnterPressed;
+        public event Action<DataGridView, int> EnterPressed;
 
-        internal event EventHandlerEmpty Cleared;
+        public event Action Cleared;
 
-        internal bool InUse { get; set; }
+        public bool InUse { get; set; }
 
         public void Dispose()
         {
+            hook.KeyPressed -= Hook_KeyPressed;
             hook.Dispose();
         }
 
-        internal void RegisterHotKey()
+        public void RegisterHotKey()
         {
             if (!string.IsNullOrEmpty(Properties.Settings.Default.HotKey))
             {
                 try
                 {
                     hook.RegisterHotKey();
-                    hook.KeyPressed += (sender, e) => HotKeyPressed?.Invoke();
+                    hook.KeyPressed += Hook_KeyPressed;
                 }
                 catch (InvalidOperationException ex)
                 {
@@ -64,13 +65,13 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void ResetSelectedByKey()
+        public void ResetSelectedByKey()
         {
             iRowKey = -1;
             iMenuKey = 0;
         }
 
-        internal void CmdKeyProcessed(object sender, Keys keys)
+        public void CmdKeyProcessed(object sender, Keys keys)
         {
             sender ??= menus[iMenuKey];
 
@@ -171,12 +172,12 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void SearchTextChanging()
+        public void SearchTextChanging()
         {
             ClearIsSelectedByKey();
         }
 
-        internal void SearchTextChanged(Menu menu, bool isSearchStringEmpty)
+        public void SearchTextChanged(Menu menu, bool isSearchStringEmpty)
         {
             DataGridView dgv = menu.GetDataGridView();
             if (isSearchStringEmpty)
@@ -189,12 +190,12 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void ClearIsSelectedByKey()
+        public void ClearIsSelectedByKey()
         {
             ClearIsSelectedByKey(iMenuKey, iRowKey);
         }
 
-        internal void Select(DataGridView dgv, int i, bool refreshview)
+        public void Select(DataGridView dgv, int i, bool refreshview)
         {
             int newiMenuKey = ((Menu)dgv.TopLevelControl).Level;
             if (i != iRowKey || newiMenuKey != iMenuKey)
@@ -220,6 +221,11 @@ namespace SystemTrayMenu.Handler
                     row.Selected = true;
                 }
             }
+        }
+
+        private void Hook_KeyPressed(object sender, KeyPressedEventArgs e)
+        {
+            HotKeyPressed?.Invoke();
         }
 
         private bool IsAnyMenuSelectedByKey(
@@ -307,7 +313,7 @@ namespace SystemTrayMenu.Handler
                         }
                         else
                         {
-                            RowDeselected(iRowBefore, dgvBefore);
+                            RowDeselected(dgvBefore, iRowBefore);
                             SelectRow(dgv, iRowKey);
                             EnterPressed.Invoke(dgv, iRowKey);
                         }
@@ -318,7 +324,7 @@ namespace SystemTrayMenu.Handler
                     if (SelectMatchedReverse(dgv, iRowKey) ||
                         SelectMatchedReverse(dgv, dgv.Rows.Count - 1))
                     {
-                        RowDeselected(iRowBefore, dgvBefore);
+                        RowDeselected(dgvBefore, iRowBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
@@ -328,7 +334,7 @@ namespace SystemTrayMenu.Handler
                     if (SelectMatched(dgv, iRowKey) ||
                         SelectMatched(dgv, 0))
                     {
-                        RowDeselected(iRowBefore, dgvBefore);
+                        RowDeselected(dgvBefore, iRowBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
@@ -337,7 +343,7 @@ namespace SystemTrayMenu.Handler
                 case Keys.Home:
                     if (SelectMatched(dgv, 0))
                     {
-                        RowDeselected(iRowBefore, dgvBefore);
+                        RowDeselected(dgvBefore, iRowBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
@@ -346,7 +352,7 @@ namespace SystemTrayMenu.Handler
                 case Keys.End:
                     if (SelectMatchedReverse(dgv, dgv.Rows.Count - 1))
                     {
-                        RowDeselected(iRowBefore, dgvBefore);
+                        RowDeselected(dgvBefore, iRowBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
@@ -380,7 +386,7 @@ namespace SystemTrayMenu.Handler
                     break;
                 case Keys.Escape:
                 case Keys.Alt | Keys.F4:
-                    RowDeselected(iRowBefore, dgvBefore);
+                    RowDeselected(dgvBefore, iRowBefore);
                     iMenuKey = 0;
                     iRowKey = -1;
                     toClear = true;
@@ -392,7 +398,7 @@ namespace SystemTrayMenu.Handler
                         if (SelectMatched(dgv, iRowKey, keyInput) ||
                             SelectMatched(dgv, 0, keyInput))
                         {
-                            RowDeselected(iRowBefore, null);
+                            RowDeselected(null, iRowBefore);
                             SelectRow(dgv, iRowKey);
                             toClear = true;
                         }
@@ -402,7 +408,7 @@ namespace SystemTrayMenu.Handler
                             if (SelectMatched(dgv, iRowKey, keyInput) ||
                                 SelectMatched(dgv, 0, keyInput))
                             {
-                                RowDeselected(iRowBefore, null);
+                                RowDeselected(null, iRowBefore);
                                 SelectRow(dgv, iRowKey);
                             }
                             else
@@ -434,7 +440,7 @@ namespace SystemTrayMenu.Handler
                     if (SelectMatched(dgv, dgv.SelectedRows[0].Index) ||
                         SelectMatched(dgv, 0))
                     {
-                        RowDeselected(iRowBefore, dgvBefore);
+                        RowDeselected(dgvBefore, iRowBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
@@ -442,7 +448,7 @@ namespace SystemTrayMenu.Handler
             }
             else
             {
-                RowDeselected(iRowBefore, dgvBefore);
+                RowDeselected(dgvBefore, iRowBefore);
                 iMenuKey = 0;
                 iRowKey = -1;
                 toClear = true;
@@ -466,7 +472,7 @@ namespace SystemTrayMenu.Handler
                         if (SelectMatched(dgv, iRowKey) ||
                             SelectMatched(dgv, 0))
                         {
-                            RowDeselected(iRowBefore, dgvBefore);
+                            RowDeselected(dgvBefore, iRowBefore);
                             SelectRow(dgv, iRowKey);
                             toClear = true;
                         }
@@ -483,7 +489,7 @@ namespace SystemTrayMenu.Handler
                     if (SelectMatched(dgv, iRowKey) ||
                         SelectMatched(dgv, 0))
                     {
-                        RowDeselected(iRowBefore, dgvBefore);
+                        RowDeselected(dgvBefore, iRowBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }

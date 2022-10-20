@@ -33,7 +33,7 @@ namespace SystemTrayMenu.Handler
 
         internal event Action<int> CloseMenu;
 
-        internal event EventHandlerEmpty StopLoadMenu;
+        internal event Action StopLoadMenu;
 
         internal event Action<DataGridView, int> MouseEnterOk;
 
@@ -41,6 +41,7 @@ namespace SystemTrayMenu.Handler
 
         public void Dispose()
         {
+            timerStartLoad.Tick -= WaitStartLoad_Tick;
             timerStartLoad.Stop();
             timerStartLoad.Dispose();
             dgv?.Dispose();
@@ -92,7 +93,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowDeselected(int rowIndex, DataGridView dgv)
+        internal void RowDeselected(DataGridView dgv, int rowIndex)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();

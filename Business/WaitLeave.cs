@@ -18,10 +18,11 @@ namespace SystemTrayMenu.Handler
             timerLeaveCheck.Tick += TimerLeaveCheckTick;
         }
 
-        public event EventHandlerEmpty LeaveTriggered;
+        public event Action LeaveTriggered;
 
         public void Dispose()
         {
+            timerLeaveCheck.Tick -= TimerLeaveCheckTick;
             timerLeaveCheck.Dispose();
         }
 

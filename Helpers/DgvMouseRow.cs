@@ -16,12 +16,12 @@ namespace SystemTrayMenu.Helper
         internal DgvMouseRow()
         {
             timerRaiseRowMouseLeave.Interval = 200;
-            timerRaiseRowMouseLeave.Tick += Elapsed;
-            void Elapsed(object sender, EventArgs e)
-            {
-                timerRaiseRowMouseLeave.Stop();
-                TriggerRowMouseLeave();
-            }
+            timerRaiseRowMouseLeave.Tick += TimerRaiseRowMouseLeave_Tick;
+        }
+
+        ~DgvMouseRow() // the finalizer
+        {
+            Dispose(false);
         }
 
         internal event Action<object, DataGridViewCellEventArgs> RowMouseEnter;
@@ -75,9 +75,16 @@ namespace SystemTrayMenu.Helper
         {
             if (disposing)
             {
+                timerRaiseRowMouseLeave.Tick -= TimerRaiseRowMouseLeave_Tick;
                 timerRaiseRowMouseLeave.Dispose();
-                dgv?.Dispose();
+                dgv = null;
             }
+        }
+
+        private void TimerRaiseRowMouseLeave_Tick(object sender, EventArgs e)
+        {
+            timerRaiseRowMouseLeave.Stop();
+            TriggerRowMouseLeave();
         }
 
         private void TriggerRowMouseLeave()

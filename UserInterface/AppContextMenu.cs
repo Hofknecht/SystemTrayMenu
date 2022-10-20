@@ -15,7 +15,7 @@ namespace SystemTrayMenu.Helper
 
     internal class AppContextMenu
     {
-        public event EventHandlerEmpty ClickedOpenLog;
+        public event Action ClickedOpenLog;
 
         public ContextMenuStrip Create()
         {
