@@ -2,10 +2,9 @@
   <PropertyGroup>
     <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
     <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
-    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>True</UseWPF>
     <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
     <OutputType>WinExe</OutputType>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -19,7 +18,6 @@
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Platforms>x64;x86;AnyCPU</Platforms>
     <Configurations>Debug;Release;ReleasePackage</Configurations>
@@ -106,6 +104,18 @@
     <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Helpers\Updater\GitHubUpdate.cs" />
+    <Compile Remove="UserInterface\CustomScrollbar\CustomScrollbar.cs" />
+    <Compile Remove="UserInterface\CustomScrollbar\ScrollbarControlDesigner.cs" />
+    <Compile Remove="UserInterface\HotkeyTextboxControl\HotkeyControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="UserInterface\Menu.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\SystemTrayMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="Clearcove.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ThirdParty\Clearcove.Logging.dll</HintPath>
@@ -122,34 +132,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="UserInterface\AboutBox.Designer.cs">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </Compile>
-    <Compile Update="UserInterface\CustomScrollbar\CustomScrollbar.cs" />
-    <Compile Update="UserInterface\SettingsForm.Designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Update="UserInterface\AboutBox.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="UserInterface\SettingsForm.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="UserInterface\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Helpers\Updater\GitHubUpdate.cs" />
     <None Include="LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="UserInterface\CustomScrollbar\CustomScrollbar.cs" />
+    <None Include="UserInterface\CustomScrollbar\ScrollbarControlDesigner.cs" />
+    <None Include="UserInterface\HotkeyTextboxControl\HotkeyControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\SystemTrayMenu.ico" />
+    <EmbeddedResource Include="Resources\SystemTrayMenu.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">
@@ -172,19 +171,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="H.InputSimulator" Version="1.3.0" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -228,6 +216,32 @@ EXIT 0</PreBuildEvent>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
   </PropertyGroup>
   <ItemGroup>
-    <FrameworkReference Update="Microsoft.WindowsDesktop.App;Microsoft.WindowsDesktop.App.WPF;Microsoft.WindowsDesktop.App.WindowsForms" TargetingPackVersion="6.0.0" />
+    <FrameworkReference Update="Microsoft.WindowsDesktop.App;Microsoft.WindowsDesktop.App.WPF" TargetingPackVersion="6.0.0" />
   </ItemGroup>
+
+<!-- it seems only obj clean and then opening visual studio helps -->
+<!-- NOT TESTED: Microsoft.NET.Sdk.WindowsDesktop -->
+<!-- Workaround: Clear C:\Users\Peter K\AppData\Local\Microsoft\VisualStudio\14.0\ComponentModelCache (and bin and obj) -->
+<!-- Workaround for XAML compiler issue  https://github.com/dotnet/wpf/issues/4299 
+  <UsingTask TaskName="Sleep" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <Delay ParameterType="System.Int32" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+System.Threading.Thread.Sleep(this.Delay);
+]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="WaitForFiles" BeforeTargets="CoreCompile">
+    <PropertyGroup>
+      <WaitTime>5000</WaitTime>
+    </PropertyGroup>
+    <Message Text="Waiting for $(WaitTime)ms" Importance="high" />
+    <Sleep Delay="$(WaitTime)"/>
+  </Target>
+  -->
 </Project>

@@ -5,12 +5,12 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Drawing;
     using System.IO;
     using System.Runtime.InteropServices;
     using System.Text;
-    using System.Windows.Forms;
+    using System.Windows;
     using SystemTrayMenu.Helper;
+    using static SystemTrayMenu.Utilities.FormsExtensions;
 
     /// <summary>
     /// source: https://www.codeproject.com/Articles/22012/Explorer-Shell-Context-Menu
@@ -62,14 +62,6 @@ namespace SystemTrayMenu.Utilities
         private IShellFolder oParentFolder;
         private IntPtr[] arrPIDLs;
         private string strParentFolder;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ShellContextMenu"/> class.
-        /// </summary>
-        public ShellContextMenu()
-        {
-            CreateHandle(new CreateParams());
-        }
 
         /// <summary>
         /// Finalizes an instance of the <see cref="ShellContextMenu"/> class.
@@ -755,14 +747,21 @@ namespace SystemTrayMenu.Utilities
                 }
 
                 pMenu = DllImports.NativeMethods.User32CreatePopupMenu();
-
+#if TODO // WPF: Implement Control and replace active code with disabled one
                 int nResult = oContextMenu.QueryContextMenu(
                     pMenu,
                     0,
                     CmdFirst,
                     CmdLast,
-                    CMF.EXPLORE | CMF.NORMAL | ((Control.ModifierKeys & Keys.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
-
+                    CMF.EXPLORE | CMF.NORMAL | ((Control.ModifierKeys & Key.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
+#else
+                int nResult = oContextMenu.QueryContextMenu(
+                    pMenu,
+                    0,
+                    CmdFirst,
+                    CmdLast,
+                    CMF.EXPLORE | CMF.NORMAL);
+#endif
                 Marshal.QueryInterface(iContextMenuPtr, ref iidIContextMenu2, out iContextMenuPtr2);
                 Marshal.QueryInterface(iContextMenuPtr, ref iidIContextMenu3, out iContextMenuPtr3);
 
@@ -772,8 +771,8 @@ namespace SystemTrayMenu.Utilities
                 uint nSelected = DllImports.NativeMethods.User32TrackPopupMenuEx(
                     pMenu,
                     DllImports.NativeMethods.TPM.RETURNCMD,
-                    pointScreen.X,
-                    pointScreen.Y,
+                    (int)pointScreen.X,
+                    (int)pointScreen.Y,
                     Handle,
                     IntPtr.Zero);
 
@@ -841,32 +840,35 @@ namespace SystemTrayMenu.Utilities
         /// by calling HandleMenuMsg and HandleMenuMsg2. It will also call the OnContextMenuMouseHover
         /// method of Browser when hovering over a ContextMenu item.
         /// </summary>
-        /// <param name="m">the Message of the Browser's WndProc.</param>
-        protected override void WndProc(ref Message m)
+        protected override IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             if (oContextMenu2 != null &&
-                (m.Msg == (int)WM.INITMENUPOPUP ||
-                 m.Msg == (int)WM.MEASUREITEM ||
-                 m.Msg == (int)WM.DRAWITEM))
+                (msg == (int)WM.INITMENUPOPUP ||
+                 msg == (int)WM.MEASUREITEM ||
+                 msg == (int)WM.DRAWITEM))
             {
                 if (oContextMenu2.HandleMenuMsg(
-                    (uint)m.Msg, m.WParam, m.LParam) == ResultOK)
+                    (uint)msg, wParam, lParam) == ResultOK)
                 {
-                    return;
+                    handled = true;
+                    return IntPtr.Zero;
                 }
             }
 
             if (oContextMenu3 != null &&
-                m.Msg == (int)WM.MENUCHAR)
+                msg == (int)WM.MENUCHAR)
             {
                 if (oContextMenu3.HandleMenuMsg2(
-                    (uint)m.Msg, m.WParam, m.LParam, IntPtr.Zero) == ResultOK)
+                    (uint)msg, wParam, lParam, IntPtr.Zero) == ResultOK)
                 {
-                    return;
+                    handled = true;
+                    return IntPtr.Zero;
                 }
             }
 
-            base.WndProc(ref m);
+
+            handled = false;
+            return IntPtr.Zero;
         }
 
         /// <summary>
@@ -951,6 +953,7 @@ namespace SystemTrayMenu.Utilities
 
         private static void InvokeCommand(IContextMenu contextMenu, uint nCmd, string strFolder, Point pointInvoke)
         {
+#if TODO
             CMINVOKECOMMANDINFOEX invoke = new()
             {
                 CbSize = CbInvokeCommand,
@@ -959,13 +962,13 @@ namespace SystemTrayMenu.Utilities
                 LpVerbW = (IntPtr)(nCmd - CmdFirst),
                 LpDirectoryW = strFolder,
                 FMask = CMIC.UNICODE | CMIC.PTINVOKE |
-                ((Control.ModifierKeys & Keys.Control) != 0 ? CMIC.CONTROL_DOWN : 0) |
-                ((Control.ModifierKeys & Keys.Shift) != 0 ? CMIC.SHIFT_DOWN : 0),
+                ((Control.ModifierKeys & Key.Control) != 0 ? CMIC.CONTROL_DOWN : 0) |
+                ((Control.ModifierKeys & Key.Shift) != 0 ? CMIC.SHIFT_DOWN : 0),
                 PtInvoke = new POINT(pointInvoke.X, pointInvoke.Y),
                 NShow = SW.SHOWNORMAL,
             };
-
             _ = contextMenu.InvokeCommand(ref invoke);
+#endif
         }
 
         /// <summary>Gets the interfaces to the context menu.</summary>

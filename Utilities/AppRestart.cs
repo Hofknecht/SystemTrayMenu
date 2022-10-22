@@ -4,14 +4,15 @@
 
 namespace SystemTrayMenu.Utilities
 {
+    using System;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
-    using System.Windows.Forms;
+    using System.Windows;
 
     internal class AppRestart
     {
-        public static event EventHandlerEmpty BeforeRestarting;
+        public static event Action BeforeRestarting;
 
         internal static void ByThreadException()
         {
@@ -54,7 +55,7 @@ namespace SystemTrayMenu.Utilities
                 }
             }
 
-            Application.Exit();
+            Application.Current.Shutdown();
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]

@@ -11,7 +11,7 @@ namespace SystemTrayMenu.Utilities
     using System.IO;
     using System.Reflection;
     using System.Threading;
-    using System.Windows.Forms;
+    using System.Windows;
     using Clearcove.Logging;
 
     internal static class Log
@@ -185,8 +185,8 @@ namespace SystemTrayMenu.Utilities
                         _ = MessageBox.Show(
                             Translator.GetText("The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly."),
                             Translator.GetText("Problem with shortcut link"),
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Warning);
                     }
                 }
             }

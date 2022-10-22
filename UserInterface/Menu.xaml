@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2022-2022 Peter Kirmeier -->
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:utils="clr-namespace:SystemTrayMenu.Utilities"
+        xmlns:local="clr-namespace:SystemTrayMenu.UserInterface"
+        x:Class="SystemTrayMenu.UserInterface.Menu"
+        mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False">
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
+    <!-- TODO WPF: Replace Fading class with built-in fading animations, like..
+    <Window.Style>
+        <Style>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Visibility}" Value="Visible">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0.0" To="1.0" Duration="0:0:5"
+                                    />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="1.0" To="0.0" Duration="0:0:5"
+                                    />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Style>-->
+    
+    <Window.Resources>
+        <!-- TODO WPF Move them into separate dictionary? -->
+        <!-- Converted SVG images using https://github.com/BerndK/SvgToXaml/releases/tag/Ver_1.3.0 -->
+        <DrawingImage x:Key="ic_fluent_arrow_sync_24_regularDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                    <GeometryDrawing Brush="#FF585858" Geometry="F1 M24,24z M0,0z M16.2506,5.18011C15.9994,5.50947 16.0627,5.9801 16.3921,6.23128 18.1804,7.59515 19.25,9.70821 19.25,12 19.25,15.736 16.4242,18.812 12.7933,19.2071L13.4697,18.5303C13.7626,18.2374 13.7626,17.7626 13.4697,17.4697 13.2034,17.2034 12.7867,17.1792 12.4931,17.3971L12.409,17.4697 10.409,19.4697C10.1427,19.7359,10.1185,20.1526,10.3364,20.4462L10.409,20.5303 12.409,22.5303C12.7019,22.8232 13.1768,22.8232 13.4697,22.5303 13.7359,22.2641 13.7601,21.8474 13.5423,21.5538L13.4697,21.4697 12.7194,20.7208C17.2154,20.355 20.75,16.5903 20.75,12 20.75,9.23526 19.4582,6.68321 17.3017,5.03856 16.9724,4.78738 16.5017,4.85075 16.2506,5.18011z M10.5303,1.46967C10.2374,1.76256,10.2374,2.23744,10.5303,2.53033L11.2796,3.27923C6.78409,3.6456 3.25,7.41008 3.25,12 3.25,14.6445 4.43126,17.0974 6.43081,18.7491 6.75016,19.0129 7.22289,18.9679 7.48669,18.6485 7.75048,18.3292 7.70545,17.8564 7.3861,17.5926 5.72793,16.2229 4.75,14.1922 4.75,12 4.75,8.26436 7.57532,5.18861 11.2057,4.79301L10.5303,5.46967C10.2374,5.76256 10.2374,6.23744 10.5303,6.53033 10.8232,6.82322 11.2981,6.82322 11.591,6.53033L13.591,4.53033C13.8839,4.23744,13.8839,3.76256,13.591,3.46967L11.591,1.46967C11.2981,1.17678,10.8232,1.17678,10.5303,1.46967z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="ic_fluent_folder_arrow_right_48_regularDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V48 H48 V0 H0 Z">
+                    <GeometryDrawing Brush="#FF585858" Geometry="F1 M48,48z M0,0z M17.0607,9C17.8933,9,18.7,9.27703,19.3552,9.78393L19.5301,9.92784 22.1162,12.1907C22.3061,12.3569,22.5409,12.4609,22.7891,12.4909L22.9393,12.5 40.25,12.5C42.2543,12.5,43.8913,14.0724,43.9948,16.0508L44,16.25 44.0009,24.0564C43.2472,23.3816,42.4076,22.8008,41.5007,22.3322L41.5,16.25C41.5,15.6028,41.0081,15.0705,40.3778,15.0065L40.25,15 22.8474,14.9989 20.7205,17.6147C20.0559,18.4327,19.0803,18.9305,18.035,18.9933L17.8101,19 6.5,18.999 6.5,35.25C6.5,35.8972,6.99187,36.4295,7.62219,36.4935L7.75,36.5 24.5186,36.5005C24.7868,37.3812,25.1535,38.219,25.606,39.0011L7.75,39C5.74574,39,4.10873,37.4276,4.0052,35.4492L4,35.25 4,12.75C4,10.7457,5.57236,9.10873,7.55084,9.0052L7.75,9 17.0607,9z M17.0607,11.5L7.75,11.5C7.10279,11.5,6.57047,11.9919,6.50645,12.6222L6.5,12.75 6.5,16.499 17.8101,16.5C18.1394,16.5,18.4534,16.3701,18.6858,16.142L18.7802,16.0382 20.415,14.025 17.8838,11.8093C17.6939,11.6431,17.4591,11.5391,17.2109,11.5091L17.0607,11.5z M36,23C41.5228,23 46,27.4772 46,33 46,38.5228 41.5228,43 36,43 30.4772,43 26,38.5228 26,33 26,27.4772 30.4772,23 36,23z M35.9991,27.6342L35.8871,27.7097 35.7929,27.7929 35.7097,27.8871C35.4301,28.2467,35.4301,28.7533,35.7097,29.1129L35.7929,29.2071 38.585,32 31,32 30.8834,32.0067C30.4243,32.0601,30.06,32.4243,30.0067,32.8834L30,33 30.0067,33.1166C30.06,33.5757,30.4243,33.9399,30.8834,33.9933L31,34 38.585,34 35.7929,36.7929 35.7097,36.8871C35.4047,37.2794 35.4324,37.8466 35.7929,38.2071 36.1534,38.5676 36.7206,38.5953 37.1129,38.2903L37.2071,38.2071 41.7071,33.7071 41.7578,33.6525 41.8296,33.5585 41.8751,33.4843 41.9063,33.4232 41.9503,33.3121 41.9726,33.2335 41.9932,33.1175 42,33 41.997,32.924 41.9798,32.7992 41.9505,32.6883 41.9288,32.6287 41.8753,32.5159 41.8296,32.4415 41.7872,32.3833 41.7485,32.3369 41.7071,32.2929 37.2071,27.7929 37.1129,27.7097C36.7893,27.4581,36.3465,27.4329,35.9991,27.6342z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="ic_fluent_pin_48_filledDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V48 H48 V0 H0 Z">
+                    <GeometryDrawing Brush="#FF585858" Geometry="F1 M48,48z M0,0z M31.8176,5.54984L42.4502,16.1824C44.7427,18.475,44.1155,22.3398,41.2157,23.7897L30.6711,29.062C30.3788,29.2082,30.1553,29.463,30.0486,29.7719L27.3645,37.5418C26.7012,39.4617,24.257,40.0247,22.8207,38.5884L17,32.7678 7.76777,42 6,42 6,40.2322 15.2323,31 9.41167,25.1794C7.97536,23.7431,8.53836,21.2988,10.4583,20.6356L18.2281,17.9515C18.537,17.8447,18.7919,17.6213,18.938,17.329L24.2103,6.78435C25.6602,3.88447,29.525,3.25729,31.8176,5.54984z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="ic_fluent_pin_48_regularDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V48 H48 V0 H0 Z">
+                    <GeometryDrawing Brush="#FF585858" Geometry="F1 M48,48z M0,0z M42.4502,16.1824L31.8176,5.54984C29.525,3.25729,25.6602,3.88447,24.2103,6.78435L18.938,17.329C18.7919,17.6213,18.537,17.8447,18.2281,17.9515L10.4583,20.6356C8.53836,21.2988,7.97536,23.7431,9.41167,25.1794L15.2323,31 6,40.2322 6,42 7.76777,42 17,32.7678 22.8207,38.5884C24.257,40.0247,26.7012,39.4617,27.3645,37.5418L30.0486,29.7719C30.1553,29.463,30.3788,29.2082,30.6711,29.062L41.2157,23.7897C44.1155,22.3398,44.7427,18.475,42.4502,16.1824z M30.0498,7.31761L40.6824,17.9502C41.7683,19.0361,41.4713,20.8668,40.0976,21.5536L29.553,26.826C28.6761,27.2644,28.0058,28.0289,27.6856,28.9556L25.0015,36.7255C24.9412,36.9,24.719,36.9512,24.5884,36.8206L11.1794,23.4116C11.0489,23.2811,11.1,23.0589,11.2746,22.9986L19.0444,20.3144C19.9711,19.9943,20.7356,19.324,21.1741,18.447L26.4464,7.90237C27.1332,6.52875,28.9639,6.23166,30.0498,7.31761z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="ic_fluent_search_48_regularDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V48 H48 V0 H0 Z">
+                    <GeometryDrawing Brush="#FF585858" Geometry="F1 M48,48z M0,0z M28,6C35.732,6 42,12.268 42,20 42,27.732 35.732,34 28,34 24.5841,34 21.4539,32.7766 19.0237,30.7441L8.1338,41.6339C7.6457,42.122 6.8542,42.122 6.3661,41.6339 5.8779,41.1457 5.8779,40.3543 6.3661,39.8661L17.2559,28.9763C15.2234,26.5461 14,23.4159 14,20 14,12.268 20.268,6 28,6z M39.5,20C39.5,13.6487 34.3513,8.5 28,8.5 21.6487,8.5 16.5,13.6487 16.5,20 16.5,26.3513 21.6487,31.5 28,31.5 34.3513,31.5 39.5,26.3513 39.5,20z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="ic_fluent_settings_28_regularDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V28 H28 V0 H0 Z">
+                    <GeometryDrawing Brush="#FF585858" Geometry="F1 M28,28z M0,0z M14,9.5C11.5147,9.5 9.5,11.5147 9.5,14 9.5,16.4853 11.5147,18.5 14,18.5 15.3488,18.5 16.559,17.9066 17.3838,16.9666 18.0787,16.1745 18.5,15.1365 18.5,14 18.5,13.5401 18.431,13.0962 18.3028,12.6783 17.7382,10.838 16.0253,9.5 14,9.5z M11,14C11,12.3431 12.3431,11 14,11 15.6569,11 17,12.3431 17,14 17,15.6569 15.6569,17 14,17 12.3431,17 11,15.6569 11,14z" />
+                    <GeometryDrawing Brush="#FF585858" Geometry="F1 M28,28z M0,0z M21.7093,22.3947L19.9818,21.6364C19.4876,21.4197 18.9071,21.4514 18.44,21.7219 17.9729,21.9923 17.675,22.4692 17.6157,23.0065L17.408,24.8855C17.3651,25.2729 17.084,25.5917 16.7055,25.6819 14.9263,26.106 13.0725,26.106 11.2933,25.6819 10.9148,25.5917 10.6336,25.2729 10.5908,24.8855L10.3834,23.0093C10.3225,22.473 10.0112,21.9976 9.54452,21.728 9.07783,21.4585 8.51117,21.4269 8.01859,21.6424L6.29071,22.4009C5.93281,22.558 5.51493,22.4718 5.24806,22.1858 4.00474,20.8536 3.07924,19.2561 2.54122,17.5136 2.42533,17.1383 2.55922,16.7307 2.8749,16.4976L4.40219,15.3703C4.83721,15.05 5.09414,14.5415 5.09414,14.0006 5.09414,13.4597 4.83721,12.9512 4.40162,12.6305L2.87529,11.5051C2.55914,11.272 2.42513,10.8638 2.54142,10.4881 3.08038,8.74728 4.00637,7.15157 5.24971,5.82108 5.51684,5.53522 5.93492,5.44935 6.29276,5.60685L8.01296,6.36398C8.50793,6.58162 9.07696,6.54875 9.54617,6.27409 10.0133,6.00258 10.3244,5.52521 10.3844,4.98787L10.5933,3.11011C10.637,2.71797 10.9245,2.39697 11.3089,2.31131 12.19,2.11498 13.0891,2.01065 14.0131,2 14.9147,2.01041 15.8128,2.11478 16.6928,2.31143 17.077,2.39728 17.3643,2.71817 17.4079,3.11011L17.617,4.98931C17.7116,5.85214 18.4387,6.50566 19.3055,6.50657 19.5385,6.50694 19.769,6.45832 19.9843,6.36288L21.7048,5.60562C22.0626,5.44812 22.4807,5.53399 22.7478,5.81984 23.9912,7.15034 24.9172,8.74605 25.4561,10.4869 25.5723,10.8623 25.4386,11.2702 25.1228,11.5034L23.5978,12.6297C23.1628,12.9499 22.9,13.4585 22.9,13.9994 22.9,14.5402 23.1628,15.0488 23.5988,15.3697L25.1251,16.4964C25.441,16.7296 25.5748,17.1376 25.4586,17.513 24.9198,19.2536 23.9944,20.8491 22.7517,22.1799 22.4849,22.4657 22.0671,22.5518 21.7093,22.3947z M16.263,22.1965C16.4982,21.4684 16.9889,20.8288 17.6884,20.4238 18.5702,19.9132 19.6536,19.8546 20.5841,20.2626L21.9281,20.8526C22.791,19.8537,23.4593,18.7013,23.8981,17.4551L22.7095,16.5777 22.7086,16.577C21.898,15.9799 21.4,15.0276 21.4,13.9994 21.4,12.9718 21.8974,12.0195 22.7073,11.4227L22.7085,11.4217 23.8957,10.545C23.4567,9.29874,22.7881,8.1463,21.9248,7.14764L20.5922,7.73419 20.5899,7.73521C20.1844,7.91457 19.7472,8.00716 19.3039,8.00657 17.6715,8.00447 16.3046,6.77425 16.1261,5.15459L16.1259,5.15285 15.9635,3.69298C15.3202,3.57322 14.6677,3.50866 14.013,3.50011 13.3389,3.50885 12.6821,3.57361 12.0377,3.69322L11.8751,5.15446C11.7625,6.16266 11.1793,7.05902 10.3019,7.5698 9.41937,8.08554 8.34453,8.14837 7.40869,7.73688L6.07273,7.14887C5.20949,8.14745,4.54092,9.29977,4.10196,10.5459L5.29181,11.4232C6.11115,12.0268 6.59414,12.9836 6.59414,14.0006 6.59414,15.0172 6.11142,15.9742 5.29237,16.5776L4.10161,17.4565C4.54002,18.7044,5.2085,19.8584,6.07205,20.8587L7.41742,20.2681C8.34745,19.8613 9.41573,19.9214 10.2947,20.4291 11.174,20.9369 11.7593,21.8319 11.8738,22.84L11.8744,22.8445 12.0362,24.3087C13.3326,24.5638,14.6662,24.5638,15.9626,24.3087L16.1247,22.8417C16.1491,22.6217,16.1955,22.4054,16.263,22.1965z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <sys:Double x:Key="RowHeight">20</sys:Double>
+        <sys:Double x:Key="ColumnIconWidth">20</sys:Double>
+        <sys:Double x:Key="ColumnTextWidth">60</sys:Double>
+    </Window.Resources>
+
+    <Border x:Name="windowFrame" BorderBrush="#FF000000" BorderThickness="1" CornerRadius="0" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <DockPanel x:Name="tableLayoutPanelMenu">
+            <Label x:Name="labelTitle" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Padding="1" Margin="6,0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="txtTitle" TextTrimming="CharacterEllipsis" Margin="14,0"><Run Text="title"/></TextBlock>
+            </Label>
+            <DockPanel x:Name="searchPanel" DockPanel.Dock="Top" Margin="6,0">
+                <Image x:Name="pictureBoxSearch" Width="16" Height="16" Margin="1" DockPanel.Dock="Left" Source="{StaticResource ic_fluent_search_48_regularDrawingImage}"/>
+                <TextBox x:Name="textBoxSearch" BorderBrush="{x:Null}" TextInput="textBoxSearch_TextInput" Background="{x:Null}" />
+            </DockPanel>
+            <Separator x:Name="panelLine" Height="1" Margin="6,1" DockPanel.Dock="Top"/>
+
+            <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,4">
+                <Label x:Name="labelItems" Content="0 items" Padding="0" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <Button x:Name="buttonRestart" Width="18" Height="18" Padding="0" DockPanel.Dock="Right" HorizontalAlignment="Right" BorderBrush="{x:Null}" Background="{x:Null}" Click="PictureBoxRestart_MouseClick" >
+                    <Image x:Name="pictureBoxRestart" Source="{StaticResource ic_fluent_arrow_sync_24_regularDrawingImage}"/>
+                </Button>
+                <Button x:Name="buttonSettings" Width="18" Height="18" Padding="0" DockPanel.Dock="Right" HorizontalAlignment="Right" BorderBrush="{x:Null}" Background="{x:Null}" Click="PictureBoxSettings_MouseClick" >
+                    <Image x:Name="pictureBoxSettings" Source="{StaticResource ic_fluent_settings_28_regularDrawingImage}"/>
+                </Button>
+                <Button x:Name="buttonMenuAlwaysOpen" Width="18" Height="18" Padding="0" DockPanel.Dock="Right" HorizontalAlignment="Right" BorderBrush="{x:Null}" Background="{x:Null}" Click="PictureBoxMenuAlwaysOpen_Click" >
+                    <Image x:Name="pictureBoxMenuAlwaysOpen" Source="{StaticResource ic_fluent_pin_48_regularDrawingImage}"/>
+                </Button>
+                <Button x:Name="buttonOpenFolder" Width="18" Height="18" Padding="0" DockPanel.Dock="Right" HorizontalAlignment="Right" BorderBrush="{x:Null}" Background="{x:Null}" Click="PictureBoxOpenFolder_Click" >
+                    <Image x:Name="pictureBoxOpenFolder" Source="{StaticResource ic_fluent_folder_arrow_right_48_regularDrawingImage}"/>
+                </Button>
+            </DockPanel>
+
+            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Background="{x:Null}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="{DynamicResource ColumnIconWidth}" Source="{Binding ColumnIcon, Converter={utils:IconToImageSourceConverter}}"/>
+                            <Label Width="{DynamicResource ColumnTextWidth}" Margin="6,0" Padding="0" VerticalContentAlignment="Center">
+                                <TextBlock TextTrimming="CharacterEllipsis" Text="{Binding ColumnText}"/>
+                            </Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <EventSetter Event="MouseEnter" Handler="ListViewItem_MouseEnter" />
+                        <EventSetter Event="MouseLeave" Handler="ListViewItem_MouseLeave" />
+                        <EventSetter Event="PreviewMouseDown" Handler="ListViewItem_MouseDown" />
+                        <EventSetter Event="MouseUp" Handler="ListViewItem_MouseUp" />
+                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewxItem_PreviewMouseLeftButtonDown" />
+                        <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+
+        </DockPanel>
+    </Border>
+</Window>

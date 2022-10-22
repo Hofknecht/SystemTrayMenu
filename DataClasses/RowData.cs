@@ -8,7 +8,9 @@ namespace SystemTrayMenu.DataClasses
     using System.Data;
     using System.Drawing;
     using System.IO;
-    using System.Windows.Forms;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Utilities.IconReader;
     using Menu = SystemTrayMenu.UserInterface.Menu;
@@ -16,7 +18,6 @@ namespace SystemTrayMenu.DataClasses
     internal class RowData
     {
         private static DateTime contextMenuClosed;
-        private Icon icon;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RowData"/> class.
@@ -98,6 +99,8 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
+        internal Icon Icon { get; private set; }
+
         internal FileInfo FileInfo { get; }
 
         internal string Path { get; }
@@ -144,6 +147,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool ProcessStarted { get; set; }
 
+#if TODO  // WPF REMOVE?
         internal void SetData(RowData data, DataTable dataTable)
         {
             DataRow row = dataTable.Rows.Add();
@@ -151,78 +155,77 @@ namespace SystemTrayMenu.DataClasses
 
             if (HiddenEntry)
             {
-                row[0] = AddIconOverlay(data.icon, Properties.Resources.White50Percentage);
+                row[0] = AddIconOverlay(data.Icon, Properties.Resources.White50Percentage);
             }
             else
             {
-                row[0] = data.icon;
+                row[0] = data.Icon;
             }
 
             row[1] = data.Text;
             row[2] = data;
         }
+#endif
 
         internal Icon ReadIcon(bool updateIconInBackground)
         {
             if (IsFolder || IsLinkToFolder)
             {
-                icon = GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, IsMainMenu, out bool loading);
+                Icon = GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, IsMainMenu, out bool loading);
                 IconLoading = loading;
             }
             else
             {
-                icon = GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, IsMainMenu, out bool loading);
+                Icon = GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, IsMainMenu, out bool loading);
                 IconLoading = loading;
             }
 
             if (!IconLoading)
             {
-                if (icon == null)
+                if (Icon == null)
                 {
-                    icon = Properties.Resources.NotFound;
+                    Icon = Properties.Resources.NotFound;
                 }
                 else if (HiddenEntry)
                 {
-                    icon = AddIconOverlay(icon, Properties.Resources.White50Percentage);
+                    Icon = AddIconOverlay(Icon, Properties.Resources.White50Percentage);
                 }
             }
 
-            return icon;
+            return Icon;
         }
 
-        internal void MouseDown(DataGridView dgv, MouseEventArgs e)
+        internal void MouseDown(ListView dgv, MouseButtonEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 IsClicking = true;
             }
 
             if (e != null &&
-                e.Button == MouseButtons.Right &&
+                e.RightButton == MouseButtonState.Pressed &&
                 FileInfo != null &&
                 dgv != null &&
-                dgv.Rows.Count > RowIndex &&
+                dgv.Items.Count > RowIndex &&
                 (DateTime.Now - contextMenuClosed).TotalMilliseconds > 200)
             {
                 IsContextMenuOpen = true;
-
                 ShellContextMenu ctxMnu = new();
-                Point location = dgv.FindForm().Location;
-                Point point = new(
-                    e.X + location.X + dgv.Location.X,
-                    e.Y + location.Y + dgv.Location.Y);
+                Window window = dgv.GetParentWindow();
+                var position = Mouse.GetPosition(window);
+                position.Offset(window.Left, window.Top);
                 if (ContainsMenu)
                 {
                     DirectoryInfo[] dir = new DirectoryInfo[1];
                     dir[0] = new DirectoryInfo(Path);
-                    ctxMnu.ShowContextMenu(dir, point);
+                    ctxMnu.ShowContextMenu(dir, position);
                     TriggerFileWatcherChangeWorkaround();
                 }
                 else
                 {
                     FileInfo[] arrFI = new FileInfo[1];
                     arrFI[0] = FileInfo;
-                    ctxMnu.ShowContextMenu(arrFI, point);
+                    ctxMnu.ShowContextMenu(arrFI, position);
                     TriggerFileWatcherChangeWorkaround();
                 }
 
@@ -254,7 +257,7 @@ namespace SystemTrayMenu.DataClasses
             }
 
             if (Properties.Settings.Default.OpenDirectoryWithOneClick &&
-                ContainsMenu && (e == null || e.Button == MouseButtons.Left))
+                ContainsMenu && (e == null || e.LeftButton == MouseButtonState.Pressed))
             {
                 Log.ProcessStart(Path);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
@@ -264,7 +267,7 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal void DoubleClick(MouseEventArgs e, out bool toCloseByDoubleClick)
+        internal void DoubleClick(MouseButtonEventArgs e, out bool toCloseByDoubleClick)
         {
             IsClicking = false;
             toCloseByDoubleClick = false;
@@ -274,7 +277,7 @@ namespace SystemTrayMenu.DataClasses
             }
 
             if (!Properties.Settings.Default.OpenDirectoryWithOneClick &&
-                ContainsMenu && (e == null || e.Button == MouseButtons.Left))
+                ContainsMenu && (e == null || e.LeftButton == MouseButtonState.Pressed))
             {
                 Log.ProcessStart(Path);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
@@ -287,7 +290,7 @@ namespace SystemTrayMenu.DataClasses
         private void OpenItem(MouseEventArgs e, ref bool toCloseByOpenItem)
         {
             if (!ContainsMenu &&
-                (e == null || e.Button == MouseButtons.Left))
+                (e == null || e.LeftButton == MouseButtonState.Pressed))
             {
                 ProcessStarted = true;
                 string workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);

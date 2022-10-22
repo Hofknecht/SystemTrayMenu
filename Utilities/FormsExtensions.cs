@@ -5,10 +5,43 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Windows.Forms;
+    using System.Runtime.InteropServices;
+    using System.Windows.Interop;
 
-    internal static class FormsExtensions
+    public static class FormsExtensions
     {
+        public enum DialogResult
+        {
+            OK,
+            Cancel,
+            Ignore,
+            Retry,
+        }
+
+        public class NativeWindow : HwndSource
+        {
+            private HwndSourceHook hook;
+
+            public NativeWindow()
+                : base(new())
+            {
+                hook = new HwndSourceHook(WndProc);
+                AddHook(hook);
+            }
+
+            ~NativeWindow()
+            {
+                RemoveHook(hook);
+            }
+
+            protected virtual IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+#if TODO
+
         public static void HandleInvoke(this Control instance, Action action)
         {
             if (instance.InvokeRequired)
@@ -20,5 +53,6 @@ namespace SystemTrayMenu.Utilities
                 action();
             }
         }
+#endif
     }
 }

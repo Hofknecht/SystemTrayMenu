@@ -5,19 +5,21 @@
 namespace SystemTrayMenu.UserInterface
 {
     using System;
-    using System.Windows.Forms;
+    using System.Windows;
+    using System.Windows.Input;
+    using Hardcodet.Wpf.TaskbarNotification;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
 
     internal class AppNotifyIcon : IDisposable
     {
-        private readonly NotifyIcon notifyIcon = new();
+        private readonly TaskbarIcon notifyIcon = new ();
 
         public AppNotifyIcon()
         {
-            notifyIcon.Text = "SystemTrayMenu";
+            notifyIcon.ToolTipText = "SystemTrayMenu";
             notifyIcon.Icon = Config.GetAppIcon();
-            notifyIcon.Visible = true;
+            notifyIcon.Visibility = Visibility.Visible;
 
             AppContextMenu contextMenus = new();
 
@@ -27,23 +29,14 @@ namespace SystemTrayMenu.UserInterface
                 OpenLog?.Invoke();
             }
 
-            notifyIcon.ContextMenuStrip = contextMenus.Create();
-            notifyIcon.MouseClick += NotifyIcon_MouseClick;
-            void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
-            {
-                VerifyClick(e);
-            }
-
-            notifyIcon.MouseDoubleClick += NotifyIcon_MouseDoubleClick;
-            void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
-            {
-                VerifyClick(e);
-            }
+            notifyIcon.ContextMenu = contextMenus.Create();
+            notifyIcon.LeftClickCommand = new ActionCommand((_) => Click?.Invoke());
+            notifyIcon.DoubleClickCommand = new ActionCommand((_) => Click?.Invoke());
         }
 
-        public event EventHandlerEmpty Click;
+        public event Action Click;
 
-        public event EventHandlerEmpty OpenLog;
+        public event Action OpenLog;
 
         public void Dispose()
         {
@@ -59,14 +52,6 @@ namespace SystemTrayMenu.UserInterface
         public void LoadingStop()
         {
             notifyIcon.Icon = Config.GetAppIcon();
-        }
-
-        private void VerifyClick(MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Click?.Invoke();
-            }
         }
     }
 }

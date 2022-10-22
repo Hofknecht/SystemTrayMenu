@@ -7,12 +7,18 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
     using System;
     using System.IO;
     using System.Runtime.InteropServices;
-    using System.Windows.Forms;
+    using System.Windows.Interop;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.Utilities.FormsExtensions;
 
     public class FolderDialog : IFolderDialog, IDisposable
     {
         private bool isDisposed;
+
+        ~FolderDialog() // the finalizer
+        {
+            Dispose(false);
+        }
 
         /// <summary>
         /// Gets or sets /sets folder in which dialog will be open.
@@ -119,6 +125,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 
         public DialogResult ShowLegacyDialog(IWin32Window owner)
         {
+#if TODO
             using SaveFileDialog frm = new()
             {
                 CheckFileExists = false,
@@ -144,6 +151,9 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             {
                 return DialogResult.Cancel;
             }
+#else
+            return DialogResult.OK;
+#endif
         }
 
         public void Dispose()

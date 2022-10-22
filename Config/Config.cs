@@ -8,17 +8,18 @@ namespace SystemTrayMenu
     using System.Drawing;
     using System.IO;
     using System.Text;
-    using System.Windows.Forms;
+    using System.Windows;
     using Microsoft.Win32;
     using Svg;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.Utilities.FormsExtensions;
     using static SystemTrayMenu.Utilities.IconReader;
 
     public static class Config
     {
-        private static readonly Icon SystemTrayMenu = new Icon(Properties.Resources.SystemTrayMenu, SystemInformation.SmallIconSize);
+        private static readonly Icon SystemTrayMenu = new Icon(Properties.Resources.SystemTrayMenu, (int)SystemParameters.SmallIconWidth, (int)SystemParameters.SmallIconHeight);
         private static readonly Icon IconRootFolder = GetIconSTA(Path, Path, false, IconSize.Small, true);
 
         private static bool readDarkModeDone;
@@ -105,7 +106,7 @@ namespace SystemTrayMenu
                 MessageBox.Show(
                     textFirstStart,
                     "SystemTrayMenu",
-                    MessageBoxButtons.OK);
+                    MessageBoxButton.OK);
                 ShowHelpFAQ();
                 SetFolderByUser();
             }

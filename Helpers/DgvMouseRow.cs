@@ -2,31 +2,34 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
+#nullable enable
+
 namespace SystemTrayMenu.Helper
 {
     using System;
-    using System.Windows.Forms;
+    using System.Windows.Threading;
 
-    public class DgvMouseRow : IDisposable
+    public class DgvMouseRow<T> : IDisposable
+        where T : notnull
     {
-        private readonly Timer timerRaiseRowMouseLeave = new();
-        private DataGridView dgv;
-        private DataGridViewCellEventArgs eventArgs;
+        private readonly DispatcherTimer timerRaiseRowMouseLeave = new DispatcherTimer(DispatcherPriority.Input, Dispatcher.CurrentDispatcher);
+        private T? senderObject;
+        private int? senderIndex;
 
         internal DgvMouseRow()
         {
-            timerRaiseRowMouseLeave.Interval = 200;
+            timerRaiseRowMouseLeave.Interval = TimeSpan.FromMilliseconds(200);
             timerRaiseRowMouseLeave.Tick += Elapsed;
-            void Elapsed(object sender, EventArgs e)
+            void Elapsed(object? sender, EventArgs e)
             {
                 timerRaiseRowMouseLeave.Stop();
                 TriggerRowMouseLeave();
             }
         }
 
-        internal event Action<object, DataGridViewCellEventArgs> RowMouseEnter;
+        internal event Action<T, int>? RowMouseEnter;
 
-        internal event Action<object, DataGridViewCellEventArgs> RowMouseLeave;
+        internal event Action<T, int>? RowMouseLeave;
 
         public void Dispose()
         {
@@ -34,37 +37,35 @@ namespace SystemTrayMenu.Helper
             GC.SuppressFinalize(this);
         }
 
-        internal void CellMouseEnter(object sender, DataGridViewCellEventArgs newEventArgs)
+        internal void CellMouseEnter(T sender, int index)
         {
-            DataGridView newDgv = (DataGridView)sender;
-
-            if (dgv != newDgv || newEventArgs.RowIndex != eventArgs.RowIndex)
+            if (!sender.Equals(senderObject) || index != senderIndex)
             {
-                if (timerRaiseRowMouseLeave.Enabled)
+                if (timerRaiseRowMouseLeave.IsEnabled)
                 {
                     timerRaiseRowMouseLeave.Stop();
                     TriggerRowMouseLeave();
                 }
 
-                TriggerRowMouseEnter(newDgv, newEventArgs);
+                TriggerRowMouseEnter(sender, index);
             }
             else
             {
                 timerRaiseRowMouseLeave.Stop();
             }
 
-            dgv = newDgv;
-            eventArgs = newEventArgs;
+            senderObject = sender;
+            senderIndex = index;
         }
 
-        internal void CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        internal void CellMouseLeave(T sender, int index)
         {
             timerRaiseRowMouseLeave.Start();
         }
 
         internal void MouseLeave(object sender, EventArgs e)
         {
-            if (timerRaiseRowMouseLeave.Enabled)
+            if (timerRaiseRowMouseLeave.IsEnabled)
             {
                 timerRaiseRowMouseLeave.Stop();
                 TriggerRowMouseLeave();
@@ -75,25 +76,27 @@ namespace SystemTrayMenu.Helper
         {
             if (disposing)
             {
-                timerRaiseRowMouseLeave.Dispose();
-                dgv?.Dispose();
+                timerRaiseRowMouseLeave.Stop();
+#if TODO
+                senderObject?.Dispose();
+#endif
             }
         }
 
         private void TriggerRowMouseLeave()
         {
-            if (dgv != null)
+            if (senderObject != null && senderIndex.HasValue)
             {
-                RowMouseLeave?.Invoke(dgv, eventArgs);
+                RowMouseLeave?.Invoke(senderObject, senderIndex.Value);
             }
 
-            dgv = null;
-            eventArgs = null;
+            senderObject = default(T);
+            senderIndex = null;
         }
 
-        private void TriggerRowMouseEnter(DataGridView dgv, DataGridViewCellEventArgs e)
+        private void TriggerRowMouseEnter(T sender, int rowIndex)
         {
-            RowMouseEnter?.Invoke(dgv, e);
+            RowMouseEnter?.Invoke(sender, rowIndex);
         }
     }
 }

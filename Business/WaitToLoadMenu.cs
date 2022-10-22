@@ -5,18 +5,22 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
-    using System.Windows.Forms;
+    using System.Data;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
-    using Timer = System.Windows.Forms.Timer;
+    using ListView = System.Windows.Controls.ListView;
+    using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class WaitToLoadMenu : IDisposable
     {
-        private readonly Timer timerStartLoad = new();
-        private DataGridView dgv;
+        private readonly DispatcherTimer timerStartLoad = new();
+        private ListView dgv;
         private int rowIndex;
-        private DataGridView dgvTmp;
+        private ListView dgvTmp;
         private int rowIndexTmp;
 
         private int mouseMoveEvents;
@@ -25,7 +29,7 @@ namespace SystemTrayMenu.Handler
 
         internal WaitToLoadMenu()
         {
-            timerStartLoad.Interval = Properties.Settings.Default.TimeUntilOpens;
+            timerStartLoad.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilOpens);
             timerStartLoad.Tick += WaitStartLoad_Tick;
         }
 
@@ -33,45 +37,46 @@ namespace SystemTrayMenu.Handler
 
         internal event Action<int> CloseMenu;
 
-        internal event EventHandlerEmpty StopLoadMenu;
+        internal event Action StopLoadMenu;
 
-        internal event Action<DataGridView, int> MouseEnterOk;
+        internal event Action<ListView, int> MouseEnterOk;
 
         internal bool MouseActive { get; set; }
 
         public void Dispose()
         {
             timerStartLoad.Stop();
-            timerStartLoad.Dispose();
+#if TODO
             dgv?.Dispose();
             dgvTmp?.Dispose();
+#endif
         }
 
-        internal void MouseEnter(object sender, DataGridViewCellEventArgs e)
+        internal void MouseEnter(object sender, int rowIndex)
         {
+            ListView dgv = (ListView)sender;
             if (MouseActive)
             {
-                DataGridView dgv = (DataGridView)sender;
-                if (dgv.Rows.Count > e.RowIndex)
+                if (dgv.Items.Count > rowIndex)
                 {
-                    MouseEnterOk(dgv, e.RowIndex);
+                    MouseEnterOk(dgv, rowIndex);
                     timerStartLoad.Stop();
                     StopLoadMenu?.Invoke();
                     checkForMouseActive = true;
-                    SetData(dgv, e.RowIndex);
+                    SetData(dgv, rowIndex);
                     timerStartLoad.Start();
                 }
             }
             else
             {
-                dgvTmp = (DataGridView)sender;
-                rowIndexTmp = e.RowIndex;
+                dgvTmp = dgv;
+                rowIndexTmp = rowIndex;
             }
         }
 
-        internal void RowSelected(DataGridView dgv, int rowIndex)
+        internal void RowSelected(ListView dgv, int rowIndex)
         {
-            if (dgv.Rows.Count > rowIndex)
+            if (dgv.Items.Count > rowIndex)
             {
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
@@ -82,17 +87,17 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void MouseLeave(object sender, DataGridViewCellEventArgs e)
+        internal void MouseLeave(object sender, int rowIndex)
         {
             if (MouseActive)
             {
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
-                ResetData((DataGridView)sender, e.RowIndex);
+                ResetData((ListView)sender, rowIndex);
             }
         }
 
-        internal void RowDeselected(int rowIndex, DataGridView dgv)
+        internal void RowDeselected(int rowIndex, ListView dgv)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
@@ -100,9 +105,9 @@ namespace SystemTrayMenu.Handler
             MouseActive = false;
         }
 
-        internal void ClickOpensInstantly(DataGridView dgv, int rowIndex)
+        internal void ClickOpensInstantly(ListView dgv, int rowIndex)
         {
-            if (dgv.Rows.Count > rowIndex)
+            if (dgv.Items.Count > rowIndex)
             {
                 timerStartLoad.Stop();
                 SetData(dgv, rowIndex);
@@ -112,9 +117,9 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void EnterOpensInstantly(DataGridView dgv, int rowIndex)
+        internal void EnterOpensInstantly(ListView dgv, int rowIndex)
         {
-            if (dgv.Rows.Count > rowIndex)
+            if (dgv.Items.Count > rowIndex)
             {
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
@@ -132,10 +137,13 @@ namespace SystemTrayMenu.Handler
                 if (mouseMoveEvents > 6)
                 {
                     MouseActive = true;
-                    if (dgvTmp != null && !dgvTmp.IsDisposed)
+                    if (dgvTmp != null
+#if TODO
+                        && !dgvTmp.IsDisposed
+#endif
+                        )
                     {
-                        MouseEnter(dgvTmp, new DataGridViewCellEventArgs(
-                            0, rowIndexTmp));
+                        MouseEnter(dgvTmp, rowIndexTmp);
                     }
 
                     mouseMoveEvents = 0;
@@ -164,10 +172,10 @@ namespace SystemTrayMenu.Handler
 
         private void CallOpenMenuNow()
         {
-            if (dgv.Rows.Count > rowIndex)
+            if (dgv.Items.Count > rowIndex)
             {
-                RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
-                Menu menu = (Menu)dgv.FindForm();
+                RowData rowData = ((Menu.ListViewItemData)dgv.Items[rowIndex]).data;
+                Menu menu = (Menu)dgv.GetParentWindow();
                 rowData.Level = menu.Level;
                 if (rowData.ContainsMenu)
                 {
@@ -185,34 +193,38 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        private void SetData(DataGridView dgv, int rowIndex)
+        private void SetData(ListView dgv, int rowIndex)
         {
             dgvTmp = null;
             this.dgv = dgv;
             this.rowIndex = rowIndex;
-            RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
+#if TODO
+            RowData rowData = (RowData)dgv.Items[rowIndex].Cells[2].Value;
             if (rowData != null)
             {
                 rowData.IsSelected = true;
             }
 
-            dgv.Rows[rowIndex].Selected = false;
-            dgv.Rows[rowIndex].Selected = true;
+            dgv.Items[rowIndex].Selected = false;
+            dgv.Items[rowIndex].Selected = true;
+#endif
         }
 
-        private void ResetData(DataGridView dgv, int rowIndex)
+        private void ResetData(ListView dgv, int rowIndex)
         {
-            if (dgv != null && dgv.Rows.Count > rowIndex)
+            if (dgv != null && dgv.Items.Count > rowIndex)
             {
-                RowData rowData = (RowData)dgv.Rows[rowIndex].Cells[2].Value;
+#if TODO
+                RowData rowData = (RowData)dgv.Items[rowIndex].Cells[2].Value;
                 if (rowData != null)
                 {
                     rowData.IsSelected = false;
                     rowData.IsClicking = false;
-                    dgv.Rows[rowIndex].Selected = false;
+                    dgv.Items[rowIndex].Selected = false;
                     this.dgv = null;
                     this.rowIndex = 0;
                 }
+#endif
             }
         }
     }

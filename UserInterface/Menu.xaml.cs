@@ -1,38 +1,75 @@
-﻿// <copyright file="Menu.cs" company="PlaceholderCompany">
+﻿// <copyright file="Menu.xaml.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
+
+#nullable enable
 
 namespace SystemTrayMenu.UserInterface
 {
     using System;
+    using System.Collections.Generic;
     using System.Data;
+    using System.Diagnostics;
     using System.Drawing;
     using System.Globalization;
+    using System.IO;
     using System.Reflection;
     using System.Threading;
-    using System.Windows.Forms;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Input;
+    using System.Windows.Interop;
+    using System.Windows.Markup;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
+    using Windows.UI.Composition;
+    using Color = System.Drawing.Color;
+    using Image = System.Windows.Controls.Image;
+    using Point = System.Drawing.Point;
 
-    internal partial class Menu : Form
+    /// <summary>
+    /// Logic of Menu window.
+    /// </summary>
+    public partial class Menu : Window
     {
+#if TODO
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
-        private const int CornerRadius = 20;
+#endif
+        private const int CornerRadius = 10;
+
         private readonly Fading fading = new();
         private bool isShowing;
         private bool directionToRight;
+#if TODO
         private int rotationAngle;
+#endif
         private bool mouseDown;
         private Point lastLocation;
+#if TODO
         private bool isSetSearchText;
         private bool dgvHeightSet;
+#endif
+        private bool isClosed = false; // TODO WPF Replace Forms wrapper
+        private DispatcherTimer timerUpdateIcons = new DispatcherTimer(DispatcherPriority.Render, Dispatcher.CurrentDispatcher);
 
         internal Menu()
         {
+            timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
+            Closed += (_, _) =>
+            {
+                timerUpdateIcons.Stop();
+                isClosed = true; // TODO WPF Replace Forms wrapper
+            };
+
+            Opacity = 0D;
             fading.ChangeOpacity += Fading_ChangeOpacity;
-            void Fading_ChangeOpacity(object sender, double newOpacity)
+            void Fading_ChangeOpacity(object? sender, double newOpacity)
             {
                 if (newOpacity != Opacity && !IsDisposed && !Disposing)
                 {
@@ -46,29 +83,29 @@ namespace SystemTrayMenu.UserInterface
                 try
                 {
                     isShowing = true;
-                    Visible = true;
+                    Visibility = Visibility.Visible;
                     isShowing = false;
                     timerUpdateIcons.Start();
                 }
                 catch (ObjectDisposedException)
                 {
-                    Visible = false;
+                    Visibility = Visibility.Hidden;
                     isShowing = false;
                     Log.Info($"Could not open menu, old menu was disposing," +
                         $" IsDisposed={IsDisposed}");
                 }
 
-                if (Visible)
+                if (Visibility == Visibility.Visible)
                 {
                     if (Level == 0)
                     {
                         Activate();
-                        NativeMethods.User32ShowInactiveTopmost(this);
-                        NativeMethods.ForceForegroundWindow(Handle);
+                        Show();
                     }
                     else
                     {
-                        NativeMethods.User32ShowInactiveTopmost(this);
+                        ShowActivated = false;
+                        Show();
                     }
                 }
             }
@@ -77,49 +114,108 @@ namespace SystemTrayMenu.UserInterface
 
             InitializeComponent();
 
-            SetDoubleBuffer(dgv, true);
+            Assembly myassembly = Assembly.GetExecutingAssembly();
+            string myname = myassembly.GetName().Name ?? string.Empty;
 
-            Color foreColor = Color.Black;
-            Color backColor = AppColors.Background;
-            Color backColorSearch = AppColors.SearchField;
-            Color backgroundBorder = AppColors.BackgroundBorder;
+            txtTitle.Text = myname;
+
+#if TODO
+            foreach (KeyValuePair<Image, string> pair in
+                new List<KeyValuePair<Image, string>>()
+                {
+                    new KeyValuePair<Image, string>(pictureBoxSearch, myname + ".Resources.SystemTrayMenu.png"),
+                    new KeyValuePair<Image, string>(pictureBoxOpenFolder, myname + ".Resources.SystemTrayMenu.png"),
+                    new KeyValuePair<Image, string>(pictureBoxMenuAlwaysOpen, myname + ".Resources.SystemTrayMenu.png"),
+                    new KeyValuePair<Image, string>(pictureBoxSettings, myname + ".Resources.SystemTrayMenu.png"),
+                    new KeyValuePair<Image, string>(pictureBoxRestart, myname + ".Resources.SystemTrayMenu.png"),
+                })
+            {
+                Image control = pair.Key;
+                using (Stream? imgstream = myassembly.GetManifestResourceStream(pair.Value))
+                {
+                    if (imgstream != null)
+                    {
+                        BitmapImage imageSource = new BitmapImage();
+                        imageSource.BeginInit();
+                        imageSource.StreamSource = imgstream;
+                        imageSource.EndInit();
+
+                        control.Source = imageSource;
+                    }
+                }
+
+                control.Width = Scaling.Scale(control.Width);
+                control.Height = Scaling.Scale(control.Height);
+            }
+#else
+            foreach (FrameworkElement control in
+                new List<FrameworkElement>()
+                {
+                    buttonMenuAlwaysOpen,
+                    buttonOpenFolder,
+                    buttonSettings,
+                    buttonRestart,
+                    pictureBoxSearch,
+                    pictureBoxMenuAlwaysOpen,
+                    pictureBoxOpenFolder,
+                    pictureBoxSettings,
+                    pictureBoxRestart,
+                })
+            {
+                control.Width = Scaling.Scale(control.Width);
+                control.Height = Scaling.Scale(control.Height);
+            }
+#endif
+
+            labelTitle.FontSize = Scaling.ScaleFontByPoints(8.25F);
+            textBoxSearch.FontSize = Scaling.ScaleFontByPoints(8.25F);
+            labelItems.FontSize = Scaling.ScaleFontByPoints(7F);
+            dgv.FontSize = Scaling.ScaleFontByPoints(9F);
+
+#if TODO
+            customScrollbar = new CustomScrollbar();
+
+            tableLayoutPanelDgvAndScrollbar.Controls.Add(customScrollbar, 1, 0);
+#endif
+            MouseDown += Menu_MouseDown;
+            MouseUp += Menu_MouseUp;
+            MouseMove += Menu_MouseMove;
+            textBoxSearch.TextChanged += TextBoxSearch_TextChanged;
+#if TODO
+            labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);
+
+            textBoxSearch.ContextMenu = new ContextMenu();
+
+            // customScrollbar
+            customScrollbar.Location = new Point(0, 0);
+            customScrollbar.Name = "customScrollbar";
+            customScrollbar.Size = new Size(Scaling.Scale(15), 40);
+#endif
+            SolidColorBrush foreColor = Color.Black.ToSolidColorBrush();
+            SolidColorBrush backColor = AppColors.Background.ToSolidColorBrush();
+            SolidColorBrush backColorSearch = AppColors.SearchField.ToSolidColorBrush();
+            SolidColorBrush backgroundBorder = AppColors.BackgroundBorder.ToSolidColorBrush();
 
             if (Config.IsDarkMode())
             {
-                foreColor = Color.White;
-                labelTitle.ForeColor = foreColor;
-                textBoxSearch.ForeColor = foreColor;
-                backColor = AppColors.DarkModeBackground;
-                backColorSearch = AppColors.DarkModeSearchField;
-                backgroundBorder = AppColors.DarkModeBackgroundBorder;
+                foreColor = Color.White.ToSolidColorBrush();
+                backColor = AppColors.DarkModeBackground.ToSolidColorBrush();
+                backColorSearch = AppColors.DarkModeSearchField.ToSolidColorBrush();
+                backgroundBorder = AppColors.DarkModeBackgroundBorder.ToSolidColorBrush();
             }
 
-            ColorConverter colorConverter = new();
-            labelItems.ForeColor = MenuDefines.ColorIcons;
+            labelTitle.Foreground = foreColor;
+            textBoxSearch.Foreground = foreColor;
+            dgv.Foreground = foreColor;
+            labelItems.Foreground = MenuDefines.ColorIcons.ToSolidColorBrush();
 
-            if (backColor.R == 0)
-            {
-                backColor = Color.White;
-            }
+            windowFrame.BorderBrush = backgroundBorder;
+            windowFrame.Background = backColor;
+            searchPanel.Background = backColorSearch;
+            panelLine.Background = AppColors.Icons.ToSolidColorBrush();
 
-            BackColor = backgroundBorder;
-            labelTitle.BackColor = backColor;
-            tableLayoutPanelDgvAndScrollbar.BackColor = backColor;
-            tableLayoutPanelBottom.BackColor = backColor;
-            tableLayoutPanelMenu.BackColor = backColor;
-            dgv.BackgroundColor = backColor;
-            textBoxSearch.BackColor = backColorSearch;
-            panelLine.BackColor = AppColors.Icons;
-            pictureBoxSearch.BackColor = backColorSearch;
-            tableLayoutPanelSearch.BackColor = backColorSearch;
-            dgv.DefaultCellStyle = new DataGridViewCellStyle
-            {
-                SelectionForeColor = foreColor,
-                ForeColor = foreColor,
-                BackColor = backColor,
-            };
-
-            dgv.GotFocus += (sender, e) => FocusTextBox();
+            dgv.GotFocus += (_, _) => FocusTextBox();
+#if TODO
             customScrollbar.GotFocus += (sender, e) => FocusTextBox();
 
             customScrollbar.Margin = new Padding(0);
@@ -178,25 +274,53 @@ namespace SystemTrayMenu.UserInterface
                 DragEnter += DragDropHelper.DragEnter;
                 DragDrop += DragDropHelper.DragDrop;
             }
+#endif
+
+            Loaded += (sender, e) =>
+                {
+                    NativeMethods.HideFromAltTab(this);
+
+                    // TODO WPF Replace Forms wrapper
+                    IsHandleCreated = true;
+                    HandleCreated?.Invoke(sender, e);
+                };
         }
 
-        internal new event EventHandlerEmpty MouseWheel;
+#if TODO
+        internal new event Action MouseWheel;
 
-        internal new event EventHandlerEmpty MouseEnter;
+        internal new event Action MouseEnter;
 
-        internal new event EventHandlerEmpty MouseLeave;
+        internal new event Action MouseLeave;
+#endif
 
-        internal event EventHandlerEmpty UserClickedOpenFolder;
+        internal event Action? UserClickedOpenFolder;
+#if TODO
 
-        internal event EventHandler<Keys> CmdKeyProcessed;
+        internal event EventHandler<Key> CmdKeyProcessed;
 
         internal event EventHandler<KeyPressEventArgs> KeyPressCheck;
 
-        internal event EventHandlerEmpty SearchTextChanging;
+        internal event Action SearchTextChanging;
 
         internal event EventHandler<bool> SearchTextChanged;
+#endif
 
-        internal event EventHandlerEmpty UserDragsMenu;
+        internal event Action? UserDragsMenu;
+
+        internal event RoutedEventHandler? HandleCreated; // TODO WPF Replace Forms wrapper
+
+        internal event Action<ListView, int>? CellMouseEnter;
+
+        internal event Action<ListView, int>? CellMouseLeave;
+
+        internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseDown;
+
+        internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseUp;
+
+        internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseClick;
+
+        internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseDoubleClick;
 
         internal enum MenuType
         {
@@ -216,26 +340,28 @@ namespace SystemTrayMenu.UserInterface
             TopRight,
         }
 
+        public bool IsHandleCreated { get; internal set; } // TODO State out of window
+
+        public bool IsLoadingMenu { get; internal set; } // TODO State out of window
+
+        public bool IsDisposed => isClosed; // TODO WPF Replace Forms wrapper
+
+        public bool Disposing => isClosed; // TODO WPF Replace Forms wrapper
+
+        public System.Drawing.Point Location => new System.Drawing.Point((int)Left, (int)Top); // TODO WPF Replace Forms wrapper)
+
         internal int Level { get; set; }
 
-        internal bool IsUsable => Visible && !fading.IsHiding && !IsDisposed && !Disposing;
+        internal bool IsUsable => Visibility == Visibility.Visible && !fading.IsHiding && !IsDisposed && !Disposing;
 
+#if TODO
         internal bool ScrollbarVisible { get; private set; }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams createparams = base.CreateParams;
-                createparams.ExStyle |= 0x80; // do not show when user presses alt + tab
-                createparams.ClassStyle |= 0x00020000; // CS_DROPSHADOW
-
-                return createparams;
-            }
-        }
+#endif
+        private ListView tableLayoutPanelDgvAndScrollbar => dgv; // TODO WPF Remove and replace with dgv
 
         internal void ResetSearchText()
         {
+#if TODO
             textBoxSearch.Text = string.Empty;
             if (dgv.Rows.Count > 0)
             {
@@ -243,10 +369,12 @@ namespace SystemTrayMenu.UserInterface
             }
 
             AdjustScrollbar();
+#endif
         }
 
         internal void RefreshSearchText()
         {
+#if TODO
             TextBoxSearch_TextChanged(textBoxSearch, null);
             if (dgv.Rows.Count > 0)
             {
@@ -254,10 +382,12 @@ namespace SystemTrayMenu.UserInterface
             }
 
             AdjustScrollbar();
+#endif
         }
 
         internal void FocusTextBox()
         {
+#if TODO
             if (isSetSearchText)
             {
                 isSetSearchText = false;
@@ -271,6 +401,7 @@ namespace SystemTrayMenu.UserInterface
                 textBoxSearch.SelectAll();
                 textBoxSearch.Focus();
             }
+#endif
         }
 
         internal void SetTypeSub()
@@ -297,8 +428,8 @@ namespace SystemTrayMenu.UserInterface
         {
             if (type != MenuType.Main)
             {
-                pictureBoxSettings.Visible = false;
-                pictureBoxRestart.Visible = false;
+                buttonSettings.Visibility = Visibility.Collapsed;
+                buttonRestart.Visibility = Visibility.Collapsed;
             }
 
             switch (type)
@@ -306,26 +437,28 @@ namespace SystemTrayMenu.UserInterface
                 case MenuType.Main:
                     break;
                 case MenuType.Sub:
-                    pictureBoxMenuAlwaysOpen.Visible = false;
+                    buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
                 case MenuType.Empty:
-                    labelItems.Text = Translator.GetText("Directory empty");
-                    pictureBoxMenuAlwaysOpen.Visible = false;
+                    labelItems.Content = Translator.GetText("Directory empty");
+                    buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
                 case MenuType.NoAccess:
-                    labelItems.Text = Translator.GetText("Directory inaccessible");
-                    pictureBoxMenuAlwaysOpen.Visible = false;
+                    labelItems.Content = Translator.GetText("Directory inaccessible");
+                    buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
                 case MenuType.Loading:
-                    labelItems.Text = Translator.GetText("loading");
-                    pictureBoxMenuAlwaysOpen.Visible = true;
+                    labelItems.Content = Translator.GetText("loading");
+                    buttonMenuAlwaysOpen.Visibility = Visibility.Visible;
+                    buttonOpenFolder.Visibility = Visibility.Collapsed;
                     textBoxSearch.TextChanged -= TextBoxSearch_TextChanged;
-                    pictureBoxOpenFolder.Visible = false;
+#if TODO
                     pictureBoxMenuAlwaysOpen.Paint -= PictureBoxMenuAlwaysOpen_Paint;
                     pictureBoxMenuAlwaysOpen.Paint += LoadingMenu_Paint;
                     timerUpdateIcons.Tick -= TimerUpdateIcons_Tick;
                     timerUpdateIcons.Tick += (sender, e) => pictureBoxMenuAlwaysOpen.Invalidate();
                     timerUpdateIcons.Interval = 15;
+#endif
                     break;
                 default:
                     break;
@@ -342,18 +475,22 @@ namespace SystemTrayMenu.UserInterface
             if (!string.IsNullOrEmpty(userSearchText))
             {
                 textBoxSearch.Text = userSearchText + "*";
+#if TODO
                 isSetSearchText = true;
+#endif
             }
         }
 
-        internal bool IsMouseOn(Point mousePosition)
+        internal bool IsMouseOn()
         {
-            bool isMouseOn = Visible && ClientRectangle.Contains(
-                  PointToClient(mousePosition));
+            Point mousePos = NativeMethods.Screen.CursorPosition;
+            bool isMouseOn = Visibility == Visibility.Visible &&
+                mousePos.X >= 0 && mousePos.X < Width &&
+                mousePos.Y >= 0 && mousePos.Y < Height;
             return isMouseOn;
         }
 
-        internal DataGridView GetDataGridView()
+        internal ListView? GetDataGridView() // TODO WPF Replace Forms wrapper
         {
             return dgv;
         }
@@ -367,47 +504,43 @@ namespace SystemTrayMenu.UserInterface
                     title = $"{title[..MenuDefines.LengthMax]}...";
                 }
 
-                labelTitle.Text = title;
+                txtTitle.Text = title;
             }
             else
             {
-                labelTitle.Text = string.Empty;
-                labelTitle.MaximumSize = new Size(0, 12);
+                txtTitle.Text = string.Empty;
             }
 
             if (!Config.ShowSearchBar)
             {
-                textBoxSearch.AutoSize = false;
-                textBoxSearch.Size = new Size(0, 0);
-                textBoxSearch.Margin = new Padding(0);
-                pictureBoxSearch.Visible = false;
-                panelLine.Visible = false;
+                searchPanel.Visibility = Visibility.Collapsed;
+                panelLine.Visibility = Visibility.Collapsed;
             }
 
             if (!Config.ShowCountOfElementsBelow &&
                 menuDataValidity == MenuDataValidity.Valid)
             {
-                labelItems.Visible = false;
+                labelItems.Visibility = Visibility.Collapsed;
             }
 
             if (!Config.ShowFunctionKeyOpenFolder)
             {
-                pictureBoxOpenFolder.Visible = false;
+                buttonOpenFolder.Visibility = Visibility.Collapsed;
             }
 
             if (!Config.ShowFunctionKeyPinMenu)
             {
-                pictureBoxMenuAlwaysOpen.Visible = false;
+                buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
             }
 
             if (!Config.ShowFunctionKeySettings)
             {
-                pictureBoxSettings.Visible = false;
+                buttonSettings.Visibility = Visibility.Collapsed;
             }
 
             if (!Config.ShowFunctionKeyRestart)
             {
-                pictureBoxRestart.Visible = false;
+                buttonRestart.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -446,6 +579,10 @@ namespace SystemTrayMenu.UserInterface
             timerUpdateIcons.Start();
         }
 
+#if TODO // Hack for a pseudo Refresh
+        private delegate void NoArgDelegate();
+#endif
+
         /// <summary>
         /// Update the position and size of the menu.
         /// </summary>
@@ -462,7 +599,11 @@ namespace SystemTrayMenu.UserInterface
             // Update the height and width
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
             AdjustDataGridViewWidth();
+#if TODO // Hack for a pseudo Refresh
+            this.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.ApplicationIdle,
+                (NoArgDelegate)delegate { });
 
+#endif
             bool useCustomLocation = Properties.Settings.Default.UseCustomLocation || lastLocation.X > 0;
             bool changeDirectionWhenOutOfBounds = true;
 
@@ -482,9 +623,8 @@ namespace SystemTrayMenu.UserInterface
                 // Use this menu as predecessor and overwrite location with CustomLocation
                 menuPredecessor = this;
                 Tag = new RowData();
-                Location = new Point(
-                    Properties.Settings.Default.CustomLocationX,
-                    Properties.Settings.Default.CustomLocationY);
+                Left = Properties.Settings.Default.CustomLocationX;
+                Top = Properties.Settings.Default.CustomLocationY;
                 directionToRight = true;
                 startLocation = StartLocation.Predecessor;
                 changeDirectionWhenOutOfBounds = false;
@@ -500,166 +640,164 @@ namespace SystemTrayMenu.UserInterface
                 // Use this menu as predecessor and overwrite location with Cursor.Postion
                 menuPredecessor = this;
                 Tag = new RowData();
-                Location = new Point(Cursor.Position.X, Cursor.Position.Y - labelTitle.Height);
+                var position = Mouse.GetPosition(this);
+                Left = position.X;
+                Top = position.Y - labelTitle.Height;
                 directionToRight = true;
                 startLocation = StartLocation.Predecessor;
                 changeDirectionWhenOutOfBounds = false;
             }
 
-            // Calculate X position
-            int x;
-            switch (startLocation)
+            Loaded += (_, _) =>
             {
-                case StartLocation.Predecessor:
-                    int scaling = (int)Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
-                    directionToRight = menuPredecessor.directionToRight; // try keeping same direction
-                    if (directionToRight)
-                    {
-                        x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
-
-                        if (changeDirectionWhenOutOfBounds &&
-                            bounds.X + bounds.Width <= x + Width - scaling)
-                        {
-                            x = menuPredecessor.Location.X - Width + scaling;
-                            if (x < bounds.X &&
-                                menuPredecessor.Location.X + menuPredecessor.Width < bounds.X + bounds.Width &&
-                                bounds.X + (bounds.Width / 2) > menuPredecessor.Location.X + (Width / 2))
-                            {
-                                x = bounds.X + bounds.Width - Width + scaling;
-                            }
-                            else
-                            {
-                                if (x < bounds.X)
-                                {
-                                    x = bounds.X;
-                                }
-
-                                directionToRight = !directionToRight;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        x = menuPredecessor.Location.X - Width + scaling;
-
-                        if (changeDirectionWhenOutOfBounds &&
-                            x < bounds.X)
+                // Calculate X position
+                double x;
+                switch (startLocation)
+                {
+                    case StartLocation.Predecessor:
+                        double scaling = Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
+                        directionToRight = menuPredecessor!.directionToRight; // try keeping same direction
+                        if (directionToRight)
                         {
                             x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
-                            if (x + Width > bounds.X + bounds.Width &&
-                                menuPredecessor.Location.X > bounds.X &&
-                                bounds.X + (bounds.Width / 2) < menuPredecessor.Location.X + (Width / 2))
+
+                            if (changeDirectionWhenOutOfBounds &&
+                                bounds.X + bounds.Width <= x + Width - scaling)
                             {
-                                x = bounds.X;
-                            }
-                            else
-                            {
-                                if (x + Width > bounds.X + bounds.Width)
+                                x = menuPredecessor.Location.X - Width + scaling;
+                                if (x < bounds.X &&
+                                    menuPredecessor.Location.X + menuPredecessor.Width < bounds.X + bounds.Width &&
+                                    bounds.X + (bounds.Width / 2) > menuPredecessor.Location.X + (Width / 2))
                                 {
                                     x = bounds.X + bounds.Width - Width + scaling;
                                 }
+                                else
+                                {
+                                    if (x < bounds.X)
+                                    {
+                                        x = bounds.X;
+                                    }
 
-                                directionToRight = !directionToRight;
+                                    directionToRight = !directionToRight;
+                                }
                             }
                         }
-                    }
+                        else
+                        {
+                            x = menuPredecessor.Location.X - Width + scaling;
 
-                    break;
-                case StartLocation.BottomLeft:
-                    x = bounds.X;
-                    directionToRight = true;
-                    break;
-                case StartLocation.TopRight:
-                case StartLocation.BottomRight:
-                default:
-                    x = bounds.Width - Width;
-                    directionToRight = false;
-                    break;
-            }
+                            if (changeDirectionWhenOutOfBounds &&
+                                x < bounds.X)
+                            {
+                                x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
+                                if (x + Width > bounds.X + bounds.Width &&
+                                    menuPredecessor.Location.X > bounds.X &&
+                                    bounds.X + (bounds.Width / 2) < menuPredecessor.Location.X + (Width / 2))
+                                {
+                                    x = bounds.X;
+                                }
+                                else
+                                {
+                                    if (x + Width > bounds.X + bounds.Width)
+                                    {
+                                        x = bounds.X + bounds.Width - Width + scaling;
+                                    }
 
-            // X position for click, remove width of this menu as it is used as predecessor
-            if (menuPredecessor == this && directionToRight)
-            {
-                x -= Width;
-            }
+                                    directionToRight = !directionToRight;
+                                }
+                            }
+                        }
 
-            if (Level != 0 &&
-                !Properties.Settings.Default.AppearNextToPreviousMenu &&
-                menuPredecessor.Width > Properties.Settings.Default.OverlappingOffsetPixels)
-            {
-                if (directionToRight)
-                {
-                    x = x - menuPredecessor.Width + Properties.Settings.Default.OverlappingOffsetPixels;
+                        break;
+                    case StartLocation.BottomLeft:
+                        x = bounds.X;
+                        directionToRight = true;
+                        break;
+                    case StartLocation.TopRight:
+                    case StartLocation.BottomRight:
+                    default:
+                        x = bounds.Width - Width;
+                        directionToRight = false;
+                        break;
                 }
-                else
+
+                // X position for click, remove width of this menu as it is used as predecessor
+                if (menuPredecessor == this && directionToRight)
                 {
-                    x = x + menuPredecessor.Width - Properties.Settings.Default.OverlappingOffsetPixels;
+                    x -= Width;
                 }
-            }
 
-            // Calculate Y position
-            int y;
-            switch (startLocation)
-            {
-                case StartLocation.Predecessor:
-                    RowData trigger = (RowData)Tag;
-                    DataGridView dgv = menuPredecessor.GetDataGridView();
-                    int distanceFromItemToDgvTop = 0;
-
-                    // Get offset of selected row from predecessor
-                    if (dgv.Rows.Count > trigger.RowIndex)
+                if (Level != 0 &&
+                    !Properties.Settings.Default.AppearNextToPreviousMenu &&
+                    menuPredecessor != null && menuPredecessor.Width > Properties.Settings.Default.OverlappingOffsetPixels)
+                {
+                    if (directionToRight)
                     {
-                        Rectangle cellRectangle = dgv.GetCellDisplayRectangle(0, trigger.RowIndex, false);
-                        distanceFromItemToDgvTop = cellRectangle.Top;
+                        x = x - menuPredecessor.Width + Properties.Settings.Default.OverlappingOffsetPixels;
                     }
-
-                    // Set position on same height as the selected row from predecessor
-                    y = menuPredecessor.Location.Y + menuPredecessor.dgv.Location.Y + distanceFromItemToDgvTop;
-
-                    // when warning the title should appear in same height as selected row
-                    if (!tableLayoutPanelSearch.Visible)
+                    else
                     {
-                        TableLayoutPanelCellPosition pos = tableLayoutPanelMenu.GetCellPosition(labelTitle);
-                        int height = tableLayoutPanelMenu.GetRowHeights()[pos.Row];
-                        y += height;
+                        x = x + menuPredecessor.Width - Properties.Settings.Default.OverlappingOffsetPixels;
                     }
-
-                    // Move vertically when out of bounds
-                    if (bounds.Y + bounds.Height < y + Height)
-                    {
-                        y = bounds.Y + bounds.Height - Height;
-                    }
-
-                    break;
-                case StartLocation.TopRight:
-                    y = bounds.Y;
-                    break;
-                case StartLocation.BottomLeft:
-                case StartLocation.BottomRight:
-                default:
-                    y = bounds.Height - Height;
-                    break;
-            }
-
-            // Update position
-            Location = new Point(x, y);
-
-            if (Properties.Settings.Default.RoundCorners)
-            {
-                if (NativeMethods.GetRegionRoundCorners(Width + 1, Height + 1, CornerRadius, CornerRadius, out Region regionOutline))
-                {
-                    Region = regionOutline;
                 }
 
-                if (NativeMethods.GetRegionRoundCorners(Width - 1, Height - 1, CornerRadius, CornerRadius, out Region region))
+                // Calculate Y position
+                double y;
+                switch (startLocation)
                 {
-                    tableLayoutPanelMenu.Region = region;
+                    case StartLocation.Predecessor:
+
+                        RowData trigger = (RowData)Tag;
+                        ListView dgv = menuPredecessor!.GetDataGridView()!;
+
+                        // Set position on same height as the selected row from predecessor
+                        y = menuPredecessor.Location.Y;
+                        if (dgv.Items.Count > trigger.RowIndex)
+                        {
+                            ListViewItem? lvi = dgv.FindVisualChildOfType<ListViewItem>(trigger.RowIndex);
+                            if (lvi != null)
+                            {
+                                y += menuPredecessor.GetRelativeChildPositionTo(lvi).Y;
+                            }
+                        }
+
+                        // when warning is shown, the title should appear at same height as selected row
+                        if (searchPanel.Visibility != Visibility.Visible)
+                        {
+                            y += labelTitle.ActualHeight;
+                        }
+
+                        // Move vertically when out of bounds
+                        if (bounds.Y + bounds.Height < y + Height)
+                        {
+                            y = bounds.Y + bounds.Height - Height;
+                        }
+
+                        break;
+                    case StartLocation.TopRight:
+                        y = bounds.Y;
+                        break;
+                    case StartLocation.BottomLeft:
+                    case StartLocation.BottomRight:
+                    default:
+                        y = bounds.Height - Height;
+                        break;
                 }
-            }
+
+                // Update position
+                Left = x;
+                Top = y;
+
+                if (Properties.Settings.Default.RoundCorners)
+                {
+                    windowFrame.CornerRadius = new CornerRadius(CornerRadius);
+                }
+            };
         }
 
         internal void AdjustScrollbar()
         {
+#if TODO
             if (dgv.Rows.Count > 0)
             {
                 customScrollbar.Value = (int)Math.Round(
@@ -667,37 +805,41 @@ namespace SystemTrayMenu.UserInterface
                     0,
                     MidpointRounding.AwayFromZero);
             }
+#endif
         }
 
         internal void ResetHeight()
         {
+#if TODO
             dgvHeightSet = false;
+#endif
         }
 
         internal void SetCounts(int foldersCount, int filesCount)
         {
             int filesAndFoldersCount = foldersCount + filesCount;
             string elements = filesAndFoldersCount == 1 ? "element" : "elements";
-            labelItems.Text = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
+            labelItems.Content = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keys)
+#if TODO
+        protected override bool ProcessCmdKey(ref Message msg, Key keys)
         {
             switch (keys)
             {
-                case Keys.Enter:
-                case Keys.Home:
-                case Keys.End:
-                case Keys.Up:
-                case Keys.Down:
-                case Keys.Left:
-                case Keys.Right:
-                case Keys.Escape:
-                case Keys.Alt | Keys.F4:
-                case Keys.Control | Keys.F:
-                case Keys.Tab:
-                case Keys.Tab | Keys.Shift:
-                case Keys.Apps:
+                case Key.Enter:
+                case Key.Home:
+                case Key.End:
+                case Key.Up:
+                case Key.Down:
+                case Key.Left:
+                case Key.Right:
+                case Key.Escape:
+                case Key.Alt | Key.F4:
+                case Key.Control | Key.F:
+                case Key.Tab:
+                case Key.Tab | Key.Shift:
+                case Key.Apps:
                     CmdKeyProcessed.Invoke(this, keys);
                     return true;
                 default:
@@ -706,19 +848,8 @@ namespace SystemTrayMenu.UserInterface
 
             return base.ProcessCmdKey(ref msg, keys);
         }
-
-        private static void SetDoubleBuffer(Control ctl, bool doubleBuffered)
-        {
-            typeof(Control).InvokeMember(
-                "DoubleBuffered",
-                BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
-                null,
-                ctl,
-                new object[] { doubleBuffered },
-                CultureInfo.InvariantCulture);
-        }
-
-        private void AdjustDataGridViewHeight(Menu menuPredecessor, int screenHeightMax)
+#endif
+        private void AdjustDataGridViewHeight(Menu menuPredecessor, double screenHeightMax)
         {
             double factor = Properties.Settings.Default.RowHeighteInPercentage / 100f;
             if (NativeMethods.IsTouchEnabled())
@@ -728,42 +859,37 @@ namespace SystemTrayMenu.UserInterface
 
             if (menuPredecessor == null)
             {
-                if (dgv.Tag == null && dgv.Rows.Count > 0)
+                if (dgv.Tag == null && dgv.Items.Count > 0)
                 {
                     // dgv.AutoResizeRows(); slightly incorrect depending on dpi
                     // 100% = 20 instead 21
                     // 125% = 23 instead 27, 150% = 28 instead 32
                     // 175% = 33 instead 37, 200% = 35 instead 42
                     // #418 use 21 as default and scale it manually
-                    float rowHeightDefault = 21.24f * Scaling.FactorByDpi;
-                    dgv.RowTemplate.Height = (int)((rowHeightDefault * factor * Scaling.Factor) + 0.5);
+                    double rowHeightDefault = 21.24f * Scaling.FactorByDpi;
+                    Resources["RowHeight"] = (double)((rowHeightDefault * factor * Scaling.Factor) + 0.5);
                     dgv.Tag = true;
                 }
             }
             else
             {
                 // Take over the height from predecessor menu
-                dgv.RowTemplate.Height = menuPredecessor.GetDataGridView().RowTemplate.Height;
+                Resources["RowHeight"] = (double)menuPredecessor.Resources["RowHeight"];
                 dgv.Tag = true;
             }
 
-            // Patch size of each row
-            foreach (DataGridViewRow row in dgv.Rows)
-            {
-                row.Height = dgv.RowTemplate.Height;
-            }
-
-            int dgvHeightByItems = dgv.Rows.GetRowsHeight(DataGridViewElementStates.None);
-            int dgvHeightMaxByScreen = screenHeightMax - (Height - dgv.Height);
-            int dgvHeightMaxByOptions = (int)(Scaling.Factor * Scaling.FactorByDpi *
-                450f * (Properties.Settings.Default.HeightMaxInPercent / 100f));
-            int dgvHeightMax = Math.Min(dgvHeightMaxByScreen, dgvHeightMaxByOptions);
+#if TODO
             if (!dgvHeightSet && dgvHeightByItems > 0 && dgvHeightMax > 0)
             {
-                dgv.Height = Math.Min(dgvHeightByItems, dgvHeightMax);
+#endif
+            double heightMaxByOptions = Scaling.Factor * Scaling.FactorByDpi *
+                450f * (Properties.Settings.Default.HeightMaxInPercent / 100f);
+            MaxHeight = Math.Min(screenHeightMax, heightMaxByOptions);
+#if TODO
                 dgvHeightSet = true;
             }
-
+#endif
+#if TODO
             if (dgvHeightByItems > dgvHeightMax)
             {
                 ScrollbarVisible = true;
@@ -774,7 +900,7 @@ namespace SystemTrayMenu.UserInterface
                     customScrollbar.Minimum = 0;
                     customScrollbar.Maximum = dgvHeightByItems;
                     customScrollbar.LargeChange = dgvHeightMax;
-                    customScrollbar.SmallChange = dgv.RowTemplate.Height;
+                    customScrollbar.SmallChange = Resources["RowHeight"];
                 }
             }
             else
@@ -782,6 +908,7 @@ namespace SystemTrayMenu.UserInterface
                 ScrollbarVisible = false;
                 customScrollbar.PaintDisable();
             }
+#endif
         }
 
         private void AdjustDataGridViewWidth()
@@ -791,8 +918,53 @@ namespace SystemTrayMenu.UserInterface
                 return;
             }
 
-            DataGridViewExtensions.FastAutoSizeColumns(dgv);
+            double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
+            // IcoWidth 100% = 21px, 175% is 33, +3+2 is padding from ColumnIcon
+            double icoWidth = (16 * Scaling.FactorByDpi) + 5;
+            Resources["ColumnIconWidth"] = (double)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
 
+            double renderedMaxWidth = 0D;
+            foreach (ListViewItemData item in dgv.Items)
+            {
+                double renderedWidth = new FormattedText(
+                        item.ColumnText,
+                        CultureInfo.CurrentCulture,
+                        FlowDirection.LeftToRight,
+                        new Typeface(dgv.FontFamily, dgv.FontStyle, dgv.FontWeight, dgv.FontStretch),
+                        dgv.FontSize,
+                        dgv.Foreground,
+                        VisualTreeHelper.GetDpi(this).PixelsPerDip).Width;
+                if (renderedWidth > renderedMaxWidth)
+                {
+                    renderedMaxWidth = renderedWidth;
+                }
+            }
+
+#if TODO // Lazy value setting because of DataBinging but too late for Menues.AdjustSizeAndLocation()
+            renderedMaxWidth = Math.Min(
+                renderedMaxWidth,
+                (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Properties.Settings.Default.WidthMaxInPercent / 100f)));
+
+            for (int i = 0; i < dgv.Items.Count; i++)
+            {
+                ListViewItem? lvi = dgv.FindVisualChildOfType<ListViewItem>(i);
+                if (lvi != null)
+                {
+                    Label? columnTextLabel = lvi.FindVisualChildOfType<Label>();
+                    if (columnTextLabel != null)
+                    {
+                        columnTextLabel.Content = i.ToString() + " ; " + Width + " ; " + renderedMaxWidth.ToString();
+                        columnTextLabel.Width = renderedMaxWidth;
+                    }
+                }
+            }
+#else
+            Resources["ColumnTextWidth"] = Math.Min(
+                renderedMaxWidth,
+                (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Properties.Settings.Default.WidthMaxInPercent / 100f)));
+
+#endif
+#if TODO
             int widthIcon = dgv.Columns[0].Width;
             int widthText = dgv.Columns[1].Width;
             int widthScrollbar = customScrollbar.Width;
@@ -800,7 +972,7 @@ namespace SystemTrayMenu.UserInterface
             using Graphics gfx = labelTitle.CreateGraphics();
             gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             int withTitle = (int)(gfx.MeasureString(
-                labelTitle.Text + "___",
+                txtTitle.Text + "___",
                 dgv.RowTemplate.DefaultCellStyle.Font).Width + 0.5);
 
             if (withTitle > (widthIcon + widthText + widthScrollbar))
@@ -816,20 +988,12 @@ namespace SystemTrayMenu.UserInterface
                 dgv.Columns[1].Width = dgv.Width - widthIcon;
             }
 
-            tableLayoutPanelSearch.MinimumSize = new Size(dgv.Width + widthScrollbar, 0);
-
-            // Only scaling correct with Sans Serif for textBoxSearch. Workaround:
-            textBoxSearch.Font = new Font(
-                "Segoe UI",
-                8.25F * Scaling.Factor,
-                FontStyle.Regular,
-                GraphicsUnit.Point,
-                0);
-
             DataTable dataTable = (DataTable)dgv.DataSource;
             dataTable.DefaultView.RowFilter = RowFilterShowAll;
+#endif
         }
 
+#if TODO
         private void DgvMouseWheel(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
@@ -841,17 +1005,20 @@ namespace SystemTrayMenu.UserInterface
         {
             KeyPressCheck?.Invoke(sender, e);
         }
-
-        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
+#endif
+        private void TextBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
+#if TODO
             customScrollbar.Value = 0;
 
             DataTable data = (DataTable)dgv.DataSource;
-            string filterField = dgv.Columns[1].Name;
+#endif
+            string filterField = nameof(ListViewItemData.ColumnText);
+#if TODO
             SearchTextChanging?.Invoke();
 
             // Expression reference: https://docs.microsoft.com/en-us/dotnet/api/system.data.datacolumn.expression?view=net-6.0
-
+#endif
             // Instead implementing in-string wildcards, simply split into multiple search patters
             string searchString = textBoxSearch.Text.Trim()
                 .Replace("%", " ")
@@ -891,6 +1058,7 @@ namespace SystemTrayMenu.UserInterface
 
             bool isSearchStringEmpty = string.IsNullOrEmpty(searchString);
 
+#if TODO
             try
             {
                 if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
@@ -996,7 +1164,9 @@ namespace SystemTrayMenu.UserInterface
             {
                 dgv.FirstDisplayedScrollingRowIndex = 0;
             }
+#endif
         }
+#if TODO
 
         private void PictureBox_MouseEnter(object sender, EventArgs e)
         {
@@ -1030,27 +1200,17 @@ namespace SystemTrayMenu.UserInterface
                 ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
             }
         }
+#endif
 
-        private void PictureBoxOpenFolder_Click(object sender, MouseEventArgs e)
+        private void PictureBoxOpenFolder_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                UserClickedOpenFolder?.Invoke();
-            }
+            UserClickedOpenFolder?.Invoke();
         }
 
+#if TODO
         private void PictureBoxMenuAlwaysOpen_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
-
-            if (Config.AlwaysOpenByPin)
-            {
-                e.Graphics.DrawImage(AppColors.BitmapPinActive, new Rectangle(Point.Empty, pictureBox.ClientSize));
-            }
-            else
-            {
-                e.Graphics.DrawImage(AppColors.BitmapPin, new Rectangle(Point.Empty, pictureBox.ClientSize));
-            }
 
             if (pictureBox.Tag != null && (bool)pictureBox.Tag)
             {
@@ -1058,14 +1218,20 @@ namespace SystemTrayMenu.UserInterface
                 ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
             }
         }
-
-        private void PictureBoxMenuAlwaysOpen_Click(object sender, EventArgs e)
+#endif
+        private void PictureBoxMenuAlwaysOpen_Click(object sender, RoutedEventArgs e)
         {
-            PictureBox pictureBox = (PictureBox)sender;
-            Config.AlwaysOpenByPin = !Config.AlwaysOpenByPin;
-            pictureBox.Invalidate();
+            if (Config.AlwaysOpenByPin = !Config.AlwaysOpenByPin)
+            {
+                pictureBoxMenuAlwaysOpen.Source = (DrawingImage)Resources["ic_fluent_pin_48_filledDrawingImage"];
+            }
+            else
+            {
+                pictureBoxMenuAlwaysOpen.Source = (DrawingImage)Resources["ic_fluent_pin_48_regularDrawingImage"];
+            }
         }
 
+#if TODO
         private void PictureBoxSettings_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
@@ -1078,15 +1244,13 @@ namespace SystemTrayMenu.UserInterface
                 ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
             }
         }
-
-        private void PictureBoxSettings_MouseClick(object sender, MouseEventArgs e)
+#endif
+        private void PictureBoxSettings_MouseClick(object sender, RoutedEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                new Thread(SettingsForm.ShowSingleInstance).Start();
-            }
+            SettingsWindow.ShowSingleInstance();
         }
 
+#if TODO
         private void PictureBoxRestart_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
@@ -1099,15 +1263,13 @@ namespace SystemTrayMenu.UserInterface
                 ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
             }
         }
-
-        private void PictureBoxRestart_MouseClick(object sender, MouseEventArgs e)
+#endif
+        private void PictureBoxRestart_MouseClick(object sender, RoutedEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                AppRestart.ByMenuButton();
-            }
+            AppRestart.ByMenuButton();
         }
 
+#if TODO
         private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
@@ -1122,20 +1284,20 @@ namespace SystemTrayMenu.UserInterface
                 ImagingHelper.RotateImage(Resources.StaticResources.LoadingIcon.ToBitmap(), rotationAngle),
                 new Rectangle(Point.Empty, new Size(pictureBox.ClientSize.Width - 2, pictureBox.ClientSize.Height - 2)));
         }
-
-        private void TimerUpdateIcons_Tick(object sender, EventArgs e)
+#endif
+        private void TimerUpdateIcons_Tick(object? sender, EventArgs e)
         {
             int iconsToUpdate = 0;
 
-            foreach (DataGridViewRow row in dgv.Rows)
+            foreach (Menu.ListViewItemData row in dgv.Items)
             {
-                RowData rowData = (RowData)row.Cells[2].Value;
-                rowData.RowIndex = row.Index;
+                RowData rowData = row.data;
+                rowData.RowIndex = dgv.Items.IndexOf(row);
 
                 if (rowData.IconLoading)
                 {
                     iconsToUpdate++;
-                    row.Cells[0].Value = rowData.ReadIcon(false);
+                    row.ColumnIcon = rowData.ReadIcon(false);
                 }
             }
 
@@ -1145,13 +1307,13 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void Menu_MouseDown(object sender, MouseEventArgs e)
+        private void Menu_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (Level == 0)
             {
                 mouseDown = true;
-                lastLocation = e.Location;
-                UserDragsMenu.Invoke();
+                lastLocation = NativeMethods.Screen.CursorPosition;
+                UserDragsMenu?.Invoke();
             }
         }
 
@@ -1159,27 +1321,87 @@ namespace SystemTrayMenu.UserInterface
         {
             if (mouseDown)
             {
-                Location = new Point(
-                    Location.X - lastLocation.X + e.X,
-                    Location.Y - lastLocation.Y + e.Y);
+                Point mousePos = NativeMethods.Screen.CursorPosition;
+                Left = Left + mousePos.X - lastLocation.X;
+                Top = Top + mousePos.Y - lastLocation.Y;
+                lastLocation = mousePos;
 
-                Properties.Settings.Default.CustomLocationX = Location.X;
-                Properties.Settings.Default.CustomLocationY = Location.Y;
-
-                Update();
+                Properties.Settings.Default.CustomLocationX = (int)Left;
+                Properties.Settings.Default.CustomLocationY = (int)Top;
             }
         }
 
-        private void Menu_MouseUp(object sender, MouseEventArgs e)
+        private void Menu_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseDown = false;
             if (Properties.Settings.Default.UseCustomLocation)
             {
-                if (!SettingsForm.IsOpen())
+                if (!SettingsWindow.IsOpen())
                 {
                     Properties.Settings.Default.Save();
                 }
             }
+        }
+
+        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
+        {
+            CellMouseEnter?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content));
+        }
+
+        private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
+        {
+            CellMouseLeave?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content));
+        }
+
+        private void ListViewItem_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            CellMouseDown?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
+        }
+
+        private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            CellMouseUp?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
+            AdjustScrollbar();
+        }
+
+        private void ListViewxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            // Simulate missing MouseClick event
+            CellMouseClick?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
+        }
+
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            CellMouseDoubleClick?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
+        }
+
+        /// <summary>
+        /// Type for ListView items.
+        /// </summary>
+        internal class ListViewItemData
+        {
+            public ListViewItemData(Icon columnIcon, string columnText, RowData rowData, int sortIndex)
+            {
+                ColumnIcon = columnIcon;
+                ColumnText = columnText;
+                data = rowData;
+                SortIndex = sortIndex;
+            }
+
+            public Icon ColumnIcon { get; set; }
+
+            public string ColumnText { get; set; }
+
+            [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Benennungsstile", Justification = "Temporarily retained for compatibility reasons")]
+            [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "Temporarily retained for compatibility reasons")]
+            public RowData data { get; set; }
+
+            public int SortIndex { get; set; }
+        }
+
+        private void textBoxSearch_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            // TODO WPF
         }
     }
 }

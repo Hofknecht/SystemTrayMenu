@@ -8,7 +8,7 @@ namespace SystemTrayMenu.Utilities
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
-    using System.Windows.Forms;
+    using System.Windows.Input;
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
     using WindowsInput;
 
@@ -26,8 +26,9 @@ namespace SystemTrayMenu.Utilities
                 {
                     if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                     {
-                        Keys modifiers = HotkeyControl.HotkeyModifiersFromString(Properties.Settings.Default.HotKey);
-                        Keys hotkey = HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey);
+#if TODO //HOTKEY
+                        Key modifiers = HotkeyControl.HotkeyModifiersFromString(Properties.Settings.Default.HotKey);
+                        Key hotkey = HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey);
 
                         try
                         {
@@ -63,6 +64,7 @@ namespace SystemTrayMenu.Utilities
                         {
                             Log.Warn($"Send hoktey {Properties.Settings.Default.HotKey} to other instance failed", ex);
                         }
+#endif
                     }
 
                     if (!Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)

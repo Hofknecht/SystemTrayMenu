@@ -5,8 +5,9 @@
 namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 {
     using System;
+    using System.Windows.Interop;
 
-    public class WindowWrapper : System.Windows.Forms.IWin32Window
+    public class WindowWrapper : IWin32Window
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowWrapper"/> class.

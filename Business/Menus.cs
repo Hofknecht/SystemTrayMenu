@@ -11,7 +11,11 @@ namespace SystemTrayMenu.Business
     using System.Drawing;
     using System.IO;
     using System.Linq;
-    using System.Windows.Forms;
+    using System.Reflection;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Handler;
@@ -19,22 +23,26 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
+    using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+    using static SystemTrayMenu.Utilities.IconReader;
+    using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
-    using Timer = System.Windows.Forms.Timer;
+    using MessageBox = System.Windows.MessageBox;
+    using Point = System.Drawing.Point;
 
     internal class Menus : IDisposable
     {
         private readonly Menu[] menus = new Menu[MenuDefines.MenusMax];
         private readonly BackgroundWorker workerMainMenu = new();
         private readonly List<BackgroundWorker> workersSubMenu = new();
-        private readonly DgvMouseRow dgvMouseRow = new();
+        private readonly DgvMouseRow<ListView> dgvMouseRow = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
         private readonly JoystickHelper joystickHelper;
         private readonly List<FileSystemWatcher> watchers = new();
         private readonly List<EventArgs> watcherHistory = new();
-        private readonly Timer timerShowProcessStartedAsLoadingIcon = new();
-        private readonly Timer timerStillActiveCheck = new();
+        private readonly DispatcherTimer timerShowProcessStartedAsLoadingIcon = new();
+        private readonly DispatcherTimer timerStillActiveCheck = new();
         private readonly WaitLeave waitLeave = new(Properties.Settings.Default.TimeUntilCloses);
         private DateTime deactivatedTime = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
@@ -43,7 +51,9 @@ namespace SystemTrayMenu.Business
         private bool waitingForReactivate;
         private int lastMouseDownRowIndex = -1;
         private bool showMenuAfterMainPreload;
+#if TODO
         private int dragSwipeScrollingStartRowIndex = -1;
+#endif
         private bool isDraggingSwipeScrolling;
         private bool isDragSwipeScrolled;
         private bool hideSubmenuDuringRefreshSearch;
@@ -61,7 +71,8 @@ namespace SystemTrayMenu.Business
                 if (e.Result == null)
                 {
                     // Clean up menu status IsMenuOpen for previous one
-                    DataGridView dgvMainMenu = menus[0].GetDataGridView();
+                    ListView dgvMainMenu = menus[0].GetDataGridView();
+#if TODO
                     foreach (DataRow row in ((DataTable)dgvMainMenu.DataSource).Rows)
                     {
                         RowData rowDataToClear = (RowData)row[2];
@@ -70,6 +81,7 @@ namespace SystemTrayMenu.Business
                         rowDataToClear.IsSelected = false;
                         rowDataToClear.IsContextMenuOpen = false;
                     }
+#endif
 
                     RefreshSelection(dgvMainMenu);
 
@@ -91,7 +103,8 @@ namespace SystemTrayMenu.Business
                                 workerMainMenu.DoWork -= LoadMenu;
                                 menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name);
                                 menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
-                                Scaling.CalculateFactorByDpi(menus[0].GetDataGridView().CreateGraphics());
+                                Scaling.CalculateFactorByDpi(menus[0]);
+
                                 IconReader.MainPreload = false;
                                 if (showMenuAfterMainPreload)
                                 {
@@ -251,7 +264,9 @@ namespace SystemTrayMenu.Business
             waitToOpenMenu.MouseEnterOk += MouseEnterOk;
             dgvMouseRow.RowMouseEnter += waitToOpenMenu.MouseEnter;
             dgvMouseRow.RowMouseLeave += waitToOpenMenu.MouseLeave;
+#if TODO
             dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave;
+#endif
 
             keyboardInput = new(menus);
             keyboardInput.RegisterHotKey();
@@ -261,17 +276,17 @@ namespace SystemTrayMenu.Business
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
             keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
             keyboardInput.RowSelected += AdjustScrollbarToDisplayedRow;
-            void AdjustScrollbarToDisplayedRow(DataGridView dgv, int index)
+            void AdjustScrollbarToDisplayedRow(ListView dgv, int index)
             {
-                Menu menu = (Menu)dgv.FindForm();
+                Menu menu = (Menu)dgv.GetParentWindow();
                 menu.AdjustScrollbar();
             }
 
             joystickHelper = new();
-            joystickHelper.KeyPressed += (key) => menus[0].Invoke(keyboardInput.CmdKeyProcessed, null, key);
+            joystickHelper.KeyPressed += (key) => menus[0].Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null, key });
 
-            timerShowProcessStartedAsLoadingIcon.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed;
-            timerStillActiveCheck.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed + 20;
+            timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed);
+            timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
             timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
             void StillActiveTick()
             {
@@ -319,9 +334,9 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        internal event EventHandlerEmpty LoadStarted;
+        internal event Action LoadStarted;
 
-        internal event EventHandlerEmpty LoadStopped;
+        internal event Action LoadStopped;
 
         private enum OpenCloseState
         {
@@ -345,12 +360,13 @@ namespace SystemTrayMenu.Business
             waitToOpenMenu.Dispose();
             keyboardInput.Dispose();
             joystickHelper.Dispose();
-            timerShowProcessStartedAsLoadingIcon.Dispose();
-            timerStillActiveCheck.Dispose();
+            timerShowProcessStartedAsLoadingIcon.Stop();
+            timerStillActiveCheck.Stop();
             waitLeave.Dispose();
             IconReader.Dispose();
             DisposeMenu(menus[0]);
             dgvMouseRow.Dispose();
+
             foreach (FileSystemWatcher watcher in watchers)
             {
                 watcher.Created -= WatcherProcessItem;
@@ -424,12 +440,12 @@ namespace SystemTrayMenu.Business
                 // Case when Folder Dialog open
             }
             else if (openCloseState == OpenCloseState.Opening ||
-                (menus[0] != null && menus[0].Visible && openCloseState == OpenCloseState.Default))
+                (menus[0] != null && menus[0].Visibility == Visibility.Visible && openCloseState == OpenCloseState.Default))
             {
                 openCloseState = OpenCloseState.Closing;
                 MenusFadeOut();
                 StopWorker();
-                if (!AsEnumerable.Any(m => m.Visible))
+                if (!AsEnumerable.Any(m => m.Visibility == Visibility.Visible))
                 {
                     openCloseState = OpenCloseState.Default;
                 }
@@ -448,6 +464,13 @@ namespace SystemTrayMenu.Business
         {
             if (menuToDispose != null)
             {
+                menuToDispose.CellMouseEnter -= dgvMouseRow.CellMouseEnter;
+                menuToDispose.CellMouseLeave -= dgvMouseRow.CellMouseLeave;
+                menuToDispose.CellMouseDown -= Dgv_MouseDown;
+                menuToDispose.CellMouseUp -= Dgv_MouseUp;
+                menuToDispose.CellMouseClick -= Dgv_MouseClick;
+                menuToDispose.CellMouseDoubleClick -= Dgv_MouseDoubleClick;
+#if TODO
                 menuToDispose.MouseWheel -= AdjustMenusSizeAndLocation;
                 menuToDispose.MouseLeave -= waitLeave.Start;
                 menuToDispose.MouseEnter -= waitLeave.Stop;
@@ -455,19 +478,13 @@ namespace SystemTrayMenu.Business
                 menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
                 menuToDispose.KeyPressCheck -= Menu_KeyPressCheck;
                 menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
-                DataGridView dgv = menuToDispose.GetDataGridView();
+                ListView dgv = menuToDispose.GetDataGridView();
                 if (dgv != null)
                 {
-                    dgv.CellMouseEnter -= dgvMouseRow.CellMouseEnter;
-                    dgv.CellMouseLeave -= dgvMouseRow.CellMouseLeave;
                     dgv.MouseLeave -= dgvMouseRow.MouseLeave;
                     dgv.MouseLeave -= Dgv_MouseLeave;
                     dgv.MouseMove -= waitToOpenMenu.MouseMove;
                     dgv.MouseMove -= Dgv_MouseMove;
-                    dgv.MouseDown -= Dgv_MouseDown;
-                    dgv.MouseUp -= Dgv_MouseUp;
-                    dgv.MouseClick -= Dgv_MouseClick;
-                    dgv.MouseDoubleClick -= Dgv_MouseDoubleClick;
                     dgv.SelectionChanged -= Dgv_SelectionChanged;
                     dgv.RowPostPaint -= Dgv_RowPostPaint;
                     dgv.ClearSelection();
@@ -478,8 +495,8 @@ namespace SystemTrayMenu.Business
                         DisposeMenu(rowData.SubMenu);
                     }
                 }
-
                 menuToDispose.Dispose();
+#endif
             }
         }
 
@@ -496,12 +513,12 @@ namespace SystemTrayMenu.Business
             IconReader.MainPreload = true;
 
             timerShowProcessStartedAsLoadingIcon.Tick += Tick;
-            timerShowProcessStartedAsLoadingIcon.Interval = 5;
+            timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(5);
             timerShowProcessStartedAsLoadingIcon.Start();
             void Tick(object sender, EventArgs e)
             {
                 timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
-                timerShowProcessStartedAsLoadingIcon.Interval = Properties.Settings.Default.TimeUntilClosesAfterEnterPressed;
+                timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed);
                 SwitchOpenClose(false, true);
             }
         }
@@ -560,30 +577,31 @@ namespace SystemTrayMenu.Business
             Log.ProcessStart(path);
         }
 
-        private static int GetRowUnderCursor(DataGridView dgv, Point location)
+        private static int GetRowUnderCursor(ListView dgv, Point location)
         {
-            DataGridView.HitTestInfo myHitTest = dgv.HitTest(location.X, location.Y);
+#if TODO
+            ListView.HitTestInfo myHitTest = dgv.HitTest(location.X, location.Y);
             return myHitTest.RowIndex;
-        }
-
-        private static void InvalidateRowIfIndexInRange(DataGridView dgv, int rowIndex)
-        {
-            if (rowIndex > -1 && rowIndex < dgv.Rows.Count)
-            {
-                dgv.InvalidateRow(rowIndex);
-            }
+#else
+            return 0;
+#endif
         }
 
         private static void AddItemsToMenu(List<RowData> data, Menu menu, out int foldersCount, out int filesCount)
         {
             foldersCount = 0;
             filesCount = 0;
-            DataGridView dgv = menu.GetDataGridView();
+
+            List<Menu.ListViewItemData> items = new();
+            ListView lv = menu.GetDataGridView();
+#if TODO // REMOVE?
             DataTable dataTable = new();
-            dataTable.Columns.Add(dgv.Columns[0].Name, typeof(Icon));
-            dataTable.Columns.Add(dgv.Columns[1].Name, typeof(string));
-            dataTable.Columns.Add("data", typeof(RowData));
-            dataTable.Columns.Add("SortIndex");
+
+            foreach (var prop in typeof(Menu.ListViewItemData).GetProperties())
+            {
+                dataTable.Columns.Add(prop.Name, prop.PropertyType);
+            }
+
             foreach (RowData rowData in data)
             {
                 if (!(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
@@ -601,23 +619,45 @@ namespace SystemTrayMenu.Business
                 rowData.SetData(rowData, dataTable);
             }
 
-            dgv.DataSource = dataTable;
-            dgv.Columns["data"].Visible = false;
-            dgv.Columns["SortIndex"].Visible = false;
+            lv.ItemsSource = dataTable.DefaultView;
 
-            string columnSortIndex = "SortIndex";
             foreach (DataRow row in dataTable.Rows)
             {
-                RowData rowData = (RowData)row[2];
+                RowData rowData = (RowData)row[nameof(Menu.ListViewItemData.data)];
                 if (rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult)
                 {
-                    row[columnSortIndex] = 99;
+                    row[nameof(Menu.ListViewItemData.SortIndex)] = 99;
                 }
                 else
                 {
-                    row[columnSortIndex] = 0;
+                    row[nameof(Menu.ListViewItemData.SortIndex)] = 0;
                 }
             }
+#else
+            foreach (RowData rowData in data)
+            {
+                if (!(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
+                {
+                    if (rowData.ContainsMenu)
+                    {
+                        foldersCount++;
+                    }
+                    else
+                    {
+                        filesCount++;
+                    }
+                }
+
+                rowData.RowIndex = items.Count; // Index
+                items.Add(new(
+                    rowData.HiddenEntry ? AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon,
+                    rowData.Text,
+                    rowData,
+                    rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
+            }
+
+            lv.ItemsSource = items;
+#endif
         }
 
         private bool IsActive()
@@ -627,8 +667,9 @@ namespace SystemTrayMenu.Business
                 bool isShellContextMenuOpen = false;
                 foreach (Menu menu in menus.Where(m => m != null))
                 {
-                    DataGridView dgv = menu.GetDataGridView();
-                    foreach (DataGridViewRow row in dgv.Rows)
+                    ListView dgv = menu.GetDataGridView();
+#if TODO
+                    foreach (DataGridViewRow row in dgv.Items)
                     {
                         RowData rowData = (RowData)row.Cells[2].Value;
                         if (rowData != null && rowData.IsContextMenuOpen)
@@ -637,6 +678,7 @@ namespace SystemTrayMenu.Business
                             break;
                         }
                     }
+#endif
 
                     if (isShellContextMenuOpen)
                     {
@@ -647,7 +689,12 @@ namespace SystemTrayMenu.Business
                 return isShellContextMenuOpen;
             }
 
-            return Form.ActiveForm is Menu or TaskbarForm || IsShellContextMenuOpen();
+            foreach (Menu menu in menus.Where(m => m != null && m.IsActive))
+            {
+                return true;
+            }
+
+            return (App.TaskbarLogo != null && App.TaskbarLogo.IsActive) || IsShellContextMenuOpen();
         }
 
         private Menu Create(MenuData menuData, string title = null)
@@ -661,14 +708,12 @@ namespace SystemTrayMenu.Business
                 path = menuData.RowDataParent.ResolvedPath;
             }
 
-            if (string.IsNullOrEmpty(title))
-            {
-                title = Path.GetPathRoot(path);
-            }
+            title ??= Path.GetPathRoot(path);
 
             menu.AdjustControls(title, menuData.Validity);
             menu.UserClickedOpenFolder += () => OpenFolder(path);
             menu.Level = menuData.Level;
+#if TODO
             menu.MouseWheel += AdjustMenusSizeAndLocation;
             menu.MouseLeave += waitLeave.Start;
             menu.MouseEnter += waitLeave.Stop;
@@ -676,6 +721,7 @@ namespace SystemTrayMenu.Business
             menu.KeyPressCheck += Menu_KeyPressCheck;
             menu.SearchTextChanging += Menu_SearchTextChanging;
             menu.SearchTextChanged += Menu_SearchTextChanged;
+#endif
             menu.UserDragsMenu += Menu_UserDragsMenu;
             void Menu_UserDragsMenu()
             {
@@ -685,7 +731,7 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            menu.Deactivate += Deactivate;
+            menu.Deactivated += Deactivate;
             void Deactivate(object sender, EventArgs e)
             {
                 if (IsOpenCloseStateOpening())
@@ -714,19 +760,22 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            menu.VisibleChanged += MenuVisibleChanged;
+            menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged(sender, new EventArgs());
+
             AddItemsToMenu(menuData.RowDatas, menu, out int foldersCount, out int filesCount);
 
-            DataGridView dgv = menu.GetDataGridView();
-            dgv.CellMouseEnter += dgvMouseRow.CellMouseEnter;
-            dgv.CellMouseLeave += dgvMouseRow.CellMouseLeave;
+            menu.CellMouseEnter += dgvMouseRow.CellMouseEnter;
+            menu.CellMouseLeave += dgvMouseRow.CellMouseLeave;
+            menu.CellMouseDown += Dgv_MouseDown;
+            menu.CellMouseUp += Dgv_MouseUp;
+            menu.CellMouseClick += Dgv_MouseClick;
+            menu.CellMouseDoubleClick += Dgv_MouseDoubleClick;
+#if TODO
+            ListView dgv = menu.GetDataGridView();
             dgv.MouseLeave += dgvMouseRow.MouseLeave;
             dgv.MouseLeave += Dgv_MouseLeave;
             dgv.MouseMove += waitToOpenMenu.MouseMove;
             dgv.MouseMove += Dgv_MouseMove;
-            dgv.MouseDown += Dgv_MouseDown;
-            dgv.MouseUp += Dgv_MouseUp;
-            dgv.MouseClick += Dgv_MouseClick;
             dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
             dgv.SelectionChanged += Dgv_SelectionChanged;
             dgv.RowPostPaint += Dgv_RowPostPaint;
@@ -737,7 +786,7 @@ namespace SystemTrayMenu.Business
                 // => Rare times occured (e.g. when focused an close other application => closed and activated at same time)
                 Log.Warn("Dgv_DataError occured", e.Exception);
             }
-
+#endif
             menu.SetCounts(foldersCount, filesCount);
 
             return menu;
@@ -758,12 +807,12 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            if (!menu.Visible && menu.Level != 0)
+            if (menu.Visibility != Visibility.Visible && menu.Level != 0)
             {
                 DisposeMenu(menu);
             }
 
-            if (!AsEnumerable.Any(m => m.Visible))
+            if (!AsEnumerable.Any(m => m.Visibility == Visibility.Visible))
             {
                 if (IconReader.ClearIfCacheTooBig())
                 {
@@ -778,7 +827,8 @@ namespace SystemTrayMenu.Business
         {
             if (isDraggingSwipeScrolling)
             {
-                DataGridView dgv = (DataGridView)sender;
+#if TODO
+                ListView dgv = (ListView)sender;
                 int newRow = GetRowUnderCursor(dgv, e.Location);
                 if (newRow > -1)
                 {
@@ -788,14 +838,16 @@ namespace SystemTrayMenu.Business
                         dragSwipeScrollingStartRowIndex += delta;
                     }
                 }
+#endif
             }
         }
 
-        private bool DoScroll(DataGridView dgv, ref int delta)
+        private bool DoScroll(ListView dgv, ref int delta)
         {
             bool scrolled = false;
             if (delta != 0)
             {
+#if TODO
                 if (delta < 0 && dgv.FirstDisplayedScrollingRowIndex == 0)
                 {
                     delta = 0;
@@ -812,35 +864,31 @@ namespace SystemTrayMenu.Business
                 {
                     isDragSwipeScrolled = true;
                     dgv.FirstDisplayedScrollingRowIndex = newFirstDisplayedScrollingRowIndex;
-                    Menu menu = (Menu)dgv.FindForm();
+                    Menu menu = (Menu)dgv.GetParentWindow();
                     menu.AdjustScrollbar();
                     scrolled = dgv.FirstDisplayedScrollingRowIndex == newFirstDisplayedScrollingRowIndex;
                 }
+#endif
             }
 
             return scrolled;
         }
 
-        private void Dgv_MouseDown(object sender, MouseEventArgs e)
+        private void Dgv_MouseDown(object sender, int index, MouseButtonEventArgs e)
         {
-            DataGridView dgv = (DataGridView)sender;
-            DataGridView.HitTestInfo hitTestInfo;
-            hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (hitTestInfo.RowIndex > -1 &&
-                hitTestInfo.RowIndex < dgv.Rows.Count)
-            {
-                MouseEnterOk(dgv, hitTestInfo.RowIndex, true);
-                RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
-                rowData.MouseDown(dgv, e);
-                InvalidateRowIfIndexInRange(dgv, hitTestInfo.RowIndex);
-            }
+            ListView dgv = (ListView)sender;
 
-            if (e.Button == MouseButtons.Left)
-            {
-                lastMouseDownRowIndex = hitTestInfo.RowIndex;
-            }
+            MouseEnterOk(dgv, index, true);
 
-            Menu menu = (Menu)((DataGridView)sender).FindForm();
+            // TODO WPF: Move directly into ListViewItem_MouseDown ?
+            ((Menu.ListViewItemData)dgv.Items[index]).data.MouseDown(dgv, e);
+
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                lastMouseDownRowIndex = index;
+            }
+#if TODO
+            Menu menu = (Menu)((ListView)sender).GetParentWindow();
             if (menu != null && menu.ScrollbarVisible)
             {
                 bool isTouchEnabled = DllImports.NativeMethods.IsTouchEnabled();
@@ -852,17 +900,14 @@ namespace SystemTrayMenu.Business
 
                 dragSwipeScrollingStartRowIndex = GetRowUnderCursor(dgv, e.Location);
             }
+#endif
         }
 
-        private void Dgv_MouseUp(object sender, MouseEventArgs e)
+        private void Dgv_MouseUp(object sender, int index, MouseButtonEventArgs e)
         {
             lastMouseDownRowIndex = -1;
             isDraggingSwipeScrolling = false;
             isDragSwipeScrolled = false;
-
-            // In case during mouse down move mouse out of dgv (it has own scrollbehavior) which we need to refresh
-            Menu menu = (Menu)((DataGridView)sender).FindForm();
-            menu.AdjustScrollbar();
         }
 
         private void Dgv_MouseLeave(object sender, EventArgs e)
@@ -871,12 +916,12 @@ namespace SystemTrayMenu.Business
             isDragSwipeScrolled = false;
         }
 
-        private void MouseEnterOk(DataGridView dgv, int rowIndex)
+        private void MouseEnterOk(ListView dgv, int rowIndex)
         {
             MouseEnterOk(dgv, rowIndex, false);
         }
 
-        private void MouseEnterOk(DataGridView dgv, int rowIndex, bool refreshView)
+        private void MouseEnterOk(ListView dgv, int rowIndex, bool refreshView)
         {
             if (menus[0].IsUsable)
             {
@@ -889,41 +934,42 @@ namespace SystemTrayMenu.Business
                 keyboardInput.Select(dgv, rowIndex, refreshView);
             }
         }
-
+#if TODO
         private void Dgv_RowMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView dgv = (DataGridView)sender;
+            ListView dgv = (ListView)sender;
 
             if (!isDragSwipeScrolled &&
                 e.RowIndex == lastMouseDownRowIndex &&
                 e.RowIndex > -1 &&
-                e.RowIndex < dgv.Rows.Count)
+                e.RowIndex < dgv.Items.Count)
             {
                 lastMouseDownRowIndex = -1;
-                RowData rowData = (RowData)dgv.Rows[e.RowIndex].Cells[2].Value;
+#if TODO
+                RowData rowData = (RowData)dgv.Items[e.RowIndex].Cells[2].Value;
                 string[] files = new string[] { rowData.Path };
 
                 // Update position raises move event which prevent DoDragDrop blocking UI when mouse not moved
                 Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y);
 
                 dgv.DoDragDrop(new DataObject(DataFormats.FileDrop, files), DragDropEffects.Copy);
+#endif
             }
         }
+#endif
 
-        private void Dgv_MouseClick(object sender, MouseEventArgs e)
+        private void Dgv_MouseClick(object sender, int index, MouseButtonEventArgs e)
         {
-            DataGridView dgv = (DataGridView)sender;
-            DataGridView.HitTestInfo hitTestInfo;
-            hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (!isDragSwipeScrolled &&
-                hitTestInfo.RowIndex == lastMouseDownRowIndex &&
-                hitTestInfo.RowIndex > -1 &&
-                hitTestInfo.RowIndex < dgv.Rows.Count)
+            if (!isDragSwipeScrolled)
             {
+                ListView dgv = (ListView)sender;
                 lastMouseDownRowIndex = -1;
-                RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
-                rowData.MouseClick(e, out bool toCloseByClick);
-                waitToOpenMenu.ClickOpensInstantly(dgv, hitTestInfo.RowIndex);
+
+                // TODO WPF: Move directly into ListViewxItem_PreviewMouseLeftButtonDown ?
+                ((Menu.ListViewItemData)dgv.Items[index]).data.MouseClick(e, out bool toCloseByClick);
+
+                waitToOpenMenu.ClickOpensInstantly(dgv, index);
+
                 if (toCloseByClick)
                 {
                     MenusFadeOut();
@@ -933,22 +979,17 @@ namespace SystemTrayMenu.Business
             lastMouseDownRowIndex = -1;
         }
 
-        private void Dgv_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void Dgv_MouseDoubleClick(object sender, int index, MouseButtonEventArgs e)
         {
-            DataGridView dgv = (DataGridView)sender;
-            DataGridView.HitTestInfo hitTestInfo;
-            hitTestInfo = dgv.HitTest(e.X, e.Y);
-            if (hitTestInfo.RowIndex > -1 &&
-                dgv.Rows.Count > hitTestInfo.RowIndex)
+            ListView dgv = (ListView)sender;
+            lastMouseDownRowIndex = -1;
+
+            // TODO WPF: Move directly into ListViewItem_MouseDoubleClick ?
+            ((Menu.ListViewItemData)dgv.Items[index]).data.DoubleClick(e, out bool toCloseByDoubleClick);
+
+            if (toCloseByDoubleClick)
             {
-                lastMouseDownRowIndex = -1;
-                RowData rowData = (RowData)dgv.Rows[hitTestInfo.RowIndex].Cells[2].Value;
-                rowData.DoubleClick(e, out bool toCloseByDoubleClick);
-                InvalidateRowIfIndexInRange(dgv, hitTestInfo.RowIndex);
-                if (toCloseByDoubleClick)
-                {
-                    MenusFadeOut();
-                }
+                MenusFadeOut();
             }
 
             lastMouseDownRowIndex = -1;
@@ -956,15 +997,16 @@ namespace SystemTrayMenu.Business
 
         private void Dgv_SelectionChanged(object sender, EventArgs e)
         {
-            RefreshSelection((DataGridView)sender);
+            RefreshSelection((ListView)sender);
         }
 
-        private void RefreshSelection(DataGridView dgv)
+        private void RefreshSelection(ListView dgv)
         {
             dgv.SelectionChanged -= Dgv_SelectionChanged;
-            foreach (DataGridViewRow row in dgv.Rows)
+
+            foreach (Menu.ListViewItemData row in dgv.Items)
             {
-                RowData rowData = (RowData)row.Cells[2].Value;
+                RowData rowData = row.data;
 
                 if (rowData == null)
                 {
@@ -972,31 +1014,39 @@ namespace SystemTrayMenu.Business
                 }
                 else if (!menus[0].IsUsable)
                 {
+#if TODO
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
-                    row.Selected = false;
+#endif
+                    dgv.SelectedItems.Remove(row);
                 }
                 else if (rowData.IsClicking)
                 {
+#if TODO
                     row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorIcons;
-                    row.Selected = true;
+#endif
+                    dgv.SelectedItems.Add(row);
                 }
                 else if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
                 {
-                    row.Selected = true;
+                    dgv.SelectedItems.Add(row);
                 }
                 else if (rowData.IsMenuOpen)
                 {
-                    row.Selected = true;
+                    dgv.SelectedItems.Add(row);
                 }
                 else if (rowData.IsSelected)
                 {
+#if TODO
                     row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
-                    row.Selected = true;
+#endif
+                    dgv.SelectedItems.Add(row);
                 }
                 else
                 {
+#if TODO
                     row.DefaultCellStyle.SelectionBackColor = Color.White;
-                    row.Selected = false;
+#endif
+                    dgv.SelectedItems.Remove(row);
                 }
             }
 
@@ -1004,14 +1054,17 @@ namespace SystemTrayMenu.Business
 
             if (!searchTextChanging)
             {
+#if TODO
                 dgv.Invalidate();
+#endif
             }
         }
 
+#if TODO
         private void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            DataGridView dgv = (DataGridView)sender;
-            DataGridViewRow row = dgv.Rows[e.RowIndex];
+            ListView dgv = (ListView)sender;
+            DataGridViewRow row = dgv.Items[e.RowIndex];
 
             if (row.Selected)
             {
@@ -1056,7 +1109,8 @@ namespace SystemTrayMenu.Business
                     timerStillActiveCheck.Start();
                 }
             }
-        }
+    }
+#endif
 
         private void ShowSubMenu(Menu menuToShow)
         {
@@ -1072,7 +1126,8 @@ namespace SystemTrayMenu.Business
             if (menuPrevious != null)
             {
                 // Clean up menu status IsMenuOpen for previous one
-                DataGridView dgvPrevious = menuPrevious.GetDataGridView();
+                ListView dgvPrevious = menuPrevious.GetDataGridView();
+#if TODO
                 foreach (DataRow row in ((DataTable)dgvPrevious.DataSource).Rows)
                 {
                     RowData rowDataToClear = (RowData)row[2];
@@ -1085,6 +1140,7 @@ namespace SystemTrayMenu.Business
                         rowDataToClear.IsMenuOpen = false;
                     }
                 }
+#endif
 
                 RefreshSelection(dgvPrevious);
 
@@ -1104,9 +1160,8 @@ namespace SystemTrayMenu.Business
             {
                 if (!IsActive())
                 {
-                    Point position = Control.MousePosition;
                     if (Properties.Settings.Default.StaysOpenWhenFocusLost &&
-                        AsList.Any(m => m.IsMouseOn(position)))
+                        AsList.Any(m => m.IsMouseOn()))
                     {
                         if (!keyboardInput.InUse)
                         {
@@ -1146,22 +1201,23 @@ namespace SystemTrayMenu.Business
         {
             Rectangle screenBounds;
             bool isCustomLocationOutsideOfScreen = false;
+
             if (Properties.Settings.Default.AppearAtMouseLocation)
             {
-                screenBounds = Screen.FromPoint(Cursor.Position).Bounds;
+                screenBounds = NativeMethods.Screen.FromPoint(NativeMethods.Screen.CursorPosition);
             }
             else if (Properties.Settings.Default.UseCustomLocation)
             {
-                screenBounds = Screen.FromPoint(new Point(
+                screenBounds = NativeMethods.Screen.FromPoint(new Point(
                     Properties.Settings.Default.CustomLocationX,
-                    Properties.Settings.Default.CustomLocationY)).Bounds;
+                    Properties.Settings.Default.CustomLocationY));
 
                 isCustomLocationOutsideOfScreen = !screenBounds.Contains(
                     new Point(Properties.Settings.Default.CustomLocationX, Properties.Settings.Default.CustomLocationY));
             }
             else
             {
-                screenBounds = Screen.PrimaryScreen.Bounds;
+                screenBounds = NativeMethods.Screen.PrimaryScreen;
             }
 
             // Only apply taskbar position change when no menu is currently open
@@ -1209,17 +1265,8 @@ namespace SystemTrayMenu.Business
             {
                 menu = list[i];
 
-                // Only last one has to be updated as all previous one were already updated in the past
-                if (list.Count - 1 == i)
-                {
-                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation, isCustomLocationOutsideOfScreen);
-                }
-                else
-                {
-                    // workaround added also as else, because need adjust scrollbar after search
-                    menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation, isCustomLocationOutsideOfScreen);
-                }
-
+                menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation, isCustomLocationOutsideOfScreen);
+#if TODO // What is this, doesn't seem to have any effect ?
                 if (!Properties.Settings.Default.AppearAtTheBottomLeft &&
                     !Properties.Settings.Default.AppearAtMouseLocation &&
                     !Properties.Settings.Default.UseCustomLocation &&
@@ -1230,16 +1277,17 @@ namespace SystemTrayMenu.Business
                     // Remember width of the initial menu as we don't want to overlap with it
                     if (taskbarPosition == TaskbarPosition.Left)
                     {
-                        screenBounds.X += menu.Width - overlapTolerance;
+                        screenBounds.X += (int)menu.Width - overlapTolerance;
                     }
 
-                    screenBounds.Width -= menu.Width - overlapTolerance;
+                    screenBounds.Width -= (int)menu.Width - overlapTolerance;
                 }
-
+#endif
                 menuPredecessor = menu;
             }
         }
 
+#if TODO
         private void Menu_KeyPressCheck(object sender, KeyPressEventArgs e)
         {
             if (isDraggingSwipeScrolling)
@@ -1247,6 +1295,7 @@ namespace SystemTrayMenu.Business
                 e.Handled = true;
             }
         }
+#endif
 
         private void Menu_SearchTextChanging()
         {
@@ -1293,18 +1342,18 @@ namespace SystemTrayMenu.Business
 
             if (e is RenamedEventArgs renamedEventArgs)
             {
-                menus[0].Invoke(() => RenameItem(renamedEventArgs));
+                menus[0].Dispatcher.Invoke(() => RenameItem(renamedEventArgs));
             }
             else
             {
                 FileSystemEventArgs fileSystemEventArgs = (FileSystemEventArgs)e;
                 if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Deleted)
                 {
-                    menus[0].Invoke(() => DeleteItem(e as FileSystemEventArgs));
+                    menus[0].Dispatcher.Invoke(() => DeleteItem(e as FileSystemEventArgs));
                 }
                 else if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Created)
                 {
-                    menus[0].Invoke(() => CreateItem(e as FileSystemEventArgs));
+                    menus[0].Dispatcher.Invoke(() => CreateItem(e as FileSystemEventArgs));
                 }
             }
         }
@@ -1314,6 +1363,7 @@ namespace SystemTrayMenu.Business
             try
             {
                 List<RowData> rowDatas = new();
+#if TODO
                 DataTable dataTable = (DataTable)menus[0].GetDataGridView().DataSource;
                 foreach (DataRow row in dataTable.Rows)
                 {
@@ -1343,6 +1393,7 @@ namespace SystemTrayMenu.Business
                         rowDatas.Add(rowData);
                     }
                 }
+#endif
 
                 rowDatas = MenusHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();
@@ -1365,7 +1416,8 @@ namespace SystemTrayMenu.Business
             try
             {
                 List<DataRow> rowsToRemove = new();
-                DataGridView dgv = menus[0].GetDataGridView();
+#if TODO
+                ListView dgv = menus[0].GetDataGridView();
                 DataTable dataTable = (DataTable)dgv.DataSource;
                 foreach (DataRow row in dataTable.Rows)
                 {
@@ -1385,6 +1437,7 @@ namespace SystemTrayMenu.Business
 
                 keyboardInput.ClearIsSelectedByKey();
                 dgv.DataSource = dataTable;
+#endif
 
                 hideSubmenuDuringRefreshSearch = false;
                 menus[0].ResetHeight();
@@ -1417,11 +1470,13 @@ namespace SystemTrayMenu.Business
                     rowData,
                 };
 
+#if TODO
                 DataTable dataTable = (DataTable)menus[0].GetDataGridView().DataSource;
                 foreach (DataRow row in dataTable.Rows)
                 {
                     rowDatas.Add((RowData)row[2]);
                 }
+#endif
 
                 rowDatas = MenusHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();

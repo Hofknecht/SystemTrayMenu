@@ -5,16 +5,16 @@
 namespace SystemTrayMenu.Helper
 {
     using System;
-    using System.Windows.Forms;
+    using System.Windows.Input;
 
     /// <summary>
     /// Event Args for the event that is fired after the hot key has been pressed.
     /// </summary>
     internal class KeyPressedEventArgs : EventArgs
     {
-        private readonly Keys key;
+        private readonly Key key;
 
-        internal KeyPressedEventArgs(KeyboardHookModifierKeys modifier, Keys key)
+        internal KeyPressedEventArgs(KeyboardHookModifierKeys modifier, Key key)
         {
             Modifier = modifier;
             this.key = key;
@@ -22,6 +22,6 @@ namespace SystemTrayMenu.Helper
 
         internal KeyboardHookModifierKeys Modifier { get; }
 
-        internal Keys Key => key;
+        internal Key Key => key;
     }
 }

@@ -9,15 +9,15 @@ namespace SystemTrayMenu.Helpers
     using System.Diagnostics.Metrics;
     using System.Reflection.Metadata;
     using System.Threading;
-    using System.Windows.Forms;
     using SharpDX.DirectInput;
+    using Key = System.Windows.Input.Key;
 
     public class JoystickHelper : IDisposable
     {
         private readonly System.Timers.Timer timerReadJoystick = new();
         private readonly object lockRead = new();
         private Joystick joystick;
-        private Keys pressingKey;
+        private Key pressingKey;
         private int pressingKeyCounter;
         private bool joystickHelperEnabled;
 
@@ -32,7 +32,12 @@ namespace SystemTrayMenu.Helpers
             }
         }
 
-        public event Action<Keys> KeyPressed;
+        ~JoystickHelper() // the finalizer
+        {
+            Dispose(false);
+        }
+
+        public event Action<Key> KeyPressed;
 
         public void Enable()
         {
@@ -54,30 +59,31 @@ namespace SystemTrayMenu.Helpers
         {
             if (disposing)
             {
-                timerReadJoystick?.Dispose();
+                timerReadJoystick.Elapsed -= ReadJoystickLoop;
+                timerReadJoystick.Dispose();
                 joystick?.Dispose();
             }
         }
 
-        private static Keys ReadKeyFromState(JoystickUpdate state)
+        private static Key ReadKeyFromState(JoystickUpdate state)
         {
-            Keys keys = Keys.None;
+            Key keys = Key.None;
             switch (state.Offset)
             {
                 case JoystickOffset.PointOfViewControllers0:
                     switch (state.Value)
                     {
                         case 0:
-                            keys = Keys.Up;
+                            keys = Key.Up;
                             break;
                         case 9000:
-                            keys = Keys.Right;
+                            keys = Key.Right;
                             break;
                         case 18000:
-                            keys = Keys.Down;
+                            keys = Key.Down;
                             break;
                         case 27000:
-                            keys = Keys.Left;
+                            keys = Key.Left;
                             break;
                         default:
                             break;
@@ -87,7 +93,7 @@ namespace SystemTrayMenu.Helpers
                 case JoystickOffset.Buttons0:
                     if (state.Value == 128)
                     {
-                        keys = Keys.Enter;
+                        keys = Key.Enter;
                     }
 
                     break;
@@ -130,13 +136,13 @@ namespace SystemTrayMenu.Helpers
                 {
                     if (state.Value < 0)
                     {
-                        pressingKey = Keys.None;
+                        pressingKey = Key.None;
                         pressingKeyCounter = 0;
                         continue;
                     }
 
-                    Keys key = ReadKeyFromState(state);
-                    if (key != Keys.None)
+                    Key key = ReadKeyFromState(state);
+                    if (key != Key.None)
                     {
                         KeyPressed?.Invoke(key);
                         if (state.Offset == JoystickOffset.PointOfViewControllers0)
@@ -147,7 +153,7 @@ namespace SystemTrayMenu.Helpers
                     }
                 }
 
-                if (pressingKey != Keys.None)
+                if (pressingKey != Key.None)
                 {
                     pressingKeyCounter += 1;
                     if (pressingKeyCounter > 1)

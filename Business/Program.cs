@@ -6,8 +6,9 @@ namespace SystemTrayMenu
 {
     using System;
     using System.Reflection;
-    using System.Windows.Forms;
+    using System.Windows;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.Utilities.FormsExtensions;
 
     internal static class Program
     {
@@ -26,17 +27,19 @@ namespace SystemTrayMenu
 
                 if (SingleAppInstance.Initialize())
                 {
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.ThreadException += (sender, e) => AskUserSendError(e.Exception);
+                    AppDomain currentDomain = AppDomain.CurrentDomain;
+                    currentDomain.UnhandledException += (sender, args)
+                        => AskUserSendError((Exception)args.ExceptionObject);
+
                     Scaling.Initialize();
                     FolderOptions.Initialize();
 
-                    using (new App())
+                    using (App app = new App())
                     {
+                        app.InitializeComponent();
                         isStartup = false;
                         Log.WriteApplicationRuns();
-                        Application.Run();
+                        app.Run();
                     }
                 }
 
@@ -55,16 +58,16 @@ namespace SystemTrayMenu
             {
                 Log.Error("Application Crashed", ex);
 
-                DialogResult dialogResult = MessageBox.Show(
+                MessageBoxResult dialogResult = MessageBox.Show(
                     "A problem has been encountered and the application needs to restart. " +
                     "Reporting this error will help us make our product better. " +
                     "Press 'Yes' to open your standard email app (emailto: Markus@Hofknecht.eu). " + Environment.NewLine +
                     @"You can also create an issue manually here https://github.com/Hofknecht/SystemTrayMenu/issues" + Environment.NewLine +
                     "Press 'Cancel' to quit SystemTrayMenu.",
                     "SystemTrayMenu Crashed",
-                    MessageBoxButtons.YesNoCancel);
+                    MessageBoxButton.YesNoCancel);
 
-                if (dialogResult == DialogResult.Yes)
+                if (dialogResult == MessageBoxResult.Yes)
                 {
                     Log.ProcessStart("mailto:" + "markus@hofknecht.eu" +
                         "?subject=SystemTrayMenu Bug reported " +
@@ -72,7 +75,7 @@ namespace SystemTrayMenu
                         "&body=" + ex.ToString());
                 }
 
-                if (!isStartup && dialogResult != DialogResult.Cancel)
+                if (!isStartup && dialogResult != MessageBoxResult.Cancel)
                 {
                     AppRestart.ByThreadException();
                 }

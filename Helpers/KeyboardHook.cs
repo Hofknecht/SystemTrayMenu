@@ -5,15 +5,16 @@
 namespace SystemTrayMenu.Helper
 {
     using System;
-    using System.Windows.Forms;
+    using System.Windows.Input;
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.Utilities.FormsExtensions;
 
     /// <summary>
     /// The enumeration of possible modifiers.
     /// </summary>
     [Flags]
-    internal enum KeyboardHookModifierKeys : uint
+    public enum KeyboardHookModifierKeys : uint
     {
         None = 0,
         Alt = 1,
@@ -30,7 +31,7 @@ namespace SystemTrayMenu.Helper
         public KeyboardHook()
         {
             // register the event of the inner native window.
-            window.KeyPressed += (sender, e) => KeyPressed?.Invoke(this, e);
+            window.KeyPressed += Window_KeyPressed;
         }
 
         /// <summary>
@@ -47,6 +48,7 @@ namespace SystemTrayMenu.Helper
             }
 
             // dispose the inner native window.
+            window.KeyPressed -= Window_KeyPressed;
             window.Dispose();
         }
 
@@ -54,7 +56,7 @@ namespace SystemTrayMenu.Helper
         /// Registers a hot key in the system.
         /// </summary>
         /// <param name="key">The key itself that is associated with the hot key.</param>
-        internal void RegisterHotKey(Keys key)
+        internal void RegisterHotKey(Key key)
         {
             uint keyModifiersNone = 0;
             RegisterHotKey(keyModifiersNone, key);
@@ -87,11 +89,12 @@ namespace SystemTrayMenu.Helper
                     modifiers |= KeyboardHookModifierKeys.Win;
                 }
             }
-
+#if TODO //HOTKEY
             RegisterHotKey(
                 modifiers,
                 HotkeyControl.HotkeyFromString(
                     Properties.Settings.Default.HotKey));
+#endif
         }
 
         /// <summary>
@@ -99,12 +102,17 @@ namespace SystemTrayMenu.Helper
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
-        internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
+        internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Key key)
         {
             RegisterHotKey((uint)modifier, key);
         }
 
-        private void RegisterHotKey(uint modifier, Keys key)
+        private void Window_KeyPressed(object sender, KeyPressedEventArgs e)
+        {
+            KeyPressed?.Invoke(this, e);
+        }
+
+        private void RegisterHotKey(uint modifier, Key key)
         {
             currentId += 1;
 
@@ -123,37 +131,26 @@ namespace SystemTrayMenu.Helper
         {
             private const int WmHotkey = 0x0312;
 
-            public Window()
-            {
-                // create the handle for the window.
-                CreateHandle(new CreateParams());
-            }
-
             public event EventHandler<KeyPressedEventArgs> KeyPressed;
-
-            public void Dispose()
-            {
-                DestroyHandle();
-            }
 
             /// <summary>
             /// Overridden to get the notifications.
             /// </summary>
-            /// <param name="m">m.</param>
-            protected override void WndProc(ref Message m)
+            protected override IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
             {
-                base.WndProc(ref m);
-
                 // check if we got a hot key pressed.
-                if (m.Msg == WmHotkey)
+                if (msg == WmHotkey)
                 {
                     // get the keys.
-                    Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);
-                    KeyboardHookModifierKeys modifier = (KeyboardHookModifierKeys)((int)m.LParam & 0xFFFF);
+                    Key key = (Key)(((int)lParam >> 16) & 0xFFFF);
+                    KeyboardHookModifierKeys modifier = (KeyboardHookModifierKeys)((int)lParam & 0xFFFF);
 
                     // invoke the event to notify the parent.
                     KeyPressed?.Invoke(this, new KeyPressedEventArgs(modifier, key));
                 }
+
+                handled = false;
+                return IntPtr.Zero;
             }
         }
     }

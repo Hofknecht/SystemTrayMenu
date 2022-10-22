@@ -5,7 +5,7 @@
 namespace SystemTrayMenu.Helper
 {
     using System;
-    using System.Windows.Forms;
+    using System.Windows.Threading;
     using SystemTrayMenu.Utilities;
 
     public class Fading : IDisposable
@@ -20,20 +20,20 @@ namespace SystemTrayMenu.Helper
         private const double Shown = 1.00;
         private const double ShownMinus = 0.80; // Shown - StepIn
 
-        private readonly Timer timer = new();
+        private readonly DispatcherTimer timer = new(DispatcherPriority.Render);
         private FadingState state = FadingState.Idle;
         private double opacity;
         private bool visible;
 
         internal Fading()
         {
-            timer.Interval = Interval100FPS;
+            timer.Interval = TimeSpan.FromMilliseconds(Interval100FPS);
             timer.Tick += (sender, e) => FadeStep();
         }
 
-        internal event EventHandlerEmpty Hide;
+        internal event Action Hide;
 
-        internal event EventHandlerEmpty Show;
+        internal event Action Show;
 
         internal event EventHandler<double> ChangeOpacity;
 
@@ -62,7 +62,7 @@ namespace SystemTrayMenu.Helper
         {
             if (disposing)
             {
-                timer.Dispose();
+                timer.Stop();
             }
         }
 

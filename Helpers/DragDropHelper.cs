@@ -9,7 +9,7 @@ namespace SystemTrayMenu.Helper
     using System.Net.Http;
     using System.Text;
     using System.Threading;
-    using System.Windows.Forms;
+    using System.Windows;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
@@ -27,7 +27,7 @@ namespace SystemTrayMenu.Helper
                 string url = encod.GetString(bytes);
                 if (!string.IsNullOrEmpty(url))
                 {
-                    e.Effect = DragDropEffects.Copy;
+                    e.Effects = DragDropEffects.Copy;
                 }
             }
         }

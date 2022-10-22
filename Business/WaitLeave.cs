@@ -5,24 +5,24 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
+    using System.Windows.Threading;
     using SystemTrayMenu.Utilities;
-    using Timer = System.Windows.Forms.Timer;
 
     internal class WaitLeave : IDisposable
     {
-        private readonly Timer timerLeaveCheck = new();
+        private readonly DispatcherTimer timerLeaveCheck = new();
 
         public WaitLeave(int timeUntilTriggered)
         {
-            timerLeaveCheck.Interval = timeUntilTriggered;
+            timerLeaveCheck.Interval = TimeSpan.FromMilliseconds(timeUntilTriggered);
             timerLeaveCheck.Tick += TimerLeaveCheckTick;
         }
 
-        public event EventHandlerEmpty LeaveTriggered;
+        public event Action LeaveTriggered;
 
         public void Dispose()
         {
-            timerLeaveCheck.Dispose();
+            timerLeaveCheck.Stop();
         }
 
         internal void Start()

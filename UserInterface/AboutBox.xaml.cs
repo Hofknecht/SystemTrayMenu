@@ -1,55 +1,67 @@
-﻿// <copyright file="AboutBox.cs" company="PlaceholderCompany">
+﻿// <copyright file="AboutBox.xaml.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
+//
+// Copyright (c) 2022-2022 Peter Kirmeier
+
+#nullable enable
 
 namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Specialized;
-    using System.Drawing;
+    using System.ComponentModel;
     using System.Globalization;
     using System.IO;
     using System.Reflection;
     using System.Text.RegularExpressions;
-    using System.Windows.Forms;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Documents;
+    using System.Windows.Input;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Threading;
     using Microsoft.Win32;
     using SystemTrayMenu.Utilities;
 
     /// <summary>
-    /// Generic, self-contained About Box dialog.
+    /// Logic of About window.
     /// </summary>
-    /// <remarks>
-    /// Jeff Atwood
-    /// http://www.codinghorror.com
-    /// converted to C# by Scott Ferguson
-    /// http://www.forestmoon.com
-    /// .
-    /// </remarks>
-    internal partial class AboutBox : Form
+    public partial class AboutBox : Window
     {
-        private bool isPainted;
-        private string entryAssemblyName;
-        private string callingAssemblyName;
-        private string executingAssemblyName;
-        private NameValueCollection entryAssemblyAttribCollection;
+        private static readonly Regex RegexUrl = new(@"(?#Protocol)(?:(?:ht|f)tp(?:s?)\:\/\/|~/|/)?(?#Username:Password)(?:\w+:\w+@)?(?#Subdomains)(?:(?:[-\w]+\.)+(?#TopLevel Domains)(?:com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|travel|[a-z]{2}))(?#Port)(?::[\d]{1,5})?(?#Directories)(?:(?:(?:/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|/)+|\?|#)?(?#Query)(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:&(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?#Anchor)(?:#(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)?");
+
+        private string? entryAssemblyName;
+        private string? callingAssemblyName;
+        private string? executingAssemblyName;
+        private NameValueCollection entryAssemblyAttribCollection = new();
 
         public AboutBox()
         {
             InitializeComponent();
-            buttonOk.Text = Translator.GetText("OK");
-            buttonDetails.Text = Translator.GetText("Details");
-            buttonSystemInfo.Text = Translator.GetText("System Info");
-            Text = Translator.GetText("About SystemTrayMenu");
-        }
 
-        // <summary>
-        // returns the entry assembly for the current application domain
-        // </summary>
-        // <remarks>
-        // This is usually read-only, but in some weird cases (Smart Client apps)
-        // you won't have an entry assembly, so you may want to set this manually.
-        // </remarks>
-        public Assembly AppEntryAssembly { get; set; }
+            Assembly myassembly = Assembly.GetExecutingAssembly();
+            string myname = myassembly.GetName().Name ?? string.Empty;
+
+            using (Stream? imgstream = myassembly.GetManifestResourceStream(myname + ".Resources.SystemTrayMenu.png"))
+            {
+                if (imgstream != null)
+                {
+                    BitmapImage imageSource = new BitmapImage();
+                    imageSource.BeginInit();
+                    imageSource.StreamSource = imgstream;
+                    imageSource.EndInit();
+
+                    ImagePictureBox.Source = imageSource;
+                    Icon = imageSource;
+                }
+            }
+
+            Loaded += AboutBox_Load;
+
+            TabPanelDetails.Visibility = Visibility.Collapsed;
+            buttonSystemInfo.Visibility = Visibility.Collapsed;
+        }
 
         // <summary>
         // single line of text to show in the application title section of the about box dialog
@@ -60,8 +72,8 @@ namespace SystemTrayMenu.UserInterface
         // </remarks>
         public string AppTitle
         {
-            get => AppTitleLabel.Text;
-            set => AppTitleLabel.Text = value;
+            get => (string)AppTitleLabel.Content;
+            set => AppTitleLabel.Content = value;
         }
 
         // <summary>
@@ -73,17 +85,17 @@ namespace SystemTrayMenu.UserInterface
         // </remarks>
         public string AppDescription
         {
-            get => AppDescriptionLabel.Text;
+            get => (string)AppDescriptionLabel.Content;
             set
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    AppDescriptionLabel.Visible = false;
+                    AppDescriptionLabel.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
-                    AppDescriptionLabel.Visible = true;
-                    AppDescriptionLabel.Text = value;
+                    AppDescriptionLabel.Visibility = Visibility.Visible;
+                    AppDescriptionLabel.Content = value;
                 }
             }
         }
@@ -97,17 +109,17 @@ namespace SystemTrayMenu.UserInterface
         // </remarks>
         public string AppVersion
         {
-            get => AppVersionLabel.Text;
+            get => (string)AppVersionLabel.Content;
             set
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    AppVersionLabel.Visible = false;
+                    AppVersionLabel.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
-                    AppVersionLabel.Visible = true;
-                    AppVersionLabel.Text = value;
+                    AppVersionLabel.Visibility = Visibility.Visible;
+                    AppVersionLabel.Content = value;
                 }
             }
         }
@@ -122,31 +134,19 @@ namespace SystemTrayMenu.UserInterface
         // </remarks>
         public string AppCopyright
         {
-            get => AppCopyrightLabel.Text;
+            get => (string)AppCopyrightLabel.Content;
             set
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    AppCopyrightLabel.Visible = false;
+                    AppCopyrightLabel.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
-                    AppCopyrightLabel.Visible = true;
-                    AppCopyrightLabel.Text = value;
+                    AppCopyrightLabel.Visibility = Visibility.Visible;
+                    AppCopyrightLabel.Content = value;
                 }
             }
-        }
-
-        // <summary>
-        // intended for the default 32x32 application icon to appear in the upper left of the about dialog
-        // </summary>
-        // <remarks>
-        // if you open this form using .ShowDialog(Owner), the icon can be derived from the owning form
-        // </remarks>
-        public Image AppImage
-        {
-            get => ImagePictureBox.Image;
-            set => ImagePictureBox.Image = value;
         }
 
         // <summary>
@@ -160,29 +160,59 @@ namespace SystemTrayMenu.UserInterface
         // </remarks>
         public string AppMoreInfo
         {
-            get => MoreRichTextBox.Text;
+            get => new TextRange(MoreRichTextBox.Document.ContentStart, MoreRichTextBox.Document.ContentEnd).Text;
             set
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    MoreRichTextBox.Visible = false;
+                    MoreRichTextBox.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
-                    MoreRichTextBox.Visible = true;
-                    MoreRichTextBox.Text = value;
+                    MoreRichTextBox.Visibility = Visibility.Visible;
+                    MoreRichTextBox.Document.Blocks.Clear();
+
+                    Paragraph para = new Paragraph();
+
+                    // Parse string to detect hyperlinks and add handlers to them
+                    // See: https://mycsharp.de/forum/threads/97560/erledigt-dynamische-hyperlinks-in-wpf-flowdocument?page=1
+                    int lastPos = 0;
+                    foreach (Match match in RegexUrl.Matches(value))
+                    {
+                        if (match.Index != lastPos)
+                        {
+                            para.Inlines.Add(value.Substring(lastPos, match.Index - lastPos));
+                        }
+
+                        var link = new Hyperlink(new Run(match.Value))
+                        {
+                            NavigateUri = new Uri(match.Value),
+                        };
+                        link.Click += MoreRichTextBox_LinkClicked;
+
+                        para.Inlines.Add(link);
+
+                        lastPos = match.Index + match.Length;
+                    }
+
+                    if (lastPos < value.Length)
+                    {
+                        para.Inlines.Add(value.Substring(lastPos));
+                    }
+
+                    MoreRichTextBox.Document.Blocks.Add(para);
                 }
             }
         }
 
         // <summary>
-        // determines if the "Details" (advanced assembly details) button is shown
+        // returns the entry assembly for the current application domain
         // </summary>
-        public bool AppDetailsButton
-        {
-            get => buttonDetails.Visible;
-            set => buttonDetails.Visible = value;
-        }
+        // <remarks>
+        // This is usually read-only, but in some weird cases (Smart Client apps)
+        // you won't have an entry assembly, so you may want to set this manually.
+        // </remarks>
+        private Assembly? AppEntryAssembly { get; set; }
 
         // <summary>
         // exception-safe retrieval of LastWriteTime for this assembly.
@@ -213,10 +243,10 @@ namespace SystemTrayMenu.UserInterface
         // <returns>DateTime this assembly was last built</returns>
         private static DateTime AssemblyBuildDate(Assembly a, bool forceFileDate)
         {
-            Version assemblyVersion = a.GetName().Version;
+            Version? assemblyVersion = a.GetName().Version;
             DateTime dt;
 
-            if (forceFileDate)
+            if (forceFileDate || assemblyVersion == null)
             {
                 dt = AssemblyLastWriteTime(a);
             }
@@ -262,12 +292,12 @@ namespace SystemTrayMenu.UserInterface
             string name;
             string value;
             NameValueCollection nvc = new();
-            Regex r = new(@"(\.Assembly|\.)(?<Name>[^.]*)Attribute$", RegexOptions.IgnoreCase);
+            Regex r = new(@"(\.Assembly|\.)(?<ColumnText>[^.]*)Attribute$", RegexOptions.IgnoreCase);
 
             foreach (object attrib in a.GetCustomAttributes(false))
             {
                 typeName = attrib.GetType().ToString();
-                name = r.Match(typeName).Groups["Name"].ToString();
+                name = r.Match(typeName).Groups["ColumnText"].ToString();
                 value = string.Empty;
                 switch (typeName)
                 {
@@ -379,7 +409,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (!a.IsDynamic)
                 {
-                    version = a.GetName().Version.ToString();
+                    version = a.GetName().Version?.ToString() ?? version;
                 }
             }
 
@@ -401,8 +431,11 @@ namespace SystemTrayMenu.UserInterface
             string strSysInfoPath = string.Empty;
             try
             {
-                RegistryKey rk = Registry.LocalMachine.OpenSubKey(keyName);
-                strSysInfoPath = (string)rk.GetValue(subKeyRef, string.Empty);
+                RegistryKey? rk = Registry.LocalMachine.OpenSubKey(keyName);
+                if (rk != null)
+                {
+                    strSysInfoPath = (string)rk.GetValue(subKeyRef, string.Empty) !;
+                }
             }
             catch (Exception ex)
             {
@@ -415,39 +448,41 @@ namespace SystemTrayMenu.UserInterface
         // <summary>
         // populate a listview with the specified key and value strings
         // </summary>
-        private static void Populate(ListView lvw, string key, string value)
+        private static void Populate(ListView lvw, string key, string? value)
         {
             if (!string.IsNullOrEmpty(value))
             {
-                ListViewItem lvi = new()
+                lvw.Items.Add(new AssemblyDetailsListViewItem
                 {
-                    Text = key,
-                };
-                lvi.SubItems.Add(value);
-                lvw.Items.Add(lvi);
+                    Key = key,
+                    Value = value,
+                });
             }
         }
 
         // <summary>
         // populate details for a single assembly
         // </summary>
-        private static void PopulateAssemblyDetails(Assembly a, ListView lvw)
+        private static void PopulateAssemblyDetails(Assembly? a, ListView lvw)
         {
             lvw.Items.Clear();
 
-            Populate(lvw, "Image Runtime Version", a.ImageRuntimeVersion);
-
-            NameValueCollection nvc = AssemblyAttribs(a);
-            foreach (string strKey in nvc)
+            if (a != null)
             {
-                Populate(lvw, strKey, nvc[strKey]);
+                Populate(lvw, "Image Runtime Version", a.ImageRuntimeVersion);
+
+                NameValueCollection nvc = AssemblyAttribs(a);
+                foreach (string strKey in nvc)
+                {
+                    Populate(lvw, strKey, nvc[strKey]);
+                }
             }
         }
 
         // <summary>
-        // matches assembly by Assembly.GetName.Name; returns nothing if no match
+        // matches assembly by Assembly.GetName.ColumnText; returns nothing if no match
         // </summary>
-        private static Assembly MatchAssemblyByName(string assemblyName)
+        private static Assembly? MatchAssemblyByName(string assemblyName)
         {
             foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
             {
@@ -460,9 +495,9 @@ namespace SystemTrayMenu.UserInterface
             return null;
         }
 
-        private void TabPanelDetails_SelectedIndexChanged(object sender, EventArgs e)
+        private void TabPanelDetails_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (TabPanelDetails.SelectedTab == TabPageAssemblyDetails)
+            if (TabPanelDetails.SelectedItem == TabPageAssemblyDetails)
             {
                 AssemblyNamesComboBox.Focus();
             }
@@ -485,9 +520,9 @@ namespace SystemTrayMenu.UserInterface
                     "System Information is unavailable at this time." +
                     Environment.NewLine + Environment.NewLine +
                     "(couldn't find path for Microsoft System Information Tool in the registry.)",
-                    Text,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                    Title,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
                 return;
             }
 
@@ -500,9 +535,9 @@ namespace SystemTrayMenu.UserInterface
         private void PopulateAppInfo()
         {
             AppDomain d = AppDomain.CurrentDomain;
-            Populate(AppInfoListView, "Application Name", Assembly.GetEntryAssembly().GetName().Name);
+            Populate(AppInfoListView, "Application ColumnText", Assembly.GetEntryAssembly()?.GetName().Name);
             Populate(AppInfoListView, "Application Base", d.SetupInformation.ApplicationBase);
-            Populate(AppInfoListView, "Friendly Name", d.FriendlyName);
+            Populate(AppInfoListView, "Friendly ColumnText", d.FriendlyName);
             Populate(AppInfoListView, " ", " ");
             Populate(AppInfoListView, "Entry Assembly", entryAssemblyName);
             Populate(AppInfoListView, "Executing Assembly", executingAssemblyName);
@@ -519,7 +554,7 @@ namespace SystemTrayMenu.UserInterface
                 PopulateAssemblySummary(a);
             }
 
-            AssemblyNamesComboBox.SelectedIndex = AssemblyNamesComboBox.FindStringExact(entryAssemblyName);
+            AssemblyNamesComboBox.SelectedIndex = AssemblyNamesComboBox.Items.IndexOf(entryAssemblyName);
         }
 
         // <summary>
@@ -529,39 +564,36 @@ namespace SystemTrayMenu.UserInterface
         {
             NameValueCollection nvc = AssemblyAttribs(a);
 
-            string strAssemblyName = a.GetName().Name;
-
-            ListViewItem lvi = new()
-            {
-                Text = strAssemblyName,
-                Tag = strAssemblyName,
-            };
+            string strAssemblyName = a.GetName().Name ?? "?";
+            string strAssemblyNameFull = strAssemblyName;
             if (strAssemblyName == callingAssemblyName)
             {
-                lvi.Text += " (calling)";
+                strAssemblyNameFull += " (calling)";
             }
-
-            if (strAssemblyName == executingAssemblyName)
+            else if (strAssemblyName == executingAssemblyName)
             {
-                lvi.Text += " (executing)";
+                strAssemblyNameFull += " (executing)";
             }
-
-            if (strAssemblyName == entryAssemblyName)
+            else if (strAssemblyName == entryAssemblyName)
             {
-                lvi.Text += " (entry)";
+                strAssemblyNameFull += " (entry)";
             }
 
-            lvi.SubItems.Add(nvc["version"]);
-            lvi.SubItems.Add(nvc["builddate"]);
-            lvi.SubItems.Add(nvc["codebase"]);
-            AssemblyInfoListView.Items.Add(lvi);
+            AssemblyInfoListView.Items.Add(new AssemblyInfoListViewItem
+            {
+                Name = strAssemblyNameFull,
+                Version = nvc["version"] ?? string.Empty,
+                Built = nvc["builddate"] ?? string.Empty,
+                CodeBase = nvc["codebase"] ?? string.Empty,
+                Tag = strAssemblyName,
+            });
             AssemblyNamesComboBox.Items.Add(strAssemblyName);
         }
 
         // <summary>
         // retrieves a cached value from the entry assembly attribute lookup collection
         // </summary>
-        private string EntryAssemblyAttrib(string strName)
+        private string? EntryAssemblyAttrib(string strName)
         {
             if (entryAssemblyAttribCollection[strName] == null)
             {
@@ -569,7 +601,7 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                return entryAssemblyAttribCollection[strName].ToString(CultureInfo.InvariantCulture);
+                return entryAssemblyAttribCollection[strName]?.ToString(CultureInfo.InvariantCulture);
             }
         }
 
@@ -579,41 +611,34 @@ namespace SystemTrayMenu.UserInterface
         private void PopulateLabels()
         {
             // get entry assembly attribs
-            entryAssemblyAttribCollection = AssemblyAttribs(AppEntryAssembly);
-
-            // set icon from parent, if present
-            if (Owner != null)
-            {
-                Icon = Owner.Icon;
-                ImagePictureBox.Image = Icon.ToBitmap();
-            }
+            entryAssemblyAttribCollection = AssemblyAttribs(AppEntryAssembly!);
 
             // replace all labels and window title
-            Text = ReplaceTokens(Text);
-            AppTitleLabel.Text = ReplaceTokens(AppTitleLabel.Text);
-            if (AppDescriptionLabel.Visible)
+            Title = ReplaceTokens(Title);
+            AppTitle = ReplaceTokens(AppTitle);
+            if (AppDescriptionLabel.Visibility == Visibility.Visible)
             {
-                AppDescriptionLabel.Text = ReplaceTokens(AppDescriptionLabel.Text);
+                AppDescription = ReplaceTokens(AppDescription);
             }
 
-            if (AppCopyrightLabel.Visible)
+            if (AppCopyrightLabel.Visibility == Visibility.Visible)
             {
-                AppCopyrightLabel.Text = ReplaceTokens(AppCopyrightLabel.Text);
+                AppCopyright = ReplaceTokens(AppCopyright);
             }
 
-            if (AppVersionLabel.Visible)
+            if (AppVersionLabel.Visibility == Visibility.Visible)
             {
-                AppVersionLabel.Text = ReplaceTokens(AppVersionLabel.Text);
+                AppVersion = ReplaceTokens(AppVersion);
             }
 
-            if (AppDateLabel.Visible)
+            if (AppDateLabel.Visibility == Visibility.Visible)
             {
-                AppDateLabel.Text = ReplaceTokens(AppDateLabel.Text);
+                AppDateLabel.Content = ReplaceTokens((string)AppDateLabel.Content);
             }
 
-            if (MoreRichTextBox.Visible)
+            if (MoreRichTextBox.Visibility == Visibility.Visible)
             {
-                MoreRichTextBox.Text = ReplaceTokens(MoreRichTextBox.Text);
+                AppMoreInfo = ReplaceTokens(AppMoreInfo);
             }
         }
 
@@ -622,188 +647,160 @@ namespace SystemTrayMenu.UserInterface
         // </summary>
         private string ReplaceTokens(string s)
         {
-            s = s.Replace("%title%", EntryAssemblyAttrib("title"), StringComparison.InvariantCulture);
-            s = s.Replace("%copyright%", EntryAssemblyAttrib("copyright"), StringComparison.InvariantCulture);
-            s = s.Replace("%description%", EntryAssemblyAttrib("description"), StringComparison.InvariantCulture);
-            s = s.Replace("%company%", EntryAssemblyAttrib("company"), StringComparison.InvariantCulture);
-            s = s.Replace("%product%", EntryAssemblyAttrib("product"), StringComparison.InvariantCulture);
-            s = s.Replace("%trademark%", EntryAssemblyAttrib("trademark"), StringComparison.InvariantCulture);
-            s = s.Replace("%year%", DateTime.Now.Year.ToString(CultureInfo.InvariantCulture), StringComparison.InvariantCulture);
-            s = s.Replace("%version%", EntryAssemblyAttrib("version"), StringComparison.InvariantCulture);
-            s = s.Replace("%builddate%", EntryAssemblyAttrib("builddate"), StringComparison.InvariantCulture);
-            return s;
+            return s.Replace("%title%", EntryAssemblyAttrib("title"), StringComparison.InvariantCulture)
+                .Replace("%copyright%", EntryAssemblyAttrib("copyright"), StringComparison.InvariantCulture)
+                .Replace("%description%", EntryAssemblyAttrib("description"), StringComparison.InvariantCulture)
+                .Replace("%company%", EntryAssemblyAttrib("company"), StringComparison.InvariantCulture)
+                .Replace("%product%", EntryAssemblyAttrib("product"), StringComparison.InvariantCulture)
+                .Replace("%trademark%", EntryAssemblyAttrib("trademark"), StringComparison.InvariantCulture)
+                .Replace("%year%", DateTime.Now.Year.ToString(CultureInfo.InvariantCulture), StringComparison.InvariantCulture)
+                .Replace("%version%", EntryAssemblyAttrib("version"), StringComparison.InvariantCulture)
+                .Replace("%builddate%", EntryAssemblyAttrib("builddate"), StringComparison.InvariantCulture);
         }
 
         // <summary>
         // things to do when form is loaded
         // </summary>
-        private void AboutBox_Load(object sender, EventArgs e)
+        private void AboutBox_Load(object sender, RoutedEventArgs e)
         {
             // if the user didn't provide an assembly, try to guess which one is the entry assembly
-            if (AppEntryAssembly == null)
-            {
-                AppEntryAssembly = Assembly.GetEntryAssembly();
-            }
-
-            if (AppEntryAssembly == null)
-            {
-                AppEntryAssembly = Assembly.GetExecutingAssembly();
-            }
+            AppEntryAssembly ??= Assembly.GetEntryAssembly() !;
+            AppEntryAssembly ??= Assembly.GetExecutingAssembly();
 
             executingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
             callingAssemblyName = Assembly.GetCallingAssembly().GetName().Name;
 
             // for web hosted apps, GetEntryAssembly = nothing
-            entryAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
+            entryAssemblyName = Assembly.GetEntryAssembly()?.GetName().Name;
 
-            TabPanelDetails.Visible = false;
-            if (!MoreRichTextBox.Visible)
+            TabPanelDetails.Visibility = Visibility.Collapsed;
+            if (MoreRichTextBox.Visibility != Visibility.Visible)
             {
                 Height -= MoreRichTextBox.Height;
             }
-        }
 
-        // <summary>
-        // things to do when form is FIRST painted
-        // </summary>
-        private void AboutBox_Paint(object sender, PaintEventArgs e)
-        {
-            if (!isPainted)
-            {
-                isPainted = true;
-                Application.DoEvents();
-                Cursor.Current = Cursors.WaitCursor;
-                PopulateLabels();
-                Cursor.Current = Cursors.Default;
-            }
+            Dispatcher.Invoke(
+                DispatcherPriority.Loaded,
+                new Action(delegate
+                {
+                    Cursor = Cursors.Wait;
+                    PopulateLabels();
+                    Cursor = null;
+                }));
         }
 
         // <summary>
         // expand about dialog to show additional advanced details
         // </summary>
-        private void DetailsButton_Click(object sender, EventArgs e)
+        private void DetailsButton_Click(object sender, RoutedEventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            buttonDetails.Visible = false;
-            SuspendLayout();
-            MaximizeBox = true;
-            FormBorderStyle = FormBorderStyle.Sizable;
-            TabPanelDetails.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            AutoSize = false;
-            SizeGripStyle = SizeGripStyle.Show;
-            Size = new Size(580, Size.Height);
-            MoreRichTextBox.Visible = false;
-            TabPanelDetails.Visible = true;
-            buttonSystemInfo.Visible = true;
+            Cursor = Cursors.Wait;
+            MoreRichTextBox.Visibility = Visibility.Collapsed;
+            TabPanelDetails.Visibility = Visibility.Visible;
+            buttonSystemInfo.Visibility = Visibility.Visible;
+            buttonDetails.Visibility = Visibility.Collapsed;
+            UpdateLayout(); // Force AutoSize to update the height before switching to manual mode
+            SizeToContent = SizeToContent.Manual;
+            ResizeMode = ResizeMode.CanResizeWithGrip;
+            TabPanelDetails.Height = double.NaN;
+            if (Width < 580)
+            {
+                Width = 580;
+            }
+
             PopulateAssemblies();
             PopulateAppInfo();
-            CenterToParent();
-            ResumeLayout();
-            Cursor.Current = Cursors.Default;
+            Cursor = null;
         }
 
         // <summary>
         // for detailed system info, launch the external Microsoft system info app
         // </summary>
-        private void SysInfoButton_Click(object sender, EventArgs e)
+        private void SysInfoButton_Click(object sender, RoutedEventArgs e)
         {
             ShowSysInfo();
+        }
+
+        /// <summary>
+        /// Closes the window.
+        /// </summary>
+        private void OkButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
 
         // <summary>
         // if an assembly is double-clicked, go to the detail page for that assembly
         // </summary>
-        private void AssemblyInfoListView_DoubleClick(object sender, EventArgs e)
+        private void AssemblyInfoListView_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            string strAssemblyName;
             if (AssemblyInfoListView.SelectedItems.Count > 0)
             {
-                strAssemblyName = Convert.ToString(AssemblyInfoListView.SelectedItems[0].Tag, CultureInfo.InvariantCulture);
-                AssemblyNamesComboBox.SelectedIndex = AssemblyNamesComboBox.FindStringExact(strAssemblyName);
-                TabPanelDetails.SelectedTab = TabPageAssemblyDetails;
+                string? strAssemblyName = Convert.ToString(((AssemblyInfoListViewItem?)AssemblyInfoListView.SelectedItems[0])?.Tag, CultureInfo.InvariantCulture);
+                if (!string.IsNullOrEmpty(strAssemblyName))
+                {
+                    AssemblyNamesComboBox.SelectedIndex = AssemblyNamesComboBox.Items.IndexOf(strAssemblyName);
+                    TabPanelDetails.SelectedItem = TabPageAssemblyDetails;
+                }
             }
         }
 
         // <summary>
         // if a new assembly is selected from the combo box, show details for that assembly
         // </summary>
-        private void AssemblyNamesComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void AssemblyNamesComboBox_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
-            string strAssemblyName = Convert.ToString(AssemblyNamesComboBox.SelectedItem, CultureInfo.InvariantCulture);
-            PopulateAssemblyDetails(MatchAssemblyByName(strAssemblyName), AssemblyDetailsListView);
+            string? strAssemblyName = Convert.ToString(AssemblyNamesComboBox.SelectedItem, CultureInfo.InvariantCulture);
+            if (!string.IsNullOrEmpty(strAssemblyName))
+            {
+                PopulateAssemblyDetails(MatchAssemblyByName(strAssemblyName), AssemblyDetailsListView);
+            }
         }
 
         // <summary>
         // sort the assembly list by column
         // </summary>
-        private void AssemblyInfoListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        private void AssemblyInfoListView_ColumnClick(object sender, RoutedEventArgs e)
         {
-            int intTargetCol = e.Column + 1;
-
-            if (AssemblyInfoListView.Tag != null)
-            {
-                if (Math.Abs(Convert.ToInt32(AssemblyInfoListView.Tag, CultureInfo.InvariantCulture)) == intTargetCol)
-                {
-                    intTargetCol = -Convert.ToInt32(AssemblyInfoListView.Tag, CultureInfo.InvariantCulture);
-                }
-            }
-
-            AssemblyInfoListView.Tag = intTargetCol;
-            AssemblyInfoListView.ListViewItemSorter = new ListViewItemComparer(intTargetCol, true);
+            AssemblyInfoListView.Items.SortDescriptions.Clear();
+            AssemblyInfoListView.Items.SortDescriptions.Add(new SortDescription(
+                ((GridViewColumnHeader)e.OriginalSource).Column.Header.ToString(),
+                ListSortDirection.Ascending));
+            AssemblyInfoListView.Items.Refresh();
         }
 
         // <summary>
         // launch any http:// or mailto: links clicked in the body of the rich text box
         // </summary>
-        private void MoreRichTextBox_LinkClicked(object sender, LinkClickedEventArgs e)
+        private void MoreRichTextBox_LinkClicked(object sender, RoutedEventArgs e)
         {
-            Log.ProcessStart(e.LinkText);
+            Log.ProcessStart(((Hyperlink)sender).NavigateUri.ToString());
         }
 
-        // <summary>
-        // things to do when the selected tab is changed
-        // </summary>
-        private class ListViewItemComparer : System.Collections.IComparer
+        /// <summary>
+        /// Type for ListView items.
+        /// </summary>
+        private class AssemblyDetailsListViewItem
         {
-            private readonly int intCol;
-            private readonly bool isAscending = true;
+            public string Key { get; set; } = string.Empty;
 
-            public ListViewItemComparer()
-            {
-                intCol = 0;
-                isAscending = true;
-            }
+            public string Value { get; set; } = string.Empty;
+        }
 
-            public ListViewItemComparer(int column, bool ascending)
-            {
-                if (column < 0)
-                {
-                    isAscending = false;
-                }
-                else
-                {
-                    isAscending = ascending;
-                }
+        /// <summary>
+        /// Type for ListView items.
+        /// </summary>
+        private class AssemblyInfoListViewItem
+        {
+            public string Name { get; set; } = string.Empty;
 
-                intCol = Math.Abs(column) - 1;
-            }
+            public string Version { get; set; } = string.Empty;
 
-            public int Compare(object x, object y)
-            {
-                int intResult = string.Compare(
-                    ((ListViewItem)x).SubItems[intCol].Text,
-                    ((ListViewItem)y).SubItems[intCol].Text,
-                    StringComparison.Ordinal);
-                if (isAscending)
-                {
-                    return intResult;
-                }
-                else
-                {
-                    return -intResult;
-                }
-            }
+            public string Built { get; set; } = string.Empty;
+
+            public string CodeBase { get; set; } = string.Empty;
+
+            public string Tag { get; set; } = string.Empty;
         }
     }
 }
