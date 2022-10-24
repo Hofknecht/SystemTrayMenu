@@ -46,41 +46,50 @@ namespace SystemTrayMenu.Utilities
         {
             string resolvedFilename = string.Empty;
             isFolder = false;
-            string pathOnly = Path.GetDirectoryName((string)shortcutFilename);
-            string filenameOnly = Path.GetFileName((string)shortcutFilename);
-
-            Shell shell = new();
-            Folder folder = shell.NameSpace(pathOnly);
-            FolderItem folderItem = folder.ParseName(filenameOnly);
-            if (folderItem != null)
+            try
             {
-                try
+                string pathOnly = Path.GetDirectoryName((string)shortcutFilename);
+                string filenameOnly = Path.GetFileName((string)shortcutFilename);
+
+                Shell shell = new();
+                Folder folder = shell.NameSpace(pathOnly);
+                if (folder == null)
                 {
-                    ShellLinkObject link = (ShellLinkObject)folderItem.GetLink;
-                    isFolder = link.Target.IsFolder;
-                    if (string.IsNullOrEmpty(link.Path))
+                    Log.Info($"{nameof(GetShortcutFileNamePath)} folder == null for path:'{shortcutFilename}'");
+                    return resolvedFilename;
+                }
+
+                FolderItem folderItem = folder.ParseName(filenameOnly);
+                if (folderItem == null)
+                {
+                    Log.Info($"{nameof(GetShortcutFileNamePath)} folderItem == null for path:'{shortcutFilename}'");
+                    return resolvedFilename;
+                }
+
+                ShellLinkObject link = (ShellLinkObject)folderItem.GetLink;
+                isFolder = link.Target.IsFolder;
+                if (string.IsNullOrEmpty(link.Path))
+                {
+                    // https://github.com/Hofknecht/SystemTrayMenu/issues/242
+                    // do not set CLSID key (GUID) shortcuts as resolvedFilename
+                    if (!link.Target.Path.Contains("::{"))
                     {
-                        // https://github.com/Hofknecht/SystemTrayMenu/issues/242
-                        // do not set CLSID key (GUID) shortcuts as resolvedFilename
-                        if (!link.Target.Path.Contains("::{"))
-                        {
-                            resolvedFilename = link.Target.Path;
-                        }
-                    }
-                    else
-                    {
-                        resolvedFilename = link.Path;
+                        resolvedFilename = link.Target.Path;
                     }
                 }
-                catch (UnauthorizedAccessException)
+                else
                 {
-                    // https://stackoverflow.com/questions/2934420/why-do-i-get-e-accessdenied-when-reading-public-shortcuts-through-shell32
-                    // e.g. Administrative Tools\Component Services.lnk which can not be resolved, do not spam the logfile in this case
+                    resolvedFilename = link.Path;
                 }
-                catch (Exception ex)
-                {
-                    Log.Warn($"shortcutFilename:'{shortcutFilename}'", ex);
-                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // https://stackoverflow.com/questions/2934420/why-do-i-get-e-accessdenied-when-reading-public-shortcuts-through-shell32
+                // e.g. Administrative Tools\Component Services.lnk which can not be resolved, do not spam the logfile in this case
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"shortcutFilename:'{shortcutFilename}'", ex);
             }
 
             return resolvedFilename;

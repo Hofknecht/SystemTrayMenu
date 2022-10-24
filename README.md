@@ -240,7 +240,6 @@ Special thanks to our productive contibutors!
 
 Thanks for ideas, reporting issues and contributing!
 
-#462 [Mario Sedlmayr](https://github.com/verdammt89x),
 #123 [Mordecai00](https://github.com/Mordecai00), 
 #125 [Holgermh](https://github.com/Holgermh), 
 #135 #153 #154 #164 [jakkaas](https://github.com/jakkaas), 
@@ -274,7 +273,7 @@ Thanks for ideas, reporting issues and contributing!
 #283 #284 #289 [RuSieg](https://github.com/RuSieg),
 #285 #286 [dao-net](https://github.com/dao-net),
 #288 William P.,
-#294 #295 #296 Stefan Mahrer,
+#294 #295 #296 Stefan M.,
 #225 #297 #299 #317 #321 #324 #330 #386 #390 #401 #402 #407 #409 #414 #416 #418 #428 #430 #443 [chip33](https://github.com/chip33),
 #298 [phanirithvij](https://github.com/phanirithvij),
 #306 [wini2](https://github.com/wini2),
@@ -289,7 +288,10 @@ Thanks for ideas, reporting issues and contributing!
 #446 [timinformatica](https://github.com/timinformatica),
 #450 [ppt-oldoerp](https://github.com/ppt-oldoerp),
 #453 [fubaWoW](https://github.com/fubaWoW),
-#454 [WouterVanGoey](https://github.com/WouterVanGoey)
+#454 [WouterVanGoey](https://github.com/WouterVanGoey),
+#462 [verdammt89x](https://github.com/verdammt89x),
+#463 Dirk S.
+
 
 Donations
 ------------------
