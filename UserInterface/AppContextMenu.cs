@@ -78,7 +78,7 @@ namespace SystemTrayMenu.Helper
             moreInfo += "(Version 3, 29 June 2007)" + Environment.NewLine;
 
             moreInfo += "Thanks for ideas, reporting issues and contributing!" + Environment.NewLine;
-            moreInfo += "#462 verdammt89x, #123 Mordecai00, #125 Holgermh, #135 #153 #154 #164 jakkaas, #145 Pascal Aloy, #153 #158 #160 blackcrack,";
+            moreInfo += "#123 Mordecai00, #125 Holgermh, #135 #153 #154 #164 jakkaas, #145 Pascal Aloy, #153 #158 #160 blackcrack,";
             moreInfo += "#162 HansieNL, #163 igorruckert, #171 kehoen, #186 Dtrieb, #188 #189 #191 #195 iJahangard, #195 #197 #225 #238 the-phuctran, ";
             moreInfo += "#205 kristofzerbe, #209 jonaskohl, #211 blacksparrow15, #220 #403 Yavuz E., #229 #230 #239 Peter O., #231 Ryonez, ";
             moreInfo += "#235 #242 243 #247, #271 Tom, #237 Torsten S., #240 video Patrick, #244 Gunter D., #246 #329 MACE4GITHUB, #259 #310 vanjac, ";
@@ -88,6 +88,7 @@ namespace SystemTrayMenu.Helper
             moreInfo += "#298 phanirithvij, #306 wini2, #370 dna5589, #372 not-nef, #376 Michelle H., ";
             moreInfo += "#377 SoenkeHob, #380 #394 TransLucida, #384 #434 #435 boydfields, #386 visusys, #387 #411 #444 yrctw" + Environment.NewLine;
             moreInfo += "#446 timinformatica, #450 ppt-oldoerp, #453 fubaWoW, #454 WouterVanGoey" + Environment.NewLine;
+            moreInfo += "#462 verdammt89x, #463 Dirk S." + Environment.NewLine;
             moreInfo += @"
 Sponsors - Thank you!
 ------------------
