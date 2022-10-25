@@ -7,12 +7,58 @@
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
         xmlns:local="clr-namespace:SystemTrayMenu.UserInterface"
         x:Class="SystemTrayMenu.UserInterface.SettingsWindow"
-        mc:Ignorable="d" Title="{u:Translate 'Settings'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
-    <StackPanel>
-        <TabControl>
+        mc:Ignorable="d" Title="{u:Translate 'Settings'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="200" MinHeight="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0">
             <TabItem Header="{u:Translate 'General'}">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                    <Label Content="fill me 1" Background="Red"/>
+                    <StackPanel>
+                        <GroupBox Header="{u:Translate 'Directory'}">
+                            <StackPanel>
+                                <TextBox x:Name="textBoxFolder" BorderBrush="{x:Null}" Background="{x:Null}" IsReadOnly="True" />
+                                <DockPanel LastChildFill="False">
+                                    <Button DockPanel.Dock="Left" Content="{u:Translate 'Changing directory'}" Margin="3" MinWidth="76" Click="ButtonChange_Click"/>
+                                    <Button DockPanel.Dock="Right" Content="{u:Translate 'Open directory'}" Margin="3" MinWidth="76" Click="ButtonOpenFolder_Click"/>
+                                </DockPanel>
+                                <CheckBox x:Name="checkBoxSetFolderByWindowsContextMenu" Content="{u:Translate 'Set by context menu '}"/>
+                                <DockPanel LastChildFill="False">
+                                    <Button DockPanel.Dock="Left" Content="{u:Translate 'Relative directory'}" Margin="3" MinWidth="76" Click="ButtonChangeRelativeFolder_Click"/>
+                                    <Button DockPanel.Dock="Right" Content="{u:Translate 'Open application directory'}" Margin="3" MinWidth="76" Click="ButtonOpenAssemblyLocation_Click"/>
+                                </DockPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{u:Translate 'Configuration and log files'}">
+                            <StackPanel>
+                                <CheckBox x:Name="checkBoxSaveConfigInApplicationDirectory" Content="{u:Translate 'Save configuration file in application directory'}"/>
+                                <CheckBox x:Name="checkBoxSaveLogFileInApplicationDirectory" Content="{u:Translate 'Saving log file in application directory'}"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox x:Name="groupBoxAutostart" Header="{u:Translate 'App start'}">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox x:Name="checkBoxAutostart" Content="{u:Translate 'Start with Windows'}" VerticalAlignment="Center"/>
+                                    <Button x:Name="buttonAddStartup" Content="{u:Translate 'Start with Windows'}" Margin="3" MinWidth="76" Click="ButtonAddStartup_Click" VerticalAlignment="Center"/>
+                                    <Label x:Name="labelStartupStatus" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <CheckBox x:Name="checkBoxCheckForUpdates" Content="{u:Translate 'Check for updates'}"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{u:Translate 'Hotkey'}">
+                            <DockPanel LastChildFill="False">
+                                <Label Content="textBoxHotkeyPlaceholder" Background="Red" VerticalAlignment="Center"/>
+                                <Button x:Name="buttonHotkeyDefault" DockPanel.Dock="Right" Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonHotkeyDefault_Click" VerticalAlignment="Center"/>
+                            </DockPanel>
+                        </GroupBox>
+                        <GroupBox Header="{u:Translate 'Language'}">
+                            <ComboBox x:Name="comboBoxLanguage" HorizontalAlignment="Left" IsReadOnly="True" DisplayMemberPath="Name" SelectedValuePath="Value" MinWidth="120"/>
+                        </GroupBox>
+                        <Button Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonGeneralDefault_Click" HorizontalAlignment="Left"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="{u:Translate 'Size and location'}">
@@ -42,9 +88,9 @@
             </TabItem>
         </TabControl>
 
-        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" Height="25" Click="ButtonOk_Click"/>
-            <Button x:Name="buttonCancel" Content="{u:Translate 'Abort'}" Margin="3" MinWidth="76" Height="25" Click="ButtonCancel_Click"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" Click="ButtonOk_Click"/>
+            <Button x:Name="buttonCancel" Content="{u:Translate 'Abort'}" Margin="3" MinWidth="76" Click="ButtonCancel_Click"/>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </Window>

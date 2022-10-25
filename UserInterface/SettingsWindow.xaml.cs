@@ -6,10 +6,15 @@
 
 namespace SystemTrayMenu.UserInterface
 {
+    using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Media.Imaging;
+    using SystemTrayMenu.Properties;
+    using SystemTrayMenu.Utilities;
+    using Windows.ApplicationModel;
 
     /// <summary>
     /// Logic of SettingsWindow.xaml .
@@ -108,32 +113,15 @@ namespace SystemTrayMenu.UserInterface
                 textBoxColor.Tag = pictureBox;
                 pictureBox.Tag = textBoxColor;
             }
-
+#endif
             Translate();
             void Translate()
             {
-                groupBoxFolder.Text = Translator.GetText("Directory");
-                buttonChangeFolder.Text = Translator.GetText("Changing directory");
-                buttonOpenFolder.Text = Translator.GetText("Open directory");
-                checkBoxSetFolderByWindowsContextMenu.Text = Translator.GetText("Set by context menu ");
-                groupBoxConfigAndLogfile.Text = Translator.GetText("Configuration and log files");
-                buttonChangeRelativeFolder.Text = Translator.GetText("Relative directory");
-                checkBoxSaveConfigInApplicationDirectory.Text = Translator.GetText("Save configuration file in application directory");
-                checkBoxSaveLogFileInApplicationDirectory.Text = Translator.GetText("Saving log file in application directory");
-                buttonOpenAssemblyLocation.Text = Translator.GetText("Open application directory");
-                groupBoxAutostart.Text = Translator.GetText("App start");
                 if (IsStartupTask())
                 {
-                    groupBoxAutostart.Text += $" ({Translator.GetText("Task Manager")})";
+                    groupBoxAutostart.Content = $"{(string)groupBoxAutostart.Content} ({Translator.GetText("Task Manager")})";
                 }
-
-                checkBoxAutostart.Text = Translator.GetText("Start with Windows");
-                checkBoxCheckForUpdates.Text = Translator.GetText("Check for updates");
-                buttonAddStartup.Text = Translator.GetText("Start with Windows");
-                groupBoxHotkey.Text = Translator.GetText("Hotkey");
-                buttonHotkeyDefault.Text = Translator.GetText("Default");
-                groupBoxLanguage.Text = Translator.GetText("Language");
-                buttonGeneralDefault.Text = Translator.GetText("Default");
+#if TODO
 
                 groupBoxSize.Text = Translator.GetText("Sizes in percent");
                 labelSizeInPercent.Text = Translator.GetText("Application size");
@@ -260,8 +248,9 @@ namespace SystemTrayMenu.UserInterface
 
                 buttonColorsDefault.Text = Translator.GetText("Default");
                 buttonColorsDefaultDarkMode.Text = Translator.GetText("Default");
+#endif
             }
-
+#if TODO
             textBoxFolder.Text = Config.Path;
             checkBoxSetFolderByWindowsContextMenu.Checked = Settings.Default.SetFolderByWindowsContextMenu;
             checkBoxSaveConfigInApplicationDirectory.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
@@ -281,6 +270,7 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxCheckForUpdates.Checked = Settings.Default.CheckForUpdates;
             textBoxHotkey.SetHotkey(Settings.Default.HotKey);
+#endif
 
             InitializeLanguage();
             void InitializeLanguage()
@@ -355,14 +345,12 @@ namespace SystemTrayMenu.UserInterface
                     new Language() { Name = "中文(简体)", Value = "zh-CN" },
                     new Language() { Name = "日本語", Value = "ja" },
                 };
-                comboBoxLanguage.DataSource = dataSource;
-                comboBoxLanguage.DisplayMember = "Name";
-                comboBoxLanguage.ValueMember = "Value";
-                comboBoxLanguage.SelectedValue =
-                    Settings.Default.CurrentCultureInfoName;
+                comboBoxLanguage.ItemsSource = dataSource;
+                comboBoxLanguage.SelectedValue = Settings.Default.CurrentCultureInfoName;
                 comboBoxLanguage.SelectedValue ??= "en";
             }
 
+#if TODO
             numericUpDownSizeInPercent.Minimum = 100;
             numericUpDownSizeInPercent.Maximum = 200;
             numericUpDownSizeInPercent.Increment = 5;
@@ -608,7 +596,7 @@ namespace SystemTrayMenu.UserInterface
                 settingsForm.Show();
             }
         }
-        
+
         public static bool IsOpen()
         {
             return settingsForm != null;
@@ -807,7 +795,7 @@ namespace SystemTrayMenu.UserInterface
                 Log.Warn("DeleteSetFolderByWindowsContextMenu failed", ex);
             }
         }
-
+#endif
         private static bool IsStartupTask()
         {
             bool useStartupTask = false;
@@ -817,6 +805,7 @@ namespace SystemTrayMenu.UserInterface
             return useStartupTask;
         }
 
+#if TODO
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
@@ -1034,36 +1023,32 @@ namespace SystemTrayMenu.UserInterface
 #endif
             Close();
         }
-#if TODO
-        private void ButtonAddStartup_Click(object sender, EventArgs e)
-        {
-            _ = AddStartUpAsync();
-            async Task AddStartUpAsync()
-            {
-                // Pass the task ID you specified in the appxmanifest file
-                StartupTask startupTask = await StartupTask.GetAsync("MyStartupId");
-                Log.Info($"Autostart {startupTask.State}.");
 
-                switch (startupTask.State)
-                {
-                    case StartupTaskState.Enabled:
-                    case StartupTaskState.EnabledByPolicy:
-                        UpdateLabelStartupStatus(startupTask.State);
-                        break;
-                    case StartupTaskState.Disabled:
-                        // Task is disabled but can be enabled.
-                        StartupTaskState newState = await startupTask.RequestEnableAsync();
-                        UpdateLabelStartupStatus(newState);
-                        break;
-                    case StartupTaskState.DisabledByUser:
-                        UpdateLabelStartupStatus(startupTask.State);
-                        break;
-                    case StartupTaskState.DisabledByPolicy:
-                        UpdateLabelStartupStatus(startupTask.State);
-                        break;
-                    default:
-                        break;
-                }
+        private async void ButtonAddStartup_Click(object sender, RoutedEventArgs e)
+        {
+            // Pass the task ID you specified in the appxmanifest file
+            StartupTask startupTask = await StartupTask.GetAsync("MyStartupId");
+            Log.Info($"Autostart {startupTask.State}.");
+
+            switch (startupTask.State)
+            {
+                case StartupTaskState.Enabled:
+                case StartupTaskState.EnabledByPolicy:
+                    UpdateLabelStartupStatus(startupTask.State);
+                    break;
+                case StartupTaskState.Disabled:
+                    // Task is disabled but can be enabled.
+                    StartupTaskState newState = await startupTask.RequestEnableAsync();
+                    UpdateLabelStartupStatus(newState);
+                    break;
+                case StartupTaskState.DisabledByUser:
+                    UpdateLabelStartupStatus(startupTask.State);
+                    break;
+                case StartupTaskState.DisabledByPolicy:
+                    UpdateLabelStartupStatus(startupTask.State);
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -1074,44 +1059,59 @@ namespace SystemTrayMenu.UserInterface
                 case StartupTaskState.Disabled:
                 case StartupTaskState.DisabledByUser:
                 case StartupTaskState.DisabledByPolicy:
-                    labelStartupStatus.Text = Translator.GetText("Deactivated");
+                    labelStartupStatus.Content = Translator.GetText("Deactivated");
                     break;
                 case StartupTaskState.Enabled:
                 case StartupTaskState.EnabledByPolicy:
-                    labelStartupStatus.Text = Translator.GetText("Activated");
+                    labelStartupStatus.Content = Translator.GetText("Activated");
                     break;
                 default:
                     break;
             }
         }
 
-        private void ButtonChange_Click(object sender, EventArgs e)
+        private void ButtonChange_Click(object sender, RoutedEventArgs e)
         {
             Config.SetFolderByUser(false);
             textBoxFolder.Text = Config.Path;
         }
 
-        private void ButtonOpenFolder_Click(object sender, EventArgs e)
+        private void ButtonOpenFolder_Click(object sender, RoutedEventArgs e)
         {
             Log.ProcessStart("explorer.exe", Config.Path, true);
         }
 
-        private void ButtonChangeRelativeFolder_Click(object sender, EventArgs e)
+        private void ButtonChangeRelativeFolder_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(Config.Path))
             {
-                Settings.Default.PathDirectory = Path.GetRelativePath(
-                    Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
-                    Config.Path);
-                textBoxFolder.Text = Config.Path;
+                string? location = Assembly.GetEntryAssembly()?.Location;
+                if (!string.IsNullOrEmpty(location))
+                {
+                    string? parentPath = Directory.GetParent(location)?.FullName;
+                    if (!string.IsNullOrEmpty(parentPath))
+                    {
+                        Settings.Default.PathDirectory = Path.GetRelativePath(parentPath, Config.Path);
+                        textBoxFolder.Text = Config.Path;
+                    }
+                }
             }
         }
 
-        private void ButtonOpenAssemblyLocation_Click(object sender, EventArgs e)
+        private void ButtonOpenAssemblyLocation_Click(object sender, RoutedEventArgs e)
         {
-            Log.ProcessStart(Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName);
+            string? location = Assembly.GetEntryAssembly()?.Location;
+            if (!string.IsNullOrEmpty(location))
+            {
+                string? parentPath = Directory.GetParent(location)?.FullName;
+                if (!string.IsNullOrEmpty(parentPath))
+                {
+                    Log.ProcessStart(parentPath);
+                }
+            }
         }
 
+#if TODO
         private void TextBoxHotkeyEnter(object sender, EventArgs e)
         {
             UnregisterHotkeys();
@@ -1126,21 +1126,24 @@ namespace SystemTrayMenu.UserInterface
             RegisterHotkeys();
             inHotkey = false;
         }
-
-        private void ButtonHotkeyDefault_Click(object sender, EventArgs e)
+#endif
+        private void ButtonHotkeyDefault_Click(object sender, RoutedEventArgs e)
         {
+#if TODO
             textBoxHotkey.SetHotkey("Ctrl+LWin");
+#endif
         }
 
         private void ButtonGeneralDefault_Click(object sender, EventArgs e)
         {
-            checkBoxSetFolderByWindowsContextMenu.Checked = false;
-            checkBoxSaveConfigInApplicationDirectory.Checked = false;
-            checkBoxSaveLogFileInApplicationDirectory.Checked = false;
-            checkBoxAutostart.Checked = false;
-            checkBoxCheckForUpdates.Checked = false;
+            checkBoxSetFolderByWindowsContextMenu.IsChecked = false;
+            checkBoxSaveConfigInApplicationDirectory.IsChecked = false;
+            checkBoxSaveLogFileInApplicationDirectory.IsChecked = false;
+            checkBoxAutostart.IsChecked = false;
+            checkBoxCheckForUpdates.IsChecked = false;
         }
 
+#if TODO
         private void ButtonChangeIcoFolder_Click(object sender, EventArgs e)
         {
             Config.SetFolderIcoByUser();
