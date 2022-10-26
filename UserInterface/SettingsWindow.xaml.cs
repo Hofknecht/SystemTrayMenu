@@ -123,23 +123,6 @@ namespace SystemTrayMenu.UserInterface
                 }
 #if TODO
 
-                groupBoxSize.Text = Translator.GetText("Sizes in percent");
-                labelSizeInPercent.Text = Translator.GetText("Application size");
-                labelIconSizeInPercent.Text = Translator.GetText("Icon size");
-                labelRowHeightInPercentage.Text = Translator.GetText("Row height");
-                labelMaxMenuWidth.Text = Translator.GetText("Maximum menu width");
-                labelMaxMenuHeight.Text = Translator.GetText("Maximum menu height");
-                groupBoxMenuAppearAt.Text = Translator.GetText("Main menu appears");
-                radioButtonAppearAtTheBottomLeft.Text = Translator.GetText("Bottom left");
-                radioButtonAppearAtTheBottomRight.Text = Translator.GetText("Bottom right");
-                radioButtonUseCustomLocation.Text = Translator.GetText("Custom (drag it to the appropriate position)");
-                radioButtonAppearAtMouseLocation.Text = Translator.GetText("At mouse location");
-                groupBoxSubMenuAppearAt.Text = Translator.GetText("Sub menu appears");
-                radioButtonNextToPreviousMenu.Text = Translator.GetText("Next to the previous one");
-                radioButtonOverlapping.Text = Translator.GetText("Overlapping");
-                labelOverlappingByPixelsOffset.Text = Translator.GetText("Offset by pixels");
-                buttonSizeAndLocationDefault.Text = Translator.GetText("Default");
-
                 groupBoxOptionalFeatures.Text = Translator.GetText("Optional Features");
                 checkBoxResolveLinksToFolders.Text = Translator.GetText("Resolve links to folders and show content");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
@@ -379,67 +362,74 @@ namespace SystemTrayMenu.UserInterface
                 numericUpDown.Value = newValue;
                 ((HandledMouseEventArgs)e).Handled = true;
             }
-
-            numericUpDownSizeInPercent.Value = Settings.Default.SizeInPercent;
-
+#endif
+            numericUpDownSizeInPercent.Text = Settings.Default.SizeInPercent.ToString();
+#if TODO
             numericUpDownIconSizeInPercent.Minimum = 50;
             numericUpDownIconSizeInPercent.Maximum = 200;
             numericUpDownIconSizeInPercent.Increment = 5;
             numericUpDownIconSizeInPercent.MouseWheel += NumericUpDown_MouseWheel;
-            numericUpDownIconSizeInPercent.Value = Settings.Default.IconSizeInPercent;
-
+#endif
+            numericUpDownIconSizeInPercent.Text = Settings.Default.IconSizeInPercent.ToString();
+#if TODO
             numericUpDownRowHeighteInPercentage.Minimum = 50;
             numericUpDownRowHeighteInPercentage.Maximum = 200;
             numericUpDownRowHeighteInPercentage.Increment = 5;
             numericUpDownRowHeighteInPercentage.MouseWheel += NumericUpDown_MouseWheel;
+#endif
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
-                numericUpDownRowHeighteInPercentage.Value = Settings.Default.RowHeighteInPercentageTouch;
+                numericUpDownRowHeighteInPercentage.Text = Settings.Default.RowHeighteInPercentageTouch.ToString();
             }
             else
             {
-                numericUpDownRowHeighteInPercentage.Value = Settings.Default.RowHeighteInPercentage;
+                numericUpDownRowHeighteInPercentage.Text = Settings.Default.RowHeighteInPercentage.ToString();
             }
 
+#if TODO
             numericUpDownMenuWidth.Minimum = 25;
             numericUpDownMenuWidth.Maximum = 400;
             numericUpDownMenuWidth.Increment = 5;
-            numericUpDownMenuWidth.Value = Settings.Default.WidthMaxInPercent;
+#endif
+            numericUpDownMenuWidth.Text = Settings.Default.WidthMaxInPercent.ToString();
+#if TODO
 
             numericUpDownMenuHeight.Minimum = 25;
             numericUpDownMenuHeight.Maximum = 400;
             numericUpDownMenuHeight.Increment = 5;
-            numericUpDownMenuHeight.Value = Settings.Default.HeightMaxInPercent;
+#endif
+            numericUpDownMenuHeight.Text = Settings.Default.HeightMaxInPercent.ToString();
 
             if (Settings.Default.UseCustomLocation)
             {
-                radioButtonUseCustomLocation.Checked = true;
+                radioButtonUseCustomLocation.IsChecked = true;
             }
             else if (Settings.Default.AppearAtMouseLocation)
             {
-                radioButtonAppearAtMouseLocation.Checked = true;
+                radioButtonAppearAtMouseLocation.IsChecked = true;
             }
             else if (Settings.Default.AppearAtTheBottomLeft)
             {
-                radioButtonAppearAtTheBottomLeft.Checked = true;
+                radioButtonAppearAtTheBottomLeft.IsChecked = true;
             }
             else
             {
-                radioButtonAppearAtTheBottomRight.Checked = true;
+                radioButtonAppearAtTheBottomRight.IsChecked = true;
             }
 
-            numericUpDownOverlappingOffsetPixels.Value = Settings.Default.OverlappingOffsetPixels;
+            numericUpDownOverlappingOffsetPixels.Text = Settings.Default.OverlappingOffsetPixels.ToString();
             if (Settings.Default.AppearNextToPreviousMenu)
             {
-                radioButtonNextToPreviousMenu.Checked = true;
-                numericUpDownOverlappingOffsetPixels.Enabled = false;
+                radioButtonNextToPreviousMenu.IsChecked = true;
+                numericUpDownOverlappingOffsetPixels.IsEnabled = false;
             }
             else
             {
-                radioButtonOverlapping.Checked = true;
-                numericUpDownOverlappingOffsetPixels.Enabled = true;
+                radioButtonOverlapping.IsChecked = true;
+                numericUpDownOverlappingOffsetPixels.IsEnabled = true;
             }
 
+#if TODO
             checkBoxResolveLinksToFolders.Checked = Settings.Default.ResolveLinksToFolders;
             checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = Settings.Default.SendHotkeyInsteadKillOtherInstances;
@@ -1247,24 +1237,22 @@ namespace SystemTrayMenu.UserInterface
 
             buttonAddSampleStartMenuFolder.Enabled = !doesStartMenuFolderExist;
         }
-
-        private void ButtonSizeAndLocationDefault_Click(object sender, EventArgs e)
+#endif
+        private void ButtonSizeAndLocationDefault_Click(object sender, RoutedEventArgs e)
         {
-            numericUpDownSizeInPercent.Value = 100;
-            numericUpDownIconSizeInPercent.Value = 100;
-            numericUpDownRowHeighteInPercentage.Value = 100;
-            numericUpDownMenuWidth.Value = 100;
-            numericUpDownMenuHeight.Value = 100;
+            numericUpDownSizeInPercent.Text = 100.ToString();
+            numericUpDownIconSizeInPercent.Text = 100.ToString();
+            numericUpDownRowHeighteInPercentage.Text = 100.ToString();
+            numericUpDownMenuWidth.Text = 100.ToString();
+            numericUpDownMenuHeight.Text = 100.ToString();
 
-            radioButtonAppearAtTheBottomRight.Checked = false;
-            radioButtonAppearAtTheBottomLeft.Checked = true;
-            radioButtonUseCustomLocation.Checked = false;
-            radioButtonAppearAtMouseLocation.Checked = false;
+            radioButtonAppearAtTheBottomLeft.IsChecked = true;
 
-            radioButtonNextToPreviousMenu.Checked = true;
-            numericUpDownOverlappingOffsetPixels.Value = 150;
+            radioButtonNextToPreviousMenu.IsChecked = true;
+            numericUpDownOverlappingOffsetPixels.Text = 150.ToString();
         }
 
+#if TODO
         private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
         {
             checkBoxResolveLinksToFolders.Checked = true;
@@ -1491,28 +1479,15 @@ namespace SystemTrayMenu.UserInterface
 #endif
             Close();
         }
-#if TODO
-        private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void RadioButtonOverlapping_Checked(object sender, RoutedEventArgs e)
         {
-            settingsForm?.Dispose();
-            settingsForm = null;
+            numericUpDownOverlappingOffsetPixels.IsEnabled = true;
         }
 
-        private void RadioButtonNextToPreviousMenu_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonOverlapping_Unchecked(object sender, RoutedEventArgs e)
         {
-            radioButtonOverlapping.CheckedChanged -= RadioButtonOverlapping_CheckedChanged;
-            radioButtonOverlapping.Checked = false;
-            radioButtonOverlapping.CheckedChanged += RadioButtonOverlapping_CheckedChanged;
-            numericUpDownOverlappingOffsetPixels.Enabled = false;
+            numericUpDownOverlappingOffsetPixels.IsEnabled = false;
         }
-
-        private void RadioButtonOverlapping_CheckedChanged(object sender, EventArgs e)
-        {
-            radioButtonNextToPreviousMenu.CheckedChanged -= RadioButtonNextToPreviousMenu_CheckedChanged;
-            radioButtonNextToPreviousMenu.Checked = false;
-            radioButtonNextToPreviousMenu.CheckedChanged += RadioButtonNextToPreviousMenu_CheckedChanged;
-            numericUpDownOverlappingOffsetPixels.Enabled = true;
-        }
-#endif
     }
 }
