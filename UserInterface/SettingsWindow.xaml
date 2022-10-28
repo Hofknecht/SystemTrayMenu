@@ -74,44 +74,36 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"  />
-                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="70" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <!-- TODO WPF NumericUpDown.. -->
-                                <TextBox Grid.Row="0" Grid.Column="0" x:Name="numericUpDownSizeInPercent" VerticalContentAlignment="Center" />
-                                <Label Grid.Row="0" Grid.Column="1" Content="UpDown" Background="Red" Padding="0" VerticalAlignment="Center"/>
-                                <Label Grid.Row="0" Grid.Column="2" Content="{u:Translate 'Application size'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
-                                <TextBox Grid.Row="1" Grid.Column="0" x:Name="numericUpDownIconSizeInPercent" VerticalContentAlignment="Center" />
-                                <Label Grid.Row="1" Grid.Column="1" Content="UpDown" Background="Red" Padding="0" VerticalAlignment="Center"/>
-                                <Label Grid.Row="1" Grid.Column="2" Content="{u:Translate 'Icon size'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
-                                <TextBox Grid.Row="2" Grid.Column="0" x:Name="numericUpDownRowHeighteInPercentage" VerticalContentAlignment="Center" />
-                                <Label Grid.Row="2" Grid.Column="1" Content="UpDown" Background="Red" Padding="0" VerticalAlignment="Center"/>
-                                <Label Grid.Row="2" Grid.Column="2" Content="{u:Translate 'Row height'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
-                                <TextBox Grid.Row="3" Grid.Column="0" x:Name="numericUpDownMenuWidth" VerticalContentAlignment="Center" />
-                                <Label Grid.Row="3" Grid.Column="1" Content="UpDown" Background="Red" Padding="0" VerticalAlignment="Center"/>
-                                <Label Grid.Row="3" Grid.Column="2" Content="{u:Translate 'Maximum menu width'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
-                                <TextBox Grid.Row="4" Grid.Column="0" x:Name="numericUpDownMenuHeight" VerticalContentAlignment="Center" />
-                                <Label Grid.Row="4" Grid.Column="1" Content="UpDown" Background="Red" Padding="0" VerticalAlignment="Center"/>
-                                <Label Grid.Row="4" Grid.Column="2" Content="{u:Translate 'Maximum menu height'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+
+                                <local:NumericUpDown Grid.Row="0" Grid.Column="0" x:Name="numericUpDownSizeInPercent" Minimum="100" Maximum="200" Increment="5" />
+                                <Label Grid.Row="0" Grid.Column="1" Content="{u:Translate 'Application size'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <local:NumericUpDown Grid.Row="1" Grid.Column="0" x:Name="numericUpDownIconSizeInPercent" Minimum="100" Maximum="200" Increment="5" />
+                                <Label Grid.Row="1" Grid.Column="1" Content="{u:Translate 'Icon size'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <local:NumericUpDown Grid.Row="2" Grid.Column="0" x:Name="numericUpDownRowHeightInPercentage" Minimum="50" Maximum="200" Increment="5" />
+                                <Label Grid.Row="2" Grid.Column="1" Content="{u:Translate 'Row height'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <local:NumericUpDown Grid.Row="3" Grid.Column="0" x:Name="numericUpDownMenuWidth" Minimum="25" Maximum="400" Increment="5" />
+                                <Label Grid.Row="3" Grid.Column="1" Content="{u:Translate 'Maximum menu width'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <local:NumericUpDown Grid.Row="4" Grid.Column="0" x:Name="numericUpDownMenuHeight" Minimum="25" Maximum="400" Increment="5" />
+                                <Label Grid.Row="4" Grid.Column="1" Content="{u:Translate 'Maximum menu height'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
                             </Grid>
                         </GroupBox>
                         <GroupBox Header="{u:Translate 'Main menu appears'}">
                             <StackPanel>
-                                <RadioButton x:Name="radioButtonAppearAtTheBottomRight" GroupName="MainMenuAppearsAt" Content="{u:Translate 'Bottom right'}" />
-                                <RadioButton x:Name="radioButtonAppearAtTheBottomLeft" GroupName="MainMenuAppearsAt" Content="{u:Translate 'Bottom left'}" />
-                                <RadioButton x:Name="radioButtonUseCustomLocation" GroupName="MainMenuAppearsAt" Content="{u:Translate 'Custom (drag it to the appropriate position)'}" />
-                                <RadioButton x:Name="radioButtonAppearAtMouseLocation" GroupName="MainMenuAppearsAt" Content="{u:Translate 'At mouse location'}" />
+                                <RadioButton x:Name="radioButtonAppearAtTheBottomRight" GroupName="MainMenuAppearsAt" Content="{u:Translate 'Bottom right'}" VerticalContentAlignment="Center" />
+                                <RadioButton x:Name="radioButtonAppearAtTheBottomLeft" GroupName="MainMenuAppearsAt" Content="{u:Translate 'Bottom left'}" VerticalContentAlignment="Center" />
+                                <RadioButton x:Name="radioButtonUseCustomLocation" GroupName="MainMenuAppearsAt" Content="{u:Translate 'Custom (drag it to the appropriate position)'}" VerticalContentAlignment="Center" />
+                                <RadioButton x:Name="radioButtonAppearAtMouseLocation" GroupName="MainMenuAppearsAt" Content="{u:Translate 'At mouse location'}" VerticalContentAlignment="Center" />
                             </StackPanel>
                         </GroupBox>
                         <GroupBox Header="{u:Translate 'Sub menu appears'}">
                             <StackPanel>
-                                <RadioButton x:Name="radioButtonNextToPreviousMenu" GroupName="SubMenuAppearsAt" Content="{u:Translate 'Next to the previous one'}" />
+                                <RadioButton x:Name="radioButtonNextToPreviousMenu" GroupName="SubMenuAppearsAt" Content="{u:Translate 'Next to the previous one'}" VerticalContentAlignment="Center" />
                                 <StackPanel Orientation="Horizontal">
-                                    <RadioButton x:Name="radioButtonOverlapping" GroupName="SubMenuAppearsAt" Content="{u:Translate 'Overlapping'}" Checked="RadioButtonOverlapping_Checked" Unchecked="RadioButtonOverlapping_Unchecked" />
-                                    <!-- TODO WPF NumericUpDown -->
-                                    <TextBox x:Name="numericUpDownOverlappingOffsetPixels" Width="50" VerticalContentAlignment="Center" Margin="15,0,0,0" />
-                                    <Label Content="UpDown" Background="Red" Padding="0" VerticalAlignment="Center"/>
+                                    <RadioButton x:Name="radioButtonOverlapping" GroupName="SubMenuAppearsAt" Content="{u:Translate 'Overlapping'}" Checked="RadioButtonOverlapping_Checked" Unchecked="RadioButtonOverlapping_Unchecked" VerticalContentAlignment="Center" />
+                                    <local:NumericUpDown x:Name="numericUpDownOverlappingOffsetPixels" Width="70" VerticalContentAlignment="Center" Margin="10,0,0,0" />
                                     <Label Content="{u:Translate 'Offset by pixels'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </StackPanel>

@@ -333,72 +333,19 @@ namespace SystemTrayMenu.UserInterface
                 comboBoxLanguage.SelectedValue ??= "en";
             }
 
-#if TODO
-            numericUpDownSizeInPercent.Minimum = 100;
-            numericUpDownSizeInPercent.Maximum = 200;
-            numericUpDownSizeInPercent.Increment = 5;
-            numericUpDownSizeInPercent.MouseWheel += NumericUpDown_MouseWheel;
-            void NumericUpDown_MouseWheel(object sender, MouseEventArgs e)
-            {
-                NumericUpDown numericUpDown = (NumericUpDown)sender;
-                decimal newValue = numericUpDown.Value;
-                if (e.Delta > 0)
-                {
-                    newValue += numericUpDown.Increment;
-                    if (newValue > numericUpDown.Maximum)
-                    {
-                        newValue = (int)numericUpDown.Maximum;
-                    }
-                }
-                else
-                {
-                    newValue -= numericUpDown.Increment;
-                    if (newValue < numericUpDown.Minimum)
-                    {
-                        newValue = (int)numericUpDown.Minimum;
-                    }
-                }
-
-                numericUpDown.Value = newValue;
-                ((HandledMouseEventArgs)e).Handled = true;
-            }
-#endif
-            numericUpDownSizeInPercent.Text = Settings.Default.SizeInPercent.ToString();
-#if TODO
-            numericUpDownIconSizeInPercent.Minimum = 50;
-            numericUpDownIconSizeInPercent.Maximum = 200;
-            numericUpDownIconSizeInPercent.Increment = 5;
-            numericUpDownIconSizeInPercent.MouseWheel += NumericUpDown_MouseWheel;
-#endif
-            numericUpDownIconSizeInPercent.Text = Settings.Default.IconSizeInPercent.ToString();
-#if TODO
-            numericUpDownRowHeighteInPercentage.Minimum = 50;
-            numericUpDownRowHeighteInPercentage.Maximum = 200;
-            numericUpDownRowHeighteInPercentage.Increment = 5;
-            numericUpDownRowHeighteInPercentage.MouseWheel += NumericUpDown_MouseWheel;
-#endif
+            numericUpDownSizeInPercent.Value = Settings.Default.SizeInPercent;
+            numericUpDownIconSizeInPercent.Value = Settings.Default.IconSizeInPercent;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
-                numericUpDownRowHeighteInPercentage.Text = Settings.Default.RowHeighteInPercentageTouch.ToString();
+                numericUpDownRowHeightInPercentage.Value = Settings.Default.RowHeighteInPercentageTouch;
             }
             else
             {
-                numericUpDownRowHeighteInPercentage.Text = Settings.Default.RowHeighteInPercentage.ToString();
+                numericUpDownRowHeightInPercentage.Value = Settings.Default.RowHeighteInPercentage;
             }
 
-#if TODO
-            numericUpDownMenuWidth.Minimum = 25;
-            numericUpDownMenuWidth.Maximum = 400;
-            numericUpDownMenuWidth.Increment = 5;
-#endif
-            numericUpDownMenuWidth.Text = Settings.Default.WidthMaxInPercent.ToString();
-#if TODO
-
-            numericUpDownMenuHeight.Minimum = 25;
-            numericUpDownMenuHeight.Maximum = 400;
-            numericUpDownMenuHeight.Increment = 5;
-#endif
-            numericUpDownMenuHeight.Text = Settings.Default.HeightMaxInPercent.ToString();
+            numericUpDownMenuWidth.Value = Settings.Default.WidthMaxInPercent;
+            numericUpDownMenuHeight.Value = Settings.Default.HeightMaxInPercent;
 
             if (Settings.Default.UseCustomLocation)
             {
@@ -417,7 +364,7 @@ namespace SystemTrayMenu.UserInterface
                 radioButtonAppearAtTheBottomRight.IsChecked = true;
             }
 
-            numericUpDownOverlappingOffsetPixels.Text = Settings.Default.OverlappingOffsetPixels.ToString();
+            numericUpDownOverlappingOffsetPixels.Value = Settings.Default.OverlappingOffsetPixels;
             if (Settings.Default.AppearNextToPreviousMenu)
             {
                 radioButtonNextToPreviousMenu.IsChecked = true;
@@ -873,21 +820,22 @@ namespace SystemTrayMenu.UserInterface
 
             Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
-
-            Settings.Default.SizeInPercent = (int)numericUpDownSizeInPercent.Value;
-            Settings.Default.IconSizeInPercent = (int)numericUpDownIconSizeInPercent.Value;
+#endif
+            Settings.Default.SizeInPercent = numericUpDownSizeInPercent.Value;
+            Settings.Default.IconSizeInPercent = numericUpDownIconSizeInPercent.Value;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
-                Settings.Default.RowHeighteInPercentageTouch = (int)numericUpDownRowHeighteInPercentage.Value;
+                Settings.Default.RowHeighteInPercentageTouch = numericUpDownRowHeightInPercentage.Value;
             }
             else
             {
-                Settings.Default.RowHeighteInPercentage = (int)numericUpDownRowHeighteInPercentage.Value;
+                Settings.Default.RowHeighteInPercentage = numericUpDownRowHeightInPercentage.Value;
             }
 
-            Settings.Default.WidthMaxInPercent = (int)numericUpDownMenuWidth.Value;
-            Settings.Default.HeightMaxInPercent = (int)numericUpDownMenuHeight.Value;
+            Settings.Default.WidthMaxInPercent = numericUpDownMenuWidth.Value;
+            Settings.Default.HeightMaxInPercent = numericUpDownMenuHeight.Value;
 
+#if TODO
             if (radioButtonUseCustomLocation.Checked)
             {
                 Settings.Default.UseCustomLocation = true;
@@ -912,8 +860,9 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.AppearAtMouseLocation = false;
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
-
-            Settings.Default.OverlappingOffsetPixels = (int)numericUpDownOverlappingOffsetPixels.Value;
+#endif
+            Settings.Default.OverlappingOffsetPixels = numericUpDownOverlappingOffsetPixels.Value;
+#if TODO
             if (radioButtonNextToPreviousMenu.Checked)
             {
                 Settings.Default.AppearNextToPreviousMenu = true;
@@ -1240,16 +1189,16 @@ namespace SystemTrayMenu.UserInterface
 #endif
         private void ButtonSizeAndLocationDefault_Click(object sender, RoutedEventArgs e)
         {
-            numericUpDownSizeInPercent.Text = 100.ToString();
-            numericUpDownIconSizeInPercent.Text = 100.ToString();
-            numericUpDownRowHeighteInPercentage.Text = 100.ToString();
-            numericUpDownMenuWidth.Text = 100.ToString();
-            numericUpDownMenuHeight.Text = 100.ToString();
+            numericUpDownSizeInPercent.Value = 100;
+            numericUpDownIconSizeInPercent.Value = 100;
+            numericUpDownRowHeightInPercentage.Value = 100;
+            numericUpDownMenuWidth.Value = 100;
+            numericUpDownMenuHeight.Value = 100;
 
             radioButtonAppearAtTheBottomLeft.IsChecked = true;
 
             radioButtonNextToPreviousMenu.IsChecked = true;
-            numericUpDownOverlappingOffsetPixels.Text = 150.ToString();
+            numericUpDownOverlappingOffsetPixels.Value = 150;
         }
 
 #if TODO
