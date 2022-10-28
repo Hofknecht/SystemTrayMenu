@@ -121,33 +121,8 @@ namespace SystemTrayMenu.UserInterface
                 {
                     groupBoxAutostart.Content = $"{(string)groupBoxAutostart.Content} ({Translator.GetText("Task Manager")})";
                 }
+
 #if TODO
-
-                groupBoxOptionalFeatures.Text = Translator.GetText("Optional Features");
-                checkBoxResolveLinksToFolders.Text = Translator.GetText("Resolve links to folders and show content");
-                checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");
-                checkBoxSendHotkeyInsteadKillOtherInstances.Text = Translator.GetText("Send hotkey to other instance");
-                checkBoxSupportGamepad.Text = Translator.GetText("Support Gamepad");
-                groupBoxClick.Text = Translator.GetText("Click");
-                checkBoxOpenItemWithOneClick.Text = Translator.GetText("Single click to open an element");
-                checkBoxOpenDirectoryWithOneClick.Text = Translator.GetText("Single click to open a directory");
-                groupBoxDrag.Text = Translator.GetText("Drag");
-                checkBoxDragDropItems.Text = Translator.GetText("Copy row element via drag and drop");
-                checkBoxSwipeScrolling.Text = Translator.GetText("Scroll via swipe");
-                groupBoxInternetShortcutIcons.Text = Translator.GetText("Directory of Internet Shortcut Icons");
-                buttonChangeIcoFolder.Text = Translator.GetText("Changing directory");
-                groupBoxSorting.Text = Translator.GetText("Sorting");
-                radioButtonSortByTypeAndName.Text = Translator.GetText("Sorted by type (folder or file) and name");
-                radioButtonSortByTypeAndDate.Text = Translator.GetText("Sorted by type (folder or file) and date");
-                radioButtonSortByFileExtensionAndName.Text = Translator.GetText("Sorted by file extension and name");
-                radioButtonSortByName.Text = Translator.GetText("Sorted by name");
-                radioButtonSortByDate.Text = Translator.GetText("Sorted by date");
-                groupBoxHiddenFilesAndFolders.Text = Translator.GetText("Hidden files and directories");
-                radioButtonSystemSettingsShowHiddenFiles.Text = Translator.GetText("Use operating system settings");
-                radioButtonNeverShowHiddenFiles.Text = Translator.GetText("Never show");
-                radioButtonAlwaysShowHiddenFiles.Text = Translator.GetText("Always show");
-                buttonAdvancedDefault.Text = Translator.GetText("Default");
-
                 groupBoxFoldersInRootFolder.Text = Translator.GetText("Add content of directory to root directory");
                 checkBoxShowOnlyAsSearchResult.Text = Translator.GetText("Show only as search result");
                 buttonAddFolderToRootFolder.Text = Translator.GetText("Add directory");
@@ -376,35 +351,62 @@ namespace SystemTrayMenu.UserInterface
                 numericUpDownOverlappingOffsetPixels.IsEnabled = true;
             }
 
-#if TODO
-            checkBoxResolveLinksToFolders.Checked = Settings.Default.ResolveLinksToFolders;
-            checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
-            checkBoxSendHotkeyInsteadKillOtherInstances.Checked = Settings.Default.SendHotkeyInsteadKillOtherInstances;
-            checkBoxSupportGamepad.Checked = Settings.Default.SupportGamepad;
-            checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
-            checkBoxOpenDirectoryWithOneClick.Checked = Settings.Default.OpenDirectoryWithOneClick;
+            checkBoxResolveLinksToFolders.IsChecked = Settings.Default.ResolveLinksToFolders;
+            checkBoxShowInTaskbar.IsChecked = Settings.Default.ShowInTaskbar;
+            checkBoxSendHotkeyInsteadKillOtherInstances.IsChecked = Settings.Default.SendHotkeyInsteadKillOtherInstances;
+            checkBoxSupportGamepad.IsChecked = Settings.Default.SupportGamepad;
+            checkBoxOpenItemWithOneClick.IsChecked = Settings.Default.OpenItemWithOneClick;
+            checkBoxOpenDirectoryWithOneClick.IsChecked = Settings.Default.OpenDirectoryWithOneClick;
 
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
-                checkBoxDragDropItems.Checked = Settings.Default.DragDropItemsEnabledTouch;
-                checkBoxSwipeScrolling.Checked = Settings.Default.SwipeScrollingEnabledTouch;
+                checkBoxDragDropItems.IsChecked = Settings.Default.DragDropItemsEnabledTouch;
+                checkBoxSwipeScrolling.IsChecked = Settings.Default.SwipeScrollingEnabledTouch;
             }
             else
             {
-                checkBoxDragDropItems.Checked = Settings.Default.DragDropItemsEnabled;
-                checkBoxSwipeScrolling.Checked = Settings.Default.SwipeScrollingEnabled;
+                checkBoxDragDropItems.IsChecked = Settings.Default.DragDropItemsEnabled;
+                checkBoxSwipeScrolling.IsChecked = Settings.Default.SwipeScrollingEnabled;
             }
 
             textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
-            radioButtonSortByTypeAndName.Checked = Settings.Default.SortByTypeAndNameWindowsExplorerSort;
-            radioButtonSortByTypeAndDate.Checked = Settings.Default.SortByTypeAndDate;
-            radioButtonSortByFileExtensionAndName.Checked = Settings.Default.SortByFileExtensionAndName;
-            radioButtonSortByName.Checked = Settings.Default.SortByName;
-            radioButtonSortByDate.Checked = Settings.Default.SortByDate;
-            radioButtonSystemSettingsShowHiddenFiles.Checked = Settings.Default.SystemSettingsShowHiddenFiles;
-            radioButtonNeverShowHiddenFiles.Checked = Settings.Default.NeverShowHiddenFiles;
-            radioButtonAlwaysShowHiddenFiles.Checked = Settings.Default.AlwaysShowHiddenFiles;
+            if (Settings.Default.SortByTypeAndNameWindowsExplorerSort)
+            {
+                radioButtonSortByTypeAndName.IsChecked = true;
+            }
+            else if (Settings.Default.SortByTypeAndDate)
+            {
+                radioButtonSortByTypeAndDate.IsChecked = true;
+            }
+            else if (Settings.Default.SortByFileExtensionAndName)
+            {
+                radioButtonSortByFileExtensionAndName.IsChecked = true;
+            }
+            else if (Settings.Default.SortByDate)
+            {
+                radioButtonSortByDate.IsChecked = true;
+            }
+            else
+            {
+                // default: Settings.Default.SortByName
+                radioButtonSortByName.IsChecked = true;
+            }
 
+            if (Settings.Default.NeverShowHiddenFiles)
+            {
+                radioButtonNeverShowHiddenFiles.IsChecked = true;
+            }
+            else if (Settings.Default.AlwaysShowHiddenFiles)
+            {
+                radioButtonAlwaysShowHiddenFiles.IsChecked = true;
+            }
+            else
+            {
+                // default: Settings.Default.SystemSettingsShowHiddenFiles
+                radioButtonSystemSettingsShowHiddenFiles.IsChecked = true;
+            }
+
+#if TODO
             checkBoxShowOnlyAsSearchResult.Checked = Settings.Default.ShowOnlyAsSearchResult;
             try
             {
@@ -748,23 +750,8 @@ namespace SystemTrayMenu.UserInterface
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
             dataGridViewFolders.ClearSelection();
         }
-
-        private void SettingsForm_Shown(object sender, EventArgs e)
-        {
-            Size size = Size;
-            SuspendLayout();
-            AutoSize = false;
-            AutoSizeMode = AutoSizeMode.GrowOnly;
-            Size = size;
-            textBoxFolder.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxHotkey.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBoxIcoFolder.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewFolders.Dock = DockStyle.Fill;
-            textBoxSearchPattern.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            Opacity = 1;
-            ResumeLayout();
-        }
 #endif
+
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
 #if TODO
@@ -871,35 +858,37 @@ namespace SystemTrayMenu.UserInterface
             {
                 Settings.Default.AppearNextToPreviousMenu = false;
             }
-
-            Settings.Default.ResolveLinksToFolders = checkBoxResolveLinksToFolders.Checked;
-            Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.Checked;
-            Settings.Default.SendHotkeyInsteadKillOtherInstances = checkBoxSendHotkeyInsteadKillOtherInstances.Checked;
-            Settings.Default.SupportGamepad = checkBoxSupportGamepad.Checked;
-            Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.Checked;
-            Settings.Default.OpenDirectoryWithOneClick = checkBoxOpenDirectoryWithOneClick.Checked;
+#endif
+            Settings.Default.ResolveLinksToFolders = checkBoxResolveLinksToFolders.IsChecked ?? true;
+            Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.IsChecked ?? true;
+            Settings.Default.SendHotkeyInsteadKillOtherInstances = checkBoxSendHotkeyInsteadKillOtherInstances.IsChecked ?? false;
+            Settings.Default.SupportGamepad = checkBoxSupportGamepad.IsChecked ?? false;
+            Settings.Default.OpenItemWithOneClick = checkBoxOpenItemWithOneClick.IsChecked ?? true;
+            Settings.Default.OpenDirectoryWithOneClick = checkBoxOpenDirectoryWithOneClick.IsChecked ?? false;
 
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
-                Settings.Default.DragDropItemsEnabledTouch = checkBoxDragDropItems.Checked;
-                Settings.Default.SwipeScrollingEnabledTouch = checkBoxSwipeScrolling.Checked;
+                Settings.Default.DragDropItemsEnabledTouch = checkBoxDragDropItems.IsChecked ?? false;
+                Settings.Default.SwipeScrollingEnabledTouch = checkBoxSwipeScrolling.IsChecked ?? true;
             }
             else
             {
-                Settings.Default.DragDropItemsEnabled = checkBoxDragDropItems.Checked;
-                Settings.Default.SwipeScrollingEnabled = checkBoxSwipeScrolling.Checked;
+                Settings.Default.DragDropItemsEnabled = checkBoxDragDropItems.IsChecked ?? false;
+                Settings.Default.SwipeScrollingEnabled = checkBoxSwipeScrolling.IsChecked ?? true;
             }
 
             Settings.Default.PathIcoDirectory = textBoxIcoFolder.Text;
-            Settings.Default.SortByTypeAndNameWindowsExplorerSort = radioButtonSortByTypeAndName.Checked;
-            Settings.Default.SortByTypeAndDate = radioButtonSortByTypeAndDate.Checked;
-            Settings.Default.SortByFileExtensionAndName = radioButtonSortByFileExtensionAndName.Checked;
-            Settings.Default.SortByName = radioButtonSortByName.Checked;
-            Settings.Default.SortByDate = radioButtonSortByDate.Checked;
-            Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.Checked;
-            Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.Checked;
-            Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.Checked;
+            Settings.Default.SortByTypeAndNameWindowsExplorerSort = radioButtonSortByTypeAndName.IsChecked ?? false;
+            Settings.Default.SortByTypeAndDate = radioButtonSortByTypeAndDate.IsChecked ?? false;
+            Settings.Default.SortByFileExtensionAndName = radioButtonSortByFileExtensionAndName.IsChecked ?? false;
+            Settings.Default.SortByName = radioButtonSortByName.IsChecked ?? true;
+            Settings.Default.SortByDate = radioButtonSortByDate.IsChecked ?? false;
 
+            Settings.Default.SystemSettingsShowHiddenFiles = radioButtonSystemSettingsShowHiddenFiles.IsChecked ?? true;
+            Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.IsChecked ?? false;
+            Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.IsChecked ?? false;
+
+#if TODO
             Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.Checked;
             Settings.Default.PathsAddToMainMenu = string.Empty;
             foreach (DataGridViewRow row in dataGridViewFolders.Rows)
@@ -1073,7 +1062,7 @@ namespace SystemTrayMenu.UserInterface
 #endif
         }
 
-        private void ButtonGeneralDefault_Click(object sender, EventArgs e)
+        private void ButtonGeneralDefault_Click(object sender, RoutedEventArgs e)
         {
             checkBoxSetFolderByWindowsContextMenu.IsChecked = false;
             checkBoxSaveConfigInApplicationDirectory.IsChecked = false;
@@ -1082,13 +1071,13 @@ namespace SystemTrayMenu.UserInterface
             checkBoxCheckForUpdates.IsChecked = false;
         }
 
-#if TODO
-        private void ButtonChangeIcoFolder_Click(object sender, EventArgs e)
+        private void ButtonChangeIcoFolder_Click(object sender, RoutedEventArgs e)
         {
             Config.SetFolderIcoByUser();
             textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
         }
 
+#if TODO
         private void ButtonAddSampleStartMenuFolder_Click(object sender, EventArgs e)
         {
             dataGridViewFolders.Rows.Clear();
@@ -1201,42 +1190,41 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownOverlappingOffsetPixels.Value = 150;
         }
 
-#if TODO
-        private void ButtonAdvancedDefault_Click(object sender, EventArgs e)
+        private void ButtonAdvancedDefault_Click(object sender, RoutedEventArgs e)
         {
-            checkBoxResolveLinksToFolders.Checked = true;
-            checkBoxShowInTaskbar.Checked = true;
-            checkBoxSendHotkeyInsteadKillOtherInstances.Checked = false;
-            checkBoxSupportGamepad.Checked = false;
-            checkBoxOpenItemWithOneClick.Checked = true;
-            checkBoxOpenDirectoryWithOneClick.Checked = false;
+            checkBoxResolveLinksToFolders.IsChecked = true;
+            checkBoxShowInTaskbar.IsChecked = true;
+            checkBoxSendHotkeyInsteadKillOtherInstances.IsChecked = false;
+            checkBoxSupportGamepad.IsChecked = false;
+            checkBoxOpenItemWithOneClick.IsChecked = true;
+            checkBoxOpenDirectoryWithOneClick.IsChecked = false;
             if (DllImports.NativeMethods.IsTouchEnabled())
             {
-                checkBoxDragDropItems.Checked = false;
-                checkBoxSwipeScrolling.Checked = true;
+                checkBoxDragDropItems.IsChecked = false;
+                checkBoxSwipeScrolling.IsChecked = true;
             }
             else
             {
-                checkBoxDragDropItems.Checked = true;
-                checkBoxSwipeScrolling.Checked = false;
+                checkBoxDragDropItems.IsChecked = true;
+                checkBoxSwipeScrolling.IsChecked = false;
             }
 
             textBoxIcoFolder.Text = Path.Combine(
-                    Path.Combine(
-                        Environment.GetFolderPath(
-                            Environment.SpecialFolder.ApplicationData), $"SystemTrayMenu"), "ico");
+                Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    $"SystemTrayMenu"),
+                "ico");
+
             if (!Directory.Exists(Settings.Default.PathIcoDirectory))
             {
                 Directory.CreateDirectory(Settings.Default.PathIcoDirectory);
             }
 
-            radioButtonSortByName.Checked = true;
-            radioButtonSortByDate.Checked = false;
-            radioButtonSystemSettingsShowHiddenFiles.Checked = true;
-            radioButtonNeverShowHiddenFiles.Checked = false;
-            radioButtonAlwaysShowHiddenFiles.Checked = false;
+            radioButtonSortByName.IsChecked = true;
+            radioButtonSystemSettingsShowHiddenFiles.IsChecked = true;
         }
 
+#if TODO
         private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)
         {
             numericUpDownTimeUntilClose.Enabled = checkBoxStayOpenWhenFocusLost.Checked;
