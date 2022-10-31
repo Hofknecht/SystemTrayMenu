@@ -166,7 +166,49 @@
             <TabItem Header="{u:Translate 'Directories'}">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <Label Content="fill me 4" Background="Red"/>
+                        <GroupBox Header="{u:Translate 'Add content of directory to root directory'}">
+                            <StackPanel>
+                                <CheckBox x:Name="checkBoxShowOnlyAsSearchResult" Content="{u:Translate 'Show only as search result'}"/>
+                                <DockPanel LastChildFill="False">
+                                    <Button DockPanel.Dock="Left" Content="{u:Translate 'Add directory'}" Margin="3" MinWidth="76" Click="ButtonAddFolderToRootFolder_Click"/>
+                                    <Button DockPanel.Dock="Right" x:Name="buttonRemoveFolder" Content="{u:Translate 'Remove directory'}" Margin="3" MinWidth="76" Click="ButtonRemoveFolder_Click" IsEnabled="False"/>
+                                </DockPanel>
+                                <ListView x:Name="dataGridViewFolders" x:FieldModifier="private" MinHeight="90" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=3}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="{x:Null}" SelectionChanged="DataGridViewFolders_SelectionChanged">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn DisplayMemberBinding="{Binding ColumnFolder}">
+                                                <GridViewColumn.Header>
+                                                    <GridViewColumnHeader Content="{u:Translate 'Directory paths'}" />
+                                                </GridViewColumn.Header>
+                                            </GridViewColumn>
+                                            <GridViewColumn>
+                                                <GridViewColumn.Header>
+                                                    <GridViewColumnHeader Content="{u:Translate 'Recursive'}" />
+                                                </GridViewColumn.Header>
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox IsChecked="{Binding ColumnRecursiveLevel}"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn>
+                                                <GridViewColumn.Header>
+                                                    <GridViewColumnHeader Content="{u:Translate 'Only Files'}" />
+                                                </GridViewColumn.Header>
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox IsChecked="{Binding ColumnOnlyFiles}"/>
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                                <Button x:Name="buttonAddSampleStartMenuFolder" Content="xxx" Margin="3" MinWidth="76" Click="ButtonAddSampleStartMenuFolder_Click" HorizontalAlignment="Left" IsEnabled="False"/>
+                                <CheckBox x:Name="checkBoxGenerateShortcutsToDrives" Content="{u:Translate 'Generate drive shortcuts on startup'}"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <Button Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonClearFolders_Click" HorizontalAlignment="Left"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

@@ -11,8 +11,10 @@ namespace SystemTrayMenu.UserInterface
     using System.IO;
     using System.Reflection;
     using System.Windows;
+    using System.Windows.Controls;
     using System.Windows.Media.Imaging;
     using SystemTrayMenu.Properties;
+    using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
     using Windows.ApplicationModel;
 
@@ -122,18 +124,9 @@ namespace SystemTrayMenu.UserInterface
                     groupBoxAutostart.Content = $"{(string)groupBoxAutostart.Content} ({Translator.GetText("Task Manager")})";
                 }
 
-#if TODO
-                groupBoxFoldersInRootFolder.Text = Translator.GetText("Add content of directory to root directory");
-                checkBoxShowOnlyAsSearchResult.Text = Translator.GetText("Show only as search result");
-                buttonAddFolderToRootFolder.Text = Translator.GetText("Add directory");
-                buttonRemoveFolder.Text = Translator.GetText("Remove directory");
-                ColumnFolder.HeaderText = Translator.GetText("Directory paths");
-                ColumnRecursiveLevel.HeaderText = Translator.GetText("Recursive");
-                ColumnOnlyFiles.HeaderText = Translator.GetText("Only Files");
-                buttonAddSampleStartMenuFolder.Text = Translator.GetText("Add sample directory 'Start Menu'");
-                buttonDefaultFolders.Text = Translator.GetText("Default");
-                checkBoxGenerateShortcutsToDrives.Text = Translator.GetText("Generate drive shortcuts on startup");
+                buttonAddSampleStartMenuFolder.Content = Translator.GetText("Add sample directory 'Start Menu'"); // TODO: Find a way to escape this in XAML
 
+#if TODO
                 groupBoxStaysOpen.Text = Translator.GetText("Menu stays open");
                 checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an element was clicked");
                 checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and the mouse is still on the menu");
@@ -406,8 +399,7 @@ namespace SystemTrayMenu.UserInterface
                 radioButtonSystemSettingsShowHiddenFiles.IsChecked = true;
             }
 
-#if TODO
-            checkBoxShowOnlyAsSearchResult.Checked = Settings.Default.ShowOnlyAsSearchResult;
+            checkBoxShowOnlyAsSearchResult.IsChecked = Settings.Default.ShowOnlyAsSearchResult;
             try
             {
                 foreach (string pathAndRecursivString in Settings.Default.PathsAddToMainMenu.Split(@"|"))
@@ -420,7 +412,7 @@ namespace SystemTrayMenu.UserInterface
                     string pathAddToMainMenu = pathAndRecursivString.Split("recursiv:")[0].Trim();
                     bool recursive = pathAndRecursivString.Split("recursiv:")[1].StartsWith("True");
                     bool onlyFiles = pathAndRecursivString.Split("onlyFiles:")[1].StartsWith("True");
-                    dataGridViewFolders.Rows.Add(pathAddToMainMenu, recursive, onlyFiles);
+                    dataGridViewFolders.Items.Add(new ListViewItemData(pathAddToMainMenu, recursive, onlyFiles));
                 }
             }
             catch (Exception ex)
@@ -428,8 +420,9 @@ namespace SystemTrayMenu.UserInterface
                 Log.Warn("PathsAddToMainMenu", ex);
             }
 
-            checkBoxGenerateShortcutsToDrives.Checked = Settings.Default.GenerateShortcutsToDrives;
+            checkBoxGenerateShortcutsToDrives.IsChecked = Settings.Default.GenerateShortcutsToDrives;
 
+#if TODO
             checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
             checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
 
@@ -748,7 +741,6 @@ namespace SystemTrayMenu.UserInterface
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
-            dataGridViewFolders.ClearSelection();
         }
 #endif
 
@@ -888,19 +880,19 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.AlwaysShowHiddenFiles = radioButtonAlwaysShowHiddenFiles.IsChecked ?? false;
             Settings.Default.NeverShowHiddenFiles = radioButtonNeverShowHiddenFiles.IsChecked ?? false;
 
-#if TODO
-            Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.Checked;
-            Settings.Default.PathsAddToMainMenu = string.Empty;
-            foreach (DataGridViewRow row in dataGridViewFolders.Rows)
+            Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.IsChecked ?? false;
+
+            string pathsAddToMainMenu = string.Empty;
+            foreach (ListViewItemData row in dataGridViewFolders.Items)
             {
-                string pathAddToMainMenu = row.Cells[0].Value.ToString();
-                bool recursiv = (bool)row.Cells[1].Value;
-                bool onlyFiles = (bool)row.Cells[2].Value;
-                Settings.Default.PathsAddToMainMenu += $"{pathAddToMainMenu} recursiv:{recursiv} onlyFiles:{onlyFiles}|";
+                pathsAddToMainMenu += $"{row.ColumnFolder} recursiv:{row.ColumnRecursiveLevel} onlyFiles:{row.ColumnOnlyFiles}|";
             }
 
-            Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.Checked;
+            Settings.Default.PathsAddToMainMenu = pathsAddToMainMenu;
 
+            Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.IsChecked ?? false;
+
+#if TODO
             Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
             Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
             Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
@@ -1077,105 +1069,75 @@ namespace SystemTrayMenu.UserInterface
             textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
         }
 
-#if TODO
-        private void ButtonAddSampleStartMenuFolder_Click(object sender, EventArgs e)
+        private void ButtonAddSampleStartMenuFolder_Click(object sender, RoutedEventArgs e)
         {
-            dataGridViewFolders.Rows.Clear();
+            // dataGridViewFolders.Rows.Clear(); // TODO: This line must be removed in version 1, right?
             string folderPathCommonStartMenu = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu);
-            dataGridViewFolders.Rows.Add(folderPathCommonStartMenu, true, true);
-            dataGridViewFolders.ClearSelection();
+            dataGridViewFolders.Items.Add(new ListViewItemData(folderPathCommonStartMenu, true, true));
+            EnableButtonAddStartMenu();
         }
 
-        private void ButtonClearFolders_Click(object sender, EventArgs e)
+        private void ButtonClearFolders_Click(object sender, RoutedEventArgs e)
         {
-            checkBoxShowOnlyAsSearchResult.Checked = false;
-            dataGridViewFolders.Rows.Clear();
-            checkBoxGenerateShortcutsToDrives.Checked = false;
+            checkBoxShowOnlyAsSearchResult.IsChecked = false;
+            dataGridViewFolders.Items.Clear();
+            EnableButtonAddStartMenu();
+            checkBoxGenerateShortcutsToDrives.IsChecked = false;
         }
 
-        private void ButtonAddFolderToRootFolder_Click(object sender, EventArgs e)
+        private void ButtonAddFolderToRootFolder_Click(object sender, RoutedEventArgs e)
         {
             using FolderDialog dialog = new();
             dialog.InitialFolder = Config.Path;
 
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (dialog.ShowDialog() == FormsExtensions.DialogResult.OK)
             {
-                dataGridViewFolders.Rows.Add(dialog.Folder, false, true);
+                dataGridViewFolders.Items.Add(new ListViewItemData(dialog.Folder, false, true));
+                EnableButtonAddStartMenu();
             }
 
-            dataGridViewFolders.ClearSelection();
+            dataGridViewFolders.SelectedItem = null;
         }
 
-        private void ButtonRemoveFolder_Click(object sender, EventArgs e)
+        private void ButtonRemoveFolder_Click(object sender, RoutedEventArgs e)
         {
-            int selectedRowCount = dataGridViewFolders.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0)
+            if (dataGridViewFolders.SelectedItems.Count > 0)
             {
-                for (int i = 0; i < selectedRowCount; i++)
+                Array items = Array.CreateInstance(typeof(object), dataGridViewFolders.SelectedItems.Count);
+                dataGridViewFolders.SelectedItems.CopyTo(items, 0);
+
+                foreach (object item in items)
                 {
-                    dataGridViewFolders.Rows.RemoveAt(dataGridViewFolders.SelectedRows[0].Index);
+                    dataGridViewFolders.Items.Remove(item);
                 }
-            }
 
-            dataGridViewFolders.ClearSelection();
-        }
-
-        private void DataGridViewFolders_SelectionChanged(object sender, EventArgs e)
-        {
-            buttonRemoveFolder.Enabled = dataGridViewFolders.SelectedRows.Count > 0;
-        }
-
-        private void DataGridViewFolders_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (dataGridViewFolders.HitTest(e.X, e.Y).RowIndex < 0)
-            {
-                dataGridViewFolders.ClearSelection();
+                EnableButtonAddStartMenu();
             }
         }
 
-        private void DataGridViewFolders_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        private void DataGridViewFolders_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                dataGridViewFolders.CancelEdit();
-            }
-        }
-
-        private void DataGridViewFolders_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            EnableButtonAddStartMenu();
-        }
-
-        private void DataGridViewFolders_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            EnableButtonAddStartMenu();
-        }
-
-        private void DataGridViewFolders_CurrentCellDirtyStateChanged(object sender, EventArgs e)
-        {
-            EnableButtonAddStartMenu();
+            buttonRemoveFolder.IsEnabled = dataGridViewFolders.SelectedItems.Count > 0;
         }
 
         private void EnableButtonAddStartMenu()
         {
             bool doesStartMenuFolderExist = false;
-            foreach (DataGridViewRow row in dataGridViewFolders.Rows)
+            foreach (ListViewItemData row in dataGridViewFolders.Items)
             {
                 string folderPathCommonStartMenu = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu);
-                string pathAddToMainMenu = row.Cells[0].Value.ToString();
-                bool recursiv = (bool)row.Cells[1].EditedFormattedValue;
-                bool onlyFiles = (bool)row.Cells[2].EditedFormattedValue;
-                if (folderPathCommonStartMenu == pathAddToMainMenu &&
-                    recursiv == true &&
-                    onlyFiles == true)
+
+                // TODO: Check: Is RecursiveLevel and OnlyFiles really important to be the StartMenu folder entry? (Remove in version 1?)
+                if (row.ColumnFolder == folderPathCommonStartMenu)
                 {
                     doesStartMenuFolderExist = true;
+                    break;
                 }
             }
 
-            buttonAddSampleStartMenuFolder.Enabled = !doesStartMenuFolderExist;
+            buttonAddSampleStartMenuFolder.IsEnabled = !doesStartMenuFolderExist;
         }
-#endif
+
         private void ButtonSizeAndLocationDefault_Click(object sender, RoutedEventArgs e)
         {
             numericUpDownSizeInPercent.Value = 100;
@@ -1425,6 +1387,25 @@ namespace SystemTrayMenu.UserInterface
         private void RadioButtonOverlapping_Unchecked(object sender, RoutedEventArgs e)
         {
             numericUpDownOverlappingOffsetPixels.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Type for ListView items.
+        /// </summary>
+        private class ListViewItemData
+        {
+            public ListViewItemData(string folder, bool recursiveLevel, bool onlyFiles)
+            {
+                ColumnFolder = folder;
+                ColumnRecursiveLevel = recursiveLevel;
+                ColumnOnlyFiles = onlyFiles;
+            }
+
+            public string ColumnFolder { get; set; }
+
+            public bool ColumnRecursiveLevel { get; set; }
+
+            public bool ColumnOnlyFiles { get; set; }
         }
     }
 }
