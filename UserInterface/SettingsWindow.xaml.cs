@@ -127,19 +127,6 @@ namespace SystemTrayMenu.UserInterface
                 buttonAddSampleStartMenuFolder.Content = Translator.GetText("Add sample directory 'Start Menu'"); // TODO: Find a way to escape this in XAML
 
 #if TODO
-                groupBoxStaysOpen.Text = Translator.GetText("Menu stays open");
-                checkBoxStayOpenWhenItemClicked.Text = Translator.GetText("If an element was clicked");
-                checkBoxStayOpenWhenFocusLost.Text = Translator.GetText("If the focus is lost and the mouse is still on the menu");
-                labelTimeUntilCloses.Text = Translator.GetText("Milliseconds until the menu closes if the mouse then leaves the menu");
-                groupBoxOpenSubmenus.Text = Translator.GetText("Time until a menu opens");
-                labelTimeUntilOpen.Text = Translator.GetText("Milliseconds until a menu opens when the mouse is on it");
-                checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = Translator.GetText("If the focus is lost and the Enter key was pressed");
-                labelTimeUntilClosesAfterEnterPressed.Text = Translator.GetText("Milliseconds until the menu closes if the menu is not reactivated");
-                groupBoxCache.Text = Translator.GetText("Cache");
-                labelClearCacheIfMoreThanThisNumberOfItems.Text = Translator.GetText("Clear cache if more than this number of items");
-                groupBoxSearchPattern.Text = Translator.GetText("Filter menu by file type e.g.: *.exe|*.dll");
-                buttonExpertDefault.Text = Translator.GetText("Default");
-
                 groupBoxAppearance.Text = Translator.GetText("Appearance");
                 checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from directory");
                 checkBoxRoundCorners.Text = Translator.GetText("Round corners");
@@ -422,31 +409,21 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxGenerateShortcutsToDrives.IsChecked = Settings.Default.GenerateShortcutsToDrives;
 
-#if TODO
-            checkBoxStayOpenWhenItemClicked.Checked = Settings.Default.StaysOpenWhenItemClicked;
-            checkBoxStayOpenWhenFocusLost.Checked = Settings.Default.StaysOpenWhenFocusLost;
-
-            numericUpDownTimeUntilClose.Minimum = 200;
-            numericUpDownTimeUntilClose.Maximum = 5000;
-            numericUpDownTimeUntilClose.Increment = 10;
+            checkBoxStayOpenWhenItemClicked.IsChecked = Settings.Default.StaysOpenWhenItemClicked;
+            checkBoxStayOpenWhenFocusLost.IsChecked = Settings.Default.StaysOpenWhenFocusLost;
             numericUpDownTimeUntilClose.Value = Settings.Default.TimeUntilCloses;
 
-            numericUpDownTimeUntilOpens.Minimum = 20;
-            numericUpDownTimeUntilOpens.Maximum = 1000;
-            numericUpDownTimeUntilOpens.Increment = 10;
             numericUpDownTimeUntilOpens.Value = Settings.Default.TimeUntilOpens;
 
-            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed;
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.IsChecked = Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed;
 
-            numericUpDownTimeUntilClosesAfterEnterPressed.Minimum = 20;
-            numericUpDownTimeUntilClosesAfterEnterPressed.Maximum = 1000;
-            numericUpDownTimeUntilClosesAfterEnterPressed.Increment = 10;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = Settings.Default.TimeUntilClosesAfterEnterPressed;
 
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
             textBoxSearchPattern.Text = Settings.Default.SearchPattern;
 
+#if TODO
             checkBoxUseIconFromRootFolder.Checked = Settings.Default.UseIconFromRootFolder;
             checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
             checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
@@ -892,16 +869,16 @@ namespace SystemTrayMenu.UserInterface
 
             Settings.Default.GenerateShortcutsToDrives = checkBoxGenerateShortcutsToDrives.IsChecked ?? false;
 
-#if TODO
-            Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.Checked;
-            Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.Checked;
-            Settings.Default.TimeUntilCloses = (int)numericUpDownTimeUntilClose.Value;
-            Settings.Default.TimeUntilOpens = (int)numericUpDownTimeUntilOpens.Value;
-            Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed = checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked;
-            Settings.Default.TimeUntilClosesAfterEnterPressed = (int)numericUpDownTimeUntilClosesAfterEnterPressed.Value;
-            Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = (int)numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
+            Settings.Default.StaysOpenWhenItemClicked = checkBoxStayOpenWhenItemClicked.IsChecked ?? true;
+            Settings.Default.StaysOpenWhenFocusLost = checkBoxStayOpenWhenFocusLost.IsChecked ?? true;
+            Settings.Default.TimeUntilCloses = numericUpDownTimeUntilClose.Value;
+            Settings.Default.TimeUntilOpens = numericUpDownTimeUntilOpens.Value;
+            Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed = checkBoxStayOpenWhenFocusLostAfterEnterPressed.IsChecked ?? true;
+            Settings.Default.TimeUntilClosesAfterEnterPressed = numericUpDownTimeUntilClosesAfterEnterPressed.Value;
+            Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
             Settings.Default.SearchPattern = textBoxSearchPattern.Text;
 
+#if TODO
             Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.Checked;
             Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
@@ -1186,29 +1163,29 @@ namespace SystemTrayMenu.UserInterface
             radioButtonSystemSettingsShowHiddenFiles.IsChecked = true;
         }
 
-#if TODO
-        private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxStayOpenWhenFocusLost_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            numericUpDownTimeUntilClose.Enabled = checkBoxStayOpenWhenFocusLost.Checked;
+            numericUpDownTimeUntilClose.IsEnabled = checkBoxStayOpenWhenFocusLost.IsChecked ?? true;
         }
 
-        private void CheckBoxStayOpenWhenFocusLostAfterEnterPressed_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxStayOpenWhenFocusLostAfterEnterPressed_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            numericUpDownTimeUntilClosesAfterEnterPressed.Enabled = checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked;
+            numericUpDownTimeUntilClosesAfterEnterPressed.IsEnabled = checkBoxStayOpenWhenFocusLostAfterEnterPressed.IsChecked ?? true;
         }
 
-        private void ButtonExpertDefault_Click(object sender, EventArgs e)
+        private void ButtonExpertDefault_Click(object sender, RoutedEventArgs e)
         {
-            checkBoxStayOpenWhenItemClicked.Checked = true;
-            checkBoxStayOpenWhenFocusLost.Checked = true;
+            checkBoxStayOpenWhenItemClicked.IsChecked = true;
+            checkBoxStayOpenWhenFocusLost.IsChecked = true;
             numericUpDownTimeUntilClose.Value = 400;
             numericUpDownTimeUntilOpens.Value = 100;
-            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = true;
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.IsChecked = true;
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = 200;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
             textBoxSearchPattern.Text = string.Empty;
         }
 
+#if TODO
         private void TextBoxColorsChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;

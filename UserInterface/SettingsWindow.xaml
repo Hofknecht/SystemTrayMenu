@@ -103,7 +103,7 @@
                                 <RadioButton x:Name="radioButtonNextToPreviousMenu" GroupName="SubMenuAppearsAt" Content="{u:Translate 'Next to the previous one'}" VerticalContentAlignment="Center" />
                                 <StackPanel Orientation="Horizontal">
                                     <RadioButton x:Name="radioButtonOverlapping" GroupName="SubMenuAppearsAt" Content="{u:Translate 'Overlapping'}" Checked="RadioButtonOverlapping_Checked" Unchecked="RadioButtonOverlapping_Unchecked" VerticalContentAlignment="Center" />
-                                    <local:NumericUpDown x:Name="numericUpDownOverlappingOffsetPixels" Width="70" VerticalContentAlignment="Center" Margin="10,0,0,0" />
+                                    <local:NumericUpDown x:Name="numericUpDownOverlappingOffsetPixels" Width="70" VerticalContentAlignment="Center" Margin="10,0,0,0" Minimum="0" Maximum="500" Increment="10" />
                                     <Label Content="{u:Translate 'Offset by pixels'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </StackPanel>
@@ -215,7 +215,45 @@
             <TabItem Header="{u:Translate 'Expert'}">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <Label Content="fill me 5" Background="Red"/>
+                        <GroupBox Header="{u:Translate 'Time until a menu opens'}">
+                            <StackPanel Orientation="Horizontal">
+                                <local:NumericUpDown x:Name="numericUpDownTimeUntilOpens" Width="70" VerticalContentAlignment="Center" Minimum="20" Maximum="1000" Increment="10" />
+                                <Label Content="{u:Translate 'Milliseconds until a menu opens when the mouse is on it'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{u:Translate 'Menu stays open'}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="checkBoxStayOpenWhenItemClicked" Content="{u:Translate 'If an element was clicked'}"/>
+                                <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="checkBoxStayOpenWhenFocusLost" Content="{u:Translate 'If the focus is lost and the mouse is still on the menu'}" Checked="CheckBoxStayOpenWhenFocusLost_CheckedChanged" Unchecked="CheckBoxStayOpenWhenFocusLost_CheckedChanged"/>
+                                <local:NumericUpDown Grid.Row="2" Grid.Column="0" x:Name="numericUpDownTimeUntilClose" Minimum="200" Maximum="5000" Increment="10" />
+                                <Label Grid.Row="2" Grid.Column="1" Content="{u:Translate 'Milliseconds until the menu closes if the mouse then leaves the menu'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="checkBoxStayOpenWhenFocusLostAfterEnterPressed" Content="{u:Translate 'If the focus is lost and the Enter key was pressed'}" Checked="CheckBoxStayOpenWhenFocusLostAfterEnterPressed_CheckedChanged" Unchecked="CheckBoxStayOpenWhenFocusLostAfterEnterPressed_CheckedChanged"/>
+                                <local:NumericUpDown Grid.Row="4" Grid.Column="0" x:Name="numericUpDownTimeUntilClosesAfterEnterPressed" Minimum="20" Maximum="1000" Increment="10" />
+                                <Label Grid.Row="4" Grid.Column="1" Content="{u:Translate 'Milliseconds until the menu closes if the menu is not reactivated'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="{u:Translate 'Cache'}">
+                            <StackPanel Orientation="Horizontal">
+                                <local:NumericUpDown x:Name="numericUpDownClearCacheIfMoreThanThisNumberOfItems" Width="70" Minimum="200" Maximum="5000" Increment="1" />
+                                <Label Content="{u:Translate 'Clear cache if more than this number of items'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{u:Translate 'Filter menu by file type e.g.: *.exe|*.dll'}">
+                            <TextBox x:Name="textBoxSearchPattern" />
+                        </GroupBox>
+                        <Button Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonExpertDefault_Click" HorizontalAlignment="Left"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
