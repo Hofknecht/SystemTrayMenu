@@ -20,6 +20,6 @@ namespace SystemTrayMenu.Utilities
             this.original = original;
         }
 
-        public override object ProvideValue(IServiceProvider serviceProvider) => Translator.GetText(original);
+        public override object ProvideValue(IServiceProvider serviceProvider) => Translator.GetText(original) ?? original;
     }
 }

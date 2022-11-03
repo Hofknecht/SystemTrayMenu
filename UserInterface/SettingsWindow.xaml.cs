@@ -10,6 +10,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
+    using System.Runtime.Versioning;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media.Imaging;
@@ -24,10 +25,9 @@ namespace SystemTrayMenu.UserInterface
     /// </summary>
     public partial class SettingsWindow : Window
     {
-#if TODO
         private const string MenuName = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder";
         private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
-#endif
+
         private static SettingsWindow? settingsForm;
 #if TODO
         private bool inHotkey;
@@ -372,6 +372,8 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowClickBackgroundDarkMode.Text = Settings.Default.ColorArrowClickBackgroundDarkMode;
             textBoxColorArrowHoverDarkMode.Text = Settings.Default.ColorArrowHoverDarkMode;
             textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
+
+            Closed += (_, _) => settingsForm = null;
         }
 
 #if TODO
@@ -393,9 +395,14 @@ namespace SystemTrayMenu.UserInterface
         {
             if (IsOpen())
             {
-#if TODO
-                settingsForm.HandleInvoke(settingsForm.Activate);
-#endif
+                if (settingsForm!.CheckAccess())
+                {
+                    settingsForm.Dispatcher.Invoke(() => settingsForm?.Activate());
+                }
+                else
+                {
+                    settingsForm.Activate();
+                }
             }
             else
             {
@@ -525,26 +532,19 @@ namespace SystemTrayMenu.UserInterface
 
             return success;
         }
+#endif
 
-        private static void AdjustControlMultilineIfNecessary(Control control)
-        {
-            if (control.Width > control.Parent.Width)
-            {
-                control.MaximumSize = new Size(control.Parent.Width, 0);
-                control.MinimumSize = new Size(0, control.Height * 2);
-            }
-        }
-
+        [SupportedOSPlatform("windows")]
         private static void AddSetFolderByWindowsContextMenu()
         {
-            RegistryKey registryKeyContextMenu = null;
-            RegistryKey registryKeyContextMenuCommand = null;
+            RegistryKey? registryKeyContextMenu = null;
+            RegistryKey? registryKeyContextMenuCommand = null;
 
             try
             {
                 registryKeyContextMenu = Registry.CurrentUser.CreateSubKey(MenuName);
-                string binLocation = Environment.ProcessPath;
-                if (registryKeyContextMenu != null)
+                string? binLocation = Environment.ProcessPath;
+                if ((registryKeyContextMenu != null) && (binLocation != null))
                 {
                     registryKeyContextMenu.SetValue(string.Empty, Translator.GetText("Set as directory"));
                     registryKeyContextMenu.SetValue("Icon", binLocation);
@@ -577,11 +577,12 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        [SupportedOSPlatform("windows")]
         private static void RemoveSetFolderByWindowsContextMenu()
         {
             try
             {
-                RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(Command);
+                RegistryKey? registryKey = Registry.CurrentUser.OpenSubKey(Command);
                 if (registryKey != null)
                 {
                     registryKey.Close();
@@ -602,7 +603,7 @@ namespace SystemTrayMenu.UserInterface
                 Log.Warn("DeleteSetFolderByWindowsContextMenu failed", ex);
             }
         }
-#endif
+
         private static bool IsStartupTask()
         {
             bool useStartupTask = false;
@@ -612,16 +613,8 @@ namespace SystemTrayMenu.UserInterface
             return useStartupTask;
         }
 
-#if TODO
-        private void SettingsForm_Load(object sender, EventArgs e)
-        {
-            AdjustControlMultilineIfNecessary(checkBoxStayOpenWhenFocusLost);
-        }
-#endif
-
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-#if TODO
             if (checkBoxSetFolderByWindowsContextMenu.IsChecked ?? false)
             {
                 AddSetFolderByWindowsContextMenu();
@@ -630,7 +623,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 RemoveSetFolderByWindowsContextMenu();
             }
-#endif
+
             Settings.Default.SaveLogFileInApplicationDirectory = checkBoxSaveLogFileInApplicationDirectory.IsChecked ?? false;
             if (Settings.Default.SaveLogFileInApplicationDirectory)
             {
