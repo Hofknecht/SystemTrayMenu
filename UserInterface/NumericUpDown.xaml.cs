@@ -21,12 +21,12 @@ namespace SystemTrayMenu.UserInterface
         // TODO: Not catched yet when something like "0--8" is entered
         private static readonly Regex RegexNonNumeric = new Regex("[^0-9-]+");
         private string lastTextOK;
-        private bool WithinChanged;
+        private bool withinChanged;
 
         public NumericUpDown()
         {
             InitializeComponent();
-            Value = 0;
+            lastTextOK = txtbox.Text;
         }
 
         public int Value
@@ -99,11 +99,11 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            if (!WithinChanged)
+            if (!withinChanged)
             {
-                WithinChanged = true;
+                withinChanged = true;
                 txtbox.Text = lastTextOK;
-                WithinChanged = false;
+                withinChanged = false;
             }
         }
 

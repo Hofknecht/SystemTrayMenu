@@ -204,7 +204,7 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <Button x:Name="buttonAddSampleStartMenuFolder" Content="xxx" Margin="3" MinWidth="76" Click="ButtonAddSampleStartMenuFolder_Click" HorizontalAlignment="Left" IsEnabled="False"/>
+                                <Button x:Name="buttonAddSampleStartMenuFolder" Content="???" Margin="3" MinWidth="76" Click="ButtonAddSampleStartMenuFolder_Click" HorizontalAlignment="Left" IsEnabled="False"/>
                                 <CheckBox x:Name="checkBoxGenerateShortcutsToDrives" Content="{u:Translate 'Generate drive shortcuts on startup'}"/>
                             </StackPanel>
                         </GroupBox>
@@ -258,9 +258,75 @@
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="{u:Translate 'Customize'}">
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" MaxHeight="600" VerticalAlignment="Top">
                     <StackPanel>
-                        <Label Content="fill me 6" Background="Red"/>
+                        <GroupBox Header="{u:Translate 'Appearance'}">
+                            <StackPanel>
+                                <CheckBox x:Name="checkBoxUseIconFromRootFolder" Content="{u:Translate 'Use icon from directory'}" />
+                                <CheckBox x:Name="checkBoxRoundCorners" Content="{u:Translate 'Round corners'}" />
+                                <CheckBox x:Name="checkBoxDarkModeAlwaysOn" Content="{u:Translate 'Color scheme dark always active'}"  Checked="CheckBoxDarkModeAlwaysOnCheckedChanged" Unchecked="CheckBoxDarkModeAlwaysOnCheckedChanged"/>
+                                <CheckBox x:Name="checkBoxUseFading" Content="{u:Translate 'Fading'}" />
+                                <CheckBox x:Name="checkBoxShowLinkOverlay" Content="{u:Translate 'Show link overlay'}" />
+                                <CheckBox x:Name="checkBoxShowDirectoryTitleAtTop" Content="{u:Translate 'Show directory title at top'}" />
+                                <CheckBox x:Name="checkBoxShowSearchBar" Content="{u:Translate 'Show search bar'}" />
+                                <CheckBox x:Name="checkBoxShowFunctionKeyOpenFolder" Content="{u:Translate '???'}" />
+                                <CheckBox x:Name="checkBoxShowFunctionKeyPinMenu" Content="{u:Translate '???'}" />
+                                <CheckBox x:Name="checkBoxShowFunctionKeySettings" Content="{u:Translate '???'}" />
+                                <CheckBox x:Name="checkBoxShowFunctionKeyRestart" Content="{u:Translate '???'}" />
+                                <CheckBox x:Name="checkBoxShowCountOfElementsBelow" Content="{u:Translate 'Show count of elements'}" />
+                                <Button Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonAppearanceDefault_Click" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{u:Translate 'Color scheme bright'}">
+                            <StackPanel>
+                                <Label Content="{u:Translate 'App menu'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorIcons" Description="{u:Translate 'Icons'}" />
+                                <local:ColorSelector x:Name="textBoxColorBackground" Description="{u:Translate 'Background'}" />
+                                <local:ColorSelector x:Name="textBoxColorBackgroundBorder" Description="{u:Translate 'Border of menu'}" />
+                                <local:ColorSelector x:Name="textBoxColorSearchField" Description="{u:Translate 'Search field'}" />
+                                <local:ColorSelector x:Name="textBoxColorOpenFolder" Description="{u:Translate 'Opened directory'}" />
+                                <local:ColorSelector x:Name="textBoxColorOpenFolderBorder" Description="{u:Translate 'Border of opened directory'}" />
+                                <local:ColorSelector x:Name="textBoxColorSelectedItem" Description="{u:Translate 'Selected element'}" />
+                                <local:ColorSelector x:Name="textBoxColorSelectedItemBorder" Description="{u:Translate 'Border of selected element'}" />
+                                <Label Content="{u:Translate 'Scrollbar'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <local:ColorSelector x:Name="textBoxColorScrollbarBackground" Description="{u:Translate 'Background'}" />
+                                <local:ColorSelector x:Name="textBoxColorSlider" Description="{u:Translate 'Slider'}" />
+                                <local:ColorSelector x:Name="textBoxColorSliderDragging" Description="{u:Translate 'Slider while dragging'}" />
+                                <local:ColorSelector x:Name="textBoxColorSliderHover" Description="{u:Translate 'Slider while mouse hovers over it 1'}" />
+                                <local:ColorSelector x:Name="textBoxColorSliderArrowsAndTrackHover" Description="{u:Translate 'Slider while mouse hovers over it 2'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrow" Description="{u:Translate 'Arrow'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowClick" Description="{u:Translate 'Arrow when clicking'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowClickBackground" Description="{u:Translate 'Background of arrow when clicking'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowHover" Description="{u:Translate 'Arrow while mouse hovers over it'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowHoverBackground" Description="{u:Translate 'Background of arrow while mouse hovers over it'}" />
+                                <Button Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonDefaultColors_Click" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="{u:Translate 'Color scheme dark'}">
+                            <StackPanel>
+                                <Label Content="{u:Translate 'App menu'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <local:ColorSelector x:Name="textBoxColorIconsDarkMode" Description="{u:Translate 'Icons'}" />
+                                <local:ColorSelector x:Name="textBoxColorBackgroundDarkMode" Description="{u:Translate 'Background'}" />
+                                <local:ColorSelector x:Name="textBoxColorBackgroundBorderDarkMode" Description="{u:Translate 'Border of menu'}" />
+                                <local:ColorSelector x:Name="textBoxColorSearchFieldDarkMode" Description="{u:Translate 'Search field'}" />
+                                <local:ColorSelector x:Name="textBoxColorOpenFolderDarkMode" Description="{u:Translate 'Opened directory'}" />
+                                <local:ColorSelector x:Name="textBoxColorOpenFolderBorderDarkMode" Description="{u:Translate 'Border of opened directory'}" />
+                                <local:ColorSelector x:Name="textBoxColorSelectedItemDarkMode" Description="{u:Translate 'Selected element'}" />
+                                <local:ColorSelector x:Name="textBoxColorSelectedItemBorderDarkMode" Description="{u:Translate 'Border of selected element'}" />
+                                <Label Content="{u:Translate 'Scrollbar'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
+                                <local:ColorSelector x:Name="textBoxColorScrollbarBackgroundDarkMode" Description="{u:Translate 'Background'}" />
+                                <local:ColorSelector x:Name="textBoxColorSliderDarkMode" Description="{u:Translate 'Slider'}" />
+                                <local:ColorSelector x:Name="textBoxColorSliderDraggingDarkMode" Description="{u:Translate 'Slider while dragging'}" />
+                                <local:ColorSelector x:Name="textBoxColorSliderHoverDarkMode" Description="{u:Translate 'Slider while mouse hovers over it 1'}" />
+                                <local:ColorSelector x:Name="textBoxColorSliderArrowsAndTrackHoverDarkMode" Description="{u:Translate 'Slider while mouse hovers over it 2'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowDarkMode" Description="{u:Translate 'Arrow'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowClickDarkMode" Description="{u:Translate 'Arrow when clicking'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowClickBackgroundDarkMode" Description="{u:Translate 'Background of arrow when clicking'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowHoverDarkMode" Description="{u:Translate 'Arrow while mouse hovers over it'}" />
+                                <local:ColorSelector x:Name="textBoxColorArrowHoverBackgroundDarkMode" Description="{u:Translate 'Background of arrow while mouse hovers over it'}" />
+                                <Button Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonDefaultColorsDark_Click" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </GroupBox>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

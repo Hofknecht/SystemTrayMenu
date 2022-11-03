@@ -13,6 +13,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media.Imaging;
+    using Microsoft.Win32;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
@@ -26,12 +27,9 @@ namespace SystemTrayMenu.UserInterface
 #if TODO
         private const string MenuName = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder";
         private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
-
-        private static readonly Icon SystemTrayMenu = Resources.SystemTrayMenu;
 #endif
         private static SettingsWindow? settingsForm;
 #if TODO
-        private readonly ColorConverter colorConverter = new();
         private bool inHotkey;
 #endif
         public SettingsWindow()
@@ -72,49 +70,6 @@ namespace SystemTrayMenu.UserInterface
                 tableLayoutPanelHotkey.Controls.Remove(textBoxHotkeyPlaceholder);
                 tableLayoutPanelHotkey.Controls.Add(textBoxHotkey, 0, 0);
             }
-
-            CombineControls(textBoxColorIcons, pictureBoxIcons);
-            CombineControls(textBoxColorBackground, pictureBoxBackground);
-            CombineControls(textBoxColorBackgroundBorder, pictureBoxBackgroundBorder);
-            CombineControls(textBoxColorSearchField, pictureBoxSearchField);
-            CombineControls(textBoxColorOpenFolder, pictureBoxOpenFolder);
-            CombineControls(textBoxColorOpenFolderBorder, pictureBoxOpenFolderBorder);
-            CombineControls(textBoxColorSelectedItem, pictureBoxSelectedItem);
-            CombineControls(textBoxColorSelectedItemBorder, pictureBoxSelectedItemBorder);
-            CombineControls(textBoxColorScrollbarBackground, pictureBoxScrollbarBackground);
-            CombineControls(textBoxColorSlider, pictureBoxSlider);
-            CombineControls(textBoxColorSliderDragging, pictureBoxSliderDragging);
-            CombineControls(textBoxColorSliderHover, pictureBoxSliderHover);
-            CombineControls(textBoxColorSliderArrowsAndTrackHover, pictureBoxSliderArrowsAndTrackHover);
-            CombineControls(textBoxColorArrow, pictureBoxArrow);
-            CombineControls(textBoxColorArrowClick, pictureBoxArrowClick);
-            CombineControls(textBoxColorArrowClickBackground, pictureBoxArrowClickBackground);
-            CombineControls(textBoxColorArrowHover, pictureBoxArrowHover);
-            CombineControls(textBoxColorArrowHoverBackground, pictureBoxArrowHoverBackground);
-
-            CombineControls(textBoxColorIconsDarkMode, pictureBoxIconsDarkMode);
-            CombineControls(textBoxColorBackgroundDarkMode, pictureBoxBackgroundDarkMode);
-            CombineControls(textBoxColorBackgroundBorderDarkMode, pictureBoxBackgroundBorderDarkMode);
-            CombineControls(textBoxColorSearchFieldDarkMode, pictureBoxSearchFieldDarkMode);
-            CombineControls(textBoxColorOpenFolderDarkMode, pictureBoxOpenFolderDarkMode);
-            CombineControls(textBoxColorOpenFolderBorderDarkMode, pictureBoxOpenFolderBorderDarkMode);
-            CombineControls(textBoxColorSelecetedItemDarkMode, pictureColorBoxSelectedItemDarkMode);
-            CombineControls(textBoxColorSelectedItemBorderDarkMode, pictureBoxSelectedItemBorderDarkMode);
-            CombineControls(textBoxColorScrollbarBackgroundDarkMode, pictureBoxScrollbarBackgroundDarkMode);
-            CombineControls(textBoxColorSliderDarkMode, pictureBoxSliderDarkMode);
-            CombineControls(textBoxColorSliderDraggingDarkMode, pictureBoxSliderDraggingDarkMode);
-            CombineControls(textBoxColorSliderHoverDarkMode, pictureBoxSliderHoverDarkMode);
-            CombineControls(textBoxColorSliderArrowsAndTrackHoverDarkMode, pictureBoxSliderArrowsAndTrackHoverDarkMode);
-            CombineControls(textBoxColorArrowDarkMode, pictureBoxArrowDarkMode);
-            CombineControls(textBoxColorArrowClickDarkMode, pictureBoxArrowClickDarkMode);
-            CombineControls(textBoxColorArrowClickBackgroundDarkMode, pictureBoxArrowClickBackgroundDarkMode);
-            CombineControls(textBoxColorArrowHoverDarkMode, pictureBoxArrowHoverDarkMode);
-            CombineControls(textBoxColorArrowHoverBackgroundDarkMode, pictureBoxArrowHoverBackgroundDarkMode);
-            void CombineControls(Control textBoxColor, Control pictureBox)
-            {
-                textBoxColor.Tag = pictureBox;
-                pictureBox.Tag = textBoxColor;
-            }
 #endif
             Translate();
             void Translate()
@@ -124,89 +79,33 @@ namespace SystemTrayMenu.UserInterface
                     groupBoxAutostart.Content = $"{(string)groupBoxAutostart.Content} ({Translator.GetText("Task Manager")})";
                 }
 
-                buttonAddSampleStartMenuFolder.Content = Translator.GetText("Add sample directory 'Start Menu'"); // TODO: Find a way to escape this in XAML
-
-#if TODO
-                groupBoxAppearance.Text = Translator.GetText("Appearance");
-                checkBoxUseIconFromRootFolder.Text = Translator.GetText("Use icon from directory");
-                checkBoxRoundCorners.Text = Translator.GetText("Round corners");
-                checkBoxDarkModeAlwaysOn.Text = Translator.GetText("Color scheme dark always active");
-                checkBoxUseFading.Text = Translator.GetText("Fading");
-                checkBoxShowLinkOverlay.Text = Translator.GetText("Show link overlay");
-                checkBoxShowDirectoryTitleAtTop.Text = Translator.GetText("Show directory title at top");
-                checkBoxShowCountOfElementsBelow.Text = Translator.GetText("Show count of elements");
-                checkBoxShowSearchBar.Text = Translator.GetText("Show search bar");
-                checkBoxShowFunctionKeyOpenFolder.Text = Translator.GetText("Show function key 'Open Folder'");
-                checkBoxShowFunctionKeyPinMenu.Text = Translator.GetText("Show function key 'Pin menu'");
-                checkBoxShowFunctionKeySettings.Text = Translator.GetText("Show function key 'Settings'");
-                checkBoxShowFunctionKeyRestart.Text = Translator.GetText("Show function key 'Restart'");
-                buttonAppearanceDefault.Text = Translator.GetText("Default");
-                groupBoxColorsLightMode.Text = Translator.GetText("Color scheme bright");
-                groupBoxColorsDarkMode.Text = Translator.GetText("Color scheme dark");
-                labelMenuLightMode.Text = Translator.GetText("App menu");
-                labelMenuDarkMode.Text = Translator.GetText("App menu");
-                labelScrollbarLightMode.Text = Translator.GetText("Scrollbar");
-                labelScrollbarDarkMode.Text = Translator.GetText("Scrollbar");
-                labelIcons.Text = Translator.GetText("Icons");
-                labelIconsDarkMode.Text = Translator.GetText("Icons");
-                labelBackground.Text = Translator.GetText("Background");
-                labelBackgroundDarkMode.Text = Translator.GetText("Background");
-                labelBackgroundBorder.Text = Translator.GetText("Border of menu");
-                labelBackgroundBorderDarkMode.Text = Translator.GetText("Border of menu");
-                labelSearchField.Text = Translator.GetText("Search field");
-                labelSearchFieldDarkMode.Text = Translator.GetText("Search field");
-                labelOpenFolder.Text = Translator.GetText("Opened directory");
-                labelOpenFolderDarkMode.Text = Translator.GetText("Opened directory");
-                labelOpenFolderBorder.Text = Translator.GetText("Border of opened directory");
-                labelOpenFolderBorderDarkMode.Text = Translator.GetText("Border of opened directory");
-                labelSelectedItem.Text = Translator.GetText("Selected element");
-                labelSelectedItemDarkMode.Text = Translator.GetText("Selected element");
-                labelSelectedItemBorder.Text = Translator.GetText("Border of selected element");
-                labelSelectedItemBorderDarkMode.Text = Translator.GetText("Border of selected element");
-                labelScrollbarBackground.Text = Translator.GetText("Background");
-                labelColorDarkModeScrollbarBackground.Text = Translator.GetText("Background");
-                labelSlider.Text = Translator.GetText("Slider");
-                labelColorDarkModeSlider.Text = Translator.GetText("Slider");
-                labelSliderDragging.Text = Translator.GetText("Slider while dragging");
-                labelColorDarkModeSliderDragging.Text = Translator.GetText("Slider while dragging");
-                labelSliderHover.Text = Translator.GetText("Slider while mouse hovers over it 1");
-                labelColorDarkModeSliderHover.Text = Translator.GetText("Slider while mouse hovers over it 1");
-                labelSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers over it 2");
-                labelColorDarkModeSliderArrowsAndTrackHover.Text = Translator.GetText("Slider while mouse hovers over it 2");
-                labelArrow.Text = Translator.GetText("Arrow");
-                labelColorDarkModeArrow.Text = Translator.GetText("Arrow");
-                labelArrowClick.Text = Translator.GetText("Arrow when clicking");
-                labelColorDarkModeArrowClick.Text = Translator.GetText("Arrow when clicking");
-                labelArrowClickBackground.Text = Translator.GetText("Background of arrow when clicking");
-                labelColorDarkModeArrowClickBackground.Text = Translator.GetText("Background of arrow when clicking");
-                labelArrowHover.Text = Translator.GetText("Arrow while mouse hovers over it");
-                labelColorDarkModeArrowHover.Text = Translator.GetText("Arrow while mouse hovers over it");
-                labelArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers over it");
-                labelColorDarkModeArrowHoverBackground.Text = Translator.GetText("Background of arrow while mouse hovers over it");
-
-                buttonColorsDefault.Text = Translator.GetText("Default");
-                buttonColorsDefaultDarkMode.Text = Translator.GetText("Default");
-#endif
+                // TODO: Find a way to escape ' within inline single quotes markup string in XAML
+                buttonAddSampleStartMenuFolder.Content = Translator.GetText("Add sample directory 'Start Menu'");
+                checkBoxShowFunctionKeyOpenFolder.Content = Translator.GetText("Show function key 'Open Folder'");
+                checkBoxShowFunctionKeyPinMenu.Content = Translator.GetText("Show function key 'Pin menu'");
+                checkBoxShowFunctionKeySettings.Content = Translator.GetText("Show function key 'Settings'");
+                checkBoxShowFunctionKeyRestart.Content = Translator.GetText("Show function key 'Restart'");
             }
-#if TODO
+
             textBoxFolder.Text = Config.Path;
-            checkBoxSetFolderByWindowsContextMenu.Checked = Settings.Default.SetFolderByWindowsContextMenu;
-            checkBoxSaveConfigInApplicationDirectory.Checked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
-            checkBoxSaveLogFileInApplicationDirectory.Checked = Settings.Default.SaveLogFileInApplicationDirectory;
+            checkBoxSetFolderByWindowsContextMenu.IsChecked = Settings.Default.SetFolderByWindowsContextMenu;
+            checkBoxSaveConfigInApplicationDirectory.IsChecked = CustomSettingsProvider.IsActivatedConfigPathAssembly();
+            checkBoxSaveLogFileInApplicationDirectory.IsChecked = Settings.Default.SaveLogFileInApplicationDirectory;
 
             if (IsStartupTask())
             {
-                checkBoxAutostart.Visible = false;
-                labelStartupStatus.Text = string.Empty;
+                checkBoxAutostart.Visibility = Visibility.Collapsed;
+                labelStartupStatus.Content = string.Empty;
             }
             else
             {
-                buttonAddStartup.Visible = false;
-                labelStartupStatus.Visible = false;
-                checkBoxAutostart.Checked = Settings.Default.IsAutostartActivated;
+                buttonAddStartup.Visibility = Visibility.Collapsed;
+                labelStartupStatus.Visibility = Visibility.Collapsed;
+                checkBoxAutostart.IsChecked = Settings.Default.IsAutostartActivated;
             }
 
-            checkBoxCheckForUpdates.Checked = Settings.Default.CheckForUpdates;
+            checkBoxCheckForUpdates.IsChecked = Settings.Default.CheckForUpdates;
+#if TODO
             textBoxHotkey.SetHotkey(Settings.Default.HotKey);
 #endif
 
@@ -423,22 +322,21 @@ namespace SystemTrayMenu.UserInterface
 
             textBoxSearchPattern.Text = Settings.Default.SearchPattern;
 
-#if TODO
-            checkBoxUseIconFromRootFolder.Checked = Settings.Default.UseIconFromRootFolder;
-            checkBoxRoundCorners.Checked = Settings.Default.RoundCorners;
-            checkBoxDarkModeAlwaysOn.Checked = Settings.Default.IsDarkModeAlwaysOn;
-            checkBoxUseFading.Checked = Settings.Default.UseFading;
-            checkBoxShowLinkOverlay.Checked = Settings.Default.ShowLinkOverlay;
-            checkBoxShowDirectoryTitleAtTop.Checked = Settings.Default.ShowDirectoryTitleAtTop;
-            checkBoxShowSearchBar.Checked = Settings.Default.ShowSearchBar;
-            checkBoxShowCountOfElementsBelow.Checked = Settings.Default.ShowCountOfElementsBelow;
-            checkBoxShowFunctionKeyOpenFolder.Checked = Settings.Default.ShowFunctionKeyOpenFolder;
-            checkBoxShowFunctionKeyPinMenu.Checked = Settings.Default.ShowFunctionKeyPinMenu;
-            checkBoxShowFunctionKeySettings.Checked = Settings.Default.ShowFunctionKeySettings;
-            checkBoxShowFunctionKeyRestart.Checked = Settings.Default.ShowFunctionKeyRestart;
+            checkBoxUseIconFromRootFolder.IsChecked = Settings.Default.UseIconFromRootFolder;
+            checkBoxRoundCorners.IsChecked = Settings.Default.RoundCorners;
+            checkBoxDarkModeAlwaysOn.IsChecked = Settings.Default.IsDarkModeAlwaysOn;
+            checkBoxUseFading.IsChecked = Settings.Default.UseFading;
+            checkBoxShowLinkOverlay.IsChecked = Settings.Default.ShowLinkOverlay;
+            checkBoxShowDirectoryTitleAtTop.IsChecked = Settings.Default.ShowDirectoryTitleAtTop;
+            checkBoxShowSearchBar.IsChecked = Settings.Default.ShowSearchBar;
+            checkBoxShowCountOfElementsBelow.IsChecked = Settings.Default.ShowCountOfElementsBelow;
+            checkBoxShowFunctionKeyOpenFolder.IsChecked = Settings.Default.ShowFunctionKeyOpenFolder;
+            checkBoxShowFunctionKeyPinMenu.IsChecked = Settings.Default.ShowFunctionKeyPinMenu;
+            checkBoxShowFunctionKeySettings.IsChecked = Settings.Default.ShowFunctionKeySettings;
+            checkBoxShowFunctionKeyRestart.IsChecked = Settings.Default.ShowFunctionKeyRestart;
 
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
-            textBoxColorSelecetedItemDarkMode.Text = Settings.Default.ColorDarkModeSelecetedItem;
+            textBoxColorSelectedItemDarkMode.Text = Settings.Default.ColorDarkModeSelecetedItem;
             textBoxColorSelectedItemBorder.Text = Settings.Default.ColorSelectedItemBorder;
             textBoxColorSelectedItemBorderDarkMode.Text = Settings.Default.ColorDarkModeSelectedItemBorder;
             textBoxColorOpenFolder.Text = Settings.Default.ColorOpenFolder;
@@ -474,8 +372,8 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowClickBackgroundDarkMode.Text = Settings.Default.ColorArrowClickBackgroundDarkMode;
             textBoxColorArrowHoverDarkMode.Text = Settings.Default.ColorArrowHoverDarkMode;
             textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
-#endif
         }
+
 #if TODO
         /// <summary>
         /// Gets NewHotKey.
@@ -724,7 +622,7 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
 #if TODO
-            if (checkBoxSetFolderByWindowsContextMenu.Checked)
+            if (checkBoxSetFolderByWindowsContextMenu.IsChecked ?? false)
             {
                 AddSetFolderByWindowsContextMenu();
             }
@@ -732,8 +630,8 @@ namespace SystemTrayMenu.UserInterface
             {
                 RemoveSetFolderByWindowsContextMenu();
             }
-
-            Settings.Default.SaveLogFileInApplicationDirectory = checkBoxSaveLogFileInApplicationDirectory.Checked;
+#endif
+            Settings.Default.SaveLogFileInApplicationDirectory = checkBoxSaveLogFileInApplicationDirectory.IsChecked ?? false;
             if (Settings.Default.SaveLogFileInApplicationDirectory)
             {
                 try
@@ -752,28 +650,35 @@ namespace SystemTrayMenu.UserInterface
 
             if (!IsStartupTask())
             {
-                if (checkBoxAutostart.Checked)
+                if (checkBoxAutostart.IsChecked ?? false)
                 {
-                    RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                    RegistryKey? key = Registry.CurrentUser.OpenSubKey(
                             @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                    key.SetValue(
-                        Assembly.GetExecutingAssembly().GetName().Name,
-                        Environment.ProcessPath);
+                    if (key != null)
+                    {
+                        key.SetValue(
+                            Assembly.GetExecutingAssembly().GetName().Name,
+                            Environment.ProcessPath!);
+                    }
 
                     Settings.Default.IsAutostartActivated = true;
                 }
                 else
                 {
-                    RegistryKey key = Registry.CurrentUser.OpenSubKey(
+                    RegistryKey? key = Registry.CurrentUser.OpenSubKey(
                         @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                    key.DeleteValue("SystemTrayMenu", false);
+                    if (key != null)
+                    {
+                        key.DeleteValue("SystemTrayMenu", false);
+                    }
 
                     Settings.Default.IsAutostartActivated = false;
                 }
             }
 
-            Settings.Default.CheckForUpdates = checkBoxCheckForUpdates.Checked;
+            Settings.Default.CheckForUpdates = checkBoxCheckForUpdates.IsChecked ?? false;
 
+#if TODO
             Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
 #endif
@@ -791,20 +696,19 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.WidthMaxInPercent = numericUpDownMenuWidth.Value;
             Settings.Default.HeightMaxInPercent = numericUpDownMenuHeight.Value;
 
-#if TODO
-            if (radioButtonUseCustomLocation.Checked)
+            if (radioButtonUseCustomLocation.IsChecked ?? true)
             {
                 Settings.Default.UseCustomLocation = true;
                 Settings.Default.AppearAtMouseLocation = false;
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
-            else if (radioButtonAppearAtMouseLocation.Checked)
+            else if (radioButtonAppearAtMouseLocation.IsChecked ?? true)
             {
                 Settings.Default.UseCustomLocation = false;
                 Settings.Default.AppearAtMouseLocation = true;
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
-            else if (radioButtonAppearAtTheBottomLeft.Checked)
+            else if (radioButtonAppearAtTheBottomLeft.IsChecked ?? true)
             {
                 Settings.Default.UseCustomLocation = false;
                 Settings.Default.AppearAtMouseLocation = false;
@@ -816,10 +720,10 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.AppearAtMouseLocation = false;
                 Settings.Default.AppearAtTheBottomLeft = false;
             }
-#endif
+
             Settings.Default.OverlappingOffsetPixels = numericUpDownOverlappingOffsetPixels.Value;
-#if TODO
-            if (radioButtonNextToPreviousMenu.Checked)
+
+            if (radioButtonNextToPreviousMenu.IsChecked ?? true)
             {
                 Settings.Default.AppearNextToPreviousMenu = true;
             }
@@ -827,7 +731,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 Settings.Default.AppearNextToPreviousMenu = false;
             }
-#endif
+
             Settings.Default.ResolveLinksToFolders = checkBoxResolveLinksToFolders.IsChecked ?? true;
             Settings.Default.ShowInTaskbar = checkBoxShowInTaskbar.IsChecked ?? true;
             Settings.Default.SendHotkeyInsteadKillOtherInstances = checkBoxSendHotkeyInsteadKillOtherInstances.IsChecked ?? false;
@@ -878,21 +782,20 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
             Settings.Default.SearchPattern = textBoxSearchPattern.Text;
 
-#if TODO
-            Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.Checked;
-            Settings.Default.RoundCorners = checkBoxRoundCorners.Checked;
-            Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
-            Settings.Default.UseFading = checkBoxUseFading.Checked;
-            Settings.Default.ShowLinkOverlay = checkBoxShowLinkOverlay.Checked;
-            Settings.Default.ShowDirectoryTitleAtTop = checkBoxShowDirectoryTitleAtTop.Checked;
-            Settings.Default.ShowSearchBar = checkBoxShowSearchBar.Checked;
-            Settings.Default.ShowCountOfElementsBelow = checkBoxShowCountOfElementsBelow.Checked;
-            Settings.Default.ShowFunctionKeyOpenFolder = checkBoxShowFunctionKeyOpenFolder.Checked;
-            Settings.Default.ShowFunctionKeyPinMenu = checkBoxShowFunctionKeyPinMenu.Checked;
-            Settings.Default.ShowFunctionKeySettings = checkBoxShowFunctionKeySettings.Checked;
-            Settings.Default.ShowFunctionKeyRestart = checkBoxShowFunctionKeyRestart.Checked;
+            Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.IsChecked ?? false;
+            Settings.Default.RoundCorners = checkBoxRoundCorners.IsChecked ?? false;
+            Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.IsChecked ?? true;
+            Settings.Default.UseFading = checkBoxUseFading.IsChecked ?? false;
+            Settings.Default.ShowLinkOverlay = checkBoxShowLinkOverlay.IsChecked ?? false;
+            Settings.Default.ShowDirectoryTitleAtTop = checkBoxShowDirectoryTitleAtTop.IsChecked ?? false;
+            Settings.Default.ShowSearchBar = checkBoxShowSearchBar.IsChecked ?? true;
+            Settings.Default.ShowCountOfElementsBelow = checkBoxShowCountOfElementsBelow.IsChecked ?? false;
+            Settings.Default.ShowFunctionKeyOpenFolder = checkBoxShowFunctionKeyOpenFolder.IsChecked ?? false;
+            Settings.Default.ShowFunctionKeyPinMenu = checkBoxShowFunctionKeyPinMenu.IsChecked ?? false;
+            Settings.Default.ShowFunctionKeySettings = checkBoxShowFunctionKeySettings.IsChecked ?? false;
+            Settings.Default.ShowFunctionKeyRestart = checkBoxShowFunctionKeyRestart.IsChecked ?? false;
 
-            if (checkBoxSaveConfigInApplicationDirectory.Checked)
+            if (checkBoxSaveConfigInApplicationDirectory.IsChecked ?? false)
             {
                 CustomSettingsProvider.ActivateConfigPathAssembly();
                 TrySettingsDefaultSave();
@@ -915,9 +818,8 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            DialogResult = DialogResult.OK;
             AppRestart.ByConfigChange();
-#endif
+
             Close();
         }
 
@@ -1185,34 +1087,17 @@ namespace SystemTrayMenu.UserInterface
             textBoxSearchPattern.Text = string.Empty;
         }
 
-#if TODO
-        private void TextBoxColorsChanged(object sender, EventArgs e)
+        private void TextBoxColorsChanged(ColorSelector sender)
         {
-            TextBox textBox = (TextBox)sender;
-            PictureBox pictureBox = (PictureBox)textBox.Tag;
-            pictureBox.BackColor = GetConvertFromStringOrDefault(textBox.Text.Trim());
-
             SaveColorsTemporarily();
-        }
-
-        private Color GetConvertFromStringOrDefault(string text)
-        {
-            try
-            {
-                return (Color)colorConverter.ConvertFromString(text);
-            }
-            catch
-            {
-                return Color.White;
-            }
         }
 
         private void SaveColorsTemporarily()
         {
-            if (Visible)
+            if (Visibility == Visibility.Visible)
             {
                 Settings.Default.ColorSelectedItem = textBoxColorSelectedItem.Text;
-                Settings.Default.ColorDarkModeSelecetedItem = textBoxColorSelecetedItemDarkMode.Text;
+                Settings.Default.ColorDarkModeSelecetedItem = textBoxColorSelectedItemDarkMode.Text;
                 Settings.Default.ColorSelectedItemBorder = textBoxColorSelectedItemBorder.Text;
                 Settings.Default.ColorDarkModeSelectedItemBorder = textBoxColorSelectedItemBorderDarkMode.Text;
                 Settings.Default.ColorOpenFolder = textBoxColorOpenFolder.Text;
@@ -1252,42 +1137,30 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void CheckBoxDarkModeAlwaysOnCheckedChanged(object sender, EventArgs e)
+        private void CheckBoxDarkModeAlwaysOnCheckedChanged(object sender, RoutedEventArgs e)
         {
-            Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.Checked;
+            Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.IsChecked ?? true;
             Config.ResetReadDarkModeDone();
             SaveColorsTemporarily();
         }
 
-        private void PictureBoxClick(object sender, EventArgs e)
+        private void ButtonAppearanceDefault_Click(object sender, RoutedEventArgs e)
         {
-            PictureBox pictureBox = (PictureBox)sender;
-            TextBox textBox = (TextBox)pictureBox.Tag;
-            colorDialog.Color = pictureBox.BackColor;
-            if (colorDialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox.Text = ColorTranslator.ToHtml(colorDialog.Color);
-                pictureBox.BackColor = colorDialog.Color;
-            }
+            checkBoxUseIconFromRootFolder.IsChecked = false;
+            checkBoxRoundCorners.IsChecked = false;
+            checkBoxUseFading.IsChecked = false;
+            checkBoxDarkModeAlwaysOn.IsChecked = true;
+            checkBoxShowLinkOverlay.IsChecked = false;
+            checkBoxShowDirectoryTitleAtTop.IsChecked = false;
+            checkBoxShowSearchBar.IsChecked = true;
+            checkBoxShowCountOfElementsBelow.IsChecked = false;
+            checkBoxShowFunctionKeyOpenFolder.IsChecked = false;
+            checkBoxShowFunctionKeyPinMenu.IsChecked = false;
+            checkBoxShowFunctionKeySettings.IsChecked = false;
+            checkBoxShowFunctionKeyRestart.IsChecked = false;
         }
 
-        private void ButtonAppearanceDefault_Click(object sender, EventArgs e)
-        {
-            checkBoxUseIconFromRootFolder.Checked = false;
-            checkBoxRoundCorners.Checked = false;
-            checkBoxUseFading.Checked = false;
-            checkBoxDarkModeAlwaysOn.Checked = true;
-            checkBoxShowLinkOverlay.Checked = false;
-            checkBoxShowDirectoryTitleAtTop.Checked = false;
-            checkBoxShowSearchBar.Checked = true;
-            checkBoxShowCountOfElementsBelow.Checked = false;
-            checkBoxShowFunctionKeyOpenFolder.Checked = false;
-            checkBoxShowFunctionKeyPinMenu.Checked = false;
-            checkBoxShowFunctionKeySettings.Checked = false;
-            checkBoxShowFunctionKeyRestart.Checked = false;
-        }
-
-        private void ButtonDefaultColors_Click(object sender, EventArgs e)
+        private void ButtonDefaultColors_Click(object sender, RoutedEventArgs e)
         {
             textBoxColorIcons.Text = "#95a0a6";
             textBoxColorOpenFolder.Text = "#C2F5DE";
@@ -1309,7 +1182,7 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorScrollbarBackground.Text = "#f0f0f0";
         }
 
-        private void ButtonDefaultColorsDark_Click(object sender, EventArgs e)
+        private void ButtonDefaultColorsDark_Click(object sender, RoutedEventArgs e)
         {
             textBoxColorIconsDarkMode.Text = "#95a0a6";
             textBoxColorOpenFolderDarkMode.Text = "#14412A";
@@ -1317,7 +1190,7 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorBackgroundDarkMode.Text = "#202020";
             textBoxColorBackgroundBorderDarkMode.Text = "#000000";
             textBoxColorSearchFieldDarkMode.Text = "#191919";
-            textBoxColorSelecetedItemDarkMode.Text = "#333333";
+            textBoxColorSelectedItemDarkMode.Text = "#333333";
             textBoxColorSelectedItemBorderDarkMode.Text = "#141D4B";
             textBoxColorArrowDarkMode.Text = "#676767";
             textBoxColorArrowHoverBackgroundDarkMode.Text = "#373737";
@@ -1331,6 +1204,7 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorScrollbarBackgroundDarkMode.Text = "#171717";
         }
 
+#if TODO
         private void StopPlayingDingSoundEnterKeyPressed_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -1347,12 +1221,10 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 #endif
+
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-#if TODO
             Settings.Default.Reload();
-            DialogResult = DialogResult.Cancel;
-#endif
             Close();
         }
 
