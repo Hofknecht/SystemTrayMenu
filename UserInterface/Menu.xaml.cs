@@ -180,11 +180,8 @@ namespace SystemTrayMenu.UserInterface
             MouseDown += Menu_MouseDown;
             MouseUp += Menu_MouseUp;
             MouseMove += Menu_MouseMove;
-            textBoxSearch.TextChanged += TextBoxSearch_TextChanged;
 #if TODO
             labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);
-
-            textBoxSearch.ContextMenu = new ContextMenu();
 
             // customScrollbar
             customScrollbar.Location = new Point(0, 0);
@@ -324,11 +321,34 @@ namespace SystemTrayMenu.UserInterface
 
         internal enum MenuType
         {
+            /// <summary>
+            /// Root menu
+            /// </summary>
             Main,
+
+            /// <summary>
+            /// Sub menu
+            /// </summary>
             Sub,
+
+            /// <summary>
+            /// Sub menu with no content
+            /// </summary>
             Empty,
+
+            /// <summary>
+            /// Sub menu with no access
+            /// </summary>
             NoAccess,
+
+            /// <summary>
+            /// TODO: Not used - remove?
+            /// </summary>
             MaxReached,
+
+            /// <summary>
+            /// Sub menu but with yet unknown content
+            /// </summary>
             Loading,
         }
 
@@ -356,31 +376,29 @@ namespace SystemTrayMenu.UserInterface
 
 #if TODO
         internal bool ScrollbarVisible { get; private set; }
-#endif
-        private ListView tableLayoutPanelDgvAndScrollbar => dgv; // TODO WPF Remove and replace with dgv
 
+        private ListView tableLayoutPanelDgvAndScrollbar => dgv; // TODO WPF Remove and replace with dgv
+#endif
         internal void ResetSearchText()
         {
-#if TODO
             textBoxSearch.Text = string.Empty;
-            if (dgv.Rows.Count > 0)
+            if (dgv.Items.Count > 0)
             {
-                dgv.FirstDisplayedScrollingRowIndex = 0;
+                dgv.ScrollIntoView(dgv.Items[0]);
             }
-
+#if TODO
             AdjustScrollbar();
 #endif
         }
 
         internal void RefreshSearchText()
         {
-#if TODO
-            TextBoxSearch_TextChanged(textBoxSearch, null);
-            if (dgv.Rows.Count > 0)
+            TextBoxSearch_TextChanged();
+            if (dgv.Items.Count > 0)
             {
-                dgv.FirstDisplayedScrollingRowIndex = 0;
+                dgv.ScrollIntoView(dgv.Items[0]);
             }
-
+#if TODO
             AdjustScrollbar();
 #endif
         }
@@ -435,15 +453,21 @@ namespace SystemTrayMenu.UserInterface
             switch (type)
             {
                 case MenuType.Main:
+                    textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
                     break;
                 case MenuType.Sub:
+                    textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
                     buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
                 case MenuType.Empty:
+                    // TODO? remove search bar when searching makes no sense (take care of calculating initial position)
+                    //       searchPanel.Visibility = Visibility.Collapsed;
                     labelItems.Content = Translator.GetText("Directory empty");
                     buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
                 case MenuType.NoAccess:
+                    // TODO? remove search bar when searching makes no sense (take care of calculating initial position)
+                    //       searchPanel.Visibility = Visibility.Collapsed;
                     labelItems.Content = Translator.GetText("Directory inaccessible");
                     buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
@@ -451,7 +475,6 @@ namespace SystemTrayMenu.UserInterface
                     labelItems.Content = Translator.GetText("loading");
                     buttonMenuAlwaysOpen.Visibility = Visibility.Visible;
                     buttonOpenFolder.Visibility = Visibility.Collapsed;
-                    textBoxSearch.TextChanged -= TextBoxSearch_TextChanged;
 #if TODO
                     pictureBoxMenuAlwaysOpen.Paint -= PictureBoxMenuAlwaysOpen_Paint;
                     pictureBoxMenuAlwaysOpen.Paint += LoadingMenu_Paint;
@@ -1006,7 +1029,7 @@ namespace SystemTrayMenu.UserInterface
             KeyPressCheck?.Invoke(sender, e);
         }
 #endif
-        private void TextBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextBoxSearch_TextChanged()
         {
 #if TODO
             customScrollbar.Value = 0;
@@ -1058,6 +1081,20 @@ namespace SystemTrayMenu.UserInterface
 
             bool isSearchStringEmpty = string.IsNullOrEmpty(searchString);
 
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource);
+            if (isSearchStringEmpty)
+            {
+                view.Filter = null;
+            }
+            else
+            {
+                view.Filter = SearchFilter;
+                bool SearchFilter(object item)
+                {
+                    ListViewItemData row = (ListViewItemData)item;
+                    return row.ColumnText.Contains(textBoxSearch.Text.Trim()); // TODO: THIS IS JUST TEMPORARY DUMMY FILTER (see below)
+                }
+            }
 #if TODO
             try
             {

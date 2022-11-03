@@ -801,6 +801,7 @@ namespace SystemTrayMenu.Business
 
                 if (menu.Level == 0)
                 {
+                    menu.SetType(Menu.MenuType.Main);
                     menu.ResetSearchText();
                     menu.ResetHeight();
                     AdjustMenusSizeAndLocation();
