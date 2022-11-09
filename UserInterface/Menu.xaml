@@ -9,7 +9,7 @@
         xmlns:utils="clr-namespace:SystemTrayMenu.Utilities"
         xmlns:local="clr-namespace:SystemTrayMenu.UserInterface"
         x:Class="SystemTrayMenu.UserInterface.Menu"
-        mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False">
+        mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False" SnapsToDevicePixels="True" UseLayoutRounding="True">
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
@@ -121,12 +121,12 @@
                 </Button>
             </DockPanel>
 
-            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Background="{x:Null}">
+            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Background="{x:Null}" SelectionMode="Single">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Width="{DynamicResource ColumnIconWidth}" Source="{Binding ColumnIcon, Converter={utils:IconToImageSourceConverter}}"/>
-                            <Label Width="{DynamicResource ColumnTextWidth}" Margin="6,0" Padding="0" VerticalContentAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Height="{DynamicResource RowHeight}">
+                            <Image Width="{DynamicResource ColumnIconWidth}" Margin="0,2,0,3" Source="{Binding ColumnIcon, Converter={utils:IconToImageSourceConverter}}" />
+                            <Label Width="{DynamicResource ColumnTextWidth}" Margin="3,0" Padding="0" VerticalContentAlignment="Center">
                                 <TextBlock TextTrimming="CharacterEllipsis" Text="{Binding ColumnText}"/>
                             </Label>
                         </StackPanel>
@@ -134,6 +134,9 @@
                 </ListView.ItemTemplate>
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="Padding" Value="0"/>
                         <EventSetter Event="MouseEnter" Handler="ListViewItem_MouseEnter" />
                         <EventSetter Event="MouseLeave" Handler="ListViewItem_MouseLeave" />
                         <EventSetter Event="PreviewMouseDown" Handler="ListViewItem_MouseDown" />

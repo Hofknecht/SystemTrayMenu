@@ -890,14 +890,14 @@ namespace SystemTrayMenu.UserInterface
                     // 175% = 33 instead 37, 200% = 35 instead 42
                     // #418 use 21 as default and scale it manually
                     double rowHeightDefault = 21.24f * Scaling.FactorByDpi;
-                    Resources["RowHeight"] = (double)((rowHeightDefault * factor * Scaling.Factor) + 0.5);
+                    Resources["RowHeight"] = (double)(int)((rowHeightDefault * factor * Scaling.Factor) + 0.5);
                     dgv.Tag = true;
                 }
             }
             else
             {
                 // Take over the height from predecessor menu
-                Resources["RowHeight"] = (double)menuPredecessor.Resources["RowHeight"];
+                Resources["RowHeight"] = (double)(int)menuPredecessor.Resources["RowHeight"];
                 dgv.Tag = true;
             }
 
@@ -944,7 +944,7 @@ namespace SystemTrayMenu.UserInterface
             double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
             // IcoWidth 100% = 21px, 175% is 33, +3+2 is padding from ColumnIcon
             double icoWidth = (16 * Scaling.FactorByDpi) + 5;
-            Resources["ColumnIconWidth"] = (double)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
+            Resources["ColumnIconWidth"] = (double)(int)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
 
             double renderedMaxWidth = 0D;
             foreach (ListViewItemData item in dgv.Items)
@@ -1341,6 +1341,10 @@ namespace SystemTrayMenu.UserInterface
             if (iconsToUpdate < 1)
             {
                 timerUpdateIcons.Stop();
+            }
+            else
+            {
+                ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Refresh();
             }
         }
 
