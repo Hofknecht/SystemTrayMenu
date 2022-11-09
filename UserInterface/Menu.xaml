@@ -121,7 +121,7 @@
                 </Button>
             </DockPanel>
 
-            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Background="{x:Null}" SelectionMode="Single">
+            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}" Background="{x:Null}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Height="{DynamicResource RowHeight}">

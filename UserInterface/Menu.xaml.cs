@@ -897,7 +897,7 @@ namespace SystemTrayMenu.UserInterface
             else
             {
                 // Take over the height from predecessor menu
-                Resources["RowHeight"] = (double)(int)menuPredecessor.Resources["RowHeight"];
+                Resources["RowHeight"] = menuPredecessor.Resources["RowHeight"];
                 dgv.Tag = true;
             }
 
