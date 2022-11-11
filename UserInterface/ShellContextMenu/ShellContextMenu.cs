@@ -9,6 +9,7 @@ namespace SystemTrayMenu.Utilities
     using System.Runtime.InteropServices;
     using System.Text;
     using System.Windows;
+    using System.Windows.Input;
     using SystemTrayMenu.Helper;
     using static SystemTrayMenu.Utilities.FormsExtensions;
 
@@ -186,7 +187,7 @@ namespace SystemTrayMenu.Utilities
 
         // Specifies how the window is to be shown
         [Flags]
-        private enum SW
+        private enum SW : uint
         {
             HIDE = 0,
             SHOWNORMAL = 1, // NORMAL = 1,
@@ -747,21 +748,12 @@ namespace SystemTrayMenu.Utilities
                 }
 
                 pMenu = DllImports.NativeMethods.User32CreatePopupMenu();
-#if TODO // WPF: Implement Control and replace active code with disabled one
                 int nResult = oContextMenu.QueryContextMenu(
                     pMenu,
                     0,
                     CmdFirst,
                     CmdLast,
-                    CMF.EXPLORE | CMF.NORMAL | ((Control.ModifierKeys & Key.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
-#else
-                int nResult = oContextMenu.QueryContextMenu(
-                    pMenu,
-                    0,
-                    CmdFirst,
-                    CmdLast,
-                    CMF.EXPLORE | CMF.NORMAL);
-#endif
+                    CMF.EXPLORE | CMF.NORMAL | ((Keyboard.Modifiers & ModifierKeys.Shift) != 0 ? CMF.EXTENDEDVERBS : 0));
                 Marshal.QueryInterface(iContextMenuPtr, ref iidIContextMenu2, out iContextMenuPtr2);
                 Marshal.QueryInterface(iContextMenuPtr, ref iidIContextMenu3, out iContextMenuPtr3);
 
@@ -953,7 +945,6 @@ namespace SystemTrayMenu.Utilities
 
         private static void InvokeCommand(IContextMenu contextMenu, uint nCmd, string strFolder, Point pointInvoke)
         {
-#if TODO
             CMINVOKECOMMANDINFOEX invoke = new()
             {
                 CbSize = CbInvokeCommand,
@@ -962,13 +953,12 @@ namespace SystemTrayMenu.Utilities
                 LpVerbW = (IntPtr)(nCmd - CmdFirst),
                 LpDirectoryW = strFolder,
                 FMask = CMIC.UNICODE | CMIC.PTINVOKE |
-                ((Control.ModifierKeys & Key.Control) != 0 ? CMIC.CONTROL_DOWN : 0) |
-                ((Control.ModifierKeys & Key.Shift) != 0 ? CMIC.SHIFT_DOWN : 0),
-                PtInvoke = new POINT(pointInvoke.X, pointInvoke.Y),
+                ((Keyboard.Modifiers & ModifierKeys.Control) != 0 ? CMIC.CONTROL_DOWN : 0) |
+                ((Keyboard.Modifiers & ModifierKeys.Shift) != 0 ? CMIC.SHIFT_DOWN : 0),
+                PtInvoke = new POINT((int)pointInvoke.X, (int)pointInvoke.Y),
                 NShow = SW.SHOWNORMAL,
             };
             _ = contextMenu.InvokeCommand(ref invoke);
-#endif
         }
 
         /// <summary>Gets the interfaces to the context menu.</summary>
