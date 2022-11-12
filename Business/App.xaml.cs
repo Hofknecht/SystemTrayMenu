@@ -45,7 +45,7 @@ namespace SystemTrayMenu
 
             if (Settings.Default.CheckForUpdates)
             {
-#if TODO // GITHUBUPDATE
+#if TODO // WPF: Creating the dialog window must be called on STA thread
                 new Thread((obj) => GitHubUpdate.ActivateNewVersionFormOrCheckForUpdates(
                     showWhenUpToDate: false))
                     .Start();

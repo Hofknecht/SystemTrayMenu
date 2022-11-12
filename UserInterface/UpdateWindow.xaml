@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2022-2022 Peter Kirmeier -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
+        xmlns:local="clr-namespace:SystemTrayMenu.UserInterface"
+        x:Class="SystemTrayMenu.UserInterface.UpdateWindow"
+        mc:Ignorable="d" Title="{u:Translate 'New version available!'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="600" MinHeight="400" WindowStyle="ToolWindow" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" x:Name="label" Content="{u:Translate 'Latest available version:'}" />
+
+        <!-- TODO: Adjust MaxHeight? -->
+        <TextBox Grid.Row="1" x:Name="textBox" MaxHeight="600" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="buttonGoToDownloadPage" Content="{u:Translate 'Go to download page'}" Margin="3" MinWidth="76" Click="ButtonGoToDownloadPage_Click"/>
+            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" IsDefault="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

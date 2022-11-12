@@ -5,7 +5,6 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Runtime.InteropServices;
     using System.Windows.Interop;
 
     public static class FormsExtensions
@@ -39,20 +38,5 @@ namespace SystemTrayMenu.Utilities
                 throw new NotImplementedException();
             }
         }
-
-#if TODO
-
-        public static void HandleInvoke(this Control instance, Action action)
-        {
-            if (instance.InvokeRequired)
-            {
-                instance.Invoke(action);
-            }
-            else
-            {
-                action();
-            }
-        }
-#endif
     }
 }

@@ -33,9 +33,7 @@ namespace SystemTrayMenu.Helper
             AddItem(menu, "Frequently Asked Questions", Config.ShowHelpFAQ);
             AddItem(menu, "Support SystemTrayMenu", Config.ShowSupportSystemTrayMenu);
             AddItem(menu, "About SystemTrayMenu", About);
-#if TODO // GITHUBUPDATE
             AddItem(menu, "Check for updates", () => GitHubUpdate.ActivateNewVersionFormOrCheckForUpdates(showWhenUpToDate: true));
-#endif
             AddSeperator(menu);
             AddItem(menu, "Restart", AppRestart.ByAppContextMenu);
             AddItem(menu, "Exit app", () => Application.Current.Shutdown());

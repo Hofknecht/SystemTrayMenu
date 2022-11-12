@@ -258,6 +258,7 @@
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="{u:Translate 'Customize'}">
+                <!-- TODO: Adjust MaxHeight? -->
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" MaxHeight="600" VerticalAlignment="Top">
                     <StackPanel>
                         <GroupBox Header="{u:Translate 'Appearance'}">

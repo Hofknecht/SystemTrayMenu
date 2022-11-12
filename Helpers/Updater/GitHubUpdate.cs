@@ -6,22 +6,61 @@ namespace SystemTrayMenu.Helper.Updater
 {
     using System;
     using System.Collections.Generic;
-    using System.Drawing;
     using System.Net.Http;
     using System.Reflection;
-    using System.Windows.Forms;
+    using System.Windows;
+    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
 
     public class GitHubUpdate
     {
         private static List<Dictionary<string, object>> releases;
-        private static Form newVersionForm;
+        private static UpdateWindow newVersionForm;
+
+        /// <summary>
+        /// Gets the latest release version name .
+        /// </summary>
+        public static string LatestVersionName
+        {
+            get
+            {
+                string result = "Unknown";
+
+                if (releases == null)
+                {
+                    return result;
+                }
+
+                try
+                {
+                    result = releases[0]["tag_name"].ToString() !.Replace("v", string.Empty); // 0 = latest
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"{nameof(LatestVersionName)} failed", ex);
+                }
+
+                return result;
+            }
+        }
+
+        /// <summary>
+        /// Opens the website on GitHub of the latest release version .
+        /// </summary>
+        public static void WebOpenLatestRelease() => Log.ProcessStart("https://github.com/Hofknecht/SystemTrayMenu/releases");
 
         public static void ActivateNewVersionFormOrCheckForUpdates(bool showWhenUpToDate)
         {
             if (newVersionForm != null)
             {
-                newVersionForm.HandleInvoke(newVersionForm.Activate);
+                if (newVersionForm!.CheckAccess())
+                {
+                    newVersionForm.Dispatcher.Invoke(() => newVersionForm?.Activate());
+                }
+                else
+                {
+                    newVersionForm.Activate();
+                }
             }
             else
             {
@@ -35,7 +74,7 @@ namespace SystemTrayMenu.Helper.Updater
             HttpClient client = new();
 
             // https://developer.github.com/v3/#user-agent-required
-            client.DefaultRequestHeaders.Add("User-Agent", "SystemTrayMenu/" + Application.ProductVersion.ToString());
+            client.DefaultRequestHeaders.Add("User-Agent", "SystemTrayMenu/" + Assembly.GetExecutingAssembly().GetName().Version.ToString());
 
             // https://developer.github.com/v3/media/#request-specific-version
             client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3.text+json");
@@ -61,9 +100,6 @@ namespace SystemTrayMenu.Helper.Updater
                 RemoveCurrentAndOlderVersions();
                 ShowNewVersionOrUpToDateDialog(showWhenUpToDate);
             }
-
-            newVersionForm?.Dispose();
-            newVersionForm = null;
         }
 
         private static void RemoveCurrentAndOlderVersions()
@@ -86,121 +122,15 @@ namespace SystemTrayMenu.Helper.Updater
         {
             if (releases.Count > 0)
             {
-                if (NewVersionDialog() == DialogResult.Yes)
-                {
-                    Log.ProcessStart("https://github.com/Hofknecht/SystemTrayMenu/releases");
-                }
+                newVersionForm = new();
+                newVersionForm.textBox.Text = GetChangelog();
+                newVersionForm.Closed += (_, _) => newVersionForm = null;
+                newVersionForm.ShowDialog();
             }
             else if (showWhenUpToDate)
             {
                 MessageBox.Show(Translator.GetText("You have the latest version of SystemTrayMenu!"));
             }
-        }
-
-        /// <summary>
-        /// Creates a window to show changelog of new available versions.
-        /// </summary>
-        /// <param name="LatestVersionTitle">Name of latest release.</param>
-        /// <param name="Changelog">Pathnotes.</param>
-        /// <returns>OK = OK, Yes = Website, else = Cancel.</returns>
-        private static DialogResult NewVersionDialog()
-        {
-            const int ClientPad = 15;
-            newVersionForm = new()
-            {
-                StartPosition = FormStartPosition.CenterScreen,
-                FormBorderStyle = FormBorderStyle.FixedDialog,
-                Icon = Config.GetAppIcon(),
-                ShowInTaskbar = false,
-            };
-            newVersionForm.FormBorderStyle = FormBorderStyle.Sizable;
-            newVersionForm.MaximizeBox = true;
-            newVersionForm.MinimizeBox = false;
-            newVersionForm.ClientSize = new Size(600, 400);
-            newVersionForm.MinimumSize = newVersionForm.ClientSize;
-            newVersionForm.Text = Translator.GetText("New version available!");
-
-            Label label = new()
-            {
-                Size = new Size(newVersionForm.ClientSize.Width - ClientPad, 20),
-                Location = new Point(ClientPad, ClientPad),
-                Text = $"{Translator.GetText("Latest available version:")}    {GetLatestVersionName()}",
-            };
-            newVersionForm.Controls.Add(label);
-
-            Button buttonOK = new()
-            {
-                DialogResult = DialogResult.OK,
-                Name = "buttonOK",
-            };
-            buttonOK.Location = new Point(
-                newVersionForm.ClientSize.Width - buttonOK.Size.Width - ClientPad,
-                newVersionForm.ClientSize.Height - buttonOK.Size.Height - ClientPad);
-            buttonOK.MinimumSize = new Size(75, 23);
-            buttonOK.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonOK.Text = Translator.GetText("OK");
-            buttonOK.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            buttonOK.AutoSize = true;
-            newVersionForm.Controls.Add(buttonOK);
-
-            Button buttonGoToDownloadPage = new()
-            {
-                DialogResult = DialogResult.Yes,
-                Name = "buttonGoToDownloadPage",
-            };
-            buttonGoToDownloadPage.Location = new Point(
-                newVersionForm.ClientSize.Width - buttonGoToDownloadPage.Size.Width - ClientPad - buttonOK.Size.Width - ClientPad,
-                newVersionForm.ClientSize.Height - buttonGoToDownloadPage.Size.Height - ClientPad);
-            buttonGoToDownloadPage.MinimumSize = new Size(75, 23);
-            buttonGoToDownloadPage.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonGoToDownloadPage.Text = Translator.GetText("Go to download page");
-            buttonGoToDownloadPage.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            buttonGoToDownloadPage.AutoSize = true;
-            newVersionForm.Controls.Add(buttonGoToDownloadPage);
-
-            TextBox textBox = new()
-            {
-                Location = new Point(ClientPad, label.Location.Y + label.Size.Height + 5),
-            };
-            textBox.Size = new Size(
-                newVersionForm.ClientSize.Width - (ClientPad * 2),
-                buttonOK.Location.Y - ClientPad - textBox.Location.Y);
-            textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox.Multiline = true;
-            textBox.Text = GetChangelog();
-            textBox.ReadOnly = true;
-            textBox.ScrollBars = ScrollBars.Both;
-            textBox.BackColor = Color.FromKnownColor(KnownColor.Window);
-            textBox.ForeColor = Color.FromKnownColor(KnownColor.ControlText);
-            newVersionForm.Controls.Add(textBox);
-
-            newVersionForm.AcceptButton = buttonOK;
-            return newVersionForm.ShowDialog();
-        }
-
-        /// <summary>
-        /// Returns the latest release version name.
-        /// </summary>
-        /// <returns>Version name.</returns>
-        private static string GetLatestVersionName()
-        {
-            string result = "Unknown";
-
-            if (releases == null)
-            {
-                return result;
-            }
-
-            try
-            {
-                result = releases[0]["tag_name"].ToString().Replace("v", string.Empty);
-            }
-            catch (Exception ex)
-            {
-                Log.Warn($"{nameof(GetLatestVersionName)} failed", ex);
-            }
-
-            return result;
         }
 
         /// <summary>

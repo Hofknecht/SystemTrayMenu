@@ -1,23 +1,20 @@
 ﻿// <copyright file="TaskbarLogo.xaml.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
+//
+// Copyright (c) 2022-2022 Peter Kirmeier
 
 #nullable enable
 
 namespace SystemTrayMenu.UserInterface
 {
     using System;
-    using System.Drawing;
     using System.IO;
-    using System.Linq;
     using System.Reflection;
-    using System.Threading;
-    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Interop;
     using System.Windows.Media.Imaging;
     using System.Windows.Threading;
-    using SystemTrayMenu.DllImports;
 
     /// <summary>
     /// Logic of Taskbar window.

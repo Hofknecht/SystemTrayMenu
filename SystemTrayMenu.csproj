@@ -104,7 +104,6 @@
     <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Helpers\Updater\GitHubUpdate.cs" />
     <Compile Remove="UserInterface\CustomScrollbar\CustomScrollbar.cs" />
     <Compile Remove="UserInterface\CustomScrollbar\ScrollbarControlDesigner.cs" />
     <Compile Remove="UserInterface\HotkeyTextboxControl\HotkeyControl.cs" />
@@ -137,7 +136,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Helpers\Updater\GitHubUpdate.cs" />
     <None Include="LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
