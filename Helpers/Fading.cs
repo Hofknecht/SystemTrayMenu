@@ -7,7 +7,7 @@ namespace SystemTrayMenu.Helper
     using System;
     using System.Windows.Threading;
 
-    public class Fading : IDisposable
+    public class Fading
     {
         private const int Interval100FPS = 10; // 100fps=>1s/100fps=~10ms
 
@@ -46,23 +46,9 @@ namespace SystemTrayMenu.Helper
 
         internal bool IsHiding => state == FadingState.Hide;
 
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
         internal void Fade(FadingState state)
         {
             StartStopTimer(state);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                timer.Stop();
-            }
         }
 
         private void StartStopTimer(FadingState newState)

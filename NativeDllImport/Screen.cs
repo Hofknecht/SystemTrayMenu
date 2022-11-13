@@ -10,9 +10,9 @@ namespace SystemTrayMenu.DllImports
 {
     using System;
     using System.Collections.Generic;
-    using System.Drawing;
     using System.Runtime.InteropServices;
     using System.Runtime.Versioning;
+    using System.Windows;
 
     /// <summary>
     /// wraps the methodcalls to native windows dll's.
@@ -23,9 +23,9 @@ namespace SystemTrayMenu.DllImports
         {
             private static Point LastCursorPosition = new Point(0, 0);
 
-            private static List<Rectangle>? screens;
+            private static List<Rect>? screens;
 
-            public static List<Rectangle> Screens
+            public static List<Rect> Screens
             {
                 get
                 {
@@ -38,7 +38,7 @@ namespace SystemTrayMenu.DllImports
                     {
                         return new()
                         {
-                            new Rectangle(0, 0, 800, 600),
+                            new (0, 0, 800, 600),
                         };
                     }
 
@@ -46,7 +46,7 @@ namespace SystemTrayMenu.DllImports
                 }
             }
 
-            public static Rectangle PrimaryScreen => Screens[0];
+            public static Rect PrimaryScreen => Screens[0];
 
             public static Point CursorPosition
             {
@@ -62,9 +62,9 @@ namespace SystemTrayMenu.DllImports
                 }
             }
 
-            public static Rectangle FromPoint(Point pt)
+            public static Rect FromPoint(Point pt)
             {
-                foreach (Rectangle screen in Screens)
+                foreach (Rect screen in Screens)
                 {
                     if (screen.Contains(pt))
                     {

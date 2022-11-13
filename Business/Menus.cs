@@ -8,10 +8,8 @@ namespace SystemTrayMenu.Business
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data;
-    using System.Drawing;
     using System.IO;
     using System.Linq;
-    using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
@@ -21,14 +19,8 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Helpers;
-    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
-    using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-    using static SystemTrayMenu.Utilities.IconReader;
-    using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
-    using MessageBox = System.Windows.MessageBox;
-    using Point = System.Drawing.Point;
 
     internal class Menus : IDisposable
     {
@@ -650,7 +642,7 @@ namespace SystemTrayMenu.Business
 
                 rowData.RowIndex = items.Count; // Index
                 items.Add(new(
-                    rowData.HiddenEntry ? AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon,
+                    (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon).ToImageSource(),
                     rowData.Text,
                     rowData,
                     rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
@@ -1200,7 +1192,7 @@ namespace SystemTrayMenu.Business
 
         private void AdjustMenusSizeAndLocation()
         {
-            Rectangle screenBounds;
+            Rect screenBounds;
             bool isCustomLocationOutsideOfScreen = false;
 
             if (Properties.Settings.Default.AppearAtMouseLocation)
@@ -1209,7 +1201,7 @@ namespace SystemTrayMenu.Business
             }
             else if (Properties.Settings.Default.UseCustomLocation)
             {
-                screenBounds = NativeMethods.Screen.FromPoint(new Point(
+                screenBounds = NativeMethods.Screen.FromPoint(new (
                     Properties.Settings.Default.CustomLocationX,
                     Properties.Settings.Default.CustomLocationY));
 

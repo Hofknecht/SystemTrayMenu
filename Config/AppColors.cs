@@ -94,6 +94,7 @@ namespace SystemTrayMenu
 
         public static Color DarkModeIcons { get; set; }
 
+        // TODO: WPF: Remove by not using system drawing colors
         public static SolidColorBrush ToSolidColorBrush(this Color color)
         {
             return new SolidColorBrush(System.Windows.Media.Color.FromArgb(color.A, color.R, color.G, color.B));

@@ -144,7 +144,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Height="{DynamicResource RowHeight}">
-                            <Image Width="{DynamicResource ColumnIconWidth}" Margin="0,2,0,3" Source="{Binding ColumnIcon, Converter={utils:IconToImageSourceConverter}}" />
+                            <Image Width="{DynamicResource ColumnIconWidth}" Margin="0,2,0,3" Source="{Binding ColumnIcon}" />
                             <Label Width="{DynamicResource ColumnTextWidth}" Margin="3,0" Padding="0" VerticalContentAlignment="Center">
                                 <TextBlock TextTrimming="CharacterEllipsis" Text="{Binding ColumnText}"/>
                             </Label>

@@ -8,7 +8,6 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Generic;
-    using System.Drawing;
     using System.Globalization;
     using System.Reflection;
     using System.Windows;
@@ -21,8 +20,6 @@ namespace SystemTrayMenu.UserInterface
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
-    using Color = System.Drawing.Color;
-    using Point = System.Drawing.Point;
 
     /// <summary>
     /// Logic of Menu window.
@@ -51,6 +48,7 @@ namespace SystemTrayMenu.UserInterface
             timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
             Closed += (_, _) =>
             {
+                fading.Fade(Fading.FadingState.Idle);
                 timerUpdateIcons.Stop();
                 isClosed = true; // TODO WPF Replace Forms wrapper
             };
@@ -147,14 +145,14 @@ namespace SystemTrayMenu.UserInterface
             customScrollbar.Name = "customScrollbar";
             customScrollbar.Size = new Size(Scaling.Scale(15), 40);
 #endif
-            SolidColorBrush foreColor = Color.Black.ToSolidColorBrush();
+            SolidColorBrush foreColor = new(Colors.Black);
             SolidColorBrush backColor = AppColors.Background.ToSolidColorBrush();
             SolidColorBrush backColorSearch = AppColors.SearchField.ToSolidColorBrush();
             SolidColorBrush backgroundBorder = AppColors.BackgroundBorder.ToSolidColorBrush();
 
             if (Config.IsDarkMode())
             {
-                foreColor = Color.White.ToSolidColorBrush();
+                foreColor = new (Colors.White);
                 backColor = AppColors.DarkModeBackground.ToSolidColorBrush();
                 backColorSearch = AppColors.DarkModeSearchField.ToSolidColorBrush();
                 backgroundBorder = AppColors.DarkModeBackgroundBorder.ToSolidColorBrush();
@@ -436,8 +434,7 @@ namespace SystemTrayMenu.UserInterface
                     buttonOpenFolder.Visibility = Visibility.Collapsed;
 
                     // Todo: use embedded resources that we can assign image in XAML already
-                    pictureBoxLoading.Source = (ImageSource)new IconToImageSourceConverter().Convert(
-                        SystemTrayMenu.Resources.StaticResources.LoadingIcon, typeof(ImageSource), null, CultureInfo.InvariantCulture);
+                    pictureBoxLoading.Source = SystemTrayMenu.Resources.StaticResources.LoadingIcon.ToImageSource();
                     pictureBoxLoading.Visibility = Visibility.Visible;
                     break;
                 default:
@@ -571,7 +568,7 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="startLocation">Defines where the first menu is drawn (when no predecessor is set).</param>
         /// <param name="isCustomLocationOutsideOfScreen">isCustomLocationOutsideOfScreen.</param>
         internal void AdjustSizeAndLocation(
-            Rectangle bounds,
+            Rect bounds,
             Menu menuPredecessor,
             StartLocation startLocation,
             bool isCustomLocationOutsideOfScreen)
@@ -1282,7 +1279,7 @@ namespace SystemTrayMenu.UserInterface
                 if (rowData.IconLoading)
                 {
                     iconsToUpdate++;
-                    row.ColumnIcon = rowData.ReadIcon(false);
+                    row.ColumnIcon = rowData.ReadIcon(false).ToImageSource();
                 }
             }
 
@@ -1369,7 +1366,7 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         internal class ListViewItemData
         {
-            public ListViewItemData(Icon columnIcon, string columnText, RowData rowData, int sortIndex)
+            public ListViewItemData(ImageSource columnIcon, string columnText, RowData rowData, int sortIndex)
             {
                 ColumnIcon = columnIcon;
                 ColumnText = columnText;
@@ -1377,7 +1374,7 @@ namespace SystemTrayMenu.UserInterface
                 SortIndex = sortIndex;
             }
 
-            public Icon ColumnIcon { get; set; }
+            public ImageSource ColumnIcon { get; set; }
 
             public string ColumnText { get; set; }
 

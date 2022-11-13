@@ -8,10 +8,12 @@
 
 namespace SystemTrayMenu.Utilities
 {
-    using System;
+    using System.Drawing;
+    using System.Globalization;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
+    using Point = System.Windows.Point;
 
     internal static class WPFExtensions
     {
@@ -58,8 +60,17 @@ namespace SystemTrayMenu.Utilities
 
         internal static Point GetRelativeChildPositionTo(this Visual parent, Visual child)
         {
-            var pt = child.TransformToAncestor(parent).Transform(new(0, 0));
-            return new (pt.X, pt.Y);
+            return child.TransformToAncestor(parent).Transform(new(0, 0));
+        }
+
+        // TODO: Find and remove any unnecessary convertions
+        internal static ImageSource ToImageSource(this Icon icon)
+        {
+            return (ImageSource)new IconToImageSourceConverter().Convert(
+                        icon,
+                        typeof(ImageSource),
+                        null,
+                        CultureInfo.InvariantCulture);
         }
     }
 }
