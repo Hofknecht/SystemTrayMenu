@@ -9,14 +9,6 @@ namespace SystemTrayMenu.Utilities
 
     public static class FormsExtensions
     {
-        public enum DialogResult
-        {
-            OK,
-            Cancel,
-            Ignore,
-            Retry,
-        }
-
         public class NativeWindow : HwndSource
         {
             private HwndSourceHook hook;

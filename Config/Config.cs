@@ -14,7 +14,6 @@ namespace SystemTrayMenu
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.Utilities.FormsExtensions;
     using static SystemTrayMenu.Utilities.IconReader;
 
     public static class Config
@@ -112,12 +111,12 @@ namespace SystemTrayMenu
             }
         }
 
-        public static void SetFolderByUser(bool save = true)
+        public static void SetFolderByUser(Window owner = null, bool save = true)
         {
             using FolderDialog dialog = new();
             dialog.InitialFolder = Path;
 
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (dialog.ShowDialog(owner))
             {
                 Settings.Default.PathDirectory = dialog.Folder;
                 if (save)
@@ -127,12 +126,12 @@ namespace SystemTrayMenu
             }
         }
 
-        public static void SetFolderIcoByUser()
+        public static void SetFolderIcoByUser(Window owner)
         {
             using FolderDialog dialog = new();
             dialog.InitialFolder = Settings.Default.PathIcoDirectory;
 
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (dialog.ShowDialog(owner))
             {
                 Settings.Default.PathIcoDirectory = dialog.Folder;
             }

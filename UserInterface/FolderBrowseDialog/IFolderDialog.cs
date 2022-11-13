@@ -4,8 +4,7 @@
 
 namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 {
-    using System.Windows.Interop;
-    using static SystemTrayMenu.Utilities.FormsExtensions;
+    using System.Windows;
 
     public interface IFolderDialog
     {
@@ -15,12 +14,6 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 
         string Folder { get; set; }
 
-        DialogResult ShowDialog();
-
-        DialogResult ShowDialog(IWin32Window owner);
-
-        DialogResult ShowVistaDialog(IWin32Window owner);
-
-        DialogResult ShowLegacyDialog(IWin32Window owner);
+        bool ShowDialog(Window owner);
     }
 }

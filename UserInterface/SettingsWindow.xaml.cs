@@ -864,7 +864,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonChange_Click(object sender, RoutedEventArgs e)
         {
-            Config.SetFolderByUser(false);
+            Config.SetFolderByUser(this, false);
             textBoxFolder.Text = Config.Path;
         }
 
@@ -937,7 +937,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonChangeIcoFolder_Click(object sender, RoutedEventArgs e)
         {
-            Config.SetFolderIcoByUser();
+            Config.SetFolderIcoByUser(this);
             textBoxIcoFolder.Text = Settings.Default.PathIcoDirectory;
         }
 
@@ -962,7 +962,7 @@ namespace SystemTrayMenu.UserInterface
             using FolderDialog dialog = new();
             dialog.InitialFolder = Config.Path;
 
-            if (dialog.ShowDialog() == FormsExtensions.DialogResult.OK)
+            if (dialog.ShowDialog(this))
             {
                 dataGridViewFolders.Items.Add(new ListViewItemData(dialog.Folder, false, true));
                 EnableButtonAddStartMenu();

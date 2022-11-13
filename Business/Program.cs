@@ -8,7 +8,6 @@ namespace SystemTrayMenu
     using System.Reflection;
     using System.Windows;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.Utilities.FormsExtensions;
 
     internal static class Program
     {

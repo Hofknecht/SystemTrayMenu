@@ -5,11 +5,11 @@
 namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 {
     using System;
-    using System.IO;
     using System.Runtime.InteropServices;
+    using System.Runtime.Versioning;
+    using System.Windows;
     using System.Windows.Interop;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.Utilities.FormsExtensions;
 
     public class FolderDialog : IFolderDialog, IDisposable
     {
@@ -36,24 +36,13 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
         /// </summary>
         public string Folder { get; set; }
 
-        public DialogResult ShowDialog()
-        {
-            return ShowDialog(owner: new WindowWrapper(IntPtr.Zero));
-        }
-
-        public DialogResult ShowDialog(IWin32Window owner)
-        {
-            if (Environment.OSVersion.Version.Major >= 6)
-            {
-                return ShowVistaDialog(owner);
-            }
-            else
-            {
-                return ShowLegacyDialog(owner);
-            }
-        }
-
-        public DialogResult ShowVistaDialog(IWin32Window owner)
+        /// <summary>
+        /// Shows the file dialog and requests user interaction.
+        /// </summary>
+        /// <param name="owner">The window the dialog is assigned to.</param>
+        /// <returns>True is returned on successful user interaction and when not cancelled by the user otherwise false is returned.</returns>
+        [SupportedOSPlatform("windows")]
+        public bool ShowDialog(Window owner)
         {
             NativeMethods.IFileDialog frm = (NativeMethods.IFileDialog)new NativeMethods.FileOpenDialogRCW();
             frm.GetOptions(out uint options);
@@ -89,7 +78,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
                 }
             }
 
-            if (owner != null && frm.Show(owner.Handle) == NativeMethods.S_OK)
+            if (frm.Show(owner == null ? IntPtr.Zero : new WindowInteropHelper(owner).Handle) == NativeMethods.S_OK)
             {
                 try
                 {
@@ -104,7 +93,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
                                 try
                                 {
                                     Folder = Marshal.PtrToStringAuto(pszString);
-                                    return DialogResult.OK;
+                                    return true;
                                 }
                                 finally
                                 {
@@ -120,40 +109,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
                 }
             }
 
-            return DialogResult.Cancel;
-        }
-
-        public DialogResult ShowLegacyDialog(IWin32Window owner)
-        {
-#if TODO
-            using SaveFileDialog frm = new()
-            {
-                CheckFileExists = false,
-                CheckPathExists = true,
-                CreatePrompt = false,
-                Filter = "|" + Guid.Empty.ToString(),
-                FileName = "any",
-            };
-            if (InitialFolder != null)
-            {
-                frm.InitialDirectory = InitialFolder;
-            }
-
-            frm.OverwritePrompt = false;
-            frm.Title = Translator.GetText("Select directory");
-            frm.ValidateNames = false;
-            if (frm.ShowDialog(owner) == DialogResult.OK)
-            {
-                Folder = Path.GetDirectoryName(frm.FileName);
-                return DialogResult.OK;
-            }
-            else
-            {
-                return DialogResult.Cancel;
-            }
-#else
-            return DialogResult.OK;
-#endif
+            return false;
         }
 
         public void Dispose()
