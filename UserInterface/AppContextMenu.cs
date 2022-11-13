@@ -9,7 +9,6 @@ namespace SystemTrayMenu.Helper
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Media;
     using SystemTrayMenu.Helper.Updater;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;

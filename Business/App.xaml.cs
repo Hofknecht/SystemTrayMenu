@@ -7,7 +7,6 @@
 namespace SystemTrayMenu
 {
     using System;
-    using System.Threading;
     using System.Windows;
     using System.Windows.Threading;
     using Microsoft.Win32;
@@ -45,11 +44,9 @@ namespace SystemTrayMenu
 
             if (Settings.Default.CheckForUpdates)
             {
-#if TODO // WPF: Creating the dialog window must be called on STA thread
-                new Thread((obj) => GitHubUpdate.ActivateNewVersionFormOrCheckForUpdates(
-                    showWhenUpToDate: false))
-                    .Start();
-#endif
+                Dispatcher.InvokeAsync(
+                    () => GitHubUpdate.ActivateNewVersionFormOrCheckForUpdates(showWhenUpToDate: false),
+                    DispatcherPriority.ApplicationIdle);
             }
         }
 
