@@ -8,29 +8,20 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Generic;
-    using System.Data;
-    using System.Diagnostics;
     using System.Drawing;
     using System.Globalization;
-    using System.IO;
     using System.Reflection;
-    using System.Threading;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
     using System.Windows.Input;
-    using System.Windows.Interop;
-    using System.Windows.Markup;
     using System.Windows.Media;
-    using System.Windows.Media.Imaging;
     using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
-    using Windows.UI.Composition;
     using Color = System.Drawing.Color;
-    using Image = System.Windows.Controls.Image;
     using Point = System.Drawing.Point;
 
     /// <summary>
@@ -46,9 +37,6 @@ namespace SystemTrayMenu.UserInterface
         private readonly Fading fading = new();
         private bool isShowing;
         private bool directionToRight;
-#if TODO
-        private int rotationAngle;
-#endif
         private bool mouseDown;
         private Point lastLocation;
 #if TODO
@@ -119,35 +107,6 @@ namespace SystemTrayMenu.UserInterface
 
             txtTitle.Text = myname;
 
-#if TODO
-            foreach (KeyValuePair<Image, string> pair in
-                new List<KeyValuePair<Image, string>>()
-                {
-                    new KeyValuePair<Image, string>(pictureBoxSearch, myname + ".Resources.SystemTrayMenu.png"),
-                    new KeyValuePair<Image, string>(pictureBoxOpenFolder, myname + ".Resources.SystemTrayMenu.png"),
-                    new KeyValuePair<Image, string>(pictureBoxMenuAlwaysOpen, myname + ".Resources.SystemTrayMenu.png"),
-                    new KeyValuePair<Image, string>(pictureBoxSettings, myname + ".Resources.SystemTrayMenu.png"),
-                    new KeyValuePair<Image, string>(pictureBoxRestart, myname + ".Resources.SystemTrayMenu.png"),
-                })
-            {
-                Image control = pair.Key;
-                using (Stream? imgstream = myassembly.GetManifestResourceStream(pair.Value))
-                {
-                    if (imgstream != null)
-                    {
-                        BitmapImage imageSource = new BitmapImage();
-                        imageSource.BeginInit();
-                        imageSource.StreamSource = imgstream;
-                        imageSource.EndInit();
-
-                        control.Source = imageSource;
-                    }
-                }
-
-                control.Width = Scaling.Scale(control.Width);
-                control.Height = Scaling.Scale(control.Height);
-            }
-#else
             foreach (FrameworkElement control in
                 new List<FrameworkElement>()
                 {
@@ -160,12 +119,12 @@ namespace SystemTrayMenu.UserInterface
                     pictureBoxOpenFolder,
                     pictureBoxSettings,
                     pictureBoxRestart,
+                    pictureBoxLoading,
                 })
             {
                 control.Width = Scaling.Scale(control.Width);
                 control.Height = Scaling.Scale(control.Height);
             }
-#endif
 
             labelTitle.FontSize = Scaling.ScaleFontByPoints(8.25F);
             textBoxSearch.FontSize = Scaling.ScaleFontByPoints(8.25F);
@@ -475,13 +434,11 @@ namespace SystemTrayMenu.UserInterface
                     labelItems.Content = Translator.GetText("loading");
                     buttonMenuAlwaysOpen.Visibility = Visibility.Visible;
                     buttonOpenFolder.Visibility = Visibility.Collapsed;
-#if TODO
-                    pictureBoxMenuAlwaysOpen.Paint -= PictureBoxMenuAlwaysOpen_Paint;
-                    pictureBoxMenuAlwaysOpen.Paint += LoadingMenu_Paint;
-                    timerUpdateIcons.Tick -= TimerUpdateIcons_Tick;
-                    timerUpdateIcons.Tick += (sender, e) => pictureBoxMenuAlwaysOpen.Invalidate();
-                    timerUpdateIcons.Interval = 15;
-#endif
+
+                    // Todo: use embedded resources that we can assign image in XAML already
+                    pictureBoxLoading.Source = (ImageSource)new IconToImageSourceConverter().Convert(
+                        SystemTrayMenu.Resources.StaticResources.LoadingIcon, typeof(ImageSource), null, CultureInfo.InvariantCulture);
+                    pictureBoxLoading.Visibility = Visibility.Visible;
                     break;
                 default:
                     break;
@@ -1311,15 +1268,6 @@ namespace SystemTrayMenu.UserInterface
         {
             PictureBox pictureBox = (PictureBox)sender;
             e.Graphics.DrawImage(AppColors.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
-        }
-
-        private void LoadingMenu_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            rotationAngle += 5;
-            e.Graphics.DrawImage(
-                ImagingHelper.RotateImage(Resources.StaticResources.LoadingIcon.ToBitmap(), rotationAngle),
-                new Rectangle(Point.Empty, new Size(pictureBox.ClientSize.Width - 2, pictureBox.ClientSize.Height - 2)));
         }
 #endif
         private void TimerUpdateIcons_Tick(object? sender, EventArgs e)

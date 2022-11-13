@@ -107,6 +107,25 @@
 
             <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,4">
                 <Label x:Name="labelItems" Content="0 items" Padding="0" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+
+                <Image x:Name="pictureBoxLoading" Width="18" Height="18" DockPanel.Dock="Right"
+                       HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" d:Visibility="Visible" Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <RotateTransform x:Name="LoadingRotation" Angle="0" />
+                    </Image.RenderTransform>
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="LoadingRotation"
+                                        Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                        From="0.0" To="360.0" Duration="0:0:1" RepeatBehavior="Forever" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
                 <Button x:Name="buttonRestart" Width="18" Height="18" Padding="0" DockPanel.Dock="Right" HorizontalAlignment="Right" BorderBrush="{x:Null}" Background="{x:Null}" Click="PictureBoxRestart_MouseClick" >
                     <Image x:Name="pictureBoxRestart" Source="{StaticResource ic_fluent_arrow_sync_24_regularDrawingImage}"/>
                 </Button>

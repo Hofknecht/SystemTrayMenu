@@ -6,7 +6,6 @@ namespace SystemTrayMenu.Helper
 {
     using System;
     using System.Windows.Threading;
-    using SystemTrayMenu.Utilities;
 
     public class Fading : IDisposable
     {
