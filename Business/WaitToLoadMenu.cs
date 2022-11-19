@@ -12,6 +12,7 @@ namespace SystemTrayMenu.Handler
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.UserInterface.Menu;
     using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
@@ -174,7 +175,7 @@ namespace SystemTrayMenu.Handler
         {
             if (dgv.Items.Count > rowIndex)
             {
-                RowData rowData = ((Menu.ListViewItemData)dgv.Items[rowIndex]).data;
+                RowData rowData = ((ListViewItemData)dgv.Items[rowIndex]).data;
                 Menu menu = (Menu)dgv.GetParentWindow();
                 rowData.Level = menu.Level;
                 if (rowData.ContainsMenu)
@@ -198,33 +199,29 @@ namespace SystemTrayMenu.Handler
             dgvTmp = null;
             this.dgv = dgv;
             this.rowIndex = rowIndex;
-#if TODO
-            RowData rowData = (RowData)dgv.Items[rowIndex].Cells[2].Value;
+
+            RowData rowData = ((ListViewItemData)dgv.Items[rowIndex]).data;
             if (rowData != null)
             {
                 rowData.IsSelected = true;
             }
 
-            dgv.Items[rowIndex].Selected = false;
-            dgv.Items[rowIndex].Selected = true;
-#endif
+            dgv.SelectedIndex = rowIndex;
         }
 
         private void ResetData(ListView dgv, int rowIndex)
         {
             if (dgv != null && dgv.Items.Count > rowIndex)
             {
-#if TODO
-                RowData rowData = (RowData)dgv.Items[rowIndex].Cells[2].Value;
+                RowData rowData = ((ListViewItemData)dgv.Items[rowIndex]).data;
                 if (rowData != null)
                 {
                     rowData.IsSelected = false;
                     rowData.IsClicking = false;
-                    dgv.Items[rowIndex].Selected = false;
+                    dgv.SelectedItem = null;
                     this.dgv = null;
                     this.rowIndex = 0;
                 }
-#endif
             }
         }
     }

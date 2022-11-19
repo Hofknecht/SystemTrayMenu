@@ -20,6 +20,7 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.UserInterface.Menu;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class Menus : IDisposable
@@ -62,18 +63,17 @@ namespace SystemTrayMenu.Business
 
                 if (e.Result == null)
                 {
-                    // Clean up menu status IsMenuOpen for previous one
+                    // The main menu gets loaded again
+                    // Clean up menu status of previous one
                     ListView dgvMainMenu = menus[0].GetDataGridView();
-#if TODO
-                    foreach (DataRow row in ((DataTable)dgvMainMenu.DataSource).Rows)
+                    foreach (ListViewItemData item in dgvMainMenu.Items)
                     {
-                        RowData rowDataToClear = (RowData)row[2];
+                        RowData rowDataToClear = item.data;
                         rowDataToClear.IsMenuOpen = false;
                         rowDataToClear.IsClicking = false;
                         rowDataToClear.IsSelected = false;
                         rowDataToClear.IsContextMenuOpen = false;
                     }
-#endif
 
                     RefreshSelection(dgvMainMenu);
 
@@ -86,6 +86,7 @@ namespace SystemTrayMenu.Business
                 }
                 else
                 {
+                    // First time the main menu gets loaded
                     MenuData menuData = (MenuData)e.Result;
                     switch (menuData.Validity)
                     {
@@ -267,12 +268,6 @@ namespace SystemTrayMenu.Business
             keyboardInput.RowDeselected += waitToOpenMenu.RowDeselected;
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
             keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
-            keyboardInput.RowSelected += AdjustScrollbarToDisplayedRow;
-            void AdjustScrollbarToDisplayedRow(ListView dgv, int index)
-            {
-                Menu menu = (Menu)dgv.GetParentWindow();
-                menu.AdjustScrollbar();
-            }
 
             joystickHelper = new();
             joystickHelper.KeyPressed += (key) => menus[0].Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null, key });
@@ -586,46 +581,7 @@ namespace SystemTrayMenu.Business
 
             List<Menu.ListViewItemData> items = new();
             ListView lv = menu.GetDataGridView();
-#if TODO // REMOVE?
-            DataTable dataTable = new();
 
-            foreach (var prop in typeof(Menu.ListViewItemData).GetProperties())
-            {
-                dataTable.Columns.Add(prop.Name, prop.PropertyType);
-            }
-
-            foreach (RowData rowData in data)
-            {
-                if (!(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
-                {
-                    if (rowData.ContainsMenu)
-                    {
-                        foldersCount++;
-                    }
-                    else
-                    {
-                        filesCount++;
-                    }
-                }
-
-                rowData.SetData(rowData, dataTable);
-            }
-
-            lv.ItemsSource = dataTable.DefaultView;
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                RowData rowData = (RowData)row[nameof(Menu.ListViewItemData.data)];
-                if (rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult)
-                {
-                    row[nameof(Menu.ListViewItemData.SortIndex)] = 99;
-                }
-                else
-                {
-                    row[nameof(Menu.ListViewItemData.SortIndex)] = 0;
-                }
-            }
-#else
             foreach (RowData rowData in data)
             {
                 if (!(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
@@ -649,7 +605,6 @@ namespace SystemTrayMenu.Business
             }
 
             lv.ItemsSource = items;
-#endif
         }
 
         private bool IsActive()
@@ -660,17 +615,15 @@ namespace SystemTrayMenu.Business
                 foreach (Menu menu in menus.Where(m => m != null))
                 {
                     ListView dgv = menu.GetDataGridView();
-#if TODO
-                    foreach (DataGridViewRow row in dgv.Items)
+                    foreach (ListViewItemData item in dgv.Items)
                     {
-                        RowData rowData = (RowData)row.Cells[2].Value;
+                        RowData rowData = item.data;
                         if (rowData != null && rowData.IsContextMenuOpen)
                         {
                             isShellContextMenuOpen = true;
                             break;
                         }
                     }
-#endif
 
                     if (isShellContextMenuOpen)
                     {
@@ -771,13 +724,6 @@ namespace SystemTrayMenu.Business
             dgv.MouseDoubleClick += Dgv_MouseDoubleClick;
             dgv.SelectionChanged += Dgv_SelectionChanged;
             dgv.RowPostPaint += Dgv_RowPostPaint;
-            dgv.DataError += Dgv_DataError;
-            void Dgv_DataError(object sender, DataGridViewDataErrorEventArgs e)
-            {
-                // WARN Dgv_DataError occured System.ObjectDisposedException: Cannot access a disposed object. Object name: 'Icon'
-                // => Rare times occured (e.g. when focused an close other application => closed and activated at same time)
-                Log.Warn("Dgv_DataError occured", e.Exception);
-            }
 #endif
             menu.SetCounts(foldersCount, filesCount);
 
@@ -857,8 +803,6 @@ namespace SystemTrayMenu.Business
                 {
                     isDragSwipeScrolled = true;
                     dgv.FirstDisplayedScrollingRowIndex = newFirstDisplayedScrollingRowIndex;
-                    Menu menu = (Menu)dgv.GetParentWindow();
-                    menu.AdjustScrollbar();
                     scrolled = dgv.FirstDisplayedScrollingRowIndex == newFirstDisplayedScrollingRowIndex;
                 }
 #endif
@@ -1120,10 +1064,9 @@ namespace SystemTrayMenu.Business
             {
                 // Clean up menu status IsMenuOpen for previous one
                 ListView dgvPrevious = menuPrevious.GetDataGridView();
-#if TODO
-                foreach (DataRow row in ((DataTable)dgvPrevious.DataSource).Rows)
+                foreach (ListViewItemData item in dgvPrevious.Items)
                 {
-                    RowData rowDataToClear = (RowData)row[2];
+                    RowData rowDataToClear = item.data;
                     if (rowDataToClear == (RowData)menuToShow.Tag)
                     {
                         rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
@@ -1133,7 +1076,6 @@ namespace SystemTrayMenu.Business
                         rowDataToClear.IsMenuOpen = false;
                     }
                 }
-#endif
 
                 RefreshSelection(dgvPrevious);
 
@@ -1356,11 +1298,10 @@ namespace SystemTrayMenu.Business
             try
             {
                 List<RowData> rowDatas = new();
-#if TODO
-                DataTable dataTable = (DataTable)menus[0].GetDataGridView().DataSource;
-                foreach (DataRow row in dataTable.Rows)
+                ListView dgv = menus[0].GetDataGridView();
+                foreach (ListViewItemData item in dgv.Items)
                 {
-                    RowData rowData = (RowData)row[2];
+                    RowData rowData = item.data;
                     if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                     {
                         string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
@@ -1386,7 +1327,6 @@ namespace SystemTrayMenu.Business
                         rowDatas.Add(rowData);
                     }
                 }
-#endif
 
                 rowDatas = MenusHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();
@@ -1408,29 +1348,25 @@ namespace SystemTrayMenu.Business
         {
             try
             {
-                List<DataRow> rowsToRemove = new();
-#if TODO
+                List<ListViewItemData> rowsToRemove = new();
                 ListView dgv = menus[0].GetDataGridView();
-                DataTable dataTable = (DataTable)dgv.DataSource;
-                foreach (DataRow row in dataTable.Rows)
+                foreach (ListViewItemData item in dgv.Items)
                 {
-                    RowData rowData = (RowData)row[2];
+                    RowData rowData = item.data;
                     if (rowData.Path == e.FullPath ||
                         rowData.Path.StartsWith($"{e.FullPath}\\"))
                     {
                         IconReader.RemoveIconFromCache(rowData.Path);
-                        rowsToRemove.Add(row);
+                        rowsToRemove.Add(item);
                     }
                 }
 
-                foreach (DataRow rowToRemove in rowsToRemove)
+                foreach (ListViewItemData rowToRemove in rowsToRemove)
                 {
-                    dataTable.Rows.Remove(rowToRemove);
+                    dgv.Items.Remove(rowToRemove);
                 }
 
                 keyboardInput.ClearIsSelectedByKey();
-                dgv.DataSource = dataTable;
-#endif
 
                 hideSubmenuDuringRefreshSearch = false;
                 menus[0].ResetHeight();
@@ -1463,13 +1399,11 @@ namespace SystemTrayMenu.Business
                     rowData,
                 };
 
-#if TODO
-                DataTable dataTable = (DataTable)menus[0].GetDataGridView().DataSource;
-                foreach (DataRow row in dataTable.Rows)
+                ListView dgv = menus[0].GetDataGridView();
+                foreach (ListViewItemData item in dgv.Items)
                 {
-                    rowDatas.Add((RowData)row[2]);
+                    rowDatas.Add(item.data);
                 }
-#endif
 
                 rowDatas = MenusHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();

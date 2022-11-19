@@ -147,26 +147,6 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool ProcessStarted { get; set; }
 
-#if TODO  // WPF REMOVE?
-        internal void SetData(RowData data, DataTable dataTable)
-        {
-            DataRow row = dataTable.Rows.Add();
-            data.RowIndex = dataTable.Rows.IndexOf(row);
-
-            if (HiddenEntry)
-            {
-                row[0] = AddIconOverlay(data.Icon, Properties.Resources.White50Percentage);
-            }
-            else
-            {
-                row[0] = data.Icon;
-            }
-
-            row[1] = data.Text;
-            row[2] = data;
-        }
-#endif
-
         internal Icon ReadIcon(bool updateIconInBackground)
         {
             if (IsFolder || IsLinkToFolder)

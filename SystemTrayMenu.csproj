@@ -104,8 +104,6 @@
     <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="UserInterface\CustomScrollbar\CustomScrollbar.cs" />
-    <Compile Remove="UserInterface\CustomScrollbar\ScrollbarControlDesigner.cs" />
     <Compile Remove="UserInterface\HotkeyTextboxControl\HotkeyControl.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,8 +138,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="UserInterface\CustomScrollbar\CustomScrollbar.cs" />
-    <None Include="UserInterface\CustomScrollbar\ScrollbarControlDesigner.cs" />
     <None Include="UserInterface\HotkeyTextboxControl\HotkeyControl.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -129,21 +129,11 @@ namespace SystemTrayMenu.UserInterface
             labelItems.FontSize = Scaling.ScaleFontByPoints(7F);
             dgv.FontSize = Scaling.ScaleFontByPoints(9F);
 
-#if TODO
-            customScrollbar = new CustomScrollbar();
-
-            tableLayoutPanelDgvAndScrollbar.Controls.Add(customScrollbar, 1, 0);
-#endif
             MouseDown += Menu_MouseDown;
             MouseUp += Menu_MouseUp;
             MouseMove += Menu_MouseMove;
 #if TODO
             labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);
-
-            // customScrollbar
-            customScrollbar.Location = new Point(0, 0);
-            customScrollbar.Name = "customScrollbar";
-            customScrollbar.Size = new Size(Scaling.Scale(15), 40);
 #endif
             SolidColorBrush foreColor = new(Colors.Black);
             SolidColorBrush backColor = AppColors.Background.ToSolidColorBrush();
@@ -170,21 +160,6 @@ namespace SystemTrayMenu.UserInterface
 
             dgv.GotFocus += (_, _) => FocusTextBox();
 #if TODO
-            customScrollbar.GotFocus += (sender, e) => FocusTextBox();
-
-            customScrollbar.Margin = new Padding(0);
-            customScrollbar.Scroll += CustomScrollbar_Scroll;
-            void CustomScrollbar_Scroll(object sender, EventArgs e)
-            {
-                decimal firstIndex = customScrollbar.Value * dgv.Rows.Count / (decimal)customScrollbar.Maximum;
-                int firstIndexRounded = (int)Math.Ceiling(firstIndex);
-                if (firstIndexRounded > -1 && firstIndexRounded < dgv.RowCount)
-                {
-                    dgv.FirstDisplayedScrollingRowIndex = firstIndexRounded;
-                }
-            }
-
-            customScrollbar.MouseEnter += ControlsMouseEnter;
             dgv.MouseEnter += ControlsMouseEnter;
             labelTitle.MouseEnter += ControlsMouseEnter;
             textBoxSearch.MouseEnter += ControlsMouseEnter;
@@ -202,7 +177,6 @@ namespace SystemTrayMenu.UserInterface
                 MouseEnter?.Invoke();
             }
 
-            customScrollbar.MouseLeave += ControlsMouseLeave;
             dgv.MouseLeave += ControlsMouseLeave;
             labelTitle.MouseLeave += ControlsMouseLeave;
             textBoxSearch.MouseLeave += ControlsMouseLeave;
@@ -343,9 +317,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 dgv.ScrollIntoView(dgv.Items[0]);
             }
-#if TODO
-            AdjustScrollbar();
-#endif
         }
 
         internal void RefreshSearchText()
@@ -355,9 +326,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 dgv.ScrollIntoView(dgv.Items[0]);
             }
-#if TODO
-            AdjustScrollbar();
-#endif
         }
 
         internal void FocusTextBox()
@@ -772,19 +740,6 @@ namespace SystemTrayMenu.UserInterface
             };
         }
 
-        internal void AdjustScrollbar()
-        {
-#if TODO
-            if (dgv.Rows.Count > 0)
-            {
-                customScrollbar.Value = (int)Math.Round(
-                    dgv.FirstDisplayedScrollingRowIndex * (decimal)customScrollbar.Maximum / dgv.Rows.Count,
-                    0,
-                    MidpointRounding.AwayFromZero);
-            }
-#endif
-        }
-
         internal void ResetHeight()
         {
 #if TODO
@@ -870,20 +825,10 @@ namespace SystemTrayMenu.UserInterface
             if (dgvHeightByItems > dgvHeightMax)
             {
                 ScrollbarVisible = true;
-                customScrollbar.PaintEnable(dgv.Height);
-                if (customScrollbar.Maximum != dgvHeightByItems)
-                {
-                    customScrollbar.Reset();
-                    customScrollbar.Minimum = 0;
-                    customScrollbar.Maximum = dgvHeightByItems;
-                    customScrollbar.LargeChange = dgvHeightMax;
-                    customScrollbar.SmallChange = Resources["RowHeight"];
-                }
             }
             else
             {
                 ScrollbarVisible = false;
-                customScrollbar.PaintDisable();
             }
 #endif
         }
@@ -944,7 +889,6 @@ namespace SystemTrayMenu.UserInterface
 #if TODO
             int widthIcon = dgv.Columns[0].Width;
             int widthText = dgv.Columns[1].Width;
-            int widthScrollbar = customScrollbar.Width;
 
             using Graphics gfx = labelTitle.CreateGraphics();
             gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
@@ -952,15 +896,15 @@ namespace SystemTrayMenu.UserInterface
                 txtTitle.Text + "___",
                 dgv.RowTemplate.DefaultCellStyle.Font).Width + 0.5);
 
-            if (withTitle > (widthIcon + widthText + widthScrollbar))
+            if (withTitle > (widthIcon + widthText))
             {
                 tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(withTitle, 0);
-                dgv.Width = withTitle - widthScrollbar;
+                dgv.Width = withTitle;
                 dgv.Columns[1].Width = dgv.Width - widthIcon;
             }
             else
             {
-                tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(widthIcon + widthText + widthScrollbar, 0);
+                tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(widthIcon + widthText, 0);
                 dgv.Width = widthIcon + widthText;
                 dgv.Columns[1].Width = dgv.Width - widthIcon;
             }
@@ -974,7 +918,6 @@ namespace SystemTrayMenu.UserInterface
         private void DgvMouseWheel(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
-            customScrollbar.CustomScrollbar_MouseWheel(sender, e);
             MouseWheel?.Invoke();
         }
 
@@ -986,8 +929,6 @@ namespace SystemTrayMenu.UserInterface
         private void TextBoxSearch_TextChanged()
         {
 #if TODO
-            customScrollbar.Value = 0;
-
             DataTable data = (DataTable)dgv.DataSource;
 #endif
             string filterField = nameof(ListViewItemData.ColumnText);
@@ -1347,7 +1288,6 @@ namespace SystemTrayMenu.UserInterface
         private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)
         {
             CellMouseUp?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
-            AdjustScrollbar();
         }
 
         private void ListViewxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

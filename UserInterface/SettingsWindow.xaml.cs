@@ -1197,24 +1197,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorScrollbarBackgroundDarkMode.Text = "#171717";
         }
 
-#if TODO
-        private void StopPlayingDingSoundEnterKeyPressed_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = e.SuppressKeyPress = true;
-            }
-        }
-
-        private void StopPlayingDingSoundEnterKeyPressed_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = e.SuppressKeyPress = true;
-            }
-        }
-#endif
-
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.Reload();
