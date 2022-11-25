@@ -14,6 +14,7 @@ namespace SystemTrayMenu.Business
     using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Threading;
+    using Microsoft.Win32;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Handler;
@@ -319,6 +320,8 @@ namespace SystemTrayMenu.Business
                     Log.Warn($"Failed to {nameof(CreateWatcher)}: {path}", ex);
                 }
             }
+
+            SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
         }
 
         internal event Action LoadStarted;
@@ -338,6 +341,7 @@ namespace SystemTrayMenu.Business
 
         public void Dispose()
         {
+            SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
             workerMainMenu.Dispose();
             foreach (BackgroundWorker worker in workersSubMenu)
             {
@@ -351,7 +355,7 @@ namespace SystemTrayMenu.Business
             timerStillActiveCheck.Stop();
             waitLeave.Dispose();
             IconReader.Dispose();
-            DisposeMenu(menus[0]);
+            menus[0]?.Close();
             dgvMouseRow.Dispose();
 
             foreach (FileSystemWatcher watcher in watchers)
@@ -445,54 +449,6 @@ namespace SystemTrayMenu.Business
             }
 
             deactivatedTime = DateTime.MinValue;
-        }
-
-        internal void DisposeMenu(Menu menuToDispose)
-        {
-            if (menuToDispose != null)
-            {
-                menuToDispose.CellMouseEnter -= dgvMouseRow.CellMouseEnter;
-                menuToDispose.CellMouseLeave -= dgvMouseRow.CellMouseLeave;
-                menuToDispose.CellMouseDown -= Dgv_MouseDown;
-                menuToDispose.CellMouseUp -= Dgv_MouseUp;
-                menuToDispose.CellMouseClick -= Dgv_MouseClick;
-                menuToDispose.CellMouseDoubleClick -= Dgv_MouseDoubleClick;
-#if TODO
-                menuToDispose.MouseWheel -= AdjustMenusSizeAndLocation;
-                menuToDispose.MouseLeave -= waitLeave.Start;
-                menuToDispose.MouseEnter -= waitLeave.Stop;
-                menuToDispose.CmdKeyProcessed -= keyboardInput.CmdKeyProcessed;
-                menuToDispose.SearchTextChanging -= keyboardInput.SearchTextChanging;
-                menuToDispose.KeyPressCheck -= Menu_KeyPressCheck;
-                menuToDispose.SearchTextChanged -= Menu_SearchTextChanged;
-                ListView dgv = menuToDispose.GetDataGridView();
-                if (dgv != null)
-                {
-                    dgv.MouseLeave -= dgvMouseRow.MouseLeave;
-                    dgv.MouseLeave -= Dgv_MouseLeave;
-                    dgv.MouseMove -= waitToOpenMenu.MouseMove;
-                    dgv.MouseMove -= Dgv_MouseMove;
-                    dgv.SelectionChanged -= Dgv_SelectionChanged;
-                    dgv.RowPostPaint -= Dgv_RowPostPaint;
-                    dgv.ClearSelection();
-
-                    foreach (DataGridViewRow row in dgv.Rows)
-                    {
-                        RowData rowData = (RowData)row.Cells[2].Value;
-                        DisposeMenu(rowData.SubMenu);
-                    }
-                }
-                menuToDispose.Dispose();
-#endif
-            }
-        }
-
-        internal void ReAdjustSizeAndLocation()
-        {
-            if (menus[0].IsUsable)
-            {
-                menus[0].Tag = null;
-            }
         }
 
         internal void MainPreload()
@@ -748,7 +704,7 @@ namespace SystemTrayMenu.Business
 
             if (menu.Visibility != Visibility.Visible && menu.Level != 0)
             {
-                DisposeMenu(menu);
+                menu.Close();
             }
 
             if (!AsEnumerable.Any(m => m.Visibility == Visibility.Visible))
@@ -817,7 +773,7 @@ namespace SystemTrayMenu.Business
 
             MouseEnterOk(dgv, index, true);
 
-            // TODO WPF: Move directly into ListViewItem_MouseDown ?
+            // TODO WPF: Move directly into ListViewItem_PreviewMouseDown ?
             ((Menu.ListViewItemData)dgv.Items[index]).data.MouseDown(dgv, e);
 
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -991,9 +947,7 @@ namespace SystemTrayMenu.Business
 
             if (!searchTextChanging)
             {
-#if TODO
-                dgv.Invalidate();
-#endif
+                dgv.InvalidateVisual();
             }
         }
 
@@ -1048,6 +1002,14 @@ namespace SystemTrayMenu.Business
             }
     }
 #endif
+
+        private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
+        {
+            if (menus[0].IsUsable)
+            {
+                menus[0].Tag = null;
+            }
+        }
 
         private void ShowSubMenu(Menu menuToShow)
         {
@@ -1201,7 +1163,7 @@ namespace SystemTrayMenu.Business
                 menu = list[i];
 
                 menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation, isCustomLocationOutsideOfScreen);
-#if TODO // What is this, doesn't seem to have any effect ?
+
                 if (!Properties.Settings.Default.AppearAtTheBottomLeft &&
                     !Properties.Settings.Default.AppearAtMouseLocation &&
                     !Properties.Settings.Default.UseCustomLocation &&
@@ -1217,7 +1179,7 @@ namespace SystemTrayMenu.Business
 
                     screenBounds.Width -= (int)menu.Width - overlapTolerance;
                 }
-#endif
+
                 menuPredecessor = menu;
             }
         }

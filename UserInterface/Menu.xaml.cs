@@ -212,6 +212,14 @@ namespace SystemTrayMenu.UserInterface
                     IsHandleCreated = true;
                     HandleCreated?.Invoke(sender, e);
                 };
+
+            Closed += (sender, e) =>
+                {
+                    foreach (ListViewItemData item in dgv.Items)
+                    {
+                        item.data.SubMenu?.Close();
+                    }
+                };
         }
 
 #if TODO
@@ -886,32 +894,7 @@ namespace SystemTrayMenu.UserInterface
                 (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Properties.Settings.Default.WidthMaxInPercent / 100f)));
 
 #endif
-#if TODO
-            int widthIcon = dgv.Columns[0].Width;
-            int widthText = dgv.Columns[1].Width;
-
-            using Graphics gfx = labelTitle.CreateGraphics();
-            gfx.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            int withTitle = (int)(gfx.MeasureString(
-                txtTitle.Text + "___",
-                dgv.RowTemplate.DefaultCellStyle.Font).Width + 0.5);
-
-            if (withTitle > (widthIcon + widthText))
-            {
-                tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(withTitle, 0);
-                dgv.Width = withTitle;
-                dgv.Columns[1].Width = dgv.Width - widthIcon;
-            }
-            else
-            {
-                tableLayoutPanelDgvAndScrollbar.MinimumSize = new Size(widthIcon + widthText, 0);
-                dgv.Width = widthIcon + widthText;
-                dgv.Columns[1].Width = dgv.Width - widthIcon;
-            }
-
-            DataTable dataTable = (DataTable)dgv.DataSource;
-            dataTable.DefaultView.RowFilter = RowFilterShowAll;
-#endif
+            ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Filter = null;
         }
 
 #if TODO
@@ -1280,9 +1263,11 @@ namespace SystemTrayMenu.UserInterface
             CellMouseLeave?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content));
         }
 
-        private void ListViewItem_MouseDown(object sender, MouseButtonEventArgs e)
+        private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
+#if TODO // Why sender is a disconnected item, needed at all?
             CellMouseDown?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
+#endif
         }
 
         private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)

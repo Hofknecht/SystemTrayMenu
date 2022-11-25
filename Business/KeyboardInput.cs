@@ -14,6 +14,7 @@ namespace SystemTrayMenu.Handler
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
+    using static System.Net.Mime.MediaTypeNames;
     using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
@@ -214,9 +215,8 @@ namespace SystemTrayMenu.Handler
 
             if (dgv.Items.Count > index)
             {
-#if TODO
-                DataGridViewRow row = dgv.Items[i];
-                RowData rowData = (RowData)row.Cells[2].Value;
+                Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[index];
+                RowData rowData = itemData.data;
                 if (rowData != null)
                 {
                     rowData.IsSelected = true;
@@ -224,10 +224,13 @@ namespace SystemTrayMenu.Handler
 
                 if (refreshview)
                 {
-                    row.Selected = false;
-                    row.Selected = true;
+                    if (dgv.SelectedItems.Contains(itemData))
+                    {
+                        dgv.SelectedItems.Remove(itemData);
+                    }
+
+                    dgv.SelectedItems.Add(itemData);
                 }
-#endif
             }
         }
 
@@ -244,17 +247,14 @@ namespace SystemTrayMenu.Handler
                 dgv = menu.GetDataGridView();
                 if (dgv.Items.Count > iRowKey)
                 {
-#if TODO
-                    RowData rowData = (RowData)dgv.
-                        Items[iRowKey].Cells[2].Value;
+                    Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[iRowKey];
+                    RowData rowData = itemData.data;
                     if (rowData.IsSelected)
                     {
                         isStillSelected = true;
                         menuFromSelected = rowData.SubMenu;
-                        textselected = dgv.Rows[iRowKey].
-                            Cells[1].Value.ToString();
+                        textselected = itemData.ColumnText;
                     }
-#endif
                 }
             }
 
@@ -554,31 +554,22 @@ namespace SystemTrayMenu.Handler
                 i != iRowKey &&
                 dgv.Items.Count > i)
             {
-#if TODO
-                DataGridViewRow row = dgv.Items[i];
-                RowData rowData = (RowData)row.Cells[2].Value;
-                string text = row.Cells[1].Value.ToString();
-                if (text.StartsWith(keyInput, true, CultureInfo.InvariantCulture))
+                Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[i];
+                RowData rowData = itemData.data;
+                if (itemData.ColumnText.StartsWith(keyInput, true, CultureInfo.InvariantCulture))
                 {
                     iRowKey = rowData.RowIndex;
                     rowData.IsSelected = true;
-                    row.Selected = false;
-                    row.Selected = true;
-                    if (row.Index < dgv.FirstDisplayedScrollingRowIndex)
+                    if (dgv.SelectedItems.Contains(itemData))
                     {
-                        dgv.FirstDisplayedScrollingRowIndex = row.Index;
+                        dgv.SelectedItems.Remove(itemData);
                     }
-                    else if (row.Index >=
-                        dgv.FirstDisplayedScrollingRowIndex +
-                        dgv.DisplayedRowCount(false))
-                    {
-                        dgv.FirstDisplayedScrollingRowIndex = row.Index -
-                        dgv.DisplayedRowCount(false) + 1;
-                    }
+
+                    dgv.SelectedItems.Add(itemData);
+                    dgv.ScrollIntoView(itemData);
 
                     found = true;
                 }
-#endif
             }
 
             return found;
@@ -592,16 +583,18 @@ namespace SystemTrayMenu.Handler
                 ListView dgv = menu.GetDataGridView();
                 if (dgv.Items.Count > rowIndex)
                 {
-#if TODO
-                    DataGridViewRow row = dgv.Rows[rowIndex];
-                    row.Selected = false;
-                    RowData rowData = (RowData)row.Cells[2].Value;
+                    Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[rowIndex];
+                    RowData rowData = itemData.data;
+                    if (dgv.SelectedItems.Contains(itemData))
+                    {
+                        dgv.SelectedItems.Remove(itemData);
+                    }
+
                     if (rowData != null)
                     {
                         rowData.IsSelected = false;
                         rowData.IsClicking = false;
                     }
-#endif
                 }
             }
         }

@@ -28,7 +28,6 @@ namespace SystemTrayMenu
         public App()
         {
             AppRestart.BeforeRestarting += Dispose;
-            SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
             menus.LoadStarted += menuNotifyIcon.LoadingStart;
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
             menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
@@ -65,17 +64,11 @@ namespace SystemTrayMenu
                 TaskbarLogo?.Close();
                 TaskbarLogo = null;
 
-                SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
                 menus.Dispose();
                 menuNotifyIcon.Dispose();
 
                 isDisposed = true;
             }
-        }
-
-        private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e)
-        {
-            menus.ReAdjustSizeAndLocation();
         }
     }
 }
