@@ -271,7 +271,7 @@ namespace SystemTrayMenu.Business
             keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
 
             joystickHelper = new();
-            joystickHelper.KeyPressed += (key) => menus[0].Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null, key });
+            joystickHelper.KeyPressed += (key, modifiers) => menus[0].Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null, key, modifiers });
 
             timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed);
             timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
@@ -618,7 +618,9 @@ namespace SystemTrayMenu.Business
             menu.MouseWheel += AdjustMenusSizeAndLocation;
             menu.MouseLeave += waitLeave.Start;
             menu.MouseEnter += waitLeave.Stop;
+#endif
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
+#if TODO
             menu.KeyPressCheck += Menu_KeyPressCheck;
             menu.SearchTextChanging += Menu_SearchTextChanging;
             menu.SearchTextChanged += Menu_SearchTextChanged;

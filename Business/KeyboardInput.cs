@@ -74,38 +74,51 @@ namespace SystemTrayMenu.Handler
             iMenuKey = 0;
         }
 
-        internal void CmdKeyProcessed(object sender, Key keys)
+        internal void CmdKeyProcessed(Menu sender, Key key, ModifierKeys modifiers)
         {
             sender ??= menus[iMenuKey];
 
-            switch (keys)
+            switch (key)
             {
                 case Key.Enter:
-                    SelectByKey(keys);
-                    menus[iMenuKey]?.FocusTextBox();
+                    if (modifiers == ModifierKeys.None)
+                    {
+                        SelectByKey(key, modifiers);
+                        menus[iMenuKey]?.FocusTextBox();
+                    }
+
                     break;
                 case Key.Left:
-                    SelectByKey(keys);
-                    break;
                 case Key.Right:
-                    SelectByKey(keys);
-                    break;
                 case Key.Home:
                 case Key.End:
                 case Key.Up:
                 case Key.Down:
                 case Key.Escape:
-#if TODO // WPF Key Modifier!
-                case Key.Alt | Key.F4:
-                    SelectByKey(keys);
+                    if (modifiers == ModifierKeys.None)
+                    {
+                        SelectByKey(key, modifiers);
+                    }
+
                     break;
-                case Key.Control | Key.F:
-                    menus[iMenuKey]?.FocusTextBox();
+                case Key.F4:
+                    if (modifiers == ModifierKeys.Alt)
+                    {
+                        SelectByKey(key, modifiers);
+                    }
+
+                    break;
+                case Key.F:
+                    if (modifiers == ModifierKeys.Control)
+                    {
+                        menus[iMenuKey]?.FocusTextBox();
+                    }
+
                     break;
                 case Key.Tab:
+                    if (modifiers == ModifierKeys.None)
                     {
-                        Menu currentMenu = (Menu)sender;
-                        int indexOfTheCurrentMenu = GetMenuIndex(currentMenu);
+                        int indexOfTheCurrentMenu = GetMenuIndex(sender);
                         int indexMax = menus.Where(m => m != null).Count() - 1;
                         int indexNew = 0;
                         if (indexOfTheCurrentMenu > 0)
@@ -119,12 +132,9 @@ namespace SystemTrayMenu.Handler
 
                         menus[indexNew]?.FocusTextBox();
                     }
-
-                    break;
-                case Key.Tab | Key.LeftShift:
+                    else if (modifiers == ModifierKeys.Shift)
                     {
-                        Menu currentMenu = (Menu)sender;
-                        int indexOfTheCurrentMenu = GetMenuIndex(currentMenu);
+                        int indexOfTheCurrentMenu = GetMenuIndex(sender);
                         int indexMax = menus.Where(m => m != null).Count() - 1;
                         int indexNew = 0;
                         if (indexOfTheCurrentMenu < indexMax)
@@ -140,8 +150,8 @@ namespace SystemTrayMenu.Handler
                     }
 
                     break;
-#endif
                 case Key.Apps:
+                    if (modifiers == ModifierKeys.None)
                     {
                         ListView dgv = menus[iMenuKey]?.GetDataGridView();
 
@@ -261,7 +271,7 @@ namespace SystemTrayMenu.Handler
             return isStillSelected;
         }
 
-        private void SelectByKey(Key keys, string keyInput = "", bool keepSelection = false)
+        private void SelectByKey(Key key, ModifierKeys modifiers, string keyInput = "", bool keepSelection = false)
         {
             int iRowBefore = iRowKey;
             int iMenuBefore = iMenuKey;
@@ -293,10 +303,11 @@ namespace SystemTrayMenu.Handler
             }
 
             bool toClear = false;
-            switch (keys)
+            bool handled = false;
+            switch (key)
             {
                 case Key.Enter:
-                    if (iRowKey > -1 && dgv.Items.Count > iRowKey)
+                    if ((modifiers == ModifierKeys.None) && (iRowKey > -1 && dgv.Items.Count > iRowKey))
                     {
                         RowData trigger = ((Menu.ListViewItemData)dgv.Items[iRowKey]).data;
                         if (trigger.IsMenuOpen || !trigger.ContainsMenu)
@@ -327,110 +338,136 @@ namespace SystemTrayMenu.Handler
                             SelectRow(dgv, iRowKey);
                             EnterPressed.Invoke(dgv, iRowKey);
                         }
+
+                        handled = true;
                     }
 
                     break;
                 case Key.Up:
-                    if (SelectMatchedReverse(dgv, iRowKey) ||
-                        SelectMatchedReverse(dgv, dgv.Items.Count - 1))
+                    if ((modifiers == ModifierKeys.None) &&
+                        (SelectMatchedReverse(dgv, iRowKey) ||
+                        SelectMatchedReverse(dgv, dgv.Items.Count - 1)))
                     {
                         RowDeselected(iRowBefore, dgvBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
+                        handled = true;
                     }
 
                     break;
                 case Key.Down:
-                    if (SelectMatched(dgv, iRowKey) ||
-                        SelectMatched(dgv, 0))
+                    if ((modifiers == ModifierKeys.None) &&
+                        (SelectMatched(dgv, iRowKey) ||
+                        SelectMatched(dgv, 0)))
                     {
                         RowDeselected(iRowBefore, dgvBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
+                        handled = true;
                     }
 
                     break;
                 case Key.Home:
-                    if (SelectMatched(dgv, 0))
+                    if ((modifiers == ModifierKeys.None) && SelectMatched(dgv, 0))
                     {
                         RowDeselected(iRowBefore, dgvBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
+                        handled = true;
                     }
 
                     break;
                 case Key.End:
-                    if (SelectMatchedReverse(dgv, dgv.Items.Count - 1))
+                    if ((modifiers == ModifierKeys.None) && SelectMatchedReverse(dgv, dgv.Items.Count - 1))
                     {
                         RowDeselected(iRowBefore, dgvBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
+                        handled = true;
                     }
 
                     break;
                 case Key.Left:
-                    bool nextMenuLocationIsLeft = menus[iMenuKey + 1] != null && menus[iMenuKey + 1].Location.X < menus[iMenuKey].Location.X;
-                    bool previousMenuLocationIsRight = iMenuKey > 0 && menus[iMenuKey]?.Location.X < menus[iMenuKey - 1]?.Location.X;
-                    if (nextMenuLocationIsLeft || previousMenuLocationIsRight)
+                    if (modifiers == ModifierKeys.None)
                     {
-                        SelectNextMenu(iRowBefore, ref dgv, dgvBefore, menuFromSelected, isStillSelected, ref toClear);
-                    }
-                    else if (iMenuKey > 0)
-                    {
-                        SelectPreviousMenu(iRowBefore, ref menu, ref dgv, dgvBefore, ref toClear);
+                        bool nextMenuLocationIsLeft = menus[iMenuKey + 1] != null && menus[iMenuKey + 1].Location.X < menus[iMenuKey].Location.X;
+                        bool previousMenuLocationIsRight = iMenuKey > 0 && menus[iMenuKey]?.Location.X < menus[iMenuKey - 1]?.Location.X;
+                        if (nextMenuLocationIsLeft || previousMenuLocationIsRight)
+                        {
+                            SelectNextMenu(iRowBefore, ref dgv, dgvBefore, menuFromSelected, isStillSelected, ref toClear);
+                        }
+                        else if (iMenuKey > 0)
+                        {
+                            SelectPreviousMenu(iRowBefore, ref menu, ref dgv, dgvBefore, ref toClear);
+                        }
+
+                        handled = true;
                     }
 
                     break;
                 case Key.Right:
-                    bool nextMenuLocationIsRight = menus[iMenuKey + 1]?.Location.X > menus[iMenuKey]?.Location.X;
-                    bool previousMenuLocationIsLeft = iMenuKey > 0 && menus[iMenuKey]?.Location.X > menus[iMenuKey - 1]?.Location.X;
-                    if (nextMenuLocationIsRight || previousMenuLocationIsLeft)
+                    if (modifiers == ModifierKeys.None)
                     {
-                        SelectNextMenu(iRowBefore, ref dgv, dgvBefore, menuFromSelected, isStillSelected, ref toClear);
-                    }
-                    else if (iMenuKey > 0)
-                    {
-                        SelectPreviousMenu(iRowBefore, ref menu, ref dgv, dgvBefore, ref toClear);
+                        bool nextMenuLocationIsRight = menus[iMenuKey + 1]?.Location.X > menus[iMenuKey]?.Location.X;
+                        bool previousMenuLocationIsLeft = iMenuKey > 0 && menus[iMenuKey]?.Location.X > menus[iMenuKey - 1]?.Location.X;
+                        if (nextMenuLocationIsRight || previousMenuLocationIsLeft)
+                        {
+                            SelectNextMenu(iRowBefore, ref dgv, dgvBefore, menuFromSelected, isStillSelected, ref toClear);
+                        }
+                        else if (iMenuKey > 0)
+                        {
+                            SelectPreviousMenu(iRowBefore, ref menu, ref dgv, dgvBefore, ref toClear);
+                        }
+
+                        handled = true;
                     }
 
                     break;
                 case Key.Escape:
-#if TODO // WPF Key Modifier!
-                case Key.Alt | Key.F4:
-#endif
-                    RowDeselected(iRowBefore, dgvBefore);
-                    iMenuKey = 0;
-                    iRowKey = -1;
-                    toClear = true;
-                    ClosePressed?.Invoke();
+                case Key.F4:
+                    if ((key == Key.Escape && modifiers == ModifierKeys.None) ||
+                        (key == Key.F4 && modifiers == ModifierKeys.Alt))
+                    {
+                        RowDeselected(iRowBefore, dgvBefore);
+                        iMenuKey = 0;
+                        iRowKey = -1;
+                        toClear = true;
+                        ClosePressed?.Invoke();
+
+                        handled = true;
+                    }
+
                     break;
                 default:
-                    if (!string.IsNullOrEmpty(keyInput))
+                    break;
+            }
+
+            if (!handled)
+            {
+                if (!string.IsNullOrEmpty(keyInput))
+                {
+                    if (SelectMatched(dgv, iRowKey, keyInput) ||
+                        SelectMatched(dgv, 0, keyInput))
                     {
+                        RowDeselected(iRowBefore, null);
+                        SelectRow(dgv, iRowKey);
+                        toClear = true;
+                    }
+                    else if (isStillSelected)
+                    {
+                        iRowKey = iRowBefore - 1;
                         if (SelectMatched(dgv, iRowKey, keyInput) ||
                             SelectMatched(dgv, 0, keyInput))
                         {
                             RowDeselected(iRowBefore, null);
                             SelectRow(dgv, iRowKey);
-                            toClear = true;
                         }
-                        else if (isStillSelected)
+                        else
                         {
-                            iRowKey = iRowBefore - 1;
-                            if (SelectMatched(dgv, iRowKey, keyInput) ||
-                                SelectMatched(dgv, 0, keyInput))
-                            {
-                                RowDeselected(iRowBefore, null);
-                                SelectRow(dgv, iRowKey);
-                            }
-                            else
-                            {
-                                iRowKey = iRowBefore;
-                            }
+                            iRowKey = iRowBefore;
                         }
                     }
-
-                    break;
+                }
             }
 
             if (isStillSelected && toClear)

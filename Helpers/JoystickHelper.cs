@@ -9,6 +9,7 @@ namespace SystemTrayMenu.Helpers
     using System.Diagnostics.Metrics;
     using System.Reflection.Metadata;
     using System.Threading;
+    using System.Windows.Input;
     using SharpDX.DirectInput;
     using Key = System.Windows.Input.Key;
 
@@ -37,7 +38,7 @@ namespace SystemTrayMenu.Helpers
             Dispose(false);
         }
 
-        public event Action<Key> KeyPressed;
+        public event Action<Key, ModifierKeys> KeyPressed;
 
         public void Enable()
         {
@@ -144,7 +145,7 @@ namespace SystemTrayMenu.Helpers
                     Key key = ReadKeyFromState(state);
                     if (key != Key.None)
                     {
-                        KeyPressed?.Invoke(key);
+                        KeyPressed?.Invoke(key, ModifierKeys.None);
                         if (state.Offset == JoystickOffset.PointOfViewControllers0)
                         {
                             pressingKeyCounter = 0;
@@ -158,7 +159,7 @@ namespace SystemTrayMenu.Helpers
                     pressingKeyCounter += 1;
                     if (pressingKeyCounter > 1)
                     {
-                        KeyPressed?.Invoke(pressingKey);
+                        KeyPressed?.Invoke(pressingKey, ModifierKeys.None);
                     }
                 }
             }

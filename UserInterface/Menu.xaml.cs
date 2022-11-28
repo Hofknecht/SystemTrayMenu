@@ -20,6 +20,7 @@ namespace SystemTrayMenu.UserInterface
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
+    using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
     /// <summary>
     /// Logic of Menu window.
@@ -231,9 +232,9 @@ namespace SystemTrayMenu.UserInterface
 #endif
 
         internal event Action? UserClickedOpenFolder;
-#if TODO
 
-        internal event EventHandler<Key> CmdKeyProcessed;
+        internal event Action<Menu, Key, ModifierKeys> CmdKeyProcessed;
+#if TODO
 
         internal event EventHandler<KeyPressEventArgs> KeyPressCheck;
 
@@ -762,11 +763,32 @@ namespace SystemTrayMenu.UserInterface
             labelItems.Content = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
         }
 
-#if TODO
-        protected override bool ProcessCmdKey(ref Message msg, Key keys)
+        private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {
-            switch (keys)
+            ModifierKeys modifiers = Keyboard.Modifiers;
+            switch (e.Key)
             {
+                case Key.F4:
+                    if (modifiers != ModifierKeys.Alt)
+                    {
+                        return;
+                    }
+
+                    break;
+                case Key.F:
+                    if (modifiers != ModifierKeys.Control)
+                    {
+                        return;
+                    }
+
+                    break;
+                case Key.Tab:
+                    if ((modifiers != ModifierKeys.Shift) && (modifiers != ModifierKeys.None))
+                    {
+                        return;
+                    }
+
+                    break;
                 case Key.Enter:
                 case Key.Home:
                 case Key.End:
@@ -775,20 +797,21 @@ namespace SystemTrayMenu.UserInterface
                 case Key.Left:
                 case Key.Right:
                 case Key.Escape:
-                case Key.Alt | Key.F4:
-                case Key.Control | Key.F:
-                case Key.Tab:
-                case Key.Tab | Key.Shift:
                 case Key.Apps:
-                    CmdKeyProcessed.Invoke(this, keys);
-                    return true;
-                default:
+                    if (modifiers != ModifierKeys.None)
+                    {
+                        return;
+                    }
+
                     break;
+                default:
+                    return;
             }
 
-            return base.ProcessCmdKey(ref msg, keys);
+            CmdKeyProcessed?.Invoke(this, e.Key, modifiers);
+            e.Handled = true;
         }
-#endif
+
         private void AdjustDataGridViewHeight(Menu menuPredecessor, double screenHeightMax)
         {
             double factor = Properties.Settings.Default.RowHeighteInPercentage / 100f;

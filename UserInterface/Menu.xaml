@@ -9,7 +9,8 @@
         xmlns:utils="clr-namespace:SystemTrayMenu.Utilities"
         xmlns:local="clr-namespace:SystemTrayMenu.UserInterface"
         x:Class="SystemTrayMenu.UserInterface.Menu"
-        mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False" SnapsToDevicePixels="True" UseLayoutRounding="True">
+        mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False" SnapsToDevicePixels="True" UseLayoutRounding="True"
+        PreviewKeyDown="HandlePreviewKeyDown">
     <Window.Effect>
         <DropShadowEffect/>
     </Window.Effect>
@@ -42,7 +43,7 @@
             </Style.Triggers>
         </Style>
     </Window.Style>-->
-    
+
     <Window.Resources>
         <!-- TODO WPF Move them into separate dictionary? -->
         <!-- Converted SVG images using https://github.com/BerndK/SvgToXaml/releases/tag/Ver_1.3.0 -->
