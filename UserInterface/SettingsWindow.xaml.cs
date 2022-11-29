@@ -29,7 +29,7 @@ namespace SystemTrayMenu.UserInterface
         private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
 
         private static SettingsWindow? settingsForm;
-#if TODO
+#if TODO // HOTKEY
         private bool inHotkey;
 #endif
         public SettingsWindow()
@@ -51,7 +51,7 @@ namespace SystemTrayMenu.UserInterface
                     Icon = imageSource;
                 }
             }
-#if TODO
+#if TODO // HOTKEY
             // Initialize and replace here here, because designer always removes it
             InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder();
             void InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder()
@@ -105,7 +105,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             checkBoxCheckForUpdates.IsChecked = Settings.Default.CheckForUpdates;
-#if TODO
+#if TODO // HOTKEY
             textBoxHotkey.SetHotkey(Settings.Default.HotKey);
 #endif
 
@@ -376,7 +376,7 @@ namespace SystemTrayMenu.UserInterface
             Closed += (_, _) => settingsForm = null;
         }
 
-#if TODO
+#if TODO // HOTKEY
         /// <summary>
         /// Gets NewHotKey.
         /// </summary>
@@ -416,7 +416,7 @@ namespace SystemTrayMenu.UserInterface
             return settingsForm != null;
         }
 
-#if TODO
+#if TODO // HOTKEY
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -671,7 +671,7 @@ namespace SystemTrayMenu.UserInterface
 
             Settings.Default.CheckForUpdates = checkBoxCheckForUpdates.IsChecked ?? false;
 
-#if TODO
+#if TODO // HOTKEY
             Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
             Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
 #endif
@@ -903,7 +903,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-#if TODO
+#if TODO // HOTKEY
         private void TextBoxHotkeyEnter(object sender, EventArgs e)
         {
             UnregisterHotkeys();
@@ -921,7 +921,7 @@ namespace SystemTrayMenu.UserInterface
 #endif
         private void ButtonHotkeyDefault_Click(object sender, RoutedEventArgs e)
         {
-#if TODO
+#if TODO // HOTKEY
             textBoxHotkey.SetHotkey("Ctrl+LWin");
 #endif
         }

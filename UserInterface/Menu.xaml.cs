@@ -27,7 +27,7 @@ namespace SystemTrayMenu.UserInterface
     /// </summary>
     public partial class Menu : Window
     {
-#if TODO
+#if TODO // SEARCH
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
 #endif
         private const int CornerRadius = 10;
@@ -37,7 +37,7 @@ namespace SystemTrayMenu.UserInterface
         private bool directionToRight;
         private bool mouseDown;
         private Point lastLocation;
-#if TODO
+#if TODO // SEARCH
         private bool isSetSearchText;
         private bool dgvHeightSet;
 #endif
@@ -133,7 +133,7 @@ namespace SystemTrayMenu.UserInterface
             MouseDown += Menu_MouseDown;
             MouseUp += Menu_MouseUp;
             MouseMove += Menu_MouseMove;
-#if TODO
+#if TODO // MouseWeel
             labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);
 #endif
             SolidColorBrush foreColor = new(Colors.Black);
@@ -160,7 +160,7 @@ namespace SystemTrayMenu.UserInterface
             panelLine.Background = AppColors.Icons.ToSolidColorBrush();
 
             dgv.GotFocus += (_, _) => FocusTextBox();
-#if TODO
+#if TODO // Misc MouseEvents
             dgv.MouseEnter += ControlsMouseEnter;
             labelTitle.MouseEnter += ControlsMouseEnter;
             textBoxSearch.MouseEnter += ControlsMouseEnter;
@@ -194,7 +194,8 @@ namespace SystemTrayMenu.UserInterface
             {
                 MouseLeave?.Invoke();
             }
-
+#endif
+#if TODO // TOUCH
             bool isTouchEnabled = NativeMethods.IsTouchEnabled();
             if ((isTouchEnabled && Properties.Settings.Default.DragDropItemsEnabledTouch) ||
                 (!isTouchEnabled && Properties.Settings.Default.DragDropItemsEnabled))
@@ -223,7 +224,7 @@ namespace SystemTrayMenu.UserInterface
                 };
         }
 
-#if TODO
+#if TODO // MouseWeel and Misc MouseEvents
         internal new event Action MouseWheel;
 
         internal new event Action MouseEnter;
@@ -234,7 +235,7 @@ namespace SystemTrayMenu.UserInterface
         internal event Action? UserClickedOpenFolder;
 
         internal event Action<Menu, Key, ModifierKeys> CmdKeyProcessed;
-#if TODO
+#if TODO // SEARCH
 
         internal event EventHandler<KeyPressEventArgs> KeyPressCheck;
 
@@ -256,8 +257,6 @@ namespace SystemTrayMenu.UserInterface
         internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseUp;
 
         internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseClick;
-
-        internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseDoubleClick;
 
         internal enum MenuType
         {
@@ -314,7 +313,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool IsUsable => Visibility == Visibility.Visible && !fading.IsHiding && !IsDisposed && !Disposing;
 
-#if TODO
+#if TODO // TOUCH
         internal bool ScrollbarVisible { get; private set; }
 
         private ListView tableLayoutPanelDgvAndScrollbar => dgv; // TODO WPF Remove and replace with dgv
@@ -339,7 +338,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal void FocusTextBox()
         {
-#if TODO
+#if TODO // SEARCH
             if (isSetSearchText)
             {
                 isSetSearchText = false;
@@ -429,7 +428,7 @@ namespace SystemTrayMenu.UserInterface
             if (!string.IsNullOrEmpty(userSearchText))
             {
                 textBoxSearch.Text = userSearchText + "*";
-#if TODO
+#if TODO // SEARCH
                 isSetSearchText = true;
 #endif
             }
@@ -746,12 +745,15 @@ namespace SystemTrayMenu.UserInterface
                 {
                     windowFrame.CornerRadius = new CornerRadius(CornerRadius);
                 }
+
+                // Keep its size when once created.
+                SizeToContent = SizeToContent.Manual;
             };
         }
 
         internal void ResetHeight()
         {
-#if TODO
+#if TODO // SEARCH
             dgvHeightSet = false;
 #endif
         }
@@ -841,18 +843,18 @@ namespace SystemTrayMenu.UserInterface
                 dgv.Tag = true;
             }
 
-#if TODO
+#if TODO // SEARCH
             if (!dgvHeightSet && dgvHeightByItems > 0 && dgvHeightMax > 0)
             {
 #endif
             double heightMaxByOptions = Scaling.Factor * Scaling.FactorByDpi *
                 450f * (Properties.Settings.Default.HeightMaxInPercent / 100f);
             MaxHeight = Math.Min(screenHeightMax, heightMaxByOptions);
-#if TODO
+#if TODO // SEARCH
                 dgvHeightSet = true;
             }
 #endif
-#if TODO
+#if TODO // SEARCH and TOUCH
             if (dgvHeightByItems > dgvHeightMax)
             {
                 ScrollbarVisible = true;
@@ -920,13 +922,14 @@ namespace SystemTrayMenu.UserInterface
             ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Filter = null;
         }
 
-#if TODO
+#if TODO // MouseWheel
         private void DgvMouseWheel(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
             MouseWheel?.Invoke();
         }
-
+#endif
+#if TODO // SEARCH
         private void TextBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             KeyPressCheck?.Invoke(sender, e);
@@ -934,11 +937,11 @@ namespace SystemTrayMenu.UserInterface
 #endif
         private void TextBoxSearch_TextChanged()
         {
-#if TODO
+#if TODO // SEARCH
             DataTable data = (DataTable)dgv.DataSource;
 #endif
             string filterField = nameof(ListViewItemData.ColumnText);
-#if TODO
+#if TODO // SEARCH
             SearchTextChanging?.Invoke();
 
             // Expression reference: https://docs.microsoft.com/en-us/dotnet/api/system.data.datacolumn.expression?view=net-6.0
@@ -996,7 +999,7 @@ namespace SystemTrayMenu.UserInterface
                     return row.ColumnText.Contains(textBoxSearch.Text.Trim()); // TODO: THIS IS JUST TEMPORARY DUMMY FILTER (see below)
                 }
             }
-#if TODO
+#if TODO // SEARCH
             try
             {
                 if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
@@ -1104,7 +1107,7 @@ namespace SystemTrayMenu.UserInterface
             }
 #endif
         }
-#if TODO
+#if TODO // Misc MouseEvents and BorderColors
 
         private void PictureBox_MouseEnter(object sender, EventArgs e)
         {
@@ -1145,7 +1148,7 @@ namespace SystemTrayMenu.UserInterface
             UserClickedOpenFolder?.Invoke();
         }
 
-#if TODO
+#if TODO // BorderColors
         private void PictureBoxMenuAlwaysOpen_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
@@ -1169,7 +1172,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-#if TODO
+#if TODO // BorderColors
         private void PictureBoxSettings_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
@@ -1188,7 +1191,7 @@ namespace SystemTrayMenu.UserInterface
             SettingsWindow.ShowSingleInstance();
         }
 
-#if TODO
+#if TODO // BorderColors
         private void PictureBoxRestart_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
@@ -1207,7 +1210,7 @@ namespace SystemTrayMenu.UserInterface
             AppRestart.ByMenuButton();
         }
 
-#if TODO
+#if TODO // BorderColors
         private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
@@ -1278,35 +1281,27 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
         {
-            CellMouseEnter?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content));
+            CellMouseEnter?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender));
         }
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
         {
-            CellMouseLeave?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content));
+            CellMouseLeave?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender));
         }
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-#if TODO // Why sender is a disconnected item, needed at all?
-            CellMouseDown?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
-#endif
+            CellMouseDown?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender), e);
         }
 
         private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            CellMouseUp?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
+            CellMouseUp?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender), e);
         }
 
         private void ListViewxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            // Simulate missing MouseClick event
-            CellMouseClick?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
-        }
-
-        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            CellMouseDoubleClick?.Invoke(dgv, dgv.Items.IndexOf(((ListViewItem)sender).Content), e);
+            CellMouseClick?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender), e);
         }
 
         /// <summary>

@@ -69,7 +69,7 @@ namespace SystemTrayMenu.UserInterface
             ColorChanged?.Invoke(this);
         }
 
-#if TODO
+#if TODO // ColorPicker
         private void PictureBoxClick(object sender, EventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;

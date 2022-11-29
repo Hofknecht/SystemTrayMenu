@@ -5,12 +5,9 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
-    using System.Data;
-    using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
-    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.UserInterface.Menu;
     using ListView = System.Windows.Controls.ListView;
@@ -47,7 +44,7 @@ namespace SystemTrayMenu.Handler
         public void Dispose()
         {
             timerStartLoad.Stop();
-#if TODO
+#if TODO // WPF: Can be optimized away?
             dgv?.Dispose();
             dgvTmp?.Dispose();
 #endif
@@ -139,7 +136,7 @@ namespace SystemTrayMenu.Handler
                 {
                     MouseActive = true;
                     if (dgvTmp != null
-#if TODO
+#if TODO // WPF: Can be optimized away?
                         && !dgvTmp.IsDisposed
 #endif
                         )

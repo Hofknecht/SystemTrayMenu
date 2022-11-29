@@ -158,7 +158,7 @@ namespace SystemTrayMenu.Handler
                         if (iRowKey > -1 &&
                             dgv.Items.Count > iRowKey)
                         {
-#if TODO
+#if TODO // WPF: Better way to open context menu (as it looks like this is the code's intention)
                             Point point = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
                             RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
                             MouseEventArgs mouseEventArgs = new(MouseButtons.Right, 1, point.X, point.Y, 0);
@@ -313,7 +313,7 @@ namespace SystemTrayMenu.Handler
                         if (trigger.IsMenuOpen || !trigger.ContainsMenu)
                         {
                             trigger.MouseClick(null, out bool toCloseByMouseClick);
-#if TODO
+#if TODO // Misc MouseEvents
                             trigger.DoubleClick(
                                 new MouseButtonEventArgs(MouseButtons.Left, 0, 0, 0, 0),
                                 out bool toCloseByDoubleClick);
@@ -324,7 +324,7 @@ namespace SystemTrayMenu.Handler
                             {
                                 ClosePressed?.Invoke();
                             }
-#if TODO
+#if TODO // WPF: Can be removed as we do not paint ourselfs?
                             if (iRowKey > -1 && dgv.Rows.Count > iRowKey)
                             {
                                 // Raise Dgv_RowPostPaint to show ProcessStarted
@@ -486,15 +486,14 @@ namespace SystemTrayMenu.Handler
                     iRowKey = -1;
                     menu = menus[iMenuKey];
                     dgv = menu.GetDataGridView();
-#if TODO
-                    if (SelectMatched(dgv, dgv.SelectedRows[0].Index) ||
+
+                    if (SelectMatched(dgv, dgv.Items.IndexOf(dgv.SelectedItems.Count > 0 ? dgv.SelectedItems[0] : null)) ||
                         SelectMatched(dgv, 0))
                     {
                         RowDeselected(iRowBefore, dgvBefore);
                         SelectRow(dgv, iRowKey);
                         toClear = true;
                     }
-#endif
                 }
             }
             else

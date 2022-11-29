@@ -95,7 +95,7 @@
         <sys:Double x:Key="ColumnTextWidth">60</sys:Double>
     </Window.Resources>
 
-    <Border x:Name="windowFrame" BorderBrush="#FF000000" BorderThickness="1" CornerRadius="0" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Border x:Name="windowFrame" BorderBrush="#FF000000" BorderThickness="1" CornerRadius="0" Background="White">
         <DockPanel x:Name="tableLayoutPanelMenu">
             <Label x:Name="labelTitle" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Padding="1" Margin="6,0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock x:Name="txtTitle" TextTrimming="CharacterEllipsis" Margin="14,0"><Run Text="title"/></TextBlock>
@@ -162,7 +162,6 @@
                         <EventSetter Event="PreviewMouseDown" Handler="ListViewItem_PreviewMouseDown" />
                         <EventSetter Event="MouseUp" Handler="ListViewItem_MouseUp" />
                         <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewxItem_PreviewMouseLeftButtonDown" />
-                        <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick" />
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>

@@ -77,7 +77,7 @@ namespace SystemTrayMenu.Helper
             if (disposing)
             {
                 timerRaiseRowMouseLeave.Stop();
-#if TODO
+#if TODO // WPF: Can be optimized away?
                 senderObject?.Dispose();
 #endif
             }
