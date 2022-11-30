@@ -26,7 +26,7 @@ namespace SystemTrayMenu.Utilities
                 {
                     if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                     {
-#if TODO //HOTKEY
+#if TODO // HOTKEY
                         Key modifiers = HotkeyControl.HotkeyModifiersFromString(Properties.Settings.Default.HotKey);
                         Key hotkey = HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey);
 

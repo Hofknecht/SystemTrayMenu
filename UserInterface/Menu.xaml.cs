@@ -133,9 +133,7 @@ namespace SystemTrayMenu.UserInterface
             MouseDown += Menu_MouseDown;
             MouseUp += Menu_MouseUp;
             MouseMove += Menu_MouseMove;
-#if TODO // MouseWeel
-            labelTitle.MouseWheel += new MouseEventHandler(DgvMouseWheel);
-#endif
+
             SolidColorBrush foreColor = new(Colors.Black);
             SolidColorBrush backColor = AppColors.Background.ToSolidColorBrush();
             SolidColorBrush backColorSearch = AppColors.SearchField.ToSolidColorBrush();
@@ -224,9 +222,9 @@ namespace SystemTrayMenu.UserInterface
                 };
         }
 
-#if TODO // MouseWeel and Misc MouseEvents
-        internal new event Action MouseWheel;
+        internal new event Action Scrolled;
 
+#if TODO // Misc MouseEvents
         internal new event Action MouseEnter;
 
         internal new event Action MouseLeave;
@@ -601,7 +599,18 @@ namespace SystemTrayMenu.UserInterface
                 changeDirectionWhenOutOfBounds = false;
             }
 
-            Loaded += (_, _) =>
+            if (IsLoaded)
+            {
+                AdjustSizeAndLocationInternal();
+            }
+            else
+            {
+                // Layout cannot be calculated during loading, postpone this event
+                // TODO: Make sure lampa capture is registered only once
+                Loaded += (_, _) => AdjustSizeAndLocationInternal();
+            }
+
+            void AdjustSizeAndLocationInternal()
             {
                 // Calculate X position
                 double x;
@@ -707,10 +716,49 @@ namespace SystemTrayMenu.UserInterface
                         y = menuPredecessor.Location.Y;
                         if (dgv.Items.Count > trigger.RowIndex)
                         {
+                            // TODO: Optimize calculation and fix calculation for items that are listed "beyond" the initial window size
+
+                            // When item is not found, it might be invalidated due to resizing or moving
+                            // After updating the layout the location should be available again.
+                            menuPredecessor.UpdateLayout();
+
                             ListViewItem? lvi = dgv.FindVisualChildOfType<ListViewItem>(trigger.RowIndex);
                             if (lvi != null)
                             {
-                                y += menuPredecessor.GetRelativeChildPositionTo(lvi).Y;
+                                double offset;
+
+                                ScrollViewer? scrollViewer = (VisualTreeHelper.GetChild(dgv, 0) as Decorator)?.Child as ScrollViewer;
+                                if (scrollViewer != null)
+                                {
+                                    if (scrollViewer.VerticalOffset > 0)
+                                    {
+                                        offset = 0D;
+                                        for (int i = 0; i < scrollViewer.VerticalOffset; i++)
+                                        {
+                                            ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
+                                            if (item != null)
+                                            {
+                                                offset += item.ActualHeight;
+                                            }
+                                        }
+
+                                        y -= (int)offset;
+                                    }
+                                }
+
+                                y += menuPredecessor.GetRelativeChildPositionTo(dgv).Y;
+
+                                offset = 0D;
+                                for (int i = 0; i < trigger.RowIndex; i++)
+                                {
+                                    ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
+                                    if (item != null)
+                                    {
+                                        offset += item.ActualHeight;
+                                    }
+                                }
+
+                                y += (int)offset;
                             }
                         }
 
@@ -748,14 +796,21 @@ namespace SystemTrayMenu.UserInterface
 
                 // Keep its size when once created.
                 SizeToContent = SizeToContent.Manual;
-            };
+            }
         }
 
         internal void ResetHeight()
         {
+            if (IsLoaded)
+            {
+                // TODO: WPF Check if this "reset" works
+                SizeToContent = SizeToContent.WidthAndHeight;
+                UpdateLayout();
+                SizeToContent = SizeToContent.Manual;
 #if TODO // SEARCH
             dgvHeightSet = false;
 #endif
+            }
         }
 
         internal void SetCounts(int foldersCount, int filesCount)
@@ -922,13 +977,14 @@ namespace SystemTrayMenu.UserInterface
             ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Filter = null;
         }
 
-#if TODO // MouseWheel
-        private void DgvMouseWheel(object sender, MouseEventArgs e)
+        private void HandleScrollChanged(object sender, ScrollChangedEventArgs e)
         {
-            ((HandledMouseEventArgs)e).Handled = true;
-            MouseWheel?.Invoke();
+            if (IsLoaded)
+            {
+                Scrolled?.Invoke();
+            }
         }
-#endif
+
 #if TODO // SEARCH
         private void TextBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {

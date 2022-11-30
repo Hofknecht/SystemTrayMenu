@@ -858,7 +858,6 @@ namespace SystemTrayMenu.Utilities
                 }
             }
 
-
             handled = false;
             return IntPtr.Zero;
         }

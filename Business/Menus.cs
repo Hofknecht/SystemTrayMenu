@@ -163,7 +163,6 @@ namespace SystemTrayMenu.Business
 
                         Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name);
                         menuLoading.IsLoadingMenu = true;
-                        AdjustMenusSizeAndLocation();
                         menus[rowData.Level + 1] = menuLoading;
                         menuLoading.Tag = menuDataLoading.RowDataParent = rowData;
                         menuDataLoading.RowDataParent.SubMenu = menuLoading;
@@ -614,8 +613,8 @@ namespace SystemTrayMenu.Business
             menu.AdjustControls(title, menuData.Validity);
             menu.UserClickedOpenFolder += () => OpenFolder(path);
             menu.Level = menuData.Level;
-#if TODO // MouseWeel and Misc MouseEvents
-            menu.MouseWheel += AdjustMenusSizeAndLocation;
+            menu.Scrolled += AdjustMenusSizeAndLocation; // TODO: Only update vertical location while scrolling?
+#if TODO // Misc MouseEvents
             menu.MouseLeave += waitLeave.Start;
             menu.MouseEnter += waitLeave.Stop;
 #endif
@@ -663,7 +662,7 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged(sender, new EventArgs());
+            menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged((Menu)sender);
 
             AddItemsToMenu(menuData.RowDatas, menu, out int foldersCount, out int filesCount);
 
@@ -691,9 +690,8 @@ namespace SystemTrayMenu.Business
             return menu;
         }
 
-        private void MenuVisibleChanged(object sender, EventArgs e)
+        private void MenuVisibleChanged(Menu menu)
         {
-            Menu menu = (Menu)sender;
             if (menu.IsUsable)
             {
                 AdjustMenusSizeAndLocation();
@@ -703,7 +701,6 @@ namespace SystemTrayMenu.Business
                     menu.SetType(Menu.MenuType.Main);
                     menu.ResetSearchText();
                     menu.ResetHeight();
-                    AdjustMenusSizeAndLocation();
                 }
             }
 
