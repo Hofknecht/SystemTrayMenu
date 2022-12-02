@@ -528,10 +528,6 @@ namespace SystemTrayMenu.UserInterface
             timerUpdateIcons.Start();
         }
 
-#if TODO // Hack for a pseudo Refresh
-        private delegate void NoArgDelegate();
-#endif
-
         /// <summary>
         /// Update the position and size of the menu.
         /// </summary>
@@ -548,11 +544,7 @@ namespace SystemTrayMenu.UserInterface
             // Update the height and width
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
             AdjustDataGridViewWidth();
-#if TODO // Hack for a pseudo Refresh
-            this.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.ApplicationIdle,
-                (NoArgDelegate)delegate { });
 
-#endif
             bool useCustomLocation = Properties.Settings.Default.UseCustomLocation || lastLocation.X > 0;
             bool changeDirectionWhenOutOfBounds = true;
 
@@ -985,31 +977,9 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-#if TODO // Lazy value setting because of DataBinging but too late for Menues.AdjustSizeAndLocation()
-            renderedMaxWidth = Math.Min(
-                renderedMaxWidth,
-                (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Properties.Settings.Default.WidthMaxInPercent / 100f)));
-
-            for (int i = 0; i < dgv.Items.Count; i++)
-            {
-                ListViewItem? lvi = dgv.FindVisualChildOfType<ListViewItem>(i);
-                if (lvi != null)
-                {
-                    Label? columnTextLabel = lvi.FindVisualChildOfType<Label>();
-                    if (columnTextLabel != null)
-                    {
-                        columnTextLabel.Content = i.ToString() + " ; " + Width + " ; " + renderedMaxWidth.ToString();
-                        columnTextLabel.Width = renderedMaxWidth;
-                    }
-                }
-            }
-#else
             Resources["ColumnTextWidth"] = Math.Min(
                 renderedMaxWidth,
                 (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Properties.Settings.Default.WidthMaxInPercent / 100f)));
-
-#endif
-            ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Filter = null;
         }
 
         private void HandleScrollChanged(object sender, ScrollChangedEventArgs e)
