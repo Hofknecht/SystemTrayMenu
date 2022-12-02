@@ -81,9 +81,9 @@ namespace SystemTrayMenu.Utilities
             return null;
         }
 
-        internal static Point GetRelativeChildPositionTo(this Visual parent, Visual child)
+        internal static Point GetRelativeChildPositionTo(this Visual parent, Visual? child)
         {
-            return child.TransformToAncestor(parent).Transform(new(0, 0));
+            return child == null ? new() : child.TransformToAncestor(parent).Transform(new ());
         }
 
         // TODO: Find and remove any unnecessary convertions

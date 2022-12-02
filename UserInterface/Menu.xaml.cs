@@ -391,14 +391,12 @@ namespace SystemTrayMenu.UserInterface
                     buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
                 case MenuType.Empty:
-                    // TODO? remove search bar when searching makes no sense (take care of calculating initial position)
-                    //       searchPanel.Visibility = Visibility.Collapsed;
+                    searchPanel.Visibility = Visibility.Collapsed;
                     labelItems.Content = Translator.GetText("Directory empty");
                     buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
                 case MenuType.NoAccess:
-                    // TODO? remove search bar when searching makes no sense (take care of calculating initial position)
-                    //       searchPanel.Visibility = Visibility.Collapsed;
+                    searchPanel.Visibility = Visibility.Collapsed;
                     labelItems.Content = Translator.GetText("Directory inaccessible");
                     buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                     break;
@@ -716,40 +714,65 @@ namespace SystemTrayMenu.UserInterface
                         y = menuPredecessor.Location.Y;
                         if (dgv.Items.Count > trigger.RowIndex)
                         {
-                            // TODO: Optimize calculation and fix calculation for items that are listed "beyond" the initial window size
-
                             // When item is not found, it might be invalidated due to resizing or moving
                             // After updating the layout the location should be available again.
+                            // It also makes sure all height and location information is up to date
                             menuPredecessor.UpdateLayout();
 
-                            ListViewItem? lvi = dgv.FindVisualChildOfType<ListViewItem>(trigger.RowIndex);
-                            if (lvi != null)
+#if TODO // SCROLL: bounds within list using scrollviewer index while calculating size once
+                            // When scrolled, we have to reduce the index number as we calculate based on visual tree
+                            int index = trigger.RowIndex;
+                            ScrollViewer? scrollViewer = (VisualTreeHelper.GetChild(dgv, 0) as Decorator)?.Child as ScrollViewer;
+                            if (scrollViewer != null)
                             {
-                                double offset;
-
-                                ScrollViewer? scrollViewer = (VisualTreeHelper.GetChild(dgv, 0) as Decorator)?.Child as ScrollViewer;
-                                if (scrollViewer != null)
+                                // Show mid height or at bottom
+                                if (scrollViewer.VerticalOffset <= index)
                                 {
-                                    if (scrollViewer.VerticalOffset > 0)
+                                    if ((int)(scrollViewer.VerticalOffset + scrollViewer.ViewportHeight) < index)
                                     {
-                                        offset = 0D;
-                                        for (int i = 0; i < scrollViewer.VerticalOffset; i++)
-                                        {
-                                            ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
-                                            if (item != null)
-                                            {
-                                                offset += item.ActualHeight;
-                                            }
-                                        }
-
-                                        y -= (int)offset;
+                                        // Outside of visible list while index is even further below: place at bottom (last entry)
+                                        index = (int)scrollViewer.ViewportHeight;
+                                    }
+                                    else
+                                    {
+                                        // Remove skipped entries from index when scrolled down
+                                        index -= (int)scrollViewer.VerticalOffset;
                                     }
                                 }
+                                else
+                                {
+                                    // Outside of visible list while index is even further above: place at top (first entry)
+                                    index = 0;
+                                }
+                            }
 
-                                y += menuPredecessor.GetRelativeChildPositionTo(dgv).Y;
+                            y += menuPredecessor.GetRelativeChildPositionTo(dgv.FindVisualChildOfType<ListViewItem>(index)).Y;
+#else // TODO: SCROLL: Sum up offsets by calculating final offset based on each items' height
+                            // When scrolled, we have to reduce the index number as we calculate based on visual tree
+                            int startIndex = 0;
+                            double offset = 0D;
+                            ScrollViewer? scrollViewer = (VisualTreeHelper.GetChild(dgv, 0) as Decorator)?.Child as ScrollViewer;
+                            if (scrollViewer != null)
+                            {
+                                startIndex = (int)scrollViewer.VerticalOffset;
+                                if (trigger.RowIndex < startIndex)
+                                {
+                                    // calculate position above starting point
+                                    for (int i = trigger.RowIndex; i < startIndex; i++)
+                                    {
+                                        ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
+                                        if (item != null)
+                                        {
+                                            offset -= item.ActualHeight;
+                                        }
+                                    }
+                                }
+                            }
 
-                                offset = 0D;
-                                for (int i = 0; i < trigger.RowIndex; i++)
+                            if (startIndex < trigger.RowIndex)
+                            {
+                                // calculate position below starting point
+                                for (int i = startIndex; i < trigger.RowIndex; i++)
                                 {
                                     ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
                                     if (item != null)
@@ -757,22 +780,34 @@ namespace SystemTrayMenu.UserInterface
                                         offset += item.ActualHeight;
                                     }
                                 }
-
-                                y += (int)offset;
                             }
+
+                            y += menuPredecessor.GetRelativeChildPositionTo(dgv).Y + (int)offset;
+#endif
                         }
 
+#if TODO // SCROLL: Do we want this - Move upwards when there is no content? (Feels odd to me, topeterk)
+         //         Maybe always move it up only the height of labelTitle?
                         // when warning is shown, the title should appear at same height as selected row
                         if (searchPanel.Visibility != Visibility.Visible)
                         {
-                            y += labelTitle.ActualHeight;
+                            // TODO: This seems to fail in version 1 as search bar is always visible, so no adjustement is made
+                            //       And even when adjustment is made, it moves the menu even further down rather up?
+                            y -= this.GetRelativeChildPositionTo(labelItems).Y;
                         }
+#endif
 
                         // Move vertically when out of bounds
                         if (bounds.Y + bounds.Height < y + Height)
                         {
                             y = bounds.Y + bounds.Height - Height;
                         }
+#if !TODO // SCROLL: Upper screen bounds
+                        else if (y < bounds.Y)
+                        {
+                            y = bounds.Y;
+                        }
+#endif
 
                         break;
                     case StartLocation.TopRight:
