@@ -231,12 +231,14 @@ namespace SystemTrayMenu.UserInterface
         internal event Action? UserClickedOpenFolder;
 
         internal event Action<Menu, Key, ModifierKeys> CmdKeyProcessed;
-#if TODO // SEARCH
 
+#if TODO // Misc MouseEvents and TOUCH
         internal event EventHandler<KeyPressEventArgs> KeyPressCheck;
+#endif
 
         internal event Action SearchTextChanging;
 
+#if TODO // SEARCH
         internal event EventHandler<bool> SearchTextChanged;
 #endif
 
@@ -967,7 +969,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-#if TODO // SEARCH
+#if TODO // Misc MouseEvents and TOUCH
         private void TextBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             KeyPressCheck?.Invoke(sender, e);
@@ -975,96 +977,38 @@ namespace SystemTrayMenu.UserInterface
 #endif
         private void TextBoxSearch_TextChanged()
         {
-#if TODO // SEARCH
-            DataTable data = (DataTable)dgv.DataSource;
-#endif
-            string filterField = nameof(ListViewItemData.ColumnText);
-#if TODO // SEARCH
             SearchTextChanging?.Invoke();
 
-            // Expression reference: https://docs.microsoft.com/en-us/dotnet/api/system.data.datacolumn.expression?view=net-6.0
-#endif
-            // Instead implementing in-string wildcards, simply split into multiple search patters
-            string searchString = textBoxSearch.Text.Trim()
-                .Replace("%", " ")
-                .Replace("*", " ");
-
-            string searchStringReplaceSpecialCharacters = new(searchString);
-            searchString = string.Empty;
-            foreach (char character in searchStringReplaceSpecialCharacters)
-            {
-                searchString += character switch
-                {
-                    '[' => "[[]",
-                    ']' => "[]]",
-                    _ => character,
-                };
-            }
-
-            string like = string.Empty;
-            string[] splittedParts = searchString.Split(" ");
-            if (splittedParts.Length > 1)
-            {
-                foreach (string splittedPart in splittedParts)
-                {
-                    string and = string.Empty;
-                    if (!string.IsNullOrEmpty(like))
-                    {
-                        and = $" AND [{filterField}]";
-                    }
-
-                    like += $"{and} LIKE '%{splittedPart}%'";
-                }
-            }
-            else
-            {
-                like = $"LIKE '%{searchString}%'";
-            }
-
-            bool isSearchStringEmpty = string.IsNullOrEmpty(searchString);
+            string? userPattern = textBoxSearch.Text?.Replace("%", " ").Replace("*", " ").ToLower();
 
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource);
-            if (isSearchStringEmpty)
+            if (string.IsNullOrEmpty(userPattern))
             {
                 view.Filter = null;
             }
             else
             {
-                view.Filter = SearchFilter;
-                bool SearchFilter(object item)
+                // Instead implementing in-string wildcards, simply split into multiple search patters
+                view.Filter = (object item) =>
                 {
+                    // Look for each space separated string if it is part of an entries text (case insensitive)
                     ListViewItemData row = (ListViewItemData)item;
-                    return row.ColumnText.Contains(textBoxSearch.Text.Trim()); // TODO: THIS IS JUST TEMPORARY DUMMY FILTER (see below)
-                }
-            }
-#if TODO // SEARCH
-            try
-            {
-                if (Properties.Settings.Default.ShowOnlyAsSearchResult &&
-                    isSearchStringEmpty)
-                {
-                    data.DefaultView.RowFilter = RowFilterShowAll;
-                }
-                else
-                {
-                    data.DefaultView.RowFilter = $"[{filterField}] {like}";
-                }
-            }
-            catch (Exception ex)
-            {
-                if (ex is EvaluateException ||
-                    ex is SyntaxErrorException)
-                {
-                    Log.Warn($"searchString \"{searchString}\" is a invalid", ex);
-                }
-                else
-                {
-                    throw;
-                }
+                    foreach (string pattern in userPattern.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        if (!row.ColumnText.ToLower().Contains(pattern))
+                        {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                };
             }
 
+#if TODO // SEARCH
+            DataTable data = (DataTable)dgv.DataSource;
             string columnSortIndex = "SortIndex";
-            if (isSearchStringEmpty)
+            if (string.IsNullOrEmpty(userPattern))
             {
                 foreach (DataRow row in data.Rows)
                 {
@@ -1109,7 +1053,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 RowData rowData = (RowData)row.Cells[2].Value;
 
-                if (!isSearchStringEmpty ||
+                if (!string.IsNullOrEmpty(userPattern) ||
                     !(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
                 {
                     rowData.RowIndex = row.Index;
@@ -1132,7 +1076,7 @@ namespace SystemTrayMenu.UserInterface
 
             SetCounts(foldersCount, filesCount);
 
-            SearchTextChanged.Invoke(this, isSearchStringEmpty);
+            SearchTextChanged.Invoke(this, string.IsNullOrEmpty(userPattern));
 
             if (anyIconNotUpdated)
             {

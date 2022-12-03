@@ -620,9 +620,11 @@ namespace SystemTrayMenu.Business
             menu.MouseEnter += waitLeave.Stop;
 #endif
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
-#if TODO // SEARCH
+#if TODO // Misc MouseEvents and TOUCH
             menu.KeyPressCheck += Menu_KeyPressCheck;
+#endif
             menu.SearchTextChanging += Menu_SearchTextChanging;
+#if TODO // SEARCH
             menu.SearchTextChanged += Menu_SearchTextChanged;
 #endif
             menu.UserDragsMenu += Menu_UserDragsMenu;
