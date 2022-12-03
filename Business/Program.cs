@@ -41,8 +41,6 @@ namespace SystemTrayMenu
                         app.Run();
                     }
                 }
-
-                Config.Dispose();
             }
             catch (Exception ex)
             {
@@ -68,9 +66,10 @@ namespace SystemTrayMenu
 
                 if (dialogResult == MessageBoxResult.Yes)
                 {
+                    Version? version = Assembly.GetEntryAssembly()?.GetName().Version;
                     Log.ProcessStart("mailto:" + "markus@hofknecht.eu" +
                         "?subject=SystemTrayMenu Bug reported " +
-                        Assembly.GetEntryAssembly().GetName().Version +
+                        (version != null ? version.ToString() : string.Empty) +
                         "&body=" + ex.ToString());
                 }
 

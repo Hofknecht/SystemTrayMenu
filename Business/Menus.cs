@@ -96,7 +96,7 @@ namespace SystemTrayMenu.Business
                             if (IconReader.MainPreload)
                             {
                                 workerMainMenu.DoWork -= LoadMenu;
-                                menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name, Config.Path);
+                                menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name);
                                 menus[0].Loaded += (s, e) => ExecuteWatcherHistory();
 
                                 IconReader.MainPreload = false;
@@ -161,8 +161,7 @@ namespace SystemTrayMenu.Business
                             DirectoryState = MenuDataDirectoryState.Valid,
                         };
 
-                        // TODO: Check: Is Config.Path as path parameter correct? (topeterk: should be rowData.Path?)
-                        Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name, Config.Path);
+                        Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name);
                         menus[rowData.Level + 1] = menuLoading;
                         menuLoading.Tag = menuDataLoading.RowDataParent = rowData;
                         menuDataLoading.RowDataParent.SubMenu = menuLoading;
@@ -477,6 +476,16 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        internal static void OpenFolder(string? path = null)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                path = Config.Path;
+            }
+
+            Log.ProcessStart(path);
+        }
+
         private static void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
         {
             string path;
@@ -495,17 +504,6 @@ namespace SystemTrayMenu.Business
             MenuData menuData = GetData((BackgroundWorker)senderDoWork, path, level);
             menuData.RowDataParent = rowData;
             eDoWork.Result = menuData;
-        }
-
-        private static void OpenFolder(string pathToFolder = "")
-        {
-            string path = pathToFolder;
-            if (string.IsNullOrEmpty(path))
-            {
-                path = Config.Path;
-            }
-
-            Log.ProcessStart(path);
         }
 
         private static int GetRowUnderCursor(ListView dgv, Point location)
@@ -586,11 +584,13 @@ namespace SystemTrayMenu.Business
             return (App.TaskbarLogo != null && App.TaskbarLogo.IsActive) || IsShellContextMenuOpen();
         }
 
-        private Menu Create(MenuData menuData, string title, string path)
+        private Menu Create(MenuData menuData, string title, string? path = null)
         {
-            Menu menu = new(title, menuData.Level, menuData.DirectoryState);
+            Menu menu = new(title, menuData.Level, menuData.DirectoryState)
+            {
+                FolderPath = path,
+            };
 
-            menu.UserClickedOpenFolder += () => OpenFolder(path);
             menu.MenuScrolled += AdjustMenusSizeAndLocation; // TODO: Only update vertical location while scrolling?
 #if TODO // Misc MouseEvents
             menu.MouseLeave += waitLeave.Start;

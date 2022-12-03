@@ -4,7 +4,6 @@
 
 namespace SystemTrayMenu
 {
-    using System.Drawing;
     using System.Windows.Media;
     using Color = System.Drawing.Color;
 
@@ -78,18 +77,6 @@ namespace SystemTrayMenu
 
         public static Color DarkModeSearchField { get; set; }
 
-        public static Bitmap BitmapOpenFolder { get; set; }
-
-        public static Bitmap BitmapPin { get; set; }
-
-        public static Bitmap BitmapSettings { get; set; }
-
-        public static Bitmap BitmapRestart { get; set; }
-
-        public static Bitmap BitmapPinActive { get; set; }
-
-        public static Bitmap BitmapSearch { get; set; }
-
         public static Color Icons { get; set; }
 
         public static Color DarkModeIcons { get; set; }
@@ -98,6 +85,11 @@ namespace SystemTrayMenu
         public static SolidColorBrush ToSolidColorBrush(this Color color)
         {
             return new SolidColorBrush(System.Windows.Media.Color.FromArgb(color.A, color.R, color.G, color.B));
+        }
+
+        public static SolidColorBrush SolidColorBrushFromString(string value)
+        {
+            return new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString(value));
         }
     }
 }

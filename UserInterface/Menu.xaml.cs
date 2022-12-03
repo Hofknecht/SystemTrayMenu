@@ -13,9 +13,11 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Input;
     using System.Windows.Media;
     using System.Windows.Threading;
+    using SystemTrayMenu.Business;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Properties;
     using SystemTrayMenu.Utilities;
     using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
@@ -151,6 +153,11 @@ namespace SystemTrayMenu.UserInterface
                 backColor = AppColors.DarkModeBackground.ToSolidColorBrush();
                 backColorSearch = AppColors.DarkModeSearchField.ToSolidColorBrush();
                 backgroundBorder = AppColors.DarkModeBackgroundBorder.ToSolidColorBrush();
+                Resources["ic_fluent_svgColor"] = AppColors.SolidColorBrushFromString(Settings.Default.ColorDarkModeIcons);
+            }
+            else
+            {
+                Resources["ic_fluent_svgColor"] = AppColors.SolidColorBrushFromString(Settings.Default.ColorIcons);
             }
 
             labelTitle.Foreground = foreColor;
@@ -224,7 +231,7 @@ namespace SystemTrayMenu.UserInterface
                 };
         }
 
-        internal event Action MenuScrolled;
+        internal event Action? MenuScrolled;
 
 #if TODO // Misc MouseEvents
         internal new event Action MouseEnter;
@@ -232,15 +239,13 @@ namespace SystemTrayMenu.UserInterface
         internal new event Action MouseLeave;
 #endif
 
-        internal event Action? UserClickedOpenFolder;
-
-        internal event Action<Menu, Key, ModifierKeys> CmdKeyProcessed;
+        internal event Action<Menu, Key, ModifierKeys>? CmdKeyProcessed;
 
 #if TODO // Misc MouseEvents and TOUCH
         internal event EventHandler<KeyPressEventArgs> KeyPressCheck;
 #endif
 
-        internal event Action SearchTextChanging;
+        internal event Action? SearchTextChanging;
 
 #if TODO // SEARCH
         internal event EventHandler<bool> SearchTextChanged;
@@ -275,6 +280,8 @@ namespace SystemTrayMenu.UserInterface
         public System.Drawing.Point Location => new System.Drawing.Point((int)Left, (int)Top); // TODO WPF Replace Forms wrapper)
 
         internal int Level { get; set; }
+
+        internal string? FolderPath { get; set; }
 
         internal bool IsUsable => Visibility == Visibility.Visible && !fading.IsHiding && !IsDisposed && !Disposing;
 
@@ -1028,33 +1035,11 @@ namespace SystemTrayMenu.UserInterface
             }
 #endif
         }
+
 #if TODO // Misc MouseEvents and BorderColors
-
-        private void PictureBox_MouseEnter(object sender, EventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            pictureBox.BackColor = MenuDefines.ColorSelectedItem;
-            pictureBox.Tag = true;
-        }
-
-        private void PictureBox_MouseLeave(object sender, EventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            pictureBox.BackColor = Color.Transparent;
-            pictureBox.Tag = false;
-        }
-
-        private void PictureBox_Resize(object sender, EventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            pictureBox.Invalidate();
-        }
-
         private void PictureBoxOpenFolder_Paint(object sender, PaintEventArgs e)
         {
             PictureBox pictureBox = (PictureBox)sender;
-
-            e.Graphics.DrawImage(AppColors.BitmapOpenFolder, new Rectangle(Point.Empty, pictureBox.ClientSize));
 
             if (pictureBox.Tag != null && (bool)pictureBox.Tag)
             {
@@ -1066,7 +1051,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void PictureBoxOpenFolder_Click(object sender, RoutedEventArgs e)
         {
-            UserClickedOpenFolder?.Invoke();
+            Menus.OpenFolder(FolderPath);
         }
 
 #if TODO // BorderColors
@@ -1098,8 +1083,6 @@ namespace SystemTrayMenu.UserInterface
         {
             PictureBox pictureBox = (PictureBox)sender;
 
-            e.Graphics.DrawImage(AppColors.BitmapSettings, new Rectangle(Point.Empty, pictureBox.ClientSize));
-
             if (pictureBox.Tag != null && (bool)pictureBox.Tag)
             {
                 Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
@@ -1117,8 +1100,6 @@ namespace SystemTrayMenu.UserInterface
         {
             PictureBox pictureBox = (PictureBox)sender;
 
-            e.Graphics.DrawImage(AppColors.BitmapRestart, new Rectangle(Point.Empty, pictureBox.ClientSize));
-
             if (pictureBox.Tag != null && (bool)pictureBox.Tag)
             {
                 Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
@@ -1131,13 +1112,6 @@ namespace SystemTrayMenu.UserInterface
             AppRestart.ByMenuButton();
         }
 
-#if TODO // BorderColors
-        private void PictureBoxSearch_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-            e.Graphics.DrawImage(AppColors.BitmapSearch, new Rectangle(Point.Empty, pictureBox.ClientSize));
-        }
-#endif
         private void TimerUpdateIcons_Tick(object? sender, EventArgs e)
         {
             int iconsToUpdate = 0;

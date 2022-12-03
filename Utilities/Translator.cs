@@ -11,7 +11,7 @@ namespace SystemTrayMenu.Utilities
 
     internal static class Translator
     {
-        private static CultureInfo culture;
+        private static CultureInfo? culture;
 
         internal static void Initialize()
         {
@@ -31,7 +31,7 @@ namespace SystemTrayMenu.Utilities
             ResourceManager rm = new(
                 "SystemTrayMenu.Resources.Languages.lang",
                 typeof(Menu).Assembly);
-            return rm.GetString(id, culture);
+            return rm.GetString(id, culture) ?? id;
         }
     }
 }

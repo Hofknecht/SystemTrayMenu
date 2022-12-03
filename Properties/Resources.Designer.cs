@@ -61,66 +61,6 @@ namespace SystemTrayMenu.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] ic_fluent_arrow_sync_24_regular {
-            get {
-                object obj = ResourceManager.GetObject("ic_fluent_arrow_sync_24_regular", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] ic_fluent_folder_arrow_right_48_regular {
-            get {
-                object obj = ResourceManager.GetObject("ic_fluent_folder_arrow_right_48_regular", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] ic_fluent_pin_48_filled {
-            get {
-                object obj = ResourceManager.GetObject("ic_fluent_pin_48_filled", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] ic_fluent_pin_48_regular {
-            get {
-                object obj = ResourceManager.GetObject("ic_fluent_pin_48_regular", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] ic_fluent_search_48_regular {
-            get {
-                object obj = ResourceManager.GetObject("ic_fluent_search_48_regular", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] ic_fluent_settings_28_regular {
-            get {
-                object obj = ResourceManager.GetObject("ic_fluent_settings_28_regular", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         public static System.Drawing.Icon LinkArrow {

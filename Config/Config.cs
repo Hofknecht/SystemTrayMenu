@@ -7,10 +7,8 @@ namespace SystemTrayMenu
     using System;
     using System.Drawing;
     using System.IO;
-    using System.Text;
     using System.Windows;
     using Microsoft.Win32;
-    using Svg;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
@@ -61,16 +59,6 @@ namespace SystemTrayMenu
                     Directory.CreateDirectory(Settings.Default.PathIcoDirectory);
                 }
             }
-        }
-
-        public static void Dispose()
-        {
-            AppColors.BitmapOpenFolder.Dispose();
-            AppColors.BitmapPin.Dispose();
-            AppColors.BitmapPinActive.Dispose();
-            AppColors.BitmapSettings.Dispose();
-            AppColors.BitmapRestart.Dispose();
-            AppColors.BitmapSearch.Dispose();
         }
 
         public static Icon GetAppIcon()
@@ -266,29 +254,6 @@ namespace SystemTrayMenu
             Settings.Default.ColorDarkModeIcons = colorAndCode.HtmlColorCode;
             AppColors.DarkModeIcons = colorAndCode.Color;
 
-            string htmlColorCodeIcons;
-            if (IsDarkMode())
-            {
-                htmlColorCodeIcons = Settings.Default.ColorDarkModeIcons;
-            }
-            else
-            {
-                htmlColorCodeIcons = Settings.Default.ColorIcons;
-            }
-
-            AppColors.BitmapOpenFolder =
-                ReadSvg(Properties.Resources.ic_fluent_folder_arrow_right_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapPin =
-                ReadSvg(Properties.Resources.ic_fluent_pin_48_regular, htmlColorCodeIcons);
-            AppColors.BitmapSettings =
-                ReadSvg(Properties.Resources.ic_fluent_settings_28_regular, htmlColorCodeIcons);
-            AppColors.BitmapRestart =
-                ReadSvg(Properties.Resources.ic_fluent_arrow_sync_24_regular, htmlColorCodeIcons);
-            AppColors.BitmapPinActive =
-                ReadSvg(Properties.Resources.ic_fluent_pin_48_filled, htmlColorCodeIcons);
-            AppColors.BitmapSearch =
-                ReadSvg(Properties.Resources.ic_fluent_search_48_regular, htmlColorCodeIcons);
-
             colorAndCode.HtmlColorCode = Settings.Default.ColorSearchField;
             colorAndCode.Color = Color.FromArgb(255, 255, 255);
             colorAndCode = ProcessColorAndCode(converter, colorAndCode, ref changed);
@@ -449,18 +414,6 @@ namespace SystemTrayMenu
             {
                 Settings.Default.Save();
             }
-        }
-
-        private static Bitmap ReadSvg(byte[] byteArray, string htmlColorCode)
-        {
-            string str = Encoding.UTF8.GetString(byteArray);
-            str = str.Replace("#585858", htmlColorCode);
-            byteArray = Encoding.UTF8.GetBytes(str);
-
-            using MemoryStream stream = new(byteArray);
-            SvgDocument svgDocument = SvgDocument.Open<SvgDocument>(stream);
-            svgDocument.Color = new SvgColourServer(Color.Black);
-            return svgDocument.Draw();
         }
 
         private static bool IsRegistryValueThisValue(string keyName, string valueName, string value)

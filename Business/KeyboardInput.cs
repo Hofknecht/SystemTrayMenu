@@ -31,17 +31,17 @@ namespace SystemTrayMenu.Handler
             this.menus = menus;
         }
 
-        internal event Action HotKeyPressed;
+        internal event Action? HotKeyPressed;
 
-        internal event Action ClosePressed;
+        internal event Action? ClosePressed;
 
-        internal event Action<ListView, int> RowSelected;
+        internal event Action<ListView, int>? RowSelected;
 
-        internal event Action<int, ListView> RowDeselected;
+        internal event Action<int, ListView>? RowDeselected;
 
-        internal event Action<ListView, int> EnterPressed;
+        internal event Action<ListView, int>? EnterPressed;
 
-        internal event Action Cleared;
+        internal event Action? Cleared;
 
         internal bool InUse { get; set; }
 
@@ -153,17 +153,18 @@ namespace SystemTrayMenu.Handler
                 case Key.Apps:
                     if (modifiers == ModifierKeys.None)
                     {
-                        ListView dgv = menus[iMenuKey]?.GetDataGridView();
-
-                        if (iRowKey > -1 &&
-                            dgv.Items.Count > iRowKey)
+                        ListView? dgv = menus[iMenuKey]?.GetDataGridView();
+                        if (dgv != null)
                         {
+                            if (iRowKey > -1 && dgv.Items.Count > iRowKey)
+                            {
 #if TODO // WPF: Better way to open context menu (as it looks like this is the code's intention)
-                            Point point = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
-                            RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
-                            MouseEventArgs mouseEventArgs = new(MouseButtons.Right, 1, point.X, point.Y, 0);
-                            trigger.MouseDown(dgv, mouseEventArgs);
+                                Point point = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
+                                RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
+                                MouseEventArgs mouseEventArgs = new(MouseButtons.Right, 1, point.X, point.Y, 0);
+                                trigger.MouseDown(dgv, mouseEventArgs);
 #endif
+                            }
                         }
                     }
 
@@ -196,14 +197,20 @@ namespace SystemTrayMenu.Handler
 
         internal void SearchTextChanged(Menu menu, bool isSearchStringEmpty)
         {
-            ListView dgv = menu.GetDataGridView();
             if (isSearchStringEmpty)
             {
                 ClearIsSelectedByKey();
             }
-            else if (dgv.Items.Count > 0)
+            else
             {
-                Select(dgv, 0, true);
+                ListView? dgv = menu.GetDataGridView();
+                if (dgv != null)
+                {
+                    if (dgv.Items.Count > 0)
+                    {
+                        Select(dgv, 0, true);
+                    }
+                }
             }
         }
 
@@ -245,7 +252,7 @@ namespace SystemTrayMenu.Handler
         }
 
         private bool IsAnyMenuSelectedByKey(
-            ref ListView dgv,
+            ref ListView? dgv,
             ref Menu menuFromSelected,
             ref string textselected)
         {
@@ -255,15 +262,18 @@ namespace SystemTrayMenu.Handler
                 iRowKey > -1)
             {
                 dgv = menu.GetDataGridView();
-                if (dgv.Items.Count > iRowKey)
+                if (dgv != null)
                 {
-                    Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[iRowKey];
-                    RowData rowData = itemData.data;
-                    if (rowData.IsSelected)
+                    if (dgv.Items.Count > iRowKey)
                     {
-                        isStillSelected = true;
-                        menuFromSelected = rowData.SubMenu;
-                        textselected = itemData.ColumnText;
+                        Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[iRowKey];
+                        RowData rowData = itemData.data;
+                        if (rowData.IsSelected)
+                        {
+                            isStillSelected = true;
+                            menuFromSelected = rowData.SubMenu;
+                            textselected = itemData.ColumnText;
+                        }
                     }
                 }
             }
