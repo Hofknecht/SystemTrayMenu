@@ -19,6 +19,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<Nullable>enable</Nullable>
     <Platforms>x64;x86;AnyCPU</Platforms>
     <Configurations>Debug;Release;ReleasePackage</Configurations>
   </PropertyGroup>

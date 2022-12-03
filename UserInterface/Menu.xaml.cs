@@ -2,8 +2,6 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-#nullable enable
-
 namespace SystemTrayMenu.UserInterface
 {
     using System;
@@ -222,7 +220,7 @@ namespace SystemTrayMenu.UserInterface
                 };
         }
 
-        internal new event Action Scrolled;
+        internal new event Action MenuScrolled;
 
 #if TODO // Misc MouseEvents
         internal new event Action MouseEnter;
@@ -463,7 +461,6 @@ namespace SystemTrayMenu.UserInterface
             if (!Config.ShowSearchBar)
             {
                 searchPanel.Visibility = Visibility.Collapsed;
-                panelLine.Visibility = Visibility.Collapsed;
             }
 
             if (!Config.ShowCountOfElementsBelow &&
@@ -711,35 +708,6 @@ namespace SystemTrayMenu.UserInterface
                             // It also makes sure all height and location information is up to date
                             menuPredecessor.UpdateLayout();
 
-#if TODO // SCROLL: bounds within list using scrollviewer index while calculating size once
-                            // When scrolled, we have to reduce the index number as we calculate based on visual tree
-                            int index = trigger.RowIndex;
-                            ScrollViewer? scrollViewer = (VisualTreeHelper.GetChild(dgv, 0) as Decorator)?.Child as ScrollViewer;
-                            if (scrollViewer != null)
-                            {
-                                // Show mid height or at bottom
-                                if (scrollViewer.VerticalOffset <= index)
-                                {
-                                    if ((int)(scrollViewer.VerticalOffset + scrollViewer.ViewportHeight) < index)
-                                    {
-                                        // Outside of visible list while index is even further below: place at bottom (last entry)
-                                        index = (int)scrollViewer.ViewportHeight;
-                                    }
-                                    else
-                                    {
-                                        // Remove skipped entries from index when scrolled down
-                                        index -= (int)scrollViewer.VerticalOffset;
-                                    }
-                                }
-                                else
-                                {
-                                    // Outside of visible list while index is even further above: place at top (first entry)
-                                    index = 0;
-                                }
-                            }
-
-                            y += menuPredecessor.GetRelativeChildPositionTo(dgv.FindVisualChildOfType<ListViewItem>(index)).Y;
-#else // TODO: SCROLL: Sum up offsets by calculating final offset based on each items' height
                             // When scrolled, we have to reduce the index number as we calculate based on visual tree
                             int startIndex = 0;
                             double offset = 0D;
@@ -774,32 +742,39 @@ namespace SystemTrayMenu.UserInterface
                                 }
                             }
 
-                            y += menuPredecessor.GetRelativeChildPositionTo(dgv).Y + (int)offset;
-#endif
+                            if (offset < 0)
+                            {
+                                // Do not allow to show window higher than previous window
+                                offset = 0;
+                            }
+                            else
+                            {
+                                double offsetList = menuPredecessor.GetRelativeChildPositionTo(dgv).Y;
+                                offsetList += dgv.ActualHeight;
+                                if (offsetList < offset)
+                                {
+                                    // Do not allow to show window below last entry position of list
+                                    offset = offsetList;
+                                }
+                            }
+
+                            y += (int)offset;
                         }
 
-#if TODO // SCROLL: Do we want this - Move upwards when there is no content? (Feels odd to me, topeterk)
-         //         Maybe always move it up only the height of labelTitle?
-                        // when warning is shown, the title should appear at same height as selected row
-                        if (searchPanel.Visibility != Visibility.Visible)
+                        if (searchPanel.Visibility == Visibility.Collapsed)
                         {
-                            // TODO: This seems to fail in version 1 as search bar is always visible, so no adjustement is made
-                            //       And even when adjustment is made, it moves the menu even further down rather up?
-                            y -= this.GetRelativeChildPositionTo(labelItems).Y;
+                            y += menuPredecessor.searchPanel.ActualHeight;
                         }
-#endif
 
                         // Move vertically when out of bounds
                         if (bounds.Y + bounds.Height < y + Height)
                         {
                             y = bounds.Y + bounds.Height - Height;
                         }
-#if !TODO // SCROLL: Upper screen bounds
                         else if (y < bounds.Y)
                         {
                             y = bounds.Y;
                         }
-#endif
 
                         break;
                     case StartLocation.TopRight:
@@ -849,6 +824,8 @@ namespace SystemTrayMenu.UserInterface
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {
+            searchPanel.Visibility= Visibility.Visible;
+
             ModifierKeys modifiers = Keyboard.Modifiers;
             switch (e.Key)
             {
@@ -986,7 +963,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (IsLoaded)
             {
-                Scrolled?.Invoke();
+                MenuScrolled?.Invoke();
             }
         }
 

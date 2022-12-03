@@ -53,14 +53,7 @@ namespace SystemTrayMenu.Helper.Updater
         {
             if (newVersionForm != null)
             {
-                if (newVersionForm!.CheckAccess())
-                {
-                    newVersionForm.Dispatcher.Invoke(() => newVersionForm?.Activate());
-                }
-                else
-                {
-                    newVersionForm.Activate();
-                }
+                newVersionForm!.HandleInvoke(() => newVersionForm?.Activate());
             }
             else
             {

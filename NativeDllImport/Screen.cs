@@ -4,8 +4,6 @@
 //
 // Copyright (c) 2022-2022 Peter Kirmeier
 
-#nullable enable
-
 namespace SystemTrayMenu.DllImports
 {
     using System;

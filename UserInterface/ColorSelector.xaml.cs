@@ -2,8 +2,6 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-#nullable enable
-
 namespace SystemTrayMenu.UserInterface
 {
     using System;

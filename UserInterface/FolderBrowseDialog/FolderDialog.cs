@@ -42,7 +42,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
         /// <param name="owner">The window the dialog is assigned to.</param>
         /// <returns>True is returned on successful user interaction and when not cancelled by the user otherwise false is returned.</returns>
         [SupportedOSPlatform("windows")]
-        public bool ShowDialog(Window owner)
+        public bool ShowDialog(Window? owner)
         {
             NativeMethods.IFileDialog frm = (NativeMethods.IFileDialog)new NativeMethods.FileOpenDialogRCW();
             frm.GetOptions(out uint options);

@@ -2,8 +2,6 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-#nullable enable
-
 namespace SystemTrayMenu.UserInterface
 {
     using System;
@@ -306,6 +304,8 @@ namespace SystemTrayMenu.UserInterface
                 Log.Warn("PathsAddToMainMenu", ex);
             }
 
+            EnableButtonAddStartMenu();
+
             checkBoxGenerateShortcutsToDrives.IsChecked = Settings.Default.GenerateShortcutsToDrives;
 
             checkBoxStayOpenWhenItemClicked.IsChecked = Settings.Default.StaysOpenWhenItemClicked;
@@ -395,14 +395,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (IsOpen())
             {
-                if (settingsForm!.CheckAccess())
-                {
-                    settingsForm.Dispatcher.Invoke(() => settingsForm?.Activate());
-                }
-                else
-                {
-                    settingsForm.Activate();
-                }
+                settingsForm!.HandleInvoke(() => settingsForm?.Activate());
             }
             else
             {
@@ -943,7 +936,6 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonAddSampleStartMenuFolder_Click(object sender, RoutedEventArgs e)
         {
-            // dataGridViewFolders.Rows.Clear(); // TODO: This line must be removed in version 1, right?
             string folderPathCommonStartMenu = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu);
             dataGridViewFolders.Items.Add(new ListViewItemData(folderPathCommonStartMenu, true, true));
             EnableButtonAddStartMenu();

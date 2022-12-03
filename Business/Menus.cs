@@ -26,6 +26,7 @@ namespace SystemTrayMenu.Business
 
     internal class Menus : IDisposable
     {
+        private readonly Dispatcher dispatchter = Dispatcher.CurrentDispatcher;
         private readonly Menu[] menus = new Menu[MenuDefines.MenusMax];
         private readonly BackgroundWorker workerMainMenu = new();
         private readonly List<BackgroundWorker> workersSubMenu = new();
@@ -613,7 +614,7 @@ namespace SystemTrayMenu.Business
             menu.AdjustControls(title, menuData.Validity);
             menu.UserClickedOpenFolder += () => OpenFolder(path);
             menu.Level = menuData.Level;
-            menu.Scrolled += AdjustMenusSizeAndLocation; // TODO: Only update vertical location while scrolling?
+            menu.MenuScrolled += AdjustMenusSizeAndLocation; // TODO: Only update vertical location while scrolling?
 #if TODO // Misc MouseEvents
             menu.MouseLeave += waitLeave.Start;
             menu.MouseEnter += waitLeave.Stop;
@@ -997,10 +998,13 @@ namespace SystemTrayMenu.Business
 
         private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
         {
-            if (menus[0].IsUsable)
+            dispatchter.Invoke(() =>
             {
-                menus[0].Tag = null;
-            }
+                if (menus[0].IsUsable)
+                {
+                    menus[0].Tag = null;
+                }
+            });
         }
 
         private void ShowSubMenu(Menu menuToShow)

@@ -101,10 +101,10 @@
                 <TextBlock x:Name="txtTitle" TextTrimming="CharacterEllipsis" Margin="14,0"><Run Text="title"/></TextBlock>
             </Label>
             <DockPanel x:Name="searchPanel" DockPanel.Dock="Top" Margin="6,0">
+                <Separator x:Name="panelLine" Height="1" Margin="0,1" DockPanel.Dock="Bottom"/>
                 <Image x:Name="pictureBoxSearch" Width="16" Height="16" Margin="1" DockPanel.Dock="Left" Source="{StaticResource ic_fluent_search_48_regularDrawingImage}"/>
-                <TextBox x:Name="textBoxSearch" BorderBrush="{x:Null}" TextInput="textBoxSearch_TextInput" Background="{x:Null}" />
+                <TextBox x:Name="textBoxSearch" BorderBrush="{x:Null}" TextInput="textBoxSearch_TextInput" Background="{x:Null}" SelectionTextBrush="Red" SelectionBrush="#FFDAFF00" />
             </DockPanel>
-            <Separator x:Name="panelLine" Height="1" Margin="6,1" DockPanel.Dock="Top"/>
 
             <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,4">
                 <Label x:Name="labelItems" Content="0 items" Padding="0" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>

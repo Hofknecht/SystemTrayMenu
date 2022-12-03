@@ -4,8 +4,6 @@
 //
 // Copyright (c) 2022-2022 Peter Kirmeier
 
-#nullable enable
-
 namespace SystemTrayMenu.Utilities
 {
     using System;
@@ -14,10 +12,23 @@ namespace SystemTrayMenu.Utilities
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
+    using System.Windows.Threading;
     using Point = System.Windows.Point;
 
     internal static class WPFExtensions
     {
+        internal static void HandleInvoke(this DispatcherObject instance, Action action)
+        {
+            if (instance!.CheckAccess())
+            {
+                action();
+            }
+            else
+            {
+                instance.Dispatcher.Invoke(action);
+            }
+        }
+
         internal static Window GetParentWindow(this ListView listView)
         {
             var parent = VisualTreeHelper.GetParent(listView);
@@ -92,7 +103,7 @@ namespace SystemTrayMenu.Utilities
             return (ImageSource)new IconToImageSourceConverter().Convert(
                         icon,
                         typeof(ImageSource),
-                        null,
+                        null!,
                         CultureInfo.InvariantCulture);
         }
     }

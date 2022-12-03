@@ -111,7 +111,7 @@ namespace SystemTrayMenu
             }
         }
 
-        public static void SetFolderByUser(Window owner = null, bool save = true)
+        public static void SetFolderByUser(Window? owner = null, bool save = true)
         {
             using FolderDialog dialog = new();
             dialog.InitialFolder = Path;
