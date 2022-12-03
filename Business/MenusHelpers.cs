@@ -84,22 +84,22 @@ namespace SystemTrayMenu.Business
 
         internal static void CheckIfValid(ref MenuData menuData)
         {
-            if (menuData.Validity == MenuDataValidity.Undefined)
+            if (menuData.DirectoryState == MenuDataDirectoryState.Undefined)
             {
                 if (menuData.RowDatas.Count == 0)
                 {
-                    menuData.Validity = MenuDataValidity.Empty;
+                    menuData.DirectoryState = MenuDataDirectoryState.Empty;
                 }
                 else
                 {
-                    menuData.Validity = MenuDataValidity.Valid;
+                    menuData.DirectoryState = MenuDataDirectoryState.Valid;
                 }
             }
         }
 
         internal static void SortItemsWhenValid(ref MenuData menuData)
         {
-            if (menuData.Validity != MenuDataValidity.Valid)
+            if (menuData.DirectoryState != MenuDataDirectoryState.Valid)
             {
                 return;
             }
@@ -181,7 +181,7 @@ namespace SystemTrayMenu.Business
                 Log.Warn($"path:'{path}'", ex);
                 if (ex is UnauthorizedAccessException)
                 {
-                    menuData.Validity = MenuDataValidity.NoAccess;
+                    menuData.DirectoryState = MenuDataDirectoryState.NoAccess;
                 }
             }
         }
@@ -205,7 +205,7 @@ namespace SystemTrayMenu.Business
                 Log.Warn($"path:'{path}'", ex);
                 if (ex is UnauthorizedAccessException)
                 {
-                    menuData.Validity = MenuDataValidity.NoAccess;
+                    menuData.DirectoryState = MenuDataDirectoryState.NoAccess;
                 }
             }
         }
@@ -229,7 +229,7 @@ namespace SystemTrayMenu.Business
                 Log.Warn($"path:'{path}'", ex);
                 if (ex is UnauthorizedAccessException)
                 {
-                    menuData.Validity = MenuDataValidity.NoAccess;
+                    menuData.DirectoryState = MenuDataDirectoryState.NoAccess;
                 }
             }
         }

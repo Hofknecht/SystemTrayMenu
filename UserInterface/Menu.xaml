@@ -107,7 +107,7 @@
             </DockPanel>
 
             <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,4">
-                <Label x:Name="labelItems" Content="0 items" Padding="0" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <Label x:Name="labelStatus" Content="0 items" Padding="0" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
 
                 <Image x:Name="pictureBoxLoading" Width="18" Height="18" DockPanel.Dock="Right"
                        HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" d:Visibility="Visible" Visibility="Collapsed">

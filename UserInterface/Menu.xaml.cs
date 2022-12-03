@@ -7,7 +7,6 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Globalization;
-    using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
@@ -42,7 +41,7 @@ namespace SystemTrayMenu.UserInterface
         private bool isClosed = false; // TODO WPF Replace Forms wrapper
         private DispatcherTimer timerUpdateIcons = new DispatcherTimer(DispatcherPriority.Render, Dispatcher.CurrentDispatcher);
 
-        internal Menu()
+        internal Menu(string title, int level, MenuDataDirectoryState directoryState)
         {
             timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
             Closed += (_, _) =>
@@ -99,10 +98,19 @@ namespace SystemTrayMenu.UserInterface
 
             InitializeComponent();
 
-            Assembly myassembly = Assembly.GetExecutingAssembly();
-            string myname = myassembly.GetName().Name ?? string.Empty;
+            Level = level;
+            if (Level == 0)
+            {
+                // Use Main Menu DPI for all further calculations
+                Scaling.CalculateFactorByDpi(this);
+            }
 
-            txtTitle.Text = myname;
+            if (title.Length > MenuDefines.LengthMax)
+            {
+                title = $"{title[..MenuDefines.LengthMax]}...";
+            }
+
+            txtTitle.Text = title;
 
             foreach (FrameworkElement control in
                 new List<FrameworkElement>()
@@ -125,7 +133,7 @@ namespace SystemTrayMenu.UserInterface
 
             labelTitle.FontSize = Scaling.ScaleFontByPoints(8.25F);
             textBoxSearch.FontSize = Scaling.ScaleFontByPoints(8.25F);
-            labelItems.FontSize = Scaling.ScaleFontByPoints(7F);
+            labelStatus.FontSize = Scaling.ScaleFontByPoints(7F);
             dgv.FontSize = Scaling.ScaleFontByPoints(9F);
 
             MouseDown += Menu_MouseDown;
@@ -148,7 +156,7 @@ namespace SystemTrayMenu.UserInterface
             labelTitle.Foreground = foreColor;
             textBoxSearch.Foreground = foreColor;
             dgv.Foreground = foreColor;
-            labelItems.Foreground = MenuDefines.ColorIcons.ToSolidColorBrush();
+            labelStatus.Foreground = MenuDefines.ColorIcons.ToSolidColorBrush();
 
             windowFrame.BorderBrush = backgroundBorder;
             windowFrame.Background = backColor;
@@ -168,7 +176,7 @@ namespace SystemTrayMenu.UserInterface
             tableLayoutPanelMenu.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelDgvAndScrollbar.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelBottom.MouseEnter += ControlsMouseEnter;
-            labelItems.MouseEnter += ControlsMouseEnter;
+            labelStatus.MouseEnter += ControlsMouseEnter;
             void ControlsMouseEnter(object sender, EventArgs e)
             {
                 MouseEnter?.Invoke();
@@ -185,7 +193,7 @@ namespace SystemTrayMenu.UserInterface
             tableLayoutPanelMenu.MouseLeave += ControlsMouseLeave;
             tableLayoutPanelDgvAndScrollbar.MouseLeave += ControlsMouseLeave;
             tableLayoutPanelBottom.MouseLeave += ControlsMouseLeave;
-            labelItems.MouseLeave += ControlsMouseLeave;
+            labelStatus.MouseLeave += ControlsMouseLeave;
             void ControlsMouseLeave(object sender, EventArgs e)
             {
                 MouseLeave?.Invoke();
@@ -205,10 +213,6 @@ namespace SystemTrayMenu.UserInterface
             Loaded += (sender, e) =>
                 {
                     NativeMethods.HideFromAltTab(this);
-
-                    // TODO WPF Replace Forms wrapper
-                    IsHandleCreated = true;
-                    HandleCreated?.Invoke(sender, e);
                 };
 
             Closed += (sender, e) =>
@@ -220,7 +224,7 @@ namespace SystemTrayMenu.UserInterface
                 };
         }
 
-        internal new event Action MenuScrolled;
+        internal event Action MenuScrolled;
 
 #if TODO // Misc MouseEvents
         internal new event Action MouseEnter;
@@ -244,8 +248,6 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action? UserDragsMenu;
 
-        internal event RoutedEventHandler? HandleCreated; // TODO WPF Replace Forms wrapper
-
         internal event Action<ListView, int>? CellMouseEnter;
 
         internal event Action<ListView, int>? CellMouseLeave;
@@ -256,39 +258,6 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseClick;
 
-        internal enum MenuType
-        {
-            /// <summary>
-            /// Root menu
-            /// </summary>
-            Main,
-
-            /// <summary>
-            /// Sub menu
-            /// </summary>
-            Sub,
-
-            /// <summary>
-            /// Sub menu with no content
-            /// </summary>
-            Empty,
-
-            /// <summary>
-            /// Sub menu with no access
-            /// </summary>
-            NoAccess,
-
-            /// <summary>
-            /// TODO: Not used - remove?
-            /// </summary>
-            MaxReached,
-
-            /// <summary>
-            /// Sub menu but with yet unknown content
-            /// </summary>
-            Loading,
-        }
-
         internal enum StartLocation
         {
             Predecessor,
@@ -296,8 +265,6 @@ namespace SystemTrayMenu.UserInterface
             BottomRight,
             TopRight,
         }
-
-        public bool IsHandleCreated { get; internal set; } // TODO State out of window
 
         public bool IsLoadingMenu { get; internal set; } // TODO State out of window
 
@@ -353,64 +320,84 @@ namespace SystemTrayMenu.UserInterface
 #endif
         }
 
-        internal void SetTypeSub()
+        internal void SetBehavior(MenuDataDirectoryState state)
         {
-            SetType(MenuType.Sub);
-        }
+            if (!Config.ShowDirectoryTitleAtTop)
+            {
+                txtTitle.Visibility = Visibility.Hidden;
+            }
 
-        internal void SetTypeEmpty()
-        {
-            SetType(MenuType.Empty);
-        }
+            if (!Config.ShowSearchBar)
+            {
+                searchPanel.Visibility = Visibility.Collapsed;
+            }
 
-        internal void SetTypeNoAccess()
-        {
-            SetType(MenuType.NoAccess);
-        }
+            if (!(Config.ShowCountOfElementsBelow || state != MenuDataDirectoryState.Valid))
+            {
+                // Hide status when neither config is set nor an error message must be shown
+                labelStatus.Visibility = Visibility.Collapsed;
+            }
 
-        internal void SetTypeLoading()
-        {
-            SetType(MenuType.Loading);
-        }
+            if (!Config.ShowFunctionKeyOpenFolder)
+            {
+                buttonOpenFolder.Visibility = Visibility.Collapsed;
+            }
 
-        internal void SetType(MenuType type)
-        {
-            if (type != MenuType.Main)
+            if (!Config.ShowFunctionKeyPinMenu)
+            {
+                buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+            }
+
+            if (!Config.ShowFunctionKeySettings)
             {
                 buttonSettings.Visibility = Visibility.Collapsed;
+            }
+
+            if (!Config.ShowFunctionKeyRestart)
+            {
                 buttonRestart.Visibility = Visibility.Collapsed;
             }
 
-            switch (type)
+            if (Level == 0)
             {
-                case MenuType.Main:
-                    textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
-                    break;
-                case MenuType.Sub:
-                    textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
-                    buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-                    break;
-                case MenuType.Empty:
-                    searchPanel.Visibility = Visibility.Collapsed;
-                    labelItems.Content = Translator.GetText("Directory empty");
-                    buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-                    break;
-                case MenuType.NoAccess:
-                    searchPanel.Visibility = Visibility.Collapsed;
-                    labelItems.Content = Translator.GetText("Directory inaccessible");
-                    buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-                    break;
-                case MenuType.Loading:
-                    labelItems.Content = Translator.GetText("loading");
-                    buttonMenuAlwaysOpen.Visibility = Visibility.Visible;
-                    buttonOpenFolder.Visibility = Visibility.Collapsed;
+                // Main Menu
+                textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
+            }
+            else
+            {
+                // SubMenu
+                buttonSettings.Visibility = Visibility.Collapsed;
+                buttonRestart.Visibility = Visibility.Collapsed;
 
-                    // Todo: use embedded resources that we can assign image in XAML already
-                    pictureBoxLoading.Source = SystemTrayMenu.Resources.StaticResources.LoadingIcon.ToImageSource();
-                    pictureBoxLoading.Visibility = Visibility.Visible;
-                    break;
-                default:
-                    break;
+                switch (state)
+                {
+                    case MenuDataDirectoryState.Valid:
+                        textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
+                        buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+                        break;
+                    case MenuDataDirectoryState.Empty:
+                        searchPanel.Visibility = Visibility.Collapsed;
+                        labelStatus.Content = Translator.GetText("Directory empty");
+                        buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+                        break;
+                    case MenuDataDirectoryState.NoAccess:
+                        searchPanel.Visibility = Visibility.Collapsed;
+                        labelStatus.Content = Translator.GetText("Directory inaccessible");
+                        buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+                        break;
+                    case MenuDataDirectoryState.Undefined:
+                        IsLoadingMenu = true;
+                        labelStatus.Content = Translator.GetText("loading");
+                        buttonMenuAlwaysOpen.Visibility = Visibility.Visible;
+                        buttonOpenFolder.Visibility = Visibility.Collapsed;
+
+                        // Todo: use embedded resources that we can assign image in XAML already
+                        pictureBoxLoading.Source = SystemTrayMenu.Resources.StaticResources.LoadingIcon.ToImageSource();
+                        pictureBoxLoading.Visibility = Visibility.Visible;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -442,54 +429,6 @@ namespace SystemTrayMenu.UserInterface
         internal ListView? GetDataGridView() // TODO WPF Replace Forms wrapper
         {
             return dgv;
-        }
-
-        internal void AdjustControls(string title, MenuDataValidity menuDataValidity)
-        {
-            if (!string.IsNullOrEmpty(title) && Config.ShowDirectoryTitleAtTop)
-            {
-                if (title.Length > MenuDefines.LengthMax)
-                {
-                    title = $"{title[..MenuDefines.LengthMax]}...";
-                }
-
-                txtTitle.Text = title;
-            }
-            else
-            {
-                txtTitle.Text = string.Empty;
-            }
-
-            if (!Config.ShowSearchBar)
-            {
-                searchPanel.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowCountOfElementsBelow &&
-                menuDataValidity == MenuDataValidity.Valid)
-            {
-                labelItems.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowFunctionKeyOpenFolder)
-            {
-                buttonOpenFolder.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowFunctionKeyPinMenu)
-            {
-                buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowFunctionKeySettings)
-            {
-                buttonSettings.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowFunctionKeyRestart)
-            {
-                buttonRestart.Visibility = Visibility.Collapsed;
-            }
         }
 
         internal void ShowWithFadeOrTransparent(bool formActiveFormIsMenu)
@@ -821,7 +760,7 @@ namespace SystemTrayMenu.UserInterface
         {
             int filesAndFoldersCount = foldersCount + filesCount;
             string elements = filesAndFoldersCount == 1 ? "element" : "elements";
-            labelItems.Content = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
+            labelStatus.Content = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
         }
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)

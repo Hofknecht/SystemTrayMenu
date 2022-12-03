@@ -5,12 +5,18 @@
 namespace SystemTrayMenu.Helper
 {
     using System.Collections.Generic;
+    using SystemTrayMenu.DllImports;
 
     internal class WindowsExplorerSort : IComparer<string>
     {
-        public int Compare(string x, string y)
+        public int Compare(string? x, string? y)
         {
-            return DllImports.NativeMethods.ShlwapiStrCmpLogicalW(x, y);
+            if (x != null && y != null)
+            {
+                return NativeMethods.ShlwapiStrCmpLogicalW(x, y);
+            }
+
+            return 0;
         }
     }
 }

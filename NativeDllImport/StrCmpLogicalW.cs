@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.DllImports
 {
     using System.Runtime.InteropServices;
+    using System.Runtime.Versioning;
 
     /// <summary>
     /// wraps the methodcalls to native windows dll's.
@@ -16,6 +17,7 @@ namespace SystemTrayMenu.DllImports
             return StrCmpLogicalW(x, y);
         }
 
+        [SupportedOSPlatform("windows")]
         [DllImport("shlwapi.dll", ExactSpelling = true, SetLastError = true, CharSet = CharSet.Unicode)]
         [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern int StrCmpLogicalW(string x, string y);

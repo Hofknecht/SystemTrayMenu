@@ -90,15 +90,14 @@ namespace SystemTrayMenu.Business
                 {
                     // First time the main menu gets loaded
                     MenuData menuData = (MenuData)e.Result;
-                    switch (menuData.Validity)
+                    switch (menuData.DirectoryState)
                     {
-                        case MenuDataValidity.Valid:
+                        case MenuDataDirectoryState.Valid:
                             if (IconReader.MainPreload)
                             {
                                 workerMainMenu.DoWork -= LoadMenu;
-                                menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name);
-                                menus[0].HandleCreated += (s, e) => ExecuteWatcherHistory();
-                                Scaling.CalculateFactorByDpi(menus[0]);
+                                menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name, Config.Path);
+                                menus[0].Loaded += (s, e) => ExecuteWatcherHistory();
 
                                 IconReader.MainPreload = false;
                                 if (showMenuAfterMainPreload)
@@ -112,20 +111,20 @@ namespace SystemTrayMenu.Business
                             }
 
                             break;
-                        case MenuDataValidity.Empty:
+                        case MenuDataDirectoryState.Empty:
                             MessageBox.Show(Translator.GetText("Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory."));
                             OpenFolder();
                             Config.SetFolderByUser();
                             AppRestart.ByConfigChange();
                             break;
-                        case MenuDataValidity.NoAccess:
+                        case MenuDataDirectoryState.NoAccess:
                             MessageBox.Show(Translator.GetText("You have no access to the root directory of the app. Grant access to the directory or change the root directory."));
                             OpenFolder();
                             Config.SetFolderByUser();
                             AppRestart.ByConfigChange();
                             break;
-                        case MenuDataValidity.Undefined:
-                            Log.Info($"{nameof(MenuDataValidity)}.{nameof(MenuDataValidity.Undefined)}");
+                        case MenuDataDirectoryState.Undefined:
+                            Log.Info($"{nameof(MenuDataDirectoryState)}.{nameof(MenuDataDirectoryState.Undefined)}");
                             break;
                         default:
                             break;
@@ -159,15 +158,15 @@ namespace SystemTrayMenu.Business
                     {
                         MenuData menuDataLoading = new(rowData.Level + 1)
                         {
-                            Validity = MenuDataValidity.Valid,
+                            DirectoryState = MenuDataDirectoryState.Valid,
                         };
 
-                        Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name);
-                        menuLoading.IsLoadingMenu = true;
+                        // TODO: Check: Is Config.Path as path parameter correct? (topeterk: should be rowData.Path?)
+                        Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name, Config.Path);
                         menus[rowData.Level + 1] = menuLoading;
                         menuLoading.Tag = menuDataLoading.RowDataParent = rowData;
                         menuDataLoading.RowDataParent.SubMenu = menuLoading;
-                        menuLoading.SetTypeLoading();
+                        menuLoading.SetBehavior(MenuDataDirectoryState.Undefined);
                         ShowSubMenu(menuLoading);
                     }
 
@@ -202,22 +201,11 @@ namespace SystemTrayMenu.Business
                         closedLoadingMenu = true;
                     }
 
-                    if (menuData.Validity != MenuDataValidity.Undefined &&
+                    if (menuData.DirectoryState != MenuDataDirectoryState.Undefined &&
                         menus[0].IsUsable)
                     {
-                        Menu menu = Create(menuData);
-                        switch (menuData.Validity)
-                        {
-                            case MenuDataValidity.Valid:
-                                menu.SetTypeSub();
-                                break;
-                            case MenuDataValidity.Empty:
-                                menu.SetTypeEmpty();
-                                break;
-                            case MenuDataValidity.NoAccess:
-                                menu.SetTypeNoAccess();
-                                break;
-                        }
+                        Menu menu = Create(menuData, new DirectoryInfo(menuData.RowDataParent.ResolvedPath).Name, menuData.RowDataParent.ResolvedPath);
+                        menu.SetBehavior(menuData.DirectoryState);
 
                         menu.Tag = menuData.RowDataParent;
                         menuData.RowDataParent.SubMenu = menu;
@@ -598,22 +586,11 @@ namespace SystemTrayMenu.Business
             return (App.TaskbarLogo != null && App.TaskbarLogo.IsActive) || IsShellContextMenuOpen();
         }
 
-        private Menu Create(MenuData menuData, string title = null)
+        private Menu Create(MenuData menuData, string title, string path)
         {
-            Menu menu = new();
+            Menu menu = new(title, menuData.Level, menuData.DirectoryState);
 
-            string path = Config.Path;
-            if (title == null)
-            {
-                title = new DirectoryInfo(menuData.RowDataParent.ResolvedPath).Name;
-                path = menuData.RowDataParent.ResolvedPath;
-            }
-
-            title ??= Path.GetPathRoot(path);
-
-            menu.AdjustControls(title, menuData.Validity);
             menu.UserClickedOpenFolder += () => OpenFolder(path);
-            menu.Level = menuData.Level;
             menu.MenuScrolled += AdjustMenusSizeAndLocation; // TODO: Only update vertical location while scrolling?
 #if TODO // Misc MouseEvents
             menu.MouseLeave += waitLeave.Start;
@@ -701,7 +678,7 @@ namespace SystemTrayMenu.Business
 
                 if (menu.Level == 0)
                 {
-                    menu.SetType(Menu.MenuType.Main);
+                    menu.SetBehavior(MenuDataDirectoryState.Valid);
                     menu.ResetSearchText();
                     menu.ResetHeight();
                 }
@@ -1229,7 +1206,7 @@ namespace SystemTrayMenu.Business
 
         private void WatcherProcessItem(object sender, EventArgs e)
         {
-            if (menus[0] == null || !menus[0].IsHandleCreated)
+            if (menus[0] == null || !menus[0].IsLoaded)
             {
                 watcherHistory.Add(e);
                 return;

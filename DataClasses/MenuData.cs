@@ -6,11 +6,26 @@ namespace SystemTrayMenu.DataClasses
 {
     using System.Collections.Generic;
 
-    internal enum MenuDataValidity
+    internal enum MenuDataDirectoryState
     {
+        /// <summary>
+        /// State not defined or data still loading
+        /// </summary>
         Undefined,
+
+        /// <summary>
+        /// Data is available
+        /// </summary>
         Valid,
+
+        /// <summary>
+        /// Loading finished but no data available
+        /// </summary>
         Empty,
+
+        /// <summary>
+        /// Loading failed, so no data available
+        /// </summary>
         NoAccess,
     }
 
@@ -19,7 +34,7 @@ namespace SystemTrayMenu.DataClasses
         public MenuData(int level)
         {
             RowDatas = new List<RowData>();
-            Validity = MenuDataValidity.Undefined;
+            DirectoryState = MenuDataDirectoryState.Undefined;
             Level = level;
             RowDataParent = null;
             IsNetworkRoot = false;
@@ -27,7 +42,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal List<RowData> RowDatas { get; set; }
 
-        internal MenuDataValidity Validity { get; set; }
+        internal MenuDataDirectoryState DirectoryState { get; set; }
 
         internal int Level { get; }
 
