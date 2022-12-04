@@ -16,13 +16,23 @@
     </Window.Effect>
 
     <Window.Triggers>
-        <EventTrigger RoutedEvent="Loaded">
+        <EventTrigger RoutedEvent="local:Menu.FadeIn">
             <BeginStoryboard>
                 <Storyboard>
                     <DoubleAnimation
-                            Storyboard.TargetProperty="Opacity"
-                            From="0.0" To="1.0" Duration="0:0:1" />
-                    <!-- Completed="fadeCompleted" -->
+                        Storyboard.TargetProperty="Opacity"
+                        From="0.0" To="1.0" Duration="0:0:0.5"
+                        Completed="FadeIn_Completed"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="local:Menu.FadeOut">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Storyboard.TargetProperty="Opacity"
+                        From="1.0" To="0.0" Duration="0:0:0.25"
+                        Completed="FadeOut_Completed"/>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>

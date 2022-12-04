@@ -386,6 +386,16 @@ namespace SystemTrayMenu.Business
             return menuData;
         }
 
+        internal static void OpenFolder(string? path = null)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                path = Config.Path;
+            }
+
+            Log.ProcessStart(path);
+        }
+
         internal void SwitchOpenCloseByTaskbarItem()
         {
             SwitchOpenClose(true);
@@ -474,16 +484,6 @@ namespace SystemTrayMenu.Business
             {
                 workerMainMenu.CancelAsync();
             }
-        }
-
-        internal static void OpenFolder(string? path = null)
-        {
-            if (string.IsNullOrEmpty(path))
-            {
-                path = Config.Path;
-            }
-
-            Log.ProcessStart(path);
         }
 
         private static void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
@@ -1000,21 +1000,24 @@ namespace SystemTrayMenu.Business
             if (menuPrevious != null)
             {
                 // Clean up menu status IsMenuOpen for previous one
-                ListView dgvPrevious = menuPrevious.GetDataGridView();
-                foreach (ListViewItemData item in dgvPrevious.Items)
+                ListView? dgvPrevious = menuPrevious.GetDataGridView();
+                if (dgvPrevious != null)
                 {
-                    RowData rowDataToClear = item.data;
-                    if (rowDataToClear == (RowData)menuToShow.Tag)
+                    foreach (ListViewItemData item in dgvPrevious.Items)
                     {
-                        rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
+                        RowData rowDataToClear = item.data;
+                        if (rowDataToClear == (RowData)menuToShow.Tag)
+                        {
+                            rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
+                        }
+                        else
+                        {
+                            rowDataToClear.IsMenuOpen = false;
+                        }
                     }
-                    else
-                    {
-                        rowDataToClear.IsMenuOpen = false;
-                    }
-                }
 
-                RefreshSelection(dgvPrevious);
+                    RefreshSelection(dgvPrevious);
+                }
 
                 // Hide old menu
                 foreach (Menu menuToClose in menus.Where(

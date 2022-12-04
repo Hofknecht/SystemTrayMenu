@@ -12,15 +12,12 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows;
     using System.Windows.Interop;
     using System.Windows.Media.Imaging;
-    using System.Windows.Threading;
 
     /// <summary>
     /// Logic of Taskbar window.
     /// </summary>
     public partial class TaskbarLogo : Window
     {
-        private DispatcherTimer? moveOutOfScreenTimer = null;
-
         public TaskbarLogo()
         {
             InitializeComponent();
@@ -49,32 +46,28 @@ namespace SystemTrayMenu.UserInterface
             Title = myname;
 
             Closed += (_, _) => Application.Current.Shutdown();
-            Deactivated += (_, _) => SetStateNormal();
-            Activated += (_, _) =>
+            Deactivated += SetStateNormal;
+            Activated += (object? sender, EventArgs e) =>
             {
-                SetStateNormal();
+                SetStateNormal(sender, e);
                 Activate();
                 UpdateLayout();
                 Focus();
-                moveOutOfScreenTimer = new DispatcherTimer(
-                    TimeSpan.FromMilliseconds(500),
-                    DispatcherPriority.Loaded,
-                    (s, e) =>
-                    {
-                        // Do this after loading because Top may be invalid at the beginning
-                        // and when initial rendering is out of screen it will never be actually painted.
-                        // This makes sure logo is rendered once and then window is moved.
-                        Top += SystemParameters.VirtualScreenHeight;
-                        ((DispatcherTimer)s!).IsEnabled = false; // only once
-                    },
-                    Dispatcher.CurrentDispatcher);
             };
+            ContentRendered += MoveOutOfScreen;
+        }
+
+        private void MoveOutOfScreen(object? sender, EventArgs e)
+        {
+            // Do this only once
+            ContentRendered -= MoveOutOfScreen;
+            Top += SystemParameters.VirtualScreenHeight;
         }
 
         /// <summary>
         /// This ensures that next click on taskbaritem works as activate event/click event.
         /// </summary>
-        private void SetStateNormal()
+        private void SetStateNormal(object? sender, EventArgs e)
         {
             if (IsActive)
             {

@@ -26,13 +26,18 @@ namespace SystemTrayMenu.UserInterface
     /// </summary>
     public partial class Menu : Window
     {
+        private const int CornerRadius = 10;
+
+        private static readonly RoutedEvent FadeInEvent = EventManager.RegisterRoutedEvent(
+            nameof(FadeIn), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
+
+        private static readonly RoutedEvent FadeOutEvent = EventManager.RegisterRoutedEvent(
+            nameof(FadeOut), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
+
 #if TODO // SEARCH
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
 #endif
-        private const int CornerRadius = 10;
-
-        private readonly Fading fading = new();
-        private bool isShowing;
+        private bool isFading;
         private bool directionToRight;
         private bool mouseDown;
         private Point lastLocation;
@@ -48,55 +53,9 @@ namespace SystemTrayMenu.UserInterface
             timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
             Closed += (_, _) =>
             {
-                fading.Fade(Fading.FadingState.Idle);
                 timerUpdateIcons.Stop();
                 isClosed = true; // TODO WPF Replace Forms wrapper
             };
-
-            Opacity = 0D;
-            fading.ChangeOpacity += Fading_ChangeOpacity;
-            void Fading_ChangeOpacity(object? sender, double newOpacity)
-            {
-                if (newOpacity != Opacity && !IsDisposed && !Disposing)
-                {
-                    Opacity = newOpacity;
-                }
-            }
-
-            fading.Show += Fading_Show;
-            void Fading_Show()
-            {
-                try
-                {
-                    isShowing = true;
-                    Visibility = Visibility.Visible;
-                    isShowing = false;
-                    timerUpdateIcons.Start();
-                }
-                catch (ObjectDisposedException)
-                {
-                    Visibility = Visibility.Hidden;
-                    isShowing = false;
-                    Log.Info($"Could not open menu, old menu was disposing," +
-                        $" IsDisposed={IsDisposed}");
-                }
-
-                if (Visibility == Visibility.Visible)
-                {
-                    if (Level == 0)
-                    {
-                        Activate();
-                        Show();
-                    }
-                    else
-                    {
-                        ShowActivated = false;
-                        Show();
-                    }
-                }
-            }
-
-            fading.Hide += Hide;
 
             InitializeComponent();
 
@@ -220,6 +179,8 @@ namespace SystemTrayMenu.UserInterface
             Loaded += (sender, e) =>
                 {
                     NativeMethods.HideFromAltTab(this);
+
+                    RaiseEvent(new(routedEvent: FadeInEvent));
                 };
 
             Closed += (sender, e) =>
@@ -263,6 +224,18 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseClick;
 
+        private event RoutedEventHandler FadeIn
+        {
+            add { AddHandler(FadeInEvent, value); }
+            remove { RemoveHandler(FadeInEvent, value); }
+        }
+
+        private event RoutedEventHandler FadeOut
+        {
+            add { AddHandler(FadeOutEvent, value); }
+            remove { RemoveHandler(FadeOutEvent, value); }
+        }
+
         internal enum StartLocation
         {
             Predecessor,
@@ -283,13 +256,14 @@ namespace SystemTrayMenu.UserInterface
 
         internal string? FolderPath { get; set; }
 
-        internal bool IsUsable => Visibility == Visibility.Visible && !fading.IsHiding && !IsDisposed && !Disposing;
+        internal bool IsUsable => Visibility == Visibility.Visible && !isFading && !IsDisposed && !Disposing;
 
 #if TODO // TOUCH
         internal bool ScrollbarVisible { get; private set; }
 
         private ListView tableLayoutPanelDgvAndScrollbar => dgv; // TODO WPF Remove and replace with dgv
 #endif
+
         internal void ResetSearchText()
         {
             textBoxSearch.Text = string.Empty;
@@ -450,21 +424,58 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void ShowWithFade()
-        {
-            fading.Fade(Fading.FadingState.Show);
-        }
+        internal void ShowWithFade() => Fading_Show(false);
 
-        internal void ShowTransparent()
+        internal void ShowTransparent() => Fading_Show(true);
+
+        internal void Fading_Show(bool transparency)
         {
-            fading.Fade(Fading.FadingState.ShowTransparent);
+            timerUpdateIcons.Start();
+
+            if (Level == 0)
+            {
+                Activate();
+            }
+            else
+            {
+                ShowActivated = false;
+            }
+
+            Opacity = 0D;
+            Show();
+
+            if (Settings.Default.UseFading)
+            {
+                isFading = true;
+                if (transparency)
+                {
+                    // TODO: FADING: Instead setting of opacity 100% only go up to 80% (Temporarily go to 100% as well)
+                    RaiseEvent(new(routedEvent: FadeInEvent));
+                }
+                else
+                {
+                    RaiseEvent(new(routedEvent: FadeInEvent));
+                }
+            }
+            else
+            {
+                Opacity = transparency ? 0.80D : 1D;
+                FadeIn_Completed(this, new());
+            }
         }
 
         internal void HideWithFade()
         {
-            if (!isShowing)
+            if (Settings.Default.UseFading)
             {
-                fading.Fade(Fading.FadingState.Hide);
+                isFading = true;
+
+                // TODO: FADING: Instead starting at opacity 100% it should start with 80% due to transparency setting
+                RaiseEvent(new(routedEvent: FadeOutEvent));
+            }
+            else
+            {
+                FadeOut_Completed(this, new());
             }
         }
 
@@ -645,7 +656,7 @@ namespace SystemTrayMenu.UserInterface
                     case StartLocation.Predecessor:
 
                         RowData trigger = (RowData)Tag;
-                        ListView dgv = menuPredecessor!.GetDataGridView()!;
+                        ListView dgv = menuPredecessor!.GetDataGridView() !;
 
                         // Set position on same height as the selected row from predecessor
                         y = menuPredecessor.Location.Y;
@@ -758,7 +769,7 @@ namespace SystemTrayMenu.UserInterface
                 UpdateLayout();
                 SizeToContent = SizeToContent.Manual;
 #if TODO // SEARCH
-            dgvHeightSet = false;
+                dgvHeightSet = false;
 #endif
             }
         }
@@ -770,9 +781,20 @@ namespace SystemTrayMenu.UserInterface
             labelStatus.Content = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
         }
 
+        private void FadeIn_Completed(object sender, EventArgs e)
+        {
+            isFading = false;
+        }
+
+        private void FadeOut_Completed(object sender, EventArgs e)
+        {
+            isFading = false;
+            Hide();
+        }
+
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {
-            searchPanel.Visibility= Visibility.Visible;
+            searchPanel.Visibility = Visibility.Visible;
 
             ModifierKeys modifiers = Keyboard.Modifiers;
             switch (e.Key)
@@ -881,6 +903,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
+
             // IcoWidth 100% = 21px, 175% is 33, +3+2 is padding from ColumnIcon
             double icoWidth = (16 * Scaling.FactorByDpi) + 5;
             Resources["ColumnIconWidth"] = (double)(int)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
