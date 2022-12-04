@@ -4,8 +4,7 @@
 
 namespace SystemTrayMenu
 {
-    using System.Windows.Media;
-    using Color = System.Drawing.Color;
+    using System.Drawing;
 
     internal static class AppColors
     {
@@ -80,16 +79,5 @@ namespace SystemTrayMenu
         public static Color Icons { get; set; }
 
         public static Color DarkModeIcons { get; set; }
-
-        // TODO: WPF: Remove by not using system drawing colors
-        public static SolidColorBrush ToSolidColorBrush(this Color color)
-        {
-            return new SolidColorBrush(System.Windows.Media.Color.FromArgb(color.A, color.R, color.G, color.B));
-        }
-
-        public static SolidColorBrush SolidColorBrushFromString(string value)
-        {
-            return new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString(value));
-        }
     }
 }

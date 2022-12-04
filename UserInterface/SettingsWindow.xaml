@@ -55,7 +55,7 @@
                             </DockPanel>
                         </GroupBox>
                         <GroupBox Header="{u:Translate 'Language'}">
-                            <ComboBox x:Name="comboBoxLanguage" HorizontalAlignment="Left" IsReadOnly="True" DisplayMemberPath="Name" SelectedValuePath="Value" MinWidth="120"/>
+                            <ComboBox x:Name="comboBoxLanguage" HorizontalAlignment="Left" IsReadOnly="True" DisplayMemberPath="DisplayName" SelectedValuePath="Code" MinWidth="120"/>
                         </GroupBox>
                         <Button Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonGeneralDefault_Click" HorizontalAlignment="Left"/>
                     </StackPanel>

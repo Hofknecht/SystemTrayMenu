@@ -13,6 +13,7 @@ namespace SystemTrayMenu.Utilities
     using System.Windows.Controls;
     using System.Windows.Media;
     using System.Windows.Threading;
+    using Color = System.Windows.Media.Color;
     using Point = System.Windows.Point;
 
     internal static class WPFExtensions
@@ -105,6 +106,16 @@ namespace SystemTrayMenu.Utilities
                         typeof(ImageSource),
                         null!,
                         CultureInfo.InvariantCulture);
+        }
+
+        internal static SolidColorBrush ToSolidColorBrush(this System.Drawing.Color color)
+        {
+            return new SolidColorBrush(Color.FromArgb(color.A, color.R, color.G, color.B));
+        }
+
+        internal static SolidColorBrush SolidColorBrushFromString(string value)
+        {
+            return new SolidColorBrush((Color)System.Windows.Media.ColorConverter.ConvertFromString(value));
         }
     }
 }

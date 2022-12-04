@@ -110,75 +110,75 @@ namespace SystemTrayMenu.UserInterface
             InitializeLanguage();
             void InitializeLanguage()
             {
-                List<Language> dataSource = new()
+                List<LanguageID> dataSource = new()
                 {
-                    new Language() { Name = "Afrikaans", Value = "af" },
-                    new Language() { Name = "Azərbaycan", Value = "az" },
-                    new Language() { Name = "bahasa Indonesia", Value = "id" },
-                    new Language() { Name = "català", Value = "ca" },
-                    new Language() { Name = "čeština", Value = "cs" },
-                    new Language() { Name = "Cymraeg", Value = "cy" },
-                    new Language() { Name = "dansk", Value = "da" },
-                    new Language() { Name = "Deutsch", Value = "de" },
-                    new Language() { Name = "eesti keel", Value = "et" },
-                    new Language() { Name = "English", Value = "en" },
-                    new Language() { Name = "English (United Kingdom)", Value = "en-GB" },
-                    new Language() { Name = "Español", Value = "es" },
-                    new Language() { Name = "Esperanto", Value = "eo" },
-                    new Language() { Name = "euskara", Value = "eu" },
-                    new Language() { Name = "Filipino", Value = "tl" },
-                    new Language() { Name = "Français", Value = "fr" },
-                    new Language() { Name = "Italian", Value = "it" },
-                    new Language() { Name = "galego", Value = "gl" },
-                    new Language() { Name = "Hrvatski", Value = "hr" },
-                    new Language() { Name = "Gaeilge", Value = "ga" },
-                    new Language() { Name = "íslenskur", Value = "is" },
-                    new Language() { Name = "kiswahili", Value = "sw" },
-                    new Language() { Name = "Kreyòl ayisyen", Value = "ht" },
-                    new Language() { Name = "Latinus", Value = "la" },
-                    new Language() { Name = "latviski", Value = "lv" },
-                    new Language() { Name = "lietuvių", Value = "lt" },
-                    new Language() { Name = "Magyar", Value = "hu" },
-                    new Language() { Name = "Malti", Value = "mt" },
-                    new Language() { Name = "Melayu", Value = "ms" },
-                    new Language() { Name = "Nederlands", Value = "nl" },
-                    new Language() { Name = "norsk", Value = "no" },
-                    new Language() { Name = "Polski", Value = "pl" },
-                    new Language() { Name = "Português (Brasil)", Value = "pt-BR" },
-                    new Language() { Name = "português (Portugal)", Value = "pt-PT" },
-                    new Language() { Name = "Română", Value = "ro" },
-                    new Language() { Name = "shqiptare", Value = "sq" },
-                    new Language() { Name = "Slovenščina", Value = "sl" },
-                    new Language() { Name = "slovenský", Value = "sk" },
-                    new Language() { Name = "Suorittaa loppuun", Value = "fi" },
-                    new Language() { Name = "svenska", Value = "sv" },
-                    new Language() { Name = "Tiếng Việt", Value = "vi" },
-                    new Language() { Name = "Türkçe ", Value = "tr" },
-                    new Language() { Name = "Ελληνικά", Value = "el" },
-                    new Language() { Name = "беларуская", Value = "bg" },
-                    new Language() { Name = "македонски", Value = "mk" },
-                    new Language() { Name = "русский", Value = "ru" },
-                    new Language() { Name = "Српски", Value = "sr" },
-                    new Language() { Name = "український", Value = "uk" },
-                    new Language() { Name = "ქართული", Value = "ka" },
-                    new Language() { Name = "հայերեն", Value = "hy" },
-                    new Language() { Name = "יידיש", Value = "yi" },
-                    new Language() { Name = "עִברִית", Value = "iw" },
-                    new Language() { Name = "اردو", Value = "ur" },
-                    new Language() { Name = "عربي", Value = "ar" },
-                    new Language() { Name = "فارسی", Value = "fa" },
-                    new Language() { Name = "हिन्दी", Value = "hi" },
-                    new Language() { Name = "ગુજરાતી", Value = "gu" },
-                    new Language() { Name = "தமிழ்", Value = "ta" },
-                    new Language() { Name = "తెలుగు", Value = "te" },
-                    new Language() { Name = "ಕನ್ನಡ", Value = "kn" },
-                    new Language() { Name = "ไทย", Value = "th" },
-                    new Language() { Name = "ພາສາລາວ", Value = "lo" },
-                    new Language() { Name = "ខ្មែរ", Value = "km" },
-                    new Language() { Name = "한국어", Value = "ko" },
-                    new Language() { Name = "中文(正體)", Value = "zh-TW" },
-                    new Language() { Name = "中文(简体)", Value = "zh-CN" },
-                    new Language() { Name = "日本語", Value = "ja" },
+                    new ("Afrikaans", "af"),
+                    new ("Azərbaycan", "az"),
+                    new ("bahasa Indonesia", "id"),
+                    new ("català", "ca"),
+                    new ("čeština", "cs"),
+                    new ("Cymraeg", "cy"),
+                    new ("dansk", "da"),
+                    new ("Deutsch", "de"),
+                    new ("eesti keel", "et"),
+                    new ("English", "en"),
+                    new ("English (United Kingdom)", "en-GB"),
+                    new ("Español", "es"),
+                    new ("Esperanto", "eo"),
+                    new ("euskara", "eu"),
+                    new ("Filipino", "tl"),
+                    new ("Français", "fr"),
+                    new ("Italian", "it"),
+                    new ("galego", "gl"),
+                    new ("Hrvatski", "hr"),
+                    new ("Gaeilge", "ga"),
+                    new ("íslenskur", "is"),
+                    new ("kiswahili", "sw"),
+                    new ("Kreyòl ayisyen", "ht"),
+                    new ("Latinus", "la"),
+                    new ("latviski", "lv"),
+                    new ("lietuvių", "lt"),
+                    new ("Magyar", "hu"),
+                    new ("Malti", "mt"),
+                    new ("Melayu", "ms"),
+                    new ("Nederlands", "nl"),
+                    new ("norsk", "no"),
+                    new ("Polski", "pl"),
+                    new ("Português (Brasil)", "pt-BR"),
+                    new ("português (Portugal)", "pt-PT"),
+                    new ("Română", "ro"),
+                    new ("shqiptare", "sq"),
+                    new ("Slovenščina", "sl"),
+                    new ("slovenský", "sk"),
+                    new ("Suorittaa loppuun", "fi"),
+                    new ("svenska", "sv"),
+                    new ("Tiếng Việt", "vi"),
+                    new ("Türkçe ", "tr"),
+                    new ("Ελληνικά", "el"),
+                    new ("беларуская", "bg"),
+                    new ("македонски", "mk"),
+                    new ("русский", "ru"),
+                    new ("Српски", "sr"),
+                    new ("український", "uk"),
+                    new ("ქართული", "ka"),
+                    new ("հայերեն", "hy"),
+                    new ("יידיש", "yi"),
+                    new ("עִברִית", "iw"),
+                    new ("اردو", "ur"),
+                    new ("عربي", "ar"),
+                    new ("فارسی", "fa"),
+                    new ("हिन्दी", "hi"),
+                    new ("ગુજરાતી", "gu"),
+                    new ("தமிழ்", "ta"),
+                    new ("తెలుగు", "te"),
+                    new ("ಕನ್ನಡ", "kn"),
+                    new ("ไทย", "th"),
+                    new ("ພາສາລາວ", "lo"),
+                    new ("ខ្មែរ", "km"),
+                    new ("한국어", "ko"),
+                    new ("中文(正體)", "zh-TW"),
+                    new ("中文(简体)", "zh-CN"),
+                    new ("日本語", "ja"),
                 };
                 comboBoxLanguage.ItemsSource = dataSource;
                 comboBoxLanguage.SelectedValue = Settings.Default.CurrentCultureInfoName;
@@ -666,8 +666,8 @@ namespace SystemTrayMenu.UserInterface
 
 #if TODO // HOTKEY
             Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-            Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
 #endif
+            Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
             Settings.Default.SizeInPercent = numericUpDownSizeInPercent.Value;
             Settings.Default.IconSizeInPercent = numericUpDownIconSizeInPercent.Value;
             if (DllImports.NativeMethods.IsTouchEnabled())
@@ -1222,6 +1222,22 @@ namespace SystemTrayMenu.UserInterface
             public bool ColumnRecursiveLevel { get; set; }
 
             public bool ColumnOnlyFiles { get; set; }
+        }
+
+        /// <summary>
+        /// Pairs of language display names and their ISO 639-1 standard language codes.
+        /// </summary>
+        private class LanguageID
+        {
+            public LanguageID(string displayName, string languageCode)
+            {
+                DisplayName = displayName;
+                Code = languageCode;
+            }
+
+            public string DisplayName { get; set; }
+
+            public string Code { get; set; }
         }
     }
 }

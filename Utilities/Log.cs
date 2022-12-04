@@ -125,9 +125,10 @@ namespace SystemTrayMenu.Utilities
         internal static void WriteApplicationRuns()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
+            Version? version = assembly.GetName().Version;
             LogValue.Info($"Application Start " +
                 assembly.ManifestModule.Name + " | " +
-                assembly.GetName().Version.ToString() + " | " +
+                (version != null ? version.ToString() : string.Empty) + " | " +
                 $"ScalingFactor={Scaling.Factor}");
         }
 

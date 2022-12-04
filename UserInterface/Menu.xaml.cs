@@ -111,11 +111,11 @@ namespace SystemTrayMenu.UserInterface
                 backColor = AppColors.DarkModeBackground.ToSolidColorBrush();
                 backColorSearch = AppColors.DarkModeSearchField.ToSolidColorBrush();
                 backgroundBorder = AppColors.DarkModeBackgroundBorder.ToSolidColorBrush();
-                Resources["ic_fluent_svgColor"] = AppColors.SolidColorBrushFromString(Settings.Default.ColorDarkModeIcons);
+                Resources["ic_fluent_svgColor"] = WPFExtensions.SolidColorBrushFromString(Settings.Default.ColorDarkModeIcons);
             }
             else
             {
-                Resources["ic_fluent_svgColor"] = AppColors.SolidColorBrushFromString(Settings.Default.ColorIcons);
+                Resources["ic_fluent_svgColor"] = WPFExtensions.SolidColorBrushFromString(Settings.Default.ColorIcons);
             }
 
             labelTitle.Foreground = foreColor;
