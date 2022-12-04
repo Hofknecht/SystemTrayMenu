@@ -39,7 +39,6 @@
     </Window.Triggers>
 
     <Window.Resources>
-        <!-- TODO WPF Move them into separate dictionary? -->
         <Brush x:Key="ic_fluent_svgColor">#FF585858</Brush>
         <!-- Converted SVG images using https://github.com/BerndK/SvgToXaml/releases/tag/Ver_1.3.0 -->
         <DrawingImage x:Key="ic_fluent_arrow_sync_24_regularDrawingImage">

@@ -114,6 +114,12 @@
     <None Remove="Resources\SystemTrayMenu.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Remove="Business\App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Business\App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="Clearcove.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ThirdParty\Clearcove.Logging.dll</HintPath>

@@ -16,7 +16,6 @@ namespace SystemTrayMenu.UserInterface
     using SystemTrayMenu.Business;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
-    using SystemTrayMenu.Helper;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.Utilities;
     using KeyEventArgs = System.Windows.Input.KeyEventArgs;
@@ -224,13 +223,13 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseClick;
 
-        private event RoutedEventHandler FadeIn
+        internal event RoutedEventHandler FadeIn
         {
             add { AddHandler(FadeInEvent, value); }
             remove { RemoveHandler(FadeInEvent, value); }
         }
 
-        private event RoutedEventHandler FadeOut
+        internal event RoutedEventHandler FadeOut
         {
             add { AddHandler(FadeOutEvent, value); }
             remove { RemoveHandler(FadeOutEvent, value); }
