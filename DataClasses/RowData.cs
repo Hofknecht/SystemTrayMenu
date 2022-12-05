@@ -5,7 +5,6 @@
 namespace SystemTrayMenu.DataClasses
 {
     using System;
-    using System.Data;
     using System.Drawing;
     using System.IO;
     using System.Windows;
@@ -99,11 +98,11 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal Icon Icon { get; private set; }
+        internal Icon? Icon { get; private set; }
 
-        internal FileInfo FileInfo { get; }
+        internal FileInfo? FileInfo { get; }
 
-        internal string Path { get; }
+        internal string? Path { get; }
 
         internal bool IsFolder { get; }
 
@@ -113,23 +112,23 @@ namespace SystemTrayMenu.DataClasses
 
         internal int Level { get; set; }
 
-        internal string FileExtension { get; }
+        internal string? FileExtension { get; }
 
         internal bool IsLink { get; }
 
-        internal string ResolvedPath { get; }
+        internal string? ResolvedPath { get; }
 
         internal bool IsLinkToFolder { get; }
 
         internal bool ShowOverlay { get; }
 
-        internal string Text { get; }
+        internal string? Text { get; }
 
         internal bool ContainsMenu { get; }
 
         internal bool IsMainMenu { get; }
 
-        internal Menu SubMenu { get; set; }
+        internal Menu? SubMenu { get; set; }
 
         internal bool IsMenuOpen { get; set; }
 
@@ -147,7 +146,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool ProcessStarted { get; set; }
 
-        internal Icon ReadIcon(bool updateIconInBackground)
+        internal void ReadIcon(bool updateIconInBackground)
         {
             if (IsFolder || IsLinkToFolder)
             {
@@ -171,8 +170,6 @@ namespace SystemTrayMenu.DataClasses
                     Icon = AddIconOverlay(Icon, Properties.Resources.White50Percentage);
                 }
             }
-
-            return Icon;
         }
 
         internal void MouseDown(ListView dgv, MouseButtonEventArgs e)
@@ -217,8 +214,10 @@ namespace SystemTrayMenu.DataClasses
             {
                 try
                 {
-                    string parentFolder = System.IO.Path.GetDirectoryName(Path);
-                    Directory.GetFiles(parentFolder);
+                    string? parentFolder = System.IO.Path.GetDirectoryName(Path);
+
+                    // Assume folder is not null as failure will be catched any ways
+                    Directory.GetFiles(parentFolder!);
                 }
                 catch (Exception ex)
                 {
@@ -273,7 +272,7 @@ namespace SystemTrayMenu.DataClasses
                 (e == null || e.LeftButton == MouseButtonState.Pressed))
             {
                 ProcessStarted = true;
-                string workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);
+                string? workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);
                 Log.ProcessStart(Path, string.Empty, false, workingDirectory, true, ResolvedPath);
                 if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
                 {

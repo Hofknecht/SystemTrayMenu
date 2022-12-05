@@ -6,7 +6,6 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Windows;
-    using System.Windows.Input;
     using Hardcodet.Wpf.TaskbarNotification;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Utilities;
@@ -23,20 +22,16 @@ namespace SystemTrayMenu.UserInterface
 
             AppContextMenu contextMenus = new();
 
-            contextMenus.ClickedOpenLog += ClickedOpenLog;
-            void ClickedOpenLog()
-            {
-                OpenLog?.Invoke();
-            }
+            contextMenus.ClickedOpenLog += () => OpenLog?.Invoke();
 
             notifyIcon.ContextMenu = contextMenus.Create();
             notifyIcon.LeftClickCommand = new ActionCommand((_) => Click?.Invoke());
             notifyIcon.DoubleClickCommand = new ActionCommand((_) => Click?.Invoke());
         }
 
-        public event Action Click;
+        public event Action? Click;
 
-        public event Action OpenLog;
+        public event Action? OpenLog;
 
         public void Dispose()
         {

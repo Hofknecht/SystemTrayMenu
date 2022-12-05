@@ -33,21 +33,17 @@ namespace SystemTrayMenu.DataClasses
     {
         public MenuData(int level)
         {
-            RowDatas = new List<RowData>();
-            DirectoryState = MenuDataDirectoryState.Undefined;
             Level = level;
-            RowDataParent = null;
-            IsNetworkRoot = false;
         }
 
-        internal List<RowData> RowDatas { get; set; }
+        internal List<RowData> RowDatas { get; set; } = new ();
 
-        internal MenuDataDirectoryState DirectoryState { get; set; }
+        internal MenuDataDirectoryState DirectoryState { get; set; } = MenuDataDirectoryState.Undefined;
 
         internal int Level { get; }
 
-        internal RowData RowDataParent { get; set; }
+        internal RowData? RowDataParent { get; set; } = null;
 
-        internal bool IsNetworkRoot { get; set; }
+        internal bool IsNetworkRoot { get; set; } = false;
     }
 }

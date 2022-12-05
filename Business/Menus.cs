@@ -455,7 +455,7 @@ namespace SystemTrayMenu.Business
             timerShowProcessStartedAsLoadingIcon.Tick += Tick;
             timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(5);
             timerShowProcessStartedAsLoadingIcon.Start();
-            void Tick(object sender, EventArgs e)
+            void Tick(object? sender, EventArgs e)
             {
                 timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
                 timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed);
@@ -488,12 +488,17 @@ namespace SystemTrayMenu.Business
 
         private static void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
         {
-            string path;
+            string? path;
             int level = 0;
-            RowData rowData = eDoWork.Argument as RowData;
+            RowData? rowData = eDoWork.Argument as RowData;
             if (rowData != null)
             {
                 path = rowData.ResolvedPath;
+                if (path == null)
+                {
+                    return;
+                }
+
                 level = rowData.Level + 1;
             }
             else
@@ -521,32 +526,35 @@ namespace SystemTrayMenu.Business
             foldersCount = 0;
             filesCount = 0;
 
-            List<Menu.ListViewItemData> items = new();
-            ListView lv = menu.GetDataGridView();
-
-            foreach (RowData rowData in data)
+            ListView? lv = menu.GetDataGridView();
+            if (lv != null)
             {
-                if (!(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
+                List<Menu.ListViewItemData> items = new();
+
+                foreach (RowData rowData in data)
                 {
-                    if (rowData.ContainsMenu)
+                    if (!(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
                     {
-                        foldersCount++;
+                        if (rowData.ContainsMenu)
+                        {
+                            foldersCount++;
+                        }
+                        else
+                        {
+                            filesCount++;
+                        }
                     }
-                    else
-                    {
-                        filesCount++;
-                    }
+
+                    rowData.RowIndex = items.Count; // Index
+                    items.Add(new(
+                        (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource(),
+                        rowData.Text ?? "?",
+                        rowData,
+                        rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
                 }
 
-                rowData.RowIndex = items.Count; // Index
-                items.Add(new(
-                    (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon).ToImageSource(),
-                    rowData.Text,
-                    rowData,
-                    rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
+                lv.ItemsSource = items;
             }
-
-            lv.ItemsSource = items;
         }
 
         private bool IsActive()
@@ -1135,7 +1143,7 @@ namespace SystemTrayMenu.Business
             }
 
             Menu menu;
-            Menu menuPredecessor = null;
+            Menu? menuPredecessor = null;
             for (int i = 0; i < list.Count; i++)
             {
                 menu = list[i];
@@ -1219,16 +1227,15 @@ namespace SystemTrayMenu.Business
             {
                 menus[0].Dispatcher.Invoke(() => RenameItem(renamedEventArgs));
             }
-            else
+            else if (e is FileSystemEventArgs fileSystemEventArgs)
             {
-                FileSystemEventArgs fileSystemEventArgs = (FileSystemEventArgs)e;
                 if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Deleted)
                 {
-                    menus[0].Dispatcher.Invoke(() => DeleteItem(e as FileSystemEventArgs));
+                    menus[0].Dispatcher.Invoke(() => DeleteItem(fileSystemEventArgs));
                 }
                 else if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Created)
                 {
-                    menus[0].Dispatcher.Invoke(() => CreateItem(e as FileSystemEventArgs));
+                    menus[0].Dispatcher.Invoke(() => CreateItem(fileSystemEventArgs));
                 }
             }
         }
@@ -1238,33 +1245,36 @@ namespace SystemTrayMenu.Business
             try
             {
                 List<RowData> rowDatas = new();
-                ListView dgv = menus[0].GetDataGridView();
-                foreach (ListViewItemData item in dgv.Items)
+                ListView? dgv = menus[0].GetDataGridView();
+                if (dgv != null)
                 {
-                    RowData rowData = item.data;
-                    if (rowData.Path.StartsWith($"{e.OldFullPath}"))
+                    foreach (ListViewItemData item in dgv.Items)
                     {
-                        string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
-                        FileAttributes attr = File.GetAttributes(path);
-                        bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
-                        if (isFolder)
+                        RowData rowData = item.data;
+                        if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                         {
-                            path = Path.GetDirectoryName(path);
-                        }
+                            string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
+                            FileAttributes attr = File.GetAttributes(path);
+                            bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
+                            if (isFolder)
+                            {
+                                path = Path.GetDirectoryName(path);
+                            }
 
-                        RowData rowDataRenamed = new(isFolder, rowData.IsAddionalItem, false, 0, path);
-                        if (FolderOptions.IsHidden(rowDataRenamed))
+                            RowData rowDataRenamed = new(isFolder, rowData.IsAddionalItem, false, 0, path);
+                            if (FolderOptions.IsHidden(rowDataRenamed))
+                            {
+                                continue;
+                            }
+
+                            IconReader.RemoveIconFromCache(rowData.Path);
+                            rowDataRenamed.ReadIcon(true);
+                            rowDatas.Add(rowDataRenamed);
+                        }
+                        else
                         {
-                            continue;
+                            rowDatas.Add(rowData);
                         }
-
-                        IconReader.RemoveIconFromCache(rowData.Path);
-                        rowDataRenamed.ReadIcon(true);
-                        rowDatas.Add(rowDataRenamed);
-                    }
-                    else
-                    {
-                        rowDatas.Add(rowData);
                     }
                 }
 
@@ -1288,22 +1298,26 @@ namespace SystemTrayMenu.Business
         {
             try
             {
-                List<ListViewItemData> rowsToRemove = new();
-                ListView dgv = menus[0].GetDataGridView();
-                foreach (ListViewItemData item in dgv.Items)
+                ListView? dgv = menus[0].GetDataGridView();
+                if (dgv != null)
                 {
-                    RowData rowData = item.data;
-                    if (rowData.Path == e.FullPath ||
-                        rowData.Path.StartsWith($"{e.FullPath}\\"))
-                    {
-                        IconReader.RemoveIconFromCache(rowData.Path);
-                        rowsToRemove.Add(item);
-                    }
-                }
+                    List<ListViewItemData> rowsToRemove = new();
 
-                foreach (ListViewItemData rowToRemove in rowsToRemove)
-                {
-                    dgv.Items.Remove(rowToRemove);
+                    foreach (ListViewItemData item in dgv.Items)
+                    {
+                        RowData rowData = item.data;
+                        if (rowData.Path == e.FullPath ||
+                            rowData.Path.StartsWith($"{e.FullPath}\\"))
+                        {
+                            IconReader.RemoveIconFromCache(rowData.Path);
+                            rowsToRemove.Add(item);
+                        }
+                    }
+
+                    foreach (ListViewItemData rowToRemove in rowsToRemove)
+                    {
+                        dgv.Items.Remove(rowToRemove);
+                    }
                 }
 
                 keyboardInput.ClearIsSelectedByKey();
@@ -1339,10 +1353,13 @@ namespace SystemTrayMenu.Business
                     rowData,
                 };
 
-                ListView dgv = menus[0].GetDataGridView();
-                foreach (ListViewItemData item in dgv.Items)
+                ListView? dgv = menus[0].GetDataGridView();
+                if (dgv != null)
                 {
-                    rowDatas.Add(item.data);
+                    foreach (ListViewItemData item in dgv.Items)
+                    {
+                        rowDatas.Add(item.data);
+                    }
                 }
 
                 rowDatas = MenusHelpers.SortItems(rowDatas);

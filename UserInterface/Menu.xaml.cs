@@ -166,8 +166,8 @@ namespace SystemTrayMenu.UserInterface
 #endif
 #if TODO // TOUCH
             bool isTouchEnabled = NativeMethods.IsTouchEnabled();
-            if ((isTouchEnabled && Properties.Settings.Default.DragDropItemsEnabledTouch) ||
-                (!isTouchEnabled && Properties.Settings.Default.DragDropItemsEnabled))
+            if ((isTouchEnabled && Settings.Default.DragDropItemsEnabledTouch) ||
+                (!isTouchEnabled && Settings.Default.DragDropItemsEnabled))
             {
                 AllowDrop = true;
                 DragEnter += DragDropHelper.DragEnter;
@@ -492,7 +492,7 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="isCustomLocationOutsideOfScreen">isCustomLocationOutsideOfScreen.</param>
         internal void AdjustSizeAndLocation(
             Rect bounds,
-            Menu menuPredecessor,
+            Menu? menuPredecessor,
             StartLocation startLocation,
             bool isCustomLocationOutsideOfScreen)
         {
@@ -500,7 +500,7 @@ namespace SystemTrayMenu.UserInterface
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
             AdjustDataGridViewWidth();
 
-            bool useCustomLocation = Properties.Settings.Default.UseCustomLocation || lastLocation.X > 0;
+            bool useCustomLocation = Settings.Default.UseCustomLocation || lastLocation.X > 0;
             bool changeDirectionWhenOutOfBounds = true;
 
             if (menuPredecessor != null)
@@ -519,13 +519,13 @@ namespace SystemTrayMenu.UserInterface
                 // Use this menu as predecessor and overwrite location with CustomLocation
                 menuPredecessor = this;
                 Tag = new RowData();
-                Left = Properties.Settings.Default.CustomLocationX;
-                Top = Properties.Settings.Default.CustomLocationY;
+                Left = Settings.Default.CustomLocationX;
+                Top = Settings.Default.CustomLocationY;
                 directionToRight = true;
                 startLocation = StartLocation.Predecessor;
                 changeDirectionWhenOutOfBounds = false;
             }
-            else if (Properties.Settings.Default.AppearAtMouseLocation)
+            else if (Settings.Default.AppearAtMouseLocation)
             {
                 // Do not adjust location again because Cursor.Postion changed
                 if (Tag != null)
@@ -635,16 +635,16 @@ namespace SystemTrayMenu.UserInterface
                 }
 
                 if (Level != 0 &&
-                    !Properties.Settings.Default.AppearNextToPreviousMenu &&
-                    menuPredecessor != null && menuPredecessor.Width > Properties.Settings.Default.OverlappingOffsetPixels)
+                    !Settings.Default.AppearNextToPreviousMenu &&
+                    menuPredecessor != null && menuPredecessor.Width > Settings.Default.OverlappingOffsetPixels)
                 {
                     if (directionToRight)
                     {
-                        x = x - menuPredecessor.Width + Properties.Settings.Default.OverlappingOffsetPixels;
+                        x = x - menuPredecessor.Width + Settings.Default.OverlappingOffsetPixels;
                     }
                     else
                     {
-                        x = x + menuPredecessor.Width - Properties.Settings.Default.OverlappingOffsetPixels;
+                        x = x + menuPredecessor.Width - Settings.Default.OverlappingOffsetPixels;
                     }
                 }
 
@@ -749,7 +749,7 @@ namespace SystemTrayMenu.UserInterface
                 Left = x;
                 Top = y;
 
-                if (Properties.Settings.Default.RoundCorners)
+                if (Settings.Default.RoundCorners)
                 {
                     windowFrame.CornerRadius = new CornerRadius(CornerRadius);
                 }
@@ -842,12 +842,12 @@ namespace SystemTrayMenu.UserInterface
             e.Handled = true;
         }
 
-        private void AdjustDataGridViewHeight(Menu menuPredecessor, double screenHeightMax)
+        private void AdjustDataGridViewHeight(Menu? menuPredecessor, double screenHeightMax)
         {
-            double factor = Properties.Settings.Default.RowHeighteInPercentage / 100f;
+            double factor = Settings.Default.RowHeighteInPercentage / 100f;
             if (NativeMethods.IsTouchEnabled())
             {
-                factor = Properties.Settings.Default.RowHeighteInPercentageTouch / 100f;
+                factor = Settings.Default.RowHeighteInPercentageTouch / 100f;
             }
 
             if (menuPredecessor == null)
@@ -876,7 +876,7 @@ namespace SystemTrayMenu.UserInterface
             {
 #endif
             double heightMaxByOptions = Scaling.Factor * Scaling.FactorByDpi *
-                450f * (Properties.Settings.Default.HeightMaxInPercent / 100f);
+                450f * (Settings.Default.HeightMaxInPercent / 100f);
             MaxHeight = Math.Min(screenHeightMax, heightMaxByOptions);
 #if TODO // SEARCH
                 dgvHeightSet = true;
@@ -901,7 +901,7 @@ namespace SystemTrayMenu.UserInterface
                 return;
             }
 
-            double factorIconSizeInPercent = Properties.Settings.Default.IconSizeInPercent / 100f;
+            double factorIconSizeInPercent = Settings.Default.IconSizeInPercent / 100f;
 
             // IcoWidth 100% = 21px, 175% is 33, +3+2 is padding from ColumnIcon
             double icoWidth = (16 * Scaling.FactorByDpi) + 5;
@@ -926,7 +926,7 @@ namespace SystemTrayMenu.UserInterface
 
             Resources["ColumnTextWidth"] = Math.Min(
                 renderedMaxWidth,
-                (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Properties.Settings.Default.WidthMaxInPercent / 100f)));
+                (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Settings.Default.WidthMaxInPercent / 100f)));
         }
 
         private void HandleScrollChanged(object sender, ScrollChangedEventArgs e)
@@ -981,7 +981,7 @@ namespace SystemTrayMenu.UserInterface
                 foreach (DataRow row in data.Rows)
                 {
                     RowData rowData = (RowData)row[2];
-                    if (rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult)
+                    if (rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult)
                     {
                         row[columnSortIndex] = 99;
                     }
@@ -1022,7 +1022,7 @@ namespace SystemTrayMenu.UserInterface
                 RowData rowData = (RowData)row.Cells[2].Value;
 
                 if (!string.IsNullOrEmpty(userPattern) ||
-                    !(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
+                    !(rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult))
                 {
                     rowData.RowIndex = row.Index;
 
@@ -1146,7 +1146,11 @@ namespace SystemTrayMenu.UserInterface
                 if (rowData.IconLoading)
                 {
                     iconsToUpdate++;
-                    row.ColumnIcon = rowData.ReadIcon(false).ToImageSource();
+                    rowData.ReadIcon(false);
+                    if (rowData.Icon != null)
+                    {
+                        row.ColumnIcon = rowData.Icon.ToImageSource();
+                    }
                 }
             }
 
@@ -1179,19 +1183,19 @@ namespace SystemTrayMenu.UserInterface
                 Top = Top + mousePos.Y - lastLocation.Y;
                 lastLocation = mousePos;
 
-                Properties.Settings.Default.CustomLocationX = (int)Left;
-                Properties.Settings.Default.CustomLocationY = (int)Top;
+                Settings.Default.CustomLocationX = (int)Left;
+                Settings.Default.CustomLocationY = (int)Top;
             }
         }
 
         private void Menu_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseDown = false;
-            if (Properties.Settings.Default.UseCustomLocation)
+            if (Settings.Default.UseCustomLocation)
             {
                 if (!SettingsWindow.IsOpen())
                 {
-                    Properties.Settings.Default.Save();
+                    Settings.Default.Save();
                 }
             }
         }

@@ -6,8 +6,6 @@ namespace SystemTrayMenu.Helpers
 {
     using System;
     using System.Diagnostics;
-    using System.Diagnostics.Metrics;
-    using System.Reflection.Metadata;
     using System.Threading;
     using System.Windows.Input;
     using SharpDX.DirectInput;
@@ -17,7 +15,7 @@ namespace SystemTrayMenu.Helpers
     {
         private readonly System.Timers.Timer timerReadJoystick = new();
         private readonly object lockRead = new();
-        private Joystick joystick;
+        private Joystick? joystick;
         private Key pressingKey;
         private int pressingKeyCounter;
         private bool joystickHelperEnabled;
@@ -38,7 +36,7 @@ namespace SystemTrayMenu.Helpers
             Dispose(false);
         }
 
-        public event Action<Key, ModifierKeys> KeyPressed;
+        public event Action<Key, ModifierKeys>? KeyPressed;
 
         public void Enable()
         {
@@ -105,7 +103,7 @@ namespace SystemTrayMenu.Helpers
             return keys;
         }
 
-        private void ReadJoystickLoop(object sender, System.Timers.ElapsedEventArgs e)
+        private void ReadJoystickLoop(object? sender, System.Timers.ElapsedEventArgs e)
         {
             if (joystickHelperEnabled)
             {
@@ -129,44 +127,47 @@ namespace SystemTrayMenu.Helpers
 
         private void ReadJoystick()
         {
-            try
+            if (joystick != null)
             {
-                joystick.Poll();
-                JoystickUpdate[] datas = joystick.GetBufferedData();
-                foreach (JoystickUpdate state in datas)
+                try
                 {
-                    if (state.Value < 0)
+                    joystick.Poll();
+                    JoystickUpdate[] datas = joystick.GetBufferedData();
+                    foreach (JoystickUpdate state in datas)
                     {
-                        pressingKey = Key.None;
-                        pressingKeyCounter = 0;
-                        continue;
+                        if (state.Value < 0)
+                        {
+                            pressingKey = Key.None;
+                            pressingKeyCounter = 0;
+                            continue;
+                        }
+
+                        Key key = ReadKeyFromState(state);
+                        if (key != Key.None)
+                        {
+                            KeyPressed?.Invoke(key, ModifierKeys.None);
+                            if (state.Offset == JoystickOffset.PointOfViewControllers0)
+                            {
+                                pressingKeyCounter = 0;
+                                pressingKey = key;
+                            }
+                        }
                     }
 
-                    Key key = ReadKeyFromState(state);
-                    if (key != Key.None)
+                    if (pressingKey != Key.None)
                     {
-                        KeyPressed?.Invoke(key, ModifierKeys.None);
-                        if (state.Offset == JoystickOffset.PointOfViewControllers0)
+                        pressingKeyCounter += 1;
+                        if (pressingKeyCounter > 1)
                         {
-                            pressingKeyCounter = 0;
-                            pressingKey = key;
+                            KeyPressed?.Invoke(pressingKey, ModifierKeys.None);
                         }
                     }
                 }
-
-                if (pressingKey != Key.None)
+                catch
                 {
-                    pressingKeyCounter += 1;
-                    if (pressingKeyCounter > 1)
-                    {
-                        KeyPressed?.Invoke(pressingKey, ModifierKeys.None);
-                    }
+                    joystick?.Dispose();
+                    joystick = null;
                 }
-            }
-            catch
-            {
-                joystick?.Dispose();
-                joystick = null;
             }
         }
 

@@ -43,9 +43,23 @@ namespace SystemTrayMenu.Properties
                 $"SystemTrayMenu"),
                 $"user-{Environment.MachineName}.config");
 
-        public static string ConfigPathAssembly => Path.Combine(
-                Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName,
-                $"user.config");
+        public static string? ConfigPathAssembly
+        {
+            get
+            {
+                Assembly? assembly = Assembly.GetEntryAssembly();
+                if (assembly != null)
+                {
+                    string? location = Directory.GetParent(assembly.Location)?.FullName;
+                    if (location != null)
+                    {
+                        return Path.Combine(location, $"user.config");
+                    }
+                }
+
+                return null;
+            }
+        }
 
         /// <summary>
         /// Gets or sets override.
@@ -81,7 +95,7 @@ namespace SystemTrayMenu.Properties
             {
                 try
                 {
-                    File.Delete(ConfigPathAssembly);
+                    File.Delete(ConfigPathAssembly!);
                 }
                 catch (Exception ex)
                 {
@@ -127,21 +141,27 @@ namespace SystemTrayMenu.Properties
                 };
 
                 // need the type of the value for the strong typing
-                Type t = Type.GetType(setting.PropertyType.FullName);
-
-                if (SettingsDictionary.ContainsKey(setting.Name))
+                string? typename = setting.PropertyType.FullName;
+                if (typename != null)
                 {
-                    value.SerializedValue = SettingsDictionary[setting.Name].Value;
-                    value.PropertyValue = Convert.ChangeType(SettingsDictionary[setting.Name].Value, t, CultureInfo.InvariantCulture);
-                }
-                else
-                {
-                    // use defaults in the case where there are no settings yet
-                    value.SerializedValue = setting.DefaultValue;
-                    value.PropertyValue = Convert.ChangeType(setting.DefaultValue, t, CultureInfo.InvariantCulture);
-                }
+                    Type? t = Type.GetType(typename);
+                    if (t != null)
+                    {
+                        if (SettingsDictionary.ContainsKey(setting.Name))
+                        {
+                            value.SerializedValue = SettingsDictionary[setting.Name].Value;
+                            value.PropertyValue = Convert.ChangeType(SettingsDictionary[setting.Name].Value, t, CultureInfo.InvariantCulture);
+                        }
+                        else
+                        {
+                            // use defaults in the case where there are no settings yet
+                            value.SerializedValue = setting.DefaultValue;
+                            value.PropertyValue = Convert.ChangeType(setting.DefaultValue, t, CultureInfo.InvariantCulture);
+                        }
 
-                values.Add(value);
+                        values.Add(value);
+                    }
+                }
             }
 
             return values;
@@ -159,7 +179,7 @@ namespace SystemTrayMenu.Properties
             {
                 SettingStruct setting = new()
                 {
-                    Value = value.PropertyValue == null ? string.Empty : value.PropertyValue.ToString(),
+                    Value = value.PropertyValue == null ? string.Empty : value.PropertyValue.ToString() ?? string.Empty,
                     Name = value.Name,
                     SerializeAs = value.Property.SerializeAs.ToString(),
                 };
@@ -182,7 +202,7 @@ namespace SystemTrayMenu.Properties
         /// Creates an empty user.config file...looks like the one MS creates.
         /// This could be overkill a simple key/value pairing would probably do.
         /// </summary>
-        private static void CreateEmptyConfigIfNotExists(string path)
+        private static void CreateEmptyConfigIfNotExists(string? path)
         {
             if (!File.Exists(path))
             {
@@ -222,9 +242,9 @@ namespace SystemTrayMenu.Properties
             return isconfigPathAssembly;
         }
 
-        private static XDocument LoadOrGetNew(string path)
+        private static XDocument? LoadOrGetNew(string path)
         {
-            XDocument xDocument = null;
+            XDocument? xDocument = null;
             try
             {
                 xDocument = XDocument.Load(path);
@@ -255,10 +275,10 @@ namespace SystemTrayMenu.Properties
             CreateEmptyConfigIfNotExists(UserConfigPath);
 
             // load the xml
-            XDocument configXml;
+            XDocument? configXml;
             if (IsConfigPathAssembly())
             {
-                configXml = LoadOrGetNew(ConfigPathAssembly);
+                configXml = LoadOrGetNew(ConfigPathAssembly!);
             }
             else
             {
@@ -268,19 +288,27 @@ namespace SystemTrayMenu.Properties
             if (configXml != null)
             {
                 // get all of the <setting name="..." serializeAs="..."> elements.
-                IEnumerable<XElement> settingElements = configXml.Element(Config).Element(UserSettings).Element(typeof(Settings).FullName).Elements(Setting);
+                IEnumerable<XElement>? settingElements = configXml.Element(Config)?.Element(UserSettings)?.Element(typeof(Settings).FullName)?.Elements(Setting);
 
                 // iterate through, adding them to the dictionary, (checking for nulls, xml no likey nulls)
                 // using "String" as default serializeAs...just in case, no real good reason.
-                foreach (XElement element in settingElements)
+                if (settingElements != null)
                 {
-                    SettingStruct newSetting = new()
+                    foreach (XElement element in settingElements)
                     {
-                        Name = element.Attribute(NameOf) == null ? string.Empty : element.Attribute(NameOf).Value,
-                        SerializeAs = element.Attribute(SerializeAs) == null ? "String" : element.Attribute(SerializeAs).Value,
-                        Value = element.Value ?? string.Empty,
-                    };
-                    SettingsDictionary.Add(element.Attribute(NameOf).Value, newSetting);
+                        string? name = element.Attribute(NameOf)?.Value;
+                        if (name != null)
+                        {
+                            string? serializeAs = element.Attribute(SerializeAs)?.Value;
+                            SettingStruct newSetting = new()
+                            {
+                                Name = element.Attribute(NameOf) == null ? string.Empty : name,
+                                SerializeAs = serializeAs == null ? "String" : serializeAs,
+                                Value = element.Value ?? string.Empty,
+                            };
+                            SettingsDictionary.Add(name, newSetting);
+                        }
+                    }
                 }
             }
         }
@@ -291,10 +319,10 @@ namespace SystemTrayMenu.Properties
         private void SaveValuesToFile()
         {
             // load the current xml from the file.
-            XDocument configXml;
+            XDocument? configXml;
             if (IsConfigPathAssembly())
             {
-                configXml = LoadOrGetNew(ConfigPathAssembly);
+                configXml = LoadOrGetNew(ConfigPathAssembly!);
             }
             else
             {
@@ -304,12 +332,12 @@ namespace SystemTrayMenu.Properties
             if (configXml != null)
             {
                 // get the settings group (e.g. <Company.Project.Desktop.Settings>)
-                XElement settingsSection = configXml.Element(Config).Element(UserSettings).Element(typeof(Settings).FullName);
+                XElement? settingsSection = configXml.Element(Config)?.Element(UserSettings)?.Element(typeof(Settings).FullName);
 
                 // iterate though the dictionary, either updating the value or adding the new setting.
                 foreach (KeyValuePair<string, SettingStruct> entry in SettingsDictionary)
                 {
-                    XElement setting = settingsSection.Elements().FirstOrDefault(e => e.Attribute(NameOf).Value == entry.Key);
+                    XElement? setting = settingsSection?.Elements().FirstOrDefault(e => e.Attribute(NameOf)?.Value == entry.Key);
                     if (setting == null)
                     {
                         // this can happen if a new setting is added via the .settings designer.
@@ -317,7 +345,7 @@ namespace SystemTrayMenu.Properties
                         newSetting.Add(new XAttribute(NameOf, entry.Value.Name));
                         newSetting.Add(new XAttribute(SerializeAs, entry.Value.SerializeAs));
                         newSetting.Value = entry.Value.Value ?? string.Empty;
-                        settingsSection.Add(newSetting);
+                        settingsSection?.Add(newSetting);
                     }
                     else
                     {
@@ -328,7 +356,7 @@ namespace SystemTrayMenu.Properties
 
                 if (IsConfigPathAssembly())
                 {
-                    configXml.Save(ConfigPathAssembly);
+                    configXml.Save(ConfigPathAssembly!);
                 }
 
                 configXml.Save(UserConfigPath);

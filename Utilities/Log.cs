@@ -149,7 +149,7 @@ namespace SystemTrayMenu.Utilities
             string fileName,
             string arguments = "",
             bool doubleQuoteArg = false,
-            string workingDirectory = "",
+            string? workingDirectory = null,
             bool createNoWindow = false,
             string resolvedPath = "")
         {
@@ -166,7 +166,7 @@ namespace SystemTrayMenu.Utilities
                     {
                         FileName = fileName,
                         Arguments = arguments,
-                        WorkingDirectory = workingDirectory,
+                        WorkingDirectory = workingDirectory ?? string.Empty,
                         CreateNoWindow = createNoWindow,
                         UseShellExecute = true,
                     },
