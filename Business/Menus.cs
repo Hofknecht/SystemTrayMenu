@@ -20,6 +20,7 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Helpers;
+    using SystemTrayMenu.Properties;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.UserInterface.Menu;
     using Menu = SystemTrayMenu.UserInterface.Menu;
@@ -38,7 +39,7 @@ namespace SystemTrayMenu.Business
         private readonly List<EventArgs> watcherHistory = new();
         private readonly DispatcherTimer timerShowProcessStartedAsLoadingIcon = new();
         private readonly DispatcherTimer timerStillActiveCheck = new();
-        private readonly WaitLeave waitLeave = new(Properties.Settings.Default.TimeUntilCloses);
+        private readonly DispatcherTimer waitLeave = new();
         private DateTime deactivatedTime = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
@@ -79,7 +80,7 @@ namespace SystemTrayMenu.Business
 
                     RefreshSelection(dgvMainMenu);
 
-                    if (Properties.Settings.Default.AppearAtMouseLocation)
+                    if (Settings.Default.AppearAtMouseLocation)
                     {
                         menus[0].Tag = null;
                     }
@@ -260,8 +261,8 @@ namespace SystemTrayMenu.Business
             joystickHelper = new();
             joystickHelper.KeyPressed += (key, modifiers) => menus[0].Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null, key, modifiers });
 
-            timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed);
-            timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
+            timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed);
+            timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
             timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
             void StillActiveTick()
             {
@@ -273,7 +274,12 @@ namespace SystemTrayMenu.Business
                 timerStillActiveCheck.Stop();
             }
 
-            waitLeave.LeaveTriggered += FadeHalfOrOutIfNeeded;
+            waitLeave.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilCloses);
+            waitLeave.Tick += (_, _) =>
+            {
+                waitLeave.Stop();
+                FadeHalfOrOutIfNeeded();
+            };
 
             CreateWatcher(Config.Path, false);
             foreach (var pathAndFlags in MenusHelpers.GetAddionalPathsForMainMenu())
@@ -340,7 +346,7 @@ namespace SystemTrayMenu.Business
             joystickHelper.Dispose();
             timerShowProcessStartedAsLoadingIcon.Stop();
             timerStillActiveCheck.Stop();
-            waitLeave.Dispose();
+            waitLeave.Stop();
             IconReader.Dispose();
             menus[0]?.Close();
             dgvMouseRow.Dispose();
@@ -458,14 +464,14 @@ namespace SystemTrayMenu.Business
             void Tick(object? sender, EventArgs e)
             {
                 timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
-                timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Properties.Settings.Default.TimeUntilClosesAfterEnterPressed);
+                timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed);
                 SwitchOpenClose(false, true);
             }
         }
 
         internal void StartWorker()
         {
-            if (Properties.Settings.Default.GenerateShortcutsToDrives)
+            if (Settings.Default.GenerateShortcutsToDrives)
             {
                 GenerateDriveShortcuts.Start();
             }
@@ -533,7 +539,7 @@ namespace SystemTrayMenu.Business
 
                 foreach (RowData rowData in data)
                 {
-                    if (!(rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult))
+                    if (!(rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult))
                     {
                         if (rowData.ContainsMenu)
                         {
@@ -550,7 +556,7 @@ namespace SystemTrayMenu.Business
                         (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource(),
                         rowData.Text ?? "?",
                         rowData,
-                        rowData.IsAddionalItem && Properties.Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
+                        rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
                 }
 
                 lv.ItemsSource = items;
@@ -600,10 +606,13 @@ namespace SystemTrayMenu.Business
             };
 
             menu.MenuScrolled += AdjustMenusSizeAndLocation; // TODO: Only update vertical location while scrolling?
-#if TODO // Misc MouseEvents
-            menu.MouseLeave += waitLeave.Start;
-            menu.MouseEnter += waitLeave.Stop;
-#endif
+            menu.MouseLeave += (_, _) =>
+            {
+                // Restart timer
+                waitLeave.Stop();
+                waitLeave.Start();
+            };
+            menu.MouseEnter += (_, _) => waitLeave.Stop();
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
 #if TODO // Misc MouseEvents and TOUCH
             menu.KeyPressCheck += Menu_KeyPressCheck;
@@ -628,7 +637,7 @@ namespace SystemTrayMenu.Business
                 {
                     Log.Info("Ignored Deactivate, because openCloseState == OpenCloseState.Opening");
                 }
-                else if (!Properties.Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
+                else if (!Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed ||
                     !waitingForReactivate)
                 {
                     FadeHalfOrOutIfNeeded();
@@ -773,8 +782,8 @@ namespace SystemTrayMenu.Business
             if (menu != null && menu.ScrollbarVisible)
             {
                 bool isTouchEnabled = DllImports.NativeMethods.IsTouchEnabled();
-                if ((isTouchEnabled && Properties.Settings.Default.SwipeScrollingEnabledTouch) ||
-                    (!isTouchEnabled && Properties.Settings.Default.SwipeScrollingEnabled))
+                if ((isTouchEnabled && Settings.Default.SwipeScrollingEnabledTouch) ||
+                    (!isTouchEnabled && Settings.Default.SwipeScrollingEnabled))
                 {
                     isDraggingSwipeScrolling = true;
                 }
@@ -1043,7 +1052,7 @@ namespace SystemTrayMenu.Business
             {
                 if (!IsActive())
                 {
-                    if (Properties.Settings.Default.StaysOpenWhenFocusLost &&
+                    if (Settings.Default.StaysOpenWhenFocusLost &&
                         AsList.Any(m => m.IsMouseOn()))
                     {
                         if (!keyboardInput.InUse)
@@ -1085,18 +1094,18 @@ namespace SystemTrayMenu.Business
             Rect screenBounds;
             bool isCustomLocationOutsideOfScreen = false;
 
-            if (Properties.Settings.Default.AppearAtMouseLocation)
+            if (Settings.Default.AppearAtMouseLocation)
             {
                 screenBounds = NativeMethods.Screen.FromPoint(NativeMethods.Screen.CursorPosition);
             }
-            else if (Properties.Settings.Default.UseCustomLocation)
+            else if (Settings.Default.UseCustomLocation)
             {
                 screenBounds = NativeMethods.Screen.FromPoint(new (
-                    Properties.Settings.Default.CustomLocationX,
-                    Properties.Settings.Default.CustomLocationY));
+                    Settings.Default.CustomLocationX,
+                    Settings.Default.CustomLocationY));
 
                 isCustomLocationOutsideOfScreen = !screenBounds.Contains(
-                    new Point(Properties.Settings.Default.CustomLocationX, Properties.Settings.Default.CustomLocationY));
+                    new Point(Settings.Default.CustomLocationX, Settings.Default.CustomLocationY));
             }
             else
             {
@@ -1136,7 +1145,7 @@ namespace SystemTrayMenu.Business
                     break;
             }
 
-            if (Properties.Settings.Default.AppearAtTheBottomLeft ||
+            if (Settings.Default.AppearAtTheBottomLeft ||
                 isCustomLocationOutsideOfScreen)
             {
                 startLocation = Menu.StartLocation.BottomLeft;
@@ -1150,9 +1159,9 @@ namespace SystemTrayMenu.Business
 
                 menu.AdjustSizeAndLocation(screenBounds, menuPredecessor, startLocation, isCustomLocationOutsideOfScreen);
 
-                if (!Properties.Settings.Default.AppearAtTheBottomLeft &&
-                    !Properties.Settings.Default.AppearAtMouseLocation &&
-                    !Properties.Settings.Default.UseCustomLocation &&
+                if (!Settings.Default.AppearAtTheBottomLeft &&
+                    !Settings.Default.AppearAtMouseLocation &&
+                    !Settings.Default.UseCustomLocation &&
                     i == 0)
                 {
                     const int overlapTolerance = 4;
