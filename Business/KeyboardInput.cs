@@ -74,7 +74,7 @@ namespace SystemTrayMenu.Handler
             iMenuKey = 0;
         }
 
-        internal void CmdKeyProcessed(Menu sender, Key key, ModifierKeys modifiers)
+        internal void CmdKeyProcessed(Menu? sender, Key key, ModifierKeys modifiers)
         {
             sender ??= menus[iMenuKey];
 
@@ -253,7 +253,7 @@ namespace SystemTrayMenu.Handler
 
         private bool IsAnyMenuSelectedByKey(
             ref ListView? dgv,
-            ref Menu menuFromSelected,
+            ref Menu? menuFromSelected,
             ref string textselected)
         {
             Menu menu = menus[iMenuKey];
@@ -287,9 +287,9 @@ namespace SystemTrayMenu.Handler
             int iMenuBefore = iMenuKey;
 
             Menu menu = menus[iMenuKey];
-            ListView dgv = null;
-            ListView dgvBefore = null;
-            Menu menuFromSelected = null;
+            ListView? dgv = null;
+            ListView? dgvBefore = null;
+            Menu? menuFromSelected = null;
             string textselected = string.Empty;
             bool isStillSelected = IsAnyMenuSelectedByKey(ref dgv, ref menuFromSelected, ref textselected);
             if (isStillSelected)

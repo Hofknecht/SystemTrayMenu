@@ -16,8 +16,6 @@ namespace SystemTrayMenu.Helper
 
     internal class AppContextMenu
     {
-        public event Action ClickedOpenLog;
-
         public ContextMenu Create()
         {
             ContextMenu menu = new()
@@ -27,7 +25,7 @@ namespace SystemTrayMenu.Helper
 
             AddItem(menu, "Settings", () => SettingsWindow.ShowSingleInstance());
             AddSeperator(menu);
-            AddItem(menu, "Log File", () => ClickedOpenLog?.Invoke());
+            AddItem(menu, "Log File", Log.OpenLogFile);
             AddSeperator(menu);
             AddItem(menu, "Frequently Asked Questions", Config.ShowHelpFAQ);
             AddItem(menu, "Support SystemTrayMenu", Config.ShowSupportSystemTrayMenu);
@@ -59,10 +57,36 @@ namespace SystemTrayMenu.Helper
 
         private static void About()
         {
-            FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(
-                Assembly.GetEntryAssembly().Location);
+            string copyright = string.Empty;
+            string productName = string.Empty;
+            string fileDescription = string.Empty;
+            string fileVersion = string.Empty;
+            string? location = Assembly.GetEntryAssembly()?.Location;
+            if (location != null)
+            {
+                FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(location);
+                if (versionInfo.LegalCopyright != null)
+                {
+                    copyright = versionInfo.LegalCopyright;
+                }
 
-            string moreInfo = versionInfo.LegalCopyright + Environment.NewLine;
+                if (versionInfo.ProductName != null)
+                {
+                    productName = versionInfo.ProductName;
+                }
+
+                if (versionInfo.FileDescription != null)
+                {
+                    fileDescription = versionInfo.FileDescription;
+                }
+
+                if (versionInfo.FileVersion != null)
+                {
+                    fileVersion = versionInfo.FileVersion;
+                }
+            }
+
+            string moreInfo = copyright + Environment.NewLine;
             moreInfo += "Markus Hofknecht (mailto:Markus@Hofknecht.eu)" + Environment.NewLine;
 
             // Thanks for letting me being part of this project and that I am allowed to be listed here :-)
@@ -101,10 +125,10 @@ Sponsors - Thank you!
 ";
             AboutBox aboutBox = new()
             {
-                AppTitle = versionInfo.ProductName,
-                AppDescription = versionInfo.FileDescription,
-                AppVersion = $"Version {versionInfo.FileVersion}",
-                AppCopyright = versionInfo.LegalCopyright,
+                AppTitle = productName,
+                AppDescription = fileDescription,
+                AppVersion = $"Version {fileVersion}",
+                AppCopyright = copyright,
                 AppMoreInfo = moreInfo,
             };
             aboutBox.ShowDialog();

@@ -56,13 +56,13 @@ namespace SystemTrayMenu.Utilities
         private static Guid iidIContextMenu2 = new("{000214f4-0000-0000-c000-000000000046}");
         private static Guid iidIContextMenu3 = new("{bcfce0a0-ec17-11d0-8d10-00a0c90f2719}");
 
-        private IContextMenu oContextMenu;
-        private IContextMenu2 oContextMenu2;
-        private IContextMenu3 oContextMenu3;
-        private IShellFolder oDesktopFolder;
-        private IShellFolder oParentFolder;
-        private IntPtr[] arrPIDLs;
-        private string strParentFolder;
+        private IContextMenu? oContextMenu;
+        private IContextMenu2? oContextMenu2;
+        private IContextMenu3? oContextMenu3;
+        private IShellFolder? oDesktopFolder;
+        private IShellFolder? oParentFolder;
+        private IntPtr[]? arrPIDLs;
+        private string? strParentFolder;
 
         /// <summary>
         /// Finalizes an instance of the <see cref="ShellContextMenu"/> class.
@@ -874,7 +874,7 @@ namespace SystemTrayMenu.Utilities
                 return null;
             }
 
-            IShellFolder oParentFolder = GetParentFolder(arrFI[0].DirectoryName);
+            IShellFolder? oParentFolder = GetParentFolder(arrFI[0].DirectoryName);
             if (oParentFolder == null)
             {
                 return null;
@@ -914,7 +914,7 @@ namespace SystemTrayMenu.Utilities
                 return null;
             }
 
-            IShellFolder oParentFolder = GetParentFolder(arrFI[0].Parent.FullName);
+            IShellFolder? oParentFolder = GetParentFolder(arrFI[0].Parent.FullName);
             if (oParentFolder == null)
             {
                 return null;
@@ -1067,7 +1067,7 @@ namespace SystemTrayMenu.Utilities
         /// </summary>
         /// <param name="folderName">Folder path.</param>
         /// <returns>IShellFolder for the folder (relative from the desktop).</returns>
-        private IShellFolder GetParentFolder(string folderName)
+        private IShellFolder? GetParentFolder(string folderName)
         {
             if (oParentFolder == null)
             {

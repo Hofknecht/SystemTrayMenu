@@ -7,7 +7,7 @@ namespace SystemTrayMenu.Helper
     using System.Collections.Generic;
     using SystemTrayMenu.DllImports;
 
-    internal class WindowsExplorerSort : IComparer<string>
+    internal class WindowsExplorerSort : IComparer<string?>
     {
         public int Compare(string? x, string? y)
         {

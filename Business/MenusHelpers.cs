@@ -17,7 +17,7 @@ namespace SystemTrayMenu.Business
 
     internal static class MenusHelpers
     {
-        internal static void GetItemsForMainMenu(BackgroundWorker worker, string path, ref MenuData menuData)
+        internal static void GetItemsForMainMenu(BackgroundWorker? worker, string path, ref MenuData menuData)
         {
             menuData.IsNetworkRoot = FileLnk.IsNetworkRoot(path);
             if (menuData.IsNetworkRoot)
@@ -60,7 +60,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        internal static void ReadHiddenAndReadIcons(BackgroundWorker worker, ref MenuData menuData)
+        internal static void ReadHiddenAndReadIcons(BackgroundWorker? worker, ref MenuData menuData)
         {
             List<RowData> rowDatasToRemove = new();
             foreach (RowData rowData in menuData.RowDatas)
@@ -117,7 +117,7 @@ namespace SystemTrayMenu.Business
             else if (Properties.Settings.Default.SortByTypeAndDate)
             {
                 rowDatas = rowDatas.OrderByDescending(x => x.IsFolder)
-                    .ThenByDescending(x => x.FileInfo.LastWriteTime).ToList();
+                    .ThenByDescending(x => x.FileInfo?.LastWriteTime).ToList();
             }
             else if (Properties.Settings.Default.SortByFileExtensionAndName)
             {
@@ -129,7 +129,7 @@ namespace SystemTrayMenu.Business
             }
             else if (Properties.Settings.Default.SortByDate)
             {
-                rowDatas = rowDatas.OrderByDescending(x => x.FileInfo.LastWriteTime).ToList();
+                rowDatas = rowDatas.OrderByDescending(x => x.FileInfo?.LastWriteTime).ToList();
             }
 
             return rowDatas;
@@ -186,7 +186,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private static void GetDirectories(BackgroundWorker worker, string path, ref MenuData menuData)
+        private static void GetDirectories(BackgroundWorker? worker, string path, ref MenuData menuData)
         {
             try
             {
@@ -210,7 +210,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private static void GetFiles(BackgroundWorker worker, string path, ref MenuData menuData)
+        private static void GetFiles(BackgroundWorker? worker, string path, ref MenuData menuData)
         {
             try
             {

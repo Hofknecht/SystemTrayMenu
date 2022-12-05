@@ -28,7 +28,6 @@ namespace SystemTrayMenu
             menus.LoadStarted += menuNotifyIcon.LoadingStart;
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
             menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
-            menuNotifyIcon.OpenLog += Log.OpenLogFile;
             menus.MainPreload();
 
             if (Settings.Default.ShowInTaskbar)

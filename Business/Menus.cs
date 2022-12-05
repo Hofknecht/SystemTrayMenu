@@ -59,26 +59,29 @@ namespace SystemTrayMenu.Business
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;
             workerMainMenu.RunWorkerCompleted += LoadMainMenuCompleted;
-            void LoadMainMenuCompleted(object sender, RunWorkerCompletedEventArgs e)
+            void LoadMainMenuCompleted(object? sender, RunWorkerCompletedEventArgs e)
             {
                 keyboardInput.ResetSelectedByKey();
-                LoadStopped();
+                LoadStopped?.Invoke();
 
                 if (e.Result == null)
                 {
                     // The main menu gets loaded again
                     // Clean up menu status of previous one
-                    ListView dgvMainMenu = menus[0].GetDataGridView();
-                    foreach (ListViewItemData item in dgvMainMenu.Items)
+                    ListView? dgvMainMenu = menus[0].GetDataGridView();
+                    if (dgvMainMenu != null)
                     {
-                        RowData rowDataToClear = item.data;
-                        rowDataToClear.IsMenuOpen = false;
-                        rowDataToClear.IsClicking = false;
-                        rowDataToClear.IsSelected = false;
-                        rowDataToClear.IsContextMenuOpen = false;
-                    }
+                        foreach (ListViewItemData item in dgvMainMenu.Items)
+                        {
+                            RowData rowDataToClear = item.data;
+                            rowDataToClear.IsMenuOpen = false;
+                            rowDataToClear.IsClicking = false;
+                            rowDataToClear.IsSelected = false;
+                            rowDataToClear.IsContextMenuOpen = false;
+                        }
 
-                    RefreshSelection(dgvMainMenu);
+                        RefreshSelection(dgvMainMenu);
+                    }
 
                     if (Settings.Default.AppearAtMouseLocation)
                     {
@@ -144,7 +147,7 @@ namespace SystemTrayMenu.Business
                     workerSubMenu.CancelAsync();
                 }
 
-                LoadStopped();
+                LoadStopped?.Invoke();
             }
 
             waitToOpenMenu.StartLoadMenu += StartLoadMenu;
@@ -170,7 +173,7 @@ namespace SystemTrayMenu.Business
                         ShowSubMenu(menuLoading);
                     }
 
-                    BackgroundWorker workerSubMenu = workersSubMenu.
+                    BackgroundWorker? workerSubMenu = workersSubMenu.
                         Where(w => !w.IsBusy).FirstOrDefault();
                     if (workerSubMenu == null)
                     {
@@ -186,7 +189,7 @@ namespace SystemTrayMenu.Business
                     workerSubMenu.RunWorkerAsync(rowData);
                 }
 
-                void LoadSubMenuCompleted(object senderCompleted, RunWorkerCompletedEventArgs e)
+                void LoadSubMenuCompleted(object? senderCompleted, RunWorkerCompletedEventArgs e)
                 {
                     MenuData menuData = (MenuData)e.Result;
 
@@ -259,7 +262,7 @@ namespace SystemTrayMenu.Business
             keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
 
             joystickHelper = new();
-            joystickHelper.KeyPressed += (key, modifiers) => menus[0].Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null, key, modifiers });
+            joystickHelper.KeyPressed += (key, modifiers) => menus[0].Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null!, key, modifiers });
 
             timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed);
             timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
@@ -317,9 +320,9 @@ namespace SystemTrayMenu.Business
             SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
         }
 
-        internal event Action LoadStarted;
+        internal event Action? LoadStarted;
 
-        internal event Action LoadStopped;
+        internal event Action? LoadStopped;
 
         private enum OpenCloseState
         {
@@ -361,7 +364,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        internal static MenuData GetData(BackgroundWorker worker, string path, int level)
+        internal static MenuData GetData(BackgroundWorker? worker, string path, int level)
         {
             MenuData menuData = new(level);
             if (worker?.CancellationPending == true || string.IsNullOrEmpty(path))
@@ -478,7 +481,7 @@ namespace SystemTrayMenu.Business
 
             if (!workerMainMenu.IsBusy)
             {
-                LoadStarted();
+                LoadStarted?.Invoke();
                 workerMainMenu.RunWorkerAsync(
                     new object[] { Config.Path, 0 });
             }
@@ -492,7 +495,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private static void LoadMenu(object senderDoWork, DoWorkEventArgs eDoWork)
+        private static void LoadMenu(object? senderDoWork, DoWorkEventArgs eDoWork)
         {
             string? path;
             int level = 0;
@@ -512,7 +515,7 @@ namespace SystemTrayMenu.Business
                 path = Config.Path;
             }
 
-            MenuData menuData = GetData((BackgroundWorker)senderDoWork, path, level);
+            MenuData menuData = GetData((BackgroundWorker?)senderDoWork, path, level);
             menuData.RowDataParent = rowData;
             eDoWork.Result = menuData;
         }
@@ -567,27 +570,23 @@ namespace SystemTrayMenu.Business
         {
             bool IsShellContextMenuOpen()
             {
-                bool isShellContextMenuOpen = false;
                 foreach (Menu menu in menus.Where(m => m != null))
                 {
-                    ListView dgv = menu.GetDataGridView();
-                    foreach (ListViewItemData item in dgv.Items)
+                    ListView? dgv = menu.GetDataGridView();
+                    if (dgv != null)
                     {
-                        RowData rowData = item.data;
-                        if (rowData != null && rowData.IsContextMenuOpen)
+                        foreach (ListViewItemData item in dgv.Items)
                         {
-                            isShellContextMenuOpen = true;
-                            break;
+                            RowData rowData = item.data;
+                            if (rowData != null && rowData.IsContextMenuOpen)
+                            {
+                                return true;
+                            }
                         }
-                    }
-
-                    if (isShellContextMenuOpen)
-                    {
-                        break;
                     }
                 }
 
-                return isShellContextMenuOpen;
+                return false;
             }
 
             foreach (Menu menu in menus.Where(m => m != null && m.IsActive))
@@ -631,7 +630,7 @@ namespace SystemTrayMenu.Business
             }
 
             menu.Deactivated += Deactivate;
-            void Deactivate(object sender, EventArgs e)
+            void Deactivate(object? sender, EventArgs e)
             {
                 if (IsOpenCloseStateOpening())
                 {
@@ -669,19 +668,23 @@ namespace SystemTrayMenu.Business
             menu.CellMouseUp += Dgv_MouseUp;
             menu.CellMouseClick += Dgv_MouseClick;
 
-            ListView dgv = menu.GetDataGridView();
+            ListView? dgv = menu.GetDataGridView();
+            if (dgv != null)
+            {
 #if TODO // Misc MouseEvents
-            dgv.MouseLeave += dgvMouseRow.MouseLeave;
-            dgv.MouseLeave += Dgv_MouseLeave;
-            dgv.MouseMove += waitToOpenMenu.MouseMove;
+                dgv.MouseLeave += dgvMouseRow.MouseLeave;
+                dgv.MouseLeave += Dgv_MouseLeave;
+                dgv.MouseMove += waitToOpenMenu.MouseMove;
 #endif
 #if TODO // TOUCH
-            dgv.MouseMove += Dgv_MouseMove;
+                dgv.MouseMove += Dgv_MouseMove;
 #endif
-            dgv.SelectionChanged += Dgv_SelectionChanged;
+                dgv.SelectionChanged += Dgv_SelectionChanged;
 #if TODO // BorderColors and PaintEvent
-            dgv.RowPostPaint += Dgv_RowPostPaint;
+                dgv.RowPostPaint += Dgv_RowPostPaint;
 #endif
+            }
+
             menu.SetCounts(foldersCount, filesCount);
 
             return menu;
@@ -992,7 +995,7 @@ namespace SystemTrayMenu.Business
     }
 #endif
 
-        private void SystemEvents_DisplaySettingsChanged(object sender, EventArgs e)
+        private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e)
         {
             dispatchter.Invoke(() =>
             {

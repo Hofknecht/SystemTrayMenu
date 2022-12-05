@@ -19,19 +19,12 @@ namespace SystemTrayMenu.UserInterface
             notifyIcon.ToolTipText = "SystemTrayMenu";
             notifyIcon.Icon = Config.GetAppIcon();
             notifyIcon.Visibility = Visibility.Visible;
-
-            AppContextMenu contextMenus = new();
-
-            contextMenus.ClickedOpenLog += () => OpenLog?.Invoke();
-
-            notifyIcon.ContextMenu = contextMenus.Create();
+            notifyIcon.ContextMenu = new AppContextMenu().Create();
             notifyIcon.LeftClickCommand = new ActionCommand((_) => Click?.Invoke());
             notifyIcon.DoubleClickCommand = new ActionCommand((_) => Click?.Invoke());
         }
 
         public event Action? Click;
-
-        public event Action? OpenLog;
 
         public void Dispose()
         {
