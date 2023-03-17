@@ -268,7 +268,7 @@
     <value>Nuoli</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Nuoli napsauttaessa</value>
+    <value>Nuoli napsautettaessa</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Nuoli, kun hiiri on sen päällä</value>
@@ -438,11 +438,14 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Avaa hakemisto yhdellä napsautuksella</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Tuki peliohjainta</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Edellisen viereen</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Poikkeama pikseleillä</value>
+    <value>Offset pikseleillä</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Päällekkäinen</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Internet-pikakuvakkeiden hakemisto</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Lajiteltu tyypin ja päivämäärän mukaan</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Lajiteltu tyypin (kansio tai tiedosto) ja päivämäärän mukaan</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Lajiteltu tyypin ja nimen mukaan</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Lajiteltu tyypin (kansio tai tiedosto) ja nimen mukaan</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Tarkista päivitykset</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Sovelluksen koko</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Valinnaiset ominaisuudet</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Ratkaise linkit kansioihin ja näytä sisältöä</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Lajiteltu tiedostopäätteen ja nimen mukaan</value>
   </data>
 </root>

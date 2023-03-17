@@ -157,7 +157,7 @@
     <value>無法註冊快捷鍵。</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>取消</value>
+    <value>中止</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>一般</value>
@@ -253,7 +253,7 @@
     <value>對應目錄</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>將設定檔儲存在程式檔案位置</value>
+    <value>將設定檔儲存在程式所在位置</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
     <value>設定檔和日誌檔案</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>按一下以開啟目錄</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>支援遊戲控制器</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>在上一個選單的旁邊</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>網際網路捷徑圖示目錄</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>依類型和日期</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>依類型（檔案或資料夾）和日期排序</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>依類型和名稱</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>依類型（檔案或資料夾）和名稱排序</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>檢查更新</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>應用程式大小</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>選用功能</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>解析資料夾內項目並顯示內容</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>依副檔名和名稱排序</value>
   </data>
 </root>

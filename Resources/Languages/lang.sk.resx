@@ -373,7 +373,7 @@
     <value>Odstrániť adresár</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Iba súbory</value>
+    <value>Iba Súbory</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Ak je viac ako tento počet položiek, vymažte vyrovnávaciu pamäť</value>
@@ -400,7 +400,7 @@
     <value>Zobrazí sa hlavné menu</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>Umiestnenie myši (nad ikonou na paneli úloh)</value>
+    <value>Poloha myši (nad ikonou na paneli úloh)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Vlastné (presuňte ho na príslušné miesto)</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Jediným kliknutím otvoríte adresár</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Podpora gamepadu</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Vedľa predchádzajúcej</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Adresár ikon internetových skratiek</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Zoradené podľa typu a dátumu</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Zoradené podľa typu (priečinok alebo súbor) a dátumu</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Zoradené podľa typu a názvu</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Zoradené podľa typu (priečinok alebo súbor) a názvu</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Skontroluj aktualizácie</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Veľkosť aplikácie</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Voliteľné funkcie</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Vyriešte odkazy na priečinky a zobrazte obsah</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Zoradené podľa prípony súboru a názvu</value>
   </data>
 </root>

@@ -190,7 +190,7 @@
     <value>Jediným kliknutím otevřete prvek</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Barevné schéma tmavé vždy aktivní</value>
+    <value>Barevné schéma tmavé je vždy aktivní</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Pokročilý</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Jediným kliknutím otevřete adresář</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Podpora gamepadu</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Vedle předchozího</value>
   </data>
@@ -490,7 +493,7 @@
     <value>Zobrazit název adresáře nahoře</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>Zobrazit funkční klávesu 'Otevřít složku'</value>
+    <value>Zobrazit funkční klávesu „Otevřít složku“</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>Zobrazit funkční tlačítko 'Pin menu'</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Adresář ikon zástupců Internetu</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Seřazeno podle typu a data</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Seřazeno podle typu (složka nebo soubor) a data</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Seřazeno podle typu a názvu</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Seřazeno podle typu (složka nebo soubor) a názvu</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Kontrola aktualizací</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Velikost aplikace</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Volitelné funkce</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Vyřešte odkazy na složky a zobrazte obsah</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Seřazeno podle přípony souboru a názvu</value>
   </data>
 </root>

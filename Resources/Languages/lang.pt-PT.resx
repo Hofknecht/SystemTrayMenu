@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Clique único para abrir um diretório</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Suporte Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Ao lado do anterior</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Diretório de ícones de atalhos da Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Ordenado por tipo e data</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Ordenado por tipo (pasta ou arquivo) e data</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordenado por tipo e nome</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Ordenado por tipo (pasta ou arquivo) e nome</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Verifique se há atualizações</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Tamanho do aplicativo</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Recursos opcionais</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Resolver links para pastas e mostrar conteúdo</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Classificado por extensão de arquivo e nome</value>
   </data>
 </root>

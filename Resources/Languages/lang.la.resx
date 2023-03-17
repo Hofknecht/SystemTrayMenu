@@ -121,7 +121,7 @@
     <value>De SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>Bene</value>
+    <value>OK</value>
   </data>
   <data name="App start" xml:space="preserve">
     <value>App satus</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Single click aperire directorium</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Support Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Iuxta priorem</value>
   </data>
@@ -493,7 +496,7 @@
     <value>Munus monstrare clavis 'Open Folder'</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>Munus monstrare key 'Pin menu'</value>
+    <value>Munus monstrare clavis 'Pin menu'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
     <value>Munus monstrare key 'Optiones'</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directorium Internet Brevis Icones</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Ordinatae genus et diem</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Ordinatae generis (folder vel lima) et diem</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordinata genus et nomen</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Sorted by type (folder or file) and name</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Reprehendo pro updates</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Applicationem magnitudine</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Features libitum</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Resolve nexus ad folder et ostende content</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Digerere lima extensio et nomen</value>
   </data>
 </root>

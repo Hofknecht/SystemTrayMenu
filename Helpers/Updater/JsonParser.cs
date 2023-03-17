@@ -61,25 +61,13 @@ namespace SystemTrayMenu.Helper.Updater
         public static T FromJson<T>(this string json)
         {
             // Initialize, if needed, the ThreadStatic variables
-            if (propertyInfoCache == null)
-            {
-                propertyInfoCache = new Dictionary<Type, Dictionary<string, PropertyInfo>>();
-            }
+            propertyInfoCache ??= new Dictionary<Type, Dictionary<string, PropertyInfo>>();
 
-            if (fieldInfoCache == null)
-            {
-                fieldInfoCache = new Dictionary<Type, Dictionary<string, FieldInfo>>();
-            }
+            fieldInfoCache ??= new Dictionary<Type, Dictionary<string, FieldInfo>>();
 
-            if (stringBuilder == null)
-            {
-                stringBuilder = new StringBuilder();
-            }
+            stringBuilder ??= new StringBuilder();
 
-            if (splitArrayPool == null)
-            {
-                splitArrayPool = new Stack<List<string>>();
-            }
+            splitArrayPool ??= new Stack<List<string>>();
 
             // Remove all whitespace not within strings to make parsing simpler
             stringBuilder.Length = 0;

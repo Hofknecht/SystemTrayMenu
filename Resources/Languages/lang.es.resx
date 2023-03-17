@@ -364,7 +364,7 @@
     <value>Rutas de directorio</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>directorios</value>
+    <value>Directorios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursivo</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Un solo clic para abrir un directorio</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Compatible con mando</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Al lado del anterior</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directorio de iconos de acceso directo a Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Ordenado por tipo y fecha</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Ordenado por tipo (carpeta o archivo) y fecha</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordenado por tipo y nombre</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Ordenado por tipo (carpeta o archivo) y nombre</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Buscar actualizaciones</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Tamaño de la aplicación</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Características opcionales</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Resolver enlaces a carpetas y mostrar contenido</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ordenado por extensión de archivo y nombre</value>
   </data>
 </root>

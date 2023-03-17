@@ -11,7 +11,6 @@ namespace SystemTrayMenu.Utilities
     using System.Windows.Forms;
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
     using WindowsInput;
-    using WindowsInput.Native;
 
     internal static class SingleAppInstance
     {

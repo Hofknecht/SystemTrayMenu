@@ -349,7 +349,7 @@
     <value>초점을 잃고 Enter 키를 누른 경우</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>메뉴가 다시 활성화되지 않은 경우 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+    <value>메뉴가 다시 활성화되지 않으면 메뉴가 닫힐 때까지의 시간(밀리초)</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>작업 표시줄에 표시</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>한 번 클릭하여 디렉토리 열기</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>지원 게임 패드</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>전작에 이어</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>인터넷 바로 가기 아이콘 디렉토리</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>유형 및 날짜별로 정렬</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>유형(폴더 또는 파일) 및 날짜별로 정렬</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>유형 및 이름별로 정렬</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>유형(폴더 또는 파일) 및 이름별로 정렬</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>업데이트 확인</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>애플리케이션 크기</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>옵션 기능</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>폴더에 대한 링크를 확인하고 콘텐츠를 표시합니다.</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>파일 확장자 및 이름별로 정렬</value>
   </data>
 </root>

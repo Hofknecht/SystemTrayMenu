@@ -247,7 +247,7 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Граница изабраног елемента</value>
+    <value>Ивица изабраног елемента</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Релативни именик</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Један клик да отворите директоријум</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Подршка Гамепад</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Поред претходног</value>
   </data>
@@ -481,7 +484,7 @@
     <value>Померајте се превлачењем</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Филтрирај мени према типу датотеке, нпр.: *.еке|*.длл</value>
+    <value>Филтрирајте мени према типу датотеке, нпр.: *.еке|*.длл</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>Прикажи број елемената</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Именик икона Интернет пречица</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Сортирано по врсти и датуму</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Сортирано по типу (фасцикла или датотека) и датуму</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Сортирано по врсти и називу</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Сортирано по типу (фасцикла или датотека) и називу</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Провери ажурирања</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Величина апликације</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Опционе карактеристике</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Решите везе до фасцикли и прикажите садржај</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Сортирано према екстензији датотеке и називу</value>
   </data>
 </root>

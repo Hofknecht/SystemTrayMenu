@@ -400,7 +400,7 @@
     <value>Aðalvalmynd birtist</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>Staðsetning músar (fyrir ofan verkstiku táknið)</value>
+    <value>Staðsetning músar (fyrir ofan verkstikutáknið)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Sérsniðið (dragaðu það á viðeigandi stað)</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Einn smellur til að opna möppu</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Stuðningur Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Við hliðina á fyrri</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Skrá yfir Internet flýtivísa tákn</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Raðað eftir tegund og dagsetningu</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Raðað eftir tegund (möppu eða skrá) og dagsetningu</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Raðað eftir tegund og nafni</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Raðað eftir tegund (möppu eða skrá) og nafni</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Athugaðu með uppfærslur</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Umsóknarstærð</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Valfrjálsir eiginleikar</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Leysa tengla á möppur og sýna efni</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Raðað eftir skráarlengingu og nafni</value>
   </data>
 </root>

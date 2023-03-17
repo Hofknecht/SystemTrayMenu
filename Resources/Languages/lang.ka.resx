@@ -163,7 +163,7 @@
     <value>გენერალი</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>ცხელი კლავიში</value>
+    <value>ცხელი კლავიატურა</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>დაიწყეთ Windows-ით</value>
@@ -397,7 +397,7 @@
     <value>ქვედა მარჯვენა</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>მთავარი მენიუ გამოჩნდება</value>
+    <value>გამოჩნდება მთავარი მენიუ</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>მაუსის მდებარეობა (დავალებების ზოლის ხატულაზე)</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ერთი დაწკაპუნებით დირექტორიას გასახსნელად</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Gamepad-ის მხარდაჭერა</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>წინას გვერდით</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ინტერნეტ მალსახმობების ხატულების დირექტორია</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>დალაგებულია ტიპისა და თარიღის მიხედვით</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>დალაგებულია ტიპის (საქაღალდე ან ფაილი) და თარიღის მიხედვით</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>დალაგებულია ტიპისა და სახელის მიხედვით</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>დალაგებულია ტიპის (საქაღალდის ან ფაილის) და სახელის მიხედვით</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Შეამოწმოთ განახლებები</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>განაცხადის ზომა</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>არჩევითი ფუნქციები</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>საქაღალდეების ბმულების გადაჭრა და შინაარსის ჩვენება</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>დალაგებულია ფაილის გაფართოებისა და სახელის მიხედვით</value>
   </data>
 </root>

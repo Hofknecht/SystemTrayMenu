@@ -28,14 +28,19 @@ namespace SystemTrayMenu.Helper
         internal Fading()
         {
             timer.Interval = Interval100FPS;
-            timer.Tick += (sender, e) => FadeStep();
+            timer.Tick += Timer_Tick;
         }
 
-        internal event EventHandlerEmpty Hide;
+        ~Fading() // the finalizer
+        {
+            Dispose(false);
+        }
 
-        internal event EventHandlerEmpty Show;
+        internal event Action Hide;
 
-        internal event EventHandler<double> ChangeOpacity;
+        internal event Action Show;
+
+        internal event Action<double> ChangeOpacity;
 
         internal enum FadingState
         {
@@ -62,6 +67,7 @@ namespace SystemTrayMenu.Helper
         {
             if (disposing)
             {
+                timer.Tick -= Timer_Tick;
                 timer.Dispose();
             }
         }
@@ -80,6 +86,11 @@ namespace SystemTrayMenu.Helper
             }
         }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            FadeStep();
+        }
+
         private void FadeStep()
         {
             switch (state)
@@ -90,13 +101,13 @@ namespace SystemTrayMenu.Helper
                         visible = true;
                         Show?.Invoke();
                         opacity = 0;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                     }
                     else if (Properties.Settings.Default.UseFading &&
                         opacity < ShownMinus)
                     {
                         opacity += StepIn;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                     }
                     else
                     {
@@ -104,11 +115,11 @@ namespace SystemTrayMenu.Helper
                         {
                             // #393 provoke a redraw for the CS_DROPSHADOW to work
                             opacity = ShownMinus;
-                            ChangeOpacity?.Invoke(this, opacity);
+                            ChangeOpacity?.Invoke(opacity);
                         }
 
                         opacity = Shown;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                         StartStopTimer(FadingState.Idle);
                     }
 
@@ -119,24 +130,24 @@ namespace SystemTrayMenu.Helper
                         visible = true;
                         Show?.Invoke();
                         opacity = 0;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                     }
                     else if (Properties.Settings.Default.UseFading &&
                         opacity < TransparentMinus)
                     {
                         opacity += StepIn;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                     }
                     else if (Properties.Settings.Default.UseFading &&
                         opacity > TransparentPlus)
                     {
                         opacity -= StepOut;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                     }
                     else
                     {
                         opacity = Transparent;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                         StartStopTimer(FadingState.Idle);
                     }
 
@@ -146,12 +157,12 @@ namespace SystemTrayMenu.Helper
                         opacity > StepOut)
                     {
                         opacity -= StepOut;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                     }
                     else if (visible)
                     {
                         opacity = 0;
-                        ChangeOpacity?.Invoke(this, opacity);
+                        ChangeOpacity?.Invoke(opacity);
                         visible = false;
                         Hide?.Invoke();
                         StartStopTimer(FadingState.Idle);

@@ -119,6 +119,10 @@ namespace SystemTrayMenu.Business
                 rowDatas = rowDatas.OrderByDescending(x => x.IsFolder)
                     .ThenByDescending(x => x.FileInfo.LastWriteTime).ToList();
             }
+            else if (Properties.Settings.Default.SortByFileExtensionAndName)
+            {
+                rowDatas = rowDatas.OrderBy(x => x.FileExtension).ThenBy(x => x.Text).ToList();
+            }
             else if (Properties.Settings.Default.SortByName)
             {
                 rowDatas = rowDatas.OrderBy(x => x.Text).ToList();

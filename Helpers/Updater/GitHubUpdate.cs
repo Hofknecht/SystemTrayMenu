@@ -73,7 +73,7 @@ namespace SystemTrayMenu.Helper.Updater
             for (int i = 0; i < releasesCount; i++)
             {
                 string tagName = releases[i]["tag_name"].ToString();
-                Version versionGitHub = new Version(tagName.Replace("v", string.Empty));
+                Version versionGitHub = new(tagName.Replace("v", string.Empty));
                 if (versionGitHub.CompareTo(versionCurrent) < 1)
                 {
                     releases.RemoveRange(i, releasesCount - i);
@@ -106,12 +106,13 @@ namespace SystemTrayMenu.Helper.Updater
         private static DialogResult NewVersionDialog()
         {
             const int ClientPad = 15;
-            newVersionForm = new();
-
-            newVersionForm.StartPosition = FormStartPosition.CenterScreen;
-            newVersionForm.FormBorderStyle = FormBorderStyle.FixedDialog;
-            newVersionForm.Icon = Config.GetAppIcon();
-            newVersionForm.ShowInTaskbar = false;
+            newVersionForm = new()
+            {
+                StartPosition = FormStartPosition.CenterScreen,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Icon = Config.GetAppIcon(),
+                ShowInTaskbar = false,
+            };
             newVersionForm.FormBorderStyle = FormBorderStyle.Sizable;
             newVersionForm.MaximizeBox = true;
             newVersionForm.MinimizeBox = false;
@@ -119,15 +120,19 @@ namespace SystemTrayMenu.Helper.Updater
             newVersionForm.MinimumSize = newVersionForm.ClientSize;
             newVersionForm.Text = Translator.GetText("New version available!");
 
-            Label label = new();
-            label.Size = new Size(newVersionForm.ClientSize.Width - ClientPad, 20);
-            label.Location = new Point(ClientPad, ClientPad);
-            label.Text = $"{Translator.GetText("Latest available version:")}    {GetLatestVersionName()}";
+            Label label = new()
+            {
+                Size = new Size(newVersionForm.ClientSize.Width - ClientPad, 20),
+                Location = new Point(ClientPad, ClientPad),
+                Text = $"{Translator.GetText("Latest available version:")}    {GetLatestVersionName()}",
+            };
             newVersionForm.Controls.Add(label);
 
-            Button buttonOK = new();
-            buttonOK.DialogResult = DialogResult.OK;
-            buttonOK.Name = "buttonOK";
+            Button buttonOK = new()
+            {
+                DialogResult = DialogResult.OK,
+                Name = "buttonOK",
+            };
             buttonOK.Location = new Point(
                 newVersionForm.ClientSize.Width - buttonOK.Size.Width - ClientPad,
                 newVersionForm.ClientSize.Height - buttonOK.Size.Height - ClientPad);
@@ -138,9 +143,11 @@ namespace SystemTrayMenu.Helper.Updater
             buttonOK.AutoSize = true;
             newVersionForm.Controls.Add(buttonOK);
 
-            Button buttonGoToDownloadPage = new();
-            buttonGoToDownloadPage.DialogResult = DialogResult.Yes;
-            buttonGoToDownloadPage.Name = "buttonGoToDownloadPage";
+            Button buttonGoToDownloadPage = new()
+            {
+                DialogResult = DialogResult.Yes,
+                Name = "buttonGoToDownloadPage",
+            };
             buttonGoToDownloadPage.Location = new Point(
                 newVersionForm.ClientSize.Width - buttonGoToDownloadPage.Size.Width - ClientPad - buttonOK.Size.Width - ClientPad,
                 newVersionForm.ClientSize.Height - buttonGoToDownloadPage.Size.Height - ClientPad);
@@ -151,8 +158,10 @@ namespace SystemTrayMenu.Helper.Updater
             buttonGoToDownloadPage.AutoSize = true;
             newVersionForm.Controls.Add(buttonGoToDownloadPage);
 
-            TextBox textBox = new();
-            textBox.Location = new Point(ClientPad, label.Location.Y + label.Size.Height + 5);
+            TextBox textBox = new()
+            {
+                Location = new Point(ClientPad, label.Location.Y + label.Size.Height + 5),
+            };
             textBox.Size = new Size(
                 newVersionForm.ClientSize.Width - (ClientPad * 2),
                 buttonOK.Location.Y - ClientPad - textBox.Location.Y);

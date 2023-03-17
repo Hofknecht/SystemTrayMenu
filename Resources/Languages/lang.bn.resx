@@ -328,7 +328,7 @@
     <value>শর্টকাট লিঙ্কে সমস্যা</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>এই শর্টকাটটি যে আইটেমটিকে বোঝায় তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না৷</value>
+    <value>এই শর্টকাটটি যে আইটেমটি নির্দেশ করে তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না।</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ডিরেক্টরি খুলুন</value>
@@ -337,7 +337,7 @@
     <value>কাজ ব্যবস্থাপক</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>নিষ্ক্রিয় করা হয়েছে</value>
+    <value>নিষ্ক্রিয়</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>সক্রিয়</value>
@@ -376,7 +376,7 @@
     <value>শুধুমাত্র ফাইল</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>এই সংখ্যার বেশি আইটেম হলে ক্যাশে সাফ করুন</value>
+    <value>এই সংখ্যার বেশি আইটেম থাকলে ক্যাশে সাফ করুন</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>একটি ডিরেক্টরি খুলতে একক ক্লিক করুন</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>গেমপ্যাড সমর্থন করে</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>আগেরটির পাশে</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ইন্টারনেট শর্টকাট আইকনের ডিরেক্টরি</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>প্রকার এবং তারিখ অনুসারে সাজানো</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>প্রকার (ফোল্ডার বা ফাইল) এবং তারিখ অনুসারে সাজানো</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>প্রকার এবং নাম অনুসারে সাজানো</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>প্রকার (ফোল্ডার বা ফাইল) এবং নাম অনুসারে সাজানো</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>হালনাগাদ এর জন্য অনুসন্ধান করুন</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>আবেদনের আকার</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>ঐচ্ছিক বৈশিষ্ট্য</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>ফোল্ডারগুলির লিঙ্কগুলি সমাধান করুন এবং সামগ্রী দেখান৷</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ফাইল এক্সটেনশন এবং নাম অনুসারে সাজানো</value>
   </data>
 </root>

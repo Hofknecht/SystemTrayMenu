@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ຄລິກດຽວເພື່ອເປີດໄດເລກະທໍລີ</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>ຮອງຮັບ Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>ຖັດຈາກອັນກ່ອນໜ້າ</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ໄດເລກະທໍລີຂອງໄອຄອນທາງລັດອິນເຕີເນັດ</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>ຈັດຮຽງຕາມປະເພດ ແລະວັນທີ</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>ຈັດຮຽງຕາມປະເພດ (ໂຟນເດີ ຫຼືໄຟລ໌) ແລະວັນທີ</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>ຈັດຮຽງຕາມປະເພດແລະຊື່</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>ຈັດຮຽງຕາມປະເພດ (ໂຟນເດີ ຫຼືໄຟລ໌) ແລະຊື່</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>ກວດສອບການອັບເດດ</value>
@@ -529,12 +532,21 @@
     <value>ສະ​ບັບ​ຫລ້າ​ສຸດ​ທີ່​ມີ​ຢູ່​:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ລຸ້ນໃໝ່ມີໃຫ້!</value>
+    <value>ມີລຸ້ນໃໝ່!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>ທ່ານມີເວີຊັນຫຼ້າສຸດຂອງ SystemTrayMenu!</value>
   </data>
   <data name="Application size" xml:space="preserve">
     <value>ຂະຫນາດຄໍາຮ້ອງສະຫມັກ</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>ຄຸນສົມບັດທາງເລືອກ</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>ແກ້ໄຂການເຊື່ອມຕໍ່ກັບໂຟນເດີແລະສະແດງເນື້ອຫາ</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ຈັດຮຽງຕາມນາມສະກຸນໄຟລ໌ ແລະຊື່</value>
   </data>
 </root>

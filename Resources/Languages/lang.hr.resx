@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Jednim klikom otvorite imenik</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Podržava gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Pored prethodnog</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Imenik ikona internetskih prečaca</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Poredano po vrsti i datumu</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Poredano po vrsti (mapa ili datoteka) i datumu</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Poredano po vrsti i nazivu</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Poredano po vrsti (mapa ili datoteka) i nazivu</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Provjerite ima li ažuriranja</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Veličina aplikacije</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Dodatne značajke</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Razriješite veze na mape i prikažite sadržaj</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Poredano po ekstenziji datoteke i nazivu</value>
   </data>
 </root>

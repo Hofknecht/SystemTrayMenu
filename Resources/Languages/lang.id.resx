@@ -301,7 +301,7 @@
     <value>Penggeser saat mouse melayang di atasnya 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>Geser saat mouse melayang di atasnya 2</value>
+    <value>Penggeser saat mouse melayang di atasnya 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>Gunakan ikon dari direktori</value>
@@ -379,13 +379,13 @@
     <value>Hapus cache jika lebih dari jumlah item ini</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Tambahkan direktori contoh 'Start Menu'</value>
+    <value>Tambahkan direktori sampel 'Start Menu'</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Tinggi baris</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Sudut bulat</value>
+    <value>Sudut bundar</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Penampilan</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Satu klik untuk membuka direktori</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Mendukung Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Di sebelah yang sebelumnya</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Direktori Ikon Pintasan Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Diurutkan berdasarkan jenis dan tanggal</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Diurutkan berdasarkan jenis (folder atau file) dan tanggal</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Diurutkan berdasarkan jenis dan nama</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Diurutkan berdasarkan jenis (folder atau file) dan nama</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Periksa pembaruan</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Ukuran aplikasi</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Fitur pilihan</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Selesaikan tautan ke folder dan tampilkan konten</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Diurutkan berdasarkan ekstensi file dan nama</value>
   </data>
 </root>

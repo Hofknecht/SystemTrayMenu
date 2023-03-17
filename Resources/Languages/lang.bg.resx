@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Едно щракване за отваряне на директория</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Поддържа геймпад</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>До предишния</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Директория с икони за бърз достъп до интернет</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Сортирани по вид и дата</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Сортирани по тип (папка или файл) и дата</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Сортирани по тип и име</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Сортирани по тип (папка или файл) и име</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Провери за обновления</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Размер на приложението</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Опционални функции</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Разрешаване на връзки към папки и показване на съдържание</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Сортирани по файлово разширение и име</value>
   </data>
 </root>

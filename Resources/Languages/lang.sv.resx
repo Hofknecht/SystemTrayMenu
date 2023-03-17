@@ -277,7 +277,7 @@
     <value>Bakgrund av pil när du klickar</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>Bakgrund av pilen medan musen svävar över den</value>
+    <value>Bakgrund av pil medan musen svävar över den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>Färgschema mörkt</value>
@@ -310,7 +310,7 @@
     <value>Storlekar i procent</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Kant på menyn</value>
+    <value>Kant av menyn</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Ikoner</value>
@@ -436,7 +436,10 @@
     <value>Visa endast som sökresultat</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>Ett klick för att öppna en katalog</value>
+    <value>Enkelklick för att öppna en katalog</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Support Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Bredvid den föregående</value>
@@ -511,13 +514,13 @@
     <value>Visa länköverlagring</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Katalog över internetgenvägsikoner</value>
+    <value>Katalog över Internet genvägsikoner</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sorterat efter typ och datum</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Sorterat efter typ (mapp eller fil) och datum</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Sorterat efter typ och namn</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Sorterat efter typ (mapp eller fil) och namn</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Sök efter uppdateringar</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Applikationsstorlek</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Valfria funktioner</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Lös länkar till mappar och visa innehåll</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sorterat efter filtillägg och namn</value>
   </data>
 </root>

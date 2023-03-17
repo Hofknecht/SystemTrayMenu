@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>איין גיט צו עפענען אַ וועגווייַזער</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>שטיצן גאַמעפּאַד</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>נעבן דעם פריערדיקן</value>
   </data>
@@ -451,7 +454,7 @@
     <value>סוב מעניו איז ארויס</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>בילדל גרייס</value>
+    <value>ייקאַן גרייס</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>שטיצן SystemTrayMenu</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directory פון אינטערנעט דורכוועג יקאָנס</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>סאָרטירט לויט טיפּ און דאַטע</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>סאָרטירט לויט טיפּ (טעקע אָדער טעקע) און דאַטע</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>סאָרטירט לויט טיפּ און נאָמען</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>סאָרטירט לויט טיפּ (טעקע אָדער טעקע) און נאָמען</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>זוך נייע ווערסיעס</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>אַפּפּליקאַטיאָן גרייס</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>אָפּטיאָנאַל פֿעיִקייטן</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>סאָלווע לינקס צו פאָלדערס און ווייַזן אינהאַלט</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>סאָרטירט לויט טעקע געשפּרייט און נאָמען</value>
   </data>
 </root>

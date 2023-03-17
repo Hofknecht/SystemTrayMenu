@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ចុចមួយដងដើម្បីបើកថត</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>គាំទ្រ Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>នៅជាប់នឹងមុន។</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>បញ្ជីឈ្មោះរូបតំណាងផ្លូវកាត់អ៊ីនធឺណិត</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>តម្រៀបតាមប្រភេទ និងកាលបរិច្ឆេទ</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>តម្រៀបតាមប្រភេទ (ថតឯកសារ ឬឯកសារ) និងកាលបរិច្ឆេទ</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>តម្រៀបតាមប្រភេទនិងឈ្មោះ</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>តម្រៀបតាមប្រភេទ (ថតឯកសារ ឬឯកសារ) និងឈ្មោះ</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>ពិនិត្យមើលបច្ចុប្បន្នភាព</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>ទំហំកម្មវិធី</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>លក្ខណៈពិសេសស្រេចចិត្ត</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>ដោះស្រាយតំណភ្ជាប់ទៅថតឯកសារ និងបង្ហាញមាតិកា</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>តម្រៀបតាមផ្នែកបន្ថែមឯកសារ និងឈ្មោះ</value>
   </data>
 </root>

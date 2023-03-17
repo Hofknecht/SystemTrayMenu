@@ -157,7 +157,7 @@
     <value>Ne eblis registri la klavoklavon.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>Ĉesigi</value>
+    <value>Ĉesi</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Generalo</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Unu alklaku por malfermi dosierujon</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Subtenu Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Apud la antaŭa</value>
   </data>
@@ -454,7 +457,7 @@
     <value>Ikono grandeco</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Subtenu SystemTrayMenu</value>
+    <value>Subteno SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Forvelkanta</value>
@@ -496,7 +499,7 @@
     <value>Montru funkcioklavon 'Alpingli menuon'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>Montri funkcioklavon 'Agordoj'</value>
+    <value>Montru funkcioklavon 'Agordoj'</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
     <value>Montru funkcioklavon 'Rekomenci'</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Dosierujo de Interretaj Ŝparvojaj Ikonoj</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Ordigita laŭ tipo kaj dato</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Ordigita laŭ tipo (dosierujo aŭ dosiero) kaj dato</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordigita laŭ tipo kaj nomo</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Ordigita laŭ tipo (dosierujo aŭ dosiero) kaj nomo</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Kontrolu ĝisdatigojn</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Aplika grandeco</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Laŭvolaj Trajtoj</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Solvu ligilojn al dosierujoj kaj montru enhavon</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ordigita laŭ dosiera etendo kaj nomo</value>
   </data>
 </root>

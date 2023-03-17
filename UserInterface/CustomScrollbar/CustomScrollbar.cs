@@ -179,7 +179,7 @@ namespace SystemTrayMenu.UserInterface
         /// Show the control
         /// (workaround, because visible = false, was causing appearing scrollbars).
         /// </summary>
-        /// <param name="newHeight">newHeight which to paint</param>
+        /// <param name="newHeight">newHeight which to paint.</param>
         internal void PaintEnable(int newHeight)
         {
             int newWidth = Math.Max(width, Width);
@@ -204,6 +204,11 @@ namespace SystemTrayMenu.UserInterface
 
         protected override void Dispose(bool disposing)
         {
+            MouseDown -= CustomScrollbar_MouseDown;
+            MouseMove -= CustomScrollbar_MouseMove;
+            MouseUp -= CustomScrollbar_MouseUp;
+            MouseLeave -= CustomScrollbar_MouseLeave;
+            timerMouseStillClicked.Tick -= TimerMouseStillClicked_Tick;
             timerMouseStillClicked.Dispose();
             base.Dispose(disposing);
         }

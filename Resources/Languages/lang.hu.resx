@@ -262,7 +262,7 @@
     <value>Nyissa meg az alkalmazáskönyvtárat</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
-    <value>Maximális menü magasság</value>
+    <value>A menü maximális magassága</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Nyíl</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Egyetlen kattintással megnyithat egy könyvtárat</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Támogatás Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Az előző mellé</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Internet parancsikonok könyvtára</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Típus és dátum szerint rendezve</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Típus (mappa vagy fájl) és dátum szerint rendezve</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Típus és név szerint rendezve</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Típus (mappa vagy fájl) és név szerint rendezve</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Frissítések keresése</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Alkalmazás mérete</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Opcionális funkciók</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Mappákra mutató hivatkozások feloldása és tartalom megjelenítése</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Fájlkiterjesztés és név szerint rendezve</value>
   </data>
 </root>

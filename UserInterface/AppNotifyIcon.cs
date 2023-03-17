@@ -41,9 +41,9 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        public event EventHandlerEmpty Click;
+        public event Action Click;
 
-        public event EventHandlerEmpty OpenLog;
+        public event Action OpenLog;
 
         public void Dispose()
         {

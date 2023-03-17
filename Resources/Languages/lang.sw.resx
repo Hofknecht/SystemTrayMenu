@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Bofya mara moja ili kufungua saraka</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Msaada wa Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Karibu na uliopita</value>
   </data>
@@ -469,7 +472,7 @@
     <value>Imepangwa kwa jina</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>Inapanga</value>
+    <value>Kupanga</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
     <value>Nakili kipengele cha safu mlalo kupitia kuburuta na kudondosha</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Saraka ya Aikoni za Njia za Mkato za Mtandao</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Imepangwa kwa aina na tarehe</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Imepangwa kwa aina (folda au faili) na tarehe</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Imepangwa kwa aina na jina</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Imepangwa kwa aina (folda au faili) na jina</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Angalia vilivyojiri vipya</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Ukubwa wa maombi</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Sifa za hiari</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Tatua viungo vya folda na uonyeshe maudhui</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Imepangwa kwa ugani wa faili na jina</value>
   </data>
 </root>

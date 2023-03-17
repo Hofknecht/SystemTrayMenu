@@ -385,7 +385,7 @@
     <value>Altura da fila</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Esquinas redondeadas</value>
+    <value>Cantos redondeados</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Aparición</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Fai clic só para abrir un directorio</value>
+  </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Soporte Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>A carón do anterior</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directorio de iconas de atallos de Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Ordenado por tipo e data</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Ordenado por tipo (cartafol ou ficheiro) e data</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordenado por tipo e nome</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Ordenado por tipo (cartafol ou ficheiro) e nome</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Comproba se hai actualizacións</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Tamaño da aplicación</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Funcións opcionais</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Resolve ligazóns a cartafoles e mostra o contido</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ordenado por extensión de ficheiro e nome</value>
   </data>
 </root>

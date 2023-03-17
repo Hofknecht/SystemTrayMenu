@@ -190,7 +190,7 @@
     <value>نقرة واحدة لفتح عنصر</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>نظام الألوان الداكن نشط دائمًا</value>
+    <value>نظام الألوان داكن نشط دائمًا</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>متقدم</value>
@@ -352,7 +352,7 @@
     <value>مللي ثانية حتى يتم إغلاق القائمة إذا لم يتم إعادة تنشيط القائمة</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>إظهار في شريط المهام</value>
+    <value>عرض في شريط المهام</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>أضف الدليل</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>نقرة واحدة لفتح دليل</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>دعم Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>بجانب السابق</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>دليل أيقونات اختصارات الإنترنت</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>مرتبة حسب النوع والتاريخ</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>مرتبة حسب النوع (مجلد أو ملف) والتاريخ</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>مرتبة حسب النوع والاسم</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>مرتبة حسب النوع (المجلد أو الملف) والاسم</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>تحقق من وجود تحديثات</value>
@@ -526,7 +529,7 @@
     <value>انتقل إلى صفحة التنزيل</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
-    <value>أحدث نسخة متاحة:</value>
+    <value>أحدث إصدار متاح:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
     <value>نسخة جديدة متاحة!</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>حجم التطبيق</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>ميزات اختيارية</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>حل روابط المجلدات وإظهار المحتوى</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>مرتبة حسب امتداد الملف والاسم</value>
   </data>
 </root>

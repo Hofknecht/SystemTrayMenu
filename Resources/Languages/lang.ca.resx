@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Un sol clic per obrir un directori</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Suport Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Al costat de l'anterior</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Directori d'icones de dreceres d'Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Ordenat per tipus i data</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Ordenat per tipus (carpeta o fitxer) i data</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Ordenat per tipus i nom</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Ordenat per tipus (carpeta o fitxer) i nom</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Buscar actualitzacions</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Mida de l'aplicació</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Característiques opcionals</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Resoldre enllaços a carpetes i mostrar contingut</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Ordenat per extensió de fitxer i nom</value>
   </data>
 </root>

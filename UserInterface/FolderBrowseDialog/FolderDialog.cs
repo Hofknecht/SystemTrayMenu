@@ -14,6 +14,11 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
     {
         private bool isDisposed;
 
+        ~FolderDialog() // the finalizer
+        {
+            Dispose(false);
+        }
+
         /// <summary>
         /// Gets or sets /sets folder in which dialog will be open.
         /// </summary>

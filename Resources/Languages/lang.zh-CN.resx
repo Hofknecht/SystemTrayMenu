@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>单击以打开目录</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>支持游戏手柄</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>在上一个旁边</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Internet 快捷方式图标目录</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>按类型和日期排序</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>按类型（文件夹或文件）和日期排序</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>按类型和名称排序</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>按类型（文件夹或文件）和名称排序</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>检查更新</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>应用规模</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>可选功能</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>解析文件夹链接并显示内容</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>按文件扩展名和名称排序</value>
   </data>
 </root>

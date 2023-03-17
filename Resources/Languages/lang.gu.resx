@@ -211,13 +211,13 @@
     <value>ડિફૉલ્ટ</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>જો ફોકસ ખોવાઈ જાય અને માઉસ હજુ પણ મેનુ પર હોય</value>
+    <value>જો ફોકસ ખોવાઈ ગયું હોય અને માઉસ હજુ પણ મેનુ પર હોય</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>જ્યારે માઉસ તેના પર હોય ત્યારે મેનૂ ખુલે ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>જો માઉસ મેનુ છોડી દે તો મેનુ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
+    <value>જો માઉસ મેનુ છોડે તો મેનુ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>મેનુની મહત્તમ પહોળાઈ</value>
@@ -328,7 +328,7 @@
     <value>શોર્ટકટ લિંક સાથે સમસ્યા</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કામ કરશે નહીં.</value>
+    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કાર્ય કરશે નહીં.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ડિરેક્ટરી ખોલો</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>ડિરેક્ટરી ખોલવા માટે એક ક્લિક કરો</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>ગેમપેડને સપોર્ટ કરો</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>પાછલા એકની બાજુમાં</value>
   </data>
@@ -448,7 +451,7 @@
     <value>ઓવરલેપિંગ</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>સબ મેનુ દેખાય છે</value>
+    <value>સબ મેનૂ દેખાય છે</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>ચિહ્નનું કદ</value>
@@ -472,7 +475,7 @@
     <value>વર્ગીકરણ</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>ખેંચો અને છોડો દ્વારા પંક્તિ તત્વની નકલ કરો</value>
+    <value>ખેંચો અને છોડો મારફતે પંક્તિ તત્વ નકલ કરો</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>ખેંચો</value>
@@ -493,7 +496,7 @@
     <value>ફંક્શન કી 'ઓપન ફોલ્ડર' બતાવો</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>ફંક્શન કી 'પિન મેનૂ' બતાવો</value>
+    <value>ફંક્શન કી 'પિન મેનુ' બતાવો</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
     <value>ફંક્શન કી 'સેટિંગ્સ' બતાવો</value>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>ઈન્ટરનેટ શોર્ટકટ ચિહ્નોની ડિરેક્ટરી</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>પ્રકાર અને તારીખ દ્વારા ક્રમાંકિત</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>પ્રકાર (ફોલ્ડર અથવા ફાઇલ) અને તારીખ દ્વારા સૉર્ટ કરેલ</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>પ્રકાર અને નામ દ્વારા ક્રમાંકિત</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>પ્રકાર (ફોલ્ડર અથવા ફાઇલ) અને નામ દ્વારા સૉર્ટ કરેલ</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>અપડેટ માટે ચકાસો</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>એપ્લિકેશનનું કદ</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>વૈકલ્પિક લક્ષણો</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>ફોલ્ડર્સની લિંક્સ ઉકેલો અને સામગ્રી બતાવો</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>ફાઇલ એક્સ્ટેંશન અને નામ દ્વારા સૉર્ટ કરેલ</value>
   </data>
 </root>

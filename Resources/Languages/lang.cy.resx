@@ -217,7 +217,7 @@
     <value>Milieiliadau nes bod dewislen yn agor pan fydd y llygoden arno</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>Mae milieiliadau nes bod y ddewislen yn cau os bydd y llygoden wedyn yn gadael y ddewislen</value>
+    <value>Milieiliadau nes bod y ddewislen yn cau os bydd y llygoden wedyn yn gadael y ddewislen</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>Lled uchaf y ddewislen</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Cliciwch sengl i agor cyfeiriadur</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Cefnogi Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Wrth ymyl yr un blaenorol</value>
   </data>
@@ -513,11 +516,11 @@
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
     <value>Cyfeiriadur o Eiconau Llwybr Byr Rhyngrwyd</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Trefnwyd yn ôl math a dyddiad</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Trefnwyd yn ôl math (ffolder neu ffeil) a dyddiad</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Trefnwyd yn ôl math ac enw</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Trefnwyd yn ôl math (ffolder neu ffeil) ac enw</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Gwiriwch am ddiweddariadau</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Maint y cais</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Nodweddion Dewisol</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Datrys dolenni i ffolderi a dangos cynnwys</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Trefnwyd yn ôl estyniad ffeil ac enw</value>
   </data>
 </root>

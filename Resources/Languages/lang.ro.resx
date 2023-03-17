@@ -268,7 +268,7 @@
     <value>Săgeată</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Săgeată când dați clic</value>
+    <value>Săgeată când faceți clic</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Săgeată în timp ce mouse-ul trece peste ea</value>
@@ -313,7 +313,7 @@
     <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>Pictograme</value>
+    <value>icoane</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>Setați prin meniul contextual</value>
@@ -328,7 +328,7 @@
     <value>Problemă cu legătura rapidă</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Elementul la care se referă această comandă rapidă a fost schimbat sau mutat, așa că această comandă rapidă nu va mai funcționa corect.</value>
+    <value>Elementul la care se referă această comandă rapidă a fost modificat sau mutat, așa că această comandă rapidă nu va mai funcționa corect.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Deschide directorul</value>
@@ -379,7 +379,7 @@
     <value>Goliți memoria cache dacă este mai mare de acest număr de elemente</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Adăugați exemplu de director „Meniu Start”</value>
+    <value>Adăugați exemplu de director „Meniul Start”</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Înălțimea rândului</value>
@@ -438,6 +438,9 @@
   <data name="Single click to open a directory" xml:space="preserve">
     <value>Un singur clic pentru a deschide un director</value>
   </data>
+  <data name="Support Gamepad" xml:space="preserve">
+    <value>Suport Gamepad</value>
+  </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Alături de precedentul</value>
   </data>
@@ -490,7 +493,7 @@
     <value>Afișați titlul directorului în partea de sus</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>Afișați tasta funcțională „Deschidere folder”</value>
+    <value>Afișați tasta funcțională „Deschidere dosar”</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>Afișați tasta funcțională „Pin meniu”</value>
@@ -511,13 +514,13 @@
     <value>Afișați suprapunerea linkului</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Director cu pictograme de comenzi rapide pe Internet</value>
+    <value>Director de pictograme de comenzi rapide pe Internet</value>
   </data>
-  <data name="Sorted by type and date" xml:space="preserve">
-    <value>Sortate după tip și dată</value>
+  <data name="Sorted by type (folder or file) and date" xml:space="preserve">
+    <value>Sortate după tip (dosar sau fișier) și dată</value>
   </data>
-  <data name="Sorted by type and name" xml:space="preserve">
-    <value>Sortate după tip și nume</value>
+  <data name="Sorted by type (folder or file) and name" xml:space="preserve">
+    <value>Sortate după tip (dosar sau fișier) și nume</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Verifică pentru actualizări</value>
@@ -536,5 +539,14 @@
   </data>
   <data name="Application size" xml:space="preserve">
     <value>Dimensiunea aplicației</value>
+  </data>
+  <data name="Optional Features" xml:space="preserve">
+    <value>Caracteristici opționale</value>
+  </data>
+  <data name="Resolve links to folders and show content" xml:space="preserve">
+    <value>Rezolvați linkurile către dosare și afișați conținutul</value>
+  </data>
+  <data name="Sorted by file extension and name" xml:space="preserve">
+    <value>Sortate după extensia și nume de fișier</value>
   </data>
 </root>

@@ -13,7 +13,7 @@ namespace SystemTrayMenu.Helper
     /// The enumeration of possible modifiers.
     /// </summary>
     [Flags]
-    internal enum KeyboardHookModifierKeys : uint
+    public enum KeyboardHookModifierKeys : uint
     {
         None = 0,
         Alt = 1,
@@ -30,7 +30,7 @@ namespace SystemTrayMenu.Helper
         public KeyboardHook()
         {
             // register the event of the inner native window.
-            window.KeyPressed += (sender, e) => KeyPressed?.Invoke(this, e);
+            window.KeyPressed += Window_KeyPressed;
         }
 
         /// <summary>
@@ -47,6 +47,7 @@ namespace SystemTrayMenu.Helper
             }
 
             // dispose the inner native window.
+            window.KeyPressed -= Window_KeyPressed;
             window.Dispose();
         }
 
@@ -102,6 +103,11 @@ namespace SystemTrayMenu.Helper
         internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Keys key)
         {
             RegisterHotKey((uint)modifier, key);
+        }
+
+        private void Window_KeyPressed(object sender, KeyPressedEventArgs e)
+        {
+            KeyPressed?.Invoke(this, e);
         }
 
         private void RegisterHotKey(uint modifier, Keys key)
