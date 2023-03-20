@@ -517,10 +517,10 @@
     <value>Interneta īsceļu ikonu direktorijs</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
-    <value>Sakārtots pēc veida (mape vai fails) un datuma</value>
+    <value>Kārtots pēc veida (mape vai fails) un datuma</value>
   </data>
   <data name="Sorted by type (folder or file) and name" xml:space="preserve">
-    <value>Kārtots pēc veida (mape vai fails) un nosaukuma</value>
+    <value>Sakārtots pēc veida (mape vai fails) un nosaukuma</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Meklēt atjauninājumus</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Sakārtots pēc faila paplašinājuma un nosaukuma</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopēt</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Griezt</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Ielīmēt</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Izvēlēties visus</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Atsaukt</value>
   </data>
 </root>

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>시스템 트레이 메뉴 정보</value>
+    <value>SystemTrayMenu 정보</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>확인</value>
+    <value>좋아요</value>
   </data>
   <data name="App start" xml:space="preserve">
     <value>앱 시작</value>
@@ -133,7 +133,7 @@
     <value>예배 규칙서</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>디렉토리가 비어 있습니다.</value>
+    <value>디렉터리 비어 있음</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>세부</value>
@@ -142,7 +142,7 @@
     <value>시스템 정보</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
-    <value>디렉토리에 액세스할 수 없음</value>
+    <value>디렉터리에 액세스할 수 없음</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>언어</value>
@@ -178,19 +178,19 @@
     <value>FAQ를 읽고 SystemTrayMenu의 루트 디렉토리를 선택하십시오.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
-    <value>디렉토리 선택</value>
+    <value>디렉터리 선택</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>앱의 루트 디렉토리가 존재하지 않거나 비어 있습니다! 루트 디렉터리를 변경하거나 일부 파일, 디렉터리 또는 바로 가기를 루트 디렉터리에 넣습니다.</value>
+    <value>앱의 루트 디렉터리가 존재하지 않거나 비어 있습니다! 루트 디렉토리를 변경하거나 일부 파일, 디렉토리 또는 바로 가기를 루트 디렉토리에 넣습니다.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>앱의 루트 디렉터리에 액세스할 수 없습니다. 디렉토리에 대한 액세스 권한을 부여하거나 루트 디렉토리를 변경하십시오.</value>
+    <value>앱의 루트 디렉터리에 대한 액세스 권한이 없습니다. 디렉토리에 대한 액세스 권한을 부여하거나 루트 디렉토리를 변경하십시오.</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
-    <value>요소를 열려면 한 번 클릭</value>
+    <value>한 번 클릭하여 요소 열기</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>어두운 색 구성표 항상 활성</value>
+    <value>색 구성표 어두운 항상 활성</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>고급의</value>
@@ -205,25 +205,25 @@
     <value>딸깍 하는 소리</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>사용자 정의</value>
+    <value>커스터마이징</value>
   </data>
   <data name="Default" xml:space="preserve">
     <value>기본</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>초점을 잃고 마우스가 여전히 메뉴에 있는 경우</value>
+    <value>포커스가 사라지고 마우스가 여전히 메뉴에 있는 경우</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>마우스가 메뉴에 있을 때 메뉴가 열릴 때까지의 밀리초</value>
+    <value>메뉴 위에 마우스를 놓았을 때 메뉴가 열릴 때까지 밀리초</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>마우스가 메뉴를 떠난 후 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+    <value>마우스가 메뉴를 떠나면 메뉴가 닫힐 때까지의 밀리초</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>최대 메뉴 너비</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
-    <value>메뉴는 계속 열려 있습니다</value>
+    <value>메뉴는 계속 열려 있습니다.</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>메뉴가 열릴 때까지의 시간</value>
@@ -253,7 +253,7 @@
     <value>상대 디렉토리</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>응용 프로그램 디렉토리에 구성 파일 저장</value>
+    <value>애플리케이션 디렉토리에 구성 파일 저장</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
     <value>구성 및 로그 파일</value>
@@ -271,13 +271,13 @@
     <value>클릭 시 화살표</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>마우스가 위에 있는 동안 화살표</value>
+    <value>마우스가 위에 있을 때 화살표</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>클릭 시 화살표 배경</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>마우스가 위에 있는 동안 화살표의 배경</value>
+    <value>마우스가 위에 있을 때 화살표의 배경</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>색 구성표 어두운</value>
@@ -298,7 +298,7 @@
     <value>드래그하는 동안 슬라이더</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>마우스를 가져가는 동안 슬라이더 1</value>
+    <value>마우스가 위에 있는 동안 슬라이더 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>마우스가 위에 있는 동안 슬라이더 2</value>
@@ -307,16 +307,16 @@
     <value>디렉토리의 아이콘 사용</value>
   </data>
   <data name="Sizes in percent" xml:space="preserve">
-    <value>크기(%)</value>
+    <value>퍼센트 크기</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>메뉴의 테두리</value>
+    <value>메뉴 테두리</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>아이콘</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>컨텍스트 메뉴로 설정</value>
+    <value>상황에 맞는 메뉴로 설정</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>디렉토리로 설정</value>
@@ -328,7 +328,7 @@
     <value>바로가기 링크 문제</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>이 바로 가기가 참조하는 항목이 변경되거나 이동되었으므로 이 바로 가기가 더 이상 제대로 작동하지 않습니다.</value>
+    <value>이 바로 가기가 참조하는 항목이 변경 또는 이동되었으므로 이 바로 가기가 더 이상 제대로 작동하지 않습니다.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>디렉토리 열기</value>
@@ -349,16 +349,16 @@
     <value>초점을 잃고 Enter 키를 누른 경우</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>메뉴가 다시 활성화되지 않으면 메뉴가 닫힐 때까지의 시간(밀리초)</value>
+    <value>메뉴가 다시 활성화되지 않은 경우 메뉴가 닫힐 때까지 밀리초</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>작업 표시줄에 표시</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>디렉토리 추가</value>
+    <value>디렉터리 추가</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>루트 디렉토리에 디렉토리 내용 추가</value>
+    <value>디렉토리 내용을 루트 디렉토리에 추가</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>디렉토리 경로</value>
@@ -370,13 +370,13 @@
     <value>재귀</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>디렉토리 제거</value>
+    <value>디렉터리 제거</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>파일만</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>이 항목 수보다 많은 경우 캐시 지우기</value>
+    <value>이 항목 수보다 많으면 캐시 지우기</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>샘플 디렉토리 '시작 메뉴' 추가</value>
@@ -394,7 +394,7 @@
     <value>왼쪽 하단</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>오른쪽 하단</value>
+    <value>오른쪽 아래</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>메인 메뉴가 나타납니다</value>
@@ -409,10 +409,10 @@
     <value>요소</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>집단</value>
+    <value>강요</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>시작 시 드라이브 바로 가기 생성</value>
+    <value>시작 시 드라이브 바로가기 생성</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>은닉처</value>
@@ -424,7 +424,7 @@
     <value>숨겨진 파일 및 디렉토리</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>표시 안 함</value>
+    <value>표시하지 않음</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>크기 및 위치</value>
@@ -442,16 +442,16 @@
     <value>지원 게임 패드</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>전작에 이어</value>
+    <value>전편 옆에</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>픽셀로 오프셋</value>
+    <value>픽셀 오프셋</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>겹침</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>하위 메뉴가 나타납니다</value>
+    <value>하위 메뉴가 나타납니다.</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>아이콘 크기</value>
@@ -463,19 +463,19 @@
     <value>페이딩</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>다른 인스턴스로 단축키 보내기</value>
+    <value>다른 인스턴스에 핫키 보내기</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>날짜순 정렬</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>이름순으로 정렬</value>
+    <value>이름순 정렬</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>정렬</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>끌어서 놓기를 통해 행 요소 복사</value>
+    <value>드래그 앤 드롭을 통해 행 요소 복사</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>견인</value>
@@ -484,13 +484,13 @@
     <value>스와이프로 스크롤</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>파일 유형별 필터 메뉴 예: *.exe|*.dll</value>
+    <value>파일 형식별 필터 메뉴 예: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>요소 수 표시</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>맨 위에 디렉토리 제목 표시</value>
+    <value>상단에 디렉토리 제목 표시</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>기능 키 '폴더 열기' 표시</value>
@@ -532,21 +532,36 @@
     <value>사용 가능한 최신 버전:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>새 버전을 사용할 수 있습니다!</value>
+    <value>새로운 버전을 사용할 수 있습니다!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>최신 버전의 SystemTrayMenu가 있습니다!</value>
   </data>
   <data name="Application size" xml:space="preserve">
-    <value>애플리케이션 크기</value>
+    <value>신청 규모</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
-    <value>옵션 기능</value>
+    <value>선택적 기능</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>폴더에 대한 링크를 확인하고 콘텐츠를 표시합니다.</value>
+    <value>폴더에 대한 링크를 확인하고 콘텐츠 표시</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
-    <value>파일 확장자 및 이름별로 정렬</value>
+    <value>파일 확장자와 이름으로 정렬</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>복사</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>자르다</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>반죽</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>모두 선택</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>실행 취소</value>
   </data>
 </root>

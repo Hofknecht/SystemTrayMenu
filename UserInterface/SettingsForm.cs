@@ -752,10 +752,7 @@ namespace SystemTrayMenu.UserInterface
 
                 registryKeyContextMenuCommand = Registry.CurrentUser.CreateSubKey(Command);
 
-                if (registryKeyContextMenuCommand != null)
-                {
-                    registryKeyContextMenuCommand.SetValue(string.Empty, binLocation + " \"%1\"");
-                }
+                registryKeyContextMenuCommand?.SetValue(string.Empty, binLocation + " \"%1\"");
 
                 Settings.Default.SetFolderByWindowsContextMenu = true;
             }
@@ -765,15 +762,9 @@ namespace SystemTrayMenu.UserInterface
             }
             finally
             {
-                if (registryKeyContextMenu != null)
-                {
-                    registryKeyContextMenu.Close();
-                }
+                registryKeyContextMenu?.Close();
 
-                if (registryKeyContextMenuCommand != null)
-                {
-                    registryKeyContextMenuCommand.Close();
-                }
+                registryKeyContextMenuCommand?.Close();
             }
         }
 

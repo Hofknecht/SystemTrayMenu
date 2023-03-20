@@ -151,7 +151,7 @@
     <value>Журнальный файл</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Запустить снова</value>
+    <value>Перезапуск</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Не удалось зарегистрировать горячую клавишу.</value>
@@ -388,13 +388,13 @@
     <value>Скругленные углы</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>вид</value>
+    <value>Появление</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>Нижняя левая</value>
+    <value>Внизу слева</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>Нижний правый</value>
+    <value>Внизу справа</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>Появится главное меню</value>
@@ -418,7 +418,7 @@
     <value>Кэш</value>
   </data>
   <data name="Always show" xml:space="preserve">
-    <value>Показывайте всегда</value>
+    <value>Всегда показывай</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Скрытые файлы и каталоги</value>
@@ -478,7 +478,7 @@
     <value>Скопируйте элемент строки с помощью перетаскивания</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Тяга</value>
+    <value>Тащить</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Прокрутите свайпом</value>
@@ -541,12 +541,27 @@
     <value>Размер приложения</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
-    <value>Дополнительные особенности</value>
+    <value>Дополнительные возможности</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Разрешить ссылки на папки и показать содержимое</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Отсортировано по расширению файла и имени</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Резать</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Отменить</value>
   </data>
 </root>

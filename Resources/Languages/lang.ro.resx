@@ -121,7 +121,7 @@
     <value>Despre SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>O.K</value>
+    <value>Bine</value>
   </data>
   <data name="App start" xml:space="preserve">
     <value>Pornirea aplicației</value>
@@ -181,7 +181,7 @@
     <value>Selectați directorul</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Directorul tău rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
+    <value>Directorul dvs. rădăcină pentru aplicație nu există sau este gol! Schimbați directorul rădăcină sau puneți unele fișiere, directoare sau comenzi rapide în directorul rădăcină.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Nu aveți acces la directorul rădăcină al aplicației. Acordați acces la director sau schimbați directorul rădăcină.</value>
@@ -268,7 +268,7 @@
     <value>Săgeată</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Săgeată când faceți clic</value>
+    <value>Săgeată când dați clic</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Săgeată în timp ce mouse-ul trece peste ea</value>
@@ -313,7 +313,7 @@
     <value>Chenarul meniului</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>icoane</value>
+    <value>Pictograme</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
     <value>Setați prin meniul contextual</value>
@@ -514,7 +514,7 @@
     <value>Afișați suprapunerea linkului</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Director de pictograme de comenzi rapide pe Internet</value>
+    <value>Director cu pictograme de comenzi rapide pe Internet</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
     <value>Sortate după tip (dosar sau fișier) și dată</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Sortate după extensia și nume de fișier</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copie</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>A tăia</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Pastă</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Selectează tot</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Anula</value>
   </data>
 </root>

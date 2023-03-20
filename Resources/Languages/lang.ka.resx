@@ -163,7 +163,7 @@
     <value>გენერალი</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>ცხელი კლავიატურა</value>
+    <value>ცხელი კლავიში</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>დაიწყეთ Windows-ით</value>
@@ -283,7 +283,7 @@
     <value>ფერის სქემა მუქი</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>ნათელი ფერების სქემა</value>
+    <value>ფერადი სქემა ნათელი</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>აპლიკაციის მენიუ</value>
@@ -355,7 +355,7 @@
     <value>დავალების პანელში ჩვენება</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>დირექტორია დაამატეთ</value>
+    <value>დირექტორიას დამატება</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>დაამატეთ დირექტორიას შინაარსი root დირექტორიაში</value>
@@ -532,7 +532,7 @@
     <value>უახლესი ხელმისაწვდომი ვერსია:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ხელმისაწვდომია ახალი ვერსია!</value>
+    <value>ახალი ვერსია ხელმისაწვდომია!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>თქვენ გაქვთ SystemTrayMenu-ს უახლესი ვერსია!</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>დალაგებულია ფაილის გაფართოებისა და სახელის მიხედვით</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>კოპირება</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>გაჭრა</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>პასტა</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Მონიშნე ყველა</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>გაუქმება</value>
   </data>
 </root>

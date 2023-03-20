@@ -472,7 +472,7 @@
     <value>Imepangwa kwa jina</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>Kupanga</value>
+    <value>Inapanga</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
     <value>Nakili kipengele cha safu mlalo kupitia kuburuta na kudondosha</value>
@@ -529,7 +529,7 @@
     <value>Nenda kwenye ukurasa wa kupakua</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
-    <value>Toleo la hivi punde linalopatikana:</value>
+    <value>Toleo linalopatikana hivi karibuni:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
     <value>Toleo jipya linapatikana!</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Imepangwa kwa ugani wa faili na jina</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Nakili</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Kata</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Bandika</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Chagua Zote</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Tendua</value>
   </data>
 </root>

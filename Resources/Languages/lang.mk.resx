@@ -133,13 +133,13 @@
     <value>Директориум</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Именик празен</value>
+    <value>Именикот празен</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Детали</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Информации за системот</value>
+    <value>Системски информации</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Директориумот е недостапен</value>
@@ -451,7 +451,7 @@
     <value>Преклопување</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>Се појавува подмени</value>
+    <value>Се појавува подменито</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>Големина на иконата</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Подредено според наставката и името на датотеката</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Копирај</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Исечете</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Залепи</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Селектирај се</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Врати</value>
   </data>
 </root>

@@ -151,7 +151,7 @@
     <value>લોગ ફાઈલ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ફરી થી શરૂ કરવું</value>
+    <value>પુનઃપ્રારંભ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>હોટ કીની નોંધણી કરી શકાઈ નથી.</value>
@@ -211,13 +211,13 @@
     <value>ડિફૉલ્ટ</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>જો ફોકસ ખોવાઈ ગયું હોય અને માઉસ હજુ પણ મેનુ પર હોય</value>
+    <value>જો ફોકસ ખોવાઈ જાય અને માઉસ હજુ પણ મેનુ પર હોય</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>જ્યારે માઉસ તેના પર હોય ત્યારે મેનૂ ખુલે ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>જો માઉસ મેનુ છોડે તો મેનુ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
+    <value>જો માઉસ મેનુ છોડી દે તો મેનુ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>મેનુની મહત્તમ પહોળાઈ</value>
@@ -271,7 +271,7 @@
     <value>ક્લિક કરતી વખતે એરો</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>તીર જ્યારે માઉસ તેના પર ફરે છે</value>
+    <value>તીર જ્યારે તેના પર માઉસ ફરે છે</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>ક્લિક કરતી વખતે તીરની પૃષ્ઠભૂમિ</value>
@@ -328,7 +328,7 @@
     <value>શોર્ટકટ લિંક સાથે સમસ્યા</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કાર્ય કરશે નહીં.</value>
+    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કામ કરશે નહીં.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ડિરેક્ટરી ખોલો</value>
@@ -451,7 +451,7 @@
     <value>ઓવરલેપિંગ</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>સબ મેનૂ દેખાય છે</value>
+    <value>સબ મેનુ દેખાય છે</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>ચિહ્નનું કદ</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>ફાઇલ એક્સ્ટેંશન અને નામ દ્વારા સૉર્ટ કરેલ</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>નકલ કરો</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>કાપવું</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>પેસ્ટ કરો</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>બધા પસંદ કરો</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>પૂર્વવત્ કરો</value>
   </data>
 </root>

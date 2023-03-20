@@ -328,7 +328,7 @@
     <value>Difficultas pagina brevis</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Item quod haec brevis ad mutatum vel motum refertur, ideo haec brevis iam non recte operatur.</value>
+    <value>Item quod haec brevis refers to mutatum aut motum est, ergo haec brevis iam non recte operatur.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Open Directory</value>
@@ -490,7 +490,7 @@
     <value>Ostende comitem elementorum</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Ostendere indicem titulum ad top</value>
+    <value>Ostende indicem titulum ad top</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>Munus monstrare clavis 'Open Folder'</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Digerere lima extensio et nomen</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Secare</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Crustulum</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Desumo omnes</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Undo</value>
   </data>
 </root>

@@ -673,7 +673,6 @@ namespace SystemTrayMenu.UserInterface
                 backgroundBorder = AppColors.DarkModeBackgroundBorder;
             }
 
-            ColorConverter colorConverter = new();
             labelItems.ForeColor = MenuDefines.ColorIcons;
             if (backColor.R == 0)
             {

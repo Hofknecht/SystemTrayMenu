@@ -268,7 +268,7 @@
     <value>Nuoli</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Nuoli napsautettaessa</value>
+    <value>Nuoli napsauttaessa</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Nuoli, kun hiiri on sen päällä</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Lajiteltu tiedostopäätteen ja nimen mukaan</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopio</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Leikata</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Liitä</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Valitse kaikki</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Kumoa</value>
   </data>
 </root>

@@ -223,7 +223,7 @@
     <value>מאַקסימום מעניו ברייט</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
-    <value>מעניו סטייז עפענען</value>
+    <value>מעניו סטייז אָפֿן</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>צייט ביז אַ מעניו אָפּענס</value>
@@ -454,7 +454,7 @@
     <value>סוב מעניו איז ארויס</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>ייקאַן גרייס</value>
+    <value>בילדל גרייס</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>שטיצן SystemTrayMenu</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>סאָרטירט לויט טעקע געשפּרייט און נאָמען</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>קאָפּי</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>שנייַדן</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>פּאַפּ</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>וועל אויס אלע</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>ופמאַכן</value>
   </data>
 </root>

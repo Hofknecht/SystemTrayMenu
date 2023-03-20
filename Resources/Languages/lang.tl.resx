@@ -469,7 +469,7 @@
     <value>Pinagbukud-bukod ayon sa petsa</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Pinagbukud-bukod ayon sa pangalan</value>
+    <value>Inayos ayon sa pangalan</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Pag-uuri</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Pinagbukud-bukod ayon sa extension ng file at pangalan</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopya</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Putulin</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Idikit</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Piliin lahat</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Pawalang-bisa</value>
   </data>
 </root>

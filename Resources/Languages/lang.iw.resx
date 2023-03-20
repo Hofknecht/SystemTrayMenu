@@ -151,7 +151,7 @@
     <value>קובץ לוג</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>אתחול</value>
+    <value>איתחול</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>לא ניתן היה לרשום את המקש החם.</value>
@@ -325,7 +325,7 @@
     <value>טוען</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>בעיה עם קישור קיצור</value>
+    <value>בעיה בקישור קיצורי דרך</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שהקיצור הזה כבר לא יפעל כראוי.</value>
@@ -526,7 +526,7 @@
     <value>בדוק עדכונים</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>עבור לדף ההורדות</value>
+    <value>עבור לדף ההורדה</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>הגרסה האחרונה הזמינה:</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>ממוין לפי סיומת קובץ ושם</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>עותק</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>גזירה</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>לְהַדבִּיק</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>בחר הכל</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>לבטל</value>
   </data>
 </root>

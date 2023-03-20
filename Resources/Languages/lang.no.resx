@@ -190,7 +190,7 @@
     <value>Enkeltklikk for å åpne et element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Fargeskjema mørk alltid aktiv</value>
+    <value>Fargeskjema mørkt alltid aktivt</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avansert</value>
@@ -280,7 +280,7 @@
     <value>Bakgrunn av pil mens musen svever over den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>Fargeskjema mørkt</value>
+    <value>Mørkt fargevalg</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
     <value>Lys fargevalg</value>
@@ -376,7 +376,7 @@
     <value>Kun filer</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Tøm buffer hvis flere enn dette antallet elementer</value>
+    <value>Tøm hurtigbufferen hvis flere enn dette antallet elementer</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Legg til eksempelkatalog "Startmeny"</value>
@@ -508,7 +508,7 @@
     <value>Vis søkefeltet</value>
   </data>
   <data name="Saving log file in application directory" xml:space="preserve">
-    <value>Lagrer loggfil i programkatalogen</value>
+    <value>Lagrer loggfilen i programkatalogen</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Vis linkoverlegg</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Sortert etter filtype og navn</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopiere</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Kutte opp</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Lim inn</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Velg alle</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Angre</value>
   </data>
 </root>

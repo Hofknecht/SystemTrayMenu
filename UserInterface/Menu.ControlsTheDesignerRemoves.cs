@@ -4,6 +4,7 @@
 
 namespace SystemTrayMenu.UserInterface
 {
+    using System;
     using System.Drawing;
     using System.Windows.Forms;
     using SystemTrayMenu.Utilities;
@@ -102,7 +103,16 @@ namespace SystemTrayMenu.UserInterface
             dgv.RowTemplate.Height = 20;
             dgv.RowTemplate.ReadOnly = true;
 
-            textBoxSearch.ContextMenuStrip = new ContextMenuStrip();
+            textBoxSearch.ContextMenuStrip = new()
+            {
+                BackColor = SystemColors.Control,
+            };
+
+            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Cut"), null, TextBoxSearchCut);
+            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Copy"), null, TextBoxSearchCopy);
+            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Paste"), null, TextBoxSearchPaste);
+            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Undo"), null, TextBoxSearchUndo);
+            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Select All"), null, TextBoxSearchSelectAll);
 
             tableLayoutPanelMenu.Controls.Add(labelTitle, 0, 0);
 
@@ -143,6 +153,36 @@ namespace SystemTrayMenu.UserInterface
             // customScrollbar.PerformLayout();
             // ResumeLayout(false);
             // PerformLayout();
+        }
+
+        private void TextBoxSearchUndo(object sender, EventArgs e)
+        {
+            textBoxSearch.Undo();
+            textBoxSearch.ClearUndo();
+        }
+
+        private void TextBoxSearchSelectAll(object sender, EventArgs e)
+        {
+            textBoxSearch.SelectAll();
+        }
+
+        private void TextBoxSearchCopy(object sender, EventArgs e)
+        {
+            Clipboard.SetData(DataFormats.Text, textBoxSearch.SelectedText);
+        }
+
+        private void TextBoxSearchPaste(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText(TextDataFormat.Text))
+            {
+                textBoxSearch.SelectedText
+                    = Clipboard.GetData(DataFormats.Text).ToString();
+            }
+        }
+
+        private void TextBoxSearchCut(object sender, EventArgs e)
+        {
+            textBoxSearch.Cut();
         }
     }
 }

@@ -139,7 +139,7 @@
     <value>Besonderhede</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Stelselinligting</value>
+    <value>Stelsel inligting</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Gids ontoeganklik</value>
@@ -274,7 +274,7 @@
     <value>Pyltjie terwyl die muis daaroor beweeg</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Agtergrond van pyl wanneer u klik</value>
+    <value>Agtergrond van pyl wanneer jy klik</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Agtergrond van pyl terwyl die muis daaroor beweeg</value>
@@ -499,7 +499,7 @@
     <value>Wys funksie sleutel 'Pin spyskaart'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>Wys funksie sleutel 'Instellings'</value>
+    <value>Wys funksiesleutel 'Instellings'</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
     <value>Wys funksiesleutel 'Herbegin'</value>
@@ -526,7 +526,7 @@
     <value>Kyk vir opdaterings</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>Gaan na die aflaaibladsy</value>
+    <value>Gaan na die aflaai bladsy</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>Nuutste beskikbare weergawe:</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Gesorteer volgens lêeruitbreiding en naam</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopieer</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Sny</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Plak</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Kies Alles</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Ontdoen</value>
   </data>
 </root>

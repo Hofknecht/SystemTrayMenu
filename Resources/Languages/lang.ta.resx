@@ -376,7 +376,7 @@
     <value>கோப்புகள் மட்டும்</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>இந்த எண்ணிக்கையை விட அதிகமான உருப்படிகள் இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>இந்த எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -400,7 +400,7 @@
     <value>முதன்மை மெனு தோன்றும்</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>சுட்டி இடம் (பணிப்பட்டி ஐகானுக்கு மேலே)</value>
+    <value>சுட்டி இடம் (பணிப்பட்டி ஐகானுக்கு மேல்)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>தனிப்பயன் (அதை பொருத்தமான நிலைக்கு இழுக்கவும்)</value>
@@ -544,9 +544,24 @@
     <value>விருப்ப அம்சங்கள்</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>கோப்புறைகளுக்கான இணைப்புகளைத் தீர்த்து உள்ளடக்கத்தைக் காட்டு</value>
+    <value>கோப்புறைகளுக்கான இணைப்புகளைத் தீர்த்து, உள்ளடக்கத்தைக் காட்டு</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>கோப்பு நீட்டிப்பு மற்றும் பெயர் மூலம் வரிசைப்படுத்தப்பட்டது</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>நகலெடுக்கவும்</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>வெட்டு</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>ஒட்டவும்</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>அனைத்தையும் தெரிவுசெய்</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>செயல்தவிர்</value>
   </data>
 </root>
