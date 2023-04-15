@@ -151,7 +151,7 @@
     <value>Fichier journal</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Redémarrer</value>
+    <value>Redémarrage</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>Impossible d'enregistrer la touche de raccourci.</value>
@@ -169,7 +169,7 @@
     <value>Commence avec windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Réglages</value>
+    <value>Paramètres</value>
   </data>
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>Questions fréquemment posées</value>
@@ -232,7 +232,7 @@
     <value>Si un élément a été cliqué</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Arrière plan</value>
+    <value>Arrière-plan</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
     <value>Répertoire ouvert</value>
@@ -322,7 +322,7 @@
     <value>Définir comme répertoire</value>
   </data>
   <data name="loading" xml:space="preserve">
-    <value>Chargement en cours</value>
+    <value>chargement</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
     <value>Problème avec le lien raccourci</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Trié par extension de fichier et nom</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copie</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Couper</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Pâte</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Tout sélectionner</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>annuler</value>
   </data>
 </root>

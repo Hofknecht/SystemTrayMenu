@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>सिस्टमट्रेमेनू के बारे में</value>
+    <value>SystemTrayMenu के बारे में</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>ठीक है</value>
+    <value>ठीक</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>ऐप स्टार्ट</value>
+    <value>ऐप शुरू</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>ऐप से बाहर निकलें</value>
@@ -148,19 +148,19 @@
     <value>भाषा</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>लॉग फ़ाइल</value>
+    <value>बोटा दस्तावेज</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>पुनर्प्रारंभ करें</value>
+    <value>पुनः आरंभ करें</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>हॉट की को पंजीकृत नहीं कर सका।</value>
+    <value>हॉट कुंजी पंजीकृत नहीं कर सका।</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>बीच में बंद करें</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>सामान्य</value>
+    <value>आम</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
     <value>हॉटकी</value>
@@ -172,22 +172,22 @@
     <value>समायोजन</value>
   </data>
   <data name="Frequently Asked Questions" xml:space="preserve">
-    <value>अधिकतर पूछे जाने वाले सवाल</value>
+    <value>अक्सर पूछे जाने वाले प्रश्नों</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>अक्सर पूछे जाने वाले प्रश्न पढ़ें और फिर SystemTrayMenu के लिए एक रूट डायरेक्टरी चुनें।</value>
+    <value>एफएक्यू पढ़ें और फिर SystemTrayMenu के लिए रूट डायरेक्टरी चुनें।</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>निर्देशिका का चयन करें</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ऐप के लिए आपकी रूट निर्देशिका मौजूद नहीं है या खाली है! रूट डायरेक्टरी बदलें या रूट डायरेक्टरी में कुछ फाइल, डायरेक्टरी या शॉर्टकट डालें।</value>
+    <value>ऐप के लिए आपकी रूट निर्देशिका मौजूद नहीं है या खाली है! रूट डायरेक्टरी को बदलें या रूट डायरेक्टरी में कुछ फाइलें, डायरेक्टरी या शॉर्टकट डालें।</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>आपके पास ऐप की रूट डायरेक्टरी तक पहुंच नहीं है। निर्देशिका तक पहुंच प्रदान करें या रूट निर्देशिका बदलें।</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
-    <value>एक तत्व खोलने के लिए सिंगल क्लिक</value>
+    <value>किसी तत्व को खोलने के लिए सिंगल क्लिक</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>रंग योजना गहरा हमेशा सक्रिय</value>
@@ -199,7 +199,7 @@
     <value>माउस स्थान पर</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>निर्देशिका बदलना</value>
+    <value>निर्देशिका बदल रहा है</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>क्लिक</value>
@@ -208,31 +208,31 @@
     <value>अनुकूलित करें</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>चूक</value>
+    <value>गलती करना</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>यदि फोकस खो गया है और माउस अभी भी मेनू पर है</value>
+    <value>अगर फोकस खो गया है और माउस अभी भी मेनू पर है</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>माउस के चालू होने पर मेनू खुलने तक मिलीसेकंड</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>मेनू बंद होने तक मिलीसेकंड यदि माउस तब मेनू छोड़ देता है</value>
+    <value>यदि माउस मेनू को छोड़ देता है तो मेनू बंद होने तक मिलीसेकंड</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>अधिकतम मेनू चौड़ाई</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
-    <value>मेनू खुला रहता है</value>
+    <value>मेन्यू खुला रहता है</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
     <value>मेनू खुलने तक का समय</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>यदि कोई तत्व क्लिक किया गया था</value>
+    <value>अगर किसी तत्व पर क्लिक किया गया था</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>पार्श्वभूमि</value>
+    <value>पृष्ठभूमि</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
     <value>खोली गई निर्देशिका</value>
@@ -253,7 +253,7 @@
     <value>सापेक्ष निर्देशिका</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>एप्लिकेशन निर्देशिका में कॉन्फ़िगरेशन फ़ाइल सहेजें</value>
+    <value>कॉन्फ़िगरेशन फ़ाइल को एप्लिकेशन निर्देशिका में सहेजें</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
     <value>कॉन्फ़िगरेशन और लॉग फ़ाइलें</value>
@@ -268,16 +268,16 @@
     <value>तीर</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>तीर क्लिक करते समय</value>
+    <value>क्लिक करते समय तीर</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>तीर जबकि माउस इसके ऊपर मंडराता है</value>
+    <value>तीर जबकि माउस उस पर मंडराता है</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>क्लिक करते समय तीर की पृष्ठभूमि</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>तीर की पृष्ठभूमि जबकि माउस उसके ऊपर मंडराता है</value>
+    <value>तीर की पृष्ठभूमि जबकि माउस उस पर मंडराता है</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>रंग योजना गहरा</value>
@@ -298,10 +298,10 @@
     <value>खींचते समय स्लाइडर</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>स्लाइडर जबकि माउस उस पर मंडराता है 1</value>
+    <value>स्लाइडर जबकि माउस उसके ऊपर मँडराता है 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>स्लाइडर जबकि माउस उसके ऊपर मंडराता है 2</value>
+    <value>स्लाइडर जबकि माउस उसके ऊपर होवर करता है 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
     <value>निर्देशिका से आइकन का प्रयोग करें</value>
@@ -346,10 +346,10 @@
     <value>विशेषज्ञ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>यदि फोकस खो गया है और एंटर कुंजी दबाई गई है</value>
+    <value>अगर फोकस खो गया है और एंटर कुंजी दबाई गई थी</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>मिलीसेकंड जब तक मेनू बंद नहीं हो जाता है यदि मेनू पुनः सक्रिय नहीं होता है</value>
+    <value>यदि मेनू पुन: सक्रिय नहीं होता है तो मेनू के बंद होने तक मिलीसेकंड</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>टास्कबार में दिखाएं</value>
@@ -370,16 +370,16 @@
     <value>पुनरावर्ती</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>निर्देशिका निकालें</value>
+    <value>निर्देशिका हटाएं</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>केवल फ़ाइलें</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>इस संख्या से अधिक आइटम होने पर कैशे साफ़ करें</value>
+    <value>इस संख्या से अधिक आइटम होने पर कैश साफ़ करें</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>नमूना निर्देशिका 'प्रारंभ मेनू' जोड़ें</value>
+    <value>नमूना निर्देशिका जोड़ें 'प्रारंभ मेनू'</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>पंक्ति की ऊंचाई</value>
@@ -388,7 +388,7 @@
     <value>गोल कोनों</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>दिखावट</value>
+    <value>उपस्थिति</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
     <value>तली छोड़ें</value>
@@ -403,7 +403,7 @@
     <value>माउस स्थान (टास्कबार आइकन के ऊपर)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
-    <value>कस्टम (इसे उपयुक्त स्थिति में खींचें)</value>
+    <value>कस्टम (उसे उपयुक्त स्थिति में खींचें)</value>
   </data>
   <data name="element" xml:space="preserve">
     <value>तत्व</value>
@@ -412,7 +412,7 @@
     <value>तत्वों</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>स्टार्टअप पर ड्राइव शॉर्टकट जेनरेट करें</value>
+    <value>स्टार्टअप पर ड्राइव शॉर्टकट उत्पन्न करें</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>कैश</value>
@@ -421,7 +421,7 @@
     <value>हमेशा दिखाएं</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>छिपी हुई फ़ाइलें और निर्देशिकाएं</value>
+    <value>छिपी हुई फाइलें और निर्देशिकाएं</value>
   </data>
   <data name="Never show" xml:space="preserve">
     <value>कभी भी न दिखाओ</value>
@@ -442,10 +442,10 @@
     <value>गेमपैड का समर्थन करें</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>पिछले एक के आगे</value>
+    <value>पिछले वाले के आगे</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>पिक्सेल द्वारा ऑफ़सेट</value>
+    <value>पिक्सल द्वारा ऑफसेट</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>ओवरलैपिंग</value>
@@ -454,10 +454,10 @@
     <value>उप मेनू प्रकट होता है</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>चिह्न आकार</value>
+    <value>चिह्न का आकार</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>समर्थन प्रणालीट्रेमेनू</value>
+    <value>समर्थन प्रणाली ट्रेमेनू</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>लुप्त होती</value>
@@ -469,22 +469,22 @@
     <value>तिथि के अनुसार क्रमित</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>नाम के अनुसार क्रमबद्ध</value>
+    <value>नाम से क्रमबद्ध</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>छंटाई</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>ड्रैग एंड ड्रॉप के माध्यम से पंक्ति तत्व की प्रतिलिपि बनाएँ</value>
+    <value>पंक्ति तत्व को खींचें और छोड़ें के माध्यम से कॉपी करें</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>खींचें</value>
+    <value>खींचना</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>स्वाइप करके स्क्रॉल करें</value>
+    <value>स्वाइप के जरिए स्क्रॉल करें</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>फ़ाइल प्रकार के अनुसार फ़िल्टर मेनू उदा.: *.exe|*.dll</value>
+    <value>फ़ाइल प्रकार द्वारा फ़िल्टर मेनू जैसे: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>तत्वों की संख्या दिखाएं</value>
@@ -493,22 +493,22 @@
     <value>शीर्ष पर निर्देशिका शीर्षक दिखाएं</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>फ़ंक्शन कुंजी दिखाएं 'फ़ोल्डर खोलें'</value>
+    <value>फंक्शन कुंजी 'ओपन फोल्डर' दिखाएं</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>फ़ंक्शन कुंजी दिखाएं 'मेनू पिन करें'</value>
+    <value>फ़ंक्शन कुंजी 'पिन मेनू' दिखाएं</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>फ़ंक्शन कुंजी 'सेटिंग्स' दिखाएं</value>
+    <value>फंक्शन कुंजी 'सेटिंग्स' दिखाएं</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>फ़ंक्शन कुंजी दिखाएं 'पुनरारंभ करें'</value>
+    <value>फ़ंक्शन कुंजी 'पुनरारंभ करें' दिखाएं</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>खोज बार दिखाएं</value>
   </data>
   <data name="Saving log file in application directory" xml:space="preserve">
-    <value>अनुप्रयोग निर्देशिका में लॉग फ़ाइल सहेजा जा रहा है</value>
+    <value>एप्लिकेशन निर्देशिका में लॉग फ़ाइल सहेजना</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>लिंक ओवरले दिखाएं</value>
@@ -517,10 +517,10 @@
     <value>इंटरनेट शॉर्टकट आइकन की निर्देशिका</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
-    <value>प्रकार (फ़ोल्डर या फ़ाइल) और दिनांक के अनुसार क्रमित</value>
+    <value>प्रकार (फ़ोल्डर या फ़ाइल) और दिनांक द्वारा क्रमबद्ध</value>
   </data>
   <data name="Sorted by type (folder or file) and name" xml:space="preserve">
-    <value>प्रकार (फ़ोल्डर या फ़ाइल) और नाम के आधार पर छाँटा गया</value>
+    <value>प्रकार (फ़ोल्डर या फ़ाइल) और नाम के आधार पर क्रमबद्ध</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>अद्यतन के लिए जाँच</value>
@@ -544,9 +544,24 @@
     <value>वैकल्पिक विशेषताएं</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>फ़ोल्डरों के लिंक का समाधान करें और सामग्री दिखाएं</value>
+    <value>फ़ोल्डरों के लिंक हल करें और सामग्री दिखाएं</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>फ़ाइल एक्सटेंशन और नाम द्वारा क्रमबद्ध</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>प्रतिलिपि</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>काटना</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>पेस्ट करें</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>सबका चयन करें</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>पूर्ववत</value>
   </data>
 </root>

@@ -151,7 +151,7 @@
     <value>ملف تسجيل</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>إعادة بدء</value>
+    <value>إعادة تشغيل</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>تعذر تسجيل مفتاح التشغيل السريع.</value>
@@ -190,7 +190,7 @@
     <value>نقرة واحدة لفتح عنصر</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>نظام الألوان داكن نشط دائمًا</value>
+    <value>نظام الألوان الداكن نشط دائمًا</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>متقدم</value>
@@ -322,7 +322,7 @@
     <value>تعيين كدليل</value>
   </data>
   <data name="loading" xml:space="preserve">
-    <value>جار التحميل</value>
+    <value>تحميل</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
     <value>مشكلة في ارتباط الاختصار</value>
@@ -352,7 +352,7 @@
     <value>مللي ثانية حتى يتم إغلاق القائمة إذا لم يتم إعادة تنشيط القائمة</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>عرض في شريط المهام</value>
+    <value>إظهار في شريط المهام</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>أضف الدليل</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>مرتبة حسب امتداد الملف والاسم</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>ينسخ</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>يقطع</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>معجون</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>اختر الكل</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>الغاء التحميل</value>
   </data>
 </root>

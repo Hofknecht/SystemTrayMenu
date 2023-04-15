@@ -337,7 +337,7 @@
     <value>Task Manager</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>غیرفعال شد</value>
+    <value>غیر فعال شد</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>فعال شد</value>
@@ -355,7 +355,7 @@
     <value>نمایش در نوار وظیفه</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>دایرکتوری اضافه کنید</value>
+    <value>اضافه کردن دایرکتوری</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
     <value>محتوای دایرکتوری را به دایرکتوری ریشه اضافه کنید</value>
@@ -481,7 +481,7 @@
     <value>بکشید</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>از طریق سوایپ پیمایش کنید</value>
+    <value>از طریق کشیدن انگشت پیمایش کنید</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>منوی فیلتر بر اساس نوع فایل به عنوان مثال: *.exe|*.dll</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>بر اساس پسوند و نام فایل مرتب شده است</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>کپی 🀄</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>برش</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>چسباندن</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>انتخاب همه</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>واگرد</value>
   </data>
 </root>

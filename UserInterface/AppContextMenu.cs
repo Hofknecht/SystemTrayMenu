@@ -109,16 +109,20 @@ namespace SystemTrayMenu.Helper
             moreInfo += "#298 phanirithvij, #306 wini2, #370 dna5589, #372 not-nef, #376 Michelle H., ";
             moreInfo += "#377 SoenkeHob, #380 #394 TransLucida, #384 #434 #435 boydfields, #386 visusys, #387 #411 #444 yrctw" + Environment.NewLine;
             moreInfo += "#446 timinformatica, #450 ppt-oldoerp, #453 fubaWoW, #454 WouterVanGoey" + Environment.NewLine;
-            moreInfo += "#462 verdammt89x, #463 Dirk S." + Environment.NewLine;
+            moreInfo += "#462 verdammt89x, #463 Dirk S., #466 Dean-Corso" + Environment.NewLine;
             moreInfo += @"
 Sponsors - Thank you!
 ------------------
 * Stefan Mahrer
 * boydfields
 * RuSieg
+* igor-davidov
 * Ralf K.
+* Tim K.
+* Georg W.
 * donaldaken
 * Marc Speer
+* Cito
 * Peter G.
 * Traditional_Tap3954
 * Maximilian H.

@@ -124,7 +124,7 @@
     <value>OK</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>Início do aplicativo</value>
+    <value>Iniciar aplicativo</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Sair do aplicativo</value>
@@ -169,7 +169,7 @@
     <value>Comece com o Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Definições</value>
+    <value>Configurações</value>
   </data>
   <data name="Frequently Asked Questions" xml:space="preserve">
     <value>perguntas frequentes</value>
@@ -178,10 +178,10 @@
     <value>Leia o FAQ e escolha um diretório raiz para SystemTrayMenu.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
-    <value>Selecionar diretório</value>
+    <value>Selecione o diretório</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Seu diretório raiz do aplicativo não existe ou está vazio! Altere o diretório raiz ou coloque alguns arquivos, diretórios ou atalhos no diretório raiz.</value>
+    <value>Seu diretório raiz para o aplicativo não existe ou está vazio! Altere o diretório raiz ou coloque alguns arquivos, diretórios ou atalhos no diretório raiz.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Você não tem acesso ao diretório raiz do aplicativo. Conceda acesso ao diretório ou altere o diretório raiz.</value>
@@ -199,7 +199,7 @@
     <value>Na localização do mouse</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>Alterando o diretório</value>
+    <value>Mudando de diretório</value>
   </data>
   <data name="Click" xml:space="preserve">
     <value>Clique</value>
@@ -208,7 +208,7 @@
     <value>Customizar</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>Predefinição</value>
+    <value>Padrão</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
     <value>Se o foco for perdido e o mouse ainda estiver no menu</value>
@@ -244,19 +244,19 @@
     <value>Campo de pesquisa</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>Elemento selecionado</value>
+    <value>elemento selecionado</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
     <value>Borda do elemento selecionado</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
-    <value>Diretório relativo</value>
+    <value>diretório relativo</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>Salvar arquivo de configuração no diretório do aplicativo</value>
+    <value>Salve o arquivo de configuração no diretório do aplicativo</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
-    <value>Configuração e arquivos de log</value>
+    <value>Arquivos de configuração e log</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
     <value>Abra o diretório do aplicativo</value>
@@ -265,7 +265,7 @@
     <value>Altura máxima do menu</value>
   </data>
   <data name="Arrow" xml:space="preserve">
-    <value>Flecha</value>
+    <value>Seta</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
     <value>Seta ao clicar</value>
@@ -274,7 +274,7 @@
     <value>Seta enquanto o mouse passa sobre ela</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Fundo da seta ao clicar</value>
+    <value>Plano de fundo da seta ao clicar</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Plano de fundo da seta enquanto o mouse passa sobre ela</value>
@@ -286,7 +286,7 @@
     <value>Esquema de cores brilhante</value>
   </data>
   <data name="App menu" xml:space="preserve">
-    <value>Menu do aplicativo</value>
+    <value>menu de aplicativos</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
     <value>Barra de rolagem</value>
@@ -304,13 +304,13 @@
     <value>Controle deslizante enquanto o mouse passa sobre ele 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>Use o ícone do diretório</value>
+    <value>Usar ícone do diretório</value>
   </data>
   <data name="Sizes in percent" xml:space="preserve">
     <value>Tamanhos em porcentagem</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Borda do cardápio</value>
+    <value>Borda do menu</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Ícones</value>
@@ -328,7 +328,7 @@
     <value>Problema com link de atalho</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>O item ao qual este atalho se refere foi alterado ou movido, portanto, este atalho não funcionará mais corretamente.</value>
+    <value>O item a que este atalho se refere foi alterado ou movido, portanto este atalho não funcionará mais corretamente.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Diretório aberto</value>
@@ -346,7 +346,7 @@
     <value>Especialista</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Se o foco for perdido e a tecla Enter foi pressionada</value>
+    <value>Se o foco for perdido e a tecla Enter for pressionada</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>Milissegundos até o menu fechar se o menu não for reativado</value>
@@ -367,7 +367,7 @@
     <value>Diretórios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>Recursivo</value>
+    <value>recursivo</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
     <value>Remover diretório</value>
@@ -376,7 +376,7 @@
     <value>Somente arquivos</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Limpe o cache se mais do que esse número de itens</value>
+    <value>Limpe o cache se houver mais do que este número de itens</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Adicionar diretório de amostra 'Menu Iniciar'</value>
@@ -424,13 +424,13 @@
     <value>Arquivos e diretórios ocultos</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>Nunca mostrar</value>
+    <value>nunca mostrar</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Tamanho e localização</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
-    <value>Usar as configurações do sistema operacional</value>
+    <value>Usar configurações do sistema operacional</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
     <value>Mostrar apenas como resultado da pesquisa</value>
@@ -451,13 +451,13 @@
     <value>Sobreposição</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>O submenu aparece</value>
+    <value>Submenu aparece</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>Tamanho do ícone</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Sistema de suporteBandejaMenu</value>
+    <value>Suporte SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
     <value>Desbotando</value>
@@ -469,22 +469,22 @@
     <value>Ordenado por data</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Ordenado por nome</value>
+    <value>Classificado por nome</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Ordenação</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>Copiar elemento de linha por meio de arrastar e soltar</value>
+    <value>Copiar elemento de linha arrastando e soltando</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Arrastar</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Rolar através de furto</value>
+    <value>Rolar com o dedo</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Filtrar menu por tipo de arquivo, por exemplo: *.exe|*.dll</value>
+    <value>Filtre o menu por tipo de arquivo, por exemplo: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>Mostrar contagem de elementos</value>
@@ -496,7 +496,7 @@
     <value>Mostrar tecla de função 'Abrir pasta'</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>Mostrar tecla de função 'Pin menu'</value>
+    <value>Mostrar a tecla de função 'Menu Pin'</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
     <value>Mostrar tecla de função 'Configurações'</value>
@@ -508,19 +508,19 @@
     <value>Mostrar barra de pesquisa</value>
   </data>
   <data name="Saving log file in application directory" xml:space="preserve">
-    <value>Salvando o arquivo de log no diretório do aplicativo</value>
+    <value>Salvando arquivo de log no diretório do aplicativo</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
-    <value>Mostrar sobreposição de links</value>
+    <value>Mostrar sobreposição de link</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>Diretório de ícones de atalhos da Internet</value>
+    <value>Diretório de Ícones de Atalho da Internet</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
-    <value>Ordenado por tipo (pasta ou arquivo) e data</value>
+    <value>Classificado por tipo (pasta ou arquivo) e data</value>
   </data>
   <data name="Sorted by type (folder or file) and name" xml:space="preserve">
-    <value>Ordenado por tipo (pasta ou arquivo) e nome</value>
+    <value>Classificado por tipo (pasta ou arquivo) e nome</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>Verifique se há atualizações</value>
@@ -541,12 +541,27 @@
     <value>Tamanho do aplicativo</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
-    <value>Recursos opcionais</value>
+    <value>Recursos Opcionais</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>Resolver links para pastas e mostrar conteúdo</value>
+    <value>Resolva links para pastas e mostre conteúdo</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Classificado por extensão de arquivo e nome</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>cópia de</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Corte</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Colar</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Selecionar tudo</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Desfazer</value>
   </data>
 </root>

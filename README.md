@@ -290,7 +290,8 @@ Thanks for ideas, reporting issues and contributing!
 #453 [fubaWoW](https://github.com/fubaWoW),
 #454 [WouterVanGoey](https://github.com/WouterVanGoey),
 #462 [verdammt89x](https://github.com/verdammt89x),
-#463 Dirk S.
+#463 Dirk S.,
+#466 [Dean-Corso](https://github.com/Dean-Corso)
 
 
 Donations
@@ -338,9 +339,13 @@ PayPal/GitHub Sponsors - Thank you!
 * Stefan Mahrer
 * [boydfields](https://github.com/boydfields)
 * [RuSieg](https://github.com/RuSieg)
+* [igor-davidov](https://github.com/igor-davidov)
 * Ralf K.
+* Tim K.
+* Georg W.
 * [donaldaken](https://github.com/donaldaken)
 * Marc Speer
+* [Cito](https://github.com/Cito)
 * Peter G.
 * [Traditional_Tap3954](https://www.reddit.com/user/Traditional_Tap3954/)
 * Maximilian H.

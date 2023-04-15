@@ -121,7 +121,7 @@
     <value>システムトレイメニューについて</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>わかった</value>
+    <value>OK</value>
   </data>
   <data name="App start" xml:space="preserve">
     <value>アプリ起動</value>
@@ -298,7 +298,7 @@
     <value>ドラッグ中のスライダー</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>マウス ホバー時のスライダー 1</value>
+    <value>マウスを上に置いたときのスライダー 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>マウスが上にあるときのスライダー 2</value>
@@ -391,7 +391,7 @@
     <value>外観</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>左下の</value>
+    <value>左下</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
     <value>右下</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>ファイル拡張子と名前で並べ替え</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>切る</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>ペースト</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>すべて選択</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>元に戻す</value>
   </data>
 </root>

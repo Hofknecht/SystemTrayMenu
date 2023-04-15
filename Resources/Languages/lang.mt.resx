@@ -124,7 +124,7 @@
     <value>kollox sew</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>Bidu tal-app</value>
+    <value>App start</value>
   </data>
   <data name="Exit app" xml:space="preserve">
     <value>Ħruġ app</value>
@@ -295,7 +295,7 @@
     <value>Slider</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Slider waqt li jkaxkru</value>
+    <value>Slider waqt li tkaxkar</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
     <value>Slider waqt li l-maws jgħaddi fuqu 1</value>
@@ -445,7 +445,7 @@
     <value>Ħdejn dak ta’ qabel</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset mill-pixels</value>
+    <value>Offset bil-pixels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Jikkoinċidu</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Issortjati skond l-estensjoni tal-fajl u l-isem</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopja</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Aqta’</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Pejst</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Agħżel kollox</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Ħoll</value>
   </data>
 </root>

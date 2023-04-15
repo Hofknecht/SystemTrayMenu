@@ -211,7 +211,7 @@
     <value>Lalai</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>Jika fokus hilang dan tetikus masih berada pada menu</value>
+    <value>Jika fokus hilang dan tetikus masih berada di menu</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Milisaat sehingga menu dibuka apabila tetikus berada di atasnya</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Diisih mengikut sambungan fail dan nama</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Salinan</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>potong</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>tampal</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Pilih semua</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Buat asal</value>
   </data>
 </root>

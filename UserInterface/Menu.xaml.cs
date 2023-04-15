@@ -100,6 +100,43 @@ namespace SystemTrayMenu.UserInterface
             MouseUp += Menu_MouseUp;
             MouseMove += Menu_MouseMove;
 
+
+            textBoxSearch.ContextMenu = new()
+            {
+                Background = SystemColors.ControlBrush,
+            };
+            textBoxSearch.ContextMenu.Items.Add(new MenuItem()
+            {
+                Header = Translator.GetText("Cut"),
+                Command = new ActionCommand((_) => textBoxSearch.Cut()),
+            });
+            textBoxSearch.ContextMenu.Items.Add(new MenuItem()
+            {
+                Header = Translator.GetText("Copy"),
+                Command = new ActionCommand((_) => Clipboard.SetData(DataFormats.Text, textBoxSearch.SelectedText)),
+            });
+            textBoxSearch.ContextMenu.Items.Add(new MenuItem()
+            {
+                Header = Translator.GetText("Paste"),
+                Command = new ActionCommand((_) =>
+                    {
+                        if (Clipboard.ContainsText(TextDataFormat.Text))
+                        {
+                            textBoxSearch.SelectedText = Clipboard.GetData(DataFormats.Text).ToString();
+                        }
+                    }),
+            });
+            textBoxSearch.ContextMenu.Items.Add(new MenuItem()
+            {
+                Header = Translator.GetText("Undo"),
+                Command = new ActionCommand((_) => textBoxSearch.Undo()),
+            });
+            textBoxSearch.ContextMenu.Items.Add(new MenuItem()
+            {
+                Header = Translator.GetText("Select All"),
+                Command = new ActionCommand((_) => textBoxSearch.SelectAll()),
+            });
+
             SolidColorBrush foreColor = new(Colors.Black);
             SolidColorBrush backColor = AppColors.Background.ToSolidColorBrush();
             SolidColorBrush backColorSearch = AppColors.SearchField.ToSolidColorBrush();

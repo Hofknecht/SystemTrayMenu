@@ -157,7 +157,7 @@
     <value>Ne eblis registri la klavoklavon.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>Ĉesi</value>
+    <value>Ĉesigi</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Generalo</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Ordigita laŭ dosiera etendo kaj nomo</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopiu</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Tranĉi</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Alglui</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Elekti ĉiujn</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Malfari</value>
   </data>
 </root>

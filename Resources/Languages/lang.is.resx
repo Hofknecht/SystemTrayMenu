@@ -400,7 +400,7 @@
     <value>Aðalvalmynd birtist</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>Staðsetning músar (fyrir ofan verkstikutáknið)</value>
+    <value>Staðsetning músar (fyrir ofan verkstiku táknið)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
     <value>Sérsniðið (dragaðu það á viðeigandi stað)</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Raðað eftir skráarlengingu og nafni</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Afrita</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Skera</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Líma</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Velja allt</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Afturkalla</value>
   </data>
 </root>

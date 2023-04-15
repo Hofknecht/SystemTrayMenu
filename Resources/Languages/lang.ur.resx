@@ -211,13 +211,13 @@
     <value>طے شدہ</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>اگر توجہ ختم ہو جائے اور ماؤس ابھی بھی مینو پر موجود ہو۔</value>
+    <value>اگر توجہ ختم ہو جائے اور ماؤس ابھی بھی مینو پر موجود ہے۔</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>جب ماؤس اس پر ہوتا ہے تو ایک مینو کھلنے تک ملی سیکنڈ</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>ملی سیکنڈ جب تک مینو بند نہ ہو جائے اگر ماؤس مینو کو چھوڑ دیتا ہے۔</value>
+    <value>ملی سیکنڈ جب تک مینو بند نہ ہو جائے اگر ماؤس پھر مینو کو چھوڑ دیتا ہے۔</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>مینو کی زیادہ سے زیادہ چوڑائی</value>
@@ -346,7 +346,7 @@
     <value>ماہر</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>اگر فوکس ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
+    <value>اگر توجہ ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>اگر مینو دوبارہ فعال نہیں ہوتا ہے تو مینو بند ہونے تک ملی سیکنڈ</value>
@@ -412,7 +412,7 @@
     <value>عناصر</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹ بنائیں</value>
+    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹس بنائیں</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
@@ -493,13 +493,13 @@
     <value>ڈائرکٹری کا عنوان اوپر دکھائیں۔</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>فنکشن کی کلید 'اوپن فولڈر' دکھائیں</value>
+    <value>فنکشن کلید 'اوپن فولڈر' دکھائیں</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>فنکشن کلید 'پن مینو' دکھائیں</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>فنکشن کلید 'ترتیبات' دکھائیں</value>
+    <value>فنکشن کی 'ترتیبات' دکھائیں</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
     <value>فنکشن کلید 'دوبارہ شروع کریں' دکھائیں</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>فائل کی توسیع اور نام کے لحاظ سے ترتیب دیا گیا ہے۔</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>کاپی</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>کاٹنا</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>چسپاں کریں۔</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>تمام منتخب کریں</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>کالعدم</value>
   </data>
 </root>

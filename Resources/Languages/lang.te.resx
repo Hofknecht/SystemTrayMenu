@@ -229,7 +229,7 @@
     <value>మెను తెరవడానికి సమయం</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>ఒక మూలకం క్లిక్ చేయబడితే</value>
+    <value>ఒక మూలకం క్లిక్ చేయబడి ఉంటే</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>నేపథ్య</value>
@@ -451,7 +451,7 @@
     <value>అతివ్యాప్తి చెందుతోంది</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>ఉప మెనూ కనిపిస్తుంది</value>
+    <value>సబ్ మెనూ కనిపిస్తుంది</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>చిహ్నం పరిమాణం</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>ఫైల్ పొడిగింపు మరియు పేరు ద్వారా క్రమబద్ధీకరించబడింది</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>కాపీ చేయండి</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>కట్</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>అతికించండి</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>అన్ని ఎంచుకోండి</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>అన్డు</value>
   </data>
 </root>

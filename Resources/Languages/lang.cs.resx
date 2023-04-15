@@ -493,7 +493,7 @@
     <value>Zobrazit název adresáře nahoře</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>Zobrazit funkční klávesu „Otevřít složku“</value>
+    <value>Zobrazit funkční klávesu 'Otevřít složku'</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>Zobrazit funkční tlačítko 'Pin menu'</value>
@@ -548,5 +548,20 @@
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Seřazeno podle přípony souboru a názvu</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>kopírovat</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Střih</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Vložit</value>
+  </data>
+  <data name="Select All" xml:space="preserve">
+    <value>Vybrat vše</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>vrátit</value>
   </data>
 </root>
