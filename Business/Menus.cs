@@ -1219,7 +1219,17 @@ namespace SystemTrayMenu.Business
 
         private void WatcherProcessItem(object sender, EventArgs e)
         {
-            if (menus[0] == null || !menus[0].IsLoaded)
+            bool UseHistory = false;
+            if (menus[0] == null)
+            {
+                UseHistory = true;
+            }
+            else
+            {
+                menus[0].Dispatcher.Invoke(() => UseHistory = !menus[0].IsLoaded);
+            }
+
+            if (UseHistory)
             {
                 watcherHistory.Add(e);
                 return;
@@ -1305,7 +1315,7 @@ namespace SystemTrayMenu.Business
                 {
                     List<ListViewItemData> rowsToRemove = new();
 
-                    foreach (ListViewItemData item in dgv.Items)
+                    foreach (ListViewItemData item in dgv.ItemsSource)
                     {
                         RowData rowData = item.data;
                         if (rowData.Path == e.FullPath ||
@@ -1318,7 +1328,7 @@ namespace SystemTrayMenu.Business
 
                     foreach (ListViewItemData rowToRemove in rowsToRemove)
                     {
-                        dgv.Items.Remove(rowToRemove);
+                        ((IEditableCollectionView)dgv.Items).Remove(rowToRemove);
                     }
                 }
 

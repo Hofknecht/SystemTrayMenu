@@ -26,6 +26,13 @@ namespace SystemTrayMenu.Business
             }
             else
             {
+                if (!Directory.Exists(path))
+                {
+                    // Happens most likely when a shortcut is pointing to an absent target path
+                    Log.Info($"path:'{path}' does not exist");
+                    return;
+                }
+
                 GetDirectories(worker, path, ref menuData);
                 GetFiles(worker, path, ref menuData);
             }
