@@ -216,6 +216,13 @@ namespace SystemTrayMenu.Properties
                 config.Add(userSettings);
                 doc.Add(config);
                 doc.Declaration = declaration;
+
+                string? dir = Path.GetDirectoryName(path);
+                if (!Directory.Exists(dir))
+                {
+                    Directory.CreateDirectory(dir!);
+                }
+
                 try
                 {
                     doc.Save(path);
