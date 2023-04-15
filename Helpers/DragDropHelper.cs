@@ -38,7 +38,7 @@ namespace SystemTrayMenu.Helper
             string path;
             if (menu != null)
             {
-                RowData rowData = (RowData)menu.Tag;
+                RowData rowData = menu.RowDataParent;
                 if (rowData != null)
                 {
                     path = rowData.ResolvedPath;

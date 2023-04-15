@@ -7,6 +7,7 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Globalization;
+    using System.IO;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
@@ -33,6 +34,7 @@ namespace SystemTrayMenu.UserInterface
         private static readonly RoutedEvent FadeOutEvent = EventManager.RegisterRoutedEvent(
             nameof(FadeOut), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
 
+        private readonly string folderPath;
 #if TODO // SEARCH
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
 #endif
@@ -47,7 +49,7 @@ namespace SystemTrayMenu.UserInterface
         private bool isClosed = false; // TODO WPF Replace Forms wrapper
         private DispatcherTimer timerUpdateIcons = new DispatcherTimer(DispatcherPriority.Render, Dispatcher.CurrentDispatcher);
 
-        internal Menu(string title, int level, MenuDataDirectoryState directoryState)
+        internal Menu(MenuData menuData, string path)
         {
             timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
             Closed += (_, _) =>
@@ -58,13 +60,24 @@ namespace SystemTrayMenu.UserInterface
 
             InitializeComponent();
 
-            Level = level;
+            folderPath = path;
+            RowDataParent = menuData.RowDataParent;
+            Level = menuData.Level;
             if (Level == 0)
             {
                 // Use Main Menu DPI for all further calculations
                 Scaling.CalculateFactorByDpi(this);
             }
+            else
+            {
+                // This will be a submenu
+                if (RowDataParent != null)
+                {
+                    RowDataParent.SubMenu = this;
+                }
+            }
 
+            string title = new DirectoryInfo(path).Name;
             if (title.Length > MenuDefines.LengthMax)
             {
                 title = $"{title[..MenuDefines.LengthMax]}...";
@@ -226,6 +239,12 @@ namespace SystemTrayMenu.UserInterface
                         item.data.SubMenu?.Close();
                     }
                 };
+
+            // This will be a submenu..
+            if (Level > 0)
+            {
+                SetBehavior(menuData.DirectoryState);
+            }
         }
 
         internal event Action? MenuScrolled;
@@ -290,7 +309,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal int Level { get; set; }
 
-        internal string? FolderPath { get; set; }
+        internal RowData? RowDataParent { get; set; }
 
         internal bool IsUsable => Visibility == Visibility.Visible && !isFading && !IsDisposed && !Disposing;
 
@@ -548,14 +567,14 @@ namespace SystemTrayMenu.UserInterface
             else if (useCustomLocation && !isCustomLocationOutsideOfScreen)
             {
                 // Do not adjust location again because Cursor.Postion changed
-                if (Tag != null)
+                if (RowDataParent != null)
                 {
                     return;
                 }
 
                 // Use this menu as predecessor and overwrite location with CustomLocation
                 menuPredecessor = this;
-                Tag = new RowData();
+                RowDataParent = new RowData();
                 Left = Settings.Default.CustomLocationX;
                 Top = Settings.Default.CustomLocationY;
                 directionToRight = true;
@@ -565,14 +584,14 @@ namespace SystemTrayMenu.UserInterface
             else if (Settings.Default.AppearAtMouseLocation)
             {
                 // Do not adjust location again because Cursor.Postion changed
-                if (Tag != null)
+                if (RowDataParent != null)
                 {
                     return;
                 }
 
                 // Use this menu as predecessor and overwrite location with Cursor.Postion
                 menuPredecessor = this;
-                Tag = new RowData();
+                RowDataParent = new RowData();
                 var position = Mouse.GetPosition(this);
                 Left = position.X;
                 Top = position.Y - labelTitle.Height;
@@ -691,7 +710,7 @@ namespace SystemTrayMenu.UserInterface
                 {
                     case StartLocation.Predecessor:
 
-                        RowData trigger = (RowData)Tag;
+                        RowData trigger = RowDataParent;
                         ListView dgv = menuPredecessor!.GetDataGridView() !;
 
                         // Set position on same height as the selected row from predecessor
@@ -1110,7 +1129,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void PictureBoxOpenFolder_Click(object sender, RoutedEventArgs e)
         {
-            Menus.OpenFolder(FolderPath);
+            Menus.OpenFolder(folderPath);
         }
 
 #if TODO // BorderColors

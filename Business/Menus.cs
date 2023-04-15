@@ -85,7 +85,7 @@ namespace SystemTrayMenu.Business
 
                     if (Settings.Default.AppearAtMouseLocation)
                     {
-                        menus[0].Tag = null;
+                        menus[0].RowDataParent = null;
                     }
 
                     AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
@@ -100,7 +100,7 @@ namespace SystemTrayMenu.Business
                             if (IconReader.MainPreload)
                             {
                                 workerMainMenu.DoWork -= LoadMenu;
-                                menus[0] = Create(menuData, new DirectoryInfo(Config.Path).Name);
+                                menus[0] = Create(menuData, Config.Path);
                                 menus[0].Loaded += (s, e) => ExecuteWatcherHistory();
 
                                 IconReader.MainPreload = false;
@@ -155,21 +155,17 @@ namespace SystemTrayMenu.Business
             {
                 if (menus[0].IsUsable &&
                     (menus[rowData.Level + 1] == null ||
-                    menus[rowData.Level + 1].Tag as RowData != rowData))
+                    menus[rowData.Level + 1].RowDataParent != rowData))
                 {
                     CreateAndShowLoadingMenu(rowData);
-                    void CreateAndShowLoadingMenu(RowData rowData)
+                    void CreateAndShowLoadingMenu(RowData rowDataParent)
                     {
-                        MenuData menuDataLoading = new(rowData.Level + 1)
+                        MenuData menuDataLoading = new(rowDataParent.Level + 1)
                         {
-                            DirectoryState = MenuDataDirectoryState.Valid,
+                            RowDataParent = rowDataParent,
                         };
-
-                        Menu menuLoading = Create(menuDataLoading, new DirectoryInfo(rowData.Path).Name);
-                        menus[rowData.Level + 1] = menuLoading;
-                        menuLoading.Tag = menuDataLoading.RowDataParent = rowData;
-                        menuDataLoading.RowDataParent.SubMenu = menuLoading;
-                        menuLoading.SetBehavior(MenuDataDirectoryState.Undefined);
+                        Menu menuLoading = Create(menuDataLoading, rowDataParent.Path);
+                        menus[menuDataLoading.Level] = menuLoading;
                         ShowSubMenu(menuLoading);
                     }
 
@@ -207,10 +203,7 @@ namespace SystemTrayMenu.Business
                     if (menuData.DirectoryState != MenuDataDirectoryState.Undefined &&
                         menus[0].IsUsable)
                     {
-                        Menu menu = Create(menuData, new DirectoryInfo(menuData.RowDataParent.ResolvedPath).Name, menuData.RowDataParent.ResolvedPath);
-                        menu.SetBehavior(menuData.DirectoryState);
-
-                        menu.Tag = menuData.RowDataParent;
+                        Menu menu = Create(menuData, menuData.RowDataParent.ResolvedPath);
                         menuData.RowDataParent.SubMenu = menu;
                         if (menus[0].IsUsable)
                         {
@@ -597,12 +590,9 @@ namespace SystemTrayMenu.Business
             return (App.TaskbarLogo != null && App.TaskbarLogo.IsActive) || IsShellContextMenuOpen();
         }
 
-        private Menu Create(MenuData menuData, string title, string? path = null)
+        private Menu Create(MenuData menuData, string path)
         {
-            Menu menu = new(title, menuData.Level, menuData.DirectoryState)
-            {
-                FolderPath = path,
-            };
+            Menu menu = new(menuData, path);
 
             menu.MenuScrolled += AdjustMenusSizeAndLocation; // TODO: Only update vertical location while scrolling?
             menu.MouseLeave += (_, _) =>
@@ -1001,7 +991,7 @@ namespace SystemTrayMenu.Business
             {
                 if (menus[0].IsUsable)
                 {
-                    menus[0].Tag = null;
+                    menus[0].RowDataParent = null;
                 }
             });
         }
@@ -1026,7 +1016,7 @@ namespace SystemTrayMenu.Business
                     foreach (ListViewItemData item in dgvPrevious.Items)
                     {
                         RowData rowDataToClear = item.data;
-                        if (rowDataToClear == (RowData)menuToShow.Tag)
+                        if (rowDataToClear == menuToShow.RowDataParent)
                         {
                             rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
                         }
