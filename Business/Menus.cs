@@ -100,8 +100,7 @@ namespace SystemTrayMenu.Business
                             if (IconReader.MainPreload)
                             {
                                 workerMainMenu.DoWork -= LoadMenu;
-                                menus[0] = Create(menuData, Config.Path);
-                                menus[0].Loaded += (s, e) => ExecuteWatcherHistory();
+                                Create(menuData, Config.Path); // Level 0 Main Menu
 
                                 IconReader.MainPreload = false;
                                 if (showMenuAfterMainPreload)
@@ -157,17 +156,7 @@ namespace SystemTrayMenu.Business
                     (menus[rowData.Level + 1] == null ||
                     menus[rowData.Level + 1].RowDataParent != rowData))
                 {
-                    CreateAndShowLoadingMenu(rowData);
-                    void CreateAndShowLoadingMenu(RowData rowDataParent)
-                    {
-                        MenuData menuDataLoading = new(rowDataParent.Level + 1)
-                        {
-                            RowDataParent = rowDataParent,
-                        };
-                        Menu menuLoading = Create(menuDataLoading, rowDataParent.Path);
-                        menus[menuDataLoading.Level] = menuLoading;
-                        ShowSubMenu(menuLoading);
-                    }
+                    Create(new(rowData.Level + 1, rowData), rowData.Path); // Level 1+ Sub Menu (loading)
 
                     BackgroundWorker? workerSubMenu = workersSubMenu.
                         Where(w => !w.IsBusy).FirstOrDefault();
@@ -203,13 +192,7 @@ namespace SystemTrayMenu.Business
                     if (menuData.DirectoryState != MenuDataDirectoryState.Undefined &&
                         menus[0].IsUsable)
                     {
-                        Menu menu = Create(menuData, menuData.RowDataParent.ResolvedPath);
-                        menuData.RowDataParent.SubMenu = menu;
-                        if (menus[0].IsUsable)
-                        {
-                            ShowSubMenu(menu);
-                            menu.SetSearchText(userSearchText);
-                        }
+                        Create(menuData, menuData.RowDataParent.ResolvedPath, userSearchText); // Level 1+ Sub Menu (completed)
                     }
                     else if (closedLoadingMenu && menus[0].IsUsable)
                     {
@@ -359,7 +342,7 @@ namespace SystemTrayMenu.Business
 
         internal static MenuData GetData(BackgroundWorker? worker, string path, int level)
         {
-            MenuData menuData = new(level);
+            MenuData menuData = new(level, null);
             if (worker?.CancellationPending == true || string.IsNullOrEmpty(path))
             {
                 return menuData;
@@ -590,7 +573,7 @@ namespace SystemTrayMenu.Business
             return (App.TaskbarLogo != null && App.TaskbarLogo.IsActive) || IsShellContextMenuOpen();
         }
 
-        private Menu Create(MenuData menuData, string path)
+        private Menu Create(MenuData menuData, string path, string? userSearchText = null)
         {
             Menu menu = new(menuData, path);
 
@@ -676,6 +659,28 @@ namespace SystemTrayMenu.Business
             }
 
             menu.SetCounts(foldersCount, filesCount);
+
+            if (menuData.Level == 0)
+            {
+                // Main Menu
+                menus[0] = menu;
+                menu.Loaded += (s, e) => ExecuteWatcherHistory();
+            }
+            else if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
+            {
+                // Sub Menu (completed)
+                if (menus[0].IsUsable)
+                {
+                    ShowSubMenu(menu);
+                    menu.SetSearchText(userSearchText);
+                }
+            }
+            else
+            {
+                // Sub Menu (loading)
+                menus[menuData.Level] = menu;
+                ShowSubMenu(menu);
+            }
 
             return menu;
         }

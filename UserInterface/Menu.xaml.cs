@@ -442,7 +442,7 @@ namespace SystemTrayMenu.UserInterface
             return textBoxSearch.Text;
         }
 
-        internal void SetSearchText(string userSearchText)
+        internal void SetSearchText(string? userSearchText)
         {
             if (!string.IsNullOrEmpty(userSearchText))
             {

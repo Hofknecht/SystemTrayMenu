@@ -31,9 +31,10 @@ namespace SystemTrayMenu.DataClasses
 
     internal struct MenuData
     {
-        public MenuData(int level)
+        public MenuData(int level, RowData? rowDataParent)
         {
             Level = level;
+            RowDataParent = rowDataParent;
         }
 
         internal List<RowData> RowDatas { get; set; } = new ();
@@ -42,7 +43,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal int Level { get; }
 
-        internal RowData? RowDataParent { get; set; } = null;
+        internal RowData? RowDataParent { get; set; }
 
         internal bool IsNetworkRoot { get; set; } = false;
     }
