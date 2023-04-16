@@ -4,8 +4,10 @@
 
 namespace SystemTrayMenu.Helpers.Updater
 {
+    // The MIT License (MIT)
+
     // Copyright (c) 2018 Alex Parker
-    // Copyright (c) 2018-2019 Peter Kirmeier
+    // Copyright (c) 2018-2023 Peter Kirmeier
 
     // Permission is hereby granted, free of charge, to any person obtaining a copy of
     // this software and associated documentation files (the "Software"), to deal in
@@ -50,23 +52,20 @@ namespace SystemTrayMenu.Helpers.Updater
     public static class JSONParser
     {
         [ThreadStatic]
-        private static Stack<List<string>> splitArrayPool;
+        private static Stack<List<string>>? splitArrayPool;
         [ThreadStatic]
-        private static StringBuilder stringBuilder;
+        private static StringBuilder? stringBuilder;
         [ThreadStatic]
-        private static Dictionary<Type, Dictionary<string, FieldInfo>> fieldInfoCache;
+        private static Dictionary<Type, Dictionary<string, FieldInfo>>? fieldInfoCache;
         [ThreadStatic]
-        private static Dictionary<Type, Dictionary<string, PropertyInfo>> propertyInfoCache;
+        private static Dictionary<Type, Dictionary<string, PropertyInfo>>? propertyInfoCache;
 
-        public static T FromJson<T>(this string json)
+        public static T? FromJson<T>(this string json)
         {
             // Initialize, if needed, the ThreadStatic variables
             propertyInfoCache ??= new Dictionary<Type, Dictionary<string, PropertyInfo>>();
-
             fieldInfoCache ??= new Dictionary<Type, Dictionary<string, FieldInfo>>();
-
             stringBuilder ??= new StringBuilder();
-
             splitArrayPool ??= new Stack<List<string>>();
 
             // Remove all whitespace not within strings to make parsing simpler
@@ -89,11 +88,17 @@ namespace SystemTrayMenu.Helpers.Updater
             }
 
             // Parse the thing!
-            return (T)ParseValue(typeof(T), stringBuilder.ToString());
+            return (T?)ParseValue(typeof(T), stringBuilder.ToString());
         }
 
-        internal static object ParseValue(Type type, string json)
+        internal static object? ParseValue(Type type, string json)
         {
+            // Initialize, if needed, the ThreadStatic variables
+            propertyInfoCache ??= new Dictionary<Type, Dictionary<string, PropertyInfo>>();
+            fieldInfoCache ??= new Dictionary<Type, Dictionary<string, FieldInfo>>();
+            stringBuilder ??= new StringBuilder();
+            splitArrayPool ??= new Stack<List<string>>();
+
             if (type == typeof(string))
             {
                 if (json.Length <= 2)
@@ -167,7 +172,7 @@ namespace SystemTrayMenu.Helpers.Updater
 
             if (type.IsArray)
             {
-                Type arrayType = type.GetElementType();
+                Type arrayType = type.GetElementType() !;
                 if (json[0] != '[' || json[^1] != ']')
                 {
                     return null;
@@ -193,7 +198,12 @@ namespace SystemTrayMenu.Helpers.Updater
                 }
 
                 List<string> elems = Split(json);
-                var list = (IList)type.GetConstructor(new Type[] { typeof(int) }).Invoke(new object[] { elems.Count });
+                var list = (IList?)type.GetConstructor(new Type[] { typeof(int) })?.Invoke(new object[] { elems.Count });
+                if (list == null)
+                {
+                    return null;
+                }
+
                 for (int i = 0; i < elems.Count; i++)
                 {
                     list.Add(ParseValue(listType, elems[i]));
@@ -231,7 +241,12 @@ namespace SystemTrayMenu.Helpers.Updater
                     return null;
                 }
 
-                var dictionary = (IDictionary)type.GetConstructor(new Type[] { typeof(int) }).Invoke(new object[] { elems.Count / 2 });
+                var dictionary = (IDictionary?)type.GetConstructor(new Type[] { typeof(int) })?.Invoke(new object[] { elems.Count / 2 });
+                if (dictionary == null)
+                {
+                    return null;
+                }
+
                 for (int i = 0; i < elems.Count; i += 2)
                 {
                     if (elems[i].Length <= 2)
@@ -240,7 +255,7 @@ namespace SystemTrayMenu.Helpers.Updater
                     }
 
                     string keyValue = elems[i][1..^1];
-                    object val = ParseValue(valueType, elems[i + 1]);
+                    object? val = ParseValue(valueType, elems[i + 1]);
                     dictionary.Add(keyValue, val);
                 }
 
@@ -262,7 +277,7 @@ namespace SystemTrayMenu.Helpers.Updater
 
         private static int AppendUntilStringEnd(bool appendEscapeCharacter, int startIdx, string json)
         {
-            stringBuilder.Append(json[startIdx]);
+            stringBuilder!.Append(json[startIdx]);
             for (int i = startIdx + 1; i < json.Length; i++)
             {
                 if (json[i] == '\\')
@@ -292,7 +307,7 @@ namespace SystemTrayMenu.Helpers.Updater
         // Splits { <value>:<value>, <value>:<value> } and [ <value>, <value> ] into a list of <value> strings
         private static List<string> Split(string json)
         {
-            List<string> splitArray = splitArrayPool.Count > 0 ? splitArrayPool.Pop() : new List<string>();
+            List<string> splitArray = splitArrayPool!.Count > 0 ? splitArrayPool.Pop() : new List<string>();
             splitArray.Clear();
             if (json.Length == 2)
             {
@@ -300,7 +315,7 @@ namespace SystemTrayMenu.Helpers.Updater
             }
 
             int parseDepth = 0;
-            stringBuilder.Length = 0;
+            stringBuilder!.Length = 0;
             for (int i = 1; i < json.Length - 1; i++)
             {
                 switch (json[i])
@@ -336,7 +351,7 @@ namespace SystemTrayMenu.Helpers.Updater
             return splitArray;
         }
 
-        private static object ParseAnonymousValue(string json)
+        private static object? ParseAnonymousValue(string json)
         {
             if (json.Length == 0)
             {
@@ -351,7 +366,7 @@ namespace SystemTrayMenu.Helpers.Updater
                     return null;
                 }
 
-                var dict = new Dictionary<string, object>(elems.Count / 2);
+                var dict = new Dictionary<string, object?>(elems.Count / 2);
                 for (int i = 0; i < elems.Count; i += 2)
                 {
                     dict.Add(elems[i][1..^1], ParseAnonymousValue(elems[i + 1]));
@@ -363,7 +378,7 @@ namespace SystemTrayMenu.Helpers.Updater
             if (json[0] == '[' && json[^1] == ']')
             {
                 List<string> items = Split(json);
-                var finalList = new List<object>(items.Count);
+                var finalList = new List<object?>(items.Count);
                 for (int i = 0; i < items.Count; i++)
                 {
                     finalList.Add(ParseAnonymousValue(items[i]));
@@ -411,21 +426,23 @@ namespace SystemTrayMenu.Helpers.Updater
             Dictionary<string, T> nameToMember = new(StringComparer.OrdinalIgnoreCase);
             for (int i = 0; i < members.Length; i++)
             {
-                /*T member = members[i];
+                T member = members[i];
                 if (member.IsDefined(typeof(IgnoreDataMemberAttribute), true))
+                {
                     continue;
+                }
 
                 string name = member.Name;
                 if (member.IsDefined(typeof(DataMemberAttribute), true))
                 {
-                    DataMemberAttribute dataMemberAttribute = (DataMemberAttribute)Attribute.GetCustomAttribute(member, typeof(DataMemberAttribute), true);
-                    if (!string.IsNullOrEmpty(dataMemberAttribute.Name))
+                    DataMemberAttribute? dataMemberAttribute = (DataMemberAttribute?)Attribute.GetCustomAttribute(member, typeof(DataMemberAttribute), true);
+                    if (!string.IsNullOrEmpty(dataMemberAttribute?.Name))
+                    {
                         name = dataMemberAttribute.Name;
+                    }
                 }
 
-                nameToMember.Add(name, member);*/
-                // The above code is not working with .Net framework 2.0, so we ignore these attributes for compatibility reasons:
-                nameToMember.Add(members[i].Name, members[i]);
+                nameToMember.Add(name, member);
             }
 
             return nameToMember;
@@ -442,13 +459,13 @@ namespace SystemTrayMenu.Helpers.Updater
                 return instance;
             }
 
-            if (!fieldInfoCache.TryGetValue(type, out Dictionary<string, FieldInfo> nameToField))
+            if (!fieldInfoCache!.TryGetValue(type, out Dictionary<string, FieldInfo>? nameToField))
             {
                 nameToField = CreateMemberNameDictionary(type.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.FlattenHierarchy));
                 fieldInfoCache.Add(type, nameToField);
             }
 
-            if (!propertyInfoCache.TryGetValue(type, out Dictionary<string, PropertyInfo> nameToProperty))
+            if (!propertyInfoCache!.TryGetValue(type, out Dictionary<string, PropertyInfo>? nameToProperty))
             {
                 nameToProperty = CreateMemberNameDictionary(type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.FlattenHierarchy));
                 propertyInfoCache.Add(type, nameToProperty);
@@ -464,11 +481,11 @@ namespace SystemTrayMenu.Helpers.Updater
                 string key = elems[i][1..^1];
                 string value = elems[i + 1];
 
-                if (nameToField.TryGetValue(key, out FieldInfo fieldInfo))
+                if (nameToField.TryGetValue(key, out FieldInfo? fieldInfo))
                 {
                     fieldInfo.SetValue(instance, ParseValue(fieldInfo.FieldType, value));
                 }
-                else if (nameToProperty.TryGetValue(key, out PropertyInfo propertyInfo))
+                else if (nameToProperty.TryGetValue(key, out PropertyInfo? propertyInfo))
                 {
                     propertyInfo.SetValue(instance, ParseValue(propertyInfo.PropertyType, value), null);
                 }
