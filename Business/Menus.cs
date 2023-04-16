@@ -182,7 +182,7 @@ namespace SystemTrayMenu.Business
 
                     MenuData menuData = (MenuData)e.Result;
                     Menu? menu = menus[menuData.Level];
-                    if (menu == null || !menu.IsLoadingMenu)
+                    if (menu == null)
                     {
                         return;
                     }
@@ -192,8 +192,8 @@ namespace SystemTrayMenu.Business
                         if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
                         {
                             // Sub Menu (completed)
-                            UpdateMenuContent(menu, menuData);
-                            menu.SetBehavior(menuData.DirectoryState);
+                            menu.AddItemsToMenu(menuData.RowDatas);
+                            menu.SetSubMenuState(menuData.DirectoryState);
                             AdjustMenusSizeAndLocation();
                         }
                         else
@@ -481,42 +481,6 @@ namespace SystemTrayMenu.Business
 #endif
         }
 
-        private static void AddItemsToMenu(List<RowData> data, Menu menu, out int foldersCount, out int filesCount)
-        {
-            foldersCount = 0;
-            filesCount = 0;
-
-            ListView? lv = menu.GetDataGridView();
-            if (lv != null)
-            {
-                List<Menu.ListViewItemData> items = new();
-
-                foreach (RowData rowData in data)
-                {
-                    if (!(rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult))
-                    {
-                        if (rowData.ContainsMenu)
-                        {
-                            foldersCount++;
-                        }
-                        else
-                        {
-                            filesCount++;
-                        }
-                    }
-
-                    rowData.RowIndex = items.Count; // Index
-                    items.Add(new(
-                        (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource(),
-                        rowData.Text ?? "?",
-                        rowData,
-                        rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
-                }
-
-                lv.ItemsSource = items;
-            }
-        }
-
         private bool IsActive()
         {
             bool IsShellContextMenuOpen()
@@ -608,7 +572,7 @@ namespace SystemTrayMenu.Business
 
             menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged((Menu)sender);
 
-            UpdateMenuContent(menu, menuData);
+            menu.AddItemsToMenu(menuData.RowDatas);
 
             menu.CellMouseEnter += dgvMouseRow.CellMouseEnter;
             menu.CellMouseLeave += dgvMouseRow.CellMouseLeave;
@@ -654,12 +618,6 @@ namespace SystemTrayMenu.Business
             return menu;
         }
 
-        private void UpdateMenuContent(Menu menu, MenuData menuData)
-        {
-            AddItemsToMenu(menuData.RowDatas, menu, out int foldersCount, out int filesCount);
-            menu.SetCounts(foldersCount, filesCount);
-        }
-
         private void MenuVisibleChanged(Menu menu)
         {
             if (menu.IsUsable)
@@ -668,7 +626,6 @@ namespace SystemTrayMenu.Business
 
                 if (menu.Level == 0)
                 {
-                    menu.SetBehavior(MenuDataDirectoryState.Valid);
                     menu.ResetSearchText();
                 }
             }
@@ -1190,17 +1147,17 @@ namespace SystemTrayMenu.Business
 
         private void WatcherProcessItem(object sender, EventArgs e)
         {
-            bool UseHistory = false;
+            bool useHistory = false;
             if (menus[0] == null)
             {
-                UseHistory = true;
+                useHistory = true;
             }
             else
             {
-                menus[0].Dispatcher.Invoke(() => UseHistory = !menus[0].IsLoaded);
+                menus[0].Dispatcher.Invoke(() => useHistory = !menus[0].IsLoaded);
             }
 
-            if (UseHistory)
+            if (useHistory)
             {
                 watcherHistory.Add(e);
                 return;
@@ -1263,7 +1220,7 @@ namespace SystemTrayMenu.Business
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();
-                AddItemsToMenu(rowDatas, menus[0], out _, out _);
+                menus[0].AddItemsToMenu(rowDatas);
 
                 hideSubmenuDuringRefreshSearch = false;
                 menus[0].RefreshSearchText();
@@ -1346,7 +1303,7 @@ namespace SystemTrayMenu.Business
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();
-                AddItemsToMenu(rowDatas, menus[0], out _, out _);
+                menus[0].AddItemsToMenu(rowDatas);
 
                 hideSubmenuDuringRefreshSearch = false;
                 menus[0].RefreshSearchText();

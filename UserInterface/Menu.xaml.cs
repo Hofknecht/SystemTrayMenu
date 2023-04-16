@@ -59,6 +59,36 @@ namespace SystemTrayMenu.UserInterface
 
             InitializeComponent();
 
+            if (!Config.ShowDirectoryTitleAtTop)
+            {
+                txtTitle.Visibility = Visibility.Hidden;
+            }
+
+            if (!Config.ShowSearchBar)
+            {
+                searchPanel.Visibility = Visibility.Collapsed;
+            }
+
+            if (!Config.ShowFunctionKeyOpenFolder)
+            {
+                buttonOpenFolder.Visibility = Visibility.Collapsed;
+            }
+
+            if (!Config.ShowFunctionKeyPinMenu)
+            {
+                buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+            }
+
+            if (!Config.ShowFunctionKeySettings)
+            {
+                buttonSettings.Visibility = Visibility.Collapsed;
+            }
+
+            if (!Config.ShowFunctionKeyRestart)
+            {
+                buttonRestart.Visibility = Visibility.Collapsed;
+            }
+
             folderPath = path;
             RowDataParent = menuData.RowDataParent;
             Level = menuData.Level;
@@ -74,6 +104,16 @@ namespace SystemTrayMenu.UserInterface
                 {
                     RowDataParent.SubMenu = this;
                 }
+
+                buttonOpenFolder.Visibility = Visibility.Collapsed;
+                buttonSettings.Visibility = Visibility.Collapsed;
+                buttonRestart.Visibility = Visibility.Collapsed;
+
+                labelStatus.Content = Translator.GetText("loading");
+
+                // Todo: use embedded resources that we can assign image in XAML already
+                pictureBoxLoading.Source = SystemTrayMenu.Resources.StaticResources.LoadingIcon.ToImageSource();
+                pictureBoxLoading.Visibility = Visibility.Visible;
             }
 
             string title = new DirectoryInfo(path).Name;
@@ -112,7 +152,7 @@ namespace SystemTrayMenu.UserInterface
             MouseUp += Menu_MouseUp;
             MouseMove += Menu_MouseMove;
 
-
+            textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
             textBoxSearch.ContextMenu = new()
             {
                 Background = SystemColors.ControlBrush,
@@ -238,12 +278,6 @@ namespace SystemTrayMenu.UserInterface
                         item.data.SubMenu?.Close();
                     }
                 };
-
-            // This will be a submenu..
-            if (Level > 0)
-            {
-                SetBehavior(menuData.DirectoryState);
-            }
         }
 
         internal event Action? MenuScrolled;
@@ -297,8 +331,6 @@ namespace SystemTrayMenu.UserInterface
             BottomRight,
             TopRight,
         }
-
-        public bool IsLoadingMenu { get; internal set; } // TODO State out of window
 
         public bool IsDisposed => isClosed; // TODO WPF Replace Forms wrapper
 
@@ -355,93 +387,35 @@ namespace SystemTrayMenu.UserInterface
 #endif
         }
 
-        internal void SetBehavior(MenuDataDirectoryState state)
+        internal void SetSubMenuState(MenuDataDirectoryState state)
         {
-            if (!Config.ShowDirectoryTitleAtTop)
+            if (Config.ShowFunctionKeyOpenFolder)
             {
-                txtTitle.Visibility = Visibility.Hidden;
+                buttonOpenFolder.Visibility = Visibility.Visible;
             }
 
-            if (!Config.ShowSearchBar)
-            {
-                searchPanel.Visibility = Visibility.Collapsed;
-            }
+            buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+            pictureBoxLoading.Visibility = Visibility.Collapsed;
 
-            if (!(Config.ShowCountOfElementsBelow || state != MenuDataDirectoryState.Valid))
+            switch (state)
             {
-                // Hide status when neither config is set nor an error message must be shown
-                labelStatus.Visibility = Visibility.Collapsed;
-            }
+                case MenuDataDirectoryState.Valid:
+                    if (!Config.ShowCountOfElementsBelow)
+                    {
+                        labelStatus.Visibility = Visibility.Collapsed;
+                    }
 
-            if (!Config.ShowFunctionKeyOpenFolder)
-            {
-                buttonOpenFolder.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowFunctionKeyPinMenu)
-            {
-                buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowFunctionKeySettings)
-            {
-                buttonSettings.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowFunctionKeyRestart)
-            {
-                buttonRestart.Visibility = Visibility.Collapsed;
-            }
-
-            if (Level == 0)
-            {
-                // Main Menu
-                textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
-            }
-            else
-            {
-                // SubMenu
-                buttonSettings.Visibility = Visibility.Collapsed;
-                buttonRestart.Visibility = Visibility.Collapsed;
-
-                switch (state)
-                {
-                    case MenuDataDirectoryState.Valid:
-                        IsLoadingMenu = false;
-                        textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
-                        buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-                        buttonOpenFolder.Visibility = Visibility.Visible;
-                        pictureBoxLoading.Visibility = Visibility.Collapsed;
-                        break;
-                    case MenuDataDirectoryState.Empty:
-                        IsLoadingMenu = false;
-                        searchPanel.Visibility = Visibility.Collapsed;
-                        labelStatus.Content = Translator.GetText("Directory empty");
-                        buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-                        buttonOpenFolder.Visibility = Visibility.Visible;
-                        pictureBoxLoading.Visibility = Visibility.Collapsed;
-                        break;
-                    case MenuDataDirectoryState.NoAccess:
-                        IsLoadingMenu = false;
-                        searchPanel.Visibility = Visibility.Collapsed;
-                        labelStatus.Content = Translator.GetText("Directory inaccessible");
-                        buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-                        buttonOpenFolder.Visibility = Visibility.Visible;
-                        pictureBoxLoading.Visibility = Visibility.Collapsed;
-                        break;
-                    case MenuDataDirectoryState.Undefined:
-                        IsLoadingMenu = true;
-                        labelStatus.Content = Translator.GetText("loading");
-                        buttonMenuAlwaysOpen.Visibility = Visibility.Visible;
-                        buttonOpenFolder.Visibility = Visibility.Collapsed;
-
-                        // Todo: use embedded resources that we can assign image in XAML already
-                        pictureBoxLoading.Source = SystemTrayMenu.Resources.StaticResources.LoadingIcon.ToImageSource();
-                        pictureBoxLoading.Visibility = Visibility.Visible;
-                        break;
-                    default:
-                        break;
-                }
+                    break;
+                case MenuDataDirectoryState.Empty:
+                    searchPanel.Visibility = Visibility.Collapsed;
+                    labelStatus.Content = Translator.GetText("Directory empty");
+                    break;
+                case MenuDataDirectoryState.NoAccess:
+                    searchPanel.Visibility = Visibility.Collapsed;
+                    labelStatus.Content = Translator.GetText("Directory inaccessible");
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -462,6 +436,40 @@ namespace SystemTrayMenu.UserInterface
         internal void RefreshDataGridView()
         {
             ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Refresh();
+        }
+
+        internal void AddItemsToMenu(List<RowData> data)
+        {
+            int foldersCount = 0;
+            int filesCount = 0;
+
+            List<ListViewItemData> items = new();
+
+            foreach (RowData rowData in data)
+            {
+                if (!(rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult))
+                {
+                    if (rowData.ContainsMenu)
+                    {
+                        foldersCount++;
+                    }
+                    else
+                    {
+                        filesCount++;
+                    }
+                }
+
+                rowData.RowIndex = items.Count; // Index
+                items.Add(new(
+                    (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource(),
+                    rowData.Text ?? "?",
+                    rowData,
+                    rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
+            }
+
+            dgv.ItemsSource = items;
+
+            SetCounts(foldersCount, filesCount);
         }
 
         internal void ShowWithFadeOrTransparent(bool formActiveFormIsMenu)
@@ -1269,7 +1277,7 @@ namespace SystemTrayMenu.UserInterface
             public int SortIndex { get; set; }
         }
 
-        private void textBoxSearch_TextInput(object sender, TextCompositionEventArgs e)
+        private void TextBoxSearch_TextInput(object sender, TextCompositionEventArgs e)
         {
             // TODO WPF
         }

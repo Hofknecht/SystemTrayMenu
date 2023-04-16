@@ -97,7 +97,7 @@
             <DockPanel x:Name="searchPanel" DockPanel.Dock="Top" Margin="6,0">
                 <Separator x:Name="panelLine" Height="1" Margin="0,1" DockPanel.Dock="Bottom"/>
                 <Image x:Name="pictureBoxSearch" Width="16" Height="16" Margin="1" DockPanel.Dock="Left" Source="{StaticResource ic_fluent_search_48_regularDrawingImage}"/>
-                <TextBox x:Name="textBoxSearch" BorderBrush="{x:Null}" TextInput="textBoxSearch_TextInput" Background="{x:Null}" SelectionTextBrush="Red" SelectionBrush="#FFDAFF00" />
+                <TextBox x:Name="textBoxSearch" BorderBrush="{x:Null}" TextInput="TextBoxSearch_TextInput" Background="{x:Null}" SelectionTextBrush="Red" SelectionBrush="#FFDAFF00" />
             </DockPanel>
 
             <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,4">
