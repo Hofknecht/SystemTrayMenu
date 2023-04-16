@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.Helper.Updater
+namespace SystemTrayMenu.Helpers.Updater
 {
     // Copyright (c) 2018 Alex Parker
     // Copyright (c) 2018-2019 Peter Kirmeier

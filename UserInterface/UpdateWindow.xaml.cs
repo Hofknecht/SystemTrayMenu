@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //
-// Copyright (c) 2022-2022 Peter Kirmeier
+// Copyright (c) 2022-2023 Peter Kirmeier
 
 namespace SystemTrayMenu.UserInterface
 {
@@ -10,7 +10,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Reflection;
     using System.Windows;
     using System.Windows.Media.Imaging;
-    using SystemTrayMenu.Helper.Updater;
+    using SystemTrayMenu.Helpers.Updater;
 
     /// <summary>
     /// Logic of Update window.

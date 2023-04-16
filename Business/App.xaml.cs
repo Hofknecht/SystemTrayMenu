@@ -8,7 +8,7 @@ namespace SystemTrayMenu
     using System.Windows;
     using System.Windows.Threading;
     using SystemTrayMenu.Business;
-    using SystemTrayMenu.Helper.Updater;
+    using SystemTrayMenu.Helpers.Updater;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;

@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.Helper.Updater
+namespace SystemTrayMenu.Helpers.Updater
 {
     using System;
     using System.Collections.Generic;

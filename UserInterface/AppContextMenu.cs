@@ -2,14 +2,14 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.Helper
+namespace SystemTrayMenu.Helpers
 {
     using System;
     using System.Diagnostics;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
-    using SystemTrayMenu.Helper.Updater;
+    using SystemTrayMenu.Helpers.Updater;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
     using SystemColors = System.Windows.SystemColors;

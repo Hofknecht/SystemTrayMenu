@@ -7,7 +7,7 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Windows;
     using Hardcodet.Wpf.TaskbarNotification;
-    using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
 
     internal class AppNotifyIcon : IDisposable

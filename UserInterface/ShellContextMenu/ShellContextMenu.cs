@@ -10,7 +10,7 @@ namespace SystemTrayMenu.Utilities
     using System.Text;
     using System.Windows;
     using System.Windows.Input;
-    using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Helpers;
     using static SystemTrayMenu.Utilities.FormsExtensions;
 
     /// <summary>

@@ -5,16 +5,12 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
-    using System.Drawing;
     using System.Globalization;
     using System.Linq;
-    using System.Reflection;
-    using System.Windows.Controls;
     using System.Windows.Input;
     using SystemTrayMenu.DataClasses;
-    using SystemTrayMenu.Helper;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
-    using static System.Net.Mime.MediaTypeNames;
     using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 

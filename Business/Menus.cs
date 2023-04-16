@@ -18,7 +18,6 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Handler;
-    using SystemTrayMenu.Helper;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.Utilities;
@@ -268,7 +267,7 @@ namespace SystemTrayMenu.Business
             };
 
             CreateWatcher(Config.Path, false);
-            foreach (var pathAndFlags in MenusHelpers.GetAddionalPathsForMainMenu())
+            foreach (var pathAndFlags in DirectoryHelpers.GetAddionalPathsForMainMenu())
             {
                 CreateWatcher(pathAndFlags.Path, pathAndFlags.Recursive);
             }
@@ -345,37 +344,6 @@ namespace SystemTrayMenu.Business
                 watcher.Changed -= WatcherProcessItem;
                 watcher.Dispose();
             }
-        }
-
-        internal static MenuData GetData(BackgroundWorker? worker, string path, int level)
-        {
-            MenuData menuData = new(level, null);
-            if (worker?.CancellationPending == true || string.IsNullOrEmpty(path))
-            {
-                return menuData;
-            }
-
-            MenusHelpers.GetItemsForMainMenu(worker, path, ref menuData);
-            if (worker?.CancellationPending == true)
-            {
-                return menuData;
-            }
-
-            MenusHelpers.GetAddionalItemsForMainMenu(ref menuData);
-            if (worker?.CancellationPending == true)
-            {
-                return menuData;
-            }
-
-            MenusHelpers.ReadHiddenAndReadIcons(worker, ref menuData);
-            if (worker?.CancellationPending == true)
-            {
-                return menuData;
-            }
-
-            MenusHelpers.CheckIfValid(ref menuData);
-            MenusHelpers.SortItemsWhenValid(ref menuData);
-            return menuData;
         }
 
         internal static void OpenFolder(string? path = null)
@@ -498,8 +466,8 @@ namespace SystemTrayMenu.Business
                 path = Config.Path;
             }
 
-            MenuData menuData = GetData((BackgroundWorker?)senderDoWork, path, level);
-            menuData.RowDataParent = rowData;
+            MenuData menuData = new(level, rowData);
+            DirectoryHelpers.DiscoverItems((BackgroundWorker?)senderDoWork, path, ref menuData);
             eDoWork.Result = menuData;
         }
 
@@ -1293,7 +1261,7 @@ namespace SystemTrayMenu.Business
                     }
                 }
 
-                rowDatas = MenusHelpers.SortItems(rowDatas);
+                rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();
                 AddItemsToMenu(rowDatas, menus[0], out _, out _);
 
@@ -1376,7 +1344,7 @@ namespace SystemTrayMenu.Business
                     }
                 }
 
-                rowDatas = MenusHelpers.SortItems(rowDatas);
+                rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();
                 AddItemsToMenu(rowDatas, menus[0], out _, out _);
 
