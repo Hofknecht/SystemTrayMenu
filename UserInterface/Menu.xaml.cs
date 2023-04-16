@@ -44,7 +44,6 @@ namespace SystemTrayMenu.UserInterface
         private Point lastLocation;
 #if TODO // SEARCH
         private bool isSetSearchText;
-        private bool dgvHeightSet;
 #endif
         private bool isClosed = false; // TODO WPF Replace Forms wrapper
         private DispatcherTimer timerUpdateIcons = new DispatcherTimer(DispatcherPriority.Render, Dispatcher.CurrentDispatcher);
@@ -83,7 +82,7 @@ namespace SystemTrayMenu.UserInterface
                 title = $"{title[..MenuDefines.LengthMax]}...";
             }
 
-            txtTitle.Text = title;
+            txtTitle.Text = Title = title;
 
             foreach (FrameworkElement control in
                 new List<FrameworkElement>()
@@ -408,18 +407,27 @@ namespace SystemTrayMenu.UserInterface
                 switch (state)
                 {
                     case MenuDataDirectoryState.Valid:
+                        IsLoadingMenu = false;
                         textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
                         buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+                        buttonOpenFolder.Visibility = Visibility.Visible;
+                        pictureBoxLoading.Visibility = Visibility.Collapsed;
                         break;
                     case MenuDataDirectoryState.Empty:
+                        IsLoadingMenu = false;
                         searchPanel.Visibility = Visibility.Collapsed;
                         labelStatus.Content = Translator.GetText("Directory empty");
                         buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+                        buttonOpenFolder.Visibility = Visibility.Visible;
+                        pictureBoxLoading.Visibility = Visibility.Collapsed;
                         break;
                     case MenuDataDirectoryState.NoAccess:
+                        IsLoadingMenu = false;
                         searchPanel.Visibility = Visibility.Collapsed;
                         labelStatus.Content = Translator.GetText("Directory inaccessible");
                         buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+                        buttonOpenFolder.Visibility = Visibility.Visible;
+                        pictureBoxLoading.Visibility = Visibility.Collapsed;
                         break;
                     case MenuDataDirectoryState.Undefined:
                         IsLoadingMenu = true;
@@ -437,22 +445,6 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal string GetSearchText()
-        {
-            return textBoxSearch.Text;
-        }
-
-        internal void SetSearchText(string? userSearchText)
-        {
-            if (!string.IsNullOrEmpty(userSearchText))
-            {
-                textBoxSearch.Text = userSearchText + "*";
-#if TODO // SEARCH
-                isSetSearchText = true;
-#endif
-            }
-        }
-
         internal bool IsMouseOn()
         {
             Point mousePos = NativeMethods.Screen.CursorPosition;
@@ -465,6 +457,11 @@ namespace SystemTrayMenu.UserInterface
         internal ListView? GetDataGridView() // TODO WPF Replace Forms wrapper
         {
             return dgv;
+        }
+
+        internal void RefreshDataGridView()
+        {
+            ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Refresh();
         }
 
         internal void ShowWithFadeOrTransparent(bool formActiveFormIsMenu)
@@ -810,22 +807,7 @@ namespace SystemTrayMenu.UserInterface
                     windowFrame.CornerRadius = new CornerRadius(CornerRadius);
                 }
 
-                // Keep its size when once created.
-                SizeToContent = SizeToContent.Manual;
-            }
-        }
-
-        internal void ResetHeight()
-        {
-            if (IsLoaded)
-            {
-                // TODO: WPF Check if this "reset" works
-                SizeToContent = SizeToContent.WidthAndHeight;
                 UpdateLayout();
-                SizeToContent = SizeToContent.Manual;
-#if TODO // SEARCH
-                dgvHeightSet = false;
-#endif
             }
         }
 
@@ -927,27 +909,9 @@ namespace SystemTrayMenu.UserInterface
                 dgv.Tag = true;
             }
 
-#if TODO // SEARCH
-            if (!dgvHeightSet && dgvHeightByItems > 0 && dgvHeightMax > 0)
-            {
-#endif
             double heightMaxByOptions = Scaling.Factor * Scaling.FactorByDpi *
                 450f * (Settings.Default.HeightMaxInPercent / 100f);
             MaxHeight = Math.Min(screenHeightMax, heightMaxByOptions);
-#if TODO // SEARCH
-                dgvHeightSet = true;
-            }
-#endif
-#if TODO // SEARCH and TOUCH
-            if (dgvHeightByItems > dgvHeightMax)
-            {
-                ScrollbarVisible = true;
-            }
-            else
-            {
-                ScrollbarVisible = false;
-            }
-#endif
         }
 
         private void AdjustDataGridViewWidth()
@@ -1216,7 +1180,7 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Refresh();
+                RefreshDataGridView();
             }
         }
 

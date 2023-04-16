@@ -176,33 +176,40 @@ namespace SystemTrayMenu.Business
 
                 void LoadSubMenuCompleted(object? senderCompleted, RunWorkerCompletedEventArgs e)
                 {
+                    if (e.Result == null)
+                    {
+                        return;
+                    }
+
                     MenuData menuData = (MenuData)e.Result;
-
-                    Menu menuLoading = menus[menuData.Level];
-                    string userSearchText = string.Empty;
-                    bool closedLoadingMenu = false;
-                    if (menuLoading != null && menuLoading.IsLoadingMenu)
+                    Menu? menu = menus[menuData.Level];
+                    if (menu == null || !menu.IsLoadingMenu)
                     {
-                        menuLoading.HideWithFade();
-                        userSearchText = menuLoading.GetSearchText();
-                        menus[menuLoading.Level] = null;
-                        closedLoadingMenu = true;
+                        return;
                     }
 
-                    if (menuData.DirectoryState != MenuDataDirectoryState.Undefined &&
-                        menus[0].IsUsable)
+                    if (menus[0].IsUsable)
                     {
-                        Create(menuData, menuData.RowDataParent.ResolvedPath, userSearchText); // Level 1+ Sub Menu (completed)
-                    }
-                    else if (closedLoadingMenu && menus[0].IsUsable)
-                    {
-                        menuData.RowDataParent.IsMenuOpen = false;
-                        menuData.RowDataParent.IsClicking = false;
-                        menuData.RowDataParent.IsSelected = false;
-                        Menu menuPrevious = menus[menuData.Level - 1];
-                        if (menuPrevious != null)
+                        if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
                         {
-                            RefreshSelection(menuPrevious.GetDataGridView());
+                            // Sub Menu (completed)
+                            UpdateMenuContent(menu, menuData);
+                            menu.SetBehavior(menuData.DirectoryState);
+                            AdjustMenusSizeAndLocation();
+                        }
+                        else
+                        {
+                            menu.HideWithFade();
+                            menus[menu.Level] = null;
+
+                            menuData.RowDataParent.IsMenuOpen = false;
+                            menuData.RowDataParent.IsClicking = false;
+                            menuData.RowDataParent.IsSelected = false;
+                            Menu menuPrevious = menus[menuData.Level - 1];
+                            if (menuPrevious != null)
+                            {
+                                RefreshSelection(menuPrevious.GetDataGridView());
+                            }
                         }
                     }
                 }
@@ -573,7 +580,7 @@ namespace SystemTrayMenu.Business
             return (App.TaskbarLogo != null && App.TaskbarLogo.IsActive) || IsShellContextMenuOpen();
         }
 
-        private Menu Create(MenuData menuData, string path, string? userSearchText = null)
+        private Menu Create(MenuData menuData, string path)
         {
             Menu menu = new(menuData, path);
 
@@ -633,7 +640,7 @@ namespace SystemTrayMenu.Business
 
             menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged((Menu)sender);
 
-            AddItemsToMenu(menuData.RowDatas, menu, out int foldersCount, out int filesCount);
+            UpdateMenuContent(menu, menuData);
 
             menu.CellMouseEnter += dgvMouseRow.CellMouseEnter;
             menu.CellMouseLeave += dgvMouseRow.CellMouseLeave;
@@ -658,31 +665,31 @@ namespace SystemTrayMenu.Business
 #endif
             }
 
-            menu.SetCounts(foldersCount, filesCount);
-
             if (menuData.Level == 0)
             {
                 // Main Menu
-                menus[0] = menu;
+                menus[menuData.Level] = menu;
                 menu.Loaded += (s, e) => ExecuteWatcherHistory();
-            }
-            else if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
-            {
-                // Sub Menu (completed)
-                if (menus[0].IsUsable)
-                {
-                    ShowSubMenu(menu);
-                    menu.SetSearchText(userSearchText);
-                }
             }
             else
             {
                 // Sub Menu (loading)
-                menus[menuData.Level] = menu;
-                ShowSubMenu(menu);
+                if (menus[0].IsUsable)
+                {
+                    HideOldMenu(menu, true);
+                    menus[menu.Level] = menu;
+                    AdjustMenusSizeAndLocation();
+                    menus[menu.Level]?.ShowWithFadeOrTransparent(IsActive());
+                }
             }
 
             return menu;
+        }
+
+        private void UpdateMenuContent(Menu menu, MenuData menuData)
+        {
+            AddItemsToMenu(menuData.RowDatas, menu, out int foldersCount, out int filesCount);
+            menu.SetCounts(foldersCount, filesCount);
         }
 
         private void MenuVisibleChanged(Menu menu)
@@ -695,7 +702,6 @@ namespace SystemTrayMenu.Business
                 {
                     menu.SetBehavior(MenuDataDirectoryState.Valid);
                     menu.ResetSearchText();
-                    menu.ResetHeight();
                 }
             }
 
@@ -999,14 +1005,6 @@ namespace SystemTrayMenu.Business
                     menus[0].RowDataParent = null;
                 }
             });
-        }
-
-        private void ShowSubMenu(Menu menuToShow)
-        {
-            HideOldMenu(menuToShow, true);
-            menus[menuToShow.Level] = menuToShow;
-            AdjustMenusSizeAndLocation();
-            menus[menuToShow.Level]?.ShowWithFadeOrTransparent(IsActive());
         }
 
         private void HideOldMenu(Menu menuToShow, bool keepOrSetIsMenuOpen = false)
@@ -1340,7 +1338,6 @@ namespace SystemTrayMenu.Business
                 keyboardInput.ClearIsSelectedByKey();
 
                 hideSubmenuDuringRefreshSearch = false;
-                menus[0].ResetHeight();
                 menus[0].RefreshSearchText();
                 hideSubmenuDuringRefreshSearch = true;
             }
@@ -1384,7 +1381,6 @@ namespace SystemTrayMenu.Business
                 AddItemsToMenu(rowDatas, menus[0], out _, out _);
 
                 hideSubmenuDuringRefreshSearch = false;
-                menus[0].ResetHeight();
                 menus[0].RefreshSearchText();
                 hideSubmenuDuringRefreshSearch = true;
 
