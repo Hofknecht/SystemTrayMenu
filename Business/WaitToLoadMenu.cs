@@ -20,6 +20,7 @@ namespace SystemTrayMenu.Handler
         private int rowIndex;
         private ListView dgvTmp;
         private int rowIndexTmp;
+        private bool alreadyOpened;
 
         private int mouseMoveEvents;
         private DateTime dateTimeLastMouseMoveEvent = DateTime.Now;
@@ -170,8 +171,10 @@ namespace SystemTrayMenu.Handler
 
         private void CallOpenMenuNow()
         {
-            if (dgv.Items.Count > rowIndex)
+            if (dgv.Items.Count > rowIndex && !alreadyOpened)
             {
+                alreadyOpened = true;
+
                 RowData rowData = ((ListViewItemData)dgv.Items[rowIndex]).data;
                 Menu menu = (Menu)dgv.GetParentWindow();
                 rowData.Level = menu.Level;
@@ -193,6 +196,12 @@ namespace SystemTrayMenu.Handler
 
         private void SetData(ListView dgv, int rowIndex)
         {
+            if (this.dgv == dgv && this.rowIndex == rowIndex)
+            {
+                return;
+            }
+
+            alreadyOpened = false;
             dgvTmp = null;
             this.dgv = dgv;
             this.rowIndex = rowIndex;
