@@ -206,6 +206,7 @@ namespace SystemTrayMenu.Business
                             menu.AddItemsToMenu(menuData.RowDatas);
                             menu.SetSubMenuState(menuData.DirectoryState);
                             AdjustMenusSizeAndLocation(menu.Level);
+                            menu.TimerUpdateIconsStart();
                         }
                         else
                         {
