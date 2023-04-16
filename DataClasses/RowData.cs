@@ -31,14 +31,14 @@ namespace SystemTrayMenu.DataClasses
         /// (Related replace "\x00" see #171.)
         /// </summary>
         /// <param name="isFolder">Flag if file or folder.</param>
-        /// <param name="isAddionalItem">Flag if addional item, from other folder than root folder.</param>
+        /// <param name="isAdditionalItem">Flag if additional item, from other folder than root folder.</param>
         /// <param name="isNetworkRoot">Flag if resolved from network root folder.</param>
         /// <param name="level">The number of the menu level.</param>
         /// <param name="path">Path to item.</param>
-        internal RowData(bool isFolder, bool isAddionalItem, bool isNetworkRoot, int level, string path)
+        internal RowData(bool isFolder, bool isAdditionalItem, bool isNetworkRoot, int level, string path)
         {
             IsFolder = isFolder;
-            IsAddionalItem = isAddionalItem;
+            IsAdditionalItem = isAdditionalItem;
             IsNetworkRoot = isNetworkRoot;
             Level = level;
 
@@ -106,7 +106,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IsFolder { get; }
 
-        internal bool IsAddionalItem { get; }
+        internal bool IsAdditionalItem { get; }
 
         internal bool IsNetworkRoot { get; }
 
@@ -182,6 +182,7 @@ namespace SystemTrayMenu.DataClasses
             if (e != null &&
                 e.RightButton == MouseButtonState.Pressed &&
                 FileInfo != null &&
+                Path != null &&
                 dgv != null &&
                 dgv.Items.Count > RowIndex &&
                 (DateTime.Now - contextMenuClosed).TotalMilliseconds > 200)
@@ -235,7 +236,7 @@ namespace SystemTrayMenu.DataClasses
                 OpenItem(e, ref toCloseByDoubleClick);
             }
 
-            if (Properties.Settings.Default.OpenDirectoryWithOneClick &&
+            if (Properties.Settings.Default.OpenDirectoryWithOneClick && Path != null &&
                 ContainsMenu && (e == null || e.LeftButton == MouseButtonState.Pressed))
             {
                 Log.ProcessStart(Path);
@@ -255,7 +256,7 @@ namespace SystemTrayMenu.DataClasses
                 OpenItem(e, ref toCloseByDoubleClick);
             }
 
-            if (!Properties.Settings.Default.OpenDirectoryWithOneClick &&
+            if (!Properties.Settings.Default.OpenDirectoryWithOneClick && Path != null &&
                 ContainsMenu && (e == null || e.LeftButton == MouseButtonState.Pressed))
             {
                 Log.ProcessStart(Path);
@@ -268,7 +269,7 @@ namespace SystemTrayMenu.DataClasses
 
         private void OpenItem(MouseEventArgs e, ref bool toCloseByOpenItem)
         {
-            if (!ContainsMenu &&
+            if (!ContainsMenu && Path != null && ResolvedPath != null &&
                 (e == null || e.LeftButton == MouseButtonState.Pressed))
             {
                 ProcessStarted = true;

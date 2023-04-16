@@ -16,13 +16,13 @@ namespace SystemTrayMenu.Handler
 
     internal class KeyboardInput : IDisposable
     {
-        private readonly Menu[] menus;
+        private readonly Menu?[] menus;
         private readonly KeyboardHook hook = new();
 
         private int iRowKey = -1;
         private int iMenuKey;
 
-        public KeyboardInput(Menu[] menus)
+        public KeyboardInput(Menu?[] menus)
         {
             this.menus = menus;
         }

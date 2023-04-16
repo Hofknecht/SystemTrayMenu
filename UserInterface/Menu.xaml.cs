@@ -296,9 +296,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action? SearchTextChanging;
 
-#if TODO // SEARCH
-        internal event EventHandler<bool> SearchTextChanged;
-#endif
+        internal event Action<Menu, bool>? SearchTextChanged;
 
         internal event Action? UserDragsMenu;
 
@@ -447,7 +445,7 @@ namespace SystemTrayMenu.UserInterface
 
             foreach (RowData rowData in data)
             {
-                if (!(rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult))
+                if (!(rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult))
                 {
                     if (rowData.ContainsMenu)
                     {
@@ -464,7 +462,7 @@ namespace SystemTrayMenu.UserInterface
                     (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource(),
                     rowData.Text ?? "?",
                     rowData,
-                    rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
+                    rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
             }
 
             dgv.ItemsSource = items;
@@ -550,26 +548,25 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="bounds">Screen coordinates where the menu is allowed to be drawn in.</param>
         /// <param name="menuPredecessor">Predecessor menu (when available).</param>
         /// <param name="startLocation">Defines where the first menu is drawn (when no predecessor is set).</param>
-        /// <param name="isCustomLocationOutsideOfScreen">isCustomLocationOutsideOfScreen.</param>
+        /// <param name="useCustomLocation">Use CustomLocation as start position.</param>
         internal void AdjustSizeAndLocation(
             Rect bounds,
             Menu? menuPredecessor,
             StartLocation startLocation,
-            bool isCustomLocationOutsideOfScreen)
+            bool useCustomLocation)
         {
             // Update the height and width
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
             AdjustDataGridViewWidth();
 
-            bool useCustomLocation = Settings.Default.UseCustomLocation || lastLocation.X > 0;
             bool changeDirectionWhenOutOfBounds = true;
 
-            if (menuPredecessor != null)
+            if (Level > 0)
             {
-                // Ignore start as we use predecessor
+                // Sub Menu location depends on the location of its predecessor
                 startLocation = StartLocation.Predecessor;
             }
-            else if (useCustomLocation && !isCustomLocationOutsideOfScreen)
+            else if (useCustomLocation)
             {
                 // Do not adjust location again because Cursor.Postion changed
                 if (RowDataParent != null)
@@ -607,17 +604,20 @@ namespace SystemTrayMenu.UserInterface
 
             if (IsLoaded)
             {
-                AdjustSizeAndLocationInternal();
+                AdjustWindowPositionInternal();
             }
             else
             {
                 // Layout cannot be calculated during loading, postpone this event
                 // TODO: Make sure lampa capture is registered only once
-                Loaded += (_, _) => AdjustSizeAndLocationInternal();
+                Loaded += (_, _) => AdjustWindowPositionInternal();
             }
 
-            void AdjustSizeAndLocationInternal()
+            void AdjustWindowPositionInternal()
             {
+                // Make sure we have latest values of own window size
+                UpdateLayout();
+
                 // Calculate X position
                 double x;
                 switch (startLocation)
@@ -715,12 +715,12 @@ namespace SystemTrayMenu.UserInterface
                 {
                     case StartLocation.Predecessor:
 
-                        RowData trigger = RowDataParent;
+                        RowData? trigger = RowDataParent;
                         ListView dgv = menuPredecessor!.GetDataGridView() !;
 
                         // Set position on same height as the selected row from predecessor
                         y = menuPredecessor.Location.Y;
-                        if (dgv.Items.Count > trigger.RowIndex)
+                        if (trigger != null && dgv.Items.Count > trigger.RowIndex)
                         {
                             // When item is not found, it might be invalidated due to resizing or moving
                             // After updating the layout the location should be available again.
@@ -1071,9 +1071,9 @@ namespace SystemTrayMenu.UserInterface
             }
 
             SetCounts(foldersCount, filesCount);
-
-            SearchTextChanged.Invoke(this, string.IsNullOrEmpty(userPattern));
-
+#endif
+            SearchTextChanged?.Invoke(this, string.IsNullOrEmpty(userPattern));
+#if TODO // SEARCH
             if (anyIconNotUpdated)
             {
                 timerUpdateIcons.Start();
@@ -1258,7 +1258,7 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         internal class ListViewItemData
         {
-            public ListViewItemData(ImageSource columnIcon, string columnText, RowData rowData, int sortIndex)
+            public ListViewItemData(ImageSource? columnIcon, string columnText, RowData rowData, int sortIndex)
             {
                 ColumnIcon = columnIcon;
                 ColumnText = columnText;
@@ -1266,7 +1266,7 @@ namespace SystemTrayMenu.UserInterface
                 SortIndex = sortIndex;
             }
 
-            public ImageSource ColumnIcon { get; set; }
+            public ImageSource? ColumnIcon { get; set; }
 
             public string ColumnText { get; set; }
 
@@ -1275,11 +1275,6 @@ namespace SystemTrayMenu.UserInterface
             public RowData data { get; set; }
 
             public int SortIndex { get; set; }
-        }
-
-        private void TextBoxSearch_TextInput(object sender, TextCompositionEventArgs e)
-        {
-            // TODO WPF
         }
     }
 }
