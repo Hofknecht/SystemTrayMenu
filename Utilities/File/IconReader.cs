@@ -20,8 +20,8 @@ namespace SystemTrayMenu.Utilities
     /// </summary>
     public static class IconReader
     {
-        private static readonly ConcurrentDictionary<string, Icon> DictIconCacheMainMenu = new();
-        private static readonly ConcurrentDictionary<string, Icon> DictIconCacheSubMenus = new();
+        private static readonly ConcurrentDictionary<string, Icon?> DictIconCacheMainMenu = new();
+        private static readonly ConcurrentDictionary<string, Icon?> DictIconCacheSubMenus = new();
 
         public enum IconSize
         {
@@ -42,13 +42,13 @@ namespace SystemTrayMenu.Utilities
         {
             if (includingMainMenu)
             {
-                foreach (Icon icon in DictIconCacheMainMenu.Values)
+                foreach (Icon? icon in DictIconCacheMainMenu.Values)
                 {
                     icon?.Dispose();
                 }
             }
 
-            foreach (Icon icon in DictIconCacheSubMenus.Values)
+            foreach (Icon? icon in DictIconCacheSubMenus.Values)
             {
                 icon?.Dispose();
             }
@@ -171,7 +171,7 @@ namespace SystemTrayMenu.Utilities
                             }
                         }
 
-                        Icon GetFolder(string keyExtension)
+                        Icon? GetFolder(string keyExtension)
                         {
                             return GetIconSTA(path, path, linkOverlay, size, true);
                         }
@@ -182,7 +182,7 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        public static Icon? GetIconSTA(string path, string resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
+        public static Icon? GetIconSTA(string path, string? resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
         {
             Icon? icon = null;
             if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
@@ -223,7 +223,7 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        private static ConcurrentDictionary<string, Icon> DictIconCache(bool isMainMenu)
+        private static ConcurrentDictionary<string, Icon?> DictIconCache(bool isMainMenu)
         {
             if (isMainMenu)
             {

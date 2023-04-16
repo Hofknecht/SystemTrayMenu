@@ -5,13 +5,12 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Drawing;
     using System.Windows;
     using System.Windows.Media;
 
     internal static class Scaling
     {
-        private static FontSizeConverter fontConverter = new FontSizeConverter();
+        private static readonly FontSizeConverter FontConverter = new ();
 
         public static float Factor { get; private set; } = 1;
 
@@ -34,7 +33,7 @@ namespace SystemTrayMenu.Utilities
 
         public static double ScaleFontByPoints(float points)
         {
-            return (double)fontConverter.ConvertFrom((points * Factor).ToString() + "pt") !;
+            return (double)FontConverter.ConvertFrom((points * Factor).ToString() + "pt")!;
         }
 
         public static double ScaleFontByPixels(float pixels)

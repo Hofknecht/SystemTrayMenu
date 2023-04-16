@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //
-// Copyright (c) 2022-2022 Peter Kirmeier
+// Copyright (c) 2022-2023 Peter Kirmeier
 
 namespace SystemTrayMenu.UserInterface
 {
@@ -11,6 +11,7 @@ namespace SystemTrayMenu.UserInterface
     using System.ComponentModel;
     using System.Globalization;
     using System.IO;
+    using System.Linq;
     using System.Reflection;
     using System.Text.RegularExpressions;
     using System.Windows;
@@ -45,7 +46,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (imgstream != null)
                 {
-                    BitmapImage imageSource = new BitmapImage();
+                    BitmapImage imageSource = new ();
                     imageSource.BeginInit();
                     imageSource.StreamSource = imgstream;
                     imageSource.EndInit();
@@ -170,16 +171,16 @@ namespace SystemTrayMenu.UserInterface
                     MoreRichTextBox.Visibility = Visibility.Visible;
                     MoreRichTextBox.Document.Blocks.Clear();
 
-                    Paragraph para = new Paragraph();
+                    Paragraph para = new ();
 
                     // Parse string to detect hyperlinks and add handlers to them
                     // See: https://mycsharp.de/forum/threads/97560/erledigt-dynamische-hyperlinks-in-wpf-flowdocument?page=1
                     int lastPos = 0;
-                    foreach (Match match in RegexUrl.Matches(value))
+                    foreach (Match match in RegexUrl.Matches(value).Cast<Match>())
                     {
                         if (match.Index != lastPos)
                         {
-                            para.Inlines.Add(value.Substring(lastPos, match.Index - lastPos));
+                            para.Inlines.Add(value[lastPos..match.Index]);
                         }
 
                         var link = new Hyperlink(new Run(match.Value))
@@ -195,7 +196,7 @@ namespace SystemTrayMenu.UserInterface
 
                     if (lastPos < value.Length)
                     {
-                        para.Inlines.Add(value.Substring(lastPos));
+                        para.Inlines.Add(value[lastPos..]);
                     }
 
                     MoreRichTextBox.Document.Blocks.Add(para);
@@ -432,7 +433,7 @@ namespace SystemTrayMenu.UserInterface
                 RegistryKey? rk = Registry.LocalMachine.OpenSubKey(keyName);
                 if (rk != null)
                 {
-                    strSysInfoPath = (string)rk.GetValue(subKeyRef, string.Empty) !;
+                    strSysInfoPath = (string)rk.GetValue(subKeyRef, string.Empty)!;
                 }
             }
             catch (Exception ex)
@@ -662,7 +663,7 @@ namespace SystemTrayMenu.UserInterface
         private void AboutBox_Load(object sender, RoutedEventArgs e)
         {
             // if the user didn't provide an assembly, try to guess which one is the entry assembly
-            AppEntryAssembly ??= Assembly.GetEntryAssembly() !;
+            AppEntryAssembly ??= Assembly.GetEntryAssembly()!;
             AppEntryAssembly ??= Assembly.GetExecutingAssembly();
 
             executingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;

@@ -37,7 +37,7 @@ namespace SystemTrayMenu.Helpers
         /// <summary>
         /// A hot key has been pressed.
         /// </summary>
-        internal event EventHandler<KeyPressedEventArgs> KeyPressed;
+        internal event EventHandler<KeyPressedEventArgs>? KeyPressed;
 
         public void Dispose()
         {
@@ -50,16 +50,6 @@ namespace SystemTrayMenu.Helpers
             // dispose the inner native window.
             window.KeyPressed -= Window_KeyPressed;
             window.Dispose();
-        }
-
-        /// <summary>
-        /// Registers a hot key in the system.
-        /// </summary>
-        /// <param name="key">The key itself that is associated with the hot key.</param>
-        internal void RegisterHotKey(Key key)
-        {
-            uint keyModifiersNone = 0;
-            RegisterHotKey(keyModifiersNone, key);
         }
 
         internal void RegisterHotKey()
@@ -100,6 +90,16 @@ namespace SystemTrayMenu.Helpers
         /// <summary>
         /// Registers a hot key in the system.
         /// </summary>
+        /// <param name="key">The key itself that is associated with the hot key.</param>
+        internal void RegisterHotKey(Key key)
+        {
+            uint keyModifiersNone = 0;
+            RegisterHotKey(keyModifiersNone, key);
+        }
+
+        /// <summary>
+        /// Registers a hot key in the system.
+        /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
         internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Key key)
@@ -107,7 +107,7 @@ namespace SystemTrayMenu.Helpers
             RegisterHotKey((uint)modifier, key);
         }
 
-        private void Window_KeyPressed(object sender, KeyPressedEventArgs e)
+        private void Window_KeyPressed(object? sender, KeyPressedEventArgs e)
         {
             KeyPressed?.Invoke(this, e);
         }
@@ -131,7 +131,7 @@ namespace SystemTrayMenu.Helpers
         {
             private const int WmHotkey = 0x0312;
 
-            public event EventHandler<KeyPressedEventArgs> KeyPressed;
+            public event EventHandler<KeyPressedEventArgs>? KeyPressed;
 
             /// <summary>
             /// Overridden to get the notifications.

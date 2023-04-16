@@ -15,25 +15,23 @@ namespace SystemTrayMenu.Utilities
     {
         private static bool hideHiddenEntries;
         private static bool hideSystemEntries;
-        private static IShellDispatch4 iShellDispatch4;
+        private static IShellDispatch4? iShellDispatch4;
 
         internal static void Initialize()
         {
             try
             {
-                iShellDispatch4 = (IShellDispatch4)Activator.CreateInstance(
-                    Type.GetTypeFromProgID("Shell.Application"));
+                iShellDispatch4 = (IShellDispatch4?)Activator.CreateInstance(
+                    Type.GetTypeFromProgID("Shell.Application")!);
 
                 // Using SHGetSetSettings would be much better in performance but the results are not accurate.
                 // We have to go for the shell interface in order to receive the correct settings:
                 // https://docs.microsoft.com/en-us/windows/win32/shell/ishelldispatch4-getsetting
                 const int SSF_SHOWALLOBJECTS = 0x00000001;
-                hideHiddenEntries = !iShellDispatch4.GetSetting(
-                    SSF_SHOWALLOBJECTS);
+                hideHiddenEntries = !(iShellDispatch4?.GetSetting(SSF_SHOWALLOBJECTS) ?? false);
 
                 const int SSF_SHOWSUPERHIDDEN = 0x00040000;
-                hideSystemEntries = !iShellDispatch4.GetSetting(
-                    SSF_SHOWSUPERHIDDEN);
+                hideSystemEntries = !(iShellDispatch4?.GetSetting(SSF_SHOWSUPERHIDDEN) ?? false);
             }
             catch (Exception ex)
             {
@@ -59,7 +57,7 @@ namespace SystemTrayMenu.Utilities
         internal static bool IsHidden(RowData rowData)
         {
             bool isDirectoryToHide = false;
-            if (rowData.Path.Length >= 260)
+            if (rowData.Path == null || rowData.Path.Length >= 260)
             {
                 Log.Info($"path too long (>=260):'{rowData.Path}'");
                 return isDirectoryToHide;

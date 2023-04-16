@@ -8,11 +8,11 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
 
     public interface IFolderDialog
     {
-        string InitialFolder { get; set; }
+        string? InitialFolder { get; set; }
 
-        string DefaultFolder { get; set; }
+        string? DefaultFolder { get; set; }
 
-        string Folder { get; set; }
+        string? Folder { get; set; }
 
         bool ShowDialog(Window owner);
     }

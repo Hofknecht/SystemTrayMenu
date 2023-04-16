@@ -326,7 +326,7 @@ namespace SystemTrayMenu.Business
 
         private bool IsMainUsable => menus[0]?.IsUsable ?? false;
 
-        private IEnumerable<Menu> AsEnumerable => menus.Where(m => m != null && !m.IsDisposed) !;
+        private IEnumerable<Menu> AsEnumerable => menus.Where(m => m != null && !m.IsDisposed)!;
 
         private List<Menu> AsList => AsEnumerable.ToList();
 

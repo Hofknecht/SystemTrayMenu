@@ -12,7 +12,7 @@ namespace SystemTrayMenu.Utilities
 
     internal class AppRestart
     {
-        public static event Action BeforeRestarting;
+        public static event Action? BeforeRestarting;
 
         internal static void ByThreadException()
         {
@@ -34,24 +34,31 @@ namespace SystemTrayMenu.Utilities
             Restart(GetCurrentMethod());
         }
 
-        private static void Restart(string reason)
+        private static void Restart(string? reason)
         {
             BeforeRestarting?.Invoke();
-            Log.Info($"Restart by '{reason}'");
+            Log.Info($"Restart by '{reason ?? "unkown"}'");
             Log.Close();
 
             using (Process p = new())
             {
-                string fileName = System.Environment.ProcessPath;
-                p.StartInfo = new ProcessStartInfo(fileName);
-
-                try
+                string? fileName = System.Environment.ProcessPath;
+                if (string.IsNullOrEmpty(fileName))
                 {
-                    p.Start();
+                    Log.Warn("Restart failed", new());
                 }
-                catch (Win32Exception ex)
+                else
                 {
-                    Log.Warn("Restart failed", ex);
+                    p.StartInfo = new ProcessStartInfo(fileName);
+
+                    try
+                    {
+                        p.Start();
+                    }
+                    catch (Win32Exception ex)
+                    {
+                        Log.Warn("Restart failed", ex);
+                    }
                 }
             }
 
@@ -59,12 +66,12 @@ namespace SystemTrayMenu.Utilities
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        private static string GetCurrentMethod()
+        private static string? GetCurrentMethod()
         {
             StackTrace st = new();
-            StackFrame sf = st.GetFrame(1);
+            StackFrame? sf = st.GetFrame(1);
 
-            return sf.GetMethod().Name;
+            return sf?.GetMethod()?.Name;
         }
     }
 }

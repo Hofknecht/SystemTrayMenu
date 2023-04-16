@@ -735,7 +735,7 @@ namespace SystemTrayMenu.Utilities
 
             try
             {
-                if (arrPIDLs == null)
+                if (arrPIDLs == null || oParentFolder == null || oContextMenu == null)
                 {
                     ReleaseAll();
                     return;
@@ -832,6 +832,14 @@ namespace SystemTrayMenu.Utilities
         /// by calling HandleMenuMsg and HandleMenuMsg2. It will also call the OnContextMenuMouseHover
         /// method of Browser when hovering over a ContextMenu item.
         /// </summary>
+        /// <param name="hwnd">The window handle.</param>
+        /// <param name="msg">The message ID.</param>
+        /// <param name="wParam">The message's wParam value.</param>
+        /// <param name="lParam">The message's lParam value.</param>
+        /// <param name="handled">A value that indicates whether the message was handled.
+        /// Set the value to true if the message was handled; otherwise, false.</param>
+        /// <returns>The appropriate return value depends on the particular message.
+        /// See the message documentation details for the Win32 message being handled.</returns>
         protected override IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             if (oContextMenu2 != null &&
@@ -867,7 +875,7 @@ namespace SystemTrayMenu.Utilities
         /// </summary>
         /// <param name="arrFI">Array of FileInfo.</param>
         /// <returns>Array of PIDLs.</returns>
-        protected IntPtr[] GetPIDLs(FileInfo[] arrFI)
+        protected IntPtr[]? GetPIDLs(FileInfo[] arrFI)
         {
             if (arrFI == null || arrFI.Length == 0)
             {
@@ -907,14 +915,14 @@ namespace SystemTrayMenu.Utilities
         /// </summary>
         /// <param name="arrFI">Array of DirectoryInfo.</param>
         /// <returns>Array of PIDLs.</returns>
-        protected IntPtr[] GetPIDLs(DirectoryInfo[] arrFI)
+        protected IntPtr[]? GetPIDLs(DirectoryInfo[] arrFI)
         {
             if (arrFI == null || arrFI.Length == 0 || arrFI[0].Parent == null)
             {
                 return null;
             }
 
-            IShellFolder? oParentFolder = GetParentFolder(arrFI[0].Parent.FullName);
+            IShellFolder? oParentFolder = GetParentFolder(arrFI[0].Parent?.FullName);
             if (oParentFolder == null)
             {
                 return null;
@@ -942,7 +950,7 @@ namespace SystemTrayMenu.Utilities
             return arrPIDLs;
         }
 
-        private static void InvokeCommand(IContextMenu contextMenu, uint nCmd, string strFolder, Point pointInvoke)
+        private static void InvokeCommand(IContextMenu contextMenu, uint nCmd, string? strFolder, Point pointInvoke)
         {
             CMINVOKECOMMANDINFOEX invoke = new()
             {
@@ -1067,12 +1075,12 @@ namespace SystemTrayMenu.Utilities
         /// </summary>
         /// <param name="folderName">Folder path.</param>
         /// <returns>IShellFolder for the folder (relative from the desktop).</returns>
-        private IShellFolder? GetParentFolder(string folderName)
+        private IShellFolder? GetParentFolder(string? folderName)
         {
             if (oParentFolder == null)
             {
                 IShellFolder oDesktopFolder = GetDesktopFolder();
-                if (oDesktopFolder == null)
+                if (oDesktopFolder == null || folderName == null)
                 {
                     return null;
                 }
@@ -1088,7 +1096,7 @@ namespace SystemTrayMenu.Utilities
 
                 IntPtr pStrRet = Marshal.AllocCoTaskMem((MaxPath * 2) + 4);
                 Marshal.WriteInt32(pStrRet, 0, 0);
-                _ = this.oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
+                _ = oDesktopFolder.GetDisplayNameOf(pPIDL, SHGNO.FORPARSING, pStrRet);
                 StringBuilder strFolder = new(MaxPath);
                 _ = DllImports.NativeMethods.ShlwapiStrRetToBuf(pStrRet, pPIDL, strFolder, MaxPath);
                 Marshal.FreeCoTaskMem(pStrRet);
@@ -1131,7 +1139,7 @@ namespace SystemTrayMenu.Utilities
             [MarshalAs(UnmanagedType.LPStr)]
             public string LpParameters;
             [MarshalAs(UnmanagedType.LPStr)]
-            public string LpDirectory;
+            public string? LpDirectory;
             public SW NShow;
             public int DwHotKey;
             public IntPtr HIcon;
@@ -1141,7 +1149,7 @@ namespace SystemTrayMenu.Utilities
             [MarshalAs(UnmanagedType.LPWStr)]
             public string LpParametersW;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string LpDirectoryW;
+            public string? LpDirectoryW;
             [MarshalAs(UnmanagedType.LPWStr)]
             public string LpTitleW;
             public POINT PtInvoke;
@@ -1150,7 +1158,7 @@ namespace SystemTrayMenu.Utilities
         // Contains information about a menu item
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
 
-        private struct MENUITEMINFO
+        private readonly struct MENUITEMINFO
         {
             private readonly int cbSize;
             private readonly MIIM fMask;

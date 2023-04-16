@@ -16,9 +16,9 @@ namespace SystemTrayMenu.Handler
     internal class WaitToLoadMenu : IDisposable
     {
         private readonly DispatcherTimer timerStartLoad = new();
-        private ListView dgv;
+        private ListView? dgv;
         private int rowIndex;
-        private ListView dgvTmp;
+        private ListView? dgvTmp;
         private int rowIndexTmp;
         private bool alreadyOpened;
 
@@ -32,13 +32,13 @@ namespace SystemTrayMenu.Handler
             timerStartLoad.Tick += WaitStartLoad_Tick;
         }
 
-        internal event Action<RowData> StartLoadMenu;
+        internal event Action<RowData>? StartLoadMenu;
 
-        internal event Action<int> CloseMenu;
+        internal event Action<int>? CloseMenu;
 
-        internal event Action StopLoadMenu;
+        internal event Action? StopLoadMenu;
 
-        internal event Action<ListView, int> MouseEnterOk;
+        internal event Action<ListView, int>? MouseEnterOk;
 
         internal bool MouseActive { get; set; }
 
@@ -58,7 +58,7 @@ namespace SystemTrayMenu.Handler
             {
                 if (dgv.Items.Count > rowIndex)
                 {
-                    MouseEnterOk(dgv, rowIndex);
+                    MouseEnterOk?.Invoke(dgv, rowIndex);
                     timerStartLoad.Stop();
                     StopLoadMenu?.Invoke();
                     checkForMouseActive = true;
@@ -96,7 +96,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowDeselected(int rowIndex, ListView dgv)
+        internal void RowDeselected(int rowIndex, ListView? dgv)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
@@ -136,11 +136,11 @@ namespace SystemTrayMenu.Handler
                 if (mouseMoveEvents > 6)
                 {
                     MouseActive = true;
-                    if (dgvTmp != null
 #if TODO // WPF: Can be optimized away?
-                        && !dgvTmp.IsDisposed
+                    if (dgvTmp != null && !dgvTmp.IsDisposed)
+#else
+                    if (dgvTmp != null)
 #endif
-                        )
                     {
                         MouseEnter(dgvTmp, rowIndexTmp);
                     }
@@ -160,7 +160,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        private void WaitStartLoad_Tick(object sender, EventArgs e)
+        private void WaitStartLoad_Tick(object? sender, EventArgs e)
         {
             timerStartLoad.Stop();
             if (!checkForMouseActive || MouseActive)
@@ -171,7 +171,7 @@ namespace SystemTrayMenu.Handler
 
         private void CallOpenMenuNow()
         {
-            if (dgv.Items.Count > rowIndex && !alreadyOpened)
+            if (!alreadyOpened && dgv != null && dgv.Items.Count > rowIndex)
             {
                 alreadyOpened = true;
 
@@ -180,16 +180,16 @@ namespace SystemTrayMenu.Handler
                 rowData.Level = menu.Level;
                 if (rowData.ContainsMenu)
                 {
-                    CloseMenu.Invoke(rowData.Level + 2);
+                    CloseMenu?.Invoke(rowData.Level + 2);
                 }
 
-                CloseMenu.Invoke(rowData.Level + 1);
+                CloseMenu?.Invoke(rowData.Level + 1);
 
                 if (!rowData.IsContextMenuOpen &&
                     rowData.ContainsMenu &&
                     rowData.Level + 1 < MenuDefines.MenusMax)
                 {
-                    StartLoadMenu.Invoke(rowData);
+                    StartLoadMenu?.Invoke(rowData);
                 }
             }
         }
@@ -215,7 +215,7 @@ namespace SystemTrayMenu.Handler
             dgv.SelectedIndex = rowIndex;
         }
 
-        private void ResetData(ListView dgv, int rowIndex)
+        private void ResetData(ListView? dgv, int rowIndex)
         {
             if (dgv != null && dgv.Items.Count > rowIndex)
             {

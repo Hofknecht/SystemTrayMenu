@@ -34,6 +34,7 @@ namespace SystemTrayMenu.UserInterface
         private static readonly RoutedEvent FadeOutEvent = EventManager.RegisterRoutedEvent(
             nameof(FadeOut), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
 
+        private readonly DispatcherTimer timerUpdateIcons = new (DispatcherPriority.Render, Dispatcher.CurrentDispatcher);
         private readonly string folderPath;
 #if TODO // SEARCH
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
@@ -46,7 +47,6 @@ namespace SystemTrayMenu.UserInterface
         private bool isSetSearchText;
 #endif
         private bool isClosed = false; // TODO WPF Replace Forms wrapper
-        private DispatcherTimer timerUpdateIcons = new DispatcherTimer(DispatcherPriority.Render, Dispatcher.CurrentDispatcher);
 
         internal Menu(MenuData menuData, string path)
         {
@@ -334,7 +334,7 @@ namespace SystemTrayMenu.UserInterface
 
         public bool Disposing => isClosed; // TODO WPF Replace Forms wrapper
 
-        public System.Drawing.Point Location => new System.Drawing.Point((int)Left, (int)Top); // TODO WPF Replace Forms wrapper)
+        public System.Drawing.Point Location => new ((int)Left, (int)Top); // TODO WPF Replace Forms wrapper)
 
         internal int Level { get; set; }
 
@@ -716,7 +716,7 @@ namespace SystemTrayMenu.UserInterface
                     case StartLocation.Predecessor:
 
                         RowData? trigger = RowDataParent;
-                        ListView dgv = menuPredecessor!.GetDataGridView() !;
+                        ListView dgv = menuPredecessor!.GetDataGridView()!;
 
                         // Set position on same height as the selected row from predecessor
                         y = menuPredecessor.Location.Y;
@@ -730,8 +730,7 @@ namespace SystemTrayMenu.UserInterface
                             // When scrolled, we have to reduce the index number as we calculate based on visual tree
                             int startIndex = 0;
                             double offset = 0D;
-                            ScrollViewer? scrollViewer = (VisualTreeHelper.GetChild(dgv, 0) as Decorator)?.Child as ScrollViewer;
-                            if (scrollViewer != null)
+                            if (VisualTreeHelper.GetChild(dgv, 0) is Decorator { Child: ScrollViewer scrollViewer })
                             {
                                 startIndex = (int)scrollViewer.VerticalOffset;
                                 if (trigger.RowIndex < startIndex)

@@ -22,7 +22,7 @@ namespace SystemTrayMenu.Utilities
             else
             {
                 Thread staThread = new(new ParameterizedThreadStart(StaThreadMethod));
-                void StaThreadMethod(object obj)
+                void StaThreadMethod(object? obj)
                 {
                     resolvedFilename = GetShortcutFileNamePath(shortcutFilename, out isFolderByShell);
                 }
@@ -48,8 +48,8 @@ namespace SystemTrayMenu.Utilities
             isFolder = false;
             try
             {
-                string pathOnly = Path.GetDirectoryName((string)shortcutFilename);
-                string filenameOnly = Path.GetFileName((string)shortcutFilename);
+                string? pathOnly = Path.GetDirectoryName((string)shortcutFilename);
+                string? filenameOnly = Path.GetFileName((string)shortcutFilename);
 
                 Shell shell = new();
                 Folder folder = shell.NameSpace(pathOnly);

@@ -27,6 +27,7 @@ namespace SystemTrayMenu.UserInterface
         private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
 
         private static SettingsWindow? settingsForm;
+
 #if TODO // HOTKEY
         private bool inHotkey;
 #endif
@@ -41,7 +42,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (imgstream != null)
                 {
-                    BitmapImage imageSource = new BitmapImage();
+                    BitmapImage imageSource = new();
                     imageSource.BeginInit();
                     imageSource.StreamSource = imgstream;
                     imageSource.EndInit();
@@ -629,12 +630,9 @@ namespace SystemTrayMenu.UserInterface
                 {
                     RegistryKey? key = Registry.CurrentUser.OpenSubKey(
                             @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                    if (key != null)
-                    {
-                        key.SetValue(
+                    key?.SetValue(
                             Assembly.GetExecutingAssembly().GetName().Name,
                             Environment.ProcessPath!);
-                    }
 
                     Settings.Default.IsAutostartActivated = true;
                 }
@@ -642,10 +640,7 @@ namespace SystemTrayMenu.UserInterface
                 {
                     RegistryKey? key = Registry.CurrentUser.OpenSubKey(
                         @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-                    if (key != null)
-                    {
-                        key.DeleteValue("SystemTrayMenu", false);
-                    }
+                    key?.DeleteValue("SystemTrayMenu", false);
 
                     Settings.Default.IsAutostartActivated = false;
                 }
@@ -945,8 +940,11 @@ namespace SystemTrayMenu.UserInterface
 
             if (dialog.ShowDialog(this))
             {
-                dataGridViewFolders.Items.Add(new ListViewItemData(dialog.Folder, false, true));
-                EnableButtonAddStartMenu();
+                if (!string.IsNullOrEmpty(dialog.Folder))
+                {
+                    dataGridViewFolders.Items.Add(new ListViewItemData(dialog.Folder, false, true));
+                    EnableButtonAddStartMenu();
+                }
             }
 
             dataGridViewFolders.SelectedItem = null;

@@ -14,8 +14,8 @@ namespace SystemTrayMenu.Helpers.Updater
 
     public class GitHubUpdate
     {
-        private static List<Dictionary<string, object>> releases;
-        private static UpdateWindow newVersionForm;
+        private static List<Dictionary<string, object>>? releases;
+        private static UpdateWindow? newVersionWindow;
 
         /// <summary>
         /// Gets the latest release version name .
@@ -33,7 +33,7 @@ namespace SystemTrayMenu.Helpers.Updater
 
                 try
                 {
-                    result = releases[0]["tag_name"].ToString() !.Replace("v", string.Empty); // 0 = latest
+                    result = releases[0]["tag_name"].ToString()!.Replace("v", string.Empty); // 0 = latest
                 }
                 catch (Exception ex)
                 {
@@ -51,9 +51,9 @@ namespace SystemTrayMenu.Helpers.Updater
 
         public static void ActivateNewVersionFormOrCheckForUpdates(bool showWhenUpToDate)
         {
-            if (newVersionForm != null)
+            if (newVersionWindow != null)
             {
-                newVersionForm!.HandleInvoke(() => newVersionForm?.Activate());
+                newVersionWindow!.HandleInvoke(() => newVersionWindow?.Activate());
             }
             else
             {
@@ -67,7 +67,7 @@ namespace SystemTrayMenu.Helpers.Updater
             HttpClient client = new();
 
             // https://developer.github.com/v3/#user-agent-required
-            client.DefaultRequestHeaders.Add("User-Agent", "SystemTrayMenu/" + Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            client.DefaultRequestHeaders.Add("User-Agent", "SystemTrayMenu/" + Assembly.GetExecutingAssembly().GetName().Version!.ToString());
 
             // https://developer.github.com/v3/media/#request-specific-version
             client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3.text+json");
@@ -97,32 +97,43 @@ namespace SystemTrayMenu.Helpers.Updater
 
         private static void RemoveCurrentAndOlderVersions()
         {
-            int releasesCount = releases.Count;
-            Version versionCurrent = Assembly.GetExecutingAssembly().GetName().Version;
-            for (int i = 0; i < releasesCount; i++)
+            if (releases != null)
             {
-                string tagName = releases[i]["tag_name"].ToString();
-                Version versionGitHub = new(tagName.Replace("v", string.Empty));
-                if (versionGitHub.CompareTo(versionCurrent) < 1)
+                int releasesCount = releases.Count;
+                Version versionCurrent = Assembly.GetExecutingAssembly().GetName().Version!;
+                for (int i = 0; i < releasesCount; i++)
                 {
-                    releases.RemoveRange(i, releasesCount - i);
-                    break;
+                    string? tagName = releases[i]["tag_name"].ToString();
+                    if (tagName == null)
+                    {
+                        continue;
+                    }
+
+                    Version versionGitHub = new(tagName.Replace("v", string.Empty));
+                    if (versionGitHub.CompareTo(versionCurrent) < 1)
+                    {
+                        releases.RemoveRange(i, releasesCount - i);
+                        break;
+                    }
                 }
             }
         }
 
         private static void ShowNewVersionOrUpToDateDialog(bool showWhenUpToDate)
         {
-            if (releases.Count > 0)
+            if (releases != null)
             {
-                newVersionForm = new();
-                newVersionForm.textBox.Text = GetChangelog();
-                newVersionForm.Closed += (_, _) => newVersionForm = null;
-                newVersionForm.ShowDialog();
-            }
-            else if (showWhenUpToDate)
-            {
-                MessageBox.Show(Translator.GetText("You have the latest version of SystemTrayMenu!"));
+                if (releases.Count > 0)
+                {
+                    newVersionWindow = new();
+                    newVersionWindow.textBox.Text = GetChangelog();
+                    newVersionWindow.Closed += (_, _) => newVersionWindow = null;
+                    newVersionWindow.ShowDialog();
+                }
+                else if (showWhenUpToDate)
+                {
+                    MessageBox.Show(Translator.GetText("You have the latest version of SystemTrayMenu!"));
+                }
             }
         }
 
@@ -145,10 +156,15 @@ namespace SystemTrayMenu.Helpers.Updater
                 for (int i = 0; i < releases.Count; i++)
                 {
                     Dictionary<string, object> release = releases[i];
+                    string? bodyText = release["body_text"].ToString();
+                    if (bodyText == null)
+                    {
+                        continue;
+                    }
 
                     result += release["name"].ToString()
                         + Environment.NewLine
-                        + release["body_text"].ToString()
+                        + bodyText
                         .Replace("\n\n", Environment.NewLine)
                         .Replace("\n \n", Environment.NewLine)
                         + Environment.NewLine + Environment.NewLine;

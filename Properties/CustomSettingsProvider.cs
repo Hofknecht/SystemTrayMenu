@@ -22,6 +22,8 @@ namespace SystemTrayMenu.Properties
         private const string UserSettings = "userSettings";
         private const string Setting = "setting";
 
+        private static readonly string? SettingsFullTypeName = typeof(Settings).FullName;
+
         private bool loaded;
 
         /// <summary>
@@ -206,21 +208,33 @@ namespace SystemTrayMenu.Properties
         {
             if (!File.Exists(path))
             {
+                if (string.IsNullOrEmpty(SettingsFullTypeName))
+                {
+                    Log.Warn($"Failed to store config for group {SettingsFullTypeName ?? "<null>"}", new());
+                    return;
+                }
+
+                string? dir = Path.GetDirectoryName(path);
+                if (string.IsNullOrEmpty(dir) || string.IsNullOrEmpty(path))
+                {
+                    Log.Warn($"Failed to store config in directory {path ?? "<null>"}", new());
+                    return;
+                }
+
                 // if the config file is not where it's supposed to be create a new one.
                 XDocument doc = new();
                 XDeclaration declaration = new("1.0", "utf-8", "true");
                 XElement config = new(Config);
                 XElement userSettings = new(UserSettings);
-                XElement group = new(typeof(Settings).FullName);
+                XElement group = new(SettingsFullTypeName);
                 userSettings.Add(group);
                 config.Add(userSettings);
                 doc.Add(config);
                 doc.Declaration = declaration;
 
-                string? dir = Path.GetDirectoryName(path);
                 if (!Directory.Exists(dir))
                 {
-                    Directory.CreateDirectory(dir!);
+                    Directory.CreateDirectory(dir);
                 }
 
                 try
@@ -292,10 +306,10 @@ namespace SystemTrayMenu.Properties
                 configXml = LoadOrGetNew(UserConfigPath);
             }
 
-            if (configXml != null)
+            if (configXml != null && !string.IsNullOrEmpty(SettingsFullTypeName))
             {
                 // get all of the <setting name="..." serializeAs="..."> elements.
-                IEnumerable<XElement>? settingElements = configXml.Element(Config)?.Element(UserSettings)?.Element(typeof(Settings).FullName)?.Elements(Setting);
+                IEnumerable<XElement>? settingElements = configXml.Element(Config)?.Element(UserSettings)?.Element(SettingsFullTypeName)?.Elements(Setting);
 
                 // iterate through, adding them to the dictionary, (checking for nulls, xml no likey nulls)
                 // using "String" as default serializeAs...just in case, no real good reason.
@@ -310,7 +324,7 @@ namespace SystemTrayMenu.Properties
                             SettingStruct newSetting = new()
                             {
                                 Name = element.Attribute(NameOf) == null ? string.Empty : name,
-                                SerializeAs = serializeAs == null ? "String" : serializeAs,
+                                SerializeAs = serializeAs ?? "String",
                                 Value = element.Value ?? string.Empty,
                             };
                             SettingsDictionary.Add(name, newSetting);
@@ -336,10 +350,10 @@ namespace SystemTrayMenu.Properties
                 configXml = LoadOrGetNew(UserConfigPath);
             }
 
-            if (configXml != null)
+            if (configXml != null && !string.IsNullOrEmpty(SettingsFullTypeName))
             {
                 // get the settings group (e.g. <Company.Project.Desktop.Settings>)
-                XElement? settingsSection = configXml.Element(Config)?.Element(UserSettings)?.Element(typeof(Settings).FullName);
+                XElement? settingsSection = configXml.Element(Config)?.Element(UserSettings)?.Element(SettingsFullTypeName);
 
                 // iterate though the dictionary, either updating the value or adding the new setting.
                 foreach (KeyValuePair<string, SettingStruct> entry in SettingsDictionary)

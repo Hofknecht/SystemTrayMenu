@@ -38,10 +38,16 @@ namespace SystemTrayMenu.Helpers
             string path;
             if (menu != null)
             {
-                RowData rowData = menu.RowDataParent;
+                RowData? rowData = menu.RowDataParent;
                 if (rowData != null)
                 {
-                    path = rowData.ResolvedPath;
+                    string? resolvedPath = rowData.ResolvedPath;
+                    if (string.IsNullOrEmpty(resolvedPath))
+                    {
+                        return;
+                    }
+
+                    path = resolvedPath;
                 }
                 else
                 {
@@ -54,7 +60,11 @@ namespace SystemTrayMenu.Helpers
             }
 
             object data = e.Data.GetData("UniformResourceLocator");
-            MemoryStream ms = data as MemoryStream;
+            if (data is not MemoryStream ms)
+            {
+                return;
+            }
+
             byte[] bytes = ms.ToArray();
             Encoding encod = Encoding.ASCII;
             string url = encod.GetString(bytes);
@@ -107,7 +117,7 @@ namespace SystemTrayMenu.Helpers
             return value;
         }
 
-        private static void WriteShortcut(string url, string pathIcon, string fileNamePathShortcut)
+        private static void WriteShortcut(string url, string? pathIcon, string fileNamePathShortcut)
         {
             try
             {

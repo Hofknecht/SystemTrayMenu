@@ -23,18 +23,18 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
         /// <summary>
         /// Gets or sets /sets folder in which dialog will be open.
         /// </summary>
-        public string InitialFolder { get; set; }
+        public string? InitialFolder { get; set; }
 
         /// <summary>
         /// Gets or sets /sets directory in which dialog will be open
         /// if there is no recent directory available.
         /// </summary>
-        public string DefaultFolder { get; set; }
+        public string? DefaultFolder { get; set; }
 
         /// <summary>
         /// Gets or sets selected folder.
         /// </summary>
-        public string Folder { get; set; }
+        public string? Folder { get; set; }
 
         /// <summary>
         /// Shows the file dialog and requests user interaction.

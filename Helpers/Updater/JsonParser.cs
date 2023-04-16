@@ -172,7 +172,7 @@ namespace SystemTrayMenu.Helpers.Updater
 
             if (type.IsArray)
             {
-                Type arrayType = type.GetElementType() !;
+                Type arrayType = type.GetElementType()!;
                 if (json[0] != '[' || json[^1] != ']')
                 {
                     return null;

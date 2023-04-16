@@ -227,7 +227,7 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal void MouseClick(MouseEventArgs e, out bool toCloseByDoubleClick)
+        internal void MouseClick(MouseEventArgs? e, out bool toCloseByDoubleClick)
         {
             IsClicking = false;
             toCloseByDoubleClick = false;
@@ -267,7 +267,7 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        private void OpenItem(MouseEventArgs e, ref bool toCloseByOpenItem)
+        private void OpenItem(MouseEventArgs? e, ref bool toCloseByOpenItem)
         {
             if (!ContainsMenu && Path != null && ResolvedPath != null &&
                 (e == null || e.LeftButton == MouseButtonState.Pressed))
