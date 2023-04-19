@@ -331,13 +331,6 @@ namespace SystemTrayMenu.Handler
                             {
                                 ClosePressed?.Invoke();
                             }
-#if TODO // WPF: Can be removed as we do not paint ourselfs?
-                            if (iRowKey > -1 && dgv.Rows.Count > iRowKey)
-                            {
-                                // Raise Dgv_RowPostPaint to show ProcessStarted
-                                dgv.InvalidateRow(iRowKey);
-                            }
-#endif
                         }
                         else
                         {

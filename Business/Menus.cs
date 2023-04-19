@@ -45,11 +45,6 @@ namespace SystemTrayMenu.Business
         private bool searchTextChanging;
         private int lastMouseDownRowIndex = -1;
         private bool showMenuAfterMainPreload;
-#if TODO // TOUCH
-        private int dragSwipeScrollingStartRowIndex = -1;
-        private bool isDraggingSwipeScrolling;
-#endif
-        private bool isDragSwipeScrolled;
         private bool hideSubmenuDuringRefreshSearch;
 
         public Menus()
@@ -107,12 +102,13 @@ namespace SystemTrayMenu.Business
                     switch (menuData.DirectoryState)
                     {
                         case MenuDataDirectoryState.Valid:
-                            if (IconReader.MainPreload)
+                            if (IconReader.IsPreloading)
                             {
                                 workerMainMenu.DoWork -= LoadMenu;
+                                workerMainMenu.CancelAsync();
                                 Create(menuData, Config.Path); // Level 0 Main Menu
 
-                                IconReader.MainPreload = false;
+                                IconReader.IsPreloading = false;
                                 if (showMenuAfterMainPreload)
                                 {
                                     AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
@@ -258,7 +254,6 @@ namespace SystemTrayMenu.Business
             joystickHelper = new();
             joystickHelper.KeyPressed += (key, modifiers) => menus[0]?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null!, key, modifiers });
 
-            timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed);
             timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
             timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
             void StillActiveTick()
@@ -327,7 +322,7 @@ namespace SystemTrayMenu.Business
 
         private bool IsMainUsable => menus[0]?.IsUsable ?? false;
 
-        private IEnumerable<Menu> AsEnumerable => menus.Where(m => m != null && !m.IsDisposed)!;
+        private IEnumerable<Menu> AsEnumerable => menus.Where(m => m != null && !m.IsClosed)!;
 
         private List<Menu> AsList => AsEnumerable.ToList();
 
@@ -372,20 +367,23 @@ namespace SystemTrayMenu.Business
 
         internal void SwitchOpenCloseByTaskbarItem()
         {
-            SwitchOpenClose(true);
+            // User started with taskbar or clicked on taskbar: remember to open menu after preload has finished
+            showMenuAfterMainPreload = true;
+            SwitchOpenClose(true, true);
             timerStillActiveCheck.Start();
         }
 
-        internal bool IsOpenCloseStateOpening()
+        internal void FirstStartInBackground()
         {
-            return openCloseState == OpenCloseState.Opening;
+            dispatchter.Invoke(() => SwitchOpenClose(false, true));
         }
 
-        internal void SwitchOpenClose(bool byClick, bool isMainPreload = false)
+        internal void SwitchOpenClose(bool byClick, bool allowPreloading = false)
         {
             // Ignore open close events during main preload #248
-            if (IconReader.MainPreload && !isMainPreload)
+            if (IconReader.IsPreloading && !allowPreloading)
             {
+                // User pressed hotkey or clicked on notifyicon: remember to open menu after preload has finished
                 showMenuAfterMainPreload = true;
                 return;
             }
@@ -426,21 +424,6 @@ namespace SystemTrayMenu.Business
             deactivatedTime = DateTime.MinValue;
         }
 
-        internal void MainPreload()
-        {
-            IconReader.MainPreload = true;
-
-            timerShowProcessStartedAsLoadingIcon.Tick += Tick;
-            timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(5);
-            timerShowProcessStartedAsLoadingIcon.Start();
-            void Tick(object? sender, EventArgs e)
-            {
-                timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
-                timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed);
-                SwitchOpenClose(false, true);
-            }
-        }
-
         internal void StartWorker()
         {
             if (Settings.Default.GenerateShortcutsToDrives)
@@ -451,8 +434,7 @@ namespace SystemTrayMenu.Business
             if (!workerMainMenu.IsBusy)
             {
                 LoadStarted?.Invoke();
-                workerMainMenu.RunWorkerAsync(
-                    new object[] { Config.Path, 0 });
+                workerMainMenu.RunWorkerAsync(null);
             }
         }
 
@@ -487,16 +469,6 @@ namespace SystemTrayMenu.Business
             MenuData menuData = new(level, rowData);
             DirectoryHelpers.DiscoverItems((BackgroundWorker?)senderDoWork, path, ref menuData);
             eDoWork.Result = menuData;
-        }
-
-        private static int GetRowUnderCursor(ListView dgv, Point location)
-        {
-#if TODO // TOUCH
-            ListView.HitTestInfo myHitTest = dgv.HitTest(location.X, location.Y);
-            return myHitTest.RowIndex;
-#else
-            return 0;
-#endif
         }
 
         private bool IsActive()
@@ -543,9 +515,7 @@ namespace SystemTrayMenu.Business
             };
             menu.MouseEnter += (_, _) => waitLeave.Stop();
             menu.CmdKeyProcessed += keyboardInput.CmdKeyProcessed;
-#if TODO // Misc MouseEvents and TOUCH
-            menu.KeyPressCheck += Menu_KeyPressCheck;
-#endif
+
             menu.SearchTextChanging += Menu_SearchTextChanging;
             void Menu_SearchTextChanging()
             {
@@ -585,7 +555,7 @@ namespace SystemTrayMenu.Business
             menu.Deactivated += Deactivate;
             void Deactivate(object? sender, EventArgs e)
             {
-                if (IsOpenCloseStateOpening())
+                if (openCloseState == OpenCloseState.Opening)
                 {
                     Log.Info("Ignored Deactivate, because openCloseState == OpenCloseState.Opening");
                 }
@@ -625,11 +595,7 @@ namespace SystemTrayMenu.Business
             {
 #if TODO // Misc MouseEvents
                 dgv.MouseLeave += dgvMouseRow.MouseLeave;
-                dgv.MouseLeave += Dgv_MouseLeave;
                 dgv.MouseMove += waitToOpenMenu.MouseMove;
-#endif
-#if TODO // TOUCH
-                dgv.MouseMove += Dgv_MouseMove;
 #endif
                 dgv.SelectionChanged += Dgv_SelectionChanged;
 #if TODO // BorderColors and PaintEvent
@@ -685,53 +651,6 @@ namespace SystemTrayMenu.Business
             }
         }
 
-#if TODO // TOUCH
-        private void Dgv_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDraggingSwipeScrolling)
-            {
-                ListView dgv = (ListView)sender;
-                int newRow = GetRowUnderCursor(dgv, e.Location);
-                if (newRow > -1)
-                {
-                    int delta = dragSwipeScrollingStartRowIndex - newRow;
-                    if (DoScroll(dgv, ref delta))
-                    {
-                        dragSwipeScrollingStartRowIndex += delta;
-                    }
-                }
-            }
-        }
-
-        private bool DoScroll(ListView dgv, ref int delta)
-        {
-            bool scrolled = false;
-            if (delta != 0)
-            {
-                if (delta < 0 && dgv.FirstDisplayedScrollingRowIndex == 0)
-                {
-                    delta = 0;
-                }
-
-                int newFirstDisplayedScrollingRowIndex = dgv.FirstDisplayedScrollingRowIndex + (delta * 2);
-
-                if (newFirstDisplayedScrollingRowIndex < 0 || newFirstDisplayedScrollingRowIndex >= dgv.RowCount)
-                {
-                    newFirstDisplayedScrollingRowIndex = dgv.FirstDisplayedScrollingRowIndex + delta;
-                }
-
-                if (newFirstDisplayedScrollingRowIndex > -1 && newFirstDisplayedScrollingRowIndex < dgv.RowCount)
-                {
-                    isDragSwipeScrolled = true;
-                    dgv.FirstDisplayedScrollingRowIndex = newFirstDisplayedScrollingRowIndex;
-                    scrolled = dgv.FirstDisplayedScrollingRowIndex == newFirstDisplayedScrollingRowIndex;
-                }
-            }
-
-            return scrolled;
-        }
-#endif
-
         private void Dgv_MouseDown(object sender, int index, MouseButtonEventArgs e)
         {
             ListView dgv = (ListView)sender;
@@ -745,37 +664,11 @@ namespace SystemTrayMenu.Business
             {
                 lastMouseDownRowIndex = index;
             }
-#if TODO // TOUCH
-            Menu menu = (Menu)((ListView)sender).GetParentWindow();
-            if (menu != null && menu.ScrollbarVisible)
-            {
-                bool isTouchEnabled = DllImports.NativeMethods.IsTouchEnabled();
-                if ((isTouchEnabled && Settings.Default.SwipeScrollingEnabledTouch) ||
-                    (!isTouchEnabled && Settings.Default.SwipeScrollingEnabled))
-                {
-                    isDraggingSwipeScrolling = true;
-                }
-
-                dragSwipeScrollingStartRowIndex = GetRowUnderCursor(dgv, e.Location);
-            }
-#endif
         }
 
         private void Dgv_MouseUp(object sender, int index, MouseButtonEventArgs e)
         {
             lastMouseDownRowIndex = -1;
-#if TODO // TOUCH
-            isDraggingSwipeScrolling = false;
-#endif
-            isDragSwipeScrolled = false;
-        }
-
-        private void Dgv_MouseLeave(object sender, EventArgs e)
-        {
-#if TODO // TOUCH
-            isDraggingSwipeScrolling = false;
-#endif
-            isDragSwipeScrolled = false;
         }
 
         private void MouseEnterOk(ListView dgv, int rowIndex)
@@ -801,8 +694,7 @@ namespace SystemTrayMenu.Business
         {
             ListView dgv = (ListView)sender;
 
-            if (!isDragSwipeScrolled &&
-                e.RowIndex == lastMouseDownRowIndex &&
+            if (e.RowIndex == lastMouseDownRowIndex &&
                 e.RowIndex > -1 &&
                 e.RowIndex < dgv.Items.Count)
             {
@@ -825,14 +717,11 @@ namespace SystemTrayMenu.Business
 
             if (e.ClickCount == 1)
             {
-                if (!isDragSwipeScrolled)
-                {
-                    lastMouseDownRowIndex = -1;
+                lastMouseDownRowIndex = -1;
 
-                    ((Menu.ListViewItemData)sender.Items[index]).data.MouseClick(e, out doClose);
+                ((Menu.ListViewItemData)sender.Items[index]).data.MouseClick(e, out doClose);
 
-                    waitToOpenMenu.ClickOpensInstantly(sender, index);
-                }
+                waitToOpenMenu.ClickOpensInstantly(sender, index);
             }
             else if (e.ClickCount == 2)
             {
@@ -945,6 +834,8 @@ namespace SystemTrayMenu.Business
                 {
                     rowData.ProcessStarted = false;
                     row.Cells[0].Value = Resources.StaticResources.LoadingIcon;
+                    timerShowProcessStartedAsLoadingIcon.Stop();
+                    timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed);
                     timerShowProcessStartedAsLoadingIcon.Tick += Tick;
                     void Tick(object sender, EventArgs e)
                     {
@@ -952,8 +843,6 @@ namespace SystemTrayMenu.Business
                         timerShowProcessStartedAsLoadingIcon.Stop();
                         row.Cells[0].Value = rowData.ReadIcon(false);
                     }
-
-                    timerShowProcessStartedAsLoadingIcon.Stop();
                     timerShowProcessStartedAsLoadingIcon.Start();
                     timerStillActiveCheck.Stop();
                     timerStillActiveCheck.Start();
@@ -1156,16 +1045,6 @@ namespace SystemTrayMenu.Business
                 menuPredecessor = menu;
             }
         }
-
-#if TODO // Misc MouseEvents and TOUCH
-        private void Menu_KeyPressCheck(object sender, KeyPressEventArgs e)
-        {
-            if (isDraggingSwipeScrolling)
-            {
-                e.Handled = true;
-            }
-        }
-#endif
 
         private void ExecuteWatcherHistory()
         {

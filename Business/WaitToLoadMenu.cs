@@ -45,10 +45,6 @@ namespace SystemTrayMenu.Handler
         public void Dispose()
         {
             timerStartLoad.Stop();
-#if TODO // WPF: Can be optimized away?
-            dgv?.Dispose();
-            dgvTmp?.Dispose();
-#endif
         }
 
         internal void MouseEnter(object sender, int rowIndex)
@@ -136,11 +132,7 @@ namespace SystemTrayMenu.Handler
                 if (mouseMoveEvents > 6)
                 {
                     MouseActive = true;
-#if TODO // WPF: Can be optimized away?
-                    if (dgvTmp != null && !dgvTmp.IsDisposed)
-#else
                     if (dgvTmp != null)
-#endif
                     {
                         MouseEnter(dgvTmp, rowIndexTmp);
                     }

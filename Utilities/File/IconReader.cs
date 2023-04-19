@@ -36,7 +36,7 @@ namespace SystemTrayMenu.Utilities
         }
 
         // see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
-        public static bool MainPreload { get; set; }
+        public static bool IsPreloading { get; set; } = true;
 
         public static void Dispose(bool includingMainMenu = true)
         {
@@ -158,7 +158,7 @@ namespace SystemTrayMenu.Utilities
 
                     if (updateIconInBackground)
                     {
-                        if (MainPreload)
+                        if (IsPreloading)
                         {
                             DictIconCache(isMainMenu).GetOrAdd(key, GetFolder);
                         }

@@ -43,18 +43,17 @@ namespace SystemTrayMenu.UserInterface
         private bool directionToRight;
         private bool mouseDown;
         private Point lastLocation;
+
 #if TODO // SEARCH
         private bool isSetSearchText;
 #endif
-        private bool isClosed = false; // TODO WPF Replace Forms wrapper
-
         internal Menu(MenuData menuData, string path)
         {
             timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
             Closed += (_, _) =>
             {
                 timerUpdateIcons.Stop();
-                isClosed = true; // TODO WPF Replace Forms wrapper
+                IsClosed = true; // TODO WPF Replace Forms wrapper
             };
 
             InitializeComponent();
@@ -228,7 +227,7 @@ namespace SystemTrayMenu.UserInterface
             pictureBoxRestart.MouseEnter += ControlsMouseEnter;
             pictureBoxSearch.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelMenu.MouseEnter += ControlsMouseEnter;
-            tableLayoutPanelDgvAndScrollbar.MouseEnter += ControlsMouseEnter;
+            dgv.MouseEnter += ControlsMouseEnter;
             tableLayoutPanelBottom.MouseEnter += ControlsMouseEnter;
             labelStatus.MouseEnter += ControlsMouseEnter;
             void ControlsMouseEnter(object sender, EventArgs e)
@@ -245,7 +244,7 @@ namespace SystemTrayMenu.UserInterface
             pictureBoxRestart.MouseLeave += ControlsMouseLeave;
             pictureBoxSearch.MouseLeave += ControlsMouseLeave;
             tableLayoutPanelMenu.MouseLeave += ControlsMouseLeave;
-            tableLayoutPanelDgvAndScrollbar.MouseLeave += ControlsMouseLeave;
+            dgv.MouseLeave += ControlsMouseLeave;
             tableLayoutPanelBottom.MouseLeave += ControlsMouseLeave;
             labelStatus.MouseLeave += ControlsMouseLeave;
             void ControlsMouseLeave(object sender, EventArgs e)
@@ -253,7 +252,7 @@ namespace SystemTrayMenu.UserInterface
                 MouseLeave?.Invoke();
             }
 #endif
-#if TODO // TOUCH
+#if TODO // Misc MouseEvents
             bool isTouchEnabled = NativeMethods.IsTouchEnabled();
             if ((isTouchEnabled && Settings.Default.DragDropItemsEnabledTouch) ||
                 (!isTouchEnabled && Settings.Default.DragDropItemsEnabled))
@@ -289,10 +288,6 @@ namespace SystemTrayMenu.UserInterface
 #endif
 
         internal event Action<Menu, Key, ModifierKeys>? CmdKeyProcessed;
-
-#if TODO // Misc MouseEvents and TOUCH
-        internal event EventHandler<KeyPressEventArgs> KeyPressCheck;
-#endif
 
         internal event Action? SearchTextChanging;
 
@@ -330,23 +325,15 @@ namespace SystemTrayMenu.UserInterface
             TopRight,
         }
 
-        public bool IsDisposed => isClosed; // TODO WPF Replace Forms wrapper
-
-        public bool Disposing => isClosed; // TODO WPF Replace Forms wrapper
-
-        public System.Drawing.Point Location => new ((int)Left, (int)Top); // TODO WPF Replace Forms wrapper)
+        public System.Drawing.Point Location => new ((int)Left, (int)Top); // TODO WPF Replace Forms wrapper
 
         internal int Level { get; set; }
 
         internal RowData? RowDataParent { get; set; }
 
-        internal bool IsUsable => Visibility == Visibility.Visible && !isFading && !IsDisposed && !Disposing;
+        internal bool IsClosed { get; private set; } = false;
 
-#if TODO // TOUCH
-        internal bool ScrollbarVisible { get; private set; }
-
-        private ListView tableLayoutPanelDgvAndScrollbar => dgv; // TODO WPF Remove and replace with dgv
-#endif
+        internal bool IsUsable => Visibility == Visibility.Visible && !isFading && !IsClosed;
 
         internal void ResetSearchText()
         {
@@ -609,7 +596,6 @@ namespace SystemTrayMenu.UserInterface
             else
             {
                 // Layout cannot be calculated during loading, postpone this event
-                // TODO: Make sure lampa capture is registered only once
                 Loaded += (_, _) => AdjustWindowPositionInternal();
             }
 
@@ -964,12 +950,6 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-#if TODO // Misc MouseEvents and TOUCH
-        private void TextBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            KeyPressCheck?.Invoke(sender, e);
-        }
-#endif
         private void TextBoxSearch_TextChanged()
         {
             SearchTextChanging?.Invoke();
@@ -1076,11 +1056,6 @@ namespace SystemTrayMenu.UserInterface
             if (anyIconNotUpdated)
             {
                 timerUpdateIcons.Start();
-            }
-
-            if (dgv.Rows.Count > 0)
-            {
-                dgv.FirstDisplayedScrollingRowIndex = 0;
             }
 #endif
         }

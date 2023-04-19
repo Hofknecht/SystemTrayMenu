@@ -46,14 +46,6 @@ namespace SystemTrayMenu.UserInterface
             Title = myname;
 
             Closed += (_, _) => Application.Current.Shutdown();
-            Deactivated += SetStateNormal;
-            Activated += (object? sender, EventArgs e) =>
-            {
-                SetStateNormal(sender, e);
-                Activate();
-                UpdateLayout();
-                Focus();
-            };
             ContentRendered += MoveOutOfScreen;
         }
 
@@ -62,17 +54,6 @@ namespace SystemTrayMenu.UserInterface
             // Do this only once
             ContentRendered -= MoveOutOfScreen;
             Top += SystemParameters.VirtualScreenHeight;
-        }
-
-        /// <summary>
-        /// This ensures that next click on taskbaritem works as activate event/click event.
-        /// </summary>
-        private void SetStateNormal(object? sender, EventArgs e)
-        {
-            if (IsActive)
-            {
-                WindowState = WindowState.Normal;
-            }
         }
     }
 }

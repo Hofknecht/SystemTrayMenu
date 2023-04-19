@@ -28,13 +28,16 @@ namespace SystemTrayMenu
             menus.LoadStarted += menuNotifyIcon.LoadingStart;
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
             menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
-            menus.MainPreload();
 
             if (Settings.Default.ShowInTaskbar)
             {
-                TaskbarLogo = new TaskbarLogo();
+                TaskbarLogo = new ();
                 TaskbarLogo.Activated += (_, _) => menus.SwitchOpenCloseByTaskbarItem();
                 TaskbarLogo.Show();
+            }
+            else
+            {
+                menus.FirstStartInBackground();
             }
 
             if (Settings.Default.CheckForUpdates)
