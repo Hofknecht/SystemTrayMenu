@@ -323,13 +323,16 @@ namespace SystemTrayMenu.UserInterface
             BottomLeft,
             BottomRight,
             TopRight,
+            Point,
         }
 
-        public System.Drawing.Point Location => new ((int)Left, (int)Top); // TODO WPF Replace Forms wrapper
+        public Point Location => new (Left, Top); // TODO WPF Replace Forms wrapper
 
         internal int Level { get; set; }
 
         internal RowData? RowDataParent { get; set; }
+
+        internal bool RelocateOnNextShow { get; set; } = true;
 
         internal bool IsClosed { get; private set; } = false;
 
@@ -542,86 +545,99 @@ namespace SystemTrayMenu.UserInterface
             StartLocation startLocation,
             bool useCustomLocation)
         {
+            Point originLocation = new(0, 0);
+
             // Update the height and width
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
             AdjustDataGridViewWidth();
 
-            bool changeDirectionWhenOutOfBounds = true;
-
             if (Level > 0)
             {
+                if (menuPredecessor == null)
+                {
+                    // should never happen
+                    return;
+                }
+
                 // Sub Menu location depends on the location of its predecessor
                 startLocation = StartLocation.Predecessor;
+                originLocation = menuPredecessor.Location;
             }
             else if (useCustomLocation)
             {
-                // Do not adjust location again because Cursor.Postion changed
-                if (RowDataParent != null)
+                if (!RelocateOnNextShow)
                 {
                     return;
                 }
 
-                // Use this menu as predecessor and overwrite location with CustomLocation
-                menuPredecessor = this;
-                RowDataParent = new RowData();
-                Left = Settings.Default.CustomLocationX;
-                Top = Settings.Default.CustomLocationY;
-                directionToRight = true;
-                startLocation = StartLocation.Predecessor;
-                changeDirectionWhenOutOfBounds = false;
+                RelocateOnNextShow = false;
+                originLocation = new(Settings.Default.CustomLocationX, Settings.Default.CustomLocationY);
+                startLocation = StartLocation.Point;
             }
             else if (Settings.Default.AppearAtMouseLocation)
             {
-                // Do not adjust location again because Cursor.Postion changed
-                if (RowDataParent != null)
+                if (!RelocateOnNextShow)
                 {
                     return;
                 }
 
-                // Use this menu as predecessor and overwrite location with Cursor.Postion
-                menuPredecessor = this;
-                RowDataParent = new RowData();
-                var position = Mouse.GetPosition(this);
-                Left = position.X;
-                Top = position.Y - labelTitle.Height;
-                directionToRight = true;
-                startLocation = StartLocation.Predecessor;
-                changeDirectionWhenOutOfBounds = false;
+                RelocateOnNextShow = false;
+                originLocation = Mouse.GetPosition(this);
+                originLocation.Y -= labelTitle.Height;
+                startLocation = StartLocation.Point;
             }
 
             if (IsLoaded)
             {
-                AdjustWindowPositionInternal();
+                AdjustWindowPositionInternal(originLocation);
             }
             else
             {
                 // Layout cannot be calculated during loading, postpone this event
-                Loaded += (_, _) => AdjustWindowPositionInternal();
+                Loaded += (_, _) => AdjustWindowPositionInternal(originLocation);
             }
 
-            void AdjustWindowPositionInternal()
+            void AdjustWindowPositionInternal(Point originLocation)
             {
+                RowData? trigger;
+
                 // Make sure we have latest values of own window size
                 UpdateLayout();
+
+                // Prepare parameters
+                if (startLocation == StartLocation.Predecessor && menuPredecessor != null)
+                {
+                    directionToRight = menuPredecessor.directionToRight; // try keeping same direction from predecessor
+                    trigger = RowDataParent;
+                }
+                else
+                {
+                    // Use own menu as predecessor for calculations (Left and Top were set beforehand)
+                    menuPredecessor = this;
+                    directionToRight = true; // use right as default direction
+                    trigger = new();
+                }
 
                 // Calculate X position
                 double x;
                 switch (startLocation)
                 {
+                    case StartLocation.Point:
                     case StartLocation.Predecessor:
                         double scaling = Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
-                        directionToRight = menuPredecessor!.directionToRight; // try keeping same direction
+
                         if (directionToRight)
                         {
-                            x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
+                            x = originLocation.X + menuPredecessor.Width - scaling;
 
-                            if (changeDirectionWhenOutOfBounds &&
+                            // Change direction when out of bounds (predecessor only)
+                            if (startLocation == StartLocation.Predecessor &&
                                 bounds.X + bounds.Width <= x + Width - scaling)
                             {
-                                x = menuPredecessor.Location.X - Width + scaling;
+                                x = originLocation.X - Width + scaling;
                                 if (x < bounds.X &&
-                                    menuPredecessor.Location.X + menuPredecessor.Width < bounds.X + bounds.Width &&
-                                    bounds.X + (bounds.Width / 2) > menuPredecessor.Location.X + (Width / 2))
+                                    originLocation.X + menuPredecessor.Width < bounds.X + bounds.Width &&
+                                    bounds.X + (bounds.Width / 2) > originLocation.X + (Width / 2))
                                 {
                                     x = bounds.X + bounds.Width - Width + scaling;
                                 }
@@ -638,15 +654,16 @@ namespace SystemTrayMenu.UserInterface
                         }
                         else
                         {
-                            x = menuPredecessor.Location.X - Width + scaling;
+                            x = originLocation.X - Width + scaling;
 
-                            if (changeDirectionWhenOutOfBounds &&
+                            // Change direction when out of bounds (predecessor only)
+                            if (startLocation == StartLocation.Predecessor &&
                                 x < bounds.X)
                             {
-                                x = menuPredecessor.Location.X + menuPredecessor.Width - scaling;
+                                x = originLocation.X + menuPredecessor.Width - scaling;
                                 if (x + Width > bounds.X + bounds.Width &&
-                                    menuPredecessor.Location.X > bounds.X &&
-                                    bounds.X + (bounds.Width / 2) < menuPredecessor.Location.X + (Width / 2))
+                                    originLocation.X > bounds.X &&
+                                    bounds.X + (bounds.Width / 2) < originLocation.X + (Width / 2))
                                 {
                                     x = bounds.X;
                                 }
@@ -699,13 +716,12 @@ namespace SystemTrayMenu.UserInterface
                 double y;
                 switch (startLocation)
                 {
+                    case StartLocation.Point:
                     case StartLocation.Predecessor:
-
-                        RowData? trigger = RowDataParent;
                         ListView dgv = menuPredecessor!.GetDataGridView()!;
 
                         // Set position on same height as the selected row from predecessor
-                        y = menuPredecessor.Location.Y;
+                        y = originLocation.Y;
                         if (trigger != null && dgv.Items.Count > trigger.RowIndex)
                         {
                             // When item is not found, it might be invalidated due to resizing or moving

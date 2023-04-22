@@ -60,88 +60,6 @@ namespace SystemTrayMenu.Business
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;
             workerMainMenu.RunWorkerCompleted += LoadMainMenuCompleted;
-            void LoadMainMenuCompleted(object? sender, RunWorkerCompletedEventArgs e)
-            {
-                keyboardInput.ResetSelectedByKey();
-                LoadStopped?.Invoke();
-
-                if (e.Result == null)
-                {
-                    // The main menu gets loaded again
-                    // Clean up menu status of previous one
-                    ListView? dgvMainMenu = menus[0]?.GetDataGridView();
-                    if (dgvMainMenu != null)
-                    {
-                        foreach (ListViewItemData item in dgvMainMenu.Items)
-                        {
-                            RowData rowDataToClear = item.data;
-                            rowDataToClear.IsMenuOpen = false;
-                            rowDataToClear.IsClicking = false;
-                            rowDataToClear.IsSelected = false;
-                            rowDataToClear.IsContextMenuOpen = false;
-                        }
-
-                        RefreshSelection(dgvMainMenu);
-                    }
-
-                    if (Settings.Default.AppearAtMouseLocation)
-                    {
-                        Menu? menu = menus[0];
-                        if (menu != null)
-                        {
-                            menu.RowDataParent = null;
-                        }
-                    }
-
-                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                }
-                else
-                {
-                    // First time the main menu gets loaded
-                    MenuData menuData = (MenuData)e.Result;
-                    switch (menuData.DirectoryState)
-                    {
-                        case MenuDataDirectoryState.Valid:
-                            if (IconReader.IsPreloading)
-                            {
-                                workerMainMenu.DoWork -= LoadMenu;
-                                workerMainMenu.CancelAsync();
-                                Create(menuData, Config.Path); // Level 0 Main Menu
-
-                                IconReader.IsPreloading = false;
-                                if (showMenuAfterMainPreload)
-                                {
-                                    AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                                }
-                            }
-                            else
-                            {
-                                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
-                            }
-
-                            break;
-                        case MenuDataDirectoryState.Empty:
-                            MessageBox.Show(Translator.GetText("Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory."));
-                            OpenFolder();
-                            Config.SetFolderByUser();
-                            AppRestart.ByConfigChange();
-                            break;
-                        case MenuDataDirectoryState.NoAccess:
-                            MessageBox.Show(Translator.GetText("You have no access to the root directory of the app. Grant access to the directory or change the root directory."));
-                            OpenFolder();
-                            Config.SetFolderByUser();
-                            AppRestart.ByConfigChange();
-                            break;
-                        case MenuDataDirectoryState.Undefined:
-                            Log.Info($"{nameof(MenuDataDirectoryState)}.{nameof(MenuDataDirectoryState.Undefined)}");
-                            break;
-                        default:
-                            break;
-                    }
-                }
-
-                openCloseState = OpenCloseState.Default;
-            }
 
             waitToOpenMenu.StopLoadMenu += WaitToOpenMenu_StopLoadMenu;
             void WaitToOpenMenu_StopLoadMenu()
@@ -446,11 +364,12 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private static void LoadMenu(object? senderDoWork, DoWorkEventArgs eDoWork)
+        private static void LoadMenu(object? sender, DoWorkEventArgs eDoWork)
         {
-            string? path;
-            int level = 0;
+            BackgroundWorker? workerSelf = sender as BackgroundWorker;
             RowData? rowData = eDoWork.Argument as RowData;
+            string? path;
+            int level;
             if (rowData != null)
             {
                 path = rowData.ResolvedPath;
@@ -464,11 +383,97 @@ namespace SystemTrayMenu.Business
             else
             {
                 path = Config.Path;
+                level = 0;
             }
 
             MenuData menuData = new(level, rowData);
-            DirectoryHelpers.DiscoverItems((BackgroundWorker?)senderDoWork, path, ref menuData);
+            DirectoryHelpers.DiscoverItems(workerSelf, path, ref menuData);
+            if (menuData.DirectoryState != MenuDataDirectoryState.Undefined &&
+                workerSelf != null && level == 0)
+            {
+                // After success of MainMenu loading: never run again
+                workerSelf.DoWork -= LoadMenu;
+            }
+
             eDoWork.Result = menuData;
+        }
+
+        private void LoadMainMenuCompleted(object? sender, RunWorkerCompletedEventArgs e)
+        {
+            keyboardInput.ResetSelectedByKey();
+            LoadStopped?.Invoke();
+
+            if (e.Result == null)
+            {
+                Menu? menu = menus[0];
+                if (menu != null)
+                {
+                    // The main menu gets loaded again
+                    // Clean up menu status of previous one
+                    ListView? dgvMainMenu = menu.GetDataGridView();
+                    if (dgvMainMenu != null)
+                    {
+                        foreach (ListViewItemData item in dgvMainMenu.Items)
+                        {
+                            RowData rowDataToClear = item.data;
+                            rowDataToClear.IsMenuOpen = false;
+                            rowDataToClear.IsClicking = false;
+                            rowDataToClear.IsSelected = false;
+                            rowDataToClear.IsContextMenuOpen = false;
+                        }
+
+                        RefreshSelection(dgvMainMenu);
+                    }
+
+                    menu.RelocateOnNextShow = true;
+                }
+
+                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+            }
+            else
+            {
+                // First time the main menu gets loaded
+                MenuData menuData = (MenuData)e.Result;
+                switch (menuData.DirectoryState)
+                {
+                    case MenuDataDirectoryState.Valid:
+                        if (IconReader.IsPreloading)
+                        {
+                            Create(menuData, Config.Path); // Level 0 Main Menu
+
+                            IconReader.IsPreloading = false;
+                            if (showMenuAfterMainPreload)
+                            {
+                                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                            }
+                        }
+                        else
+                        {
+                            AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                        }
+
+                        break;
+                    case MenuDataDirectoryState.Empty:
+                        MessageBox.Show(Translator.GetText("Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory."));
+                        OpenFolder();
+                        Config.SetFolderByUser();
+                        AppRestart.ByConfigChange();
+                        break;
+                    case MenuDataDirectoryState.NoAccess:
+                        MessageBox.Show(Translator.GetText("You have no access to the root directory of the app. Grant access to the directory or change the root directory."));
+                        OpenFolder();
+                        Config.SetFolderByUser();
+                        AppRestart.ByConfigChange();
+                        break;
+                    case MenuDataDirectoryState.Undefined:
+                        Log.Info($"{nameof(MenuDataDirectoryState)}.{nameof(MenuDataDirectoryState.Undefined)}");
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            openCloseState = OpenCloseState.Default;
         }
 
         private bool IsActive()
@@ -860,8 +865,7 @@ namespace SystemTrayMenu.Business
                     Menu? menu = menus[0];
                     if (menu != null)
                     {
-                        // TODO: What does this do???
-                        menu.RowDataParent = null;
+                        menu.RelocateOnNextShow = true;
                     }
                 }
             });
@@ -958,7 +962,7 @@ namespace SystemTrayMenu.Business
                     Settings.Default.CustomLocationX,
                     Settings.Default.CustomLocationY));
 
-                useCustomLocation = !screenBounds.Contains(
+                useCustomLocation = screenBounds.Contains(
                     new Point(Settings.Default.CustomLocationX, Settings.Default.CustomLocationY));
             }
             else
