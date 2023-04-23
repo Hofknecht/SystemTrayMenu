@@ -16,12 +16,22 @@
     </Window.Effect>
 
     <Window.Triggers>
+        <EventTrigger RoutedEvent="local:Menu.FadeToTransparent">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Storyboard.TargetProperty="Opacity"
+                        From="{Binding Opacity}" To="0.8" Duration="0:0:0.4"
+                        Completed="FadeIn_Completed"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
         <EventTrigger RoutedEvent="local:Menu.FadeIn">
             <BeginStoryboard>
                 <Storyboard>
                     <DoubleAnimation
                         Storyboard.TargetProperty="Opacity"
-                        From="0.0" To="1.0" Duration="0:0:0.5"
+                        From="{Binding Opacity}" To="1.0" Duration="0:0:0.5"
                         Completed="FadeIn_Completed"/>
                 </Storyboard>
             </BeginStoryboard>
@@ -31,7 +41,7 @@
                 <Storyboard>
                     <DoubleAnimation
                         Storyboard.TargetProperty="Opacity"
-                        From="1.0" To="0.0" Duration="0:0:0.25"
+                        From="{Binding Opacity}" To="0.0" Duration="0:0:0.25"
                         Completed="FadeOut_Completed"/>
                 </Storyboard>
             </BeginStoryboard>

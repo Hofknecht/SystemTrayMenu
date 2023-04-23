@@ -28,6 +28,9 @@ namespace SystemTrayMenu.UserInterface
     {
         private const int CornerRadius = 10;
 
+        private static readonly RoutedEvent FadeToTransparentEvent = EventManager.RegisterRoutedEvent(
+            nameof(FadeToTransparent), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
+
         private static readonly RoutedEvent FadeInEvent = EventManager.RegisterRoutedEvent(
             nameof(FadeIn), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
 
@@ -305,6 +308,12 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseClick;
 
+        internal event RoutedEventHandler FadeToTransparent
+        {
+            add { AddHandler(FadeToTransparentEvent, value); }
+            remove { RemoveHandler(FadeToTransparentEvent, value); }
+        }
+
         internal event RoutedEventHandler FadeIn
         {
             add { AddHandler(FadeInEvent, value); }
@@ -460,31 +469,25 @@ namespace SystemTrayMenu.UserInterface
             SetCounts(foldersCount, filesCount);
         }
 
-        internal void ShowWithFadeOrTransparent(bool formActiveFormIsMenu)
+        internal void ActivateWithFade()
         {
-            if (formActiveFormIsMenu)
+            if (Settings.Default.UseFading)
             {
-                ShowWithFade();
+                isFading = true;
+                RaiseEvent(new(routedEvent: FadeInEvent));
             }
             else
             {
-                ShowTransparent();
+                Opacity = 1D;
+                FadeIn_Completed(this, new());
             }
         }
 
-        internal void ShowWithFade() => Fading_Show(false);
-
-        internal void ShowTransparent() => Fading_Show(true);
-
-        internal void Fading_Show(bool transparency)
+        internal void ShowWithFade(bool transparency = false)
         {
             timerUpdateIcons.Start();
 
-            if (Level == 0)
-            {
-                Activate();
-            }
-            else
+            if (Level > 0)
             {
                 ShowActivated = false;
             }
@@ -497,8 +500,7 @@ namespace SystemTrayMenu.UserInterface
                 isFading = true;
                 if (transparency)
                 {
-                    // TODO: FADING: Instead setting of opacity 100% only go up to 80% (Temporarily go to 100% as well)
-                    RaiseEvent(new(routedEvent: FadeInEvent));
+                    RaiseEvent(new(routedEvent: FadeToTransparentEvent));
                 }
                 else
                 {
@@ -517,8 +519,6 @@ namespace SystemTrayMenu.UserInterface
             if (Settings.Default.UseFading)
             {
                 isFading = true;
-
-                // TODO: FADING: Instead starting at opacity 100% it should start with 80% due to transparency setting
                 RaiseEvent(new(routedEvent: FadeOutEvent));
             }
             else
@@ -545,7 +545,7 @@ namespace SystemTrayMenu.UserInterface
             StartLocation startLocation,
             bool useCustomLocation)
         {
-            Point originLocation = new(0.0D, 0.0D);
+            Point originLocation = new(0D, 0D);
 
             // Update the height and width
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
@@ -599,7 +599,7 @@ namespace SystemTrayMenu.UserInterface
             void AdjustWindowPositionInternal(in Point originLocation)
             {
                 double scaling = Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
-                double overlappingOffset = 0.0D;
+                double overlappingOffset = 0D;
 
                 // Make sure we have latest values of own window size
                 UpdateLayout();

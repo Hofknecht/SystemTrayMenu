@@ -444,7 +444,11 @@ namespace SystemTrayMenu.Business
                             IconReader.IsPreloading = false;
                             if (showMenuAfterMainPreload)
                             {
-                                AsEnumerable.ToList().ForEach(m => { m.ShowWithFade(); });
+                                Menu? menu = menus[0];
+                                if (menu != null)
+                                {
+                                    menu.ShowWithFade();
+                                }
                             }
                         }
                         else
@@ -579,8 +583,14 @@ namespace SystemTrayMenu.Business
             {
                 if (IsActive() && IsMainUsable)
                 {
-                    AsList.ForEach(m => m.ShowWithFade());
                     timerStillActiveCheck.Stop();
+
+                    // Bring transparent menus back
+                    foreach (Menu? menu in menus.Where(m => m != null && m.Opacity != 1D))
+                    {
+                        menu!.ActivateWithFade();
+                    }
+
                     timerStillActiveCheck.Start();
                 }
             }
@@ -621,7 +631,7 @@ namespace SystemTrayMenu.Business
                 {
                     HideOldMenu(menu, true);
                     menus[menu.Level] = menu;
-                    menu.ShowWithFadeOrTransparent(IsActive());
+                    menu.ShowWithFade(!IsActive());
                 }
             }
 
@@ -917,12 +927,12 @@ namespace SystemTrayMenu.Business
                     {
                         if (!keyboardInput.InUse)
                         {
-                            AsList.ForEach(menu => menu.ShowTransparent());
+                            AsList.ForEach(menu => menu.ShowWithFade(true));
                         }
                     }
                     else if (Config.AlwaysOpenByPin)
                     {
-                        AsList.ForEach(menu => menu.ShowTransparent());
+                        AsList.ForEach(menu => menu.ShowWithFade(true));
                     }
                     else
                     {
@@ -949,7 +959,7 @@ namespace SystemTrayMenu.Business
             joystickHelper.Disable();
         }
 
-        private void GetScreenBounds(out Rect screenBounds, out bool useCustomLocation, out Menu.StartLocation startLocation)
+        private void GetScreenBounds(out Rect screenBounds, out bool useCustomLocation, out StartLocation startLocation)
         {
             if (Settings.Default.AppearAtMouseLocation)
             {
@@ -985,33 +995,33 @@ namespace SystemTrayMenu.Business
                 case TaskbarPosition.Left:
                     screenBounds.X += taskbar.Size.Width;
                     screenBounds.Width -= taskbar.Size.Width;
-                    startLocation = Menu.StartLocation.BottomLeft;
+                    startLocation = StartLocation.BottomLeft;
                     break;
                 case TaskbarPosition.Right:
                     screenBounds.Width -= taskbar.Size.Width;
-                    startLocation = Menu.StartLocation.BottomRight;
+                    startLocation = StartLocation.BottomRight;
                     break;
                 case TaskbarPosition.Top:
                     screenBounds.Y += taskbar.Size.Height;
                     screenBounds.Height -= taskbar.Size.Height;
-                    startLocation = Menu.StartLocation.TopRight;
+                    startLocation = StartLocation.TopRight;
                     break;
                 case TaskbarPosition.Bottom:
                 default:
                     screenBounds.Height -= taskbar.Size.Height;
-                    startLocation = Menu.StartLocation.BottomRight;
+                    startLocation = StartLocation.BottomRight;
                     break;
             }
 
             if (Settings.Default.AppearAtTheBottomLeft)
             {
-                startLocation = Menu.StartLocation.BottomLeft;
+                startLocation = StartLocation.BottomLeft;
             }
         }
 
         private void AdjustMenusSizeAndLocation(int startLevel)
         {
-            GetScreenBounds(out Rect screenBounds, out bool useCustomLocation, out Menu.StartLocation startLocation);
+            GetScreenBounds(out Rect screenBounds, out bool useCustomLocation, out StartLocation startLocation);
 
             Menu menu;
             Menu? menuPredecessor = null;
@@ -1035,7 +1045,7 @@ namespace SystemTrayMenu.Business
                     !Settings.Default.UseCustomLocation &&
                     i == 0)
                 {
-                    const int overlapTolerance = 4;
+                    const double overlapTolerance = 4D;
 
                     // Remember width of the initial menu as we don't want to overlap with it
                     if (taskbarPosition == TaskbarPosition.Left)
