@@ -319,11 +319,11 @@ namespace SystemTrayMenu.UserInterface
 
         internal enum StartLocation
         {
+            Point,
             Predecessor,
             BottomLeft,
             BottomRight,
             TopRight,
-            Point,
         }
 
         public Point Location => new (Left, Top); // TODO WPF Replace Forms wrapper
@@ -545,7 +545,7 @@ namespace SystemTrayMenu.UserInterface
             StartLocation startLocation,
             bool useCustomLocation)
         {
-            Point originLocation = new(0, 0);
+            Point originLocation = new(0.0D, 0.0D);
 
             // Update the height and width
             AdjustDataGridViewHeight(menuPredecessor, bounds.Height);
@@ -571,8 +571,8 @@ namespace SystemTrayMenu.UserInterface
                 }
 
                 RelocateOnNextShow = false;
-                originLocation = new(Settings.Default.CustomLocationX, Settings.Default.CustomLocationY);
                 startLocation = StartLocation.Point;
+                originLocation = new(Settings.Default.CustomLocationX, Settings.Default.CustomLocationY);
             }
             else if (Settings.Default.AppearAtMouseLocation)
             {
@@ -582,9 +582,8 @@ namespace SystemTrayMenu.UserInterface
                 }
 
                 RelocateOnNextShow = false;
-                originLocation = Mouse.GetPosition(this);
-                originLocation.Y -= labelTitle.Height;
                 startLocation = StartLocation.Point;
+                originLocation = NativeMethods.Screen.CursorPosition;
             }
 
             if (IsLoaded)
@@ -597,25 +596,46 @@ namespace SystemTrayMenu.UserInterface
                 Loaded += (_, _) => AdjustWindowPositionInternal(originLocation);
             }
 
-            void AdjustWindowPositionInternal(Point originLocation)
+            void AdjustWindowPositionInternal(in Point originLocation)
             {
-                RowData? trigger;
+                double scaling = Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
+                double overlappingOffset = 0.0D;
 
                 // Make sure we have latest values of own window size
                 UpdateLayout();
 
                 // Prepare parameters
-                if (startLocation == StartLocation.Predecessor && menuPredecessor != null)
+                if (startLocation == StartLocation.Predecessor)
                 {
+                    if (menuPredecessor == null)
+                    {
+                        // should never happen
+                        return;
+                    }
+
+                    // When (later in calculation) a list item is not found,
+                    // its values might be invalidated due to resizing or moving.
+                    // After updating the layout the location should be available again.
+                    menuPredecessor.UpdateLayout();
+
                     directionToRight = menuPredecessor.directionToRight; // try keeping same direction from predecessor
-                    trigger = RowDataParent;
+
+                    if (!Settings.Default.AppearNextToPreviousMenu &&
+                        menuPredecessor.Width > Settings.Default.OverlappingOffsetPixels)
+                    {
+                        if (directionToRight)
+                        {
+                            overlappingOffset = Settings.Default.OverlappingOffsetPixels - menuPredecessor.Width;
+                        }
+                        else
+                        {
+                            overlappingOffset = menuPredecessor.Width - Settings.Default.OverlappingOffsetPixels;
+                        }
+                    }
                 }
                 else
                 {
-                    // Use own menu as predecessor for calculations (Left and Top were set beforehand)
-                    menuPredecessor = this;
                     directionToRight = true; // use right as default direction
-                    trigger = new();
                 }
 
                 // Calculate X position
@@ -623,8 +643,14 @@ namespace SystemTrayMenu.UserInterface
                 switch (startLocation)
                 {
                     case StartLocation.Point:
+                        x = originLocation.X;
+                        break;
                     case StartLocation.Predecessor:
-                        double scaling = Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
+                        if (menuPredecessor == null)
+                        {
+                            // should never happen
+                            return;
+                        }
 
                         if (directionToRight)
                         {
@@ -692,43 +718,34 @@ namespace SystemTrayMenu.UserInterface
                         break;
                 }
 
-                // X position for click, remove width of this menu as it is used as predecessor
-                if (menuPredecessor == this && directionToRight)
-                {
-                    x -= Width;
-                }
-
-                if (Level != 0 &&
-                    !Settings.Default.AppearNextToPreviousMenu &&
-                    menuPredecessor != null && menuPredecessor.Width > Settings.Default.OverlappingOffsetPixels)
-                {
-                    if (directionToRight)
-                    {
-                        x = x - menuPredecessor.Width + Settings.Default.OverlappingOffsetPixels;
-                    }
-                    else
-                    {
-                        x = x + menuPredecessor.Width - Settings.Default.OverlappingOffsetPixels;
-                    }
-                }
+                x += overlappingOffset;
 
                 // Calculate Y position
                 double y;
                 switch (startLocation)
                 {
                     case StartLocation.Point:
+                        y = originLocation.Y;
+                        if (Settings.Default.AppearAtMouseLocation)
+                        {
+                            y -= labelTitle.ActualHeight; // Mouse should point below title
+                        }
+
+                        break;
                     case StartLocation.Predecessor:
-                        ListView dgv = menuPredecessor!.GetDataGridView()!;
+                        if (menuPredecessor == null)
+                        {
+                            // should never happen
+                            return;
+                        }
+
+                        y = originLocation.Y;
 
                         // Set position on same height as the selected row from predecessor
-                        y = originLocation.Y;
+                        ListView dgv = menuPredecessor.GetDataGridView()!;
+                        RowData? trigger = RowDataParent;
                         if (trigger != null && dgv.Items.Count > trigger.RowIndex)
                         {
-                            // When item is not found, it might be invalidated due to resizing or moving
-                            // After updating the layout the location should be available again.
-                            // It also makes sure all height and location information is up to date
-                            menuPredecessor.UpdateLayout();
-
                             // When scrolled, we have to reduce the index number as we calculate based on visual tree
                             int startIndex = 0;
                             double offset = 0D;
@@ -778,22 +795,12 @@ namespace SystemTrayMenu.UserInterface
                                 }
                             }
 
-                            y += (int)offset;
+                            y += offset;
                         }
 
                         if (searchPanel.Visibility == Visibility.Collapsed)
                         {
                             y += menuPredecessor.searchPanel.ActualHeight;
-                        }
-
-                        // Move vertically when out of bounds
-                        if (bounds.Y + bounds.Height < y + Height)
-                        {
-                            y = bounds.Y + bounds.Height - Height;
-                        }
-                        else if (y < bounds.Y)
-                        {
-                            y = bounds.Y;
                         }
 
                         break;
@@ -805,6 +812,16 @@ namespace SystemTrayMenu.UserInterface
                     default:
                         y = bounds.Height - Height;
                         break;
+                }
+
+                // Move vertically when out of bounds
+                if (bounds.Y + bounds.Height < y + Height)
+                {
+                    y = bounds.Y + bounds.Height - Height;
+                }
+                else if (y < bounds.Y)
+                {
+                    y = bounds.Y;
                 }
 
                 // Update position
