@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
+    using System.Collections;
     using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Threading;
@@ -18,12 +19,16 @@ namespace SystemTrayMenu.Handler
     {
         private readonly DispatcherTimer timerStartLoad = new();
         private ListView? dgv;
-        private int rowIndex;
+        private ListViewItemData? dgvItemData;
         private ListView? dgvTmp;
+#if TODO // Misc MouseEvents
         private int rowIndexTmp;
+#endif
         private bool alreadyOpened;
 
+#if TODO // Misc MouseEvents
         private int mouseMoveEvents;
+#endif
         private DateTime dateTimeLastMouseMoveEvent = DateTime.Now;
         private bool checkForMouseActive = true;
 
@@ -39,7 +44,7 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? StopLoadMenu;
 
-        internal event Action<ListView, int>? MouseEnterOk;
+        internal event Action<ListView, ListViewItemData>? MouseEnterOk;
 
         internal bool MouseActive { get; set; }
 
@@ -48,48 +53,43 @@ namespace SystemTrayMenu.Handler
             timerStartLoad.Stop();
         }
 
-        internal void MouseEnter(object sender, int rowIndex)
+        internal void MouseEnter(ListView dgv, ListViewItemData itemData)
         {
-            ListView dgv = (ListView)sender;
             if (MouseActive)
             {
-                if (dgv.Items.Count > rowIndex)
-                {
-                    MouseEnterOk?.Invoke(dgv, rowIndex);
-                    timerStartLoad.Stop();
-                    StopLoadMenu?.Invoke();
-                    checkForMouseActive = true;
-                    SetData(dgv, rowIndex);
-                    timerStartLoad.Start();
-                }
+                MouseEnterOk?.Invoke(dgv, itemData);
+                timerStartLoad.Stop();
+                StopLoadMenu?.Invoke();
+                checkForMouseActive = true;
+                SetData(dgv, itemData);
+                timerStartLoad.Start();
             }
             else
             {
                 dgvTmp = dgv;
-                rowIndexTmp = rowIndex;
+#if TODO // Misc MouseEvents
+                rowIndexTmp = dgv.IndexOfSenderItem(item);
+#endif
             }
         }
 
-        internal void RowSelected(ListView dgv, int rowIndex)
+        internal void RowSelected(ListView dgv, ListViewItemData itemData)
         {
-            if (dgv.Items.Count > rowIndex)
-            {
-                timerStartLoad.Stop();
-                StopLoadMenu?.Invoke();
-                SetData(dgv, rowIndex);
-                MouseActive = false;
-                checkForMouseActive = false;
-                timerStartLoad.Start();
-            }
+            timerStartLoad.Stop();
+            StopLoadMenu?.Invoke();
+            SetData(dgv, itemData);
+            MouseActive = false;
+            checkForMouseActive = false;
+            timerStartLoad.Start();
         }
 
-        internal void MouseLeave(object sender, int rowIndex)
+        internal void MouseLeave(ListView dgv, ListViewItemData itemData)
         {
             if (MouseActive)
             {
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
-                ResetData((ListView)sender, rowIndex);
+                ResetData(dgv, itemData);
             }
         }
 
@@ -97,32 +97,34 @@ namespace SystemTrayMenu.Handler
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            ResetData(dgv, rowIndex);
+            if (dgv != null)
+            {
+                ResetData(dgv, (ListViewItemData)dgv.Items[rowIndex]);
+            }
+
             MouseActive = false;
         }
 
-        internal void ClickOpensInstantly(ListView dgv, ListViewItem item)
+        internal void ClickOpensInstantly(ListView dgv, ListViewItemData itemData)
         {
             timerStartLoad.Stop();
-            SetData(dgv, dgv.IndexOfSenderItem(item));
+            SetData(dgv, itemData);
             MouseActive = true;
             checkForMouseActive = false;
             CallOpenMenuNow();
         }
 
-        internal void EnterOpensInstantly(ListView dgv, int rowIndex)
+        internal void EnterOpensInstantly(ListView dgv, ListViewItemData itemData)
         {
-            if (dgv.Items.Count > rowIndex)
-            {
-                timerStartLoad.Stop();
-                StopLoadMenu?.Invoke();
-                SetData(dgv, rowIndex);
-                MouseActive = false;
-                checkForMouseActive = false;
-                CallOpenMenuNow();
-            }
+            timerStartLoad.Stop();
+            StopLoadMenu?.Invoke();
+            SetData(dgv, itemData);
+            MouseActive = false;
+            checkForMouseActive = false;
+            CallOpenMenuNow();
         }
 
+#if TODO // Misc MouseEvents
         internal void MouseMove(object sender, MouseEventArgs e)
         {
             if (!MouseActive)
@@ -149,6 +151,7 @@ namespace SystemTrayMenu.Handler
                 }
             }
         }
+#endif
 
         private void WaitStartLoad_Tick(object? sender, EventArgs e)
         {
@@ -161,11 +164,11 @@ namespace SystemTrayMenu.Handler
 
         private void CallOpenMenuNow()
         {
-            if (!alreadyOpened && dgv != null && dgv.Items.Count > rowIndex)
+            if (!alreadyOpened && dgv != null && dgvItemData != null && dgv.Items.Contains(dgvItemData))
             {
                 alreadyOpened = true;
 
-                RowData rowData = ((ListViewItemData)dgv.Items[rowIndex]).data;
+                RowData rowData = dgvItemData.data;
                 Menu menu = (Menu)dgv.GetParentWindow();
                 rowData.Level = menu.Level;
                 if (rowData.ContainsMenu)
@@ -184,9 +187,9 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        private void SetData(ListView dgv, int rowIndex)
+        private void SetData(ListView dgv, ListViewItemData itemData)
         {
-            if (this.dgv == dgv && this.rowIndex == rowIndex)
+            if (this.dgv == dgv && dgvItemData == itemData)
             {
                 return;
             }
@@ -194,30 +197,27 @@ namespace SystemTrayMenu.Handler
             alreadyOpened = false;
             dgvTmp = null;
             this.dgv = dgv;
-            this.rowIndex = rowIndex;
+            dgvItemData = itemData;
 
-            RowData rowData = ((ListViewItemData)dgv.Items[rowIndex]).data;
+            RowData rowData = dgvItemData.data;
             if (rowData != null)
             {
                 rowData.IsSelected = true;
             }
 
-            dgv.SelectedIndex = rowIndex;
+            dgv.SelectedItem = dgvItemData;
         }
 
-        private void ResetData(ListView? dgv, int rowIndex)
+        private void ResetData(ListView dgv, ListViewItemData itemData)
         {
-            if (dgv != null && dgv.Items.Count > rowIndex)
+            RowData rowData = itemData.data;
+            if (rowData != null)
             {
-                RowData rowData = ((ListViewItemData)dgv.Items[rowIndex]).data;
-                if (rowData != null)
-                {
-                    rowData.IsSelected = false;
-                    rowData.IsClicking = false;
-                    dgv.SelectedItem = null;
-                    this.dgv = null;
-                    this.rowIndex = 0;
-                }
+                rowData.IsSelected = false;
+                rowData.IsClicking = false;
+                dgv.SelectedItem = null;
+                this.dgv = null;
+                dgvItemData = null;
             }
         }
     }

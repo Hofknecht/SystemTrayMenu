@@ -30,7 +30,7 @@ namespace SystemTrayMenu.Business
         private readonly Menu?[] menus = new Menu?[MenuDefines.MenusMax];
         private readonly BackgroundWorker workerMainMenu = new();
         private readonly List<BackgroundWorker> workersSubMenu = new();
-        private readonly DgvMouseRow<ListView> dgvMouseRow = new();
+        private readonly DgvMouseRow<ListView, ListViewItemData> dgvMouseRow = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
         private readonly JoystickHelper joystickHelper;
@@ -669,9 +669,9 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void Dgv_MouseDown(ListView dgv, int index, MouseButtonEventArgs e)
+        private void Dgv_MouseDown(ListView dgv, ListViewItemData itemData, MouseButtonEventArgs e)
         {
-            MouseEnterOk(dgv, index, true);
+            MouseEnterOk(dgv, itemData, true);
 
 #if TODO // Misc MouseEvents
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -681,19 +681,19 @@ namespace SystemTrayMenu.Business
 #endif
         }
 
-        private void Dgv_MouseUp(object sender, int index, MouseButtonEventArgs e)
+        private void Dgv_MouseUp(object sender, ListViewItemData itemData, MouseButtonEventArgs e)
         {
 #if TODO // Misc MouseEvents
             lastMouseDownRowIndex = -1;
 #endif
         }
 
-        private void MouseEnterOk(ListView dgv, int rowIndex)
+        private void MouseEnterOk(ListView dgv, ListViewItemData itemData)
         {
-            MouseEnterOk(dgv, rowIndex, false);
+            MouseEnterOk(dgv, itemData, false);
         }
 
-        private void MouseEnterOk(ListView dgv, int rowIndex, bool refreshView)
+        private void MouseEnterOk(ListView dgv, ListViewItemData itemData, bool refreshView)
         {
             if (IsMainUsable)
             {
@@ -703,7 +703,7 @@ namespace SystemTrayMenu.Business
                     keyboardInput.InUse = false;
                 }
 
-                keyboardInput.Select(dgv, rowIndex, refreshView);
+                keyboardInput.Select(dgv, itemData, refreshView);
             }
         }
 #if TODO // Misc MouseEvents
@@ -728,12 +728,12 @@ namespace SystemTrayMenu.Business
         }
 #endif
 
-        private void Dgv_OpenItemOnClick(ListView sender, ListViewItem item)
+        private void Dgv_OpenItemOnClick(ListView sender, ListViewItemData itemData)
         {
 #if TODO // Misc MouseEvents
             lastMouseDownRowIndex = -1;
 #endif
-            waitToOpenMenu.ClickOpensInstantly(sender, item);
+            waitToOpenMenu.ClickOpensInstantly(sender, itemData);
         }
 
         private void Dgv_SelectionChanged(object sender, EventArgs e)
@@ -745,9 +745,9 @@ namespace SystemTrayMenu.Business
         {
             dgv.SelectionChanged -= Dgv_SelectionChanged;
 
-            foreach (Menu.ListViewItemData row in dgv.Items)
+            foreach (ListViewItemData itemData in dgv.Items)
             {
-                RowData rowData = row.data;
+                RowData rowData = itemData.data;
 
                 if (rowData == null)
                 {
@@ -756,38 +756,38 @@ namespace SystemTrayMenu.Business
                 else if (!IsMainUsable)
                 {
 #if TODO // Colors
-                    row.DefaultCellStyle.SelectionBackColor = Color.White;
+                    itemData.DefaultCellStyle.SelectionBackColor = Color.White;
 #endif
-                    dgv.SelectedItems.Remove(row);
+                    dgv.SelectedItems.Remove(itemData);
                 }
                 else if (rowData.IsClicking)
                 {
 #if TODO // Colors
-                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorIcons;
+                    itemData.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorIcons;
 #endif
-                    dgv.SelectedItems.Add(row);
+                    dgv.SelectedItems.Add(itemData);
                 }
                 else if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
                 {
-                    dgv.SelectedItems.Add(row);
+                    dgv.SelectedItems.Add(itemData);
                 }
                 else if (rowData.IsMenuOpen)
                 {
-                    dgv.SelectedItems.Add(row);
+                    dgv.SelectedItems.Add(itemData);
                 }
                 else if (rowData.IsSelected)
                 {
 #if TODO // Colors
-                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
+                    itemData.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
 #endif
-                    dgv.SelectedItems.Add(row);
+                    dgv.SelectedItems.Add(itemData);
                 }
                 else
                 {
 #if TODO // Colors
-                    row.DefaultCellStyle.SelectionBackColor = Color.White;
+                    itemData.DefaultCellStyle.SelectionBackColor = Color.White;
 #endif
-                    dgv.SelectedItems.Remove(row);
+                    dgv.SelectedItems.Remove(itemData);
                 }
             }
 

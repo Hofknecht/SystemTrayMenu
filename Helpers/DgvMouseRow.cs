@@ -7,12 +7,13 @@ namespace SystemTrayMenu.Helpers
     using System;
     using System.Windows.Threading;
 
-    public class DgvMouseRow<T> : IDisposable
-        where T : notnull
+    public class DgvMouseRow<TList, TItem> : IDisposable
+        where TList : notnull
+        where TItem : notnull
     {
         private readonly DispatcherTimer timerRaiseRowMouseLeave = new DispatcherTimer(DispatcherPriority.Input, Dispatcher.CurrentDispatcher);
-        private T? senderObject;
-        private int? senderIndex;
+        private TList? currentList;
+        private TItem? currentItem;
 
         internal DgvMouseRow()
         {
@@ -25,9 +26,9 @@ namespace SystemTrayMenu.Helpers
             }
         }
 
-        internal event Action<T, int>? RowMouseEnter;
+        internal event Action<TList, TItem>? RowMouseEnter;
 
-        internal event Action<T, int>? RowMouseLeave;
+        internal event Action<TList, TItem>? RowMouseLeave;
 
         public void Dispose()
         {
@@ -35,9 +36,9 @@ namespace SystemTrayMenu.Helpers
             GC.SuppressFinalize(this);
         }
 
-        internal void CellMouseEnter(T sender, int index)
+        internal void CellMouseEnter(TList list, TItem item)
         {
-            if (!sender.Equals(senderObject) || index != senderIndex)
+            if (!list.Equals(currentList) || !item.Equals(currentItem))
             {
                 if (timerRaiseRowMouseLeave.IsEnabled)
                 {
@@ -45,15 +46,15 @@ namespace SystemTrayMenu.Helpers
                     TriggerRowMouseLeave();
                 }
 
-                TriggerRowMouseEnter(sender, index);
+                TriggerRowMouseEnter(list, item);
             }
             else
             {
                 timerRaiseRowMouseLeave.Stop();
             }
 
-            senderObject = sender;
-            senderIndex = index;
+            currentList = list;
+            currentItem = item;
         }
 
         internal void CellMouseLeave()
@@ -80,18 +81,18 @@ namespace SystemTrayMenu.Helpers
 
         private void TriggerRowMouseLeave()
         {
-            if (senderObject != null && senderIndex.HasValue)
+            if (currentList != null && currentItem != null)
             {
-                RowMouseLeave?.Invoke(senderObject, senderIndex.Value);
+                RowMouseLeave?.Invoke(currentList, currentItem);
             }
 
-            senderObject = default(T);
-            senderIndex = null;
+            currentList = default;
+            currentItem = default;
         }
 
-        private void TriggerRowMouseEnter(T sender, int rowIndex)
+        private void TriggerRowMouseEnter(TList list, TItem item)
         {
-            RowMouseEnter?.Invoke(sender, rowIndex);
+            RowMouseEnter?.Invoke(list, item);
         }
     }
 }

@@ -298,15 +298,15 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action? UserDragsMenu;
 
-        internal event Action<ListView, int>? CellMouseEnter;
+        internal event Action<ListView, ListViewItemData>? CellMouseEnter;
 
         internal event Action? CellMouseLeave;
 
-        internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseDown;
+        internal event Action<ListView, ListViewItemData, MouseButtonEventArgs>? CellMouseDown;
 
-        internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseUp;
+        internal event Action<ListView, ListViewItemData, MouseButtonEventArgs>? CellMouseUp;
 
-        internal event Action<ListView, ListViewItem>? CellOpenOnClick;
+        internal event Action<ListView, ListViewItemData>? CellOpenOnClick;
 
         internal event Action? ClosePressed;
 
@@ -1002,10 +1002,10 @@ namespace SystemTrayMenu.UserInterface
                 view.Filter = (object item) =>
                 {
                     // Look for each space separated string if it is part of an entries text (case insensitive)
-                    ListViewItemData row = (ListViewItemData)item;
+                    ListViewItemData itemData = (ListViewItemData)item;
                     foreach (string pattern in userPattern.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
                     {
-                        if (!row.ColumnText.ToLower().Contains(pattern))
+                        if (!itemData.ColumnText.ToLower().Contains(pattern))
                         {
                             return false;
                         }
@@ -1175,10 +1175,10 @@ namespace SystemTrayMenu.UserInterface
         {
             int iconsToUpdate = 0;
 
-            foreach (Menu.ListViewItemData row in dgv.Items)
+            foreach (ListViewItemData itemData in dgv.Items)
             {
-                RowData rowData = row.data;
-                rowData.RowIndex = dgv.Items.IndexOf(row);
+                RowData rowData = itemData.data;
+                rowData.RowIndex = dgv.Items.IndexOf(itemData);
 
                 if (rowData.IconLoading)
                 {
@@ -1186,7 +1186,7 @@ namespace SystemTrayMenu.UserInterface
                     rowData.ReadIcon(false);
                     if (rowData.Icon != null)
                     {
-                        row.ColumnIcon = rowData.Icon.ToImageSource();
+                        itemData.ColumnIcon = rowData.Icon.ToImageSource();
                     }
                 }
             }
@@ -1239,7 +1239,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
         {
-            CellMouseEnter?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender));
+            CellMouseEnter?.Invoke(dgv, (ListViewItemData)((ListViewItem)sender).Content);
         }
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
@@ -1249,27 +1249,27 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            int index = dgv.IndexOfSenderItem((ListViewItem)sender);
+            ListViewItemData itemData = (ListViewItemData)((ListViewItem)sender).Content;
 
-            CellMouseDown?.Invoke(dgv, index, e);
+            CellMouseDown?.Invoke(dgv, itemData, e);
 
-            ((ListViewItemData)dgv.Items[index]).data.MouseDown(dgv, e);
+            itemData.data.MouseDown(dgv, e);
         }
 
         private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            CellMouseUp?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender), e);
+            CellMouseUp?.Invoke(dgv, (ListViewItemData)((ListViewItem)sender).Content, e);
         }
 
         private void ListViewxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ListViewItemData row = (ListViewItemData)((ListViewItem)sender).Content;
+            ListViewItemData itemData = (ListViewItemData)((ListViewItem)sender).Content;
 
-            row.data.OpenItem(out bool doClose, e.ClickCount);
+            itemData.data.OpenItem(out bool doClose, e.ClickCount);
 
             if (e.ClickCount == 1)
             {
-                CellOpenOnClick?.Invoke(dgv, (ListViewItem)sender);
+                CellOpenOnClick?.Invoke(dgv, itemData);
             }
 
             if (doClose)

@@ -734,9 +734,9 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.ShowOnlyAsSearchResult = checkBoxShowOnlyAsSearchResult.IsChecked ?? false;
 
             string pathsAddToMainMenu = string.Empty;
-            foreach (ListViewItemData row in dataGridViewFolders.Items)
+            foreach (ListViewItemData itemData in dataGridViewFolders.Items)
             {
-                pathsAddToMainMenu += $"{row.ColumnFolder} recursiv:{row.ColumnRecursiveLevel} onlyFiles:{row.ColumnOnlyFiles}|";
+                pathsAddToMainMenu += $"{itemData.ColumnFolder} recursiv:{itemData.ColumnRecursiveLevel} onlyFiles:{itemData.ColumnOnlyFiles}|";
             }
 
             Settings.Default.PathsAddToMainMenu = pathsAddToMainMenu;
@@ -974,12 +974,12 @@ namespace SystemTrayMenu.UserInterface
         private void EnableButtonAddStartMenu()
         {
             bool doesStartMenuFolderExist = false;
-            foreach (ListViewItemData row in dataGridViewFolders.Items)
+            foreach (ListViewItemData itemData in dataGridViewFolders.Items)
             {
                 string folderPathCommonStartMenu = Environment.GetFolderPath(Environment.SpecialFolder.CommonStartMenu);
 
                 // TODO: Check: Is RecursiveLevel and OnlyFiles really important to be the StartMenu folder entry? (Remove in version 1?)
-                if (row.ColumnFolder == folderPathCommonStartMenu)
+                if (itemData.ColumnFolder == folderPathCommonStartMenu)
                 {
                     doesStartMenuFolderExist = true;
                     break;

@@ -5,13 +5,13 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
-    using System.Data.Common;
     using System.Globalization;
     using System.Linq;
     using System.Windows.Input;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.UserInterface.Menu;
     using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
@@ -32,11 +32,11 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? ClosePressed;
 
-        internal event Action<ListView, int>? RowSelected;
+        internal event Action<ListView, ListViewItemData>? RowSelected;
 
         internal event Action<int, ListView?>? RowDeselected;
 
-        internal event Action<ListView, int>? EnterPressed;
+        internal event Action<ListView, ListViewItemData>? EnterPressed;
 
         internal event Action? Cleared;
 
@@ -205,7 +205,7 @@ namespace SystemTrayMenu.Handler
                 {
                     if (dgv.Items.Count > 0)
                     {
-                        Select(dgv, 0, true);
+                        Select(dgv, (ListViewItemData)dgv.Items[0], true);
                     }
                 }
             }
@@ -216,8 +216,9 @@ namespace SystemTrayMenu.Handler
             ClearIsSelectedByKey(iMenuKey, iRowKey);
         }
 
-        internal void Select(ListView dgv, int index, bool refreshview)
+        internal void Select(ListView dgv, ListViewItemData itemData, bool refreshview)
         {
+            int index = dgv.Items.IndexOf(itemData); // TODO: Remove index (work with instance instead)
             int newiMenuKey = ((Menu)dgv.GetParentWindow()).Level;
             if (index != iRowKey || newiMenuKey != iMenuKey)
             {
@@ -227,24 +228,20 @@ namespace SystemTrayMenu.Handler
             iRowKey = index;
             iMenuKey = newiMenuKey;
 
-            if (dgv.Items.Count > index)
+            RowData rowData = itemData.data;
+            if (rowData != null)
             {
-                Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[index];
-                RowData rowData = itemData.data;
-                if (rowData != null)
+                rowData.IsSelected = true;
+            }
+
+            if (refreshview)
+            {
+                if (dgv.SelectedItems.Contains(itemData))
                 {
-                    rowData.IsSelected = true;
+                    dgv.SelectedItems.Remove(itemData);
                 }
 
-                if (refreshview)
-                {
-                    if (dgv.SelectedItems.Contains(itemData))
-                    {
-                        dgv.SelectedItems.Remove(itemData);
-                    }
-
-                    dgv.SelectedItems.Add(itemData);
-                }
+                dgv.SelectedItems.Add(itemData);
             }
         }
 
@@ -316,7 +313,8 @@ namespace SystemTrayMenu.Handler
                 case Key.Enter:
                     if ((modifiers == ModifierKeys.None) && (iRowKey > -1 && dgv != null && dgv.Items.Count > iRowKey))
                     {
-                        RowData trigger = ((Menu.ListViewItemData)dgv.Items[iRowKey]).data;
+                        ListViewItemData itemData = (ListViewItemData)dgv.Items[iRowKey];
+                        RowData trigger = itemData.data;
                         if (trigger.IsMenuOpen || !trigger.ContainsMenu)
                         {
                             trigger.OpenItem(out bool doCloseAfterOpen);
@@ -329,7 +327,7 @@ namespace SystemTrayMenu.Handler
                         {
                             RowDeselected?.Invoke(iRowBefore, dgvBefore);
                             SelectRow(dgv, iRowKey);
-                            EnterPressed?.Invoke(dgv, iRowKey);
+                            EnterPressed?.Invoke(dgv, itemData);
                         }
 
                         handled = true;
@@ -554,10 +552,10 @@ namespace SystemTrayMenu.Handler
 
         private void SelectRow(ListView? dgv, int iRowKey)
         {
-            if (dgv != null)
+            if (dgv != null && dgv.Items.Count > iRowKey)
             {
                 InUse = true;
-                RowSelected?.Invoke(dgv, iRowKey);
+                RowSelected?.Invoke(dgv, (ListViewItemData)dgv.Items[iRowKey]);
             }
         }
 
