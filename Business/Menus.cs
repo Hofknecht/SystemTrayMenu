@@ -43,7 +43,9 @@ namespace SystemTrayMenu.Business
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
         private bool searchTextChanging;
+#if TODO // Misc MouseEvents
         private int lastMouseDownRowIndex = -1;
+#endif
         private bool showMenuAfterMainPreload;
         private bool hideSubmenuDuringRefreshSearch;
 
@@ -603,7 +605,8 @@ namespace SystemTrayMenu.Business
             menu.CellMouseLeave += dgvMouseRow.CellMouseLeave;
             menu.CellMouseDown += Dgv_MouseDown;
             menu.CellMouseUp += Dgv_MouseUp;
-            menu.CellMouseClick += Dgv_MouseClick;
+            menu.CellOpenOnClick += Dgv_OpenItemOnClick;
+            menu.ClosePressed += MenusFadeOut;
 
             ListView? dgv = menu.GetDataGridView();
             if (dgv != null)
@@ -666,24 +669,23 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void Dgv_MouseDown(object sender, int index, MouseButtonEventArgs e)
+        private void Dgv_MouseDown(ListView dgv, int index, MouseButtonEventArgs e)
         {
-            ListView dgv = (ListView)sender;
-
             MouseEnterOk(dgv, index, true);
 
-            // TODO WPF: Move directly into ListViewItem_PreviewMouseDown ?
-            ((Menu.ListViewItemData)dgv.Items[index]).data.MouseDown(dgv, e);
-
+#if TODO // Misc MouseEvents
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 lastMouseDownRowIndex = index;
             }
+#endif
         }
 
         private void Dgv_MouseUp(object sender, int index, MouseButtonEventArgs e)
         {
+#if TODO // Misc MouseEvents
             lastMouseDownRowIndex = -1;
+#endif
         }
 
         private void MouseEnterOk(ListView dgv, int rowIndex)
@@ -726,31 +728,12 @@ namespace SystemTrayMenu.Business
         }
 #endif
 
-        private void Dgv_MouseClick(ListView sender, int index, MouseButtonEventArgs e)
+        private void Dgv_OpenItemOnClick(ListView sender, ListViewItem item)
         {
-            bool doClose = false;
-
-            if (e.ClickCount == 1)
-            {
-                lastMouseDownRowIndex = -1;
-
-                ((Menu.ListViewItemData)sender.Items[index]).data.MouseClick(e, out doClose);
-
-                waitToOpenMenu.ClickOpensInstantly(sender, index);
-            }
-            else if (e.ClickCount == 2)
-            {
-                lastMouseDownRowIndex = -1;
-
-                ((Menu.ListViewItemData)sender.Items[index]).data.DoubleClick(e, out doClose);
-            }
-
-            if (doClose)
-            {
-                MenusFadeOut();
-            }
-
+#if TODO // Misc MouseEvents
             lastMouseDownRowIndex = -1;
+#endif
+            waitToOpenMenu.ClickOpensInstantly(sender, item);
         }
 
         private void Dgv_SelectionChanged(object sender, EventArgs e)

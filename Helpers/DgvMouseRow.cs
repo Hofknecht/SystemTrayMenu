@@ -56,7 +56,7 @@ namespace SystemTrayMenu.Helpers
             senderIndex = index;
         }
 
-        internal void CellMouseLeave(T sender, int index)
+        internal void CellMouseLeave()
         {
             timerRaiseRowMouseLeave.Start();
         }

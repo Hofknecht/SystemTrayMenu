@@ -319,15 +319,8 @@ namespace SystemTrayMenu.Handler
                         RowData trigger = ((Menu.ListViewItemData)dgv.Items[iRowKey]).data;
                         if (trigger.IsMenuOpen || !trigger.ContainsMenu)
                         {
-                            trigger.MouseClick(null, out bool toCloseByMouseClick);
-#if TODO // Misc MouseEvents
-                            trigger.DoubleClick(
-                                new MouseButtonEventArgs(MouseButtons.Left, 0, 0, 0, 0),
-                                out bool toCloseByDoubleClick);
-#else
-                            bool toCloseByDoubleClick = false;
-#endif
-                            if (toCloseByMouseClick || toCloseByDoubleClick)
+                            trigger.OpenItem(out bool doCloseAfterOpen);
+                            if (doCloseAfterOpen)
                             {
                                 ClosePressed?.Invoke();
                             }

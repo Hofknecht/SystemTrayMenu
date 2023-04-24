@@ -300,13 +300,15 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<ListView, int>? CellMouseEnter;
 
-        internal event Action<ListView, int>? CellMouseLeave;
+        internal event Action? CellMouseLeave;
 
         internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseDown;
 
         internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseUp;
 
-        internal event Action<ListView, int, MouseButtonEventArgs>? CellMouseClick;
+        internal event Action<ListView, ListViewItem>? CellOpenOnClick;
+
+        internal event Action? ClosePressed;
 
         internal event RoutedEventHandler FadeToTransparent
         {
@@ -1242,12 +1244,16 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
         {
-            CellMouseLeave?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender));
+            CellMouseLeave?.Invoke();
         }
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            CellMouseDown?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender), e);
+            int index = dgv.IndexOfSenderItem((ListViewItem)sender);
+
+            CellMouseDown?.Invoke(dgv, index, e);
+
+            ((ListViewItemData)dgv.Items[index]).data.MouseDown(dgv, e);
         }
 
         private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)
@@ -1257,7 +1263,19 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            CellMouseClick?.Invoke(dgv, dgv.IndexOfSenderItem((ListViewItem)sender), e);
+            ListViewItemData row = (ListViewItemData)((ListViewItem)sender).Content;
+
+            row.data.OpenItem(out bool doClose, e.ClickCount);
+
+            if (e.ClickCount == 1)
+            {
+                CellOpenOnClick?.Invoke(dgv, (ListViewItem)sender);
+            }
+
+            if (doClose)
+            {
+                ClosePressed?.Invoke();
+            }
         }
 
         /// <summary>

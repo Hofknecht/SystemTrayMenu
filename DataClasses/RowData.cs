@@ -144,8 +144,6 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IconLoading { get; set; }
 
-        internal bool ProcessStarted { get; set; }
-
         internal void ReadIcon(bool updateIconInBackground)
         {
             if (IsFolder || IsLinkToFolder)
@@ -227,57 +225,37 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal void MouseClick(MouseEventArgs? e, out bool toCloseByDoubleClick)
+        internal void OpenItem(out bool doCloseAfterOpen, int clickCount = -1)
         {
             IsClicking = false;
-            toCloseByDoubleClick = false;
-            if (Properties.Settings.Default.OpenItemWithOneClick)
-            {
-                OpenItem(e, ref toCloseByDoubleClick);
-            }
+            doCloseAfterOpen = false;
 
-            if (Properties.Settings.Default.OpenDirectoryWithOneClick && Path != null &&
-                ContainsMenu && (e == null || e.LeftButton == MouseButtonState.Pressed))
+            if (clickCount == -1 ||
+                (clickCount == 1 && Properties.Settings.Default.OpenItemWithOneClick) ||
+                (clickCount == 2 && !Properties.Settings.Default.OpenItemWithOneClick))
             {
-                Log.ProcessStart(Path);
-                if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
+                if (!ContainsMenu && Path != null && ResolvedPath != null)
                 {
-                    toCloseByDoubleClick = true;
+                    string? workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);
+                    Log.ProcessStart(Path, string.Empty, false, workingDirectory, true, ResolvedPath);
+                    if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
+                    {
+                        doCloseAfterOpen = true;
+                    }
                 }
             }
-        }
 
-        internal void DoubleClick(MouseButtonEventArgs e, out bool toCloseByDoubleClick)
-        {
-            IsClicking = false;
-            toCloseByDoubleClick = false;
-            if (!Properties.Settings.Default.OpenItemWithOneClick)
+            if (clickCount == -1 ||
+                (clickCount == 1 && Properties.Settings.Default.OpenDirectoryWithOneClick) ||
+                (clickCount == 2 && !Properties.Settings.Default.OpenDirectoryWithOneClick))
             {
-                OpenItem(e, ref toCloseByDoubleClick);
-            }
-
-            if (!Properties.Settings.Default.OpenDirectoryWithOneClick && Path != null &&
-                ContainsMenu && (e == null || e.LeftButton == MouseButtonState.Pressed))
-            {
-                Log.ProcessStart(Path);
-                if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
+                if (Path != null && ContainsMenu)
                 {
-                    toCloseByDoubleClick = true;
-                }
-            }
-        }
-
-        private void OpenItem(MouseEventArgs? e, ref bool toCloseByOpenItem)
-        {
-            if (!ContainsMenu && Path != null && ResolvedPath != null &&
-                (e == null || e.LeftButton == MouseButtonState.Pressed))
-            {
-                ProcessStarted = true;
-                string? workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);
-                Log.ProcessStart(Path, string.Empty, false, workingDirectory, true, ResolvedPath);
-                if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
-                {
-                    toCloseByOpenItem = true;
+                    Log.ProcessStart(Path);
+                    if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
+                    {
+                        doCloseAfterOpen = true;
+                    }
                 }
             }
         }

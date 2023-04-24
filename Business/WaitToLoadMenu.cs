@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
+    using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
@@ -100,16 +101,13 @@ namespace SystemTrayMenu.Handler
             MouseActive = false;
         }
 
-        internal void ClickOpensInstantly(ListView dgv, int rowIndex)
+        internal void ClickOpensInstantly(ListView dgv, ListViewItem item)
         {
-            if (dgv.Items.Count > rowIndex)
-            {
-                timerStartLoad.Stop();
-                SetData(dgv, rowIndex);
-                MouseActive = true;
-                checkForMouseActive = false;
-                CallOpenMenuNow();
-            }
+            timerStartLoad.Stop();
+            SetData(dgv, dgv.IndexOfSenderItem(item));
+            MouseActive = true;
+            checkForMouseActive = false;
+            CallOpenMenuNow();
         }
 
         internal void EnterOpensInstantly(ListView dgv, int rowIndex)
