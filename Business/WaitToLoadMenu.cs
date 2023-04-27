@@ -171,12 +171,10 @@ namespace SystemTrayMenu.Handler
                 RowData rowData = dgvItemData.data;
                 Menu menu = (Menu)dgv.GetParentWindow();
                 rowData.Level = menu.Level;
-                if (rowData.ContainsMenu)
-                {
-                    CloseMenu?.Invoke(rowData.Level + 2);
-                }
 
                 CloseMenu?.Invoke(rowData.Level + 1);
+
+                menu?.FocusTextBox();
 
                 if (!rowData.IsContextMenuOpen &&
                     rowData.ContainsMenu &&

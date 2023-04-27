@@ -37,14 +37,12 @@ namespace SystemTrayMenu.DataClasses
             RowDataParent = rowDataParent;
         }
 
-        internal List<RowData> RowDatas { get; set; } = new ();
-
-        internal MenuDataDirectoryState DirectoryState { get; set; } = MenuDataDirectoryState.Undefined;
-
         internal int Level { get; }
 
         internal RowData? RowDataParent { get; set; }
 
-        internal bool IsNetworkRoot { get; set; } = false;
+        internal List<RowData> RowDatas { get; set; } = new ();
+
+        internal MenuDataDirectoryState DirectoryState { get; set; } = MenuDataDirectoryState.Undefined;
     }
 }

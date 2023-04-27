@@ -98,51 +98,6 @@ namespace SystemTrayMenu.Business
 
                     workerSubMenu.RunWorkerAsync(rowData);
                 }
-
-                void LoadSubMenuCompleted(object? senderCompleted, RunWorkerCompletedEventArgs e)
-                {
-                    if (e.Result == null)
-                    {
-                        return;
-                    }
-
-                    MenuData menuData = (MenuData)e.Result;
-                    Menu? menu = menus[menuData.Level];
-                    if (menu == null)
-                    {
-                        return;
-                    }
-
-                    if (IsMainUsable)
-                    {
-                        if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
-                        {
-                            // Sub Menu (completed)
-                            menu.AddItemsToMenu(menuData.RowDatas);
-                            menu.SetSubMenuState(menuData.DirectoryState);
-                            AdjustMenusSizeAndLocation(menu.Level);
-                            menu.TimerUpdateIconsStart();
-                        }
-                        else
-                        {
-                            menu.HideWithFade();
-                            menus[menu.Level] = null;
-
-                            if (menuData.RowDataParent != null)
-                            {
-                                menuData.RowDataParent.IsMenuOpen = false;
-                                menuData.RowDataParent.IsClicking = false;
-                                menuData.RowDataParent.IsSelected = false;
-                            }
-
-                            ListView? lv = menus[menuData.Level - 1]?.GetDataGridView();
-                            if (lv != null)
-                            {
-                                RefreshSelection(lv);
-                            }
-                        }
-                    }
-                }
             }
 
             waitToOpenMenu.CloseMenu += CloseMenu;
@@ -155,11 +110,6 @@ namespace SystemTrayMenu.Business
                     {
                         HideOldMenu(menu);
                     }
-                }
-
-                if (level - 1 < menus.Length && menus[level - 1] != null)
-                {
-                    menus[level - 1]?.FocusTextBox();
                 }
             }
 
@@ -442,11 +392,7 @@ namespace SystemTrayMenu.Business
                             IconReader.IsPreloading = false;
                             if (showMenuAfterMainPreload)
                             {
-                                Menu? menu = menus[0];
-                                if (menu != null)
-                                {
-                                    menu.ShowWithFade();
-                                }
+                                menus[0]?.ShowWithFade();
                             }
                         }
                         else
@@ -476,6 +422,44 @@ namespace SystemTrayMenu.Business
             }
 
             openCloseState = OpenCloseState.Default;
+        }
+
+        private void LoadSubMenuCompleted(object? senderCompleted, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Result == null)
+            {
+                return;
+            }
+
+            MenuData menuData = (MenuData)e.Result;
+            Menu? menu = menus[menuData.Level];
+            if (menu == null)
+            {
+                return;
+            }
+
+            if (IsMainUsable)
+            {
+                if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
+                {
+                    // Sub Menu (completed)
+                    menu.AddItemsToMenu(menuData.RowDatas);
+                    menu.SetSubMenuState(menuData.DirectoryState);
+                    AdjustMenusSizeAndLocation(menu.Level);
+                    menu.TimerUpdateIconsStart();
+                }
+                else
+                {
+                    menu.HideWithFade();
+                    menus[menu.Level] = null;
+
+                    ListView? lv = menus[menuData.Level - 1]?.GetDataGridView();
+                    if (lv != null)
+                    {
+                        RefreshSelection(lv);
+                    }
+                }
+            }
         }
 
         private bool IsActive()
@@ -594,9 +578,6 @@ namespace SystemTrayMenu.Business
             }
 
             menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged((Menu)sender);
-
-            menu.AddItemsToMenu(menuData.RowDatas);
-
             menu.CellMouseEnter += waitToOpenMenu.MouseEnter;
             menu.CellMouseLeave += waitToOpenMenu.MouseLeave;
             menu.CellMouseDown += Dgv_MouseDown;
@@ -616,10 +597,10 @@ namespace SystemTrayMenu.Business
 #endif
             }
 
-            if (menuData.Level == 0)
+            if (menu.Level == 0)
             {
                 // Main Menu
-                menus[menuData.Level] = menu;
+                menus[menu.Level] = menu;
                 menu.Loaded += (s, e) => ExecuteWatcherHistory();
             }
             else

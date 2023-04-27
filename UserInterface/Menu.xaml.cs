@@ -280,6 +280,8 @@ namespace SystemTrayMenu.UserInterface
                         item.data.SubMenu?.Close();
                     }
                 };
+
+            AddItemsToMenu(menuData.RowDatas);
         }
 
         internal event Action? MenuScrolled;

@@ -18,10 +18,11 @@ namespace SystemTrayMenu.Helpers
     {
         internal static void DiscoverItems(BackgroundWorker? worker, string path, ref MenuData menuData)
         {
+            bool isNetworkRoot = false;
             try
             {
-                menuData.IsNetworkRoot = FileLnk.IsNetworkRoot(path);
-                if (menuData.IsNetworkRoot)
+                isNetworkRoot = FileLnk.IsNetworkRoot(path);
+                if (isNetworkRoot)
                 {
                     DiscoverNetworkRootDirectories(path, ref menuData);
                 }
@@ -53,7 +54,7 @@ namespace SystemTrayMenu.Helpers
                 }
             }
 
-            RemoveHiddenOrReadIcons(worker, ref menuData);
+            RemoveHiddenOrReadIcons(worker, isNetworkRoot, ref menuData);
 
             if (menuData.RowDatas.Count == 0)
             {
@@ -115,7 +116,7 @@ namespace SystemTrayMenu.Helpers
             return rowDatas;
         }
 
-        private static void RemoveHiddenOrReadIcons(BackgroundWorker? worker, ref MenuData menuData)
+        private static void RemoveHiddenOrReadIcons(BackgroundWorker? worker, bool isNetworkRoot, ref MenuData menuData)
         {
             List<RowData> rowDatasToRemove = new();
             foreach (RowData rowData in menuData.RowDatas)
@@ -125,7 +126,7 @@ namespace SystemTrayMenu.Helpers
                     return;
                 }
 
-                if (!menuData.IsNetworkRoot)
+                if (!isNetworkRoot)
                 {
                     FolderOptions.ReadHiddenAttributes(rowData.Path, out bool hasHiddenFlag, out bool isDirectoryToHide);
                     if (isDirectoryToHide)
