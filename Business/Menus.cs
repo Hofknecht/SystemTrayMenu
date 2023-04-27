@@ -46,7 +46,6 @@ namespace SystemTrayMenu.Business
         private int lastMouseDownRowIndex = -1;
 #endif
         private bool showMenuAfterMainPreload;
-        private bool hideSubmenuDuringRefreshSearch;
 
         public Menus()
         {
@@ -119,7 +118,7 @@ namespace SystemTrayMenu.Business
 #endif
 
             joystickHelper = new();
-            joystickHelper.KeyPressed += (key, modifiers) => menus[0]?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null!, key, modifiers });
+            joystickHelper.KeyPressed += (key, modifiers) => MainMenu?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null!, key, modifiers });
 
             timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
             timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
@@ -187,7 +186,9 @@ namespace SystemTrayMenu.Business
             Closing,
         }
 
-        private bool IsMainUsable => menus[0]?.IsUsable ?? false;
+        private Menu? MainMenu => menus[0];
+
+        private bool IsMainUsable => MainMenu?.IsUsable ?? false;
 
         private IEnumerable<Menu> AsEnumerable => menus.Where(m => m != null && !m.IsClosed)!;
 
@@ -209,7 +210,7 @@ namespace SystemTrayMenu.Business
             timerStillActiveCheck.Stop();
             waitLeave.Stop();
             IconReader.Dispose();
-            menus[0]?.Close();
+            MainMenu?.Close();
 
             foreach (FileSystemWatcher watcher in watchers)
             {
@@ -267,9 +268,8 @@ namespace SystemTrayMenu.Business
             }
             else
             {
-                Menu? menu = menus[0];
                 if (openCloseState == OpenCloseState.Opening ||
-                    (menu != null && menu.Visibility == Visibility.Visible && openCloseState == OpenCloseState.Default))
+                    ((MainMenu?.Visibility ?? Visibility.Collapsed) == Visibility.Visible && openCloseState == OpenCloseState.Default))
                 {
                     openCloseState = OpenCloseState.Closing;
                     MenusFadeOut();
@@ -353,7 +353,7 @@ namespace SystemTrayMenu.Business
 
             if (e.Result == null)
             {
-                Menu? menu = menus[0];
+                Menu? menu = MainMenu;
                 if (menu != null)
                 {
                     // The main menu gets loaded again
@@ -392,7 +392,7 @@ namespace SystemTrayMenu.Business
                             IconReader.IsPreloading = false;
                             if (showMenuAfterMainPreload)
                             {
-                                menus[0]?.ShowWithFade();
+                                MainMenu?.ShowWithFade();
                             }
                         }
                         else
@@ -443,10 +443,8 @@ namespace SystemTrayMenu.Business
                 if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
                 {
                     // Sub Menu (completed)
-                    menu.AddItemsToMenu(menuData.RowDatas);
-                    menu.SetSubMenuState(menuData.DirectoryState);
+                    menu.AddItemsToMenu(menuData.RowDatas, menuData.DirectoryState, true);
                     AdjustMenusSizeAndLocation(menu.Level);
-                    menu.TimerUpdateIconsStart();
                 }
                 else
                 {
@@ -516,17 +514,17 @@ namespace SystemTrayMenu.Business
             }
 
             menu.SearchTextChanged += Menu_SearchTextChanged;
-            void Menu_SearchTextChanged(Menu menu, bool isSearchStringEmpty)
+            void Menu_SearchTextChanged(Menu menu, bool isSearchStringEmpty, bool causedByWatcherUpdate)
             {
                 keyboardInput.SearchTextChanged(menu, isSearchStringEmpty);
                 AdjustMenusSizeAndLocation(menu.Level + 1);
                 searchTextChanging = false;
 
                 // if any open menu close
-                if (menu.Level + 1 < menus.Length)
+                if (!causedByWatcherUpdate && menu.Level + 1 < menus.Length)
                 {
                     Menu? menuToClose = menus[menu.Level + 1];
-                    if (menuToClose != null && hideSubmenuDuringRefreshSearch)
+                    if (menuToClose != null)
                     {
                         HideOldMenu(menuToClose);
                     }
@@ -831,7 +829,7 @@ namespace SystemTrayMenu.Business
             {
                 if (IsMainUsable)
                 {
-                    Menu? menu = menus[0];
+                    Menu? menu = MainMenu;
                     if (menu != null)
                     {
                         menu.RelocateOnNextShow = true;
@@ -1031,7 +1029,7 @@ namespace SystemTrayMenu.Business
 
         private void WatcherProcessItem(object sender, EventArgs e)
         {
-            Menu? menu = menus[0];
+            Menu? menu = MainMenu;
             bool useHistory = false;
             if (menu == null)
             {
@@ -1050,17 +1048,17 @@ namespace SystemTrayMenu.Business
 
             if (e is RenamedEventArgs renamedEventArgs)
             {
-                menus[0]?.Dispatcher.Invoke(() => RenameItem(renamedEventArgs));
+                MainMenu?.Dispatcher.Invoke(() => RenameItem(renamedEventArgs));
             }
             else if (e is FileSystemEventArgs fileSystemEventArgs)
             {
                 if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Deleted)
                 {
-                    menus[0]?.Dispatcher.Invoke(() => DeleteItem(fileSystemEventArgs));
+                    MainMenu?.Dispatcher.Invoke(() => DeleteItem(fileSystemEventArgs));
                 }
                 else if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Created)
                 {
-                    menus[0]?.Dispatcher.Invoke(() => CreateItem(fileSystemEventArgs));
+                    MainMenu?.Dispatcher.Invoke(() => CreateItem(fileSystemEventArgs));
                 }
             }
         }
@@ -1070,7 +1068,7 @@ namespace SystemTrayMenu.Business
             try
             {
                 List<RowData> rowDatas = new();
-                ListView? dgv = menus[0]?.GetDataGridView();
+                ListView? dgv = MainMenu?.GetDataGridView();
                 if (dgv != null)
                 {
                     foreach (ListViewItemData item in dgv.Items)
@@ -1111,13 +1109,8 @@ namespace SystemTrayMenu.Business
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();
-                menus[0]?.AddItemsToMenu(rowDatas);
-
-                hideSubmenuDuringRefreshSearch = false;
-                menus[0]?.RefreshSearchText();
-                hideSubmenuDuringRefreshSearch = true;
-
-                menus[0]?.TimerUpdateIconsStart();
+                MainMenu?.AddItemsToMenu(rowDatas, null, true);
+                MainMenu?.OnWatcherUpdate();
             }
             catch (Exception ex)
             {
@@ -1129,7 +1122,7 @@ namespace SystemTrayMenu.Business
         {
             try
             {
-                ListView? dgv = menus[0]?.GetDataGridView();
+                ListView? dgv = MainMenu?.GetDataGridView();
                 if (dgv != null)
                 {
                     List<ListViewItemData> rowsToRemove = new();
@@ -1152,10 +1145,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 keyboardInput.ClearIsSelectedByKey();
-
-                hideSubmenuDuringRefreshSearch = false;
-                menus[0]?.RefreshSearchText();
-                hideSubmenuDuringRefreshSearch = true;
+                MainMenu?.OnWatcherUpdate();
             }
             catch (Exception ex)
             {
@@ -1185,7 +1175,7 @@ namespace SystemTrayMenu.Business
                     rowData,
                 };
 
-                ListView? dgv = menus[0]?.GetDataGridView();
+                ListView? dgv = MainMenu?.GetDataGridView();
                 if (dgv != null)
                 {
                     foreach (ListViewItemData item in dgv.Items)
@@ -1196,13 +1186,8 @@ namespace SystemTrayMenu.Business
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 keyboardInput.ClearIsSelectedByKey();
-                menus[0]?.AddItemsToMenu(rowDatas);
-
-                hideSubmenuDuringRefreshSearch = false;
-                menus[0]?.RefreshSearchText();
-                hideSubmenuDuringRefreshSearch = true;
-
-                menus[0]?.TimerUpdateIconsStart();
+                MainMenu?.AddItemsToMenu(rowDatas, null, true);
+                MainMenu?.OnWatcherUpdate();
             }
             catch (Exception ex)
             {

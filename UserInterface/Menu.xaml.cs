@@ -154,7 +154,7 @@ namespace SystemTrayMenu.UserInterface
             MouseUp += Menu_MouseUp;
             MouseMove += Menu_MouseMove;
 
-            textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged();
+            textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged(false);
             textBoxSearch.ContextMenu = new()
             {
                 Background = SystemColors.ControlBrush,
@@ -266,14 +266,14 @@ namespace SystemTrayMenu.UserInterface
             }
 #endif
 
-            Loaded += (sender, e) =>
+            Loaded += (_, _) =>
                 {
                     NativeMethods.HideFromAltTab(this);
 
                     RaiseEvent(new(routedEvent: FadeInEvent));
                 };
 
-            Closed += (sender, e) =>
+            Closed += (_, _) =>
                 {
                     foreach (ListViewItemData item in dgv.Items)
                     {
@@ -281,7 +281,7 @@ namespace SystemTrayMenu.UserInterface
                     }
                 };
 
-            AddItemsToMenu(menuData.RowDatas);
+            AddItemsToMenu(menuData.RowDatas, null, false);
         }
 
         internal event Action? MenuScrolled;
@@ -296,7 +296,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action? SearchTextChanging;
 
-        internal event Action<Menu, bool>? SearchTextChanged;
+        internal event Action<Menu, bool, bool>? SearchTextChanged;
 
         internal event Action? UserDragsMenu;
 
@@ -360,9 +360,9 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void RefreshSearchText()
+        internal void OnWatcherUpdate()
         {
-            TextBoxSearch_TextChanged();
+            TextBoxSearch_TextChanged(true);
             if (dgv.Items.Count > 0)
             {
                 dgv.ScrollIntoView(dgv.Items[0]);
@@ -439,7 +439,7 @@ namespace SystemTrayMenu.UserInterface
             ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Refresh();
         }
 
-        internal void AddItemsToMenu(List<RowData> data)
+        internal void AddItemsToMenu(List<RowData> data, MenuDataDirectoryState? state, bool startIconLoading)
         {
             int foldersCount = 0;
             int filesCount = 0;
@@ -471,6 +471,16 @@ namespace SystemTrayMenu.UserInterface
             dgv.ItemsSource = items;
 
             SetCounts(foldersCount, filesCount);
+
+            if (state != null)
+            {
+                SetSubMenuState(state.Value);
+            }
+
+            if (startIconLoading)
+            {
+                timerUpdateIcons.Start();
+            }
         }
 
         internal void ActivateWithFade()
@@ -529,11 +539,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 FadeOut_Completed(this, new());
             }
-        }
-
-        internal void TimerUpdateIconsStart()
-        {
-            timerUpdateIcons.Start();
         }
 
         /// <summary>
@@ -987,7 +992,7 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void TextBoxSearch_TextChanged()
+        private void TextBoxSearch_TextChanged(bool causedByWatcherUpdate)
         {
             SearchTextChanging?.Invoke();
 
@@ -1088,7 +1093,7 @@ namespace SystemTrayMenu.UserInterface
 
             SetCounts(foldersCount, filesCount);
 #endif
-            SearchTextChanged?.Invoke(this, string.IsNullOrEmpty(userPattern));
+            SearchTextChanged?.Invoke(this, string.IsNullOrEmpty(userPattern), causedByWatcherUpdate);
 #if TODO // SEARCH
             if (anyIconNotUpdated)
             {
