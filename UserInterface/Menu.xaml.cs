@@ -1208,6 +1208,7 @@ namespace SystemTrayMenu.UserInterface
                 mouseDown = true;
                 lastLocation = NativeMethods.Screen.CursorPosition;
                 UserDragsMenu?.Invoke();
+                Mouse.Capture(this);
             }
         }
 
@@ -1228,6 +1229,7 @@ namespace SystemTrayMenu.UserInterface
         private void Menu_MouseUp(object sender, MouseButtonEventArgs e)
         {
             mouseDown = false;
+            Mouse.Capture(null);
             if (Settings.Default.UseCustomLocation)
             {
                 if (!SettingsWindow.IsOpen())
