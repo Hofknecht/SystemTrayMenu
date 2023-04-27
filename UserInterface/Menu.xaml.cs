@@ -300,7 +300,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<ListView, ListViewItemData>? CellMouseEnter;
 
-        internal event Action? CellMouseLeave;
+        internal event Action<ListView, ListViewItemData>? CellMouseLeave;
 
         internal event Action<ListView, ListViewItemData, MouseButtonEventArgs>? CellMouseDown;
 
@@ -1246,7 +1246,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
         {
-            CellMouseLeave?.Invoke();
+            CellMouseLeave?.Invoke(dgv, (ListViewItemData)((ListViewItem)sender).Content);
         }
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)

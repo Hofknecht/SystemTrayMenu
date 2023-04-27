@@ -30,7 +30,6 @@ namespace SystemTrayMenu.Business
         private readonly Menu?[] menus = new Menu?[MenuDefines.MenusMax];
         private readonly BackgroundWorker workerMainMenu = new();
         private readonly List<BackgroundWorker> workersSubMenu = new();
-        private readonly DgvMouseRow<ListView, ListViewItemData> dgvMouseRow = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
         private readonly JoystickHelper joystickHelper;
@@ -165,10 +164,8 @@ namespace SystemTrayMenu.Business
             }
 
             waitToOpenMenu.MouseEnterOk += MouseEnterOk;
-            dgvMouseRow.RowMouseEnter += waitToOpenMenu.MouseEnter;
-            dgvMouseRow.RowMouseLeave += waitToOpenMenu.MouseLeave;
 #if TODO // Misc MouseEvents
-            dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave;
+            dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave; // event moved to Menu.CellMouseLeave()
 #endif
 
             joystickHelper = new();
@@ -263,7 +260,6 @@ namespace SystemTrayMenu.Business
             waitLeave.Stop();
             IconReader.Dispose();
             menus[0]?.Close();
-            dgvMouseRow.Dispose();
 
             foreach (FileSystemWatcher watcher in watchers)
             {
@@ -601,8 +597,8 @@ namespace SystemTrayMenu.Business
 
             menu.AddItemsToMenu(menuData.RowDatas);
 
-            menu.CellMouseEnter += dgvMouseRow.CellMouseEnter;
-            menu.CellMouseLeave += dgvMouseRow.CellMouseLeave;
+            menu.CellMouseEnter += waitToOpenMenu.MouseEnter;
+            menu.CellMouseLeave += waitToOpenMenu.MouseLeave;
             menu.CellMouseDown += Dgv_MouseDown;
             menu.CellMouseUp += Dgv_MouseUp;
             menu.CellOpenOnClick += Dgv_OpenItemOnClick;
@@ -612,7 +608,6 @@ namespace SystemTrayMenu.Business
             if (dgv != null)
             {
 #if TODO // Misc MouseEvents
-                dgv.MouseLeave += dgvMouseRow.MouseLeave;
                 dgv.MouseMove += waitToOpenMenu.MouseMove;
 #endif
                 dgv.SelectionChanged += Dgv_SelectionChanged;
