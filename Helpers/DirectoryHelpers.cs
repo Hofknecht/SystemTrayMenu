@@ -125,10 +125,16 @@ namespace SystemTrayMenu.Helpers
                     return;
                 }
 
-                if (!menuData.IsNetworkRoot && FolderOptions.IsHidden(rowData))
+                if (!menuData.IsNetworkRoot)
                 {
-                    rowDatasToRemove.Add(rowData);
-                    continue;
+                    FolderOptions.ReadHiddenAttributes(rowData.Path, out bool hasHiddenFlag, out bool isDirectoryToHide);
+                    if (isDirectoryToHide)
+                    {
+                        rowDatasToRemove.Add(rowData);
+                        continue;
+                    }
+
+                    rowData.HiddenEntry = hasHiddenFlag;
                 }
 
                 rowData.ReadIcon(true);

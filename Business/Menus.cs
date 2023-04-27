@@ -1110,12 +1110,14 @@ namespace SystemTrayMenu.Business
                             }
 
                             RowData rowDataRenamed = new(isFolder, rowData.IsAdditionalItem, false, 0, path);
-                            if (FolderOptions.IsHidden(rowDataRenamed))
+                            FolderOptions.ReadHiddenAttributes(rowDataRenamed.Path, out bool hasHiddenFlag, out bool isDirectoryToHide);
+                            if (isDirectoryToHide)
                             {
                                 continue;
                             }
 
                             IconReader.RemoveIconFromCache(rowData.Path);
+                            rowDataRenamed.HiddenEntry = hasHiddenFlag;
                             rowDataRenamed.ReadIcon(true);
                             rowDatas.Add(rowDataRenamed);
                         }
@@ -1188,11 +1190,13 @@ namespace SystemTrayMenu.Business
                 bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
                 bool isAddionalItem = Path.GetDirectoryName(e.FullPath) != Config.Path;
                 RowData rowData = new(isFolder, isAddionalItem, false, 0, e.FullPath);
-                if (FolderOptions.IsHidden(rowData))
+                FolderOptions.ReadHiddenAttributes(rowData.Path, out bool hasHiddenFlag, out bool isDirectoryToHide);
+                if (isDirectoryToHide)
                 {
                     return;
                 }
 
+                rowData.HiddenEntry = hasHiddenFlag;
                 rowData.ReadIcon(true);
 
                 List<RowData> rowDatas = new()

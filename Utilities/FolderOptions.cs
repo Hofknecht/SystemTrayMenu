@@ -9,7 +9,6 @@ namespace SystemTrayMenu.Utilities
     using System.Reflection;
     using System.Runtime.InteropServices;
     using Shell32;
-    using SystemTrayMenu.DataClasses;
 
     internal static class FolderOptions
     {
@@ -54,40 +53,39 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        internal static bool IsHidden(RowData rowData)
+        internal static void ReadHiddenAttributes(string? path, out bool hasHiddenFlag, out bool isDirectoryToHide)
         {
-            bool isDirectoryToHide = false;
-            if (rowData.Path == null || rowData.Path.Length >= 260)
+            isDirectoryToHide = false;
+            hasHiddenFlag = false;
+            if (path == null || path.Length >= 260)
             {
-                Log.Info($"path too long (>=260):'{rowData.Path}'");
-                return isDirectoryToHide;
+                Log.Info($"path too long (>=260):'{path}'");
+                return;
             }
 
             try
             {
-                FileAttributes attributes = File.GetAttributes(rowData.Path);
-                rowData.HiddenEntry = attributes.HasFlag(FileAttributes.Hidden);
-                bool systemEntry = attributes.HasFlag(
+                FileAttributes attributes = File.GetAttributes(path);
+                hasHiddenFlag = attributes.HasFlag(FileAttributes.Hidden);
+                bool hasSystemFlag = attributes.HasFlag(
                     FileAttributes.Hidden | FileAttributes.System);
                 if (Properties.Settings.Default.SystemSettingsShowHiddenFiles)
                 {
-                    if ((hideHiddenEntries && rowData.HiddenEntry) ||
-                        (hideSystemEntries && systemEntry))
+                    if ((hideHiddenEntries && hasHiddenFlag) ||
+                        (hideSystemEntries && hasSystemFlag))
                     {
                         isDirectoryToHide = true;
                     }
                 }
-                else if (rowData.HiddenEntry && Properties.Settings.Default.NeverShowHiddenFiles)
+                else if (hasHiddenFlag && Properties.Settings.Default.NeverShowHiddenFiles)
                 {
                     isDirectoryToHide = true;
                 }
             }
             catch (Exception ex)
             {
-                Log.Warn($"path:'{rowData.Path}'", ex);
+                Log.Warn($"path:'{path}'", ex);
             }
-
-            return isDirectoryToHide;
         }
     }
 }

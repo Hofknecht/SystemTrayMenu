@@ -20,14 +20,6 @@ namespace SystemTrayMenu.DataClasses
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RowData"/> class.
-        /// empty dummy.
-        /// </summary>
-        internal RowData()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RowData"/> class.
         /// (Related replace "\x00" see #171.)
         /// </summary>
         /// <param name="isFolder">Flag if file or folder.</param>
