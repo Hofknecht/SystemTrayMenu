@@ -209,7 +209,6 @@ namespace SystemTrayMenu.Business
             timerShowProcessStartedAsLoadingIcon.Stop();
             timerStillActiveCheck.Stop();
             waitLeave.Stop();
-            IconReader.Dispose();
             MainMenu?.Close();
 
             foreach (FileSystemWatcher watcher in watchers)
@@ -634,10 +633,7 @@ namespace SystemTrayMenu.Business
 
             if (!AsEnumerable.Any(m => m.Visibility == Visibility.Visible))
             {
-                if (IconReader.ClearIfCacheTooBig())
-                {
-                    GC.Collect();
-                }
+                IconReader.ClearCacheWhenLimitReached();
 
                 openCloseState = OpenCloseState.Default;
             }
@@ -1088,7 +1084,7 @@ namespace SystemTrayMenu.Business
                                 }
                             }
 
-                            RowData rowDataRenamed = new(isFolder, rowData.IsAdditionalItem, false, 0, path);
+                            RowData rowDataRenamed = new(isFolder, rowData.IsAdditionalItem, 0, path);
                             FolderOptions.ReadHiddenAttributes(rowDataRenamed.Path, out bool hasHiddenFlag, out bool isDirectoryToHide);
                             if (isDirectoryToHide)
                             {
@@ -1160,7 +1156,7 @@ namespace SystemTrayMenu.Business
                 FileAttributes attr = File.GetAttributes(e.FullPath);
                 bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
                 bool isAddionalItem = Path.GetDirectoryName(e.FullPath) != Config.Path;
-                RowData rowData = new(isFolder, isAddionalItem, false, 0, e.FullPath);
+                RowData rowData = new(isFolder, isAddionalItem, 0, e.FullPath);
                 FolderOptions.ReadHiddenAttributes(rowData.Path, out bool hasHiddenFlag, out bool isDirectoryToHide);
                 if (isDirectoryToHide)
                 {

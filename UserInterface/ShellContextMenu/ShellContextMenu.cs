@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Runtime.InteropServices;
     using System.Text;
@@ -735,7 +736,7 @@ namespace SystemTrayMenu.Utilities
 
             try
             {
-                if (arrPIDLs == null || oParentFolder == null || oContextMenu == null)
+                if (arrPIDLs == null || oParentFolder == null)
                 {
                     ReleaseAll();
                     return;
@@ -972,6 +973,7 @@ namespace SystemTrayMenu.Utilities
         /// <param name="oParentFolder">Parent folder.</param>
         /// <param name="arrPIDLs">PIDLs.</param>
         /// <returns>true if it got the interfaces, otherwise false.</returns>
+        [MemberNotNullWhen(true, nameof(oContextMenu))]
         private bool GetContextMenuInterfaces(IShellFolder oParentFolder, IntPtr[] arrPIDLs, out IntPtr ctxMenuPtr)
         {
             int nResult = oParentFolder.GetUIObjectOf(

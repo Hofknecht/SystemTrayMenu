@@ -24,14 +24,12 @@ namespace SystemTrayMenu.DataClasses
         /// </summary>
         /// <param name="isFolder">Flag if file or folder.</param>
         /// <param name="isAdditionalItem">Flag if additional item, from other folder than root folder.</param>
-        /// <param name="isNetworkRoot">Flag if resolved from network root folder.</param>
         /// <param name="level">The number of the menu level.</param>
         /// <param name="path">Path to item.</param>
-        internal RowData(bool isFolder, bool isAdditionalItem, bool isNetworkRoot, int level, string path)
+        internal RowData(bool isFolder, bool isAdditionalItem, int level, string path)
         {
             IsFolder = isFolder;
             IsAdditionalItem = isAdditionalItem;
-            IsNetworkRoot = isNetworkRoot;
             Level = level;
 
             try
@@ -81,8 +79,6 @@ namespace SystemTrayMenu.DataClasses
                 {
                     ContainsMenu |= IsLinkToFolder;
                 }
-
-                IsMainMenu = Level == 0;
             }
             catch (Exception ex)
             {
@@ -100,8 +96,6 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IsAdditionalItem { get; }
 
-        internal bool IsNetworkRoot { get; }
-
         internal int Level { get; set; }
 
         internal string? FileExtension { get; }
@@ -117,8 +111,6 @@ namespace SystemTrayMenu.DataClasses
         internal string? Text { get; }
 
         internal bool ContainsMenu { get; }
-
-        internal bool IsMainMenu { get; }
 
         internal Menu? SubMenu { get; set; }
 
@@ -140,12 +132,12 @@ namespace SystemTrayMenu.DataClasses
         {
             if (IsFolder || IsLinkToFolder)
             {
-                Icon = GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, IsMainMenu, out bool loading);
+                Icon = GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, out bool loading);
                 IconLoading = loading;
             }
             else
             {
-                Icon = GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, IsMainMenu, out bool loading);
+                Icon = GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, out bool loading);
                 IconLoading = loading;
             }
 
@@ -168,52 +160,51 @@ namespace SystemTrayMenu.DataClasses
             {
                 IsClicking = true;
             }
-
-            if (e != null &&
-                e.RightButton == MouseButtonState.Pressed &&
-                FileInfo != null &&
-                Path != null &&
-                dgv != null &&
-                dgv.Items.Count > RowIndex &&
+            else if (e.RightButton == MouseButtonState.Pressed &&
+                FileInfo != null && Path != null &&
+                dgv != null && dgv.Items.Count > RowIndex &&
                 (DateTime.Now - contextMenuClosed).TotalMilliseconds > 200)
             {
                 IsContextMenuOpen = true;
-                ShellContextMenu ctxMnu = new();
-                Window window = dgv.GetParentWindow();
-                var position = Mouse.GetPosition(window);
-                position.Offset(window.Left, window.Top);
-                if (ContainsMenu)
+                CreateAndShowShellContextMenu();
+                void CreateAndShowShellContextMenu()
                 {
-                    DirectoryInfo[] dir = new DirectoryInfo[1];
-                    dir[0] = new DirectoryInfo(Path);
-                    ctxMnu.ShowContextMenu(dir, position);
-                    TriggerFileWatcherChangeWorkaround();
+                    ShellContextMenu ctxMnu = new();
+                    Window window = dgv.GetParentWindow();
+                    var position = Mouse.GetPosition(window);
+                    position.Offset(window.Left, window.Top);
+                    if (ContainsMenu)
+                    {
+                        DirectoryInfo[] dir = new DirectoryInfo[1];
+                        dir[0] = new DirectoryInfo(Path);
+                        ctxMnu.ShowContextMenu(dir, position);
+                    }
+                    else
+                    {
+                        FileInfo[] arrFI = new FileInfo[1];
+                        arrFI[0] = FileInfo;
+                        ctxMnu.ShowContextMenu(arrFI, position);
+                    }
                 }
-                else
+
+                TriggerFileWatcherChangeWorkaround();
+                void TriggerFileWatcherChangeWorkaround()
                 {
-                    FileInfo[] arrFI = new FileInfo[1];
-                    arrFI[0] = FileInfo;
-                    ctxMnu.ShowContextMenu(arrFI, position);
-                    TriggerFileWatcherChangeWorkaround();
+                    try
+                    {
+                        string? parentFolder = System.IO.Path.GetDirectoryName(Path);
+
+                        // Assume folder is not null as failure will be catched any ways
+                        Directory.GetFiles(parentFolder!);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warn($"{nameof(TriggerFileWatcherChangeWorkaround)} '{Path}'", ex);
+                    }
                 }
 
                 IsContextMenuOpen = false;
                 contextMenuClosed = DateTime.Now;
-            }
-
-            void TriggerFileWatcherChangeWorkaround()
-            {
-                try
-                {
-                    string? parentFolder = System.IO.Path.GetDirectoryName(Path);
-
-                    // Assume folder is not null as failure will be catched any ways
-                    Directory.GetFiles(parentFolder!);
-                }
-                catch (Exception ex)
-                {
-                    Log.Warn($"{nameof(TriggerFileWatcherChangeWorkaround)} '{Path}'", ex);
-                }
             }
         }
 

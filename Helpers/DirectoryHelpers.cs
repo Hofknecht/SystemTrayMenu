@@ -173,7 +173,7 @@ namespace SystemTrayMenu.Helpers
                     if (indexOfFirstSpace > 0)
                     {
                         string directory = Path.Combine(path, line[..indexOfFirstSpace]);
-                        menuData.RowDatas.Add(new RowData(true, false, true, menuData.Level, directory));
+                        menuData.RowDatas.Add(new RowData(true, false, menuData.Level, directory));
                         resolvedSomething = true;
                     }
                 }
@@ -201,7 +201,7 @@ namespace SystemTrayMenu.Helpers
                     return;
                 }
 
-                menuData.RowDatas.Add(new RowData(true, false, false, menuData.Level, directory));
+                menuData.RowDatas.Add(new RowData(true, false, menuData.Level, directory));
             }
 
             foreach (string file in DirectoryBySearchPattern.GetFiles(path, Config.SearchPattern))
@@ -211,7 +211,7 @@ namespace SystemTrayMenu.Helpers
                     return;
                 }
 
-                menuData.RowDatas.Add(new RowData(false, false, false, menuData.Level, file));
+                menuData.RowDatas.Add(new RowData(false, false, menuData.Level, file));
             }
         }
 
@@ -225,14 +225,14 @@ namespace SystemTrayMenu.Helpers
             {
                 foreach (string file in DirectoryBySearchPattern.GetFiles(path, Config.SearchPattern))
                 {
-                    menuData.RowDatas.Add(new RowData(false, true, false, menuData.Level, file));
+                    menuData.RowDatas.Add(new RowData(false, true, menuData.Level, file));
                 }
 
                 foreach (string directory in Directory.GetDirectories(path))
                 {
                     if (!onlyFiles)
                     {
-                        menuData.RowDatas.Add(new RowData(true, true, false, menuData.Level, directory));
+                        menuData.RowDatas.Add(new RowData(true, true, menuData.Level, directory));
                     }
 
                     if (recursiv)

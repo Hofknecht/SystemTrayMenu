@@ -20,8 +20,8 @@ namespace SystemTrayMenu.Utilities
     /// </summary>
     public static class IconReader
     {
-        private static readonly ConcurrentDictionary<string, Icon?> DictIconCacheMainMenu = new();
-        private static readonly ConcurrentDictionary<string, Icon?> DictIconCacheSubMenus = new();
+        private static readonly ConcurrentDictionary<string, Icon?> IconDictPersistent = new();
+        private static readonly ConcurrentDictionary<string, Icon?> IconDictCache = new();
 
         public enum IconSize
         {
@@ -29,47 +29,26 @@ namespace SystemTrayMenu.Utilities
             Small = 1, // 16x16 pixels
         }
 
-        public enum FolderType
-        {
-            Open = 0,
-            Closed = 1,
-        }
-
         // see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
         public static bool IsPreloading { get; set; } = true;
 
-        public static void Dispose(bool includingMainMenu = true)
+        public static void ClearCacheWhenLimitReached()
         {
-            if (includingMainMenu)
+            if (IconDictCache.Count > Properties.Settings.Default.ClearCacheIfMoreThanThisNumberOfItems)
             {
-                foreach (Icon? icon in DictIconCacheMainMenu.Values)
+                foreach (Icon? icon in IconDictCache.Values)
                 {
                     icon?.Dispose();
                 }
-            }
 
-            foreach (Icon? icon in DictIconCacheSubMenus.Values)
-            {
-                icon?.Dispose();
+                IconDictCache.Clear();
+                GC.Collect();
             }
-        }
-
-        public static bool ClearIfCacheTooBig()
-        {
-            bool cleared = false;
-            if (DictIconCacheSubMenus.Count > Properties.Settings.Default.ClearCacheIfMoreThanThisNumberOfItems)
-            {
-                Dispose(false);
-                DictIconCacheSubMenus.Clear();
-                cleared = true;
-            }
-
-            return cleared;
         }
 
         public static void RemoveIconFromCache(string path)
         {
-            if (DictIconCacheMainMenu.Remove(path, out Icon? iconToRemove))
+            if (IconDictPersistent.Remove(path, out Icon? iconToRemove))
             {
                 iconToRemove?.Dispose();
             }
@@ -80,7 +59,7 @@ namespace SystemTrayMenu.Utilities
             string? resolvedPath,
             bool linkOverlay,
             bool updateIconInBackground,
-            bool isMainMenu,
+            bool checkPersistentFirst,
             out bool loading,
             string keyPath = "")
         {
@@ -109,8 +88,8 @@ namespace SystemTrayMenu.Utilities
                     key = extension + linkOverlay;
                 }
 
-                if (!DictIconCache(isMainMenu).TryGetValue(key, out icon) &&
-                    !DictIconCache(!isMainMenu).TryGetValue(key, out icon))
+                if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
+                    !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
                 {
                     icon = Resources.StaticResources.LoadingIcon;
                     loading = true;
@@ -119,7 +98,7 @@ namespace SystemTrayMenu.Utilities
                         new Thread(UpdateIconInBackground).Start();
                         void UpdateIconInBackground()
                         {
-                            DictIconCache(isMainMenu).GetOrAdd(key, GetIconSTA(path, resolvedPath, linkOverlay, size, false));
+                            DictIconCache(checkPersistentFirst).GetOrAdd(key, GetIconSTA(path, resolvedPath, linkOverlay, size, false));
                         }
                     }
                 }
@@ -132,7 +111,7 @@ namespace SystemTrayMenu.Utilities
             string? path,
             bool linkOverlay,
             bool updateIconInBackground,
-            bool isMainMenu,
+            bool checkPersistentFirst,
             out bool loading)
         {
             loading = false;
@@ -150,8 +129,8 @@ namespace SystemTrayMenu.Utilities
                 }
 
                 string key = path;
-                if (!DictIconCache(isMainMenu).TryGetValue(key, out icon) &&
-                    !DictIconCache(!isMainMenu).TryGetValue(key, out icon))
+                if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
+                    !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
                 {
                     icon = Resources.StaticResources.LoadingIcon;
                     loading = true;
@@ -160,14 +139,14 @@ namespace SystemTrayMenu.Utilities
                     {
                         if (IsPreloading)
                         {
-                            DictIconCache(isMainMenu).GetOrAdd(key, GetFolder);
+                            DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
                         }
                         else
                         {
                             new Thread(UpdateIconInBackground).Start();
                             void UpdateIconInBackground()
                             {
-                                DictIconCache(isMainMenu).GetOrAdd(key, GetFolder);
+                                DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
                             }
                         }
 
@@ -223,17 +202,8 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        private static ConcurrentDictionary<string, Icon?> DictIconCache(bool isMainMenu)
-        {
-            if (isMainMenu)
-            {
-                return DictIconCacheMainMenu;
-            }
-            else
-            {
-                return DictIconCacheSubMenus;
-            }
-        }
+        private static ConcurrentDictionary<string, Icon?> DictIconCache(bool checkPersistentFirst)
+            => checkPersistentFirst ? IconDictPersistent : IconDictCache;
 
         private static bool IsExtensionWithSameIcon(string fileExtension)
         {
