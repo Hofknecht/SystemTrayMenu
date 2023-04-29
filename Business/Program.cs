@@ -56,11 +56,16 @@ namespace SystemTrayMenu
                 Log.Error("Application Crashed", ex);
 
                 MessageBoxResult dialogResult = MessageBox.Show(
-                    "A problem has been encountered and the application needs to restart. " +
-                    "Reporting this error will help us make our product better. " +
-                    "Press 'Yes' to open your standard email app (emailto: Markus@Hofknecht.eu). " + Environment.NewLine +
-                    @"You can also create an issue manually here https://github.com/Hofknecht/SystemTrayMenu/issues" + Environment.NewLine +
-                    "Press 'Cancel' to quit SystemTrayMenu.",
+                    "A problem has been encountered and SystemTrayMenu needs to restart. " +
+                    "Reporting this error will help us making our product better." +
+                    Environment.NewLine + Environment.NewLine +
+                    "We kindly ask you to press 'Yes' and send us the crash report before restarting the application. " +
+                    "This will open your standard email app and prepare a mail that you can directly send off. " +
+                    "Alternatively, you can also create an issue manually here: https://github.com/Hofknecht/SystemTrayMenu/issues" +
+                    Environment.NewLine + Environment.NewLine +
+                    "Pressing 'No' will only restart the application." +
+                    Environment.NewLine +
+                    "Pressing 'Cancel' will quit the application.",
                     "SystemTrayMenu Crashed",
                     MessageBoxButton.YesNoCancel);
 
