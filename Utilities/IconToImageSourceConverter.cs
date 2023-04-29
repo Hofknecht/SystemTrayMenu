@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //
-// Copyright (c) 2022-2022 Peter Kirmeier
+// Copyright (c) 2022-2023 Peter Kirmeier
 
 namespace SystemTrayMenu.Utilities
 {
@@ -24,7 +24,7 @@ namespace SystemTrayMenu.Utilities
             if (value != null)
             {
                 // Invalid Icon happens usually only during design time with dummy default data
-                Icon icon = value is Icon ? (Icon)value : SystemIcons.Error;
+                Icon icon = value is Icon validIcon ? validIcon : SystemIcons.Error;
                 return Imaging.CreateBitmapSourceFromHIcon(
                     icon.Handle,
                     Int32Rect.Empty,

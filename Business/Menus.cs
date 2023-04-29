@@ -52,7 +52,7 @@ namespace SystemTrayMenu.Business
         {
             keyboardInput = new(menus);
             keyboardInput.RegisterHotKey();
-            keyboardInput.HotKeyPressed += () => SwitchOpenClose(false);
+            keyboardInput.HotKeyPressed += () => SwitchOpenClose(false, false);
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowDeselected += waitToOpenMenu.RowDeselected;
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
@@ -247,7 +247,7 @@ namespace SystemTrayMenu.Business
             dispatchter.Invoke(() => SwitchOpenClose(false, true));
         }
 
-        internal void SwitchOpenClose(bool byClick, bool allowPreloading = false)
+        internal void SwitchOpenClose(bool byClick, bool allowPreloading)
         {
             // Ignore open close events during main preload #248
             if (IconReader.IsPreloading && !allowPreloading)
@@ -447,32 +447,7 @@ namespace SystemTrayMenu.Business
 
         private bool IsActive()
         {
-            bool IsShellContextMenuOpen()
-            {
-                foreach (Menu? menu in menus.Where(m => m != null))
-                {
-                    ListView? dgv = menu?.GetDataGridView();
-                    if (dgv != null)
-                    {
-                        foreach (ListViewItemData item in dgv.Items)
-                        {
-                            if (item.data != null)
-                            {
-                                return true;
-                            }
-                        }
-                    }
-                }
-
-                return false;
-            }
-
-            foreach (Menu? menu in menus.Where(m => m != null && m.IsActive))
-            {
-                return true;
-            }
-
-            return (App.TaskbarLogo != null && App.TaskbarLogo.IsActive) || IsShellContextMenuOpen();
+            return menus.Where(m => m != null && m.IsActive).FirstOrDefault() != null || (App.TaskbarLogo?.IsActive ?? false);
         }
 
         private Menu Create(MenuData menuData, string path)
@@ -605,6 +580,7 @@ namespace SystemTrayMenu.Business
                 if (menu.Level == 0)
                 {
                     menu.ResetSearchText();
+                    menu.Activate();
                 }
             }
 

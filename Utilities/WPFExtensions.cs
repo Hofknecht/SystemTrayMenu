@@ -34,7 +34,7 @@ namespace SystemTrayMenu.Utilities
         {
             var parent = VisualTreeHelper.GetParent(listView);
 
-            while (!(parent is Window))
+            while (parent is not Window)
             {
                 parent = VisualTreeHelper.GetParent(parent);
             }
@@ -72,11 +72,11 @@ namespace SystemTrayMenu.Utilities
                 DependencyObject child = VisualTreeHelper.GetChild(depObj, i);
                 if (child != null)
                 {
-                    if (child is T)
+                    if (child is T validChild)
                     {
                         if (index-- == 0)
                         {
-                            return (T)child;
+                            return validChild;
                         }
 
                         continue;

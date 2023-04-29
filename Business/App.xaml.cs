@@ -27,7 +27,7 @@ namespace SystemTrayMenu
             AppRestart.BeforeRestarting += Dispose;
             menus.LoadStarted += menuNotifyIcon.LoadingStart;
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
-            menuNotifyIcon.Click += () => menus.SwitchOpenClose(true);
+            menuNotifyIcon.Click += () => menus.SwitchOpenClose(true, false);
 
             if (Settings.Default.ShowInTaskbar)
             {

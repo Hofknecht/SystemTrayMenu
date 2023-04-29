@@ -20,16 +20,16 @@ namespace SystemTrayMenu.Handler
         private readonly DispatcherTimer timerStartLoad = new();
         private ListView? dgv;
         private ListViewItemData? dgvItemData;
-        private ListView? dgvTmp;
 #if TODO // Misc MouseEvents
+        private ListView? dgvTmp;
         private int rowIndexTmp;
 #endif
         private bool alreadyOpened;
 
 #if TODO // Misc MouseEvents
         private int mouseMoveEvents;
-#endif
         private DateTime dateTimeLastMouseMoveEvent = DateTime.Now;
+#endif
         private bool checkForMouseActive = true;
 
         internal WaitToLoadMenu()
@@ -64,13 +64,13 @@ namespace SystemTrayMenu.Handler
                 SetData(dgv, itemData);
                 timerStartLoad.Start();
             }
+#if TODO // Misc MouseEvents
             else
             {
                 dgvTmp = dgv;
-#if TODO // Misc MouseEvents
                 rowIndexTmp = dgv.IndexOfSenderItem(item);
-#endif
             }
+#endif
         }
 
         internal void RowSelected(ListView dgv, ListViewItemData itemData)
@@ -192,7 +192,9 @@ namespace SystemTrayMenu.Handler
             }
 
             alreadyOpened = false;
+#if TODO // Misc MouseEvents
             dgvTmp = null;
+#endif
             this.dgv = dgv;
             dgvItemData = itemData;
 
