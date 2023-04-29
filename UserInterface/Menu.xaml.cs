@@ -1106,36 +1106,11 @@ namespace SystemTrayMenu.UserInterface
 #endif
         }
 
-#if TODO // Misc MouseEvents and BorderColors
-        private void PictureBoxOpenFolder_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-
-            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
-            {
-                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
-                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
-            }
-        }
-#endif
-
         private void PictureBoxOpenFolder_Click(object sender, RoutedEventArgs e)
         {
             Menus.OpenFolder(folderPath);
         }
 
-#if TODO // BorderColors
-        private void PictureBoxMenuAlwaysOpen_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-
-            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
-            {
-                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
-                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
-            }
-        }
-#endif
         private void PictureBoxMenuAlwaysOpen_Click(object sender, RoutedEventArgs e)
         {
             if (Config.AlwaysOpenByPin = !Config.AlwaysOpenByPin)
@@ -1148,35 +1123,11 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-#if TODO // BorderColors
-        private void PictureBoxSettings_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-
-            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
-            {
-                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
-                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
-            }
-        }
-#endif
         private void PictureBoxSettings_MouseClick(object sender, RoutedEventArgs e)
         {
             SettingsWindow.ShowSingleInstance();
         }
 
-#if TODO // BorderColors
-        private void PictureBoxRestart_Paint(object sender, PaintEventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
-
-            if (pictureBox.Tag != null && (bool)pictureBox.Tag)
-            {
-                Rectangle rowBounds = new(0, 0, pictureBox.Width, pictureBox.Height);
-                ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
-            }
-        }
-#endif
         private void PictureBoxRestart_MouseClick(object sender, RoutedEventArgs e)
         {
             AppRestart.ByMenuButton();
@@ -1302,6 +1253,8 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         internal class ListViewItemData : INotifyPropertyChanged
         {
+            private Brush? backgroundBrush;
+            private Brush? borderBrush;
             private ImageSource? columnIcon;
 
             internal ListViewItemData(ImageSource? columnIcon, string columnText, RowData rowData, int sortIndex)
@@ -1313,6 +1266,26 @@ namespace SystemTrayMenu.UserInterface
             }
 
             public event PropertyChangedEventHandler? PropertyChanged;
+
+            public Brush? BackgroundBrush
+            {
+                get => backgroundBrush;
+                set
+                {
+                    backgroundBrush = value;
+                    CallPropertyChanged();
+                }
+            }
+
+            public Brush? BorderBrush
+            {
+                get => borderBrush;
+                set
+                {
+                    borderBrush = value;
+                    CallPropertyChanged();
+                }
+            }
 
             public ImageSource? ColumnIcon
             {

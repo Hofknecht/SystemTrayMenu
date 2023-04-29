@@ -13,6 +13,7 @@ namespace SystemTrayMenu.Business
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
+    using System.Windows.Media;
     using System.Windows.Threading;
     using Microsoft.Win32;
     using SystemTrayMenu.DataClasses;
@@ -185,6 +186,8 @@ namespace SystemTrayMenu.Business
             Opening,
             Closing,
         }
+
+        public static SolidColorBrush BrushSelectedItemBorder => MenuDefines.ColorSelectedItemBorder.ToSolidColorBrush();
 
         private Menu? MainMenu => menus[0];
 
@@ -571,9 +574,6 @@ namespace SystemTrayMenu.Business
                 dgv.MouseMove += waitToOpenMenu.MouseMove;
 #endif
                 dgv.SelectionChanged += Dgv_SelectionChanged;
-#if TODO // BorderColors and PaintEvent
-                dgv.RowPostPaint += Dgv_RowPostPaint;
-#endif
             }
 
             if (menu.Level == 0)
@@ -700,41 +700,28 @@ namespace SystemTrayMenu.Business
             foreach (ListViewItemData itemData in dgv.Items)
             {
                 RowData rowData = itemData.data;
-
-                if (rowData == null)
+                if (rowData.IsClicking)
                 {
-                    // Case when filtering a previous menu
-                }
-                else if (!IsMainUsable)
-                {
-#if TODO // Colors
-                    itemData.DefaultCellStyle.SelectionBackColor = Color.White;
-#endif
-                    dgv.SelectedItems.Remove(itemData);
-                }
-                else if (rowData.IsClicking)
-                {
-#if TODO // Colors
-                    itemData.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorIcons;
-#endif
+                    itemData.BorderBrush = MenuDefines.ColorIcons.ToSolidColorBrush();
+                    itemData.BackgroundBrush = MenuDefines.ColorSelectedItem.ToSolidColorBrush();
                     dgv.SelectedItems.Add(itemData);
                 }
                 else if (rowData.IsMenuOpen)
                 {
+                    itemData.BorderBrush = MenuDefines.ColorOpenFolderBorder.ToSolidColorBrush();
+                    itemData.BackgroundBrush = MenuDefines.ColorOpenFolder.ToSolidColorBrush();
                     dgv.SelectedItems.Add(itemData);
                 }
                 else if (rowData.IsSelected)
                 {
-#if TODO // Colors
-                    itemData.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
-#endif
+                    itemData.BorderBrush = MenuDefines.ColorSelectedItemBorder.ToSolidColorBrush();
+                    itemData.BackgroundBrush = MenuDefines.ColorSelectedItem.ToSolidColorBrush();
                     dgv.SelectedItems.Add(itemData);
                 }
                 else
                 {
-#if TODO // Colors
-                    itemData.DefaultCellStyle.SelectionBackColor = Color.White;
-#endif
+                    itemData.BorderBrush = Brushes.White;
+                    itemData.BackgroundBrush = Brushes.White;
                     dgv.SelectedItems.Remove(itemData);
                 }
             }
@@ -746,56 +733,6 @@ namespace SystemTrayMenu.Business
                 dgv.InvalidateVisual();
             }
         }
-
-#if TODO // BorderColors and PaintEvent
-        private void Dgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            ListView dgv = (ListView)sender;
-            DataGridViewRow row = dgv.Items[e.RowIndex];
-
-            if (row.Selected)
-            {
-                RowData rowData = (RowData)row.Cells[2].Value;
-
-                int width = dgv.Columns[0].Width + dgv.Columns[1].Width;
-                Rectangle rowBounds = new(0, e.RowBounds.Top, width, e.RowBounds.Height);
-
-                if (rowData.IsClicking)
-                {
-                    ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorIcons, ButtonBorderStyle.Solid);
-                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
-                }
-                else if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
-                {
-                    ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorSelectedItemBorder, ButtonBorderStyle.Solid);
-                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorSelectedItem;
-                }
-                else if (rowData.IsMenuOpen)
-                {
-                    ControlPaint.DrawBorder(e.Graphics, rowBounds, MenuDefines.ColorOpenFolderBorder, ButtonBorderStyle.Solid);
-                    row.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorOpenFolder;
-                }
-
-                if (rowData.ProcessStarted)
-                {
-                    rowData.ProcessStarted = false;
-                    row.Cells[0].Value = Resources.StaticResources.LoadingIcon;
-                    timerShowProcessStartedAsLoadingIcon.Stop();
-                    timerShowProcessStartedAsLoadingIcon.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed);
-                    timerShowProcessStartedAsLoadingIcon.Tick += Tick;
-                    void Tick(object sender, EventArgs e)
-                    {
-                        timerShowProcessStartedAsLoadingIcon.Tick -= Tick;
-                        timerShowProcessStartedAsLoadingIcon.Stop();
-                        row.Cells[0].Value = rowData.ReadIcon(false);
-                    }
-                    timerShowProcessStartedAsLoadingIcon.Start();
-                    timerStillActiveCheck.Stop();
-                    timerStillActiveCheck.Start();
-                }
-            }
-    }
-#endif
 
         private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e)
         {
