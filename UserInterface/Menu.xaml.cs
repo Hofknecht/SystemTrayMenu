@@ -6,8 +6,10 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Globalization;
     using System.IO;
+    using System.Runtime.CompilerServices;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
@@ -37,7 +39,7 @@ namespace SystemTrayMenu.UserInterface
         private static readonly RoutedEvent FadeOutEvent = EventManager.RegisterRoutedEvent(
             nameof(FadeOut), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
 
-        private readonly DispatcherTimer timerUpdateIcons = new (DispatcherPriority.Render, Dispatcher.CurrentDispatcher);
+        private readonly DispatcherTimer timerUpdateIcons = new (DispatcherPriority.Background, Dispatcher.CurrentDispatcher);
         private readonly string folderPath;
 #if TODO // SEARCH
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
@@ -434,6 +436,8 @@ namespace SystemTrayMenu.UserInterface
             return dgv;
         }
 
+        // Not used as refreshing should be done automatically due to databinding
+        // TODO: As long as WPF transition from Forms is incomplete, keep it for testing.
         internal void RefreshDataGridView()
         {
             ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Refresh();
@@ -1202,10 +1206,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 timerUpdateIcons.Stop();
             }
-            else
-            {
-                RefreshDataGridView();
-            }
         }
 
         private void Menu_MouseDown(object sender, MouseButtonEventArgs e)
@@ -1300,25 +1300,43 @@ namespace SystemTrayMenu.UserInterface
         /// <summary>
         /// Type for ListView items.
         /// </summary>
-        internal class ListViewItemData
+        internal class ListViewItemData : INotifyPropertyChanged
         {
-            public ListViewItemData(ImageSource? columnIcon, string columnText, RowData rowData, int sortIndex)
+            private ImageSource? columnIcon;
+
+            internal ListViewItemData(ImageSource? columnIcon, string columnText, RowData rowData, int sortIndex)
             {
-                ColumnIcon = columnIcon;
+                this.columnIcon = columnIcon;
                 ColumnText = columnText;
                 data = rowData;
                 SortIndex = sortIndex;
             }
 
-            public ImageSource? ColumnIcon { get; set; }
+            public event PropertyChangedEventHandler? PropertyChanged;
 
-            public string ColumnText { get; set; }
+            public ImageSource? ColumnIcon
+            {
+                get => columnIcon;
+                set
+                {
+                    columnIcon = value;
+                    CallPropertyChanged();
+                }
+            }
+
+            public string ColumnText { get; }
 
             [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Benennungsstile", Justification = "Temporarily retained for compatibility reasons")]
             [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "Temporarily retained for compatibility reasons")]
-            public RowData data { get; set; }
+            internal RowData data { get; set; }
 
-            public int SortIndex { get; set; }
+            internal int SortIndex { get; set; }
+
+            /// <summary>
+            /// Triggers an PropertyChanged event of INotifyPropertyChanged.
+            /// </summary>
+            /// <param name="propertyName">Name of the changing property.</param>
+            public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
