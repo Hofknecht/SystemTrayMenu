@@ -76,11 +76,11 @@ namespace SystemTrayMenu.Business
             waitToOpenMenu.StartLoadMenu += StartLoadMenu;
             void StartLoadMenu(RowData rowData)
             {
-                if (IsMainUsable && rowData.Path != null &&
+                if (IsMainUsable &&
                     (menus[rowData.Level + 1] == null ||
                     menus[rowData.Level + 1]?.RowDataParent != rowData))
                 {
-                    Create(new(rowData.Level + 1, rowData), rowData.Path); // Level 1+ Sub Menu (loading)
+                    Create(new(rowData), rowData.Path); // Level 1+ Sub Menu (loading)
 
                     BackgroundWorker? workerSubMenu = workersSubMenu.
                         Where(w => !w.IsBusy).FirstOrDefault();
@@ -315,28 +315,12 @@ namespace SystemTrayMenu.Business
         {
             BackgroundWorker? workerSelf = sender as BackgroundWorker;
             RowData? rowData = eDoWork.Argument as RowData;
-            string? path;
-            int level;
-            if (rowData != null)
-            {
-                path = rowData.ResolvedPath;
-                if (path == null)
-                {
-                    return;
-                }
+            string path = rowData?.ResolvedPath ?? Config.Path;
 
-                level = rowData.Level + 1;
-            }
-            else
-            {
-                path = Config.Path;
-                level = 0;
-            }
-
-            MenuData menuData = new(level, rowData);
+            MenuData menuData = new(rowData);
             DirectoryHelpers.DiscoverItems(workerSelf, path, ref menuData);
             if (menuData.DirectoryState != MenuDataDirectoryState.Undefined &&
-                workerSelf != null && level == 0)
+                workerSelf != null && rowData == null)
             {
                 // After success of MainMenu loading: never run again
                 workerSelf.DoWork -= LoadMenu;
@@ -366,7 +350,6 @@ namespace SystemTrayMenu.Business
                             rowDataToClear.IsMenuOpen = false;
                             rowDataToClear.IsClicking = false;
                             rowDataToClear.IsSelected = false;
-                            rowDataToClear.IsContextMenuOpen = false;
                         }
 
                         RefreshSelection(dgvMainMenu);
@@ -470,8 +453,7 @@ namespace SystemTrayMenu.Business
                     {
                         foreach (ListViewItemData item in dgv.Items)
                         {
-                            RowData rowData = item.data;
-                            if (rowData != null && rowData.IsContextMenuOpen)
+                            if (item.data != null)
                             {
                                 return true;
                             }
@@ -735,10 +717,6 @@ namespace SystemTrayMenu.Business
 #if TODO // Colors
                     itemData.DefaultCellStyle.SelectionBackColor = MenuDefines.ColorIcons;
 #endif
-                    dgv.SelectedItems.Add(itemData);
-                }
-                else if (rowData.IsContextMenuOpen || (rowData.IsMenuOpen && rowData.IsSelected))
-                {
                     dgv.SelectedItems.Add(itemData);
                 }
                 else if (rowData.IsMenuOpen)
@@ -1070,18 +1048,20 @@ namespace SystemTrayMenu.Business
                     foreach (ListViewItemData item in dgv.Items)
                     {
                         RowData rowData = item.data;
-                        if (rowData.Path?.StartsWith($"{e.OldFullPath}") ?? false)
+                        if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                         {
-                            string? path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
+                            string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
                             FileAttributes attr = File.GetAttributes(path);
                             bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
                             if (isFolder)
                             {
-                                path = Path.GetDirectoryName(path);
-                                if (string.IsNullOrEmpty(path))
+                                string? dirpath = Path.GetDirectoryName(path);
+                                if (string.IsNullOrEmpty(dirpath))
                                 {
                                     continue;
                                 }
+
+                                path = dirpath;
                             }
 
                             RowData rowDataRenamed = new(isFolder, rowData.IsAdditionalItem, 0, path);
@@ -1127,7 +1107,7 @@ namespace SystemTrayMenu.Business
                     {
                         RowData rowData = item.data;
                         if (rowData.Path == e.FullPath ||
-                            (rowData.Path?.StartsWith($"{e.FullPath}\\") ?? false))
+                            rowData.Path.StartsWith($"{e.FullPath}\\"))
                         {
                             IconReader.RemoveIconFromCache(rowData.Path);
                             rowsToRemove.Add(item);

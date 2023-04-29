@@ -176,8 +176,7 @@ namespace SystemTrayMenu.Handler
 
                 menu?.FocusTextBox();
 
-                if (!rowData.IsContextMenuOpen &&
-                    rowData.ContainsMenu &&
+                if (rowData.IsPointingToFolder &&
                     rowData.Level + 1 < MenuDefines.MenusMax)
                 {
                     StartLoadMenu?.Invoke(rowData);

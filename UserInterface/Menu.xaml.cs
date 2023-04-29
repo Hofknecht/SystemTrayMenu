@@ -93,19 +93,19 @@ namespace SystemTrayMenu.UserInterface
 
             folderPath = path;
             RowDataParent = menuData.RowDataParent;
-            Level = menuData.Level;
-            if (Level == 0)
+            if (RowDataParent == null)
             {
+                // This will be a main menu
+                Level = 0;
+
                 // Use Main Menu DPI for all further calculations
                 Scaling.CalculateFactorByDpi(this);
             }
             else
             {
-                // This will be a submenu
-                if (RowDataParent != null)
-                {
-                    RowDataParent.SubMenu = this;
-                }
+                // This will be a sub menu
+                Level = RowDataParent.Level + 1;
+                RowDataParent.SubMenu = this;
 
                 buttonOpenFolder.Visibility = Visibility.Collapsed;
                 buttonSettings.Visibility = Visibility.Collapsed;
@@ -450,7 +450,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (!(rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult))
                 {
-                    if (rowData.ContainsMenu)
+                    if (rowData.IsPointingToFolder)
                     {
                         foldersCount++;
                     }
@@ -1262,7 +1262,17 @@ namespace SystemTrayMenu.UserInterface
 
             CellMouseDown?.Invoke(dgv, itemData, e);
 
-            itemData.data.MouseDown(dgv, e);
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                itemData.data.IsClicking = true;
+            }
+
+            if (e.RightButton == MouseButtonState.Pressed)
+            {
+                var position = Mouse.GetPosition(this);
+                position.Offset(Left, Top);
+                itemData.data.OpenShellContextMenu(position);
+            }
         }
 
         private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)

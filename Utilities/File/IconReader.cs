@@ -55,60 +55,8 @@ namespace SystemTrayMenu.Utilities
         }
 
         public static Icon? GetFileIconWithCache(
-            string? path,
-            string? resolvedPath,
-            bool linkOverlay,
-            bool updateIconInBackground,
-            bool checkPersistentFirst,
-            out bool loading,
-            string keyPath = "")
-        {
-            loading = false;
-
-            Icon? icon = null;
-            if (path != null)
-            {
-                string extension = Path.GetExtension(path);
-                IconSize size = IconSize.Small;
-                if (Scaling.Factor >= 1.25f ||
-                    Scaling.FactorByDpi >= 1.25f ||
-                    Properties.Settings.Default.IconSizeInPercent / 100f >= 1.25f)
-                {
-                    size = IconSize.Large;
-                }
-
-                string key = path;
-                if (!string.IsNullOrEmpty(keyPath))
-                {
-                    key = keyPath;
-                }
-
-                if (IsExtensionWithSameIcon(extension))
-                {
-                    key = extension + linkOverlay;
-                }
-
-                if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
-                    !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
-                {
-                    icon = Resources.StaticResources.LoadingIcon;
-                    loading = true;
-                    if (updateIconInBackground)
-                    {
-                        new Thread(UpdateIconInBackground).Start();
-                        void UpdateIconInBackground()
-                        {
-                            DictIconCache(checkPersistentFirst).GetOrAdd(key, GetIconSTA(path, resolvedPath, linkOverlay, size, false));
-                        }
-                    }
-                }
-            }
-
-            return icon;
-        }
-
-        public static Icon? GetFolderIconWithCache(
-            string? path,
+            string path,
+            string resolvedPath,
             bool linkOverlay,
             bool updateIconInBackground,
             bool checkPersistentFirst,
@@ -117,43 +65,36 @@ namespace SystemTrayMenu.Utilities
             loading = false;
 
             Icon? icon = null;
-            if (path != null)
+            string key;
+            string extension = Path.GetExtension(path);
+            if (IsExtensionWithSameIcon(extension))
             {
-                IconSize size = IconSize.Small;
-                if (Scaling.Factor >= 1.25f ||
-                    Scaling.FactorByDpi >= 1.25f ||
-                    Properties.Settings.Default.IconSizeInPercent / 100f >= 1.25f)
-                {
-                    // IconSize.Large returns another folder icon than windows explorer
-                    size = IconSize.Large;
-                }
+                key = extension + linkOverlay;
+            }
+            else
+            {
+                key = path;
+            }
 
-                string key = path;
-                if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
-                    !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
+            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
+                !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
+            {
+                icon = Resources.StaticResources.LoadingIcon;
+                loading = true;
+                if (updateIconInBackground)
                 {
-                    icon = Resources.StaticResources.LoadingIcon;
-                    loading = true;
-
-                    if (updateIconInBackground)
+                    IconSize size = IconSize.Small;
+                    if (Scaling.Factor >= 1.25f ||
+                        Scaling.FactorByDpi >= 1.25f ||
+                        Properties.Settings.Default.IconSizeInPercent / 100f >= 1.25f)
                     {
-                        if (IsPreloading)
-                        {
-                            DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
-                        }
-                        else
-                        {
-                            new Thread(UpdateIconInBackground).Start();
-                            void UpdateIconInBackground()
-                            {
-                                DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
-                            }
-                        }
+                        size = IconSize.Large;
+                    }
 
-                        Icon? GetFolder(string keyExtension)
-                        {
-                            return GetIconSTA(path, path, linkOverlay, size, true);
-                        }
+                    new Thread(UpdateIconInBackground).Start();
+                    void UpdateIconInBackground()
+                    {
+                        DictIconCache(checkPersistentFirst).GetOrAdd(key, GetIconSTA(path, resolvedPath, linkOverlay, size, false));
                     }
                 }
             }
@@ -161,7 +102,58 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        public static Icon? GetIconSTA(string path, string? resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
+        public static Icon? GetFolderIconWithCache(
+            string path,
+            bool linkOverlay,
+            bool updateIconInBackground,
+            bool checkPersistentFirst,
+            out bool loading)
+        {
+            loading = false;
+
+            Icon? icon = null;
+            string key = path;
+            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
+                !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
+            {
+                icon = Resources.StaticResources.LoadingIcon;
+                loading = true;
+
+                if (updateIconInBackground)
+                {
+                    IconSize size = IconSize.Small;
+                    if (Scaling.Factor >= 1.25f ||
+                        Scaling.FactorByDpi >= 1.25f ||
+                        Properties.Settings.Default.IconSizeInPercent / 100f >= 1.25f)
+                    {
+                        // IconSize.Large returns another folder icon than windows explorer
+                        size = IconSize.Large;
+                    }
+
+                    if (IsPreloading)
+                    {
+                        DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
+                    }
+                    else
+                    {
+                        new Thread(UpdateIconInBackground).Start();
+                        void UpdateIconInBackground()
+                        {
+                            DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
+                        }
+                    }
+
+                    Icon? GetFolder(string keyExtension)
+                    {
+                        return GetIconSTA(path, path, linkOverlay, size, true);
+                    }
+                }
+            }
+
+            return icon;
+        }
+
+        public static Icon? GetIconSTA(string path, string resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
         {
             Icon? icon = null;
             if (Thread.CurrentThread.GetApartmentState() == ApartmentState.STA)
@@ -217,7 +209,7 @@ namespace SystemTrayMenu.Utilities
             return isExtensionWithSameIcon;
         }
 
-        private static Icon? GetIcon(string path, string? resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
+        private static Icon? GetIcon(string path, string resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
         {
             Icon? icon;
             if (Path.GetExtension(path).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))

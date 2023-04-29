@@ -53,11 +53,11 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        internal static void ReadHiddenAttributes(string? path, out bool hasHiddenFlag, out bool isDirectoryToHide)
+        internal static void ReadHiddenAttributes(string path, out bool hasHiddenFlag, out bool isDirectoryToHide)
         {
             isDirectoryToHide = false;
             hasHiddenFlag = false;
-            if (path == null || path.Length >= 260)
+            if (path.Length >= 260)
             {
                 Log.Info($"path too long (>=260):'{path}'");
                 return;

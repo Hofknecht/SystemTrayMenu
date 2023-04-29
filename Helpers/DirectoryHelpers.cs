@@ -98,7 +98,7 @@ namespace SystemTrayMenu.Helpers
             else if (Properties.Settings.Default.SortByTypeAndDate)
             {
                 rowDatas = rowDatas.OrderByDescending(x => x.IsFolder)
-                    .ThenByDescending(x => x.FileInfo?.LastWriteTime).ToList();
+                    .ThenByDescending(x => x.FileInfo.LastWriteTime).ToList();
             }
             else if (Properties.Settings.Default.SortByFileExtensionAndName)
             {
@@ -110,7 +110,7 @@ namespace SystemTrayMenu.Helpers
             }
             else if (Properties.Settings.Default.SortByDate)
             {
-                rowDatas = rowDatas.OrderByDescending(x => x.FileInfo?.LastWriteTime).ToList();
+                rowDatas = rowDatas.OrderByDescending(x => x.FileInfo.LastWriteTime).ToList();
             }
 
             return rowDatas;

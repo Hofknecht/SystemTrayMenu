@@ -10,7 +10,6 @@ namespace SystemTrayMenu.Helpers
     using System.Text;
     using System.Threading;
     using System.Windows;
-    using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
 
@@ -32,33 +31,9 @@ namespace SystemTrayMenu.Helpers
             }
         }
 
-        public static void DragDrop(object sender, DragEventArgs e)
+        public static void DragDrop(object? sender, DragEventArgs e)
         {
-            Menu menu = (Menu)sender;
-            string path;
-            if (menu != null)
-            {
-                RowData? rowData = menu.RowDataParent;
-                if (rowData != null)
-                {
-                    string? resolvedPath = rowData.ResolvedPath;
-                    if (string.IsNullOrEmpty(resolvedPath))
-                    {
-                        return;
-                    }
-
-                    path = resolvedPath;
-                }
-                else
-                {
-                    path = Config.Path;
-                }
-            }
-            else
-            {
-                path = Config.Path;
-            }
-
+            string path = ((Menu?)sender)?.RowDataParent?.ResolvedPath ?? Config.Path;
             object data = e.Data.GetData("UniformResourceLocator");
             if (data is not MemoryStream ms)
             {

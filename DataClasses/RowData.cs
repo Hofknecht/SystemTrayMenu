@@ -7,17 +7,13 @@ namespace SystemTrayMenu.DataClasses
     using System;
     using System.Drawing;
     using System.IO;
-    using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Input;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Utilities.IconReader;
     using Menu = SystemTrayMenu.UserInterface.Menu;
+    using Point = System.Windows.Point;
 
     internal class RowData
     {
-        private static DateTime contextMenuClosed;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="RowData"/> class.
         /// (Related replace "\x00" see #171.)
@@ -31,86 +27,84 @@ namespace SystemTrayMenu.DataClasses
             IsFolder = isFolder;
             IsAdditionalItem = isAdditionalItem;
             Level = level;
+            FileInfo = new FileInfo(path.Replace("\x00", string.Empty));
+            Path = isFolder ? $@"{FileInfo.FullName}\" : FileInfo.FullName;
+            FileExtension = System.IO.Path.GetExtension(Path) ?? string.Empty;
 
-            try
+            if (FileExtension.Equals(".lnk", StringComparison.InvariantCultureIgnoreCase))
             {
-                FileInfo = new FileInfo(path.Replace("\x00", string.Empty));
-                Path = IsFolder ? $@"{FileInfo.FullName}\" : FileInfo.FullName;
-                FileExtension = System.IO.Path.GetExtension(Path);
-                IsLink = FileExtension.Equals(".lnk", StringComparison.InvariantCultureIgnoreCase);
-                if (IsLink)
+                ResolvedPath = FileLnk.GetResolvedFileName(Path, out bool isLinkToFolder);
+                ShowOverlay = Properties.Settings.Default.ShowLinkOverlay;
+                Text = System.IO.Path.GetFileNameWithoutExtension(Path);
+                if (Properties.Settings.Default.ResolveLinksToFolders)
                 {
-                    ResolvedPath = FileLnk.GetResolvedFileName(Path, out bool isLinkToFolder);
-                    IsLinkToFolder = isLinkToFolder || FileLnk.IsNetworkRoot(ResolvedPath);
+                    IsPointingToFolder |= isLinkToFolder || FileLnk.IsNetworkRoot(ResolvedPath);
+                }
+            }
+            else
+            {
+                ResolvedPath = Path;
+                if (string.IsNullOrEmpty(FileInfo.Name))
+                {
+                    int nameBegin = FileInfo.FullName.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1;
+                    Text = FileInfo.FullName[nameBegin..];
+                }
+                else if (FileExtension.Equals(".url", StringComparison.InvariantCultureIgnoreCase) ||
+                    FileExtension.Equals(".appref-ms", StringComparison.InvariantCultureIgnoreCase))
+                {
                     ShowOverlay = Properties.Settings.Default.ShowLinkOverlay;
-                    Text = System.IO.Path.GetFileNameWithoutExtension(Path);
-                    if (string.IsNullOrEmpty(ResolvedPath))
-                    {
-                        Log.Info($"Resolved path is empty: '{Path}'");
-                        ResolvedPath = Path;
-                    }
+                    Text = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
+                }
+                else if (!isFolder && Config.IsHideFileExtension())
+                {
+                    Text = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
                 }
                 else
                 {
-                    ResolvedPath = Path;
-                    if (string.IsNullOrEmpty(FileInfo.Name))
-                    {
-                        int nameBegin = FileInfo.FullName.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1;
-                        Text = FileInfo.FullName[nameBegin..];
-                    }
-                    else if (FileExtension.Equals(".url", StringComparison.InvariantCultureIgnoreCase) ||
-                        FileExtension.Equals(".appref-ms", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        ShowOverlay = Properties.Settings.Default.ShowLinkOverlay;
-                        Text = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
-                    }
-                    else if (!IsFolder && Config.IsHideFileExtension())
-                    {
-                        Text = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
-                    }
-                    else
-                    {
-                        Text = FileInfo.Name;
-                    }
+                    Text = FileInfo.Name;
                 }
+            }
 
-                ContainsMenu = IsFolder;
-                if (Properties.Settings.Default.ResolveLinksToFolders)
-                {
-                    ContainsMenu |= IsLinkToFolder;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Warn($"path:'{path}'", ex);
-            }
+            IsPointingToFolder |= isFolder;
         }
 
         internal Icon? Icon { get; private set; }
 
-        internal FileInfo? FileInfo { get; }
+        internal FileInfo FileInfo { get; }
 
-        internal string? Path { get; }
+        /// <summary>
+        /// Gets the original/local path.
+        /// </summary>
+        internal string Path { get; }
 
+        /// <summary>
+        /// Gets the resulting target path after following shortcuts or CLSIDs.
+        /// </summary>
+        internal string ResolvedPath { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether
+        /// the item is actually a folder and not a file.
+        /// E.g. a shortcut (.lnk) would return false.
+        /// </summary>
         internal bool IsFolder { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether
+        /// the item is actually a folder or at least points to one.
+        /// E.g. a shortcut (.lnk) could return either false or true.
+        /// </summary>
+        internal bool IsPointingToFolder { get; }
 
         internal bool IsAdditionalItem { get; }
 
         internal int Level { get; set; }
 
-        internal string? FileExtension { get; }
-
-        internal bool IsLink { get; }
-
-        internal string? ResolvedPath { get; }
-
-        internal bool IsLinkToFolder { get; }
+        internal string FileExtension { get; }
 
         internal bool ShowOverlay { get; }
 
         internal string? Text { get; }
-
-        internal bool ContainsMenu { get; }
 
         internal Menu? SubMenu { get; set; }
 
@@ -120,8 +114,6 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IsSelected { get; set; }
 
-        internal bool IsContextMenuOpen { get; set; }
-
         internal bool HiddenEntry { get; set; }
 
         internal int RowIndex { get; set; }
@@ -130,17 +122,17 @@ namespace SystemTrayMenu.DataClasses
 
         internal void ReadIcon(bool updateIconInBackground)
         {
-            if (IsFolder || IsLinkToFolder)
+            bool loading;
+            if (IsPointingToFolder)
             {
-                Icon = GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, out bool loading);
-                IconLoading = loading;
+                Icon = GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, out loading);
             }
             else
             {
-                Icon = GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, out bool loading);
-                IconLoading = loading;
+                Icon = GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, out loading);
             }
 
+            IconLoading = loading;
             if (!IconLoading)
             {
                 if (Icon == null)
@@ -154,57 +146,20 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal void MouseDown(ListView dgv, MouseButtonEventArgs e)
+        internal void OpenShellContextMenu(Point position)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            ShellContextMenu ctxMnu = new();
+            if (IsPointingToFolder)
             {
-                IsClicking = true;
+                DirectoryInfo[] dir = new DirectoryInfo[1];
+                dir[0] = new DirectoryInfo(Path);
+                ctxMnu.ShowContextMenu(dir, position);
             }
-            else if (e.RightButton == MouseButtonState.Pressed &&
-                FileInfo != null && Path != null &&
-                dgv != null && dgv.Items.Count > RowIndex &&
-                (DateTime.Now - contextMenuClosed).TotalMilliseconds > 200)
+            else
             {
-                IsContextMenuOpen = true;
-                CreateAndShowShellContextMenu();
-                void CreateAndShowShellContextMenu()
-                {
-                    ShellContextMenu ctxMnu = new();
-                    Window window = dgv.GetParentWindow();
-                    var position = Mouse.GetPosition(window);
-                    position.Offset(window.Left, window.Top);
-                    if (ContainsMenu)
-                    {
-                        DirectoryInfo[] dir = new DirectoryInfo[1];
-                        dir[0] = new DirectoryInfo(Path);
-                        ctxMnu.ShowContextMenu(dir, position);
-                    }
-                    else
-                    {
-                        FileInfo[] arrFI = new FileInfo[1];
-                        arrFI[0] = FileInfo;
-                        ctxMnu.ShowContextMenu(arrFI, position);
-                    }
-                }
-
-                TriggerFileWatcherChangeWorkaround();
-                void TriggerFileWatcherChangeWorkaround()
-                {
-                    try
-                    {
-                        string? parentFolder = System.IO.Path.GetDirectoryName(Path);
-
-                        // Assume folder is not null as failure will be catched any ways
-                        Directory.GetFiles(parentFolder!);
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Warn($"{nameof(TriggerFileWatcherChangeWorkaround)} '{Path}'", ex);
-                    }
-                }
-
-                IsContextMenuOpen = false;
-                contextMenuClosed = DateTime.Now;
+                FileInfo[] arrFI = new FileInfo[1];
+                arrFI[0] = FileInfo;
+                ctxMnu.ShowContextMenu(arrFI, position);
             }
         }
 
@@ -213,11 +168,11 @@ namespace SystemTrayMenu.DataClasses
             IsClicking = false;
             doCloseAfterOpen = false;
 
-            if (clickCount == -1 ||
+            if (!IsPointingToFolder)
+            {
+                if (clickCount == -1 ||
                 (clickCount == 1 && Properties.Settings.Default.OpenItemWithOneClick) ||
                 (clickCount == 2 && !Properties.Settings.Default.OpenItemWithOneClick))
-            {
-                if (!ContainsMenu && Path != null && ResolvedPath != null)
                 {
                     string? workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);
                     Log.ProcessStart(Path, string.Empty, false, workingDirectory, true, ResolvedPath);
@@ -227,12 +182,11 @@ namespace SystemTrayMenu.DataClasses
                     }
                 }
             }
-
-            if (clickCount == -1 ||
+            else
+            {
+                if (clickCount == -1 ||
                 (clickCount == 1 && Properties.Settings.Default.OpenDirectoryWithOneClick) ||
                 (clickCount == 2 && !Properties.Settings.Default.OpenDirectoryWithOneClick))
-            {
-                if (Path != null && ContainsMenu)
                 {
                     Log.ProcessStart(Path);
                     if (!Properties.Settings.Default.StaysOpenWhenItemClicked)

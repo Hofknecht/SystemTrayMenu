@@ -315,7 +315,7 @@ namespace SystemTrayMenu.Handler
                     {
                         ListViewItemData itemData = (ListViewItemData)dgv.Items[iRowKey];
                         RowData trigger = itemData.data;
-                        if (trigger.IsMenuOpen || !trigger.ContainsMenu)
+                        if (trigger.IsMenuOpen || !trigger.IsPointingToFolder)
                         {
                             trigger.OpenItem(out bool doCloseAfterOpen);
                             if (doCloseAfterOpen)

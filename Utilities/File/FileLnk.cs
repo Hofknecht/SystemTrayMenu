@@ -32,7 +32,15 @@ namespace SystemTrayMenu.Utilities
                 staThread.Join();
             }
 
+            // If path cannot be resolved, write log message and give back original path
+            if (string.IsNullOrEmpty(resolvedFilename))
+            {
+                Log.Info($"Resolved path is empty: '{shortcutFilename}'");
+                resolvedFilename = shortcutFilename;
+            }
+
             isFolder = isFolderByShell;
+
             return resolvedFilename;
         }
 

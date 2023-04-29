@@ -31,15 +31,22 @@ namespace SystemTrayMenu.DataClasses
 
     internal struct MenuData
     {
-        public MenuData(int level, RowData? rowDataParent)
+        public MenuData(RowData? rowDataParent)
         {
-            Level = level;
             RowDataParent = rowDataParent;
+            if (rowDataParent != null)
+            {
+                Level = rowDataParent.Level + 1;
+            }
+            else
+            {
+                Level = 0;
+            }
         }
 
         internal int Level { get; }
 
-        internal RowData? RowDataParent { get; set; }
+        internal RowData? RowDataParent { get; }
 
         internal List<RowData> RowDatas { get; set; } = new ();
 
