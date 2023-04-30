@@ -8,20 +8,17 @@ namespace SystemTrayMenu.Helpers
     using System.Diagnostics;
     using System.Reflection;
     using System.Windows;
-    using System.Windows.Controls;
+    using System.Windows.Threading;
+    using H.NotifyIcon.Core;
     using SystemTrayMenu.Helpers.Updater;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
-    using SystemColors = System.Windows.SystemColors;
 
     internal class AppContextMenu
     {
-        public ContextMenu Create()
+        public PopupMenu Create()
         {
-            ContextMenu menu = new()
-            {
-                Background = SystemColors.ControlBrush,
-            };
+            PopupMenu menu = new();
 
             AddItem(menu, "Settings", () => SettingsWindow.ShowSingleInstance());
             AddSeperator(menu);
@@ -38,21 +35,19 @@ namespace SystemTrayMenu.Helpers
             return menu;
         }
 
-        private static void AddSeperator(ContextMenu menu)
+        private static void AddSeperator(PopupMenu menu)
         {
-            menu.Items.Add(new Separator());
+            menu.Items.Add(new PopupMenuSeparator());
         }
 
         private static void AddItem(
-                ContextMenu menu,
+                PopupMenu menu,
                 string text,
                 Action actionClick)
         {
-            menu.Items.Add(new MenuItem()
-                {
-                    Header = text,
-                    Command = new ActionCommand((_) => actionClick()),
-                });
+            Dispatcher dispatcher = Dispatcher.CurrentDispatcher;
+            menu.Items.Add(new PopupMenuItem(
+                text, new ((_, _) => dispatcher.Invoke(actionClick))));
         }
 
         private static void About()

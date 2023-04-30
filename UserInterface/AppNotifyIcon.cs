@@ -5,41 +5,47 @@
 namespace SystemTrayMenu.UserInterface
 {
     using System;
-    using System.Windows;
-    using Hardcodet.Wpf.TaskbarNotification;
+    using System.Windows.Threading;
+    using H.NotifyIcon.Core;
     using SystemTrayMenu.Helpers;
-    using SystemTrayMenu.Utilities;
 
     internal class AppNotifyIcon : IDisposable
     {
-        private readonly TaskbarIcon notifyIcon = new ();
+        private readonly Dispatcher dispatchter = Dispatcher.CurrentDispatcher;
+        private readonly TrayIconWithContextMenu notifyIcon = new ();
 
         public AppNotifyIcon()
         {
-            notifyIcon.ToolTipText = "SystemTrayMenu";
-            notifyIcon.Icon = Config.GetAppIcon();
-            notifyIcon.Visibility = Visibility.Visible;
+            notifyIcon.ToolTip = "SystemTrayMenu";
+            notifyIcon.Icon = Config.GetAppIcon().Handle;
             notifyIcon.ContextMenu = new AppContextMenu().Create();
-            notifyIcon.LeftClickCommand = new ActionCommand((_) => Click?.Invoke());
-            notifyIcon.DoubleClickCommand = new ActionCommand((_) => Click?.Invoke());
+            notifyIcon.MessageWindow.MouseEventReceived += (sender, e) =>
+            {
+                if (e.MouseEvent == MouseEvent.IconLeftMouseUp ||
+                    e.MouseEvent == MouseEvent.IconLeftDoubleClick)
+                {
+                    dispatchter.Invoke(() => Click?.Invoke());
+                }
+            };
+            notifyIcon.Create();
         }
 
         public event Action? Click;
 
         public void Dispose()
         {
-            notifyIcon.Icon = null;
+            notifyIcon.Icon = IntPtr.Zero;
             notifyIcon.Dispose();
         }
 
         public void LoadingStart()
         {
-            notifyIcon.Icon = Resources.StaticResources.LoadingIcon;
+            notifyIcon.Icon = Resources.StaticResources.LoadingIcon.Handle;
         }
 
         public void LoadingStop()
         {
-            notifyIcon.Icon = Config.GetAppIcon();
+            notifyIcon.Icon = Config.GetAppIcon().Handle;
         }
     }
 }
