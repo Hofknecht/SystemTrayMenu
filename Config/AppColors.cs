@@ -4,80 +4,80 @@
 
 namespace SystemTrayMenu
 {
-    using System.Drawing;
+    using System.Windows.Media;
 
     internal static class AppColors
     {
-        public static Color Arrow { get; internal set; }
+        public static SolidColorBrush Arrow { get; internal set; } = new ();
 
-        public static Color ArrowHoverBackground { get; internal set; }
+        public static SolidColorBrush ArrowHoverBackground { get; internal set; } = new ();
 
-        public static Color ArrowHover { get; internal set; }
+        public static SolidColorBrush ArrowHover { get; internal set; } = new ();
 
-        public static Color ArrowClick { get; internal set; }
+        public static SolidColorBrush ArrowClick { get; internal set; } = new ();
 
-        public static Color ArrowClickBackground { get; internal set; }
+        public static SolidColorBrush ArrowClickBackground { get; internal set; } = new ();
 
-        public static Color SliderArrowsAndTrackHover { get; internal set; }
+        public static SolidColorBrush SliderArrowsAndTrackHover { get; internal set; } = new ();
 
-        public static Color Slider { get; internal set; }
+        public static SolidColorBrush Slider { get; internal set; } = new ();
 
-        public static Color SliderHover { get; internal set; }
+        public static SolidColorBrush SliderHover { get; internal set; } = new ();
 
-        public static Color SliderDragging { get; internal set; }
+        public static SolidColorBrush SliderDragging { get; internal set; } = new ();
 
-        public static Color ScrollbarBackground { get; internal set; }
+        public static SolidColorBrush ScrollbarBackground { get; internal set; } = new ();
 
-        public static Color ArrowDarkMode { get; internal set; }
+        public static SolidColorBrush ArrowDarkMode { get; internal set; } = new ();
 
-        public static Color ArrowHoverBackgroundDarkMode { get; internal set; }
+        public static SolidColorBrush ArrowHoverBackgroundDarkMode { get; internal set; } = new ();
 
-        public static Color ArrowHoverDarkMode { get; internal set; }
+        public static SolidColorBrush ArrowHoverDarkMode { get; internal set; } = new ();
 
-        public static Color ArrowClickDarkMode { get; internal set; }
+        public static SolidColorBrush ArrowClickDarkMode { get; internal set; } = new ();
 
-        public static Color ArrowClickBackgroundDarkMode { get; internal set; }
+        public static SolidColorBrush ArrowClickBackgroundDarkMode { get; internal set; } = new ();
 
-        public static Color SliderArrowsAndTrackHoverDarkMode { get; internal set; }
+        public static SolidColorBrush SliderArrowsAndTrackHoverDarkMode { get; internal set; } = new ();
 
-        public static Color SliderDarkMode { get; internal set; }
+        public static SolidColorBrush SliderDarkMode { get; internal set; } = new ();
 
-        public static Color SliderHoverDarkMode { get; internal set; }
+        public static SolidColorBrush SliderHoverDarkMode { get; internal set; } = new ();
 
-        public static Color SliderDraggingDarkMode { get; internal set; }
+        public static SolidColorBrush SliderDraggingDarkMode { get; internal set; } = new ();
 
-        public static Color ScrollbarBackgroundDarkMode { get; internal set; }
+        public static SolidColorBrush ScrollbarBackgroundDarkMode { get; internal set; } = new ();
 
-        public static Color SelectedItem { get; set; }
+        public static SolidColorBrush SelectedItem { get; internal set; } = new ();
 
-        public static Color DarkModeSelecetedItem { get; set; }
+        public static SolidColorBrush DarkModeSelecetedItem { get; internal set; } = new ();
 
-        public static Color SelectedItemBorder { get; set; }
+        public static SolidColorBrush SelectedItemBorder { get; internal set; } = new ();
 
-        public static Color DarkModeSelectedItemBorder { get; set; }
+        public static SolidColorBrush DarkModeSelectedItemBorder { get; internal set; } = new ();
 
-        public static Color OpenFolder { get; set; }
+        public static SolidColorBrush OpenFolder { get; internal set; } = new ();
 
-        public static Color DarkModeOpenFolder { get; set; }
+        public static SolidColorBrush DarkModeOpenFolder { get; internal set; } = new ();
 
-        public static Color OpenFolderBorder { get; set; }
+        public static SolidColorBrush OpenFolderBorder { get; internal set; } = new ();
 
-        public static Color DarkModeOpenFolderBorder { get; set; }
+        public static SolidColorBrush DarkModeOpenFolderBorder { get; internal set; } = new ();
 
-        public static Color Background { get; set; }
+        public static SolidColorBrush Background { get; internal set; } = new ();
 
-        public static Color DarkModeBackground { get; set; }
+        public static SolidColorBrush DarkModeBackground { get; internal set; } = new ();
 
-        public static Color BackgroundBorder { get; set; }
+        public static SolidColorBrush BackgroundBorder { get; internal set; } = new ();
 
-        public static Color DarkModeBackgroundBorder { get; set; }
+        public static SolidColorBrush DarkModeBackgroundBorder { get; internal set; } = new ();
 
-        public static Color SearchField { get; set; }
+        public static SolidColorBrush SearchField { get; internal set; } = new ();
 
-        public static Color DarkModeSearchField { get; set; }
+        public static SolidColorBrush DarkModeSearchField { get; internal set; } = new ();
 
-        public static Color Icons { get; set; }
+        public static SolidColorBrush Icons { get; internal set; } = new ();
 
-        public static Color DarkModeIcons { get; set; }
+        public static SolidColorBrush DarkModeIcons { get; internal set; } = new ();
     }
 }

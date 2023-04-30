@@ -4,87 +4,26 @@
 
 namespace SystemTrayMenu
 {
-    using System.Drawing;
+    using System.Windows.Media;
 
     internal static class MenuDefines
     {
         internal const int MenusMax = 50;
         internal const int LengthMax = 37;
-        internal const int Scrollspeed = 3;
 
-        public static Color ColorSelectedItem
-        {
-            get
-            {
-                if (Config.IsDarkMode())
-                {
-                    return AppColors.DarkModeSelecetedItem;
-                }
-                else
-                {
-                    return AppColors.SelectedItem;
-                }
-            }
-        }
+        public static SolidColorBrush ColorSelectedItem =>
+            Config.IsDarkMode() ? AppColors.DarkModeSelecetedItem : AppColors.SelectedItem;
 
-        public static Color ColorSelectedItemBorder
-        {
-            get
-            {
-                if (Config.IsDarkMode())
-                {
-                    return AppColors.DarkModeSelectedItemBorder;
-                }
-                else
-                {
-                    return AppColors.SelectedItemBorder;
-                }
-            }
-        }
+        public static SolidColorBrush ColorSelectedItemBorder =>
+            Config.IsDarkMode() ? AppColors.DarkModeSelectedItemBorder : AppColors.SelectedItemBorder;
 
-        public static Color ColorOpenFolder
-        {
-            get
-            {
-                if (Config.IsDarkMode())
-                {
-                    return AppColors.DarkModeOpenFolder;
-                }
-                else
-                {
-                    return AppColors.OpenFolder;
-                }
-            }
-        }
+        public static SolidColorBrush ColorOpenFolder =>
+            Config.IsDarkMode() ? AppColors.DarkModeOpenFolder : AppColors.OpenFolder;
 
-        public static Color ColorOpenFolderBorder
-        {
-            get
-            {
-                if (Config.IsDarkMode())
-                {
-                    return AppColors.DarkModeOpenFolderBorder;
-                }
-                else
-                {
-                    return AppColors.OpenFolderBorder;
-                }
-            }
-        }
+        public static SolidColorBrush ColorOpenFolderBorder =>
+            Config.IsDarkMode() ? AppColors.DarkModeOpenFolderBorder : AppColors.OpenFolderBorder;
 
-        public static Color ColorIcons
-        {
-            get
-            {
-                if (Config.IsDarkMode())
-                {
-                    return AppColors.DarkModeIcons;
-                }
-                else
-                {
-                    return AppColors.Icons;
-                }
-            }
-        }
+        public static SolidColorBrush ColorIcons =>
+            Config.IsDarkMode() ? AppColors.DarkModeIcons : AppColors.Icons;
     }
 }

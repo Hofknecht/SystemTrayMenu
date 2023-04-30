@@ -5,14 +5,15 @@
 namespace SystemTrayMenu
 {
     using System;
-    using System.Drawing;
     using System.IO;
     using System.Windows;
+    using System.Windows.Media;
     using Microsoft.Win32;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Utilities.IconReader;
+    using Icon = System.Drawing.Icon;
 
     public static class Config
     {
@@ -195,220 +196,220 @@ namespace SystemTrayMenu
             bool resetDefaults = false;
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSelectedItem;
-            colorAndCode.Color = Color.FromArgb(204, 232, 255);
+            colorAndCode.Color = Color.FromRgb(204, 232, 255);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSelectedItem = colorAndCode.HtmlColorCode;
-            AppColors.SelectedItem = colorAndCode.Color;
+            AppColors.SelectedItem = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeSelecetedItem;
-            colorAndCode.Color = Color.FromArgb(51, 51, 51);
+            colorAndCode.Color = Color.FromRgb(51, 51, 51);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorDarkModeSelecetedItem = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeSelecetedItem = colorAndCode.Color;
+            AppColors.DarkModeSelecetedItem = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSelectedItemBorder;
-            colorAndCode.Color = Color.FromArgb(153, 209, 255);
+            colorAndCode.Color = Color.FromRgb(153, 209, 255);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSelectedItemBorder = colorAndCode.HtmlColorCode;
-            AppColors.SelectedItemBorder = colorAndCode.Color;
+            AppColors.SelectedItemBorder = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeSelectedItemBorder;
-            colorAndCode.Color = Color.FromArgb(20, 29, 75);
+            colorAndCode.Color = Color.FromRgb(20, 29, 75);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorDarkModeSelectedItemBorder = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeSelectedItemBorder = colorAndCode.Color;
+            AppColors.DarkModeSelectedItemBorder = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorOpenFolder;
-            colorAndCode.Color = Color.FromArgb(194, 245, 222);
+            colorAndCode.Color = Color.FromRgb(194, 245, 222);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorOpenFolder = colorAndCode.HtmlColorCode;
-            AppColors.OpenFolder = colorAndCode.Color;
+            AppColors.OpenFolder = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeOpenFolder;
-            colorAndCode.Color = Color.FromArgb(20, 65, 42);
+            colorAndCode.Color = Color.FromRgb(20, 65, 42);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorDarkModeOpenFolder = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeOpenFolder = colorAndCode.Color;
+            AppColors.DarkModeOpenFolder = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorOpenFolderBorder;
-            colorAndCode.Color = Color.FromArgb(153, 255, 165);
+            colorAndCode.Color = Color.FromRgb(153, 255, 165);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorOpenFolderBorder = colorAndCode.HtmlColorCode;
-            AppColors.OpenFolderBorder = colorAndCode.Color;
+            AppColors.OpenFolderBorder = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeOpenFolderBorder;
-            colorAndCode.Color = Color.FromArgb(20, 75, 85);
+            colorAndCode.Color = Color.FromRgb(20, 75, 85);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorDarkModeOpenFolderBorder = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeOpenFolderBorder = colorAndCode.Color;
+            AppColors.DarkModeOpenFolderBorder = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorIcons;
-            colorAndCode.Color = Color.FromArgb(149, 160, 166);
+            colorAndCode.Color = Color.FromRgb(149, 160, 166);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorIcons = colorAndCode.HtmlColorCode;
-            AppColors.Icons = colorAndCode.Color;
+            AppColors.Icons = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeIcons;
-            colorAndCode.Color = Color.FromArgb(149, 160, 166);
+            colorAndCode.Color = Color.FromRgb(149, 160, 166);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorDarkModeIcons = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeIcons = colorAndCode.Color;
+            AppColors.DarkModeIcons = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSearchField;
-            colorAndCode.Color = Color.FromArgb(255, 255, 255);
+            colorAndCode.Color = Color.FromRgb(255, 255, 255);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSearchField = colorAndCode.HtmlColorCode;
-            AppColors.SearchField = colorAndCode.Color;
+            AppColors.SearchField = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeSearchField;
-            colorAndCode.Color = Color.FromArgb(25, 25, 25);
+            colorAndCode.Color = Color.FromRgb(25, 25, 25);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorDarkModeSearchField = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeSearchField = colorAndCode.Color;
+            AppColors.DarkModeSearchField = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorBackground;
-            colorAndCode.Color = Color.FromArgb(255, 255, 255);
+            colorAndCode.Color = Color.FromRgb(255, 255, 255);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorBackground = colorAndCode.HtmlColorCode;
-            AppColors.Background = colorAndCode.Color;
+            AppColors.Background = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeBackground;
-            colorAndCode.Color = Color.FromArgb(32, 32, 32);
+            colorAndCode.Color = Color.FromRgb(32, 32, 32);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorDarkModeBackground = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeBackground = colorAndCode.Color;
+            AppColors.DarkModeBackground = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorBackgroundBorder;
-            colorAndCode.Color = Color.FromArgb(0, 0, 0);
+            colorAndCode.Color = Color.FromRgb(0, 0, 0);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorBackgroundBorder = colorAndCode.HtmlColorCode;
-            AppColors.BackgroundBorder = colorAndCode.Color;
+            AppColors.BackgroundBorder = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorDarkModeBackgroundBorder;
-            colorAndCode.Color = Color.FromArgb(0, 0, 0);
+            colorAndCode.Color = Color.FromRgb(0, 0, 0);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorDarkModeBackgroundBorder = colorAndCode.HtmlColorCode;
-            AppColors.DarkModeBackgroundBorder = colorAndCode.Color;
+            AppColors.DarkModeBackgroundBorder = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrow;
-            colorAndCode.Color = Color.FromArgb(96, 96, 96);
+            colorAndCode.Color = Color.FromRgb(96, 96, 96);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrow = colorAndCode.HtmlColorCode;
-            AppColors.Arrow = colorAndCode.Color;
+            AppColors.Arrow = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowHoverBackground;
-            colorAndCode.Color = Color.FromArgb(218, 218, 218);
+            colorAndCode.Color = Color.FromRgb(218, 218, 218);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowHoverBackground = colorAndCode.HtmlColorCode;
-            AppColors.ArrowHoverBackground = colorAndCode.Color;
+            AppColors.ArrowHoverBackground = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowHover;
-            colorAndCode.Color = Color.FromArgb(0, 0, 0);
+            colorAndCode.Color = Color.FromRgb(0, 0, 0);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowHover = colorAndCode.HtmlColorCode;
-            AppColors.ArrowHover = colorAndCode.Color;
+            AppColors.ArrowHover = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowClick;
-            colorAndCode.Color = Color.FromArgb(255, 255, 255);
+            colorAndCode.Color = Color.FromRgb(255, 255, 255);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowClick = colorAndCode.HtmlColorCode;
-            AppColors.ArrowClick = colorAndCode.Color;
+            AppColors.ArrowClick = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowClickBackground;
-            colorAndCode.Color = Color.FromArgb(96, 96, 96);
+            colorAndCode.Color = Color.FromRgb(96, 96, 96);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowClickBackground = colorAndCode.HtmlColorCode;
-            AppColors.ArrowClickBackground = colorAndCode.Color;
+            AppColors.ArrowClickBackground = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSliderArrowsAndTrackHover;
-            colorAndCode.Color = Color.FromArgb(192, 192, 192);
+            colorAndCode.Color = Color.FromRgb(192, 192, 192);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSliderArrowsAndTrackHover = colorAndCode.HtmlColorCode;
-            AppColors.SliderArrowsAndTrackHover = colorAndCode.Color;
+            AppColors.SliderArrowsAndTrackHover = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSlider;
-            colorAndCode.Color = Color.FromArgb(205, 205, 205);
+            colorAndCode.Color = Color.FromRgb(205, 205, 205);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSlider = colorAndCode.HtmlColorCode;
-            AppColors.Slider = colorAndCode.Color;
+            AppColors.Slider = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSliderHover;
-            colorAndCode.Color = Color.FromArgb(166, 166, 166);
+            colorAndCode.Color = Color.FromRgb(166, 166, 166);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSliderHover = colorAndCode.HtmlColorCode;
-            AppColors.SliderHover = colorAndCode.Color;
+            AppColors.SliderHover = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSliderDragging;
-            colorAndCode.Color = Color.FromArgb(96, 96, 96);
+            colorAndCode.Color = Color.FromRgb(96, 96, 96);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSliderDragging = colorAndCode.HtmlColorCode;
-            AppColors.SliderDragging = colorAndCode.Color;
+            AppColors.SliderDragging = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorScrollbarBackground;
-            colorAndCode.Color = Color.FromArgb(240, 240, 240);
+            colorAndCode.Color = Color.FromRgb(240, 240, 240);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorScrollbarBackground = colorAndCode.HtmlColorCode;
-            AppColors.ScrollbarBackground = colorAndCode.Color;
+            AppColors.ScrollbarBackground = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowDarkMode;
-            colorAndCode.Color = Color.FromArgb(103, 103, 103);
+            colorAndCode.Color = Color.FromRgb(103, 103, 103);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.ArrowDarkMode = colorAndCode.Color;
+            AppColors.ArrowDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowHoverBackgroundDarkMode;
-            colorAndCode.Color = Color.FromArgb(55, 55, 55);
+            colorAndCode.Color = Color.FromRgb(55, 55, 55);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowHoverBackgroundDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.ArrowHoverBackgroundDarkMode = colorAndCode.Color;
+            AppColors.ArrowHoverBackgroundDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowHoverDarkMode;
-            colorAndCode.Color = Color.FromArgb(103, 103, 103);
+            colorAndCode.Color = Color.FromRgb(103, 103, 103);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowHoverDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.ArrowHoverDarkMode = colorAndCode.Color;
+            AppColors.ArrowHoverDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowClickDarkMode;
-            colorAndCode.Color = Color.FromArgb(23, 23, 23);
+            colorAndCode.Color = Color.FromRgb(23, 23, 23);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowClickDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.ArrowClickDarkMode = colorAndCode.Color;
+            AppColors.ArrowClickDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorArrowClickBackgroundDarkMode;
-            colorAndCode.Color = Color.FromArgb(166, 166, 166);
+            colorAndCode.Color = Color.FromRgb(166, 166, 166);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowClickBackgroundDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.ArrowClickBackgroundDarkMode = colorAndCode.Color;
+            AppColors.ArrowClickBackgroundDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode;
-            colorAndCode.Color = Color.FromArgb(77, 77, 77);
+            colorAndCode.Color = Color.FromRgb(77, 77, 77);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.SliderArrowsAndTrackHoverDarkMode = colorAndCode.Color;
+            AppColors.SliderArrowsAndTrackHoverDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSliderDarkMode;
-            colorAndCode.Color = Color.FromArgb(77, 77, 77);
+            colorAndCode.Color = Color.FromRgb(77, 77, 77);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSliderDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.SliderDarkMode = colorAndCode.Color;
+            AppColors.SliderDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSliderHoverDarkMode;
-            colorAndCode.Color = Color.FromArgb(122, 122, 122);
+            colorAndCode.Color = Color.FromRgb(122, 122, 122);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSliderHoverDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.SliderHoverDarkMode = colorAndCode.Color;
+            AppColors.SliderHoverDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSliderDraggingDarkMode;
-            colorAndCode.Color = Color.FromArgb(166, 166, 166);
+            colorAndCode.Color = Color.FromRgb(166, 166, 166);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorSliderDraggingDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.SliderDraggingDarkMode = colorAndCode.Color;
+            AppColors.SliderDraggingDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorScrollbarBackgroundDarkMode;
-            colorAndCode.Color = Color.FromArgb(23, 23, 23);
+            colorAndCode.Color = Color.FromRgb(23, 23, 23);
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorScrollbarBackgroundDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.ScrollbarBackgroundDarkMode = colorAndCode.Color;
+            AppColors.ScrollbarBackgroundDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             if (save && resetDefaults)
             {
@@ -465,19 +466,19 @@ namespace SystemTrayMenu
             ref ColorAndCode colorAndCode,
             ref bool resetDefaults)
         {
-            Color? color;
             try
             {
-                color = (Color?)colorConverter.ConvertFromString(colorAndCode.HtmlColorCode);
+                Color? color = (Color?)colorConverter.ConvertFromInvariantString(colorAndCode.HtmlColorCode);
                 if (color != null)
                 {
-                    colorAndCode.Color = (Color)color;
+                    colorAndCode.Color = color.Value;
                 }
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 Log.Warn($"HtmlColorCode {colorAndCode.HtmlColorCode}", ex);
-                colorAndCode.HtmlColorCode = ColorTranslator.ToHtml(colorAndCode.Color);
+                colorAndCode.HtmlColorCode = System.Drawing.ColorTranslator.ToHtml(
+                    System.Drawing.Color.FromArgb(colorAndCode.Color.R, colorAndCode.Color.G, colorAndCode.Color.B));
                 resetDefaults = true;
             }
         }
@@ -485,7 +486,7 @@ namespace SystemTrayMenu
         /// <summary>
         /// Helper class to process color settings.
         /// </summary>
-        private struct ColorAndCode
+        internal struct ColorAndCode
         {
             public Color Color { get; set; }
 

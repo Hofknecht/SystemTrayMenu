@@ -108,11 +108,6 @@ namespace SystemTrayMenu.Utilities
                         CultureInfo.InvariantCulture);
         }
 
-        internal static SolidColorBrush ToSolidColorBrush(this System.Drawing.Color color)
-        {
-            return new SolidColorBrush(Color.FromArgb(color.A, color.R, color.G, color.B));
-        }
-
         internal static SolidColorBrush SolidColorBrushFromString(string value)
         {
             return new SolidColorBrush((Color)System.Windows.Media.ColorConverter.ConvertFromString(value));

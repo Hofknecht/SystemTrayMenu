@@ -6,8 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        xmlns:utils="clr-namespace:SystemTrayMenu.Utilities"
-        xmlns:business="clr-namespace:SystemTrayMenu.Business"
+        xmlns:stm="clr-namespace:SystemTrayMenu"
         xmlns:local="clr-namespace:SystemTrayMenu.UserInterface"
         x:Class="SystemTrayMenu.UserInterface.Menu"
         mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False" SnapsToDevicePixels="True" UseLayoutRounding="True"
@@ -126,7 +125,7 @@
                                     </Border>
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="BorderBrush" Value="{x:Static business:Menus.BrushSelectedItemBorder}" TargetName="Border" />
+                                            <Setter Property="BorderBrush" Value="{x:Static stm:MenuDefines.ColorSelectedItemBorder}" TargetName="Border" />
                                             <Setter Property="Background" Value="LightGray" TargetName="Border" />
                                             <Setter Property="Opacity" Value="0.9" TargetName="Border" />
                                         </Trigger>

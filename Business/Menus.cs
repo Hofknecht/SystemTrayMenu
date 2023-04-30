@@ -187,8 +187,6 @@ namespace SystemTrayMenu.Business
             Closing,
         }
 
-        public static SolidColorBrush BrushSelectedItemBorder => MenuDefines.ColorSelectedItemBorder.ToSolidColorBrush();
-
         private Menu? MainMenu => menus[0];
 
         private bool IsMainUsable => MainMenu?.IsUsable ?? false;
@@ -678,20 +676,20 @@ namespace SystemTrayMenu.Business
                 RowData rowData = itemData.data;
                 if (rowData.IsClicking)
                 {
-                    itemData.BorderBrush = MenuDefines.ColorIcons.ToSolidColorBrush();
-                    itemData.BackgroundBrush = MenuDefines.ColorSelectedItem.ToSolidColorBrush();
+                    itemData.BorderBrush = MenuDefines.ColorIcons;
+                    itemData.BackgroundBrush = MenuDefines.ColorSelectedItem;
                     dgv.SelectedItems.Add(itemData);
                 }
                 else if (rowData.IsMenuOpen)
                 {
-                    itemData.BorderBrush = MenuDefines.ColorOpenFolderBorder.ToSolidColorBrush();
-                    itemData.BackgroundBrush = MenuDefines.ColorOpenFolder.ToSolidColorBrush();
+                    itemData.BorderBrush = MenuDefines.ColorOpenFolderBorder;
+                    itemData.BackgroundBrush = MenuDefines.ColorOpenFolder;
                     dgv.SelectedItems.Add(itemData);
                 }
                 else if (rowData.IsSelected)
                 {
-                    itemData.BorderBrush = MenuDefines.ColorSelectedItemBorder.ToSolidColorBrush();
-                    itemData.BackgroundBrush = MenuDefines.ColorSelectedItem.ToSolidColorBrush();
+                    itemData.BorderBrush = MenuDefines.ColorSelectedItemBorder;
+                    itemData.BackgroundBrush = MenuDefines.ColorSelectedItem;
                     dgv.SelectedItems.Add(itemData);
                 }
                 else
