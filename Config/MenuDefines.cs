@@ -11,6 +11,9 @@ namespace SystemTrayMenu
         internal const int MenusMax = 50;
         internal const int LengthMax = 37;
 
+        public static SolidColorBrush ColorForeground =>
+            Config.IsDarkMode() ? Brushes.White : Brushes.Black;
+
         public static SolidColorBrush ColorSelectedItem =>
             Config.IsDarkMode() ? AppColors.DarkModeSelecetedItem : AppColors.SelectedItem;
 
@@ -25,5 +28,14 @@ namespace SystemTrayMenu
 
         public static SolidColorBrush ColorIcons =>
             Config.IsDarkMode() ? AppColors.DarkModeIcons : AppColors.Icons;
+
+        public static SolidColorBrush ColorBackground =>
+            Config.IsDarkMode() ? AppColors.DarkModeBackground : AppColors.Background;
+
+        public static SolidColorBrush ColorBackgroundBorder =>
+            Config.IsDarkMode() ? AppColors.DarkModeBackgroundBorder : AppColors.BackgroundBorder;
+
+        public static SolidColorBrush ColorSearchField =>
+            Config.IsDarkMode() ? AppColors.DarkModeSearchField : AppColors.SearchField;
     }
 }

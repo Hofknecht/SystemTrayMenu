@@ -193,34 +193,6 @@ namespace SystemTrayMenu.UserInterface
                 Command = new ActionCommand((_) => textBoxSearch.SelectAll()),
             });
 
-            SolidColorBrush foreColor = new(Colors.Black);
-            SolidColorBrush backColor = AppColors.Background;
-            SolidColorBrush backColorSearch = AppColors.SearchField;
-            SolidColorBrush backgroundBorder = AppColors.BackgroundBorder;
-
-            if (Config.IsDarkMode())
-            {
-                foreColor = new (Colors.White);
-                backColor = AppColors.DarkModeBackground;
-                backColorSearch = AppColors.DarkModeSearchField;
-                backgroundBorder = AppColors.DarkModeBackgroundBorder;
-                Resources["ic_fluent_svgColor"] = WPFExtensions.SolidColorBrushFromString(Settings.Default.ColorDarkModeIcons);
-            }
-            else
-            {
-                Resources["ic_fluent_svgColor"] = WPFExtensions.SolidColorBrushFromString(Settings.Default.ColorIcons);
-            }
-
-            labelTitle.Foreground = foreColor;
-            textBoxSearch.Foreground = foreColor;
-            dgv.Foreground = foreColor;
-            labelStatus.Foreground = MenuDefines.ColorIcons;
-
-            windowFrame.BorderBrush = backgroundBorder;
-            windowFrame.Background = backColor;
-            searchPanel.Background = backColorSearch;
-            panelLine.Background = AppColors.Icons;
-
             dgv.GotFocus += (_, _) => FocusTextBox();
 #if TODO // Misc MouseEvents
             dgv.MouseEnter += ControlsMouseEnter;

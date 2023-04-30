@@ -22,7 +22,7 @@ namespace SystemTrayMenu.Handler
         private ListViewItemData? dgvItemData;
 #if TODO // Misc MouseEvents
         private ListView? dgvTmp;
-        private int rowIndexTmp;
+        private ListViewItemData rowItemDataTmp;
 #endif
         private bool alreadyOpened;
 
@@ -68,7 +68,7 @@ namespace SystemTrayMenu.Handler
             else
             {
                 dgvTmp = dgv;
-                rowIndexTmp = dgv.IndexOfSenderItem(item);
+                rowItemDataTmp = itemData;
             }
 #endif
         }
@@ -134,7 +134,7 @@ namespace SystemTrayMenu.Handler
                     MouseActive = true;
                     if (dgvTmp != null)
                     {
-                        MouseEnter(dgvTmp, rowIndexTmp);
+                        MouseEnter(dgvTmp, rowItemDataTmp);
                     }
 
                     mouseMoveEvents = 0;
