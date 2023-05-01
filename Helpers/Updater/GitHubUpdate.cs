@@ -74,10 +74,8 @@ namespace SystemTrayMenu.Helpers.Updater
 
             try
             {
-                using HttpResponseMessage response = client.GetAsync(urlGithubReleases).Result;
-                using HttpContent content = response.Content;
-                string responseString = content.ReadAsStringAsync().Result;
-                releases = responseString.FromJson<List<Dictionary<string, object>>>();
+                string response = client.GetStringAsync(urlGithubReleases).Result;
+                releases = response.FromJson<List<Dictionary<string, object>>>();
             }
             catch (Exception ex)
             {

@@ -33,7 +33,7 @@ namespace SystemTrayMenu.Business
         private readonly List<BackgroundWorker> workersSubMenu = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
         private readonly KeyboardInput keyboardInput;
-        private readonly JoystickHelper joystickHelper;
+        private readonly JoystickHelper? joystickHelper;
         private readonly List<FileSystemWatcher> watchers = new();
         private readonly List<EventArgs> watcherHistory = new();
         private readonly DispatcherTimer timerShowProcessStartedAsLoadingIcon = new();
@@ -118,8 +118,17 @@ namespace SystemTrayMenu.Business
             dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave; // event moved to Menu.CellMouseLeave()
 #endif
 
-            joystickHelper = new();
-            joystickHelper.KeyPressed += (key, modifiers) => MainMenu?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null!, key, modifiers });
+            if (Settings.Default.SupportGamepad)
+            {
+                joystickHelper = new();
+                joystickHelper.KeyPressed += (key, modifiers) =>
+                {
+                    if (IsMainUsable)
+                    {
+                        MainMenu?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null!, key, modifiers });
+                    }
+                };
+            }
 
             timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
             timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
@@ -206,7 +215,7 @@ namespace SystemTrayMenu.Business
 
             waitToOpenMenu.Dispose();
             keyboardInput.Dispose();
-            joystickHelper.Dispose();
+            joystickHelper?.Dispose();
             timerShowProcessStartedAsLoadingIcon.Stop();
             timerStillActiveCheck.Stop();
             waitLeave.Stop();
@@ -282,7 +291,6 @@ namespace SystemTrayMenu.Business
                 else
                 {
                     openCloseState = OpenCloseState.Opening;
-                    joystickHelper.Enable();
                     StartWorker();
                 }
             }
@@ -798,7 +806,6 @@ namespace SystemTrayMenu.Business
             });
 
             Config.AlwaysOpenByPin = false;
-            joystickHelper.Disable();
         }
 
         private void GetScreenBounds(out Rect screenBounds, out bool useCustomLocation, out StartLocation startLocation)

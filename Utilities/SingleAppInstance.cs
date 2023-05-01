@@ -5,12 +5,9 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
-    using System.Windows.Input;
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
-    using WindowsInput;
 
     internal static class SingleAppInstance
     {

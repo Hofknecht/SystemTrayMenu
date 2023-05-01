@@ -42,7 +42,7 @@ namespace SystemTrayMenu
 
             if (Settings.Default.CheckForUpdates)
             {
-                Dispatcher.InvokeAsync(
+                _ = Dispatcher.InvokeAsync(
                     () => GitHubUpdate.ActivateNewVersionFormOrCheckForUpdates(showWhenUpToDate: false),
                     DispatcherPriority.ApplicationIdle);
             }

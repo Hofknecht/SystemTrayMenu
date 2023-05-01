@@ -138,9 +138,7 @@ namespace SystemTrayMenu.Helpers
                     Directory.CreateDirectory(pathToStoreIcons);
                 }
 
-                using HttpResponseMessage response = client.GetAsync(urlGoogleIconDownload).Result;
-                using HttpContent content = response.Content;
-                Stream stream = content.ReadAsStreamAsync().Result;
+                Stream stream = client.GetStreamAsync(urlGoogleIconDownload).Result;
                 using var fileStream = File.Create(pathIconPng);
                 stream.Seek(0, SeekOrigin.Begin);
                 stream.CopyTo(fileStream);
