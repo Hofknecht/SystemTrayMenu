@@ -388,7 +388,7 @@ namespace SystemTrayMenu.Handler
                     {
                         Menu? nextMenu = menus[iMenuKey + 1];
                         bool nextMenuLocationIsLeft = nextMenu != null && menu != null && nextMenu.Location.X < menu.Location.X;
-                        Menu? previousMenu = menus[iMenuKey - 1];
+                        Menu? previousMenu = iMenuKey > 0 ? menus[iMenuKey - 1] : null;
                         bool previousMenuLocationIsRight = iMenuKey > 0 && previousMenu != null && menu != null && menu.Location.X < previousMenu.Location.X;
                         if (nextMenuLocationIsLeft || previousMenuLocationIsRight)
                         {
