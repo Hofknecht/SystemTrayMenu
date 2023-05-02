@@ -325,6 +325,8 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool IsUsable => Visibility == Visibility.Visible && !isFading && !IsClosed;
 
+        public override string ToString() => nameof(Menu) + " L" + Level.ToString() + ": " + Title;
+
         internal void ResetSearchText()
         {
             textBoxSearch.Text = string.Empty;
