@@ -125,21 +125,22 @@ namespace SystemTrayMenu.Business
                 {
                     if (IsMainUsable)
                     {
-                        MainMenu?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { null!, key, modifiers });
+                        Menu? menu = AsEnumerable.FirstOrDefault(m => m != null && (m.IsActive || m.IsKeyboardFocusWithin), MainMenu);
+                        menu?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { menu, key, modifiers });
                     }
                 };
             }
 
+            // Timer to check after activation if the application lost focus and close/fadeout windows again
             timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
             timerStillActiveCheck.Tick += (sender, e) => StillActiveTick();
             void StillActiveTick()
             {
+                timerStillActiveCheck.Stop();
                 if (!IsActive())
                 {
                     FadeHalfOrOutIfNeeded();
                 }
-
-                timerStillActiveCheck.Stop();
             }
 
             waitLeave.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilCloses);
@@ -453,7 +454,7 @@ namespace SystemTrayMenu.Business
 
         private bool IsActive()
         {
-            return menus.Where(m => m != null && m.IsActive).FirstOrDefault() != null || (App.TaskbarLogo?.IsActive ?? false);
+            return menus.Where(m => m != null && (m.IsActive || m.IsKeyboardFocusWithin)).FirstOrDefault() != null || (App.TaskbarLogo?.IsActive ?? false);
         }
 
         private Menu Create(MenuData menuData, string path)
@@ -526,18 +527,14 @@ namespace SystemTrayMenu.Business
             menu.Activated += (sender, e) => Activated();
             void Activated()
             {
-                if (IsActive() && IsMainUsable)
+                // Bring transparent menus back
+                foreach (Menu? menu in menus.Where(m => m != null && m.Opacity != 1D))
                 {
-                    timerStillActiveCheck.Stop();
-
-                    // Bring transparent menus back
-                    foreach (Menu? menu in menus.Where(m => m != null && m.Opacity != 1D))
-                    {
-                        menu!.ActivateWithFade();
-                    }
-
-                    timerStillActiveCheck.Start();
+                    menu!.ActivateWithFade();
                 }
+
+                timerStillActiveCheck.Stop();
+                timerStillActiveCheck.Start();
             }
 
             menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged((Menu)sender);

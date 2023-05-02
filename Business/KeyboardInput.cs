@@ -71,10 +71,8 @@ namespace SystemTrayMenu.Handler
             iMenuKey = 0;
         }
 
-        internal void CmdKeyProcessed(Menu? sender, Key key, ModifierKeys modifiers)
+        internal void CmdKeyProcessed(Menu sender, Key key, ModifierKeys modifiers)
         {
-            sender ??= menus[iMenuKey];
-
             switch (key)
             {
                 case Key.Enter:

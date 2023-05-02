@@ -172,9 +172,12 @@ namespace SystemTrayMenu.Handler
                 Menu menu = (Menu)dgv.GetParentWindow();
                 rowData.Level = menu.Level;
 
-                CloseMenu?.Invoke(rowData.Level + 1);
-
+                // Give the opening window focus
+                // if closing window lose focus no window would have focus any more
+                menu?.Activate();
                 menu?.FocusTextBox();
+
+                CloseMenu?.Invoke(rowData.Level + 1);
 
                 if (rowData.IsPointingToFolder &&
                     rowData.Level + 1 < MenuDefines.MenusMax)
