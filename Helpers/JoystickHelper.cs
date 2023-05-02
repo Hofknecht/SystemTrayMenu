@@ -15,6 +15,9 @@ namespace SystemTrayMenu.Helpers
     public class JoystickHelper : IDisposable
     {
         private readonly Dispatcher dispatchter = Dispatcher.CurrentDispatcher;
+#if COLLECTUSAGES
+        private readonly System.Collections.Generic.Dictionary<Usage, int> usagesCollection = new();
+#endif
         private readonly System.Timers.Timer pollGamepad = new();
         private HidDevice? connectedDevice;
 
@@ -102,6 +105,7 @@ namespace SystemTrayMenu.Helpers
 
                                     try
                                     {
+                                        bool wasPressedButton1 = false;
                                         bool wasPressedButton2 = false;
                                         bool wasPressedPadUp = false;
                                         bool wasPressedPadDown = false;
@@ -121,16 +125,31 @@ namespace SystemTrayMenu.Helpers
                                                 var dataValue = inputParser.GetValue(index);
                                                 foreach (uint usage in dataValue.Usages)
                                                 {
+                                                    int logicalValue = dataValue.GetLogicalValue();
+#if COLLECTUSAGES
+                                                    if (!usagesCollection.ContainsKey((Usage)usage))
+                                                    {
+                                                        usagesCollection.Add((Usage)usage, 0);
+                                                    }
+                                                    else
+                                                    {
+                                                        usagesCollection[(Usage)usage]++;
+                                                    }
+#endif
+
+                                                    // See page 14 and referenced subsections, e.g. Generic Desktop Controls
+                                                    // https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf
                                                     switch ((Usage)usage)
                                                     {
-                                                        case Usage.Button2: wasPressedButton2 = dataValue.GetLogicalValue() != 0; break;
-                                                        case Usage.GenericDesktopDPadUp: wasPressedPadUp = dataValue.GetLogicalValue() != 0; break;
-                                                        case Usage.GenericDesktopDPadDown: wasPressedPadDown = dataValue.GetLogicalValue() != 0; break;
-                                                        case Usage.GenericDesktopDPadLeft: wasPressedPadLeft = dataValue.GetLogicalValue() != 0; break;
-                                                        case Usage.GenericDesktopDPadRight: wasPressedPadRight = dataValue.GetLogicalValue() != 0; break;
+                                                        case Usage.Button1: wasPressedButton1 = logicalValue != 0; break;
+                                                        case Usage.Button2: wasPressedButton2 = logicalValue != 0; break;
+                                                        case Usage.GenericDesktopDPadUp: wasPressedPadUp = logicalValue != 0; break;
+                                                        case Usage.GenericDesktopDPadDown: wasPressedPadDown = logicalValue != 0; break;
+                                                        case Usage.GenericDesktopDPadLeft: wasPressedPadLeft = logicalValue != 0; break;
+                                                        case Usage.GenericDesktopDPadRight: wasPressedPadRight = logicalValue != 0; break;
                                                         case Usage.GenericDesktopHatSwitch:
                                                         {
-                                                            switch (dataValue.GetLogicalValue())
+                                                            switch (logicalValue)
                                                             {
                                                                 case 0: wasPressedPadUp = true; break;
                                                                 case 2: wasPressedPadRight = true; break;
@@ -150,7 +169,7 @@ namespace SystemTrayMenu.Helpers
                                         {
                                             firstPoll = false;
                                         }
-                                        else if (wasPressedButton2)
+                                        else if (wasPressedButton1 || wasPressedButton2)
                                         {
                                             dispatchter.Invoke(() => KeyPressed?.Invoke(Key.Enter, ModifierKeys.None));
                                         }

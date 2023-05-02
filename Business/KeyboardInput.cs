@@ -7,12 +7,12 @@ namespace SystemTrayMenu.Handler
     using System;
     using System.Globalization;
     using System.Linq;
+    using System.Windows.Controls;
     using System.Windows.Input;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.UserInterface.Menu;
-    using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class KeyboardInput : IDisposable
@@ -37,8 +37,6 @@ namespace SystemTrayMenu.Handler
         internal event Action<int, ListView?>? RowDeselected;
 
         internal event Action<ListView, ListViewItemData>? EnterPressed;
-
-        internal event Action? Cleared;
 
         internal bool InUse { get; set; }
 
@@ -245,26 +243,25 @@ namespace SystemTrayMenu.Handler
 
         private bool IsAnyMenuSelectedByKey(
             ref ListView? dgv,
-            ref Menu? menuFromSelected,
-            ref string textselected)
+            ref Menu? subMenu,
+            ref string textSelected)
         {
             Menu? menu = menus[iMenuKey];
             bool isStillSelected = false;
-            if (menu != null &&
-                iRowKey > -1)
+            if (menu != null && iRowKey > -1)
             {
                 dgv = menu.GetDataGridView();
                 if (dgv != null)
                 {
                     if (dgv.Items.Count > iRowKey)
                     {
-                        Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[iRowKey];
+                        ListViewItemData itemData = (ListViewItemData)dgv.Items[iRowKey];
                         RowData rowData = itemData.data;
                         if (rowData.IsSelected)
                         {
                             isStillSelected = true;
-                            menuFromSelected = rowData.SubMenu;
-                            textselected = itemData.ColumnText;
+                            subMenu = rowData.SubMenu;
+                            textSelected = itemData.ColumnText;
                         }
                     }
                 }
@@ -427,8 +424,7 @@ namespace SystemTrayMenu.Handler
                         (key == Key.F4 && modifiers == ModifierKeys.Alt))
                     {
                         RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                        iMenuKey = 0;
-                        iRowKey = -1;
+                        ResetSelectedByKey();
                         toClear = true;
                         ClosePressed?.Invoke();
 
@@ -478,9 +474,10 @@ namespace SystemTrayMenu.Handler
         {
             if (iMenuKey > 0)
             {
-                if (menus[iMenuKey - 1] != null)
+                int iMenuKeyPrev = iMenuKey - 1;
+                if (menus[iMenuKeyPrev] != null)
                 {
-                    iMenuKey -= 1;
+                    iMenuKey = iMenuKeyPrev;
                     iRowKey = -1;
                     menu = menus[iMenuKey];
                     dgv = menu?.GetDataGridView();
@@ -499,25 +496,23 @@ namespace SystemTrayMenu.Handler
             else
             {
                 RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                iMenuKey = 0;
-                iRowKey = -1;
+                ResetSelectedByKey();
                 toClear = true;
-                Cleared?.Invoke();
             }
         }
 
         private void SelectNextMenu(int iRowBefore, ref ListView? dgv, ListView dgvBefore, Menu? menuFromSelected, bool isStillSelected, ref bool toClear)
         {
-            int iMenuKeyNext = iMenuKey + 1;
             if (isStillSelected)
             {
+                int iMenuKeyNext = iMenuKey + 1;
                 if (menuFromSelected != null &&
                     menuFromSelected == menus[iMenuKeyNext])
                 {
                     dgv = menuFromSelected?.GetDataGridView();
                     if (dgv != null && dgv.Items.Count > 0)
                     {
-                        iMenuKey += 1;
+                        iMenuKey = iMenuKeyNext;
                         iRowKey = -1;
                         if (SelectMatched(dgv, iRowKey) ||
                             SelectMatched(dgv, 0))
@@ -598,7 +593,7 @@ namespace SystemTrayMenu.Handler
                 dgv != null &&
                 dgv.Items.Count > i)
             {
-                Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[i];
+                ListViewItemData itemData = (ListViewItemData)dgv.Items[i];
                 RowData rowData = itemData.data;
                 if (itemData.ColumnText.StartsWith(keyInput, true, CultureInfo.InvariantCulture))
                 {
