@@ -200,10 +200,10 @@ namespace SystemTrayMenu.Helpers
                                                                 default:
                                                                     switch (logicalValue)
                                                                     {
-                                                                        case 5: wasPressedPadUp = true; break;
-                                                                        case 7: wasPressedPadRight = true; break;
-                                                                        case 1: wasPressedPadDown = true; break;
-                                                                        case 3: wasPressedPadLeft = true; break;
+                                                                        case 1: wasPressedPadUp = true; break;
+                                                                        case 3: wasPressedPadRight = true; break;
+                                                                        case 5: wasPressedPadDown = true; break;
+                                                                        case 7: wasPressedPadLeft = true; break;
                                                                     }
 
                                                                     break;
