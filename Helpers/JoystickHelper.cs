@@ -141,21 +141,73 @@ namespace SystemTrayMenu.Helpers
                                                     // https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf
                                                     switch ((Usage)usage)
                                                     {
-                                                        case Usage.Button1: wasPressedButton1 = logicalValue != 0; break;
-                                                        case Usage.Button2: wasPressedButton2 = logicalValue != 0; break;
-                                                        case Usage.GenericDesktopDPadUp: wasPressedPadUp = logicalValue != 0; break;
-                                                        case Usage.GenericDesktopDPadDown: wasPressedPadDown = logicalValue != 0; break;
-                                                        case Usage.GenericDesktopDPadLeft: wasPressedPadLeft = logicalValue != 0; break;
-                                                        case Usage.GenericDesktopDPadRight: wasPressedPadRight = logicalValue != 0; break;
+                                                        case Usage.Button1:
+                                                            if (logicalValue != 0)
+                                                            {
+                                                                wasPressedButton1 = true;
+                                                            }
+
+                                                            break;
+                                                        case Usage.Button2:
+                                                            if (logicalValue != 0)
+                                                            {
+                                                                wasPressedButton2 = true;
+                                                            }
+
+                                                            break;
+                                                        case Usage.GenericDesktopDPadUp:
+                                                            if (logicalValue != 0)
+                                                            {
+                                                                wasPressedPadUp = true;
+                                                            }
+
+                                                            break;
+                                                        case Usage.GenericDesktopDPadDown:
+                                                            if (logicalValue != 0)
+                                                            {
+                                                                wasPressedPadDown = true;
+                                                            }
+
+                                                            break;
+                                                        case Usage.GenericDesktopDPadLeft:
+                                                            if (logicalValue != 0)
+                                                            {
+                                                                wasPressedPadLeft = true;
+                                                            }
+
+                                                            break;
+                                                        case Usage.GenericDesktopDPadRight:
+                                                            if (logicalValue != 0)
+                                                            {
+                                                                wasPressedPadRight = true;
+                                                            }
+
+                                                            break;
                                                         case Usage.GenericDesktopHatSwitch:
                                                         {
-                                                            switch (logicalValue)
+                                                            switch (hidDevice.VendorID)
                                                             {
-                                                                case 0: wasPressedPadUp = true; break;
-                                                                case 2: wasPressedPadRight = true; break;
-                                                                case 4: wasPressedPadDown = true; break;
-                                                                case 6: wasPressedPadLeft = true; break;
-                                                            }
+                                                                case 1356: // Sony
+                                                                    switch (logicalValue)
+                                                                    {
+                                                                        case 0: wasPressedPadUp = true; break;
+                                                                        case 2: wasPressedPadRight = true; break;
+                                                                        case 4: wasPressedPadDown = true; break;
+                                                                        case 6: wasPressedPadLeft = true; break;
+                                                                    }
+
+                                                                    break;
+                                                                default:
+                                                                    switch (logicalValue)
+                                                                    {
+                                                                        case 5: wasPressedPadUp = true; break;
+                                                                        case 7: wasPressedPadRight = true; break;
+                                                                        case 1: wasPressedPadDown = true; break;
+                                                                        case 3: wasPressedPadLeft = true; break;
+                                                                    }
+
+                                                                    break;
+                                                                }
 
                                                             break;
                                                         }
