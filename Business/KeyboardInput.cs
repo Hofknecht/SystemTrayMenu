@@ -20,8 +20,8 @@ namespace SystemTrayMenu.Handler
         private readonly Menu?[] menus;
         private readonly KeyboardHook hook = new();
 
-        private int iRowKey = -1;
         private Menu? focussedMenu;
+        private ListViewItemData? focussedRow;
 
         public KeyboardInput(Menu?[] menus)
         {
@@ -65,8 +65,8 @@ namespace SystemTrayMenu.Handler
 
         internal void ResetSelectedByKey()
         {
-            iRowKey = -1;
             focussedMenu = null;
+            focussedRow = null;
         }
 
         internal void CmdKeyProcessed(Menu sender, Key key, ModifierKeys modifiers)
@@ -149,7 +149,7 @@ namespace SystemTrayMenu.Handler
                         ListView? dgv = focussedMenu?.GetDataGridView();
                         if (dgv != null)
                         {
-                            if (iRowKey > -1 && dgv.Items.Count > iRowKey)
+                            if (focussedRow != null)
                             {
 #if TODO // WPF: Better way to open context menu (as it looks like this is the code's intention)
                                 Point point = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
@@ -209,26 +209,21 @@ namespace SystemTrayMenu.Handler
 
         internal void ClearIsSelectedByKey()
         {
-            ClearIsSelectedByKey(focussedMenu, iRowKey);
+            ClearIsSelectedByKey(focussedMenu, focussedRow);
         }
 
         internal void Select(ListView dgv, ListViewItemData itemData, bool refreshview)
         {
-            int index = dgv.Items.IndexOf(itemData); // TODO: Remove index (work with instance instead)
             Menu menu = (Menu)dgv.GetParentWindow();
-            if (index != iRowKey || menu != focussedMenu)
+            if (itemData != focussedRow || menu != focussedMenu)
             {
                 ClearIsSelectedByKey();
             }
 
-            iRowKey = index;
             focussedMenu = menu;
+            focussedRow = itemData;
 
-            RowData rowData = itemData.data;
-            if (rowData != null)
-            {
-                rowData.IsSelected = true;
-            }
+            itemData.data.IsSelected = true;
 
             if (refreshview)
             {
@@ -241,29 +236,38 @@ namespace SystemTrayMenu.Handler
             }
         }
 
+        private static void ClearIsSelectedByKey(Menu? menu, ListViewItemData? itemData)
+        {
+            if (menu != null && itemData != null)
+            {
+                ListView? dgv = menu?.GetDataGridView();
+                if (dgv != null)
+                {
+                    if (dgv.SelectedItems.Contains(itemData))
+                    {
+                        dgv.SelectedItems.Remove(itemData);
+                    }
+
+                    itemData.data.IsSelected = false;
+                    itemData.data.IsClicking = false;
+                }
+            }
+        }
+
         private bool IsAnyMenuSelectedByKey(
-            ref ListView? dgv,
             ref Menu? subMenu,
             ref string textSelected)
         {
-            Menu? menu = focussedMenu;
             bool isStillSelected = false;
-            if (menu != null && iRowKey > -1)
+            if (focussedRow != null)
             {
-                dgv = menu.GetDataGridView();
-                if (dgv != null)
+                ListViewItemData itemData = focussedRow;
+                RowData rowData = itemData.data;
+                if (rowData.IsSelected)
                 {
-                    if (dgv.Items.Count > iRowKey)
-                    {
-                        ListViewItemData itemData = (ListViewItemData)dgv.Items[iRowKey];
-                        RowData rowData = itemData.data;
-                        if (rowData.IsSelected)
-                        {
-                            isStillSelected = true;
-                            subMenu = rowData.SubMenu;
-                            textSelected = itemData.ColumnText;
-                        }
-                    }
+                    isStillSelected = true;
+                    subMenu = rowData.SubMenu;
+                    textSelected = itemData.ColumnText;
                 }
             }
 
@@ -272,15 +276,16 @@ namespace SystemTrayMenu.Handler
 
         private void SelectByKey(Key key, ModifierKeys modifiers, string keyInput = "", bool keepSelection = false)
         {
-            int iRowBefore = iRowKey;
+            int iRowBefore = focussedMenu?.GetDataGridView()?.Items.IndexOf(focussedRow) ?? -1;
             Menu? menuBefore = focussedMenu;
+            ListViewItemData? rowBefore = focussedRow;
 
-            Menu? menu = focussedMenu;
-            ListView? dgv = null;
-            ListView? dgvBefore = null;
+            Menu? menu;
+            ListView? dgv;
+            ListView? dgvBefore;
             Menu? menuFromSelected = null;
             string textselected = string.Empty;
-            bool isStillSelected = IsAnyMenuSelectedByKey(ref dgv, ref menuFromSelected, ref textselected);
+            bool isStillSelected = IsAnyMenuSelectedByKey(ref menuFromSelected, ref textselected);
             if (isStillSelected)
             {
                 if (keepSelection)
@@ -292,23 +297,26 @@ namespace SystemTrayMenu.Handler
                     }
                 }
 
-                dgvBefore = dgv;
+                menu = focussedMenu;
+                dgv = menu?.GetDataGridView();
             }
             else
             {
                 ResetSelectedByKey();
-                menu = focussedMenu;
-                dgv = menu?.GetDataGridView();
+                menu = null;
+                dgv = null;
             }
+
+            dgvBefore = dgv;
 
             bool toClear = false;
             bool handled = false;
             switch (key)
             {
                 case Key.Enter:
-                    if ((modifiers == ModifierKeys.None) && (iRowKey > -1 && dgv != null && dgv.Items.Count > iRowKey))
+                    if ((modifiers == ModifierKeys.None) && focussedRow != null && dgv != null)
                     {
-                        ListViewItemData itemData = (ListViewItemData)dgv.Items[iRowKey];
+                        ListViewItemData itemData = focussedRow;
                         RowData trigger = itemData.data;
                         if (trigger.IsMenuOpen || !trigger.IsPointingToFolder)
                         {
@@ -321,7 +329,7 @@ namespace SystemTrayMenu.Handler
                         else
                         {
                             RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                            SelectRow(dgv, iRowKey);
+                            SelectRow(dgv, focussedRow);
                             EnterPressed?.Invoke(dgv, itemData);
                         }
 
@@ -332,11 +340,11 @@ namespace SystemTrayMenu.Handler
                 case Key.Up:
                     if ((modifiers == ModifierKeys.None) &&
                         dgv != null &&
-                        (SelectMatchedReverse(dgv, iRowKey) ||
+                        (SelectMatchedReverse(dgv, focussedRow) ||
                         SelectMatchedReverse(dgv, dgv.Items.Count - 1)))
                     {
                         RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                        SelectRow(dgv, iRowKey);
+                        SelectRow(dgv, focussedRow);
                         toClear = true;
                         handled = true;
                     }
@@ -344,11 +352,11 @@ namespace SystemTrayMenu.Handler
                     break;
                 case Key.Down:
                     if ((modifiers == ModifierKeys.None) &&
-                        (SelectMatched(dgv, iRowKey) ||
+                        (SelectMatched(dgv, focussedRow) ||
                         SelectMatched(dgv, 0)))
                     {
                         RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                        SelectRow(dgv, iRowKey);
+                        SelectRow(dgv, focussedRow);
                         toClear = true;
                         handled = true;
                     }
@@ -358,7 +366,7 @@ namespace SystemTrayMenu.Handler
                     if ((modifiers == ModifierKeys.None) && SelectMatched(dgv, 0))
                     {
                         RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                        SelectRow(dgv, iRowKey);
+                        SelectRow(dgv, focussedRow);
                         toClear = true;
                         handled = true;
                     }
@@ -370,7 +378,7 @@ namespace SystemTrayMenu.Handler
                         SelectMatchedReverse(dgv, dgv.Items.Count - 1))
                     {
                         RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                        SelectRow(dgv, iRowKey);
+                        SelectRow(dgv, focussedRow);
                         toClear = true;
                         handled = true;
                     }
@@ -440,25 +448,26 @@ namespace SystemTrayMenu.Handler
             {
                 if (!string.IsNullOrEmpty(keyInput))
                 {
-                    if (SelectMatched(dgv, iRowKey, keyInput) ||
+                    if (SelectMatched(dgv, focussedRow, keyInput) ||
                         SelectMatched(dgv, 0, keyInput))
                     {
                         RowDeselected?.Invoke(iRowBefore, null);
-                        SelectRow(dgv, iRowKey);
+                        SelectRow(dgv, focussedRow);
                         toClear = true;
                     }
                     else if (isStillSelected)
                     {
-                        iRowKey = iRowBefore - 1;
-                        if (SelectMatched(dgv, iRowKey, keyInput) ||
+                        int prevRowIndex = focussedRow == null ? -1 : menuBefore?.GetDataGridView()?.Items.IndexOf(focussedRow) - 1 ?? -1;
+                        focussedRow = prevRowIndex > 0 && menuBefore?.GetDataGridView()?.Items.Count > prevRowIndex ? (ListViewItemData?)menuBefore?.GetDataGridView()?.Items[prevRowIndex] : null;
+                        if (SelectMatched(dgv, focussedRow, keyInput) ||
                             SelectMatched(dgv, 0, keyInput))
                         {
                             RowDeselected?.Invoke(iRowBefore, null);
-                            SelectRow(dgv, iRowKey);
+                            SelectRow(dgv, focussedRow);
                         }
                         else
                         {
-                            iRowKey = iRowBefore;
+                            focussedRow = rowBefore;
                         }
                     }
                 }
@@ -466,7 +475,7 @@ namespace SystemTrayMenu.Handler
 
             if (isStillSelected && toClear)
             {
-                ClearIsSelectedByKey(menuBefore, iRowBefore);
+                ClearIsSelectedByKey(menuBefore, rowBefore);
             }
         }
 
@@ -476,8 +485,8 @@ namespace SystemTrayMenu.Handler
             {
                 if (focussedMenu.ParentMenu != null)
                 {
-                    iRowKey = -1;
                     menu = focussedMenu = focussedMenu.ParentMenu;
+                    focussedRow = null;
                     dgv = menu?.GetDataGridView();
                     if (dgv != null)
                     {
@@ -485,7 +494,7 @@ namespace SystemTrayMenu.Handler
                             SelectMatched(dgv, 0))
                         {
                             RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                            SelectRow(dgv, iRowKey);
+                            SelectRow(dgv, focussedRow);
                             toClear = true;
                         }
                     }
@@ -510,12 +519,12 @@ namespace SystemTrayMenu.Handler
                     if (dgv != null && dgv.Items.Count > 0)
                     {
                         focussedMenu = menuFromSelected;
-                        iRowKey = -1;
-                        if (SelectMatched(dgv, iRowKey) ||
+                        focussedRow = null;
+                        if (SelectMatched(dgv, focussedRow) ||
                             SelectMatched(dgv, 0))
                         {
                             RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                            SelectRow(dgv, iRowKey);
+                            SelectRow(dgv, focussedRow);
                             toClear = true;
                         }
                     }
@@ -529,37 +538,40 @@ namespace SystemTrayMenu.Handler
                     focussedMenu = focussedMenu.SubMenu;
                 }
 
-                iRowKey = -1;
+                focussedRow = null;
                 Menu? lastMenu = focussedMenu;
                 if (lastMenu != null)
                 {
                     dgv = lastMenu?.GetDataGridView();
-                    if (SelectMatched(dgv, iRowKey) ||
+                    if (SelectMatched(dgv, focussedRow) ||
                         SelectMatched(dgv, 0))
                     {
                         RowDeselected?.Invoke(iRowBefore, dgvBefore);
-                        SelectRow(dgv, iRowKey);
+                        SelectRow(dgv, focussedRow);
                         toClear = true;
                     }
                 }
             }
         }
 
-        private void SelectRow(ListView? dgv, int iRowKey)
+        private void SelectRow(ListView? dgv, ListViewItemData? itemData)
         {
-            if (dgv != null && dgv.Items.Count > iRowKey)
+            if (dgv != null && itemData != null)
             {
                 InUse = true;
-                RowSelected?.Invoke(dgv, (ListViewItemData)dgv.Items[iRowKey]);
+                RowSelected?.Invoke(dgv, itemData);
             }
         }
+
+        private bool SelectMatched(ListView? dgv, ListViewItemData? start, string keyInput = "") =>
+            start != null && dgv != null && SelectMatched(dgv, dgv.Items.IndexOf(start), keyInput);
 
         private bool SelectMatched(ListView? dgv, int indexStart, string keyInput = "")
         {
             bool found = false;
-            if (dgv != null)
+            if (dgv != null && indexStart >= 0)
             {
-                for (int i = indexStart; i < dgv.Items.Count; i++)
+                for (uint i = (uint)indexStart; i < dgv.Items.Count; i++)
                 {
                     if (Select(dgv, i, keyInput))
                     {
@@ -572,35 +584,37 @@ namespace SystemTrayMenu.Handler
             return found;
         }
 
-        private bool SelectMatchedReverse(ListView? dgv, int indexStart, string keyInput = "")
+        private bool SelectMatchedReverse(ListView dgv, ListViewItemData? start, string keyInput = "") =>
+            start != null && SelectMatchedReverse(dgv, dgv.Items.IndexOf(start), keyInput);
+
+        private bool SelectMatchedReverse(ListView dgv, int indexStart, string keyInput = "")
         {
             bool found = false;
-            for (int i = indexStart; i > -1; i--)
+            if (indexStart > 0)
             {
-                if (Select(dgv, i, keyInput))
+                for (int i = indexStart; i > -1; i--)
                 {
-                    found = true;
-                    break;
+                    if (Select(dgv, (uint)i, keyInput))
+                    {
+                        found = true;
+                        break;
+                    }
                 }
             }
 
             return found;
         }
 
-        private bool Select(ListView? dgv, int i, string keyInput = "")
+        private bool Select(ListView dgv, uint i, string keyInput = "")
         {
             bool found = false;
-            if (i > -1 &&
-                i != iRowKey &&
-                dgv != null &&
-                dgv.Items.Count > i)
+            if (dgv.Items.Count > i && dgv.Items[(int)i] != focussedRow)
             {
-                ListViewItemData itemData = (ListViewItemData)dgv.Items[i];
-                RowData rowData = itemData.data;
+                ListViewItemData itemData = (ListViewItemData)dgv.Items[(int)i];
                 if (itemData.ColumnText.StartsWith(keyInput, true, CultureInfo.InvariantCulture))
                 {
-                    iRowKey = rowData.RowIndex;
-                    rowData.IsSelected = true;
+                    focussedRow = itemData;
+                    itemData.data.IsSelected = true;
                     if (dgv.SelectedItems.Contains(itemData))
                     {
                         dgv.SelectedItems.Remove(itemData);
@@ -614,29 +628,6 @@ namespace SystemTrayMenu.Handler
             }
 
             return found;
-        }
-
-        private void ClearIsSelectedByKey(Menu? menu, int rowIndex)
-        {
-            if (menu != null && rowIndex > -1)
-            {
-                ListView? dgv = menu?.GetDataGridView();
-                if (dgv != null && dgv.Items.Count > rowIndex)
-                {
-                    Menu.ListViewItemData itemData = (Menu.ListViewItemData)dgv.Items[rowIndex];
-                    RowData rowData = itemData.data;
-                    if (dgv.SelectedItems.Contains(itemData))
-                    {
-                        dgv.SelectedItems.Remove(itemData);
-                    }
-
-                    if (rowData != null)
-                    {
-                        rowData.IsSelected = false;
-                        rowData.IsClicking = false;
-                    }
-                }
-            }
         }
     }
 }
