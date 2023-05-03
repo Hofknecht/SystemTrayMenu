@@ -54,13 +54,6 @@ namespace SystemTrayMenu.UserInterface
 #endif
         internal Menu(MenuData menuData, string path)
         {
-            timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
-            Closed += (_, _) =>
-            {
-                timerUpdateIcons.Stop();
-                IsClosed = true; // TODO WPF Replace Forms wrapper
-            };
-
             InitializeComponent();
 
             if (!Config.ShowDirectoryTitleAtTop)
@@ -241,19 +234,29 @@ namespace SystemTrayMenu.UserInterface
 #endif
 
             Loaded += (_, _) =>
-                {
-                    NativeMethods.HideFromAltTab(this);
+            {
+                NativeMethods.HideFromAltTab(this);
 
-                    RaiseEvent(new(routedEvent: FadeInEvent));
-                };
+                RaiseEvent(new(routedEvent: FadeInEvent));
+            };
 
             Closed += (_, _) =>
+            {
+                timerUpdateIcons.Stop();
+                IsClosed = true; // TODO WPF Replace Forms wrapper
+
+                if (RowDataParent?.SubMenu == this)
                 {
-                    foreach (ListViewItemData item in dgv.Items)
-                    {
-                        item.data.SubMenu?.Close();
-                    }
-                };
+                    RowDataParent.SubMenu = null;
+                }
+
+                foreach (ListViewItemData item in dgv.Items)
+                {
+                    item.data.SubMenu?.Close();
+                }
+            };
+
+            timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
 
             AddItemsToMenu(menuData.RowDatas, null, false);
         }
@@ -318,6 +321,24 @@ namespace SystemTrayMenu.UserInterface
         internal int Level { get; set; }
 
         internal RowData? RowDataParent { get; set; }
+
+        internal Menu? ParentMenu => RowDataParent?.Owner;
+
+        internal Menu? SubMenu
+        {
+            get
+            {
+                foreach (ListViewItemData item in dgv.Items)
+                {
+                    if (item.data.SubMenu != null)
+                    {
+                        return item.data.SubMenu;
+                    }
+                }
+
+                return null;
+            }
+        }
 
         internal bool RelocateOnNextShow { get; set; } = true;
 
@@ -439,6 +460,7 @@ namespace SystemTrayMenu.UserInterface
                 }
 
                 rowData.RowIndex = items.Count; // Index
+                rowData.Owner = this;
                 items.Add(new(
                     (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource(),
                     rowData.Text ?? "?",

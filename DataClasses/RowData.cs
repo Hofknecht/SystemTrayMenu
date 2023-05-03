@@ -106,6 +106,8 @@ namespace SystemTrayMenu.DataClasses
 
         internal string? Text { get; }
 
+        internal Menu? Owner { get; set; }
+
         internal Menu? SubMenu { get; set; }
 
         internal bool IsMenuOpen { get; set; }
