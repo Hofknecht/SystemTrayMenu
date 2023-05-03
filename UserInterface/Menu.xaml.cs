@@ -1306,6 +1306,8 @@ namespace SystemTrayMenu.UserInterface
             /// </summary>
             /// <param name="propertyName">Name of the changing property.</param>
             public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+            public override string ToString() => nameof(ListViewItemData) + ": " + ColumnText + ", Owner: " + (data.Owner?.ToString() ?? "null");
         }
     }
 }
