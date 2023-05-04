@@ -426,10 +426,7 @@ namespace SystemTrayMenu.UserInterface
             return isMouseOn;
         }
 
-        internal ListView? GetDataGridView() // TODO WPF Replace Forms wrapper
-        {
-            return dgv;
-        }
+        internal ListView GetDataGridView() => dgv; // TODO WPF Replace Forms wrapper
 
         // Not used as refreshing should be done automatically due to databinding
         // TODO: As long as WPF transition from Forms is incomplete, keep it for testing.

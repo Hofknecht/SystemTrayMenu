@@ -351,19 +351,16 @@ namespace SystemTrayMenu.Business
                 {
                     // The main menu gets loaded again
                     // Clean up menu status of previous one
-                    ListView? dgvMainMenu = menu.GetDataGridView();
-                    if (dgvMainMenu != null)
+                    ListView dgvMainMenu = menu.GetDataGridView();
+                    foreach (ListViewItemData item in dgvMainMenu.Items)
                     {
-                        foreach (ListViewItemData item in dgvMainMenu.Items)
-                        {
-                            RowData rowDataToClear = item.data;
-                            rowDataToClear.IsMenuOpen = false;
-                            rowDataToClear.IsClicking = false;
-                            rowDataToClear.IsSelected = false;
-                        }
-
-                        RefreshSelection(dgvMainMenu);
+                        RowData rowDataToClear = item.data;
+                        rowDataToClear.IsMenuOpen = false;
+                        rowDataToClear.IsClicking = false;
+                        rowDataToClear.IsSelected = false;
                     }
+
+                    RefreshSelection(dgvMainMenu);
 
                     menu.RelocateOnNextShow = true;
                 }
@@ -545,14 +542,11 @@ namespace SystemTrayMenu.Business
             menu.CellOpenOnClick += Dgv_OpenItemOnClick;
             menu.ClosePressed += MenusFadeOut;
 
-            ListView? dgv = menu.GetDataGridView();
-            if (dgv != null)
-            {
+            ListView dgv = menu.GetDataGridView();
+            dgv.SelectionChanged += Dgv_SelectionChanged;
 #if TODO // Misc MouseEvents
-                dgv.MouseMove += waitToOpenMenu.MouseMove;
+            dgv.MouseMove += waitToOpenMenu.MouseMove;
 #endif
-                dgv.SelectionChanged += Dgv_SelectionChanged;
-            }
 
             if (menu.Level == 0)
             {
@@ -734,24 +728,21 @@ namespace SystemTrayMenu.Business
             if (menuPrevious != null)
             {
                 // Clean up menu status IsMenuOpen for previous one
-                ListView? dgvPrevious = menuPrevious.GetDataGridView();
-                if (dgvPrevious != null)
+                ListView dgvPrevious = menuPrevious.GetDataGridView();
+                foreach (ListViewItemData item in dgvPrevious.Items)
                 {
-                    foreach (ListViewItemData item in dgvPrevious.Items)
+                    RowData rowDataToClear = item.data;
+                    if (rowDataToClear == menuToShow.RowDataParent)
                     {
-                        RowData rowDataToClear = item.data;
-                        if (rowDataToClear == menuToShow.RowDataParent)
-                        {
-                            rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
-                        }
-                        else
-                        {
-                            rowDataToClear.IsMenuOpen = false;
-                        }
+                        rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
                     }
-
-                    RefreshSelection(dgvPrevious);
+                    else
+                    {
+                        rowDataToClear.IsMenuOpen = false;
+                    }
                 }
+
+                RefreshSelection(dgvPrevious);
 
                 // Hide old menu
                 foreach (Menu? menuToClose in menus.Where(

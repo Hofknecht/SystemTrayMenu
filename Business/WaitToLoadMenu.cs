@@ -73,11 +73,11 @@ namespace SystemTrayMenu.Handler
 #endif
         }
 
-        internal void RowSelected(ListView dgv, ListViewItemData itemData)
+        internal void RowSelected(Menu menu, ListViewItemData itemData)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            SetData(dgv, itemData);
+            SetData(menu.GetDataGridView(), itemData);
             MouseActive = false;
             checkForMouseActive = false;
             timerStartLoad.Start();
@@ -93,13 +93,13 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowDeselected(int rowIndex, ListView? dgv)
+        internal void RowDeselected(Menu? menu, ListViewItemData? itemData)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            if (dgv != null)
+            if (menu != null && itemData != null)
             {
-                ResetData(dgv, (ListViewItemData)dgv.Items[rowIndex]);
+                ResetData(menu.GetDataGridView(), itemData);
             }
 
             MouseActive = false;
@@ -114,11 +114,11 @@ namespace SystemTrayMenu.Handler
             CallOpenMenuNow();
         }
 
-        internal void EnterOpensInstantly(ListView dgv, ListViewItemData itemData)
+        internal void EnterOpensInstantly(Menu menu, ListViewItemData itemData)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            SetData(dgv, itemData);
+            SetData(menu.GetDataGridView(), itemData);
             MouseActive = false;
             checkForMouseActive = false;
             CallOpenMenuNow();
@@ -200,12 +200,7 @@ namespace SystemTrayMenu.Handler
 #endif
             this.dgv = dgv;
             dgvItemData = itemData;
-
-            RowData rowData = dgvItemData.data;
-            if (rowData != null)
-            {
-                rowData.IsSelected = true;
-            }
+            dgvItemData.data.IsSelected = true;
 
             dgv.SelectedItem = dgvItemData;
         }
@@ -213,14 +208,11 @@ namespace SystemTrayMenu.Handler
         private void ResetData(ListView dgv, ListViewItemData itemData)
         {
             RowData rowData = itemData.data;
-            if (rowData != null)
-            {
-                rowData.IsSelected = false;
-                rowData.IsClicking = false;
-                dgv.SelectedItem = null;
-                this.dgv = null;
-                dgvItemData = null;
-            }
+            rowData.IsSelected = false;
+            rowData.IsClicking = false;
+            dgv.SelectedItem = null;
+            this.dgv = null;
+            dgvItemData = null;
         }
     }
 }
