@@ -96,7 +96,7 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            waitToOpenMenu.MouseEnterOk += (menu, itemData) => MouseEnterOk(menu, itemData, false);
+            waitToOpenMenu.MouseEnterOk += (menu, itemData) => MouseEnterOk(menu, itemData);
             waitToOpenMenu.CloseMenu += CloseMenu;
             void CloseMenu(int level)
             {
@@ -464,7 +464,6 @@ namespace SystemTrayMenu.Business
             void Menu_SearchTextChanging()
             {
                 searchTextChanging = true;
-                keyboardInput.SearchTextChanging();
                 waitToOpenMenu.MouseActive = false;
             }
 
@@ -529,7 +528,7 @@ namespace SystemTrayMenu.Business
             menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged((Menu)sender);
             menu.CellMouseEnter += waitToOpenMenu.MouseEnter;
             menu.CellMouseLeave += waitToOpenMenu.MouseLeave;
-            menu.CellMouseDown += (menu, itemData) => MouseEnterOk(menu, itemData, true);
+            menu.CellMouseDown += (menu, itemData) => MouseEnterOk(menu, itemData);
             menu.CellOpenOnClick += waitToOpenMenu.ClickOpensInstantly;
             menu.ClosePressed += MenusFadeOut;
 
@@ -582,17 +581,11 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void MouseEnterOk(Menu menu, ListViewItemData itemData, bool refreshView)
+        private void MouseEnterOk(Menu menu, ListViewItemData itemData)
         {
             if (IsMainUsable)
             {
-                if (keyboardInput.InUse)
-                {
-                    keyboardInput.ClearIsSelectedByKey();
-                    keyboardInput.InUse = false;
-                }
-
-                keyboardInput.Select(menu, itemData, refreshView);
+                keyboardInput.MouseSelect(menu, itemData);
             }
         }
 

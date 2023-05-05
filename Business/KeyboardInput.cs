@@ -182,23 +182,16 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void SearchTextChanging()
-        {
-            ClearIsSelectedByKey();
-        }
-
         internal void SearchTextChanged(Menu menu, bool isSearchStringEmpty)
         {
-            if (isSearchStringEmpty)
-            {
-                ClearIsSelectedByKey();
-            }
-            else
+            ClearIsSelectedByKey();
+
+            if (!isSearchStringEmpty)
             {
                 ListView dgv = menu.GetDataGridView();
                 if (dgv.Items.Count > 0)
                 {
-                    Select(menu, (ListViewItemData)dgv.Items[0], true);
+                    MouseSelect(menu, (ListViewItemData)dgv.Items[0]);
                 }
             }
         }
@@ -208,28 +201,14 @@ namespace SystemTrayMenu.Handler
             ClearIsSelectedByKey(focussedMenu, focussedRow);
         }
 
-        internal void Select(Menu menu, ListViewItemData itemData, bool refreshview)
+        internal void MouseSelect(Menu menu, ListViewItemData itemData)
         {
-            if (itemData != focussedRow || menu != focussedMenu)
-            {
-                ClearIsSelectedByKey();
-            }
+            InUse = false;
+
+            ClearIsSelectedByKey();
 
             focussedMenu = menu;
-            focussedRow = itemData;
-
-            itemData.data.IsSelected = true;
-
-            if (refreshview)
-            {
-                ListView dgv = menu.GetDataGridView();
-                if (dgv.SelectedItems.Contains(itemData))
-                {
-                    dgv.SelectedItems.Remove(itemData);
-                }
-
-                dgv.SelectedItems.Add(itemData);
-            }
+            Select(menu.GetDataGridView(), itemData);
         }
 
         private static void ClearIsSelectedByKey(Menu? menu, ListViewItemData? itemData)
@@ -440,6 +419,7 @@ namespace SystemTrayMenu.Handler
                     if (itemData != focussedRow)
                     {
                         Select(dgv, itemData);
+                        dgv.ScrollIntoView(itemData);
                         found = true;
                         break;
                     }
@@ -466,6 +446,7 @@ namespace SystemTrayMenu.Handler
                     if (itemData != focussedRow)
                     {
                         Select(dgv, itemData);
+                        dgv.ScrollIntoView(itemData);
                         found = true;
                         break;
                     }
@@ -479,8 +460,15 @@ namespace SystemTrayMenu.Handler
         {
             focussedRow = itemData;
             itemData.data.IsSelected = true;
+
+            // TODO: Refresh ListViewItems - optimize out
+            //       ([remove and] add item to procove selection changed handler)
+            if (dgv.SelectedItems.Contains(itemData))
+            {
+                dgv.SelectedItems.Remove(itemData);
+            }
+
             dgv.SelectedItems.Add(itemData);
-            dgv.ScrollIntoView(itemData);
         }
     }
 }
