@@ -44,7 +44,7 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? StopLoadMenu;
 
-        internal event Action<ListView, ListViewItemData>? MouseEnterOk;
+        internal event Action<Menu, ListViewItemData>? MouseEnterOk;
 
         internal bool MouseActive { get; set; }
 
@@ -53,15 +53,15 @@ namespace SystemTrayMenu.Handler
             timerStartLoad.Stop();
         }
 
-        internal void MouseEnter(ListView dgv, ListViewItemData itemData)
+        internal void MouseEnter(Menu menu, ListViewItemData itemData)
         {
             if (MouseActive)
             {
-                MouseEnterOk?.Invoke(dgv, itemData);
+                MouseEnterOk?.Invoke(menu, itemData);
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
                 checkForMouseActive = true;
-                SetData(dgv, itemData);
+                SetData(menu.GetDataGridView(), itemData);
                 timerStartLoad.Start();
             }
 #if TODO // Misc MouseEvents

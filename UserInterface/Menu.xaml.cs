@@ -277,13 +277,11 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action? UserDragsMenu;
 
-        internal event Action<ListView, ListViewItemData>? CellMouseEnter;
+        internal event Action<Menu, ListViewItemData>? CellMouseEnter;
 
         internal event Action<ListView, ListViewItemData>? CellMouseLeave;
 
-        internal event Action<ListView, ListViewItemData, MouseButtonEventArgs>? CellMouseDown;
-
-        internal event Action<ListView, ListViewItemData, MouseButtonEventArgs>? CellMouseUp;
+        internal event Action<Menu, ListViewItemData>? CellMouseDown;
 
         internal event Action<ListView, ListViewItemData>? CellOpenOnClick;
 
@@ -1192,7 +1190,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
         {
-            CellMouseEnter?.Invoke(dgv, (ListViewItemData)((ListViewItem)sender).Content);
+            CellMouseEnter?.Invoke(this, (ListViewItemData)((ListViewItem)sender).Content);
         }
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
@@ -1204,7 +1202,7 @@ namespace SystemTrayMenu.UserInterface
         {
             ListViewItemData itemData = (ListViewItemData)((ListViewItem)sender).Content;
 
-            CellMouseDown?.Invoke(dgv, itemData, e);
+            CellMouseDown?.Invoke(this, itemData);
 
             if (e.LeftButton == MouseButtonState.Pressed)
             {
@@ -1217,11 +1215,6 @@ namespace SystemTrayMenu.UserInterface
                 position.Offset(Left, Top);
                 itemData.data.OpenShellContextMenu(position);
             }
-        }
-
-        private void ListViewItem_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            CellMouseUp?.Invoke(dgv, (ListViewItemData)((ListViewItem)sender).Content, e);
         }
 
         private void ListViewxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

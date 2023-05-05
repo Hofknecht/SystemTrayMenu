@@ -43,9 +43,6 @@ namespace SystemTrayMenu.Business
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
         private bool searchTextChanging;
-#if TODO // Misc MouseEvents
-        private int lastMouseDownRowIndex = -1;
-#endif
         private bool showMenuAfterMainPreload;
 
         public Menus()
@@ -100,6 +97,7 @@ namespace SystemTrayMenu.Business
                 }
             }
 
+            waitToOpenMenu.MouseEnterOk += (menu, itemData) => MouseEnterOk(menu, itemData, false);
             waitToOpenMenu.CloseMenu += CloseMenu;
             void CloseMenu(int level)
             {
@@ -112,11 +110,6 @@ namespace SystemTrayMenu.Business
                     }
                 }
             }
-
-            waitToOpenMenu.MouseEnterOk += MouseEnterOk;
-#if TODO // Misc MouseEvents
-            dgvMouseRow.RowMouseLeave += Dgv_RowMouseLeave; // event moved to Menu.CellMouseLeave()
-#endif
 
             if (Settings.Default.SupportGamepad)
             {
@@ -537,9 +530,8 @@ namespace SystemTrayMenu.Business
             menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged((Menu)sender);
             menu.CellMouseEnter += waitToOpenMenu.MouseEnter;
             menu.CellMouseLeave += waitToOpenMenu.MouseLeave;
-            menu.CellMouseDown += Dgv_MouseDown;
-            menu.CellMouseUp += Dgv_MouseUp;
-            menu.CellOpenOnClick += Dgv_OpenItemOnClick;
+            menu.CellMouseDown += (menu, itemData) => MouseEnterOk(menu, itemData, true);
+            menu.CellOpenOnClick += waitToOpenMenu.ClickOpensInstantly;
             menu.ClosePressed += MenusFadeOut;
 
             ListView dgv = menu.GetDataGridView();
@@ -594,31 +586,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void Dgv_MouseDown(ListView dgv, ListViewItemData itemData, MouseButtonEventArgs e)
-        {
-            MouseEnterOk(dgv, itemData, true);
-
-#if TODO // Misc MouseEvents
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                lastMouseDownRowIndex = index;
-            }
-#endif
-        }
-
-        private void Dgv_MouseUp(object sender, ListViewItemData itemData, MouseButtonEventArgs e)
-        {
-#if TODO // Misc MouseEvents
-            lastMouseDownRowIndex = -1;
-#endif
-        }
-
-        private void MouseEnterOk(ListView dgv, ListViewItemData itemData)
-        {
-            MouseEnterOk(dgv, itemData, false);
-        }
-
-        private void MouseEnterOk(ListView dgv, ListViewItemData itemData, bool refreshView)
+        private void MouseEnterOk(Menu menu, ListViewItemData itemData, bool refreshView)
         {
             if (IsMainUsable)
             {
@@ -628,37 +596,8 @@ namespace SystemTrayMenu.Business
                     keyboardInput.InUse = false;
                 }
 
-                keyboardInput.Select(dgv, itemData, refreshView);
+                keyboardInput.Select(menu, itemData, refreshView);
             }
-        }
-#if TODO // Misc MouseEvents
-        private void Dgv_RowMouseLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            ListView dgv = (ListView)sender;
-
-            if (e.RowIndex == lastMouseDownRowIndex &&
-                e.RowIndex > -1 &&
-                e.RowIndex < dgv.Items.Count)
-            {
-                lastMouseDownRowIndex = -1;
-
-                RowData rowData = (RowData)dgv.Items[e.RowIndex].Cells[2].Value;
-                string[] files = new string[] { rowData.Path };
-
-                // Update position raises move event which prevent DoDragDrop blocking UI when mouse not moved
-                Cursor.Position = new Point(Cursor.Position.X, Cursor.Position.Y);
-
-                dgv.DoDragDrop(new DataObject(DataFormats.FileDrop, files), DragDropEffects.Copy);
-            }
-        }
-#endif
-
-        private void Dgv_OpenItemOnClick(ListView sender, ListViewItemData itemData)
-        {
-#if TODO // Misc MouseEvents
-            lastMouseDownRowIndex = -1;
-#endif
-            waitToOpenMenu.ClickOpensInstantly(sender, itemData);
         }
 
         private void Dgv_SelectionChanged(object sender, EventArgs e)

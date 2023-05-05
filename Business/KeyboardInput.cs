@@ -198,7 +198,7 @@ namespace SystemTrayMenu.Handler
                 ListView dgv = menu.GetDataGridView();
                 if (dgv.Items.Count > 0)
                 {
-                    Select(dgv, (ListViewItemData)dgv.Items[0], true);
+                    Select(menu, (ListViewItemData)dgv.Items[0], true);
                 }
             }
         }
@@ -208,9 +208,8 @@ namespace SystemTrayMenu.Handler
             ClearIsSelectedByKey(focussedMenu, focussedRow);
         }
 
-        internal void Select(ListView dgv, ListViewItemData itemData, bool refreshview)
+        internal void Select(Menu menu, ListViewItemData itemData, bool refreshview)
         {
-            Menu menu = (Menu)dgv.GetParentWindow();
             if (itemData != focussedRow || menu != focussedMenu)
             {
                 ClearIsSelectedByKey();
@@ -223,6 +222,7 @@ namespace SystemTrayMenu.Handler
 
             if (refreshview)
             {
+                ListView dgv = menu.GetDataGridView();
                 if (dgv.SelectedItems.Contains(itemData))
                 {
                     dgv.SelectedItems.Remove(itemData);
@@ -253,21 +253,23 @@ namespace SystemTrayMenu.Handler
             Menu? menuBefore;
             ListView? dgvBefore;
             ListViewItemData? rowBefore = focussedRow;
+            bool toClear = false;
+            bool isSelected = focussedRow?.data.IsSelected ?? false;
 
-            menuFromSelected = focussedRow?.data.IsSelected ?? false ? focussedRow.data.SubMenu : null;
-            if (menuFromSelected != null)
+            if (isSelected)
             {
+                menuFromSelected = focussedRow?.data.SubMenu;
                 menuBefore = focussedMenu;
                 dgvBefore = menuBefore?.GetDataGridView();
             }
             else
             {
                 ResetSelectedByKey();
+                menuFromSelected = null;
                 menuBefore = null;
                 dgvBefore = null;
             }
 
-            bool toClear = false;
             switch (key)
             {
                 case Key.Enter:
@@ -349,9 +351,10 @@ namespace SystemTrayMenu.Handler
                         if (nextMenuInKeyDirection || prevMenuAgainstKeyDirection)
                         {
                             // Next is in key direction or prev is opposite of key direction ==> TrySelect sub/next menu
-                            if (menuFromSelected != null)
+                            if (isSelected)
                             {
-                                if (menuFromSelected == focussedMenu?.SubMenu)
+                                if (menuFromSelected != null &&
+                                    menuFromSelected == focussedMenu?.SubMenu)
                                 {
                                     ListView dgv = menuFromSelected.GetDataGridView();
                                     if (dgv != null && dgv.Items.Count > 0)
@@ -419,7 +422,7 @@ namespace SystemTrayMenu.Handler
                     break;
             }
 
-            if (menuFromSelected != null && toClear)
+            if (isSelected && toClear)
             {
                 ClearIsSelectedByKey(menuBefore, rowBefore);
             }
