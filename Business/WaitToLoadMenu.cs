@@ -5,9 +5,6 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
-    using System.Collections;
-    using System.Windows.Controls;
-    using System.Windows.Input;
     using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Utilities;
@@ -20,16 +17,7 @@ namespace SystemTrayMenu.Handler
         private readonly DispatcherTimer timerStartLoad = new();
         private ListView? dgv;
         private ListViewItemData? dgvItemData;
-#if TODO // Misc MouseEvents
-        private ListView? dgvTmp;
-        private ListViewItemData rowItemDataTmp;
-#endif
         private bool alreadyOpened;
-
-#if TODO // Misc MouseEvents
-        private int mouseMoveEvents;
-        private DateTime dateTimeLastMouseMoveEvent = DateTime.Now;
-#endif
         private bool checkForMouseActive = true;
 
         internal WaitToLoadMenu()
@@ -64,13 +52,6 @@ namespace SystemTrayMenu.Handler
                 SetData(menu.GetDataGridView(), itemData);
                 timerStartLoad.Start();
             }
-#if TODO // Misc MouseEvents
-            else
-            {
-                dgvTmp = dgv;
-                rowItemDataTmp = itemData;
-            }
-#endif
         }
 
         internal void RowSelected(Menu menu, ListViewItemData itemData)
@@ -124,35 +105,6 @@ namespace SystemTrayMenu.Handler
             CallOpenMenuNow();
         }
 
-#if TODO // Misc MouseEvents
-        internal void MouseMove(object sender, MouseEventArgs e)
-        {
-            if (!MouseActive)
-            {
-                if (mouseMoveEvents > 6)
-                {
-                    MouseActive = true;
-                    if (dgvTmp != null)
-                    {
-                        MouseEnter(dgvTmp, rowItemDataTmp);
-                    }
-
-                    mouseMoveEvents = 0;
-                }
-                else if (DateTime.Now - dateTimeLastMouseMoveEvent <
-                    new TimeSpan(0, 0, 0, 0, 200))
-                {
-                    mouseMoveEvents++;
-                }
-                else
-                {
-                    dateTimeLastMouseMoveEvent = DateTime.Now;
-                    mouseMoveEvents = 0;
-                }
-            }
-        }
-#endif
-
         private void WaitStartLoad_Tick(object? sender, EventArgs e)
         {
             timerStartLoad.Stop();
@@ -195,13 +147,10 @@ namespace SystemTrayMenu.Handler
             }
 
             alreadyOpened = false;
-#if TODO // Misc MouseEvents
-            dgvTmp = null;
-#endif
+
             this.dgv = dgv;
             dgvItemData = itemData;
             dgvItemData.data.IsSelected = true;
-
             dgv.SelectedItem = dgvItemData;
         }
 

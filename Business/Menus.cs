@@ -12,7 +12,6 @@ namespace SystemTrayMenu.Business
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Input;
     using System.Windows.Media;
     using System.Windows.Threading;
     using Microsoft.Win32;
@@ -536,9 +535,6 @@ namespace SystemTrayMenu.Business
 
             ListView dgv = menu.GetDataGridView();
             dgv.SelectionChanged += Dgv_SelectionChanged;
-#if TODO // Misc MouseEvents
-            dgv.MouseMove += waitToOpenMenu.MouseMove;
-#endif
 
             if (menu.Level == 0)
             {
@@ -600,10 +596,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void Dgv_SelectionChanged(object sender, EventArgs e)
-        {
-            RefreshSelection((ListView)sender);
-        }
+        private void Dgv_SelectionChanged(object sender, EventArgs e) => RefreshSelection((ListView)sender);
 
         private void RefreshSelection(ListView dgv)
         {

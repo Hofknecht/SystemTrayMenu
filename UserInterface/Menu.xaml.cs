@@ -263,12 +263,6 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action? MenuScrolled;
 
-#if TODO // Misc MouseEvents
-        internal new event Action MouseEnter;
-
-        internal new event Action MouseLeave;
-#endif
-
         internal event Action<Menu, Key, ModifierKeys>? CmdKeyProcessed;
 
         internal event Action? SearchTextChanging;
