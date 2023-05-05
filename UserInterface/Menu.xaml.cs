@@ -187,51 +187,6 @@ namespace SystemTrayMenu.UserInterface
             });
 
             dgv.GotFocus += (_, _) => FocusTextBox();
-#if TODO // Misc MouseEvents
-            dgv.MouseEnter += ControlsMouseEnter;
-            labelTitle.MouseEnter += ControlsMouseEnter;
-            textBoxSearch.MouseEnter += ControlsMouseEnter;
-            pictureBoxOpenFolder.MouseEnter += ControlsMouseEnter;
-            pictureBoxMenuAlwaysOpen.MouseEnter += ControlsMouseEnter;
-            pictureBoxSettings.MouseEnter += ControlsMouseEnter;
-            pictureBoxRestart.MouseEnter += ControlsMouseEnter;
-            pictureBoxSearch.MouseEnter += ControlsMouseEnter;
-            tableLayoutPanelMenu.MouseEnter += ControlsMouseEnter;
-            dgv.MouseEnter += ControlsMouseEnter;
-            tableLayoutPanelBottom.MouseEnter += ControlsMouseEnter;
-            labelStatus.MouseEnter += ControlsMouseEnter;
-            void ControlsMouseEnter(object sender, EventArgs e)
-            {
-                MouseEnter?.Invoke();
-            }
-
-            dgv.MouseLeave += ControlsMouseLeave;
-            labelTitle.MouseLeave += ControlsMouseLeave;
-            textBoxSearch.MouseLeave += ControlsMouseLeave;
-            pictureBoxMenuAlwaysOpen.MouseLeave += ControlsMouseLeave;
-            pictureBoxOpenFolder.MouseLeave += ControlsMouseLeave;
-            pictureBoxSettings.MouseLeave += ControlsMouseLeave;
-            pictureBoxRestart.MouseLeave += ControlsMouseLeave;
-            pictureBoxSearch.MouseLeave += ControlsMouseLeave;
-            tableLayoutPanelMenu.MouseLeave += ControlsMouseLeave;
-            dgv.MouseLeave += ControlsMouseLeave;
-            tableLayoutPanelBottom.MouseLeave += ControlsMouseLeave;
-            labelStatus.MouseLeave += ControlsMouseLeave;
-            void ControlsMouseLeave(object sender, EventArgs e)
-            {
-                MouseLeave?.Invoke();
-            }
-#endif
-#if TODO // Misc MouseEvents
-            bool isTouchEnabled = NativeMethods.IsTouchEnabled();
-            if ((isTouchEnabled && Settings.Default.DragDropItemsEnabledTouch) ||
-                (!isTouchEnabled && Settings.Default.DragDropItemsEnabled))
-            {
-                AllowDrop = true;
-                DragEnter += DragDropHelper.DragEnter;
-                DragDrop += DragDropHelper.DragDrop;
-            }
-#endif
 
             Loaded += (_, _) =>
             {
@@ -990,10 +945,13 @@ namespace SystemTrayMenu.UserInterface
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource);
             if (string.IsNullOrEmpty(userPattern))
             {
+                SizeToContent = SizeToContent.WidthAndHeight;
                 view.Filter = null;
             }
             else
             {
+                SizeToContent = SizeToContent.Height;
+
                 // Instead implementing in-string wildcards, simply split into multiple search patters
                 view.Filter = (object item) =>
                 {
@@ -1189,7 +1147,14 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
         {
-            CellMouseLeave?.Invoke(dgv, (ListViewItemData)((ListViewItem)sender).Content);
+            object content = ((ListViewItem)sender).Content;
+            if (content == BindingOperations.DisconnectedSource)
+            {
+                // Item may disappear while mouse is hovering over it, eg. search filter hides item
+                return;
+            }
+
+            CellMouseLeave?.Invoke(dgv, (ListViewItemData)content);
         }
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
