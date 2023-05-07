@@ -16,16 +16,10 @@ namespace SystemTrayMenu.Handler
 
     internal class KeyboardInput : IDisposable
     {
-        private readonly Menu?[] menus;
         private readonly KeyboardHook hook = new();
 
         private Menu? focussedMenu;
         private ListViewItemData? focussedRow;
-
-        public KeyboardInput(Menu?[] menus)
-        {
-            this.menus = menus;
-        }
 
         internal event Action? HotKeyPressed;
 
@@ -44,9 +38,9 @@ namespace SystemTrayMenu.Handler
             hook.Dispose();
         }
 
-        internal void RegisterHotKey()
+        internal bool RegisterHotKey(string hotKey)
         {
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.HotKey))
+            if (!string.IsNullOrEmpty(hotKey))
             {
                 try
                 {
@@ -55,11 +49,12 @@ namespace SystemTrayMenu.Handler
                 }
                 catch (InvalidOperationException ex)
                 {
-                    Log.Warn($"key:'{Properties.Settings.Default.HotKey}'", ex);
-                    Properties.Settings.Default.HotKey = string.Empty;
-                    Properties.Settings.Default.Save();
+                    Log.Warn($"Hotkey cannot be set: '{hotKey}'", ex);
+                    return false;
                 }
             }
+
+            return true;
         }
 
         internal void ResetSelectedByKey()
@@ -110,35 +105,24 @@ namespace SystemTrayMenu.Handler
                 case Key.Tab:
                     if (modifiers == ModifierKeys.None)
                     {
-                        int indexOfTheCurrentMenu = GetMenuIndex(sender);
-                        int indexMax = menus.Where(m => m != null).Count() - 1;
-                        int indexNew = 0;
-                        if (indexOfTheCurrentMenu > 0)
+                        // Walk to previous text box and warp around when main menu reached
+                        Menu? menu = sender.ParentMenu;
+                        if (menu == null)
                         {
-                            indexNew = indexOfTheCurrentMenu - 1;
-                        }
-                        else
-                        {
-                            indexNew = indexMax;
+                            menu = sender;
+                            while (menu.SubMenu != null)
+                            {
+                                menu = menu.SubMenu;
+                            }
                         }
 
-                        menus[indexNew]?.FocusTextBox();
+                        menu.FocusTextBox();
                     }
                     else if (modifiers == ModifierKeys.Shift)
                     {
-                        int indexOfTheCurrentMenu = GetMenuIndex(sender);
-                        int indexMax = menus.Where(m => m != null).Count() - 1;
-                        int indexNew = 0;
-                        if (indexOfTheCurrentMenu < indexMax)
-                        {
-                            indexNew = indexOfTheCurrentMenu + 1;
-                        }
-                        else
-                        {
-                            indexNew = 0;
-                        }
-
-                        menus[indexNew]?.FocusTextBox();
+                        // Walk to next text box and warp around back to main menu on last sub menu
+                        Menu? menu = sender.SubMenu ?? sender.MainMenu;
+                        menu.FocusTextBox();
                     }
 
                     break;
@@ -163,22 +147,6 @@ namespace SystemTrayMenu.Handler
                     break;
                 default:
                     break;
-            }
-
-            int GetMenuIndex(in Menu? currentMenu)
-            {
-                int index = 0;
-                foreach (Menu? menuFindIndex in menus.Where(m => m != null))
-                {
-                    if (currentMenu == menuFindIndex)
-                    {
-                        break;
-                    }
-
-                    index++;
-                }
-
-                return index;
             }
         }
 
@@ -343,7 +311,6 @@ namespace SystemTrayMenu.Handler
                             }
                             else
                             {
-                                focussedMenu = menus[0];
                                 while (focussedMenu?.SubMenu != null)
                                 {
                                     focussedMenu = focussedMenu.SubMenu;

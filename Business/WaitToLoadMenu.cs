@@ -28,7 +28,7 @@ namespace SystemTrayMenu.Handler
 
         internal event Action<RowData>? StartLoadMenu;
 
-        internal event Action<int>? CloseMenu;
+        internal event Action<Menu>? CloseMenu;
 
         internal event Action? StopLoadMenu;
 
@@ -129,10 +129,13 @@ namespace SystemTrayMenu.Handler
                 menu?.Activate();
                 menu?.FocusTextBox();
 
-                CloseMenu?.Invoke(rowData.Level + 1);
+                Menu? menuToClose = menu?.SubMenu;
+                if (menuToClose != null)
+                {
+                    CloseMenu?.Invoke(menuToClose);
+                }
 
-                if (rowData.IsPointingToFolder &&
-                    rowData.Level + 1 < MenuDefines.MenusMax)
+                if (rowData.IsPointingToFolder)
                 {
                     StartLoadMenu?.Invoke(rowData);
                 }

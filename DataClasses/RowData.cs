@@ -110,7 +110,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal Menu? SubMenu { get; set; }
 
-        internal bool IsMenuOpen { get; set; }
+        internal bool IsMenuOpen { get; set; } // TODO: Implicitly set when SubMenu != null?
 
         internal bool IsClicking { get; set; }
 

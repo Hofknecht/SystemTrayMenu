@@ -92,6 +92,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 // This will be a main menu
                 Level = 0;
+                MainMenu = this;
 
                 // Use Main Menu DPI for all further calculations
                 Scaling.CalculateFactorByDpi(this);
@@ -99,8 +100,16 @@ namespace SystemTrayMenu.UserInterface
             else
             {
                 // This will be a sub menu
+                if (ParentMenu == null)
+                {
+                    // Should never happen as each parent menu must have a valid entry which's owner is set
+                    throw new ArgumentNullException(new (nameof(ParentMenu)));
+                }
+
                 Level = RowDataParent.Level + 1;
+                MainMenu = ParentMenu.MainMenu;
                 RowDataParent.SubMenu = this;
+                RowDataParent.IsMenuOpen = true;
 
                 buttonOpenFolder.Visibility = Visibility.Collapsed;
                 buttonSettings.Visibility = Visibility.Collapsed;
@@ -203,6 +212,7 @@ namespace SystemTrayMenu.UserInterface
                 if (RowDataParent?.SubMenu == this)
                 {
                     RowDataParent.SubMenu = null;
+                    RowDataParent.IsMenuOpen = false;
                 }
 
                 foreach (ListViewItemData item in dgv.Items)
@@ -224,7 +234,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu, bool, bool>? SearchTextChanged;
 
-        internal event Action? UserDragsMenu;
+        internal event Action<Menu>? UserDragsMenu;
 
         internal event Action<Menu, ListViewItemData>? CellMouseEnter;
 
@@ -268,6 +278,8 @@ namespace SystemTrayMenu.UserInterface
         internal int Level { get; set; }
 
         internal RowData? RowDataParent { get; set; }
+
+        internal Menu MainMenu { get; init; }
 
         internal Menu? ParentMenu => RowDataParent?.Owner;
 
@@ -364,13 +376,14 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal bool IsMouseOn()
+        // TODO: Check if we can just use original IsMouseOver instead?  (Check if it requires Mouse.Capture(this))
+        internal new bool IsMouseOver()
         {
             Point mousePos = NativeMethods.Screen.CursorPosition;
-            bool isMouseOn = Visibility == Visibility.Visible &&
+            bool isMouseOver = Visibility == Visibility.Visible &&
                 mousePos.X >= 0 && mousePos.X < Width &&
                 mousePos.Y >= 0 && mousePos.Y < Height;
-            return isMouseOn;
+            return isMouseOver;
         }
 
         internal ListView GetDataGridView() => dgv; // TODO WPF Replace Forms wrapper
@@ -427,23 +440,36 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void ActivateWithFade()
+        internal void ActivateWithFade(bool recursive)
         {
-            if (Settings.Default.UseFading)
+            if (recursive)
             {
-                isFading = true;
-                RaiseEvent(new(routedEvent: FadeInEvent));
+                SubMenu?.ActivateWithFade(true);
             }
-            else
+
+            if (Opacity != 1D)
             {
-                Opacity = 1D;
-                FadeIn_Completed(this, new());
+                if (Settings.Default.UseFading)
+                {
+                    isFading = true;
+                    RaiseEvent(new(routedEvent: FadeInEvent));
+                }
+                else
+                {
+                    Opacity = 1D;
+                    FadeIn_Completed(this, new());
+                }
             }
         }
 
-        internal void ShowWithFade(bool transparency = false)
+        internal void ShowWithFade(bool transparency, bool recursive)
         {
             timerUpdateIcons.Start();
+
+            if (recursive)
+            {
+                SubMenu?.ShowWithFade(transparency, true);
+            }
 
             if (Level > 0)
             {
@@ -472,8 +498,18 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void HideWithFade()
+        internal void HideWithFade(bool recursive)
         {
+            if (recursive)
+            {
+                SubMenu?.HideWithFade(true);
+            }
+
+            if (RowDataParent != null)
+            {
+                RowDataParent.SubMenu = null;
+            }
+
             if (Settings.Default.UseFading)
             {
                 isFading = true;
@@ -1108,7 +1144,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 mouseDown = true;
                 lastLocation = NativeMethods.Screen.CursorPosition;
-                UserDragsMenu?.Invoke();
+                UserDragsMenu?.Invoke(this);
                 Mouse.Capture(this);
             }
         }

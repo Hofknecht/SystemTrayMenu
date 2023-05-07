@@ -33,13 +33,11 @@ namespace SystemTrayMenu
                     Scaling.Initialize();
                     FolderOptions.Initialize();
 
-                    using (App app = new App())
-                    {
-                        app.InitializeComponent();
-                        isStartup = false;
-                        Log.WriteApplicationRuns();
-                        app.Run();
-                    }
+                    using App app = new ();
+                    app.InitializeComponent();
+                    isStartup = false;
+                    Log.WriteApplicationRuns();
+                    app.Run();
                 }
             }
             catch (Exception ex)

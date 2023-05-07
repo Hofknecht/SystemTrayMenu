@@ -11,7 +11,7 @@ namespace SystemTrayMenu.Utilities
     {
         public class NativeWindow : HwndSource
         {
-            private HwndSourceHook hook;
+            private readonly HwndSourceHook hook;
 
             public NativeWindow()
                 : base(new())
