@@ -193,7 +193,7 @@
                         <EventSetter Event="MouseEnter" Handler="ListViewItem_MouseEnter" />
                         <EventSetter Event="MouseLeave" Handler="ListViewItem_MouseLeave" />
                         <EventSetter Event="PreviewMouseDown" Handler="ListViewItem_PreviewMouseDown" />
-                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewxItem_PreviewMouseLeftButtonDown" />
+                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
                     </Style>
                 </ListView.ItemContainerStyle>
             </ListView>

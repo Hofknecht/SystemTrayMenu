@@ -183,14 +183,9 @@ namespace SystemTrayMenu.Handler
         {
             if (menu != null && itemData != null)
             {
-                ListView dgv = menu.GetDataGridView();
-                if (dgv.SelectedItems.Contains(itemData))
-                {
-                    dgv.SelectedItems.Remove(itemData);
-                }
+                itemData.IsClicking = false;
 
-                itemData.data.IsSelected = false;
-                itemData.data.IsClicking = false;
+                menu.GetDataGridView().SelectedItems.Remove(itemData);
             }
         }
 
@@ -200,7 +195,7 @@ namespace SystemTrayMenu.Handler
             Menu? menuBefore;
             ListViewItemData? rowBefore = focussedRow;
             bool doClearOldSelection = false;
-            bool wasSelected = focussedRow?.data.IsSelected ?? false;
+            bool wasSelected = focussedRow?.IsSelected ?? false;
 
             if (wasSelected)
             {
@@ -220,9 +215,9 @@ namespace SystemTrayMenu.Handler
                     if ((modifiers == ModifierKeys.None) && rowBefore != null && menuBefore != null)
                     {
                         RowData trigger = rowBefore.data;
-                        if (trigger.IsMenuOpen || !trigger.IsPointingToFolder)
+                        if (trigger.SubMenu != null || !trigger.IsPointingToFolder)
                         {
-                            trigger.OpenItem(out bool doCloseAfterOpen);
+                            rowBefore.OpenItem(out bool doCloseAfterOpen);
                             if (doCloseAfterOpen)
                             {
                                 ClosePressed?.Invoke();
@@ -328,10 +323,10 @@ namespace SystemTrayMenu.Handler
                         else if (focussedMenu?.ParentMenu != null)
                         {
                             // Next is in opposite key direction and prev is in key direction ==> Select parent/prev menu
+                            int index = focussedMenu.RowDataParent?.RowIndex ?? -1;
                             focussedMenu = focussedMenu.ParentMenu;
                             focussedRow = null;
-                            ListView dgv = focussedMenu.GetDataGridView();
-                            if (TrySelectNext(focussedMenu, dgv.Items.IndexOf(dgv.SelectedItems.Count > 0 ? dgv.SelectedItems[0] : null)) ||
+                            if (TrySelectNext(focussedMenu, index) ||
                                 TrySelectNext(focussedMenu, 0))
                             {
                                 RaiseRowSelectionChanged(menuBefore, rowBefore);
@@ -426,15 +421,6 @@ namespace SystemTrayMenu.Handler
         private void Select(ListView dgv, ListViewItemData itemData)
         {
             focussedRow = itemData;
-            itemData.data.IsSelected = true;
-
-            // TODO: Refresh ListViewItems - optimize out
-            //       ([remove and] add item to procove selection changed handler)
-            if (dgv.SelectedItems.Contains(itemData))
-            {
-                dgv.SelectedItems.Remove(itemData);
-            }
-
             dgv.SelectedItems.Add(itemData);
         }
     }

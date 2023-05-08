@@ -152,19 +152,15 @@ namespace SystemTrayMenu.Handler
             alreadyOpened = false;
 
             this.dgv = dgv;
-            dgvItemData = itemData;
-            dgvItemData.data.IsSelected = true;
-            dgv.SelectedItem = dgvItemData;
+            dgv.SelectedItem = dgvItemData = itemData;
         }
 
         private void ResetData(ListView dgv, ListViewItemData itemData)
         {
-            RowData rowData = itemData.data;
-            rowData.IsSelected = false;
-            rowData.IsClicking = false;
-            dgv.SelectedItem = null;
+            itemData.IsClicking = false;
+
             this.dgv = null;
-            dgvItemData = null;
+            dgv.SelectedItem = dgvItemData = null;
         }
     }
 }

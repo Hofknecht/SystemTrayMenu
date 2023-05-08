@@ -42,7 +42,6 @@ namespace SystemTrayMenu.Business
         private DateTime deactivatedTime = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
-        private bool searchTextChanging;
         private bool showMenuAfterMainPreload;
         private Menu? mainMenu;
 
@@ -393,18 +392,14 @@ namespace SystemTrayMenu.Business
                 Menu? menu = mainMenu;
                 if (menu != null)
                 {
-                    // The main menu gets loaded again
-                    // Clean up menu status of previous one
+                    // The main menu gets loaded again, reset list
                     ListView dgvMainMenu = menu.GetDataGridView();
                     foreach (ListViewItemData item in dgvMainMenu.Items)
                     {
-                        RowData rowDataToClear = item.data;
-                        rowDataToClear.IsMenuOpen = false;
-                        rowDataToClear.IsClicking = false;
-                        rowDataToClear.IsSelected = false;
+                        item.IsClicking = false;
                     }
 
-                    RefreshSelection(dgvMainMenu);
+                    dgvMainMenu.SelectedItem = null;
 
                     menu.RelocateOnNextShow = true;
 
@@ -492,11 +487,8 @@ namespace SystemTrayMenu.Business
                 // TODO: Main menu should destroy sub menu(s?) when it becomes unusable
                 menu.HideWithFade(false);
 
-                ListView? lv = menu.ParentMenu?.GetDataGridView();
-                if (lv != null)
-                {
-                    RefreshSelection(lv);
-                }
+                // TODO: Remove when setting SubMenu of RowData notifies about value change
+                menu.ParentMenu?.RefreshSelection();
             }
         }
 
@@ -519,7 +511,6 @@ namespace SystemTrayMenu.Business
             menu.SearchTextChanging += Menu_SearchTextChanging;
             void Menu_SearchTextChanging()
             {
-                searchTextChanging = true;
                 waitToOpenMenu.MouseActive = false;
             }
 
@@ -528,7 +519,6 @@ namespace SystemTrayMenu.Business
             {
                 keyboardInput.SearchTextChanged(menu, isSearchStringEmpty);
                 AdjustMenusSizeAndLocation(menu.Level + 1);
-                searchTextChanging = false;
 
                 // if any open menu close
                 if (!causedByWatcherUpdate)
@@ -587,7 +577,6 @@ namespace SystemTrayMenu.Business
             menu.ClosePressed += MenusFadeOut;
 
             ListView dgv = menu.GetDataGridView();
-            dgv.SelectionChanged += Dgv_SelectionChanged;
 
             if (menu.Level == 0)
             {
@@ -600,10 +589,9 @@ namespace SystemTrayMenu.Business
                 // Sub Menu (loading)
                 if (IsMainUsable)
                 {
-                    RefreshSelection(menu.GetDataGridView());
-
-                    // TODO: Re-enable again?     HideOldMenu(menu, true);
                     menu.ShowWithFade(!IsActiveApp(), false);
+
+                    menu.RefreshSelection();
                 }
             }
 
@@ -644,49 +632,6 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void Dgv_SelectionChanged(object sender, EventArgs e) => RefreshSelection((ListView)sender);
-
-        private void RefreshSelection(ListView dgv)
-        {
-            dgv.SelectionChanged -= Dgv_SelectionChanged;
-
-            foreach (ListViewItemData itemData in dgv.Items)
-            {
-                RowData rowData = itemData.data;
-                if (rowData.IsClicking)
-                {
-                    itemData.BorderBrush = MenuDefines.ColorIcons;
-                    itemData.BackgroundBrush = MenuDefines.ColorSelectedItem;
-                    dgv.SelectedItems.Add(itemData);
-                }
-                else if (rowData.IsMenuOpen)
-                {
-                    itemData.BorderBrush = MenuDefines.ColorOpenFolderBorder;
-                    itemData.BackgroundBrush = MenuDefines.ColorOpenFolder;
-                    dgv.SelectedItems.Add(itemData);
-                }
-                else if (rowData.IsSelected)
-                {
-                    itemData.BorderBrush = MenuDefines.ColorSelectedItemBorder;
-                    itemData.BackgroundBrush = MenuDefines.ColorSelectedItem;
-                    dgv.SelectedItems.Add(itemData);
-                }
-                else
-                {
-                    itemData.BorderBrush = Brushes.White;
-                    itemData.BackgroundBrush = Brushes.White;
-                    dgv.SelectedItems.Remove(itemData);
-                }
-            }
-
-            dgv.SelectionChanged += Dgv_SelectionChanged;
-
-            if (!searchTextChanging)
-            {
-                dgv.InvalidateVisual();
-            }
-        }
-
         private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e)
         {
             dispatchter.Invoke(() =>
@@ -702,29 +647,14 @@ namespace SystemTrayMenu.Business
             });
         }
 
-        private void HideOldMenu(Menu menuToShow, bool keepOrSetIsMenuOpen = false)
+        private void HideOldMenu(Menu menuToShow)
         {
             Menu? menuPrevious = menuToShow.ParentMenu;
             if (menuPrevious != null)
             {
-                // Clean up menu status IsMenuOpen for previous one
-                ListView dgvPrevious = menuPrevious.GetDataGridView();
-                foreach (ListViewItemData item in dgvPrevious.Items)
-                {
-                    RowData rowDataToClear = item.data;
-                    if (rowDataToClear == menuToShow.RowDataParent)
-                    {
-                        rowDataToClear.IsMenuOpen = keepOrSetIsMenuOpen;
-                    }
-                    else
-                    {
-                        rowDataToClear.IsMenuOpen = false;
-                    }
-                }
-
-                RefreshSelection(dgvPrevious);
-
                 menuPrevious.SubMenu?.HideWithFade(true);
+
+                menuPrevious.RefreshSelection();
             }
         }
 

@@ -110,12 +110,6 @@ namespace SystemTrayMenu.DataClasses
 
         internal Menu? SubMenu { get; set; }
 
-        internal bool IsMenuOpen { get; set; } // TODO: Implicitly set when SubMenu != null?
-
-        internal bool IsClicking { get; set; }
-
-        internal bool IsSelected { get; set; }
-
         internal bool HiddenEntry { get; set; }
 
         internal int RowIndex { get; set; }
@@ -167,7 +161,6 @@ namespace SystemTrayMenu.DataClasses
 
         internal void OpenItem(out bool doCloseAfterOpen, int clickCount = -1)
         {
-            IsClicking = false;
             doCloseAfterOpen = false;
 
             if (!IsPointingToFolder)

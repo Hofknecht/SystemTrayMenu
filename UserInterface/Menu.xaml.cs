@@ -109,7 +109,6 @@ namespace SystemTrayMenu.UserInterface
                 Level = RowDataParent.Level + 1;
                 MainMenu = ParentMenu.MainMenu;
                 RowDataParent.SubMenu = this;
-                RowDataParent.IsMenuOpen = true;
 
                 buttonOpenFolder.Visibility = Visibility.Collapsed;
                 buttonSettings.Visibility = Visibility.Collapsed;
@@ -196,6 +195,7 @@ namespace SystemTrayMenu.UserInterface
             });
 
             dgv.GotFocus += (_, _) => FocusTextBox();
+            dgv.SelectionChanged += ListView_SelectionChanged;
 
             Loaded += (_, _) =>
             {
@@ -212,7 +212,6 @@ namespace SystemTrayMenu.UserInterface
                 if (RowDataParent?.SubMenu == this)
                 {
                     RowDataParent.SubMenu = null;
-                    RowDataParent.IsMenuOpen = false;
                 }
 
                 foreach (ListViewItemData item in dgv.Items)
@@ -394,6 +393,9 @@ namespace SystemTrayMenu.UserInterface
         {
             ((CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource)).Refresh();
         }
+
+        // TODO: Check if it is implicitly already running due to SelectionChanged event
+        internal void RefreshSelection() => ListView_SelectionChanged(GetDataGridView(), null);
 
         internal void AddItemsToMenu(List<RowData> data, MenuDataDirectoryState? state, bool startIconLoading)
         {
@@ -1176,6 +1178,34 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs? e)
+        {
+            if (e != null)
+            {
+                foreach (ListViewItemData itemData in e.AddedItems)
+                {
+                    itemData.IsSelected = true;
+                    itemData.UpdateColors();
+                }
+
+                foreach (ListViewItemData itemData in e.RemovedItems)
+                {
+                    itemData.IsSelected = false;
+                    itemData.UpdateColors();
+                }
+            }
+            else
+            {
+                // TODO: Refactor item selection to prevent running this loop
+                ListView lv = (ListView)sender;
+                foreach (ListViewItemData itemData in lv.Items)
+                {
+                    itemData.IsSelected = lv.SelectedItems.Contains(itemData);
+                    itemData.UpdateColors();
+                }
+            }
+        }
+
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
         {
             CellMouseEnter?.Invoke(this, (ListViewItemData)((ListViewItem)sender).Content);
@@ -1201,7 +1231,7 @@ namespace SystemTrayMenu.UserInterface
 
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                itemData.data.IsClicking = true;
+                itemData.IsClicking = true;
             }
 
             if (e.RightButton == MouseButtonState.Pressed)
@@ -1212,11 +1242,11 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void ListViewxItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             ListViewItemData itemData = (ListViewItemData)((ListViewItem)sender).Content;
 
-            itemData.data.OpenItem(out bool doClose, e.ClickCount);
+            itemData.OpenItem(out bool doClose, e.ClickCount);
 
             if (e.ClickCount == 1)
             {
@@ -1251,20 +1281,26 @@ namespace SystemTrayMenu.UserInterface
             public Brush? BackgroundBrush
             {
                 get => backgroundBrush;
-                set
+                private set
                 {
-                    backgroundBrush = value;
-                    CallPropertyChanged();
+                    if (value != backgroundBrush)
+                    {
+                        backgroundBrush = value;
+                        CallPropertyChanged();
+                    }
                 }
             }
 
             public Brush? BorderBrush
             {
                 get => borderBrush;
-                set
+                private set
                 {
-                    borderBrush = value;
-                    CallPropertyChanged();
+                    if (value != borderBrush)
+                    {
+                        borderBrush = value;
+                        CallPropertyChanged();
+                    }
                 }
             }
 
@@ -1273,8 +1309,11 @@ namespace SystemTrayMenu.UserInterface
                 get => columnIcon;
                 set
                 {
-                    columnIcon = value;
-                    CallPropertyChanged();
+                    if (value != columnIcon)
+                    {
+                        columnIcon = value;
+                        CallPropertyChanged();
+                    }
                 }
             }
 
@@ -1286,13 +1325,47 @@ namespace SystemTrayMenu.UserInterface
 
             internal int SortIndex { get; set; }
 
+            internal bool IsClicking { get; set; }
+
+            internal bool IsSelected { get; set; }
+
+            public override string ToString() => nameof(ListViewItemData) + ": " + ColumnText + ", Owner: " + (data.Owner?.ToString() ?? "null");
+
             /// <summary>
             /// Triggers an PropertyChanged event of INotifyPropertyChanged.
             /// </summary>
             /// <param name="propertyName">Name of the changing property.</param>
             public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-            public override string ToString() => nameof(ListViewItemData) + ": " + ColumnText + ", Owner: " + (data.Owner?.ToString() ?? "null");
+            internal void OpenItem(out bool doCloseAfterOpen, int clickCount = -1)
+            {
+                IsClicking = false;
+                data.OpenItem(out doCloseAfterOpen, clickCount);
+            }
+
+            internal void UpdateColors()
+            {
+                if (IsClicking)
+                {
+                    BorderBrush = MenuDefines.ColorIcons;
+                    BackgroundBrush = MenuDefines.ColorSelectedItem;
+                }
+                else if (data.SubMenu != null)
+                {
+                    BorderBrush = MenuDefines.ColorOpenFolderBorder;
+                    BackgroundBrush = MenuDefines.ColorOpenFolder;
+                }
+                else if (IsSelected)
+                {
+                    BorderBrush = MenuDefines.ColorSelectedItemBorder;
+                    BackgroundBrush = MenuDefines.ColorSelectedItem;
+                }
+                else
+                {
+                    BorderBrush = Brushes.White;
+                    BackgroundBrush = Brushes.White;
+                }
+            }
         }
     }
 }
