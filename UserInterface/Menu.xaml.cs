@@ -237,11 +237,11 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu, ListViewItemData>? CellMouseEnter;
 
-        internal event Action<ListView, ListViewItemData>? CellMouseLeave;
+        internal event Action<ListView>? CellMouseLeave;
 
         internal event Action<Menu, ListViewItemData>? CellMouseDown;
 
-        internal event Action<ListView, ListViewItemData>? CellOpenOnClick;
+        internal event Action<Menu, ListViewItemData>? CellOpenOnClick;
 
         internal event Action? ClosePressed;
 
@@ -1206,33 +1206,16 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
-        {
+        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e) =>
             CellMouseEnter?.Invoke(this, (ListViewItemData)((ListViewItem)sender).Content);
-        }
 
-        private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
-        {
-            object content = ((ListViewItem)sender).Content;
-            if (content == BindingOperations.DisconnectedSource)
-            {
-                // Item may disappear while mouse is hovering over it, eg. search filter hides item
-                return;
-            }
-
-            CellMouseLeave?.Invoke(dgv, (ListViewItemData)content);
-        }
+        private void ListViewItem_MouseLeave(object sender, MouseEventArgs e) => CellMouseLeave?.Invoke(dgv);
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             ListViewItemData itemData = (ListViewItemData)((ListViewItem)sender).Content;
 
             CellMouseDown?.Invoke(this, itemData);
-
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                itemData.IsClicking = true;
-            }
 
             if (e.RightButton == MouseButtonState.Pressed)
             {
@@ -1250,7 +1233,7 @@ namespace SystemTrayMenu.UserInterface
 
             if (e.ClickCount == 1)
             {
-                CellOpenOnClick?.Invoke(dgv, itemData);
+                CellOpenOnClick?.Invoke(this, itemData);
             }
 
             if (doClose)
@@ -1325,7 +1308,7 @@ namespace SystemTrayMenu.UserInterface
 
             internal int SortIndex { get; set; }
 
-            internal bool IsClicking { get; set; }
+            internal bool IsPendingOpenItem { get; set; }
 
             internal bool IsSelected { get; set; }
 
@@ -1337,11 +1320,7 @@ namespace SystemTrayMenu.UserInterface
             /// <param name="propertyName">Name of the changing property.</param>
             public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-            internal void OpenItem(out bool doCloseAfterOpen, int clickCount = -1)
-            {
-                IsClicking = false;
-                data.OpenItem(out doCloseAfterOpen, clickCount);
-            }
+            internal void OpenItem(out bool doCloseAfterOpen, int clickCount = -1) => data.OpenItem(out doCloseAfterOpen, clickCount);
 
             internal void OpenShellContextMenu(Point position)
             {
@@ -1357,12 +1336,7 @@ namespace SystemTrayMenu.UserInterface
 
             internal void UpdateColors()
             {
-                if (IsClicking)
-                {
-                    BorderBrush = MenuDefines.ColorIcons;
-                    BackgroundBrush = MenuDefines.ColorSelectedItem;
-                }
-                else if (data.SubMenu != null)
+                if (data.SubMenu != null)
                 {
                     BorderBrush = MenuDefines.ColorOpenFolderBorder;
                     BackgroundBrush = MenuDefines.ColorOpenFolder;

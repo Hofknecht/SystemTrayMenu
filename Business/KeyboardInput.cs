@@ -5,7 +5,6 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
-    using System.Linq;
     using System.Windows.Controls;
     using System.Windows.Input;
     using SystemTrayMenu.DataClasses;
@@ -27,11 +26,11 @@ namespace SystemTrayMenu.Handler
 
         internal event Action<Menu, ListViewItemData>? RowSelected;
 
-        internal event Action<Menu?, ListViewItemData?>? RowDeselected;
+        internal event Action<Menu>? RowDeselected;
 
         internal event Action<Menu, ListViewItemData>? EnterPressed;
 
-        internal bool InUse { get; set; }
+        internal bool IsSelectedByKey { get; set; }
 
         public void Dispose()
         {
@@ -152,7 +151,7 @@ namespace SystemTrayMenu.Handler
 
         internal void SearchTextChanged(Menu menu, bool isSearchStringEmpty)
         {
-            ClearIsSelectedByKey();
+            DeselectFoccussedRow();
 
             if (!isSearchStringEmpty)
             {
@@ -164,29 +163,16 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void ClearIsSelectedByKey()
-        {
-            ClearIsSelectedByKey(focussedMenu, focussedRow);
-        }
+        internal void DeselectFoccussedRow() => focussedMenu?.GetDataGridView().SelectedItems.Remove(focussedRow);
 
         internal void MouseSelect(Menu menu, ListViewItemData itemData)
         {
-            InUse = false;
+            IsSelectedByKey = false;
 
-            ClearIsSelectedByKey();
+            DeselectFoccussedRow();
 
             focussedMenu = menu;
             Select(menu.GetDataGridView(), itemData);
-        }
-
-        private static void ClearIsSelectedByKey(Menu? menu, ListViewItemData? itemData)
-        {
-            if (menu != null && itemData != null)
-            {
-                itemData.IsClicking = false;
-
-                menu.GetDataGridView().SelectedItems.Remove(itemData);
-            }
         }
 
         private void SelectByKey(Key key, ModifierKeys modifiers)
@@ -214,6 +200,9 @@ namespace SystemTrayMenu.Handler
                 case Key.Enter:
                     if ((modifiers == ModifierKeys.None) && rowBefore != null && menuBefore != null)
                     {
+                        // When not sub menu already open, open the sub menu,
+                        // but when already opened, open the actual folder instead.
+                        // In case it is a single file, open it right away
                         RowData trigger = rowBefore.data;
                         if (trigger.SubMenu != null || !trigger.IsPointingToFolder)
                         {
@@ -225,7 +214,7 @@ namespace SystemTrayMenu.Handler
                         }
                         else
                         {
-                            RaiseRowSelectionChanged(menuBefore, rowBefore);
+                            RaiseRowSelectionChanged(menuBefore);
                             EnterPressed?.Invoke(menuBefore, rowBefore);
                         }
                     }
@@ -237,7 +226,7 @@ namespace SystemTrayMenu.Handler
                         (TrySelectPrevious(menuBefore, menuBefore.GetDataGridView().Items.IndexOf(rowBefore)) ||
                         TrySelectPrevious(menuBefore, menuBefore.GetDataGridView().Items.Count - 1)))
                     {
-                        RaiseRowSelectionChanged(menuBefore, rowBefore);
+                        RaiseRowSelectionChanged(menuBefore);
                         doClearOldSelection = wasSelected;
                     }
 
@@ -248,7 +237,7 @@ namespace SystemTrayMenu.Handler
                         (TrySelectNext(menuBefore, menuBefore.GetDataGridView().Items.IndexOf(rowBefore)) ||
                         TrySelectNext(menuBefore, 0)))
                     {
-                        RaiseRowSelectionChanged(menuBefore, rowBefore);
+                        RaiseRowSelectionChanged(menuBefore);
                         doClearOldSelection = wasSelected;
                     }
 
@@ -258,7 +247,7 @@ namespace SystemTrayMenu.Handler
                         menuBefore != null &&
                         TrySelectNext(menuBefore, 0))
                     {
-                        RaiseRowSelectionChanged(menuBefore, rowBefore);
+                        RaiseRowSelectionChanged(menuBefore);
                         doClearOldSelection = wasSelected;
                     }
 
@@ -268,7 +257,7 @@ namespace SystemTrayMenu.Handler
                         menuBefore != null &&
                         TrySelectPrevious(menuBefore, menuBefore.GetDataGridView().Items.Count - 1))
                     {
-                        RaiseRowSelectionChanged(menuBefore, rowBefore);
+                        RaiseRowSelectionChanged(menuBefore);
                         doClearOldSelection = wasSelected;
                     }
 
@@ -299,7 +288,7 @@ namespace SystemTrayMenu.Handler
                                     focussedRow = null;
                                     if (TrySelectNext(menuFromSelected, 0))
                                     {
-                                        RaiseRowSelectionChanged(menuBefore, rowBefore);
+                                        RaiseRowSelectionChanged(menuBefore);
                                         doClearOldSelection = wasSelected;
                                     }
                                 }
@@ -315,7 +304,7 @@ namespace SystemTrayMenu.Handler
                                 Menu? lastMenu = focussedMenu;
                                 if (lastMenu != null && TrySelectNext(lastMenu, 0))
                                 {
-                                    RaiseRowSelectionChanged(menuBefore, rowBefore);
+                                    RaiseRowSelectionChanged(menuBefore);
                                     doClearOldSelection = wasSelected;
                                 }
                             }
@@ -329,7 +318,7 @@ namespace SystemTrayMenu.Handler
                             if (TrySelectNext(focussedMenu, index) ||
                                 TrySelectNext(focussedMenu, 0))
                             {
-                                RaiseRowSelectionChanged(menuBefore, rowBefore);
+                                RaiseRowSelectionChanged(menuBefore);
                                 doClearOldSelection = wasSelected;
                             }
                         }
@@ -341,8 +330,12 @@ namespace SystemTrayMenu.Handler
                     if ((key == Key.Escape && modifiers == ModifierKeys.None) ||
                         (key == Key.F4 && modifiers == ModifierKeys.Alt))
                     {
-                        RowDeselected?.Invoke(menuBefore, rowBefore);
                         ResetSelectedByKey();
+                        if (menuBefore != null)
+                        {
+                            RaiseRowSelectionChanged(menuBefore);
+                        }
+
                         doClearOldSelection = wasSelected;
                         ClosePressed?.Invoke();
                     }
@@ -354,17 +347,17 @@ namespace SystemTrayMenu.Handler
 
             if (doClearOldSelection)
             {
-                ClearIsSelectedByKey(menuBefore, rowBefore);
+                menuBefore?.GetDataGridView().SelectedItems.Remove(rowBefore);
             }
         }
 
-        private void RaiseRowSelectionChanged(Menu? menuBefore, ListViewItemData? rowBefore)
+        private void RaiseRowSelectionChanged(Menu menuBefore)
         {
-            RowDeselected?.Invoke(menuBefore, rowBefore);
+            RowDeselected?.Invoke(menuBefore);
 
             if (focussedMenu != null && focussedRow != null)
             {
-                InUse = true;
+                IsSelectedByKey = true;
                 RowSelected?.Invoke(focussedMenu, focussedRow);
             }
         }

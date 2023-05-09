@@ -15,8 +15,8 @@ namespace SystemTrayMenu.Handler
     internal class WaitToLoadMenu : IDisposable
     {
         private readonly DispatcherTimer timerStartLoad = new();
-        private ListView? dgv;
-        private ListViewItemData? dgvItemData;
+        private Menu? currentMenu;
+        private ListViewItemData? currentItemData;
         private bool alreadyOpened;
         private bool checkForMouseActive = true;
 
@@ -49,7 +49,7 @@ namespace SystemTrayMenu.Handler
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
                 checkForMouseActive = true;
-                SetData(menu.GetDataGridView(), itemData);
+                SetData(menu, itemData);
                 timerStartLoad.Start();
             }
         }
@@ -58,38 +58,34 @@ namespace SystemTrayMenu.Handler
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            SetData(menu.GetDataGridView(), itemData);
+            SetData(menu, itemData);
             MouseActive = false;
             checkForMouseActive = false;
             timerStartLoad.Start();
         }
 
-        internal void MouseLeave(ListView dgv, ListViewItemData itemData)
+        internal void MouseLeave(ListView dgv)
         {
             if (MouseActive)
             {
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
-                ResetData(dgv, itemData);
+                ResetData(dgv);
             }
         }
 
-        internal void RowDeselected(Menu? menu, ListViewItemData? itemData)
+        internal void RowDeselected(Menu menu)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            if (menu != null && itemData != null)
-            {
-                ResetData(menu.GetDataGridView(), itemData);
-            }
-
+            ResetData(menu.GetDataGridView());
             MouseActive = false;
         }
 
-        internal void ClickOpensInstantly(ListView dgv, ListViewItemData itemData)
+        internal void ClickOpensInstantly(Menu menu, ListViewItemData itemData)
         {
             timerStartLoad.Stop();
-            SetData(dgv, itemData);
+            SetData(menu, itemData);
             MouseActive = true;
             checkForMouseActive = false;
             CallOpenMenuNow();
@@ -99,7 +95,7 @@ namespace SystemTrayMenu.Handler
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            SetData(menu.GetDataGridView(), itemData);
+            SetData(menu, itemData);
             MouseActive = false;
             checkForMouseActive = false;
             CallOpenMenuNow();
@@ -116,25 +112,22 @@ namespace SystemTrayMenu.Handler
 
         private void CallOpenMenuNow()
         {
-            if (!alreadyOpened && dgv != null && dgvItemData != null && dgv.Items.Contains(dgvItemData))
+            if (!alreadyOpened && (currentMenu?.GetDataGridView().Items.Contains(currentItemData) ?? false))
             {
                 alreadyOpened = true;
 
-                RowData rowData = dgvItemData.data;
-                Menu menu = (Menu)dgv.GetParentWindow();
-                rowData.Level = menu.Level;
-
                 // Give the opening window focus
                 // if closing window lose focus no window would have focus any more
-                menu?.Activate();
-                menu?.FocusTextBox();
+                currentMenu?.Activate();
+                currentMenu?.FocusTextBox();
 
-                Menu? menuToClose = menu?.SubMenu;
+                Menu? menuToClose = currentMenu?.SubMenu;
                 if (menuToClose != null)
                 {
                     CloseMenu?.Invoke(menuToClose);
                 }
 
+                RowData rowData = currentItemData!.data;
                 if (rowData.IsPointingToFolder)
                 {
                     StartLoadMenu?.Invoke(rowData);
@@ -142,25 +135,24 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        private void SetData(ListView dgv, ListViewItemData itemData)
+        private void SetData(Menu menu, ListViewItemData itemData)
         {
-            if (this.dgv == dgv && dgvItemData == itemData)
+            if (currentMenu != menu || currentItemData != itemData)
             {
-                return;
+                alreadyOpened = false;
+
+                menu.GetDataGridView().SelectedItem = currentItemData = itemData;
+                currentMenu = menu;
             }
-
-            alreadyOpened = false;
-
-            this.dgv = dgv;
-            dgv.SelectedItem = dgvItemData = itemData;
         }
 
-        private void ResetData(ListView dgv, ListViewItemData itemData)
+        private void ResetData(ListView dgv)
         {
-            itemData.IsClicking = false;
-
-            this.dgv = null;
-            dgv.SelectedItem = dgvItemData = null;
+            if (currentMenu != null)
+            {
+                dgv.SelectedItem = currentItemData = null;
+                currentMenu = null;
+            }
         }
     }
 }

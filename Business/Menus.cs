@@ -13,7 +13,6 @@ namespace SystemTrayMenu.Business
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Media;
     using System.Windows.Threading;
     using Microsoft.Win32;
     using SystemTrayMenu.DataClasses;
@@ -21,7 +20,6 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
-    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.UserInterface.Menu;
     using Menu = SystemTrayMenu.UserInterface.Menu;
@@ -392,14 +390,7 @@ namespace SystemTrayMenu.Business
                 Menu? menu = mainMenu;
                 if (menu != null)
                 {
-                    // The main menu gets loaded again, reset list
-                    ListView dgvMainMenu = menu.GetDataGridView();
-                    foreach (ListViewItemData item in dgvMainMenu.Items)
-                    {
-                        item.IsClicking = false;
-                    }
-
-                    dgvMainMenu.SelectedItem = null;
+                    menu.GetDataGridView().SelectedItem = null;
 
                     menu.RelocateOnNextShow = true;
 
@@ -576,8 +567,6 @@ namespace SystemTrayMenu.Business
             menu.CellOpenOnClick += waitToOpenMenu.ClickOpensInstantly;
             menu.ClosePressed += MenusFadeOut;
 
-            ListView dgv = menu.GetDataGridView();
-
             if (menu.Level == 0)
             {
                 // Main Menu
@@ -590,7 +579,6 @@ namespace SystemTrayMenu.Business
                 if (IsMainUsable)
                 {
                     menu.ShowWithFade(!IsActiveApp(), false);
-
                     menu.RefreshSelection();
                 }
             }
@@ -666,7 +654,7 @@ namespace SystemTrayMenu.Business
                 {
                     if (Settings.Default.StaysOpenWhenFocusLost && IsMouseOverAnyMenu(mainMenu) != null)
                     {
-                        if (!keyboardInput.InUse)
+                        if (!keyboardInput.IsSelectedByKey)
                         {
                             mainMenu?.ShowWithFade(true, true);
                         }
@@ -872,7 +860,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
-                keyboardInput.ClearIsSelectedByKey();
+                keyboardInput.DeselectFoccussedRow();
                 menu.AddItemsToMenu(rowDatas, null, true);
                 menu.OnWatcherUpdate();
             }
@@ -905,7 +893,7 @@ namespace SystemTrayMenu.Business
                     ((IEditableCollectionView)dgv.Items).Remove(rowToRemove);
                 }
 
-                keyboardInput.ClearIsSelectedByKey();
+                keyboardInput.DeselectFoccussedRow();
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
@@ -939,7 +927,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
-                keyboardInput.ClearIsSelectedByKey();
+                keyboardInput.DeselectFoccussedRow();
                 menu.AddItemsToMenu(rowDatas, null, true);
                 menu.OnWatcherUpdate();
             }
