@@ -1238,7 +1238,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 var position = Mouse.GetPosition(this);
                 position.Offset(Left, Top);
-                itemData.data.OpenShellContextMenu(position);
+                itemData.OpenShellContextMenu(position);
             }
         }
 
@@ -1341,6 +1341,18 @@ namespace SystemTrayMenu.UserInterface
             {
                 IsClicking = false;
                 data.OpenItem(out doCloseAfterOpen, clickCount);
+            }
+
+            internal void OpenShellContextMenu(Point position)
+            {
+                if (data.IsPointingToFolder)
+                {
+                    ShellContextMenu.OpenShellContextMenu(new DirectoryInfo(data.Path), position);
+                }
+                else
+                {
+                    ShellContextMenu.OpenShellContextMenu(data.FileInfo, position);
+                }
             }
 
             internal void UpdateColors()

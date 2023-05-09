@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.Utilities
+namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
@@ -11,8 +11,9 @@ namespace SystemTrayMenu.Utilities
     using System.Text;
     using System.Windows;
     using System.Windows.Input;
-    using SystemTrayMenu.Helpers;
     using static SystemTrayMenu.Utilities.FormsExtensions;
+
+    [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:Do not use regions", Justification = "Mark SystemTrayMenu modifications made to original source.")]
 
     /// <summary>
     /// source: https://www.codeproject.com/Articles/22012/Explorer-Shell-Context-Menu
@@ -697,6 +698,36 @@ namespace SystemTrayMenu.Utilities
                 IntPtr plResult);
         }
 
+        #region System Tray Menu Helpers
+
+        /// <summary>
+        /// Creates and shows a shell context menu.
+        /// </summary>
+        /// <param name="directoryInfo">Context of given directory.</param>
+        /// <param name="position">Position where the menu show be shown.</param>
+        public static void OpenShellContextMenu(DirectoryInfo directoryInfo, Point position)
+        {
+            ShellContextMenu ctxMnu = new();
+            DirectoryInfo[] dir = new DirectoryInfo[1];
+            dir[0] = directoryInfo;
+            ctxMnu.ShowContextMenu(dir, position);
+        }
+
+        /// <summary>
+        /// Creates and shows a shell context menu.
+        /// </summary>
+        /// <param name="fileInfo">Context of given file.</param>
+        /// <param name="position">Position where the menu show be shown.</param>
+        public static void OpenShellContextMenu(FileInfo fileInfo, Point position)
+        {
+            ShellContextMenu ctxMnu = new();
+            FileInfo[] arrFI = new FileInfo[1];
+            arrFI[0] = fileInfo;
+            ctxMnu.ShowContextMenu(arrFI, position);
+        }
+
+        #endregion
+
         /// <summary>
         /// Shows the context menu.
         /// </summary>
@@ -1063,7 +1094,7 @@ namespace SystemTrayMenu.Utilities
                 int nResult = DllImports.NativeMethods.Shell32SHGetDesktopFolder(out IntPtr pUnkownDesktopFolder);
                 if (nResult != ResultOK)
                 {
-                    throw new ShellContextMenuException("Failed to get the desktop shell folder");
+                    throw new COMException("Failed to get the desktop shell folder", nResult);
                 }
 
                 oDesktopFolder = (IShellFolder)Marshal.GetTypedObjectForIUnknown(pUnkownDesktopFolder, typeof(IShellFolder));

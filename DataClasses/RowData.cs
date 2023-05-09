@@ -142,23 +142,6 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal void OpenShellContextMenu(Point position)
-        {
-            ShellContextMenu ctxMnu = new();
-            if (IsPointingToFolder)
-            {
-                DirectoryInfo[] dir = new DirectoryInfo[1];
-                dir[0] = new DirectoryInfo(Path);
-                ctxMnu.ShowContextMenu(dir, position);
-            }
-            else
-            {
-                FileInfo[] arrFI = new FileInfo[1];
-                arrFI[0] = FileInfo;
-                ctxMnu.ShowContextMenu(arrFI, position);
-            }
-        }
-
         internal void OpenItem(out bool doCloseAfterOpen, int clickCount = -1)
         {
             doCloseAfterOpen = false;
