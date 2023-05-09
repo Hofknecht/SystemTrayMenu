@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.Helpers
+namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Diagnostics;
@@ -11,7 +11,6 @@ namespace SystemTrayMenu.Helpers
     using System.Windows.Threading;
     using H.NotifyIcon.Core;
     using SystemTrayMenu.Helpers.Updater;
-    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
 
     internal class AppContextMenu

@@ -1,8 +1,8 @@
-﻿// <copyright file="ShowWindow.cs" company="PlaceholderCompany">
+﻿// <copyright file="Window.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //
-// Copyright (c) 2022-2022 Peter Kirmeier
+// Copyright (c) 2022-2023 Peter Kirmeier
 
 namespace SystemTrayMenu.DllImports
 {
@@ -39,10 +39,22 @@ namespace SystemTrayMenu.DllImports
         }
 
         /// <summary>
+        /// https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-findwindoww .
+        /// </summary>
+        /// <param name="lpClassName">The class name or a class atom.</param>
+        /// <param name="lpWindowName">The window name.</param>
+        /// <returns>Handle to the window or NULL on failure.</returns>
+        [SupportedOSPlatform("windows")]
+        [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
+        internal static extern IntPtr User32FindWindow(string? lpClassName, string? lpWindowName);
+
+        /// <summary>
         /// https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getwindowlongw .
         /// </summary>
         [SupportedOSPlatform("windows")]
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern IntPtr GetWindowLong(IntPtr hWnd, int nIndex);
 
         /// <summary>
@@ -50,6 +62,7 @@ namespace SystemTrayMenu.DllImports
         /// </summary>
         [SupportedOSPlatform("windows")]
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex);
 
         /// <summary>
@@ -57,6 +70,7 @@ namespace SystemTrayMenu.DllImports
         /// </summary>
         [SupportedOSPlatform("windows")]
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
 
         /// <summary>
@@ -64,6 +78,7 @@ namespace SystemTrayMenu.DllImports
         /// </summary>
         [SupportedOSPlatform("windows")]
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         private static extern IntPtr SetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
     }
 }

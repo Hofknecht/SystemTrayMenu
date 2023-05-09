@@ -204,7 +204,7 @@ namespace SystemTrayMenu.Helpers
                 menuData.RowDatas.Add(new RowData(true, false, menuData.Level, directory));
             }
 
-            foreach (string file in DirectoryBySearchPattern.GetFiles(path, Config.SearchPattern))
+            foreach (string file in GetFilesBySearchPattern(path, Config.SearchPattern))
             {
                 if (worker?.CancellationPending == true)
                 {
@@ -223,7 +223,7 @@ namespace SystemTrayMenu.Helpers
         {
             try
             {
-                foreach (string file in DirectoryBySearchPattern.GetFiles(path, Config.SearchPattern))
+                foreach (string file in GetFilesBySearchPattern(path, Config.SearchPattern))
                 {
                     menuData.RowDatas.Add(new RowData(false, true, menuData.Level, file));
                 }
@@ -245,6 +245,18 @@ namespace SystemTrayMenu.Helpers
             {
                 Log.Warn($"GetDirectoriesAndFilesRecursive path:'{path}'", ex);
             }
+        }
+
+        private static List<string> GetFilesBySearchPattern(string path, string searchPatternCombined)
+        {
+            string[] searchPatterns = searchPatternCombined.Split('|');
+            List<string> files = new();
+            foreach (string searchPattern in searchPatterns)
+            {
+                files.AddRange(Directory.GetFiles(path, searchPattern));
+            }
+
+            return files;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿// <copyright file="GetIcon.cs" company="PlaceholderCompany">
+﻿// <copyright file="Icon.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -6,6 +6,7 @@ namespace SystemTrayMenu.DllImports
 {
     using System;
     using System.Runtime.InteropServices;
+    using System.Runtime.Versioning;
 
     /// <summary>
     /// wraps the methodcalls to native windows dll's.
@@ -29,11 +30,17 @@ namespace SystemTrayMenu.DllImports
         /// <param name="i">i.</param>
         /// <param name="flags">flags.</param>
         /// <returns>IntPtr.</returns>
-        [DllImport("comctl32", SetLastError = true, CharSet = CharSet.Unicode)]
+        [SupportedOSPlatform("windows")]
+        [DllImport("comctl32", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
         [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         internal static extern IntPtr ImageList_GetIcon(
           IntPtr himl,
           int i,
           int flags);
+
+        [SupportedOSPlatform("windows")]
+        [DllImport("User32.dll", EntryPoint = "DestroyIcon", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
+        internal static extern int User32DestroyIcon(IntPtr hIcon);
     }
 }

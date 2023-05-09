@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //
-// Copyright (c) 2022-2022 Peter Kirmeier
+// Copyright (c) 2022-2023 Peter Kirmeier
 
 namespace SystemTrayMenu.DllImports
 {
@@ -17,6 +17,19 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
+        public static bool IsTouchEnabled()
+        {
+            const int MAXTOUCHES_INDEX = 95;
+            int maxTouches = GetSystemMetrics(MAXTOUCHES_INDEX);
+
+            return maxTouches > 0;
+        }
+
+        [SupportedOSPlatform("windows")]
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+        [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
+        private static extern int GetSystemMetrics(int nIndex);
+
         public static class Screen
         {
             private static Point LastCursorPosition = new Point(0, 0);
@@ -112,14 +125,16 @@ namespace SystemTrayMenu.DllImports
                 /// https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-enumdisplaymonitors .
                 /// </summary>
                 [SupportedOSPlatform("windows")]
-                [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+                [DllImport("user32.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+                [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
                 public static extern bool EnumDisplayMonitors(IntPtr hdc, IntPtr lprcClip, MonitorEnumDelegate lpfnEnum, IntPtr dwData);
 
                 /// <summary>
                 /// https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getcursorpos .
                 /// </summary>
                 [SupportedOSPlatform("windows")]
-                [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+                [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
+                [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
                 public static extern bool GetCursorPos(out POINT lpPoint);
 
                 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]

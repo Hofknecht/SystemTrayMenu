@@ -1,14 +1,15 @@
-﻿// <copyright file="NativeMethods.cs" company="PlaceholderCompany">
+﻿// <copyright file="ShellInterfacesCOM.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
+namespace SystemTrayMenu.DllImports
 {
     using System;
     using System.Runtime.CompilerServices;
     using System.Runtime.InteropServices;
+    using System.Runtime.Versioning;
 
-    internal static class NativeMethods
+    public static partial class NativeMethods
     {
         public const uint FOS_PICKFOLDERS = 0x00000020;
         public const uint FOS_FORCEFILESYSTEM = 0x00000040;
@@ -21,6 +22,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
         public const uint SIGDN_FILESYSPATH = 0x80058000;
 
         [ComImport]
+        [SupportedOSPlatform("windows")]
         [Guid("42F85136-DB7E-439C-85F1-E4075D135FC8")]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         internal interface IFileDialog
@@ -103,6 +105,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
         }
 
         [ComImport]
+        [SupportedOSPlatform("windows")]
         [Guid("43826D1E-E718-42EE-BC55-A1E261C37BFE")]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         internal interface IShellItem
@@ -127,7 +130,8 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             uint Compare([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi, [In] uint hint, out int piOrder);
         }
 
-        [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        [SupportedOSPlatform("windows")]
+        [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
         [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         internal static extern int SHCreateItemFromParsingName(
             [MarshalAs(UnmanagedType.LPWStr)] string pszPath,
@@ -136,6 +140,7 @@ namespace SystemTrayMenu.UserInterface.FolderBrowseDialog
             [MarshalAs(UnmanagedType.Interface)] out IShellItem ppv);
 
         [ComImport]
+        [SupportedOSPlatform("windows")]
         [ClassInterface(ClassInterfaceType.None)]
         [TypeLibType(TypeLibTypeFlags.FCanCreate)]
         [Guid("DC1C5A9C-E88A-4DDE-A5A1-60F82A20AEF7")]

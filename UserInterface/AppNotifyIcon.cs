@@ -7,7 +7,6 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Windows.Threading;
     using H.NotifyIcon.Core;
-    using SystemTrayMenu.Helpers;
 
     internal class AppNotifyIcon : IDisposable
     {

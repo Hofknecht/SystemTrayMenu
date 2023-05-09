@@ -1,4 +1,4 @@
-﻿// <copyright file="SHAppBarMessage.cs" company="PlaceholderCompany">
+﻿// <copyright file="TaskBar.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
@@ -6,6 +6,7 @@ namespace SystemTrayMenu.DllImports
 {
     using System;
     using System.Runtime.InteropServices;
+    using System.Runtime.Versioning;
 
     /// <summary>
     /// wraps the methodcalls to native windows dll's.
@@ -35,14 +36,10 @@ namespace SystemTrayMenu.DllImports
             Bottom = 3,
         }
 
-        internal static IntPtr Shell32SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData)
-        {
-            return SHAppBarMessage(dwMessage, ref pData);
-        }
-
-        [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        [SupportedOSPlatform("windows")]
+        [DllImport("shell32.dll", EntryPoint = "SHAppBarMessage", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
         [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
-        private static extern IntPtr SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
+        internal static extern IntPtr Shell32SHAppBarMessage(ABM dwMessage, [In] ref APPBARDATA pData);
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         internal struct APPBARDATA
