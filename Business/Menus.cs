@@ -390,7 +390,7 @@ namespace SystemTrayMenu.Business
                 Menu? menu = mainMenu;
                 if (menu != null)
                 {
-                    menu.GetDataGridView().SelectedItem = null;
+                    menu.SelectedItem = null;
 
                     menu.RelocateOnNextShow = true;
 

@@ -171,7 +171,7 @@
                 </Button>
             </DockPanel>
 
-            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=5}"
+            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionMode="Single"
                       Foreground="{x:Static stm:MenuDefines.ColorForeground}" BorderBrush="{x:Null}" Background="{x:Null}"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="HandleScrollChanged">
                 <ListView.ItemTemplate>

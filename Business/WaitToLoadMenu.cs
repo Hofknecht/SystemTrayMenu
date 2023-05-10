@@ -7,7 +7,6 @@ namespace SystemTrayMenu.Handler
     using System;
     using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
-    using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.UserInterface.Menu;
     using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
@@ -64,13 +63,13 @@ namespace SystemTrayMenu.Handler
             timerStartLoad.Start();
         }
 
-        internal void MouseLeave(ListView dgv)
+        internal void MouseLeave(Menu menu)
         {
             if (MouseActive)
             {
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
-                ResetData(dgv);
+                ResetData(menu);
             }
         }
 
@@ -78,7 +77,7 @@ namespace SystemTrayMenu.Handler
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            ResetData(menu.GetDataGridView());
+            ResetData(menu);
             MouseActive = false;
         }
 
@@ -141,16 +140,16 @@ namespace SystemTrayMenu.Handler
             {
                 alreadyOpened = false;
 
-                menu.GetDataGridView().SelectedItem = currentItemData = itemData;
+                menu.SelectedItem = currentItemData = itemData;
                 currentMenu = menu;
             }
         }
 
-        private void ResetData(ListView dgv)
+        private void ResetData(Menu menu)
         {
             if (currentMenu != null)
             {
-                dgv.SelectedItem = currentItemData = null;
+                menu.SelectedItem = currentItemData = null;
                 currentMenu = null;
             }
         }

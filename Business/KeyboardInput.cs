@@ -163,7 +163,13 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void DeselectFoccussedRow() => focussedMenu?.GetDataGridView().SelectedItems.Remove(focussedRow);
+        internal void DeselectFoccussedRow()
+        {
+            if (focussedMenu != null)
+            {
+                focussedMenu.SelectedItem = null;
+            }
+        }
 
         internal void MouseSelect(Menu menu, ListViewItemData itemData)
         {
@@ -347,7 +353,10 @@ namespace SystemTrayMenu.Handler
 
             if (doClearOldSelection)
             {
-                menuBefore?.GetDataGridView().SelectedItems.Remove(rowBefore);
+                if (focussedMenu != null)
+                {
+                    focussedMenu.SelectedItem = null;
+                }
             }
         }
 
@@ -414,7 +423,7 @@ namespace SystemTrayMenu.Handler
         private void Select(ListView dgv, ListViewItemData itemData)
         {
             focussedRow = itemData;
-            dgv.SelectedItems.Add(itemData);
+            dgv.SelectedItem = itemData;
         }
     }
 }

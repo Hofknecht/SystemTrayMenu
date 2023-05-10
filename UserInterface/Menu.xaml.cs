@@ -237,7 +237,7 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu, ListViewItemData>? CellMouseEnter;
 
-        internal event Action<ListView>? CellMouseLeave;
+        internal event Action<Menu>? CellMouseLeave;
 
         internal event Action<Menu, ListViewItemData>? CellMouseDown;
 
@@ -277,6 +277,12 @@ namespace SystemTrayMenu.UserInterface
         internal int Level { get; set; }
 
         internal RowData? RowDataParent { get; set; }
+
+        internal ListViewItemData? SelectedItem
+        {
+            get => (ListViewItemData?)dgv.SelectedItem;
+            set => dgv.SelectedItem = value;
+        }
 
         internal Menu MainMenu { get; init; }
 
@@ -1200,7 +1206,7 @@ namespace SystemTrayMenu.UserInterface
                 ListView lv = (ListView)sender;
                 foreach (ListViewItemData itemData in lv.Items)
                 {
-                    itemData.IsSelected = lv.SelectedItems.Contains(itemData);
+                    itemData.IsSelected = lv.SelectedItem == itemData;
                     itemData.UpdateColors();
                 }
             }
@@ -1209,7 +1215,7 @@ namespace SystemTrayMenu.UserInterface
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e) =>
             CellMouseEnter?.Invoke(this, (ListViewItemData)((ListViewItem)sender).Content);
 
-        private void ListViewItem_MouseLeave(object sender, MouseEventArgs e) => CellMouseLeave?.Invoke(dgv);
+        private void ListViewItem_MouseLeave(object sender, MouseEventArgs e) => CellMouseLeave?.Invoke(this);
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -1250,6 +1256,7 @@ namespace SystemTrayMenu.UserInterface
             private Brush? backgroundBrush;
             private Brush? borderBrush;
             private ImageSource? columnIcon;
+            private bool isSelected;
 
             internal ListViewItemData(ImageSource? columnIcon, string columnText, RowData rowData, int sortIndex)
             {
@@ -1310,7 +1317,18 @@ namespace SystemTrayMenu.UserInterface
 
             internal bool IsPendingOpenItem { get; set; }
 
-            internal bool IsSelected { get; set; }
+            internal bool IsSelected
+            {
+                get => isSelected;
+                set
+                {
+                    if (value != isSelected)
+                    {
+                        isSelected = value;
+                        CallPropertyChanged();
+                    }
+                }
+            }
 
             public override string ToString() => nameof(ListViewItemData) + ": " + ColumnText + ", Owner: " + (data.Owner?.ToString() ?? "null");
 
