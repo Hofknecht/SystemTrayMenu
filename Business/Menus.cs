@@ -56,7 +56,7 @@ namespace SystemTrayMenu.Business
             keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowDeselected += waitToOpenMenu.RowDeselected;
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
-            keyboardInput.RowSelected += waitToOpenMenu.RowSelected;
+            keyboardInput.RowSelected += waitToOpenMenu.RowSelectedByKey;
 
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;

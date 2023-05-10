@@ -53,7 +53,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowSelected(Menu menu, ListViewItemData itemData)
+        internal void RowSelectedByKey(Menu menu, ListViewItemData itemData)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
@@ -63,21 +63,21 @@ namespace SystemTrayMenu.Handler
             timerStartLoad.Start();
         }
 
-        internal void MouseLeave(Menu menu)
+        internal void MouseLeave()
         {
             if (MouseActive)
             {
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
-                ResetData(menu);
+                ResetData();
             }
         }
 
-        internal void RowDeselected(Menu menu)
+        internal void RowDeselected()
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
-            ResetData(menu);
+            ResetData();
             MouseActive = false;
         }
 
@@ -145,13 +145,10 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        private void ResetData(Menu menu)
+        private void ResetData()
         {
-            if (currentMenu != null)
-            {
-                menu.SelectedItem = currentItemData = null;
-                currentMenu = null;
-            }
+            currentItemData = null;
+            currentMenu = null;
         }
     }
 }
