@@ -53,14 +53,13 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowSelectedByKey(Menu menu, ListViewItemData itemData)
+        internal void RowSelectionChanged(Menu? menu)
         {
-            timerStartLoad.Stop();
-            StopLoadMenu?.Invoke();
-            SetData(menu, itemData);
-            MouseActive = false;
-            checkForMouseActive = false;
-            timerStartLoad.Start();
+            RowDeselected();
+            if (menu?.SelectedItem != null)
+            {
+                RowSelected(menu, menu.SelectedItem);
+            }
         }
 
         internal void MouseLeave()
@@ -71,14 +70,6 @@ namespace SystemTrayMenu.Handler
                 StopLoadMenu?.Invoke();
                 ResetData();
             }
-        }
-
-        internal void RowDeselected()
-        {
-            timerStartLoad.Stop();
-            StopLoadMenu?.Invoke();
-            ResetData();
-            MouseActive = false;
         }
 
         internal void ClickOpensInstantly(Menu menu, ListViewItemData itemData)
@@ -132,6 +123,24 @@ namespace SystemTrayMenu.Handler
                     StartLoadMenu?.Invoke(rowData);
                 }
             }
+        }
+
+        private void RowDeselected()
+        {
+            timerStartLoad.Stop();
+            StopLoadMenu?.Invoke();
+            ResetData();
+            MouseActive = false;
+        }
+
+        private void RowSelected(Menu menu, ListViewItemData itemData)
+        {
+            timerStartLoad.Stop();
+            StopLoadMenu?.Invoke();
+            SetData(menu, itemData);
+            MouseActive = false;
+            checkForMouseActive = false;
+            timerStartLoad.Start();
         }
 
         private void SetData(Menu menu, ListViewItemData itemData)

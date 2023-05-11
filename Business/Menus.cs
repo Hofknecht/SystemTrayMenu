@@ -54,9 +54,8 @@ namespace SystemTrayMenu.Business
 
             keyboardInput.HotKeyPressed += () => SwitchOpenClose(false, false);
             keyboardInput.ClosePressed += MenusFadeOut;
-            keyboardInput.RowDeselected += waitToOpenMenu.RowDeselected;
+            keyboardInput.RowSelectionChanged += waitToOpenMenu.RowSelectionChanged;
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
-            keyboardInput.RowSelected += waitToOpenMenu.RowSelectedByKey;
 
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;
@@ -362,6 +361,17 @@ namespace SystemTrayMenu.Business
             return menu;
         }
 
+        private static void HideOldMenu(Menu menuToShow)
+        {
+            Menu? menuPrevious = menuToShow.ParentMenu;
+            if (menuPrevious != null)
+            {
+                menuPrevious.SubMenu?.HideWithFade(true);
+
+                menuPrevious.RefreshSelection();
+            }
+        }
+
         private static void LoadMenu(object? sender, DoWorkEventArgs eDoWork)
         {
             BackgroundWorker? workerSelf = sender as BackgroundWorker;
@@ -633,17 +643,6 @@ namespace SystemTrayMenu.Business
                     }
                 }
             });
-        }
-
-        private void HideOldMenu(Menu menuToShow)
-        {
-            Menu? menuPrevious = menuToShow.ParentMenu;
-            if (menuPrevious != null)
-            {
-                menuPrevious.SubMenu?.HideWithFade(true);
-
-                menuPrevious.RefreshSelection();
-            }
         }
 
         private void FadeHalfOrOutIfNeeded()

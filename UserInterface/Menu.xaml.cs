@@ -272,7 +272,7 @@ namespace SystemTrayMenu.UserInterface
             TopRight,
         }
 
-        public Point Location => new (Left, Top); // TODO WPF Replace Forms wrapper
+        internal Point Location => new (Left, Top); // TODO WPF Replace Forms wrapper
 
         internal int Level { get; set; }
 
@@ -402,6 +402,26 @@ namespace SystemTrayMenu.UserInterface
 
         // TODO: Check if it is implicitly already running due to SelectionChanged event
         internal void RefreshSelection() => ListView_SelectionChanged(GetDataGridView(), null);
+
+        internal bool TrySelectAt(int index, int indexAlternative = -1)
+        {
+            if (index >= 0 && dgv.Items.Count > index)
+            {
+                ListViewItemData itemData = (ListViewItemData)dgv.Items[index];
+                dgv.SelectedItem = itemData;
+                dgv.ScrollIntoView(itemData);
+                return true;
+            }
+            else if (indexAlternative >= 0 && dgv.Items.Count > indexAlternative)
+            {
+                ListViewItemData itemData = (ListViewItemData)dgv.Items[indexAlternative];
+                dgv.SelectedItem = itemData;
+                dgv.ScrollIntoView(itemData);
+                return true;
+            }
+
+            return false;
+        }
 
         internal void AddItemsToMenu(List<RowData> data, MenuDataDirectoryState? state, bool startIconLoading)
         {

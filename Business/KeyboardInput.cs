@@ -18,15 +18,12 @@ namespace SystemTrayMenu.Handler
         private readonly KeyboardHook hook = new();
 
         private Menu? focussedMenu;
-        private ListViewItemData? focussedRow;
 
         internal event Action? HotKeyPressed;
 
         internal event Action? ClosePressed;
 
-        internal event Action<Menu, ListViewItemData>? RowSelected;
-
-        internal event Action? RowDeselected;
+        internal event Action<Menu?>? RowSelectionChanged;
 
         internal event Action<Menu, ListViewItemData>? EnterPressed;
 
@@ -56,11 +53,7 @@ namespace SystemTrayMenu.Handler
             return true;
         }
 
-        internal void ResetSelectedByKey()
-        {
-            focussedMenu = null;
-            focussedRow = null;
-        }
+        internal void ResetSelectedByKey() => focussedMenu = null;
 
         internal void CmdKeyProcessed(Menu sender, Key key, ModifierKeys modifiers)
         {
@@ -82,13 +75,6 @@ namespace SystemTrayMenu.Handler
                 case Key.Down:
                 case Key.Escape:
                     if (modifiers == ModifierKeys.None)
-                    {
-                        SelectByKey(key, modifiers);
-                    }
-
-                    break;
-                case Key.F4:
-                    if (modifiers == ModifierKeys.Alt)
                     {
                         SelectByKey(key, modifiers);
                     }
@@ -128,18 +114,13 @@ namespace SystemTrayMenu.Handler
                 case Key.Apps:
                     if (modifiers == ModifierKeys.None)
                     {
-                        ListView? dgv = focussedMenu?.GetDataGridView();
-                        if (dgv != null)
+                        Menu? menu = focussedMenu;
+                        ListViewItemData? itemData = menu?.SelectedItem;
+                        if (menu != null && itemData != null)
                         {
-                            if (focussedRow != null)
-                            {
-#if TODO // WPF: Better way to open context menu (as it looks like this is the code's intention)
-                                Point point = dgv.GetCellDisplayRectangle(2, iRowKey, false).Location;
-                                RowData trigger = (RowData)dgv.Rows[iRowKey].Cells[2].Value;
-                                MouseEventArgs mouseEventArgs = new(MouseButtons.Right, 1, point.X, point.Y, 0);
-                                trigger.MouseDown(dgv, mouseEventArgs);
-#endif
-                            }
+                            var position = Mouse.GetPosition(menu);
+                            position.Offset(menu.Left, menu.Top);
+                            itemData.OpenShellContextMenu(position);
                         }
                     }
 
@@ -178,24 +159,24 @@ namespace SystemTrayMenu.Handler
             DeselectFoccussedRow();
 
             focussedMenu = menu;
-            Select(menu.GetDataGridView(), itemData);
+            menu.GetDataGridView().SelectedItem = itemData;
         }
 
         private void SelectByKey(Key key, ModifierKeys modifiers)
         {
             Menu? menuFromSelected;
             Menu? menuBefore;
-            ListViewItemData? rowBefore = focussedRow;
-            bool wasSelected = focussedRow?.IsSelected ?? false;
+            ListViewItemData? rowBefore = focussedMenu?.SelectedItem;
+            bool wasSelected = rowBefore != null;
 
             if (wasSelected)
             {
-                menuFromSelected = focussedRow?.data.SubMenu;
+                menuFromSelected = rowBefore!.data.SubMenu;
                 menuBefore = focussedMenu;
             }
             else
             {
-                ResetSelectedByKey();
+                focussedMenu = null;
                 menuFromSelected = null;
                 menuBefore = null;
             }
@@ -228,8 +209,7 @@ namespace SystemTrayMenu.Handler
                 case Key.Up:
                     if ((modifiers == ModifierKeys.None) &&
                         menuBefore != null &&
-                        (TrySelectPrevious(menuBefore, menuBefore.GetDataGridView().Items.IndexOf(rowBefore)) ||
-                        TrySelectPrevious(menuBefore, menuBefore.GetDataGridView().Items.Count - 1)))
+                        menuBefore.TrySelectAt(menuBefore.GetDataGridView().Items.IndexOf(menuBefore.SelectedItem) - 1, menuBefore.GetDataGridView().Items.Count - 1))
                     {
                         RaiseRowSelectionChanged();
                     }
@@ -238,8 +218,7 @@ namespace SystemTrayMenu.Handler
                 case Key.Down:
                     if ((modifiers == ModifierKeys.None) &&
                         menuBefore != null &&
-                        (TrySelectNext(menuBefore, menuBefore.GetDataGridView().Items.IndexOf(rowBefore)) ||
-                        TrySelectNext(menuBefore, 0)))
+                        menuBefore.TrySelectAt(menuBefore.GetDataGridView().Items.IndexOf(menuBefore.SelectedItem) + 1, 0))
                     {
                         RaiseRowSelectionChanged();
                     }
@@ -248,7 +227,7 @@ namespace SystemTrayMenu.Handler
                 case Key.Home:
                     if ((modifiers == ModifierKeys.None) &&
                         menuBefore != null &&
-                        TrySelectNext(menuBefore, 0))
+                        menuBefore.TrySelectAt(0, -1))
                     {
                         RaiseRowSelectionChanged();
                     }
@@ -257,7 +236,7 @@ namespace SystemTrayMenu.Handler
                 case Key.End:
                     if ((modifiers == ModifierKeys.None) &&
                         menuBefore != null &&
-                        TrySelectPrevious(menuBefore, menuBefore.GetDataGridView().Items.Count - 1))
+                        menuBefore.TrySelectAt(menuBefore.GetDataGridView().Items.Count - 1, -1))
                     {
                         RaiseRowSelectionChanged();
                     }
@@ -269,54 +248,48 @@ namespace SystemTrayMenu.Handler
                         menuBefore != null &&
                         focussedMenu != null)
                     {
-                        // True, when next is left and key is left = true OR next is right (=not left) and key is right (not left)
-                        bool nextMenuInKeyDirection = (focussedMenu?.SubMenu?.Location.X < focussedMenu?.Location.X) == (key == Key.Left);
+                        Menu? next = focussedMenu.SubMenu;
+                        Menu? prev = focussedMenu.ParentMenu;
+                        bool nextLeft = next != null && next.Location.X < focussedMenu.Location.X;
+                        bool prevLeft = prev != null && prev.Location.X < focussedMenu.Location.X;
 
-                        // TODO: Check what this actually does as it is only true for wrap arounds on screen corners
-                        //       but why not simply just select prev menu instead?
-                        // True, when prev is right (=not left) but key is left = true OR prev is left but key is right (not left)
-                        bool prevMenuAgainstKeyDirection = (focussedMenu?.Location.X < focussedMenu?.ParentMenu?.Location.X) == (key == Key.Left);
-
-                        if (nextMenuInKeyDirection || prevMenuAgainstKeyDirection)
+                        // P = Parent, N = Next ..
+                        // Menues come from right in examples
+                        //
+                        // Key Pressed: <-
+                        //   [N][ ][P]   - Select next as in key direction
+                        //      [ ][P/N] - Select prev going left as going right would select next
+                        //      [ ][P]   - don't do anything
+                        //   [N][ ]      - Select next as in key direction
+                        // [P/N][ ]      - Select next as next has priority
+                        //
+                        // Key Pressed: ->
+                        //   [N][ ][P]   - Select prev as in key direction
+                        //      [ ][P/N] - Select next as next has priority
+                        //      [ ][P]   - Select prev as in key direction
+                        //   [N][ ]      - don't do anything
+                        // [P/N][ ]      - Select prev going right as going left would select next
+                        if (next != null && nextLeft == (key == Key.Left))
                         {
-                            // Next is in key direction or prev is opposite of key direction ==> Select sub/next menu
-                            if (wasSelected)
+                            // Select next sub menu, when next exists and
+                            // next and key point in the same direction
+                            if (next!.TrySelectAt(0, -1))
                             {
-                                if (menuFromSelected != null &&
-                                    menuFromSelected == focussedMenu?.SubMenu)
-                                {
-                                    focussedMenu = menuFromSelected;
-                                    focussedRow = null;
-                                    if (TrySelectNext(menuFromSelected, 0))
-                                    {
-                                        RaiseRowSelectionChanged();
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                while (focussedMenu?.SubMenu != null)
-                                {
-                                    focussedMenu = focussedMenu.SubMenu;
-                                }
-
-                                focussedRow = null;
-                                Menu? lastMenu = focussedMenu;
-                                if (lastMenu != null && TrySelectNext(lastMenu, 0))
-                                {
-                                    RaiseRowSelectionChanged();
-                                }
+                                focussedMenu = next;
+                                RaiseRowSelectionChanged();
                             }
                         }
-                        else if (focussedMenu?.ParentMenu != null)
+                        else if (prev != null &&
+                            ((prevLeft == (key == Key.Left)) ||
+                            (next != null && nextLeft == prevLeft)))
                         {
-                            // Next is in opposite key direction and prev is in key direction ==> Select parent/prev menu
+                            // Select previous/parent menu, when prev exists and
+                            // either prev and key point in the same direction
+                            // or when next exists while overlapping with prev
                             int index = focussedMenu.RowDataParent?.RowIndex ?? -1;
-                            focussedMenu = focussedMenu.ParentMenu;
-                            focussedRow = null;
-                            if (TrySelectNext(focussedMenu, index) ||
-                                TrySelectNext(focussedMenu, 0))
+                            if (focussedMenu.TrySelectAt(index, 0))
                             {
+                                focussedMenu = focussedMenu.ParentMenu;
                                 RaiseRowSelectionChanged();
                             }
                         }
@@ -324,22 +297,11 @@ namespace SystemTrayMenu.Handler
 
                     break;
                 case Key.Escape:
-                case Key.F4:
-                    if ((key == Key.Escape && modifiers == ModifierKeys.None) ||
-                        (key == Key.F4 && modifiers == ModifierKeys.Alt))
+                    if (modifiers == ModifierKeys.None)
                     {
-                        ResetSelectedByKey();
-                        if (menuBefore != null)
-                        {
-                            RaiseRowSelectionChanged();
-                        }
-
+                        focussedMenu = null;
+                        RaiseRowSelectionChanged();
                         ClosePressed?.Invoke();
-
-                        if (focussedMenu != null)
-                        {
-                            focussedMenu.SelectedItem = null;
-                        }
                     }
 
                     break;
@@ -350,68 +312,12 @@ namespace SystemTrayMenu.Handler
 
         private void RaiseRowSelectionChanged()
         {
-            RowDeselected?.Invoke();
+            RowSelectionChanged?.Invoke(focussedMenu);
 
-            if (focussedMenu != null && focussedRow != null)
+            if (focussedMenu?.SelectedItem != null)
             {
                 IsSelectedByKey = true;
-                RowSelected?.Invoke(focussedMenu, focussedRow);
             }
-        }
-
-        private bool TrySelectNext(Menu menu, int indexStart)
-        {
-            bool found = false;
-            if (indexStart >= 0)
-            {
-                ListView dgv = menu.GetDataGridView();
-                for (uint i = (uint)indexStart; i < dgv.Items.Count; i++)
-                {
-                    ListViewItemData itemData = (ListViewItemData)dgv.Items[(int)i];
-                    if (itemData != focussedRow)
-                    {
-                        Select(dgv, itemData);
-                        dgv.ScrollIntoView(itemData);
-                        found = true;
-                        break;
-                    }
-                }
-            }
-
-            return found;
-        }
-
-        private bool TrySelectPrevious(Menu menu, int indexStart)
-        {
-            bool found = false;
-            if (indexStart > 0)
-            {
-                ListView dgv = menu.GetDataGridView();
-                if (dgv.Items.Count <= indexStart)
-                {
-                    indexStart = dgv.Items.Count - 1;
-                }
-
-                for (int i = indexStart; i > -1; i--)
-                {
-                    ListViewItemData itemData = (ListViewItemData)dgv.Items[i];
-                    if (itemData != focussedRow)
-                    {
-                        Select(dgv, itemData);
-                        dgv.ScrollIntoView(itemData);
-                        found = true;
-                        break;
-                    }
-                }
-            }
-
-            return found;
-        }
-
-        private void Select(ListView dgv, ListViewItemData itemData)
-        {
-            focussedRow = itemData;
-            dgv.SelectedItem = itemData;
         }
     }
 }
