@@ -235,6 +235,8 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu>? UserDragsMenu;
 
+        internal event Action<Menu>? RowSelectionChanged;
+
         internal event Action<Menu, ListViewItemData>? CellMouseEnter;
 
         internal event Action? CellMouseLeave;
@@ -405,22 +407,26 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool TrySelectAt(int index, int indexAlternative = -1)
         {
+            ListViewItemData itemData;
             if (index >= 0 && dgv.Items.Count > index)
             {
-                ListViewItemData itemData = (ListViewItemData)dgv.Items[index];
-                dgv.SelectedItem = itemData;
-                dgv.ScrollIntoView(itemData);
-                return true;
+                itemData = (ListViewItemData)dgv.Items[index];
             }
             else if (indexAlternative >= 0 && dgv.Items.Count > indexAlternative)
             {
-                ListViewItemData itemData = (ListViewItemData)dgv.Items[indexAlternative];
-                dgv.SelectedItem = itemData;
-                dgv.ScrollIntoView(itemData);
-                return true;
+                itemData = (ListViewItemData)dgv.Items[indexAlternative];
+            }
+            else
+            {
+                return false;
             }
 
-            return false;
+            dgv.SelectedItem = itemData;
+            dgv.ScrollIntoView(itemData);
+
+            RowSelectionChanged?.Invoke(this);
+
+            return true;
         }
 
         internal void AddItemsToMenu(List<RowData> data, MenuDataDirectoryState? state, bool startIconLoading)

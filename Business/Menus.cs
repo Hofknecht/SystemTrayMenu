@@ -518,7 +518,16 @@ namespace SystemTrayMenu.Business
             menu.SearchTextChanged += Menu_SearchTextChanged;
             void Menu_SearchTextChanged(Menu menu, bool isSearchStringEmpty, bool causedByWatcherUpdate)
             {
-                keyboardInput.SearchTextChanged(menu, isSearchStringEmpty);
+                menu.SelectedItem = null;
+                if (!isSearchStringEmpty)
+                {
+                    ListView dgv = menu.GetDataGridView();
+                    if (dgv.Items.Count > 0)
+                    {
+                        keyboardInput.MouseSelect(menu, (ListViewItemData)dgv.Items[0]);
+                    }
+                }
+
                 AdjustMenusSizeAndLocation(menu.Level + 1);
 
                 // if any open menu close
@@ -571,6 +580,7 @@ namespace SystemTrayMenu.Business
             }
 
             menu.IsVisibleChanged += (sender, _) => MenuVisibleChanged((Menu)sender);
+            menu.RowSelectionChanged += waitToOpenMenu.RowSelectionChanged;
             menu.CellMouseEnter += waitToOpenMenu.MouseEnter;
             menu.CellMouseLeave += waitToOpenMenu.MouseLeave;
             menu.CellMouseDown += (menu, itemData) => MouseEnterOk(menu, itemData);
@@ -859,7 +869,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
-                keyboardInput.DeselectFoccussedRow();
+                menu.SelectedItem = null;
                 menu.AddItemsToMenu(rowDatas, null, true);
                 menu.OnWatcherUpdate();
             }
@@ -892,7 +902,7 @@ namespace SystemTrayMenu.Business
                     ((IEditableCollectionView)dgv.Items).Remove(rowToRemove);
                 }
 
-                keyboardInput.DeselectFoccussedRow();
+                menu.SelectedItem = null;
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
@@ -926,7 +936,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
-                keyboardInput.DeselectFoccussedRow();
+                menu.SelectedItem = null;
                 menu.AddItemsToMenu(rowDatas, null, true);
                 menu.OnWatcherUpdate();
             }

@@ -8,7 +8,6 @@ namespace SystemTrayMenu.Handler
     using System.Windows.Threading;
     using SystemTrayMenu.DataClasses;
     using static SystemTrayMenu.UserInterface.Menu;
-    using ListView = System.Windows.Controls.ListView;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class WaitToLoadMenu : IDisposable
@@ -55,10 +54,18 @@ namespace SystemTrayMenu.Handler
 
         internal void RowSelectionChanged(Menu? menu)
         {
-            RowDeselected();
+            // Deselect
+            timerStartLoad.Stop();
+            StopLoadMenu?.Invoke();
+            ResetData();
+            MouseActive = false;
+
+            // Select (if any)
             if (menu?.SelectedItem != null)
             {
-                RowSelected(menu, menu.SelectedItem);
+                SetData(menu, menu.SelectedItem);
+                checkForMouseActive = false;
+                timerStartLoad.Start();
             }
         }
 
@@ -104,43 +111,40 @@ namespace SystemTrayMenu.Handler
         {
             if (!alreadyOpened && (currentMenu?.GetDataGridView().Items.Contains(currentItemData) ?? false))
             {
-                alreadyOpened = true;
-
-                // Give the opening window focus
-                // if closing window lose focus no window would have focus any more
-                currentMenu?.Activate();
-                currentMenu?.FocusTextBox();
+                alreadyOpened = true; // TODO: Check if this bool is still needed?
 
                 Menu? menuToClose = currentMenu?.SubMenu;
-                if (menuToClose != null)
-                {
-                    CloseMenu?.Invoke(menuToClose);
-                }
-
                 RowData rowData = currentItemData!.data;
-                if (rowData.IsPointingToFolder)
+
+                // only re-open when the menu is not already open
+                if (rowData.SubMenu != null && rowData.SubMenu == menuToClose)
                 {
-                    StartLoadMenu?.Invoke(rowData);
+                    // Close second level sub menus
+                    menuToClose.SelectedItem = null;
+                    menuToClose = menuToClose.SubMenu;
+                    if (menuToClose != null)
+                    {
+                        CloseMenu?.Invoke(menuToClose);
+                    }
+                }
+                else
+                {
+                    if (menuToClose != null)
+                    {
+                        // Give the opening window focus
+                        // if closing window lose focus no window would have focus any more
+                        currentMenu?.Activate();
+                        currentMenu?.FocusTextBox();
+
+                        CloseMenu?.Invoke(menuToClose);
+                    }
+
+                    if (rowData.IsPointingToFolder)
+                    {
+                        StartLoadMenu?.Invoke(rowData);
+                    }
                 }
             }
-        }
-
-        private void RowDeselected()
-        {
-            timerStartLoad.Stop();
-            StopLoadMenu?.Invoke();
-            ResetData();
-            MouseActive = false;
-        }
-
-        private void RowSelected(Menu menu, ListViewItemData itemData)
-        {
-            timerStartLoad.Stop();
-            StopLoadMenu?.Invoke();
-            SetData(menu, itemData);
-            MouseActive = false;
-            checkForMouseActive = false;
-            timerStartLoad.Start();
         }
 
         private void SetData(Menu menu, ListViewItemData itemData)
@@ -149,7 +153,7 @@ namespace SystemTrayMenu.Handler
             {
                 alreadyOpened = false;
 
-                menu.SelectedItem = currentItemData = itemData;
+                menu.SelectedItem = currentItemData = itemData; // TODO: always required or already set on mouse/keyboard selection? (so only required for timer?)
                 currentMenu = menu;
             }
         }
