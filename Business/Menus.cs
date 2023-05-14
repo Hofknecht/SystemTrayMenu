@@ -524,7 +524,7 @@ namespace SystemTrayMenu.Business
                     ListView dgv = menu.GetDataGridView();
                     if (dgv.Items.Count > 0)
                     {
-                        keyboardInput.MouseSelect(menu, (ListViewItemData)dgv.Items[0]);
+                        keyboardInput.SelectByMouse(menu, (ListViewItemData)dgv.Items[0]);
                     }
                 }
 
@@ -636,7 +636,7 @@ namespace SystemTrayMenu.Business
         {
             if (IsMainUsable)
             {
-                keyboardInput.MouseSelect(menu, itemData);
+                keyboardInput.SelectByMouse(menu, itemData);
             }
         }
 

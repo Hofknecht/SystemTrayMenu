@@ -82,6 +82,7 @@ namespace SystemTrayMenu.Handler
         internal void ClickOpensInstantly(Menu menu, ListViewItemData itemData)
         {
             timerStartLoad.Stop();
+            menu.SelectedItem = itemData;
             SetData(menu, itemData);
             MouseActive = true;
             checkForMouseActive = false;
@@ -153,7 +154,7 @@ namespace SystemTrayMenu.Handler
             {
                 alreadyOpened = false;
 
-                menu.SelectedItem = currentItemData = itemData; // TODO: always required or already set on mouse/keyboard selection? (so only required for timer?)
+                currentItemData = itemData;
                 currentMenu = menu;
             }
         }

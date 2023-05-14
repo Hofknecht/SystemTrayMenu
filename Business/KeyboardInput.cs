@@ -134,7 +134,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void MouseSelect(Menu menu, ListViewItemData itemData)
+        internal void SelectByMouse(Menu menu, ListViewItemData itemData)
         {
             IsSelectedByKey = false;
 
