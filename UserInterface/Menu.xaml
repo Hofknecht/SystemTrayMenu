@@ -21,8 +21,7 @@
                 <Storyboard>
                     <DoubleAnimation
                         Storyboard.TargetProperty="Opacity"
-                        From="{Binding Opacity}" To="0.8" Duration="0:0:0.4"
-                        Completed="FadeIn_Completed"/>
+                        From="{Binding Opacity}" To="0.8" Duration="0:0:0.4"/>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -31,8 +30,7 @@
                 <Storyboard>
                     <DoubleAnimation
                         Storyboard.TargetProperty="Opacity"
-                        From="{Binding Opacity}" To="1.0" Duration="0:0:0.5"
-                        Completed="FadeIn_Completed"/>
+                        From="{Binding Opacity}" To="1.0" Duration="0:0:0.5"/>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>

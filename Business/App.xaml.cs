@@ -18,6 +18,7 @@ namespace SystemTrayMenu
     /// </summary>
     public partial class App : Application, IDisposable
     {
+        private static TaskbarLogo? taskbarLogo;
         private readonly AppNotifyIcon menuNotifyIcon = new();
         private readonly Menus menus = new();
         private bool isDisposed;
@@ -29,26 +30,32 @@ namespace SystemTrayMenu
             menus.LoadStopped += menuNotifyIcon.LoadingStop;
             menuNotifyIcon.Click += () => menus.SwitchOpenClose(true, false);
 
-            if (Settings.Default.ShowInTaskbar)
-            {
-                TaskbarLogo = new ();
-                TaskbarLogo.Activated += (_, _) => menus.SwitchOpenCloseByTaskbarItem();
-                TaskbarLogo.Show();
-            }
-            else
-            {
-                menus.FirstStartInBackground();
-            }
+            Activated += (_, _) => IsActiveApp = true;
+            Deactivated += (_, _) => IsActiveApp = false;
 
-            if (Settings.Default.CheckForUpdates)
+            Startup += (_, _) =>
             {
-                _ = Dispatcher.InvokeAsync(
-                    () => GitHubUpdate.ActivateNewVersionFormOrCheckForUpdates(showWhenUpToDate: false),
-                    DispatcherPriority.ApplicationIdle);
-            }
+                if (Settings.Default.ShowInTaskbar)
+                {
+                    taskbarLogo = new();
+                    taskbarLogo.Activated += (_, _) => menus.SwitchOpenCloseByTaskbarItem();
+                    taskbarLogo.Show();
+                }
+                else
+                {
+                    menus.SwitchOpenClose(false, true);
+                }
+
+                if (Settings.Default.CheckForUpdates)
+                {
+                    _ = Dispatcher.InvokeAsync(
+                        () => GitHubUpdate.ActivateNewVersionFormOrCheckForUpdates(showWhenUpToDate: false),
+                        DispatcherPriority.ApplicationIdle);
+                }
+            };
         }
 
-        public static TaskbarLogo? TaskbarLogo { get; private set; } = null;
+        internal static bool IsActiveApp { get; private set; }
 
         public void Dispose()
         {
@@ -60,8 +67,8 @@ namespace SystemTrayMenu
         {
             if (!isDisposed)
             {
-                TaskbarLogo?.Close();
-                TaskbarLogo = null;
+                taskbarLogo?.Close();
+                taskbarLogo = null;
 
                 menus.Dispose();
                 menuNotifyIcon.Dispose();

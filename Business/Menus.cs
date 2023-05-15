@@ -26,7 +26,6 @@ namespace SystemTrayMenu.Business
 
     internal class Menus : IDisposable
     {
-        private readonly Dispatcher dispatchter = Dispatcher.CurrentDispatcher;
         private readonly BackgroundWorker workerMainMenu = new();
         private readonly List<BackgroundWorker> workersSubMenu = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
@@ -37,10 +36,10 @@ namespace SystemTrayMenu.Business
         private readonly DispatcherTimer timerShowProcessStartedAsLoadingIcon = new();
         private readonly DispatcherTimer timerStillActiveCheck = new();
         private readonly DispatcherTimer waitLeave = new();
-        private DateTime deactivatedTime = DateTime.MinValue;
         private OpenCloseState openCloseState = OpenCloseState.Default;
-        private TaskbarPosition taskbarPosition = new WindowsTaskbar().Position;
+        private TaskbarPosition taskbarPosition = TaskbarPosition.Unknown;
         private bool showMenuAfterMainPreload;
+        private bool wasDeactivated;
         private Menu? mainMenu;
 
         public Menus()
@@ -115,7 +114,7 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            waitToOpenMenu.MouseEnterOk += MouseEnterOk;
+            waitToOpenMenu.MouseSelect += keyboardInput.SelectByMouse;
             waitToOpenMenu.CloseMenu += (menu) => HideOldMenu(menu);
 
             if (Settings.Default.SupportGamepad)
@@ -125,7 +124,7 @@ namespace SystemTrayMenu.Business
                 {
                     if (IsMainUsable)
                     {
-                        Menu? menu = GetActiveMenu(mainMenu) ?? mainMenu;
+                        Menu? menu = GetActiveMenu(mainMenu) ?? mainMenu; // TODO: Do we really need to provide the menu? doesn't keyboardInput already know this?
                         menu?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { menu, key, modifiers });
                     }
                 };
@@ -137,10 +136,7 @@ namespace SystemTrayMenu.Business
             void StillActiveTick()
             {
                 timerStillActiveCheck.Stop();
-                if (!IsActiveApp())
-                {
-                    FadeHalfOrOutIfNeeded();
-                }
+                FadeHalfOrOutIfNeeded();
             }
 
             waitLeave.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilCloses);
@@ -198,7 +194,7 @@ namespace SystemTrayMenu.Business
         }
 
         [MemberNotNullWhen(true, nameof(mainMenu))]
-        private bool IsMainUsable => mainMenu?.IsUsable ?? false;
+        private bool IsMainUsable => mainMenu != null && mainMenu.Visibility == Visibility.Visible;
 
         public void Dispose()
         {
@@ -227,15 +223,7 @@ namespace SystemTrayMenu.Business
             mainMenu?.Close();
         }
 
-        internal static void OpenFolder(string? path = null)
-        {
-            if (string.IsNullOrEmpty(path))
-            {
-                path = Config.Path;
-            }
-
-            Log.ProcessStart(path);
-        }
+        internal static void OpenFolder(string path) => Log.ProcessStart(path);
 
         internal void SwitchOpenCloseByTaskbarItem()
         {
@@ -243,11 +231,6 @@ namespace SystemTrayMenu.Business
             showMenuAfterMainPreload = true;
             SwitchOpenClose(true, true);
             timerStillActiveCheck.Start();
-        }
-
-        internal void FirstStartInBackground()
-        {
-            dispatchter.Invoke(() => SwitchOpenClose(false, true));
         }
 
         internal void SwitchOpenClose(bool byClick, bool allowPreloading)
@@ -261,9 +244,7 @@ namespace SystemTrayMenu.Business
             }
 
             waitToOpenMenu.MouseActive = byClick;
-            if (byClick &&
-                !Config.AlwaysOpenByPin &&
-                (DateTime.Now - deactivatedTime).TotalMilliseconds < 200)
+            if (byClick && !Config.AlwaysOpenByPin && wasDeactivated)
             {
                 // By click on notifyicon the menu gets deactivated and closed
             }
@@ -278,7 +259,12 @@ namespace SystemTrayMenu.Business
                 {
                     openCloseState = OpenCloseState.Closing;
                     MenusFadeOut();
-                    StopWorker();
+
+                    if (workerMainMenu.IsBusy)
+                    {
+                        workerMainMenu.CancelAsync();
+                    }
+
                     if (IsVisibleAnyMenu(mainMenu) == null)
                     {
                         openCloseState = OpenCloseState.Default;
@@ -287,33 +273,21 @@ namespace SystemTrayMenu.Business
                 else
                 {
                     openCloseState = OpenCloseState.Opening;
-                    StartWorker();
+
+                    if (Settings.Default.GenerateShortcutsToDrives)
+                    {
+                        GenerateDriveShortcuts.Start();
+                    }
+
+                    if (!workerMainMenu.IsBusy)
+                    {
+                        LoadStarted?.Invoke();
+                        workerMainMenu.RunWorkerAsync(null);
+                    }
                 }
             }
 
-            deactivatedTime = DateTime.MinValue;
-        }
-
-        internal void StartWorker()
-        {
-            if (Settings.Default.GenerateShortcutsToDrives)
-            {
-                GenerateDriveShortcuts.Start();
-            }
-
-            if (!workerMainMenu.IsBusy)
-            {
-                LoadStarted?.Invoke();
-                workerMainMenu.RunWorkerAsync(null);
-            }
-        }
-
-        internal void StopWorker()
-        {
-            if (workerMainMenu.IsBusy)
-            {
-                workerMainMenu.CancelAsync();
-            }
+            wasDeactivated = false;
         }
 
         private static Menu? IsVisibleAnyMenu(Menu? menu)
@@ -432,13 +406,13 @@ namespace SystemTrayMenu.Business
                         break;
                     case MenuDataDirectoryState.Empty:
                         MessageBox.Show(Translator.GetText("Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory."));
-                        OpenFolder();
+                        OpenFolder(Config.Path);
                         Config.SetFolderByUser();
                         AppRestart.ByConfigChange();
                         break;
                     case MenuDataDirectoryState.NoAccess:
                         MessageBox.Show(Translator.GetText("You have no access to the root directory of the app. Grant access to the directory or change the root directory."));
-                        OpenFolder();
+                        OpenFolder(Config.Path);
                         Config.SetFolderByUser();
                         AppRestart.ByConfigChange();
                         break;
@@ -492,8 +466,6 @@ namespace SystemTrayMenu.Business
                 menu.ParentMenu?.RefreshSelection();
             }
         }
-
-        private bool IsActiveApp() => GetActiveMenu(mainMenu) != null || (App.TaskbarLogo?.IsActive ?? false);
 
         private Menu Create(MenuData menuData, string path)
         {
@@ -562,9 +534,9 @@ namespace SystemTrayMenu.Business
                 else if (!Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed)
                 {
                     FadeHalfOrOutIfNeeded();
-                    if (!IsActiveApp())
+                    if (!App.IsActiveApp)
                     {
-                        deactivatedTime = DateTime.Now;
+                        wasDeactivated = true;
                     }
                 }
             }
@@ -583,7 +555,7 @@ namespace SystemTrayMenu.Business
             menu.RowSelectionChanged += waitToOpenMenu.RowSelectionChanged;
             menu.CellMouseEnter += waitToOpenMenu.MouseEnter;
             menu.CellMouseLeave += waitToOpenMenu.MouseLeave;
-            menu.CellMouseDown += (menu, itemData) => MouseEnterOk(menu, itemData);
+            menu.CellMouseDown += keyboardInput.SelectByMouse;
             menu.CellOpenOnClick += waitToOpenMenu.ClickOpensInstantly;
             menu.ClosePressed += MenusFadeOut;
 
@@ -596,11 +568,8 @@ namespace SystemTrayMenu.Business
             else
             {
                 // Sub Menu (loading)
-                if (IsMainUsable)
-                {
-                    menu.ShowWithFade(!IsActiveApp(), false);
-                    menu.RefreshSelection();
-                }
+                menu.ShowWithFade(!App.IsActiveApp, false);
+                menu.RefreshSelection();
             }
 
             return menu;
@@ -608,7 +577,7 @@ namespace SystemTrayMenu.Business
 
         private void MenuVisibleChanged(Menu menu)
         {
-            if (menu.IsUsable)
+            if (menu.Visibility == Visibility.Visible)
             {
                 AdjustMenusSizeAndLocation(menu.Level);
 
@@ -632,34 +601,14 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void MouseEnterOk(Menu menu, ListViewItemData itemData)
-        {
-            if (IsMainUsable)
-            {
-                keyboardInput.SelectByMouse(menu, itemData);
-            }
-        }
-
-        private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e)
-        {
-            dispatchter.Invoke(() =>
-            {
-                if (IsMainUsable)
-                {
-                    Menu? menu = mainMenu;
-                    if (menu != null)
-                    {
-                        menu.RelocateOnNextShow = true;
-                    }
-                }
-            });
-        }
+        private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e) =>
+            mainMenu?.Dispatcher.Invoke(() => mainMenu.RelocateOnNextShow = true);
 
         private void FadeHalfOrOutIfNeeded()
         {
             if (IsMainUsable)
             {
-                if (!IsActiveApp())
+                if (!App.IsActiveApp)
                 {
                     if (Settings.Default.StaysOpenWhenFocusLost && IsMouseOverAnyMenu(mainMenu) != null)
                     {
@@ -711,14 +660,9 @@ namespace SystemTrayMenu.Business
                 useCustomLocation = false;
             }
 
-            // Only apply taskbar position change when no menu is currently open
-            WindowsTaskbar taskbar = new();
-            if (IsMainUsable && mainMenu.SubMenu == null)
-            {
-                taskbarPosition = taskbar.Position;
-            }
-
             // Shrink the usable space depending on taskbar location
+            WindowsTaskbar taskbar = new();
+            taskbarPosition = taskbar.Position;
             switch (taskbarPosition)
             {
                 case TaskbarPosition.Left:

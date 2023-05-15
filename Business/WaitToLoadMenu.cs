@@ -16,7 +16,6 @@ namespace SystemTrayMenu.Handler
         private Menu? currentMenu;
         private ListViewItemData? currentItemData;
         private bool alreadyOpened;
-        private bool checkForMouseActive = true;
 
         internal WaitToLoadMenu()
         {
@@ -30,25 +29,31 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? StopLoadMenu;
 
-        internal event Action<Menu, ListViewItemData>? MouseEnterOk;
+        internal event Action<Menu, ListViewItemData>? MouseSelect;
 
         internal bool MouseActive { get; set; }
 
-        public void Dispose()
-        {
-            timerStartLoad.Stop();
-        }
+        public void Dispose() => timerStartLoad.Stop();
 
         internal void MouseEnter(Menu menu, ListViewItemData itemData)
         {
             if (MouseActive)
             {
-                MouseEnterOk?.Invoke(menu, itemData);
+                MouseSelect?.Invoke(menu, itemData);
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
-                checkForMouseActive = true;
                 SetData(menu, itemData);
                 timerStartLoad.Start();
+            }
+        }
+
+        internal void MouseLeave()
+        {
+            if (MouseActive)
+            {
+                timerStartLoad.Stop();
+                StopLoadMenu?.Invoke();
+                ResetData();
             }
         }
 
@@ -64,18 +69,7 @@ namespace SystemTrayMenu.Handler
             if (menu?.SelectedItem != null)
             {
                 SetData(menu, menu.SelectedItem);
-                checkForMouseActive = false;
                 timerStartLoad.Start();
-            }
-        }
-
-        internal void MouseLeave()
-        {
-            if (MouseActive)
-            {
-                timerStartLoad.Stop();
-                StopLoadMenu?.Invoke();
-                ResetData();
             }
         }
 
@@ -85,7 +79,6 @@ namespace SystemTrayMenu.Handler
             menu.SelectedItem = itemData;
             SetData(menu, itemData);
             MouseActive = true;
-            checkForMouseActive = false;
             CallOpenMenuNow();
         }
 
@@ -95,17 +88,13 @@ namespace SystemTrayMenu.Handler
             StopLoadMenu?.Invoke();
             SetData(menu, itemData);
             MouseActive = false;
-            checkForMouseActive = false;
             CallOpenMenuNow();
         }
 
         private void WaitStartLoad_Tick(object? sender, EventArgs e)
         {
             timerStartLoad.Stop();
-            if (!checkForMouseActive || MouseActive)
-            {
-                CallOpenMenuNow();
-            }
+            CallOpenMenuNow();
         }
 
         private void CallOpenMenuNow()

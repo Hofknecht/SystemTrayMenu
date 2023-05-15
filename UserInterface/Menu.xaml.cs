@@ -44,7 +44,6 @@ namespace SystemTrayMenu.UserInterface
 #if TODO // SEARCH
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
 #endif
-        private bool isFading;
         private bool directionToRight;
         private bool mouseDown;
         private Point lastLocation;
@@ -207,7 +206,6 @@ namespace SystemTrayMenu.UserInterface
             Closed += (_, _) =>
             {
                 timerUpdateIcons.Stop();
-                IsClosed = true; // TODO WPF Replace Forms wrapper
 
                 if (RowDataParent?.SubMenu == this)
                 {
@@ -307,10 +305,6 @@ namespace SystemTrayMenu.UserInterface
         }
 
         internal bool RelocateOnNextShow { get; set; } = true;
-
-        internal bool IsClosed { get; private set; } = false;
-
-        internal bool IsUsable => Visibility == Visibility.Visible && !isFading && !IsClosed;
 
         public override string ToString() => nameof(Menu) + " L" + Level.ToString() + ": " + Title;
 
@@ -485,13 +479,11 @@ namespace SystemTrayMenu.UserInterface
             {
                 if (Settings.Default.UseFading)
                 {
-                    isFading = true;
                     RaiseEvent(new(routedEvent: FadeInEvent));
                 }
                 else
                 {
                     Opacity = 1D;
-                    FadeIn_Completed(this, new());
                 }
             }
         }
@@ -513,22 +505,17 @@ namespace SystemTrayMenu.UserInterface
             Opacity = 0D;
             Show();
 
-            if (Settings.Default.UseFading)
+            if (!Settings.Default.UseFading)
             {
-                isFading = true;
-                if (transparency)
-                {
-                    RaiseEvent(new(routedEvent: FadeToTransparentEvent));
-                }
-                else
-                {
-                    RaiseEvent(new(routedEvent: FadeInEvent));
-                }
+                Opacity = transparency ? 0.80D : 1D;
+            }
+            else if (transparency)
+            {
+                RaiseEvent(new(routedEvent: FadeToTransparentEvent));
             }
             else
             {
-                Opacity = transparency ? 0.80D : 1D;
-                FadeIn_Completed(this, new());
+                RaiseEvent(new(routedEvent: FadeInEvent));
             }
         }
 
@@ -546,7 +533,6 @@ namespace SystemTrayMenu.UserInterface
 
             if (Settings.Default.UseFading)
             {
-                isFading = true;
                 RaiseEvent(new(routedEvent: FadeOutEvent));
             }
             else
@@ -867,16 +853,7 @@ namespace SystemTrayMenu.UserInterface
             labelStatus.Content = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
         }
 
-        private void FadeIn_Completed(object sender, EventArgs e)
-        {
-            isFading = false;
-        }
-
-        private void FadeOut_Completed(object sender, EventArgs e)
-        {
-            isFading = false;
-            Hide();
-        }
+        private void FadeOut_Completed(object sender, EventArgs e) => Hide();
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {
