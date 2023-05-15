@@ -39,7 +39,6 @@ namespace SystemTrayMenu.Business
         private OpenCloseState openCloseState = OpenCloseState.Default;
         private TaskbarPosition taskbarPosition = TaskbarPosition.Unknown;
         private bool showMenuAfterMainPreload;
-        private bool wasDeactivated;
         private Menu? mainMenu;
 
         public Menus()
@@ -244,11 +243,7 @@ namespace SystemTrayMenu.Business
             }
 
             waitToOpenMenu.MouseActive = byClick;
-            if (byClick && !Config.AlwaysOpenByPin && wasDeactivated)
-            {
-                // By click on notifyicon the menu gets deactivated and closed
-            }
-            else if (string.IsNullOrEmpty(Config.Path))
+            if (string.IsNullOrEmpty(Config.Path))
             {
                 // Case when Folder Dialog open
             }
@@ -286,8 +281,6 @@ namespace SystemTrayMenu.Business
                     }
                 }
             }
-
-            wasDeactivated = false;
         }
 
         private static Menu? IsVisibleAnyMenu(Menu? menu)
@@ -534,10 +527,6 @@ namespace SystemTrayMenu.Business
                 else if (!Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed)
                 {
                     FadeHalfOrOutIfNeeded();
-                    if (!App.IsActiveApp)
-                    {
-                        wasDeactivated = true;
-                    }
                 }
             }
 
@@ -634,8 +623,6 @@ namespace SystemTrayMenu.Business
             openCloseState = OpenCloseState.Closing;
 
             mainMenu?.HideWithFade(true);
-
-            Config.AlwaysOpenByPin = false;
         }
 
         private void GetScreenBounds(out Rect screenBounds, out bool useCustomLocation, out StartLocation startLocation)
