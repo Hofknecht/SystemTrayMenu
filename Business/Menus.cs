@@ -243,42 +243,37 @@ namespace SystemTrayMenu.Business
             }
 
             waitToOpenMenu.MouseActive = byClick;
-            if (string.IsNullOrEmpty(Config.Path))
+
+            if (openCloseState == OpenCloseState.Opening ||
+                (openCloseState == OpenCloseState.Default && (mainMenu?.Visibility ?? Visibility.Collapsed) == Visibility.Visible))
             {
-                // Case when Folder Dialog open
+                openCloseState = OpenCloseState.Closing;
+
+                MenusFadeOut();
+
+                if (workerMainMenu.IsBusy)
+                {
+                    workerMainMenu.CancelAsync();
+                }
+
+                if (IsVisibleAnyMenu(mainMenu) == null)
+                {
+                    openCloseState = OpenCloseState.Default;
+                }
             }
             else
             {
-                if (openCloseState == OpenCloseState.Opening ||
-                    ((mainMenu?.Visibility ?? Visibility.Collapsed) == Visibility.Visible && openCloseState == OpenCloseState.Default))
+                openCloseState = OpenCloseState.Opening;
+
+                if (Settings.Default.GenerateShortcutsToDrives)
                 {
-                    openCloseState = OpenCloseState.Closing;
-                    MenusFadeOut();
-
-                    if (workerMainMenu.IsBusy)
-                    {
-                        workerMainMenu.CancelAsync();
-                    }
-
-                    if (IsVisibleAnyMenu(mainMenu) == null)
-                    {
-                        openCloseState = OpenCloseState.Default;
-                    }
+                    GenerateDriveShortcuts.Start();
                 }
-                else
+
+                if (!workerMainMenu.IsBusy)
                 {
-                    openCloseState = OpenCloseState.Opening;
-
-                    if (Settings.Default.GenerateShortcutsToDrives)
-                    {
-                        GenerateDriveShortcuts.Start();
-                    }
-
-                    if (!workerMainMenu.IsBusy)
-                    {
-                        LoadStarted?.Invoke();
-                        workerMainMenu.RunWorkerAsync(null);
-                    }
+                    LoadStarted?.Invoke();
+                    workerMainMenu.RunWorkerAsync(null);
                 }
             }
         }

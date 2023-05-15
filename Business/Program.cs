@@ -24,6 +24,16 @@ namespace SystemTrayMenu
                 Config.LoadOrSetByUser();
                 Config.Initialize();
 
+                // Without a valid path we cannot do anything, just close application
+                if (string.IsNullOrEmpty(Config.Path))
+                {
+                    MessageBox.Show(
+                        Translator.GetText("Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory."),
+                        "SystemTrayMenu",
+                        MessageBoxButton.OK);
+                    return;
+                }
+
                 if (SingleAppInstance.Initialize())
                 {
                     AppDomain currentDomain = AppDomain.CurrentDomain;
