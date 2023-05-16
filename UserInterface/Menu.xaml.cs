@@ -243,8 +243,6 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu, ListViewItemData>? CellOpenOnClick;
 
-        internal event Action? ClosePressed;
-
         internal event RoutedEventHandler FadeToTransparent
         {
             add { AddHandler(FadeToTransparentEvent, value); }
@@ -517,6 +515,18 @@ namespace SystemTrayMenu.UserInterface
             {
                 RaiseEvent(new(routedEvent: FadeInEvent));
             }
+        }
+
+        internal void HideAllMenus()
+        {
+            // Find main menu and close/hide all
+            Menu menu = this;
+            while (menu.ParentMenu != null)
+            {
+                menu = menu.ParentMenu;
+            }
+
+            menu.HideWithFade(true);
         }
 
         internal void HideWithFade(bool recursive)
@@ -1247,7 +1257,7 @@ namespace SystemTrayMenu.UserInterface
 
             if (doClose)
             {
-                ClosePressed?.Invoke();
+                HideAllMenus();
             }
         }
 

@@ -36,7 +36,6 @@ namespace SystemTrayMenu.Business
         private readonly DispatcherTimer timerShowProcessStartedAsLoadingIcon = new();
         private readonly DispatcherTimer timerStillActiveCheck = new();
         private readonly DispatcherTimer waitLeave = new();
-        private OpenCloseState openCloseState = OpenCloseState.Default;
         private TaskbarPosition taskbarPosition = TaskbarPosition.Unknown;
         private bool showMenuAfterMainPreload;
         private Menu? mainMenu;
@@ -51,7 +50,6 @@ namespace SystemTrayMenu.Business
             }
 
             keyboardInput.HotKeyPressed += () => SwitchOpenClose(false, false);
-            keyboardInput.ClosePressed += MenusFadeOut;
             keyboardInput.RowSelectionChanged += waitToOpenMenu.RowSelectionChanged;
             keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
 
@@ -185,13 +183,6 @@ namespace SystemTrayMenu.Business
 
         internal event Action? LoadStopped;
 
-        private enum OpenCloseState
-        {
-            Default,
-            Opening,
-            Closing,
-        }
-
         [MemberNotNullWhen(true, nameof(mainMenu))]
         private bool IsMainUsable => mainMenu != null && mainMenu.Visibility == Visibility.Visible;
 
@@ -244,53 +235,28 @@ namespace SystemTrayMenu.Business
 
             waitToOpenMenu.MouseActive = byClick;
 
-            if (openCloseState == OpenCloseState.Opening ||
-                (openCloseState == OpenCloseState.Default && (mainMenu?.Visibility ?? Visibility.Collapsed) == Visibility.Visible))
+            if (workerMainMenu.IsBusy)
             {
-                openCloseState = OpenCloseState.Closing;
-
-                MenusFadeOut();
-
-                if (workerMainMenu.IsBusy)
-                {
-                    workerMainMenu.CancelAsync();
-                }
-
-                if (IsVisibleAnyMenu(mainMenu) == null)
-                {
-                    openCloseState = OpenCloseState.Default;
-                }
+                // Stop current loading process of main menu
+                workerMainMenu.CancelAsync();
+                LoadStopped?.Invoke();
+            }
+            else if (mainMenu != null && mainMenu.Visibility == Visibility.Visible)
+            {
+                // Main menu is visible, hide all menus
+                mainMenu.HideWithFade(true);
             }
             else
             {
-                openCloseState = OpenCloseState.Opening;
-
+                // Main menu is hidden or even not created at all, (create and) show it
                 if (Settings.Default.GenerateShortcutsToDrives)
                 {
-                    GenerateDriveShortcuts.Start();
+                    GenerateDriveShortcuts.Start(); // TODO: Once or actually on every startup?
                 }
 
-                if (!workerMainMenu.IsBusy)
-                {
-                    LoadStarted?.Invoke();
-                    workerMainMenu.RunWorkerAsync(null);
-                }
+                LoadStarted?.Invoke();
+                workerMainMenu.RunWorkerAsync(null);
             }
-        }
-
-        private static Menu? IsVisibleAnyMenu(Menu? menu)
-        {
-            while (menu != null)
-            {
-                if (menu.Visibility == Visibility.Visible)
-                {
-                    break;
-                }
-
-                menu = menu.SubMenu;
-            }
-
-            return menu;
         }
 
         private static Menu? IsMouseOverAnyMenu(Menu? menu)
@@ -411,8 +377,6 @@ namespace SystemTrayMenu.Business
                         break;
                 }
             }
-
-            openCloseState = OpenCloseState.Default;
         }
 
         private void LoadSubMenuCompleted(object? senderCompleted, RunWorkerCompletedEventArgs e)
@@ -515,11 +479,8 @@ namespace SystemTrayMenu.Business
             menu.Deactivated += Deactivate;
             void Deactivate(object? sender, EventArgs e)
             {
-                if (openCloseState == OpenCloseState.Opening)
-                {
-                    Log.Info("Ignored Deactivate, because openCloseState == OpenCloseState.Opening");
-                }
-                else if (!Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed)
+                // TODO: Does this check make any sense here?
+                if (!Settings.Default.StaysOpenWhenFocusLostAfterEnterPressed)
                 {
                     FadeHalfOrOutIfNeeded();
                 }
@@ -541,7 +502,6 @@ namespace SystemTrayMenu.Business
             menu.CellMouseLeave += waitToOpenMenu.MouseLeave;
             menu.CellMouseDown += keyboardInput.SelectByMouse;
             menu.CellOpenOnClick += waitToOpenMenu.ClickOpensInstantly;
-            menu.ClosePressed += MenusFadeOut;
 
             if (menu.Level == 0)
             {
@@ -571,17 +531,15 @@ namespace SystemTrayMenu.Business
                     menu.Activate();
                 }
             }
-
-            if (menu.Visibility != Visibility.Visible && menu.Level != 0)
+            else if (menu.Level != 0)
             {
+                // Close down non-visible sub menus
                 menu.Close();
             }
-
-            if (IsVisibleAnyMenu(mainMenu) == null)
+            else
             {
+                // Non-visible main menu, do some housekeeping
                 IconReader.ClearCacheWhenLimitReached();
-
-                openCloseState = OpenCloseState.Default;
             }
         }
 
@@ -607,17 +565,10 @@ namespace SystemTrayMenu.Business
                     }
                     else
                     {
-                        MenusFadeOut();
+                        mainMenu?.HideWithFade(true);
                     }
                 }
             }
-        }
-
-        private void MenusFadeOut()
-        {
-            openCloseState = OpenCloseState.Closing;
-
-            mainMenu?.HideWithFade(true);
         }
 
         private void GetScreenBounds(out Rect screenBounds, out bool useCustomLocation, out StartLocation startLocation)

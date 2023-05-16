@@ -5,7 +5,6 @@
 namespace SystemTrayMenu.Handler
 {
     using System;
-    using System.Windows.Controls;
     using System.Windows.Input;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Helpers;
@@ -20,8 +19,6 @@ namespace SystemTrayMenu.Handler
         private Menu? focussedMenu;
 
         internal event Action? HotKeyPressed;
-
-        internal event Action? ClosePressed;
 
         internal event Action<Menu?>? RowSelectionChanged;
 
@@ -125,7 +122,7 @@ namespace SystemTrayMenu.Handler
                     {
                         focussedMenu = null;
                         RowSelectionChanged?.Invoke(null); // TODO: Refactory to just a trigger for WaitToLoadMenu ?
-                        ClosePressed?.Invoke();
+                        sender.HideAllMenus();
                     }
 
                     break;
@@ -163,7 +160,7 @@ namespace SystemTrayMenu.Handler
                         rowBefore.OpenItem(out bool doCloseAfterOpen);
                         if (doCloseAfterOpen)
                         {
-                            ClosePressed?.Invoke();
+                            menuBefore.HideAllMenus();
                         }
                     }
                     else
