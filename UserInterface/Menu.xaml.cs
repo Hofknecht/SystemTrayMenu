@@ -45,7 +45,6 @@ namespace SystemTrayMenu.UserInterface
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
 #endif
         private bool directionToRight;
-        private bool mouseDown;
         private Point lastLocation;
 
 #if TODO // SEARCH
@@ -95,6 +94,9 @@ namespace SystemTrayMenu.UserInterface
 
                 // Use Main Menu DPI for all further calculations
                 Scaling.CalculateFactorByDpi(this);
+
+                // Moving the window is only supported for the main menu
+                MouseDown += MainMenu_MoveStart;
             }
             else
             {
@@ -151,10 +153,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxSearch.FontSize = Scaling.ScaleFontByPoints(8.25F);
             labelStatus.FontSize = Scaling.ScaleFontByPoints(7F);
             dgv.FontSize = Scaling.ScaleFontByPoints(9F);
-
-            MouseDown += Menu_MouseDown;
-            MouseUp += Menu_MouseUp;
-            MouseMove += Menu_MouseMove;
 
             textBoxSearch.TextChanged += (_, _) => TextBoxSearch_TextChanged(false);
             textBoxSearch.ContextMenu = new()
@@ -1159,35 +1157,40 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void Menu_MouseDown(object sender, MouseButtonEventArgs e)
+        private void MainMenu_MoveStart(object sender, MouseButtonEventArgs e)
         {
-            if (Level == 0)
+            // Hide all sub menus to clear the view for repositioning of the main menu
+            if (SubMenu != null)
             {
-                mouseDown = true;
-                lastLocation = NativeMethods.Screen.CursorPosition;
-                UserDragsMenu?.Invoke(this);
-                Mouse.Capture(this);
+                SubMenu?.HideWithFade(true);
+                RefreshSelection();
             }
+
+            lastLocation = NativeMethods.Screen.CursorPosition;
+            MouseMove += MainMenu_MoveRelocate;
+            MouseUp += MainMenu_MoveEnd;
+            Deactivated += MainMenu_MoveEnd;
+            Mouse.Capture(this);
         }
 
-        private void Menu_MouseMove(object sender, MouseEventArgs e)
+        private void MainMenu_MoveRelocate(object sender, MouseEventArgs e)
         {
-            if (mouseDown)
-            {
-                Point mousePos = NativeMethods.Screen.CursorPosition;
-                Left = Left + mousePos.X - lastLocation.X;
-                Top = Top + mousePos.Y - lastLocation.Y;
-                lastLocation = mousePos;
+            Point mousePos = NativeMethods.Screen.CursorPosition;
+            Left = Left + mousePos.X - lastLocation.X;
+            Top = Top + mousePos.Y - lastLocation.Y;
+            lastLocation = mousePos;
 
-                Settings.Default.CustomLocationX = (int)Left;
-                Settings.Default.CustomLocationY = (int)Top;
-            }
+            Settings.Default.CustomLocationX = (int)Left;
+            Settings.Default.CustomLocationY = (int)Top;
         }
 
-        private void Menu_MouseUp(object sender, MouseButtonEventArgs e)
+        private void MainMenu_MoveEnd(object? sender, EventArgs? e)
         {
-            mouseDown = false;
             Mouse.Capture(null);
+            MouseMove -= MainMenu_MoveRelocate;
+            MouseUp -= MainMenu_MoveEnd;
+            Deactivated -= MainMenu_MoveEnd;
+
             if (Settings.Default.UseCustomLocation)
             {
                 if (!SettingsWindow.IsOpen())
