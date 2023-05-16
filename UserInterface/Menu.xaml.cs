@@ -229,8 +229,6 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu, bool, bool>? SearchTextChanged;
 
-        internal event Action<Menu>? UserDragsMenu;
-
         internal event Action<Menu>? RowSelectionChanged;
 
         internal event Action<Menu, ListViewItemData>? CellMouseEnter;

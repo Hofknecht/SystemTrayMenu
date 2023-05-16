@@ -8,7 +8,6 @@ namespace SystemTrayMenu.Business
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data;
-    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
     using System.Windows;
@@ -72,7 +71,7 @@ namespace SystemTrayMenu.Business
             waitToOpenMenu.StartLoadMenu += StartLoadMenu;
             void StartLoadMenu(RowData rowData)
             {
-                if (!IsMainUsable)
+                if (mainMenu == null || mainMenu.Visibility != Visibility.Visible)
                 {
                     return;
                 }
@@ -119,10 +118,21 @@ namespace SystemTrayMenu.Business
                 joystickHelper = new();
                 joystickHelper.KeyPressed += (key, modifiers) =>
                 {
-                    if (IsMainUsable)
+                    if (mainMenu != null && mainMenu.Visibility == Visibility.Visible)
                     {
-                        Menu? menu = GetActiveMenu(mainMenu) ?? mainMenu; // TODO: Do we really need to provide the menu? doesn't keyboardInput already know this?
-                        menu?.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { menu, key, modifiers });
+                        Menu? menu = mainMenu;
+                        do
+                        {
+                            if (menu.IsActive || menu.IsKeyboardFocusWithin)
+                            {
+                                // Send the keys to the active menu
+                                menu.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { menu, key, modifiers });
+                                return;
+                            }
+
+                            menu = menu.SubMenu;
+                        }
+                        while (menu != null);
                     }
                 };
             }
@@ -182,9 +192,6 @@ namespace SystemTrayMenu.Business
         internal event Action? LoadStarted;
 
         internal event Action? LoadStopped;
-
-        [MemberNotNullWhen(true, nameof(mainMenu))]
-        private bool IsMainUsable => mainMenu != null && mainMenu.Visibility == Visibility.Visible;
 
         public void Dispose()
         {
@@ -264,21 +271,6 @@ namespace SystemTrayMenu.Business
             while (menu != null)
             {
                 if (menu.IsMouseOver())
-                {
-                    break;
-                }
-
-                menu = menu.SubMenu;
-            }
-
-            return menu;
-        }
-
-        private static Menu? GetActiveMenu(Menu? menu)
-        {
-            while (menu != null)
-            {
-                if (menu.IsActive || menu.IsKeyboardFocusWithin)
                 {
                     break;
                 }
@@ -381,7 +373,7 @@ namespace SystemTrayMenu.Business
 
         private void LoadSubMenuCompleted(object? senderCompleted, RunWorkerCompletedEventArgs e)
         {
-            if (e.Result == null || !IsMainUsable)
+            if (e.Result == null || mainMenu == null || mainMenu.Visibility != Visibility.Visible)
             {
                 return;
             }
@@ -465,17 +457,6 @@ namespace SystemTrayMenu.Business
                 }
             }
 
-            menu.UserDragsMenu += Menu_UserDragsMenu;
-            void Menu_UserDragsMenu(Menu mainMenu)
-            {
-                Menu? menu = mainMenu.SubMenu;
-                if (menu != null)
-                {
-                    // TODO: menus array not updated? Remove any way? (Call HideOldMenu within Menu_MouseDown direcly?)
-                    HideOldMenu(menu);
-                }
-            }
-
             menu.Deactivated += Deactivate;
             void Deactivate(object? sender, EventArgs e)
             {
@@ -548,25 +529,22 @@ namespace SystemTrayMenu.Business
 
         private void FadeHalfOrOutIfNeeded()
         {
-            if (IsMainUsable)
+            if (!App.IsActiveApp && mainMenu != null && mainMenu.Visibility == Visibility.Visible)
             {
-                if (!App.IsActiveApp)
+                if (Settings.Default.StaysOpenWhenFocusLost && IsMouseOverAnyMenu(mainMenu) != null)
                 {
-                    if (Settings.Default.StaysOpenWhenFocusLost && IsMouseOverAnyMenu(mainMenu) != null)
+                    if (!keyboardInput.IsSelectedByKey)
                     {
-                        if (!keyboardInput.IsSelectedByKey)
-                        {
-                            mainMenu?.ShowWithFade(true, true);
-                        }
+                        mainMenu.ShowWithFade(true, true);
                     }
-                    else if (Config.AlwaysOpenByPin)
-                    {
-                        mainMenu?.ShowWithFade(true, true);
-                    }
-                    else
-                    {
-                        mainMenu?.HideWithFade(true);
-                    }
+                }
+                else if (Config.AlwaysOpenByPin)
+                {
+                    mainMenu.ShowWithFade(true, true);
+                }
+                else
+                {
+                    mainMenu.HideWithFade(true);
                 }
             }
         }
