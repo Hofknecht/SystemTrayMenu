@@ -443,7 +443,6 @@ namespace SystemTrayMenu.UserInterface
 
                 rowData.RowIndex = index;
                 rowData.Owner = this;
-                rowData.ColumnIcon = (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource();
                 rowData.ColumnText = rowData.Text;
                 rowData.SortIndex = rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0;
             }
@@ -1142,11 +1141,6 @@ namespace SystemTrayMenu.UserInterface
                 {
                     iconsToUpdate++;
                     rowData.ReadIcon(false);
-                    if (rowData.Icon != null)
-                    {
-                        // TODO: Merge ColumnIcon and Icon, should be no need to separate them
-                        rowData.ColumnIcon = rowData.Icon.ToImageSource();
-                    }
                 }
             }
 

@@ -150,8 +150,6 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal Icon? Icon { get; private set; }
-
         internal FileInfo FileInfo { get; }
 
         /// <summary>
@@ -209,27 +207,32 @@ namespace SystemTrayMenu.DataClasses
         internal void ReadIcon(bool updateIconInBackground)
         {
             bool loading;
+            Icon? icon;
+
             if (IsPointingToFolder)
             {
-                Icon = IconReader.GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, out loading);
+                icon = IconReader.GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, out loading);
             }
             else
             {
-                Icon = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, out loading);
+                icon = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, out loading);
             }
 
             IconLoading = loading;
             if (!IconLoading)
             {
-                if (Icon == null)
+                if (icon == null)
                 {
-                    Icon = Resources.NotFound;
+                    icon = Resources.NotFound;
                 }
                 else if (HiddenEntry)
                 {
-                    Icon = IconReader.AddIconOverlay(Icon, Resources.White50Percentage);
+                    icon = IconReader.AddIconOverlay(icon, Resources.White50Percentage);
                 }
             }
+
+            ColumnIcon = icon?.ToImageSource();
+            ColumnIcon?.Freeze();
         }
 
         internal void OpenItem(int clickCount)
