@@ -208,9 +208,9 @@ namespace SystemTrayMenu.UserInterface
                     RowDataParent.SubMenu = null;
                 }
 
-                foreach (ListViewMenuItem item in dgv.Items)
+                foreach (RowData item in dgv.Items)
                 {
-                    item.data.SubMenu?.Close();
+                    item.SubMenu?.Close();
                 }
             };
 
@@ -227,15 +227,15 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu, bool, bool>? SearchTextChanged;
 
-        internal event Action<ListViewMenuItem>? RowSelectionChanged;
+        internal event Action<RowData>? RowSelectionChanged;
 
-        internal event Action<ListViewMenuItem>? CellMouseEnter;
+        internal event Action<RowData>? CellMouseEnter;
 
         internal event Action? CellMouseLeave;
 
-        internal event Action<ListViewMenuItem>? CellMouseDown;
+        internal event Action<RowData>? CellMouseDown;
 
-        internal event Action<ListViewMenuItem>? CellOpenOnClick;
+        internal event Action<RowData>? CellOpenOnClick;
 
         internal event RoutedEventHandler FadeToTransparent
         {
@@ -270,9 +270,9 @@ namespace SystemTrayMenu.UserInterface
 
         internal RowData? RowDataParent { get; set; }
 
-        internal ListViewMenuItem? SelectedItem
+        internal RowData? SelectedItem
         {
-            get => (ListViewMenuItem?)dgv.SelectedItem;
+            get => (RowData?)dgv.SelectedItem;
             set => dgv.SelectedItem = value;
         }
 
@@ -284,11 +284,11 @@ namespace SystemTrayMenu.UserInterface
         {
             get
             {
-                foreach (ListViewMenuItem item in dgv.Items)
+                foreach (RowData rowData in dgv.Items)
                 {
-                    if (item.data.SubMenu != null)
+                    if (rowData.SubMenu != null)
                     {
-                        return item.data.SubMenu;
+                        return rowData.SubMenu;
                     }
                 }
 
@@ -300,7 +300,7 @@ namespace SystemTrayMenu.UserInterface
 
         public override string ToString() => nameof(Menu) + " L" + Level.ToString() + ": " + Title;
 
-        internal void RiseItemOpened(ListViewMenuItem item) => CellOpenOnClick?.Invoke(item);
+        internal void RiseItemOpened(RowData item) => CellOpenOnClick?.Invoke(item);
 
         internal void RiseStartLoadSubMenu(RowData rowData) => StartLoadSubMenu?.Invoke(rowData);
 
@@ -398,14 +398,14 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool TrySelectAt(int index, int indexAlternative = -1)
         {
-            ListViewMenuItem itemData;
+            RowData itemData;
             if (index >= 0 && dgv.Items.Count > index)
             {
-                itemData = (ListViewMenuItem)dgv.Items[index];
+                itemData = (RowData)dgv.Items[index];
             }
             else if (indexAlternative >= 0 && dgv.Items.Count > indexAlternative)
             {
-                itemData = (ListViewMenuItem)dgv.Items[indexAlternative];
+                itemData = (RowData)dgv.Items[indexAlternative];
             }
             else
             {
@@ -425,10 +425,10 @@ namespace SystemTrayMenu.UserInterface
             int foldersCount = 0;
             int filesCount = 0;
 
-            List<ListViewMenuItem> items = new();
-
-            foreach (RowData rowData in data)
+            for (int index = 0; index < data.Count; index++)
             {
+                RowData rowData = data[index];
+
                 if (!(rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult))
                 {
                     if (rowData.IsPointingToFolder)
@@ -441,16 +441,14 @@ namespace SystemTrayMenu.UserInterface
                     }
                 }
 
-                rowData.RowIndex = items.Count; // Index
+                rowData.RowIndex = index;
                 rowData.Owner = this;
-                items.Add(new(
-                    (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource(),
-                    rowData.Text ?? "?",
-                    rowData,
-                    rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0));
+                rowData.ColumnIcon = (rowData.HiddenEntry ? IconReader.AddIconOverlay(rowData.Icon, Properties.Resources.White50Percentage) : rowData.Icon)?.ToImageSource();
+                rowData.ColumnText = rowData.Text;
+                rowData.SortIndex = rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0;
             }
 
-            dgv.ItemsSource = items;
+            dgv.ItemsSource = data;
 
             SetCounts(foldersCount, filesCount);
 
@@ -963,7 +961,7 @@ namespace SystemTrayMenu.UserInterface
             Resources["ColumnIconWidth"] = (double)(int)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
 
             double renderedMaxWidth = 0D;
-            foreach (ListViewMenuItem item in dgv.Items)
+            foreach (RowData item in dgv.Items)
             {
                 double renderedWidth = new FormattedText(
                         item.ColumnText,
@@ -1012,7 +1010,7 @@ namespace SystemTrayMenu.UserInterface
                 view.Filter = (object item) =>
                 {
                     // Look for each space separated string if it is part of an entries text (case insensitive)
-                    ListViewMenuItem itemData = (ListViewMenuItem)item;
+                    RowData itemData = (RowData)item;
                     foreach (string pattern in userPattern.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
                     {
                         if (!itemData.ColumnText.ToLower().Contains(pattern))
@@ -1136,10 +1134,9 @@ namespace SystemTrayMenu.UserInterface
         {
             int iconsToUpdate = 0;
 
-            foreach (ListViewMenuItem itemData in dgv.Items)
+            foreach (RowData rowData in dgv.Items)
             {
-                RowData rowData = itemData.data;
-                rowData.RowIndex = dgv.Items.IndexOf(itemData);
+                rowData.RowIndex = dgv.Items.IndexOf(rowData);
 
                 if (rowData.IconLoading)
                 {
@@ -1147,7 +1144,8 @@ namespace SystemTrayMenu.UserInterface
                     rowData.ReadIcon(false);
                     if (rowData.Icon != null)
                     {
-                        itemData.ColumnIcon = rowData.Icon.ToImageSource();
+                        // TODO: Merge ColumnIcon and Icon, should be no need to separate them
+                        rowData.ColumnIcon = rowData.Icon.ToImageSource();
                     }
                 }
             }
@@ -1205,13 +1203,13 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e != null)
             {
-                foreach (ListViewMenuItem itemData in e.AddedItems)
+                foreach (RowData itemData in e.AddedItems)
                 {
                     itemData.IsSelected = true;
                     itemData.UpdateColors();
                 }
 
-                foreach (ListViewMenuItem itemData in e.RemovedItems)
+                foreach (RowData itemData in e.RemovedItems)
                 {
                     itemData.IsSelected = false;
                     itemData.UpdateColors();
@@ -1221,7 +1219,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 // TODO: Refactor item selection to prevent running this loop
                 ListView lv = (ListView)sender;
-                foreach (ListViewMenuItem itemData in lv.Items)
+                foreach (RowData itemData in lv.Items)
                 {
                     itemData.IsSelected = lv.SelectedItem == itemData;
                     itemData.UpdateColors();
@@ -1230,13 +1228,13 @@ namespace SystemTrayMenu.UserInterface
         }
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e) =>
-            CellMouseEnter?.Invoke((ListViewMenuItem)((ListViewItem)sender).Content);
+            CellMouseEnter?.Invoke((RowData)((ListViewItem)sender).Content);
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e) => CellMouseLeave?.Invoke();
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            ListViewMenuItem itemData = (ListViewMenuItem)((ListViewItem)sender).Content;
+            RowData itemData = (RowData)((ListViewItem)sender).Content;
 
             CellMouseDown?.Invoke(itemData);
 
@@ -1249,6 +1247,6 @@ namespace SystemTrayMenu.UserInterface
         }
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) =>
-            ((ListViewMenuItem)((ListViewItem)sender).Content).OpenItem(e.ClickCount);
+            ((RowData)((ListViewItem)sender).Content).OpenItem(e.ClickCount);
     }
 }

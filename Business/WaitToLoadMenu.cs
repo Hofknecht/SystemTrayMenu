@@ -11,7 +11,7 @@ namespace SystemTrayMenu.Handler
     internal class WaitToLoadMenu : IDisposable
     {
         private readonly DispatcherTimer timerStartLoad = new();
-        private ListViewMenuItem? currentItemData;
+        private RowData? currentItemData;
         private bool alreadyOpened;
 
         internal WaitToLoadMenu()
@@ -22,13 +22,13 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? StopLoadMenu;
 
-        internal event Action<ListViewMenuItem>? MouseSelect;
+        internal event Action<RowData>? MouseSelect;
 
         internal bool MouseActive { get; set; }
 
         public void Dispose() => timerStartLoad.Stop();
 
-        internal void MouseEnter(ListViewMenuItem itemData)
+        internal void MouseEnter(RowData itemData)
         {
             if (MouseActive)
             {
@@ -50,7 +50,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowSelectionChanged(ListViewMenuItem? itemData)
+        internal void RowSelectionChanged(RowData? itemData)
         {
             // Deselect
             timerStartLoad.Stop();
@@ -66,7 +66,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void OpenSubMenuByMouse(ListViewMenuItem itemData)
+        internal void OpenSubMenuByMouse(RowData itemData)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke(); // TODO: Missing in v1 ?
@@ -75,7 +75,7 @@ namespace SystemTrayMenu.Handler
             OpenSubMenu();
         }
 
-        internal void OpenSubMenuByKey(ListViewMenuItem itemData)
+        internal void OpenSubMenuByKey(RowData itemData)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
@@ -101,7 +101,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        private void SetData(ListViewMenuItem itemData)
+        private void SetData(RowData itemData)
         {
             if (currentItemData != itemData)
             {

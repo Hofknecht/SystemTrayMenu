@@ -8,8 +8,8 @@ namespace SystemTrayMenu.Handler
     using System.Windows.Input;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Helpers;
+    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
-    using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class KeyboardInput : IDisposable
     {
@@ -19,9 +19,9 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? HotKeyPressed;
 
-        internal event Action<ListViewMenuItem?>? RowSelectionChanged;
+        internal event Action<RowData?>? RowSelectionChanged;
 
-        internal event Action<ListViewMenuItem>? EnterPressed;
+        internal event Action<RowData>? EnterPressed;
 
         internal bool IsSelectedByKey { get; set; }
 
@@ -106,7 +106,7 @@ namespace SystemTrayMenu.Handler
                     if (modifiers == ModifierKeys.None)
                     {
                         Menu? menu = focussedMenu;
-                        ListViewMenuItem? itemData = menu?.SelectedItem;
+                        RowData? itemData = menu?.SelectedItem;
                         if (menu != null && itemData != null)
                         {
                             var position = Mouse.GetPosition(menu);
@@ -130,17 +130,17 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void SelectByMouse(ListViewMenuItem itemData)
+        internal void SelectByMouse(RowData itemData)
         {
             IsSelectedByKey = false;
 
-            focussedMenu = itemData.data.Owner!; // function is only called for itemData that have an Owner set
+            focussedMenu = itemData.Owner!; // function is only called for itemData that have an Owner set
             focussedMenu.GetDataGridView().SelectedItem = itemData;
         }
 
         private void SelectByKey(Key key, Menu menuBefore)
         {
-            ListViewMenuItem? rowBefore = menuBefore.SelectedItem;
+            RowData? rowBefore = menuBefore.SelectedItem;
             if (rowBefore == null)
             {
                 focussedMenu = null;
@@ -153,8 +153,7 @@ namespace SystemTrayMenu.Handler
                     // When not sub menu already open, open the sub menu,
                     // but when already opened, open the actual folder instead.
                     // In case it is a single file, open it right away
-                    RowData trigger = rowBefore.data;
-                    if (trigger.SubMenu != null || !trigger.IsPointingToFolder)
+                    if (rowBefore.SubMenu != null || !rowBefore.IsPointingToFolder)
                     {
                         rowBefore.OpenItem(0);
                     }

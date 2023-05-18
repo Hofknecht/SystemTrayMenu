@@ -22,8 +22,8 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.UserInterface.Menu;
     using Menu = SystemTrayMenu.UserInterface.Menu;
+    using StartLocation = SystemTrayMenu.UserInterface.Menu.StartLocation;
 
     internal class Menus : IDisposable
     {
@@ -392,7 +392,7 @@ namespace SystemTrayMenu.Business
                     ListView dgv = menu.GetDataGridView();
                     if (dgv.Items.Count > 0)
                     {
-                        keyboardInput.SelectByMouse((ListViewMenuItem)dgv.Items[0]);
+                        keyboardInput.SelectByMouse((RowData)dgv.Items[0]);
                     }
                 }
 
@@ -672,9 +672,8 @@ namespace SystemTrayMenu.Business
             try
             {
                 List<RowData> rowDatas = new();
-                foreach (ListViewMenuItem item in menu.GetDataGridView().Items)
+                foreach (RowData rowData in menu.GetDataGridView().Items)
                 {
-                    RowData rowData = item.data;
                     if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                     {
                         string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
@@ -725,20 +724,19 @@ namespace SystemTrayMenu.Business
             try
             {
                 ListView? dgv = menu.GetDataGridView();
-                List<ListViewMenuItem> rowsToRemove = new();
+                List<RowData> rowsToRemove = new();
 
-                foreach (ListViewMenuItem item in dgv.ItemsSource)
+                foreach (RowData rowData in dgv.ItemsSource)
                 {
-                    RowData rowData = item.data;
                     if (rowData.Path == e.FullPath ||
                         rowData.Path.StartsWith($"{e.FullPath}\\"))
                     {
                         IconReader.RemoveIconFromCache(rowData.Path);
-                        rowsToRemove.Add(item);
+                        rowsToRemove.Add(rowData);
                     }
                 }
 
-                foreach (ListViewMenuItem rowToRemove in rowsToRemove)
+                foreach (RowData rowToRemove in rowsToRemove)
                 {
                     ((IEditableCollectionView)dgv.Items).Remove(rowToRemove);
                 }
@@ -771,9 +769,9 @@ namespace SystemTrayMenu.Business
 
                 var items = menu.GetDataGridView().Items;
                 List<RowData> rowDatas = new(items.Count + 1) { rowData };
-                foreach (ListViewMenuItem item in items)
+                foreach (RowData item in items)
                 {
-                    rowDatas.Add(item.data);
+                    rowDatas.Add(item);
                 }
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);

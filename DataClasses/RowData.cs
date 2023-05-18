@@ -5,14 +5,25 @@
 namespace SystemTrayMenu.DataClasses
 {
     using System;
-    using System.Drawing;
+    using System.ComponentModel;
+    using System.Diagnostics.CodeAnalysis;
     using System.IO;
+    using System.Runtime.CompilerServices;
+    using System.Windows;
+    using System.Windows.Media;
+    using SystemTrayMenu.Properties;
+    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.Utilities.IconReader;
-    using Menu = SystemTrayMenu.UserInterface.Menu;
+    using Icon = System.Drawing.Icon;
 
-    internal class RowData
+    internal class RowData : INotifyPropertyChanged
     {
+        private Brush? backgroundBrush;
+        private Brush? borderBrush;
+        private ImageSource? columnIcon;
+        private string? columnText;
+        private bool isSelected;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RowData"/> class.
         /// (Related replace "\x00" see #171.)
@@ -33,9 +44,9 @@ namespace SystemTrayMenu.DataClasses
             if (FileExtension.Equals(".lnk", StringComparison.InvariantCultureIgnoreCase))
             {
                 ResolvedPath = FileLnk.GetResolvedFileName(Path, out bool isLinkToFolder);
-                ShowOverlay = Properties.Settings.Default.ShowLinkOverlay;
+                ShowOverlay = Settings.Default.ShowLinkOverlay;
                 Text = System.IO.Path.GetFileNameWithoutExtension(Path);
-                if (Properties.Settings.Default.ResolveLinksToFolders)
+                if (Settings.Default.ResolveLinksToFolders)
                 {
                     IsPointingToFolder |= isLinkToFolder || FileLnk.IsNetworkRoot(ResolvedPath);
                 }
@@ -51,7 +62,7 @@ namespace SystemTrayMenu.DataClasses
                 else if (FileExtension.Equals(".url", StringComparison.InvariantCultureIgnoreCase) ||
                     FileExtension.Equals(".appref-ms", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    ShowOverlay = Properties.Settings.Default.ShowLinkOverlay;
+                    ShowOverlay = Settings.Default.ShowLinkOverlay;
                     Text = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
                 }
                 else if (!isFolder && Config.IsHideFileExtension())
@@ -65,6 +76,78 @@ namespace SystemTrayMenu.DataClasses
             }
 
             IsPointingToFolder |= isFolder;
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public Brush? BackgroundBrush
+        {
+            get => backgroundBrush;
+            private set
+            {
+                if (value != backgroundBrush)
+                {
+                    backgroundBrush = value;
+                    CallPropertyChanged();
+                }
+            }
+        }
+
+        public Brush? BorderBrush
+        {
+            get => borderBrush;
+            private set
+            {
+                if (value != borderBrush)
+                {
+                    borderBrush = value;
+                    CallPropertyChanged();
+                }
+            }
+        }
+
+        public ImageSource? ColumnIcon
+        {
+            get => columnIcon;
+            set
+            {
+                if (value != columnIcon)
+                {
+                    columnIcon = value;
+                    CallPropertyChanged();
+                }
+            }
+        }
+
+        [AllowNull]
+        public string ColumnText
+        {
+            get => columnText ?? "?";
+            set
+            {
+                if (value != columnText)
+                {
+                    columnText = value;
+                    CallPropertyChanged();
+                }
+            }
+        }
+
+        internal int SortIndex { get; set; }
+
+        internal bool IsPendingOpenItem { get; set; }
+
+        internal bool IsSelected
+        {
+            get => isSelected;
+            set
+            {
+                if (value != isSelected)
+                {
+                    isSelected = value;
+                    CallPropertyChanged();
+                }
+            }
         }
 
         internal Icon? Icon { get; private set; }
@@ -115,16 +198,24 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IconLoading { get; private set; }
 
+        public override string ToString() => nameof(RowData) + ": " + ColumnText + ", Owner: " + (Owner?.ToString() ?? "null");
+
+        /// <summary>
+        /// Triggers an PropertyChanged event of INotifyPropertyChanged.
+        /// </summary>
+        /// <param name="propertyName">Name of the changing property.</param>
+        public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         internal void ReadIcon(bool updateIconInBackground)
         {
             bool loading;
             if (IsPointingToFolder)
             {
-                Icon = GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, out loading);
+                Icon = IconReader.GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, out loading);
             }
             else
             {
-                Icon = GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, out loading);
+                Icon = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, out loading);
             }
 
             IconLoading = loading;
@@ -132,12 +223,128 @@ namespace SystemTrayMenu.DataClasses
             {
                 if (Icon == null)
                 {
-                    Icon = Properties.Resources.NotFound;
+                    Icon = Resources.NotFound;
                 }
                 else if (HiddenEntry)
                 {
-                    Icon = AddIconOverlay(Icon, Properties.Resources.White50Percentage);
+                    Icon = IconReader.AddIconOverlay(Icon, Resources.White50Percentage);
                 }
+            }
+        }
+
+        internal void OpenItem(int clickCount)
+        {
+            bool doCloseAfterOpen = false;
+
+            if (!IsPointingToFolder)
+            {
+                if (clickCount == -1 ||
+                (clickCount == 1 && Settings.Default.OpenItemWithOneClick) ||
+                (clickCount == 2 && !Settings.Default.OpenItemWithOneClick))
+                {
+                    string? workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);
+                    Log.ProcessStart(Path, string.Empty, false, workingDirectory, true, ResolvedPath);
+                    if (!Settings.Default.StaysOpenWhenItemClicked)
+                    {
+                        doCloseAfterOpen = true;
+                    }
+                }
+            }
+            else
+            {
+                if (clickCount == -1 ||
+                (clickCount == 1 && Settings.Default.OpenDirectoryWithOneClick) ||
+                (clickCount == 2 && !Settings.Default.OpenDirectoryWithOneClick))
+                {
+                    Log.ProcessStart(Path);
+                    if (!Settings.Default.StaysOpenWhenItemClicked)
+                    {
+                        doCloseAfterOpen = true;
+                    }
+                }
+            }
+
+            if (Owner != null)
+            {
+                if (clickCount == 1)
+                {
+                    Owner.RiseItemOpened(this);
+                }
+
+                if (doCloseAfterOpen)
+                {
+                    Owner.HideAllMenus();
+                }
+            }
+        }
+
+        internal void OpenShellContextMenu(Point position)
+        {
+            if (IsPointingToFolder)
+            {
+                ShellContextMenu.OpenShellContextMenu(new DirectoryInfo(Path), position);
+            }
+            else
+            {
+                ShellContextMenu.OpenShellContextMenu(FileInfo, position);
+            }
+        }
+
+        internal void OpenSubMenu()
+        {
+            // TODO: always true? maybe only when cached in WaitToLoadMenu or keyboardInput?
+            if (Owner?.GetDataGridView().Items.Contains(this) ?? false)
+            {
+                Menu? openSubMenu = Owner.SubMenu;
+
+                // only re-open when the menu is not already open
+                if (SubMenu != null && SubMenu == openSubMenu)
+                {
+                    // Close second level sub menus when already opened
+                    openSubMenu.SelectedItem = null;
+                    if (openSubMenu.SubMenu != null)
+                    {
+                        openSubMenu.SubMenu.HideWithFade(true);
+                        openSubMenu.RefreshSelection();
+                    }
+                }
+                else
+                {
+                    // In case another menu exists, close it
+                    if (openSubMenu != null)
+                    {
+                        // Give the opening window focus
+                        // if closing window lose focus, no window would have focus any more
+                        Owner.Activate();
+                        Owner.FocusTextBox();
+                        openSubMenu.HideWithFade(true);
+                        Owner.RefreshSelection();
+                    }
+
+                    if (IsPointingToFolder)
+                    {
+                        Owner.RiseStartLoadSubMenu(this);
+                    }
+                }
+            }
+        }
+
+        internal void UpdateColors()
+        {
+            if (SubMenu != null)
+            {
+                BorderBrush = MenuDefines.ColorOpenFolderBorder;
+                BackgroundBrush = MenuDefines.ColorOpenFolder;
+            }
+            else if (IsSelected)
+            {
+                BorderBrush = MenuDefines.ColorSelectedItemBorder;
+                BackgroundBrush = MenuDefines.ColorSelectedItem;
+            }
+            else
+            {
+                BorderBrush = Brushes.White;
+                BackgroundBrush = Brushes.White;
             }
         }
     }
