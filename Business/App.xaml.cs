@@ -8,9 +8,9 @@ namespace SystemTrayMenu
     using System.Windows;
     using System.Windows.Threading;
     using SystemTrayMenu.Business;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Helpers.Updater;
     using SystemTrayMenu.Properties;
-    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
 
     /// <summary>
@@ -18,32 +18,24 @@ namespace SystemTrayMenu
     /// </summary>
     public partial class App : Application, IDisposable
     {
-        private static TaskbarLogo? taskbarLogo;
-        private readonly AppNotifyIcon menuNotifyIcon = new();
         private readonly Menus menus = new();
+        private JoystickHelper? joystickHelper;
         private bool isDisposed;
 
         public App()
         {
             AppRestart.BeforeRestarting += Dispose;
-            menus.LoadStarted += menuNotifyIcon.LoadingStart;
-            menus.LoadStopped += menuNotifyIcon.LoadingStop;
-            menuNotifyIcon.Click += () => menus.SwitchOpenClose(true, false);
 
             Activated += (_, _) => IsActiveApp = true;
             Deactivated += (_, _) => IsActiveApp = false;
-
             Startup += (_, _) =>
             {
-                if (Settings.Default.ShowInTaskbar)
+                menus.Startup();
+
+                if (Settings.Default.SupportGamepad)
                 {
-                    taskbarLogo = new();
-                    taskbarLogo.Activated += (_, _) => menus.SwitchOpenCloseByTaskbarItem();
-                    taskbarLogo.Show();
-                }
-                else
-                {
-                    menus.SwitchOpenClose(false, true);
+                    joystickHelper = new();
+                    joystickHelper.KeyPressed += menus.KeyPressed;
                 }
 
                 if (Settings.Default.CheckForUpdates)
@@ -67,11 +59,13 @@ namespace SystemTrayMenu
         {
             if (!isDisposed)
             {
-                taskbarLogo?.Close();
-                taskbarLogo = null;
+                if (joystickHelper != null)
+                {
+                    joystickHelper.KeyPressed -= menus.KeyPressed;
+                    joystickHelper.Dispose();
+                }
 
                 menus.Dispose();
-                menuNotifyIcon.Dispose();
 
                 isDisposed = true;
             }

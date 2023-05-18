@@ -12,6 +12,7 @@ namespace SystemTrayMenu.Business
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Input;
     using System.Windows.Threading;
     using Microsoft.Win32;
     using SystemTrayMenu.DataClasses;
@@ -19,17 +20,18 @@ namespace SystemTrayMenu.Business
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
+    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.UserInterface.Menu;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class Menus : IDisposable
     {
+        private readonly AppNotifyIcon menuNotifyIcon = new();
         private readonly BackgroundWorker workerMainMenu = new();
         private readonly List<BackgroundWorker> workersSubMenu = new();
         private readonly WaitToLoadMenu waitToOpenMenu = new();
-        private readonly KeyboardInput keyboardInput;
-        private readonly JoystickHelper? joystickHelper;
+        private readonly KeyboardInput keyboardInput = new();
         private readonly List<FileSystemWatcher> watchers = new();
         private readonly List<EventArgs> watcherHistory = new();
         private readonly DispatcherTimer timerShowProcessStartedAsLoadingIcon = new();
@@ -37,11 +39,13 @@ namespace SystemTrayMenu.Business
         private readonly DispatcherTimer waitLeave = new();
         private TaskbarPosition taskbarPosition = TaskbarPosition.Unknown;
         private bool showMenuAfterMainPreload;
+        private TaskbarLogo? taskbarLogo;
         private Menu? mainMenu;
 
         public Menus()
         {
-            keyboardInput = new();
+            menuNotifyIcon.Click += () => SwitchOpenClose(true, false);
+
             if (!keyboardInput.RegisterHotKey(Settings.Default.HotKey))
             {
                 Settings.Default.HotKey = string.Empty;
@@ -65,34 +69,10 @@ namespace SystemTrayMenu.Business
                     workerSubMenu.CancelAsync();
                 }
 
-                LoadStopped?.Invoke();
+                menuNotifyIcon.LoadingStop();
             }
 
             waitToOpenMenu.MouseSelect += keyboardInput.SelectByMouse;
-
-            if (Settings.Default.SupportGamepad)
-            {
-                joystickHelper = new();
-                joystickHelper.KeyPressed += (key, modifiers) =>
-                {
-                    if (mainMenu != null && mainMenu.Visibility == Visibility.Visible)
-                    {
-                        Menu? menu = mainMenu;
-                        do
-                        {
-                            if (menu.IsActive || menu.IsKeyboardFocusWithin)
-                            {
-                                // Send the keys to the active menu
-                                menu.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { menu, key, modifiers });
-                                return;
-                            }
-
-                            menu = menu.SubMenu;
-                        }
-                        while (menu != null);
-                    }
-                };
-            }
 
             // Timer to check after activation if the application lost focus and close/fadeout windows again
             timerStillActiveCheck.Interval = TimeSpan.FromMilliseconds(Settings.Default.TimeUntilClosesAfterEnterPressed + 20);
@@ -146,10 +126,6 @@ namespace SystemTrayMenu.Business
             SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
         }
 
-        internal event Action? LoadStarted;
-
-        internal event Action? LoadStopped;
-
         public void Dispose()
         {
             SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
@@ -170,21 +146,34 @@ namespace SystemTrayMenu.Business
 
             waitToOpenMenu.Dispose();
             keyboardInput.Dispose();
-            joystickHelper?.Dispose();
             timerShowProcessStartedAsLoadingIcon.Stop();
             timerStillActiveCheck.Stop();
             waitLeave.Stop();
             mainMenu?.Close();
+            taskbarLogo?.Close();
+            menuNotifyIcon.Dispose();
         }
 
         internal static void OpenFolder(string path) => Log.ProcessStart(path);
 
-        internal void SwitchOpenCloseByTaskbarItem()
+        internal void Startup()
         {
-            // User started with taskbar or clicked on taskbar: remember to open menu after preload has finished
-            showMenuAfterMainPreload = true;
-            SwitchOpenClose(true, true);
-            timerStillActiveCheck.Start();
+            if (Settings.Default.ShowInTaskbar)
+            {
+                taskbarLogo = new();
+                taskbarLogo.Activated += (_, _) =>
+                {
+                    // User started with taskbar or clicked on taskbar: remember to open menu after preload has finished
+                    showMenuAfterMainPreload = true;
+                    SwitchOpenClose(true, true);
+                };
+
+                taskbarLogo.Show();
+            }
+            else
+            {
+                SwitchOpenClose(false, true);
+            }
         }
 
         internal void SwitchOpenClose(bool byClick, bool allowPreloading)
@@ -203,7 +192,7 @@ namespace SystemTrayMenu.Business
             {
                 // Stop current loading process of main menu
                 workerMainMenu.CancelAsync();
-                LoadStopped?.Invoke();
+                menuNotifyIcon.LoadingStop();
             }
             else if (mainMenu != null && mainMenu.Visibility == Visibility.Visible)
             {
@@ -218,8 +207,29 @@ namespace SystemTrayMenu.Business
                     GenerateDriveShortcuts.Start(); // TODO: Once or actually on every startup?
                 }
 
-                LoadStarted?.Invoke();
+                menuNotifyIcon.LoadingStart();
                 workerMainMenu.RunWorkerAsync(null);
+            }
+        }
+
+        internal void KeyPressed(Key key, ModifierKeys modifiers)
+        {
+            // Look for a valid menu that is visible, active and has focus
+            if (mainMenu != null && mainMenu.Visibility == Visibility.Visible)
+            {
+                Menu? menu = mainMenu;
+                do
+                {
+                    if (menu.IsActive || menu.IsKeyboardFocusWithin)
+                    {
+                        // Send the keys to the active menu
+                        menu.Dispatcher.Invoke(keyboardInput.CmdKeyProcessed, new object[] { menu, key, modifiers });
+                        return;
+                    }
+
+                    menu = menu.SubMenu;
+                }
+                while (menu != null);
             }
         }
 
@@ -259,7 +269,7 @@ namespace SystemTrayMenu.Business
         private void LoadMainMenuCompleted(object? sender, RunWorkerCompletedEventArgs e)
         {
             keyboardInput.ResetSelectedByKey();
-            LoadStopped?.Invoke();
+            menuNotifyIcon.LoadingStop();
 
             if (e.Result == null)
             {
