@@ -37,10 +37,10 @@ namespace SystemTrayMenu.Business
         private readonly DispatcherTimer timerShowProcessStartedAsLoadingIcon = new();
         private readonly DispatcherTimer timerStillActiveCheck = new();
         private readonly DispatcherTimer waitLeave = new();
+        private readonly Menu mainMenu;
         private TaskbarPosition taskbarPosition = TaskbarPosition.Unknown;
         private bool showMenuAfterMainPreload;
         private TaskbarLogo? taskbarLogo;
-        private Menu? mainMenu;
 
         public Menus()
         {
@@ -124,6 +124,8 @@ namespace SystemTrayMenu.Business
             }
 
             SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
+
+            mainMenu = new(null, Config.Path);
         }
 
         public void Dispose()
@@ -149,9 +151,9 @@ namespace SystemTrayMenu.Business
             timerShowProcessStartedAsLoadingIcon.Stop();
             timerStillActiveCheck.Stop();
             waitLeave.Stop();
-            mainMenu?.Close();
             taskbarLogo?.Close();
             menuNotifyIcon.Dispose();
+            mainMenu.Close();
         }
 
         internal static void OpenFolder(string path) => Log.ProcessStart(path);
@@ -194,7 +196,7 @@ namespace SystemTrayMenu.Business
                 workerMainMenu.CancelAsync();
                 menuNotifyIcon.LoadingStop();
             }
-            else if (mainMenu != null && mainMenu.Visibility == Visibility.Visible)
+            else if (mainMenu.Visibility == Visibility.Visible)
             {
                 // Main menu is visible, hide all menus
                 mainMenu.HideWithFade(true);
@@ -215,7 +217,7 @@ namespace SystemTrayMenu.Business
         internal void KeyPressed(Key key, ModifierKeys modifiers)
         {
             // Look for a valid menu that is visible, active and has focus
-            if (mainMenu != null && mainMenu.Visibility == Visibility.Visible)
+            if (mainMenu.Visibility == Visibility.Visible)
             {
                 Menu? menu = mainMenu;
                 do
@@ -273,15 +275,9 @@ namespace SystemTrayMenu.Business
 
             if (e.Result == null)
             {
-                Menu? menu = mainMenu;
-                if (menu != null)
-                {
-                    menu.SelectedItem = null;
-
-                    menu.RelocateOnNextShow = true;
-
-                    menu.ShowWithFade(false, true);
-                }
+                mainMenu.SelectedItem = null;
+                mainMenu.RelocateOnNextShow = true;
+                mainMenu.ShowWithFade(false, true);
             }
             else
             {
@@ -292,17 +288,17 @@ namespace SystemTrayMenu.Business
                     case MenuDataDirectoryState.Valid:
                         if (IconReader.IsPreloading)
                         {
-                            Menu menu = Create(menuData, Config.Path); // Level 0 Main Menu
+                            InitializeMenu(mainMenu, menuData.RowDatas); // Level 0 Main Menu
 
                             IconReader.IsPreloading = false;
                             if (showMenuAfterMainPreload)
                             {
-                                menu.ShowWithFade(false, false);
+                                mainMenu.ShowWithFade(false, false);
                             }
                         }
                         else
                         {
-                            mainMenu?.ShowWithFade(false, true);
+                            mainMenu.ShowWithFade(false, true);
                         }
 
                         break;
@@ -329,7 +325,7 @@ namespace SystemTrayMenu.Business
 
         private void LoadSubMenuCompleted(object? senderCompleted, RunWorkerCompletedEventArgs e)
         {
-            if (e.Result == null || mainMenu == null || mainMenu.Visibility != Visibility.Visible)
+            if (e.Result == null || mainMenu.Visibility != Visibility.Visible)
             {
                 return;
             }
@@ -367,9 +363,9 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private Menu Create(MenuData menuData, string path)
+        private void InitializeMenu(Menu menu, List<RowData> rowDatas)
         {
-            Menu menu = new(menuData, path);
+            menu.AddItemsToMenu(rowDatas, null, false);
 
             menu.MenuScrolled += () => AdjustMenusSizeAndLocation(menu.Level + 1); // TODO: Only update vertical location while scrolling?
             menu.MouseLeave += (_, _) =>
@@ -424,7 +420,7 @@ namespace SystemTrayMenu.Business
             void Activated()
             {
                 // Bring transparent menus back
-                mainMenu?.ActivateWithFade(true);
+                mainMenu.ActivateWithFade(true);
 
                 timerStillActiveCheck.Stop();
                 timerStillActiveCheck.Start();
@@ -440,7 +436,6 @@ namespace SystemTrayMenu.Business
             if (menu.Level == 0)
             {
                 // Main Menu
-                mainMenu = menu;
                 menu.Loaded += (s, e) => ExecuteWatcherHistory();
             }
             else
@@ -453,12 +448,12 @@ namespace SystemTrayMenu.Business
             menu.StartLoadSubMenu += StartLoadSubMenu;
             void StartLoadSubMenu(RowData rowData)
             {
-                if (mainMenu == null || mainMenu.Visibility != Visibility.Visible)
+                if (mainMenu.Visibility != Visibility.Visible)
                 {
                     return;
                 }
 
-                Menu? menu = mainMenu?.SubMenu;
+                Menu? menu = mainMenu.SubMenu;
                 int nextLevel = rowData.Level + 1;
                 while (menu != null)
                 {
@@ -473,7 +468,7 @@ namespace SystemTrayMenu.Business
                 // sanity check not creating same sub menu twice
                 if (menu?.RowDataParent != rowData)
                 {
-                    Create(new(rowData), rowData.Path); // Level 1+ Sub Menu (loading)
+                    InitializeMenu(new(rowData, rowData.Path), new()); // Level 1+ Sub Menu (loading)
 
                     BackgroundWorker? workerSubMenu = workersSubMenu.
                         Where(w => !w.IsBusy).FirstOrDefault();
@@ -491,8 +486,6 @@ namespace SystemTrayMenu.Business
                     workerSubMenu.RunWorkerAsync(rowData);
                 }
             }
-
-            return menu;
         }
 
         private void MenuVisibleChanged(Menu menu)
@@ -520,11 +513,11 @@ namespace SystemTrayMenu.Business
         }
 
         private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e) =>
-            mainMenu?.Dispatcher.Invoke(() => mainMenu.RelocateOnNextShow = true);
+            mainMenu.Dispatcher.Invoke(() => mainMenu.RelocateOnNextShow = true);
 
         private void FadeHalfOrOutIfNeeded()
         {
-            if (!App.IsActiveApp && mainMenu != null && mainMenu.Visibility == Visibility.Visible)
+            if (!App.IsActiveApp && mainMenu.Visibility == Visibility.Visible)
             {
                 if (Settings.Default.StaysOpenWhenFocusLost && IsMouseOverAnyMenu(mainMenu) != null)
                 {
@@ -650,10 +643,8 @@ namespace SystemTrayMenu.Business
 
         private void WatcherProcessItem(object sender, EventArgs e)
         {
-            Menu? menu = mainMenu;
-
             // Store event in history as long as menu is not loaded
-            if (menu?.Dispatcher.Invoke(() => !menu.IsLoaded) ?? true)
+            if (mainMenu.Dispatcher.Invoke(() => !mainMenu.IsLoaded))
             {
                 watcherHistory.Add(e);
                 return;
@@ -661,17 +652,17 @@ namespace SystemTrayMenu.Business
 
             if (e is RenamedEventArgs renamedEventArgs)
             {
-                menu.Dispatcher.Invoke(() => RenameItem(menu, renamedEventArgs));
+                mainMenu.Dispatcher.Invoke(() => RenameItem(mainMenu, renamedEventArgs));
             }
             else if (e is FileSystemEventArgs fileSystemEventArgs)
             {
                 if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Deleted)
                 {
-                    menu.Dispatcher.Invoke(() => DeleteItem(menu, fileSystemEventArgs));
+                    mainMenu.Dispatcher.Invoke(() => DeleteItem(mainMenu, fileSystemEventArgs));
                 }
                 else if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Created)
                 {
-                    menu.Dispatcher.Invoke(() => CreateItem(menu, fileSystemEventArgs));
+                    mainMenu.Dispatcher.Invoke(() => CreateItem(mainMenu, fileSystemEventArgs));
                 }
             }
         }

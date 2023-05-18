@@ -50,7 +50,7 @@ namespace SystemTrayMenu.UserInterface
 #if TODO // SEARCH
         private bool isSetSearchText;
 #endif
-        internal Menu(MenuData menuData, string path)
+        internal Menu(RowData? rowDataParent, string path)
         {
             InitializeComponent();
 
@@ -85,7 +85,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             folderPath = path;
-            RowDataParent = menuData.RowDataParent;
+            RowDataParent = rowDataParent;
             if (RowDataParent == null)
             {
                 // This will be a main menu
@@ -104,7 +104,7 @@ namespace SystemTrayMenu.UserInterface
                 if (ParentMenu == null)
                 {
                     // Should never happen as each parent menu must have a valid entry which's owner is set
-                    throw new ArgumentNullException(new (nameof(ParentMenu)));
+                throw new ArgumentNullException(new (nameof(ParentMenu)));
                 }
 
                 Level = RowDataParent.Level + 1;
@@ -217,8 +217,6 @@ namespace SystemTrayMenu.UserInterface
             };
 
             timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
-
-            AddItemsToMenu(menuData.RowDatas, null, false);
         }
 
         internal event Action<RowData>? StartLoadSubMenu;
@@ -280,7 +278,7 @@ namespace SystemTrayMenu.UserInterface
             set => dgv.SelectedItem = value;
         }
 
-        internal Menu MainMenu { get; init; }
+        internal Menu MainMenu { get; private set; }
 
         internal Menu? ParentMenu => RowDataParent?.Owner;
 
