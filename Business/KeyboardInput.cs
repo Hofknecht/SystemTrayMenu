@@ -20,9 +20,9 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? HotKeyPressed;
 
-        internal event Action<Menu?>? RowSelectionChanged;
+        internal event Action<ListViewItemData?>? RowSelectionChanged;
 
-        internal event Action<Menu, ListViewItemData>? EnterPressed;
+        internal event Action<ListViewItemData>? EnterPressed;
 
         internal bool IsSelectedByKey { get; set; }
 
@@ -121,7 +121,7 @@ namespace SystemTrayMenu.Handler
                     if (modifiers == ModifierKeys.None)
                     {
                         focussedMenu = null;
-                        RowSelectionChanged?.Invoke(null); // TODO: Refactory to just a trigger for WaitToLoadMenu ?
+                        RowSelectionChanged?.Invoke(null); // TODO: Refactor to just a trigger for WaitToLoadMenu ?
                         sender.HideAllMenus();
                     }
 
@@ -131,12 +131,12 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void SelectByMouse(Menu menu, ListViewItemData itemData)
+        internal void SelectByMouse(ListViewItemData itemData)
         {
             IsSelectedByKey = false;
 
-            focussedMenu = menu;
-            menu.GetDataGridView().SelectedItem = itemData;
+            focussedMenu = itemData.data.Owner!; // function is only called for itemData that have an Owner set
+            focussedMenu.GetDataGridView().SelectedItem = itemData;
         }
 
         private void SelectByKey(Key key, Menu menuBefore)
@@ -157,17 +157,13 @@ namespace SystemTrayMenu.Handler
                     RowData trigger = rowBefore.data;
                     if (trigger.SubMenu != null || !trigger.IsPointingToFolder)
                     {
-                        rowBefore.OpenItem(out bool doCloseAfterOpen);
-                        if (doCloseAfterOpen)
-                        {
-                            menuBefore.HideAllMenus();
-                        }
+                        rowBefore.OpenItem(0);
                     }
                     else
                     {
-                        RowSelectionChanged?.Invoke(menuBefore); // TODO: Refactory to just a trigger for WaitToLoadMenu ?
+                        RowSelectionChanged?.Invoke(rowBefore); // TODO: Refactor to just a trigger for WaitToLoadMenu ?
                         IsSelectedByKey = true;
-                        EnterPressed?.Invoke(menuBefore, rowBefore);
+                        EnterPressed?.Invoke(rowBefore);
                     }
 
                     menuBefore?.FocusTextBox(); // TODO: focus placed correctly here?

@@ -221,6 +221,8 @@ namespace SystemTrayMenu.UserInterface
             AddItemsToMenu(menuData.RowDatas, null, false);
         }
 
+        internal event Action<RowData>? StartLoadSubMenu;
+
         internal event Action? MenuScrolled;
 
         internal event Action<Menu, Key, ModifierKeys>? CmdKeyProcessed;
@@ -229,15 +231,15 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu, bool, bool>? SearchTextChanged;
 
-        internal event Action<Menu>? RowSelectionChanged;
+        internal event Action<ListViewItemData>? RowSelectionChanged;
 
-        internal event Action<Menu, ListViewItemData>? CellMouseEnter;
+        internal event Action<ListViewItemData>? CellMouseEnter;
 
         internal event Action? CellMouseLeave;
 
-        internal event Action<Menu, ListViewItemData>? CellMouseDown;
+        internal event Action<ListViewItemData>? CellMouseDown;
 
-        internal event Action<Menu, ListViewItemData>? CellOpenOnClick;
+        internal event Action<ListViewItemData>? CellOpenOnClick;
 
         internal event RoutedEventHandler FadeToTransparent
         {
@@ -391,6 +393,7 @@ namespace SystemTrayMenu.UserInterface
         }
 
         // TODO: Check if it is implicitly already running due to SelectionChanged event
+        //       In case it is needed, run it within HideWithFade/ShowWithFade?
         internal void RefreshSelection() => ListView_SelectionChanged(GetDataGridView(), null);
 
         internal bool TrySelectAt(int index, int indexAlternative = -1)
@@ -412,7 +415,7 @@ namespace SystemTrayMenu.UserInterface
             dgv.SelectedItem = itemData;
             dgv.ScrollIntoView(itemData);
 
-            RowSelectionChanged?.Invoke(this);
+            RowSelectionChanged?.Invoke(itemData);
 
             return true;
         }
@@ -1227,7 +1230,7 @@ namespace SystemTrayMenu.UserInterface
         }
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e) =>
-            CellMouseEnter?.Invoke(this, (ListViewItemData)((ListViewItem)sender).Content);
+            CellMouseEnter?.Invoke((ListViewItemData)((ListViewItem)sender).Content);
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e) => CellMouseLeave?.Invoke();
 
@@ -1235,7 +1238,7 @@ namespace SystemTrayMenu.UserInterface
         {
             ListViewItemData itemData = (ListViewItemData)((ListViewItem)sender).Content;
 
-            CellMouseDown?.Invoke(this, itemData);
+            CellMouseDown?.Invoke(itemData);
 
             if (e.RightButton == MouseButtonState.Pressed)
             {
@@ -1245,22 +1248,8 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ListViewItemData itemData = (ListViewItemData)((ListViewItem)sender).Content;
-
-            itemData.OpenItem(out bool doClose, e.ClickCount);
-
-            if (e.ClickCount == 1)
-            {
-                CellOpenOnClick?.Invoke(this, itemData);
-            }
-
-            if (doClose)
-            {
-                HideAllMenus();
-            }
-        }
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) =>
+            ((ListViewItemData)((ListViewItem)sender).Content).OpenItem(e.ClickCount);
 
         /// <summary>
         /// Type for ListView items.
@@ -1352,7 +1341,23 @@ namespace SystemTrayMenu.UserInterface
             /// <param name="propertyName">Name of the changing property.</param>
             public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-            internal void OpenItem(out bool doCloseAfterOpen, int clickCount = -1) => data.OpenItem(out doCloseAfterOpen, clickCount);
+            internal void OpenItem(int clickCount)
+            {
+                data.OpenItem(out bool doCloseAfterOpen, clickCount);
+
+                if (data.Owner != null)
+                {
+                    if (clickCount == 1)
+                    {
+                        data.Owner.CellOpenOnClick?.Invoke(this);
+                    }
+
+                    if (doCloseAfterOpen)
+                    {
+                        data.Owner.HideAllMenus();
+                    }
+                }
+            }
 
             internal void OpenShellContextMenu(Point position)
             {
@@ -1363,6 +1368,47 @@ namespace SystemTrayMenu.UserInterface
                 else
                 {
                     ShellContextMenu.OpenShellContextMenu(data.FileInfo, position);
+                }
+            }
+
+            internal void OpenSubMenu()
+            {
+                Menu? owner = data.Owner;
+
+                // TODO: always true? maybe only when cached in WaitToLoadMenu or keyboardInput?
+                if (owner?.GetDataGridView().Items.Contains(this) ?? false)
+                {
+                    Menu? openSubMenu = owner.SubMenu;
+
+                    // only re-open when the menu is not already open
+                    if (data.SubMenu != null && data.SubMenu == openSubMenu)
+                    {
+                        // Close second level sub menus when already opened
+                        openSubMenu.SelectedItem = null;
+                        if (openSubMenu.SubMenu != null)
+                        {
+                            openSubMenu.SubMenu.HideWithFade(true);
+                            openSubMenu.RefreshSelection();
+                        }
+                    }
+                    else
+                    {
+                        // In case another menu exists, close it
+                        if (openSubMenu != null)
+                        {
+                            // Give the opening window focus
+                            // if closing window lose focus, no window would have focus any more
+                            owner.Activate();
+                            owner.FocusTextBox();
+                            openSubMenu.HideWithFade(true);
+                            owner.RefreshSelection();
+                        }
+
+                        if (data.IsPointingToFolder)
+                        {
+                            owner.StartLoadSubMenu?.Invoke(data);
+                        }
+                    }
                 }
             }
 

@@ -50,7 +50,7 @@ namespace SystemTrayMenu.Business
 
             keyboardInput.HotKeyPressed += () => SwitchOpenClose(false, false);
             keyboardInput.RowSelectionChanged += waitToOpenMenu.RowSelectionChanged;
-            keyboardInput.EnterPressed += waitToOpenMenu.EnterOpensInstantly;
+            keyboardInput.EnterPressed += waitToOpenMenu.OpenSubMenuByKey;
 
             workerMainMenu.WorkerSupportsCancellation = true;
             workerMainMenu.DoWork += LoadMenu;
@@ -68,50 +68,7 @@ namespace SystemTrayMenu.Business
                 LoadStopped?.Invoke();
             }
 
-            waitToOpenMenu.StartLoadMenu += StartLoadMenu;
-            void StartLoadMenu(RowData rowData)
-            {
-                if (mainMenu == null || mainMenu.Visibility != Visibility.Visible)
-                {
-                    return;
-                }
-
-                Menu? menu = mainMenu?.SubMenu;
-                int nextLevel = rowData.Level + 1;
-                while (menu != null)
-                {
-                    if (menu.Level == nextLevel)
-                    {
-                        break;
-                    }
-
-                    menu = menu.SubMenu;
-                }
-
-                // sanity check not creating same sub menu twice
-                if (menu?.RowDataParent != rowData)
-                {
-                    Create(new(rowData), rowData.Path); // Level 1+ Sub Menu (loading)
-
-                    BackgroundWorker? workerSubMenu = workersSubMenu.
-                        Where(w => !w.IsBusy).FirstOrDefault();
-                    if (workerSubMenu == null)
-                    {
-                        workerSubMenu = new BackgroundWorker
-                        {
-                            WorkerSupportsCancellation = true,
-                        };
-                        workerSubMenu.DoWork += LoadMenu;
-                        workerSubMenu.RunWorkerCompleted += LoadSubMenuCompleted;
-                        workersSubMenu.Add(workerSubMenu);
-                    }
-
-                    workerSubMenu.RunWorkerAsync(rowData);
-                }
-            }
-
             waitToOpenMenu.MouseSelect += keyboardInput.SelectByMouse;
-            waitToOpenMenu.CloseMenu += (menu) => HideOldMenu(menu);
 
             if (Settings.Default.SupportGamepad)
             {
@@ -281,17 +238,6 @@ namespace SystemTrayMenu.Business
             return menu;
         }
 
-        private static void HideOldMenu(Menu menuToShow)
-        {
-            Menu? menuPrevious = menuToShow.ParentMenu;
-            if (menuPrevious != null)
-            {
-                menuPrevious.SubMenu?.HideWithFade(true);
-
-                menuPrevious.RefreshSelection();
-            }
-        }
-
         private static void LoadMenu(object? sender, DoWorkEventArgs eDoWork)
         {
             BackgroundWorker? workerSelf = sender as BackgroundWorker;
@@ -440,20 +386,17 @@ namespace SystemTrayMenu.Business
                     ListView dgv = menu.GetDataGridView();
                     if (dgv.Items.Count > 0)
                     {
-                        keyboardInput.SelectByMouse(menu, (ListViewItemData)dgv.Items[0]);
+                        keyboardInput.SelectByMouse((ListViewItemData)dgv.Items[0]);
                     }
                 }
 
                 AdjustMenusSizeAndLocation(menu.Level + 1);
 
-                // if any open menu close
                 if (!causedByWatcherUpdate)
                 {
-                    Menu? menuToClose = menu.SubMenu;
-                    if (menuToClose != null)
-                    {
-                        HideOldMenu(menuToClose);
-                    }
+                    // if there is any open sub menu, close it
+                    menu.SubMenu?.HideWithFade(true);
+                    menu.RefreshSelection();
                 }
             }
 
@@ -482,7 +425,7 @@ namespace SystemTrayMenu.Business
             menu.CellMouseEnter += waitToOpenMenu.MouseEnter;
             menu.CellMouseLeave += waitToOpenMenu.MouseLeave;
             menu.CellMouseDown += keyboardInput.SelectByMouse;
-            menu.CellOpenOnClick += waitToOpenMenu.ClickOpensInstantly;
+            menu.CellOpenOnClick += waitToOpenMenu.OpenSubMenuByMouse;
 
             if (menu.Level == 0)
             {
@@ -495,6 +438,48 @@ namespace SystemTrayMenu.Business
                 // Sub Menu (loading)
                 menu.ShowWithFade(!App.IsActiveApp, false);
                 menu.RefreshSelection();
+            }
+
+            menu.StartLoadSubMenu += StartLoadSubMenu;
+            void StartLoadSubMenu(RowData rowData)
+            {
+                if (mainMenu == null || mainMenu.Visibility != Visibility.Visible)
+                {
+                    return;
+                }
+
+                Menu? menu = mainMenu?.SubMenu;
+                int nextLevel = rowData.Level + 1;
+                while (menu != null)
+                {
+                    if (menu.Level == nextLevel)
+                    {
+                        break;
+                    }
+
+                    menu = menu.SubMenu;
+                }
+
+                // sanity check not creating same sub menu twice
+                if (menu?.RowDataParent != rowData)
+                {
+                    Create(new(rowData), rowData.Path); // Level 1+ Sub Menu (loading)
+
+                    BackgroundWorker? workerSubMenu = workersSubMenu.
+                        Where(w => !w.IsBusy).FirstOrDefault();
+                    if (workerSubMenu == null)
+                    {
+                        workerSubMenu = new BackgroundWorker
+                        {
+                            WorkerSupportsCancellation = true,
+                        };
+                        workerSubMenu.DoWork += LoadMenu;
+                        workerSubMenu.RunWorkerCompleted += LoadSubMenuCompleted;
+                        workersSubMenu.Add(workerSubMenu);
+                    }
+
+                    workerSubMenu.RunWorkerAsync(rowData);
+                }
             }
 
             return menu;
