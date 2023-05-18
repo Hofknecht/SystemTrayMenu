@@ -10,7 +10,6 @@ namespace SystemTrayMenu.DataClasses
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Utilities.IconReader;
     using Menu = SystemTrayMenu.UserInterface.Menu;
-    using Point = System.Windows.Point;
 
     internal class RowData
     {
@@ -98,7 +97,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IsAdditionalItem { get; }
 
-        internal int Level { get; set; }
+        internal int Level { get; }
 
         internal string FileExtension { get; }
 
@@ -114,7 +113,7 @@ namespace SystemTrayMenu.DataClasses
 
         internal int RowIndex { get; set; }
 
-        internal bool IconLoading { get; set; }
+        internal bool IconLoading { get; private set; }
 
         internal void ReadIcon(bool updateIconInBackground)
         {
@@ -138,39 +137,6 @@ namespace SystemTrayMenu.DataClasses
                 else if (HiddenEntry)
                 {
                     Icon = AddIconOverlay(Icon, Properties.Resources.White50Percentage);
-                }
-            }
-        }
-
-        internal void OpenItem(out bool doCloseAfterOpen, int clickCount = -1)
-        {
-            doCloseAfterOpen = false;
-
-            if (!IsPointingToFolder)
-            {
-                if (clickCount == -1 ||
-                (clickCount == 1 && Properties.Settings.Default.OpenItemWithOneClick) ||
-                (clickCount == 2 && !Properties.Settings.Default.OpenItemWithOneClick))
-                {
-                    string? workingDirectory = System.IO.Path.GetDirectoryName(ResolvedPath);
-                    Log.ProcessStart(Path, string.Empty, false, workingDirectory, true, ResolvedPath);
-                    if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
-                    {
-                        doCloseAfterOpen = true;
-                    }
-                }
-            }
-            else
-            {
-                if (clickCount == -1 ||
-                (clickCount == 1 && Properties.Settings.Default.OpenDirectoryWithOneClick) ||
-                (clickCount == 2 && !Properties.Settings.Default.OpenDirectoryWithOneClick))
-                {
-                    Log.ProcessStart(Path);
-                    if (!Properties.Settings.Default.StaysOpenWhenItemClicked)
-                    {
-                        doCloseAfterOpen = true;
-                    }
                 }
             }
         }

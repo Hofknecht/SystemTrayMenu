@@ -1341,7 +1341,35 @@ namespace SystemTrayMenu.UserInterface
 
             internal void OpenItem(int clickCount)
             {
-                data.OpenItem(out bool doCloseAfterOpen, clickCount);
+                bool doCloseAfterOpen = false;
+
+                if (!data.IsPointingToFolder)
+                {
+                    if (clickCount == -1 ||
+                    (clickCount == 1 && Settings.Default.OpenItemWithOneClick) ||
+                    (clickCount == 2 && !Settings.Default.OpenItemWithOneClick))
+                    {
+                        string? workingDirectory = System.IO.Path.GetDirectoryName(data.ResolvedPath);
+                        Log.ProcessStart(data.Path, string.Empty, false, workingDirectory, true, data.ResolvedPath);
+                        if (!Settings.Default.StaysOpenWhenItemClicked)
+                        {
+                            doCloseAfterOpen = true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (clickCount == -1 ||
+                    (clickCount == 1 && Settings.Default.OpenDirectoryWithOneClick) ||
+                    (clickCount == 2 && !Settings.Default.OpenDirectoryWithOneClick))
+                    {
+                        Log.ProcessStart(data.Path);
+                        if (!Settings.Default.StaysOpenWhenItemClicked)
+                        {
+                            doCloseAfterOpen = true;
+                        }
+                    }
+                }
 
                 if (data.Owner != null)
                 {
