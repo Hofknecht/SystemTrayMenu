@@ -392,7 +392,7 @@ namespace SystemTrayMenu.Business
                     ListView dgv = menu.GetDataGridView();
                     if (dgv.Items.Count > 0)
                     {
-                        keyboardInput.SelectByMouse((ListViewItemData)dgv.Items[0]);
+                        keyboardInput.SelectByMouse((ListViewMenuItem)dgv.Items[0]);
                     }
                 }
 
@@ -672,7 +672,7 @@ namespace SystemTrayMenu.Business
             try
             {
                 List<RowData> rowDatas = new();
-                foreach (ListViewItemData item in menu.GetDataGridView().Items)
+                foreach (ListViewMenuItem item in menu.GetDataGridView().Items)
                 {
                     RowData rowData = item.data;
                     if (rowData.Path.StartsWith($"{e.OldFullPath}"))
@@ -725,9 +725,9 @@ namespace SystemTrayMenu.Business
             try
             {
                 ListView? dgv = menu.GetDataGridView();
-                List<ListViewItemData> rowsToRemove = new();
+                List<ListViewMenuItem> rowsToRemove = new();
 
-                foreach (ListViewItemData item in dgv.ItemsSource)
+                foreach (ListViewMenuItem item in dgv.ItemsSource)
                 {
                     RowData rowData = item.data;
                     if (rowData.Path == e.FullPath ||
@@ -738,7 +738,7 @@ namespace SystemTrayMenu.Business
                     }
                 }
 
-                foreach (ListViewItemData rowToRemove in rowsToRemove)
+                foreach (ListViewMenuItem rowToRemove in rowsToRemove)
                 {
                     ((IEditableCollectionView)dgv.Items).Remove(rowToRemove);
                 }
@@ -771,7 +771,7 @@ namespace SystemTrayMenu.Business
 
                 var items = menu.GetDataGridView().Items;
                 List<RowData> rowDatas = new(items.Count + 1) { rowData };
-                foreach (ListViewItemData item in items)
+                foreach (ListViewMenuItem item in items)
                 {
                     rowDatas.Add(item.data);
                 }

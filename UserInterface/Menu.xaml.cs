@@ -6,10 +6,8 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.Globalization;
     using System.IO;
-    using System.Runtime.CompilerServices;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Data;
@@ -210,7 +208,7 @@ namespace SystemTrayMenu.UserInterface
                     RowDataParent.SubMenu = null;
                 }
 
-                foreach (ListViewItemData item in dgv.Items)
+                foreach (ListViewMenuItem item in dgv.Items)
                 {
                     item.data.SubMenu?.Close();
                 }
@@ -229,15 +227,15 @@ namespace SystemTrayMenu.UserInterface
 
         internal event Action<Menu, bool, bool>? SearchTextChanged;
 
-        internal event Action<ListViewItemData>? RowSelectionChanged;
+        internal event Action<ListViewMenuItem>? RowSelectionChanged;
 
-        internal event Action<ListViewItemData>? CellMouseEnter;
+        internal event Action<ListViewMenuItem>? CellMouseEnter;
 
         internal event Action? CellMouseLeave;
 
-        internal event Action<ListViewItemData>? CellMouseDown;
+        internal event Action<ListViewMenuItem>? CellMouseDown;
 
-        internal event Action<ListViewItemData>? CellOpenOnClick;
+        internal event Action<ListViewMenuItem>? CellOpenOnClick;
 
         internal event RoutedEventHandler FadeToTransparent
         {
@@ -272,9 +270,9 @@ namespace SystemTrayMenu.UserInterface
 
         internal RowData? RowDataParent { get; set; }
 
-        internal ListViewItemData? SelectedItem
+        internal ListViewMenuItem? SelectedItem
         {
-            get => (ListViewItemData?)dgv.SelectedItem;
+            get => (ListViewMenuItem?)dgv.SelectedItem;
             set => dgv.SelectedItem = value;
         }
 
@@ -286,7 +284,7 @@ namespace SystemTrayMenu.UserInterface
         {
             get
             {
-                foreach (ListViewItemData item in dgv.Items)
+                foreach (ListViewMenuItem item in dgv.Items)
                 {
                     if (item.data.SubMenu != null)
                     {
@@ -301,6 +299,10 @@ namespace SystemTrayMenu.UserInterface
         internal bool RelocateOnNextShow { get; set; } = true;
 
         public override string ToString() => nameof(Menu) + " L" + Level.ToString() + ": " + Title;
+
+        internal void RiseItemOpened(ListViewMenuItem item) => CellOpenOnClick?.Invoke(item);
+
+        internal void RiseStartLoadSubMenu(RowData rowData) => StartLoadSubMenu?.Invoke(rowData);
 
         internal void ResetSearchText()
         {
@@ -396,14 +398,14 @@ namespace SystemTrayMenu.UserInterface
 
         internal bool TrySelectAt(int index, int indexAlternative = -1)
         {
-            ListViewItemData itemData;
+            ListViewMenuItem itemData;
             if (index >= 0 && dgv.Items.Count > index)
             {
-                itemData = (ListViewItemData)dgv.Items[index];
+                itemData = (ListViewMenuItem)dgv.Items[index];
             }
             else if (indexAlternative >= 0 && dgv.Items.Count > indexAlternative)
             {
-                itemData = (ListViewItemData)dgv.Items[indexAlternative];
+                itemData = (ListViewMenuItem)dgv.Items[indexAlternative];
             }
             else
             {
@@ -423,7 +425,7 @@ namespace SystemTrayMenu.UserInterface
             int foldersCount = 0;
             int filesCount = 0;
 
-            List<ListViewItemData> items = new();
+            List<ListViewMenuItem> items = new();
 
             foreach (RowData rowData in data)
             {
@@ -961,7 +963,7 @@ namespace SystemTrayMenu.UserInterface
             Resources["ColumnIconWidth"] = (double)(int)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
 
             double renderedMaxWidth = 0D;
-            foreach (ListViewItemData item in dgv.Items)
+            foreach (ListViewMenuItem item in dgv.Items)
             {
                 double renderedWidth = new FormattedText(
                         item.ColumnText,
@@ -1010,7 +1012,7 @@ namespace SystemTrayMenu.UserInterface
                 view.Filter = (object item) =>
                 {
                     // Look for each space separated string if it is part of an entries text (case insensitive)
-                    ListViewItemData itemData = (ListViewItemData)item;
+                    ListViewMenuItem itemData = (ListViewMenuItem)item;
                     foreach (string pattern in userPattern.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
                     {
                         if (!itemData.ColumnText.ToLower().Contains(pattern))
@@ -1134,7 +1136,7 @@ namespace SystemTrayMenu.UserInterface
         {
             int iconsToUpdate = 0;
 
-            foreach (ListViewItemData itemData in dgv.Items)
+            foreach (ListViewMenuItem itemData in dgv.Items)
             {
                 RowData rowData = itemData.data;
                 rowData.RowIndex = dgv.Items.IndexOf(itemData);
@@ -1203,13 +1205,13 @@ namespace SystemTrayMenu.UserInterface
         {
             if (e != null)
             {
-                foreach (ListViewItemData itemData in e.AddedItems)
+                foreach (ListViewMenuItem itemData in e.AddedItems)
                 {
                     itemData.IsSelected = true;
                     itemData.UpdateColors();
                 }
 
-                foreach (ListViewItemData itemData in e.RemovedItems)
+                foreach (ListViewMenuItem itemData in e.RemovedItems)
                 {
                     itemData.IsSelected = false;
                     itemData.UpdateColors();
@@ -1219,7 +1221,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 // TODO: Refactor item selection to prevent running this loop
                 ListView lv = (ListView)sender;
-                foreach (ListViewItemData itemData in lv.Items)
+                foreach (ListViewMenuItem itemData in lv.Items)
                 {
                     itemData.IsSelected = lv.SelectedItem == itemData;
                     itemData.UpdateColors();
@@ -1228,13 +1230,13 @@ namespace SystemTrayMenu.UserInterface
         }
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e) =>
-            CellMouseEnter?.Invoke((ListViewItemData)((ListViewItem)sender).Content);
+            CellMouseEnter?.Invoke((ListViewMenuItem)((ListViewItem)sender).Content);
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e) => CellMouseLeave?.Invoke();
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            ListViewItemData itemData = (ListViewItemData)((ListViewItem)sender).Content;
+            ListViewMenuItem itemData = (ListViewMenuItem)((ListViewItem)sender).Content;
 
             CellMouseDown?.Invoke(itemData);
 
@@ -1247,215 +1249,6 @@ namespace SystemTrayMenu.UserInterface
         }
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) =>
-            ((ListViewItemData)((ListViewItem)sender).Content).OpenItem(e.ClickCount);
-
-        /// <summary>
-        /// Type for ListView items.
-        /// </summary>
-        internal class ListViewItemData : INotifyPropertyChanged
-        {
-            private Brush? backgroundBrush;
-            private Brush? borderBrush;
-            private ImageSource? columnIcon;
-            private bool isSelected;
-
-            internal ListViewItemData(ImageSource? columnIcon, string columnText, RowData rowData, int sortIndex)
-            {
-                this.columnIcon = columnIcon;
-                ColumnText = columnText;
-                data = rowData;
-                SortIndex = sortIndex;
-            }
-
-            public event PropertyChangedEventHandler? PropertyChanged;
-
-            public Brush? BackgroundBrush
-            {
-                get => backgroundBrush;
-                private set
-                {
-                    if (value != backgroundBrush)
-                    {
-                        backgroundBrush = value;
-                        CallPropertyChanged();
-                    }
-                }
-            }
-
-            public Brush? BorderBrush
-            {
-                get => borderBrush;
-                private set
-                {
-                    if (value != borderBrush)
-                    {
-                        borderBrush = value;
-                        CallPropertyChanged();
-                    }
-                }
-            }
-
-            public ImageSource? ColumnIcon
-            {
-                get => columnIcon;
-                set
-                {
-                    if (value != columnIcon)
-                    {
-                        columnIcon = value;
-                        CallPropertyChanged();
-                    }
-                }
-            }
-
-            public string ColumnText { get; }
-
-            [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Benennungsstile", Justification = "Temporarily retained for compatibility reasons")]
-            [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:Element should begin with upper-case letter", Justification = "Temporarily retained for compatibility reasons")]
-            internal RowData data { get; set; }
-
-            internal int SortIndex { get; set; }
-
-            internal bool IsPendingOpenItem { get; set; }
-
-            internal bool IsSelected
-            {
-                get => isSelected;
-                set
-                {
-                    if (value != isSelected)
-                    {
-                        isSelected = value;
-                        CallPropertyChanged();
-                    }
-                }
-            }
-
-            public override string ToString() => nameof(ListViewItemData) + ": " + ColumnText + ", Owner: " + (data.Owner?.ToString() ?? "null");
-
-            /// <summary>
-            /// Triggers an PropertyChanged event of INotifyPropertyChanged.
-            /// </summary>
-            /// <param name="propertyName">Name of the changing property.</param>
-            public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-            internal void OpenItem(int clickCount)
-            {
-                bool doCloseAfterOpen = false;
-
-                if (!data.IsPointingToFolder)
-                {
-                    if (clickCount == -1 ||
-                    (clickCount == 1 && Settings.Default.OpenItemWithOneClick) ||
-                    (clickCount == 2 && !Settings.Default.OpenItemWithOneClick))
-                    {
-                        string? workingDirectory = System.IO.Path.GetDirectoryName(data.ResolvedPath);
-                        Log.ProcessStart(data.Path, string.Empty, false, workingDirectory, true, data.ResolvedPath);
-                        if (!Settings.Default.StaysOpenWhenItemClicked)
-                        {
-                            doCloseAfterOpen = true;
-                        }
-                    }
-                }
-                else
-                {
-                    if (clickCount == -1 ||
-                    (clickCount == 1 && Settings.Default.OpenDirectoryWithOneClick) ||
-                    (clickCount == 2 && !Settings.Default.OpenDirectoryWithOneClick))
-                    {
-                        Log.ProcessStart(data.Path);
-                        if (!Settings.Default.StaysOpenWhenItemClicked)
-                        {
-                            doCloseAfterOpen = true;
-                        }
-                    }
-                }
-
-                if (data.Owner != null)
-                {
-                    if (clickCount == 1)
-                    {
-                        data.Owner.CellOpenOnClick?.Invoke(this);
-                    }
-
-                    if (doCloseAfterOpen)
-                    {
-                        data.Owner.HideAllMenus();
-                    }
-                }
-            }
-
-            internal void OpenShellContextMenu(Point position)
-            {
-                if (data.IsPointingToFolder)
-                {
-                    ShellContextMenu.OpenShellContextMenu(new DirectoryInfo(data.Path), position);
-                }
-                else
-                {
-                    ShellContextMenu.OpenShellContextMenu(data.FileInfo, position);
-                }
-            }
-
-            internal void OpenSubMenu()
-            {
-                Menu? owner = data.Owner;
-
-                // TODO: always true? maybe only when cached in WaitToLoadMenu or keyboardInput?
-                if (owner?.GetDataGridView().Items.Contains(this) ?? false)
-                {
-                    Menu? openSubMenu = owner.SubMenu;
-
-                    // only re-open when the menu is not already open
-                    if (data.SubMenu != null && data.SubMenu == openSubMenu)
-                    {
-                        // Close second level sub menus when already opened
-                        openSubMenu.SelectedItem = null;
-                        if (openSubMenu.SubMenu != null)
-                        {
-                            openSubMenu.SubMenu.HideWithFade(true);
-                            openSubMenu.RefreshSelection();
-                        }
-                    }
-                    else
-                    {
-                        // In case another menu exists, close it
-                        if (openSubMenu != null)
-                        {
-                            // Give the opening window focus
-                            // if closing window lose focus, no window would have focus any more
-                            owner.Activate();
-                            owner.FocusTextBox();
-                            openSubMenu.HideWithFade(true);
-                            owner.RefreshSelection();
-                        }
-
-                        if (data.IsPointingToFolder)
-                        {
-                            owner.StartLoadSubMenu?.Invoke(data);
-                        }
-                    }
-                }
-            }
-
-            internal void UpdateColors()
-            {
-                if (data.SubMenu != null)
-                {
-                    BorderBrush = MenuDefines.ColorOpenFolderBorder;
-                    BackgroundBrush = MenuDefines.ColorOpenFolder;
-                }
-                else if (IsSelected)
-                {
-                    BorderBrush = MenuDefines.ColorSelectedItemBorder;
-                    BackgroundBrush = MenuDefines.ColorSelectedItem;
-                }
-                else
-                {
-                    BorderBrush = Brushes.White;
-                    BackgroundBrush = Brushes.White;
-                }
-            }
-        }
+            ((ListViewMenuItem)((ListViewItem)sender).Content).OpenItem(e.ClickCount);
     }
 }

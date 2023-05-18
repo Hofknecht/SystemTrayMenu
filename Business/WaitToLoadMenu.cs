@@ -6,12 +6,12 @@ namespace SystemTrayMenu.Handler
 {
     using System;
     using System.Windows.Threading;
-    using static SystemTrayMenu.UserInterface.Menu;
+    using SystemTrayMenu.DataClasses;
 
     internal class WaitToLoadMenu : IDisposable
     {
         private readonly DispatcherTimer timerStartLoad = new();
-        private ListViewItemData? currentItemData;
+        private ListViewMenuItem? currentItemData;
         private bool alreadyOpened;
 
         internal WaitToLoadMenu()
@@ -22,13 +22,13 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? StopLoadMenu;
 
-        internal event Action<ListViewItemData>? MouseSelect;
+        internal event Action<ListViewMenuItem>? MouseSelect;
 
         internal bool MouseActive { get; set; }
 
         public void Dispose() => timerStartLoad.Stop();
 
-        internal void MouseEnter(ListViewItemData itemData)
+        internal void MouseEnter(ListViewMenuItem itemData)
         {
             if (MouseActive)
             {
@@ -50,7 +50,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void RowSelectionChanged(ListViewItemData? itemData)
+        internal void RowSelectionChanged(ListViewMenuItem? itemData)
         {
             // Deselect
             timerStartLoad.Stop();
@@ -66,7 +66,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void OpenSubMenuByMouse(ListViewItemData itemData)
+        internal void OpenSubMenuByMouse(ListViewMenuItem itemData)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke(); // TODO: Missing in v1 ?
@@ -75,7 +75,7 @@ namespace SystemTrayMenu.Handler
             OpenSubMenu();
         }
 
-        internal void OpenSubMenuByKey(ListViewItemData itemData)
+        internal void OpenSubMenuByKey(ListViewMenuItem itemData)
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
@@ -101,7 +101,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        private void SetData(ListViewItemData itemData)
+        private void SetData(ListViewMenuItem itemData)
         {
             if (currentItemData != itemData)
             {

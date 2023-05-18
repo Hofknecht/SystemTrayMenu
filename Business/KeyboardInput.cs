@@ -9,7 +9,6 @@ namespace SystemTrayMenu.Handler
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.UserInterface.Menu;
     using Menu = SystemTrayMenu.UserInterface.Menu;
 
     internal class KeyboardInput : IDisposable
@@ -20,9 +19,9 @@ namespace SystemTrayMenu.Handler
 
         internal event Action? HotKeyPressed;
 
-        internal event Action<ListViewItemData?>? RowSelectionChanged;
+        internal event Action<ListViewMenuItem?>? RowSelectionChanged;
 
-        internal event Action<ListViewItemData>? EnterPressed;
+        internal event Action<ListViewMenuItem>? EnterPressed;
 
         internal bool IsSelectedByKey { get; set; }
 
@@ -107,7 +106,7 @@ namespace SystemTrayMenu.Handler
                     if (modifiers == ModifierKeys.None)
                     {
                         Menu? menu = focussedMenu;
-                        ListViewItemData? itemData = menu?.SelectedItem;
+                        ListViewMenuItem? itemData = menu?.SelectedItem;
                         if (menu != null && itemData != null)
                         {
                             var position = Mouse.GetPosition(menu);
@@ -131,7 +130,7 @@ namespace SystemTrayMenu.Handler
             }
         }
 
-        internal void SelectByMouse(ListViewItemData itemData)
+        internal void SelectByMouse(ListViewMenuItem itemData)
         {
             IsSelectedByKey = false;
 
@@ -141,7 +140,7 @@ namespace SystemTrayMenu.Handler
 
         private void SelectByKey(Key key, Menu menuBefore)
         {
-            ListViewItemData? rowBefore = menuBefore.SelectedItem;
+            ListViewMenuItem? rowBefore = menuBefore.SelectedItem;
             if (rowBefore == null)
             {
                 focussedMenu = null;
