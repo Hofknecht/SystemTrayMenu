@@ -204,17 +204,17 @@ namespace SystemTrayMenu.DataClasses
         /// <param name="propertyName">Name of the changing property.</param>
         public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        internal void ReadIcon(bool updateIconInBackground)
+        internal void LoadIcon()
         {
             bool cacheHit;
 
             if (IsPointingToFolder)
             {
-                cacheHit = IconReader.GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, UpdateFinalIcon);
+                cacheHit = IconReader.GetFolderIconWithCache(Path, ShowOverlay, Level == 0, UpdateFinalIcon);
             }
             else
             {
-                cacheHit = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, UpdateFinalIcon);
+                cacheHit = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, Level == 0, UpdateFinalIcon);
             }
 
             if (!cacheHit)

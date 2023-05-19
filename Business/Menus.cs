@@ -699,7 +699,7 @@ namespace SystemTrayMenu.Business
 
                         IconReader.RemoveIconFromCache(rowData.Path);
                         rowDataRenamed.HiddenEntry = hasHiddenFlag;
-                        rowDataRenamed.ReadIcon(true);
+                        rowDataRenamed.LoadIcon();
                         rowDatas.Add(rowDataRenamed);
                     }
                     else
@@ -765,7 +765,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowData.HiddenEntry = hasHiddenFlag;
-                rowData.ReadIcon(true);
+                rowData.LoadIcon();
 
                 var items = menu.GetDataGridView().Items;
                 List<RowData> rowDatas = new(items.Count + 1) { rowData };

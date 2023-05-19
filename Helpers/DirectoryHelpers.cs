@@ -138,7 +138,7 @@ namespace SystemTrayMenu.Helpers
                     rowData.HiddenEntry = hasHiddenFlag;
                 }
 
-                rowData.ReadIcon(true);
+                rowData.LoadIcon();
             }
 
             menuData.RowDatas = menuData.RowDatas.Except(rowDatasToRemove).ToList();
