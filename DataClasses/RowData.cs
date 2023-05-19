@@ -206,33 +206,22 @@ namespace SystemTrayMenu.DataClasses
 
         internal void ReadIcon(bool updateIconInBackground)
         {
-            bool loading;
-            Icon? icon;
+            bool cacheHit;
 
             if (IsPointingToFolder)
             {
-                icon = IconReader.GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, out loading);
+                cacheHit = IconReader.GetFolderIconWithCache(Path, ShowOverlay, updateIconInBackground, Level == 0, UpdateFinalIcon);
             }
             else
             {
-                icon = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, out loading);
+                cacheHit = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, updateIconInBackground, Level == 0, UpdateFinalIcon);
             }
 
-            IconLoading = loading;
-            if (!IconLoading)
+            if (!cacheHit)
             {
-                if (icon == null)
-                {
-                    icon = Resources.NotFound;
-                }
-                else if (HiddenEntry)
-                {
-                    icon = IconReader.AddIconOverlay(icon, Resources.White50Percentage);
-                }
+                IconLoading = true;
+                ColumnIcon = SystemTrayMenu.Resources.StaticResources.LoadingImgSrc; // TODO: Maybe add rotation animation like for the loading Menu icon? (See: pictureBoxLoading, LoadingRotation)
             }
-
-            ColumnIcon = icon?.ToImageSource();
-            ColumnIcon?.Freeze();
         }
 
         internal void OpenItem(int clickCount)
@@ -349,6 +338,24 @@ namespace SystemTrayMenu.DataClasses
                 BorderBrush = Brushes.White;
                 BackgroundBrush = Brushes.White;
             }
+        }
+
+        private void UpdateFinalIcon(Icon? icon)
+        {
+            if (icon == null)
+            {
+                icon = Resources.NotFound;
+            }
+            else if (HiddenEntry)
+            {
+                icon = IconReader.AddIconOverlay(icon, Resources.White50Percentage);
+            }
+
+            ImageSource? imgsrc = icon?.ToImageSource();
+            imgsrc?.Freeze();
+
+            IconLoading = false;
+            ColumnIcon = imgsrc;
         }
     }
 }

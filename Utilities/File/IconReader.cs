@@ -54,17 +54,16 @@ namespace SystemTrayMenu.Utilities
             }
         }
 
-        public static Icon? GetFileIconWithCache(
+        public static bool GetFileIconWithCache(
             string path,
             string resolvedPath,
             bool linkOverlay,
             bool updateIconInBackground,
             bool checkPersistentFirst,
-            out bool loading)
+            Action<Icon?> onIconLoaded)
         {
-            loading = false;
-
-            Icon? icon = null;
+            bool cacheHit;
+            Icon? icon;
             string key;
             string extension = Path.GetExtension(path);
             if (IsExtensionWithSameIcon(extension))
@@ -79,8 +78,7 @@ namespace SystemTrayMenu.Utilities
             if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
                 !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
             {
-                icon = Resources.StaticResources.LoadingIcon;
-                loading = true;
+                cacheHit = false;
                 if (updateIconInBackground)
                 {
                     IconSize size = IconSize.Small;
@@ -94,30 +92,34 @@ namespace SystemTrayMenu.Utilities
                     new Thread(UpdateIconInBackground).Start();
                     void UpdateIconInBackground()
                     {
-                        DictIconCache(checkPersistentFirst).GetOrAdd(key, GetIconSTA(path, resolvedPath, linkOverlay, size, false));
+                        Icon? icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, GetIconSTA(path, resolvedPath, linkOverlay, size, false));
+                        onIconLoaded(icon);
                     }
                 }
             }
+            else
+            {
+                cacheHit = true;
+                onIconLoaded(icon);
+            }
 
-            return icon;
+            return cacheHit;
         }
 
-        public static Icon? GetFolderIconWithCache(
+        public static bool GetFolderIconWithCache(
             string path,
             bool linkOverlay,
             bool updateIconInBackground,
             bool checkPersistentFirst,
-            out bool loading)
+            Action<Icon?> onIconLoaded)
         {
-            loading = false;
-
-            Icon? icon = null;
+            bool cacheHit;
+            Icon? icon;
             string key = path;
             if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
                 !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
             {
-                icon = Resources.StaticResources.LoadingIcon;
-                loading = true;
+                cacheHit = false;
 
                 if (updateIconInBackground)
                 {
@@ -132,14 +134,17 @@ namespace SystemTrayMenu.Utilities
 
                     if (IsPreloading)
                     {
-                        DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
+                        cacheHit = true;
+                        icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
+                        onIconLoaded(icon);
                     }
                     else
                     {
                         new Thread(UpdateIconInBackground).Start();
                         void UpdateIconInBackground()
                         {
-                            DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
+                            Icon? icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, GetFolder);
+                            onIconLoaded(icon);
                         }
                     }
 
@@ -149,8 +154,13 @@ namespace SystemTrayMenu.Utilities
                     }
                 }
             }
+            else
+            {
+                cacheHit = true;
+                onIconLoaded(icon);
+            }
 
-            return icon;
+            return cacheHit;
         }
 
         public static Icon? GetIconSTA(string path, string resolvedPath, bool linkOverlay, IconSize size, bool isFolder)
@@ -176,21 +186,16 @@ namespace SystemTrayMenu.Utilities
             return icon;
         }
 
-        public static Icon? AddIconOverlay(Icon? originalIcon, Icon overlay)
+        public static Icon AddIconOverlay(Icon originalIcon, Icon overlay)
         {
-            Icon? icon = originalIcon;
-            if (originalIcon != null)
-            {
-                using Bitmap target = new(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
-                using Graphics graphics = Graphics.FromImage(target);
-                graphics.DrawIcon(originalIcon, 0, 0);
-                graphics.DrawIcon(overlay, new(0, 0, originalIcon.Width + 2, originalIcon.Height + 2));
-                target.MakeTransparent(target.GetPixel(1, 1));
-                IntPtr hIcon = target.GetHicon();
-                icon = (Icon)Icon.FromHandle(hIcon).Clone();
-                NativeMethods.User32DestroyIcon(hIcon);
-            }
-
+            using Bitmap target = new(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
+            using Graphics graphics = Graphics.FromImage(target);
+            graphics.DrawIcon(originalIcon, 0, 0);
+            graphics.DrawIcon(overlay, new(0, 0, originalIcon.Width + 2, originalIcon.Height + 2));
+            target.MakeTransparent(target.GetPixel(1, 1));
+            IntPtr hIcon = target.GetHicon();
+            Icon icon = (Icon)Icon.FromHandle(hIcon).Clone();
+            NativeMethods.User32DestroyIcon(hIcon);
             return icon;
         }
 
@@ -220,7 +225,7 @@ namespace SystemTrayMenu.Utilities
                 Path.GetExtension(resolvedPath).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
             {
                 icon = Icon.ExtractAssociatedIcon(resolvedPath);
-                if (linkOverlay)
+                if (linkOverlay && icon != null)
                 {
                     icon = AddIconOverlay(icon, Properties.Resources.LinkArrow);
                 }

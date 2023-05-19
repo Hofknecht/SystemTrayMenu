@@ -8,6 +8,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
 
     public class EventDelay
     {
+        private readonly object checkLock = new();
         private readonly long waitTime;
         private long lastCheck;
 
@@ -18,9 +19,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
 
         public bool Check()
         {
-#pragma warning disable CA2002
-            lock (this)
-#pragma warning restore CA2002
+            lock (checkLock)
             {
                 long now = DateTime.Now.Ticks;
                 bool isPassed = now - lastCheck > waitTime;

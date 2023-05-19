@@ -37,7 +37,6 @@ namespace SystemTrayMenu.UserInterface
         private static readonly RoutedEvent FadeOutEvent = EventManager.RegisterRoutedEvent(
             nameof(FadeOut), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
 
-        private readonly DispatcherTimer timerUpdateIcons = new (DispatcherPriority.Background, Dispatcher.CurrentDispatcher);
         private readonly string folderPath;
 #if TODO // SEARCH
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
@@ -116,7 +115,7 @@ namespace SystemTrayMenu.UserInterface
                 labelStatus.Content = Translator.GetText("loading");
 
                 // Todo: use embedded resources that we can assign image in XAML already
-                pictureBoxLoading.Source = SystemTrayMenu.Resources.StaticResources.LoadingIcon.ToImageSource();
+                pictureBoxLoading.Source = SystemTrayMenu.Resources.StaticResources.LoadingImgSrc;
                 pictureBoxLoading.Visibility = Visibility.Visible;
             }
 
@@ -201,8 +200,6 @@ namespace SystemTrayMenu.UserInterface
 
             Closed += (_, _) =>
             {
-                timerUpdateIcons.Stop();
-
                 if (RowDataParent?.SubMenu == this)
                 {
                     RowDataParent.SubMenu = null;
@@ -213,8 +210,6 @@ namespace SystemTrayMenu.UserInterface
                     item.SubMenu?.Close();
                 }
             };
-
-            timerUpdateIcons.Tick += TimerUpdateIcons_Tick;
         }
 
         internal event Action<RowData>? StartLoadSubMenu;
@@ -455,11 +450,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 SetSubMenuState(state.Value);
             }
-
-            if (startIconLoading)
-            {
-                timerUpdateIcons.Start();
-            }
         }
 
         internal void ActivateWithFade(bool recursive)
@@ -484,8 +474,6 @@ namespace SystemTrayMenu.UserInterface
 
         internal void ShowWithFade(bool transparency, bool recursive)
         {
-            timerUpdateIcons.Start();
-
             if (recursive)
             {
                 SubMenu?.ShowWithFade(transparency, true);
@@ -1127,27 +1115,6 @@ namespace SystemTrayMenu.UserInterface
         private void PictureBoxRestart_MouseClick(object sender, RoutedEventArgs e)
         {
             AppRestart.ByMenuButton();
-        }
-
-        private void TimerUpdateIcons_Tick(object? sender, EventArgs e)
-        {
-            int iconsToUpdate = 0;
-
-            foreach (RowData rowData in dgv.Items)
-            {
-                rowData.RowIndex = dgv.Items.IndexOf(rowData);
-
-                if (rowData.IconLoading)
-                {
-                    iconsToUpdate++;
-                    rowData.ReadIcon(false);
-                }
-            }
-
-            if (iconsToUpdate < 1)
-            {
-                timerUpdateIcons.Stop();
-            }
         }
 
         private void MainMenu_MoveStart(object sender, MouseButtonEventArgs e)

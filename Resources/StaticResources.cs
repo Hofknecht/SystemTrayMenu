@@ -5,9 +5,35 @@
 namespace SystemTrayMenu.Resources
 {
     using System.Drawing;
+    using System.Windows.Media;
+    using SystemTrayMenu.Utilities;
 
-    public class StaticResources
+    internal class StaticResources
     {
-        public static readonly Icon LoadingIcon = Properties.Resources.Loading;
+        internal static readonly Icon LoadingIcon = Properties.Resources.Loading;
+
+        private static readonly object LoadingImgSrcLock = new ();
+
+        private static ImageSource? loadingImgSrc;
+
+        internal static ImageSource LoadingImgSrc
+        {
+            get
+            {
+                if (loadingImgSrc == null)
+                {
+                    lock (LoadingImgSrcLock)
+                    {
+                        if (loadingImgSrc == null)
+                        {
+                            loadingImgSrc = Properties.Resources.Loading.ToImageSource();
+                            loadingImgSrc.Freeze(); // Make it accessible by any thread
+                        }
+                    }
+                }
+
+                return loadingImgSrc;
+            }
+        }
     }
 }
