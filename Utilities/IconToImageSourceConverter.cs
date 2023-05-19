@@ -17,6 +17,7 @@ namespace SystemTrayMenu.Utilities
     using System.Windows.Media.Imaging;
 
     [ValueConversion(typeof(Icon), typeof(ImageSource))]
+    [ValueConversion(typeof(Icon), typeof(BitmapSource))]
     public class IconToImageSourceConverter : MarkupExtension, IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

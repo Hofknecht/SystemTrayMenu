@@ -93,7 +93,7 @@ namespace SystemTrayMenu.Helpers
             if (Properties.Settings.Default.SortByTypeAndNameWindowsExplorerSort)
             {
                 rowDatas = rowDatas.OrderByDescending(x => x.IsFolder)
-                    .ThenBy(x => x.Text, new WindowsExplorerSort()).ToList();
+                    .ThenBy(x => x.ColumnText, new WindowsExplorerSort()).ToList();
             }
             else if (Properties.Settings.Default.SortByTypeAndDate)
             {
@@ -102,11 +102,11 @@ namespace SystemTrayMenu.Helpers
             }
             else if (Properties.Settings.Default.SortByFileExtensionAndName)
             {
-                rowDatas = rowDatas.OrderBy(x => x.FileExtension).ThenBy(x => x.Text).ToList();
+                rowDatas = rowDatas.OrderBy(x => x.FileExtension).ThenBy(x => x.ColumnText).ToList();
             }
             else if (Properties.Settings.Default.SortByName)
             {
-                rowDatas = rowDatas.OrderBy(x => x.Text).ToList();
+                rowDatas = rowDatas.OrderBy(x => x.ColumnText).ToList();
             }
             else if (Properties.Settings.Default.SortByDate)
             {

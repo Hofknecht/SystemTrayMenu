@@ -26,7 +26,7 @@ namespace SystemTrayMenu.Resources
                     {
                         if (loadingImgSrc == null)
                         {
-                            loadingImgSrc = Properties.Resources.Loading.ToImageSource();
+                            loadingImgSrc = Properties.Resources.Loading.ToBitmapSource();
                             loadingImgSrc.Freeze(); // Make it accessible by any thread
                         }
                     }

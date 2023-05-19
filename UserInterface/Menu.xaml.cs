@@ -13,7 +13,6 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Data;
     using System.Windows.Input;
     using System.Windows.Media;
-    using System.Windows.Threading;
     using SystemTrayMenu.Business;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
@@ -438,7 +437,6 @@ namespace SystemTrayMenu.UserInterface
 
                 rowData.RowIndex = index;
                 rowData.Owner = this;
-                rowData.ColumnText = rowData.Text;
                 rowData.SortIndex = rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0;
             }
 

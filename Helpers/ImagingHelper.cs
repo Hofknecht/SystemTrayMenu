@@ -7,11 +7,13 @@ namespace SystemTrayMenu.Helpers
     using System.Drawing;
     using System.Drawing.Imaging;
     using System.IO;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
 
     /// <summary>
     /// Provides helper methods for imaging.
     /// </summary>
-    public static class ImagingHelper
+    internal static class ImagingHelper
     {
         /// <summary>
         /// Converts a PNG image to a icon (ico).
@@ -21,7 +23,7 @@ namespace SystemTrayMenu.Helpers
         /// <param name="size">The size (16x16 px by default).</param>
         /// <param name="preserveAspectRatio">Preserve the aspect ratio.</param>
         /// <returns>Wether or not the icon was succesfully generated.</returns>
-        public static bool ConvertToIcon(Stream input, Stream output, int size = 16, bool preserveAspectRatio = false)
+        internal static bool ConvertToIcon(Stream input, Stream output, int size = 16, bool preserveAspectRatio = false)
         {
             Bitmap inputBitmap = (Bitmap)Image.FromStream(input);
             if (inputBitmap != null)
@@ -106,11 +108,25 @@ namespace SystemTrayMenu.Helpers
         /// <param name="size">The size (16x16 px by default).</param>
         /// <param name="preserveAspectRatio">Preserve the aspect ratio.</param>
         /// <returns>Wether or not the icon was succesfully generated.</returns>
-        public static bool ConvertToIcon(string inputPath, string outputPath, int size = 16, bool preserveAspectRatio = false)
+        internal static bool ConvertToIcon(string inputPath, string outputPath, int size = 16, bool preserveAspectRatio = false)
         {
             using FileStream inputStream = new(inputPath, FileMode.Open);
             using FileStream outputStream = new(outputPath, FileMode.OpenOrCreate);
             return ConvertToIcon(inputStream, outputStream, size, preserveAspectRatio);
+        }
+
+        internal static RenderTargetBitmap CreateIconWithOverlay(BitmapSource originalBitmap, BitmapSource overlayBitmap)
+        {
+            DrawingVisual dVisual = new DrawingVisual();
+            using (DrawingContext dc = dVisual.RenderOpen())
+            {
+                dc.DrawImage(originalBitmap, new (0, 0, originalBitmap.PixelWidth, originalBitmap.PixelHeight));
+                dc.DrawImage(overlayBitmap, new (0, 0, overlayBitmap.PixelWidth, overlayBitmap.PixelHeight));
+            }
+
+            RenderTargetBitmap targetBitmap = new (originalBitmap.PixelWidth, originalBitmap.PixelHeight, originalBitmap.DpiX, originalBitmap.DpiY, PixelFormats.Default);
+            targetBitmap.Render(dVisual);
+            return targetBitmap;
         }
     }
 }

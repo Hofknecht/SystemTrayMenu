@@ -11,10 +11,11 @@ namespace SystemTrayMenu.DataClasses
     using System.Runtime.CompilerServices;
     using System.Windows;
     using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
-    using Icon = System.Drawing.Icon;
 
     internal class RowData : INotifyPropertyChanged
     {
@@ -45,7 +46,7 @@ namespace SystemTrayMenu.DataClasses
             {
                 ResolvedPath = FileLnk.GetResolvedFileName(Path, out bool isLinkToFolder);
                 ShowOverlay = Settings.Default.ShowLinkOverlay;
-                Text = System.IO.Path.GetFileNameWithoutExtension(Path);
+                ColumnText = System.IO.Path.GetFileNameWithoutExtension(Path);
                 if (Settings.Default.ResolveLinksToFolders)
                 {
                     IsPointingToFolder |= isLinkToFolder || FileLnk.IsNetworkRoot(ResolvedPath);
@@ -57,21 +58,21 @@ namespace SystemTrayMenu.DataClasses
                 if (string.IsNullOrEmpty(FileInfo.Name))
                 {
                     int nameBegin = FileInfo.FullName.LastIndexOf(@"\", StringComparison.InvariantCulture) + 1;
-                    Text = FileInfo.FullName[nameBegin..];
+                    ColumnText = FileInfo.FullName[nameBegin..];
                 }
                 else if (FileExtension.Equals(".url", StringComparison.InvariantCultureIgnoreCase) ||
                     FileExtension.Equals(".appref-ms", StringComparison.InvariantCultureIgnoreCase))
                 {
                     ShowOverlay = Settings.Default.ShowLinkOverlay;
-                    Text = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
+                    ColumnText = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
                 }
                 else if (!isFolder && Config.IsHideFileExtension())
                 {
-                    Text = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
+                    ColumnText = System.IO.Path.GetFileNameWithoutExtension(FileInfo.Name);
                 }
                 else
                 {
-                    Text = FileInfo.Name;
+                    ColumnText = FileInfo.Name;
                 }
             }
 
@@ -183,8 +184,6 @@ namespace SystemTrayMenu.DataClasses
         internal string FileExtension { get; }
 
         internal bool ShowOverlay { get; }
-
-        internal string? Text { get; }
 
         internal Menu? Owner { get; set; }
 
@@ -340,22 +339,20 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        private void UpdateFinalIcon(Icon? icon)
+        private void UpdateFinalIcon(BitmapSource? icon)
         {
             if (icon == null)
             {
-                icon = Resources.NotFound;
+                icon = Resources.NotFound.ToBitmapSource();
             }
             else if (HiddenEntry)
             {
-                icon = IconReader.AddIconOverlay(icon, Resources.White50Percentage);
+                icon = ImagingHelper.CreateIconWithOverlay(icon, Resources.White50Percentage.ToBitmapSource());
+                icon?.Freeze();
             }
 
-            ImageSource? imgsrc = icon?.ToImageSource();
-            imgsrc?.Freeze();
-
             IconLoading = false;
-            ColumnIcon = imgsrc;
+            ColumnIcon = icon;
         }
     }
 }

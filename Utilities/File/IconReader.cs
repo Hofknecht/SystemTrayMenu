@@ -13,6 +13,7 @@ namespace SystemTrayMenu.Utilities
     using System.IO;
     using System.Runtime.InteropServices;
     using System.Threading;
+    using System.Windows.Media.Imaging;
     using SystemTrayMenu.DllImports;
 
     /// <summary>
@@ -59,7 +60,7 @@ namespace SystemTrayMenu.Utilities
             string resolvedPath,
             bool linkOverlay,
             bool checkPersistentFirst,
-            Action<Icon?> onIconLoaded)
+            Action<BitmapSource?> onIconLoaded)
         {
             bool cacheHit;
             Icon? icon;
@@ -83,7 +84,9 @@ namespace SystemTrayMenu.Utilities
                 void UpdateIconInBackground()
                 {
                     Icon? icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFile);
-                    onIconLoaded(icon);
+                    BitmapSource? bitmap = icon?.ToBitmapSource();
+                    bitmap?.Freeze();
+                    onIconLoaded(bitmap);
                 }
 
                 Icon? FactoryIconFile(string keyExtension)
@@ -94,7 +97,9 @@ namespace SystemTrayMenu.Utilities
             else
             {
                 cacheHit = true;
-                onIconLoaded(icon);
+                BitmapSource? bitmap = icon?.ToBitmapSource();
+                bitmap?.Freeze();
+                onIconLoaded(bitmap);
             }
 
             return cacheHit;
@@ -104,7 +109,7 @@ namespace SystemTrayMenu.Utilities
             string path,
             bool linkOverlay,
             bool checkPersistentFirst,
-            Action<Icon?> onIconLoaded)
+            Action<BitmapSource?> onIconLoaded)
         {
             bool cacheHit;
             Icon? icon;
@@ -118,7 +123,9 @@ namespace SystemTrayMenu.Utilities
                 {
                     cacheHit = true;
                     icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolder);
-                    onIconLoaded(icon);
+                    BitmapSource? bitmap = icon?.ToBitmapSource();
+                    bitmap?.Freeze();
+                    onIconLoaded(bitmap);
                 }
                 else
                 {
@@ -126,7 +133,9 @@ namespace SystemTrayMenu.Utilities
                     void UpdateIconInBackground()
                     {
                         Icon? icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolder);
-                        onIconLoaded(icon);
+                        BitmapSource? bitmap = icon?.ToBitmapSource();
+                        bitmap?.Freeze();
+                        onIconLoaded(bitmap);
                     }
                 }
 
@@ -138,7 +147,9 @@ namespace SystemTrayMenu.Utilities
             else
             {
                 cacheHit = true;
-                onIconLoaded(icon);
+                BitmapSource? bitmap = icon?.ToBitmapSource();
+                bitmap?.Freeze();
+                onIconLoaded(bitmap);
             }
 
             return cacheHit;

@@ -2,19 +2,18 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 //
-// Copyright (c) 2022-2022 Peter Kirmeier
+// Copyright (c) 2022-2023 Peter Kirmeier
 
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Drawing;
     using System.Globalization;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
+    using System.Windows.Media.Imaging;
     using System.Windows.Threading;
-    using Color = System.Windows.Media.Color;
-    using Point = System.Windows.Point;
+    using Icon = System.Drawing.Icon;
 
     internal static class WPFExtensions
     {
@@ -77,11 +76,11 @@ namespace SystemTrayMenu.Utilities
         }
 
         // TODO: Find and remove any unnecessary convertions
-        internal static ImageSource ToImageSource(this Icon icon)
+        internal static BitmapSource ToBitmapSource(this Icon icon)
         {
-            return (ImageSource)new IconToImageSourceConverter().Convert(
+            return (BitmapSource)new IconToImageSourceConverter().Convert(
                         icon,
-                        typeof(ImageSource),
+                        typeof(BitmapSource),
                         null!,
                         CultureInfo.InvariantCulture);
         }
