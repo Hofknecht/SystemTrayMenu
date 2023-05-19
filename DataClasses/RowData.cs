@@ -348,7 +348,7 @@ namespace SystemTrayMenu.DataClasses
             else if (HiddenEntry)
             {
                 icon = ImagingHelper.CreateIconWithOverlay(icon, Resources.White50Percentage.ToBitmapSource());
-                icon?.Freeze();
+                icon?.Freeze(); // Make it accessible for any thread
             }
 
             IconLoading = false;

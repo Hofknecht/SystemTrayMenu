@@ -18,7 +18,7 @@ namespace SystemTrayMenu
     public static class Config
     {
         private static readonly Icon SystemTrayMenu = new(Properties.Resources.SystemTrayMenu, (int)SystemParameters.SmallIconWidth, (int)SystemParameters.SmallIconHeight);
-        private static readonly Icon? IconRootFolder = GetIcon(Path, Path, false, true, IconSize.Small);
+        private static readonly Icon? IconRootFolder = GetIconAsIcon(Path, Path, false, true, IconSize.Small);
 
         private static bool readDarkModeDone;
         private static bool isDarkMode;
