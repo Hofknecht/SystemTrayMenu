@@ -7,7 +7,9 @@ namespace SystemTrayMenu.Utilities
     using System;
     using System.Diagnostics;
     using System.Linq;
+#if TODO //HOTKEY
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
+#endif
 
     internal static class SingleAppInstance
     {

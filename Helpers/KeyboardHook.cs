@@ -6,7 +6,9 @@ namespace SystemTrayMenu.Helpers
 {
     using System;
     using System.Windows.Input;
+#if TODO //HOTKEY
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
+#endif
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Utilities.FormsExtensions;
 
