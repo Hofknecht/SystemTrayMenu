@@ -11,6 +11,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Runtime.Versioning;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Input;
     using System.Windows.Media.Imaging;
     using Microsoft.Win32;
     using SystemTrayMenu.Properties;
@@ -50,6 +51,8 @@ namespace SystemTrayMenu.UserInterface
                     Icon = imageSource;
                 }
             }
+
+            PreviewKeyDown += HandlePreviewKeyDown;
 #if TODO // HOTKEY
             // Initialize and replace here here, because designer always removes it
             InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder();
@@ -411,28 +414,6 @@ namespace SystemTrayMenu.UserInterface
         }
 
 #if TODO // HOTKEY
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            switch (keyData)
-            {
-                case Keys.Escape:
-                    if (!inHotkey)
-                    {
-                        DialogResult = DialogResult.Cancel;
-                    }
-                    else
-                    {
-                        return base.ProcessCmdKey(ref msg, keyData);
-                    }
-
-                    break;
-                default:
-                    return base.ProcessCmdKey(ref msg, keyData);
-            }
-
-            return true;
-        }
-
         /// <summary>
         /// Helper method to cleanly register a hotkey.
         /// </summary>
@@ -594,6 +575,27 @@ namespace SystemTrayMenu.UserInterface
             useStartupTask = true;
 #endif
             return useStartupTask;
+        }
+
+        private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.Escape:
+#if TODO // HOTKEY
+                    if (!inHotkey)
+                    {
+                        DialogResult = DialogResult.Cancel;
+                    }
+                    else
+                    {
+                        return base.ProcessCmdKey(ref msg, keyData);
+                    }
+#endif
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)

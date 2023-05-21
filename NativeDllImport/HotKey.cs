@@ -14,6 +14,18 @@ namespace SystemTrayMenu.DllImports
     /// </summary>
     public static partial class NativeMethods
     {
+        internal static string GetLastErrorHint()
+        {
+            const int ERROR_HOTKEY_ALREADY_REGISTERED = 1409;
+
+            int error = Marshal.GetLastWin32Error();
+            return error switch
+            {
+                ERROR_HOTKEY_ALREADY_REGISTERED => "ERROR_HOTKEY_ALREADY_REGISTERED",
+                _ => error.ToString(),
+            };
+        }
+
         [SupportedOSPlatform("windows")]
         [DllImport("user32.dll", EntryPoint = "RegisterHotKey", SetLastError = true, CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi)]
         [DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]

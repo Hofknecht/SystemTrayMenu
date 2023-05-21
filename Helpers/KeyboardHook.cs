@@ -6,9 +6,8 @@ namespace SystemTrayMenu.Helpers
 {
     using System;
     using System.Windows.Input;
-#if TODO //HOTKEY
+    using SystemTrayMenu.DllImports;
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
-#endif
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Utilities.FormsExtensions;
 
@@ -81,12 +80,8 @@ namespace SystemTrayMenu.Helpers
                     modifiers |= KeyboardHookModifierKeys.Win;
                 }
             }
-#if TODO //HOTKEY
-            RegisterHotKey(
-                modifiers,
-                HotkeyControl.HotkeyFromString(
-                    Properties.Settings.Default.HotKey));
-#endif
+
+            RegisterHotKey(modifiers, HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey));
         }
 
         /// <summary>
@@ -118,11 +113,10 @@ namespace SystemTrayMenu.Helpers
         {
             currentId += 1;
 
-            if (!DllImports.NativeMethods.User32RegisterHotKey(
-                window.Handle, currentId, modifier, (uint)key))
+            if (!NativeMethods.User32RegisterHotKey(window.Handle, currentId, modifier, (uint)key))
             {
-                throw new InvalidOperationException(
-                    Translator.GetText("Could not register the hot key."));
+                string errorHint = NativeMethods.GetLastErrorHint();
+                throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
             }
         }
 

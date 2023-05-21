@@ -105,9 +105,6 @@
     <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="UserInterface\HotkeyTextboxControl\HotkeyControl.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Remove="UserInterface\Menu.resx" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +142,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="UserInterface\HotkeyTextboxControl\HotkeyControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\SystemTrayMenu.ico" />

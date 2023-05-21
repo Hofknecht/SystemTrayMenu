@@ -7,9 +7,8 @@ namespace SystemTrayMenu.Utilities
     using System;
     using System.Diagnostics;
     using System.Linq;
-#if TODO //HOTKEY
+    using System.Windows.Input;
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
-#endif
 
     internal static class SingleAppInstance
     {
@@ -25,12 +24,13 @@ namespace SystemTrayMenu.Utilities
                 {
                     if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                     {
-#if TODO // HOTKEY
-                        Key modifiers = HotkeyControl.HotkeyModifiersFromString(Properties.Settings.Default.HotKey);
+                        ModifierKeys modifiers = HotkeyControl.HotkeyModifiersFromString(Properties.Settings.Default.HotKey);
                         Key hotkey = HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey);
 
                         try
                         {
+#if TODO // HOTKEY - Maybe replace with sockets or pipes?
+         //          E.g. https://learn.microsoft.com/en-us/dotnet/standard/io/how-to-use-named-pipes-for-network-interprocess-communication
                             List<VirtualKeyCode> virtualKeyCodesModifiers = new();
                             foreach (string key in modifiers.ToString().ToUpperInvariant().Split(", "))
                             {
@@ -58,15 +58,14 @@ namespace SystemTrayMenu.Utilities
                             new InputSimulator().Keyboard.ModifiedKeyStroke(virtualKeyCodesModifiers, virtualKeyCodeHotkey);
 
                             success = false;
+#endif
                         }
                         catch (Exception ex)
                         {
                             Log.Warn($"Send hoktey {Properties.Settings.Default.HotKey} to other instance failed", ex);
                         }
-#endif
                     }
-
-                    if (!Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
+                    else
                     {
                         try
                         {
