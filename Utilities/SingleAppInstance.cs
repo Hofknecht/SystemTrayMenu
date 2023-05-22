@@ -24,8 +24,9 @@ namespace SystemTrayMenu.Utilities
                 {
                     if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                     {
-                        ModifierKeys modifiers = HotkeyControl.HotkeyModifiersFromString(Properties.Settings.Default.HotKey);
-                        Key hotkey = HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey);
+                        string hotKeyString = Properties.Settings.Default.HotKey;
+                        ModifierKeys modifiers = HotkeyControl.HotkeyModifiersFromString(hotKeyString);
+                        Key hotkey = HotkeyControl.HotkeyFromString(hotKeyString);
 
                         try
                         {
@@ -62,7 +63,7 @@ namespace SystemTrayMenu.Utilities
                         }
                         catch (Exception ex)
                         {
-                            Log.Warn($"Send hoktey {Properties.Settings.Default.HotKey} to other instance failed", ex);
+                            Log.Warn($"Send hoktey {hotKeyString} to other instance failed", ex);
                         }
                     }
                     else

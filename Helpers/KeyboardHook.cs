@@ -11,19 +11,6 @@ namespace SystemTrayMenu.Helpers
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Utilities.FormsExtensions;
 
-    /// <summary>
-    /// The enumeration of possible modifiers.
-    /// </summary>
-    [Flags]
-    public enum KeyboardHookModifierKeys : uint
-    {
-        None = 0,
-        Alt = 1,
-        Control = 2,
-        Shift = 4,
-        Win = 8,
-    }
-
     public sealed class KeyboardHook : IDisposable
     {
         private readonly Window window = new();
@@ -32,66 +19,34 @@ namespace SystemTrayMenu.Helpers
         public KeyboardHook()
         {
             // register the event of the inner native window.
-            window.KeyPressed += Window_KeyPressed;
+            window.KeyPressed += (key, modifiers) => KeyPressed?.Invoke(key, modifiers);
         }
 
         /// <summary>
         /// A hot key has been pressed.
         /// </summary>
-        internal event EventHandler<KeyPressedEventArgs>? KeyPressed;
+        internal event Action<Key, ModifierKeys>? KeyPressed;
 
         public void Dispose()
         {
             // unregister all the registered hot keys.
             for (int i = currentId; i > 0; i--)
             {
-                DllImports.NativeMethods.User32UnregisterHotKey(window.Handle, i);
+                NativeMethods.User32UnregisterHotKey(window.Handle, i);
             }
 
             // dispose the inner native window.
-            window.KeyPressed -= Window_KeyPressed;
             window.Dispose();
         }
 
-        internal void RegisterHotKey()
+        internal void RegisterHotKey(string hotKeyString)
         {
-            KeyboardHookModifierKeys modifiers = KeyboardHookModifierKeys.None;
-            string modifiersString = Properties.Settings.Default.HotKey;
-            if (!string.IsNullOrEmpty(modifiersString))
-            {
-                if (modifiersString.ToUpperInvariant().Contains("ALT", StringComparison.InvariantCulture))
-                {
-                    modifiers |= KeyboardHookModifierKeys.Alt;
-                }
+            // TODO: Replace old code of v1 with HotKeyControl methods like here
+            //       as there is a bug in the body of this function (missing "+" when checking for modifiers)
+            ModifierKeys modifiers = HotkeyControl.HotkeyModifiersFromString(hotKeyString);
+            Key hotkey = HotkeyControl.HotkeyFromString(hotKeyString);
 
-                if (modifiersString.ToUpperInvariant().Contains("CTRL", StringComparison.InvariantCulture) ||
-                    modifiersString.ToUpperInvariant().Contains("STRG", StringComparison.InvariantCulture))
-                {
-                    modifiers |= KeyboardHookModifierKeys.Control;
-                }
-
-                if (modifiersString.ToUpperInvariant().Contains("SHIFT", StringComparison.InvariantCulture))
-                {
-                    modifiers |= KeyboardHookModifierKeys.Shift;
-                }
-
-                if (modifiersString.ToUpperInvariant().Contains("WIN", StringComparison.InvariantCulture))
-                {
-                    modifiers |= KeyboardHookModifierKeys.Win;
-                }
-            }
-
-            RegisterHotKey(modifiers, HotkeyControl.HotkeyFromString(Properties.Settings.Default.HotKey));
-        }
-
-        /// <summary>
-        /// Registers a hot key in the system.
-        /// </summary>
-        /// <param name="key">The key itself that is associated with the hot key.</param>
-        internal void RegisterHotKey(Key key)
-        {
-            uint keyModifiersNone = 0;
-            RegisterHotKey(keyModifiersNone, key);
+            RegisterHotKey((uint)modifiers, hotkey);
         }
 
         /// <summary>
@@ -99,16 +54,6 @@ namespace SystemTrayMenu.Helpers
         /// </summary>
         /// <param name="modifier">The modifiers that are associated with the hot key.</param>
         /// <param name="key">The key itself that is associated with the hot key.</param>
-        internal void RegisterHotKey(KeyboardHookModifierKeys modifier, Key key)
-        {
-            RegisterHotKey((uint)modifier, key);
-        }
-
-        private void Window_KeyPressed(object? sender, KeyPressedEventArgs e)
-        {
-            KeyPressed?.Invoke(this, e);
-        }
-
         private void RegisterHotKey(uint modifier, Key key)
         {
             currentId += 1;
@@ -127,7 +72,7 @@ namespace SystemTrayMenu.Helpers
         {
             private const int WmHotkey = 0x0312;
 
-            public event EventHandler<KeyPressedEventArgs>? KeyPressed;
+            public event Action<Key, ModifierKeys>? KeyPressed;
 
             /// <summary>
             /// Overridden to get the notifications.
@@ -139,10 +84,10 @@ namespace SystemTrayMenu.Helpers
                 {
                     // get the keys.
                     Key key = (Key)(((int)lParam >> 16) & 0xFFFF);
-                    KeyboardHookModifierKeys modifier = (KeyboardHookModifierKeys)((int)lParam & 0xFFFF);
+                    ModifierKeys modifiers = (ModifierKeys)((int)lParam & 0xFFFF);
 
                     // invoke the event to notify the parent.
-                    KeyPressed?.Invoke(this, new KeyPressedEventArgs(modifier, key));
+                    KeyPressed?.Invoke(key, modifiers);
                 }
 
                 handled = false;

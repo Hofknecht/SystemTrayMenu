@@ -30,18 +30,18 @@ namespace SystemTrayMenu.Handler
             hook.Dispose();
         }
 
-        internal bool RegisterHotKey(string hotKey)
+        internal bool RegisterHotKey(string hotKeyString)
         {
-            if (!string.IsNullOrEmpty(hotKey))
+            if (!string.IsNullOrEmpty(hotKeyString))
             {
                 try
                 {
-                    hook.RegisterHotKey();
-                    hook.KeyPressed += (sender, e) => HotKeyPressed?.Invoke();
+                    hook.RegisterHotKey(hotKeyString);
+                    hook.KeyPressed += (_, _) => HotKeyPressed?.Invoke();
                 }
                 catch (InvalidOperationException ex)
                 {
-                    Log.Warn($"Hotkey cannot be set: '{hotKey}'", ex);
+                    Log.Warn($"Hotkey cannot be set: '{hotKeyString}'", ex);
                     return false;
                 }
             }
