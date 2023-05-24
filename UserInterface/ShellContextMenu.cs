@@ -11,7 +11,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Text;
     using System.Windows;
     using System.Windows.Input;
-    using static SystemTrayMenu.Utilities.FormsExtensions;
+    using System.Windows.Interop;
 
     [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:Do not use regions", Justification = "Mark SystemTrayMenu modifications made to original source.")]
 
@@ -43,7 +43,7 @@ namespace SystemTrayMenu.UserInterface
     ///    files[0] = new FileInfo(@"c:\windows\notepad.exe");
     ///    scm.ShowContextMenu(this.Handle, files, Cursor.Position);.
     /// </example>
-    public class ShellContextMenu : NativeWindow
+    public class ShellContextMenu : HwndSource
     {
         private const int MaxPath = 260;
         private const uint CmdFirst = 1;
@@ -58,6 +58,8 @@ namespace SystemTrayMenu.UserInterface
         private static Guid iidIContextMenu2 = new("{000214f4-0000-0000-c000-000000000046}");
         private static Guid iidIContextMenu3 = new("{bcfce0a0-ec17-11d0-8d10-00a0c90f2719}");
 
+        private readonly HwndSourceHook hook;
+
         private IContextMenu? oContextMenu;
         private IContextMenu2? oContextMenu2;
         private IContextMenu3? oContextMenu3;
@@ -66,12 +68,20 @@ namespace SystemTrayMenu.UserInterface
         private IntPtr[]? arrPIDLs;
         private string? strParentFolder;
 
+        public ShellContextMenu()
+                : base(new())
+        {
+            hook = new HwndSourceHook(WndProc);
+            AddHook(hook);
+        }
+
         /// <summary>
         /// Finalizes an instance of the <see cref="ShellContextMenu"/> class.
         /// </summary>
         ~ShellContextMenu()
         {
             ReleaseAll();
+            RemoveHook(hook);
         }
 
         // Defines the values used with the IShellFolder::GetDisplayNameOf and IShellFolder::SetNameOf
@@ -872,7 +882,7 @@ namespace SystemTrayMenu.UserInterface
         /// Set the value to true if the message was handled; otherwise, false.</param>
         /// <returns>The appropriate return value depends on the particular message.
         /// See the message documentation details for the Win32 message being handled.</returns>
-        protected override IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        protected IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             if (oContextMenu2 != null &&
                 (msg == (int)WM.INITMENUPOPUP ||
