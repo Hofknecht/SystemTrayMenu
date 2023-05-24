@@ -5,21 +5,25 @@
 namespace SystemTrayMenu.Helpers
 {
     using System;
+    using System.Windows;
     using System.Windows.Input;
+    using System.Windows.Interop;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.Utilities.FormsExtensions;
 
-    public sealed class KeyboardHook : IDisposable
+    internal class KeyboardHook : IDisposable
     {
-        private readonly Window window = new();
+        private readonly HwndSourceHook hook;
+        private readonly HwndSource hwnd;
+        private readonly Window window = new(); // TODO: Try using mainMenu to spare creating additional Win32 window handle?
         private int currentId;
 
         public KeyboardHook()
         {
-            // register the event of the inner native window.
-            window.KeyPressed += (key, modifiers) => KeyPressed?.Invoke(key, modifiers);
+            hwnd = HwndSource.FromHwnd(new WindowInteropHelper(window).EnsureHandle());
+            hook = new HwndSourceHook(WndProc);
+            hwnd.AddHook(hook);
         }
 
         /// <summary>
@@ -29,70 +33,55 @@ namespace SystemTrayMenu.Helpers
 
         public void Dispose()
         {
-            // unregister all the registered hot keys.
-            for (int i = currentId; i > 0; i--)
+            // On regular App.Dispose the handle was already invalidated
+            if (hwnd.Handle != IntPtr.Zero)
             {
-                NativeMethods.User32UnregisterHotKey(window.Handle, i);
+                // unregister all the registered hot keys.
+                for (int i = currentId; i > 0; i--)
+                {
+                    NativeMethods.User32UnregisterHotKey(hwnd.Handle, i);
+                }
+
+                hwnd.RemoveHook(hook);
             }
 
-            // dispose the inner native window.
-            window.Dispose();
+            hwnd.Dispose();
         }
 
         internal void RegisterHotKey(string hotKeyString)
         {
-            // TODO: Replace old code of v1 with HotKeyControl methods like here
-            //       as there is a bug in the body of this function (missing "+" when checking for modifiers)
             ModifierKeys modifiers = HotkeyControl.HotkeyModifiersFromString(hotKeyString);
-            Key hotkey = HotkeyControl.HotkeyFromString(hotKeyString);
+            Key key = HotkeyControl.HotkeyFromString(hotKeyString);
+            int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
+            int nextId = currentId + 1;
 
-            RegisterHotKey((uint)modifiers, hotkey);
-        }
-
-        /// <summary>
-        /// Registers a hot key in the system.
-        /// </summary>
-        /// <param name="modifier">The modifiers that are associated with the hot key.</param>
-        /// <param name="key">The key itself that is associated with the hot key.</param>
-        private void RegisterHotKey(uint modifier, Key key)
-        {
-            currentId += 1;
-
-            if (!NativeMethods.User32RegisterHotKey(window.Handle, currentId, modifier, (uint)key))
+            if (!NativeMethods.User32RegisterHotKey(hwnd.Handle, nextId, (uint)modifiers, (uint)virtualKeyCode))
             {
                 string errorHint = NativeMethods.GetLastErrorHint();
                 throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
             }
+
+            currentId = nextId;
         }
 
-        /// <summary>
-        /// Represents the window that is used internally to get the messages.
-        /// </summary>
-        private class Window : NativeWindow, IDisposable
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            private const int WmHotkey = 0x0312;
+            const int WmHotkey = 0x0312;
 
-            public event Action<Key, ModifierKeys>? KeyPressed;
-
-            /// <summary>
-            /// Overridden to get the notifications.
-            /// </summary>
-            protected override IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+            // check if we got a hot key pressed.
+            if (msg == WmHotkey)
             {
-                // check if we got a hot key pressed.
-                if (msg == WmHotkey)
-                {
-                    // get the keys.
-                    Key key = (Key)(((int)lParam >> 16) & 0xFFFF);
-                    ModifierKeys modifiers = (ModifierKeys)((int)lParam & 0xFFFF);
+                // get the keys.
+                ModifierKeys modifiers = (ModifierKeys)((int)lParam & 0xFFFF);
+                int virtualKeyCode = ((int)lParam >> 16) & 0xFFFF;
+                Key key = KeyInterop.KeyFromVirtualKey(virtualKeyCode);
 
-                    // invoke the event to notify the parent.
-                    KeyPressed?.Invoke(key, modifiers);
-                }
-
-                handled = false;
-                return IntPtr.Zero;
+                // invoke the event to notify the parent.
+                KeyPressed?.Invoke(key, modifiers);
             }
+
+            handled = false;
+            return IntPtr.Zero;
         }
     }
 }
