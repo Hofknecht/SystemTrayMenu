@@ -121,7 +121,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                 hotkeyString.Append("Shift").Append(" + ");
             }
 
-            // TODO: Fix in v1? it seems LWin and RWin are checked with "==" instead of "& .. != 0"
             if ((modifierKeyCode & ModifierKeys.Windows) != 0)
             {
                 hotkeyString.Append("Win").Append(" + ");

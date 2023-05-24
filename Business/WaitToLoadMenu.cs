@@ -69,7 +69,7 @@ namespace SystemTrayMenu.Handler
         internal void OpenSubMenuByMouse(RowData itemData)
         {
             timerStartLoad.Stop();
-            StopLoadMenu?.Invoke(); // TODO: Missing in v1 ?
+            StopLoadMenu?.Invoke();
             SetData(itemData);
             MouseActive = true;
             OpenSubMenu();
@@ -87,7 +87,7 @@ namespace SystemTrayMenu.Handler
         private void OpenSubMenuByTimer(object? sender, EventArgs e)
         {
             timerStartLoad.Stop();
-            StopLoadMenu?.Invoke(); // TODO: Missing in v1 ?
+            StopLoadMenu?.Invoke();
             OpenSubMenu();
         }
 
