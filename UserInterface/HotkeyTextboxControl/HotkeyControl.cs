@@ -160,23 +160,28 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             ModifierKeys modifiers = ModifierKeys.None;
             if (!string.IsNullOrEmpty(modifiersString))
             {
-                if (modifiersString.ToUpperInvariant().Contains("ALT+", StringComparison.InvariantCulture))
+                string upper = modifiersString.ToUpperInvariant();
+
+                if (upper.Contains("ALT+", StringComparison.InvariantCulture))
                 {
                     modifiers |= ModifierKeys.Alt;
                 }
 
-                if (modifiersString.ToUpperInvariant().Contains("CTRL+", StringComparison.InvariantCulture) ||
-                    modifiersString.ToUpperInvariant().Contains("STRG+", StringComparison.InvariantCulture))
+                if (upper.Contains("CTRL+", StringComparison.InvariantCulture) ||
+                    upper.Contains("STRG+", StringComparison.InvariantCulture))
                 {
                     modifiers |= ModifierKeys.Control;
                 }
 
-                if (modifiersString.ToUpperInvariant().Contains("SHIFT+", StringComparison.InvariantCulture))
+                if (upper.Contains("SHIFT+", StringComparison.InvariantCulture))
                 {
                     modifiers |= ModifierKeys.Shift;
                 }
 
-                if (modifiersString.ToUpperInvariant().Contains("WIN+", StringComparison.InvariantCulture))
+                // LWin and RWin keys will implicitly set Windows key modifier
+                if (upper.Contains("WIN+", StringComparison.InvariantCulture) ||
+                    upper.EndsWith("LWIN", StringComparison.InvariantCulture) ||
+                    upper.EndsWith("RWIN", StringComparison.InvariantCulture))
                 {
                     modifiers |= ModifierKeys.Windows;
                 }

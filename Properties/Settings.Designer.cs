@@ -126,7 +126,7 @@ namespace SystemTrayMenu.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(CustomSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+LWin")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl+Win+LWin")]
         public string HotKey
         {
             get

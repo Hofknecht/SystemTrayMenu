@@ -901,7 +901,7 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonHotkeyDefault_Click(object sender, RoutedEventArgs e)
         {
 #if TODO // HOTKEY
-            textBoxHotkey.SetHotkey("Ctrl+LWin");
+            textBoxHotkey.SetHotkey("Ctrl+Win+LWin");
 #endif
         }
 
