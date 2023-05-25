@@ -29,9 +29,6 @@ namespace SystemTrayMenu.UserInterface
 
         private static SettingsWindow? settingsForm;
 
-#if TODO // HOTKEY
-        private bool inHotkey;
-#endif
         public SettingsWindow()
         {
             InitializeComponent();
@@ -53,26 +50,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             PreviewKeyDown += HandlePreviewKeyDown;
-#if TODO // HOTKEY
-            // Initialize and replace here here, because designer always removes it
-            InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder();
-            void InitializeTextBoxHotkeyAndReplacetextBoxHotkeyPlaceholder()
-            {
-                textBoxHotkey = new HotkeyTextboxControl.HotkeyControl
-                {
-                    Hotkey = Keys.None,
-                    HotkeyModifiers = Keys.None,
-                    Name = "textBoxHotkey",
-                    Size = new Size(200, 20),
-                    Text = "None",
-                    TabStop = false,
-                };
-                textBoxHotkey.Enter += new EventHandler(TextBoxHotkeyEnter);
-                textBoxHotkey.Leave += new EventHandler(TextBoxHotkey_Leave);
-                tableLayoutPanelHotkey.Controls.Remove(textBoxHotkeyPlaceholder);
-                tableLayoutPanelHotkey.Controls.Add(textBoxHotkey, 0, 0);
-            }
-#endif
+
             Translate();
             void Translate()
             {
@@ -107,9 +85,8 @@ namespace SystemTrayMenu.UserInterface
             }
 
             checkBoxCheckForUpdates.IsChecked = Settings.Default.CheckForUpdates;
-#if TODO // HOTKEY
+
             textBoxHotkey.SetHotkey(Settings.Default.HotKey);
-#endif
 
             InitializeLanguage();
             void InitializeLanguage()
@@ -380,21 +357,6 @@ namespace SystemTrayMenu.UserInterface
             Closed += (_, _) => settingsForm = null;
         }
 
-#if TODO // HOTKEY
-        /// <summary>
-        /// Gets NewHotKey.
-        /// </summary>
-        public string NewHotKey { get; } = string.Empty;
-
-        /// <summary>
-        /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
-        /// </summary>
-        /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
-        public static bool RegisterHotkeys()
-        {
-            return RegisterHotkeys(false);
-        }
-#endif
         public static void ShowSingleInstance()
         {
             if (IsOpen())
@@ -412,102 +374,6 @@ namespace SystemTrayMenu.UserInterface
         {
             return settingsForm != null;
         }
-
-#if TODO // HOTKEY
-        /// <summary>
-        /// Helper method to cleanly register a hotkey.
-        /// </summary>
-        /// <param name="failedKeys">failedKeys.</param>
-        /// <param name="hotkeyString">hotkeyString.</param>
-        /// <param name="handler">handler.</param>
-        /// <returns>bool success.</returns>
-        private static bool RegisterHotkey(StringBuilder failedKeys, string hotkeyString, HotKeyHandler handler)
-        {
-            Keys modifierKeyCode = HotkeyModifiersFromString(hotkeyString);
-            Keys virtualKeyCode = HotkeyFromString(hotkeyString);
-            if (!Keys.None.Equals(virtualKeyCode))
-            {
-                if (RegisterHotKey(modifierKeyCode, virtualKeyCode, handler) < 0)
-                {
-                    if (failedKeys.Length > 0)
-                    {
-                        failedKeys.Append(", ");
-                    }
-
-                    failedKeys.Append(hotkeyString);
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private static bool RegisterWrapper(StringBuilder failedKeys, HotKeyHandler handler)
-        {
-            bool success = RegisterHotkey(
-                failedKeys,
-                Settings.Default.HotKey,
-                handler);
-            return success;
-        }
-
-        /// <summary>
-        /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
-        /// </summary>
-        /// <param name="ignoreFailedRegistration">if true, a failed hotkey registration will not be reported to the user - the hotkey will simply not be registered.</param>
-        /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
-        private static bool RegisterHotkeys(bool ignoreFailedRegistration)
-        {
-            bool success = true;
-            StringBuilder failedKeys = new();
-            if (!RegisterWrapper(failedKeys, Handler))
-            {
-                success = false;
-            }
-
-            if (!success)
-            {
-                if (!ignoreFailedRegistration)
-                {
-                    success = HandleFailedHotkeyRegistration(failedKeys.ToString());
-                }
-            }
-
-            return success || ignoreFailedRegistration;
-        }
-
-        private static void Handler()
-        {
-        }
-
-        /// <summary>
-        /// Displays a dialog for the user to choose how to handle hotkey registration failures:
-        /// retry (allowing to shut down the conflicting application before),
-        /// ignore (not registering the conflicting hotkey and resetting the respective config to "None", i.e. not trying to register it again on next startup)
-        /// abort (do nothing about it).
-        /// </summary>
-        /// <param name="failedKeys">comma separated list of the hotkeys that could not be registered, for display in dialog text.</param>
-        /// <returns>bool success.</returns>
-        private static bool HandleFailedHotkeyRegistration(string failedKeys)
-        {
-            bool success = false;
-            string warningTitle = Translator.GetText("Warning");
-            string message = Translator.GetText("Could not register the hot key.") + failedKeys;
-            DialogResult dr = MessageBox.Show(message, warningTitle, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.Retry)
-            {
-                UnregisterHotkeys();
-                success = RegisterHotkeys(false);
-            }
-            else if (dr == DialogResult.Ignore)
-            {
-                UnregisterHotkeys();
-                success = RegisterHotkeys(true);
-            }
-
-            return success;
-        }
-#endif
 
         [SupportedOSPlatform("windows")]
         private static void AddSetFolderByWindowsContextMenu()
@@ -579,22 +445,9 @@ namespace SystemTrayMenu.UserInterface
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.Key)
+            if (e.Key == Key.Escape && !textBoxHotkey.Reassigning)
             {
-                case Key.Escape:
-#if TODO // HOTKEY
-                    if (!inHotkey)
-                    {
-                        DialogResult = DialogResult.Cancel;
-                    }
-                    else
-                    {
-                        return base.ProcessCmdKey(ref msg, keyData);
-                    }
-#endif
-                    break;
-                default:
-                    break;
+                Close();
             }
         }
 
@@ -882,27 +735,9 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-#if TODO // HOTKEY
-        private void TextBoxHotkeyEnter(object sender, EventArgs e)
-        {
-            UnregisterHotkeys();
-            inHotkey = true;
-        }
-
-        private void TextBoxHotkey_Leave(object sender, EventArgs e)
-        {
-            Settings.Default.HotKey =
-                new KeysConverter().ConvertToInvariantString(
-                textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-            RegisterHotkeys();
-            inHotkey = false;
-        }
-#endif
         private void ButtonHotkeyDefault_Click(object sender, RoutedEventArgs e)
         {
-#if TODO // HOTKEY
-            textBoxHotkey.SetHotkey("Ctrl+Win+LWin");
-#endif
+            textBoxHotkey.SetHotkey((string)Settings.Default.Properties["HotKey"].DefaultValue); // see Settings.Default.HotKey
         }
 
         private void ButtonGeneralDefault_Click(object sender, RoutedEventArgs e)

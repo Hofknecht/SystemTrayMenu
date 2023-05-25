@@ -8,7 +8,7 @@ namespace SystemTrayMenu.Utilities
     using System.Diagnostics;
     using System.Linq;
     using System.Windows.Input;
-    using SystemTrayMenu.UserInterface;
+    using SystemTrayMenu.Helpers;
 
     internal static class SingleAppInstance
     {
@@ -25,8 +25,8 @@ namespace SystemTrayMenu.Utilities
                     if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                     {
                         string hotKeyString = Properties.Settings.Default.HotKey;
-                        ModifierKeys modifiers = HotkeyControl.HotkeyModifiersFromString(hotKeyString);
-                        Key hotkey = HotkeyControl.HotkeyFromString(hotKeyString);
+                        ModifierKeys modifiers = GlobalHotkeys.ModifierKeysFromString(hotKeyString);
+                        Key hotkey = GlobalHotkeys.KeyFromString(hotKeyString);
 
                         try
                         {

@@ -1,6 +1,8 @@
-﻿// <copyright file="HotkeyControl.cs" company="PlaceholderCompany">
+﻿// <copyright file="HotkeySelector.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
+//
+// Origin of some parts: http://www.codeproject.com/KB/buttons/hotkeycontrol.aspx
 
 namespace SystemTrayMenu.UserInterface
 {
@@ -9,41 +11,34 @@ namespace SystemTrayMenu.UserInterface
     using System.Text;
     using System.Windows.Controls;
     using System.Windows.Input;
-    using SystemTrayMenu.DllImports;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
 
-    /// <summary>
-    /// A simple control that allows the user to select pretty much any valid hotkey combination
-    /// See: http://www.codeproject.com/KB/buttons/hotkeycontrol.aspx
-    /// But is modified to fit in Greenshot, and have localized support.
-    /// Modfied to fit SystemTrayMenu.
-    /// </summary>
-    public sealed class HotkeyControl : TextBox
+    public sealed class HotkeySelector : TextBox, IDisposable
     {
-        private static readonly IntPtr HotkeyHwnd = (IntPtr)0x0000000000000000;
-
-        // Holds the list of hotkeys
-        private static readonly IDictionary<int, Action> KeyHandlers = new Dictionary<int, Action>();
-        private static int hotKeyCounter = 1;
-
         // ArrayLists used to enforce the use of proper modifiers.
         // Shift+A isn't a valid hotkey, for instance, as it would screw up when the user is typing.
         private readonly IList<int> needNonShiftModifier = new List<int>();
         private readonly IList<int> needNonAltGrModifier = new List<int>();
 
+        private KeyboardHook hook = new();
+
         // These variables store the current hotkey and modifier(s)
         private Key hotkey = Key.None;
         private ModifierKeys modifiers = ModifierKeys.None;
+        private Action? handler;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HotkeyControl"/> class.
+        /// Initializes a new instance of the <see cref="HotkeySelector"/> class.
         /// </summary>
-        public HotkeyControl()
+        public HotkeySelector()
         {
             // Disable right-clicking
-            ContextMenu = new();
-            ContextMenu.Visibility = System.Windows.Visibility.Collapsed;
-            ContextMenu.IsEnabled = false;
+            ContextMenu = new()
+            {
+                Visibility = System.Windows.Visibility.Collapsed,
+                IsEnabled = false,
+            };
 
             Text = string.Empty;
 
@@ -53,17 +48,34 @@ namespace SystemTrayMenu.UserInterface
             PreviewKeyDown += HandlePreviewKeyDown;
             PreviewTextInput += HandlePreviewTextInput;
 
+            GotFocus += (_, _) =>
+            {
+                UnregisterHotKey();
+                Reassigning = true;
+            };
+            LostFocus += (_, _) =>
+            {
+#if TODO // HOTKEY
+                Settings.Default.HotKey =
+                    new KeysConverter().ConvertToInvariantString(
+                    textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
+#endif
+#if TODO // HOTKEY
+                /// <summary>
+                /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
+                /// </summary>
+                /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
+                RegisterHotkeys(false);
+#else
+                ReregisterHotKey();
+#endif
+                Reassigning = false;
+            };
+
             PopulateModifierLists();
         }
 
-        private enum MapType : uint
-        {
-            MAPVK_VK_TO_VSC = 0, // The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If there is no translation, the function returns 0.
-            MAPVK_VSC_TO_VK = 1, // The uCode parameter is a scan code and is translated into a virtual-key code that does not distinguish between left- and right-hand keys. If there is no translation, the function returns 0.
-            MAPVK_VK_TO_CHAR = 2,     // The uCode parameter is a virtual-key code and is translated into an unshifted character value in the low order word of the return value. Dead keys (diacritics) are indicated by setting the top bit of the return value. If there is no translation, the function returns 0.
-            MAPVK_VSC_TO_VK_EX = 3, // The uCode parameter is a scan code and is translated into a virtual-key code that distinguishes between left- and right-hand keys. If there is no translation, the function returns 0.
-            MAPVK_VK_TO_VSC_EX = 4, // The uCode parameter is a virtual-key code and is translated into a scan code. If it is a virtual-key code that does not distinguish between left- and right-hand keys, the left-hand scan code is returned. If the scan code is an extended scan code, the high byte of the uCode value can contain either 0xe0 or 0xe1 to specify the extended scan code. If there is no translation, the function returns 0.
-        }
+        ~HotkeySelector() => Dispose();
 
         /// <summary>
         /// Gets or sets used to get/set the hotkey (e.g. Key.A).
@@ -91,6 +103,8 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        internal bool Reassigning { get; private set; }
+
         public static string HotkeyToString(ModifierKeys modifierKeyCode, Key key)
         {
             StringBuilder hotkeyString = new();
@@ -117,211 +131,55 @@ namespace SystemTrayMenu.UserInterface
             return hotkeyString.ToString() + key.ToString();
         }
 
-        public static string HotkeyToLocalizedString(ModifierKeys modifierKeyCode, Key key)
+        public void Dispose()
         {
-            StringBuilder hotkeyString = new();
-            if ((modifierKeyCode & ModifierKeys.Alt) != 0)
-            {
-                hotkeyString.Append(GetKeyName(Key.LeftAlt)).Append(" + ");
-            }
-
-            if ((modifierKeyCode & ModifierKeys.Control) != 0)
-            {
-                hotkeyString.Append(GetKeyName(Key.LeftCtrl)).Append(" + ");
-            }
-
-            if ((modifierKeyCode & ModifierKeys.Shift) != 0)
-            {
-                hotkeyString.Append(GetKeyName(Key.LeftShift)).Append(" + ");
-            }
-
-            if ((modifierKeyCode & ModifierKeys.Windows) != 0)
-            {
-                hotkeyString.Append("Win").Append(" + ");
-            }
-
-            return hotkeyString.ToString() + GetKeyName(key);
-        }
-
-        public static ModifierKeys HotkeyModifiersFromString(string modifiersString)
-        {
-            ModifierKeys modifiers = ModifierKeys.None;
-            if (!string.IsNullOrEmpty(modifiersString))
-            {
-                string upper = modifiersString.ToUpperInvariant();
-
-                if (upper.Contains("ALT+", StringComparison.InvariantCulture))
-                {
-                    modifiers |= ModifierKeys.Alt;
-                }
-
-                if (upper.Contains("CTRL+", StringComparison.InvariantCulture) ||
-                    upper.Contains("STRG+", StringComparison.InvariantCulture))
-                {
-                    modifiers |= ModifierKeys.Control;
-                }
-
-                if (upper.Contains("SHIFT+", StringComparison.InvariantCulture))
-                {
-                    modifiers |= ModifierKeys.Shift;
-                }
-
-                // LWin and RWin keys will implicitly set Windows key modifier
-                if (upper.Contains("WIN+", StringComparison.InvariantCulture) ||
-                    upper.EndsWith("LWIN", StringComparison.InvariantCulture) ||
-                    upper.EndsWith("RWIN", StringComparison.InvariantCulture))
-                {
-                    modifiers |= ModifierKeys.Windows;
-                }
-            }
-
-            return modifiers;
-        }
-
-        public static Key HotkeyFromString(string hotkey)
-        {
-            Key key = Key.None;
-            if (!string.IsNullOrEmpty(hotkey))
-            {
-                if (hotkey.LastIndexOf('+') > 0)
-                {
-                    hotkey = hotkey.Remove(0, hotkey.LastIndexOf('+') + 1).Trim();
-                }
-
-                try
-                {
-                    hotkey = hotkey.
-                        Replace("PgDn", "PageDown", StringComparison.InvariantCulture).
-                        Replace("PgUp", "PageUp", StringComparison.InvariantCulture);
-                    key = (Key)Enum.Parse(typeof(Key), hotkey);
-                }
-                catch (ArgumentException ex)
-                {
-                    Log.Warn($"{hotkey} can not be parsed", ex);
-                }
-            }
-
-            return key;
+            hook.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>
         /// Register a hotkey.
         /// </summary>
-        /// <param name="modifierKeyCode">The key modifiers .</param>
+        /// <param name="modifiers">The key modifiers .</param>
         /// <param name="key">The virtual key code.</param>
         /// <param name="handler">A HotKeyHandler, this will be called to handle the hotkey press.</param>
         /// <returns>the hotkey number, -1 if failed.</returns>
-        public static int RegisterHotKey(ModifierKeys modifierKeyCode, Key key, Action handler)
+        public int RegisterHotKey(ModifierKeys modifiers, Key key, Action handler)
         {
             if (key == Key.None)
             {
                 return 0;
             }
 
-            int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
-            if (NativeMethods.User32RegisterHotKey(HotkeyHwnd, hotKeyCounter, (uint)modifierKeyCode, (uint)virtualKeyCode))
+
+            try
             {
-                KeyHandlers.Add(hotKeyCounter, handler);
-                return hotKeyCounter++;
+                hook.RegisterHotKey(modifiers, key);
             }
-            else
+            catch (InvalidOperationException ex)
             {
-                string errorHint = NativeMethods.GetLastErrorHint();
-                Log.Info($"Couldn't register hotkey modifier {modifierKeyCode} virtualKeyCode {virtualKeyCode} hint: " + errorHint);
+                Log.Info($"Couldn't register hotkey modifier {modifiers} key {key} ex: " + ex.ToString());
                 return -1;
             }
+
+            this.handler = handler;
+            hook.KeyPressed += (_, _) => handler.Invoke();
+            return 1;
         }
 
-        public static void UnregisterHotkeys()
+        private void ReregisterHotKey()
         {
-            foreach (int hotkey in KeyHandlers.Keys)
+            if (handler != null)
             {
-                NativeMethods.User32UnregisterHotKey(HotkeyHwnd, hotkey);
+                RegisterHotKey(modifiers, hotkey, handler);
             }
-
-            KeyHandlers.Clear();
         }
 
-        public static string GetKeyName(Key givenKey)
+        private void UnregisterHotKey()
         {
-            StringBuilder keyName = new();
-            const uint numpad = 55;
-
-            Key virtualKey = givenKey;
-            string keyString = string.Empty;
-
-            // Make VC's to real keys
-            switch (virtualKey)
-            {
-                case Key.Multiply:
-                    if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
-                    {
-                        keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
-                        if (keyString.Contains('('))
-                        {
-                            return "* " + keyString;
-                        }
-
-                        keyString = keyString[..1].ToUpperInvariant() + keyString[1..].ToLowerInvariant();
-                    }
-
-                    return keyString + " *";
-                case Key.Divide:
-                    if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
-                    {
-                        keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
-                        if (keyString.Contains('('))
-                        {
-                            return "/ " + keyString;
-                        }
-
-                        keyString = keyString[..1].ToUpperInvariant() + keyString[1..].ToLowerInvariant();
-                    }
-
-                    return keyString + " /";
-            }
-
-            uint scanCode = NativeMethods.User32MapVirtualKey((uint)virtualKey, (uint)MapType.MAPVK_VK_TO_VSC);
-
-            // because MapVirtualKey strips the extended bit for some keys
-            switch (virtualKey)
-            {
-                case Key.Left:
-                case Key.Up:
-                case Key.Right:
-                case Key.Down: // arrow keys
-                case Key.Prior:
-                case Key.Next: // page up and page down
-                case Key.End:
-                case Key.Home:
-                case Key.Insert:
-                case Key.Delete:
-                case Key.NumLock:
-                    scanCode |= 0x100; // set extended bit
-                    break;
-                case Key.PrintScreen: // PrintScreen
-                    scanCode = 311;
-                    break;
-                case Key.Pause: // PrintScreen
-                    scanCode = 69;
-                    break;
-            }
-
-            scanCode |= 0x200;
-            if (NativeMethods.User32GetKeyNameText(scanCode << 16, keyName, 100) != 0)
-            {
-                string visibleName = keyName.ToString();
-                if (visibleName.Length > 1)
-                {
-                    visibleName = visibleName[..1] + visibleName[1..].ToLowerInvariant();
-                }
-
-                return visibleName;
-            }
-            else
-            {
-                return givenKey.ToString();
-            }
+            // TODO: Rework to allow deregistration?
+            hook.Dispose();
+            hook = new();
         }
 
         /// <summary>
@@ -331,7 +189,7 @@ namespace SystemTrayMenu.UserInterface
         {
             hotkey = Key.None;
             modifiers = ModifierKeys.None;
-            Redraw();
+            Redraw(false);
         }
 
         /// <summary>
@@ -340,8 +198,8 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="hotkey">hotkey.</param>
         public void SetHotkey(string hotkey)
         {
-            this.hotkey = HotkeyFromString(hotkey);
-            modifiers = HotkeyModifiersFromString(hotkey);
+            this.hotkey = GlobalHotkeys.KeyFromString(hotkey);
+            modifiers = GlobalHotkeys.ModifierKeysFromString(hotkey);
             Redraw(true);
         }
 
@@ -373,7 +231,7 @@ namespace SystemTrayMenu.UserInterface
         /// Redraws the TextBox when necessary.
         /// </summary>
         /// <param name="bCalledProgramatically">Specifies whether this function was called by the Hotkey/HotkeyModifiers properties or by the user.</param>
-        private void Redraw(bool bCalledProgramatically = false)
+        private void Redraw(bool bCalledProgramatically)
         {
             // No hotkey set
             if (hotkey == Key.None)
@@ -430,7 +288,7 @@ namespace SystemTrayMenu.UserInterface
                 hotkey = Key.None;
             }
 
-            Text = HotkeyToLocalizedString(modifiers, hotkey);
+            Text = GlobalHotkeys.HotkeyToLocalizedString(modifiers, hotkey);
         }
 
         /// <summary>
@@ -497,7 +355,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
-                Redraw();
+                Redraw(false);
             }
         }
 
@@ -512,7 +370,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
-                Redraw();
+                Redraw(false);
             }
             else if (hotkey == Key.None && modifiers == ModifierKeys.None)
             {
@@ -528,5 +386,91 @@ namespace SystemTrayMenu.UserInterface
         {
             e.Handled = true;
         }
+
+#if TODO // HOTKEY
+        /// <summary>
+        /// Helper method to cleanly register a hotkey.
+        /// </summary>
+        /// <param name="failedKeys">failedKeys.</param>
+        /// <param name="hotkeyString">hotkeyString.</param>
+        /// <param name="handler">handler.</param>
+        /// <returns>bool success.</returns>
+        private static bool RegisterHotkey(StringBuilder failedKeys, string hotkeyString, HotKeyHandler handler)
+        {
+            Keys modifierKeyCode = HotkeyModifiersFromString(hotkeyString);
+            Keys virtualKeyCode = HotkeyFromString(hotkeyString);
+            if (!Keys.None.Equals(virtualKeyCode))
+            {
+                if (RegisterHotKey(modifierKeyCode, virtualKeyCode, handler) < 0)
+                {
+                    if (failedKeys.Length > 0)
+                    {
+                        failedKeys.Append(", ");
+                    }
+
+                    failedKeys.Append(hotkeyString);
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
+        /// </summary>
+        /// <param name="ignoreFailedRegistration">if true, a failed hotkey registration will not be reported to the user - the hotkey will simply not be registered.</param>
+        /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
+        private static bool RegisterHotkeys(bool ignoreFailedRegistration)
+        {
+            bool success = true;
+            StringBuilder failedKeys = new();
+            if (!RegisterHotkey(
+                failedKeys,
+                Settings.Default.HotKey,
+                handler))
+            {
+                success = false;
+            }
+
+            if (!success)
+            {
+                if (!ignoreFailedRegistration)
+                {
+                    success = HandleFailedHotkeyRegistration(failedKeys.ToString());
+                }
+            }
+
+            return success || ignoreFailedRegistration;
+        }
+
+        /// <summary>
+        /// Displays a dialog for the user to choose how to handle hotkey registration failures:
+        /// retry (allowing to shut down the conflicting application before),
+        /// ignore (not registering the conflicting hotkey and resetting the respective config to "None", i.e. not trying to register it again on next startup)
+        /// abort (do nothing about it).
+        /// </summary>
+        /// <param name="failedKeys">comma separated list of the hotkeys that could not be registered, for display in dialog text.</param>
+        /// <returns>bool success.</returns>
+        private static bool HandleFailedHotkeyRegistration(string failedKeys)
+        {
+            bool success = false;
+            string warningTitle = Translator.GetText("Warning");
+            string message = Translator.GetText("Could not register the hot key.") + failedKeys;
+            DialogResult dr = MessageBox.Show(message, warningTitle, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Exclamation);
+            if (dr == DialogResult.Retry)
+            {
+                UnregisterHotKey();
+                success = RegisterHotkeys(false); // TODO: This may end up in endless recursion, better use a loop at caller
+            }
+            else if (dr == DialogResult.Ignore)
+            {
+                UnregisterHotKey();
+                success = RegisterHotkeys(true);
+            }
+
+            return success;
+        }
+#endif
     }
 }

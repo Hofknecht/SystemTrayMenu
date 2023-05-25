@@ -8,15 +8,13 @@ namespace SystemTrayMenu.Helpers
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Interop;
-    using SystemTrayMenu.DllImports;
-    using SystemTrayMenu.UserInterface;
-    using SystemTrayMenu.Utilities;
 
+    // TODO: Move this whole class into mainMenu to spare creating additional Win32 window handles by using Menu's Window directly.
     internal class KeyboardHook : IDisposable
     {
         private readonly HwndSourceHook hook;
         private readonly HwndSource hwnd;
-        private readonly Window window = new(); // TODO: Try using mainMenu to spare creating additional Win32 window handle?
+        private readonly Window window = new();
         private int currentId;
 
         public KeyboardHook()
@@ -39,7 +37,7 @@ namespace SystemTrayMenu.Helpers
                 // unregister all the registered hot keys.
                 for (int i = currentId; i > 0; i--)
                 {
-                    NativeMethods.User32UnregisterHotKey(hwnd.Handle, i);
+                    GlobalHotkeys.UnregisterHotkey(hwnd.Handle, i);
                 }
 
                 hwnd.RemoveHook(hook);
@@ -48,21 +46,9 @@ namespace SystemTrayMenu.Helpers
             hwnd.Dispose();
         }
 
-        internal void RegisterHotKey(string hotKeyString)
-        {
-            ModifierKeys modifiers = HotkeyControl.HotkeyModifiersFromString(hotKeyString);
-            Key key = HotkeyControl.HotkeyFromString(hotKeyString);
-            int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
-            int nextId = currentId + 1;
+        internal void RegisterHotKey(ModifierKeys modifiers, Key key) => currentId = GlobalHotkeys.RegisterHotkeyLocal(hwnd.Handle, currentId + 1, modifiers, key);
 
-            if (!NativeMethods.User32RegisterHotKey(hwnd.Handle, nextId, (uint)modifiers, (uint)virtualKeyCode))
-            {
-                string errorHint = NativeMethods.GetLastErrorHint();
-                throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
-            }
-
-            currentId = nextId;
-        }
+        internal void RegisterHotKey(string hotKeyString) => currentId = GlobalHotkeys.RegisterHotkeyLocal(hwnd.Handle, currentId + 1, hotKeyString);
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
