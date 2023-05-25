@@ -8,7 +8,7 @@ namespace SystemTrayMenu.Utilities
     using System.Diagnostics;
     using System.Linq;
     using System.Windows.Input;
-    using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
+    using SystemTrayMenu.UserInterface;
 
     internal static class SingleAppInstance
     {

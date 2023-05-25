@@ -105,6 +105,12 @@
     <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="UserInterface\HotkeyTextboxControl\**" />
+    <EmbeddedResource Remove="UserInterface\HotkeyTextboxControl\**" />
+    <None Remove="UserInterface\HotkeyTextboxControl\**" />
+    <Page Remove="UserInterface\HotkeyTextboxControl\**" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Remove="UserInterface\Menu.resx" />
   </ItemGroup>
   <ItemGroup>

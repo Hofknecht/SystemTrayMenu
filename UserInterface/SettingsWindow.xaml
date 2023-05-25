@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (c) 2022-2022 Peter Kirmeier -->
+<!-- Copyright (c) 2022-2023 Peter Kirmeier -->
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -50,7 +50,7 @@
                         </GroupBox>
                         <GroupBox Header="{u:Translate 'Hotkey'}">
                             <DockPanel LastChildFill="False">
-                                <Label Content="textBoxHotkeyPlaceholder" Background="Red" VerticalAlignment="Center"/>
+                                <local:HotkeyControl MinWidth="120" VerticalAlignment="Center"/>
                                 <Button x:Name="buttonHotkeyDefault" DockPanel.Dock="Right" Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonHotkeyDefault_Click" VerticalAlignment="Center"/>
                             </DockPanel>
                         </GroupBox>

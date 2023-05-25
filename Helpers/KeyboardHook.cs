@@ -9,7 +9,7 @@ namespace SystemTrayMenu.Helpers
     using System.Windows.Input;
     using System.Windows.Interop;
     using SystemTrayMenu.DllImports;
-    using SystemTrayMenu.UserInterface.HotkeyTextboxControl;
+    using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
 
     internal class KeyboardHook : IDisposable

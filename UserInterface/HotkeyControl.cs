@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
+namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Generic;
@@ -16,15 +16,14 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
     /// A simple control that allows the user to select pretty much any valid hotkey combination
     /// See: http://www.codeproject.com/KB/buttons/hotkeycontrol.aspx
     /// But is modified to fit in Greenshot, and have localized support.
-    /// modfied to fit SystemTrayMenu.
+    /// Modfied to fit SystemTrayMenu.
     /// </summary>
     public sealed class HotkeyControl : TextBox
     {
-        private static readonly bool IsWindows7OrOlder = Environment.OSVersion.Version.Major >= 6 && Environment.OSVersion.Version.Minor >= 1;
         private static readonly IntPtr HotkeyHwnd = (IntPtr)0x0000000000000000;
 
         // Holds the list of hotkeys
-        private static readonly IDictionary<int, HotKeyHandler> KeyHandlers = new Dictionary<int, HotKeyHandler>();
+        private static readonly IDictionary<int, Action> KeyHandlers = new Dictionary<int, Action>();
         private static int hotKeyCounter = 1;
 
         // ArrayLists used to enforce the use of proper modifiers.
@@ -42,6 +41,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
         public HotkeyControl()
         {
             // Disable right-clicking
+            ContextMenu = new();
             ContextMenu.Visibility = System.Windows.Visibility.Collapsed;
             ContextMenu.IsEnabled = false;
 
@@ -54,18 +54,6 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             PreviewTextInput += HandlePreviewTextInput;
 
             PopulateModifierLists();
-        }
-
-        public delegate void HotKeyHandler();
-
-        private enum Modifiers
-        {
-            NONE = 0,
-            ALT = 1,
-            CTRL = 2,
-            SHIFT = 4,
-            WIN = 8,
-            NOREPEAT = 0x4000,
         }
 
         private enum MapType : uint
@@ -103,7 +91,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             }
         }
 
-        public static string HotkeyToString(ModifierKeys modifierKeyCode, Key virtualKeyCode)
+        public static string HotkeyToString(ModifierKeys modifierKeyCode, Key key)
         {
             StringBuilder hotkeyString = new();
             if ((modifierKeyCode & ModifierKeys.Alt) != 0)
@@ -126,10 +114,10 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                 hotkeyString.Append("Win").Append(" + ");
             }
 
-            return hotkeyString.ToString() + virtualKeyCode;
+            return hotkeyString.ToString() + key.ToString();
         }
 
-        public static string HotkeyToLocalizedString(ModifierKeys modifierKeyCode, Key virtualKeyCode)
+        public static string HotkeyToLocalizedString(ModifierKeys modifierKeyCode, Key key)
         {
             StringBuilder hotkeyString = new();
             if ((modifierKeyCode & ModifierKeys.Alt) != 0)
@@ -152,7 +140,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                 hotkeyString.Append("Win").Append(" + ");
             }
 
-            return hotkeyString.ToString() + GetKeyName(virtualKeyCode);
+            return hotkeyString.ToString() + GetKeyName(key);
         }
 
         public static ModifierKeys HotkeyModifiersFromString(string modifiersString)
@@ -219,45 +207,19 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
         /// <summary>
         /// Register a hotkey.
         /// </summary>
-        /// <param name="modifierKeyCode">The modifier, e.g.: Modifiers.CTRL, Modifiers.NONE or Modifiers.ALT .</param>
-        /// <param name="virtualKeyCode">The virtual key code.</param>
+        /// <param name="modifierKeyCode">The key modifiers .</param>
+        /// <param name="key">The virtual key code.</param>
         /// <param name="handler">A HotKeyHandler, this will be called to handle the hotkey press.</param>
         /// <returns>the hotkey number, -1 if failed.</returns>
-        public static int RegisterHotKey(ModifierKeys modifierKeyCode, Key virtualKeyCode, HotKeyHandler handler)
+        public static int RegisterHotKey(ModifierKeys modifierKeyCode, Key key, Action handler)
         {
-            if (virtualKeyCode == Key.None)
+            if (key == Key.None)
             {
                 return 0;
             }
 
-            // Convert Modifiers to fit HKM_SETHOTKEY
-            uint modifiers = 0;
-            if ((modifierKeyCode & ModifierKeys.Alt) != 0)
-            {
-                modifiers |= (uint)Modifiers.ALT;
-            }
-
-            if ((modifierKeyCode & ModifierKeys.Control) != 0)
-            {
-                modifiers |= (uint)Modifiers.CTRL;
-            }
-
-            if ((modifierKeyCode & ModifierKeys.Shift) != 0)
-            {
-                modifiers |= (uint)Modifiers.SHIFT;
-            }
-
-            if ((modifierKeyCode & ModifierKeys.Windows) != 0)
-            {
-                modifiers |= (uint)Modifiers.WIN;
-            }
-
-            if (IsWindows7OrOlder)
-            {
-                modifiers |= (uint)Modifiers.NOREPEAT;
-            }
-
-            if (NativeMethods.User32RegisterHotKey(HotkeyHwnd, hotKeyCounter, modifiers, (uint)virtualKeyCode))
+            int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
+            if (NativeMethods.User32RegisterHotKey(HotkeyHwnd, hotKeyCounter, (uint)modifierKeyCode, (uint)virtualKeyCode))
             {
                 KeyHandlers.Add(hotKeyCounter, handler);
                 return hotKeyCounter++;
@@ -383,7 +345,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
             Redraw(true);
         }
 
-        public override string ToString() => HotkeyToString(HotkeyModifiers, Hotkey);
+        public override string ToString() => HotkeyToString(modifiers, hotkey);
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -450,7 +412,7 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
                 }
 
                 // Check all Ctrl+Alt keys
-                if ((modifiers == (ModifierKeys.Alt | ModifierKeys.Control)) && needNonAltGrModifier.Contains((int)hotkey))
+                if (modifiers == (ModifierKeys.Alt | ModifierKeys.Control) && needNonAltGrModifier.Contains((int)hotkey))
                 {
                     // Ctrl+Alt+4 etc won't work; reset hotkey and tell the user
                     hotkey = Key.None;
