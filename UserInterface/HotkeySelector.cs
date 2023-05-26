@@ -137,6 +137,19 @@ namespace SystemTrayMenu.UserInterface
             GC.SuppressFinalize(this);
         }
 
+        public override string ToString() => HotkeyToString(modifiers, hotkey);
+
+        /// <summary>
+        /// Used to get/set the hotkey (e.g. Key.A).
+        /// </summary>
+        /// <param name="hotkey">hotkey.</param>
+        public void SetHotkey(string hotkey)
+        {
+            this.hotkey = GlobalHotkeys.KeyFromString(hotkey);
+            modifiers = GlobalHotkeys.ModifierKeysFromString(hotkey);
+            Redraw(true);
+        }
+
         /// <summary>
         /// Register a hotkey.
         /// </summary>
@@ -150,7 +163,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 return 0;
             }
-
 
             try
             {
@@ -185,25 +197,12 @@ namespace SystemTrayMenu.UserInterface
         /// <summary>
         /// Clears the current hotkey and resets the TextBox.
         /// </summary>
-        public void ResetHotkey()
+        private void ResetHotkey()
         {
             hotkey = Key.None;
             modifiers = ModifierKeys.None;
             Redraw(false);
         }
-
-        /// <summary>
-        /// Used to get/set the hotkey (e.g. Key.A).
-        /// </summary>
-        /// <param name="hotkey">hotkey.</param>
-        public void SetHotkey(string hotkey)
-        {
-            this.hotkey = GlobalHotkeys.KeyFromString(hotkey);
-            modifiers = GlobalHotkeys.ModifierKeysFromString(hotkey);
-            Redraw(true);
-        }
-
-        public override string ToString() => HotkeyToString(modifiers, hotkey);
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {

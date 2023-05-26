@@ -176,19 +176,21 @@ namespace SystemTrayMenu.Helpers
             return hotkeyString.ToString() + GetKeyName(key);
         }
 
-        private static string GetKeyName(Key givenKey)
+        private static string GetKeyName(Key key)
         {
-            StringBuilder keyName = new();
-            const uint numpad = 55;
+            const uint MAPVK_VK_TO_VSC = 0;
+            const uint KF_EXTENDED = 0x100;
+            const uint SCANCODE_SIMULATED = 0x200;
+            const uint scanCodeNumPad = 0x37;
+            const uint scanCodePause = 0x45;
 
-            Key virtualKey = givenKey;
+            StringBuilder keyName = new(100);
             string keyString = string.Empty;
 
-            // Make VC's to real keys
-            switch (virtualKey)
+            switch (key)
             {
                 case Key.Multiply:
-                    if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
+                    if (NativeMethods.User32GetKeyNameText(scanCodeNumPad << 16, keyName, keyName.Capacity) > 0)
                     {
                         keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
                         if (keyString.Contains('('))
@@ -201,7 +203,7 @@ namespace SystemTrayMenu.Helpers
 
                     return keyString + " *";
                 case Key.Divide:
-                    if (NativeMethods.User32GetKeyNameText(numpad << 16, keyName, 100) > 0)
+                    if (NativeMethods.User32GetKeyNameText(scanCodeNumPad << 16, keyName, keyName.Capacity) > 0)
                     {
                         keyString = keyName.ToString().Replace("*", string.Empty, StringComparison.InvariantCulture).Trim().ToLowerInvariant();
                         if (keyString.Contains('('))
@@ -215,11 +217,15 @@ namespace SystemTrayMenu.Helpers
                     return keyString + " /";
             }
 
-            const uint MAPVK_VK_TO_VSC = 0;
-            uint scanCode = NativeMethods.User32MapVirtualKey((uint)virtualKey, MAPVK_VK_TO_VSC);
+            // Converting Windows Input Key Enums into Virtual-Key Codes into Scan Codes into Text
+            // - Windows Input Key Enums: https://learn.microsoft.com/en-us/dotnet/api/system.windows.input.key?view=windowsdesktop-7.0
+            // - Virtual-Key Codes:       https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+            // - Scan Codes:              https://learn.microsoft.com/en-us/windows/win32/inputdev/about-keyboard-input#scan-codes
+            uint virtualKeyCode = (uint)KeyInterop.VirtualKeyFromKey(key);
+            uint scanCode = NativeMethods.User32MapVirtualKey(virtualKeyCode, MAPVK_VK_TO_VSC);
 
-            // because MapVirtualKey strips the extended bit for some keys
-            switch (virtualKey)
+            // Handle names of some special keys
+            switch (key)
             {
                 case Key.Left:
                 case Key.Up:
@@ -232,18 +238,18 @@ namespace SystemTrayMenu.Helpers
                 case Key.Insert:
                 case Key.Delete:
                 case Key.NumLock:
-                    scanCode |= 0x100; // set extended bit
+                    scanCode |= KF_EXTENDED; // set extended bit (simulate origin from enhanced 101/102-key keyboard)
                     break;
-                case Key.PrintScreen: // PrintScreen
-                    scanCode = 311;
+                case Key.PrintScreen:
+                    scanCode = KF_EXTENDED | scanCodeNumPad;
                     break;
-                case Key.Pause: // PrintScreen
-                    scanCode = 69;
+                case Key.Pause:
+                    scanCode = scanCodePause;
                     break;
             }
 
-            scanCode |= 0x200;
-            if (NativeMethods.User32GetKeyNameText(scanCode << 16, keyName, 100) != 0)
+            scanCode |= SCANCODE_SIMULATED;
+            if (NativeMethods.User32GetKeyNameText(scanCode << 16, keyName, keyName.Capacity) != 0)
             {
                 string visibleName = keyName.ToString();
                 if (visibleName.Length > 1)
@@ -255,7 +261,7 @@ namespace SystemTrayMenu.Helpers
             }
             else
             {
-                return givenKey.ToString();
+                return key.ToString();
             }
         }
     }
