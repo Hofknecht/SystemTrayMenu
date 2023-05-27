@@ -13,7 +13,7 @@ namespace SystemTrayMenu.Handler
 
     internal class KeyboardInput : IDisposable
     {
-        private GlobalHotkeys.HotkeyRegistrationHandle? hotkeyHandle;
+        private GlobalHotkeys.IHotkeyRegistration? hotkeyRegistration;
 
         private Menu? focussedMenu;
 
@@ -27,7 +27,7 @@ namespace SystemTrayMenu.Handler
 
         public void Dispose()
         {
-            GlobalHotkeys.Unregister(hotkeyHandle);
+            GlobalHotkeys.Unregister(hotkeyRegistration);
         }
 
         internal bool RegisterHotKey(string hotKeyString)
@@ -36,7 +36,7 @@ namespace SystemTrayMenu.Handler
             {
                 try
                 {
-                    hotkeyHandle = GlobalHotkeys.Register(hotKeyString);
+                    hotkeyRegistration = GlobalHotkeys.Register(hotKeyString);
                 }
                 catch (InvalidOperationException ex)
                 {
@@ -44,7 +44,7 @@ namespace SystemTrayMenu.Handler
                     return false;
                 }
 
-                hotkeyHandle.KeyPressed += (_) => HotKeyPressed?.Invoke();
+                hotkeyRegistration.KeyPressed += (_) => HotKeyPressed?.Invoke();
             }
 
             return true;

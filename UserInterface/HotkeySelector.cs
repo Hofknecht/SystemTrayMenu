@@ -9,10 +9,13 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
+    using System.Windows.Media;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
+    using static SystemTrayMenu.Helpers.GlobalHotkeys;
 
     public sealed class HotkeySelector : TextBox
     {
@@ -21,9 +24,8 @@ namespace SystemTrayMenu.UserInterface
         private readonly IList<int> needNonShiftModifier = new List<int>();
         private readonly IList<int> needNonAltGrModifier = new List<int>();
 
-        private GlobalHotkeys.HotkeyRegistrationHandle? hotkeyHandle;
-
         // These variables store the current hotkey and modifier(s)
+        private IHotkeyRegistration? hotkeyHandle;
         private Key hotkey = Key.None;
         private ModifierKeys modifiers = ModifierKeys.None;
         private Action? handler;
@@ -39,8 +41,6 @@ namespace SystemTrayMenu.UserInterface
                 Visibility = System.Windows.Visibility.Collapsed,
                 IsEnabled = false,
             };
-
-            Text = string.Empty;
 
             // Handle events that occurs when keys are pressed
             KeyUp += HotkeyControl_KeyUp;
@@ -73,37 +73,7 @@ namespace SystemTrayMenu.UserInterface
             };
 
             PopulateModifierLists();
-        }
-
-        ~HotkeySelector()
-        {
-            GlobalHotkeys.Unregister(hotkeyHandle);
-        }
-
-        /// <summary>
-        /// Gets or sets used to get/set the hotkey (e.g. Key.A).
-        /// </summary>
-        public Key Hotkey
-        {
-            get => hotkey;
-            set
-            {
-                hotkey = value;
-                Redraw(true);
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets used to get/set the modifier keys (e.g. Alt | Control).
-        /// </summary>
-        public ModifierKeys HotkeyModifiers
-        {
-            get => modifiers;
-            set
-            {
-                modifiers = value;
-                Redraw(true);
-            }
+            SetHotkeyRegistration((IHotkeyRegistration?)null);
         }
 
         internal bool Reassigning { get; private set; }
@@ -137,13 +107,43 @@ namespace SystemTrayMenu.UserInterface
         public override string ToString() => HotkeyToString(modifiers, hotkey);
 
         /// <summary>
-        /// Used to get/set the hotkey (e.g. Key.A).
+        /// Set the registration interface the control is working on.
         /// </summary>
-        /// <param name="hotkey">hotkey.</param>
-        public void SetHotkey(string hotkey)
+        /// <param name="registration">Registration interface.</param>
+        internal void SetHotkeyRegistration(IHotkeyRegistration? registration)
         {
-            this.hotkey = GlobalHotkeys.KeyFromString(hotkey);
-            modifiers = GlobalHotkeys.ModifierKeysFromString(hotkey);
+            hotkeyHandle = registration;
+            if (hotkeyHandle != null)
+            {
+                hotkey = hotkeyHandle.GetKey();
+                modifiers = hotkeyHandle.GetModifierKeys();
+                Background = Brushes.LightGreen;
+            }
+            else
+            {
+                hotkey = Key.None;
+                modifiers = ModifierKeys.None;
+                Background = SystemColors.ControlBrush;
+            }
+
+            Text = HotkeyToLocalizedString(modifiers, hotkey);
+        }
+
+        /// <summary>
+        /// Set the registration interface the control is working on.
+        /// The registration interface is looked up by given hotkey combination string.
+        /// </summary>
+        /// <param name="hotkeyString">Hotkey combination string.</param>
+        internal void SetHotkeyRegistration(string hotkeyString) => SetHotkeyRegistration(FindRegistration(hotkeyString));
+
+        /// <summary>
+        /// Change the hotkey to given combination.
+        /// </summary>
+        /// <param name="hotkeyString">Hotkey combination string.</param>
+        internal void ChangeHotkey(string hotkeyString)
+        {
+            hotkey = KeyFromString(hotkeyString);
+            modifiers = ModifierKeysFromString(hotkeyString);
             Redraw(true);
         }
 
@@ -154,25 +154,29 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="key">The virtual key code.</param>
         /// <param name="handler">A HotKeyHandler, this will be called to handle the hotkey press.</param>
         /// <returns>the hotkey number, -1 if failed.</returns>
-        public int RegisterHotKey(ModifierKeys modifiers, Key key, Action handler)
+        internal int RegisterHotKey(ModifierKeys modifiers, Key key, Action handler)
         {
             if (key == Key.None)
             {
+                Background = SystemColors.ControlBrush;
                 return 0;
             }
 
             try
             {
-                hotkeyHandle = GlobalHotkeys.Register(modifiers, key);
+                hotkeyHandle = Register(modifiers, key);
             }
             catch (InvalidOperationException ex)
             {
+                Background = Brushes.IndianRed;
                 Log.Info($"Couldn't register hotkey modifier {modifiers} key {key} ex: " + ex.ToString());
                 return -1;
             }
 
             this.handler = handler;
             hotkeyHandle.KeyPressed += (_) => handler.Invoke();
+
+            Background = Brushes.LightGreen;
             return 1;
         }
 
@@ -186,7 +190,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void UnregisterHotKey()
         {
-            GlobalHotkeys.Unregister(hotkeyHandle);
+            Unregister(hotkeyHandle);
             hotkeyHandle = null;
         }
 
@@ -283,7 +287,7 @@ namespace SystemTrayMenu.UserInterface
                 hotkey = Key.None;
             }
 
-            Text = GlobalHotkeys.HotkeyToLocalizedString(modifiers, hotkey);
+            Text = HotkeyToLocalizedString(modifiers, hotkey);
         }
 
         /// <summary>

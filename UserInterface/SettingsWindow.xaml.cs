@@ -86,7 +86,7 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxCheckForUpdates.IsChecked = Settings.Default.CheckForUpdates;
 
-            textBoxHotkey.SetHotkey(Settings.Default.HotKey);
+            textBoxHotkey.SetHotkeyRegistration(Settings.Default.HotKey);
 
             InitializeLanguage();
             void InitializeLanguage()
@@ -737,7 +737,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ButtonHotkeyDefault_Click(object sender, RoutedEventArgs e)
         {
-            textBoxHotkey.SetHotkey((string)Settings.Default.Properties["HotKey"].DefaultValue); // see Settings.Default.HotKey
+            textBoxHotkey.ChangeHotkey((string)Settings.Default.Properties["HotKey"].DefaultValue); // see Settings.Default.HotKey
         }
 
         private void ButtonGeneralDefault_Click(object sender, RoutedEventArgs e)

@@ -30,6 +30,15 @@ namespace SystemTrayMenu.Helpers
             HWnd.AddHook(Hook);
         }
 
+        internal interface IHotkeyRegistration
+        {
+            event Action<IHotkeyRegistration>? KeyPressed;
+
+            ModifierKeys GetModifierKeys();
+
+            Key GetKey();
+        }
+
         /// <summary>
         /// Registers a global hotkey.
         /// Function is thread safe.
@@ -38,8 +47,8 @@ namespace SystemTrayMenu.Helpers
         /// </summary>
         /// <param name="modifiers">Hotkey modifiers.</param>
         /// <param name="key">Hotkey major key.</param>
-        /// <returns>Handle of this registration.</returns>
-        internal static HotkeyRegistrationHandle Register(ModifierKeys modifiers, Key key)
+        /// <returns>Registration interface.</returns>
+        internal static IHotkeyRegistration Register(ModifierKeys modifiers, Key key)
         {
             int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
             int id = 0;
@@ -61,14 +70,14 @@ namespace SystemTrayMenu.Helpers
                 }
             }
 
-            HotkeyRegistration regHandle = new()
+            HotkeyRegistration registration = new()
             {
                 Id = id,
                 Modifiers = modifiers,
                 Key = key,
             };
-            Registrations.Add(regHandle);
-            return regHandle;
+            Registrations.Add(registration);
+            return registration;
         }
 
         /// <summary>
@@ -78,8 +87,8 @@ namespace SystemTrayMenu.Helpers
         /// The caller needs to call UnregisterHotkey to free up ressources.
         /// </summary>
         /// <param name="hotKeyString">Hotkey string representation.</param>
-        /// <returns>Handle of this registration.</returns>
-        internal static HotkeyRegistrationHandle Register(string hotKeyString)
+        /// <returns>Registration interface.</returns>
+        internal static IHotkeyRegistration Register(string hotKeyString)
         {
             var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
             return Register(modifiers, key);
@@ -89,11 +98,11 @@ namespace SystemTrayMenu.Helpers
         /// Unregisters a global hotkey in a thread safe manner.
         /// Function is thread safe.
         /// </summary>
-        /// <param name="regHandle">Handle of the registration.</param>
+        /// <param name="registration">Registration interface.</param>
         /// <returns>true: Success or false: Failure.</returns>
-        internal static bool Unregister(HotkeyRegistrationHandle? regHandle)
+        internal static bool Unregister(IHotkeyRegistration? registration)
         {
-            if (regHandle == null || regHandle is not HotkeyRegistration reg || Registrations.Contains(reg))
+            if (registration == null || registration is not HotkeyRegistration reg || Registrations.Contains(reg))
             {
                 return true;
             }
@@ -109,6 +118,26 @@ namespace SystemTrayMenu.Helpers
             }
 
             return true;
+        }
+
+        // TODO: Instead of searching for the registration, it should be passed to the caller instead.
+        //       Only this ensures caller and registrator are talking about the SAME registration.
+        internal static IHotkeyRegistration? FindRegistration(string hotKeyString)
+        {
+            var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
+
+            lock (CriticalSectionLock)
+            {
+                foreach (var registration in Registrations)
+                {
+                    if (modifiers == registration.Modifiers && key == registration.Key)
+                    {
+                        return registration;
+                    }
+                }
+            }
+
+            return null;
         }
 
         internal static ModifierKeys ModifierKeysFromString(string modifiersString)
@@ -296,11 +325,11 @@ namespace SystemTrayMenu.Helpers
                 HotkeyRegistration? reg = null;
                 lock (CriticalSectionLock)
                 {
-                    foreach (var regHandle in Registrations)
+                    foreach (var registration in Registrations)
                     {
-                        if (modifiers == regHandle.Modifiers && key == regHandle.Key)
+                        if (modifiers == registration.Modifiers && key == registration.Key)
                         {
-                            reg = regHandle;
+                            reg = registration;
                             break;
                         }
                     }
@@ -313,22 +342,21 @@ namespace SystemTrayMenu.Helpers
             return IntPtr.Zero;
         }
 
-        internal abstract class HotkeyRegistrationHandle
+        private class HotkeyRegistration : IHotkeyRegistration
         {
-            internal event Action<HotkeyRegistrationHandle>? KeyPressed;
+            public event Action<IHotkeyRegistration>? KeyPressed;
 
-            protected void RiseKeyPressed() => KeyPressed?.Invoke(this);
-        }
-
-        private class HotkeyRegistration : HotkeyRegistrationHandle
-        {
             internal int Id { get; init; }
 
             internal ModifierKeys Modifiers { get; set; }
 
             internal Key Key { get; set; }
 
-            internal void OnKeyPressed() => RiseKeyPressed();
+            public ModifierKeys GetModifierKeys() => Modifiers;
+
+            public Key GetKey() => Key;
+
+            internal void OnKeyPressed() => KeyPressed?.Invoke(this);
         }
     }
 }
