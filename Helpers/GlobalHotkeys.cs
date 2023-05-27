@@ -7,94 +7,109 @@
 namespace SystemTrayMenu.Helpers
 {
     using System;
+    using System.Collections.Generic;
     using System.Text;
+    using System.Windows;
     using System.Windows.Input;
+    using System.Windows.Interop;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Utilities;
 
     internal static class GlobalHotkeys
     {
-        private static readonly object LastIdLock = new();
-        private static int lastId = 0;
+        private static readonly HwndSourceHook Hook = new (WndProc);
+        private static readonly Window Window = new();
+        private static readonly HwndSource HWnd;
 
-        /// <summary>
-        /// Registers a global hotkey in a thread safe manner.
-        /// Throws an InvalidOperationException on error.
-        /// The caller needs to call UnregisterHotkey to free up ressources.
-        /// </summary>
-        /// <param name="hWnd">Window handle receiving the events.</param>
-        /// <param name="modifiers">Hotkey modifiers.</param>
-        /// <param name="key">Hotkey major key.</param>
-        /// <returns>ID of registered key.</returns>
-        internal static int RegisterHotkeyGlobal(IntPtr hWnd, ModifierKeys modifiers, Key key)
+        private static readonly List<HotkeyRegistration> Registrations = new();
+        private static readonly object CriticalSectionLock = new();
+
+        static GlobalHotkeys()
         {
-            lock (LastIdLock)
-            {
-                lastId = RegisterHotkeyLocal(hWnd, lastId + 1, modifiers, key);
-            }
-
-            return lastId;
+            HWnd = HwndSource.FromHwnd(new WindowInteropHelper(Window).EnsureHandle());
+            HWnd.AddHook(Hook);
         }
 
         /// <summary>
-        /// Registers a global hotkey in a thread safe manner.
+        /// Registers a global hotkey.
+        /// Function is thread safe.
         /// Throws an InvalidOperationException on error.
         /// The caller needs to call UnregisterHotkey to free up ressources.
         /// </summary>
-        /// <param name="hWnd">Window handle receiving the events.</param>
-        /// <param name="hotKeyString">Hotkey string description.</param>
-        /// <returns>ID of registered key.</returns>
-        internal static int RegisterHotkeyGlobal(IntPtr hWnd, string hotKeyString)
-        {
-            ModifierKeys modifiers = ModifierKeysFromString(hotKeyString);
-            Key key = KeyFromString(hotKeyString);
-            return RegisterHotkeyGlobal(hWnd, modifiers, key);
-        }
-
-        /// <summary>
-        /// Registers a local hotkey (with given ID).
-        /// Throws an InvalidOperationException on error.
-        /// The caller needs to call UnregisterHotkey to free up ressources.
-        /// </summary>
-        /// <param name="hWnd">Window handle receiving the events.</param>
-        /// <param name="id">ID for the registration.</param>
         /// <param name="modifiers">Hotkey modifiers.</param>
         /// <param name="key">Hotkey major key.</param>
-        /// <returns>ID of registered key.</returns>
-        internal static int RegisterHotkeyLocal(IntPtr hWnd, int id, ModifierKeys modifiers, Key key)
+        /// <returns>Handle of this registration.</returns>
+        internal static HotkeyRegistrationHandle Register(ModifierKeys modifiers, Key key)
         {
             int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
-            if (!NativeMethods.User32RegisterHotKey(hWnd, id, (uint)modifiers, (uint)virtualKeyCode))
+            int id = 0;
+
+            lock (CriticalSectionLock)
             {
-                string errorHint = NativeMethods.GetLastErrorHint();
-                throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
+                foreach (var reg in Registrations)
+                {
+                    if (id < reg.Id)
+                    {
+                        id = reg.Id;
+                    }
+                }
+
+                if (!NativeMethods.User32RegisterHotKey(HWnd.Handle, id, (uint)modifiers, (uint)virtualKeyCode))
+                {
+                    string errorHint = NativeMethods.GetLastErrorHint();
+                    throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
+                }
             }
 
-            return id;
+            HotkeyRegistration regHandle = new()
+            {
+                Id = id,
+                Modifiers = modifiers,
+                Key = key,
+            };
+            Registrations.Add(regHandle);
+            return regHandle;
         }
 
         /// <summary>
-        /// Registers a local hotkey (with given ID).
+        /// Registers a global hotkey.
+        /// Function is thread safe.
         /// Throws an InvalidOperationException on error.
         /// The caller needs to call UnregisterHotkey to free up ressources.
         /// </summary>
-        /// <param name="hWnd">Window handle receiving the events.</param>
-        /// <param name="id">ID for the registration.</param>
-        /// <param name="hotKeyString">Hotkey string description.</param>
-        /// <returns>ID of registered key.</returns>
-        internal static int RegisterHotkeyLocal(IntPtr hWnd, int id, string hotKeyString)
+        /// <param name="hotKeyString">Hotkey string representation.</param>
+        /// <returns>Handle of this registration.</returns>
+        internal static HotkeyRegistrationHandle Register(string hotKeyString)
         {
-            ModifierKeys modifiers = ModifierKeysFromString(hotKeyString);
-            Key key = KeyFromString(hotKeyString);
-            return RegisterHotkeyLocal(hWnd, id, modifiers, key);
+            var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
+            return Register(modifiers, key);
         }
 
         /// <summary>
-        /// Unregisters a local or global hotkey.
+        /// Unregisters a global hotkey in a thread safe manner.
+        /// Function is thread safe.
         /// </summary>
-        /// <param name="hWnd">Window handle.</param>
-        /// <param name="id">ID for the registration.</param>
-        internal static void UnregisterHotkey(IntPtr hWnd, int id) => NativeMethods.User32UnregisterHotKey(hWnd, id);
+        /// <param name="regHandle">Handle of the registration.</param>
+        /// <returns>true: Success or false: Failure.</returns>
+        internal static bool Unregister(HotkeyRegistrationHandle? regHandle)
+        {
+            if (regHandle == null || regHandle is not HotkeyRegistration reg || Registrations.Contains(reg))
+            {
+                return true;
+            }
+
+            lock (CriticalSectionLock)
+            {
+                if (!NativeMethods.User32UnregisterHotKey(HWnd.Handle, reg.Id))
+                {
+                    return false;
+                }
+
+                Registrations.Remove(reg);
+            }
+
+            return true;
+        }
 
         internal static ModifierKeys ModifierKeysFromString(string modifiersString)
         {
@@ -263,6 +278,57 @@ namespace SystemTrayMenu.Helpers
             {
                 return key.ToString();
             }
+        }
+
+        private static (ModifierKeys, Key) ParseKeysAndModifiersFromString(string hotKeyString) => (ModifierKeysFromString(hotKeyString), KeyFromString(hotKeyString));
+
+        private static IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            const int WmHotkey = 0x0312;
+
+            // check if we got a hot key pressed.
+            if (msg == WmHotkey)
+            {
+                ModifierKeys modifiers = (ModifierKeys)((int)lParam & 0xFFFF);
+                int virtualKeyCode = ((int)lParam >> 16) & 0xFFFF;
+                Key key = KeyInterop.KeyFromVirtualKey(virtualKeyCode);
+
+                HotkeyRegistration? reg = null;
+                lock (CriticalSectionLock)
+                {
+                    foreach (var regHandle in Registrations)
+                    {
+                        if (modifiers == regHandle.Modifiers && key == regHandle.Key)
+                        {
+                            reg = regHandle;
+                            break;
+                        }
+                    }
+                }
+
+                reg?.OnKeyPressed();
+            }
+
+            handled = false;
+            return IntPtr.Zero;
+        }
+
+        internal abstract class HotkeyRegistrationHandle
+        {
+            internal event Action<HotkeyRegistrationHandle>? KeyPressed;
+
+            protected void RiseKeyPressed() => KeyPressed?.Invoke(this);
+        }
+
+        private class HotkeyRegistration : HotkeyRegistrationHandle
+        {
+            internal int Id { get; init; }
+
+            internal ModifierKeys Modifiers { get; set; }
+
+            internal Key Key { get; set; }
+
+            internal void OnKeyPressed() => RiseKeyPressed();
         }
     }
 }

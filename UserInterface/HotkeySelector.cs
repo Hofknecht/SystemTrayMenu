@@ -14,14 +14,14 @@ namespace SystemTrayMenu.UserInterface
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Utilities;
 
-    public sealed class HotkeySelector : TextBox, IDisposable
+    public sealed class HotkeySelector : TextBox
     {
         // ArrayLists used to enforce the use of proper modifiers.
         // Shift+A isn't a valid hotkey, for instance, as it would screw up when the user is typing.
         private readonly IList<int> needNonShiftModifier = new List<int>();
         private readonly IList<int> needNonAltGrModifier = new List<int>();
 
-        private KeyboardHook hook = new();
+        private GlobalHotkeys.HotkeyRegistrationHandle? hotkeyHandle;
 
         // These variables store the current hotkey and modifier(s)
         private Key hotkey = Key.None;
@@ -75,7 +75,10 @@ namespace SystemTrayMenu.UserInterface
             PopulateModifierLists();
         }
 
-        ~HotkeySelector() => Dispose();
+        ~HotkeySelector()
+        {
+            GlobalHotkeys.Unregister(hotkeyHandle);
+        }
 
         /// <summary>
         /// Gets or sets used to get/set the hotkey (e.g. Key.A).
@@ -131,12 +134,6 @@ namespace SystemTrayMenu.UserInterface
             return hotkeyString.ToString() + key.ToString();
         }
 
-        public void Dispose()
-        {
-            hook.Dispose();
-            GC.SuppressFinalize(this);
-        }
-
         public override string ToString() => HotkeyToString(modifiers, hotkey);
 
         /// <summary>
@@ -166,7 +163,7 @@ namespace SystemTrayMenu.UserInterface
 
             try
             {
-                hook.RegisterHotKey(modifiers, key);
+                hotkeyHandle = GlobalHotkeys.Register(modifiers, key);
             }
             catch (InvalidOperationException ex)
             {
@@ -175,7 +172,7 @@ namespace SystemTrayMenu.UserInterface
             }
 
             this.handler = handler;
-            hook.KeyPressed += (_, _) => handler.Invoke();
+            hotkeyHandle.KeyPressed += (_) => handler.Invoke();
             return 1;
         }
 
@@ -189,9 +186,8 @@ namespace SystemTrayMenu.UserInterface
 
         private void UnregisterHotKey()
         {
-            // TODO: Rework to allow deregistration?
-            hook.Dispose();
-            hook = new();
+            GlobalHotkeys.Unregister(hotkeyHandle);
+            hotkeyHandle = null;
         }
 
         /// <summary>
