@@ -40,6 +40,12 @@ namespace SystemTrayMenu.Helpers
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether hotkeys are enabled
+        /// (e.g. during user configuration dialog).
+        /// </summary>
+        internal static bool IsEnabled { get; set; } = true;
+
+        /// <summary>
         /// Registers a global hotkey.
         /// Function is thread safe.
         /// Throws an InvalidOperationException on error.
@@ -57,9 +63,9 @@ namespace SystemTrayMenu.Helpers
             {
                 foreach (var reg in Registrations)
                 {
-                    if (id < reg.Id)
+                    if (id <= reg.Id)
                     {
-                        id = reg.Id;
+                        id = reg.Id + 1; // TODO: Rework to re-use gaps
                     }
                 }
 
@@ -102,7 +108,7 @@ namespace SystemTrayMenu.Helpers
         /// <returns>true: Success or false: Failure.</returns>
         internal static bool Unregister(IHotkeyRegistration? registration)
         {
-            if (registration == null || registration is not HotkeyRegistration reg || Registrations.Contains(reg))
+            if (registration == null || registration is not HotkeyRegistration reg || !Registrations.Contains(reg))
             {
                 return true;
             }
@@ -118,6 +124,61 @@ namespace SystemTrayMenu.Helpers
             }
 
             return true;
+        }
+
+        internal static bool Reassign(IHotkeyRegistration? registration, ModifierKeys modifiers, Key key)
+        {
+            if (registration == null || registration is not HotkeyRegistration reg || !Registrations.Contains(reg))
+            {
+                return false;
+            }
+
+            if (modifiers == reg.Modifiers && key == reg.Key)
+            {
+                return true; // Yes, nothing changed, but we return true as requested key is properly registered even when unchanged.
+            }
+
+            int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
+            int id = 0;
+
+            lock (CriticalSectionLock)
+            {
+                foreach (var regs in Registrations)
+                {
+                    if (id <= regs.Id)
+                    {
+                        id = reg.Id + 1; // TODO: Rework to re-use gaps
+                    }
+                }
+
+                if (!NativeMethods.User32RegisterHotKey(HWnd.Handle, id, (uint)modifiers, (uint)virtualKeyCode))
+                {
+                    string errorHint = NativeMethods.GetLastErrorHint();
+                    throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
+                }
+
+                // In case unregister failes, unfortunately registration remains
+                // but will not trigger anything as we change our hotkey registration.
+                // However, this means the hotkey keeps being registered with this application
+                // and the key combination will not be availalbe for re-registration till app restart.
+                // TODO: Decide how to handle this? Restart App? Try keep old registartion and not update it?
+                if (!NativeMethods.User32UnregisterHotKey(HWnd.Handle, reg.Id))
+                {
+                    Log.Info("Hotkey registration cannot unregister key " + reg.Modifiers.ToString() + " with modifiers " + reg.Modifiers.ToString());
+                }
+
+                reg.Id = id;
+                reg.Modifiers = modifiers;
+                reg.Key = key;
+            }
+
+            return true;
+        }
+
+        internal static bool Reassign(IHotkeyRegistration? registration, string hotKeyString)
+        {
+            var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
+            return Reassign(registration, modifiers, key);
         }
 
         // TODO: Instead of searching for the registration, it should be passed to the caller instead.
@@ -316,7 +377,7 @@ namespace SystemTrayMenu.Helpers
             const int WmHotkey = 0x0312;
 
             // check if we got a hot key pressed.
-            if (msg == WmHotkey)
+            if (msg == WmHotkey && IsEnabled)
             {
                 ModifierKeys modifiers = (ModifierKeys)((int)lParam & 0xFFFF);
                 int virtualKeyCode = ((int)lParam >> 16) & 0xFFFF;
@@ -346,7 +407,7 @@ namespace SystemTrayMenu.Helpers
         {
             public event Action<IHotkeyRegistration>? KeyPressed;
 
-            internal int Id { get; init; }
+            internal int Id { get; set; }
 
             internal ModifierKeys Modifiers { get; set; }
 

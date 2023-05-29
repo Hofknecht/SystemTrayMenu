@@ -14,6 +14,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Input;
     using System.Windows.Media.Imaging;
     using Microsoft.Win32;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
@@ -445,7 +446,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Escape && !textBoxHotkey.Reassigning)
+            if (e.Key == Key.Escape && GlobalHotkeys.IsEnabled)
             {
                 Close();
             }

@@ -25,7 +25,7 @@ namespace SystemTrayMenu.UserInterface
         private readonly IList<int> needNonAltGrModifier = new List<int>();
 
         // These variables store the current hotkey and modifier(s)
-        private IHotkeyRegistration? hotkeyHandle;
+        private IHotkeyRegistration? hotkeyRegistration;
         private Key hotkey = Key.None;
         private ModifierKeys modifiers = ModifierKeys.None;
         private Action? handler;
@@ -48,11 +48,7 @@ namespace SystemTrayMenu.UserInterface
             PreviewKeyDown += HandlePreviewKeyDown;
             PreviewTextInput += HandlePreviewTextInput;
 
-            GotFocus += (_, _) =>
-            {
-                UnregisterHotKey();
-                Reassigning = true;
-            };
+            GotFocus += (_, _) => GlobalHotkeys.IsEnabled = false;
             LostFocus += (_, _) =>
             {
 #if TODO // HOTKEY
@@ -66,17 +62,13 @@ namespace SystemTrayMenu.UserInterface
                 /// </summary>
                 /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
                 RegisterHotkeys(false);
-#else
-                ReregisterHotKey();
 #endif
-                Reassigning = false;
+                GlobalHotkeys.IsEnabled = true;
             };
 
             PopulateModifierLists();
             SetHotkeyRegistration((IHotkeyRegistration?)null);
         }
-
-        internal bool Reassigning { get; private set; }
 
         public static string HotkeyToString(ModifierKeys modifierKeyCode, Key key)
         {
@@ -112,11 +104,11 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="registration">Registration interface.</param>
         internal void SetHotkeyRegistration(IHotkeyRegistration? registration)
         {
-            hotkeyHandle = registration;
-            if (hotkeyHandle != null)
+            hotkeyRegistration = registration;
+            if (hotkeyRegistration != null)
             {
-                hotkey = hotkeyHandle.GetKey();
-                modifiers = hotkeyHandle.GetModifierKeys();
+                hotkey = hotkeyRegistration.GetKey();
+                modifiers = hotkeyRegistration.GetModifierKeys();
                 Background = Brushes.LightGreen;
             }
             else
@@ -140,12 +132,7 @@ namespace SystemTrayMenu.UserInterface
         /// Change the hotkey to given combination.
         /// </summary>
         /// <param name="hotkeyString">Hotkey combination string.</param>
-        internal void ChangeHotkey(string hotkeyString)
-        {
-            hotkey = KeyFromString(hotkeyString);
-            modifiers = ModifierKeysFromString(hotkeyString);
-            Redraw(true);
-        }
+        internal void ChangeHotkey(string hotkeyString) => Reassign(hotkeyRegistration, hotkeyString);
 
         /// <summary>
         /// Register a hotkey.
@@ -164,7 +151,7 @@ namespace SystemTrayMenu.UserInterface
 
             try
             {
-                hotkeyHandle = Register(modifiers, key);
+                hotkeyRegistration = Register(modifiers, key);
             }
             catch (InvalidOperationException ex)
             {
@@ -174,24 +161,10 @@ namespace SystemTrayMenu.UserInterface
             }
 
             this.handler = handler;
-            hotkeyHandle.KeyPressed += (_) => handler.Invoke();
+            hotkeyRegistration.KeyPressed += (_) => handler.Invoke();
 
             Background = Brushes.LightGreen;
             return 1;
-        }
-
-        private void ReregisterHotKey()
-        {
-            if (handler != null)
-            {
-                RegisterHotKey(modifiers, hotkey, handler);
-            }
-        }
-
-        private void UnregisterHotKey()
-        {
-            Unregister(hotkeyHandle);
-            hotkeyHandle = null;
         }
 
         /// <summary>
@@ -354,6 +327,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
+                Reassign(hotkeyRegistration, modifiers, hotkey);
                 Redraw(false);
             }
         }
