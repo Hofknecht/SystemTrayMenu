@@ -87,7 +87,7 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxCheckForUpdates.IsChecked = Settings.Default.CheckForUpdates;
 
-            textBoxHotkey.SetHotkeyRegistration(Settings.Default.HotKey);
+            textBoxHotkey.SetHotkeyRegistration(GlobalHotkeys.GetLastCreatedHotkeyFunction());
 
             InitializeLanguage();
             void InitializeLanguage()

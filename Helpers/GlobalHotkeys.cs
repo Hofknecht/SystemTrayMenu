@@ -21,8 +21,10 @@ namespace SystemTrayMenu.Helpers
         private static readonly Window Window = new();
         private static readonly HwndSource HWnd;
 
-        private static readonly List<HotkeyRegistration> Registrations = new();
+        private static readonly Dictionary<int, HotkeyRegistration> Registrations = new();
         private static readonly object CriticalSectionLock = new();
+
+        private static IHotkeyFunction? lastCreatedHotkeyFunction; // TODO: Remove this hack! See: GetLastCreatedHotkeyFunction
 
         static GlobalHotkeys()
         {
@@ -30,13 +32,19 @@ namespace SystemTrayMenu.Helpers
             HWnd.AddHook(Hook);
         }
 
-        internal interface IHotkeyRegistration
+        internal interface IHotkeyFunction
         {
-            event Action<IHotkeyRegistration>? KeyPressed;
+            event Action<IHotkeyFunction>? KeyPressed;
 
             ModifierKeys GetModifierKeys();
 
             Key GetKey();
+
+            void Register(ModifierKeys modifiers, Key key);
+
+            void Register(string hotKeyString);
+
+            void Unregister();
         }
 
         /// <summary>
@@ -45,161 +53,11 @@ namespace SystemTrayMenu.Helpers
         /// </summary>
         internal static bool IsEnabled { get; set; } = true;
 
-        /// <summary>
-        /// Registers a global hotkey.
-        /// Function is thread safe.
-        /// Throws an InvalidOperationException on error.
-        /// The caller needs to call UnregisterHotkey to free up ressources.
-        /// </summary>
-        /// <param name="modifiers">Hotkey modifiers.</param>
-        /// <param name="key">Hotkey major key.</param>
-        /// <returns>Registration interface.</returns>
-        internal static IHotkeyRegistration Register(ModifierKeys modifiers, Key key)
-        {
-            int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
-            int id = 0;
-
-            lock (CriticalSectionLock)
-            {
-                foreach (var reg in Registrations)
-                {
-                    if (id <= reg.Id)
-                    {
-                        id = reg.Id + 1; // TODO: Rework to re-use gaps
-                    }
-                }
-
-                if (!NativeMethods.User32RegisterHotKey(HWnd.Handle, id, (uint)modifiers, (uint)virtualKeyCode))
-                {
-                    string errorHint = NativeMethods.GetLastErrorHint();
-                    throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
-                }
-            }
-
-            HotkeyRegistration registration = new()
-            {
-                Id = id,
-                Modifiers = modifiers,
-                Key = key,
-            };
-            Registrations.Add(registration);
-            return registration;
-        }
-
-        /// <summary>
-        /// Registers a global hotkey.
-        /// Function is thread safe.
-        /// Throws an InvalidOperationException on error.
-        /// The caller needs to call UnregisterHotkey to free up ressources.
-        /// </summary>
-        /// <param name="hotKeyString">Hotkey string representation.</param>
-        /// <returns>Registration interface.</returns>
-        internal static IHotkeyRegistration Register(string hotKeyString)
-        {
-            var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
-            return Register(modifiers, key);
-        }
-
-        /// <summary>
-        /// Unregisters a global hotkey in a thread safe manner.
-        /// Function is thread safe.
-        /// </summary>
-        /// <param name="registration">Registration interface.</param>
-        /// <returns>true: Success or false: Failure.</returns>
-        internal static bool Unregister(IHotkeyRegistration? registration)
-        {
-            if (registration == null || registration is not HotkeyRegistration reg || !Registrations.Contains(reg))
-            {
-                return true;
-            }
-
-            lock (CriticalSectionLock)
-            {
-                if (!NativeMethods.User32UnregisterHotKey(HWnd.Handle, reg.Id))
-                {
-                    return false;
-                }
-
-                Registrations.Remove(reg);
-            }
-
-            return true;
-        }
-
-        internal static bool Reassign(IHotkeyRegistration? registration, ModifierKeys modifiers, Key key)
-        {
-            if (registration == null || registration is not HotkeyRegistration reg || !Registrations.Contains(reg))
-            {
-                return false;
-            }
-
-            if (modifiers == reg.Modifiers && key == reg.Key)
-            {
-                return true; // Yes, nothing changed, but we return true as requested key is properly registered even when unchanged.
-            }
-
-            int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
-            int id = 0;
-
-            lock (CriticalSectionLock)
-            {
-                foreach (var regs in Registrations)
-                {
-                    if (id <= regs.Id)
-                    {
-                        id = reg.Id + 1; // TODO: Rework to re-use gaps
-                    }
-                }
-
-                if (!NativeMethods.User32RegisterHotKey(HWnd.Handle, id, (uint)modifiers, (uint)virtualKeyCode))
-                {
-                    string errorHint = NativeMethods.GetLastErrorHint();
-                    throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
-                }
-
-                // In case unregister failes, unfortunately registration remains
-                // but will not trigger anything as we change our hotkey registration.
-                // However, this means the hotkey keeps being registered with this application
-                // and the key combination will not be availalbe for re-registration till app restart.
-                // TODO: Decide how to handle this? Restart App? Try keep old registartion and not update it?
-                if (!NativeMethods.User32UnregisterHotKey(HWnd.Handle, reg.Id))
-                {
-                    Log.Info("Hotkey registration cannot unregister key " + reg.Modifiers.ToString() + " with modifiers " + reg.Modifiers.ToString());
-                }
-
-                reg.Id = id;
-                reg.Modifiers = modifiers;
-                reg.Key = key;
-            }
-
-            return true;
-        }
-
-        internal static bool Reassign(IHotkeyRegistration? registration, string hotKeyString)
-        {
-            var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
-            return Reassign(registration, modifiers, key);
-        }
+        internal static IHotkeyFunction Create() => lastCreatedHotkeyFunction = new HotkeyFunction();
 
         // TODO: Instead of searching for the registration, it should be passed to the caller instead.
         //       Only this ensures caller and registrator are talking about the SAME registration.
-        internal static IHotkeyRegistration? FindRegistration(string hotKeyString)
-        {
-            var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
-
-            lock (CriticalSectionLock)
-            {
-                foreach (var registration in Registrations)
-                {
-                    if (modifiers == registration.Modifiers && key == registration.Key)
-                    {
-                        return registration;
-                    }
-                }
-            }
-
-            return null;
-        }
+        internal static IHotkeyFunction? GetLastCreatedHotkeyFunction() => lastCreatedHotkeyFunction;
 
         internal static ModifierKeys ModifierKeysFromString(string modifiersString)
         {
@@ -386,7 +244,7 @@ namespace SystemTrayMenu.Helpers
                 HotkeyRegistration? reg = null;
                 lock (CriticalSectionLock)
                 {
-                    foreach (var registration in Registrations)
+                    foreach (var (id, registration) in Registrations)
                     {
                         if (modifiers == registration.Modifiers && key == registration.Key)
                         {
@@ -403,21 +261,152 @@ namespace SystemTrayMenu.Helpers
             return IntPtr.Zero;
         }
 
-        private class HotkeyRegistration : IHotkeyRegistration
+        /// <summary>
+        /// Registers a global hotkey.
+        /// Function is thread safe.
+        /// Throws an InvalidOperationException on error.
+        /// The caller needs to call Unregister to free up ressources.
+        /// </summary>
+        /// <param name="modifiers">Hotkey modifiers.</param>
+        /// <param name="key">Hotkey major key.</param>
+        /// <returns>Hotkey registration.</returns>
+        private static HotkeyRegistration Register(ModifierKeys modifiers, Key key)
         {
-            public event Action<IHotkeyRegistration>? KeyPressed;
+            HotkeyRegistration registration;
+            int virtualKeyCode = KeyInterop.VirtualKeyFromKey(key);
+            int id = 0;
 
-            internal int Id { get; set; }
+            lock (CriticalSectionLock)
+            {
+                while (Registrations.ContainsKey(id))
+                {
+                    id++;
+                }
 
-            internal ModifierKeys Modifiers { get; set; }
+                if (!NativeMethods.User32RegisterHotKey(HWnd.Handle, id, (uint)modifiers, (uint)virtualKeyCode))
+                {
+                    string errorHint = NativeMethods.GetLastErrorHint();
+                    throw new InvalidOperationException(Translator.GetText("Could not register the hot key.") + " (" + errorHint + ")");
+                }
 
-            internal Key Key { get; set; }
+                registration = new()
+                {
+                    Id = id,
+                    Modifiers = modifiers,
+                    Key = key,
+                };
+                Registrations.Add(id, registration);
+            }
 
-            public ModifierKeys GetModifierKeys() => Modifiers;
+            return registration;
+        }
 
-            public Key GetKey() => Key;
+        /// <summary>
+        /// Unregisters a global hotkey.
+        /// Function is thread safe.
+        /// </summary>
+        /// <param name="registration">Hotkey registration.</param>
+        private static void Unregister(HotkeyRegistration registration)
+        {
+            lock (CriticalSectionLock)
+            {
+                if (Registrations.ContainsValue(registration))
+                {
+                    if (!NativeMethods.User32UnregisterHotKey(HWnd.Handle, registration.Id))
+                    {
+                        Log.Info("Hotkey registration cannot unregister key " + registration.Modifiers.ToString() + " with modifiers " + registration.Modifiers.ToString());
+                    }
 
-            internal void OnKeyPressed() => KeyPressed?.Invoke(this);
+                    // In case unregister failes, unfortunately registration remains
+                    // but will not trigger anything as we remove the hotkey registration.
+                    // However, this means the hotkey keeps being registered with this application
+                    // and the key combination will not be availalbe for re-registration till app restart.
+                    // TODO: Decide how to handle this? Restart App? Try keep old registartion and not update it?
+                    Registrations.Remove(registration.Id);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Registers a new global hotkey and unregisters the old one.
+        /// Function is thread safe.
+        /// Throws an InvalidOperationException on error.
+        /// The caller needs to call Unregister to free up ressources in case a new registration is returned.
+        /// </summary>
+        /// <param name="registration">Old hotkey registration.</param>
+        /// <param name="modifiers">Hotkey modifiers.</param>
+        /// <param name="key">Hotkey key.</param>
+        /// <returns>New hotkey registration or null (nothing changed).</returns>
+        private static HotkeyRegistration? Reassign(HotkeyRegistration registration, ModifierKeys modifiers, Key key)
+        {
+            if (!Registrations.ContainsValue(registration) ||
+                (modifiers == registration.Modifiers && key == registration.Key))
+            {
+                // Either registration is not valid or
+                // nothing would as requested key is already properly registered.
+                return null;
+            }
+
+            HotkeyRegistration reg = Register(modifiers, key);
+            Unregister(registration);
+            return reg;
+        }
+
+        private class HotkeyRegistration
+        {
+            public event Action? KeyPressed;
+
+            internal int Id { get; init; }
+
+            internal ModifierKeys Modifiers { get; init; }
+
+            internal Key Key { get; init; }
+
+            internal void OnKeyPressed() => KeyPressed?.Invoke();
+        }
+
+        private class HotkeyFunction : IHotkeyFunction
+        {
+            public event Action<IHotkeyFunction>? KeyPressed;
+
+            internal HotkeyRegistration? Registration { get; set; }
+
+            public void Unregister()
+            {
+                if (Registration != null)
+                {
+                    GlobalHotkeys.Unregister(Registration);
+                    Registration = null;
+                }
+            }
+
+            public ModifierKeys GetModifierKeys() => Registration?.Modifiers ?? ModifierKeys.None;
+
+            public Key GetKey() => Registration?.Key ?? Key.None;
+
+            public void Register(ModifierKeys modifiers, Key key)
+            {
+                if (Registration == null)
+                {
+                    Registration = GlobalHotkeys.Register(modifiers, key);
+                    Registration.KeyPressed += () => KeyPressed?.Invoke(this);
+                }
+                else
+                {
+                    HotkeyRegistration? reg = Reassign(Registration, modifiers, key);
+                    if (reg != null)
+                    {
+                        Registration = reg;
+                        Registration.KeyPressed += () => KeyPressed?.Invoke(this);
+                    }
+                }
+            }
+
+            public void Register(string hotKeyString)
+            {
+                var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
+                Register(modifiers, key);
+            }
         }
     }
 }

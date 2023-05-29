@@ -25,7 +25,7 @@ namespace SystemTrayMenu.UserInterface
         private readonly IList<int> needNonAltGrModifier = new List<int>();
 
         // These variables store the current hotkey and modifier(s)
-        private IHotkeyRegistration? hotkeyRegistration;
+        private IHotkeyFunction? hotkeyFunction;
         private Key hotkey = Key.None;
         private ModifierKeys modifiers = ModifierKeys.None;
         private Action? handler;
@@ -67,7 +67,7 @@ namespace SystemTrayMenu.UserInterface
             };
 
             PopulateModifierLists();
-            SetHotkeyRegistration((IHotkeyRegistration?)null);
+            SetHotkeyRegistration((IHotkeyFunction?)null);
         }
 
         public static string HotkeyToString(ModifierKeys modifierKeyCode, Key key)
@@ -99,40 +99,41 @@ namespace SystemTrayMenu.UserInterface
         public override string ToString() => HotkeyToString(modifiers, hotkey);
 
         /// <summary>
-        /// Set the registration interface the control is working on.
+        /// Set the hotkey function the control is working on.
         /// </summary>
-        /// <param name="registration">Registration interface.</param>
-        internal void SetHotkeyRegistration(IHotkeyRegistration? registration)
+        /// <param name="hotkeyFunction">Hotkey function interface.</param>
+        internal void SetHotkeyRegistration(IHotkeyFunction? hotkeyFunction)
         {
-            hotkeyRegistration = registration;
-            if (hotkeyRegistration != null)
+            this.hotkeyFunction = hotkeyFunction;
+            UpdateHotkeyRegistration();
+        }
+
+        /// <summary>
+        /// Set the hotkey function the control is working on.
+        /// </summary>
+        /// <param name="hotkeyFunction">Hotkey function interface.</param>
+        internal void UpdateHotkeyRegistration()
+        {
+            hotkey = hotkeyFunction?.GetKey() ?? Key.None;
+            modifiers = hotkeyFunction?.GetModifierKeys() ?? ModifierKeys.None;
+
+            if (modifiers == ModifierKeys.None && hotkey == Key.None)
             {
-                hotkey = hotkeyRegistration.GetKey();
-                modifiers = hotkeyRegistration.GetModifierKeys();
-                Background = Brushes.LightGreen;
+                Background = SystemColors.ControlBrush;
             }
             else
             {
-                hotkey = Key.None;
-                modifiers = ModifierKeys.None;
-                Background = SystemColors.ControlBrush;
+                Background = Brushes.LightGreen;
             }
 
             Text = HotkeyToLocalizedString(modifiers, hotkey);
         }
 
         /// <summary>
-        /// Set the registration interface the control is working on.
-        /// The registration interface is looked up by given hotkey combination string.
-        /// </summary>
-        /// <param name="hotkeyString">Hotkey combination string.</param>
-        internal void SetHotkeyRegistration(string hotkeyString) => SetHotkeyRegistration(FindRegistration(hotkeyString));
-
-        /// <summary>
         /// Change the hotkey to given combination.
         /// </summary>
         /// <param name="hotkeyString">Hotkey combination string.</param>
-        internal void ChangeHotkey(string hotkeyString) => Reassign(hotkeyRegistration, hotkeyString);
+        internal void ChangeHotkey(string hotkeyString) => hotkeyFunction?.Register(hotkeyString);
 
         /// <summary>
         /// Register a hotkey.
@@ -151,7 +152,7 @@ namespace SystemTrayMenu.UserInterface
 
             try
             {
-                hotkeyRegistration = Register(modifiers, key);
+                hotkeyFunction?.Register(modifiers, key);
             }
             catch (InvalidOperationException ex)
             {
@@ -161,7 +162,10 @@ namespace SystemTrayMenu.UserInterface
             }
 
             this.handler = handler;
-            hotkeyRegistration.KeyPressed += (_) => handler.Invoke();
+            if (hotkeyFunction != null)
+            {
+                hotkeyFunction.KeyPressed += (_) => handler.Invoke();
+            }
 
             Background = Brushes.LightGreen;
             return 1;
@@ -172,17 +176,16 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         private void ResetHotkey()
         {
-            hotkey = Key.None;
-            modifiers = ModifierKeys.None;
-            Redraw(false);
+            hotkeyFunction?.Unregister();
+            UpdateHotkeyRegistration();
         }
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
         {
-            // Handle some misc keys, such as Delete and Shift+Insert
             ModifierKeys modifiers = Keyboard.Modifiers;
             switch (e.Key)
             {
+                case Key.Back:
                 case Key.Delete:
                     ResetHotkey();
                     e.Handled = true;
@@ -199,56 +202,43 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        /// <summary>
-        /// Redraws the TextBox when necessary.
-        /// </summary>
-        /// <param name="bCalledProgramatically">Specifies whether this function was called by the Hotkey/HotkeyModifiers properties or by the user.</param>
-        private void Redraw(bool bCalledProgramatically)
+        // TODO: Instead of Redraw this seem to act more like an input filter for valid combinations?
+        //       Maybe move to places right before Register() calls of the hotkeyFunction
+        private void Redraw()
         {
-            // No hotkey set
-            if (hotkey == Key.None)
+            // No modifier or shift only, AND a hotkey that needs another modifier
+            if ((modifiers == ModifierKeys.Shift || modifiers == ModifierKeys.None) && needNonShiftModifier.Contains((int)hotkey))
             {
-                Text = string.Empty;
-                return;
-            }
-
-            // Only validate input if it comes from the user
-            if (bCalledProgramatically == false)
-            {
-                // No modifier or shift only, AND a hotkey that needs another modifier
-                if ((modifiers == ModifierKeys.Shift || modifiers == ModifierKeys.None) && needNonShiftModifier.Contains((int)hotkey))
+                if (modifiers == ModifierKeys.None)
                 {
-                    if (modifiers == ModifierKeys.None)
+                    // Set Ctrl+Alt as the modifier unless Ctrl+Alt+<key> won't work...
+                    if (needNonAltGrModifier.Contains((int)hotkey) == false)
                     {
-                        // Set Ctrl+Alt as the modifier unless Ctrl+Alt+<key> won't work...
-                        if (needNonAltGrModifier.Contains((int)hotkey) == false)
-                        {
-                            modifiers = ModifierKeys.Alt | ModifierKeys.Control;
-                        }
-                        else
-                        {
-                            // ... in that case, use Shift+Alt instead.
-                            modifiers = ModifierKeys.Alt | ModifierKeys.Shift;
-                        }
+                        modifiers = ModifierKeys.Alt | ModifierKeys.Control;
                     }
                     else
                     {
-                        // User pressed Shift and an invalid key (e.g. a letter or a number),
-                        // that needs another set of modifier keys
-                        hotkey = Key.None;
-                        Text = string.Empty;
-                        return;
+                        // ... in that case, use Shift+Alt instead.
+                        modifiers = ModifierKeys.Alt | ModifierKeys.Shift;
                     }
                 }
-
-                // Check all Ctrl+Alt keys
-                if (modifiers == (ModifierKeys.Alt | ModifierKeys.Control) && needNonAltGrModifier.Contains((int)hotkey))
+                else
                 {
-                    // Ctrl+Alt+4 etc won't work; reset hotkey and tell the user
+                    // User pressed Shift and an invalid key (e.g. a letter or a number),
+                    // that needs another set of modifier keys
                     hotkey = Key.None;
                     Text = string.Empty;
                     return;
                 }
+            }
+
+            // Check all Ctrl+Alt keys
+            if (modifiers == (ModifierKeys.Alt | ModifierKeys.Control) && needNonAltGrModifier.Contains((int)hotkey))
+            {
+                // Ctrl+Alt+4 etc won't work; reset hotkey and tell the user
+                hotkey = Key.None;
+                Text = string.Empty;
+                return;
             }
 
             // I have no idea why this is needed, but it is. Without this code, pressing only Ctrl
@@ -327,8 +317,8 @@ namespace SystemTrayMenu.UserInterface
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
-                Reassign(hotkeyRegistration, modifiers, hotkey);
-                Redraw(false);
+                hotkeyFunction?.Register(modifiers, hotkey);
+                UpdateHotkeyRegistration();
             }
         }
 
@@ -343,7 +333,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
-                Redraw(false);
+                UpdateHotkeyRegistration();
             }
             else if (hotkey == Key.None && modifiers == ModifierKeys.None)
             {
