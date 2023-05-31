@@ -21,8 +21,8 @@ namespace SystemTrayMenu.UserInterface
     {
         // ArrayLists used to enforce the use of proper modifiers.
         // Shift+A isn't a valid hotkey, for instance, as it would screw up when the user is typing.
-        private readonly IList<int> needNonShiftModifier = new List<int>();
-        private readonly IList<int> needNonAltGrModifier = new List<int>();
+        private readonly List<Key> needNonShiftModifier = new ();
+        private readonly List<Key> needNonAltGrModifier = new ();
 
         // These variables store the current hotkey and modifier(s)
         private Key hotkey = Key.None;
@@ -47,22 +47,7 @@ namespace SystemTrayMenu.UserInterface
             PreviewTextInput += HandlePreviewTextInput;
 
             GotFocus += (_, _) => GlobalHotkeys.IsEnabled = false;
-            LostFocus += (_, _) =>
-            {
-#if TODO // HOTKEY
-                Settings.Default.HotKey =
-                    new KeysConverter().ConvertToInvariantString(
-                    textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-#endif
-#if TODO // HOTKEY
-                /// <summary>
-                /// Registers all hotkeys as configured, displaying a dialog in case of hotkey conflicts with other tools.
-                /// </summary>
-                /// <returns>Whether the hotkeys could be registered to the users content. This also applies if conflicts arise and the user decides to ignore these (i.e. not to register the conflicting hotkey).</returns>
-                RegisterHotkeys(false);
-#endif
-                GlobalHotkeys.IsEnabled = true;
-            };
+            LostFocus += (_, _) => GlobalHotkeys.IsEnabled = true;
 
             PopulateModifierLists();
             SetHotkeyRegistration((IHotkeyFunction?)null);
@@ -129,7 +114,7 @@ namespace SystemTrayMenu.UserInterface
                 Background = Brushes.IndianRed;
             }
 
-            Text = HotkeyToLocalizedString(modifiers, hotkey);
+            Text = ModifiersAndKeyToString(modifiers, hotkey);
         }
 
         /// <summary>
@@ -152,7 +137,7 @@ namespace SystemTrayMenu.UserInterface
         {
             if (key == Key.None)
             {
-                Background = SystemColors.ControlBrush;
+                HotkeyFunction?.Unregister();
             }
             else
             {
@@ -162,11 +147,8 @@ namespace SystemTrayMenu.UserInterface
                 }
                 catch (InvalidOperationException ex)
                 {
-                    Background = Brushes.IndianRed;
                     Log.Info($"Couldn't register hotkey modifier {modifiers} key {key} ex: " + ex.ToString());
                 }
-
-                Background = Brushes.LightGreen;
             }
         }
 
@@ -186,7 +168,8 @@ namespace SystemTrayMenu.UserInterface
             {
                 case Key.Back:
                 case Key.Delete:
-                    ResetHotkey();
+                    HotkeyFunction?.Unregister();
+                    UpdateHotkeyRegistration();
                     e.Handled = true;
                     break;
                 case Key.Insert:
@@ -201,17 +184,15 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        // TODO: Instead of Redraw this seem to act more like an input filter for valid combinations?
-        //       Maybe move to places right before Register() calls of the HotkeyFunction
-        private void Redraw()
+        private void FilterCombinations(ref ModifierKeys modifiers, ref Key key)
         {
             // No modifier or shift only, AND a hotkey that needs another modifier
-            if ((modifiers == ModifierKeys.Shift || modifiers == ModifierKeys.None) && needNonShiftModifier.Contains((int)hotkey))
+            if ((modifiers == ModifierKeys.Shift || modifiers == ModifierKeys.None) && needNonShiftModifier.Contains(key))
             {
                 if (modifiers == ModifierKeys.None)
                 {
                     // Set Ctrl+Alt as the modifier unless Ctrl+Alt+<key> won't work...
-                    if (needNonAltGrModifier.Contains((int)hotkey) == false)
+                    if (needNonAltGrModifier.Contains(key) == false)
                     {
                         modifiers = ModifierKeys.Alt | ModifierKeys.Control;
                     }
@@ -225,31 +206,27 @@ namespace SystemTrayMenu.UserInterface
                 {
                     // User pressed Shift and an invalid key (e.g. a letter or a number),
                     // that needs another set of modifier keys
-                    hotkey = Key.None;
-                    Text = string.Empty;
+                    key = Key.None;
                     return;
                 }
             }
 
             // Check all Ctrl+Alt keys
-            if (modifiers == (ModifierKeys.Alt | ModifierKeys.Control) && needNonAltGrModifier.Contains((int)hotkey))
+            if (modifiers == (ModifierKeys.Alt | ModifierKeys.Control) && needNonAltGrModifier.Contains(key))
             {
                 // Ctrl+Alt+4 etc won't work; reset hotkey and tell the user
-                hotkey = Key.None;
-                Text = string.Empty;
+                key = Key.None;
                 return;
             }
 
             // I have no idea why this is needed, but it is. Without this code, pressing only Ctrl
             // will show up as "Control + ControlKey", etc.
-            if (hotkey == Key.LeftAlt || hotkey == Key.RightAlt ||
-                hotkey == Key.LeftShift || hotkey == Key.RightShift ||
-                hotkey == Key.LeftCtrl || hotkey == Key.RightCtrl)
+            if (key == Key.LeftAlt || key == Key.RightAlt ||
+                key == Key.LeftShift || key == Key.RightShift ||
+                key == Key.LeftCtrl || key == Key.RightCtrl)
             {
-                hotkey = Key.None;
+                key = Key.None;
             }
-
-            Text = HotkeyToLocalizedString(modifiers, hotkey);
         }
 
         /// <summary>
@@ -258,47 +235,49 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         private void PopulateModifierLists()
         {
-            // Shift + 0 - 9, A - Z
-            for (Key k = Key.D0; k <= Key.Z; k++)
+            // Ctrl+Alt + 0 - 9
+            // Shift    + 0 - 9
+            for (Key k = Key.D0; k <= Key.D9; k++)
             {
-                needNonShiftModifier.Add((int)k);
+                needNonAltGrModifier.Add(k);
+                needNonShiftModifier.Add(k);
+            }
+
+            // Shift + A - Z
+            for (Key k = Key.A; k <= Key.Z; k++)
+            {
+                needNonShiftModifier.Add(k);
             }
 
             // Shift + Numpad keys
             for (Key k = Key.NumPad0; k <= Key.NumPad9; k++)
             {
-                needNonShiftModifier.Add((int)k);
+                needNonShiftModifier.Add(k);
             }
 
             // Shift + Misc (,;<./ etc)
             for (Key k = Key.Oem1; k <= Key.OemBackslash; k++)
             {
-                needNonShiftModifier.Add((int)k);
+                needNonShiftModifier.Add(k);
             }
 
             // Shift + Space, PgUp, PgDn, End, Home
             for (Key k = Key.Space; k <= Key.Home; k++)
             {
-                needNonShiftModifier.Add((int)k);
+                needNonShiftModifier.Add(k);
             }
 
             // Misc keys that we can't loop through
-            needNonShiftModifier.Add((int)Key.Insert);
-            needNonShiftModifier.Add((int)Key.Help);
-            needNonShiftModifier.Add((int)Key.Multiply);
-            needNonShiftModifier.Add((int)Key.Add);
-            needNonShiftModifier.Add((int)Key.Subtract);
-            needNonShiftModifier.Add((int)Key.Divide);
-            needNonShiftModifier.Add((int)Key.Decimal);
-            needNonShiftModifier.Add((int)Key.Return);
-            needNonShiftModifier.Add((int)Key.Escape);
-            needNonShiftModifier.Add((int)Key.NumLock);
-
-            // Ctrl+Alt + 0 - 9
-            for (Key k = Key.D0; k <= Key.D9; k++)
-            {
-                needNonAltGrModifier.Add((int)k);
-            }
+            needNonShiftModifier.Add(Key.Insert);
+            needNonShiftModifier.Add(Key.Help);
+            needNonShiftModifier.Add(Key.Multiply);
+            needNonShiftModifier.Add(Key.Add);
+            needNonShiftModifier.Add(Key.Subtract);
+            needNonShiftModifier.Add(Key.Divide);
+            needNonShiftModifier.Add(Key.Decimal);
+            needNonShiftModifier.Add(Key.Return);
+            needNonShiftModifier.Add(Key.Escape);
+            needNonShiftModifier.Add(Key.NumLock);
         }
 
         /// <summary>
@@ -310,15 +289,17 @@ namespace SystemTrayMenu.UserInterface
             // Clear the current hotkey
             if (e.Key == Key.Back || e.Key == Key.Delete)
             {
-                ResetHotkey();
+                HotkeyFunction?.Unregister();
             }
             else
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
+                FilterCombinations(ref modifiers, ref hotkey);
                 ChangeHotkey(modifiers, hotkey);
-                UpdateHotkeyRegistration();
             }
+
+            UpdateHotkeyRegistration();
         }
 
         /// <summary>
@@ -332,12 +313,14 @@ namespace SystemTrayMenu.UserInterface
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
+                FilterCombinations(ref modifiers, ref hotkey);
                 ChangeHotkey(modifiers, hotkey);
                 UpdateHotkeyRegistration();
             }
-            else if (hotkey == Key.None && modifiers == ModifierKeys.None)
+            else if (hotkey == Key.None)
             {
-                ResetHotkey();
+                HotkeyFunction?.Unregister();
+                UpdateHotkeyRegistration();
             }
         }
 

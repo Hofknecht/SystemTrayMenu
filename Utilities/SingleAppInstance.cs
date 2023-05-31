@@ -7,7 +7,6 @@ namespace SystemTrayMenu.Utilities
     using System;
     using System.Diagnostics;
     using System.Linq;
-    using System.Windows.Input;
     using SystemTrayMenu.Helpers;
 
     internal static class SingleAppInstance
@@ -25,8 +24,7 @@ namespace SystemTrayMenu.Utilities
                     if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                     {
                         string hotKeyString = Properties.Settings.Default.HotKey;
-                        ModifierKeys modifiers = GlobalHotkeys.ModifierKeysFromString(hotKeyString);
-                        Key hotkey = GlobalHotkeys.KeyFromString(hotKeyString);
+                        var (modifiers, key) = GlobalHotkeys.ModifiersAndKeyFromInvariantString(hotKeyString);
 
                         try
                         {
@@ -51,9 +49,9 @@ namespace SystemTrayMenu.Utilities
                             }
 
                             VirtualKeyCode virtualKeyCodeHotkey = 0;
-                            if (Enum.IsDefined(typeof(VirtualKeyCode), (int)hotkey))
+                            if (Enum.IsDefined(typeof(VirtualKeyCode), (int)key))
                             {
-                                virtualKeyCodeHotkey = (VirtualKeyCode)(int)hotkey;
+                                virtualKeyCodeHotkey = (VirtualKeyCode)(int)key;
                             }
 
                             new InputSimulator().Keyboard.ModifiedKeyStroke(virtualKeyCodesModifiers, virtualKeyCodeHotkey);

@@ -40,7 +40,7 @@ namespace SystemTrayMenu.Helpers
 
             Key GetKey();
 
-            string GetHotkeyString();
+            string GetHotkeyInvariantString();
 
             void Register(ModifierKeys modifiers, Key key);
 
@@ -61,61 +61,87 @@ namespace SystemTrayMenu.Helpers
         //       Only this ensures caller and registrator are talking about the SAME registration.
         internal static IHotkeyFunction? GetLastCreatedHotkeyFunction() => lastCreatedHotkeyFunction;
 
-        internal static ModifierKeys ModifierKeysFromString(string modifiersString)
+        internal static (ModifierKeys, Key) ModifiersAndKeyFromInvariantString(string hotKeyString)
         {
+            if (string.IsNullOrEmpty(hotKeyString))
+            {
+                return (ModifierKeys.None, Key.None);
+            }
+
+            string? modifiersString;
+            string keyString;
+            if (hotKeyString.Contains('+'))
+            {
+                modifiersString = hotKeyString[..hotKeyString.LastIndexOf('+')];
+                keyString = hotKeyString[(hotKeyString.LastIndexOf('+') + 1)..];
+            }
+            else
+            {
+                modifiersString = null;
+                keyString = hotKeyString;
+            }
+
             ModifierKeys modifiers = ModifierKeys.None;
-            string upper = modifiersString.ToUpperInvariant();
-
-            if (upper.Contains("ALT+", StringComparison.InvariantCulture))
+            Key key;
+            try
             {
-                modifiers |= ModifierKeys.Alt;
+                if (modifiersString != null)
+                {
+                    modifiers = (ModifierKeys?)new ModifierKeysConverter().ConvertFromInvariantString(modifiersString) ?? ModifierKeys.None;
+                }
+
+                key = (Key?)new KeyConverter().ConvertFromInvariantString(keyString) ?? Key.None;
+            }
+            catch (Exception ex)
+            {
+                Log.Info("Could not parse key and modifiers for \"" + hotKeyString + "\" with modifiers. Cause: " + ex.Message);
+                return (ModifierKeys.None, Key.None);
             }
 
-            if (upper.Contains("CTRL+", StringComparison.InvariantCulture) ||
-                upper.Contains("STRG+", StringComparison.InvariantCulture))
+            if (key == Key.LWin || key == Key.RWin)
             {
-                modifiers |= ModifierKeys.Control;
-            }
-
-            if (upper.Contains("SHIFT+", StringComparison.InvariantCulture))
-            {
-                modifiers |= ModifierKeys.Shift;
-            }
-
-            // LWin and RWin keys will implicitly set Windows key modifier
-            if (upper.Contains("WIN+", StringComparison.InvariantCulture) ||
-                upper.EndsWith("LWIN", StringComparison.InvariantCulture) ||
-                upper.EndsWith("RWIN", StringComparison.InvariantCulture))
-            {
+                // It seems we have to add the Windows modifier when the major key is a Windows key
                 modifiers |= ModifierKeys.Windows;
             }
 
-            return modifiers;
+            return (modifiers, key);
         }
 
-        internal static Key KeyFromString(string keyString)
+        internal static string ModifiersAndKeyToInvariantString(ModifierKeys modifiers, Key key)
         {
-            Key key = Key.None;
-            if (!string.IsNullOrEmpty(keyString))
-            {
-                if (keyString.LastIndexOf('+') > 0)
-                {
-                    keyString = keyString.Remove(0, keyString.LastIndexOf('+') + 1).Trim();
-                }
+            string? keyString = null;
+            string? modifiersString = null;
 
-                keyString = keyString.
-                    Replace("PgDn", "PageDown", StringComparison.InvariantCulture).
-                    Replace("PgUp", "PageUp", StringComparison.InvariantCulture);
-                if (!Enum.TryParse(keyString, true, out key))
-                {
-                    Log.Warn($"{keyString} cannot be parsed", new());
-                }
+            if (modifiers != ModifierKeys.None)
+            {
+                modifiersString = new ModifierKeysConverter().ConvertToInvariantString(modifiers);
             }
 
-            return key;
+            if (key != Key.None)
+            {
+                keyString = new KeyConverter().ConvertToInvariantString(key);
+            }
+
+            if (string.IsNullOrEmpty(modifiersString) && string.IsNullOrEmpty(keyString))
+            {
+                return string.Empty;
+            }
+            else if (string.IsNullOrEmpty(modifiersString))
+            {
+                return keyString!;
+            }
+            else if (string.IsNullOrEmpty(keyString))
+            {
+                return modifiersString;
+            }
+
+            return modifiersString + "+" + keyString;
         }
 
-        internal static string HotkeyToLocalizedString(ModifierKeys modifiers, Key key)
+        // Should be same as ModifiersAndKeyToInvariantString() just with non-Invariant convertion
+        // but the converters seems not to convert every key into a user firendly string,
+        // so we use old fashioned native Windows API to fetch the localized strings.
+        internal static string ModifiersAndKeyToString(ModifierKeys modifiers, Key key)
         {
             StringBuilder hotkeyString = new();
             if ((modifiers & ModifierKeys.Alt) != 0)
@@ -138,7 +164,7 @@ namespace SystemTrayMenu.Helpers
                 hotkeyString.Append("Win").Append(" + ");
             }
 
-            return hotkeyString.ToString() + GetKeyName(key);
+            return key == Key.None ? hotkeyString.ToString().Replace(" + ", string.Empty) : hotkeyString.ToString() + GetKeyName(key);
         }
 
         private static string GetKeyName(Key key)
@@ -230,8 +256,6 @@ namespace SystemTrayMenu.Helpers
             }
         }
 
-        private static (ModifierKeys, Key) ParseKeysAndModifiersFromString(string hotKeyString) => (ModifierKeysFromString(hotKeyString), KeyFromString(hotKeyString));
-
         private static IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             const int WmHotkey = 0x0312;
@@ -239,21 +263,16 @@ namespace SystemTrayMenu.Helpers
             // check if we got a hot key pressed.
             if (msg == WmHotkey && IsEnabled)
             {
-                ModifierKeys modifiers = (ModifierKeys)((int)lParam & 0xFFFF);
-                int virtualKeyCode = ((int)lParam >> 16) & 0xFFFF;
-                Key key = KeyInterop.KeyFromVirtualKey(virtualKeyCode);
-
-                HotkeyRegistration? reg = null;
+                // If actual keys are required without looking at regisrations
+                // e.g. when multiple key combination are registered for one registration
+                // one can get the values as of this example below:
+                //     ModifierKeys modifiers = (ModifierKeys)((int)lParam & 0xFFFF);
+                //     int virtualKeyCode = ((int)lParam >> 16) & 0xFFFF;
+                //     Key key = KeyInterop.KeyFromVirtualKey(virtualKeyCode);
+                HotkeyRegistration? reg;
                 lock (CriticalSectionLock)
                 {
-                    foreach (var (id, registration) in Registrations)
-                    {
-                        if (modifiers == registration.Modifiers && key == registration.Key)
-                        {
-                            reg = registration;
-                            break;
-                        }
-                    }
+                    Registrations.TryGetValue((int)wParam, out reg);
                 }
 
                 reg?.OnKeyPressed();
@@ -373,51 +392,11 @@ namespace SystemTrayMenu.Helpers
 
             internal HotkeyRegistration? Registration { get; set; }
 
-            public void Unregister()
-            {
-                if (Registration != null)
-                {
-                    GlobalHotkeys.Unregister(Registration);
-                    Registration = null;
-                }
-            }
-
             public ModifierKeys GetModifierKeys() => Registration?.Modifiers ?? ModifierKeys.None;
 
             public Key GetKey() => Registration?.Key ?? Key.None;
 
-            public string GetHotkeyString()
-            {
-                string? keyString = null;
-                string? modifiersString = null;
-                ModifierKeys modifiers = GetModifierKeys();
-                Key key = GetKey();
-
-                if (modifiers != ModifierKeys.None)
-                {
-                    modifiersString = new ModifierKeysConverter().ConvertToInvariantString(GetModifierKeys());
-                }
-
-                if (key != Key.None)
-                {
-                    keyString = new KeyConverter().ConvertToInvariantString(GetKey());
-                }
-
-                if (string.IsNullOrEmpty(modifiersString) && string.IsNullOrEmpty(keyString))
-                {
-                    return string.Empty;
-                }
-                else if (string.IsNullOrEmpty(modifiersString))
-                {
-                    return keyString!;
-                }
-                else if (string.IsNullOrEmpty(keyString))
-                {
-                    return modifiersString;
-                }
-
-                return modifiersString + "+" + keyString;
-            }
+            public string GetHotkeyInvariantString() => ModifiersAndKeyToInvariantString(GetModifierKeys(), GetKey());
 
             public void Register(ModifierKeys modifiers, Key key)
             {
@@ -439,8 +418,17 @@ namespace SystemTrayMenu.Helpers
 
             public void Register(string hotKeyString)
             {
-                var (modifiers, key) = ParseKeysAndModifiersFromString(hotKeyString);
+                var (modifiers, key) = ModifiersAndKeyFromInvariantString(hotKeyString);
                 Register(modifiers, key);
+            }
+
+            public void Unregister()
+            {
+                if (Registration != null)
+                {
+                    GlobalHotkeys.Unregister(Registration);
+                    Registration = null;
+                }
             }
         }
     }
