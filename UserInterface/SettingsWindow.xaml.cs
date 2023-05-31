@@ -504,9 +504,7 @@ namespace SystemTrayMenu.UserInterface
 
             Settings.Default.CheckForUpdates = checkBoxCheckForUpdates.IsChecked ?? false;
 
-#if TODO // HOTKEY
-            Settings.Default.HotKey = new KeysConverter().ConvertToInvariantString(textBoxHotkey.Hotkey | textBoxHotkey.HotkeyModifiers);
-#endif
+            Settings.Default.HotKey = textBoxHotkey.HotkeyFunction?.GetHotkeyString() ?? string.Empty;
             Settings.Default.CurrentCultureInfoName = comboBoxLanguage.SelectedValue.ToString();
             Settings.Default.SizeInPercent = numericUpDownSizeInPercent.Value;
             Settings.Default.IconSizeInPercent = numericUpDownIconSizeInPercent.Value;

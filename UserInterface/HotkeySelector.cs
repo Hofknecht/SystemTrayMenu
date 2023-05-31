@@ -25,10 +25,8 @@ namespace SystemTrayMenu.UserInterface
         private readonly IList<int> needNonAltGrModifier = new List<int>();
 
         // These variables store the current hotkey and modifier(s)
-        private IHotkeyFunction? hotkeyFunction;
         private Key hotkey = Key.None;
         private ModifierKeys modifiers = ModifierKeys.None;
-        private Action? handler;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HotkeySelector"/> class.
@@ -70,6 +68,8 @@ namespace SystemTrayMenu.UserInterface
             SetHotkeyRegistration((IHotkeyFunction?)null);
         }
 
+        internal IHotkeyFunction? HotkeyFunction { get; private set; }
+
         public static string HotkeyToString(ModifierKeys modifierKeyCode, Key key)
         {
             StringBuilder hotkeyString = new();
@@ -104,26 +104,29 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="hotkeyFunction">Hotkey function interface.</param>
         internal void SetHotkeyRegistration(IHotkeyFunction? hotkeyFunction)
         {
-            this.hotkeyFunction = hotkeyFunction;
+            HotkeyFunction = hotkeyFunction;
             UpdateHotkeyRegistration();
         }
 
         /// <summary>
-        /// Set the hotkey function the control is working on.
+        /// Update the UI based on the hotkey registration.
         /// </summary>
-        /// <param name="hotkeyFunction">Hotkey function interface.</param>
         internal void UpdateHotkeyRegistration()
         {
-            hotkey = hotkeyFunction?.GetKey() ?? Key.None;
-            modifiers = hotkeyFunction?.GetModifierKeys() ?? ModifierKeys.None;
+            hotkey = HotkeyFunction?.GetKey() ?? Key.None;
+            modifiers = HotkeyFunction?.GetModifierKeys() ?? ModifierKeys.None;
 
             if (modifiers == ModifierKeys.None && hotkey == Key.None)
             {
                 Background = SystemColors.ControlBrush;
             }
-            else
+            else if (HotkeyFunction != null)
             {
                 Background = Brushes.LightGreen;
+            }
+            else
+            {
+                Background = Brushes.IndianRed;
             }
 
             Text = HotkeyToLocalizedString(modifiers, hotkey);
@@ -133,42 +136,38 @@ namespace SystemTrayMenu.UserInterface
         /// Change the hotkey to given combination.
         /// </summary>
         /// <param name="hotkeyString">Hotkey combination string.</param>
-        internal void ChangeHotkey(string hotkeyString) => hotkeyFunction?.Register(hotkeyString);
+        internal void ChangeHotkey(string hotkeyString)
+        {
+            HotkeyFunction?.Register(hotkeyString);
+            UpdateHotkeyRegistration();
+        }
 
         /// <summary>
-        /// Register a hotkey.
+        /// Change the hotkey to given combination.
+        /// Sets background accordingly.
         /// </summary>
-        /// <param name="modifiers">The key modifiers .</param>
-        /// <param name="key">The virtual key code.</param>
-        /// <param name="handler">A HotKeyHandler, this will be called to handle the hotkey press.</param>
-        /// <returns>the hotkey number, -1 if failed.</returns>
-        internal int RegisterHotKey(ModifierKeys modifiers, Key key, Action handler)
+        /// <param name="modifiers">Hotkey modifiers.</param>
+        /// <param name="key">Hotkey key.</param>
+        internal void ChangeHotkey(ModifierKeys modifiers, Key key)
         {
             if (key == Key.None)
             {
                 Background = SystemColors.ControlBrush;
-                return 0;
             }
-
-            try
+            else
             {
-                hotkeyFunction?.Register(modifiers, key);
-            }
-            catch (InvalidOperationException ex)
-            {
-                Background = Brushes.IndianRed;
-                Log.Info($"Couldn't register hotkey modifier {modifiers} key {key} ex: " + ex.ToString());
-                return -1;
-            }
+                try
+                {
+                    HotkeyFunction?.Register(modifiers, key);
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Background = Brushes.IndianRed;
+                    Log.Info($"Couldn't register hotkey modifier {modifiers} key {key} ex: " + ex.ToString());
+                }
 
-            this.handler = handler;
-            if (hotkeyFunction != null)
-            {
-                hotkeyFunction.KeyPressed += (_) => handler.Invoke();
+                Background = Brushes.LightGreen;
             }
-
-            Background = Brushes.LightGreen;
-            return 1;
         }
 
         /// <summary>
@@ -176,7 +175,7 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         private void ResetHotkey()
         {
-            hotkeyFunction?.Unregister();
+            HotkeyFunction?.Unregister();
             UpdateHotkeyRegistration();
         }
 
@@ -203,7 +202,7 @@ namespace SystemTrayMenu.UserInterface
         }
 
         // TODO: Instead of Redraw this seem to act more like an input filter for valid combinations?
-        //       Maybe move to places right before Register() calls of the hotkeyFunction
+        //       Maybe move to places right before Register() calls of the HotkeyFunction
         private void Redraw()
         {
             // No modifier or shift only, AND a hotkey that needs another modifier
@@ -317,7 +316,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
-                hotkeyFunction?.Register(modifiers, hotkey);
+                ChangeHotkey(modifiers, hotkey);
                 UpdateHotkeyRegistration();
             }
         }
@@ -333,6 +332,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 modifiers = Keyboard.Modifiers;
                 hotkey = e.Key;
+                ChangeHotkey(modifiers, hotkey);
                 UpdateHotkeyRegistration();
             }
             else if (hotkey == Key.None && modifiers == ModifierKeys.None)
@@ -345,10 +345,7 @@ namespace SystemTrayMenu.UserInterface
         /// Prevents the letter/whatever entered to show up in the TextBox
         /// Without this, a "A" key press would appear as "aControl, Alt + A".
         /// </summary>
-        private void HandlePreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            e.Handled = true;
-        }
+        private void HandlePreviewTextInput(object sender, TextCompositionEventArgs e) => e.Handled = true;
 
 #if TODO // HOTKEY
         /// <summary>

@@ -40,6 +40,8 @@ namespace SystemTrayMenu.Helpers
 
             Key GetKey();
 
+            string GetHotkeyString();
+
             void Register(ModifierKeys modifiers, Key key);
 
             void Register(string hotKeyString);
@@ -383,6 +385,39 @@ namespace SystemTrayMenu.Helpers
             public ModifierKeys GetModifierKeys() => Registration?.Modifiers ?? ModifierKeys.None;
 
             public Key GetKey() => Registration?.Key ?? Key.None;
+
+            public string GetHotkeyString()
+            {
+                string? keyString = null;
+                string? modifiersString = null;
+                ModifierKeys modifiers = GetModifierKeys();
+                Key key = GetKey();
+
+                if (modifiers != ModifierKeys.None)
+                {
+                    modifiersString = new ModifierKeysConverter().ConvertToInvariantString(GetModifierKeys());
+                }
+
+                if (key != Key.None)
+                {
+                    keyString = new KeyConverter().ConvertToInvariantString(GetKey());
+                }
+
+                if (string.IsNullOrEmpty(modifiersString) && string.IsNullOrEmpty(keyString))
+                {
+                    return string.Empty;
+                }
+                else if (string.IsNullOrEmpty(modifiersString))
+                {
+                    return keyString!;
+                }
+                else if (string.IsNullOrEmpty(keyString))
+                {
+                    return modifiersString;
+                }
+
+                return modifiersString + "+" + keyString;
+            }
 
             public void Register(ModifierKeys modifiers, Key key)
             {
