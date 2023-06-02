@@ -7,6 +7,7 @@ namespace SystemTrayMenu.Handler
     using System;
     using System.Windows.Input;
     using SystemTrayMenu.DataClasses;
+    using SystemTrayMenu.DllImports;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Helpers.GlobalHotkeys;
@@ -109,14 +110,7 @@ namespace SystemTrayMenu.Handler
                 case Key.Apps:
                     if (modifiers == ModifierKeys.None)
                     {
-                        Menu? menu = focussedMenu;
-                        RowData? itemData = menu?.SelectedItem;
-                        if (menu != null && itemData != null)
-                        {
-                            var position = Mouse.GetPosition(menu);
-                            position.Offset(menu.Left, menu.Top);
-                            itemData.OpenShellContextMenu(position);
-                        }
+                        focussedMenu?.SelectedItem?.OpenShellContextMenu(NativeMethods.Screen.CursorPosition);
                     }
 
                     break;

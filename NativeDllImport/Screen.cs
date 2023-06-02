@@ -63,12 +63,20 @@ namespace SystemTrayMenu.DllImports
             {
                 get
                 {
+#if TODO // Maybe use Windows.Desktop instead of Win32 API?
+         // See: https://learn.microsoft.com/en-us/dotnet/api/system.windows.input.mouse.getposition?view=windowsdesktop-8.0
+                    if (Mouse.Capture(menu))
+                    {
+                        LastCursorPosition = Mouse.GetPosition(menu);
+                        Mouse.Capture(null);
+                    }
+#else
                     NativeMethods.POINT lpPoint;
                     if (NativeMethods.GetCursorPos(out lpPoint))
                     {
                         LastCursorPosition = new(lpPoint.X, lpPoint.Y);
                     }
-
+#endif
                     return LastCursorPosition;
                 }
             }
