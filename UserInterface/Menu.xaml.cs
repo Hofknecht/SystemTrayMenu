@@ -40,6 +40,7 @@ namespace SystemTrayMenu.UserInterface
 #if TODO // SEARCH
         public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
 #endif
+        private bool isShellContextMenuOpen;
         private bool directionToRight;
         private Point lastLocation;
 
@@ -1186,10 +1187,21 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e) =>
-            CellMouseEnter?.Invoke((RowData)((ListViewItem)sender).Content);
+        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (!isShellContextMenuOpen)
+            {
+                CellMouseEnter?.Invoke((RowData)((ListViewItem)sender).Content);
+            }
+        }
 
-        private void ListViewItem_MouseLeave(object sender, MouseEventArgs e) => CellMouseLeave?.Invoke();
+        private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (!isShellContextMenuOpen)
+            {
+                CellMouseLeave?.Invoke();
+            }
+        }
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -1199,9 +1211,15 @@ namespace SystemTrayMenu.UserInterface
 
             if (e.RightButton == MouseButtonState.Pressed)
             {
+                // Somehow when the TrackPopupMenuEx is called to spawn the context menu
+                // This will fire a MouseEnter event on the next item, like WTF?!
+                // Prevent any use of MouseEnter/MouseLeave while the menu is open.
+                // TODO: Find root case and fix this properly.
+                isShellContextMenuOpen = true;
                 var position = Mouse.GetPosition(this);
                 position.Offset(Left, Top);
                 itemData.OpenShellContextMenu(position);
+                isShellContextMenuOpen = false;
             }
         }
 
