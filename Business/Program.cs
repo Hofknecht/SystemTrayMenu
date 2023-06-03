@@ -56,6 +56,7 @@ namespace SystemTrayMenu
             }
             finally
             {
+                SingleAppInstance.Unload();
                 Log.Close();
             }
 

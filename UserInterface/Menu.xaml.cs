@@ -415,7 +415,7 @@ namespace SystemTrayMenu.UserInterface
             return true;
         }
 
-        internal void AddItemsToMenu(List<RowData> data, MenuDataDirectoryState? state, bool startIconLoading)
+        internal void AddItemsToMenu(List<RowData> data, MenuDataDirectoryState? state)
         {
             int foldersCount = 0;
             int filesCount = 0;

@@ -7,66 +7,45 @@ namespace SystemTrayMenu.Utilities
     using System;
     using System.Diagnostics;
     using System.Linq;
-    using SystemTrayMenu.Helpers;
+    using SystemTrayMenu.Business;
 
     internal static class SingleAppInstance
     {
+        private const string IpcServiceName = nameof(SingleAppInstance);
+        private const string IpcWakeupCmd = "wakeup";
+        private const string IpcWakeupResponseOK = "OK";
+        private static IpcPipe? ipcPipe;
+
+        internal static event Action? Wakeup;
+
         internal static bool Initialize()
         {
             bool success = true;
 
             try
             {
-                foreach (Process p in Process.GetProcessesByName(
-                       Process.GetCurrentProcess().ProcessName).
+                foreach (Process p in
+                    Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).
                        Where(s => s.Id != Environment.ProcessId))
                 {
-                    if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
+                    try
                     {
-                        string hotKeyString = Properties.Settings.Default.HotKey;
-                        var (modifiers, key) = GlobalHotkeys.ModifiersAndKeyFromInvariantString(hotKeyString);
-
-                        try
+                        if (Properties.Settings.Default.SendHotkeyInsteadKillOtherInstances)
                         {
-#if TODO // HOTKEY - Maybe replace with sockets or pipes?
-         //          E.g. https://learn.microsoft.com/en-us/dotnet/standard/io/how-to-use-named-pipes-for-network-interprocess-communication
-                            List<VirtualKeyCode> virtualKeyCodesModifiers = new();
-                            foreach (string key in modifiers.ToString().ToUpperInvariant().Split(", "))
+                            // Instead of using hotkeys we use IPC via pipes
+                            string pipeName = IpcServiceName + "-" + p.Id.ToString();
+                            ipcPipe = new(1, pipeName);
+                            string response = ipcPipe.SendToServer(IpcWakeupCmd) ?? string.Empty;
+                            if (!string.Equals(response, IpcWakeupResponseOK))
                             {
-                                if (key == "NONE")
-                                {
-                                    continue;
-                                }
-
-                                VirtualKeyCode virtualKeyCode = VirtualKeyCode.LWIN;
-                                virtualKeyCode = key switch
-                                {
-                                    "ALT" => VirtualKeyCode.MENU,
-                                    _ => (VirtualKeyCode)Enum.Parse(
-                                                 typeof(VirtualKeyCode), key.ToUpperInvariant()),
-                                };
-                                virtualKeyCodesModifiers.Add(virtualKeyCode);
+                                throw new Exception("Error at IPC pipe \"" + pipeName + "\": \"" + response + "\"");
                             }
 
-                            VirtualKeyCode virtualKeyCodeHotkey = 0;
-                            if (Enum.IsDefined(typeof(VirtualKeyCode), (int)key))
-                            {
-                                virtualKeyCodeHotkey = (VirtualKeyCode)(int)key;
-                            }
-
-                            new InputSimulator().Keyboard.ModifiedKeyStroke(virtualKeyCodesModifiers, virtualKeyCodeHotkey);
-
-                            success = false;
-#endif
+                            ipcPipe.Dispose();
+                            ipcPipe = null;
+                            success = false; // This is "success" but it means we cannot start this instance -> false
                         }
-                        catch (Exception ex)
-                        {
-                            Log.Warn($"Send hoktey {hotKeyString} to other instance failed", ex);
-                        }
-                    }
-                    else
-                    {
-                        try
+                        else
                         {
                             if (!p.CloseMainWindow())
                             {
@@ -76,20 +55,42 @@ namespace SystemTrayMenu.Utilities
                             p.WaitForExit();
                             p.Close();
                         }
-                        catch (Exception ex)
-                        {
-                            Log.Error("Run as single instance failed", ex);
-                            success = false;
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error("Run as single instance failed", ex);
+                        success = false;
                     }
                 }
             }
             catch (Exception ex)
             {
                 Log.Error("Run as single instance failed", ex);
+                success = false;
+            }
+
+            if (success)
+            {
+                // We are the only process running, so we are responsible for the IPC server
+                ipcPipe = new(1, IpcServiceName + "-" + Environment.ProcessId.ToString());
+                ipcPipe.StartServer((request) =>
+                {
+                    if (string.Equals(request, IpcWakeupCmd))
+                    {
+                        Wakeup?.Invoke();
+                        return IpcWakeupResponseOK;
+                    }
+
+                    return string.Empty;
+                });
             }
 
             return success;
+        }
+
+        internal static void Unload()
+        {
+            ipcPipe?.Dispose();
         }
     }
 }

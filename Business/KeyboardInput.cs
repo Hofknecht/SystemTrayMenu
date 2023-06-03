@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace SystemTrayMenu.Handler
+namespace SystemTrayMenu.Business
 {
     using System;
     using System.Windows.Input;

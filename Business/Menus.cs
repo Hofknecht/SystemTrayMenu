@@ -17,7 +17,6 @@ namespace SystemTrayMenu.Business
     using Microsoft.Win32;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
-    using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface;
@@ -44,6 +43,7 @@ namespace SystemTrayMenu.Business
 
         public Menus()
         {
+            SingleAppInstance.Wakeup += SwitchOpenCloseByKey;
             menuNotifyIcon.Click += () => SwitchOpenClose(true, false);
 
             if (!keyboardInput.RegisterHotKey(Settings.Default.HotKey))
@@ -52,7 +52,7 @@ namespace SystemTrayMenu.Business
                 Settings.Default.Save();
             }
 
-            keyboardInput.HotKeyPressed += () => SwitchOpenClose(false, false);
+            keyboardInput.HotKeyPressed += SwitchOpenCloseByKey;
             keyboardInput.RowSelectionChanged += waitToOpenMenu.RowSelectionChanged;
             keyboardInput.EnterPressed += waitToOpenMenu.OpenSubMenuByKey;
 
@@ -130,6 +130,7 @@ namespace SystemTrayMenu.Business
 
         public void Dispose()
         {
+            SingleAppInstance.Wakeup -= SwitchOpenCloseByKey;
             SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
             workerMainMenu.Dispose();
             foreach (BackgroundWorker worker in workersSubMenu)
@@ -350,7 +351,7 @@ namespace SystemTrayMenu.Business
             if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
             {
                 // Sub Menu (completed)
-                menu.AddItemsToMenu(menuData.RowDatas, menuData.DirectoryState, true);
+                menu.AddItemsToMenu(menuData.RowDatas, menuData.DirectoryState);
                 AdjustMenusSizeAndLocation(menu.Level);
             }
             else
@@ -365,7 +366,7 @@ namespace SystemTrayMenu.Business
 
         private void InitializeMenu(Menu menu, List<RowData> rowDatas)
         {
-            menu.AddItemsToMenu(rowDatas, null, false);
+            menu.AddItemsToMenu(rowDatas, null);
 
             menu.MenuScrolled += () => AdjustMenusSizeAndLocation(menu.Level + 1); // TODO: Only update vertical location while scrolling?
             menu.MouseLeave += (_, _) =>
@@ -511,6 +512,8 @@ namespace SystemTrayMenu.Business
                 IconReader.ClearCacheWhenLimitReached();
             }
         }
+
+        private void SwitchOpenCloseByKey() => mainMenu.Dispatcher.Invoke(() => SwitchOpenClose(false, false));
 
         private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e) =>
             mainMenu.Dispatcher.Invoke(() => mainMenu.RelocateOnNextShow = true);
@@ -710,7 +713,7 @@ namespace SystemTrayMenu.Business
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 menu.SelectedItem = null;
-                menu.AddItemsToMenu(rowDatas, null, true);
+                menu.AddItemsToMenu(rowDatas, null);
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
@@ -776,7 +779,7 @@ namespace SystemTrayMenu.Business
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 menu.SelectedItem = null;
-                menu.AddItemsToMenu(rowDatas, null, true);
+                menu.AddItemsToMenu(rowDatas, null);
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
