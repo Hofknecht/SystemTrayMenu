@@ -334,8 +334,8 @@ namespace SystemTrayMenu.DataClasses
             }
             else
             {
-                BorderBrush = Brushes.White;
-                BackgroundBrush = Brushes.White;
+                BorderBrush = null;
+                BackgroundBrush = null;
             }
         }
 
