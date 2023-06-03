@@ -119,7 +119,7 @@
                             <StackPanel>
                                 <CheckBox x:Name="checkBoxResolveLinksToFolders" Content="{u:Translate 'Resolve links to folders and show content'}"/>
                                 <CheckBox x:Name="checkBoxShowInTaskbar" Content="{u:Translate 'Show in Taskbar'}"/>
-                                <CheckBox x:Name="checkBoxSendHotkeyInsteadKillOtherInstances" Content="{u:Translate 'Send hotkey to other instance'}"/>
+                                <CheckBox x:Name="checkBoxSendHotkeyInsteadKillOtherInstances" Content="{u:Translate 'Send hotkey to other instance'}"/> <!-- TODO: It will use named pipes instead of hotkey! -->
                                 <CheckBox x:Name="checkBoxSupportGamepad" Content="{u:Translate 'Support Gamepad'}"/>
                             </StackPanel>
                         </GroupBox>

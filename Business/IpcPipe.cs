@@ -23,6 +23,7 @@ namespace SystemTrayMenu.Business
         private NamedPipeServerStream? serverPipe;
         private Thread? serverThread;
         private Func<string, string>? serverHandler;
+        private ManualResetEvent? cancelEvent;
         private bool isStopped;
 
         internal IpcPipe(byte version, string name)
@@ -34,14 +35,16 @@ namespace SystemTrayMenu.Business
         public void Dispose()
         {
             isStopped = true;
-            serverPipe?.Disconnect();
+            cancelEvent?.Set();
             serverThread?.Join(250);
             serverPipe?.Dispose();
+            cancelEvent?.Dispose();
             serverThread = null;
         }
 
         internal void StartServer(Func<string, string> handler)
         {
+            cancelEvent = new(false);
             serverHandler = handler;
 
             serverThread = new(ServerThread);
@@ -85,7 +88,16 @@ namespace SystemTrayMenu.Business
                 NamedPipeServerStream pipe = ipc.serverPipe = new(ipc.pipeName);
                 try
                 {
-                    pipe.WaitForConnection();
+                    // Stupid workaround for WaitForConnection as it will not unblock when pipe gets closed or disposed.
+                    // See: https://stackoverflow.com/questions/607872/what-is-a-good-way-to-shutdown-threads-blocked-on-namedpipeserverwaitforconnect
+                    ManualResetEvent connectEvent = new (false);
+                    pipe.BeginWaitForConnection(ar => { connectEvent.Set(); }, null);
+                    if (WaitHandle.WaitAny(new WaitHandle[] { connectEvent, ipc.cancelEvent! }) == 1)
+                    {
+                        ipc.serverPipe = null;
+                        pipe.Dispose();
+                        return;
+                    }
 
                     IpcPipeStream stream = new(pipe);
 
