@@ -36,7 +36,7 @@ namespace SystemTrayMenu.UserInterface
             // Disable right-clicking
             ContextMenu = new()
             {
-                Visibility = System.Windows.Visibility.Collapsed,
+                Visibility = Visibility.Collapsed,
                 IsEnabled = false,
             };
 
@@ -50,8 +50,10 @@ namespace SystemTrayMenu.UserInterface
             LostFocus += (_, _) => GlobalHotkeys.IsEnabled = true;
 
             PopulateModifierLists();
-            SetHotkeyRegistration((IHotkeyFunction?)null);
+            SetHotkeyRegistration(null);
         }
+
+        internal bool WasHotkeyChanged { get; private set; }
 
         internal IHotkeyFunction? HotkeyFunction { get; private set; }
 
@@ -90,6 +92,7 @@ namespace SystemTrayMenu.UserInterface
         internal void SetHotkeyRegistration(IHotkeyFunction? hotkeyFunction)
         {
             HotkeyFunction = hotkeyFunction;
+            WasHotkeyChanged = false;
             UpdateHotkeyRegistration();
         }
 
@@ -123,7 +126,17 @@ namespace SystemTrayMenu.UserInterface
         /// <param name="hotkeyString">Hotkey combination string.</param>
         internal void ChangeHotkey(string hotkeyString)
         {
-            HotkeyFunction?.Register(hotkeyString);
+            try
+            {
+                HotkeyFunction?.Register(hotkeyString);
+                WasHotkeyChanged = true;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Log.Warn($"Hotkey failed resetting to default: '{hotkeyString}'", ex);
+                return;
+            }
+
             UpdateHotkeyRegistration();
         }
 
@@ -138,27 +151,20 @@ namespace SystemTrayMenu.UserInterface
             if (key == Key.None)
             {
                 HotkeyFunction?.Unregister();
+                WasHotkeyChanged = true;
             }
             else
             {
                 try
                 {
                     HotkeyFunction?.Register(modifiers, key);
+                    WasHotkeyChanged = true;
                 }
                 catch (InvalidOperationException ex)
                 {
                     Log.Info($"Couldn't register hotkey modifier {modifiers} key {key} ex: " + ex.ToString());
                 }
             }
-        }
-
-        /// <summary>
-        /// Clears the current hotkey and resets the TextBox.
-        /// </summary>
-        private void ResetHotkey()
-        {
-            HotkeyFunction?.Unregister();
-            UpdateHotkeyRegistration();
         }
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
@@ -169,6 +175,7 @@ namespace SystemTrayMenu.UserInterface
                 case Key.Back:
                 case Key.Delete:
                     HotkeyFunction?.Unregister();
+                    WasHotkeyChanged = true;
                     UpdateHotkeyRegistration();
                     e.Handled = true;
                     break;
@@ -290,6 +297,7 @@ namespace SystemTrayMenu.UserInterface
             if (e.Key == Key.Back || e.Key == Key.Delete)
             {
                 HotkeyFunction?.Unregister();
+                WasHotkeyChanged = true;
             }
             else
             {
@@ -320,6 +328,7 @@ namespace SystemTrayMenu.UserInterface
             else if (hotkey == Key.None)
             {
                 HotkeyFunction?.Unregister();
+                WasHotkeyChanged = true;
                 UpdateHotkeyRegistration();
             }
         }
