@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2023-2023 Peter Kirmeier -->
+<!-- TODO: Localization of Title -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+        xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
+        xmlns:stm="clr-namespace:SystemTrayMenu"
+        x:Class="SystemTrayMenu.UserInterface.ColorPickerWindow"
+        mc:Ignorable="d" Title="{u:Translate 'Choose color'}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" Background="{x:Static stm:MenuDefines.ColorBackground}"
+            WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" x:Name="lblDescription" x:FieldModifier="private" Content="" Foreground="{x:Static stm:MenuDefines.ColorForeground}" Padding="5 3" VerticalAlignment="Center"/>
+
+        <!-- https://github.com/PixiEditor/ColorPicker -->
+        <colorpicker:StandardColorPicker Grid.Row="1" x:Name="picker" x:FieldModifier="private" Width="200" Height="380" ShowAlpha="False"/>
+
+        <StackPanel Grid.Row="2" Margin="0 0 15 0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" Click="ButtonOk_Click"/>
+            <Button x:Name="buttonCancel" Content="{u:Translate 'Abort'}" Margin="3" MinWidth="76" Click="ButtonCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

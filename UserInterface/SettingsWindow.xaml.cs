@@ -28,7 +28,7 @@ namespace SystemTrayMenu.UserInterface
         private const string MenuName = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder";
         private const string Command = @"Software\Classes\directory\shell\SystemTrayMenu_SetAsRootFolder\command";
 
-        private static SettingsWindow? settingsForm;
+        private static SettingsWindow? singletonWindow;
 
         public SettingsWindow()
         {
@@ -355,26 +355,23 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowHoverDarkMode.Text = Settings.Default.ColorArrowHoverDarkMode;
             textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
 
-            Closed += (_, _) => settingsForm = null;
+            Closed += (_, _) => singletonWindow = null;
         }
 
         public static void ShowSingleInstance()
         {
             if (IsOpen())
             {
-                settingsForm!.HandleInvoke(() => settingsForm?.Activate());
+                singletonWindow!.HandleInvoke(() => singletonWindow?.Activate());
             }
             else
             {
-                settingsForm = new();
-                settingsForm.Show();
+                singletonWindow = new();
+                singletonWindow.Show();
             }
         }
 
-        public static bool IsOpen()
-        {
-            return settingsForm != null;
-        }
+        public static bool IsOpen() => singletonWindow != null;
 
         [SupportedOSPlatform("windows")]
         private static void AddSetFolderByWindowsContextMenu()

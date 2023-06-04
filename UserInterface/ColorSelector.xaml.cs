@@ -5,9 +5,6 @@
 namespace SystemTrayMenu.UserInterface
 {
     using System;
-    using System.Diagnostics;
-    using System.Text.RegularExpressions;
-    using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Media;
@@ -67,18 +64,18 @@ namespace SystemTrayMenu.UserInterface
             ColorChanged?.Invoke(this);
         }
 
-#if TODO // ColorPicker
-        private void PictureBoxClick(object sender, EventArgs e)
+        private void Shape_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            PictureBox pictureBox = (PictureBox)sender;
-            TextBox textBox = (TextBox)pictureBox.Tag;
-            colorDialog.Color = pictureBox.BackColor;
-            if (colorDialog.ShowDialog() == DialogResult.OK)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
-                textBox.Text = ColorTranslator.ToHtml(colorDialog.Color);
-                pictureBox.BackColor = colorDialog.Color;
+                ColorPickerWindow dialog = new(Description, Colors.LightYellow);
+                if (dialog.ShowDialog() ?? false)
+                {
+                    Text = dialog.SelectedColor.ToString();
+                }
+
+                e.Handled = true;
             }
         }
-#endif
     }
 }
