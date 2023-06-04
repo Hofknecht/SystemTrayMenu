@@ -69,7 +69,22 @@ namespace SystemTrayMenu.Business
                 case Key.Enter:
                     if (modifiers == ModifierKeys.None)
                     {
-                        if (focussedMenu != null)
+                        if (focussedMenu == null)
+                        {
+                            // Start selection based on the key's origin (sender)
+                            // Usually only needed if no mouse selection was triggered ever before
+                            if (sender.TrySelectAt(0, -1))
+                            {
+                                focussedMenu = sender;
+
+                                // Home and Down would select first item but it was just selected
+                                if (key != Key.Home && key != Key.Down)
+                                {
+                                    SelectByKey(key, focussedMenu);
+                                }
+                            }
+                        }
+                        else
                         {
                             SelectByKey(key, focussedMenu);
                         }
@@ -79,7 +94,7 @@ namespace SystemTrayMenu.Business
                 case Key.F:
                     if (modifiers == ModifierKeys.Control)
                     {
-                        focussedMenu?.FocusTextBox();
+                        focussedMenu?.FocusTextBox(); // TODO: Keep it? As of now the text box has focus all the time.
                     }
 
                     break;

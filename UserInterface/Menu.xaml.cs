@@ -44,9 +44,6 @@ namespace SystemTrayMenu.UserInterface
         private bool directionToRight;
         private Point lastLocation;
 
-#if TODO // SEARCH
-        private bool isSetSearchText;
-#endif
         internal Menu(RowData? rowDataParent, string path)
         {
             InitializeComponent();
@@ -188,7 +185,6 @@ namespace SystemTrayMenu.UserInterface
                 Command = new ActionCommand((_) => textBoxSearch.SelectAll()),
             });
 
-            dgv.GotFocus += (_, _) => FocusTextBox();
             dgv.SelectionChanged += ListView_SelectionChanged;
 
             Loaded += (_, _) =>
@@ -196,6 +192,8 @@ namespace SystemTrayMenu.UserInterface
                 NativeMethods.HideFromAltTab(this);
 
                 RaiseEvent(new(routedEvent: FadeInEvent));
+
+                FocusTextBox();
             };
 
             Closed += (_, _) =>
@@ -319,21 +317,8 @@ namespace SystemTrayMenu.UserInterface
 
         internal void FocusTextBox()
         {
-#if TODO // SEARCH
-            if (isSetSearchText)
-            {
-                isSetSearchText = false;
-                textBoxSearch.SelectAll();
-                textBoxSearch.Focus();
-                textBoxSearch.SelectionStart = textBoxSearch.Text.Length;
-                textBoxSearch.SelectionLength = 0;
-            }
-            else
-            {
-                textBoxSearch.SelectAll();
-                textBoxSearch.Focus();
-            }
-#endif
+            textBoxSearch.Select(textBoxSearch.Text.Length, 0);
+            textBoxSearch.Focus();
         }
 
         internal void SetSubMenuState(MenuDataDirectoryState state)
