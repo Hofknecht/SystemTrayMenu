@@ -12,15 +12,12 @@ namespace SystemTrayMenu.Business
     using System.IO;
     using System.Linq;
     using System.Windows.Forms;
-    using SharpDX.DirectInput;
     using SystemTrayMenu.DataClasses;
-    using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Handler;
     using SystemTrayMenu.Helper;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
-    using static System.Windows.Forms.VisualStyles.VisualStyleElement;
     using Menu = SystemTrayMenu.UserInterface.Menu;
     using Timer = System.Windows.Forms.Timer;
 
@@ -304,7 +301,7 @@ namespace SystemTrayMenu.Business
 
             if (!workerMainMenu.IsBusy)
             {
-                LoadStarted();
+                LoadStarted?.Invoke();
                 workerMainMenu.RunWorkerAsync(
                     new object[] { Config.Path, 0 });
             }
