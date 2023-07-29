@@ -290,7 +290,7 @@ Thanks for ideas, reporting issues and contributing!
 #453 [fubaWoW](https://github.com/fubaWoW),
 #454 [WouterVanGoey](https://github.com/WouterVanGoey),
 #462 [verdammt89x](https://github.com/verdammt89x),
-#463 Dirk S.,
+#463 #494 Dirk S.,
 #466 [Dean-Corso](https://github.com/Dean-Corso)
 #488 [DailenG](https://github.com/DailenG)
 
