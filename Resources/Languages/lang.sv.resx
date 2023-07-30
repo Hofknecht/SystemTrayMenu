@@ -310,7 +310,7 @@
     <value>Storlekar i procent</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Kant av menyn</value>
+    <value>Kant på menyn</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Ikoner</value>
@@ -481,7 +481,7 @@
     <value>Drag</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Scrolla via svep</value>
+    <value>Bläddra via svep</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtrera menyn efter filtyp, t.ex.: *.exe|*.dll</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Ångra</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Visa inte det här tipset igen.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Antydan</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Inställningsmenyn kan också öppnas genom att högerklicka på ikonen i systemfältet längst ner till höger, ifall du inte längre kan öppna den via menyn.</value>
   </data>
 </root>

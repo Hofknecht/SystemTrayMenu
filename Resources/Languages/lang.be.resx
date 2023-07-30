@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Адмяніць</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Больш не паказваць гэтую падказку.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Падказка</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Меню налад таксама можна адкрыць, пстрыкнуўшы правай кнопкай мышы значок у сістэмным трэі ўнізе справа, калі вы больш не можаце адкрыць яго праз меню.</value>
+  </data>
 </root>

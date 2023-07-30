@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Atsaukt</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Šo mājienu vairs nerādiet.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Padoms</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Iestatījumu izvēlni var atvērt arī, ar peles labo pogu noklikšķinot uz ikonas sistēmas teknē apakšējā labajā stūrī, ja vairs nevarat to atvērt, izmantojot izvēlni.</value>
+  </data>
 </root>

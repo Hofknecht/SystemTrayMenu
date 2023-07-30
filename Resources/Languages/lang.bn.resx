@@ -268,7 +268,7 @@
     <value>তীর</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>ক্লিক করার সময় তীর</value>
+    <value>ক্লিক করার সময় তীরচিহ্ন</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>মাউস এটির উপর ঘোরার সময় তীরচিহ্ন</value>
@@ -316,7 +316,7 @@
     <value>আইকন</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>প্রসঙ্গ মেনু দ্বারা সেট করুন</value>
+    <value>প্রসঙ্গ মেনু দ্বারা সেট</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>ডিরেক্টরি হিসাবে সেট করুন</value>
@@ -328,7 +328,7 @@
     <value>শর্টকাট লিঙ্কে সমস্যা</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>এই শর্টকাটটি যে আইটেমটি নির্দেশ করে তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না।</value>
+    <value>এই শর্টকাটটি যে আইটেমটিকে বোঝায় তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না৷</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ডিরেক্টরি খুলুন</value>
@@ -337,7 +337,7 @@
     <value>কাজ ব্যবস্থাপক</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>নিষ্ক্রিয়</value>
+    <value>নিষ্ক্রিয় করা হয়েছে</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>সক্রিয়</value>
@@ -376,7 +376,7 @@
     <value>শুধুমাত্র ফাইল</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>এই সংখ্যার বেশি আইটেম থাকলে ক্যাশে সাফ করুন</value>
+    <value>এই সংখ্যার বেশি আইটেম হলে ক্যাশে সাফ করুন</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>
@@ -493,7 +493,7 @@
     <value>শীর্ষে ডিরেক্টরি শিরোনাম দেখান</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>ফাংশন কী 'ফোল্ডার খুলুন' দেখান</value>
+    <value>'ফোল্ডার খুলুন' ফাংশন কী দেখান</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>ফাংশন কী 'পিন মেনু' দেখান</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>পূর্বাবস্থায় ফেরান</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>এই ইঙ্গিতটি আবার দেখাবেন না।</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>ইঙ্গিত</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>সেটিংস মেনুটি নীচে ডানদিকে সিস্টেম ট্রেতে আইকনে ডান-ক্লিক করেও খোলা যেতে পারে, যদি আপনি মেনুর মাধ্যমে এটি আর খুলতে না পারেন।</value>
   </data>
 </root>

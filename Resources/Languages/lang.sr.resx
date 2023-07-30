@@ -247,7 +247,7 @@
     <value>Изабрани елемент</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Ивица изабраног елемента</value>
+    <value>Граница изабраног елемента</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Релативни именик</value>
@@ -373,7 +373,7 @@
     <value>Уклони директоријум</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>Онли Филес</value>
+    <value>Само датотеке</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
     <value>Обришите кеш ако је више од овог броја ставки</value>
@@ -484,7 +484,7 @@
     <value>Померајте се превлачењем</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>Филтрирајте мени према типу датотеке, нпр.: *.еке|*.длл</value>
+    <value>Филтрирај мени према типу датотеке, нпр.: *.еке|*.длл</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>Прикажи број елемената</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Поништи</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Не показуј поново овај наговештај.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Наговестити</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Мени подешавања се такође може отворити десним кликом на икону у системској палети у доњем десном углу, у случају да више не можете да га отворите преко менија.</value>
   </data>
 </root>

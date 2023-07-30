@@ -184,7 +184,7 @@
     <value>એપ્લિકેશન માટેની તમારી રૂટ ડિરેક્ટરી અસ્તિત્વમાં નથી અથવા ખાલી છે! રૂટ ડિરેક્ટરી બદલો અથવા રૂટ ડિરેક્ટરીમાં કેટલીક ફાઇલો, ડિરેક્ટરીઓ અથવા શોર્ટકટ્સ મૂકો.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં ઍક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
+    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં એક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
     <value>એક તત્વ ખોલવા માટે એક ક્લિક કરો</value>
@@ -211,7 +211,7 @@
     <value>ડિફૉલ્ટ</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>જો ફોકસ ખોવાઈ જાય અને માઉસ હજુ પણ મેનુ પર હોય</value>
+    <value>જો ફોકસ ખોવાઈ ગયું હોય અને માઉસ હજુ પણ મેનુ પર હોય</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>જ્યારે માઉસ તેના પર હોય ત્યારે મેનૂ ખુલે ત્યાં સુધી મિલિસેકન્ડ</value>
@@ -328,7 +328,7 @@
     <value>શોર્ટકટ લિંક સાથે સમસ્યા</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કામ કરશે નહીં.</value>
+    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કાર્ય કરશે નહીં.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ડિરેક્ટરી ખોલો</value>
@@ -421,7 +421,7 @@
     <value>હંમેશા બતાવો</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>છુપાયેલ ફાઇલો અને ડિરેક્ટરીઓ</value>
+    <value>છુપાયેલી ફાઇલો અને ડિરેક્ટરીઓ</value>
   </data>
   <data name="Never show" xml:space="preserve">
     <value>ક્યારેય બતાવશો નહીં</value>
@@ -475,7 +475,7 @@
     <value>વર્ગીકરણ</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>ખેંચો અને છોડો મારફતે પંક્તિ તત્વ નકલ કરો</value>
+    <value>ખેંચો અને છોડો દ્વારા પંક્તિ તત્વની નકલ કરો</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>ખેંચો</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>પૂર્વવત્ કરો</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>આ સંકેત ફરીથી બતાવશો નહીં.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>ઈશારો</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>સેટિંગ્સ મેનૂને નીચે જમણી બાજુએ સિસ્ટમ ટ્રેમાંના આઇકન પર જમણું-ક્લિક કરીને પણ ખોલી શકાય છે, જો તમે તેને મેનૂ દ્વારા ખોલી શકતા નથી.</value>
   </data>
 </root>

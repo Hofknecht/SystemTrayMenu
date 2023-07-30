@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>الغاء التحميل</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>لا تظهر هذا التلميح مرة أخرى.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>تَلمِيح</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>يمكن أيضًا فتح قائمة الإعدادات بالنقر بزر الماوس الأيمن فوق الرمز الموجود في علبة النظام أسفل اليمين ، في حالة عدم قدرتك على فتحه عبر القائمة.</value>
+  </data>
 </root>

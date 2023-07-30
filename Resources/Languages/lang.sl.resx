@@ -376,7 +376,7 @@
     <value>Samo datoteke</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Počisti predpomnilnik, če je elementov več kot to</value>
+    <value>Počisti predpomnilnik, če je več kot to število elementov</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Dodajte vzorčni imenik 'Meni Start'</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Razveljavi</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Ne pokaži več tega namiga.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Namig</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Meni z nastavitvami lahko odprete tudi z desnim klikom na ikono v sistemski vrstici spodaj desno, če ga ne morete več odpreti prek menija.</value>
   </data>
 </root>

@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>ຍົກເລີກ</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>ຢ່າສະແດງຄຳໃບ້ນີ້ອີກ.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>ຄຳໃບ້</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>ເມນູການຕັ້ງຄ່າຍັງສາມາດເປີດໄດ້ໂດຍການຄລິກຂວາທີ່ໄອຄອນໃນຖາດລະບົບຢູ່ເບື້ອງຂວາລຸ່ມ, ໃນກໍລະນີທີ່ທ່ານບໍ່ສາມາດເປີດມັນຜ່ານເມນູໄດ້.</value>
+  </data>
 </root>

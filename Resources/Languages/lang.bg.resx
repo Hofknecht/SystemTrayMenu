@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Отмяна</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Не показвайте тази подсказка отново.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Подсказка</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Менюто с настройки може да се отвори и чрез щракване с десния бутон върху иконата в системната област долу вдясно, в случай че вече не можете да го отворите чрез менюто.</value>
+  </data>
 </root>

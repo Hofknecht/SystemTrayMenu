@@ -343,7 +343,7 @@
     <value>ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>ಪರಿಣಿತ</value>
+    <value>ತಜ್ಞ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>ಫೋಕಸ್ ಕಳೆದುಹೋದರೆ ಮತ್ತು Enter ಕೀಲಿಯನ್ನು ಒತ್ತಿದರೆ</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>ರದ್ದುಮಾಡು</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>ಈ ಸುಳಿವನ್ನು ಮತ್ತೆ ತೋರಿಸಬೇಡಿ.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>ಸುಳಿವು</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಮೆನುವನ್ನು ನೀವು ಇನ್ನು ಮುಂದೆ ಮೆನು ಮೂಲಕ ತೆರೆಯಲು ಸಾಧ್ಯವಾಗದಿದ್ದಲ್ಲಿ, ಕೆಳಗಿನ ಬಲಭಾಗದಲ್ಲಿರುವ ಸಿಸ್ಟಮ್ ಟ್ರೇನಲ್ಲಿರುವ ಐಕಾನ್ ಅನ್ನು ಬಲ ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ತೆರೆಯಬಹುದು.</value>
   </data>
 </root>

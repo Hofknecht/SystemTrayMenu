@@ -556,12 +556,21 @@
     <value>potong</value>
   </data>
   <data name="Paste" xml:space="preserve">
-    <value>tampal</value>
+    <value>Tampal</value>
   </data>
   <data name="Select All" xml:space="preserve">
     <value>Pilih semua</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Buat asal</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Jangan tunjukkan pembayang ini lagi.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Petunjuk</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Menu tetapan juga boleh dibuka dengan mengklik kanan ikon dalam dulang sistem di bahagian bawah sebelah kanan, sekiranya anda tidak lagi boleh membukanya melalui menu.</value>
   </data>
 </root>

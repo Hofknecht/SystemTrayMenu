@@ -454,7 +454,7 @@
     <value>סוב מעניו איז ארויס</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>בילדל גרייס</value>
+    <value>ייקאַן גרייס</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
     <value>שטיצן SystemTrayMenu</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>ופמאַכן</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>צי ניט ווייַזן דעם אָנצוהערעניש ווידער.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>אָנצוהערעניש</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>די סעטטינגס מעניו קענען אויך זיין עפן דורך רעכט-קליקינג אויף די ייקאַן אין די סיסטעם טאַץ אין די דנאָ רעכט, אין פאַל איר קענען ניט מער עפֿענען עס דורך די מעניו.</value>
   </data>
 </root>

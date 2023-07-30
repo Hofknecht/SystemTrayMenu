@@ -325,7 +325,7 @@
     <value>hleðsla</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Vandamál með tengil á flýtileið</value>
+    <value>Vandamál með flýtileiðartengli</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Atriðið sem þessi flýtileið vísar til hefur verið breytt eða færð, þannig að þessi flýtileið mun ekki lengur virka rétt.</value>
@@ -379,7 +379,7 @@
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Bæta við sýnishornsmöppu 'Start Menu'</value>
+    <value>Bæta við sýnishornsskrá 'Start Menu'</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Röð hæð</value>
@@ -490,7 +490,7 @@
     <value>Sýna fjölda þátta</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Sýna möppuheiti efst</value>
+    <value>Sýna möppu titil efst</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>Sýna aðgerðarlykilinn 'Opna möppu'</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Afturkalla</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Ekki sýna þessa vísbendingu aftur.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Vísbending</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Einnig er hægt að opna stillingarvalmyndina með því að hægrismella á táknið í kerfisbakkanum neðst til hægri, ef þú getur ekki lengur opnað hana í gegnum valmyndina.</value>
   </data>
 </root>

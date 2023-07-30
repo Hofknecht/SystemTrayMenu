@@ -247,7 +247,7 @@
     <value>Element magħżul</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Bord tal-element magħżul</value>
+    <value>Bordur tal-element magħżul</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Direttorju relattiv</value>
@@ -295,7 +295,7 @@
     <value>Slider</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Slider waqt li tkaxkar</value>
+    <value>Slider waqt li jkaxkru</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
     <value>Slider waqt li l-maws jgħaddi fuqu 1</value>
@@ -445,7 +445,7 @@
     <value>Ħdejn dak ta’ qabel</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>Offset bil-pixels</value>
+    <value>Offset mill-pixels</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>Jikkoinċidu</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Ħoll</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Terġax turi din il-ħjiel.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Ħjiel</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Il-menu tas-settings jista 'jinfetaħ ukoll billi tikklikkja bil-lemin fuq l-ikona fit-trej tas-sistema fin-naħa t'isfel tal-lemin, f'każ li ma tkunx tista' tibqa' tiftaħha permezz tal-menu.</value>
   </data>
 </root>

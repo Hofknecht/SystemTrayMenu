@@ -133,7 +133,7 @@
     <value>kataloq</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Kataloq boş</value>
+    <value>Kataloq boşdur</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Təfərrüatlar</value>
@@ -253,7 +253,7 @@
     <value>Nisbi kataloq</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>Konfiqurasiya faylını proqram kataloqunda saxlayın</value>
+    <value>Konfiqurasiya faylını proqram qovluğunda saxlayın</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
     <value>Konfiqurasiya və log faylları</value>
@@ -379,7 +379,7 @@
     <value>Bu sayda element varsa, keşi təmizləyin</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>'Başlat Menyu' nümunə qovluğu əlavə edin</value>
+    <value>'Başlat Menyu' nümunə kataloqu əlavə edin</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Sıra hündürlüyü</value>
@@ -541,7 +541,7 @@
     <value>Tətbiq ölçüsü</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
-    <value>Könüllü Xüsusiyyətlər</value>
+    <value>Əlavə Xüsusiyyətlər</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Qovluqlara keçidləri həll edin və məzmunu göstərin</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Geri al</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Bu işarəni bir daha göstərməyin.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>İpucu</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Parametrlər menyusu, menyu vasitəsilə artıq aça bilməyəcəyiniz halda, sağ altdakı sistem tepsisindəki işarəni sağ klikləməklə də açıla bilər.</value>
   </data>
 </root>

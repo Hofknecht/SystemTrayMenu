@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>అన్డు</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>ఈ సూచనను మళ్లీ చూపవద్దు.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>సూచన</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>సెట్టింగ్‌ల మెనుని మీరు ఇకపై మెను ద్వారా తెరవలేనట్లయితే, దిగువ కుడి వైపున ఉన్న సిస్టమ్ ట్రేలోని చిహ్నాన్ని కుడి-క్లిక్ చేయడం ద్వారా కూడా తెరవవచ్చు.</value>
+  </data>
 </root>

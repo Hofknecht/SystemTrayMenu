@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Tendua</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Usionyeshe kidokezo hiki tena.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Kidokezo</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Menyu ya mipangilio pia inaweza kufunguliwa kwa kubofya kulia ikoni kwenye tray ya mfumo chini kulia, ikiwa huwezi kuifungua tena kupitia menyu.</value>
+  </data>
 </root>

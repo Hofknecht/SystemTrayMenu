@@ -331,7 +331,7 @@
     <value>Artikulli të cilit i referohet kjo shkurtore është ndryshuar ose zhvendosur, kështu që kjo shkurtore nuk do të funksionojë më siç duhet.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Hap drejtorinë</value>
+    <value>Hap direktorinë</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>Menaxher detyrë</value>
@@ -478,7 +478,7 @@
     <value>Kopjoni elementin e rreshtit duke zvarritur dhe lëshuar</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Zvarritni</value>
+    <value>Zvarrit</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Lëvizni përmes rrëshqitjes</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Zhbër</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Mos e shfaq më këtë aluzion.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Këshillë</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Menyja e cilësimeve mund të hapet gjithashtu duke klikuar me të djathtën mbi ikonën në tabakanë e sistemit në fund djathtas, në rast se nuk mund ta hapni më përmes menysë.</value>
   </data>
 </root>

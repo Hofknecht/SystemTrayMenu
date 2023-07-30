@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Desfacer</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Non volver mostrar esta suxestión.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Suxestión</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>O menú de configuración tamén se pode abrir facendo clic co botón dereito na icona da bandexa do sistema na parte inferior dereita, no caso de que xa non poidas abrilo a través do menú.</value>
+  </data>
 </root>

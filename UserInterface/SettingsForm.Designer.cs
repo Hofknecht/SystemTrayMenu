@@ -30,5172 +30,5148 @@ namespace SystemTrayMenu.UserInterface
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPageGeneral = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonGeneralDefault = new System.Windows.Forms.Button();
-            this.groupBoxFolder = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelFolder = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelChangeFolder = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonChangeFolder = new System.Windows.Forms.Button();
-            this.buttonOpenFolder = new System.Windows.Forms.Button();
-            this.checkBoxSetFolderByWindowsContextMenu = new System.Windows.Forms.CheckBox();
-            this.textBoxFolder = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelRelativeFolderOpenAssembly = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonChangeRelativeFolder = new System.Windows.Forms.Button();
-            this.buttonOpenAssemblyLocation = new System.Windows.Forms.Button();
-            this.groupBoxConfigAndLogfile = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelConfigAndLogfile = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxSaveLogFileInApplicationDirectory = new System.Windows.Forms.CheckBox();
-            this.checkBoxSaveConfigInApplicationDirectory = new System.Windows.Forms.CheckBox();
-            this.groupBoxAutostart = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxCheckForUpdates = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanelAutostart = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAddStartup = new System.Windows.Forms.Button();
-            this.labelStartupStatus = new System.Windows.Forms.Label();
-            this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
-            this.groupBoxHotkey = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelHotkey = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxHotkeyPlaceholder = new System.Windows.Forms.TextBox();
-            this.buttonHotkeyDefault = new System.Windows.Forms.Button();
-            this.groupBoxLanguage = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelLanguage = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
-            this.tabPageSizeAndLocation = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelSizeAndLocation = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxSubMenuAppearAt = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownOverlappingOffsetPixels = new System.Windows.Forms.NumericUpDown();
-            this.labelOverlappingByPixelsOffset = new System.Windows.Forms.Label();
-            this.radioButtonOverlapping = new System.Windows.Forms.RadioButton();
-            this.radioButtonNextToPreviousMenu = new System.Windows.Forms.RadioButton();
-            this.buttonSizeAndLocationDefault = new System.Windows.Forms.Button();
-            this.groupBoxMenuAppearAt = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelMenuAppearAt = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButtonUseCustomLocation = new System.Windows.Forms.RadioButton();
-            this.radioButtonAppearAtTheBottomLeft = new System.Windows.Forms.RadioButton();
-            this.radioButtonAppearAtTheBottomRight = new System.Windows.Forms.RadioButton();
-            this.radioButtonAppearAtMouseLocation = new System.Windows.Forms.RadioButton();
-            this.groupBoxSize = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelSize = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelIconSizeInPercent = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownIconSizeInPercent = new System.Windows.Forms.NumericUpDown();
-            this.labelIconSizeInPercent = new System.Windows.Forms.Label();
-            this.tableLayoutPanelRowHeighteInPercentage = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownRowHeighteInPercentage = new System.Windows.Forms.NumericUpDown();
-            this.labelRowHeightInPercentage = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSizeInPercent = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownSizeInPercent = new System.Windows.Forms.NumericUpDown();
-            this.labelSizeInPercent = new System.Windows.Forms.Label();
-            this.tableLayoutPanelMenuHeight = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownMenuHeight = new System.Windows.Forms.NumericUpDown();
-            this.labelMaxMenuHeight = new System.Windows.Forms.Label();
-            this.tableLayoutPanelMaxMenuWidth = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownMenuWidth = new System.Windows.Forms.NumericUpDown();
-            this.labelMaxMenuWidth = new System.Windows.Forms.Label();
-            this.tabPageAdvanced = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelAdvanced = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxOptionalFeatures = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxShowInTaskbar = new System.Windows.Forms.CheckBox();
-            this.checkBoxSendHotkeyInsteadKillOtherInstances = new System.Windows.Forms.CheckBox();
-            this.checkBoxSupportGamepad = new System.Windows.Forms.CheckBox();
-            this.checkBoxResolveLinksToFolders = new System.Windows.Forms.CheckBox();
-            this.groupBoxInternetShortcutIcons = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelInternetShortcutIcons = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelChangeIcoFolder = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonChangeIcoFolder = new System.Windows.Forms.Button();
-            this.textBoxIcoFolder = new System.Windows.Forms.TextBox();
-            this.groupBoxDrag = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxSwipeScrolling = new System.Windows.Forms.CheckBox();
-            this.checkBoxDragDropItems = new System.Windows.Forms.CheckBox();
-            this.buttonAdvancedDefault = new System.Windows.Forms.Button();
-            this.groupBoxSorting = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelSorting = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButtonSortByTypeAndDate = new System.Windows.Forms.RadioButton();
-            this.radioButtonSortByTypeAndName = new System.Windows.Forms.RadioButton();
-            this.radioButtonSortByDate = new System.Windows.Forms.RadioButton();
-            this.radioButtonSortByName = new System.Windows.Forms.RadioButton();
-            this.groupBoxHiddenFilesAndFolders = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelHiddenFilesAndFolders = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButtonAlwaysShowHiddenFiles = new System.Windows.Forms.RadioButton();
-            this.radioButtonNeverShowHiddenFiles = new System.Windows.Forms.RadioButton();
-            this.radioButtonSystemSettingsShowHiddenFiles = new System.Windows.Forms.RadioButton();
-            this.groupBoxClick = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelClick = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxOpenDirectoryWithOneClick = new System.Windows.Forms.CheckBox();
-            this.checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
-            this.tabPageFolders = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelFoldersInRootFolder = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxFoldersInRootFolder = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelFolderToRootFoldersList = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelFolderToRootFolder = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAddFolderToRootFolder = new System.Windows.Forms.Button();
-            this.buttonRemoveFolder = new System.Windows.Forms.Button();
-            this.dataGridViewFolders = new System.Windows.Forms.DataGridView();
-            this.ColumnFolder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRecursiveLevel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ColumnOnlyFiles = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tableLayoutPanelAddSampleStartMenuFolder = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAddSampleStartMenuFolder = new System.Windows.Forms.Button();
-            this.checkBoxGenerateShortcutsToDrives = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowOnlyAsSearchResult = new System.Windows.Forms.CheckBox();
-            this.buttonDefaultFolders = new System.Windows.Forms.Button();
-            this.tabPageExpert = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelExpert = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxSearchPattern = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelSearchPattern = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxSearchPattern = new System.Windows.Forms.TextBox();
-            this.groupBoxCache = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelCache = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.TableLayoutPanel();
-            this.labelClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.Label();
-            this.numericUpDownClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.NumericUpDown();
-            this.groupBoxStaysOpen = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelStaysOpen = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed = new System.Windows.Forms.TableLayoutPanel();
-            this.labelTimeUntilClosesAfterEnterPressed = new System.Windows.Forms.Label();
-            this.numericUpDownTimeUntilClosesAfterEnterPressed = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxStayOpenWhenItemClicked = new System.Windows.Forms.CheckBox();
-            this.checkBoxStayOpenWhenFocusLost = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanelTimeUntilCloses = new System.Windows.Forms.TableLayoutPanel();
-            this.labelTimeUntilCloses = new System.Windows.Forms.Label();
-            this.numericUpDownTimeUntilClose = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed = new System.Windows.Forms.CheckBox();
-            this.groupBoxOpenSubmenus = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelTimeUntilOpen = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDownTimeUntilOpens = new System.Windows.Forms.NumericUpDown();
-            this.labelTimeUntilOpen = new System.Windows.Forms.Label();
-            this.buttonExpertDefault = new System.Windows.Forms.Button();
-            this.tabPageCustomize = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanelCustomize = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxColorsDarkMode = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelColorIconsDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxIconsDarkMode = new System.Windows.Forms.PictureBox();
-            this.labelIconsDarkMode = new System.Windows.Forms.Label();
-            this.textBoxColorIconsDarkMode = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelColorBackgroundBorderDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxBackgroundBorderDarkMode = new System.Windows.Forms.PictureBox();
-            this.labelBackgroundBorderDarkMode = new System.Windows.Forms.Label();
-            this.textBoxColorBackgroundBorderDarkMode = new System.Windows.Forms.TextBox();
-            this.labelMenuDarkMode = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSearchFieldDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSearchFieldDarkMode = new System.Windows.Forms.PictureBox();
-            this.labelSearchFieldDarkMode = new System.Windows.Forms.Label();
-            this.textBoxColorSearchFieldDarkMode = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelOpenFolderDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxOpenFolderDarkMode = new System.Windows.Forms.PictureBox();
-            this.labelOpenFolderDarkMode = new System.Windows.Forms.Label();
-            this.textBoxColorOpenFolderDarkMode = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelOpenFolderBorderDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxOpenFolderBorderDarkMode = new System.Windows.Forms.PictureBox();
-            this.labelOpenFolderBorderDarkMode = new System.Windows.Forms.Label();
-            this.textBoxColorOpenFolderBorderDarkMode = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelSelectedItemDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureColorBoxSelectedItemDarkMode = new System.Windows.Forms.PictureBox();
-            this.labelSelectedItemDarkMode = new System.Windows.Forms.Label();
-            this.textBoxColorSelecetedItemDarkMode = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelSelectedItemBorderDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSelectedItemBorderDarkMode = new System.Windows.Forms.PictureBox();
-            this.labelSelectedItemBorderDarkMode = new System.Windows.Forms.Label();
-            this.textBoxColorSelectedItemBorderDarkMode = new System.Windows.Forms.TextBox();
-            this.labelScrollbarDarkMode = new System.Windows.Forms.Label();
-            this.tableLayoutPanelScrollbarBackgroundDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxScrollbarBackgroundDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorScrollbarBackgroundDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeScrollbarBackground = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSliderDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSliderDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSliderDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeSlider = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSliderDraggingDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSliderDraggingDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSliderDraggingDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeSliderDragging = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSliderHoverDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSliderHoverDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSliderHoverDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeSliderHover = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeSliderArrowsAndTrackHover = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrowDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeArrow = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrowClickDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowClickDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowClickDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeArrowClick = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrowClickBackgroundDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowClickBackgroundDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowClickBackgroundDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeArrowClickBackground = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrowHoverDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowHoverDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowHoverDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeArrowHover = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowHoverBackgroundDarkMode = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowHoverBackgroundDarkMode = new System.Windows.Forms.TextBox();
-            this.labelColorDarkModeArrowHoverBackground = new System.Windows.Forms.Label();
-            this.buttonColorsDefaultDarkMode = new System.Windows.Forms.Button();
-            this.tableLayoutPanelBackgroundDarkMode = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxBackgroundDarkMode = new System.Windows.Forms.PictureBox();
-            this.labelBackgroundDarkMode = new System.Windows.Forms.Label();
-            this.textBoxColorBackgroundDarkMode = new System.Windows.Forms.TextBox();
-            this.groupBoxColorsLightMode = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelColorsAndDefault = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelIcons = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxIcons = new System.Windows.Forms.PictureBox();
-            this.textBoxColorIcons = new System.Windows.Forms.TextBox();
-            this.labelIcons = new System.Windows.Forms.Label();
-            this.tableLayoutPanelBackgroundBorder = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxBackgroundBorder = new System.Windows.Forms.PictureBox();
-            this.textBoxColorBackgroundBorder = new System.Windows.Forms.TextBox();
-            this.labelBackgroundBorder = new System.Windows.Forms.Label();
-            this.labelMenuLightMode = new System.Windows.Forms.Label();
-            this.tableLayoutPanelBackground = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
-            this.textBoxColorBackground = new System.Windows.Forms.TextBox();
-            this.labelBackground = new System.Windows.Forms.Label();
-            this.buttonColorsDefault = new System.Windows.Forms.Button();
-            this.tableLayoutPanelArrowHoverBackground = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowHoverBackground = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowHoverBackground = new System.Windows.Forms.TextBox();
-            this.labelArrowHoverBackground = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrowHover = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowHover = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowHover = new System.Windows.Forms.TextBox();
-            this.labelArrowHover = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrowClickBackground = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowClickBackground = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowClickBackground = new System.Windows.Forms.TextBox();
-            this.labelArrowClickBackground = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrowClick = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrowClick = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrowClick = new System.Windows.Forms.TextBox();
-            this.labelArrowClick = new System.Windows.Forms.Label();
-            this.tableLayoutPanelArrow = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxArrow = new System.Windows.Forms.PictureBox();
-            this.textBoxColorArrow = new System.Windows.Forms.TextBox();
-            this.labelArrow = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSliderArrowsAndTrackHover = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSliderArrowsAndTrackHover = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSliderArrowsAndTrackHover = new System.Windows.Forms.TextBox();
-            this.labelSliderArrowsAndTrackHover = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSliderHover = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSliderHover = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSliderHover = new System.Windows.Forms.TextBox();
-            this.labelSliderHover = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSliderDragging = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSliderDragging = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSliderDragging = new System.Windows.Forms.TextBox();
-            this.labelSliderDragging = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSlider = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSlider = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSlider = new System.Windows.Forms.TextBox();
-            this.labelSlider = new System.Windows.Forms.Label();
-            this.tableLayoutPanelScrollbarBackground = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxScrollbarBackground = new System.Windows.Forms.PictureBox();
-            this.textBoxColorScrollbarBackground = new System.Windows.Forms.TextBox();
-            this.labelScrollbarBackground = new System.Windows.Forms.Label();
-            this.labelScrollbarLightMode = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSelectedItemBorder = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSelectedItemBorder = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSelectedItemBorder = new System.Windows.Forms.TextBox();
-            this.labelSelectedItemBorder = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSelectedItem = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSelectedItem = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSelectedItem = new System.Windows.Forms.TextBox();
-            this.labelSelectedItem = new System.Windows.Forms.Label();
-            this.tableLayoutPanelOpenFolderBorder = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxOpenFolderBorder = new System.Windows.Forms.PictureBox();
-            this.textBoxColorOpenFolderBorder = new System.Windows.Forms.TextBox();
-            this.labelOpenFolderBorder = new System.Windows.Forms.Label();
-            this.tableLayoutPanelOpenFolder = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxOpenFolder = new System.Windows.Forms.PictureBox();
-            this.textBoxColorOpenFolder = new System.Windows.Forms.TextBox();
-            this.labelOpenFolder = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSearchField = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxSearchField = new System.Windows.Forms.PictureBox();
-            this.textBoxColorSearchField = new System.Windows.Forms.TextBox();
-            this.labelSearchField = new System.Windows.Forms.Label();
-            this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelAppearance = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBoxShowFunctionKeyPinMenu = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowFunctionKeySettings = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowFunctionKeyRestart = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowLinkOverlay = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseFading = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowSearchBar = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowDirectoryTitleAtTop = new System.Windows.Forms.CheckBox();
-            this.checkBoxRoundCorners = new System.Windows.Forms.CheckBox();
-            this.checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
-            this.buttonAppearanceDefault = new System.Windows.Forms.Button();
-            this.checkBoxShowCountOfElementsBelow = new System.Windows.Forms.CheckBox();
-            this.checkBoxShowFunctionKeyOpenFolder = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonOk = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.radioButtonSortByFileExtensionAndName = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanelMain.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.tabPageGeneral.SuspendLayout();
-            this.tableLayoutPanelGeneral.SuspendLayout();
-            this.groupBoxFolder.SuspendLayout();
-            this.tableLayoutPanelFolder.SuspendLayout();
-            this.tableLayoutPanelChangeFolder.SuspendLayout();
-            this.tableLayoutPanelRelativeFolderOpenAssembly.SuspendLayout();
-            this.groupBoxConfigAndLogfile.SuspendLayout();
-            this.tableLayoutPanelConfigAndLogfile.SuspendLayout();
-            this.groupBoxAutostart.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanelAutostart.SuspendLayout();
-            this.groupBoxHotkey.SuspendLayout();
-            this.tableLayoutPanelHotkey.SuspendLayout();
-            this.groupBoxLanguage.SuspendLayout();
-            this.tableLayoutPanelLanguage.SuspendLayout();
-            this.tabPageSizeAndLocation.SuspendLayout();
-            this.tableLayoutPanelSizeAndLocation.SuspendLayout();
-            this.groupBoxSubMenuAppearAt.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverlappingOffsetPixels)).BeginInit();
-            this.groupBoxMenuAppearAt.SuspendLayout();
-            this.tableLayoutPanelMenuAppearAt.SuspendLayout();
-            this.groupBoxSize.SuspendLayout();
-            this.tableLayoutPanelSize.SuspendLayout();
-            this.tableLayoutPanelIconSizeInPercent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconSizeInPercent)).BeginInit();
-            this.tableLayoutPanelRowHeighteInPercentage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRowHeighteInPercentage)).BeginInit();
-            this.tableLayoutPanelSizeInPercent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeInPercent)).BeginInit();
-            this.tableLayoutPanelMenuHeight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuHeight)).BeginInit();
-            this.tableLayoutPanelMaxMenuWidth.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuWidth)).BeginInit();
-            this.tabPageAdvanced.SuspendLayout();
-            this.tableLayoutPanelAdvanced.SuspendLayout();
-            this.groupBoxOptionalFeatures.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.groupBoxInternetShortcutIcons.SuspendLayout();
-            this.tableLayoutPanelInternetShortcutIcons.SuspendLayout();
-            this.tableLayoutPanelChangeIcoFolder.SuspendLayout();
-            this.groupBoxDrag.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.groupBoxSorting.SuspendLayout();
-            this.tableLayoutPanelSorting.SuspendLayout();
-            this.groupBoxHiddenFilesAndFolders.SuspendLayout();
-            this.tableLayoutPanelHiddenFilesAndFolders.SuspendLayout();
-            this.groupBoxClick.SuspendLayout();
-            this.tableLayoutPanelClick.SuspendLayout();
-            this.tabPageFolders.SuspendLayout();
-            this.tableLayoutPanelFoldersInRootFolder.SuspendLayout();
-            this.groupBoxFoldersInRootFolder.SuspendLayout();
-            this.tableLayoutPanelFolderToRootFoldersList.SuspendLayout();
-            this.tableLayoutPanelFolderToRootFolder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFolders)).BeginInit();
-            this.tableLayoutPanelAddSampleStartMenuFolder.SuspendLayout();
-            this.tabPageExpert.SuspendLayout();
-            this.tableLayoutPanelExpert.SuspendLayout();
-            this.groupBoxSearchPattern.SuspendLayout();
-            this.tableLayoutPanelSearchPattern.SuspendLayout();
-            this.groupBoxCache.SuspendLayout();
-            this.tableLayoutPanelCache.SuspendLayout();
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClearCacheIfMoreThanThisNumberOfItems)).BeginInit();
-            this.groupBoxStaysOpen.SuspendLayout();
-            this.tableLayoutPanelStaysOpen.SuspendLayout();
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilClosesAfterEnterPressed)).BeginInit();
-            this.tableLayoutPanelTimeUntilCloses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilClose)).BeginInit();
-            this.groupBoxOpenSubmenus.SuspendLayout();
-            this.tableLayoutPanelTimeUntilOpen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilOpens)).BeginInit();
-            this.tabPageCustomize.SuspendLayout();
-            this.tableLayoutPanelCustomize.SuspendLayout();
-            this.groupBoxColorsDarkMode.SuspendLayout();
-            this.tableLayoutPanelDarkMode.SuspendLayout();
-            this.tableLayoutPanelColorIconsDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconsDarkMode)).BeginInit();
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgroundBorderDarkMode)).BeginInit();
-            this.tableLayoutPanelSearchFieldDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchFieldDarkMode)).BeginInit();
-            this.tableLayoutPanelOpenFolderDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolderDarkMode)).BeginInit();
-            this.tableLayoutPanelOpenFolderBorderDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolderBorderDarkMode)).BeginInit();
-            this.tableLayoutPanelSelectedItemDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureColorBoxSelectedItemDarkMode)).BeginInit();
-            this.tableLayoutPanelSelectedItemBorderDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedItemBorderDarkMode)).BeginInit();
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScrollbarBackgroundDarkMode)).BeginInit();
-            this.tableLayoutPanelSliderDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderDarkMode)).BeginInit();
-            this.tableLayoutPanelSliderDraggingDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderDraggingDarkMode)).BeginInit();
-            this.tableLayoutPanelSliderHoverDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderHoverDarkMode)).BeginInit();
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderArrowsAndTrackHoverDarkMode)).BeginInit();
-            this.tableLayoutPanelArrowDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowDarkMode)).BeginInit();
-            this.tableLayoutPanelArrowClickDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowClickDarkMode)).BeginInit();
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowClickBackgroundDarkMode)).BeginInit();
-            this.tableLayoutPanelArrowHoverDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowHoverDarkMode)).BeginInit();
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowHoverBackgroundDarkMode)).BeginInit();
-            this.tableLayoutPanelBackgroundDarkMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgroundDarkMode)).BeginInit();
-            this.groupBoxColorsLightMode.SuspendLayout();
-            this.tableLayoutPanelColorsAndDefault.SuspendLayout();
-            this.tableLayoutPanelIcons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcons)).BeginInit();
-            this.tableLayoutPanelBackgroundBorder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgroundBorder)).BeginInit();
-            this.tableLayoutPanelBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).BeginInit();
-            this.tableLayoutPanelArrowHoverBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowHoverBackground)).BeginInit();
-            this.tableLayoutPanelArrowHover.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowHover)).BeginInit();
-            this.tableLayoutPanelArrowClickBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowClickBackground)).BeginInit();
-            this.tableLayoutPanelArrowClick.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowClick)).BeginInit();
-            this.tableLayoutPanelArrow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).BeginInit();
-            this.tableLayoutPanelSliderArrowsAndTrackHover.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderArrowsAndTrackHover)).BeginInit();
-            this.tableLayoutPanelSliderHover.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderHover)).BeginInit();
-            this.tableLayoutPanelSliderDragging.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderDragging)).BeginInit();
-            this.tableLayoutPanelSlider.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlider)).BeginInit();
-            this.tableLayoutPanelScrollbarBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScrollbarBackground)).BeginInit();
-            this.tableLayoutPanelSelectedItemBorder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedItemBorder)).BeginInit();
-            this.tableLayoutPanelSelectedItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedItem)).BeginInit();
-            this.tableLayoutPanelOpenFolderBorder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolderBorder)).BeginInit();
-            this.tableLayoutPanelOpenFolder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolder)).BeginInit();
-            this.tableLayoutPanelSearchField.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchField)).BeginInit();
-            this.groupBoxAppearance.SuspendLayout();
-            this.tableLayoutPanelAppearance.SuspendLayout();
-            this.tableLayoutPanelBottom.SuspendLayout();
-            this.SuspendLayout();
+            tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
+            tabControl = new System.Windows.Forms.TabControl();
+            tabPageGeneral = new System.Windows.Forms.TabPage();
+            tableLayoutPanelGeneral = new System.Windows.Forms.TableLayoutPanel();
+            buttonGeneralDefault = new System.Windows.Forms.Button();
+            groupBoxFolder = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelFolder = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanelChangeFolder = new System.Windows.Forms.TableLayoutPanel();
+            buttonChangeFolder = new System.Windows.Forms.Button();
+            buttonOpenFolder = new System.Windows.Forms.Button();
+            checkBoxSetFolderByWindowsContextMenu = new System.Windows.Forms.CheckBox();
+            textBoxFolder = new System.Windows.Forms.TextBox();
+            tableLayoutPanelRelativeFolderOpenAssembly = new System.Windows.Forms.TableLayoutPanel();
+            buttonChangeRelativeFolder = new System.Windows.Forms.Button();
+            buttonOpenAssemblyLocation = new System.Windows.Forms.Button();
+            groupBoxConfigAndLogfile = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelConfigAndLogfile = new System.Windows.Forms.TableLayoutPanel();
+            checkBoxSaveLogFileInApplicationDirectory = new System.Windows.Forms.CheckBox();
+            checkBoxSaveConfigInApplicationDirectory = new System.Windows.Forms.CheckBox();
+            groupBoxAutostart = new System.Windows.Forms.GroupBox();
+            tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            checkBoxCheckForUpdates = new System.Windows.Forms.CheckBox();
+            tableLayoutPanelAutostart = new System.Windows.Forms.TableLayoutPanel();
+            buttonAddStartup = new System.Windows.Forms.Button();
+            labelStartupStatus = new System.Windows.Forms.Label();
+            checkBoxAutostart = new System.Windows.Forms.CheckBox();
+            groupBoxHotkey = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelHotkey = new System.Windows.Forms.TableLayoutPanel();
+            textBoxHotkeyPlaceholder = new System.Windows.Forms.TextBox();
+            buttonHotkeyDefault = new System.Windows.Forms.Button();
+            groupBoxLanguage = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelLanguage = new System.Windows.Forms.TableLayoutPanel();
+            comboBoxLanguage = new System.Windows.Forms.ComboBox();
+            tabPageSizeAndLocation = new System.Windows.Forms.TabPage();
+            tableLayoutPanelSizeAndLocation = new System.Windows.Forms.TableLayoutPanel();
+            groupBoxSubMenuAppearAt = new System.Windows.Forms.GroupBox();
+            tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            numericUpDownOverlappingOffsetPixels = new System.Windows.Forms.NumericUpDown();
+            labelOverlappingByPixelsOffset = new System.Windows.Forms.Label();
+            radioButtonOverlapping = new System.Windows.Forms.RadioButton();
+            radioButtonNextToPreviousMenu = new System.Windows.Forms.RadioButton();
+            buttonSizeAndLocationDefault = new System.Windows.Forms.Button();
+            groupBoxMenuAppearAt = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelMenuAppearAt = new System.Windows.Forms.TableLayoutPanel();
+            radioButtonUseCustomLocation = new System.Windows.Forms.RadioButton();
+            radioButtonAppearAtTheBottomLeft = new System.Windows.Forms.RadioButton();
+            radioButtonAppearAtTheBottomRight = new System.Windows.Forms.RadioButton();
+            radioButtonAppearAtMouseLocation = new System.Windows.Forms.RadioButton();
+            groupBoxSize = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelSize = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanelIconSizeInPercent = new System.Windows.Forms.TableLayoutPanel();
+            numericUpDownIconSizeInPercent = new System.Windows.Forms.NumericUpDown();
+            labelIconSizeInPercent = new System.Windows.Forms.Label();
+            tableLayoutPanelRowHeighteInPercentage = new System.Windows.Forms.TableLayoutPanel();
+            numericUpDownRowHeighteInPercentage = new System.Windows.Forms.NumericUpDown();
+            labelRowHeightInPercentage = new System.Windows.Forms.Label();
+            tableLayoutPanelSizeInPercent = new System.Windows.Forms.TableLayoutPanel();
+            numericUpDownSizeInPercent = new System.Windows.Forms.NumericUpDown();
+            labelSizeInPercent = new System.Windows.Forms.Label();
+            tableLayoutPanelMenuHeight = new System.Windows.Forms.TableLayoutPanel();
+            numericUpDownMenuHeight = new System.Windows.Forms.NumericUpDown();
+            labelMaxMenuHeight = new System.Windows.Forms.Label();
+            tableLayoutPanelMaxMenuWidth = new System.Windows.Forms.TableLayoutPanel();
+            numericUpDownMenuWidth = new System.Windows.Forms.NumericUpDown();
+            labelMaxMenuWidth = new System.Windows.Forms.Label();
+            tabPageAdvanced = new System.Windows.Forms.TabPage();
+            tableLayoutPanelAdvanced = new System.Windows.Forms.TableLayoutPanel();
+            groupBoxOptionalFeatures = new System.Windows.Forms.GroupBox();
+            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            checkBoxShowInTaskbar = new System.Windows.Forms.CheckBox();
+            checkBoxSendHotkeyInsteadKillOtherInstances = new System.Windows.Forms.CheckBox();
+            checkBoxSupportGamepad = new System.Windows.Forms.CheckBox();
+            checkBoxResolveLinksToFolders = new System.Windows.Forms.CheckBox();
+            groupBoxInternetShortcutIcons = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelInternetShortcutIcons = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanelChangeIcoFolder = new System.Windows.Forms.TableLayoutPanel();
+            buttonChangeIcoFolder = new System.Windows.Forms.Button();
+            textBoxIcoFolder = new System.Windows.Forms.TextBox();
+            groupBoxDrag = new System.Windows.Forms.GroupBox();
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            checkBoxSwipeScrolling = new System.Windows.Forms.CheckBox();
+            checkBoxDragDropItems = new System.Windows.Forms.CheckBox();
+            buttonAdvancedDefault = new System.Windows.Forms.Button();
+            groupBoxSorting = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelSorting = new System.Windows.Forms.TableLayoutPanel();
+            radioButtonSortByFileExtensionAndName = new System.Windows.Forms.RadioButton();
+            radioButtonSortByTypeAndDate = new System.Windows.Forms.RadioButton();
+            radioButtonSortByTypeAndName = new System.Windows.Forms.RadioButton();
+            radioButtonSortByDate = new System.Windows.Forms.RadioButton();
+            radioButtonSortByName = new System.Windows.Forms.RadioButton();
+            groupBoxHiddenFilesAndFolders = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelHiddenFilesAndFolders = new System.Windows.Forms.TableLayoutPanel();
+            radioButtonAlwaysShowHiddenFiles = new System.Windows.Forms.RadioButton();
+            radioButtonNeverShowHiddenFiles = new System.Windows.Forms.RadioButton();
+            radioButtonSystemSettingsShowHiddenFiles = new System.Windows.Forms.RadioButton();
+            groupBoxClick = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelClick = new System.Windows.Forms.TableLayoutPanel();
+            checkBoxOpenDirectoryWithOneClick = new System.Windows.Forms.CheckBox();
+            checkBoxOpenItemWithOneClick = new System.Windows.Forms.CheckBox();
+            tabPageFolders = new System.Windows.Forms.TabPage();
+            tableLayoutPanelFoldersInRootFolder = new System.Windows.Forms.TableLayoutPanel();
+            groupBoxFoldersInRootFolder = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelFolderToRootFoldersList = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanelFolderToRootFolder = new System.Windows.Forms.TableLayoutPanel();
+            buttonAddFolderToRootFolder = new System.Windows.Forms.Button();
+            buttonRemoveFolder = new System.Windows.Forms.Button();
+            dataGridViewFolders = new System.Windows.Forms.DataGridView();
+            ColumnFolder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ColumnRecursiveLevel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            ColumnOnlyFiles = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            tableLayoutPanelAddSampleStartMenuFolder = new System.Windows.Forms.TableLayoutPanel();
+            buttonAddSampleStartMenuFolder = new System.Windows.Forms.Button();
+            checkBoxGenerateShortcutsToDrives = new System.Windows.Forms.CheckBox();
+            checkBoxShowOnlyAsSearchResult = new System.Windows.Forms.CheckBox();
+            buttonDefaultFolders = new System.Windows.Forms.Button();
+            tabPageExpert = new System.Windows.Forms.TabPage();
+            tableLayoutPanelExpert = new System.Windows.Forms.TableLayoutPanel();
+            groupBoxSearchPattern = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelSearchPattern = new System.Windows.Forms.TableLayoutPanel();
+            textBoxSearchPattern = new System.Windows.Forms.TextBox();
+            groupBoxCache = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelCache = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.TableLayoutPanel();
+            labelClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.Label();
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems = new System.Windows.Forms.NumericUpDown();
+            groupBoxStaysOpen = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelStaysOpen = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed = new System.Windows.Forms.TableLayoutPanel();
+            labelTimeUntilClosesAfterEnterPressed = new System.Windows.Forms.Label();
+            numericUpDownTimeUntilClosesAfterEnterPressed = new System.Windows.Forms.NumericUpDown();
+            checkBoxStayOpenWhenItemClicked = new System.Windows.Forms.CheckBox();
+            checkBoxStayOpenWhenFocusLost = new System.Windows.Forms.CheckBox();
+            tableLayoutPanelTimeUntilCloses = new System.Windows.Forms.TableLayoutPanel();
+            labelTimeUntilCloses = new System.Windows.Forms.Label();
+            numericUpDownTimeUntilClose = new System.Windows.Forms.NumericUpDown();
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed = new System.Windows.Forms.CheckBox();
+            groupBoxOpenSubmenus = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelTimeUntilOpen = new System.Windows.Forms.TableLayoutPanel();
+            numericUpDownTimeUntilOpens = new System.Windows.Forms.NumericUpDown();
+            labelTimeUntilOpen = new System.Windows.Forms.Label();
+            buttonExpertDefault = new System.Windows.Forms.Button();
+            tabPageCustomize = new System.Windows.Forms.TabPage();
+            tableLayoutPanelCustomize = new System.Windows.Forms.TableLayoutPanel();
+            groupBoxColorsDarkMode = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanelColorIconsDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxIconsDarkMode = new System.Windows.Forms.PictureBox();
+            labelIconsDarkMode = new System.Windows.Forms.Label();
+            textBoxColorIconsDarkMode = new System.Windows.Forms.TextBox();
+            tableLayoutPanelColorBackgroundBorderDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxBackgroundBorderDarkMode = new System.Windows.Forms.PictureBox();
+            labelBackgroundBorderDarkMode = new System.Windows.Forms.Label();
+            textBoxColorBackgroundBorderDarkMode = new System.Windows.Forms.TextBox();
+            labelMenuDarkMode = new System.Windows.Forms.Label();
+            tableLayoutPanelSearchFieldDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSearchFieldDarkMode = new System.Windows.Forms.PictureBox();
+            labelSearchFieldDarkMode = new System.Windows.Forms.Label();
+            textBoxColorSearchFieldDarkMode = new System.Windows.Forms.TextBox();
+            tableLayoutPanelOpenFolderDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxOpenFolderDarkMode = new System.Windows.Forms.PictureBox();
+            labelOpenFolderDarkMode = new System.Windows.Forms.Label();
+            textBoxColorOpenFolderDarkMode = new System.Windows.Forms.TextBox();
+            tableLayoutPanelOpenFolderBorderDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxOpenFolderBorderDarkMode = new System.Windows.Forms.PictureBox();
+            labelOpenFolderBorderDarkMode = new System.Windows.Forms.Label();
+            textBoxColorOpenFolderBorderDarkMode = new System.Windows.Forms.TextBox();
+            tableLayoutPanelSelectedItemDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureColorBoxSelectedItemDarkMode = new System.Windows.Forms.PictureBox();
+            labelSelectedItemDarkMode = new System.Windows.Forms.Label();
+            textBoxColorSelecetedItemDarkMode = new System.Windows.Forms.TextBox();
+            tableLayoutPanelSelectedItemBorderDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSelectedItemBorderDarkMode = new System.Windows.Forms.PictureBox();
+            labelSelectedItemBorderDarkMode = new System.Windows.Forms.Label();
+            textBoxColorSelectedItemBorderDarkMode = new System.Windows.Forms.TextBox();
+            labelScrollbarDarkMode = new System.Windows.Forms.Label();
+            tableLayoutPanelScrollbarBackgroundDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxScrollbarBackgroundDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorScrollbarBackgroundDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeScrollbarBackground = new System.Windows.Forms.Label();
+            tableLayoutPanelSliderDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSliderDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorSliderDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeSlider = new System.Windows.Forms.Label();
+            tableLayoutPanelSliderDraggingDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSliderDraggingDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorSliderDraggingDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeSliderDragging = new System.Windows.Forms.Label();
+            tableLayoutPanelSliderHoverDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSliderHoverDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorSliderHoverDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeSliderHover = new System.Windows.Forms.Label();
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSliderArrowsAndTrackHoverDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorSliderArrowsAndTrackHoverDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeSliderArrowsAndTrackHover = new System.Windows.Forms.Label();
+            tableLayoutPanelArrowDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeArrow = new System.Windows.Forms.Label();
+            tableLayoutPanelArrowClickDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowClickDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowClickDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeArrowClick = new System.Windows.Forms.Label();
+            tableLayoutPanelArrowClickBackgroundDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowClickBackgroundDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowClickBackgroundDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeArrowClickBackground = new System.Windows.Forms.Label();
+            tableLayoutPanelArrowHoverDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowHoverDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowHoverDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeArrowHover = new System.Windows.Forms.Label();
+            tableLayoutPanelArrowHoverBackgroundDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowHoverBackgroundDarkMode = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowHoverBackgroundDarkMode = new System.Windows.Forms.TextBox();
+            labelColorDarkModeArrowHoverBackground = new System.Windows.Forms.Label();
+            buttonColorsDefaultDarkMode = new System.Windows.Forms.Button();
+            tableLayoutPanelBackgroundDarkMode = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxBackgroundDarkMode = new System.Windows.Forms.PictureBox();
+            labelBackgroundDarkMode = new System.Windows.Forms.Label();
+            textBoxColorBackgroundDarkMode = new System.Windows.Forms.TextBox();
+            groupBoxColorsLightMode = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelColorsAndDefault = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanelIcons = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxIcons = new System.Windows.Forms.PictureBox();
+            textBoxColorIcons = new System.Windows.Forms.TextBox();
+            labelIcons = new System.Windows.Forms.Label();
+            tableLayoutPanelBackgroundBorder = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxBackgroundBorder = new System.Windows.Forms.PictureBox();
+            textBoxColorBackgroundBorder = new System.Windows.Forms.TextBox();
+            labelBackgroundBorder = new System.Windows.Forms.Label();
+            labelMenuLightMode = new System.Windows.Forms.Label();
+            tableLayoutPanelBackground = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxBackground = new System.Windows.Forms.PictureBox();
+            textBoxColorBackground = new System.Windows.Forms.TextBox();
+            labelBackground = new System.Windows.Forms.Label();
+            buttonColorsDefault = new System.Windows.Forms.Button();
+            tableLayoutPanelArrowHoverBackground = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowHoverBackground = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowHoverBackground = new System.Windows.Forms.TextBox();
+            labelArrowHoverBackground = new System.Windows.Forms.Label();
+            tableLayoutPanelArrowHover = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowHover = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowHover = new System.Windows.Forms.TextBox();
+            labelArrowHover = new System.Windows.Forms.Label();
+            tableLayoutPanelArrowClickBackground = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowClickBackground = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowClickBackground = new System.Windows.Forms.TextBox();
+            labelArrowClickBackground = new System.Windows.Forms.Label();
+            tableLayoutPanelArrowClick = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrowClick = new System.Windows.Forms.PictureBox();
+            textBoxColorArrowClick = new System.Windows.Forms.TextBox();
+            labelArrowClick = new System.Windows.Forms.Label();
+            tableLayoutPanelArrow = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxArrow = new System.Windows.Forms.PictureBox();
+            textBoxColorArrow = new System.Windows.Forms.TextBox();
+            labelArrow = new System.Windows.Forms.Label();
+            tableLayoutPanelSliderArrowsAndTrackHover = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSliderArrowsAndTrackHover = new System.Windows.Forms.PictureBox();
+            textBoxColorSliderArrowsAndTrackHover = new System.Windows.Forms.TextBox();
+            labelSliderArrowsAndTrackHover = new System.Windows.Forms.Label();
+            tableLayoutPanelSliderHover = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSliderHover = new System.Windows.Forms.PictureBox();
+            textBoxColorSliderHover = new System.Windows.Forms.TextBox();
+            labelSliderHover = new System.Windows.Forms.Label();
+            tableLayoutPanelSliderDragging = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSliderDragging = new System.Windows.Forms.PictureBox();
+            textBoxColorSliderDragging = new System.Windows.Forms.TextBox();
+            labelSliderDragging = new System.Windows.Forms.Label();
+            tableLayoutPanelSlider = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSlider = new System.Windows.Forms.PictureBox();
+            textBoxColorSlider = new System.Windows.Forms.TextBox();
+            labelSlider = new System.Windows.Forms.Label();
+            tableLayoutPanelScrollbarBackground = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxScrollbarBackground = new System.Windows.Forms.PictureBox();
+            textBoxColorScrollbarBackground = new System.Windows.Forms.TextBox();
+            labelScrollbarBackground = new System.Windows.Forms.Label();
+            labelScrollbarLightMode = new System.Windows.Forms.Label();
+            tableLayoutPanelSelectedItemBorder = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSelectedItemBorder = new System.Windows.Forms.PictureBox();
+            textBoxColorSelectedItemBorder = new System.Windows.Forms.TextBox();
+            labelSelectedItemBorder = new System.Windows.Forms.Label();
+            tableLayoutPanelSelectedItem = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSelectedItem = new System.Windows.Forms.PictureBox();
+            textBoxColorSelectedItem = new System.Windows.Forms.TextBox();
+            labelSelectedItem = new System.Windows.Forms.Label();
+            tableLayoutPanelOpenFolderBorder = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxOpenFolderBorder = new System.Windows.Forms.PictureBox();
+            textBoxColorOpenFolderBorder = new System.Windows.Forms.TextBox();
+            labelOpenFolderBorder = new System.Windows.Forms.Label();
+            tableLayoutPanelOpenFolder = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxOpenFolder = new System.Windows.Forms.PictureBox();
+            textBoxColorOpenFolder = new System.Windows.Forms.TextBox();
+            labelOpenFolder = new System.Windows.Forms.Label();
+            tableLayoutPanelSearchField = new System.Windows.Forms.TableLayoutPanel();
+            pictureBoxSearchField = new System.Windows.Forms.PictureBox();
+            textBoxColorSearchField = new System.Windows.Forms.TextBox();
+            labelSearchField = new System.Windows.Forms.Label();
+            groupBoxAppearance = new System.Windows.Forms.GroupBox();
+            tableLayoutPanelAppearance = new System.Windows.Forms.TableLayoutPanel();
+            checkBoxShowFunctionKeyPinMenu = new System.Windows.Forms.CheckBox();
+            checkBoxShowFunctionKeySettings = new System.Windows.Forms.CheckBox();
+            checkBoxShowFunctionKeyRestart = new System.Windows.Forms.CheckBox();
+            checkBoxShowLinkOverlay = new System.Windows.Forms.CheckBox();
+            checkBoxUseFading = new System.Windows.Forms.CheckBox();
+            checkBoxUseIconFromRootFolder = new System.Windows.Forms.CheckBox();
+            checkBoxShowSearchBar = new System.Windows.Forms.CheckBox();
+            checkBoxShowDirectoryTitleAtTop = new System.Windows.Forms.CheckBox();
+            checkBoxRoundCorners = new System.Windows.Forms.CheckBox();
+            checkBoxDarkModeAlwaysOn = new System.Windows.Forms.CheckBox();
+            buttonAppearanceDefault = new System.Windows.Forms.Button();
+            checkBoxShowCountOfElementsBelow = new System.Windows.Forms.CheckBox();
+            checkBoxShowFunctionKeyOpenFolder = new System.Windows.Forms.CheckBox();
+            tableLayoutPanelBottom = new System.Windows.Forms.TableLayoutPanel();
+            buttonOk = new System.Windows.Forms.Button();
+            buttonCancel = new System.Windows.Forms.Button();
+            colorDialog = new System.Windows.Forms.ColorDialog();
+            tableLayoutPanelMain.SuspendLayout();
+            tabControl.SuspendLayout();
+            tabPageGeneral.SuspendLayout();
+            tableLayoutPanelGeneral.SuspendLayout();
+            groupBoxFolder.SuspendLayout();
+            tableLayoutPanelFolder.SuspendLayout();
+            tableLayoutPanelChangeFolder.SuspendLayout();
+            tableLayoutPanelRelativeFolderOpenAssembly.SuspendLayout();
+            groupBoxConfigAndLogfile.SuspendLayout();
+            tableLayoutPanelConfigAndLogfile.SuspendLayout();
+            groupBoxAutostart.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanelAutostart.SuspendLayout();
+            groupBoxHotkey.SuspendLayout();
+            tableLayoutPanelHotkey.SuspendLayout();
+            groupBoxLanguage.SuspendLayout();
+            tableLayoutPanelLanguage.SuspendLayout();
+            tabPageSizeAndLocation.SuspendLayout();
+            tableLayoutPanelSizeAndLocation.SuspendLayout();
+            groupBoxSubMenuAppearAt.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownOverlappingOffsetPixels).BeginInit();
+            groupBoxMenuAppearAt.SuspendLayout();
+            tableLayoutPanelMenuAppearAt.SuspendLayout();
+            groupBoxSize.SuspendLayout();
+            tableLayoutPanelSize.SuspendLayout();
+            tableLayoutPanelIconSizeInPercent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownIconSizeInPercent).BeginInit();
+            tableLayoutPanelRowHeighteInPercentage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownRowHeighteInPercentage).BeginInit();
+            tableLayoutPanelSizeInPercent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownSizeInPercent).BeginInit();
+            tableLayoutPanelMenuHeight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownMenuHeight).BeginInit();
+            tableLayoutPanelMaxMenuWidth.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownMenuWidth).BeginInit();
+            tabPageAdvanced.SuspendLayout();
+            tableLayoutPanelAdvanced.SuspendLayout();
+            groupBoxOptionalFeatures.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            groupBoxInternetShortcutIcons.SuspendLayout();
+            tableLayoutPanelInternetShortcutIcons.SuspendLayout();
+            tableLayoutPanelChangeIcoFolder.SuspendLayout();
+            groupBoxDrag.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            groupBoxSorting.SuspendLayout();
+            tableLayoutPanelSorting.SuspendLayout();
+            groupBoxHiddenFilesAndFolders.SuspendLayout();
+            tableLayoutPanelHiddenFilesAndFolders.SuspendLayout();
+            groupBoxClick.SuspendLayout();
+            tableLayoutPanelClick.SuspendLayout();
+            tabPageFolders.SuspendLayout();
+            tableLayoutPanelFoldersInRootFolder.SuspendLayout();
+            groupBoxFoldersInRootFolder.SuspendLayout();
+            tableLayoutPanelFolderToRootFoldersList.SuspendLayout();
+            tableLayoutPanelFolderToRootFolder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFolders).BeginInit();
+            tableLayoutPanelAddSampleStartMenuFolder.SuspendLayout();
+            tabPageExpert.SuspendLayout();
+            tableLayoutPanelExpert.SuspendLayout();
+            groupBoxSearchPattern.SuspendLayout();
+            tableLayoutPanelSearchPattern.SuspendLayout();
+            groupBoxCache.SuspendLayout();
+            tableLayoutPanelCache.SuspendLayout();
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownClearCacheIfMoreThanThisNumberOfItems).BeginInit();
+            groupBoxStaysOpen.SuspendLayout();
+            tableLayoutPanelStaysOpen.SuspendLayout();
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTimeUntilClosesAfterEnterPressed).BeginInit();
+            tableLayoutPanelTimeUntilCloses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTimeUntilClose).BeginInit();
+            groupBoxOpenSubmenus.SuspendLayout();
+            tableLayoutPanelTimeUntilOpen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTimeUntilOpens).BeginInit();
+            tabPageCustomize.SuspendLayout();
+            tableLayoutPanelCustomize.SuspendLayout();
+            groupBoxColorsDarkMode.SuspendLayout();
+            tableLayoutPanelDarkMode.SuspendLayout();
+            tableLayoutPanelColorIconsDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxIconsDarkMode).BeginInit();
+            tableLayoutPanelColorBackgroundBorderDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBackgroundBorderDarkMode).BeginInit();
+            tableLayoutPanelSearchFieldDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSearchFieldDarkMode).BeginInit();
+            tableLayoutPanelOpenFolderDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxOpenFolderDarkMode).BeginInit();
+            tableLayoutPanelOpenFolderBorderDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxOpenFolderBorderDarkMode).BeginInit();
+            tableLayoutPanelSelectedItemDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureColorBoxSelectedItemDarkMode).BeginInit();
+            tableLayoutPanelSelectedItemBorderDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedItemBorderDarkMode).BeginInit();
+            tableLayoutPanelScrollbarBackgroundDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxScrollbarBackgroundDarkMode).BeginInit();
+            tableLayoutPanelSliderDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderDarkMode).BeginInit();
+            tableLayoutPanelSliderDraggingDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderDraggingDarkMode).BeginInit();
+            tableLayoutPanelSliderHoverDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderHoverDarkMode).BeginInit();
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderArrowsAndTrackHoverDarkMode).BeginInit();
+            tableLayoutPanelArrowDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowDarkMode).BeginInit();
+            tableLayoutPanelArrowClickDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowClickDarkMode).BeginInit();
+            tableLayoutPanelArrowClickBackgroundDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowClickBackgroundDarkMode).BeginInit();
+            tableLayoutPanelArrowHoverDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowHoverDarkMode).BeginInit();
+            tableLayoutPanelArrowHoverBackgroundDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowHoverBackgroundDarkMode).BeginInit();
+            tableLayoutPanelBackgroundDarkMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBackgroundDarkMode).BeginInit();
+            groupBoxColorsLightMode.SuspendLayout();
+            tableLayoutPanelColorsAndDefault.SuspendLayout();
+            tableLayoutPanelIcons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxIcons).BeginInit();
+            tableLayoutPanelBackgroundBorder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBackgroundBorder).BeginInit();
+            tableLayoutPanelBackground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBackground).BeginInit();
+            tableLayoutPanelArrowHoverBackground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowHoverBackground).BeginInit();
+            tableLayoutPanelArrowHover.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowHover).BeginInit();
+            tableLayoutPanelArrowClickBackground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowClickBackground).BeginInit();
+            tableLayoutPanelArrowClick.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowClick).BeginInit();
+            tableLayoutPanelArrow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrow).BeginInit();
+            tableLayoutPanelSliderArrowsAndTrackHover.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderArrowsAndTrackHover).BeginInit();
+            tableLayoutPanelSliderHover.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderHover).BeginInit();
+            tableLayoutPanelSliderDragging.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderDragging).BeginInit();
+            tableLayoutPanelSlider.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSlider).BeginInit();
+            tableLayoutPanelScrollbarBackground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxScrollbarBackground).BeginInit();
+            tableLayoutPanelSelectedItemBorder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedItemBorder).BeginInit();
+            tableLayoutPanelSelectedItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedItem).BeginInit();
+            tableLayoutPanelOpenFolderBorder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxOpenFolderBorder).BeginInit();
+            tableLayoutPanelOpenFolder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxOpenFolder).BeginInit();
+            tableLayoutPanelSearchField.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSearchField).BeginInit();
+            groupBoxAppearance.SuspendLayout();
+            tableLayoutPanelAppearance.SuspendLayout();
+            tableLayoutPanelBottom.SuspendLayout();
+            SuspendLayout();
             // 
             // tableLayoutPanelMain
             // 
-            this.tableLayoutPanelMain.AutoSize = true;
-            this.tableLayoutPanelMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMain.ColumnCount = 1;
-            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Controls.Add(this.tabControl, 0, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelBottom, 0, 1);
-            this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
-            this.tableLayoutPanelMain.RowCount = 2;
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(432, 553);
-            this.tableLayoutPanelMain.TabIndex = 0;
+            tableLayoutPanelMain.AutoSize = true;
+            tableLayoutPanelMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMain.ColumnCount = 1;
+            tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelMain.Controls.Add(tabControl, 0, 0);
+            tableLayoutPanelMain.Controls.Add(tableLayoutPanelBottom, 0, 1);
+            tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanelMain.Name = "tableLayoutPanelMain";
+            tableLayoutPanelMain.RowCount = 2;
+            tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelMain.Size = new System.Drawing.Size(432, 553);
+            tableLayoutPanelMain.TabIndex = 0;
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPageGeneral);
-            this.tabControl.Controls.Add(this.tabPageSizeAndLocation);
-            this.tabControl.Controls.Add(this.tabPageAdvanced);
-            this.tabControl.Controls.Add(this.tabPageFolders);
-            this.tabControl.Controls.Add(this.tabPageExpert);
-            this.tabControl.Controls.Add(this.tabPageCustomize);
-            this.tabControl.Location = new System.Drawing.Point(6, 3);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 2;
-            this.tabControl.Size = new System.Drawing.Size(420, 513);
-            this.tabControl.TabIndex = 0;
+            tabControl.Controls.Add(tabPageGeneral);
+            tabControl.Controls.Add(tabPageSizeAndLocation);
+            tabControl.Controls.Add(tabPageAdvanced);
+            tabControl.Controls.Add(tabPageFolders);
+            tabControl.Controls.Add(tabPageExpert);
+            tabControl.Controls.Add(tabPageCustomize);
+            tabControl.Location = new System.Drawing.Point(6, 3);
+            tabControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 2;
+            tabControl.Size = new System.Drawing.Size(420, 513);
+            tabControl.TabIndex = 0;
             // 
             // tabPageGeneral
             // 
-            this.tabPageGeneral.AutoScroll = true;
-            this.tabPageGeneral.Controls.Add(this.tableLayoutPanelGeneral);
-            this.tabPageGeneral.Location = new System.Drawing.Point(4, 24);
-            this.tabPageGeneral.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
-            this.tabPageGeneral.Name = "tabPageGeneral";
-            this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneral.Size = new System.Drawing.Size(412, 485);
-            this.tabPageGeneral.TabIndex = 0;
-            this.tabPageGeneral.Text = "tabPageGeneral";
-            this.tabPageGeneral.UseVisualStyleBackColor = true;
+            tabPageGeneral.AutoScroll = true;
+            tabPageGeneral.Controls.Add(tableLayoutPanelGeneral);
+            tabPageGeneral.Location = new System.Drawing.Point(4, 24);
+            tabPageGeneral.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
+            tabPageGeneral.Name = "tabPageGeneral";
+            tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
+            tabPageGeneral.Size = new System.Drawing.Size(412, 485);
+            tabPageGeneral.TabIndex = 0;
+            tabPageGeneral.Text = "tabPageGeneral";
+            tabPageGeneral.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelGeneral
             // 
-            this.tableLayoutPanelGeneral.AutoSize = true;
-            this.tableLayoutPanelGeneral.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelGeneral.ColumnCount = 1;
-            this.tableLayoutPanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelGeneral.Controls.Add(this.buttonGeneralDefault, 0, 5);
-            this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxFolder, 0, 0);
-            this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxConfigAndLogfile, 0, 1);
-            this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxAutostart, 0, 2);
-            this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxHotkey, 0, 3);
-            this.tableLayoutPanelGeneral.Controls.Add(this.groupBoxLanguage, 0, 4);
-            this.tableLayoutPanelGeneral.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanelGeneral.Name = "tableLayoutPanelGeneral";
-            this.tableLayoutPanelGeneral.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
-            this.tableLayoutPanelGeneral.RowCount = 6;
-            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(377, 458);
-            this.tableLayoutPanelGeneral.TabIndex = 0;
+            tableLayoutPanelGeneral.AutoSize = true;
+            tableLayoutPanelGeneral.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelGeneral.ColumnCount = 1;
+            tableLayoutPanelGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelGeneral.Controls.Add(buttonGeneralDefault, 0, 5);
+            tableLayoutPanelGeneral.Controls.Add(groupBoxFolder, 0, 0);
+            tableLayoutPanelGeneral.Controls.Add(groupBoxConfigAndLogfile, 0, 1);
+            tableLayoutPanelGeneral.Controls.Add(groupBoxAutostart, 0, 2);
+            tableLayoutPanelGeneral.Controls.Add(groupBoxHotkey, 0, 3);
+            tableLayoutPanelGeneral.Controls.Add(groupBoxLanguage, 0, 4);
+            tableLayoutPanelGeneral.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanelGeneral.Name = "tableLayoutPanelGeneral";
+            tableLayoutPanelGeneral.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            tableLayoutPanelGeneral.RowCount = 6;
+            tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelGeneral.Size = new System.Drawing.Size(377, 458);
+            tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // buttonGeneralDefault
             // 
-            this.buttonGeneralDefault.AutoSize = true;
-            this.buttonGeneralDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonGeneralDefault.Location = new System.Drawing.Point(9, 424);
-            this.buttonGeneralDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
-            this.buttonGeneralDefault.MinimumSize = new System.Drawing.Size(75, 25);
-            this.buttonGeneralDefault.Name = "buttonGeneralDefault";
-            this.buttonGeneralDefault.Size = new System.Drawing.Size(131, 25);
-            this.buttonGeneralDefault.TabIndex = 1;
-            this.buttonGeneralDefault.Text = "buttonGeneralDefault";
-            this.buttonGeneralDefault.UseVisualStyleBackColor = true;
-            this.buttonGeneralDefault.Click += new System.EventHandler(this.ButtonGeneralDefault_Click);
+            buttonGeneralDefault.AutoSize = true;
+            buttonGeneralDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonGeneralDefault.Location = new System.Drawing.Point(9, 424);
+            buttonGeneralDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
+            buttonGeneralDefault.MinimumSize = new System.Drawing.Size(75, 25);
+            buttonGeneralDefault.Name = "buttonGeneralDefault";
+            buttonGeneralDefault.Size = new System.Drawing.Size(131, 25);
+            buttonGeneralDefault.TabIndex = 1;
+            buttonGeneralDefault.Text = "buttonGeneralDefault";
+            buttonGeneralDefault.UseVisualStyleBackColor = true;
+            buttonGeneralDefault.Click += ButtonGeneralDefault_Click;
             // 
             // groupBoxFolder
             // 
-            this.groupBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxFolder.AutoSize = true;
-            this.groupBoxFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxFolder.Controls.Add(this.tableLayoutPanelFolder);
-            this.groupBoxFolder.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxFolder.Name = "groupBoxFolder";
-            this.groupBoxFolder.Size = new System.Drawing.Size(365, 131);
-            this.groupBoxFolder.TabIndex = 0;
-            this.groupBoxFolder.TabStop = false;
-            this.groupBoxFolder.Text = "groupBoxFolder";
+            groupBoxFolder.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxFolder.AutoSize = true;
+            groupBoxFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxFolder.Controls.Add(tableLayoutPanelFolder);
+            groupBoxFolder.Location = new System.Drawing.Point(3, 3);
+            groupBoxFolder.Name = "groupBoxFolder";
+            groupBoxFolder.Size = new System.Drawing.Size(365, 131);
+            groupBoxFolder.TabIndex = 0;
+            groupBoxFolder.TabStop = false;
+            groupBoxFolder.Text = "groupBoxFolder";
             // 
             // tableLayoutPanelFolder
             // 
-            this.tableLayoutPanelFolder.AutoSize = true;
-            this.tableLayoutPanelFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelFolder.ColumnCount = 1;
-            this.tableLayoutPanelFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelFolder.Controls.Add(this.tableLayoutPanelChangeFolder, 0, 1);
-            this.tableLayoutPanelFolder.Controls.Add(this.checkBoxSetFolderByWindowsContextMenu, 0, 2);
-            this.tableLayoutPanelFolder.Controls.Add(this.textBoxFolder, 0, 0);
-            this.tableLayoutPanelFolder.Controls.Add(this.tableLayoutPanelRelativeFolderOpenAssembly, 0, 3);
-            this.tableLayoutPanelFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFolder.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelFolder.Name = "tableLayoutPanelFolder";
-            this.tableLayoutPanelFolder.RowCount = 4;
-            this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolder.Size = new System.Drawing.Size(359, 109);
-            this.tableLayoutPanelFolder.TabIndex = 0;
+            tableLayoutPanelFolder.AutoSize = true;
+            tableLayoutPanelFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelFolder.ColumnCount = 1;
+            tableLayoutPanelFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelFolder.Controls.Add(tableLayoutPanelChangeFolder, 0, 1);
+            tableLayoutPanelFolder.Controls.Add(checkBoxSetFolderByWindowsContextMenu, 0, 2);
+            tableLayoutPanelFolder.Controls.Add(textBoxFolder, 0, 0);
+            tableLayoutPanelFolder.Controls.Add(tableLayoutPanelRelativeFolderOpenAssembly, 0, 3);
+            tableLayoutPanelFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelFolder.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelFolder.Name = "tableLayoutPanelFolder";
+            tableLayoutPanelFolder.RowCount = 4;
+            tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolder.Size = new System.Drawing.Size(359, 109);
+            tableLayoutPanelFolder.TabIndex = 0;
             // 
             // tableLayoutPanelChangeFolder
             // 
-            this.tableLayoutPanelChangeFolder.AutoSize = true;
-            this.tableLayoutPanelChangeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelChangeFolder.ColumnCount = 3;
-            this.tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelChangeFolder.Controls.Add(this.buttonChangeFolder, 0, 0);
-            this.tableLayoutPanelChangeFolder.Controls.Add(this.buttonOpenFolder, 2, 0);
-            this.tableLayoutPanelChangeFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelChangeFolder.Location = new System.Drawing.Point(0, 22);
-            this.tableLayoutPanelChangeFolder.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelChangeFolder.Name = "tableLayoutPanelChangeFolder";
-            this.tableLayoutPanelChangeFolder.RowCount = 1;
-            this.tableLayoutPanelChangeFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelChangeFolder.Size = new System.Drawing.Size(359, 31);
-            this.tableLayoutPanelChangeFolder.TabIndex = 0;
+            tableLayoutPanelChangeFolder.AutoSize = true;
+            tableLayoutPanelChangeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelChangeFolder.ColumnCount = 3;
+            tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelChangeFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelChangeFolder.Controls.Add(buttonChangeFolder, 0, 0);
+            tableLayoutPanelChangeFolder.Controls.Add(buttonOpenFolder, 2, 0);
+            tableLayoutPanelChangeFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelChangeFolder.Location = new System.Drawing.Point(0, 22);
+            tableLayoutPanelChangeFolder.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelChangeFolder.Name = "tableLayoutPanelChangeFolder";
+            tableLayoutPanelChangeFolder.RowCount = 1;
+            tableLayoutPanelChangeFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelChangeFolder.Size = new System.Drawing.Size(359, 31);
+            tableLayoutPanelChangeFolder.TabIndex = 0;
             // 
             // buttonChangeFolder
             // 
-            this.buttonChangeFolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonChangeFolder.AutoSize = true;
-            this.buttonChangeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonChangeFolder.Location = new System.Drawing.Point(2, 3);
-            this.buttonChangeFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.buttonChangeFolder.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonChangeFolder.Name = "buttonChangeFolder";
-            this.buttonChangeFolder.Size = new System.Drawing.Size(127, 25);
-            this.buttonChangeFolder.TabIndex = 0;
-            this.buttonChangeFolder.Text = "buttonChangeFolder";
-            this.buttonChangeFolder.UseVisualStyleBackColor = true;
-            this.buttonChangeFolder.Click += new System.EventHandler(this.ButtonChange_Click);
+            buttonChangeFolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            buttonChangeFolder.AutoSize = true;
+            buttonChangeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonChangeFolder.Location = new System.Drawing.Point(2, 3);
+            buttonChangeFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            buttonChangeFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonChangeFolder.Name = "buttonChangeFolder";
+            buttonChangeFolder.Size = new System.Drawing.Size(127, 25);
+            buttonChangeFolder.TabIndex = 0;
+            buttonChangeFolder.Text = "buttonChangeFolder";
+            buttonChangeFolder.UseVisualStyleBackColor = true;
+            buttonChangeFolder.Click += ButtonChange_Click;
             // 
             // buttonOpenFolder
             // 
-            this.buttonOpenFolder.AutoSize = true;
-            this.buttonOpenFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOpenFolder.Location = new System.Drawing.Point(241, 3);
-            this.buttonOpenFolder.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonOpenFolder.Name = "buttonOpenFolder";
-            this.buttonOpenFolder.Size = new System.Drawing.Size(115, 25);
-            this.buttonOpenFolder.TabIndex = 3;
-            this.buttonOpenFolder.Text = "buttonOpenFolder";
-            this.buttonOpenFolder.UseVisualStyleBackColor = true;
-            this.buttonOpenFolder.Click += new System.EventHandler(this.ButtonOpenFolder_Click);
+            buttonOpenFolder.AutoSize = true;
+            buttonOpenFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonOpenFolder.Location = new System.Drawing.Point(241, 3);
+            buttonOpenFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonOpenFolder.Name = "buttonOpenFolder";
+            buttonOpenFolder.Size = new System.Drawing.Size(115, 25);
+            buttonOpenFolder.TabIndex = 3;
+            buttonOpenFolder.Text = "buttonOpenFolder";
+            buttonOpenFolder.UseVisualStyleBackColor = true;
+            buttonOpenFolder.Click += ButtonOpenFolder_Click;
             // 
             // checkBoxSetFolderByWindowsContextMenu
             // 
-            this.checkBoxSetFolderByWindowsContextMenu.AutoSize = true;
-            this.checkBoxSetFolderByWindowsContextMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxSetFolderByWindowsContextMenu.Location = new System.Drawing.Point(3, 56);
-            this.checkBoxSetFolderByWindowsContextMenu.Name = "checkBoxSetFolderByWindowsContextMenu";
-            this.checkBoxSetFolderByWindowsContextMenu.Size = new System.Drawing.Size(353, 19);
-            this.checkBoxSetFolderByWindowsContextMenu.TabIndex = 5;
-            this.checkBoxSetFolderByWindowsContextMenu.Text = "SetFolderByWindowsContextMenu";
-            this.checkBoxSetFolderByWindowsContextMenu.UseVisualStyleBackColor = true;
+            checkBoxSetFolderByWindowsContextMenu.AutoSize = true;
+            checkBoxSetFolderByWindowsContextMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxSetFolderByWindowsContextMenu.Location = new System.Drawing.Point(3, 56);
+            checkBoxSetFolderByWindowsContextMenu.Name = "checkBoxSetFolderByWindowsContextMenu";
+            checkBoxSetFolderByWindowsContextMenu.Size = new System.Drawing.Size(353, 19);
+            checkBoxSetFolderByWindowsContextMenu.TabIndex = 5;
+            checkBoxSetFolderByWindowsContextMenu.Text = "SetFolderByWindowsContextMenu";
+            checkBoxSetFolderByWindowsContextMenu.UseVisualStyleBackColor = true;
             // 
             // textBoxFolder
             // 
-            this.textBoxFolder.BackColor = System.Drawing.Color.White;
-            this.textBoxFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFolder.Location = new System.Drawing.Point(6, 3);
-            this.textBoxFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.textBoxFolder.Name = "textBoxFolder";
-            this.textBoxFolder.ReadOnly = true;
-            this.textBoxFolder.Size = new System.Drawing.Size(277, 16);
-            this.textBoxFolder.TabIndex = 0;
-            this.textBoxFolder.TabStop = false;
+            textBoxFolder.BackColor = System.Drawing.Color.White;
+            textBoxFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            textBoxFolder.Location = new System.Drawing.Point(6, 3);
+            textBoxFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            textBoxFolder.Name = "textBoxFolder";
+            textBoxFolder.ReadOnly = true;
+            textBoxFolder.Size = new System.Drawing.Size(277, 16);
+            textBoxFolder.TabIndex = 0;
+            textBoxFolder.TabStop = false;
             // 
             // tableLayoutPanelRelativeFolderOpenAssembly
             // 
-            this.tableLayoutPanelRelativeFolderOpenAssembly.AutoSize = true;
-            this.tableLayoutPanelRelativeFolderOpenAssembly.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelRelativeFolderOpenAssembly.ColumnCount = 3;
-            this.tableLayoutPanelRelativeFolderOpenAssembly.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelRelativeFolderOpenAssembly.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRelativeFolderOpenAssembly.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Controls.Add(this.buttonChangeRelativeFolder, 0, 0);
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Controls.Add(this.buttonOpenAssemblyLocation, 2, 0);
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Location = new System.Drawing.Point(0, 78);
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Name = "tableLayoutPanelRelativeFolderOpenAssembly";
-            this.tableLayoutPanelRelativeFolderOpenAssembly.RowCount = 1;
-            this.tableLayoutPanelRelativeFolderOpenAssembly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelRelativeFolderOpenAssembly.Size = new System.Drawing.Size(359, 31);
-            this.tableLayoutPanelRelativeFolderOpenAssembly.TabIndex = 0;
+            tableLayoutPanelRelativeFolderOpenAssembly.AutoSize = true;
+            tableLayoutPanelRelativeFolderOpenAssembly.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelRelativeFolderOpenAssembly.ColumnCount = 3;
+            tableLayoutPanelRelativeFolderOpenAssembly.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelRelativeFolderOpenAssembly.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelRelativeFolderOpenAssembly.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelRelativeFolderOpenAssembly.Controls.Add(buttonChangeRelativeFolder, 0, 0);
+            tableLayoutPanelRelativeFolderOpenAssembly.Controls.Add(buttonOpenAssemblyLocation, 2, 0);
+            tableLayoutPanelRelativeFolderOpenAssembly.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelRelativeFolderOpenAssembly.Location = new System.Drawing.Point(0, 78);
+            tableLayoutPanelRelativeFolderOpenAssembly.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelRelativeFolderOpenAssembly.Name = "tableLayoutPanelRelativeFolderOpenAssembly";
+            tableLayoutPanelRelativeFolderOpenAssembly.RowCount = 1;
+            tableLayoutPanelRelativeFolderOpenAssembly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelRelativeFolderOpenAssembly.Size = new System.Drawing.Size(359, 31);
+            tableLayoutPanelRelativeFolderOpenAssembly.TabIndex = 0;
             // 
             // buttonChangeRelativeFolder
             // 
-            this.buttonChangeRelativeFolder.AutoSize = true;
-            this.buttonChangeRelativeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonChangeRelativeFolder.Location = new System.Drawing.Point(2, 3);
-            this.buttonChangeRelativeFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.buttonChangeRelativeFolder.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonChangeRelativeFolder.Name = "buttonChangeRelativeFolder";
-            this.buttonChangeRelativeFolder.Size = new System.Drawing.Size(132, 25);
-            this.buttonChangeRelativeFolder.TabIndex = 0;
-            this.buttonChangeRelativeFolder.Text = "ChangeRelativeFolder";
-            this.buttonChangeRelativeFolder.UseVisualStyleBackColor = true;
-            this.buttonChangeRelativeFolder.Click += new System.EventHandler(this.ButtonChangeRelativeFolder_Click);
+            buttonChangeRelativeFolder.AutoSize = true;
+            buttonChangeRelativeFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonChangeRelativeFolder.Location = new System.Drawing.Point(2, 3);
+            buttonChangeRelativeFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            buttonChangeRelativeFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonChangeRelativeFolder.Name = "buttonChangeRelativeFolder";
+            buttonChangeRelativeFolder.Size = new System.Drawing.Size(132, 25);
+            buttonChangeRelativeFolder.TabIndex = 0;
+            buttonChangeRelativeFolder.Text = "ChangeRelativeFolder";
+            buttonChangeRelativeFolder.UseVisualStyleBackColor = true;
+            buttonChangeRelativeFolder.Click += ButtonChangeRelativeFolder_Click;
             // 
             // buttonOpenAssemblyLocation
             // 
-            this.buttonOpenAssemblyLocation.AutoSize = true;
-            this.buttonOpenAssemblyLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOpenAssemblyLocation.Location = new System.Drawing.Point(177, 3);
-            this.buttonOpenAssemblyLocation.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonOpenAssemblyLocation.Name = "buttonOpenAssemblyLocation";
-            this.buttonOpenAssemblyLocation.Size = new System.Drawing.Size(179, 25);
-            this.buttonOpenAssemblyLocation.TabIndex = 0;
-            this.buttonOpenAssemblyLocation.Text = "buttonOpenAssemblyLocation";
-            this.buttonOpenAssemblyLocation.UseVisualStyleBackColor = true;
-            this.buttonOpenAssemblyLocation.Click += new System.EventHandler(this.ButtonOpenAssemblyLocation_Click);
+            buttonOpenAssemblyLocation.AutoSize = true;
+            buttonOpenAssemblyLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonOpenAssemblyLocation.Location = new System.Drawing.Point(177, 3);
+            buttonOpenAssemblyLocation.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonOpenAssemblyLocation.Name = "buttonOpenAssemblyLocation";
+            buttonOpenAssemblyLocation.Size = new System.Drawing.Size(179, 25);
+            buttonOpenAssemblyLocation.TabIndex = 0;
+            buttonOpenAssemblyLocation.Text = "buttonOpenAssemblyLocation";
+            buttonOpenAssemblyLocation.UseVisualStyleBackColor = true;
+            buttonOpenAssemblyLocation.Click += ButtonOpenAssemblyLocation_Click;
             // 
             // groupBoxConfigAndLogfile
             // 
-            this.groupBoxConfigAndLogfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxConfigAndLogfile.AutoSize = true;
-            this.groupBoxConfigAndLogfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxConfigAndLogfile.Controls.Add(this.tableLayoutPanelConfigAndLogfile);
-            this.groupBoxConfigAndLogfile.Location = new System.Drawing.Point(3, 140);
-            this.groupBoxConfigAndLogfile.Name = "groupBoxConfigAndLogfile";
-            this.groupBoxConfigAndLogfile.Size = new System.Drawing.Size(365, 72);
-            this.groupBoxConfigAndLogfile.TabIndex = 0;
-            this.groupBoxConfigAndLogfile.TabStop = false;
-            this.groupBoxConfigAndLogfile.Text = "groupBoxConfigAndLogfile";
+            groupBoxConfigAndLogfile.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxConfigAndLogfile.AutoSize = true;
+            groupBoxConfigAndLogfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxConfigAndLogfile.Controls.Add(tableLayoutPanelConfigAndLogfile);
+            groupBoxConfigAndLogfile.Location = new System.Drawing.Point(3, 140);
+            groupBoxConfigAndLogfile.Name = "groupBoxConfigAndLogfile";
+            groupBoxConfigAndLogfile.Size = new System.Drawing.Size(365, 72);
+            groupBoxConfigAndLogfile.TabIndex = 0;
+            groupBoxConfigAndLogfile.TabStop = false;
+            groupBoxConfigAndLogfile.Text = "groupBoxConfigAndLogfile";
             // 
             // tableLayoutPanelConfigAndLogfile
             // 
-            this.tableLayoutPanelConfigAndLogfile.AutoSize = true;
-            this.tableLayoutPanelConfigAndLogfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelConfigAndLogfile.ColumnCount = 1;
-            this.tableLayoutPanelConfigAndLogfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelConfigAndLogfile.Controls.Add(this.checkBoxSaveLogFileInApplicationDirectory, 0, 2);
-            this.tableLayoutPanelConfigAndLogfile.Controls.Add(this.checkBoxSaveConfigInApplicationDirectory, 0, 1);
-            this.tableLayoutPanelConfigAndLogfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelConfigAndLogfile.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelConfigAndLogfile.Name = "tableLayoutPanelConfigAndLogfile";
-            this.tableLayoutPanelConfigAndLogfile.RowCount = 3;
-            this.tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelConfigAndLogfile.Size = new System.Drawing.Size(359, 50);
-            this.tableLayoutPanelConfigAndLogfile.TabIndex = 0;
+            tableLayoutPanelConfigAndLogfile.AutoSize = true;
+            tableLayoutPanelConfigAndLogfile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelConfigAndLogfile.ColumnCount = 1;
+            tableLayoutPanelConfigAndLogfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelConfigAndLogfile.Controls.Add(checkBoxSaveLogFileInApplicationDirectory, 0, 2);
+            tableLayoutPanelConfigAndLogfile.Controls.Add(checkBoxSaveConfigInApplicationDirectory, 0, 1);
+            tableLayoutPanelConfigAndLogfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelConfigAndLogfile.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelConfigAndLogfile.Name = "tableLayoutPanelConfigAndLogfile";
+            tableLayoutPanelConfigAndLogfile.RowCount = 3;
+            tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelConfigAndLogfile.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelConfigAndLogfile.Size = new System.Drawing.Size(359, 50);
+            tableLayoutPanelConfigAndLogfile.TabIndex = 0;
             // 
             // checkBoxSaveLogFileInApplicationDirectory
             // 
-            this.checkBoxSaveLogFileInApplicationDirectory.AutoSize = true;
-            this.checkBoxSaveLogFileInApplicationDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxSaveLogFileInApplicationDirectory.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxSaveLogFileInApplicationDirectory.Name = "checkBoxSaveLogFileInApplicationDirectory";
-            this.checkBoxSaveLogFileInApplicationDirectory.Size = new System.Drawing.Size(353, 19);
-            this.checkBoxSaveLogFileInApplicationDirectory.TabIndex = 1;
-            this.checkBoxSaveLogFileInApplicationDirectory.Text = "checkBoxSaveLogFileInApplicationDirectory";
-            this.checkBoxSaveLogFileInApplicationDirectory.UseVisualStyleBackColor = true;
+            checkBoxSaveLogFileInApplicationDirectory.AutoSize = true;
+            checkBoxSaveLogFileInApplicationDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxSaveLogFileInApplicationDirectory.Location = new System.Drawing.Point(3, 28);
+            checkBoxSaveLogFileInApplicationDirectory.Name = "checkBoxSaveLogFileInApplicationDirectory";
+            checkBoxSaveLogFileInApplicationDirectory.Size = new System.Drawing.Size(353, 19);
+            checkBoxSaveLogFileInApplicationDirectory.TabIndex = 1;
+            checkBoxSaveLogFileInApplicationDirectory.Text = "checkBoxSaveLogFileInApplicationDirectory";
+            checkBoxSaveLogFileInApplicationDirectory.UseVisualStyleBackColor = true;
             // 
             // checkBoxSaveConfigInApplicationDirectory
             // 
-            this.checkBoxSaveConfigInApplicationDirectory.AutoSize = true;
-            this.checkBoxSaveConfigInApplicationDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxSaveConfigInApplicationDirectory.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxSaveConfigInApplicationDirectory.Name = "checkBoxSaveConfigInApplicationDirectory";
-            this.checkBoxSaveConfigInApplicationDirectory.Size = new System.Drawing.Size(353, 19);
-            this.checkBoxSaveConfigInApplicationDirectory.TabIndex = 0;
-            this.checkBoxSaveConfigInApplicationDirectory.Text = "checkBoxSaveConfigInApplicationDirectory";
-            this.checkBoxSaveConfigInApplicationDirectory.UseVisualStyleBackColor = true;
+            checkBoxSaveConfigInApplicationDirectory.AutoSize = true;
+            checkBoxSaveConfigInApplicationDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxSaveConfigInApplicationDirectory.Location = new System.Drawing.Point(3, 3);
+            checkBoxSaveConfigInApplicationDirectory.Name = "checkBoxSaveConfigInApplicationDirectory";
+            checkBoxSaveConfigInApplicationDirectory.Size = new System.Drawing.Size(353, 19);
+            checkBoxSaveConfigInApplicationDirectory.TabIndex = 0;
+            checkBoxSaveConfigInApplicationDirectory.Text = "checkBoxSaveConfigInApplicationDirectory";
+            checkBoxSaveConfigInApplicationDirectory.UseVisualStyleBackColor = true;
             // 
             // groupBoxAutostart
             // 
-            this.groupBoxAutostart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxAutostart.AutoSize = true;
-            this.groupBoxAutostart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxAutostart.Controls.Add(this.tableLayoutPanel5);
-            this.groupBoxAutostart.Location = new System.Drawing.Point(3, 218);
-            this.groupBoxAutostart.Name = "groupBoxAutostart";
-            this.groupBoxAutostart.Size = new System.Drawing.Size(365, 78);
-            this.groupBoxAutostart.TabIndex = 0;
-            this.groupBoxAutostart.TabStop = false;
-            this.groupBoxAutostart.Text = "groupBoxAutostart";
+            groupBoxAutostart.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxAutostart.AutoSize = true;
+            groupBoxAutostart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxAutostart.Controls.Add(tableLayoutPanel5);
+            groupBoxAutostart.Location = new System.Drawing.Point(3, 218);
+            groupBoxAutostart.Name = "groupBoxAutostart";
+            groupBoxAutostart.Size = new System.Drawing.Size(365, 78);
+            groupBoxAutostart.TabIndex = 0;
+            groupBoxAutostart.TabStop = false;
+            groupBoxAutostart.Text = "groupBoxAutostart";
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.AutoSize = true;
-            this.tableLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.checkBoxCheckForUpdates, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanelAutostart, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(359, 56);
-            this.tableLayoutPanel5.TabIndex = 1;
+            tableLayoutPanel5.AutoSize = true;
+            tableLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel5.ColumnCount = 1;
+            tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel5.Controls.Add(checkBoxCheckForUpdates, 0, 1);
+            tableLayoutPanel5.Controls.Add(tableLayoutPanelAutostart, 0, 0);
+            tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel5.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 2;
+            tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel5.Size = new System.Drawing.Size(359, 56);
+            tableLayoutPanel5.TabIndex = 1;
             // 
             // checkBoxCheckForUpdates
             // 
-            this.checkBoxCheckForUpdates.AutoSize = true;
-            this.checkBoxCheckForUpdates.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxCheckForUpdates.Location = new System.Drawing.Point(3, 34);
-            this.checkBoxCheckForUpdates.Name = "checkBoxCheckForUpdates";
-            this.checkBoxCheckForUpdates.Size = new System.Drawing.Size(353, 19);
-            this.checkBoxCheckForUpdates.TabIndex = 10;
-            this.checkBoxCheckForUpdates.Text = "checkBoxCheckForUpdates";
-            this.checkBoxCheckForUpdates.UseVisualStyleBackColor = true;
+            checkBoxCheckForUpdates.AutoSize = true;
+            checkBoxCheckForUpdates.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxCheckForUpdates.Location = new System.Drawing.Point(3, 34);
+            checkBoxCheckForUpdates.Name = "checkBoxCheckForUpdates";
+            checkBoxCheckForUpdates.Size = new System.Drawing.Size(353, 19);
+            checkBoxCheckForUpdates.TabIndex = 10;
+            checkBoxCheckForUpdates.Text = "checkBoxCheckForUpdates";
+            checkBoxCheckForUpdates.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelAutostart
             // 
-            this.tableLayoutPanelAutostart.AutoSize = true;
-            this.tableLayoutPanelAutostart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelAutostart.ColumnCount = 3;
-            this.tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAutostart.Controls.Add(this.buttonAddStartup, 0, 0);
-            this.tableLayoutPanelAutostart.Controls.Add(this.labelStartupStatus, 2, 0);
-            this.tableLayoutPanelAutostart.Controls.Add(this.checkBoxAutostart, 0, 0);
-            this.tableLayoutPanelAutostart.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelAutostart.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelAutostart.Name = "tableLayoutPanelAutostart";
-            this.tableLayoutPanelAutostart.RowCount = 1;
-            this.tableLayoutPanelAutostart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAutostart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelAutostart.Size = new System.Drawing.Size(359, 31);
-            this.tableLayoutPanelAutostart.TabIndex = 0;
+            tableLayoutPanelAutostart.AutoSize = true;
+            tableLayoutPanelAutostart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelAutostart.ColumnCount = 3;
+            tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelAutostart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelAutostart.Controls.Add(buttonAddStartup, 0, 0);
+            tableLayoutPanelAutostart.Controls.Add(labelStartupStatus, 2, 0);
+            tableLayoutPanelAutostart.Controls.Add(checkBoxAutostart, 0, 0);
+            tableLayoutPanelAutostart.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanelAutostart.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelAutostart.Name = "tableLayoutPanelAutostart";
+            tableLayoutPanelAutostart.RowCount = 1;
+            tableLayoutPanelAutostart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelAutostart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanelAutostart.Size = new System.Drawing.Size(359, 31);
+            tableLayoutPanelAutostart.TabIndex = 0;
             // 
             // buttonAddStartup
             // 
-            this.buttonAddStartup.AutoSize = true;
-            this.buttonAddStartup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAddStartup.Location = new System.Drawing.Point(135, 3);
-            this.buttonAddStartup.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonAddStartup.Name = "buttonAddStartup";
-            this.buttonAddStartup.Size = new System.Drawing.Size(113, 25);
-            this.buttonAddStartup.TabIndex = 10;
-            this.buttonAddStartup.Text = "buttonAddStartup";
-            this.buttonAddStartup.UseVisualStyleBackColor = true;
-            this.buttonAddStartup.Click += new System.EventHandler(this.ButtonAddStartup_Click);
+            buttonAddStartup.AutoSize = true;
+            buttonAddStartup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonAddStartup.Location = new System.Drawing.Point(135, 3);
+            buttonAddStartup.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonAddStartup.Name = "buttonAddStartup";
+            buttonAddStartup.Size = new System.Drawing.Size(113, 25);
+            buttonAddStartup.TabIndex = 10;
+            buttonAddStartup.Text = "buttonAddStartup";
+            buttonAddStartup.UseVisualStyleBackColor = true;
+            buttonAddStartup.Click += ButtonAddStartup_Click;
             // 
             // labelStartupStatus
             // 
-            this.labelStartupStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelStartupStatus.AutoSize = true;
-            this.labelStartupStatus.Location = new System.Drawing.Point(254, 8);
-            this.labelStartupStatus.Name = "labelStartupStatus";
-            this.labelStartupStatus.Size = new System.Drawing.Size(102, 15);
-            this.labelStartupStatus.TabIndex = 2;
-            this.labelStartupStatus.Text = "labelStartupStatus";
+            labelStartupStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelStartupStatus.AutoSize = true;
+            labelStartupStatus.Location = new System.Drawing.Point(254, 8);
+            labelStartupStatus.Name = "labelStartupStatus";
+            labelStartupStatus.Size = new System.Drawing.Size(102, 15);
+            labelStartupStatus.TabIndex = 2;
+            labelStartupStatus.Text = "labelStartupStatus";
             // 
             // checkBoxAutostart
             // 
-            this.checkBoxAutostart.AutoSize = true;
-            this.checkBoxAutostart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxAutostart.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxAutostart.Name = "checkBoxAutostart";
-            this.checkBoxAutostart.Size = new System.Drawing.Size(126, 25);
-            this.checkBoxAutostart.TabIndex = 9;
-            this.checkBoxAutostart.Text = "checkBoxAutostart";
-            this.checkBoxAutostart.UseVisualStyleBackColor = true;
+            checkBoxAutostart.AutoSize = true;
+            checkBoxAutostart.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxAutostart.Location = new System.Drawing.Point(3, 3);
+            checkBoxAutostart.Name = "checkBoxAutostart";
+            checkBoxAutostart.Size = new System.Drawing.Size(126, 25);
+            checkBoxAutostart.TabIndex = 9;
+            checkBoxAutostart.Text = "checkBoxAutostart";
+            checkBoxAutostart.UseVisualStyleBackColor = true;
             // 
             // groupBoxHotkey
             // 
-            this.groupBoxHotkey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxHotkey.AutoSize = true;
-            this.groupBoxHotkey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxHotkey.Controls.Add(this.tableLayoutPanelHotkey);
-            this.groupBoxHotkey.Location = new System.Drawing.Point(3, 302);
-            this.groupBoxHotkey.Name = "groupBoxHotkey";
-            this.groupBoxHotkey.Size = new System.Drawing.Size(365, 53);
-            this.groupBoxHotkey.TabIndex = 0;
-            this.groupBoxHotkey.TabStop = false;
-            this.groupBoxHotkey.Text = "groupBoxHotkey";
+            groupBoxHotkey.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxHotkey.AutoSize = true;
+            groupBoxHotkey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxHotkey.Controls.Add(tableLayoutPanelHotkey);
+            groupBoxHotkey.Location = new System.Drawing.Point(3, 302);
+            groupBoxHotkey.Name = "groupBoxHotkey";
+            groupBoxHotkey.Size = new System.Drawing.Size(365, 53);
+            groupBoxHotkey.TabIndex = 0;
+            groupBoxHotkey.TabStop = false;
+            groupBoxHotkey.Text = "groupBoxHotkey";
             // 
             // tableLayoutPanelHotkey
             // 
-            this.tableLayoutPanelHotkey.AutoSize = true;
-            this.tableLayoutPanelHotkey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelHotkey.ColumnCount = 3;
-            this.tableLayoutPanelHotkey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelHotkey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelHotkey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelHotkey.Controls.Add(this.textBoxHotkeyPlaceholder, 1, 0);
-            this.tableLayoutPanelHotkey.Controls.Add(this.buttonHotkeyDefault, 2, 0);
-            this.tableLayoutPanelHotkey.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelHotkey.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelHotkey.Name = "tableLayoutPanelHotkey";
-            this.tableLayoutPanelHotkey.RowCount = 1;
-            this.tableLayoutPanelHotkey.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelHotkey.Size = new System.Drawing.Size(359, 31);
-            this.tableLayoutPanelHotkey.TabIndex = 0;
+            tableLayoutPanelHotkey.AutoSize = true;
+            tableLayoutPanelHotkey.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelHotkey.ColumnCount = 3;
+            tableLayoutPanelHotkey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelHotkey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelHotkey.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelHotkey.Controls.Add(textBoxHotkeyPlaceholder, 1, 0);
+            tableLayoutPanelHotkey.Controls.Add(buttonHotkeyDefault, 2, 0);
+            tableLayoutPanelHotkey.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelHotkey.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelHotkey.Name = "tableLayoutPanelHotkey";
+            tableLayoutPanelHotkey.RowCount = 1;
+            tableLayoutPanelHotkey.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelHotkey.Size = new System.Drawing.Size(359, 31);
+            tableLayoutPanelHotkey.TabIndex = 0;
             // 
             // textBoxHotkeyPlaceholder
             // 
-            this.textBoxHotkeyPlaceholder.Location = new System.Drawing.Point(3, 3);
-            this.textBoxHotkeyPlaceholder.Name = "textBoxHotkeyPlaceholder";
-            this.textBoxHotkeyPlaceholder.Size = new System.Drawing.Size(131, 23);
-            this.textBoxHotkeyPlaceholder.TabIndex = 0;
-            this.textBoxHotkeyPlaceholder.TabStop = false;
+            textBoxHotkeyPlaceholder.Location = new System.Drawing.Point(3, 3);
+            textBoxHotkeyPlaceholder.Name = "textBoxHotkeyPlaceholder";
+            textBoxHotkeyPlaceholder.Size = new System.Drawing.Size(131, 23);
+            textBoxHotkeyPlaceholder.TabIndex = 0;
+            textBoxHotkeyPlaceholder.TabStop = false;
             // 
             // buttonHotkeyDefault
             // 
-            this.buttonHotkeyDefault.AutoSize = true;
-            this.buttonHotkeyDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonHotkeyDefault.Location = new System.Drawing.Point(227, 3);
-            this.buttonHotkeyDefault.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonHotkeyDefault.Name = "buttonHotkeyDefault";
-            this.buttonHotkeyDefault.Size = new System.Drawing.Size(129, 25);
-            this.buttonHotkeyDefault.TabIndex = 0;
-            this.buttonHotkeyDefault.Text = "buttonHotkeyDefault";
-            this.buttonHotkeyDefault.UseVisualStyleBackColor = true;
-            this.buttonHotkeyDefault.Click += new System.EventHandler(this.ButtonHotkeyDefault_Click);
+            buttonHotkeyDefault.AutoSize = true;
+            buttonHotkeyDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonHotkeyDefault.Location = new System.Drawing.Point(227, 3);
+            buttonHotkeyDefault.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonHotkeyDefault.Name = "buttonHotkeyDefault";
+            buttonHotkeyDefault.Size = new System.Drawing.Size(129, 25);
+            buttonHotkeyDefault.TabIndex = 0;
+            buttonHotkeyDefault.Text = "buttonHotkeyDefault";
+            buttonHotkeyDefault.UseVisualStyleBackColor = true;
+            buttonHotkeyDefault.Click += ButtonHotkeyDefault_Click;
             // 
             // groupBoxLanguage
             // 
-            this.groupBoxLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxLanguage.AutoSize = true;
-            this.groupBoxLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxLanguage.Controls.Add(this.tableLayoutPanelLanguage);
-            this.groupBoxLanguage.Location = new System.Drawing.Point(3, 361);
-            this.groupBoxLanguage.Name = "groupBoxLanguage";
-            this.groupBoxLanguage.Size = new System.Drawing.Size(365, 51);
-            this.groupBoxLanguage.TabIndex = 0;
-            this.groupBoxLanguage.TabStop = false;
-            this.groupBoxLanguage.Text = "groupBoxLanguage";
+            groupBoxLanguage.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxLanguage.AutoSize = true;
+            groupBoxLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxLanguage.Controls.Add(tableLayoutPanelLanguage);
+            groupBoxLanguage.Location = new System.Drawing.Point(3, 361);
+            groupBoxLanguage.Name = "groupBoxLanguage";
+            groupBoxLanguage.Size = new System.Drawing.Size(365, 51);
+            groupBoxLanguage.TabIndex = 0;
+            groupBoxLanguage.TabStop = false;
+            groupBoxLanguage.Text = "groupBoxLanguage";
             // 
             // tableLayoutPanelLanguage
             // 
-            this.tableLayoutPanelLanguage.AutoSize = true;
-            this.tableLayoutPanelLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelLanguage.ColumnCount = 2;
-            this.tableLayoutPanelLanguage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelLanguage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelLanguage.Controls.Add(this.comboBoxLanguage, 0, 0);
-            this.tableLayoutPanelLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelLanguage.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelLanguage.Name = "tableLayoutPanelLanguage";
-            this.tableLayoutPanelLanguage.RowCount = 1;
-            this.tableLayoutPanelLanguage.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelLanguage.Size = new System.Drawing.Size(359, 29);
-            this.tableLayoutPanelLanguage.TabIndex = 0;
+            tableLayoutPanelLanguage.AutoSize = true;
+            tableLayoutPanelLanguage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelLanguage.ColumnCount = 2;
+            tableLayoutPanelLanguage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelLanguage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelLanguage.Controls.Add(comboBoxLanguage, 0, 0);
+            tableLayoutPanelLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelLanguage.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelLanguage.Name = "tableLayoutPanelLanguage";
+            tableLayoutPanelLanguage.RowCount = 1;
+            tableLayoutPanelLanguage.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelLanguage.Size = new System.Drawing.Size(359, 29);
+            tableLayoutPanelLanguage.TabIndex = 0;
             // 
             // comboBoxLanguage
             // 
-            this.comboBoxLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLanguage.FormattingEnabled = true;
-            this.comboBoxLanguage.Location = new System.Drawing.Point(3, 3);
-            this.comboBoxLanguage.Name = "comboBoxLanguage";
-            this.comboBoxLanguage.Size = new System.Drawing.Size(200, 23);
-            this.comboBoxLanguage.TabIndex = 13;
+            comboBoxLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBoxLanguage.FormattingEnabled = true;
+            comboBoxLanguage.Location = new System.Drawing.Point(3, 3);
+            comboBoxLanguage.Name = "comboBoxLanguage";
+            comboBoxLanguage.Size = new System.Drawing.Size(200, 23);
+            comboBoxLanguage.TabIndex = 13;
             // 
             // tabPageSizeAndLocation
             // 
-            this.tabPageSizeAndLocation.AutoScroll = true;
-            this.tabPageSizeAndLocation.Controls.Add(this.tableLayoutPanelSizeAndLocation);
-            this.tabPageSizeAndLocation.Location = new System.Drawing.Point(4, 24);
-            this.tabPageSizeAndLocation.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
-            this.tabPageSizeAndLocation.Name = "tabPageSizeAndLocation";
-            this.tabPageSizeAndLocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSizeAndLocation.Size = new System.Drawing.Size(412, 485);
-            this.tabPageSizeAndLocation.TabIndex = 3;
-            this.tabPageSizeAndLocation.Text = "tabPageSizeAndLocation";
-            this.tabPageSizeAndLocation.UseVisualStyleBackColor = true;
+            tabPageSizeAndLocation.AutoScroll = true;
+            tabPageSizeAndLocation.Controls.Add(tableLayoutPanelSizeAndLocation);
+            tabPageSizeAndLocation.Location = new System.Drawing.Point(4, 24);
+            tabPageSizeAndLocation.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
+            tabPageSizeAndLocation.Name = "tabPageSizeAndLocation";
+            tabPageSizeAndLocation.Padding = new System.Windows.Forms.Padding(3);
+            tabPageSizeAndLocation.Size = new System.Drawing.Size(412, 485);
+            tabPageSizeAndLocation.TabIndex = 3;
+            tabPageSizeAndLocation.Text = "tabPageSizeAndLocation";
+            tabPageSizeAndLocation.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelSizeAndLocation
             // 
-            this.tableLayoutPanelSizeAndLocation.AutoSize = true;
-            this.tableLayoutPanelSizeAndLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSizeAndLocation.ColumnCount = 1;
-            this.tableLayoutPanelSizeAndLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.groupBoxSubMenuAppearAt, 0, 2);
-            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.buttonSizeAndLocationDefault, 0, 3);
-            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.groupBoxMenuAppearAt, 0, 1);
-            this.tableLayoutPanelSizeAndLocation.Controls.Add(this.groupBoxSize, 0, 0);
-            this.tableLayoutPanelSizeAndLocation.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanelSizeAndLocation.Name = "tableLayoutPanelSizeAndLocation";
-            this.tableLayoutPanelSizeAndLocation.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
-            this.tableLayoutPanelSizeAndLocation.RowCount = 4;
-            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(308, 426);
-            this.tableLayoutPanelSizeAndLocation.TabIndex = 1;
+            tableLayoutPanelSizeAndLocation.AutoSize = true;
+            tableLayoutPanelSizeAndLocation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSizeAndLocation.ColumnCount = 1;
+            tableLayoutPanelSizeAndLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSizeAndLocation.Controls.Add(groupBoxSubMenuAppearAt, 0, 2);
+            tableLayoutPanelSizeAndLocation.Controls.Add(buttonSizeAndLocationDefault, 0, 3);
+            tableLayoutPanelSizeAndLocation.Controls.Add(groupBoxMenuAppearAt, 0, 1);
+            tableLayoutPanelSizeAndLocation.Controls.Add(groupBoxSize, 0, 0);
+            tableLayoutPanelSizeAndLocation.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanelSizeAndLocation.Name = "tableLayoutPanelSizeAndLocation";
+            tableLayoutPanelSizeAndLocation.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            tableLayoutPanelSizeAndLocation.RowCount = 4;
+            tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSizeAndLocation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSizeAndLocation.Size = new System.Drawing.Size(308, 426);
+            tableLayoutPanelSizeAndLocation.TabIndex = 1;
             // 
             // groupBoxSubMenuAppearAt
             // 
-            this.groupBoxSubMenuAppearAt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxSubMenuAppearAt.AutoSize = true;
-            this.groupBoxSubMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxSubMenuAppearAt.Controls.Add(this.tableLayoutPanel3);
-            this.groupBoxSubMenuAppearAt.Location = new System.Drawing.Point(3, 304);
-            this.groupBoxSubMenuAppearAt.Name = "groupBoxSubMenuAppearAt";
-            this.groupBoxSubMenuAppearAt.Size = new System.Drawing.Size(296, 76);
-            this.groupBoxSubMenuAppearAt.TabIndex = 2;
-            this.groupBoxSubMenuAppearAt.TabStop = false;
-            this.groupBoxSubMenuAppearAt.Text = "groupBoxSubMenuAppearAt";
+            groupBoxSubMenuAppearAt.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxSubMenuAppearAt.AutoSize = true;
+            groupBoxSubMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxSubMenuAppearAt.Controls.Add(tableLayoutPanel3);
+            groupBoxSubMenuAppearAt.Location = new System.Drawing.Point(3, 304);
+            groupBoxSubMenuAppearAt.Name = "groupBoxSubMenuAppearAt";
+            groupBoxSubMenuAppearAt.Size = new System.Drawing.Size(296, 76);
+            groupBoxSubMenuAppearAt.TabIndex = 2;
+            groupBoxSubMenuAppearAt.TabStop = false;
+            groupBoxSubMenuAppearAt.Text = "groupBoxSubMenuAppearAt";
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.AutoSize = true;
-            this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.radioButtonNextToPreviousMenu, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(290, 54);
-            this.tableLayoutPanel3.TabIndex = 1;
+            tableLayoutPanel3.AutoSize = true;
+            tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel3.Controls.Add(tableLayoutPanel4, 0, 1);
+            tableLayoutPanel3.Controls.Add(radioButtonNextToPreviousMenu, 0, 0);
+            tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel3.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 2;
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel3.Size = new System.Drawing.Size(290, 54);
+            tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.AutoSize = true;
-            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.numericUpDownOverlappingOffsetPixels, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.labelOverlappingByPixelsOffset, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.radioButtonOverlapping, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 25);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(290, 29);
-            this.tableLayoutPanel4.TabIndex = 3;
+            tableLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanel4.AutoSize = true;
+            tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel4.ColumnCount = 3;
+            tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel4.Controls.Add(numericUpDownOverlappingOffsetPixels, 1, 0);
+            tableLayoutPanel4.Controls.Add(labelOverlappingByPixelsOffset, 2, 0);
+            tableLayoutPanel4.Controls.Add(radioButtonOverlapping, 0, 0);
+            tableLayoutPanel4.Location = new System.Drawing.Point(0, 25);
+            tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 1;
+            tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel4.Size = new System.Drawing.Size(290, 29);
+            tableLayoutPanel4.TabIndex = 3;
             // 
             // numericUpDownOverlappingOffsetPixels
             // 
-            this.numericUpDownOverlappingOffsetPixels.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownOverlappingOffsetPixels.Location = new System.Drawing.Point(162, 3);
-            this.numericUpDownOverlappingOffsetPixels.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.numericUpDownOverlappingOffsetPixels.Name = "numericUpDownOverlappingOffsetPixels";
-            this.numericUpDownOverlappingOffsetPixels.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownOverlappingOffsetPixels.TabIndex = 2;
+            numericUpDownOverlappingOffsetPixels.Increment = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDownOverlappingOffsetPixels.Location = new System.Drawing.Point(162, 3);
+            numericUpDownOverlappingOffsetPixels.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
+            numericUpDownOverlappingOffsetPixels.Name = "numericUpDownOverlappingOffsetPixels";
+            numericUpDownOverlappingOffsetPixels.Size = new System.Drawing.Size(55, 23);
+            numericUpDownOverlappingOffsetPixels.TabIndex = 2;
             // 
             // labelOverlappingByPixelsOffset
             // 
-            this.labelOverlappingByPixelsOffset.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelOverlappingByPixelsOffset.AutoSize = true;
-            this.labelOverlappingByPixelsOffset.Location = new System.Drawing.Point(223, 7);
-            this.labelOverlappingByPixelsOffset.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelOverlappingByPixelsOffset.Name = "labelOverlappingByPixelsOffset";
-            this.labelOverlappingByPixelsOffset.Size = new System.Drawing.Size(64, 15);
-            this.labelOverlappingByPixelsOffset.TabIndex = 3;
-            this.labelOverlappingByPixelsOffset.Text = "labelOffset";
+            labelOverlappingByPixelsOffset.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelOverlappingByPixelsOffset.AutoSize = true;
+            labelOverlappingByPixelsOffset.Location = new System.Drawing.Point(223, 7);
+            labelOverlappingByPixelsOffset.MaximumSize = new System.Drawing.Size(330, 0);
+            labelOverlappingByPixelsOffset.Name = "labelOverlappingByPixelsOffset";
+            labelOverlappingByPixelsOffset.Size = new System.Drawing.Size(64, 15);
+            labelOverlappingByPixelsOffset.TabIndex = 3;
+            labelOverlappingByPixelsOffset.Text = "labelOffset";
             // 
             // radioButtonOverlapping
             // 
-            this.radioButtonOverlapping.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.radioButtonOverlapping.AutoSize = true;
-            this.radioButtonOverlapping.Location = new System.Drawing.Point(3, 5);
-            this.radioButtonOverlapping.Name = "radioButtonOverlapping";
-            this.radioButtonOverlapping.Size = new System.Drawing.Size(153, 19);
-            this.radioButtonOverlapping.TabIndex = 1;
-            this.radioButtonOverlapping.TabStop = true;
-            this.radioButtonOverlapping.Text = "radioButtonOverlapping";
-            this.radioButtonOverlapping.UseVisualStyleBackColor = true;
-            this.radioButtonOverlapping.CheckedChanged += new System.EventHandler(this.RadioButtonOverlapping_CheckedChanged);
+            radioButtonOverlapping.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            radioButtonOverlapping.AutoSize = true;
+            radioButtonOverlapping.Location = new System.Drawing.Point(3, 5);
+            radioButtonOverlapping.Name = "radioButtonOverlapping";
+            radioButtonOverlapping.Size = new System.Drawing.Size(153, 19);
+            radioButtonOverlapping.TabIndex = 1;
+            radioButtonOverlapping.TabStop = true;
+            radioButtonOverlapping.Text = "radioButtonOverlapping";
+            radioButtonOverlapping.UseVisualStyleBackColor = true;
+            radioButtonOverlapping.CheckedChanged += RadioButtonOverlapping_CheckedChanged;
             // 
             // radioButtonNextToPreviousMenu
             // 
-            this.radioButtonNextToPreviousMenu.AutoSize = true;
-            this.radioButtonNextToPreviousMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonNextToPreviousMenu.Location = new System.Drawing.Point(3, 3);
-            this.radioButtonNextToPreviousMenu.Name = "radioButtonNextToPreviousMenu";
-            this.radioButtonNextToPreviousMenu.Size = new System.Drawing.Size(284, 19);
-            this.radioButtonNextToPreviousMenu.TabIndex = 2;
-            this.radioButtonNextToPreviousMenu.TabStop = true;
-            this.radioButtonNextToPreviousMenu.Text = "radioButtonNextToPreviousMenu";
-            this.radioButtonNextToPreviousMenu.UseVisualStyleBackColor = true;
-            this.radioButtonNextToPreviousMenu.CheckedChanged += new System.EventHandler(this.RadioButtonNextToPreviousMenu_CheckedChanged);
+            radioButtonNextToPreviousMenu.AutoSize = true;
+            radioButtonNextToPreviousMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            radioButtonNextToPreviousMenu.Location = new System.Drawing.Point(3, 3);
+            radioButtonNextToPreviousMenu.Name = "radioButtonNextToPreviousMenu";
+            radioButtonNextToPreviousMenu.Size = new System.Drawing.Size(284, 19);
+            radioButtonNextToPreviousMenu.TabIndex = 2;
+            radioButtonNextToPreviousMenu.TabStop = true;
+            radioButtonNextToPreviousMenu.Text = "radioButtonNextToPreviousMenu";
+            radioButtonNextToPreviousMenu.UseVisualStyleBackColor = true;
+            radioButtonNextToPreviousMenu.CheckedChanged += RadioButtonNextToPreviousMenu_CheckedChanged;
             // 
             // buttonSizeAndLocationDefault
             // 
-            this.buttonSizeAndLocationDefault.AutoSize = true;
-            this.buttonSizeAndLocationDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSizeAndLocationDefault.Location = new System.Drawing.Point(9, 392);
-            this.buttonSizeAndLocationDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
-            this.buttonSizeAndLocationDefault.MinimumSize = new System.Drawing.Size(75, 25);
-            this.buttonSizeAndLocationDefault.Name = "buttonSizeAndLocationDefault";
-            this.buttonSizeAndLocationDefault.Size = new System.Drawing.Size(179, 25);
-            this.buttonSizeAndLocationDefault.TabIndex = 0;
-            this.buttonSizeAndLocationDefault.Text = "buttonSizeAndLocationDefault";
-            this.buttonSizeAndLocationDefault.UseVisualStyleBackColor = true;
-            this.buttonSizeAndLocationDefault.Click += new System.EventHandler(this.ButtonSizeAndLocationDefault_Click);
+            buttonSizeAndLocationDefault.AutoSize = true;
+            buttonSizeAndLocationDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonSizeAndLocationDefault.Location = new System.Drawing.Point(9, 392);
+            buttonSizeAndLocationDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
+            buttonSizeAndLocationDefault.MinimumSize = new System.Drawing.Size(75, 25);
+            buttonSizeAndLocationDefault.Name = "buttonSizeAndLocationDefault";
+            buttonSizeAndLocationDefault.Size = new System.Drawing.Size(179, 25);
+            buttonSizeAndLocationDefault.TabIndex = 0;
+            buttonSizeAndLocationDefault.Text = "buttonSizeAndLocationDefault";
+            buttonSizeAndLocationDefault.UseVisualStyleBackColor = true;
+            buttonSizeAndLocationDefault.Click += ButtonSizeAndLocationDefault_Click;
             // 
             // groupBoxMenuAppearAt
             // 
-            this.groupBoxMenuAppearAt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxMenuAppearAt.AutoSize = true;
-            this.groupBoxMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxMenuAppearAt.Controls.Add(this.tableLayoutPanelMenuAppearAt);
-            this.groupBoxMenuAppearAt.Location = new System.Drawing.Point(3, 176);
-            this.groupBoxMenuAppearAt.Name = "groupBoxMenuAppearAt";
-            this.groupBoxMenuAppearAt.Size = new System.Drawing.Size(296, 122);
-            this.groupBoxMenuAppearAt.TabIndex = 1;
-            this.groupBoxMenuAppearAt.TabStop = false;
-            this.groupBoxMenuAppearAt.Text = "groupBoxMenuAppearAt";
+            groupBoxMenuAppearAt.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxMenuAppearAt.AutoSize = true;
+            groupBoxMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxMenuAppearAt.Controls.Add(tableLayoutPanelMenuAppearAt);
+            groupBoxMenuAppearAt.Location = new System.Drawing.Point(3, 176);
+            groupBoxMenuAppearAt.Name = "groupBoxMenuAppearAt";
+            groupBoxMenuAppearAt.Size = new System.Drawing.Size(296, 122);
+            groupBoxMenuAppearAt.TabIndex = 1;
+            groupBoxMenuAppearAt.TabStop = false;
+            groupBoxMenuAppearAt.Text = "groupBoxMenuAppearAt";
             // 
             // tableLayoutPanelMenuAppearAt
             // 
-            this.tableLayoutPanelMenuAppearAt.AutoSize = true;
-            this.tableLayoutPanelMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMenuAppearAt.ColumnCount = 1;
-            this.tableLayoutPanelMenuAppearAt.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonUseCustomLocation, 0, 2);
-            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonAppearAtTheBottomLeft, 0, 1);
-            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonAppearAtTheBottomRight, 0, 0);
-            this.tableLayoutPanelMenuAppearAt.Controls.Add(this.radioButtonAppearAtMouseLocation, 0, 3);
-            this.tableLayoutPanelMenuAppearAt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMenuAppearAt.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelMenuAppearAt.Name = "tableLayoutPanelMenuAppearAt";
-            this.tableLayoutPanelMenuAppearAt.RowCount = 4;
-            this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenuAppearAt.Size = new System.Drawing.Size(290, 100);
-            this.tableLayoutPanelMenuAppearAt.TabIndex = 1;
+            tableLayoutPanelMenuAppearAt.AutoSize = true;
+            tableLayoutPanelMenuAppearAt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMenuAppearAt.ColumnCount = 1;
+            tableLayoutPanelMenuAppearAt.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelMenuAppearAt.Controls.Add(radioButtonUseCustomLocation, 0, 2);
+            tableLayoutPanelMenuAppearAt.Controls.Add(radioButtonAppearAtTheBottomLeft, 0, 1);
+            tableLayoutPanelMenuAppearAt.Controls.Add(radioButtonAppearAtTheBottomRight, 0, 0);
+            tableLayoutPanelMenuAppearAt.Controls.Add(radioButtonAppearAtMouseLocation, 0, 3);
+            tableLayoutPanelMenuAppearAt.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelMenuAppearAt.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelMenuAppearAt.Name = "tableLayoutPanelMenuAppearAt";
+            tableLayoutPanelMenuAppearAt.RowCount = 4;
+            tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelMenuAppearAt.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelMenuAppearAt.Size = new System.Drawing.Size(290, 100);
+            tableLayoutPanelMenuAppearAt.TabIndex = 1;
             // 
             // radioButtonUseCustomLocation
             // 
-            this.radioButtonUseCustomLocation.AutoSize = true;
-            this.radioButtonUseCustomLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonUseCustomLocation.Location = new System.Drawing.Point(3, 53);
-            this.radioButtonUseCustomLocation.Name = "radioButtonUseCustomLocation";
-            this.radioButtonUseCustomLocation.Size = new System.Drawing.Size(284, 19);
-            this.radioButtonUseCustomLocation.TabIndex = 2;
-            this.radioButtonUseCustomLocation.TabStop = true;
-            this.radioButtonUseCustomLocation.Text = "radioButtonUseCustomLocation";
-            this.radioButtonUseCustomLocation.UseVisualStyleBackColor = true;
+            radioButtonUseCustomLocation.AutoSize = true;
+            radioButtonUseCustomLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            radioButtonUseCustomLocation.Location = new System.Drawing.Point(3, 53);
+            radioButtonUseCustomLocation.Name = "radioButtonUseCustomLocation";
+            radioButtonUseCustomLocation.Size = new System.Drawing.Size(284, 19);
+            radioButtonUseCustomLocation.TabIndex = 2;
+            radioButtonUseCustomLocation.TabStop = true;
+            radioButtonUseCustomLocation.Text = "radioButtonUseCustomLocation";
+            radioButtonUseCustomLocation.UseVisualStyleBackColor = true;
             // 
             // radioButtonAppearAtTheBottomLeft
             // 
-            this.radioButtonAppearAtTheBottomLeft.AutoSize = true;
-            this.radioButtonAppearAtTheBottomLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonAppearAtTheBottomLeft.Location = new System.Drawing.Point(3, 28);
-            this.radioButtonAppearAtTheBottomLeft.Name = "radioButtonAppearAtTheBottomLeft";
-            this.radioButtonAppearAtTheBottomLeft.Size = new System.Drawing.Size(284, 19);
-            this.radioButtonAppearAtTheBottomLeft.TabIndex = 1;
-            this.radioButtonAppearAtTheBottomLeft.TabStop = true;
-            this.radioButtonAppearAtTheBottomLeft.Text = "radioButtonradioButtonAppearAtTheBottomLeft";
-            this.radioButtonAppearAtTheBottomLeft.UseVisualStyleBackColor = true;
+            radioButtonAppearAtTheBottomLeft.AutoSize = true;
+            radioButtonAppearAtTheBottomLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            radioButtonAppearAtTheBottomLeft.Location = new System.Drawing.Point(3, 28);
+            radioButtonAppearAtTheBottomLeft.Name = "radioButtonAppearAtTheBottomLeft";
+            radioButtonAppearAtTheBottomLeft.Size = new System.Drawing.Size(284, 19);
+            radioButtonAppearAtTheBottomLeft.TabIndex = 1;
+            radioButtonAppearAtTheBottomLeft.TabStop = true;
+            radioButtonAppearAtTheBottomLeft.Text = "radioButtonradioButtonAppearAtTheBottomLeft";
+            radioButtonAppearAtTheBottomLeft.UseVisualStyleBackColor = true;
             // 
             // radioButtonAppearAtTheBottomRight
             // 
-            this.radioButtonAppearAtTheBottomRight.AutoSize = true;
-            this.radioButtonAppearAtTheBottomRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonAppearAtTheBottomRight.Location = new System.Drawing.Point(3, 3);
-            this.radioButtonAppearAtTheBottomRight.Name = "radioButtonAppearAtTheBottomRight";
-            this.radioButtonAppearAtTheBottomRight.Size = new System.Drawing.Size(284, 19);
-            this.radioButtonAppearAtTheBottomRight.TabIndex = 2;
-            this.radioButtonAppearAtTheBottomRight.TabStop = true;
-            this.radioButtonAppearAtTheBottomRight.Text = "radioButtonAppearAtTheBottomRight";
-            this.radioButtonAppearAtTheBottomRight.UseVisualStyleBackColor = true;
+            radioButtonAppearAtTheBottomRight.AutoSize = true;
+            radioButtonAppearAtTheBottomRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            radioButtonAppearAtTheBottomRight.Location = new System.Drawing.Point(3, 3);
+            radioButtonAppearAtTheBottomRight.Name = "radioButtonAppearAtTheBottomRight";
+            radioButtonAppearAtTheBottomRight.Size = new System.Drawing.Size(284, 19);
+            radioButtonAppearAtTheBottomRight.TabIndex = 2;
+            radioButtonAppearAtTheBottomRight.TabStop = true;
+            radioButtonAppearAtTheBottomRight.Text = "radioButtonAppearAtTheBottomRight";
+            radioButtonAppearAtTheBottomRight.UseVisualStyleBackColor = true;
             // 
             // radioButtonAppearAtMouseLocation
             // 
-            this.radioButtonAppearAtMouseLocation.AutoSize = true;
-            this.radioButtonAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonAppearAtMouseLocation.Location = new System.Drawing.Point(3, 78);
-            this.radioButtonAppearAtMouseLocation.Name = "radioButtonAppearAtMouseLocation";
-            this.radioButtonAppearAtMouseLocation.Size = new System.Drawing.Size(284, 19);
-            this.radioButtonAppearAtMouseLocation.TabIndex = 3;
-            this.radioButtonAppearAtMouseLocation.TabStop = true;
-            this.radioButtonAppearAtMouseLocation.Text = "radioButtonAppearAtMouseLocation";
-            this.radioButtonAppearAtMouseLocation.UseVisualStyleBackColor = true;
+            radioButtonAppearAtMouseLocation.AutoSize = true;
+            radioButtonAppearAtMouseLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            radioButtonAppearAtMouseLocation.Location = new System.Drawing.Point(3, 78);
+            radioButtonAppearAtMouseLocation.Name = "radioButtonAppearAtMouseLocation";
+            radioButtonAppearAtMouseLocation.Size = new System.Drawing.Size(284, 19);
+            radioButtonAppearAtMouseLocation.TabIndex = 3;
+            radioButtonAppearAtMouseLocation.TabStop = true;
+            radioButtonAppearAtMouseLocation.Text = "radioButtonAppearAtMouseLocation";
+            radioButtonAppearAtMouseLocation.UseVisualStyleBackColor = true;
             // 
             // groupBoxSize
             // 
-            this.groupBoxSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxSize.AutoSize = true;
-            this.groupBoxSize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxSize.Controls.Add(this.tableLayoutPanelSize);
-            this.groupBoxSize.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxSize.Name = "groupBoxSize";
-            this.groupBoxSize.Size = new System.Drawing.Size(296, 167);
-            this.groupBoxSize.TabIndex = 0;
-            this.groupBoxSize.TabStop = false;
-            this.groupBoxSize.Text = "groupBoxSize";
+            groupBoxSize.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxSize.AutoSize = true;
+            groupBoxSize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxSize.Controls.Add(tableLayoutPanelSize);
+            groupBoxSize.Location = new System.Drawing.Point(3, 3);
+            groupBoxSize.Name = "groupBoxSize";
+            groupBoxSize.Size = new System.Drawing.Size(296, 167);
+            groupBoxSize.TabIndex = 0;
+            groupBoxSize.TabStop = false;
+            groupBoxSize.Text = "groupBoxSize";
             // 
             // tableLayoutPanelSize
             // 
-            this.tableLayoutPanelSize.AutoSize = true;
-            this.tableLayoutPanelSize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSize.ColumnCount = 1;
-            this.tableLayoutPanelSize.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelIconSizeInPercent, 0, 1);
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelRowHeighteInPercentage, 0, 2);
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelSizeInPercent, 0, 0);
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelMenuHeight, 0, 4);
-            this.tableLayoutPanelSize.Controls.Add(this.tableLayoutPanelMaxMenuWidth, 0, 3);
-            this.tableLayoutPanelSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelSize.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelSize.Name = "tableLayoutPanelSize";
-            this.tableLayoutPanelSize.RowCount = 5;
-            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSize.Size = new System.Drawing.Size(290, 145);
-            this.tableLayoutPanelSize.TabIndex = 0;
+            tableLayoutPanelSize.AutoSize = true;
+            tableLayoutPanelSize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSize.ColumnCount = 1;
+            tableLayoutPanelSize.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSize.Controls.Add(tableLayoutPanelIconSizeInPercent, 0, 1);
+            tableLayoutPanelSize.Controls.Add(tableLayoutPanelRowHeighteInPercentage, 0, 2);
+            tableLayoutPanelSize.Controls.Add(tableLayoutPanelSizeInPercent, 0, 0);
+            tableLayoutPanelSize.Controls.Add(tableLayoutPanelMenuHeight, 0, 4);
+            tableLayoutPanelSize.Controls.Add(tableLayoutPanelMaxMenuWidth, 0, 3);
+            tableLayoutPanelSize.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelSize.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelSize.Name = "tableLayoutPanelSize";
+            tableLayoutPanelSize.RowCount = 5;
+            tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSize.Size = new System.Drawing.Size(290, 145);
+            tableLayoutPanelSize.TabIndex = 0;
             // 
             // tableLayoutPanelIconSizeInPercent
             // 
-            this.tableLayoutPanelIconSizeInPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelIconSizeInPercent.AutoSize = true;
-            this.tableLayoutPanelIconSizeInPercent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelIconSizeInPercent.ColumnCount = 2;
-            this.tableLayoutPanelIconSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelIconSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelIconSizeInPercent.Controls.Add(this.numericUpDownIconSizeInPercent, 0, 0);
-            this.tableLayoutPanelIconSizeInPercent.Controls.Add(this.labelIconSizeInPercent, 1, 0);
-            this.tableLayoutPanelIconSizeInPercent.Location = new System.Drawing.Point(0, 29);
-            this.tableLayoutPanelIconSizeInPercent.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelIconSizeInPercent.Name = "tableLayoutPanelIconSizeInPercent";
-            this.tableLayoutPanelIconSizeInPercent.RowCount = 1;
-            this.tableLayoutPanelIconSizeInPercent.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelIconSizeInPercent.Size = new System.Drawing.Size(290, 29);
-            this.tableLayoutPanelIconSizeInPercent.TabIndex = 1;
+            tableLayoutPanelIconSizeInPercent.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelIconSizeInPercent.AutoSize = true;
+            tableLayoutPanelIconSizeInPercent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelIconSizeInPercent.ColumnCount = 2;
+            tableLayoutPanelIconSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelIconSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelIconSizeInPercent.Controls.Add(numericUpDownIconSizeInPercent, 0, 0);
+            tableLayoutPanelIconSizeInPercent.Controls.Add(labelIconSizeInPercent, 1, 0);
+            tableLayoutPanelIconSizeInPercent.Location = new System.Drawing.Point(0, 29);
+            tableLayoutPanelIconSizeInPercent.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelIconSizeInPercent.Name = "tableLayoutPanelIconSizeInPercent";
+            tableLayoutPanelIconSizeInPercent.RowCount = 1;
+            tableLayoutPanelIconSizeInPercent.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelIconSizeInPercent.Size = new System.Drawing.Size(290, 29);
+            tableLayoutPanelIconSizeInPercent.TabIndex = 1;
             // 
             // numericUpDownIconSizeInPercent
             // 
-            this.numericUpDownIconSizeInPercent.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownIconSizeInPercent.Name = "numericUpDownIconSizeInPercent";
-            this.numericUpDownIconSizeInPercent.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownIconSizeInPercent.TabIndex = 1;
+            numericUpDownIconSizeInPercent.Location = new System.Drawing.Point(3, 3);
+            numericUpDownIconSizeInPercent.Name = "numericUpDownIconSizeInPercent";
+            numericUpDownIconSizeInPercent.Size = new System.Drawing.Size(55, 23);
+            numericUpDownIconSizeInPercent.TabIndex = 1;
             // 
             // labelIconSizeInPercent
             // 
-            this.labelIconSizeInPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelIconSizeInPercent.AutoSize = true;
-            this.labelIconSizeInPercent.Location = new System.Drawing.Point(64, 7);
-            this.labelIconSizeInPercent.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelIconSizeInPercent.Name = "labelIconSizeInPercent";
-            this.labelIconSizeInPercent.Size = new System.Drawing.Size(125, 15);
-            this.labelIconSizeInPercent.TabIndex = 0;
-            this.labelIconSizeInPercent.Text = "labelIconSizeInPercent";
+            labelIconSizeInPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelIconSizeInPercent.AutoSize = true;
+            labelIconSizeInPercent.Location = new System.Drawing.Point(64, 7);
+            labelIconSizeInPercent.MaximumSize = new System.Drawing.Size(330, 0);
+            labelIconSizeInPercent.Name = "labelIconSizeInPercent";
+            labelIconSizeInPercent.Size = new System.Drawing.Size(125, 15);
+            labelIconSizeInPercent.TabIndex = 0;
+            labelIconSizeInPercent.Text = "labelIconSizeInPercent";
             // 
             // tableLayoutPanelRowHeighteInPercentage
             // 
-            this.tableLayoutPanelRowHeighteInPercentage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelRowHeighteInPercentage.AutoSize = true;
-            this.tableLayoutPanelRowHeighteInPercentage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelRowHeighteInPercentage.ColumnCount = 2;
-            this.tableLayoutPanelRowHeighteInPercentage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelRowHeighteInPercentage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelRowHeighteInPercentage.Controls.Add(this.numericUpDownRowHeighteInPercentage, 0, 0);
-            this.tableLayoutPanelRowHeighteInPercentage.Controls.Add(this.labelRowHeightInPercentage, 1, 0);
-            this.tableLayoutPanelRowHeighteInPercentage.Location = new System.Drawing.Point(0, 58);
-            this.tableLayoutPanelRowHeighteInPercentage.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelRowHeighteInPercentage.Name = "tableLayoutPanelRowHeighteInPercentage";
-            this.tableLayoutPanelRowHeighteInPercentage.RowCount = 1;
-            this.tableLayoutPanelRowHeighteInPercentage.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelRowHeighteInPercentage.Size = new System.Drawing.Size(290, 29);
-            this.tableLayoutPanelRowHeighteInPercentage.TabIndex = 3;
+            tableLayoutPanelRowHeighteInPercentage.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelRowHeighteInPercentage.AutoSize = true;
+            tableLayoutPanelRowHeighteInPercentage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelRowHeighteInPercentage.ColumnCount = 2;
+            tableLayoutPanelRowHeighteInPercentage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelRowHeighteInPercentage.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelRowHeighteInPercentage.Controls.Add(numericUpDownRowHeighteInPercentage, 0, 0);
+            tableLayoutPanelRowHeighteInPercentage.Controls.Add(labelRowHeightInPercentage, 1, 0);
+            tableLayoutPanelRowHeighteInPercentage.Location = new System.Drawing.Point(0, 58);
+            tableLayoutPanelRowHeighteInPercentage.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelRowHeighteInPercentage.Name = "tableLayoutPanelRowHeighteInPercentage";
+            tableLayoutPanelRowHeighteInPercentage.RowCount = 1;
+            tableLayoutPanelRowHeighteInPercentage.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelRowHeighteInPercentage.Size = new System.Drawing.Size(290, 29);
+            tableLayoutPanelRowHeighteInPercentage.TabIndex = 3;
             // 
             // numericUpDownRowHeighteInPercentage
             // 
-            this.numericUpDownRowHeighteInPercentage.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownRowHeighteInPercentage.Name = "numericUpDownRowHeighteInPercentage";
-            this.numericUpDownRowHeighteInPercentage.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownRowHeighteInPercentage.TabIndex = 1;
+            numericUpDownRowHeighteInPercentage.Location = new System.Drawing.Point(3, 3);
+            numericUpDownRowHeighteInPercentage.Name = "numericUpDownRowHeighteInPercentage";
+            numericUpDownRowHeighteInPercentage.Size = new System.Drawing.Size(55, 23);
+            numericUpDownRowHeighteInPercentage.TabIndex = 1;
             // 
             // labelRowHeightInPercentage
             // 
-            this.labelRowHeightInPercentage.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelRowHeightInPercentage.AutoSize = true;
-            this.labelRowHeightInPercentage.Location = new System.Drawing.Point(64, 7);
-            this.labelRowHeightInPercentage.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelRowHeightInPercentage.Name = "labelRowHeightInPercentage";
-            this.labelRowHeightInPercentage.Size = new System.Drawing.Size(166, 15);
-            this.labelRowHeightInPercentage.TabIndex = 0;
-            this.labelRowHeightInPercentage.Text = "labelRowHeighteInPercentage";
+            labelRowHeightInPercentage.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelRowHeightInPercentage.AutoSize = true;
+            labelRowHeightInPercentage.Location = new System.Drawing.Point(64, 7);
+            labelRowHeightInPercentage.MaximumSize = new System.Drawing.Size(330, 0);
+            labelRowHeightInPercentage.Name = "labelRowHeightInPercentage";
+            labelRowHeightInPercentage.Size = new System.Drawing.Size(166, 15);
+            labelRowHeightInPercentage.TabIndex = 0;
+            labelRowHeightInPercentage.Text = "labelRowHeighteInPercentage";
             // 
             // tableLayoutPanelSizeInPercent
             // 
-            this.tableLayoutPanelSizeInPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelSizeInPercent.AutoSize = true;
-            this.tableLayoutPanelSizeInPercent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSizeInPercent.ColumnCount = 2;
-            this.tableLayoutPanelSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSizeInPercent.Controls.Add(this.numericUpDownSizeInPercent, 0, 0);
-            this.tableLayoutPanelSizeInPercent.Controls.Add(this.labelSizeInPercent, 1, 0);
-            this.tableLayoutPanelSizeInPercent.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelSizeInPercent.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelSizeInPercent.Name = "tableLayoutPanelSizeInPercent";
-            this.tableLayoutPanelSizeInPercent.RowCount = 1;
-            this.tableLayoutPanelSizeInPercent.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSizeInPercent.Size = new System.Drawing.Size(290, 29);
-            this.tableLayoutPanelSizeInPercent.TabIndex = 0;
+            tableLayoutPanelSizeInPercent.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelSizeInPercent.AutoSize = true;
+            tableLayoutPanelSizeInPercent.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSizeInPercent.ColumnCount = 2;
+            tableLayoutPanelSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSizeInPercent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSizeInPercent.Controls.Add(numericUpDownSizeInPercent, 0, 0);
+            tableLayoutPanelSizeInPercent.Controls.Add(labelSizeInPercent, 1, 0);
+            tableLayoutPanelSizeInPercent.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanelSizeInPercent.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelSizeInPercent.Name = "tableLayoutPanelSizeInPercent";
+            tableLayoutPanelSizeInPercent.RowCount = 1;
+            tableLayoutPanelSizeInPercent.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSizeInPercent.Size = new System.Drawing.Size(290, 29);
+            tableLayoutPanelSizeInPercent.TabIndex = 0;
             // 
             // numericUpDownSizeInPercent
             // 
-            this.numericUpDownSizeInPercent.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownSizeInPercent.Name = "numericUpDownSizeInPercent";
-            this.numericUpDownSizeInPercent.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownSizeInPercent.TabIndex = 1;
-            this.numericUpDownSizeInPercent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.numericUpDownSizeInPercent.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
+            numericUpDownSizeInPercent.Location = new System.Drawing.Point(3, 3);
+            numericUpDownSizeInPercent.Name = "numericUpDownSizeInPercent";
+            numericUpDownSizeInPercent.Size = new System.Drawing.Size(55, 23);
+            numericUpDownSizeInPercent.TabIndex = 1;
+            numericUpDownSizeInPercent.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            numericUpDownSizeInPercent.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
             // 
             // labelSizeInPercent
             // 
-            this.labelSizeInPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSizeInPercent.AutoSize = true;
-            this.labelSizeInPercent.Location = new System.Drawing.Point(64, 7);
-            this.labelSizeInPercent.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelSizeInPercent.Name = "labelSizeInPercent";
-            this.labelSizeInPercent.Size = new System.Drawing.Size(102, 15);
-            this.labelSizeInPercent.TabIndex = 0;
-            this.labelSizeInPercent.Text = "labelSizeInPercent";
+            labelSizeInPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSizeInPercent.AutoSize = true;
+            labelSizeInPercent.Location = new System.Drawing.Point(64, 7);
+            labelSizeInPercent.MaximumSize = new System.Drawing.Size(330, 0);
+            labelSizeInPercent.Name = "labelSizeInPercent";
+            labelSizeInPercent.Size = new System.Drawing.Size(102, 15);
+            labelSizeInPercent.TabIndex = 0;
+            labelSizeInPercent.Text = "labelSizeInPercent";
             // 
             // tableLayoutPanelMenuHeight
             // 
-            this.tableLayoutPanelMenuHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelMenuHeight.AutoSize = true;
-            this.tableLayoutPanelMenuHeight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMenuHeight.ColumnCount = 2;
-            this.tableLayoutPanelMenuHeight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMenuHeight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMenuHeight.Controls.Add(this.numericUpDownMenuHeight, 0, 0);
-            this.tableLayoutPanelMenuHeight.Controls.Add(this.labelMaxMenuHeight, 1, 0);
-            this.tableLayoutPanelMenuHeight.Location = new System.Drawing.Point(0, 116);
-            this.tableLayoutPanelMenuHeight.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelMenuHeight.Name = "tableLayoutPanelMenuHeight";
-            this.tableLayoutPanelMenuHeight.RowCount = 1;
-            this.tableLayoutPanelMenuHeight.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMenuHeight.Size = new System.Drawing.Size(290, 29);
-            this.tableLayoutPanelMenuHeight.TabIndex = 0;
+            tableLayoutPanelMenuHeight.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelMenuHeight.AutoSize = true;
+            tableLayoutPanelMenuHeight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMenuHeight.ColumnCount = 2;
+            tableLayoutPanelMenuHeight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelMenuHeight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelMenuHeight.Controls.Add(numericUpDownMenuHeight, 0, 0);
+            tableLayoutPanelMenuHeight.Controls.Add(labelMaxMenuHeight, 1, 0);
+            tableLayoutPanelMenuHeight.Location = new System.Drawing.Point(0, 116);
+            tableLayoutPanelMenuHeight.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelMenuHeight.Name = "tableLayoutPanelMenuHeight";
+            tableLayoutPanelMenuHeight.RowCount = 1;
+            tableLayoutPanelMenuHeight.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelMenuHeight.Size = new System.Drawing.Size(290, 29);
+            tableLayoutPanelMenuHeight.TabIndex = 0;
             // 
             // numericUpDownMenuHeight
             // 
-            this.numericUpDownMenuHeight.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownMenuHeight.Name = "numericUpDownMenuHeight";
-            this.numericUpDownMenuHeight.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownMenuHeight.TabIndex = 1;
-            this.numericUpDownMenuHeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.numericUpDownMenuHeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
+            numericUpDownMenuHeight.Location = new System.Drawing.Point(3, 3);
+            numericUpDownMenuHeight.Name = "numericUpDownMenuHeight";
+            numericUpDownMenuHeight.Size = new System.Drawing.Size(55, 23);
+            numericUpDownMenuHeight.TabIndex = 1;
+            numericUpDownMenuHeight.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            numericUpDownMenuHeight.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
             // 
             // labelMaxMenuHeight
             // 
-            this.labelMaxMenuHeight.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelMaxMenuHeight.AutoSize = true;
-            this.labelMaxMenuHeight.Location = new System.Drawing.Point(64, 7);
-            this.labelMaxMenuHeight.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelMaxMenuHeight.Name = "labelMaxMenuHeight";
-            this.labelMaxMenuHeight.Size = new System.Drawing.Size(122, 15);
-            this.labelMaxMenuHeight.TabIndex = 0;
-            this.labelMaxMenuHeight.Text = "labelMaxMenuHeight";
+            labelMaxMenuHeight.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelMaxMenuHeight.AutoSize = true;
+            labelMaxMenuHeight.Location = new System.Drawing.Point(64, 7);
+            labelMaxMenuHeight.MaximumSize = new System.Drawing.Size(330, 0);
+            labelMaxMenuHeight.Name = "labelMaxMenuHeight";
+            labelMaxMenuHeight.Size = new System.Drawing.Size(122, 15);
+            labelMaxMenuHeight.TabIndex = 0;
+            labelMaxMenuHeight.Text = "labelMaxMenuHeight";
             // 
             // tableLayoutPanelMaxMenuWidth
             // 
-            this.tableLayoutPanelMaxMenuWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelMaxMenuWidth.AutoSize = true;
-            this.tableLayoutPanelMaxMenuWidth.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMaxMenuWidth.ColumnCount = 2;
-            this.tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.numericUpDownMenuWidth, 0, 0);
-            this.tableLayoutPanelMaxMenuWidth.Controls.Add(this.labelMaxMenuWidth, 1, 0);
-            this.tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 87);
-            this.tableLayoutPanelMaxMenuWidth.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelMaxMenuWidth.Name = "tableLayoutPanelMaxMenuWidth";
-            this.tableLayoutPanelMaxMenuWidth.RowCount = 1;
-            this.tableLayoutPanelMaxMenuWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMaxMenuWidth.Size = new System.Drawing.Size(290, 29);
-            this.tableLayoutPanelMaxMenuWidth.TabIndex = 0;
+            tableLayoutPanelMaxMenuWidth.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelMaxMenuWidth.AutoSize = true;
+            tableLayoutPanelMaxMenuWidth.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMaxMenuWidth.ColumnCount = 2;
+            tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelMaxMenuWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelMaxMenuWidth.Controls.Add(numericUpDownMenuWidth, 0, 0);
+            tableLayoutPanelMaxMenuWidth.Controls.Add(labelMaxMenuWidth, 1, 0);
+            tableLayoutPanelMaxMenuWidth.Location = new System.Drawing.Point(0, 87);
+            tableLayoutPanelMaxMenuWidth.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelMaxMenuWidth.Name = "tableLayoutPanelMaxMenuWidth";
+            tableLayoutPanelMaxMenuWidth.RowCount = 1;
+            tableLayoutPanelMaxMenuWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelMaxMenuWidth.Size = new System.Drawing.Size(290, 29);
+            tableLayoutPanelMaxMenuWidth.TabIndex = 0;
             // 
             // numericUpDownMenuWidth
             // 
-            this.numericUpDownMenuWidth.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownMenuWidth.Name = "numericUpDownMenuWidth";
-            this.numericUpDownMenuWidth.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownMenuWidth.TabIndex = 1;
-            this.numericUpDownMenuWidth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.numericUpDownMenuWidth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
+            numericUpDownMenuWidth.Location = new System.Drawing.Point(3, 3);
+            numericUpDownMenuWidth.Name = "numericUpDownMenuWidth";
+            numericUpDownMenuWidth.Size = new System.Drawing.Size(55, 23);
+            numericUpDownMenuWidth.TabIndex = 1;
+            numericUpDownMenuWidth.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            numericUpDownMenuWidth.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
             // 
             // labelMaxMenuWidth
             // 
-            this.labelMaxMenuWidth.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelMaxMenuWidth.AutoSize = true;
-            this.labelMaxMenuWidth.Location = new System.Drawing.Point(64, 7);
-            this.labelMaxMenuWidth.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelMaxMenuWidth.Name = "labelMaxMenuWidth";
-            this.labelMaxMenuWidth.Size = new System.Drawing.Size(118, 15);
-            this.labelMaxMenuWidth.TabIndex = 0;
-            this.labelMaxMenuWidth.Text = "labelMaxMenuWidth";
+            labelMaxMenuWidth.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelMaxMenuWidth.AutoSize = true;
+            labelMaxMenuWidth.Location = new System.Drawing.Point(64, 7);
+            labelMaxMenuWidth.MaximumSize = new System.Drawing.Size(330, 0);
+            labelMaxMenuWidth.Name = "labelMaxMenuWidth";
+            labelMaxMenuWidth.Size = new System.Drawing.Size(118, 15);
+            labelMaxMenuWidth.TabIndex = 0;
+            labelMaxMenuWidth.Text = "labelMaxMenuWidth";
             // 
             // tabPageAdvanced
             // 
-            this.tabPageAdvanced.AutoScroll = true;
-            this.tabPageAdvanced.Controls.Add(this.tableLayoutPanelAdvanced);
-            this.tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
-            this.tabPageAdvanced.Name = "tabPageAdvanced";
-            this.tabPageAdvanced.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdvanced.Size = new System.Drawing.Size(412, 485);
-            this.tabPageAdvanced.TabIndex = 0;
-            this.tabPageAdvanced.Text = "tabPageAdvanced";
-            this.tabPageAdvanced.UseVisualStyleBackColor = true;
+            tabPageAdvanced.AutoScroll = true;
+            tabPageAdvanced.Controls.Add(tableLayoutPanelAdvanced);
+            tabPageAdvanced.Location = new System.Drawing.Point(4, 24);
+            tabPageAdvanced.Name = "tabPageAdvanced";
+            tabPageAdvanced.Padding = new System.Windows.Forms.Padding(3);
+            tabPageAdvanced.Size = new System.Drawing.Size(412, 485);
+            tabPageAdvanced.TabIndex = 0;
+            tabPageAdvanced.Text = "tabPageAdvanced";
+            tabPageAdvanced.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelAdvanced
             // 
-            this.tableLayoutPanelAdvanced.AutoSize = true;
-            this.tableLayoutPanelAdvanced.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelAdvanced.ColumnCount = 1;
-            this.tableLayoutPanelAdvanced.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxOptionalFeatures, 0, 0);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxInternetShortcutIcons, 0, 3);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxDrag, 0, 2);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.buttonAdvancedDefault, 0, 6);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxSorting, 0, 4);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxHiddenFilesAndFolders, 0, 5);
-            this.tableLayoutPanelAdvanced.Controls.Add(this.groupBoxClick, 0, 1);
-            this.tableLayoutPanelAdvanced.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanelAdvanced.Name = "tableLayoutPanelAdvanced";
-            this.tableLayoutPanelAdvanced.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
-            this.tableLayoutPanelAdvanced.RowCount = 7;
-            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 670);
-            this.tableLayoutPanelAdvanced.TabIndex = 0;
+            tableLayoutPanelAdvanced.AutoSize = true;
+            tableLayoutPanelAdvanced.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelAdvanced.ColumnCount = 1;
+            tableLayoutPanelAdvanced.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelAdvanced.Controls.Add(groupBoxOptionalFeatures, 0, 0);
+            tableLayoutPanelAdvanced.Controls.Add(groupBoxInternetShortcutIcons, 0, 3);
+            tableLayoutPanelAdvanced.Controls.Add(groupBoxDrag, 0, 2);
+            tableLayoutPanelAdvanced.Controls.Add(buttonAdvancedDefault, 0, 6);
+            tableLayoutPanelAdvanced.Controls.Add(groupBoxSorting, 0, 4);
+            tableLayoutPanelAdvanced.Controls.Add(groupBoxHiddenFilesAndFolders, 0, 5);
+            tableLayoutPanelAdvanced.Controls.Add(groupBoxClick, 0, 1);
+            tableLayoutPanelAdvanced.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanelAdvanced.Name = "tableLayoutPanelAdvanced";
+            tableLayoutPanelAdvanced.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            tableLayoutPanelAdvanced.RowCount = 7;
+            tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAdvanced.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAdvanced.Size = new System.Drawing.Size(301, 670);
+            tableLayoutPanelAdvanced.TabIndex = 0;
             // 
             // groupBoxOptionalFeatures
             // 
-            this.groupBoxOptionalFeatures.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxOptionalFeatures.AutoSize = true;
-            this.groupBoxOptionalFeatures.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxOptionalFeatures.Controls.Add(this.tableLayoutPanel2);
-            this.groupBoxOptionalFeatures.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxOptionalFeatures.Name = "groupBoxOptionalFeatures";
-            this.groupBoxOptionalFeatures.Size = new System.Drawing.Size(289, 122);
-            this.groupBoxOptionalFeatures.TabIndex = 1;
-            this.groupBoxOptionalFeatures.TabStop = false;
-            this.groupBoxOptionalFeatures.Text = "groupBoxOptionalFeatures";
+            groupBoxOptionalFeatures.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxOptionalFeatures.AutoSize = true;
+            groupBoxOptionalFeatures.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxOptionalFeatures.Controls.Add(tableLayoutPanel2);
+            groupBoxOptionalFeatures.Location = new System.Drawing.Point(3, 3);
+            groupBoxOptionalFeatures.Name = "groupBoxOptionalFeatures";
+            groupBoxOptionalFeatures.Size = new System.Drawing.Size(289, 122);
+            groupBoxOptionalFeatures.TabIndex = 1;
+            groupBoxOptionalFeatures.TabStop = false;
+            groupBoxOptionalFeatures.Text = "groupBoxOptionalFeatures";
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.checkBoxShowInTaskbar, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.checkBoxSendHotkeyInsteadKillOtherInstances, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.checkBoxSupportGamepad, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.checkBoxResolveLinksToFolders, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(283, 100);
-            this.tableLayoutPanel2.TabIndex = 0;
+            tableLayoutPanel2.AutoSize = true;
+            tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(checkBoxShowInTaskbar, 0, 1);
+            tableLayoutPanel2.Controls.Add(checkBoxSendHotkeyInsteadKillOtherInstances, 0, 2);
+            tableLayoutPanel2.Controls.Add(checkBoxSupportGamepad, 0, 3);
+            tableLayoutPanel2.Controls.Add(checkBoxResolveLinksToFolders, 0, 0);
+            tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel2.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 4;
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel2.Size = new System.Drawing.Size(283, 100);
+            tableLayoutPanel2.TabIndex = 0;
             // 
             // checkBoxShowInTaskbar
             // 
-            this.checkBoxShowInTaskbar.AutoSize = true;
-            this.checkBoxShowInTaskbar.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxShowInTaskbar.Name = "checkBoxShowInTaskbar";
-            this.checkBoxShowInTaskbar.Size = new System.Drawing.Size(155, 19);
-            this.checkBoxShowInTaskbar.TabIndex = 1;
-            this.checkBoxShowInTaskbar.Text = "checkBoxShowInTaskbar";
-            this.checkBoxShowInTaskbar.UseVisualStyleBackColor = true;
+            checkBoxShowInTaskbar.AutoSize = true;
+            checkBoxShowInTaskbar.Location = new System.Drawing.Point(3, 28);
+            checkBoxShowInTaskbar.Name = "checkBoxShowInTaskbar";
+            checkBoxShowInTaskbar.Size = new System.Drawing.Size(155, 19);
+            checkBoxShowInTaskbar.TabIndex = 1;
+            checkBoxShowInTaskbar.Text = "checkBoxShowInTaskbar";
+            checkBoxShowInTaskbar.UseVisualStyleBackColor = true;
             // 
             // checkBoxSendHotkeyInsteadKillOtherInstances
             // 
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.AutoSize = true;
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Location = new System.Drawing.Point(3, 53);
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.MaximumSize = new System.Drawing.Size(330, 0);
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Name = "checkBoxSendHotkeyInsteadKillOtherInstances";
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Size = new System.Drawing.Size(274, 19);
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.TabIndex = 3;
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.Text = "checkBoxSendHotkeyInsteadKillOtherInstances";
-            this.checkBoxSendHotkeyInsteadKillOtherInstances.UseVisualStyleBackColor = true;
+            checkBoxSendHotkeyInsteadKillOtherInstances.AutoSize = true;
+            checkBoxSendHotkeyInsteadKillOtherInstances.Location = new System.Drawing.Point(3, 53);
+            checkBoxSendHotkeyInsteadKillOtherInstances.MaximumSize = new System.Drawing.Size(330, 0);
+            checkBoxSendHotkeyInsteadKillOtherInstances.Name = "checkBoxSendHotkeyInsteadKillOtherInstances";
+            checkBoxSendHotkeyInsteadKillOtherInstances.Size = new System.Drawing.Size(274, 19);
+            checkBoxSendHotkeyInsteadKillOtherInstances.TabIndex = 3;
+            checkBoxSendHotkeyInsteadKillOtherInstances.Text = "checkBoxSendHotkeyInsteadKillOtherInstances";
+            checkBoxSendHotkeyInsteadKillOtherInstances.UseVisualStyleBackColor = true;
             // 
             // checkBoxSupportGamepad
             // 
-            this.checkBoxSupportGamepad.AutoSize = true;
-            this.checkBoxSupportGamepad.Location = new System.Drawing.Point(3, 78);
-            this.checkBoxSupportGamepad.Name = "checkBoxSupportGamepad";
-            this.checkBoxSupportGamepad.Size = new System.Drawing.Size(170, 19);
-            this.checkBoxSupportGamepad.TabIndex = 4;
-            this.checkBoxSupportGamepad.Text = "checkBoxSupportGamepad";
-            this.checkBoxSupportGamepad.UseVisualStyleBackColor = true;
+            checkBoxSupportGamepad.AutoSize = true;
+            checkBoxSupportGamepad.Location = new System.Drawing.Point(3, 78);
+            checkBoxSupportGamepad.Name = "checkBoxSupportGamepad";
+            checkBoxSupportGamepad.Size = new System.Drawing.Size(170, 19);
+            checkBoxSupportGamepad.TabIndex = 4;
+            checkBoxSupportGamepad.Text = "checkBoxSupportGamepad";
+            checkBoxSupportGamepad.UseVisualStyleBackColor = true;
             // 
             // checkBoxResolveLinksToFolders
             // 
-            this.checkBoxResolveLinksToFolders.AutoSize = true;
-            this.checkBoxResolveLinksToFolders.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxResolveLinksToFolders.Name = "checkBoxResolveLinksToFolders";
-            this.checkBoxResolveLinksToFolders.Size = new System.Drawing.Size(194, 19);
-            this.checkBoxResolveLinksToFolders.TabIndex = 1;
-            this.checkBoxResolveLinksToFolders.Text = "checkBoxResolveLinksToFolders";
-            this.checkBoxResolveLinksToFolders.UseVisualStyleBackColor = true;
+            checkBoxResolveLinksToFolders.AutoSize = true;
+            checkBoxResolveLinksToFolders.Location = new System.Drawing.Point(3, 3);
+            checkBoxResolveLinksToFolders.Name = "checkBoxResolveLinksToFolders";
+            checkBoxResolveLinksToFolders.Size = new System.Drawing.Size(194, 19);
+            checkBoxResolveLinksToFolders.TabIndex = 1;
+            checkBoxResolveLinksToFolders.Text = "checkBoxResolveLinksToFolders";
+            checkBoxResolveLinksToFolders.UseVisualStyleBackColor = true;
             // 
             // groupBoxInternetShortcutIcons
             // 
-            this.groupBoxInternetShortcutIcons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxInternetShortcutIcons.AutoSize = true;
-            this.groupBoxInternetShortcutIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxInternetShortcutIcons.Controls.Add(this.tableLayoutPanelInternetShortcutIcons);
-            this.groupBoxInternetShortcutIcons.Location = new System.Drawing.Point(3, 287);
-            this.groupBoxInternetShortcutIcons.Name = "groupBoxInternetShortcutIcons";
-            this.groupBoxInternetShortcutIcons.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.groupBoxInternetShortcutIcons.Size = new System.Drawing.Size(289, 81);
-            this.groupBoxInternetShortcutIcons.TabIndex = 1;
-            this.groupBoxInternetShortcutIcons.TabStop = false;
-            this.groupBoxInternetShortcutIcons.Text = "groupBoxInternetShortcutIcons";
+            groupBoxInternetShortcutIcons.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxInternetShortcutIcons.AutoSize = true;
+            groupBoxInternetShortcutIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxInternetShortcutIcons.Controls.Add(tableLayoutPanelInternetShortcutIcons);
+            groupBoxInternetShortcutIcons.Location = new System.Drawing.Point(3, 287);
+            groupBoxInternetShortcutIcons.Name = "groupBoxInternetShortcutIcons";
+            groupBoxInternetShortcutIcons.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            groupBoxInternetShortcutIcons.Size = new System.Drawing.Size(289, 81);
+            groupBoxInternetShortcutIcons.TabIndex = 1;
+            groupBoxInternetShortcutIcons.TabStop = false;
+            groupBoxInternetShortcutIcons.Text = "groupBoxInternetShortcutIcons";
             // 
             // tableLayoutPanelInternetShortcutIcons
             // 
-            this.tableLayoutPanelInternetShortcutIcons.AutoSize = true;
-            this.tableLayoutPanelInternetShortcutIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelInternetShortcutIcons.ColumnCount = 1;
-            this.tableLayoutPanelInternetShortcutIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelInternetShortcutIcons.Controls.Add(this.tableLayoutPanelChangeIcoFolder, 0, 1);
-            this.tableLayoutPanelInternetShortcutIcons.Controls.Add(this.textBoxIcoFolder, 0, 0);
-            this.tableLayoutPanelInternetShortcutIcons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelInternetShortcutIcons.Location = new System.Drawing.Point(3, 22);
-            this.tableLayoutPanelInternetShortcutIcons.Name = "tableLayoutPanelInternetShortcutIcons";
-            this.tableLayoutPanelInternetShortcutIcons.RowCount = 2;
-            this.tableLayoutPanelInternetShortcutIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelInternetShortcutIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelInternetShortcutIcons.Size = new System.Drawing.Size(283, 53);
-            this.tableLayoutPanelInternetShortcutIcons.TabIndex = 0;
+            tableLayoutPanelInternetShortcutIcons.AutoSize = true;
+            tableLayoutPanelInternetShortcutIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelInternetShortcutIcons.ColumnCount = 1;
+            tableLayoutPanelInternetShortcutIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelInternetShortcutIcons.Controls.Add(tableLayoutPanelChangeIcoFolder, 0, 1);
+            tableLayoutPanelInternetShortcutIcons.Controls.Add(textBoxIcoFolder, 0, 0);
+            tableLayoutPanelInternetShortcutIcons.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelInternetShortcutIcons.Location = new System.Drawing.Point(3, 22);
+            tableLayoutPanelInternetShortcutIcons.Name = "tableLayoutPanelInternetShortcutIcons";
+            tableLayoutPanelInternetShortcutIcons.RowCount = 2;
+            tableLayoutPanelInternetShortcutIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelInternetShortcutIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelInternetShortcutIcons.Size = new System.Drawing.Size(283, 53);
+            tableLayoutPanelInternetShortcutIcons.TabIndex = 0;
             // 
             // tableLayoutPanelChangeIcoFolder
             // 
-            this.tableLayoutPanelChangeIcoFolder.AutoSize = true;
-            this.tableLayoutPanelChangeIcoFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelChangeIcoFolder.ColumnCount = 2;
-            this.tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelChangeIcoFolder.Controls.Add(this.buttonChangeIcoFolder, 0, 0);
-            this.tableLayoutPanelChangeIcoFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelChangeIcoFolder.Location = new System.Drawing.Point(0, 22);
-            this.tableLayoutPanelChangeIcoFolder.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelChangeIcoFolder.Name = "tableLayoutPanelChangeIcoFolder";
-            this.tableLayoutPanelChangeIcoFolder.RowCount = 1;
-            this.tableLayoutPanelChangeIcoFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelChangeIcoFolder.Size = new System.Drawing.Size(283, 31);
-            this.tableLayoutPanelChangeIcoFolder.TabIndex = 0;
+            tableLayoutPanelChangeIcoFolder.AutoSize = true;
+            tableLayoutPanelChangeIcoFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelChangeIcoFolder.ColumnCount = 2;
+            tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelChangeIcoFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanelChangeIcoFolder.Controls.Add(buttonChangeIcoFolder, 0, 0);
+            tableLayoutPanelChangeIcoFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelChangeIcoFolder.Location = new System.Drawing.Point(0, 22);
+            tableLayoutPanelChangeIcoFolder.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelChangeIcoFolder.Name = "tableLayoutPanelChangeIcoFolder";
+            tableLayoutPanelChangeIcoFolder.RowCount = 1;
+            tableLayoutPanelChangeIcoFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelChangeIcoFolder.Size = new System.Drawing.Size(283, 31);
+            tableLayoutPanelChangeIcoFolder.TabIndex = 0;
             // 
             // buttonChangeIcoFolder
             // 
-            this.buttonChangeIcoFolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonChangeIcoFolder.AutoSize = true;
-            this.buttonChangeIcoFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonChangeIcoFolder.Location = new System.Drawing.Point(2, 3);
-            this.buttonChangeIcoFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.buttonChangeIcoFolder.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonChangeIcoFolder.Name = "buttonChangeIcoFolder";
-            this.buttonChangeIcoFolder.Size = new System.Drawing.Size(143, 25);
-            this.buttonChangeIcoFolder.TabIndex = 0;
-            this.buttonChangeIcoFolder.Text = "buttonChangeIcoFolder";
-            this.buttonChangeIcoFolder.UseVisualStyleBackColor = true;
-            this.buttonChangeIcoFolder.Click += new System.EventHandler(this.ButtonChangeIcoFolder_Click);
+            buttonChangeIcoFolder.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            buttonChangeIcoFolder.AutoSize = true;
+            buttonChangeIcoFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonChangeIcoFolder.Location = new System.Drawing.Point(2, 3);
+            buttonChangeIcoFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            buttonChangeIcoFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonChangeIcoFolder.Name = "buttonChangeIcoFolder";
+            buttonChangeIcoFolder.Size = new System.Drawing.Size(143, 25);
+            buttonChangeIcoFolder.TabIndex = 0;
+            buttonChangeIcoFolder.Text = "buttonChangeIcoFolder";
+            buttonChangeIcoFolder.UseVisualStyleBackColor = true;
+            buttonChangeIcoFolder.Click += ButtonChangeIcoFolder_Click;
             // 
             // textBoxIcoFolder
             // 
-            this.textBoxIcoFolder.BackColor = System.Drawing.Color.White;
-            this.textBoxIcoFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIcoFolder.Location = new System.Drawing.Point(6, 3);
-            this.textBoxIcoFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.textBoxIcoFolder.Name = "textBoxIcoFolder";
-            this.textBoxIcoFolder.ReadOnly = true;
-            this.textBoxIcoFolder.Size = new System.Drawing.Size(271, 16);
-            this.textBoxIcoFolder.TabIndex = 0;
-            this.textBoxIcoFolder.TabStop = false;
+            textBoxIcoFolder.BackColor = System.Drawing.Color.White;
+            textBoxIcoFolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            textBoxIcoFolder.Location = new System.Drawing.Point(6, 3);
+            textBoxIcoFolder.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            textBoxIcoFolder.Name = "textBoxIcoFolder";
+            textBoxIcoFolder.ReadOnly = true;
+            textBoxIcoFolder.Size = new System.Drawing.Size(271, 16);
+            textBoxIcoFolder.TabIndex = 0;
+            textBoxIcoFolder.TabStop = false;
             // 
             // groupBoxDrag
             // 
-            this.groupBoxDrag.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxDrag.AutoSize = true;
-            this.groupBoxDrag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxDrag.Controls.Add(this.tableLayoutPanel1);
-            this.groupBoxDrag.Location = new System.Drawing.Point(3, 209);
-            this.groupBoxDrag.Name = "groupBoxDrag";
-            this.groupBoxDrag.Size = new System.Drawing.Size(289, 72);
-            this.groupBoxDrag.TabIndex = 4;
-            this.groupBoxDrag.TabStop = false;
-            this.groupBoxDrag.Text = "groupBoxDrag";
+            groupBoxDrag.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxDrag.AutoSize = true;
+            groupBoxDrag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxDrag.Controls.Add(tableLayoutPanel1);
+            groupBoxDrag.Location = new System.Drawing.Point(3, 209);
+            groupBoxDrag.Name = "groupBoxDrag";
+            groupBoxDrag.Size = new System.Drawing.Size(289, 72);
+            groupBoxDrag.TabIndex = 4;
+            groupBoxDrag.TabStop = false;
+            groupBoxDrag.Text = "groupBoxDrag";
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxSwipeScrolling, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxDragDropItems, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(283, 50);
-            this.tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.AutoSize = true;
+            tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(checkBoxSwipeScrolling, 0, 1);
+            tableLayoutPanel1.Controls.Add(checkBoxDragDropItems, 0, 0);
+            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel1.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanel1.Size = new System.Drawing.Size(283, 50);
+            tableLayoutPanel1.TabIndex = 1;
             // 
             // checkBoxSwipeScrolling
             // 
-            this.checkBoxSwipeScrolling.AutoSize = true;
-            this.checkBoxSwipeScrolling.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxSwipeScrolling.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxSwipeScrolling.Name = "checkBoxSwipeScrolling";
-            this.checkBoxSwipeScrolling.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxSwipeScrolling.TabIndex = 4;
-            this.checkBoxSwipeScrolling.Text = "checkBoxSwipeScrolling";
-            this.checkBoxSwipeScrolling.UseVisualStyleBackColor = true;
+            checkBoxSwipeScrolling.AutoSize = true;
+            checkBoxSwipeScrolling.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxSwipeScrolling.Location = new System.Drawing.Point(3, 28);
+            checkBoxSwipeScrolling.Name = "checkBoxSwipeScrolling";
+            checkBoxSwipeScrolling.Size = new System.Drawing.Size(277, 19);
+            checkBoxSwipeScrolling.TabIndex = 4;
+            checkBoxSwipeScrolling.Text = "checkBoxSwipeScrolling";
+            checkBoxSwipeScrolling.UseVisualStyleBackColor = true;
             // 
             // checkBoxDragDropItems
             // 
-            this.checkBoxDragDropItems.AutoSize = true;
-            this.checkBoxDragDropItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxDragDropItems.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxDragDropItems.Name = "checkBoxDragDropItems";
-            this.checkBoxDragDropItems.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxDragDropItems.TabIndex = 3;
-            this.checkBoxDragDropItems.Text = "checkBoxDragDropItems";
-            this.checkBoxDragDropItems.UseVisualStyleBackColor = true;
+            checkBoxDragDropItems.AutoSize = true;
+            checkBoxDragDropItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxDragDropItems.Location = new System.Drawing.Point(3, 3);
+            checkBoxDragDropItems.Name = "checkBoxDragDropItems";
+            checkBoxDragDropItems.Size = new System.Drawing.Size(277, 19);
+            checkBoxDragDropItems.TabIndex = 3;
+            checkBoxDragDropItems.Text = "checkBoxDragDropItems";
+            checkBoxDragDropItems.UseVisualStyleBackColor = true;
             // 
             // buttonAdvancedDefault
             // 
-            this.buttonAdvancedDefault.AutoSize = true;
-            this.buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdvancedDefault.Location = new System.Drawing.Point(9, 636);
-            this.buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
-            this.buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
-            this.buttonAdvancedDefault.Name = "buttonAdvancedDefault";
-            this.buttonAdvancedDefault.Size = new System.Drawing.Size(144, 25);
-            this.buttonAdvancedDefault.TabIndex = 0;
-            this.buttonAdvancedDefault.Text = "buttonAdvancedDefault";
-            this.buttonAdvancedDefault.UseVisualStyleBackColor = true;
-            this.buttonAdvancedDefault.Click += new System.EventHandler(this.ButtonAdvancedDefault_Click);
+            buttonAdvancedDefault.AutoSize = true;
+            buttonAdvancedDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonAdvancedDefault.Location = new System.Drawing.Point(9, 636);
+            buttonAdvancedDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
+            buttonAdvancedDefault.MinimumSize = new System.Drawing.Size(75, 25);
+            buttonAdvancedDefault.Name = "buttonAdvancedDefault";
+            buttonAdvancedDefault.Size = new System.Drawing.Size(144, 25);
+            buttonAdvancedDefault.TabIndex = 0;
+            buttonAdvancedDefault.Text = "buttonAdvancedDefault";
+            buttonAdvancedDefault.UseVisualStyleBackColor = true;
+            buttonAdvancedDefault.Click += ButtonAdvancedDefault_Click;
             // 
             // groupBoxSorting
             // 
-            this.groupBoxSorting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxSorting.AutoSize = true;
-            this.groupBoxSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxSorting.Controls.Add(this.tableLayoutPanelSorting);
-            this.groupBoxSorting.Location = new System.Drawing.Point(3, 374);
-            this.groupBoxSorting.Name = "groupBoxSorting";
-            this.groupBoxSorting.Size = new System.Drawing.Size(289, 147);
-            this.groupBoxSorting.TabIndex = 3;
-            this.groupBoxSorting.TabStop = false;
-            this.groupBoxSorting.Text = "groupBoxSorting";
+            groupBoxSorting.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxSorting.AutoSize = true;
+            groupBoxSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxSorting.Controls.Add(tableLayoutPanelSorting);
+            groupBoxSorting.Location = new System.Drawing.Point(3, 374);
+            groupBoxSorting.Name = "groupBoxSorting";
+            groupBoxSorting.Size = new System.Drawing.Size(289, 147);
+            groupBoxSorting.TabIndex = 3;
+            groupBoxSorting.TabStop = false;
+            groupBoxSorting.Text = "groupBoxSorting";
             // 
             // tableLayoutPanelSorting
             // 
-            this.tableLayoutPanelSorting.AutoSize = true;
-            this.tableLayoutPanelSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSorting.ColumnCount = 1;
-            this.tableLayoutPanelSorting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByFileExtensionAndName, 0, 2);
-            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByTypeAndDate, 0, 1);
-            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByTypeAndName, 0, 0);
-            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByDate, 0, 4);
-            this.tableLayoutPanelSorting.Controls.Add(this.radioButtonSortByName, 0, 3);
-            this.tableLayoutPanelSorting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelSorting.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelSorting.Name = "tableLayoutPanelSorting";
-            this.tableLayoutPanelSorting.RowCount = 5;
-            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSorting.Size = new System.Drawing.Size(283, 125);
-            this.tableLayoutPanelSorting.TabIndex = 1;
-            // 
-            // radioButtonSortByTypeAndDate
-            // 
-            this.radioButtonSortByTypeAndDate.AutoSize = true;
-            this.radioButtonSortByTypeAndDate.Location = new System.Drawing.Point(3, 28);
-            this.radioButtonSortByTypeAndDate.Name = "radioButtonSortByTypeAndDate";
-            this.radioButtonSortByTypeAndDate.Size = new System.Drawing.Size(192, 19);
-            this.radioButtonSortByTypeAndDate.TabIndex = 3;
-            this.radioButtonSortByTypeAndDate.TabStop = true;
-            this.radioButtonSortByTypeAndDate.Text = "radioButtonSortByTypeAndDate";
-            this.radioButtonSortByTypeAndDate.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSortByTypeAndName
-            // 
-            this.radioButtonSortByTypeAndName.AutoSize = true;
-            this.radioButtonSortByTypeAndName.Location = new System.Drawing.Point(3, 3);
-            this.radioButtonSortByTypeAndName.Name = "radioButtonSortByTypeAndName";
-            this.radioButtonSortByTypeAndName.Size = new System.Drawing.Size(200, 19);
-            this.radioButtonSortByTypeAndName.TabIndex = 4;
-            this.radioButtonSortByTypeAndName.TabStop = true;
-            this.radioButtonSortByTypeAndName.Text = "radioButtonSortByTypeAndName";
-            this.radioButtonSortByTypeAndName.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSortByDate
-            // 
-            this.radioButtonSortByDate.AutoSize = true;
-            this.radioButtonSortByDate.Location = new System.Drawing.Point(3, 103);
-            this.radioButtonSortByDate.Name = "radioButtonSortByDate";
-            this.radioButtonSortByDate.Size = new System.Drawing.Size(146, 19);
-            this.radioButtonSortByDate.TabIndex = 1;
-            this.radioButtonSortByDate.TabStop = true;
-            this.radioButtonSortByDate.Text = "radioButtonSortByDate";
-            this.radioButtonSortByDate.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSortByName
-            // 
-            this.radioButtonSortByName.AutoSize = true;
-            this.radioButtonSortByName.Location = new System.Drawing.Point(3, 78);
-            this.radioButtonSortByName.Name = "radioButtonSortByName";
-            this.radioButtonSortByName.Size = new System.Drawing.Size(154, 19);
-            this.radioButtonSortByName.TabIndex = 2;
-            this.radioButtonSortByName.TabStop = true;
-            this.radioButtonSortByName.Text = "radioButtonSortByName";
-            this.radioButtonSortByName.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxHiddenFilesAndFolders
-            // 
-            this.groupBoxHiddenFilesAndFolders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxHiddenFilesAndFolders.AutoSize = true;
-            this.groupBoxHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxHiddenFilesAndFolders.Controls.Add(this.tableLayoutPanelHiddenFilesAndFolders);
-            this.groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 527);
-            this.groupBoxHiddenFilesAndFolders.Name = "groupBoxHiddenFilesAndFolders";
-            this.groupBoxHiddenFilesAndFolders.Size = new System.Drawing.Size(289, 97);
-            this.groupBoxHiddenFilesAndFolders.TabIndex = 2;
-            this.groupBoxHiddenFilesAndFolders.TabStop = false;
-            this.groupBoxHiddenFilesAndFolders.Text = "groupBoxHiddenFilesAndFolders";
-            // 
-            // tableLayoutPanelHiddenFilesAndFolders
-            // 
-            this.tableLayoutPanelHiddenFilesAndFolders.AutoSize = true;
-            this.tableLayoutPanelHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelHiddenFilesAndFolders.ColumnCount = 1;
-            this.tableLayoutPanelHiddenFilesAndFolders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelHiddenFilesAndFolders.Controls.Add(this.radioButtonAlwaysShowHiddenFiles, 0, 2);
-            this.tableLayoutPanelHiddenFilesAndFolders.Controls.Add(this.radioButtonNeverShowHiddenFiles, 0, 1);
-            this.tableLayoutPanelHiddenFilesAndFolders.Controls.Add(this.radioButtonSystemSettingsShowHiddenFiles, 0, 0);
-            this.tableLayoutPanelHiddenFilesAndFolders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelHiddenFilesAndFolders.Name = "tableLayoutPanelHiddenFilesAndFolders";
-            this.tableLayoutPanelHiddenFilesAndFolders.RowCount = 3;
-            this.tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelHiddenFilesAndFolders.Size = new System.Drawing.Size(283, 75);
-            this.tableLayoutPanelHiddenFilesAndFolders.TabIndex = 1;
-            // 
-            // radioButtonAlwaysShowHiddenFiles
-            // 
-            this.radioButtonAlwaysShowHiddenFiles.AutoSize = true;
-            this.radioButtonAlwaysShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonAlwaysShowHiddenFiles.Location = new System.Drawing.Point(3, 53);
-            this.radioButtonAlwaysShowHiddenFiles.Name = "radioButtonAlwaysShowHiddenFiles";
-            this.radioButtonAlwaysShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
-            this.radioButtonAlwaysShowHiddenFiles.TabIndex = 2;
-            this.radioButtonAlwaysShowHiddenFiles.TabStop = true;
-            this.radioButtonAlwaysShowHiddenFiles.Text = "radioButtonAlwaysShowHiddenFiles";
-            this.radioButtonAlwaysShowHiddenFiles.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonNeverShowHiddenFiles
-            // 
-            this.radioButtonNeverShowHiddenFiles.AutoSize = true;
-            this.radioButtonNeverShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonNeverShowHiddenFiles.Location = new System.Drawing.Point(3, 28);
-            this.radioButtonNeverShowHiddenFiles.Name = "radioButtonNeverShowHiddenFiles";
-            this.radioButtonNeverShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
-            this.radioButtonNeverShowHiddenFiles.TabIndex = 1;
-            this.radioButtonNeverShowHiddenFiles.TabStop = true;
-            this.radioButtonNeverShowHiddenFiles.Text = "radioButtonNeverShowHiddenFiles";
-            this.radioButtonNeverShowHiddenFiles.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSystemSettingsShowHiddenFiles
-            // 
-            this.radioButtonSystemSettingsShowHiddenFiles.AutoSize = true;
-            this.radioButtonSystemSettingsShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonSystemSettingsShowHiddenFiles.Location = new System.Drawing.Point(3, 3);
-            this.radioButtonSystemSettingsShowHiddenFiles.Name = "radioButtonSystemSettingsShowHiddenFiles";
-            this.radioButtonSystemSettingsShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
-            this.radioButtonSystemSettingsShowHiddenFiles.TabIndex = 2;
-            this.radioButtonSystemSettingsShowHiddenFiles.TabStop = true;
-            this.radioButtonSystemSettingsShowHiddenFiles.Text = "radioButtonSystemSettingsShowHiddenFiles";
-            this.radioButtonSystemSettingsShowHiddenFiles.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxClick
-            // 
-            this.groupBoxClick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxClick.AutoSize = true;
-            this.groupBoxClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxClick.Controls.Add(this.tableLayoutPanelClick);
-            this.groupBoxClick.Location = new System.Drawing.Point(3, 131);
-            this.groupBoxClick.Name = "groupBoxClick";
-            this.groupBoxClick.Size = new System.Drawing.Size(289, 72);
-            this.groupBoxClick.TabIndex = 0;
-            this.groupBoxClick.TabStop = false;
-            this.groupBoxClick.Text = "groupBoxClick";
-            // 
-            // tableLayoutPanelClick
-            // 
-            this.tableLayoutPanelClick.AutoSize = true;
-            this.tableLayoutPanelClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelClick.ColumnCount = 1;
-            this.tableLayoutPanelClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenDirectoryWithOneClick, 0, 1);
-            this.tableLayoutPanelClick.Controls.Add(this.checkBoxOpenItemWithOneClick, 0, 0);
-            this.tableLayoutPanelClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelClick.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelClick.Name = "tableLayoutPanelClick";
-            this.tableLayoutPanelClick.RowCount = 2;
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelClick.Size = new System.Drawing.Size(283, 50);
-            this.tableLayoutPanelClick.TabIndex = 0;
-            // 
-            // checkBoxOpenDirectoryWithOneClick
-            // 
-            this.checkBoxOpenDirectoryWithOneClick.AutoSize = true;
-            this.checkBoxOpenDirectoryWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxOpenDirectoryWithOneClick.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxOpenDirectoryWithOneClick.Name = "checkBoxOpenDirectoryWithOneClick";
-            this.checkBoxOpenDirectoryWithOneClick.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxOpenDirectoryWithOneClick.TabIndex = 2;
-            this.checkBoxOpenDirectoryWithOneClick.Text = "checkBoxOpenDirectoryWithOneClick";
-            this.checkBoxOpenDirectoryWithOneClick.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxOpenItemWithOneClick
-            // 
-            this.checkBoxOpenItemWithOneClick.AutoSize = true;
-            this.checkBoxOpenItemWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxOpenItemWithOneClick.Name = "checkBoxOpenItemWithOneClick";
-            this.checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(277, 19);
-            this.checkBoxOpenItemWithOneClick.TabIndex = 0;
-            this.checkBoxOpenItemWithOneClick.Text = "checkBoxOpenItemWithOneClick";
-            this.checkBoxOpenItemWithOneClick.UseVisualStyleBackColor = true;
-            // 
-            // tabPageFolders
-            // 
-            this.tabPageFolders.Controls.Add(this.tableLayoutPanelFoldersInRootFolder);
-            this.tabPageFolders.Location = new System.Drawing.Point(4, 24);
-            this.tabPageFolders.Name = "tabPageFolders";
-            this.tabPageFolders.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFolders.Size = new System.Drawing.Size(412, 485);
-            this.tabPageFolders.TabIndex = 2;
-            this.tabPageFolders.Text = "tabPageFolders";
-            this.tabPageFolders.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanelFoldersInRootFolder
-            // 
-            this.tableLayoutPanelFoldersInRootFolder.AutoSize = true;
-            this.tableLayoutPanelFoldersInRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelFoldersInRootFolder.ColumnCount = 1;
-            this.tableLayoutPanelFoldersInRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelFoldersInRootFolder.Controls.Add(this.groupBoxFoldersInRootFolder, 0, 0);
-            this.tableLayoutPanelFoldersInRootFolder.Controls.Add(this.buttonDefaultFolders, 0, 1);
-            this.tableLayoutPanelFoldersInRootFolder.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanelFoldersInRootFolder.Name = "tableLayoutPanelFoldersInRootFolder";
-            this.tableLayoutPanelFoldersInRootFolder.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
-            this.tableLayoutPanelFoldersInRootFolder.RowCount = 2;
-            this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelFoldersInRootFolder.Size = new System.Drawing.Size(345, 415);
-            this.tableLayoutPanelFoldersInRootFolder.TabIndex = 1;
-            // 
-            // groupBoxFoldersInRootFolder
-            // 
-            this.groupBoxFoldersInRootFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxFoldersInRootFolder.AutoSize = true;
-            this.groupBoxFoldersInRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxFoldersInRootFolder.Controls.Add(this.tableLayoutPanelFolderToRootFoldersList);
-            this.groupBoxFoldersInRootFolder.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxFoldersInRootFolder.Name = "groupBoxFoldersInRootFolder";
-            this.groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(333, 366);
-            this.groupBoxFoldersInRootFolder.TabIndex = 0;
-            this.groupBoxFoldersInRootFolder.TabStop = false;
-            this.groupBoxFoldersInRootFolder.Text = "groupBoxFoldersInRootFolder";
-            // 
-            // tableLayoutPanelFolderToRootFoldersList
-            // 
-            this.tableLayoutPanelFolderToRootFoldersList.AutoSize = true;
-            this.tableLayoutPanelFolderToRootFoldersList.ColumnCount = 1;
-            this.tableLayoutPanelFolderToRootFoldersList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.tableLayoutPanelFolderToRootFolder, 0, 2);
-            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.dataGridViewFolders, 0, 3);
-            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.tableLayoutPanelAddSampleStartMenuFolder, 0, 4);
-            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.checkBoxGenerateShortcutsToDrives, 0, 5);
-            this.tableLayoutPanelFolderToRootFoldersList.Controls.Add(this.checkBoxShowOnlyAsSearchResult, 0, 0);
-            this.tableLayoutPanelFolderToRootFoldersList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFolderToRootFoldersList.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelFolderToRootFoldersList.Name = "tableLayoutPanelFolderToRootFoldersList";
-            this.tableLayoutPanelFolderToRootFoldersList.RowCount = 6;
-            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelFolderToRootFoldersList.Size = new System.Drawing.Size(327, 344);
-            this.tableLayoutPanelFolderToRootFoldersList.TabIndex = 0;
-            // 
-            // tableLayoutPanelFolderToRootFolder
-            // 
-            this.tableLayoutPanelFolderToRootFolder.AutoSize = true;
-            this.tableLayoutPanelFolderToRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelFolderToRootFolder.ColumnCount = 3;
-            this.tableLayoutPanelFolderToRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelFolderToRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFolderToRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelFolderToRootFolder.Controls.Add(this.buttonAddFolderToRootFolder, 0, 0);
-            this.tableLayoutPanelFolderToRootFolder.Controls.Add(this.buttonRemoveFolder, 2, 0);
-            this.tableLayoutPanelFolderToRootFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFolderToRootFolder.Location = new System.Drawing.Point(0, 25);
-            this.tableLayoutPanelFolderToRootFolder.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelFolderToRootFolder.Name = "tableLayoutPanelFolderToRootFolder";
-            this.tableLayoutPanelFolderToRootFolder.RowCount = 1;
-            this.tableLayoutPanelFolderToRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFolderToRootFolder.Size = new System.Drawing.Size(327, 31);
-            this.tableLayoutPanelFolderToRootFolder.TabIndex = 2;
-            // 
-            // buttonAddFolderToRootFolder
-            // 
-            this.buttonAddFolderToRootFolder.AutoSize = true;
-            this.buttonAddFolderToRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAddFolderToRootFolder.Location = new System.Drawing.Point(2, 3);
-            this.buttonAddFolderToRootFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.buttonAddFolderToRootFolder.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonAddFolderToRootFolder.Name = "buttonAddFolderToRootFolder";
-            this.buttonAddFolderToRootFolder.Size = new System.Drawing.Size(178, 25);
-            this.buttonAddFolderToRootFolder.TabIndex = 0;
-            this.buttonAddFolderToRootFolder.Text = "buttonAddFolderToRootFolder";
-            this.buttonAddFolderToRootFolder.UseVisualStyleBackColor = true;
-            this.buttonAddFolderToRootFolder.Click += new System.EventHandler(this.ButtonAddFolderToRootFolder_Click);
-            // 
-            // buttonRemoveFolder
-            // 
-            this.buttonRemoveFolder.AutoSize = true;
-            this.buttonRemoveFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRemoveFolder.Location = new System.Drawing.Point(195, 3);
-            this.buttonRemoveFolder.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonRemoveFolder.Name = "buttonRemoveFolder";
-            this.buttonRemoveFolder.Size = new System.Drawing.Size(129, 25);
-            this.buttonRemoveFolder.TabIndex = 1;
-            this.buttonRemoveFolder.Text = "buttonRemoveFolder";
-            this.buttonRemoveFolder.UseVisualStyleBackColor = true;
-            this.buttonRemoveFolder.Click += new System.EventHandler(this.ButtonRemoveFolder_Click);
-            // 
-            // dataGridViewFolders
-            // 
-            this.dataGridViewFolders.AllowUserToAddRows = false;
-            this.dataGridViewFolders.AllowUserToDeleteRows = false;
-            this.dataGridViewFolders.AllowUserToResizeColumns = false;
-            this.dataGridViewFolders.AllowUserToResizeRows = false;
-            this.dataGridViewFolders.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewFolders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFolders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnFolder,
-            this.ColumnRecursiveLevel,
-            this.ColumnOnlyFiles});
-            this.dataGridViewFolders.Location = new System.Drawing.Point(3, 59);
-            this.dataGridViewFolders.Name = "dataGridViewFolders";
-            this.dataGridViewFolders.RowHeadersVisible = false;
-            this.dataGridViewFolders.RowTemplate.Height = 25;
-            this.dataGridViewFolders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewFolders.Size = new System.Drawing.Size(321, 226);
-            this.dataGridViewFolders.TabIndex = 6;
-            this.dataGridViewFolders.TabStop = false;
-            this.dataGridViewFolders.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DataGridViewFolders_CellValidating);
-            this.dataGridViewFolders.CurrentCellDirtyStateChanged += new System.EventHandler(this.DataGridViewFolders_CurrentCellDirtyStateChanged);
-            this.dataGridViewFolders.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridViewFolders_RowsAdded);
-            this.dataGridViewFolders.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridViewFolders_RowsRemoved);
-            this.dataGridViewFolders.SelectionChanged += new System.EventHandler(this.DataGridViewFolders_SelectionChanged);
-            this.dataGridViewFolders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DataGridViewFolders_MouseClick);
-            // 
-            // ColumnFolder
-            // 
-            this.ColumnFolder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnFolder.HeaderText = "ColumnFolder";
-            this.ColumnFolder.Name = "ColumnFolder";
-            // 
-            // ColumnRecursiveLevel
-            // 
-            this.ColumnRecursiveLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnRecursiveLevel.HeaderText = "ColumnRecursiveLevel";
-            this.ColumnRecursiveLevel.Name = "ColumnRecursiveLevel";
-            this.ColumnRecursiveLevel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnRecursiveLevel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnRecursiveLevel.Width = 152;
-            // 
-            // ColumnOnlyFiles
-            // 
-            this.ColumnOnlyFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnOnlyFiles.HeaderText = "ColumnOnlyFiles";
-            this.ColumnOnlyFiles.Name = "ColumnOnlyFiles";
-            this.ColumnOnlyFiles.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnOnlyFiles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnOnlyFiles.Width = 123;
-            // 
-            // tableLayoutPanelAddSampleStartMenuFolder
-            // 
-            this.tableLayoutPanelAddSampleStartMenuFolder.AutoSize = true;
-            this.tableLayoutPanelAddSampleStartMenuFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelAddSampleStartMenuFolder.ColumnCount = 2;
-            this.tableLayoutPanelAddSampleStartMenuFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelAddSampleStartMenuFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAddSampleStartMenuFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelAddSampleStartMenuFolder.Controls.Add(this.buttonAddSampleStartMenuFolder, 0, 0);
-            this.tableLayoutPanelAddSampleStartMenuFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAddSampleStartMenuFolder.Location = new System.Drawing.Point(0, 288);
-            this.tableLayoutPanelAddSampleStartMenuFolder.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelAddSampleStartMenuFolder.Name = "tableLayoutPanelAddSampleStartMenuFolder";
-            this.tableLayoutPanelAddSampleStartMenuFolder.RowCount = 1;
-            this.tableLayoutPanelAddSampleStartMenuFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAddSampleStartMenuFolder.Size = new System.Drawing.Size(327, 31);
-            this.tableLayoutPanelAddSampleStartMenuFolder.TabIndex = 3;
-            // 
-            // buttonAddSampleStartMenuFolder
-            // 
-            this.buttonAddSampleStartMenuFolder.AutoSize = true;
-            this.buttonAddSampleStartMenuFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAddSampleStartMenuFolder.Location = new System.Drawing.Point(2, 3);
-            this.buttonAddSampleStartMenuFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
-            this.buttonAddSampleStartMenuFolder.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonAddSampleStartMenuFolder.Name = "buttonAddSampleStartMenuFolder";
-            this.buttonAddSampleStartMenuFolder.Size = new System.Drawing.Size(202, 25);
-            this.buttonAddSampleStartMenuFolder.TabIndex = 2;
-            this.buttonAddSampleStartMenuFolder.Text = "buttonAddSampleStartMenuFolder";
-            this.buttonAddSampleStartMenuFolder.UseVisualStyleBackColor = true;
-            this.buttonAddSampleStartMenuFolder.Click += new System.EventHandler(this.ButtonAddSampleStartMenuFolder_Click);
-            // 
-            // checkBoxGenerateShortcutsToDrives
-            // 
-            this.checkBoxGenerateShortcutsToDrives.AutoSize = true;
-            this.checkBoxGenerateShortcutsToDrives.Location = new System.Drawing.Point(3, 322);
-            this.checkBoxGenerateShortcutsToDrives.Name = "checkBoxGenerateShortcutsToDrives";
-            this.checkBoxGenerateShortcutsToDrives.Size = new System.Drawing.Size(218, 19);
-            this.checkBoxGenerateShortcutsToDrives.TabIndex = 7;
-            this.checkBoxGenerateShortcutsToDrives.Text = "checkBoxGenerateShortcutsToDrives";
-            this.checkBoxGenerateShortcutsToDrives.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShowOnlyAsSearchResult
-            // 
-            this.checkBoxShowOnlyAsSearchResult.AutoSize = true;
-            this.checkBoxShowOnlyAsSearchResult.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxShowOnlyAsSearchResult.Name = "checkBoxShowOnlyAsSearchResult";
-            this.checkBoxShowOnlyAsSearchResult.Size = new System.Drawing.Size(211, 19);
-            this.checkBoxShowOnlyAsSearchResult.TabIndex = 8;
-            this.checkBoxShowOnlyAsSearchResult.Text = "checkBoxShowOnlyAsSearchResult";
-            this.checkBoxShowOnlyAsSearchResult.UseVisualStyleBackColor = true;
-            // 
-            // buttonDefaultFolders
-            // 
-            this.buttonDefaultFolders.AutoSize = true;
-            this.buttonDefaultFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonDefaultFolders.Location = new System.Drawing.Point(9, 381);
-            this.buttonDefaultFolders.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
-            this.buttonDefaultFolders.MinimumSize = new System.Drawing.Size(75, 25);
-            this.buttonDefaultFolders.Name = "buttonDefaultFolders";
-            this.buttonDefaultFolders.Size = new System.Drawing.Size(129, 25);
-            this.buttonDefaultFolders.TabIndex = 6;
-            this.buttonDefaultFolders.Text = "buttonDefaultFolders";
-            this.buttonDefaultFolders.UseVisualStyleBackColor = true;
-            this.buttonDefaultFolders.Click += new System.EventHandler(this.ButtonClearFolders_Click);
-            // 
-            // tabPageExpert
-            // 
-            this.tabPageExpert.Controls.Add(this.tableLayoutPanelExpert);
-            this.tabPageExpert.Location = new System.Drawing.Point(4, 24);
-            this.tabPageExpert.Name = "tabPageExpert";
-            this.tabPageExpert.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageExpert.Size = new System.Drawing.Size(412, 485);
-            this.tabPageExpert.TabIndex = 1;
-            this.tabPageExpert.Text = "tabPageExpert";
-            this.tabPageExpert.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanelExpert
-            // 
-            this.tableLayoutPanelExpert.AutoSize = true;
-            this.tableLayoutPanelExpert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelExpert.ColumnCount = 1;
-            this.tableLayoutPanelExpert.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelExpert.Controls.Add(this.groupBoxSearchPattern, 0, 3);
-            this.tableLayoutPanelExpert.Controls.Add(this.groupBoxCache, 0, 2);
-            this.tableLayoutPanelExpert.Controls.Add(this.groupBoxStaysOpen, 0, 1);
-            this.tableLayoutPanelExpert.Controls.Add(this.groupBoxOpenSubmenus, 0, 0);
-            this.tableLayoutPanelExpert.Controls.Add(this.buttonExpertDefault, 0, 4);
-            this.tableLayoutPanelExpert.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanelExpert.Name = "tableLayoutPanelExpert";
-            this.tableLayoutPanelExpert.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
-            this.tableLayoutPanelExpert.RowCount = 5;
-            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelExpert.Size = new System.Drawing.Size(345, 387);
-            this.tableLayoutPanelExpert.TabIndex = 1;
-            // 
-            // groupBoxSearchPattern
-            // 
-            this.groupBoxSearchPattern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxSearchPattern.AutoSize = true;
-            this.groupBoxSearchPattern.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxSearchPattern.Controls.Add(this.tableLayoutPanelSearchPattern);
-            this.groupBoxSearchPattern.Location = new System.Drawing.Point(3, 287);
-            this.groupBoxSearchPattern.Name = "groupBoxSearchPattern";
-            this.groupBoxSearchPattern.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxSearchPattern.Size = new System.Drawing.Size(333, 54);
-            this.groupBoxSearchPattern.TabIndex = 2;
-            this.groupBoxSearchPattern.TabStop = false;
-            this.groupBoxSearchPattern.Text = "groupBoxSearchPattern";
-            // 
-            // tableLayoutPanelSearchPattern
-            // 
-            this.tableLayoutPanelSearchPattern.AutoSize = true;
-            this.tableLayoutPanelSearchPattern.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSearchPattern.ColumnCount = 1;
-            this.tableLayoutPanelSearchPattern.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearchPattern.Controls.Add(this.textBoxSearchPattern, 0, 0);
-            this.tableLayoutPanelSearchPattern.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelSearchPattern.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelSearchPattern.Name = "tableLayoutPanelSearchPattern";
-            this.tableLayoutPanelSearchPattern.RowCount = 1;
-            this.tableLayoutPanelSearchPattern.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearchPattern.Size = new System.Drawing.Size(327, 29);
-            this.tableLayoutPanelSearchPattern.TabIndex = 0;
-            // 
-            // textBoxSearchPattern
-            // 
-            this.textBoxSearchPattern.Location = new System.Drawing.Point(3, 3);
-            this.textBoxSearchPattern.Name = "textBoxSearchPattern";
-            this.textBoxSearchPattern.Size = new System.Drawing.Size(311, 23);
-            this.textBoxSearchPattern.TabIndex = 1;
-            this.textBoxSearchPattern.TabStop = false;
-            // 
-            // groupBoxCache
-            // 
-            this.groupBoxCache.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxCache.AutoSize = true;
-            this.groupBoxCache.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxCache.Controls.Add(this.tableLayoutPanelCache);
-            this.groupBoxCache.Location = new System.Drawing.Point(3, 227);
-            this.groupBoxCache.Name = "groupBoxCache";
-            this.groupBoxCache.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxCache.Size = new System.Drawing.Size(333, 54);
-            this.groupBoxCache.TabIndex = 1;
-            this.groupBoxCache.TabStop = false;
-            this.groupBoxCache.Text = "groupBoxCache";
-            // 
-            // tableLayoutPanelCache
-            // 
-            this.tableLayoutPanelCache.AutoSize = true;
-            this.tableLayoutPanelCache.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelCache.ColumnCount = 1;
-            this.tableLayoutPanelCache.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelCache.Controls.Add(this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems, 0, 0);
-            this.tableLayoutPanelCache.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelCache.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelCache.Name = "tableLayoutPanelCache";
-            this.tableLayoutPanelCache.RowCount = 1;
-            this.tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelCache.Size = new System.Drawing.Size(327, 29);
-            this.tableLayoutPanelCache.TabIndex = 0;
-            // 
-            // tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems
-            // 
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.AutoSize = true;
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ColumnCount = 2;
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Controls.Add(this.labelClearCacheIfMoreThanThisNumberOfItems, 1, 0);
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Controls.Add(this.numericUpDownClearCacheIfMoreThanThisNumberOfItems, 0, 0);
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Name = "tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems";
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.RowCount = 1;
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Size = new System.Drawing.Size(327, 29);
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.TabIndex = 3;
-            // 
-            // labelClearCacheIfMoreThanThisNumberOfItems
-            // 
-            this.labelClearCacheIfMoreThanThisNumberOfItems.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelClearCacheIfMoreThanThisNumberOfItems.AutoSize = true;
-            this.labelClearCacheIfMoreThanThisNumberOfItems.Location = new System.Drawing.Point(64, 7);
-            this.labelClearCacheIfMoreThanThisNumberOfItems.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelClearCacheIfMoreThanThisNumberOfItems.Name = "labelClearCacheIfMoreThanThisNumberOfItems";
-            this.labelClearCacheIfMoreThanThisNumberOfItems.Size = new System.Drawing.Size(260, 15);
-            this.labelClearCacheIfMoreThanThisNumberOfItems.TabIndex = 0;
-            this.labelClearCacheIfMoreThanThisNumberOfItems.Text = "labelClearCacheIfMoreThanThisNumberOfItems";
-            // 
-            // numericUpDownClearCacheIfMoreThanThisNumberOfItems
-            // 
-            this.numericUpDownClearCacheIfMoreThanThisNumberOfItems.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownClearCacheIfMoreThanThisNumberOfItems.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.numericUpDownClearCacheIfMoreThanThisNumberOfItems.Minimum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.numericUpDownClearCacheIfMoreThanThisNumberOfItems.Name = "numericUpDownClearCacheIfMoreThanThisNumberOfItems";
-            this.numericUpDownClearCacheIfMoreThanThisNumberOfItems.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownClearCacheIfMoreThanThisNumberOfItems.TabIndex = 5;
-            this.numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            // 
-            // groupBoxStaysOpen
-            // 
-            this.groupBoxStaysOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxStaysOpen.AutoSize = true;
-            this.groupBoxStaysOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxStaysOpen.Controls.Add(this.tableLayoutPanelStaysOpen);
-            this.groupBoxStaysOpen.Location = new System.Drawing.Point(3, 63);
-            this.groupBoxStaysOpen.Name = "groupBoxStaysOpen";
-            this.groupBoxStaysOpen.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxStaysOpen.Size = new System.Drawing.Size(333, 158);
-            this.groupBoxStaysOpen.TabIndex = 0;
-            this.groupBoxStaysOpen.TabStop = false;
-            this.groupBoxStaysOpen.Text = "groupBoxStaysOpen";
-            // 
-            // tableLayoutPanelStaysOpen
-            // 
-            this.tableLayoutPanelStaysOpen.AutoSize = true;
-            this.tableLayoutPanelStaysOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelStaysOpen.ColumnCount = 1;
-            this.tableLayoutPanelStaysOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelStaysOpen.Controls.Add(this.tableLayoutPanelTimeUntilClosesAfterEnterPressed, 0, 4);
-            this.tableLayoutPanelStaysOpen.Controls.Add(this.checkBoxStayOpenWhenItemClicked, 0, 0);
-            this.tableLayoutPanelStaysOpen.Controls.Add(this.checkBoxStayOpenWhenFocusLost, 0, 1);
-            this.tableLayoutPanelStaysOpen.Controls.Add(this.tableLayoutPanelTimeUntilCloses, 0, 2);
-            this.tableLayoutPanelStaysOpen.Controls.Add(this.checkBoxStayOpenWhenFocusLostAfterEnterPressed, 0, 3);
-            this.tableLayoutPanelStaysOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelStaysOpen.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelStaysOpen.Name = "tableLayoutPanelStaysOpen";
-            this.tableLayoutPanelStaysOpen.RowCount = 5;
-            this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelStaysOpen.Size = new System.Drawing.Size(327, 133);
-            this.tableLayoutPanelStaysOpen.TabIndex = 0;
-            // 
-            // tableLayoutPanelTimeUntilClosesAfterEnterPressed
-            // 
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.AutoSize = true;
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.ColumnCount = 2;
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Controls.Add(this.labelTimeUntilClosesAfterEnterPressed, 1, 0);
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Controls.Add(this.numericUpDownTimeUntilClosesAfterEnterPressed, 0, 0);
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Location = new System.Drawing.Point(0, 104);
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Name = "tableLayoutPanelTimeUntilClosesAfterEnterPressed";
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.RowCount = 1;
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(327, 29);
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.TabIndex = 2;
-            // 
-            // labelTimeUntilClosesAfterEnterPressed
-            // 
-            this.labelTimeUntilClosesAfterEnterPressed.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelTimeUntilClosesAfterEnterPressed.AutoSize = true;
-            this.labelTimeUntilClosesAfterEnterPressed.Location = new System.Drawing.Point(64, 7);
-            this.labelTimeUntilClosesAfterEnterPressed.MaximumSize = new System.Drawing.Size(300, 0);
-            this.labelTimeUntilClosesAfterEnterPressed.Name = "labelTimeUntilClosesAfterEnterPressed";
-            this.labelTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(210, 15);
-            this.labelTimeUntilClosesAfterEnterPressed.TabIndex = 0;
-            this.labelTimeUntilClosesAfterEnterPressed.Text = "labelTimeUntilClosesAfterEnterPressed";
-            // 
-            // numericUpDownTimeUntilClosesAfterEnterPressed
-            // 
-            this.numericUpDownTimeUntilClosesAfterEnterPressed.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownTimeUntilClosesAfterEnterPressed.Name = "numericUpDownTimeUntilClosesAfterEnterPressed";
-            this.numericUpDownTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownTimeUntilClosesAfterEnterPressed.TabIndex = 1;
-            // 
-            // checkBoxStayOpenWhenItemClicked
-            // 
-            this.checkBoxStayOpenWhenItemClicked.AutoSize = true;
-            this.checkBoxStayOpenWhenItemClicked.Checked = true;
-            this.checkBoxStayOpenWhenItemClicked.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxStayOpenWhenItemClicked.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxStayOpenWhenItemClicked.Name = "checkBoxStayOpenWhenItemClicked";
-            this.checkBoxStayOpenWhenItemClicked.Size = new System.Drawing.Size(222, 19);
-            this.checkBoxStayOpenWhenItemClicked.TabIndex = 0;
-            this.checkBoxStayOpenWhenItemClicked.Text = "checkBoxStayOpenWhenItemClicked";
-            this.checkBoxStayOpenWhenItemClicked.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxStayOpenWhenFocusLost
-            // 
-            this.checkBoxStayOpenWhenFocusLost.AutoSize = true;
-            this.checkBoxStayOpenWhenFocusLost.Checked = true;
-            this.checkBoxStayOpenWhenFocusLost.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxStayOpenWhenFocusLost.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxStayOpenWhenFocusLost.Name = "checkBoxStayOpenWhenFocusLost";
-            this.checkBoxStayOpenWhenFocusLost.Size = new System.Drawing.Size(212, 19);
-            this.checkBoxStayOpenWhenFocusLost.TabIndex = 0;
-            this.checkBoxStayOpenWhenFocusLost.Text = "checkBoxStayOpenWhenFocusLost";
-            this.checkBoxStayOpenWhenFocusLost.UseVisualStyleBackColor = true;
-            this.checkBoxStayOpenWhenFocusLost.CheckedChanged += new System.EventHandler(this.CheckBoxStayOpenWhenFocusLost_CheckedChanged);
-            // 
-            // tableLayoutPanelTimeUntilCloses
-            // 
-            this.tableLayoutPanelTimeUntilCloses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelTimeUntilCloses.AutoSize = true;
-            this.tableLayoutPanelTimeUntilCloses.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelTimeUntilCloses.ColumnCount = 2;
-            this.tableLayoutPanelTimeUntilCloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTimeUntilCloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.labelTimeUntilCloses, 1, 0);
-            this.tableLayoutPanelTimeUntilCloses.Controls.Add(this.numericUpDownTimeUntilClose, 0, 0);
-            this.tableLayoutPanelTimeUntilCloses.Location = new System.Drawing.Point(0, 50);
-            this.tableLayoutPanelTimeUntilCloses.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelTimeUntilCloses.Name = "tableLayoutPanelTimeUntilCloses";
-            this.tableLayoutPanelTimeUntilCloses.RowCount = 1;
-            this.tableLayoutPanelTimeUntilCloses.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTimeUntilCloses.Size = new System.Drawing.Size(327, 29);
-            this.tableLayoutPanelTimeUntilCloses.TabIndex = 0;
-            // 
-            // labelTimeUntilCloses
-            // 
-            this.labelTimeUntilCloses.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelTimeUntilCloses.AutoSize = true;
-            this.labelTimeUntilCloses.Location = new System.Drawing.Point(64, 7);
-            this.labelTimeUntilCloses.MaximumSize = new System.Drawing.Size(300, 0);
-            this.labelTimeUntilCloses.Name = "labelTimeUntilCloses";
-            this.labelTimeUntilCloses.Size = new System.Drawing.Size(117, 15);
-            this.labelTimeUntilCloses.TabIndex = 0;
-            this.labelTimeUntilCloses.Text = "labelTimeUntilCloses";
-            // 
-            // numericUpDownTimeUntilClose
-            // 
-            this.numericUpDownTimeUntilClose.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownTimeUntilClose.Name = "numericUpDownTimeUntilClose";
-            this.numericUpDownTimeUntilClose.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownTimeUntilClose.TabIndex = 1;
-            this.numericUpDownTimeUntilClose.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.numericUpDownTimeUntilClose.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // checkBoxStayOpenWhenFocusLostAfterEnterPressed
-            // 
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.AutoSize = true;
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = true;
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.Location = new System.Drawing.Point(3, 82);
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.Name = "checkBoxStayOpenWhenFocusLostAfterEnterPressed";
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.Size = new System.Drawing.Size(305, 19);
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.TabIndex = 1;
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = "checkBoxStayOpenWhenFocusLostAfterEnterPressed";
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.UseVisualStyleBackColor = true;
-            this.checkBoxStayOpenWhenFocusLostAfterEnterPressed.CheckedChanged += new System.EventHandler(this.CheckBoxStayOpenWhenFocusLostAfterEnterPressed_CheckedChanged);
-            // 
-            // groupBoxOpenSubmenus
-            // 
-            this.groupBoxOpenSubmenus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxOpenSubmenus.AutoSize = true;
-            this.groupBoxOpenSubmenus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxOpenSubmenus.Controls.Add(this.tableLayoutPanelTimeUntilOpen);
-            this.groupBoxOpenSubmenus.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxOpenSubmenus.Name = "groupBoxOpenSubmenus";
-            this.groupBoxOpenSubmenus.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.groupBoxOpenSubmenus.Size = new System.Drawing.Size(333, 54);
-            this.groupBoxOpenSubmenus.TabIndex = 0;
-            this.groupBoxOpenSubmenus.TabStop = false;
-            this.groupBoxOpenSubmenus.Text = "groupBoxOpenSubmenus";
-            // 
-            // tableLayoutPanelTimeUntilOpen
-            // 
-            this.tableLayoutPanelTimeUntilOpen.AutoSize = true;
-            this.tableLayoutPanelTimeUntilOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelTimeUntilOpen.ColumnCount = 2;
-            this.tableLayoutPanelTimeUntilOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTimeUntilOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelTimeUntilOpen.Controls.Add(this.numericUpDownTimeUntilOpens, 0, 0);
-            this.tableLayoutPanelTimeUntilOpen.Controls.Add(this.labelTimeUntilOpen, 1, 0);
-            this.tableLayoutPanelTimeUntilOpen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelTimeUntilOpen.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelTimeUntilOpen.Name = "tableLayoutPanelTimeUntilOpen";
-            this.tableLayoutPanelTimeUntilOpen.RowCount = 1;
-            this.tableLayoutPanelTimeUntilOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTimeUntilOpen.Size = new System.Drawing.Size(327, 29);
-            this.tableLayoutPanelTimeUntilOpen.TabIndex = 0;
-            // 
-            // numericUpDownTimeUntilOpens
-            // 
-            this.numericUpDownTimeUntilOpens.Location = new System.Drawing.Point(3, 3);
-            this.numericUpDownTimeUntilOpens.Name = "numericUpDownTimeUntilOpens";
-            this.numericUpDownTimeUntilOpens.Size = new System.Drawing.Size(55, 23);
-            this.numericUpDownTimeUntilOpens.TabIndex = 2;
-            this.numericUpDownTimeUntilOpens.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.numericUpDownTimeUntilOpens.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelTimeUntilOpen
-            // 
-            this.labelTimeUntilOpen.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelTimeUntilOpen.AutoSize = true;
-            this.labelTimeUntilOpen.Location = new System.Drawing.Point(64, 7);
-            this.labelTimeUntilOpen.MaximumSize = new System.Drawing.Size(330, 0);
-            this.labelTimeUntilOpen.Name = "labelTimeUntilOpen";
-            this.labelTimeUntilOpen.Size = new System.Drawing.Size(112, 15);
-            this.labelTimeUntilOpen.TabIndex = 0;
-            this.labelTimeUntilOpen.Text = "labelTimeUntilOpen";
-            // 
-            // buttonExpertDefault
-            // 
-            this.buttonExpertDefault.AutoSize = true;
-            this.buttonExpertDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonExpertDefault.Location = new System.Drawing.Point(9, 353);
-            this.buttonExpertDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
-            this.buttonExpertDefault.MinimumSize = new System.Drawing.Size(75, 25);
-            this.buttonExpertDefault.Name = "buttonExpertDefault";
-            this.buttonExpertDefault.Size = new System.Drawing.Size(124, 25);
-            this.buttonExpertDefault.TabIndex = 0;
-            this.buttonExpertDefault.Text = "buttonExpertDefault";
-            this.buttonExpertDefault.UseVisualStyleBackColor = true;
-            this.buttonExpertDefault.Click += new System.EventHandler(this.ButtonExpertDefault_Click);
-            // 
-            // tabPageCustomize
-            // 
-            this.tabPageCustomize.AutoScroll = true;
-            this.tabPageCustomize.Controls.Add(this.tableLayoutPanelCustomize);
-            this.tabPageCustomize.Location = new System.Drawing.Point(4, 24);
-            this.tabPageCustomize.Name = "tabPageCustomize";
-            this.tabPageCustomize.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCustomize.Size = new System.Drawing.Size(412, 485);
-            this.tabPageCustomize.TabIndex = 0;
-            this.tabPageCustomize.Text = "tabPageCustomize";
-            this.tabPageCustomize.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanelCustomize
-            // 
-            this.tableLayoutPanelCustomize.AutoSize = true;
-            this.tableLayoutPanelCustomize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelCustomize.ColumnCount = 1;
-            this.tableLayoutPanelCustomize.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxColorsDarkMode, 0, 2);
-            this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxColorsLightMode, 0, 1);
-            this.tableLayoutPanelCustomize.Controls.Add(this.groupBoxAppearance, 0, 0);
-            this.tableLayoutPanelCustomize.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanelCustomize.Name = "tableLayoutPanelCustomize";
-            this.tableLayoutPanelCustomize.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
-            this.tableLayoutPanelCustomize.RowCount = 3;
-            this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomize.Size = new System.Drawing.Size(385, 1581);
-            this.tableLayoutPanelCustomize.TabIndex = 0;
-            // 
-            // groupBoxColorsDarkMode
-            // 
-            this.groupBoxColorsDarkMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxColorsDarkMode.AutoSize = true;
-            this.groupBoxColorsDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxColorsDarkMode.Controls.Add(this.tableLayoutPanelDarkMode);
-            this.groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 973);
-            this.groupBoxColorsDarkMode.Name = "groupBoxColorsDarkMode";
-            this.groupBoxColorsDarkMode.Size = new System.Drawing.Size(373, 605);
-            this.groupBoxColorsDarkMode.TabIndex = 0;
-            this.groupBoxColorsDarkMode.TabStop = false;
-            this.groupBoxColorsDarkMode.Text = "groupBoxColorsDarkMode";
-            // 
-            // tableLayoutPanelDarkMode
-            // 
-            this.tableLayoutPanelDarkMode.AutoSize = true;
-            this.tableLayoutPanelDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelDarkMode.ColumnCount = 1;
-            this.tableLayoutPanelDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelColorIconsDarkMode, 0, 1);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelColorBackgroundBorderDarkMode, 0, 3);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.labelMenuDarkMode, 0, 0);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelSearchFieldDarkMode, 0, 4);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelOpenFolderDarkMode, 0, 5);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelOpenFolderBorderDarkMode, 0, 6);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelSelectedItemDarkMode, 0, 7);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelSelectedItemBorderDarkMode, 0, 8);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.labelScrollbarDarkMode, 0, 9);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelScrollbarBackgroundDarkMode, 0, 10);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelSliderDarkMode, 0, 11);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelSliderDraggingDarkMode, 0, 12);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelSliderHoverDarkMode, 0, 13);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode, 0, 14);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelArrowDarkMode, 0, 15);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelArrowClickDarkMode, 0, 16);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelArrowClickBackgroundDarkMode, 0, 17);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelArrowHoverDarkMode, 0, 18);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelArrowHoverBackgroundDarkMode, 0, 19);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.buttonColorsDefaultDarkMode, 0, 20);
-            this.tableLayoutPanelDarkMode.Controls.Add(this.tableLayoutPanelBackgroundDarkMode, 0, 2);
-            this.tableLayoutPanelDarkMode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelDarkMode.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelDarkMode.Name = "tableLayoutPanelDarkMode";
-            this.tableLayoutPanelDarkMode.RowCount = 21;
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDarkMode.Size = new System.Drawing.Size(367, 583);
-            this.tableLayoutPanelDarkMode.TabIndex = 0;
-            // 
-            // tableLayoutPanelColorIconsDarkMode
-            // 
-            this.tableLayoutPanelColorIconsDarkMode.AutoSize = true;
-            this.tableLayoutPanelColorIconsDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelColorIconsDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelColorIconsDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelColorIconsDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelColorIconsDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelColorIconsDarkMode.Controls.Add(this.pictureBoxIconsDarkMode, 0, 0);
-            this.tableLayoutPanelColorIconsDarkMode.Controls.Add(this.labelIconsDarkMode, 2, 0);
-            this.tableLayoutPanelColorIconsDarkMode.Controls.Add(this.textBoxColorIconsDarkMode, 1, 0);
-            this.tableLayoutPanelColorIconsDarkMode.Location = new System.Drawing.Point(3, 18);
-            this.tableLayoutPanelColorIconsDarkMode.Name = "tableLayoutPanelColorIconsDarkMode";
-            this.tableLayoutPanelColorIconsDarkMode.RowCount = 1;
-            this.tableLayoutPanelColorIconsDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorIconsDarkMode.Size = new System.Drawing.Size(213, 23);
-            this.tableLayoutPanelColorIconsDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxIconsDarkMode
-            // 
-            this.pictureBoxIconsDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxIconsDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxIconsDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxIconsDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxIconsDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxIconsDarkMode.Name = "pictureBoxIconsDarkMode";
-            this.pictureBoxIconsDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxIconsDarkMode.TabIndex = 1;
-            this.pictureBoxIconsDarkMode.TabStop = false;
-            this.pictureBoxIconsDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // labelIconsDarkMode
-            // 
-            this.labelIconsDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelIconsDarkMode.AutoSize = true;
-            this.labelIconsDarkMode.Location = new System.Drawing.Point(95, 4);
-            this.labelIconsDarkMode.Name = "labelIconsDarkMode";
-            this.labelIconsDarkMode.Size = new System.Drawing.Size(115, 15);
-            this.labelIconsDarkMode.TabIndex = 0;
-            this.labelIconsDarkMode.Text = "labelIconsDarkMode";
-            // 
-            // textBoxColorIconsDarkMode
-            // 
-            this.textBoxColorIconsDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorIconsDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorIconsDarkMode.MaxLength = 12;
-            this.textBoxColorIconsDarkMode.Name = "textBoxColorIconsDarkMode";
-            this.textBoxColorIconsDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorIconsDarkMode.TabIndex = 2;
-            this.textBoxColorIconsDarkMode.Text = "#ffffff";
-            this.textBoxColorIconsDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorIconsDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorIconsDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // tableLayoutPanelColorBackgroundBorderDarkMode
-            // 
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.AutoSize = true;
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.Controls.Add(this.pictureBoxBackgroundBorderDarkMode, 0, 0);
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.Controls.Add(this.labelBackgroundBorderDarkMode, 2, 0);
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.Controls.Add(this.textBoxColorBackgroundBorderDarkMode, 1, 0);
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.Location = new System.Drawing.Point(3, 76);
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.Name = "tableLayoutPanelColorBackgroundBorderDarkMode";
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.RowCount = 1;
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.Size = new System.Drawing.Size(284, 23);
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxBackgroundBorderDarkMode
-            // 
-            this.pictureBoxBackgroundBorderDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxBackgroundBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxBackgroundBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxBackgroundBorderDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxBackgroundBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxBackgroundBorderDarkMode.Name = "pictureBoxBackgroundBorderDarkMode";
-            this.pictureBoxBackgroundBorderDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxBackgroundBorderDarkMode.TabIndex = 1;
-            this.pictureBoxBackgroundBorderDarkMode.TabStop = false;
-            this.pictureBoxBackgroundBorderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // labelBackgroundBorderDarkMode
-            // 
-            this.labelBackgroundBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelBackgroundBorderDarkMode.AutoSize = true;
-            this.labelBackgroundBorderDarkMode.Location = new System.Drawing.Point(95, 4);
-            this.labelBackgroundBorderDarkMode.Name = "labelBackgroundBorderDarkMode";
-            this.labelBackgroundBorderDarkMode.Size = new System.Drawing.Size(186, 15);
-            this.labelBackgroundBorderDarkMode.TabIndex = 0;
-            this.labelBackgroundBorderDarkMode.Text = "labelBackgroundDarkModeBorder";
-            // 
-            // textBoxColorBackgroundBorderDarkMode
-            // 
-            this.textBoxColorBackgroundBorderDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorBackgroundBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorBackgroundBorderDarkMode.MaxLength = 12;
-            this.textBoxColorBackgroundBorderDarkMode.Name = "textBoxColorBackgroundBorderDarkMode";
-            this.textBoxColorBackgroundBorderDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorBackgroundBorderDarkMode.TabIndex = 2;
-            this.textBoxColorBackgroundBorderDarkMode.Text = "#ffffff";
-            this.textBoxColorBackgroundBorderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorBackgroundBorderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorBackgroundBorderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelMenuDarkMode
-            // 
-            this.labelMenuDarkMode.AutoSize = true;
-            this.labelMenuDarkMode.Location = new System.Drawing.Point(3, 0);
-            this.labelMenuDarkMode.Name = "labelMenuDarkMode";
-            this.labelMenuDarkMode.Size = new System.Drawing.Size(118, 15);
-            this.labelMenuDarkMode.TabIndex = 3;
-            this.labelMenuDarkMode.Text = "labelMenuDarkMode";
-            // 
-            // tableLayoutPanelSearchFieldDarkMode
-            // 
-            this.tableLayoutPanelSearchFieldDarkMode.AutoSize = true;
-            this.tableLayoutPanelSearchFieldDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSearchFieldDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelSearchFieldDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearchFieldDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearchFieldDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSearchFieldDarkMode.Controls.Add(this.pictureBoxSearchFieldDarkMode, 0, 0);
-            this.tableLayoutPanelSearchFieldDarkMode.Controls.Add(this.labelSearchFieldDarkMode, 2, 0);
-            this.tableLayoutPanelSearchFieldDarkMode.Controls.Add(this.textBoxColorSearchFieldDarkMode, 1, 0);
-            this.tableLayoutPanelSearchFieldDarkMode.Location = new System.Drawing.Point(3, 105);
-            this.tableLayoutPanelSearchFieldDarkMode.Name = "tableLayoutPanelSearchFieldDarkMode";
-            this.tableLayoutPanelSearchFieldDarkMode.RowCount = 1;
-            this.tableLayoutPanelSearchFieldDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearchFieldDarkMode.Size = new System.Drawing.Size(245, 23);
-            this.tableLayoutPanelSearchFieldDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxSearchFieldDarkMode
-            // 
-            this.pictureBoxSearchFieldDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSearchFieldDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSearchFieldDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSearchFieldDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSearchFieldDarkMode.Name = "pictureBoxSearchFieldDarkMode";
-            this.pictureBoxSearchFieldDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSearchFieldDarkMode.TabIndex = 1;
-            this.pictureBoxSearchFieldDarkMode.TabStop = false;
-            this.pictureBoxSearchFieldDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // labelSearchFieldDarkMode
-            // 
-            this.labelSearchFieldDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSearchFieldDarkMode.AutoSize = true;
-            this.labelSearchFieldDarkMode.Location = new System.Drawing.Point(95, 4);
-            this.labelSearchFieldDarkMode.Name = "labelSearchFieldDarkMode";
-            this.labelSearchFieldDarkMode.Size = new System.Drawing.Size(147, 15);
-            this.labelSearchFieldDarkMode.TabIndex = 0;
-            this.labelSearchFieldDarkMode.Text = "labelSearchFieldDarkMode";
-            // 
-            // textBoxColorSearchFieldDarkMode
-            // 
-            this.textBoxColorSearchFieldDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSearchFieldDarkMode.MaxLength = 12;
-            this.textBoxColorSearchFieldDarkMode.Name = "textBoxColorSearchFieldDarkMode";
-            this.textBoxColorSearchFieldDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSearchFieldDarkMode.TabIndex = 2;
-            this.textBoxColorSearchFieldDarkMode.Text = "#ffffff";
-            this.textBoxColorSearchFieldDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSearchFieldDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSearchFieldDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // tableLayoutPanelOpenFolderDarkMode
-            // 
-            this.tableLayoutPanelOpenFolderDarkMode.AutoSize = true;
-            this.tableLayoutPanelOpenFolderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelOpenFolderDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelOpenFolderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelOpenFolderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelOpenFolderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelOpenFolderDarkMode.Controls.Add(this.pictureBoxOpenFolderDarkMode, 0, 0);
-            this.tableLayoutPanelOpenFolderDarkMode.Controls.Add(this.labelOpenFolderDarkMode, 2, 0);
-            this.tableLayoutPanelOpenFolderDarkMode.Controls.Add(this.textBoxColorOpenFolderDarkMode, 1, 0);
-            this.tableLayoutPanelOpenFolderDarkMode.Location = new System.Drawing.Point(3, 134);
-            this.tableLayoutPanelOpenFolderDarkMode.Name = "tableLayoutPanelOpenFolderDarkMode";
-            this.tableLayoutPanelOpenFolderDarkMode.RowCount = 1;
-            this.tableLayoutPanelOpenFolderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelOpenFolderDarkMode.Size = new System.Drawing.Size(247, 23);
-            this.tableLayoutPanelOpenFolderDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxOpenFolderDarkMode
-            // 
-            this.pictureBoxOpenFolderDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOpenFolderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxOpenFolderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxOpenFolderDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxOpenFolderDarkMode.Name = "pictureBoxOpenFolderDarkMode";
-            this.pictureBoxOpenFolderDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxOpenFolderDarkMode.TabIndex = 1;
-            this.pictureBoxOpenFolderDarkMode.TabStop = false;
-            this.pictureBoxOpenFolderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // labelOpenFolderDarkMode
-            // 
-            this.labelOpenFolderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelOpenFolderDarkMode.AutoSize = true;
-            this.labelOpenFolderDarkMode.Location = new System.Drawing.Point(95, 4);
-            this.labelOpenFolderDarkMode.Name = "labelOpenFolderDarkMode";
-            this.labelOpenFolderDarkMode.Size = new System.Drawing.Size(149, 15);
-            this.labelOpenFolderDarkMode.TabIndex = 0;
-            this.labelOpenFolderDarkMode.Text = "labelOpenFolderDarkMode";
-            // 
-            // textBoxColorOpenFolderDarkMode
-            // 
-            this.textBoxColorOpenFolderDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorOpenFolderDarkMode.MaxLength = 12;
-            this.textBoxColorOpenFolderDarkMode.Name = "textBoxColorOpenFolderDarkMode";
-            this.textBoxColorOpenFolderDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorOpenFolderDarkMode.TabIndex = 2;
-            this.textBoxColorOpenFolderDarkMode.Text = "#ffffff";
-            this.textBoxColorOpenFolderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorOpenFolderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorOpenFolderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // tableLayoutPanelOpenFolderBorderDarkMode
-            // 
-            this.tableLayoutPanelOpenFolderBorderDarkMode.AutoSize = true;
-            this.tableLayoutPanelOpenFolderBorderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelOpenFolderBorderDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelOpenFolderBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelOpenFolderBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelOpenFolderBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(this.pictureBoxOpenFolderBorderDarkMode, 0, 0);
-            this.tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(this.labelOpenFolderBorderDarkMode, 2, 0);
-            this.tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(this.textBoxColorOpenFolderBorderDarkMode, 1, 0);
-            this.tableLayoutPanelOpenFolderBorderDarkMode.Location = new System.Drawing.Point(3, 163);
-            this.tableLayoutPanelOpenFolderBorderDarkMode.Name = "tableLayoutPanelOpenFolderBorderDarkMode";
-            this.tableLayoutPanelOpenFolderBorderDarkMode.RowCount = 1;
-            this.tableLayoutPanelOpenFolderBorderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelOpenFolderBorderDarkMode.Size = new System.Drawing.Size(282, 23);
-            this.tableLayoutPanelOpenFolderBorderDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxOpenFolderBorderDarkMode
-            // 
-            this.pictureBoxOpenFolderBorderDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOpenFolderBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxOpenFolderBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxOpenFolderBorderDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxOpenFolderBorderDarkMode.Name = "pictureBoxOpenFolderBorderDarkMode";
-            this.pictureBoxOpenFolderBorderDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxOpenFolderBorderDarkMode.TabIndex = 1;
-            this.pictureBoxOpenFolderBorderDarkMode.TabStop = false;
-            this.pictureBoxOpenFolderBorderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // labelOpenFolderBorderDarkMode
-            // 
-            this.labelOpenFolderBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelOpenFolderBorderDarkMode.AutoSize = true;
-            this.labelOpenFolderBorderDarkMode.Location = new System.Drawing.Point(95, 4);
-            this.labelOpenFolderBorderDarkMode.Name = "labelOpenFolderBorderDarkMode";
-            this.labelOpenFolderBorderDarkMode.Size = new System.Drawing.Size(184, 15);
-            this.labelOpenFolderBorderDarkMode.TabIndex = 0;
-            this.labelOpenFolderBorderDarkMode.Text = "labelOpenFolderBorderDarkMode";
-            // 
-            // textBoxColorOpenFolderBorderDarkMode
-            // 
-            this.textBoxColorOpenFolderBorderDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorOpenFolderBorderDarkMode.Name = "textBoxColorOpenFolderBorderDarkMode";
-            this.textBoxColorOpenFolderBorderDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorOpenFolderBorderDarkMode.TabIndex = 2;
-            this.textBoxColorOpenFolderBorderDarkMode.Text = "#ffffff";
-            this.textBoxColorOpenFolderBorderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorOpenFolderBorderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorOpenFolderBorderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // tableLayoutPanelSelectedItemDarkMode
-            // 
-            this.tableLayoutPanelSelectedItemDarkMode.AutoSize = true;
-            this.tableLayoutPanelSelectedItemDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSelectedItemDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelSelectedItemDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSelectedItemDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSelectedItemDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSelectedItemDarkMode.Controls.Add(this.pictureColorBoxSelectedItemDarkMode, 0, 0);
-            this.tableLayoutPanelSelectedItemDarkMode.Controls.Add(this.labelSelectedItemDarkMode, 2, 0);
-            this.tableLayoutPanelSelectedItemDarkMode.Controls.Add(this.textBoxColorSelecetedItemDarkMode, 1, 0);
-            this.tableLayoutPanelSelectedItemDarkMode.Location = new System.Drawing.Point(3, 192);
-            this.tableLayoutPanelSelectedItemDarkMode.Name = "tableLayoutPanelSelectedItemDarkMode";
-            this.tableLayoutPanelSelectedItemDarkMode.RowCount = 1;
-            this.tableLayoutPanelSelectedItemDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSelectedItemDarkMode.Size = new System.Drawing.Size(253, 23);
-            this.tableLayoutPanelSelectedItemDarkMode.TabIndex = 2;
-            // 
-            // pictureColorBoxSelectedItemDarkMode
-            // 
-            this.pictureColorBoxSelectedItemDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureColorBoxSelectedItemDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureColorBoxSelectedItemDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureColorBoxSelectedItemDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureColorBoxSelectedItemDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureColorBoxSelectedItemDarkMode.Name = "pictureColorBoxSelectedItemDarkMode";
-            this.pictureColorBoxSelectedItemDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureColorBoxSelectedItemDarkMode.TabIndex = 1;
-            this.pictureColorBoxSelectedItemDarkMode.TabStop = false;
-            this.pictureColorBoxSelectedItemDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // labelSelectedItemDarkMode
-            // 
-            this.labelSelectedItemDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSelectedItemDarkMode.AutoSize = true;
-            this.labelSelectedItemDarkMode.Location = new System.Drawing.Point(95, 4);
-            this.labelSelectedItemDarkMode.Name = "labelSelectedItemDarkMode";
-            this.labelSelectedItemDarkMode.Size = new System.Drawing.Size(155, 15);
-            this.labelSelectedItemDarkMode.TabIndex = 0;
-            this.labelSelectedItemDarkMode.Text = "labelSelectedItemDarkMode";
-            // 
-            // textBoxColorSelecetedItemDarkMode
-            // 
-            this.textBoxColorSelecetedItemDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSelecetedItemDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSelecetedItemDarkMode.MaxLength = 12;
-            this.textBoxColorSelecetedItemDarkMode.Name = "textBoxColorSelecetedItemDarkMode";
-            this.textBoxColorSelecetedItemDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSelecetedItemDarkMode.TabIndex = 2;
-            this.textBoxColorSelecetedItemDarkMode.Text = "#ffffff";
-            this.textBoxColorSelecetedItemDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSelecetedItemDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSelecetedItemDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // tableLayoutPanelSelectedItemBorderDarkMode
-            // 
-            this.tableLayoutPanelSelectedItemBorderDarkMode.AutoSize = true;
-            this.tableLayoutPanelSelectedItemBorderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSelectedItemBorderDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelSelectedItemBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSelectedItemBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSelectedItemBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(this.pictureBoxSelectedItemBorderDarkMode, 0, 0);
-            this.tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(this.labelSelectedItemBorderDarkMode, 2, 0);
-            this.tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(this.textBoxColorSelectedItemBorderDarkMode, 1, 0);
-            this.tableLayoutPanelSelectedItemBorderDarkMode.Location = new System.Drawing.Point(3, 221);
-            this.tableLayoutPanelSelectedItemBorderDarkMode.Name = "tableLayoutPanelSelectedItemBorderDarkMode";
-            this.tableLayoutPanelSelectedItemBorderDarkMode.RowCount = 1;
-            this.tableLayoutPanelSelectedItemBorderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSelectedItemBorderDarkMode.Size = new System.Drawing.Size(288, 23);
-            this.tableLayoutPanelSelectedItemBorderDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxSelectedItemBorderDarkMode
-            // 
-            this.pictureBoxSelectedItemBorderDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSelectedItemBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSelectedItemBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSelectedItemBorderDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSelectedItemBorderDarkMode.Name = "pictureBoxSelectedItemBorderDarkMode";
-            this.pictureBoxSelectedItemBorderDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSelectedItemBorderDarkMode.TabIndex = 1;
-            this.pictureBoxSelectedItemBorderDarkMode.TabStop = false;
-            this.pictureBoxSelectedItemBorderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // labelSelectedItemBorderDarkMode
-            // 
-            this.labelSelectedItemBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSelectedItemBorderDarkMode.AutoSize = true;
-            this.labelSelectedItemBorderDarkMode.Location = new System.Drawing.Point(95, 4);
-            this.labelSelectedItemBorderDarkMode.Name = "labelSelectedItemBorderDarkMode";
-            this.labelSelectedItemBorderDarkMode.Size = new System.Drawing.Size(190, 15);
-            this.labelSelectedItemBorderDarkMode.TabIndex = 0;
-            this.labelSelectedItemBorderDarkMode.Text = "labelSelectedItemBorderDarkMode";
-            // 
-            // textBoxColorSelectedItemBorderDarkMode
-            // 
-            this.textBoxColorSelectedItemBorderDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSelectedItemBorderDarkMode.MaxLength = 12;
-            this.textBoxColorSelectedItemBorderDarkMode.Name = "textBoxColorSelectedItemBorderDarkMode";
-            this.textBoxColorSelectedItemBorderDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSelectedItemBorderDarkMode.TabIndex = 2;
-            this.textBoxColorSelectedItemBorderDarkMode.Text = "#ffffff";
-            this.textBoxColorSelectedItemBorderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSelectedItemBorderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSelectedItemBorderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelScrollbarDarkMode
-            // 
-            this.labelScrollbarDarkMode.AutoSize = true;
-            this.labelScrollbarDarkMode.Location = new System.Drawing.Point(3, 247);
-            this.labelScrollbarDarkMode.Name = "labelScrollbarDarkMode";
-            this.labelScrollbarDarkMode.Size = new System.Drawing.Size(133, 15);
-            this.labelScrollbarDarkMode.TabIndex = 3;
-            this.labelScrollbarDarkMode.Text = "labelScrollbarDarkMode";
-            // 
-            // tableLayoutPanelScrollbarBackgroundDarkMode
-            // 
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.AutoSize = true;
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(this.pictureBoxScrollbarBackgroundDarkMode, 0, 0);
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(this.textBoxColorScrollbarBackgroundDarkMode, 1, 0);
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(this.labelColorDarkModeScrollbarBackground, 2, 0);
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(3, 265);
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.Name = "tableLayoutPanelScrollbarBackgroundDarkMode";
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.RowCount = 1;
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(324, 23);
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxScrollbarBackgroundDarkMode
-            // 
-            this.pictureBoxScrollbarBackgroundDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxScrollbarBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxScrollbarBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxScrollbarBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxScrollbarBackgroundDarkMode.Name = "pictureBoxScrollbarBackgroundDarkMode";
-            this.pictureBoxScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxScrollbarBackgroundDarkMode.TabIndex = 1;
-            this.pictureBoxScrollbarBackgroundDarkMode.TabStop = false;
-            this.pictureBoxScrollbarBackgroundDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorScrollbarBackgroundDarkMode
-            // 
-            this.textBoxColorScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorScrollbarBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorScrollbarBackgroundDarkMode.MaxLength = 12;
-            this.textBoxColorScrollbarBackgroundDarkMode.Name = "textBoxColorScrollbarBackgroundDarkMode";
-            this.textBoxColorScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorScrollbarBackgroundDarkMode.TabIndex = 2;
-            this.textBoxColorScrollbarBackgroundDarkMode.Text = "#ffffff";
-            this.textBoxColorScrollbarBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorScrollbarBackgroundDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorScrollbarBackgroundDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeScrollbarBackground
-            // 
-            this.labelColorDarkModeScrollbarBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeScrollbarBackground.AutoSize = true;
-            this.labelColorDarkModeScrollbarBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeScrollbarBackground.Name = "labelColorDarkModeScrollbarBackground";
-            this.labelColorDarkModeScrollbarBackground.Size = new System.Drawing.Size(226, 15);
-            this.labelColorDarkModeScrollbarBackground.TabIndex = 0;
-            this.labelColorDarkModeScrollbarBackground.Text = "labelColorDarkModeScrollbarBackground";
-            // 
-            // tableLayoutPanelSliderDarkMode
-            // 
-            this.tableLayoutPanelSliderDarkMode.AutoSize = true;
-            this.tableLayoutPanelSliderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSliderDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelSliderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSliderDarkMode.Controls.Add(this.pictureBoxSliderDarkMode, 0, 0);
-            this.tableLayoutPanelSliderDarkMode.Controls.Add(this.textBoxColorSliderDarkMode, 1, 0);
-            this.tableLayoutPanelSliderDarkMode.Controls.Add(this.labelColorDarkModeSlider, 2, 0);
-            this.tableLayoutPanelSliderDarkMode.Location = new System.Drawing.Point(3, 294);
-            this.tableLayoutPanelSliderDarkMode.Name = "tableLayoutPanelSliderDarkMode";
-            this.tableLayoutPanelSliderDarkMode.RowCount = 1;
-            this.tableLayoutPanelSliderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderDarkMode.Size = new System.Drawing.Size(243, 23);
-            this.tableLayoutPanelSliderDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxSliderDarkMode
-            // 
-            this.pictureBoxSliderDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSliderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSliderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSliderDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSliderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSliderDarkMode.Name = "pictureBoxSliderDarkMode";
-            this.pictureBoxSliderDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSliderDarkMode.TabIndex = 1;
-            this.pictureBoxSliderDarkMode.TabStop = false;
-            this.pictureBoxSliderDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSliderDarkMode
-            // 
-            this.textBoxColorSliderDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSliderDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSliderDarkMode.MaxLength = 12;
-            this.textBoxColorSliderDarkMode.Name = "textBoxColorSliderDarkMode";
-            this.textBoxColorSliderDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSliderDarkMode.TabIndex = 2;
-            this.textBoxColorSliderDarkMode.Text = "#ffffff";
-            this.textBoxColorSliderDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSliderDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSliderDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeSlider
-            // 
-            this.labelColorDarkModeSlider.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeSlider.AutoSize = true;
-            this.labelColorDarkModeSlider.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeSlider.Name = "labelColorDarkModeSlider";
-            this.labelColorDarkModeSlider.Size = new System.Drawing.Size(145, 15);
-            this.labelColorDarkModeSlider.TabIndex = 0;
-            this.labelColorDarkModeSlider.Text = "labelColorDarkModeSlider";
-            // 
-            // tableLayoutPanelSliderDraggingDarkMode
-            // 
-            this.tableLayoutPanelSliderDraggingDarkMode.AutoSize = true;
-            this.tableLayoutPanelSliderDraggingDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSliderDraggingDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelSliderDraggingDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderDraggingDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderDraggingDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSliderDraggingDarkMode.Controls.Add(this.pictureBoxSliderDraggingDarkMode, 0, 0);
-            this.tableLayoutPanelSliderDraggingDarkMode.Controls.Add(this.textBoxColorSliderDraggingDarkMode, 1, 0);
-            this.tableLayoutPanelSliderDraggingDarkMode.Controls.Add(this.labelColorDarkModeSliderDragging, 2, 0);
-            this.tableLayoutPanelSliderDraggingDarkMode.Location = new System.Drawing.Point(3, 323);
-            this.tableLayoutPanelSliderDraggingDarkMode.Name = "tableLayoutPanelSliderDraggingDarkMode";
-            this.tableLayoutPanelSliderDraggingDarkMode.RowCount = 1;
-            this.tableLayoutPanelSliderDraggingDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderDraggingDarkMode.Size = new System.Drawing.Size(292, 23);
-            this.tableLayoutPanelSliderDraggingDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxSliderDraggingDarkMode
-            // 
-            this.pictureBoxSliderDraggingDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSliderDraggingDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSliderDraggingDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSliderDraggingDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSliderDraggingDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSliderDraggingDarkMode.Name = "pictureBoxSliderDraggingDarkMode";
-            this.pictureBoxSliderDraggingDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSliderDraggingDarkMode.TabIndex = 1;
-            this.pictureBoxSliderDraggingDarkMode.TabStop = false;
-            this.pictureBoxSliderDraggingDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSliderDraggingDarkMode
-            // 
-            this.textBoxColorSliderDraggingDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSliderDraggingDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSliderDraggingDarkMode.MaxLength = 12;
-            this.textBoxColorSliderDraggingDarkMode.Name = "textBoxColorSliderDraggingDarkMode";
-            this.textBoxColorSliderDraggingDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSliderDraggingDarkMode.TabIndex = 2;
-            this.textBoxColorSliderDraggingDarkMode.Text = "#ffffff";
-            this.textBoxColorSliderDraggingDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSliderDraggingDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSliderDraggingDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeSliderDragging
-            // 
-            this.labelColorDarkModeSliderDragging.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeSliderDragging.AutoSize = true;
-            this.labelColorDarkModeSliderDragging.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeSliderDragging.Name = "labelColorDarkModeSliderDragging";
-            this.labelColorDarkModeSliderDragging.Size = new System.Drawing.Size(194, 15);
-            this.labelColorDarkModeSliderDragging.TabIndex = 0;
-            this.labelColorDarkModeSliderDragging.Text = "labelColorDarkModeSliderDragging";
-            // 
-            // tableLayoutPanelSliderHoverDarkMode
-            // 
-            this.tableLayoutPanelSliderHoverDarkMode.AutoSize = true;
-            this.tableLayoutPanelSliderHoverDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSliderHoverDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelSliderHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSliderHoverDarkMode.Controls.Add(this.pictureBoxSliderHoverDarkMode, 0, 0);
-            this.tableLayoutPanelSliderHoverDarkMode.Controls.Add(this.textBoxColorSliderHoverDarkMode, 1, 0);
-            this.tableLayoutPanelSliderHoverDarkMode.Controls.Add(this.labelColorDarkModeSliderHover, 2, 0);
-            this.tableLayoutPanelSliderHoverDarkMode.Location = new System.Drawing.Point(3, 352);
-            this.tableLayoutPanelSliderHoverDarkMode.Name = "tableLayoutPanelSliderHoverDarkMode";
-            this.tableLayoutPanelSliderHoverDarkMode.RowCount = 1;
-            this.tableLayoutPanelSliderHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderHoverDarkMode.Size = new System.Drawing.Size(275, 23);
-            this.tableLayoutPanelSliderHoverDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxSliderHoverDarkMode
-            // 
-            this.pictureBoxSliderHoverDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSliderHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSliderHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSliderHoverDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSliderHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSliderHoverDarkMode.Name = "pictureBoxSliderHoverDarkMode";
-            this.pictureBoxSliderHoverDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSliderHoverDarkMode.TabIndex = 1;
-            this.pictureBoxSliderHoverDarkMode.TabStop = false;
-            this.pictureBoxSliderHoverDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSliderHoverDarkMode
-            // 
-            this.textBoxColorSliderHoverDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSliderHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSliderHoverDarkMode.MaxLength = 12;
-            this.textBoxColorSliderHoverDarkMode.Name = "textBoxColorSliderHoverDarkMode";
-            this.textBoxColorSliderHoverDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSliderHoverDarkMode.TabIndex = 2;
-            this.textBoxColorSliderHoverDarkMode.Text = "#ffffff";
-            this.textBoxColorSliderHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSliderHoverDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSliderHoverDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeSliderHover
-            // 
-            this.labelColorDarkModeSliderHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeSliderHover.AutoSize = true;
-            this.labelColorDarkModeSliderHover.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeSliderHover.Name = "labelColorDarkModeSliderHover";
-            this.labelColorDarkModeSliderHover.Size = new System.Drawing.Size(177, 15);
-            this.labelColorDarkModeSliderHover.TabIndex = 0;
-            this.labelColorDarkModeSliderHover.Text = "labelColorDarkModeSliderHover";
-            // 
-            // tableLayoutPanelSliderArrowsAndTrackHoverDarkMode
-            // 
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.AutoSize = true;
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(this.pictureBoxSliderArrowsAndTrackHoverDarkMode, 0, 0);
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(this.textBoxColorSliderArrowsAndTrackHoverDarkMode, 1, 0);
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(this.labelColorDarkModeSliderArrowsAndTrackHover, 2, 0);
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(3, 381);
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Name = "tableLayoutPanelSliderArrowsAndTrackHoverDarkMode";
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.RowCount = 1;
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(361, 23);
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxSliderArrowsAndTrackHoverDarkMode
-            // 
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Name = "pictureBoxSliderArrowsAndTrackHoverDarkMode";
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.TabIndex = 1;
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.TabStop = false;
-            this.pictureBoxSliderArrowsAndTrackHoverDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSliderArrowsAndTrackHoverDarkMode
-            // 
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.MaxLength = 12;
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Name = "textBoxColorSliderArrowsAndTrackHoverDarkMode";
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.TabIndex = 2;
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.Text = "#ffffff";
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSliderArrowsAndTrackHoverDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeSliderArrowsAndTrackHover
-            // 
-            this.labelColorDarkModeSliderArrowsAndTrackHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeSliderArrowsAndTrackHover.AutoSize = true;
-            this.labelColorDarkModeSliderArrowsAndTrackHover.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeSliderArrowsAndTrackHover.Name = "labelColorDarkModeSliderArrowsAndTrackHover";
-            this.labelColorDarkModeSliderArrowsAndTrackHover.Size = new System.Drawing.Size(263, 15);
-            this.labelColorDarkModeSliderArrowsAndTrackHover.TabIndex = 0;
-            this.labelColorDarkModeSliderArrowsAndTrackHover.Text = "labelColorDarkModeSliderArrowsAndTrackHover";
-            // 
-            // tableLayoutPanelArrowDarkMode
-            // 
-            this.tableLayoutPanelArrowDarkMode.AutoSize = true;
-            this.tableLayoutPanelArrowDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelArrowDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowDarkMode.Controls.Add(this.pictureBoxArrowDarkMode, 0, 0);
-            this.tableLayoutPanelArrowDarkMode.Controls.Add(this.textBoxColorArrowDarkMode, 1, 0);
-            this.tableLayoutPanelArrowDarkMode.Controls.Add(this.labelColorDarkModeArrow, 2, 0);
-            this.tableLayoutPanelArrowDarkMode.Location = new System.Drawing.Point(3, 410);
-            this.tableLayoutPanelArrowDarkMode.Name = "tableLayoutPanelArrowDarkMode";
-            this.tableLayoutPanelArrowDarkMode.RowCount = 1;
-            this.tableLayoutPanelArrowDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowDarkMode.Size = new System.Drawing.Size(246, 23);
-            this.tableLayoutPanelArrowDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxArrowDarkMode
-            // 
-            this.pictureBoxArrowDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowDarkMode.Name = "pictureBoxArrowDarkMode";
-            this.pictureBoxArrowDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowDarkMode.TabIndex = 1;
-            this.pictureBoxArrowDarkMode.TabStop = false;
-            this.pictureBoxArrowDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowDarkMode
-            // 
-            this.textBoxColorArrowDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowDarkMode.MaxLength = 12;
-            this.textBoxColorArrowDarkMode.Name = "textBoxColorArrowDarkMode";
-            this.textBoxColorArrowDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowDarkMode.TabIndex = 2;
-            this.textBoxColorArrowDarkMode.Text = "#ffffff";
-            this.textBoxColorArrowDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeArrow
-            // 
-            this.labelColorDarkModeArrow.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeArrow.AutoSize = true;
-            this.labelColorDarkModeArrow.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeArrow.Name = "labelColorDarkModeArrow";
-            this.labelColorDarkModeArrow.Size = new System.Drawing.Size(148, 15);
-            this.labelColorDarkModeArrow.TabIndex = 0;
-            this.labelColorDarkModeArrow.Text = "labelColorDarkModeArrow";
-            // 
-            // tableLayoutPanelArrowClickDarkMode
-            // 
-            this.tableLayoutPanelArrowClickDarkMode.AutoSize = true;
-            this.tableLayoutPanelArrowClickDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowClickDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelArrowClickDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowClickDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowClickDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowClickDarkMode.Controls.Add(this.pictureBoxArrowClickDarkMode, 0, 0);
-            this.tableLayoutPanelArrowClickDarkMode.Controls.Add(this.textBoxColorArrowClickDarkMode, 1, 0);
-            this.tableLayoutPanelArrowClickDarkMode.Controls.Add(this.labelColorDarkModeArrowClick, 2, 0);
-            this.tableLayoutPanelArrowClickDarkMode.Location = new System.Drawing.Point(3, 439);
-            this.tableLayoutPanelArrowClickDarkMode.Name = "tableLayoutPanelArrowClickDarkMode";
-            this.tableLayoutPanelArrowClickDarkMode.RowCount = 1;
-            this.tableLayoutPanelArrowClickDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowClickDarkMode.Size = new System.Drawing.Size(272, 23);
-            this.tableLayoutPanelArrowClickDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxArrowClickDarkMode
-            // 
-            this.pictureBoxArrowClickDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowClickDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowClickDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowClickDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowClickDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowClickDarkMode.Name = "pictureBoxArrowClickDarkMode";
-            this.pictureBoxArrowClickDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowClickDarkMode.TabIndex = 1;
-            this.pictureBoxArrowClickDarkMode.TabStop = false;
-            this.pictureBoxArrowClickDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowClickDarkMode
-            // 
-            this.textBoxColorArrowClickDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowClickDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowClickDarkMode.MaxLength = 12;
-            this.textBoxColorArrowClickDarkMode.Name = "textBoxColorArrowClickDarkMode";
-            this.textBoxColorArrowClickDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowClickDarkMode.TabIndex = 2;
-            this.textBoxColorArrowClickDarkMode.Text = "#ffffff";
-            this.textBoxColorArrowClickDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowClickDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowClickDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeArrowClick
-            // 
-            this.labelColorDarkModeArrowClick.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeArrowClick.AutoSize = true;
-            this.labelColorDarkModeArrowClick.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeArrowClick.Name = "labelColorDarkModeArrowClick";
-            this.labelColorDarkModeArrowClick.Size = new System.Drawing.Size(174, 15);
-            this.labelColorDarkModeArrowClick.TabIndex = 0;
-            this.labelColorDarkModeArrowClick.Text = "labelColorDarkModeArrowClick";
-            // 
-            // tableLayoutPanelArrowClickBackgroundDarkMode
-            // 
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.AutoSize = true;
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(this.pictureBoxArrowClickBackgroundDarkMode, 0, 0);
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(this.textBoxColorArrowClickBackgroundDarkMode, 1, 0);
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(this.labelColorDarkModeArrowClickBackground, 2, 0);
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(3, 468);
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.Name = "tableLayoutPanelArrowClickBackgroundDarkMode";
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.RowCount = 1;
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(336, 23);
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxArrowClickBackgroundDarkMode
-            // 
-            this.pictureBoxArrowClickBackgroundDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowClickBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowClickBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowClickBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowClickBackgroundDarkMode.Name = "pictureBoxArrowClickBackgroundDarkMode";
-            this.pictureBoxArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowClickBackgroundDarkMode.TabIndex = 1;
-            this.pictureBoxArrowClickBackgroundDarkMode.TabStop = false;
-            this.pictureBoxArrowClickBackgroundDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowClickBackgroundDarkMode
-            // 
-            this.textBoxColorArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowClickBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowClickBackgroundDarkMode.MaxLength = 12;
-            this.textBoxColorArrowClickBackgroundDarkMode.Name = "textBoxColorArrowClickBackgroundDarkMode";
-            this.textBoxColorArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowClickBackgroundDarkMode.TabIndex = 2;
-            this.textBoxColorArrowClickBackgroundDarkMode.Text = "#ffffff";
-            this.textBoxColorArrowClickBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowClickBackgroundDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowClickBackgroundDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeArrowClickBackground
-            // 
-            this.labelColorDarkModeArrowClickBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeArrowClickBackground.AutoSize = true;
-            this.labelColorDarkModeArrowClickBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeArrowClickBackground.Name = "labelColorDarkModeArrowClickBackground";
-            this.labelColorDarkModeArrowClickBackground.Size = new System.Drawing.Size(238, 15);
-            this.labelColorDarkModeArrowClickBackground.TabIndex = 0;
-            this.labelColorDarkModeArrowClickBackground.Text = "labelColorDarkModeArrowClickBackground";
-            // 
-            // tableLayoutPanelArrowHoverDarkMode
-            // 
-            this.tableLayoutPanelArrowHoverDarkMode.AutoSize = true;
-            this.tableLayoutPanelArrowHoverDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowHoverDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelArrowHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowHoverDarkMode.Controls.Add(this.pictureBoxArrowHoverDarkMode, 0, 0);
-            this.tableLayoutPanelArrowHoverDarkMode.Controls.Add(this.textBoxColorArrowHoverDarkMode, 1, 0);
-            this.tableLayoutPanelArrowHoverDarkMode.Controls.Add(this.labelColorDarkModeArrowHover, 2, 0);
-            this.tableLayoutPanelArrowHoverDarkMode.Location = new System.Drawing.Point(3, 497);
-            this.tableLayoutPanelArrowHoverDarkMode.Name = "tableLayoutPanelArrowHoverDarkMode";
-            this.tableLayoutPanelArrowHoverDarkMode.RowCount = 1;
-            this.tableLayoutPanelArrowHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowHoverDarkMode.Size = new System.Drawing.Size(278, 23);
-            this.tableLayoutPanelArrowHoverDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxArrowHoverDarkMode
-            // 
-            this.pictureBoxArrowHoverDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowHoverDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowHoverDarkMode.Name = "pictureBoxArrowHoverDarkMode";
-            this.pictureBoxArrowHoverDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowHoverDarkMode.TabIndex = 1;
-            this.pictureBoxArrowHoverDarkMode.TabStop = false;
-            this.pictureBoxArrowHoverDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowHoverDarkMode
-            // 
-            this.textBoxColorArrowHoverDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowHoverDarkMode.MaxLength = 12;
-            this.textBoxColorArrowHoverDarkMode.Name = "textBoxColorArrowHoverDarkMode";
-            this.textBoxColorArrowHoverDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowHoverDarkMode.TabIndex = 2;
-            this.textBoxColorArrowHoverDarkMode.Text = "#ffffff";
-            this.textBoxColorArrowHoverDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowHoverDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowHoverDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeArrowHover
-            // 
-            this.labelColorDarkModeArrowHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeArrowHover.AutoSize = true;
-            this.labelColorDarkModeArrowHover.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeArrowHover.Name = "labelColorDarkModeArrowHover";
-            this.labelColorDarkModeArrowHover.Size = new System.Drawing.Size(180, 15);
-            this.labelColorDarkModeArrowHover.TabIndex = 0;
-            this.labelColorDarkModeArrowHover.Text = "labelColorDarkModeArrowHover";
-            // 
-            // tableLayoutPanelArrowHoverBackgroundDarkMode
-            // 
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.AutoSize = true;
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(this.pictureBoxArrowHoverBackgroundDarkMode, 0, 0);
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(this.textBoxColorArrowHoverBackgroundDarkMode, 1, 0);
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(this.labelColorDarkModeArrowHoverBackground, 2, 0);
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(3, 526);
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Name = "tableLayoutPanelArrowHoverBackgroundDarkMode";
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.RowCount = 1;
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(342, 23);
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxArrowHoverBackgroundDarkMode
-            // 
-            this.pictureBoxArrowHoverBackgroundDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowHoverBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowHoverBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowHoverBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowHoverBackgroundDarkMode.Name = "pictureBoxArrowHoverBackgroundDarkMode";
-            this.pictureBoxArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowHoverBackgroundDarkMode.TabIndex = 1;
-            this.pictureBoxArrowHoverBackgroundDarkMode.TabStop = false;
-            this.pictureBoxArrowHoverBackgroundDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowHoverBackgroundDarkMode
-            // 
-            this.textBoxColorArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowHoverBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowHoverBackgroundDarkMode.MaxLength = 12;
-            this.textBoxColorArrowHoverBackgroundDarkMode.Name = "textBoxColorArrowHoverBackgroundDarkMode";
-            this.textBoxColorArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowHoverBackgroundDarkMode.TabIndex = 2;
-            this.textBoxColorArrowHoverBackgroundDarkMode.Text = "#ffffff";
-            this.textBoxColorArrowHoverBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowHoverBackgroundDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowHoverBackgroundDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelColorDarkModeArrowHoverBackground
-            // 
-            this.labelColorDarkModeArrowHoverBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelColorDarkModeArrowHoverBackground.AutoSize = true;
-            this.labelColorDarkModeArrowHoverBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelColorDarkModeArrowHoverBackground.MaximumSize = new System.Drawing.Size(280, 0);
-            this.labelColorDarkModeArrowHoverBackground.Name = "labelColorDarkModeArrowHoverBackground";
-            this.labelColorDarkModeArrowHoverBackground.Size = new System.Drawing.Size(244, 15);
-            this.labelColorDarkModeArrowHoverBackground.TabIndex = 0;
-            this.labelColorDarkModeArrowHoverBackground.Text = "labelColorDarkModeArrowHoverBackground";
-            // 
-            // buttonColorsDefaultDarkMode
-            // 
-            this.buttonColorsDefaultDarkMode.AutoSize = true;
-            this.buttonColorsDefaultDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonColorsDefaultDarkMode.Location = new System.Drawing.Point(3, 555);
-            this.buttonColorsDefaultDarkMode.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonColorsDefaultDarkMode.Name = "buttonColorsDefaultDarkMode";
-            this.buttonColorsDefaultDarkMode.Size = new System.Drawing.Size(180, 25);
-            this.buttonColorsDefaultDarkMode.TabIndex = 2;
-            this.buttonColorsDefaultDarkMode.Text = "buttonColorsDarkModeDefault";
-            this.buttonColorsDefaultDarkMode.UseVisualStyleBackColor = true;
-            this.buttonColorsDefaultDarkMode.Click += new System.EventHandler(this.ButtonDefaultColorsDark_Click);
-            // 
-            // tableLayoutPanelBackgroundDarkMode
-            // 
-            this.tableLayoutPanelBackgroundDarkMode.AutoSize = true;
-            this.tableLayoutPanelBackgroundDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelBackgroundDarkMode.ColumnCount = 3;
-            this.tableLayoutPanelBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBackgroundDarkMode.Controls.Add(this.pictureBoxBackgroundDarkMode, 0, 0);
-            this.tableLayoutPanelBackgroundDarkMode.Controls.Add(this.labelBackgroundDarkMode, 2, 0);
-            this.tableLayoutPanelBackgroundDarkMode.Controls.Add(this.textBoxColorBackgroundDarkMode, 1, 0);
-            this.tableLayoutPanelBackgroundDarkMode.Location = new System.Drawing.Point(3, 47);
-            this.tableLayoutPanelBackgroundDarkMode.Name = "tableLayoutPanelBackgroundDarkMode";
-            this.tableLayoutPanelBackgroundDarkMode.RowCount = 1;
-            this.tableLayoutPanelBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBackgroundDarkMode.Size = new System.Drawing.Size(249, 23);
-            this.tableLayoutPanelBackgroundDarkMode.TabIndex = 2;
-            // 
-            // pictureBoxBackgroundDarkMode
-            // 
-            this.pictureBoxBackgroundDarkMode.BackColor = System.Drawing.Color.White;
-            this.pictureBoxBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxBackgroundDarkMode.Name = "pictureBoxBackgroundDarkMode";
-            this.pictureBoxBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxBackgroundDarkMode.TabIndex = 1;
-            this.pictureBoxBackgroundDarkMode.TabStop = false;
-            this.pictureBoxBackgroundDarkMode.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // labelBackgroundDarkMode
-            // 
-            this.labelBackgroundDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelBackgroundDarkMode.AutoSize = true;
-            this.labelBackgroundDarkMode.Location = new System.Drawing.Point(95, 4);
-            this.labelBackgroundDarkMode.Name = "labelBackgroundDarkMode";
-            this.labelBackgroundDarkMode.Size = new System.Drawing.Size(151, 15);
-            this.labelBackgroundDarkMode.TabIndex = 0;
-            this.labelBackgroundDarkMode.Text = "labelBackgroundDarkMode";
-            // 
-            // textBoxColorBackgroundDarkMode
-            // 
-            this.textBoxColorBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorBackgroundDarkMode.MaxLength = 12;
-            this.textBoxColorBackgroundDarkMode.Name = "textBoxColorBackgroundDarkMode";
-            this.textBoxColorBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorBackgroundDarkMode.TabIndex = 2;
-            this.textBoxColorBackgroundDarkMode.Text = "#ffffff";
-            this.textBoxColorBackgroundDarkMode.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorBackgroundDarkMode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorBackgroundDarkMode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // groupBoxColorsLightMode
-            // 
-            this.groupBoxColorsLightMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxColorsLightMode.AutoSize = true;
-            this.groupBoxColorsLightMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxColorsLightMode.Controls.Add(this.tableLayoutPanelColorsAndDefault);
-            this.groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 362);
-            this.groupBoxColorsLightMode.Name = "groupBoxColorsLightMode";
-            this.groupBoxColorsLightMode.Size = new System.Drawing.Size(373, 605);
-            this.groupBoxColorsLightMode.TabIndex = 0;
-            this.groupBoxColorsLightMode.TabStop = false;
-            this.groupBoxColorsLightMode.Text = "groupBoxColorsLightMode";
-            // 
-            // tableLayoutPanelColorsAndDefault
-            // 
-            this.tableLayoutPanelColorsAndDefault.AutoSize = true;
-            this.tableLayoutPanelColorsAndDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelColorsAndDefault.ColumnCount = 1;
-            this.tableLayoutPanelColorsAndDefault.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelIcons, 0, 1);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelBackgroundBorder, 0, 3);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.labelMenuLightMode, 0, 0);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelBackground, 0, 2);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.buttonColorsDefault, 0, 20);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelArrowHoverBackground, 0, 19);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelArrowHover, 0, 18);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelArrowClickBackground, 0, 17);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelArrowClick, 0, 16);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelArrow, 0, 15);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelSliderArrowsAndTrackHover, 0, 14);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelSliderHover, 0, 13);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelSliderDragging, 0, 12);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelSlider, 0, 11);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelScrollbarBackground, 0, 10);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.labelScrollbarLightMode, 0, 9);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelSelectedItemBorder, 0, 8);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelSelectedItem, 0, 7);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelOpenFolderBorder, 0, 6);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelOpenFolder, 0, 5);
-            this.tableLayoutPanelColorsAndDefault.Controls.Add(this.tableLayoutPanelSearchField, 0, 4);
-            this.tableLayoutPanelColorsAndDefault.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelColorsAndDefault.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelColorsAndDefault.Name = "tableLayoutPanelColorsAndDefault";
-            this.tableLayoutPanelColorsAndDefault.RowCount = 21;
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelColorsAndDefault.Size = new System.Drawing.Size(367, 583);
-            this.tableLayoutPanelColorsAndDefault.TabIndex = 0;
-            // 
-            // tableLayoutPanelIcons
-            // 
-            this.tableLayoutPanelIcons.AutoSize = true;
-            this.tableLayoutPanelIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelIcons.ColumnCount = 3;
-            this.tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelIcons.Controls.Add(this.pictureBoxIcons, 0, 0);
-            this.tableLayoutPanelIcons.Controls.Add(this.textBoxColorIcons, 1, 0);
-            this.tableLayoutPanelIcons.Controls.Add(this.labelIcons, 2, 0);
-            this.tableLayoutPanelIcons.Location = new System.Drawing.Point(3, 18);
-            this.tableLayoutPanelIcons.Name = "tableLayoutPanelIcons";
-            this.tableLayoutPanelIcons.RowCount = 1;
-            this.tableLayoutPanelIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelIcons.Size = new System.Drawing.Size(158, 23);
-            this.tableLayoutPanelIcons.TabIndex = 2;
-            // 
-            // pictureBoxIcons
-            // 
-            this.pictureBoxIcons.BackColor = System.Drawing.Color.White;
-            this.pictureBoxIcons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxIcons.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxIcons.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxIcons.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxIcons.Name = "pictureBoxIcons";
-            this.pictureBoxIcons.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxIcons.TabIndex = 1;
-            this.pictureBoxIcons.TabStop = false;
-            this.pictureBoxIcons.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorIcons
-            // 
-            this.textBoxColorIcons.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorIcons.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorIcons.MaxLength = 12;
-            this.textBoxColorIcons.Name = "textBoxColorIcons";
-            this.textBoxColorIcons.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorIcons.TabIndex = 2;
-            this.textBoxColorIcons.Text = "#ffffff";
-            this.textBoxColorIcons.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorIcons.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorIcons.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelIcons
-            // 
-            this.labelIcons.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelIcons.AutoSize = true;
-            this.labelIcons.Location = new System.Drawing.Point(95, 4);
-            this.labelIcons.Name = "labelIcons";
-            this.labelIcons.Size = new System.Drawing.Size(60, 15);
-            this.labelIcons.TabIndex = 0;
-            this.labelIcons.Text = "labelIcons";
-            // 
-            // tableLayoutPanelBackgroundBorder
-            // 
-            this.tableLayoutPanelBackgroundBorder.AutoSize = true;
-            this.tableLayoutPanelBackgroundBorder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelBackgroundBorder.ColumnCount = 3;
-            this.tableLayoutPanelBackgroundBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBackgroundBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBackgroundBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBackgroundBorder.Controls.Add(this.pictureBoxBackgroundBorder, 0, 0);
-            this.tableLayoutPanelBackgroundBorder.Controls.Add(this.textBoxColorBackgroundBorder, 1, 0);
-            this.tableLayoutPanelBackgroundBorder.Controls.Add(this.labelBackgroundBorder, 2, 0);
-            this.tableLayoutPanelBackgroundBorder.Location = new System.Drawing.Point(3, 76);
-            this.tableLayoutPanelBackgroundBorder.Name = "tableLayoutPanelBackgroundBorder";
-            this.tableLayoutPanelBackgroundBorder.RowCount = 1;
-            this.tableLayoutPanelBackgroundBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBackgroundBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanelBackgroundBorder.Size = new System.Drawing.Size(229, 23);
-            this.tableLayoutPanelBackgroundBorder.TabIndex = 2;
-            // 
-            // pictureBoxBackgroundBorder
-            // 
-            this.pictureBoxBackgroundBorder.BackColor = System.Drawing.Color.White;
-            this.pictureBoxBackgroundBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxBackgroundBorder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxBackgroundBorder.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxBackgroundBorder.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxBackgroundBorder.Name = "pictureBoxBackgroundBorder";
-            this.pictureBoxBackgroundBorder.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxBackgroundBorder.TabIndex = 1;
-            this.pictureBoxBackgroundBorder.TabStop = false;
-            this.pictureBoxBackgroundBorder.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorBackgroundBorder
-            // 
-            this.textBoxColorBackgroundBorder.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorBackgroundBorder.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorBackgroundBorder.MaxLength = 12;
-            this.textBoxColorBackgroundBorder.Name = "textBoxColorBackgroundBorder";
-            this.textBoxColorBackgroundBorder.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorBackgroundBorder.TabIndex = 2;
-            this.textBoxColorBackgroundBorder.Text = "#ffffff";
-            this.textBoxColorBackgroundBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorBackgroundBorder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorBackgroundBorder.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelBackgroundBorder
-            // 
-            this.labelBackgroundBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelBackgroundBorder.AutoSize = true;
-            this.labelBackgroundBorder.Location = new System.Drawing.Point(95, 4);
-            this.labelBackgroundBorder.Name = "labelBackgroundBorder";
-            this.labelBackgroundBorder.Size = new System.Drawing.Size(131, 15);
-            this.labelBackgroundBorder.TabIndex = 0;
-            this.labelBackgroundBorder.Text = "labelBackgroundBorder";
-            // 
-            // labelMenuLightMode
-            // 
-            this.labelMenuLightMode.AutoSize = true;
-            this.labelMenuLightMode.Location = new System.Drawing.Point(3, 0);
-            this.labelMenuLightMode.Name = "labelMenuLightMode";
-            this.labelMenuLightMode.Size = new System.Drawing.Size(121, 15);
-            this.labelMenuLightMode.TabIndex = 3;
-            this.labelMenuLightMode.Text = "labelMenuLightMode";
-            // 
-            // tableLayoutPanelBackground
-            // 
-            this.tableLayoutPanelBackground.AutoSize = true;
-            this.tableLayoutPanelBackground.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelBackground.ColumnCount = 3;
-            this.tableLayoutPanelBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBackground.Controls.Add(this.pictureBoxBackground, 0, 0);
-            this.tableLayoutPanelBackground.Controls.Add(this.textBoxColorBackground, 1, 0);
-            this.tableLayoutPanelBackground.Controls.Add(this.labelBackground, 2, 0);
-            this.tableLayoutPanelBackground.Location = new System.Drawing.Point(3, 47);
-            this.tableLayoutPanelBackground.Name = "tableLayoutPanelBackground";
-            this.tableLayoutPanelBackground.RowCount = 1;
-            this.tableLayoutPanelBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanelBackground.Size = new System.Drawing.Size(194, 23);
-            this.tableLayoutPanelBackground.TabIndex = 2;
-            // 
-            // pictureBoxBackground
-            // 
-            this.pictureBoxBackground.BackColor = System.Drawing.Color.White;
-            this.pictureBoxBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxBackground.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxBackground.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxBackground.Name = "pictureBoxBackground";
-            this.pictureBoxBackground.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxBackground.TabIndex = 1;
-            this.pictureBoxBackground.TabStop = false;
-            this.pictureBoxBackground.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorBackground
-            // 
-            this.textBoxColorBackground.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorBackground.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorBackground.MaxLength = 12;
-            this.textBoxColorBackground.Name = "textBoxColorBackground";
-            this.textBoxColorBackground.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorBackground.TabIndex = 2;
-            this.textBoxColorBackground.Text = "#ffffff";
-            this.textBoxColorBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorBackground.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelBackground
-            // 
-            this.labelBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelBackground.AutoSize = true;
-            this.labelBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelBackground.Name = "labelBackground";
-            this.labelBackground.Size = new System.Drawing.Size(96, 15);
-            this.labelBackground.TabIndex = 0;
-            this.labelBackground.Text = "labelBackground";
-            // 
-            // buttonColorsDefault
-            // 
-            this.buttonColorsDefault.AutoSize = true;
-            this.buttonColorsDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonColorsDefault.Location = new System.Drawing.Point(3, 555);
-            this.buttonColorsDefault.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonColorsDefault.Name = "buttonColorsDefault";
-            this.buttonColorsDefault.Size = new System.Drawing.Size(125, 25);
-            this.buttonColorsDefault.TabIndex = 2;
-            this.buttonColorsDefault.Text = "buttonColorsDefault";
-            this.buttonColorsDefault.UseVisualStyleBackColor = true;
-            this.buttonColorsDefault.Click += new System.EventHandler(this.ButtonDefaultColors_Click);
-            // 
-            // tableLayoutPanelArrowHoverBackground
-            // 
-            this.tableLayoutPanelArrowHoverBackground.AutoSize = true;
-            this.tableLayoutPanelArrowHoverBackground.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowHoverBackground.ColumnCount = 3;
-            this.tableLayoutPanelArrowHoverBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowHoverBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowHoverBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowHoverBackground.Controls.Add(this.pictureBoxArrowHoverBackground, 0, 0);
-            this.tableLayoutPanelArrowHoverBackground.Controls.Add(this.textBoxColorArrowHoverBackground, 1, 0);
-            this.tableLayoutPanelArrowHoverBackground.Controls.Add(this.labelArrowHoverBackground, 2, 0);
-            this.tableLayoutPanelArrowHoverBackground.Location = new System.Drawing.Point(3, 526);
-            this.tableLayoutPanelArrowHoverBackground.Name = "tableLayoutPanelArrowHoverBackground";
-            this.tableLayoutPanelArrowHoverBackground.RowCount = 1;
-            this.tableLayoutPanelArrowHoverBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowHoverBackground.Size = new System.Drawing.Size(258, 23);
-            this.tableLayoutPanelArrowHoverBackground.TabIndex = 2;
-            // 
-            // pictureBoxArrowHoverBackground
-            // 
-            this.pictureBoxArrowHoverBackground.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowHoverBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowHoverBackground.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowHoverBackground.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowHoverBackground.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowHoverBackground.Name = "pictureBoxArrowHoverBackground";
-            this.pictureBoxArrowHoverBackground.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowHoverBackground.TabIndex = 1;
-            this.pictureBoxArrowHoverBackground.TabStop = false;
-            this.pictureBoxArrowHoverBackground.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowHoverBackground
-            // 
-            this.textBoxColorArrowHoverBackground.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowHoverBackground.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowHoverBackground.MaxLength = 12;
-            this.textBoxColorArrowHoverBackground.Name = "textBoxColorArrowHoverBackground";
-            this.textBoxColorArrowHoverBackground.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowHoverBackground.TabIndex = 2;
-            this.textBoxColorArrowHoverBackground.Text = "#ffffff";
-            this.textBoxColorArrowHoverBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowHoverBackground.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowHoverBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelArrowHoverBackground
-            // 
-            this.labelArrowHoverBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelArrowHoverBackground.AutoSize = true;
-            this.labelArrowHoverBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelArrowHoverBackground.MaximumSize = new System.Drawing.Size(280, 0);
-            this.labelArrowHoverBackground.Name = "labelArrowHoverBackground";
-            this.labelArrowHoverBackground.Size = new System.Drawing.Size(160, 15);
-            this.labelArrowHoverBackground.TabIndex = 0;
-            this.labelArrowHoverBackground.Text = "labelArrowHoverBackground";
-            // 
-            // tableLayoutPanelArrowHover
-            // 
-            this.tableLayoutPanelArrowHover.AutoSize = true;
-            this.tableLayoutPanelArrowHover.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowHover.ColumnCount = 3;
-            this.tableLayoutPanelArrowHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowHover.Controls.Add(this.pictureBoxArrowHover, 0, 0);
-            this.tableLayoutPanelArrowHover.Controls.Add(this.textBoxColorArrowHover, 1, 0);
-            this.tableLayoutPanelArrowHover.Controls.Add(this.labelArrowHover, 2, 0);
-            this.tableLayoutPanelArrowHover.Location = new System.Drawing.Point(3, 497);
-            this.tableLayoutPanelArrowHover.Name = "tableLayoutPanelArrowHover";
-            this.tableLayoutPanelArrowHover.RowCount = 1;
-            this.tableLayoutPanelArrowHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowHover.Size = new System.Drawing.Size(194, 23);
-            this.tableLayoutPanelArrowHover.TabIndex = 2;
-            // 
-            // pictureBoxArrowHover
-            // 
-            this.pictureBoxArrowHover.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowHover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowHover.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowHover.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowHover.Name = "pictureBoxArrowHover";
-            this.pictureBoxArrowHover.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowHover.TabIndex = 1;
-            this.pictureBoxArrowHover.TabStop = false;
-            this.pictureBoxArrowHover.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowHover
-            // 
-            this.textBoxColorArrowHover.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowHover.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowHover.MaxLength = 12;
-            this.textBoxColorArrowHover.Name = "textBoxColorArrowHover";
-            this.textBoxColorArrowHover.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowHover.TabIndex = 2;
-            this.textBoxColorArrowHover.Text = "#ffffff";
-            this.textBoxColorArrowHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowHover.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowHover.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelArrowHover
-            // 
-            this.labelArrowHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelArrowHover.AutoSize = true;
-            this.labelArrowHover.Location = new System.Drawing.Point(95, 4);
-            this.labelArrowHover.Name = "labelArrowHover";
-            this.labelArrowHover.Size = new System.Drawing.Size(96, 15);
-            this.labelArrowHover.TabIndex = 0;
-            this.labelArrowHover.Text = "labelArrowHover";
-            // 
-            // tableLayoutPanelArrowClickBackground
-            // 
-            this.tableLayoutPanelArrowClickBackground.AutoSize = true;
-            this.tableLayoutPanelArrowClickBackground.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowClickBackground.ColumnCount = 3;
-            this.tableLayoutPanelArrowClickBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowClickBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowClickBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowClickBackground.Controls.Add(this.pictureBoxArrowClickBackground, 0, 0);
-            this.tableLayoutPanelArrowClickBackground.Controls.Add(this.textBoxColorArrowClickBackground, 1, 0);
-            this.tableLayoutPanelArrowClickBackground.Controls.Add(this.labelArrowClickBackground, 2, 0);
-            this.tableLayoutPanelArrowClickBackground.Location = new System.Drawing.Point(3, 468);
-            this.tableLayoutPanelArrowClickBackground.Name = "tableLayoutPanelArrowClickBackground";
-            this.tableLayoutPanelArrowClickBackground.RowCount = 1;
-            this.tableLayoutPanelArrowClickBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowClickBackground.Size = new System.Drawing.Size(252, 23);
-            this.tableLayoutPanelArrowClickBackground.TabIndex = 2;
-            // 
-            // pictureBoxArrowClickBackground
-            // 
-            this.pictureBoxArrowClickBackground.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowClickBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowClickBackground.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowClickBackground.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowClickBackground.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowClickBackground.Name = "pictureBoxArrowClickBackground";
-            this.pictureBoxArrowClickBackground.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowClickBackground.TabIndex = 1;
-            this.pictureBoxArrowClickBackground.TabStop = false;
-            this.pictureBoxArrowClickBackground.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowClickBackground
-            // 
-            this.textBoxColorArrowClickBackground.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowClickBackground.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowClickBackground.MaxLength = 12;
-            this.textBoxColorArrowClickBackground.Name = "textBoxColorArrowClickBackground";
-            this.textBoxColorArrowClickBackground.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowClickBackground.TabIndex = 2;
-            this.textBoxColorArrowClickBackground.Text = "#ffffff";
-            this.textBoxColorArrowClickBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowClickBackground.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowClickBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelArrowClickBackground
-            // 
-            this.labelArrowClickBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelArrowClickBackground.AutoSize = true;
-            this.labelArrowClickBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelArrowClickBackground.Name = "labelArrowClickBackground";
-            this.labelArrowClickBackground.Size = new System.Drawing.Size(154, 15);
-            this.labelArrowClickBackground.TabIndex = 0;
-            this.labelArrowClickBackground.Text = "labelArrowClickBackground";
-            // 
-            // tableLayoutPanelArrowClick
-            // 
-            this.tableLayoutPanelArrowClick.AutoSize = true;
-            this.tableLayoutPanelArrowClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrowClick.ColumnCount = 3;
-            this.tableLayoutPanelArrowClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrowClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrowClick.Controls.Add(this.pictureBoxArrowClick, 0, 0);
-            this.tableLayoutPanelArrowClick.Controls.Add(this.textBoxColorArrowClick, 1, 0);
-            this.tableLayoutPanelArrowClick.Controls.Add(this.labelArrowClick, 2, 0);
-            this.tableLayoutPanelArrowClick.Location = new System.Drawing.Point(3, 439);
-            this.tableLayoutPanelArrowClick.Name = "tableLayoutPanelArrowClick";
-            this.tableLayoutPanelArrowClick.RowCount = 1;
-            this.tableLayoutPanelArrowClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrowClick.Size = new System.Drawing.Size(188, 23);
-            this.tableLayoutPanelArrowClick.TabIndex = 2;
-            // 
-            // pictureBoxArrowClick
-            // 
-            this.pictureBoxArrowClick.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrowClick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrowClick.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrowClick.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrowClick.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrowClick.Name = "pictureBoxArrowClick";
-            this.pictureBoxArrowClick.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrowClick.TabIndex = 1;
-            this.pictureBoxArrowClick.TabStop = false;
-            this.pictureBoxArrowClick.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrowClick
-            // 
-            this.textBoxColorArrowClick.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrowClick.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrowClick.MaxLength = 12;
-            this.textBoxColorArrowClick.Name = "textBoxColorArrowClick";
-            this.textBoxColorArrowClick.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrowClick.TabIndex = 2;
-            this.textBoxColorArrowClick.Text = "#ffffff";
-            this.textBoxColorArrowClick.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrowClick.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrowClick.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelArrowClick
-            // 
-            this.labelArrowClick.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelArrowClick.AutoSize = true;
-            this.labelArrowClick.Location = new System.Drawing.Point(95, 4);
-            this.labelArrowClick.Name = "labelArrowClick";
-            this.labelArrowClick.Size = new System.Drawing.Size(90, 15);
-            this.labelArrowClick.TabIndex = 0;
-            this.labelArrowClick.Text = "labelArrowClick";
-            // 
-            // tableLayoutPanelArrow
-            // 
-            this.tableLayoutPanelArrow.AutoSize = true;
-            this.tableLayoutPanelArrow.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelArrow.ColumnCount = 3;
-            this.tableLayoutPanelArrow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelArrow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelArrow.Controls.Add(this.pictureBoxArrow, 0, 0);
-            this.tableLayoutPanelArrow.Controls.Add(this.textBoxColorArrow, 1, 0);
-            this.tableLayoutPanelArrow.Controls.Add(this.labelArrow, 2, 0);
-            this.tableLayoutPanelArrow.Location = new System.Drawing.Point(3, 410);
-            this.tableLayoutPanelArrow.Name = "tableLayoutPanelArrow";
-            this.tableLayoutPanelArrow.RowCount = 1;
-            this.tableLayoutPanelArrow.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelArrow.Size = new System.Drawing.Size(162, 23);
-            this.tableLayoutPanelArrow.TabIndex = 2;
-            // 
-            // pictureBoxArrow
-            // 
-            this.pictureBoxArrow.BackColor = System.Drawing.Color.White;
-            this.pictureBoxArrow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxArrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxArrow.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxArrow.Name = "pictureBoxArrow";
-            this.pictureBoxArrow.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxArrow.TabIndex = 1;
-            this.pictureBoxArrow.TabStop = false;
-            this.pictureBoxArrow.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorArrow
-            // 
-            this.textBoxColorArrow.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorArrow.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorArrow.MaxLength = 12;
-            this.textBoxColorArrow.Name = "textBoxColorArrow";
-            this.textBoxColorArrow.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorArrow.TabIndex = 2;
-            this.textBoxColorArrow.Text = "#ffffff";
-            this.textBoxColorArrow.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorArrow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorArrow.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelArrow
-            // 
-            this.labelArrow.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelArrow.AutoSize = true;
-            this.labelArrow.Location = new System.Drawing.Point(95, 4);
-            this.labelArrow.Name = "labelArrow";
-            this.labelArrow.Size = new System.Drawing.Size(64, 15);
-            this.labelArrow.TabIndex = 0;
-            this.labelArrow.Text = "labelArrow";
-            // 
-            // tableLayoutPanelSliderArrowsAndTrackHover
-            // 
-            this.tableLayoutPanelSliderArrowsAndTrackHover.AutoSize = true;
-            this.tableLayoutPanelSliderArrowsAndTrackHover.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSliderArrowsAndTrackHover.ColumnCount = 3;
-            this.tableLayoutPanelSliderArrowsAndTrackHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderArrowsAndTrackHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderArrowsAndTrackHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(this.pictureBoxSliderArrowsAndTrackHover, 0, 0);
-            this.tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(this.textBoxColorSliderArrowsAndTrackHover, 1, 0);
-            this.tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(this.labelSliderArrowsAndTrackHover, 2, 0);
-            this.tableLayoutPanelSliderArrowsAndTrackHover.Location = new System.Drawing.Point(3, 381);
-            this.tableLayoutPanelSliderArrowsAndTrackHover.Name = "tableLayoutPanelSliderArrowsAndTrackHover";
-            this.tableLayoutPanelSliderArrowsAndTrackHover.RowCount = 1;
-            this.tableLayoutPanelSliderArrowsAndTrackHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderArrowsAndTrackHover.Size = new System.Drawing.Size(277, 23);
-            this.tableLayoutPanelSliderArrowsAndTrackHover.TabIndex = 2;
-            // 
-            // pictureBoxSliderArrowsAndTrackHover
-            // 
-            this.pictureBoxSliderArrowsAndTrackHover.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSliderArrowsAndTrackHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSliderArrowsAndTrackHover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSliderArrowsAndTrackHover.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSliderArrowsAndTrackHover.Name = "pictureBoxSliderArrowsAndTrackHover";
-            this.pictureBoxSliderArrowsAndTrackHover.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSliderArrowsAndTrackHover.TabIndex = 1;
-            this.pictureBoxSliderArrowsAndTrackHover.TabStop = false;
-            this.pictureBoxSliderArrowsAndTrackHover.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSliderArrowsAndTrackHover
-            // 
-            this.textBoxColorSliderArrowsAndTrackHover.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSliderArrowsAndTrackHover.MaxLength = 12;
-            this.textBoxColorSliderArrowsAndTrackHover.Name = "textBoxColorSliderArrowsAndTrackHover";
-            this.textBoxColorSliderArrowsAndTrackHover.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSliderArrowsAndTrackHover.TabIndex = 2;
-            this.textBoxColorSliderArrowsAndTrackHover.Text = "#ffffff";
-            this.textBoxColorSliderArrowsAndTrackHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSliderArrowsAndTrackHover.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSliderArrowsAndTrackHover.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelSliderArrowsAndTrackHover
-            // 
-            this.labelSliderArrowsAndTrackHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSliderArrowsAndTrackHover.AutoSize = true;
-            this.labelSliderArrowsAndTrackHover.Location = new System.Drawing.Point(95, 4);
-            this.labelSliderArrowsAndTrackHover.Name = "labelSliderArrowsAndTrackHover";
-            this.labelSliderArrowsAndTrackHover.Size = new System.Drawing.Size(179, 15);
-            this.labelSliderArrowsAndTrackHover.TabIndex = 0;
-            this.labelSliderArrowsAndTrackHover.Text = "labelSliderArrowsAndTrackHover";
-            // 
-            // tableLayoutPanelSliderHover
-            // 
-            this.tableLayoutPanelSliderHover.AutoSize = true;
-            this.tableLayoutPanelSliderHover.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSliderHover.ColumnCount = 3;
-            this.tableLayoutPanelSliderHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSliderHover.Controls.Add(this.pictureBoxSliderHover, 0, 0);
-            this.tableLayoutPanelSliderHover.Controls.Add(this.textBoxColorSliderHover, 1, 0);
-            this.tableLayoutPanelSliderHover.Controls.Add(this.labelSliderHover, 2, 0);
-            this.tableLayoutPanelSliderHover.Location = new System.Drawing.Point(3, 352);
-            this.tableLayoutPanelSliderHover.Name = "tableLayoutPanelSliderHover";
-            this.tableLayoutPanelSliderHover.RowCount = 1;
-            this.tableLayoutPanelSliderHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderHover.Size = new System.Drawing.Size(191, 23);
-            this.tableLayoutPanelSliderHover.TabIndex = 2;
-            // 
-            // pictureBoxSliderHover
-            // 
-            this.pictureBoxSliderHover.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSliderHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSliderHover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSliderHover.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSliderHover.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSliderHover.Name = "pictureBoxSliderHover";
-            this.pictureBoxSliderHover.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSliderHover.TabIndex = 1;
-            this.pictureBoxSliderHover.TabStop = false;
-            this.pictureBoxSliderHover.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSliderHover
-            // 
-            this.textBoxColorSliderHover.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSliderHover.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSliderHover.MaxLength = 12;
-            this.textBoxColorSliderHover.Name = "textBoxColorSliderHover";
-            this.textBoxColorSliderHover.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSliderHover.TabIndex = 2;
-            this.textBoxColorSliderHover.Text = "#ffffff";
-            this.textBoxColorSliderHover.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSliderHover.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSliderHover.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelSliderHover
-            // 
-            this.labelSliderHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSliderHover.AutoSize = true;
-            this.labelSliderHover.Location = new System.Drawing.Point(95, 4);
-            this.labelSliderHover.Name = "labelSliderHover";
-            this.labelSliderHover.Size = new System.Drawing.Size(93, 15);
-            this.labelSliderHover.TabIndex = 0;
-            this.labelSliderHover.Text = "labelSliderHover";
-            // 
-            // tableLayoutPanelSliderDragging
-            // 
-            this.tableLayoutPanelSliderDragging.AutoSize = true;
-            this.tableLayoutPanelSliderDragging.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSliderDragging.ColumnCount = 3;
-            this.tableLayoutPanelSliderDragging.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderDragging.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSliderDragging.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSliderDragging.Controls.Add(this.pictureBoxSliderDragging, 0, 0);
-            this.tableLayoutPanelSliderDragging.Controls.Add(this.textBoxColorSliderDragging, 1, 0);
-            this.tableLayoutPanelSliderDragging.Controls.Add(this.labelSliderDragging, 2, 0);
-            this.tableLayoutPanelSliderDragging.Location = new System.Drawing.Point(3, 323);
-            this.tableLayoutPanelSliderDragging.Name = "tableLayoutPanelSliderDragging";
-            this.tableLayoutPanelSliderDragging.RowCount = 1;
-            this.tableLayoutPanelSliderDragging.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSliderDragging.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanelSliderDragging.Size = new System.Drawing.Size(208, 23);
-            this.tableLayoutPanelSliderDragging.TabIndex = 2;
-            // 
-            // pictureBoxSliderDragging
-            // 
-            this.pictureBoxSliderDragging.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSliderDragging.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSliderDragging.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSliderDragging.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSliderDragging.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSliderDragging.Name = "pictureBoxSliderDragging";
-            this.pictureBoxSliderDragging.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSliderDragging.TabIndex = 1;
-            this.pictureBoxSliderDragging.TabStop = false;
-            this.pictureBoxSliderDragging.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSliderDragging
-            // 
-            this.textBoxColorSliderDragging.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSliderDragging.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSliderDragging.MaxLength = 12;
-            this.textBoxColorSliderDragging.Name = "textBoxColorSliderDragging";
-            this.textBoxColorSliderDragging.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSliderDragging.TabIndex = 2;
-            this.textBoxColorSliderDragging.Text = "#ffffff";
-            this.textBoxColorSliderDragging.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSliderDragging.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSliderDragging.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelSliderDragging
-            // 
-            this.labelSliderDragging.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSliderDragging.AutoSize = true;
-            this.labelSliderDragging.Location = new System.Drawing.Point(95, 4);
-            this.labelSliderDragging.Name = "labelSliderDragging";
-            this.labelSliderDragging.Size = new System.Drawing.Size(110, 15);
-            this.labelSliderDragging.TabIndex = 0;
-            this.labelSliderDragging.Text = "labelSliderDragging";
-            // 
-            // tableLayoutPanelSlider
-            // 
-            this.tableLayoutPanelSlider.AutoSize = true;
-            this.tableLayoutPanelSlider.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSlider.ColumnCount = 3;
-            this.tableLayoutPanelSlider.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSlider.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSlider.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSlider.Controls.Add(this.pictureBoxSlider, 0, 0);
-            this.tableLayoutPanelSlider.Controls.Add(this.textBoxColorSlider, 1, 0);
-            this.tableLayoutPanelSlider.Controls.Add(this.labelSlider, 2, 0);
-            this.tableLayoutPanelSlider.Location = new System.Drawing.Point(3, 294);
-            this.tableLayoutPanelSlider.Name = "tableLayoutPanelSlider";
-            this.tableLayoutPanelSlider.RowCount = 1;
-            this.tableLayoutPanelSlider.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSlider.Size = new System.Drawing.Size(159, 23);
-            this.tableLayoutPanelSlider.TabIndex = 2;
-            // 
-            // pictureBoxSlider
-            // 
-            this.pictureBoxSlider.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSlider.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSlider.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSlider.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSlider.Name = "pictureBoxSlider";
-            this.pictureBoxSlider.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSlider.TabIndex = 1;
-            this.pictureBoxSlider.TabStop = false;
-            this.pictureBoxSlider.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSlider
-            // 
-            this.textBoxColorSlider.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSlider.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSlider.MaxLength = 12;
-            this.textBoxColorSlider.Name = "textBoxColorSlider";
-            this.textBoxColorSlider.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSlider.TabIndex = 2;
-            this.textBoxColorSlider.Text = "#ffffff";
-            this.textBoxColorSlider.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSlider.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSlider.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelSlider
-            // 
-            this.labelSlider.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSlider.AutoSize = true;
-            this.labelSlider.Location = new System.Drawing.Point(95, 4);
-            this.labelSlider.Name = "labelSlider";
-            this.labelSlider.Size = new System.Drawing.Size(61, 15);
-            this.labelSlider.TabIndex = 0;
-            this.labelSlider.Text = "labelSlider";
-            // 
-            // tableLayoutPanelScrollbarBackground
-            // 
-            this.tableLayoutPanelScrollbarBackground.AutoSize = true;
-            this.tableLayoutPanelScrollbarBackground.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelScrollbarBackground.ColumnCount = 3;
-            this.tableLayoutPanelScrollbarBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelScrollbarBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelScrollbarBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelScrollbarBackground.Controls.Add(this.pictureBoxScrollbarBackground, 0, 0);
-            this.tableLayoutPanelScrollbarBackground.Controls.Add(this.textBoxColorScrollbarBackground, 1, 0);
-            this.tableLayoutPanelScrollbarBackground.Controls.Add(this.labelScrollbarBackground, 2, 0);
-            this.tableLayoutPanelScrollbarBackground.Location = new System.Drawing.Point(3, 265);
-            this.tableLayoutPanelScrollbarBackground.Name = "tableLayoutPanelScrollbarBackground";
-            this.tableLayoutPanelScrollbarBackground.RowCount = 1;
-            this.tableLayoutPanelScrollbarBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelScrollbarBackground.Size = new System.Drawing.Size(240, 23);
-            this.tableLayoutPanelScrollbarBackground.TabIndex = 2;
-            // 
-            // pictureBoxScrollbarBackground
-            // 
-            this.pictureBoxScrollbarBackground.BackColor = System.Drawing.Color.White;
-            this.pictureBoxScrollbarBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxScrollbarBackground.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxScrollbarBackground.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxScrollbarBackground.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxScrollbarBackground.Name = "pictureBoxScrollbarBackground";
-            this.pictureBoxScrollbarBackground.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxScrollbarBackground.TabIndex = 1;
-            this.pictureBoxScrollbarBackground.TabStop = false;
-            this.pictureBoxScrollbarBackground.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorScrollbarBackground
-            // 
-            this.textBoxColorScrollbarBackground.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorScrollbarBackground.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorScrollbarBackground.MaxLength = 12;
-            this.textBoxColorScrollbarBackground.Name = "textBoxColorScrollbarBackground";
-            this.textBoxColorScrollbarBackground.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorScrollbarBackground.TabIndex = 2;
-            this.textBoxColorScrollbarBackground.Text = "#ffffff";
-            this.textBoxColorScrollbarBackground.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorScrollbarBackground.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorScrollbarBackground.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelScrollbarBackground
-            // 
-            this.labelScrollbarBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelScrollbarBackground.AutoSize = true;
-            this.labelScrollbarBackground.Location = new System.Drawing.Point(95, 4);
-            this.labelScrollbarBackground.Name = "labelScrollbarBackground";
-            this.labelScrollbarBackground.Size = new System.Drawing.Size(142, 15);
-            this.labelScrollbarBackground.TabIndex = 0;
-            this.labelScrollbarBackground.Text = "labelScrollbarBackground";
-            // 
-            // labelScrollbarLightMode
-            // 
-            this.labelScrollbarLightMode.AutoSize = true;
-            this.labelScrollbarLightMode.Location = new System.Drawing.Point(3, 247);
-            this.labelScrollbarLightMode.Name = "labelScrollbarLightMode";
-            this.labelScrollbarLightMode.Size = new System.Drawing.Size(136, 15);
-            this.labelScrollbarLightMode.TabIndex = 3;
-            this.labelScrollbarLightMode.Text = "labelScrollbarLightMode";
-            // 
-            // tableLayoutPanelSelectedItemBorder
-            // 
-            this.tableLayoutPanelSelectedItemBorder.AutoSize = true;
-            this.tableLayoutPanelSelectedItemBorder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSelectedItemBorder.ColumnCount = 3;
-            this.tableLayoutPanelSelectedItemBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSelectedItemBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSelectedItemBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSelectedItemBorder.Controls.Add(this.pictureBoxSelectedItemBorder, 0, 0);
-            this.tableLayoutPanelSelectedItemBorder.Controls.Add(this.textBoxColorSelectedItemBorder, 1, 0);
-            this.tableLayoutPanelSelectedItemBorder.Controls.Add(this.labelSelectedItemBorder, 2, 0);
-            this.tableLayoutPanelSelectedItemBorder.Location = new System.Drawing.Point(3, 221);
-            this.tableLayoutPanelSelectedItemBorder.Name = "tableLayoutPanelSelectedItemBorder";
-            this.tableLayoutPanelSelectedItemBorder.RowCount = 1;
-            this.tableLayoutPanelSelectedItemBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSelectedItemBorder.Size = new System.Drawing.Size(233, 23);
-            this.tableLayoutPanelSelectedItemBorder.TabIndex = 2;
-            // 
-            // pictureBoxSelectedItemBorder
-            // 
-            this.pictureBoxSelectedItemBorder.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSelectedItemBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSelectedItemBorder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSelectedItemBorder.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSelectedItemBorder.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSelectedItemBorder.Name = "pictureBoxSelectedItemBorder";
-            this.pictureBoxSelectedItemBorder.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSelectedItemBorder.TabIndex = 1;
-            this.pictureBoxSelectedItemBorder.TabStop = false;
-            this.pictureBoxSelectedItemBorder.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSelectedItemBorder
-            // 
-            this.textBoxColorSelectedItemBorder.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSelectedItemBorder.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSelectedItemBorder.MaxLength = 12;
-            this.textBoxColorSelectedItemBorder.Name = "textBoxColorSelectedItemBorder";
-            this.textBoxColorSelectedItemBorder.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSelectedItemBorder.TabIndex = 2;
-            this.textBoxColorSelectedItemBorder.Text = "#ffffff";
-            this.textBoxColorSelectedItemBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSelectedItemBorder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSelectedItemBorder.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelSelectedItemBorder
-            // 
-            this.labelSelectedItemBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSelectedItemBorder.AutoSize = true;
-            this.labelSelectedItemBorder.Location = new System.Drawing.Point(95, 4);
-            this.labelSelectedItemBorder.Name = "labelSelectedItemBorder";
-            this.labelSelectedItemBorder.Size = new System.Drawing.Size(135, 15);
-            this.labelSelectedItemBorder.TabIndex = 0;
-            this.labelSelectedItemBorder.Text = "labelSelectedItemBorder";
-            // 
-            // tableLayoutPanelSelectedItem
-            // 
-            this.tableLayoutPanelSelectedItem.AutoSize = true;
-            this.tableLayoutPanelSelectedItem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSelectedItem.ColumnCount = 3;
-            this.tableLayoutPanelSelectedItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSelectedItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSelectedItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSelectedItem.Controls.Add(this.pictureBoxSelectedItem, 0, 0);
-            this.tableLayoutPanelSelectedItem.Controls.Add(this.textBoxColorSelectedItem, 1, 0);
-            this.tableLayoutPanelSelectedItem.Controls.Add(this.labelSelectedItem, 2, 0);
-            this.tableLayoutPanelSelectedItem.Location = new System.Drawing.Point(3, 192);
-            this.tableLayoutPanelSelectedItem.Name = "tableLayoutPanelSelectedItem";
-            this.tableLayoutPanelSelectedItem.RowCount = 1;
-            this.tableLayoutPanelSelectedItem.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSelectedItem.Size = new System.Drawing.Size(198, 23);
-            this.tableLayoutPanelSelectedItem.TabIndex = 2;
-            // 
-            // pictureBoxSelectedItem
-            // 
-            this.pictureBoxSelectedItem.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSelectedItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSelectedItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSelectedItem.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSelectedItem.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSelectedItem.Name = "pictureBoxSelectedItem";
-            this.pictureBoxSelectedItem.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSelectedItem.TabIndex = 1;
-            this.pictureBoxSelectedItem.TabStop = false;
-            this.pictureBoxSelectedItem.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSelectedItem
-            // 
-            this.textBoxColorSelectedItem.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSelectedItem.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSelectedItem.MaxLength = 12;
-            this.textBoxColorSelectedItem.Name = "textBoxColorSelectedItem";
-            this.textBoxColorSelectedItem.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSelectedItem.TabIndex = 2;
-            this.textBoxColorSelectedItem.Text = "#ffffff";
-            this.textBoxColorSelectedItem.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSelectedItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSelectedItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelSelectedItem
-            // 
-            this.labelSelectedItem.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSelectedItem.AutoSize = true;
-            this.labelSelectedItem.Location = new System.Drawing.Point(95, 4);
-            this.labelSelectedItem.Name = "labelSelectedItem";
-            this.labelSelectedItem.Size = new System.Drawing.Size(100, 15);
-            this.labelSelectedItem.TabIndex = 0;
-            this.labelSelectedItem.Text = "labelSelectedItem";
-            // 
-            // tableLayoutPanelOpenFolderBorder
-            // 
-            this.tableLayoutPanelOpenFolderBorder.AutoSize = true;
-            this.tableLayoutPanelOpenFolderBorder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelOpenFolderBorder.ColumnCount = 3;
-            this.tableLayoutPanelOpenFolderBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelOpenFolderBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelOpenFolderBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelOpenFolderBorder.Controls.Add(this.pictureBoxOpenFolderBorder, 0, 0);
-            this.tableLayoutPanelOpenFolderBorder.Controls.Add(this.textBoxColorOpenFolderBorder, 1, 0);
-            this.tableLayoutPanelOpenFolderBorder.Controls.Add(this.labelOpenFolderBorder, 2, 0);
-            this.tableLayoutPanelOpenFolderBorder.Location = new System.Drawing.Point(3, 163);
-            this.tableLayoutPanelOpenFolderBorder.Name = "tableLayoutPanelOpenFolderBorder";
-            this.tableLayoutPanelOpenFolderBorder.RowCount = 1;
-            this.tableLayoutPanelOpenFolderBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelOpenFolderBorder.Size = new System.Drawing.Size(227, 23);
-            this.tableLayoutPanelOpenFolderBorder.TabIndex = 2;
-            // 
-            // pictureBoxOpenFolderBorder
-            // 
-            this.pictureBoxOpenFolderBorder.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOpenFolderBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxOpenFolderBorder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxOpenFolderBorder.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxOpenFolderBorder.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxOpenFolderBorder.Name = "pictureBoxOpenFolderBorder";
-            this.pictureBoxOpenFolderBorder.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxOpenFolderBorder.TabIndex = 1;
-            this.pictureBoxOpenFolderBorder.TabStop = false;
-            this.pictureBoxOpenFolderBorder.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorOpenFolderBorder
-            // 
-            this.textBoxColorOpenFolderBorder.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorOpenFolderBorder.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorOpenFolderBorder.Name = "textBoxColorOpenFolderBorder";
-            this.textBoxColorOpenFolderBorder.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorOpenFolderBorder.TabIndex = 2;
-            this.textBoxColorOpenFolderBorder.Text = "#ffffff";
-            this.textBoxColorOpenFolderBorder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorOpenFolderBorder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorOpenFolderBorder.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelOpenFolderBorder
-            // 
-            this.labelOpenFolderBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelOpenFolderBorder.AutoSize = true;
-            this.labelOpenFolderBorder.Location = new System.Drawing.Point(95, 4);
-            this.labelOpenFolderBorder.Name = "labelOpenFolderBorder";
-            this.labelOpenFolderBorder.Size = new System.Drawing.Size(129, 15);
-            this.labelOpenFolderBorder.TabIndex = 0;
-            this.labelOpenFolderBorder.Text = "labelOpenFolderBorder";
-            // 
-            // tableLayoutPanelOpenFolder
-            // 
-            this.tableLayoutPanelOpenFolder.AutoSize = true;
-            this.tableLayoutPanelOpenFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelOpenFolder.ColumnCount = 3;
-            this.tableLayoutPanelOpenFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelOpenFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelOpenFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelOpenFolder.Controls.Add(this.pictureBoxOpenFolder, 0, 0);
-            this.tableLayoutPanelOpenFolder.Controls.Add(this.textBoxColorOpenFolder, 1, 0);
-            this.tableLayoutPanelOpenFolder.Controls.Add(this.labelOpenFolder, 2, 0);
-            this.tableLayoutPanelOpenFolder.Location = new System.Drawing.Point(3, 134);
-            this.tableLayoutPanelOpenFolder.Name = "tableLayoutPanelOpenFolder";
-            this.tableLayoutPanelOpenFolder.RowCount = 1;
-            this.tableLayoutPanelOpenFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelOpenFolder.Size = new System.Drawing.Size(192, 23);
-            this.tableLayoutPanelOpenFolder.TabIndex = 2;
-            // 
-            // pictureBoxOpenFolder
-            // 
-            this.pictureBoxOpenFolder.BackColor = System.Drawing.Color.White;
-            this.pictureBoxOpenFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxOpenFolder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxOpenFolder.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxOpenFolder.Name = "pictureBoxOpenFolder";
-            this.pictureBoxOpenFolder.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxOpenFolder.TabIndex = 1;
-            this.pictureBoxOpenFolder.TabStop = false;
-            this.pictureBoxOpenFolder.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorOpenFolder
-            // 
-            this.textBoxColorOpenFolder.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorOpenFolder.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorOpenFolder.MaxLength = 12;
-            this.textBoxColorOpenFolder.Name = "textBoxColorOpenFolder";
-            this.textBoxColorOpenFolder.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorOpenFolder.TabIndex = 2;
-            this.textBoxColorOpenFolder.Text = "#ffffff";
-            this.textBoxColorOpenFolder.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorOpenFolder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorOpenFolder.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelOpenFolder
-            // 
-            this.labelOpenFolder.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelOpenFolder.AutoSize = true;
-            this.labelOpenFolder.Location = new System.Drawing.Point(95, 4);
-            this.labelOpenFolder.Name = "labelOpenFolder";
-            this.labelOpenFolder.Size = new System.Drawing.Size(94, 15);
-            this.labelOpenFolder.TabIndex = 0;
-            this.labelOpenFolder.Text = "labelOpenFolder";
-            // 
-            // tableLayoutPanelSearchField
-            // 
-            this.tableLayoutPanelSearchField.AutoSize = true;
-            this.tableLayoutPanelSearchField.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelSearchField.ColumnCount = 3;
-            this.tableLayoutPanelSearchField.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearchField.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelSearchField.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSearchField.Controls.Add(this.pictureBoxSearchField, 0, 0);
-            this.tableLayoutPanelSearchField.Controls.Add(this.textBoxColorSearchField, 1, 0);
-            this.tableLayoutPanelSearchField.Controls.Add(this.labelSearchField, 2, 0);
-            this.tableLayoutPanelSearchField.Location = new System.Drawing.Point(3, 105);
-            this.tableLayoutPanelSearchField.Name = "tableLayoutPanelSearchField";
-            this.tableLayoutPanelSearchField.RowCount = 1;
-            this.tableLayoutPanelSearchField.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSearchField.Size = new System.Drawing.Size(190, 23);
-            this.tableLayoutPanelSearchField.TabIndex = 2;
-            // 
-            // pictureBoxSearchField
-            // 
-            this.pictureBoxSearchField.BackColor = System.Drawing.Color.White;
-            this.pictureBoxSearchField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSearchField.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSearchField.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxSearchField.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxSearchField.Name = "pictureBoxSearchField";
-            this.pictureBoxSearchField.Size = new System.Drawing.Size(23, 23);
-            this.pictureBoxSearchField.TabIndex = 1;
-            this.pictureBoxSearchField.TabStop = false;
-            this.pictureBoxSearchField.Click += new System.EventHandler(this.PictureBoxClick);
-            // 
-            // textBoxColorSearchField
-            // 
-            this.textBoxColorSearchField.Location = new System.Drawing.Point(23, 0);
-            this.textBoxColorSearchField.Margin = new System.Windows.Forms.Padding(0);
-            this.textBoxColorSearchField.MaxLength = 12;
-            this.textBoxColorSearchField.Name = "textBoxColorSearchField";
-            this.textBoxColorSearchField.Size = new System.Drawing.Size(69, 23);
-            this.textBoxColorSearchField.TabIndex = 2;
-            this.textBoxColorSearchField.Text = "#ffffff";
-            this.textBoxColorSearchField.TextChanged += new System.EventHandler(this.TextBoxColorsChanged);
-            this.textBoxColorSearchField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyDown);
-            this.textBoxColorSearchField.KeyUp += new System.Windows.Forms.KeyEventHandler(this.StopPlayingDingSoundEnterKeyPressed_KeyUp);
-            // 
-            // labelSearchField
-            // 
-            this.labelSearchField.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelSearchField.AutoSize = true;
-            this.labelSearchField.Location = new System.Drawing.Point(95, 4);
-            this.labelSearchField.Name = "labelSearchField";
-            this.labelSearchField.Size = new System.Drawing.Size(92, 15);
-            this.labelSearchField.TabIndex = 0;
-            this.labelSearchField.Text = "labelSearchField";
-            // 
-            // groupBoxAppearance
-            // 
-            this.groupBoxAppearance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxAppearance.AutoSize = true;
-            this.groupBoxAppearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxAppearance.Controls.Add(this.tableLayoutPanelAppearance);
-            this.groupBoxAppearance.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxAppearance.Name = "groupBoxAppearance";
-            this.groupBoxAppearance.Size = new System.Drawing.Size(373, 353);
-            this.groupBoxAppearance.TabIndex = 1;
-            this.groupBoxAppearance.TabStop = false;
-            this.groupBoxAppearance.Text = "groupBoxAppearance";
-            // 
-            // tableLayoutPanelAppearance
-            // 
-            this.tableLayoutPanelAppearance.AutoSize = true;
-            this.tableLayoutPanelAppearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelAppearance.ColumnCount = 1;
-            this.tableLayoutPanelAppearance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeyPinMenu, 0, 8);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeySettings, 0, 9);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeyRestart, 0, 10);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowLinkOverlay, 0, 4);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxUseFading, 0, 3);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxUseIconFromRootFolder, 0, 0);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowSearchBar, 0, 6);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowDirectoryTitleAtTop, 0, 5);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxRoundCorners, 0, 1);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxDarkModeAlwaysOn, 0, 2);
-            this.tableLayoutPanelAppearance.Controls.Add(this.buttonAppearanceDefault, 0, 12);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowCountOfElementsBelow, 0, 11);
-            this.tableLayoutPanelAppearance.Controls.Add(this.checkBoxShowFunctionKeyOpenFolder, 0, 7);
-            this.tableLayoutPanelAppearance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelAppearance.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanelAppearance.Name = "tableLayoutPanelAppearance";
-            this.tableLayoutPanelAppearance.RowCount = 13;
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelAppearance.Size = new System.Drawing.Size(367, 331);
-            this.tableLayoutPanelAppearance.TabIndex = 1;
-            // 
-            // checkBoxShowFunctionKeyPinMenu
-            // 
-            this.checkBoxShowFunctionKeyPinMenu.AutoSize = true;
-            this.checkBoxShowFunctionKeyPinMenu.Location = new System.Drawing.Point(3, 203);
-            this.checkBoxShowFunctionKeyPinMenu.Name = "checkBoxShowFunctionKeyPinMenu";
-            this.checkBoxShowFunctionKeyPinMenu.Size = new System.Drawing.Size(220, 19);
-            this.checkBoxShowFunctionKeyPinMenu.TabIndex = 4;
-            this.checkBoxShowFunctionKeyPinMenu.Text = "checkBoxShowFunctionKeyPinMenu";
-            this.checkBoxShowFunctionKeyPinMenu.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShowFunctionKeySettings
-            // 
-            this.checkBoxShowFunctionKeySettings.AutoSize = true;
-            this.checkBoxShowFunctionKeySettings.Location = new System.Drawing.Point(3, 228);
-            this.checkBoxShowFunctionKeySettings.Name = "checkBoxShowFunctionKeySettings";
-            this.checkBoxShowFunctionKeySettings.Size = new System.Drawing.Size(214, 19);
-            this.checkBoxShowFunctionKeySettings.TabIndex = 5;
-            this.checkBoxShowFunctionKeySettings.Text = "checkBoxShowFunctionKeySettings";
-            this.checkBoxShowFunctionKeySettings.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShowFunctionKeyRestart
-            // 
-            this.checkBoxShowFunctionKeyRestart.AutoSize = true;
-            this.checkBoxShowFunctionKeyRestart.Location = new System.Drawing.Point(3, 253);
-            this.checkBoxShowFunctionKeyRestart.Name = "checkBoxShowFunctionKeyRestart";
-            this.checkBoxShowFunctionKeyRestart.Size = new System.Drawing.Size(208, 19);
-            this.checkBoxShowFunctionKeyRestart.TabIndex = 6;
-            this.checkBoxShowFunctionKeyRestart.Text = "checkBoxShowFunctionKeyRestart";
-            this.checkBoxShowFunctionKeyRestart.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShowLinkOverlay
-            // 
-            this.checkBoxShowLinkOverlay.AutoSize = true;
-            this.checkBoxShowLinkOverlay.Location = new System.Drawing.Point(3, 103);
-            this.checkBoxShowLinkOverlay.Name = "checkBoxShowLinkOverlay";
-            this.checkBoxShowLinkOverlay.Size = new System.Drawing.Size(168, 19);
-            this.checkBoxShowLinkOverlay.TabIndex = 5;
-            this.checkBoxShowLinkOverlay.Text = "checkBoxShowLinkOverlay";
-            this.checkBoxShowLinkOverlay.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxUseFading
-            // 
-            this.checkBoxUseFading.AutoSize = true;
-            this.checkBoxUseFading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxUseFading.Location = new System.Drawing.Point(3, 78);
-            this.checkBoxUseFading.Name = "checkBoxUseFading";
-            this.checkBoxUseFading.Size = new System.Drawing.Size(361, 19);
-            this.checkBoxUseFading.TabIndex = 5;
-            this.checkBoxUseFading.Text = "checkBoxUseFading";
-            this.checkBoxUseFading.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxUseIconFromRootFolder
-            // 
-            this.checkBoxUseIconFromRootFolder.AutoSize = true;
-            this.checkBoxUseIconFromRootFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(3, 3);
-            this.checkBoxUseIconFromRootFolder.Name = "checkBoxUseIconFromRootFolder";
-            this.checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(361, 19);
-            this.checkBoxUseIconFromRootFolder.TabIndex = 4;
-            this.checkBoxUseIconFromRootFolder.Text = "checkBoxUseIconFromRootFolder";
-            this.checkBoxUseIconFromRootFolder.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShowSearchBar
-            // 
-            this.checkBoxShowSearchBar.AutoSize = true;
-            this.checkBoxShowSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxShowSearchBar.Location = new System.Drawing.Point(3, 153);
-            this.checkBoxShowSearchBar.Name = "checkBoxShowSearchBar";
-            this.checkBoxShowSearchBar.Size = new System.Drawing.Size(361, 19);
-            this.checkBoxShowSearchBar.TabIndex = 2;
-            this.checkBoxShowSearchBar.Text = "checkBoxShowSearchBar";
-            this.checkBoxShowSearchBar.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShowDirectoryTitleAtTop
-            // 
-            this.checkBoxShowDirectoryTitleAtTop.AutoSize = true;
-            this.checkBoxShowDirectoryTitleAtTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxShowDirectoryTitleAtTop.Location = new System.Drawing.Point(3, 128);
-            this.checkBoxShowDirectoryTitleAtTop.Name = "checkBoxShowDirectoryTitleAtTop";
-            this.checkBoxShowDirectoryTitleAtTop.Size = new System.Drawing.Size(361, 19);
-            this.checkBoxShowDirectoryTitleAtTop.TabIndex = 1;
-            this.checkBoxShowDirectoryTitleAtTop.Text = "checkBoxShowDirectoryTitleAtTop";
-            this.checkBoxShowDirectoryTitleAtTop.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxRoundCorners
-            // 
-            this.checkBoxRoundCorners.AutoSize = true;
-            this.checkBoxRoundCorners.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxRoundCorners.Location = new System.Drawing.Point(3, 28);
-            this.checkBoxRoundCorners.Name = "checkBoxRoundCorners";
-            this.checkBoxRoundCorners.Size = new System.Drawing.Size(361, 19);
-            this.checkBoxRoundCorners.TabIndex = 4;
-            this.checkBoxRoundCorners.Text = "checkBoxRoundCorners";
-            this.checkBoxRoundCorners.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxDarkModeAlwaysOn
-            // 
-            this.checkBoxDarkModeAlwaysOn.AutoSize = true;
-            this.checkBoxDarkModeAlwaysOn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxDarkModeAlwaysOn.Location = new System.Drawing.Point(3, 53);
-            this.checkBoxDarkModeAlwaysOn.Name = "checkBoxDarkModeAlwaysOn";
-            this.checkBoxDarkModeAlwaysOn.Size = new System.Drawing.Size(361, 19);
-            this.checkBoxDarkModeAlwaysOn.TabIndex = 0;
-            this.checkBoxDarkModeAlwaysOn.Text = "checkBoxDarkModeAlwaysOn";
-            this.checkBoxDarkModeAlwaysOn.UseVisualStyleBackColor = true;
-            this.checkBoxDarkModeAlwaysOn.CheckedChanged += new System.EventHandler(this.CheckBoxDarkModeAlwaysOnCheckedChanged);
-            // 
-            // buttonAppearanceDefault
-            // 
-            this.buttonAppearanceDefault.AutoSize = true;
-            this.buttonAppearanceDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAppearanceDefault.Location = new System.Drawing.Point(3, 303);
-            this.buttonAppearanceDefault.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonAppearanceDefault.Name = "buttonAppearanceDefault";
-            this.buttonAppearanceDefault.Size = new System.Drawing.Size(154, 25);
-            this.buttonAppearanceDefault.TabIndex = 3;
-            this.buttonAppearanceDefault.Text = "buttonAppearanceDefault";
-            this.buttonAppearanceDefault.UseVisualStyleBackColor = true;
-            this.buttonAppearanceDefault.Click += new System.EventHandler(this.ButtonAppearanceDefault_Click);
-            // 
-            // checkBoxShowCountOfElementsBelow
-            // 
-            this.checkBoxShowCountOfElementsBelow.AutoSize = true;
-            this.checkBoxShowCountOfElementsBelow.Location = new System.Drawing.Point(3, 278);
-            this.checkBoxShowCountOfElementsBelow.Name = "checkBoxShowCountOfElementsBelow";
-            this.checkBoxShowCountOfElementsBelow.Size = new System.Drawing.Size(232, 19);
-            this.checkBoxShowCountOfElementsBelow.TabIndex = 4;
-            this.checkBoxShowCountOfElementsBelow.Text = "checkBoxShowCountOfElementsBelow";
-            this.checkBoxShowCountOfElementsBelow.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShowFunctionKeyOpenFolder
-            // 
-            this.checkBoxShowFunctionKeyOpenFolder.AutoSize = true;
-            this.checkBoxShowFunctionKeyOpenFolder.Location = new System.Drawing.Point(3, 178);
-            this.checkBoxShowFunctionKeyOpenFolder.Name = "checkBoxShowFunctionKeyOpenFolder";
-            this.checkBoxShowFunctionKeyOpenFolder.Size = new System.Drawing.Size(234, 19);
-            this.checkBoxShowFunctionKeyOpenFolder.TabIndex = 3;
-            this.checkBoxShowFunctionKeyOpenFolder.Text = "checkBoxShowFunctionKeyOpenFolder";
-            this.checkBoxShowFunctionKeyOpenFolder.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanelBottom
-            // 
-            this.tableLayoutPanelBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelBottom.AutoSize = true;
-            this.tableLayoutPanelBottom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelBottom.ColumnCount = 3;
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelBottom.Controls.Add(this.buttonOk, 1, 0);
-            this.tableLayoutPanelBottom.Controls.Add(this.buttonCancel, 2, 0);
-            this.tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 522);
-            this.tableLayoutPanelBottom.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
-            this.tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
-            this.tableLayoutPanelBottom.RowCount = 1;
-            this.tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelBottom.Size = new System.Drawing.Size(426, 25);
-            this.tableLayoutPanelBottom.TabIndex = 0;
-            // 
-            // buttonOk
-            // 
-            this.buttonOk.AutoSize = true;
-            this.buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(265, 0);
-            this.buttonOk.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.buttonOk.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 25);
-            this.buttonOk.TabIndex = 1;
-            this.buttonOk.Text = "OK";
-            this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.ButtonOk_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.AutoSize = true;
-            this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(346, 0);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
-            this.buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 25);
-            this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Abort";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            tableLayoutPanelSorting.AutoSize = true;
+            tableLayoutPanelSorting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSorting.ColumnCount = 1;
+            tableLayoutPanelSorting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSorting.Controls.Add(radioButtonSortByFileExtensionAndName, 0, 2);
+            tableLayoutPanelSorting.Controls.Add(radioButtonSortByTypeAndDate, 0, 1);
+            tableLayoutPanelSorting.Controls.Add(radioButtonSortByTypeAndName, 0, 0);
+            tableLayoutPanelSorting.Controls.Add(radioButtonSortByDate, 0, 4);
+            tableLayoutPanelSorting.Controls.Add(radioButtonSortByName, 0, 3);
+            tableLayoutPanelSorting.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelSorting.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelSorting.Name = "tableLayoutPanelSorting";
+            tableLayoutPanelSorting.RowCount = 5;
+            tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSorting.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSorting.Size = new System.Drawing.Size(283, 125);
+            tableLayoutPanelSorting.TabIndex = 1;
             // 
             // radioButtonSortByFileExtensionAndName
             // 
-            this.radioButtonSortByFileExtensionAndName.AutoSize = true;
-            this.radioButtonSortByFileExtensionAndName.Location = new System.Drawing.Point(3, 53);
-            this.radioButtonSortByFileExtensionAndName.Name = "radioButtonSortByFileExtensionAndName";
-            this.radioButtonSortByFileExtensionAndName.Size = new System.Drawing.Size(245, 19);
-            this.radioButtonSortByFileExtensionAndName.TabIndex = 5;
-            this.radioButtonSortByFileExtensionAndName.TabStop = true;
-            this.radioButtonSortByFileExtensionAndName.Text = "radioButtonSortByFileExtensionAndName";
-            this.radioButtonSortByFileExtensionAndName.UseVisualStyleBackColor = true;
+            radioButtonSortByFileExtensionAndName.AutoSize = true;
+            radioButtonSortByFileExtensionAndName.Location = new System.Drawing.Point(3, 53);
+            radioButtonSortByFileExtensionAndName.Name = "radioButtonSortByFileExtensionAndName";
+            radioButtonSortByFileExtensionAndName.Size = new System.Drawing.Size(245, 19);
+            radioButtonSortByFileExtensionAndName.TabIndex = 5;
+            radioButtonSortByFileExtensionAndName.TabStop = true;
+            radioButtonSortByFileExtensionAndName.Text = "radioButtonSortByFileExtensionAndName";
+            radioButtonSortByFileExtensionAndName.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSortByTypeAndDate
+            // 
+            radioButtonSortByTypeAndDate.AutoSize = true;
+            radioButtonSortByTypeAndDate.Location = new System.Drawing.Point(3, 28);
+            radioButtonSortByTypeAndDate.Name = "radioButtonSortByTypeAndDate";
+            radioButtonSortByTypeAndDate.Size = new System.Drawing.Size(192, 19);
+            radioButtonSortByTypeAndDate.TabIndex = 3;
+            radioButtonSortByTypeAndDate.TabStop = true;
+            radioButtonSortByTypeAndDate.Text = "radioButtonSortByTypeAndDate";
+            radioButtonSortByTypeAndDate.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSortByTypeAndName
+            // 
+            radioButtonSortByTypeAndName.AutoSize = true;
+            radioButtonSortByTypeAndName.Location = new System.Drawing.Point(3, 3);
+            radioButtonSortByTypeAndName.Name = "radioButtonSortByTypeAndName";
+            radioButtonSortByTypeAndName.Size = new System.Drawing.Size(200, 19);
+            radioButtonSortByTypeAndName.TabIndex = 4;
+            radioButtonSortByTypeAndName.TabStop = true;
+            radioButtonSortByTypeAndName.Text = "radioButtonSortByTypeAndName";
+            radioButtonSortByTypeAndName.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSortByDate
+            // 
+            radioButtonSortByDate.AutoSize = true;
+            radioButtonSortByDate.Location = new System.Drawing.Point(3, 103);
+            radioButtonSortByDate.Name = "radioButtonSortByDate";
+            radioButtonSortByDate.Size = new System.Drawing.Size(146, 19);
+            radioButtonSortByDate.TabIndex = 1;
+            radioButtonSortByDate.TabStop = true;
+            radioButtonSortByDate.Text = "radioButtonSortByDate";
+            radioButtonSortByDate.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSortByName
+            // 
+            radioButtonSortByName.AutoSize = true;
+            radioButtonSortByName.Location = new System.Drawing.Point(3, 78);
+            radioButtonSortByName.Name = "radioButtonSortByName";
+            radioButtonSortByName.Size = new System.Drawing.Size(154, 19);
+            radioButtonSortByName.TabIndex = 2;
+            radioButtonSortByName.TabStop = true;
+            radioButtonSortByName.Text = "radioButtonSortByName";
+            radioButtonSortByName.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxHiddenFilesAndFolders
+            // 
+            groupBoxHiddenFilesAndFolders.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxHiddenFilesAndFolders.AutoSize = true;
+            groupBoxHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxHiddenFilesAndFolders.Controls.Add(tableLayoutPanelHiddenFilesAndFolders);
+            groupBoxHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 527);
+            groupBoxHiddenFilesAndFolders.Name = "groupBoxHiddenFilesAndFolders";
+            groupBoxHiddenFilesAndFolders.Size = new System.Drawing.Size(289, 97);
+            groupBoxHiddenFilesAndFolders.TabIndex = 2;
+            groupBoxHiddenFilesAndFolders.TabStop = false;
+            groupBoxHiddenFilesAndFolders.Text = "groupBoxHiddenFilesAndFolders";
+            // 
+            // tableLayoutPanelHiddenFilesAndFolders
+            // 
+            tableLayoutPanelHiddenFilesAndFolders.AutoSize = true;
+            tableLayoutPanelHiddenFilesAndFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelHiddenFilesAndFolders.ColumnCount = 1;
+            tableLayoutPanelHiddenFilesAndFolders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelHiddenFilesAndFolders.Controls.Add(radioButtonAlwaysShowHiddenFiles, 0, 2);
+            tableLayoutPanelHiddenFilesAndFolders.Controls.Add(radioButtonNeverShowHiddenFiles, 0, 1);
+            tableLayoutPanelHiddenFilesAndFolders.Controls.Add(radioButtonSystemSettingsShowHiddenFiles, 0, 0);
+            tableLayoutPanelHiddenFilesAndFolders.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelHiddenFilesAndFolders.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelHiddenFilesAndFolders.Name = "tableLayoutPanelHiddenFilesAndFolders";
+            tableLayoutPanelHiddenFilesAndFolders.RowCount = 3;
+            tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelHiddenFilesAndFolders.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelHiddenFilesAndFolders.Size = new System.Drawing.Size(283, 75);
+            tableLayoutPanelHiddenFilesAndFolders.TabIndex = 1;
+            // 
+            // radioButtonAlwaysShowHiddenFiles
+            // 
+            radioButtonAlwaysShowHiddenFiles.AutoSize = true;
+            radioButtonAlwaysShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            radioButtonAlwaysShowHiddenFiles.Location = new System.Drawing.Point(3, 53);
+            radioButtonAlwaysShowHiddenFiles.Name = "radioButtonAlwaysShowHiddenFiles";
+            radioButtonAlwaysShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
+            radioButtonAlwaysShowHiddenFiles.TabIndex = 2;
+            radioButtonAlwaysShowHiddenFiles.TabStop = true;
+            radioButtonAlwaysShowHiddenFiles.Text = "radioButtonAlwaysShowHiddenFiles";
+            radioButtonAlwaysShowHiddenFiles.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNeverShowHiddenFiles
+            // 
+            radioButtonNeverShowHiddenFiles.AutoSize = true;
+            radioButtonNeverShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            radioButtonNeverShowHiddenFiles.Location = new System.Drawing.Point(3, 28);
+            radioButtonNeverShowHiddenFiles.Name = "radioButtonNeverShowHiddenFiles";
+            radioButtonNeverShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
+            radioButtonNeverShowHiddenFiles.TabIndex = 1;
+            radioButtonNeverShowHiddenFiles.TabStop = true;
+            radioButtonNeverShowHiddenFiles.Text = "radioButtonNeverShowHiddenFiles";
+            radioButtonNeverShowHiddenFiles.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSystemSettingsShowHiddenFiles
+            // 
+            radioButtonSystemSettingsShowHiddenFiles.AutoSize = true;
+            radioButtonSystemSettingsShowHiddenFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            radioButtonSystemSettingsShowHiddenFiles.Location = new System.Drawing.Point(3, 3);
+            radioButtonSystemSettingsShowHiddenFiles.Name = "radioButtonSystemSettingsShowHiddenFiles";
+            radioButtonSystemSettingsShowHiddenFiles.Size = new System.Drawing.Size(277, 19);
+            radioButtonSystemSettingsShowHiddenFiles.TabIndex = 2;
+            radioButtonSystemSettingsShowHiddenFiles.TabStop = true;
+            radioButtonSystemSettingsShowHiddenFiles.Text = "radioButtonSystemSettingsShowHiddenFiles";
+            radioButtonSystemSettingsShowHiddenFiles.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxClick
+            // 
+            groupBoxClick.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxClick.AutoSize = true;
+            groupBoxClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxClick.Controls.Add(tableLayoutPanelClick);
+            groupBoxClick.Location = new System.Drawing.Point(3, 131);
+            groupBoxClick.Name = "groupBoxClick";
+            groupBoxClick.Size = new System.Drawing.Size(289, 72);
+            groupBoxClick.TabIndex = 0;
+            groupBoxClick.TabStop = false;
+            groupBoxClick.Text = "groupBoxClick";
+            // 
+            // tableLayoutPanelClick
+            // 
+            tableLayoutPanelClick.AutoSize = true;
+            tableLayoutPanelClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelClick.ColumnCount = 1;
+            tableLayoutPanelClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelClick.Controls.Add(checkBoxOpenDirectoryWithOneClick, 0, 1);
+            tableLayoutPanelClick.Controls.Add(checkBoxOpenItemWithOneClick, 0, 0);
+            tableLayoutPanelClick.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelClick.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelClick.Name = "tableLayoutPanelClick";
+            tableLayoutPanelClick.RowCount = 2;
+            tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanelClick.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanelClick.Size = new System.Drawing.Size(283, 50);
+            tableLayoutPanelClick.TabIndex = 0;
+            // 
+            // checkBoxOpenDirectoryWithOneClick
+            // 
+            checkBoxOpenDirectoryWithOneClick.AutoSize = true;
+            checkBoxOpenDirectoryWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxOpenDirectoryWithOneClick.Location = new System.Drawing.Point(3, 28);
+            checkBoxOpenDirectoryWithOneClick.Name = "checkBoxOpenDirectoryWithOneClick";
+            checkBoxOpenDirectoryWithOneClick.Size = new System.Drawing.Size(277, 19);
+            checkBoxOpenDirectoryWithOneClick.TabIndex = 2;
+            checkBoxOpenDirectoryWithOneClick.Text = "checkBoxOpenDirectoryWithOneClick";
+            checkBoxOpenDirectoryWithOneClick.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxOpenItemWithOneClick
+            // 
+            checkBoxOpenItemWithOneClick.AutoSize = true;
+            checkBoxOpenItemWithOneClick.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxOpenItemWithOneClick.Location = new System.Drawing.Point(3, 3);
+            checkBoxOpenItemWithOneClick.Name = "checkBoxOpenItemWithOneClick";
+            checkBoxOpenItemWithOneClick.Size = new System.Drawing.Size(277, 19);
+            checkBoxOpenItemWithOneClick.TabIndex = 0;
+            checkBoxOpenItemWithOneClick.Text = "checkBoxOpenItemWithOneClick";
+            checkBoxOpenItemWithOneClick.UseVisualStyleBackColor = true;
+            // 
+            // tabPageFolders
+            // 
+            tabPageFolders.Controls.Add(tableLayoutPanelFoldersInRootFolder);
+            tabPageFolders.Location = new System.Drawing.Point(4, 24);
+            tabPageFolders.Name = "tabPageFolders";
+            tabPageFolders.Padding = new System.Windows.Forms.Padding(3);
+            tabPageFolders.Size = new System.Drawing.Size(412, 485);
+            tabPageFolders.TabIndex = 2;
+            tabPageFolders.Text = "tabPageFolders";
+            tabPageFolders.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelFoldersInRootFolder
+            // 
+            tableLayoutPanelFoldersInRootFolder.AutoSize = true;
+            tableLayoutPanelFoldersInRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelFoldersInRootFolder.ColumnCount = 1;
+            tableLayoutPanelFoldersInRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelFoldersInRootFolder.Controls.Add(groupBoxFoldersInRootFolder, 0, 0);
+            tableLayoutPanelFoldersInRootFolder.Controls.Add(buttonDefaultFolders, 0, 1);
+            tableLayoutPanelFoldersInRootFolder.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanelFoldersInRootFolder.Name = "tableLayoutPanelFoldersInRootFolder";
+            tableLayoutPanelFoldersInRootFolder.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            tableLayoutPanelFoldersInRootFolder.RowCount = 2;
+            tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFoldersInRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanelFoldersInRootFolder.Size = new System.Drawing.Size(345, 415);
+            tableLayoutPanelFoldersInRootFolder.TabIndex = 1;
+            // 
+            // groupBoxFoldersInRootFolder
+            // 
+            groupBoxFoldersInRootFolder.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxFoldersInRootFolder.AutoSize = true;
+            groupBoxFoldersInRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxFoldersInRootFolder.Controls.Add(tableLayoutPanelFolderToRootFoldersList);
+            groupBoxFoldersInRootFolder.Location = new System.Drawing.Point(3, 3);
+            groupBoxFoldersInRootFolder.Name = "groupBoxFoldersInRootFolder";
+            groupBoxFoldersInRootFolder.Size = new System.Drawing.Size(333, 366);
+            groupBoxFoldersInRootFolder.TabIndex = 0;
+            groupBoxFoldersInRootFolder.TabStop = false;
+            groupBoxFoldersInRootFolder.Text = "groupBoxFoldersInRootFolder";
+            // 
+            // tableLayoutPanelFolderToRootFoldersList
+            // 
+            tableLayoutPanelFolderToRootFoldersList.AutoSize = true;
+            tableLayoutPanelFolderToRootFoldersList.ColumnCount = 1;
+            tableLayoutPanelFolderToRootFoldersList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelFolderToRootFoldersList.Controls.Add(tableLayoutPanelFolderToRootFolder, 0, 2);
+            tableLayoutPanelFolderToRootFoldersList.Controls.Add(dataGridViewFolders, 0, 3);
+            tableLayoutPanelFolderToRootFoldersList.Controls.Add(tableLayoutPanelAddSampleStartMenuFolder, 0, 4);
+            tableLayoutPanelFolderToRootFoldersList.Controls.Add(checkBoxGenerateShortcutsToDrives, 0, 5);
+            tableLayoutPanelFolderToRootFoldersList.Controls.Add(checkBoxShowOnlyAsSearchResult, 0, 0);
+            tableLayoutPanelFolderToRootFoldersList.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelFolderToRootFoldersList.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelFolderToRootFoldersList.Name = "tableLayoutPanelFolderToRootFoldersList";
+            tableLayoutPanelFolderToRootFoldersList.RowCount = 6;
+            tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolderToRootFoldersList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelFolderToRootFoldersList.Size = new System.Drawing.Size(327, 344);
+            tableLayoutPanelFolderToRootFoldersList.TabIndex = 0;
+            // 
+            // tableLayoutPanelFolderToRootFolder
+            // 
+            tableLayoutPanelFolderToRootFolder.AutoSize = true;
+            tableLayoutPanelFolderToRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelFolderToRootFolder.ColumnCount = 3;
+            tableLayoutPanelFolderToRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelFolderToRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelFolderToRootFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelFolderToRootFolder.Controls.Add(buttonAddFolderToRootFolder, 0, 0);
+            tableLayoutPanelFolderToRootFolder.Controls.Add(buttonRemoveFolder, 2, 0);
+            tableLayoutPanelFolderToRootFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelFolderToRootFolder.Location = new System.Drawing.Point(0, 25);
+            tableLayoutPanelFolderToRootFolder.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelFolderToRootFolder.Name = "tableLayoutPanelFolderToRootFolder";
+            tableLayoutPanelFolderToRootFolder.RowCount = 1;
+            tableLayoutPanelFolderToRootFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelFolderToRootFolder.Size = new System.Drawing.Size(327, 31);
+            tableLayoutPanelFolderToRootFolder.TabIndex = 2;
+            // 
+            // buttonAddFolderToRootFolder
+            // 
+            buttonAddFolderToRootFolder.AutoSize = true;
+            buttonAddFolderToRootFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonAddFolderToRootFolder.Location = new System.Drawing.Point(2, 3);
+            buttonAddFolderToRootFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            buttonAddFolderToRootFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonAddFolderToRootFolder.Name = "buttonAddFolderToRootFolder";
+            buttonAddFolderToRootFolder.Size = new System.Drawing.Size(178, 25);
+            buttonAddFolderToRootFolder.TabIndex = 0;
+            buttonAddFolderToRootFolder.Text = "buttonAddFolderToRootFolder";
+            buttonAddFolderToRootFolder.UseVisualStyleBackColor = true;
+            buttonAddFolderToRootFolder.Click += ButtonAddFolderToRootFolder_Click;
+            // 
+            // buttonRemoveFolder
+            // 
+            buttonRemoveFolder.AutoSize = true;
+            buttonRemoveFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonRemoveFolder.Location = new System.Drawing.Point(195, 3);
+            buttonRemoveFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonRemoveFolder.Name = "buttonRemoveFolder";
+            buttonRemoveFolder.Size = new System.Drawing.Size(129, 25);
+            buttonRemoveFolder.TabIndex = 1;
+            buttonRemoveFolder.Text = "buttonRemoveFolder";
+            buttonRemoveFolder.UseVisualStyleBackColor = true;
+            buttonRemoveFolder.Click += ButtonRemoveFolder_Click;
+            // 
+            // dataGridViewFolders
+            // 
+            dataGridViewFolders.AllowUserToAddRows = false;
+            dataGridViewFolders.AllowUserToDeleteRows = false;
+            dataGridViewFolders.AllowUserToResizeColumns = false;
+            dataGridViewFolders.AllowUserToResizeRows = false;
+            dataGridViewFolders.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewFolders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewFolders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { ColumnFolder, ColumnRecursiveLevel, ColumnOnlyFiles });
+            dataGridViewFolders.Location = new System.Drawing.Point(3, 59);
+            dataGridViewFolders.Name = "dataGridViewFolders";
+            dataGridViewFolders.RowHeadersVisible = false;
+            dataGridViewFolders.RowTemplate.Height = 25;
+            dataGridViewFolders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewFolders.Size = new System.Drawing.Size(321, 226);
+            dataGridViewFolders.TabIndex = 6;
+            dataGridViewFolders.TabStop = false;
+            dataGridViewFolders.CellValidating += DataGridViewFolders_CellValidating;
+            dataGridViewFolders.CurrentCellDirtyStateChanged += DataGridViewFolders_CurrentCellDirtyStateChanged;
+            dataGridViewFolders.RowsAdded += DataGridViewFolders_RowsAdded;
+            dataGridViewFolders.RowsRemoved += DataGridViewFolders_RowsRemoved;
+            dataGridViewFolders.SelectionChanged += DataGridViewFolders_SelectionChanged;
+            dataGridViewFolders.MouseClick += DataGridViewFolders_MouseClick;
+            // 
+            // ColumnFolder
+            // 
+            ColumnFolder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            ColumnFolder.HeaderText = "ColumnFolder";
+            ColumnFolder.Name = "ColumnFolder";
+            // 
+            // ColumnRecursiveLevel
+            // 
+            ColumnRecursiveLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            ColumnRecursiveLevel.HeaderText = "ColumnRecursiveLevel";
+            ColumnRecursiveLevel.Name = "ColumnRecursiveLevel";
+            ColumnRecursiveLevel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            ColumnRecursiveLevel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            ColumnRecursiveLevel.Width = 152;
+            // 
+            // ColumnOnlyFiles
+            // 
+            ColumnOnlyFiles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            ColumnOnlyFiles.HeaderText = "ColumnOnlyFiles";
+            ColumnOnlyFiles.Name = "ColumnOnlyFiles";
+            ColumnOnlyFiles.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            ColumnOnlyFiles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            ColumnOnlyFiles.Width = 123;
+            // 
+            // tableLayoutPanelAddSampleStartMenuFolder
+            // 
+            tableLayoutPanelAddSampleStartMenuFolder.AutoSize = true;
+            tableLayoutPanelAddSampleStartMenuFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelAddSampleStartMenuFolder.ColumnCount = 2;
+            tableLayoutPanelAddSampleStartMenuFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelAddSampleStartMenuFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelAddSampleStartMenuFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanelAddSampleStartMenuFolder.Controls.Add(buttonAddSampleStartMenuFolder, 0, 0);
+            tableLayoutPanelAddSampleStartMenuFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelAddSampleStartMenuFolder.Location = new System.Drawing.Point(0, 288);
+            tableLayoutPanelAddSampleStartMenuFolder.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelAddSampleStartMenuFolder.Name = "tableLayoutPanelAddSampleStartMenuFolder";
+            tableLayoutPanelAddSampleStartMenuFolder.RowCount = 1;
+            tableLayoutPanelAddSampleStartMenuFolder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelAddSampleStartMenuFolder.Size = new System.Drawing.Size(327, 31);
+            tableLayoutPanelAddSampleStartMenuFolder.TabIndex = 3;
+            // 
+            // buttonAddSampleStartMenuFolder
+            // 
+            buttonAddSampleStartMenuFolder.AutoSize = true;
+            buttonAddSampleStartMenuFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonAddSampleStartMenuFolder.Location = new System.Drawing.Point(2, 3);
+            buttonAddSampleStartMenuFolder.Margin = new System.Windows.Forms.Padding(2, 3, 3, 3);
+            buttonAddSampleStartMenuFolder.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonAddSampleStartMenuFolder.Name = "buttonAddSampleStartMenuFolder";
+            buttonAddSampleStartMenuFolder.Size = new System.Drawing.Size(202, 25);
+            buttonAddSampleStartMenuFolder.TabIndex = 2;
+            buttonAddSampleStartMenuFolder.Text = "buttonAddSampleStartMenuFolder";
+            buttonAddSampleStartMenuFolder.UseVisualStyleBackColor = true;
+            buttonAddSampleStartMenuFolder.Click += ButtonAddSampleStartMenuFolder_Click;
+            // 
+            // checkBoxGenerateShortcutsToDrives
+            // 
+            checkBoxGenerateShortcutsToDrives.AutoSize = true;
+            checkBoxGenerateShortcutsToDrives.Location = new System.Drawing.Point(3, 322);
+            checkBoxGenerateShortcutsToDrives.Name = "checkBoxGenerateShortcutsToDrives";
+            checkBoxGenerateShortcutsToDrives.Size = new System.Drawing.Size(218, 19);
+            checkBoxGenerateShortcutsToDrives.TabIndex = 7;
+            checkBoxGenerateShortcutsToDrives.Text = "checkBoxGenerateShortcutsToDrives";
+            checkBoxGenerateShortcutsToDrives.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowOnlyAsSearchResult
+            // 
+            checkBoxShowOnlyAsSearchResult.AutoSize = true;
+            checkBoxShowOnlyAsSearchResult.Location = new System.Drawing.Point(3, 3);
+            checkBoxShowOnlyAsSearchResult.Name = "checkBoxShowOnlyAsSearchResult";
+            checkBoxShowOnlyAsSearchResult.Size = new System.Drawing.Size(211, 19);
+            checkBoxShowOnlyAsSearchResult.TabIndex = 8;
+            checkBoxShowOnlyAsSearchResult.Text = "checkBoxShowOnlyAsSearchResult";
+            checkBoxShowOnlyAsSearchResult.UseVisualStyleBackColor = true;
+            // 
+            // buttonDefaultFolders
+            // 
+            buttonDefaultFolders.AutoSize = true;
+            buttonDefaultFolders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonDefaultFolders.Location = new System.Drawing.Point(9, 381);
+            buttonDefaultFolders.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
+            buttonDefaultFolders.MinimumSize = new System.Drawing.Size(75, 25);
+            buttonDefaultFolders.Name = "buttonDefaultFolders";
+            buttonDefaultFolders.Size = new System.Drawing.Size(129, 25);
+            buttonDefaultFolders.TabIndex = 6;
+            buttonDefaultFolders.Text = "buttonDefaultFolders";
+            buttonDefaultFolders.UseVisualStyleBackColor = true;
+            buttonDefaultFolders.Click += ButtonClearFolders_Click;
+            // 
+            // tabPageExpert
+            // 
+            tabPageExpert.Controls.Add(tableLayoutPanelExpert);
+            tabPageExpert.Location = new System.Drawing.Point(4, 24);
+            tabPageExpert.Name = "tabPageExpert";
+            tabPageExpert.Padding = new System.Windows.Forms.Padding(3);
+            tabPageExpert.Size = new System.Drawing.Size(412, 485);
+            tabPageExpert.TabIndex = 1;
+            tabPageExpert.Text = "tabPageExpert";
+            tabPageExpert.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelExpert
+            // 
+            tableLayoutPanelExpert.AutoSize = true;
+            tableLayoutPanelExpert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelExpert.ColumnCount = 1;
+            tableLayoutPanelExpert.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelExpert.Controls.Add(groupBoxSearchPattern, 0, 3);
+            tableLayoutPanelExpert.Controls.Add(groupBoxCache, 0, 2);
+            tableLayoutPanelExpert.Controls.Add(groupBoxStaysOpen, 0, 1);
+            tableLayoutPanelExpert.Controls.Add(groupBoxOpenSubmenus, 0, 0);
+            tableLayoutPanelExpert.Controls.Add(buttonExpertDefault, 0, 4);
+            tableLayoutPanelExpert.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanelExpert.Name = "tableLayoutPanelExpert";
+            tableLayoutPanelExpert.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            tableLayoutPanelExpert.RowCount = 5;
+            tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelExpert.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelExpert.Size = new System.Drawing.Size(345, 387);
+            tableLayoutPanelExpert.TabIndex = 1;
+            // 
+            // groupBoxSearchPattern
+            // 
+            groupBoxSearchPattern.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxSearchPattern.AutoSize = true;
+            groupBoxSearchPattern.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxSearchPattern.Controls.Add(tableLayoutPanelSearchPattern);
+            groupBoxSearchPattern.Location = new System.Drawing.Point(3, 287);
+            groupBoxSearchPattern.Name = "groupBoxSearchPattern";
+            groupBoxSearchPattern.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            groupBoxSearchPattern.Size = new System.Drawing.Size(333, 54);
+            groupBoxSearchPattern.TabIndex = 2;
+            groupBoxSearchPattern.TabStop = false;
+            groupBoxSearchPattern.Text = "groupBoxSearchPattern";
+            // 
+            // tableLayoutPanelSearchPattern
+            // 
+            tableLayoutPanelSearchPattern.AutoSize = true;
+            tableLayoutPanelSearchPattern.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSearchPattern.ColumnCount = 1;
+            tableLayoutPanelSearchPattern.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSearchPattern.Controls.Add(textBoxSearchPattern, 0, 0);
+            tableLayoutPanelSearchPattern.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelSearchPattern.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelSearchPattern.Name = "tableLayoutPanelSearchPattern";
+            tableLayoutPanelSearchPattern.RowCount = 1;
+            tableLayoutPanelSearchPattern.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSearchPattern.Size = new System.Drawing.Size(327, 29);
+            tableLayoutPanelSearchPattern.TabIndex = 0;
+            // 
+            // textBoxSearchPattern
+            // 
+            textBoxSearchPattern.Location = new System.Drawing.Point(3, 3);
+            textBoxSearchPattern.Name = "textBoxSearchPattern";
+            textBoxSearchPattern.Size = new System.Drawing.Size(311, 23);
+            textBoxSearchPattern.TabIndex = 1;
+            textBoxSearchPattern.TabStop = false;
+            // 
+            // groupBoxCache
+            // 
+            groupBoxCache.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxCache.AutoSize = true;
+            groupBoxCache.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxCache.Controls.Add(tableLayoutPanelCache);
+            groupBoxCache.Location = new System.Drawing.Point(3, 227);
+            groupBoxCache.Name = "groupBoxCache";
+            groupBoxCache.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            groupBoxCache.Size = new System.Drawing.Size(333, 54);
+            groupBoxCache.TabIndex = 1;
+            groupBoxCache.TabStop = false;
+            groupBoxCache.Text = "groupBoxCache";
+            // 
+            // tableLayoutPanelCache
+            // 
+            tableLayoutPanelCache.AutoSize = true;
+            tableLayoutPanelCache.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelCache.ColumnCount = 1;
+            tableLayoutPanelCache.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelCache.Controls.Add(tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems, 0, 0);
+            tableLayoutPanelCache.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelCache.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelCache.Name = "tableLayoutPanelCache";
+            tableLayoutPanelCache.RowCount = 1;
+            tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelCache.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            tableLayoutPanelCache.Size = new System.Drawing.Size(327, 29);
+            tableLayoutPanelCache.TabIndex = 0;
+            // 
+            // tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems
+            // 
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.AutoSize = true;
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ColumnCount = 2;
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Controls.Add(labelClearCacheIfMoreThanThisNumberOfItems, 1, 0);
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Controls.Add(numericUpDownClearCacheIfMoreThanThisNumberOfItems, 0, 0);
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Name = "tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems";
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.RowCount = 1;
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.Size = new System.Drawing.Size(327, 29);
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.TabIndex = 3;
+            // 
+            // labelClearCacheIfMoreThanThisNumberOfItems
+            // 
+            labelClearCacheIfMoreThanThisNumberOfItems.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelClearCacheIfMoreThanThisNumberOfItems.AutoSize = true;
+            labelClearCacheIfMoreThanThisNumberOfItems.Location = new System.Drawing.Point(64, 7);
+            labelClearCacheIfMoreThanThisNumberOfItems.MaximumSize = new System.Drawing.Size(330, 0);
+            labelClearCacheIfMoreThanThisNumberOfItems.Name = "labelClearCacheIfMoreThanThisNumberOfItems";
+            labelClearCacheIfMoreThanThisNumberOfItems.Size = new System.Drawing.Size(260, 15);
+            labelClearCacheIfMoreThanThisNumberOfItems.TabIndex = 0;
+            labelClearCacheIfMoreThanThisNumberOfItems.Text = "labelClearCacheIfMoreThanThisNumberOfItems";
+            // 
+            // numericUpDownClearCacheIfMoreThanThisNumberOfItems
+            // 
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Location = new System.Drawing.Point(3, 3);
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Minimum = new decimal(new int[] { 200, 0, 0, 0 });
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Name = "numericUpDownClearCacheIfMoreThanThisNumberOfItems";
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Size = new System.Drawing.Size(55, 23);
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.TabIndex = 5;
+            numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = new decimal(new int[] { 1000, 0, 0, 0 });
+            // 
+            // groupBoxStaysOpen
+            // 
+            groupBoxStaysOpen.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxStaysOpen.AutoSize = true;
+            groupBoxStaysOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxStaysOpen.Controls.Add(tableLayoutPanelStaysOpen);
+            groupBoxStaysOpen.Location = new System.Drawing.Point(3, 63);
+            groupBoxStaysOpen.Name = "groupBoxStaysOpen";
+            groupBoxStaysOpen.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            groupBoxStaysOpen.Size = new System.Drawing.Size(333, 158);
+            groupBoxStaysOpen.TabIndex = 0;
+            groupBoxStaysOpen.TabStop = false;
+            groupBoxStaysOpen.Text = "groupBoxStaysOpen";
+            // 
+            // tableLayoutPanelStaysOpen
+            // 
+            tableLayoutPanelStaysOpen.AutoSize = true;
+            tableLayoutPanelStaysOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelStaysOpen.ColumnCount = 1;
+            tableLayoutPanelStaysOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelStaysOpen.Controls.Add(tableLayoutPanelTimeUntilClosesAfterEnterPressed, 0, 4);
+            tableLayoutPanelStaysOpen.Controls.Add(checkBoxStayOpenWhenItemClicked, 0, 0);
+            tableLayoutPanelStaysOpen.Controls.Add(checkBoxStayOpenWhenFocusLost, 0, 1);
+            tableLayoutPanelStaysOpen.Controls.Add(tableLayoutPanelTimeUntilCloses, 0, 2);
+            tableLayoutPanelStaysOpen.Controls.Add(checkBoxStayOpenWhenFocusLostAfterEnterPressed, 0, 3);
+            tableLayoutPanelStaysOpen.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelStaysOpen.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelStaysOpen.Name = "tableLayoutPanelStaysOpen";
+            tableLayoutPanelStaysOpen.RowCount = 5;
+            tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelStaysOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelStaysOpen.Size = new System.Drawing.Size(327, 133);
+            tableLayoutPanelStaysOpen.TabIndex = 0;
+            // 
+            // tableLayoutPanelTimeUntilClosesAfterEnterPressed
+            // 
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.AutoSize = true;
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.ColumnCount = 2;
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.Controls.Add(labelTimeUntilClosesAfterEnterPressed, 1, 0);
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.Controls.Add(numericUpDownTimeUntilClosesAfterEnterPressed, 0, 0);
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.Location = new System.Drawing.Point(0, 104);
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.Name = "tableLayoutPanelTimeUntilClosesAfterEnterPressed";
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.RowCount = 1;
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(327, 29);
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.TabIndex = 2;
+            // 
+            // labelTimeUntilClosesAfterEnterPressed
+            // 
+            labelTimeUntilClosesAfterEnterPressed.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelTimeUntilClosesAfterEnterPressed.AutoSize = true;
+            labelTimeUntilClosesAfterEnterPressed.Location = new System.Drawing.Point(64, 7);
+            labelTimeUntilClosesAfterEnterPressed.MaximumSize = new System.Drawing.Size(300, 0);
+            labelTimeUntilClosesAfterEnterPressed.Name = "labelTimeUntilClosesAfterEnterPressed";
+            labelTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(210, 15);
+            labelTimeUntilClosesAfterEnterPressed.TabIndex = 0;
+            labelTimeUntilClosesAfterEnterPressed.Text = "labelTimeUntilClosesAfterEnterPressed";
+            // 
+            // numericUpDownTimeUntilClosesAfterEnterPressed
+            // 
+            numericUpDownTimeUntilClosesAfterEnterPressed.Location = new System.Drawing.Point(3, 3);
+            numericUpDownTimeUntilClosesAfterEnterPressed.Name = "numericUpDownTimeUntilClosesAfterEnterPressed";
+            numericUpDownTimeUntilClosesAfterEnterPressed.Size = new System.Drawing.Size(55, 23);
+            numericUpDownTimeUntilClosesAfterEnterPressed.TabIndex = 1;
+            // 
+            // checkBoxStayOpenWhenItemClicked
+            // 
+            checkBoxStayOpenWhenItemClicked.AutoSize = true;
+            checkBoxStayOpenWhenItemClicked.Checked = true;
+            checkBoxStayOpenWhenItemClicked.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkBoxStayOpenWhenItemClicked.Location = new System.Drawing.Point(3, 3);
+            checkBoxStayOpenWhenItemClicked.Name = "checkBoxStayOpenWhenItemClicked";
+            checkBoxStayOpenWhenItemClicked.Size = new System.Drawing.Size(222, 19);
+            checkBoxStayOpenWhenItemClicked.TabIndex = 0;
+            checkBoxStayOpenWhenItemClicked.Text = "checkBoxStayOpenWhenItemClicked";
+            checkBoxStayOpenWhenItemClicked.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxStayOpenWhenFocusLost
+            // 
+            checkBoxStayOpenWhenFocusLost.AutoSize = true;
+            checkBoxStayOpenWhenFocusLost.Checked = true;
+            checkBoxStayOpenWhenFocusLost.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkBoxStayOpenWhenFocusLost.Location = new System.Drawing.Point(3, 28);
+            checkBoxStayOpenWhenFocusLost.Name = "checkBoxStayOpenWhenFocusLost";
+            checkBoxStayOpenWhenFocusLost.Size = new System.Drawing.Size(212, 19);
+            checkBoxStayOpenWhenFocusLost.TabIndex = 0;
+            checkBoxStayOpenWhenFocusLost.Text = "checkBoxStayOpenWhenFocusLost";
+            checkBoxStayOpenWhenFocusLost.UseVisualStyleBackColor = true;
+            checkBoxStayOpenWhenFocusLost.CheckedChanged += CheckBoxStayOpenWhenFocusLost_CheckedChanged;
+            // 
+            // tableLayoutPanelTimeUntilCloses
+            // 
+            tableLayoutPanelTimeUntilCloses.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelTimeUntilCloses.AutoSize = true;
+            tableLayoutPanelTimeUntilCloses.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelTimeUntilCloses.ColumnCount = 2;
+            tableLayoutPanelTimeUntilCloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelTimeUntilCloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelTimeUntilCloses.Controls.Add(labelTimeUntilCloses, 1, 0);
+            tableLayoutPanelTimeUntilCloses.Controls.Add(numericUpDownTimeUntilClose, 0, 0);
+            tableLayoutPanelTimeUntilCloses.Location = new System.Drawing.Point(0, 50);
+            tableLayoutPanelTimeUntilCloses.Margin = new System.Windows.Forms.Padding(0);
+            tableLayoutPanelTimeUntilCloses.Name = "tableLayoutPanelTimeUntilCloses";
+            tableLayoutPanelTimeUntilCloses.RowCount = 1;
+            tableLayoutPanelTimeUntilCloses.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelTimeUntilCloses.Size = new System.Drawing.Size(327, 29);
+            tableLayoutPanelTimeUntilCloses.TabIndex = 0;
+            // 
+            // labelTimeUntilCloses
+            // 
+            labelTimeUntilCloses.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelTimeUntilCloses.AutoSize = true;
+            labelTimeUntilCloses.Location = new System.Drawing.Point(64, 7);
+            labelTimeUntilCloses.MaximumSize = new System.Drawing.Size(300, 0);
+            labelTimeUntilCloses.Name = "labelTimeUntilCloses";
+            labelTimeUntilCloses.Size = new System.Drawing.Size(117, 15);
+            labelTimeUntilCloses.TabIndex = 0;
+            labelTimeUntilCloses.Text = "labelTimeUntilCloses";
+            // 
+            // numericUpDownTimeUntilClose
+            // 
+            numericUpDownTimeUntilClose.Location = new System.Drawing.Point(3, 3);
+            numericUpDownTimeUntilClose.Name = "numericUpDownTimeUntilClose";
+            numericUpDownTimeUntilClose.Size = new System.Drawing.Size(55, 23);
+            numericUpDownTimeUntilClose.TabIndex = 1;
+            numericUpDownTimeUntilClose.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            numericUpDownTimeUntilClose.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // checkBoxStayOpenWhenFocusLostAfterEnterPressed
+            // 
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.AutoSize = true;
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Checked = true;
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Location = new System.Drawing.Point(3, 82);
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Name = "checkBoxStayOpenWhenFocusLostAfterEnterPressed";
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Size = new System.Drawing.Size(305, 19);
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.TabIndex = 1;
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.Text = "checkBoxStayOpenWhenFocusLostAfterEnterPressed";
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.UseVisualStyleBackColor = true;
+            checkBoxStayOpenWhenFocusLostAfterEnterPressed.CheckedChanged += CheckBoxStayOpenWhenFocusLostAfterEnterPressed_CheckedChanged;
+            // 
+            // groupBoxOpenSubmenus
+            // 
+            groupBoxOpenSubmenus.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxOpenSubmenus.AutoSize = true;
+            groupBoxOpenSubmenus.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxOpenSubmenus.Controls.Add(tableLayoutPanelTimeUntilOpen);
+            groupBoxOpenSubmenus.Location = new System.Drawing.Point(3, 3);
+            groupBoxOpenSubmenus.Name = "groupBoxOpenSubmenus";
+            groupBoxOpenSubmenus.Padding = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            groupBoxOpenSubmenus.Size = new System.Drawing.Size(333, 54);
+            groupBoxOpenSubmenus.TabIndex = 0;
+            groupBoxOpenSubmenus.TabStop = false;
+            groupBoxOpenSubmenus.Text = "groupBoxOpenSubmenus";
+            // 
+            // tableLayoutPanelTimeUntilOpen
+            // 
+            tableLayoutPanelTimeUntilOpen.AutoSize = true;
+            tableLayoutPanelTimeUntilOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelTimeUntilOpen.ColumnCount = 2;
+            tableLayoutPanelTimeUntilOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelTimeUntilOpen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelTimeUntilOpen.Controls.Add(numericUpDownTimeUntilOpens, 0, 0);
+            tableLayoutPanelTimeUntilOpen.Controls.Add(labelTimeUntilOpen, 1, 0);
+            tableLayoutPanelTimeUntilOpen.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelTimeUntilOpen.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelTimeUntilOpen.Name = "tableLayoutPanelTimeUntilOpen";
+            tableLayoutPanelTimeUntilOpen.RowCount = 1;
+            tableLayoutPanelTimeUntilOpen.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelTimeUntilOpen.Size = new System.Drawing.Size(327, 29);
+            tableLayoutPanelTimeUntilOpen.TabIndex = 0;
+            // 
+            // numericUpDownTimeUntilOpens
+            // 
+            numericUpDownTimeUntilOpens.Location = new System.Drawing.Point(3, 3);
+            numericUpDownTimeUntilOpens.Name = "numericUpDownTimeUntilOpens";
+            numericUpDownTimeUntilOpens.Size = new System.Drawing.Size(55, 23);
+            numericUpDownTimeUntilOpens.TabIndex = 2;
+            numericUpDownTimeUntilOpens.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            numericUpDownTimeUntilOpens.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelTimeUntilOpen
+            // 
+            labelTimeUntilOpen.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelTimeUntilOpen.AutoSize = true;
+            labelTimeUntilOpen.Location = new System.Drawing.Point(64, 7);
+            labelTimeUntilOpen.MaximumSize = new System.Drawing.Size(330, 0);
+            labelTimeUntilOpen.Name = "labelTimeUntilOpen";
+            labelTimeUntilOpen.Size = new System.Drawing.Size(112, 15);
+            labelTimeUntilOpen.TabIndex = 0;
+            labelTimeUntilOpen.Text = "labelTimeUntilOpen";
+            // 
+            // buttonExpertDefault
+            // 
+            buttonExpertDefault.AutoSize = true;
+            buttonExpertDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonExpertDefault.Location = new System.Drawing.Point(9, 353);
+            buttonExpertDefault.Margin = new System.Windows.Forms.Padding(9, 9, 3, 9);
+            buttonExpertDefault.MinimumSize = new System.Drawing.Size(75, 25);
+            buttonExpertDefault.Name = "buttonExpertDefault";
+            buttonExpertDefault.Size = new System.Drawing.Size(124, 25);
+            buttonExpertDefault.TabIndex = 0;
+            buttonExpertDefault.Text = "buttonExpertDefault";
+            buttonExpertDefault.UseVisualStyleBackColor = true;
+            buttonExpertDefault.Click += ButtonExpertDefault_Click;
+            // 
+            // tabPageCustomize
+            // 
+            tabPageCustomize.AutoScroll = true;
+            tabPageCustomize.Controls.Add(tableLayoutPanelCustomize);
+            tabPageCustomize.Location = new System.Drawing.Point(4, 24);
+            tabPageCustomize.Name = "tabPageCustomize";
+            tabPageCustomize.Padding = new System.Windows.Forms.Padding(3);
+            tabPageCustomize.Size = new System.Drawing.Size(412, 485);
+            tabPageCustomize.TabIndex = 0;
+            tabPageCustomize.Text = "tabPageCustomize";
+            tabPageCustomize.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelCustomize
+            // 
+            tableLayoutPanelCustomize.AutoSize = true;
+            tableLayoutPanelCustomize.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelCustomize.ColumnCount = 1;
+            tableLayoutPanelCustomize.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelCustomize.Controls.Add(groupBoxColorsDarkMode, 0, 2);
+            tableLayoutPanelCustomize.Controls.Add(groupBoxColorsLightMode, 0, 1);
+            tableLayoutPanelCustomize.Controls.Add(groupBoxAppearance, 0, 0);
+            tableLayoutPanelCustomize.Location = new System.Drawing.Point(3, 3);
+            tableLayoutPanelCustomize.Name = "tableLayoutPanelCustomize";
+            tableLayoutPanelCustomize.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            tableLayoutPanelCustomize.RowCount = 3;
+            tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelCustomize.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelCustomize.Size = new System.Drawing.Size(385, 1581);
+            tableLayoutPanelCustomize.TabIndex = 0;
+            // 
+            // groupBoxColorsDarkMode
+            // 
+            groupBoxColorsDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxColorsDarkMode.AutoSize = true;
+            groupBoxColorsDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxColorsDarkMode.Controls.Add(tableLayoutPanelDarkMode);
+            groupBoxColorsDarkMode.Location = new System.Drawing.Point(3, 973);
+            groupBoxColorsDarkMode.Name = "groupBoxColorsDarkMode";
+            groupBoxColorsDarkMode.Size = new System.Drawing.Size(373, 605);
+            groupBoxColorsDarkMode.TabIndex = 0;
+            groupBoxColorsDarkMode.TabStop = false;
+            groupBoxColorsDarkMode.Text = "groupBoxColorsDarkMode";
+            // 
+            // tableLayoutPanelDarkMode
+            // 
+            tableLayoutPanelDarkMode.AutoSize = true;
+            tableLayoutPanelDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelDarkMode.ColumnCount = 1;
+            tableLayoutPanelDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelColorIconsDarkMode, 0, 1);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelColorBackgroundBorderDarkMode, 0, 3);
+            tableLayoutPanelDarkMode.Controls.Add(labelMenuDarkMode, 0, 0);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelSearchFieldDarkMode, 0, 4);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelOpenFolderDarkMode, 0, 5);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelOpenFolderBorderDarkMode, 0, 6);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelSelectedItemDarkMode, 0, 7);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelSelectedItemBorderDarkMode, 0, 8);
+            tableLayoutPanelDarkMode.Controls.Add(labelScrollbarDarkMode, 0, 9);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelScrollbarBackgroundDarkMode, 0, 10);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelSliderDarkMode, 0, 11);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelSliderDraggingDarkMode, 0, 12);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelSliderHoverDarkMode, 0, 13);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelSliderArrowsAndTrackHoverDarkMode, 0, 14);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelArrowDarkMode, 0, 15);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelArrowClickDarkMode, 0, 16);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelArrowClickBackgroundDarkMode, 0, 17);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelArrowHoverDarkMode, 0, 18);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelArrowHoverBackgroundDarkMode, 0, 19);
+            tableLayoutPanelDarkMode.Controls.Add(buttonColorsDefaultDarkMode, 0, 20);
+            tableLayoutPanelDarkMode.Controls.Add(tableLayoutPanelBackgroundDarkMode, 0, 2);
+            tableLayoutPanelDarkMode.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelDarkMode.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelDarkMode.Name = "tableLayoutPanelDarkMode";
+            tableLayoutPanelDarkMode.RowCount = 21;
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelDarkMode.Size = new System.Drawing.Size(367, 583);
+            tableLayoutPanelDarkMode.TabIndex = 0;
+            // 
+            // tableLayoutPanelColorIconsDarkMode
+            // 
+            tableLayoutPanelColorIconsDarkMode.AutoSize = true;
+            tableLayoutPanelColorIconsDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelColorIconsDarkMode.ColumnCount = 3;
+            tableLayoutPanelColorIconsDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelColorIconsDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelColorIconsDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelColorIconsDarkMode.Controls.Add(pictureBoxIconsDarkMode, 0, 0);
+            tableLayoutPanelColorIconsDarkMode.Controls.Add(labelIconsDarkMode, 2, 0);
+            tableLayoutPanelColorIconsDarkMode.Controls.Add(textBoxColorIconsDarkMode, 1, 0);
+            tableLayoutPanelColorIconsDarkMode.Location = new System.Drawing.Point(3, 18);
+            tableLayoutPanelColorIconsDarkMode.Name = "tableLayoutPanelColorIconsDarkMode";
+            tableLayoutPanelColorIconsDarkMode.RowCount = 1;
+            tableLayoutPanelColorIconsDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorIconsDarkMode.Size = new System.Drawing.Size(213, 23);
+            tableLayoutPanelColorIconsDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxIconsDarkMode
+            // 
+            pictureBoxIconsDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxIconsDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxIconsDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxIconsDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxIconsDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxIconsDarkMode.Name = "pictureBoxIconsDarkMode";
+            pictureBoxIconsDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxIconsDarkMode.TabIndex = 1;
+            pictureBoxIconsDarkMode.TabStop = false;
+            pictureBoxIconsDarkMode.Click += PictureBoxClick;
+            // 
+            // labelIconsDarkMode
+            // 
+            labelIconsDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelIconsDarkMode.AutoSize = true;
+            labelIconsDarkMode.Location = new System.Drawing.Point(95, 4);
+            labelIconsDarkMode.Name = "labelIconsDarkMode";
+            labelIconsDarkMode.Size = new System.Drawing.Size(115, 15);
+            labelIconsDarkMode.TabIndex = 0;
+            labelIconsDarkMode.Text = "labelIconsDarkMode";
+            // 
+            // textBoxColorIconsDarkMode
+            // 
+            textBoxColorIconsDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorIconsDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorIconsDarkMode.MaxLength = 12;
+            textBoxColorIconsDarkMode.Name = "textBoxColorIconsDarkMode";
+            textBoxColorIconsDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorIconsDarkMode.TabIndex = 2;
+            textBoxColorIconsDarkMode.Text = "#ffffff";
+            textBoxColorIconsDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorIconsDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorIconsDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // tableLayoutPanelColorBackgroundBorderDarkMode
+            // 
+            tableLayoutPanelColorBackgroundBorderDarkMode.AutoSize = true;
+            tableLayoutPanelColorBackgroundBorderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelColorBackgroundBorderDarkMode.ColumnCount = 3;
+            tableLayoutPanelColorBackgroundBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelColorBackgroundBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelColorBackgroundBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelColorBackgroundBorderDarkMode.Controls.Add(pictureBoxBackgroundBorderDarkMode, 0, 0);
+            tableLayoutPanelColorBackgroundBorderDarkMode.Controls.Add(labelBackgroundBorderDarkMode, 2, 0);
+            tableLayoutPanelColorBackgroundBorderDarkMode.Controls.Add(textBoxColorBackgroundBorderDarkMode, 1, 0);
+            tableLayoutPanelColorBackgroundBorderDarkMode.Location = new System.Drawing.Point(3, 76);
+            tableLayoutPanelColorBackgroundBorderDarkMode.Name = "tableLayoutPanelColorBackgroundBorderDarkMode";
+            tableLayoutPanelColorBackgroundBorderDarkMode.RowCount = 1;
+            tableLayoutPanelColorBackgroundBorderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorBackgroundBorderDarkMode.Size = new System.Drawing.Size(284, 23);
+            tableLayoutPanelColorBackgroundBorderDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxBackgroundBorderDarkMode
+            // 
+            pictureBoxBackgroundBorderDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxBackgroundBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxBackgroundBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxBackgroundBorderDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxBackgroundBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxBackgroundBorderDarkMode.Name = "pictureBoxBackgroundBorderDarkMode";
+            pictureBoxBackgroundBorderDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxBackgroundBorderDarkMode.TabIndex = 1;
+            pictureBoxBackgroundBorderDarkMode.TabStop = false;
+            pictureBoxBackgroundBorderDarkMode.Click += PictureBoxClick;
+            // 
+            // labelBackgroundBorderDarkMode
+            // 
+            labelBackgroundBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelBackgroundBorderDarkMode.AutoSize = true;
+            labelBackgroundBorderDarkMode.Location = new System.Drawing.Point(95, 4);
+            labelBackgroundBorderDarkMode.Name = "labelBackgroundBorderDarkMode";
+            labelBackgroundBorderDarkMode.Size = new System.Drawing.Size(186, 15);
+            labelBackgroundBorderDarkMode.TabIndex = 0;
+            labelBackgroundBorderDarkMode.Text = "labelBackgroundDarkModeBorder";
+            // 
+            // textBoxColorBackgroundBorderDarkMode
+            // 
+            textBoxColorBackgroundBorderDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorBackgroundBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorBackgroundBorderDarkMode.MaxLength = 12;
+            textBoxColorBackgroundBorderDarkMode.Name = "textBoxColorBackgroundBorderDarkMode";
+            textBoxColorBackgroundBorderDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorBackgroundBorderDarkMode.TabIndex = 2;
+            textBoxColorBackgroundBorderDarkMode.Text = "#ffffff";
+            textBoxColorBackgroundBorderDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorBackgroundBorderDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorBackgroundBorderDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelMenuDarkMode
+            // 
+            labelMenuDarkMode.AutoSize = true;
+            labelMenuDarkMode.Location = new System.Drawing.Point(3, 0);
+            labelMenuDarkMode.Name = "labelMenuDarkMode";
+            labelMenuDarkMode.Size = new System.Drawing.Size(118, 15);
+            labelMenuDarkMode.TabIndex = 3;
+            labelMenuDarkMode.Text = "labelMenuDarkMode";
+            // 
+            // tableLayoutPanelSearchFieldDarkMode
+            // 
+            tableLayoutPanelSearchFieldDarkMode.AutoSize = true;
+            tableLayoutPanelSearchFieldDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSearchFieldDarkMode.ColumnCount = 3;
+            tableLayoutPanelSearchFieldDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSearchFieldDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSearchFieldDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSearchFieldDarkMode.Controls.Add(pictureBoxSearchFieldDarkMode, 0, 0);
+            tableLayoutPanelSearchFieldDarkMode.Controls.Add(labelSearchFieldDarkMode, 2, 0);
+            tableLayoutPanelSearchFieldDarkMode.Controls.Add(textBoxColorSearchFieldDarkMode, 1, 0);
+            tableLayoutPanelSearchFieldDarkMode.Location = new System.Drawing.Point(3, 105);
+            tableLayoutPanelSearchFieldDarkMode.Name = "tableLayoutPanelSearchFieldDarkMode";
+            tableLayoutPanelSearchFieldDarkMode.RowCount = 1;
+            tableLayoutPanelSearchFieldDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSearchFieldDarkMode.Size = new System.Drawing.Size(245, 23);
+            tableLayoutPanelSearchFieldDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxSearchFieldDarkMode
+            // 
+            pictureBoxSearchFieldDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxSearchFieldDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSearchFieldDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSearchFieldDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSearchFieldDarkMode.Name = "pictureBoxSearchFieldDarkMode";
+            pictureBoxSearchFieldDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSearchFieldDarkMode.TabIndex = 1;
+            pictureBoxSearchFieldDarkMode.TabStop = false;
+            pictureBoxSearchFieldDarkMode.Click += PictureBoxClick;
+            // 
+            // labelSearchFieldDarkMode
+            // 
+            labelSearchFieldDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSearchFieldDarkMode.AutoSize = true;
+            labelSearchFieldDarkMode.Location = new System.Drawing.Point(95, 4);
+            labelSearchFieldDarkMode.Name = "labelSearchFieldDarkMode";
+            labelSearchFieldDarkMode.Size = new System.Drawing.Size(147, 15);
+            labelSearchFieldDarkMode.TabIndex = 0;
+            labelSearchFieldDarkMode.Text = "labelSearchFieldDarkMode";
+            // 
+            // textBoxColorSearchFieldDarkMode
+            // 
+            textBoxColorSearchFieldDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSearchFieldDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSearchFieldDarkMode.MaxLength = 12;
+            textBoxColorSearchFieldDarkMode.Name = "textBoxColorSearchFieldDarkMode";
+            textBoxColorSearchFieldDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSearchFieldDarkMode.TabIndex = 2;
+            textBoxColorSearchFieldDarkMode.Text = "#ffffff";
+            textBoxColorSearchFieldDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorSearchFieldDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSearchFieldDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // tableLayoutPanelOpenFolderDarkMode
+            // 
+            tableLayoutPanelOpenFolderDarkMode.AutoSize = true;
+            tableLayoutPanelOpenFolderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelOpenFolderDarkMode.ColumnCount = 3;
+            tableLayoutPanelOpenFolderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelOpenFolderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelOpenFolderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelOpenFolderDarkMode.Controls.Add(pictureBoxOpenFolderDarkMode, 0, 0);
+            tableLayoutPanelOpenFolderDarkMode.Controls.Add(labelOpenFolderDarkMode, 2, 0);
+            tableLayoutPanelOpenFolderDarkMode.Controls.Add(textBoxColorOpenFolderDarkMode, 1, 0);
+            tableLayoutPanelOpenFolderDarkMode.Location = new System.Drawing.Point(3, 134);
+            tableLayoutPanelOpenFolderDarkMode.Name = "tableLayoutPanelOpenFolderDarkMode";
+            tableLayoutPanelOpenFolderDarkMode.RowCount = 1;
+            tableLayoutPanelOpenFolderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelOpenFolderDarkMode.Size = new System.Drawing.Size(247, 23);
+            tableLayoutPanelOpenFolderDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxOpenFolderDarkMode
+            // 
+            pictureBoxOpenFolderDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxOpenFolderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxOpenFolderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxOpenFolderDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxOpenFolderDarkMode.Name = "pictureBoxOpenFolderDarkMode";
+            pictureBoxOpenFolderDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxOpenFolderDarkMode.TabIndex = 1;
+            pictureBoxOpenFolderDarkMode.TabStop = false;
+            pictureBoxOpenFolderDarkMode.Click += PictureBoxClick;
+            // 
+            // labelOpenFolderDarkMode
+            // 
+            labelOpenFolderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelOpenFolderDarkMode.AutoSize = true;
+            labelOpenFolderDarkMode.Location = new System.Drawing.Point(95, 4);
+            labelOpenFolderDarkMode.Name = "labelOpenFolderDarkMode";
+            labelOpenFolderDarkMode.Size = new System.Drawing.Size(149, 15);
+            labelOpenFolderDarkMode.TabIndex = 0;
+            labelOpenFolderDarkMode.Text = "labelOpenFolderDarkMode";
+            // 
+            // textBoxColorOpenFolderDarkMode
+            // 
+            textBoxColorOpenFolderDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorOpenFolderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorOpenFolderDarkMode.MaxLength = 12;
+            textBoxColorOpenFolderDarkMode.Name = "textBoxColorOpenFolderDarkMode";
+            textBoxColorOpenFolderDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorOpenFolderDarkMode.TabIndex = 2;
+            textBoxColorOpenFolderDarkMode.Text = "#ffffff";
+            textBoxColorOpenFolderDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorOpenFolderDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorOpenFolderDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // tableLayoutPanelOpenFolderBorderDarkMode
+            // 
+            tableLayoutPanelOpenFolderBorderDarkMode.AutoSize = true;
+            tableLayoutPanelOpenFolderBorderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelOpenFolderBorderDarkMode.ColumnCount = 3;
+            tableLayoutPanelOpenFolderBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelOpenFolderBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelOpenFolderBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(pictureBoxOpenFolderBorderDarkMode, 0, 0);
+            tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(labelOpenFolderBorderDarkMode, 2, 0);
+            tableLayoutPanelOpenFolderBorderDarkMode.Controls.Add(textBoxColorOpenFolderBorderDarkMode, 1, 0);
+            tableLayoutPanelOpenFolderBorderDarkMode.Location = new System.Drawing.Point(3, 163);
+            tableLayoutPanelOpenFolderBorderDarkMode.Name = "tableLayoutPanelOpenFolderBorderDarkMode";
+            tableLayoutPanelOpenFolderBorderDarkMode.RowCount = 1;
+            tableLayoutPanelOpenFolderBorderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelOpenFolderBorderDarkMode.Size = new System.Drawing.Size(282, 23);
+            tableLayoutPanelOpenFolderBorderDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxOpenFolderBorderDarkMode
+            // 
+            pictureBoxOpenFolderBorderDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxOpenFolderBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxOpenFolderBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxOpenFolderBorderDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxOpenFolderBorderDarkMode.Name = "pictureBoxOpenFolderBorderDarkMode";
+            pictureBoxOpenFolderBorderDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxOpenFolderBorderDarkMode.TabIndex = 1;
+            pictureBoxOpenFolderBorderDarkMode.TabStop = false;
+            pictureBoxOpenFolderBorderDarkMode.Click += PictureBoxClick;
+            // 
+            // labelOpenFolderBorderDarkMode
+            // 
+            labelOpenFolderBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelOpenFolderBorderDarkMode.AutoSize = true;
+            labelOpenFolderBorderDarkMode.Location = new System.Drawing.Point(95, 4);
+            labelOpenFolderBorderDarkMode.Name = "labelOpenFolderBorderDarkMode";
+            labelOpenFolderBorderDarkMode.Size = new System.Drawing.Size(184, 15);
+            labelOpenFolderBorderDarkMode.TabIndex = 0;
+            labelOpenFolderBorderDarkMode.Text = "labelOpenFolderBorderDarkMode";
+            // 
+            // textBoxColorOpenFolderBorderDarkMode
+            // 
+            textBoxColorOpenFolderBorderDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorOpenFolderBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorOpenFolderBorderDarkMode.Name = "textBoxColorOpenFolderBorderDarkMode";
+            textBoxColorOpenFolderBorderDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorOpenFolderBorderDarkMode.TabIndex = 2;
+            textBoxColorOpenFolderBorderDarkMode.Text = "#ffffff";
+            textBoxColorOpenFolderBorderDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorOpenFolderBorderDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorOpenFolderBorderDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // tableLayoutPanelSelectedItemDarkMode
+            // 
+            tableLayoutPanelSelectedItemDarkMode.AutoSize = true;
+            tableLayoutPanelSelectedItemDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSelectedItemDarkMode.ColumnCount = 3;
+            tableLayoutPanelSelectedItemDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSelectedItemDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSelectedItemDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSelectedItemDarkMode.Controls.Add(pictureColorBoxSelectedItemDarkMode, 0, 0);
+            tableLayoutPanelSelectedItemDarkMode.Controls.Add(labelSelectedItemDarkMode, 2, 0);
+            tableLayoutPanelSelectedItemDarkMode.Controls.Add(textBoxColorSelecetedItemDarkMode, 1, 0);
+            tableLayoutPanelSelectedItemDarkMode.Location = new System.Drawing.Point(3, 192);
+            tableLayoutPanelSelectedItemDarkMode.Name = "tableLayoutPanelSelectedItemDarkMode";
+            tableLayoutPanelSelectedItemDarkMode.RowCount = 1;
+            tableLayoutPanelSelectedItemDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSelectedItemDarkMode.Size = new System.Drawing.Size(253, 23);
+            tableLayoutPanelSelectedItemDarkMode.TabIndex = 2;
+            // 
+            // pictureColorBoxSelectedItemDarkMode
+            // 
+            pictureColorBoxSelectedItemDarkMode.BackColor = System.Drawing.Color.White;
+            pictureColorBoxSelectedItemDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureColorBoxSelectedItemDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureColorBoxSelectedItemDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureColorBoxSelectedItemDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureColorBoxSelectedItemDarkMode.Name = "pictureColorBoxSelectedItemDarkMode";
+            pictureColorBoxSelectedItemDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureColorBoxSelectedItemDarkMode.TabIndex = 1;
+            pictureColorBoxSelectedItemDarkMode.TabStop = false;
+            pictureColorBoxSelectedItemDarkMode.Click += PictureBoxClick;
+            // 
+            // labelSelectedItemDarkMode
+            // 
+            labelSelectedItemDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSelectedItemDarkMode.AutoSize = true;
+            labelSelectedItemDarkMode.Location = new System.Drawing.Point(95, 4);
+            labelSelectedItemDarkMode.Name = "labelSelectedItemDarkMode";
+            labelSelectedItemDarkMode.Size = new System.Drawing.Size(155, 15);
+            labelSelectedItemDarkMode.TabIndex = 0;
+            labelSelectedItemDarkMode.Text = "labelSelectedItemDarkMode";
+            // 
+            // textBoxColorSelecetedItemDarkMode
+            // 
+            textBoxColorSelecetedItemDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSelecetedItemDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSelecetedItemDarkMode.MaxLength = 12;
+            textBoxColorSelecetedItemDarkMode.Name = "textBoxColorSelecetedItemDarkMode";
+            textBoxColorSelecetedItemDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSelecetedItemDarkMode.TabIndex = 2;
+            textBoxColorSelecetedItemDarkMode.Text = "#ffffff";
+            textBoxColorSelecetedItemDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorSelecetedItemDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSelecetedItemDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // tableLayoutPanelSelectedItemBorderDarkMode
+            // 
+            tableLayoutPanelSelectedItemBorderDarkMode.AutoSize = true;
+            tableLayoutPanelSelectedItemBorderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSelectedItemBorderDarkMode.ColumnCount = 3;
+            tableLayoutPanelSelectedItemBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSelectedItemBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSelectedItemBorderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(pictureBoxSelectedItemBorderDarkMode, 0, 0);
+            tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(labelSelectedItemBorderDarkMode, 2, 0);
+            tableLayoutPanelSelectedItemBorderDarkMode.Controls.Add(textBoxColorSelectedItemBorderDarkMode, 1, 0);
+            tableLayoutPanelSelectedItemBorderDarkMode.Location = new System.Drawing.Point(3, 221);
+            tableLayoutPanelSelectedItemBorderDarkMode.Name = "tableLayoutPanelSelectedItemBorderDarkMode";
+            tableLayoutPanelSelectedItemBorderDarkMode.RowCount = 1;
+            tableLayoutPanelSelectedItemBorderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSelectedItemBorderDarkMode.Size = new System.Drawing.Size(288, 23);
+            tableLayoutPanelSelectedItemBorderDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxSelectedItemBorderDarkMode
+            // 
+            pictureBoxSelectedItemBorderDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxSelectedItemBorderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSelectedItemBorderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSelectedItemBorderDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSelectedItemBorderDarkMode.Name = "pictureBoxSelectedItemBorderDarkMode";
+            pictureBoxSelectedItemBorderDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSelectedItemBorderDarkMode.TabIndex = 1;
+            pictureBoxSelectedItemBorderDarkMode.TabStop = false;
+            pictureBoxSelectedItemBorderDarkMode.Click += PictureBoxClick;
+            // 
+            // labelSelectedItemBorderDarkMode
+            // 
+            labelSelectedItemBorderDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSelectedItemBorderDarkMode.AutoSize = true;
+            labelSelectedItemBorderDarkMode.Location = new System.Drawing.Point(95, 4);
+            labelSelectedItemBorderDarkMode.Name = "labelSelectedItemBorderDarkMode";
+            labelSelectedItemBorderDarkMode.Size = new System.Drawing.Size(190, 15);
+            labelSelectedItemBorderDarkMode.TabIndex = 0;
+            labelSelectedItemBorderDarkMode.Text = "labelSelectedItemBorderDarkMode";
+            // 
+            // textBoxColorSelectedItemBorderDarkMode
+            // 
+            textBoxColorSelectedItemBorderDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSelectedItemBorderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSelectedItemBorderDarkMode.MaxLength = 12;
+            textBoxColorSelectedItemBorderDarkMode.Name = "textBoxColorSelectedItemBorderDarkMode";
+            textBoxColorSelectedItemBorderDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSelectedItemBorderDarkMode.TabIndex = 2;
+            textBoxColorSelectedItemBorderDarkMode.Text = "#ffffff";
+            textBoxColorSelectedItemBorderDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorSelectedItemBorderDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSelectedItemBorderDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelScrollbarDarkMode
+            // 
+            labelScrollbarDarkMode.AutoSize = true;
+            labelScrollbarDarkMode.Location = new System.Drawing.Point(3, 247);
+            labelScrollbarDarkMode.Name = "labelScrollbarDarkMode";
+            labelScrollbarDarkMode.Size = new System.Drawing.Size(133, 15);
+            labelScrollbarDarkMode.TabIndex = 3;
+            labelScrollbarDarkMode.Text = "labelScrollbarDarkMode";
+            // 
+            // tableLayoutPanelScrollbarBackgroundDarkMode
+            // 
+            tableLayoutPanelScrollbarBackgroundDarkMode.AutoSize = true;
+            tableLayoutPanelScrollbarBackgroundDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelScrollbarBackgroundDarkMode.ColumnCount = 3;
+            tableLayoutPanelScrollbarBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelScrollbarBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelScrollbarBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(pictureBoxScrollbarBackgroundDarkMode, 0, 0);
+            tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(textBoxColorScrollbarBackgroundDarkMode, 1, 0);
+            tableLayoutPanelScrollbarBackgroundDarkMode.Controls.Add(labelColorDarkModeScrollbarBackground, 2, 0);
+            tableLayoutPanelScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(3, 265);
+            tableLayoutPanelScrollbarBackgroundDarkMode.Name = "tableLayoutPanelScrollbarBackgroundDarkMode";
+            tableLayoutPanelScrollbarBackgroundDarkMode.RowCount = 1;
+            tableLayoutPanelScrollbarBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(324, 23);
+            tableLayoutPanelScrollbarBackgroundDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxScrollbarBackgroundDarkMode
+            // 
+            pictureBoxScrollbarBackgroundDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxScrollbarBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxScrollbarBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxScrollbarBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxScrollbarBackgroundDarkMode.Name = "pictureBoxScrollbarBackgroundDarkMode";
+            pictureBoxScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxScrollbarBackgroundDarkMode.TabIndex = 1;
+            pictureBoxScrollbarBackgroundDarkMode.TabStop = false;
+            pictureBoxScrollbarBackgroundDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorScrollbarBackgroundDarkMode
+            // 
+            textBoxColorScrollbarBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorScrollbarBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorScrollbarBackgroundDarkMode.MaxLength = 12;
+            textBoxColorScrollbarBackgroundDarkMode.Name = "textBoxColorScrollbarBackgroundDarkMode";
+            textBoxColorScrollbarBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorScrollbarBackgroundDarkMode.TabIndex = 2;
+            textBoxColorScrollbarBackgroundDarkMode.Text = "#ffffff";
+            textBoxColorScrollbarBackgroundDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorScrollbarBackgroundDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorScrollbarBackgroundDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeScrollbarBackground
+            // 
+            labelColorDarkModeScrollbarBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeScrollbarBackground.AutoSize = true;
+            labelColorDarkModeScrollbarBackground.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeScrollbarBackground.Name = "labelColorDarkModeScrollbarBackground";
+            labelColorDarkModeScrollbarBackground.Size = new System.Drawing.Size(226, 15);
+            labelColorDarkModeScrollbarBackground.TabIndex = 0;
+            labelColorDarkModeScrollbarBackground.Text = "labelColorDarkModeScrollbarBackground";
+            // 
+            // tableLayoutPanelSliderDarkMode
+            // 
+            tableLayoutPanelSliderDarkMode.AutoSize = true;
+            tableLayoutPanelSliderDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSliderDarkMode.ColumnCount = 3;
+            tableLayoutPanelSliderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSliderDarkMode.Controls.Add(pictureBoxSliderDarkMode, 0, 0);
+            tableLayoutPanelSliderDarkMode.Controls.Add(textBoxColorSliderDarkMode, 1, 0);
+            tableLayoutPanelSliderDarkMode.Controls.Add(labelColorDarkModeSlider, 2, 0);
+            tableLayoutPanelSliderDarkMode.Location = new System.Drawing.Point(3, 294);
+            tableLayoutPanelSliderDarkMode.Name = "tableLayoutPanelSliderDarkMode";
+            tableLayoutPanelSliderDarkMode.RowCount = 1;
+            tableLayoutPanelSliderDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSliderDarkMode.Size = new System.Drawing.Size(243, 23);
+            tableLayoutPanelSliderDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxSliderDarkMode
+            // 
+            pictureBoxSliderDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxSliderDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSliderDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSliderDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSliderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSliderDarkMode.Name = "pictureBoxSliderDarkMode";
+            pictureBoxSliderDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSliderDarkMode.TabIndex = 1;
+            pictureBoxSliderDarkMode.TabStop = false;
+            pictureBoxSliderDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorSliderDarkMode
+            // 
+            textBoxColorSliderDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSliderDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSliderDarkMode.MaxLength = 12;
+            textBoxColorSliderDarkMode.Name = "textBoxColorSliderDarkMode";
+            textBoxColorSliderDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSliderDarkMode.TabIndex = 2;
+            textBoxColorSliderDarkMode.Text = "#ffffff";
+            textBoxColorSliderDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorSliderDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSliderDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeSlider
+            // 
+            labelColorDarkModeSlider.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeSlider.AutoSize = true;
+            labelColorDarkModeSlider.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeSlider.Name = "labelColorDarkModeSlider";
+            labelColorDarkModeSlider.Size = new System.Drawing.Size(145, 15);
+            labelColorDarkModeSlider.TabIndex = 0;
+            labelColorDarkModeSlider.Text = "labelColorDarkModeSlider";
+            // 
+            // tableLayoutPanelSliderDraggingDarkMode
+            // 
+            tableLayoutPanelSliderDraggingDarkMode.AutoSize = true;
+            tableLayoutPanelSliderDraggingDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSliderDraggingDarkMode.ColumnCount = 3;
+            tableLayoutPanelSliderDraggingDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderDraggingDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderDraggingDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSliderDraggingDarkMode.Controls.Add(pictureBoxSliderDraggingDarkMode, 0, 0);
+            tableLayoutPanelSliderDraggingDarkMode.Controls.Add(textBoxColorSliderDraggingDarkMode, 1, 0);
+            tableLayoutPanelSliderDraggingDarkMode.Controls.Add(labelColorDarkModeSliderDragging, 2, 0);
+            tableLayoutPanelSliderDraggingDarkMode.Location = new System.Drawing.Point(3, 323);
+            tableLayoutPanelSliderDraggingDarkMode.Name = "tableLayoutPanelSliderDraggingDarkMode";
+            tableLayoutPanelSliderDraggingDarkMode.RowCount = 1;
+            tableLayoutPanelSliderDraggingDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSliderDraggingDarkMode.Size = new System.Drawing.Size(292, 23);
+            tableLayoutPanelSliderDraggingDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxSliderDraggingDarkMode
+            // 
+            pictureBoxSliderDraggingDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxSliderDraggingDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSliderDraggingDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSliderDraggingDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSliderDraggingDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSliderDraggingDarkMode.Name = "pictureBoxSliderDraggingDarkMode";
+            pictureBoxSliderDraggingDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSliderDraggingDarkMode.TabIndex = 1;
+            pictureBoxSliderDraggingDarkMode.TabStop = false;
+            pictureBoxSliderDraggingDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorSliderDraggingDarkMode
+            // 
+            textBoxColorSliderDraggingDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSliderDraggingDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSliderDraggingDarkMode.MaxLength = 12;
+            textBoxColorSliderDraggingDarkMode.Name = "textBoxColorSliderDraggingDarkMode";
+            textBoxColorSliderDraggingDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSliderDraggingDarkMode.TabIndex = 2;
+            textBoxColorSliderDraggingDarkMode.Text = "#ffffff";
+            textBoxColorSliderDraggingDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorSliderDraggingDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSliderDraggingDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeSliderDragging
+            // 
+            labelColorDarkModeSliderDragging.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeSliderDragging.AutoSize = true;
+            labelColorDarkModeSliderDragging.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeSliderDragging.Name = "labelColorDarkModeSliderDragging";
+            labelColorDarkModeSliderDragging.Size = new System.Drawing.Size(194, 15);
+            labelColorDarkModeSliderDragging.TabIndex = 0;
+            labelColorDarkModeSliderDragging.Text = "labelColorDarkModeSliderDragging";
+            // 
+            // tableLayoutPanelSliderHoverDarkMode
+            // 
+            tableLayoutPanelSliderHoverDarkMode.AutoSize = true;
+            tableLayoutPanelSliderHoverDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSliderHoverDarkMode.ColumnCount = 3;
+            tableLayoutPanelSliderHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSliderHoverDarkMode.Controls.Add(pictureBoxSliderHoverDarkMode, 0, 0);
+            tableLayoutPanelSliderHoverDarkMode.Controls.Add(textBoxColorSliderHoverDarkMode, 1, 0);
+            tableLayoutPanelSliderHoverDarkMode.Controls.Add(labelColorDarkModeSliderHover, 2, 0);
+            tableLayoutPanelSliderHoverDarkMode.Location = new System.Drawing.Point(3, 352);
+            tableLayoutPanelSliderHoverDarkMode.Name = "tableLayoutPanelSliderHoverDarkMode";
+            tableLayoutPanelSliderHoverDarkMode.RowCount = 1;
+            tableLayoutPanelSliderHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSliderHoverDarkMode.Size = new System.Drawing.Size(275, 23);
+            tableLayoutPanelSliderHoverDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxSliderHoverDarkMode
+            // 
+            pictureBoxSliderHoverDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxSliderHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSliderHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSliderHoverDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSliderHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSliderHoverDarkMode.Name = "pictureBoxSliderHoverDarkMode";
+            pictureBoxSliderHoverDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSliderHoverDarkMode.TabIndex = 1;
+            pictureBoxSliderHoverDarkMode.TabStop = false;
+            pictureBoxSliderHoverDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorSliderHoverDarkMode
+            // 
+            textBoxColorSliderHoverDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSliderHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSliderHoverDarkMode.MaxLength = 12;
+            textBoxColorSliderHoverDarkMode.Name = "textBoxColorSliderHoverDarkMode";
+            textBoxColorSliderHoverDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSliderHoverDarkMode.TabIndex = 2;
+            textBoxColorSliderHoverDarkMode.Text = "#ffffff";
+            textBoxColorSliderHoverDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorSliderHoverDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSliderHoverDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeSliderHover
+            // 
+            labelColorDarkModeSliderHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeSliderHover.AutoSize = true;
+            labelColorDarkModeSliderHover.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeSliderHover.Name = "labelColorDarkModeSliderHover";
+            labelColorDarkModeSliderHover.Size = new System.Drawing.Size(177, 15);
+            labelColorDarkModeSliderHover.TabIndex = 0;
+            labelColorDarkModeSliderHover.Text = "labelColorDarkModeSliderHover";
+            // 
+            // tableLayoutPanelSliderArrowsAndTrackHoverDarkMode
+            // 
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.AutoSize = true;
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ColumnCount = 3;
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(pictureBoxSliderArrowsAndTrackHoverDarkMode, 0, 0);
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(textBoxColorSliderArrowsAndTrackHoverDarkMode, 1, 0);
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Controls.Add(labelColorDarkModeSliderArrowsAndTrackHover, 2, 0);
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(3, 381);
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Name = "tableLayoutPanelSliderArrowsAndTrackHoverDarkMode";
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.RowCount = 1;
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(361, 23);
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxSliderArrowsAndTrackHoverDarkMode
+            // 
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.Name = "pictureBoxSliderArrowsAndTrackHoverDarkMode";
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.TabIndex = 1;
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.TabStop = false;
+            pictureBoxSliderArrowsAndTrackHoverDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorSliderArrowsAndTrackHoverDarkMode
+            // 
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.MaxLength = 12;
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.Name = "textBoxColorSliderArrowsAndTrackHoverDarkMode";
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.TabIndex = 2;
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.Text = "#ffffff";
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSliderArrowsAndTrackHoverDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeSliderArrowsAndTrackHover
+            // 
+            labelColorDarkModeSliderArrowsAndTrackHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeSliderArrowsAndTrackHover.AutoSize = true;
+            labelColorDarkModeSliderArrowsAndTrackHover.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeSliderArrowsAndTrackHover.Name = "labelColorDarkModeSliderArrowsAndTrackHover";
+            labelColorDarkModeSliderArrowsAndTrackHover.Size = new System.Drawing.Size(263, 15);
+            labelColorDarkModeSliderArrowsAndTrackHover.TabIndex = 0;
+            labelColorDarkModeSliderArrowsAndTrackHover.Text = "labelColorDarkModeSliderArrowsAndTrackHover";
+            // 
+            // tableLayoutPanelArrowDarkMode
+            // 
+            tableLayoutPanelArrowDarkMode.AutoSize = true;
+            tableLayoutPanelArrowDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowDarkMode.ColumnCount = 3;
+            tableLayoutPanelArrowDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowDarkMode.Controls.Add(pictureBoxArrowDarkMode, 0, 0);
+            tableLayoutPanelArrowDarkMode.Controls.Add(textBoxColorArrowDarkMode, 1, 0);
+            tableLayoutPanelArrowDarkMode.Controls.Add(labelColorDarkModeArrow, 2, 0);
+            tableLayoutPanelArrowDarkMode.Location = new System.Drawing.Point(3, 410);
+            tableLayoutPanelArrowDarkMode.Name = "tableLayoutPanelArrowDarkMode";
+            tableLayoutPanelArrowDarkMode.RowCount = 1;
+            tableLayoutPanelArrowDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowDarkMode.Size = new System.Drawing.Size(246, 23);
+            tableLayoutPanelArrowDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxArrowDarkMode
+            // 
+            pictureBoxArrowDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowDarkMode.Name = "pictureBoxArrowDarkMode";
+            pictureBoxArrowDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowDarkMode.TabIndex = 1;
+            pictureBoxArrowDarkMode.TabStop = false;
+            pictureBoxArrowDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowDarkMode
+            // 
+            textBoxColorArrowDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowDarkMode.MaxLength = 12;
+            textBoxColorArrowDarkMode.Name = "textBoxColorArrowDarkMode";
+            textBoxColorArrowDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowDarkMode.TabIndex = 2;
+            textBoxColorArrowDarkMode.Text = "#ffffff";
+            textBoxColorArrowDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeArrow
+            // 
+            labelColorDarkModeArrow.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeArrow.AutoSize = true;
+            labelColorDarkModeArrow.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeArrow.Name = "labelColorDarkModeArrow";
+            labelColorDarkModeArrow.Size = new System.Drawing.Size(148, 15);
+            labelColorDarkModeArrow.TabIndex = 0;
+            labelColorDarkModeArrow.Text = "labelColorDarkModeArrow";
+            // 
+            // tableLayoutPanelArrowClickDarkMode
+            // 
+            tableLayoutPanelArrowClickDarkMode.AutoSize = true;
+            tableLayoutPanelArrowClickDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowClickDarkMode.ColumnCount = 3;
+            tableLayoutPanelArrowClickDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowClickDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowClickDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowClickDarkMode.Controls.Add(pictureBoxArrowClickDarkMode, 0, 0);
+            tableLayoutPanelArrowClickDarkMode.Controls.Add(textBoxColorArrowClickDarkMode, 1, 0);
+            tableLayoutPanelArrowClickDarkMode.Controls.Add(labelColorDarkModeArrowClick, 2, 0);
+            tableLayoutPanelArrowClickDarkMode.Location = new System.Drawing.Point(3, 439);
+            tableLayoutPanelArrowClickDarkMode.Name = "tableLayoutPanelArrowClickDarkMode";
+            tableLayoutPanelArrowClickDarkMode.RowCount = 1;
+            tableLayoutPanelArrowClickDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowClickDarkMode.Size = new System.Drawing.Size(272, 23);
+            tableLayoutPanelArrowClickDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxArrowClickDarkMode
+            // 
+            pictureBoxArrowClickDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowClickDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowClickDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowClickDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowClickDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowClickDarkMode.Name = "pictureBoxArrowClickDarkMode";
+            pictureBoxArrowClickDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowClickDarkMode.TabIndex = 1;
+            pictureBoxArrowClickDarkMode.TabStop = false;
+            pictureBoxArrowClickDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowClickDarkMode
+            // 
+            textBoxColorArrowClickDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowClickDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowClickDarkMode.MaxLength = 12;
+            textBoxColorArrowClickDarkMode.Name = "textBoxColorArrowClickDarkMode";
+            textBoxColorArrowClickDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowClickDarkMode.TabIndex = 2;
+            textBoxColorArrowClickDarkMode.Text = "#ffffff";
+            textBoxColorArrowClickDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowClickDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowClickDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeArrowClick
+            // 
+            labelColorDarkModeArrowClick.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeArrowClick.AutoSize = true;
+            labelColorDarkModeArrowClick.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeArrowClick.Name = "labelColorDarkModeArrowClick";
+            labelColorDarkModeArrowClick.Size = new System.Drawing.Size(174, 15);
+            labelColorDarkModeArrowClick.TabIndex = 0;
+            labelColorDarkModeArrowClick.Text = "labelColorDarkModeArrowClick";
+            // 
+            // tableLayoutPanelArrowClickBackgroundDarkMode
+            // 
+            tableLayoutPanelArrowClickBackgroundDarkMode.AutoSize = true;
+            tableLayoutPanelArrowClickBackgroundDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowClickBackgroundDarkMode.ColumnCount = 3;
+            tableLayoutPanelArrowClickBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowClickBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowClickBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(pictureBoxArrowClickBackgroundDarkMode, 0, 0);
+            tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(textBoxColorArrowClickBackgroundDarkMode, 1, 0);
+            tableLayoutPanelArrowClickBackgroundDarkMode.Controls.Add(labelColorDarkModeArrowClickBackground, 2, 0);
+            tableLayoutPanelArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(3, 468);
+            tableLayoutPanelArrowClickBackgroundDarkMode.Name = "tableLayoutPanelArrowClickBackgroundDarkMode";
+            tableLayoutPanelArrowClickBackgroundDarkMode.RowCount = 1;
+            tableLayoutPanelArrowClickBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(336, 23);
+            tableLayoutPanelArrowClickBackgroundDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxArrowClickBackgroundDarkMode
+            // 
+            pictureBoxArrowClickBackgroundDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowClickBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowClickBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowClickBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowClickBackgroundDarkMode.Name = "pictureBoxArrowClickBackgroundDarkMode";
+            pictureBoxArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowClickBackgroundDarkMode.TabIndex = 1;
+            pictureBoxArrowClickBackgroundDarkMode.TabStop = false;
+            pictureBoxArrowClickBackgroundDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowClickBackgroundDarkMode
+            // 
+            textBoxColorArrowClickBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowClickBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowClickBackgroundDarkMode.MaxLength = 12;
+            textBoxColorArrowClickBackgroundDarkMode.Name = "textBoxColorArrowClickBackgroundDarkMode";
+            textBoxColorArrowClickBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowClickBackgroundDarkMode.TabIndex = 2;
+            textBoxColorArrowClickBackgroundDarkMode.Text = "#ffffff";
+            textBoxColorArrowClickBackgroundDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowClickBackgroundDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowClickBackgroundDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeArrowClickBackground
+            // 
+            labelColorDarkModeArrowClickBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeArrowClickBackground.AutoSize = true;
+            labelColorDarkModeArrowClickBackground.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeArrowClickBackground.Name = "labelColorDarkModeArrowClickBackground";
+            labelColorDarkModeArrowClickBackground.Size = new System.Drawing.Size(238, 15);
+            labelColorDarkModeArrowClickBackground.TabIndex = 0;
+            labelColorDarkModeArrowClickBackground.Text = "labelColorDarkModeArrowClickBackground";
+            // 
+            // tableLayoutPanelArrowHoverDarkMode
+            // 
+            tableLayoutPanelArrowHoverDarkMode.AutoSize = true;
+            tableLayoutPanelArrowHoverDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowHoverDarkMode.ColumnCount = 3;
+            tableLayoutPanelArrowHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowHoverDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowHoverDarkMode.Controls.Add(pictureBoxArrowHoverDarkMode, 0, 0);
+            tableLayoutPanelArrowHoverDarkMode.Controls.Add(textBoxColorArrowHoverDarkMode, 1, 0);
+            tableLayoutPanelArrowHoverDarkMode.Controls.Add(labelColorDarkModeArrowHover, 2, 0);
+            tableLayoutPanelArrowHoverDarkMode.Location = new System.Drawing.Point(3, 497);
+            tableLayoutPanelArrowHoverDarkMode.Name = "tableLayoutPanelArrowHoverDarkMode";
+            tableLayoutPanelArrowHoverDarkMode.RowCount = 1;
+            tableLayoutPanelArrowHoverDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowHoverDarkMode.Size = new System.Drawing.Size(278, 23);
+            tableLayoutPanelArrowHoverDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxArrowHoverDarkMode
+            // 
+            pictureBoxArrowHoverDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowHoverDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowHoverDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowHoverDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowHoverDarkMode.Name = "pictureBoxArrowHoverDarkMode";
+            pictureBoxArrowHoverDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowHoverDarkMode.TabIndex = 1;
+            pictureBoxArrowHoverDarkMode.TabStop = false;
+            pictureBoxArrowHoverDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowHoverDarkMode
+            // 
+            textBoxColorArrowHoverDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowHoverDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowHoverDarkMode.MaxLength = 12;
+            textBoxColorArrowHoverDarkMode.Name = "textBoxColorArrowHoverDarkMode";
+            textBoxColorArrowHoverDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowHoverDarkMode.TabIndex = 2;
+            textBoxColorArrowHoverDarkMode.Text = "#ffffff";
+            textBoxColorArrowHoverDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowHoverDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowHoverDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeArrowHover
+            // 
+            labelColorDarkModeArrowHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeArrowHover.AutoSize = true;
+            labelColorDarkModeArrowHover.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeArrowHover.Name = "labelColorDarkModeArrowHover";
+            labelColorDarkModeArrowHover.Size = new System.Drawing.Size(180, 15);
+            labelColorDarkModeArrowHover.TabIndex = 0;
+            labelColorDarkModeArrowHover.Text = "labelColorDarkModeArrowHover";
+            // 
+            // tableLayoutPanelArrowHoverBackgroundDarkMode
+            // 
+            tableLayoutPanelArrowHoverBackgroundDarkMode.AutoSize = true;
+            tableLayoutPanelArrowHoverBackgroundDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowHoverBackgroundDarkMode.ColumnCount = 3;
+            tableLayoutPanelArrowHoverBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowHoverBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowHoverBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(pictureBoxArrowHoverBackgroundDarkMode, 0, 0);
+            tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(textBoxColorArrowHoverBackgroundDarkMode, 1, 0);
+            tableLayoutPanelArrowHoverBackgroundDarkMode.Controls.Add(labelColorDarkModeArrowHoverBackground, 2, 0);
+            tableLayoutPanelArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(3, 526);
+            tableLayoutPanelArrowHoverBackgroundDarkMode.Name = "tableLayoutPanelArrowHoverBackgroundDarkMode";
+            tableLayoutPanelArrowHoverBackgroundDarkMode.RowCount = 1;
+            tableLayoutPanelArrowHoverBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(342, 23);
+            tableLayoutPanelArrowHoverBackgroundDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxArrowHoverBackgroundDarkMode
+            // 
+            pictureBoxArrowHoverBackgroundDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowHoverBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowHoverBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowHoverBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowHoverBackgroundDarkMode.Name = "pictureBoxArrowHoverBackgroundDarkMode";
+            pictureBoxArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowHoverBackgroundDarkMode.TabIndex = 1;
+            pictureBoxArrowHoverBackgroundDarkMode.TabStop = false;
+            pictureBoxArrowHoverBackgroundDarkMode.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowHoverBackgroundDarkMode
+            // 
+            textBoxColorArrowHoverBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowHoverBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowHoverBackgroundDarkMode.MaxLength = 12;
+            textBoxColorArrowHoverBackgroundDarkMode.Name = "textBoxColorArrowHoverBackgroundDarkMode";
+            textBoxColorArrowHoverBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowHoverBackgroundDarkMode.TabIndex = 2;
+            textBoxColorArrowHoverBackgroundDarkMode.Text = "#ffffff";
+            textBoxColorArrowHoverBackgroundDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowHoverBackgroundDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowHoverBackgroundDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelColorDarkModeArrowHoverBackground
+            // 
+            labelColorDarkModeArrowHoverBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelColorDarkModeArrowHoverBackground.AutoSize = true;
+            labelColorDarkModeArrowHoverBackground.Location = new System.Drawing.Point(95, 4);
+            labelColorDarkModeArrowHoverBackground.MaximumSize = new System.Drawing.Size(280, 0);
+            labelColorDarkModeArrowHoverBackground.Name = "labelColorDarkModeArrowHoverBackground";
+            labelColorDarkModeArrowHoverBackground.Size = new System.Drawing.Size(244, 15);
+            labelColorDarkModeArrowHoverBackground.TabIndex = 0;
+            labelColorDarkModeArrowHoverBackground.Text = "labelColorDarkModeArrowHoverBackground";
+            // 
+            // buttonColorsDefaultDarkMode
+            // 
+            buttonColorsDefaultDarkMode.AutoSize = true;
+            buttonColorsDefaultDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonColorsDefaultDarkMode.Location = new System.Drawing.Point(3, 555);
+            buttonColorsDefaultDarkMode.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonColorsDefaultDarkMode.Name = "buttonColorsDefaultDarkMode";
+            buttonColorsDefaultDarkMode.Size = new System.Drawing.Size(180, 25);
+            buttonColorsDefaultDarkMode.TabIndex = 2;
+            buttonColorsDefaultDarkMode.Text = "buttonColorsDarkModeDefault";
+            buttonColorsDefaultDarkMode.UseVisualStyleBackColor = true;
+            buttonColorsDefaultDarkMode.Click += ButtonDefaultColorsDark_Click;
+            // 
+            // tableLayoutPanelBackgroundDarkMode
+            // 
+            tableLayoutPanelBackgroundDarkMode.AutoSize = true;
+            tableLayoutPanelBackgroundDarkMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelBackgroundDarkMode.ColumnCount = 3;
+            tableLayoutPanelBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelBackgroundDarkMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelBackgroundDarkMode.Controls.Add(pictureBoxBackgroundDarkMode, 0, 0);
+            tableLayoutPanelBackgroundDarkMode.Controls.Add(labelBackgroundDarkMode, 2, 0);
+            tableLayoutPanelBackgroundDarkMode.Controls.Add(textBoxColorBackgroundDarkMode, 1, 0);
+            tableLayoutPanelBackgroundDarkMode.Location = new System.Drawing.Point(3, 47);
+            tableLayoutPanelBackgroundDarkMode.Name = "tableLayoutPanelBackgroundDarkMode";
+            tableLayoutPanelBackgroundDarkMode.RowCount = 1;
+            tableLayoutPanelBackgroundDarkMode.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelBackgroundDarkMode.Size = new System.Drawing.Size(249, 23);
+            tableLayoutPanelBackgroundDarkMode.TabIndex = 2;
+            // 
+            // pictureBoxBackgroundDarkMode
+            // 
+            pictureBoxBackgroundDarkMode.BackColor = System.Drawing.Color.White;
+            pictureBoxBackgroundDarkMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxBackgroundDarkMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxBackgroundDarkMode.Location = new System.Drawing.Point(0, 0);
+            pictureBoxBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxBackgroundDarkMode.Name = "pictureBoxBackgroundDarkMode";
+            pictureBoxBackgroundDarkMode.Size = new System.Drawing.Size(23, 23);
+            pictureBoxBackgroundDarkMode.TabIndex = 1;
+            pictureBoxBackgroundDarkMode.TabStop = false;
+            pictureBoxBackgroundDarkMode.Click += PictureBoxClick;
+            // 
+            // labelBackgroundDarkMode
+            // 
+            labelBackgroundDarkMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelBackgroundDarkMode.AutoSize = true;
+            labelBackgroundDarkMode.Location = new System.Drawing.Point(95, 4);
+            labelBackgroundDarkMode.Name = "labelBackgroundDarkMode";
+            labelBackgroundDarkMode.Size = new System.Drawing.Size(151, 15);
+            labelBackgroundDarkMode.TabIndex = 0;
+            labelBackgroundDarkMode.Text = "labelBackgroundDarkMode";
+            // 
+            // textBoxColorBackgroundDarkMode
+            // 
+            textBoxColorBackgroundDarkMode.Location = new System.Drawing.Point(23, 0);
+            textBoxColorBackgroundDarkMode.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorBackgroundDarkMode.MaxLength = 12;
+            textBoxColorBackgroundDarkMode.Name = "textBoxColorBackgroundDarkMode";
+            textBoxColorBackgroundDarkMode.Size = new System.Drawing.Size(69, 23);
+            textBoxColorBackgroundDarkMode.TabIndex = 2;
+            textBoxColorBackgroundDarkMode.Text = "#ffffff";
+            textBoxColorBackgroundDarkMode.TextChanged += TextBoxColorsChanged;
+            textBoxColorBackgroundDarkMode.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorBackgroundDarkMode.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // groupBoxColorsLightMode
+            // 
+            groupBoxColorsLightMode.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxColorsLightMode.AutoSize = true;
+            groupBoxColorsLightMode.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxColorsLightMode.Controls.Add(tableLayoutPanelColorsAndDefault);
+            groupBoxColorsLightMode.Location = new System.Drawing.Point(3, 362);
+            groupBoxColorsLightMode.Name = "groupBoxColorsLightMode";
+            groupBoxColorsLightMode.Size = new System.Drawing.Size(373, 605);
+            groupBoxColorsLightMode.TabIndex = 0;
+            groupBoxColorsLightMode.TabStop = false;
+            groupBoxColorsLightMode.Text = "groupBoxColorsLightMode";
+            // 
+            // tableLayoutPanelColorsAndDefault
+            // 
+            tableLayoutPanelColorsAndDefault.AutoSize = true;
+            tableLayoutPanelColorsAndDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelColorsAndDefault.ColumnCount = 1;
+            tableLayoutPanelColorsAndDefault.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelIcons, 0, 1);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelBackgroundBorder, 0, 3);
+            tableLayoutPanelColorsAndDefault.Controls.Add(labelMenuLightMode, 0, 0);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelBackground, 0, 2);
+            tableLayoutPanelColorsAndDefault.Controls.Add(buttonColorsDefault, 0, 20);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelArrowHoverBackground, 0, 19);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelArrowHover, 0, 18);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelArrowClickBackground, 0, 17);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelArrowClick, 0, 16);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelArrow, 0, 15);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelSliderArrowsAndTrackHover, 0, 14);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelSliderHover, 0, 13);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelSliderDragging, 0, 12);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelSlider, 0, 11);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelScrollbarBackground, 0, 10);
+            tableLayoutPanelColorsAndDefault.Controls.Add(labelScrollbarLightMode, 0, 9);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelSelectedItemBorder, 0, 8);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelSelectedItem, 0, 7);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelOpenFolderBorder, 0, 6);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelOpenFolder, 0, 5);
+            tableLayoutPanelColorsAndDefault.Controls.Add(tableLayoutPanelSearchField, 0, 4);
+            tableLayoutPanelColorsAndDefault.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelColorsAndDefault.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelColorsAndDefault.Name = "tableLayoutPanelColorsAndDefault";
+            tableLayoutPanelColorsAndDefault.RowCount = 21;
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelColorsAndDefault.Size = new System.Drawing.Size(367, 583);
+            tableLayoutPanelColorsAndDefault.TabIndex = 0;
+            // 
+            // tableLayoutPanelIcons
+            // 
+            tableLayoutPanelIcons.AutoSize = true;
+            tableLayoutPanelIcons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelIcons.ColumnCount = 3;
+            tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelIcons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelIcons.Controls.Add(pictureBoxIcons, 0, 0);
+            tableLayoutPanelIcons.Controls.Add(textBoxColorIcons, 1, 0);
+            tableLayoutPanelIcons.Controls.Add(labelIcons, 2, 0);
+            tableLayoutPanelIcons.Location = new System.Drawing.Point(3, 18);
+            tableLayoutPanelIcons.Name = "tableLayoutPanelIcons";
+            tableLayoutPanelIcons.RowCount = 1;
+            tableLayoutPanelIcons.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelIcons.Size = new System.Drawing.Size(158, 23);
+            tableLayoutPanelIcons.TabIndex = 2;
+            // 
+            // pictureBoxIcons
+            // 
+            pictureBoxIcons.BackColor = System.Drawing.Color.White;
+            pictureBoxIcons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxIcons.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxIcons.Location = new System.Drawing.Point(0, 0);
+            pictureBoxIcons.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxIcons.Name = "pictureBoxIcons";
+            pictureBoxIcons.Size = new System.Drawing.Size(23, 23);
+            pictureBoxIcons.TabIndex = 1;
+            pictureBoxIcons.TabStop = false;
+            pictureBoxIcons.Click += PictureBoxClick;
+            // 
+            // textBoxColorIcons
+            // 
+            textBoxColorIcons.Location = new System.Drawing.Point(23, 0);
+            textBoxColorIcons.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorIcons.MaxLength = 12;
+            textBoxColorIcons.Name = "textBoxColorIcons";
+            textBoxColorIcons.Size = new System.Drawing.Size(69, 23);
+            textBoxColorIcons.TabIndex = 2;
+            textBoxColorIcons.Text = "#ffffff";
+            textBoxColorIcons.TextChanged += TextBoxColorsChanged;
+            textBoxColorIcons.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorIcons.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelIcons
+            // 
+            labelIcons.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelIcons.AutoSize = true;
+            labelIcons.Location = new System.Drawing.Point(95, 4);
+            labelIcons.Name = "labelIcons";
+            labelIcons.Size = new System.Drawing.Size(60, 15);
+            labelIcons.TabIndex = 0;
+            labelIcons.Text = "labelIcons";
+            // 
+            // tableLayoutPanelBackgroundBorder
+            // 
+            tableLayoutPanelBackgroundBorder.AutoSize = true;
+            tableLayoutPanelBackgroundBorder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelBackgroundBorder.ColumnCount = 3;
+            tableLayoutPanelBackgroundBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelBackgroundBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelBackgroundBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelBackgroundBorder.Controls.Add(pictureBoxBackgroundBorder, 0, 0);
+            tableLayoutPanelBackgroundBorder.Controls.Add(textBoxColorBackgroundBorder, 1, 0);
+            tableLayoutPanelBackgroundBorder.Controls.Add(labelBackgroundBorder, 2, 0);
+            tableLayoutPanelBackgroundBorder.Location = new System.Drawing.Point(3, 76);
+            tableLayoutPanelBackgroundBorder.Name = "tableLayoutPanelBackgroundBorder";
+            tableLayoutPanelBackgroundBorder.RowCount = 1;
+            tableLayoutPanelBackgroundBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelBackgroundBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanelBackgroundBorder.Size = new System.Drawing.Size(229, 23);
+            tableLayoutPanelBackgroundBorder.TabIndex = 2;
+            // 
+            // pictureBoxBackgroundBorder
+            // 
+            pictureBoxBackgroundBorder.BackColor = System.Drawing.Color.White;
+            pictureBoxBackgroundBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxBackgroundBorder.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxBackgroundBorder.Location = new System.Drawing.Point(0, 0);
+            pictureBoxBackgroundBorder.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxBackgroundBorder.Name = "pictureBoxBackgroundBorder";
+            pictureBoxBackgroundBorder.Size = new System.Drawing.Size(23, 23);
+            pictureBoxBackgroundBorder.TabIndex = 1;
+            pictureBoxBackgroundBorder.TabStop = false;
+            pictureBoxBackgroundBorder.Click += PictureBoxClick;
+            // 
+            // textBoxColorBackgroundBorder
+            // 
+            textBoxColorBackgroundBorder.Location = new System.Drawing.Point(23, 0);
+            textBoxColorBackgroundBorder.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorBackgroundBorder.MaxLength = 12;
+            textBoxColorBackgroundBorder.Name = "textBoxColorBackgroundBorder";
+            textBoxColorBackgroundBorder.Size = new System.Drawing.Size(69, 23);
+            textBoxColorBackgroundBorder.TabIndex = 2;
+            textBoxColorBackgroundBorder.Text = "#ffffff";
+            textBoxColorBackgroundBorder.TextChanged += TextBoxColorsChanged;
+            textBoxColorBackgroundBorder.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorBackgroundBorder.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelBackgroundBorder
+            // 
+            labelBackgroundBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelBackgroundBorder.AutoSize = true;
+            labelBackgroundBorder.Location = new System.Drawing.Point(95, 4);
+            labelBackgroundBorder.Name = "labelBackgroundBorder";
+            labelBackgroundBorder.Size = new System.Drawing.Size(131, 15);
+            labelBackgroundBorder.TabIndex = 0;
+            labelBackgroundBorder.Text = "labelBackgroundBorder";
+            // 
+            // labelMenuLightMode
+            // 
+            labelMenuLightMode.AutoSize = true;
+            labelMenuLightMode.Location = new System.Drawing.Point(3, 0);
+            labelMenuLightMode.Name = "labelMenuLightMode";
+            labelMenuLightMode.Size = new System.Drawing.Size(121, 15);
+            labelMenuLightMode.TabIndex = 3;
+            labelMenuLightMode.Text = "labelMenuLightMode";
+            // 
+            // tableLayoutPanelBackground
+            // 
+            tableLayoutPanelBackground.AutoSize = true;
+            tableLayoutPanelBackground.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelBackground.ColumnCount = 3;
+            tableLayoutPanelBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelBackground.Controls.Add(pictureBoxBackground, 0, 0);
+            tableLayoutPanelBackground.Controls.Add(textBoxColorBackground, 1, 0);
+            tableLayoutPanelBackground.Controls.Add(labelBackground, 2, 0);
+            tableLayoutPanelBackground.Location = new System.Drawing.Point(3, 47);
+            tableLayoutPanelBackground.Name = "tableLayoutPanelBackground";
+            tableLayoutPanelBackground.RowCount = 1;
+            tableLayoutPanelBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelBackground.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanelBackground.Size = new System.Drawing.Size(194, 23);
+            tableLayoutPanelBackground.TabIndex = 2;
+            // 
+            // pictureBoxBackground
+            // 
+            pictureBoxBackground.BackColor = System.Drawing.Color.White;
+            pictureBoxBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxBackground.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
+            pictureBoxBackground.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxBackground.Name = "pictureBoxBackground";
+            pictureBoxBackground.Size = new System.Drawing.Size(23, 23);
+            pictureBoxBackground.TabIndex = 1;
+            pictureBoxBackground.TabStop = false;
+            pictureBoxBackground.Click += PictureBoxClick;
+            // 
+            // textBoxColorBackground
+            // 
+            textBoxColorBackground.Location = new System.Drawing.Point(23, 0);
+            textBoxColorBackground.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorBackground.MaxLength = 12;
+            textBoxColorBackground.Name = "textBoxColorBackground";
+            textBoxColorBackground.Size = new System.Drawing.Size(69, 23);
+            textBoxColorBackground.TabIndex = 2;
+            textBoxColorBackground.Text = "#ffffff";
+            textBoxColorBackground.TextChanged += TextBoxColorsChanged;
+            textBoxColorBackground.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorBackground.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelBackground
+            // 
+            labelBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelBackground.AutoSize = true;
+            labelBackground.Location = new System.Drawing.Point(95, 4);
+            labelBackground.Name = "labelBackground";
+            labelBackground.Size = new System.Drawing.Size(96, 15);
+            labelBackground.TabIndex = 0;
+            labelBackground.Text = "labelBackground";
+            // 
+            // buttonColorsDefault
+            // 
+            buttonColorsDefault.AutoSize = true;
+            buttonColorsDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonColorsDefault.Location = new System.Drawing.Point(3, 555);
+            buttonColorsDefault.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonColorsDefault.Name = "buttonColorsDefault";
+            buttonColorsDefault.Size = new System.Drawing.Size(125, 25);
+            buttonColorsDefault.TabIndex = 2;
+            buttonColorsDefault.Text = "buttonColorsDefault";
+            buttonColorsDefault.UseVisualStyleBackColor = true;
+            buttonColorsDefault.Click += ButtonDefaultColors_Click;
+            // 
+            // tableLayoutPanelArrowHoverBackground
+            // 
+            tableLayoutPanelArrowHoverBackground.AutoSize = true;
+            tableLayoutPanelArrowHoverBackground.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowHoverBackground.ColumnCount = 3;
+            tableLayoutPanelArrowHoverBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowHoverBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowHoverBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowHoverBackground.Controls.Add(pictureBoxArrowHoverBackground, 0, 0);
+            tableLayoutPanelArrowHoverBackground.Controls.Add(textBoxColorArrowHoverBackground, 1, 0);
+            tableLayoutPanelArrowHoverBackground.Controls.Add(labelArrowHoverBackground, 2, 0);
+            tableLayoutPanelArrowHoverBackground.Location = new System.Drawing.Point(3, 526);
+            tableLayoutPanelArrowHoverBackground.Name = "tableLayoutPanelArrowHoverBackground";
+            tableLayoutPanelArrowHoverBackground.RowCount = 1;
+            tableLayoutPanelArrowHoverBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowHoverBackground.Size = new System.Drawing.Size(258, 23);
+            tableLayoutPanelArrowHoverBackground.TabIndex = 2;
+            // 
+            // pictureBoxArrowHoverBackground
+            // 
+            pictureBoxArrowHoverBackground.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowHoverBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowHoverBackground.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowHoverBackground.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowHoverBackground.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowHoverBackground.Name = "pictureBoxArrowHoverBackground";
+            pictureBoxArrowHoverBackground.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowHoverBackground.TabIndex = 1;
+            pictureBoxArrowHoverBackground.TabStop = false;
+            pictureBoxArrowHoverBackground.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowHoverBackground
+            // 
+            textBoxColorArrowHoverBackground.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowHoverBackground.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowHoverBackground.MaxLength = 12;
+            textBoxColorArrowHoverBackground.Name = "textBoxColorArrowHoverBackground";
+            textBoxColorArrowHoverBackground.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowHoverBackground.TabIndex = 2;
+            textBoxColorArrowHoverBackground.Text = "#ffffff";
+            textBoxColorArrowHoverBackground.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowHoverBackground.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowHoverBackground.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelArrowHoverBackground
+            // 
+            labelArrowHoverBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelArrowHoverBackground.AutoSize = true;
+            labelArrowHoverBackground.Location = new System.Drawing.Point(95, 4);
+            labelArrowHoverBackground.MaximumSize = new System.Drawing.Size(280, 0);
+            labelArrowHoverBackground.Name = "labelArrowHoverBackground";
+            labelArrowHoverBackground.Size = new System.Drawing.Size(160, 15);
+            labelArrowHoverBackground.TabIndex = 0;
+            labelArrowHoverBackground.Text = "labelArrowHoverBackground";
+            // 
+            // tableLayoutPanelArrowHover
+            // 
+            tableLayoutPanelArrowHover.AutoSize = true;
+            tableLayoutPanelArrowHover.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowHover.ColumnCount = 3;
+            tableLayoutPanelArrowHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowHover.Controls.Add(pictureBoxArrowHover, 0, 0);
+            tableLayoutPanelArrowHover.Controls.Add(textBoxColorArrowHover, 1, 0);
+            tableLayoutPanelArrowHover.Controls.Add(labelArrowHover, 2, 0);
+            tableLayoutPanelArrowHover.Location = new System.Drawing.Point(3, 497);
+            tableLayoutPanelArrowHover.Name = "tableLayoutPanelArrowHover";
+            tableLayoutPanelArrowHover.RowCount = 1;
+            tableLayoutPanelArrowHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowHover.Size = new System.Drawing.Size(194, 23);
+            tableLayoutPanelArrowHover.TabIndex = 2;
+            // 
+            // pictureBoxArrowHover
+            // 
+            pictureBoxArrowHover.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowHover.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowHover.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowHover.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowHover.Name = "pictureBoxArrowHover";
+            pictureBoxArrowHover.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowHover.TabIndex = 1;
+            pictureBoxArrowHover.TabStop = false;
+            pictureBoxArrowHover.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowHover
+            // 
+            textBoxColorArrowHover.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowHover.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowHover.MaxLength = 12;
+            textBoxColorArrowHover.Name = "textBoxColorArrowHover";
+            textBoxColorArrowHover.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowHover.TabIndex = 2;
+            textBoxColorArrowHover.Text = "#ffffff";
+            textBoxColorArrowHover.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowHover.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowHover.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelArrowHover
+            // 
+            labelArrowHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelArrowHover.AutoSize = true;
+            labelArrowHover.Location = new System.Drawing.Point(95, 4);
+            labelArrowHover.Name = "labelArrowHover";
+            labelArrowHover.Size = new System.Drawing.Size(96, 15);
+            labelArrowHover.TabIndex = 0;
+            labelArrowHover.Text = "labelArrowHover";
+            // 
+            // tableLayoutPanelArrowClickBackground
+            // 
+            tableLayoutPanelArrowClickBackground.AutoSize = true;
+            tableLayoutPanelArrowClickBackground.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowClickBackground.ColumnCount = 3;
+            tableLayoutPanelArrowClickBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowClickBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowClickBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowClickBackground.Controls.Add(pictureBoxArrowClickBackground, 0, 0);
+            tableLayoutPanelArrowClickBackground.Controls.Add(textBoxColorArrowClickBackground, 1, 0);
+            tableLayoutPanelArrowClickBackground.Controls.Add(labelArrowClickBackground, 2, 0);
+            tableLayoutPanelArrowClickBackground.Location = new System.Drawing.Point(3, 468);
+            tableLayoutPanelArrowClickBackground.Name = "tableLayoutPanelArrowClickBackground";
+            tableLayoutPanelArrowClickBackground.RowCount = 1;
+            tableLayoutPanelArrowClickBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowClickBackground.Size = new System.Drawing.Size(252, 23);
+            tableLayoutPanelArrowClickBackground.TabIndex = 2;
+            // 
+            // pictureBoxArrowClickBackground
+            // 
+            pictureBoxArrowClickBackground.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowClickBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowClickBackground.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowClickBackground.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowClickBackground.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowClickBackground.Name = "pictureBoxArrowClickBackground";
+            pictureBoxArrowClickBackground.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowClickBackground.TabIndex = 1;
+            pictureBoxArrowClickBackground.TabStop = false;
+            pictureBoxArrowClickBackground.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowClickBackground
+            // 
+            textBoxColorArrowClickBackground.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowClickBackground.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowClickBackground.MaxLength = 12;
+            textBoxColorArrowClickBackground.Name = "textBoxColorArrowClickBackground";
+            textBoxColorArrowClickBackground.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowClickBackground.TabIndex = 2;
+            textBoxColorArrowClickBackground.Text = "#ffffff";
+            textBoxColorArrowClickBackground.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowClickBackground.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowClickBackground.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelArrowClickBackground
+            // 
+            labelArrowClickBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelArrowClickBackground.AutoSize = true;
+            labelArrowClickBackground.Location = new System.Drawing.Point(95, 4);
+            labelArrowClickBackground.Name = "labelArrowClickBackground";
+            labelArrowClickBackground.Size = new System.Drawing.Size(154, 15);
+            labelArrowClickBackground.TabIndex = 0;
+            labelArrowClickBackground.Text = "labelArrowClickBackground";
+            // 
+            // tableLayoutPanelArrowClick
+            // 
+            tableLayoutPanelArrowClick.AutoSize = true;
+            tableLayoutPanelArrowClick.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrowClick.ColumnCount = 3;
+            tableLayoutPanelArrowClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrowClick.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrowClick.Controls.Add(pictureBoxArrowClick, 0, 0);
+            tableLayoutPanelArrowClick.Controls.Add(textBoxColorArrowClick, 1, 0);
+            tableLayoutPanelArrowClick.Controls.Add(labelArrowClick, 2, 0);
+            tableLayoutPanelArrowClick.Location = new System.Drawing.Point(3, 439);
+            tableLayoutPanelArrowClick.Name = "tableLayoutPanelArrowClick";
+            tableLayoutPanelArrowClick.RowCount = 1;
+            tableLayoutPanelArrowClick.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrowClick.Size = new System.Drawing.Size(188, 23);
+            tableLayoutPanelArrowClick.TabIndex = 2;
+            // 
+            // pictureBoxArrowClick
+            // 
+            pictureBoxArrowClick.BackColor = System.Drawing.Color.White;
+            pictureBoxArrowClick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrowClick.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrowClick.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrowClick.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrowClick.Name = "pictureBoxArrowClick";
+            pictureBoxArrowClick.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrowClick.TabIndex = 1;
+            pictureBoxArrowClick.TabStop = false;
+            pictureBoxArrowClick.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrowClick
+            // 
+            textBoxColorArrowClick.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrowClick.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrowClick.MaxLength = 12;
+            textBoxColorArrowClick.Name = "textBoxColorArrowClick";
+            textBoxColorArrowClick.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrowClick.TabIndex = 2;
+            textBoxColorArrowClick.Text = "#ffffff";
+            textBoxColorArrowClick.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrowClick.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrowClick.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelArrowClick
+            // 
+            labelArrowClick.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelArrowClick.AutoSize = true;
+            labelArrowClick.Location = new System.Drawing.Point(95, 4);
+            labelArrowClick.Name = "labelArrowClick";
+            labelArrowClick.Size = new System.Drawing.Size(90, 15);
+            labelArrowClick.TabIndex = 0;
+            labelArrowClick.Text = "labelArrowClick";
+            // 
+            // tableLayoutPanelArrow
+            // 
+            tableLayoutPanelArrow.AutoSize = true;
+            tableLayoutPanelArrow.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelArrow.ColumnCount = 3;
+            tableLayoutPanelArrow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelArrow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelArrow.Controls.Add(pictureBoxArrow, 0, 0);
+            tableLayoutPanelArrow.Controls.Add(textBoxColorArrow, 1, 0);
+            tableLayoutPanelArrow.Controls.Add(labelArrow, 2, 0);
+            tableLayoutPanelArrow.Location = new System.Drawing.Point(3, 410);
+            tableLayoutPanelArrow.Name = "tableLayoutPanelArrow";
+            tableLayoutPanelArrow.RowCount = 1;
+            tableLayoutPanelArrow.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelArrow.Size = new System.Drawing.Size(162, 23);
+            tableLayoutPanelArrow.TabIndex = 2;
+            // 
+            // pictureBoxArrow
+            // 
+            pictureBoxArrow.BackColor = System.Drawing.Color.White;
+            pictureBoxArrow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxArrow.Location = new System.Drawing.Point(0, 0);
+            pictureBoxArrow.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxArrow.Name = "pictureBoxArrow";
+            pictureBoxArrow.Size = new System.Drawing.Size(23, 23);
+            pictureBoxArrow.TabIndex = 1;
+            pictureBoxArrow.TabStop = false;
+            pictureBoxArrow.Click += PictureBoxClick;
+            // 
+            // textBoxColorArrow
+            // 
+            textBoxColorArrow.Location = new System.Drawing.Point(23, 0);
+            textBoxColorArrow.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorArrow.MaxLength = 12;
+            textBoxColorArrow.Name = "textBoxColorArrow";
+            textBoxColorArrow.Size = new System.Drawing.Size(69, 23);
+            textBoxColorArrow.TabIndex = 2;
+            textBoxColorArrow.Text = "#ffffff";
+            textBoxColorArrow.TextChanged += TextBoxColorsChanged;
+            textBoxColorArrow.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorArrow.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelArrow
+            // 
+            labelArrow.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelArrow.AutoSize = true;
+            labelArrow.Location = new System.Drawing.Point(95, 4);
+            labelArrow.Name = "labelArrow";
+            labelArrow.Size = new System.Drawing.Size(64, 15);
+            labelArrow.TabIndex = 0;
+            labelArrow.Text = "labelArrow";
+            // 
+            // tableLayoutPanelSliderArrowsAndTrackHover
+            // 
+            tableLayoutPanelSliderArrowsAndTrackHover.AutoSize = true;
+            tableLayoutPanelSliderArrowsAndTrackHover.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSliderArrowsAndTrackHover.ColumnCount = 3;
+            tableLayoutPanelSliderArrowsAndTrackHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderArrowsAndTrackHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderArrowsAndTrackHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(pictureBoxSliderArrowsAndTrackHover, 0, 0);
+            tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(textBoxColorSliderArrowsAndTrackHover, 1, 0);
+            tableLayoutPanelSliderArrowsAndTrackHover.Controls.Add(labelSliderArrowsAndTrackHover, 2, 0);
+            tableLayoutPanelSliderArrowsAndTrackHover.Location = new System.Drawing.Point(3, 381);
+            tableLayoutPanelSliderArrowsAndTrackHover.Name = "tableLayoutPanelSliderArrowsAndTrackHover";
+            tableLayoutPanelSliderArrowsAndTrackHover.RowCount = 1;
+            tableLayoutPanelSliderArrowsAndTrackHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSliderArrowsAndTrackHover.Size = new System.Drawing.Size(277, 23);
+            tableLayoutPanelSliderArrowsAndTrackHover.TabIndex = 2;
+            // 
+            // pictureBoxSliderArrowsAndTrackHover
+            // 
+            pictureBoxSliderArrowsAndTrackHover.BackColor = System.Drawing.Color.White;
+            pictureBoxSliderArrowsAndTrackHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSliderArrowsAndTrackHover.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSliderArrowsAndTrackHover.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSliderArrowsAndTrackHover.Name = "pictureBoxSliderArrowsAndTrackHover";
+            pictureBoxSliderArrowsAndTrackHover.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSliderArrowsAndTrackHover.TabIndex = 1;
+            pictureBoxSliderArrowsAndTrackHover.TabStop = false;
+            pictureBoxSliderArrowsAndTrackHover.Click += PictureBoxClick;
+            // 
+            // textBoxColorSliderArrowsAndTrackHover
+            // 
+            textBoxColorSliderArrowsAndTrackHover.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSliderArrowsAndTrackHover.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSliderArrowsAndTrackHover.MaxLength = 12;
+            textBoxColorSliderArrowsAndTrackHover.Name = "textBoxColorSliderArrowsAndTrackHover";
+            textBoxColorSliderArrowsAndTrackHover.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSliderArrowsAndTrackHover.TabIndex = 2;
+            textBoxColorSliderArrowsAndTrackHover.Text = "#ffffff";
+            textBoxColorSliderArrowsAndTrackHover.TextChanged += TextBoxColorsChanged;
+            textBoxColorSliderArrowsAndTrackHover.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSliderArrowsAndTrackHover.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelSliderArrowsAndTrackHover
+            // 
+            labelSliderArrowsAndTrackHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSliderArrowsAndTrackHover.AutoSize = true;
+            labelSliderArrowsAndTrackHover.Location = new System.Drawing.Point(95, 4);
+            labelSliderArrowsAndTrackHover.Name = "labelSliderArrowsAndTrackHover";
+            labelSliderArrowsAndTrackHover.Size = new System.Drawing.Size(179, 15);
+            labelSliderArrowsAndTrackHover.TabIndex = 0;
+            labelSliderArrowsAndTrackHover.Text = "labelSliderArrowsAndTrackHover";
+            // 
+            // tableLayoutPanelSliderHover
+            // 
+            tableLayoutPanelSliderHover.AutoSize = true;
+            tableLayoutPanelSliderHover.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSliderHover.ColumnCount = 3;
+            tableLayoutPanelSliderHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderHover.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSliderHover.Controls.Add(pictureBoxSliderHover, 0, 0);
+            tableLayoutPanelSliderHover.Controls.Add(textBoxColorSliderHover, 1, 0);
+            tableLayoutPanelSliderHover.Controls.Add(labelSliderHover, 2, 0);
+            tableLayoutPanelSliderHover.Location = new System.Drawing.Point(3, 352);
+            tableLayoutPanelSliderHover.Name = "tableLayoutPanelSliderHover";
+            tableLayoutPanelSliderHover.RowCount = 1;
+            tableLayoutPanelSliderHover.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSliderHover.Size = new System.Drawing.Size(191, 23);
+            tableLayoutPanelSliderHover.TabIndex = 2;
+            // 
+            // pictureBoxSliderHover
+            // 
+            pictureBoxSliderHover.BackColor = System.Drawing.Color.White;
+            pictureBoxSliderHover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSliderHover.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSliderHover.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSliderHover.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSliderHover.Name = "pictureBoxSliderHover";
+            pictureBoxSliderHover.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSliderHover.TabIndex = 1;
+            pictureBoxSliderHover.TabStop = false;
+            pictureBoxSliderHover.Click += PictureBoxClick;
+            // 
+            // textBoxColorSliderHover
+            // 
+            textBoxColorSliderHover.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSliderHover.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSliderHover.MaxLength = 12;
+            textBoxColorSliderHover.Name = "textBoxColorSliderHover";
+            textBoxColorSliderHover.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSliderHover.TabIndex = 2;
+            textBoxColorSliderHover.Text = "#ffffff";
+            textBoxColorSliderHover.TextChanged += TextBoxColorsChanged;
+            textBoxColorSliderHover.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSliderHover.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelSliderHover
+            // 
+            labelSliderHover.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSliderHover.AutoSize = true;
+            labelSliderHover.Location = new System.Drawing.Point(95, 4);
+            labelSliderHover.Name = "labelSliderHover";
+            labelSliderHover.Size = new System.Drawing.Size(93, 15);
+            labelSliderHover.TabIndex = 0;
+            labelSliderHover.Text = "labelSliderHover";
+            // 
+            // tableLayoutPanelSliderDragging
+            // 
+            tableLayoutPanelSliderDragging.AutoSize = true;
+            tableLayoutPanelSliderDragging.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSliderDragging.ColumnCount = 3;
+            tableLayoutPanelSliderDragging.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderDragging.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSliderDragging.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSliderDragging.Controls.Add(pictureBoxSliderDragging, 0, 0);
+            tableLayoutPanelSliderDragging.Controls.Add(textBoxColorSliderDragging, 1, 0);
+            tableLayoutPanelSliderDragging.Controls.Add(labelSliderDragging, 2, 0);
+            tableLayoutPanelSliderDragging.Location = new System.Drawing.Point(3, 323);
+            tableLayoutPanelSliderDragging.Name = "tableLayoutPanelSliderDragging";
+            tableLayoutPanelSliderDragging.RowCount = 1;
+            tableLayoutPanelSliderDragging.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSliderDragging.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            tableLayoutPanelSliderDragging.Size = new System.Drawing.Size(208, 23);
+            tableLayoutPanelSliderDragging.TabIndex = 2;
+            // 
+            // pictureBoxSliderDragging
+            // 
+            pictureBoxSliderDragging.BackColor = System.Drawing.Color.White;
+            pictureBoxSliderDragging.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSliderDragging.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSliderDragging.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSliderDragging.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSliderDragging.Name = "pictureBoxSliderDragging";
+            pictureBoxSliderDragging.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSliderDragging.TabIndex = 1;
+            pictureBoxSliderDragging.TabStop = false;
+            pictureBoxSliderDragging.Click += PictureBoxClick;
+            // 
+            // textBoxColorSliderDragging
+            // 
+            textBoxColorSliderDragging.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSliderDragging.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSliderDragging.MaxLength = 12;
+            textBoxColorSliderDragging.Name = "textBoxColorSliderDragging";
+            textBoxColorSliderDragging.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSliderDragging.TabIndex = 2;
+            textBoxColorSliderDragging.Text = "#ffffff";
+            textBoxColorSliderDragging.TextChanged += TextBoxColorsChanged;
+            textBoxColorSliderDragging.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSliderDragging.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelSliderDragging
+            // 
+            labelSliderDragging.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSliderDragging.AutoSize = true;
+            labelSliderDragging.Location = new System.Drawing.Point(95, 4);
+            labelSliderDragging.Name = "labelSliderDragging";
+            labelSliderDragging.Size = new System.Drawing.Size(110, 15);
+            labelSliderDragging.TabIndex = 0;
+            labelSliderDragging.Text = "labelSliderDragging";
+            // 
+            // tableLayoutPanelSlider
+            // 
+            tableLayoutPanelSlider.AutoSize = true;
+            tableLayoutPanelSlider.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSlider.ColumnCount = 3;
+            tableLayoutPanelSlider.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSlider.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSlider.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSlider.Controls.Add(pictureBoxSlider, 0, 0);
+            tableLayoutPanelSlider.Controls.Add(textBoxColorSlider, 1, 0);
+            tableLayoutPanelSlider.Controls.Add(labelSlider, 2, 0);
+            tableLayoutPanelSlider.Location = new System.Drawing.Point(3, 294);
+            tableLayoutPanelSlider.Name = "tableLayoutPanelSlider";
+            tableLayoutPanelSlider.RowCount = 1;
+            tableLayoutPanelSlider.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSlider.Size = new System.Drawing.Size(159, 23);
+            tableLayoutPanelSlider.TabIndex = 2;
+            // 
+            // pictureBoxSlider
+            // 
+            pictureBoxSlider.BackColor = System.Drawing.Color.White;
+            pictureBoxSlider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSlider.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSlider.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSlider.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSlider.Name = "pictureBoxSlider";
+            pictureBoxSlider.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSlider.TabIndex = 1;
+            pictureBoxSlider.TabStop = false;
+            pictureBoxSlider.Click += PictureBoxClick;
+            // 
+            // textBoxColorSlider
+            // 
+            textBoxColorSlider.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSlider.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSlider.MaxLength = 12;
+            textBoxColorSlider.Name = "textBoxColorSlider";
+            textBoxColorSlider.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSlider.TabIndex = 2;
+            textBoxColorSlider.Text = "#ffffff";
+            textBoxColorSlider.TextChanged += TextBoxColorsChanged;
+            textBoxColorSlider.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSlider.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelSlider
+            // 
+            labelSlider.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSlider.AutoSize = true;
+            labelSlider.Location = new System.Drawing.Point(95, 4);
+            labelSlider.Name = "labelSlider";
+            labelSlider.Size = new System.Drawing.Size(61, 15);
+            labelSlider.TabIndex = 0;
+            labelSlider.Text = "labelSlider";
+            // 
+            // tableLayoutPanelScrollbarBackground
+            // 
+            tableLayoutPanelScrollbarBackground.AutoSize = true;
+            tableLayoutPanelScrollbarBackground.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelScrollbarBackground.ColumnCount = 3;
+            tableLayoutPanelScrollbarBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelScrollbarBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelScrollbarBackground.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelScrollbarBackground.Controls.Add(pictureBoxScrollbarBackground, 0, 0);
+            tableLayoutPanelScrollbarBackground.Controls.Add(textBoxColorScrollbarBackground, 1, 0);
+            tableLayoutPanelScrollbarBackground.Controls.Add(labelScrollbarBackground, 2, 0);
+            tableLayoutPanelScrollbarBackground.Location = new System.Drawing.Point(3, 265);
+            tableLayoutPanelScrollbarBackground.Name = "tableLayoutPanelScrollbarBackground";
+            tableLayoutPanelScrollbarBackground.RowCount = 1;
+            tableLayoutPanelScrollbarBackground.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelScrollbarBackground.Size = new System.Drawing.Size(240, 23);
+            tableLayoutPanelScrollbarBackground.TabIndex = 2;
+            // 
+            // pictureBoxScrollbarBackground
+            // 
+            pictureBoxScrollbarBackground.BackColor = System.Drawing.Color.White;
+            pictureBoxScrollbarBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxScrollbarBackground.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxScrollbarBackground.Location = new System.Drawing.Point(0, 0);
+            pictureBoxScrollbarBackground.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxScrollbarBackground.Name = "pictureBoxScrollbarBackground";
+            pictureBoxScrollbarBackground.Size = new System.Drawing.Size(23, 23);
+            pictureBoxScrollbarBackground.TabIndex = 1;
+            pictureBoxScrollbarBackground.TabStop = false;
+            pictureBoxScrollbarBackground.Click += PictureBoxClick;
+            // 
+            // textBoxColorScrollbarBackground
+            // 
+            textBoxColorScrollbarBackground.Location = new System.Drawing.Point(23, 0);
+            textBoxColorScrollbarBackground.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorScrollbarBackground.MaxLength = 12;
+            textBoxColorScrollbarBackground.Name = "textBoxColorScrollbarBackground";
+            textBoxColorScrollbarBackground.Size = new System.Drawing.Size(69, 23);
+            textBoxColorScrollbarBackground.TabIndex = 2;
+            textBoxColorScrollbarBackground.Text = "#ffffff";
+            textBoxColorScrollbarBackground.TextChanged += TextBoxColorsChanged;
+            textBoxColorScrollbarBackground.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorScrollbarBackground.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelScrollbarBackground
+            // 
+            labelScrollbarBackground.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelScrollbarBackground.AutoSize = true;
+            labelScrollbarBackground.Location = new System.Drawing.Point(95, 4);
+            labelScrollbarBackground.Name = "labelScrollbarBackground";
+            labelScrollbarBackground.Size = new System.Drawing.Size(142, 15);
+            labelScrollbarBackground.TabIndex = 0;
+            labelScrollbarBackground.Text = "labelScrollbarBackground";
+            // 
+            // labelScrollbarLightMode
+            // 
+            labelScrollbarLightMode.AutoSize = true;
+            labelScrollbarLightMode.Location = new System.Drawing.Point(3, 247);
+            labelScrollbarLightMode.Name = "labelScrollbarLightMode";
+            labelScrollbarLightMode.Size = new System.Drawing.Size(136, 15);
+            labelScrollbarLightMode.TabIndex = 3;
+            labelScrollbarLightMode.Text = "labelScrollbarLightMode";
+            // 
+            // tableLayoutPanelSelectedItemBorder
+            // 
+            tableLayoutPanelSelectedItemBorder.AutoSize = true;
+            tableLayoutPanelSelectedItemBorder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSelectedItemBorder.ColumnCount = 3;
+            tableLayoutPanelSelectedItemBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSelectedItemBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSelectedItemBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSelectedItemBorder.Controls.Add(pictureBoxSelectedItemBorder, 0, 0);
+            tableLayoutPanelSelectedItemBorder.Controls.Add(textBoxColorSelectedItemBorder, 1, 0);
+            tableLayoutPanelSelectedItemBorder.Controls.Add(labelSelectedItemBorder, 2, 0);
+            tableLayoutPanelSelectedItemBorder.Location = new System.Drawing.Point(3, 221);
+            tableLayoutPanelSelectedItemBorder.Name = "tableLayoutPanelSelectedItemBorder";
+            tableLayoutPanelSelectedItemBorder.RowCount = 1;
+            tableLayoutPanelSelectedItemBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSelectedItemBorder.Size = new System.Drawing.Size(233, 23);
+            tableLayoutPanelSelectedItemBorder.TabIndex = 2;
+            // 
+            // pictureBoxSelectedItemBorder
+            // 
+            pictureBoxSelectedItemBorder.BackColor = System.Drawing.Color.White;
+            pictureBoxSelectedItemBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSelectedItemBorder.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSelectedItemBorder.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSelectedItemBorder.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSelectedItemBorder.Name = "pictureBoxSelectedItemBorder";
+            pictureBoxSelectedItemBorder.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSelectedItemBorder.TabIndex = 1;
+            pictureBoxSelectedItemBorder.TabStop = false;
+            pictureBoxSelectedItemBorder.Click += PictureBoxClick;
+            // 
+            // textBoxColorSelectedItemBorder
+            // 
+            textBoxColorSelectedItemBorder.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSelectedItemBorder.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSelectedItemBorder.MaxLength = 12;
+            textBoxColorSelectedItemBorder.Name = "textBoxColorSelectedItemBorder";
+            textBoxColorSelectedItemBorder.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSelectedItemBorder.TabIndex = 2;
+            textBoxColorSelectedItemBorder.Text = "#ffffff";
+            textBoxColorSelectedItemBorder.TextChanged += TextBoxColorsChanged;
+            textBoxColorSelectedItemBorder.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSelectedItemBorder.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelSelectedItemBorder
+            // 
+            labelSelectedItemBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSelectedItemBorder.AutoSize = true;
+            labelSelectedItemBorder.Location = new System.Drawing.Point(95, 4);
+            labelSelectedItemBorder.Name = "labelSelectedItemBorder";
+            labelSelectedItemBorder.Size = new System.Drawing.Size(135, 15);
+            labelSelectedItemBorder.TabIndex = 0;
+            labelSelectedItemBorder.Text = "labelSelectedItemBorder";
+            // 
+            // tableLayoutPanelSelectedItem
+            // 
+            tableLayoutPanelSelectedItem.AutoSize = true;
+            tableLayoutPanelSelectedItem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSelectedItem.ColumnCount = 3;
+            tableLayoutPanelSelectedItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSelectedItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSelectedItem.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSelectedItem.Controls.Add(pictureBoxSelectedItem, 0, 0);
+            tableLayoutPanelSelectedItem.Controls.Add(textBoxColorSelectedItem, 1, 0);
+            tableLayoutPanelSelectedItem.Controls.Add(labelSelectedItem, 2, 0);
+            tableLayoutPanelSelectedItem.Location = new System.Drawing.Point(3, 192);
+            tableLayoutPanelSelectedItem.Name = "tableLayoutPanelSelectedItem";
+            tableLayoutPanelSelectedItem.RowCount = 1;
+            tableLayoutPanelSelectedItem.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSelectedItem.Size = new System.Drawing.Size(198, 23);
+            tableLayoutPanelSelectedItem.TabIndex = 2;
+            // 
+            // pictureBoxSelectedItem
+            // 
+            pictureBoxSelectedItem.BackColor = System.Drawing.Color.White;
+            pictureBoxSelectedItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSelectedItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSelectedItem.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSelectedItem.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSelectedItem.Name = "pictureBoxSelectedItem";
+            pictureBoxSelectedItem.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSelectedItem.TabIndex = 1;
+            pictureBoxSelectedItem.TabStop = false;
+            pictureBoxSelectedItem.Click += PictureBoxClick;
+            // 
+            // textBoxColorSelectedItem
+            // 
+            textBoxColorSelectedItem.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSelectedItem.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSelectedItem.MaxLength = 12;
+            textBoxColorSelectedItem.Name = "textBoxColorSelectedItem";
+            textBoxColorSelectedItem.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSelectedItem.TabIndex = 2;
+            textBoxColorSelectedItem.Text = "#ffffff";
+            textBoxColorSelectedItem.TextChanged += TextBoxColorsChanged;
+            textBoxColorSelectedItem.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSelectedItem.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelSelectedItem
+            // 
+            labelSelectedItem.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSelectedItem.AutoSize = true;
+            labelSelectedItem.Location = new System.Drawing.Point(95, 4);
+            labelSelectedItem.Name = "labelSelectedItem";
+            labelSelectedItem.Size = new System.Drawing.Size(100, 15);
+            labelSelectedItem.TabIndex = 0;
+            labelSelectedItem.Text = "labelSelectedItem";
+            // 
+            // tableLayoutPanelOpenFolderBorder
+            // 
+            tableLayoutPanelOpenFolderBorder.AutoSize = true;
+            tableLayoutPanelOpenFolderBorder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelOpenFolderBorder.ColumnCount = 3;
+            tableLayoutPanelOpenFolderBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelOpenFolderBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelOpenFolderBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelOpenFolderBorder.Controls.Add(pictureBoxOpenFolderBorder, 0, 0);
+            tableLayoutPanelOpenFolderBorder.Controls.Add(textBoxColorOpenFolderBorder, 1, 0);
+            tableLayoutPanelOpenFolderBorder.Controls.Add(labelOpenFolderBorder, 2, 0);
+            tableLayoutPanelOpenFolderBorder.Location = new System.Drawing.Point(3, 163);
+            tableLayoutPanelOpenFolderBorder.Name = "tableLayoutPanelOpenFolderBorder";
+            tableLayoutPanelOpenFolderBorder.RowCount = 1;
+            tableLayoutPanelOpenFolderBorder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelOpenFolderBorder.Size = new System.Drawing.Size(227, 23);
+            tableLayoutPanelOpenFolderBorder.TabIndex = 2;
+            // 
+            // pictureBoxOpenFolderBorder
+            // 
+            pictureBoxOpenFolderBorder.BackColor = System.Drawing.Color.White;
+            pictureBoxOpenFolderBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxOpenFolderBorder.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxOpenFolderBorder.Location = new System.Drawing.Point(0, 0);
+            pictureBoxOpenFolderBorder.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxOpenFolderBorder.Name = "pictureBoxOpenFolderBorder";
+            pictureBoxOpenFolderBorder.Size = new System.Drawing.Size(23, 23);
+            pictureBoxOpenFolderBorder.TabIndex = 1;
+            pictureBoxOpenFolderBorder.TabStop = false;
+            pictureBoxOpenFolderBorder.Click += PictureBoxClick;
+            // 
+            // textBoxColorOpenFolderBorder
+            // 
+            textBoxColorOpenFolderBorder.Location = new System.Drawing.Point(23, 0);
+            textBoxColorOpenFolderBorder.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorOpenFolderBorder.Name = "textBoxColorOpenFolderBorder";
+            textBoxColorOpenFolderBorder.Size = new System.Drawing.Size(69, 23);
+            textBoxColorOpenFolderBorder.TabIndex = 2;
+            textBoxColorOpenFolderBorder.Text = "#ffffff";
+            textBoxColorOpenFolderBorder.TextChanged += TextBoxColorsChanged;
+            textBoxColorOpenFolderBorder.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorOpenFolderBorder.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelOpenFolderBorder
+            // 
+            labelOpenFolderBorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelOpenFolderBorder.AutoSize = true;
+            labelOpenFolderBorder.Location = new System.Drawing.Point(95, 4);
+            labelOpenFolderBorder.Name = "labelOpenFolderBorder";
+            labelOpenFolderBorder.Size = new System.Drawing.Size(129, 15);
+            labelOpenFolderBorder.TabIndex = 0;
+            labelOpenFolderBorder.Text = "labelOpenFolderBorder";
+            // 
+            // tableLayoutPanelOpenFolder
+            // 
+            tableLayoutPanelOpenFolder.AutoSize = true;
+            tableLayoutPanelOpenFolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelOpenFolder.ColumnCount = 3;
+            tableLayoutPanelOpenFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelOpenFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelOpenFolder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelOpenFolder.Controls.Add(pictureBoxOpenFolder, 0, 0);
+            tableLayoutPanelOpenFolder.Controls.Add(textBoxColorOpenFolder, 1, 0);
+            tableLayoutPanelOpenFolder.Controls.Add(labelOpenFolder, 2, 0);
+            tableLayoutPanelOpenFolder.Location = new System.Drawing.Point(3, 134);
+            tableLayoutPanelOpenFolder.Name = "tableLayoutPanelOpenFolder";
+            tableLayoutPanelOpenFolder.RowCount = 1;
+            tableLayoutPanelOpenFolder.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelOpenFolder.Size = new System.Drawing.Size(192, 23);
+            tableLayoutPanelOpenFolder.TabIndex = 2;
+            // 
+            // pictureBoxOpenFolder
+            // 
+            pictureBoxOpenFolder.BackColor = System.Drawing.Color.White;
+            pictureBoxOpenFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxOpenFolder.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxOpenFolder.Location = new System.Drawing.Point(0, 0);
+            pictureBoxOpenFolder.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxOpenFolder.Name = "pictureBoxOpenFolder";
+            pictureBoxOpenFolder.Size = new System.Drawing.Size(23, 23);
+            pictureBoxOpenFolder.TabIndex = 1;
+            pictureBoxOpenFolder.TabStop = false;
+            pictureBoxOpenFolder.Click += PictureBoxClick;
+            // 
+            // textBoxColorOpenFolder
+            // 
+            textBoxColorOpenFolder.Location = new System.Drawing.Point(23, 0);
+            textBoxColorOpenFolder.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorOpenFolder.MaxLength = 12;
+            textBoxColorOpenFolder.Name = "textBoxColorOpenFolder";
+            textBoxColorOpenFolder.Size = new System.Drawing.Size(69, 23);
+            textBoxColorOpenFolder.TabIndex = 2;
+            textBoxColorOpenFolder.Text = "#ffffff";
+            textBoxColorOpenFolder.TextChanged += TextBoxColorsChanged;
+            textBoxColorOpenFolder.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorOpenFolder.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelOpenFolder
+            // 
+            labelOpenFolder.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelOpenFolder.AutoSize = true;
+            labelOpenFolder.Location = new System.Drawing.Point(95, 4);
+            labelOpenFolder.Name = "labelOpenFolder";
+            labelOpenFolder.Size = new System.Drawing.Size(94, 15);
+            labelOpenFolder.TabIndex = 0;
+            labelOpenFolder.Text = "labelOpenFolder";
+            // 
+            // tableLayoutPanelSearchField
+            // 
+            tableLayoutPanelSearchField.AutoSize = true;
+            tableLayoutPanelSearchField.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelSearchField.ColumnCount = 3;
+            tableLayoutPanelSearchField.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSearchField.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelSearchField.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelSearchField.Controls.Add(pictureBoxSearchField, 0, 0);
+            tableLayoutPanelSearchField.Controls.Add(textBoxColorSearchField, 1, 0);
+            tableLayoutPanelSearchField.Controls.Add(labelSearchField, 2, 0);
+            tableLayoutPanelSearchField.Location = new System.Drawing.Point(3, 105);
+            tableLayoutPanelSearchField.Name = "tableLayoutPanelSearchField";
+            tableLayoutPanelSearchField.RowCount = 1;
+            tableLayoutPanelSearchField.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelSearchField.Size = new System.Drawing.Size(190, 23);
+            tableLayoutPanelSearchField.TabIndex = 2;
+            // 
+            // pictureBoxSearchField
+            // 
+            pictureBoxSearchField.BackColor = System.Drawing.Color.White;
+            pictureBoxSearchField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBoxSearchField.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxSearchField.Location = new System.Drawing.Point(0, 0);
+            pictureBoxSearchField.Margin = new System.Windows.Forms.Padding(0);
+            pictureBoxSearchField.Name = "pictureBoxSearchField";
+            pictureBoxSearchField.Size = new System.Drawing.Size(23, 23);
+            pictureBoxSearchField.TabIndex = 1;
+            pictureBoxSearchField.TabStop = false;
+            pictureBoxSearchField.Click += PictureBoxClick;
+            // 
+            // textBoxColorSearchField
+            // 
+            textBoxColorSearchField.Location = new System.Drawing.Point(23, 0);
+            textBoxColorSearchField.Margin = new System.Windows.Forms.Padding(0);
+            textBoxColorSearchField.MaxLength = 12;
+            textBoxColorSearchField.Name = "textBoxColorSearchField";
+            textBoxColorSearchField.Size = new System.Drawing.Size(69, 23);
+            textBoxColorSearchField.TabIndex = 2;
+            textBoxColorSearchField.Text = "#ffffff";
+            textBoxColorSearchField.TextChanged += TextBoxColorsChanged;
+            textBoxColorSearchField.KeyDown += StopPlayingDingSoundEnterKeyPressed_KeyDown;
+            textBoxColorSearchField.KeyUp += StopPlayingDingSoundEnterKeyPressed_KeyUp;
+            // 
+            // labelSearchField
+            // 
+            labelSearchField.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labelSearchField.AutoSize = true;
+            labelSearchField.Location = new System.Drawing.Point(95, 4);
+            labelSearchField.Name = "labelSearchField";
+            labelSearchField.Size = new System.Drawing.Size(92, 15);
+            labelSearchField.TabIndex = 0;
+            labelSearchField.Text = "labelSearchField";
+            // 
+            // groupBoxAppearance
+            // 
+            groupBoxAppearance.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            groupBoxAppearance.AutoSize = true;
+            groupBoxAppearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            groupBoxAppearance.Controls.Add(tableLayoutPanelAppearance);
+            groupBoxAppearance.Location = new System.Drawing.Point(3, 3);
+            groupBoxAppearance.Name = "groupBoxAppearance";
+            groupBoxAppearance.Size = new System.Drawing.Size(373, 353);
+            groupBoxAppearance.TabIndex = 1;
+            groupBoxAppearance.TabStop = false;
+            groupBoxAppearance.Text = "groupBoxAppearance";
+            // 
+            // tableLayoutPanelAppearance
+            // 
+            tableLayoutPanelAppearance.AutoSize = true;
+            tableLayoutPanelAppearance.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelAppearance.ColumnCount = 1;
+            tableLayoutPanelAppearance.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelAppearance.Controls.Add(checkBoxShowFunctionKeyPinMenu, 0, 8);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxShowFunctionKeySettings, 0, 9);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxShowFunctionKeyRestart, 0, 10);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxShowLinkOverlay, 0, 4);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxUseFading, 0, 3);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxUseIconFromRootFolder, 0, 0);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxShowSearchBar, 0, 6);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxShowDirectoryTitleAtTop, 0, 5);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxRoundCorners, 0, 1);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxDarkModeAlwaysOn, 0, 2);
+            tableLayoutPanelAppearance.Controls.Add(buttonAppearanceDefault, 0, 12);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxShowCountOfElementsBelow, 0, 11);
+            tableLayoutPanelAppearance.Controls.Add(checkBoxShowFunctionKeyOpenFolder, 0, 7);
+            tableLayoutPanelAppearance.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanelAppearance.Location = new System.Drawing.Point(3, 19);
+            tableLayoutPanelAppearance.Name = "tableLayoutPanelAppearance";
+            tableLayoutPanelAppearance.RowCount = 13;
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelAppearance.Size = new System.Drawing.Size(367, 331);
+            tableLayoutPanelAppearance.TabIndex = 1;
+            // 
+            // checkBoxShowFunctionKeyPinMenu
+            // 
+            checkBoxShowFunctionKeyPinMenu.AutoSize = true;
+            checkBoxShowFunctionKeyPinMenu.Location = new System.Drawing.Point(3, 203);
+            checkBoxShowFunctionKeyPinMenu.Name = "checkBoxShowFunctionKeyPinMenu";
+            checkBoxShowFunctionKeyPinMenu.Size = new System.Drawing.Size(220, 19);
+            checkBoxShowFunctionKeyPinMenu.TabIndex = 4;
+            checkBoxShowFunctionKeyPinMenu.Text = "checkBoxShowFunctionKeyPinMenu";
+            checkBoxShowFunctionKeyPinMenu.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowFunctionKeySettings
+            // 
+            checkBoxShowFunctionKeySettings.AutoSize = true;
+            checkBoxShowFunctionKeySettings.Location = new System.Drawing.Point(3, 228);
+            checkBoxShowFunctionKeySettings.Name = "checkBoxShowFunctionKeySettings";
+            checkBoxShowFunctionKeySettings.Size = new System.Drawing.Size(214, 19);
+            checkBoxShowFunctionKeySettings.TabIndex = 5;
+            checkBoxShowFunctionKeySettings.Text = "checkBoxShowFunctionKeySettings";
+            checkBoxShowFunctionKeySettings.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowFunctionKeyRestart
+            // 
+            checkBoxShowFunctionKeyRestart.AutoSize = true;
+            checkBoxShowFunctionKeyRestart.Location = new System.Drawing.Point(3, 253);
+            checkBoxShowFunctionKeyRestart.Name = "checkBoxShowFunctionKeyRestart";
+            checkBoxShowFunctionKeyRestart.Size = new System.Drawing.Size(208, 19);
+            checkBoxShowFunctionKeyRestart.TabIndex = 6;
+            checkBoxShowFunctionKeyRestart.Text = "checkBoxShowFunctionKeyRestart";
+            checkBoxShowFunctionKeyRestart.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowLinkOverlay
+            // 
+            checkBoxShowLinkOverlay.AutoSize = true;
+            checkBoxShowLinkOverlay.Location = new System.Drawing.Point(3, 103);
+            checkBoxShowLinkOverlay.Name = "checkBoxShowLinkOverlay";
+            checkBoxShowLinkOverlay.Size = new System.Drawing.Size(168, 19);
+            checkBoxShowLinkOverlay.TabIndex = 5;
+            checkBoxShowLinkOverlay.Text = "checkBoxShowLinkOverlay";
+            checkBoxShowLinkOverlay.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxUseFading
+            // 
+            checkBoxUseFading.AutoSize = true;
+            checkBoxUseFading.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxUseFading.Location = new System.Drawing.Point(3, 78);
+            checkBoxUseFading.Name = "checkBoxUseFading";
+            checkBoxUseFading.Size = new System.Drawing.Size(361, 19);
+            checkBoxUseFading.TabIndex = 5;
+            checkBoxUseFading.Text = "checkBoxUseFading";
+            checkBoxUseFading.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxUseIconFromRootFolder
+            // 
+            checkBoxUseIconFromRootFolder.AutoSize = true;
+            checkBoxUseIconFromRootFolder.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxUseIconFromRootFolder.Location = new System.Drawing.Point(3, 3);
+            checkBoxUseIconFromRootFolder.Name = "checkBoxUseIconFromRootFolder";
+            checkBoxUseIconFromRootFolder.Size = new System.Drawing.Size(361, 19);
+            checkBoxUseIconFromRootFolder.TabIndex = 4;
+            checkBoxUseIconFromRootFolder.Text = "checkBoxUseIconFromRootFolder";
+            checkBoxUseIconFromRootFolder.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowSearchBar
+            // 
+            checkBoxShowSearchBar.AutoSize = true;
+            checkBoxShowSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxShowSearchBar.Location = new System.Drawing.Point(3, 153);
+            checkBoxShowSearchBar.Name = "checkBoxShowSearchBar";
+            checkBoxShowSearchBar.Size = new System.Drawing.Size(361, 19);
+            checkBoxShowSearchBar.TabIndex = 2;
+            checkBoxShowSearchBar.Text = "checkBoxShowSearchBar";
+            checkBoxShowSearchBar.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowDirectoryTitleAtTop
+            // 
+            checkBoxShowDirectoryTitleAtTop.AutoSize = true;
+            checkBoxShowDirectoryTitleAtTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxShowDirectoryTitleAtTop.Location = new System.Drawing.Point(3, 128);
+            checkBoxShowDirectoryTitleAtTop.Name = "checkBoxShowDirectoryTitleAtTop";
+            checkBoxShowDirectoryTitleAtTop.Size = new System.Drawing.Size(361, 19);
+            checkBoxShowDirectoryTitleAtTop.TabIndex = 1;
+            checkBoxShowDirectoryTitleAtTop.Text = "checkBoxShowDirectoryTitleAtTop";
+            checkBoxShowDirectoryTitleAtTop.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxRoundCorners
+            // 
+            checkBoxRoundCorners.AutoSize = true;
+            checkBoxRoundCorners.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxRoundCorners.Location = new System.Drawing.Point(3, 28);
+            checkBoxRoundCorners.Name = "checkBoxRoundCorners";
+            checkBoxRoundCorners.Size = new System.Drawing.Size(361, 19);
+            checkBoxRoundCorners.TabIndex = 4;
+            checkBoxRoundCorners.Text = "checkBoxRoundCorners";
+            checkBoxRoundCorners.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDarkModeAlwaysOn
+            // 
+            checkBoxDarkModeAlwaysOn.AutoSize = true;
+            checkBoxDarkModeAlwaysOn.Dock = System.Windows.Forms.DockStyle.Fill;
+            checkBoxDarkModeAlwaysOn.Location = new System.Drawing.Point(3, 53);
+            checkBoxDarkModeAlwaysOn.Name = "checkBoxDarkModeAlwaysOn";
+            checkBoxDarkModeAlwaysOn.Size = new System.Drawing.Size(361, 19);
+            checkBoxDarkModeAlwaysOn.TabIndex = 0;
+            checkBoxDarkModeAlwaysOn.Text = "checkBoxDarkModeAlwaysOn";
+            checkBoxDarkModeAlwaysOn.UseVisualStyleBackColor = true;
+            checkBoxDarkModeAlwaysOn.CheckedChanged += CheckBoxDarkModeAlwaysOnCheckedChanged;
+            // 
+            // buttonAppearanceDefault
+            // 
+            buttonAppearanceDefault.AutoSize = true;
+            buttonAppearanceDefault.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonAppearanceDefault.Location = new System.Drawing.Point(3, 303);
+            buttonAppearanceDefault.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonAppearanceDefault.Name = "buttonAppearanceDefault";
+            buttonAppearanceDefault.Size = new System.Drawing.Size(154, 25);
+            buttonAppearanceDefault.TabIndex = 3;
+            buttonAppearanceDefault.Text = "buttonAppearanceDefault";
+            buttonAppearanceDefault.UseVisualStyleBackColor = true;
+            buttonAppearanceDefault.Click += ButtonAppearanceDefault_Click;
+            // 
+            // checkBoxShowCountOfElementsBelow
+            // 
+            checkBoxShowCountOfElementsBelow.AutoSize = true;
+            checkBoxShowCountOfElementsBelow.Location = new System.Drawing.Point(3, 278);
+            checkBoxShowCountOfElementsBelow.Name = "checkBoxShowCountOfElementsBelow";
+            checkBoxShowCountOfElementsBelow.Size = new System.Drawing.Size(232, 19);
+            checkBoxShowCountOfElementsBelow.TabIndex = 4;
+            checkBoxShowCountOfElementsBelow.Text = "checkBoxShowCountOfElementsBelow";
+            checkBoxShowCountOfElementsBelow.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShowFunctionKeyOpenFolder
+            // 
+            checkBoxShowFunctionKeyOpenFolder.AutoSize = true;
+            checkBoxShowFunctionKeyOpenFolder.Location = new System.Drawing.Point(3, 178);
+            checkBoxShowFunctionKeyOpenFolder.Name = "checkBoxShowFunctionKeyOpenFolder";
+            checkBoxShowFunctionKeyOpenFolder.Size = new System.Drawing.Size(234, 19);
+            checkBoxShowFunctionKeyOpenFolder.TabIndex = 3;
+            checkBoxShowFunctionKeyOpenFolder.Text = "checkBoxShowFunctionKeyOpenFolder";
+            checkBoxShowFunctionKeyOpenFolder.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelBottom
+            // 
+            tableLayoutPanelBottom.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanelBottom.AutoSize = true;
+            tableLayoutPanelBottom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelBottom.ColumnCount = 3;
+            tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            tableLayoutPanelBottom.Controls.Add(buttonOk, 1, 0);
+            tableLayoutPanelBottom.Controls.Add(buttonCancel, 2, 0);
+            tableLayoutPanelBottom.Location = new System.Drawing.Point(3, 522);
+            tableLayoutPanelBottom.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            tableLayoutPanelBottom.Name = "tableLayoutPanelBottom";
+            tableLayoutPanelBottom.RowCount = 1;
+            tableLayoutPanelBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            tableLayoutPanelBottom.Size = new System.Drawing.Size(426, 25);
+            tableLayoutPanelBottom.TabIndex = 0;
+            // 
+            // buttonOk
+            // 
+            buttonOk.AutoSize = true;
+            buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            buttonOk.Location = new System.Drawing.Point(265, 0);
+            buttonOk.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            buttonOk.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonOk.Name = "buttonOk";
+            buttonOk.Size = new System.Drawing.Size(75, 25);
+            buttonOk.TabIndex = 1;
+            buttonOk.Text = "OK";
+            buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += ButtonOk_Click;
+            // 
+            // buttonCancel
+            // 
+            buttonCancel.AutoSize = true;
+            buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            buttonCancel.Location = new System.Drawing.Point(346, 0);
+            buttonCancel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
+            buttonCancel.MinimumSize = new System.Drawing.Size(75, 23);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new System.Drawing.Size(75, 25);
+            buttonCancel.TabIndex = 2;
+            buttonCancel.Text = "Abort";
+            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += ButtonCancel_Click;
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1080, 577);
-            this.Controls.Add(this.tableLayoutPanelMain);
-            this.Name = "SettingsForm";
-            this.Opacity = 0D;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Settings";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsForm_FormClosed);
-            this.Load += new System.EventHandler(this.SettingsForm_Load);
-            this.Shown += new System.EventHandler(this.SettingsForm_Shown);
-            this.tableLayoutPanelMain.ResumeLayout(false);
-            this.tableLayoutPanelMain.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.tabPageGeneral.ResumeLayout(false);
-            this.tabPageGeneral.PerformLayout();
-            this.tableLayoutPanelGeneral.ResumeLayout(false);
-            this.tableLayoutPanelGeneral.PerformLayout();
-            this.groupBoxFolder.ResumeLayout(false);
-            this.groupBoxFolder.PerformLayout();
-            this.tableLayoutPanelFolder.ResumeLayout(false);
-            this.tableLayoutPanelFolder.PerformLayout();
-            this.tableLayoutPanelChangeFolder.ResumeLayout(false);
-            this.tableLayoutPanelChangeFolder.PerformLayout();
-            this.tableLayoutPanelRelativeFolderOpenAssembly.ResumeLayout(false);
-            this.tableLayoutPanelRelativeFolderOpenAssembly.PerformLayout();
-            this.groupBoxConfigAndLogfile.ResumeLayout(false);
-            this.groupBoxConfigAndLogfile.PerformLayout();
-            this.tableLayoutPanelConfigAndLogfile.ResumeLayout(false);
-            this.tableLayoutPanelConfigAndLogfile.PerformLayout();
-            this.groupBoxAutostart.ResumeLayout(false);
-            this.groupBoxAutostart.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanelAutostart.ResumeLayout(false);
-            this.tableLayoutPanelAutostart.PerformLayout();
-            this.groupBoxHotkey.ResumeLayout(false);
-            this.groupBoxHotkey.PerformLayout();
-            this.tableLayoutPanelHotkey.ResumeLayout(false);
-            this.tableLayoutPanelHotkey.PerformLayout();
-            this.groupBoxLanguage.ResumeLayout(false);
-            this.groupBoxLanguage.PerformLayout();
-            this.tableLayoutPanelLanguage.ResumeLayout(false);
-            this.tabPageSizeAndLocation.ResumeLayout(false);
-            this.tabPageSizeAndLocation.PerformLayout();
-            this.tableLayoutPanelSizeAndLocation.ResumeLayout(false);
-            this.tableLayoutPanelSizeAndLocation.PerformLayout();
-            this.groupBoxSubMenuAppearAt.ResumeLayout(false);
-            this.groupBoxSubMenuAppearAt.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOverlappingOffsetPixels)).EndInit();
-            this.groupBoxMenuAppearAt.ResumeLayout(false);
-            this.groupBoxMenuAppearAt.PerformLayout();
-            this.tableLayoutPanelMenuAppearAt.ResumeLayout(false);
-            this.tableLayoutPanelMenuAppearAt.PerformLayout();
-            this.groupBoxSize.ResumeLayout(false);
-            this.groupBoxSize.PerformLayout();
-            this.tableLayoutPanelSize.ResumeLayout(false);
-            this.tableLayoutPanelSize.PerformLayout();
-            this.tableLayoutPanelIconSizeInPercent.ResumeLayout(false);
-            this.tableLayoutPanelIconSizeInPercent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconSizeInPercent)).EndInit();
-            this.tableLayoutPanelRowHeighteInPercentage.ResumeLayout(false);
-            this.tableLayoutPanelRowHeighteInPercentage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRowHeighteInPercentage)).EndInit();
-            this.tableLayoutPanelSizeInPercent.ResumeLayout(false);
-            this.tableLayoutPanelSizeInPercent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeInPercent)).EndInit();
-            this.tableLayoutPanelMenuHeight.ResumeLayout(false);
-            this.tableLayoutPanelMenuHeight.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuHeight)).EndInit();
-            this.tableLayoutPanelMaxMenuWidth.ResumeLayout(false);
-            this.tableLayoutPanelMaxMenuWidth.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMenuWidth)).EndInit();
-            this.tabPageAdvanced.ResumeLayout(false);
-            this.tabPageAdvanced.PerformLayout();
-            this.tableLayoutPanelAdvanced.ResumeLayout(false);
-            this.tableLayoutPanelAdvanced.PerformLayout();
-            this.groupBoxOptionalFeatures.ResumeLayout(false);
-            this.groupBoxOptionalFeatures.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.groupBoxInternetShortcutIcons.ResumeLayout(false);
-            this.groupBoxInternetShortcutIcons.PerformLayout();
-            this.tableLayoutPanelInternetShortcutIcons.ResumeLayout(false);
-            this.tableLayoutPanelInternetShortcutIcons.PerformLayout();
-            this.tableLayoutPanelChangeIcoFolder.ResumeLayout(false);
-            this.tableLayoutPanelChangeIcoFolder.PerformLayout();
-            this.groupBoxDrag.ResumeLayout(false);
-            this.groupBoxDrag.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.groupBoxSorting.ResumeLayout(false);
-            this.groupBoxSorting.PerformLayout();
-            this.tableLayoutPanelSorting.ResumeLayout(false);
-            this.tableLayoutPanelSorting.PerformLayout();
-            this.groupBoxHiddenFilesAndFolders.ResumeLayout(false);
-            this.groupBoxHiddenFilesAndFolders.PerformLayout();
-            this.tableLayoutPanelHiddenFilesAndFolders.ResumeLayout(false);
-            this.tableLayoutPanelHiddenFilesAndFolders.PerformLayout();
-            this.groupBoxClick.ResumeLayout(false);
-            this.groupBoxClick.PerformLayout();
-            this.tableLayoutPanelClick.ResumeLayout(false);
-            this.tableLayoutPanelClick.PerformLayout();
-            this.tabPageFolders.ResumeLayout(false);
-            this.tabPageFolders.PerformLayout();
-            this.tableLayoutPanelFoldersInRootFolder.ResumeLayout(false);
-            this.tableLayoutPanelFoldersInRootFolder.PerformLayout();
-            this.groupBoxFoldersInRootFolder.ResumeLayout(false);
-            this.groupBoxFoldersInRootFolder.PerformLayout();
-            this.tableLayoutPanelFolderToRootFoldersList.ResumeLayout(false);
-            this.tableLayoutPanelFolderToRootFoldersList.PerformLayout();
-            this.tableLayoutPanelFolderToRootFolder.ResumeLayout(false);
-            this.tableLayoutPanelFolderToRootFolder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFolders)).EndInit();
-            this.tableLayoutPanelAddSampleStartMenuFolder.ResumeLayout(false);
-            this.tableLayoutPanelAddSampleStartMenuFolder.PerformLayout();
-            this.tabPageExpert.ResumeLayout(false);
-            this.tabPageExpert.PerformLayout();
-            this.tableLayoutPanelExpert.ResumeLayout(false);
-            this.tableLayoutPanelExpert.PerformLayout();
-            this.groupBoxSearchPattern.ResumeLayout(false);
-            this.groupBoxSearchPattern.PerformLayout();
-            this.tableLayoutPanelSearchPattern.ResumeLayout(false);
-            this.tableLayoutPanelSearchPattern.PerformLayout();
-            this.groupBoxCache.ResumeLayout(false);
-            this.groupBoxCache.PerformLayout();
-            this.tableLayoutPanelCache.ResumeLayout(false);
-            this.tableLayoutPanelCache.PerformLayout();
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ResumeLayout(false);
-            this.tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownClearCacheIfMoreThanThisNumberOfItems)).EndInit();
-            this.groupBoxStaysOpen.ResumeLayout(false);
-            this.groupBoxStaysOpen.PerformLayout();
-            this.tableLayoutPanelStaysOpen.ResumeLayout(false);
-            this.tableLayoutPanelStaysOpen.PerformLayout();
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.ResumeLayout(false);
-            this.tableLayoutPanelTimeUntilClosesAfterEnterPressed.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilClosesAfterEnterPressed)).EndInit();
-            this.tableLayoutPanelTimeUntilCloses.ResumeLayout(false);
-            this.tableLayoutPanelTimeUntilCloses.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilClose)).EndInit();
-            this.groupBoxOpenSubmenus.ResumeLayout(false);
-            this.groupBoxOpenSubmenus.PerformLayout();
-            this.tableLayoutPanelTimeUntilOpen.ResumeLayout(false);
-            this.tableLayoutPanelTimeUntilOpen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeUntilOpens)).EndInit();
-            this.tabPageCustomize.ResumeLayout(false);
-            this.tabPageCustomize.PerformLayout();
-            this.tableLayoutPanelCustomize.ResumeLayout(false);
-            this.tableLayoutPanelCustomize.PerformLayout();
-            this.groupBoxColorsDarkMode.ResumeLayout(false);
-            this.groupBoxColorsDarkMode.PerformLayout();
-            this.tableLayoutPanelDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelDarkMode.PerformLayout();
-            this.tableLayoutPanelColorIconsDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelColorIconsDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconsDarkMode)).EndInit();
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelColorBackgroundBorderDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgroundBorderDarkMode)).EndInit();
-            this.tableLayoutPanelSearchFieldDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelSearchFieldDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchFieldDarkMode)).EndInit();
-            this.tableLayoutPanelOpenFolderDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelOpenFolderDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolderDarkMode)).EndInit();
-            this.tableLayoutPanelOpenFolderBorderDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelOpenFolderBorderDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolderBorderDarkMode)).EndInit();
-            this.tableLayoutPanelSelectedItemDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelSelectedItemDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureColorBoxSelectedItemDarkMode)).EndInit();
-            this.tableLayoutPanelSelectedItemBorderDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelSelectedItemBorderDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedItemBorderDarkMode)).EndInit();
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelScrollbarBackgroundDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScrollbarBackgroundDarkMode)).EndInit();
-            this.tableLayoutPanelSliderDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelSliderDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderDarkMode)).EndInit();
-            this.tableLayoutPanelSliderDraggingDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelSliderDraggingDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderDraggingDarkMode)).EndInit();
-            this.tableLayoutPanelSliderHoverDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelSliderHoverDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderHoverDarkMode)).EndInit();
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderArrowsAndTrackHoverDarkMode)).EndInit();
-            this.tableLayoutPanelArrowDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelArrowDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowDarkMode)).EndInit();
-            this.tableLayoutPanelArrowClickDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelArrowClickDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowClickDarkMode)).EndInit();
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelArrowClickBackgroundDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowClickBackgroundDarkMode)).EndInit();
-            this.tableLayoutPanelArrowHoverDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelArrowHoverDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowHoverDarkMode)).EndInit();
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelArrowHoverBackgroundDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowHoverBackgroundDarkMode)).EndInit();
-            this.tableLayoutPanelBackgroundDarkMode.ResumeLayout(false);
-            this.tableLayoutPanelBackgroundDarkMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgroundDarkMode)).EndInit();
-            this.groupBoxColorsLightMode.ResumeLayout(false);
-            this.groupBoxColorsLightMode.PerformLayout();
-            this.tableLayoutPanelColorsAndDefault.ResumeLayout(false);
-            this.tableLayoutPanelColorsAndDefault.PerformLayout();
-            this.tableLayoutPanelIcons.ResumeLayout(false);
-            this.tableLayoutPanelIcons.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcons)).EndInit();
-            this.tableLayoutPanelBackgroundBorder.ResumeLayout(false);
-            this.tableLayoutPanelBackgroundBorder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackgroundBorder)).EndInit();
-            this.tableLayoutPanelBackground.ResumeLayout(false);
-            this.tableLayoutPanelBackground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).EndInit();
-            this.tableLayoutPanelArrowHoverBackground.ResumeLayout(false);
-            this.tableLayoutPanelArrowHoverBackground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowHoverBackground)).EndInit();
-            this.tableLayoutPanelArrowHover.ResumeLayout(false);
-            this.tableLayoutPanelArrowHover.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowHover)).EndInit();
-            this.tableLayoutPanelArrowClickBackground.ResumeLayout(false);
-            this.tableLayoutPanelArrowClickBackground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowClickBackground)).EndInit();
-            this.tableLayoutPanelArrowClick.ResumeLayout(false);
-            this.tableLayoutPanelArrowClick.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrowClick)).EndInit();
-            this.tableLayoutPanelArrow.ResumeLayout(false);
-            this.tableLayoutPanelArrow.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArrow)).EndInit();
-            this.tableLayoutPanelSliderArrowsAndTrackHover.ResumeLayout(false);
-            this.tableLayoutPanelSliderArrowsAndTrackHover.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderArrowsAndTrackHover)).EndInit();
-            this.tableLayoutPanelSliderHover.ResumeLayout(false);
-            this.tableLayoutPanelSliderHover.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderHover)).EndInit();
-            this.tableLayoutPanelSliderDragging.ResumeLayout(false);
-            this.tableLayoutPanelSliderDragging.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSliderDragging)).EndInit();
-            this.tableLayoutPanelSlider.ResumeLayout(false);
-            this.tableLayoutPanelSlider.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlider)).EndInit();
-            this.tableLayoutPanelScrollbarBackground.ResumeLayout(false);
-            this.tableLayoutPanelScrollbarBackground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScrollbarBackground)).EndInit();
-            this.tableLayoutPanelSelectedItemBorder.ResumeLayout(false);
-            this.tableLayoutPanelSelectedItemBorder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedItemBorder)).EndInit();
-            this.tableLayoutPanelSelectedItem.ResumeLayout(false);
-            this.tableLayoutPanelSelectedItem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelectedItem)).EndInit();
-            this.tableLayoutPanelOpenFolderBorder.ResumeLayout(false);
-            this.tableLayoutPanelOpenFolderBorder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolderBorder)).EndInit();
-            this.tableLayoutPanelOpenFolder.ResumeLayout(false);
-            this.tableLayoutPanelOpenFolder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpenFolder)).EndInit();
-            this.tableLayoutPanelSearchField.ResumeLayout(false);
-            this.tableLayoutPanelSearchField.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearchField)).EndInit();
-            this.groupBoxAppearance.ResumeLayout(false);
-            this.groupBoxAppearance.PerformLayout();
-            this.tableLayoutPanelAppearance.ResumeLayout(false);
-            this.tableLayoutPanelAppearance.PerformLayout();
-            this.tableLayoutPanelBottom.ResumeLayout(false);
-            this.tableLayoutPanelBottom.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            AutoSize = true;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            ClientSize = new System.Drawing.Size(1080, 577);
+            Controls.Add(tableLayoutPanelMain);
+            Name = "SettingsForm";
+            Opacity = 0D;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Settings";
+            FormClosed += SettingsForm_FormClosed;
+            Load += SettingsForm_Load;
+            Shown += SettingsForm_Shown;
+            tableLayoutPanelMain.ResumeLayout(false);
+            tableLayoutPanelMain.PerformLayout();
+            tabControl.ResumeLayout(false);
+            tabPageGeneral.ResumeLayout(false);
+            tabPageGeneral.PerformLayout();
+            tableLayoutPanelGeneral.ResumeLayout(false);
+            tableLayoutPanelGeneral.PerformLayout();
+            groupBoxFolder.ResumeLayout(false);
+            groupBoxFolder.PerformLayout();
+            tableLayoutPanelFolder.ResumeLayout(false);
+            tableLayoutPanelFolder.PerformLayout();
+            tableLayoutPanelChangeFolder.ResumeLayout(false);
+            tableLayoutPanelChangeFolder.PerformLayout();
+            tableLayoutPanelRelativeFolderOpenAssembly.ResumeLayout(false);
+            tableLayoutPanelRelativeFolderOpenAssembly.PerformLayout();
+            groupBoxConfigAndLogfile.ResumeLayout(false);
+            groupBoxConfigAndLogfile.PerformLayout();
+            tableLayoutPanelConfigAndLogfile.ResumeLayout(false);
+            tableLayoutPanelConfigAndLogfile.PerformLayout();
+            groupBoxAutostart.ResumeLayout(false);
+            groupBoxAutostart.PerformLayout();
+            tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel5.PerformLayout();
+            tableLayoutPanelAutostart.ResumeLayout(false);
+            tableLayoutPanelAutostart.PerformLayout();
+            groupBoxHotkey.ResumeLayout(false);
+            groupBoxHotkey.PerformLayout();
+            tableLayoutPanelHotkey.ResumeLayout(false);
+            tableLayoutPanelHotkey.PerformLayout();
+            groupBoxLanguage.ResumeLayout(false);
+            groupBoxLanguage.PerformLayout();
+            tableLayoutPanelLanguage.ResumeLayout(false);
+            tabPageSizeAndLocation.ResumeLayout(false);
+            tabPageSizeAndLocation.PerformLayout();
+            tableLayoutPanelSizeAndLocation.ResumeLayout(false);
+            tableLayoutPanelSizeAndLocation.PerformLayout();
+            groupBoxSubMenuAppearAt.ResumeLayout(false);
+            groupBoxSubMenuAppearAt.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownOverlappingOffsetPixels).EndInit();
+            groupBoxMenuAppearAt.ResumeLayout(false);
+            groupBoxMenuAppearAt.PerformLayout();
+            tableLayoutPanelMenuAppearAt.ResumeLayout(false);
+            tableLayoutPanelMenuAppearAt.PerformLayout();
+            groupBoxSize.ResumeLayout(false);
+            groupBoxSize.PerformLayout();
+            tableLayoutPanelSize.ResumeLayout(false);
+            tableLayoutPanelSize.PerformLayout();
+            tableLayoutPanelIconSizeInPercent.ResumeLayout(false);
+            tableLayoutPanelIconSizeInPercent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownIconSizeInPercent).EndInit();
+            tableLayoutPanelRowHeighteInPercentage.ResumeLayout(false);
+            tableLayoutPanelRowHeighteInPercentage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownRowHeighteInPercentage).EndInit();
+            tableLayoutPanelSizeInPercent.ResumeLayout(false);
+            tableLayoutPanelSizeInPercent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownSizeInPercent).EndInit();
+            tableLayoutPanelMenuHeight.ResumeLayout(false);
+            tableLayoutPanelMenuHeight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownMenuHeight).EndInit();
+            tableLayoutPanelMaxMenuWidth.ResumeLayout(false);
+            tableLayoutPanelMaxMenuWidth.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownMenuWidth).EndInit();
+            tabPageAdvanced.ResumeLayout(false);
+            tabPageAdvanced.PerformLayout();
+            tableLayoutPanelAdvanced.ResumeLayout(false);
+            tableLayoutPanelAdvanced.PerformLayout();
+            groupBoxOptionalFeatures.ResumeLayout(false);
+            groupBoxOptionalFeatures.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
+            groupBoxInternetShortcutIcons.ResumeLayout(false);
+            groupBoxInternetShortcutIcons.PerformLayout();
+            tableLayoutPanelInternetShortcutIcons.ResumeLayout(false);
+            tableLayoutPanelInternetShortcutIcons.PerformLayout();
+            tableLayoutPanelChangeIcoFolder.ResumeLayout(false);
+            tableLayoutPanelChangeIcoFolder.PerformLayout();
+            groupBoxDrag.ResumeLayout(false);
+            groupBoxDrag.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            groupBoxSorting.ResumeLayout(false);
+            groupBoxSorting.PerformLayout();
+            tableLayoutPanelSorting.ResumeLayout(false);
+            tableLayoutPanelSorting.PerformLayout();
+            groupBoxHiddenFilesAndFolders.ResumeLayout(false);
+            groupBoxHiddenFilesAndFolders.PerformLayout();
+            tableLayoutPanelHiddenFilesAndFolders.ResumeLayout(false);
+            tableLayoutPanelHiddenFilesAndFolders.PerformLayout();
+            groupBoxClick.ResumeLayout(false);
+            groupBoxClick.PerformLayout();
+            tableLayoutPanelClick.ResumeLayout(false);
+            tableLayoutPanelClick.PerformLayout();
+            tabPageFolders.ResumeLayout(false);
+            tabPageFolders.PerformLayout();
+            tableLayoutPanelFoldersInRootFolder.ResumeLayout(false);
+            tableLayoutPanelFoldersInRootFolder.PerformLayout();
+            groupBoxFoldersInRootFolder.ResumeLayout(false);
+            groupBoxFoldersInRootFolder.PerformLayout();
+            tableLayoutPanelFolderToRootFoldersList.ResumeLayout(false);
+            tableLayoutPanelFolderToRootFoldersList.PerformLayout();
+            tableLayoutPanelFolderToRootFolder.ResumeLayout(false);
+            tableLayoutPanelFolderToRootFolder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFolders).EndInit();
+            tableLayoutPanelAddSampleStartMenuFolder.ResumeLayout(false);
+            tableLayoutPanelAddSampleStartMenuFolder.PerformLayout();
+            tabPageExpert.ResumeLayout(false);
+            tabPageExpert.PerformLayout();
+            tableLayoutPanelExpert.ResumeLayout(false);
+            tableLayoutPanelExpert.PerformLayout();
+            groupBoxSearchPattern.ResumeLayout(false);
+            groupBoxSearchPattern.PerformLayout();
+            tableLayoutPanelSearchPattern.ResumeLayout(false);
+            tableLayoutPanelSearchPattern.PerformLayout();
+            groupBoxCache.ResumeLayout(false);
+            groupBoxCache.PerformLayout();
+            tableLayoutPanelCache.ResumeLayout(false);
+            tableLayoutPanelCache.PerformLayout();
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.ResumeLayout(false);
+            tableLayoutPanelClearCacheIfMoreThanThisNumberOfItems.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownClearCacheIfMoreThanThisNumberOfItems).EndInit();
+            groupBoxStaysOpen.ResumeLayout(false);
+            groupBoxStaysOpen.PerformLayout();
+            tableLayoutPanelStaysOpen.ResumeLayout(false);
+            tableLayoutPanelStaysOpen.PerformLayout();
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.ResumeLayout(false);
+            tableLayoutPanelTimeUntilClosesAfterEnterPressed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTimeUntilClosesAfterEnterPressed).EndInit();
+            tableLayoutPanelTimeUntilCloses.ResumeLayout(false);
+            tableLayoutPanelTimeUntilCloses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTimeUntilClose).EndInit();
+            groupBoxOpenSubmenus.ResumeLayout(false);
+            groupBoxOpenSubmenus.PerformLayout();
+            tableLayoutPanelTimeUntilOpen.ResumeLayout(false);
+            tableLayoutPanelTimeUntilOpen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownTimeUntilOpens).EndInit();
+            tabPageCustomize.ResumeLayout(false);
+            tabPageCustomize.PerformLayout();
+            tableLayoutPanelCustomize.ResumeLayout(false);
+            tableLayoutPanelCustomize.PerformLayout();
+            groupBoxColorsDarkMode.ResumeLayout(false);
+            groupBoxColorsDarkMode.PerformLayout();
+            tableLayoutPanelDarkMode.ResumeLayout(false);
+            tableLayoutPanelDarkMode.PerformLayout();
+            tableLayoutPanelColorIconsDarkMode.ResumeLayout(false);
+            tableLayoutPanelColorIconsDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxIconsDarkMode).EndInit();
+            tableLayoutPanelColorBackgroundBorderDarkMode.ResumeLayout(false);
+            tableLayoutPanelColorBackgroundBorderDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBackgroundBorderDarkMode).EndInit();
+            tableLayoutPanelSearchFieldDarkMode.ResumeLayout(false);
+            tableLayoutPanelSearchFieldDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSearchFieldDarkMode).EndInit();
+            tableLayoutPanelOpenFolderDarkMode.ResumeLayout(false);
+            tableLayoutPanelOpenFolderDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxOpenFolderDarkMode).EndInit();
+            tableLayoutPanelOpenFolderBorderDarkMode.ResumeLayout(false);
+            tableLayoutPanelOpenFolderBorderDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxOpenFolderBorderDarkMode).EndInit();
+            tableLayoutPanelSelectedItemDarkMode.ResumeLayout(false);
+            tableLayoutPanelSelectedItemDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureColorBoxSelectedItemDarkMode).EndInit();
+            tableLayoutPanelSelectedItemBorderDarkMode.ResumeLayout(false);
+            tableLayoutPanelSelectedItemBorderDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedItemBorderDarkMode).EndInit();
+            tableLayoutPanelScrollbarBackgroundDarkMode.ResumeLayout(false);
+            tableLayoutPanelScrollbarBackgroundDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxScrollbarBackgroundDarkMode).EndInit();
+            tableLayoutPanelSliderDarkMode.ResumeLayout(false);
+            tableLayoutPanelSliderDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderDarkMode).EndInit();
+            tableLayoutPanelSliderDraggingDarkMode.ResumeLayout(false);
+            tableLayoutPanelSliderDraggingDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderDraggingDarkMode).EndInit();
+            tableLayoutPanelSliderHoverDarkMode.ResumeLayout(false);
+            tableLayoutPanelSliderHoverDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderHoverDarkMode).EndInit();
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.ResumeLayout(false);
+            tableLayoutPanelSliderArrowsAndTrackHoverDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderArrowsAndTrackHoverDarkMode).EndInit();
+            tableLayoutPanelArrowDarkMode.ResumeLayout(false);
+            tableLayoutPanelArrowDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowDarkMode).EndInit();
+            tableLayoutPanelArrowClickDarkMode.ResumeLayout(false);
+            tableLayoutPanelArrowClickDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowClickDarkMode).EndInit();
+            tableLayoutPanelArrowClickBackgroundDarkMode.ResumeLayout(false);
+            tableLayoutPanelArrowClickBackgroundDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowClickBackgroundDarkMode).EndInit();
+            tableLayoutPanelArrowHoverDarkMode.ResumeLayout(false);
+            tableLayoutPanelArrowHoverDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowHoverDarkMode).EndInit();
+            tableLayoutPanelArrowHoverBackgroundDarkMode.ResumeLayout(false);
+            tableLayoutPanelArrowHoverBackgroundDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowHoverBackgroundDarkMode).EndInit();
+            tableLayoutPanelBackgroundDarkMode.ResumeLayout(false);
+            tableLayoutPanelBackgroundDarkMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBackgroundDarkMode).EndInit();
+            groupBoxColorsLightMode.ResumeLayout(false);
+            groupBoxColorsLightMode.PerformLayout();
+            tableLayoutPanelColorsAndDefault.ResumeLayout(false);
+            tableLayoutPanelColorsAndDefault.PerformLayout();
+            tableLayoutPanelIcons.ResumeLayout(false);
+            tableLayoutPanelIcons.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxIcons).EndInit();
+            tableLayoutPanelBackgroundBorder.ResumeLayout(false);
+            tableLayoutPanelBackgroundBorder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBackgroundBorder).EndInit();
+            tableLayoutPanelBackground.ResumeLayout(false);
+            tableLayoutPanelBackground.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBackground).EndInit();
+            tableLayoutPanelArrowHoverBackground.ResumeLayout(false);
+            tableLayoutPanelArrowHoverBackground.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowHoverBackground).EndInit();
+            tableLayoutPanelArrowHover.ResumeLayout(false);
+            tableLayoutPanelArrowHover.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowHover).EndInit();
+            tableLayoutPanelArrowClickBackground.ResumeLayout(false);
+            tableLayoutPanelArrowClickBackground.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowClickBackground).EndInit();
+            tableLayoutPanelArrowClick.ResumeLayout(false);
+            tableLayoutPanelArrowClick.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrowClick).EndInit();
+            tableLayoutPanelArrow.ResumeLayout(false);
+            tableLayoutPanelArrow.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxArrow).EndInit();
+            tableLayoutPanelSliderArrowsAndTrackHover.ResumeLayout(false);
+            tableLayoutPanelSliderArrowsAndTrackHover.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderArrowsAndTrackHover).EndInit();
+            tableLayoutPanelSliderHover.ResumeLayout(false);
+            tableLayoutPanelSliderHover.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderHover).EndInit();
+            tableLayoutPanelSliderDragging.ResumeLayout(false);
+            tableLayoutPanelSliderDragging.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSliderDragging).EndInit();
+            tableLayoutPanelSlider.ResumeLayout(false);
+            tableLayoutPanelSlider.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSlider).EndInit();
+            tableLayoutPanelScrollbarBackground.ResumeLayout(false);
+            tableLayoutPanelScrollbarBackground.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxScrollbarBackground).EndInit();
+            tableLayoutPanelSelectedItemBorder.ResumeLayout(false);
+            tableLayoutPanelSelectedItemBorder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedItemBorder).EndInit();
+            tableLayoutPanelSelectedItem.ResumeLayout(false);
+            tableLayoutPanelSelectedItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSelectedItem).EndInit();
+            tableLayoutPanelOpenFolderBorder.ResumeLayout(false);
+            tableLayoutPanelOpenFolderBorder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxOpenFolderBorder).EndInit();
+            tableLayoutPanelOpenFolder.ResumeLayout(false);
+            tableLayoutPanelOpenFolder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxOpenFolder).EndInit();
+            tableLayoutPanelSearchField.ResumeLayout(false);
+            tableLayoutPanelSearchField.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSearchField).EndInit();
+            groupBoxAppearance.ResumeLayout(false);
+            groupBoxAppearance.PerformLayout();
+            tableLayoutPanelAppearance.ResumeLayout(false);
+            tableLayoutPanelAppearance.PerformLayout();
+            tableLayoutPanelBottom.ResumeLayout(false);
+            tableLayoutPanelBottom.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

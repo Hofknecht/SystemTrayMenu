@@ -190,7 +190,7 @@
     <value>Enkeltklikk for å åpne et element</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Fargeskjema mørkt alltid aktivt</value>
+    <value>Fargeskjema mørk alltid aktiv</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avansert</value>
@@ -376,7 +376,7 @@
     <value>Kun filer</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Tøm hurtigbufferen hvis flere enn dette antallet elementer</value>
+    <value>Tøm buffer hvis flere enn dette antallet elementer</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>Legg til eksempelkatalog "Startmeny"</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Angre</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Ikke vis dette hintet igjen.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Hint</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Innstillingsmenyen kan også åpnes ved å høyreklikke på ikonet i systemstatusfeltet nederst til høyre, i tilfelle du ikke lenger kan åpne den via menyen.</value>
   </data>
 </root>

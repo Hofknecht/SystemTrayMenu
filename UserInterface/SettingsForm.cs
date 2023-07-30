@@ -453,6 +453,7 @@ namespace SystemTrayMenu.UserInterface
 
             checkBoxResolveLinksToFolders.Checked = Settings.Default.ResolveLinksToFolders;
             checkBoxShowInTaskbar.Checked = Settings.Default.ShowInTaskbar;
+            checkBoxShowInTaskbar.CheckedChanged += ShowHintToFindSettings;
             checkBoxSendHotkeyInsteadKillOtherInstances.Checked = Settings.Default.SendHotkeyInsteadKillOtherInstances;
             checkBoxSupportGamepad.Checked = Settings.Default.SupportGamepad;
             checkBoxOpenItemWithOneClick.Checked = Settings.Default.OpenItemWithOneClick;
@@ -538,6 +539,7 @@ namespace SystemTrayMenu.UserInterface
             checkBoxShowFunctionKeyPinMenu.Checked = Settings.Default.ShowFunctionKeyPinMenu;
             checkBoxShowFunctionKeySettings.Checked = Settings.Default.ShowFunctionKeySettings;
             checkBoxShowFunctionKeyRestart.Checked = Settings.Default.ShowFunctionKeyRestart;
+            checkBoxShowFunctionKeySettings.CheckedChanged += ShowHintToFindSettings;
 
             textBoxColorSelectedItem.Text = Settings.Default.ColorSelectedItem;
             textBoxColorSelecetedItemDarkMode.Text = Settings.Default.ColorDarkModeSelecetedItem;
@@ -576,6 +578,20 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowClickBackgroundDarkMode.Text = Settings.Default.ColorArrowClickBackgroundDarkMode;
             textBoxColorArrowHoverDarkMode.Text = Settings.Default.ColorArrowHoverDarkMode;
             textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
+        }
+
+        private void ShowHintToFindSettings(object sender, EventArgs e)
+        {
+            if (!((CheckBox)sender).Checked &&
+                Settings.Default.ShowHintYouCanOpenSettingsInSystemtrayIconRightClick)
+            {
+                using (HintYouCanOpenSettingsInSystemtrayIconRightClickForm hintForm = new())
+                {
+                    hintForm.ShowDialog();
+                    Settings.Default.ShowHintYouCanOpenSettingsInSystemtrayIconRightClick =
+                        hintForm.GetShowHintAgain();
+                }
+            }
         }
 
         /// <summary>

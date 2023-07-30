@@ -469,7 +469,7 @@
     <value>Pinagbukud-bukod ayon sa petsa</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Inayos ayon sa pangalan</value>
+    <value>Pinagbukud-bukod ayon sa pangalan</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Pag-uuri</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Pawalang-bisa</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Huwag ipakita muli ang pahiwatig na ito.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Pahiwatig</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Ang menu ng mga setting ay maaari ding buksan sa pamamagitan ng pag-right click sa icon sa system tray sa kanang ibaba, kung sakaling hindi mo na ito mabuksan sa pamamagitan ng menu.</value>
   </data>
 </root>
