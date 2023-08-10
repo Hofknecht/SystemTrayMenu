@@ -412,7 +412,7 @@ namespace SystemTrayMenu.UserInterface
                 numericUpDownRowHeighteInPercentage.Value = Settings.Default.RowHeighteInPercentage;
             }
 
-            numericUpDownMenuWidth.Minimum = 25;
+            numericUpDownMenuWidth.Minimum = 0;
             numericUpDownMenuWidth.Maximum = 400;
             numericUpDownMenuWidth.Increment = 5;
             numericUpDownMenuWidth.Value = Settings.Default.WidthMaxInPercent;
