@@ -169,6 +169,7 @@ namespace SystemTrayMenu.Utilities
                         WorkingDirectory = workingDirectory ?? string.Empty,
                         CreateNoWindow = createNoWindow,
                         UseShellExecute = true,
+                        Verb = "runas",
                     },
                 };
                 p.Start();

@@ -293,6 +293,7 @@ Thanks for ideas, reporting issues and contributing!
 #462 [verdammt89x](https://github.com/verdammt89x),
 #463 Dirk S.,
 #466 [Dean-Corso](https://github.com/Dean-Corso)
+#488 [DailenG](https://github.com/DailenG)
 
 
 Donations
