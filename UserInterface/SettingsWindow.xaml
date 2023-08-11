@@ -84,7 +84,7 @@
                                 <Label Grid.Row="1" Grid.Column="1" Content="{u:Translate 'Icon size'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
                                 <local:NumericUpDown Grid.Row="2" Grid.Column="0" x:Name="numericUpDownRowHeightInPercentage" Minimum="50" Maximum="200" Increment="5" />
                                 <Label Grid.Row="2" Grid.Column="1" Content="{u:Translate 'Row height'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
-                                <local:NumericUpDown Grid.Row="3" Grid.Column="0" x:Name="numericUpDownMenuWidth" Minimum="25" Maximum="400" Increment="5" />
+                                <local:NumericUpDown Grid.Row="3" Grid.Column="0" x:Name="numericUpDownMenuWidth" Minimum="0" Maximum="400" Increment="5" />
                                 <Label Grid.Row="3" Grid.Column="1" Content="{u:Translate 'Maximum menu width'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
                                 <local:NumericUpDown Grid.Row="4" Grid.Column="0" x:Name="numericUpDownMenuHeight" Minimum="25" Maximum="400" Increment="5" />
                                 <Label Grid.Row="4" Grid.Column="1" Content="{u:Translate 'Maximum menu height'}" Padding="5,0,0,0" VerticalAlignment="Center"/>
