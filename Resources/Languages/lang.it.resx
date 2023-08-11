@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Disfare</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Non mostrare più questo suggerimento.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Suggerimento</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Il menu delle impostazioni può essere aperto anche facendo clic con il pulsante destro del mouse sull'icona nella barra delle applicazioni in basso a destra, nel caso in cui non sia più possibile aprirlo tramite il menu.</value>
+  </data>
 </root>

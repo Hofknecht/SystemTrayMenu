@@ -463,7 +463,7 @@
     <value>Zblakły</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Wyślij klawisz skrótu do innej instancji</value>
+    <value>Wyślij skrót klawiszowy do innej instancji</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Posortowane według daty</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Cofnij</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Nie pokazuj więcej tej podpowiedzi.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Wskazówka</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Menu ustawień można również otworzyć, klikając prawym przyciskiem myszy ikonę w zasobniku systemowym w prawym dolnym rogu, na wypadek gdyby nie można było już otworzyć go za pomocą menu.</value>
   </data>
 </root>

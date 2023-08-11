@@ -166,7 +166,7 @@
     <value>ஹாட்கீ</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>விண்டோஸில் தொடங்கவும்</value>
+    <value>விண்டோஸ் மூலம் தொடங்கவும்</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>அமைப்புகள்</value>
@@ -376,7 +376,7 @@
     <value>கோப்புகள் மட்டும்</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>இந்த எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>உருப்படிகளின் எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -484,7 +484,7 @@
     <value>ஸ்வைப் மூலம் உருட்டவும்</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>கோப்பு வகையின்படி மெனுவை வடிகட்டவும் எ.கா: *.exe|*.dll</value>
+    <value>கோப்பு வகையின்படி மெனுவை வடிகட்டவும் எ.கா.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>உறுப்புகளின் எண்ணிக்கையைக் காட்டு</value>
@@ -544,7 +544,7 @@
     <value>விருப்ப அம்சங்கள்</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>கோப்புறைகளுக்கான இணைப்புகளைத் தீர்த்து, உள்ளடக்கத்தைக் காட்டு</value>
+    <value>கோப்புறைகளுக்கான இணைப்புகளைத் தீர்த்து உள்ளடக்கத்தைக் காட்டு</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>கோப்பு நீட்டிப்பு மற்றும் பெயர் மூலம் வரிசைப்படுத்தப்பட்டது</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>செயல்தவிர்</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>இந்தக் குறிப்பை மீண்டும் காட்டாதே.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>குறிப்பு</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>அமைப்புகள் மெனுவை மெனு வழியாக திறக்க முடியாவிட்டால், கீழ் வலதுபுறத்தில் உள்ள கணினி தட்டில் உள்ள ஐகானை வலது கிளிக் செய்வதன் மூலமும் திறக்க முடியும்.</value>
   </data>
 </root>

@@ -291,8 +291,9 @@ Thanks for ideas, reporting issues and contributing!
 #454 [WouterVanGoey](https://github.com/WouterVanGoey),
 #462 [verdammt89x](https://github.com/verdammt89x),
 #463 #494 Dirk S.,
-#466 [Dean-Corso](https://github.com/Dean-Corso)
-#488 [DailenG](https://github.com/DailenG)
+#466 [Dean-Corso](https://github.com/Dean-Corso),
+#488 [DailenG](https://github.com/DailenG),
+#490 [TrampiPW](https://github.com/TrampiPW)
 
 
 Donations

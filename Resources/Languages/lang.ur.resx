@@ -211,7 +211,7 @@
     <value>طے شدہ</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>اگر توجہ ختم ہو جائے اور ماؤس ابھی بھی مینو پر موجود ہے۔</value>
+    <value>اگر توجہ ختم ہو جائے اور ماؤس اب بھی مینو پر موجود ہو۔</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>جب ماؤس اس پر ہوتا ہے تو ایک مینو کھلنے تک ملی سیکنڈ</value>
@@ -238,7 +238,7 @@
     <value>ڈائرکٹری کھولی۔</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>کھلی ڈائریکٹری کا بارڈر</value>
+    <value>کھلی ڈائرکٹری کا بارڈر</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>تلاش کا میدان</value>
@@ -325,7 +325,7 @@
     <value>لوڈ ہو رہا ہے</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>شارٹ کٹ لنک کے ساتھ مسئلہ</value>
+    <value>شارٹ کٹ لنک میں مسئلہ</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>یہ شارٹ کٹ جس آئٹم کا حوالہ دیتا ہے اسے تبدیل یا منتقل کر دیا گیا ہے، اس لیے یہ شارٹ کٹ اب ٹھیک سے کام نہیں کرے گا۔</value>
@@ -346,7 +346,7 @@
     <value>ماہر</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>اگر توجہ ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
+    <value>اگر فوکس ختم ہو جائے اور Enter کلید دبائی گئی ہو۔</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>اگر مینو دوبارہ فعال نہیں ہوتا ہے تو مینو بند ہونے تک ملی سیکنڈ</value>
@@ -499,7 +499,7 @@
     <value>فنکشن کلید 'پن مینو' دکھائیں</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>فنکشن کی 'ترتیبات' دکھائیں</value>
+    <value>فنکشن کلید 'ترتیبات' دکھائیں</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
     <value>فنکشن کلید 'دوبارہ شروع کریں' دکھائیں</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>کالعدم</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>یہ اشارہ دوبارہ مت دکھائیں۔</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>اشارہ</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>ترتیبات کے مینو کو نیچے دائیں جانب سسٹم ٹرے میں موجود آئیکن پر دائیں کلک کر کے بھی کھولا جا سکتا ہے، اگر آپ اسے مینو کے ذریعے مزید نہیں کھول سکتے ہیں۔</value>
   </data>
 </root>

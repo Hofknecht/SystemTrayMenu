@@ -12,10 +12,10 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Input;
-    using System.Windows.Media.Imaging;
     using Microsoft.Win32;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
+    using SystemTrayMenu.Resources;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
     using Windows.ApplicationModel;
@@ -34,21 +34,7 @@ namespace SystemTrayMenu.UserInterface
         {
             InitializeComponent();
 
-            Assembly myassembly = Assembly.GetExecutingAssembly();
-            string myname = myassembly.GetName().Name ?? string.Empty;
-
-            using (Stream? imgstream = myassembly.GetManifestResourceStream(myname + ".Resources.SystemTrayMenu.png"))
-            {
-                if (imgstream != null)
-                {
-                    BitmapImage imageSource = new();
-                    imageSource.BeginInit();
-                    imageSource.StreamSource = imgstream;
-                    imageSource.EndInit();
-
-                    Icon = imageSource;
-                }
-            }
+            Icon = StaticResources.ApplicationImgSrc;
 
             PreviewKeyDown += HandlePreviewKeyDown;
 
@@ -951,6 +937,16 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.IsDarkModeAlwaysOn = checkBoxDarkModeAlwaysOn.IsChecked ?? true;
             Config.ResetReadDarkModeDone();
             SaveColorsTemporarily();
+        }
+
+        private void ShowHowToOpenSettings(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.ShowHintYouCanOpenSettingsInSystemtrayIconRightClick)
+            {
+                HowToOpenSettingsWindow dialog = new();
+                dialog.ShowDialog();
+                Settings.Default.ShowHintYouCanOpenSettingsInSystemtrayIconRightClick = !dialog.DoNotShowAgain;
+            }
         }
 
         private void ButtonAppearanceDefault_Click(object sender, RoutedEventArgs e)

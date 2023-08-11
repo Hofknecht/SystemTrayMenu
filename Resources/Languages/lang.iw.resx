@@ -376,7 +376,7 @@
     <value>רק קבצים</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>נקה את המטמון אם יותר ממספר זה של פריטים</value>
+    <value>נקה את המטמון אם יותר ממספר הפריטים הזה</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>הוסף ספרייה לדוגמה 'תפריט התחל'</value>
@@ -526,7 +526,7 @@
     <value>בדוק עדכונים</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>עבור לדף ההורדה</value>
+    <value>עבור לדף ההורדות</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>הגרסה האחרונה הזמינה:</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>לבטל</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>אל תציג את הרמז הזה שוב.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>רֶמֶז</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>ניתן לפתוח את תפריט ההגדרות גם על ידי לחיצה ימנית על האייקון במגש המערכת בצד ימין למטה, למקרה שלא ניתן יותר לפתוח אותו דרך התפריט.</value>
   </data>
 </root>

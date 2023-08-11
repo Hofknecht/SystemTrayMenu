@@ -337,7 +337,7 @@
     <value>Task Manager</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>غیر فعال شد</value>
+    <value>غیرفعال شد</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>فعال شد</value>
@@ -481,7 +481,7 @@
     <value>بکشید</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>از طریق کشیدن انگشت پیمایش کنید</value>
+    <value>از طریق سوایپ پیمایش کنید</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>منوی فیلتر بر اساس نوع فایل به عنوان مثال: *.exe|*.dll</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>واگرد</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>این اشاره را دیگر نشان ندهید.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>اشاره</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>منوی تنظیمات همچنین با کلیک راست بر روی نماد موجود در سینی سیستم در پایین سمت راست باز می شود، در صورتی که دیگر نمی توانید آن را از طریق منو باز کنید.</value>
   </data>
 </root>

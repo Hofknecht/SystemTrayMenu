@@ -18,9 +18,9 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Controls;
     using System.Windows.Documents;
     using System.Windows.Input;
-    using System.Windows.Media.Imaging;
     using System.Windows.Threading;
     using Microsoft.Win32;
+    using SystemTrayMenu.Resources;
     using SystemTrayMenu.Utilities;
 
     /// <summary>
@@ -39,22 +39,8 @@ namespace SystemTrayMenu.UserInterface
         {
             InitializeComponent();
 
-            Assembly myassembly = Assembly.GetExecutingAssembly();
-            string myname = myassembly.GetName().Name ?? string.Empty;
-
-            using (Stream? imgstream = myassembly.GetManifestResourceStream(myname + ".Resources.SystemTrayMenu.png"))
-            {
-                if (imgstream != null)
-                {
-                    BitmapImage imageSource = new ();
-                    imageSource.BeginInit();
-                    imageSource.StreamSource = imgstream;
-                    imageSource.EndInit();
-
-                    ImagePictureBox.Source = imageSource;
-                    Icon = imageSource;
-                }
-            }
+            ImagePictureBox.Source = StaticResources.ApplicationImgSrc;
+            Icon = StaticResources.ApplicationImgSrc;
 
             Loaded += AboutBox_Load;
 

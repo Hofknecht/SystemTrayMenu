@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Скасувати</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Більше не показувати цю підказку.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Підказка</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Меню налаштувань також можна відкрити, клацнувши правою кнопкою миші піктограму в системному лотку внизу праворуч, якщо ви більше не можете відкрити його через меню.</value>
+  </data>
 </root>

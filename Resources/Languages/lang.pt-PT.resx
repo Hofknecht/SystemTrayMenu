@@ -493,7 +493,7 @@
     <value>Mostrar o título do diretório no topo</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>Mostrar tecla de função 'Abrir pasta'</value>
+    <value>Mostrar a tecla de função 'Abrir pasta'</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>Mostrar a tecla de função 'Menu Pin'</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Desfazer</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Não mostre esta dica novamente.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Dica</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>O menu de configurações também pode ser aberto clicando com o botão direito do mouse no ícone na bandeja do sistema no canto inferior direito, caso você não consiga mais abri-lo pelo menu.</value>
   </data>
 </root>

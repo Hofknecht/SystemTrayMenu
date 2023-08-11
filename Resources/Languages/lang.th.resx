@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>เลิกทำ</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>อย่าแสดงคำใบ้นี้อีก</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>คำใบ้</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>นอกจากนี้ยังสามารถเปิดเมนูการตั้งค่าได้โดยคลิกขวาที่ไอคอนในซิสเต็มเทรย์ที่ด้านล่างขวา ในกรณีที่คุณไม่สามารถเปิดผ่านเมนูได้อีก</value>
+  </data>
 </root>

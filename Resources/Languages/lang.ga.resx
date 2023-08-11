@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Cealaigh</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Ná taispeáin an leid seo arís.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Leid</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Is féidir an roghchlár socruithe a oscailt freisin trí chliceáil ar dheis ar an deilbhín sa tráidire córais ag bun ar dheis, ar eagla nach féidir leat é a oscailt tríd an roghchlár a thuilleadh.</value>
+  </data>
 </root>

@@ -493,7 +493,7 @@
     <value>Afișați titlul directorului în partea de sus</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>Afișați tasta funcțională „Deschidere dosar”</value>
+    <value>Afișați tasta funcțională „Deschidere folder”</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>Afișați tasta funcțională „Pin meniu”</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Anula</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Nu mai afișa acest indiciu din nou.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Aluzie</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Meniul de setări poate fi deschis și făcând clic dreapta pe pictograma din bara de sistem din dreapta jos, în cazul în care nu îl mai puteți deschide prin meniu.</value>
   </data>
 </root>

@@ -22,7 +22,7 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="buttonGoToDownloadPage" Content="{u:Translate 'Go to download page'}" Margin="3" MinWidth="76" Click="ButtonGoToDownloadPage_Click"/>
-            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" IsDefault="True"/>
+            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" Click="ButtonOk_Click" IsDefault="True"/>
         </StackPanel>
     </Grid>
 </Window>

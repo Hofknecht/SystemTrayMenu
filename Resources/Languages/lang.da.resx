@@ -427,7 +427,7 @@
     <value>Vis aldrig</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>Størrelse og placering</value>
+    <value>Størrelse og beliggenhed</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>Brug operativsystemindstillinger</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Fortryd</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Vis ikke dette tip igen.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Antydning</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Indstillingsmenuen kan også åbnes ved at højreklikke på ikonet i systembakken nederst til højre, hvis du ikke længere kan åbne den via menuen.</value>
   </data>
 </root>

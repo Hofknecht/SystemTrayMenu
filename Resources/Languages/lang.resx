@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Undo</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Don't show this hint again.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Hint</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu.</value>
+  </data>
 </root>

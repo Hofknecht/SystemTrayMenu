@@ -7,11 +7,11 @@
 namespace SystemTrayMenu.UserInterface
 {
     using System;
-    using System.IO;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Interop;
     using System.Windows.Media.Imaging;
+    using SystemTrayMenu.Resources;
 
     /// <summary>
     /// Logic of Taskbar window.
@@ -25,19 +25,7 @@ namespace SystemTrayMenu.UserInterface
             Assembly myassembly = Assembly.GetExecutingAssembly();
             string myname = myassembly.GetName().Name ?? string.Empty;
 
-            using (Stream? imgstream = myassembly.GetManifestResourceStream(myname + ".Resources.SystemTrayMenu.png"))
-            {
-                if (imgstream != null)
-                {
-                    BitmapImage imageSource = new BitmapImage();
-                    imageSource.BeginInit();
-                    imageSource.StreamSource = imgstream;
-                    imageSource.EndInit();
-
-                    ImagePictureBox.Source = imageSource;
-                }
-            }
-
+            ImagePictureBox.Source = StaticResources.ApplicationImgSrc;
             Icon = Imaging.CreateBitmapSourceFromHIcon(
                 Config.GetAppIcon().Handle,
                 Int32Rect.Empty,

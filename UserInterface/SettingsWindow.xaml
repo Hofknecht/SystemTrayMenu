@@ -118,7 +118,7 @@
                         <GroupBox Header="{u:Translate 'Optional Features'}">
                             <StackPanel>
                                 <CheckBox x:Name="checkBoxResolveLinksToFolders" Content="{u:Translate 'Resolve links to folders and show content'}"/>
-                                <CheckBox x:Name="checkBoxShowInTaskbar" Content="{u:Translate 'Show in Taskbar'}"/>
+                                <CheckBox x:Name="checkBoxShowInTaskbar" Content="{u:Translate 'Show in Taskbar'}" Unchecked="ShowHowToOpenSettings"/>
                                 <CheckBox x:Name="checkBoxSendHotkeyInsteadKillOtherInstances" Content="{u:Translate 'Send hotkey to other instance'}"/> <!-- TODO: It will use named pipes instead of hotkey! -->
                                 <CheckBox x:Name="checkBoxSupportGamepad" Content="{u:Translate 'Support Gamepad'}"/>
                             </StackPanel>
@@ -272,7 +272,7 @@
                                 <CheckBox x:Name="checkBoxShowSearchBar" Content="{u:Translate 'Show search bar'}" />
                                 <CheckBox x:Name="checkBoxShowFunctionKeyOpenFolder" Content="{u:Translate '???'}" />
                                 <CheckBox x:Name="checkBoxShowFunctionKeyPinMenu" Content="{u:Translate '???'}" />
-                                <CheckBox x:Name="checkBoxShowFunctionKeySettings" Content="{u:Translate '???'}" />
+                                <CheckBox x:Name="checkBoxShowFunctionKeySettings" Content="{u:Translate '???'}" Unchecked="ShowHowToOpenSettings" />
                                 <CheckBox x:Name="checkBoxShowFunctionKeyRestart" Content="{u:Translate '???'}" />
                                 <CheckBox x:Name="checkBoxShowCountOfElementsBelow" Content="{u:Translate 'Show count of elements'}" />
                                 <Button Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonAppearanceDefault_Click" HorizontalAlignment="Left"/>

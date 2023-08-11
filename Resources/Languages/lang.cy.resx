@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Dadwneud</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Peidiwch â dangos yr awgrym hwn eto.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Awgrym</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Gellir agor y ddewislen gosodiadau hefyd trwy dde-glicio ar yr eicon yn yr hambwrdd system ar y gwaelod ar y dde, rhag ofn na allwch ei agor trwy'r ddewislen mwyach.</value>
+  </data>
 </root>

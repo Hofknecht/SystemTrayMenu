@@ -376,7 +376,7 @@
     <value>파일만</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>이 항목 수보다 많으면 캐시 지우기</value>
+    <value>이 항목 수보다 많은 경우 캐시 지우기</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>샘플 디렉토리 '시작 메뉴' 추가</value>
@@ -394,7 +394,7 @@
     <value>왼쪽 하단</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>오른쪽 아래</value>
+    <value>오른쪽 하단</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>메인 메뉴가 나타납니다</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>실행 취소</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>이 힌트를 다시 표시하지 마십시오.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>힌트</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>더 이상 메뉴를 통해 열 수 없는 경우 오른쪽 하단의 시스템 트레이에 있는 아이콘을 마우스 오른쪽 버튼으로 클릭하여 설정 메뉴를 열 수도 있습니다.</value>
   </data>
 </root>

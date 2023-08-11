@@ -226,7 +226,7 @@
     <value>Menua irekita dago</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Denbora menu bat ireki arte</value>
+    <value>Menu bat ireki arte</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>Elementu batean klik egin bada</value>
@@ -253,7 +253,7 @@
     <value>Direktorio erlatiboa</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>Gorde konfigurazio fitxategia aplikazioaren direktorioan</value>
+    <value>Gorde konfigurazio fitxategia aplikazioen direktorioan</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
     <value>Konfigurazio eta erregistro fitxategiak</value>
@@ -316,7 +316,7 @@
     <value>Ikonoak</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Testuinguru-menuaren arabera ezarri</value>
+    <value>Testuinguru menuaren arabera ezarri</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Ezarri direktorio gisa</value>
@@ -325,7 +325,7 @@
     <value>kargatzen</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>Arazoa lasterbideen estekarekin</value>
+    <value>Lasterbideen estekarekin arazoa</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>Lasterbide honek aipatzen duen elementua aldatu edo mugitu da, beraz, lasterbide honek ez du behar bezala funtzionatuko.</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Desegin</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Ez erakutsi iradokizun hau berriro.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Iradokizuna</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Ezarpenen menua ere ireki daiteke beheko eskuineko sistemaren erretiluko ikonoan eskuineko botoiarekin klik eginez, menuaren bidez ireki ezin baduzu.</value>
   </data>
 </root>

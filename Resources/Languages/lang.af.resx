@@ -139,7 +139,7 @@
     <value>Besonderhede</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>Stelsel inligting</value>
+    <value>Stelselinligting</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
     <value>Gids ontoeganklik</value>
@@ -274,7 +274,7 @@
     <value>Pyltjie terwyl die muis daaroor beweeg</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Agtergrond van pyl wanneer jy klik</value>
+    <value>Agtergrond van pyl wanneer u klik</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Agtergrond van pyl terwyl die muis daaroor beweeg</value>
@@ -502,7 +502,7 @@
     <value>Wys funksiesleutel 'Instellings'</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>Wys funksiesleutel 'Herbegin'</value>
+    <value>Wys funksie sleutel 'Herbegin'</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Wys soekbalk</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Ontdoen</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Moenie hierdie wenk weer wys nie.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Wenk</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Die instellingskieslys kan ook oopgemaak word deur met die rechtermuisknop op die ikoon in die stelselbalk regs onder te klik, ingeval jy dit nie meer via die spyskaart kan oopmaak nie.</value>
   </data>
 </root>

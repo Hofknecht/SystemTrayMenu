@@ -151,7 +151,7 @@
     <value>ឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ចាប់ផ្តើមឡើងវិញ</value>
+    <value>ចាប់ផ្ដើមឡើងវិញ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>មិនអាចចុះឈ្មោះ hot key បានទេ។</value>
@@ -184,7 +184,7 @@
     <value>ថត root របស់អ្នកសម្រាប់កម្មវិធីមិនមានទេ ឬទទេ! ផ្លាស់ប្តូរថត root ឬដាក់ឯកសារ ថត ឬផ្លូវកាត់មួយចំនួនទៅក្នុងថត root ។</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>អ្នក​មិន​មាន​សិទ្ធិ​ចូល​ទៅ​ថត​ឫស​របស់​កម្មវិធី​ទេ។ ផ្តល់សិទ្ធិចូលដំណើរការទៅកាន់ថតឯកសារ ឬផ្លាស់ប្តូរថតឫស។</value>
+    <value>អ្នក​មិន​អាច​ចូល​ទៅ​កាន់​ថត​ឫស​របស់​កម្មវិធី​បាន​ទេ។ ផ្តល់សិទ្ធិចូលដំណើរការទៅកាន់ថតឯកសារ ឬផ្លាស់ប្តូរថតឫស។</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
     <value>ចុចមួយដងដើម្បីបើកធាតុមួយ។</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>មិនធ្វើវិញ</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>កុំបង្ហាញការណែនាំនេះម្តងទៀត។</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>ព័ត៌មានជំនួយ</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>ម៉ឺនុយការកំណត់ក៏អាចបើកបានដោយចុចកណ្ដុរស្ដាំលើរូបតំណាងនៅក្នុងថាសប្រព័ន្ធនៅខាងស្តាំខាងក្រោម ក្នុងករណីដែលអ្នកលែងអាចបើកវាតាមរយៈម៉ឺនុយ។</value>
   </data>
 </root>

@@ -121,7 +121,7 @@
     <value>De SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>Bene</value>
   </data>
   <data name="App start" xml:space="preserve">
     <value>App satus</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Undo</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Noli hoc innuere iterum.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Hint</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Tabulae uncinis etiam aperiri possunt iconem in ius strepitando in lance ratio imo ad dextram, si non iam potes eam per menu aperire.</value>
   </data>
 </root>

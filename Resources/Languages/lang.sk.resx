@@ -564,4 +564,13 @@
   <data name="Undo" xml:space="preserve">
     <value>Vrátenie späť</value>
   </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Túto nápovedu už nezobrazovať.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Nápoveda</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Ponuku nastavení je možné otvoriť aj kliknutím pravým tlačidlom myši na ikonu v systémovej lište vpravo dole, v prípade, že ju už nemôžete otvoriť cez ponuku.</value>
+  </data>
 </root>

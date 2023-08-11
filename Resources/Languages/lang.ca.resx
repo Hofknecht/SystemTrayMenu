@@ -346,7 +346,7 @@
     <value>Expert</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Si es perd el focus i es premeu la tecla Enter</value>
+    <value>Si es perd el focus i es prem la tecla Enter</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>Mil·lisegons fins que el menú es tanqui si el menú no es reactiva</value>
@@ -424,7 +424,7 @@
     <value>Fitxers i directoris ocults</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>No mostrar mai</value>
+    <value>No mostris mai</value>
   </data>
   <data name="Size and location" xml:space="preserve">
     <value>Mida i ubicació</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Desfer</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>No tornis a mostrar aquesta pista.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Pista</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>El menú de configuració també es pot obrir fent clic amb el botó dret a la icona de la safata del sistema a la part inferior dreta, en cas que ja no el pugueu obrir mitjançant el menú.</value>
   </data>
 </root>

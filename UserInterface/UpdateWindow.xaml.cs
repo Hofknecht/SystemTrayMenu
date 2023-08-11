@@ -11,6 +11,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows;
     using System.Windows.Media.Imaging;
     using SystemTrayMenu.Helpers.Updater;
+    using SystemTrayMenu.Resources;
 
     /// <summary>
     /// Logic of Update window.
@@ -21,21 +22,7 @@ namespace SystemTrayMenu.UserInterface
         {
             InitializeComponent();
 
-            Assembly myassembly = Assembly.GetExecutingAssembly();
-            string myname = myassembly.GetName().Name ?? string.Empty;
-
-            using (Stream? imgstream = myassembly.GetManifestResourceStream(myname + ".Resources.SystemTrayMenu.png"))
-            {
-                if (imgstream != null)
-                {
-                    BitmapImage imageSource = new BitmapImage();
-                    imageSource.BeginInit();
-                    imageSource.StreamSource = imgstream;
-                    imageSource.EndInit();
-
-                    Icon = imageSource;
-                }
-            }
+            Icon = StaticResources.ApplicationImgSrc;
 
             label.Content = ((string)label.Content) + " " + GitHubUpdate.LatestVersionName;
         }
@@ -43,6 +30,11 @@ namespace SystemTrayMenu.UserInterface
         private void ButtonGoToDownloadPage_Click(object sender, RoutedEventArgs e)
         {
             GitHubUpdate.WebOpenLatestRelease();
+            Close();
+        }
+
+        private void ButtonOk_Click(object sender, RoutedEventArgs e)
+        {
             Close();
         }
     }

@@ -268,7 +268,7 @@
     <value>Nuoli</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>Nuoli napsauttaessa</value>
+    <value>Nuoli napsautettaessa</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>Nuoli, kun hiiri on sen päällä</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Kumoa</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Älä näytä tätä vihjettä uudelleen.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Vihje</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Asetusvalikon voi avata myös napsauttamalla hiiren oikealla painikkeella oikeassa alakulmassa olevaa ilmaisinalueen kuvaketta siltä varalta, että sitä ei voi enää avata valikon kautta.</value>
   </data>
 </root>

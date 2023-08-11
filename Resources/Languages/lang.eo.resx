@@ -157,7 +157,7 @@
     <value>Ne eblis registri la klavoklavon.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>Ĉesigi</value>
+    <value>Ĉesi</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Generalo</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Malfari</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Ne montru ĉi tiun sugeston denove.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Sugesto</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>La agorda menuo ankaŭ povas esti malfermita per dekstre alklakante la piktogramon en la sistempleto malsupre dekstre, se vi ne plu povas malfermi ĝin per la menuo.</value>
   </data>
 </root>

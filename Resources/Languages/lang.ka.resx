@@ -316,7 +316,7 @@
     <value>ხატები</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>დაყენებულია კონტექსტური მენიუს მიხედვით</value>
+    <value>კონტექსტური მენიუს დაყენება</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>დააყენეთ დირექტორიად</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>გაუქმება</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>აღარ აჩვენო ეს მინიშნება.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>მინიშნება</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>პარამეტრების მენიუს გახსნა ასევე შესაძლებელია ქვედა მარჯვენა კუთხეში სისტემის უჯრაზე მაუსის მარჯვენა ღილაკით დაწკაპუნებით, იმ შემთხვევაში, თუ მენიუს მეშვეობით ვეღარ გახსნით.</value>
   </data>
 </root>

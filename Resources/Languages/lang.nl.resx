@@ -238,7 +238,7 @@
     <value>Geopende map</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>Rand van geopende directory</value>
+    <value>Rand van geopende map</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Zoekveld</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Ongedaan maken</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Laat deze hint niet meer zien.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Het instellingenmenu kan ook worden geopend door met de rechtermuisknop op het pictogram in de systeembalk rechtsonder te klikken, voor het geval u het niet meer via het menu kunt openen.</value>
   </data>
 </root>

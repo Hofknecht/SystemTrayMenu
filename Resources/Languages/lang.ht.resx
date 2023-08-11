@@ -397,7 +397,7 @@
     <value>Anba dwat</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>Meni prensipal parèt</value>
+    <value>Meni prensipal la parèt</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Kote sourit (anwo a ikòn ba Travay la)</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Defèt</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>Pa montre sijesyon sa a ankò.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Sijesyon</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>Ou ka louvri meni paramèt la tou lè w klike sou ikòn ki nan plato sistèm nan anba a dwat, nan ka ou pa kapab ouvri li ankò atravè meni an.</value>
   </data>
 </root>

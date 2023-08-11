@@ -114,9 +114,6 @@
     <EmbeddedResource Remove="UserInterface\Menu.resx" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Resources\SystemTrayMenu.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Page Remove="Business\App.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\SystemTrayMenu.ico" />
+    <None Remove="Resources\HowToOpenSettings.png" />
+    <Resource Include="Resources\HowToOpenSettings.png" />
+    <None Remove="Resources\SystemTrayMenu.png" />
     <EmbeddedResource Include="Resources\SystemTrayMenu.png" />
   </ItemGroup>
   <ItemGroup>

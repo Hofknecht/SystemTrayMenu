@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>システムトレイメニューについて</value>
+    <value>SystemTrayMenu について</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>アプリ起動</value>
+    <value>アプリの起動</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>アプリを終了</value>
+    <value>アプリを終了する</value>
   </data>
   <data name="Directory" xml:space="preserve">
     <value>ディレクトリ</value>
@@ -175,28 +175,28 @@
     <value>よくある質問</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>FAQ を読み、SystemTrayMenu のルート ディレクトリを選択します。</value>
+    <value>FAQ を読んで、SystemTrayMenu のルート ディレクトリを選択します。</value>
   </data>
   <data name="Select directory" xml:space="preserve">
-    <value>ディレクトリを選択</value>
+    <value>ディレクトリの選択</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>アプリのルート ディレクトリが存在しないか空です。ルート ディレクトリを変更するか、一部のファイル、ディレクトリ、またはショートカットをルート ディレクトリに配置します。</value>
+    <value>アプリのルート ディレクトリが存在しないか、空です。ルート ディレクトリを変更するか、ファイル、ディレクトリ、またはショートカットをルート ディレクトリに置きます。</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>アプリのルート ディレクトリにはアクセスできません。ディレクトリへのアクセスを許可するか、ルート ディレクトリを変更してください。</value>
+    <value>アプリのルート ディレクトリにアクセスできません。ディレクトリへのアクセスを許可するか、ルート ディレクトリを変更します。</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
-    <value>シングルクリックで要素を開く</value>
+    <value>シングルクリックして要素を開きます</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>カラー スキーム ダーク 常にアクティブ</value>
+    <value>ダークカラースキームは常にアクティブです</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>高度</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
-    <value>マウスの位置</value>
+    <value>マウスの位置で</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
     <value>ディレクトリの変更</value>
@@ -214,19 +214,19 @@
     <value>フォーカスが失われ、マウスがまだメニュー上にある場合</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>マウスが上にあるときにメニューが開くまでのミリ秒</value>
+    <value>マウスを置いたときにメニューが開くまでのミリ秒数</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>マウスがメニューから離れた場合にメニューが閉じるまでのミリ秒</value>
+    <value>マウスがメニューから離れた場合にメニューが閉じるまでのミリ秒数</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>メニューの最大幅</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
-    <value>メニューは開いたままです</value>
+    <value>メニューは開いたままになります</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>メニューオープンまでの時間</value>
+    <value>メニューが開くまでの時間</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
     <value>要素がクリックされた場合</value>
@@ -238,28 +238,28 @@
     <value>開いたディレクトリ</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>開いているディレクトリの境界</value>
+    <value>開いたディレクトリの境界線</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>検索フィールド</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>選択した要素</value>
+    <value>選択された要素</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>選択した要素の境界</value>
+    <value>選択した要素の境界線</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>相対ディレクトリ</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>設定ファイルをアプリケーションディレクトリに保存</value>
+    <value>設定ファイルをアプリケーションディレクトリに保存する</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
-    <value>構成ファイルとログ ファイル</value>
+    <value>構成ファイルとログファイル</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>アプリケーション ディレクトリを開く</value>
+    <value>アプリケーションディレクトリを開く</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
     <value>メニューの最大高さ</value>
@@ -271,19 +271,19 @@
     <value>クリック時の矢印</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>マウスオーバー時の矢印</value>
+    <value>マウスを上に置いたときの矢印</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>クリック時の矢印の背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>マウスが上にあるときの矢印の背景</value>
+    <value>マウスを上に置いたときの矢印の背景</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>配色ダーク</value>
+    <value>ダークな配色</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>配色明るい</value>
+    <value>明るい配色</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>アプリメニュー</value>
@@ -301,16 +301,16 @@
     <value>マウスを上に置いたときのスライダー 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>マウスが上にあるときのスライダー 2</value>
+    <value>マウスを上に置いたときのスライダー 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>ディレクトリのアイコンを使用</value>
+    <value>ディレクトリからアイコンを使用する</value>
   </data>
   <data name="Sizes in percent" xml:space="preserve">
-    <value>パーセントでのサイズ</value>
+    <value>サイズ（パーセント）</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>メニューの枠</value>
+    <value>メニューの枠線</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>アイコン</value>
@@ -325,10 +325,10 @@
     <value>読み込み中</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>ショートカット リンクの問題</value>
+    <value>ショートカットリンクの問題</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>このショートカットが参照するアイテムは変更または移動されたため、このショートカットは正しく機能しなくなりました。</value>
+    <value>このショートカットが参照する項目が変更または移動されたため、このショートカットは正しく動作しなくなります。</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ディレクトリを開く</value>
@@ -337,31 +337,31 @@
     <value>タスクマネージャー</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>非活動化</value>
+    <value>無効化されました</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>アクティブ化</value>
+    <value>アクティブ化された</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>エキスパート</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>フォーカスが失われ、Enter キーが押された場合</value>
+    <value>フォーカスが外れて Enter キーが押された場合</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>メニューが再アクティブ化されない場合、メニューが閉じるまでのミリ秒</value>
+    <value>メニューが再度アクティブ化されない場合にメニューが閉じるまでのミリ秒数</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>タスクバーに表示</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>ディレクトリを追加</value>
+    <value>ディレクトリの追加</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>ディレクトリの内容をルート ディレクトリに追加する</value>
+    <value>ディレクトリの内容をルートディレクトリに追加します</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>ディレクトリ パス</value>
+    <value>ディレクトリパス</value>
   </data>
   <data name="Directories" xml:space="preserve">
     <value>ディレクトリ</value>
@@ -370,13 +370,13 @@
     <value>再帰的</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>ディレクトリを削除</value>
+    <value>ディレクトリを削除する</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>ファイルのみ</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>項目数がこの数を超える場合はキャッシュをクリアします</value>
+    <value>アイテム数がこの数を超える場合はキャッシュをクリアします</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>サンプルディレクトリ「スタートメニュー」を追加</value>
@@ -412,7 +412,7 @@
     <value>要素</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>起動時にドライブ ショートカットを生成する</value>
+    <value>起動時にドライブのショートカットを生成する</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>キャッシュ</value>
@@ -424,10 +424,10 @@
     <value>隠しファイルとディレクトリ</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>表示しない</value>
+    <value>決して見せないでください</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>サイズと場所</value>
+    <value>サイズと位置</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
     <value>オペレーティング システムの設定を使用する</value>
@@ -436,13 +436,13 @@
     <value>検索結果としてのみ表示</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>シングルクリックでディレクトリを開く</value>
+    <value>シングルクリックしてディレクトリを開きます</value>
   </data>
   <data name="Support Gamepad" xml:space="preserve">
     <value>ゲームパッドをサポート</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>一つ前の続き</value>
+    <value>前のものの隣に</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
     <value>ピクセル単位でオフセット</value>
@@ -454,28 +454,28 @@
     <value>サブメニューが表示されます</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>アイコンサイズ</value>
+    <value>アイコンのサイズ</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>SystemTrayMenu をサポート</value>
+    <value>サポートシステムトレイメニュー</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>フェージング</value>
+    <value>色褪せ</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>ホットキーを他のインスタンスに送信</value>
+    <value>ホットキーを他のインスタンスに送信する</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>日付順</value>
+    <value>日付順に並べ替え</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>名前順</value>
+    <value>名前順に並べ替え</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>並べ替え</value>
+    <value>仕分け</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>ドラッグ アンド ドロップで行要素をコピーする</value>
+    <value>ドラッグアンドドロップで行要素をコピー</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>引っ張る</value>
@@ -484,16 +484,16 @@
     <value>スワイプでスクロール</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ファイルの種類でメニューをフィルター処理します。例: *.exe|*.dll</value>
+    <value>ファイルの種類でメニューをフィルタリングします。例: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>要素数を表示</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>ディレクトリのタイトルを一番上に表示</value>
+    <value>ディレクトリタイトルを上部に表示</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>ファンクションキー「フォルダを開く」を表示</value>
+    <value>ファンクションキー「フォルダーを開く」を表示</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
     <value>ファンクションキー「ピンメニュー」を表示</value>
@@ -505,10 +505,10 @@
     <value>ファンクションキー「再起動」を表示</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
-    <value>検索バーを表示</value>
+    <value>検索バーを表示する</value>
   </data>
   <data name="Saving log file in application directory" xml:space="preserve">
-    <value>ログファイルをアプリケーションディレクトリに保存</value>
+    <value>ログファイルをアプリケーションディレクトリに保存する</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>リンクオーバーレイを表示</value>
@@ -517,25 +517,25 @@
     <value>インターネット ショートカット アイコンのディレクトリ</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
-    <value>タイプ（フォルダまたはファイル）および日付でソート</value>
+    <value>種類（フォルダーまたはファイル）と日付で並べ替えられます</value>
   </data>
   <data name="Sorted by type (folder or file) and name" xml:space="preserve">
-    <value>種類 (フォルダーまたはファイル) と名前で並べ替え</value>
+    <value>種類 (フォルダーまたはファイル) と名前で並べ替えられます</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>アップデートを確認</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>ダウンロードページへ</value>
+    <value>ダウンロードページへ行く</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>利用可能な最新バージョン:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>新バージョンが登場！</value>
+    <value>新しいバージョンが利用可能になりました!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
-    <value>SystemTrayMenu は最新バージョンです。</value>
+    <value>最新バージョンの SystemTrayMenu がインストールされています。</value>
   </data>
   <data name="Application size" xml:space="preserve">
     <value>アプリケーションサイズ</value>
@@ -544,10 +544,10 @@
     <value>オプション機能</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>フォルダへのリンクを解決してコンテンツを表示する</value>
+    <value>フォルダーへのリンクを解決してコンテンツを表示する</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
-    <value>ファイル拡張子と名前で並べ替え</value>
+    <value>ファイル拡張子と名前で並べ替えられます</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>コピー</value>
@@ -563,5 +563,14 @@
   </data>
   <data name="Undo" xml:space="preserve">
     <value>元に戻す</value>
+  </data>
+  <data name="Don't show this hint again." xml:space="preserve">
+    <value>このヒントを今後表示しないでください。</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>ヒント</value>
+  </data>
+  <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
+    <value>メニューから設定メニューを開くことができなくなった場合は、右下のシステム トレイのアイコンを右クリックして設定メニューを開くこともできます。</value>
   </data>
 </root>

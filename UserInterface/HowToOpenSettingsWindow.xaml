@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2023-2023 Peter Kirmeier -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
+        x:Class="SystemTrayMenu.UserInterface.HowToOpenSettingsWindow"
+        mc:Ignorable="d" Title="{u:Translate 'Hint'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ShowInTaskbar="True" ResizeMode="NoResize">
+    <Window.Resources>
+        <BitmapImage x:Key="HowToOpenSettingsImage" UriSource="../Resources/HowToOpenSettings.png" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Margin="5" MaxWidth="{Binding ElementName=image, Path=ActualWidth}" x:Name="label" TextWrapping="Wrap" Text="{u:Translate 'The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu.'}" />
+        <Image Grid.Row="1" Margin="10" x:Name="image" Source="{StaticResource HowToOpenSettingsImage}" Stretch="None"/>
+        <CheckBox Grid.Row="2" Margin="5" x:Name="checkBoxDontShowThisHintAgain" Content="???" />
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" Click="ButtonOk_Click" IsDefault="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
