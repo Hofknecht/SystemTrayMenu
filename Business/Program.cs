@@ -44,7 +44,6 @@ namespace SystemTrayMenu
                     FolderOptions.Initialize();
 
                     using App app = new ();
-                    app.InitializeComponent();
                     isStartup = false;
                     Log.WriteApplicationRuns();
                     app.Run();

@@ -7,13 +7,10 @@
 namespace SystemTrayMenu.Utilities
 {
     using System;
-    using System.Globalization;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
-    using System.Windows.Media.Imaging;
     using System.Windows.Threading;
-    using Icon = System.Drawing.Icon;
 
     internal static class WPFExtensions
     {
@@ -73,16 +70,6 @@ namespace SystemTrayMenu.Utilities
         internal static Point GetRelativeChildPositionTo(this Visual parent, Visual? child)
         {
             return child == null ? new() : child.TransformToAncestor(parent).Transform(new ());
-        }
-
-        // TODO: Find and remove any unnecessary convertions
-        internal static BitmapSource ToBitmapSource(this Icon icon)
-        {
-            return (BitmapSource)new IconToImageSourceConverter().Convert(
-                        icon,
-                        typeof(BitmapSource),
-                        null!,
-                        CultureInfo.InvariantCulture);
         }
     }
 }

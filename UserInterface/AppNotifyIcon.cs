@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.UserInterface
 {
     using System;
+    using System.Drawing;
     using System.Windows.Threading;
     using H.NotifyIcon.Core;
 
@@ -12,6 +13,7 @@ namespace SystemTrayMenu.UserInterface
     {
         private readonly Dispatcher dispatchter = Dispatcher.CurrentDispatcher;
         private readonly TrayIconWithContextMenu notifyIcon = new ();
+        private Icon? loadingIcon;
 
         public AppNotifyIcon()
         {
@@ -35,11 +37,13 @@ namespace SystemTrayMenu.UserInterface
         {
             notifyIcon.Icon = IntPtr.Zero;
             notifyIcon.Dispose();
+            loadingIcon?.Dispose();
         }
 
         public void LoadingStart()
         {
-            notifyIcon.Icon = Resources.StaticResources.LoadingIcon.Handle;
+            loadingIcon ??= App.LoadIconFromResource("Resources/Loading.ico");
+            notifyIcon.Icon = loadingIcon.Handle;
         }
 
         public void LoadingStop()

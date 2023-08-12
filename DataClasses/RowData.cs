@@ -219,7 +219,7 @@ namespace SystemTrayMenu.DataClasses
             if (!cacheHit)
             {
                 IconLoading = true;
-                ColumnIcon = SystemTrayMenu.Resources.StaticResources.LoadingImgSrc; // TODO: Maybe add rotation animation like for the loading Menu icon? (See: pictureBoxLoading, LoadingRotation)
+                ColumnIcon = (ImageSource?)Application.Current.Resources["LoadingIconImage"]; // TODO: Maybe add rotation animation like for the loading Menu icon? (See: pictureBoxLoading, LoadingRotation)
             }
         }
 
@@ -343,11 +343,11 @@ namespace SystemTrayMenu.DataClasses
         {
             if (icon == null)
             {
-                icon = Resources.NotFound.ToBitmapSource();
+                icon = (BitmapSource)Application.Current.Resources["NotFoundIconImage"];
             }
             else if (HiddenEntry)
             {
-                icon = ImagingHelper.CreateIconWithOverlay(icon, Resources.White50Percentage.ToBitmapSource());
+                icon = ImagingHelper.ApplyOpactiy(icon, 0.5d);
                 icon?.Freeze(); // Make it accessible for any thread
             }
 

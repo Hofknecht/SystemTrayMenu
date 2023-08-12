@@ -6,5 +6,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="SystemTrayMenu.UserInterface.TaskbarLogo"
         mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize" Width="38" Height="38" Topmost="True" Background="Transparent" AllowsTransparency="True">
-    <Image x:Name="ImagePictureBox" Width="32" Height="32" Margin="3"/>
+    <Image Width="32" Height="32" Margin="3" Source="{StaticResource ApplicationImage}"/>
 </Window>

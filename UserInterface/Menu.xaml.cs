@@ -98,7 +98,7 @@ namespace SystemTrayMenu.UserInterface
                 if (ParentMenu == null)
                 {
                     // Should never happen as each parent menu must have a valid entry which's owner is set
-                throw new ArgumentNullException(new (nameof(ParentMenu)));
+                    throw new ArgumentNullException(new (nameof(ParentMenu)));
                 }
 
                 Level = RowDataParent.Level + 1;
@@ -108,11 +108,6 @@ namespace SystemTrayMenu.UserInterface
                 buttonOpenFolder.Visibility = Visibility.Collapsed;
                 buttonSettings.Visibility = Visibility.Collapsed;
                 buttonRestart.Visibility = Visibility.Collapsed;
-
-                labelStatus.Content = Translator.GetText("loading");
-
-                // Todo: use embedded resources that we can assign image in XAML already
-                pictureBoxLoading.Source = SystemTrayMenu.Resources.StaticResources.LoadingImgSrc;
                 pictureBoxLoading.Visibility = Visibility.Visible;
             }
 

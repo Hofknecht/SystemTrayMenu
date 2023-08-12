@@ -7,6 +7,7 @@
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
         x:Class="SystemTrayMenu.UserInterface.HowToOpenSettingsWindow"
         mc:Ignorable="d" Title="{u:Translate 'Hint'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ShowInTaskbar="True" ResizeMode="NoResize">
+
     <Window.Resources>
         <BitmapImage x:Key="HowToOpenSettingsImage" UriSource="../Resources/HowToOpenSettings.png" />
     </Window.Resources>
@@ -19,7 +20,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Margin="5" MaxWidth="{Binding ElementName=image, Path=ActualWidth}" x:Name="label" TextWrapping="Wrap" Text="{u:Translate 'The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu.'}" />
+        <TextBlock Grid.Row="0" Margin="5" MinWidth="200" MaxWidth="{Binding ElementName=image, Path=ActualWidth}" x:Name="label" TextWrapping="Wrap" Text="{u:Translate 'The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu.'}" />
         <Image Grid.Row="1" Margin="10" x:Name="image" Source="{StaticResource HowToOpenSettingsImage}" Stretch="None"/>
         <CheckBox Grid.Row="2" Margin="5" x:Name="checkBoxDontShowThisHintAgain" Content="???" />
 

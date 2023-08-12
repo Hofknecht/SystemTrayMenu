@@ -7,7 +7,6 @@
 namespace SystemTrayMenu.UserInterface
 {
     using System.Windows;
-    using SystemTrayMenu.Resources;
     using SystemTrayMenu.Utilities;
 
     /// <summary>
@@ -18,8 +17,6 @@ namespace SystemTrayMenu.UserInterface
         public HowToOpenSettingsWindow()
         {
             InitializeComponent();
-
-            Icon = StaticResources.ApplicationImgSrc;
 
             // TODO: Find a way to escape ' within inline single quotes markup string in XAML
             checkBoxDontShowThisHintAgain.Content = Translator.GetText("Don't show this hint again.");

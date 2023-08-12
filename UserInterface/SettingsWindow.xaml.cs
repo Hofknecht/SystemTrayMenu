@@ -15,7 +15,6 @@ namespace SystemTrayMenu.UserInterface
     using Microsoft.Win32;
     using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
-    using SystemTrayMenu.Resources;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
     using Windows.ApplicationModel;
@@ -33,8 +32,6 @@ namespace SystemTrayMenu.UserInterface
         public SettingsWindow()
         {
             InitializeComponent();
-
-            Icon = StaticResources.ApplicationImgSrc;
 
             PreviewKeyDown += HandlePreviewKeyDown;
 

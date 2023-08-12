@@ -5,6 +5,8 @@
 namespace SystemTrayMenu
 {
     using System;
+    using System.Drawing;
+    using System.IO;
     using System.Windows;
     using System.Windows.Threading;
     using SystemTrayMenu.Business;
@@ -18,18 +20,21 @@ namespace SystemTrayMenu
     /// </summary>
     public partial class App : Application, IDisposable
     {
-        private readonly Menus menus = new();
+        private Menus? menus;
         private JoystickHelper? joystickHelper;
         private bool isDisposed;
 
         public App()
         {
+            InitializeComponent();
+
             AppRestart.BeforeRestarting += Dispose;
 
             Activated += (_, _) => IsActiveApp = true;
             Deactivated += (_, _) => IsActiveApp = false;
             Startup += (_, _) =>
             {
+                menus = new();
                 menus.Startup();
 
                 if (Settings.Default.SupportGamepad)
@@ -55,17 +60,35 @@ namespace SystemTrayMenu
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Loads an Icon from the application's Resources.
+        /// Note: Only allowed to be called after App's Startup event.
+        /// </summary>
+        /// <param name="resourceName">Absolute file path from root directory.</param>
+        /// <returns>New Icon object.</returns>
+        internal static Icon LoadIconFromResource(string resourceName)
+        {
+            using (Stream stream = GetResourceStream(new("pack://application:,,,/" + resourceName, UriKind.Absolute)).Stream)
+            {
+                return new(stream);
+            }
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (!isDisposed)
             {
                 if (joystickHelper != null)
                 {
-                    joystickHelper.KeyPressed -= menus.KeyPressed;
+                    if (menus != null)
+                    {
+                        joystickHelper.KeyPressed -= menus.KeyPressed;
+                    }
+
                     joystickHelper.Dispose();
                 }
 
-                menus.Dispose();
+                menus?.Dispose();
 
                 isDisposed = true;
             }

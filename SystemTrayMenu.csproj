@@ -126,32 +126,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\SystemTrayMenu.ico" />
-    <None Remove="Resources\HowToOpenSettings.png" />
+    <Resource Include="Resources\SystemTrayMenu.ico" />
+    <Resource Include="Resources\SystemTrayMenu.png" />
+    <Resource Include="Resources\LinkArrow.ico" />
+    <Resource Include="Resources\Loading.ico" />
     <Resource Include="Resources\HowToOpenSettings.png" />
-    <None Remove="Resources\SystemTrayMenu.png" />
-    <EmbeddedResource Include="Resources\SystemTrayMenu.png" />
+    <Resource Include="Resources\NotFound.ico" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">

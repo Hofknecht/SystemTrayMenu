@@ -9,12 +9,14 @@ namespace SystemTrayMenu.Utilities
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Drawing;
-    using System.Drawing.Imaging;
+    using System.Globalization;
     using System.IO;
     using System.Runtime.InteropServices;
     using System.Threading;
+    using System.Windows;
     using System.Windows.Media.Imaging;
     using SystemTrayMenu.DllImports;
+    using SystemTrayMenu.Helpers;
 
     /// <summary>
     /// Provides static methods to read system icons for folders and files.
@@ -23,12 +25,7 @@ namespace SystemTrayMenu.Utilities
     {
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictPersistent = new();
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictCache = new();
-
-        internal enum IconSize
-        {
-            Large = 0, // 32x32 pixels
-            Small = 1, // 16x16 pixels
-        }
+        private static readonly BitmapSource? OverlayImage = (BitmapSource?)Application.Current.Resources["LinkArrowIconImage"];
 
         // see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
         internal static bool IsPreloading { get; set; } = true;
@@ -52,7 +49,6 @@ namespace SystemTrayMenu.Utilities
             Action<BitmapSource?> onIconLoaded)
         {
             bool cacheHit;
-            BitmapSource? icon;
             string key;
             string extension = Path.GetExtension(path);
             if (IsExtensionWithSameIcon(extension))
@@ -64,7 +60,7 @@ namespace SystemTrayMenu.Utilities
                 key = path;
             }
 
-            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
+            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out BitmapSource? icon) &&
                 !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
             {
                 cacheHit = false;
@@ -97,9 +93,8 @@ namespace SystemTrayMenu.Utilities
             Action<BitmapSource?> onIconLoaded)
         {
             bool cacheHit;
-            BitmapSource? icon;
             string key = path;
-            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out icon) &&
+            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out BitmapSource? icon) &&
                 !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
             {
                 cacheHit = false;
@@ -134,81 +129,72 @@ namespace SystemTrayMenu.Utilities
             return cacheHit;
         }
 
-        internal static Icon? GetIconAsIcon(string path, string resolvedPath, bool linkOverlay, bool isFolder, IconSize? forceSize = null)
+        internal static Icon? GetRootFolderIcon(string path)
         {
-            IconSize size;
-            if (forceSize.HasValue)
-            {
-                size = forceSize.Value;
-            }
-            else if (Scaling.Factor >= 1.25f ||
-                Scaling.FactorByDpi >= 1.25f ||
-                Properties.Settings.Default.IconSizeInPercent / 100f >= 1.25f)
-            {
-                // IconSize.Large returns another folder icon than windows explorer
-                size = IconSize.Large;
-            }
-            else
-            {
-                size = IconSize.Small;
-            }
+            NativeMethods.SHFILEINFO shFileInfo = default;
+            bool linkOverlay = false;
+            bool largeIcon = false;
+            uint flags = GetFlags(linkOverlay, largeIcon);
+            uint attribute = NativeMethods.FileAttributeDirectory;
+            IntPtr imageList = NativeMethods.Shell32SHGetFileInfo(path, attribute, ref shFileInfo, (uint)Marshal.SizeOf(shFileInfo), flags);
+            return GetIcon(path, linkOverlay, shFileInfo, imageList);
+        }
 
+        internal static BitmapSource? TryGetIconAsBitmapSource(string path, string resolvedPath, bool linkOverlay, bool isFolder)
+        {
+            BitmapSource? result = null;
             Icon? icon;
-            if (Path.GetExtension(path).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
+            if (!isFolder && Path.GetExtension(path).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
             {
                 icon = Icon.ExtractAssociatedIcon(path);
+                if (icon != null)
+                {
+                    result = CreateBitmapSourceFromIcon(icon);
+                    icon.Dispose();
+                }
             }
-            else if (File.Exists(resolvedPath) &&
+            else if (!isFolder && File.Exists(resolvedPath) &&
                 Path.GetExtension(resolvedPath).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
             {
                 icon = Icon.ExtractAssociatedIcon(resolvedPath);
-                if (linkOverlay && icon != null)
+                if (icon != null)
                 {
-                    icon = AddIconOverlay(icon, Properties.Resources.LinkArrow);
+                    result = CreateBitmapSourceFromIcon(icon);
+                    icon.Dispose();
+
+                    if (linkOverlay && OverlayImage != null)
+                    {
+                        result = ImagingHelper.CreateIconWithOverlay(result, OverlayImage);
+                    }
                 }
             }
             else
             {
                 NativeMethods.SHFILEINFO shFileInfo = default;
-                uint flags = GetFlags(linkOverlay, size);
+                bool largeIcon = // Note: large returns another folder icon than windows explorer
+                    Scaling.Factor >= 1.25f ||
+                    Scaling.FactorByDpi >= 1.25f ||
+                    Properties.Settings.Default.IconSizeInPercent / 100f >= 1.25f;
+                uint flags = GetFlags(linkOverlay, largeIcon);
                 uint attribute = isFolder ? NativeMethods.FileAttributeDirectory : NativeMethods.FileAttributeNormal;
                 IntPtr imageList = NativeMethods.Shell32SHGetFileInfo(path, attribute, ref shFileInfo, (uint)Marshal.SizeOf(shFileInfo), flags);
                 icon = GetIcon(path, linkOverlay, shFileInfo, imageList);
+                if (icon != null)
+                {
+                    result = CreateBitmapSourceFromIcon(icon);
+                    icon.Dispose();
+                }
             }
 
-            return icon;
+            return result;
         }
 
         private static BitmapSource GetIconAsBitmapSource(string path, string resolvedPath, bool linkOverlay, bool isFolder)
         {
-            Icon? icon = GetIconAsIcon(path, resolvedPath, linkOverlay, isFolder, null);
-
-            BitmapSource bitmapSource;
-            if (icon != null)
-            {
-                bitmapSource = icon.ToBitmapSource();
-                icon.Dispose();
-            }
-            else
-            {
-                bitmapSource = Properties.Resources.NotFound.ToBitmapSource();
-            }
-
+            BitmapSource? bitmapSource = TryGetIconAsBitmapSource(path, resolvedPath, linkOverlay, isFolder);
+            bitmapSource ??= (BitmapSource)Application.Current.Resources["NotFoundIconImage"];
             bitmapSource.Freeze(); // Make it accessible for any thread
             return bitmapSource;
-        }
-
-        private static Icon AddIconOverlay(Icon originalIcon, Icon overlay)
-        {
-            using Bitmap target = new(originalIcon.Width, originalIcon.Height, PixelFormat.Format32bppArgb);
-            using Graphics graphics = Graphics.FromImage(target);
-            graphics.DrawIcon(originalIcon, 0, 0);
-            graphics.DrawIcon(overlay, new(0, 0, originalIcon.Width + 2, originalIcon.Height + 2));
-            target.MakeTransparent(target.GetPixel(1, 1));
-            IntPtr hIcon = target.GetHicon();
-            Icon icon = (Icon)Icon.FromHandle(hIcon).Clone();
-            NativeMethods.User32DestroyIcon(hIcon);
-            return icon;
         }
 
         private static ConcurrentDictionary<string, BitmapSource> DictIconCache(bool checkPersistentFirst)
@@ -226,7 +212,7 @@ namespace SystemTrayMenu.Utilities
             return isExtensionWithSameIcon;
         }
 
-        private static uint GetFlags(bool linkOverlay, IconSize size)
+        private static uint GetFlags(bool linkOverlay, bool largeIcon)
         {
             uint flags = NativeMethods.ShgfiIcon | NativeMethods.ShgfiSYSICONINDEX;
             if (linkOverlay)
@@ -234,7 +220,7 @@ namespace SystemTrayMenu.Utilities
                 flags += NativeMethods.ShgfiLINKOVERLAY;
             }
 
-            if (size == IconSize.Small)
+            if (!largeIcon)
             {
                 flags += NativeMethods.ShgfiSMALLICON;
             }
@@ -279,13 +265,22 @@ namespace SystemTrayMenu.Utilities
 
                 if (!linkOverlay)
                 {
-                    NativeMethods.User32DestroyIcon(hIcon);
+                    _ = NativeMethods.User32DestroyIcon(hIcon);
                 }
 
-                NativeMethods.User32DestroyIcon(shFileInfo.hIcon);
+                _ = NativeMethods.User32DestroyIcon(shFileInfo.hIcon);
             }
 
             return icon;
+        }
+
+        private static BitmapSource CreateBitmapSourceFromIcon(Icon icon)
+        {
+            return (BitmapSource)new IconToImageSourceConverter().Convert(
+                        icon,
+                        typeof(BitmapSource),
+                        null!,
+                        CultureInfo.InvariantCulture);
         }
     }
 }

@@ -6,12 +6,8 @@
 
 namespace SystemTrayMenu.UserInterface
 {
-    using System.IO;
-    using System.Reflection;
     using System.Windows;
-    using System.Windows.Media.Imaging;
     using SystemTrayMenu.Helpers.Updater;
-    using SystemTrayMenu.Resources;
 
     /// <summary>
     /// Logic of Update window.
@@ -21,8 +17,6 @@ namespace SystemTrayMenu.UserInterface
         public UpdateWindow()
         {
             InitializeComponent();
-
-            Icon = StaticResources.ApplicationImgSrc;
 
             label.Content = ((string)label.Content) + " " + GitHubUpdate.LatestVersionName;
         }

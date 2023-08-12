@@ -115,16 +115,42 @@ namespace SystemTrayMenu.Helpers
             return ConvertToIcon(inputStream, outputStream, size, preserveAspectRatio);
         }
 
+        /// <summary>
+        /// Renders an image on top of an image.
+        /// </summary>
+        /// <param name="originalBitmap">Base image (remains unchanged).</param>
+        /// <param name="overlayBitmap">Image on top (remains unchanged).</param>
+        /// <returns>Rendered image.</returns>
         internal static RenderTargetBitmap CreateIconWithOverlay(BitmapSource originalBitmap, BitmapSource overlayBitmap)
         {
-            DrawingVisual dVisual = new DrawingVisual();
+            DrawingVisual dVisual = new ();
             using (DrawingContext dc = dVisual.RenderOpen())
             {
                 dc.DrawImage(originalBitmap, new (0, 0, originalBitmap.PixelWidth, originalBitmap.PixelHeight));
-                dc.DrawImage(overlayBitmap, new (0, 0, overlayBitmap.PixelWidth, overlayBitmap.PixelHeight));
+                dc.DrawImage(overlayBitmap, new (0, 0, originalBitmap.PixelWidth, originalBitmap.PixelHeight));
             }
 
             RenderTargetBitmap targetBitmap = new (originalBitmap.PixelWidth, originalBitmap.PixelHeight, originalBitmap.DpiX, originalBitmap.DpiY, PixelFormats.Default);
+            targetBitmap.Render(dVisual);
+            return targetBitmap;
+        }
+
+        /// <summary>
+        /// Sets a flat the alpha channel value for an image.
+        /// </summary>
+        /// <param name="originalBitmap">Base image (remains unchanged).</param>
+        /// <param name="opacity">Opacity value.</param>
+        /// <returns>Rendered image.</returns>
+        internal static RenderTargetBitmap ApplyOpactiy(BitmapSource originalBitmap, double opacity)
+        {
+            DrawingVisual dVisual = new ();
+            using (DrawingContext dc = dVisual.RenderOpen())
+            {
+                dc.PushOpacity(opacity);
+                dc.DrawImage(originalBitmap, new(0, 0, originalBitmap.PixelWidth, originalBitmap.PixelHeight));
+            }
+
+            RenderTargetBitmap targetBitmap = new(originalBitmap.PixelWidth, originalBitmap.PixelHeight, originalBitmap.DpiX, originalBitmap.DpiY, PixelFormats.Default);
             targetBitmap.Render(dVisual);
             return targetBitmap;
         }

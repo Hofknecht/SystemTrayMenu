@@ -1,7 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (c) 2022-2022 Peter Kirmeier -->
+<!-- Copyright (c) 2022-2023 Peter Kirmeier -->
 <Application
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:SystemTrayMenu"
-    x:Class="SystemTrayMenu.App" ShutdownMode="OnExplicitShutdown" />
+    x:Class="SystemTrayMenu.App" ShutdownMode="OnExplicitShutdown">
+
+    <Application.Resources>
+        <BitmapImage x:Key="ApplicationImage" UriSource="../Resources/SystemTrayMenu.png" />
+
+        <BitmapImage x:Key="ApplicationIconImage" UriSource="../Resources/SystemTrayMenu.ico" />
+        <BitmapImage x:Key="LinkArrowIconImage" UriSource="../Resources/LinkArrow.ico" />
+        <BitmapImage x:Key="LoadingIconImage" UriSource="../Resources/Loading.ico" />
+        <BitmapImage x:Key="NotFoundIconImage" UriSource="../Resources/NotFound.ico" />
+    </Application.Resources>
+
+</Application>

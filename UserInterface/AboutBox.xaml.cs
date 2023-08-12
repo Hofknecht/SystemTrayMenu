@@ -20,7 +20,6 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Input;
     using System.Windows.Threading;
     using Microsoft.Win32;
-    using SystemTrayMenu.Resources;
     using SystemTrayMenu.Utilities;
 
     /// <summary>
@@ -38,9 +37,6 @@ namespace SystemTrayMenu.UserInterface
         public AboutBox()
         {
             InitializeComponent();
-
-            ImagePictureBox.Source = StaticResources.ApplicationImgSrc;
-            Icon = StaticResources.ApplicationImgSrc;
 
             Loaded += AboutBox_Load;
 

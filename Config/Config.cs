@@ -12,13 +12,12 @@ namespace SystemTrayMenu
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
-    using static SystemTrayMenu.Utilities.IconReader;
     using Icon = System.Drawing.Icon;
 
     public static class Config
     {
-        private static readonly Icon SystemTrayMenu = new(Properties.Resources.SystemTrayMenu, (int)SystemParameters.SmallIconWidth, (int)SystemParameters.SmallIconHeight);
-        private static readonly Icon? IconRootFolder = GetIconAsIcon(Path, Path, false, true, IconSize.Small);
+        private static readonly Icon? IconRootFolder = IconReader.GetRootFolderIcon(Path);
+        private static Icon? applicationIcon;
 
         private static bool readDarkModeDone;
         private static bool isDarkMode;
@@ -70,7 +69,14 @@ namespace SystemTrayMenu
             }
             else
             {
-                return SystemTrayMenu;
+                if (applicationIcon == null)
+                {
+                    Icon icon = App.LoadIconFromResource("Resources/SystemTrayMenu.ico");
+                    applicationIcon = new(icon, (int)SystemParameters.SmallIconWidth, (int)SystemParameters.SmallIconHeight);
+                    icon.Dispose();
+                }
+
+                return applicationIcon;
             }
         }
 
