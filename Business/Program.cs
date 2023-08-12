@@ -23,6 +23,7 @@ namespace SystemTrayMenu
                 Config.SetFolderByWindowsContextMenu(args);
                 Config.LoadOrSetByUser();
                 Config.Initialize();
+                PrivilegeChecker.Initialize();
 
                 if (SingleAppInstance.Initialize())
                 {
