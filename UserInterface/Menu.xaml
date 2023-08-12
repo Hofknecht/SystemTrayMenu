@@ -113,6 +113,7 @@
 
             <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,4">
                 <DockPanel.Resources>
+                    <SolidColorBrush x:Key="ButtonHoverColor" Color="LightGray" Opacity="0.15"/>
                     <Style TargetType="{x:Type Button}">
                         <!-- TODO: Find better solution instead of re-implementing the control template of a button,
                                    only to manage changing the mouse hover border color. -->
@@ -127,7 +128,7 @@
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
                                             <Setter Property="BorderBrush" Value="{x:Static stm:MenuDefines.ColorSelectedItemBorder}" TargetName="Border" />
-                                            <Setter Property="Background" Value="LightGray" TargetName="Border" />
+                                            <Setter Property="Background" Value="{StaticResource ButtonHoverColor}" TargetName="Border" />
                                             <Setter Property="Opacity" Value="0.9" TargetName="Border" />
                                         </Trigger>
                                     </ControlTemplate.Triggers>
