@@ -878,8 +878,9 @@ namespace SystemTrayMenu.UserInterface
                     // 125% = 23 instead 27, 150% = 28 instead 32
                     // 175% = 33 instead 37, 200% = 35 instead 42
                     // #418 use 21 as default and scale it manually
-                    double rowHeightDefault = 21.24f * Scaling.FactorByDpi;
-                    Resources["RowHeight"] = (double)(int)((rowHeightDefault * factor * Scaling.Factor) + 0.5);
+                    // 2px less due to subtracted boarder around list view item
+                    double rowHeightDefault = 21.24d * Scaling.FactorByDpi;
+                    Resources["RowHeight"] = (double)(int)((rowHeightDefault * factor * Scaling.Factor) + 0.5d - 2.0d);
                     dgv.Tag = true;
                 }
             }
@@ -904,8 +905,8 @@ namespace SystemTrayMenu.UserInterface
 
             double factorIconSizeInPercent = Settings.Default.IconSizeInPercent / 100f;
 
-            // IcoWidth 100% = 21px, 175% is 33, +3+2 is padding from ColumnIcon
-            double icoWidth = (16 * Scaling.FactorByDpi) + 5;
+            // IcoWidth 100% = 21px, 175% is 33
+            double icoWidth = 16 * Scaling.FactorByDpi;
             Resources["ColumnIconWidth"] = (double)(int)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
 
             double renderedMaxWidth = 0D;

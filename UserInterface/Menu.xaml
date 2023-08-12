@@ -177,8 +177,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Height="{DynamicResource RowHeight}" Background="{Binding BackgroundBrush}">
-                            <Image Width="{DynamicResource ColumnIconWidth}" Margin="0,2,0,3" Source="{Binding ColumnIcon}" />
-                            <Label Width="{DynamicResource ColumnTextWidth}" Margin="3,0" Padding="0" VerticalContentAlignment="Center">
+                            <Image Width="{DynamicResource ColumnIconWidth}" Margin="0,1,0,2" Source="{Binding ColumnIcon}" />
+                            <Label Width="{DynamicResource ColumnTextWidth}" Margin="2,0" Padding="0" VerticalContentAlignment="Center">
                                 <TextBlock TextTrimming="CharacterEllipsis" Text="{Binding ColumnText}" Foreground="{x:Static stm:MenuDefines.ColorForeground}"/>
                             </Label>
                         </StackPanel>
