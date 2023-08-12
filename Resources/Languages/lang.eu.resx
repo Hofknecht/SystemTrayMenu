@@ -192,8 +192,8 @@
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Kolore-eskema iluna beti aktibo</value>
   </data>
-  <data name="Advanced" xml:space="preserve">
-    <value>Aurreratua</value>
+  <data name="Expanded" xml:space="preserve">
+    <value>Zabaldua</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>Saguaren kokapenan</value>
@@ -316,7 +316,7 @@
     <value>Ikonoak</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Testuinguru menuaren arabera ezarri</value>
+    <value>Testuinguru-menuaren arabera ezarri</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
     <value>Ezarri direktorio gisa</value>
@@ -552,14 +552,14 @@
   <data name="Copy" xml:space="preserve">
     <value>Kopiatu</value>
   </data>
-  <data name="Cut" xml:space="preserve">
-    <value>Moztu</value>
+  <data name="To cut out" xml:space="preserve">
+    <value>Mozteko</value>
   </data>
-  <data name="Paste" xml:space="preserve">
-    <value>Itsatsi</value>
+  <data name="To paste" xml:space="preserve">
+    <value>Itsatsi egiteko</value>
   </data>
-  <data name="Select All" xml:space="preserve">
-    <value>Hautatu guztiak</value>
+  <data name="Selecting All" xml:space="preserve">
+    <value>Guztiak hautatzea</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Desegin</value>

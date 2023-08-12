@@ -150,7 +150,7 @@ namespace SystemTrayMenu.UserInterface
             };
             textBoxSearch.ContextMenu.Items.Add(new MenuItem()
             {
-                Header = Translator.GetText("Cut"),
+                Header = Translator.GetText("To cut out"),
                 Command = new ActionCommand((_) => textBoxSearch.Cut()),
             });
             textBoxSearch.ContextMenu.Items.Add(new MenuItem()
@@ -160,7 +160,7 @@ namespace SystemTrayMenu.UserInterface
             });
             textBoxSearch.ContextMenu.Items.Add(new MenuItem()
             {
-                Header = Translator.GetText("Paste"),
+                Header = Translator.GetText("To paste"),
                 Command = new ActionCommand((_) =>
                     {
                         if (Clipboard.ContainsText(TextDataFormat.Text))
@@ -176,7 +176,7 @@ namespace SystemTrayMenu.UserInterface
             });
             textBoxSearch.ContextMenu.Items.Add(new MenuItem()
             {
-                Header = Translator.GetText("Select All"),
+                Header = Translator.GetText("Selecting All"),
                 Command = new ActionCommand((_) => textBoxSearch.SelectAll()),
             });
 

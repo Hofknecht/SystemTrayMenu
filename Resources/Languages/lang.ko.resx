@@ -192,8 +192,8 @@
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>색 구성표 어두운 항상 활성</value>
   </data>
-  <data name="Advanced" xml:space="preserve">
-    <value>고급의</value>
+  <data name="Expanded" xml:space="preserve">
+    <value>퍼지는</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>마우스 위치에서</value>
@@ -552,13 +552,13 @@
   <data name="Copy" xml:space="preserve">
     <value>복사</value>
   </data>
-  <data name="Cut" xml:space="preserve">
-    <value>자르다</value>
+  <data name="To cut out" xml:space="preserve">
+    <value>잘라내다</value>
   </data>
-  <data name="Paste" xml:space="preserve">
-    <value>반죽</value>
+  <data name="To paste" xml:space="preserve">
+    <value>붙여넣기</value>
   </data>
-  <data name="Select All" xml:space="preserve">
+  <data name="Selecting All" xml:space="preserve">
     <value>모두 선택</value>
   </data>
   <data name="Undo" xml:space="preserve">

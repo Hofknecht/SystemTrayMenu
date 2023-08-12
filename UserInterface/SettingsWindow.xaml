@@ -112,7 +112,7 @@
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="{u:Translate 'Advanced'}">
+            <TabItem Header="{u:Translate 'Expanded'}">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <StackPanel>
                         <GroupBox Header="{u:Translate 'Optional Features'}">

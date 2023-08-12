@@ -192,8 +192,8 @@
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Színséma sötét mindig aktív</value>
   </data>
-  <data name="Advanced" xml:space="preserve">
-    <value>Fejlett</value>
+  <data name="Expanded" xml:space="preserve">
+    <value>Kiterjesztett</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>Az egér helyén</value>
@@ -552,14 +552,14 @@
   <data name="Copy" xml:space="preserve">
     <value>Másolat</value>
   </data>
-  <data name="Cut" xml:space="preserve">
-    <value>Vágott</value>
+  <data name="To cut out" xml:space="preserve">
+    <value>Kivágni</value>
   </data>
-  <data name="Paste" xml:space="preserve">
-    <value>Paszta</value>
+  <data name="To paste" xml:space="preserve">
+    <value>Beilleszteni</value>
   </data>
-  <data name="Select All" xml:space="preserve">
-    <value>Mindet kiválaszt</value>
+  <data name="Selecting All" xml:space="preserve">
+    <value>Az összes kiválasztása</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Visszavonás</value>

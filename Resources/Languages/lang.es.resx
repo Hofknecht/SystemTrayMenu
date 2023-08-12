@@ -163,7 +163,7 @@
     <value>General</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>tecla de acceso directo</value>
+    <value>tecla de acceso rápido</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>Empieza con las ventanas</value>
@@ -192,8 +192,8 @@
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Esquema de color oscuro siempre activo</value>
   </data>
-  <data name="Advanced" xml:space="preserve">
-    <value>Avanzado</value>
+  <data name="Expanded" xml:space="preserve">
+    <value>Expandido</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>En la ubicación del ratón</value>
@@ -364,7 +364,7 @@
     <value>Rutas de directorio</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>Directorios</value>
+    <value>directorios</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>recursivo</value>
@@ -463,7 +463,7 @@
     <value>Desvanecimiento</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Enviar tecla de acceso rápido a otra instancia</value>
+    <value>Enviar tecla de acceso directo a otra instancia</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
     <value>Ordenado por fecha</value>
@@ -552,13 +552,13 @@
   <data name="Copy" xml:space="preserve">
     <value>Copiar</value>
   </data>
-  <data name="Cut" xml:space="preserve">
+  <data name="To cut out" xml:space="preserve">
     <value>Cortar</value>
   </data>
-  <data name="Paste" xml:space="preserve">
+  <data name="To paste" xml:space="preserve">
     <value>Pegar</value>
   </data>
-  <data name="Select All" xml:space="preserve">
+  <data name="Selecting All" xml:space="preserve">
     <value>Seleccionar todo</value>
   </data>
   <data name="Undo" xml:space="preserve">
