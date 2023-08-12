@@ -977,11 +977,9 @@ namespace SystemTrayMenu.UserInterface
             }
             else
             {
-                SizeToContent = SizeToContent.Height;
+                SizeToContent = SizeToContent.Manual;
                 view.Filter = (object item) => Filter_ByUserPattern((RowData)item, userPattern);
             }
-
-            //UpdateCounts(view);
 
             SearchTextChanged?.Invoke(this, string.IsNullOrEmpty(userPattern), causedByWatcherUpdate);
         }
