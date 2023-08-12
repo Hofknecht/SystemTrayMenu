@@ -160,6 +160,12 @@ namespace SystemTrayMenu.Utilities
 
             try
             {
+                string verb = string.Empty;
+                if (!PrivilegeChecker.IsCurrentUserInAdminGroup)
+                {
+                    verb = "runas";
+                }
+
                 using Process p = new()
                 {
                     StartInfo = new ProcessStartInfo(fileName)
@@ -169,7 +175,7 @@ namespace SystemTrayMenu.Utilities
                         WorkingDirectory = workingDirectory ?? string.Empty,
                         CreateNoWindow = createNoWindow,
                         UseShellExecute = true,
-                        Verb = "runas",
+                        Verb = verb,
                     },
                 };
                 p.Start();

@@ -23,6 +23,7 @@ namespace SystemTrayMenu
                 Config.SetFolderByWindowsContextMenu(args);
                 Config.LoadOrSetByUser();
                 Config.Initialize();
+                PrivilegeChecker.Initialize();
 
                 // Without a valid path we cannot do anything, just close application
                 if (string.IsNullOrEmpty(Config.Path))
