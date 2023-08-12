@@ -35,7 +35,6 @@ namespace SystemTrayMenu.UserInterface
 
         public void Dispose()
         {
-            notifyIcon.Icon = IntPtr.Zero;
             notifyIcon.Dispose();
             loadingIcon?.Dispose();
         }
@@ -43,12 +42,12 @@ namespace SystemTrayMenu.UserInterface
         public void LoadingStart()
         {
             loadingIcon ??= App.LoadIconFromResource("Resources/Loading.ico");
-            notifyIcon.Icon = loadingIcon.Handle;
+            notifyIcon.UpdateIcon(loadingIcon.Handle);
         }
 
         public void LoadingStop()
         {
-            notifyIcon.Icon = Config.GetAppIcon().Handle;
+            notifyIcon.UpdateIcon(Config.GetAppIcon().Handle);
         }
     }
 }
