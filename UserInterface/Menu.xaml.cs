@@ -6,6 +6,7 @@ namespace SystemTrayMenu.UserInterface
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.Specialized;
     using System.Globalization;
     using System.IO;
     using System.Windows;
@@ -37,9 +38,7 @@ namespace SystemTrayMenu.UserInterface
             nameof(FadeOut), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
 
         private readonly string folderPath;
-#if TODO // SEARCH
-        public const string RowFilterShowAll = "[SortIndex] LIKE '%0%'";
-#endif
+
         private bool isShellContextMenuOpen;
         private bool directionToRight;
         private Point lastLocation;
@@ -181,6 +180,11 @@ namespace SystemTrayMenu.UserInterface
             });
 
             dgv.SelectionChanged += ListView_SelectionChanged;
+            ((INotifyCollectionChanged)dgv.Items).CollectionChanged += (_, _) =>
+            {
+                int count = dgv.Items.Count;
+                labelStatus.Content = count.ToString() + " " + Translator.GetText(count == 1 ? "element" : "elements");
+            };
 
             Loaded += (_, _) =>
             {
@@ -397,25 +401,9 @@ namespace SystemTrayMenu.UserInterface
 
         internal void AddItemsToMenu(List<RowData> data, MenuDataDirectoryState? state)
         {
-            int foldersCount = 0;
-            int filesCount = 0;
-
             for (int index = 0; index < data.Count; index++)
             {
                 RowData rowData = data[index];
-
-                if (!(rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult))
-                {
-                    if (rowData.IsPointingToFolder)
-                    {
-                        foldersCount++;
-                    }
-                    else
-                    {
-                        filesCount++;
-                    }
-                }
-
                 rowData.RowIndex = index;
                 rowData.Owner = this;
                 rowData.SortIndex = rowData.IsAdditionalItem && Settings.Default.ShowOnlyAsSearchResult ? 99 : 0;
@@ -423,7 +411,8 @@ namespace SystemTrayMenu.UserInterface
 
             dgv.ItemsSource = data;
 
-            SetCounts(foldersCount, filesCount);
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(dgv.ItemsSource);
+            view.Filter = (object item) => Filter_Default((RowData)item);
 
             if (state != null)
             {
@@ -819,13 +808,6 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void SetCounts(int foldersCount, int filesCount)
-        {
-            int filesAndFoldersCount = foldersCount + filesCount;
-            string elements = filesAndFoldersCount == 1 ? "element" : "elements";
-            labelStatus.Content = $"{filesAndFoldersCount} {Translator.GetText(elements)}";
-        }
-
         private void FadeOut_Completed(object sender, EventArgs e) => Hide();
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
@@ -956,6 +938,31 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        private bool Filter_Default(RowData itemData)
+        {
+            if (Settings.Default.ShowOnlyAsSearchResult && itemData.IsAdditionalItem)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool Filter_ByUserPattern(RowData itemData, string userPattern)
+        {
+            // Instead implementing in-string wildcards, simply split into multiple search pattersy
+            // Look for each space separated string if it is part of an entry's text (case insensitive)
+            foreach (string pattern in userPattern.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
+            {
+                if (!itemData.ColumnText.ToLower().Contains(pattern))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void TextBoxSearch_TextChanged(bool causedByWatcherUpdate)
         {
             SearchTextChanging?.Invoke();
@@ -966,107 +973,17 @@ namespace SystemTrayMenu.UserInterface
             if (string.IsNullOrEmpty(userPattern))
             {
                 SizeToContent = SizeToContent.WidthAndHeight;
-                view.Filter = null;
+                view.Filter = (object item) => Filter_Default((RowData)item);
             }
             else
             {
                 SizeToContent = SizeToContent.Height;
-
-                // Instead implementing in-string wildcards, simply split into multiple search patters
-                view.Filter = (object item) =>
-                {
-                    // Look for each space separated string if it is part of an entries text (case insensitive)
-                    RowData itemData = (RowData)item;
-                    foreach (string pattern in userPattern.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
-                    {
-                        if (!itemData.ColumnText.ToLower().Contains(pattern))
-                        {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                };
+                view.Filter = (object item) => Filter_ByUserPattern((RowData)item, userPattern);
             }
 
-#if TODO // SEARCH
-            DataTable data = (DataTable)dgv.DataSource;
-            string columnSortIndex = "SortIndex";
-            if (string.IsNullOrEmpty(userPattern))
-            {
-                foreach (DataRow row in data.Rows)
-                {
-                    RowData rowData = (RowData)row[2];
-                    if (rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult)
-                    {
-                        row[columnSortIndex] = 99;
-                    }
-                    else
-                    {
-                        row[columnSortIndex] = 0;
-                    }
-                }
+            //UpdateCounts(view);
 
-                data.DefaultView.Sort = string.Empty;
-                data.AcceptChanges();
-            }
-            else
-            {
-                foreach (DataRow row in data.Rows)
-                {
-                    if (row[1].ToString().StartsWith(
-                        searchString,
-                        StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        row[columnSortIndex] = 0;
-                    }
-                    else
-                    {
-                        row[columnSortIndex] = 1;
-                    }
-                }
-
-                data.DefaultView.Sort = columnSortIndex;
-            }
-
-            int foldersCount = 0;
-            int filesCount = 0;
-            bool anyIconNotUpdated = false;
-
-            foreach (DataGridViewRow row in dgv.Rows)
-            {
-                RowData rowData = (RowData)row.Cells[2].Value;
-
-                if (!string.IsNullOrEmpty(userPattern) ||
-                    !(rowData.IsAddionalItem && Settings.Default.ShowOnlyAsSearchResult))
-                {
-                    rowData.RowIndex = row.Index;
-
-                    if (rowData.ContainsMenu)
-                    {
-                        foldersCount++;
-                    }
-                    else
-                    {
-                        filesCount++;
-                    }
-
-                    if (rowData.IconLoading)
-                    {
-                        anyIconNotUpdated = true;
-                    }
-                }
-            }
-
-            SetCounts(foldersCount, filesCount);
-#endif
             SearchTextChanged?.Invoke(this, string.IsNullOrEmpty(userPattern), causedByWatcherUpdate);
-#if TODO // SEARCH
-            if (anyIconNotUpdated)
-            {
-                timerUpdateIcons.Start();
-            }
-#endif
         }
 
         private void PictureBoxOpenFolder_Click(object sender, RoutedEventArgs e)
