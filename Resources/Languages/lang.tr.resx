@@ -130,10 +130,10 @@
     <value>Uygulamadan çık</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>dizin</value>
+    <value>Klasör</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Dizin boş</value>
+    <value>Klasör boş</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Detaylar</value>
@@ -142,13 +142,13 @@
     <value>Sistem bilgisi</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
-    <value>Dizine erişilemiyor</value>
+    <value>Klasöre erişilemiyor</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Dil</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>Log dosyası</value>
+    <value>Günlük dosyası</value>
   </data>
   <data name="Restart" xml:space="preserve">
     <value>Tekrar başlat</value>
@@ -157,7 +157,7 @@
     <value>Kısayol tuşu kaydedilemedi.</value>
   </data>
   <data name="Abort" xml:space="preserve">
-    <value>İptal</value>
+    <value>iptal</value>
   </data>
   <data name="General" xml:space="preserve">
     <value>Genel</value>
@@ -166,7 +166,7 @@
     <value>kısayol tuşu</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>Pencerelerle başla</value>
+    <value>Windows ile birlikte başla</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Ayarlar</value>
@@ -178,19 +178,19 @@
     <value>SSS bölümünü okuyun ve ardından SystemTrayMenu için bir kök dizin seçin.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
-    <value>dizini seçin</value>
+    <value>Klasör seçin</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Uygulama için kök dizininiz yok veya boş! Kök dizini değiştirin veya kök dizine bazı dosyalar, dizinler veya kısayollar koyun.</value>
+    <value>Uygulama için kök dizininiz mevcut değil veya boş! Kök dizini değiştirin veya kök dizine bazı dosyalar, klasörler veya kısayollar koyun.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>Uygulamanın kök dizinine erişiminiz yok. Dizine erişim izni verin veya kök dizini değiştirin.</value>
+    <value>Uygulamanın kök dizinine erişiminiz yok. Klasöre erişim izni verin veya kök dizini değiştirin.</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
     <value>Bir öğeyi açmak için tek tıklama</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Renk düzeni koyu her zaman aktif</value>
+    <value>Renk düzeni koyu her zaman etkin</value>
   </data>
   <data name="Advanced" xml:space="preserve">
     <value>Gelişmiş</value>
@@ -199,25 +199,25 @@
     <value>Fare konumunda</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>dizini değiştirme</value>
+    <value>Klasörü değiştir</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>Tıklamak</value>
+    <value>Tıklama</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>Özelleştirmek</value>
+    <value>Özelleştirme</value>
   </data>
   <data name="Default" xml:space="preserve">
     <value>Varsayılan</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>Odak kaybolursa ve fare hala menüdeyse</value>
+    <value>Odak kaybolursa ve fare hala menü üzerindeyse</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>Fare üzerindeyken bir menü açılana kadar milisaniye</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>Fare menüden çıkarsa menü kapanana kadar geçen milisaniye</value>
+    <value>Bu durumda fare menüden ayrılırsa menü kapanana kadar milisaniye</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>Maksimum menü genişliği</value>
@@ -226,19 +226,19 @@
     <value>Menü açık kalır</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>Bir menünün açılmasına kadar geçen süre</value>
+    <value>Bir menü açılana kadar geçen süre</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>Bir öğe tıklandıysa</value>
+    <value>Bir öğe tıklandığında</value>
   </data>
   <data name="Background" xml:space="preserve">
-    <value>Arka plan</value>
+    <value>Arka fon</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
-    <value>Açılan dizin</value>
+    <value>Açılan klasör</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>Açılan dizinin sınırı</value>
+    <value>Açılan klasörün sınırı</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Arama alanı</value>
@@ -247,19 +247,19 @@
     <value>Seçili öğe</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Seçilen öğenin kenarlığı</value>
+    <value>Seçili öğenin sınırı</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>göreli dizin</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>Yapılandırma dosyasını uygulama dizinine kaydedin</value>
+    <value>Yapılandırmayı uygulama klasörüne kaydet</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
-    <value>Yapılandırma ve günlük dosyaları</value>
+    <value>Yapılandırma dosyası ve günlük dosyası</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>Uygulama dizinini aç</value>
+    <value>Uygulama klasörünü aç</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
     <value>Maksimum menü yüksekliği</value>
@@ -271,7 +271,7 @@
     <value>Tıklandığında ok</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>Fare üzerinde gezinirken ok</value>
+    <value>Fare üzerine geldiğinde ok</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
     <value>Tıklandığında okun arka planı</value>
@@ -280,10 +280,10 @@
     <value>Fare üzerinde gezinirken okun arka planı</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>Renk şeması koyu</value>
+    <value>Renk düzeni koyu</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Renk şeması parlak</value>
+    <value>Renk düzeni parlak</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>Uygulama menüsü</value>
@@ -292,34 +292,34 @@
     <value>Kaydırma çubuğu</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>kaydırıcı</value>
+    <value>Kaydırıcı</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
     <value>Sürüklerken kaydırıcı</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>Fare üzerinde gezinirken kaydırıcı 1</value>
+    <value>Fare üzerindeyken kaydırıcı 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
     <value>Fare üzerindeyken kaydırıcı 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>Dizindeki simgeyi kullan</value>
+    <value>Klasördeki simgeyi kullan</value>
   </data>
   <data name="Sizes in percent" xml:space="preserve">
-    <value>Yüzde cinsinden boyutlar</value>
+    <value>Yüzde olarak boyutlar</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Menünün sınırı</value>
+    <value>Menü sınırı</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>simgeler</value>
+    <value>Simgeler</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Bağlam menüsü ile ayarla</value>
+    <value>Bağlam menüsüne göre ayarla</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Dizin olarak ayarla</value>
+    <value>Klasör olarak ayarla</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Yükleniyor</value>
@@ -328,16 +328,16 @@
     <value>Kısayol bağlantısıyla ilgili sorun</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Bu kısayolun atıfta bulunduğu öğe değiştirilmiş veya taşınmış olduğundan, bu kısayol artık düzgün çalışmayacaktır.</value>
+    <value>Bu kısayolun atıfta bulunduğu öğe değiştirildi veya taşındı, bu nedenle bu kısayol artık düzgün çalışmayacak.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Açık sözlük</value>
+    <value>Klasörü aç</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>Görev Yöneticisi</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>Devre dışı bırakıldı</value>
+    <value>Devre dışı</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>Aktif</value>
@@ -346,40 +346,40 @@
     <value>Uzman</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Odak kaybolursa ve Enter tuşuna basılmışsa</value>
+    <value>Odak kaybolursa ve Enter tuşuna basıldıysa</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>Menü yeniden etkinleştirilmezse menü kapanana kadar geçen milisaniye</value>
+    <value>Bu durumda menü yeniden etkinleştirilmezse menü kapanana kadar milisaniye</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
     <value>Görev Çubuğunda Göster</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>dizin ekle</value>
+    <value>Klasör ekle</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>Dizin içeriğini kök dizine ekle</value>
+    <value>Klasör içeriğini kök dizine ekle</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>Dizin yolları</value>
+    <value>Klasör yolları</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>dizinler</value>
+    <value>Klasörler</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>özyinelemeli</value>
+    <value>Özyinelemeli</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>Dizini kaldır</value>
+    <value>Klasörü kaldır</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Yalnızca Dosyalar</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>Bu sayıdan fazla öğe varsa önbelleği temizle</value>
+    <value>Bu sayıda öğeden fazlaysa önbelleği temizle</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>'Başlat Menüsü' örnek dizini ekleyin</value>
+    <value>Örnek klasör ekle 'Başlat Menüsü'</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Satır yüksekliği</value>
@@ -397,31 +397,31 @@
     <value>Sağ alt</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>Ana menü görünür</value>
+    <value>Ana menü belirir</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>Fare konumu (Görev Çubuğu simgesinin üstünde)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
-    <value>Özel (uygun konuma sürükleyin)</value>
+    <value>Özel (uygun yere sürükleyin)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>eleman</value>
+    <value>öğe</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>elementler</value>
+    <value>öğeler</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>Başlangıçta sürücü kısayolları oluştur</value>
+    <value>Başlangıçta sürücü kısayolları oluşturun</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>önbellek</value>
+    <value>Önbellek</value>
   </data>
   <data name="Always show" xml:space="preserve">
     <value>Her zaman göster</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>Gizli dosyalar ve dizinler</value>
+    <value>Gizli dosyalar ve klasörler</value>
   </data>
   <data name="Never show" xml:space="preserve">
     <value>Asla gösterme</value>
@@ -436,37 +436,37 @@
     <value>Yalnızca arama sonucu olarak göster</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>Bir dizini açmak için tek tıklama</value>
+    <value>Bir klasörü açmak için tek tıklama</value>
   </data>
   <data name="Support Gamepad" xml:space="preserve">
-    <value>Gamepad'i Destekleyin</value>
+    <value>Destek Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Bir öncekinin yanında</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>piksel cinsinden ofset</value>
+    <value>Piksel olarak ofset</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
-    <value>örtüşen</value>
+    <value>Örtüşen</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>Alt menü görünür</value>
+    <value>Alt menü belirir</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>Simge boyutu</value>
+    <value>İkon boyutu</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>Destek SistemiTrayMenu</value>
+    <value>SystemTrayMenu'yü Destekle</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>solma</value>
+    <value>Solma</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>Diğer örneğe kısayol tuşu gönder</value>
+    <value>Başka bir örneğe kısayol tuşu gönder</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>Tarihe göre sıralandı</value>
+    <value>Tarihe göre sıralanmış</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
     <value>Ada göre sıralanmış</value>
@@ -475,46 +475,46 @@
     <value>Sıralama</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>Satır öğesini sürükleyip bırakarak kopyalayın</value>
+    <value>Sürükle bırak yoluyla satır öğesini kopyala</value>
   </data>
   <data name="Drag" xml:space="preserve">
     <value>Sürüklemek</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Kaydırarak kaydır</value>
+    <value>Kaydırarak kaydırın</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Menüyü dosya türüne göre filtreleyin, örneğin: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
-    <value>Öğe sayısını göster</value>
+    <value>Aşağıda öğe sayısını göster</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
-    <value>Dizin başlığını en üstte göster</value>
+    <value>Klasör başlığını en üstte göster</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
     <value>'Klasörü Aç' işlev tuşunu göster</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>'Menüyü sabitle' işlev tuşunu göster</value>
+    <value>'Menüyü sabitle' fonksiyon tuşunu göster</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>'Ayarlar' işlev tuşunu göster</value>
+    <value>'Ayarlar' fonksiyon tuşunu göster</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>'Yeniden Başlat' işlev tuşunu göster</value>
+    <value>'Yeniden Başlat' fonksiyon tuşunu göster</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
     <value>Arama çubuğunu göster</value>
   </data>
   <data name="Saving log file in application directory" xml:space="preserve">
-    <value>Günlük dosyasını uygulama dizinine kaydetme</value>
+    <value>Günlük dosyasını uygulama klasörüne kaydet</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
     <value>Bağlantı yer paylaşımını göster</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>İnternet Kısayol Simgeleri Dizini</value>
+    <value>İnternet Kısayol Simgeleri Klasörü</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
     <value>Türe (klasör veya dosya) ve tarihe göre sıralanır</value>
@@ -526,7 +526,7 @@
     <value>Güncellemeleri kontrol et</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>indirme sayfasına git</value>
+    <value>İndirme sayfasına git</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>Mevcut en son sürüm:</value>
@@ -538,19 +538,19 @@
     <value>SystemTrayMenu'nun en son sürümüne sahipsiniz!</value>
   </data>
   <data name="Application size" xml:space="preserve">
-    <value>uygulama boyutu</value>
+    <value>Uygulama boyutu</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
     <value>Opsiyonel özellikler</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>Klasörlere olan bağlantıları çözün ve içeriği gösterin</value>
+    <value>Klasör bağlantılarını çözün ve içeriği gösterin</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
     <value>Dosya uzantısına ve adına göre sıralanmış</value>
   </data>
   <data name="Copy" xml:space="preserve">
-    <value>kopyala</value>
+    <value>Kopyala</value>
   </data>
   <data name="Cut" xml:space="preserve">
     <value>Kesmek</value>

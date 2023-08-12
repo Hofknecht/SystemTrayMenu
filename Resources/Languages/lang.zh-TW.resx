@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About SystemTrayMenu" xml:space="preserve">
-    <value>關於系統托盤菜單</value>
+    <value>關於 SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>好的</value>
+    <value>確定</value>
   </data>
   <data name="App start" xml:space="preserve">
-    <value>應用程序啟動</value>
+    <value>啟動應用程式</value>
   </data>
   <data name="Exit app" xml:space="preserve">
-    <value>退出應用程序</value>
+    <value>離開</value>
   </data>
   <data name="Directory" xml:space="preserve">
     <value>目錄</value>
@@ -136,229 +136,229 @@
     <value>目錄為空</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>細節</value>
+    <value>詳細資料</value>
   </data>
   <data name="System Info" xml:space="preserve">
-    <value>系統信息</value>
+    <value>系統資訊</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
-    <value>目錄無法訪問</value>
+    <value>目錄無法存取</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>語言</value>
   </data>
   <data name="Log File" xml:space="preserve">
-    <value>日誌文件</value>
+    <value>日誌檔案</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>重新開始</value>
+    <value>重新啟動</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
-    <value>無法註冊熱鍵。</value>
+    <value>無法註冊快捷鍵。</value>
   </data>
   <data name="Abort" xml:space="preserve">
     <value>中止</value>
   </data>
   <data name="General" xml:space="preserve">
-    <value>一般的</value>
+    <value>一般</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>熱鍵</value>
+    <value>快捷鍵</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>從 Windows 開始</value>
+    <value>隨 Windows 啟動</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>設置</value>
+    <value>設定</value>
   </data>
   <data name="Frequently Asked Questions" xml:space="preserve">
-    <value>經常問的問題</value>
+    <value>常見問題</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>閱讀常見問題解答，然後選擇 SystemTrayMenu 的根目錄。</value>
+    <value>請參閱常見問題，然後指定一個目錄作為 SystemTrayMenu 的起始位置。</value>
   </data>
   <data name="Select directory" xml:space="preserve">
-    <value>選擇目錄</value>
+    <value>選取目錄</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>您的應用程序根目錄不存在或為空！更改根目錄或將一些文件、目錄或快捷方式放入根目錄中。</value>
+    <value>您指定的 SystemTrayMenu 目錄不存在或為空！請將一些檔案、資料夾或捷徑放進此位置，或者變更選取的目錄。</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>您無權訪問應用程序的根目錄。授予對該目錄的訪問權限或更改根目錄。</value>
+    <value>您沒有權限可以存取根目錄。請授予對該資料夾的存取權，或者或者變更選取的資料夾。</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
-    <value>單擊打開一個元素</value>
+    <value>按一下以開啟項目</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>配色方案深色始終處於活動狀態</value>
+    <value>一律使用深色模式</value>
   </data>
   <data name="Advanced" xml:space="preserve">
-    <value>先進的</value>
+    <value>進階</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
-    <value>在鼠標位置</value>
+    <value>滑鼠指標位置</value>
   </data>
   <data name="Changing directory" xml:space="preserve">
-    <value>更改目錄</value>
+    <value>變更目錄</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>點擊</value>
+    <value>點選</value>
   </data>
   <data name="Customize" xml:space="preserve">
-    <value>定制</value>
+    <value>自訂</value>
   </data>
   <data name="Default" xml:space="preserve">
-    <value>默認</value>
+    <value>預設</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>如果焦點丟失並且鼠標仍在菜單上</value>
+    <value>如果失去焦點且滑鼠指標仍在選單上</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
-    <value>當鼠標放在菜單上時，菜單打開之前的毫秒數</value>
+    <value>當滑鼠指標在圖示上時，開啟選單的延遲時間 (毫秒)</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>如果鼠標離開菜單，菜單關閉之前的毫秒數</value>
+    <value>當滑鼠指標已離開選單，選單關閉的延遲時間 (毫秒)</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
-    <value>最大菜單寬度</value>
+    <value>最大選單寬度</value>
   </data>
   <data name="Menu stays open" xml:space="preserve">
-    <value>菜單保持打開狀態</value>
+    <value>保持開啟</value>
   </data>
   <data name="Time until a menu opens" xml:space="preserve">
-    <value>菜單打開之前的時間</value>
+    <value>選單開啟前延遲</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>如果單擊某個元素</value>
+    <value>如果一個項目被點選</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>背景</value>
   </data>
   <data name="Opened directory" xml:space="preserve">
-    <value>打開的目錄</value>
+    <value>開啟的目錄</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>打開目錄的邊框</value>
+    <value>開啟的目錄外框</value>
   </data>
   <data name="Search field" xml:space="preserve">
-    <value>搜索欄</value>
+    <value>搜尋列</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>選定的元素</value>
+    <value>選取的項目</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>所選元素的邊框</value>
+    <value>選取的項目外框</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
-    <value>相對目錄</value>
+    <value>對應目錄</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
-    <value>將配置文件保存在應用程序目錄中</value>
+    <value>將設定檔儲存在程式所在位置</value>
   </data>
   <data name="Configuration and log files" xml:space="preserve">
-    <value>配置和日誌文件</value>
+    <value>設定檔和日誌檔案</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>打開應用程序目錄</value>
+    <value>開啟應用程式檔案位置</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
-    <value>最大菜單高度</value>
+    <value>最大選單高度</value>
   </data>
   <data name="Arrow" xml:space="preserve">
-    <value>箭</value>
+    <value>箭頭</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>單擊時的箭頭</value>
+    <value>點選時的箭頭</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
-    <value>鼠標懸停在其上時的箭頭</value>
+    <value>滑鼠游標懸浮時箭頭背景</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>單擊時箭頭的背景</value>
+    <value>點選時箭頭的背景</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>鼠標懸停在箭頭上時的背景</value>
+    <value>滑鼠游標懸停時箭頭背景</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>配色方案深色</value>
+    <value>深色模式色彩</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>配色方案明亮</value>
+    <value>淺色模式色彩</value>
   </data>
   <data name="App menu" xml:space="preserve">
-    <value>應用程序菜單</value>
+    <value>應用程式選單</value>
   </data>
   <data name="Scrollbar" xml:space="preserve">
-    <value>滾動條</value>
+    <value>捲軸</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>滑塊</value>
+    <value>滑動方塊</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>拖動時滑塊</value>
+    <value>拖曳時的滑動方塊</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
-    <value>鼠標懸停在滑塊上時的滑塊 1</value>
+    <value>滑鼠游標懸浮時的滑動方塊 1</value>
   </data>
   <data name="Slider while mouse hovers over it 2" xml:space="preserve">
-    <value>鼠標懸停在滑塊上時的滑塊 2</value>
+    <value>滑鼠游標懸浮時的滑動方塊 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>使用目錄中的圖標</value>
+    <value>使用資料夾的圖示</value>
   </data>
   <data name="Sizes in percent" xml:space="preserve">
     <value>尺寸百分比</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>菜單邊框</value>
+    <value>選單外框</value>
   </data>
   <data name="Icons" xml:space="preserve">
-    <value>圖標</value>
+    <value>圖示</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>通過上下文菜單設置</value>
+    <value>從右鍵選單設定</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>設置為目錄</value>
+    <value>設定為目錄</value>
   </data>
   <data name="loading" xml:space="preserve">
-    <value>加載中</value>
+    <value>正在載入</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>快捷鏈接有問題</value>
+    <value>捷徑發生問題</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>此快捷方式引用的項目已更改或移動，因此此快捷方式將不再正常工作。</value>
+    <value>這個捷徑指向的原始項目已經變更或移至別處，所以這個捷徑將無法再正常執行。</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>打開目錄</value>
+    <value>開啟目錄</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
-    <value>任務管理器</value>
+    <value>工作管理員</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
     <value>已停用</value>
   </data>
   <data name="Activated" xml:space="preserve">
-    <value>活性</value>
+    <value>已啟用</value>
   </data>
   <data name="Expert" xml:space="preserve">
     <value>專家</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>如果焦點丟失並且按下了 Enter 鍵</value>
+    <value>如果已失去焦點並已按下 Enter 鍵</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
-    <value>如果未重新激活菜單，則菜單關閉之前的毫秒數</value>
+    <value>若選單沒有重新點選，關閉選單前的延遲時間 (毫秒)</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>在任務欄中顯示</value>
+    <value>在工作列中顯示</value>
   </data>
   <data name="Add directory" xml:space="preserve">
-    <value>添加目錄</value>
+    <value>新增目錄</value>
   </data>
   <data name="Add content of directory to root directory" xml:space="preserve">
-    <value>將目錄內容添加到根目錄</value>
+    <value>將資料夾內容新增到根目錄</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
     <value>目錄路徑</value>
@@ -367,160 +367,160 @@
     <value>目錄</value>
   </data>
   <data name="Recursive" xml:space="preserve">
-    <value>遞歸</value>
+    <value>遞迴</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
     <value>刪除目錄</value>
   </data>
   <data name="Only Files" xml:space="preserve">
-    <value>僅文件</value>
+    <value>只有檔案</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>如果超過此數量，則清除緩存</value>
+    <value>如果超過此數量則清除快取</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>添加示例目錄“開始菜單”</value>
+    <value>新增「開始」選單目錄</value>
   </data>
   <data name="Row height" xml:space="preserve">
-    <value>行高</value>
+    <value>列高</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>圓角</value>
+    <value>圓角外框</value>
   </data>
   <data name="Appearance" xml:space="preserve">
-    <value>外貌</value>
+    <value>外觀</value>
   </data>
   <data name="Bottom left" xml:space="preserve">
-    <value>左下方</value>
+    <value>左下角</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
     <value>右下角</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>出現主菜單</value>
+    <value>主選單顯示位置</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
-    <value>鼠標位置（任務欄圖標上方）</value>
+    <value>滑鼠指標位置 (工作列角落圖示上方)</value>
   </data>
   <data name="Custom (drag it to the appropriate position)" xml:space="preserve">
-    <value>自定義（拖到合適位置）</value>
+    <value>自訂 (拖曳到適合的位置)</value>
   </data>
   <data name="element" xml:space="preserve">
-    <value>元素</value>
+    <value>個項目</value>
   </data>
   <data name="elements" xml:space="preserve">
-    <value>元素</value>
+    <value>個項目</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>啟動時生成驅動器快捷方式</value>
+    <value>在啟動時建立磁碟機的捷徑</value>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>緩存</value>
+    <value>快取</value>
   </data>
   <data name="Always show" xml:space="preserve">
-    <value>總是顯示</value>
+    <value>一律顯示隱藏的檔案、資料夾及磁碟機</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>隱藏文件和目錄</value>
+    <value>隱藏的檔案和資料夾</value>
   </data>
   <data name="Never show" xml:space="preserve">
-    <value>從不顯示</value>
+    <value>不顯示隱藏的檔案、資料夾及磁碟機</value>
   </data>
   <data name="Size and location" xml:space="preserve">
-    <value>大小和位置</value>
+    <value>位置和大小</value>
   </data>
   <data name="Use operating system settings" xml:space="preserve">
-    <value>使用操作系統設置</value>
+    <value>使用作業系統設定</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>僅顯示為搜索結果</value>
+    <value>僅顯示為搜尋結果</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>單擊打開目錄</value>
+    <value>按一下以開啟目錄</value>
   </data>
   <data name="Support Gamepad" xml:space="preserve">
-    <value>支持遊戲手柄</value>
+    <value>支援遊戲控制器</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
-    <value>緊接著上一張</value>
+    <value>在上一個選單的旁邊</value>
   </data>
   <data name="Offset by pixels" xml:space="preserve">
-    <value>按像素偏移</value>
+    <value>像素偏移量</value>
   </data>
   <data name="Overlapping" xml:space="preserve">
     <value>重疊</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>出現子菜單</value>
+    <value>子選單顯示在</value>
   </data>
   <data name="Icon size" xml:space="preserve">
-    <value>圖標大小</value>
+    <value>圖示大小</value>
   </data>
   <data name="Support SystemTrayMenu" xml:space="preserve">
-    <value>支持系統托盤菜單</value>
+    <value>贊助 SystemTrayMenu</value>
   </data>
   <data name="Fading" xml:space="preserve">
-    <value>衰退</value>
+    <value>淡入淡出</value>
   </data>
   <data name="Send hotkey to other instance" xml:space="preserve">
-    <value>發送熱鍵到其他實例</value>
+    <value>向其他處理程序發送快捷鍵</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>按日期排序</value>
+    <value>依日期</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>按名稱排序</value>
+    <value>按名稱</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>排序</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
-    <value>通過拖放複製行元素</value>
+    <value>透過拖曳複製項目</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>拖</value>
+    <value>拖曳</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>通過滑動滾動</value>
+    <value>透過滑動來捲動捲軸</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>按文件類型過濾菜單，例如：*.exe|*.dll</value>
+    <value>依檔案類型來過濾選單 (例如：*.exe|*.dll)</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
-    <value>顯示元素數量</value>
+    <value>在底部顯示項目的數量</value>
   </data>
   <data name="Show directory title at top" xml:space="preserve">
     <value>在頂部顯示目錄標題</value>
   </data>
   <data name="Show function key 'Open Folder'" xml:space="preserve">
-    <value>顯示功能鍵“打開文件夾”</value>
+    <value>顯示「開啟資料夾」功能圖示</value>
   </data>
   <data name="Show function key 'Pin menu'" xml:space="preserve">
-    <value>顯示功能鍵“固定菜單”</value>
+    <value>顯示「固定選單」功能圖示</value>
   </data>
   <data name="Show function key 'Settings'" xml:space="preserve">
-    <value>顯示功能鍵“設置”</value>
+    <value>顯示「設定」功能圖示</value>
   </data>
   <data name="Show function key 'Restart'" xml:space="preserve">
-    <value>顯示功能鍵“重新啟動”</value>
+    <value>顯示「重新啟動」功能圖示</value>
   </data>
   <data name="Show search bar" xml:space="preserve">
-    <value>顯示搜索欄</value>
+    <value>顯示搜尋列</value>
   </data>
   <data name="Saving log file in application directory" xml:space="preserve">
-    <value>將日誌文件保存在應用程序目錄中</value>
+    <value>將日誌檔案儲存在應用程式目錄中</value>
   </data>
   <data name="Show link overlay" xml:space="preserve">
-    <value>顯示鏈接疊加層</value>
+    <value>顯示連結覆蓋</value>
   </data>
   <data name="Directory of Internet Shortcut Icons" xml:space="preserve">
-    <value>互聯網快捷方式圖標目錄</value>
+    <value>網際網路捷徑圖示目錄</value>
   </data>
   <data name="Sorted by type (folder or file) and date" xml:space="preserve">
-    <value>按類型（文件夾或文件）和日期排序</value>
+    <value>依類型（檔案或資料夾）和日期排序</value>
   </data>
   <data name="Sorted by type (folder or file) and name" xml:space="preserve">
-    <value>按類型（文件夾或文件）和名稱排序</value>
+    <value>依類型（檔案或資料夾）和名稱排序</value>
   </data>
   <data name="Check for updates" xml:space="preserve">
     <value>檢查更新</value>
@@ -532,22 +532,22 @@
     <value>最新可用版本：</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>新版本上線！</value>
+    <value>有新版本可使用！</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>您擁有最新版本的 SystemTrayMenu！</value>
   </data>
   <data name="Application size" xml:space="preserve">
-    <value>應用尺寸</value>
+    <value>應用程式大小</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
-    <value>可選功能</value>
+    <value>選用功能</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
-    <value>解析文件夾鏈接並顯示內容</value>
+    <value>解析資料夾內項目並顯示內容</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
-    <value>按文件擴展名和名稱排序</value>
+    <value>依副檔名和名稱排序</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>複製</value>
