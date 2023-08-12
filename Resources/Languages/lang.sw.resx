@@ -192,8 +192,8 @@
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Mpangilio wa rangi giza unafanya kazi kila wakati</value>
   </data>
-  <data name="Advanced" xml:space="preserve">
-    <value>Advanced</value>
+  <data name="Expanded" xml:space="preserve">
+    <value>Imepanuliwa</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>Katika eneo la panya</value>
@@ -472,7 +472,7 @@
     <value>Imepangwa kwa jina</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>Inapanga</value>
+    <value>Kupanga</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
     <value>Nakili kipengele cha safu mlalo kupitia kuburuta na kudondosha</value>
@@ -529,7 +529,7 @@
     <value>Nenda kwenye ukurasa wa kupakua</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
-    <value>Toleo linalopatikana hivi karibuni:</value>
+    <value>Toleo la hivi punde linalopatikana:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
     <value>Toleo jipya linapatikana!</value>
@@ -552,14 +552,14 @@
   <data name="Copy" xml:space="preserve">
     <value>Nakili</value>
   </data>
-  <data name="Cut" xml:space="preserve">
-    <value>Kata</value>
+  <data name="To cut out" xml:space="preserve">
+    <value>Ili kukata</value>
   </data>
-  <data name="Paste" xml:space="preserve">
-    <value>Bandika</value>
+  <data name="To paste" xml:space="preserve">
+    <value>Kuweka</value>
   </data>
-  <data name="Select All" xml:space="preserve">
-    <value>Chagua Zote</value>
+  <data name="Selecting All" xml:space="preserve">
+    <value>Kuchagua Zote</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Tendua</value>

@@ -130,7 +130,7 @@
     <value>Iziet no lietotnes</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Katalogs</value>
+    <value>Direktorija</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
     <value>Direktorija tukša</value>
@@ -192,8 +192,8 @@
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>Krāsu shēma tumša vienmēr aktīva</value>
   </data>
-  <data name="Advanced" xml:space="preserve">
-    <value>Papildu</value>
+  <data name="Expanded" xml:space="preserve">
+    <value>Izvērsts</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>Peles atrašanās vietā</value>
@@ -250,7 +250,7 @@
     <value>Atlasītā elementa apmale</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
-    <value>Relatīvā direktorija</value>
+    <value>Relatīvais direktorijs</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
     <value>Saglabājiet konfigurācijas failu lietojumprogrammu direktorijā</value>
@@ -552,14 +552,14 @@
   <data name="Copy" xml:space="preserve">
     <value>Kopēt</value>
   </data>
-  <data name="Cut" xml:space="preserve">
-    <value>Griezt</value>
+  <data name="To cut out" xml:space="preserve">
+    <value>Lai izgrieztu</value>
   </data>
-  <data name="Paste" xml:space="preserve">
-    <value>Ielīmēt</value>
+  <data name="To paste" xml:space="preserve">
+    <value>Lai ielīmētu</value>
   </data>
-  <data name="Select All" xml:space="preserve">
-    <value>Izvēlēties visus</value>
+  <data name="Selecting All" xml:space="preserve">
+    <value>Atlasot visu</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Atsaukt</value>

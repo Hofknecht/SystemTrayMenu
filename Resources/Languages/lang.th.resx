@@ -192,8 +192,8 @@
   <data name="Color scheme dark always active" xml:space="preserve">
     <value>ชุดรูปแบบสีเข้มใช้งานได้เสมอ</value>
   </data>
-  <data name="Advanced" xml:space="preserve">
-    <value>ขั้นสูง</value>
+  <data name="Expanded" xml:space="preserve">
+    <value>ขยาย</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>ที่ตำแหน่งของเมาส์</value>
@@ -328,7 +328,7 @@
     <value>ปัญหาเกี่ยวกับลิงค์ทางลัด</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>รายการที่ทางลัดนี้อ้างอิงถึงมีการเปลี่ยนแปลงหรือย้าย ทางลัดนี้จึงทำงานไม่ถูกต้องอีกต่อไป</value>
+    <value>รายการที่ทางลัดนี้อ้างถึงมีการเปลี่ยนแปลงหรือย้าย ทางลัดนี้จึงทำงานไม่ถูกต้องอีกต่อไป</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>เปิดไดเรกทอรี</value>
@@ -552,13 +552,13 @@
   <data name="Copy" xml:space="preserve">
     <value>สำเนา</value>
   </data>
-  <data name="Cut" xml:space="preserve">
-    <value>ตัด</value>
+  <data name="To cut out" xml:space="preserve">
+    <value>เพื่อตัดออก</value>
   </data>
-  <data name="Paste" xml:space="preserve">
-    <value>แปะ</value>
+  <data name="To paste" xml:space="preserve">
+    <value>เพื่อวาง</value>
   </data>
-  <data name="Select All" xml:space="preserve">
+  <data name="Selecting All" xml:space="preserve">
     <value>เลือกทั้งหมด</value>
   </data>
   <data name="Undo" xml:space="preserve">

@@ -145,7 +145,7 @@ namespace SystemTrayMenu.UserInterface
                 labelOverlappingByPixelsOffset.Text = Translator.GetText("Offset by pixels");
                 buttonSizeAndLocationDefault.Text = Translator.GetText("Default");
 
-                tabPageAdvanced.Text = Translator.GetText("Advanced");
+                tabPageAdvanced.Text = Translator.GetText("Expanded");
                 groupBoxOptionalFeatures.Text = Translator.GetText("Optional Features");
                 checkBoxResolveLinksToFolders.Text = Translator.GetText("Resolve links to folders and show content");
                 checkBoxShowInTaskbar.Text = Translator.GetText("Show in Taskbar");

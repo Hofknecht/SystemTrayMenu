@@ -108,11 +108,11 @@ namespace SystemTrayMenu.UserInterface
                 BackColor = SystemColors.Control,
             };
 
-            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Cut"), null, TextBoxSearchCut);
+            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("To cut out"), null, TextBoxSearchCut);
             textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Copy"), null, TextBoxSearchCopy);
-            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Paste"), null, TextBoxSearchPaste);
+            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("To paste"), null, TextBoxSearchPaste);
             textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Undo"), null, TextBoxSearchUndo);
-            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Select All"), null, TextBoxSearchSelectAll);
+            textBoxSearch.ContextMenuStrip.Items.Add(Translator.GetText("Selecting All"), null, TextBoxSearchSelectAll);
 
             tableLayoutPanelMenu.Controls.Add(labelTitle, 0, 0);
 
