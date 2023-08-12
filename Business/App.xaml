@@ -12,6 +12,10 @@
         <BitmapImage x:Key="LinkArrowIconImage" UriSource="../Resources/LinkArrow.ico" />
         <BitmapImage x:Key="LoadingIconImage" UriSource="../Resources/Loading.ico" />
         <BitmapImage x:Key="NotFoundIconImage" UriSource="../Resources/NotFound.ico" />
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Height" Value="21" />
+        </Style>
     </Application.Resources>
 
 </Application>

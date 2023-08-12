@@ -50,7 +50,7 @@
                         </GroupBox>
                         <GroupBox Header="{u:Translate 'Hotkey'}">
                             <DockPanel LastChildFill="False">
-                                <local:HotkeySelector x:Name="textBoxHotkey" AcceptsTab="False" MinWidth="200" VerticalAlignment="Center"/>
+                                <local:HotkeySelector x:Name="textBoxHotkey" AcceptsTab="False" MinWidth="200" Height="{Binding ElementName=textBoxFolder, Path=ActualHeight}" VerticalAlignment="Center"/>
                                 <Button x:Name="buttonHotkeyDefault" DockPanel.Dock="Right" Content="{u:Translate 'Default'}" Margin="3" MinWidth="76" Click="ButtonHotkeyDefault_Click" VerticalAlignment="Center"/>
                             </DockPanel>
                         </GroupBox>
