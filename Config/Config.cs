@@ -52,8 +52,9 @@ namespace SystemTrayMenu
             {
                 Settings.Default.PathIcoDirectory = System.IO.Path.Combine(
                     System.IO.Path.Combine(
-                        Environment.GetFolderPath(
-                            Environment.SpecialFolder.ApplicationData), $"SystemTrayMenu"), "ico");
+                        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                        $"SystemTrayMenu"),
+                    "ico");
                 if (!Directory.Exists(Settings.Default.PathIcoDirectory))
                 {
                     Directory.CreateDirectory(Settings.Default.PathIcoDirectory);

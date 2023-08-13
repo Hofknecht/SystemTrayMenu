@@ -69,7 +69,7 @@ namespace SystemTrayMenu.UserInterface
         private string? strParentFolder;
 
         public ShellContextMenu()
-                : base(new())
+                : base(default)
         {
             hook = new HwndSourceHook(WndProc);
             AddHook(hook);

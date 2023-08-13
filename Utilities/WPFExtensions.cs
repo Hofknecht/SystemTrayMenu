@@ -56,7 +56,7 @@ namespace SystemTrayMenu.Utilities
 
         internal static Point GetRelativeChildPositionTo(this Visual parent, Visual? child)
         {
-            return child == null ? new() : child.TransformToAncestor(parent).Transform(new ());
+            return child == null ? default : child.TransformToAncestor(parent).Transform(default);
         }
     }
 }

@@ -105,18 +105,7 @@
     <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="UserInterface\HotkeyTextboxControl\**" />
-    <EmbeddedResource Remove="UserInterface\HotkeyTextboxControl\**" />
-    <None Remove="UserInterface\HotkeyTextboxControl\**" />
-    <Page Remove="UserInterface\HotkeyTextboxControl\**" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Remove="UserInterface\Menu.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Remove="Business\App.xaml" />
-  </ItemGroup>
-  <ItemGroup>
     <ApplicationDefinition Include="Business\App.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +113,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ThirdParty\Clearcove.Logging.dll</HintPath>
     </Reference>
+    <AdditionalFiles Include=".stylecop.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
@@ -167,12 +157,12 @@
   <ItemGroup>
     <PackageReference Include="H.NotifyIcon" Version="2.0.115" />
     <PackageReference Include="HidSharp" Version="2.1.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.3">
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0-preview1.23165.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="PixiEditor.ColorPicker" Version="3.3.1" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.507">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

@@ -61,7 +61,7 @@ namespace SystemTrayMenu.Helpers
         //       Only this ensures caller and registrator are talking about the SAME registration.
         internal static IHotkeyFunction? GetLastCreatedHotkeyFunction() => lastCreatedHotkeyFunction;
 
-        internal static (ModifierKeys, Key) ModifiersAndKeyFromInvariantString(string hotKeyString)
+        internal static (ModifierKeys Modifiers, Key Key) ModifiersAndKeyFromInvariantString(string hotKeyString)
         {
             if (string.IsNullOrEmpty(hotKeyString))
             {
