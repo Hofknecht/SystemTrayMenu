@@ -284,39 +284,35 @@ namespace SystemTrayMenu.DataClasses
 
         internal void OpenSubMenu()
         {
-            // TODO: always true? maybe only when cached in WaitToLoadMenu or keyboardInput?
-            if (((List<RowData>?)Owner?.GetDataGridView().Items.SourceCollection)?.Contains(this) ?? false)
+            Menu? openSubMenu = Owner?.SubMenu;
+
+            // only re-open when the menu is not already open
+            if (SubMenu != null && SubMenu == openSubMenu)
             {
-                Menu? openSubMenu = Owner.SubMenu;
-
-                // only re-open when the menu is not already open
-                if (SubMenu != null && SubMenu == openSubMenu)
+                // Close second level sub menus when already opened
+                openSubMenu.SelectedItem = null;
+                if (openSubMenu.SubMenu != null)
                 {
-                    // Close second level sub menus when already opened
-                    openSubMenu.SelectedItem = null;
-                    if (openSubMenu.SubMenu != null)
-                    {
-                        openSubMenu.SubMenu.HideWithFade(true);
-                        openSubMenu.RefreshSelection();
-                    }
+                    openSubMenu.SubMenu.HideWithFade(true);
+                    openSubMenu.RefreshSelection();
                 }
-                else
+            }
+            else
+            {
+                // In case another menu exists, close it
+                if (openSubMenu != null)
                 {
-                    // In case another menu exists, close it
-                    if (openSubMenu != null)
-                    {
-                        // Give the opening window focus
-                        // if closing window lose focus, no window would have focus any more
-                        Owner.Activate();
-                        Owner.FocusTextBox();
-                        openSubMenu.HideWithFade(true);
-                        Owner.RefreshSelection();
-                    }
+                    // Give the opening window focus
+                    // if closing window lose focus, no window would have focus any more
+                    Owner?.Activate();
+                    Owner?.FocusTextBox();
+                    openSubMenu.HideWithFade(true);
+                    Owner?.RefreshSelection();
+                }
 
-                    if (IsPointingToFolder)
-                    {
-                        Owner.RiseStartLoadSubMenu(this);
-                    }
+                if (IsPointingToFolder)
+                {
+                    Owner?.RiseStartLoadSubMenu(this);
                 }
             }
         }
