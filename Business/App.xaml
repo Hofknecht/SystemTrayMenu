@@ -14,7 +14,25 @@
         <BitmapImage x:Key="NotFoundIconImage" UriSource="../Resources/NotFound.ico" />
 
         <Style TargetType="{x:Type TextBox}">
+            <!-- Please update HotkeySelector as well -->
             <Setter Property="Height" Value="21" />
+        </Style>
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="MinWidth" Value="76" />
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="Padding" Value="5,3" />
+        </Style>
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="Padding" Value="2" />
         </Style>
     </Application.Resources>
 

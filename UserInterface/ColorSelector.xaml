@@ -5,12 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              x:Class="SystemTrayMenu.UserInterface.ColorSelector"
-             mc:Ignorable="d">
+             mc:Ignorable="d" Margin="1">
     <StackPanel Orientation="Horizontal">
         <Border x:Name="pane" x:FieldModifier="private" d:Background="#FF007F" BorderThickness="1" BorderBrush="Gray"
                 Height="{Binding RelativeSource={RelativeSource Self}, Path=Parent.ActualHeight}"
                 Width="{Binding Path=Height, RelativeSource={RelativeSource Self}}" MouseDown="Shape_MouseDown"/>
-        <TextBox x:Name="txtbox" x:FieldModifier="private" Margin="2,0,5,0" VerticalContentAlignment="Center" Width="70" TextChanged="Txtbox_TextChanged" d:Text="#FF007F"/>
-        <Label x:Name="label" x:FieldModifier="private" Padding="0" VerticalContentAlignment="Center" />
+        <TextBox x:Name="txtbox" x:FieldModifier="private" Margin="1,0,0,0" VerticalContentAlignment="Center" Width="70" TextChanged="Txtbox_TextChanged" d:Text="#FF007F"/>
+        <Label x:Name="label" x:FieldModifier="private" Margin="4,0,0,0" Padding="0" VerticalContentAlignment="Center" />
     </StackPanel>
 </UserControl>

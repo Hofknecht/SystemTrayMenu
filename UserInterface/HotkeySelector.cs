@@ -40,6 +40,9 @@ namespace SystemTrayMenu.UserInterface
                 IsEnabled = false,
             };
 
+            // Set style defaults from App.xaml (TODO: Fix XAML styles to also apply for this class)
+            Height = 21;
+
             // Handle events that occurs when keys are pressed
             KeyUp += HotkeyControl_KeyUp;
             KeyDown += HotkeyControl_KeyDown;
