@@ -176,18 +176,19 @@
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="HandleScrollChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Height="{DynamicResource RowHeight}" Background="{Binding BackgroundBrush}">
-                            <Image Width="{DynamicResource ColumnIconWidth}" Margin="0,1,0,2" Source="{Binding ColumnIcon}" />
-                            <Label Width="{DynamicResource ColumnTextWidth}" Margin="5,0,2,1" Padding="0" VerticalContentAlignment="Center">
-                                <TextBlock TextTrimming="CharacterEllipsis" Text="{Binding ColumnText}" Foreground="{x:Static stm:MenuDefines.ColorForeground}"/>
-                            </Label>
-                        </StackPanel>
+                        <Border BorderBrush="{Binding BorderBrush}" BorderThickness="1">
+                            <StackPanel Orientation="Horizontal" Height="{DynamicResource RowHeight}" Background="{Binding BackgroundBrush}">
+                                <Image Width="{DynamicResource ColumnIconWidth}" Margin="0,1,0,2" Source="{Binding ColumnIcon}" />
+                                <Label Width="{DynamicResource ColumnTextWidth}" Margin="5,0,2,1" Padding="0" VerticalContentAlignment="Center">
+                                    <TextBlock TextTrimming="CharacterEllipsis" Text="{Binding ColumnText}" Foreground="{x:Static stm:MenuDefines.ColorForeground}"/>
+                                </Label>
+                            </StackPanel>
+                        </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-                        <Setter Property="BorderThickness" Value="1"/>
-                        <Setter Property="BorderBrush" Value="{Binding BorderBrush}"/>
+                        <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="Margin" Value="0"/>
                         <Setter Property="Padding" Value="0"/>
                         <EventSetter Event="MouseEnter" Handler="ListViewItem_MouseEnter" />
