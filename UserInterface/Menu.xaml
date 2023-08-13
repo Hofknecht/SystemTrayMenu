@@ -108,7 +108,7 @@
             <DockPanel x:Name="searchPanel" DockPanel.Dock="Top" Margin="6,0" Background="{x:Static stm:MenuDefines.ColorSearchField}">
                 <Separator x:Name="panelLine" Height="1" Margin="0" DockPanel.Dock="Bottom" Background="{x:Static stm:MenuDefines.ColorIcons}"/>
                 <Image x:Name="pictureBoxSearch" Width="22" Height="22" Margin="0" DockPanel.Dock="Left" Source="{StaticResource ic_fluent_search_48_regularDrawingImage}"/>
-                <TextBox x:Name="textBoxSearch" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" SelectionTextBrush="Red" SelectionBrush="#FFDAFF00" />
+                <TextBox x:Name="textBoxSearch" Margin="1" BorderThickness="0" Background="{x:Null}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" CaretBrush="{x:Static stm:MenuDefines.ColorForeground}" SelectionTextBrush="Red" SelectionBrush="#FFDAFF00" VerticalContentAlignment="Center"/>
             </DockPanel>
 
             <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,4">
