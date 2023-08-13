@@ -8,7 +8,6 @@ namespace SystemTrayMenu.Utilities
 {
     using System;
     using System.Windows;
-    using System.Windows.Controls;
     using System.Windows.Media;
     using System.Windows.Threading;
 
@@ -24,18 +23,6 @@ namespace SystemTrayMenu.Utilities
             {
                 instance.Dispatcher.Invoke(action);
             }
-        }
-
-        internal static Window GetParentWindow(this ListView listView)
-        {
-            var parent = VisualTreeHelper.GetParent(listView);
-
-            while (parent is not Window)
-            {
-                parent = VisualTreeHelper.GetParent(parent);
-            }
-
-            return (Window)parent;
         }
 
         internal static T? FindVisualChildOfType<T>(this DependencyObject depObj, int index = 0)

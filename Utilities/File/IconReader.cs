@@ -9,11 +9,11 @@ namespace SystemTrayMenu.Utilities
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Drawing;
-    using System.Globalization;
     using System.IO;
     using System.Runtime.InteropServices;
     using System.Threading;
     using System.Windows;
+    using System.Windows.Interop;
     using System.Windows.Media.Imaging;
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Helpers;
@@ -65,16 +65,18 @@ namespace SystemTrayMenu.Utilities
             {
                 cacheHit = false;
 
-                new Thread(UpdateIconInBackground).Start();
-                void UpdateIconInBackground()
+                Thread thread = new(UpdateIconInBackgroundSTA);
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
+                void UpdateIconInBackgroundSTA()
                 {
-                    BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFile);
+                    BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolderSTA);
                     onIconLoaded(icon);
                 }
 
-                BitmapSource FactoryIconFile(string keyExtension)
+                BitmapSource FactoryIconFolderSTA(string keyExtension)
                 {
-                    return GetIconAsBitmapSource(path, resolvedPath, linkOverlay, false);
+                    return GetIconAsBitmapSourceSTA(path, resolvedPath, linkOverlay, false);
                 }
             }
             else
@@ -102,22 +104,24 @@ namespace SystemTrayMenu.Utilities
                 if (IsPreloading)
                 {
                     cacheHit = true;
-                    icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolder);
+                    icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolderSTA);
                     onIconLoaded(icon);
                 }
                 else
                 {
-                    new Thread(UpdateIconInBackground).Start();
-                    void UpdateIconInBackground()
+                    Thread thread = new (UpdateIconInBackgroundSTA);
+                    thread.SetApartmentState(ApartmentState.STA);
+                    thread.Start();
+                    void UpdateIconInBackgroundSTA()
                     {
-                        BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolder);
+                        BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolderSTA);
                         onIconLoaded(icon);
                     }
                 }
 
-                BitmapSource FactoryIconFolder(string keyExtension)
+                BitmapSource FactoryIconFolderSTA(string keyExtension)
                 {
-                    return GetIconAsBitmapSource(path, path, linkOverlay, true);
+                    return GetIconAsBitmapSourceSTA(path, path, linkOverlay, true);
                 }
             }
             else
@@ -140,7 +144,17 @@ namespace SystemTrayMenu.Utilities
             return GetIcon(path, linkOverlay, shFileInfo, imageList);
         }
 
-        internal static BitmapSource? TryGetIconAsBitmapSource(string path, string resolvedPath, bool linkOverlay, bool isFolder)
+        private static BitmapSource CreateBitmapSourceFromIcon(Icon icon) => Application.Current.Dispatcher.Invoke(() =>
+        {
+            BitmapSource bitmap = Imaging.CreateBitmapSourceFromHIcon(
+                icon.Handle,
+                Int32Rect.Empty,
+                BitmapSizeOptions.FromEmptyOptions());
+            bitmap.Freeze();
+            return bitmap;
+        });
+
+        private static BitmapSource? TryGetIconAsBitmapSourceSTA(string path, string resolvedPath, bool linkOverlay, bool isFolder)
         {
             BitmapSource? result = null;
             Icon? icon;
@@ -150,7 +164,6 @@ namespace SystemTrayMenu.Utilities
                 if (icon != null)
                 {
                     result = CreateBitmapSourceFromIcon(icon);
-                    icon.Dispose();
                 }
             }
             else if (!isFolder && File.Exists(resolvedPath) &&
@@ -160,8 +173,6 @@ namespace SystemTrayMenu.Utilities
                 if (icon != null)
                 {
                     result = CreateBitmapSourceFromIcon(icon);
-                    icon.Dispose();
-
                     if (linkOverlay && OverlayImage != null)
                     {
                         result = ImagingHelper.CreateIconWithOverlay(result, OverlayImage);
@@ -170,6 +181,7 @@ namespace SystemTrayMenu.Utilities
             }
             else
             {
+                // This code block must run in an STA thread otherwise the results may be incorrectly loaded icons!
                 NativeMethods.SHFILEINFO shFileInfo = default;
                 bool largeIcon = // Note: large returns another folder icon than windows explorer
                     Scaling.Factor >= 1.25f ||
@@ -182,16 +194,16 @@ namespace SystemTrayMenu.Utilities
                 if (icon != null)
                 {
                     result = CreateBitmapSourceFromIcon(icon);
-                    icon.Dispose();
                 }
             }
 
+            icon?.Dispose();
             return result;
         }
 
-        private static BitmapSource GetIconAsBitmapSource(string path, string resolvedPath, bool linkOverlay, bool isFolder)
+        private static BitmapSource GetIconAsBitmapSourceSTA(string path, string resolvedPath, bool linkOverlay, bool isFolder)
         {
-            BitmapSource? bitmapSource = TryGetIconAsBitmapSource(path, resolvedPath, linkOverlay, isFolder);
+            BitmapSource? bitmapSource = TryGetIconAsBitmapSourceSTA(path, resolvedPath, linkOverlay, isFolder);
             bitmapSource ??= (BitmapSource)Application.Current.Resources["NotFoundIconImage"];
             bitmapSource.Freeze(); // Make it accessible for any thread
             return bitmapSource;
@@ -272,15 +284,6 @@ namespace SystemTrayMenu.Utilities
             }
 
             return icon;
-        }
-
-        private static BitmapSource CreateBitmapSourceFromIcon(Icon icon)
-        {
-            return (BitmapSource)new IconToImageSourceConverter().Convert(
-                        icon,
-                        typeof(BitmapSource),
-                        null!,
-                        CultureInfo.InvariantCulture);
         }
     }
 }
