@@ -715,7 +715,7 @@ namespace SystemTrayMenu.UserInterface
                         // Set position on same height as the selected row from predecessor
                         ListView dgv = menuPredecessor.GetDataGridView()!;
                         RowData? trigger = RowDataParent;
-                        if (trigger != null && dgv.Items.Count > trigger.RowIndex)
+                        if (trigger != null)
                         {
                             // When scrolled, we have to reduce the index number as we calculate based on visual tree
                             int startIndex = 0;
@@ -740,11 +740,18 @@ namespace SystemTrayMenu.UserInterface
                             if (startIndex < trigger.RowIndex)
                             {
                                 // calculate position below starting point
+                                // outer loop check for max RowIndex, independend of currently active filter
+                                // inner loop check for filtered and shown items
                                 for (int i = startIndex; i < trigger.RowIndex; i++)
                                 {
                                     ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
                                     if (item != null)
                                     {
+                                        if (((RowData)item.Content).RowIndex >= trigger.RowIndex)
+                                        {
+                                            break;
+                                        }
+
                                         offset += item.ActualHeight;
                                     }
                                 }
