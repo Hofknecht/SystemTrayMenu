@@ -675,7 +675,7 @@ namespace SystemTrayMenu.Business
             try
             {
                 List<RowData> rowDatas = new();
-                foreach (RowData rowData in menu.GetDataGridView().Items)
+                foreach (RowData rowData in menu.GetDataGridView().Items.SourceCollection)
                 {
                     if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                     {
@@ -741,7 +741,7 @@ namespace SystemTrayMenu.Business
 
                 foreach (RowData rowToRemove in rowsToRemove)
                 {
-                    ((IEditableCollectionView)dgv.Items).Remove(rowToRemove);
+                    ((List<RowData>)dgv.ItemsSource).Remove(rowToRemove);
                 }
 
                 menu.SelectedItem = null;
@@ -770,7 +770,7 @@ namespace SystemTrayMenu.Business
                 rowData.HiddenEntry = hasHiddenFlag;
                 rowData.LoadIcon();
 
-                var items = menu.GetDataGridView().Items;
+                var items = (List<RowData>)menu.GetDataGridView().Items.SourceCollection;
                 List<RowData> rowDatas = new(items.Count + 1) { rowData };
                 foreach (RowData item in items)
                 {

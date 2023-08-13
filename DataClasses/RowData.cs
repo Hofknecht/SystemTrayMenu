@@ -5,6 +5,7 @@
 namespace SystemTrayMenu.DataClasses
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
@@ -284,7 +285,7 @@ namespace SystemTrayMenu.DataClasses
         internal void OpenSubMenu()
         {
             // TODO: always true? maybe only when cached in WaitToLoadMenu or keyboardInput?
-            if (Owner?.GetDataGridView().Items.Contains(this) ?? false)
+            if (((List<RowData>?)Owner?.GetDataGridView().Items.SourceCollection)?.Contains(this) ?? false)
             {
                 Menu? openSubMenu = Owner.SubMenu;
 

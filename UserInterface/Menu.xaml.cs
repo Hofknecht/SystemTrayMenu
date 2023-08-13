@@ -202,7 +202,7 @@ namespace SystemTrayMenu.UserInterface
                     RowDataParent.SubMenu = null;
                 }
 
-                foreach (RowData item in dgv.Items)
+                foreach (RowData item in dgv.Items.SourceCollection)
                 {
                     item.SubMenu?.Close();
                 }
@@ -276,7 +276,7 @@ namespace SystemTrayMenu.UserInterface
         {
             get
             {
-                foreach (RowData rowData in dgv.Items)
+                foreach (RowData rowData in dgv.Items.SourceCollection)
                 {
                     if (rowData.SubMenu != null)
                     {
@@ -1075,7 +1075,7 @@ namespace SystemTrayMenu.UserInterface
             {
                 // TODO: Refactor item selection to prevent running this loop
                 ListView lv = (ListView)sender;
-                foreach (RowData itemData in lv.Items)
+                foreach (RowData itemData in lv.Items.SourceCollection)
                 {
                     itemData.IsSelected = lv.SelectedItem == itemData;
                     itemData.UpdateColors();
