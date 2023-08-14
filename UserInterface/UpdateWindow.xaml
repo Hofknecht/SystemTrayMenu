@@ -5,23 +5,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
+        xmlns:stm="clr-namespace:SystemTrayMenu"
         x:Class="SystemTrayMenu.UserInterface.UpdateWindow"
-        mc:Ignorable="d" Title="{u:Translate 'New version available!'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="600" MinHeight="400" WindowStyle="ToolWindow" ShowInTaskbar="False">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+        mc:Ignorable="d" Title="{u:Translate 'New version available!'}" Background="{x:Static stm:MenuDefines.ColorBackground}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="600" MaxHeight="600" WindowStyle="ToolWindow" ShowInTaskbar="False">
+    <DockPanel>
+        <Label DockPanel.Dock="Top" x:Name="label" Content="{u:Translate 'Latest available version:'}" />
 
-        <Label Grid.Row="0" x:Name="label" Content="{u:Translate 'Latest available version:'}" />
-
-        <!-- TODO: Adjust MaxHeight? -->
-        <TextBox Grid.Row="1" x:Name="textBox" MaxHeight="600" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
-
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="buttonGoToDownloadPage" Content="{u:Translate 'Go to download page'}" Margin="3" MinWidth="76" Click="ButtonGoToDownloadPage_Click"/>
-            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" Click="ButtonOk_Click" IsDefault="True"/>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="buttonGoToDownloadPage" Content="{u:Translate 'Go to download page'}" Click="ButtonGoToDownloadPage_Click"/>
+            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Click="ButtonOk_Click" IsDefault="True"/>
         </StackPanel>
-    </Grid>
+
+        <TextBox x:Name="textBox" Margin="5" Height="Auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top" IsReadOnly="True"/>
+    </DockPanel>
 </Window>

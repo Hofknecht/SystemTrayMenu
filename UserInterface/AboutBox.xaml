@@ -5,8 +5,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
+        xmlns:stm="clr-namespace:SystemTrayMenu"
         x:Class="SystemTrayMenu.UserInterface.AboutBox"
-        mc:Ignorable="d" Title="{u:Translate 'About SystemTrayMenu'}" Height="513" Width="418" ResizeMode="NoResize" SizeToContent="Height">
+        mc:Ignorable="d" Title="{u:Translate 'About SystemTrayMenu'}" Background="{x:Static stm:MenuDefines.ColorBackground}" Height="513" Width="418" ResizeMode="NoResize" SizeToContent="Height">
     <DockPanel>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Top">
             <Image Width="32" Height="32" Margin="3" Source="{StaticResource ApplicationImage}" />
@@ -21,9 +22,9 @@
         <Label x:Name="AppCopyrightLabel" Content="Copyright © %year%, %company%" Padding="0" Margin="3" DockPanel.Dock="Top"/>
 
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Bottom">
-            <Button x:Name="buttonSystemInfo" Content="{u:Translate 'System Info'}" Margin="3" MinWidth="79" Height="25" Click="SysInfoButton_Click"/>
-            <Button x:Name="buttonDetails" Content="{u:Translate 'Details'}" Margin="3" MinWidth="76" Height="25" Click="DetailsButton_Click"/>
-            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" Height="25" Click="OkButton_Click"/>
+            <Button x:Name="buttonSystemInfo" Content="{u:Translate 'System Info'}" Click="SysInfoButton_Click"/>
+            <Button x:Name="buttonDetails" Content="{u:Translate 'Details'}" Click="DetailsButton_Click"/>
+            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Click="OkButton_Click"/>
         </StackPanel>
 
         <RichTextBox x:Name="MoreRichTextBox" Height="100" DockPanel.Dock="Top" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsDocumentEnabled="True">

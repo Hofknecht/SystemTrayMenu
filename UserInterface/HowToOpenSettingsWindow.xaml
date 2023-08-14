@@ -5,11 +5,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
+        xmlns:stm="clr-namespace:SystemTrayMenu"
         x:Class="SystemTrayMenu.UserInterface.HowToOpenSettingsWindow"
-        mc:Ignorable="d" Title="{u:Translate 'Hint'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ShowInTaskbar="True" ResizeMode="NoResize">
-
+        mc:Ignorable="d" Title="{u:Translate 'Hint'}" Background="{x:Static stm:MenuDefines.ColorBackground}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ShowInTaskbar="True" ResizeMode="NoResize">
     <Window.Resources>
         <BitmapImage x:Key="HowToOpenSettingsImage" UriSource="../Resources/HowToOpenSettings.png" />
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{x:Static stm:MenuDefines.ColorForeground}" />
+            <Setter Property="Background" Value="{x:Static stm:MenuDefines.ColorBackground}" />
+        </Style>
     </Window.Resources>
 
     <Grid>
@@ -25,7 +30,7 @@
         <CheckBox Grid.Row="2" Margin="5" x:Name="checkBoxDontShowThisHintAgain" Content="???" />
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Margin="3" MinWidth="76" Click="ButtonOk_Click" IsDefault="True"/>
+            <Button x:Name="buttonOk" Content="{u:Translate 'OK'}" Click="ButtonOk_Click" IsDefault="True"/>
         </StackPanel>
     </Grid>
 </Window>

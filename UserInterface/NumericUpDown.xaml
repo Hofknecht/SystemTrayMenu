@@ -4,8 +4,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:stm="clr-namespace:SystemTrayMenu"
              x:Class="SystemTrayMenu.UserInterface.NumericUpDown"
              mc:Ignorable="d" d:Height="21" Margin="1,1,5,1" Width="76">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Border" Margin="0" Padding="0" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{x:Static stm:MenuDefines.ColorSelectedItemBorder}" TargetName="Border" />
+                                <Setter Property="Background" Value="{StaticResource ButtonHoverColor}" TargetName="Border" />
+                                <Setter Property="Opacity" Value="0.9" TargetName="Border" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -19,10 +41,10 @@
         <TextBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="txtbox" x:FieldModifier="private" VerticalContentAlignment="Center" Text="0" Margin="0,0,1,0"
                  PreviewTextInput="Txtbox_PreviewTextInput" DataObject.Pasting="Txtbox_Pasting" PreviewMouseWheel="Txtbox_PreviewMouseWheel" TextChanged="Txtbox_TextChanged"/>
         <Button Grid.Row="0" Grid.Column="1" Margin="0" Padding="0" Click="ButtonUp_Click" MinWidth="0">
-            <Polygon Points="2,4 6,1 10,4" Stroke="Black" Fill="Black" />
+            <Polygon Points="2,4 6,1 10,4" Stroke="{x:Static stm:MenuDefines.ColorForeground}" Fill="{x:Static stm:MenuDefines.ColorForeground}" />
         </Button>
         <Button Grid.Row="1" Grid.Column="1" Margin="0" Padding="0" Click="ButtonDown_Click" MinWidth="0">
-            <Polygon Points="2,1 10,1 6,4" Stroke="Black" Fill="Black" />
+            <Polygon Points="2,1 10,1 6,4" Stroke="{x:Static stm:MenuDefines.ColorForeground}" Fill="{x:Static stm:MenuDefines.ColorForeground}" />
         </Button>
     </Grid>
 </UserControl>

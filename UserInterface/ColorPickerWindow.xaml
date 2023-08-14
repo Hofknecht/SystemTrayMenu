@@ -9,8 +9,8 @@
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
         xmlns:stm="clr-namespace:SystemTrayMenu"
         x:Class="SystemTrayMenu.UserInterface.ColorPickerWindow"
-        mc:Ignorable="d" Title="{u:Translate 'Choose color'}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" Background="{x:Static stm:MenuDefines.ColorBackground}"
-            WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
+        mc:Ignorable="d" Title="{u:Translate 'Choose color'}"
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" x:Name="lblDescription" x:FieldModifier="private" Content="" Foreground="{x:Static stm:MenuDefines.ColorForeground}" Padding="5 3" VerticalAlignment="Center"/>
+        <Label Grid.Row="0" x:Name="lblDescription" x:FieldModifier="private" Content="" Padding="5,3" VerticalAlignment="Center"/>
 
         <!-- https://github.com/PixiEditor/ColorPicker -->
         <colorpicker:StandardColorPicker Grid.Row="1" x:Name="picker" x:FieldModifier="private" Width="200" Height="380" ShowAlpha="False"/>
