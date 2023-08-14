@@ -11,6 +11,8 @@ namespace SystemTrayMenu
         internal const int MenusMax = 50;
         internal const int LengthMax = 37;
 
+        /* -- General -- */
+
         public static SolidColorBrush ColorForeground =>
             Config.IsDarkMode() ? Brushes.White : Brushes.Black;
 
@@ -37,5 +39,37 @@ namespace SystemTrayMenu
 
         public static SolidColorBrush ColorSearchField =>
             Config.IsDarkMode() ? AppColors.DarkModeSearchField : AppColors.SearchField;
+
+        /* -- ScrollBar -- */
+
+        public static SolidColorBrush ColorArrow =>
+            Config.IsDarkMode() ? AppColors.ArrowDarkMode : AppColors.Arrow;
+
+        public static SolidColorBrush ColorArrowHoverBackground =>
+            Config.IsDarkMode() ? AppColors.ArrowHoverBackgroundDarkMode : AppColors.ArrowHoverBackground;
+
+        public static SolidColorBrush ColorArrowHover =>
+            Config.IsDarkMode() ? AppColors.ArrowHoverDarkMode : AppColors.ArrowHover;
+
+        public static SolidColorBrush ColorArrowClick =>
+            Config.IsDarkMode() ? AppColors.ArrowClickDarkMode : AppColors.ArrowClick;
+
+        public static SolidColorBrush ColorArrowClickBackground =>
+            Config.IsDarkMode() ? AppColors.ArrowClickBackgroundDarkMode : AppColors.ArrowClickBackground;
+
+        public static SolidColorBrush ColorSliderArrowsAndTrackHover =>
+            Config.IsDarkMode() ? AppColors.SliderArrowsAndTrackHoverDarkMode : AppColors.SliderArrowsAndTrackHover;
+
+        public static SolidColorBrush ColorSlider =>
+            Config.IsDarkMode() ? AppColors.SliderDarkMode : AppColors.Slider;
+
+        public static SolidColorBrush ColorSliderHover =>
+            Config.IsDarkMode() ? AppColors.SliderHoverDarkMode : AppColors.SliderHover;
+
+        public static SolidColorBrush ColorSliderDragging =>
+            Config.IsDarkMode() ? AppColors.SliderDraggingDarkMode : AppColors.SliderDragging;
+
+        public static SolidColorBrush ColorScrollbarBackground =>
+            Config.IsDarkMode() ? AppColors.ScrollbarBackgroundDarkMode : AppColors.ScrollbarBackground;
     }
 }
