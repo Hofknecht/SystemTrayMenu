@@ -887,7 +887,7 @@ namespace SystemTrayMenu.UserInterface
                     // #418 use 21 as default and scale it manually
                     // 2px less due to subtracted boarder around list view item
                     double rowHeightDefault = 21.24d * Scaling.FactorByDpi;
-                    Resources["RowHeight"] = (double)(int)((rowHeightDefault * factor * Scaling.Factor) + 0.5d - 2.0d);
+                    Resources["RowHeight"] = Math.Ceiling((rowHeightDefault * factor * Scaling.Factor) - 2.0d);
                     dgv.Tag = true;
                 }
             }
@@ -914,7 +914,7 @@ namespace SystemTrayMenu.UserInterface
 
             // IcoWidth 100% = 21px, 175% is 33
             double icoWidth = 16 * Scaling.FactorByDpi;
-            Resources["ColumnIconWidth"] = (double)(int)((icoWidth * factorIconSizeInPercent * Scaling.Factor) + 0.5);
+            Resources["ColumnIconWidth"] = Math.Ceiling(icoWidth * factorIconSizeInPercent * Scaling.Factor);
 
             double renderedMaxWidth = 0D;
             foreach (RowData item in dgv.Items)
@@ -933,9 +933,9 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            Resources["ColumnTextWidth"] = Math.Min(
+            Resources["ColumnTextWidth"] = Math.Ceiling(Math.Min(
                 renderedMaxWidth,
-                (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Settings.Default.WidthMaxInPercent / 100f)));
+                (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Settings.Default.WidthMaxInPercent / 100f))));
         }
 
         private void HandleScrollChanged(object sender, ScrollChangedEventArgs e)
