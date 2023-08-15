@@ -181,7 +181,7 @@
     <value>เลือกไดเร็กทอรี</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ไม่มีไดเร็กทอรีรูทสำหรับแอปของคุณหรือว่างเปล่า! เปลี่ยนไดเร็กทอรีรูทหรือใส่ไฟล์ ไดเร็กทอรี หรือทางลัดบางไฟล์ลงในไดเร็กทอรีรูท</value>
+    <value>ไม่มีไดเร็กทอรีรูทสำหรับแอปของคุณหรือว่างเปล่า! เปลี่ยนไดเร็กทอรีหลักหรือใส่ไฟล์ ไดเร็กทอรี หรือช็อตคัทลงในไดเร็กทอรีรูท</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>คุณไม่สามารถเข้าถึงไดเรกทอรีรากของแอปได้ ให้สิทธิ์การเข้าถึงไดเร็กทอรีหรือเปลี่ยนไดเร็กทอรีรูท</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>นอกจากนี้ยังสามารถเปิดเมนูการตั้งค่าได้โดยคลิกขวาที่ไอคอนในซิสเต็มเทรย์ที่ด้านล่างขวา ในกรณีที่คุณไม่สามารถเปิดผ่านเมนูได้อีก</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>เลือกสี</value>
   </data>
 </root>

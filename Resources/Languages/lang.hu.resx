@@ -262,7 +262,7 @@
     <value>Nyissa meg az alkalmazáskönyvtárat</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
-    <value>A menü maximális magassága</value>
+    <value>Maximális menü magasság</value>
   </data>
   <data name="Arrow" xml:space="preserve">
     <value>Nyíl</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>A beállítások menüt a jobb alsó tálcán lévő ikonra jobb gombbal kattintva is meg lehet nyitni arra az esetre, ha a menün keresztül már nem nyitható meg.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Válasszon színt</value>
   </data>
 </root>

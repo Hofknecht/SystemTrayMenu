@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Izbornik s postavkama možete otvoriti i desnim klikom na ikonu u paleti sustava u donjem desnom kutu, u slučaju da ga više ne možete otvoriti putem izbornika.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Odaberite boju</value>
+  </data>
 </root>

@@ -130,10 +130,10 @@
     <value>ایپ سے باہر نکلیں۔</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>ڈائریکٹری</value>
+    <value>ڈائرکٹری</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>ڈائرکٹری خالی ہے۔</value>
+    <value>ڈائریکٹری خالی</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>تفصیلات</value>
@@ -211,13 +211,13 @@
     <value>طے شدہ</value>
   </data>
   <data name="If the focus is lost and the mouse is still on the menu" xml:space="preserve">
-    <value>اگر توجہ ختم ہو جائے اور ماؤس ابھی بھی مینو پر موجود ہو۔</value>
+    <value>اگر توجہ ختم ہو جائے اور ماؤس ابھی بھی مینو پر موجود ہے۔</value>
   </data>
   <data name="Milliseconds until a menu opens when the mouse is on it" xml:space="preserve">
     <value>جب ماؤس اس پر ہوتا ہے تو ایک مینو کھلنے تک ملی سیکنڈ</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>ملی سیکنڈ جب تک مینو بند نہ ہو جائے اگر ماؤس مینو کو چھوڑ دیتا ہے۔</value>
+    <value>ملی سیکنڈ جب تک مینو بند نہ ہو جائے اگر ماؤس پھر مینو کو چھوڑ دیتا ہے۔</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>مینو کی زیادہ سے زیادہ چوڑائی</value>
@@ -238,13 +238,13 @@
     <value>ڈائرکٹری کھولی۔</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>کھلی ڈائرکٹری کا بارڈر</value>
+    <value>کھلی ڈائریکٹری کا بارڈر</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>تلاش کا میدان</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>منتخب عنصر</value>
+    <value>منتخب کردہ عنصر</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
     <value>منتخب کردہ عنصر کا بارڈر</value>
@@ -412,7 +412,7 @@
     <value>عناصر</value>
   </data>
   <data name="Generate drive shortcuts on startup" xml:space="preserve">
-    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹس بنائیں</value>
+    <value>اسٹارٹ اپ پر ڈرائیو شارٹ کٹ بنائیں</value>
   </data>
   <data name="Cache" xml:space="preserve">
     <value>کیشے</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>ترتیبات کے مینو کو نیچے دائیں جانب سسٹم ٹرے میں موجود آئیکن پر دائیں کلک کر کے بھی کھولا جا سکتا ہے، اگر آپ اسے مینو کے ذریعے مزید نہیں کھول سکتے ہیں۔</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>رنگ کا انتخاب کریں۔</value>
   </data>
 </root>

@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Choose colour</value>
+  </data>
 </root>

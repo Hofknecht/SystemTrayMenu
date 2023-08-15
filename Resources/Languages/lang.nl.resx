@@ -238,7 +238,7 @@
     <value>Geopende map</value>
   </data>
   <data name="Border of opened directory" xml:space="preserve">
-    <value>Rand van geopende directory</value>
+    <value>Rand van geopende map</value>
   </data>
   <data name="Search field" xml:space="preserve">
     <value>Zoekveld</value>
@@ -319,7 +319,7 @@
     <value>Ingesteld via contextmenu</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Instellen als directory</value>
+    <value>Instellen als map</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>bezig met laden</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Het instellingenmenu kan ook worden geopend door met de rechtermuisknop op het pictogram in de systeembalk rechtsonder te klikken, voor het geval u het niet meer via het menu kunt openen.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Kies een kleur</value>
   </data>
 </root>

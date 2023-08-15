@@ -295,7 +295,7 @@
     <value>Ολισθητής</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
-    <value>Ρυθμιστικό κατά τη μεταφορά</value>
+    <value>Ρυθμίστε κατά τη μεταφορά</value>
   </data>
   <data name="Slider while mouse hovers over it 1" xml:space="preserve">
     <value>Σύρετε ενώ το ποντίκι αιωρείται πάνω του 1</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Το μενού ρυθμίσεων μπορεί επίσης να ανοίξει κάνοντας δεξί κλικ στο εικονίδιο στο δίσκο συστήματος κάτω δεξιά, σε περίπτωση που δεν μπορείτε πλέον να το ανοίξετε μέσω του μενού.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Επιλέξτε χρώμα</value>
   </data>
 </root>

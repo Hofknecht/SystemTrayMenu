@@ -439,7 +439,7 @@
     <value>Satu klik untuk membuka direktori</value>
   </data>
   <data name="Support Gamepad" xml:space="preserve">
-    <value>Dukungan Gamepad</value>
+    <value>Mendukung Gamepad</value>
   </data>
   <data name="Next to the previous one" xml:space="preserve">
     <value>Di sebelah yang sebelumnya</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Menu pengaturan juga dapat dibuka dengan mengklik kanan ikon di baki sistem di kanan bawah, jika Anda tidak lagi dapat membukanya melalui menu.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Pilih warna</value>
   </data>
 </root>

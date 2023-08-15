@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Das Einstellungsmenü kann auch durch einen Rechtsklick auf das Symbol in der Taskleiste unten rechts geöffnet werden, falls Sie es nicht mehr über das Menü öffnen können.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Wähle eine Farbe</value>
+  </data>
 </root>

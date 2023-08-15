@@ -325,7 +325,7 @@
     <value>טוען</value>
   </data>
   <data name="Problem with shortcut link" xml:space="preserve">
-    <value>בעיה בקישור קיצורי דרך</value>
+    <value>בעיה עם קישור קיצור</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
     <value>הפריט שאליו מתייחס קיצור הדרך השתנה או הועבר, כך שהקיצור הזה כבר לא יפעל כראוי.</value>
@@ -421,7 +421,7 @@
     <value>תמיד מראה</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
-    <value>קבצים וספריות מוסתרים</value>
+    <value>קבצים וספריות נסתרות</value>
   </data>
   <data name="Never show" xml:space="preserve">
     <value>לעולם אל תראה</value>
@@ -535,7 +535,7 @@
     <value>גרסה חדשה זמינה!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
-    <value>יש לך את הגרסה האחרונה של SystemTrayMenu!</value>
+    <value>יש לך את הגרסה העדכנית ביותר של SystemTrayMenu!</value>
   </data>
   <data name="Application size" xml:space="preserve">
     <value>גודל יישום</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>ניתן לפתוח את תפריט ההגדרות גם על ידי לחיצה ימנית על האייקון במגש המערכת בצד ימין למטה, למקרה שלא ניתן יותר לפתוח אותו דרך התפריט.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>בחרי צבע</value>
   </data>
 </root>

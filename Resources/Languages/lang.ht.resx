@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Ou ka louvri meni paramèt la tou lè w klike sou ikòn ki nan plato sistèm nan anba a dwat, nan ka ou pa kapab ouvri li ankò atravè meni an.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Chwazi koulè</value>
+  </data>
 </root>

@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Menu tetapan juga boleh dibuka dengan mengklik kanan ikon dalam dulang sistem di bahagian bawah sebelah kanan, sekiranya anda tidak lagi boleh membukanya melalui menu.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Pilih warna</value>
+  </data>
 </root>

@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Is féidir an roghchlár socruithe a oscailt freisin trí chliceáil ar dheis ar an deilbhín sa tráidire córais ag bun ar dheis, ar eagla nach féidir leat é a oscailt tríd an roghchlár a thuilleadh.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Roghnaigh dath</value>
+  </data>
 </root>

@@ -436,7 +436,7 @@
     <value>Vis kun som søgeresultat</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
-    <value>Et enkelt klik for at åbne en mappe</value>
+    <value>Enkelt klik for at åbne en mappe</value>
   </data>
   <data name="Support Gamepad" xml:space="preserve">
     <value>Support Gamepad</value>
@@ -538,7 +538,7 @@
     <value>Du har den seneste version af SystemTrayMenu!</value>
   </data>
   <data name="Application size" xml:space="preserve">
-    <value>Anvendelsesstørrelse</value>
+    <value>Applikationsstørrelse</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
     <value>Valgfri funktioner</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Indstillingsmenuen kan også åbnes ved at højreklikke på ikonet i systembakken nederst til højre, hvis du ikke længere kan åbne den via menuen.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Vælg farve</value>
   </data>
 </root>

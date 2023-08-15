@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Nabídku nastavení lze také otevřít kliknutím pravým tlačítkem myši na ikonu v systémové liště vpravo dole, v případě, že ji již nelze otevřít přes nabídku.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Vyberte barvu</value>
+  </data>
 </root>

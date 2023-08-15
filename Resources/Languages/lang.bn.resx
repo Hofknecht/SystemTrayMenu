@@ -268,7 +268,7 @@
     <value>তীর</value>
   </data>
   <data name="Arrow when clicking" xml:space="preserve">
-    <value>ক্লিক করার সময় তীর</value>
+    <value>ক্লিক করার সময় তীরচিহ্ন</value>
   </data>
   <data name="Arrow while mouse hovers over it" xml:space="preserve">
     <value>মাউস এটির উপর ঘোরার সময় তীরচিহ্ন</value>
@@ -328,7 +328,7 @@
     <value>শর্টকাট লিঙ্কে সমস্যা</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>এই শর্টকাটটি যে আইটেমটি নির্দেশ করে তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না।</value>
+    <value>এই শর্টকাটটি যে আইটেমটিকে বোঝায় তা পরিবর্তন বা সরানো হয়েছে, তাই এই শর্টকাটটি আর সঠিকভাবে কাজ করবে না৷</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ডিরেক্টরি খুলুন</value>
@@ -376,7 +376,7 @@
     <value>শুধুমাত্র ফাইল</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>এই সংখ্যার বেশি আইটেম থাকলে ক্যাশে সাফ করুন</value>
+    <value>এই সংখ্যার বেশি আইটেম হলে ক্যাশে সাফ করুন</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>নমুনা ডিরেক্টরি যোগ করুন 'স্টার্ট মেনু'</value>
@@ -484,7 +484,7 @@
     <value>সোয়াইপের মাধ্যমে স্ক্রোল করুন</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>ফাইলের ধরন অনুযায়ী ফিল্টার মেনু যেমন: *.exe|*.dll</value>
+    <value>ফাইল টাইপ দ্বারা ফিল্টার মেনু যেমন: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>উপাদানের সংখ্যা দেখান</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>সেটিংস মেনুটি নীচে ডানদিকে সিস্টেম ট্রেতে আইকনে ডান-ক্লিক করেও খোলা যেতে পারে, যদি আপনি মেনুর মাধ্যমে এটি আর খুলতে না পারেন।</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>রঙ চয়ন করুন</value>
   </data>
 </root>

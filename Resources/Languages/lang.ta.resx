@@ -175,7 +175,7 @@
     <value>அடிக்கடி கேட்கப்படும் கேள்விகள்</value>
   </data>
   <data name="Read the FAQ and then choose a root directory for SystemTrayMenu." xml:space="preserve">
-    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து பின்னர் SystemTrayMenu க்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
+    <value>அடிக்கடி கேட்கப்படும் கேள்விகளைப் படித்து, பின்னர் SystemTrayMenuக்கான ரூட் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்.</value>
   </data>
   <data name="Select directory" xml:space="preserve">
     <value>கோப்பகத்தைத் தேர்ந்தெடுக்கவும்</value>
@@ -376,7 +376,7 @@
     <value>கோப்புகள் மட்டும்</value>
   </data>
   <data name="Clear cache if more than this number of items" xml:space="preserve">
-    <value>இந்த எண்ணிக்கையை விட அதிகமான உருப்படிகள் இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
+    <value>இந்த எண்ணிக்கையை விட அதிகமாக இருந்தால் தற்காலிக சேமிப்பை அழிக்கவும்</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
     <value>'ஸ்டார்ட் மெனு' மாதிரி கோப்பகத்தைச் சேர்க்கவும்</value>
@@ -484,7 +484,7 @@
     <value>ஸ்வைப் மூலம் உருட்டவும்</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
-    <value>கோப்பு வகையின்படி மெனுவை வடிகட்டவும் எ.கா: *.exe|*.dll</value>
+    <value>கோப்பு வகையின்படி மெனுவை வடிகட்டவும் எ.கா.: *.exe|*.dll</value>
   </data>
   <data name="Show count of elements" xml:space="preserve">
     <value>உறுப்புகளின் எண்ணிக்கையைக் காட்டு</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>அமைப்புகள் மெனுவை மெனு வழியாக திறக்க முடியாவிட்டால், கீழ் வலதுபுறத்தில் உள்ள கணினி தட்டில் உள்ள ஐகானை வலது கிளிக் செய்வதன் மூலமும் திறக்க முடியும்.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>வண்ணத்தைத் தேர்ந்தெடுங்கள்</value>
   </data>
 </root>

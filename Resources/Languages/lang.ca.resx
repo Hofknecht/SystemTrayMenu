@@ -481,7 +481,7 @@
     <value>Arrossegueu</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
-    <value>Desplaceu-vos amb el dit</value>
+    <value>Desplaceu-vos amb lliscar</value>
   </data>
   <data name="Filter menu by file type e.g.: *.exe|*.dll" xml:space="preserve">
     <value>Filtra el menú per tipus de fitxer, p. ex.: *.exe|*.dll</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>El menú de configuració també es pot obrir fent clic amb el botó dret a la icona de la safata del sistema a la part inferior dreta, en cas que ja no el pugueu obrir mitjançant el menú.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Trieu el color</value>
   </data>
 </root>

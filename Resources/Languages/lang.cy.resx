@@ -217,7 +217,7 @@
     <value>Milieiliadau nes bod dewislen yn agor pan fydd y llygoden arno</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>Milieiliadau nes bod y ddewislen yn cau os bydd y llygoden wedyn yn gadael y ddewislen</value>
+    <value>Mae milieiliadau nes bod y ddewislen yn cau os bydd y llygoden wedyn yn gadael y ddewislen</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>Lled uchaf y ddewislen</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Gellir agor y ddewislen gosodiadau hefyd trwy dde-glicio ar yr eicon yn yr hambwrdd system ar y gwaelod ar y dde, rhag ofn na allwch ei agor trwy'r ddewislen mwyach.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Dewiswch liw</value>
   </data>
 </root>

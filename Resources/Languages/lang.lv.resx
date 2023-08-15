@@ -130,7 +130,7 @@
     <value>Iziet no lietotnes</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Direktorija</value>
+    <value>Katalogs</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
     <value>Direktorija tukša</value>
@@ -250,7 +250,7 @@
     <value>Atlasītā elementa apmale</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
-    <value>Relatīvais direktorijs</value>
+    <value>Relatīvā direktorija</value>
   </data>
   <data name="Save configuration file in application directory" xml:space="preserve">
     <value>Saglabājiet konfigurācijas failu lietojumprogrammu direktorijā</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Iestatījumu izvēlni var atvērt arī, ar peles labo pogu noklikšķinot uz ikonas sistēmas teknē apakšējā labajā stūrī, ja vairs nevarat to atvērt, izmantojot izvēlni.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Izvēlieties krāsu</value>
   </data>
 </root>

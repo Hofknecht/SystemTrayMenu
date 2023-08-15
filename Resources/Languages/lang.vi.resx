@@ -181,7 +181,7 @@
     <value>Chọn thư mục</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Thư mục gốc cho ứng dụng của bạn không tồn tại hoặc trống! Thay đổi thư mục gốc hoặc đặt một số tệp, thư mục hoặc lối tắt vào thư mục gốc.</value>
+    <value>Thư mục gốc của ứng dụng không tồn tại hoặc trống! Thay đổi thư mục gốc hoặc đặt một số tệp, thư mục hoặc lối tắt vào thư mục gốc.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Bạn không có quyền truy cập vào thư mục gốc của ứng dụng. Cấp quyền truy cập vào thư mục hoặc thay đổi thư mục gốc.</value>
@@ -346,7 +346,7 @@
     <value>Chuyên gia</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>Nếu mất tiêu điểm và đã nhấn phím Enter</value>
+    <value>Nếu tiêu điểm bị mất và phím Enter đã được nhấn</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>Một phần nghìn giây cho đến khi menu đóng lại nếu menu không được kích hoạt lại</value>
@@ -529,7 +529,7 @@
     <value>Chuyển đến trang tải xuống</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
-    <value>Phiên bản mới nhất có sẵn:</value>
+    <value>Phiên bản mới nhất hiện có:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
     <value>Phiên bản mới có sẵn!</value>
@@ -550,7 +550,7 @@
     <value>Sắp xếp theo phần mở rộng tập tin và tên</value>
   </data>
   <data name="Copy" xml:space="preserve">
-    <value>sao chép</value>
+    <value>Sao chép</value>
   </data>
   <data name="To cut out" xml:space="preserve">
     <value>để cắt ra</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Menu cài đặt cũng có thể được mở bằng cách nhấp chuột phải vào biểu tượng trong khay hệ thống ở dưới cùng bên phải, trong trường hợp bạn không thể mở nó qua menu nữa.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Chọn màu</value>
   </data>
 </root>

@@ -229,7 +229,7 @@
     <value>మెను తెరవడానికి సమయం</value>
   </data>
   <data name="If an element was clicked" xml:space="preserve">
-    <value>ఒక మూలకం క్లిక్ చేయబడితే</value>
+    <value>ఒక మూలకం క్లిక్ చేయబడి ఉంటే</value>
   </data>
   <data name="Background" xml:space="preserve">
     <value>నేపథ్య</value>
@@ -292,7 +292,7 @@
     <value>స్కోర్ల్ బార్</value>
   </data>
   <data name="Slider" xml:space="preserve">
-    <value>స్లైడర్</value>
+    <value>స్లయిడర్</value>
   </data>
   <data name="Slider while dragging" xml:space="preserve">
     <value>లాగేటప్పుడు స్లయిడర్</value>
@@ -394,7 +394,7 @@
     <value>దిగువ ఎడమ</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>దిగువ కుడివైపు</value>
+    <value>దిగువ కుడి</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>ప్రధాన మెనూ కనిపిస్తుంది</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>సెట్టింగ్‌ల మెనుని మీరు ఇకపై మెను ద్వారా తెరవలేనట్లయితే, దిగువ కుడి వైపున ఉన్న సిస్టమ్ ట్రేలోని చిహ్నాన్ని కుడి-క్లిక్ చేయడం ద్వారా కూడా తెరవవచ్చు.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>రంగును ఎంచుకోండి</value>
   </data>
 </root>

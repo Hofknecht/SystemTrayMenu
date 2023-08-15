@@ -352,7 +352,7 @@
     <value>Milisekonda derisa menyja të mbyllet nëse menyja nuk riaktivizohet</value>
   </data>
   <data name="Show in Taskbar" xml:space="preserve">
-    <value>Shfaq në shiritin e detyrave</value>
+    <value>Shfaq në Taskbar</value>
   </data>
   <data name="Add directory" xml:space="preserve">
     <value>Shto direktori</value>
@@ -418,7 +418,7 @@
     <value>Cache</value>
   </data>
   <data name="Always show" xml:space="preserve">
-    <value>Gjithmonë tregoni</value>
+    <value>Trego gjithmonë</value>
   </data>
   <data name="Hidden files and directories" xml:space="preserve">
     <value>Skedarët dhe drejtoritë e fshehura</value>
@@ -478,7 +478,7 @@
     <value>Kopjoni elementin e rreshtit duke zvarritur dhe lëshuar</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Zvarrit</value>
+    <value>Zvarritni</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Lëvizni përmes rrëshqitjes</value>
@@ -547,7 +547,7 @@
     <value>Zgjidh lidhjet me dosjet dhe shfaq përmbajtjen</value>
   </data>
   <data name="Sorted by file extension and name" xml:space="preserve">
-    <value>Renditur sipas zgjerimit dhe emrit të skedarit</value>
+    <value>Renditur sipas zgjerimit të skedarit dhe emrit</value>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Kopjo</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Menyja e cilësimeve mund të hapet gjithashtu duke klikuar me të djathtën mbi ikonën në tabakanë e sistemit në fund djathtas, në rast se nuk mund ta hapni më përmes menysë.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Zgjidhni ngjyrën</value>
   </data>
 </root>

@@ -385,7 +385,7 @@
     <value>Altura da fila</value>
   </data>
   <data name="Round corners" xml:space="preserve">
-    <value>Cantos redondeados</value>
+    <value>Esquinas redondeadas</value>
   </data>
   <data name="Appearance" xml:space="preserve">
     <value>Aparición</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>O menú de configuración tamén se pode abrir facendo clic co botón dereito na icona da bandexa do sistema na parte inferior dereita, no caso de que xa non poidas abrilo a través do menú.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Escolle cor</value>
   </data>
 </root>

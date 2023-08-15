@@ -277,7 +277,7 @@
     <value>ಕ್ಲಿಕ್ ಮಾಡುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
-    <value>ಮೌಸ್ ಅದರ ಮೇಲೆ ಸುಳಿದಾಡುತ್ತಿರುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
+    <value>ಮೌಸ್ ಅದರ ಮೇಲೆ ಸುಳಿದಾಡುವಾಗ ಬಾಣದ ಹಿನ್ನೆಲೆ</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
     <value>ಬಣ್ಣದ ಯೋಜನೆ ಡಾರ್ಕ್</value>
@@ -343,7 +343,7 @@
     <value>ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</value>
   </data>
   <data name="Expert" xml:space="preserve">
-    <value>ಪರಿಣಿತ</value>
+    <value>ತಜ್ಞ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
     <value>ಫೋಕಸ್ ಕಳೆದುಹೋದರೆ ಮತ್ತು Enter ಕೀಲಿಯನ್ನು ಒತ್ತಿದರೆ</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಮೆನುವನ್ನು ನೀವು ಇನ್ನು ಮುಂದೆ ಮೆನು ಮೂಲಕ ತೆರೆಯಲು ಸಾಧ್ಯವಾಗದಿದ್ದಲ್ಲಿ, ಕೆಳಗಿನ ಬಲಭಾಗದಲ್ಲಿರುವ ಸಿಸ್ಟಮ್ ಟ್ರೇನಲ್ಲಿರುವ ಐಕಾನ್ ಅನ್ನು ಬಲ ಕ್ಲಿಕ್ ಮಾಡುವ ಮೂಲಕ ತೆರೆಯಬಹುದು.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>ಬಣ್ಣವನ್ನು ಆರಿಸಿ</value>
   </data>
 </root>

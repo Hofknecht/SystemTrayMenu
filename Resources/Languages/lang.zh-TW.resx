@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>如果您無法再通過菜單打開它，也可以通過右鍵單擊右下角系統托盤中的圖標來打開設置菜單。</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>選擇顏色</value>
+  </data>
 </root>

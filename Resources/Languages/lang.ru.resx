@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Меню настроек также можно открыть, щелкнув правой кнопкой мыши значок на панели задач в правом нижнем углу, если вы больше не можете открыть его через меню.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Выберите цвет</value>
+  </data>
 </root>

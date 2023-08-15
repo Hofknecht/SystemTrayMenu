@@ -181,7 +181,7 @@
     <value>Kataloq seçin</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök kataloqunu dəyişdirin və ya bəzi faylları, qovluqları və ya qısa yolları kök qovluğuna qoyun.</value>
+    <value>Proqram üçün kök kataloqunuz mövcud deyil və ya boşdur! Kök qovluğunu dəyişdirin və ya bəzi faylları, kataloqları və ya qısa yolları kök qovluğuna qoyun.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>Proqramın kök kataloquna girişiniz yoxdur. Kataloqa giriş icazəsi verin və ya kök kataloqunu dəyişdirin.</value>
@@ -202,7 +202,7 @@
     <value>Kataloqun dəyişdirilməsi</value>
   </data>
   <data name="Click" xml:space="preserve">
-    <value>basın</value>
+    <value>klikləyin</value>
   </data>
   <data name="Customize" xml:space="preserve">
     <value>Özəlləşdirmək</value>
@@ -259,7 +259,7 @@
     <value>Konfiqurasiya və log faylları</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>Proqram qovluğunu açın</value>
+    <value>Tətbiq qovluğunu açın</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
     <value>Maksimum menyu hündürlüyü</value>
@@ -541,7 +541,7 @@
     <value>Tətbiq ölçüsü</value>
   </data>
   <data name="Optional Features" xml:space="preserve">
-    <value>Könüllü Xüsusiyyətlər</value>
+    <value>Əlavə Xüsusiyyətlər</value>
   </data>
   <data name="Resolve links to folders and show content" xml:space="preserve">
     <value>Qovluqlara keçidləri həll edin və məzmunu göstərin</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Parametrlər menyusu, menyu vasitəsilə artıq aça bilməyəcəyiniz halda, sağ altdakı sistem tepsisindəki işarəni sağ klikləməklə də açıla bilər.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Rəng seçin</value>
   </data>
 </root>

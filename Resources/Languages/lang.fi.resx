@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Asetusvalikon voi avata myös napsauttamalla hiiren oikealla painikkeella oikeassa alakulmassa olevaa ilmaisinalueen kuvaketta siltä varalta, että sitä ei voi enää avata valikon kautta.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Valitse väri</value>
+  </data>
 </root>

@@ -571,6 +571,9 @@
     <value>संकेत देना</value>
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
-    <value>सेटिंग्स मेनू को नीचे दाईं ओर सिस्टम ट्रे में आइकन पर राइट-क्लिक करके भी खोला जा सकता है, यदि आप इसे अब मेनू के माध्यम से नहीं खोल सकते हैं।</value>
+    <value>सेटिंग्स मेनू को नीचे दाईं ओर सिस्टम ट्रे में आइकन पर राइट-क्लिक करके भी खोला जा सकता है, यदि आप इसे मेनू के माध्यम से नहीं खोल सकते हैं।</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>रंग पसंद करो</value>
   </data>
 </root>

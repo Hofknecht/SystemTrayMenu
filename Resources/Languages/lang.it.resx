@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Il menu delle impostazioni può essere aperto anche facendo clic con il pulsante destro del mouse sull'icona nella barra delle applicazioni in basso a destra, nel caso in cui non sia più possibile aprirlo tramite il menu.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Scegli il colore</value>
+  </data>
 </root>

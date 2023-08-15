@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Կարգավորումների ընտրացանկը կարող է բացվել նաև ներքևի աջ մասում գտնվող համակարգի սկուտեղի պատկերակին աջ սեղմելով, եթե այլևս չեք կարող բացել այն ցանկի միջոցով:</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Ընտրեք գույն</value>
+  </data>
 </root>

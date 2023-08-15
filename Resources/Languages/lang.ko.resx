@@ -394,7 +394,7 @@
     <value>왼쪽 하단</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>오른쪽 하단</value>
+    <value>오른쪽 아래</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>메인 메뉴가 나타납니다</value>
@@ -472,7 +472,7 @@
     <value>이름순 정렬</value>
   </data>
   <data name="Sorting" xml:space="preserve">
-    <value>정렬</value>
+    <value>분류</value>
   </data>
   <data name="Copy row element via drag and drop" xml:space="preserve">
     <value>드래그 앤 드롭을 통해 행 요소 복사</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>더 이상 메뉴를 통해 열 수 없는 경우 오른쪽 하단의 시스템 트레이에 있는 아이콘을 마우스 오른쪽 버튼으로 클릭하여 설정 메뉴를 열 수도 있습니다.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>색상 선택</value>
   </data>
 </root>

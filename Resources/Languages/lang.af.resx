@@ -274,7 +274,7 @@
     <value>Pyltjie terwyl die muis daaroor beweeg</value>
   </data>
   <data name="Background of arrow when clicking" xml:space="preserve">
-    <value>Agtergrond van pyl wanneer u klik</value>
+    <value>Agtergrond van pyl wanneer jy klik</value>
   </data>
   <data name="Background of arrow while mouse hovers over it" xml:space="preserve">
     <value>Agtergrond van pyl terwyl die muis daaroor beweeg</value>
@@ -526,7 +526,7 @@
     <value>Kyk vir opdaterings</value>
   </data>
   <data name="Go to download page" xml:space="preserve">
-    <value>Gaan na die aflaai bladsy</value>
+    <value>Gaan na die aflaaibladsy</value>
   </data>
   <data name="Latest available version:" xml:space="preserve">
     <value>Nuutste beskikbare weergawe:</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Die instellingskieslys kan ook oopgemaak word deur met die rechtermuisknop op die ikoon in die stelselbalk regs onder te klik, ingeval jy dit nie meer via die spyskaart kan oopmaak nie.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Kies kleur</value>
   </data>
 </root>

@@ -571,6 +571,9 @@
     <value>Užuomina</value>
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
-    <value>Nustatymų meniu taip pat galima atidaryti dešiniuoju pelės mygtuku spustelėjus piktogramą sistemos dėkle apatiniame dešiniajame kampe, jei nebegalite jo atidaryti per meniu.</value>
+    <value>Nustatymų meniu taip pat galima atidaryti dešiniuoju pelės mygtuku spustelėjus piktogramą sistemos dėkle apačioje dešinėje, jei nebegalite jo atidaryti per meniu.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Pasirinkite spalvą</value>
   </data>
 </root>

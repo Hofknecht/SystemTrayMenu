@@ -280,7 +280,7 @@
     <value>Bakgrunn av pil mens musen svever over den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>Fargeskjema mørkt</value>
+    <value>Mørkt fargevalg</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
     <value>Lys fargevalg</value>
@@ -319,7 +319,7 @@
     <value>Angis av kontekstmenyen</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Angi som katalog</value>
+    <value>Sett som katalog</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>lasting</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Innstillingsmenyen kan også åpnes ved å høyreklikke på ikonet i systemstatusfeltet nederst til høyre, i tilfelle du ikke lenger kan åpne den via menyen.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Velg farge</value>
   </data>
 </root>

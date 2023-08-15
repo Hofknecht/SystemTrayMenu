@@ -151,7 +151,7 @@
     <value>ឯកសារកំណត់ហេតុ</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>ចាប់ផ្ដើមឡើងវិញ</value>
+    <value>ចាប់ផ្តើមឡើងវិញ</value>
   </data>
   <data name="Could not register the hot key." xml:space="preserve">
     <value>មិនអាចចុះឈ្មោះ hot key បានទេ។</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>ម៉ឺនុយការកំណត់ក៏អាចបើកបានដោយចុចកណ្ដុរស្ដាំលើរូបតំណាងនៅក្នុងថាសប្រព័ន្ធនៅខាងស្តាំខាងក្រោម ក្នុងករណីដែលអ្នកលែងអាចបើកវាតាមរយៈម៉ឺនុយ។</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>ជ្រើសរើសពណ៌</value>
   </data>
 </root>

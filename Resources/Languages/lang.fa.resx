@@ -433,7 +433,7 @@
     <value>از تنظیمات سیستم عامل استفاده کنید</value>
   </data>
   <data name="Show only as search result" xml:space="preserve">
-    <value>نمایش فقط به عنوان نتیجه جستجو</value>
+    <value>فقط به عنوان نتیجه جستجو نمایش داده شود</value>
   </data>
   <data name="Single click to open a directory" xml:space="preserve">
     <value>برای باز کردن دایرکتوری فقط کلیک کنید</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>منوی تنظیمات همچنین با کلیک راست بر روی نماد موجود در سینی سیستم در پایین سمت راست باز می شود، در صورتی که دیگر نمی توانید آن را از طریق منو باز کنید.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>رنگ را انتخاب کنید</value>
   </data>
 </root>

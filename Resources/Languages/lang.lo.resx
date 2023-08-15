@@ -181,7 +181,7 @@
     <value>ເລືອກໄດເລກະທໍລີ</value>
   </data>
   <data name="Your root directory for the app does not exist or is empty! Change the root directory or put some files, directories or shortcuts into the root directory." xml:space="preserve">
-    <value>ໄດເລກະທໍລີຮາກຂອງເຈົ້າສໍາລັບແອັບຯບໍ່ມີຢູ່ຫຼືຫວ່າງເປົ່າ! ປ່ຽນໄດເລກະທໍລີຮາກຫຼືໃສ່ບາງໄຟລ໌, ໄດເລກະທໍລີຫຼືທາງລັດເຂົ້າໄປໃນໄດເລກະທໍລີຮາກ.</value>
+    <value>ໄດເລກະທໍລີຮາກຂອງເຈົ້າສໍາລັບແອັບຯນັ້ນບໍ່ມີຢູ່ ຫຼືຫວ່າງເປົ່າ! ປ່ຽນໄດເລກະທໍລີຮາກຫຼືໃສ່ບາງໄຟລ໌, ໄດເລກະທໍລີຫຼືທາງລັດເຂົ້າໄປໃນໄດເລກະທໍລີຮາກ.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
     <value>ທ່ານບໍ່ມີການເຂົ້າເຖິງໄດເລກະທໍລີຮາກຂອງແອັບຯ. ໃຫ້ການເຂົ້າເຖິງໄດເລກະທໍລີຫຼືປ່ຽນໄດເລກະທໍລີຮາກ.</value>
@@ -190,7 +190,7 @@
     <value>ຄລິກດຽວເພື່ອເປີດອົງປະກອບ</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>ຮູບແບບສີມືດມີການເຄື່ອນໄຫວສະເໝີ</value>
+    <value>ຮູບແບບສີມືດເຮັດວຽກສະເໝີ</value>
   </data>
   <data name="Expanded" xml:space="preserve">
     <value>ຂະຫຍາຍ</value>
@@ -346,7 +346,7 @@
     <value>ຜູ້ຊ່ຽວຊານ</value>
   </data>
   <data name="If the focus is lost and the Enter key was pressed" xml:space="preserve">
-    <value>ຖ້າ​ສູນ​ເສຍ​ການ​ສຸມ​ໃສ່​ການ​ແລະ​ປຸ່ມ Enter ຖືກ​ກົດ​ດັນ​</value>
+    <value>ຖ້າ​ສູນ​ເສຍ​ຈຸດ​ສຸມ​ແລະ​ປຸ່ມ Enter ຖືກ​ກົດ​ດັນ</value>
   </data>
   <data name="Milliseconds until the menu closes if the menu is not reactivated" xml:space="preserve">
     <value>ມິນລິວິນາທີຈົນກ່ວາເມນູປິດຖ້າເມນູບໍ່ໄດ້ຖືກເປີດໃຊ້ຄືນ</value>
@@ -532,7 +532,7 @@
     <value>ສະ​ບັບ​ຫລ້າ​ສຸດ​ທີ່​ມີ​ຢູ່​:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ລຸ້ນໃໝ່ມີໃຫ້!</value>
+    <value>ມີລຸ້ນໃໝ່!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>ທ່ານມີເວີຊັນຫຼ້າສຸດຂອງ SystemTrayMenu!</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>ເມນູການຕັ້ງຄ່າຍັງສາມາດເປີດໄດ້ໂດຍການຄລິກຂວາທີ່ໄອຄອນໃນຖາດລະບົບຢູ່ເບື້ອງຂວາລຸ່ມ, ໃນກໍລະນີທີ່ທ່ານບໍ່ສາມາດເປີດມັນຜ່ານເມນູໄດ້.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>ເລືອກສີ</value>
   </data>
 </root>

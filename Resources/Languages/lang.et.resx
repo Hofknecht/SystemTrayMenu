@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Seadete menüü saab avada ka paremklõpsates all paremas nurgas oleval ikoonil, juhuks kui seda enam menüü kaudu avada ei saa.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Vali värv</value>
+  </data>
 </root>

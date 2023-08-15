@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Le menu des paramètres peut également être ouvert en cliquant avec le bouton droit sur l'icône dans la barre d'état système en bas à droite, au cas où vous ne pourriez plus l'ouvrir via le menu.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Choisir la couleur</value>
+  </data>
 </root>

@@ -121,7 +121,7 @@
     <value>De SystemTrayMenu</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>Bene</value>
+    <value>OK</value>
   </data>
   <data name="App start" xml:space="preserve">
     <value>App satus</value>
@@ -328,7 +328,7 @@
     <value>Difficultas pagina brevis</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>Item quod haec brevis refers to mutatum aut motum est, ergo haec brevis iam non recte operatur.</value>
+    <value>Item quod haec brevis ad mutatum vel motum refertur, ideo haec brevis iam non recte operatur.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>Open Directory</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Tabulae uncinis etiam aperiri possunt iconem in ius strepitando in lance ratio imo ad dextram, si non iam potes eam per menu aperire.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Elige color</value>
   </data>
 </root>

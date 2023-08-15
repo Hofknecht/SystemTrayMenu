@@ -184,7 +184,7 @@
     <value>એપ્લિકેશન માટેની તમારી રૂટ ડિરેક્ટરી અસ્તિત્વમાં નથી અથવા ખાલી છે! રૂટ ડિરેક્ટરી બદલો અથવા રૂટ ડિરેક્ટરીમાં કેટલીક ફાઇલો, ડિરેક્ટરીઓ અથવા શોર્ટકટ્સ મૂકો.</value>
   </data>
   <data name="You have no access to the root directory of the app. Grant access to the directory or change the root directory." xml:space="preserve">
-    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં એક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
+    <value>તમારી પાસે એપ્લિકેશનની રૂટ ડાયરેક્ટરીનો કોઈ ઍક્સેસ નથી. ડિરેક્ટરીમાં ઍક્સેસ આપો અથવા રૂટ ડિરેક્ટરી બદલો.</value>
   </data>
   <data name="Single click to open an element" xml:space="preserve">
     <value>એક તત્વ ખોલવા માટે એક ક્લિક કરો</value>
@@ -217,7 +217,7 @@
     <value>જ્યારે માઉસ તેના પર હોય ત્યારે મેનૂ ખુલે ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
   <data name="Milliseconds until the menu closes if the mouse then leaves the menu" xml:space="preserve">
-    <value>જો માઉસ મેનુ છોડી દે તો મેનુ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
+    <value>જો માઉસ મેનુ છોડે તો મેનુ બંધ થાય ત્યાં સુધી મિલિસેકન્ડ</value>
   </data>
   <data name="Maximum menu width" xml:space="preserve">
     <value>મેનુની મહત્તમ પહોળાઈ</value>
@@ -328,7 +328,7 @@
     <value>શોર્ટકટ લિંક સાથે સમસ્યા</value>
   </data>
   <data name="The item that this shortcut refers to has been changed or moved, so this shortcut will no longer work properly." xml:space="preserve">
-    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કામ કરશે નહીં.</value>
+    <value>આ શૉર્ટકટ જે આઇટમનો સંદર્ભ આપે છે તે બદલી અથવા ખસેડવામાં આવી છે, તેથી આ શૉર્ટકટ હવે યોગ્ય રીતે કાર્ય કરશે નહીં.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
     <value>ડિરેક્ટરી ખોલો</value>
@@ -451,7 +451,7 @@
     <value>ઓવરલેપિંગ</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>સબ મેનૂ દેખાય છે</value>
+    <value>સબ મેનુ દેખાય છે</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>ચિહ્નનું કદ</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>સેટિંગ્સ મેનૂને નીચે જમણી બાજુએ સિસ્ટમ ટ્રેમાંના આઇકન પર જમણું-ક્લિક કરીને પણ ખોલી શકાય છે, જો તમે તેને મેનૂ દ્વારા ખોલી શકતા નથી.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>રંગ પસંદ કરો</value>
   </data>
 </root>

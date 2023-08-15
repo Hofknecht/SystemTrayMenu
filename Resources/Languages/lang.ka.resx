@@ -163,7 +163,7 @@
     <value>გენერალი</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
-    <value>ცხელი კლავიში</value>
+    <value>ცხელი კლავიატურა</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
     <value>დაიწყეთ Windows-ით</value>
@@ -283,7 +283,7 @@
     <value>ფერის სქემა მუქი</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>ფერადი სქემა ნათელი</value>
+    <value>ნათელი ფერების სქემა</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>აპლიკაციის მენიუ</value>
@@ -397,7 +397,7 @@
     <value>ქვედა მარჯვენა</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
-    <value>მთავარი მენიუ გამოჩნდება</value>
+    <value>გამოჩნდება მთავარი მენიუ</value>
   </data>
   <data name="Mouse location (above Taskbar icon)" xml:space="preserve">
     <value>მაუსის მდებარეობა (დავალებების ზოლის ხატულაზე)</value>
@@ -532,7 +532,7 @@
     <value>უახლესი ხელმისაწვდომი ვერსია:</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>ახალი ვერსია ხელმისაწვდომია!</value>
+    <value>ხელმისაწვდომია ახალი ვერსია!</value>
   </data>
   <data name="You have the latest version of SystemTrayMenu!" xml:space="preserve">
     <value>თქვენ გაქვთ SystemTrayMenu-ს უახლესი ვერსია!</value>
@@ -556,7 +556,7 @@
     <value>ამოჭრა</value>
   </data>
   <data name="To paste" xml:space="preserve">
-    <value>ჩასვით</value>
+    <value>ჩასმა</value>
   </data>
   <data name="Selecting All" xml:space="preserve">
     <value>ყველას შერჩევა</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>პარამეტრების მენიუს გახსნა ასევე შესაძლებელია ქვედა მარჯვენა კუთხეში სისტემის უჯრაზე მაუსის მარჯვენა ღილაკით დაწკაპუნებით, იმ შემთხვევაში, თუ მენიუს მეშვეობით ვეღარ გახსნით.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>აირჩიეთ ფერი</value>
   </data>
 </root>

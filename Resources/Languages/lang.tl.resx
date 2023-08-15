@@ -466,7 +466,7 @@
     <value>Ipadala ang hotkey sa ibang instance</value>
   </data>
   <data name="Sorted by date" xml:space="preserve">
-    <value>Pinagbukud-bukod ayon sa petsa</value>
+    <value>Inayos ayon sa petsa</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
     <value>Pinagbukud-bukod ayon sa pangalan</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Ang menu ng mga setting ay maaari ding buksan sa pamamagitan ng pag-right click sa icon sa system tray sa kanang ibaba, kung sakaling hindi mo na ito mabuksan sa pamamagitan ng menu.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Pumili ng kulay</value>
   </data>
 </root>

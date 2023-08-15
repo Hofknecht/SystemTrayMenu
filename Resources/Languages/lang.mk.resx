@@ -370,7 +370,7 @@
     <value>Рекурзивен</value>
   </data>
   <data name="Remove directory" xml:space="preserve">
-    <value>Отстрани директориум</value>
+    <value>Отстранете го директориумот</value>
   </data>
   <data name="Only Files" xml:space="preserve">
     <value>Само датотеки</value>
@@ -469,7 +469,7 @@
     <value>Подредени по датум</value>
   </data>
   <data name="Sorted by name" xml:space="preserve">
-    <value>Подредени по име</value>
+    <value>Подредено по име</value>
   </data>
   <data name="Sorting" xml:space="preserve">
     <value>Сортирање</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Менито за поставки може да се отвори и со десен клик на иконата во системската лента во долниот десен агол, во случај да не можете повеќе да го отворате преку менито.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Изберете боја</value>
   </data>
 </root>

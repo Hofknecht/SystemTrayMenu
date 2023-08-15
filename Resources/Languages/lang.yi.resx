@@ -394,7 +394,7 @@
     <value>לינקס אונטן</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>רעכטס אונטן</value>
+    <value>דנאָ רעכט</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>הויפּט מעניו אויס</value>
@@ -451,7 +451,7 @@
     <value>אָוווערלאַפּינג</value>
   </data>
   <data name="Sub menu appears" xml:space="preserve">
-    <value>אונטער מעניו איז ארויס</value>
+    <value>סוב מעניו איז ארויס</value>
   </data>
   <data name="Icon size" xml:space="preserve">
     <value>ייקאַן גרייס</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>די סעטטינגס מעניו קענען אויך זיין עפן דורך רעכט-קליקינג אויף די ייקאַן אין די סיסטעם טאַץ אין די דנאָ רעכט, אין פאַל איר קענען ניט מער עפֿענען עס דורך די מעניו.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>קלייַבן קאָליר</value>
   </data>
 </root>

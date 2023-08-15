@@ -379,7 +379,7 @@
     <value>Hreinsaðu skyndiminni ef fleiri en þessi fjöldi liða</value>
   </data>
   <data name="Add sample directory 'Start Menu'" xml:space="preserve">
-    <value>Bæta við sýnishornsskrá 'Start Menu'</value>
+    <value>Bæta við sýnishornsmöppu 'Start Menu'</value>
   </data>
   <data name="Row height" xml:space="preserve">
     <value>Röð hæð</value>
@@ -572,5 +572,8 @@
   </data>
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Einnig er hægt að opna stillingarvalmyndina með því að hægrismella á táknið í kerfisbakkanum neðst til hægri, ef þú getur ekki lengur opnað hana í gegnum valmyndina.</value>
+  </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Veldu lit</value>
   </data>
 </root>

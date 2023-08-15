@@ -573,4 +573,7 @@
   <data name="The settings menu can also be opened by right-clicking the icon in the system tray at the bottom right, in case you can no longer open it via the menu." xml:space="preserve">
     <value>Meniul de setări poate fi deschis și făcând clic dreapta pe pictograma din bara de sistem din dreapta jos, în cazul în care nu îl mai puteți deschide prin meniu.</value>
   </data>
+  <data name="Choose color" xml:space="preserve">
+    <value>Alege culoarea</value>
+  </data>
 </root>
