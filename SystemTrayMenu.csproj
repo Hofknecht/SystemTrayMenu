@@ -192,7 +192,7 @@ EXIT 0</PreBuildEvent>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryType></RepositoryType>
     <PackageTags>SystemTrayMenu</PackageTags>
-    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
     <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>

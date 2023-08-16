@@ -813,6 +813,31 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        private static bool Filter_Default(RowData itemData)
+        {
+            if (Settings.Default.ShowOnlyAsSearchResult && itemData.IsAdditionalItem)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private static bool Filter_ByUserPattern(RowData itemData, string userPattern)
+        {
+            // Instead implementing in-string wildcards, simply split into multiple search pattersy
+            // Look for each space separated string if it is part of an entry's text (case insensitive)
+            foreach (string pattern in userPattern.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
+            {
+                if (!itemData.ColumnText.ToLower().Contains(pattern))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void FadeOut_Completed(object sender, EventArgs e) => Hide();
 
         private void HandlePreviewKeyDown(object sender, KeyEventArgs e)
@@ -941,31 +966,6 @@ namespace SystemTrayMenu.UserInterface
             {
                 MenuScrolled?.Invoke();
             }
-        }
-
-        private bool Filter_Default(RowData itemData)
-        {
-            if (Settings.Default.ShowOnlyAsSearchResult && itemData.IsAdditionalItem)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool Filter_ByUserPattern(RowData itemData, string userPattern)
-        {
-            // Instead implementing in-string wildcards, simply split into multiple search pattersy
-            // Look for each space separated string if it is part of an entry's text (case insensitive)
-            foreach (string pattern in userPattern.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries))
-            {
-                if (!itemData.ColumnText.ToLower().Contains(pattern))
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
 
         private void TextBoxSearch_TextChanged(bool causedByWatcherUpdate)
