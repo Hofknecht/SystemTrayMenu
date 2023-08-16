@@ -43,7 +43,7 @@ namespace SystemTrayMenu.Business
 
         public Menus()
         {
-            SingleAppInstance.Wakeup += SwitchOpenCloseByKey;
+            SingleAppInstance.Wakeup += SwitchOpenCloseByHotKey;
             menuNotifyIcon.Click += () => SwitchOpenClose(true, false);
 
             if (!keyboardInput.RegisterHotKey(Settings.Default.HotKey))
@@ -52,7 +52,7 @@ namespace SystemTrayMenu.Business
                 Settings.Default.Save();
             }
 
-            keyboardInput.HotKeyPressed += SwitchOpenCloseByKey;
+            keyboardInput.HotKeyPressed += SwitchOpenCloseByHotKey;
             keyboardInput.RowSelectionChanged += waitToOpenMenu.RowSelectionChanged;
             keyboardInput.EnterPressed += waitToOpenMenu.OpenSubMenuByKey;
 
@@ -130,7 +130,7 @@ namespace SystemTrayMenu.Business
 
         public void Dispose()
         {
-            SingleAppInstance.Wakeup -= SwitchOpenCloseByKey;
+            SingleAppInstance.Wakeup -= SwitchOpenCloseByHotKey;
             SystemEvents.DisplaySettingsChanged -= SystemEvents_DisplaySettingsChanged;
             workerMainMenu.Dispose();
             foreach (BackgroundWorker worker in workersSubMenu)
@@ -279,6 +279,7 @@ namespace SystemTrayMenu.Business
                 mainMenu.SelectedItem = null;
                 mainMenu.RelocateOnNextShow = true;
                 mainMenu.ShowWithFade(false, true);
+                mainMenu.textBoxSearch.Focus();
             }
             else
             {
@@ -513,7 +514,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void SwitchOpenCloseByKey() => mainMenu.Dispatcher.Invoke(() => SwitchOpenClose(false, false));
+        private void SwitchOpenCloseByHotKey() => mainMenu.Dispatcher.Invoke(() => SwitchOpenClose(false, false));
 
         private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e) =>
             mainMenu.Dispatcher.Invoke(() => mainMenu.RelocateOnNextShow = true);
