@@ -1090,7 +1090,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListView_MouseLeave(object sender, MouseEventArgs e)
         {
-            // In case a sub menu is alread open and another item was already selected
+            // In case a sub menu is already open and another item was already selected
             // but WaitToLoadMenu hasn't take action yet
             // then we want to reset that selection, so the sub menu selection remains active only
             if (SubMenu != null)
