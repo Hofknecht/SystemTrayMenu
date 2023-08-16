@@ -173,6 +173,7 @@
 
             <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,0" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionMode="Single" HorizontalContentAlignment="Stretch"
                       Foreground="{x:Static stm:MenuDefines.ColorForeground}" BorderBrush="{x:Null}" Background="{x:Null}"
+                      SelectionChanged="ListView_SelectionChanged" MouseLeave="ListView_MouseLeave"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="HandleScrollChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate>

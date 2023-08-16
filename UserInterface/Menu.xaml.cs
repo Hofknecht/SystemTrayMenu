@@ -19,7 +19,6 @@ namespace SystemTrayMenu.UserInterface
     using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.Utilities;
-    using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
     /// <summary>
     /// Logic of Menu window.
@@ -179,7 +178,6 @@ namespace SystemTrayMenu.UserInterface
                 Command = new ActionCommand((_) => textBoxSearch.SelectAll()),
             });
 
-            dgv.SelectionChanged += ListView_SelectionChanged;
             ((INotifyCollectionChanged)dgv.Items).CollectionChanged += (_, _) =>
             {
                 int count = dgv.Items.Count;
@@ -1086,6 +1084,25 @@ namespace SystemTrayMenu.UserInterface
                 {
                     itemData.IsSelected = lv.SelectedItem == itemData;
                     itemData.UpdateColors();
+                }
+            }
+        }
+
+        private void ListView_MouseLeave(object sender, MouseEventArgs e)
+        {
+            // In case a sub menu is alread open and another item was already selected
+            // but WaitToLoadMenu hasn't take action yet
+            // then we want to reset that selection, so the sub menu selection remains active only
+            if (SubMenu != null)
+            {
+                ListView lv = (ListView)sender;
+                foreach (RowData itemData in lv.Items)
+                {
+                    if (itemData.SubMenu == SubMenu)
+                    {
+                        lv.SelectedItem = itemData;
+                        break;
+                    }
                 }
             }
         }
