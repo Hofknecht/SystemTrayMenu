@@ -48,7 +48,7 @@ namespace SystemTrayMenu.UserInterface
 
             if (!Config.ShowDirectoryTitleAtTop)
             {
-                txtTitle.Visibility = Visibility.Hidden;
+                txtTitle.Visibility = Visibility.Collapsed;
             }
 
             if (!Config.ShowSearchBar)
@@ -883,9 +883,8 @@ namespace SystemTrayMenu.UserInterface
                     // 125% = 23 instead 27, 150% = 28 instead 32
                     // 175% = 33 instead 37, 200% = 35 instead 42
                     // #418 use 21 as default and scale it manually
-                    // 2px less due to subtracted boarder around list view item
                     double rowHeightDefault = 21.24d * Scaling.FactorByDpi;
-                    Resources["RowHeight"] = Math.Ceiling((rowHeightDefault * factor * Scaling.Factor) - 2.0d);
+                    Resources["RowHeight"] = Math.Round(rowHeightDefault * factor * Scaling.Factor);
                     dgv.Tag = true;
                 }
             }
