@@ -207,7 +207,10 @@ namespace SystemTrayMenu.Business
                 // Main menu is hidden or even not created at all, (create and) show it
                 if (Settings.Default.GenerateShortcutsToDrives)
                 {
-                    GenerateDriveShortcuts.Start(); // TODO: Once or actually on every startup?
+                    // PK: Once or actually on every startup?
+                    // MH: e.g. usb device can change each startup, so currently every startup.
+                    // in future we need here something without creating files
+                    GenerateDriveShortcuts.Start();
                 }
 
                 menuNotifyIcon.LoadingStart();
