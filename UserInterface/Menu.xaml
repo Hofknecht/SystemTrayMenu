@@ -172,13 +172,11 @@
                 </Button>
             </DockPanel>
 
-            <!-- Default control template for lisviewt has a border within its control on its top level -->
-            <!-- As we do not modify the nested style directly yet, we bake this 1 px into our margin values for now -->
-            <!-- This means mathematically we overflow, but for the user is looks fitting -->
-            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="7,0,5,0" Padding="0" d:ItemsSource="{d:SampleData ItemCount=50}" SelectionMode="Single" HorizontalContentAlignment="Stretch"
+            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="8,1,6,1" Padding="0" d:ItemsSource="{d:SampleData ItemCount=50}" SelectionMode="Single" HorizontalContentAlignment="Stretch"
                       Foreground="{x:Static stm:MenuDefines.ColorForeground}" Background="{x:Null}" BorderThickness="0"
                       SelectionChanged="ListView_SelectionChanged" MouseLeave="ListView_MouseLeave"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="HandleScrollChanged">
+                <!--ListView."Childs".Border.Padding="0" // In ctor, see: dgv_border -->
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border Height="{DynamicResource RowHeight}" BorderBrush="{Binding BorderBrush}" Background="{Binding BackgroundBrush}" BorderThickness="1">

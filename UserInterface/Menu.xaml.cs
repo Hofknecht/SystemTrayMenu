@@ -176,6 +176,13 @@ namespace SystemTrayMenu.UserInterface
 
             Loaded += (_, _) =>
             {
+                // This will remove the outer padding from the ListView's Control Template
+                Border? dgv_border = dgv.FindVisualChildOfType<Border>(0);
+                if (dgv_border != null)
+                {
+                    dgv_border.Padding = new(0);
+                }
+
                 NativeMethods.HideFromAltTab(this);
 
                 RaiseEvent(new(routedEvent: FadeInEvent));
