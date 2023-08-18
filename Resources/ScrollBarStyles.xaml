@@ -165,7 +165,7 @@
                     <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageUpCommand" />
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
-                    <Thumb Style="{StaticResource ScrollBarThumb}" Margin="0">
+                    <Thumb Style="{StaticResource ScrollBarThumb}" Margin="0" MinHeight="10">
                         <Thumb.BorderBrush>
 
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -221,7 +221,7 @@
                     <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageLeftCommand" />
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
-                    <Thumb Style="{StaticResource ScrollBarThumb}" Margin="0">
+                    <Thumb Style="{StaticResource ScrollBarThumb}" Margin="0" MinWidth="10">
                         <Thumb.BorderBrush>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <LinearGradientBrush.GradientStops>
