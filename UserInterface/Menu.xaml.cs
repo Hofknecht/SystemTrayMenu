@@ -56,15 +56,7 @@ namespace SystemTrayMenu.UserInterface
                 searchPanel.Visibility = Visibility.Collapsed;
             }
 
-            if (!Config.ShowFunctionKeyOpenFolder)
-            {
-                buttonOpenFolder.Visibility = Visibility.Collapsed;
-            }
-
-            if (!Config.ShowFunctionKeyPinMenu)
-            {
-                buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
-            }
+            buttonOpenFolder.Visibility = Visibility.Collapsed;
 
             if (!Config.ShowFunctionKeySettings)
             {
@@ -89,6 +81,11 @@ namespace SystemTrayMenu.UserInterface
 
                 // Moving the window is only supported for the main menu
                 MouseDown += MainMenu_MoveStart;
+
+                if (!Config.ShowFunctionKeyPinMenu)
+                {
+                    buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
+                }
             }
             else
             {
@@ -103,10 +100,9 @@ namespace SystemTrayMenu.UserInterface
                 MainMenu = ParentMenu.MainMenu;
                 RowDataParent.SubMenu = this;
 
-                buttonOpenFolder.Visibility = Visibility.Collapsed;
+                buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
                 buttonSettings.Visibility = Visibility.Collapsed;
                 buttonRestart.Visibility = Visibility.Collapsed;
-                pictureBoxLoading.Visibility = Visibility.Visible;
             }
 
             string title = new DirectoryInfo(path).Name;
@@ -177,12 +173,6 @@ namespace SystemTrayMenu.UserInterface
                 Header = Translator.GetText("Selecting All"),
                 Command = new ActionCommand((_) => textBoxSearch.SelectAll()),
             });
-
-            ((INotifyCollectionChanged)dgv.Items).CollectionChanged += (_, _) =>
-            {
-                int count = dgv.Items.Count;
-                labelStatus.Content = count.ToString() + " " + Translator.GetText(count == 1 ? "element" : "elements");
-            };
 
             Loaded += (_, _) =>
             {
@@ -325,13 +315,17 @@ namespace SystemTrayMenu.UserInterface
                 buttonOpenFolder.Visibility = Visibility.Visible;
             }
 
-            buttonMenuAlwaysOpen.Visibility = Visibility.Collapsed;
             pictureBoxLoading.Visibility = Visibility.Collapsed;
 
             switch (state)
             {
                 case MenuDataDirectoryState.Valid:
-                    if (!Config.ShowCountOfElementsBelow)
+                    if (Config.ShowCountOfElementsBelow)
+                    {
+                        ((INotifyCollectionChanged)dgv.Items).CollectionChanged += ListView_CollectionChanged;
+                        ListView_CollectionChanged(this, new(NotifyCollectionChangedAction.Reset));
+                    }
+                    else
                     {
                         labelStatus.Visibility = Visibility.Collapsed;
                     }
@@ -1104,6 +1098,12 @@ namespace SystemTrayMenu.UserInterface
                     }
                 }
             }
+        }
+
+        private void ListView_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+        {
+            int count = dgv.Items.Count;
+            labelStatus.Content = count.ToString() + " " + Translator.GetText(count == 1 ? "element" : "elements");
         }
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)

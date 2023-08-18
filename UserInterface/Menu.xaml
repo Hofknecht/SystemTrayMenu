@@ -11,7 +11,7 @@
         xmlns:local="clr-namespace:SystemTrayMenu.UserInterface"
         x:Class="SystemTrayMenu.UserInterface.Menu"
         mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False" SnapsToDevicePixels="True" UseLayoutRounding="True"
-        PreviewKeyDown="HandlePreviewKeyDown">
+        PreviewKeyDown="HandlePreviewKeyDown" d:MaxHeight="200">
     <Window.Effect>
         <DropShadowEffect Direction="315" ShadowDepth="2" BlurRadius="4" Color="{Binding Source={x:Static stm:MenuDefines.ColorBackgroundBorder},Path=Color}"/>
     </Window.Effect>
@@ -140,8 +140,8 @@
                 </DockPanel.Resources>
                 <Label x:Name="labelStatus" Content="{u:Translate 'loading'}" Padding="0" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{x:Static stm:MenuDefines.ColorIcons}"/>
 
-                <Image x:Name="pictureBoxLoading" Width="18" Height="18" DockPanel.Dock="Right"
-                       HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" d:Visibility="Visible" Visibility="Collapsed">
+                <Image x:Name="pictureBoxLoading" Width="18" Height="18" DockPanel.Dock="Right" Source="{StaticResource LoadingIconImage}"
+                       HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
                         <RotateTransform x:Name="LoadingRotation" Angle="0" />
                     </Image.RenderTransform>
@@ -172,7 +172,10 @@
                 </Button>
             </DockPanel>
 
-            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="7,0" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionMode="Single" HorizontalContentAlignment="Stretch"
+            <!-- Default control template for lisviewt has a border within its control on its top level -->
+            <!-- As we do not modify the nested style directly yet, we bake this 1 px into our margin values for now -->
+            <!-- This means mathematically we overflow, but for the user is looks fitting -->
+            <ListView x:Name="dgv" x:FieldModifier="internal" Margin="7,0,5,0" Padding="0" d:ItemsSource="{d:SampleData ItemCount=50}" SelectionMode="Single" HorizontalContentAlignment="Stretch"
                       Foreground="{x:Static stm:MenuDefines.ColorForeground}" Background="{x:Null}" BorderThickness="0"
                       SelectionChanged="ListView_SelectionChanged" MouseLeave="ListView_MouseLeave"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="HandleScrollChanged">

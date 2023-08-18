@@ -370,7 +370,9 @@ namespace SystemTrayMenu.Business
 
         private void InitializeMenu(Menu menu, List<RowData> rowDatas)
         {
-            menu.AddItemsToMenu(rowDatas, null);
+            // As we are usually in loading state here, we do not provide a state.
+            // However, when the main menu loads, we know it is valid and we can enter desired state directly.
+            menu.AddItemsToMenu(rowDatas, menu.Level == 0 ? MenuDataDirectoryState.Valid : null);
 
             menu.MenuScrolled += () => AdjustMenusSizeAndLocation(menu.Level + 1); // TODO: Only update vertical location while scrolling?
             menu.MouseLeave += (_, _) =>
