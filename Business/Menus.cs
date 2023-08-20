@@ -363,6 +363,10 @@ namespace SystemTrayMenu.Business
                 menu.AddItemsToMenu(menuData.RowDatas, menuData.DirectoryState);
                 AdjustMenusSizeAndLocation(menu.Level);
                 menu.Opacity = 1D;
+
+                // Maybe this can be improved: It may happen that before stop event takes action,
+                // the previous FadeIn overwrites the opacity, so for safety we respawn a new FadeIn.
+                menu.StartFadeIn();
             }
             else
             {

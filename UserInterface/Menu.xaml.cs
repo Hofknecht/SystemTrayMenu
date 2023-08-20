@@ -520,6 +520,14 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
+        internal void StartFadeIn()
+        {
+            if (Settings.Default.UseFading)
+            {
+                RaiseEvent(new(routedEvent: FadeInEvent));
+            }
+        }
+
         internal void StopFade()
         {
             if (Settings.Default.UseFading)
