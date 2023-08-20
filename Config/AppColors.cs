@@ -54,8 +54,6 @@ namespace SystemTrayMenu
 
         public static SolidColorBrush ArrowClickBackground { get; internal set; } = new(Color.FromRgb(96, 96, 96));
 
-        public static SolidColorBrush SliderArrowsAndTrackHover { get; internal set; } = new(Color.FromRgb(192, 192, 192));
-
         public static SolidColorBrush Slider { get; internal set; } = new(Color.FromRgb(205, 205, 205));
 
         public static SolidColorBrush SliderHover { get; internal set; } = new(Color.FromRgb(166, 166, 166));
@@ -73,8 +71,6 @@ namespace SystemTrayMenu
         public static SolidColorBrush ArrowClickDarkMode { get; internal set; } = new(Color.FromRgb(23, 23, 23));
 
         public static SolidColorBrush ArrowClickBackgroundDarkMode { get; internal set; } = new(Color.FromRgb(166, 166, 166));
-
-        public static SolidColorBrush SliderArrowsAndTrackHoverDarkMode { get; internal set; } = new(Color.FromRgb(77, 77, 77));
 
         public static SolidColorBrush SliderDarkMode { get; internal set; } = new(Color.FromRgb(77, 77, 77));
 

@@ -57,9 +57,6 @@ namespace SystemTrayMenu
         public static SolidColorBrush ColorArrowClickBackground =>
             Config.IsDarkMode() ? AppColors.ArrowClickBackgroundDarkMode : AppColors.ArrowClickBackground;
 
-        public static SolidColorBrush ColorSliderArrowsAndTrackHover =>
-            Config.IsDarkMode() ? AppColors.SliderArrowsAndTrackHoverDarkMode : AppColors.SliderArrowsAndTrackHover;
-
         public static SolidColorBrush ColorSlider =>
             Config.IsDarkMode() ? AppColors.SliderDarkMode : AppColors.Slider;
 

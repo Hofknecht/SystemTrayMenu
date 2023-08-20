@@ -295,7 +295,7 @@
                                 <local:ColorSelector x:Name="textBoxColorSlider" Description="{u:Translate 'Slider'}" />
                                 <local:ColorSelector x:Name="textBoxColorSliderDragging" Description="{u:Translate 'Slider while dragging'}" />
                                 <local:ColorSelector x:Name="textBoxColorSliderHover" Description="{u:Translate 'Slider while mouse hovers over it 1'}" />
-                                <local:ColorSelector x:Name="textBoxColorSliderArrowsAndTrackHover" Description="{u:Translate 'Slider while mouse hovers over it 2'}" />
+                                <!-- Deprecated since 2.0.0.0: textBoxColorSliderArrowsAndTrackHover, obsolete translation: 'Slider while mouse hovers over it 2' -->
                                 <local:ColorSelector x:Name="textBoxColorArrow" Description="{u:Translate 'Arrow'}" />
                                 <local:ColorSelector x:Name="textBoxColorArrowClick" Description="{u:Translate 'Arrow when clicking'}" />
                                 <local:ColorSelector x:Name="textBoxColorArrowClickBackground" Description="{u:Translate 'Background of arrow when clicking'}" />
@@ -320,7 +320,7 @@
                                 <local:ColorSelector x:Name="textBoxColorSliderDarkMode" Description="{u:Translate 'Slider'}" />
                                 <local:ColorSelector x:Name="textBoxColorSliderDraggingDarkMode" Description="{u:Translate 'Slider while dragging'}" />
                                 <local:ColorSelector x:Name="textBoxColorSliderHoverDarkMode" Description="{u:Translate 'Slider while mouse hovers over it 1'}" />
-                                <local:ColorSelector x:Name="textBoxColorSliderArrowsAndTrackHoverDarkMode" Description="{u:Translate 'Slider while mouse hovers over it 2'}" />
+                                <!-- Deprecated since 2.0.0.0: textBoxColorSliderArrowsAndTrackHoverDarkMode, obsolete translation: 'Slider while mouse hovers over it 2' -->
                                 <local:ColorSelector x:Name="textBoxColorArrowDarkMode" Description="{u:Translate 'Arrow'}" />
                                 <local:ColorSelector x:Name="textBoxColorArrowClickDarkMode" Description="{u:Translate 'Arrow when clicking'}" />
                                 <local:ColorSelector x:Name="textBoxColorArrowClickBackgroundDarkMode" Description="{u:Translate 'Background of arrow when clicking'}" />

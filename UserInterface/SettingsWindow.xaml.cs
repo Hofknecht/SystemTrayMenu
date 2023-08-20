@@ -321,7 +321,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorSlider.Text = Settings.Default.ColorSlider;
             textBoxColorSliderDragging.Text = Settings.Default.ColorSliderDragging;
             textBoxColorSliderHover.Text = Settings.Default.ColorSliderHover;
-            textBoxColorSliderArrowsAndTrackHover.Text = Settings.Default.ColorSliderArrowsAndTrackHover;
             textBoxColorArrow.Text = Settings.Default.ColorArrow;
             textBoxColorArrowClick.Text = Settings.Default.ColorArrowClick;
             textBoxColorArrowClickBackground.Text = Settings.Default.ColorArrowClickBackground;
@@ -331,7 +330,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorSliderDarkMode.Text = Settings.Default.ColorSliderDarkMode;
             textBoxColorSliderDraggingDarkMode.Text = Settings.Default.ColorSliderDraggingDarkMode;
             textBoxColorSliderHoverDarkMode.Text = Settings.Default.ColorSliderHoverDarkMode;
-            textBoxColorSliderArrowsAndTrackHoverDarkMode.Text = Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode;
             textBoxColorArrowDarkMode.Text = Settings.Default.ColorArrowDarkMode;
             textBoxColorArrowClickDarkMode.Text = Settings.Default.ColorArrowClickDarkMode;
             textBoxColorArrowClickBackgroundDarkMode.Text = Settings.Default.ColorArrowClickBackgroundDarkMode;
@@ -908,7 +906,6 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.ColorSlider = textBoxColorSlider.Text;
                 Settings.Default.ColorSliderDragging = textBoxColorSliderDragging.Text;
                 Settings.Default.ColorSliderHover = textBoxColorSliderHover.Text;
-                Settings.Default.ColorSliderArrowsAndTrackHover = textBoxColorSliderArrowsAndTrackHover.Text;
                 Settings.Default.ColorArrow = textBoxColorArrow.Text;
                 Settings.Default.ColorArrowClick = textBoxColorArrowClick.Text;
                 Settings.Default.ColorArrowClickBackground = textBoxColorArrowClickBackground.Text;
@@ -918,7 +915,6 @@ namespace SystemTrayMenu.UserInterface
                 Settings.Default.ColorSliderDarkMode = textBoxColorSliderDarkMode.Text;
                 Settings.Default.ColorSliderDraggingDarkMode = textBoxColorSliderDraggingDarkMode.Text;
                 Settings.Default.ColorSliderHoverDarkMode = textBoxColorSliderHoverDarkMode.Text;
-                Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode = textBoxColorSliderArrowsAndTrackHoverDarkMode.Text;
                 Settings.Default.ColorArrowDarkMode = textBoxColorArrowDarkMode.Text;
                 Settings.Default.ColorArrowClickDarkMode = textBoxColorArrowClickDarkMode.Text;
                 Settings.Default.ColorArrowClickBackgroundDarkMode = textBoxColorArrowClickBackgroundDarkMode.Text;
@@ -977,7 +973,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowHover.Text = "#000000";
             textBoxColorArrowClick.Text = "#ffffff";
             textBoxColorArrowClickBackground.Text = "#606060";
-            textBoxColorSliderArrowsAndTrackHover.Text = "#c0c0c0";
             textBoxColorSlider.Text = "#cdcdcd";
             textBoxColorSliderHover.Text = "#a6a6a6";
             textBoxColorSliderDragging.Text = "#606060";
@@ -999,7 +994,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowHoverDarkMode.Text = "#676767";
             textBoxColorArrowClickDarkMode.Text = "#171717";
             textBoxColorArrowClickBackgroundDarkMode.Text = "#a6a6a6";
-            textBoxColorSliderArrowsAndTrackHoverDarkMode.Text = "#4d4d4d";
             textBoxColorSliderDarkMode.Text = "#4d4d4d";
             textBoxColorSliderHoverDarkMode.Text = "#7a7a7a";
             textBoxColorSliderDraggingDarkMode.Text = "#a6a6a6";

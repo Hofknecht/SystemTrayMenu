@@ -328,12 +328,6 @@ namespace SystemTrayMenu
             Settings.Default.ColorArrowClickBackground = colorAndCode.HtmlColorCode;
             AppColors.ArrowClickBackground = new SolidColorBrush(colorAndCode.Color);
 
-            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderArrowsAndTrackHover;
-            colorAndCode.Color = AppColors.SliderArrowsAndTrackHover.Color;
-            ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
-            Settings.Default.ColorSliderArrowsAndTrackHover = colorAndCode.HtmlColorCode;
-            AppColors.SliderArrowsAndTrackHover = new SolidColorBrush(colorAndCode.Color);
-
             colorAndCode.HtmlColorCode = Settings.Default.ColorSlider;
             colorAndCode.Color = AppColors.Slider.Color;
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
@@ -387,12 +381,6 @@ namespace SystemTrayMenu
             ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
             Settings.Default.ColorArrowClickBackgroundDarkMode = colorAndCode.HtmlColorCode;
             AppColors.ArrowClickBackgroundDarkMode = new SolidColorBrush(colorAndCode.Color);
-
-            colorAndCode.HtmlColorCode = Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode;
-            colorAndCode.Color = AppColors.SliderArrowsAndTrackHoverDarkMode.Color;
-            ProcessColorAndCode(converter, ref colorAndCode, ref resetDefaults);
-            Settings.Default.ColorSliderArrowsAndTrackHoverDarkMode = colorAndCode.HtmlColorCode;
-            AppColors.SliderArrowsAndTrackHoverDarkMode = new SolidColorBrush(colorAndCode.Color);
 
             colorAndCode.HtmlColorCode = Settings.Default.ColorSliderDarkMode;
             colorAndCode.Color = AppColors.SliderDarkMode.Color;

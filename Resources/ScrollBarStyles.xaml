@@ -10,7 +10,6 @@
 
     <!-- TODO: Check and adjust horizontal scrollbars -->
     <!-- TODO: Take care of disabled scrollbars -->
-    <!-- TODO: Implement ColorSliderArrowsAndTrackHover -->
     
     <Color x:Key="DisabledForegroundColor">Transparent</Color>
 
