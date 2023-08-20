@@ -101,7 +101,7 @@ namespace SystemTrayMenu.Business
                 case Key.Tab:
                     if (modifiers == ModifierKeys.None)
                     {
-                        // Walk to previous text box and warp around when main menu reached
+                        // Walk to previous text box and wrap around when main menu reached
                         Menu? menu = sender.ParentMenu;
                         if (menu == null)
                         {
@@ -112,13 +112,13 @@ namespace SystemTrayMenu.Business
                             }
                         }
 
-                        menu.FocusTextBox();
+                        menu.FocusTextBox(true);
                     }
                     else if (modifiers == ModifierKeys.Shift)
                     {
-                        // Walk to next text box and warp around back to main menu on last sub menu
+                        // Walk to next text box and wrap around back to main menu on last sub menu
                         Menu? menu = sender.SubMenu ?? sender.MainMenu;
-                        menu.FocusTextBox();
+                        menu.FocusTextBox(true);
                     }
 
                     break;

@@ -319,9 +319,17 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal void FocusTextBox()
+        internal void FocusTextBox(bool selectAll = false)
         {
-            textBoxSearch.Select(textBoxSearch.Text.Length, 0);
+            if (selectAll)
+            {
+                textBoxSearch.SelectAll();
+            }
+            else
+            {
+                textBoxSearch.CaretIndex = textBoxSearch.Text.Length;
+            }
+
             textBoxSearch.Focus();
         }
 
