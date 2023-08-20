@@ -26,6 +26,8 @@ namespace SystemTrayMenu
 
         public App()
         {
+            AppContext.SetSwitch("Switch.System.Windows.Controls.Text.UseAdornerForTextboxSelectionRendering", false);
+
             InitializeComponent();
 
             AppRestart.BeforeRestarting += Dispose;

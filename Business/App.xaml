@@ -51,6 +51,8 @@
                 <Setter Property="Height" Value="21" />
                 <Setter Property="Foreground" Value="{x:Static stm:MenuDefines.ColorForeground}" />
                 <Setter Property="Background" Value="{x:Static stm:MenuDefines.ColorBackground}" />
+                <Setter Property="SelectionTextBrush" Value="White" />
+                <Setter Property="SelectionBrush" Value="#0078d7" />
             </Style>
             <Style TargetType="{x:Type RichTextBox}">
                 <Setter Property="Foreground" Value="{x:Static stm:MenuDefines.ColorForeground}" />
