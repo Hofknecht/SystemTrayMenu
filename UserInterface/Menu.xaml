@@ -118,8 +118,7 @@
                 <Separator x:Name="panelLine" Height="1" Margin="0" DockPanel.Dock="Bottom" Background="{x:Static stm:MenuDefines.ColorIcons}"/>
                 <Image x:Name="pictureBoxSearch" Width="22" Height="22" Margin="0" DockPanel.Dock="Left" Source="{StaticResource ic_fluent_search_48_regularDrawingImage}"/>
                 <TextBox x:Name="textBoxSearch" Margin="0" BorderThickness="0" VerticalContentAlignment="Center"
-                         Foreground="{x:Static stm:MenuDefines.ColorForeground}" CaretBrush="{x:Static stm:MenuDefines.ColorForeground}"
-                         Background="{x:Null}" SelectionTextBrush="Red" SelectionBrush="#FFDAFF00"/>
+                         Background="{x:Null}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" CaretBrush="{x:Static stm:MenuDefines.ColorForeground}" />
             </DockPanel>
 
             <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,6,14,5">
