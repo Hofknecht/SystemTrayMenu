@@ -609,15 +609,15 @@ namespace SystemTrayMenu.UserInterface
                     directionToRight = menuPredecessor.directionToRight; // try keeping same direction from predecessor
 
                     if (!Settings.Default.AppearNextToPreviousMenu &&
-                        menuPredecessor.Width > Settings.Default.OverlappingOffsetPixels)
+                        menuPredecessor.windowFrame.ActualWidth > Settings.Default.OverlappingOffsetPixels)
                     {
                         if (directionToRight)
                         {
-                            overlappingOffset = Settings.Default.OverlappingOffsetPixels - menuPredecessor.Width;
+                            overlappingOffset = Settings.Default.OverlappingOffsetPixels - menuPredecessor.windowFrame.ActualWidth;
                         }
                         else
                         {
-                            overlappingOffset = menuPredecessor.Width - Settings.Default.OverlappingOffsetPixels;
+                            overlappingOffset = menuPredecessor.windowFrame.ActualWidth - Settings.Default.OverlappingOffsetPixels;
                         }
                     }
                 }
@@ -642,18 +642,18 @@ namespace SystemTrayMenu.UserInterface
 
                         if (directionToRight)
                         {
-                            x = originLocation.X + menuPredecessor.Width - scaling;
+                            x = originLocation.X + menuPredecessor.windowFrame.ActualWidth - scaling;
 
                             // Change direction when out of bounds (predecessor only)
                             if (startLocation == StartLocation.Predecessor &&
-                                bounds.X + bounds.Width <= x + Width - scaling)
+                                bounds.X + bounds.Width <= x + windowFrame.ActualWidth - scaling)
                             {
-                                x = originLocation.X - Width + scaling;
+                                x = originLocation.X - windowFrame.ActualWidth + scaling;
                                 if (x < bounds.X &&
-                                    originLocation.X + menuPredecessor.Width < bounds.X + bounds.Width &&
-                                    bounds.X + (bounds.Width / 2) > originLocation.X + (Width / 2))
+                                    originLocation.X + menuPredecessor.windowFrame.ActualWidth < bounds.X + bounds.Width &&
+                                    bounds.X + (bounds.Width / 2) > originLocation.X + (windowFrame.ActualWidth / 2))
                                 {
-                                    x = bounds.X + bounds.Width - Width + scaling;
+                                    x = bounds.X + bounds.Width - windowFrame.ActualWidth + scaling;
                                 }
                                 else
                                 {
@@ -668,24 +668,24 @@ namespace SystemTrayMenu.UserInterface
                         }
                         else
                         {
-                            x = originLocation.X - Width + scaling;
+                            x = originLocation.X - windowFrame.ActualWidth + scaling;
 
                             // Change direction when out of bounds (predecessor only)
                             if (startLocation == StartLocation.Predecessor &&
                                 x < bounds.X)
                             {
-                                x = originLocation.X + menuPredecessor.Width - scaling;
-                                if (x + Width > bounds.X + bounds.Width &&
+                                x = originLocation.X + menuPredecessor.windowFrame.ActualWidth - scaling;
+                                if (x + windowFrame.ActualWidth > bounds.X + bounds.Width &&
                                     originLocation.X > bounds.X &&
-                                    bounds.X + (bounds.Width / 2) < originLocation.X + (Width / 2))
+                                    bounds.X + (bounds.Width / 2) < originLocation.X + (windowFrame.ActualWidth / 2))
                                 {
                                     x = bounds.X;
                                 }
                                 else
                                 {
-                                    if (x + Width > bounds.X + bounds.Width)
+                                    if (x + windowFrame.ActualWidth > bounds.X + bounds.Width)
                                     {
-                                        x = bounds.X + bounds.Width - Width + scaling;
+                                        x = bounds.X + bounds.Width - windowFrame.ActualWidth + scaling;
                                     }
 
                                     directionToRight = !directionToRight;
@@ -701,12 +701,13 @@ namespace SystemTrayMenu.UserInterface
                     case StartLocation.TopRight:
                     case StartLocation.BottomRight:
                     default:
-                        x = bounds.Width - Width;
+                        x = bounds.Width - windowFrame.ActualWidth;
                         directionToRight = false;
                         break;
                 }
 
-                x += overlappingOffset;
+                // Besides overlapping setting we need to subtract the left margin from x as it was not part of x calculation
+                x += overlappingOffset - windowFrame.Margin.Left;
 
                 // Calculate Y position
                 double y;
@@ -805,18 +806,19 @@ namespace SystemTrayMenu.UserInterface
                     case StartLocation.BottomLeft:
                     case StartLocation.BottomRight:
                     default:
-                        y = bounds.Height - Height;
+                        y = bounds.Height - windowFrame.ActualHeight;
                         break;
                 }
 
                 // Move vertically when out of bounds
-                if (bounds.Y + bounds.Height < y + Height)
+                // Besides that we need to subtract the top margin from y as it was not part of y calculation
+                if (bounds.Y + bounds.Height < y + windowFrame.ActualHeight)
                 {
-                    y = bounds.Y + bounds.Height - Height;
+                    y = bounds.Y + bounds.Height - windowFrame.ActualHeight - windowFrame.Margin.Top;
                 }
                 else if (y < bounds.Y)
                 {
-                    y = bounds.Y;
+                    y = bounds.Y - windowFrame.Margin.Top;
                 }
 
                 // Update position
@@ -963,7 +965,10 @@ namespace SystemTrayMenu.UserInterface
 
             double heightMaxByOptions = Scaling.Factor * Scaling.FactorByDpi *
                 450f * (Settings.Default.HeightMaxInPercent / 100f);
-            MaxHeight = Math.Min(screenHeightMax, heightMaxByOptions);
+
+            // Margin of the windowFrame is allowed to exceed the boundaries, so we just add them afterwards
+            MaxHeight = Math.Min(screenHeightMax, heightMaxByOptions)
+                + windowFrame.Margin.Top + windowFrame.Margin.Bottom;
         }
 
         private void AdjustDataGridViewWidth()
@@ -996,9 +1001,10 @@ namespace SystemTrayMenu.UserInterface
                 }
             }
 
-            Resources["ColumnTextWidth"] = Math.Ceiling(Math.Min(
-                renderedMaxWidth,
-                (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Settings.Default.WidthMaxInPercent / 100f))));
+            // Margin of the windowFrame is allowed to exceed the boundaries, so we just add them afterwards
+            Resources["ColumnTextWidth"] = Math.Ceiling(
+                Math.Min(renderedMaxWidth, (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Settings.Default.WidthMaxInPercent / 100f)))
+                + windowFrame.Margin.Left + windowFrame.Margin.Right);
         }
 
         private void HandleScrollChanged(object sender, ScrollChangedEventArgs e)

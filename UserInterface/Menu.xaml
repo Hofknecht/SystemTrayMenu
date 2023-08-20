@@ -13,6 +13,7 @@
         mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Background="Transparent" AllowsTransparency="True" SizeToContent="WidthAndHeight" ShowInTaskbar="False" SnapsToDevicePixels="True" UseLayoutRounding="True"
         PreviewKeyDown="HandlePreviewKeyDown" d:MaxHeight="200">
     <Window.Effect>
+        <!-- Remember to adjust the windowFrame accordingly to the size of the shadow -->
         <DropShadowEffect Direction="315" ShadowDepth="2" BlurRadius="4" Color="{Binding Source={x:Static stm:MenuDefines.ColorBackgroundBorder},Path=Color}"/>
     </Window.Effect>
 
@@ -102,6 +103,8 @@
         <sys:Double x:Key="ColumnTextWidth">60</sys:Double>
     </Window.Resources>
 
+    <!-- Remember to adjust the windows's shadow effect accordingly to the size of the margin -->
+    <!-- Note: Margin here is allowed to exceed user's max window size, screen boundaries and to overlap with other sub menus! -->
     <Border x:Name="windowFrame" BorderThickness="1" CornerRadius="0" Margin="0,0,4,4"
             Background="{x:Static stm:MenuDefines.ColorBackground}"
             BorderBrush="{x:Static stm:MenuDefines.ColorBackgroundBorder}">
