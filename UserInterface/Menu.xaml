@@ -18,7 +18,7 @@
 
     <Window.Triggers>
         <EventTrigger RoutedEvent="local:Menu.FadeToTransparent">
-            <BeginStoryboard>
+            <BeginStoryboard Name="FadeToTransparentStoryboard">
                 <Storyboard>
                     <DoubleAnimation
                         Storyboard.TargetProperty="Opacity"
@@ -27,7 +27,7 @@
             </BeginStoryboard>
         </EventTrigger>
         <EventTrigger RoutedEvent="local:Menu.FadeIn">
-            <BeginStoryboard>
+            <BeginStoryboard Name="FadeInStoryboard">
                 <Storyboard>
                     <DoubleAnimation
                         Storyboard.TargetProperty="Opacity"
@@ -36,7 +36,7 @@
             </BeginStoryboard>
         </EventTrigger>
         <EventTrigger RoutedEvent="local:Menu.FadeOut">
-            <BeginStoryboard>
+            <BeginStoryboard Name="FadeOutStoryboard">
                 <Storyboard>
                     <DoubleAnimation
                         Storyboard.TargetProperty="Opacity"
@@ -44,6 +44,11 @@
                         Completed="FadeOut_Completed"/>
                 </Storyboard>
             </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="local:Menu.FadeStop">
+            <StopStoryboard BeginStoryboardName="FadeToTransparentStoryboard" />
+            <StopStoryboard BeginStoryboardName="FadeInStoryboard" />
+            <StopStoryboard BeginStoryboardName="FadeOutStoryboard"/>
         </EventTrigger>
     </Window.Triggers>
 

@@ -37,6 +37,9 @@ namespace SystemTrayMenu.UserInterface
         private static readonly RoutedEvent FadeOutEvent = EventManager.RegisterRoutedEvent(
             nameof(FadeOut), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
 
+        private static readonly RoutedEvent FadeStopEvent = EventManager.RegisterRoutedEvent(
+            nameof(FadeStop), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
+
         private readonly string folderPath;
 
         private bool isShellContextMenuOpen;
@@ -241,6 +244,12 @@ namespace SystemTrayMenu.UserInterface
         {
             add { AddHandler(FadeOutEvent, value); }
             remove { RemoveHandler(FadeOutEvent, value); }
+        }
+
+        internal event RoutedEventHandler FadeStop
+        {
+            add { AddHandler(FadeStopEvent, value); }
+            remove { RemoveHandler(FadeStopEvent, value); }
         }
 
         internal enum StartLocation
@@ -500,6 +509,14 @@ namespace SystemTrayMenu.UserInterface
             else
             {
                 FadeOut_Completed(this, new());
+            }
+        }
+
+        internal void StopFade()
+        {
+            if (Settings.Default.UseFading)
+            {
+                RaiseEvent(new(routedEvent: FadeStopEvent));
             }
         }
 
