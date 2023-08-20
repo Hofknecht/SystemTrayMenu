@@ -168,7 +168,7 @@ namespace SystemTrayMenu.Business
                     // In case it is a single file, open it right away
                     if (rowBefore.SubMenu != null || !rowBefore.IsPointingToFolder)
                     {
-                        rowBefore.OpenItem(0);
+                        rowBefore.OpenItem(-1);
                     }
                     else
                     {
