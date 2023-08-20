@@ -592,15 +592,15 @@ namespace SystemTrayMenu.UserInterface
 
             if (IsLoaded)
             {
-                AdjustWindowPositionAndInnerLayoutInternal(originLocation);
+                AdjustWindowPositionInternal(originLocation);
             }
             else
             {
                 // Layout cannot be calculated during loading, postpone this event
-                Loaded += (_, _) => AdjustWindowPositionAndInnerLayoutInternal(originLocation);
+                Loaded += (_, _) => AdjustWindowPositionInternal(originLocation);
             }
 
-            void AdjustWindowPositionAndInnerLayoutInternal(in Point originLocation)
+            void AdjustWindowPositionInternal(in Point originLocation)
             {
                 double scaling = Math.Round(Scaling.Factor, 0, MidpointRounding.AwayFromZero);
                 double overlappingOffset = 0D;
@@ -846,29 +846,7 @@ namespace SystemTrayMenu.UserInterface
                     windowFrame.CornerRadius = new CornerRadius(CornerRadius);
                 }
 
-                // Make sure we have latest values of all control sizes
                 UpdateLayout();
-
-                // Adjust size of scroll bar thumb
-                // See: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/how-to-customize-the-thumb-size-on-a-scrollbar?view=netframeworkdesktop-4.8#create-a-scrollbar-with-a-fixed-thumb-size
-                ScrollBar? dgvSrollBar = dgv.FindVisualChildOfType<ScrollBar>(0);
-                if (dgvSrollBar != null)
-                {
-                    Track? dgvSrollBarTrack = dgvSrollBar.FindVisualChildOfType<Track>(0);
-                    if (dgvSrollBarTrack != null)
-                    {
-                        RepeatButton? dgvSrollBarLineButton = dgvSrollBar.FindVisualChildOfType<RepeatButton>(0);
-                        Thumb? dgvSrollBarThumb = dgvSrollBarTrack.FindVisualChildOfType<Thumb>(0);
-                        if (dgvSrollBarLineButton != null && dgvSrollBarThumb != null)
-                        {
-                            // Disable auto resizing
-                            dgvSrollBarTrack.ViewportSize = double.NaN;
-
-                            // We set the thumb size of the scroll bar to 25% of the thumbs space but at least to 10
-                            dgvSrollBarThumb.Height = (dgv.ActualHeight - (dgvSrollBarLineButton.ActualHeight * 2)) * 0.25d;
-                        }
-                    }
-                }
             }
         }
 

@@ -184,6 +184,11 @@
                       SelectionChanged="ListView_SelectionChanged" MouseLeave="ListView_MouseLeave"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="HandleScrollChanged">
                 <!--ListView."Childs".Border.Padding="0" // In ctor, see: dgv_border -->
+                <ListView.Resources>
+                    <!-- Set min-size according to: learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/how-to-customize-the-thumb-size-on-a-scrollbar#create-a-scrollbar-with-a-minimum-thumb-size -->
+                    <!-- Thumb's minimum height is half of VerticalScrollBarButtonHeightKey -->
+                    <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarButtonHeightKey}">116</sys:Double>
+                </ListView.Resources>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border Height="{DynamicResource RowHeight}" BorderBrush="{Binding BorderBrush}" Background="{Binding BackgroundBrush}" BorderThickness="1">
