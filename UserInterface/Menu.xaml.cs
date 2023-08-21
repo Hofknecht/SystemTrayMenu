@@ -7,11 +7,9 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
-    using System.Globalization;
     using System.IO;
     using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Controls.Primitives;
     using System.Windows.Data;
     using System.Windows.Input;
     using System.Windows.Media;
@@ -36,9 +34,6 @@ namespace SystemTrayMenu.UserInterface
 
         private static readonly RoutedEvent FadeOutEvent = EventManager.RegisterRoutedEvent(
             nameof(FadeOut), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
-
-        private static readonly RoutedEvent FadeStopEvent = EventManager.RegisterRoutedEvent(
-            nameof(FadeStop), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Menu));
 
         private readonly string folderPath;
 
@@ -244,12 +239,6 @@ namespace SystemTrayMenu.UserInterface
         {
             add { AddHandler(FadeOutEvent, value); }
             remove { RemoveHandler(FadeOutEvent, value); }
-        }
-
-        internal event RoutedEventHandler FadeStop
-        {
-            add { AddHandler(FadeStopEvent, value); }
-            remove { RemoveHandler(FadeStopEvent, value); }
         }
 
         internal enum StartLocation
@@ -525,14 +514,6 @@ namespace SystemTrayMenu.UserInterface
             if (Settings.Default.UseFading)
             {
                 RaiseEvent(new(routedEvent: FadeInEvent));
-            }
-        }
-
-        internal void StopFade()
-        {
-            if (Settings.Default.UseFading)
-            {
-                RaiseEvent(new(routedEvent: FadeStopEvent));
             }
         }
 
@@ -978,26 +959,9 @@ namespace SystemTrayMenu.UserInterface
             double icoWidth = 16 * Scaling.FactorByDpi;
             Resources["ColumnIconWidth"] = Math.Ceiling(icoWidth * factorIconSizeInPercent * Scaling.Factor);
 
-            double renderedMaxWidth = 0D;
-            foreach (RowData item in dgv.Items)
-            {
-                double renderedWidth = new FormattedText(
-                        item.ColumnText,
-                        CultureInfo.CurrentCulture,
-                        FlowDirection.LeftToRight,
-                        new Typeface(dgv.FontFamily, dgv.FontStyle, dgv.FontWeight, dgv.FontStretch),
-                        dgv.FontSize,
-                        dgv.Foreground,
-                        VisualTreeHelper.GetDpi(this).PixelsPerDip).Width;
-                if (renderedWidth > renderedMaxWidth)
-                {
-                    renderedMaxWidth = renderedWidth;
-                }
-            }
-
             // Margin of the windowFrame is allowed to exceed the boundaries, so we just add them afterwards
-            Resources["ColumnTextWidth"] = Math.Ceiling(
-                Math.Min(renderedMaxWidth, (double)(Scaling.Factor * Scaling.FactorByDpi * 400f * (Settings.Default.WidthMaxInPercent / 100f)))
+            Resources["ColumnTextMaxWidth"] = Math.Ceiling(
+                ((double)Scaling.Factor * Scaling.FactorByDpi * 400D * (Settings.Default.WidthMaxInPercent / 100D))
                 + windowFrame.Margin.Left + windowFrame.Margin.Right);
         }
 

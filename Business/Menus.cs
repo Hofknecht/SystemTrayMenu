@@ -355,18 +355,8 @@ namespace SystemTrayMenu.Business
             if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
             {
                 // Sub Menu (completed)
-                // As we need to render it during calculations but we don't want to show flickering windows,
-                // we just hide it for just a moment and show it again after updates have been applied.
-                // In order to hide it via Opacity we have to cancel any Fade animations.
-                menu.StopFade();
-                menu.Opacity = 0D;
                 menu.AddItemsToMenu(menuData.RowDatas, menuData.DirectoryState);
                 AdjustMenusSizeAndLocation(menu.Level);
-                menu.Opacity = 1D;
-
-                // Maybe this can be improved: It may happen that before stop event takes action,
-                // the previous FadeIn overwrites the opacity, so for safety we respawn a new FadeIn.
-                menu.StartFadeIn();
             }
             else
             {

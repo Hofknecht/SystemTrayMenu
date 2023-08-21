@@ -46,11 +46,6 @@
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
-        <EventTrigger RoutedEvent="local:Menu.FadeStop">
-            <StopStoryboard BeginStoryboardName="FadeToTransparentStoryboard" />
-            <StopStoryboard BeginStoryboardName="FadeInStoryboard" />
-            <StopStoryboard BeginStoryboardName="FadeOutStoryboard"/>
-        </EventTrigger>
     </Window.Triggers>
 
     <Window.Resources>
@@ -100,7 +95,7 @@
         </DrawingImage>
         <sys:Double x:Key="RowHeight">20</sys:Double>
         <sys:Double x:Key="ColumnIconWidth">20</sys:Double>
-        <sys:Double x:Key="ColumnTextWidth">60</sys:Double>
+        <sys:Double x:Key="ColumnTextMaxWidth">80</sys:Double>
     </Window.Resources>
 
     <!-- Remember to adjust the windows's shadow effect accordingly to the size of the margin -->
@@ -194,7 +189,7 @@
                         <Border Height="{DynamicResource RowHeight}" BorderBrush="{Binding BorderBrush}" Background="{Binding BackgroundBrush}" BorderThickness="1">
                             <StackPanel Orientation="Horizontal">
                                 <Image Width="{DynamicResource ColumnIconWidth}" Margin="0" Source="{Binding ColumnIcon}" />
-                                <TextBlock Width="{DynamicResource ColumnTextWidth}" Margin="5,0,2,0" Padding="0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                                <TextBlock MaxWidth="{DynamicResource ColumnTextMaxWidth}" Margin="5,0,2,0" Padding="0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
                                            Text="{Binding ColumnText}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" />
                                 <!-- TODO: Optional or only for trimmed entries: ToolTip="{Binding ColumnText}" -->
                             </StackPanel>
