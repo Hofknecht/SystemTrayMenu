@@ -14,6 +14,7 @@ namespace SystemTrayMenu.Utilities
 
         public static float Factor { get; private set; } = 1;
 
+        // TODO: This value is per visual element and should not be shared!
         public static double FactorByDpi { get; private set; } = 1;
 
         public static void Initialize()
