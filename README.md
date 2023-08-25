@@ -100,8 +100,6 @@ FAQ
 
 SystemTrayMenu is portable, so it does not need to be installed. After downloading e.g. SystemTrayMenu-1.2.6.0.zip, **unzip the folder**, then **start SystemTrayMenu.exe**. If you prefer an installation there is the possibility to install SystemTrayMenu via the [Microsoft Store](https://www.microsoft.com/store/apps/9N24F8ZBJMT1). 
 
-If not already installed, download and install .Net 6 [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet/6.0) (e.g. dotnet-sdk-6.0.100-win-x64.exe). 
-  
 1. Step: After starting the application the first time you have to **choose the root directory**.  
 In this directory you should put shortcuts, files and folders (App, Game, Script, URL, Network),  
 which you are often using and especially when you can not find them over the windows start menu search.  
