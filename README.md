@@ -71,6 +71,7 @@ Sources
 [![downloaddrivers](https://user-images.githubusercontent.com/52528841/116524789-0f6aec80-a8d8-11eb-9037-06b2c101fa72.png)](https://www.downloaddrivers.info/download-systemtraymenu-1-2-4-0/) 
 [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
 [![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)&nbsp;
+[![lo4d](https://github.com/Hofknecht/SystemTrayMenu/assets/52528841/3ba7d63a-5882-42e6-9cc7-0a7fa167f2c6)](https://systemtraymenu.en.lo4d.com/windows)&nbsp;
 
 Reviews
 ------------------
@@ -352,3 +353,4 @@ PayPal/GitHub Sponsors - Thank you!
 * Peter G.
 * [Traditional_Tap3954](https://www.reddit.com/user/Traditional_Tap3954/)
 * Maximilian H.
+* Jens B.

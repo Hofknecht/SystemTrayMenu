@@ -166,6 +166,7 @@ namespace SystemTrayMenu.UserInterface
                 "Peter G., " +
                 "Traditional_Tap3954, " +
                 "Maximilian H., " +
+                "Jens B., " +
                 Environment.NewLine;
             AboutBox aboutBox = new()
             {
