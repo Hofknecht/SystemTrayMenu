@@ -417,6 +417,20 @@ namespace SystemTrayMenu.UserInterface.HotkeyTextboxControl
         }
 
         /// <summary>
+        /// Disposes of the resources used by the HotkeyControl.
+        /// </summary>
+        /// <param name="disposing">True if being called from Dispose, false otherwise.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                dummy.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
+
+        /// <summary>
         /// Handles some misc keys, such as Ctrl+Delete and Shift+Insert.
         /// </summary>
         /// <param name="msg">msg.</param>

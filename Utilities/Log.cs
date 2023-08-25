@@ -167,7 +167,6 @@ namespace SystemTrayMenu.Utilities
 
                 using Process p = new()
                 {
-
                     StartInfo = new ProcessStartInfo(fileName)
                     {
                         FileName = fileName,

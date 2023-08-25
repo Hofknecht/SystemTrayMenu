@@ -580,23 +580,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxColorArrowHoverBackgroundDarkMode.Text = Settings.Default.ColorArrowHoverBackgroundDarkMode;
         }
 
-        private void ShowHintToFindSettings(object sender, EventArgs e)
-        {
-            if (!((CheckBox)sender).Checked &&
-                Settings.Default.ShowHintYouCanOpenSettingsInSystemtrayIconRightClick)
-            {
-                using (HintYouCanOpenSettingsInSystemtrayIconRightClickForm hintForm = new())
-                {
-                    hintForm.ShowDialog();
-                    Settings.Default.ShowHintYouCanOpenSettingsInSystemtrayIconRightClick =
-                        hintForm.GetShowHintAgain();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets NewHotKey.
-        /// </summary>
         public string NewHotKey { get; } = string.Empty;
 
         /// <summary>
@@ -817,6 +800,18 @@ namespace SystemTrayMenu.UserInterface
             useStartupTask = true;
 #endif
             return useStartupTask;
+        }
+
+        private void ShowHintToFindSettings(object sender, EventArgs e)
+        {
+            if (!((CheckBox)sender).Checked &&
+                Settings.Default.ShowHintYouCanOpenSettingsInSystemtrayIconRightClick)
+            {
+                using HintYouCanOpenSettingsInSystemtrayIconRightClickForm hintForm = new();
+                hintForm.ShowDialog();
+                Settings.Default.ShowHintYouCanOpenSettingsInSystemtrayIconRightClick =
+                    hintForm.GetShowHintAgain();
+            }
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
@@ -1509,6 +1504,7 @@ namespace SystemTrayMenu.UserInterface
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            textBoxHotkey?.Dispose();
             settingsForm?.Dispose();
             settingsForm = null;
         }

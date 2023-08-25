@@ -1,4 +1,8 @@
-﻿namespace SystemTrayMenu.UserInterface
+﻿// <copyright file="HintYouCanOpenSettingsInSystemtrayIconRightClickForm.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace SystemTrayMenu.UserInterface
 {
     using System.Windows.Forms;
     using SystemTrayMenu.Utilities;
