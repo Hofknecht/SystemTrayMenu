@@ -8,7 +8,6 @@ trigger:
 
 pool:
   vmImage: 'Windows-latest'
-#  vmImage: 'Windows-2019'
 
 variables:
   solution: '**/*.sln'
@@ -19,51 +18,15 @@ steps:
 - task: NuGetToolInstaller@1
 
 - task: UseDotNet@2
-  displayName: 'Use .NET Core sdk'
   inputs:
     packageType: sdk
     version: 6.0.x
-#   version: 3.1.102
-
-#- task: NuGetCommand@2
-#  displayName: NuGet restore
-#  inputs:
-#    restoreSolution: '$(solution)'
-#    feedsToUse: config
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
     projects: '$(solution)'
-    feedsToUse: 'select'
-
-#- task: DotNetCoreCLI@2
-#  displayName: Publish single-exe x64
-#  inputs:
-#    command: 'publish'
-#    publishWebProjects: false
-#    projects: 'SystemTrayMenu.csproj'
-#    arguments: '-f netcoreapp3.1 -c Release /p:PublishSingleFile=true /p:RuntimeIdentifier=win-x64'
-#    zipAfterPublish: false
-#
-#- task: CmdLine@2
-#  displayName: Rename single-exe x64
-#  inputs:
-#    script: 'rename $(Build.SourcesDirectory)\bin\Release\netcoreapp3.1\win-x64\publish\SystemTrayMenu.exe SystemTrayMenu-x64.exe'#
-#
-#- task: DotNetCoreCLI@2
-#  displayName: Publish single-exe x86
-#  inputs:
-#    command: 'publish'
-#    publishWebProjects: false
-#    projects: 'SystemTrayMenu.csproj'
-#    arguments: '-f netcoreapp3.1 -c Release /p:PublishSingleFile=true /p:RuntimeIdentifier=win-x86'
-#    zipAfterPublish: false
-#
-#- task: CmdLine@2
-#  displayName: Rename single-exe x86
-#  inputs:
-#    script: 'rename $(Build.SourcesDirectory)\bin\Release\netcoreapp3.1\win-x86\publish\SystemTrayMenu.exe SystemTrayMenu-x86.exe' 
+    feedsToUse: 'select' 
 
 - task: kherzog.AssemblyInfoReader.assembly-info-reader-build-task.AssembyInfoReader@2
   displayName: 'Generate variables **\AssemblyInfo.cs '
@@ -73,27 +36,11 @@ steps:
   inputs:
     solution: '**/*.sln'
     msbuildArguments: '-p:Configuration=Release -p:Platform="Any CPU"'
-#    msbuildArguments: '-p:Configuration=Release -p:Platform=x64'
-#    msbuildArguments: '-p:Configuration=Release -p:Platform=x86'
-    
-#- task: CopyFiles@2
-#  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-#  inputs:
-#    SourceFolder: '$(Build.SourcesDirectory)\bin\Release\netcoreapp3.1'
-##    Contents: **
-##    Contents: |
-##     win-x64\publish\SystemTrayMenu-x64.exe
-##     win-x86\publish\SystemTrayMenu-x86.exe
-#    TargetFolder: '$(build.artifactstagingdirectory)'
-#    flattenFolders: true
 
 - task: ArchiveFiles@2
   displayName: 'Archive $(Build.ArtifactStagingDirectory)'
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)\bin\AnyCPU\Release\net6.0-windows10.0.22000.0\'
-#   rootFolderOrFile: '$(Build.SourcesDirectory)\bin\AnyCPU\Release\netcoreapp3.1\'
-#   rootFolderOrFile: '$(Build.SourcesDirectory)\bin\x64\Release\netcoreapp3.1\'
-#   rootFolderOrFile: '$(Build.SourcesDirectory)\bin\x86\Release\netcoreapp3.1\'
+    rootFolderOrFile: '$(Build.SourcesDirectory)\bin\AnyCPU\Release\net6.0-windows10.0.22000.0\publish\win-x64\'
     includeRootFolder: false
     archiveFile: '$(Build.ArtifactStagingDirectory)/SystemTrayMenu-$(AssemblyInfo.AssemblyVersion).zip'
 
