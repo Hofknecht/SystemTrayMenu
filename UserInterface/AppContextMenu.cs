@@ -156,6 +156,7 @@ namespace SystemTrayMenu.Helper
                 "Peter G., " +
                 "Traditional_Tap3954, " +
                 "Maximilian H., " +
+                "Jens B., " +
                 Environment.NewLine;
             aboutBox.AppDetailsButton = true;
             aboutBox.ShowDialog();
