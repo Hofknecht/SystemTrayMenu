@@ -5,7 +5,6 @@
 -->
 
 [![Release](https://img.shields.io/github/v/release/hofknecht/systemtraymenu?label=Download%20release%20(click%20here))](https://github.com/Hofknecht/SystemTrayMenu/releases) 
-[![Framework](https://img.shields.io/badge/framework-.NET%206%20(Win%2010/11)-darkturquoise?label=Download%20framework%20(click%20here))](https://dotnet.microsoft.com/download/dotnet/6.0) 
 [![Tweet](https://img.shields.io/badge/Tweet-blue&logo=twitter?&labelColor=white&logo=twitter&color=white)](https://twitter.com/intent/tweet?text=SystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0A)
 [![Facebook](https://img.shields.io/badge/Share-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu)
 
@@ -70,7 +69,7 @@ Sources
 [![mirsofta](https://user-images.githubusercontent.com/52528841/121584682-0706e500-ca32-11eb-8629-4599579a1620.png)](https://mirsofta.ru/index.php?id=1623024195)
 [![downloaddrivers](https://user-images.githubusercontent.com/52528841/116524789-0f6aec80-a8d8-11eb-9037-06b2c101fa72.png)](https://www.downloaddrivers.info/download-systemtraymenu-1-2-4-0/) 
 [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
-[![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)&nbsp;
+[![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)
 [![lo4d](https://github.com/Hofknecht/SystemTrayMenu/assets/52528841/3ba7d63a-5882-42e6-9cc7-0a7fa167f2c6)](https://systemtraymenu.en.lo4d.com/windows)&nbsp;
 
 Reviews
@@ -212,8 +211,10 @@ Build
 ------------------
 
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)  
-Install Visual Studio 2022.  
-Install .NET 6 SDK [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet/6.0).
+[![IDE](https://img.shields.io/badge/framework-2022-darkturquoise?label=Downlaod%20Visual%20Studio%202022%20(click%20here))](https://visualstudio.microsoft.com/de/downloads/) 
+[![Framework](https://img.shields.io/badge/framework-.NET%207%20SDK%20(Win%2010/11)-darkturquoise?label=Download%20framework%20(click%20here))](https://dotnet.microsoft.com/download/dotnet/7.0) 
+
+https://visualstudio.microsoft.com/de/downloads/
 
 Contributing
 ------------------
