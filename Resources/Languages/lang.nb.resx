@@ -280,7 +280,7 @@
     <value>Bakgrunn av pil mens musen svever over den</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>Mørkt fargevalg</value>
+    <value>Fargeskjema mørkt</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
     <value>Lys fargevalg</value>
@@ -316,10 +316,10 @@
     <value>Ikoner</value>
   </data>
   <data name="Set by context menu " xml:space="preserve">
-    <value>Angis av kontekstmenyen</value>
+    <value>Sett av kontekstmeny</value>
   </data>
   <data name="Set as directory" xml:space="preserve">
-    <value>Sett som katalog</value>
+    <value>Angi som katalog</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>lasting</value>
