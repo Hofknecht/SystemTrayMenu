@@ -686,9 +686,7 @@ namespace SystemTrayMenu.Business
                     if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                     {
                         string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
-                        FileAttributes attr = File.GetAttributes(path);
-                        bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
-                        if (isFolder)
+                        if (rowData.IsFolder)
                         {
                             string? dirpath = Path.GetDirectoryName(path);
                             if (string.IsNullOrEmpty(dirpath))
@@ -699,7 +697,7 @@ namespace SystemTrayMenu.Business
                             path = dirpath;
                         }
 
-                        RowData rowDataRenamed = new(isFolder, rowData.IsAdditionalItem, 0, path);
+                        RowData rowDataRenamed = new(rowData.IsFolder, rowData.IsAdditionalItem, 0, path);
                         FolderOptions.ReadHiddenAttributes(rowDataRenamed.Path, out bool hasHiddenFlag, out bool isDirectoryToHide);
                         if (isDirectoryToHide)
                         {

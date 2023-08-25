@@ -293,7 +293,8 @@ Thanks for ideas, reporting issues and contributing!
 #463 #494 Dirk S.,
 #466 [Dean-Corso](https://github.com/Dean-Corso),
 #488 [DailenG](https://github.com/DailenG),
-#490 [TrampiPW](https://github.com/TrampiPW)
+#490 [TrampiPW](https://github.com/TrampiPW),
+#497 Aziz
 
 
 Donations
