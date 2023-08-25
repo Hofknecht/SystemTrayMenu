@@ -1332,18 +1332,17 @@ namespace SystemTrayMenu.Business
 
             if (e is RenamedEventArgs renamedEventArgs)
             {
-                menus[0].Invoke(() => RenameItem(renamedEventArgs));
+                menus[0]?.Invoke(() => RenameItem(renamedEventArgs));
             }
-            else
+            else if (e is FileSystemEventArgs fileSystemEventArgs)
             {
-                FileSystemEventArgs fileSystemEventArgs = (FileSystemEventArgs)e;
                 if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Deleted)
                 {
-                    menus[0].Invoke(() => DeleteItem(e as FileSystemEventArgs));
+                    menus[0]?.Invoke(() => DeleteItem(e as FileSystemEventArgs));
                 }
                 else if (fileSystemEventArgs.ChangeType == WatcherChangeTypes.Created)
                 {
-                    menus[0].Invoke(() => CreateItem(e as FileSystemEventArgs));
+                    menus[0]?.Invoke(() => CreateItem(e as FileSystemEventArgs));
                 }
             }
         }
