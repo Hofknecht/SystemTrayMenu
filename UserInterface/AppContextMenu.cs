@@ -83,34 +83,80 @@ namespace SystemTrayMenu.Helper
             aboutBox.AppMoreInfo += "(Version 3, 29 June 2007)" + Environment.NewLine;
 
             aboutBox.AppMoreInfo += "Thanks for ideas, reporting issues and contributing!" + Environment.NewLine;
-            aboutBox.AppMoreInfo += "#123 Mordecai00, #125 Holgermh, #135 #153 #154 #164 jakkaas, #145 Pascal Aloy, #153 #158 #160 blackcrack,";
-            aboutBox.AppMoreInfo += "#162 HansieNL, #163 igorruckert, #171 kehoen, #186 Dtrieb, #188 #189 #191 #195 iJahangard, #195 #197 #225 #238 the-phuctran, ";
-            aboutBox.AppMoreInfo += "#205 kristofzerbe, #209 jonaskohl, #211 blacksparrow15, #220 #403 Yavuz E., #229 #230 #239 Peter O., #231 Ryonez, ";
-            aboutBox.AppMoreInfo += "#235 #242 243 #247, #271 Tom, #237 Torsten S., #240 video Patrick, #244 Gunter D., #246 #329 MACE4GITHUB, #259 #310 vanjac, ";
-            aboutBox.AppMoreInfo += "#262 terencemcdonnell, #269 petersnows25, #272 Peter M., #273 #274 ParasiteDelta, #275 #276 #278 donaldaken, ";
-            aboutBox.AppMoreInfo += "#277 Jan S., #282 akuznets, #283 #284 #289 RuSieg, #285 #286 dao-net, #288 William P., #294 #295 #296 Stefan Mahrer, ";
-            aboutBox.AppMoreInfo += "#225 #297 #299 #317 #321 #324 #330 #386 #390 #401 #402 #407 #409 #414 #416 #418 #428 #430 #443 chip33, ";
-            aboutBox.AppMoreInfo += "#298 phanirithvij, #306 wini2, #370 dna5589, #372 not-nef, #376 Michelle H., ";
-            aboutBox.AppMoreInfo += "#377 SoenkeHob, #380 #394 TransLucida, #384 #434 #435 boydfields, #386 visusys, #387 #411 #444 yrctw" + Environment.NewLine;
-            aboutBox.AppMoreInfo += "#446 timinformatica, #450 ppt-oldoerp, #453 fubaWoW, #454 WouterVanGoey" + Environment.NewLine;
-            aboutBox.AppMoreInfo += "#462 verdammt89x, #463 Dirk S., #466 Dean-Corso, #488 DailenG, #490 TrampiPW" + Environment.NewLine;
-            aboutBox.AppMoreInfo += @"
-Sponsors - Thank you!
-------------------
-* Stefan Mahrer
-* boydfields
-* RuSieg
-* igor-davidov
-* Ralf K.
-* Tim K.
-* Georg W.
-* donaldaken
-* Marc Speer
-* Cito
-* Peter G.
-* Traditional_Tap3954
-* Maximilian H.
-";
+            aboutBox.AppMoreInfo +=
+                "#123 Mordecai00, " +
+                "#125 Holgermh, " +
+                "#135 #153 #154 #164 jakkaas, " +
+                "#145 Pascal Aloy, " +
+                "#153 #158 #160 blackcrack, " +
+                "#162 HansieNL, " +
+                "#163 igorruckert, " +
+                "#171 kehoen, " +
+                "#186 Dtrieb, " +
+                "#188 #189 #191 #195 iJahangard, " +
+                "#195 #197 #225 #238 the-phuctran, " +
+                "#205 kristofzerbe, " +
+                "#209 jonaskohl, " +
+                "#211 blacksparrow15, " +
+                "#220 #403 Yavuz E., " +
+                "#229 #230 #239 Peter O., " +
+                "#231 Ryonez, " +
+                "#235 #242 243 #247, #271 Tom, " +
+                "#237 Torsten S., " +
+                "#240 video Patrick, " +
+                "#244 Gunter D., " +
+                "#246 #329 MACE4GITHUB, " +
+                "#259 #310 vanjac, " +
+                "#262 terencemcdonnell, " +
+                "#269 petersnows25, " +
+                "#272 Peter M., " +
+                "#273 #274 ParasiteDelta, " +
+                "#275 #276 #278 donaldaken, " +
+                "#277 Jan S., " +
+                "#282 akuznets, " +
+                "#283 #284 #289 RuSieg, " +
+                "#285 #286 dao-net, " +
+                "#288 William P., " +
+                "#294 #295 #296 Stefan Mahrer, " +
+                "#225 #297 #299 #317 #321 #324 #330 #386 #390 #401 #402 #407 #409 #414 #416 #418 #428 #430 #443 chip33, " +
+                "#298 phanirithvij, " +
+                "#306 wini2, " +
+                "#370 dna5589, " +
+                "#372 not-nef, " +
+                "#376 Michelle H., " +
+                "#377 SoenkeHob, " +
+                "#380 #394 TransLucida, " +
+                "#384 #434 #435 boydfields, " +
+                "#386 visusys, " +
+                "#387 #411 #444 yrctw, " +
+                "#446 timinformatica, " +
+                "#450 ppt-oldoerp, " +
+                "#453 fubaWoW, " +
+                "#454 WouterVanGoey, " +
+                "#462 verdammt89x, " +
+                "#463 Dirk S., " +
+                "#466 Dean-Corso, " +
+                "#488 DailenG, " +
+                "#490 TrampiPW, " +
+                "#497 Aziz, " +
+                Environment.NewLine +
+                Environment.NewLine;
+            aboutBox.AppMoreInfo += "Sponsors - Thank you!" + Environment.NewLine;
+            aboutBox.AppMoreInfo +=
+                "Stefan Mahrer, " +
+                "boydfields, " +
+                "RuSieg, " +
+                "igor-davidov, " +
+                "Ralf K., " +
+                "Tim K., " +
+                "Georg W., " +
+                "donaldaken, " +
+                "Marc Speer, " +
+                "Cito, " +
+                "Peter G., " +
+                "Traditional_Tap3954, " +
+                "Maximilian H., " +
+                Environment.NewLine;
             aboutBox.AppDetailsButton = true;
             aboutBox.ShowDialog();
         }
