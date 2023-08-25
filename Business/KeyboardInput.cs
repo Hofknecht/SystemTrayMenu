@@ -437,7 +437,8 @@ namespace SystemTrayMenu.Handler
                     iRowKey = -1;
                     menu = menus[iMenuKey];
                     dgv = menu.GetDataGridView();
-                    if (SelectMatched(dgv, dgv.SelectedRows[0].Index) ||
+                    if ((dgv.SelectedRows.Count > 0 &&
+                        SelectMatched(dgv, dgv.SelectedRows[0].Index)) ||
                         SelectMatched(dgv, 0))
                     {
                         RowDeselected(dgvBefore, iRowBefore);
