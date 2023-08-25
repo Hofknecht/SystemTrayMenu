@@ -1360,14 +1360,12 @@ namespace SystemTrayMenu.Business
                     if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                     {
                         string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
-                        FileAttributes attr = File.GetAttributes(path);
-                        bool isFolder = (attr & FileAttributes.Directory) == FileAttributes.Directory;
-                        if (isFolder)
+                        if (rowData.IsFolder)
                         {
                             path = Path.GetDirectoryName(path);
                         }
 
-                        RowData rowDataRenamed = new(isFolder, rowData.IsAddionalItem, false, 0, path);
+                        RowData rowDataRenamed = new(rowData.IsFolder, rowData.IsAddionalItem, false, 0, path);
                         if (FolderOptions.IsHidden(rowDataRenamed))
                         {
                             continue;
