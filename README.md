@@ -5,7 +5,6 @@
 -->
 
 [![Release](https://img.shields.io/github/v/release/hofknecht/systemtraymenu?label=Download%20release%20(click%20here))](https://github.com/Hofknecht/SystemTrayMenu/releases) 
-[![Framework](https://img.shields.io/badge/framework-.NET%206%20(Win%2010/11)-darkturquoise?label=Download%20framework%20(click%20here))](https://dotnet.microsoft.com/download/dotnet/6.0) 
 [![Tweet](https://img.shields.io/badge/Tweet-blue&logo=twitter?&labelColor=white&logo=twitter&color=white)](https://twitter.com/intent/tweet?text=SystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0A)
 [![Facebook](https://img.shields.io/badge/Share-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu)
 
@@ -212,8 +211,10 @@ Build
 ------------------
 
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)  
-Install Visual Studio 2022.  
-Install .NET 6 SDK [https://dotnet.microsoft.com](https://dotnet.microsoft.com/download/dotnet/6.0).
+[![IDE](https://img.shields.io/badge/framework-2022-darkturquoise?label=Downlaod%20Visual%20Studio%202022%20(click%20here))](https://visualstudio.microsoft.com/de/downloads/) 
+[![Framework](https://img.shields.io/badge/framework-.NET%207%20SDK%20(Win%2010/11)-darkturquoise?label=Download%20framework%20(click%20here))](https://dotnet.microsoft.com/download/dotnet/7.0) 
+
+https://visualstudio.microsoft.com/de/downloads/
 
 Contributing
 ------------------
