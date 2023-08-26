@@ -211,10 +211,8 @@ Build
 ------------------
 
 [![Build Status](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_apis/build/status/Hofknecht.SystemTrayMenu?branchName=master)](https://dev.azure.com/MarkusHofknecht/SystemTrayMenu/_build)  
-[![IDE](https://img.shields.io/badge/framework-2022-darkturquoise?label=Downlaod%20Visual%20Studio%202022%20(click%20here))](https://visualstudio.microsoft.com/de/downloads/) 
+[![IDE](https://img.shields.io/badge/framework-2022-darkturquoise?label=Downlaod%20Visual%20Studio%202022%20(click%20here))](https://visualstudio.microsoft.com/de/downloads/)  
 [![Framework](https://img.shields.io/badge/framework-.NET%207%20SDK%20(Win%2010/11)-darkturquoise?label=Download%20framework%20(click%20here))](https://dotnet.microsoft.com/download/dotnet/7.0) 
-
-https://visualstudio.microsoft.com/de/downloads/
 
 Contributing
 ------------------
