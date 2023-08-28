@@ -139,6 +139,7 @@ namespace SystemTrayMenu.Helper
                 "#488 DailenG, " +
                 "#490 TrampiPW, " +
                 "#497 Aziz, " +
+                "#499 spitzlbergerj, " +
                 Environment.NewLine +
                 Environment.NewLine;
             aboutBox.AppMoreInfo += "Sponsors - Thank you!" + Environment.NewLine;
@@ -157,6 +158,7 @@ namespace SystemTrayMenu.Helper
                 "Traditional_Tap3954, " +
                 "Maximilian H., " +
                 "Jens B., " +
+                "spitzlbergerj, " +
                 Environment.NewLine;
             aboutBox.AppDetailsButton = true;
             aboutBox.ShowDialog();

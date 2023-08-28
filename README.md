@@ -294,7 +294,9 @@ Thanks for ideas, reporting issues and contributing!
 #466 [Dean-Corso](https://github.com/Dean-Corso),
 #488 [DailenG](https://github.com/DailenG),
 #490 [TrampiPW](https://github.com/TrampiPW),
-#497 Aziz
+#497 Aziz,
+#499 [spitzlbergerj](https://github.com/spitzlbergerj),
+ 
 
 
 Donations
