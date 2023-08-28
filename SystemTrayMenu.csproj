@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
-	<SelfContained>true</SelfContained>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <SelfContained>true</SelfContained>
     <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
     <UseWPF>True</UseWPF>
     <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
@@ -20,7 +20,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-	<Nullable>enable</Nullable>
+    <Nullable>enable</Nullable>
     <Platforms>x64;x86;AnyCPU</Platforms>
     <Configurations>Debug;Release;ReleasePackage</Configurations>
   </PropertyGroup>
