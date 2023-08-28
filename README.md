@@ -353,3 +353,4 @@ PayPal/GitHub Sponsors - Thank you!
 * [Traditional_Tap3954](https://www.reddit.com/user/Traditional_Tap3954/)
 * Maximilian H.
 * Jens B.
+* [spitzlbergerj](https://github.com/spitzlbergerj)
