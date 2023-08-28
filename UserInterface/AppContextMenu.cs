@@ -149,6 +149,7 @@ namespace SystemTrayMenu.UserInterface
                 "#488 DailenG, " +
                 "#490 TrampiPW, " +
                 "#497 Aziz, " +
+                "#499 spitzlbergerj, " +
                 Environment.NewLine +
                 Environment.NewLine;
             moreInfo += "Sponsors - Thank you!" + Environment.NewLine;
@@ -167,6 +168,7 @@ namespace SystemTrayMenu.UserInterface
                 "Traditional_Tap3954, " +
                 "Maximilian H., " +
                 "Jens B., " +
+                "spitzlbergerj, " +
                 Environment.NewLine;
             AboutBox aboutBox = new()
             {
