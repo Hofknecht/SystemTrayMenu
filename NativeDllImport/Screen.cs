@@ -8,6 +8,7 @@ namespace SystemTrayMenu.DllImports
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Runtime.InteropServices;
     using System.Runtime.Versioning;
     using System.Windows;
@@ -57,7 +58,8 @@ namespace SystemTrayMenu.DllImports
                 }
             }
 
-            public static Rect PrimaryScreen => Screens[0];
+            // The primary screen will have x = 0, y = 0 coordinates
+            public static Rect PrimaryScreen => Screens.FirstOrDefault((screen) => screen.Left == 0 && screen.Top == 0, Screens[0]);
 
             public static Point CursorPosition
             {
