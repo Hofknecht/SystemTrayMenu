@@ -157,44 +157,53 @@ namespace SystemTrayMenu.Utilities
         private static BitmapSource? TryGetIconAsBitmapSourceSTA(string path, string resolvedPath, bool linkOverlay, bool isFolder)
         {
             BitmapSource? result = null;
-            Icon? icon;
-            if (!isFolder && Path.GetExtension(path).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
+            Icon? icon = null;
+
+            try
             {
-                icon = Icon.ExtractAssociatedIcon(path);
-                if (icon != null)
+                if (!isFolder && Path.GetExtension(path).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    result = CreateBitmapSourceFromIcon(icon);
-                }
-            }
-            else if (!isFolder && File.Exists(resolvedPath) &&
-                Path.GetExtension(resolvedPath).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
-            {
-                icon = Icon.ExtractAssociatedIcon(resolvedPath);
-                if (icon != null)
-                {
-                    result = CreateBitmapSourceFromIcon(icon);
-                    if (linkOverlay && OverlayImage != null)
+                    icon = Icon.ExtractAssociatedIcon(path);
+                    if (icon != null)
                     {
-                        result = ImagingHelper.CreateIconWithOverlay(result, OverlayImage);
+                        result = CreateBitmapSourceFromIcon(icon);
+                    }
+                }
+                else if (!isFolder && File.Exists(resolvedPath) &&
+                    Path.GetExtension(resolvedPath).Equals(".ico", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    icon = Icon.ExtractAssociatedIcon(resolvedPath);
+                    if (icon != null)
+                    {
+                        result = CreateBitmapSourceFromIcon(icon);
+                        if (linkOverlay && OverlayImage != null)
+                        {
+                            result = ImagingHelper.CreateIconWithOverlay(result, OverlayImage);
+                        }
+                    }
+                }
+                else
+                {
+                    // This code block must run in an STA thread otherwise the results may be incorrectly loaded icons!
+                    NativeMethods.SHFILEINFO shFileInfo = default;
+                    bool largeIcon = // Note: large returns another folder icon than windows explorer
+                        Scaling.Factor >= 1.25f ||
+                        Scaling.FactorByDpi >= 1.25f ||
+                        Properties.Settings.Default.IconSizeInPercent / 100f >= 1.25f;
+                    uint flags = GetFlags(linkOverlay, largeIcon);
+                    uint attribute = isFolder ? NativeMethods.FileAttributeDirectory : NativeMethods.FileAttributeNormal;
+                    IntPtr imageList = NativeMethods.Shell32SHGetFileInfo(path, attribute, ref shFileInfo, (uint)Marshal.SizeOf(shFileInfo), flags);
+                    icon = GetIcon(path, linkOverlay, shFileInfo, imageList);
+                    if (icon != null)
+                    {
+                        result = CreateBitmapSourceFromIcon(icon);
                     }
                 }
             }
-            else
+            catch (COMException ex)
             {
-                // This code block must run in an STA thread otherwise the results may be incorrectly loaded icons!
-                NativeMethods.SHFILEINFO shFileInfo = default;
-                bool largeIcon = // Note: large returns another folder icon than windows explorer
-                    Scaling.Factor >= 1.25f ||
-                    Scaling.FactorByDpi >= 1.25f ||
-                    Properties.Settings.Default.IconSizeInPercent / 100f >= 1.25f;
-                uint flags = GetFlags(linkOverlay, largeIcon);
-                uint attribute = isFolder ? NativeMethods.FileAttributeDirectory : NativeMethods.FileAttributeNormal;
-                IntPtr imageList = NativeMethods.Shell32SHGetFileInfo(path, attribute, ref shFileInfo, (uint)Marshal.SizeOf(shFileInfo), flags);
-                icon = GetIcon(path, linkOverlay, shFileInfo, imageList);
-                if (icon != null)
-                {
-                    result = CreateBitmapSourceFromIcon(icon);
-                }
+                // This seems to happen very rarely, so we just log it and go on
+                Log.Warn("Reading native Icon failed:", ex);
             }
 
             icon?.Dispose();
