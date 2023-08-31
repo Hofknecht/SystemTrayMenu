@@ -687,6 +687,7 @@ namespace SystemTrayMenu.Business
                 List<RowData> rowDatas = new();
                 foreach (RowData rowData in menu.GetDataGridView().Items.SourceCollection)
                 {
+                    // TODO: Check if this check is correct as it looks like wronge entries might be modified as well?
                     if (rowData.Path.StartsWith($"{e.OldFullPath}"))
                     {
                         string path = rowData.Path.Replace(e.OldFullPath, e.FullPath);
@@ -720,8 +721,16 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
-                menu.SelectedItem = null;
+
+                if (menu.SelectedItem != null)
+                {
+                    menu.SelectedItem = null;
+                    menu.SubMenu?.Close();
+                    menu.RefreshSelection();
+                }
+
                 menu.AddItemsToMenu(rowDatas, null);
+                AdjustMenusSizeAndLocation(menu.Level);
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
@@ -747,12 +756,19 @@ namespace SystemTrayMenu.Business
                     }
                 }
 
+                if (menu.SelectedItem != null && rowsToRemove.Contains(menu.SelectedItem))
+                {
+                    menu.SelectedItem = null;
+                    menu.SubMenu?.Close();
+                    menu.RefreshSelection();
+                }
+
                 foreach (RowData rowToRemove in rowsToRemove)
                 {
                     ((List<RowData>)dgv.ItemsSource).Remove(rowToRemove);
                 }
 
-                menu.SelectedItem = null;
+                AdjustMenusSizeAndLocation(menu.Level);
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
@@ -786,8 +802,8 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
-                menu.SelectedItem = null;
                 menu.AddItemsToMenu(rowDatas, null);
+                AdjustMenusSizeAndLocation(menu.Level);
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
