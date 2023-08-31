@@ -960,33 +960,6 @@ namespace SystemTrayMenu.UserInterface
             double icoWidth = 16 * Scaling.FactorByDpi;
             Resources["ColumnIconWidth"] = Math.Ceiling(icoWidth * factorIconSizeInPercent * Scaling.Factor);
 
-            double renderedMaxWidth = 0D;
-            foreach (RowData item in dgv.Items)
-            {
-                double renderedWidth = new FormattedText(
-                        item.ColumnText,
-                        CultureInfo.CurrentCulture,
-                        FlowDirection.LeftToRight,
-                        new Typeface(dgv.FontFamily, dgv.FontStyle, dgv.FontWeight, dgv.FontStretch),
-                        dgv.FontSize,
-                        dgv.Foreground,
-                        VisualTreeHelper.GetDpi(this).PixelsPerDip).Width;
-                if (renderedWidth > renderedMaxWidth)
-                {
-                    renderedMaxWidth = renderedWidth;
-                }
-            }
-
-            //if (renderedMaxWidth == 0D)
-            //{
-            //    renderedMaxWidth = 99999D;
-            //}
-
-            // Margin of the windowFrame is allowed to exceed the boundaries, so we just add them afterwards
-            //Resources["ColumnTextMaxWidth"] = Math.Ceiling(
-            //    Math.Min(renderedMaxWidth, (double)Scaling.Factor * Scaling.FactorByDpi * 400D * (Settings.Default.WidthMaxInPercent / 100D))
-            //    + windowFrame.Margin.Left + windowFrame.Margin.Right);
-
             // Margin of the windowFrame is allowed to exceed the boundaries, so we just add them afterwards
             Resources["ColumnTextMaxWidth"] = Math.Ceiling(
                 ((double)Scaling.Factor * Scaling.FactorByDpi * 400D * (Settings.Default.WidthMaxInPercent / 100D))
