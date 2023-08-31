@@ -355,8 +355,12 @@ namespace SystemTrayMenu.Business
             if (menuData.DirectoryState != MenuDataDirectoryState.Undefined)
             {
                 // Sub Menu (completed)
+                // There will be some layout, size and position changes.
+                // Just hide the inner controls for a moment until all changes have been applied.
+                menu.windowFrame.Visibility = Visibility.Hidden;
                 menu.AddItemsToMenu(menuData.RowDatas, menuData.DirectoryState);
                 AdjustMenusSizeAndLocation(menu.Level);
+                menu.windowFrame.Visibility = Visibility.Visible;
             }
             else
             {
