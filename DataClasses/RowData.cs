@@ -269,8 +269,17 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal void OpenShellContextMenu(Point position)
+        internal void OpenShellContextMenu()
         {
+            Point position = default;
+
+            if (Owner != null)
+            {
+                Point positionChild = Owner.GetRelativeDataGridViewChildPosition(this);
+                Point positionDgv = Owner.GetRelativeChildPositionTo(Owner.GetDataGridView());
+                position = new Point(Owner.Left + positionDgv.X + positionChild.X, Owner.Top + positionDgv.Y + positionChild.Y);
+            }
+
             if (IsPointingToFolder)
             {
                 ShellContextMenu.OpenShellContextMenu(new DirectoryInfo(Path), position);

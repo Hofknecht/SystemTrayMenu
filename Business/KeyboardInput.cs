@@ -7,7 +7,6 @@ namespace SystemTrayMenu.Business
     using System;
     using System.Windows.Input;
     using SystemTrayMenu.DataClasses;
-    using SystemTrayMenu.DllImports;
     using SystemTrayMenu.UserInterface;
     using SystemTrayMenu.Utilities;
     using static SystemTrayMenu.Helpers.GlobalHotkeys;
@@ -125,7 +124,7 @@ namespace SystemTrayMenu.Business
                 case Key.Apps:
                     if (modifiers == ModifierKeys.None)
                     {
-                        focussedMenu?.SelectedItem?.OpenShellContextMenu(NativeMethods.Screen.CursorPosition);
+                        focussedMenu?.SelectedItem?.OpenShellContextMenu();
                     }
 
                     break;

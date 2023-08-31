@@ -729,49 +729,10 @@ namespace SystemTrayMenu.UserInterface
                         y = originLocation.Y;
 
                         // Set position on same height as the selected row from predecessor
-                        ListView dgv = menuPredecessor.GetDataGridView()!;
                         RowData? trigger = RowDataParent;
                         if (trigger != null)
                         {
-                            // When scrolled, we have to reduce the index number as we calculate based on visual tree
-                            int startIndex = 0;
-                            double offset = 0D;
-                            if (VisualTreeHelper.GetChild(dgv, 0) is Decorator { Child: ScrollViewer scrollViewer })
-                            {
-                                startIndex = (int)scrollViewer.VerticalOffset;
-                                if (trigger.RowIndex < startIndex)
-                                {
-                                    // calculate position above starting point
-                                    for (int i = trigger.RowIndex; i < startIndex; i++)
-                                    {
-                                        ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
-                                        if (item != null)
-                                        {
-                                            offset -= item.ActualHeight;
-                                        }
-                                    }
-                                }
-                            }
-
-                            if (startIndex < trigger.RowIndex)
-                            {
-                                // calculate position below starting point
-                                // outer loop check for max RowIndex, independend of currently active filter
-                                // inner loop check for filtered and shown items
-                                for (int i = startIndex; i < trigger.RowIndex; i++)
-                                {
-                                    ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
-                                    if (item != null)
-                                    {
-                                        if (((RowData)item.Content).RowIndex >= trigger.RowIndex)
-                                        {
-                                            break;
-                                        }
-
-                                        offset += item.ActualHeight;
-                                    }
-                                }
-                            }
+                            double offset = menuPredecessor.GetRelativeDataGridViewChildPosition(trigger).Y;
 
                             if (offset < 0)
                             {
@@ -780,6 +741,7 @@ namespace SystemTrayMenu.UserInterface
                             }
                             else
                             {
+                                ListView dgv = menuPredecessor.GetDataGridView();
                                 double offsetList = menuPredecessor.GetRelativeChildPositionTo(dgv).Y;
                                 offsetList += dgv.ActualHeight;
                                 if (offsetList < offset)
@@ -830,6 +792,52 @@ namespace SystemTrayMenu.UserInterface
 
                 UpdateLayout();
             }
+        }
+
+        internal Point GetRelativeDataGridViewChildPosition(RowData rowData)
+        {
+            // When scrolled, we have to reduce the index number as we calculate based on visual tree
+            int rowIndex = rowData.RowIndex;
+            int startIndex = 0;
+            double offset = 0D;
+            if (VisualTreeHelper.GetChild(dgv, 0) is Decorator { Child: ScrollViewer scrollViewer })
+            {
+                startIndex = (int)scrollViewer.VerticalOffset;
+                if (rowIndex < startIndex)
+                {
+                    // calculate position above starting point
+                    for (int i = rowIndex; i < startIndex; i++)
+                    {
+                        ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
+                        if (item != null)
+                        {
+                            offset -= item.ActualHeight;
+                        }
+                    }
+                }
+            }
+
+            if (startIndex < rowIndex)
+            {
+                // calculate position below starting point
+                // outer loop check for max RowIndex, independend of currently active filter
+                // inner loop check for filtered and shown items
+                for (int i = startIndex; i < rowIndex; i++)
+                {
+                    ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
+                    if (item != null)
+                    {
+                        if (((RowData)item.Content).RowIndex >= rowIndex)
+                        {
+                            break;
+                        }
+
+                        offset += item.ActualHeight;
+                    }
+                }
+            }
+
+            return new(0D, offset);
         }
 
         private static bool Filter_Default(RowData itemData)
@@ -1147,9 +1155,7 @@ namespace SystemTrayMenu.UserInterface
                 // Prevent any use of MouseEnter/MouseLeave while the menu is open.
                 // TODO: Find root case and fix this properly.
                 isShellContextMenuOpen = true;
-                var position = Mouse.GetPosition(this);
-                position.Offset(Left, Top);
-                itemData.OpenShellContextMenu(position);
+                itemData.OpenShellContextMenu();
                 isShellContextMenuOpen = false;
             }
         }
