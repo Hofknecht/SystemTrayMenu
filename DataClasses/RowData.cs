@@ -269,15 +269,30 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        internal void OpenShellContextMenu()
+        internal void OpenShellContextMenu(Point? mousePosition)
         {
             Point position = default;
 
-            if (Owner != null)
+            if (mousePosition != null)
             {
-                Point positionChild = Owner.GetRelativeDataGridViewChildPosition(this);
-                Point positionDgv = Owner.GetRelativeChildPositionTo(Owner.GetDataGridView());
-                position = new Point(Owner.Left + positionDgv.X + positionChild.X, Owner.Top + positionDgv.Y + positionChild.Y);
+                position = mousePosition.Value;
+            }
+            else
+            {
+                if (Owner != null)
+                {
+#if CONTEXT_MENU_EXPLORER_BEHAVIOR
+                    // Snap context menu left aligned to the ListViewItem with a small padding, but keep it vertically centered
+                    Rect rectChild = Owner.GetDataGridViewChildRect(this);
+                    position = Owner.GetRelativeChildPositionTo(Owner.GetDataGridView());
+                    position.Offset(Owner.Left + rectChild.Left + 10D, Owner.Top + rectChild.Top + (rectChild.Height / 2D));
+#else
+                    // Snap context menu left and top aligned to the ListViewItem
+                    Rect rectChild = Owner.GetDataGridViewChildRect(this);
+                    position = Owner.GetRelativeChildPositionTo(Owner.GetDataGridView());
+                    position.Offset(Owner.Left + rectChild.Left, Owner.Top + rectChild.Top);
+#endif
+                }
             }
 
             if (IsPointingToFolder)

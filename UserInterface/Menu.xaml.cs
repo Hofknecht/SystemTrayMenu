@@ -7,7 +7,6 @@ namespace SystemTrayMenu.UserInterface
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
-    using System.Globalization;
     using System.IO;
     using System.Windows;
     using System.Windows.Controls;
@@ -732,7 +731,7 @@ namespace SystemTrayMenu.UserInterface
                         RowData? trigger = RowDataParent;
                         if (trigger != null)
                         {
-                            double offset = menuPredecessor.GetRelativeDataGridViewChildPosition(trigger).Y;
+                            double offset = menuPredecessor.GetDataGridViewChildRect(trigger).Top;
 
                             if (offset < 0)
                             {
@@ -794,12 +793,12 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        internal Point GetRelativeDataGridViewChildPosition(RowData rowData)
+        internal Rect GetDataGridViewChildRect(RowData rowData)
         {
             // When scrolled, we have to reduce the index number as we calculate based on visual tree
             int rowIndex = rowData.RowIndex;
             int startIndex = 0;
-            double offset = 0D;
+            double offsetY = 0D;
             if (VisualTreeHelper.GetChild(dgv, 0) is Decorator { Child: ScrollViewer scrollViewer })
             {
                 startIndex = (int)scrollViewer.VerticalOffset;
@@ -811,7 +810,7 @@ namespace SystemTrayMenu.UserInterface
                         ListViewItem? item = dgv.FindVisualChildOfType<ListViewItem>(i);
                         if (item != null)
                         {
-                            offset -= item.ActualHeight;
+                            offsetY -= item.ActualHeight;
                         }
                     }
                 }
@@ -832,12 +831,13 @@ namespace SystemTrayMenu.UserInterface
                             break;
                         }
 
-                        offset += item.ActualHeight;
+                        offsetY += item.ActualHeight;
                     }
                 }
             }
 
-            return new(0D, offset);
+            // All childs are using same width and height, so we simply fill in values from parent instead of individual child
+            return new(0D, offsetY, dgv.ActualWidth, (double)Resources["RowHeight"]);
         }
 
         private static bool Filter_Default(RowData itemData)
@@ -1144,7 +1144,8 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            RowData itemData = (RowData)((ListViewItem)sender).Content;
+            ListViewItem lvi = (ListViewItem)sender;
+            RowData itemData = (RowData)lvi.Content;
 
             CellMouseDown?.Invoke(itemData);
 
@@ -1155,7 +1156,18 @@ namespace SystemTrayMenu.UserInterface
                 // Prevent any use of MouseEnter/MouseLeave while the menu is open.
                 // TODO: Find root case and fix this properly.
                 isShellContextMenuOpen = true;
-                itemData.OpenShellContextMenu();
+
+#if CONTEXT_MENU_EXPLORER_BEHAVIOR
+                // At mouse location
+                Point position = Mouse.GetPosition(this);
+                position.Offset(Left, Top);
+#else
+                // Snap context menu above the ListViewItem, but horizontally follow the mouse
+                Point position = this.GetRelativeChildPositionTo(lvi);
+                position.Offset(Left + Mouse.GetPosition(lvi).X, Top);
+#endif
+                itemData.OpenShellContextMenu(position);
+
                 isShellContextMenuOpen = false;
             }
         }

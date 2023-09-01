@@ -124,7 +124,7 @@ namespace SystemTrayMenu.Business
                 case Key.Apps:
                     if (modifiers == ModifierKeys.None)
                     {
-                        focussedMenu?.SelectedItem?.OpenShellContextMenu();
+                        focussedMenu?.SelectedItem?.OpenShellContextMenu(null);
                     }
 
                     break;
