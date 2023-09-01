@@ -7,13 +7,14 @@
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
         xmlns:stm="clr-namespace:SystemTrayMenu"
         x:Class="SystemTrayMenu.UserInterface.HowToOpenSettingsWindow"
-        mc:Ignorable="d" Title="{u:Translate 'Hint'}" Background="{x:Static stm:MenuDefines.ColorBackground}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ShowInTaskbar="True" ResizeMode="NoResize">
+        Style="{StaticResource {x:Type Window}}" mc:Ignorable="d" d:Foreground="{x:Static stm:MenuDefines.ColorForeground}" d:Background="{x:Static stm:MenuDefines.ColorBackground}"
+        Title="{u:Translate 'Hint'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ShowInTaskbar="True" ResizeMode="NoResize">
     <Window.Resources>
         <BitmapImage x:Key="HowToOpenSettingsImage" UriSource="../Resources/HowToOpenSettings.png" />
 
         <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="{x:Static stm:MenuDefines.ColorForeground}" />
-            <Setter Property="Background" Value="{x:Static stm:MenuDefines.ColorBackground}" />
+            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=Foreground}" />
+            <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=Background}" />
         </Style>
     </Window.Resources>
 

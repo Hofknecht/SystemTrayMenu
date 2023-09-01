@@ -7,7 +7,8 @@
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
         xmlns:stm="clr-namespace:SystemTrayMenu"
         x:Class="SystemTrayMenu.UserInterface.UpdateWindow"
-        mc:Ignorable="d" Title="{u:Translate 'New version available!'}" Background="{x:Static stm:MenuDefines.ColorBackground}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="600" MaxHeight="600" WindowStyle="ToolWindow" ShowInTaskbar="False">
+        Style="{StaticResource {x:Type Window}}" mc:Ignorable="d" d:Background="{x:Static stm:MenuDefines.ColorBackground}"
+        Title="{u:Translate 'New version available!'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="600" MaxHeight="600" WindowStyle="ToolWindow" ShowInTaskbar="False">
     <DockPanel>
         <Label DockPanel.Dock="Top" x:Name="label" Content="{u:Translate 'Latest available version:'}" />
 

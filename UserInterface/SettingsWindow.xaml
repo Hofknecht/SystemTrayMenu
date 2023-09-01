@@ -8,7 +8,8 @@
         xmlns:stm="clr-namespace:SystemTrayMenu"
         xmlns:local="clr-namespace:SystemTrayMenu.UserInterface"
         x:Class="SystemTrayMenu.UserInterface.SettingsWindow"
-        mc:Ignorable="d" Title="{u:Translate 'Settings'}" Background="{x:Static stm:MenuDefines.ColorBackground}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="200" MinHeight="250">
+        Style="{StaticResource {x:Type Window}}" mc:Ignorable="d" d:Background="{x:Static stm:MenuDefines.ColorBackground}"
+        Title="{u:Translate 'Settings'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" MinWidth="200" MinHeight="250">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />

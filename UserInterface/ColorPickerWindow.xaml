@@ -9,8 +9,8 @@
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
         xmlns:stm="clr-namespace:SystemTrayMenu"
         x:Class="SystemTrayMenu.UserInterface.ColorPickerWindow"
-        mc:Ignorable="d" Title="{u:Translate 'Choose color'}"
-        Background="{x:Static stm:MenuDefines.ColorBackground}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
+        Style="{StaticResource {x:Type Window}}" mc:Ignorable="d" d:Background="{x:Static stm:MenuDefines.ColorBackground}"
+        Title="{u:Translate 'Choose color'}" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

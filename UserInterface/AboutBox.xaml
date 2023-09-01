@@ -7,7 +7,8 @@
         xmlns:u="clr-namespace:SystemTrayMenu.Utilities"
         xmlns:stm="clr-namespace:SystemTrayMenu"
         x:Class="SystemTrayMenu.UserInterface.AboutBox"
-        mc:Ignorable="d" Title="{u:Translate 'About SystemTrayMenu'}" Background="{x:Static stm:MenuDefines.ColorBackground}" Height="513" Width="418" ResizeMode="NoResize" SizeToContent="Height">
+        Style="{StaticResource {x:Type Window}}" mc:Ignorable="d" d:Background="{x:Static stm:MenuDefines.ColorBackground}"
+        Title="{u:Translate 'About SystemTrayMenu'}" Height="513" Width="418" ResizeMode="NoResize" SizeToContent="Height">
     <DockPanel>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Top">
             <Image Width="32" Height="32" Margin="3" Source="{StaticResource ApplicationImage}" />

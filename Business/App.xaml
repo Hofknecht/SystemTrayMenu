@@ -24,6 +24,9 @@
             <Style TargetType="{x:Type Window}">
                 <Setter Property="Foreground" Value="{x:Static stm:MenuDefines.ColorForeground}" />
                 <Setter Property="Background" Value="{x:Static stm:MenuDefines.ColorBackground}" />
+                <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+                <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+                <Setter Property="UseLayoutRounding" Value="True" />
             </Style>
             <Style TargetType="{x:Type TabItem}">
                 <!-- not working for selected TabIdem yet, so we keep default colors -->

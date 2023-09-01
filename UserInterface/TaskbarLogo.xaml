@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="SystemTrayMenu.UserInterface.TaskbarLogo"
-        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize" Width="38" Height="38" Topmost="True" Background="Transparent" AllowsTransparency="True">
+        Style="{StaticResource {x:Type Window}}" mc:Ignorable="d" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize" Width="38" Height="38" Topmost="True" AllowsTransparency="True">
     <Image Width="32" Height="32" Margin="3" Source="{StaticResource ApplicationImage}"/>
 </Window>
