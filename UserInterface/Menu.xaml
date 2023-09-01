@@ -107,13 +107,16 @@
             <Label x:Name="labelTitle" DockPanel.Dock="Top" Padding="0" Margin="20,0" MinHeight="12"
                    HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"
                    Foreground="{x:Static stm:MenuDefines.ColorForeground}" FontWeight="Bold">
-                <TextBlock x:Name="txtTitle" TextTrimming="CharacterEllipsis"><Run Text="title"/></TextBlock>
+                <TextBlock x:Name="txtTitle" TextTrimming="CharacterEllipsis"><Run Text="title"
+                   TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Display"/>
+                </TextBlock>
             </Label>
             <DockPanel x:Name="searchPanel" DockPanel.Dock="Top" Margin="6,0" Background="{x:Static stm:MenuDefines.ColorSearchField}">
                 <Separator x:Name="panelLine" Height="1" Margin="0" DockPanel.Dock="Bottom" Background="{x:Static stm:MenuDefines.ColorIcons}"/>
                 <Image x:Name="pictureBoxSearch" Width="22" Height="22" Margin="0" DockPanel.Dock="Left" Source="{StaticResource ic_fluent_search_48_regularDrawingImage}"/>
                 <TextBox x:Name="textBoxSearch" Margin="0" BorderThickness="0" VerticalContentAlignment="Center"
-                         Background="{x:Null}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" CaretBrush="{x:Static stm:MenuDefines.ColorForeground}" />
+                         Background="{x:Null}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" CaretBrush="{x:Static stm:MenuDefines.ColorForeground}" 
+                         TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Display"/>
             </DockPanel>
 
             <DockPanel x:Name="tableLayoutPanelBottom" DockPanel.Dock="Bottom" Margin="12,6,14,5">
@@ -140,8 +143,8 @@
                         </Setter>
                     </Style>
                 </DockPanel.Resources>
-                <Label x:Name="labelStatus" Content="{u:Translate 'loading'}" Padding="0" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{x:Static stm:MenuDefines.ColorIcons}"/>
-
+                <Label x:Name="labelStatus" Content="{u:Translate 'loading'}" Padding="0" DockPanel.Dock="Left" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{x:Static stm:MenuDefines.ColorIcons}" 
+                       TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Display"/>
                 <Image x:Name="pictureBoxLoading" Width="18" Height="18" DockPanel.Dock="Right" Source="{StaticResource LoadingIconImage}"
                        HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
