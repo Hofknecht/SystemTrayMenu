@@ -644,6 +644,14 @@ namespace SystemTrayMenu.Business
             }
         }
 
+        private void AdjustLocationOnWatcherUpdate(Menu menu)
+        {
+            // Force refresh of view, let layout settle and then update position based on new size
+            menu.RefreshDataGridView();
+            menu.UpdateLayout();
+            AdjustMenusSizeAndLocation(menu.Level);
+        }
+
         private void ExecuteWatcherHistory()
         {
             foreach (var fileSystemEventArgs in watcherHistory)
@@ -720,8 +728,6 @@ namespace SystemTrayMenu.Business
                     }
                 }
 
-                rowDatas = DirectoryHelpers.SortItems(rowDatas);
-
                 if (menu.SelectedItem != null)
                 {
                     menu.SelectedItem = null;
@@ -729,8 +735,11 @@ namespace SystemTrayMenu.Business
                     menu.RefreshSelection();
                 }
 
+                // Apply list changes
+                rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 menu.AddItemsToMenu(rowDatas, null);
-                AdjustMenusSizeAndLocation(menu.Level);
+
+                AdjustLocationOnWatcherUpdate(menu);
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
@@ -763,12 +772,10 @@ namespace SystemTrayMenu.Business
                     menu.RefreshSelection();
                 }
 
-                foreach (RowData rowToRemove in rowsToRemove)
-                {
-                    ((List<RowData>)dgv.ItemsSource).Remove(rowToRemove);
-                }
+                // Apply list changes
+                ((List<RowData>)dgv.ItemsSource).RemoveAll(rowsToRemove.Contains);
 
-                AdjustMenusSizeAndLocation(menu.Level);
+                AdjustLocationOnWatcherUpdate(menu);
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
@@ -801,9 +808,11 @@ namespace SystemTrayMenu.Business
                     rowDatas.Add(item);
                 }
 
+                // Apply list changes
                 rowDatas = DirectoryHelpers.SortItems(rowDatas);
                 menu.AddItemsToMenu(rowDatas, null);
-                AdjustMenusSizeAndLocation(menu.Level);
+
+                AdjustLocationOnWatcherUpdate(menu);
                 menu.OnWatcherUpdate();
             }
             catch (Exception ex)
