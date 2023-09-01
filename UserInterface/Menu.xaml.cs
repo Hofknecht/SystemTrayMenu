@@ -110,7 +110,15 @@ namespace SystemTrayMenu.UserInterface
                 title = $"{title[..MenuDefines.LengthMax]}...";
             }
 
+#if DEBUG
+            txtTitle.Text = Title = "v"
+                + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version!.Major.ToString()
+                + "."
+                + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version!.Minor.ToString()
+                + " - " + title;
+#else
             txtTitle.Text = Title = title;
+#endif
 
             foreach (FrameworkElement control in
                 new List<FrameworkElement>()
