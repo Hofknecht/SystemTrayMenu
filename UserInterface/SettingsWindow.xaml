@@ -284,49 +284,49 @@
                             <StackPanel Margin="3,0,0,0">
                                 <Label Content="{u:Translate 'App menu'}" Padding="5" VerticalAlignment="Center"/>
                                 <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorIcons" Description="{u:Translate 'Icons'}" />
-                                <local:ColorSelector x:Name="textBoxColorBackground" Description="{u:Translate 'Background'}" />
-                                <local:ColorSelector x:Name="textBoxColorBackgroundBorder" Description="{u:Translate 'Border of menu'}" />
-                                <local:ColorSelector x:Name="textBoxColorSearchField" Description="{u:Translate 'Search field'}" />
-                                <local:ColorSelector x:Name="textBoxColorOpenFolder" Description="{u:Translate 'Opened directory'}" />
-                                <local:ColorSelector x:Name="textBoxColorOpenFolderBorder" Description="{u:Translate 'Border of opened directory'}" />
-                                <local:ColorSelector x:Name="textBoxColorSelectedItem" Description="{u:Translate 'Selected element'}" />
-                                <local:ColorSelector x:Name="textBoxColorSelectedItemBorder" Description="{u:Translate 'Border of selected element'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorBackground" Description="{u:Translate 'Background'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorBackgroundBorder" Description="{u:Translate 'Border of menu'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSearchField" Description="{u:Translate 'Search field'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorOpenFolder" Description="{u:Translate 'Opened directory'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorOpenFolderBorder" Description="{u:Translate 'Border of opened directory'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSelectedItem" Description="{u:Translate 'Selected element'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSelectedItemBorder" Description="{u:Translate 'Border of selected element'}" />
                                 <Label Content="{u:Translate 'Scrollbar'}" Padding="5" VerticalAlignment="Center"/>
-                                <local:ColorSelector x:Name="textBoxColorScrollbarBackground" Description="{u:Translate 'Background'}" />
-                                <local:ColorSelector x:Name="textBoxColorSlider" Description="{u:Translate 'Slider'}" />
-                                <local:ColorSelector x:Name="textBoxColorSliderDragging" Description="{u:Translate 'Slider while dragging'}" />
-                                <local:ColorSelector x:Name="textBoxColorSliderHover" Description="{u:Translate 'Slider while mouse hovers over it 1'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorScrollbarBackground" Description="{u:Translate 'Background'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSlider" Description="{u:Translate 'Slider'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSliderDragging" Description="{u:Translate 'Slider while dragging'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSliderHover" Description="{u:Translate 'Slider while mouse hovers over it 1'}" />
                                 <!-- Deprecated since 2.0.0.0: textBoxColorSliderArrowsAndTrackHover, obsolete translation: 'Slider while mouse hovers over it 2' -->
-                                <local:ColorSelector x:Name="textBoxColorArrow" Description="{u:Translate 'Arrow'}" />
-                                <local:ColorSelector x:Name="textBoxColorArrowClick" Description="{u:Translate 'Arrow when clicking'}" />
-                                <local:ColorSelector x:Name="textBoxColorArrowClickBackground" Description="{u:Translate 'Background of arrow when clicking'}" />
-                                <local:ColorSelector x:Name="textBoxColorArrowHover" Description="{u:Translate 'Arrow while mouse hovers over it'}" />
-                                <local:ColorSelector x:Name="textBoxColorArrowHoverBackground" Description="{u:Translate 'Background of arrow while mouse hovers over it'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrow" Description="{u:Translate 'Arrow'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowClick" Description="{u:Translate 'Arrow when clicking'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowClickBackground" Description="{u:Translate 'Background of arrow when clicking'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowHover" Description="{u:Translate 'Arrow while mouse hovers over it'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowHoverBackground" Description="{u:Translate 'Background of arrow while mouse hovers over it'}" />
                                 <Button Content="{u:Translate 'Default'}" Margin="5,5,0,0" Click="ButtonDefaultColors_Click" HorizontalAlignment="Left"/>
                             </StackPanel>
                         </GroupBox>
                         <GroupBox Header="{u:Translate 'Color scheme dark'}">
                             <StackPanel Margin="3,0,0,0">
                                 <Label Content="{u:Translate 'App menu'}" Padding="5" VerticalAlignment="Center"/>
-                                <local:ColorSelector x:Name="textBoxColorIconsDarkMode" Description="{u:Translate 'Icons'}" />
-                                <local:ColorSelector x:Name="textBoxColorBackgroundDarkMode" Description="{u:Translate 'Background'}" />
-                                <local:ColorSelector x:Name="textBoxColorBackgroundBorderDarkMode" Description="{u:Translate 'Border of menu'}" />
-                                <local:ColorSelector x:Name="textBoxColorSearchFieldDarkMode" Description="{u:Translate 'Search field'}" />
-                                <local:ColorSelector x:Name="textBoxColorOpenFolderDarkMode" Description="{u:Translate 'Opened directory'}" />
-                                <local:ColorSelector x:Name="textBoxColorOpenFolderBorderDarkMode" Description="{u:Translate 'Border of opened directory'}" />
-                                <local:ColorSelector x:Name="textBoxColorSelectedItemDarkMode" Description="{u:Translate 'Selected element'}" />
-                                <local:ColorSelector x:Name="textBoxColorSelectedItemBorderDarkMode" Description="{u:Translate 'Border of selected element'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorIconsDarkMode" Description="{u:Translate 'Icons'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorBackgroundDarkMode" Description="{u:Translate 'Background'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorBackgroundBorderDarkMode" Description="{u:Translate 'Border of menu'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSearchFieldDarkMode" Description="{u:Translate 'Search field'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorOpenFolderDarkMode" Description="{u:Translate 'Opened directory'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorOpenFolderBorderDarkMode" Description="{u:Translate 'Border of opened directory'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSelectedItemDarkMode" Description="{u:Translate 'Selected element'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSelectedItemBorderDarkMode" Description="{u:Translate 'Border of selected element'}" />
                                 <Label Content="{u:Translate 'Scrollbar'}" Padding="5" VerticalAlignment="Center"/>
-                                <local:ColorSelector x:Name="textBoxColorScrollbarBackgroundDarkMode" Description="{u:Translate 'Background'}" />
-                                <local:ColorSelector x:Name="textBoxColorSliderDarkMode" Description="{u:Translate 'Slider'}" />
-                                <local:ColorSelector x:Name="textBoxColorSliderDraggingDarkMode" Description="{u:Translate 'Slider while dragging'}" />
-                                <local:ColorSelector x:Name="textBoxColorSliderHoverDarkMode" Description="{u:Translate 'Slider while mouse hovers over it 1'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorScrollbarBackgroundDarkMode" Description="{u:Translate 'Background'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSliderDarkMode" Description="{u:Translate 'Slider'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSliderDraggingDarkMode" Description="{u:Translate 'Slider while dragging'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorSliderHoverDarkMode" Description="{u:Translate 'Slider while mouse hovers over it 1'}" />
                                 <!-- Deprecated since 2.0.0.0: textBoxColorSliderArrowsAndTrackHoverDarkMode, obsolete translation: 'Slider while mouse hovers over it 2' -->
-                                <local:ColorSelector x:Name="textBoxColorArrowDarkMode" Description="{u:Translate 'Arrow'}" />
-                                <local:ColorSelector x:Name="textBoxColorArrowClickDarkMode" Description="{u:Translate 'Arrow when clicking'}" />
-                                <local:ColorSelector x:Name="textBoxColorArrowClickBackgroundDarkMode" Description="{u:Translate 'Background of arrow when clicking'}" />
-                                <local:ColorSelector x:Name="textBoxColorArrowHoverDarkMode" Description="{u:Translate 'Arrow while mouse hovers over it'}" />
-                                <local:ColorSelector x:Name="textBoxColorArrowHoverBackgroundDarkMode" Description="{u:Translate 'Background of arrow while mouse hovers over it'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowDarkMode" Description="{u:Translate 'Arrow'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowClickDarkMode" Description="{u:Translate 'Arrow when clicking'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowClickBackgroundDarkMode" Description="{u:Translate 'Background of arrow when clicking'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowHoverDarkMode" Description="{u:Translate 'Arrow while mouse hovers over it'}" />
+                                <local:ColorSelector ColorChanged="TextBoxColorsChanged" x:Name="textBoxColorArrowHoverBackgroundDarkMode" Description="{u:Translate 'Background of arrow while mouse hovers over it'}" />
                                 <Button Content="{u:Translate 'Default'}" Margin="5,5,0,0" Click="ButtonDefaultColorsDark_Click" HorizontalAlignment="Left"/>
                             </StackPanel>
                         </GroupBox>
