@@ -1142,37 +1142,30 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e) =>
+            CellMouseDown?.Invoke((RowData)((ListViewItem)sender).Content);
+
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) =>
+            ((RowData)((ListViewItem)sender).Content).OpenItem(e.ClickCount);
+
+        private void ListViewItem_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             ListViewItem lvi = (ListViewItem)sender;
             RowData itemData = (RowData)lvi.Content;
 
-            CellMouseDown?.Invoke(itemData);
-
-            if (e.RightButton == MouseButtonState.Pressed)
-            {
-                // Somehow when the TrackPopupMenuEx is called to spawn the context menu
-                // This will fire a MouseEnter event on the next item, like WTF?!
-                // Prevent any use of MouseEnter/MouseLeave while the menu is open.
-                // TODO: Find root case and fix this properly.
-                isShellContextMenuOpen = true;
-
 #if CONTEXT_MENU_EXPLORER_BEHAVIOR
-                // At mouse location
-                Point position = Mouse.GetPosition(this);
-                position.Offset(Left, Top);
+            // At mouse location
+            Point position = Mouse.GetPosition(this);
+            position.Offset(Left, Top);
 #else
-                // Snap context menu above the ListViewItem, but horizontally follow the mouse
-                Point position = this.GetRelativeChildPositionTo(lvi);
-                position.Offset(Left + Mouse.GetPosition(lvi).X, Top);
+            // Snap context menu above the ListViewItem, but horizontally follow the mouse
+            Point position = this.GetRelativeChildPositionTo(lvi);
+            position.Offset(Left + Mouse.GetPosition(lvi).X, Top);
 #endif
-                itemData.OpenShellContextMenu(position);
 
-                isShellContextMenuOpen = false;
-            }
+            isShellContextMenuOpen = true;
+            itemData.OpenShellContextMenu(position);
+            isShellContextMenuOpen = false;
         }
-
-        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) =>
-            ((RowData)((ListViewItem)sender).Content).OpenItem(e.ClickCount);
     }
 }
