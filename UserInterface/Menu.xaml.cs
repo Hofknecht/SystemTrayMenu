@@ -16,6 +16,7 @@ namespace SystemTrayMenu.UserInterface
     using SystemTrayMenu.Business;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
+    using SystemTrayMenu.Helpers;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.Utilities;
 
@@ -209,6 +210,15 @@ namespace SystemTrayMenu.UserInterface
                     item.SubMenu?.Close();
                 }
             };
+
+            bool isTouchEnabled = NativeMethods.IsTouchEnabled();
+            if ((isTouchEnabled && Settings.Default.DragDropItemsEnabledTouch) ||
+                (!isTouchEnabled && Settings.Default.DragDropItemsEnabled))
+            {
+                AllowDrop = true;
+                DragEnter += DragDropHelper.DragEnter;
+                Drop += DragDropHelper.DragDrop;
+            }
         }
 
         internal event Action<RowData>? StartLoadSubMenu;
@@ -1147,6 +1157,12 @@ namespace SystemTrayMenu.UserInterface
             if (!isShellContextMenuOpen)
             {
                 CellMouseLeave?.Invoke();
+
+                if (e.LeftButton == MouseButtonState.Pressed)
+                {
+                    string[] files = new string[] { ((RowData)((ListViewItem)sender).Content).Path };
+                    DragDrop.DoDragDrop(this, new DataObject(DataFormats.FileDrop, files), DragDropEffects.Copy);
+                }
             }
         }
 
